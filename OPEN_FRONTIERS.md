@@ -2,7 +2,7 @@
 
 ## Line A — Astra A: T61 h13 only
 
-The broad bridge is reduced to one embedded T61 obstruction, and the h12 branch plus E397–E399 are closed.
+The broad bridge is reduced to one embedded T61 obstruction. The h12 branch and E397–E400 are closed.
 
 Current proved front-end chain:
 
@@ -12,32 +12,28 @@ Current proved front-end chain:
 
 `T61 -> delta(R)=13`
 
-`T61 -> E>=400`.
+`T61 -> E>=401`.
 
 Thus Line A now owns only
 
-`T61: 400<=E<=408, delta=13`.
+`T61: 401<=E<=408, delta=13`.
 
-Highest-priority layer: `E400`.
+Highest-priority layer: `E401`.
 
-For `E=397+s`, every degree13 pivot sees total neighbour excess at most `s`. Hence at E400 each low pivot sees at most3 units of excess. Low vertices adjacent to total excess3 fall into the exact cell
+For `E=397+s`, every degree13 pivot sees total neighbour excess at most s. Hence at E401 each low pivot sees at most4 units of excess. The genuinely new cells are q26 with
 
-`q=25, z=22, e(C47)=284`.
+- `(z,G)=(25,1)`;
+- `(24,2)`;
+- `(23,3)`;
+- `(22,4)`.
 
-Priority is a q25 shell theorem covering decoration partitions `3`, `2+1`, and `1+1+1`, using the same matching/triangle/repivot architecture that closed q23 and q24.
+Also test the q25 extension `(z,G)=(21,4)`.
 
-Secondary Line A tasks:
-
-- E400 global excess partition support;
-- modern recurrence replay with seeds CORE211 and R448>=310;
-- 284/285-edge 47-core local equality analysis;
-- parameterize q=22+r shell stability to remove several layers at once.
+Priority is a uniform q26 shell theorem, reusing the triangle/triangle-free matching, König-cover and profitable-repivot machinery that closed q23–q25.
 
 ## Line B — Astra B: high-layer backend
 
-Primary target:
-
-`333<=e(F)<=340` for legitimate `F in R(4,49)`.
+Primary target: `333<=e(F)<=340` for legitimate `F in R(4,49)`.
 
 Preferred result: a uniform repivot/core-excess theorem eliminating several layers at once.
 
@@ -45,9 +41,7 @@ Remember: generic q29 good-repivot does not require e(H)=211.
 
 ## Line C — central active line: E332
 
-Primary target:
-
-`E332:q30+211`.
+Primary target: `E332:q30+211`.
 
 Current equality reduction:
 
@@ -58,8 +52,9 @@ Current equality reduction:
 
 ## Newly closed / strengthened
 
-- generic `R(4,48)` floor: 310;
+- generic `R(4,48)` floor:310;
 - T61 minimum-degree12 branch: closed;
 - T61 E397: closed;
 - T61 E398: closed by q23 shell classification;
-- T61 E399: closed by exact q24 shell cells `(22,2)` and `(23,1)`.
+- T61 E399: closed by q24 shell theorem;
+- T61 E400: closed by uniform q25 shell theorem.
