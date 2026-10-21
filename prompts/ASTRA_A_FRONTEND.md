@@ -1,8 +1,8 @@
-# Astra A prompt — T61 h13 terminal line (V5)
+# Astra A prompt — T61 h13 terminal line (V6)
 
 You own ONLY the remaining embedded T61 front-end obstruction for Erdős Problem 617, r=12.
 
-Do not redo the certified outer recurrence. Do not attack backend E332 or E333–E340. The h12 branch and E397–E400 are now analytically closed.
+Do not redo the certified outer recurrence. Do not attack backend E332 or E333–E340. The h12 branch and E397–E400 are analytically closed. Read the current canonical GitHub state first and treat it as authoritative over historical PDFs/old CLOSED labels.
 
 ## 0. Current clean target
 
@@ -20,107 +20,183 @@ Your sole objective is
 
 `T61(h13, E401..408) => contradiction OR induced F in R(4,49)`.
 
+Closing this closes Line A.
+
 ## 1. Exact T61 contract
 
+Work inside one fixed least-edge target graph under the contextual no-extraction hypothesis.
+
+Certified facts:
+
 - anchor degree11;
-- anchor defect z=0, so N[v] is a genuine target K12;
+- anchor defect z=0, hence N[v] is a genuine target K12;
 - six additional genuine K12 blocks in the anchor nonneighbourhood;
 - residual R has61 vertices;
-- `alpha(R)=5`, `omega(R)<=11`, inherited D caps;
+- `alpha(R)=5`, `omega(R)<=11`, inherited D-caps;
 - `delta(R)=13`;
-- `401<=E<=408`;
+- `401<=E=e(R)<=408`;
 - exact outer ledger `E+sigma+g+x6+y6=408`.
 
-Do not assume E406, q30, S30 coverage, an eighth K12, Delta<=14, or generic R(4,49) emptiness.
+Forbidden unless independently proved in the active branch:
 
-## 2. Proved shell ladder
+- E406;
+- q30;
+- S30 coverage;
+- an eighth K12;
+- Delta<=14;
+- generic R(4,49) emptiness.
 
-For every degree13 pivot p:
+## 2. Existing shell ladder — do not redo it
+
+For every degree13 pivot p,
 
 `E=91+q+e(C47)`, `q>=22`, `e(C47)>=284`.
 
-Writing `E=397+s`, every low pivot sees neighbour-excess
+Writing `E=397+s`, every degree13 pivot sees neighbour-excess
 
 `G_p<=s`.
 
-Already closed:
+Already analytically closed:
 
-- q23 / `(z,G)=(22,1)`;
-- q24 / `(22,2)` and `(23,1)`;
-- q25 / `(22,3)`, `(23,2)`, `(24,1)`.
+- q23: `(z,G)=(22,1)`;
+- q24: `(22,2)` and `(23,1)`;
+- q25: `(22,3)`, `(23,2)`, `(24,1)`.
 
-The q25 theorem uses a uniform triangle/triangle-free argument and is in `front_end/E400_Q25_SHELL.md`.
+Consequently E397, E398, E399, E400 are empty.
 
-Consequently E397, E398, E399 and E400 are empty.
+The q25 proof is a reusable triangle / triangle-free shell theorem, not a one-off enumeration. Mine it for a parameterized argument.
 
-## 3. Priority 1 — close E401 by q26
+## 3. Priority 1 — close E401
 
 For E401:
 
 - `s=4`;
 - total degree excess `Xi=9`;
 - every degree13 pivot sees at most4 units of neighbour excess;
-- every pivot has `q<=26`.
+- every degree13 pivot has `q<=26`.
 
-The genuinely new exact cells are
+The new exact q26 cells are
 
 - `(q,z,G)=(26,25,1)`;
 - `(26,24,2)`;
 - `(26,23,3)`;
 - `(26,22,4)`.
 
-Also check whether q25 with `(z,G)=(21,4)` is possible; attempt to extend the q25 theorem from G<=3 to G=4 first.
+There is also the q25 extension
 
-Seek a **uniform q26 shell theorem**, not four unrelated enumerations.
+- `(25,21,4)`.
 
-### Suggested architecture
+### Mandatory first attempt
 
-1. **Triangle-free M**
-   - mandatory 3-matching;
-   - 4-matching impossible by charge;
-   - rule out C5/C7 odd-cycle branches using matching number and subset charge;
-   - use König to obtain a size-3 cover X and independent Y of size10;
-   - exploit regular Y-vertex repivots. In q25, undecorated degree2/3 Y vertices were impossible because they force a fourth cover vertex to have too little weight to meet Y. Generalize this with one extra unit of q slack.
+Try to prove one theorem covering all positive-decoration cells with
 
-2. **Triangle M**
-   - write B=A\T, `u=e(M[B])`;
-   - use triangle row coverage plus the small decoration budget to bound `u+G_B`;
-   - attempt to show u=0 or u<=1;
-   - classify B T-degrees and use regular degree1/2 B vertices for profitable repivots;
-   - force an independent11-set in M if one triangle vertex loses all B-neighbours.
+`q<=26`, `z>=22`, `1<=G<=4`.
 
-3. **Global E401 support**
-   - once all low-high cells with G=1..4 are excluded, conclude no degree13 vertex can meet any positive-excess vertex;
-   - total excess9 gives at most nine positive vertices, still far too few to support degrees >=14 without low neighbours.
+Do not begin with four unrelated case trees.
 
-## 4. Priority 2 — look for a parameterized theorem
+### Triangle-free route
 
-Try to prove a shell-stability statement for
+Reuse and strengthen the q25 architecture:
 
-`q=22+r`, small r,
+1. mandatory 3-matching;
+2. determine whether a 4-matching is possible at q26 and, if so, classify the exact equality slack rather than discarding the method;
+3. exclude odd-cycle branches C5/C7 using subset charge plus matching-number structure;
+4. if bipartite, use Konig to obtain a minimum cover and keep exact track of whether the cover size is 3 or 4;
+5. exploit undecorated outside vertices by repivot. Derive an inequality in terms of cover weights and decoration leakage instead of repeating numeric cases.
 
-with `z>=22` and `G<=r`, such that every positive-decorated low-pivot cell is impossible until some explicit threshold.
+The desired outcome is a lemma of the form
 
-The ideal outcome removes E401–E403 or more at once.
+`positive decoration + q<=26 => profitable degree13 repivot OR impossible cover geometry`.
 
-## 5. S31/S30 boundary
+### Triangle route
 
-S31 applies only at the same residual with `E=406`, `delta=13` and its full inherited parent contract. It gives a pivot with q<=30 but does not create a block.
+Fix a missing triangle T and B=A\T.
 
-Do not map E401..405 or E407..408 into S30 without a proved interface.
+Track exactly
 
-## 6. Required output
+- `u=e(M[B])`;
+- `G_B`;
+- triangle weight `t(T)`;
+- T-B incidences.
 
-Return:
+The q25 proof forced `u=0`; at q26 one extra unit may permit `u=1`. Treat `(u,G_B)` as the main state variables and prove that every permitted state either:
 
-- `T61_H13_MASTER_V5.md`
+- gives a regular degree1/2 B-vertex with profitable repivot;
+- forces an independent11-set in M;
+- or collapses to a finite equality normal form that can be rotated.
+
+Do not stop at “only a few scalar states remain”.
+
+## 4. Global E401 support theorem
+
+In parallel with the local q26 theorem, classify the global positive degree-excess support for total excess9 under the neighbour-excess cap4.
+
+The useful target is stronger than a partition list:
+
+> every positive-excess vertex must force a degree13 neighbour whose local cell belongs to the q25/q26 family already eliminated.
+
+Once all `G=1..4` low-high cells are excluded, finish E401 by the same support argument used for E400: the positive-excess set has at most9 vertices and cannot internally support vertices of degree at least14.
+
+## 5. Priority 2 — parameterized shell stability
+
+Do not assume the project must proceed E401,E402,... one at a time.
+
+Try to prove a theorem for
+
+`q=22+r`, `z>=22`, `G<=r`
+
+for a nontrivial interval of r.
+
+Candidate outputs:
+
+- `r<=5` impossible whenever G>0;
+- a monotone profitable-repivot potential valid until an explicit threshold;
+- a finite family of equality shells that first appears at a precise r.
+
+A theorem removing E401–E403 together is much more valuable than a detailed E401-only classification.
+
+## 6. 47-core interface
+
+If q26 shell slack stops the purely shell argument, audit only the near-extremal 47-core cells actually forced by
+
+`e(C47)=E-91-q`.
+
+For E401 and q26 this is the exact 284-edge core.
+
+Do not launch a generic 47-vertex graph search. Extract only row-union, minimum-degree, or equality information that feeds back into the shell proof.
+
+## 7. S31/S30 boundary
+
+S31 applies only when the same residual has `E=406`, `delta=13` and the full parent contract. It produces a degree13 pivot with q<=30; it does not create another block.
+
+Do not map E401..405 or E407..408 into S30 without an explicit proved interface.
+
+## 8. Required output
+
+Return a package containing:
+
+- `T61_H13_MASTER_V6.md`
 - `E401_CLOSURE.md`
-- `Q26_SHELL_THEOREM.md`
+- `Q26_UNIFORM_SHELL_THEOREM.md`
 - `Q25_G4_EXTENSION.md`
 - `E401_EXCESS_SUPPORT.md`
-- `T61_DEPENDENCY_DAG_V5.md`
-- verifier/certificates if used.
+- `Q22R_STABILITY_ATTEMPT.md`
+- `CORE284_INTERFACE_V3.md`
+- `T61_DEPENDENCY_DAG_V6.md`
+- verifier/certificate files only if genuinely necessary.
 
-Every statement: `PROVED`, `COMPUTATION_CERTIFIED`, `CONDITIONAL`, `OPEN`, or `RETRACTED`.
+Every statement must be exactly one of:
 
-Success criterion: close E401 and preferably several following layers, or reduce E401..408 to one explicit equality family substantially narrower than the current window.
+`PROVED`, `COMPUTATION_CERTIFIED`, `CONDITIONAL`, `OPEN`, `RETRACTED`.
+
+## 9. Success criterion
+
+Preferred success:
+
+`E401 empty`, plus a parameterized theorem that immediately attacks E402+.
+
+Acceptable fallback:
+
+reduce E401..408 to one mathematically explicit equality family strictly smaller than the current q26 cell list.
+
+Do not stop after a cosmetic scalar reduction, and do not claim EG617 solved: Line B and Line C remain independent backend obligations.
