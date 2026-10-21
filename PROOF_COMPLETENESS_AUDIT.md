@@ -6,7 +6,7 @@ Updated: 2026-10-22
 
 The repository is currently a **complete canonical research-state repository**, but it is **not yet a fully self-contained proof manuscript** from which an external mathematician can verify every accepted theorem without consulting prior source bundles.
 
-Current canonical frontier, statuses, recent proofs, open obligations, and machine-readable theorem registry are synchronized. However, several older foundational assets are still represented only by theorem statements or proof sketches rather than full clean-room proofs.
+Current canonical frontier, statuses, recent proofs, open obligations, and machine-readable theorem registry are synchronized. However, several older foundational assets are still represented only by theorem statements, proof sketches, or unreplayed finite classifications rather than full clean-room proofs/certificates.
 
 Therefore two different notions of completeness must be kept separate:
 
@@ -56,11 +56,22 @@ A complete proof needs the three branches:
 
 with all shell inequalities and equality exclusions explicit.
 
-### 3. uniform q27 contradiction
+### 3. q27 equality closure — analytic body recovered, finite topology certificate still missing
 
-The canonical state currently treats the q27 Type-I/Type-II contradiction as an audited dependency, but there is no standalone complete proof file reconstructing both equality families and the repivot row-class contradiction.
+The historical A/B source recovery substantially closes this former proof-body gap.
 
-This is a major proof-completeness gap because the low backend closures depend on it.
+`consolidation/Q27_ANALYTIC_EQUALITY_CLOSURE.md` now contains:
+
+- analytic uniqueness of the decoration assignments in `K3,8+2K1` and `K3,9+K1` (recovered from B581-B583);
+- analytic Type-II repivot contradiction;
+- analytic Type-I duplicate-row contradiction.
+
+The remaining non-self-contained dependency is narrower: the repository still needs a replayable certificate or an analytic proof that the only q27 equality shell topologies are exactly
+
+- `K3,8+2K1`, and
+- `K3,9+K1`.
+
+Thus q27 is no longer missing its proof body; it is missing the finite topology-classification certificate.
 
 ### 4. E329/E330/E331 low-backend closure chain
 
@@ -81,7 +92,7 @@ External results such as Andrasfai-Erdos-Sos need bibliographic metadata in a de
 
 ## Raw source bundles not mirrored
 
-The large Integration 1/2 PDFs, A-J archive, and historical ZIP bundles are not mirrored wholesale into GitHub. Their accepted current mathematical content has been reconstructed into canonical files, but they remain necessary provenance for some older proof bodies until the gaps above are rewritten fully.
+The large Integration 1/2 PDFs, A-J archive, and historical ZIP bundles are not mirrored wholesale into GitHub. Their accepted current mathematical content is reconstructed into canonical/consolidation files, but they remain necessary provenance for some older proof bodies until the gaps above are fully rewritten.
 
 ## Machine readability
 
