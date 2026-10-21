@@ -33,30 +33,36 @@ T61 unique stop: d=11, six genuine K12 blocks, 61 residual vertices
         |
         +--> delta(R)=13
                 |
-                +--> E397 [CLOSED]
-                |       +--> q22,z22,G0 around every degree13 pivot
-                |       +--> unique degree14 vertex cannot have neighbours
+                +--> E397 [CLOSED: q22 / zero-decoration support contradiction]
                 |
-                +--> E398..E408 [ACTIVE LINE A]
+                +--> E398 [CLOSED: exact q23 shell]
+                |
+                +--> E399 [CLOSED: exact q24 cells]
+                |
+                +--> E400 [CLOSED: uniform q25 shell theorem]
+                |
+                +--> E401..E408 [ACTIVE LINE A]
                         |
-                        +--> E398 degree multiset 14^3,13^58
-                        +--> cross low/high pivot cell (q,z,G,core)=(23,22,1,284)
+                        +--> E401: s=4, total excess9
+                        +--> q25 extension (21,4) [OPEN]
+                        +--> q26 cells G=1..4 [OPEN]
 ```
 
 Therefore the front-end residual statement is now
 
-`T61 survivor => delta=13 and 398<=E<=408`.
+`T61 survivor => delta=13 and 401<=E<=408`.
 
 The master dichotomy remains
 
 `K145 counterexample -> induced R(4,49) OR T61`.
 
-## Front-end reusable lemmas
+## Front-end reusable ladder
 
 ```text
 matching-transversal rigidity
         |
         +--> seven/eight genuine-block independence bounds
+        +--> anchor defect z=0
 
 q20 equality classification
         |
@@ -66,8 +72,10 @@ q20 equality classification
 E=397+s, degree13 pivot
         |
         +--> neighbour degree-excess <= s
-        +--> E397 contradiction
-        +--> E398 degree sequence 14^3,13^58
+        +--> q23 shell theorem -> E398 closed
+        +--> q24 shell theorem -> E399 closed
+        +--> q25 shell theorem -> E400 closed
+        +--> q26 / parameterized q=22+r stability [ACTIVE]
 ```
 
 ## Backend DAG
@@ -98,5 +106,5 @@ High backend:
 
 EG617 r=12 may be declared proved only after BOTH:
 
-1. the remaining T61 h13 window E398..E408 is excluded or always yields an induced R(4,49);
+1. the remaining T61 h13 window E401..E408 is excluded or always yields an induced R(4,49);
 2. every legitimate R(4,49) backend layer is eliminated.
