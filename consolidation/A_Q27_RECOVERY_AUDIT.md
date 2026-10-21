@@ -1,57 +1,93 @@
-# A-version q27 recovery audit
+# q27 recovery audit from A/B versions
 
 Status: `RECOVERY_AUDIT`.
 
-Purpose: determine whether the user-supplied A-version contains a standalone recoverable proof body for the q=27 equality closure.
+Purpose: determine whether the supplied historical A/B versions contain a recoverable standalone proof body for the q=27 equality closure.
 
 ## Verdict
 
-Yes, with an important split:
+The analytic closure is now substantially recovered.
 
-- the **equality classification** `q=27 => K3,8+2K1 or K3,9+K1` is finite-computation dependent in the A-version;
-- the **repivot contradiction for both equality families** is analytic and substantially self-contained once the universal q=27 repivot condition is licensed.
+- The **two-topology equality classification**
+  `q=27 => M is K3,8 + 2K1 or K3,9 + K1`
+  remains finite-classification dependent in the recovered source material.
+- The **decoration assignment inside both topologies is analytic**: B-version pp.581-582 proves it directly from the edge inequalities and q=27 budget.
+- The **repivot contradiction for both equality families is analytic** in the A-version once every degree-13 repivot is known to remain in the q=27 equality regime.
 
-Therefore the A-version contains enough material to reconstruct a clean analytic `Q27_TYPE_I_II` closure proof, but the lower-floor/equality-classification certificate must remain a separate dependency.
+Thus the old belief that decoration uniqueness itself needed a solver is too pessimistic. The only irreducibly non-analytic dependency still visible in the recovered q27 chain is the topology classification unless its verifier/certificate is separately recovered.
 
-## Recovered analytic skeleton
+## Analytic decoration uniqueness recovered from B581-B582
 
-For any degree-13 pivot in the equality regime, the A-version uses the universal condition `q_p=27` and the two shell possibilities.
+Use corrected shell notation
 
-### Type II: `M=K_{3,9}+K1`
+`q = z + sum g_v`, `t_v = d_M(v) + g_v`, and for every missing-shell edge `uv`, `t_u+t_v >= 12`.
 
-Let the three heavy shell vertices be `x1,x2,x3`, the nine light vertices `Y`, and `z` the isolate. Every light vertex is degree 13 and can be used as a repivot.
+### Type I topology
 
-After repivoting a light row `D_y`, the new equality shell must again belong to the two classified topologies. The newly introduced vertices force the repivoted topology to remain Type II. For `j=2,3`, the new missing degree of `x_j` is determined by `9-|D_{x1} intersect D_{xj}|`, and the allowed equality degrees are only `9,3,0`. The unique isolate in the new shell must come from another heavy vertex; this forces complete equality of the heavy rows. Repivoting then produces two isolates although Type II has only one, contradiction.
+`M = K3,8 + 2K1`, so `z=24` and `sum g = 3`.
+Let the bipartition be A (size 3, degree 8) and B (size 8, degree 3).
+For every `a in A`, `b in B`, the missing edge inequality gives
 
-### Type I: `M=K_{3,8}+2K1`
+`8 + g_a + 3 + g_b >= 12`, hence `g_a+g_b >= 1`.
 
-Let `Y` be the eight light vertices and `Z` the two isolates. Repivot a light vertex `y`, with `|D_y|=3`. The ten old-shell vertices outside the three centers form an independent 10-set in the new missing graph, so any new equality topology is forced into one of the two canonical q=27 types.
+If some heavy vertex `a` had `g_a=0`, then every `b in B` would have `g_b>=1`, so `sum g >= 8`, contradicting `sum g=3`.
+Therefore all three heavy vertices have `g_a>=1`; since the total excess is exactly 3,
 
-For `b in D_y`, define the multiplicity
+`g=(1,1,1,0,...,0)`.
+
+Consequently every heavy row has `t=9`, every light row has `t=3`, and every missing edge is tight: `9+3=12`.
+
+### Type II topology
+
+`M = K3,9 + K1`, so `z=27` and `q=27` forces `sum g=0`.
+Hence `g=0` identically. Heavy rows have `t=9`, light rows have `t=3`, the isolate has `t=0`, and every missing edge is tight.
+
+So for both q27 equality topologies, every missing-shell edge is exactly tight.
+
+## Recovered analytic repivot closure
+
+Assume the proof architecture licenses that every relevant degree-13 repivot satisfies the same upper and lower charge bounds, hence again has `q=27`; therefore its new missing-shell graph must be one of the two equality topologies above.
+
+### Type II: `M=K3,9+K1`
+
+Let the three heavy shell vertices be `x1,x2,x3`, the nine light vertices `Y`, and `z` the isolate. Every light vertex is degree 13 and can be repivoted.
+
+Repivot a light row. In the new shell, the old pivot and old isolate both appear as degree-9 vertices, so the new equality topology cannot be Type I (whose heavy degree is 8); it must again be Type II.
+For the other heavy vertices, their new missing degrees are controlled by row intersections. Since the only allowed missing degrees in Type II are `9,3,0`, the unique new isolate must come from one of the remaining heavy vertices. This forces two heavy rows to be identical; symmetry forces all three heavy rows identical.
+Repivoting again then creates two isolates, contradicting the fact that Type II has exactly one isolate.
+Therefore Type II is impossible.
+
+### Type I: `M=K3,8+2K1`
+
+Let `Y` be the eight light vertices and `Z` the two isolates. Every light vertex is degree 13 with a 3-row `D_y`.
+Repivot a light vertex `y`. The ten old-shell vertices outside the three heavy centers form an independent 10-set in the new missing graph, so the new q27 equality shell is forced into one of the two canonical topologies.
+
+For `b in D_y`, define
 
 `m_y(b)=|{y' in Y : b in D_{y'}}|`.
 
-The new missing degree of `b` is `11-m_y(b)`. Equality topology therefore forces multiplicity 2 in a Type-II repivot and multiplicity 3 in a Type-I repivot. Hence the light rows decompose into exact duplicate-row equivalence classes, each of size 2 or 3.
+In the repivoted shell, the missing degree of `b` is `11-m_y(b)`.
+If the new topology is Type II, its allowed high degree 9 forces `m_y(b)=2` for all `b in D_y`.
+If the new topology is Type I, its allowed high degree 8 forces `m_y(b)=3` for all `b in D_y`.
+The isolate structure in either case forces every other row containing `b` to equal `D_y`; hence the light rows partition into exact duplicate-row equivalence classes, each of size 2 or 3.
 
-Because `|Y|=8`, the only partitions into parts of size 2 or 3 are
+Since `|Y|=8`, the only partitions into 2s and 3s are `2+2+2+2` and `2+3+3`. Thus a size-2 duplicate class must exist. Repivoting a row from that class forces a Type-II equality shell, already impossible. Hence Type I is impossible.
 
-- `2+2+2+2`, or
-- `2+3+3`.
+Therefore, conditional only on the two-topology equality classification and universal q27 repivot licensing, no q27 equality shell survives.
 
-So at least one size-2 duplicate class exists. Repivoting a member of that class forces Type II, already impossible. Contradiction.
+## Remaining proof-completeness dependency
 
-Thus both equality families are analytically excluded.
+The current recovered sources do not yet provide a repository-replayable certificate for the statement that the only q27 shell topologies are
 
-## Dependencies that must be explicit in the clean rewrite
+- `K3,8 + 2K1`, and
+- `K3,9 + K1`.
 
-1. Correct shell semantics: `q=z+sum g_a`, `t_a=d_M(a)+g_a`.
-2. Every shell missing edge satisfies `t_a+t_b>=12`.
-3. Every relevant repivot vertex is genuinely degree 13.
-4. Every degree-13 repivot in the regime satisfies the same upper and lower charge bounds, hence exactly `q=27`.
-5. The q=27 equality classification is exactly the two shell types.
+A-version records a finite classification; B-version confirms and analytically resolves the decoration assignments. Until the finite classifier/verifier is recovered or the topology classification is re-proved analytically, the full q27 theorem should be represented as:
 
-Only item 5 is computation-dependent in the A-version. Items 3--4 must be licensed by the proof architecture in which this lemma is used.
+- `COMPUTATION_CERTIFIED` for the two-topology classification, once a replayable certificate is stored;
+- `PROVED` for decoration uniqueness and Type-I/Type-II repivot elimination.
 
-## Status recommendation
+## Provenance
 
-After a line-by-line clean rewrite and dependency check, the Type I/II repivot contradiction can be promoted to `PROVED` as an analytic theorem. The equality classification should remain separately labelled `COMPUTATION_CERTIFIED` until an independently replayable certificate is stored.
+- A-version: q27 equality classification and analytic repivot/duplicate-row contradiction.
+- B-version pp.581-583: analytic decoration uniqueness, tightness of every q27 missing edge, and corrected two-topology statement.
