@@ -25,14 +25,16 @@
 | T61 minimum-degree12 branch | PROVED EMPTY | q20 rotation + R448 floor310. |
 | T61 E397 | PROVED EMPTY | Unique degree14 cannot be adjacent to any degree13 pivot. |
 | T61 general excess-neighbour bound | PROVED | For E=397+s, every degree13 pivot sees at most s total neighbour excess. |
-| T61 q23 shell classification | PROVED | `(q,z,G)=(23,22,1)` forces `(K_{2,11}+centre edge)-one cross edge`, hence alpha(M)>=11. |
+| T61 q23 shell classification | PROVED | `(23,22,1)` forces `(K_{2,11}+centre edge)-one cross edge`, hence alpha(M)>=11. |
 | T61 E398 | PROVED EMPTY | q23 shell contradiction. |
-| T61 q24 cell `(24,22,2)` | PROVED EMPTY | Triangle-free K3,3/divisibility or triangle independent11 contradiction. |
-| T61 q24 cell `(24,23,1)` | PROVED EMPTY | Same shell method plus profitable repivot in triangle equality. |
-| T61 E399 | PROVED EMPTY | Exact q24 cells eliminate all excess partitions. |
-| T61 q25 cells `(25,24,1),(25,23,2),(25,22,3)` | PROVED EMPTY | Uniform triangle/triangle-free theorem with matching number3, König cover and repivot. |
-| T61 E400 | PROVED EMPTY | q23–q25 cells imply low vertices cannot meet any positive-excess vertex. |
+| T61 q24 cell `(24,22,2)` | PROVED EMPTY | Exact shell theorem. |
+| T61 q24 cell `(24,23,1)` | PROVED EMPTY | Exact shell theorem. |
+| T61 E399 | PROVED EMPTY | q24 cells eliminate all excess partitions. |
+| T61 q25 cells `(25,24,1),(25,23,2),(25,22,3)` | PROVED EMPTY | Uniform triangle / triangle-free shell theorem. |
+| T61 E400 | PROVED EMPTY | q23/q24/q25 ladder eliminates every low-high adjacency. |
 | T61 E401..E408 | OPEN | h13 only; next target q26/E401. |
+| T61 q25 extension `(25,21,4)` | OPEN | Must be checked at E401. |
+| T61 q26 cells G=1..4 | OPEN | `(26,25,1),(26,24,2),(26,23,3),(26,22,4)`. |
 | S31 strict descent | PROVED | Only E406/delta13 explicit parent. |
 | S27 closure | CONDITIONAL / SCOPE-LIMITED | Requires exact min-degree11 core premise. |
 | canonical S30 coverage from arbitrary T61 | OPEN | Must not be assumed. |
