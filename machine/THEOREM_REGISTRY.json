@@ -1,0 +1,115 @@
+{
+  "updated_date": "2026-10-22",
+  "status_values": ["PROVED", "COMPUTATION_CERTIFIED", "CONDITIONAL", "OPEN", "RETRACTED"],
+  "theorems": [
+    {
+      "id": "CORE211",
+      "status": "PROVED",
+      "statement": "For every H in R(3,35), e(H) >= 211.",
+      "source": "backend/CORE211.md"
+    },
+    {
+      "id": "Q29_GOOD_REPIVOT",
+      "status": "PROVED",
+      "statement": "If q=29 and the inherited core satisfies delta(H)>=12, then there exists a degree-13 repivot y with q_y>=30.",
+      "scope_note": "Does not require e(H)=211.",
+      "source": "backend/Q28_Q29_REPIVOT.md"
+    },
+    {
+      "id": "BACKEND_E329_E331",
+      "status": "PROVED",
+      "statement": "Legal R(4,49) residual layers E329, E330, and E331 are empty.",
+      "source": "ASSET_LEDGER.md"
+    },
+    {
+      "id": "BACKEND_E332_REDUCTION",
+      "status": "PROVED",
+      "statement": "Any E332 survivor has q=30 and a 211-edge R(3,35) core.",
+      "source": "backend/E332_Q30_211.md"
+    },
+    {
+      "id": "E332_D10_EMPTY",
+      "status": "PROVED",
+      "statement": "No E332 q30+211 survivor contains an undecorated shell vertex of missing degree 10.",
+      "source": "backend/E332_D10_CLOSURE_D3_NORMAL_FORM.md"
+    },
+    {
+      "id": "E332_D3_EMPTY",
+      "status": "PROVED",
+      "statement": "No E332 q30+211 survivor contains an undecorated shell vertex of missing degree 3.",
+      "source": "CANONICAL_STATE.md"
+    },
+    {
+      "id": "E332_EXTREME_DEGREE_REDUCTION",
+      "status": "PROVED",
+      "statement": "In any remaining E332 survivor, every undecorated shell missing degree lies in {0,1,2,11,12}; there are at most two undecorated degree-11/12 vertices and total decoration G is in {4,5,6,7,8}.",
+      "source": "ASSET_LEDGER.md"
+    },
+    {
+      "id": "FRONTEND_DICHOTOMY",
+      "status": "PROVED",
+      "statement": "A hypothetical least-edge K145 counterexample yields either an induced legal R(4,49) residual or the embedded T61 terminal class.",
+      "source": "front_end/FRONTEND_BRIDGE_THEOREM.md"
+    },
+    {
+      "id": "FRONTEND_RECURRENCE_V1",
+      "status": "COMPUTATION_CERTIFIED",
+      "statement": "The contextual outer recurrence has 1752 nodes and 144 stopping comparisons, with two independent integer implementations agreeing.",
+      "source": "certificates/frontend_line_a_v1/"
+    },
+    {
+      "id": "T61_Z0",
+      "status": "PROVED",
+      "statement": "The T61 anchor defect z is zero, so the anchor closed neighbourhood is a genuine K12.",
+      "source": "front_end/T61_NEW_LEMMAS.md"
+    },
+    {
+      "id": "R448_FLOOR310",
+      "status": "PROVED",
+      "statement": "Every C in R(4,48) satisfies e(C)>=310.",
+      "source": "front_end/R448_FLOOR310.md"
+    },
+    {
+      "id": "T61_H12_EMPTY",
+      "status": "PROVED",
+      "statement": "No T61 residual has minimum degree 12.",
+      "source": "front_end/T61_H12_CLOSURE.md"
+    },
+    {
+      "id": "T61_E397_EMPTY",
+      "status": "PROVED",
+      "statement": "The T61 h13 edge layer E397 is empty.",
+      "source": "front_end/T61_H13_LOW_LAYER.md"
+    },
+    {
+      "id": "T61_E398_EMPTY",
+      "status": "PROVED",
+      "statement": "The T61 h13 edge layer E398 is empty via the exact q23 shell classification.",
+      "source": "front_end/E398_Q23_SHELL.md"
+    },
+    {
+      "id": "T61_E399_EMPTY",
+      "status": "PROVED",
+      "statement": "The T61 h13 edge layer E399 is empty via exact q24 shell cells.",
+      "source": "front_end/E399_Q24_SHELL.md"
+    },
+    {
+      "id": "T61_E400_EMPTY",
+      "status": "PROVED",
+      "statement": "The T61 h13 edge layer E400 is empty via a uniform q25 shell theorem.",
+      "source": "front_end/E400_Q25_SHELL.md"
+    },
+    {
+      "id": "S31_STRICT_DESCENT",
+      "status": "PROVED",
+      "statement": "Under the explicit 61-point E406, delta>=13 parent contract and inherited density assumptions, some degree-13 pivot has q<=30.",
+      "scope_note": "Does not by itself construct a new K12 block and is not valid outside its parent contract.",
+      "source": "front_end/S30_S31.md"
+    },
+    {
+      "id": "FULL_EG617_R12",
+      "status": "OPEN",
+      "statement": "The full r=12 case of Erdos Problem 617 is not yet certified."
+    }
+  ]
+}
