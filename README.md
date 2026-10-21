@@ -10,7 +10,7 @@
 - **Line B — Astra B:** eliminate `333 <= e(F) <= 340` for legal `R(4,49)` residuals.
 - **Line C — central line:** eliminate `E332`, reduced to `q=30` over a 211-edge 35-core.
 
-## Front-end canonical state
+## Front-end master reduction
 
 **PROVED dichotomy:**
 
@@ -18,32 +18,25 @@
 
 The V1 contextual recurrence is **COMPUTATION_CERTIFIED** with 1752 nodes and 144 outer comparisons, replayed by two independent integer implementations.
 
-Inside T61 the current analytic state is:
+Inside T61 we have now proved:
 
-- `alpha(R)=5` under contextual no extraction;
-- anchor defect `z=0`, so the anchor closed neighbourhood is a genuine target K12;
-- seven genuine K12 blocks exist in total;
-- exact outer ledger `E+sigma+g+x6+y6=408`;
-- generic `R(4,48)` floor strengthened to `e>=310`;
+- `alpha(R)=5` exactly under contextual no-extraction;
+- anchor defect `z=0`, hence the anchor closed neighbourhood is a genuine K12;
+- simplified outer ledger `E+sigma+g+x6+y6=408`;
+- generic `R(4,48)` floor `>=310`;
 - the entire T61 minimum-degree12 branch is empty;
-- E397, E398 and E399 are empty;
-- therefore the surviving front-end window is
+- E397, E398, E399 and E400 in the h13 branch are empty.
 
-`T61: delta(R)=13, 400<=E<=408`.
+Thus the current front-end terminal is
 
-The next exact layer is E400. Writing `E=397+s`, every degree13 pivot sees at most `s` units of neighbour excess. At E400 (`s=3`), any pivot seeing total excess3 falls into the exact q25 cell
+`T61: delta=13, 401<=E<=408`.
 
-`q=25, z=22, e(C47)=284`.
+The low-edge shell ladder is now:
 
-The current Line A target is a q25 shell theorem for decoration partitions `3`, `2+1`, and `1+1+1`.
-
-Relevant proofs:
-
-- `front_end/R448_FLOOR310.md`
-- `front_end/T61_H12_CLOSURE.md`
-- `front_end/E398_Q23_SHELL.md`
-- `front_end/E399_Q24_SHELL.md`
-- `front_end/T61_H13_LOW_LAYER.md`
+- q23 closes E398;
+- q24 closes E399;
+- uniform q25 closes E400;
+- q26 / E401 is the next target, with cells `(26,25,1),(26,24,2),(26,23,3),(26,22,4)` and the q25-G4 extension `(25,21,4)`.
 
 ## Backend assets
 
@@ -57,10 +50,10 @@ Relevant proofs:
 
 ## Main blockers
 
-1. **Line A:** close T61 E400–E408, preferably via a parameterized q=22+r shell-stability theorem.
+1. **Line A:** close T61 h13, currently E401–E408.
 2. **Line C:** eliminate E332 q30+211.
 3. **Line B:** eliminate E333–E340 with a uniform stability theorem.
 
-Historical CLOSED/UNSAT labels are never accepted without exact assumptions and proof provenance.
+Historical `CLOSED`/`UNSAT` labels are never accepted without exact assumptions and proof provenance.
 
 Start with `RESEARCH_INDEX.md`, then `CANONICAL_STATE.md`, `PROOF_DAG.md`, `ASSET_LEDGER.md`, and `OPEN_FRONTIERS.md`.
