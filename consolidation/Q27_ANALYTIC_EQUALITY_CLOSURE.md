@@ -4,9 +4,9 @@ Status split:
 
 - `PROVED_ANALYTIC`: decoration uniqueness for both q27 equality topologies.
 - `PROVED_ANALYTIC`: Type-I / Type-II repivot contradictions.
-- `OPEN_CERTIFICATE_DEPENDENCY`: replayable proof/certificate that the only q27 shell topologies are exactly the two listed below.
+- `RECOVERED_ANALYTIC_CLASSIFICATION_WITH_DEPENDENCIES`: E-version gives an analytic route from q=27 to the two equality topologies, conditional on inherited shell inputs including `z=e(M)>=22` and two small boundary sublemmas.
 
-This file intentionally separates analytic mathematics from the finite-topology classification dependency.
+This file intentionally separates analytic mathematics from inherited lower-floor / boundary dependencies.
 
 ## Setup
 
@@ -24,12 +24,37 @@ Every missing-shell edge `uv` satisfies
 
 `t_u+t_v >= 12`.
 
-Assume `q=27` and that the finite equality classification has reduced `M` to one of:
+Assume `q=27` and that the inherited shell package licenses the lower floor `z=e(M)>=22`, the standard clique/triangle charge inequalities, and the q27 repivot regime.
+
+## Analytic topology reduction recovered from E-version
+
+The E-version supplies most of a direct classification proof.
+
+### K4 branch
+
+A missing `K4` has shell charge at least 35. Splitting the missing edges into the K4, its attachments, and outside-outside edges gives `q>=29`, so q=27 is impossible.
+
+### Triangle but no K4
+
+For a missing triangle `T`, write `e0` for outside-outside missing edges and `e1` for triangle-to-outside missing edges. Triangle charge plus the outside missing-edge inequalities yield q>=28 for the intermediate attachment range and q>=29 in the dense outside range. The historical proof also eliminates the `e0=0` boundary by a finite attachment check. This last boundary should be rewritten or replayed before the classification is promoted to standalone unconditional PROVED.
+
+### Triangle-free branch
+
+The E-version proves:
+
+- matching number <=2 is incompatible with the inherited independence/edge-floor constraints;
+- four disjoint missing edges are impossible because their 8 endpoints have total weight at least 48, forcing at least `48-q=21` induced missing edges, contradicting Mantel's 16-edge bound on an 8-vertex triangle-free graph;
+- hence the matching number is exactly 3;
+- in the bipartite case, Konig gives a 3-vertex cover, and the cover/matching-partner degree ledger plus three tight matching edges forces equality.
+
+The only equality topologies are then
 
 1. Type I: `K3,8 + 2K1`;
 2. Type II: `K3,9 + K1`.
 
-Assume also that every degree-13 repivot used below remains in the same q27 equality regime.
+The non-bipartite triangle-free `nu=3` subcase is stated in the E-version to collapse to a sparse odd-cycle family; this deserves an explicit clean rewrite in the final proof corpus.
+
+Thus the old `OPEN_CERTIFICATE_DEPENDENCY` has been narrowed: the topology reduction itself is substantially analytic, while the remaining dependencies are the inherited `z>=22` floor and two small boundary sublemmas.
 
 ## Lemma 1 — Type-I decoration is unique
 
@@ -103,15 +128,12 @@ Hence Type I cannot occur.
 
 ## Conclusion
 
-Conditional on the finite two-topology q27 classification and the universal q27 repivot licensing condition,
+Conditional on the inherited q27 shell floor/boundary inputs and the universal q27 repivot licensing condition, q=27 has no surviving equality shell.
 
-`q=27`
-
-has no surviving equality shell.
-
-The analytic part is now source-recovered and self-contained at the level above. The remaining consolidation task is to recover or rebuild a replayable certificate for the two-topology classification itself.
+The proof corpus is now substantially analytic. The remaining consolidation tasks are to recover or reprove the `z>=22` floor, explicitly close the non-bipartite triangle-free matching-3 subcase, replay/rewrite the triangle `e0=0` boundary, and verify the repivot licensing condition.
 
 ## Historical source provenance
 
+- E-version pp.181ff: analytic q27 topology reduction under inherited shell inputs.
 - B-version pp.581-583: analytic decoration uniqueness and tightness of all q27 missing edges.
 - A-version: Type-I/Type-II repivot elimination via duplicate-row geometry.
