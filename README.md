@@ -8,9 +8,9 @@
 
 The project is split into three independent research lines:
 
-- **Line A — front-end bridge:** derive a legitimate 49-vertex residual from a hypothetical original `K_145` counterexample.
-- **Line B — high-layer backend:** eliminate `333 <= e(F) <= 340` for `F in R(4,49)`.
-- **Line C — active central line:** eliminate the current lowest surviving backend layer `E332`, reduced to `q = 30` over a 211-edge 35-core.
+- **Line A — front-end bridge (Astra A):** derive a legitimate 49-vertex residual from a hypothetical original `K_145` counterexample.
+- **Line B — high-layer backend (Astra B):** eliminate `333 <= e(F) <= 340` for `F in R(4,49)`.
+- **Line C — central line:** eliminate the current lowest surviving backend layer `E332`, reduced to `q = 30` over a 211-edge 35-core.
 
 Current conservative completion estimate for a complete, auditable proof: **~63%**.
 
@@ -19,7 +19,7 @@ Current conservative completion estimate for a complete, auditable proof: **~63%
 - Exact degree-13 pivot bookkeeping and shell charge identities.
 - `CORE211`: `H in R(3,35) => e(H) >= 211`.
 - Analytic `q=28` profitable-repivot mechanism.
-- Analytic `q=29` good-repivot theorem.
+- Analytic **generic q29 good-repivot theorem**: under the q29 shell contract and inherited `delta(H)>=12`, there exists a new degree-13 pivot `y` with `q_y>=30`. This existence theorem does **not** require `e(H)=211`; CORE211 enters separately when converting it into the E331 contradiction.
 - Backend layers through `E331` closed modulo the audited uniform-`q27` theorem; `E332` reduces to `q=30, e(H)=211`.
 - For `e(H)=211`, the only degree multisets are `14,12^34` or `13^2,12^33`.
 - S31 strict descent under its explicit 61-point parent contract.
@@ -32,4 +32,4 @@ Current conservative completion estimate for a complete, auditable proof: **~63%
 2. **Backend remains OPEN:** `E332` and higher layers `E333...E340` are not fully eliminated.
 3. Historical `CLOSED` labels are never accepted without reconstruction of hypotheses and proof provenance.
 
-See `CANONICAL_STATE.md`, `PROOF_DAG.md`, `ASSET_LEDGER.md`, and `STATUS_POLICY.md`.
+See `CANONICAL_STATE.md`, `PROOF_DAG.md`, `ASSET_LEDGER.md`, `OPEN_FRONTIERS.md`, `TEAM_SPLIT.md`, and `STATUS_POLICY.md`.
