@@ -1,92 +1,93 @@
 # T61 minimum-degree-13 low-edge layers
 
-Status: mixed; the E397 layer is `PROVED` empty, higher layers remain `OPEN`.
+Status: E397 and E398 are `PROVED` empty; E399..E408 remain `OPEN`.
 
 ## Setup
 
 After closure of the h12 branch, every T61 survivor has
 
-`delta(R)=13`, `397<=E<=408`.
+`delta(R)=13`.
 
-For any degree-13 pivot `p`, with 13-shell and 47-core `C`,
+For any degree-13 pivot p with 13-shell and 47-core C,
 
 `E = 91 + q_p + e(C)`.
 
 The shell floor is `q_p>=22`; the audited 47-core floor is `e(C)>=284`.
 
-Let the total degree excess above 13 be
+Let
 
-`Xi(E)=2E-61*13=2E-793`.
+`Xi(E)=2E-61*13=2E-793`
 
-For a degree-13 pivot, shell decoration sum is
+be total degree excess above13. For a degree13 pivot let
 
 `G_p=sum_{a in N(p)}(d_R(a)-13)`.
 
-Because the 14-point cap forces at least 22 missing shell edges,
+The 14-point cap gives at least22 missing shell edges, so `q_p=z_p+G_p` with `z_p>=22`. Therefore, writing `E=397+s`,
 
-`q_p=z_p+G_p`, `z_p>=22`.
+`G_p<=s`.
 
-Thus
+Thus every degree13 vertex sees at most s units of neighbour excess.
 
-`G_p <= q_p-22 <= E-397`.
+## E397 — CLOSED
 
-This gives a useful general local excess bound:
+Here `Xi=1`, so the degree multiset is `14,13^60`.
 
-> Every degree-13 vertex sees total neighbour excess at most `E-397`.
+Every degree13 pivot has q22 and a 284-edge core; hence z22 and G0. Thus no degree13 vertex can be adjacent to the unique degree14 vertex, impossible because that degree14 vertex needs14 neighbours.
 
-## E397 closure — PROVED
+Therefore E397 is empty.
 
-Assume `E=397`. Then
+## E398 — CLOSED
 
-`Xi=1`,
-
-so the degree multiset is necessarily
-
-`14,13^60`.
-
-For every degree-13 pivot `p`,
-
-`397 = 91 + q_p + e(C_p)`
-
-with `q_p>=22`, `e(C_p)>=284`. Therefore equality holds:
-
-`q_p=22`, `e(C_p)=284`.
-
-Since `z_p>=22` and `q_p=z_p+G_p`, we also have
-
-`z_p=22`, `G_p=0`.
-
-Hence every neighbour of every degree-13 vertex has degree exactly 13.
-
-But the unique degree-14 vertex must have 14 neighbours, all among the other 60 vertices, which all have degree 13. Any such incident edge would make that degree-14 vertex a positive-excess neighbour of a degree-13 pivot, contradicting `G_p=0`.
-
-Therefore no E397 T61 residual exists.
-
-So the h13 edge window improves to
-
-`398<=E<=408`.
-
-## General excess-neighbour corollary — PROVED
-
-Write `E=397+s`, `s>=0`. Then every degree-13 vertex `p` satisfies
-
-`sum_{a in N(p)}(d_R(a)-13) <= s`.
-
-In particular, a vertex of excess strictly larger than `s` cannot be adjacent to any degree-13 vertex.
-
-This immediately implies for E398 (`s=1`) that every positive-excess vertex must have excess exactly 1: a vertex of excess at least 2 would have to take all of its neighbours among positive-excess vertices, but the total global excess is only 3 and hence there are at most two other positive-excess vertices, far fewer than its degree at least 15.
-
-Therefore any E398 survivor has exact degree multiset
+Here `Xi=3`. The neighbour-excess bound with s=1 first forces every positive-excess vertex to have excess1, hence degree multiset
 
 `14^3,13^58`.
 
-This degree-sequence reduction is `PROVED`; elimination of E398 remains `OPEN`.
+Any degree14 vertex has at least12 degree13 neighbours. Choose such a low neighbour p. Then the pivot data are forced:
 
-For an E398 degree-13 pivot:
+`q=23`, `z=22`, `G=1`, `e(C47)=284`.
 
-- if it has no degree-14 neighbour, then `G_p=0` and `q_p` is 22 or 23;
-- if it has one degree-14 neighbour, then `G_p=1`, so `q_p>=23`; because `q_p<=23`, necessarily `q_p=23`, `z_p=22`, and the 47-core has exactly 284 edges.
+The exact q23 shell classification is proved in `E398_Q23_SHELL.md`: the shell missing graph M is forced to
 
-Thus every cross edge from a degree-14 vertex to a degree-13 vertex places the low endpoint into an exact `(q,z,e(C))=(23,22,284)` local cell.
+`(K_{2,11}+centre edge)-one cross edge`,
 
-This is the active next target for the h13 line.
+with degree multiset `12,11,2^10,1`.
+
+Its 11 non-centre vertices are independent in M, so `alpha(M)>=11`. But because the pivot p is adjacent to every shell vertex and `omega(R)<=11`, the shell complement must satisfy `alpha(M)<=10`; otherwise an independent11-set in M is a target K11 inside the shell and p completes a forbidden target K12.
+
+Contradiction. Therefore E398 is empty.
+
+Hence the current T61 window is
+
+`399<=E<=408`, `delta=13`.
+
+## General local excess bound — PROVED
+
+For `E=397+s`, every degree13 pivot satisfies
+
+`G_p<=s`.
+
+Consequently a vertex of excess greater than s cannot be adjacent to any degree13 vertex. This is the main tool for E399+.
+
+## E399 first reduction — PROVED
+
+For E399, `s=2` and total excess is
+
+`Xi=5`.
+
+No vertex can have excess>=3: such a vertex cannot be adjacent to any degree13 vertex, while the entire positive-excess set has at most five vertices, far too few to supply degree at least16.
+
+Thus positive excesses are only 1 or2. The only possible global degree-excess partitions are
+
+- `2+2+1`  -> degree multiset `15^2,14,13^58`;
+- `2+1+1+1` -> `15,14^3,13^57`;
+- `1+1+1+1+1` -> `14^5,13^56`.
+
+For a degree13 pivot adjacent to a degree15 vertex, its neighbour excess already equals2, so
+
+`G=2`, `q=24`, `z=22`, `e(C47)=284`.
+
+This exact q24 / single-decoration-2 cell is the preferred next target. If it is impossible, the first two partitions disappear and E399 reduces to the five-degree14 case.
+
+For a degree13 pivot adjacent to two degree14 vertices, the same exact cell occurs with `G=2` distributed as `1+1`.
+
+The next active task is therefore an exact q24 shell classification with z22 and total decoration2, split into the single-g2 and double-g1 channels.
