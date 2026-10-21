@@ -1,0 +1,52 @@
+{
+  "updated_date": "2026-10-22",
+  "repository_state": "STATE_COMPLETE_PROOF_BODY_INCOMPLETE",
+  "state_complete": true,
+  "self_contained_proof_complete": false,
+  "complete_recent_assets": [
+    "front-end dichotomy and recurrence certificate",
+    "R(4,48) floor 310",
+    "T61 h12 closure",
+    "T61 E397-E400 closures",
+    "E332 q30+211 reduction",
+    "E332 d10 closure",
+    "E332 d3 closure",
+    "E332 extreme-shell reduction"
+  ],
+  "proof_body_gaps": [
+    {
+      "id": "CORE211_FULL_PROOF",
+      "severity": "critical",
+      "status": "missing_full_body",
+      "current_source": "backend/CORE211.md"
+    },
+    {
+      "id": "Q29_GOOD_REPIVOT_FULL_CASE_ANALYSIS",
+      "severity": "critical",
+      "status": "missing_full_body",
+      "current_source": "backend/Q28_Q29_REPIVOT.md"
+    },
+    {
+      "id": "UNIFORM_Q27_FULL_PROOF",
+      "severity": "critical",
+      "status": "missing_standalone_proof"
+    },
+    {
+      "id": "E329_E331_STANDALONE_CHAIN",
+      "severity": "major",
+      "status": "missing_standalone_proof"
+    },
+    {
+      "id": "LOWER_ORDER_FRONTEND_INPUTS",
+      "severity": "major",
+      "status": "partly_inherited_audited_inputs"
+    },
+    {
+      "id": "EXTERNAL_THEOREM_BIBLIOGRAPHY",
+      "severity": "major",
+      "status": "incomplete"
+    }
+  ],
+  "raw_source_bundles_mirrored": false,
+  "note": "Current frontier/status is synchronized. A reader can understand what is proved/open, but cannot yet verify every accepted theorem from GitHub alone."
+}
