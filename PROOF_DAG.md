@@ -23,19 +23,41 @@ contextual induced-subgraph recurrence under temporary
 all outer stops excluded except one
         |
         v
-T61: (d,j,a,n)=(11,6,5,61)
+T61: d=11, six K12 in U, residual order61
      397 <= E <= 408
      delta in {12,13}
-     alpha<=5, omega<=11, inherited caps
         |
-        +--> extract legitimate induced R(4,49)  [OPEN]
+        +--> alpha(R)=5 exactly [PROVED]
         |
-        +--> prove T61 empty                      [OPEN]
+        +--> anchor defect z=0 [PROVED]
+        |       |
+        |       v
+        |    N[v] is a genuine K12
+        |    seven genuine K12 blocks total
+        |
+        +--> h12 branch
+        |       |
+        |       +--> R(4,48) floor309 [PROVED]
+        |       +--> E>=407 [PROVED]
+        |       +--> E407 => outer (q,C48)=(20,309)
+        |       +--> E408 => (20,310) or (21,309)
+        |       |
+        |       +--> C48=309 => inner q20 + H35=211
+        |               |
+        |               +--> shell M = K_{2,r}+isolates, 6<=r<=10
+        |               +--> two 10-rows overlap >=7
+        |               +--> finish contradiction [OPEN]
+        |
+        +--> h13 branch, E397..408 [OPEN]
+                |
+                +--> low-edge degree-excess / multi-pivot attack [ACTIVE]
+                +--> if E406 and delta13, S31 q<=30 [PROVED interface]
+                +--> T61->S30 coverage [OPEN]
 ```
 
-This yields the proved dichotomy:
+Thus the proved front-end dichotomy remains:
 
-`K145 counterexample -> legitimate induced R(4,49) OR embedded T61`.
+`K145 counterexample -> legitimate induced R(4,49) OR tightened embedded T61`.
 
 ### Genuine-block side assets
 
@@ -50,29 +72,19 @@ equality rotation saturates all 12 cross slots
         +--> 7 genuine K12 blocks -> alpha61<=5 [PROVED]
 ```
 
-Do not reverse these implications. The existence of seven/eight genuine blocks is not automatic from the block lemmas.
+The new `z=0` theorem creates seven genuine blocks total but does NOT reverse the eight-block implication and does NOT itself produce a 49-point residual.
 
-### T61 downstream filters
-
-```text
-T61
- |
- +--> if E=406 and delta=13: S31 gives degree-13 pivot q<=30 [PROVED conditional interface]
- |
- +--> q27 core closure S27 only with its extra min-degree11 premise [scope-limited]
- |
- +--> canonical S30 macro contract [OPEN coverage]
- |
- +--> anchored six blocks -> seventh genuine unanchored block [OPEN; z=0 would suffice]
-```
-
-For the specified row-labelled S30 `(5,7,8,8)` branch:
+### S30 scope
 
 ```text
-k2: uv,uw,vw -> analytic contradiction [PROVED]
-k0/k1: new saturation lemmas remove many scalar cases
-remaining: 14 scalar cases for k0, 13 for k1 [OPEN]
+specified row-labelled (5,7,8,8)
+   |
+   +--> k2 singleton triangle closed [PROVED]
+   +--> k0/k1 saturation lemmas
+   +--> 14 + 13 scalar cases remain [OPEN]
 ```
+
+No theorem currently maps all T61 states into this macro contract.
 
 ## Backend DAG
 
@@ -104,7 +116,7 @@ q29 good-repivot existence theorem
     does NOT require e(H)=211
 
 E331 corollary
-    applies CORE211 separately to force q_y<=29
+    applies CORE211 separately
 ```
 
 Then:
@@ -122,12 +134,12 @@ High layers:
 E333 ... E340
    |
    v
-uniform repivot / core-excess stability problem [ACTIVE LINE B]
+uniform repivot / core-excess stability [ACTIVE LINE B]
 ```
 
 ## Final certification condition
 
-EG617 `r=12` may be declared proved only after BOTH are complete:
+EG617 r=12 may be declared proved only after BOTH are complete:
 
-1. embedded T61 is excluded or always yields a legitimate induced `R(4,49)`;
-2. every legitimate `R(4,49)` backend layer is eliminated.
+1. tightened embedded T61 is excluded or always yields a legitimate induced R(4,49);
+2. every legitimate R(4,49) backend layer is eliminated.
