@@ -4,56 +4,60 @@
 >
 > This repository tracks the clean-room reconstruction of the `r = 12` case of Erdős Problem 617. The full theorem has **not** been proved yet.
 
-## Current canonical state (2026-10-21)
+## Current three-line program
 
-The project is split into three independent research lines:
+- **Line A — Astra A:** eliminate the unique embedded T61 obstruction or extract a legal induced `R(4,49)`.
+- **Line B — Astra B:** eliminate `333 <= e(F) <= 340` for legal `R(4,49)` residuals.
+- **Line C — central line:** eliminate `E332`, reduced to `q=30` over a 211-edge 35-core.
 
-- **Line A — front-end / Astra A:** exclude the unique embedded T61 obstruction or extract a legitimate induced `R(4,49)` from it.
-- **Line B — high-layer backend / Astra B:** eliminate `333 <= e(F) <= 340` for legitimate `F in R(4,49)`.
-- **Line C — central line:** eliminate the current lowest surviving backend layer `E332`, reduced to `q=30` over a 211-edge 35-core.
+## Front-end breakthrough and current T61
 
-## Front-end breakthrough
-
-The broad `K145 -> R(4,49)` bridge has been reduced to a single outer stop.
+The broad bridge is already reduced to one outer stop.
 
 **PROVED dichotomy:**
 
 `least-edge colour G -> legitimate induced R(4,49) OR embedded T61`.
 
-T61 is exactly the stop
+The V1 contextual recurrence is **COMPUTATION_CERTIFIED** with 1752 nodes and 144 outer comparisons, replayed by two independent integer implementations.
 
-`(d,j,a,n)=(11,6,5,61)`
+T61 starts from the exact stop `(d,j,a,n)=(11,6,5,61)` with `397<=E<=408` and `delta in {12,13}`.
 
-with six genuine K12 blocks, `397<=E<=408`, `delta in {12,13}`, `alpha<=5`, `omega<=11`, inherited density caps, and the exact ledger
+New analytic tightening now gives:
 
-`E+sigma+z+g+x_6+y_6=408`.
+- `alpha(R)=5` exactly under contextual no extraction;
+- anchor defect `z=0`;
+- the anchor closed neighbourhood is a genuine target K12, so seven genuine K12 blocks exist in total;
+- simplified outer ledger `E+sigma+g+x6+y6=408`;
+- modern generic `R(4,48)` edge floor `>=309`;
+- the T61 h12 branch starts at E407;
+- a 309-edge 48-core has exact inner `q=20, H35=211` and missing shell `K_{2,r}+isolates`, `6<=r<=10`;
+- its two 10-vertex centre rows overlap in at least seven vertices of the 211-core.
 
-The contextual recurrence is **COMPUTATION_CERTIFIED**: 1752 nodes and 144 outer comparisons were replayed by two independent integer implementations. The uploaded package manifest was independently checked with 73/73 files matching.
+These results are in `front_end/T61_NEW_LEMMAS.md`.
 
 ## Backend assets
 
 - Exact degree-13 pivot bookkeeping and shell charge identities.
 - `CORE211`: `H in R(3,35) => e(H)>=211`.
-- Analytic `q=28` profitable-repivot mechanism.
-- Analytic **generic q29 good-repivot lemma**: under q29 and inherited `delta(H)>=12`, there is a new degree-13 pivot `y` with `q_y>=30`. This does **not** require `e(H)=211`.
-- Backend layers through `E331` closed modulo the audited uniform-q27 theorem.
-- `E332` reduces to `q=30, e(H)=211`.
-- Equality 211-core degree multisets are `14,12^34` or `13^2,12^33`.
+- q28 profitable repivot.
+- Generic q29 good-repivot: q29 + inherited `delta(H)>=12` gives a degree-13 pivot with `q_y>=30`; this does **not** require `e(H)=211`.
+- E329, E330, E331 closed in the reconstructed DAG.
+- E332 reduces to `(q,e(H))=(30,211)`.
+- Equality CORE211 degree multisets: `14,12^34` or `13^2,12^33`.
 
-## Front-end local assets
+## Local front-end assets
 
-- Matching-transversal rigidity and equality rotation close the seven/eight-block high-cross branches.
-- Eight genuine K12 blocks produce a legitimate `R(4,49)`.
-- S31 strict descent is valid only under its explicit 61-point, 406-edge, minimum-degree13 parent contract.
-- T61 is not automatically in that parent class.
-- For the specified S30 `(5,7,8,8)` row-labelled branch, the singleton-triangle case is closed; new saturation lemmas leave 14 k0 and 13 k1 scalar necessary cases. These are not graph survivors or a complete profile classification.
+- Matching-transversal rigidity and equality rotation.
+- Eight genuine K12 blocks imply a legal R449.
+- S31 strict descent only under its explicit E406/delta13 parent contract.
+- S30 `(5,7,8,8)` singleton-triangle labelled branch closed; additional scalar saturation lemmas leave 14 k0 and 13 k1 necessary scalar cases.
 
 ## Main blockers
 
-1. **Line A:** exclude embedded T61 or extract a legitimate induced `R(4,49)`.
-2. **Line C:** eliminate `E332:q30+211`.
-3. **Line B:** eliminate `E333...E340`, preferably with a uniform stability theorem.
+1. **Line A:** finish tightened T61, preferably h12 first and then h13 low-excess layers.
+2. **Line C:** eliminate E332 q30+211.
+3. **Line B:** eliminate E333–E340 with a uniform stability theorem.
 
-Historical `CLOSED` labels are never accepted without reconstruction of hypotheses and proof provenance.
+Historical CLOSED/UNSAT labels are never accepted without exact assumptions and proof provenance.
 
-See `CANONICAL_STATE.md`, `PROOF_DAG.md`, `ASSET_LEDGER.md`, `OPEN_FRONTIERS.md`, `TEAM_SPLIT.md`, `STATUS_POLICY.md`, `front_end/FRONTEND_BRIDGE_THEOREM.md`, and `certificates/frontend_line_a_v1/`.
+Start with `RESEARCH_INDEX.md`, then `CANONICAL_STATE.md`, `PROOF_DAG.md`, `ASSET_LEDGER.md`, and `OPEN_FRONTIERS.md`.
