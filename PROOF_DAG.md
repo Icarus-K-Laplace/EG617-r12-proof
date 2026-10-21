@@ -4,89 +4,50 @@
 
 `Original EG617 r=12 counterexample -> contradiction`.
 
-## Front-end DAG — current state
+## Front-end DAG
 
 ```text
 Hypothetical balanced K145 / least-edge colour G
         |
         v
-minimum-degree anchor + maximal genuine-K12 packing
-        |
-        v
-contextual recurrence under temporary
-"this fixed G has no induced R(4,49)" hypothesis
+contextual recurrence under temporary no-R(4,49) extraction
         |
         v
 1752-node / 144-stop certificate
         |
         v
-T61 unique stop: d=11, six genuine K12 blocks, 61 residual vertices
+T61 unique stop
         |
-        +--> z=0: anchor N[v] is a genuine K12 [PROVED]
+        +--> z=0, alpha(R)=5
         |
-        +--> alpha(R)=5 [PROVED]
+        +--> delta=12 branch [CLOSED via R448>=310 + q20 rotation]
         |
-        +--> delta(R)=12 branch [CLOSED]
-        |       |
-        |       +--> generic R(4,48) floor 310 [PROVED]
-        |       +--> q20 leaf-rotation contradiction [PROVED]
-        |
-        +--> delta(R)=13
+        +--> delta=13
                 |
-                +--> E397 [CLOSED: q22 / zero-decoration support contradiction]
-                |
-                +--> E398 [CLOSED: exact q23 shell]
-                |
-                +--> E399 [CLOSED: exact q24 cells]
-                |
-                +--> E400 [CLOSED: uniform q25 shell theorem]
-                |
+                +--> E397 [CLOSED]
+                +--> E398 [CLOSED: q23]
+                +--> E399 [CLOSED: q24]
+                +--> E400 [CLOSED: q25]
                 +--> E401..E408 [ACTIVE LINE A]
                         |
-                        +--> E401: s=4, total excess9
-                        +--> q25 extension (21,4) [OPEN]
-                        +--> q26 cells G=1..4 [OPEN]
+                        +--> q25 (21,4) extension [OPEN]
+                        +--> q26 G=1..4 cells [OPEN]
+                        +--> parameterized q=22+r stability [TARGET]
 ```
 
-Therefore the front-end residual statement is now
+Current front-end terminal:
 
 `T61 survivor => delta=13 and 401<=E<=408`.
 
-The master dichotomy remains
-
-`K145 counterexample -> induced R(4,49) OR T61`.
-
-## Front-end reusable ladder
-
-```text
-matching-transversal rigidity
-        |
-        +--> seven/eight genuine-block independence bounds
-        +--> anchor defect z=0
-
-q20 equality classification
-        |
-        +--> R(4,48) floor 310
-        +--> T61 h12 closure
-
-E=397+s, degree13 pivot
-        |
-        +--> neighbour degree-excess <= s
-        +--> q23 shell theorem -> E398 closed
-        +--> q24 shell theorem -> E399 closed
-        +--> q25 shell theorem -> E400 closed
-        +--> q26 / parameterized q=22+r stability [ACTIVE]
-```
-
 ## Backend DAG
 
-For every legitimate `F in R(4,49)`:
+For every legal `F in R(4,49)`:
 
 ```text
-degree-13 pivot
+degree13 pivot
    |
    +--> e(F)=91+q+e(H)
-   +--> CORE211: e(H)>=211
+   +--> CORE211
    +--> q28 profitable repivot
    +--> q29 generic good-repivot
    +--> uniform q27 contradiction
@@ -95,7 +56,37 @@ degree-13 pivot
 E329,E330,E331 excluded
    |
    v
-E332 survivor => q30 + 211-core [ACTIVE LINE C]
+E332 survivor => q30 + 211-core
+   |
+   +--> undecorated d=4..9 [PROFITABLE -> CLOSED]
+   |
+   +--> d10 equality
+   |       |
+   |       +--> pure K3,10
+   |       +--> K10/K3 row geometry
+   |       +--> overlap/coverage contradiction
+   |       v
+   |     [CLOSED]
+   |
+   +--> d3 equality
+   |       |
+   |       +--> Type A/B only
+   |       +--> row classes 3+3+3 or 3+3+2
+   |       +--> four simultaneous pivot views
+   |       +--> 156 required vs 120 available incidences
+   |       v
+   |     [CLOSED]
+   |
+   v
+extreme-degree q30 shell [ACTIVE LINE C]
+   |
+   +--> every undecorated degree in {0,1,2,11,12}
+   +--> at most two high regular vertices
+   +--> G>=4
+   +--> G=4 => exact (h,k,l)=(2,4,7)
+   |
+   v
+eliminate G=4..8 [OPEN]
 ```
 
 High backend:
@@ -106,5 +97,5 @@ High backend:
 
 EG617 r=12 may be declared proved only after BOTH:
 
-1. the remaining T61 h13 window E401..E408 is excluded or always yields an induced R(4,49);
-2. every legitimate R(4,49) backend layer is eliminated.
+1. the remaining T61 h13 window E401..E408 is excluded or always yields an induced legal R(4,49);
+2. E332 and E333..E340 are eliminated for every legal R(4,49).
