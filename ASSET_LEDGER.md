@@ -9,11 +9,12 @@
 | CORE211: `H in R(3,35) => e(H)>=211` | PROVED | Clean reconstruction; old generic shortcut not needed. |
 | 211-core degree multisets | PROVED | Only `14,12^34` or `13^2,12^33`. |
 | q28 profitable-repivot mechanism | PROVED | Analytic. |
-| q29 good-repivot theorem | PROVED | Analytic three-case proof. |
+| q29 good-repivot theorem | PROVED | `q=29` plus inherited `delta(H)>=12` forces a degree-13 repivot `y` with `q_y>=30`; **does not require `e(H)=211`**. |
+| E331 q29 contradiction | PROVED | Uses the generic q29 theorem plus CORE211 separately to bound every degree-13 pivot by `q_y<=29`. |
 | uniform q27 contradiction | PROVED / AUDIT-DEPENDENT | Accepted in current DAG, but final manuscript should preserve full reconstructed Type-I/II proof rather than a legacy CLOSED label. |
 | E329 closure | PROVED | Uses CORE211 + q28/q27 machinery. |
 | E330 closure | PROVED | Uses CORE211 + q28/q27 machinery. |
-| E331 closure | PROVED | Uses q28, q29, q27. |
+| E331 closure | PROVED | Uses q28, generic q29 good-repivot, q27, and CORE211. |
 | E332 reduction to `(q,e(H))=(30,211)` | PROVED | Active equality frontier follows. |
 | q30 `d in {4,...,9}` automatic profitable range | PROVED | From repivot lower bound. |
 | q30 `d=3,10` zero-defect equality forcing | PROVED | Equality in every slack term is necessary. |
