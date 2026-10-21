@@ -1,0 +1,50 @@
+{
+  "updated_date": "2026-10-22",
+  "frontiers": [
+    {
+      "id": "LINE_A_T61_H13",
+      "status": "OPEN",
+      "object": "T61 residual",
+      "constraints": {
+        "order": 61,
+        "alpha": 5,
+        "omega_upper": 11,
+        "minimum_degree": 13,
+        "edge_window": [401, 408]
+      },
+      "next_target": "E401",
+      "exact_new_cells": [
+        {"q": 26, "z": 25, "G": 1},
+        {"q": 26, "z": 24, "G": 2},
+        {"q": 26, "z": 23, "G": 3},
+        {"q": 26, "z": 22, "G": 4},
+        {"q": 25, "z": 21, "G": 4}
+      ],
+      "preferred_breakthrough": "A parameterized q=22+r shell-stability theorem eliminating multiple edge layers.",
+      "source": "OPEN_FRONTIERS.md"
+    },
+    {
+      "id": "LINE_C_E332",
+      "status": "OPEN",
+      "object": "Legal R(4,49) residual with e(F)=332",
+      "constraints": {
+        "q": 30,
+        "core_edges": 211,
+        "remaining_undecorated_missing_degrees": [0, 1, 2, 11, 12],
+        "decoration_total_range": [4, 8],
+        "high_regular_count_upper": 2
+      },
+      "closed_subbranches": ["undecorated d=3", "undecorated d=4..9", "undecorated d=10"],
+      "next_target": "Eliminate the exact G=4 support cell (h,k,l)=(2,4,7), then parameterize G=5..8.",
+      "source": "backend/E332_Q30_211.md"
+    },
+    {
+      "id": "LINE_B_E333_E340",
+      "status": "OPEN",
+      "object": "Legal R(4,49) residual layers E333 through E340",
+      "edge_window": [333, 340],
+      "preferred_breakthrough": "Uniform repivot/core-excess stability theorem eliminating several layers simultaneously.",
+      "source": "OPEN_FRONTIERS.md"
+    }
+  ]
+}
