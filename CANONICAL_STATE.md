@@ -14,6 +14,13 @@ The clean core floor is
 
 `H in R(3,35) => e(H) >= 211`.
 
+Two reusable repivot assets must be kept separate from fixed-edge-layer corollaries:
+
+- `q=28`: analytic profitable-repivot mechanism;
+- `q=29` plus inherited `delta(H)>=12`: there exists a new degree-13 pivot `y` with `q_y>=30`. This theorem does **not** require `e(H)=211`.
+
+For E331, CORE211 is then applied separately to every new pivot to obtain `q_y<=29`, creating the contradiction.
+
 Current backend lower frontier is `E332`:
 
 - `E329`, `E330`, `E331` have analytic closures in the reconstructed DAG, with the uniform `q=27` theorem as a dependency.
@@ -48,6 +55,12 @@ Important current assets:
 Historical statements that the full `(5,7,8,8)` profile is closed are too strong.
 
 What is actually proved analytically is the specified row-labelled branch under explicit singleton-adjacency assumptions. These hypotheses must remain visible in the final proof DAG.
+
+## Three-line split
+
+- Line A / Astra A: front-end bridge `K145 -> R(4,49)`.
+- Line B / Astra B: high backend `E333...E340`.
+- Line C: lowest backend `E332:q30+211`.
 
 ## Estimated completion
 
