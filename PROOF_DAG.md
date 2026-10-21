@@ -30,8 +30,8 @@ force eighth genuine K_12 block OR contradiction
         v
 49-point residual F
         |
-        +--> prove alpha(F) <= 4
-        +--> prove omega(F) <= 11 / inherited target cap
+        +--> alpha(F) <= 4 under the genuine eight-block theorem
+        +--> prove inherited target-clique cap / omega(F) <= 11
         |
         v
 F in R(4,49)
@@ -55,13 +55,27 @@ shell/core bookkeeping
    +--> e(F) = 91 + q + e(H)
    +--> CORE211: e(H) >= 211
    +--> q=28 profitable repivot
-   +--> q=29 good-repivot theorem
+   +--> q=29 + delta(H)>=12 => degree-13 good repivot y with q_y>=30
    +--> uniform q=27 contradiction (dependency must remain audited)
    |
    v
 E329, E330, E331 excluded
-   |
-   v
+```
+
+Important scope separation for q29:
+
+```text
+q29 good-repivot existence theorem
+    DOES NOT require e(H)=211
+
+E331 fixed-edge corollary
+    uses CORE211 separately to force q_y<=29
+    and hence contradicts the q29 theorem
+```
+
+Then:
+
+```text
 E332 survivor => (q,e(H)) = (30,211)
    |
    v
