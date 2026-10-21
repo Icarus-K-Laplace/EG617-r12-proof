@@ -2,7 +2,7 @@
 
 > **STATUS: NOT_CERTIFIED**
 >
-> This repository tracks the clean-room reconstruction of the `r = 12` case of Erdős Problem 617. The full theorem has **not** been proved yet.
+> This repository tracks the clean-room reconstruction of the `r=12` case of Erdős Problem 617. The full theorem has **not** been proved yet.
 
 ## Current three-line program
 
@@ -10,9 +10,7 @@
 - **Line B — Astra B:** eliminate `333 <= e(F) <= 340` for legal `R(4,49)` residuals.
 - **Line C — central line:** eliminate `E332`, reduced to `q=30` over a 211-edge 35-core.
 
-## Front-end breakthrough and current T61
-
-The broad bridge is already reduced to one outer stop.
+## Front-end canonical state
 
 **PROVED dichotomy:**
 
@@ -20,20 +18,32 @@ The broad bridge is already reduced to one outer stop.
 
 The V1 contextual recurrence is **COMPUTATION_CERTIFIED** with 1752 nodes and 144 outer comparisons, replayed by two independent integer implementations.
 
-T61 starts from the exact stop `(d,j,a,n)=(11,6,5,61)` with `397<=E<=408` and `delta in {12,13}`.
+Inside T61 the current analytic state is:
 
-New analytic tightening now gives:
+- `alpha(R)=5` under contextual no extraction;
+- anchor defect `z=0`, so the anchor closed neighbourhood is a genuine target K12;
+- seven genuine K12 blocks exist in total;
+- exact outer ledger `E+sigma+g+x6+y6=408`;
+- generic `R(4,48)` floor strengthened to `e>=310`;
+- the entire T61 minimum-degree12 branch is empty;
+- E397, E398 and E399 are empty;
+- therefore the surviving front-end window is
 
-- `alpha(R)=5` exactly under contextual no extraction;
-- anchor defect `z=0`;
-- the anchor closed neighbourhood is a genuine target K12, so seven genuine K12 blocks exist in total;
-- simplified outer ledger `E+sigma+g+x6+y6=408`;
-- modern generic `R(4,48)` edge floor `>=309`;
-- the T61 h12 branch starts at E407;
-- a 309-edge 48-core has exact inner `q=20, H35=211` and missing shell `K_{2,r}+isolates`, `6<=r<=10`;
-- its two 10-vertex centre rows overlap in at least seven vertices of the 211-core.
+`T61: delta(R)=13, 400<=E<=408`.
 
-These results are in `front_end/T61_NEW_LEMMAS.md`.
+The next exact layer is E400. Writing `E=397+s`, every degree13 pivot sees at most `s` units of neighbour excess. At E400 (`s=3`), any pivot seeing total excess3 falls into the exact q25 cell
+
+`q=25, z=22, e(C47)=284`.
+
+The current Line A target is a q25 shell theorem for decoration partitions `3`, `2+1`, and `1+1+1`.
+
+Relevant proofs:
+
+- `front_end/R448_FLOOR310.md`
+- `front_end/T61_H12_CLOSURE.md`
+- `front_end/E398_Q23_SHELL.md`
+- `front_end/E399_Q24_SHELL.md`
+- `front_end/T61_H13_LOW_LAYER.md`
 
 ## Backend assets
 
@@ -45,16 +55,9 @@ These results are in `front_end/T61_NEW_LEMMAS.md`.
 - E332 reduces to `(q,e(H))=(30,211)`.
 - Equality CORE211 degree multisets: `14,12^34` or `13^2,12^33`.
 
-## Local front-end assets
-
-- Matching-transversal rigidity and equality rotation.
-- Eight genuine K12 blocks imply a legal R449.
-- S31 strict descent only under its explicit E406/delta13 parent contract.
-- S30 `(5,7,8,8)` singleton-triangle labelled branch closed; additional scalar saturation lemmas leave 14 k0 and 13 k1 necessary scalar cases.
-
 ## Main blockers
 
-1. **Line A:** finish tightened T61, preferably h12 first and then h13 low-excess layers.
+1. **Line A:** close T61 E400–E408, preferably via a parameterized q=22+r shell-stability theorem.
 2. **Line C:** eliminate E332 q30+211.
 3. **Line B:** eliminate E333–E340 with a uniform stability theorem.
 
