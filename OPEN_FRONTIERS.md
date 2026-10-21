@@ -1,6 +1,6 @@
 # Open frontiers
 
-## Line A — Astra A: T61 h13 only
+## Front-end — T61 h13
 
 Current proved chain:
 
@@ -12,21 +12,23 @@ Current proved chain:
 
 `T61 -> E>=401`.
 
-Thus Line A owns
+Thus the active front-end object is
 
 `T61: 401<=E<=408, delta=13`.
 
-Highest priority is E401. The closed shell ladder is q23/q24/q25; the new cells are q26 with G=1..4 plus the q25 `(21,4)` extension. Astra A should seek a parameterized `q=22+r` stability theorem rather than four unrelated q26 cases.
+Highest priority is E401. The closed shell ladder is q23/q24/q25; the new cells are q26 with G=1..4 plus the q25 `(21,4)` extension.
 
-## Line B — Astra B: high-layer backend
+Preferred breakthrough: a parameterized `q=22+r` stability theorem rather than four unrelated q26 cases.
+
+## High backend — E333..E340
 
 Primary target:
 
 `333<=e(F)<=340` for legitimate `F in R(4,49)`.
 
-Preferred result: a uniform repivot/core-excess theorem eliminating several layers at once.
+Preferred breakthrough: a uniform repivot/core-excess theorem eliminating several layers at once.
 
-## Line C — central active line: E332
+## Low backend — E332
 
 Primary target remains
 
@@ -44,15 +46,15 @@ Now proved:
 - decoration total satisfies `G>=4`, so only `G=4..8` remain;
 - for `G=4`, support counts are exactly `(h,k,l)=(2,4,7)` for high regular / decorated / low regular vertices.
 
-The active Line C object is therefore an **extreme-degree q30 shell**, not the old row-class geometry.
+The active E332 object is therefore an **extreme-degree q30 shell**, not the old row-class geometry.
 
 Next priorities:
 
 1. eliminate the exact G=4 support cell;
 2. derive a uniform support theorem for G=5..8;
-3. force existence of a d3/d10 root indirectly, or contradict the extreme-degree shell directly.
+3. force existence of a previously excluded d3/d10 root indirectly, or contradict the extreme-degree shell directly.
 
-## Newly closed / strengthened
+## Recently closed / strengthened
 
 - generic `R(4,48)` floor: 310;
 - T61 minimum-degree12 branch: closed;
