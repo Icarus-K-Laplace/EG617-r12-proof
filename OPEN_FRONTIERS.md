@@ -1,85 +1,68 @@
 # Open frontiers
 
-## Line A — Astra A: tightened embedded T61
+## Line A — Astra A: T61 h13 only
 
-The broad outer bridge is already reduced to one certified stopping class.
+The broad bridge is reduced to one embedded T61 obstruction, and the h12 branch is now closed.
 
-Proved dichotomy:
+Current proved front-end chain:
 
-`K145 counterexample -> legitimate induced R(4,49) OR embedded T61`.
+`K145 counterexample -> induced R(4,49) OR embedded T61`
 
-T61 now has additional proved structure:
+`T61 -> z=0 -> genuine anchor K12`
 
-- `alpha(R)=5` exactly;
-- anchor defect `z=0`;
-- the anchor closed neighbourhood is a genuine K12;
-- there are seven genuine disjoint K12 blocks total;
-- exact ledger simplifies to `E+sigma+g+x6+y6=408`;
-- `397<=E<=408`, `delta(R) in {12,13}`.
+`T61 -> delta(R)=13`
 
-Primary target:
+`T61 -> E>=398`.
 
-`T61 -> contradiction OR induced legitimate R(4,49)`.
+Thus Line A now owns only
 
-### h12 branch
+`T61: 398<=E<=408, delta=13`.
 
-Modern CORE211 improves the generic 48-point floor to 309, so the h12 branch is only:
+Highest-priority layer:
 
-- E407: `(q,e(C48))=(20,309)`;
-- E408: `(20,310)` or `(21,309)`.
+`E398`, with exact degree multiset `14^3,13^58`.
 
-For every 309-core:
+For every degree-13 pivot adjacent to one of the degree14 vertices:
 
-- inner `(q,e(H35))=(20,211)`;
-- missing shell `M=K_{2,r}+(10-r)K1`, `6<=r<=10`;
-- centre/leaf/isolate core rows have sizes 10/2/0;
-- each centre-row + leaf-row 12-set is almost complete;
-- the two centre rows overlap in at least seven core vertices.
+`q=23, z=22, G=1, e(C47)=284`.
 
-Highest-value task: close this finite equality geometry uniformly.
+There are many such pivots because each degree14 vertex needs at least 12 neighbours among degree13 vertices. Seek a multi-pivot incompatibility theorem, not a scalar case table.
 
-### h13 branch
+General reusable inequality: if `E=397+s`, every degree13 pivot sees total neighbour excess at most `s`.
 
-`E=91+q+e(C47)`, `q>=22`, `e(C47)>=284`.
+Secondary tasks:
 
-Use degree excess
-
-`Xi=2E-793`.
-
-E397 has only one excess unit and 60 degree-13 pivots; low E layers should be attacked by multi-pivot equality before mapping anything into S30.
-
-S31 is available only at the exact E406/delta13 parent interface.
-
-Current S30 labelled `(5,7,8,8)` residue remains partial and is no longer the first-line Line A target.
+- E399/E400 excess partition classification;
+- modern recurrence replay with seeds CORE211 and R448>=310;
+- 284/285-edge 47-core local equality analysis;
+- explicit extraction of an induced R449 if a contradiction cannot be obtained directly.
 
 ## Line B — Astra B: high-layer backend
 
 Primary target:
 
-`333 <= e(F) <= 340` for legitimate `F in R(4,49)`.
+`333<=e(F)<=340` for legitimate `F in R(4,49)`.
 
-Preferred result: one uniform stability/repivot theorem eliminating several layers.
+Preferred result: a uniform repivot/core-excess theorem eliminating several layers at once.
 
-Key objects:
+Remember: generic q29 good-repivot does not require e(H)=211.
 
-- `q+e(H)=E-91`;
-- core excess above degree12;
-- equality rows under repeated repivot;
-- near-extremal core degree sequences.
-
-Reminder: generic q29 good-repivot does not require `e(H)=211`.
-
-## Line C — E332
+## Line C — central active line: E332
 
 Primary target:
 
-`E332 : q=30, e(H)=211`.
+`E332:q30+211`.
 
 Current equality reduction:
 
 - undecorated shell degrees 4..9 are automatically profitable;
 - d=3 and d=10 force zero slack;
-- corresponding core rows use degree-12 core vertices;
+- corresponding core rows use degree12 vertices;
 - repeated equality repivots should force finite equal/disjoint row geometry.
 
-Goal: rule out every q30 equality system using the two CORE211 degree multisets.
+## Newly closed / strengthened
+
+- generic R(4,48) floor: 310;
+- T61 minimum-degree12 branch: closed;
+- T61 E397 layer: closed;
+- E398 degree sequence: reduced to `14^3,13^58`.
