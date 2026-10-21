@@ -6,65 +6,89 @@ Target: prove the `r=12` case of Erdős Problem 617. Current status: **NOT_CERTI
 
 ## Backend
 
-For a legitimate residual `F in R(4,49)`, current clean machinery uses a degree-13 pivot `p` with shell `A` of size 13 and 35-core `H`:
+For a legitimate residual `F in R(4,49)`, current clean machinery uses a degree-13 pivot `p` with shell `A` of size13 and 35-core `H`:
 
-`e(F) = 91 + q + e(H)`.
+`e(F)=91+q+e(H)`.
 
-The clean core floor is
+Clean core floor:
 
-`H in R(3,35) => e(H) >= 211`.
+`H in R(3,35) => e(H)>=211`.
 
-Two reusable repivot assets must be kept separate from fixed-edge-layer corollaries:
+Reusable repivot assets:
 
 - `q=28`: analytic profitable-repivot mechanism;
-- `q=29` plus inherited `delta(H)>=12`: there exists a new degree-13 pivot `y` with `q_y>=30`. This theorem does **not** require `e(H)=211`.
+- `q=29` plus inherited `delta(H)>=12`: a degree-13 repivot `y` exists with `q_y>=30`; this does **not** require `e(H)=211`.
 
-For E331, CORE211 is then applied separately to every new pivot to obtain `q_y<=29`, creating the contradiction.
+For E331, CORE211 is applied separately after the repivot to force `q_y<=29`, producing the contradiction.
 
 Current backend lower frontier is `E332`:
 
-- `E329`, `E330`, `E331` have analytic closures in the reconstructed DAG, with the uniform `q=27` theorem as a dependency.
-- Any genuine `E332` survivor must admit a pivot with `(q,e(H))=(30,211)`.
-- For `e(H)=211`, the core degree multiset is one of
-  - `14,12^34`,
-  - `13^2,12^33`.
+- `E329`, `E330`, `E331` are closed in the reconstructed DAG, with the uniform-q27 theorem as a dependency;
+- any genuine `E332` survivor admits `(q,e(H))=(30,211)`;
+- for `e(H)=211`, the core degree multiset is `14,12^34` or `13^2,12^33`.
 
-Thus the active lowest backend object is:
+Active Line C object:
 
 `E332 : q30 shell + almost-12-regular 211-edge 35-core`.
 
-Higher layers `E333...E340` remain open as a unified high-layer problem.
+Higher layers `E333...E340` remain open as Line B.
 
-## Front-end
+## Front-end — major 2026-10-21 reduction
 
-The correct modern objective is **not** to prove an exact `e(F)=325` residual. The needed bridge is:
+The obsolete target `e(F)=325` has been retired. The modern bridge target is simply
 
-`hypothetical K_145 counterexample -> legitimate F in R(4,49)`.
+`hypothetical K145 counterexample -> legitimate induced F in R(4,49)`.
 
-Important current assets:
+The new Line A theorem is:
 
-- seven genuine `K_12` blocks naturally lead to a 61-point residual / O61 route;
-- eight genuine `K_12` blocks leave a 49-point residual;
-- under the eight-block hypothesis the high-cross branch can be eliminated analytically, yielding `alpha(Y)<=4` for the 49-point residual;
-- S31 strict descent is proved under its explicit 61-point / 406-edge parent contract;
-- S27 is closed under its certified contract;
-- S30 remains the active front-end bottleneck.
+`least-edge colour G -> legitimate induced R(4,49) OR embedded T61 obstruction`.
 
-## S30 audit correction
+This dichotomy is **PROVED** and does not use a generic R449 edge lower bound or the backend E332+ theory.
 
-Historical statements that the full `(5,7,8,8)` profile is closed are too strong.
+The contextual recurrence is **COMPUTATION_CERTIFIED**:
 
-What is actually proved analytically is the specified row-labelled branch under explicit singleton-adjacency assumptions. These hypotheses must remain visible in the final proof DAG.
+- 1752 recurrence nodes checked;
+- 144 outer stopping comparisons checked;
+- two independent integer implementations agree;
+- unique nonexcluded outer stop `(d,j,a,n)=(11,6,5,61)`.
+
+The embedded T61 obstruction has:
+
+- minimum-degree anchor `d=11` in the original least-edge colour;
+- exactly six genuine K12 blocks in the anchor nonneighbourhood packing;
+- a 61-vertex residual `R` with `alpha(R)<=5`, `omega(R)<=11`, inherited caps;
+- `397<=e(R)<=408`;
+- `delta(R) in {12,13}`;
+- exact outer ledger `E+sigma+z+g+x_6+y_6=408`.
+
+Thus the entire front-end is now reduced to one sharply specified task:
+
+`exclude embedded T61 OR extract a legitimate induced R(4,49) from it`.
+
+Important non-implications that remain visible:
+
+- the anchor contributes algebraic 66 but is a genuine seventh K12 only if `z=0`; `z=0` is OPEN;
+- T61 is not automatically the `E406, delta13` parent of S31;
+- S31 `q<=30` does not itself create another K12;
+- T61 is not automatically in the canonical S30 macro contract.
+
+## S30 state
+
+For the specified row-labelled `(5,7,8,8)` branch:
+
+- singleton-triangle case `uv,uw,vw` is analytically closed;
+- a new saturation lemma removes eight scalar cases for each of k0 and k1;
+- for k1,a0, `tv` is forced and b=3 is eliminated;
+- exact remaining necessary scalar cases: 14 for k0 and 13 for k1.
+
+These are scalar necessary cases, not graph survivors or a complete incidence classification.
 
 ## Three-line split
 
-- Line A / Astra A: front-end bridge `K145 -> R(4,49)`.
+- Line A / Astra A: exclude or extract from embedded T61.
 - Line B / Astra B: high backend `E333...E340`.
-- Line C: lowest backend `E332:q30+211`.
+- Line C: eliminate `E332:q30+211`.
 
-## Estimated completion
+## Certification warning
 
-- structural understanding: ~80–85%
-- complete auditable theorem: ~60–65% (central estimate ~63%)
-
-The estimate is heuristic and is not a proof-status metric.
+The full EG617 `r=12` theorem remains OPEN. It can be certified only when the T61 bridge and all legitimate `R(4,49)` backend layers are closed.
