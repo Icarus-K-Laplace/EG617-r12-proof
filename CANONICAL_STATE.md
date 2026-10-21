@@ -6,117 +6,93 @@ Target: prove the `r=12` case of Erdős Problem 617. Current status: **NOT_CERTI
 
 ## Backend
 
-For a legitimate residual `F in R(4,49)`, current clean machinery uses a degree-13 pivot with
+For every legitimate residual `F in R(4,49)` a degree-13 pivot gives
 
 `e(F)=91+q+e(H)`, `H in R(3,35)`.
 
-Clean core floor:
+Clean core theorem:
 
 `e(H)>=211`.
 
-Reusable repivot assets:
+Reusable assets:
 
 - q28 profitable repivot;
-- q29 + inherited `delta(H)>=12` gives a new degree-13 pivot `q_y>=30`, without requiring `e(H)=211`.
+- generic q29 good-repivot: q29 + inherited `delta(H)>=12` gives a degree-13 repivot with `q_y>=30`; this does not require `e(H)=211`;
+- uniform q27 contradiction, retained with its audited Type-I/II dependency.
 
-Current lower backend frontier:
+Backend layers E329, E330 and E331 are closed. Any E332 survivor reduces to
 
-`E332 -> (q,e(H))=(30,211)`.
+`q=30, e(H)=211`,
 
-At `e(H)=211` the only degree multisets are `14,12^34` and `13^2,12^33`.
+with 211-core degree multiset `14,12^34` or `13^2,12^33`.
 
-Line C attacks E332. Line B attacks E333–E340.
+Line C remains E332:q30+211. Line B remains E333..E340.
 
-## Front-end outer theorem
+## Front-end master reduction
 
-The modern target is not an exact E325 residual. The proved front-end dichotomy is:
+The obsolete exact E325 bridge has been retired.
 
-`least-edge colour G -> legitimate induced R(4,49) OR embedded T61`.
+The certified front-end dichotomy is
 
-The contextual recurrence V1 is COMPUTATION_CERTIFIED:
+`least-edge K145 colour G -> induced R(4,49) OR embedded T61`.
 
-- 1752 recurrence nodes;
-- 144 outer stopping comparisons;
-- two independent integer implementations;
-- unique outer stop `(d,j,a,n)=(11,6,5,61)`.
+The outer contextual recurrence is computation-certified at 1752 nodes and 144 stopping comparisons. The unique stop is the anchored 61-point class T61.
 
-## Tightened T61
+Within T61:
 
-Original T61 data:
+- residual independence is exactly 5;
+- anchor defect `z=0`, so the anchor closed neighbourhood is a genuine K12;
+- the exact outer ledger is `E+sigma+g+x6+y6=408`;
+- six additional genuine K12 blocks remain in the anchor nonneighbourhood.
 
-- degree-11 anchor;
-- six genuine K12 blocks in its nonneighbourhood;
-- residual R of order61;
-- `397<=E=e(R)<=408`;
-- `delta(R) in {12,13}`;
-- inherited caps and `omega(R)<=11`;
-- exact ledger `E+sigma+z+g+x6+y6=408`.
+## New 48-point theorem
 
-New proved deductions:
+A q20 rotation argument upgrades the generic floor to
 
-1. Under contextual no extraction, `alpha(R)=5` exactly.
-2. The anchor defect vanishes: `z=0`.
-3. Hence `N[v]` is itself a genuine K12; there are now seven genuine disjoint target K12 blocks total. This still leaves the same 61-point residual and does not by itself produce an eighth block.
-4. The outer ledger simplifies to
+`C in R(4,48) => e(C)>=310`.
 
-   `E+sigma+g+x6+y6=408`.
-5. Modern CORE211 strengthens the generic R(4,48) floor to 309.
-6. Therefore the T61 minimum-degree-12 row begins at E407, not E406.
+The hypothetical 309-edge equality state would have q20 and CORE211. Its shell missing graph is `K_{2,r} + isolates`. Repivoting at a leaf reproduces the q20 normal form and forces a vertex of the 35-core to have degree 11, contradicting `delta>=12`.
 
-Exact h12 cells now:
+## T61 h12 branch closed
 
-- E407: `(q,e(C48))=(20,309)`;
-- E408: `(20,310)` or `(21,309)`.
+If a T61 residual had minimum degree12,
 
-## 309-edge 48-core equality
+`E=78+q+e(C48)`
 
-A 309-edge `C48 in R(4,48)` necessarily has a degree-12 pivot with
+with q>=20 and e(C48)>=310. Since E<=408, equality forces E408,q20,C48=310. Repeating the q20 leaf-rotation at the 61-point level forces a vertex of C48 to have degree11, contradicting the audited `delta(C48)>=12`.
 
-`q=20`, `e(H35)=211`.
+Therefore
 
-Its 12-shell missing graph is exactly
+`T61 => delta(R)=13`.
 
-`K_{2,r} + (10-r) isolates`, `6<=r<=10`.
+## T61 E397 closed
 
-The two centres have core-row size10 and decoration `10-r`; leaves have row size2 and zero decoration; isolates have row size0.
+For E397 the total degree excess above13 is 1, hence the degree multiset is `14,13^60`.
 
-Inside the 211-core:
+Every degree-13 pivot has q22 and a 284-edge 47-core. Since the shell already has at least22 missing edges, the shell decoration sum is zero. Thus every neighbour of every degree-13 vertex also has degree13, impossible for the unique degree14 vertex.
 
-- every centre 10-row plus leaf 2-row is an almost-K12 (at least `64+eps` edges);
-- each such 12-set captures at most one unit of the total two core-excess units;
-- the two centre rows overlap in at least seven core vertices.
+Therefore the current front-end terminal window is
 
-This is the active h12 equality geometry for Astra A.
+`T61: delta=13, 398<=E<=408`.
 
-## Remaining Line A problem
+General local excess bound: writing `E=397+s`, every degree-13 pivot sees at most s units of neighbour degree excess.
 
-The broad outer recurrence is no longer the issue. The exact task is:
+For E398 this forces the exact degree multiset
 
-`T61 -> contradiction OR induced legitimate R(4,49)`.
+`14^3,13^58`.
 
-Priority:
+Every degree-13 pivot adjacent to a degree14 vertex lies in the exact local cell
 
-1. finish the h12 E407/E408 equality geometry;
-2. attack the h13 low-excess layers E397–E405 before overusing S31/S30;
-3. use S31 only at the verified E406/delta13 interface;
-4. prove any T61->S30 coverage theorem explicitly.
+`q=23, z=22, G=1, e(C47)=284`.
 
-## S30 status
-
-For the specified row-labelled `(5,7,8,8)` branch:
-
-- k2 singleton-triangle branch closed;
-- saturation lemmas remove many k0/k1 scalar cases;
-- exact remaining necessary scalar cases: 14 for k0 and 13 for k1.
-
-They are not complete graph survivors and do not establish T61 coverage.
+This is the current Line A frontier.
 
 ## Three-line split
 
-- Line A / Astra A: tightened T61.
-- Line B / Astra B: E333–E340.
-- Line C: E332 q30+211.
+- Line A / Astra A: close T61 h13, now E398..E408; highest priority E398 multi-pivot equality.
+- Line B / Astra B: eliminate legitimate R(4,49) layers E333..E340.
+- Line C: eliminate E332:q30+211.
 
 ## Certification warning
 
-The full EG617 r=12 theorem remains OPEN. It can be certified only when the T61 bridge and all legitimate R(4,49) backend layers are closed.
+EG617 r=12 remains OPEN. It may be declared proved only after the T61 h13 front-end is eliminated/extracted and every legitimate R(4,49) backend layer is closed.
