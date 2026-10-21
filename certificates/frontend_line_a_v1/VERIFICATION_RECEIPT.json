@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-21",
+  "bridge_status": "OPEN",
+  "reduction_status": "PROVED",
+  "arithmetic_status": "COMPUTATION_CERTIFIED",
+  "bound_nodes": 1752,
+  "outer_comparisons": 144,
+  "remaining_outer_cells": [
+    {
+      "d": 11,
+      "j": 6,
+      "a": 5,
+      "n": 61,
+      "budget": 408,
+      "bound": 397,
+      "survives": true
+    }
+  ],
+  "S30_open_scalar_cases": {
+    "0": 14,
+    "1": 13,
+    "2": 0
+  },
+  "package_sha256": "8f34097f195f53a6aac2999a655d3dc6a4ebc7c74f5764aedea65a79235a98ac",
+  "local_manifest_check": {
+    "files_checked": 73,
+    "errors": 0
+  },
+  "independent_replay": "PASS",
+  "interpretation": "No colouring or graph completion is certified. The contextual49 cutoff is the temporary negation of extraction in a fixed graph."
+}
