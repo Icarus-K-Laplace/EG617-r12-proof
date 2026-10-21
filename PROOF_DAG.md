@@ -4,40 +4,75 @@
 
 `Original EG617 r=12 counterexample -> contradiction`.
 
-## Front-end DAG
+## Front-end DAG — current clean state
 
 ```text
-Hypothetical K_145 counterexample
+Hypothetical balanced K145 / least-edge colour G
         |
         v
-outer forcing / block construction
+minimum-degree anchor + maximal genuine-K12 packing
         |
         v
-seven genuine K_12 blocks
+contextual induced-subgraph recurrence under temporary
+"this fixed G contains no induced R(4,49)" hypothesis
         |
         v
-61-point residual (O61-type parent contract)
-        |
-        +--> S27  -- closed under certified contract
-        |
-        +--> S31  -- strict descent to q <= 30 under explicit parent contract
-        |
-        +--> S30  -- ACTIVE
+1752-node / 144-stop arithmetic certificate
         |
         v
-force eighth genuine K_12 block OR contradiction
+all outer stops excluded except one
         |
         v
-49-point residual F
+T61: (d,j,a,n)=(11,6,5,61)
+     397 <= E <= 408
+     delta in {12,13}
+     alpha<=5, omega<=11, inherited caps
         |
-        +--> alpha(F) <= 4 under the genuine eight-block theorem
-        +--> prove inherited target-clique cap / omega(F) <= 11
+        +--> extract legitimate induced R(4,49)  [OPEN]
         |
-        v
-F in R(4,49)
+        +--> prove T61 empty                      [OPEN]
 ```
 
-Current front-end status: **OPEN**. The key missing implication is the clean-room forcing from the original counterexample through O61/S30 to a legitimate 49-point residual.
+This yields the proved dichotomy:
+
+`K145 counterexample -> legitimate induced R(4,49) OR embedded T61`.
+
+### Genuine-block side assets
+
+```text
+matching-transversal rigidity
+        |
+        v
+equality rotation saturates all 12 cross slots
+        |
+        +--> 8 genuine K12 blocks -> legitimate R(4,49) [PROVED]
+        |
+        +--> 7 genuine K12 blocks -> alpha61<=5 [PROVED]
+```
+
+Do not reverse these implications. The existence of seven/eight genuine blocks is not automatic from the block lemmas.
+
+### T61 downstream filters
+
+```text
+T61
+ |
+ +--> if E=406 and delta=13: S31 gives degree-13 pivot q<=30 [PROVED conditional interface]
+ |
+ +--> q27 core closure S27 only with its extra min-degree11 premise [scope-limited]
+ |
+ +--> canonical S30 macro contract [OPEN coverage]
+ |
+ +--> anchored six blocks -> seventh genuine unanchored block [OPEN; z=0 would suffice]
+```
+
+For the specified row-labelled S30 `(5,7,8,8)` branch:
+
+```text
+k2: uv,uw,vw -> analytic contradiction [PROVED]
+k0/k1: new saturation lemmas remove many scalar cases
+remaining: 14 scalar cases for k0, 13 for k1 [OPEN]
+```
 
 ## Backend DAG
 
@@ -52,34 +87,33 @@ degree-13 pivot
    v
 shell/core bookkeeping
    |
-   +--> e(F) = 91 + q + e(H)
-   +--> CORE211: e(H) >= 211
+   +--> e(F)=91+q+e(H)
+   +--> CORE211: e(H)>=211
    +--> q=28 profitable repivot
-   +--> q=29 + delta(H)>=12 => degree-13 good repivot y with q_y>=30
-   +--> uniform q=27 contradiction (dependency must remain audited)
+   +--> q=29 + delta(H)>=12 => degree-13 repivot y with q_y>=30
+   +--> uniform q=27 contradiction
    |
    v
 E329, E330, E331 excluded
 ```
 
-Important scope separation for q29:
+Scope separation:
 
 ```text
 q29 good-repivot existence theorem
-    DOES NOT require e(H)=211
+    does NOT require e(H)=211
 
-E331 fixed-edge corollary
-    uses CORE211 separately to force q_y<=29
-    and hence contradicts the q29 theorem
+E331 corollary
+    applies CORE211 separately to force q_y<=29
 ```
 
 Then:
 
 ```text
-E332 survivor => (q,e(H)) = (30,211)
+E332 survivor => (q,e(H))=(30,211)
    |
    v
-q30 equality system over almost-12-regular 211-core  [ACTIVE LINE C]
+q30 equality system over almost-12-regular 211-core [ACTIVE LINE C]
 ```
 
 High layers:
@@ -88,12 +122,12 @@ High layers:
 E333 ... E340
    |
    v
-seek uniform repivot / core-excess stability theorem  [ACTIVE LINE B]
+uniform repivot / core-excess stability problem [ACTIVE LINE B]
 ```
 
 ## Final certification condition
 
-EG617 `r=12` can be declared proved only after BOTH are complete:
+EG617 `r=12` may be declared proved only after BOTH are complete:
 
-1. `K_145 -> legitimate F in R(4,49)`;
-2. `R(4,49) = empty` under the inherited residual contracts actually established by the front-end.
+1. embedded T61 is excluded or always yields a legitimate induced `R(4,49)`;
+2. every legitimate `R(4,49)` backend layer is eliminated.
