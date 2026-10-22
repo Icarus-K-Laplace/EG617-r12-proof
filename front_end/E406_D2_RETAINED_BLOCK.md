@@ -1,6 +1,6 @@
 # E406 d=2 final-rise retained-block theorem
 
-Status: `PROVED` for the reduction below. This does not close d=2 or E406.
+Status: `PROVED` for the classification below. This does not yet close d=2 or E406.
 
 Assume the E406 final-rise contract
 
@@ -81,6 +81,10 @@ A vertex of S is adjacent to p and not y, hence has at most e target neighbours 
 
 Thus each individual S- or D-vertex has T-degree at most e.
 
+The 16-set `X union S union D` gives one additional joint bound. Since `D(16)=76`,
+
+`A+B+e_SD <= 6+e-e_S-e_D`.   (D2-5)
+
 ## 3. Joint old/new extreme-degree restriction on retained regular vertices
 
 Take an undecorated `t in T`. Put
@@ -101,7 +105,7 @@ Both shell views have q in `{30,31}` and 47-core minimum degree at least12. Ther
 
 Since `0<=r_t<=8`, this forces
 
-`r_t in {0,1,2,3,8}`.   (D2-5)
+`r_t in {0,1,2,3,8}`.   (D2-6)
 
 Moreover:
 
@@ -111,21 +115,157 @@ Moreover:
 
 There are no undecorated T-vertices of internal missing degree4,5,6,7.
 
-Writing `n_i` for the number of undecorated T-vertices with `r_t=i`, the cross-edge budgets (D2-3)--(D2-4) give the useful aggregate inequality
+Writing `n_i` for the number of undecorated T-vertices with `r_t=i`, the cross-edge budgets give
 
-`2 n_2 + 4 n_3 <= A+B <= 2+2e-e_S-e_D`.   (D2-6)
+`2 n_2 + 4 n_3 <= A+B <= 6+e-e_S-e_D-e_SD`.   (D2-7)
 
-## 4. Interpretation
+## 4. Weighted edge sum forces equality everywhere
 
-The d=2 final-rise problem is now a finite joint-labelled 10-vertex deficit graph problem:
+For every missing edge `uv` of `M[T]`, the independently proved E406 row-union-13 lemma gives
 
-- the retained graph M[T] has only 1--8 edges;
-- it has at least e+2 undecorated vertices;
-- every undecorated vertex has M[T]-degree only 0,1,2,3 or8;
-- degree3 vertices must be complete to both exchanged pairs S,D;
-- degree8 vertices must be anticomplete to both pairs;
-- the total S-T and D-T target incidences satisfy the sharp budgets above.
+`t_u+t_v>=13`.
 
-These are necessary structural conditions, not an existence classification.
+For a T-vertex v,
 
-The next useful step is not to enumerate arbitrary 10-vertex graphs. It is to classify the possible low-edge deficit quotients under (D2-5)--(D2-6), then apply the exact two-row support identities to the surviving quotient families.
+`t_v = r_v + (2-a_v) + g_v <= r_v+2+g_v`,
+
+where `a_v=d_R(v,S)` and `g_v` is its old-shell decoration. Therefore every T-edge satisfies
+
+`(r_u+g_u)+(r_v+g_v)>=9`.
+
+Summing over the e edges of `M[T]` gives
+
+`9e <= sum_v r_v(r_v+g_v)`.
+
+Now
+
+`sum_v r_v^2 = 2e + 2*(number of unordered pairs of adjacent T-edges) <= 2e+2*C(e,2)=e^2+e`.
+
+Also `r_v<=e`, so
+
+`sum_v r_v g_v <= e*h`.
+
+Using `h<=8-e`,
+
+`sum_v r_v(r_v+g_v) <= e^2+e+eh <= 9e`.
+
+Thus ALL inequalities are equalities.
+
+Consequences:
+
+1. `h=8-e`, hence by (D2-1)
+
+   `e_S=1`, `epsilon'_S=0`, `e_SD=0`.   (D2-EQ1)
+
+2. Every pair of T-missing edges intersects. Hence `M[T]` is an intersecting-edge graph.
+
+3. Every positive decoration in T lies on a vertex of T-missing degree exactly e.
+
+4. For every T-missing edge uv,
+
+   `a_u=a_v=0`,
+
+   and `t_u+t_v=13` exactly.
+
+Applying the same argument in the new shell gives, on every T-missing edge,
+
+`b_u=b_v=0`.
+
+## 5. Exact T-block topology
+
+For `e>=4`, a simple graph with e pairwise-intersecting edges is a star. For `e=3`, the only alternatives are a 3-star and a triangle; the triangle is impossible because `h=5>0` but equality in `sum r_v g_v<=eh` requires every decorated vertex to have T-degree e=3, while a triangle has maximum degree2. For `e=2`, the graph is a 2-star. For `e=1`, it is a single edge.
+
+Therefore:
+
+### e=2,...,8
+
+`M[T] = K_(1,e) disjoint_union (9-e)K1`.
+
+All T-decoration is concentrated on the star centre c:
+
+`g_c=8-e`,
+
+and every other T-vertex is undecorated.
+
+The centre has old and new row weight10; every star leaf has old and new row weight3. The whole star component is target-anticomplete to BOTH exchanged pairs S and D.
+
+### e=1
+
+`M[T]=K2 disjoint_union 8K1`.
+
+The total decoration7 is supported on the two endpoints of this unique edge, with
+
+`g_u+g_v=7`.
+
+Both endpoints are target-anticomplete to S and D, and their row weights sum exactly13.
+
+So the formerly arbitrary 10-vertex retained deficit graph is completely classified.
+
+## 6. Consequences for the exchanged pairs
+
+From (D2-EQ1):
+
+- S is a target edge;
+- both S vertices have zero new-core excess;
+- S is target-anticomplete to D.
+
+For `e>=2`, target S-T incidences occur only on the `9-e` T-isolates. Since the old shell total decoration is
+
+`G = h + g_S = (8-e)+g_S`,
+
+while the exact shell count gives
+
+`G=8+A-e`,
+
+we obtain
+
+`g_S=A`.
+
+For each `s in S`, the missing edge ys and the row-union-13 lemma give `t_s>=11`. But
+
+`t_s = 11-a_s+g_s`
+
+because `e_S=1`. Hence `g_s>=a_s`. Summing over the pair and using `g_S=A` forces equality vertexwise:
+
+`g_s=a_s`, `t_s=11` for each `s in S`.   (D2-EQ2)
+
+Thus both 11-rows of S are disjoint from the 2-row D of y.
+
+The core-excess exchange simplifies to
+
+`epsilon_D=e_D`.
+
+So if D is a target edge, its total old-core excess is exactly1; if D is a target nonedge, both D endpoints have old-core degree12.
+
+## 7. Every star leaf is a q30 plateau d3 pivot
+
+Assume `e>=2` and let l be a star leaf. Its old missing neighbours are exactly
+
+`{c,s1,s2}`.
+
+Their row weights are
+
+`10,11,11`,
+
+and among them exactly the two missing edges `cs1,cs2` occur. Therefore
+
+`t({c,s1,s2})-e_M({c,s1,s2}) = 32-2=30`.
+
+The subset-charge identity shows zero charge outside this triple. Repivoting at l cannot give q=31: the already proved d3 final-rise normal form would require all three removed row weights to be10, whereas here two are11. Hence
+
+`q_l=30`.
+
+The exact d3 plateau identity then forces the 3-row `D_l=N_C(l)` to be a K3 of old-core degree12 vertices and to be target-anticomplete to `{c,s1,s2}`.
+
+Thus an e-star d2 final-rise state carries e simultaneous dense 3-row plateau supports, all attached to the same triple `{c,s1,s2}`.
+
+## 8. Current d2 frontier
+
+The d=2 final-rise problem is no longer a 10-vertex graph classification problem.
+
+It is now exactly:
+
+- `e=1`: one decorated edge carrying total decoration7;
+- `e=2,...,8`: a star `K_(1,e)` with centre decoration `8-e`, S a target edge with exact 11-rows, and e leaf pivots of charge30 whose core supports are degree12 K3s anticomplete to a common shell triple.
+
+The remaining task is a MULTI-SUPPORT COMPATIBILITY theorem for those e simultaneous K3 rows (plus the isolated e=1 edge case). These are exact normal forms conditional on a d2 q30->q31 final-rise edge, not merely necessary scalar states.
