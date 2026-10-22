@@ -1,68 +1,35 @@
-# E406 boundary-bridge status
+# E406 boundary-bridge status — superseded provenance
 
-Status: `LOCAL_BOUNDARY_COMPLETE / GLOBAL_BRIDGE_OPEN`.
+Status: `SUPERSEDED / BRIDGE PROVED / E406 CLOSED`.
 
-This file records the exact remaining obligation for the T61 `E=406`, `delta=13` parent after the assistant-owned coexistence analysis.
+This file records the former last gap in the E406 proof and is retained only for provenance.
 
-## 1. Global charge window
+The former open obligation was:
 
-For every degree-13 pivot p,
+`E406 parent + S31 + hereditary caps -> actual adjacent q30->q31 boundary edge`.
 
-`406 = 91 + q_p + e(C_p)`
+That implication has now been proved independently.
 
-with the 47-core floor `e(C_p)>=284`. Hence
+Canonical sources:
 
-`22 <= q_p <= 31`.
+- `front_end/E406_LOW_TO_Q30_BRIDGE.md`;
+- `front_end/Q30_HEREDITARY_PROMOTION_CANONICAL.md`;
+- `front_end/E406_FULL_CLOSURE.md`.
 
-The proved S31 theorem supplies at least one degree-13 pivot with
+The reconstructed chain is:
 
-`q_p <= 30`.
-
-## 2. Complete local boundary classification
-
-Assume there is an adjacent legal repivot edge
-
-`q=30 -> q=31`.
-
-The exact q30/q31 exchange reduction shows that its missing distance must lie in
-
-`d in {1,2,3,10,11,12}`.
-
-Each of these six classes is now `PROVED EMPTY` under the explicit E406 boundary contract:
-
-- `d=1`: `front_end/E406_D1_FULL_CLOSURE.md`;
-- `d=2`: closure chain `E406_D2_*`;
-- `d=3`: complete Type-A/Type-B closure, including O5 and all O4 multiplicity families;
-- `d=10`: `front_end/E406_Q31_PLATFORM_SUPPORT_RIGIDITY.md`;
-- `d=11`: `front_end/E406_D11_FULL_CLOSURE.md`;
-- `d=12`: `front_end/E406_D12_FULL_CLOSURE.md`.
+1. S31 supplies a degree-13 pivot with `q<=30`.
+2. q22/q23 are impossible.
+3. q24--q26 promote without jumping directly to q31.
+4. q27/q28 are impossible.
+5. q29 promotes exactly to q30.
+6. Therefore every E406 parent contains a genuine q30 pivot.
+7. The independently replayed q30 hereditary theorem reaches q31 within at most two regular repivots.
+8. Hence an actual adjacent q30->q31 edge exists.
+9. Every possible final-rise distance `d in {1,2,3,10,11,12}` is independently empty.
 
 Therefore
 
-> **No legal q30--q31 pivot-graph boundary edge exists in E406.**
+`E406 = EMPTY`.
 
-## 3. The only remaining E406 obligation
-
-E406 is not yet upgraded to `PROVED EMPTY` solely because one global implication remains to be independently replayed/reconstructed:
-
-> **Boundary-forcing bridge.** Every E406 parent satisfying the T61 hereditary-cap contract and S31 must produce an adjacent legal q30--q31 boundary edge.
-
-The source-reported V6/V7 ladder claims exactly the ingredients needed for this bridge:
-
-- low-charge promotion;
-- q<=29 promotion to q30 in the licensed range;
-- q30 no-immediate-rise classification and at-most-two-repivot promotion to q31.
-
-However the current repository only stores summary/result files for V6/V7, not a complete independently replayed bridge proof. Hence the correct status is
-
-`E406 = CONDITIONAL_EMPTY_ON_BOUNDARY_FORCING_BRIDGE`,
-
-not yet canonical `PROVED EMPTY`.
-
-## 4. Research target
-
-Do not reopen any of the six distance classes. The sole assistant-owned target is now:
-
-`E406 parent -> actual adjacent q30--q31 boundary edge`.
-
-Once this implication is independently certified, E406 closes immediately by the six local closure theorems above.
+Do not use the former status `LOCAL_BOUNDARY_COMPLETE / GLOBAL_BRIDGE_OPEN`; it is obsolete.
