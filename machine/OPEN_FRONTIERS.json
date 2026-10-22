@@ -4,7 +4,11 @@
     {
       "id": "LINE_A_T61_H13",
       "status": "OPEN",
-      "latest_package_level_edge_window": [406, 408],
+      "edge_window": [407, 408],
+      "closed_e406": {
+        "status": "PROVED_EMPTY",
+        "source": "front_end/E406_FULL_CLOSURE.md"
+      },
       "source_reported_v8": {
         "evidence_status": "SOURCE_REPORTED_REPLAY_PENDING",
         "remaining_layers": [407, 408],
@@ -14,17 +18,7 @@
           "nonzero correction-term compatibility and cycle closure"
         ],
         "source": "front_end/T61_H13_V8_RESULT.md"
-      },
-      "e406_assistant_subfrontier": [
-        "d1 common-K11 deficit/excess-transfer system",
-        "d12 paired dense 12-block system"
-      ],
-      "e406_closed": [
-        "d2",
-        "d3 full class",
-        "d10",
-        "d11"
-      ]
+      }
     },
     {
       "id": "LINE_B_E333_E340",
@@ -37,7 +31,7 @@
         "common_missing_pair_repetition_lower_bounds": [8, 8, 5, 7, 9],
         "source": "backend/HIGH_LAYER_BACKEND_V4_RESULT.md"
       },
-      "next_target": "Repeated-pair/core-support capacity and multiplicity-overflow theorem in the 35-point core."
+      "next_target": "Repeated-pair/core-support capacity and realizability theorem in the 35-point core, starting with E333."
     }
   ],
   "closed_lines": [
@@ -45,6 +39,11 @@
       "id": "LINE_C_E332",
       "status": "PROVED_EMPTY_FROZEN",
       "source": "backend/E332_FULL_CLOSURE.md"
+    },
+    {
+      "id": "ASSISTANT_E406",
+      "status": "PROVED_EMPTY",
+      "source": "front_end/E406_FULL_CLOSURE.md"
     }
   ],
   "global_status": "OPEN_NOT_CERTIFIED"
