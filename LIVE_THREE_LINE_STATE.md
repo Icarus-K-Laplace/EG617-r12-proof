@@ -36,13 +36,6 @@ Evidence status: `SOURCE_REPORTED / PACKAGE_PRESENT / INDEPENDENT_REPLAY_PENDING
 
 The assistant-owned E406 work is deliberately disjoint from Astra A's E407--E408 assignment.
 
-Base reduction:
-
-- `q<=31`;
-- q31/q30/q29 cores have284/285/286 edges and minimum degree at least12 under the accepted Line-A near-core theorem;
-- regular shell vertices of missing degree4 through9 are excluded in q30/q31 views;
-- any E406 coexistence object contains an actual q30->q31 boundary edge.
-
 Current distance-class status:
 
 - `d=10`: `PROVED EMPTY`;
@@ -58,28 +51,24 @@ Thus the surviving E406 frontier is exactly
 
 Latest d3-TypeA reductions:
 
-- complete `O=5` closure: `front_end/E406_D3_TYPEA_O5_FULL_CLOSURE.md`;
-- modern O4 interface: every O4 state has full-row counts `(9,10,10,10)`;
+- complete `O=5` closure;
+- every O4 state has full-row counts `(9,10,10,10)`;
 - eta=0 O4: `e(H)=152`, total H excess4, `R=3`;
 - eta=1 O4: `e(H)=151`, total H excess3, `R=4`;
-- no H-vertex can be full to all four support rows, so O4 multiplicity type `3+1` is impossible;
-- eta=0 simple-four-double branch is **fully closed** in `front_end/E406_D3_O4_SIMPLE_ETA0_FULL_CLOSURE.md`;
-- eta=1 simple-four-double branch is reduced by high-pair rigidity to exactly four pure profiles:
-  `(5,6,8,8)`, `(6,6,8,8)`, `(6,6,7,8)`, `(6,7,7,7)`;
-- in eta=1, every 7-8 or 7-7 high double has excess1 and exact H-neighbourhood equal to one K7 hub; repeated hubs and singleton-bearing hubs are forbidden.
+- no four-full H vertex, so O4 multiplicity type `3+1` is impossible;
+- eta=0 simple-four-double branch is **fully closed**;
+- eta=1 high-pair rigidity leaves only the low-row simple profiles `(5,6,8,8)`, `(6,6,8,8)`, `(6,6,7,8)`, `(6,7,7,7)`;
+- `(6,7,7,7)` is now `PROVED EMPTY` by row-degree balance plus the no-repeated-hub / no-singleton-hub theorems.
 
-Therefore the active O4 work now consists only of:
+Therefore the eta=1 simple-four-double frontier is exactly
 
-1. four eta=1 low-row simple-double profiles;
-2. one-triple + two-double multiplicity type;
-3. two-triple multiplicity type.
+`(5,6,8,8)`, `(6,6,8,8)`, `(6,6,7,8)`.
 
-Key exact assets:
+The remaining d3-TypeA O4 work consists of:
 
-- near-284 `PAIR-13` and `TRI-24` row-union lemmas;
-- d3 four-triangle compression: four pairwise anticomplete K3 support classes plus a 35-point remainder of151/152 edges;
-- Type-B d3 fully closed;
-- d11 and d2 fully closed.
+1. those three eta=1 simple-double profiles;
+2. one triple + two doubles;
+3. two triples.
 
 ## Line B — high backend E333..E340
 
@@ -96,27 +85,15 @@ Reported remaining necessary shell families:
 
 `D2-A`, `D2-B`, `D2-C`, `D2-D`, `R9`,
 
-with common-missing-set repetition lower bounds
-
-`8,8,5,7,9`.
+with common-missing-set repetition lower bounds `8,8,5,7,9`.
 
 These are necessary shell rows only, not realized graphs. `E333..E340` all remain OPEN.
-
-The current high-backend bottleneck is global 35-point-core compatibility: show that the repeated-support survivor families cannot coexist in one legal core, or force a better pivot / already-forbidden multi-support geometry.
 
 Evidence status for V4: `SOURCE_REPORTED / PACKAGE_PRESENT / INDEPENDENT_REPLAY_PENDING`. See `backend/HIGH_LAYER_BACKEND_V4_RESULT.md`.
 
 ## Line C — E332 q30+211
 
 `COMPLETE AND FROZEN: E332 = EMPTY`.
-
-Preferred final assets:
-
-- `backend/E332_FULL_CLOSURE.md`;
-- `backend/E332_H1_UNIFIED_FINAL.md`;
-- `backend/E332_G8_H0_UNIFIED_CLOSURE.md`.
-
-Line C has no remaining mathematical frontier.
 
 ## Global state
 
