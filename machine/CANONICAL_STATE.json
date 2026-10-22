@@ -11,9 +11,16 @@
     },
     "t61": {
       "status": "OPEN",
-      "repository_canonical_closed_layers": [397, 398, 399, 400],
+      "repository_canonical_closed_layers": [397, 398, 399, 400, 406],
       "source_reported_closed_layers": [401, 402, 403, 404, 405],
-      "latest_package_level_window": [406, 408],
+      "active_edge_window": [407, 408],
+      "e406": {
+        "status": "PROVED_EMPTY",
+        "master_source": "front_end/E406_FULL_CLOSURE.md",
+        "bridge_source": "front_end/E406_LOW_TO_Q30_BRIDGE.md",
+        "q30_promotion_source": "front_end/Q30_HEREDITARY_PROMOTION_CANONICAL.md",
+        "closed_final_rise_distances": [1, 2, 3, 10, 11, 12]
+      },
       "source_reported_v8": {
         "evidence_status": "SOURCE_REPORTED_REPLAY_PENDING",
         "remaining_layers": [407, 408],
@@ -23,12 +30,6 @@
           "Compatibility and cycles of nonzero correction terms"
         ],
         "source": "front_end/T61_H13_V8_RESULT.md"
-      },
-      "e406_assistant_line": {
-        "status": "OPEN",
-        "closed_final_rise_distances": [2, 3, 10, 11],
-        "d3_status": "PROVED_EMPTY_FULL_CLASS",
-        "open_final_rise_frontier": ["d1", "d12"]
       }
     }
   },
@@ -53,11 +54,11 @@
         "repetition_lower_bounds": [8, 8, 5, 7, 9],
         "source": "backend/HIGH_LAYER_BACKEND_V4_RESULT.md"
       },
-      "next_goal": "Prove a repeated-pair/core-support capacity theorem in the 35-point core."
+      "next_goal": "Prove repeated-pair/core-support realizability bounds, beginning with E333."
     }
   },
   "remaining_global_obligations": [
-    "Finish the T61 front end: E406 through E408, with E406 reduced to d1 and d12.",
+    "Close T61 edge layers E407 and E408.",
     "Eliminate legal R(4,49) layers E333 through E340."
   ]
 }
