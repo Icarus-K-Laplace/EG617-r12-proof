@@ -11,12 +11,15 @@
     },
     "t61": {
       "status": "OPEN",
-      "repository_canonical_closed_layers": [397, 398, 399, 400, 406],
-      "source_reported_closed_layers": [401, 402, 403, 404, 405],
+      "repository_canonical_closed_interval": [397, 406],
       "active_edge_window": [407, 408],
+      "canonical_replay_sources": {
+        "E401_E404": "front_end/E401_E404_CANONICAL_CLOSURE.md",
+        "E405": "front_end/E405_FULL_CLOSURE_CANONICAL.md",
+        "E406": "front_end/E406_FULL_CLOSURE.md"
+      },
       "e406": {
         "status": "PROVED_EMPTY",
-        "master_source": "front_end/E406_FULL_CLOSURE.md",
         "bridge_source": "front_end/E406_LOW_TO_Q30_BRIDGE.md",
         "q30_promotion_source": "front_end/Q30_HEREDITARY_PROMOTION_CANONICAL.md",
         "closed_final_rise_distances": [1, 2, 3, 10, 11, 12]
