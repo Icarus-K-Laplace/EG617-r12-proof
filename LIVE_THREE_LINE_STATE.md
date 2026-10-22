@@ -34,21 +34,21 @@ Current distance-class status:
 
 - `d=10`: `PROVED EMPTY`;
 - `d=11`: `PROVED EMPTY` in `front_end/E406_D11_FULL_CLOSURE.md`;
-- `d=2`: all retained-star layers `e=2,...,8` are `PROVED EMPTY`; only the exact `e=1` decorated-edge terminal remains;
+- `d=2`: `PROVED EMPTY` in full. The retained-star layers `e=2,...,8` were already closed; the final `e=1` terminal is now closed in both `e_D=0` and `e_D=1` branches by `E406_D2_E1_ED0_CLOSURE.md` and `E406_D2_E1_ED1_CLOSURE.md`;
 - `d=3`: all Type-B q31 platforms are `PROVED EMPTY`; only Type-A platforms remain;
 - `d=1`: `OPEN`, reduced to a common-K11 deficit / excess-transfer system;
 - `d=12`: `OPEN`, reduced to paired dense 12-blocks.
 
 The surviving E406 frontier is therefore exactly
 
-`d1`, `d2-e1`, `d3-TypeA`, `d12`.
+`d1`, `d3-TypeA`, `d12`.
 
 Additional exact reductions now available:
 
 - near-284 `PAIR-13` and `TRI-24` row-union lemmas;
-- d2-e1 contains at least five clean regular pivots with 2-row supports of only three exact types (`E406_D2_E1_CLEAN_SUPPORTS.md`);
 - d3-TypeA has four pairwise anticomplete K3 support classes and a 35-point remainder of151/152 edges with saturated row-partition constraints;
-- the former d11 terminal was compressed to three star-complement 11-blocks and then eliminated by forcing the two core-star centres to coincide and applying PAIR-13 to the resulting isolate.
+- the former d11 terminal was eliminated by forcing the two core-star centres to coincide and applying PAIR-13;
+- the final d2-e1 branch has at least six clean pivots when `e_D=1`; support-incidence degree and core-excess arguments force an independent6 or exceed the six-unit q30 core excess budget.
 
 Evidence status for V7 itself remains `SOURCE_REPORTED_PROVED / INDEPENDENT_REPLAY_PENDING` in this chat runtime. The assistant-owned E406 lemmas above are standalone repository proof files and do not rely on importing an unverified V7 proof body beyond the explicit Line-A ledger inputs already marked `PROVED`.
 
