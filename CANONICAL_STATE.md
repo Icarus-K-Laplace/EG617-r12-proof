@@ -32,37 +32,30 @@ The old q30 equality frontier has been sharply reduced.
 - every remaining undecorated missing degree lies in `{0,1,2,11,12}`;
 - at most two undecorated degree11/12 vertices exist.
 
-A strengthened zero-gap repivot theorem is now proved. If `u` is undecorated and `uv` is a missing-shell edge, then
+A strengthened zero-gap repivot theorem is proved. If `u` is undecorated and `uv` is a missing-shell edge, then
 
 `|N_M(u) union N_M(v)| + g_v >= 13 + |D_u intersect D_v|`.
 
 In particular, if both endpoints are undecorated, their missing-neighbourhoods cover the full 13-shell and their core rows are disjoint.
 
-This stronger theorem now closes three consecutive decoration layers completely:
+The decoration layers
 
-- `G=4`: `PROVED EMPTY`;
-- `G=5`: `PROVED EMPTY`;
-- `G=6`: `PROVED EMPTY`.
+- `G=4`,
+- `G=5`,
+- `G=6`
 
-The G=6 closure uses two new ingredients:
+are all `PROVED EMPTY`.
 
-1. a missing-triangle row-union lemma: for every M-triangle `r,s,t`,
-   `|D_r union D_s union D_t|>=24`; equality of total row-size24 forces the three rows pairwise disjoint;
-2. the exact `H2-G6-K4` cell then gives three pairwise-disjoint blocks of sizes12,12,12 inside the 35-core, impossible; the remaining unique-high branch is eliminated by exact support/active-inactive accounting for high missing-degree11 and12.
+The full `G=7,h=0` branch is now also `PROVED EMPTY`. Its closure eliminates k=3,4,5 directly and then all high-incidence k=6,7 cells by active/inactive support counting, degree1/2 low-repivot inequalities, pair-row coverage, and the triangle-row union lemma.
 
-Therefore any E332 survivor now has
+Therefore the active E332 frontier is now exactly:
 
-`G in {7,8}`.
+- `G=7,h=1`;
+- the exact `H2-G7-K4minusE` cell;
+- `G=8,h=0`;
+- `G=8,h=1`.
 
-For the two-high family:
-
-- no `h=2,G=8` shell exists;
-- the only surviving two-high candidate is `H2-G7-K4minusE`: two high regular vertices, two decorated vertices with total decoration7, nine lows, and support `K4-e`, with the missing support edge between the high vertices.
-
-Thus the active E332 frontier is now exactly:
-
-- `G=7,h=0 or1` plus `H2-G7-K4minusE`;
-- `G=8,h=0 or1`.
+There is no h=2,G=8 state.
 
 The high backend layers E333..E340 remain open.
 
@@ -76,7 +69,7 @@ The contextual recurrence is computation-certified at 1752 nodes and 144 stoppin
 
 Within T61:
 
-- residual independence is exactly 5;
+- residual independence is exactly5;
 - anchor defect `z=0`;
 - exact outer ledger `E+sigma+g+x6+y6=408`;
 - six additional genuine K12 blocks remain in the anchor nonneighbourhood.
@@ -87,24 +80,32 @@ A q20 leaf-rotation theorem gives
 
 and closes the entire T61 minimum-degree12 branch. Therefore T61 has minimum degree13.
 
-The first four h13 edge layers are closed:
+Repository-canonical proved h13 layers are currently E397--E400.
 
-- E397: zero-decoration support contradiction;
-- E398: exact q23 shell contradiction;
-- E399: exact q24 cells;
-- E400: uniform q25 shell theorem.
+A newer Line-A V6 package reports a unified proof closing E401--E404 and shrinking the package-level front-end window to
 
-Thus the repository-canonical front-end terminal is
+`E405..E408`.
 
-`T61: delta=13, 401<=E<=408`.
+The package also reports a corrected complete repivot identity and removes `(q,z,G)=(25,21,4)` as an illegal cell via `D(14)=69`. The source package reports a 127-row rational certificate replayed successfully. Because the uploaded ZIP could not be independently unpacked in the current chat runtime, this result remains separately marked `SOURCE_REPORTED_PROVED / INDEPENDENT_REPLAY_PENDING` rather than silently represented as independently replayed here.
 
-A newer external Line-A package reports a proof of E401--E404; that package is not promoted in this file until independent replay/source audit is completed.
+## High backend live state
+
+A newer Line-B V2 package reports:
+
+- the complete adjacent two-pivot exchange system;
+- exact q and tau difference identities;
+- proof that reverse-pivot equality is not an independent second inequality;
+- q34--q35 true-twin compression to 76 necessary quotient rows;
+- elimination of the triangle-free non-bipartite quotient branch;
+- four exact q30--q33 local certificates showing naive one-step Phi monotonicity is false.
+
+No high edge layer is closed by V2. E333--E340 all remain OPEN.
 
 ## Current independent research obligations
 
-- Front-end: repository-canonical T61 h13 frontier E401..E408, with a newer E401--E404 package pending independent audit;
-- Low backend: eliminate the reduced E332 frontier `G=7,8` above;
-- High backend: eliminate legal R(4,49) layers E333..E340.
+- Front-end: repository-canonical E401..E408, with a newer source package reporting E401..E404 closed; package-level remaining window E405..E408;
+- Low backend: close `G=7,h=1`, `H2-G7-K4minusE`, `G=8,h=0`, `G=8,h=1`;
+- High backend: eliminate legal R(4,49) layers E333..E340 using third-pivot/joint-row/nonadjacent-pivot constraints rather than naive local Phi monotonicity.
 
 ## Certification warning
 
