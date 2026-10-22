@@ -2,59 +2,49 @@
 
 This is the synchronized human-readable live state. It contains research results only, not agent prompts.
 
-## Line A — T61 front end
+## Front end — T61
 
-Source package V6 reports `E401..E404` empty; V7 reports `E405` empty. Those package evidence levels remain tracked separately.
+The repository now has continuous canonical h13 closure
 
-### E406 — COMPLETE
+`E397..E406 = EMPTY`.
 
-The assistant-owned E406 subline is now complete:
+The former V6/V7 source-only status for E401--E405 has been discharged by independent reconstruction:
 
-`E406 = EMPTY`.
+- `front_end/E401_E404_CANONICAL_CLOSURE.md`;
+- `front_end/E405_FULL_CLOSURE_CANONICAL.md`;
+- `front_end/Q30_HEREDITARY_PROMOTION_CANONICAL.md`.
 
-Canonical source:
+E406 is independently closed by
 
 `front_end/E406_FULL_CLOSURE.md`.
 
-Key reconstructed bridge:
+### Astra-A active frontier
 
-`S31 q<=30 -> q30 -> q31 within at most two regular repivots`.
+Only
 
-The final `q30 -> q31` edge must have missing distance
+`E407,E408`
 
-`{1,2,3,10,11,12}`,
+remain open on the T61 front end.
 
-and all six classes are proved empty.
-
-There is no remaining E406 research obligation.
-
-### Astra-A active frontier — E407/E408
-
-V8 source-reported remaining obligations:
+V8 source-reported residual tasks are:
 
 - `E407: Q_max=27`;
 - `E408: Q_max in {27,28}`;
-- global compatibility/cycles of nonzero correction terms across distinct pivots.
-
-Evidence status: `SOURCE_REPORTED / PACKAGE_PRESENT / INDEPENDENT_REPLAY_PENDING` unless separately reconstructed.
-
-Thus the active T61 frontier is exactly
-
-`E407,E408`.
+- compatibility/cycles of nonzero correction terms.
 
 ## Line B — high backend E333..E340
 
 All high backend edge layers remain OPEN.
 
-V4 source package reports:
+V4 reports necessary survivor families
 
-- relevant maximal-pivot distance class size9 or10;
-- at least five legal neighbours share a common nonempty two-point missing set;
-- D1 and zero-defect two-hub families are excluded;
-- remaining necessary shell families are `D2-A,D2-B,D2-C,D2-D,R9`;
-- repetition lower bounds are `8,8,5,7,9`.
+`D2-A,D2-B,D2-C,D2-D,R9`
 
-These are necessary shell rows, not realized graphs. Astra B is assigned the repeated-pair/core-support realizability problem, starting with E333.
+with repetition lower bounds
+
+`8,8,5,7,9`.
+
+These are necessary shell rows, not realized graphs. Astra B is assigned repeated-pair/core-support realizability, beginning with E333.
 
 ## Line C — E332
 
@@ -66,5 +56,5 @@ The full EG617 r=12 theorem remains `OPEN / NOT_CERTIFIED`.
 
 Exactly two independent mathematical obligations remain:
 
-1. close T61 `E407,E408`;
-2. eliminate legal `R(4,49)` high backend interval `E333..E340`.
+1. T61 `E407,E408`;
+2. legal `R(4,49)` high backend `E333..E340`.
