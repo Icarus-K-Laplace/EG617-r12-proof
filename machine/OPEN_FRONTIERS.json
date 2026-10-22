@@ -5,23 +5,20 @@
       "id": "LINE_A_T61_H13",
       "status": "OPEN",
       "object": "T61 residual",
-      "constraints": {
+      "repository_canonical_constraints": {
         "order": 61,
         "alpha": 5,
         "omega_upper": 11,
         "minimum_degree": 13,
         "edge_window": [401, 408]
       },
-      "next_target": "E401",
-      "exact_new_cells": [
-        {"q": 26, "z": 25, "G": 1},
-        {"q": 26, "z": 24, "G": 2},
-        {"q": 26, "z": 23, "G": 3},
-        {"q": 26, "z": 22, "G": 4},
-        {"q": 25, "z": 21, "G": 4}
-      ],
-      "preferred_breakthrough": "A parameterized q=22+r shell-stability theorem eliminating multiple edge layers.",
-      "source": "OPEN_FRONTIERS.md"
+      "latest_source_reported_result": {
+        "evidence_status": "SOURCE_REPORTED_PROVED_REPLAY_PENDING",
+        "reported_closed_layers": [401, 402, 403, 404],
+        "reported_remaining_window": [405, 408],
+        "source": "front_end/T61_H13_V6_RESULT.md"
+      },
+      "next_target": "E405-E408 after V6 replay/promotion; otherwise repository-canonical audit still begins at E401."
     },
     {
       "id": "LINE_C_E332",
@@ -31,20 +28,39 @@
         "q": 30,
         "core_edges": 211,
         "remaining_undecorated_missing_degrees": [0, 1, 2, 11, 12],
-        "decoration_total_range": [4, 8],
         "high_regular_count_upper": 2
       },
-      "closed_subbranches": ["undecorated d=3", "undecorated d=4..9", "undecorated d=10"],
-      "next_target": "Eliminate the exact G=4 support cell (h,k,l)=(2,4,7), then parameterize G=5..8.",
-      "source": "backend/E332_Q30_211.md"
+      "closed_subbranches": [
+        "undecorated d=3",
+        "undecorated d=4..9",
+        "undecorated d=10",
+        "G=4",
+        "G=5",
+        "G=6",
+        "G=7,h=0",
+        "G=8,h=2"
+      ],
+      "active_subbranches": [
+        "G=7,h=1",
+        "H2-G7-K4minusE",
+        "G=8,h=0",
+        "G=8,h=1"
+      ],
+      "next_target": "Close G8,h=1 and use low-row plateau repivots to kill H2-G7-K4minusE; in parallel close G7,h=1 and G8,h=0."
     },
     {
       "id": "LINE_B_E333_E340",
       "status": "OPEN",
       "object": "Legal R(4,49) residual layers E333 through E340",
       "edge_window": [333, 340],
-      "preferred_breakthrough": "Uniform repivot/core-excess stability theorem eliminating several layers simultaneously.",
-      "source": "OPEN_FRONTIERS.md"
+      "latest_source_reported_result": {
+        "evidence_status": "SOURCE_REPORTED_REPLAY_PENDING",
+        "q34_q35_necessary_rows": 76,
+        "local_q30_q33_certificates": 4,
+        "all_layers_open": true,
+        "source": "backend/HIGH_LAYER_BACKEND_V2_RESULT.md"
+      },
+      "next_target": "Third-pivot, joint-row, or nonadjacent-pivot weighted theorem; do not retry naive one-step Phi monotonicity."
     }
   ]
 }
