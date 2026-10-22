@@ -2,34 +2,27 @@
 
 ## Front-end — T61 h13
 
-Latest package-level remaining front-end window:
+Latest package-level remaining window:
 
 `T61: E406..E408, delta=13`.
 
-Source packages report E401--E404 (V6) and E405 (V7) empty, while V8 supplies the maximal-charge `rho<=k-1` theorem for E407/E408. Evidence status remains tracked separately as source-reported/replay-pending unless upgraded.
+### E406 — boundary-complete, bridge-open
 
-### E406 — assistant-owned coexistence line
+Every possible adjacent q30->q31 final-rise distance class is proved empty:
 
-Closed final-rise distances:
+`d=1,2,3,10,11,12`.
 
-- `d=2`: EMPTY;
-- `d=3`: EMPTY in full;
-- `d=10`: EMPTY;
-- `d=11`: EMPTY.
+Hence the local coexistence classification is complete. There is no legal adjacent q30--q31 pivot edge.
 
-The full d=3 closure now includes:
+The **only** remaining E406 obligation is:
 
-- Type-B;
-- Type-A O5;
-- Type-A O4 simple-four-double, eta0 and eta1;
-- Type-A O4 one-triple + two-doubles, eta0 and eta1;
-- Type-A O4 two-triples;
-- no-four-full theorem eliminating the four-full + double type.
+> prove independently that every E406 parent satisfying S31 and the hereditary T61 contract must generate an actual adjacent q30--q31 boundary edge.
 
-Therefore the E406 frontier is exactly:
+The V6/V7 source packages report the ingredients for that ladder, but the complete implication has not yet been replayed from a repository proof body. Therefore E406 is currently
 
-1. `d=1` — common-K11 deficit / excess-transfer system;
-2. `d=12` — paired dense 12-block system.
+`CONDITIONAL_EMPTY_ON_BOUNDARY_FORCING_BRIDGE`.
+
+See `front_end/E406_BOUNDARY_BRIDGE_STATUS.md`.
 
 ### E407--E408 — Astra-A line
 
@@ -37,7 +30,7 @@ V8 explicitly leaves:
 
 - `E407: Q_max=27`;
 - `E408: Q_max in {27,28}`;
-- global compatibility/cycles of nonzero correction terms across distinct pivots.
+- global compatibility/cycles of nonzero correction terms.
 
 ## High backend — E333..E340
 
@@ -47,21 +40,20 @@ Line-B V4 reports necessary survivor families
 
 `D2-A, D2-B, D2-C, D2-D, R9`
 
-with common-missing-set repetition lower bounds
+with repetition lower bounds
 
 `8,8,5,7,9`.
 
-These are necessary shell rows, not realized graphs. `E333..E340` all remain OPEN.
+These are necessary shell rows, not realized graphs. The next valid target is a repeated-pair/core-support capacity theorem in the 35-point core.
 
-The next valid target is a repeated-pair/core-support capacity theorem in the 35-point core.
+## Closed low backend
 
-## Closed low backend — E332
-
-`E332 = EMPTY` is proved and frozen. There is no remaining low-backend frontier.
+`E329,E330,E331,E332` are empty; E332 is frozen.
 
 ## Current global open obligations
 
-1. finish T61 h13: `E406..E408`, with E406 reduced to `d1/d12`;
-2. eliminate legal R(4,49) layers `E333..E340`.
+1. E406 boundary-forcing bridge;
+2. E407/E408;
+3. legal R(4,49) high layers E333..E340.
 
 The full EG617 r=12 theorem remains **OPEN / NOT_CERTIFIED**.
