@@ -10,111 +10,88 @@ For every legitimate residual `F in R(4,49)`, a degree-13 pivot gives
 
 `e(F)=91+q+e(H)`, with `H in R(3,35)` and clean core floor `e(H)>=211`.
 
-Reusable assets include the q27/q28/q29 repivot machinery and the reconstructed E329--E331 closures.
+Reusable assets include q27/q28/q29 repivot machinery and the reconstructed E329--E331 closures.
 
-### E332 is closed and frozen
+### Closed low backend
 
-The full q30+211 equality frontier has been eliminated analytically. Preferred final proof assets are:
+`E329,E330,E331,E332` are empty. E332 is complete and frozen; preferred proof assets are:
 
 - `backend/E332_FULL_CLOSURE.md`;
 - `backend/E332_H1_UNIFIED_FINAL.md`;
 - `backend/E332_G8_H0_UNIFIED_CLOSURE.md`.
 
-Therefore
-
-`E332 = EMPTY`.
-
-The legal R(4,49) backend obligation is exactly
+Therefore the legal R(4,49) backend obligation is exactly
 
 `E333..E340`.
 
 ## Front-end master reduction
 
-The certified front-end dichotomy remains
+The certified dichotomy remains
 
 `least-edge K145 counterexample -> induced legal R(4,49) OR embedded T61`.
 
 The contextual recurrence is computation-certified at 1752 nodes and 144 stopping comparisons.
 
-Repository-canonical proved h13 layers currently run through E400.
+Repository-canonical low h13 layers run through E400. Source package V6 reports E401--E404 empty; V7 reports E405 empty; V8 supplies further E407/E408 structure. Package evidence levels remain tracked separately.
 
-### Latest Line-A source packages
+### E406 — local boundary complete
 
-V6 reports E401--E404 empty under the corrected hereditary-cap repivot framework.
+Under the explicit E406 q30->q31 boundary contract, the only possible final-rise distances are
 
-V7 additionally reports E405 empty.
+`{1,2,3,10,11,12}`.
 
-V8 reports the following further theorem for a maximum-charge pivot with `Q=30+k`, `1<=k<=3`:
+All six are now `PROVED EMPTY` by repository proof bodies:
+
+- d1: `front_end/E406_D1_FULL_CLOSURE.md`;
+- d2: `front_end/E406_D2_*` closure chain;
+- d3: complete Type-A/Type-B closure including O5 and all O4 multiplicity families;
+- d10: `front_end/E406_Q31_PLATFORM_SUPPORT_RIGIDITY.md`;
+- d11: `front_end/E406_D11_FULL_CLOSURE.md`;
+- d12: `front_end/E406_D12_FULL_CLOSURE.md`.
+
+Hence no legal adjacent q30--q31 pivot-graph edge exists in E406.
+
+The sole remaining E406 obligation is the **boundary-forcing bridge**:
+
+`E406 parent + S31 + hereditary caps -> existence of an actual adjacent q30--q31 boundary edge`.
+
+V6/V7 source reports claim the required low-charge and q30 promotion ladder, but a full independent repository replay is not yet recorded. Correct current status:
+
+`E406 = CONDITIONAL_EMPTY_ON_BOUNDARY_FORCING_BRIDGE`.
+
+See `front_end/E406_BOUNDARY_BRIDGE_STATUS.md`.
+
+### E407--E408
+
+V8 source-reported theorem for maximum charge `Q=30+k`, `1<=k<=3`:
 
 - every regular missing-degree-3 neighbour satisfies `rho<=k-1`;
-- the boundary family `rho=k` is analytically excluded;
+- the boundary family `rho=k` is excluded;
 - exact excess-migration and reverse-repivot identities are supplied.
 
-V8 explicitly leaves E407 and E408 open. Its remaining source-reported tasks are the low maximum-charge branches `E407:Q_max=27`, `E408:Q_max in {27,28}` and global compatibility/cycles of nonzero correction terms.
+V8 explicitly leaves:
 
-The latest package-level front-end window remains
+- `E407: Q_max=27`;
+- `E408: Q_max in {27,28}`;
+- correction-term compatibility/cycles.
 
-`E406..E408`.
-
-V8 evidence status is `SOURCE_REPORTED / PACKAGE_PRESENT / INDEPENDENT_REPLAY_PENDING`; see `front_end/T61_H13_V8_RESULT.md`.
-
-### Assistant-owned E406 canonical reduction
-
-The E406 coexistence problem is now reduced to exactly three final-rise classes:
-
-- `d=1`: open common-K11 deficit/excess-transfer system;
-- `d=3`: Type-B is empty; Type-A is reduced to `O<=4`;
-- `d=12`: open paired dense 12-block system.
-
-The other final-rise distances are closed:
-
-- `d=2`: EMPTY;
-- `d=10`: EMPTY;
-- `d=11`: EMPTY.
-
-For d3-TypeA:
-
-- the four-triangle / 35-point remainder compression is proved;
-- the complete `O=5` layer is empty (`front_end/E406_D3_TYPEA_O5_FULL_CLOSURE.md`);
-- every O4 state has full-row counts `(9,10,10,10)`;
-- eta=0 O4 has `e(H)=152`, H-excess4, `R=3`;
-- eta=1 O4 has `e(H)=151`, H-excess3, `R=4`;
-- no H-vertex can be full to all four support rows, so the O4 multiplicity type `3+1` is impossible;
-- the modern simple-four-double profile `(4,8,8,8)` is empty;
-- the modern eta=0 simple-four-double profile `(5,7,8,8)` is empty.
-
-Thus the active d3-TypeA work is a strictly modern `O<=4` remainder, not the historical S30 O5/S31 problem.
+Evidence status: `SOURCE_REPORTED / PACKAGE_PRESENT / INDEPENDENT_REPLAY_PENDING`.
 
 ## High backend live state
 
 Line-B V4 reports a support-repetition theorem for maximal `(q,tau)` pivots:
 
-- the relevant distance class has size9 or10;
+- relevant distance class size9 or10;
 - at least five legal neighbours share a common nonempty two-point missing set;
-- single-hub family `D1` is excluded;
-- the two-hub zero-defect family is excluded.
+- D1 and zero-defect two-hub families are excluded;
+- remaining necessary families `D2-A,D2-B,D2-C,D2-D,R9` have repetition lower bounds `8,8,5,7,9`.
 
-The reported necessary survivor families are
+These are necessary shell rows only, not realized graphs. `E333..E340` all remain OPEN.
 
-`D2-A, D2-B, D2-C, D2-D, R9`,
+## Current independent obligations
 
-with common-missing-set repetition lower bounds
+1. certify the E406 boundary-forcing bridge;
+2. close E407/E408;
+3. eliminate E333..E340.
 
-`8,8,5,7,9`.
-
-These are necessary shell rows only, not realized graphs. No high edge layer is closed: `E333..E340` remain OPEN.
-
-The missing theorem is a global 35-point-core compatibility/forcing statement showing that the repeated-support survivor families cannot coexist, or else force a better pivot / already-forbidden multi-support geometry.
-
-V4 evidence status is `SOURCE_REPORTED / PACKAGE_PRESENT / INDEPENDENT_REPLAY_PENDING`; see `backend/HIGH_LAYER_BACKEND_V4_RESULT.md`.
-
-## Current independent research obligations
-
-- Front-end: close E406 d1 / d3-TypeA-O<=4 / d12, then source-package E407--E408 obligations;
-- Backend: eliminate legal R(4,49) layers `E333..E340`.
-
-There is no low-backend obligation.
-
-## Certification warning
-
-EG617 r=12 remains OPEN. It may be declared proved only after the remaining T61 front-end and all legal R(4,49) layers E333..E340 are closed.
+EG617 r=12 remains OPEN until all three are discharged.
