@@ -38,27 +38,29 @@ A strengthened zero-gap repivot theorem is now proved. If `u` is undecorated and
 
 In particular, if both endpoints are undecorated, their missing-neighbourhoods cover the full 13-shell and their core rows are disjoint.
 
-This stronger theorem closes the first two decoration layers completely:
+This stronger theorem now closes three consecutive decoration layers completely:
 
 - `G=4`: `PROVED EMPTY`;
-- `G=5`: `PROVED EMPTY`.
+- `G=5`: `PROVED EMPTY`;
+- `G=6`: `PROVED EMPTY`.
 
-Therefore any E332 survivor has
+The G=6 closure uses two new ingredients:
 
-`G in {6,7,8}`.
+1. a missing-triangle row-union lemma: for every M-triangle `r,s,t`,
+   `|D_r union D_s union D_t|>=24`; equality of total row-size24 forces the three rows pairwise disjoint;
+2. the exact `H2-G6-K4` cell then gives three pairwise-disjoint blocks of sizes12,12,12 inside the 35-core, impossible; the remaining unique-high branch is eliminated by exact support/active-inactive accounting for high missing-degree11 and12.
 
-Further proved reductions:
+Therefore any E332 survivor now has
 
-- the entire `G=6,h=0` branch is empty;
-- all two-high (`h=2`) extreme shells are classified;
+`G in {7,8}`.
+
+For the two-high family:
+
 - no `h=2,G=8` shell exists;
-- the only remaining h=2 cells are:
-  - `H2-G6-K4`: two high regular vertices, two decorated vertices with total decoration6, nine lows, and the four support vertices form `K4` in M;
-  - `H2-G7-K4minusE`: two high regular vertices, two decorated vertices with total decoration7, nine lows, and the support is `K4-e`, with the missing support edge between the high vertices.
+- the only surviving two-high candidate is `H2-G7-K4minusE`: two high regular vertices, two decorated vertices with total decoration7, nine lows, and support `K4-e`, with the missing support edge between the high vertices.
 
-Thus the active E332 frontier is now:
+Thus the active E332 frontier is now exactly:
 
-- `G=6,h=1` plus `H2-G6-K4`;
 - `G=7,h=0 or1` plus `H2-G7-K4minusE`;
 - `G=8,h=0 or1`.
 
@@ -92,16 +94,16 @@ The first four h13 edge layers are closed:
 - E399: exact q24 cells;
 - E400: uniform q25 shell theorem.
 
-Thus the current front-end terminal is
+Thus the repository-canonical front-end terminal is
 
 `T61: delta=13, 401<=E<=408`.
 
-For E401, the new shell cells are q26 with decoration G=1..4 plus the q25 `(21,4)` extension. The preferred next result is a uniform q26 / `q=22+r` stability theorem rather than unrelated casework.
+A newer external Line-A package reports a proof of E401--E404; that package is not promoted in this file until independent replay/source audit is completed.
 
 ## Current independent research obligations
 
-- Front-end: close T61 h13, currently E401..E408.
-- Low backend: close the reduced E332 extreme-shell frontier above.
+- Front-end: repository-canonical T61 h13 frontier E401..E408, with a newer E401--E404 package pending independent audit;
+- Low backend: eliminate the reduced E332 frontier `G=7,8` above;
 - High backend: eliminate legal R(4,49) layers E333..E340.
 
 ## Certification warning
