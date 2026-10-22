@@ -1,108 +1,130 @@
-# E406 d11: close the S-centre shield and reduce the D-centre shield
+# E406 d11: corrected one-budget reduction
 
-Status: `PROVED` under `E406_D11_CENTER_SHIELDING.md`. `E406` remains `OPEN`.
+Status: `PROVED` under `E406_D11_CENTER_SHIELDING.md`. This file supersedes the earlier stronger wording that omitted the `c=e(S,E)` term in the T-view excess budget. `E406` remains `OPEN`.
 
 The previous theorem leaves two shielding modes after proving `r+delta<=1`:
 
-- Mode A: `r=0`, `delta=1`, so D-E is anticomplete and the unique S-E edge is `s0e0`.
-- Mode B: `r=1`, `delta=0`, so the unique D-E edge is `d0e0`; the optional S-E edge is absent or has its S-end at a star leaf.
+- Mode A: `r=0`, `delta=1`; hence `c=1`, D-E is anticomplete, and the unique S-E edge is `s0e0`.
+- Mode B: `r=1`, `delta=0`; the unique D-E edge is `d0e0`; the optional S-E edge is absent or has its S-end at a star leaf.
 
-Here `r=e(D,E)` and `delta` records whether the unique S-E edge is incident with the S-star centre.
+Correct q31 block-excess inequalities are
+
+    m_S+m_E+r >=13,                         (Y)
+    m_S+m_D+r+c >=13,                       (T)
+    m_D+m_E+c >=12.                         (OLD)
+
+The extra `c` in (T) is necessary because the T-view removes E, so the inserted S-block loses the c S-E edges and has excess `8-m_S-c`.
 
 Let `O=C\(D union E)`, `|O|=25`.
 
-For an ordinary S-star leaf s and a D-star leaf d, the independent five-set
+Every ordinary S-star leaf s and D-star leaf d gives the independent five-set
 
-`{T,s0,s,d0,d}`
+    {T,s0,s,d0,d}.
 
-forces the four O-neighbourhoods to cover O.
+Hence the four O-neighbourhoods of s0,s,d0,d cover O.
 
-## 1. Row-class caps used below
+## 1. Row-class caps
 
-Every S-star leaf is a q30 plateau d3 pivot. Its 3-row P is a degree-12 target triangle and a q30 row class has multiplicity at most3: if k vertices share P, repivoting one member gives at least `3(k-1)` decoration on P, while q30 allows only `G<=8`.
+Every S-star leaf is a q30 plateau d3 pivot. A shared 3-row class of size k creates at least `3(k-1)` decoration after repivot, so q30 gives `k<=3`.
 
-A 3-row class in a q31 shell has multiplicity at most4 by the same argument and `G<=9`.
+A shared 3-row class in a q31 shell has `k<=4`.
 
-## 2. Mode A is impossible
+## 2. Mode A: only one residual family survives the cover argument
 
-Assume `r=0`, `delta=1`.
+Assume `r=0`, `c=delta=1`.
 
 The fixed centre O-neighbourhoods have sizes
 
-`|A|=|N_O(s0)|=9`,
-`|B|=|N_O(d0)|=11`.
+    |A|=|N_O(s0)|=9,
+    |B|=|N_O(d0)|=11.
 
 For every S-leaf row P and D-leaf row Q,
 
-`A union B union P union Q = O`,
+    A union B union P union Q = O,
 
-with total incidence `9+11+3+3=26`.
+with total incidence26.
 
-Let `x=|A intersect B|`. Necessarily `x<=1`.
+The Y-inequality and `m_E<=8` give `m_S>=5`.
 
-### 2.1 x=1
+If `|A intersect B|=1`, P and Q partition a fixed six-point remainder, forcing one common S-row for all at least five S-leaves, contradicting the q30 cap3. Hence `A intersect B=empty`.
 
-Then `|A union B|=19`; the six row incidences from P,Q must partition the fixed six-point remainder. Hence every S-leaf has the same P and every D-leaf the same Q.
+Let R be the fixed five-point remainder.
 
-The q31 excess inequality `m_S+m_E>=13`, together with `m_E<=8` in Mode A, gives `m_S>=5`. This contradicts the q30 row-class cap3.
+Each S-row P is disjoint from A because the missing shell edge s0-s has row weights10 and3 and the E406 row-union floor is13.
 
-### 2.2 x=0
+If some P meets B, it meets B in exactly one point and contributes only two points of R; every D-row Q is then forced to be the same complementary 3-subset of R. This is impossible if `m_D>=5`, but is compatible with the q31 cap only when `m_D=4`.
 
-Now `|A union B|=20`, with fixed remainder R of size5.
+If every P lies in R, then either a D-row has only two R-points, forcing all S-rows equal (impossible because `m_S>=5`), or all D-rows also lie in R. In the latter case `|P intersect Q|=1` for every cross pair. Passing to 2-subset complements in R, two distinct S-rows force all D-rows equal. Again the only possible multiplicity is `m_D=4`.
 
-Every S-row P is disjoint from A because the missing shell edge `s0s` has row weights10 and3 and the E406 row-union floor is13.
+Using (T), `m_D=4` forces `m_S=8`.
+Using (OLD), `m_E>=7`, while `c=1` gives `m_E<=8`.
 
-If some P meets B, it can meet B in at most one point: otherwise P contributes at most one point of R and a 3-row Q cannot cover the other four. If `|P intersect B|=1`, P contributes exactly two points of R and every D-row Q must be the fixed complementary 3-subset of R. Since Mode A also gives `m_D>=5`, this violates the q31 row-class cap4.
+Thus Mode A is reduced to exactly
 
-Hence every S-row P is a 3-subset of R.
+    A1: (m_S,m_D,m_E,r,c)=(8,4,7,0,1) or (8,4,8,0,1).
 
-For a D-row Q, if `|Q intersect R|=2`, then every S-row must be the unique complementary 3-subset of R, again contradicting `m_S>=5` and the q30 cap3. Therefore every D-row is also a 3-subset of R.
+The earlier claim that Mode A was empty was too strong and is retracted by this corrected file.
 
-For all P,Q we must have `P union Q=R`, hence `|P intersect Q|=1`. Passing to complements in R, the families of 2-subsets `R-P` and `R-Q` are cross-disjoint.
+## 3. Mode B: finite corrected residual table
 
-The S-side cannot have only one distinct P because `m_S>=5` and class size is at most3. Take two distinct S-complements. If they are disjoint, no 2-subset can be disjoint from both; if they meet, their union has size3 and there is exactly one 2-subset disjoint from both. Thus all D-rows are equal, contradicting `m_D>=5` and the q31 class cap4.
+Assume `r=1`, `delta=0`, and `d0e0` is the unique D-E edge.
 
-Therefore Mode A is empty.
+The centre O-neighbourhoods have sizes10 and10. Their two leaf rows again give a 26-incidence cover.
 
-## 3. Mode B has only two residual parameter patterns
+If the centre neighbourhoods meet, the leaf rows partition a fixed six-point remainder. If `c=0`, all S-leaves are ordinary and `m_S>=4`, contradicting q30 class cap3. If `c=1`, the only possible way to have at most three ordinary S-leaves is `m_S=4`, but then (T) gives `m_D>=7`, and all D-rows coincide, violating the q31 cap4. Therefore the two centre O-neighbourhoods are disjoint.
 
-Now assume `r=1`, `delta=0`. Centre shielding forces the unique D-E edge to be `d0e0`.
+Let R be the fixed five-point remainder.
 
-The centre O-neighbourhoods have sizes
+As in Mode A, either all D-rows are forced equal, or all ordinary S-rows coincide.
 
-`|A|=10`, `|B|=10`.
+### B1. D-row class branch
 
-Again every ordinary S-leaf row P and D-leaf row Q gives a 26-incidence cover of O.
+If all D-rows coincide, the q31 cap gives `m_D<=4`.
 
-If `|A intersect B|=1`, the two 3-rows partition a fixed six-point remainder. Hence all D-leaf rows coincide. If there are at least five D-leaves this violates the q31 cap4; the only possible way to have at most four D-leaves would force `m_S=8,m_D=4`, but then all eight (or at least seven ordinary) S-leaves coincide as well, contradicting the q30 cap3. So `A intersect B=empty`.
+- If `c=0`, (T) and (OLD) force
 
-Let R be the resulting fixed five-point remainder.
+      (m_S,m_D,m_E)=(8,4,8).
 
-If an ordinary S-row P meets B, the same cover argument forces all D-rows equal. Therefore either `m_D=4` or every ordinary S-row lies in R.
+- If `c=1`, the possibilities are
 
-If the ordinary S-rows contain at least two distinct 3-subsets of R, the cross-disjoint-complement argument forces all D-rows equal, so again `m_D=4`. The inequality `m_S+m_D>=12` then forces
+      m_D=3, (m_S,m_E)=(8,8),
 
-`m_S=8, m_D=4`.      (B1)
+  or
 
-The only alternative is that all ordinary S-rows coincide. The q30 class cap3 then forces exactly three ordinary leaves, so the unique exceptional S-E endpoint is a fourth leaf:
+      m_D=4, m_S in {7,8}, m_E in {7,8}.
 
-`c=1, m_S=4`.
+These are the corrected B1 rows.
 
-The q31 excess inequalities and the upper bounds `m_D,m_E<=8` force
+### B2. Single ordinary S-row branch
 
-`m_D=m_E=8`.      (B2)
+If all ordinary S-rows coincide, q30 cap3 forces exactly three ordinary leaves. Hence
 
-Thus the entire d11 terminal is reduced to exactly two residual parameter patterns:
+    c=1, m_S=4,
 
-- **B1:** `m_S=8, m_D=4, r=1`, with `m_E=8` if c=0 and `m_E in {7,8}` if c=1;
-- **B2:** `c=1`, `(m_S,m_D,m_E)=(4,8,8)`, `r=1`, where the S-E edge is incident with the unique exceptional S-leaf.
+and the unique exceptional S-E edge is incident with the fourth S-leaf.
 
-No other d11 shielding parameters survive.
+Now (Y) gives `m_E=8`, while (T) gives `m_D in {7,8}`.
 
-## 4. Next target
+Thus corrected B2 is
 
-In B1, the four D-star leaves are forced into one q31 3-row class of size4, saturating the class cap. Repivoting such a leaf gives `q=31`, `z=22`, `G=9`; the shared support is forced into a P3 and the resulting missing shell is `K3,7` plus one internal edge and three isolates.
+    c=1, m_S=4, m_E=8, m_D in {7,8}, r=1.
 
-In B2, the three ordinary S-leaves form one q30 3-row class, while the eight D-leaves live over at most three possible 3-rows in the same five-point remainder.
+## 4. Correct current d11 table
 
-These are now the only d11 compatibility problems.
+After all proved reductions, d11 has only the following finite parameter rows:
+
+- A1: `(8,4,7,0,1)` or `(8,4,8,0,1)`;
+- B1a: `c=0`, `(m_S,m_D,m_E)=(8,4,8)`, `r=1`;
+- B1b: `c=1`, `(m_S,m_D,m_E)=(8,3,8)`, `r=1`;
+- B1c: `c=1`, `m_D=4`, `m_S,m_E in {7,8}`, `r=1`;
+- B2: `c=1`, `m_S=4`, `m_E=8`, `m_D in {7,8}`, `r=1`.
+
+This is still a drastic reduction from the original d11 family, but it is not yet a closure.
+
+## 5. Next target
+
+Rows with `m_D=4` force a saturated q31 3-row class of size4. Repivoting such a D-leaf yields `q=31`, `z=22`, `G=9`; the shared support is a P3 and the new missing shell is `K3,7` plus one internal missing edge and three isolates.
+
+Rows with `m_S=4` force a saturated q30 S-row class of size3 plus one exceptional S-leaf.
+
+These saturation geometries are the next analytic target.
