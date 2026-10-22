@@ -46,6 +46,25 @@ with repetition lower bounds
 
 These are necessary shell rows, not realized graphs. Astra B is assigned repeated-pair/core-support realizability, beginning with E333.
 
+### Assistant-owned right-edge subline — E338..E340
+
+This subline is disjoint from Astra B's E333 repeated-pair assignment.
+
+`backend/HIGH_RIGHT_EDGE_ATOMIC_DEFECT_THEOREM.md` proves the following analytic reduction at ceiling pivots:
+
+- E338: q<=36;
+- E339: q<=37;
+- E340: q<=38;
+- equality with the ceiling is equivalent to a 211-edge 35-core, hence core excess2;
+- regular missing degrees5--8 are impossible at a ceiling pivot;
+- for regular d=4 or9 and q=36+s, s=0,1,2, the exact atomic-defect budget is
+
+  `rho+h+kappa+b <= s`.
+
+Therefore q36 has a zero-defect d4/d9 exchange system, q37 permits at most one atomic defect, and q38 at most two. This is an analytic theorem, not merely the V2 scalar defect table.
+
+No high backend edge layer is claimed closed by this reduction.
+
 ## Line C — E332
 
 `COMPLETE AND FROZEN: E332 = EMPTY`.
