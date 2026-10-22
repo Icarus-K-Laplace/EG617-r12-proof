@@ -8,15 +8,29 @@ Repository-canonical proved layers currently run through `E400`.
 
 Source package V6 reports `E401..E404` empty. V7 reports `E405` empty under the explicit T61 hereditary-cap contract.
 
-V7 additionally reports:
-
-- every genuine 47-point core satisfies `delta(C)>=11`;
-- q25/q26 pivots lift to `q>=27`;
-- q30 no-immediate-rise shells reduce to two analytic families and reach `q>=31` within at most two legal repivots.
-
 Latest package-level front-end window:
 
 `E406, E407, E408`.
+
+### Astra-A V8 (source-reported)
+
+V8 reports the following new theorem for a maximum-charge pivot with
+
+`Q=30+k`, `1<=k<=3`:
+
+for every regular missing-degree-3 neighbour,
+
+`rho <= k-1`.
+
+The boundary family `rho=k` is reported analytically excluded by the common-K11 / row-triangle / repeated-repivot argument. Full excess-migration and reverse-repivot identities are included in the package.
+
+V8 explicitly leaves `E407,E408` OPEN. Its remaining obligations are:
+
+- `E407: Q_max=27`;
+- `E408: Q_max in {27,28}`;
+- global compatibility/cycles of nonzero correction terms across distinct pivots.
+
+Evidence status: `SOURCE_REPORTED / PACKAGE_PRESENT / INDEPENDENT_REPLAY_PENDING`. See `front_end/T61_H13_V8_RESULT.md`.
 
 ### Assistant-owned E406 subline — current live frontier
 
@@ -25,52 +39,56 @@ The assistant-owned E406 work is deliberately disjoint from Astra A's E407--E408
 Base reduction:
 
 - `q<=31`;
-- q31/q30/q29 cores have284/285/286 edges and, by Line-A theorem L4, minimum degree at least12;
+- q31/q30/q29 cores have284/285/286 edges and minimum degree at least12 under the accepted Line-A near-core theorem;
 - regular shell vertices of missing degree4 through9 are excluded in q30/q31 views;
-- any E406 coexistence object contains an actual q30->q31 boundary edge;
-- the final-rise distance lies in `{1,2,3,10,11,12}`.
+- any E406 coexistence object contains an actual q30->q31 boundary edge.
 
 Current distance-class status:
 
 - `d=10`: `PROVED EMPTY`;
 - `d=11`: `PROVED EMPTY` in `front_end/E406_D11_FULL_CLOSURE.md`;
-- `d=2`: `PROVED EMPTY` in full. The retained-star layers `e=2,...,8` were already closed; the final `e=1` terminal is now closed in both `e_D=0` and `e_D=1` branches by `E406_D2_E1_ED0_CLOSURE.md` and `E406_D2_E1_ED1_CLOSURE.md`;
-- `d=3`: all Type-B q31 platforms are `PROVED EMPTY`; only Type-A platforms remain;
+- `d=2`: `PROVED EMPTY` in full;
+- `d=3`: all Type-B q31 platforms are `PROVED EMPTY`; Type-A has now been reduced further to `O<=4` by `front_end/E406_D3_TYPEA_O5_FULL_CLOSURE.md`;
 - `d=1`: `OPEN`, reduced to a common-K11 deficit / excess-transfer system;
 - `d=12`: `OPEN`, reduced to paired dense 12-blocks.
 
-The surviving E406 frontier is therefore exactly
+Thus the surviving E406 frontier is exactly
 
-`d1`, `d3-TypeA`, `d12`.
+`d1`, `d3-TypeA with O<=4`, `d12`.
 
-Additional exact reductions now available:
+Key exact assets:
 
 - near-284 `PAIR-13` and `TRI-24` row-union lemmas;
-- d3-TypeA has four pairwise anticomplete K3 support classes and a 35-point remainder of151/152 edges with saturated row-partition constraints;
-- the former d11 terminal was eliminated by forcing the two core-star centres to coincide and applying PAIR-13;
-- the final d2-e1 branch has at least six clean pivots when `e_D=1`; support-incidence degree and core-excess arguments force an independent6 or exceed the six-unit q30 core excess budget.
-
-Evidence status for V7 itself remains `SOURCE_REPORTED_PROVED / INDEPENDENT_REPLAY_PENDING` in this chat runtime. The assistant-owned E406 lemmas above are standalone repository proof files and do not rely on importing an unverified V7 proof body beyond the explicit Line-A ledger inputs already marked `PROVED`.
-
-Astra A is assigned elsewhere to E407--E408 so the work does not overlap.
+- d3 four-triangle compression: four pairwise anticomplete K3 support classes plus a 35-point remainder of151/152 edges;
+- Type-B d3 fully closed;
+- Type-A `O=5` fully closed; every Type-A survivor has `O<=4`;
+- d11 closed by star-centre overlap + PAIR-13;
+- d2 fully closed by retained-block and clean-support arguments.
 
 ## Line B — high backend E333..E340
 
 All edge layers remain `OPEN`.
 
-V3 reports:
+V4 source package reports a support-repetition theorem for a maximal `(q,tau)` pivot:
 
-- all legal pivots organized by closed-neighbourhood distance classes;
-- an exact third-viewpoint exchange formula;
-- a common nine-point missing neighbourhood has at most two distinct core supports;
-- three ten-point supports obey `E+2q >= 408+3B`, excluding three-support structures for `q<=33`;
-- four legal pivots pairwise in distinct distance classes cannot form a K4;
-- q34/q35 aggregate frontier compressed from76 to42 necessary rows;
-- K4-containing states grouped into nine decorated shell types.
+- the relevant distance class has size9 or10;
+- at least five legal neighbours share a common nonempty two-point missing set;
+- single-hub family `D1` is excluded;
+- the two-hub zero-defect family is excluded.
 
-No high layer is closed. The missing theorem is a forcing statement: a maximal pivot must generate a forbidden multi-support geometry or a better pivot.
+Reported remaining necessary shell families:
 
-Evidence status for V3: `SOURCE_REPORTED / INDEPENDENT_REPLAY_PENDING`. See `backend/HIGH_LAYER_BACKEND_V3_RESULT.md`.
+`D2-A`, `D2-B`, `D2-C`, `D2-D`, `R9`,
+
+with common-missing-set repetition lower bounds
+
+`8,8,5,7,9`.
+
+These are necessary shell rows only, not realized graphs. `E333..E340` all remain OPEN.
+
+The current high-backend bottleneck is global 35-point-core compatibility: show that the repeated-support survivor families cannot coexist in one legal core, or force a better pivot / already-forbidden multi-support geometry.
+
+Evidence status for V4: `SOURCE_REPORTED / PACKAGE_PRESENT / INDEPENDENT_REPLAY_PENDING`. See `backend/HIGH_LAYER_BACKEND_V4_RESULT.md`.
 
 ## Line C — E332 q30+211
 
@@ -90,5 +108,5 @@ The full EG617 r=12 theorem remains OPEN.
 
 Only two independent mathematical obligations remain:
 
-1. finish T61 front end: package-level `E406..E408`;
+1. finish T61 front end: `E406..E408`;
 2. eliminate legal R(4,49) high backend interval `E333..E340`.
