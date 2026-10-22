@@ -14,9 +14,18 @@
       "repository_canonical_closed_layers": [397, 398, 399, 400],
       "source_reported_v6": {
         "evidence_status": "SOURCE_REPORTED_PROVED_REPLAY_PENDING",
-        "reported_closed_layers": [401, 402, 403, 404],
-        "reported_remaining_window": [405, 408],
-        "certificate_rows": 127
+        "reported_closed_layers": [401, 402, 403, 404]
+      },
+      "source_reported_v7": {
+        "evidence_status": "SOURCE_REPORTED_PROVED_REPLAY_PENDING",
+        "reported_closed_layers": [405],
+        "reported_remaining_window": [406, 408],
+        "new_results": [
+          "Every genuine 47-point core has minimum degree at least 11",
+          "q25/q26 pivots lift to q>=27",
+          "q30 no-rise shells reduce to two families and reach q>=31 within at most two repivots"
+        ],
+        "source": "front_end/T61_H13_V7_RESULT.md"
       }
     }
   },
@@ -28,24 +37,34 @@
     },
     "closed_layers": [329, 330, 331, 332],
     "e332": {
-      "status": "PROVED_EMPTY",
+      "status": "PROVED_EMPTY_FROZEN",
       "master_source": "backend/E332_FULL_CLOSURE.md",
-      "reduction": "q=30, e(H)=211",
-      "closed_decoration_layers": [4, 5, 6, 7, 8],
-      "active_subbranches": []
+      "preferred_terminal_sources": [
+        "backend/E332_H1_UNIFIED_FINAL.md",
+        "backend/E332_G8_H0_UNIFIED_CLOSURE.md"
+      ]
     },
     "high_layers": {
       "status": "OPEN",
       "edge_window": [333, 340],
-      "source_reported_v2": {
+      "source_reported_v3": {
         "evidence_status": "SOURCE_REPORTED_REPLAY_PENDING",
         "all_edge_layers_remain_open": true,
-        "next_goal": "third pivot, joint S-row constraints, or nonadjacent-pivot weighted inequalities"
-      }
+        "q34_q35_necessary_rows": 42,
+        "k4_decorated_shell_types": 9,
+        "new_results": [
+          "closed-neighbourhood distance classes and exact third-viewpoint exchange formula",
+          "common nine-point missing neighbourhood has at most two core supports",
+          "three ten-point supports satisfy E+2q>=408+3B and are excluded for q<=33",
+          "four pivots from pairwise distinct distance classes cannot form K4"
+        ],
+        "source": "backend/HIGH_LAYER_BACKEND_V3_RESULT.md"
+      },
+      "next_goal": "forcing theorem: maximal pivot generates a forbidden multi-support configuration or a better pivot"
     }
   },
   "remaining_global_obligations": [
-    "Finish the T61 front end (package-level E405..E408 if V6 is accepted).",
+    "Finish the T61 front end: latest package-level window E406 through E408.",
     "Eliminate legal R(4,49) layers E333 through E340."
   ]
 }
