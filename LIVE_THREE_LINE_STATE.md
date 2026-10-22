@@ -22,7 +22,7 @@ Reported certificate: 127 exact rational rows replayed successfully by the sourc
 
 Current package-level front-end window: `E405..E408`.
 
-Repository promotion note: the uploaded ZIP could not be independently unpacked/replayed in the current chat runtime, so the package proof is recorded separately as `SOURCE_REPORTED_PROVED` rather than silently presented as independently replayed here.
+Repository promotion note: the uploaded ZIP could not be independently unpacked/replayed in the current chat runtime, so the package proof is recorded as `SOURCE_REPORTED_PROVED / INDEPENDENT_REPLAY_PENDING` rather than silently presented as independently replayed here.
 
 ## Line B — high backend E333..E340
 
@@ -53,24 +53,23 @@ Now proved:
 - regular missing degrees reduced to `{0,1,2,11,12}`;
 - at most two regular high vertices;
 - strengthened zero-gap theorem;
+- triangle-row union lemma;
 - `G=4` empty;
 - `G=5` empty;
-- `G=6` empty.
+- `G=6` empty;
+- `G=7,h=0` empty.
 
-The full G=6 closure uses the triangle-row union lemma
+The G=7,h=0 proof eliminates k=3,4,5 directly and then every k=6,7 incidence layer using active/inactive support counting, the degree1/degree2 low-repivot inequalities, pair-row coverage, and the triangle-row union lemma.
 
-`M-triangle r,s,t => |D_r union D_s union D_t|>=24`,
+Current Line-C frontier is now exactly:
 
-kills the exact `H2-G6-K4` state by a 36-in-35 row-disjointness contradiction, and eliminates every unique-high state by exact support accounting.
-
-Current Line-C frontier:
-
-- `G=7,h=0`;
 - `G=7,h=1`;
 - exact `H2-G7-K4minusE`;
 - `G=8,h=0`;
 - `G=8,h=1`.
 
-New ongoing reduction for `G=7,h=0`: support sizes `k=3,4,5` are analytically eliminated; the active h=0 work is therefore concentrated on `k=6,7` plus the remaining exact incidence subcases.
+There is no h=2,G=8 state.
+
+A useful coupling has been identified for the exact `H2-G7-K4minusE` cell: repivoting one of its nine low rows produces either another G7/h2 plateau view or a G8/h1 view, so closing G8/h1 is expected to kill the remaining two-high G7 cell as well.
 
 The full EG617 r=12 theorem remains OPEN.
