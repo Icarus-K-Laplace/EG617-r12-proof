@@ -24,7 +24,7 @@
 | E332 G=6 | PROVED EMPTY | h0, h1, and H2-G6-K4 all eliminated; standalone full proof. |
 | E332 G=7,h=0 | PROVED EMPTY | k=3..7 all eliminated; `backend/E332_G7_H0_REDUCTION.md` now contains full closure. |
 | E332 G7/G8 one-high uniform reduction | PROVED | High missing-degree11 impossible; high degree12 has at most one low-active decorated vertex; one-active states satisfy `k+r<=11`, with `r>=4` for G7 and `r>=3` for G8. See `backend/E332_G7_G8_H1_UNIFORM_REDUCTION.md`. |
-| E332 H2-G7-K4minusE | OPEN | Exact two-high cell. |
+| E332 H2-G7-K4minusE | PROVED EMPTY | Row-class reduction + low-repivot decoration overflow: a row class of multiplicity m sends the plateau shell to decoration `7+2m>=9`, impossible since q=30 and z>=22. |
 | E332 G=7,h=1 | OPEN / SHARPLY REDUCED | Only universal-high zero/one-active parameter windows remain. |
 | E332 G=8,h=0 | OPEN | No-high branch. |
 | E332 G=8,h=1 | OPEN / SHARPLY REDUCED | Only universal-high zero/one-active parameter windows remain; no h=2,G=8 state exists. |
