@@ -61,12 +61,22 @@ Now proved:
 
 The G=7,h=0 proof eliminates k=3,4,5 directly and then every k=6,7 incidence layer using active/inactive support counting, the degree1/degree2 low-repivot inequalities, pair-row coverage, and the triangle-row union lemma.
 
-Current Line-C frontier is now exactly:
+A new uniform one-high theorem now applies simultaneously to `G=7` and `G=8`:
 
-- `G=7,h=1`;
+1. a unique high vertex of missing degree11 is impossible;
+2. if the unique high vertex has missing degree12, then every low has neighbourhood `{a}` or `{a,x}` with decorated `x`;
+3. there are at most one low-active decorated vertex; two-active states are impossible by exact weight/edge accounting;
+4. if one active decorated vertex exists, then `k+r<=11`, where `k=|D|` and `r=e_M(L,D)`;
+5. the minimum possible low-decorated incidence is `r>=4` for G=7 and `r>=3` for G=8.
+
+Thus all remaining h=1 states have a universal high vertex and either zero or exactly one active decoration. The exact surviving `(k,r)` windows are recorded in `backend/E332_G7_G8_H1_UNIFORM_REDUCTION.md`.
+
+Current Line-C frontier is exactly:
+
+- `G=7,h=1` in the reduced one-active/zero-active parameter windows;
 - exact `H2-G7-K4minusE`;
 - `G=8,h=0`;
-- `G=8,h=1`.
+- `G=8,h=1` in the reduced one-active/zero-active parameter windows.
 
 There is no h=2,G=8 state.
 
