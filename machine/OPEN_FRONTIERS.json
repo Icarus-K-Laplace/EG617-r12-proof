@@ -7,9 +7,11 @@
       "repository_canonical_edge_window": [401, 408],
       "latest_source_reported_result": {
         "evidence_status": "SOURCE_REPORTED_PROVED_REPLAY_PENDING",
-        "reported_closed_layers": [401, 402, 403, 404],
-        "reported_remaining_window": [405, 408]
-      }
+        "reported_closed_layers": [401, 402, 403, 404, 405],
+        "reported_remaining_window": [406, 408],
+        "source": "front_end/T61_H13_V7_RESULT.md"
+      },
+      "next_target": "Resolve E406 q31/lower-charge pivot coexistence, then E407-E408 plateau/core ladder."
     },
     {
       "id": "LINE_B_E333_E340",
@@ -17,17 +19,18 @@
       "edge_window": [333, 340],
       "latest_source_reported_result": {
         "evidence_status": "SOURCE_REPORTED_REPLAY_PENDING",
-        "q34_q35_necessary_rows": 76,
-        "local_q30_q33_certificates": 4,
-        "all_layers_open": true
+        "q34_q35_necessary_rows": 42,
+        "k4_decorated_shell_types": 9,
+        "all_layers_open": true,
+        "source": "backend/HIGH_LAYER_BACKEND_V3_RESULT.md"
       },
-      "next_target": "third-pivot / joint-row / nonadjacent weighted theorem"
+      "next_target": "Prove a forcing theorem from third-pivot/support geometry; do not expand the aggregate necessary-state table."
     }
   ],
   "closed_lines": [
     {
       "id": "LINE_C_E332",
-      "status": "PROVED_EMPTY",
+      "status": "PROVED_EMPTY_FROZEN",
       "source": "backend/E332_FULL_CLOSURE.md"
     }
   ]
