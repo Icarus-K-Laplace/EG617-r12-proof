@@ -34,25 +34,34 @@ Primary target remains
 
 `E332:q30+211`,
 
-but the equality frontier has collapsed sharply.
+but the extreme-shell frontier has contracted again.
 
 Now proved:
 
 - undecorated degrees4..9 are profitable and impossible;
 - d10 equality branch is completely empty;
 - d3 equality branch is completely empty;
-- hence every undecorated shell vertex has missing degree only `{0,1,2,11,12}`;
+- every undecorated shell vertex has missing degree only `{0,1,2,11,12}`;
 - there are at most two undecorated degree11/12 vertices;
-- decoration total satisfies `G>=4`, so only `G=4..8` remain;
-- for `G=4`, support counts are exactly `(h,k,l)=(2,4,7)` for high regular / decorated / low regular vertices.
+- the strengthened zero-gap theorem: for every missing edge `uv` with `u` undecorated,
+  `|N_M(u) union N_M(v)|+g_v >= 13+|D_u intersect D_v|`;
+- in particular, an undecorated-undecorated missing edge satisfies `N_M(u) union N_M(v)=A` and disjoint core rows;
+- decoration layers `G=4` and `G=5` are completely empty;
+- hence only `G=6,7,8` remain;
+- the entire `G=6,h=0` branch is empty;
+- every two-high (`h=2`) survivor is classified exactly: only `H2-G6-K4` and `H2-G7-K4minusE` can remain; there is no `h=2,G=8` state.
 
-The active E332 object is therefore an **extreme-degree q30 shell**, not the old row-class geometry.
+Thus the active E332 frontier is:
+
+1. `G=6,h=1` plus the single exact `H2-G6-K4` cell;
+2. `G=7,h=0 or1` plus the single exact `H2-G7-K4minusE` cell;
+3. `G=8,h=0 or1`.
 
 Next priorities:
 
-1. eliminate the exact G=4 support cell;
-2. derive a uniform support theorem for G=5..8;
-3. force existence of a previously excluded d3/d10 root indirectly, or contradict the extreme-degree shell directly.
+1. close the two exact h=2 cells using their equality row systems;
+2. close `G=6,h=1` using the unique-high zero-gap normal form;
+3. extend the same active/inactive support accounting to `G=7,8`.
 
 ## Recently closed / strengthened
 
@@ -61,4 +70,9 @@ Next priorities:
 - T61 E397–E400: closed;
 - E332 d10 branch: closed;
 - E332 d3 branch: closed;
-- E332 regular shell degrees reduced to `{0,1,2,11,12}`.
+- E332 regular shell degrees reduced to `{0,1,2,11,12}`;
+- E332 strengthened zero-gap repivot theorem: proved;
+- E332 G=4: closed;
+- E332 G=5: closed;
+- E332 G=6,h=0: closed;
+- E332 h=2 family: reduced to two exact cells.
