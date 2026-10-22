@@ -7,29 +7,22 @@
 | CORE211 | PROVED | Every H in R(3,35) has e(H)>=211. |
 | q27/q28/q29 repivot machinery | PROVED / q27 audit-dependent | Generic low-q backend tools. |
 | E329,E330,E331 | PROVED EMPTY | Reconstructed backend closures. |
-| E332 reduction to q30+211 | PROVED | `backend/E329_E332_CLOSURE.md`. |
-| E332 d4..9 | PROVED EMPTY | Profitable repivot. |
-| E332 d10 | PROVED EMPTY | Equality branch closure. |
-| E332 d3 | PROVED EMPTY | Equality branch closure. |
+| E332 full layer | PROVED EMPTY / FROZEN | Preferred proof DAG: `backend/E332_FULL_CLOSURE.md`; unified terminal proofs in `backend/E332_H1_UNIFIED_FINAL.md` and `backend/E332_G8_H0_UNIFIED_CLOSURE.md`. |
 | E332 strengthened zero-gap theorem | PROVED | Full-shell union / row-disjointness constraint. |
 | E332 triangle-row union lemma | PROVED | Every M-triangle has core-row union at least24. |
 | E332 missing-K4 row-cover lemma | PROVED | Every M-K4 covers the full 35-core by its four core rows. |
-| E332 G=4 | PROVED EMPTY | Full layer. |
-| E332 G=5 | PROVED EMPTY | Full layer. |
-| E332 G=6 | PROVED EMPTY | Full layer. |
-| E332 G=7 | PROVED EMPTY | h0, h1 and H2-G7-K4minusE all closed. Preferred h1 route: `backend/E332_H1_UNIFIED_FINAL.md`. |
-| E332 unified one-high theorem | PROVED | G7: `b<=g_x` and `b>=k+g_x-3`; G8: `b<=g_x-1` and `b>=k+g_x-4`; collapses both one-high branches to k=3 terminals. |
-| E332 G=8,h1 -> h0 | PROVED | Unique surviving one-high terminal `(k,r)=(3,7)` repivots to G8,h0 or overflows decoration. |
-| E332 unified G8,h0 theorem | PROVED EMPTY | Master identities `W_A=22+a-b+g_A>=11m` and inactive-edge lower bound imply `a>=k+8m-21`; all m=0,1,2 equality geometries eliminated. See `backend/E332_G8_H0_UNIFIED_CLOSURE.md`. |
-| E332 full layer | PROVED EMPTY | Preferred master DAG: `backend/E332_FULL_CLOSURE.md`. No low-backend frontier remains. |
 | Front-end contextual recurrence | COMPUTATION_CERTIFIED | 1752 nodes, 144 outer stops, two independent implementations. |
 | Front-end dichotomy `K145 -> R449 OR T61` | PROVED | No backend circularity. |
 | T61 h12 branch | PROVED EMPTY | Uses R(4,48) floor310. |
 | T61 E397..E400 | PROVED EMPTY | Repository-canonical. |
-| T61 E401--E404 Line-A V6 package | SOURCE_REPORTED_PROVED / REPLAY_PENDING | Uniform q<=29 theorem + 127-row exact rational certificate reported. |
-| T61 E405..E408 | OPEN | Package-level remaining front-end window if V6 replay is accepted. |
-| Line-B V2 adjacent two-pivot system | SOURCE_REPORTED | Exact exchange identities. |
-| Line-B V2 q34/q35 quotient compression | SOURCE_REPORTED | 76 necessary quotient rows. |
-| Line-B V2 local q30--q33 certificates | SOURCE_REPORTED | Naive one-step Phi monotonicity is false. |
-| E333..E340 elimination | OPEN | Sole remaining backend interval. |
+| T61 E401--E404 Line-A V6 | SOURCE_REPORTED_PROVED / REPLAY_PENDING | Uniform q<=29 hereditary-cap theorem + reported 127-row exact rational replay. |
+| T61 genuine 47-core minimum degree | SOURCE_REPORTED_PROVED / REPLAY_PENDING | V7 reports `delta(C)>=11` for every genuine 47-point core. |
+| T61 q25/q26 lift | SOURCE_REPORTED_PROVED / REPLAY_PENDING | V7 reports every q25/q26 pivot can be lifted to q>=27. |
+| T61 q30 hereditary plateau theorem | SOURCE_REPORTED_PROVED / REPLAY_PENDING | V7 reports q30 no-immediate-rise shells reduce to two families and reach q>=31 within at most two repivots. |
+| T61 E405 | SOURCE_REPORTED_PROVED / REPLAY_PENDING | V7 closes E405. See `front_end/T61_H13_V7_RESULT.md`. |
+| T61 E406..E408 | OPEN | Latest package-level front-end window. E406 gap: q31/lower-charge coexistence. |
+| Line-B V3 third-viewpoint exchange | SOURCE_REPORTED_PROVED / REPLAY_PENDING | Closed-neighbourhood distance classes + exact third-viewpoint formula. |
+| Line-B V3 support geometry | SOURCE_REPORTED_PROVED / REPLAY_PENDING | Nine-point missing neighbourhood has at most two supports; three ten-point supports satisfy `E+2q>=408+3B`; distance-class K4 forbidden. |
+| Line-B q34/q35 aggregate frontier | SOURCE_REPORTED COMPUTATION_CERTIFIED / REPLAY_PENDING | 76 necessary rows reduced to 42; K4 branch grouped into 9 decorated shell types. |
+| E333..E340 elimination | OPEN | Sole remaining backend interval. Need forcing theorem, not further local necessary-state enumeration. |
 | Full EG617 r=12 theorem | OPEN | Must not be claimed solved. |
