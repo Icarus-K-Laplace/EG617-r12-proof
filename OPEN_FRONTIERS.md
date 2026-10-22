@@ -2,37 +2,30 @@
 
 ## Front-end — T61 h13
 
-The active front-end window is now exactly
+The active front-end window is exactly
 
 `T61: E407,E408, delta=13`.
 
-### E406 — CLOSED
+The repository now has independent canonical proof bodies closing the continuous interval
 
-`E406 = EMPTY` under the explicit T61 hereditary-cap parent contract.
+`E397..E406`.
 
-Canonical source:
+New replayed assets that remove the former V6/V7 source-only status are:
 
-`front_end/E406_FULL_CLOSURE.md`.
-
-The independently reconstructed chain is
-
-`S31 q<=30 -> genuine q30 -> q31 within <=2 regular repivots -> actual q30->q31 edge -> impossible`.
-
-All possible final-rise distances
-
-`d=1,2,3,10,11,12`
-
-are proved empty. There is no remaining E406 bridge or shell frontier.
+- `front_end/E401_E404_CANONICAL_CLOSURE.md`;
+- `front_end/E405_FULL_CLOSURE_CANONICAL.md`;
+- `front_end/Q30_HEREDITARY_PROMOTION_CANONICAL.md`;
+- `front_end/E406_FULL_CLOSURE.md`.
 
 ### E407--E408 — Astra-A line
 
-V8 source-reported remaining obligations are:
+V8 leaves:
 
 - `E407: Q_max=27`;
 - `E408: Q_max in {27,28}`;
 - global compatibility/cycles of nonzero correction terms.
 
-The V8 package remains source-reported/replay-pending except for statements separately reconstructed into repository proof files.
+The source-reported V8 exchange theorem is useful structural input but does not close either layer.
 
 ## High backend — E333..E340
 
@@ -46,7 +39,7 @@ with common-missing-pair repetition lower bounds
 
 `8,8,5,7,9`.
 
-These are necessary shell rows, not realized graphs. The next Line-B target is a repeated-pair/core-support capacity theorem in the 35-point core.
+These are necessary shell rows, not realized graphs. Astra B is assigned repeated-pair/core-support realizability, starting with E333.
 
 ## Closed low backend
 
