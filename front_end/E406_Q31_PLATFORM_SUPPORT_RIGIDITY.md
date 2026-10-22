@@ -1,6 +1,6 @@
 # E406 q31 platform support rigidity
 
-Status: `PROVED` for the platform families identified in `E406_D3_D10_FINAL_RISE_NORMAL_FORM.md`. E406 remains `OPEN`.
+Status: `PROVED`; the entire d=10 q30 -> q31 final-rise class is `PROVED EMPTY`. E406 itself remains `OPEN`.
 
 This note studies legal regular repivots *inside* the q31 platform states reached by a q30 -> q31 final rise.
 
@@ -72,7 +72,7 @@ and necessarily
 
 Thus every reverse q31 -> q30 edge uses a **pure K10 support** of ten core-degree12 vertices, anticomplete to the 10-point shell side.
 
-## 3. A pure K10 reverse support is disjoint from the other two supports
+## 3. The pure reverse K10 is disjoint from the other supports
 
 Let `U1` be the pure K10 support of the reverse q31 -> q30 edge. Every vertex of U1 has core degree exactly12. Let U2 be any other legal degree-10 support.
 
@@ -120,43 +120,94 @@ and `U1 intersect U3=empty`.
 
 Choose `x in U2\U1`, which exists because t<=9.
 
-The 13-set `U1 union B` already has exactly at least
+The 13-set `U1 union B` already has at least
 
 `58+t`
 
 edges.
 
-Since `C[U2]` is `K10` or `K10-e`, the vertex x is adjacent to at least `t-1` vertices of `U1 intersect U2`; it is also adjacent to its shell pivot b2. Hence x adds at least
-
-`t`
-
-edges to that 13-set.
+Since `C[U2]` is `K10` or `K10-e`, the vertex x is adjacent to at least `t-1` vertices of `U1 intersect U2`; it is also adjacent to its shell pivot b2. Hence x adds at least t edges.
 
 Thus the 14-set `U1 union B union {x}` has at least
 
 `58+2t >=72`
 
-edges, contradicting the hereditary cap `D(14)=69`.
+edges, contradicting `D(14)=69`.
 
-Therefore no nonzero overlap is possible:
+Therefore
 
-`U1 intersect U2 = U1 intersect U3 = empty`.
+`U1 intersect U2 = U1 intersect U3 = empty`.   (III)
 
-So the d=10 coexistence geometry has the exact form:
+## 4. The other two supports must coincide as K10-e
 
-- one pure K10 reverse support U1;
-- two near-K10 supports U2,U3 lying completely in the remaining37 core vertices.
+Now study `U2 intersect U3`.
 
-As a useful exact by-product, deleting U1 from the 284-edge core leaves a 37-vertex induced graph with
+Both supports are `K10` or `K10-e`, and each has total internal excess at most1. The same degree-count argument gives a second intersection gap:
 
-`284 - 45 - 30 = 209`
+`U2 intersect U3 != empty => |U2 intersect U3|>=7`.   (IV)
 
-edges, because every vertex of U1 has degree12 and U1 has45 internal edges.
+Indeed intersections of size1--4 would require more core excess than the support budget1 allows, while for sizes5 or6 there are more shared vertices than the four possible endpoints of the two missing support edges, forcing a shared vertex with too many support-neighbours for degree12/13.
 
-## 4. Current frontier
+If `7<=t=|U2 intersect U3|<=9`, choose `x in U3\U2`. The 13-set `U2 union B` has at least
 
-For d=3 final-rise platforms, the remaining problem is compatibility of 7--10 three-point supports, each P3/K3-rigid and with at least one pure K3 support.
+- `58+t` edges if U2 is K10;
+- `57+t` edges if U2 is K10-e.
 
-For d=10 final-rise platforms, the remaining problem is compatibility of two near-K10 supports inside a 37-vertex, 209-edge remainder, disjoint from the pure reverse K10 support.
+The vertex x adds at least t edges (at least `t-1` into the shared support plus its shell edge to b3). Therefore every such t gives at least71 edges on14 vertices, contradicting `D(14)=69`.
 
-Distances1,2,11,12 remain separate E406 final-rise classes unless the V7 q30 theorem is shown to exclude them.
+So a nonzero intersection must have t=10, i.e.
+
+`U2=U3`.
+
+If this common support were K10, the 13-set `U2 union B` would already contain
+
+`45+3+10+10=68>67`
+
+edges, impossible.
+
+Hence the only remaining support geometry is
+
+`U2=U3=K10-e`,
+
+with U1 disjoint from this common support.
+
+## 5. Final D14 contradiction
+
+Let
+
+`Q=U2 union B`.
+
+Because `U2=U3=K10-e`, `U1` is disjoint from U2, and the three shell vertices form K3, the 13-set Q has exactly
+
+`44 + 3 + 10 + 10 = 67`
+
+edges.
+
+Now add the current q31 pivot y. By definition of the shell/core decomposition,
+
+- y is adjacent to all three shell vertices in B;
+- y is nonadjacent to every core vertex in U2.
+
+Hence `Q union {y}` is a 14-set with
+
+`67+3=70`
+
+edges, contradicting the hereditary cap
+
+`D(14)=69`.
+
+Therefore the d=10 q30 -> q31 final-rise class is impossible.
+
+## 6. Current frontier
+
+The E406 final-rise distance classes are now reduced from
+
+`{1,2,3,10,11,12}`
+
+to
+
+`{1,2,3,11,12}`.
+
+The d=3 class is reduced to seven explicit q31 platforms carrying 7--10 rigid P3/K3 support rows and at least one pure K3 reverse support.
+
+Distances1,2,11,12 remain separate classes unless the V7 q30 theorem is shown to exclude them.
