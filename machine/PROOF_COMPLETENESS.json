@@ -7,7 +7,7 @@
     "front-end dichotomy and recurrence certificate",
     "R(4,48) floor 310",
     "T61 h12 closure",
-    "T61 E397-E400 closures",
+    "continuous T61 h13 closure E397 through E406",
     "generic q29 good-repivot standalone proof",
     "E329-E331 standalone backend chain",
     "E332 full closure",
@@ -19,25 +19,16 @@
   ],
   "proof_body_gaps": [
     {
-      "id": "CORE211_FULL_PROOF",
+      "id": "CORE211_MANUSCRIPT_EXPANSION",
       "severity": "major",
-      "status": "canonical_statement_short_body",
+      "status": "canonical_statement_short_body_but_full_chain_reconstructed_elsewhere",
       "current_source": "backend/CORE211.md"
     },
     {
-      "id": "UNIFORM_Q27_FULL_PROOF",
+      "id": "UNIFORM_Q27_MANUSCRIPT_PROOF",
       "severity": "major",
-      "status": "reconstructed_audit_dependency_not_fully_self_contained",
+      "status": "reconstructed_audit_dependency_not_yet_single_self_contained_file",
       "current_source": "consolidation/Q27_ANALYTIC_EQUALITY_CLOSURE.md"
-    },
-    {
-      "id": "T61_E401_E405_INDEPENDENT_REPLAY",
-      "severity": "major",
-      "status": "source_packages_report_proved_but_full_repository_replay_incomplete",
-      "current_sources": [
-        "front_end/T61_H13_V6_RESULT.md",
-        "front_end/T61_H13_V7_RESULT.md"
-      ]
     },
     {
       "id": "LOWER_ORDER_FRONTEND_INPUTS",
@@ -51,5 +42,5 @@
     }
   ],
   "raw_source_bundles_mirrored": false,
-  "note": "Current frontier/status is synchronized. E406 is independently closed. The full theorem remains open because E407/E408 and E333/E340 are unresolved, and several accepted earlier assets still need manuscript-grade self-contained proof bodies."
+  "note": "Current frontier/status is synchronized. E401-E406 are independently reconstructed in repository proof bodies. The full theorem remains open because E407/E408 and E333/E340 are unresolved, with some earlier accepted lemmas still needing manuscript-grade consolidation."
 }
