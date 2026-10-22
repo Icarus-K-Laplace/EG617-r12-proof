@@ -72,40 +72,91 @@ and necessarily
 
 Thus every reverse q31 -> q30 edge uses a **pure K10 support** of ten core-degree12 vertices, anticomplete to the 10-point shell side.
 
-## 3. Intersection compression around a pure K10 support
+## 3. A pure K10 reverse support is disjoint from the other two supports
 
-Let `U1` be such a pure K10 support in the q31 284-edge core. Every vertex of U1 has core degree exactly12. Let U2 be any other legal degree-10 support in the same q31 platform.
+Let `U1` be the pure K10 support of the reverse q31 -> q30 edge. Every vertex of U1 has core degree exactly12. Let U2 be any other legal degree-10 support.
 
-If `U1 intersect U2` is nonempty, then in fact
+### 3.1 Nonzero intersection would have size at least7
 
-`|U1 intersect U2| >=7`.
+If `U1 intersect U2` is nonempty, put `t=|U1 intersect U2|`.
 
-Proof: every shared vertex x has nine neighbours inside the K10 U1 and hence exactly three available core neighbours outside U1. In U2, x has at least eight support-neighbours. If the intersection had size t, at least `9-t` of those support-neighbours would lie outside U1 even in the `K10-e` case; for t<=5 this already exceeds three. If t=6, at least one of the six shared vertices is not an endpoint of the unique missing edge of a possible K10-e, and that vertex has nine U2-neighbours, of which `10-t=4` lie outside U1, again impossible. Hence t>=7.
+Every shared vertex x has nine neighbours inside U1 and therefore exactly three available core-neighbour slots outside U1.
 
-Now let `B={b1,b2,b3}` be the 3-side of the shell platform, with Ui the core row of bi and U1 the pure reverse support.
+Inside U2 it has at least eight support-neighbours. For `t<=5`, even an endpoint of the unique missing edge of a possible `K10-e` support would require at least `9-t>=4` neighbours outside U1, impossible.
 
-The hereditary 13-point cap applied to `U1 union B` gives
+For `t=6`, among the six shared vertices at least one is not an endpoint of the unique missing edge of U2; that vertex has nine U2-neighbours, of which `10-t=4` lie outside U1, again impossible.
 
-`58 + |U1 intersect U2| + |U1 intersect U3| <=67`,
+Hence
 
-because U1 is K10, B is K3, and b1 is complete to U1.
+`U1 intersect U2 != empty => t>=7`.   (I)
 
-Therefore
+The same applies to U3.
 
-`|U1 intersect U2| + |U1 intersect U3| <=9`.
+### 3.2 The 13-point cap permits at most one such overlap
 
-Combining with the 0-or-at-least7 intersection gap shows:
+Let `B={b1,b2,b3}` be the 3-side of the shell platform, with Ui the core row of bi and U1 the pure reverse support.
 
-- at most one of U2,U3 intersects U1;
-- any nonzero intersection has size7,8 or9;
-- at least one of U2,U3 is disjoint from U1.
+The induced 13-set `U1 union B` contains
 
-Thus the d=10 E406 coexistence problem is reduced to a sharply constrained three-support geometry: one pure K10 support, one support disjoint from it, and the third either disjoint or overlapping in exactly7--9 vertices.
+- 45 edges inside U1;
+- 3 edges inside B;
+- 10 edges from b1 to U1;
+- `|U1 intersect U2|` edges from b2 to U1;
+- `|U1 intersect U3|` edges from b3 to U1.
+
+The hereditary cap `D(13)=67` therefore gives
+
+`|U1 intersect U2| + |U1 intersect U3| <=9`.   (II)
+
+By (I), if one overlap is nonzero the other is zero.
+
+### 3.3 The 14-point cap kills even the single-overlap possibility
+
+Assume without loss that
+
+`t=|U1 intersect U2| in {7,8,9}`
+
+and `U1 intersect U3=empty`.
+
+Choose `x in U2\U1`, which exists because t<=9.
+
+The 13-set `U1 union B` already has exactly at least
+
+`58+t`
+
+edges.
+
+Since `C[U2]` is `K10` or `K10-e`, the vertex x is adjacent to at least `t-1` vertices of `U1 intersect U2`; it is also adjacent to its shell pivot b2. Hence x adds at least
+
+`t`
+
+edges to that 13-set.
+
+Thus the 14-set `U1 union B union {x}` has at least
+
+`58+2t >=72`
+
+edges, contradicting the hereditary cap `D(14)=69`.
+
+Therefore no nonzero overlap is possible:
+
+`U1 intersect U2 = U1 intersect U3 = empty`.
+
+So the d=10 coexistence geometry has the exact form:
+
+- one pure K10 reverse support U1;
+- two near-K10 supports U2,U3 lying completely in the remaining37 core vertices.
+
+As a useful exact by-product, deleting U1 from the 284-edge core leaves a 37-vertex induced graph with
+
+`284 - 45 - 30 = 209`
+
+edges, because every vertex of U1 has degree12 and U1 has45 internal edges.
 
 ## 4. Current frontier
 
 For d=3 final-rise platforms, the remaining problem is compatibility of 7--10 three-point supports, each P3/K3-rigid and with at least one pure K3 support.
 
-For d=10 final-rise platforms, the remaining problem is compatibility of exactly three near-K10 supports satisfying the intersection theorem above.
+For d=10 final-rise platforms, the remaining problem is compatibility of two near-K10 supports inside a 37-vertex, 209-edge remainder, disjoint from the pure reverse K10 support.
 
 Distances1,2,11,12 remain separate E406 final-rise classes unless the V7 q30 theorem is shown to exclude them.
