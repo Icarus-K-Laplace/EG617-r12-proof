@@ -46,11 +46,11 @@ Base reduction:
 Current distance-class status:
 
 - `d=10`: `PROVED EMPTY`;
-- `d=11`: `PROVED EMPTY` in `front_end/E406_D11_FULL_CLOSURE.md`;
-- `d=2`: `PROVED EMPTY` in full;
-- `d=3`: all Type-B q31 platforms are `PROVED EMPTY`; Type-A has now been reduced to `O<=4`;
-- `d=1`: `OPEN`, reduced to a common-K11 deficit / excess-transfer system;
-- `d=12`: `OPEN`, reduced to paired dense 12-blocks.
+- `d=11`: `PROVED EMPTY`;
+- `d=2`: `PROVED EMPTY`;
+- `d=3`: Type-B is `PROVED EMPTY`; Type-A is reduced to `O<=4`;
+- `d=1`: `OPEN`, common-K11 deficit / excess-transfer system;
+- `d=12`: `OPEN`, paired dense 12-block system.
 
 Thus the surviving E406 frontier is exactly
 
@@ -60,25 +60,26 @@ Latest d3-TypeA reductions:
 
 - complete `O=5` closure: `front_end/E406_D3_TYPEA_O5_FULL_CLOSURE.md`;
 - modern O4 interface: every O4 state has full-row counts `(9,10,10,10)`;
-- eta=0 O4: `e(H)=152`, total H excess4, partial incidence `R=3`;
-- eta=1 O4: `e(H)=151`, total H excess3, partial incidence `R=4`;
-- no H-vertex can be full to all four support rows; therefore the O4 multiplicity type `3+1` is impossible;
-- modern simple-four-double profile `(4,8,8,8)` is empty by row-degree count;
-- modern eta=0 simple-four-double profile `(5,7,8,8)` is `PROVED EMPTY` in `front_end/E406_D3_O4_SIMPLE_5788_ETA0.md`.
+- eta=0 O4: `e(H)=152`, total H excess4, `R=3`;
+- eta=1 O4: `e(H)=151`, total H excess3, `R=4`;
+- no H-vertex can be full to all four support rows, so O4 multiplicity type `3+1` is impossible;
+- eta=0 simple-four-double branch is **fully closed** in `front_end/E406_D3_O4_SIMPLE_ETA0_FULL_CLOSURE.md`;
+- eta=1 simple-four-double branch is reduced by high-pair rigidity to exactly four pure profiles:
+  `(5,6,8,8)`, `(6,6,8,8)`, `(6,6,7,8)`, `(6,7,7,7)`;
+- in eta=1, every 7-8 or 7-7 high double has excess1 and exact H-neighbourhood equal to one K7 hub; repeated hubs and singleton-bearing hubs are forbidden.
 
-The remaining O4 multiplicity types are therefore only:
+Therefore the active O4 work now consists only of:
 
-- four doubles, with fewer surviving pure-size profiles;
-- one triple + two doubles;
-- two triples.
+1. four eta=1 low-row simple-double profiles;
+2. one-triple + two-double multiplicity type;
+3. two-triple multiplicity type.
 
 Key exact assets:
 
 - near-284 `PAIR-13` and `TRI-24` row-union lemmas;
 - d3 four-triangle compression: four pairwise anticomplete K3 support classes plus a 35-point remainder of151/152 edges;
 - Type-B d3 fully closed;
-- d11 closed by star-centre overlap + PAIR-13;
-- d2 fully closed by retained-block and clean-support arguments.
+- d11 and d2 fully closed.
 
 ## Line B — high backend E333..E340
 
