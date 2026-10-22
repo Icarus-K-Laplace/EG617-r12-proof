@@ -14,15 +14,11 @@ Latest package-level front-end window:
 
 ### Astra-A V8 (source-reported)
 
-V8 reports the following new theorem for a maximum-charge pivot with
+V8 reports the following new theorem for a maximum-charge pivot with `Q=30+k`, `1<=k<=3`:
 
-`Q=30+k`, `1<=k<=3`:
-
-for every regular missing-degree-3 neighbour,
-
-`rho <= k-1`.
-
-The boundary family `rho=k` is reported analytically excluded by the common-K11 / row-triangle / repeated-repivot argument. Full excess-migration and reverse-repivot identities are included in the package.
+- every regular missing-degree-3 neighbour satisfies `rho<=k-1`;
+- the boundary family `rho=k` is analytically excluded;
+- full excess-migration and reverse-repivot identities are supplied.
 
 V8 explicitly leaves `E407,E408` OPEN. Its remaining obligations are:
 
@@ -30,45 +26,38 @@ V8 explicitly leaves `E407,E408` OPEN. Its remaining obligations are:
 - `E408: Q_max in {27,28}`;
 - global compatibility/cycles of nonzero correction terms across distinct pivots.
 
-Evidence status: `SOURCE_REPORTED / PACKAGE_PRESENT / INDEPENDENT_REPLAY_PENDING`. See `front_end/T61_H13_V8_RESULT.md`.
+Evidence status: `SOURCE_REPORTED / PACKAGE_PRESENT / INDEPENDENT_REPLAY_PENDING`.
 
 ### Assistant-owned E406 subline — current live frontier
 
-The assistant-owned E406 work is deliberately disjoint from Astra A's E407--E408 assignment.
+The assistant-owned E406 work is disjoint from Astra A's E407--E408 assignment.
 
-Current distance-class status:
+Closed final-rise distances:
 
-- `d=10`: `PROVED EMPTY`;
-- `d=11`: `PROVED EMPTY`;
 - `d=2`: `PROVED EMPTY`;
-- `d=3`: Type-B is `PROVED EMPTY`; Type-A is reduced to `O<=4`;
-- `d=1`: `OPEN`, common-K11 deficit / excess-transfer system;
-- `d=12`: `OPEN`, paired dense 12-block system.
+- `d=3`: `PROVED EMPTY` in full;
+- `d=10`: `PROVED EMPTY`;
+- `d=11`: `PROVED EMPTY`.
 
-Thus the surviving E406 frontier is exactly
+The complete d=3 closure consists of:
 
-`d1`, `d3-TypeA with O<=4`, `d12`.
+- Type-B closure;
+- Type-A O5 closure;
+- Type-A O4 no-four-full theorem;
+- eta=0 simple-four-double closure;
+- eta=1 simple-four-double closure;
+- eta=1 one-triple + two-double closure;
+- eta=0 one-triple + two-double closure;
+- uniform two-triple closure.
 
-Latest d3-TypeA reductions:
+Therefore the surviving E406 frontier is now exactly
 
-- complete `O=5` closure;
-- every O4 state has full-row counts `(9,10,10,10)`;
-- eta=0 O4: `e(H)=152`, total H excess4, `R=3`;
-- eta=1 O4: `e(H)=151`, total H excess3, `R=4`;
-- no four-full H vertex, so O4 multiplicity type `3+1` is impossible;
-- eta=0 simple-four-double branch is **fully closed**;
-- eta=1 high-pair rigidity leaves only the low-row simple profiles `(5,6,8,8)`, `(6,6,8,8)`, `(6,6,7,8)`, `(6,7,7,7)`;
-- `(6,7,7,7)` is now `PROVED EMPTY` by row-degree balance plus the no-repeated-hub / no-singleton-hub theorems.
+`d=1` and `d=12`.
 
-Therefore the eta=1 simple-four-double frontier is exactly
+Those are respectively:
 
-`(5,6,8,8)`, `(6,6,8,8)`, `(6,6,7,8)`.
-
-The remaining d3-TypeA O4 work consists of:
-
-1. those three eta=1 simple-double profiles;
-2. one triple + two doubles;
-3. two triples.
+- `d1`: common-K11 deficit / excess-transfer system;
+- `d12`: paired dense 12-block system.
 
 ## Line B — high backend E333..E340
 
@@ -78,18 +67,12 @@ V4 source package reports a support-repetition theorem for a maximal `(q,tau)` p
 
 - the relevant distance class has size9 or10;
 - at least five legal neighbours share a common nonempty two-point missing set;
-- single-hub family `D1` is excluded;
-- the two-hub zero-defect family is excluded.
-
-Reported remaining necessary shell families:
-
-`D2-A`, `D2-B`, `D2-C`, `D2-D`, `R9`,
-
-with common-missing-set repetition lower bounds `8,8,5,7,9`.
+- D1 is excluded;
+- the zero-defect two-hub family is excluded;
+- remaining necessary shell families are `D2-A`, `D2-B`, `D2-C`, `D2-D`, `R9`;
+- repetition lower bounds are `8,8,5,7,9`.
 
 These are necessary shell rows only, not realized graphs. `E333..E340` all remain OPEN.
-
-Evidence status for V4: `SOURCE_REPORTED / PACKAGE_PRESENT / INDEPENDENT_REPLAY_PENDING`. See `backend/HIGH_LAYER_BACKEND_V4_RESULT.md`.
 
 ## Line C — E332 q30+211
 
@@ -97,7 +80,7 @@ Evidence status for V4: `SOURCE_REPORTED / PACKAGE_PRESENT / INDEPENDENT_REPLAY_
 
 ## Global state
 
-The full EG617 r=12 theorem remains OPEN.
+The full EG617 r=12 theorem remains OPEN / NOT_CERTIFIED.
 
 Only two independent mathematical obligations remain:
 
