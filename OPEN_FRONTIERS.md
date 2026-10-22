@@ -2,7 +2,7 @@
 
 ## Front-end — T61 h13
 
-Current proved chain:
+Current repository-canonical chain:
 
 `K145 counterexample -> induced R(4,49) OR embedded T61`
 
@@ -12,13 +12,11 @@ Current proved chain:
 
 `T61 -> E>=401`.
 
-Thus the active front-end object is
+Thus the repository-canonical front-end object remains
 
 `T61: 401<=E<=408, delta=13`.
 
-Highest priority is E401. The closed shell ladder is q23/q24/q25; the new cells are q26 with G=1..4 plus the q25 `(21,4)` extension.
-
-Preferred breakthrough: a parameterized `q=22+r` stability theorem rather than four unrelated q26 cases.
+A newer Line-A package reports a uniform shell theorem closing E401--E404 and shrinking the front end to E405--E408. That package is retained as a pending audit input until its proof files/verifier are independently replayed.
 
 ## High backend — E333..E340
 
@@ -26,7 +24,7 @@ Primary target:
 
 `333<=e(F)<=340` for legitimate `F in R(4,49)`.
 
-Preferred breakthrough: a uniform repivot/core-excess theorem eliminating several layers at once.
+A newer Line-B V2 package reports exact two-pivot identities, q34/q35 quotient compression, and local counterexamples to naive one-step Phi monotonicity. E333--E340 remain OPEN. Package-level replay is still pending before promotion.
 
 ## Low backend — E332
 
@@ -43,25 +41,32 @@ Now proved:
 - d3 equality branch is completely empty;
 - every undecorated shell vertex has missing degree only `{0,1,2,11,12}`;
 - there are at most two undecorated degree11/12 vertices;
-- the strengthened zero-gap theorem: for every missing edge `uv` with `u` undecorated,
-  `|N_M(u) union N_M(v)|+g_v >= 13+|D_u intersect D_v|`;
-- in particular, an undecorated-undecorated missing edge satisfies `N_M(u) union N_M(v)=A` and disjoint core rows;
-- decoration layers `G=4` and `G=5` are completely empty;
-- hence only `G=6,7,8` remain;
-- the entire `G=6,h=0` branch is empty;
-- every two-high (`h=2`) survivor is classified exactly: only `H2-G6-K4` and `H2-G7-K4minusE` can remain; there is no `h=2,G=8` state.
+- strengthened zero-gap repivot theorem;
+- G=4 empty;
+- G=5 empty;
+- G=6 empty.
 
-Thus the active E332 frontier is:
+The G=6 closure uses the triangle-row lemma
 
-1. `G=6,h=1` plus the single exact `H2-G6-K4` cell;
-2. `G=7,h=0 or1` plus the single exact `H2-G7-K4minusE` cell;
-3. `G=8,h=0 or1`.
+`M-triangle r,s,t => |D_r union D_s union D_t|>=24`
+
+plus a complete elimination of the unique-high branch and the exact `H2-G6-K4` cell.
+
+Thus the active E332 frontier is now:
+
+1. `G=7,h=0`;
+2. `G=7,h=1`;
+3. the single exact `H2-G7-K4minusE` cell;
+4. `G=8,h=0`;
+5. `G=8,h=1`.
+
+There is no h=2,G=8 state.
 
 Next priorities:
 
-1. close the two exact h=2 cells using their equality row systems;
-2. close `G=6,h=1` using the unique-high zero-gap normal form;
-3. extend the same active/inactive support accounting to `G=7,8`.
+1. exploit plateau repivots from the nine low rows of `H2-G7-K4minusE`;
+2. close G=7,h=0/1 by active-inactive support accounting and triangle-row capacity;
+3. close G=8,h=0/1, preferably through a uniform theorem that also kills the G7 h2 image after repivot.
 
 ## Recently closed / strengthened
 
@@ -74,5 +79,4 @@ Next priorities:
 - E332 strengthened zero-gap repivot theorem: proved;
 - E332 G=4: closed;
 - E332 G=5: closed;
-- E332 G=6,h=0: closed;
-- E332 h=2 family: reduced to two exact cells.
+- E332 G=6: closed.
