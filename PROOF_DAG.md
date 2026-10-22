@@ -28,19 +28,23 @@ T61 unique stop
                 +--> E398 [CLOSED]
                 +--> E399 [CLOSED]
                 +--> E400 [CLOSED]
-                +--> E401..E404 [SOURCE-REPORTED PROVED: V6]
-                +--> E405 [SOURCE-REPORTED PROVED: V7]
+                +--> E401..E404 [CLOSED, CANONICAL REPLAY]
+                |       +--> <=288 core interface
+                |       +--> EDGE13
+                |       +--> uniform q<=29,G<=7 promotion to q>=30
+                |       +--> pure q23/q24 shell lemmas
+                |       +--> high-low excess support/cut
+                +--> E405 [CLOSED, CANONICAL REPLAY]
+                |       +--> no embedded R(3,36)
+                |       +--> every actual47-core delta>=11
+                |       +--> q25/q26 promotion
+                |       +--> high-low cut -> Q>=27
+                |       +--> Q27..29 promoted, Q30 -> q>=31
                 +--> E406 [CLOSED, CANONICAL]
-                |       |
                 |       +--> S31: exists q<=30 pivot
                 |       +--> low-to-q30 bridge [PROVED]
-                |       |       +--> q22,q23 impossible
-                |       |       +--> q24..q26 promote without direct q31 jump
-                |       |       +--> q27,q28 impossible
-                |       |       +--> q29 -> q30
-                |       +--> q30 hereditary promotion [PROVED / independently replayed]
-                |       |       +--> q30 -> q31 within <=2 regular repivots
-                |       +--> final adjacent q30 -> q31 edge
+                |       +--> q30 hereditary promotion [PROVED]
+                |       +--> actual q30 -> q31 final edge
                 |               +--> d=1 [CLOSED]
                 |               +--> d=2 [CLOSED]
                 |               +--> d=3 [CLOSED]
@@ -57,13 +61,13 @@ T61 unique stop
                 +--> correction-cycle compatibility [OPEN]
 ```
 
+Thus the continuous repository-canonical h13 closure is
+
+`E397..E406`.
+
 The active T61 edge window is exactly
 
 `E407,E408`.
-
-Canonical E406 source:
-
-`front_end/E406_FULL_CLOSURE.md`.
 
 ## Backend DAG
 
@@ -74,9 +78,7 @@ degree13 pivot
    |
    +--> e(F)=91+q+e(H)
    +--> CORE211
-   +--> q28 profitable repivot
-   +--> q29 generic good-repivot
-   +--> uniform q27 contradiction
+   +--> q27/q28/q29 repivot machinery
    |
    v
 E329,E330,E331 excluded
@@ -100,11 +102,11 @@ The only remaining legal `R(4,49)` backend interval is
 
 `E333..E340 [ACTIVE LINE B]`.
 
-Line-B V4 reports the support-repetition reduction to necessary families
+Line-B V4 reports necessary families
 
 `D2-A,D2-B,D2-C,D2-D,R9`
 
-with repetition lower bounds `8,8,5,7,9`. These are necessary shell structures only, not realized graphs.
+with repetition lower bounds `8,8,5,7,9`; these are not graph realizations.
 
 ## Final certification condition
 
@@ -113,4 +115,4 @@ EG617 r=12 may be declared proved only after BOTH:
 1. T61 `E407,E408` is closed;
 2. every legal `R(4,49)` layer `E333..E340` is eliminated.
 
-There is no remaining E332 or E406 obligation.
+There is no remaining E332 or E397--E406 obligation.
