@@ -20,7 +20,7 @@ Reusable assets include q27/q28/q29 repivot machinery and the reconstructed E329
 - `backend/E332_H1_UNIFIED_FINAL.md`;
 - `backend/E332_G8_H0_UNIFIED_CLOSURE.md`.
 
-Therefore the legal R(4,49) backend obligation is exactly
+Therefore the legal `R(4,49)` backend obligation is exactly
 
 `E333..E340`.
 
@@ -32,36 +32,39 @@ The certified dichotomy remains
 
 The contextual recurrence is computation-certified at 1752 nodes and 144 stopping comparisons.
 
-Repository-canonical low h13 layers run through E400. Source package V6 reports E401--E404 empty; V7 reports E405 empty; V8 supplies further E407/E408 structure. Package evidence levels remain tracked separately.
+Repository-canonical low h13 layers run through E400. Source package V6 reports E401--E404 empty; V7 reports E405 empty. Their package evidence levels remain tracked separately.
 
-### E406 — local boundary complete
+### E406 is independently closed
 
-Under the explicit E406 q30->q31 boundary contract, the only possible final-rise distances are
+Under the explicit T61 E406 hereditary-cap parent contract,
 
-`{1,2,3,10,11,12}`.
+`E406 = EMPTY`.
 
-All six are now `PROVED EMPTY` by repository proof bodies:
+Canonical master source:
 
-- d1: `front_end/E406_D1_FULL_CLOSURE.md`;
-- d2: `front_end/E406_D2_*` closure chain;
-- d3: complete Type-A/Type-B closure including O5 and all O4 multiplicity families;
-- d10: `front_end/E406_Q31_PLATFORM_SUPPORT_RIGIDITY.md`;
-- d11: `front_end/E406_D11_FULL_CLOSURE.md`;
-- d12: `front_end/E406_D12_FULL_CLOSURE.md`.
+`front_end/E406_FULL_CLOSURE.md`.
 
-Hence no legal adjacent q30--q31 pivot-graph edge exists in E406.
+The proof chain is:
 
-The sole remaining E406 obligation is the **boundary-forcing bridge**:
+1. audited S31 gives a degree-13 pivot with `q<=30`;
+2. `front_end/E406_LOW_TO_Q30_BRIDGE.md` proves every such parent contains a genuine q30 pivot;
+3. `front_end/Q30_HEREDITARY_PROMOTION_CANONICAL.md` independently replays the V7 q30 theorem and proves q30 reaches q31 within at most two regular repivots;
+4. the final step is an actual adjacent `q30 -> q31` edge;
+5. its missing distance lies in `{1,2,3,10,11,12}`;
+6. all six classes are independently proved empty by the E406 closure files.
 
-`E406 parent + S31 + hereditary caps -> existence of an actual adjacent q30--q31 boundary edge`.
+The E406 bridge no longer depends on an unreplayed V7 black box. In particular:
 
-V6/V7 source reports claim the required low-charge and q30 promotion ladder, but a full independent repository replay is not yet recorded. Correct current status:
+- every relevant 47-core with at most288 edges has minimum degree at least12;
+- q22,q23 are impossible;
+- q24--q26 promote without jumping directly to q31;
+- q27,q28 are impossible;
+- q29 promotes exactly to q30;
+- q30 hereditary promotion is independently reconstructed.
 
-`E406 = CONDITIONAL_EMPTY_ON_BOUNDARY_FORCING_BRIDGE`.
+The older `E406_FULL_CLOSURE_COMPOSED.md` and `E406_BOUNDARY_BRIDGE_STATUS.md` are provenance records and are superseded by the canonical full closure.
 
-See `front_end/E406_BOUNDARY_BRIDGE_STATUS.md`.
-
-### E407--E408
+### Active T61 frontier: E407--E408 only
 
 V8 source-reported theorem for maximum charge `Q=30+k`, `1<=k<=3`:
 
@@ -75,7 +78,11 @@ V8 explicitly leaves:
 - `E408: Q_max in {27,28}`;
 - correction-term compatibility/cycles.
 
-Evidence status: `SOURCE_REPORTED / PACKAGE_PRESENT / INDEPENDENT_REPLAY_PENDING`.
+Evidence status for the V8 package is `SOURCE_REPORTED / PACKAGE_PRESENT / INDEPENDENT_REPLAY_PENDING` unless a statement has a separate reconstructed proof file.
+
+Thus the active T61 edge window is exactly
+
+`E407,E408`.
 
 ## High backend live state
 
@@ -88,10 +95,13 @@ Line-B V4 reports a support-repetition theorem for maximal `(q,tau)` pivots:
 
 These are necessary shell rows only, not realized graphs. `E333..E340` all remain OPEN.
 
-## Current independent obligations
+## Current independent mathematical obligations
 
-1. certify the E406 boundary-forcing bridge;
-2. close E407/E408;
-3. eliminate E333..E340.
+1. close T61 `E407,E408`;
+2. eliminate legal `R(4,49)` layers `E333..E340`.
 
-EG617 r=12 remains OPEN until all three are discharged.
+There is no remaining E332 or E406 obligation.
+
+## Certification warning
+
+EG617 r=12 remains OPEN. It may be declared proved only after both remaining obligations above are closed.
