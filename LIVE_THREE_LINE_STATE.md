@@ -18,27 +18,41 @@ Latest package-level front-end window:
 
 `E406, E407, E408`.
 
-### Assistant-owned E406 subline
+### Assistant-owned E406 subline — current live frontier
 
-A new standalone reduction is in `front_end/E406_Q31_COEXISTENCE_REDUCTION.md`.
+The assistant-owned E406 work is deliberately disjoint from Astra A's E407--E408 assignment.
 
-For E406:
+Base reduction:
 
 - `q<=31`;
-- q31/q30/q29 cores have respectively 284/285/286 edges, minimum degree at least12, and internal excess over12 equal to4/6/8;
-- a q31 core therefore has only five possible degree multisets, given by partitions of4;
-- every q30 or q31 shell has no undecorated missing degree4 through9;
-- every regular d3/d10 row leaves at most one charge unit outside its missing-neighbour set;
-- z>=22 implies every q31 pivot has at least4 legal degree13 neighbours and every q30 pivot at least5;
-- under the source-reported V6/V7 ladder an E406 coexistence object contains an actual adjacent boundary edge `q30--q31`;
-- every such final rise obeys the exact core-excess exchange identity
-  `epsilon_C(D)-epsilon_C'(S)=1+e_C(D)-e_F(S)`.
+- q31/q30/q29 cores have284/285/286 edges and, by Line-A theorem L4, minimum degree at least12;
+- regular shell vertices of missing degree4 through9 are excluded in q30/q31 views;
+- any E406 coexistence object contains an actual q30->q31 boundary edge;
+- the final-rise distance lies in `{1,2,3,10,11,12}`.
 
-Thus the assistant subproblem is now the six boundary distance classes `d=1,2,3,10,11,12`, not a general E406 shell enumeration.
+Current distance-class status:
+
+- `d=10`: `PROVED EMPTY`;
+- `d=11`: `PROVED EMPTY` in `front_end/E406_D11_FULL_CLOSURE.md`;
+- `d=2`: all retained-star layers `e=2,...,8` are `PROVED EMPTY`; only the exact `e=1` decorated-edge terminal remains;
+- `d=3`: all Type-B q31 platforms are `PROVED EMPTY`; only Type-A platforms remain;
+- `d=1`: `OPEN`, reduced to a common-K11 deficit / excess-transfer system;
+- `d=12`: `OPEN`, reduced to paired dense 12-blocks.
+
+The surviving E406 frontier is therefore exactly
+
+`d1`, `d2-e1`, `d3-TypeA`, `d12`.
+
+Additional exact reductions now available:
+
+- near-284 `PAIR-13` and `TRI-24` row-union lemmas;
+- d2-e1 contains at least five clean regular pivots with 2-row supports of only three exact types (`E406_D2_E1_CLEAN_SUPPORTS.md`);
+- d3-TypeA has four pairwise anticomplete K3 support classes and a 35-point remainder of151/152 edges with saturated row-partition constraints;
+- the former d11 terminal was compressed to three star-complement 11-blocks and then eliminated by forcing the two core-star centres to coincide and applying PAIR-13 to the resulting isolate.
+
+Evidence status for V7 itself remains `SOURCE_REPORTED_PROVED / INDEPENDENT_REPLAY_PENDING` in this chat runtime. The assistant-owned E406 lemmas above are standalone repository proof files and do not rely on importing an unverified V7 proof body beyond the explicit Line-A ledger inputs already marked `PROVED`.
 
 Astra A is assigned elsewhere to E407--E408 so the work does not overlap.
-
-Evidence status for V7: `SOURCE_REPORTED_PROVED / INDEPENDENT_REPLAY_PENDING` in this chat runtime. See `front_end/T61_H13_V7_RESULT.md`.
 
 ## Line B — high backend E333..E340
 
@@ -51,7 +65,7 @@ V3 reports:
 - a common nine-point missing neighbourhood has at most two distinct core supports;
 - three ten-point supports obey `E+2q >= 408+3B`, excluding three-support structures for `q<=33`;
 - four legal pivots pairwise in distinct distance classes cannot form a K4;
-- q34/q35 aggregate frontier compressed from 76 to 42 necessary rows;
+- q34/q35 aggregate frontier compressed from76 to42 necessary rows;
 - K4-containing states grouped into nine decorated shell types.
 
 No high layer is closed. The missing theorem is a forcing statement: a maximal pivot must generate a forbidden multi-support geometry or a better pivot.
