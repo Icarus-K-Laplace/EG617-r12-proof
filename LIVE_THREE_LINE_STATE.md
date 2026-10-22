@@ -48,7 +48,7 @@ Current distance-class status:
 - `d=10`: `PROVED EMPTY`;
 - `d=11`: `PROVED EMPTY` in `front_end/E406_D11_FULL_CLOSURE.md`;
 - `d=2`: `PROVED EMPTY` in full;
-- `d=3`: all Type-B q31 platforms are `PROVED EMPTY`; Type-A has now been reduced further to `O<=4` by `front_end/E406_D3_TYPEA_O5_FULL_CLOSURE.md`;
+- `d=3`: all Type-B q31 platforms are `PROVED EMPTY`; Type-A has now been reduced to `O<=4`;
 - `d=1`: `OPEN`, reduced to a common-K11 deficit / excess-transfer system;
 - `d=12`: `OPEN`, reduced to paired dense 12-blocks.
 
@@ -56,12 +56,27 @@ Thus the surviving E406 frontier is exactly
 
 `d1`, `d3-TypeA with O<=4`, `d12`.
 
+Latest d3-TypeA reductions:
+
+- complete `O=5` closure: `front_end/E406_D3_TYPEA_O5_FULL_CLOSURE.md`;
+- modern O4 interface: every O4 state has full-row counts `(9,10,10,10)`;
+- eta=0 O4: `e(H)=152`, total H excess4, partial incidence `R=3`;
+- eta=1 O4: `e(H)=151`, total H excess3, partial incidence `R=4`;
+- no H-vertex can be full to all four support rows; therefore the O4 multiplicity type `3+1` is impossible;
+- modern simple-four-double profile `(4,8,8,8)` is empty by row-degree count;
+- modern eta=0 simple-four-double profile `(5,7,8,8)` is `PROVED EMPTY` in `front_end/E406_D3_O4_SIMPLE_5788_ETA0.md`.
+
+The remaining O4 multiplicity types are therefore only:
+
+- four doubles, with fewer surviving pure-size profiles;
+- one triple + two doubles;
+- two triples.
+
 Key exact assets:
 
 - near-284 `PAIR-13` and `TRI-24` row-union lemmas;
 - d3 four-triangle compression: four pairwise anticomplete K3 support classes plus a 35-point remainder of151/152 edges;
 - Type-B d3 fully closed;
-- Type-A `O=5` fully closed; every Type-A survivor has `O<=4`;
 - d11 closed by star-centre overlap + PAIR-13;
 - d2 fully closed by retained-block and clean-support arguments.
 
