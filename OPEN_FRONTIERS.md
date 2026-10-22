@@ -2,49 +2,51 @@
 
 ## Front-end — T61 h13
 
-Latest package-level remaining window:
+The active front-end window is now exactly
 
-`T61: E406..E408, delta=13`.
+`T61: E407,E408, delta=13`.
 
-### E406 — boundary-complete, bridge-open
+### E406 — CLOSED
 
-Every possible adjacent q30->q31 final-rise distance class is proved empty:
+`E406 = EMPTY` under the explicit T61 hereditary-cap parent contract.
 
-`d=1,2,3,10,11,12`.
+Canonical source:
 
-Hence the local coexistence classification is complete. There is no legal adjacent q30--q31 pivot edge.
+`front_end/E406_FULL_CLOSURE.md`.
 
-The **only** remaining E406 obligation is:
+The independently reconstructed chain is
 
-> prove independently that every E406 parent satisfying S31 and the hereditary T61 contract must generate an actual adjacent q30--q31 boundary edge.
+`S31 q<=30 -> genuine q30 -> q31 within <=2 regular repivots -> actual q30->q31 edge -> impossible`.
 
-The V6/V7 source packages report the ingredients for that ladder, but the complete implication has not yet been replayed from a repository proof body. Therefore E406 is currently
+All possible final-rise distances
 
-`CONDITIONAL_EMPTY_ON_BOUNDARY_FORCING_BRIDGE`.
+`d=1,2,3,10,11,12`
 
-See `front_end/E406_BOUNDARY_BRIDGE_STATUS.md`.
+are proved empty. There is no remaining E406 bridge or shell frontier.
 
 ### E407--E408 — Astra-A line
 
-V8 explicitly leaves:
+V8 source-reported remaining obligations are:
 
 - `E407: Q_max=27`;
 - `E408: Q_max in {27,28}`;
 - global compatibility/cycles of nonzero correction terms.
 
+The V8 package remains source-reported/replay-pending except for statements separately reconstructed into repository proof files.
+
 ## High backend — E333..E340
 
-This is the only open legal R(4,49) backend interval.
+This is the only open legal `R(4,49)` backend interval.
 
 Line-B V4 reports necessary survivor families
 
 `D2-A, D2-B, D2-C, D2-D, R9`
 
-with repetition lower bounds
+with common-missing-pair repetition lower bounds
 
 `8,8,5,7,9`.
 
-These are necessary shell rows, not realized graphs. The next valid target is a repeated-pair/core-support capacity theorem in the 35-point core.
+These are necessary shell rows, not realized graphs. The next Line-B target is a repeated-pair/core-support capacity theorem in the 35-point core.
 
 ## Closed low backend
 
@@ -52,8 +54,7 @@ These are necessary shell rows, not realized graphs. The next valid target is a 
 
 ## Current global open obligations
 
-1. E406 boundary-forcing bridge;
-2. E407/E408;
-3. legal R(4,49) high layers E333..E340.
+1. close T61 `E407,E408`;
+2. eliminate legal `R(4,49)` layers `E333..E340`.
 
 The full EG617 r=12 theorem remains **OPEN / NOT_CERTIFIED**.
