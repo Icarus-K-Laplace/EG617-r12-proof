@@ -46,14 +46,22 @@ The decoration layers
 
 are all `PROVED EMPTY`.
 
-The full `G=7,h=0` branch is now also `PROVED EMPTY`. Its closure eliminates k=3,4,5 directly and then all high-incidence k=6,7 cells by active/inactive support counting, degree1/2 low-repivot inequalities, pair-row coverage, and the triangle-row union lemma.
+The full `G=7,h=0` branch is also `PROVED EMPTY`.
+
+A new uniform one-high theorem applies to both G=7 and G=8:
+
+- unique high missing-degree11 is impossible;
+- if the unique high has missing-degree12, there are at most one low-active decorated vertex;
+- one-active states satisfy `k+r<=11`;
+- their low-decorated incidence satisfies `r>=4` for G=7 and `r>=3` for G=8.
+
+The exact two-high cell `H2-G7-K4minusE` is now also `PROVED EMPTY`. Its nine low rows reduce to pairwise-disjoint row-edge classes inside `D_x union D_y`; repivot at a class of multiplicity m is a q30 plateau but raises shell decoration to `7+2m>=9`, contradicting `q=30` and the inherited `z>=22` shell floor.
 
 Therefore the active E332 frontier is now exactly:
 
-- `G=7,h=1`;
-- the exact `H2-G7-K4minusE` cell;
+- `G=7,h=1` in the reduced universal-high zero/one-active windows;
 - `G=8,h=0`;
-- `G=8,h=1`.
+- `G=8,h=1` in the reduced universal-high zero/one-active windows.
 
 There is no h=2,G=8 state.
 
@@ -104,7 +112,7 @@ No high edge layer is closed by V2. E333--E340 all remain OPEN.
 ## Current independent research obligations
 
 - Front-end: repository-canonical E401..E408, with a newer source package reporting E401..E404 closed; package-level remaining window E405..E408;
-- Low backend: close `G=7,h=1`, `H2-G7-K4minusE`, `G=8,h=0`, `G=8,h=1`;
+- Low backend: close only three remaining E332 branches: `G=7,h=1`, `G=8,h=0`, `G=8,h=1`;
 - High backend: eliminate legal R(4,49) layers E333..E340 using third-pivot/joint-row/nonadjacent-pivot constraints rather than naive local Phi monotonicity.
 
 ## Certification warning
