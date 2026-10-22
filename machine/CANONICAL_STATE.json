@@ -14,18 +14,40 @@
       "repository_canonical_closed_layers": [397, 398, 399, 400],
       "source_reported_v6": {
         "evidence_status": "SOURCE_REPORTED_PROVED_REPLAY_PENDING",
-        "reported_closed_layers": [401, 402, 403, 404]
+        "reported_closed_layers": [401, 402, 403, 404],
+        "source": "front_end/T61_H13_V6_RESULT.md"
       },
       "source_reported_v7": {
         "evidence_status": "SOURCE_REPORTED_PROVED_REPLAY_PENDING",
         "reported_closed_layers": [405],
-        "reported_remaining_window": [406, 408],
-        "new_results": [
-          "Every genuine 47-point core has minimum degree at least 11",
-          "q25/q26 pivots lift to q>=27",
-          "q30 no-rise shells reduce to two families and reach q>=31 within at most two repivots"
-        ],
         "source": "front_end/T61_H13_V7_RESULT.md"
+      },
+      "source_reported_v8": {
+        "evidence_status": "SOURCE_REPORTED_REPLAY_PENDING",
+        "reported_remaining_layers": [407, 408],
+        "new_results": [
+          "For maximal Q=30+k, 1<=k<=3, every regular missing-degree-3 neighbour satisfies rho<=k-1",
+          "The boundary family rho=k is analytically excluded",
+          "Full excess-migration and reverse-repivot identities supplied"
+        ],
+        "remaining_subproblems": [
+          "E407 maximal Q=27",
+          "E408 maximal Q in {27,28}",
+          "Compatibility and cycles of nonzero correction terms"
+        ],
+        "source": "front_end/T61_H13_V8_RESULT.md"
+      },
+      "latest_package_level_window": [406, 408],
+      "e406_assistant_line": {
+        "status": "OPEN",
+        "closed_final_rise_distances": [2, 10, 11],
+        "closed_d3_subbranches": ["Type-B", "Type-A O5", "Type-A O4 simple-four-double eta0", "Type-A O4 simple-four-double eta1"],
+        "open_final_rise_frontier": [
+          "d1",
+          "d3-TypeA O4 one-triple-plus-two-doubles",
+          "d3-TypeA O4 two-triples",
+          "d12"
+        ]
       }
     }
   },
@@ -47,24 +69,24 @@
     "high_layers": {
       "status": "OPEN",
       "edge_window": [333, 340],
-      "source_reported_v3": {
+      "source_reported_v4": {
         "evidence_status": "SOURCE_REPORTED_REPLAY_PENDING",
         "all_edge_layers_remain_open": true,
-        "q34_q35_necessary_rows": 42,
-        "k4_decorated_shell_types": 9,
         "new_results": [
-          "closed-neighbourhood distance classes and exact third-viewpoint exchange formula",
-          "common nine-point missing neighbourhood has at most two core supports",
-          "three ten-point supports satisfy E+2q>=408+3B and are excluded for q<=33",
-          "four pivots from pairwise distinct distance classes cannot form K4"
+          "Relevant distance class has size 9 or 10",
+          "At least five legal neighbours share a common nonempty two-point missing set",
+          "Single-hub D1 family excluded",
+          "Zero-defect two-hub family excluded"
         ],
-        "source": "backend/HIGH_LAYER_BACKEND_V3_RESULT.md"
+        "necessary_survivor_families": ["D2-A", "D2-B", "D2-C", "D2-D", "R9"],
+        "repetition_lower_bounds": [8, 8, 5, 7, 9],
+        "source": "backend/HIGH_LAYER_BACKEND_V4_RESULT.md"
       },
-      "next_goal": "forcing theorem: maximal pivot generates a forbidden multi-support configuration or a better pivot"
+      "next_goal": "Prove a repeated-pair/core-support capacity theorem in the 35-point core; necessary shell rows must not be treated as realized graphs."
     }
   },
   "remaining_global_obligations": [
-    "Finish the T61 front end: latest package-level window E406 through E408.",
+    "Finish the T61 front end: E406 through E408.",
     "Eliminate legal R(4,49) layers E333 through E340."
   ]
 }
