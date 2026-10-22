@@ -22,29 +22,31 @@ T61 unique stop
         |
         +--> z=0, alpha(R)=5
         |
-        +--> delta=12 branch [CLOSED via R448>=310 + q20 rotation]
+        +--> delta=12 branch [CLOSED]
         |
         +--> delta=13
                 |
                 +--> E397 [CLOSED]
-                +--> E398 [CLOSED: q23]
-                +--> E399 [CLOSED: q24]
-                +--> E400 [CLOSED: q25]
-                +--> E401..E404 [SOURCE-REPORTED PROVED in V6; replay status tracked separately]
-                +--> E405 [SOURCE-REPORTED PROVED in V7; replay status tracked separately]
+                +--> E398 [CLOSED]
+                +--> E399 [CLOSED]
+                +--> E400 [CLOSED]
+                +--> E401..E404 [SOURCE-REPORTED PROVED: V6]
+                +--> E405 [SOURCE-REPORTED PROVED: V7]
                 |
                 v
              E406..E408 [ACTIVE LINE A]
                 |
                 +--> E406 assistant-owned coexistence line
-                |       +--> final-rise d=2,10,11 [CLOSED]
-                |       +--> d=3 Type-B [CLOSED]
-                |       +--> d=3 Type-A: O5 [CLOSED]
-                |       +--> d=3 Type-A O4 simple-four-double eta=0 [CLOSED]
-                |       +--> d=3 Type-A O4 simple-four-double eta=1 [CLOSED]
-                |       +--> active d=3 Type-A O4 multiplicities:
-                |       |       one triple + two doubles;
-                |       |       two triples
+                |       +--> d=2 [CLOSED]
+                |       +--> d=3 [CLOSED IN FULL]
+                |       |       +--> Type-B [CLOSED]
+                |       |       +--> Type-A O5 [CLOSED]
+                |       |       +--> Type-A O4 four doubles [CLOSED]
+                |       |       +--> Type-A O4 one triple + two doubles [CLOSED, eta0/eta1]
+                |       |       +--> Type-A O4 two triples [CLOSED]
+                |       |       +--> Type-A O4 four-full + double [CLOSED]
+                |       +--> d=10 [CLOSED]
+                |       +--> d=11 [CLOSED]
                 |       +--> d=1 [OPEN]
                 |       +--> d=12 [OPEN]
                 |
@@ -59,7 +61,7 @@ Latest package-level T61 window:
 
 `E406..E408, delta=13`.
 
-The evidence status of V6/V7/V8 remains explicitly tracked in the result ledgers; source-reported package results are not silently promoted beyond their audited scope.
+Within E406, the mathematical frontier is now exactly `d=1` and `d=12`.
 
 ## Backend DAG
 
@@ -92,25 +94,21 @@ E332 q30+211 equality frontier
 E332 = EMPTY [CLOSED AND FROZEN]
 ```
 
-Therefore the **only remaining legal R(4,49) backend interval** is
+The only remaining legal R(4,49) backend interval is
 
 `E333..E340 [ACTIVE LINE B]`.
 
-Latest Line-B source package V4 reports:
+Line-B V4 reports the support-repetition reduction to necessary families
 
-- support-repetition theorem for a maximal `(q,tau)` pivot;
-- relevant distance class has size 9 or 10;
-- at least five legal neighbours share one nonempty two-point missing set;
-- D1 and the zero-defect two-hub family are excluded;
-- remaining necessary shell families are `D2-A,D2-B,D2-C,D2-D,R9`, with repetition lower bounds `8,8,5,7,9`.
+`D2-A,D2-B,D2-C,D2-D,R9`
 
-These are necessary shell structures, not realized graphs. No layer E333..E340 is closed yet.
+with repetition lower bounds `8,8,5,7,9`. These are necessary shell structures only, not realized graphs.
 
 ## Final certification condition
 
 EG617 r=12 may be declared proved only after BOTH:
 
-1. the remaining T61 front-end window `E406..E408` is closed (or every survivor is forced into an already-eliminated legal R(4,49) branch under a certified interface);
+1. T61 `E406..E408` is closed, with E406 now reduced to `d1/d12`;
 2. every legal R(4,49) layer `E333..E340` is eliminated.
 
 There is no remaining E332 obligation.
