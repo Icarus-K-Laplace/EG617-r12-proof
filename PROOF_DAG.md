@@ -20,8 +20,6 @@ contextual recurrence under temporary no-R(4,49) extraction
         v
 T61 unique stop
         |
-        +--> z=0, alpha(R)=5
-        |
         +--> delta=12 branch [CLOSED]
         |
         +--> delta=13
@@ -32,36 +30,40 @@ T61 unique stop
                 +--> E400 [CLOSED]
                 +--> E401..E404 [SOURCE-REPORTED PROVED: V6]
                 +--> E405 [SOURCE-REPORTED PROVED: V7]
+                +--> E406 [CLOSED, CANONICAL]
+                |       |
+                |       +--> S31: exists q<=30 pivot
+                |       +--> low-to-q30 bridge [PROVED]
+                |       |       +--> q22,q23 impossible
+                |       |       +--> q24..q26 promote without direct q31 jump
+                |       |       +--> q27,q28 impossible
+                |       |       +--> q29 -> q30
+                |       +--> q30 hereditary promotion [PROVED / independently replayed]
+                |       |       +--> q30 -> q31 within <=2 regular repivots
+                |       +--> final adjacent q30 -> q31 edge
+                |               +--> d=1 [CLOSED]
+                |               +--> d=2 [CLOSED]
+                |               +--> d=3 [CLOSED]
+                |               +--> d=10 [CLOSED]
+                |               +--> d=11 [CLOSED]
+                |               +--> d=12 [CLOSED]
                 |
                 v
-             E406..E408 [ACTIVE LINE A]
+             E407,E408 [ACTIVE LINE A]
                 |
-                +--> E406 assistant-owned coexistence line
-                |       +--> d=2 [CLOSED]
-                |       +--> d=3 [CLOSED IN FULL]
-                |       |       +--> Type-B [CLOSED]
-                |       |       +--> Type-A O5 [CLOSED]
-                |       |       +--> Type-A O4 four doubles [CLOSED]
-                |       |       +--> Type-A O4 one triple + two doubles [CLOSED, eta0/eta1]
-                |       |       +--> Type-A O4 two triples [CLOSED]
-                |       |       +--> Type-A O4 four-full + double [CLOSED]
-                |       +--> d=10 [CLOSED]
-                |       +--> d=11 [CLOSED]
-                |       +--> d=1 [OPEN]
-                |       +--> d=12 [OPEN]
-                |
-                +--> E407,E408 Astra-A line
-                        +--> V8 rho<=k-1 theorem [SOURCE-REPORTED]
-                        +--> E407 low-Q maximum Q=27 [OPEN]
-                        +--> E408 low-Q maximum Q in {27,28} [OPEN]
-                        +--> correction-cycle compatibility [OPEN]
+                +--> V8 rho<=k-1 theorem [SOURCE-REPORTED]
+                +--> E407 low-Q maximum Q=27 [OPEN]
+                +--> E408 low-Q maximum Q in {27,28} [OPEN]
+                +--> correction-cycle compatibility [OPEN]
 ```
 
-Latest package-level T61 window:
+The active T61 edge window is exactly
 
-`E406..E408, delta=13`.
+`E407,E408`.
 
-Within E406, the mathematical frontier is now exactly `d=1` and `d=12`.
+Canonical E406 source:
+
+`front_end/E406_FULL_CLOSURE.md`.
 
 ## Backend DAG
 
@@ -94,7 +96,7 @@ E332 q30+211 equality frontier
 E332 = EMPTY [CLOSED AND FROZEN]
 ```
 
-The only remaining legal R(4,49) backend interval is
+The only remaining legal `R(4,49)` backend interval is
 
 `E333..E340 [ACTIVE LINE B]`.
 
@@ -108,7 +110,7 @@ with repetition lower bounds `8,8,5,7,9`. These are necessary shell structures o
 
 EG617 r=12 may be declared proved only after BOTH:
 
-1. T61 `E406..E408` is closed, with E406 now reduced to `d1/d12`;
-2. every legal R(4,49) layer `E333..E340` is eliminated.
+1. T61 `E407,E408` is closed;
+2. every legal `R(4,49)` layer `E333..E340` is eliminated.
 
-There is no remaining E332 obligation.
+There is no remaining E332 or E406 obligation.
