@@ -4,14 +4,32 @@
     {
       "id": "LINE_A_T61_H13",
       "status": "OPEN",
-      "repository_canonical_edge_window": [401, 408],
-      "latest_source_reported_result": {
-        "evidence_status": "SOURCE_REPORTED_PROVED_REPLAY_PENDING",
-        "reported_closed_layers": [401, 402, 403, 404, 405],
-        "reported_remaining_window": [406, 408],
-        "source": "front_end/T61_H13_V7_RESULT.md"
+      "latest_package_level_edge_window": [406, 408],
+      "source_reported_v8": {
+        "evidence_status": "SOURCE_REPORTED_REPLAY_PENDING",
+        "remaining_layers": [407, 408],
+        "remaining_subproblems": [
+          "E407 maximal Q=27",
+          "E408 maximal Q in {27,28}",
+          "nonzero correction-term compatibility and cycle closure"
+        ],
+        "source": "front_end/T61_H13_V8_RESULT.md"
       },
-      "next_target": "Resolve E406 q31/lower-charge pivot coexistence, then E407-E408 plateau/core ladder."
+      "e406_assistant_subfrontier": [
+        "d1 common-K11 deficit/excess-transfer system",
+        "d3-TypeA O4 one triple plus two doubles",
+        "d3-TypeA O4 two triples",
+        "d12 paired dense 12-block system"
+      ],
+      "e406_closed": [
+        "d2",
+        "d10",
+        "d11",
+        "d3-TypeB",
+        "d3-TypeA O5",
+        "d3-TypeA O4 simple-four-double eta0",
+        "d3-TypeA O4 simple-four-double eta1"
+      ]
     },
     {
       "id": "LINE_B_E333_E340",
@@ -19,12 +37,12 @@
       "edge_window": [333, 340],
       "latest_source_reported_result": {
         "evidence_status": "SOURCE_REPORTED_REPLAY_PENDING",
-        "q34_q35_necessary_rows": 42,
-        "k4_decorated_shell_types": 9,
         "all_layers_open": true,
-        "source": "backend/HIGH_LAYER_BACKEND_V3_RESULT.md"
+        "necessary_survivor_families": ["D2-A", "D2-B", "D2-C", "D2-D", "R9"],
+        "common_missing_pair_repetition_lower_bounds": [8, 8, 5, 7, 9],
+        "source": "backend/HIGH_LAYER_BACKEND_V4_RESULT.md"
       },
-      "next_target": "Prove a forcing theorem from third-pivot/support geometry; do not expand the aggregate necessary-state table."
+      "next_target": "Repeated-pair/core-support capacity and multiplicity-overflow theorem in the 35-point core."
     }
   ],
   "closed_lines": [
@@ -33,5 +51,6 @@
       "status": "PROVED_EMPTY_FROZEN",
       "source": "backend/E332_FULL_CLOSURE.md"
     }
-  ]
+  ],
+  "global_status": "OPEN_NOT_CERTIFIED"
 }
