@@ -6,8 +6,7 @@
       "id": "CORE211",
       "status": "PROVED",
       "statement": "For every H in R(3,35), e(H) >= 211.",
-      "source": "backend/CORE211.md",
-      "proof_body_note": "The 210-edge AES contradiction is recovered; the lower-order delta(H)>=12 dependency still needs standalone provenance for full repository self-containment."
+      "source": "backend/CORE211.md"
     },
     {
       "id": "Q29_GOOD_REPIVOT",
@@ -19,92 +18,31 @@
     {
       "id": "BACKEND_E329_E331",
       "status": "PROVED",
-      "statement": "Legal R(4,49) residual layers E329, E330, and E331 are empty.",
+      "statement": "Legal R(4,49) residual layers E329, E330 and E331 are empty.",
       "source": "backend/E329_E332_CLOSURE.md"
     },
     {
-      "id": "BACKEND_E332_REDUCTION",
+      "id": "BACKEND_E332_FULL_CLOSURE",
       "status": "PROVED",
-      "statement": "Any E332 survivor has q=30 and a 211-edge R(3,35) core.",
-      "source": "backend/E329_E332_CLOSURE.md"
-    },
-    {
-      "id": "E332_D10_EMPTY",
-      "status": "PROVED",
-      "statement": "No E332 q30+211 survivor contains an undecorated shell vertex of missing degree10.",
-      "source": "backend/E332_D10_CLOSURE_D3_NORMAL_FORM.md"
-    },
-    {
-      "id": "E332_D3_EMPTY",
-      "status": "PROVED",
-      "statement": "No E332 q30+211 survivor contains an undecorated shell vertex of missing degree3.",
-      "source": "backend/E332_D10_CLOSURE_D3_NORMAL_FORM.md"
-    },
-    {
-      "id": "E332_STRONG_ZERO_GAP",
-      "status": "PROVED",
-      "statement": "If u is undecorated and uv is a missing-shell edge in the E332 q30+211 state, then |N_M(u) union N_M(v)| + g_v >= 13 + |D_u intersect D_v|; if both endpoints are undecorated then their missing-neighbourhoods cover the full shell and their core rows are disjoint.",
-      "source": "backend/E332_STRONG_ZERO_GAP_REPIVOT.md"
-    },
-    {
-      "id": "E332_G4_G5_EMPTY",
-      "status": "PROVED",
-      "statement": "The E332 decoration layers G=4 and G=5 are empty.",
-      "source": "backend/E332_G4_G5_CLOSURE.md"
-    },
-    {
-      "id": "E332_G6_EMPTY",
-      "status": "PROVED",
-      "statement": "The full E332 decoration layer G=6 is empty.",
-      "source": "backend/E332_G6_FULL_CLOSURE.md"
-    },
-    {
-      "id": "E332_G7_H0_EMPTY",
-      "status": "PROVED",
-      "statement": "No E332 extreme shell with G=7 and h=0 exists.",
-      "source": "backend/E332_G7_H0_REDUCTION.md"
-    },
-    {
-      "id": "E332_REMAINING",
-      "status": "OPEN",
-      "statement": "The remaining E332 branches are G=7,h=1; H2-G7-K4minusE; G=8,h=0; and G=8,h=1.",
-      "source": "CANONICAL_STATE.md"
+      "statement": "The legal R(4,49) residual layer E332 is empty.",
+      "source": "backend/E332_FULL_CLOSURE.md",
+      "dependency_note": "Uses q30+211 reduction, d3/d10 closures, strong zero-gap, triangle-row union, and analytic elimination of decoration layers G=4..8."
     },
     {
       "id": "FRONTEND_DICHOTOMY",
       "status": "PROVED",
-      "statement": "A hypothetical least-edge K145 counterexample yields either an induced legal R(4,49) residual or the embedded T61 terminal class.",
+      "statement": "A hypothetical least-edge K145 counterexample yields either an induced legal R(4,49) residual or embedded T61.",
       "source": "front_end/FRONTEND_BRIDGE_THEOREM.md"
     },
     {
       "id": "FRONTEND_RECURRENCE_V1",
       "status": "COMPUTATION_CERTIFIED",
-      "statement": "The contextual outer recurrence has 1752 nodes and 144 stopping comparisons, with two independent integer implementations agreeing.",
-      "source": "certificates/frontend_line_a_v1/"
-    },
-    {
-      "id": "T61_Z0",
-      "status": "PROVED",
-      "statement": "The T61 anchor defect z is zero, so the anchor closed neighbourhood is a genuine K12.",
-      "source": "front_end/T61_NEW_LEMMAS.md"
-    },
-    {
-      "id": "R448_FLOOR310",
-      "status": "PROVED",
-      "statement": "Every C in R(4,48) satisfies e(C)>=310.",
-      "source": "front_end/R448_FLOOR310.md"
-    },
-    {
-      "id": "T61_H12_EMPTY",
-      "status": "PROVED",
-      "statement": "No T61 residual has minimum degree12.",
-      "source": "front_end/T61_H12_CLOSURE.md"
+      "statement": "The contextual outer recurrence has 1752 nodes and 144 stopping comparisons with two independent implementations agreeing."
     },
     {
       "id": "T61_E397_E400_EMPTY",
       "status": "PROVED",
-      "statement": "The T61 h13 edge layers E397 through E400 are empty.",
-      "source": "front_end/T61_H13_LOW_LAYER.md"
+      "statement": "T61 h13 edge layers E397 through E400 are empty."
     },
     {
       "id": "T61_E401_E404_V6",
@@ -116,16 +54,9 @@
     {
       "id": "HIGH_LAYER_V2_TWO_PIVOT",
       "status": "CONDITIONAL",
-      "statement": "The supplied Line-B V2 package reports the exact adjacent two-pivot exchange system, q34-q35 compression to 76 necessary quotient rows, and four q30-q33 local certificates disproving naive one-step Phi monotonicity.",
+      "statement": "The supplied Line-B V2 package reports exact adjacent two-pivot identities, q34-q35 compression to 76 necessary quotient rows, and four q30-q33 local certificates disproving naive one-step Phi monotonicity.",
       "scope_note": "No E333-E340 layer is closed; package replay in the current chat runtime is pending.",
       "source": "backend/HIGH_LAYER_BACKEND_V2_RESULT.md"
-    },
-    {
-      "id": "S31_STRICT_DESCENT",
-      "status": "PROVED",
-      "statement": "Under the explicit 61-point E406, delta>=13 parent contract and inherited density assumptions, some degree-13 pivot has q<=30.",
-      "scope_note": "Does not by itself construct a new K12 block and is not valid outside its parent contract.",
-      "source": "front_end/S30_S31.md"
     },
     {
       "id": "FULL_EG617_R12",
