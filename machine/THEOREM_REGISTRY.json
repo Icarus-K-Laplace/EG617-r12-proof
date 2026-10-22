@@ -6,26 +6,27 @@
       "id": "CORE211",
       "status": "PROVED",
       "statement": "For every H in R(3,35), e(H) >= 211.",
-      "source": "backend/CORE211.md"
+      "source": "backend/CORE211.md",
+      "proof_body_note": "The 210-edge AES contradiction is recovered in consolidation/INTEGRATED1_CORE211_AUDIT.md; the lower-order delta(H)>=12 dependency still needs standalone provenance for full repository self-containment."
     },
     {
       "id": "Q29_GOOD_REPIVOT",
       "status": "PROVED",
       "statement": "If q=29 and the inherited core satisfies delta(H)>=12, then there exists a degree-13 repivot y with q_y>=30.",
       "scope_note": "Does not require e(H)=211.",
-      "source": "backend/Q28_Q29_REPIVOT.md"
+      "source": "backend/Q29_GOOD_REPIVOT_FULL_PROOF.md"
     },
     {
       "id": "BACKEND_E329_E331",
       "status": "PROVED",
       "statement": "Legal R(4,49) residual layers E329, E330, and E331 are empty.",
-      "source": "ASSET_LEDGER.md"
+      "source": "backend/E329_E332_CLOSURE.md"
     },
     {
       "id": "BACKEND_E332_REDUCTION",
       "status": "PROVED",
       "statement": "Any E332 survivor has q=30 and a 211-edge R(3,35) core.",
-      "source": "backend/E332_Q30_211.md"
+      "source": "backend/E329_E332_CLOSURE.md"
     },
     {
       "id": "E332_D10_EMPTY",
