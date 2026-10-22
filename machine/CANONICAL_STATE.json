@@ -24,26 +24,24 @@
         "alpha": 5,
         "omega_upper": 11,
         "minimum_degree": 13,
-        "edge_window": [401, 408],
+        "repository_canonical_edge_window": [401, 408],
         "anchor_defect_z": 0,
         "outer_ledger": "E + sigma + g + x6 + y6 = 408"
       },
-      "closed_layers": [397, 398, 399, 400],
-      "active_layers": [401, 402, 403, 404, 405, 406, 407, 408],
-      "next_exact_cells": [
-        {"q": 26, "z": 25, "G": 1},
-        {"q": 26, "z": 24, "G": 2},
-        {"q": 26, "z": 23, "G": 3},
-        {"q": 26, "z": 22, "G": 4},
-        {"q": 25, "z": 21, "G": 4}
-      ],
-      "sources": [
-        "front_end/T61_H12_CLOSURE.md",
-        "front_end/T61_H13_LOW_LAYER.md",
-        "front_end/E398_Q23_SHELL.md",
-        "front_end/E399_Q24_SHELL.md",
-        "front_end/E400_Q25_SHELL.md"
-      ]
+      "repository_canonical_closed_layers": [397, 398, 399, 400],
+      "source_reported_v6": {
+        "evidence_status": "SOURCE_REPORTED_PROVED_REPLAY_PENDING",
+        "reported_closed_layers": [401, 402, 403, 404],
+        "reported_remaining_window": [405, 408],
+        "uniform_interface": "q<=29, G<=7, delta(C)>=12, every M-edge has t_u+t_v>=13 => legal degree-13 repivot q_y>=30",
+        "upper_bound": "q_y<=E-375<=29 for E<=404",
+        "certificate_rows": 127,
+        "corrections": [
+          "Complete repivot identity restores three nonnegative correction terms",
+          "(q,z,G)=(25,21,4) is illegal via D(14)=69"
+        ],
+        "source": "front_end/T61_H13_V6_RESULT.md"
+      }
     }
   },
   "backend": {
@@ -58,20 +56,37 @@
       "status": "OPEN",
       "reduction": "Any survivor has q=30 and e(H)=211.",
       "core_degree_multisets": ["14,12^34", "13^2,12^33"],
-      "proved_empty_regular_degree_ranges": ["4..9", "10", "3"],
+      "proved_empty_regular_degree_ranges": ["3", "4..9", "10"],
       "remaining_undecorated_missing_degrees": [0, 1, 2, 11, 12],
-      "decoration_total_range": [4, 8],
+      "proved_empty_decoration_layers": [4, 5, 6],
+      "proved_empty_subbranches": ["G=7,h=0", "h=2,G=8"],
+      "active_subbranches": ["G=7,h=1", "H2-G7-K4minusE", "G=8,h=0", "G=8,h=1"],
       "high_regular_count_upper": 2,
-      "G4_support_counts": {"high_regular": 2, "decorated": 4, "low_regular": 7},
       "sources": [
         "backend/E332_Q30_211.md",
-        "backend/E332_D10_CLOSURE_D3_NORMAL_FORM.md"
+        "backend/E332_D10_CLOSURE_D3_NORMAL_FORM.md",
+        "backend/E332_STRONG_ZERO_GAP_REPIVOT.md",
+        "backend/E332_G4_G5_CLOSURE.md",
+        "backend/E332_G6_FULL_CLOSURE.md",
+        "backend/E332_G7_H0_REDUCTION.md"
       ]
     },
     "high_layers": {
       "status": "OPEN",
       "edge_window": [333, 340],
-      "goal": "Uniform repivot/core-excess stability theorem rather than layer-by-layer closure."
+      "source_reported_v2": {
+        "evidence_status": "SOURCE_REPORTED_REPLAY_PENDING",
+        "results": [
+          "Complete adjacent two-pivot exchange system",
+          "Reverse-pivot equality is not independent",
+          "q34-q35 true-twin branch compressed to 76 necessary quotient rows",
+          "Triangle-free non-bipartite quotient branch eliminated",
+          "Four q30-q33 local certificates refute naive one-step Phi monotonicity"
+        ],
+        "all_edge_layers_remain_open": true,
+        "source": "backend/HIGH_LAYER_BACKEND_V2_RESULT.md"
+      },
+      "next_goal": "Use a third pivot, joint S-row constraints, or nonadjacent-pivot weighted inequalities."
     }
   },
   "final_certification_condition": [
@@ -83,6 +98,7 @@
     "ASSET_LEDGER.md",
     "PROOF_DAG.md",
     "OPEN_FRONTIERS.md",
+    "LIVE_THREE_LINE_STATE.md",
     "RESEARCH_INDEX.md"
   ]
 }
