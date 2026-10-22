@@ -4,59 +4,69 @@ This is the synchronized human-readable live state for Lines A/B/C. It contains 
 
 ## Line A — T61 front end
 
-Repository-canonical proved layers: `E397..E400` empty.
+Repository-canonical proved layers currently run through `E400`.
 
-Latest supplied V6 package reports a uniform theorem closing `E401..E404`.
+Source package V6 reports `E401..E404` empty. The newer V7 package reports `E405` empty under the explicit T61 hereditary-cap contract.
 
-Reported interface:
+V7 additionally reports:
 
-`q<=29, G<=7, delta(C)>=12, every M-edge uv has t_u+t_v>=13`
+- every genuine 47-point core satisfies `delta(C)>=11`;
+- q25/q26 pivots can be lifted to `q>=27`;
+- every q30 shell with no immediate strict increase lies in one of two analytic families, and multi-pivot compatibility reaches `q>=31` within at most two legal repivots.
 
-forces a legal degree-13 repivot with `q_y>=30`, while the parent-layer core floor gives `q_y<=E-375<=29` for `E<=404`.
+Therefore the latest package-level front-end window is
 
-Current package-level front-end window: `E405..E408`.
+`E406, E407, E408`.
 
-Status: `SOURCE_REPORTED_PROVED / INDEPENDENT_REPLAY_PENDING` for E401--E404.
+Important remaining E406 obstruction: S31 does not supply a uniform q30 theorem; one must exclude coexistence of a q31 pivot with lower-charge pivots.
+
+Evidence status for V7: `SOURCE_REPORTED_PROVED / INDEPENDENT_REPLAY_PENDING` in this chat runtime. See `front_end/T61_H13_V7_RESULT.md`.
 
 ## Line B — high backend E333..E340
 
 All edge layers remain `OPEN`.
 
-V2 reports:
+V3 reports the following analytic advances:
 
-- complete adjacent two-pivot exchange system;
-- exact q/tau difference identities;
-- reverse-pivot equality is not an independent second inequality;
-- q34/q35 true-twin compression to 76 necessary quotient rows;
-- triangle-free non-bipartite branch eliminated;
-- four q30--q33 local certificates disproving naive one-step Phi monotonicity.
+- all legal pivots are organized by closed-neighbourhood distance classes;
+- an exact third-viewpoint exchange formula is established;
+- a common nine-point missing neighbourhood has at most two distinct core supports;
+- three ten-point supports obey `E+2q >= 408+3B`, excluding three-support structures for `q<=33`;
+- four legal pivots pairwise lying in distinct distance classes cannot form a K4.
 
-The next target is a third-pivot / joint-row / nonadjacent weighted theorem.
+V3 also reports `COMPUTATION_CERTIFIED` compression of the q34/q35 aggregate frontier
+
+`76 necessary rows -> 42 necessary rows`,
+
+with K4-containing states grouped into nine decorated shell types.
+
+No high layer is closed. The missing theorem is a forcing statement: a maximal pivot must generate a forbidden multi-support geometry or a better pivot. Surviving rows are not realized graphs.
+
+Evidence status for V3: `SOURCE_REPORTED / INDEPENDENT_REPLAY_PENDING`. See `backend/HIGH_LAYER_BACKEND_V3_RESULT.md`.
 
 ## Line C — E332 q30+211
 
-`COMPLETE: E332 = EMPTY`.
+`COMPLETE AND FROZEN: E332 = EMPTY`.
 
-The closure chain is now fully represented by standalone repository proof files:
+The closure is now represented by a shorter audited proof DAG rather than relying on the older case-heavy terminal files.
 
-- d4..9 profitable;
-- d10 empty;
-- d3 empty;
-- extreme regular degrees `{0,1,2,11,12}`;
-- strong zero-gap theorem;
-- triangle-row union lemma;
-- G=4 empty;
-- G=5 empty;
-- G=6 empty;
-- G=7 empty;
-- G=8,h1 reduces to G=8,h0;
-- G=8,h0 empty for k=3..8.
+Preferred final assets include:
 
-Master file:
+- `backend/E332_FULL_CLOSURE.md`;
+- `backend/E332_H1_UNIFIED_FINAL.md`;
+- `backend/E332_G8_H0_UNIFIED_CLOSURE.md`.
 
-`backend/E332_FULL_CLOSURE.md`.
+The latter gives the master active/inactive identity
 
-Therefore Line C has no remaining mathematical frontier.
+`W_A = 22+a-b+g_A >= 11m`
+
+and the inactive-edge inequality
+
+`b >= 1+k-3m+g_A`,
+
+which jointly eliminate the final G8/h0 family. The unified one-high theorem reduces G7 directly to one terminal and G8 to the single terminal repivoting into the already empty G8/h0 family.
+
+Therefore Line C has no remaining mathematical frontier and is frozen against further exploratory work unless a later audit finds a scope defect.
 
 ## Global state
 
@@ -64,5 +74,5 @@ The full EG617 r=12 theorem remains OPEN.
 
 Only two independent mathematical obligations remain:
 
-1. finish the T61 front end (package-level E405..E408 if Line-A V6 is accepted);
-2. eliminate the legal R(4,49) high backend interval E333..E340.
+1. finish T61 front end: latest package-level window `E406..E408`;
+2. eliminate legal R(4,49) high backend interval `E333..E340`.
