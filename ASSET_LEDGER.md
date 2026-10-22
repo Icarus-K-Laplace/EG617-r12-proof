@@ -13,14 +13,15 @@
 | E332 d3 | PROVED EMPTY | Equality branch closure. |
 | E332 strengthened zero-gap theorem | PROVED | Full-shell union / row-disjointness constraint. |
 | E332 triangle-row union lemma | PROVED | Every M-triangle has core-row union at least24. |
+| E332 missing-K4 row-cover lemma | PROVED | Every M-K4 covers the full 35-core by its four core rows. |
 | E332 G=4 | PROVED EMPTY | Full layer. |
 | E332 G=5 | PROVED EMPTY | Full layer. |
 | E332 G=6 | PROVED EMPTY | Full layer. |
-| E332 G=7 | PROVED EMPTY | h0, h1 and H2-G7-K4minusE all closed. |
-| E332 G=8,h1 -> h0 | PROVED | Every one-high survivor either contradicts G<=8 or repivots to G8,h0. |
-| E332 G=8,h0, k=3..6 | PROVED EMPTY | Support-size closure. |
-| E332 G=8,h0, k=7,8 | PROVED EMPTY | Final active/inactive edge-count closure. |
-| E332 full layer | PROVED EMPTY | `backend/E332_FULL_CLOSURE.md`. No low-backend frontier remains. |
+| E332 G=7 | PROVED EMPTY | h0, h1 and H2-G7-K4minusE all closed. Preferred h1 route: `backend/E332_H1_UNIFIED_FINAL.md`. |
+| E332 unified one-high theorem | PROVED | G7: `b<=g_x` and `b>=k+g_x-3`; G8: `b<=g_x-1` and `b>=k+g_x-4`; collapses both one-high branches to k=3 terminals. |
+| E332 G=8,h1 -> h0 | PROVED | Unique surviving one-high terminal `(k,r)=(3,7)` repivots to G8,h0 or overflows decoration. |
+| E332 unified G8,h0 theorem | PROVED EMPTY | Master identities `W_A=22+a-b+g_A>=11m` and inactive-edge lower bound imply `a>=k+8m-21`; all m=0,1,2 equality geometries eliminated. See `backend/E332_G8_H0_UNIFIED_CLOSURE.md`. |
+| E332 full layer | PROVED EMPTY | Preferred master DAG: `backend/E332_FULL_CLOSURE.md`. No low-backend frontier remains. |
 | Front-end contextual recurrence | COMPUTATION_CERTIFIED | 1752 nodes, 144 outer stops, two independent implementations. |
 | Front-end dichotomy `K145 -> R449 OR T61` | PROVED | No backend circularity. |
 | T61 h12 branch | PROVED EMPTY | Uses R(4,48) floor310. |
