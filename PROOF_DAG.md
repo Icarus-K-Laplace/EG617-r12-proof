@@ -4,6 +4,8 @@
 
 `Original EG617 r=12 counterexample -> contradiction`.
 
+The full theorem is **NOT_CERTIFIED**.
+
 ## Front-end DAG
 
 ```text
@@ -28,16 +30,36 @@ T61 unique stop
                 +--> E398 [CLOSED: q23]
                 +--> E399 [CLOSED: q24]
                 +--> E400 [CLOSED: q25]
-                +--> E401..E408 [ACTIVE LINE A]
-                        |
-                        +--> q25 (21,4) extension [OPEN]
-                        +--> q26 G=1..4 cells [OPEN]
-                        +--> parameterized q=22+r stability [TARGET]
+                +--> E401..E404 [SOURCE-REPORTED PROVED in V6; replay status tracked separately]
+                +--> E405 [SOURCE-REPORTED PROVED in V7; replay status tracked separately]
+                |
+                v
+             E406..E408 [ACTIVE LINE A]
+                |
+                +--> E406 assistant-owned coexistence line
+                |       +--> final-rise d=2,10,11 [CLOSED]
+                |       +--> d=3 Type-B [CLOSED]
+                |       +--> d=3 Type-A: O5 [CLOSED]
+                |       +--> d=3 Type-A O4 simple-four-double eta=0 [CLOSED]
+                |       +--> d=3 Type-A O4 simple-four-double eta=1 [CLOSED]
+                |       +--> active d=3 Type-A O4 multiplicities:
+                |       |       one triple + two doubles;
+                |       |       two triples
+                |       +--> d=1 [OPEN]
+                |       +--> d=12 [OPEN]
+                |
+                +--> E407,E408 Astra-A line
+                        +--> V8 rho<=k-1 theorem [SOURCE-REPORTED]
+                        +--> E407 low-Q maximum Q=27 [OPEN]
+                        +--> E408 low-Q maximum Q in {27,28} [OPEN]
+                        +--> correction-cycle compatibility [OPEN]
 ```
 
-Current front-end terminal:
+Latest package-level T61 window:
 
-`T61 survivor => delta=13 and 401<=E<=408`.
+`E406..E408, delta=13`.
+
+The evidence status of V6/V7/V8 remains explicitly tracked in the result ledgers; source-reported package results are not silently promoted beyond their audited scope.
 
 ## Backend DAG
 
@@ -56,46 +78,39 @@ degree13 pivot
 E329,E330,E331 excluded
    |
    v
-E332 survivor => q30 + 211-core
+E332 q30+211 equality frontier
    |
-   +--> undecorated d=4..9 [PROFITABLE -> CLOSED]
-   |
-   +--> d10 equality
-   |       |
-   |       +--> pure K3,10
-   |       +--> K10/K3 row geometry
-   |       +--> overlap/coverage contradiction
-   |       v
-   |     [CLOSED]
-   |
-   +--> d3 equality
-   |       |
-   |       +--> Type A/B only
-   |       +--> row classes 3+3+3 or 3+3+2
-   |       +--> four simultaneous pivot views
-   |       +--> 156 required vs 120 available incidences
-   |       v
-   |     [CLOSED]
+   +--> d=4..9 profitable
+   +--> d10 equality closed
+   +--> d3 equality closed
+   +--> extreme-degree shell reduced to G=4..8
+   +--> G4,G5,G6,G7 closed
+   +--> G8 h1 -> h0
+   +--> G8 h0 unified closure
    |
    v
-extreme-degree q30 shell [ACTIVE LINE C]
-   |
-   +--> every undecorated degree in {0,1,2,11,12}
-   +--> at most two high regular vertices
-   +--> G>=4
-   +--> G=4 => exact (h,k,l)=(2,4,7)
-   |
-   v
-eliminate G=4..8 [OPEN]
+E332 = EMPTY [CLOSED AND FROZEN]
 ```
 
-High backend:
+Therefore the **only remaining legal R(4,49) backend interval** is
 
-`E333..E340 -> uniform stability problem [ACTIVE LINE B]`.
+`E333..E340 [ACTIVE LINE B]`.
+
+Latest Line-B source package V4 reports:
+
+- support-repetition theorem for a maximal `(q,tau)` pivot;
+- relevant distance class has size 9 or 10;
+- at least five legal neighbours share one nonempty two-point missing set;
+- D1 and the zero-defect two-hub family are excluded;
+- remaining necessary shell families are `D2-A,D2-B,D2-C,D2-D,R9`, with repetition lower bounds `8,8,5,7,9`.
+
+These are necessary shell structures, not realized graphs. No layer E333..E340 is closed yet.
 
 ## Final certification condition
 
 EG617 r=12 may be declared proved only after BOTH:
 
-1. the remaining T61 h13 window E401..E408 is excluded or always yields an induced legal R(4,49);
-2. E332 and E333..E340 are eliminated for every legal R(4,49).
+1. the remaining T61 front-end window `E406..E408` is closed (or every survivor is forced into an already-eliminated legal R(4,49) branch under a certified interface);
+2. every legal R(4,49) layer `E333..E340` is eliminated.
+
+There is no remaining E332 obligation.
