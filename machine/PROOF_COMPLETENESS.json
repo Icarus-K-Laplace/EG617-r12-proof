@@ -1,6 +1,6 @@
 {
   "updated_date": "2026-10-22",
-  "repository_state": "STATE_COMPLETE_PROOF_BODY_INCOMPLETE",
+  "repository_state": "STATE_COMPLETE_PROOF_BODY_PARTIAL",
   "state_complete": true,
   "self_contained_proof_complete": false,
   "complete_recent_assets": [
@@ -8,33 +8,36 @@
     "R(4,48) floor 310",
     "T61 h12 closure",
     "T61 E397-E400 closures",
-    "E332 q30+211 reduction",
-    "E332 d10 closure",
-    "E332 d3 closure",
-    "E332 extreme-shell reduction"
+    "generic q29 good-repivot standalone proof",
+    "E329-E331 standalone backend chain",
+    "E332 full closure",
+    "E406 full canonical closure including low-to-q30 bridge and independent q30 promotion replay"
+  ],
+  "open_mathematical_frontiers": [
+    "T61 E407 and E408",
+    "legal R(4,49) layers E333 through E340"
   ],
   "proof_body_gaps": [
     {
       "id": "CORE211_FULL_PROOF",
-      "severity": "critical",
-      "status": "missing_full_body",
+      "severity": "major",
+      "status": "canonical_statement_short_body",
       "current_source": "backend/CORE211.md"
     },
     {
-      "id": "Q29_GOOD_REPIVOT_FULL_CASE_ANALYSIS",
-      "severity": "critical",
-      "status": "missing_full_body",
-      "current_source": "backend/Q28_Q29_REPIVOT.md"
-    },
-    {
       "id": "UNIFORM_Q27_FULL_PROOF",
-      "severity": "critical",
-      "status": "missing_standalone_proof"
+      "severity": "major",
+      "status": "reconstructed_audit_dependency_not_fully_self_contained",
+      "current_source": "consolidation/Q27_ANALYTIC_EQUALITY_CLOSURE.md"
     },
     {
-      "id": "E329_E331_STANDALONE_CHAIN",
+      "id": "T61_E401_E405_INDEPENDENT_REPLAY",
       "severity": "major",
-      "status": "missing_standalone_proof"
+      "status": "source_packages_report_proved_but_full_repository_replay_incomplete",
+      "current_sources": [
+        "front_end/T61_H13_V6_RESULT.md",
+        "front_end/T61_H13_V7_RESULT.md"
+      ]
     },
     {
       "id": "LOWER_ORDER_FRONTEND_INPUTS",
@@ -48,5 +51,5 @@
     }
   ],
   "raw_source_bundles_mirrored": false,
-  "note": "Current frontier/status is synchronized. A reader can understand what is proved/open, but cannot yet verify every accepted theorem from GitHub alone."
+  "note": "Current frontier/status is synchronized. E406 is independently closed. The full theorem remains open because E407/E408 and E333/E340 are unresolved, and several accepted earlier assets still need manuscript-grade self-contained proof bodies."
 }
