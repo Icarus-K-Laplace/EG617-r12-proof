@@ -57,11 +57,12 @@ Now proved:
 - `G=4` empty;
 - `G=5` empty;
 - `G=6` empty;
-- `G=7,h=0` empty.
+- `G=7,h=0` empty;
+- exact `H2-G7-K4minusE` empty.
 
-The G=7,h=0 proof eliminates k=3,4,5 directly and then every k=6,7 incidence layer using active/inactive support counting, the degree1/degree2 low-repivot inequalities, pair-row coverage, and the triangle-row union lemma.
+The exact two-high G7 cell is closed by a row-class/decoration-overflow argument: its nine low rows reduce to pairwise-disjoint row-edge classes in `D_x union D_y`; if a row edge has multiplicity m>=1, repivot at that class is a q30 plateau but imports two vertices of global excess m, so the new shell has decoration `7+2m>=9`, contradicting `q=30` together with the inherited `z>=22` floor.
 
-A new uniform one-high theorem now applies simultaneously to `G=7` and `G=8`:
+A uniform one-high theorem applies simultaneously to `G=7` and `G=8`:
 
 1. a unique high vertex of missing degree11 is impossible;
 2. if the unique high vertex has missing degree12, then every low has neighbourhood `{a}` or `{a,x}` with decorated `x`;
@@ -69,17 +70,12 @@ A new uniform one-high theorem now applies simultaneously to `G=7` and `G=8`:
 4. if one active decorated vertex exists, then `k+r<=11`, where `k=|D|` and `r=e_M(L,D)`;
 5. the minimum possible low-decorated incidence is `r>=4` for G=7 and `r>=3` for G=8.
 
-Thus all remaining h=1 states have a universal high vertex and either zero or exactly one active decoration. The exact surviving `(k,r)` windows are recorded in `backend/E332_G7_G8_H1_UNIFORM_REDUCTION.md`.
+Thus the current Line-C frontier has only three branches:
 
-Current Line-C frontier is exactly:
-
-- `G=7,h=1` in the reduced one-active/zero-active parameter windows;
-- exact `H2-G7-K4minusE`;
+- `G=7,h=1` in reduced universal-high zero/one-active parameter windows;
 - `G=8,h=0`;
-- `G=8,h=1` in the reduced one-active/zero-active parameter windows.
+- `G=8,h=1` in reduced universal-high zero/one-active parameter windows.
 
 There is no h=2,G=8 state.
-
-A useful coupling has been identified for the exact `H2-G7-K4minusE` cell: repivoting one of its nine low rows produces either another G7/h2 plateau view or a G8/h1 view, so closing G8/h1 is expected to kill the remaining two-high G7 cell as well.
 
 The full EG617 r=12 theorem remains OPEN.
