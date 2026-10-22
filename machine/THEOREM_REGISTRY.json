@@ -12,7 +12,6 @@
       "id": "Q29_GOOD_REPIVOT",
       "status": "PROVED",
       "statement": "If q=29 and the inherited core satisfies delta(H)>=12, then there exists a degree-13 repivot y with q_y>=30.",
-      "scope_note": "Does not require e(H)=211.",
       "source": "backend/Q29_GOOD_REPIVOT_FULL_PROOF.md"
     },
     {
@@ -44,42 +43,33 @@
       "statement": "T61 h13 edge layers E397 through E400 are empty."
     },
     {
-      "id": "T61_E401_E404_V6",
-      "status": "CONDITIONAL",
-      "statement": "The supplied Line-A V6 package reports E401 through E404 empty under a uniform q<=29 hereditary-cap theorem.",
-      "scope_note": "Source package reports PROVED; full independent replay of the whole V6 layer package is not recorded here.",
-      "source": "front_end/T61_H13_V6_RESULT.md"
+      "id": "T61_E401_E404_EMPTY",
+      "status": "PROVED",
+      "statement": "T61 h13 edge layers E401 through E404 are empty under the explicit hereditary-cap contract.",
+      "source": "front_end/E401_E404_CANONICAL_CLOSURE.md"
     },
     {
-      "id": "T61_E405_V7",
-      "status": "CONDITIONAL",
-      "statement": "The supplied Line-A V7 package reports E405 empty under the explicit hereditary-cap contract.",
-      "scope_note": "The q30 hereditary promotion component has now been independently replayed, but the full E405 package is still tracked separately.",
-      "source": "front_end/T61_H13_V7_RESULT.md"
+      "id": "T61_E405_EMPTY",
+      "status": "PROVED",
+      "statement": "T61 h13 edge layer E405 is empty under the explicit hereditary-cap contract.",
+      "source": "front_end/E405_FULL_CLOSURE_CANONICAL.md"
     },
     {
       "id": "E406_CORE_MINDEG_288",
       "status": "PROVED",
-      "statement": "Every inherited E406 47-core with at most 288 edges has minimum degree at least 12.",
+      "statement": "Every inherited E406 47-core with at most 288 edges has minimum degree at least12.",
       "source": "front_end/E406_CORE_MINDEG_288.md"
-    },
-    {
-      "id": "E406_LOW_TO_Q30",
-      "status": "PROVED",
-      "statement": "Any E406 degree-13 pivot with q<=30 lies in a parent containing a genuine q30 pivot.",
-      "source": "front_end/E406_LOW_TO_Q30_BRIDGE.md"
     },
     {
       "id": "Q30_HEREDITARY_PROMOTION",
       "status": "PROVED",
-      "statement": "Under the T61 hereditary-cap contract, any q30 degree-13 pivot reaches a pivot with q>=31 within at most two regular repivots.",
-      "scope_note": "Independently replayed from the V7 proof body; not merely source-reported.",
+      "statement": "Under the T61 hereditary-cap contract, any q30 degree-13 pivot reaches q>=31 within at most two regular repivots.",
       "source": "front_end/Q30_HEREDITARY_PROMOTION_CANONICAL.md"
     },
     {
       "id": "T61_E406_EMPTY",
       "status": "PROVED",
-      "statement": "Under the explicit T61 E406 parent contract, E406 is empty.",
+      "statement": "T61 h13 edge layer E406 is empty under the explicit parent contract.",
       "source": "front_end/E406_FULL_CLOSURE.md"
     },
     {
@@ -90,7 +80,7 @@
     {
       "id": "HIGH_LAYER_V4_SUPPORT_REPETITION",
       "status": "CONDITIONAL",
-      "statement": "The supplied Line-B V4 package reports support repetition and reduction to D2-A/B/C/D and R9 necessary shell families.",
+      "statement": "The Line-B V4 source package reports support repetition and reduction to D2-A/B/C/D and R9 necessary shell families.",
       "scope_note": "No E333-E340 layer is closed; package replay is pending.",
       "source": "backend/HIGH_LAYER_BACKEND_V4_RESULT.md"
     },
