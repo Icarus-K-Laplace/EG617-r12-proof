@@ -42,39 +42,75 @@ Repository-canonical proved h13 layers currently run through E400.
 
 V6 reports E401--E404 empty under the corrected hereditary-cap repivot framework.
 
-V7 additionally reports E405 empty. Its new analytic ingredients are:
+V7 additionally reports E405 empty.
 
-- every genuine 47-point core has `delta(C)>=11`;
-- q25/q26 pivots lift to `q>=27`;
-- q30 no-immediate-rise shells reduce to two families, and multi-pivot compatibility reaches `q>=31` within at most two legal repivots.
+V8 reports the following further theorem for a maximum-charge pivot with `Q=30+k`, `1<=k<=3`:
 
-Thus the latest package-level front-end window is
+- every regular missing-degree-3 neighbour satisfies `rho<=k-1`;
+- the boundary family `rho=k` is analytically excluded;
+- exact excess-migration and reverse-repivot identities are supplied.
+
+V8 explicitly leaves E407 and E408 open. Its remaining source-reported tasks are the low maximum-charge branches `E407:Q_max=27`, `E408:Q_max in {27,28}` and global compatibility/cycles of nonzero correction terms.
+
+The latest package-level front-end window remains
 
 `E406..E408`.
 
-V7 is stored as `SOURCE_REPORTED_PROVED / INDEPENDENT_REPLAY_PENDING` in this chat runtime. See `front_end/T61_H13_V7_RESULT.md`.
+V8 evidence status is `SOURCE_REPORTED / PACKAGE_PRESENT / INDEPENDENT_REPLAY_PENDING`; see `front_end/T61_H13_V8_RESULT.md`.
 
-The key unresolved E406 issue is not q30 classification itself: S31 does not imply uniform q30. One must exclude coexistence of a q31 pivot with lower-charge pivots.
+### Assistant-owned E406 canonical reduction
+
+The E406 coexistence problem is now reduced to exactly three final-rise classes:
+
+- `d=1`: open common-K11 deficit/excess-transfer system;
+- `d=3`: Type-B is empty; Type-A is reduced to `O<=4`;
+- `d=12`: open paired dense 12-block system.
+
+The other final-rise distances are closed:
+
+- `d=2`: EMPTY;
+- `d=10`: EMPTY;
+- `d=11`: EMPTY.
+
+For d3-TypeA:
+
+- the four-triangle / 35-point remainder compression is proved;
+- the complete `O=5` layer is empty (`front_end/E406_D3_TYPEA_O5_FULL_CLOSURE.md`);
+- every O4 state has full-row counts `(9,10,10,10)`;
+- eta=0 O4 has `e(H)=152`, H-excess4, `R=3`;
+- eta=1 O4 has `e(H)=151`, H-excess3, `R=4`;
+- no H-vertex can be full to all four support rows, so the O4 multiplicity type `3+1` is impossible;
+- the modern simple-four-double profile `(4,8,8,8)` is empty;
+- the modern eta=0 simple-four-double profile `(5,7,8,8)` is empty.
+
+Thus the active d3-TypeA work is a strictly modern `O<=4` remainder, not the historical S30 O5/S31 problem.
 
 ## High backend live state
 
-Line-B V3 reports:
+Line-B V4 reports a support-repetition theorem for maximal `(q,tau)` pivots:
 
-- legal pivots classified by closed-neighbourhood distance classes;
-- exact third-viewpoint exchange formula;
-- a common nine-point missing neighbourhood has at most two distinct core supports;
-- three ten-point supports obey `E+2q >= 408+3B`, ruling them out for q<=33;
-- four legal pivots pairwise in distinct distance classes cannot form a K4;
-- q34/q35 aggregate frontier compressed from 76 to 42 necessary rows;
-- K4-containing branch grouped into nine decorated shell types.
+- the relevant distance class has size9 or10;
+- at least five legal neighbours share a common nonempty two-point missing set;
+- single-hub family `D1` is excluded;
+- the two-hub zero-defect family is excluded.
 
-No high edge layer is closed. `E333..E340` remain OPEN.
+The reported necessary survivor families are
 
-The missing theorem is a forcing statement: every maximal pivot must generate a forbidden multi-support configuration or a strictly better pivot. See `backend/HIGH_LAYER_BACKEND_V3_RESULT.md`.
+`D2-A, D2-B, D2-C, D2-D, R9`,
+
+with common-missing-set repetition lower bounds
+
+`8,8,5,7,9`.
+
+These are necessary shell rows only, not realized graphs. No high edge layer is closed: `E333..E340` remain OPEN.
+
+The missing theorem is a global 35-point-core compatibility/forcing statement showing that the repeated-support survivor families cannot coexist, or else force a better pivot / already-forbidden multi-support geometry.
+
+V4 evidence status is `SOURCE_REPORTED / PACKAGE_PRESENT / INDEPENDENT_REPLAY_PENDING`; see `backend/HIGH_LAYER_BACKEND_V4_RESULT.md`.
 
 ## Current independent research obligations
 
-- Front-end: latest package-level window `E406..E408`;
+- Front-end: close E406 d1 / d3-TypeA-O<=4 / d12, then source-package E407--E408 obligations;
 - Backend: eliminate legal R(4,49) layers `E333..E340`.
 
 There is no low-backend obligation.
