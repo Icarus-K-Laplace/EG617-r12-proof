@@ -7,7 +7,7 @@
       "status": "PROVED",
       "statement": "For every H in R(3,35), e(H) >= 211.",
       "source": "backend/CORE211.md",
-      "proof_body_note": "The 210-edge AES contradiction is recovered in consolidation/INTEGRATED1_CORE211_AUDIT.md; the lower-order delta(H)>=12 dependency still needs standalone provenance for full repository self-containment."
+      "proof_body_note": "The 210-edge AES contradiction is recovered; the lower-order delta(H)>=12 dependency still needs standalone provenance for full repository self-containment."
     },
     {
       "id": "Q29_GOOD_REPIVOT",
@@ -31,20 +31,44 @@
     {
       "id": "E332_D10_EMPTY",
       "status": "PROVED",
-      "statement": "No E332 q30+211 survivor contains an undecorated shell vertex of missing degree 10.",
+      "statement": "No E332 q30+211 survivor contains an undecorated shell vertex of missing degree10.",
       "source": "backend/E332_D10_CLOSURE_D3_NORMAL_FORM.md"
     },
     {
       "id": "E332_D3_EMPTY",
       "status": "PROVED",
-      "statement": "No E332 q30+211 survivor contains an undecorated shell vertex of missing degree 3.",
-      "source": "CANONICAL_STATE.md"
+      "statement": "No E332 q30+211 survivor contains an undecorated shell vertex of missing degree3.",
+      "source": "backend/E332_D10_CLOSURE_D3_NORMAL_FORM.md"
     },
     {
-      "id": "E332_EXTREME_DEGREE_REDUCTION",
+      "id": "E332_STRONG_ZERO_GAP",
       "status": "PROVED",
-      "statement": "In any remaining E332 survivor, every undecorated shell missing degree lies in {0,1,2,11,12}; there are at most two undecorated degree-11/12 vertices and total decoration G is in {4,5,6,7,8}.",
-      "source": "ASSET_LEDGER.md"
+      "statement": "If u is undecorated and uv is a missing-shell edge in the E332 q30+211 state, then |N_M(u) union N_M(v)| + g_v >= 13 + |D_u intersect D_v|; if both endpoints are undecorated then their missing-neighbourhoods cover the full shell and their core rows are disjoint.",
+      "source": "backend/E332_STRONG_ZERO_GAP_REPIVOT.md"
+    },
+    {
+      "id": "E332_G4_G5_EMPTY",
+      "status": "PROVED",
+      "statement": "The E332 decoration layers G=4 and G=5 are empty.",
+      "source": "backend/E332_G4_G5_CLOSURE.md"
+    },
+    {
+      "id": "E332_G6_EMPTY",
+      "status": "PROVED",
+      "statement": "The full E332 decoration layer G=6 is empty.",
+      "source": "backend/E332_G6_FULL_CLOSURE.md"
+    },
+    {
+      "id": "E332_G7_H0_EMPTY",
+      "status": "PROVED",
+      "statement": "No E332 extreme shell with G=7 and h=0 exists.",
+      "source": "backend/E332_G7_H0_REDUCTION.md"
+    },
+    {
+      "id": "E332_REMAINING",
+      "status": "OPEN",
+      "statement": "The remaining E332 branches are G=7,h=1; H2-G7-K4minusE; G=8,h=0; and G=8,h=1.",
+      "source": "CANONICAL_STATE.md"
     },
     {
       "id": "FRONTEND_DICHOTOMY",
@@ -73,32 +97,28 @@
     {
       "id": "T61_H12_EMPTY",
       "status": "PROVED",
-      "statement": "No T61 residual has minimum degree 12.",
+      "statement": "No T61 residual has minimum degree12.",
       "source": "front_end/T61_H12_CLOSURE.md"
     },
     {
-      "id": "T61_E397_EMPTY",
+      "id": "T61_E397_E400_EMPTY",
       "status": "PROVED",
-      "statement": "The T61 h13 edge layer E397 is empty.",
+      "statement": "The T61 h13 edge layers E397 through E400 are empty.",
       "source": "front_end/T61_H13_LOW_LAYER.md"
     },
     {
-      "id": "T61_E398_EMPTY",
-      "status": "PROVED",
-      "statement": "The T61 h13 edge layer E398 is empty via the exact q23 shell classification.",
-      "source": "front_end/E398_Q23_SHELL.md"
+      "id": "T61_E401_E404_V6",
+      "status": "CONDITIONAL",
+      "statement": "The supplied Line-A V6 package reports E401 through E404 empty under a uniform q<=29 hereditary-cap theorem.",
+      "scope_note": "Source package reports PROVED and 127-row exact replay; independent replay in the current chat runtime is pending.",
+      "source": "front_end/T61_H13_V6_RESULT.md"
     },
     {
-      "id": "T61_E399_EMPTY",
-      "status": "PROVED",
-      "statement": "The T61 h13 edge layer E399 is empty via exact q24 shell cells.",
-      "source": "front_end/E399_Q24_SHELL.md"
-    },
-    {
-      "id": "T61_E400_EMPTY",
-      "status": "PROVED",
-      "statement": "The T61 h13 edge layer E400 is empty via a uniform q25 shell theorem.",
-      "source": "front_end/E400_Q25_SHELL.md"
+      "id": "HIGH_LAYER_V2_TWO_PIVOT",
+      "status": "CONDITIONAL",
+      "statement": "The supplied Line-B V2 package reports the exact adjacent two-pivot exchange system, q34-q35 compression to 76 necessary quotient rows, and four q30-q33 local certificates disproving naive one-step Phi monotonicity.",
+      "scope_note": "No E333-E340 layer is closed; package replay in the current chat runtime is pending.",
+      "source": "backend/HIGH_LAYER_BACKEND_V2_RESULT.md"
     },
     {
       "id": "S31_STRICT_DESCENT",
