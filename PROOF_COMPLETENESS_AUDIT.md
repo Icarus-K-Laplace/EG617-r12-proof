@@ -4,110 +4,79 @@ Updated: 2026-10-22
 
 ## Executive conclusion
 
-The repository is currently a **complete canonical research-state repository**, but it is **not yet a fully self-contained proof manuscript** from which an external mathematician can verify every accepted theorem without consulting prior source bundles.
+The repository is a **complete canonical research-state repository**, but it is still **not yet a fully self-contained proof manuscript** from which an external mathematician can verify every accepted theorem without consulting any lower-order source/certificate.
 
-Current canonical frontier, statuses, recent proofs, open obligations, and machine-readable theorem registry are synchronized. However, several older foundational assets are still represented only by theorem statements, proof sketches, or unreplayed finite classifications rather than full clean-room proofs/certificates.
+Two notions remain separate:
 
-Therefore two different notions of completeness must be kept separate:
-
-- **state completeness**: current research progress and open/closed status are synchronized in this repository — YES;
-- **proof-body completeness**: every theorem needed by the current DAG has a standalone, line-by-line proof or replayable certificate in this repository — NOT YET.
+- **state completeness**: current research progress and open/closed status are synchronized — YES;
+- **proof-body completeness**: every theorem needed by the current DAG has a standalone proof or replayable certificate — NOT YET.
 
 ## Fully represented current research assets
 
-The following recent assets have standalone proof bodies or replayable certificates in the repository:
+Standalone proof bodies or replayable certificates now include:
 
-- front-end dichotomy `K145 -> induced R(4,49) OR T61` and its assumption/dependency ledgers;
-- contextual front-end recurrence certificate (1752 nodes / 144 outer comparisons);
-- generic `R(4,48) >= 310` proof;
-- complete T61 minimum-degree-12 closure;
-- T61 E397–E400 closures, including q23/q24/q25 shell arguments;
-- E332 reduction to q30 + 211-core;
-- E332 d10 equality branch closure;
-- E332 d3 equality branch closure;
-- E332 extreme-degree shell reduction and current G=4..8 frontier;
-- current human-readable and machine-readable state/open-frontier registries.
+- front-end dichotomy `K145 -> induced R(4,49) OR T61`;
+- contextual recurrence certificate;
+- `R(4,48)>=310` and complete T61 h12 closure;
+- T61 E397--E400 closures, including q23/q24/q25 shell arguments;
+- generic q29 good-repivot theorem with its three structural branches;
+- standalone E329/E330/E331 closure chain and E332 reduction to q30+211;
+- E332 d10 and d3 branch closures;
+- E332 extreme-degree reduction;
+- current human- and machine-readable state registries.
 
-## Foundational proof bodies that remain incomplete inside GitHub
+## Remaining foundational gaps
 
-### 1. CORE211
+### 1. CORE211 lower-order minimum-degree dependency
 
-`backend/CORE211.md` currently records the theorem and equality degree sequences, but not the full clean proof.
+Integration 1 recovers the clean 210-edge contradiction completely: once `delta(H)>=12`, a hypothetical 210-edge core is 12-regular; its complement is 22-regular, K4-free, and AES forces a 3-partition with an independent set of size at least12, contradiction.
 
-A self-contained version still needs to include:
+The remaining self-containment gap is narrower: the repository still needs the full standalone proof/certificate for the inherited 23-neighbourhood / cap-two argument that yields `delta(H)>=12` for every `H in R(3,35)`.
 
-- the derivation of `delta(H)>=12` for `H in R(3,35)`;
-- the contradiction for `e(H)=210`;
-- the complement formulation;
-- the exact use and citation of the Andrasfai-Erdos-Sos theorem;
-- the equality-degree conclusion for `e(H)=211`.
+See `consolidation/INTEGRATED1_CORE211_AUDIT.md`.
 
-Until this is expanded, an external reader cannot verify CORE211 from this repository alone.
+### 2. q27 equality closure
 
-### 2. q28 / q29 repivot theorem
+The analytic body is recovered:
 
-`backend/Q28_Q29_REPIVOT.md` contains the identities and theorem statement, but the full structural case analysis proving existence of a good q29 repivot is summarized rather than written out.
+- E-version analytic topology reduction;
+- B-version decoration uniqueness;
+- A-version Type-I/II repivot contradiction.
 
-A complete proof needs the three branches:
+The remaining dependency is the exact lower-order/topology certificate or complete analytic derivation licensing the two equality topologies
 
-- missing graph contains K4;
-- triangle-free missing graph;
-- triangle but no K4;
-
-with all shell inequalities and equality exclusions explicit.
-
-### 3. q27 equality closure — analytic body recovered, finite topology certificate still missing
-
-The historical A/B source recovery substantially closes this former proof-body gap.
-
-`consolidation/Q27_ANALYTIC_EQUALITY_CLOSURE.md` now contains:
-
-- analytic uniqueness of the decoration assignments in `K3,8+2K1` and `K3,9+K1` (recovered from B581-B583);
-- analytic Type-II repivot contradiction;
-- analytic Type-I duplicate-row contradiction.
-
-The remaining non-self-contained dependency is narrower: the repository still needs a replayable certificate or an analytic proof that the only q27 equality shell topologies are exactly
-
-- `K3,8+2K1`, and
+- `K3,8+2K1`;
 - `K3,9+K1`.
 
-Thus q27 is no longer missing its proof body; it is missing the finite topology-classification certificate.
+### 3. Front-end inherited lower-order lemmas
 
-### 4. E329/E330/E331 low-backend closure chain
+The modern bridge and T61 proof files expose their assumptions, but several lower-order Ramsey/density facts are still inherited audited inputs. Publication-level self containment requires each such input to have either a proof/certificate or an exact citation.
 
-The status is synchronized, but there is no single standalone manuscript-quality file that derives every allowed `(q,e(H))` pair and closes all three layers from q27/q28/q29 plus CORE211.
+### 4. External theorem provenance
 
-### 5. Some front-end inherited lower-order lemmas
+Results such as Andrasfai--Erdos--Sos still need publication-grade bibliographic metadata and precise scope in a dedicated references/dependencies file.
 
-The modern front-end bridge files contain exact assumptions and the certified recurrence, but several lower-order Ramsey/density facts are currently treated as inherited audited inputs rather than re-proved in GitHub.
+## Gaps resolved by Integration 1 recovery
 
-For publication-level self containment, each such input must either:
+The following former proof-body gaps are no longer listed as missing:
 
-- have a complete proof/certificate in this repository; or
-- have an explicit bibliographic citation and a statement showing exactly how it is used.
+- **generic q29 good-repivot**: reconstructed as `backend/Q29_GOOD_REPIVOT_FULL_PROOF.md`;
+- **E329/E330/E331 low-backend chain**: reconstructed as `backend/E329_E332_CLOSURE.md`.
 
-### 6. External theorem provenance
+Integration 1 also independently matches the modern T61 E397--E400/q23--q25 ladder, but current front-end files remain the canonical proofs because they are cleaner and use the final notation/contracts.
 
-External results such as Andrasfai-Erdos-Sos need bibliographic metadata in a dedicated references/dependencies file. At present the mathematical role is known but the repository is not yet publication-grade bibliographically self-contained.
+## Raw source bundles
 
-## Raw source bundles not mirrored
+The large Integration 1/2 PDFs and A--J archive are not mirrored wholesale into GitHub. Accepted content is reconstructed into canonical/consolidation files. Source mapping is recorded under `history/`.
 
-The large Integration 1/2 PDFs, A-J archive, and historical ZIP bundles are not mirrored wholesale into GitHub. Their accepted current mathematical content is reconstructed into canonical/consolidation files, but they remain necessary provenance for some older proof bodies until the gaps above are fully rewritten.
+## Certification target
 
-## Machine readability
+The repository may be called **self-contained-proof complete** only when:
 
-`machine/CANONICAL_STATE.json`, `machine/THEOREM_REGISTRY.json`, and `machine/OPEN_FRONTIERS.json` make the current theorem state machine-readable. This is sufficient for a model to identify the active frontier and theorem statuses, but not by itself sufficient to verify every proof.
+1. every `PROVED` theorem in `machine/THEOREM_REGISTRY.json` points to a standalone proof source;
+2. every `COMPUTATION_CERTIFIED` theorem has replayable verifier/data;
+3. every external theorem has exact citation/scope;
+4. the main DAG can be followed without historical PDFs/chat;
+5. all notation and dependencies are reconstructible from repository files alone.
 
-The theorem registry should point every PROVED theorem to a standalone proof file rather than to a state summary wherever possible.
-
-## Certification target for repository completeness
-
-The repository may be called **self-contained-proof complete** only when all of the following hold:
-
-1. every `PROVED` theorem in `machine/THEOREM_REGISTRY.json` has a standalone proof source;
-2. every `COMPUTATION_CERTIFIED` theorem has a replayable verifier and immutable certificate data;
-3. every external result has exact citation and scope;
-4. the complete main DAG can be followed from the original K145 hypothesis to the current open leaves without consulting Integration PDFs or chat history;
-5. a fresh reader can reconstruct all notation and every theorem dependency from repository files alone.
-
-Current verdict: `STATE_COMPLETE / PROOF_BODY_INCOMPLETE`.
+Current verdict: `STATE_COMPLETE / PROOF_BODY_INCOMPLETE`, with the remaining foundational gap set substantially narrower than before Integration 1 recovery.
