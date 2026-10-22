@@ -8,21 +8,25 @@
 | q27/q28/q29 repivot machinery | PROVED / q27 audit-dependent | Generic low-q backend tools. |
 | E329,E330,E331 | PROVED EMPTY | Reconstructed backend closures. |
 | E332 full layer | PROVED EMPTY / FROZEN | Preferred proof DAG: `backend/E332_FULL_CLOSURE.md`; unified terminal proofs in `backend/E332_H1_UNIFIED_FINAL.md` and `backend/E332_G8_H0_UNIFIED_CLOSURE.md`. |
-| E332 strengthened zero-gap theorem | PROVED | Full-shell union / row-disjointness constraint. |
-| E332 triangle-row union lemma | PROVED | Every M-triangle has core-row union at least24. |
-| E332 missing-K4 row-cover lemma | PROVED | Every M-K4 covers the full 35-core by its four core rows. |
 | Front-end contextual recurrence | COMPUTATION_CERTIFIED | 1752 nodes, 144 outer stops, two independent implementations. |
 | Front-end dichotomy `K145 -> R449 OR T61` | PROVED | No backend circularity. |
 | T61 h12 branch | PROVED EMPTY | Uses R(4,48) floor310. |
 | T61 E397..E400 | PROVED EMPTY | Repository-canonical. |
-| T61 E401--E404 Line-A V6 | SOURCE_REPORTED_PROVED / REPLAY_PENDING | Uniform q<=29 hereditary-cap theorem + reported 127-row exact rational replay. |
-| T61 genuine 47-core minimum degree | SOURCE_REPORTED_PROVED / REPLAY_PENDING | V7 reports `delta(C)>=11` for every genuine 47-point core. |
-| T61 q25/q26 lift | SOURCE_REPORTED_PROVED / REPLAY_PENDING | V7 reports every q25/q26 pivot can be lifted to q>=27. |
-| T61 q30 hereditary plateau theorem | SOURCE_REPORTED_PROVED / REPLAY_PENDING | V7 reports q30 no-immediate-rise shells reduce to two families and reach q>=31 within at most two repivots. |
-| T61 E405 | SOURCE_REPORTED_PROVED / REPLAY_PENDING | V7 closes E405. See `front_end/T61_H13_V7_RESULT.md`. |
-| T61 E406..E408 | OPEN | Latest package-level front-end window. E406 gap: q31/lower-charge coexistence. |
-| Line-B V3 third-viewpoint exchange | SOURCE_REPORTED_PROVED / REPLAY_PENDING | Closed-neighbourhood distance classes + exact third-viewpoint formula. |
-| Line-B V3 support geometry | SOURCE_REPORTED_PROVED / REPLAY_PENDING | Nine-point missing neighbourhood has at most two supports; three ten-point supports satisfy `E+2q>=408+3B`; distance-class K4 forbidden. |
-| Line-B q34/q35 aggregate frontier | SOURCE_REPORTED COMPUTATION_CERTIFIED / REPLAY_PENDING | 76 necessary rows reduced to 42; K4 branch grouped into 9 decorated shell types. |
-| E333..E340 elimination | OPEN | Sole remaining backend interval. Need forcing theorem, not further local necessary-state enumeration. |
-| Full EG617 r=12 theorem | OPEN | Must not be claimed solved. |
+| T61 E401--E404 Line-A V6 | SOURCE_REPORTED_PROVED / REPLAY_PENDING | V6 package result; tracked separately from repository-canonical proof bodies. |
+| T61 E405 Line-A V7 | SOURCE_REPORTED_PROVED / REPLAY_PENDING | V7 package result; q30 promotion component has since been independently replayed. |
+| E406 core minimum degree through 288 edges | PROVED | `front_end/E406_CORE_MINDEG_288.md`: inherited 47-core with e<=288 has delta>=12. |
+| E406 low-charge q22--q26 promotion | PROVED | `front_end/E406_LOW_Q_PROMOTION_22_26.md`. |
+| E406 q27/q28 elimination | PROVED | `front_end/E406_Q27_Q28_ELIMINATION.md`. |
+| E406 q29 transfer | PROVED | Generic q29 theorem migrated at hypothesis level; E406 q29 reaches q30. |
+| T61 q30 hereditary promotion | PROVED / INDEPENDENTLY REPLAYED | `front_end/Q30_HEREDITARY_PROMOTION_CANONICAL.md`: q30 reaches q>=31 within <=2 regular repivots. |
+| E406 q30->q31 distance d1 | PROVED EMPTY | `front_end/E406_D1_FULL_CLOSURE.md`. |
+| E406 q30->q31 distance d2 | PROVED EMPTY | Full d2 retained-star/e1 closure chain. |
+| E406 q30->q31 distance d3 | PROVED EMPTY | Type-A/Type-B, O5 and all O4 multiplicities closed. |
+| E406 q30->q31 distance d10 | PROVED EMPTY | `front_end/E406_Q31_PLATFORM_SUPPORT_RIGIDITY.md`. |
+| E406 q30->q31 distance d11 | PROVED EMPTY | `front_end/E406_D11_FULL_CLOSURE.md`. |
+| E406 q30->q31 distance d12 | PROVED EMPTY | `front_end/E406_D12_FULL_CLOSURE.md`. |
+| T61 E406 | PROVED EMPTY | Canonical master: `front_end/E406_FULL_CLOSURE.md`. No remaining E406 obligation. |
+| T61 E407,E408 | OPEN | Active Line-A front-end window. V8 gives source-reported structure but does not close either layer. |
+| Line-B V4 support repetition | SOURCE_REPORTED_PROVED / REPLAY_PENDING | Necessary survivor families D2-A/B/C/D,R9 with repetition lower bounds 8,8,5,7,9. |
+| E333..E340 elimination | OPEN | Sole remaining backend interval. |
+| Full EG617 r=12 theorem | OPEN | Must not be claimed solved until E407/E408 and E333..E340 are closed. |
