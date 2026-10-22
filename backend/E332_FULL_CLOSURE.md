@@ -29,7 +29,7 @@ Therefore every remaining undecorated missing degree lies in
 
 There are at most two undecorated degree11/12 vertices.
 
-## 2. Strong zero-gap theorem
+## 2. Strong zero-gap and row-cover tools
 
 For a missing-shell edge uv with u undecorated,
 
@@ -37,7 +37,19 @@ For a missing-shell edge uv with u undecorated,
 
 In particular, two undecorated endpoints cover the full 13-shell with their missing neighbourhoods and have disjoint core rows.
 
-This reduces the total decoration to `G>=4`, with only `G=4,5,6,7,8` possible.
+Two additional row-cover facts are used repeatedly:
+
+1. every missing-shell triangle r,s,t satisfies
+
+   `|D_r union D_s union D_t|>=24`;
+
+2. every missing-shell K4 has full core row cover:
+
+   `union_{v in K4} D_v = V(H)`.
+
+The second statement is immediate: a core vertex outside all four rows would be nonadjacent in F to four shell vertices that are pairwise nonadjacent in F, creating an independent 5-set.
+
+The extreme-shell reduction gives `G>=4`, with only `G=4,5,6,7,8` possible.
 
 ## 3. Decoration layers G=4 and G=5
 
@@ -47,32 +59,61 @@ This reduces the total decoration to `G>=4`, with only `G=4,5,6,7,8` possible.
 
 `E332_G6_FULL_CLOSURE.md` proves the full layer empty.
 
-The key additional lemma is that every missing-shell triangle r,s,t satisfies
-
-`|D_r union D_s union D_t|>=24`.
-
-The exact two-high K4 support cell then gives three pairwise-disjoint 12-sets inside a 35-core, impossible, while the no-high and one-high branches are eliminated by active/inactive support accounting.
+The exact two-high K4 support cell gives three pairwise-disjoint 12-sets inside a 35-core, impossible, while the no-high and one-high branches are eliminated by active/inactive support accounting.
 
 ## 5. Decoration layer G=7
 
-The no-high branch is eliminated in `E332_G7_H0_REDUCTION.md` (which now contains the full closure).
+The no-high branch is eliminated in `E332_G7_H0_REDUCTION.md`.
 
 The exact two-high `H2-G7-K4minusE` cell is eliminated by `E332_H2_G7_K4MINUSE_CLOSURE.md`: low-row multiplicity plus a q30 plateau repivot forces new decoration at least9, contradicting the universal E332 ceiling `G<=8`.
 
-The one-high branch is eliminated in `E332_G7_H1_FULL_CLOSURE.md` by exact classification of all zero-active and one-active `(k,r)` windows, using pair-row coverage, triangle-row coverage, and one final row-multiplicity overflow in the `(k,r)=(3,8)` cell.
+For the one-high branch, the preferred proof is now the unified theorem `E332_H1_UNIFIED_FINAL.md`. Once the unique high is known to be universal and there is at most one low-active decoration x, write b for the number of inactive-inactive J-edges. Pair-row coverage and the active weight give
 
-Hence `G=7` is empty.
+`b<=g_x`,
+
+`b>=k+g_x-3`.
+
+Hence `k<=3`, collapsing all finite windows to the single `(k,r)=(3,8)` cell. That cell is killed by the row-multiplicity repivot overflow.
+
+Therefore the entire G=7 layer is empty.
+
+The older file `E332_G7_H1_FULL_CLOSURE.md` is retained as a detailed cross-check, but the unified inequality proof is the preferred canonical route.
 
 ## 6. Decoration layer G=8
 
-The one-high branch is reduced to the no-high branch in `E332_G8_H1_TO_H0_REDUCTION.md`: every one-high state is either immediately contradictory or admits a legal low repivot to a `G=8,h=0` state.
+For the one-high branch, `E332_H1_UNIFIED_FINAL.md` gives
 
-For the no-high branch:
+`b<=g_x-1`,
 
-- `E332_G8_H0_K3_K6_CLOSURE.md` eliminates support sizes `k=3,4,5,6`;
-- `E332_G8_H0_FULL_CLOSURE.md` eliminates `k=7,8` using active/inactive edge accounting and the pair/triangle row inequalities.
+`b>=k+g_x-4`,
 
-Thus `G=8` is empty.
+so again `k<=3`. The `(3,8)` cell fails pair coverage directly, and the unique `(3,7)` terminal either overflows the decoration ceiling immediately or repivots to a legitimate `G=8,h=0` shell.
+
+Thus it remains only to eliminate `G=8,h=0`.
+
+The preferred proof is the unified active/inactive theorem `E332_G8_H0_UNIFIED_CLOSURE.md`.
+
+With active set A of size m, inactive graph edge count b, active-active edge count a, and active decoration sum g_A, the exact active row-weight identity is
+
+`W_A=22+a-b+g_A>=11m`.
+
+If `b>0`, pair-row coverage on an inactive edge gives
+
+`b>=1+k-3m+g_A`.
+
+Combining the two inequalities yields
+
+`a>=k+8m-21`.
+
+This kills every m>=3 and forces the m=2 branch to k<=6. The remaining m=0,1,2 equality geometries are then eliminated uniformly:
+
+- m=0 forces k=8 and contradicts pair/triangle row coverage;
+- m=1 forces k>=6 and contradicts triangle capacity or triangle-free edge degree-sums;
+- m=2 leaves only k=4,5,6; k=5 and6 give 23-weight missing triangles, while k=4 reduces to a K4 equality geometry. The missing-K4 row-cover lemma then puts all pair-low core rows on a 12-set, and row multiplicity forces a repivot with new decoration at least9.
+
+Therefore `G=8,h=0` is empty, and hence the entire G=8 layer is empty.
+
+The older files `E332_G8_H0_K3_K6_CLOSURE.md`, `E332_G8_H0_FULL_CLOSURE.md`, and `E332_G8_H1_TO_H0_REDUCTION.md` remain as detailed provenance/cross-checks; the two unified files are the preferred final proof route.
 
 ## Conclusion
 
