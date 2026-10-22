@@ -12,24 +12,11 @@
     "t61": {
       "status": "OPEN",
       "repository_canonical_closed_layers": [397, 398, 399, 400],
-      "source_reported_v6": {
-        "evidence_status": "SOURCE_REPORTED_PROVED_REPLAY_PENDING",
-        "reported_closed_layers": [401, 402, 403, 404],
-        "source": "front_end/T61_H13_V6_RESULT.md"
-      },
-      "source_reported_v7": {
-        "evidence_status": "SOURCE_REPORTED_PROVED_REPLAY_PENDING",
-        "reported_closed_layers": [405],
-        "source": "front_end/T61_H13_V7_RESULT.md"
-      },
+      "source_reported_closed_layers": [401, 402, 403, 404, 405],
+      "latest_package_level_window": [406, 408],
       "source_reported_v8": {
         "evidence_status": "SOURCE_REPORTED_REPLAY_PENDING",
-        "reported_remaining_layers": [407, 408],
-        "new_results": [
-          "For maximal Q=30+k, 1<=k<=3, every regular missing-degree-3 neighbour satisfies rho<=k-1",
-          "The boundary family rho=k is analytically excluded",
-          "Full excess-migration and reverse-repivot identities supplied"
-        ],
+        "remaining_layers": [407, 408],
         "remaining_subproblems": [
           "E407 maximal Q=27",
           "E408 maximal Q in {27,28}",
@@ -37,17 +24,11 @@
         ],
         "source": "front_end/T61_H13_V8_RESULT.md"
       },
-      "latest_package_level_window": [406, 408],
       "e406_assistant_line": {
         "status": "OPEN",
-        "closed_final_rise_distances": [2, 10, 11],
-        "closed_d3_subbranches": ["Type-B", "Type-A O5", "Type-A O4 simple-four-double eta0", "Type-A O4 simple-four-double eta1"],
-        "open_final_rise_frontier": [
-          "d1",
-          "d3-TypeA O4 one-triple-plus-two-doubles",
-          "d3-TypeA O4 two-triples",
-          "d12"
-        ]
+        "closed_final_rise_distances": [2, 3, 10, 11],
+        "d3_status": "PROVED_EMPTY_FULL_CLASS",
+        "open_final_rise_frontier": ["d1", "d12"]
       }
     }
   },
@@ -60,11 +41,7 @@
     "closed_layers": [329, 330, 331, 332],
     "e332": {
       "status": "PROVED_EMPTY_FROZEN",
-      "master_source": "backend/E332_FULL_CLOSURE.md",
-      "preferred_terminal_sources": [
-        "backend/E332_H1_UNIFIED_FINAL.md",
-        "backend/E332_G8_H0_UNIFIED_CLOSURE.md"
-      ]
+      "master_source": "backend/E332_FULL_CLOSURE.md"
     },
     "high_layers": {
       "status": "OPEN",
@@ -72,21 +49,15 @@
       "source_reported_v4": {
         "evidence_status": "SOURCE_REPORTED_REPLAY_PENDING",
         "all_edge_layers_remain_open": true,
-        "new_results": [
-          "Relevant distance class has size 9 or 10",
-          "At least five legal neighbours share a common nonempty two-point missing set",
-          "Single-hub D1 family excluded",
-          "Zero-defect two-hub family excluded"
-        ],
         "necessary_survivor_families": ["D2-A", "D2-B", "D2-C", "D2-D", "R9"],
         "repetition_lower_bounds": [8, 8, 5, 7, 9],
         "source": "backend/HIGH_LAYER_BACKEND_V4_RESULT.md"
       },
-      "next_goal": "Prove a repeated-pair/core-support capacity theorem in the 35-point core; necessary shell rows must not be treated as realized graphs."
+      "next_goal": "Prove a repeated-pair/core-support capacity theorem in the 35-point core."
     }
   },
   "remaining_global_obligations": [
-    "Finish the T61 front end: E406 through E408.",
+    "Finish the T61 front end: E406 through E408, with E406 reduced to d1 and d12.",
     "Eliminate legal R(4,49) layers E333 through E340."
   ]
 }
