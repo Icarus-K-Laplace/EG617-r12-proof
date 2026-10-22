@@ -23,10 +23,11 @@
 | E332 G=5 | PROVED EMPTY | All h=0,1,2 support cases eliminated. |
 | E332 G=6 | PROVED EMPTY | h0, h1, and H2-G6-K4 all eliminated; standalone full proof. |
 | E332 G=7,h=0 | PROVED EMPTY | k=3..7 all eliminated; `backend/E332_G7_H0_REDUCTION.md` now contains full closure. |
+| E332 G7/G8 one-high uniform reduction | PROVED | High missing-degree11 impossible; high degree12 has at most one low-active decorated vertex; one-active states satisfy `k+r<=11`, with `r>=4` for G7 and `r>=3` for G8. See `backend/E332_G7_G8_H1_UNIFORM_REDUCTION.md`. |
 | E332 H2-G7-K4minusE | OPEN | Exact two-high cell. |
-| E332 G=7,h=1 | OPEN | Unique-high branch. |
+| E332 G=7,h=1 | OPEN / SHARPLY REDUCED | Only universal-high zero/one-active parameter windows remain. |
 | E332 G=8,h=0 | OPEN | No-high branch. |
-| E332 G=8,h=1 | OPEN | Unique-high branch; no h=2,G=8 state exists. |
+| E332 G=8,h=1 | OPEN / SHARPLY REDUCED | Only universal-high zero/one-active parameter windows remain; no h=2,G=8 state exists. |
 | Matching-transversal rigidity | PROVED | Front-end block tool. |
 | Equality rotation of genuine blocks | PROVED | Closes high-cross seven/eight-block alternatives. |
 | Eight genuine K12 blocks => legitimate R(4,49) | PROVED | Full residual contract. |
