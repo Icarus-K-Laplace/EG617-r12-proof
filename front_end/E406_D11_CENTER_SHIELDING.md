@@ -91,53 +91,86 @@ The old q30 core has total excess6, giving
 
     m_D+m_E+c >=12.
 
-Thus the tiny cross-edge count forces all three star defects toward the large end of their allowed ranges.
-
 ## 4. Centre shielding is forced by alpha<=5
 
 Suppose neither d0e0 nor s0e0 is a target edge.
 
-Choose one star leaf in each of S,D,E, avoiding the at-most-one exceptional endpoint of the unique S-E edge and the at-most-one exceptional noncentre D-E endpoint. This is possible because m_S>=4 and the E-star has at least two leaves when c=1 and at least three when c=0.
-
-Each centre-leaf pair is internally target-independent. S-D is anticomplete. By Section 2 and the leaf choices there is no D-E or S-E target edge among the six selected vertices. Hence they form an independent6-set in the T61 parent, contradiction.
+Choose one star leaf in each of S,D,E, avoiding the at-most-one exceptional endpoint of the unique S-E edge and the at-most-one exceptional noncentre D-E endpoint. Each centre-leaf pair is internally target-independent. S-D is anticomplete, and the chosen leaves avoid every exceptional cross edge. The six selected vertices form an independent6-set, contradiction.
 
 Therefore
 
     d0e0 in E(R)  OR  s0e0 in E(R).
 
-This is the centre-shielding theorem.
+## 5. Independent-five coverage in O
 
-## 5. The no-D-E-cross branch has a 26-incidence cover
-
-Assume r=0. Then centre shielding forces c=1 and the unique S-E edge to be s0e0.
-
-For any D-star leaf d and E-star leaf e, the four core vertices d0,d,e0,e are target-independent inside the old 47-core C. Since alpha(C)<=4, their O-neighbourhoods cover
+Let
 
     O=C\(D union E), |O|=25.
 
-Their exact O-degrees are
+Choose an S-star leaf s which is not the endpoint of the possible exceptional S-E edge, and any D-star leaf d. Then
 
-- d0: 11;
-- d: 3;
-- e0: 10;
-- e: 3.
+    {T,s0,s,d0,d}
 
-Thus every leaf pair gives a 26-incidence cover of 25 points. In particular the two centre O-neighbourhoods intersect in at most one point, and the two 3-rows must cover all but at most one point outside their centre-neighbourhood union.
+is an independent5-set in the 61-point parent. Since T has no target neighbours in O, the four O-neighbourhoods of s0,s,d0,d must cover all25 points of O.
 
-This is a repeated-row rigidity condition for the r=0 branch.
+Let delta=1 if the unique S-E edge is incident with s0, and delta=0 otherwise. Their O-degrees are
 
-## 6. Current d11 terminal
+- s0: 10-delta;
+- s: 3;
+- d0: 11-r;
+- d: 3.
 
-Every surviving d11 final-rise configuration is therefore a centre-shielded three-star system with
+Hence every such leaf pair gives exactly
 
-- S,D,E pairwise disjoint;
-- e(S,D)=0;
-- e(S,E)<=1;
-- e(D,E)<=2;
-- all D-E edges incident with d0, except possibly one edge to the unique S-E endpoint;
-- m_S+m_D+r>=13;
-- m_S+m_E+r>=13;
-- m_D+m_E+c>=12;
-- at least one of d0e0 or s0e0 present.
+    27-r-delta
 
-The unresolved task is now a finite centre-shielding / repeated-row compatibility problem, not a general graph-classification problem.
+O-incidences covering25 points. Therefore
+
+    r+delta <=2.
+
+When r+delta=2 there is zero overlap budget beyond the forced cover structure: after the two centre-neighbourhoods are removed, the two 3-rows partition a fixed 6-point remainder.
+
+## 6. Row-class multiplicity cap
+
+Suppose k degree-13 shell vertices share the same 3-row P. Repivot at one member of the class. Every vertex of P has core degree at least12 and is adjacent to all k class members, hence has new-shell decoration at least k-1.
+
+Therefore
+
+    3(k-1) <= G'.
+
+At q'=30, G'<=8, so k<=3.
+At q'=31, G'<=9, so k<=4.
+
+This cap is repeatedly used in the shielding reduction.
+
+## 7. The zero-overlap-budget branches are impossible
+
+Assume r+delta=2.
+
+The O-cover has total size exactly25, so for every ordinary S-leaf s and D-leaf d the two 3-rows P_s,Q_d partition the same fixed6-point remainder. Hence all ordinary S-leaves have one common 3-row, and all D-leaves have the complementary common 3-row.
+
+If delta=1,r=1, every S-leaf is ordinary and m_S>=4. Each S-leaf is a q30 plateau d3 pivot, so its row class has size at most3. Contradiction.
+
+If delta=0,r=2 and c=0, again every S-leaf is ordinary and m_S>=4, contradiction.
+
+If delta=0,r=2,c=1, at most one S-leaf is exceptional. If m_S>=5, at least four ordinary S-leaves share the same q30 3-row, contradiction. The only numerical residue is m_S=4.
+
+Then the q31 excess inequalities force
+
+    m_D=m_E=7.
+
+All seven D-star leaves share the complementary 3-row. Their repivots have q<=31, so the q31 row-class cap gives size at most4, contradiction.
+
+Therefore
+
+    r+delta <=1.
+
+## 8. Current shielding modes
+
+Centre shielding plus r+delta<=1 leaves exactly two qualitative modes:
+
+A. `r=0, delta=1`: pure S-centre shield, so the unique S-E edge is s0e0 and D-E is empty.
+
+B. `r=1, delta=0`: pure D-centre shield, so the unique D-E edge is d0e0; the optional S-E edge is either absent or incident with an S-leaf.
+
+The next reduction treats the one-unit overlap budget in these two modes.
