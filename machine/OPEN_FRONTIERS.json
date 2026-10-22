@@ -17,18 +17,13 @@
       },
       "e406_assistant_subfrontier": [
         "d1 common-K11 deficit/excess-transfer system",
-        "d3-TypeA O4 one triple plus two doubles",
-        "d3-TypeA O4 two triples",
         "d12 paired dense 12-block system"
       ],
       "e406_closed": [
         "d2",
+        "d3 full class",
         "d10",
-        "d11",
-        "d3-TypeB",
-        "d3-TypeA O5",
-        "d3-TypeA O4 simple-four-double eta0",
-        "d3-TypeA O4 simple-four-double eta1"
+        "d11"
       ]
     },
     {
