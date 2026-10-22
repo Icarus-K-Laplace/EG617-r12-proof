@@ -6,9 +6,7 @@ This is the synchronized human-readable live state for Lines A/B/C. It contains 
 
 Repository-canonical proved layers: `E397..E400` empty.
 
-Latest supplied V6 package reports a uniform theorem closing
-
-`E401, E402, E403, E404`.
+Latest supplied V6 package reports a uniform theorem closing `E401..E404`.
 
 Reported interface:
 
@@ -16,13 +14,9 @@ Reported interface:
 
 forces a legal degree-13 repivot with `q_y>=30`, while the parent-layer core floor gives `q_y<=E-375<=29` for `E<=404`.
 
-V6 also corrects the repivot equality by restoring three omitted nonnegative terms and removes `(q,z,G)=(25,21,4)` as an illegal cell via `D(14)=69`.
-
-Reported certificate: 127 exact rational rows replayed successfully by the source package.
-
 Current package-level front-end window: `E405..E408`.
 
-Repository promotion note: the uploaded ZIP could not be independently unpacked/replayed in the current chat runtime, so the package proof is recorded as `SOURCE_REPORTED_PROVED / INDEPENDENT_REPLAY_PENDING` rather than silently presented as independently replayed here.
+Status: `SOURCE_REPORTED_PROVED / INDEPENDENT_REPLAY_PENDING` for E401--E404.
 
 ## Line B — high backend E333..E340
 
@@ -30,52 +24,45 @@ All edge layers remain `OPEN`.
 
 V2 reports:
 
-- a complete adjacent two-pivot exchange system;
-- exact q-difference and `tau_y-tau_p = |D cap high| - |S cap high|`;
-- proof that reverse-pivot equality is not an independent second inequality;
-- q34-q35 true-twin branch compressed to 76 necessary quotient rows (44 bipartite, 29 K4-free triangle, 3 q35 K4);
+- complete adjacent two-pivot exchange system;
+- exact q/tau difference identities;
+- reverse-pivot equality is not an independent second inequality;
+- q34/q35 true-twin compression to 76 necessary quotient rows;
 - triangle-free non-bipartite branch eliminated;
-- four exact local q30-q33 two-pivot certificates showing naive one-step `Phi=(q,tau)` monotonicity is false.
+- four q30--q33 local certificates disproving naive one-step Phi monotonicity.
 
-Therefore the next high-layer theorem must use a third pivot, joint constraints across distinct S-rows, or a nonadjacent-pivot weighted inequality.
-
-Reported replay: 44 scalar states, 76 q34/q35 rows, 4 local certificates, q36-q38 atomic-defect table.
+The next target is a third-pivot / joint-row / nonadjacent weighted theorem.
 
 ## Line C — E332 q30+211
 
-This line is repository-canonical and has standalone proof files.
+`COMPLETE: E332 = EMPTY`.
 
-Now proved:
+The closure chain is now fully represented by standalone repository proof files:
 
-- undecorated d=4..9 impossible by profitable repivot;
-- d10 branch empty;
-- d3 branch empty;
-- regular missing degrees reduced to `{0,1,2,11,12}`;
-- at most two regular high vertices;
-- strengthened zero-gap theorem;
+- d4..9 profitable;
+- d10 empty;
+- d3 empty;
+- extreme regular degrees `{0,1,2,11,12}`;
+- strong zero-gap theorem;
 - triangle-row union lemma;
-- `G=4` empty;
-- `G=5` empty;
-- `G=6` empty;
-- `G=7,h=0` empty;
-- exact `H2-G7-K4minusE` empty.
+- G=4 empty;
+- G=5 empty;
+- G=6 empty;
+- G=7 empty;
+- G=8,h1 reduces to G=8,h0;
+- G=8,h0 empty for k=3..8.
 
-The exact two-high G7 cell is closed by a row-class/decoration-overflow argument: its nine low rows reduce to pairwise-disjoint row-edge classes in `D_x union D_y`; if a row edge has multiplicity m>=1, repivot at that class is a q30 plateau but imports two vertices of global excess m, so the new shell has decoration `7+2m>=9`, contradicting `q=30` together with the inherited `z>=22` floor.
+Master file:
 
-A uniform one-high theorem applies simultaneously to `G=7` and `G=8`:
+`backend/E332_FULL_CLOSURE.md`.
 
-1. a unique high vertex of missing degree11 is impossible;
-2. if the unique high vertex has missing degree12, then every low has neighbourhood `{a}` or `{a,x}` with decorated `x`;
-3. there are at most one low-active decorated vertex; two-active states are impossible by exact weight/edge accounting;
-4. if one active decorated vertex exists, then `k+r<=11`, where `k=|D|` and `r=e_M(L,D)`;
-5. the minimum possible low-decorated incidence is `r>=4` for G=7 and `r>=3` for G=8.
+Therefore Line C has no remaining mathematical frontier.
 
-Thus the current Line-C frontier has only three branches:
-
-- `G=7,h=1` in reduced universal-high zero/one-active parameter windows;
-- `G=8,h=0`;
-- `G=8,h=1` in reduced universal-high zero/one-active parameter windows.
-
-There is no h=2,G=8 state.
+## Global state
 
 The full EG617 r=12 theorem remains OPEN.
+
+Only two independent mathematical obligations remain:
+
+1. finish the T61 front end (package-level E405..E408 if Line-A V6 is accepted);
+2. eliminate the legal R(4,49) high backend interval E333..E340.
