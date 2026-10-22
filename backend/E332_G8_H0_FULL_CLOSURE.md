@@ -100,9 +100,21 @@ contradicting pair-row coverage12.
 
 ### m=1 is impossible
 
-One active vertex sees at most all five lows, so `s<=5`. Since the active vertex contributes at most seven cross edges,
+One active vertex sees at most all five lows, so `s<=5`. Let c be its J-degree into the seven inactive vertices. The active row weight is
 
-`b=e(J)-c >= (22-s)-7 =15-s >=10`.
+`t_x=c+s+1>=11`,
+
+hence
+
+`c+s>=10`.
+
+Therefore
+
+`b=e(J)-c=(22-s)-c<=12`.
+
+Also `c<=7`, so
+
+`b>=15-s>=10`.
 
 Suppose `J[I]` contains a triangle. Each inactive decoration is1, so triangle-row coverage requires the sum of the three full J-degrees to be at least21; hence all three vertices have full J-degree7. They are therefore universal inside the seven-vertex inactive graph, forcing at least15 inactive edges, contradicting `b<=12`.
 
