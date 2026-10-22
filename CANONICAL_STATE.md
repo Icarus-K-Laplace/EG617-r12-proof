@@ -12,35 +12,21 @@ For every legitimate residual `F in R(4,49)`, a degree-13 pivot gives
 
 Reusable assets include the q27/q28/q29 repivot machinery and the reconstructed E329--E331 closures.
 
-### E332 is now closed
+### E332 is closed and frozen
 
-Any hypothetical E332 survivor reduces to
+The full q30+211 equality frontier has been eliminated analytically. Preferred final proof assets are:
 
-`q=30, e(H)=211`,
-
-with core degree multiset `14,12^34` or `13^2,12^33`.
-
-The full equality frontier is now eliminated analytically:
-
-- undecorated degrees4..9 are profitable;
-- d10 equality branch is empty;
-- d3 equality branch is empty;
-- surviving regular missing degrees reduce to `{0,1,2,11,12}`;
-- the strengthened zero-gap theorem and triangle-row union lemma hold;
-- decoration layers G=4,5,6 are empty;
-- G=7 is empty (h0, h1 and the exact H2-G7-K4minusE cell all closed);
-- G=8,h1 reduces to G=8,h0;
-- G=8,h0 is empty for every decorated support size k=3..8.
+- `backend/E332_FULL_CLOSURE.md`;
+- `backend/E332_H1_UNIFIED_FINAL.md`;
+- `backend/E332_G8_H0_UNIFIED_CLOSURE.md`.
 
 Therefore
 
 `E332 = EMPTY`.
 
-The legal R(4,49) backend obligation is now exactly
+The legal R(4,49) backend obligation is exactly
 
 `E333..E340`.
-
-See `backend/E332_FULL_CLOSURE.md`.
 
 ## Front-end master reduction
 
@@ -50,26 +36,48 @@ The certified front-end dichotomy remains
 
 The contextual recurrence is computation-certified at 1752 nodes and 144 stopping comparisons.
 
-Within T61 the repository-canonical proved h13 layers currently run through E400.
+Repository-canonical proved h13 layers currently run through E400.
 
-A newer Line-A V6 source package reports a unified proof closing E401--E404, with corrected full repivot identity and a 127-row exact rational certificate. Because that ZIP has not been independently replayed in the current chat runtime, this remains marked `SOURCE_REPORTED_PROVED / INDEPENDENT_REPLAY_PENDING`.
+### Latest Line-A source packages
 
-Package-level front-end window:
+V6 reports E401--E404 empty under the corrected hereditary-cap repivot framework.
 
-`E405..E408`.
+V7 additionally reports E405 empty. Its new analytic ingredients are:
+
+- every genuine 47-point core has `delta(C)>=11`;
+- q25/q26 pivots lift to `q>=27`;
+- q30 no-immediate-rise shells reduce to two families, and multi-pivot compatibility reaches `q>=31` within at most two legal repivots.
+
+Thus the latest package-level front-end window is
+
+`E406..E408`.
+
+V7 is stored as `SOURCE_REPORTED_PROVED / INDEPENDENT_REPLAY_PENDING` in this chat runtime. See `front_end/T61_H13_V7_RESULT.md`.
+
+The key unresolved E406 issue is not q30 classification itself: S31 does not imply uniform q30. One must exclude coexistence of a q31 pivot with lower-charge pivots.
 
 ## High backend live state
 
-Line-B V2 reports exact adjacent two-pivot exchange identities, q34/q35 compression to 76 necessary quotient rows, elimination of the triangle-free non-bipartite quotient branch, and four q30--q33 local certificates showing naive one-step `Phi=(q,tau)` monotonicity is false.
+Line-B V3 reports:
 
-No high edge layer is closed by V2. `E333..E340` remain OPEN.
+- legal pivots classified by closed-neighbourhood distance classes;
+- exact third-viewpoint exchange formula;
+- a common nine-point missing neighbourhood has at most two distinct core supports;
+- three ten-point supports obey `E+2q >= 408+3B`, ruling them out for q<=33;
+- four legal pivots pairwise in distinct distance classes cannot form a K4;
+- q34/q35 aggregate frontier compressed from 76 to 42 necessary rows;
+- K4-containing branch grouped into nine decorated shell types.
+
+No high edge layer is closed. `E333..E340` remain OPEN.
+
+The missing theorem is a forcing statement: every maximal pivot must generate a forbidden multi-support configuration or a strictly better pivot. See `backend/HIGH_LAYER_BACKEND_V3_RESULT.md`.
 
 ## Current independent research obligations
 
-- Front-end: repository-canonical E401..E408; package-level E405..E408 if Line-A V6 replay is accepted;
-- Backend: eliminate legal R(4,49) layers E333..E340.
+- Front-end: latest package-level window `E406..E408`;
+- Backend: eliminate legal R(4,49) layers `E333..E340`.
 
-There is no longer a separate low-backend E332 obligation.
+There is no low-backend obligation.
 
 ## Certification warning
 
