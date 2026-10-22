@@ -18,14 +18,15 @@
 | E332 surviving regular degrees | PROVED | Only `{0,1,2,11,12}` remain for undecorated shell vertices. |
 | E332 high regular count | PROVED | At most two degree11/12 undecorated vertices. |
 | E332 strengthened zero-gap theorem | PROVED | Regular missing edge covers full shell up to decoration; regular-regular edge gives full union and disjoint core rows. |
-| E332 G=4 | PROVED EMPTY | Exact `(h,k,l)=(2,4,7)` cell eliminated. |
+| E332 triangle-row union lemma | PROVED | Every M-triangle has core-row union at least24. |
+| E332 G=4 | PROVED EMPTY | Exact support cell eliminated. |
 | E332 G=5 | PROVED EMPTY | All h=0,1,2 support cases eliminated. |
-| E332 triangle-row union lemma | PROVED | Every M-triangle has core-row union at least24; equality total-size24 forces pairwise row disjointness. |
-| E332 G=6,h=0 | PROVED EMPTY | Active/inactive decorated support contradiction. |
-| E332 H2-G6-K4 | PROVED EMPTY | Triangle-row equality plus zero-gap gives three disjoint 12-sets in a 35-core. |
-| E332 G=6,h=1 | PROVED EMPTY | Complete high-degree11/12 case split for k=3..6. |
-| E332 G=6 | PROVED EMPTY | Full decoration layer closed; see `backend/E332_G6_FULL_CLOSURE.md`. |
-| E332 remaining decoration range | OPEN | Only G=7,8 remain. |
+| E332 G=6 | PROVED EMPTY | h0, h1, and H2-G6-K4 all eliminated; standalone full proof. |
+| E332 G=7,h=0 | PROVED EMPTY | k=3..7 all eliminated; `backend/E332_G7_H0_REDUCTION.md` now contains full closure. |
+| E332 H2-G7-K4minusE | OPEN | Exact two-high cell. |
+| E332 G=7,h=1 | OPEN | Unique-high branch. |
+| E332 G=8,h=0 | OPEN | No-high branch. |
+| E332 G=8,h=1 | OPEN | Unique-high branch; no h=2,G=8 state exists. |
 | Matching-transversal rigidity | PROVED | Front-end block tool. |
 | Equality rotation of genuine blocks | PROVED | Closes high-cross seven/eight-block alternatives. |
 | Eight genuine K12 blocks => legitimate R(4,49) | PROVED | Full residual contract. |
@@ -33,18 +34,16 @@
 | Front-end dichotomy `K145 -> R449 OR T61` | PROVED | No backend circularity. |
 | T61 residual alpha=5 | PROVED | Contextual no-extraction. |
 | T61 anchor defect z=0 | PROVED | Matching-transversal contradiction. |
-| generic R(4,48) floor 310 | PROVED | q20 leaf-rotation over CORE211. |
+| generic R(4,48) floor310 | PROVED | q20 leaf-rotation over CORE211. |
 | T61 minimum-degree12 branch | PROVED EMPTY | q20 rotation + R448 floor310. |
-| T61 E397 | PROVED EMPTY | Unique degree14 cannot be adjacent to any degree13 pivot. |
+| T61 E397 | PROVED EMPTY | Repository-canonical. |
 | T61 E398 | PROVED EMPTY | q23 shell contradiction. |
 | T61 E399 | PROVED EMPTY | q24 cells. |
 | T61 E400 | PROVED EMPTY | uniform q25 shell theorem. |
-| T61 E401--E404 Line-A V6 package | PACKAGE_AUDIT_PENDING | User/Astra report says PROVED; not yet promoted to repository-canonical status pending independent replay. |
-| T61 E405..E408 | OPEN | If V6 passes audit, this is the remaining front-end window. |
-| S31 strict descent | PROVED | Only E406/delta13 explicit parent. |
-| S27 closure | CONDITIONAL / SCOPE-LIMITED | Requires exact minimum-degree premise. |
-| canonical S30 coverage from arbitrary T61 | OPEN | Must not be assumed. |
-| Line-B V2 high-layer package | PACKAGE_AUDIT_PENDING | E333--E340 remain open; V2 reports two-pivot identities and quotient-state compression. |
-| E332 elimination | OPEN | Reduced to G=7,8. |
-| E333..E340 elimination | OPEN | Line B. |
+| T61 E401--E404 Line-A V6 package | SOURCE_REPORTED_PROVED / REPLAY_PENDING | Reported uniform q<=29 shell theorem + 127-row rational certificate; package-level window becomes E405--E408. |
+| T61 E405..E408 | OPEN | Remaining package-level front-end window if V6 replay is accepted. |
+| Line-B V2 adjacent two-pivot system | SOURCE_REPORTED | Exact exchange identities; reverse equality not independent. |
+| Line-B V2 q34/q35 quotient compression | SOURCE_REPORTED | 76 necessary quotient rows; triangle-free non-bipartite branch eliminated. |
+| Line-B V2 local q30--q33 certificates | SOURCE_REPORTED | Four exact local certificates refute naive one-step Phi monotonicity. |
+| E333..E340 elimination | OPEN | No high layer closed by V2. |
 | Full EG617 r=12 theorem | OPEN | Must not be claimed solved. |
