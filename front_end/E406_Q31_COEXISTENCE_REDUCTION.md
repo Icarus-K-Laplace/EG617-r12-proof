@@ -11,19 +11,17 @@ Assume the explicit T61 E406 parent contract:
 - `delta(R)=13`;
 - inherited hereditary caps;
 - every degree-13 pivot has a 13-shell A and 47-core C;
-- exact identity
-  `406 = 91 + q + e(C)`;
+- exact identity `406 = 91 + q + e(C)`;
 - generic 47-core floor `e(C)>=284`;
 - for `e(C)<=286`, the established Line-A lemma gives `delta(C)>=12`;
+- the 14-point cap gives `z=e(M)>=22`;
 - exact subset-charge and repivot inequalities are available.
 
 ## 1. Global q ceiling and near-extremal core budgets
 
-The 284-edge core floor gives
+The 284-edge core floor gives `q<=31`.
 
-`q<=31`.
-
-Hence the three top charge levels correspond exactly to
+Hence
 
 - `q=31 <=> e(C)=284`;
 - `q=30 <=> e(C)=285`;
@@ -31,17 +29,17 @@ Hence the three top charge levels correspond exactly to
 
 All three cores have minimum degree at least12.
 
-Define the internal core excess over 12 by
+Define
 
 `Xi(C)=sum_{v in C}(d_C(v)-12)=2e(C)-12*47`.
 
-Therefore
+Then
 
 - q31 core: `Xi=4`;
 - q30 core: `Xi=6`;
 - q29 core: `Xi=8`.
 
-In particular a q31 core has at most four vertices of internal degree above12. Its degree multiset is obtained by partitioning4:
+In particular a q31 core has at most four vertices of internal degree above12. Its degree multiset is one of
 
 - `16,12^46`;
 - `15,13,12^45`;
@@ -49,124 +47,128 @@ In particular a q31 core has at most four vertices of internal degree above12. I
 - `14,13,13,12^44`;
 - `13^4,12^43`.
 
-This is the first strong rigidity of the E406 q31 state.
+## 2. Pivot-graph degree lower bounds
 
-## 2. No medium missing degree at q31
+Since `q=z+G` and `z>=22`,
 
-Let p be a q31 pivot and let y be any undecorated shell vertex, hence a legal degree-13 repivot. Put
+- at q31: `G<=9`;
+- at q30: `G<=8`.
+
+A decorated shell vertex consumes at least one unit of G. Therefore a q31 shell contains at least four undecorated vertices and a q30 shell contains at least five.
+
+Undecorated shell vertices are exactly the degree-13 neighbours available as legal adjacent repivots. Thus in the graph whose vertices are degree-13 pivots and whose edges are adjacency in R,
+
+- every q31 pivot has pivot-graph degree at least4;
+- every q30 pivot has pivot-graph degree at least5.
+
+Under the source-reported V6/V7 ladder, S31 supplies a pivot q<=30, q<=29 states rise to q30, and q30 plateau states reach q31. Hence any E406 coexistence object contains an actual pivot-graph boundary edge
+
+`q30 -- q31`.
+
+This converts the global coexistence problem into a local boundary-edge classification problem.
+
+## 3. No medium missing degree at q31
+
+Let p be a q31 pivot and y any undecorated shell vertex. Put
 
 - `d=d_M(y)`;
 - `S=N_M(y)`;
 - `X=t(S)-e_M(S)`.
 
-The exact subset identity gives `X<=q=31`.
-
-The repivot lower bound with `delta(C)>=12` gives
+The subset identity gives `X<=31`, while the repivot lower bound gives
 
 `q_y-q >= d(13-d)-X`.
 
-Since q31 is globally maximal, `q_y-q<=0`. Hence
+Since q31 is globally maximal, `q_y-q<=0`; therefore
 
 `d(13-d)<=31`.
 
-For integer `0<=d<=12`, this forces
+Hence
 
 `d in {0,1,2,3,10,11,12}`.
 
-Thus every undecorated shell vertex at a q31 pivot has extreme missing degree; degrees4 through9 are impossible.
+Thus q31 has no undecorated missing degree4 through9.
 
-## 3. The same extreme-degree restriction at q30
+## 4. The same extreme-degree restriction at q30
 
-Let p be a q30 pivot. Again `delta(C)>=12`. Every legal repivot satisfies `q_y<=31`, so
-
-`q_y-q<=1`.
-
-Using `X<=30`,
+For q30, every legal repivot has `q_y<=31`, so
 
 `1 >= d(13-d)-X >= d(13-d)-30`.
 
-Hence again
+Therefore again
 
 `d in {0,1,2,3,10,11,12}`.
 
-So a q30 shell coexisting with a q31 maximum has exactly the same forbidden medium-degree interval.
+So both sides of every q30--q31 boundary edge have the same forbidden medium-degree interval.
 
-## 4. Degree3 / degree10 rows almost consume the full shell charge
+## 5. Degree3 / degree10 rows almost consume all shell charge
 
-For q31, if d is3 or10, then `d(13-d)=30`. The non-increase condition gives
+If d is3 or10, then `d(13-d)=30`.
 
-`X>=30`.
+At q31 the non-increase condition gives `X>=30`; at q30 the global q31 ceiling gives `X>=29`.
 
-Since q=31 and
+Using the exact subset identity
 
-`q-X = e_M(A\S)+G_{A\S}`,
+`q-X=e_M(A\S)+G_{A\S}`,
 
-the complement of S carries at most one unit of shell charge:
-
-`e_M(A\S)+G_{A\S}<=1`.
-
-For q30, global ceiling q_y<=31 yields
-
-`X>=29`,
-
-and therefore the same conclusion:
+both cases imply
 
 `e_M(A\S)+G_{A\S}<=1`.
 
-Thus any regular d3 or d10 row in either top shell forces an almost-total charge concentration around that row. This is the natural analytic replacement for an uncontrolled q30/q31 shell enumeration.
+Thus every regular d3/d10 row on either side of the boundary edge forces all but at most one unit of shell charge to be incident with its missing-neighbour set.
 
-## 5. Exact final-rise exchange q30 -> q31
+## 6. Exact final-rise exchange q30 -> q31
 
-The Line-A V7 source package reports that a q30 no-immediate-rise state reaches q>=31 within at most two legal repivots. Under that reported theorem, any coexistence state contains a final adjacent transition
-
-`q=30 -> q'=31`.
-
-For this final transition, let C be the old 285-edge core and C' the new 284-edge core. If y is the legal shell pivot, put
+Take a boundary edge oriented from a q30 pivot p to the adjacent q31 pivot y. Let C be the old 285-edge core and C' the new 284-edge core. Put
 
 - `d=d_M(y)`;
 - `S=N_M(y)`;
 - `D=N_C(y)`.
 
-Because y has global degree13, `|S|=|D|=d`, and
+Because y has global degree13,
 
-`C'=(C\D) union S`.
-
-The edge count drops by exactly one:
-
+`|S|=|D|=d`,
+`C'=(C\D) union S`,
 `e(C')=e(C)-1`.
 
-Let
+Define
 
 `epsilon_C(D)=sum_{u in D}(d_C(u)-12)`,
 `epsilon_C'(S)=sum_{s in S}(d_C'(s)-12)`.
 
-Writing the core-edge change as removed incident edges minus inserted incident edges gives the exact excess-exchange identity
+Exact incident-edge exchange gives
 
 `epsilon_C(D)-epsilon_C'(S) = 1 + e_C(D)-e_F(S)`.   (E406-X)
 
-The final-rise pivot also satisfies
+The boundary distance satisfies
 
 `d in {1,2,3,10,11,12}`;
 
-d=0 cannot raise q because then D=S=empty and the core is unchanged.
+d=0 cannot change the core and cannot raise q.
 
-For d=1, (E406-X) reduces to
+For d=1,
 
 `epsilon_C(u)=epsilon_C'(s)+1`.
 
-So every one-swap q30->q31 transition must remove a positive-excess core vertex and insert a shell vertex whose new core excess is exactly one smaller.
+So a one-swap rise must remove a positive-excess vertex from the 285-edge core and replace it by a vertex whose excess in the 284-edge core is exactly one smaller.
 
-## 6. Current E406 target
+## 7. Current E406 target
 
-S31 already supplies some degree-13 pivot with q<=30. V7 reports that q30 plateau behaviour reaches q31. Therefore the unresolved E406 issue can be sharpened to:
+The unresolved E406 issue is now sharply local:
 
-> Can a 406-edge T61 object contain both a q31 extremal pivot (284-edge, excess4 core) and a lower-charge pivot whose repivot chain terminates at q31?
+> classify and eliminate a pivot-graph boundary edge q30--q31 under the six possible distance classes d=1,2,3,10,11,12.
 
-The structural search space is now much smaller:
+Available rigidity:
 
-- q30/q31 shells have no undecorated missing degree4..9;
-- every d3/d10 row leaves at most one charge unit outside its missing neighbourhood;
-- every final q30->q31 edge obeys the exact excess-exchange equation (E406-X);
-- the q31 core has only four total internal excess units.
+- q31 core has only four total internal excess units;
+- q30 core has only six;
+- q30/q31 shells have no regular degree4..9;
+- each endpoint has at least five/four legal pivot-graph neighbours respectively;
+- d3/d10 forces one-unit complement charge;
+- every final rise obeys (E406-X).
 
-The next attack should classify the six final-rise degrees `1,2,3,10,11,12`, beginning with d1/d2 via the tiny core-excess budget and d3/d10 via the one-unit complement-charge theorem.
+Next attack order:
+
+1. d1/d2: use the tiny 6->4 core-excess drop and multiple boundary-neighbour counting;
+2. d3/d10: exploit the almost-complete charge concentration on both views;
+3. d11/d12: use the fact that the exchanged 11/12-sets contain many degree12 vertices in both near-extremal cores and enforce (E406-X) simultaneously.
