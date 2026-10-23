@@ -29,50 +29,28 @@ The K4,9 top-channel plateau family is empty. Low-decoration forcing gives q36=>
 
 q36 coverage splits into low-clique and shell-poor regimes. f=3 low-clique is CLOSED; hence f<=2.
 
-#### q36 f=2, far 2K1, a_F=0
+#### q36 f=2, far 2K1, a_F=0 — CLOSED
 
-This branch is reduced to exactly three equality terminals. All c>=3 states are EMPTY and c=2 distinct-support is EMPTY. No d3 row survives.
+`Q36_F2_2K1_A0_STAR_TERMINALS_FULL_CLOSURE.md` closes the last missing-star equality terminals. Together with the prior c>=3 and low-c closures:
 
-Remaining:
-
-1. c=2 repeated support: `M[X]=K1,4 + 4K1`, all X decorations1, shared pure K2 support D, both D endpoints adjacent exactly to the star centre, q35 repivot D14-saturated.
-2. c=1,nu=2: `M[X]=K1,2 + 7K1`, both support endpoints adjacent exactly to the centre.
-3. c=1,nu=3: `M[X]=K1,3 + 6K1`, both support endpoints adjacent to the centre and at most one extra D--X edge.
+> the entire `2K1,a_F=0` branch is EMPTY.
 
 #### q36 f=2, far 2K1, a_F=1
 
 `Q36_F2_2K1_A1_HIGH_C_NORMAL_FORM.md` gives `A+G_Y=6-e_M(Y)`, `A>=2`, and the K11-minus-defects D14 incidence cap.
 
-For c=7:
+Current exact status:
 
-- A=2 is CLOSED;
-- A=3 is the only remaining allowance;
-- Y is a target K3 with decorations `(1,1,1)`;
-- `{p} union C union Y=K11`;
-- seven common-S 3-support rows lie in a 12-point alpha-two remainder.
+- c=7: CLOSED. A=2 and A=3 are both EMPTY; the final A=3 simple seven-triple system is eliminated by `Q36_F2_2K1_A1_C7_A3_ALL_SINGLETON_FULL_CLOSURE.md`.
+- c=8: A=2 and A=3 are EMPTY. Only A=4 remains OPEN. Multiplicity4 and nonclique multiplicity3 are eliminated; any multiplicity-three survivor is a target K3 with `O_D+e(Y,D)<=2`, forcing at least three external owner incidences into disjoint supports.
+- c=9: A=2 and A=3 are EMPTY. A=4 and A=5 remain OPEN. At A=4, multiplicity4 and nonclique multiplicity3 are eliminated; any multiplicity-three survivor is a target K3 with `O_D+e(y,D)<=2`, forcing at least four external owner incidences into disjoint supports.
+- c=10: exact A=6 remains OPEN.
 
-The A=3 multiplicity analysis now proves:
-
-- multiplicity4 impossible;
-- partition `3+3+1` EMPTY;
-- partition `3+2+2` EMPTY;
-- partition `3+2+1+1` EMPTY;
-- partition `3+1+1+1+1` EMPTY.
-
-Hence every surviving support class has multiplicity at most2. Remaining partitions:
-
-- `2+2+2+1`;
-- `2+2+1+1+1`;
-- `2+1+1+1+1+1`;
-- seven singleton supports.
-
-Any historical multiplicity-three one-edge intermediate generates the exact q35 equality shell `G'=13`, `z'=22` with target K10 base and regular missing-degree pattern `3,0,0,2,2,2,2`.
-
-For c=8,9,10 the high-c normal form leaves finite allowance ranges; c=10 has exact A=6.
+Thus the active `2K1,a_F=1` difficulty is now the first genuine slack-three repeated-K3/disjoint-support compatibility geometry.
 
 #### q36 f=2, far target K2
 
-At most3 d2 rows exist, with distinct disjoint pure K2 supports. d3 rows use at most two decorated missing classes; no-d2/two-class total allowance is at most1.
+At most3 d2 rows exist, with distinct disjoint pure K2 supports. d3 rows use at most two decorated missing classes; no-d2/two-class total allowance is at most1. This topology remains OPEN.
 
 #### shell-poor
 
