@@ -64,15 +64,25 @@ Independent analytic assets include
 - the K4,9 reduction chain;
 - `backend/K49_G2_SPLIT_FULL_CLOSURE.md`.
 
-The K4,9 plateau program is now complete under its stated top-channel lexicographic contract. The former final q38 split residual had two repeated 4-supports R,S with multiplicities summing to9. Repeated-support q-maximality forces both supports to be pure K4. The larger support class has size at least5, and the induced 14-set `{p} union Y union R` then has
+The complete K4,9 top-channel plateau family is now empty under its stated lexicographic contract.
 
-`9+36+6+4a >=71 > D(14)=69`,
+The q36 ceiling channel has also been sharpened substantially:
 
-contradiction.
+- `backend/Q36_COMPENSATED_K49_NORMAL_FORM.md` proves every regular d4/d9 zero-defect exchange is a compensated K4,9 shell: missing cross-edges deleted from K4,9 are exactly compensated row-by-row by decoration;
+- `backend/Q36_D9_COMPENSATED_CLOSURE.md` eliminates the entire q36 d9 branch;
+- `backend/Q36_D4_COMPENSATED_DYNAMICS.md` reduces the d4 branch to common K4 support dynamics;
+- `backend/Q36_D4_SUPPORT_CLASS_REDUCTION.md` proves all zero columns must share one K4 support (its threshold lemma has been independently repaired with an explicit exact finite count);
+- `backend/Q36_D4_COMPENSATED_CLOSURE.md` gives the exact active-column identity `rho=9c`, forcing every active column to have cross-degree4; D14 then contradicts the support multiplicity cap.
 
-Therefore the entire previously surviving K4,9 plateau family with total four-side decoration `G in {0,1,2}` is empty.
+Therefore
 
-This removes a full right-edge plateau family but does not yet close E338, E339 or E340, because arbitrary q36--q38 missing shells have not yet been reduced to K4,9.
+`q36: regular d=4 and d=9 ceiling exchanges are both EMPTY`.
+
+Any remaining q36 ceiling survivor must avoid the middle-distance exchanges entirely: every adjacent regular positive distance lies in
+
+`{1,2,3,10,11,12}`.
+
+This is not yet a full E338 closure. The current right-edge target is the candidate-coverage theorem: prove such an exceptional q36 shell cannot exist, or force a d4/d9 exchange / strict q improvement. CORE211 pivot abundance remains available: q36 top-channel pivots have at least7 other legal pivots, with shortage of adjacent regular pivots converted into nonadjacent one-spoke core pivots.
 
 ## Closed low backend
 
@@ -86,4 +96,4 @@ The mathematical obligations are now:
 
 1. T61 E407 high-Q branches `31,32`;
 2. T61 E408 high-Q branches `31,32,33`;
-3. legal R(4,49) backend `E334..E340`, with the K4,9 top-channel plateau family removed from E338--E340.
+3. legal R(4,49) backend `E334..E340`, with K4,9 removed and q36 d4/d9 ceiling exchanges eliminated on the assistant-owned right-edge line.
