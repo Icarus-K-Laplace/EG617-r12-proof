@@ -21,46 +21,60 @@ Status: `LIVE REDUCTION MAP`. This records proved assistant-owned far-K2 results
 
 `Q36_F2_FAR_K2_C8_D2_A2_FULL_CLOSURE.md` proves A=2 is EMPTY.
 
-Thus only A=3,4 remain for c=8,n2=1.
+## 3. A=3 is fully CLOSED
 
-## 3. c=8, one d2 row, A=3
+The obsolete `Q36_F2_FAR_K2_C8_D2_A3_REPEATED_K3_CLOSURE.md` remains `RETRACTED`; it incorrectly imported a fixed 12-point remainder from the far-2K1 topology.
 
-`Q36_F2_FAR_K2_C8_D2_A3_MULTIPLICITY_REDUCTION.md` proves support multiplicity at most3 and isolates two multiplicity-three geometries.
+The corrected chain is:
 
-### One-edge multiplicity-three geometry
+- `Q36_F2_FAR_K2_C8_D2_A3_MULTIPLICITY_REDUCTION.md`;
+- `Q36_F2_FAR_K2_C8_D2_A3_ONEEDGE_FULL_CLOSURE.md`;
+- `Q36_F2_FAR_K2_C8_D2_A3_REPEATED_K3_CORRECT_REDUCTION.md`;
+- `Q36_F2_FAR_K2_C8_D2_A3_REPEATED_K3_FULL_CLOSURE_V2.md`;
+- `Q36_F2_FAR_K2_C8_D2_A3_FULL_CLOSURE.md`.
 
-`Q36_F2_FAR_K2_C8_D2_A3_ONEEDGE_FULL_CLOSURE.md` closes this terminal. Its proof uses only the d3-support union U with `alpha(H[U])<=2`, plus row closure, q35 saturation and D14. No fixed 12-point remainder is required.
+The full closure uses no fixed-remainder assumption. It eliminates multiplicity-three, multiplicity-two and all-singleton systems under the correct far-K2 contract.
 
-### Repeated-K3 multiplicity-three geometry
+Therefore
 
-The former `Q36_F2_FAR_K2_C8_D2_A3_REPEATED_K3_CLOSURE.md` remains `RETRACTED`; its obsolete proof imported a fixed 12-point remainder from the far-2K1 topology.
+> `c=8, n2=1, A=3` is EMPTY.
 
-`Q36_F2_FAR_K2_C8_D2_A3_REPEATED_K3_CORRECT_REDUCTION.md` gives the valid Type-P/Type-Q reduction.
+## 4. A=4 high-multiplicity sector is fully CLOSED
 
-`Q36_F2_FAR_K2_C8_D2_A3_REPEATED_K3_FULL_CLOSURE_V2.md` now closes that finite system under the correct far-K2 contract:
+`Q36_F2_FAR_K2_C8_D2_A4_HIGH_MULTIPLICITY_REDUCTION.md` proves:
 
-- if two or more distinct disjoint K3 classes occur, K4-freeness plus `alpha(H[U])<=2` forces common-pair geometry with a zero-weight common-pair vertex; together with a zero-S-incidence point of D, the pure d2 support, x and one far point this yields an independent5-set;
-- if only one distinct disjoint K3 class occurs, at least two external owners force it to be repeated. Both repeated K3s then contain zero-weight vertices, and row closure makes a zero-zero cross pair a nonedge; adding the pure d2 point, x and one far point again gives an independent5-set.
+- multiplicity4 is impossible;
+- every multiplicity-three nonclique support is impossible;
+- every multiplicity-three support is a target K3 with exact unit weights `(1,1,1)` and overlap charge `O_D in {0,1,2}`.
 
-Therefore **all multiplicity-three supports are eliminated in A=3**.
+The three overlap-charge terminals are now all closed:
 
-Current A=3 frontier:
+- `Q36_F2_FAR_K2_C8_D2_A4_UNIT_K3_O2_CLOSURE.md` closes `O_D=2`;
+- `Q36_F2_FAR_K2_C8_D2_A4_UNIT_K3_O1_CLOSURE.md` closes `O_D=1`;
+- `Q36_F2_FAR_K2_C8_D2_A4_UNIT_K3_O0_FULL_CLOSURE.md` closes `O_D=0`.
 
-> every surviving d3 support has multiplicity at most2.
+Hence
 
-No full closure of the multiplicity<=2 sector is claimed yet.
+> every surviving A=4 support has multiplicity at most2.
 
-## 4. Additional reusable theorem
+## 5. Current c=8 one-d2 frontier
 
-`Q36_F2_A1_A4_DISJOINT_REPEATED_K3_RIGIDITY.md` applies only to the separate far-2K1,a_F=1,A=4 channels, where its fixed-remainder contract is available. It must not be imported into far-K2 without a new proof.
+The allowance levels are now:
 
-## 5. Current far-K2 tasks
+- `A=2`: CLOSED;
+- `A=3`: CLOSED;
+- `A=4`: OPEN only in the multiplicity-at-most-two support system.
+
+Thus the complete `c=8, n2=1` problem has been reduced to one terminal layer:
+
+> one d2 row, seven d3 owners in one common missing-set class, allowance4, and every d3 support class has multiplicity at most2.
+
+## 6. Current far-K2 tasks
 
 Highest priority:
 
-1. close the remaining multiplicity<=2 A=3 support system;
-2. close c=8,n2=1,A=4;
-3. treat the no-d2 c=8 branch;
-4. parameterize downward to c<=7.
+1. close `c=8,n2=1,A=4` with support multiplicity<=2;
+2. treat the no-d2 c=8 branch;
+3. parameterize downward to c<=7.
 
-The far-K2 topology is independent of the concurrent `2K1,a_F=1` repeated-K3 work.
+The far-K2 topology is independent of the concurrent `2K1,a_F=1` work and of the Astra A/B frontiers.
