@@ -19,45 +19,48 @@ Status: `LIVE REDUCTION MAP`. This records proved assistant-owned far-K2 results
 - the seven d3 owners form one missing-set class;
 - allowance `A in {2,3,4}`.
 
-`Q36_F2_FAR_K2_C8_D2_A2_FULL_CLOSURE.md` proves:
-
-- A=2 is EMPTY.
+`Q36_F2_FAR_K2_C8_D2_A2_FULL_CLOSURE.md` proves A=2 is EMPTY.
 
 Thus only A=3,4 remain for c=8,n2=1.
 
 ## 3. c=8, one d2 row, A=3
 
-`Q36_F2_FAR_K2_C8_D2_A3_MULTIPLICITY_REDUCTION.md` proves:
+`Q36_F2_FAR_K2_C8_D2_A3_MULTIPLICITY_REDUCTION.md` proves support multiplicity at most3 and isolates two multiplicity-three geometries.
 
-- support multiplicity at most3;
-- every multiplicity-three support is either
-  1. an exact one-edge q35 equality terminal, or
-  2. a target-K3 terminal forcing at least two external owner incidences into disjoint target-K3 supports.
+### One-edge multiplicity-three geometry
 
-`Q36_F2_FAR_K2_C8_D2_A3_ONEEDGE_FULL_CLOSURE.md` closes terminal (1) by repivoting to a D14-saturated q35 shell. The external supports reduce to pairwise-intersecting pure K2 petal rows, contradicting D14 multiplicity.
+`Q36_F2_FAR_K2_C8_D2_A3_ONEEDGE_FULL_CLOSURE.md` closes this terminal. Its proof uses only the d3-support union U with `alpha(H[U])<=2`, plus row closure, q35 saturation and D14. No fixed 12-point remainder is required.
 
-`Q36_F2_FAR_K2_C8_D2_A3_REPEATED_K3_CLOSURE.md` is `RETRACTED`: its previous proof incorrectly imported a fixed 12-point remainder from the far-2K1 topology. The repeated-K3 terminal is therefore OPEN again.
+### Repeated-K3 multiplicity-three geometry
 
-The valid repeated-K3 interface is:
+The former `Q36_F2_FAR_K2_C8_D2_A3_REPEATED_K3_CLOSURE.md` is `RETRACTED` because it incorrectly imported a fixed 12-point remainder from the far-2K1 topology.
+
+`Q36_F2_FAR_K2_C8_D2_A3_REPEATED_K3_CORRECT_REDUCTION.md` replaces it with a valid theorem:
 
 - D is a target K3 of multiplicity3 and defect<=2;
-- at least two external owner incidences lie in supports disjoint from D;
+- at least two external owner incidences lie in support classes disjoint from D;
 - every support disjoint from D is itself a target K3;
-- each such disjoint K3 E satisfies `e_H(D,E)<=2`;
-- the d3-support union U satisfies `alpha(H[U])<=2` because the unique pure d2 block D0 is target-anticomplete to U.
+- each such class E has `e_H(D,E)<=2`;
+- any two distinct disjoint-from-D support classes intersect in exactly two points;
+- therefore the distinct disjoint-class family is either
+  1. Type P: all classes contain one fixed two-point set, or
+  2. Type Q: all classes lie among the four triples of one four-point set;
+- each such class has multiplicity at most3 and satisfies the D14 owner-incidence inequality.
 
-No contradiction from these facts alone is currently certified.
+This Type-P/Type-Q finite hypergraph system is the current repeated-K3 frontier.
+
+The A=3 branch is not yet fully closed: repeated-K3 Type P/Q and the support-multiplicity<=2 sector remain OPEN.
 
 ## 4. Additional reusable theorem
 
-`Q36_F2_A1_A4_DISJOINT_REPEATED_K3_RIGIDITY.md` applies only to the separate far-2K1,a_F=1,A=4 channels, where the fixed 12-point remainder contract is available. It must not be imported into far-K2 without a new global-capacity proof.
+`Q36_F2_A1_A4_DISJOINT_REPEATED_K3_RIGIDITY.md` applies only to the separate far-2K1,a_F=1,A=4 channels, where its fixed-remainder contract is available. It must not be imported into far-K2 without a new proof.
 
 ## 5. Current far-K2 tasks
 
 Highest priority:
 
-1. close the c=8,n2=1,A=3 repeated-K3 terminal under the correct far-K2 contract;
-2. then close the remaining multiplicity<=2 A=3 support system;
+1. close A=3 repeated-K3 Type P and Type Q;
+2. close the remaining multiplicity<=2 A=3 support system;
 3. close c=8,n2=1,A=4;
 4. treat the no-d2 c=8 branch;
 5. parameterize downward to c<=7.
