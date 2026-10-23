@@ -112,13 +112,41 @@ For far target K2:
 - d3 rows use at most two decorated missing-set classes;
 - in the no-d2/two-class branch, total common-S allowance is at most1.
 
-For far 2K1 with exactly one far-decoration incidence, `backend/Q36_F2_2K1_A1_REDUCTION.md` proves:
+For far `2K1` with exactly one far-decoration incidence, the proof chain
+
+- `backend/Q36_F2_2K1_A1_REDUCTION.md`;
+- `backend/Q36_F2_2K1_A1_C6_FULL_CLOSURE.md`
+
+proves:
 
 - all low rows share one d3 missing set;
-- c=4,5 are empty;
-- c=6 has allowance exactly2 and an exact decorated-shell normal form: all X-missing edges meet a distinguished x0, `g_x0=4-nu`, the other decorated vertices have g=1, and x0 has an 11-point core row.
+- `c=4,5,6` are EMPTY;
+- hence this branch now has `c>=7`.
 
-The next low-clique targets are this six-row allowance-two terminal, c>=7 in the same topology, and the remaining far-incidence/topology branches.
+The `c=6` closure is structural: repeated supports have defect<=1, singleton intersections form common-hub sunflowers of size at most2, and the only final `3+3` repeated-support architecture violates the CORE211 `w=kappa+e(.,x0)` mass bound.
+
+For far `2K1` with no far-decoration incidence, `backend/Q36_F2_2K1_A0_REDUCTION.md` proves:
+
+- the two far 12-supports are disjoint and leave an 11-point remainder `R` with `alpha(H[R])<=2`;
+- d2 rows have at most two distinct support classes;
+- if a d2 class repeats, it is the unique d2 class and is a zero-defect pure K2 repivoting to q35;
+- for `n2>=3`, all d2 rows share that K2 and satisfy `3n2<=c+nu+2` and `2n2<=c+4`;
+- the all-d2 subbranch has `c<=4`;
+- d3 rows use at most two decorated missing-set classes.
+
+`backend/Q36_F2_2K1_A0_LOW_ALLOWANCE_D3.md` further proves:
+
+- allowance-zero d3 classes have at most2 owners;
+- allowance-one d3 classes have at most two distinct supports; if a support repeats it is the unique class and is a pure q35 K3;
+- the all-d3 / two-missing-class sector is EMPTY for `c>=7` (indeed it forces `c<=6`).
+
+Thus the remaining `2K1,a_F=0` high-c sector has a single d3 missing class, possibly together with one repeated d2 K2 family.
+
+The remaining f=2 work is now concentrated in:
+
+1. `2K1,a_F=1,c>=7` (single d3 class, higher allowance);
+2. `2K1,a_F=0` single-d3-class / mixed K2+d3 high-c channels;
+3. the far-target-K2 topology.
 
 #### shell-poor interface
 
