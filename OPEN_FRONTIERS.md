@@ -54,26 +54,26 @@ It is a signed balance and does not force every correction term to vanish. Any h
 
 The independent V5 replay is recorded in `backend/E333_V5_CANONICAL_CLOSURE.md`.
 
-The new repeated-pair core-capacity theorem excludes all five necessary V4 families. Upstream V4/canonical certification remains a stated retained dependency.
-
 ### E334..E340
 
 These are the remaining open legal `R(4,49)` layers.
 
-The V5 capacity theorem is reusable but does not itself force the E334/E335 maxima into the E333 five-family reduction. Actual core excess and row allowance must be checked at each pivot.
+The V5 capacity theorem is reusable but does not itself force E334/E335 maxima into the E333 five-family reduction. Actual core excess and row allowance must be checked at each pivot.
 
 ### Right-edge E338..E340
 
-The q36--q38 atomic-defect program and K4,9 plateau reductions remain active. The final K4,9 split q38 residual has been compressed to:
+The q36--q38 atomic-defect program remains active.
 
-- two anticomplete pure K9 supports `D1,D2`;
-- a 17-point remainder `L` with exactly67 edges;
-- `e(D1,L)=e(D2,L)=36`;
-- two distinct disjoint Y-supports of size4;
-- multiplicity partition only `2+7`, `3+6`, or `4+5`;
-- two decorated size10 rows in L with overlap at least5.
+The complete K4,9 plateau family with all decoration on the four-side and total decoration `G in {0,1,2}` is now `PROVED EMPTY` under the top-channel lexicographic contract; see `backend/K49_G2_SPLIT_FULL_CLOSURE.md`.
 
-No E338--E340 layer is declared closed by this reduction.
+The last split residual is eliminated uniformly: its two repeated 4-supports are pure K4s with multiplicities summing to9. The larger class has size at least5, and the induced 14-set `{p} union Y union R` has at least71 edges, contradicting `D(14)=69`.
+
+The remaining right-edge task is therefore no longer K4,9 completion. It is to prove that every q36--q38 ceiling/near-ceiling shell either
+
+1. falls into the eliminated K4,9 family, or
+2. admits a strict `(q,tau)` improvement / violates the atomic-defect and joint-row constraints.
+
+No full E338--E340 layer is yet closed.
 
 ## Closed backend interval
 
