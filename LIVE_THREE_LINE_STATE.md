@@ -4,94 +4,98 @@ This is the synchronized human-readable live state. It contains research results
 
 ## Front end — T61
 
-The repository now has continuous canonical h13 closure
+The repository has continuous canonical h13 closure
 
 `E397..E406 = EMPTY`.
 
-The former V6/V7 source-only status for E401--E405 has been discharged by independent reconstruction:
+E406 is independently closed by `front_end/E406_FULL_CLOSURE.md`.
 
-- `front_end/E401_E404_CANONICAL_CLOSURE.md`;
-- `front_end/E405_FULL_CLOSURE_CANONICAL.md`;
-- `front_end/Q30_HEREDITARY_PROMOTION_CANONICAL.md`.
+### V9 low-Q upgrade
 
-E406 is independently closed by
+`front_end/T61_H13_V9_CANONICAL_AUDIT.md` independently replays the uploaded V9 package under its explicit retained lower-order seed contract.
 
-`front_end/E406_FULL_CLOSURE.md`.
+New proved relative-to-seed exclusions:
 
-### Astra-A active frontier
+- E407: `Q_max=27` impossible;
+- E408: `Q_max=27` impossible;
+- E408: `Q_max=28` impossible.
 
-Only
+The historical q27/q28 shell classifications are used only after V9 reconstructs the missing real-47-core interface, including EDGE12 and genuine core minimum degree11.
 
-`E407,E408`
+The exact correction-cycle identity is
 
-remain open on the T61 front end.
+`sum(h+kappa)=sum(eta+m)`
 
-V8 source-reported residual tasks are:
+around a closed legal walk. It does **not** imply all nonnegative corrections vanish. The old purely algebraic zero-defect inference is `RETRACTED`.
 
-- `E407: Q_max=27`;
-- `E408: Q_max in {27,28}`;
-- compatibility/cycles of nonzero correction terms.
+The exact remaining front-end maximum-charge branches are therefore
 
-## Line B — high backend E333..E340
+- E407: `Q in {31,32}`;
+- E408: `Q in {31,32,33}`.
 
-All high backend edge layers remain OPEN.
+Full E407 and E408 remain OPEN.
 
-V4 reports necessary survivor families
+## High backend
 
-`D2-A,D2-B,D2-C,D2-D,R9`
+### E333 — V5 closure
 
-with repetition lower bounds
+`backend/E333_V5_CANONICAL_CLOSURE.md` independently replays the uploaded V5 package.
 
-`8,8,5,7,9`.
+Under the retained legal-backend and V4 five-family forcing contract,
 
-These are necessary shell rows, not realized graphs. Astra B is assigned repeated-pair/core-support realizability, beginning with E333.
+`E333 = EMPTY`.
+
+The new joint-core theorem is
+
+`W<=28 => alpha(H[union U_i])<=2`
+
+for repeated common-pair supports in one 35-core. It yields the capacity contradictions
+
+- D2-A: required 8, capacity 4;
+- D2-C: required 5, capacity 4;
+- D2-D: required 7, capacity 6;
+- R9: required 9, capacity 6;
+- D2-B: forced two-clique-plus-perfect-matching structure, then excluded by exact residual edge accounting.
+
+The V5 verifier was replayed successfully and every manifest SHA-256 matched. Upstream V4/canonical certification remains an explicit retained dependency, not newly recertified by V5.
+
+Thus the remaining high backend interval is
+
+`E334..E340 OPEN`.
 
 ### Assistant-owned right-edge subline — E338..E340
 
-This subline is disjoint from Astra B's E333 repeated-pair assignment.
+Independent analytic assets already in the repository include:
 
-`backend/HIGH_RIGHT_EDGE_ATOMIC_DEFECT_THEOREM.md` proves the following analytic reduction at ceiling pivots:
+- `backend/HIGH_RIGHT_EDGE_ATOMIC_DEFECT_THEOREM.md`;
+- `backend/HIGH_TOP_CORE211_PIVOT_ABUNDANCE.md`;
+- `backend/K49_PLATEAU_INDEPENDENT_REDUCTION.md`;
+- `backend/K49_G2_SPLIT_CORE_REDUCTION.md`;
+- `backend/K49_G2_SPLIT_ROW_OVERLAP.md`;
+- `backend/K49_G2_SPLIT_TWO_SUPPORT_B0.md`;
+- `backend/K49_G2_SPLIT_SINGLETON_SUPPORT_CLOSURE.md`.
 
-- E338: q<=36;
-- E339: q<=37;
-- E340: q<=38;
-- equality with the ceiling is equivalent to a 211-edge 35-core, hence core excess2;
-- regular missing degrees5--8 are impossible at a ceiling pivot;
-- for regular d=4 or9 and q=36+s, s=0,1,2, the exact atomic-defect budget is
-
-  `rho+h+kappa+b <= s`.
-
-Therefore q36 has a zero-defect d4/d9 exchange system, q37 permits at most one atomic defect, and q38 at most two.
-
-Additional independent right-edge assets now prove:
-
-- `backend/HIGH_TOP_CORE211_PIVOT_ABUNDANCE.md`: top-channel q36/q37/q38 pivots have at least 7/5/3 other legal pivots respectively;
-- `backend/K49_PLATEAU_INDEPENDENT_REDUCTION.md`: a lexicographically maximal K4,9 plateau with G in {0,1,2} reduces to one G=2 split-decoration residual;
-- `backend/K49_G2_SPLIT_CORE_REDUCTION.md`: that residual reduces to a 17-point remainder L with cross parameter B<=10;
-- `backend/K49_G2_SPLIT_ROW_OVERLAP.md`: the two decorated size10 rows overlap in at least5 points;
-- `backend/K49_G2_SPLIT_TWO_SUPPORT_B0.md`: the nine Y-rows have exactly two distinct disjoint 4-supports and self-similar repivoting forces `B=e_H(D1,D2)=0`;
-- `backend/K49_G2_SPLIT_SINGLETON_SUPPORT_CLOSURE.md`: the `8+1` support multiplicity is impossible.
-
-Hence the final K4,9 split residual now has the exact interface
+For the final K4,9 split q38 plateau residual these imply:
 
 - two anticomplete pure K9 supports D1,D2;
 - `|L|=17`, `e(H[L])=67`;
 - `e(D1,L)=e(D2,L)=36`;
 - exactly two distinct disjoint Y-supports R,S of size4;
-- both Y-supports are repeated, so up to exchange their multiplicities are only `2+7`, `3+6`, or `4+5`;
+- the support multiplicities are only `2+7`, `3+6`, or `4+5`;
 - the two decorated size10 rows lie in L and overlap in at least5 points.
 
-No high backend edge layer is claimed closed by these reductions.
+No E338--E340 layer is yet closed by this subline.
 
-## Line C — E332
+## Closed low backend
 
-`COMPLETE AND FROZEN: E332 = EMPTY`.
+`E329,E330,E331,E332,E333` are empty under their stated canonical/retained contracts. E332 remains frozen.
 
 ## Global state
 
 The full EG617 r=12 theorem remains `OPEN / NOT_CERTIFIED`.
 
-Exactly two independent mathematical obligations remain:
+The mathematical obligations are now:
 
-1. T61 `E407,E408`;
-2. legal `R(4,49)` high backend `E333..E340`.
+1. T61 E407 high-Q branches `31,32`;
+2. T61 E408 high-Q branches `31,32,33`;
+3. legal R(4,49) backend `E334..E340`.
