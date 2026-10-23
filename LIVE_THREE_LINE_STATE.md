@@ -65,8 +65,6 @@ Relative to the retained backend contract, V6 proves:
 - for repeated missing pairs with `r=1`, allowance<=2 and `K in {2,4,6}`, multiplicity satisfies `m<=6`;
 - the short-row no-far branch at q<=32 has exactly two active hubs; the one-hub and three-hub branches are analytically excluded.
 
-This covers the repeated-pair obstruction in the actual core211/212/213 E334 channels when the family is forced.
-
 E334--E337 remain OPEN. The uncovered Astra-B work is explicitly:
 
 1. far-neighbour and missing-degree-three forcing;
@@ -95,36 +93,57 @@ Every remaining q36 shell belongs to one of two regimes:
 1. **low-clique regime:** one low target clique C plus far/high regular vertices;
 2. **shell-poor regime:** at most two adjacent regular pivots and at least five nonadjacent one-spoke legal pivots in CORE211.
 
-The entire f=3 low-clique layer is CLOSED by
+The entire f=3 low-clique layer is CLOSED, so the low-clique branch has `f<=2`.
 
-- `backend/Q36_F3_FAR_LAYER_REDUCTION.md`;
-- `backend/Q36_F3_K21_TERMINAL_STRENGTHENING.md`;
-- `backend/Q36_F3_K21_SUPPORT_CLASS_COLLAPSE.md`;
-- `backend/Q36_F3_FULL_CLOSURE.md`.
+#### f=2 reduction — current state
 
-Therefore the low-clique branch has `f<=2`.
+`backend/Q36_F2_SHELL_LEDGER_REDUCTION.md` gives the exact shell ledger
 
-#### New f=2 reduction
+`G=14-mu-delta+a_F-nu`
 
-`backend/Q36_F2_SHELL_LEDGER_REDUCTION.md` gives an exact shell ledger for two far vertices. With low clique C and decorated set X, `|C|+|X|=11`, and
+with every low row of missing degree2 or3.
 
-`G=14-mu-delta+a_F-nu`,
+For far target K2:
 
-where `mu=e_M(F)`, `delta=e_M(C,X)`, `nu=e_M(X)`, and `a_F=e_F(F,X)`.
-
-Every low row has missing degree2 or3. For far target K2:
-
-- there are at most3 d2 rows, all with distinct disjoint pure K2 supports;
+- at most3 d2 rows, with distinct disjoint pure K2 supports;
 - d3 rows use at most two decorated missing-set classes;
 - if no d2 row occurs and both d3 classes occur, their total common-S allowance is at most1.
 
-`backend/Q36_F2_2K1_A1_REDUCTION.md` treats the two-singleton far topology with exactly one far-decoration incidence. All low rows then share one d3 missing set. It proves
+For far `2K1` with exactly one far-decoration incidence, the chain
 
-- c=4 and c=5 are EMPTY;
-- c=6 forces allowance exactly2;
-- in the c=6 terminal all X-missing edges are incident to one decorated vertex x0, `g_x0=4-nu`, every other decorated vertex has g=1, and `|N_H(x0)|=11`.
+- `backend/Q36_F2_2K1_A1_REDUCTION.md`;
+- `backend/Q36_F2_2K1_A1_C6_FULL_CLOSURE.md`
 
-Thus this formerly arbitrary f=2 sector is reduced to a small allowance-two six-row compatibility terminal plus the remaining c>=7 / other far-incidence branches.
+now proves
+
+- all low rows share one d3 missing set;
+- `c=4,5,6` are EMPTY;
+- therefore the surviving branch has `c>=7`.
+
+The c=6 closure classifies the six-row support system: repeated supports have defect<=1; singleton intersection components are common-hub sunflowers of size at most2; the only final `3+3` repeated-support architecture violates the CORE211 `w=kappa+e(.,x0)` mass bound.
+
+For far `2K1` with `a_F=0`, `backend/Q36_F2_2K1_A0_REDUCTION.md` proves
+
+- the far 12-supports are disjoint and leave an 11-point `R` with `alpha(H[R])<=2`;
+- at most two d2 support classes exist;
+- a repeated d2 class is the unique d2 class, is a zero-defect pure K2 and repivots to q35;
+- if `n2>=3`, all d2 rows share that K2 and satisfy `3n2<=c+nu+2`, `2n2<=c+4`;
+- the all-d2 branch has `c<=4`;
+- d3 rows use at most two decorated missing-set classes.
+
+`backend/Q36_F2_2K1_A0_LOW_ALLOWANCE_D3.md` adds:
+
+- allowance-zero d3 class size<=2;
+- allowance-one d3 classes have at most two distinct supports, and any repeated support is the unique pure q35 K3 class;
+- the all-d3/two-missing-class sector has `c<=6`.
+
+Thus for `2K1,a_F=0,c>=7`, an all-d3 survivor must concentrate on a single decorated missing vertex; more generally the unresolved high-c sector is one possible repeated d2 K2 family plus a single dominant d3 class.
+
+The remaining f=2 targets are therefore sharply concentrated in
+
+1. `2K1,a_F=1,c>=7`;
+2. `2K1,a_F=0` single-d3-class / mixed K2+d3 high-c channels;
+3. the far-target-K2 topology.
 
 #### Shell-poor interface
 
