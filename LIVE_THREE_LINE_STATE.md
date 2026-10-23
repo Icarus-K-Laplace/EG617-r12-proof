@@ -18,21 +18,17 @@ Closed maximum-charge branches:
 - E408: `Q=27` impossible;
 - E408: `Q=28` impossible.
 
-V10 additionally proves:
-
-> at a maximizing Q31 pivot, no regular shell neighbour has missing degree3 or10.
-
-Thus a hypothetical Q31 maximum shell has regular missing degrees only
+V10 additionally proves that at a maximizing Q31 pivot no regular shell neighbour has missing degree3 or10. Hence every regular shell vertex of a hypothetical Q31 maximum has missing degree only
 
 `{0,1,2,11,12}`.
 
-Coverage remains OPEN. V10 supplies a shell-only necessary-condition witness
+Coverage remains OPEN. The shell-only witness
 
 `M = K2 join (K2 disjoint_union 9K1)`
 
-with decorations `4,3` on the inner K2. This is not a genuine T61 completion; its 47-core compatibility remains the first concrete completion test.
+with decorations `4,3` on the inner K2 is not yet a genuine T61 completion.
 
-The exact remaining front-end branches are
+Remaining front-end branches:
 
 - E407: `Q in {31,32}`;
 - E408: `Q in {31,32,33}`.
@@ -55,97 +51,91 @@ Thus the remaining high backend interval is
 
 `E334..E340 OPEN`.
 
-### Astra-B V6 — E334..E337 capacity extension
+### Astra-B V6 — E334..E337
 
-`backend/HIGH_LAYER_BACKEND_V6_CANONICAL_AUDIT.md` independently replays the uploaded V6 package. The verifier passed all certified arithmetic and every manifest SHA-256 matched.
+`backend/HIGH_LAYER_BACKEND_V6_CANONICAL_AUDIT.md` independently replays V6. The verifier passed and every manifest SHA-256 matched.
 
-Relative to the retained backend contract, V6 proves:
+Relative to the retained backend contract V6 proves:
 
-- `CORE212_MATCHING_RESIDUAL_IMPOSSIBLE`, strengthened through core213 / total core excess `K<=6`;
-- for repeated missing pairs with `r=1`, allowance<=2 and `K in {2,4,6}`, multiplicity satisfies `m<=6`;
-- the short-row no-far branch at q<=32 has exactly two active hubs; the one-hub and three-hub branches are analytically excluded.
+- CORE212 matching residual impossible, extending through core213 / total core excess `K<=6`;
+- repeated-pair `r=1`, allowance<=2 and `K in {2,4,6}` implies multiplicity `m<=6`;
+- the q<=32 short-row no-far branch has exactly two active hubs; one-hub and three-hub branches are empty.
 
-E334--E337 remain OPEN. The uncovered Astra-B work is explicitly:
-
-1. far-neighbour and missing-degree-three forcing;
-2. double-hub branches with `r>=2`;
-3. the `r=1` allowance-three boundary;
-4. for higher layers, `K>=8` concentration and the overlap-10 K11 equality mechanism.
+E334--E337 remain OPEN. The remaining B-line gaps are far/d3 forcing, double-hub `r>=2`, allowance3, and for higher layers the `K>=8` concentration / overlap-10 K11 equality mechanisms.
 
 ### Assistant-owned right-edge subline — E338..E340
 
-The complete K4,9 top-channel plateau family is empty under its stated lexicographic contract.
+The complete K4,9 top-channel plateau family is empty.
 
-`backend/HIGH_RIGHT_EDGE_LOW_DECORATION_FORCING.md` proves
+Global low-decoration forcing proves
 
 - `q36 => G>=3`;
 - `q37 => G>=2`;
 - `q38 => G>=3`.
 
-Every q38,G=2 shell is eliminated, including the final cross-side K4,9 state.
+Every q38,G=2 shell is eliminated. For q36, regular d4/d9 ceiling exchanges are empty.
 
-The q36 middle-distance ceiling branches d4/d9 are completely removed by the compensated-K4,9 proof chain. Hence q36 has no adjacent regular d4 or d9 exchange.
+Candidate coverage splits into:
 
-#### Candidate-coverage split
-
-Every remaining q36 shell belongs to one of two regimes:
-
-1. **low-clique regime:** one low target clique C plus far/high regular vertices;
-2. **shell-poor regime:** at most two adjacent regular pivots and at least five nonadjacent one-spoke legal pivots in CORE211.
+1. a low-clique regime;
+2. a shell-poor regime with at least five nonadjacent one-spoke pivots in CORE211.
 
 The entire f=3 low-clique layer is CLOSED, so the low-clique branch has `f<=2`.
 
-#### f=2 reduction — current state
+#### q36 f=2 — exact current state
 
-`backend/Q36_F2_SHELL_LEDGER_REDUCTION.md` gives the exact shell ledger
+`backend/Q36_F2_SHELL_LEDGER_REDUCTION.md` gives the exact shell identity
 
 `G=14-mu-delta+a_F-nu`
 
-with every low row of missing degree2 or3.
+and every low-clique row has missing degree2 or3.
 
 For far target K2:
 
 - at most3 d2 rows, with distinct disjoint pure K2 supports;
 - d3 rows use at most two decorated missing-set classes;
-- if no d2 row occurs and both d3 classes occur, their total common-S allowance is at most1.
+- in the no-d2/two-class sector, total common-S allowance is at most1.
 
-For far `2K1` with exactly one far-decoration incidence, the chain
-
-- `backend/Q36_F2_2K1_A1_REDUCTION.md`;
-- `backend/Q36_F2_2K1_A1_C6_FULL_CLOSURE.md`
-
-now proves
+For far `2K1` with exactly one far-decoration incidence:
 
 - all low rows share one d3 missing set;
 - `c=4,5,6` are EMPTY;
-- therefore the surviving branch has `c>=7`.
+- the surviving branch has `c>=7`.
 
-The c=6 closure classifies the six-row support system: repeated supports have defect<=1; singleton intersection components are common-hub sunflowers of size at most2; the only final `3+3` repeated-support architecture violates the CORE211 `w=kappa+e(.,x0)` mass bound.
+For far `2K1` with `a_F=0`:
 
-For far `2K1` with `a_F=0`, `backend/Q36_F2_2K1_A0_REDUCTION.md` proves
-
-- the far 12-supports are disjoint and leave an 11-point `R` with `alpha(H[R])<=2`;
-- at most two d2 support classes exist;
-- a repeated d2 class is the unique d2 class, is a zero-defect pure K2 and repivots to q35;
+- the two far 12-supports are disjoint and leave an 11-point remainder `R` with `alpha(H[R])<=2`;
+- d2 rows have at most two distinct support classes;
+- a repeated d2 class is the unique d2 class and is a zero-defect pure K2 repivoting to q35;
 - if `n2>=3`, all d2 rows share that K2 and satisfy `3n2<=c+nu+2`, `2n2<=c+4`;
 - the all-d2 branch has `c<=4`;
-- d3 rows use at most two decorated missing-set classes.
-
-`backend/Q36_F2_2K1_A0_LOW_ALLOWANCE_D3.md` adds:
-
+- d3 rows use at most two decorated missing-set classes;
 - allowance-zero d3 class size<=2;
-- allowance-one d3 classes have at most two distinct supports, and any repeated support is the unique pure q35 K3 class;
-- the all-d3/two-missing-class sector has `c<=6`.
+- allowance-one repeated classes are unique pure q35 K3 classes;
+- allowance-two d3 class size<=6;
+- all-d3/two-missing-class sector has `c<=6`.
 
-Thus for `2K1,a_F=0,c>=7`, an all-d3 survivor must concentrate on a single decorated missing vertex; more generally the unresolved high-c sector is one possible repeated d2 K2 family plus a single dominant d3 class.
+The high-c all-d3/single-class sector is completely CLOSED:
 
-The remaining f=2 targets are therefore sharply concentrated in
+- `c=7` and `c=8` by the high-c zero-gap normal form and decoration overflow;
+- `c=9` by `backend/Q36_F2_2K1_A0_C9_FULL_CLOSURE.md`;
+- `c=10` by `backend/Q36_F2_2K1_A0_C10_FULL_CLOSURE.md`.
 
-1. `2K1,a_F=1,c>=7`;
-2. `2K1,a_F=0` single-d3-class / mixed K2+d3 high-c channels;
+The c=10 common-point proof is analytic: row closure in the triangle-free complement forces all ten 3-supports to share one core point, then the K11 `{p} union C` plus D14 support-incidence cap gives a contradiction.
+
+`backend/Q36_F2_2K1_A0_C10_MIXED_FULL_CLOSURE.md` also eliminates every c=10 state containing at least one d2 row. Therefore the entire
+
+`2K1, a_F=0, c=10`
+
+layer is EMPTY.
+
+The remaining f=2 targets are now:
+
+1. `2K1,a_F=0` mixed d2/d3 states with `c<=9`, beginning with c=9;
+2. `2K1,a_F=1,c>=7`;
 3. the far-target-K2 topology.
 
-#### Shell-poor interface
+#### shell-poor interface
 
 `backend/Q36_ONESPOKE_EXACT_FORMULA.md` proves that a nonadjacent one-spoke pivot v with 12-neighbour support D and 22-point anti-neighbourhood Z satisfies
 
@@ -161,7 +151,7 @@ with
 
 The shell-poor branch contains at least five simultaneous such near-Mantel anti-neighbourhoods. Its remaining task is a joint stability/compatibility theorem.
 
-No full E338 edge layer is yet claimed closed.
+No full E338 layer is yet claimed closed.
 
 ## Closed low backend
 
@@ -175,4 +165,4 @@ The mathematical obligations are now:
 
 1. T61 E407 high-Q branches `31,32`;
 2. T61 E408 high-Q branches `31,32,33`;
-3. legal R(4,49) backend `E334..E340`, with E333 closed, V6 narrowing E334--E337, and the q36/q38 right-edge sectors sharply reduced as above.
+3. legal R(4,49) backend `E334..E340`, with E333 closed and the q36/q38 right-edge sectors sharply reduced.
