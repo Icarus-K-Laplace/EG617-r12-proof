@@ -16,7 +16,7 @@ The final uniform argument uses the E338 total degree-excess budget39: every rem
 
 `A+G_Y=6-e_M(Y)`, `A>=2`,
 
-and the K11/D14 triple cap
+and the valid K11/D14 triple cap for this 2K1 topology
 
 `lambda(T)+e(Y,T)+e_H(T)<=14+e_M(Y)`.
 
@@ -39,46 +39,105 @@ Possible allowances are A=2,3,4.
 
 - A=2 is EMPTY (`Q36_F2_2K1_A1_C8_A2_FULL_CLOSURE.md`).
 - A=3 is EMPTY (`Q36_F2_2K1_A1_C8_A3_FULL_CLOSURE.md`).
-- A=4 remains OPEN, but `Q36_F2_2K1_A1_C8_A4_MULTIPLICITY_REDUCTION.md` proves:
-  - multiplicity4 is impossible;
-  - every multiplicity-three support, if any, is a target K3;
-  - such a K3 obeys `O_D+e(Y,D)<=2`, so at least three external owner incidences lie in supports disjoint from D.
-
-Thus the exact c=8 frontier is only A=4.
+- A=4 remains OPEN, with the existing repeated-K3 / forced-disjoint-support reductions.
 
 ### c=9
 
-Possible allowances are A=2,3,4,5.
-
 - A=2 is EMPTY (`Q36_F2_2K1_A1_C9_A2_FULL_CLOSURE.md`).
 - A=3 is EMPTY (`Q36_F2_2K1_A1_C9_A3_FULL_CLOSURE.md`).
-- A=4 remains OPEN, but `Q36_F2_2K1_A1_C9_A4_MULTIPLICITY_REDUCTION.md` proves:
-  - multiplicity4 is impossible;
-  - every multiplicity-three support is a target K3;
-  - it satisfies `O_D+e(y,D)<=2`, forcing at least four external owner incidences into supports disjoint from D.
-- A=5 remains OPEN.
+- A=4 and A=5 remain OPEN under the existing multiplicity reductions.
 
 ### c=10
 
 The high-c normal form has exact A=6. This layer remains OPEN.
 
-## Far target K2
+## Far target K2 — corrected contract mandatory
 
-Retained from `Q36_F2_SHELL_LEDGER_REDUCTION.md`:
+`Q36_F2_FAR_K2_D14_CONTRACT_CORRECTION.md` and `Q36_F2_FAR_K2_POST_D14_AUDIT.md` are the canonical scope boundary.
 
-- at most3 d2 rows, with distinct disjoint pure K2 supports;
+The old assertion that `{p} union C union F` is a target K11 is false because every C--F pair is a shell missing edge. The valid c=8 D14 base is
+
+`B={p} union C union Y`,
+
+where `Y=X\{x}` and `e(B)=55-rho`, `rho=e_M(Y)`.
+
+Thus the corrected support inequality is
+
+`3m+O_D+e_F(Y,D)+e_H(D)<=14+rho`.
+
+There is no global target-K4 prohibition.
+
+### Safe global structure
+
+- any d2 row forces `a_F=0` and a pure globally-regular K2 support;
+- for c>=3, `n2<=1`;
 - d3 rows use at most two decorated missing-set classes;
-- in the no-d2/two-class sector, total allowance<=1.
+- in the no-d2/two-class sector the total allowance is at most1.
 
-This topology remains OPEN.
+The old aggregate one-d2 closure remains RETRACTED pending corrected-contract replay.
+
+### c=8 no-d2
+
+`Q36_F2_FAR_K2_C8_NO_D2_CLASS_REDUCTION_V2.md` proves that all eight owners belong to one d3 missing-set class and `A<=4`, with `A+rho<=4`.
+
+Corrected closures now give
+
+- A=0 EMPTY;
+- A=1 EMPTY (`Q36_F2_FAR_K2_C8_NO_D2_A1_FULL_CLOSURE_V2.md`);
+- A=2 EMPTY (`Q36_F2_FAR_K2_C8_NO_D2_A2_FULL_CLOSURE_V2.md`).
+
+Therefore the actual corrected no-d2 frontier is
+
+> `A in {3,4}`.
+
+A=4 automatically has `rho=0`.
+
+### New A=3 tools
+
+`Q36_F2_FAR_K2_C8_NO_D2_MULTISUPPORT_D17_CAPACITY.md` gives the genuine D17 two-support inequality
+
+`3(r+s)+e_H(D)+e_H(E)+e_H(D,E)+e_F(Y,D union E)<=26+rho`
+
+for disjoint 3-support classes of owner multiplicities r,s. In particular two disjoint K3 classes satisfy
+
+- `r+s<=6` if rho=0;
+- `r+s<=7` if rho=1.
+
+`Q36_F2_FAR_K2_C8_NO_D2_A3_MULT4_ONEEDGE_FULL_CLOSURE.md` proves
+
+> every A=3 multiplicity-four one-edge support channel is EMPTY.
+
+The proof uses a global common-S weight contradiction: a repeated one-edge support D has weight zero and a unique disjoint repeated K3 class E; among the other29 core vertices at most12 can have weight1 and at least17 have weight>=2, forcing total common-S weight at least46, while the exact A=3 budget is at most37.
+
+`Q36_F2_FAR_K2_C8_NO_D2_A3_ALPHA2_DISJOINT_SUPPORT_LEMMA.md` proves that inside any alpha-two A=3 support union, two disjoint distinct support classes must both be target K3s. Any disjoint pair involving a nonclique support violates the common-S cross-edge allowance.
+
+Thus the next A=3 targets are multiplicity-four two-edge/K3 channels and then multiplicity<=3 systems.
+
+## Shell-poor branch — new simultaneous interface
+
+`Q36_SHELL_POOR_SIMULTANEOUS_INTERFACE.md` couples the at-least-five one-spoke pivots.
+
+For q36 shell-poor,
+
+`11<=G<=14`,
+`sum_(u in H) g_u =39-G in [25,28]`.
+
+For every one-spoke v with unique shell label a, `D=N_H(v)` and `Z=H\(D union {v})`,
+
+`g_a+g(D)<=14`,
+`g(Z)>=25-G+g_a>=11+g_a`.
+
+Writing `J=overline(H)`, every one-spoke is a degree22 vertex of the K4-free 35-point graph J and `Z=N_J(v)`. If two one-spokes are adjacent in J, then their two shell labels meet every triangle of the shell missing graph M.
+
+This turns the five separate near-Mantel conditions into one joint core/shell system.
 
 ## Active assistant frontier
 
-Highest priority:
+Highest current priorities:
 
-1. close the repeated-K3 / forced-disjoint-support geometry in `c=8,A=4`;
-2. lift the same slack-three mechanism to `c=9,A=4`;
-3. then treat `c=9,A=5` and exact `c=10,A=6`;
-4. return to the far-target-K2 branch.
+1. finish corrected far-K2 no-d2 A=3 (multiplicity-four two-edge/K3, then lower multiplicities);
+2. close corrected far-K2 no-d2 A=4;
+3. re-audit c=8 one-d2 under the corrected D14 base;
+4. in parallel, exploit `Q36_SHELL_POOR_SIMULTANEOUS_INTERFACE.md` through either repeated two-label triangle covers or decoration-overlap counting.
 
-The shell-poor five-one-spoke near-Mantel branch remains separate and OPEN.
+The q36 layer remains OPEN.
