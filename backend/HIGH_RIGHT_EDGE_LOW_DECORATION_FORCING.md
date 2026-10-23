@@ -161,11 +161,9 @@ The only partitions with feasible cross count require attachment sizes
 - `9+1+1+1`: a=5;
 - `8+4`: a=7.
 
-None is a complete-clique attachment and all exceed the partial bound `a<=1`. Therefore
+None is a complete-clique attachment and all exceed the partial bound `a<=1`. Therefore `G>=2`.
 
-> `q=38 => G>=2`.                                         (38)
-
-## 7. Classification of q38, G=2
+## 7. Exact classification of q38, G=2
 
 The same partition arithmetic plus (PA) gives an exact shell classification.
 
@@ -184,25 +182,102 @@ Up to exchange the only possibilities are
 - regular partition `8+3`, the decorated vertices target-nonadjacent, one complete to K8 and the other to K3;
 - regular partition `7+4`, the decorated vertices target-adjacent and both complete to K7.
 
-Every listed shell is exactly `K_(4,9)` in the missing graph. Thus
+Every listed shell is exactly `K_(4,9)` in the missing graph.
 
-> every q38 ceiling shell with G=2 is a K4,9 shell.          (K49-2)
+The already-proved K4,9 closure eliminates every placement with all decoration on the four-side.
 
-The already-proved K4,9 closure eliminates all placements with all decoration on the four-side.
+If all decoration lies on the nine-side, every regular nine-side vertex has d=4 and `rho=2`, exhausting the q38 atomic-defect budget. Its support is therefore a pure K4 of core-degree12 vertices and the exchange is a q38 plateau. Lexicographic maximality makes every inserted support vertex globally regular. Equal supports are impossible, while distinct supports are disjoint and target-anticomplete. There are at least seven regular nine-side vertices, yielding an independent set of size at least7 in H. Contradiction.
 
-If all decoration lies on the nine-side, that placement is also impossible: every regular nine-side vertex has d=4 and `rho=2`, which exhausts the q38 atomic-defect budget. Hence its support is a pure K4 of core-degree12 vertices and gives a q38 plateau. Lexicographic maximality makes the support globally regular. Distinct regular nine-side vertices cannot share a support, and zero remaining common-S allowance makes distinct supports disjoint and target-anticomplete. There are at least seven regular nine-side vertices, yielding an independent set of size at least7 in H, contradiction.
+Thus only the cross-side placement remains: one decoration unit on each side.
 
-Therefore the only q38,G=2 placement not eliminated by the present theorem is
+## 8. Cross-side q38,G=2 closure
 
-> the cross-side K4,9 state with one unit of decoration on each side.
+Let X be the four-side and Y the nine-side, with one decorated vertex on each side. There are three regular X-vertices and eight regular Y-vertices.
 
-## 8. New right-edge interface
+### 8.1 The three d9 rows have support multiplicity 2+1
+
+For the three regular X-vertices, the common missing set is Y, `d=9`, and `rho=1`. Their common-S allowance is one.
+
+The V3 common-nine-support theorem gives at most two distinct 9-point supports. A support repeated by at least two owners cannot be a q38 plateau: every support vertex has core degree at least12 and at least two shell owners, hence is globally decorated; inserting nine such vertices while removing only the one decorated vertex on Y would strictly increase tau. Thus a repeated support must have q=37 and zero remaining defect. It is therefore a pure K9 of core-degree12 vertices, target-anticomplete to Y.
+
+All three rows cannot share it, because K9 together with the three regular X owners would form a target K12. Hence the d9 multiplicity is exactly `2+1`. Let A be the repeated pure K9 support and E the singleton support. They are disjoint and target-anticomplete by the common-S theorem.
+
+### 8.2 At most one d4 support class can repeat
+
+For the eight regular Y-vertices, the common missing set is X, `d=4`, and again `rho=1`, so the common-S allowance is one.
+
+The V3 exact core-cut inequality with `K=2`, `d=4`, allowance1 excludes four distinct supports: for four disjoint classes it gives `K>=6`. Thus there are at most three distinct d4 support classes.
+
+Any repeated d4 class B cannot be a q38 plateau for the same tau reason. Hence it has q=37 and zero remaining defect:
+
+- H[B]=K4;
+- all B-vertices have core degree12;
+- `e_F(X,B)=0`.
+
+Distinct repeated classes are disjoint and target-anticomplete.
+
+Three repeated classes are impossible. If B1,B2,B3 were repeated, put `L=H\(B1 union B2 union B3)`, |L|=23, and
+
+`w_v=kappa_v+e_F(v,X)`.
+
+The total core excess is2 and the total X-to-core incidence is
+
+`10+9+9+9=37`,
+
+so `sum_H w_v=39`. Every B_i vertex has `w=0`, hence `sum_L w_v=39`.
+
+If v in L were not complete to any B_i, choosing one non-neighbour from each of the three pairwise anticomplete K4s would give an independent4-set with v. Therefore v is complete to some B_i, and row closure forces `w_v>=4`. Thus `sum_L w_v>=23*4=92`, contradiction.
+
+Two repeated classes are also impossible. Let B1,B2 be repeated and `L=H\(B1 union B2)`, |L|=27. Because each B_i is a pure degree12 K4 and the two blocks are anticomplete,
+
+`e_H(B_i,L)=36`,
+
+and exact edge accounting gives
+
+`e(H[L])=211-2*C(4,2)-2*36=127`.                           (1)
+
+For v in L put
+
+`a_v=e_H(v,B1)`, `b_v=e_H(v,B2)`, `x_v=max(a_v,b_v)`.
+
+Row closure gives `x_v<=w_v`, so
+
+`sum_L x_v<=39`.                                           (2)
+
+An exact five-value count for 27 integers in `{0,1,2,3,4}` with total at most39 shows that at least153 pairs satisfy `x_v+x_w<=3` (the extremal bad-pair count is198, attained already at total36 by nine 4s and eighteen 0s).
+
+For any such pair, if vw were a target nonedge, then in each B_i the union of the two neighbourhoods has size at most3. Choose one vertex of each B_i missing both v and w. Since B1,B2 are anticomplete, this gives an independent4-set. Hence all at least153 such pairs are target edges inside L, contradicting (1), which has only127 edges.
+
+Therefore at most one d4 support class repeats.
+
+### 8.3 Multiplicity overflow
+
+There are eight d4 rows, at most three support classes, and at most one repeated class. Hence the repeated class has multiplicity
+
+`c>=6`.
+
+As above, it is a q37 zero-defect pure K4 support. Every one of its four vertices has core degree12 and at least c shell owners, so its global decoration is at least `c-1`.
+
+Repivoting at one owner inserts those four vertices into a q37 shell. Every q37 shell satisfies the inherited D14 bound
+
+`G'<=q'-22=15`.
+
+But the inserted K4 alone contributes
+
+`G'>=4(c-1)>=20`,
+
+contradiction.
+
+Therefore the cross-side q38,G=2 K4,9 state is impossible.
+
+## 9. Final low-decoration interface
 
 At a lexicographically maximal top-channel pivot:
 
-- q36 requires `G>=3`;
-- q37 requires `G>=2`;
-- q38 requires `G>=2`;
-- if q38 has `G=2`, the only remaining placement is the cross-side decorated K4,9 shell.
+- `q=36 => G>=3`;
+- `q=37 => G>=2`;
+- `q=38 => G>=3`.
 
-This theorem does not close E338--E340. Its purpose is to remove the entire low-decoration sector except one explicit q38 cross-side topology.
+In particular every q38,G=2 ceiling shell is eliminated, regardless of how its two decoration units are placed.
+
+This theorem does not close E338--E340. It removes the complete low-decoration sector through the thresholds above.
