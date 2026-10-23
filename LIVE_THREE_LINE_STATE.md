@@ -20,15 +20,13 @@ New proved relative-to-seed exclusions:
 - E408: `Q_max=27` impossible;
 - E408: `Q_max=28` impossible.
 
-The historical q27/q28 shell classifications are used only after V9 reconstructs the missing real-47-core interface, including EDGE12 and genuine core minimum degree11.
-
 The exact correction-cycle identity is
 
 `sum(h+kappa)=sum(eta+m)`
 
 around a closed legal walk. It does **not** imply all nonnegative corrections vanish. The old purely algebraic zero-defect inference is `RETRACTED`.
 
-The exact remaining front-end maximum-charge branches are therefore
+The exact remaining front-end maximum-charge branches are
 
 - E407: `Q in {31,32}`;
 - E408: `Q in {31,32,33}`.
@@ -49,13 +47,7 @@ The new joint-core theorem is
 
 `W<=28 => alpha(H[union U_i])<=2`
 
-for repeated common-pair supports in one 35-core. It yields the capacity contradictions
-
-- D2-A: required 8, capacity 4;
-- D2-C: required 5, capacity 4;
-- D2-D: required 7, capacity 6;
-- R9: required 9, capacity 6;
-- D2-B: forced two-clique-plus-perfect-matching structure, then excluded by exact residual edge accounting.
+for repeated common-pair supports in one 35-core. It excludes D2-A/C/D and R9 by capacity and D2-B by the exact residual edge ledger.
 
 The V5 verifier was replayed successfully and every manifest SHA-256 matched. Upstream V4/canonical certification remains an explicit retained dependency, not newly recertified by V5.
 
@@ -65,26 +57,22 @@ Thus the remaining high backend interval is
 
 ### Assistant-owned right-edge subline — E338..E340
 
-Independent analytic assets already in the repository include:
+Independent analytic assets include
 
 - `backend/HIGH_RIGHT_EDGE_ATOMIC_DEFECT_THEOREM.md`;
 - `backend/HIGH_TOP_CORE211_PIVOT_ABUNDANCE.md`;
-- `backend/K49_PLATEAU_INDEPENDENT_REDUCTION.md`;
-- `backend/K49_G2_SPLIT_CORE_REDUCTION.md`;
-- `backend/K49_G2_SPLIT_ROW_OVERLAP.md`;
-- `backend/K49_G2_SPLIT_TWO_SUPPORT_B0.md`;
-- `backend/K49_G2_SPLIT_SINGLETON_SUPPORT_CLOSURE.md`.
+- the K4,9 reduction chain;
+- `backend/K49_G2_SPLIT_FULL_CLOSURE.md`.
 
-For the final K4,9 split q38 plateau residual these imply:
+The K4,9 plateau program is now complete under its stated top-channel lexicographic contract. The former final q38 split residual had two repeated 4-supports R,S with multiplicities summing to9. Repeated-support q-maximality forces both supports to be pure K4. The larger support class has size at least5, and the induced 14-set `{p} union Y union R` then has
 
-- two anticomplete pure K9 supports D1,D2;
-- `|L|=17`, `e(H[L])=67`;
-- `e(D1,L)=e(D2,L)=36`;
-- exactly two distinct disjoint Y-supports R,S of size4;
-- the support multiplicities are only `2+7`, `3+6`, or `4+5`;
-- the two decorated size10 rows lie in L and overlap in at least5 points.
+`9+36+6+4a >=71 > D(14)=69`,
 
-No E338--E340 layer is yet closed by this subline.
+contradiction.
+
+Therefore the entire previously surviving K4,9 plateau family with total four-side decoration `G in {0,1,2}` is empty.
+
+This removes a full right-edge plateau family but does not yet close E338, E339 or E340, because arbitrary q36--q38 missing shells have not yet been reduced to K4,9.
 
 ## Closed low backend
 
@@ -98,4 +86,4 @@ The mathematical obligations are now:
 
 1. T61 E407 high-Q branches `31,32`;
 2. T61 E408 high-Q branches `31,32,33`;
-3. legal R(4,49) backend `E334..E340`.
+3. legal R(4,49) backend `E334..E340`, with the K4,9 top-channel plateau family removed from E338--E340.
