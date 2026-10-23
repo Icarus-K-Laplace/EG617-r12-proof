@@ -36,24 +36,32 @@ See `consolidation/V12_V8_SOURCE_REPORTED_AUDIT.md`.
 
 ### E334
 
-Delivered V8 source-reports
+Delivered V8 source-reports `E334 = EMPTY` relative to the retained backend and accepted V7 forcing.
 
-> `E334 = EMPTY`
+The independently proved graph-theoretic abstraction is now stronger:
 
-relative to the retained backend and accepted V7 forcing.
+> three pairwise nonadjacent degree-12 anchors in a 35-point core with `alpha<=3`, `omega<=11`, `delta>=12` force total excess `K>=6`, equivalently `e(H)>=213`.
 
-The reported terminal mechanism is a three-anchor global core obstruction, not three independent residual-case closures. `backend/GLOBAL_THREE_ANCHOR_PARTITION_THEOREM.md` independently proves the reusable partition half: three pairwise nonadjacent degree-12 anchors in a 35-point `alpha<=3`, `omega<=11` core force exactly 2--4 connectors and three near-K10 clique blocks. The V8 package additionally reports that at least two connectors require degree excess at least two, contradicting CORE211 total excess `K=2`.
+Thus every high-backend state which enters the three-anchor branch obeys
 
-Independent replay of the V8 package is still pending in this assistant session, so distinguish:
+`q<=E-304`.
 
-- source-level status: E334 EMPTY relative to retained backend/V7;
-- independently re-certified status here: not yet upgraded beyond E333.
+Independent replay of the V8 archive remains pending; source-level E334 closure and independently proved graph-theoretic master results remain explicitly distinguished.
 
 ### E335..E337
 
-OPEN. V8 is reported to give a new necessary upper bound for E335, but no E335 closure is claimed.
+OPEN.
 
-The highest-value structural question is whether the three-anchor connector-excess lemma parameterizes beyond CORE211, so that the E334 closure becomes a reusable low-excess core theorem rather than a one-layer result.
+The first surviving three-anchor equality layer `K=6` is now structurally reduced:
+
+- `c=2`: **CLOSED** by `GLOBAL_THREE_ANCHOR_K6_C2_FULL_CLOSURE.md`;
+- `c=3`: exactly one bad pair-connector and one K9-dominator; the bad subsystem consumes at least5 of6 excess units and everything outside it has total excess at most1;
+- `c=4,(10,10,8)`: at most two K8-dominators; if two, they are adjacent and form a saturated K11 with the K8 and its anchor;
+- `c=4,(10,9,9)`: each K9 has at most one anchor-compatible dominator.
+
+Therefore K=6 is no longer an unrestricted equality layer. The next three-anchor target is incompatibility/closure of the finite c=3/c=4 equality geometries, not a fresh E335 case tree.
+
+The support-incidence side is also aligned with this partition by `GLOBAL_ZERO_SIGNATURE_ANCHOR_ALIGNMENT_THEOREM.md`: in the three-signature branch each zero-signature class lies in its corresponding exclusive anchor clique and has size at most the support size d.
 
 ### E338..E340 — right edge
 
@@ -97,23 +105,55 @@ A simultaneous near-Mantel stability/compatibility theorem remains OPEN.
 
 ## Global-support theorem programme
 
-The repository now contains a reusable structural stack rather than only E-layer closures:
+The high backend is now organized by a common structural stack:
 
 1. matching-or-small-transversal extraction;
 2. repeated-support strict-loss and dense-block bounds;
 3. subcritical-allowance decomposition;
 4. first-high-slack sunflower/charge barriers;
-5. fully-decorated escape reduction;
-6. signature-code compression and one-spoke clique forcing;
-7. three-anchor partition theorem for low-excess cores.
+5. zero-signature diversity -> three-anchor core envelope;
+6. collapsed-signature -> bounded sunflower skeleton;
+7. hereditary owner/support packing;
+8. three-anchor K=6 equality reduction.
 
-The next unification target is a parameterized connector-excess theorem that upgrades item 7 from the CORE211 equality case to a low-excess family and, if possible, interfaces with the front-end common-K11 completion problem.
+### Corrected large-support bridge
+
+The old interpretation `fully-decorated maximal owners -> K4,9` has been corrected.  It conflicts with the exact shell identity.
+
+For a fully-decorated common-S family,
+
+`q>=dN+d`.
+
+Hence at q<=38:
+
+- d4: `N<=8`;
+- d9: `N<=3`.
+
+At equality there is exactly one leftover shell vertex and
+
+`d_M(x)+g_x<=q-36<=2`.
+
+More generally, with t leftovers and
+
+`R=q-d(14-d-t)`,
+
+`sum_(x in T)(d_M(x)+g_x)<=2R`.
+
+Thus the fully-decorated large-support branch descends quantitatively toward low-support / one-spoke structure rather than creating a separate K4,9 family. K4,9 remains a non-fully-decorated plateau equality geometry and is already closed.
+
+### Unique remaining backend bridge
+
+The highest-value missing statement remains the forcing-to-master-contract theorem:
+
+> every surviving maximal-pivot shell must either enter the three-anchor branch, enter the boundary one-loss / low-cross support master contract, or descend to one of those through a finite higher-slack equality layer.
+
+Once that bridge is exhaustive, the historical E333--E340 labels cease to require independent structural proofs.
 
 ## Current global obligations
 
 1. E407 Q32: rule out the five common-K11 templates against one 284-edge core;
 2. E408 Q32/Q33;
-3. E335..E340;
+3. backend E335..E340 through forcing-to-master-contract plus the finite K=6 equality windows;
 4. independently replay V12/V8 once archive execution is available.
 
 The full EG617 r=12 theorem remains **OPEN / NOT_CERTIFIED**.
