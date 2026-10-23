@@ -8,38 +8,48 @@ The repository has continuous canonical h13 closure
 
 `E397..E406 = EMPTY`.
 
-E406 is independently closed by `front_end/E406_FULL_CLOSURE.md`.
+### V9/V10 front-end state
 
-### V9 low-Q upgrade
+`front_end/T61_H13_V9_CANONICAL_AUDIT.md` and `front_end/T61_H13_V10_CANONICAL_AUDIT.md` record the reviewed package results under the explicit retained lower-order seed contract.
 
-`front_end/T61_H13_V9_CANONICAL_AUDIT.md` independently replays the uploaded V9 package under its explicit retained lower-order seed contract.
+Closed maximum-charge branches:
 
-New proved relative-to-seed exclusions:
+- E407: `Q=27` impossible;
+- E408: `Q=27` impossible;
+- E408: `Q=28` impossible.
 
-- E407: `Q_max=27` impossible;
-- E408: `Q_max=27` impossible;
-- E408: `Q_max=28` impossible.
+V10 additionally proves:
 
-The exact correction-cycle identity is
+> at a maximizing Q31 pivot, no regular shell neighbour has missing degree3 or10.
 
-`sum(h+kappa)=sum(eta+m)`
+The proof tracks labelled excess and simultaneous row compatibility; it does not use the retracted zero-cycle shortcut and it allows neighbouring q30 views.
 
-around a closed legal walk. It does **not** imply all nonnegative corrections vanish. The old purely algebraic zero-defect inference is `RETRACTED`.
+Thus a hypothetical Q31 maximum shell has regular missing degrees only
 
-The exact remaining front-end maximum-charge branches are
+`{0,1,2,11,12}`.
+
+Coverage remains OPEN. V10 supplies a shell-only necessary-condition witness
+
+`M = K2 join (K2 disjoint_union 9K1)`
+
+with decorations `4,3` on the inner K2. This is not a genuine T61 completion; its 47-core compatibility is the first concrete completion test.
+
+The exact remaining front-end branches are
 
 - E407: `Q in {31,32}`;
 - E408: `Q in {31,32,33}`.
 
-Full E407 and E408 remain OPEN.
+The exact correction-cycle identity remains
+
+`sum(h+kappa)=sum(eta+m)`;
+
+it does not imply individual zero defects.
 
 ## High backend
 
 ### E333 — V5 closure
 
-`backend/E333_V5_CANONICAL_CLOSURE.md` independently replays the uploaded V5 package.
-
-Under the retained legal-backend and V4 five-family forcing contract,
+`backend/E333_V5_CANONICAL_CLOSURE.md` proves, relative to the retained legal-backend/V4 forcing contract,
 
 `E333 = EMPTY`.
 
@@ -47,11 +57,21 @@ Thus the remaining high backend interval is
 
 `E334..E340 OPEN`.
 
+Astra B is assigned E334--E337, beginning with the 212-edge-core extension of the repeated-pair capacity theorem.
+
 ### Assistant-owned right-edge subline — E338..E340
 
 The complete K4,9 top-channel plateau family is empty under its stated lexicographic contract.
 
-The q36 middle-distance ceiling branches are also completely removed:
+`backend/HIGH_RIGHT_EDGE_LOW_DECORATION_FORCING.md` proves the global low-decoration thresholds
+
+- `q36 => G>=3`;
+- `q37 => G>=2`;
+- `q38 => G>=3`.
+
+In particular every q38,G=2 shell is forced to be K4,9 and every decoration placement, including the final cross-side one-unit/one-unit state, is eliminated.
+
+The q36 middle-distance ceiling branches are completely removed by
 
 - `backend/Q36_COMPENSATED_K49_NORMAL_FORM.md`;
 - `backend/Q36_D9_COMPENSATED_CLOSURE.md`;
@@ -63,47 +83,47 @@ Hence q36 has no adjacent regular d4 or d9 exchange.
 
 #### Candidate-coverage reduction
 
-`backend/Q36_CANDIDATE_COVERAGE_CLUSTER_REDUCTION.md` proves that regular shell vertices form target-clique components, a decorated shell vertex can see regular vertices in at most one component, and all low-distance regular vertices lie in one component.
-
-Therefore every remaining q36 shell belongs to one of two regimes:
+`backend/Q36_CANDIDATE_COVERAGE_CLUSTER_REDUCTION.md` proves that every remaining q36 shell belongs to one of two regimes:
 
 1. **low-clique regime:** one low target clique C plus at most three far/high regular shell vertices;
-2. **shell-poor regime:** no low adjacent regular vertices, hence at most two adjacent regular pivots. CORE211 pivot abundance then forces at least five nonadjacent one-spoke legal pivots in the 35-core.
+2. **shell-poor regime:** no low adjacent regular vertices, hence at most two adjacent regular pivots and at least five nonadjacent one-spoke legal pivots in the CORE211 core.
 
-#### f=3 far layer
+#### Low-clique far layers
 
-`backend/Q36_F3_FAR_LAYER_REDUCTION.md` treats the maximal far layer f=3:
+The maximal far layer f=3 is now completely empty.
 
-- far `K3`: EMPTY;
-- far `3K1`: EMPTY;
-- only `K2 union K1` survives.
+The proof chain is
 
-The surviving K2+K1 state has two 11-supports overlapping in10 or11 points, one disjoint 12-support, and all low-clique 3-supports confined to an 11/12-point remainder.
+- `backend/Q36_F3_FAR_LAYER_REDUCTION.md`;
+- `backend/Q36_F3_K21_TERMINAL_STRENGTHENING.md`;
+- `backend/Q36_F3_K21_SUPPORT_CLASS_COLLAPSE.md`;
+- `backend/Q36_F3_FULL_CLOSURE.md`.
 
-`backend/Q36_F3_K21_TERMINAL_STRENGTHENING.md` further proves for every such low-clique triple D:
+The final closure uses the fact that the 11/12-point remainder R has `alpha(H[R])<=2`, hence at least25/30 target edges, while row closure and the total CORE211 excess2 give upper bounds21/26.
 
-- `kappa(D)+m(D)<=1`;
-- D induces at least two target edges;
-- its shell-incidence mass is at least9 or10 depending on the 11-support overlap;
-- every low-clique repivot has q<=35, so no q36 plateau cycle remains in this terminal.
+Therefore the low-clique q36 regime now satisfies
 
-#### shell-poor one-spoke interface
+`f<=2`.
 
-`backend/Q36_ONESPOKE_EXACT_FORMULA.md` proves that for a legal nonadjacent one-spoke pivot v with unique shell neighbour a, 12-neighbour set D and 22-point anti-neighbourhood Z,
+The remaining low-clique work is the analogous `f=0,1,2` reduction.
+
+#### Shell-poor one-spoke interface
+
+`backend/Q36_ONESPOKE_EXACT_FORMULA.md` proves that a nonadjacent one-spoke pivot v with 12-neighbour support D and 22-point anti-neighbourhood Z satisfies
 
 `q_v=m(D)+kappa(D)+g_a+e(D,A\{a})`
 
-and equivalently
+and
 
-`q_v=133-e_H(Z)+g_a+e(D,A\{a})`.
+`q_v=133-e_H(Z)+g_a+e(D,A\{a})`,
 
-Moreover
+with
 
 `110<=e_H(Z)<=122`, `alpha(H[Z])<=2`.
 
-Thus the shell-poor branch contains at least five simultaneous 22-point near-Mantel anti-neighbourhoods. Its remaining task is a joint stability/compatibility theorem for these five structures.
+The shell-poor branch contains at least five simultaneous such near-Mantel anti-neighbourhoods. Its remaining task is a joint stability/compatibility theorem.
 
-No full E338 edge layer is yet claimed closed. The q36 candidate-coverage problem has, however, been reduced from arbitrary shells to one finite dense-triple terminal plus one simultaneous near-Mantel one-spoke stability problem (along with the analogous f=0,1,2 low-clique layers still to be reduced).
+No full E338 edge layer is yet claimed closed.
 
 ## Closed low backend
 
@@ -117,4 +137,4 @@ The mathematical obligations are now:
 
 1. T61 E407 high-Q branches `31,32`;
 2. T61 E408 high-Q branches `31,32,33`;
-3. legal R(4,49) backend `E334..E340`.
+3. legal R(4,49) backend `E334..E340`, with E333 closed and the q36/q38 right-edge sectors sharply reduced as above.
