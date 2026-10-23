@@ -32,29 +32,34 @@ Thus only A=3,4 remain for c=8,n2=1.
 - support multiplicity at most3;
 - every multiplicity-three support is either
   1. an exact one-edge q35 equality terminal, or
-  2. a target-K3 terminal forcing disjoint target-K3 support incidences.
+  2. a target-K3 terminal forcing at least two external owner incidences into disjoint target-K3 supports.
 
-`Q36_F2_FAR_K2_C8_D2_A3_REPEATED_K3_CLOSURE.md` closes terminal (2) by a six-point vertex-cover / CORE211 w-mass contradiction.
+`Q36_F2_FAR_K2_C8_D2_A3_ONEEDGE_FULL_CLOSURE.md` closes terminal (1) by repivoting to a D14-saturated q35 shell. The external supports reduce to pairwise-intersecting pure K2 petal rows, contradicting D14 multiplicity.
 
-`Q36_F2_FAR_K2_C8_D2_A3_ONEEDGE_FULL_CLOSURE.md` closes terminal (1) by repivoting to a D14-saturated q35 shell. The four external supports become pure K2 petal rows; their pairwise-intersection graph violates the D14 multiplicity inequality.
+`Q36_F2_FAR_K2_C8_D2_A3_REPEATED_K3_CLOSURE.md` is `RETRACTED`: its previous proof incorrectly imported a fixed 12-point remainder from the far-2K1 topology. The repeated-K3 terminal is therefore OPEN again.
 
-Therefore:
+The valid repeated-K3 interface is:
 
-> every surviving c=8,n2=1,A=3 support class has multiplicity at most2.
+- D is a target K3 of multiplicity3 and defect<=2;
+- at least two external owner incidences lie in supports disjoint from D;
+- every support disjoint from D is itself a target K3;
+- each such disjoint K3 E satisfies `e_H(D,E)<=2`;
+- the d3-support union U satisfies `alpha(H[U])<=2` because the unique pure d2 block D0 is target-anticomplete to U.
 
-A full closure of the multiplicity<=2 system is not yet claimed.
+No contradiction from these facts alone is currently certified.
 
 ## 4. Additional reusable theorem
 
-`Q36_F2_A1_A4_DISJOINT_REPEATED_K3_RIGIDITY.md` proves, in the separate `2K1,a_F=1,A=4` channels, that a disjoint pair of repeated target K3 supports is forced into an exact K1,3 cross graph and consumes the full CORE211 excess budget. This is not automatically imported into far-K2, but the proof architecture is reusable.
+`Q36_F2_A1_A4_DISJOINT_REPEATED_K3_RIGIDITY.md` applies only to the separate far-2K1,a_F=1,A=4 channels, where the fixed 12-point remainder contract is available. It must not be imported into far-K2 without a new global-capacity proof.
 
 ## 5. Current far-K2 tasks
 
 Highest priority:
 
-1. close `c=8,n2=1,A=3` with support multiplicity<=2;
-2. close `c=8,n2=1,A=4`;
-3. treat the no-d2 c=8 branch;
-4. parameterize downward to c<=7.
+1. close the c=8,n2=1,A=3 repeated-K3 terminal under the correct far-K2 contract;
+2. then close the remaining multiplicity<=2 A=3 support system;
+3. close c=8,n2=1,A=4;
+4. treat the no-d2 c=8 branch;
+5. parameterize downward to c<=7.
 
 The far-K2 topology is independent of the concurrent `2K1,a_F=1` repeated-K3 work.
