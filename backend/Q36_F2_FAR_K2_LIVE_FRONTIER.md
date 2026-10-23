@@ -23,15 +23,15 @@ Still canonical:
 
 ## 2. c=8 exactly one d2 row
 
-Previous aggregate `Q36_F2_FAR_K2_C8_ONE_D2_FULL_CLOSURE.md` is RETRACTED pending corrected-contract replay.
+Previous aggregate `Q36_F2_FAR_K2_C8_ONE_D2_FULL_CLOSURE.md` remains RETRACTED pending corrected-contract replay.
 
 Canonical status:
 
 > `c=8`, exactly one d2 row: OPEN_PENDING_REAUDIT.
 
-Do not cite the old aggregate as an emptiness theorem.
+Do not cite pre-audit D14 closures unless separately rebuilt against `Q36_F2_FAR_K2_D14_CONTRACT_CORRECTION.md`.
 
-## 3. c=8 no-d2 safe shell reduction
+## 3. c=8 no-d2 shell reduction
 
 `Q36_F2_FAR_K2_C8_NO_D2_CLASS_REDUCTION_V2.md` proves under the corrected contract:
 
@@ -40,44 +40,43 @@ Do not cite the old aggregate as an emptiness theorem.
 - if the inactive decorated pair Y is missing (`rho=1`), then `A<=3`;
 - A=0 is EMPTY.
 
-The superseded V1 aggregate is RETRACTED.
+## 4. Corrected low-allowance closures
 
-## 4. c=8 no-d2 A=1
-
-`Q36_F2_FAR_K2_C8_NO_D2_A1_FULL_CLOSURE_V2.md` closes A=1 under the corrected contract.
-
-The corrected proof first reduces A=1 to the unique `rho=1`, `4+4` repeated defect-zero K3 equality terminal, then uses a low-weight-clique/global-weight contradiction:
-
-- the two blocks are anticomplete to each other and to `F union X`;
-- shell alpha forces `a_F=2`, `t_x=0`;
-- outside core vertices with common-S weight <=1 form a target clique, hence at most11;
-- at least18 outside vertices have weight>=2, forcing total weight>=36;
-- exact global common-S weight is35.
-
-Contradiction.
-
-Therefore
+`Q36_F2_FAR_K2_C8_NO_D2_A1_FULL_CLOSURE_V2.md` proves
 
 > no-d2 A=1 is EMPTY.
 
-## 5. c=8 no-d2 A=2
+`Q36_F2_FAR_K2_C8_NO_D2_A2_FULL_CLOSURE_V2.md`, together with the dedicated multiplicity-four equality closure, rebuilds the next layer under the corrected D14/clique contract and proves
 
-The old `Q36_F2_FAR_K2_C8_NO_D2_A2_FULL_CLOSURE.md` is RETRACTED.
+> no-d2 A=2 is EMPTY.
 
-Corrected D14 allows an omitted equality channel when `rho=1`: a repeated target-K3 support may have multiplicity4.
+The V2 proof explicitly avoids the false F-based K11 base and any target-K4 prohibition.
 
-Canonical status:
+Thus the corrected no-d2 c=8 frontier is now
 
-> no-d2 A=2: OPEN_PENDING_REAUDIT.
+> `A in {3,4}` only.
 
-## 6. c=8 no-d2 A=3/A=4
+Since `A+rho<=4`, the A=4 layer automatically has `rho=0`.
 
-Both remain OPEN under the corrected contract.
+## 5. New corrected multi-support tool
 
-## 7. Current far-K2 priority
+`Q36_F2_FAR_K2_C8_NO_D2_MULTISUPPORT_D17_CAPACITY.md` derives the genuine hereditary D17 interface from the correct 11-point base `B={p} union C union Y`.
 
-1. rebuild and close no-d2 A=2, especially the `rho=1`, multiplicity4 equality channel;
-2. then A=3 and A=4;
+For disjoint three-point support classes D,E with owner multiplicities r,s,
+
+`3(r+s)+e_H(D)+e_H(E)+e_H(D,E)+e_F(Y,D union E)<=26+rho`.
+
+In particular two disjoint target-K3 classes satisfy
+
+- `r+s<=6` for rho=0;
+- `r+s<=7` for rho=1.
+
+This is intended to replace invalid K11-based owner-capacity shortcuts in the A=3/A=4 analysis.
+
+## 6. Current far-K2 priority
+
+1. close no-d2 A=3 under corrected D14+D17;
+2. close no-d2 A=4 (necessarily rho=0);
 3. re-audit the c=8 one-d2 branch under corrected D14;
 4. only then parameterize to lower c.
 
