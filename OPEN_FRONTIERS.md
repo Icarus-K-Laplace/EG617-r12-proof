@@ -6,7 +6,12 @@ The continuous closed interval is
 
 `E397..E406 = EMPTY`.
 
-The uploaded V9 package has been independently replayed under its explicit retained lower-order seed contract; see `front_end/T61_H13_V9_CANONICAL_AUDIT.md`.
+The reviewed V9/V10 assets are recorded in
+
+- `front_end/T61_H13_V9_CANONICAL_AUDIT.md`;
+- `front_end/T61_H13_V10_CANONICAL_AUDIT.md`.
+
+All statements remain relative to their explicit retained lower-order seed contract.
 
 ### E407
 
@@ -14,16 +19,20 @@ Closed maximum-charge branch:
 
 - `Q=27`: impossible.
 
+At Q31, V10 proves that no maximizing pivot has a regular shell neighbour of missing degree3 or10. Therefore every regular shell vertex of a hypothetical Q31 maximum has missing degree only
+
+`{0,1,2,11,12}`.
+
+Coverage is still OPEN: the shell-only witness
+
+`M = K2 join (K2 disjoint_union 9K1)`
+
+with decorations4,3 satisfies the current shell necessary conditions but has only regular degrees2,12. It is not a certified T61 completion. Its 47-core compatibility is the first concrete completion test.
+
 Remaining exact branches:
 
-- `Q=31`;
-- `Q=32`.
-
-The first unresolved q31 distance-three plateau states are the five correction patterns
-
-`(1,0,0,0,1)`, `(1,0,0,1,0)`, `(0,1,0,0,1)`, `(0,1,0,1,0)`, `(0,0,1,0,0)`
-
-in `(h,kappa,b,m,eta)` notation. These are necessary parameter states, not realized graphs.
+- `Q=31` candidate coverage/completion;
+- `Q=32` compatibility/coverage.
 
 ### E408
 
@@ -34,7 +43,7 @@ Closed maximum-charge branches:
 
 Remaining exact branches:
 
-- `Q=31`;
+- `Q=31` candidate coverage/completion;
 - `Q=32`;
 - `Q=33`.
 
@@ -44,7 +53,7 @@ The exact closed-walk identity is
 
 `sum(h+kappa)=sum(eta+m)`.
 
-It is a signed balance and does not force every correction term to vanish. Any high-Q closure must add a genuine incidence/compatibility theorem or an independent increasing potential.
+It does not force every correction term to vanish. The old zero-cycle shortcut is RETRACTED.
 
 ## High backend
 
@@ -52,44 +61,53 @@ It is a signed balance and does not force every correction term to vanish. Any h
 
 `E333 = EMPTY` under the retained legal-backend and V4 five-family forcing contract.
 
-The independent V5 replay is recorded in `backend/E333_V5_CANONICAL_CLOSURE.md`.
+### E334..E337 — Astra B
 
-### E334..E340
+These remain OPEN. The active task is the parameterized V5 repeated-pair capacity extension through larger core excess, starting with the 212-edge-core residual in E334.
 
-These are the remaining open legal `R(4,49)` layers.
-
-Astra B is assigned E334--E337: parameterize the V5 repeated-pair capacity theorem through larger core excess, starting with the 212-edge core residual in E334.
-
-### Assistant right edge — E338..E340
+### E338..E340 — assistant right edge
 
 The q36--q38 atomic-defect program remains active.
 
-Closed right-edge families now include:
+New global low-decoration forcing in `backend/HIGH_RIGHT_EDGE_LOW_DECORATION_FORCING.md` proves
 
-1. the entire top-channel K4,9 plateau family with four-side decoration `G in {0,1,2}`;
-2. every q36 zero-defect regular d9 exchange;
-3. every q36 zero-defect regular d4 exchange.
+- `q36 => G>=3`;
+- `q37 => G>=2`;
+- `q38 => G>=3`.
 
-For q36, the d4/d9 proof chain is:
+Every q38,G=2 shell is forced to be K4,9 and every decoration placement, including the cross-side one-unit/one-unit state, is eliminated.
 
-- `backend/Q36_COMPENSATED_K49_NORMAL_FORM.md`;
-- `backend/Q36_D9_COMPENSATED_CLOSURE.md`;
-- `backend/Q36_D4_COMPENSATED_DYNAMICS.md`;
-- `backend/Q36_D4_SUPPORT_CLASS_REDUCTION.md`;
-- `backend/Q36_D4_COMPENSATED_CLOSURE.md`.
-
-The d4 support-class reduction was audited: an invalid local compression proof of its finite threshold lemma was removed and replaced by an explicit exact integer extremal table.
-
-Hence any remaining q36 ceiling survivor has no adjacent regular missing degree4 or9. All adjacent regular positive distances lie in
+For q36, every regular d4/d9 ceiling exchange is already empty via the compensated-K4,9 chain. Hence all adjacent regular positive distances of a remaining q36 survivor lie in
 
 `{1,2,3,10,11,12}`.
 
-The active q36 task is now **candidate coverage**:
+`backend/Q36_CANDIDATE_COVERAGE_CLUSTER_REDUCTION.md` splits q36 coverage into:
 
-- prove an arbitrary top-channel q36 maximal shell must contain a regular d4/d9 exchange, contradicting the closures; or
-- classify and eliminate the exceptional all-low/high-distance shell above.
+1. **low-clique regime:** one low target clique plus at most three far/high regular vertices;
+2. **shell-poor regime:** at most two adjacent regular pivots, forcing at least five nonadjacent one-spoke legal pivots in CORE211.
 
-The top-channel pivot-abundance theorem supplies at least7 other legal pivots at q36. If the shell has too few adjacent regular pivots, the missing legal pivots occur as nonadjacent degree-13 one-spoke vertices in the CORE211 core.
+The entire maximal far layer `f=3` is now CLOSED. The proof chain is
+
+- `backend/Q36_F3_FAR_LAYER_REDUCTION.md`;
+- `backend/Q36_F3_K21_TERMINAL_STRENGTHENING.md`;
+- `backend/Q36_F3_K21_SUPPORT_CLASS_COLLAPSE.md`;
+- `backend/Q36_F3_FULL_CLOSURE.md`.
+
+Thus the low-clique q36 branch now has
+
+`f<=2`.
+
+The remaining low-clique task is to reduce/eliminate `f=0,1,2`.
+
+The shell-poor branch is governed by `backend/Q36_ONESPOKE_EXACT_FORMULA.md`: at least five one-spoke pivots carry 22-point anti-neighbourhoods Z with
+
+`110<=e_H(Z)<=122`, `alpha(H[Z])<=2`,
+
+and exact charge
+
+`q_v=133-e_H(Z)+g_a+e(D,A\{a})`.
+
+A simultaneous near-Mantel stability/compatibility theorem remains OPEN.
 
 No full E338--E340 edge layer is yet closed.
 
