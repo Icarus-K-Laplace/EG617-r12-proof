@@ -43,46 +43,67 @@ Under the retained legal-backend and V4 five-family forcing contract,
 
 `E333 = EMPTY`.
 
-The new joint-core theorem is
-
-`W<=28 => alpha(H[union U_i])<=2`
-
-for repeated common-pair supports in one 35-core. It excludes D2-A/C/D and R9 by capacity and D2-B by the exact residual edge ledger.
-
-The V5 verifier was replayed successfully and every manifest SHA-256 matched. Upstream V4/canonical certification remains an explicit retained dependency, not newly recertified by V5.
-
 Thus the remaining high backend interval is
 
 `E334..E340 OPEN`.
 
 ### Assistant-owned right-edge subline — E338..E340
 
-Independent analytic assets include
+The complete K4,9 top-channel plateau family is empty under its stated lexicographic contract.
 
-- `backend/HIGH_RIGHT_EDGE_ATOMIC_DEFECT_THEOREM.md`;
-- `backend/HIGH_TOP_CORE211_PIVOT_ABUNDANCE.md`;
-- the K4,9 reduction chain;
-- `backend/K49_G2_SPLIT_FULL_CLOSURE.md`.
+The q36 middle-distance ceiling branches are also completely removed:
 
-The complete K4,9 top-channel plateau family is now empty under its stated lexicographic contract.
+- `backend/Q36_COMPENSATED_K49_NORMAL_FORM.md`;
+- `backend/Q36_D9_COMPENSATED_CLOSURE.md`;
+- `backend/Q36_D4_COMPENSATED_DYNAMICS.md`;
+- `backend/Q36_D4_SUPPORT_CLASS_REDUCTION.md`;
+- `backend/Q36_D4_COMPENSATED_CLOSURE.md`.
 
-The q36 ceiling channel has also been sharpened substantially:
+Hence q36 has no adjacent regular d4 or d9 exchange.
 
-- `backend/Q36_COMPENSATED_K49_NORMAL_FORM.md` proves every regular d4/d9 zero-defect exchange is a compensated K4,9 shell: missing cross-edges deleted from K4,9 are exactly compensated row-by-row by decoration;
-- `backend/Q36_D9_COMPENSATED_CLOSURE.md` eliminates the entire q36 d9 branch;
-- `backend/Q36_D4_COMPENSATED_DYNAMICS.md` reduces the d4 branch to common K4 support dynamics;
-- `backend/Q36_D4_SUPPORT_CLASS_REDUCTION.md` proves all zero columns must share one K4 support (its threshold lemma has been independently repaired with an explicit exact finite count);
-- `backend/Q36_D4_COMPENSATED_CLOSURE.md` gives the exact active-column identity `rho=9c`, forcing every active column to have cross-degree4; D14 then contradicts the support multiplicity cap.
+#### Candidate-coverage reduction
 
-Therefore
+`backend/Q36_CANDIDATE_COVERAGE_CLUSTER_REDUCTION.md` proves that regular shell vertices form target-clique components, a decorated shell vertex can see regular vertices in at most one component, and all low-distance regular vertices lie in one component.
 
-`q36: regular d=4 and d=9 ceiling exchanges are both EMPTY`.
+Therefore every remaining q36 shell belongs to one of two regimes:
 
-Any remaining q36 ceiling survivor must avoid the middle-distance exchanges entirely: every adjacent regular positive distance lies in
+1. **low-clique regime:** one low target clique C plus at most three far/high regular shell vertices;
+2. **shell-poor regime:** no low adjacent regular vertices, hence at most two adjacent regular pivots. CORE211 pivot abundance then forces at least five nonadjacent one-spoke legal pivots in the 35-core.
 
-`{1,2,3,10,11,12}`.
+#### f=3 far layer
 
-This is not yet a full E338 closure. The current right-edge target is the candidate-coverage theorem: prove such an exceptional q36 shell cannot exist, or force a d4/d9 exchange / strict q improvement. CORE211 pivot abundance remains available: q36 top-channel pivots have at least7 other legal pivots, with shortage of adjacent regular pivots converted into nonadjacent one-spoke core pivots.
+`backend/Q36_F3_FAR_LAYER_REDUCTION.md` treats the maximal far layer f=3:
+
+- far `K3`: EMPTY;
+- far `3K1`: EMPTY;
+- only `K2 union K1` survives.
+
+The surviving K2+K1 state has two 11-supports overlapping in10 or11 points, one disjoint 12-support, and all low-clique 3-supports confined to an 11/12-point remainder.
+
+`backend/Q36_F3_K21_TERMINAL_STRENGTHENING.md` further proves for every such low-clique triple D:
+
+- `kappa(D)+m(D)<=1`;
+- D induces at least two target edges;
+- its shell-incidence mass is at least9 or10 depending on the 11-support overlap;
+- every low-clique repivot has q<=35, so no q36 plateau cycle remains in this terminal.
+
+#### shell-poor one-spoke interface
+
+`backend/Q36_ONESPOKE_EXACT_FORMULA.md` proves that for a legal nonadjacent one-spoke pivot v with unique shell neighbour a, 12-neighbour set D and 22-point anti-neighbourhood Z,
+
+`q_v=m(D)+kappa(D)+g_a+e(D,A\{a})`
+
+and equivalently
+
+`q_v=133-e_H(Z)+g_a+e(D,A\{a})`.
+
+Moreover
+
+`110<=e_H(Z)<=122`, `alpha(H[Z])<=2`.
+
+Thus the shell-poor branch contains at least five simultaneous 22-point near-Mantel anti-neighbourhoods. Its remaining task is a joint stability/compatibility theorem for these five structures.
+
+No full E338 edge layer is yet claimed closed. The q36 candidate-coverage problem has, however, been reduced from arbitrary shells to one finite dense-triple terminal plus one simultaneous near-Mantel one-spoke stability problem (along with the analogous f=0,1,2 low-clique layers still to be reduced).
 
 ## Closed low backend
 
@@ -96,4 +117,4 @@ The mathematical obligations are now:
 
 1. T61 E407 high-Q branches `31,32`;
 2. T61 E408 high-Q branches `31,32,33`;
-3. legal R(4,49) backend `E334..E340`, with K4,9 removed and q36 d4/d9 ceiling exchanges eliminated on the assistant-owned right-edge line.
+3. legal R(4,49) backend `E334..E340`.
