@@ -6,12 +6,17 @@ This is the synchronized human-readable live state. It contains research results
 
 Canonical closure remains `E397..E406 = EMPTY`.
 
-Reviewed V9/V10 state under retained lower-order seeds:
+Reviewed V9/V10 state under retained lower-order seeds is superseded at source level by delivered V11:
 
-- E407: Q27 CLOSED; Q31/Q32 OPEN;
-- E408: Q27/Q28 CLOSED; Q31/Q32/Q33 OPEN;
-- maximizing Q31 has no regular d3/d10 neighbours;
-- Q31 candidate coverage/completion remains the bottleneck.
+- V11 package is present, but independent replay in this assistant session is still pending because the local archive executor failed;
+- source-reported V11 result: E407 maximum `Q=31` is excluded;
+- source-reported V11 result: E408 maximum `Q=31` is excluded;
+- retained lower-order seeds remain CONDITIONAL;
+- therefore the source-level frontier is:
+  - E407: only `Q=32` OPEN;
+  - E408: `Q=32,33` OPEN.
+
+See `front_end/T61_H13_V11_SOURCE_AUDIT.md` for the evidence boundary.
 
 ## High backend
 
@@ -21,7 +26,18 @@ Reviewed V9/V10 state under retained lower-order seeds:
 
 ### Astra-B E334..E337
 
-V6 is independently replayed. Repeated-pair `r=1`, allowance<=2 and `K in {2,4,6}` implies multiplicity<=6, and the CORE212 matching residual is empty through core213. E334..E337 remain OPEN on far/d3, double-hub, allowance3 and higher-K mechanisms.
+V6 was independently replayed earlier. Repeated-pair `r=1`, allowance<=2 and `K in {2,4,6}` implies multiplicity<=6, and the CORE212 matching residual is empty through core213.
+
+Delivered V7 is present but independent replay in this assistant session is pending because the local archive executor failed. Source-reported V7 gives:
+
+- E334 maximal pivot is forced to `q=32`, `e(H)=211`;
+- q30/core213 and q31/core212 channels are excluded;
+- allowance<=1 and `W<=30` imply `m<=floor((2r+5)/3)`;
+- at K=8, two K11s overlapping in 10 vertices cannot coexist;
+- E334 remains OPEN on the d3 eleven-view system, `r=2/allowance=2`, and `r=1/allowance=3`;
+- E335..E337 remain OPEN.
+
+See `backend/HIGH_LAYER_BACKEND_V7_SOURCE_AUDIT.md`.
 
 ### Assistant-owned E338..E340
 
@@ -31,26 +47,29 @@ q36 coverage splits into low-clique and shell-poor regimes. f=3 low-clique is CL
 
 #### q36 f=2, far 2K1, a_F=0 — CLOSED
 
-`Q36_F2_2K1_A0_STAR_TERMINALS_FULL_CLOSURE.md` closes the last missing-star equality terminals. Together with the prior c>=3 and low-c closures:
-
-> the entire `2K1,a_F=0` branch is EMPTY.
+`Q36_F2_2K1_A0_STAR_TERMINALS_FULL_CLOSURE.md` closes the last missing-star equality terminals. The entire `2K1,a_F=0` branch is EMPTY.
 
 #### q36 f=2, far 2K1, a_F=1
 
-`Q36_F2_2K1_A1_HIGH_C_NORMAL_FORM.md` gives `A+G_Y=6-e_M(Y)`, `A>=2`, and the K11-minus-defects D14 incidence cap.
-
 Current exact status:
 
-- c=7: CLOSED. A=2 and A=3 are both EMPTY; the final A=3 simple seven-triple system is eliminated by `Q36_F2_2K1_A1_C7_A3_ALL_SINGLETON_FULL_CLOSURE.md`.
-- c=8: A=2 and A=3 are EMPTY. Only A=4 remains OPEN. Multiplicity4 and nonclique multiplicity3 are eliminated; any multiplicity-three survivor is a target K3 with `O_D+e(Y,D)<=2`, forcing at least three external owner incidences into disjoint supports.
-- c=9: A=2 and A=3 are EMPTY. A=4 and A=5 remain OPEN. At A=4, multiplicity4 and nonclique multiplicity3 are eliminated; any multiplicity-three survivor is a target K3 with `O_D+e(y,D)<=2`, forcing at least four external owner incidences into disjoint supports.
-- c=10: exact A=6 remains OPEN.
-
-Thus the active `2K1,a_F=1` difficulty is now the first genuine slack-three repeated-K3/disjoint-support compatibility geometry.
+- c=7: CLOSED;
+- c=8: A=2 and A=3 CLOSED; A=4 OPEN;
+- c=9: A=2 and A=3 CLOSED; A=4,A=5 OPEN;
+- c=10: exact A=6 OPEN.
 
 #### q36 f=2, far target K2
 
-At most3 d2 rows exist, with distinct disjoint pure K2 supports. d3 rows use at most two decorated missing classes; no-d2/two-class total allowance is at most1. This topology remains OPEN.
+Global d2 reduction now gives, for c>=3, at most one d2 row. In c=8 with one d2 row:
+
+- all seven d3 owners form one missing-set class;
+- A=2 is CLOSED;
+- A=3 multiplicity-four and multiplicity-three one-edge terminals are CLOSED;
+- the entire multiplicity-three target-K3 sector is now CLOSED by `Q36_F2_FAR_K2_C8_D2_A3_REPEATED_K3_GLOBAL_MASS_CLOSURE.md`, using the exact global mass `sum_H(kappa+e(.,S))=37` versus a forced lower bound 54;
+- therefore c=8, one-d2, A=3 now has support multiplicity at most2;
+- A=4 remains OPEN.
+
+Two intermediate far-K2 files that used an invalid K4-freeness assumption are explicitly marked RETRACTED; the global-mass closure is independent of that mistake.
 
 #### shell-poor
 
@@ -62,7 +81,7 @@ Closed backend interval: `E329..E333`.
 
 Remaining obligations:
 
-- T61 E407/E408 high-Q coverage;
-- backend E334..E340, with q36 right-edge sectors sharply reduced.
+- T61 E407 Q32 and E408 Q32/Q33 at source-reported V11 level;
+- backend E334..E340, with E334 source-reported V7 reduced to the unique q32/core211 channel and q36 right-edge sectors sharply reduced.
 
 The full EG617 r=12 theorem remains **OPEN / NOT_CERTIFIED**.
