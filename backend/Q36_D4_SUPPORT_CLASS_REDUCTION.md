@@ -83,7 +83,7 @@ Thus
 
 ## 3. A threshold lemma for two classes
 
-We use the following elementary extremal fact.
+We use the following elementary finite extremal fact.
 
 ### Lemma
 
@@ -97,21 +97,55 @@ Then at least153 unordered pairs `{i,j}` satisfy
 
 ### Proof
 
-Equivalently, at most198 pairs satisfy `x_i+x_j>=4`.
+Let `n_j=#{i:x_i=j}`. Then
 
-For fixed total weight, shifting one unit from a smaller positive coordinate to a larger coordinate below4 cannot decrease the number of pairs with sum at least4: the larger coordinate has a superset of the threshold-neighbour set of the smaller coordinate. Repeating this compression leaves all but at most one/two residual units concentrated at weight4.
+`n_0+n_1+n_2+n_3+n_4=27`,
 
-With total at most38, the extremal compressed configurations have nine 4's and residual weight at most2 among the other18 vertices. They create at most
+`n_1+2n_2+3n_3+4n_4<=38`.
 
-`C(9,2)+9*18=36+162=198`
+Let P be the number of pairs with sum at least4. For a fixed value `h=n_4`, all pairs meeting a 4 contribute
 
-pairs of sum at least4.
+`C(h,2)+h(27-h)`.
+
+Among the remaining vertices, the only additional pairs with sum at least4 are
+
+- 1--3;
+- 2--2;
+- 2--3;
+- 3--3.
+
+Hence
+
+`P=C(h,2)+h(27-h)+n_1 n_3+C(n_2,2)+n_2 n_3+C(n_3,2)`.      (8)
+
+For each `h=0,...,9`, maximize the last four terms subject to
+
+`n_1+2n_2+3n_3<=38-4h`
+
+and `n_0=27-h-n_1-n_2-n_3>=0`. This is a finite three-variable integer check. The exact maxima are:
+
+| h=n4 | maximizing `(n0,n1,n2,n3,n4)` | max P |
+|---:|---|---:|
+|0|`(8,0,19,0,0)`|171|
+|1|`(9,0,17,0,1)`|162|
+|2|`(10,0,15,0,2)`|156|
+|3|`(11,0,13,0,3)`|153|
+|4|`(12,0,11,0,4)`|153|
+|5|`(13,0,9,0,5)`|156|
+|6|`(14,0,7,0,6)`|162|
+|7|`(15,0,5,0,7)`|171|
+|8|`(15,3,0,1,8)`|183|
+|9|`(16,2,0,0,9)`|198|
+
+Thus globally
+
+`P<=198`.
 
 Since `C(27,2)=351`, at least
 
 `351-198=153`
 
-pairs satisfy (7).
+pairs have sum at most3. This proves the lemma.
 
 ## 4. Two support classes are impossible
 
@@ -124,7 +158,7 @@ for v in L. Now `|L|=27`.
 
 By (2),
 
-`sum_L a_v=sum_L b_v=36`.                                  (8)
+`sum_L a_v=sum_L b_v=36`.                                  (9)
 
 By row closure (6),
 
@@ -136,7 +170,7 @@ Put
 
 Then `0<=x_v<=4` and, by (5),
 
-`sum_L x_v<=38`.                                           (9)
+`sum_L x_v<=38`.                                           (10)
 
 Apply the threshold lemma. There are at least153 unordered pairs `{v,w}` in L with
 
@@ -212,3 +246,7 @@ this yields:
 - m=1: all eight active supports meet D, so `G'>=8`.
 
 These four channels are the new exact q36 d4 frontier.
+
+## Audit note
+
+An earlier draft attempted to justify the threshold lemma by a local weight-compression argument. That local monotonicity claim is not valid in general and has been removed. The lemma above is supported instead by the explicit exact ten-row integer maximization table.
