@@ -2,11 +2,9 @@
 
 ## Front-end — T61 h13
 
-The continuous closed interval is
+The continuous closed interval is `E397..E406 = EMPTY`.
 
-`E397..E406 = EMPTY`.
-
-The reviewed V9/V10 assets remain relative to their explicit retained lower-order seed contract.
+Reviewed V9/V10 results remain relative to their explicit retained lower-order seed contract.
 
 ### E407
 
@@ -14,7 +12,7 @@ The reviewed V9/V10 assets remain relative to their explicit retained lower-orde
 - `Q=31`: OPEN candidate coverage/completion;
 - `Q=32`: OPEN.
 
-At Q31 no maximizing pivot has a regular d3 or d10 neighbour, so hypothetical Q31 regular missing degrees lie in `{0,1,2,11,12}`.
+At Q31 no maximizing pivot has a regular d3 or d10 neighbour; hypothetical regular missing degrees lie in `{0,1,2,11,12}`.
 
 ### E408
 
@@ -31,7 +29,7 @@ The exact correction-cycle identity is `sum(h+kappa)=sum(eta+m)`; it does not im
 
 ### E334..E337 — Astra B line
 
-These remain OPEN. V6 proves the repeated-pair capacity through core213 (`K<=6`) and removes the former CORE212 matching residual. Remaining work is far/d3 forcing, double-hub `r>=2`, allowance3, and the higher-`K` concentration / overlap-10 K11 equality mechanisms.
+These remain OPEN. V6 proves repeated-pair capacity through core213 (`K<=6`) and removes the former CORE212 matching residual. Remaining work is far/d3 forcing, double-hub `r>=2`, allowance3, and the higher-`K` concentration / overlap-10 K11 equality mechanisms.
 
 ### E338..E340 — assistant right edge
 
@@ -44,57 +42,57 @@ Global right-edge facts:
 - q36 regular d4/d9 ceiling exchanges are empty;
 - the complete K4,9 top-channel plateau family is empty.
 
-For q36, candidate coverage splits into a low-clique regime and a shell-poor regime. The f=3 low-clique layer is CLOSED, so `f<=2`.
+For q36, candidate coverage splits into low-clique and shell-poor regimes. The f=3 low-clique layer is CLOSED, so `f<=2`.
 
 #### q36 f=2 — far 2K1, a_F=0
 
-This formerly large branch is now reduced to exactly three explicit equality terminals.
+This formerly large branch is reduced to exactly three explicit equality terminals. Every state with `c>=3` is EMPTY, and c=2 with distinct d2 supports is EMPTY.
 
-All states with `c>=3` are EMPTY:
+Remaining states:
 
-- c=7,8,9,10 all-d3/single-class are closed;
-- c=7,8,9,10 mixed d2/d3 are closed;
-- c=5,6 admit no d3 rows and all-d2 is impossible;
-- c=3,4 pure-d2 states are closed by the far-pair independent5 argument.
+1. `c=2` repeated support: `M[X]=K1,4 + 4K1`, all X decorations1, one shared pure K2 support D, both D endpoints adjacent exactly to the star centre, q35 repivot D14-saturated with `G'=13`.
+2. `c=1, nu=2`: `M[X]=K1,2 + 7K1`, both support endpoints adjacent exactly to the centre.
+3. `c=1, nu=3`: `M[X]=K1,3 + 6K1`, both endpoints adjacent to the centre and at most one extra D--X target edge.
 
-The c=2 distinct-support branch is also EMPTY.
+#### q36 f=2 — far 2K1, a_F=1
 
-Only these remain:
+`backend/Q36_F2_2K1_A1_HIGH_C_NORMAL_FORM.md` proves, for the unique active decorated vertex x0 and inactive set Y,
 
-1. **c=2 repeated support:**
-   - `|X|=9`;
-   - `M[X]=K1,4 disjoint_union 4K1`;
-   - `nu=4`, `G=9`;
-   - all X decorations equal1;
-   - the two low owners share one pure K2 support D;
-   - both D-endpoints are target-adjacent exactly to the star centre;
-   - the q35 repivot saturates D14 with `G'=13`.
+`A+G_Y=6-e_M(Y)`, `A>=2`,
 
-2. **c=1, nu=2:**
-   - `M[X]=K1,2 disjoint_union 7K1`;
-   - both support endpoints are adjacent exactly to the star centre.
+and the K11-minus-defects D14 cap
 
-3. **c=1, nu=3:**
-   - `M[X]=K1,3 disjoint_union 6K1`;
-   - both support endpoints are adjacent to the star centre;
-   - at most one additional D--X target edge exists.
+`lambda(T)+e(Y,T)+e_H(T)<=14+e_M(Y)`.
 
-Proof assets:
+For c=7, A is2 or3. `Q36_F2_2K1_A1_C7_A2_FULL_CLOSURE.md` closes A=2.
 
-- `backend/Q36_F2_2K1_A0_C7_MIXED_FULL_CLOSURE.md`;
-- `backend/Q36_F2_2K1_A0_C8_MIXED_FULL_CLOSURE.md`;
-- `backend/Q36_F2_2K1_A0_C9_MIXED_FULL_CLOSURE.md`;
-- `backend/Q36_F2_2K1_A0_LOW_C_D3_ELIMINATION.md`;
-- `backend/Q36_F2_2K1_A0_C3_C4_FULL_CLOSURE.md`;
-- `backend/Q36_F2_2K1_A0_C2_DISTINCT_FULL_CLOSURE.md`;
-- `backend/Q36_F2_2K1_A0_C2_REPEATED_STAR_REDUCTION.md`;
-- `backend/Q36_F2_2K1_A0_C1_STAR_REDUCTION.md`.
+Thus c=7 has the exact remaining state
 
-#### q36 f=2 — other branches
+- `A=3`;
+- `Y=K3`, decorations `(1,1,1)`;
+- `{p} union C union Y=K11`;
+- seven common-S 3-support rows in a 12-point alpha-two remainder.
 
-For far `2K1,a_F=1`, c=4,5,6 are EMPTY and the remaining branch starts at c>=7.
+The allowance-three support system has now been sharply reduced:
 
-For far target K2:
+- multiplicity4 is impossible;
+- partition `3+3+1` is EMPTY;
+- partition `3+2+2` is EMPTY;
+- partition `3+2+1+1` is EMPTY;
+- partition `3+1+1+1+1` is EMPTY.
+
+Therefore every surviving c=7,A=3 support class has multiplicity at most2. The remaining owner partitions are
+
+- `2+2+2+1`;
+- `2+2+1+1+1`;
+- `2+1+1+1+1+1`;
+- seven singleton supports.
+
+If a multiplicity-three one-edge support occurs in any historical intermediate case, its repivot is now known to generate the exact q35 D14-equality shell with `G'=13`, `z'=22`, a target K10 base and regular missing degrees `3,0,0,2,2,2,2`.
+
+For c=8,9,10 the high-c normal form gives finite allowance ranges; c=10 has exact `A=6`.
+
+#### q36 f=2 — far target K2
 
 - at most3 d2 rows, with distinct disjoint pure K2 supports;
 - d3 rows use at most two decorated missing-set classes;
