@@ -2,52 +2,87 @@
 
 ## Front-end — T61 h13
 
-The active front-end window is exactly
+The continuous closed interval is
 
-`T61: E407,E408, delta=13`.
+`E397..E406 = EMPTY`.
 
-The repository now has independent canonical proof bodies closing the continuous interval
+The uploaded V9 package has been independently replayed under its explicit retained lower-order seed contract; see `front_end/T61_H13_V9_CANONICAL_AUDIT.md`.
 
-`E397..E406`.
+### E407
 
-New replayed assets that remove the former V6/V7 source-only status are:
+Closed maximum-charge branch:
 
-- `front_end/E401_E404_CANONICAL_CLOSURE.md`;
-- `front_end/E405_FULL_CLOSURE_CANONICAL.md`;
-- `front_end/Q30_HEREDITARY_PROMOTION_CANONICAL.md`;
-- `front_end/E406_FULL_CLOSURE.md`.
+- `Q=27`: impossible.
 
-### E407--E408 — Astra-A line
+Remaining exact branches:
 
-V8 leaves:
+- `Q=31`;
+- `Q=32`.
 
-- `E407: Q_max=27`;
-- `E408: Q_max in {27,28}`;
-- global compatibility/cycles of nonzero correction terms.
+The first unresolved q31 distance-three plateau states are the five correction patterns
 
-The source-reported V8 exchange theorem is useful structural input but does not close either layer.
+`(1,0,0,0,1)`, `(1,0,0,1,0)`, `(0,1,0,0,1)`, `(0,1,0,1,0)`, `(0,0,1,0,0)`
 
-## High backend — E333..E340
+in `(h,kappa,b,m,eta)` notation. These are necessary parameter states, not realized graphs.
 
-This is the only open legal `R(4,49)` backend interval.
+### E408
 
-Line-B V4 reports necessary survivor families
+Closed maximum-charge branches:
 
-`D2-A, D2-B, D2-C, D2-D, R9`
+- `Q=27`: impossible;
+- `Q=28`: impossible.
 
-with common-missing-pair repetition lower bounds
+Remaining exact branches:
 
-`8,8,5,7,9`.
+- `Q=31`;
+- `Q=32`;
+- `Q=33`.
 
-These are necessary shell rows, not realized graphs. Astra B is assigned repeated-pair/core-support realizability, starting with E333.
+### Correction-cycle warning
 
-## Closed low backend
+The exact closed-walk identity is
 
-`E329,E330,E331,E332` are empty; E332 is frozen.
+`sum(h+kappa)=sum(eta+m)`.
 
-## Current global open obligations
+It is a signed balance and does not force every correction term to vanish. Any high-Q closure must add a genuine incidence/compatibility theorem or an independent increasing potential.
 
-1. close T61 `E407,E408`;
-2. eliminate legal `R(4,49)` layers `E333..E340`.
+## High backend
+
+### E333
+
+`E333 = EMPTY` under the retained legal-backend and V4 five-family forcing contract.
+
+The independent V5 replay is recorded in `backend/E333_V5_CANONICAL_CLOSURE.md`.
+
+The new repeated-pair core-capacity theorem excludes all five necessary V4 families. Upstream V4/canonical certification remains a stated retained dependency.
+
+### E334..E340
+
+These are the remaining open legal `R(4,49)` layers.
+
+The V5 capacity theorem is reusable but does not itself force the E334/E335 maxima into the E333 five-family reduction. Actual core excess and row allowance must be checked at each pivot.
+
+### Right-edge E338..E340
+
+The q36--q38 atomic-defect program and K4,9 plateau reductions remain active. The final K4,9 split q38 residual has been compressed to:
+
+- two anticomplete pure K9 supports `D1,D2`;
+- a 17-point remainder `L` with exactly67 edges;
+- `e(D1,L)=e(D2,L)=36`;
+- two distinct disjoint Y-supports of size4;
+- multiplicity partition only `2+7`, `3+6`, or `4+5`;
+- two decorated size10 rows in L with overlap at least5.
+
+No E338--E340 layer is declared closed by this reduction.
+
+## Closed backend interval
+
+`E329,E330,E331,E332,E333` are empty under their stated proof contracts.
+
+## Current global obligations
+
+1. T61 E407: close Q31/Q32;
+2. T61 E408: close Q31/Q32/Q33;
+3. eliminate legal `R(4,49)` layers E334..E340.
 
 The full EG617 r=12 theorem remains **OPEN / NOT_CERTIFIED**.
