@@ -2,24 +2,31 @@
 
 ## Front-end — T61 h13
 
-The continuous closed interval is `E397..E406 = EMPTY`.
+The continuous closed interval remains `E397..E406 = EMPTY` under the stated contracts.
 
-Reviewed V9/V10 results remain relative to their explicit retained lower-order seed contract.
+Delivered V11/V12 are source-reported relative to retained lower-order seeds; V12 package replay is still pending in this assistant session because the archive executor is failing.
 
 ### E407
 
 - `Q=27`: CLOSED;
-- `Q=31`: OPEN candidate coverage/completion;
+- `Q=31`: source-reported CONDITIONAL-CLOSED by V11;
 - `Q=32`: OPEN.
 
-At Q31 no maximizing pivot has a regular d3 or d10 neighbour; hypothetical regular missing degrees lie in `{0,1,2,11,12}`.
+V12 source-reports that every maximum-Q32 shell is reduced to five `rho=0` templates sharing a common regular `K11`. The first unresolved bridge is global completion compatibility:
+
+> can any of the five templates coexist with the same 284-edge core?
+
+No actual completion is currently certified.
 
 ### E408
 
 - `Q=27,28`: CLOSED;
-- `Q=31,32,33`: OPEN.
+- `Q=31`: source-reported CONDITIONAL-CLOSED by V11;
+- `Q=32,33`: OPEN.
 
-The exact correction-cycle identity is `sum(h+kappa)=sum(eta+m)`; it does not imply individual zero defects.
+The E407 Q32 elimination rules are not automatically inherited by E408. The exact correction-cycle identity remains `sum(h+kappa)=sum(eta+m)` and does not imply individual zero defects.
+
+See `consolidation/V12_V8_SOURCE_REPORTED_AUDIT.md`.
 
 ## High backend
 
@@ -27,11 +34,28 @@ The exact correction-cycle identity is `sum(h+kappa)=sum(eta+m)`; it does not im
 
 `E333 = EMPTY` under the retained legal-backend/V4 forcing contract.
 
-### E334..E337 — Astra B line
+### E334
 
-These remain OPEN. V6 proves repeated-pair capacity through core213 (`K<=6`) and removes the former CORE212 matching residual. Remaining work is far/d3 forcing, double-hub `r>=2`, allowance3, and the higher-`K` concentration / overlap-10 K11 equality mechanisms.
+Delivered V8 source-reports
 
-### E338..E340 — assistant right edge
+> `E334 = EMPTY`
+
+relative to the retained backend and accepted V7 forcing.
+
+The reported terminal mechanism is a three-anchor global core obstruction, not three independent residual-case closures. `backend/GLOBAL_THREE_ANCHOR_PARTITION_THEOREM.md` independently proves the reusable partition half: three pairwise nonadjacent degree-12 anchors in a 35-point `alpha<=3`, `omega<=11` core force exactly 2--4 connectors and three near-K10 clique blocks. The V8 package additionally reports that at least two connectors require degree excess at least two, contradicting CORE211 total excess `K=2`.
+
+Independent replay of the V8 package is still pending in this assistant session, so distinguish:
+
+- source-level status: E334 EMPTY relative to retained backend/V7;
+- independently re-certified status here: not yet upgraded beyond E333.
+
+### E335..E337
+
+OPEN. V8 is reported to give a new necessary upper bound for E335, but no E335 closure is claimed.
+
+The highest-value structural question is whether the three-anchor connector-excess lemma parameterizes beyond CORE211, so that the E334 closure becomes a reusable low-excess core theorem rather than a one-layer result.
+
+### E338..E340 — right edge
 
 Global right-edge facts:
 
@@ -46,40 +70,20 @@ For q36, candidate coverage splits into low-clique and shell-poor regimes. The f
 
 #### q36 f=2 — far 2K1, a_F=0
 
-This entire branch is now CLOSED.
-
-`backend/Q36_F2_2K1_A0_STAR_TERMINALS_FULL_CLOSURE.md` closes the last three c=2/c=1 missing-star equality terminals by combining row closure with the E338 total degree-excess budget39. Together with the previous c>=3, c=2-distinct and low-c closures:
-
-> `2K1, a_F=0` is EMPTY.
+This entire branch is CLOSED.
 
 #### q36 f=2 — far 2K1, a_F=1
 
-`backend/Q36_F2_2K1_A1_HIGH_C_NORMAL_FORM.md` gives
-
-`A+G_Y=6-e_M(Y)`, `A>=2`,
-
-and
-
-`lambda(T)+e(Y,T)+e_H(T)<=14+e_M(Y)`.
-
-Current exact layer status:
-
-- `c=7`: CLOSED. A=2 and A=3 are both EMPTY; the final A=3 all-singleton support system is closed by `Q36_F2_2K1_A1_C7_A3_ALL_SINGLETON_FULL_CLOSURE.md`.
-- `c=8`: A=2 and A=3 are CLOSED. Only A=4 remains OPEN. `Q36_F2_2K1_A1_C8_A4_MULTIPLICITY_REDUCTION.md` proves multiplicity4 impossible and any multiplicity-three support must be a target K3 satisfying `O_D+e(Y,D)<=2`, hence forcing at least three external owner incidences into supports disjoint from D.
-- `c=9`: A=2 and A=3 are CLOSED. A=4 and A=5 remain OPEN. `Q36_F2_2K1_A1_C9_A4_MULTIPLICITY_REDUCTION.md` proves multiplicity4 impossible and any multiplicity-three support must be a target K3 satisfying `O_D+e(y,D)<=2`, forcing at least four external owner incidences into disjoint supports.
-- `c=10`: exact A=6 remains OPEN.
-
-Thus the former high-c support problem has advanced to the first genuine slack-three geometry: repeated K3 supports coexisting with a forced disjoint-support family.
+- `c=7`: CLOSED;
+- `c=8`: A=2,A=3 CLOSED; A4 remains the active higher-slack sector, with recent concurrent commits eliminating disjoint repeated-K3 and multiplicity-three residuals;
+- `c=9`: A=2,A=3 CLOSED; A4/A5 remain active unless superseded by newer proof files;
+- `c=10`: exact A6 active.
 
 #### q36 f=2 — far target K2
 
-This topology remains OPEN:
+Still OPEN. The safe retained reductions include at most one d2 row for c>=3, single-class forcing in the c=8 one-d2 sector, A2 closure, and substantial A3 multiplicity closure. Invalid intermediate K4-freeness deductions remain RETRACTED.
 
-- at most3 d2 rows, with distinct disjoint pure K2 supports;
-- d3 rows use at most two decorated missing-set classes;
-- in the no-d2/two-class sector, total allowance<=1.
-
-#### shell-poor interface
+#### shell-poor / global one-spoke interface
 
 At least five one-spoke pivots carry 22-point anti-neighbourhoods Z with
 
@@ -91,16 +95,25 @@ and exact charge
 
 A simultaneous near-Mantel stability/compatibility theorem remains OPEN.
 
-No full E338 layer is yet claimed closed.
+## Global-support theorem programme
 
-## Closed backend interval
+The repository now contains a reusable structural stack rather than only E-layer closures:
 
-`E329,E330,E331,E332,E333` are empty under their stated contracts.
+1. matching-or-small-transversal extraction;
+2. repeated-support strict-loss and dense-block bounds;
+3. subcritical-allowance decomposition;
+4. first-high-slack sunflower/charge barriers;
+5. fully-decorated escape reduction;
+6. signature-code compression and one-spoke clique forcing;
+7. three-anchor partition theorem for low-excess cores.
+
+The next unification target is a parameterized connector-excess theorem that upgrades item 7 from the CORE211 equality case to a low-excess family and, if possible, interfaces with the front-end common-K11 completion problem.
 
 ## Current global obligations
 
-1. T61 E407: close Q31/Q32;
-2. T61 E408: close Q31/Q32/Q33;
-3. eliminate legal backend layers E334..E340.
+1. E407 Q32: rule out the five common-K11 templates against one 284-edge core;
+2. E408 Q32/Q33;
+3. E335..E340;
+4. independently replay V12/V8 once archive execution is available.
 
 The full EG617 r=12 theorem remains **OPEN / NOT_CERTIFIED**.
