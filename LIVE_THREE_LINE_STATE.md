@@ -69,14 +69,16 @@ Additional independent right-edge assets now prove:
 - `backend/K49_PLATEAU_INDEPENDENT_REDUCTION.md`: a lexicographically maximal K4,9 plateau with G in {0,1,2} reduces to one G=2 split-decoration residual;
 - `backend/K49_G2_SPLIT_CORE_REDUCTION.md`: that residual reduces to a 17-point remainder L with cross parameter B<=10;
 - `backend/K49_G2_SPLIT_ROW_OVERLAP.md`: the two decorated size10 rows overlap in at least5 points;
-- `backend/K49_G2_SPLIT_TWO_SUPPORT_B0.md`: the nine Y-rows have exactly two distinct disjoint 4-supports and self-similar repivoting forces `B=e_H(D1,D2)=0`.
+- `backend/K49_G2_SPLIT_TWO_SUPPORT_B0.md`: the nine Y-rows have exactly two distinct disjoint 4-supports and self-similar repivoting forces `B=e_H(D1,D2)=0`;
+- `backend/K49_G2_SPLIT_SINGLETON_SUPPORT_CLOSURE.md`: the `8+1` support multiplicity is impossible.
 
 Hence the final K4,9 split residual now has the exact interface
 
 - two anticomplete pure K9 supports D1,D2;
 - `|L|=17`, `e(H[L])=67`;
 - `e(D1,L)=e(D2,L)=36`;
-- exactly two distinct disjoint Y-supports of size4;
+- exactly two distinct disjoint Y-supports R,S of size4;
+- both Y-supports are repeated, so up to exchange their multiplicities are only `2+7`, `3+6`, or `4+5`;
 - the two decorated size10 rows lie in L and overlap in at least5 points.
 
 No high backend edge layer is claimed closed by these reductions.
