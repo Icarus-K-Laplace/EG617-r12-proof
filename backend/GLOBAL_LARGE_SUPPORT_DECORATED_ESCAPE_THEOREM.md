@@ -1,17 +1,24 @@
 # Global Large-Support Decorated-Escape Theorem
 
-Status: `PROVED_ANALYTIC`.
+Status: **PROVED_ANALYTIC** after the 2026-10-23 scope correction recorded below.
 
 Dependencies:
 
 - `GLOBAL_SUBCRITICAL_ALLOWANCE_DECOMPOSITION.md`;
 - `GLOBAL_BLOCK_TRANSVERSAL_THEOREM.md`;
-- common-S owner-clique theorem;
+- `GLOBAL_COMMON_S_OWNER_CLIQUE_THEOREM.md`;
 - exact shell identity `q=e(M)+G_A`;
-- the inherited shell floor `e(M)>=22` in the legal r=12 49-point backend;
-- the already-proved q36--q38 K4,9 plateau closure for the final maximal-owner corollary.
+- the inherited shell floor `e(M)>=22` in the legal r=12 49-point backend.
 
-Purpose: reorganize the large-support q36--q38 analysis around one structural dichotomy. The former K4,9 family appears naturally as the unique maximal-owner fully-decorated escape geometry rather than as an isolated shell case.
+Purpose: reorganize the large-support q36--q38 analysis around one structural dichotomy and state the fully-decorated branch with the correct q-budget.
+
+## Scope correction
+
+An earlier version incorrectly described the maximal shell-complement owner count `N=13-d` as a possible **fully-decorated** K4,9 equality state.  This is incompatible with the exact shell identity: `N=13-d` already contributes `d(13-d)=36` missing edges, while full decoration of S contributes at least d further units, so `q>=36+d>38` for `d in {4,9}`.
+
+Therefore K4,9 is **not** a fully-decorated escape.  It belongs to the non-fully-decorated / plateau side of the large-support analysis.  The corrected fully-decorated owner bound is strictly smaller and is proved below.
+
+---
 
 ## 1. General high-right setup
 
@@ -35,17 +42,9 @@ The common row allowance is
 
 `a=q-36-B`,
 
-with `B>=0`.
+with `B>=0`.  Therefore
 
-Therefore
-
-> `a<=2`.                                                     (L1)
-
-For d in {4,9},
-
-> `a<=2<d-1`.                                                (L2)
-
-Thus every such family lies strictly below the first overlap threshold.
+> `a<=2<d-1`.                                               (L1)
 
 Let
 
@@ -53,11 +52,13 @@ Let
 
 be the number of globally decorated vertices in the common missing set.
 
+---
+
 ## 2. Non-fully-decorated regime
 
 Assume
 
-`s<d`.                                                       (L3)
+`s<d`.                                                       (L2)
 
 Then `GLOBAL_SUBCRITICAL_ALLOWANCE_DECOMPOSITION.md` applies.
 
@@ -65,165 +66,149 @@ Hence:
 
 1. plateau owner rows are singleton support classes and there are at most3 of them;
 2. every strict-loss support is disjoint from every distinct support class;
-3. two distinct strict supports have at most
-   `a-1<=1`
-   target cross-edge.
+3. two distinct strict supports have at most `a-1<=1` target cross-edge.
 
 Thus the strict layer is a family of pairwise-disjoint d-blocks with cross allowance at most1.
 
-## 3. At most three distinct strict support classes
+Suppose four distinct strict support classes existed.  Choose one point uniformly from each block.  Since each block pair has at most one target cross-edge, the expected number of target edges in the four-point transversal is at most
 
-Suppose four distinct strict support classes existed.
+`6/d^2 <= 6/16 <1`.
 
-Choose one point uniformly from each block. Since each block pair has at most one target cross-edge, the expected number of target edges in the four-point transversal is at most
+But every four-point transversal lies in H with `alpha(H)<=3`, so it must contain at least one target edge.  Contradiction.
 
-`6/d^2`.
+Therefore
 
-For `d>=4`,
+> **number of distinct strict support classes <=3**,          (L3)
 
-`6/d^2<=6/16<1`.                                             (L4)
+and every non-fully-decorated d4/d9 common-S family has at most six distinct support classes after adjoining the at-most-three plateau singletons.
 
-But every four-point transversal lies in H with `alpha(H)<=3`, so it must contain at least one target edge.
+This is the bounded-block branch of the theorem.
 
-Contradiction.
+---
 
-Therefore:
+## 3. Fully-decorated regime: corrected owner bound
 
-> **number of distinct strict support classes <=3.**          (L5)
+Now assume
 
-Combining with plateau capacity:
+`s=d`.                                                       (L4)
 
-> **every non-fully-decorated d4/d9 common-S family has at most six distinct support classes.**   (L6)
+Then every point of S has decoration at least one, so
 
-All owner multiplicity beyond these six classes is therefore repeated-support multiplicity and is subject to the global repivot/hereditary packing theorem.
+`G_A>=d`.                                                    (L5)
 
-## 4. The only escape from the subcritical decomposition
+Every common-S owner is missing from every point of S, and owners are distinct from S.  Therefore the shell missing graph contains all `dN` owner--S edges:
 
-The proof above uses only the condition `s<d` beyond the general q ceiling.
+`e(M)>=dN`.                                                  (L6)
 
-Therefore the only way a d4/d9 common-S family can avoid the bounded-plateau / isolated-block structure is
+Using the exact identity `q=e(M)+G_A`, (L5)--(L6) give
 
-> **fully-decorated missing set:** `s=d`.                     (L7)
-
-This is the canonical decorated-escape regime.
-
-It is not an arbitrary shell case: every point of S consumes at least one unit of shell decoration.
-
-The inherited shell floor gives
-
-`G_A=q-e(M)<=38-22=16`.                                      (L8)
-
-Hence a fully-decorated d-support already consumes at least d of at most16 decoration units.
-
-In particular:
-
-- d=9 consumes at least9 units;
-- d=4 consumes at least4 units.
-
-## 5. Owner-count geometry in the escape regime
-
-Common-S owners are disjoint from S inside the 13-shell. Therefore
-
-> `N=|Y|<=13-d`.                                             (L9)
-
-The maximal owner counts are
-
-- d=4: `N<=9`;
-- d=9: `N<=4`.
-
-Suppose equality holds in (L9), so
-
-`N=13-d`.
-
-Then the shell has no leftover vertices:
-
-`A=S disjoint_union Y`.
-
-Every owner misses every point of S and is target-adjacent to every other owner. Hence the shell missing graph consists exactly of all Y--S edges plus possible edges internal to S.
-
-If the fully-decorated escape is at the zero-extra-missing plateau in which S itself has no additional missing edge, the shell missing graph is exactly
-
-> `K_(d,13-d)`.                                               (L10)
-
-For d=4 or9 this is the same bipartite graph
-
-> **`K_(4,9)`.**                                              (L11)
-
-Thus K4,9 is the unique maximal-owner fully-decorated large-support escape geometry.
-
-## 6. Relation to the already-killed K4,9 plateau
-
-The q36--q38 backend work independently proved that, at a lexicographically maximal top-channel CORE211 pivot, the relevant K4,9 plateau family with the allowed decoration budget is impossible.
-
-The present theorem explains its conceptual role:
-
-> it is not a separate exceptional shell topology;
-> it is the maximal-owner equality state left after the general subcritical support theorem has removed every non-fully-decorated large-support family.
-
-Therefore the old K4,9 closure should appear in the final paper as an equality-case exclusion of the global decorated-escape theorem.
-
-## 7. d=10 low-q analogue
-
-The same logic applies to d=10 rows at q<=33.
-
-The base term is
-
-`10*(13-10)=30`.
+> **`q>=dN+d`.**                                            (L7)
 
 Hence
 
-`a<=3<d-1=9`.                                                (L12)
+> **`N <= floor((q-d)/d)`.**                                (L8)
 
-If `s<10`, the subcritical decomposition applies.
+At `q<=38` this yields the sharp uniform high-right bounds
 
-Strict supports have pairwise cross allowance at most2. Four disjoint 10-blocks would have transversal expected target-edge count at most
+- `d=4`: `N<=8`;
+- `d=9`: `N<=3`.
 
-`6*2/100=0.12<1`,
+Thus a fully-decorated d4/d9 system can **never** attain the shell-complement maximum `13-d` under the q36--q38 ceiling.
 
-contradicting `alpha(H)<=3`.
+In particular, the K4,9 shell cannot be interpreted as a fully-decorated equality state.
 
-So again there are at most three distinct strict supports.
+---
 
-If `s=10`, the missing set is fully decorated and owner count is automatically
+## 4. Maximum possible fully-decorated state
 
-`N<=3`.                                                       (L13)
+The corrected bounds in Section3 are exactly one below the shell-complement maxima:
 
-Thus d10 also fits the same bounded-block / fully-decorated escape dichotomy.
+- d4: maximum fully-decorated `N=8=12-d`;
+- d9: maximum fully-decorated `N=3=12-d`.
 
-## 8. Unified large-support statement
+Therefore the maximal possible fully-decorated state has exactly one leftover shell vertex.
 
-For the large-support regimes relevant to the high backend:
+`GLOBAL_LARGE_SUPPORT_ONE_LEFTOVER_BRIDGE.md` proves that in this state, if x is the unique vertex outside `S union Y`, then
+
+> **`d_M(x)+g_x <= q-36 <=2`.**                              (L9)
+
+Consequently the maximal fully-decorated large-support state automatically descends to the low-support / decorated one-spoke interface.  It is not a new plateau family.
+
+At q=36 the descent is exact:
+
+- x is regular;
+- `d_M(x)=0`;
+- S has no internal missing edge;
+- every point of S has decoration exactly one;
+- all other shell decoration vanishes.
+
+At q=37/38 the unique leftover carries at most one/two units of combined missing-degree plus decoration.
+
+---
+
+## 5. Correct role of K4,9
+
+The already-proved q36--q38 K4,9 closure remains valid, but its conceptual role is different from the one stated in the earlier version of this file.
+
+K4,9 is a **non-fully-decorated large-support plateau/equality geometry**.  In either orientation of the bipartition, the relevant common missing side does not carry one positive decoration unit on every one of its vertices under q<=38.
+
+Therefore K4,9 belongs on the `s<d` side of the global dichotomy, together with the subcritical plateau/strict-block machinery.  Its separate closure should be presented as an equality-case exclusion inside that branch, not as the endpoint of the fully-decorated escape.
+
+---
+
+## 6. d=10 low-q analogue
+
+The same q-budget logic applies to d=10 rows at q<=33.
+
+The base term is
+
+`10*(13-10)=30`,
+
+so `a<=3<d-1=9` and the non-fully-decorated branch is subcritical.
+
+If S is fully decorated, then `G_A>=10`, while N owners contribute `10N` shell missing edges.  Hence
+
+`q>=10N+10`.
+
+At q<=33,
+
+> `N<=2`.                                                    (L10)
+
+This is stronger than the shell-complement bound `N<=3` and again shows that full decoration automatically suppresses owner multiplicity.
+
+---
+
+## 7. Unified corrected statement
 
 > **Large-Support Decorated-Escape Theorem.**
 >
-> Whenever the q ceiling places a common-S d-support family below the first overlap threshold (`a<=d-1`), exactly one of the following occurs:
+> Let a common-S large-support family lie below the first overlap threshold.  Then:
 >
-> 1. `s<d`: the family consists of at most three singleton plateau supports plus at most three distinct pairwise-disjoint low-cross strict support classes;
-> 2. `s=d`: the entire missing set is globally decorated and the owner count is bounded by the shell complement size `13-d`.
+> 1. if `s<d`, its support system is a bounded union of plateau singletons and pairwise-disjoint low-cross strict blocks;
+> 2. if `s=d`, the exact shell q-budget gives `q>=dN+d`, sharply reducing owner multiplicity.
 >
-> At d=4/9 with maximal owner count, Alternative2 produces the K4,9 equality geometry.   (L14)
+> For d4/d9 at q<=38, the fully-decorated branch has `N<=12-d`; at equality there is exactly one leftover shell vertex and it has combined missing-degree/decoration at most two.
 
-This replaces much of the large-support case split by one structural theorem.
+Thus both sides of the dichotomy feed back into the Global Support-Compatibility architecture: the first through subcritical support packing, the second through low-support/one-spoke descent.
 
-## 9. Remaining large-support bridge
+---
 
-After (L14), the only genuinely new large-support problem is no longer arbitrary q36/q37/q38 shell classification.
+## 8. Remaining large-support bridge
 
-It is:
+After the corrected theorem, the genuinely open large-support task is smaller than previously stated.
 
-> classify **non-maximal fully-decorated escape states** (`s=d`, `N<13-d`) and show that their decoration budget/core support packing either creates an improving repivot or embeds into one of the already-killed maximal equality geometries.
+- Non-fully-decorated systems are already in the subcritical bounded-block regime; the remaining work is equality compatibility of the few repeated strict/plateau blocks.
+- Maximum-owner fully-decorated systems descend by the one-leftover theorem to local defect at most two.
+- Fully-decorated systems with fewer owners have at least two leftover shell vertices; the remaining bridge is to turn their total q-slack into a low-defect leftover or a dense-decoration contradiction.
 
-This is the unique large-support bridge left by the theorem.
+No independent 'fully-decorated K4,9' family remains.
 
-## 10. Generalization
+---
 
-The proof uses symbolically:
+## 9. Parameterization
 
-- shell size h;
-- support size d;
-- q ceiling through the allowance a;
-- core independence number3;
-- shell decoration budget;
-- common-S owner count `N<=h-d`.
+The corrected owner inequality is symbolic.  In a shell of size h, if a common missing set S of size d is fully decorated and has N owners, then
 
-The same decorated-escape dichotomy applies to higher-r reductions whenever the support system lies below its first overlap threshold.
+`q >= dN+d`.
+
+It therefore applies verbatim to analogous higher-r pivot reductions.  The subcritical decomposition likewise depends only on the allowance threshold and the residual-core independence bound.
