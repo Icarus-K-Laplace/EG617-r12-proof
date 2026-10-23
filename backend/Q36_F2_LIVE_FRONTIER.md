@@ -19,12 +19,8 @@ Results:
 
 ### Far topology 2K1, a_F=0
 
-The main proof chain now includes
+The proof chain now includes the structural reductions and full closures through c=3..10, including
 
-- `Q36_F2_2K1_A0_REDUCTION.md`;
-- `Q36_F2_2K1_A0_LOW_ALLOWANCE_D3.md`;
-- `Q36_F2_2K1_A0_ALLOWANCE2_D3_CAPACITY.md`;
-- `Q36_F2_2K1_A0_HIGH_C_SINGLE_CLASS_NORMAL_FORM.md`;
 - `Q36_F2_2K1_A0_C7_MIXED_FULL_CLOSURE.md`;
 - `Q36_F2_2K1_A0_C8_MIXED_FULL_CLOSURE.md`;
 - `Q36_F2_2K1_A0_C9_FULL_CLOSURE.md`;
@@ -32,59 +28,35 @@ The main proof chain now includes
 - `Q36_F2_2K1_A0_C10_FULL_CLOSURE.md`;
 - `Q36_F2_2K1_A0_C10_MIXED_FULL_CLOSURE.md`;
 - `Q36_F2_2K1_A0_LOW_C_D3_ELIMINATION.md`;
-- `Q36_F2_2K1_A0_PURE_D2_TERMINALS.md`.
+- `Q36_F2_2K1_A0_C3_C4_FULL_CLOSURE.md`;
+- `Q36_F2_2K1_A0_C2_DISTINCT_FULL_CLOSURE.md`.
 
-General facts:
+The branch is now almost completely eliminated:
 
-- the two far 12-supports are disjoint and leave an 11-point remainder R with `alpha(H[R])<=2`;
-- d2 rows have at most two distinct support classes;
-- a repeated d2 class is the unique d2 class and is a zero-defect pure K2 repivoting to q35;
-- if `n2>=3`, all d2 rows share that K2 and satisfy `3n2<=c+nu+2`, `2n2<=c+4`;
-- d3 rows use at most two decorated missing-set classes;
-- allowance-zero d3 class size<=2;
-- allowance-one d3 class has at most two distinct supports and any repeated support is the unique pure q35 K3 class;
-- allowance-two d3 class size<=6.
+- every state with c>=3 is EMPTY;
+- no d3 row survives anywhere;
+- c=2 with distinct d2 supports is EMPTY.
 
-#### High-c c=7,8,9,10
+Only three explicit equality terminals remain.
 
-The all-d3 / single-class sector c=7,8,9,10 is CLOSED.
+#### c=2 repeated-support terminal
 
-The mixed d2/d3 sectors c=7,8,9,10 are also CLOSED. Hence
+`Q36_F2_2K1_A0_C2_REPEATED_STAR_REDUCTION.md` proves that the two low owners must share one pure K2 support D and
 
-> every `2K1,a_F=0` candidate has `c<=6`.
+- `|X|=9`;
+- `M[X]=K1,4 disjoint_union 4K1`;
+- `nu=4`, `G=9`, every X-vertex has decoration1;
+- both D-endpoints are target-adjacent exactly to the missing-star centre h inside X;
+- the q35 repivot is D14-saturated with new decoration total13.
 
-#### Low-c d3 elimination
+#### c=1 terminals
 
-`Q36_F2_2K1_A0_LOW_C_D3_ELIMINATION.md` proves that for every `c<=6` no d3 row can occur at all.
+`Q36_F2_2K1_A0_C1_STAR_REDUCTION.md` leaves exactly two families:
 
-If two d3 classes were active, their exact allowance sum is
+1. `nu=2`: `M[X]=K1,2 disjoint_union 7K1`, with both support endpoints adjacent exactly to the star centre;
+2. `nu=3`: `M[X]=K1,3 disjoint_union 6K1`, with both support endpoints adjacent to the star centre and at most one extra D--X target edge.
 
-`A_x+A_z = 1_(xz in M) - e_M(Y) - G_Y - 1 <0`
-
-because at least three inactive decorated vertices remain.
-
-If one class were active,
-
-`A_x+G_Y=6-e_M(Y)`
-
-while at least four inactive decorated vertices give `G_Y>=4`, forcing `A_x<=2`; the regular/decorated zero-gap inequality requires `A_x>=3`.
-
-Therefore
-
-> `c<=6 => n3=0`.
-
-The earlier all-d2 capacity gives `c<=4`. Consequently the entire `2K1,a_F=0` branch has collapsed to
-
-> pure d2 only, with `c in {1,2,3,4}`.
-
-#### Exact pure-d2 terminals
-
-For c>=3 all d2 rows share one repeated pure K2 support D. `Q36_F2_2K1_A0_PURE_D2_TERMINALS.md` gives:
-
-- c=4: `nu=e_M(X)=6`, `G=7`, every X-vertex has decoration1, and `e(D,X)=0`;
-- c=3: `nu in {4,5}` and `e(D,X)<=nu-4`.
-
-The c=1,2 pure-d2 terminals remain less rigid and are now the only other states in this branch.
+No other `2K1,a_F=0` state remains.
 
 ### Far topology K2
 
@@ -98,8 +70,8 @@ Retained from `Q36_F2_SHELL_LEDGER_REDUCTION.md`:
 
 Highest priority:
 
-1. close the four pure-d2 `2K1,a_F=0` terminals c=1,2,3,4, starting with the exact c=4 equality shell;
+1. close the three explicit `2K1,a_F=0` missing-star equality terminals;
 2. reduce the `2K1,a_F=1,c>=7` branch;
-3. then return to the far-target-K2 f=2 branch.
+3. return to the far-target-K2 f=2 branch.
 
 The shell-poor five-one-spoke near-Mantel branch remains separate and OPEN.
