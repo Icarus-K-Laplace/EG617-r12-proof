@@ -46,53 +46,34 @@ For q36, candidate coverage splits into low-clique and shell-poor regimes. The f
 
 #### q36 f=2 — far 2K1, a_F=0
 
-This formerly large branch is reduced to exactly three explicit equality terminals. Every state with `c>=3` is EMPTY, and c=2 with distinct d2 supports is EMPTY.
+This entire branch is now CLOSED.
 
-Remaining states:
+`backend/Q36_F2_2K1_A0_STAR_TERMINALS_FULL_CLOSURE.md` closes the last three c=2/c=1 missing-star equality terminals by combining row closure with the E338 total degree-excess budget39. Together with the previous c>=3, c=2-distinct and low-c closures:
 
-1. `c=2` repeated support: `M[X]=K1,4 + 4K1`, all X decorations1, one shared pure K2 support D, both D endpoints adjacent exactly to the star centre, q35 repivot D14-saturated with `G'=13`.
-2. `c=1, nu=2`: `M[X]=K1,2 + 7K1`, both support endpoints adjacent exactly to the centre.
-3. `c=1, nu=3`: `M[X]=K1,3 + 6K1`, both endpoints adjacent to the centre and at most one extra D--X target edge.
+> `2K1, a_F=0` is EMPTY.
 
 #### q36 f=2 — far 2K1, a_F=1
 
-`backend/Q36_F2_2K1_A1_HIGH_C_NORMAL_FORM.md` proves, for the unique active decorated vertex x0 and inactive set Y,
+`backend/Q36_F2_2K1_A1_HIGH_C_NORMAL_FORM.md` gives
 
 `A+G_Y=6-e_M(Y)`, `A>=2`,
 
-and the K11-minus-defects D14 cap
+and
 
 `lambda(T)+e(Y,T)+e_H(T)<=14+e_M(Y)`.
 
-For c=7, A is2 or3. `Q36_F2_2K1_A1_C7_A2_FULL_CLOSURE.md` closes A=2.
+Current exact layer status:
 
-Thus c=7 has the exact remaining state
+- `c=7`: CLOSED. A=2 and A=3 are both EMPTY; the final A=3 all-singleton support system is closed by `Q36_F2_2K1_A1_C7_A3_ALL_SINGLETON_FULL_CLOSURE.md`.
+- `c=8`: A=2 and A=3 are CLOSED. Only A=4 remains OPEN. `Q36_F2_2K1_A1_C8_A4_MULTIPLICITY_REDUCTION.md` proves multiplicity4 impossible and any multiplicity-three support must be a target K3 satisfying `O_D+e(Y,D)<=2`, hence forcing at least three external owner incidences into supports disjoint from D.
+- `c=9`: A=2 and A=3 are CLOSED. A=4 and A=5 remain OPEN. `Q36_F2_2K1_A1_C9_A4_MULTIPLICITY_REDUCTION.md` proves multiplicity4 impossible and any multiplicity-three support must be a target K3 satisfying `O_D+e(y,D)<=2`, forcing at least four external owner incidences into disjoint supports.
+- `c=10`: exact A=6 remains OPEN.
 
-- `A=3`;
-- `Y=K3`, decorations `(1,1,1)`;
-- `{p} union C union Y=K11`;
-- seven common-S 3-support rows in a 12-point alpha-two remainder.
-
-The allowance-three support system has now been sharply reduced:
-
-- multiplicity4 is impossible;
-- partition `3+3+1` is EMPTY;
-- partition `3+2+2` is EMPTY;
-- partition `3+2+1+1` is EMPTY;
-- partition `3+1+1+1+1` is EMPTY.
-
-Therefore every surviving c=7,A=3 support class has multiplicity at most2. The remaining owner partitions are
-
-- `2+2+2+1`;
-- `2+2+1+1+1`;
-- `2+1+1+1+1+1`;
-- seven singleton supports.
-
-If a multiplicity-three one-edge support occurs in any historical intermediate case, its repivot is now known to generate the exact q35 D14-equality shell with `G'=13`, `z'=22`, a target K10 base and regular missing degrees `3,0,0,2,2,2,2`.
-
-For c=8,9,10 the high-c normal form gives finite allowance ranges; c=10 has exact `A=6`.
+Thus the former high-c support problem has advanced to the first genuine slack-three geometry: repeated K3 supports coexisting with a forced disjoint-support family.
 
 #### q36 f=2 — far target K2
+
+This topology remains OPEN:
 
 - at most3 d2 rows, with distinct disjoint pure K2 supports;
 - d3 rows use at most two decorated missing-set classes;
