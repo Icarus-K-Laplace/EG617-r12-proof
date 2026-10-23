@@ -33,23 +33,22 @@ Thus only A=3,4 remain for c=8,n2=1.
 
 ### Repeated-K3 multiplicity-three geometry
 
-The former `Q36_F2_FAR_K2_C8_D2_A3_REPEATED_K3_CLOSURE.md` is `RETRACTED` because it incorrectly imported a fixed 12-point remainder from the far-2K1 topology.
+The former `Q36_F2_FAR_K2_C8_D2_A3_REPEATED_K3_CLOSURE.md` remains `RETRACTED`; its obsolete proof imported a fixed 12-point remainder from the far-2K1 topology.
 
-`Q36_F2_FAR_K2_C8_D2_A3_REPEATED_K3_CORRECT_REDUCTION.md` replaces it with a valid theorem:
+`Q36_F2_FAR_K2_C8_D2_A3_REPEATED_K3_CORRECT_REDUCTION.md` gives the valid Type-P/Type-Q reduction.
 
-- D is a target K3 of multiplicity3 and defect<=2;
-- at least two external owner incidences lie in support classes disjoint from D;
-- every support disjoint from D is itself a target K3;
-- each such class E has `e_H(D,E)<=2`;
-- any two distinct disjoint-from-D support classes intersect in exactly two points;
-- therefore the distinct disjoint-class family is either
-  1. Type P: all classes contain one fixed two-point set, or
-  2. Type Q: all classes lie among the four triples of one four-point set;
-- each such class has multiplicity at most3 and satisfies the D14 owner-incidence inequality.
+`Q36_F2_FAR_K2_C8_D2_A3_REPEATED_K3_FULL_CLOSURE_V2.md` now closes that finite system under the correct far-K2 contract:
 
-This Type-P/Type-Q finite hypergraph system is the current repeated-K3 frontier.
+- if two or more distinct disjoint K3 classes occur, K4-freeness plus `alpha(H[U])<=2` forces common-pair geometry with a zero-weight common-pair vertex; together with a zero-S-incidence point of D, the pure d2 support, x and one far point this yields an independent5-set;
+- if only one distinct disjoint K3 class occurs, at least two external owners force it to be repeated. Both repeated K3s then contain zero-weight vertices, and row closure makes a zero-zero cross pair a nonedge; adding the pure d2 point, x and one far point again gives an independent5-set.
 
-The A=3 branch is not yet fully closed: repeated-K3 Type P/Q and the support-multiplicity<=2 sector remain OPEN.
+Therefore **all multiplicity-three supports are eliminated in A=3**.
+
+Current A=3 frontier:
+
+> every surviving d3 support has multiplicity at most2.
+
+No full closure of the multiplicity<=2 sector is claimed yet.
 
 ## 4. Additional reusable theorem
 
@@ -59,10 +58,9 @@ The A=3 branch is not yet fully closed: repeated-K3 Type P/Q and the support-mul
 
 Highest priority:
 
-1. close A=3 repeated-K3 Type P and Type Q;
-2. close the remaining multiplicity<=2 A=3 support system;
-3. close c=8,n2=1,A=4;
-4. treat the no-d2 c=8 branch;
-5. parameterize downward to c<=7.
+1. close the remaining multiplicity<=2 A=3 support system;
+2. close c=8,n2=1,A=4;
+3. treat the no-d2 c=8 branch;
+4. parameterize downward to c<=7.
 
 The far-K2 topology is independent of the concurrent `2K1,a_F=1` repeated-K3 work.
