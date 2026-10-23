@@ -39,14 +39,14 @@ Possible allowances are A=2,3,4.
 
 - A=2 is EMPTY (`Q36_F2_2K1_A1_C8_A2_FULL_CLOSURE.md`).
 - A=3 is EMPTY (`Q36_F2_2K1_A1_C8_A3_FULL_CLOSURE.md`).
-- A=4 remains OPEN, but the repeated-K3 residual has sharpened substantially. `Q36_F2_A1_A4_DISJOINT_REPEATED_K3_FULL_CLOSURE.md` proves that a multiplicity-three target-K3 support cannot coexist with any distinct disjoint repeated support class. Since the c=8 multiplicity reduction forces at least three outside owner incidences into supports disjoint from such a K3, all of those disjoint support classes are now singleton classes.
+- A=4 remains OPEN, but multiplicity >=3 is now completely excluded. Multiplicity four was already impossible; `Q36_F2_A1_A4_REPEATED_K3_NO_DISJOINT_SUPPORT.md` now kills the multiplicity-three branch because the retained c=8 reduction forces at least three outside owner incidences into supports disjoint from the repeated K3, while the new theorem forbids even one disjoint support. Thus the exact c=8,A=4 frontier has maximum support multiplicity at most two.
 
 ### c=9
 
 - A=2 is EMPTY (`Q36_F2_2K1_A1_C9_A2_FULL_CLOSURE.md`).
 - A=3 is EMPTY (`Q36_F2_2K1_A1_C9_A3_FULL_CLOSURE.md`).
-- A=4 and A=5 remain OPEN.
-- In A=4, the same new disjoint-repeated closure applies: if a multiplicity-three target-K3 support exists, the at-least-four outside owner incidences forced into supports disjoint from it must all lie in singleton support classes. Thus the former two-repeated-block residual is EMPTY.
+- A=4 remains OPEN but, exactly as for c=8, all multiplicity-three/four channels are now EMPTY. The retained c=9,A=4 reduction forces at least four disjoint outside owner incidences next to a multiplicity-three K3, contradicting `Q36_F2_A1_A4_REPEATED_K3_NO_DISJOINT_SUPPORT.md`. Hence the A=4 frontier has maximum support multiplicity at most two.
+- A=5 remains OPEN under the existing multiplicity reductions.
 
 ### c=10
 
@@ -136,7 +136,7 @@ This turns the five separate near-Mantel conditions into one joint core/shell sy
 
 Highest current priorities:
 
-1. finish the `2K1,a_F=1,A=4` singleton-only residual created by the disjoint-repeated-K3 closure (c=8 and c=9);
+1. close the c=8 and c=9 `2K1,a_F=1,A=4` multiplicity-at-most-two support systems;
 2. finish corrected far-K2 no-d2 A=3 (multiplicity-four two-edge/K3, then lower multiplicities);
 3. close corrected far-K2 no-d2 A=4;
 4. re-audit c=8 one-d2 under the corrected D14 base;
