@@ -56,17 +56,29 @@ This gives the table:
 - E339: q<=35;
 - E340: q<=36.
 
+The first surviving equality layer `K=6` is no longer an unstructured frontier:
+
+- `c=2` has now been **fully eliminated** by a transversal-cover / exact cross-edge count theorem;
+- `c=3` is reduced to exactly one bad pair-connector plus one K9-dominator, with all excess outside the bad subsystem at most1;
+- `c=4,(10,10,8)` has at most two K8-dominators, and two dominators must form a saturated K11 with the small block and its anchor;
+- `c=4,(10,9,9)` has at most one anchor-compatible dominator per K9.
+
+Thus any K=6 three-anchor survivor must lie in the finite c=3/c=4 equality geometries, not in a new E-layer case tree.
+
 Files:
 
 - `backend/GLOBAL_THREE_ANCHOR_PARTITION_THEOREM.md`;
-- `backend/GLOBAL_THREE_ANCHOR_CORE211_FULL_CLOSURE.md`;
 - `backend/GLOBAL_THREE_ANCHOR_EXCESS_LOWER_BOUND.md`;
 - `backend/GLOBAL_THREE_ANCHOR_K4_EQUALITY_CLOSURE.md`;
-- `backend/GLOBAL_THREE_ANCHOR_BACKEND_ENVELOPE.md`.
+- `backend/GLOBAL_THREE_ANCHOR_BACKEND_ENVELOPE.md`;
+- `backend/GLOBAL_THREE_ANCHOR_K6_C2_FULL_CLOSURE.md`;
+- `backend/GLOBAL_THREE_ANCHOR_K6_C3_NORMAL_FORM.md`;
+- `backend/GLOBAL_THREE_ANCHOR_K6_C4_DOMINATOR_CAPACITY.md`;
+- `backend/GLOBAL_THREE_ANCHOR_K6_EQUALITY_REDUCTION.md`.
 
 ### E335..E337
 
-OPEN. The new correct objective is not to replay the E334 branch tree, but to determine which survivors force three degree-12 anchors or enter the global support-compatibility contract.
+OPEN. The correct objective is not to replay the E334 branch tree, but to determine which survivors force three degree-12 anchors or enter the global support-compatibility contract, and then test the finite K=6 equality geometries if the three-anchor branch is tight.
 
 ## Global Support-Compatibility architecture
 
@@ -81,7 +93,14 @@ For a boundary one-loss common-S d2/d3 support system:
 3. under the standard low-cross bounds, support matching number is at most6, yielding a support transversal of size at most12 (d2) or18 (d3);
 4. hereditary packing bounds every nontrivial d2 pattern to at most9 owners and every low-charge d3 pattern to at most8 owners.
 
-The first-high-slack layer is also structurally complete by `backend/GLOBAL_FIRST_HIGH_SLACK_MASTER_REDUCTION.md`:
+The three-signature branch has now been geometrically aligned with the three-anchor partition by `GLOBAL_ZERO_SIGNATURE_ANCHOR_ALIGNMENT_THEOREM.md`:
+
+- each zero-signature class lies in the corresponding exclusive anchor clique;
+- each class has size at most the support size d;
+- therefore at most `3d` zero-charge support-union vertices exist;
+- every additional support-union vertex costs at least one unit of common-S charge.
+
+The first-high-slack layer is structurally complete by `backend/GLOBAL_FIRST_HIGH_SLACK_MASTER_REDUCTION.md`:
 
 - plateau: at most3 singleton rows;
 - one-loss: governed by the master theorem above;
@@ -91,11 +110,46 @@ The first-high-slack layer is also structurally complete by `backend/GLOBAL_FIRS
 
 Thus D2/A2 and d3/A3 no longer contain arbitrary high-slack overlap geometry.
 
-The unique remaining global backend bridge is now:
+The unique remaining global backend bridge is:
 
 > **forcing-to-master-contract:** prove that every surviving shell regime either triggers the three-anchor envelope directly, enters the boundary one-loss/low-cross contract, or descends to it through a finite higher-slack equality layer.
 
 Once this bridge is available, the old D2-A/B/C/D/R9 and E334--E340 labels no longer require separate structural classifications.
+
+## Large-support bridge correction
+
+The fully-decorated d4/d9 branch has been corrected and strengthened.
+
+The old interpretation 'maximal fully-decorated owner count -> K4,9' was inconsistent with `q=e(M)+G_A` and has been removed.  Full decoration gives the exact owner bound
+
+`q>=dN+d`.
+
+Therefore at q<=38:
+
+- d4 fully-decorated owner count `N<=8`;
+- d9 fully-decorated owner count `N<=3`.
+
+At the maximum possible fully-decorated count there is exactly one leftover shell vertex, and
+
+`d_M(x)+g_x<=q-36<=2`.
+
+More generally, with t leftovers and slack
+
+`R=q-d(14-d-t)`,
+
+one has
+
+`sum_(x in T)(d_M(x)+g_x)<=2R`,
+
+so a low-defect leftover is extracted by averaging.
+
+Files:
+
+- `backend/GLOBAL_LARGE_SUPPORT_DECORATED_ESCAPE_THEOREM.md`;
+- `backend/GLOBAL_LARGE_SUPPORT_ONE_LEFTOVER_BRIDGE.md`;
+- `backend/GLOBAL_FULLY_DECORATED_MULTI_LEFTOVER_DESCENT.md`.
+
+K4,9 remains correctly classified as a non-fully-decorated plateau/equality geometry and is already closed.
 
 ## E338..E340 current right edge
 
@@ -103,7 +157,7 @@ The K4,9 top-channel plateau family is empty. Low-decoration forcing gives q36=>
 
 q36 f=2 far-2K1 a_F=0 is CLOSED. In far-2K1 a_F=1, concurrent work continues on the higher-slack A4/A5/A6 sectors. In far-target-K2, safe retained reductions close A2 and much of A3 but A4 remains active. Shell-poor still requires a simultaneous near-Mantel/global compatibility theorem.
 
-The preferred interpretation of all of these residuals is now through the master support variables `(loss layer, zero-signature count, matching number, pattern type, owner multiplicity, hereditary cap)`, not through independent q36 case labels.
+The preferred interpretation of all of these residuals is through the master support variables `(loss layer, zero-signature count, matching number, pattern type, owner multiplicity, hereditary cap)`, not through independent q36 case labels.
 
 ## Global state
 
@@ -115,7 +169,7 @@ Remaining obligations:
 
 - T61 E407 Q32: five common-K11 templates versus one 284-edge core;
 - T61 E408 Q32/Q33;
-- backend E335..E340 through the forcing-to-master-contract bridge and remaining equality windows;
+- backend E335..E340 through the forcing-to-master-contract bridge and finite K=6 equality windows;
 - independent replay of delivered V12/V8 packages when archive execution is available.
 
 The full EG617 r=12 theorem remains **OPEN / NOT_CERTIFIED**.
