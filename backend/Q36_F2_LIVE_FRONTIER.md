@@ -1,98 +1,66 @@
 # q36 f=2 live frontier — 2026-10-23
 
-Status: `LIVE REDUCTION MAP`. This file summarizes proved q36 f=2 assets only; it does not close E338.
+Status: `LIVE REDUCTION MAP`. This summarizes proved q36 f=2 assets only; it does not close E338.
 
-## Far topology 2K1, a_F=0
+## Far topology 2K1, a_F=0 — CLOSED
 
-This branch is almost completely eliminated.
+`Q36_F2_2K1_A0_STAR_TERMINALS_FULL_CLOSURE.md` closes the last c=2/c=1 missing-star equality terminals. Together with the earlier c>=3, c=2-distinct and low-c closures:
 
-All states with c>=3 are EMPTY, and c=2 with distinct d2 supports is EMPTY. No d3 row survives anywhere.
+> the entire `2K1, a_F=0` branch is EMPTY.
 
-Only three explicit equality terminals remain:
-
-1. c=2 repeated support:
-   - `|X|=9`;
-   - `M[X]=K1,4 disjoint_union 4K1`;
-   - `nu=4`, `G=9`, all X decorations1;
-   - the two low owners share one pure K2 support D;
-   - both D endpoints are target-adjacent exactly to the missing-star centre;
-   - the q35 repivot saturates D14 with `G'=13`.
-
-2. c=1, nu=2:
-   - `M[X]=K1,2 disjoint_union 7K1`;
-   - both support endpoints are adjacent exactly to the centre.
-
-3. c=1, nu=3:
-   - `M[X]=K1,3 disjoint_union 6K1`;
-   - both support endpoints are adjacent to the centre;
-   - at most one additional D--X target edge exists.
+The final uniform argument uses the E338 total degree-excess budget39: every remaining star terminal would force at least seven core-regular vertices to have global degree at least20, already contributing at least49 excess.
 
 ## Far topology 2K1, a_F=1
 
-`Q36_F2_2K1_A1_HIGH_C_NORMAL_FORM.md` parameterizes every remaining c>=7 state.
+`Q36_F2_2K1_A1_HIGH_C_NORMAL_FORM.md` gives
 
-Let x0 be the unique decorated vertex with a far target neighbour and Y the inactive decorated set. Then
+`A+G_Y=6-e_M(Y)`, `A>=2`,
 
-`A+G_Y=6-e_M(Y)`,
-
-`A>=2`, and for every core triple T
+and the K11/D14 triple cap
 
 `lambda(T)+e(Y,T)+e_H(T)<=14+e_M(Y)`.
 
-Every repeated support repivots to q<=35 and satisfies both
+Repeated supports repivot to q<=35 and satisfy
 
-`G_Y+3(m-1)<=13`
+`G_Y+3(m-1)<=13`, `3m<=13+e_M(Y)`.
 
-and
+### c=7 — CLOSED
 
-`3m<=13+e_M(Y)`.
+- A=2 is EMPTY (`Q36_F2_2K1_A1_C7_A2_FULL_CLOSURE.md`).
+- A=3 is EMPTY. The proof chain eliminates multiplicity>=3, then all repeated supports, then the final seven-distinct-singleton 3-support system (`Q36_F2_2K1_A1_C7_A3_ALL_SINGLETON_FULL_CLOSURE.md`).
 
-### c=7
+Hence
 
-A is either2 or3.
+> `2K1, a_F=1, c=7` is EMPTY.
 
-`Q36_F2_2K1_A1_C7_A2_FULL_CLOSURE.md` proves
+### c=8
 
-> `c=7, A=2` is EMPTY.
+Possible allowances are A=2,3,4.
 
-Hence the exact remaining c=7 state has
+- A=2 is EMPTY (`Q36_F2_2K1_A1_C8_A2_FULL_CLOSURE.md`).
+- A=3 is EMPTY (`Q36_F2_2K1_A1_C8_A3_FULL_CLOSURE.md`).
+- A=4 remains OPEN, but `Q36_F2_2K1_A1_C8_A4_MULTIPLICITY_REDUCTION.md` proves:
+  - multiplicity4 is impossible;
+  - every multiplicity-three support, if any, is a target K3;
+  - such a K3 obeys `O_D+e(Y,D)<=2`, so at least three external owner incidences lie in supports disjoint from D.
 
-- `A=3`;
-- `Y=K3`;
-- inactive decorations `(1,1,1)`;
-- `{p} union C union Y=K11`;
-- seven common-S 3-support rows in a 12-point remainder R with `alpha(H[R])<=2`.
+Thus the exact c=8 frontier is only A=4.
 
-`Q36_F2_2K1_A1_C7_A3_MULTIPLICITY_RIGIDITY.md` further proves
+### c=9
 
-- support multiplicity4 is impossible;
-- every multiplicity-three support is either
-  - a target K3 with weighted overlap at most2, or
-  - an exact one-edge triple with zero core excess, zero x0/Y incidence and weighted overlap exactly4;
-- owner partition `3+3+1` is EMPTY.
+Possible allowances are A=2,3,4,5.
 
-`Q36_F2_2K1_A1_C7_A3_322_FULL_CLOSURE.md` also proves
+- A=2 is EMPTY (`Q36_F2_2K1_A1_C9_A2_FULL_CLOSURE.md`).
+- A=3 is EMPTY (`Q36_F2_2K1_A1_C9_A3_FULL_CLOSURE.md`).
+- A=4 remains OPEN, but `Q36_F2_2K1_A1_C9_A4_MULTIPLICITY_REDUCTION.md` proves:
+  - multiplicity4 is impossible;
+  - every multiplicity-three support is a target K3;
+  - it satisfies `O_D+e(y,D)<=2`, forcing at least four external owner incidences into supports disjoint from D.
+- A=5 remains OPEN.
 
-> owner partition `3+2+2` is EMPTY.
+### c=10
 
-Therefore the allowance-three c=7 frontier is reduced to
-
-- `3+2+1+1`;
-- `3+1+1+1+1`;
-- partitions whose maximum support multiplicity is at most2.
-
-If a multiplicity-three one-edge support occurs, `Q36_F2_2K1_A1_C7_A3_TRIPLE_Q35_EQUALITY.md` shows that repivoting one owner produces an exact q35 D14-equality shell:
-
-- `G'=13`, `z'=22`;
-- a target K10 base;
-- one inserted one-edge triple D with exactly10 target edges into the base;
-- regular missing-degree pattern `3,0,0,2,2,2,2`.
-
-This is now the common secondary interface for all residual one-edge multiplicity-three cases.
-
-### c=8,9,10
-
-The high-c normal form gives the finite allowance ranges recorded in that file; c=10 has exact `A=6`.
+The high-c normal form has exact A=6. This layer remains OPEN.
 
 ## Far target K2
 
@@ -102,13 +70,15 @@ Retained from `Q36_F2_SHELL_LEDGER_REDUCTION.md`:
 - d3 rows use at most two decorated missing-set classes;
 - in the no-d2/two-class sector, total allowance<=1.
 
+This topology remains OPEN.
+
 ## Active assistant frontier
 
 Highest priority:
 
-1. continue c=7,A=3 from the remaining partitions above, using the exact q35 equality shell whenever a one-edge multiplicity-three support occurs;
-2. close the three a_F=0 missing-star equality terminals;
-3. lift the c=7 support-capacity mechanism to c=8..10;
+1. close the repeated-K3 / forced-disjoint-support geometry in `c=8,A=4`;
+2. lift the same slack-three mechanism to `c=9,A=4`;
+3. then treat `c=9,A=5` and exact `c=10,A=6`;
 4. return to the far-target-K2 branch.
 
 The shell-poor five-one-spoke near-Mantel branch remains separate and OPEN.
