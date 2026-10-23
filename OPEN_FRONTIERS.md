@@ -58,22 +58,40 @@ The independent V5 replay is recorded in `backend/E333_V5_CANONICAL_CLOSURE.md`.
 
 These are the remaining open legal `R(4,49)` layers.
 
-The V5 capacity theorem is reusable but does not itself force E334/E335 maxima into the E333 five-family reduction. Actual core excess and row allowance must be checked at each pivot.
+Astra B is assigned E334--E337: parameterize the V5 repeated-pair capacity theorem through larger core excess, starting with the 212-edge core residual in E334.
 
-### Right-edge E338..E340
+### Assistant right edge — E338..E340
 
 The q36--q38 atomic-defect program remains active.
 
-The complete K4,9 plateau family with all decoration on the four-side and total decoration `G in {0,1,2}` is now `PROVED EMPTY` under the top-channel lexicographic contract; see `backend/K49_G2_SPLIT_FULL_CLOSURE.md`.
+Closed right-edge families now include:
 
-The last split residual is eliminated uniformly: its two repeated 4-supports are pure K4s with multiplicities summing to9. The larger class has size at least5, and the induced 14-set `{p} union Y union R` has at least71 edges, contradicting `D(14)=69`.
+1. the entire top-channel K4,9 plateau family with four-side decoration `G in {0,1,2}`;
+2. every q36 zero-defect regular d9 exchange;
+3. every q36 zero-defect regular d4 exchange.
 
-The remaining right-edge task is therefore no longer K4,9 completion. It is to prove that every q36--q38 ceiling/near-ceiling shell either
+For q36, the d4/d9 proof chain is:
 
-1. falls into the eliminated K4,9 family, or
-2. admits a strict `(q,tau)` improvement / violates the atomic-defect and joint-row constraints.
+- `backend/Q36_COMPENSATED_K49_NORMAL_FORM.md`;
+- `backend/Q36_D9_COMPENSATED_CLOSURE.md`;
+- `backend/Q36_D4_COMPENSATED_DYNAMICS.md`;
+- `backend/Q36_D4_SUPPORT_CLASS_REDUCTION.md`;
+- `backend/Q36_D4_COMPENSATED_CLOSURE.md`.
 
-No full E338--E340 layer is yet closed.
+The d4 support-class reduction was audited: an invalid local compression proof of its finite threshold lemma was removed and replaced by an explicit exact integer extremal table.
+
+Hence any remaining q36 ceiling survivor has no adjacent regular missing degree4 or9. All adjacent regular positive distances lie in
+
+`{1,2,3,10,11,12}`.
+
+The active q36 task is now **candidate coverage**:
+
+- prove an arbitrary top-channel q36 maximal shell must contain a regular d4/d9 exchange, contradicting the closures; or
+- classify and eliminate the exceptional all-low/high-distance shell above.
+
+The top-channel pivot-abundance theorem supplies at least7 other legal pivots at q36. If the shell has too few adjacent regular pivots, the missing legal pivots occur as nonadjacent degree-13 one-spoke vertices in the CORE211 core.
+
+No full E338--E340 edge layer is yet closed.
 
 ## Closed backend interval
 
