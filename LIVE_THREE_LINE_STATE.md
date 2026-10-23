@@ -1,4 +1,4 @@
-# Live research state — 2026-10-22
+# Live research state — 2026-10-23
 
 This is the synchronized human-readable live state. It contains research results only, not agent prompts.
 
@@ -61,9 +61,25 @@ This subline is disjoint from Astra B's E333 repeated-pair assignment.
 
   `rho+h+kappa+b <= s`.
 
-Therefore q36 has a zero-defect d4/d9 exchange system, q37 permits at most one atomic defect, and q38 at most two. This is an analytic theorem, not merely the V2 scalar defect table.
+Therefore q36 has a zero-defect d4/d9 exchange system, q37 permits at most one atomic defect, and q38 at most two.
 
-No high backend edge layer is claimed closed by this reduction.
+Additional independent right-edge assets now prove:
+
+- `backend/HIGH_TOP_CORE211_PIVOT_ABUNDANCE.md`: top-channel q36/q37/q38 pivots have at least 7/5/3 other legal pivots respectively;
+- `backend/K49_PLATEAU_INDEPENDENT_REDUCTION.md`: a lexicographically maximal K4,9 plateau with G in {0,1,2} reduces to one G=2 split-decoration residual;
+- `backend/K49_G2_SPLIT_CORE_REDUCTION.md`: that residual reduces to a 17-point remainder L with cross parameter B<=10;
+- `backend/K49_G2_SPLIT_ROW_OVERLAP.md`: the two decorated size10 rows overlap in at least5 points;
+- `backend/K49_G2_SPLIT_TWO_SUPPORT_B0.md`: the nine Y-rows have exactly two distinct disjoint 4-supports and self-similar repivoting forces `B=e_H(D1,D2)=0`.
+
+Hence the final K4,9 split residual now has the exact interface
+
+- two anticomplete pure K9 supports D1,D2;
+- `|L|=17`, `e(H[L])=67`;
+- `e(D1,L)=e(D2,L)=36`;
+- exactly two distinct disjoint Y-supports of size4;
+- the two decorated size10 rows lie in L and overlap in at least5 points.
+
+No high backend edge layer is claimed closed by these reductions.
 
 ## Line C — E332
 
