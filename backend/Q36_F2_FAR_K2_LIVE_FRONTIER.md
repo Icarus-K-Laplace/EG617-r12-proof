@@ -1,80 +1,82 @@
 # q36 f=2 far-target-K2 live frontier
 
-Status: `LIVE REDUCTION MAP`. This records proved assistant-owned far-K2 results only; it does not close the full q36 layer.
+Status: `LIVE REDUCTION MAP`. This records proved far-K2 results only; it does not close the full q36 layer.
 
 ## 1. Global d2 reduction
 
 `Q36_F2_FAR_K2_D2_GLOBAL_REDUCTION.md` proves:
 
 - any d2 row forces `a_F=0` and has a pure target-K2 support of globally regular core vertices;
-- for c>=3, at most one d2 row exists;
+- for `c>=3`, at most one d2 row exists;
 - d3 rows use at most two decorated missing-set classes;
 - if two d3 classes occur with a d2 row, their total allowance is at most2;
 - with no d2 row the known sharper two-class allowance sum is at most1.
 
-## 2. c=8 with one d2 row
+## 2. c=8 with exactly one d2 row is fully CLOSED
 
-`Q36_F2_FAR_K2_C8_D2_REDUCTION.md` proves:
+`Q36_F2_FAR_K2_C8_D2_REDUCTION.md` reduces the seven d3 owners to one missing-set class with
 
-- the seven d3 owners form one missing-set class;
-- allowance `A in {2,3,4}`.
+`A in {2,3,4}`.
 
-`Q36_F2_FAR_K2_C8_D2_A2_FULL_CLOSURE.md` proves A=2 is EMPTY.
+The three allowance layers are all empty:
 
-## 3. A=3 is fully CLOSED
+- `Q36_F2_FAR_K2_C8_D2_A2_FULL_CLOSURE.md` closes A=2;
+- the corrected A=3 chain closes A=3, while the obsolete fixed-remainder file remains RETRACTED;
+- the A=4 chain closes multiplicity>=3, all multiplicity-two internal types, and finally the all-singleton sector in `Q36_F2_FAR_K2_C8_D2_A4_ALL_SINGLETON_FULL_CLOSURE.md`.
 
-The obsolete `Q36_F2_FAR_K2_C8_D2_A3_REPEATED_K3_CLOSURE.md` remains `RETRACTED`; it incorrectly imported a fixed 12-point remainder from the far-2K1 topology.
-
-The corrected chain is:
-
-- `Q36_F2_FAR_K2_C8_D2_A3_MULTIPLICITY_REDUCTION.md`;
-- `Q36_F2_FAR_K2_C8_D2_A3_ONEEDGE_FULL_CLOSURE.md`;
-- `Q36_F2_FAR_K2_C8_D2_A3_REPEATED_K3_CORRECT_REDUCTION.md`;
-- `Q36_F2_FAR_K2_C8_D2_A3_REPEATED_K3_FULL_CLOSURE_V2.md`;
-- `Q36_F2_FAR_K2_C8_D2_A3_FULL_CLOSURE.md`.
-
-The full closure uses no fixed-remainder assumption. It eliminates multiplicity-three, multiplicity-two and all-singleton systems under the correct far-K2 contract.
+`Q36_F2_FAR_K2_C8_ONE_D2_FULL_CLOSURE.md` aggregates these results.
 
 Therefore
 
-> `c=8, n2=1, A=3` is EMPTY.
+> `q36 f=2`, far-target-K2, `c=8`, exactly one d2 row is EMPTY.
 
-## 4. A=4 high-multiplicity sector is fully CLOSED
+## 3. c=8 no-d2: only one d3 missing-set class survives
 
-`Q36_F2_FAR_K2_C8_D2_A4_HIGH_MULTIPLICITY_REDUCTION.md` proves:
+`Q36_F2_FAR_K2_C8_NO_D2_CLASS_REDUCTION.md` proves:
 
-- multiplicity4 is impossible;
-- every multiplicity-three nonclique support is impossible;
-- every multiplicity-three support is a target K3 with exact unit weights `(1,1,1)` and overlap charge `O_D in {0,1,2}`.
+- two active d3 missing-set classes are impossible by the exact shell-decoration ledger;
+- all eight owners therefore belong to one common missing-set class;
+- its allowance satisfies `A<=4`;
+- if the two inactive decorated shell vertices are a missing pair then `A<=3`.
 
-The three overlap-charge terminals are now all closed:
+The same file closes
 
-- `Q36_F2_FAR_K2_C8_D2_A4_UNIT_K3_O2_CLOSURE.md` closes `O_D=2`;
-- `Q36_F2_FAR_K2_C8_D2_A4_UNIT_K3_O1_CLOSURE.md` closes `O_D=1`;
-- `Q36_F2_FAR_K2_C8_D2_A4_UNIT_K3_O0_FULL_CLOSURE.md` closes `O_D=0`.
+- A=0;
+- A=1.
 
-Hence
+## 4. c=8 no-d2 allowance two is fully CLOSED
 
-> every surviving A=4 support has multiplicity at most2.
+`Q36_F2_FAR_K2_C8_NO_D2_A2_FULL_CLOSURE.md` proves A=2 is empty.
 
-## 5. Current c=8 one-d2 frontier
+Main steps:
 
-The allowance levels are now:
+- repeated one-edge/two-edge/K3 supports are all eliminated;
+- a hypothetical repeated-K3 owner partition would force three pairwise-disjoint low-weight K3 blocks and then at least 52 units of common-S weight on the remaining 26 core vertices, contradicting the global weight budget;
+- hence all eight supports are singleton triples;
+- their intersection components must be common-hub sunflowers of size at most3;
+- at most three components exist, forcing the unique partition `3+3+2`;
+- every nontrivial component then collapses to zero-weight one-edge triples, and the three components yield a core independent4.
 
-- `A=2`: CLOSED;
-- `A=3`: CLOSED;
-- `A=4`: OPEN only in the multiplicity-at-most-two support system.
+Therefore
 
-Thus the complete `c=8, n2=1` problem has been reduced to one terminal layer:
+> `q36 f=2`, far-target-K2, `c=8`, no-d2, A=2 is EMPTY.
 
-> one d2 row, seven d3 owners in one common missing-set class, allowance4, and every d3 support class has multiplicity at most2.
+## 5. Current c=8 no-d2 frontier
+
+Only
+
+> `A=3` and `A=4`
+
+remain.
+
+Both are single-common-missing-set eight-owner systems. No pure-d2 support or fixed 11/12-point remainder is available, so proofs in those branches must use only the no-d2 contract.
 
 ## 6. Current far-K2 tasks
 
 Highest priority:
 
-1. close `c=8,n2=1,A=4` with support multiplicity<=2;
-2. treat the no-d2 c=8 branch;
-3. parameterize downward to c<=7.
+1. close `c=8`, no-d2, A=3;
+2. close `c=8`, no-d2, A=4;
+3. once c=8 is empty, parameterize downward to `c<=7`.
 
-The far-K2 topology is independent of the concurrent `2K1,a_F=1` work and of the Astra A/B frontiers.
+The far-K2 topology remains independent of the concurrent far-2K1 work and of the Astra A/B frontiers.
