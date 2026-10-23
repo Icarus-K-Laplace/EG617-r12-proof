@@ -27,17 +27,6 @@ Only three explicit equality terminals remain:
    - both support endpoints are adjacent to the centre;
    - at most one additional D--X target edge exists.
 
-Key closure assets include
-
-- `Q36_F2_2K1_A0_C7_MIXED_FULL_CLOSURE.md`;
-- `Q36_F2_2K1_A0_C8_MIXED_FULL_CLOSURE.md`;
-- `Q36_F2_2K1_A0_C9_MIXED_FULL_CLOSURE.md`;
-- `Q36_F2_2K1_A0_LOW_C_D3_ELIMINATION.md`;
-- `Q36_F2_2K1_A0_C3_C4_FULL_CLOSURE.md`;
-- `Q36_F2_2K1_A0_C2_DISTINCT_FULL_CLOSURE.md`;
-- `Q36_F2_2K1_A0_C2_REPEATED_STAR_REDUCTION.md`;
-- `Q36_F2_2K1_A0_C1_STAR_REDUCTION.md`.
-
 ## Far topology 2K1, a_F=1
 
 `Q36_F2_2K1_A1_HIGH_C_NORMAL_FORM.md` parameterizes every remaining c>=7 state.
@@ -58,20 +47,52 @@ and
 
 `3m<=13+e_M(Y)`.
 
-For c=7 the only possible allowances are A=2 or3. `Q36_F2_2K1_A1_C7_A2_FULL_CLOSURE.md` proves
+### c=7
+
+A is either2 or3.
+
+`Q36_F2_2K1_A1_C7_A2_FULL_CLOSURE.md` proves
 
 > `c=7, A=2` is EMPTY.
 
-Therefore the exact c=7 terminal is now
+Hence the exact remaining c=7 state has
 
 - `A=3`;
 - `Y=K3`;
 - inactive decorations `(1,1,1)`;
 - `{p} union C union Y=K11`;
-- seven common-S 3-support rows in the 12-point alpha-two remainder R;
-- every repeated support has multiplicity at most4 and q<=35.
+- seven common-S 3-support rows in a 12-point remainder R with `alpha(H[R])<=2`.
 
-For c=8,9,10 the high-c normal form gives the finite allowance ranges recorded in that file; c=10 has exact `A=6`.
+`Q36_F2_2K1_A1_C7_A3_MULTIPLICITY_RIGIDITY.md` further proves
+
+- support multiplicity4 is impossible;
+- every multiplicity-three support is either
+  - a target K3 with weighted overlap at most2, or
+  - an exact one-edge triple with zero core excess, zero x0/Y incidence and weighted overlap exactly4;
+- owner partition `3+3+1` is EMPTY.
+
+`Q36_F2_2K1_A1_C7_A3_322_FULL_CLOSURE.md` also proves
+
+> owner partition `3+2+2` is EMPTY.
+
+Therefore the allowance-three c=7 frontier is reduced to
+
+- `3+2+1+1`;
+- `3+1+1+1+1`;
+- partitions whose maximum support multiplicity is at most2.
+
+If a multiplicity-three one-edge support occurs, `Q36_F2_2K1_A1_C7_A3_TRIPLE_Q35_EQUALITY.md` shows that repivoting one owner produces an exact q35 D14-equality shell:
+
+- `G'=13`, `z'=22`;
+- a target K10 base;
+- one inserted one-edge triple D with exactly10 target edges into the base;
+- regular missing-degree pattern `3,0,0,2,2,2,2`.
+
+This is now the common secondary interface for all residual one-edge multiplicity-three cases.
+
+### c=8,9,10
+
+The high-c normal form gives the finite allowance ranges recorded in that file; c=10 has exact `A=6`.
 
 ## Far target K2
 
@@ -85,8 +106,9 @@ Retained from `Q36_F2_SHELL_LEDGER_REDUCTION.md`:
 
 Highest priority:
 
-1. close the three a_F=0 missing-star equality terminals;
-2. close `2K1,a_F=1,c=7,A=3` and lift its support-capacity mechanism to c=8..10;
-3. return to the far-target-K2 branch.
+1. continue c=7,A=3 from the remaining partitions above, using the exact q35 equality shell whenever a one-edge multiplicity-three support occurs;
+2. close the three a_F=0 missing-star equality terminals;
+3. lift the c=7 support-capacity mechanism to c=8..10;
+4. return to the far-target-K2 branch.
 
 The shell-poor five-one-spoke near-Mantel branch remains separate and OPEN.
