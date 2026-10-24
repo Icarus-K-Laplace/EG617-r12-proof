@@ -1,239 +1,194 @@
 # Repeated-Class Exchange Duality and the zeta Coordinate
 
-Assumptions: legal regular repivots in one residual graph F. This lemma is symbolic in the support size d; the d2 application is the main use here.
+Assumptions: legal regular repivots in one residual graph F, with the standard backend clique cap `omega(F)<=r-1`. The exchange lemma is symbolic in support size d; d2 is the main application.
 
 ## 1. View notation
 
-At pivot p let
+At pivot p let y be a regular shell owner with
 
-- shell A;
-- core H;
-- y a regular shell owner;
-- `S=S_y subset A`, `D=D_y subset H`, `|S|=|D|=d`;
-- `T=A\(S union {y})`.
+`S=S_y`, `D=D_y`, `|S|=|D|=d`,
+
+`T=A\(S union {y})`.
 
 After repivoting through y,
 
-> `A_y={p} union T union D`,
->
-> `H_y=(H\D) union S`.                                      (1.1)
+`A_y={p} union T union D`,
 
-Define an **exact `(S,D)` owner class** at p by
+`H_y=(H\D) union S`.
 
-`Y_{S,D}={x in A : x regular, S_x=S, D_x=D}`.
+Define the exact class
 
-Let
+`Y_{S,D}={x in A:x regular, S_x=S, D_x=D}`
 
-`m=|Y_{S,D}|`,
+with multiplicity m, and let
 
-and assume `y in Y_{S,D}`.
-
-Also let
-
-`Z_0(p)={z in A:z regular and d_z=0}`,
+`Z_0(p)={z in A:z regular,d_z=0}`,
 
 `zeta(p)=|Z_0(p)|`.
 
 ---
 
-# 2. Exact class-to-zero transport
+## 2. Class-to-zero transport
 
-### Lemma 2.1
+Every `x in Y_{S,D}\{y}` becomes d0 in the y-view.
 
-Every other owner
-
-`x in Y_{S,D}\{y}`
-
-becomes a d=0 regular owner in the y-view.
-
-### Proof
-
-Such an x has, in the p-view,
-
-- shell missing set exactly S;
-- core target-neighbour set exactly D.
-
-In the new shell `A_y={p} union T union D`:
-
-- x is target-adjacent to p;
-- x is target-adjacent to every vertex of T other than itself because its old shell missing set is S;
-- x is target-adjacent to every vertex of D because its old core support is D.
-
-So x has no shell missing neighbour in the y-view.
-
-In the new core `H_y=(H\D) union S`:
-
-- x has no target neighbour in `H\D`, because its old core neighbours were exactly D;
-- x has no target neighbour in S, because S was exactly its old shell missing set.
-
-So x has no new-core target neighbour either. Since x remains regular in F, it is a d=0 owner.
-
-Therefore
+Indeed, x is target-adjacent to p, T and D, while it is target-nonadjacent to `H\D` and S. Hence
 
 > **`zeta(y)>=m-1`.**                                        (2.1)
 
-QED.
+**Status:** `PROVED_SYMBOLIC`.
 
 ---
 
-# 3. Exact zero-to-reverse-class transport
+## 3. Zero-to-reverse-class transport
 
-### Lemma 3.1
+Every old d0 owner z becomes a regular reverse owner with
 
-Every old d=0 owner
+- shell missing set D;
+- core support S.
 
-`z in Z_0(p)`
+The old pivot p has the same reverse pair `(D,S)`.
 
-becomes, in the y-view, a regular owner with
-
-> shell missing set D,
->
-> core support S.
-
-The old pivot p itself has the same reverse pair `(D,S)`.
-
-### Proof
-
-An old d0 owner z is target-adjacent to every other vertex of A and has no target neighbour in H.
-
-In the new shell `A_y={p} union T union D`:
-
-- z is target-adjacent to p and to T;
-- z is target-nonadjacent to every vertex of D, because D lies in the old core H.
-
-Hence its new shell missing set is exactly D.
-
-In the new core `H_y=(H\D) union S`:
-
-- z is target-nonadjacent to `H\D`;
-- z is target-adjacent to S, because S lay in the old shell A.
-
-Hence its new core support is exactly S.
-
-For the old pivot p, the same statement holds: p is target-nonadjacent to old-core D and target-adjacent to old-shell S. Thus p is also a reverse `(D,S)` owner in the y-view.
-
-Therefore the reverse class at y has multiplicity at least
+Therefore the reverse class in the y-view has multiplicity at least
 
 > **`zeta(p)+1`.**                                           (3.1)
 
-QED.
+**Status:** `PROVED_SYMBOLIC`.
 
 ---
 
-# 4. d0 repivots preserve zeta
+## 4. d0 invariance
 
-If y itself is a d0 owner, then `S=D=empty`. The new core is H and the new shell is obtained by swapping y and p.
+If y is itself d0, repivoting only swaps p and y. Every other d0 owner stays d0 and p becomes d0. Hence
 
-Every old d0 owner other than y remains d0, and p becomes d0. Hence
+> **`zeta(y)=zeta(p)`**                                      (4.1)
 
-> **`zeta(y)=zeta(p)` for every d0 neutral repivot.**         (4.1)
+for every neutral repivot.
 
-Thus zeta is well-defined on the quotient by d0 pivot relabellings.
+Thus zeta descends to the quotient by d0 pivot relabellings.
 
 ---
 
-# 5. The third lexicographic coordinate
+## 5. Third potential coordinate
 
 Define
 
 > **`Phi_3(p)=(q_p,tau_p,zeta(p))`.**                         (5.1)
 
-Each coordinate is an integer and bounded on the finite residual graph:
+It is bounded and integer-valued.
 
-- q is bounded by the backend ceiling;
-- tau is at most `r+1`;
-- zeta is at most `r+1`.
-
-Therefore `Phi_3` is a genuine well-founded lexicographic potential.
-
-Now suppose `p -> y` is q-flat and tau-flat, and y lies in an exact repeated `(S,D)` class of multiplicity m. By (2.1),
+Suppose `p -> y` is q-flat and tau-flat and y lies in an exact repeated `(S,D)` class of multiplicity m. Then (2.1) gives
 
 `zeta(y)>=m-1`.
 
-Hence:
+Therefore
 
-> **Repeated-class zeta improvement criterion**
->
-> if `m>=zeta(p)+2`, then
-> `Phi_3(y)>_lex Phi_3(p)`.                                  (5.2)
+> **if `m>=zeta(p)+2`, then `Phi_3(y)>_lex Phi_3(p)`.**       (5.2)
 
-Consequently, at a `Phi_3`-maximal pivot,
+At a `Phi_3`-maximal pivot,
 
-> **every exact repeated class that admits a q/tau-flat repivot has**
->
-> **`m<=zeta(p)+1`.**                                        (5.3)
+> **every q/tau-flat exact repeated class has `m<=zeta+1`.** (5.3)
 
-This is a genuine new plateau restriction unavailable from `(q,tau)` alone.
+This is a genuine monotonicity theorem.
 
 ---
 
-# 6. Equality rigidity
+## 6. Equality rigidity and reverse exchange
 
-Assume p is `Phi_3`-maximal and a q/tau-flat repeated-class repivot y has
+Assume p is `Phi_3`-maximal and a q/tau-flat repeated-class repivot has
 
 `m=zeta(p)+1`.
 
-Then (2.1) gives
+Then
 
-`zeta(y)>=zeta(p)`.
+`zeta(y)>=m-1=zeta(p)`.
 
-Maximality gives the reverse inequality, so
+Maximality forces equality:
 
 > **`zeta(y)=zeta(p)=m-1`.**                                 (6.1)
 
-Thus the `m-1` owners in `Y_{S,D}\{y}` account for **all** d0 owners in the y-view: no additional shell vertex may become d0.
+Thus the `m-1` surviving owners from the old class are exactly the full d0 population in the y-view: no extra vertex becomes d0.
 
-At the same time, Lemma 3.1 gives a reverse `(D,S)` class of multiplicity at least
-
-`zeta(p)+1=m`.
-
-Therefore a zeta-flat repeated-class exchange has the rigid form
-
-> an m-owner `(S,D)` class is exchanged for
-> an m-owner-or-larger reverse `(D,S)` class,
-> while the other `m-1` original owners become exactly the full d0 population of the new view.   (6.2)
-
-If the reverse class were larger than m and one of its rows were q/tau-flat, the same zeta criterion would force a strict improvement on the next step. Hence any closed `Phi_3`-flat correction cycle must have exact multiplicity balance at every repeated-class exchange.
-
-**Status:** exchange duality and zeta criterion `PROVED_SYMBOLIC`; complete classification of balanced cycles `OPEN`.
+Meanwhile the old d0 population plus p forms a reverse `(D,S)` class of multiplicity at least m. A closed `Phi_3`-flat correction cycle therefore requires exact multiplicity balance at each repeated-class exchange.
 
 ---
 
-# 7. d2 fully-decorated consequence
+## 7. Balanced correction-cycle clique capacity
 
-For a repeated d2 support D, both vertices of D have support multiplicity at least two and hence are globally decorated.
+Now specialize to a `Phi_3`-flat d2 repeated class. Put
+
+`z=zeta(p)`.
+
+Flatness forces
+
+`m=z+1`.
+
+At p, the following vertices are all regular low-endpoint owners or the pivot:
+
+- the m owners of the repeated `(S,D)` class;
+- the z=m-1 d0 owners;
+- p itself.
+
+Any two regular low-endpoint owners are target-adjacent, and p is target-adjacent to every shell vertex. Hence these
+
+`m+(m-1)+1=2m`
+
+vertices form a target clique.
+
+Using `omega(F)<=r-1`,
+
+> **`2m<=r-1`, hence `m<=floor((r-1)/2)` and `z<=floor((r-3)/2)`.**   (7.1)
+
+More generally, suppose there are k distinct exact repeated classes at p which each admit a `Phi_3`-flat repivot. Every such class must have multiplicity exactly `z+1`. Their owner sets are disjoint, and together with the z d0 owners and p all vertices again lie in one low-owner target clique. Therefore
+
+> **`(k+1)(z+1)<=r-1`.**                                    (7.2)
+
+Equivalently,
+
+> **`k<=floor((r-1)/(z+1))-1`.**                             (7.3)
+
+This is an exact multiplicity/class-count tradeoff for balanced correction cycles.
+
+**Status:** `PROVED_CONDITIONAL` on the standard backend clique cap.
+
+---
+
+## 8. d2 fully-decorated consequence
+
+For a repeated d2 support D, both vertices of D have support multiplicity at least two and are globally decorated.
 
 If the repivot is tau-flat, then
 
-`|D intersect X|=|S intersect X|`.
+`|D intersect X|=|S intersect X|=2`.
 
-Since `|D intersect X|=2`, necessarily
+Thus
 
-> **`S subset X`.**                                         (7.1)
+> **`S subset X`.**                                         (8.1)
 
-Thus every q/tau-flat repeated d2 class automatically lies in the fully-decorated shell-pair regime isolated by `D2_FIXED_CLASS_PLATEAU.md`.
+Every `Phi_3`-flat repeated d2 class lies in the unique fully-decorated shell-pair regime.
 
-Combining with (5.3):
+Combining the results:
 
-> At a `Phi_3=(q,tau,zeta)`-maximal pivot, every q/tau-flat repeated d2 class in the unique scalable shell regime has multiplicity at most `zeta+1`; equality is a rigid support/neutral-population exchange.
+- multiplicity `m<=zeta+1` at `Phi_3` maximality;
+- a `Phi_3`-flat class has exact `m=zeta+1`;
+- balanced class multiplicity satisfies `m<=floor((r-1)/2)`;
+- k simultaneous flat repeated classes satisfy `(k+1)(zeta+1)<=r-1`.
 
-This transfers any unbounded repeated-support multiplicity into an equally large d0 neutral population and converts the remaining obstruction into a balanced correction-cycle problem.
+Thus repeated plateau multiplicity is coupled rigidly to the neutral population and low-owner clique capacity.
 
 ---
 
-# 8. Main-theorem impact
+## 9. Main-theorem impact
 
-The previous candidate `Q2=sum kappa^2` is exact and bounded but has no proved universal monotonicity.
+The current preferred potential is
 
-The coordinate zeta is different: it has a proved monotonicity criterion on the exact repeated-support plateau, the main multiplicity obstruction left by the fixed-class d2 theorem.
+> **`Phi=(q,tau,zeta,...)`.**
 
-The current preferred potential is therefore
+The repeated-support part of the plateau is no longer an uncontrolled multiplicity problem. Any class above the zeta threshold improves the potential; equality produces a balanced reverse exchange satisfying the clique-capacity product bound.
 
-> **`Phi=(q,tau,zeta, ... )`**
-
-with a fourth coordinate needed only for
+A fourth coordinate is needed only for
 
 1. distinct-support fully-decorated d2 plateau systems; and
-2. zeta-balanced repeated-class correction cycles.
+2. zeta-balanced repeated correction cycles satisfying (7.2).
 
-This is a strict reduction of the potential-design problem.
+Complete elimination of those two regimes remains open.
