@@ -113,15 +113,56 @@ color-i edges into these two blocks. Hence
 \boxed{d_i(x)\ge2q-s_i(x)-1.}
 \]
 
-Using e_i=m_q+q+a_i and s_i(x)=q+a_i-d_i(x), this implies the global excess bound
+Using e_i=m_q+q+a_i and s_i(x)=q+a_i-d_i(x), this implies the local-to-global excess bound
+
+\[
+\boxed{a_i\ge q-1}
+\]
+
+for every color that is low-slack at even one vertex. Equivalently, if a_i<=q-2, then s_i(x)>=q-1 for every vertex x.
+
+## Theorem K.7 — Every color has global excess at least q-1
+
+In fact, every color i in a hypothetical counterexample satisfies
 
 \[
 \boxed{a_i\ge q-1.}
 \]
 
-Therefore **any color that is low-slack at even one vertex must have global excess at least q-1**. Equivalently, if a_i<=q-2, then s_i(x)>=q-1 for every vertex x.
+### Proof
 
-This is stronger than the one-block near-line bound q-s and gives a two-block degree constraint.
+Suppose a_i<=q-2. The exact global identity is
+
+\[
+\sum_{x\in V}s_i(x)=q(q-1)+(q^2-1)a_i.
+\]
+
+Hence
+
+\[
+\sum_x s_i(x)
+\le q(q-1)+(q^2-1)(q-2)
+<(q^2+1)(q-1).
+\]
+
+The average local slack is therefore strictly below q-1, so at some vertex x we have s_i(x)<=q-2. The low-slack partition and Theorem K.6 then force a_i>=q-1, contradiction.
+
+Consequently the global excesses obey
+
+\[
+a_i\ge q-1\quad\forall i,\qquad
+\sum_i a_i=m_q,
+\]
+
+so their total excess above the universal floor is
+
+\[
+\sum_i(a_i-(q-1))
+=m_q-q(q-1)
+=\frac{q(q-1)(q-2)}2.
+\]
+
+This global bound is rigorous but does not force a low-slack color at any prescribed vertex, and it does not close the high-slack branch.
 
 ## Two-color transversal-blocking form
 
