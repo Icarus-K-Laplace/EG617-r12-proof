@@ -93,3 +93,6 @@ This does not rely on the now-vacuous neighborhood-low-slack bridge. Residual ex
 Exact design interface: N(q)>=ceil(q/2)-2 MOLS(q). For r=11, Case B implies three MOLS(10), an open question, not a contradiction. If the omitted color c also has alpha(G_c[R])<=q, the budget forces a full affine plane of order q; extension by X remains open.
 
 Current theorem boundary unchanged: Case A is not closed, Case B is not contradicted, no fixed merge is guaranteed, and not-P(r) => not-P(r-1) remains unproved.
+
+
+Threshold refinement: if the repeated witness color in the high-excess branch has b_i=q-1, K's exact Kang–Pikhurko interface gives a finite normal form (q-clique partition plus q-1 defects, or one exceptional point and a defect star after deletion). Exact source: K branch commit b20a3dde117facb37e78c2311160a149e578b27c, RESIDUAL_MULTINET_EXTRACTION.md, Theorem K.RM4. This remains a structured kernel, not a contradiction; b_i>=q remains unclassified.
