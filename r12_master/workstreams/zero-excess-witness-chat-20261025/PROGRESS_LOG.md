@@ -44,3 +44,30 @@ The arithmetic table was exhaustively checked over all \(k,t\) in the stated fin
 
 - \`R12_ZERO_EXCESS_WITNESS_THEOREM.md\`: \`e02fc41103d43e06edd040b93d39bb7dba783510\`.
 - \`CANONICAL_STATE.md\`: \`2a3c4a604d7f66daf5fbe31af1fb9500ef56519b\`.
+
+
+## 2026-10-25 — Round 2: witness-overlap edge-load audit
+
+Added \`R12_WITNESS_OVERLAP_CAPACITY.md\`.
+
+For any family \(\mathcal Q\) of independent 4-sets in \(H\) with pairwise intersections at most one, every pair \(Q,Q'\) has at least three H-edges between \(Q\setminus Q'\) and \(Q'\setminus Q\). If \(r_x\) is the number of selected witness sets containing \(x\), exact double-counting gives
+\[
+\sum_{\{Q,Q'\}\subseteq\mathcal Q}e_H(Q\setminus Q',Q'\setminus Q)
+=\sum_{xy\in E(H)}r_xr_y
+\ge3\binom{|\mathcal Q|}{2}.
+\]
+
+For five no-S K5 witnesses from each of \(c\) exact-129 colors, \(|\mathcal Q|=5c\), \(r_x\le c\), \(\sum_xr_x=20c\), and \(\sum_x\epsilon(x)=4\). The exact scalar upper bound is
+\[
+\sum_{xy\in E(H)}r_xr_y
+\le\frac12\sum_x(12+\epsilon(x))r_x^2
+\le122c^2.
+\]
+At \(c=7\), this is \(5978\) versus lower bound \(1785\); at \(c=8\), it is \(7808\) versus lower bound \(2340\). Thus the pairwise-crossing inequality does not close the terminals. The arithmetic was corrected and checked; no contradiction is claimed.
+
+This records a valid reusable incidence identity and a clear failed scalar route. The remaining blocker is a labelled overlap bound that uses each witness's shell-row hit pattern and the actual 284-edge core, rather than only the total number of memberships and degree excess.
+
+Commits:
+- \`R12_WITNESS_OVERLAP_CAPACITY.md\` (initial): \`c49e9b83a4888ae8573e3657af90687f5e7c7459\`.
+- \`R12_WITNESS_OVERLAP_CAPACITY.md\` (corrected arithmetic): \`21a11a95de35cba62f45c07409e58b3f88cbb482\`.
+
