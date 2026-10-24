@@ -190,7 +190,7 @@ The required theorem is a **target-labelled global cover inequality**. The previ
 
 ### Conditional theorem: destination map is a derangement
 
-In the canonical hub-star model, each group (B_j) has a hub (a_j) with an internal target nonneighbor and a full target cross-star to (B_{f(j)}), where (f(j)\ne j). The target independence cap forces
+In the **exact hub-star model** (every target cross-group edge belongs to the specified hub stars, with no additional cross edges), each group (B_j) has a hub (a_j) with an internal target nonneighbor and a full target cross-star to (B_{f(j)}), where (f(j)\ne j). The target independence cap forces
 [
 \boxed{f\text{ is a derangement permutation on five groups}.}
 ]
@@ -198,7 +198,7 @@ If two groups share a destination, the two internal nonedges plus one point from
 
 If the oversized group has a second hub with an internal nonneighbor and a full star, its destination must equal the first hub's destination; otherwise the same collision contradiction applies. The two oversized-group hubs must be target-adjacent, since otherwise the two hubs plus an ordinary point in their group and three points from groups avoiding their shared destination form an independent 6-set.
 
-Status: **PROVED_CONDITIONAL** on the full-star model; it does not yet prove every terminal has that model.
+Status: **PROVED_CONDITIONAL** on the exact hub-star model; it does not yet prove every terminal reduces to that model. An O(r)-edge perturbation needs a stability version of this lemma.
 
 ### Conditional triangle obstruction
 
