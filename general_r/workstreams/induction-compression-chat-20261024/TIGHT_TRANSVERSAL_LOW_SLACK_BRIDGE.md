@@ -48,13 +48,15 @@ Let J_i be the set of blocks containing at least one v in Y with witness color i
 
 Indeed, if some B_a is empty, J_i is contained in that single block. Otherwise, Theorem J.K1 gives b_a<=s_i for each a in J_i, so |Y intersect P_a|>=r-s_i on every such block. These blocks are disjoint and |Y|=2r-1.
 
-Examples:
-- If s_i=1 and r>=3, at most two blocks can host private witnesses of color i.
-- More generally, for every s_i<=r-2, the low-slack color's private witnesses are confined to a quantitatively bounded set of blocks.
+## Corollary J.K3 — Exact small-slack support
 
-This is a genuine bridge from the tight-transversal certificates to the K-line block geometry.
+If s_i=1, all color-i private witnesses in Y are based in at most two blocks. If s_i=2 and r>=4, the same conclusion holds.
 
-## Theorem J.K3 — Weighted transversal-blocker constraint
+Proof: if some B_a is empty, Theorem J.K1 already confines the witnesses to that block. Otherwise, the defect-edge graph induced on the B_a parts has no independent transversal and at most s_i edges. The exact one-/two-edge classification in the K-branch file SMALL_SLACK_BLOCKER_CLASSIFICATION.md applies. A three-part obstruction of residual sizes 1,1,2 would require at least 3r-4 vertices in Y, exceeding |Y|=2r-1 for r>=4. Thus the obstruction is supported on at most two blocks. Any private witness based outside that support would have to choose an independent transversal through the obstruction, impossible.
+
+For s_i=1 this conclusion also holds at r=3; s_i=2 is not low-slack when r=3.
+
+## Theorem J.K4 — Weighted transversal-blocker constraint
 
 If every B_a is nonempty, let F_i be the graph of color-i defect edges with both endpoints in the B_a parts. F_i has no independent transversal, because Y hits every independent r-set of color i in W.
 
@@ -70,7 +72,7 @@ In particular,
 \boxed{s_i\ge |E(F_i)|\ge\min_{a<b} b_a b_b.}
 \]
 
-The weighted inequality is stronger than merely saying some B_a has size at most s_i. It forces a pair of residual blocks with product at most s_i and identifies which defect edges are actually useful for blocking transversals.
+This is the weighted obstruction bound from the K-line theorem. It identifies which defect edges are actually useful for blocking transversals.
 
 ## What remains open
 
