@@ -46,13 +46,20 @@
 - Combined the local-to-global implication with the exact average-slack identity.
 - Proved every color satisfies a_i>=q-1, not merely colors that are low-slack at some vertex: if a_i<=q-2, the average slack is below q-1, forcing a low-slack vertex and contradiction.
 - Recorded the exact total excess above the universal floor: sum_i(a_i-(q-1))=q(q-1)(q-2)/2.
-- The universal excess floor is a real global theorem, but does not close the high-slack branch or force two low-slack colors at a common vertex.
+- Constructed a single-color graph with alpha,omega<=q and a_i=q-1, showing the floor is sharp for individual graph constraints but not a full coloring counterexample.
+
+## 2026-10-24 — Round 8: local multicolor budget
+
+- Summed the two-block degree bound over all colors with s_i(x)<=s to prove |L_s(x)|<=floor(q²/(2q-s-1)).
+- Proved the weighted form sum_{i:s_i(x)<=q-2}(2q-s_i(x)-1)<=q².
+- This bounds how many colors can be simultaneously low-slack at one vertex, but still does not force a contradiction or a second low-slack color.
 
 ### Status
 
 - Low-slack coordinatization: PROVED.
 - Weighted blocker inequality and two-block forcing: PROVED.
-- Universal global excess floor: PROVED.
+- Universal global excess floor: PROVED and graph-level sharp.
+- Local multicolor degree-budget inequality: PROVED.
 - Slack-one crossed pattern: PROVED conditionally.
 - Conditional J/K interface: PROVED.
 - Global low-slack alignment and high-slack contradiction: OPEN.
