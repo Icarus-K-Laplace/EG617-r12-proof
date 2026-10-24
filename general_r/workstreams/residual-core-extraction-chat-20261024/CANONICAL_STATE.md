@@ -208,6 +208,24 @@ External theorem: Füredi's quantitative Turán stability bound, recalled in Bal
 
 **Limitation:** this is a near-resolvable design with O(r) exceptional pairs, not an exact design and not yet an earlier-stop theorem.
 
+### 9B. Fixed-a hub localization in the target complement
+
+Status: **`PROVED_ANALYTIC`** for each fixed `a>=6` and `r>=200a(a-1)+1`; sharpened to `a=6, r>=5601`.
+
+Let `F_0=bar(G_0[R_a])`. Since `alpha(G_0[R_a])=a`, `F_0` is `K_{a+1}`-free and has Turán deficit `x_0<=S_a(r)`. Füredi's partition has internal-edge count `I_0<=x_0`, missing cross-pair count `M_0<=2x_0`, and
+
+`sum_j (|V_j|-r)^2<=4x_0+1`.
+
+For fixed `a`, when `r>=200a(a-1)+1`, every part has size at least `0.9r`, and `M_0<=a(a-1)r`. A union-bound transversal argument shows that every internal edge of `F_0` has an endpoint missing at least `2r/5` cross-neighbors in some other part. The set `H` of such vertices satisfies
+
+`|H|<=5a(a-1)`.
+
+Thus every internal edge of the target complement is incident to a bounded hub set; deleting `H` makes each part a target-color clique. In the `a=6` case, the sharper bounds `S_6=14r+6`, `M_0<=28r+12` give `|H|<=140` for `r>=5601`.
+
+File: `NO_HIGH_STOP_ROUND2_LEMMAS.md`.
+
+**Limitation:** this localizes defects but does not yet prove that all hubs protect the same part or that the first-stop state is impossible.
+
 ### 10. Critical-core residue windows
 
 Status: **`PROVED_ANALYTIC`** as a necessary-condition reduction.
@@ -268,7 +286,7 @@ This remains open. Specifically:
 
 - `a=6) has **not** been closed;
 - no induction/trim theorem is known for arbitrary `a>=7);
-- uniform edit-distance partition stability is now proved via Füredi, but exact/near-orthogonality incidence analysis and design trimming remain open;
+- uniform edit-distance partition stability is proved via Füredi, and fixed-a target-complement defects localize to O(a^2) hubs; exact/near-orthogonality incidence analysis and design trimming remain open;
 - approximate orthogonality, an exact resolvable-design skeleton, and a design-trimming implication are not proved.
 
 The blocker is now a precise structural problem. Any high-stop candidate must simultaneously satisfy:
@@ -285,7 +303,8 @@ Secondary open questions:
 
 - lower the current `r>=17` threshold in the core theorem;
 - decide whether the irreducible `5r+1` terminal exists;
-- turn near-minimal non-target colors into a uniform quantitative partition theorem and then a resolvable-design classification.
+- turn the bounded hub set into a hub-propagation theorem / earlier-stop extraction;
+- exploit the label-capacity lemma `z_i>=1` for every non-target color in each predecessor interface.
 
 ## DISPROVED
 
@@ -301,8 +320,4 @@ Rejected proof shortcuts:
 
 ## NEXT HIGHEST-LEVERAGE TARGET
 
-Prove **uniform Turán edit stability** for the regime
-
-`n=ar+1`, `a` fixed (first `a=6`), `F` is `K_{r+1}`-free, and `t_r(n)-e(F)=O(a^2)),
-
-with an explicit edit bound independent of `r`. Combine it with the exact predecessor-interface lemma and the `a=6` residue windows. Do not return to fixed-r recurrence or claim NO-HIGH-STOP closed before a proof exists.
+Prove a **hub-propagation / design-trimming lemma** for the `a=6` target complement: its internal edges are incident to at most 140 hubs for `r>=5601`, and every non-target color is duplicated at least once on the predecessor clique interface. Show either that these hubs force an earlier `R_5` satisfying the edge budget, or that their incidence pattern contradicts the critical-core residue windows. Do not return to fixed-r recurrence or claim NO-HIGH-STOP closed before a proof exists.
