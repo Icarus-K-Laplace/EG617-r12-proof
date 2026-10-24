@@ -127,6 +127,15 @@ The r=4,...,100 sweep is a finite implementation audit, not a theorem for all r 
 
 ### Source/parameter admission
 
+Prepared CLI replay commands (not executed directly in this session):
+
+\`\`\`bash
+python PARAMETER_ADMISSION_VERIFIER.py PARAMETER_ADMISSION_MATRIX.json --audit-range 4 100
+python PARAMETER_ADMISSION_VERIFIER.py PARAMETER_ADMISSION_MATRIX.json --query-r 11 --module ENDPOINT_DOMAIN_LOWER_BOUND_V1 --profile residual-core
+python PARAMETER_ADMISSION_VERIFIER.py PARAMETER_ADMISSION_MATRIX.json --query-r 13 --module ENDPOINT_DOMAIN_LOWER_BOUND_V1 --profile near-anchor
+python PARAMETER_ADMISSION_VERIFIER.py PARAMETER_ADMISSION_MATRIX.json --query-r 68 --module D1_SHELL_CLASS_BOUND_V1
+\`\`\`
+
 The branch started at the requested HEAD `3d27693d9f9d5bf2586e0f0178228563d96de22b`. The committed matrix has raw SHA-256 `6ada61242bd6afa86ad4bb06e8549e5d5bfdbff348c5ffff6d32be445dc51cf3`; the admission verifier file hash is `43c42443d8fbfc6ddb67d2bb3f4923e0c70e2a92a6dba5818d692defad2d44d9`.
 
 A separate JS audit rebuilt the policy row for every r=4,...,100 and matched all 97 rows of the committed matrix. The independent admission-verifier logic was also exercised in a Python harness with queries for r=11, r=13 residual-core, r=13 near-anchor, r=68 near-anchor, and r=101 D1. It returned the expected blocked/conditional states; a tampered row was rejected. This harness was a separate logic replay, not a direct invocation of the committed CLI entry point.
