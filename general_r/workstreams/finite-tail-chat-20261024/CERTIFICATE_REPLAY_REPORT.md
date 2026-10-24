@@ -100,7 +100,7 @@ The command-line generator -> verifier -> promotion gate completed successfully 
 - r=12, 13, 14, 15;
 - r=68.
 
-All 10 runs returned `PASS` from the independent verifier and `PASS_CONDITIONAL_MODULE` from the module gate. Every run explicitly reported `eg617_r_proved=false`.
+The 10 scalar-profile runs returned `PASS` from the independent verifier and `PASS_CONDITIONAL_MODULE` from the module gate. The D1 shell-count module additionally passed end-to-end at r=12,13,68 (three more runs). All 13 final-gate runs explicitly reported `eg617_r_proved=false`.
 
 Additional exact checks:
 
@@ -108,6 +108,8 @@ Additional exact checks:
 - r=11 was accepted only as an encoding test and the gate returned `SCHEMA_ONLY / BLOCKED_SOURCE_REDUCTION_NOT_APPLICABLE`;
 - a certificate with one altered admissibility bit was rejected by the independent verifier;
 - a gate run with RC omitted from the machine-readable ledger returned `BLOCKED_UNKNOWN_ASSUMPTION_ID`;
+- both module verifiers rejected tampered certificate rows;
+- the D1 shell-count certificate at r=12,13,68 returned the same conditional maximum of five classes, with the exact six-class budget gap equal to 2;
 - the d=4 boundary is retained by the residual-core ceiling at r=12,13,14 and excluded at r=15; the near-anchor ceiling excludes d=4 for r=12,...,15.
 
 The r=4,...,100 sweep is a finite implementation audit, not a theorem for all r and not a graph-existence proof.
