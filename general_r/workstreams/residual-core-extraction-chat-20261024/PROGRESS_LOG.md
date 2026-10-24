@@ -868,8 +868,8 @@ A proposed lower bound on `M0` from `K_r`-freeness between nonhub cliques was re
 
 - K7 blocker and 14-hub theorem: `18d5350d0bdc447a981fd49bbdd8c45a1e1b59b5`
 - duplicate-concentration / improved TD bound: `740d7e1454cf338ed2a206ad6c633859840cb7e7`
-- canonical state: `a0ee372629e8bd69e116ee8ad79ceaa295a81c3e`
-- open gaps: `83f06eabc3a9f6921730faa1c997dbc0696d8926`
+- canonical state: `27c8a6d78964488bfc8c46b35516558cbef8eca4`
+- open gaps: `59ea4bec8aecd2a5579215bb2f56a901cd3edace`
 - current theorem file (K7 blocker + 14-hub refinement): `740d7e1454cf338ed2a206ad6c633859840cb7e7`
 - progress log: this update
 
