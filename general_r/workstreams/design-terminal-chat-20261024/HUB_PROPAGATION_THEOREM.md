@@ -131,9 +131,9 @@ Every pair chosen from (E,F) either includes a neighbor of (z), or is exactly ((
 Therefore, after a target-label obstruction, a second-coordinate barrier can cost only 9 edges locally; it is not automatically quadratic. A valid global proof must show that such barriers cannot be chained/overlapped compatibly across all colors under the (27r+15) total edit budget and exact pair ownership.
 
 
-## HP8. Destination-injectivity theorem for the canonical hub-star model
+## HP8. Destination-injectivity theorem for the exact hub-star model
 
-This is a **conditional symbolic theorem** for the target-star regime, not yet a theorem that every terminal lies in that regime.
+This is a **conditional symbolic theorem** for an exact hub-star model, not yet a theorem that every terminal lies in that regime. The exactness matters: assume that every target cross-group edge is contained in the specified hub stars (no additional target cross edges between ordinary vertices or to other groups from these hubs). An (O(r))-edge perturbation of this model is not covered by the lemma.
 
 Assume five target groups (B_1,\ldots,B_5). For each group (j), suppose there is a hub (a_j\in B_j) with an internal target nonneighbor (y_j\in B_j) and a full target cross-star
 [
@@ -158,7 +158,7 @@ Suppose (B_h) has a second hub (b_h\ne a_h), with an internal target nonneighbor
 ]
 Indeed, if (g\ne f(h)), the permutation (f) has some (j\ne h) with (f(j)=g), and the two internal nonedges in groups (h,j) plus one point from each of the two groups outside ({h,j,g}) give an omitted-color 6-set.
 
-This is a useful restriction: the two hubs in the oversized group must have the **same destination group**, while the five group-level destinations form a derangement.
+This is a useful restriction: the two hubs in the oversized group must have the **same destination group**, while the five group-level destinations form a derangement. The proof relies on the exact hub-star model; extra target cross edges may block the witness six-set and require a stability/exceptional-edge version.
 
 ## HP9. Triangle obstruction for co-locating the two oversized-group hubs
 
