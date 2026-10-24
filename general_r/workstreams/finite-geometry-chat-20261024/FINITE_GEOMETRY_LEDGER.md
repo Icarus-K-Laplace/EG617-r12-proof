@@ -84,3 +84,10 @@ If H_i is q-partite, G_i[R] consists of q K_q blocks plus exactly q-1 cross-bloc
 In Case B with q=6, any four residual color partitions would give two mutually orthogonal Latin squares of order 6. Euler–Tarry rules this out; see D. Betten, “A direct proof of the non-existence of a MOL(6),” *Journal of Geometry* 114 (2023), DOI [10.1007/s00022-023-00669-3](https://doi.org/10.1007/s00022-023-00669-3).
 
 Thus at most three residual color complements are 6-partite. Since every non-6-partite complement costs b_i>=5 and sum b_i<=15, exactly three colors have b_i=5 and are non-6-partite, while the other three have b_i=0 and form a 3-net. The omitted color has e_c[R]=75, so its graph is the union of seven cliques of sizes 6,5,5,5,5,5,5. This exact incidence kernel is not yet excluded.
+
+
+## 8. Audit boundary for quantitative residual excess
+
+K.RM9 (RESIDUAL_MULTINET_EXTRACTION.md, commit 5aaf0165442900de0f66231a0f75ed8195be884d) is a valid root-dependent weighted blocker inequality under the (q+1)-partite residual-complement hypothesis.
+
+The attempted K.RM8 claim d>=C(k+1,2) was withdrawn in commit 4e978444c4c81c5b323c1430486a8024b5b5ab0c. Its probability estimate sampled from full blocks rather than each root's nonneighbor candidate sets, so it does not prove a stronger budget. The only unconditional strict budget currently established is d>=1 (J.W8/K.RM6). This remains enough, together with the nonexistence of two MOLS(6), to rule out r=7 Case B.
