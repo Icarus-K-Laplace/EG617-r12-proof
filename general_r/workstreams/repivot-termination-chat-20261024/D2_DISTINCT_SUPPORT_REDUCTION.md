@@ -212,7 +212,7 @@ This is exact in its stated range. As already observed in the architecture notes
 The distinct-support blocker is now stratified:
 
 - `a=0`: absolute bound 3;
-- `a=1`: absolute bound 12;
+- `a=1`: absolute bound 9;
 - `a=2`: reduced to at most three zero-weight hubs plus a max-degree-three weight-one target-support graph;
 - `a>=2`: matching/vertex-cover bound (5.2), becoming strongest when allowance grows with r;
 - pairwise correction geometry is exactly d0/d1/d2 according to support intersection.
