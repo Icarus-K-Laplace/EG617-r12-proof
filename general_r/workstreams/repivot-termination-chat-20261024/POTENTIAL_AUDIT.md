@@ -32,7 +32,7 @@ The high-density clean-pair analysis introduces:
 - the AES part deficits s_A,s_B,s_C, with sum h-2;
 - six type classes A0,A1,B0,B1,C0,C1;
 - witness slacks u_T, which sum to four in each witness triple;
-- the exceptional outside count X, with X(3a-4-r)<=2r-2-K_U;
+- the exceptional outside count X, with X(3lambda-4-r)<=2r-2-K_U;
 - part-assignment slacks u_i, which sum to 4+X;
 - the optional edge count e_opt and foreign incidence E_foreign, satisfying
   2e_opt+E_foreign=K_U+sum_i n_i(u_i-1).
