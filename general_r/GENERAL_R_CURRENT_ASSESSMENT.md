@@ -15,7 +15,8 @@ Successfully parameterized:
 - `211 -> [r(3r-1)+2]/2` for r>=12 under the general residual-core contract;
 - `38 -> q_*(r)=3r+2` at the maximum 4r+1 residual layer;
 - owner caps 9/8 -> symbolic `r-3+o(1)` / `r-4+o(1)` formulas;
-- support overlap threshold `d-1`, first-high-slack `a=d`, and allowance transport are symbolic.
+- support overlap threshold `d-1`, first-high-slack `a=d`, and allowance transport are symbolic;
+- Bridge A core cap `221 -> D_r(3r-1)=(3r^2+r-2)/2`, giving exact core-excess ceiling `K_r<=2r-2`.
 
 Still not parameterized as proved all-r facts:
 
@@ -55,22 +56,35 @@ For a regular repivot of missing degree d:
 
 > `q_y=d(r+1-d)+B_y+kappa(D_y)+m(D_y)+e_F(S_y,D_y)`.
 
-## 4. Can the anchor theorem be generalized?
+## 4. Direct near-anchor forcing is now all-r under the residual-core contract
 
-Substantially, but not completely.
+Bridge A parameterizes exactly.
 
-Already symbolic:
+For `|H|=3r-1`, the inherited hereditary cap gives
 
-- exact three-anchor partition;
-- connector count2/3/4;
-- block-size patterns as shifts of r-2;
-- any low-excess independent triple reduces to the exact degree-r anchor problem for r>=12.
+`p_r(3r-1)=3r-2`,
 
-Remaining theorem:
+`D_r(3r-1)=(3r^2+r-2)/2`,
 
-> three pairwise nonadjacent degree-r vertices => `K_r>=8`?
+and therefore
 
-This is proved for r=12 and OPEN for general r.
+> **`K_r(H)<=2r-2`.**
+
+A general graph lemma with
+
+`n=3r-1`, `delta=r`, `omega=r-1`, `t=r-1`
+
+then forces an independent triple with degree pattern
+
+> **`(r, <=r+1, <=r+1)`.**
+
+Thus every genuine core directly enters the near-anchor alternative. Common-S/signature extraction is no longer needed to *produce* anchors once the residual-core contract is available.
+
+The remaining anchor theorem is now precisely:
+
+> independent triple of total excess <=3 => `K_r>=8`?
+
+Equivalently, after the already-proved reductions, the exact degree-r three-anchor theorem remains the only general anchor gap.
 
 ## 5. Which support-compatibility parts are all-r?
 
@@ -84,9 +98,11 @@ Conditional on the residual/common-S contract, the following are fully symbolic:
 - <=2 signatures -> <=3 zero-skeleton patterns;
 - exact sunflower decomposition;
 - d2 common-hub and d3 Type-H/Type-P geometry;
-- loss-layer overlap threshold and repeated-support strict loss.
+- loss-layer overlap threshold and repeated-support strict loss;
+- exact Bridge B transport identity `kappa'_z=w_z-e_H(z,D_y)`;
+- general missing-pair common-nonneighbour count.
 
-The only r-sensitive pieces are the anchor-excess theorem and hereditary capacity function.
+The common-S machinery should now be viewed as an equality/positive-loss incompatibility engine, not the primary anchor-extraction engine.
 
 ## 6. General owner capacity
 
@@ -108,7 +124,35 @@ For fixed k<=3 and sufficiently large r these integerize to `r-3` and `r-4`.
 
 Thus owner capacity is linear with slope1; owner packing alone does not provide a slope contradiction.
 
-## 7. Is there a monotone symbolic repivot potential?
+## 7. Bridge B general consequences
+
+The exact transported-excess identity is symbolic:
+
+`kappa'_z=w_z-e_H(z,D_y)`.
+
+For a nonadjacent pair of total new excess rho in a `(3r-1)`-core, the number of common non-neighbours is
+
+> **`r-3-rho+codeg(u,v)`.**
+
+Thus the low-charge pair mechanism gets easier as r grows, conditional on the general near-anchor theorem.
+
+A major small-r collapse also occurs. The first d2 positive-loss concentrated state with
+
+`K_r=8, a=3, ell=1`, no outside zero, and at least two distinct supports
+
+has charge sum
+
+`W=2r+10`.
+
+All zeros lie in the intersection of the distinct 2-supports, so at most one zero exists and hence `W>=3r-2`. Therefore
+
+> **`r<=12`.**
+
+So this entire concentration state is impossible for every `r>=13`; the r=12 `0,1^34` profile is an exact small-r boundary artifact.
+
+If the general near-anchor theorem gives `K_r>=8`, then `q<=3r-1`. For d=3 this implies `a<=5` for every r>=12. Hence all d3 complexity is uniformly bounded: b=2 is fully in the low-charge window, b=1 is absorbed through a<=4, and only the symbolic boundary `b=1,a=5` survives the pair-excess<=3 test.
+
+## 8. Is there a monotone symbolic repivot potential?
 
 Partially.
 
@@ -116,23 +160,36 @@ Partially.
 
 What is OPEN is a global theorem that every non-rigid local view improves `(q,tau)` or a finite refinement of it. Higher-slack equality can currently preserve both coordinates.
 
-## 8. Do we have a sufficiently-large-r contradiction?
+Bridge B confirms that numerical envelope absorption alone is insufficient: positive-loss owner cores have `K_y=K+2ell_y`, so equality/incompatibility must cover more than the `K_y=8` plateau.
+
+## 9. Do we have a sufficiently-large-r contradiction?
 
 Not yet.
 
-But a major simplification is proved:
+But the asymptotic reduction is now stronger than before.
 
-- `q<=3r+2` under the baseline core floor;
-- for r>=15, regular missing degrees `4,...,r-3` are impossible;
-- high endpoint sizes `d>=r-2` support at most three common-S owners.
+Baseline:
 
-Hence all scalable support complexity for r>=15 lies at `d<=3`.
+- `q<=3r+2` from the universal core floor;
+- for r>=15, missing degrees `4,...,r-3` are impossible.
 
-This is strong asymptotic reduction, not yet a contradiction.
+Conditional on the general near-anchor theorem, direct Bridge A forcing applies to every core and yields
 
-Ordinary one-color Turán stability is also insufficient by itself because average color slack is Theta(r^2). A multicolor compatibility gain is needed.
+> **`K_r>=8` and `q<=3r-1`.**
 
-## 9. Largest general front-end gap
+Then for every r>=12, not merely r>=15,
+
+> **`4<=d<=r-3` is impossible.**
+
+The only scalable support sizes are d<=3; high endpoint sizes d>=r-2 have at most three common-S owners.
+
+Moreover the first d2 positive-loss concentration is absent for all r>=13, and d3 has only one fixed `b=1,a=5` equality boundary beyond the low-charge bridge.
+
+Thus the large-r backend has become a bounded-width endpoint problem rather than a growing case tree.
+
+Ordinary one-color Turán stability remains insufficient by itself because average color slack is Theta(r^2); a multicolor compatibility gain is still needed for the front/design route.
+
+## 10. Largest general front-end gap
 
 The r=12 recurrence already has a symbolic form in local variables, but its order cutoffs and edge seeds are fixed-r.
 
@@ -140,11 +197,13 @@ The largest front gap is:
 
 > prove an all-r (or all-r>=r0) contextual recurrence/extraction theorem forcing either a 4r+1 residual of minimum degree r+1 or a controlled 5r+1 design-like terminal, and certify `delta(H_r)>=r` for the resulting cores.
 
-## 10. Best candidate for the eventual Problem 617 main theorem
+This gap is now even more important because once `delta(H_r)>=r` is available, direct near-anchor forcing turns on automatically for every genuine core.
 
-> **Defect-Transport Stability Theorem.** In every extremal counterexample, a lexicographically maximal local view either transports defect into an independent low-excess anchor configuration, concentrates it into a bounded sunflower/design structure, or admits an improving repivot. The anchor branch violates the residual-core excess bound; the concentrated branch violates hereditary/multicolor capacity; the improvement branch contradicts maximality.
+## 11. Best candidate for the eventual Problem 617 main theorem
 
-This theorem would conceptually unify the front/backend local machinery with the near-affine stability picture.
+> **Direct-Anchor Defect Stability Theorem.** Every extremal counterexample admits a legal residual-core view. The hereditary cap then directly forces a low-excess independent triple. Either the resulting anchor equality is incompatible with the core, or every surviving equality configuration is concentrated into a bounded d<=3 support/design structure; any non-rigid such structure admits a strict repivot potential improvement.
+
+Compared with the previous architecture, the anchor-extraction component no longer needs a common-S dichotomy. Common-S machinery moves downstream and is used only to kill equality/positive-loss structures.
 
 # Unique highest-leverage general-r bridge lemma
 
@@ -156,12 +215,12 @@ This theorem would conceptually unify the front/backend local machinery with the
 >
 > **(B)** a `5r+1` design-like terminal which is already forced into the multicolor near-Turán stability/nonextension branch.
 
-Why this is the unique highest-leverage bridge:
+Why this remains the unique highest-leverage bridge:
 
-1. all formulas after it are now largely symbolic;
-2. it activates the universal q ceiling `3r+2` and r>=15 support collapse;
-3. it makes the exact-anchor and support-compatibility theorems directly applicable;
-4. it replaces the r=12 1752-node recurrence by one all-r theorem;
-5. it is upstream of every backend contradiction, so proving it moves the dependency DAG more than any additional fixed-r lemma.
+1. once it supplies the residual-core contract, direct near-anchor forcing is automatic by hereditary cap;
+2. a general near-anchor theorem would then immediately sharpen q to `3r-1` for every core;
+3. all medium missing degrees vanish for every r>=12;
+4. Bridge B reduces to bounded d2/d3 equality incompatibility rather than broad extraction;
+5. it replaces the r=12 1752-node recurrence by one all-r theorem and activates essentially the entire symbolic backend stack.
 
-This is the next theorem that should receive the largest share of research effort.
+This remains the theorem that should receive the largest share of research effort.
