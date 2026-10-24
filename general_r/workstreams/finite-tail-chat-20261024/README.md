@@ -99,7 +99,7 @@ Opaque solver success, floating-point optimizer logs, or unreplayable search out
 
 ## Current global status
 
-No concrete all-large-r threshold `r0` has yet been certified by the sibling synthesis. The latest integration records three remaining asymptotic interfaces: front extraction/RC, residual endpoint terminal closure, and robust design-terminal stability. The three-anchor excess theorem is no longer an asymptotic blocker above r=68.
+No concrete all-large-r threshold `r0` has yet been certified by the sibling synthesis. The latest integration records three remaining asymptotic interfaces: front extraction/RC, residual endpoint terminal closure, and robust design-terminal stability. The broad near-anchor ANCHOR_K8 source is available for r>=68. A separate exact-three-anchor theorem is audited for r>=12 only when its three-independent-degree-r-anchor premise is established; it is not a substitute for the broad near-anchor contract.
 
 Accordingly this workstream is now `CONDITIONAL_MODULE_CERTIFIED`, not `FINITE_TAIL_CLOSED`. No new EG617(r) theorem has been proved.
 
