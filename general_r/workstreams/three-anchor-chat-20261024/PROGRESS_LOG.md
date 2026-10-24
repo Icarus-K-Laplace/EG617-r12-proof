@@ -61,3 +61,25 @@ The preferred proof is now `UNIFIED_SHORT_PROOF.md`. It does not rely on computa
 ## Next target
 
 No theorem gap remains in this workstream. The highest-value action is external/independent proof review before the theorem is promoted upstream as a hard dependency for the general-r backend.
+
+
+## 2026-10-24 — independent proof certification
+
+- Fetched and read the complete contents of CANONICAL_STATE.md, UNIFIED_SHORT_PROOF.md, THEOREM.md, PROOF_ATTEMPTS.md, EQUALITY_CASES.md, COUNTEREXAMPLE_SEARCH.md, and R12_UNIFIED_CLOSURE.md before deciding the audit verdict.
+- Independently re-derived the anchor incidence identities, all four geometries, the rectangle excess formula, all threshold inequalities, and the additivity conditions.
+- Confirmed the Empty-Part Self-Consistency Lemma. Expanded the derivation from E1 empty through S >= m(S+3-m) > S.
+- Filled a presentation gap in the c=2 degree-two cover branch: when two E-parts have size at most two, the explicit connector count gives r <= K+5 <= 11.
+- Added PUBLICATION_VERSION.md with the full proof, LEMMA_VERIFICATION.md with the charge/additivity and empty-part derivations, PROOF_DEPENDENCY_MAP.md, INDEPENDENT_AUDIT.md, and ARITHMETIC_AUDIT.py / ARITHMETIC_AUDIT_RESULTS.md.
+- Executed the committed arithmetic verifier's source in Python. All eight threshold inequalities passed over 10,000 positive-integer pairs; all zero-charge characterizations passed over 1 <= a,b <= 100; c=3 boundary relaxations and c=4 equality relaxations matched the proof's listed signatures.
+- The analytic proof audit found no OPEN_GAP or DISPROVED lemma. The theorem status is now INDEPENDENTLY_VERIFIED in the analytic-proof-audit sense.
+- Explicit limitation: no full graph-level SAT/ILP search was run; no Z3, OR-Tools, or PySAT backend was installed. This is not a computational proof. External human referee review remains advisable.
+- Actual GitHub commit SHAs for the audit sequence:
+  - ARITHMETIC_AUDIT.py: 585beaf726f6d9758d02696a5293af1fe9dede9b
+  - LEMMA_VERIFICATION.md: 19c90e4e334c32cc63999a1227e90646e7e8a387
+  - PROOF_DEPENDENCY_MAP.md: 22d1ce381400698d831b67ddcbd0c51da1e9efb3
+  - PUBLICATION_VERSION.md: b9faa08e691f9c054a66a674b7d998fc21d80db9; expanded in 88f906099acabee72769b6a0d3b2508f8f66bbf8 and 065f43cac86d1f6aa5228e00d5d3d76913fd5df2
+  - ARITHMETIC_AUDIT_RESULTS.md: e41ef17fe5750f1cc06f2ed1c58470aacb4f834b
+  - INDEPENDENT_AUDIT.md: b1bd7a918afa0000cab5cca9531e2acea9ab6e2c
+  - CANONICAL_STATE.md: 437aeecaafd0db7d55bf47cb68b4131229355979
+  - THEOREM.md: ab9f6dbbd5c0dc8527ef94117bec7c91c143a6b6
+  - COUNTEREXAMPLE_SEARCH.md: b0890dae2b597fe100235dec67b9fdd4badc5bcb
