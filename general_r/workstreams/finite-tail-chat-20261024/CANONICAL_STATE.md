@@ -140,7 +140,7 @@ Immediate solver admission policy:
 
 This prevents wasting computation on parameters that analytic theory already collapses or on instances whose bridge is not yet proved.
 
-## 9. Theorem-promotion milestone — 2026-10-24
+## 9. Theorem-promotion milestones — 2026-10-24
 
 A first real conditional endpoint module has completed the full producer -> certificate -> independent verifier -> theorem-promotion gate path:
 
@@ -150,10 +150,26 @@ A first real conditional endpoint module has completed the full producer -> cert
 - r=13 residual-core instance SHA-256: `65909c3589061e7463e807579bdde059ee7ae4d20f57f53158e5a612ae2d6c42`;
 - certificate SHA-256: `aa2123245e1bd6db9ab7056c3c2b0083f1d2f3828d39f40b54c731ba113b170a`;
 - verifier SHA-256: `c18a74703417faed2c453b588e0ea9a8b03244af04bfc0b5f4191ec8cc15de6a`;
+- generator SHA-256: `b29179be0386b44168450cab23fa3591c187222a32194ee086a05a5bca4d6758`;
+- verifier SHA-256: `c18a74703417faed2c453b588e0ea9a8b03244af04bfc0b5f4191ec8cc15de6a`;
+- gate SHA-256: `da90253d941ceb184f5c74a603cda70c5dda466fd3936de484b82924783b032c`;
 - gate: `PASS_CONDITIONAL_MODULE`; theorem status: `CONDITIONAL_LEMMA_CERTIFIED`;
 - RC remains `OPEN`, so EG617(13) remains **NOT PROVED**.
 
-The verifier independently re-derives all 14 d-rows and the reflection partition. CLI replay passed for r=12,13,14,15,68 under both profiles. A finite arithmetic audit over r=4,...,100 passed; this is not an all-r theorem. Tampering and unknown-ledger-ID tests failed closed as intended.
+A second, genuine endpoint-class module is now replayed:
+
+- module: `D1_SHELL_CLASS_BOUND_V1`;
+- committed artifact: `certificates/d1_shell_class_bound_r13.json`;
+- receipt: `certificates/d1_shell_class_bound_r13_receipt.json`;
+- source theorem: repivot endpoint classification, commit `35fec3eaaab70b31e10b41065634b35b02a28e6c`;
+- r=13: shell incidence cap 76; five classes require 65, six require 78 and are impossible by gap 2;
+- instance SHA-256: `e2606f6a45ce41d5de4a5a184e2a32026259bc2992a73fbe82ce0833a4ae8a5e`;
+- certificate SHA-256: `2b82b7c89b8afab0259728a21d6e28ea10ace8a97c7c46455511a381555b0bc8`;
+- generator SHA-256: `b0d85a0877953490c5d724365b17c15dfc3113390a578a6813a7ba7b9183d5b6`;
+- verifier SHA-256: `e05ff2311275143d7a3a1492141be42b40989c93361e32ec3c2e504a2e5d457a`;
+- gate: `PASS_CONDITIONAL_MODULE`; RC and ANCHOR_K8 remain open at r=13; bounded-allowance d1 nonextension remains OPEN.
+
+The independent arithmetic verifier re-derives all seven class-count rows. These are conditional local theorems only: neither module proves EG617(13), and neither closes all endpoint states. The r=4,...,100 audit is a finite implementation test, not an all-r theorem. Tampering and unknown-ledger-ID tests fail closed as intended.
 
 ## 10. Next finite-tail implementation target
 
