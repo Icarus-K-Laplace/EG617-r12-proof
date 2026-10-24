@@ -106,9 +106,9 @@ This changes the asymptotic picture materially: target internal corrections cann
 
 - D1: **achieved conditionally** on reaching `d=r-1,j=r-6`.
 - D2: **OPEN** — Chat A interface still has to force the stop.
-- D3: **OPEN**, but the surviving large-r geometry is now reduced to a bounded target-hub kernel plus an `r^2-O(r)` partial resolvable transversal design.
-- D4: **OPEN**.
-- D5: **OPEN**.
+- D3: **OPEN as a classification route**; later theorem proves the contextual terminal family is empty for all `r>=6212`.
+- D4: **PROVED_ANALYTIC for `r>=6212`** under the full contextual terminal contract, by bounded target-defect capacity; see `JOINT_DEFECT_PROPAGATION.md`.
+- D5: **OPEN** for the remaining finite parameter range; this does not close the front-end forcing interface.
 
 ## Single largest blocker
 
