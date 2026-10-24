@@ -133,3 +133,10 @@ The specified `LITERATURE_AUDIT.md` did not exist on this branch at the start of
 - Forced the omitted color c to have exactly 75 edges on R, attaining the Turan minimum for alpha<=7; hence its graph is a union of seven cliques of sizes 6,5,5,5,5,5,5.
 - Identified the exact incidence kernel: a 3-net / Latin square of order 6, one c-clique that is a full transversal, six disjoint c-cliques that are near-transversals, and three high-color exceptional-star graphs.
 - This is not a contradiction: one full transversal plus six near-transversals does not automatically produce an orthogonal mate. Case A remains outside the reduction.
+
+
+## 2026-10-24 — Round 7: abstract incidence counterexample for q=6 kernel
+
+- Exhaustive generation of the 9,408 reduced Latin squares of order 6 found an explicit design-level realization of the K.RM5 partition: one full transversal and six disjoint near-transversals of size 5.
+- Stored a concrete Latin square and label matrix in Q6_NEAR_TRANSVERSAL_OBSTRUCTION_AUDIT.md (commit 825c48ae4e5cc47e7feb6abab6337de62db6fd6c).
+- This does not realize the full EG617 graph contract. It does show that Euler–Tarry cannot exclude the 3-net plus (6,5,5,5,5,5,5) partition alone; the exceptional-star color graphs and 14-root witness incidence must be used.
