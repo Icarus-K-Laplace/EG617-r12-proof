@@ -175,6 +175,18 @@ Fix an exact-129 color C and an outer block \(B_i\). Write \(X_b=N_C(b)\cap R\) 
 
 **Proof.** Item 1 follows from the edge budget. By the one-or-two rule, a component cannot be fully contained in two rows when \(r_i(C)\le3\), since all five of its vertices would then have C-degree two into \(B_i\). Therefore the at least nine component-containing rows from the blocker theorem represent distinct components. If only nine components were represented, three rows would contain no full component. Each such row has at least six neighbors in the exceptional gadget \(U_C\). Thus those three rows alone contribute at least 18 incidences from \(U_C\) into \(B_i\). But each of the 11 gadget vertices has C-degree one or two into \(B_i\), so the total gadget incidence into \(B_i\) is at most \(11+r_i(C)\le14\), a contradiction. Hence all ten components are represented exactly once, leaving exactly two rows with no full component. Their neighborhoods have size at least six, while the ten component-containing rows have size at least five. Since the total incidence is \(61+r_i(C)\), the total excess above \(10\cdot5+2\cdot6=62\) is \(r_i(C)-1\le2\). Thus each component-containing row has at most two extra vertices, proving item 4. \(\square\)
 
+**Two exceptional-row refinement.** Let X and Y be the two row neighborhoods containing no full K5 component, and put \(Y_U=X\cap U_C\), \(Z_U=Y\cap U_C\). The total incidence budget above the baseline \(10\cdot5+2\cdot6=62\) is \(r_i(C)-1\le2\), so X and Y together contain at most two vertices outside \(U_C\). Their union therefore cannot cover a full isolated K5 component. Applying pairwise blocker compatibility with k=0 gives \(U_C\subseteq X\cup Y\), hence \(Y_U\cup Z_U=U_C\).
+
+Let \(a=|Y_U\cap Z_U|\). Since both gadget portions have size at least six, \(1\le a\le r_i(C)\le3\). The complements \(A_C=U_C\setminus Y_U\) and \(B_C=U_C\setminus Z_U\) are disjoint cliques of C[U_C], each of size at most five, and
+\[
+|A_C|+|B_C|=11-a.
+\]
+Thus their size profiles are \(5+5\) if \(a=1\), \(5+4\) if \(a=2\), and either \(5+3\) or \(4+4\) if \(a=3\). If e is the number of gadget vertices additionally covered by component-containing rows and t the number of component vertices appearing outside their unique component row, then the exact repeated-incidence budget is
+\[
+r_i(C)=a+e+t,\qquad e+t\le2.
+\]
+This isolates the remaining local freedom to at most two extra incidences beyond the two complementary gadget blockers.
+
 **Cross-block consequence.** Suppose \(r_i(C)\le3\) and \(r_j(C)\le3\) for two distinct outer blocks. For each isolated component \(K_\ell\), let \(x_i(\ell)\in B_i\) and \(x_j(\ell)\in B_j\) be its unique component-containing row representatives. Each row neighborhood contains \(K_\ell\) plus at most two extra vertices. Their union contains no second full component and covers at most four vertices of \(U_C\). Thus at least seven vertices of \(U_C\) remain outside the union; they cannot form a clique because \(\omega(C[U_C])=5\). Pairwise blocker compatibility therefore forces
 \[
 x_i(\ell)x_j(\ell)\in E(C).
