@@ -509,7 +509,118 @@ The strongest new interface is now the **Brouwer excess vector**
 
 For `a=6`, the total non-target excess above the sharp individual floor is at most `8r+11`. The next step is to classify the `y_i=0` / small-`y_i` color graphs using the Kang–Pikhurko extremal templates and align their two-star defect pattern with the predecessor label classes `S_{i,b}`. The required theorem is a joint incidence-packing inequality linking those extremal templates to `D`, `M_0`, and the bounded hub kernel. The scalar countermodel above shows why another scalar-only refinement will not suffice.
 
-## 8. Status ledger for this round
+## 8. Exact label-pair incidence and the per-color defect identity
+
+This section uses the full predecessor interface, rather than only its scalar sum. It gives an exact edge-count identity and a pairwise obstruction for each duplicated color label. It does **not** close `NO-HIGH-STOP`.
+
+Fix a non-target color `i`. Write `F_i=bar(G_i[R_a])`, `n=ar+1`, and
+
+`S_b=S_{i,b}`, `s_b=|S_b|`, `h_b=a-s_b`, `Z=Z_i`, `z=|Z|=z_i`.
+
+Thus the `S_b` are disjoint color-`i` cliques, `|S_b|<=a`, `Z` is the set of vertices duplicating color `i` on the predecessor clique `B`, and
+
+`sum_b h_b=z-1`.
+
+Let:
+
+- `M_i` be the number of color-`i` edges between distinct classes `S_b,S_c`;
+- `H_i` be the number of color-`i` edges between `Z` and `union_b S_b`;
+- `K_i` be the number of color-`i` edges inside `Z`;
+- `Q_i=sum_b binom(h_b,2)` be the hole-concentration statistic.
+
+### Theorem 10 — exact predecessor-label defect identity
+
+`M_i+H_i+K_i = x_i + (a-1)z_i + 1 - Q_i`.  (EL)
+
+**Proof.** Since each `S_b` is independent in `F_i`, and every other pair is either a cross-class pair or meets `Z`,
+
+`e(F_i) = sum_{b<c} s_b s_c - M_i + z_i sum_b s_b - H_i + binom(z_i,2)-K_i`.
+
+Put `h_b=a-s_b`. Then `sum h_b=z_i-1`, `sum_b s_b=ar+1-z_i`, and
+
+`sum_{b<c}s_b s_c = t_r(ar)-a(r-1)(z_i-1)+sum_{b<c}h_bh_c`.
+
+Using `sum_{b<c}h_bh_c=binom(z_i-1,2)-Q_i` and `t_r(ar+1)=t_r(ar)+(r-1)a`, direct simplification gives
+
+`t_r(n)-[sum_{b<c}s_b s_c+z_i sum_b s_b+binom(z_i,2)] = -(a-1)z_i-1+Q_i`.
+
+Subtracting the edge formula from `t_r(n)` and using `x_i=t_r(n)-e(F_i)` proves (EL). `\square`
+
+Interpretation: `M_i+H_i+K_i` is the exact number of color-`i` pairs in `R_a` that are not inside one of the predecessor-label classes `S_b`. The term `Q_i` matters: concentrated holes reduce this number, so it is not valid to replace the identity by `x_i+(a-1)z_i+1` without a correction.
+
+### Lemma 10.1 — two-label product obstruction
+
+Let `v in Z_i` duplicate color `i` at two distinct vertices `b,c in B`. Define
+
+`A_b(v)=N_{F_i}(v) intersect S_b`, `A_c(v)=N_{F_i}(v) intersect S_c`,
+`d_b(v)=|A_b(v)|`, `d_c(v)=|A_c(v)|`.
+
+Then:
+
+1. every pair in `A_b(v) x A_c(v)` is a color-`i` edge, so these pairs are counted by `M_i`;
+2. `d_b(v)+d_c(v)<=a`;
+3. the color-`i` edges from `v` to `S_b union S_c` number exactly `(s_b-d_b(v))+(s_c-d_c(v))`.
+
+**Proof.** For any `u in S_b` and `w in S_c`, the set
+
+`(B minus {b,c}) union {v,u,w}`
+
+has `r+1` vertices. None of its edges to `B minus {b,c}` has color `i`; the only possible color-`i` edges in the set are among `v,u,w`. The balanced-coloring property forces at least one of `vu,vw,uw` to have color `i`. Therefore, if `u in A_b(v)` and `w in A_c(v)`, the first two edges are not color `i`, so `uw` must be color `i`. This proves (1). The sets `A_b(v)` and `A_c(v)` are each independent in `F_i`, and by (1) all cross pairs are absent from `F_i`; hence their union is independent in `F_i`. Since `alpha(F_i)=omega(G_i)<=a`, (2) follows. Statement (3) is the definition of `A_b,A_c`. `\square`
+
+### Corollary 10.2 — a per-color duplicate-incidence inequality
+
+Let `L_i` be the multigraph on `B` whose `z_i` edges are the duplicated label pairs of vertices in `Z_i`; let `deg_{L_i}(b)` count multiplicity. Then
+
+`H_i >= a z_i - sum_b h_b deg_{L_i}(b) >= z_i(a-z_i+1)`
+
+whenever the rightmost bound is positive.
+
+**Proof.** Sum item (3) over all `v in Z_i`; the counted pairs are distinct because they have different endpoints `v`. By item (2), each summand is at least `s_b+s_c-a= a-h_b-h_c`. Summing over duplicated label pairs gives the first inequality. Since `deg_{L_i}(b)<=z_i` and `sum h_b=z_i-1`,
+
+`sum_b h_b deg_{L_i}(b)<=z_i(z_i-1)`,
+
+which gives the second inequality. `\square`
+
+Combining this with (EL) gives the further necessary bound
+
+`M_i+K_i <= x_i - z_i + 1 - Q_i + sum_b h_b deg_{L_i}(b)`
+
+and hence the coarser bound
+
+`M_i+K_i <= x_i + (z_i-1)^2 - Q_i`.  (MK)
+
+For `a=6`, `z_i=6`, `x_i=5`, and a single class of size one (`Q_i=binom(5,2)=10`), (EL) reads `M_i+H_i+K_i=26`; (H) gives `H_i>=6`; and (MK) gives `M_i+K_i<=20`. The Kang–Pikhurko extremal construction attains this local budget with `H_i=6`, `M_i=5`, `K_i=15`. Thus the case `z_i=6` cannot be discarded by assuming that every color has `z_i=1`.
+
+### Corollary 10.3 — sharpened one-duplicate excess inequality
+
+If `z_i=1`, then every class has size `a`, `Q_i=0`, and `K_i=0`. For the unique duplicated vertex `v` with labels `b,c`, write `d_b=d_b(v)`, `d_c=d_c(v)`. Then
+
+`x_i >= a-1 + (d_b-1)(d_c-1)`.  (OD)
+
+In particular, if `x_i=a-1`, then `d_b=1` or `d_c=1`.
+
+**Proof.** By Lemma 10.1, `M_i>=d_bd_c` and `d_b+d_c<=a`. By (EL), `M_i+H_i=x_i+a`. Also
+
+`H_i=(a-d_b)+(a-d_c)`.
+
+Therefore
+
+`x_i+a = M_i+H_i >= d_bd_c+2a-d_b-d_c`
+
+`=2a-1+(d_b-1)(d_c-1)`,
+
+which proves (OD). `\square`
+
+### Counterexample / dependency audit
+
+- These statements do **not** follow from the scalar excess ledger alone; Lemma 10.1 uses the exact `r+1`-set predecessor interface, and (EL) uses the actual class sizes.
+- The local Kang–Pikhurko extremal graph is a genuine `K_{r+1}`-free non-`r`-partite graph attaining `x_i=a-1`; its label-interface profile can have `z_i=a` and a class of size one. This is a per-color graph/interface model, **not** a full `r`-edge-coloring of the original `r^2+1`-vertex graph and not a counterexample to the Ramsey statement.
+- Hence `z_i=1` cannot be assumed. The new inequalities are sharp on the known local extremal template and do not by themselves force a contradiction after summing over colors.
+- The remaining structural question is whether the required two-label missing-bicliques and the `M_i,H_i,K_i` budgets can coexist **across all colors** with the target-group partition and its bounded hub kernel.
+
+External extremal input for the sharp local template: Kang–Pikhurko, *Maximum K_{r+1}-free graphs which are not r-partite* (2005), Theorem 1 and Theorem 4/Lemma 5: https://opikhurko.warwick.ac.uk/E/KangPikhurko05ms.pdf.
+
+## 9. Status ledger for this round
 
 ### PROVED
 
