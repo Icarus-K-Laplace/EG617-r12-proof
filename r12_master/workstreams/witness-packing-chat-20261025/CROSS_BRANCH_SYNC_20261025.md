@@ -12,8 +12,8 @@ The linked account search returned one EG617-specific repository: Icarus-K-Lapla
 | Line | Head SHA | Latest headline read | Relevance to this line |
 |---|---|---|---|
 | Emergency r12 sprint | 87a58429070cffbd90991045e0375102fcc4ec0d | Corrected exact-129 witness packing; high-multiplicity witness-star lemma; E408 blocker-occurrence budget | Correct six B-labelled witnesses versus seven total Q-sets; found a gap in the star lemma's claimed equality dichotomy |
-| Ultimate closure | 28f47fb7c8f273e6a70bf19f4ee961e8023f5981 | Exact-129 pairwise blocker compatibility; row-transversal theorem; Q33 high-k packing | Supplies at least one high-k no-S witness per exact-129 Q33 color, two for beta=0/1; preserves OPEN status |
-| Zero-excess witness | 95255a82f126fadbc8834c799df1374e5fc86fca | Robust zero-excess independent-four theorem; scalar overlap route audited as insufficient | Combining its degree theorem with the corrected six B-labelled components gives at least two zero-excess component witnesses per exact-129 color |
+| Ultimate closure | 78c30e86b0f432464ca5375695da97a27b230878 | Exact-129 pairwise blocker compatibility; row-transversal theorem; Q33 high-k packing | Supplies at least one high-k no-S witness per exact-129 Q33 color, two for beta=0/1; preserves OPEN status |
+| Zero-excess witness | f3c9ef6b3a4bfadad4f70a16bb0e7c6434bb0777 | Robust zero-excess independent-four theorem; scalar overlap route audited as insufficient | Combining its degree theorem with the corrected six B-labelled components gives at least two zero-excess component witnesses per exact-129 color |
 | Master closure | e46da35aedce7bbaaf11756b50192bd157956239 | E335 q=30, e(H)=214, excess K=8 equality reduction | Backend reduction remains conditional and does not close the T61 E407/E408 terminal |
 | Earlier emergency-chat line | 5258c5fe17af3bf17eb7a2bfb08315c9be9116cd | Hub-capacity cross-cut | Source of the previously registered universal three-shell-row support and template-specific hub floors |
 | General-r adversarial audit | 7ea44fc180fcaef20283f788a2234e2a14aa78e2 | E407 Q32 and E408 Q32/Q33 still open; root bridge contracts must be explicit | Consistent with fixed-r=12 status; no new unconditional terminal exclusion |
@@ -42,3 +42,30 @@ This line does not use the unsupported dichotomy.
 - 4234596d4f7a3a62b58037d8b3c5a6d5ac125011 — standard-library arithmetic verifier.
 
 All substantive files are under r12_master/workstreams/witness-packing-chat-20261025/. The headline remains OPEN / NOT_CERTIFIED.
+
+
+## Live refresh — 2026-10-25, second pass
+
+The branch heads were checked again immediately before this update:
+
+- emergency: 87a58429070cffbd90991045e0375102fcc4ec0d
+- ultimate-closure: 78c30e86b0f432464ca5375695da97a27b230878
+- zero-excess-witness: f3c9ef6b3a4bfadad4f70a16bb0e7c6434bb0777
+- master-closure: e46da35aedce7bbaaf11756b50192bd157956239
+- this workstream: ecf58c25171c51ef8750a76dee4bfc1b7615b477
+
+### Newly imported valid structure
+
+1. **Seven-neighbour transversal floor:** for the linear family of 49 witnesses on 29 support vertices, and 56 witnesses on 31 support vertices, no transversal of size at most six exists. Therefore every outside core vertex has at least seven neighbours into the witness support.
+2. **Correct E407 boundary window:** \(\delta+\epsilon_U\le16\) and \(\epsilon_U+2\delta\ge2\). The sibling claim \(\delta\le15\) is only valid conditional on L being non-four-partite.
+3. **E408 Q33 boundary window:** \(\delta+\epsilon_U\le17\); the seven-neighbour floor is automatically satisfied by the exact edge identity.
+4. **Pair-indexed zero-excess hub-cover certificates:** for any two regular B-rows with row sizes at most three, a common zero-excess independent four-set exists. It must be hub-complete whenever the two rows' missed-hub sets cover S. The reported 39/17/9 counts are labelled row-pair certificates, not distinct Q-sets.
+5. **High-support exact-129 dichotomy:** if h=#\{b:k_b>=2\} is at least six, every exact-129 color has a no-S K5 component labelled by a high-k row. If h=5, a low-only repeated-disjoint-witness branch remains. This is especially relevant to E407 template E and E408 Q33 with beta=2 or3.
+
+### New audit corrections
+
+- The ultimate-closure boundary theorem's step “if L were complete four-partite ... hence L is non-four-partite” is invalid: a four-partite graph can omit cross-part edges. The valid case split is non-four-partite (where Brouwer applies) versus a near-complete four-partite design-like branch. This line records the corrected E407 delta window \([0,16]\), not \([0,15]\).
+- The zero-excess pairwise-hub-cover file claims C/D/E have at least eight K5 components avoiding S, hence seven B-labelled components. The basic component count only proves at least seven avoiding S, hence six B-labelled (one could contain p). No template-specific proof of the stronger eight-component count was found in the cited file; this line uses only the safe six-label count until such a proof is supplied.
+- The earlier emergency star lemma has the same complete-partite/non-complete-partite gap. Its m=10 equality dichotomy remains unaudited and is not used here.
+
+The full EG617(r=12) result remains OPEN / NOT_CERTIFIED.
