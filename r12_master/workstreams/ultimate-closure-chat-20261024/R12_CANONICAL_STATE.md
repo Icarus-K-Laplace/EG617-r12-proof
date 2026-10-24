@@ -121,8 +121,19 @@ Latest witness-packing head 5d0e3ce and zero-excess head 2b433e2 were read. The 
 
 The safe exact-129 factor count is at least six B-labelled no-S K5 components per color, hence at least two zero-excess B-labelled witnesses per exact-129 color (14 globally in E407; 16 in E408 Q33). If a full row exists, at least three B-labelled witnesses per color are hub-complete; E with no full row yields six endpoint-complete witnesses per color. See R12_EXACT129_ZERO_EXCESS_COMPONENT_PACKING.md.
 
-The shell-incidence union lemma gives full-row support union at least 11 in template A and 10 in C. The transversal boundary theorem proves tau(Q)>=7, but the E407 delta<=15 bound is conditional on L being non-four-partite; unconditionally delta may be 16, forcing a non-complete four-partite branch. The E408 Q33 non-complete four-partite branch is also open.
+Audit correction: the imported shell-incidence union proof overlooks core vertices with zero shell support. With at most four such vertices, the safe full-row union floors are >=7 in E407 template A and >=6 in C; the 11/10 floors need an extra hypothesis. See R12_SHELL_INCIDENCE_UNION_AUDIT.md. The transversal boundary theorem proves tau(Q)>=7. The new minimum-transversal classification additionally proves E407 delta>=2 and E408 Q33 2*delta+epsilon_U>=8; these narrow the boundary but do not close it. The E407 delta<=15 bound remains conditional on L being non-four-partite; unconditionally delta may be 16, forcing a non-complete four-partite branch.
 
 The latest zero-excess branch derives the E407 g=16, epsilon_U=0 four-partite corner. Its further inference that the eighth point is unused, that all five missing edges are incident to it, and that size-8/9 transversals contain a whole part is audited in R12_E407_G16_EPS0_CORNER_AUDIT.md. A modified TD(4,7) gives a local incidence counterexample to those inferences; it does not refute the full core theorem.
 
 EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+## Round-5 update — minimum-transversal boundary classification (2026-10-25)
+
+Added R12_TRANSVERSAL_BOUNDARY_CLASSIFICATION.md and verify_transversal_boundary_classification.py.
+
+- Pair counting across color classes proves that distinct 7-transversals of either boundary witness family are disjoint.
+- E407 Q32: the v=29, m=49 boundary cannot have delta<=1, so delta>=2.
+- E408 Q33: the v=31, m=56 boundary must satisfy 2*delta+epsilon_U>=8, jointly with delta+epsilon_U<=17.
+- Exact arithmetic regression checks passed for all admissible low-budget integer profiles.
+- These are boundary-profile exclusions only. E407 Q32, E408 Q32/Q33, the T61 terminal, and the original K145 proof remain OPEN / NOT_CERTIFIED.
