@@ -620,6 +620,60 @@ which proves (OD). `\square`
 
 External extremal input for the sharp local template: Kang–Pikhurko, *Maximum K_{r+1}-free graphs which are not r-partite* (2005), Theorem 1 and Theorem 4/Lemma 5: https://opikhurko.warwick.ac.uk/E/KangPikhurko05ms.pdf.
 
+## 9. Aligning exact predecessor classes with Turán-stability partitions
+
+The exact label classes `S_{i,b}` are not automatically the same as the parts supplied by Füredi stability. The following lemma proves that all but `O_a(r)` classes do align, globally across all non-target colors. This improves the earlier `r^2-O_a(r^(3/2))` partial-design bound to `r^2-O_a(r)`.
+
+### Lemma 11.1 — alignment of full label classes
+
+Fix a non-target color `i`. Let `P_{i,1},...,P_{i,r}` be the `r`-part partition of `F_i` supplied by Füredi stability. Write `I_i^*` for the number of `F_i` edges internal to its parts and `M_i^*` for the missing `F_i` cross-pairs. The established stability bounds give
+
+`I_i^*<=x_i`, `M_i^*<=2x_i`.
+
+Then the number of size-`a` label classes `S_{i,b}` that are not exactly equal to one of the parts `P_{i,j}` is at most
+
+`2x_i/(a-1)+2x_i`.
+
+**Proof.** First consider a size-`a` class `S=S_{i,b}` that meets at least two stability parts. Every pair of its vertices in different parts is a missing cross-pair of `F_i`, because `S` is independent in `F_i`. Any nontrivial split of `a` vertices creates at least `a-1` such pairs. Since distinct label classes are disjoint, their cross-part pairs are disjoint. Hence at most `M_i^*/(a-1)<=2x_i/(a-1)` full classes are split.
+
+Now consider a full class `S` contained in one part `P`. If `|P|=a`, then `S=P`. Suppose `|P|>a`. If `P` contains exactly one full label class, every extra vertex `w in P\S` has at least one `F_i` edge to `S`; otherwise `S union {w}` would be an independent set of size `a+1`, contradicting `alpha(F_i)=omega(G_i)<=a`. Distinct such parts/classes charge distinct internal edges, so there are at most `I_i^*` of these classes.
+
+If `P` contains `k>=2` disjoint full label classes `S_1,...,S_k`, then for every pair `S_j,S_l`, the bipartite graph of `F_i` edges between them has independence number at most `a` on `2a` vertices. Its minimum vertex-cover number is therefore at least `a`, so it has at least `a` edges. These edges are internal to `P`, and the edge sets for distinct pairs of label classes are disjoint. Thus `I_i^*>=a*binom(k,2)`. Since `k<=2*binom(k,2)` for `k>=2`, the number of full classes in all such parts is at most `2I_i^*/a`. Combining the two contained-but-not-equal cases gives at most `I_i^*+2I_i^*/a<=2x_i` classes. Adding the split-class count proves the lemma. `\square`
+
+### Theorem 11.2 — a linear-defect partial resolvable `TD(a,r)`
+
+For every fixed `a>=6`, for all sufficiently large `r`, any first `K_r`-free canonical stop `R_a` contains a pairwise-linear partial resolvable transversal design on its `a` target groups with
+
+`r^2-O_a(r)`
+
+blocks.
+
+**Proof.** For each non-target color `i`, a class is clean if (i) it has size `a`, (ii) it equals one of the Füredi stability parts of `F_i`, and (iii) it is disjoint from the target hub set `X`. Such a class is a transversal of all `a` target groups: it is target-independent, and every group outside `X` is an actual target-color clique, so it contains at most one vertex from each group; its size is `a`.
+
+The number of deficient classes of color `i` is at most `z_i-1`, by the exact hole identity. Lemma 11.1 bounds the number of full classes not aligned with a stability part by `2x_i/(a-1)+2x_i`. Since the `S_{i,b}` classes are disjoint, at most `|X|` classes of a fixed color meet `X`. Therefore the total number of non-clean classes across all `r-1` non-target colors is at most
+
+`sum_{i>0}(z_i-1) + (2/(a-1)+2)sum_{i>0}x_i + (r-1)|X|`.
+
+Now `sum_{i>0}(z_i-1)<= (a-1)r+2`, `sum_{i>0}x_i<=S_a(r)-x_0<=(binom(a,2)-2)r+a` by `x_0>=r`, and `|X|=O_a(1)` by the fixed-`a` hub theorem. The exception count is thus `O_a(r)`. There are `r(r-1)` label classes in total, so at least `r^2-O_a(r)` are clean.
+
+Classes of a common color are disjoint. Classes of distinct colors share at most one vertex, because a pair cannot have two colors. Hence the clean classes form the claimed partial resolvable transversal design. `\square`
+
+### Explicit `a=6` bound
+
+For `a=6` and `r>=1000`, use `|X|<=74`, `sum_{i>0}x_i<=13r+6`, and `sum_{i>0}(z_i-1)<=5r+2`. The total number of non-clean classes is at most
+
+`(5r+2) + (12/5)(13r+6) + 74(r-1) <= 111r`.
+
+Therefore every first `K_r`-free `R_6` contains a pairwise-linear partial resolvable `TD(6,r)` with at least
+
+`r^2-112r`
+
+blocks for every `r>=1000`. This improves the earlier explicit `r^2-(29/2)r^(3/2)-67r` bound.
+
+### Limitation and adversarial audit
+
+This is a stronger necessary structure, not a contradiction. The exceptional `O_a(r)` classes may carry all the non-extension obstruction; the theorem does not complete the design or show that an earlier `R_5` exists. The proof uses only the existing Füredi stability bounds, the exact predecessor-label partition, `alpha(F_i)<=a`, and the bounded hub theorem. No fixed-`r` computation is promoted to an all-`r` result.
+
 ## 9. Status ledger for this round
 
 ### PROVED
@@ -643,4 +697,4 @@ External extremal input for the sharp local template: Kang–Pikhurko, *Maximum 
 \boxed{\texttt{NO-HIGH-STOP = OPEN}.}
 ]
 
-The critical-core potential has reduced the (a=6) case to four explicit residue windows, the color partitions form a global near-resolvable design, and any high stop forces an almost-complete partial resolvable TD(6,r) with at least `r^2-(29/2)r^(3/2)-67r` blocks plus a hub kernel of size at most 74 for `r>=1000`. Brouwer floors now sharpen the excess vector, but the explicit abstract ledger countermodel shows scalar and pair-count constraints still do not contradict a high stop. The next highest-leverage step is to align the equality/small-defect Brouwer templates with the exact predecessor classes and derive a joint incidence-packing contradiction.
+The critical-core potential has reduced the (a=6) case to four explicit residue windows, and any high stop forces a pairwise-linear partial resolvable TD(6,r) with at least `r^2-112r` blocks plus a hub kernel of size at most 74 for `r>=1000`. The linear-defect theorem aligns all but O_a(r) predecessor classes with stability parts; NO-HIGH-STOP remains open. Brouwer floors now sharpen the excess vector, but the explicit abstract ledger countermodel shows scalar and pair-count constraints still do not contradict a high stop. The next highest-leverage step is to align the equality/small-defect Brouwer templates with the exact predecessor classes and derive a joint incidence-packing contradiction.
