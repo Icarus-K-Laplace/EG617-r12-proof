@@ -432,3 +432,60 @@ Follow-up commits:
 - CLEAN_PAIR_NONEXTENSION.md exact h-bound: b32397fc4bbf75c9213bff18d2642b613874c004
 
 No new contradiction is certified.
+
+
+---
+
+# 2026-10-24 — Round 6: shell incidence and overlap-corrected joint budget
+
+## Result 31 — Clean endpoints force a linear excess floor
+
+For the clean a_2=2 family, each of the 2m endpoints satisfies kappa_x=1-e_F(x,S_2). The shell pair has total incidence 2r+b_2, so
+
+K_U>=2m-2r-b_2.
+
+Combining this with the off-part exceptional charge L=3lambda-4-r gives
+
+2m-2r-b_2+X L<=2r-2,
+
+and
+
+X<=floor(2(r-1+h+b_2)/(r-3h-5)).
+
+At the lower AES threshold this improves the parameter-free exceptional count to X<=r/6+O(1), but X may still be linear.
+
+## Result 32 — Joint d1/d2/excess budget without double-counting
+
+For a d1 support set V_1 of size N_1 and allowance c, with J_2=|V_1 intersect U_2| and J_X=|V_1 intersect O_exc|, the exact necessary inequality is
+
+2m-2r-b_2+N_1(c-1)+X L
+-(c-1)J_2-min(c-1,L)J_X<=2r-2.
+
+Using N_1>=ceil(eta/5) gives the eta-explicit version. If 3<=c<=L-1, both intersections vanish, yielding
+
+2m-2r-b_2+ceil(eta/5)(c-1)+X L<=2r-2.
+
+This is the first overlap-corrected coupling of eta, d1 allowance, clean-pair size, exceptional count, and inherited excess. The d2 matching/allowance inequality remains
+
+ceil(N_2/(eta+1))(a_2-1)<=4r-4+a_2+b_2.
+
+The two inequalities are separate projections of the same budget; they must not be added without a disjointness theorem.
+
+## Notation and audit
+
+Renamed the high-density offset lambda=m-r+1 to avoid confusing it with the d2 allowance a_2=2. An independent audit confirms that all formulas now use lambda for the offset and a_2 for allowance.
+
+## Round-6 commit ledger
+
+- CLEAN_PAIR_GLOBAL_BUDGET.md shell-incidence bound: c7051264abdb27c0d8055c6807bf7be2ccf34fad
+- CLEAN_PAIR_GLOBAL_BUDGET.md lambda notation: e1c315ec6ca008e25880a3e8fc59e3e58b407197
+- D1_TERMINAL_ABSORPTION.md joint budget: dcbba8d55b881d55080ee9ad7c4967865c06a499
+- CLEAN_PAIR_NONEXTENSION.md shell-incidence bound: c28659598983570830a6578ddb9f15749e98f07a
+- COUNTEREXAMPLE_SEARCH.md shell-incidence audit: d2f88df9f6d986d24d9ac403ac47d136c6f9bfb7
+- CANONICAL_STATE.md joint-budget promotion: 5abfc5e49b7b0bd5a6828b69717fa61a8b0012d1
+- TERMINATION_CLOSURE.md joint-budget status: 92f8590168464991b94608935d09661ce99a9f57
+- TERMINATION_THEOREM.md joint-budget theorem: 111d3893ee2775a8fbbf97ad1b0e0144992a08cb
+
+## Current status
+
+Clean Pair Nonextension remains OPEN. Bounded-allowance d1 absorption remains OPEN. The high-density branch now has a stronger shell-incidence bound and an overlap-corrected joint budget, but neither closes the remaining terminal. The low-density branch is still untouched, and no finite r0 is certified.
