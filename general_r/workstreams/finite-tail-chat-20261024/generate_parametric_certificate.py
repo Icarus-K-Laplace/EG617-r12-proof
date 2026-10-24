@@ -43,7 +43,7 @@ def main() -> None:
         parser.error(f"profile {profile!r} is invalid for {args.module}")
 
     admission_command = [
-        sys.executable, str(ROOT / "parameter_admission_verifier.py"),
+        sys.executable, str(ROOT / "PARAMETER_ADMISSION_VERIFIER.py"),
         str(ROOT / "PARAMETER_ADMISSION_MATRIX.json"),
         "--query-r", str(args.r), "--module", args.module,
     ]
