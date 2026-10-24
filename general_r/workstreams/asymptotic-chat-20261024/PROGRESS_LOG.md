@@ -102,3 +102,64 @@ and
 `tau_y-tau_p=|D_y intersect X|-|S_y intersect X|`.
 
 Goal: strict tau improvement unless decoration incidences collapse to a bounded-parameter design.
+
+
+## 2026-10-24 — Round 2: shortest route, d2 boundary audit, C/D interface
+
+### 1. New shortest conditional route
+
+Replaced the primary synthesis DAG by the near-anchor route:
+\[
+A_{\mathrm{ext}}^*(r)\land D_{\mathrm{low}}(r)\Longrightarrow P(r),
+\qquad r\ge67.
+\]
+This route kills the (4r+1) branch by the contextual ((k,s)=(4,1)) cap and bypasses (C^*), (H_B), and broad (H_D). It is still conditional; (A_{\mathrm{ext}}^*) and (D_{\mathrm{low}}) remain OPEN.
+
+### 2. Imported high-layer closure
+
+Checked current architecture branch head a922c4d7646eb8d0087bde8547562c8aace02ee2 and imported:
+- Cell B high-layer exclusion for (|W|=2r-1), (delta=r+1), (r\ge16), relative to Brouwer second-Turán and the Cell-B normal form;
+- Cell A high-layer exclusion for (|W|=2r-1), (delta=r+1), (r\ge25), relative to the sharp non-bipartite triangle-free extremal theorem and Brouwer second-Turán.
+
+This closes the **high-degree top-layer interface**. It does not close the low-degree (delta=r, |W|=2r-1) case; that case is explicitly retained in (D_{\mathrm{low}}).
+
+### 3. d2 scalar inequality adversarial audit
+
+For even (r\ge68), froze the scalar boundary family
+\[
+\epsilon=0,\ a=2,\ b=0,\ K=r-2,\ B=r/2+4,\ q=5r/2+4.
+\]
+It satisfies:
+- (q+\epsilon=3r+3-K/2);
+- (q=2r-2+a+B);
+- (W=K+2r-2+a+b=3r-2);
+- (K=2r+10-2a-2B);
+- (K+a=r).
+
+Conclusion: (K+a\le(1-c)r+O(1)) cannot follow from the existing scalar ledger. This is not a graph counterexample; the route needs a new structural exclusion of the scalable a=2 terminal.
+
+### 4. Owner-demand/capacity audit
+
+The exact common-S owner capacity is
+\[
+N\le\left\lfloor\frac{r-3+2\epsilon+\epsilon\sqrt{4\epsilon+1}}2\right\rfloor
+= r/2+O_\epsilon(1).
+\]
+No theorem currently forces (N>(1/2+c)r-O_\epsilon(1)). The owner-demand route remains OPEN.
+
+### 5. Common C/D transversal-cover lemma
+
+Added a weighted transversal-cover lemma with two exact forms:
+- every transversal of disjoint groups hits an edge implies (sum e(B_i,B_j)/(|B_i||B_j|)\ge1);
+- a fixed nonedge pair plus one point from each of s groups, under (alpha(G)\le s+1), gives the defect-pair version.
+
+The clean-pair 2-SAT audit strengthens its four-block instance to six cross edges; the TD(5,r) instance yields the existing cylinder lower bound and bounded-hub concentration. The mapping is rigorous at the transversal-cover level only; no unsupported identification of the full C and D objects is made. The lemma does not yet prove clean-pair nonextension or global TD defect-chain cost.
+
+### 6. Current blockers and provenance
+
+- (A_{\mathrm{ext}}^*): OPEN; residual extraction branch head 7a4fb4c37cefec8d801fc7deb778568bfb24002e.
+- (D_{\mathrm{low}}): OPEN; design-terminal branch head 5b4162c239d3dfad84d130c3015a0db5919228c4.
+- C clean-pair endpoint: OPEN; repivot branch head 35fec3eaaab70b31e10b41065634b35b02a28e6c.
+- Contextual cap plane and direct near-anchor route: architecture branch head a922c4d7646eb8d0087bde8547562c8aace02ee2.
+
+No unconditional all-large-r theorem was obtained. Unconditional r0 remains NOT CERTIFIED.
