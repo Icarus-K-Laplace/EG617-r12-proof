@@ -9,11 +9,16 @@ Scope: backend termination only. Front extraction and anchor-excess are upstream
 - **A.** Legal cores have `|H|=3r-1`, `alpha(H)<=3`, `omega(H)<=r-1`, `delta(H)>=r`; legal repivots preserve the core contract.
 - **B.** `K_r>=8`.
 
+The symbolic backend setup additionally has
+
+- `alpha(F)<=4`;
+- `omega(F)<=r-1`.
+
+**Important audited distinction:** the global independence cap is `alpha(F)<=4`, not `alpha(F)<=3`. Arguments forbidding independent 4-sets in F are invalid and are not part of the canonical state.
+
 Hence `q<=3r-1`. For `r>=12`, regular missing degrees satisfy
 
 `d in {0,1,2,3,r-2,r-1,r}`.
-
-Standard global backend alpha/omega caps are invoked explicitly where needed.
 
 ## Exact identities
 
@@ -97,7 +102,7 @@ Let `s=|S intersect X|`.
 
 Thus the unique scalable equal-q d2 mechanism is a fixed fully decorated shell pair `S subset X`.
 
-### R7. Genuine third coordinate zeta — PROVED_SYMBOLIC
+### R7. Genuine third coordinate zeta / exact class-neutral involution — PROVED_SYMBOLIC
 
 Define
 
@@ -107,17 +112,21 @@ and
 
 > **`Phi_3=(q,tau,zeta)`.**
 
-Zeta is bounded and invariant under neutral d0 repivots.
+For the complete exact class `Y_{S,D}(p)` of multiplicity m containing the repivot owner y, the exchange is exact:
 
-If an exact repeated `(S,D)` class has multiplicity m, repivoting one owner makes the other `m-1` owners d0, while all old d0 owners plus p become a reverse `(D,S)` class. Hence
+> **`zeta(y)=m-1`,**
+>
+> **`m_y(D,S)=zeta(p)+1`.**
 
-`zeta(new)>=m-1`.
+Thus `(m,zeta)->(zeta+1,m-1)` is an involution.
 
-On a q/tau-flat move, `m>=zeta+2` strictly improves `Phi_3`. Therefore at a `Phi_3`-maximal pivot
+On a q/tau-flat move:
 
-`m<=zeta+1`
+- `m>=zeta+2` strictly improves `Phi_3`;
+- `m=zeta+1` is exactly `Phi_3`-flat;
+- `m<=zeta` lowers the third coordinate.
 
-for every q/tau-flat repeated exact class.
+In particular, an exact distinct class (`m=1`) sends `zeta` exactly to zero. A genuinely `Phi_3`-flat distinct-support move therefore lies in the neutral-free slice `zeta=0`.
 
 ### R8. Balanced repeated-class capacity — PROVED_CONDITIONAL
 
@@ -143,45 +152,55 @@ Modulo d0-neutral pivot relabellings, the entire repeated correction orbit has o
 >
 > **Chamber 1:** core `H'=(H\D) union S`, exact reverse class `(D,S)` on C0.
 
-Thus every balanced repeated correction cycle collapses to the two-state involution
+Thus every balanced repeated correction cycle collapses to
 
 > **`H <--> H'`.**
 
-The d2 allowance a is invariant under the swap. If `b=e_M(S)` and `mu=1-e_H(D)`, then the chambers exchange `b <-> mu`, and
+The allowance a is invariant. If `b=e_M(S)` and `mu=1-e_H(D)`, the chambers exchange `b <-> mu`, and
 
-> `kappa_H(D)-kappa_(H')(S)=b-mu`.
+`kappa_H(D)-kappa_(H')(S)=b-mu`.
 
-Therefore the repeated-support cycle problem is reduced to one symbolic two-chamber terminal family; no long correction cycle remains in this branch.
-
-### R10. Missing-pair / neutral-population bound — PROVED_SYMBOLIC
-
-For a target-nonedge core pair D, the standard common-nonneighbour argument plus p and the zeta d0 owners gives
-
-> **`kappa(D)>=zeta-1`.**
-
-For a q-flat d2 owner with nonedge support D,
-
-> **`a>=zeta`.**
-
-If `a<zeta`, every q-flat d2 support must be a target edge. At equality `a=zeta`, a nonedge support collapses to a saturated common-nonneighbour template with `kappa(D)=zeta-1`, no common H target-neighbour and `e_F(S,D)=0`.
-
-### R11. Exact d2 common-S charge identity — PROVED_SYMBOLIC
+### R10. Exact d2 common-S charge identity — PROVED_SYMBOLIC
 
 `W=K+2r-2+a+b`.
 
 A three-class one-loss common-hub subsystem requires `K+a+b>=r`.
 
-### R12. d3 closure — PROVED_CONDITIONAL
+### R11. d3 closure — PROVED_CONDITIONAL
 
 The equality B-floor forces `q<=3r-2`, `a+B<=4`; the declared low-charge Bridge-B assets eliminate the remaining d3 sector.
 
-### R13. High Endpoint Three-Owner Theorem — PROVED_CONDITIONAL
+### R12. High Endpoint Three-Owner Theorem — PROVED_CONDITIONAL
 
 All regular owners with `d>=r-2` number at most three. Their bounded-complement encoding uses at most nine shell interaction vertices and eight core incidence signatures.
 
-### R14. Low-owner clique lemma — PROVED_SYMBOLIC
+### R13. Low-owner clique lemma — PROVED_SYMBOLIC
 
-Any two regular owners with `d<=3` are target-adjacent for `r>=12`, so together with p they form a target clique; there are at most `r-2` low owners.
+Any two regular owners with `d<=3` are target-adjacent for `r>=12`, by the zero-gap relation: nonadjacency would require `S_x union S_y=A`, impossible when both support sizes are at most3. Hence together with p they form a target clique; there are at most `r-2` low owners.
+
+### R14. Distinct fully-decorated d2 low-allowance reduction — PROVED_CONDITIONAL
+
+For a fixed fully decorated d2 shell class in the genuine `Phi_3`-flat distinct slice (`zeta=0`), let Q be the graph of distinct core supports. Then
+
+- exact transition identity: after repivot through support `D_i`, another same-class support `D_j` has new missing degree `2-|D_i intersect D_j|`;
+- `a=0`: at most 3 distinct q-flat supports;
+- `a=1`: at most 12 distinct q-flat supports;
+- for `a>=2`, matching number satisfies the valid weighted bound
+  `nu(Q)(a-1)<=W<=4r+9-a`;
+- the `a=2` branch reduces to at most three zero-weight hubs plus a maximum-degree-three `(1,1)` target-support subgraph;
+- a hereditary owner/support capacity inequality is available in its stated induced-set range.
+
+The stronger allowance-independent matching-three claim has been **retracted** because it incorrectly assumed `alpha(F)<=3`.
+
+## Explicit retractions from the canonical theory
+
+The file `D2_MISSING_PAIR_NEUTRAL_BOUND.md` is retained as a negative audit certificate. Its claimed consequences
+
+`kappa(D)>=zeta-1` and `a>=zeta`
+
+are **not validly proved** under the actual global cap `alpha(F)<=4` and must not be used.
+
+Likewise `D2_DISTINCT_MATCHING_COLLAPSE.md` is marked `DISPROVED_AS_STATED`; its claimed `nu(Q)<=3` and six-hub collapse are not canonical results.
 
 ## Potential status
 
@@ -189,7 +208,7 @@ Current preferred potential:
 
 > **`Phi=(q,tau,zeta,...)`.**
 
-The first three coordinates are genuine bounded integer coordinates; zeta has a proved strict improvement criterion on repeated q/tau plateaux.
+The first three coordinates are genuine bounded integer coordinates; zeta has an exact update law on every exact class exchange.
 
 `Q2=sum kappa^2` remains an exact bounded fourth-coordinate candidate, but universal monotonicity is not proved.
 
@@ -199,11 +218,11 @@ The first three coordinates are genuine bounded integer coordinates; zeta has a 
 - d1: <=5 shell classes; final core-exchange rigidity open.
 - d2 shell geometry: <=6 support vertices / <=15 classes.
 - d2 plateau geometry: every non-fully-decorated class is O(1)-bounded in q-flat rows; only `S subset X` can scale.
-- repeated fully-decorated d2 classes: either improve zeta or collapse to the single Balanced Two-Chamber Correction family.
-- nonedge q-flat supports: require `a>=zeta` and have a rigid equality boundary.
+- repeated fully-decorated d2 classes: either improve zeta or collapse to the Balanced Two-Chamber family.
+- distinct fully-decorated d2 classes: `a=0,1` absolutely bounded; `a>=2` remains the principal scalable branch, with weighted matching/hereditary constraints.
 - d3: eliminated.
 - high endpoint: <=3 owners, finite bounded-complement skeleton.
 
 ## Unique next blocker
 
-**Fully-decorated distinct-support d2 plateau theorem.** The repeated-class correction-cycle branch is now reduced to one two-chamber symbolic family. The remaining scalable combinatorial blocker is a fixed decorated shell pair `S subset X` carrying many distinct q-flat core 2-supports; simultaneously, the two-chamber family still needs a final contradiction or hereditary equality exclusion.
+**Fully-decorated distinct-support d2 plateau for allowance `a>=2`.** The repeated branch is already two-chamber. The valid next step is to close the `a=2` max-degree-three support graph or prove a general weighted matching/row-closure compression without assuming `alpha(F)<=3`.
