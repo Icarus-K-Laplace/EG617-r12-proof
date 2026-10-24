@@ -403,3 +403,52 @@ No. The near-design can have `O(r)` exceptional pairs, on the same scale as the 
 - theorem asset: `c4886cf7f4f8f2cfbc0a0ab23b737c7e83303cea`
 - canonical state: `00b152a60dbb479cb32e233a3a7480ecebbb2a03`
 - open gaps: `a671769e80c9aeb4702c4848fe63d08165395871`
+---
+
+## 2026-10-24 — Round 8: predecessor label capacity + target-complement hub localization
+
+### NEW LEMMA A — Label capacity on the predecessor clique interface
+
+Let `B=K_r` be the target-color clique deleted from `R_{a+1}` to obtain first stop `R_a`, and let `z_i` count vertices whose `B`-cross edges duplicate non-target color `i`.
+
+For each non-target color `i`, the vertices with a unique `i`-colored neighbor `b` in `B` form a color-`i` clique: for any pair `u,v` in this class, the `r+1` set `(B\\{b}) union {u,v}` contains every color other than `i`, forcing `uv` to have color `i`.
+
+These classes are target-independent and therefore have size at most `alpha(G_0[R_a])=a`. There are `r` classes, and they cover `ar+1-z_i` vertices, so
+
+`z_i>=1` for every non-target color.
+
+Consequently `sum_i z_i>=r-1` and `q_0<= (a-1)r+2`, where `q_0` is the number of target-color cross edges from `R_a` to `B`.
+
+The exact class-hole identity is
+
+`sum_{b in B}(a-|S_{i,b}|)=z_i-1`.
+
+If `z_i=1`, all `r` label classes have size exactly `a`. This is a stronger exact incidence statement than the original monotonicity of excesses.
+
+### NEW LEMMA B — Fixed-a hub localization
+
+Let `F_0=bar(G_0[R_a])`. The all-color ledger gives `x_0<=S_a(r)`, and Füredi stability gives a partition into `a` parts with
+
+`M_0<=2x_0`, `sum_j(|V_j|-r)^2<=4x_0+1`.
+
+For fixed `a>=6` and `r>=200a(a-1)+1`, every part has size at least `0.9r`, and `M_0<=a(a-1)r`. If an internal edge `uv` of `F_0` had neither endpoint missing at least `2r/5` cross-neighbors to any other part, their common neighborhoods in each other part would have size at least `r/10`. A random transversal across these common neighborhoods has probability at most `100M_0/r^2<1` of containing any missing cross-pair, so some transversal is a `K_{a+1}` together with `uv`, contradiction.
+
+Thus every internal edge is incident to a hub with missing cross-degree at least `2r/5` to some part. Since total missing cross-degree is `2M_0`,
+
+`|H|<=5M_0/r<=5a(a-1)`.
+
+For `a=6`, `S_6=14r+6`; the sharper calculation gives `r>=5601`, `M_0<=28r+12`, and `|H|<=140`.
+
+Deleting `H` makes every target partition part a target-color clique. This localizes all internal defects but does not show the hub-protection parts have a common sink; directed cycles of protection remain possible.
+
+### What remains open
+
+- `a=6` has not been eliminated.
+- No hub-propagation theorem or correct-budget `R_5` extraction has been proved.
+- `NO-HIGH-STOP` remains `OPEN`.
+
+### GitHub commits
+
+- label-capacity lemma: `c67a1e18ecd3e8b443513f1a272892aa225386fc`
+- canonical state: pending Round 8 reconciliation
+- open gaps: pending Round 8 reconciliation
