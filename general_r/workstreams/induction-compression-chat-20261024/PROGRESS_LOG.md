@@ -16,10 +16,21 @@
 
 `J2/J3/J4 = OPEN`.
 
-### Next attack
+## 2026-10-24 — Round 2
 
-Use the extra vertex of a hypothetical `K_(r^2+1)` counterexample. Search for a theorem of the form:
+- Proved the maximum-independent-set packing lemma. For `t` pairwise disjoint independent `r`-sets in one color graph, every pair of sets has at least `r` cross edges and every outside vertex has at least one neighbor in each packed set.
+- Derived
 
-- compressible fixed merge exists; or
-- every failed merge yields many maximum independent dominating sets with mutually orthogonal block structure; or
-- the obstruction is sufficiently affine/design-like to invoke nonextension.
+  `e(G_i) >= r*C(t,2)+t(r^2+1-tr)`.
+
+- Equality forces perfect matchings between every pair of packed independent sets and exactly one incidence from each outside vertex into each packed set.
+- At `t=r` this lower bound equals the ordinary Turan-complement minimum `p_r(r^2+1)`. A genuine counterexample cannot attain equality because Turan equality contains a monochromatic `K_(r+1)`.
+- Hypergraph consequence: a maximal matching of size `t` in the family of maximum independent sets gives a transversal of size at most `rt`. Therefore failure of small transversals forces a large packing, and a large packing forces matching/Latin-square-like geometry.
+
+### Refined next attack
+
+Turn the qualitative dichotomy
+
+`small transversal OR design-like packing`
+
+into a simultaneous multicolor statement strong enough to fit the exact `2r-1` shell budget. In particular, exploit overlap between transversals for different colors rather than summing their sizes independently.
