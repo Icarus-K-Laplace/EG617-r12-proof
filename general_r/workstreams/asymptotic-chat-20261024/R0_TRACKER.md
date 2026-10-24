@@ -1,80 +1,72 @@
 # R0 Tracker
 
-This tracker distinguishes numerical threshold improvement from hypothesis weakening. A smaller r0 with more assumptions is not automatically a stronger theorem.
+This tracker distinguishes numerical threshold improvement from hypothesis weakening.
 
 ## Current records
 
 | version | theorem | hypotheses | r0 | controlling inequality | status |
 |---|---|---|---:|---|---|
 | v0 | no synthesized infinite-family theorem | — | infinity | missing synthesis | superseded |
-| v1 | `P(r)` | A+B+C*+D | 12 | `4(r-3)>3r-1` | CONDITIONAL_ON_ABCD |
-| v2 | `P(r)` | A+C*+D | **68** | `2r-9>5(3r-1)/8` | CONDITIONAL_ON_ACD + ASYMPTOTIC_ANALYTIC |
+| v1 | `P(r)` | original A+B+C*+D | 12 | `4(r-3)>3r-1` | CONDITIONAL_ON_ABCD |
+| v2 | `P(r)` | original A+C*+D | 68 | AES threshold | CONDITIONAL + ASYMPTOTIC_ANALYTIC |
+| v3 | `P(r)` | **A_ext+C*+D** | **68** | AES threshold | **current strongest minimal-hypothesis synthesis** |
 
-Interpretation:
+Here `A_ext` only asks the front end to force an induced legal `4r+1` residual or a controlled `5r+1` design terminal. The complete residual pivot/core contract is now derived analytically for every r>=17.
 
-- v1 has the smaller numeric threshold but assumes H_B.
-- v2 is the current **minimal-hypothesis asymptotic synthesis record** because H_B is derived rather than assumed.
-- Relative to the pre-synthesis state, a finite H_B-free threshold has improved from `infinity` to `68`.
+Thus v2 -> v3 does **not** reduce numeric r0, but removes a load-bearing hypothesis.
 
 ## Threshold decomposition
 
-For a theorem in which the sibling hypotheses themselves have validity thresholds `R_A`, `R_C`, `R_D`, the current composition gives
+Let the still-open upstream extraction, endpoint closure, and design stability eventually be proved above thresholds `R_ext`, `R_C`, `R_D`. The current composition gives
 
-> **`r0 = max(68, R_A, R_C, R_D)`.**
+> **`r0=max(68,R_ext,R_C,R_D)`.**
 
-The pointwise theorem in `SUFFICIENTLY_LARGE_R_THEOREM.md` avoids pretending that unknown sibling thresholds are already proved.
+The extracted-residual contract has its own proved threshold 17, which is already dominated by 68.
 
-If exact three-anchor improves to threshold `R_B<68`, the analytic composition becomes
+## What controls 68
 
-`r0=max(13,R_B,R_A,R_C,R_D)`
+Only
 
-for the general near-anchor reduction; if the exact theorem is proved all the way to r=12 and the existing r=12 near-anchor closure is imported, then the anchor contribution becomes 12.
+`2r-9 > 5(3r-1)/8`,
 
-## Medium-degree threshold as a function of K-floor
+that is `r>67`, from the exact-three-anchor complement/AES argument.
 
-Using
+The residual-contract theorem needs only r>=17. Medium-degree collapse needs only r>=12 once K>=8.
 
-`q+epsilon=3r+3-K/2`,
+## Medium-degree threshold from a generic K-floor
 
-and comparing with the medium base `4r-12`, the worst-case (`epsilon=0`) endpoint-collapse thresholds are:
+From
 
-| K floor | endpoint-collapse r0 |
+`q+epsilon=3r+3-K/2`
+
+and medium base `4r-12`, worst-case epsilon=0 gives:
+
+| K floor | first r excluding every medium d |
 |---:|---:|
 | 2 | 15 |
 | 4 | 14 |
 | 6 | 13 |
 | 8 | 12 |
 
-This table is useful if the anchor theorem is weakened or bypassed.
-
 ## Fixed-deficit d3 threshold
 
-At residual deficit epsilon, the multicolour slope contradiction gives
+The multicolour slope contradiction gives
 
-> `r > 11 + epsilon sqrt(4epsilon+1)`.
+`r > 11+epsilon sqrt(4epsilon+1)`.
 
-For fixed epsilon define
-
-`R_d3(epsilon)=floor(11+epsilon sqrt(4epsilon+1))+1`.
-
-Examples:
-
-- epsilon=0: r>=12;
-- epsilon=1: r>=15;
-- epsilon=2: r>=18;
-- epsilon=3: r>=23.
-
-(The sibling repivot closure is stronger for the common-S d3 endpoint under A+B and does not require restricting to this fixed-deficit threshold.)
-
-## Next r0-reduction opportunities
-
-1. **Three-anchor:** lower 68. Every improvement here lowers the H_B-free synthesis threshold until another sibling threshold dominates.
-2. **Front extraction:** any finite theorem is acceptable initially; a threshold below 68 is effectively free at the current synthesis level.
-3. **Design terminal:** any finite robust-stability threshold can be inserted by taking a maximum.
-4. **Backend d2:** an all-large-r d2 slope contradiction need not be sharp; even r>=10^4 would immediately create a valid finite C* threshold and therefore a first true residual infinite-family theorem once A is available.
+This is useful as an independent asymptotic window, although the sibling common-S d3 endpoint is already closed under the stronger residual/anchor setup.
 
 ## Current numeric report
 
-- minimum r0 with H_B assumed: **12**;
-- minimum r0 with H_B eliminated analytically: **68**;
-- unconditional Problem 617 r0: **not yet finite/proved**, because A, C*, D remain open.
+- minimal r0 with original H_B assumed: **12**;
+- minimal r0 with H_B eliminated and residual contract derived: **68**;
+- unconditional Problem 617 r0: **not yet finite/proved**, because extraction A_ext, endpoint C*, and design stability D remain open.
+
+## Next threshold opportunities
+
+1. lower three-anchor 68;
+2. prove A_ext at any finite threshold (anything <=68 is numerically free at current synthesis level);
+3. prove C* at any finite threshold;
+4. prove D at any finite threshold.
+
+A huge threshold in C* or D is acceptable initially; it would still create the first true infinite-family theorem once all three open components have finite thresholds.
