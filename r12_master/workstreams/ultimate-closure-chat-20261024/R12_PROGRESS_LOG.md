@@ -77,3 +77,23 @@ Committed R12_WITNESS_CAPACITY_CROSSCUT.md:
 - E408 Q32/Q33: remains OPEN. Corrected arithmetic: Q32 gives e(H)=285 and excess6; Q33 gives e(H)=284 and excess4.
 - No scalar-capacity contradiction is claimed: 40 Q sets contribute 160 core memberships, below the coarse 47*11=517 cap.
 - Next attack: prove or disprove a labelled witness-packing incompatibility for the 284-edge core, while treating E408 Q32's 285-edge core separately.
+
+
+## 2026-10-25 local continuation — Round 4: row-transversal theorem and high-k component packing
+
+### New theorem file
+Committed R12_ROW_TRANSVERSAL_AND_Q33_PACKING.md.
+
+### Proof results
+1. Re-established PAIR-13 and TRI-24 from the inherited R(3,35) / R(2,24) exclusions, with the exact contracts stated.
+2. Proved the all-independent-4-set transversal theorem: for a missing shell edge ab, every independent 4-set in H\D_a hits D_b.
+3. Specialized the theorem to all five E407 Q32 templates; full rows against t=10 hubs are 3-transversals, pair rows against t=11 hubs are 2-transversals, and singleton rows against t=12 hubs are 1-transversals. Added the applicable pair/triple row-overlap inequalities.
+4. Strengthened exact-129 component packing: at least seven K5 components per color avoid S; since at most one can be the pivot-only component (five H vertices would violate alpha(H)<=4), at least six no-S components contain B.
+5. Since the Q33/d3 exact budget forces at least five B rows with k_b>=2, every exact-129 color contains at least one high-k no-S component, and beta=0/1 gives at least two. Across >=8 exact-129 colors this yields >=8 / >=16 pairwise-linear Q witnesses, each hitting at least two S rows and three shell rows total.
+
+### Impact
+- New proved necessary-structure results: 2 theorem families (transversal + high-k packing).
+- New E407/E408 terminal exclusions: 0.
+- E407 Q32 same-284-core completion: OPEN.
+- E408 Q32 threshold-29 exhaustive coverage: OPEN.
+- E408 Q33 seven-block compatibility: OPEN.
