@@ -61,5 +61,15 @@
 - Independently audited the sibling E408 Q33 four-partite S0=10 proof. Its original s=1 and s=2 steps incorrectly treated selected pairs not lying in a Q block as necessarily extra L-edges, although such pairs may be H-edges.
 - Repaired s=1 by counting all selected non-Q pairs through the unused perfect matchings: 27 selected cross-part pairs cannot fit into 6 pairs from unselected-D blocks, at most 9 from the selected-D class, and at most 9 non-Q pairs; 27<=24 is impossible.
 - Repaired s=2 using the degree identity epsilon_x+j_x=1[x in T*]. It implies no extra L-edge touches A0∪B0∪C0. The unused matchings then give degrees 4 from A0 to B0 and 5 from each of A0,B0 to C0, forcing a triangle in L[A0,B0,C0]. With any unselected d in D this yields an independent 4-set disjoint from T*=N_H(w*)∩U, contradicting alpha(H)<=4.
-- Thus the four-partite E408 Q33 minimum-support contract still excludes S0=10 and forces epsilon_U+2delta>=11, now with a repaired proof. This does not close the non-four-partite branch.
+- Thus the four-partite E408 Q33 minimum-support contract excludes S0=10 and forces epsilon_U+2delta>=11, with a repaired proof. This does not close the non-four-partite branch.
 - Headline status remains OPEN / NOT_CERTIFIED. E407 Q32 same-core completion, E408 Q32's separate 285-edge core, E408 Q33 non-four-partite completion, and the original K145 bridge remain open.
+
+
+## 2026-10-25 — Round 6: exclude S0=11 in the four-partite E408 Q33 branch
+
+- Added R12_E408_Q33_FOUR_PARTITE_S0_11_EXCLUSION.md (commit 4f5e9697d93e9173d2819d59bb5d6db687410f53) and verify_s0_11_profiles.py (commit c99283859b19642a50e4915c85a57987b31fe4bc).
+- Under S0=11, the core budget gives delta in {4,5}, epsilon_U=11−2delta, and e_H(U,W)=125. Exact degree-profile enumeration leaves k=3,4,5,6 cases; group-capacity excludes k=3/4 and the all-size-8/9 profiles.
+- In each remaining profile, one exceptional size-10/11 neighborhood T* is forced. The spillover-aware degree identity shows that every large-part vertex outside T* and at most one spillover point has epsilon_x=j_x=0, so no extra L-edge touches the remaining large-part complements.
+- Those complements have at least four points in each large part. The unused-pair matching then guarantees a triangle in L[A0,B0,C0]; adding an unselected D point gives an independent 4-set disjoint from T*, contradicting alpha(H)<=4.
+- Independently reproduced the exact integer degree-profile enumeration and the key common-neighbor margin (4+4−6=2). The verifier is arithmetic-only and is not a graph-realization certificate.
+- The four-partite E408 Q33 minimum-support branch now has S0>=12, conditional on that branch's contract. The non-four-partite branch remains OPEN. E407 Q32, E408 Q32, the T61-to-K145 bridge, and EG617(r=12) remain OPEN / NOT_CERTIFIED.
