@@ -502,3 +502,68 @@ The target-side structure is now much more rigid: absolute-width groups and a co
 - strengthened hub theorem: `4e4c0511944a9e4cf8c615e8e289696349dfc2c9`
 - canonical state: `2b7d1fb36538ce32c276c083445d114bdb8aef01`
 - open gaps: `6a576e565b977a478fc67e1b89acd5580c894c9e`
+---
+
+## 2026-10-24 — Round 10: all-color Brouwer floors, exact-alpha audit, and scalar countermodel
+
+### NEW THEOREM A — Simultaneous Brouwer excess floors
+
+At an exact high stop, let `F_i=bar(G_i)` and let `x_i=t_{k_i}(n)-e(F_i)`, with `k_0=a`, `k_i=r` for `i>0`, and `n=ar+1`.
+
+- Target color: `F_0` is `K_{a+1}`-free and not `a`-partite because `alpha(F_0)=omega(G_0)<=r-1`, so `n>a(r-1)`. Brouwer gives `x_0>=r-1`. Kang–Pikhurko's equality classification rules out equality, since every equality graph has an independent set of size at least `floor(n/a)=r`. Thus `x_0>=r`.
+
+- Non-target color: `F_i` is `K_{r+1}`-free and `alpha(F_i)=omega(G_i)<=a`, since a color-`i` clique is target-independent. It cannot be `r`-partite because that would imply `n<=ar`. Brouwer gives `x_i>=floor(n/r)-1=a-1`.
+
+Using `sum_i x_i=S_a(r)=(binom(a,2)-1)r+a`,
+
+`x_0<=(binom(a,2)-a)r+2a-1`,
+`sum_{i>0}(x_i-(a-1))<=(binom(a,2)-a-1)r+2a-1`.
+
+For `a=6`: `x_0<=9r+11` and `sum_{i>0}(x_i-5)<=8r+11`.
+
+### NEW CONSEQUENCE — sharpened target groups and hubs
+
+Since `D<=x_0` and `(r-1)P<=D` for `P=sum_j(|V_j|-r)_+`, the target ideal groups satisfy `r-8<=|V_j|<=r+9` for `a=6,r>=22`. Also `M_0<=2x_0<=18r+22`.
+
+With `L>=r-8`, the product-cover theorem gives `H_r=L-M_0/L>=r-27` for `r>=1000`; hence
+
+`|X|<=4(18r+22)/(r-27)<75`.
+
+Therefore **`|X|<=74` for `a=6,r>=1000`**, improving the previous 116-hub bound.
+
+### NEW AUDIT — exact target independence number
+
+For fixed `a>=6`, if `r>=a^2`, the excess ledger forces `alpha(G_0)=a`: if `alpha(G_0)<=a-1`, then `e(G_0)>=p_{a-1}(n)`, but
+
+`p_{a-1}(n)-p_a(n)>=n^2/(2a(a-1))-a/8>S_a(r)`.
+
+For `a=6`, the same inequality works for `r>=24`. This threshold is not uniform for `a` growing with `r`; that regime remains separately open.
+
+### Adversarial audit — scalar constraints still permit a formal high-stop budget
+
+For `a=6`, the assignment
+
+`x_0=9r+11`, `x_i=5`, `z_i=1`, `q_0=5r+2`,
+`(|V_j|)=(r+1,r,r,r,r,r)`, `Delta=0`, `D=7`, `M_0=9r+18`, `|X|=7`
+
+passes the exact excess ledger, predecessor increments, target partition identity, stability budgets, group-size bounds, hub cardinality, and global cross-pair count. Place all `r-1` duplicated vertices in the `r+1` group so that the label classes can be transversals at the group-count level.
+
+This is an **abstract parameter countermodel, not a graph counterexample**: it does not verify the full color-graph incidence, every `K_{r+1}`-free condition, or the equality-case structure of all `F_i`. It demonstrates that scalar-ledger rearrangements alone cannot close `NO-HIGH-STOP`.
+
+### Status
+
+- Brouwer floors: `PROVED_ANALYTIC` (conditional on the established high-stop contract and cited non-partite Turán/equality theorems).
+- Improved `a=6` group range and hub bound: `PROVED_ANALYTIC`.
+- Exact-alpha forcing: `PROVED_ANALYTIC` for fixed `a,r>=a^2`; for `a=6,r>=24`.
+- Abstract ledger feasibility model: `ABSTRACT_PARAMETER_COUNTERMODEL`, not a real graph counterexample.
+- `NO-HIGH-STOP`: **`OPEN`**.
+
+### Next highest-priority task
+
+Classify the equality / small-defect Brouwer templates for non-target colors and align their two-star defect pattern with the exact predecessor classes `S_{i,b}`. Prove a joint incidence-packing inequality linking those templates to `D`, `M_0`, and the bounded hub kernel. Do not spend another round on scalar-only inequalities or the already-closed core minimum-degree theorem.
+
+### GitHub commits
+
+- Brouwer floors + scalar audit: `e1628f77a9818ab85bf2de09169f8977156f69fb`
+- canonical state: `ffd70661b2487739cb92d6983d61cc71cb17371d`
+- open gaps: `424a0acab12d6e4366c4d6e2bbbf1b7f225fa3dc`
