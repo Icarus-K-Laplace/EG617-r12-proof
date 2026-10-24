@@ -52,3 +52,7 @@ In the J/K tight-transversal bridge, if a low-slack color has s_i=1 or 2, the de
 ## Limitation
 
 The classification is exact only for at most two relevant defect edges. It does not classify blockers with three or more edges and does not itself yield a contradiction.
+
+## Round 2 contract audit — classification is conditional/vacuous locally
+
+The exact one-/two-edge classifications above remain valid abstract blocker lemmas. However, when combined with the full EG617 counterexample contract, the low-slack block structure plus the q+1-set `{x} union A_a` condition yields `s_i(x)>=q-1`; see `HIGH_SLACK_COMPATIBILITY.md`. Therefore the cases `s_i(x)=1` or `2` cannot actually occur at a vertex of a full hypothetical counterexample (for q>=3). Do not present the classification as an exhibited or potentially realized local counterexample pattern. Its independent-transversal statement remains correct and can still be used in other contracts.
