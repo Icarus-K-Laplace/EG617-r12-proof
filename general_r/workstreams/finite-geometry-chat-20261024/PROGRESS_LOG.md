@@ -116,3 +116,11 @@ The specified `LITERATURE_AUDIT.md` did not exist on this branch at the start of
 - Identified two potentially informative composite-order reductions: r=11 => 3 MOLS(10) in Case B, and r=15 => 5 MOLS(14) in Case B.
 - Verified literature status: 3 MOLS(10) remains open in the 2026 SAT investigation; four MOLS(14) are known, while a fifth is reported open. No nonexistence is assumed.
 - For q=10 and q=14, known nonexistence of affine planes rules out the full-affine-plane subcase K.RM3, but not the partial-net branch.
+
+
+## 2026-10-24 — Round 5: exact threshold color-graph classification
+
+- Audited Kang–Pikhurko (2005), Theorem 4 and Lemma 5, for the complement of a residual color graph at b_i=q-1.
+- Proved the exact dichotomy: q equal clique blocks plus q-1 cross-block color edges, or an exceptional vertex whose deletion leaves q clique blocks (sizes q except one q-1) plus a nonempty star of cross-block defects.
+- Derived the exceptional vertex's exact residual color-i degree 2q-2-a, where the defect star has 1<=a<=q-1 edges.
+- Linked this threshold form into J's repeated high-excess witness branch. No exclusion of the incidence kernel has yet been proved.
