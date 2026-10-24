@@ -52,9 +52,15 @@ The certificate enumerates every integer d from 0 through r, computes the lower 
 
 This is a real conditional arithmetic lemma, not merely schema validation. It does not prove that any surviving degree is realizable, does not close any endpoint class, and does not prove graph nonexistence.
 
+## Current module: D1_SHELL_CLASS_BOUND_V1
+
+Under the sibling endpoint classification's A+B assumptions and r>=12, the shell-incidence premises imply `N*r<=6r-2`; hence six d1 shell classes are impossible and `N<=5`. The exact arithmetic certificate and independent verifier check the N=0,...,6 table. This is not an absolute bound on owner multiplicity within a shell class, so bounded-allowance d1 nonextension remains OPEN.
+
+The gate uses the immutable module ID to select `verify_d1_shell_bound.py`; the generator, verifier, gate, source commit, assumptions, and replay command are all recorded in the committed receipt.
+
 ## Current status
 
 - Module gate: `PASS_CONDITIONAL_MODULE` for r >= 12 after replay.
 - For r < 12: `SCHEMA_ONLY` because the general RC reduction is not certified there.
-- EG617 theorem promotion: **BLOCKED**. RC/front extraction is open, and the module is only a necessary-domain pruning lemma.
+- EG617 theorem promotion: **BLOCKED**. RC/front extraction is open, and the modules only prove local necessary-domain / shell-class bounds; neither exhausts graph states or proves a contradiction.
 - No new EG617(r) theorem is claimed.
