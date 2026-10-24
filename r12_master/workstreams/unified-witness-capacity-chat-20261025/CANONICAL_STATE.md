@@ -74,3 +74,14 @@ The Q33 scalar relaxation with Omega=24 cannot be four-partite; it is only evide
 ## Shell-row multiplicity audit — 2026-10-25
 
 For a fixed common independent-four set Q, define \(\mu(Q)\) as the number of regular B rows it avoids. It can serve at most \(\binom{\mu(Q)}2\le45\) graph-theoretic pair certificates. The current \(|T_b|\le3\) condition does not imply a smaller universal cap. If Q is an actual selected exact-129 witness labelled b, the directly label-anchored pairs containing b are at most \(\mu(Q)-1\le9\); arbitrary \(Q_{bc}\) from the zero-excess existence theorem are not automatically labelled components. Thus the pairwise hub-cover count cannot be summed as though each pair had a distinct witness.
+
+
+## Additional terminal-state refresh — 2026-10-25
+
+Read-only canonical sources also refreshed during this continuation:
+
+- E407/Q32 branch: workstream/r12-e407-q32-terminal-20261025, head 3f42fcce5761ca2372140618adda56f95fcbe253. Root canonical state still says E407/E408 are the only active T61 frontier and NOT_CERTIFIED.
+- E408/Q32 excess-six branch: workstream/r12-e408-q32-excess6-20261025, head 23f020eaf8b9924da8e7a4841c370bae658bea41. Its 285-edge/excess-six contract is separate; no 284-edge conclusion from this workstream is transferred to it.
+- E408/Q33 global compatibility branch: workstream/r12-e408-q33-global-compat-20261025, head df396de8ffc1f9c390fe3e240d0d085715f86b5b. Its four-partite branch has \(S_0\ge22\), while the non-four-partite terminal remains open.
+
+All three sources were read-only; the only changed files remain in this workstream directory.
