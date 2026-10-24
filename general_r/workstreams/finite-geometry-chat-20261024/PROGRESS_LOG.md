@@ -96,3 +96,14 @@
 
 ### Audit boundary
 The specified `LITERATURE_AUDIT.md` did not exist on this branch at the start of the round. The new I proof adds no external theorem; it depends only on the previously recorded low-slack structural theorem, weighted blocker lemma, and the defining all-colors property on every q+1-set.
+
+
+## 2026-10-24 — Round 3: residual multinet extraction
+
+- Imported the exact J Case B interface by branch/file/commit reference; did not copy its proof.
+- From sum_{i!=c} b_i<=C(q,2), proved at least ceil(q/2) residual-low colors among the q colors i!=c.
+- For each residual-low color, Brouwer's threshold gives q clique blocks on R. Pairwise independence across colors forces every block to have size q and every cross-direction block intersection to be exactly one.
+- Therefore Case B forces a q-net with at least ceil(q/2) directions, independent of prime-power assumptions.
+- Derived the exact design implication N(q)>=ceil(q/2)-2 for mutually orthogonal Latin squares.
+- Special audit: r=11 (q=10) Case B implies three MOLS(10). Current literature records this as open; this is a conditional reduction, not a contradiction.
+- If alpha(G_c[R])<=q, all b_i=0 and R is a full affine plane of order q. The extension of that plane by the 2r outside vertices remains OPEN.
