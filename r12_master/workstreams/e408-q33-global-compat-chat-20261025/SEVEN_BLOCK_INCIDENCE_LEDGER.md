@@ -155,3 +155,38 @@ The ledger is exact, but no incompatibility between all of these conditions has 
 - The four-partite branch remains open for \(S_0\ge22\).
 
 The remaining task is an explicit labeled incidence contradiction or an independently replayable finite certificate for the contract above. Until then E408 Q33 remains OPEN / NOT_CERTIFIED.
+
+
+## 7. New low-slack blocker normal form (\(r_i(C)\le3\))
+
+This subsection imports the pairwise blocker-compatibility theorem from the read-only ultimate-closure workstream and derives a sharper consequence for blocks with at most three repeated C-incidences.
+
+Fix an exact-129 color C and an outer block \(B_i\). Write \(X_b=N_C(b)\cap R\) for \(b\in B_i\), and let \(n_i(C)\) be the number of size-five blockers. The exact blocker theorem gives:
+- every \(X_b\) has size at least five;
+- a size-five \(X_b\) is one of the ten isolated K5 components;
+- any component fully contained in a row neighborhood contributes five repeated C-incidences if it is fully contained in two row neighborhoods, so this cannot happen when \(r_i(C)\le3\);
+- at least nine of the twelve row neighborhoods contain a full K5 component (the gadget-incidence cap \(2|U_C|=22\) allows at most three rows with no full component).
+
+**Theorem 7.1 (low-slack component coverage).** If \(r_i(C)\le3\), then:
+1. no row neighborhood contains two full K5 components, because that row would contribute at least 10 edges and the other eleven rows at least 5 each, giving \(e_C(B_i,R)\ge65>61+r_i(C)\);
+2. every K5 component is contained in exactly one row neighborhood;
+3. exactly two row neighborhoods contain no full K5 component;
+4. every component-containing row has size at most \(5+(r_i(C)-1)\le7\).
+
+**Proof.** Item 1 follows from the edge budget. By the one-or-two rule, a component cannot be fully contained in two rows when \(r_i(C)\le3\), since all five of its vertices would then have C-degree two into \(B_i\). Therefore the at least nine component-containing rows from the blocker theorem represent distinct components. If only nine components were represented, three rows would contain no full component. For any pair of such rows \(X,Y\), pairwise blocker compatibility with \(k(X,Y)=0\) forces \(U_C\subseteq X\cup Y\), where \(U_C\) is the 11-vertex exceptional gadget. Every vertex of \(U_C\) would then lie in at least two of the three rows, forcing \(r_i(C)\ge11\), a contradiction. Hence all ten components are represented exactly once, leaving exactly two rows with no full component. Their neighborhoods have size at least six, while the ten component-containing rows have size at least five. Since the total incidence is \(61+r_i(C)\), the total excess above \(10\cdot5+2\cdot6=62\) is \(r_i(C)-1\le2\). Thus each component-containing row has at most two extra vertices, proving item 4. \(\square\)
+
+**Cross-block consequence.** Suppose \(r_i(C)\le3\) and \(r_j(C)\le3\) for two distinct outer blocks. For each isolated component \(K_\ell\), let \(x_i(\ell)\in B_i\) and \(x_j(\ell)\in B_j\) be its unique component-containing row representatives. Each row neighborhood contains \(K_\ell\) plus at most two extra vertices. Their union contains no second full component and covers at most four vertices of \(U_C\). Thus at least seven vertices of \(U_C\) remain outside the union; they cannot form a clique because \(\omega(C[U_C])=5\). Pairwise blocker compatibility therefore forces
+\[
+x_i(\ell)x_j(\ell)\in E(C).
+\]
+So for any two blocks with \(r_i(C),r_j(C)\le3\), the ten component labels induce ten forced, pairwise vertex-disjoint C-edges between those blocks. The edges are a matching and may be baseline edges; this does **not** by itself imply \(d_{ij}(C)>0\).
+
+## 8. Consequence for the 56-witness support
+
+For each of the eight selected exact-129 colors, at least six isolated components are B-labelled no-S components \(\{b\}\cup Q\), with \(Q\subset H\) an independent four-set in the 56-witness family. In any outer block with \(r_i(C)\le3\), Theorem 7.1 shows that every such selected component is contained in a unique row neighborhood.
+
+For a fixed outer row \(x\), its C-neighborhoods \(N_C(x)\cap R\) across different colors are disjoint, since each edge \(xr\) has a unique color. Therefore the selected four-sets \(Q\) whose components are represented by the same outer row are pairwise disjoint. Each row can represent at most seven selected Q-sets (they are disjoint four-subsets of the 31-point support), and it cannot represent two components of the same color because its C-neighborhood has size at most seven in the low-slack block.
+
+Hence every low-slack block induces a 12-row partition of the 56 selected witness labels into matching classes, with at least six labels from each of the eight selected colors represented in the partition. Across two low-slack blocks, the component-label matching edges above must be edge-disjoint across colors, since an outer-block pair has only one edge color.
+
+This is a sharper, explicitly labelled finite compatibility problem. It is **not yet an impossibility proof**: the 56 labels give 56 component occurrences per block, while the crude row capacity is \(12\cdot7=84\), so the immediate capacity inequality remains feasible.
