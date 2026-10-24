@@ -142,3 +142,26 @@ d_i\ge \max\!\left\{3,\left\lceil\sqrt{r/1024}\right\rceil\right\}
 \]
 
 This is an all-\(r\) quantitative neighborhood lower bound, conditional only on the cited Füredi, Brouwer, and Kang–Pikhurko inputs. It still does not force \(d_i\ge r\), so it is not a nonextension theorem.
+
+
+## 6. F-004 — equality audit and joint slack–neighborhood inequality
+
+### Audit of F-003
+
+Verdict: PASS_WITH_LIMITATIONS, conditional on the cited Füredi, Brouwer, and Kang–Pikhurko inputs. The bound is coarse, not sharp. The inequality t <= r(d_i-1) uses s_i <= C and the maximum possible number of edges incident to A_i; equality requires s_i=C and every edge incident to A_i to lie in H_i. Füredi gives internal defect a<=t and missing-cross-edge defect b<=2t; the variance estimate uses D=t-b+a<=2t. The oversized-part bound k>=r/(64d_i) uses deliberately loose constants. The random-transversal step is a union bound, with no equality classification. No algebraic sign error was found; constants 512 and 1024 are not claimed sharp. The d_i=2 refinement depends on Kang–Pikhurko.
+
+### Linear low-slack rigidity
+
+Apply Füredi to H_i with r parts. If their sizes are n_a, then the exact partition identity gives sum_a (n_a-r)^2 <= 4s_i; the missing cross-edge count b is at most 2s_i. If s_i<=r^2/100, all parts have size at least L=4r/5 and b<=r^2/50. Since A_i hits every K_r of H_i, weighted transversal hitting gives 1<=d_i/L+b/L^2. Hence d_i>=L-b/L>=31r/40.
+
+### Medium-slack strengthening
+
+The F-003 defect argument also works for s_i<=r^2/2. For 1<=d_i<r, the Turán deficit t of H_i[B_i] obeys t<=r(d_i-1/2)<=r d_i; the partition variance is <5r d_i and b<=2r d_i. The same oversized-part/transversal argument rules out d_i<sqrt(r/1600). Brouwer bounds rule out d_i=0,1 in this slack range. Therefore s_i<=r^2/2 implies d_i>=max{2,ceil sqrt(r/1600)}. The two smallest-slack colors both satisfy this because s_(2)<=r^2/2.
+
+## 7. F-004 status
+
+- Weighted transversal-hitting lemma: PROVED_ANALYTIC.
+- Joint slack–neighborhood inequality: PROVED_CONDITIONAL on Füredi.
+- Linear low-slack rigidity: PROVED_CONDITIONAL.
+- Scalar summation as a complete proof: DISPROVED as a strategy by d_i=r, s_i=C for all i.
+- Cross-color incidence theorem and robust skeleton reconstruction: OPEN.

@@ -54,3 +54,20 @@ The new-point data now yields a quantitative theorem beyond scalar slack account
 The proof derives a \(T_{r-1}\)-deficit upper bound \(t\le r(|A_i|-1)\), then compares Füredi's cross-defect budget with the missing-edge cost needed to block all clique-completion transversals.
 
 This still falls short of \(|A_i|=r\), and it does not force exact orthogonal partitions. The arbitrary-counterexample reconstruction conjecture remains OPEN.
+
+
+## F-004 — neighborhood-sensitive stability
+
+A weighted transversal lemma gives
+1 <= sum_j |A∩V_j|/|V_j| + sum_{j<k} b_jk/(|V_j||V_k|)
+whenever A hits every K_q in a graph with a nonempty q-part partition.
+
+Applying it to the Füredi partition of H_i gives, for s_i<r^2/4,
+d_i >= r-2sqrt(s_i)-2s_i/(r-2sqrt(s_i)).
+In particular s_i<=r^2/100 forces d_i>=31r/40. For d_i<r, inversion gives s_i>=ceil(U_r(d_i)^2), with U_r(d)=(2r-d-sqrt(d^2-2rd+2r^2))/2.
+
+The medium-slack extension also proves that the two smallest-slack colors have d_i>=max(2,ceil sqrt(r/1600)).
+
+The scalar integer program remains feasible at d_i=r and s_i=binom(r,2) for all colors. Thus the next stability theorem must exploit simultaneous cross-color incidence; summing one-color inequalities cannot prove nonexistence.
+
+Status: joint local rigidity PROVED_CONDITIONAL; full skeleton reconstruction OPEN.

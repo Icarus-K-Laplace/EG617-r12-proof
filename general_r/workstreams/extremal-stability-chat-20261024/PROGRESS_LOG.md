@@ -44,3 +44,18 @@ The collision budget alone does not force orthogonality. For even \(r\), the mat
 - Füredi's partition gives at most \(2r(d_i-1)\) missing cross-edges and part-size variance at most \(4rd_i\).
 - A random-transversal blocker count shows that the oversized parts require at least \(r^2/(512d_i)\) missing cross-edges, contradicting the upper bound when \(r>1024d_i^2\).
 - Status: PROVED_CONDITIONAL on Füredi, Brouwer, and Kang–Pikhurko. This does not yet force \(d_i\ge r\) or close the arbitrary-counterexample reconstruction.
+
+
+## 2026-10-24 — F-004: joint slack–neighborhood rigidity
+
+1. Proved the weighted transversal-hitting lemma for arbitrary nonempty partitions and shared missing-edge blockers.
+2. Derived the joint inequality d_i >= L_i-2s_i/L_i for L_i=r-2sqrt(s_i)>0.
+3. Obtained linear rigidity: s_i<=r^2/100 implies d_i>=31r/40.
+4. Inverted the tradeoff to s_i>=ceil(U_r(d_i)^2) for d_i<r.
+5. Extended the previous square-root argument to s_i<=r^2/2, giving d_i>=max(2,ceil sqrt(r/1600)); both smallest-slack colors satisfy this.
+6. Audited F-003 equality points: the proof is algebraically consistent but deliberately non-sharp; no equality family is asserted.
+7. Solved the scalar optimization: its minimum lower-bound cost is zero at d_i=r for every i. Taking s_i=binom(r,2) realizes the exact total slack, so scalar summation cannot close the proof.
+
+Current status: joint local rigidity PROVED_CONDITIONAL; robust exact skeleton reconstruction OPEN; direct missing-color obstruction for distributed defects OPEN; all-large-r/all-r theorem OPEN.
+
+External dependencies remain Füredi's partition lemma, Brouwer's non-partite Turán bound, and Kang–Pikhurko's equality classification for the d_i=2 boundary.

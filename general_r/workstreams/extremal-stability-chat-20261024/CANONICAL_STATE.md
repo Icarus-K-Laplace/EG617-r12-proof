@@ -58,3 +58,24 @@ For every color \(i\) with \(s_i\le\binom r2\), the new-point degree satisfies
 This follows from the Turán deficit bound \(t\le r(d_i-1)\), Füredi's partition lemma, and a random-transversal defect count. Full proof: ROBUST_NONEXTENSION.md.
 
 This is quantitative local progress, not a full reconstruction theorem. The cases \(d_i\) between order \(\sqrt r\) and \(r-1\) remain open, as does the high-slack branch.
+
+
+## F-004 — joint slack–neighborhood rigidity
+
+A weighted transversal lemma is proved: for a nonempty q-part partition and A hitting every K_q, a random transversal gives
+1 <= sum_j |A∩V_j|/|V_j| + sum_{j<k} b_jk/(|V_j||V_k|).
+
+Applying Füredi to H_i gives, whenever s_i<r^2/4,
+d_i >= L_i - 2s_i/L_i, where L_i=r-2sqrt(s_i). In particular s_i<=r^2/100 implies d_i>=31r/40. Inverting gives s_i>=ceil(U_r(d_i)^2) for d_i<r, with U_r(d)=(2r-d-sqrt(d^2-2rd+2r^2))/2.
+
+The F-003 square-root proof was audited: no algebraic sign error found; its constants are coarse and no equality classification is claimed. The medium-slack extension gives s_i<=r^2/2 => d_i>=max(2,ceil sqrt(r/1600)); thus both smallest-slack colors satisfy this.
+
+Scalar optimization does not close the theorem: d_i=r and s_i=binom(r,2) for all i satisfy both sum identities and every scalar lower bound. This is a scalar witness, not a K_(r^2+1) counterexample.
+
+- Weighted transversal hitting: PROVED_ANALYTIC.
+- Joint slack–neighborhood tradeoff: PROVED_CONDITIONAL.
+- Low-slack linear rigidity: PROVED_CONDITIONAL.
+- Exact skeleton reconstruction/direct obstruction: OPEN.
+- All-large-r / all-r theorem: OPEN.
+
+Unique blocker: a cross-color incidence theorem coupling all A_i hitting constraints with the unique color assigned to each old edge.
