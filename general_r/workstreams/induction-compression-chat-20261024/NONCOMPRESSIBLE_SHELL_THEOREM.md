@@ -51,7 +51,11 @@ Every v in X is essential: X minus {v} is not a transversal. Therefore there exi
 T_v\cap X=\{v\}.
 \]
 
-Thus every point of the packed 2r-set has a private independent-set witness extending outside X. This is a concrete critical-transversal structure.
+Each T_v has exactly r-1 vertices outside X. The outside set R=V\X has size (r-1)^2.
+
+For r>=3, there are 2r private witnesses but only r-1 possible designated colors. By pigeonhole, at least three witnesses T_u,T_v,T_w have the same designated color i != c. Since the matching number of H_{-c} is exactly two, these three witnesses cannot be pairwise disjoint. Thus at least two of their residual blocks T_z minus {z} intersect at a point of R. This is a genuine same-color overlap forced by noncompressibility, though not yet an affine-line structure.
+
+For any two independent r-sets A,B in the same color i, if |A intersect B|=h, then the bipartite color-i graph between A\B and B\A has minimum degree at least one on both sides, hence at least r-h edges. Indeed, each vertex in B\A is dominated by A, and cannot have a color-i edge to A intersect B because B is independent; the symmetric argument applies to A\B.
 
 ## Fixed-merge analogue
 
@@ -69,6 +73,6 @@ A witness edge of H_{c,j} has a designated required-color set C_a: either a sing
 
 ## What this theorem does not prove
 
-The packing sets above are pairwise disjoint. They are not affine lines, and no pairwise-intersection-at-most-one property between different families has been proved. Therefore the theorem does **not** yet imply an affine plane, a net, or a Kakeya lower bound.
+The packing sets in Case A are pairwise disjoint, not affine lines. In Case B, private residual blocks have a forced overlap somewhere, but no upper bound of one on pairwise intersections and no direction structure have been proved. Therefore the theorem does **not** yet imply an affine plane, a net, or a Kakeya lower bound.
 
 The remaining graph-specific challenge is to show that the colored domination and private-witness constraints force many additional blocks or constrain their intersections. Without that step, the headline geometric dichotomy remains open.
