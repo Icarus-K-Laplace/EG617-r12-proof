@@ -547,3 +547,19 @@ A second scan found remaining uses of the letter a for the AES offset in the can
 - CLEAN_PAIR_GLOBAL_BUDGET.md: 5f809e23858b4390608e8802f8cdc8d6ae3f61a2
 
 The mathematical statements are unchanged; this is a notation-only consistency fix.
+
+
+### Final offset-symbol sweep (Round 6 closure)
+
+The exact phrase scan was repeated after adding the shell-incidence bound. Remaining uses of a-4 / 3a-4-r and h=r+1-2a in AES-offset contexts were corrected to lambda in the global budget, counterexample search, canonical state, closure ledger, nonextension note, and theorem ledger.
+
+Latest correction commits:
+
+- CANONICAL_STATE.md: 34b1a38f10fb6200b0b7d943dcd5eefb791af99c
+- TERMINATION_CLOSURE.md: bf0ff55a5be70ae544db89aa2cab5e6341f0ccab
+- CLEAN_PAIR_NONEXTENSION.md: a701dfe8d0b29fdc89f2a678e503c535a86f20a8
+- CLEAN_PAIR_GLOBAL_BUDGET.md: f294019b705cd7124d20cd660be6a5ddb90e8849
+- COUNTEREXAMPLE_SEARCH.md: 0c196bdeb5d50228dc9992c0be259ec90ef03751
+- PROGRESS_LOG.md notation sweep: 26cba1b204d833cb592fc271ad1fe5bdad909bf3
+
+This is a notation-only correction; the proofs and status labels are unchanged.
