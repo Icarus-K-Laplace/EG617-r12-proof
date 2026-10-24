@@ -41,9 +41,19 @@ def check_e407_boundary() -> None:
     assert feasible
     print("E407 boundary ledger pairs (epsilon_U, delta):", feasible)
 
-    # Independent transversal theorem excludes delta <= 1.
+    # The transversal-multiplicity theorem excludes delta <= 1.
     assert all(20 - 2 * delta - eps > 12
                for delta in (0, 1) for eps in range(5))
+
+    # For delta=2, N_7 <= 12 while N_7 >= 16-epsilon_U, forcing
+    # epsilon_U=4 and N_7=12. Two transversals each carry six W vertices.
+    assert all(16 - eps > 12 for eps in range(4))
+    assert 16 - 4 == 12
+    assert 12 == 2 * 6
+    # Each of the two transversals has five vertices not incident to its
+    # unique J-edge; these ten vertices would each have excess at least one.
+    assert 2 * (7 - 2) == 10
+    assert 10 > 4
 
 
 def check_e408_boundary() -> None:
