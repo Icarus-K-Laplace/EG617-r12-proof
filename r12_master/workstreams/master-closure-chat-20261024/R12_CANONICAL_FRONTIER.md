@@ -48,7 +48,7 @@ with a 35-point core H. The three-anchor theorem is now stronger than CORE211: u
 
 ### Independent-triple extension through total excess four
 
-`R12_INDEPENDENT_TRIPLE_H4_EXTENSION.md` proves that any independent triple in a 35-core with alpha<=3, omega<=11, and minimum degree12, whose total excess above12 is at most4, forces K>=8 (e(H)>=214). This extends the common-S independent-triple anchor envelope from allowance a<=6 to a<=7. The only remaining independent-triple allowance is a=8 with total-excess-five patterns (1,1,3) or (1,2,2).
+`R12_INDEPENDENT_TRIPLE_H4_EXTENSION.md` and `R12_INDEPENDENT_TRIPLE_H5_EXTENSION.md` prove that any independent triple in a 35-core with alpha<=3, omega<=11, and minimum degree12, whose total excess above12 is at most5, forces K>=8 (e(H)>=214). This extends the common-S independent-triple anchor envelope through the full d3 allowance ceiling a<=8. The independent-triple branch no longer contributes an open d3 shallow-loss case.
 
 ### d3 disjoint-support compatibility through q=38
 
