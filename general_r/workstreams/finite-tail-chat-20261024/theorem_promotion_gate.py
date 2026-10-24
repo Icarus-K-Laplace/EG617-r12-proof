@@ -70,7 +70,7 @@ def gate(certificate_path: Path, ledger_path: Path) -> dict:
         raise AssertionError("independent verifier did not certify the expected module")
     r = instance["r"]
     profile = instance.get("profile", "not-applicable")
-    admission_verifier = ROOT / "parameter_admission_verifier.py"
+    admission_verifier = ROOT / "PARAMETER_ADMISSION_VERIFIER.py"
     admission_matrix = ROOT / "PARAMETER_ADMISSION_MATRIX.json"
     admission_command = [
         sys.executable, str(admission_verifier), str(admission_matrix),
@@ -133,7 +133,7 @@ def gate(certificate_path: Path, ledger_path: Path) -> dict:
         "admission_matrix_sha256": admission_payload["matrix_sha256"],
         "admission_verifier_path": admission_verifier.name,
         "admission_verifier_sha256": admission_payload["verifier_sha256"],
-        "admission_command": "python parameter_admission_verifier.py PARAMETER_ADMISSION_MATRIX.json --query-r " + str(r) + " --module " + module_id + ("" if profile == "not-applicable" else " --profile " + profile),
+        "admission_command": "python PARAMETER_ADMISSION_VERIFIER.py PARAMETER_ADMISSION_MATRIX.json --query-r " + str(r) + " --module " + module_id + ("" if profile == "not-applicable" else " --profile " + profile),
         "assumption_status": assumption_status,
         "assumptions_all_known": all_assumptions_known,
         "assumptions_all_proved_for_r": all_assumptions_proved,
