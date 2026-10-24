@@ -94,7 +94,7 @@ so the right-hand side is $(a^2/2+o(1))r^3$. At the basic Turán floor $e(J)=p_a
 
 **Proved:** the multicolor avoidance inequality transfers to every relevant induced residual and can be strengthened using $\alpha(J)\le a$.
 
-**Not proved:** any of the five r=12 seed excesses as an all-r lower bound; the general $M_r(2),M_r(3)$ cutoffs; or a seed envelope strong enough to close all outer budgets.
+**Not proved:** any of the five r=12 seed excesses as an all-r lower bound; the all-r cutoff claims for r=4,5; or a seed envelope strong enough to close all outer budgets.
 
 The safe universal envelope currently available from this route is only $B_r(a,n)\ge p_a(n)$, which is already part of H's recurrence and is quantitatively insufficient near $t=1$.
 
