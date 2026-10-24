@@ -11,7 +11,6 @@
 - **No terminal is closed.** The labelled overlap theorem for the same core remains OPEN; E408 Q32 is not covered by the d3 contract unless its own reduction supplies \(M[B]=\varnothing\). The root theorem remains NOT_CERTIFIED.
 - No SAT/ILP graph search was run; no local integer profile was promoted to graph realizability.
 
-
 ## 2026-10-25 — Round 2: blocker-occurrence budget and two audit corrections
 
 - Proved \(M_C\ge15+P_C\) for every exact-129 color in the outer seven-block E408 equality system. Here \(M_C\) is the number of size-five blocker occurrences across outer blocks and \(P_C\) is the block-block duplicate count. The proof sums \(e_C(B_i,R)\ge72-m_i(C)\) and uses \(P_C+R_C=62\).
@@ -21,7 +20,6 @@
 - Corrected the E407 A/C corollary from at least two to at least one hub-complete witness per exact-129 color, hence at least seven occurrences overall.
 - No E407/E408 terminal is closed. The next target remains a labelled overlap/capacity theorem that combines these corrected witness sets with the 284-edge core and exact outer-block budgets.
 
-
 ## 2026-10-25 — second structural result: high-multiplicity witness stars
 
 - Proved the witness-star lemma in R12_WITNESS_OVERLAP_STAR_LEMMA.md. If \(m\) labelled witness 4-sets share a core vertex \(x\), their other triples are disjoint and their union \(U\) has \(\alpha(H[U])\le3\). Turán gives \(e(H[U])\ge3\binom m2\), and every vertex in a triple has at least \(m-1\) neighbours in the other triples.
@@ -29,3 +27,13 @@
 - Ruled out the \(3K_{10}\) case when \(\varepsilon_x=0\): the four core non-neighbours of \(x\) would have to be complete to one of the three \(K_{10}\) cliques; two share a clique, and the degree/excess budget lets us choose non-neighbours in each other clique, creating an independent 5-set. Hence a 10-witness star in the Turán-equality regime forces \(\varepsilon_x\ge1\).
 - This is a structural reduction, not a contradiction: the \(e(H[U])\ge144\) regime and the \(3K_{10}\) regime with \(\varepsilon_x\ge1\) remain open. Need combine with the shell incidence ledger and the actual five Q32 template labels.
 - Commit: 11ea1ae6971319d746f99a23d333a3336d142f7b.
+
+## 2026-10-25 — Round 3: witness-union capacity refinement
+
+- Added R12_WITNESS_UNION_CAPACITY_REFINEMENT.md (commit cd6bf8c631bb09bb6099f5f328949553ea9c56bc).
+- Proved the exact core-capacity inequality \(6N\le e(\overline{H[U]})\le\binom v2-p_4(47-v)-12v+284-E_U\), retaining the nonnegative core excess on U.
+- Used the numeric caps \(C_{28}=290,C_{29}=310,C_{30}=331,C_{31}=353,C_{32}=375\) to sharpen the witness-union lower bounds.
+- E407 A/B: seven exact-129 colors imply \(v\ge29\); eight or more imply \(v\ge31\). E407 C/D/E: seven exact colors imply \(v\ge32\); eight or more imply \(v\ge33\). E408 Q33/d3: \(\beta=0\) implies \(v\ge31\), while \(\beta\ge1\) implies \(v\ge33\).
+- Remaining union-size boundary kernels are E407 A/B with exactly seven exact colors and \(v=29\), E407 C/D/E with exactly seven exact colors and \(v=32\), and E408 Q33/d3 with \(\beta=0,v=31\). These are not graph-level contradictions.
+- Explicitly did not transfer the 284-edge bound to E408 Q32, whose core has 285 edges and whose own shell-support split is not certified.
+- Current theorem status remains **OPEN / NOT_CERTIFIED**; no full parent graph was constructed or excluded in this round.
