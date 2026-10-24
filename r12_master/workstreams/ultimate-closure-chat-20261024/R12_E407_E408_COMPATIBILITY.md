@@ -77,3 +77,12 @@ The low-budget proof uses the exact seven/eight color-class count and the degree
 ## 7. Shell-incidence union audit correction
 
 The imported shell-incidence union argument has a gap if a core vertex has zero neighbours in the 13-vertex shell: such a vertex contributes \(-1\) to the full sum \(\sum_x(r_A(x)-1)\). The frozen parent minimum-degree contract does not alone exclude this at a positive-excess core vertex. Since total core excess is four, at most four such vertices exist. The safe full-row support-union floors are therefore 7 for E407 template A and 6 for C; the stronger 11/10 floors require an additional zero-support exclusion. See R12_SHELL_INCIDENCE_UNION_AUDIT.md.
+
+
+## 8. E408 Q33 four-partite refinement
+
+R12_E408_Q33_FOUR_PARTITE_S0_10_EXCLUSION.md eliminates the S0=10 equality kernel. Therefore, if L is four-partite at the v=31/m=56 boundary, then
+\[
+S_0=\epsilon_U+2\delta\ge11,\qquad \delta+\epsilon_U\le17.
+\]
+The non-four-partite branch remains open. The proof uses the exact eight-color pair coverage and the exceptional size-ten hitting-set cases; it does not transfer to E408 Q32.
