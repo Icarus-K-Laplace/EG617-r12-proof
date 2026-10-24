@@ -102,7 +102,8 @@
 | L23 | c=4,(0,1,1), s=0,1 | VERIFIED | Additive local bounds |
 | L24 | c=4,(0,1,1), s=2 owner patterns | VERIFIED | Four patterns exhaustive; three are over budget |
 | L25 | c=4,(0,1,1), overlap equality | VERIFIED | Same (1,8)/(8,1) support analysis as L21 |
-| L26 | External graph/SAT counterexample search | VERIFIED_WITH_LIMITATIONS | Not run; no SAT/ILP backend installed. Not used as proof evidence |
+| L26 | Local connector/focus skeleton relaxation for r=12,13,14,15 | VERIFIED_WITH_LIMITATIONS | All labelled c=3/c=4 connector graphs and allowed focus owners enumerated; relaxed survivors match the analytic boundary cases. Not a full graph search |
+| L27 | External graph/SAT counterexample search | VERIFIED_WITH_LIMITATIONS | Not run; no SAT/ILP backend installed. Not used as proof evidence |
 
 ## External results
 
