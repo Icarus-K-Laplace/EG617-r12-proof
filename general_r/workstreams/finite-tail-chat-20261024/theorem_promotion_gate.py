@@ -92,7 +92,7 @@ def gate(certificate_path: Path, ledger_path: Path) -> dict:
         module_gate = "PASS_CONDITIONAL_MODULE"
 
     # This module gives a necessary domain only, never a contradiction or graph closure.
-    eg617_promotion_status = "BLOCKED_MODULE_IS_ONLY_NECESSARY_DOMAIN"
+    eg617_promotion_status = "BLOCKED_MODULE_IS_NOT_A_COMPLETE_GRAPH_CONTRADICTION"
     if not all_assumptions_known:
         eg617_reason = "one or more assumption IDs are absent from the machine-readable ledger"
     elif not all_assumptions_proved:
@@ -122,7 +122,7 @@ def gate(certificate_path: Path, ledger_path: Path) -> dict:
         "eg617_promotion_status": eg617_promotion_status,
         "eg617_r_proved": False,
         "eg617_promotion_reason": eg617_reason,
-        "scope": "conditional necessary-domain lemma only; no endpoint closure, graph-level symmetry, or EG617(r) theorem is certified",
+        "scope": "conditional local endpoint lemma only; complete endpoint closure, graph-level symmetry, and EG617(r) theorem are not certified",
     }
 
 
