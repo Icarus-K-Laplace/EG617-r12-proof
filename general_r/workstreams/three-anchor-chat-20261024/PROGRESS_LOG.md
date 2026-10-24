@@ -52,14 +52,33 @@
   - `r=14`: the only nonfocused `(0,1)` boundary `(k,a,b)=(6,3,2)` would force three other connectors to focus on the same block;
   - `r=13`: both `(0,1)` connectors focus; the type-U pair is killed by disjoint `(3,3)` equality rectangles or by the strengthened `(2,2)` charge when adjacent.
 
+## 2026-10-24 — Level-4 r=12 absorption
+
+- Reopened only the proof-engineering residue at `r=12`; no historical fixed-r case table was imported.
+- `c=3`, `(10,10,9)`:
+  - both-nonfocus costs at least eight;
+  - both-focus contradicts the clique cap through a common-nonneighbour clique of size at least 13;
+  - the mixed-focus branch is governed by effective `R22`;
+  - every low-budget layer has a saturated rectangle vertex, which forces the triple/focused connector to cover all or almost all of the opposite 10-clique, yielding a 12-clique or an impossible degree count.
+- `c=4`, `(10,10,8)`:
+  - classified by `f=0,1,2` focused connectors;
+  - `f=0` and `f=1` die by additive `R24/R23` charge;
+  - `f=2` reduces to two exact `R22` equality skeletons `(1,8)` and `(8,1)`, both eliminated analytically.
+- `c=4`, `(10,9,9)`:
+  - classified by `s=0,1,2` occupied focus slots;
+  - `s=0,1` die by additive charge;
+  - all `s=2` ownership patterns but one cost at least nine;
+  - the remaining two-U branch reduces to the same `(1,8)/(8,1)` skeletons, each producing an independent 4-set.
+- Added `R12_UNIFIED_CLOSURE.md` as the standalone Level-4 proof asset.
+
 ## Current milestone
 
-> **Exact Three-Anchor Excess Theorem is `PROVED_SYMBOLIC` for every `r>=13`.**
+> **Exact Three-Anchor Excess Theorem is `PROVED_ANALYTIC` for every `r>=12`.**
 
-Composed with the parent project's existing `r=12` closure, this is the requested **Level-3 completion for all `r>=12`**.
+This is now the requested **Level-4 completion**. The theorem no longer depends on the parent project's historical `r=12` closure.
 
-No computation-certified theorem claim is used; all small boundary patterns were converted into analytic equality arguments.
+No computation-certified theorem claim is used. Small integer checks were used only to discover equality patterns; all promoted claims are written as analytic threshold/equality arguments.
 
 ## Next target
 
-**Level 4 only:** absorb `r=12` into the same focus/rectangle proof, eliminating the need to cite the historical fixed-r closure. Do not reopen front-end extraction, repivot termination, or other sibling workstreams.
+No theorem gap remains in this workstream. The highest-value next action is an independent proof audit of `R12_UNIFIED_CLOSURE.md` and the existing `r>=13` rectangle/focus proof, with special attention to charge additivity and focus-collision hypotheses, before upstream consumers promote the theorem as a dependency.
