@@ -142,25 +142,27 @@ The edge-count profile therefore confines the boundary to
 \]
 In particular e(L)<=353, below the retained Brouwer threshold 355 that would force a 4-partite graph on 31 vertices. So the existing second-Turán theorem does not make this boundary exact; a stability or incidence argument is still needed.
 
-## 6. Further closure of one E407 boundary corner
+## 6. E407 four-partite boundary audit — no TD(4,7) conclusion
 
-Consider the extreme E407 pair g=16, epsilon_*=0. Then e(L)=310. The retained second-Turán theorem forces L to be four-partite. Since 49 Q blocks are edge-disjoint K4s, every pair of parts must have product at least 49. The only possible part sizes are (7,7,7,8).
+Assume L is four-partite in the E407 v=29, m=49 boundary. The witness K4s force part sizes (7,7,7,8), and every pair between any two of the three seven-point parts is used exactly once. For each pair of a seven-point part and the eight-point part, 49 of the 56 possible pairs are used; each vertex in the seven-point part has exactly one unused partner in the eight-point part.
 
-The 49 Q blocks then form a transversal design TD(4,7) on 28 active vertices: all pairs between the four seven-point groups occur exactly once. The extra point z in the eight-point part occurs in no selected Q block. The five missing edges of L (equivalently, the five H-edges crossing parts) must all be incident to z, because every pair between active groups already belongs to a Q block. Hence
+**Important correction.** The eight-point part is not proved to contain a point unused by every witness block. A point in that part may occur in one or more Q blocks; the unused pairs form a bipartite graph with degree one on the seven-point side, not necessarily a perfect matching on both sides. Consequently:
+- the 49 blocks are not certified as a TD(4,7) on 28 active points plus one unused point;
+- the 21 pairs not used by Q blocks are not all incident to one distinguished point;
+- no conclusion such as \(\delta\ge12\), \(\epsilon_U=16-\delta\), or \(H[W]=K_5\dot\cup K_5\dot\cup K_4\dot\cup K_4\) follows from that invalid distinguished-point assumption.
+
+The valid general E407 boundary ledger remains
 \[
-H[V_*]=K_7\dot\cup K_7\dot\cup K_7\dot\cup K_8
+e(L)=294+\delta,\quad e(H[U])=112-\delta,\quad
+e_H(U,W)=124+2\delta+\epsilon_U,\quad
+e(H[W])=48-\delta-\epsilon_U,
 \]
-plus five extra edges, all incident to z. The point z has degree 12 already inside V_*, so it has no neighbour in W.
-
-Also e(H[W])=32, so equality holds in the Turán complement bound and
+with
 \[
-H[W]=K_5\dot\cup K_5\dot\cup K_4\dot\cup K_4.
+0\le\epsilon_U\le4,\quad \delta+\epsilon_U\le16,\quad
+\epsilon_U+2\delta\ge2.
 \]
-For a zero-excess vertex w in a K5 component, |N_H(w) intersect V_*|=8; for one in a K4 component, that size is 9. Every such neighbourhood hits all TD(4,7) blocks. A hitting set of size 8 or 9 must contain exactly one whole seven-point group: if it contained no whole group, then for each group i the selected points in the other three groups would have to number at least seven, forcing every group intersection to have size at most one (for size 8) or at most two (for size 9), impossible by total size.
-
-If every one of the four W-clique components contains a zero-excess vertex, choose one from each. Their full-group labels must be four distinct groups: otherwise one group is unlabelled, and the four chosen vertices have only 1+1+2+2=6 extra neighbours in total, leaving a point of that seven-point group nonadjacent to all four; this creates an independent five-set. Thus under this additional condition, all zero-excess vertices within each W component have a fixed group label, and the four components are labelled by a permutation of the four groups.
-
-This extreme corner is not yet contradictory. In particular, the case where all four excess units are concentrated on one K4 component requires separate handling before the group-label conclusion can be applied to all four components. The TD(4,7) corner is a finite incidence kernel to attack, not a claimed closure.
+The independently proved transversal theorem further gives \(\delta\ge2\). The four-partite E407 boundary is still OPEN.
 
 ## 7. Cross-branch audit findings
 
@@ -185,52 +187,18 @@ The next step is no longer to improve scalar witness counts. It is to eliminate 
 Any continuation must charge each edge once, account for the maximum block multiplicity of a vertex, and preserve the difference between the 284-edge Q32/Q33 core and the 285-edge E408 Q32 core. No full EG617(r=12) proof is certified.
 
 
-## 9. General four-partite E407 boundary: eliminate delta=12,13
+## 9. Current E407 four-partite kernel and next attack
 
-The E407 boundary audit must retain both possibilities: L may be four-partite or non-four-partite. The following analysis treats the four-partite branch directly rather than inferring non-four-partiteness by excluding only the complete Turan graph.
+The four-partite E407 boundary has part sizes (7,7,7,8), with 49 linear transversal K4 blocks. The three pairs among the seven-point parts are covered completely by the witness blocks. For each seven-by-eight pair type, exactly seven pairs remain uncovered, with exactly one uncovered partner for each vertex on the seven-point side; the eight-point-side degrees of the uncovered-pair graph are not fixed by the present contract.
 
-Assume L is four-partite. The 49 edge-disjoint Q blocks force part sizes (7,7,7,8). The blocks cover every pair between any two of the three seven-point parts, and every pair between a seven-point part and the seven used points of the eight-point part. Exactly one point z in the eight-point part is unused by all Q blocks. All 294 witness edges lie between the active 28 points; the only possible additional L edges are z-to-active-point edges. Therefore
+The core-budget constraints remain
 \[
-\delta=e(L)-294=d_L(z,U\setminus\{z\}).
+0\le\delta\le16,\quad 0\le\epsilon_U\le4,\quad
+\delta+\epsilon_U\le16,\quad\epsilon_U+2\delta\ge2.
 \]
-The complement H[U] consists of four cliques of sizes 7,7,7,8, plus 21-delta H-edges from z to the active 28 points. In particular,
-\[
-d_{H[U]}(z)=7+(21-\delta)=28-\delta.
-\]
-Since every core degree is at most 16, delta>=12.
+The non-four-partite branch, if established separately, would satisfy the corresponding second-Turán cap; do not infer non-four-partiteness merely by excluding the complete Turán graph.
 
-Combining this with the already proved boundary budget delta+epsilon_U<=16 gives
-\[
-\epsilon_U\le16-\delta.
-\]
-But z itself has excess at least
-\[
-\epsilon_z\ge d_{H[U]}(z)-12=16-\delta.
-\]
-Hence equality holds throughout:
-\[
-\boxed{\epsilon_U=\epsilon_z=16-\delta}.
-\]
-All excess inside U is concentrated at z, z has no neighbour in W, the remaining excess is
-\[
-\epsilon_W=\delta-12,
-\]
-and
-\[
-e(H[W])=32,\qquad H[W]=K_5\dot\cup K_5\dot\cup K_4\dot\cup K_4.
-\]
-Thus the four-partite branch has delta in {12,13,14,15,16}.
-
-For a zero-excess w in W, its neighbourhood T_w=N_H(w) intersect U has size 8 if w lies in a K5 component of H[W], and size 9 if it lies in a K4 component. It hits all 49 Q blocks. As shown in Section 6, every hitting set of size 8 or 9 contains a unique whole seven-point TD group plus respectively one or two extra points.
-
-If delta=12 or 13, then epsilon_W is 0 or 1, so every W clique component contains a zero-excess vertex. The group-label argument in Section 6 applies. For delta=12, both K5 components are entirely zero-excess; for delta=13, at least one K5 component is entirely zero-excess. In either case its five vertices all have the same seven-point group label, so together with that group they form a K12, contradicting omega(H)<=11. Therefore
-\[
-\boxed{\text{if L is four-partite, then delta}\ge14.}
-\]
-
-At delta=14, epsilon_W=2, and each K5 component must contain one positive-excess vertex; those two units are forced one into each K5 component. Since each such vertex has a nine-point hitting set, its full group must differ from the group label of the four zero-excess vertices in that K5 component, or a K12 appears. At delta=15, epsilon_W=3 and each K5 still requires at least one positive-excess vertex. At delta=16, epsilon_W=4; the only case in which the four-component group-label argument is unavailable is when all four positive-excess vertices occupy one K4 component. That exceptional branch remains OPEN.
-
-This is a strict reduction of the E407 four-partite boundary, not its closure. The non-four-partite branch remains separately OPEN and must not be inferred from ruling out the complete four-partite graph.
+Next attack: classify the three bipartite uncovered-pair graphs and the seven-per-color parallel classes jointly, using the per-vertex degree cap and the outside-core transversal neighborhoods. No distinguished eighth point or TD(4,7) completion is assumed.
 
 ## 10. Live sibling refresh and audit update
 
