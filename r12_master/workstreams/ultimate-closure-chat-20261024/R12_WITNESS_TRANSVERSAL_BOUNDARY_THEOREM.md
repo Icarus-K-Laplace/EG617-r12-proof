@@ -88,7 +88,7 @@ Equation (5) gives e_H(U,W)>=7|W|=126. Combining with (6),
 \[
 \boxed{\epsilon_U+2\delta\ge2.} \tag{9}
 \]
-Finally, L is K5-free. The global budget gives e(L)<=310, so L is not the complete balanced four-partite extremizer (which has 315 edges). Brouwer's second-Turan bound for a non-four-partite K5-free graph on 29 vertices gives e(L)<=309, hence
+Finally, L is K5-free. The budget gives e(L)<=310. If L were complete four-partite, every pair of parts would have product at least 49, because the 49 edge-disjoint K4 witnesses use a distinct pair across every pair of parts. On 29 vertices this forces part sizes (8,7,7,7), whose complete four-partite graph has 315 edges, contradicting e(L)<=310. Thus L is non-four-partite; Brouwer's second-Turan bound gives e(L)<=309, hence
 \[
 0\le\delta\le15.
 \]
@@ -130,7 +130,7 @@ Thus the E408 boundary window is
 0\le\delta\le17,\quad 0\le\epsilon_U\le4,\quad
 \delta+\epsilon_U\le17.
 \]
-The K5-free complement L is necessarily non-complete-four-partite, since its edge count is at most 353 while t_4(31)=360.
+The K5-free complement L is non-four-partite: if it were complete four-partite, the 56 edge-disjoint K4 witnesses force every pair of part sizes to have product at least 56, which on 31 vertices forces part sizes (8,8,8,7) and hence 360 edges, contradicting e(L)<=353.
 
 ## 6. Interpretation and status firewall
 
