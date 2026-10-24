@@ -30,6 +30,13 @@ Exact branch heads and qualifications are in CROSS_BRANCH_SYNC_20261025.md.
 
 The emergency sibling's m=10 witness-star dichotomy e(H[U])=135 or >=144 is not established by its stated second-Turán argument. The proved conclusion from that step is only three K10 parts in H[U] plus at most eight cross-part edges. This line does not rely on the stronger unsupported dichotomy.
 
+## Latest transversal-boundary update
+
+- The linear witness family has transversal number at least seven in the two support-boundary kernels. Every vertex outside the witness support therefore has at least seven neighbors into it.
+- E407 boundary budget is delta+epsilon_U<=16 and epsilon_U+2delta>=2. Do not claim delta<=15 unless non-four-partiteness is independently proved.
+- E408 Q33 boundary budget is delta+epsilon_U<=17; the transversal floor adds no tighter inequality there.
+- A separate audit found the same logical gap in two sibling arguments: tripartite/four-partite does not imply complete multipartite. The four-partite boundary branches remain open.
+
 ## Open obligations
 
 - E407 Q32: eliminate the v=29, 49-witness boundary under the five template row-transversal systems.
