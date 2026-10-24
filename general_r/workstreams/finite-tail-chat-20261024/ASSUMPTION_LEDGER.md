@@ -160,7 +160,7 @@ The machine-readable registry distinguishes **source theorem applicability** fro
 - `THREE_PAIRWISE_NONADJACENT_DEGREE_R_ANCHORS: CONDITIONAL` — a premise, not a universally established configuration.
 - `R12_CONTEXTUAL_RECURRENCE_BRIDGE: OPEN` — the historical r=12 arithmetic replay does not close the graph-level bridge.
 
-The parameter-admission matrix explicitly keeps all of these distinctions. No source in this ledger currently certifies an unconditional asymptotic threshold `r0); `ASYMPTOTIC_R0=NOT_AVAILABLE`.
+The parameter-admission matrix explicitly keeps all of these distinctions. No source in this ledger currently certifies an unconditional asymptotic threshold `r0`; `ASYMPTOTIC_R0=NOT_AVAILABLE`.
 
 
 ## Machine-readable source-premise status additions
