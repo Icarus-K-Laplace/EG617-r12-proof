@@ -152,7 +152,7 @@ A first real conditional endpoint module has completed the full producer -> cert
 - verifier SHA-256: `c18a74703417faed2c453b588e0ea9a8b03244af04bfc0b5f4191ec8cc15de6a`;
 - generator SHA-256: `b29179be0386b44168450cab23fa3591c187222a32194ee086a05a5bca4d6758`;
 - verifier SHA-256: `c18a74703417faed2c453b588e0ea9a8b03244af04bfc0b5f4191ec8cc15de6a`;
-- gate SHA-256: `5b6c242d11a4efacb99b1e41d499ef50bf26ad709b704ad56b084ce038a075f5`;
+- gate SHA-256: `415191c88737a23e03df41c011b5d4fdb01537f4455985a2f26d0a30968e565d`;
 - gate: `PASS_CONDITIONAL_MODULE`; theorem status: `CONDITIONAL_LEMMA_CERTIFIED`;
 - RC remains `OPEN`, so EG617(13) remains **NOT PROVED**.
 
