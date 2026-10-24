@@ -6,7 +6,7 @@ This note uses the already-established Case B contract only. It does not assume 
 
 ## Setup
 
-Let H_{-c} have matching number two and transversal number 2r. Let X be the union of a maximum matching, so |X|=2r, and let R=V\X, |R|=(r-1)^2. For each v in X choose a private witness
+Let H_{-c} have matching number two and transversal number 2r. Let X be the union of a maximum matching, so |X|=2r, and let R=V minus X, |R|=(r-1)^2. For each v in X choose a private witness
 
 \[
 T_v=\{v\}\cup Q_v,\qquad |Q_v|=r-1,\qquad Q_v\subset R,
