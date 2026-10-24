@@ -305,3 +305,44 @@ This does not eliminate Case A (matching number at least three) and therefore do
 The attempted quantitative extension in commit 5466f79333f0e8b1694c181c2ece4ae907086a37 is **invalid and withdrawn**. The random-transversal step sampled one vertex from each entire clique block, but the required choice must be a color-c nonneighbor of a fixed root in every block. These candidate subsets can be singletons, so the claimed probability bound by \(d/(q-k)^2\) is not justified. A single cross-block c-edge can block all allowed root-nonneighbor transversals when the two candidate sets are its endpoints.
 
 Accordingly, do **not** use the claimed bound \(d\ge \binom{k+1}{2}\), its numerical thresholds, or the implied stronger MOLS count. The valid theorem remains J.W8: only the endpoint \(d=0\) is excluded by the exact Turan-partition/root-capacity argument, giving \(d\ge1\). A stronger quantitative bound requires a separate blocker argument that accounts for the root-dependent candidate sets.
+
+
+## Theorem J.W12 — Root-dependent weighted blocker inequality
+
+Assume Case B and additionally that \(H_c=\overline{G_c[R]}\) is \((q+1)\)-partite, with parts \(B_1,\ldots,B_{q+1}\). The c-graph on R then consists of the within-block cliques plus a set E of cross-block c-edges.
+
+For a root \(x\in X\) that is not c-adjacent to every vertex of any one block, define the nonneighbor candidates
+
+\[
+A_j(x)=\{v\in B_j:\operatorname{col}(xv)\ne c\},
+\qquad a_j(x)=|A_j(x)|\ge1.
+\]
+
+Choose independently one vertex \(V_j\) uniformly from each \(A_j(x)\). A cross-block c-edge \(uv\), with \(u\in B_i\) and \(v\in B_j\), appears in the chosen transversal with probability \(1/(a_i(x)a_j(x))\). Therefore the expected number of selected cross-block c-edges is
+
+\[
+W_x:=\sum_{\substack{uv\in E\\u\in B_i,\ v\in B_j}}
+\frac{1}{a_i(x)a_j(x)}.
+\]
+
+If \(W_x<1\), some choice has no cross-block c-edge. Together with x, that transversal would be a c-independent set of size q+2=r+1, contradicting the full-counterexample condition. Hence every such root satisfies the exact necessary inequality
+
+\[
+\boxed{W_x\ge1.}
+\]
+
+Summing over roots with no fully c-covered block gives
+
+\[
+\boxed{
+|\{x\in X:\forall j,\ A_j(x)\ne\varnothing\}|
+\le
+\sum_{x:\forall j\,A_j(x)\ne\varnothing}W_x.
+}
+\]
+
+This is the correct root-dependent blocker inequality. It explicitly samples from the root's allowed nonneighbor sets, not from the full blocks.
+
+### Boundary and relation to J.W8
+
+When E is empty, every \(W_x=0\), so every root must fully c-cover a block. The block-capacity count then gives the contradiction in J.W8. For E nonempty, J.W12 identifies the exact weighted obstruction that any stronger quantitative argument must control. It does **not** by itself imply a lower bound on |E| beyond nonemptiness; the withdrawn J.W11 argument must not be used.
