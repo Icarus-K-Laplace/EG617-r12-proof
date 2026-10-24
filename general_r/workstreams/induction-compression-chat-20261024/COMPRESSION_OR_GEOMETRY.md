@@ -1,6 +1,6 @@
 # Compression-or-Geometry: Current Theorem and Exact Gap
 
-Status: **Compression-or-hypergraph-structure is proved; compression-or-finite-geometry is OPEN**.
+Status: **Compression-or-hypergraph-structure is proved; a conditional low-slack interface is now proved; full finite-geometry dichotomy remains OPEN.**
 
 ## 1. Exact alternatives
 
@@ -9,9 +9,9 @@ For a hypothetical counterexample to P(r), let I_i be the family of independent 
 For each eliminated color c:
 
 - If the union of I_i over i != c has a transversal X of size at most 2r-1, then the robust compression criterion yields a counterexample to P(r-1).
-- If not, its transversal number is at least 2r. The Noncompressible-Shell Theorem then gives either three pairwise disjoint independent-set witnesses with forced colored cross-edges, or a tight 2r-point transversal in which every point has a private witness.
+- If not, its transversal number is at least 2r. The Noncompressible-Shell Theorem gives either three pairwise disjoint independent-set witnesses with forced colored cross-edges, or a tight 2r-point transversal in which every point has a private witness.
 
-For each fixed merge c -> j, replace the hypergraph by
+For a fixed merge c -> j, replace the hypergraph by
 
 \[
 \mathcal H_{c,j}=
@@ -21,52 +21,42 @@ For each fixed merge c -> j, replace the hypergraph by
 
 A transversal of size 2r-1 is exactly a successful fixed-merge shell. If none exists, the same packing/tight-transversal alternative applies.
 
-## 2. Additional structure in the tight case
+## 2. New conditional bridge from tight witnesses to low-slack blocks
 
-If the matching number is exactly two, the minimum 2r-point transversal X has a private independent r-set T_v for every v in X, with T_v intersect X={v}. There are only r-1 possible witness colors other than the eliminated color, so at least three private witnesses have the same designated color. Since no three hyperedges can be pairwise disjoint, at least two of those same-color witnesses share a point outside X. For two same-color independent r-sets with intersection size h, the color graph has at least r-h cross-edges between their differences.
+Suppose the matching-number-two case holds, X is its 2r-point minimum transversal, x_0 in X, and a color i != c has local slack 1<=s_i(x_0)<=r-2 on W=V minus {x_0}. Let P_1,...,P_r be the low-slack color-i clique blocks and Y=X minus {x_0}.
 
-This is a proved common-color overlap, but it is not yet a line theorem: the overlap can be larger than one, and no complete direction family is established.
+The set Y hits every independent r-set of G_i[W]. For any private witness T_v of color i with v in Y intersect P_a, T_v is an independent transversal of the P-blocks and its other r-1 points lie in the residual parts B_b=P_b minus Y. Every u in B_a must have a color-i defect edge to T_v minus {v}; otherwise replacing v by u creates an independent r-set disjoint from Y. Hence |B_a|<=s_i.
 
-## 3. Why this is not yet geometric rigidity
+If some B_a is empty, all color-i private witnesses are based in that one block. Otherwise every block hosting such a witness contains at least r-s_i points of Y, so the number of witness-hosting blocks is at most floor((2r-1)/(r-s_i)).
 
-The hypergraph implication uses only uniformity:
+Also, when every B_a is nonempty, the color-i defect edges induced on the B_a parts form a graph with no independent transversal and satisfy the weighted blocker inequality from the K-line lemma.
 
-\[
-\tau(\mathcal H)\le r\,\nu(\mathcal H).
-\]
+Full proof: TIGHT_TRANSVERSAL_LOW_SLACK_BRIDGE.md. Weighted lemma: see the K branch TRANSVERSAL_BLOCKER_LEMMA.md.
 
-It forces a matching of size at least two, and if the matching number is exactly two, it forces a minimum transversal of size exactly 2r with private witnesses. The color-graph domination lemma adds the cross-edge constraints stated in NONCOMPRESSIBLE_SHELL_THEOREM.md.
+## 3. Why this is still not a full geometry theorem
 
-But uniform-hypergraph data alone cannot force affine geometry. For example, on two disjoint sets A,B each of size 2r-1, take as hyperedges all r-subsets of A and all r-subsets of B. This abstract r-uniform hypergraph has matching number 2 and transversal number 2r: within each cluster every two r-subsets intersect, and each cluster requires r vertices to hit all its r-subsets. It has no affine-direction interpretation.
+The bridge is conditional on finding a low-slack color i != c at a vertex x_0 belonging to X. No theorem currently guarantees this alignment. Even when it holds, the witnesses are concentrated in a bounded number of clique blocks, but this does not yet force three directions, a net, or a contradiction.
 
-This is **not** claimed to be realizable as the independent-set hypergraphs of a counterexample coloring. It is an audit example showing that tau/nu alone cannot supply the missing geometry.
+The hypergraph data alone cannot force affine geometry. The abstract example with two disjoint clusters of all r-subsets still shows that matching/transversal data alone are insufficient.
 
-## 4. Exact Kakeya-bridge requirements
+## 4. Kakeya-bridge requirements
 
-To use the elementary inequality
+To use
 
 \[
 |X|\ge tq-\binom t2,
 \]
 
-one must already have t subsets of size q, each wholly contained in X, with every pair intersecting in at most one point. For an affine-plane interpretation, these must be full lines in t distinct directions. The present compression theorem yields disjoint independent r-sets and private witnesses, not such lines, so the Kakeya inequality is not yet applicable.
-
-In an affine plane, three full lines from three distinct directions already require at least 3q-3 points. For q>=3,
-
-\[
-3q-3>2q-1.
-\]
-
-Thus a future bridge need only extract three genuinely distinct line-like directions that the shell must fully contain; it need not extract all q+1 directions. The extraction and pairwise-intersection hypotheses are currently OPEN.
+one must first prove t full size-q blocks lie wholly in X and pairwise intersect in at most one point. The current packing theorem and conditional block concentration do not provide these hypotheses. Three distinct-direction full lines would contradict a 2q-1 shell for q>=3, but no such lines have been extracted.
 
 ## 5. Current verdict
 
 - Exact robust compression criterion: PROVED.
 - Exact fixed-merge criterion: PROVED.
 - No-shell => packing or tight critical transversal: PROVED.
-- Tight case => at least two same-color private residual blocks overlap: PROVED.
+- Tight case => same-color private-witness overlap: PROVED.
+- Tight case + aligned low-slack color => witness-block concentration and weighted blocker: PROVED.
+- Existence of aligned low-slack color: OPEN.
 - No-shell => many line-like blocks: NOT PROVED.
-- Kakeya contradiction: NOT AUTHORIZED until full size-r blocks and their intersection hypotheses are derived.
+- Kakeya contradiction: NOT AUTHORIZED.
 - P(r) => P(r-1): NOT ESTABLISHED.
-
-The correct next theorem is a graph-specific upgrade from the packing/private-witness certificate to either a shell or a family of blocks with proved intersection constraints.
