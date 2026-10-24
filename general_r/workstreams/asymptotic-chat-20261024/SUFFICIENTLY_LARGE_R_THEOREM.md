@@ -28,7 +28,7 @@ Every anchored 5r+1 terminal satisfying that contract is contradictory after dir
 - delta=r: |W| ∈ {2r−4, 2r−3, 2r−2};
 - delta=r+1: |W| ∈ {2r−7, …, 2r−2}.
 
-This is **OPEN**. In particular, the low-degree delta=r, |W|=2r−1 layer is not covered by the high-layer Cell A/B exclusion theorems.
+This is **OPEN**. The |W|=2r−1 layer has been eliminated in both anchor-degree branches for r≥25; the remaining D_low cases have |W|≤2r−2.
 
 ### Proof
 
