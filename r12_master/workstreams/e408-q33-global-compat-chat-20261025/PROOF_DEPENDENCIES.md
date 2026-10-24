@@ -26,7 +26,7 @@ The following sibling workstreams were treated as read-only inputs. No sibling f
 - Shell/core witness lemma, file blob SHA 02b4c867a2bd2264fb45c51d2ab77cc57c488b0b: applies only under the retained T61 contextual contract.
 - Outer seven-block system, source file front_end/E408_GLOBAL_SEVEN_BLOCK_EQUALITY_SYSTEM.md on the emergency sprint branch: exact global color edge counts, one-or-two row rule, and 62-unit duplicate budget.
 
-The new theorem in FOUR_PARTITE_GLOBAL_COMPATIBILITY.md is proved directly from the 31-point/56-witness four-partite contract, the core degree ledger, and alpha(H)<=4 / omega(H)<=11. It does not use the star lemma noted below.
+The new theorem in FOUR_PARTITE_GLOBAL_COMPATIBILITY.md is proved directly from the 31-point/56-witness four-partite contract, the partition of the eight witnesses through each d in D, the core degree ledger, and alpha(H)<=4 / omega(H)<=11. It does not use the star lemma noted below.
 
 ## 3. Proof correction discovered during the audit
 
