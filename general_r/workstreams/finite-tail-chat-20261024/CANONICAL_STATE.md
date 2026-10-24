@@ -193,8 +193,8 @@ Added `PARAMETER_ADMISSION_MATRIX.json` and `PARAMETER_ADMISSION_VERIFIER.py`.
 
 - Explicit rows: r=4,...,100 (97 parameter rows), with a four-interval partition extending to every integer r>=4.
 - Source records: six immutable theorem/asset records, including source commit, source path/blob, exact parameter applicability, proof type, assumptions, and terminal contract.
-- Matrix raw SHA-256: `6ada61242bd6afa86ad4bb06e8549e5d5bfdbff348c5ffff6d32be445dc51cf3`.
-- Admission verifier SHA-256: `43c42443d8fbfc6ddb67d2bb3f4923e0c70e2a92a6dba5818d692defad2d44d9`.
+- Matrix raw SHA-256: `037ebe8e26f0c72e135e3d6a560d4620f023cb52b0c4d8e87096c12e0a8828da`.
+- Admission verifier SHA-256: `08d8e58ae6713cf8ab94b1e2dbb3715cd920f4255d21792b7a6d801be04dc326`.
 - Theorem gate now calls the admission verifier before promotion and records the matrix/verifier fingerprints in its receipt.
 - Unified entry point: `generate_parametric_certificate.py`, which reuses the existing endpoint-domain and d1 generators rather than reimplementing their arithmetic.
 
@@ -248,3 +248,8 @@ Round-2 implementation fingerprints:
 - unified family wrapper SHA-256: `8ab57ec8f005061fd1aa234b24e8e434d36bcbd77149e6caa9a1e5f7de9fc36a`
 - graph symmetry verifier SHA-256: `6f6c484575772b72324ee0e4ad3495c93fb1b39ebb6f35e981fa54277a952f4c`
 - graph symmetry test-vector file SHA-256: `72ed53eb8f05d1a1531595076f018a5e31c8f66388cf230dfff70a88bfbdc05a`
+
+
+### Source-proof scope note
+
+The admission registry freezes exact source commits, paths, and blob hashes and verifies their parameter statements/ranges. It does not claim that this finite-tail workstream independently reproved every upstream analytic theorem. Each source record has a `local_audit_status` distinguishing source-scope verification from proof reproduction; only the D1 integer consequence and toy symmetry fixture received separate local arithmetic/witness checks here.
