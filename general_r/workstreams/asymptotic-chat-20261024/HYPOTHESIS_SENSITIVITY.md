@@ -93,3 +93,48 @@ Any one of the following is sufficient progress without demanding sharp constant
 - common-S owner demand `N>(1/2+c)r-O(1)` to beat multicolour owner capacity;
 - terminal-only decoration potential theorem;
 - robust design stability producing two orthogonal/cross-intersecting clique partitions.
+
+
+## 10. Round 2: shortest-route sensitivity
+
+The shortest conditional composition is now
+\[
+A_{\mathrm{ext}}^*(r)\land D_{\mathrm{low}}(r)\Longrightarrow P(r),
+\qquad r\ge67.
+\]
+It bypasses (H_B), (C^*), and the broad (H_D) classification. The only downstream requirement is to exclude the finite-offset near-anchor terminal family after the direct (5r+1) extraction theorem.
+
+The remaining (D_{\mathrm{low}}) contract is:
+- (delta=r): (|W|\in\{2r-4,2r-3,2r-2,2r-1\});
+- (delta=r+1): (|W|\in\{2r-7,\ldots,2r-2\}).
+
+The high-degree (|W|=2r-1) layer is closed for (r\ge25); the low-degree (delta=r, |W|=2r-1) layer remains open.
+
+## 11. d2 inequality verdict
+
+The proposed (K+a\le(1-c)r+O(1)) is **not derivable from the current scalar identities**. For even (r\ge68), the exact scalar family
+\[
+(\epsilon,a,b,K,B,q)=(0,2,0,r-2,r/2+4,5r/2+4)
+\]
+satisfies the master identity, d2 charge equality, inherited K cap, q ceiling, and the recorded K upper bound, while (K+a=r). This is not a graph counterexample, but it rules out the scalar-only strategy. A structural restriction on the scalable a=2 clean-pair terminal is necessary.
+
+## 12. Owner-demand route verdict
+
+For a common-S family, the multicolour capacity is
+\[
+N_{\mathrm{capacity}}\le\frac{r-3+2\epsilon+\epsilon\sqrt{4\epsilon+1}}2
+=\frac r2+O_\epsilon(1).
+\]
+The desired (N_{\mathrm{required}}>(1/2+c)r-O_\epsilon(1)) has **not** been proved. Existing sunflower capacities have slope one and do not contradict linear demand. Do not report this route as closed.
+
+## 13. Common C/D interface
+
+The weighted transversal-cover lemma now applies exactly to:
+- four clean pair blocks in C (strengthened by the finite 2-SAT result to six cross-edges per four-block subsystem);
+- a target-missing pair plus four other target groups in D (the cylinder lower bound and bounded-hub consequence).
+
+This is a rigorous common counting interface, not an identification of the two structures. The clean-pair linear interval and D defect-chain budget remain open. The core common-S pivot system continues to use its own exact repivot and owner-capacity identities.
+
+## 14. Highest-leverage blocker
+
+For the **first unconditional infinite-family theorem**, (A_{\mathrm{ext}}^*) is the highest global gate: without the contextual 4r+1/5r+1 dichotomy, neither the residual nor the near-anchor terminal branch is guaranteed. It is not the only open theorem; (D_{\mathrm{low}}) is the independent downstream blocker once the terminal is reached.
