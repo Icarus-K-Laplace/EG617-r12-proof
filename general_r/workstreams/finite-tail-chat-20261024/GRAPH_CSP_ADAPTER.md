@@ -23,7 +23,7 @@ The current endpoint-domain module is a verified scalar necessary-condition modu
 | module | intended mathematical input | current status | activation rule |
 |---|---|---|---|
 | d0 neutral symmetry | proved d0 normalization/equivalence theorem | OPEN | do not encode as graph constraint |
-| d1 shell classes | proved bounded-allowance d1 closure theorem | OPEN | theorem source and r-scope required |
+| d1 shell classes | conditional shell-incidence theorem gives at most 5 shell classes; bounded-allowance nonextension is separate | shell-count arithmetic module `D1_SHELL_CLASS_BOUND_V1` certified conditionally; multiplicity closure OPEN | activate only with A+B; never infer absolute owner multiplicity |
 | d2 support pairs | proved support-pair/charge theorem | OPEN | no guessed pair compatibility clauses |
 | d3 closure | sibling d3/common-S theorem with all premises | CONDITIONAL; integration pending | list exact assumptions and r-range |
 | high-endpoint kernel | proved bounded-kernel/owner theorem | CONDITIONAL; integration pending | attach source commit and witness checker |
