@@ -31,31 +31,25 @@ A reverse-saturation lemma was also proved: every vertex of W is complete to exa
 Combine the forced vertex-level U-part neighbourhoods and common-K4 endpoint structure with the exact row/hub requirements of templates A-E. In parallel, use the near-Turan classification for delta=14,15 to bound the remaining cross edges in H[W]. Do not claim any template closed until an actual incompatibility proof is obtained.
 
 
-## 2026-10-25 — Round 2: delta=16 excluded
+## 2026-10-25 — Round 2 (corrected): audit of the \(\delta=16\) endpoint split
 
-### New mathematical result
+### Correction
 
-The previous round's labelled \(\delta=16\) kernel is now eliminated completely under the frozen E407 Q32 core/witness contract.
+An attempted closure of the \((5,0)\) endpoint split was invalid and is withdrawn. The error was assuming that the three non-endpoint vertices of \(D\), each having five neighbours in \(W\), must be complete to a \(K_5\). In the \((5,0)\) split, the endpoint \(K_4\) is complete to all of \(D\), so each non-endpoint \(D\)-vertex already has four neighbours in that \(K_4\) and has **exactly one** additional \(W\)-neighbour. That extra neighbour need not make it complete to a \(K_5\). The proposed pigeonhole/excess contradiction therefore does not follow.
 
-The key missing terminal step was the \((5,0)\) endpoint split. In that case:
-1. The \(K_4\) containing all five \(D\)-endpoints cannot be complete to a 7-part (that would require at least three excess units at each of its four vertices), so it is complete to \(D\).
-2. The other \(K_4\) and both \(K_5\) components cannot be complete to \(D\), and reverse saturation forces every vertex of those components to be complete to a 7-part.
-3. The three non-endpoint vertices of \(D\) each have five neighbours in \(W\), hence each is complete to one of the two \(K_5\) components. Two must choose the same \(K_5\).
-4. Every vertex of that \(K_5\) then has at least seven neighbours in a small part plus two \(D\)-neighbours, so it needs at least one degree-excess unit. Five vertices require at least five excess units, contradicting the core's total excess four.
+### Results that remain valid
 
-The \((4,1)\) and \((3,2)\) splits remain excluded by the earlier degree-excess arguments. Thus all three possible endpoint splits are impossible and \(\delta=16\) is excluded.
+- The \(\delta=16\) boundary is forced four-partite, with \(U\)-parts \(7,7,7,8\) and \(H[W]=K_5\cup K_5\cup K_4\cup K_4\).
+- The five cross edges in \(H[U]\) form a matching.
+- Every \(W\)-vertex is complete to exactly one \(U\)-part.
+- The \((4,1)\) and \((3,2)\) endpoint splits are excluded by degree-excess contradictions.
+- In the remaining \((5,0)\) split, the endpoint \(K_4\) is complete to \(D\); each vertex in the other \(K_4,K_5,K_5\) components is complete to a small part; each of the three non-endpoint \(D\)-vertices has exactly one additional \(W\)-neighbour outside the endpoint \(K_4\).
 
-### Verification scope
+### Current status and next attack
 
-The arithmetic verifier is being updated to include the final \(5>4\) excess contradiction. The mathematical proof is in FOUR_PARTITE_TERMINAL.md. The verifier is a consistency check only and does not independently certify graph-realization or the upstream T61 / exact-129 inputs.
+- E407 Q32: **OPEN / NOT_CERTIFIED**.
+- \(\delta=16\): OPEN, narrowed to the labelled \((5,0)\) kernel.
+- \(\delta\le15\): four-partite near-extremal and non-four-partite cases remain open.
+- E408 Q32/Q33 and the original \(K_{145}\)-to-T61 bridge: untouched.
 
-### Global effect
-
-- E407 Q32: \(\delta=16\) boundary closed by contradiction under the retained core/witness contract.
-- E407 Q32 overall: **OPEN / NOT_CERTIFIED**.
-- Remaining core-ledger values: \(\delta\le15\), including four-partite and non-four-partite branches.
-- E408 Q32/Q33 and the original \(K_{145}\)-to-T61 bridge: untouched and still open.
-
-### Next attack
-
-Prioritize \(\delta=15\) first: it is the sharp second-Turán boundary for a non-four-partite \(K_5\)-free graph on 29 vertices, while the four-partite branch has only one degree-excess unit on \(U\). Then handle \(\delta=14\), and only after those near-extremal cases inspect \(\delta\le13\). Do not infer the remaining \(\delta\le15\) cases are excluded by the \(\delta=16\) argument.
+Next, characterize the three extra \(D\)-to-\(W\) edges and the full-part labels of the 14 vertices outside the endpoint \(K_4\), then intersect this incidence system with the five V12 shell templates. Do not claim \(\delta=16\) closed until the \((5,0)\) kernel is excluded or realized.
