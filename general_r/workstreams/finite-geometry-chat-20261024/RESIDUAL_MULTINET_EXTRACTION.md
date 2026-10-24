@@ -11,7 +11,7 @@ This note invokes the exact Case B theorem proved on the J branch in
 - source commit: 009a546cf0d66e4060a601bba168674214e7ac6c
 - theorem: J.W1 and J.W5.
 
-The hypothesis is a full hypothetical r-counterexample, a fixed color c with no robust shell, and the matching-number-two/tight-transversal case. Set q=r-1, let X be the 2r-point minimum transversal, and let R=V\\X, so |R|=q². For every i != c, alpha(G_i[R])<=q. Define
+The hypothesis is a full hypothetical r-counterexample, a fixed color c with no robust shell, and the matching-number-two/tight-transversal case. Set q=r-1, let X be the 2r-point minimum transversal, and let R=V minus X, so |R|=q². For every i != c, alpha(G_i[R])<=q. Define
 
 \[
 b_i=e(G_i[R])-m_q,\qquad m_q=q\binom q2.
