@@ -207,3 +207,6 @@ Current highest-leverage open pair:
 - **D_low** — exclude the finite-offset near-anchor terminal family above.
 
 The broad (C^*) backend route remains valid but is no longer the shortest dependency path.
+
+
+Standalone common-interface proof asset: COMMON_TRANSVERSAL_COVER_INTERFACE.md (commit 4e00edfb9e36d1078fc21af4ae2521e82a76935e). It proves the weighted transversal-cover lemma and states the exact C/D instantiations and their limits.
