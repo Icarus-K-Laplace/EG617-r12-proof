@@ -89,7 +89,7 @@ The witness-union note now also proves the outside-core hitting inequality
 because every vertex outside U must hit every independent 4-set Q_i. This uses only α(H)≤4 and the exact core degree identity.
 
 At the remaining boundary sizes it yields:
-- E407, any template with seven exact-129 colors and v=29: \(2R+E_U\ge4\), while \(R+E_U\le16\).
+- E407, seven exact-129 colors and v=29: the original witness-hitting inequality gives the weaker \(2R+E_U\ge4\), while \(R+E_U\le16\). The independently proved transversal/excess theorem R12_E407_TRANSVERSAL_EXCESS_BOUND.md strengthens this to \(2R+E_U\ge9\) and \(R\ge3\).
 - Conditional algebra only: if a separate proof supplies N=56 on v=32 with \(r_x\le7\), then \(2R+E_U\ge56\) and \(R+E_U\le39\). The current exact-129 count contract does not establish this N=56 premise for seven-color E407 C/D/E, so it is not used as a terminal application.
 - E408 Q33 with eight exact-129 colors and v=31, for any beta: \(2R+E_U\ge7\), while \(R+E_U\le17\).
 
