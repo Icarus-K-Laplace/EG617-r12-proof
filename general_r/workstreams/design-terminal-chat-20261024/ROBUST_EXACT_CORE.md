@@ -48,14 +48,8 @@ The next sufficient result is a **defect-chain cost theorem**:
 This must count each pair once and cannot assume an affine plane exists. Until this is proved, no exact-core or robust nonextension closure is claimed.
 
 
-## 5. Alternative terminal closure without exactification
+## 5. Audit of the attempted alternative closure — WITHDRAWN
 
-**PROVED_ANALYTIC for (r\ge6212):** the contextual terminal itself is impossible by bounded target-internal defect capacity; an exact net is not needed.
+The attempted proof that the contextual terminal is impossible for (r\ge6212) is **withdrawn**. It incorrectly treated five vertices in (B_j\setminus X), which form a clique, as an independent set. Therefore it did not establish a constant upper bound on the number of target-internal deletions.
 
-The target stability theorem gives (|X|\le108), every target internal deletion touches (X), and (B_j\setminus X) is a target clique. Each hub has at most four missing target edges to ordinary vertices in its own group. Therefore
-[
-D\le4|X|+\binom{|X|}{2}\le6210.
-]
-Some target group has at least (r+1) vertices. Every non-target color must have an edge in a fixed ((r+1))-subset of that group, so unique color ownership requires at least (r-1) distinct target internal deletions. For (r\ge6212), this contradicts (D\le6210).
-
-Thus the exact-core route is no longer necessary to close the **terminal branch** for sufficiently large (r). It remains OPEN as a structural route, and the front-end forcing interface to the terminal remains OPEN. See `JOINT_DEFECT_PROPAGATION.md` for the full proof.
+The valid surviving statement is (D_h\ge r-1) for any target group (B_h) of size at least (r+1): each of the (r-1) non-target colors must own an edge inside a fixed ((r+1))-subset of that group. This is compatible with the (O(r)) target edit budget. The exact-core route and contextual terminal nonextension remain **OPEN**. See `JOINT_DEFECT_PROPAGATION.md` for the full audit.
