@@ -35,12 +35,22 @@ For N=9 this forces one common missing triple through q=34; at q=35 there are at
 
 - 8e0f951a537247cf75abe84a5066583e7d63ebf4 — **new mathematical result:** d3 disjoint-support compatibility through q=38; distinct missing triples force cross-edge count at most q-36, giving at most 3 distinct-type blocks for q=36,37 and at most 6 for q=38.
 
+- b7eeb7a1530ef3384bfe6c572a85748ac245dac3 — **new theorem:** every independent triple in a 35-core with total degree excess at most four forces K>=8; this closes the common-S d3 independent-triple allowance a=7.
+- 15a3fc281d84fcfda15124f1dc271e999a743932 — clarified the c=8 equality-profile upper-bound wording.
+- ccf95774eed3c1f6ad3d7e102fde0c185010837a, 48e7b24a05a0105c7e11c50da1ae8fc68cea9596, bdd2c399a46574436f332dc29da2db6b6792ebfe — updated forcing contract, frontier, and dependency ledger to retain only the d3 triangular a=8 total-excess-five gap.
+- 73afeca87c4d5a7ef5fe7fe7432879c37ed7059c — independent finite-profile audit of the h=4 extension.
+
+## New theorem: independent triples through excess four
+
+Let H have 35 vertices, alpha(H)<=3, omega(H)<=11, delta(H)>=12. Any independent triple with total degree excess above12 at most4 forces K=2e(H)-420>=8. The only new case beyond the existing h<=3 theorem is degree pattern (14,13,13). Under K<=6, the connector partition has c+t=8 and outside-anchor excess at most2. A clique-cap correction strengthens the independent-transversal edge lower bound to z2*z3-1+z1; this eliminates all 55 connector-count profiles, with minimum arithmetic contradiction margin6. Therefore the d3 common-S independent-triple branch is absorbed into the E-305 envelope through allowance a=7. The remaining no-anchor triangular case is allowance a=8 with total excess five, patterns (1,1,3) or (1,2,2).
+
 ## Independent checks performed
 
 - Rechecked the exact 870-edge color decomposition and global sums: sum P=252, sum R=427, sum s=3; non-target edge total is 9570.
 - Re-derived the Q33 d3 budget beta+X+G_B=3 and the ten feasible aggregate triples.
 - Checked the d3 allowance bound over the 70 pairs q=32..38 and N=1..10.
 - Rechecked the d3 disjoint-support theorem by evaluating the exact block-transversal inequality for all block counts 1..100 and c=0,1,2; capacities are 3,3,6.
+- Rechecked that the h=4 theorem's 55 connector-count profiles have no survivors after the clique-cap correction; minimum lower-minus-upper margin is6.
 - Rechecked that E407 Cell-B exclusion does not imply full E407 closure.
 - Rechecked that E408 exact-129 blocker constraints and Q33 local conditions are necessary conditions only; no global incompatibility theorem has been proved.
 
