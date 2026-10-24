@@ -976,6 +976,87 @@ If `Z_j=0`, then `m_j=0`, at least `9(r-1)` collision units occur, and at most 2
 - The bound is consistent with the abstract `(r+9,r-8,r,r,r,r)` parameter model: with `Z_j=0`, its `9(r-1)` collision units can all be doubletons and `x_0=9r-2` leaves 13 units above the lower bound.
 - The resulting colored matching system is not itself impossible: for `k_j=10`, each color can in principle use a matching of size nine in a `K_{10,r-1}`-type host. The missing theorem must couple this matching system to the other five groups and the exact KP templates; this local capacity result does not close `NO-HIGH-STOP`.
 
+## 14. K7 common-neighborhood blocker and a 14-hub theorem
+
+This is a new analytic strengthening of the hub localization. It still does **not** close `NO-HIGH-STOP`, but it reduces the terminal kernel from 28 to 14 vertices for an explicit all-large-r threshold.
+
+### Lemma 16.1 — a common-neighborhood blocker
+
+Assume `a=6`, `r>=20,000,000`, and the established bounds
+
+`r-8<=|V_j|<=r+9`, `M_0<=18r+22`.
+
+For every internal edge `xy in E(F_0[V_j])`, there exists another group `V_k` (`k!=j`) such that
+
+`|N_{F_0}(x) intersect N_{F_0}(y) intersect V_k| < r/16`.  (CB)
+
+**Proof.** Suppose all five common-neighborhood sets `A_k=N_{F_0}(x)∩N_{F_0}(y)∩V_k` had size at least `r/16`. There would be at least `(r/16)^5` transversal 5-tuples, one vertex from each `A_k`. A tuple fails to be a clique in `F_0` only if it contains a missing `F_0` cross-pair. Each such pair lies in at most `(r+9)^3` tuples, so at most `M_0(r+9)^3 <= (18r+22)(r+9)^3` tuples fail. For `r>=20,000,000`,
+
+`(r/16)^5 > (18r+22)(r+9)^3`.
+
+Thus a transversal 5-clique exists in the common neighborhoods; together with `x,y` it forms a `K_7` in `F_0`, contradiction. `\square`
+
+### Lemma 16.2 — every hub omits almost all labels of one group
+
+For every `x in X`, there is a group `V_k` such that
+
+`d_{F_0}(x,V_k) <= r/16+181`,
+`W_x >= 15r/16-183`,
+
+where `W_x` is the sum of missing-group slots of predecessor classes containing `x`.
+
+**Proof.** Since `x` is a hub, `d_{F_0[V_j]}(x)>=H_r/2>=(r-27)/2` in its own group `V_j`. Apply (CB) to each internal edge `xy` incident to `x`, choosing one blocking group for each `y`. By pigeonhole, some `k!=j` is chosen for at least
+
+`q >= (r-27)/10`
+
+neighbors `y`. Put `d=d_{F_0}(x,V_k)`. For each such `y`, fewer than `r/16` vertices of `N_{F_0}(x)∩V_k` are also adjacent to `y` in `F_0`. Hence at least `d-r/16` pairs `yz` are missing `F_0` cross-pairs. They are distinct across the chosen `y`, so
+
+`q(d-r/16) <= M_0 <=18r+22`.
+
+Therefore
+
+`d <= r/16 + 10(18r+22)/(r-27) <= r/16+181`
+
+for `r>=20,000,000`.
+
+At most `d` non-target colors can have the predecessor class containing `x` meet `V_k`: each such color supplies a distinct `F_0` neighbor of `x` in `V_k`, because a pair has only one color. At most one non-target color duplicates at `x`. Thus at least `r-2-d` classes containing `x` omit `V_k`, and each contributes at least one slot to `W_x`. This yields `W_x>=15r/16-183`. `\square`
+
+### Theorem 16.3 — the hub kernel has at most 14 vertices
+
+For `a=6` and every `r>=20,000,000`,
+
+`7 <= |X| <= 14`.
+
+The lower bound `|X|>=7` is the existing vertex-cover bound. For the upper bound, the global slot budget gives `W<=14r+13`, while the multi-hub surcharge lemma gives
+
+`sum_{x in X} W_x <= 14r+13+15|X|(|X|-1)`.
+
+If `k=|X|>=15`, Lemma 16.2 gives
+
+`k(15r/16-183) <= 14r+13+15k(k-1)`.
+
+For `15<=k<=28`, the left side minus the quadratic surcharge is increasing in `k` when `r>=20,000,000`, so its minimum occurs at `k=15`. But at `k=15` the inequality would require
+
+`225r/16-5895 <= 14r+13`,
+
+or `r/16<=5908`, contradicting `r>=20,000,000`. Hence `|X|<=14`. `\square`
+
+### Corollary 16.4 — all six target parts have at least `r-8` nonhubs
+
+Let `k_j=|X∩V_j|`, `delta_j=|V_j|-r`, and `a_j=k_j-delta_j-1`. Since `V_j\X` is a clique in the `K_r`-free target graph, `a_j=r-1-|V_j\X|>=0`. Also
+
+`sum_j a_j = |X|-7 <=7`.
+
+Therefore each target group contains at least `r-8` nonhubs forming a target-color clique. This improves the previous crude lower bound `r-36` that followed only from `|X|<=28`.
+
+### Failed shortcut explicitly rejected
+
+One tempting next step is to claim that the `K_r`-free property forces `Omega(r)` **target-color** cross-edges between each pair of nonhub cliques. This is false: the `K_r`-free condition instead forces many **complement-color** cross-pairs (edges of `F_0`), not edges counted by `M_0`. That direction cannot be added to the target-edge budget. No contradiction is claimed from this invalid shortcut.
+
+### Limitation / next target
+
+The common-neighborhood blocker is rigorous, but `|X|<=14` is still compatible with the global missing-slot budget. The next target is to exploit the fact that each hub is target-adjacent to almost all vertices of one other group and to combine these blocker-group assignments with the exact `K_r`-free target graph constraints. `NO-HIGH-STOP` remains `OPEN`.
+
 ## 9. Status ledger for this round
 
 ### PROVED
@@ -1001,4 +1082,4 @@ If `Z_j=0`, then `m_j=0`, at least `9(r-1)` collision units occur, and at most 2
 \boxed{\texttt{NO-HIGH-STOP = OPEN}.}
 ]
 
-The critical-core potential has reduced the (a=6) case to four explicit residue windows. For `r>=26272`, any high stop has `7<=|X|<=28` and a pairwise-linear partial resolvable `TD(6,r)` with at least `r^2-66r` clean blocks. If a target part has size `r+9`, then `sum_{i>0}(x_i-5)<=20+Z_j-m_j`; when duplicate concentration is low, almost all colors attain the KP floor `x_i=5`. At that floor all KP base parts have size six, and for `z_i=1` the predecessor classes differ from the base partition in at most two blocks. In an `r+9` part, at most 756 collision units can lie in classes of size at least three; the rest form hub–nonhub doubletons and a colored matching system. This is not yet a contradiction: the `z_i>1` KP interface and cross-group matching compatibility remain open. `NO-HIGH-STOP` remains open.
+The critical-core potential has reduced the (a=6) case to four explicit residue windows. For `r>=20,000,000`, any high stop has `7<=|X|<=14` and every target group contains at least `r-8` nonhubs. If a target part has size `r+9`, then `sum_{i>0}(x_i-5)<=20+Z_j-m_j`; when duplicate concentration is low, almost all colors attain the KP floor `x_i=5`. At that floor all KP base parts have size six, and for `z_i=1` the predecessor classes differ from the base partition in at most two blocks. In an `r+9` part, at most 756 collision units can lie in classes of size at least three; the rest form hub–nonhub doubletons and a colored matching system. This is not yet a contradiction: the `z_i>1` KP interface and cross-group matching compatibility remain open. `NO-HIGH-STOP` remains open.
