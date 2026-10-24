@@ -77,4 +77,4 @@ This is a scalar necessary-condition simplification conditional on RC. It is not
 
 ## Parameter coverage
 
-`PARAMETER_ADMISSION_MATRIX.json` carries explicit rows r=4,...,100 plus a complete range partition for all integers r>=4. `parameter_admission_verifier.py` independently reconstructs every explicit row, checks the source registry and range partition, and supports query mode for arbitrary r>=4 (including r>100). Its PASS is an admission-policy audit, not an EG617 theorem.
+`PARAMETER_ADMISSION_MATRIX.json` carries explicit rows r=4,...,100 plus a complete range partition for all integers r>=4. `PARAMETER_ADMISSION_VERIFIER.py` independently reconstructs every explicit row, checks the source registry and range partition, and supports query mode for arbitrary r>=4 (including r>100). Its PASS is an admission-policy audit, not an EG617 theorem.
