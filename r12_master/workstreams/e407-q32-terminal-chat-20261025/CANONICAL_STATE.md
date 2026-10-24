@@ -44,7 +44,7 @@ These are the latest heads observed in the repository at the time of this update
 | E407 template E | OPEN |
 | \(\delta=16\) four-partite extreme | OPEN; reduced to the labelled \(5+0\) endpoint kernel |
 | \(\delta=15\) four-partite | W-part profiles classified, compatibility OPEN |
-| \(\delta=15\) non-four-partite | two KP base profiles excluded; balanced \(7,7,7,7\) base and 15-edge leave OPEN |
+| \(\delta=15\) non-four-partite | two KP base profiles excluded; balanced \(7,7,7,7\) base remains, with \(a\ge4\) and exact 15-edge leave OPEN |
 | \(\delta=14\) four-partite | W-part profiles classified, compatibility OPEN |
 | \(\delta\le14\) non-four-partite | OPEN |
 | E407 Q32 overall | OPEN / NOT_CERTIFIED |
