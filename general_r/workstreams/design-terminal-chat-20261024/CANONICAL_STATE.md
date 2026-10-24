@@ -157,3 +157,41 @@ Latest substantive assets:
 - `NONEXTENSION_CLOSURE.md`
 
 This update supersedes any earlier suggestion that the bounded target-hub result alone should expose an exact core after deleting (O(1)) vertices; that conclusion requires the still-open non-target propagation theorem.
+
+
+## 2026-10-24 correction — adversarial hub/cylinder audit
+
+This section supersedes the earlier Hub Propagation subsection and any claim that a low-incidence off-hub pair necessarily costs Ω(r) non-target edits.
+
+### Withdrawn
+
+- The unconditional (d_i\le5\Rightarrow(6-d_i)(r-1)) edit bound is **DISPROVED as stated**; it overlooked target-deleted pairs incident to hubs and blocks lacking ordinary group representatives.
+- The (d_i=6) singleton/4-block pattern is withdrawn as an (\alpha(G_i)\le r) example: an independent set can double two missing pairs while omitting the special cover block.
+- The claimed “at most 27 low-incidence colors” consequence is withdrawn.
+
+### Valid new statements
+
+1. **Conditional ordinary-label cylinder lemma — PROVED_CONDITIONAL.** If every other ideal block contains an ordinary (B_k\setminus X) point for some (k\ne j), then a missing off-hub repeated pair (uv\subset B_j\setminus X) forces at least (r-1) non-target edits. The full hypothesis is recorded in `HUB_PROPAGATION_THEOREM.md`.
+2. **Target-alpha K6 exclusion — PROVED_ANALYTIC.** (\alpha(G_0)\le5) implies every non-target (G_i) is (K_6)-free. Thus a one-block star cover to a clean 5-clique ideal block is impossible: it would create a (K_6) in (G_i).
+3. **Defect propagation insight — PROVED_ANALYTIC locally.** Any cheap cylinder cover must make its cover block non-clique in the actual non-target color; the resulting new defect must itself be covered. The global chain/cycle cost is still **OPEN**.
+4. **Exact cross-pair budget — PROVED_SYMBOLIC.**
+[
+A=9r+5-\Delta_0+D-S_{\rm non},
+\]
+where (A) is target cross edges, (D) target internal deletions, and (S_{\rm non}=\sum_{i>0}s_i).
+
+The one-color constant-cost star construction is not a full-terminal counterexample: it violates target (\alpha\le5) by creating a (K_6) in a non-target color. It is useful only as an adversarial audit showing that the target-alpha constraint must be used jointly.
+
+### Current blocker and success levels
+
+The remaining task is a **defect-chain cost theorem**: every cover of a non-target missing pair creates a further defect unless it makes a forbidden (K_6); prove that all such chains/cycles exceed the combined (O(r)) slack and target cross-cover budget, without double-counting pairs.
+
+- D1: conditionally achieved as before.
+- D2: **OPEN** (Chat A interface).
+- Conditional cylinder lemma: **PROVED_CONDITIONAL**.
+- Full Hub Propagation: **OPEN**.
+- Exact-core route: **OPEN**.
+- Robust nonextension D4: **OPEN**.
+- D5: **OPEN**.
+
+Corrected assets: `HUB_PROPAGATION_THEOREM.md`, `MULTICOLOR_DEFECT_BUDGET.md`, `ROBUST_EXACT_CORE.md`, `NONEXTENSION_CLOSURE.md`, `PROGRESS_LOG.md`.
