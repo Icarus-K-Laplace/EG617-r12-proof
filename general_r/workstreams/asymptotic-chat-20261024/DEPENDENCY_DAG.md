@@ -58,3 +58,20 @@ This shared interface is useful accounting, **not** a terminal contradiction by 
 - C repivot endpoint: current head 35fec3eaaab70b31e10b41065634b35b02a28e6c.
 - D design terminal: current head 5b4162c239d3dfad84d130c3015a0db5919228c4.
 - Low-degree top-layer closure: commit 301dcacab800fd95b7a750042ba92143cf0f2c5f.
+
+
+## Round 3 dependency update — low-offset hub kernel
+
+Hypothetical 617 counterexample
+  -> A_ext* [OPEN]
+  -> legal 4r+1 residual OR contextual 5r+1 terminal
+  -> direct near-anchor triple and bounded offset window [PROVED, cited inputs]
+  -> exact W-slack identity g_r(j) [PROVED_ANALYTIC]
+  -> forced high-W-incidence hub: max_o d_F(o,W)>=floor((r-j)/4)+1 [PROVED_ANALYTIC]
+  -> exclude this hub under full colour ownership and anchor incidence [OPEN]
+  -> D_low [OPEN]
+  -> P(r).
+
+A sufficient alternative edge is a uniform bound d_F(o,W)<=B for all outside vertices and all offsets [OPEN]; this would imply D_low for r>=7+4B [PROVED_CONDITIONAL].
+
+Threshold audit: 2r-9 > 5(3r-1)/8 is equivalent to r>67, so the integer threshold is r>=68. This belongs to the separate K>=8 synthesis route. The S67-low route uses the direct near-anchor theorem at r>=67 and bypasses that inequality.
