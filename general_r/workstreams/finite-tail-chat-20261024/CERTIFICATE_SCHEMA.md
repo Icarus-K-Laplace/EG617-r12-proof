@@ -57,7 +57,7 @@ module_promotion_status
 eg617_promotion_status
 ```
 
-The manifest may be distributed across the immutable instance and its replay receipt, but both files must be committed together and hash-bound. The current endpoint module uses schema `eg617-endpoint-domain-certificate-v1` and generator version `endpoint-domain-generator-v1.0.0`.
+The manifest may be distributed across the immutable instance and its replay receipt, but both files must be committed together and hash-bound. The current modules use schemas `eg617-endpoint-domain-certificate-v1` and `eg617-d1-shell-bound-certificate-v1`, with generator versions `endpoint-domain-generator-v1.0.0` and `d1-shell-bound-generator-v1.0.0`. The promotion gate dispatches to an independent verifier by immutable `module_id` and rejects unknown module IDs.
 
 A conditional module may pass its module gate while EG617 promotion remains blocked. The receipt must explicitly record both decisions; a conditional pass is not an unconditional theorem.
 
