@@ -47,21 +47,19 @@ This inequality explicitly counts edge reuse; it does not pretend that the cross
 
 ## 4. Why the scalar degree bound is insufficient
 
-Each core vertex belongs to at most one selected component per chosen color, so \(r_x\le c\le8\) after selecting eight colors. Also \(d_H(x)\le16\) because the total core excess is four. Hence
+Each core vertex belongs to at most one selected component per chosen color, so \(r_x\le c\) after selecting \(c\) exact-129 colors. Also \(\sum_x\epsilon(x)=4\). Since \(d_H(x)=12+\epsilon(x)\),
 \[
 \begin{aligned}
 \sum_{xy\in E(H)}r_xr_y
 &\le\frac12\sum_x d_H(x)r_x^2\\
-&\le\frac12\cdot16\cdot8\sum_xr_x\\
-&=\frac12\cdot16\cdot8\cdot160\\
-&=10240
+&=6\sum_xr_x^2+\frac12\sum_x\epsilon(x)r_x^2\\
+&\le6c\sum_xr_x+\frac12c^2\sum_x\epsilon(x)\\
+&=24c^2+\;2c^2=26c^2.
 \end{aligned}
 \]
-for \(m=40\). But (2) only gives
-\[
-3\binom{40}{2}=2340.
-\]
-The gap is too large. For \(m=35\), the corresponding crude upper bound is \(7840\), while the lower bound is \(1785\). Therefore the pairwise crossing lemma plus the pointwise degree cap does **not** close either terminal.
+Here \(\sum_xr_x=4m=20c\), so the displayed \(26c^2\) bound follows.
+
+For \(c=7\) (\(m=35\)), this gives an upper bound \(1274\), while (2) gives the lower bound \(1785\). This is a contradiction **if** all 35 selected witness sets satisfy the family assumptions and \(r_x\le7\). For \(c=8\) (\(m=40\)), the upper bound is \(1664\), while the lower bound is \(2340\), again a contradiction.
 
 ## 5. Exact remaining obstacle
 
