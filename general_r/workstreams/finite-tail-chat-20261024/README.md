@@ -70,7 +70,7 @@ Combining this with the applicable q ceiling determines the legal missing-degree
 - from r>=15, all medium missing degrees disappear;
 - under ANCHOR_K8, the medium degrees disappear already from r>=12.
 
-The next graph/SAT adapter will therefore instantiate only the endpoint terminal modules that survive the analytic theorem for that parameter.
+The first module, `ENDPOINT_DOMAIN_LOWER_BOUND_V1`, now turns this necessary inequality into a complete exact certificate and independent replay. It proves only the necessary scalar domain; it does not close any endpoint class. The next graph/SAT adapter will instantiate only endpoint terminal modules whose analytic premises are certified for that parameter.
 
 ## Symmetry policy
 
@@ -94,4 +94,4 @@ Opaque solver success, floating-point optimizer logs, or unreplayable search out
 
 No concrete all-large-r threshold `r0` has yet been certified by the sibling synthesis. The latest integration records three remaining asymptotic interfaces: front extraction/RC, residual endpoint terminal closure, and robust design-terminal stability. The three-anchor excess theorem is no longer an asymptotic blocker above r=68.
 
-Accordingly this workstream is currently `FRAMEWORK_READY`, not `FINITE_TAIL_CLOSED`.
+Accordingly this workstream is now `CONDITIONAL_MODULE_CERTIFIED`, not `FINITE_TAIL_CLOSED`. No new EG617(r) theorem has been proved.
