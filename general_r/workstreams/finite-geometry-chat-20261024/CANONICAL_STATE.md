@@ -126,3 +126,10 @@ The residual q-net theorem gives two useful non-prime-power reductions:
 - r=15 (q=14): Case B forces at least 7 directions, hence 5 MOLS(14). Four MOLS(14) are known, while existence of a fifth remains open (Todorov, JCD 2012, DOI 10.1002/jcd.21298; subsequent MOLS literature).
 
 Since affine planes of orders 10 and 14 do not exist, the full-affine-plane subcase is unavailable at these q. These are conditional reductions of Case B only; Case A remains open and neither design implication is a contradiction.
+
+
+## Round 3 — first high-excess normal form
+
+The residual multinet theorem is supplemented by Theorem K.RM4 in RESIDUAL_MULTINET_EXTRACTION.md. At b_i=q-1, the complement graph is an extremal non-q-partite K_{q+1}-free graph if it is not q-partite. Kang–Pikhurko's exact classification gives a one-exceptional-vertex form; in the q-partite alternative, G_i[R] is q equal clique blocks plus q-1 cross-block defects. The nonpartite form has a residual exceptional point of color-i degree 2q-2-a, 1<=a<=q-1.
+
+This theorem is exact at the first high-excess threshold only. It refines the repeated-witness-color branch but does not exclude it; b_i>=q remains OPEN.
