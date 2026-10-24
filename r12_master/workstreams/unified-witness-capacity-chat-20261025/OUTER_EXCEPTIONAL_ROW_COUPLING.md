@@ -96,3 +96,41 @@ This is a genuinely cross-color condition: the exceptional-row patterns for diff
 - If a low-slack block pair has two adjacent nonzero cells, three nonzero cells, or four nonzero cells in \(M_{ij}\), it consumes at least one (or two) units of \(C\)'s block-pair duplicate budget.
 - If the nonzero cells form a matching, the current theorem gives no positive duplicate lower bound. In particular, identical complementary-clique pairs across all low-slack blocks yield \(\eta=0\) for every pair and are not excluded by this theorem.
 - Thus the remaining mathematical task is to prove that the actual exact-129 gadget and the seven-block system force enough non-matching intersection patterns, or to couple these patterns to the core witness coordinates. No such global incompatibility is claimed yet.
+
+
+## 6. The exceptional-row graph has independence number at most two
+
+Let \(\mathcal E_C\) be the set of the two exceptional rows from each low-slack block \(B_i\), \(i\in\mathcal L_C\). Then
+\[
+\boxed{\alpha(C[\mathcal E_C])\le2.}
+\]
+
+**Proof.** Suppose \(x,y,z\in\mathcal E_C\) are pairwise nonadjacent in color C. Let \(A_x,A_y,A_z\subseteq U_C\) be their complementary gadget cliques. For two rows from the same block, their complements are disjoint by the two-exceptional-row theorem. For rows from different blocks, intersecting complements would force a C-edge by Section 2. Hence \(A_x,A_y,A_z\) are pairwise disjoint. Each has size at least three, so
+\[
+9\le |A_x|+|A_y|+|A_z|\le11.
+\]
+Their total gadget-neighborhood incidence is
+\[
+\sum_{v\in\{x,y,z\}}|N_C(v)\cap U_C|
+=33-|A_x|-|A_y|-|A_z|\ge22.
+\]
+
+Each exceptional row has total neighborhood size at most eight: the two exceptional rows in its block have total size at most \(11+r_i(C)\le14\), while the other has size at least six. If x,y,z come from three different blocks, their total neighborhood incidence is at most \(3\cdot8=24\). If two come from the same block, their combined size is at most 14 and the third has size at most eight, so the total is at most 22. In either case, the number of incidences with the ten isolated \(K_5\) components is at most two.
+
+Thus the union of the three neighborhoods misses at least one vertex of every isolated \(K_5\) component. Choose one such vertex from each of the ten components. They are pairwise C-nonadjacent and anticomplete to x,y,z. Together with the independent triple x,y,z, they form a C-independent 13-set, a contradiction. \(\square\)
+
+### Consequences for the 2-by-2 exceptional edge pattern
+
+For any pair of low-slack blocks, no exceptional row can be C-nonadjacent to both exceptional rows of the other block; otherwise those three rows would be an independent triple. Hence the C-nonedges among the four exceptional rows form a matching. Equivalently, the C-edges among them have minimum degree at least one, and there are at least two.
+
+Let \(E_C^{\rm exc}\) be the graph induced by all exceptional rows in \(\mathcal E_C\). If \(k=|\mathcal L_C|\), then
+\[
+e(E_C^{\rm exc})\ge 2\binom{k}{2}=k(k-1).
+\]
+This matches the extremal lower bound for a graph on \(2k\) vertices with independence number at most two. If equality holds, Turán's theorem applied to the complement shows
+\[
+E_C^{\rm exc}=K_k\ \dot\cup\ K_k.
+\]
+The two cliques must choose opposite exceptional rows from each block, because the two rows within one target block are C-nonadjacent. Thus the zero-excess pattern is a globally consistent two-type split of the exceptional rows. Any departure from this two-clique structure requires additional C-edges among exceptional rows and consumes duplicate budget.
+
+This theorem strengthens the local edge-cover argument: it rules out independent triples across all low-slack blocks, not just a particular pairwise intersection mask. It still permits the two-clique extremal pattern and therefore does not close Q33.
