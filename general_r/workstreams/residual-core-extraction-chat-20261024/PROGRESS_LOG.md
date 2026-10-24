@@ -450,5 +450,5 @@ Deleting `H` makes every target partition part a target-color clique. This local
 ### GitHub commits
 
 - label-capacity lemma: `c67a1e18ecd3e8b443513f1a272892aa225386fc`
-- canonical state: pending Round 8 reconciliation
-- open gaps: pending Round 8 reconciliation
+- canonical state: `06d8ab213b721aebd36b0fc06b5862277eaa6fa3`
+- open gaps: `ad962ed6dd44eb32a634727dd4aa52eaa16c0fa7`
