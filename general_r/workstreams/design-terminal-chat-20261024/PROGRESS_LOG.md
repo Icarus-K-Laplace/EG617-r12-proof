@@ -348,3 +348,19 @@ Commits:
 - `CANONICAL_STATE.md`: `2c0ee8bf1b603e3b174325e8bd4de7c6b18e469b`.
 
 The (r\ge6212) terminal-closure claim remains withdrawn. The correct current status is: incidence inequality **PROVED_ANALYTIC**; remote-only exclusion **PROVED_ANALYTIC** under its size/edit hypotheses; shared-edge global contradiction and terminal nonextension **OPEN**.
+
+
+### Final synchronization after proof correction
+
+The correction is now propagated across all canonical assets. The claimed constant defect cap and the (r\ge6212) terminal closure are withdrawn; the status table keeps terminal nonextension **OPEN**.
+
+Latest corrected asset commits:
+- `JOINT_DEFECT_PROPAGATION.md`: `aa6c12b9b321880ac1dda3ef4306ce20037f0f44`.
+- `HUB_PROPAGATION_THEOREM.md`: `5705bec09ab5dafe7b7651fcd2467a6a27f80046`.
+- `MULTICOLOR_DEFECT_BUDGET.md`: `f191de59b8a35751dd51de355aedbbf13d35e349`.
+- `NONEXTENSION_CLOSURE.md`: `08615b551c0a21c9a3fb47c9975cbfdfe430f193`.
+- `CANONICAL_STATE.md`: `2c0ee8bf1b603e3b174325e8bd4de7c6b18e469b`.
+- `ROBUST_EXACT_CORE.md`: `e836fe0771645b5731e2a598a58b4161aa63ad02`.
+- `DEFECT_COVER_INCIDENCE.md`: `69097d88cd787c65a05cf753a1c389fa4caa953a`.
+
+The current proven mathematical result is the exact weighted cover inequality and its remote-only exclusion under the stated size/edit hypotheses. The global shared-edge contradiction remains OPEN.
