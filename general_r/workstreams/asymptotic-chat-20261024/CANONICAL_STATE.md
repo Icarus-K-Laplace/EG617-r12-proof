@@ -179,3 +179,31 @@ Potential/design route: combine `tau>=r/2-O_epsilon(1)` with transport to force 
 - three-anchor latest checked: `a98ef900be419993e3fe63d37a0cf82fa104c455`;
 - repivot termination imported: `2974fd80882a4545a3a1a569418405ec4e3bdebc`;
 - near-extremal shell dichotomy: `578830ff3fd9eab94f2bb5a498d90a1a303ba2e1`.
+
+
+## Round 2 synthesis update — shortest route and exact blockers
+
+**New primary conditional route:** S67-low,
+\[
+A_{\mathrm{ext}}^*(r)\land D_{\mathrm{low}}(r)\Longrightarrow P(r),
+\qquad r\ge67.
+\]
+Status: **CONDITIONAL_ON_Aext_Dlow + ASYMPTOTIC_ANALYTIC**. The unconditional (r_0) remains **NOT CERTIFIED**.
+
+The route bypasses (C^*) and the exact three-anchor floor as explicit hypotheses:
+1. A legal (4r+1) residual is impossible for (r\ge17), by the residual contract plus the contextual ((k,s)=(4,1)) cap gap ((3r-13)/2>0).
+2. A contextual anchored (5r+1) terminal has (delta\in\{r,r+1\}); for (r\ge67), direct near-anchor extraction applies.
+3. The common anti-neighbourhood satisfies (2r-4\le|W|\le2r+1) in the (delta=r) branch and (2r-7\le|W|\le2r+1) in the (delta=r+1) branch. The layers (2r,2r+1) are impossible for (r\ge11).
+4. In the high-degree branch (delta=r+1), the (|W|=2r-1) Cell A/B layer is impossible for (r\ge25). The low-degree branch (delta=r), (|W|=2r-1), remains OPEN.
+
+The narrowed downstream interface (D_{\mathrm{low}}) is therefore:
+- (delta=r): (|W|\in\{2r-4,2r-3,2r-2,2r-1\});
+- (delta=r+1): (|W|\in\{2r-7,\ldots,2r-2\}).
+
+The scalable d2 target (K+a\le(1-c)r+O(1)) has failed a strict derivability audit: an exact parameter family satisfies all currently recorded scalar constraints with (K+a=r). This is not a legal graph counterexample; it proves that a scalar-only proof of that inequality cannot work without a new structural input.
+
+Current highest-leverage open pair:
+- **A_ext*** — force the contextual (4r+1/5r+1) dichotomy;
+- **D_low** — exclude the finite-offset near-anchor terminal family above.
+
+The broad (C^*) backend route remains valid but is no longer the shortest dependency path.
