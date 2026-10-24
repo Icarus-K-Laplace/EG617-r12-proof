@@ -39,7 +39,7 @@ These are the latest heads observed in the repository at the time of this update
 | E407 template C | OPEN |
 | E407 template D | OPEN |
 | E407 template E | OPEN |
-| \(\delta=16\) four-partite extreme | reduced to exact structural kernel, not excluded |
+| \(\delta=16\) four-partite extreme | EXCLUDED under the frozen E407 Q32 core/witness contract |
 | \(\delta=14,15\) four-partite | W-part profiles classified, compatibility OPEN |
 | \(\delta\le15\) non-four-partite | OPEN |
 | E407 Q32 overall | OPEN / NOT_CERTIFIED |
