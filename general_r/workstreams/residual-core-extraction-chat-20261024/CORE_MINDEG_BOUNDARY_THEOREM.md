@@ -1,36 +1,55 @@
-# Core minimum-degree boundary theorem
+# General residual-core minimum-degree theorem
 
 Workstream: `general-r-residual-core-extraction-20261024`
 
-Primary status: `PROVED_ANALYTIC`.
+Primary status: **`PROVED_ANALYTIC`**.
+
+Headline result:
+
+> For every `r>=17`, the hereditary least-color cap together with
+> `|H|=3r-1`, `alpha(H)<=3`, and `omega(H)<=r-1` already forces
+> **`delta(H)>=r`**.
+
+This proves the load-bearing minimum-degree clause of the general residual-core contract for all `r>=17`. It uses no r=12 Ramsey seed and no backend d2/d3/support machinery.
 
 External inputs used:
 
 1. Andrasfai--Erdos--Sos for triangle-free graphs: if a triangle-free `n`-vertex graph has minimum degree `>2n/5`, then it is bipartite.
-2. Classical Erdos extremal theorem for non-bipartite triangle-free graphs: an `n`-vertex triangle-free non-bipartite graph has at most `floor((n-1)^2/4)+1` edges.
-
-No r=12 Ramsey seed is used.
+2. Classical Erdos non-bipartite Mantel refinement: if a triangle-free `n`-vertex graph is non-bipartite, then
+   `e<=floor((n-1)^2/4)+1`.
 
 ## Contract
 
-Let `r>=6`. Let `H` be a graph on `3r-1` vertices satisfying
+Let `H` be a graph on `3r-1` vertices satisfying
 
 - `alpha(H)<=3`;
 - `omega(H)<=r-1`;
 - every induced subgraph `X` inherits the least-color cap
-  `e(X)<=D_r(|X|)=C(|X|,2)-(r-1)p_r(|X|)`.
 
-The last condition is exactly the hereditary cap supplied by an ambient balanced-coloring counterexample.
+  `e_H(X)<=D_r(|X|)=C(|X|,2)-(r-1)p_r(|X|)`.
 
-## Lemma 1: exact cap values around 2r
+Equivalently, with `K=bar H`, every induced `X` satisfies
 
-For `r<=n<2r`, balanced `r`-part clique-union minimization gives
+`e_K(X)>=(r-1)p_r(|X|)`.
 
-`p_r(n)=n-r`.
+The contract is exactly what an induced pivot core inherits from a full balanced-coloring counterexample, except that no minimum-degree hypothesis is assumed.
 
-Hence
+---
+
+## Lemma 1. Exact cap below 2r
+
+For `r<=n<2r`,
+
+`p_r(n)=n-r`,
+
+hence
 
 `D_r(n)=C(n,2)-(r-1)(n-r)`.
+
+In complement form:
+
+> every `n`-vertex induced subgraph of `K` with `r<=n<2r` has at least
+> `(r-1)(n-r)` edges.
 
 In particular
 
@@ -39,193 +58,336 @@ In particular
 
 Status: `PROVED_SYMBOLIC`.
 
-## Lemma 2: 2r exclusion
+---
 
-There is no induced/cap-inheriting graph `X` on `2r` vertices satisfying
+## Lemma 2. The 2r exclusion
+
+For `r>=6`, there is no cap-inheriting graph `X` on `2r` vertices with
 
 - `alpha(X)<=2`;
 - `omega(X)<=r-1`.
 
 ### Proof
 
-Put `J=bar X`. Then
+Put `J=bar X`. Then `J` is triangle-free and `alpha(J)<=r-1`.
 
-- `J` is triangle-free because `alpha(X)<=2`;
-- `alpha(J)=omega(X)<=r-1`.
+The cap gives
 
-From the cap,
+`e(J)>=C(2r,2)-D_r(2r)=r(r-1)`.
 
-`e(X)<=D_r(2r)=r^2`,
+Every neighborhood in a triangle-free graph is independent, so
 
-so
+`Delta(J)<=alpha(J)<=r-1`,
 
-`e(J)>=C(2r,2)-r^2=r(r-1)`.
+and therefore
 
-Because `J` is triangle-free, every neighborhood in `J` is independent. Since `alpha(J)<=r-1`,
+`e(J)<=r(r-1)`.
 
-`Delta(J)<=r-1`.
+Thus equality holds and `J` is `(r-1)`-regular. For `r>=6`,
 
-Thus
+`r-1>2(2r)/5`.
 
-`e(J)<=2r(r-1)/2=r(r-1)`.
-
-Equality holds. Therefore `J` is `(r-1)`-regular.
-
-For `r>=6`,
-
-`r-1 > 2(2r)/5`.
-
-By Andrasfai--Erdos--Sos, `J` is bipartite. One part of a bipartition of a `2r`-vertex graph has size at least `r`, producing an independent set of size `r` in `J`, contrary to `alpha(J)<=r-1`.
-
-Contradiction.
+Andrasfai--Erdos--Sos forces `J` to be bipartite. One bipartition class has at least `r` vertices, contradicting `alpha(J)<=r-1`.
 
 Status: `PROVED_ANALYTIC`.
 
-## Theorem 3: one-degree-away core minimum degree
+---
 
-Under the contract,
+## Lemma 3. First minimum-degree lift
+
+For `r>=6`, the core contract forces
 
 > `delta(H)>=r-1`.
 
 ### Proof
 
-Suppose `v in H` has `d_H(v)<=r-2`. Set
+If `d_H(v)<=r-2`, then
 
-`A=H-N_H[v]`.
+`A:=H-N_H[v]`
 
-Then
+has at least `2r` vertices. Since `alpha(H)<=3`, one has `alpha(H[A])<=2`: an independent triple in `A` together with `v` would be an independent 4-set.
 
-`|A|=(3r-1)-1-d_H(v)>=2r`.
-
-If `A` contained an independent triple, together with `v` it would form an independent 4-set in `H`; hence `alpha(H[A])<=2`.
-
-Choose any `2r` vertices of `A` and call the induced graph `X`. Then
-
-- `alpha(X)<=2`;
-- `omega(X)<=omega(H)<=r-1`;
-- `X` inherits the hereditary cap.
-
-This contradicts Lemma 2.
-
-Therefore `delta(H)>=r-1`.
+Any induced `2r`-subset of `A` therefore violates Lemma 2.
 
 Status: `PROVED_ANALYTIC`.
 
-## Theorem 4: exact near-Mantel compression of the only bad degree
-
-Assume the contract and suppose `v in H` satisfies
+Thus the only possible failure of the target `delta(H)>=r` is the exact boundary
 
 `d_H(v)=r-1`.
 
-Set
+---
 
-`A=H-N_H[v]`, so `|A|=2r-1`, and put
+## Lemma 4. Near-Mantel boundary compression
 
-`J=bar{H[A]}`.
+Assume `d_H(v)=r-1`. Put
 
-Then:
+- `A=H-N_H[v]`, so `|A|=2r-1`;
+- `J=bar{H[A]}`.
+
+Then
 
 1. `J` is triangle-free;
 2. `alpha(J)<=r-1`;
 3. `J` is non-bipartite;
-4. its edge count has only two possibilities:
+4. for some `epsilon in {0,1}`,
 
-   `e(J) in {(r-1)^2, (r-1)^2+1}`.
-
-Equivalently,
-
-`e(H[A]) in {r(r-1), r(r-1)-1}`.
+   `e(J)=(r-1)^2+epsilon`.
 
 ### Proof
 
-Triangle-freeness and the independence bound follow exactly as above.
+Triangle-freeness follows from `alpha(H)<=3`; the independence bound is `omega(H[A])<=r-1`.
 
-If `J` were bipartite, one bipartition class would have size at least `r` because `|J|=2r-1`, contradicting `alpha(J)<=r-1`. Hence `J` is non-bipartite.
+If `J` were bipartite, a bipartition class would have at least `r` vertices because `|A|=2r-1`, contradicting `alpha(J)<=r-1`.
 
-The hereditary cap at `2r-1` gives
+The cap on `A` gives
 
-`e(H[A])<=D_r(2r-1)=r(r-1)`.
+`e(H[A])<=D_r(2r-1)=r(r-1)`,
 
-Thus
+so
 
-`e(J)>=C(2r-1,2)-r(r-1)=(r-1)^2`.
+`e(J)>=(r-1)^2`.
 
-The classical Erdos bound for non-bipartite triangle-free graphs gives
+The Erdos non-bipartite triangle-free bound gives
 
 `e(J)<=floor((2r-2)^2/4)+1=(r-1)^2+1`.
 
-The conclusion follows.
+Status: `PROVED_ANALYTIC`.
+
+---
+
+## Lemma 5. Exact C5 + near-complete-bipartite structure
+
+Let `r>=6`, write `m=r-3`, and retain the boundary setup of Lemma 4.
+
+Let `C` be a shortest odd cycle of `J`. Then:
+
+> `C` is a 5-cycle.
+
+Put `U=A\V(C)`, so `|U|=2m=2r-6`. Every vertex of `U` has at most two neighbors on `C`. Define
+
+- `c := 2|U|-e_J(C,U) >=0`;
+- `t := m^2-e_J(U) >=0`.
+
+Then the exact identity
+
+> `c+t=1-epsilon`
+
+holds.
+
+Consequently the boundary graph has only the following three structural forms.
+
+### Type I: epsilon=1
+
+- `c=t=0`;
+- `J[U]=K_{m,m}`;
+- every vertex of `U` has exactly two neighbors on `C`.
+
+### Type II: epsilon=0, c=1, t=0
+
+- `J[U]=K_{m,m}`;
+- exactly one unit of the possible `2|U|` incidences from `U` to `C` is missing; equivalently exactly one vertex has one `C`-neighbor and every other vertex has two.
+
+### Type III: epsilon=0, c=0, t=1
+
+- every vertex of `U` has exactly two neighbors on `C`;
+- `e(J[U])=m^2-1`;
+- `J[U]` is bipartite and is either
+  - `K_{m,m}` minus one edge, or
+  - `K_{m-1,m+1}`.
+
+### Proof
+
+Let the shortest odd cycle have length `ell>=5`. It is induced. A vertex outside a shortest odd cycle has at most two neighbors on it: three neighbors would give either a triangle or a shorter odd cycle.
+
+Thus, with `q=|A|-ell`,
+
+`e(J)<=ell+2q+floor(q^2/4)`.
+
+If `ell=2k+1>=7`, then `q=2r-2k-2` and
+
+`(r-1)^2-[ell+2q+q^2/4]
+ =2r(k-2)-k^2+3>0`
+
+whenever the cycle fits. This contradicts `e(J)>=(r-1)^2`. Hence `ell=5`.
+
+Now `|U|=2m`. Mantel gives `e(J[U])<=m^2`, while the shortest-cycle argument gives `e(C,U)<=2|U|`. Therefore
+
+`e(J)<=5+4m+m^2=(r-1)^2+1`.
+
+Comparing with `e(J)=(r-1)^2+epsilon` gives exactly
+
+`c+t=1-epsilon`.
+
+If `t=0`, equality in Mantel gives `J[U]=K_{m,m}`.
+
+If `t=1`, then `e(J[U])=m^2-1`. A non-bipartite triangle-free graph on `2m` vertices has at most `m^2-m+1` edges by the same Erdos theorem; for `m>=3`, this is strictly below `m^2-1`. Hence `J[U]` is bipartite. If its parts have sizes `x,2m-x`, then
+
+`x(2m-x)>=m^2-1`,
+
+so `|x-m|<=1`. Equality of the actual edge count yields exactly the two listed possibilities.
 
 Status: `PROVED_ANALYTIC`.
 
-## Corollary 5: symbolic defect ledger for a boundary blocker
+This is the finite-width structure that replaces an uncontrolled near-Mantel obstruction.
 
-Retain `d_H(v)=r-1`. Put
+---
 
-- `B=N_H(v)`, so `|B|=r-1`;
-- `K=bar H`;
-- `epsilon in {0,1}` by `e_K(A)=(r-1)^2+epsilon`;
-- for each `b in B`, let `m_b` be the number of **H-edges** from `b` to `A`, equivalently
-  `m_b=|A\N_K(b)|`;
-- `M=sum_{b in B} m_b`;
-- `s=e_K(B)`.
+## Lemma 6. Constant row-defect bound
 
-Then:
+Let
 
-### (i) Global defect budget
+`B=N_H(v)`, so `|B|=r-1`,
 
-`M-s <= 2r-1+epsilon`.
+and continue to write `K=bar H`. For `b in B`, define the A-row defect
 
-Proof: `p_r(3r-1)=3r-2`, so the whole-core cap is equivalent to
+`m_b := |A\N_K(b)|`,
 
-`e_K(H)>=(r-1)(3r-2)=3r^2-5r+2`.
+i.e. the number of H-edges from `b` into `A`.
 
-But exact decomposition gives
+For `r>=9`, the unbalanced Type-III subcase `J[U]=K_{m-1,m+1}` is impossible.
 
-`e_K(H)=3r^2-3r+1+epsilon-M+s`.
+In every remaining Type-I/II/III subcase,
 
-Rearrange.
+> `m_b<=8` for every `b in B`.
 
-### (ii) Per-row bound
+### Proof: excluding K_{m-1,m+1}
 
-For every `b in B`,
+Let the larger side be `Q`, so `|Q|=m+1=r-2`. Every vertex of `Q` has exactly two neighbors on `C`, and `Q` is independent. Hence
 
-`m_b<=r+epsilon`.
+`e_K(C union Q)=5+2(r-2)=2r+1`.
 
-Proof: apply the hereditary cap to `A union {b}`, which has `2r` vertices. In complement language its edge count is at least `r(r-1)`. Thus
+For any `b in B`, the induced set
 
-`e_K(A)+(2r-1-m_b)>=r(r-1)`.
+`S=C union Q union {b}`
 
-Substitute `e_K(A)=(r-1)^2+epsilon`.
+has size `r+4<2r` for `r>=9`; the hereditary cap in complement form requires
 
-### (iii) Pair obstruction on complement edges inside B
+`e_K(S)>=4(r-1)=4r-4`.
 
-For every `bb' in E(K[B])`,
+But even if `b` is adjacent to every vertex of `C union Q`,
 
-`m_b+m_{b'}>=r`.
+`e_K(S)<=2r+1+(r+3)=3r+4<4r-4`
 
-Proof: common `K[A]`-neighbors of `b,b'` have size at least
+for `r>=9`, contradiction.
 
-`(2r-1)-m_b-m_{b'}`.
+### Proof: balanced cases
 
-Because `K` is `K_4`-free (`alpha(H)<=3`), the common `A`-neighborhood of an edge `bb'` is independent in `K[A]`; its size is at most `alpha(K[A])<=r-1`. Rearranging gives the claim.
+Let `P,Q` be the two balanced sides, each of size `m=r-3`.
 
-### (iv) B is not independent in K
+For each side `P`, the set `C union P` has `r+2` vertices and
 
-`alpha(K[B])<=r-2`, hence `s>=1`.
+`e_K(C union P)>=2r-2`;
 
-Proof: `v` is nonadjacent in `K` to every vertex of `B`. An independent `(r-1)`-set in `K[B]` together with `v` would be an independent `r`-set in `K`, equivalently an `r`-clique in `H`, contradicting `omega(H)<=r-1`.
+indeed it has `2r-1` edges unless it contains the unique one-incidence-defect vertex of Type II, in which case it has `2r-2`.
 
-Status of (i)--(iv): `PROVED_SYMBOLIC`.
+Now add `b`. The set
 
-## Residual-core consequence
+`S=C union P union {b}`
 
-The general residual-core minimum-degree problem has therefore been reduced from an arbitrary low-degree obstruction to one exact boundary class:
+has size `r+3`, so the hereditary cap requires
 
-> For `r>=6`, failure of `delta(H)>=r` forces a vertex of degree exactly `r-1`; its `2r-1` non-neighbors support a non-bipartite triangle-free complement lying within **one edge** of the sharp non-bipartite Mantel ceiling, together with the exact defect ledger above.
+`e_K(S)>=3(r-1)=3r-3`.
 
-This is strictly stronger than the previous state `OPEN: delta(H)>=r`, but it does **not** yet prove `delta(H)>=r`.
+Thus `b` misses at most four vertices of `C union P` (at most three in the one-defect side). The same holds with `Q`.
 
-## Next target
+If `c_b,p_b,q_b` are the numbers of K-nonneighbors of `b` in `C,P,Q`, then
 
-Eliminate the boundary blocker using the fact that `H` is not an arbitrary capped graph: it is the pivot core of a `4r+1` residual with a degree-`(r+1)` pivot. The shell interface yields additional row constraints recorded in `OPEN_GAPS.md`.
+`c_b+p_b<=4`,
+`c_b+q_b<=4`.
+
+Therefore
+
+`m_b=c_b+p_b+q_b<=8-c_b<=8`.
+
+Status: `PROVED_ANALYTIC`.
+
+---
+
+## Lemma 7. Every complement edge in B demands r row defects
+
+For every edge `bb' in E(K[B])`,
+
+> `m_b+m_{b'}>=r`.
+
+### Proof
+
+The two vertices have at least
+
+`|A|-m_b-m_{b'}=2r-1-m_b-m_{b'}`
+
+common K-neighbors in `A`.
+
+Because `K` is `K_4`-free (`alpha(H)<=3`), the common A-neighborhood of the K-edge `bb'` must be independent in `K[A]=J`. Since
+
+`alpha(J)=omega(H[A])<=r-1`,
+
+we get
+
+`2r-1-m_b-m_{b'}<=r-1`,
+
+hence the claim.
+
+Status: `PROVED_SYMBOLIC`.
+
+---
+
+## Lemma 8. B must contain a complement edge
+
+`E(K[B])` is nonempty.
+
+### Proof
+
+The vertex `v` is K-nonadjacent to every vertex of `B`. If `B` were independent in `K`, then `{v} union B` would be an independent set of size `r` in `K`, equivalently an `r`-clique in `H`, contradicting `omega(H)<=r-1`.
+
+Status: `PROVED_SYMBOLIC`.
+
+---
+
+# Main theorem: delta(H) >= r for r >= 17
+
+## Statement
+
+Let `r>=17`. If `H` has `3r-1` vertices and satisfies
+
+- `alpha(H)<=3`;
+- `omega(H)<=r-1`;
+- the inherited least-color cap on every induced subgraph,
+
+then
+
+> **`delta(H)>=r`.**
+
+Status: **`PROVED_ANALYTIC`**.
+
+## Proof
+
+Lemma 3 gives `delta(H)>=r-1`.
+
+Suppose equality occurs at `v`. Lemmas 4--6 give the exact boundary decomposition and the uniform bound
+
+`m_b<=8` for every `b in B=N_H(v)`.
+
+Lemma 8 supplies an edge `bb' in K[B]`. Lemma 7 then requires
+
+`r<=m_b+m_{b'}<=16`,
+
+contradicting `r>=17`.
+
+Therefore the boundary degree `r-1` cannot occur and `delta(H)>=r`.
+
+---
+
+## Strength and scope
+
+- independent of r=12 arithmetic: **yes**;
+- requires `r>=17`: **yes**;
+- external theorems: AES triangle-free minimum-degree theorem and Erdos non-bipartite Mantel refinement;
+- requires a `4r+1` residual or a shell hypothesis: **no**;
+- requires backend support/d2/d3 machinery: **no**;
+- uses full inherited multicolor hereditary cap: **yes**.
+
+This is stronger than the originally requested local target: once a `3r-1` pivot core with the two clique/independence constraints is extracted from the full coloring, its missing minimum-degree clause is automatic for every `r>=17`.
+
+## Remaining range
+
+The proof leaves `6<=r<=16` unresolved at the exact boundary. That finite range is irrelevant to an “all sufficiently large r” residual-core theorem, but can be audited separately if an all-r statement is later required.
