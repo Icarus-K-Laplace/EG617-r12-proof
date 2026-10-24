@@ -91,3 +91,17 @@ Writing n_i for the number of private witnesses assigned color i, either:
 - some color has at least four private witnesses.
 
 For every same-color pair u,v, both the residual difference graph between Q_u\\Q_v and Q_v\\Q_u and the full difference graph between T_u\\T_v and T_v\\T_u contain perfect matchings. The edge-ownership inequality explicitly bounds reuse of one color-i edge by endpoint witness-incidence multiplicities. These are graph-level rigidity constraints, not yet a contradiction.
+
+## Round 2 addendum — residual budget and pairwise matching rigidity
+
+The alignment gap is bypassed by ALIGNMENT_FREE_WITNESS_RIGIDITY.md. In Case B, the residual graph on R=V\\X, of size (r-1)^2, satisfies alpha(G_i[R])<=r-1 for every i!=c. Its excesses b_i=e(G_i[R])-m_{r-1} obey
+
+\[
+b_i\ge0,\qquad \sum_{i\ne c}b_i\le\binom{r-1}{2}.
+\]
+
+This yields an unconditional alternative: either a repeated witness color has b_i<=r-3 and its residual witnesses are transversals of a q=r-1 clique partition, or one color labels at least four private witnesses.
+
+For any same-color witness pair, the bipartite graph between their residual symmetric differences has a perfect matching; the same holds for the full witness symmetric differences. This strengthens the previous edge lower bound, but does not yet rule out the private-witness configuration.
+
+Case A is separately audited in COLORED_WITNESS_EDGE_BUDGET.md; its colored packing inequalities do not contradict the global color-edge floor.
