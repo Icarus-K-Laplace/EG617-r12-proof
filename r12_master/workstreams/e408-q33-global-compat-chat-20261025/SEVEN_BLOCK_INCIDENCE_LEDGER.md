@@ -111,7 +111,7 @@ R_C\ge3k+(7-k)=7+2k,
 \]
 so the number of blocks with \(r_i(C)\le2\) is at least
 \[
-\boxed{7-\left\lfloor\frac{55-P_C}{2}\right\rfloor.} \tag{8}
+\boxed{\max\!\left(0,7-\left\lfloor\frac{55-P_C}{2}\right\rfloor\right).} \tag{8}
 \]
 For \(\beta\in\{0,1\}\), every such block has an exact blocker for at least one high-k selected component.
 
