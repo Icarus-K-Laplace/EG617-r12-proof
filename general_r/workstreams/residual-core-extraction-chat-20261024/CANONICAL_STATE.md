@@ -270,6 +270,12 @@ So each non-target color partitions all but `z_i` vertices into `r` exact monoch
 
 File: `NO_HIGH_STOP_ROUND2_LEMMAS.md`.
 
+Combining `sum_i z_i<=6r+1`, the exact hole identity, and `|X|<=74`, at least `r-1-sqrt(r)/2` colors have at least `r-14sqrt(r)-73` clean size-6 transversal blocks. Hence for `r>=1000` the high stop contains a pairwise-linear partial resolvable `TD(6,r)` with at least
+
+`r^2-(29/2)r^(3/2)-67r`
+
+blocks. This sharpens the previous explicit `r^2-O(r^(3/2))` bound; it remains a near-design, not an exact TD or contradiction.
+
 ### 9D. Brouwer excess vector and scalar-feasibility audit
 
 Status: **`PROVED_ANALYTIC`** for the all-color floors; **`ABSTRACT_PARAMETER_COUNTERMODEL`** for the numerical audit (not a graph counterexample).
