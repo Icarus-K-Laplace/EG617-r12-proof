@@ -40,3 +40,10 @@ The source branches were read-only; no sibling path was edited.
 A pair of regular rows has a common independent four-set in H0, but this set is not necessarily a monochromatic component of an exact-129 color. The exact-129 label/edge-ownership theorem cannot be applied to an arbitrary independent set. The next advance must prove a label-transfer/component-realization lemma, a sharper hub-capacity theorem, or a finite incidence-design exclusion.
 
 See the four theorem/audit files in this directory and verify_unified_witness_capacity.py.
+
+
+## Verification note — 2026-10-25
+
+The finite arithmetic and omission-profile enumerations were independently replayed in local Python and matched the checked-in verifier's expected tables. Result: R12_UNIFIED_WITNESS_CAPACITY_ARITHMETIC_OK. This is arithmetic verification only, not a graph search or witness-design realization certificate.
+
+Latest progress-log commit: 6e374337ccf90fdb56de93669420f130bd3cdc5b.
