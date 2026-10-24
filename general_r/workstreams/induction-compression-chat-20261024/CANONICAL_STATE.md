@@ -99,3 +99,6 @@ Threshold refinement: if the repeated witness color in the high-excess branch ha
 
 
 Special fixed-parameter consequence: K's Theorem K.RM5 (commit eb238d01b9aebf98a7614dba00e2696a2f3d05cf) gives an exact Case B profile at r=7: three zero-excess directions, three exceptional-star colors with b_i=5, and the omitted color's seven clique blocks of sizes 6,5,5,5,5,5,5. The size-6 block is a transversal of the 3-net and the six size-5 blocks are near-transversals. This is a finite incidence kernel, not yet a contradiction.
+
+
+Audit correction: the r=7 Case B's 3-net plus one-transversal/six-near-transversal design subkernel is realizable; see K branch commit 825c48ae4e5cc47e7feb6abab6337de62db6fd6c. It is not a full graph-level EG617 counterexample, but prevents claiming that the Latin-square partition alone is contradictory. The high-color exceptional-star and root/witness constraints are still the live gap.
