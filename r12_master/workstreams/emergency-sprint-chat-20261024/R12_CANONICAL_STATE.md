@@ -55,9 +55,26 @@ Audit correction: an attempted stronger E408 contradiction incorrectly promoted 
 
 The witness-packing theorem was also corrected: a no-S isolated K5 component can contain pivot p, so at most six B-labelled no-S components per exact-129 color are guaranteed without an extra lemma excluding p from such a component. The E407 A/C capacity corollary consequently gives at least one, not two, hub-complete witnesses per exact-129 color. No terminal is closed.
 
-
 ## New witness-overlap result (2026-10-25)
 
 R12_WITNESS_OVERLAP_STAR_LEMMA.md records a proved structural reduction for repeated witnesses. If \(m\) witness sets share one core vertex, their other triples are disjoint and span at least \(3\binom m2\) core edges. In the extreme \(m=10\) case, either \(e(H[U])\ge144\), or \(H[U]=3K_{10}\); in the latter case the common vertex must have positive core excess. Neither branch is yet excluded.
 
 Next attack: couple this overlap-star dichotomy to the 284-edge core's exact shell-incidence budget and the five E407 Q32 templates. The theorem remains OPEN / NOT_CERTIFIED.
+
+## Round 3 — witness-union capacity refinement (commit cd6bf8c631bb09bb6099f5f328949553ea9c56bc)
+
+R12_WITNESS_UNION_CAPACITY_REFINEMENT.md proves the core-capacity inequality
+\[
+6N\le e(\overline{H[U]})
+\le \binom v2-p_4(47-v)-12v+284-E_U,
+\]
+for a pairwise-linear family of independent 4-sets in a legal 47-vertex, 284-edge core. The proof uses the minimum-edge Turán bound on the complement W of the witness union, and retains the nonnegative core excess \(E_U\) rather than dropping it prematurely.
+
+**Sharpened terminal union-size contracts:**
+- E407 templates A/B: if there are seven exact-129 colors, \(v\ge29\); if there are at least eight, \(v\ge31\).
+- E407 templates C/D/E: with seven exact-129 colors, \(v\ge32\); with at least eight, \(v\ge33\).
+- E408 Q33/d3: if \(\beta=e(M[S])=0\), \(v\ge31\); if \(\beta\ge1\), \(v\ge33\).
+
+These refine the previous general witness-union bounds and isolate the boundary kernels, but do not eliminate them. The remaining union-size boundaries are E407 A/B with seven exact-129 colors and \(v=29\), E407 C/D/E with seven exact-129 colors and \(v=32\), and E408 Q33/d3 with \(\beta=0\) and \(v=31\).
+
+**E408 Q32 is explicitly excluded from this application** until its own reduction certifies the required shell-support split; its core has 285 edges and excess six. No E407/E408 terminal is closed, and the root theorem remains OPEN / NOT_CERTIFIED.
