@@ -289,7 +289,7 @@ For a fixed d1 class of allowance c and multiplicity N, the exact singleton exch
 
 ### R22. AES six-type optional-degree bound — PROVED_CONDITIONAL
 
-In the high-density branch m>=ceil(4r/3+3), AES gives a 3-partition A,B,C of G=overline(H[U]). No clean block lies wholly in one part, and the three block counts x,y,z satisfy x,y,z>=a=m-r+1>=ceil(r/3)+4.
+In the high-density branch m>=ceil(4r/3+3), AES gives a 3-partition A,B,C of G=overline(H[U]). No clean block lies wholly in one part, and the three block counts x,y,z satisfy x,y,z>=lambda=m-r+1>=ceil(r/3)+4.
 
 The six endpoint type classes A0,A1,B0,B1,C0,C1 have two independent transversal triples T0=(A0,B1,C0), T1=(A1,B0,C1). Assign each outside vertex one fully-seen witness class in each triple. The assignment slack in each triple sums to four. The exact endpoint equation gives optional cross-block degree t_x<=kappa_x+u_T-1<=4.
 
@@ -297,11 +297,11 @@ The six endpoint type classes A0,A1,B0,B1,C0,C1 have two independent transversal
 
 An outside vertex with no same-part pair of fully-seen witness classes has a residual type triple with relation pattern (optional, matching, empty). Since each class has size at least a>4 and optional degree at most four, it must have at least a-4 additional neighbours in that residual triple. Therefore
 
-kappa_o>=3a-4-r>=8.
+kappa_o>=3lambda-4-r>=8.
 
 If X is the number of such exceptional outside vertices, then
 
-X(3a-4-r)<=K_O<=2r-2-K_U.
+X(3lambda-4-r)<=K_O<=2r-2-K_U.
 
 Since h=r+1-2a, this is equivalently X<=floor((4r-4-2K_U)/(r-3h-5)), with denominator at least 16 in the stated high-density branch.
 
