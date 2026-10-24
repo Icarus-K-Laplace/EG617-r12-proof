@@ -81,7 +81,7 @@ R_{24}(a,b)&=a(b-2)_++b(a-4)_+,\\
 R_{33}(a,b)&=a(b-3)_++b(a-3)_+.
 \end{aligned}
 \]
-Their zero sets are respectively \(a,b\le2\); \(a\le3,b\le2\); \(a\le4,b\le2\); and \(a,b\le3\).
+Their zero sets are respectively \(a,b\le2\); \(a\le3,b\le2\); \(a\le4,b\le2\); and \(a,b\le3\). Indeed, since \(a,b>0\), \(R_{pq}=0\) holds exactly when both positive-part factors vanish, i.e. \(b\le p\) and \(a\le q\).
 
 ### Lemma 2.3 (threshold bounds)
 
