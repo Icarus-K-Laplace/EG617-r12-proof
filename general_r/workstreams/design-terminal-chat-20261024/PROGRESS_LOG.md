@@ -264,3 +264,11 @@ The abstract two-defect gadget from the previous pass remains valid only without
 - `MULTICOLOR_DEFECT_BUDGET.md`: `155dc60bafa978342444c7dcb06e685eebba7e7f`.
 
 The full-star permutation result is conditional on the target-star reduction; no claim is made that every terminal has already been reduced to that form. The target-star block triangle obstruction is also conditional on the single-cover-block model. These restrictions are now explicit in the canonical state and nonextension analysis.
+
+
+### Exactness qualification for the destination map
+
+The destination-injectivity lemma has been tightened: it assumes the **exact hub-star model**, meaning every target cross-group edge is contained in the specified stars and there are no extra target cross edges that could hit the witness six-set. The current (O(r)) target cross-edge budget does not by itself prove exactness. A robust version allowing exceptional cross edges remains OPEN.
+
+Corrected commit:
+- `HUB_PROPAGATION_THEOREM.md`: `8f99c7c48fab62810930253fe27903f2db5bfd75`.
