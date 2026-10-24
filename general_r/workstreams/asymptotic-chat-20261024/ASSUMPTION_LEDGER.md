@@ -125,3 +125,20 @@ Imported source heads checked on 2026-10-24:
 - repivot termination: 35fec3eaaab70b31e10b41065634b35b02a28e6c;
 - design terminal: 5b4162c239d3dfad84d130c3015a0db5919228c4;
 - general-r architecture/contextual cap: a922c4d7646eb8d0087bde8547562c8aace02ee2.
+
+
+## H_W(B) — uniform outside-to-W incidence bound
+
+Statement: for a fixed absolute B, every vertex o in O'=V minus (T union W) satisfies d_F(o,W)<=B for every low offset j=2,...,7.
+
+Status: OPEN. W-local constraints do not imply this: an exact local extremizer has J_W complete balanced bipartite and target excess delta_0=0, with all non-target colour classes matchings. For j>=4, the target graph alone can accommodate a vertex complete to W without violating alpha(F)<=5 or omega(F)<=r-1; this is not a full balanced-colouring construction.
+
+Conditional consequence: H_W(B) plus the canonical contextual contract implies D_low for r>=7+4B. This is a proved conditional theorem, not an assumption promoted to fact.
+
+## H_hub — forced high-incidence hub exclusion
+
+Theorem proved: every contextual survivor in a remaining offset has some h in O' with d_F(h,W)>=floor((r-j)/4)+1.
+
+Required closure: prove that no such h can occur in a complete balanced-colouring terminal, using the ownership of T-W and O'-W pairs and the global contextual cap.
+
+Status of exclusion: OPEN. The forced-hub lemma does not assert h is nonadjacent to all anchors, and the local W construction is not a full terminal counterexample.
