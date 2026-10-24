@@ -90,22 +90,14 @@ In E408 Q33, the retained budget guarantees at least seven undecorated B-rows wi
 
 E408 Q32 has e(H)=285 and total core excess six. The retained robust theorem only guarantees alpha(H_0-T)=4 for |T|≤4 in that layer. Thus the pairwise conclusion transfers only to pairs with |T_b∪T_c|≤4; the six-deletion proof for the 284-edge core must not be reused there.
 
-## 6. Exact-129 witness-count audit across sibling branches
+## 6. Exact-129 witness-count audit — corrected
 
-The independently reviewed component count is:
-- A/B: at least seven K5 components avoid S, but at most one can contain pivot p; hence at least six are B-labelled components {b}∪Q.
-- C/D/E: at least eight K5 components avoid S, but at most one can contain p; hence at least seven are B-labelled components {b}∪Q.
-- In every eligible template with n_3≥1, a B-labelled witness Q that misses any hub must hit a full B-row. That full row has exactly three core neighbors, and the component witnesses are disjoint within one color. Therefore at most three B-labelled witnesses per exact-129 color can fail to be hub-complete.
+Every exact-129 color has at least seven K5 components avoiding S. At most one can contain pivot p, so the universally valid labelled count is at least six B-labelled components per exact-129 color. A pair of S vertices allowed to coexist in one K5 need not actually occupy the same component; therefore no beta-dependent increase from six to seven/eight is asserted.
 
-Consequently the safe hub-complete lower bounds are:
-- A/B: at least 3 per exact-129 color, hence at least 21 globally in E407;
-- C/D/E with n_3≥1: at least 4 per exact-129 color, hence at least 28 globally in E407;
-- E with n_3=0: at least 7 endpoint-complete B-labelled witnesses per exact-129 color, hence at least 49 globally.
+At most four core vertices have positive excess, and the six B-labelled Q sets are disjoint within a color. Thus every exact-129 color supplies at least two zero-excess B-labelled witnesses. Global floors are 14 for E407 and 16 for E408 Q33.
 
-**Audit qualification.** Some newer sibling prose counts all no-S K5 components (including a possible component {p}∪Q) as if each Q had a B-label. The total independent-four packing count of seven/eight Q-sets per exact color is valid and supports the separate |V_*|≥29 / |V_*|≥31 support theorem. But a pivot-containing Q is not known to be anticomplete to a B-row, so it cannot be used in the argument that a non-hub-complete witness must hit every full B-row. We do not promote the stronger 28/35 A–E hub-complete counts unless that missing label condition is separately proved.
+If a full B row exists, any B-labelled witness that misses a hub must hit the full row's three-element core support. At most three disjoint witnesses per color can do so, leaving at least three hub-complete B-labelled witnesses per exact-129 color. Therefore E407 templates A-D and E with a full row have a safe global floor of 21. In E with no full row, all B rows miss both P3 endpoints; each of the six B-labelled witnesses per color hits both endpoints, yielding at least 42 endpoint-complete witnesses globally.
 
-## 7. What remains open
+The separate shell-incidence lemma proves the union of full-row supports has size at least 11 in template A and at least 10 in C. See R12_FULL_ROW_SUPPORT_UNION.md.
 
-The pair-indexed theorem gives a hub-complete zero-excess witness for every qualifying row pair, but witnesses may repeat. The exact-129 K5 packing gives linearity across distinct colors, but those color-component witnesses need not coincide with the zero-excess Q_bc witnesses. A valid closure must connect these two families or derive a contradiction from the actual 284-edge core.
-
-E407 Q32 and E408 Q33 remain OPEN / NOT_CERTIFIED. E408 Q32 remains separately OPEN at the 285-edge / excess-six layer.
+The seven-neighbour transversal floor remains valid, but the E407 delta<=15 conclusion is conditional on L being non-four-partite. Unconditionally, the E407 window permits delta=16, in which case L must be four-partite but non-complete. For E408 Q33, a non-complete four-partite branch also remains arithmetically compatible.
