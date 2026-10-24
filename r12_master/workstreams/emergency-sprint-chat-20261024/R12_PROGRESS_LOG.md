@@ -73,3 +73,14 @@
 - Those complements have at least four points in each large part. The unused-pair matching then guarantees a triangle in L[A0,B0,C0]; adding an unselected D point gives an independent 4-set disjoint from T*, contradicting alpha(H)<=4.
 - Independently reproduced the exact integer degree-profile enumeration and the key common-neighbor margin (4+4−6=2). The verifier is arithmetic-only and is not a graph-realization certificate.
 - The four-partite E408 Q33 minimum-support branch now has S0>=12, conditional on that branch's contract. The non-four-partite branch remains OPEN. E407 Q32, E408 Q32, the T61-to-K145 bridge, and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 — Round 7: live sibling refresh and stronger E407 transversal/excess theorem
+
+- Re-read witness-packing head fc5d04e72ee28f6ce6d9ea0b24dbfeef5b628de6, zero-excess head 3d96b0633489dcb9fe1b2e5eb783c6913ba7f028, and ultimate-closure head 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40. The general-r branches remain separate conditional workstreams.
+- The zero-excess branch's latest theorem improves the E407 v=29 / 49-witness boundary from delta>=2 to epsilon_U+2delta>=9, hence delta>=3, without a four-partite assumption.
+- Independently re-proved and committed R12_E407_TRANSVERSAL_EXCESS_BOUND.md (commit fbdab0144bc404639f7b0535f3d26437053fa19f).
+- Proof: distinct 7-transversals are disjoint; three cannot coexist by the eight-point omitted-incidence argument; charging transversal multiplicity to core excess gives N7<=10+(epsilon_U+2delta)/7, while the exact cross-edge budget gives N7>=20-(epsilon_U+2delta). Combining yields epsilon_U+2delta>=9.
+- Added verify_e407_transversal_excess.py; arithmetic regression was independently executed and returned E407_TRANSVERSAL_EXCESS_ARITHMETIC_OK. It checks edge ledgers and integer thresholds only.
+- Current E407 minimal-support ledger: 0<=epsilon_U<=4, delta+epsilon_U<=16, epsilon_U+2delta>=9, delta>=3.
+- No terminal closed. E407 Q32 same-core completion, E408 Q32's separate 285-edge core, E408 Q33 non-four-partite branch, T61-to-K145 bridge, and EG617(r=12) remain OPEN / NOT_CERTIFIED.
