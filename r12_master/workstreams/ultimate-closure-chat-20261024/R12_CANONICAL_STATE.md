@@ -23,8 +23,8 @@ Target: every 12-edge-coloring of K145 has a 13-vertex set missing a color. No c
 | T61 E397–E406 | CANONICAL_CLOSED per repository | The repository supplies proof bodies/contracts; this workstream has not rerun the historical recurrence archive. |
 | E407, sharp |W|=23 Cell-B | PROVED_RELATIVE_TO_EXTREMAL_INPUTS | E407_CELL_B_FULL_CLOSURE excludes this specific Cell-B completion only. |
 | E408, sharp |W|=23 Cell-B | PROVED_RELATIVE_TO_EXTREMAL_INPUTS | Excluded by global target maximum degree at most 19 versus Cell-B degree 20. |
-| E407 Q32 | OPEN | V12 source-reports five rho=0 templates sharing a regular K11; compatibility with one 284-edge core is not proved. |
-| E408 Q32 / Q33 | OPEN | Seven-block global constraints and Q33 exact budgets are necessary conditions, not contradictions. |
+| E407 Q32 | OPEN | V12 finite screen independently replayed: 8,677 weight vectors, 17,957 count states, 1,984 labelled shells, 554 OPEN entries covered by five rho=0 templates. The common regular K11 / same 284-edge core completion remains unproved. |
+| E408 Q32 / Q33 | OPEN | Q32 has a 285-edge core (excess 6); Q33 has a 284-edge core (excess 4). Seven-block constraints and Q33 exact budgets remain necessary conditions, not contradictions. V12 does not certify exhaustive E408 coverage. |
 | Global support-compatibility theorem | PROVED_ANALYTIC under contract | Requires a legal common-S owner system, row closure, boundary one-loss, and low-cross hypotheses where invoked. |
 | Forcing-to-master Bridge A | OPEN | No exhaustive derivation from every legal shell survivor to anchors / master contract / finite residue has been verified. |
 | Shallow-loss Bridge B | OPEN | d2 higher-slack and d3 non-triangular-missing-set residues remain. |
@@ -63,3 +63,12 @@ Under the retained T61 contextual contract:
 - each such witness Q_b must hit every support row N_H(a) for which ab is a missing target edge. At least five B-witnesses hit at least two S-rows.
 
 This is a proved compatibility constraint, not a terminal exclusion. EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+## New witness-capacity cross-cut (2026-10-24)
+
+R12_WITNESS_CAPACITY_CROSSCUT.md proves a universal three-shell-row support lemma for every independent 4-set in H, a hub vertex-cover rule for each Q_b witness, and a defect-sensitive extension lemma for independent triples in H_b. For E408 Q33, it also derives at least five no-S K5-component witnesses per exact-129 color and a 7-beta lower bound on their hub-row hits. These are necessary-structure theorems only; no E407/E408 terminal is eliminated.
+
+The V11 and V12 archives were independently replayed from the Library-delivered ZIPs; SHA256SUMS passed and both independent verifiers returned COMPUTATION_CERTIFIED. See R12_V11_V12_REPLAY.md. This certifies finite enumeration coverage only, not analytic completion exclusion.
+
+Arithmetic correction: E408 Q32 has e(H)=285 and core excess 6; the 284-edge / excess-4 core is E407 Q32 and E408 Q33.
