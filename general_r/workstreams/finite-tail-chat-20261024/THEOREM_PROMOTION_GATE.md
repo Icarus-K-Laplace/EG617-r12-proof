@@ -64,3 +64,23 @@ The gate uses the immutable module ID to select `verify_d1_shell_bound.py`; the 
 - For r < 12: `SCHEMA_ONLY` because the general RC reduction is not certified there.
 - EG617 theorem promotion: **BLOCKED**. RC/front extraction is open, and the modules only prove local necessary-domain / shell-class bounds; neither exhausts graph states or proves a contradiction.
 - No new EG617(r) theorem is claimed.
+
+
+## Parameter-exact admission gate — Round 2
+
+Before a module can be promoted as conditional, the gate now invokes `PARAMETER_ADMISSION_VERIFIER.py` on `PARAMETER_ADMISSION_MATRIX.json` for the exact (r, module ID, profile). The receipt records:
+
+- matrix SHA-256 and admission-verifier SHA-256;
+- admission status and source IDs;
+- required assumption IDs;
+- module generator/verifier hashes and replay commands.
+
+The gate fails closed if the matrix/source registry is malformed or if the module source does not apply to r. For r<12, the module status is `BLOCKED_SOURCE_REDUCTION_NOT_APPLICABLE`; the legacy raw generators can still be used only for schema tests.
+
+The matrix differentiates:
+- r=4,...,11: no registered general residual-core reduction;
+- r=12,...,16: q-ceiling source conditional on RC, broad ANCHOR_K8 open;
+- r=17,...,67: core contract proved conditional on having extracted a legal residual, but extraction remains open and broad ANCHOR_K8 remains open;
+- r>=68: broad ANCHOR_K8 source applies, but RC/front extraction and terminal closure remain open.
+
+The specialized exact-three-anchor theorem for r>=12 is recorded separately and is not treated as proof of the broad near-anchor hypothesis when its anchor premise is absent.
