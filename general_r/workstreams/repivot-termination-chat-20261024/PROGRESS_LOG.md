@@ -327,3 +327,83 @@ No all-large-r contradiction is certified.
 Allowance-one summary audit follow-up: the final summary line in D2_DISTINCT_SUPPORT_REDUCTION.md was also corrected from 12 to 9. Commit: d7fde7ad56f90288e0c2e19f70f6f78eaf0eeda0.
 
 The final CLEAN_PAIR_GRAPH_MODEL.md blob includes the embedded exhaustive checker and signed-parity wording audit (latest content commit d9641f2a2e07817c2ed9f0cecf8c2246639ff291).
+
+
+---
+
+# 2026-10-24 — Round 5: global budget, outside-neighbour audit, and d1 second budget
+
+## Result 26 — Six-type AES structure and optional degree <=4
+
+Added CLEAN_PAIR_GLOBAL_BUDGET.md. In the high-density AES branch, no clean block can lie wholly within one part. The block counts x,y,z satisfy x,y,z>=a=m-r+1, and the six type classes have two independent transversal triples T0=(A0,B1,C0), T1=(A1,B0,C1).
+
+Assigning each outside vertex one fully-seen witness class in each triple gives capacity slack exactly 4 per triple. The exact endpoint equation yields optional cross-block target degree t_x<=4. A separate symbolic case audit checked all nine T0 x T1 witness pairs and both residual class triples for each off-part pair; all six off-part cases have the expected (optional, matching, empty) relation pattern.
+
+Status: PROVED_CONDITIONAL.
+
+## Result 27 — Corrected off-part witness theorem
+
+The first draft of the global-budget note overclaimed that every outside vertex sees an entire AES part. That inference was not valid: an outside vertex may have additional neighbours in unchosen type classes. The overstrong claim was removed in commit b3188d6b87adee4c5daee8b23352457f17361c76 and is not canonical.
+
+The correct theorem is:
+
+- if an outside vertex has a same-part pair of fully-seen witness classes, it sees a whole part;
+- otherwise, an independent-transversal argument in a residual (optional, matching, empty) triple gives d_H(o,U)>=3a-4 and kappa_o>=3a-4-r>=8.
+
+For X exceptional vertices,
+
+X(3a-4-r)<=K_O<=2r-2-K_U.
+
+This bounds X by O(r) but does not make it O(1) near the lower AES threshold.
+
+Status: PROVED_CONDITIONAL; no all-r contradiction.
+
+## Result 28 — Exact no-double-counting identity
+
+For the nonexceptional outside vertices assigned to parts, define u_i=s_i+2-g_i and rho_x as the number of outside neighbours of x not in its assigned group. Then
+
+sum_i u_i=4+X,
+t_x+rho_x=kappa_x+u_i-1,
+2 e_opt + E_foreign = K_U + sum_i n_i(u_i-1).
+
+This counts optional U-edges twice by endpoints and foreign O-U edges once. It is exact but not yet inconsistent with K<=2r-2.
+
+## Result 29 — Independent d1 excess budget
+
+For a d1 class with allowance c and multiplicity N, kappa_u in {c-1,c}; therefore
+
+N(c-1)<=K_U<=2r-2,
+
+alongside (N-1)c<=3r-2 and N<=r-2. This is an independent budget, stronger for c>=2, but fixed-c multiplicity remains linear/open.
+
+The eta coupling remains:
+- eta=Omega(r) gives a linear d1 class with O(1) allowance;
+- eta=o(r) with a linear d2 class gives an unbounded matching and sublinear d2 allowance.
+
+Neither branch is yet eliminated.
+
+## Result 30 — Potential and counterexample audit
+
+Added POTENTIAL_AUDIT.md and COUNTEREXAMPLE_SEARCH.md. Q2 remains unsuitable as a universal strict fifth coordinate because repivots are reversible. The new slack descriptors depend on choices of AES partition and witness assignment, so they are structural bookkeeping, not a certified potential.
+
+No full legal-core counterexample was constructed. The static block model remains only a relaxation. The lower-density branch m<ceil(4r/3+3) is untouched by this round.
+
+## Round-5 commit ledger
+
+- CLEAN_PAIR_GLOBAL_BUDGET.md initial draft: 6f5d81d63e8cc9021d1795f2120364ef422a611a
+- CLEAN_PAIR_GLOBAL_BUDGET.md corrected theorem: b3188d6b87adee4c5daee8b23352457f17361c76
+- COUNTEREXAMPLE_SEARCH.md: ec140a08ddb0334cddb0a621a26d0b02f008e416
+- CLEAN_PAIR_NONEXTENSION.md: f487f9132635c98eb0a34912ad24be06ac387f2e
+- D1_TERMINAL_ABSORPTION.md: 7babff75446facd71ca39d545e09f3ff8e3280dd
+- POTENTIAL_AUDIT.md: 156b46bdd8cc36291904e49a05ddf55993437f2d
+- TERMINATION_CLOSURE.md: 19bd69cf8d6da6d7f40ceb04907a982cccf0ec09
+- CANONICAL_STATE.md: a09c8c7b6bce4e3748b104a459850826f88c191f
+- TERMINATION_THEOREM.md: df4fe7b12e51b7067dd41a89503cb9f9e99a67b6
+
+## Current outcome
+
+- Clean Pair Nonextension: OPEN.
+- Bounded-allowance d1 absorption: OPEN.
+- No finite r0 is certified.
+- The high-density AES branch now has an optional-degree-four theorem, an excess-charged exceptional set, and an exact no-double-counting budget; its remaining exceptional count can still be linear.
+- The low-density clean-pair branch remains open.
