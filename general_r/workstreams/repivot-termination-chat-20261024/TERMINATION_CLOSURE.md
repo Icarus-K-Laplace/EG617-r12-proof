@@ -70,3 +70,56 @@ with the key missing ingredient being a no-double-counting inequality that coupl
 - Do not revive D2_MISSING_PAIR_NEUTRAL_BOUND.md or D2_DISTINCT_MATCHING_COLLAPSE.md as theorems.
 - Do not describe the static block model as a full legal-core counterexample.
 - Do not claim all-large-r contradiction or a finite r0.
+
+
+---
+
+# Round 2 — 2026-10-24: global budget and d1 second budget
+
+## C-N7 — AES six-type optional-degree bound: PROVED_CONDITIONAL
+
+In the AES three-part branch, the six endpoint type classes have two independent transversal triples T0=(A0,B1,C0), T1=(A1,B0,C1). Each outside vertex must be adjacent to a full type class in each triple, or alpha(H)<=3 is violated.
+
+Assign one witness class per triple. The assignment slacks in each triple sum to exactly four. This yields the endpoint identity
+
+t_x<=kappa_x+u_T-1<=4,
+
+so the optional cross-block graph has maximum degree at most four. This conclusion is conditional on the core contract and high-density AES threshold.
+
+## C-N8 — Off-part witness excess: PROVED_CONDITIONAL
+
+If an outside vertex has no same-part pair of fully-seen witness classes, a residual class triple with relation pattern (optional, matching, empty) forces at least a-4 additional neighbours in U. Therefore
+
+kappa_o>=3a-4-r>=8.
+
+For X exceptional outside vertices,
+
+X(3a-4-r)<=K_O<=2r-2-K_U.
+
+This is the correct statement; the stronger claim that every outside vertex sees a whole part is **not proved** and is not used.
+
+## C-N9 — Exact clean-pair budget identity: PROVED_CONDITIONAL
+
+For nonexceptional outside vertices assigned to parts, define u_i=s_i+2-g_i. Then sum_i u_i=4+X. With t_x the optional degree and rho_x the number of outside neighbours not in the assigned group,
+
+t_x+rho_x=kappa_x+u_i-1,
+
+and
+
+2 e_opt + E_foreign = K_U + sum_i n_i(u_i-1).
+
+This is exact no-double-counting, but does not by itself contradict K<=2r-2.
+
+## C-N10 — d1 second excess budget: PROVED_CONDITIONAL / OPEN
+
+For a d1 class of allowance c and multiplicity N, each support has kappa in {c-1,c}, giving
+
+N(c-1)<=K_U<=2r-2,
+
+in addition to (N-1)c<=3r-2 and N<=r-2. For c>=2 this is a stronger independent bound, but it remains linear in r for fixed c. Bounded-allowance d1 absorption remains OPEN.
+
+## Updated canonical conclusion
+
+The high-density clean-pair branch is now reduced to a six-type system with optional degree at most four and an excess-charged exceptional set. The exceptional count may still be linear near the AES threshold, so Clean Pair Nonextension is OPEN. The d1 class has an additional independent excess bound, but c=1 and fixed c>=2 multiplicities remain unresolved.
+
+No finite r0 and no all-large-r contradiction are certified.
