@@ -122,19 +122,18 @@ The accepted constraints include
 
 plus the all-pivot row-closure and exact decoration-transport identities.
 
-**Required conclusion:** prove that every such legal survivor satisfies at least one of:
+**Required conclusion:** the universal core floor already supplies `e(H)>=214` and `q<=E-305` for every legal pivot. The remaining forcing theorem must now prove that every legal survivor satisfies at least one of:
 
-1. a legal core contains three pairwise nonadjacent degree-12 vertices, so `q<=E-305`);
-2. an active subsystem has one common S, `s<d`, and the exact boundary one-loss/low-cross contract, or descends to it through a rigorously bounded finite higher-slack equality layer;
-3. a finite incidence kernel is obtained with every constraint derived from the original graph contract, and that kernel is independently eliminated.
+1. an active subsystem has one common S, `s<d`, and the exact boundary one-loss/low-cross contract, or descends to it through a rigorously bounded finite higher-slack equality layer;
+2. a finite incidence kernel is obtained with every constraint derived from the original graph contract, and that kernel is independently eliminated.
 
-The current assets prove this conclusion only for specific subfamilies (including the q<=38 d3 large-owner cases above), not for every legal survivor.
+The current assets prove this extraction conclusion only for specific subfamilies (including the q<=35 d3 large-owner cases), not for every legal survivor.
 
 ### Minimal open variables / barriers
 
 - **Multi-S extraction:** no proof yet covers all d2 systems or d3 systems with fewer owners / fully decorated classes at every q layer.
-- **Low-support shallow loss:** d2 `1<=ell<=a-2`; d3 non-triangular `1<=ell<=a-3`; The d3 independent-triple allowance through a=8 is closed; the remaining d3 shallow-loss barrier is the non-triangular missing-set branch.
+- **Low-support shallow loss:** in E335--E340, q<=35, so d2 allowance is at most13 and its genuine repeated-support window is `1<=ell<=a-2`; d3 allowance is at most5, and its non-triangular shallow-loss window is only a=4,5 with `1<=ell<=a-3`. The d3 independent-triple branch is closed through the wider a<=8 ceiling.
 - **Low-cross certification:** for an extracted family, the pairwise cross bounds used by the block-transversal theorem must be derived from its actual allowance/exchange identities, not assumed.
-- **Fully-decorated branch:** `s=d` cannot be passed through the `s<d` plateau/strict-loss lemmas. The d4/d9 common-S escape is closed, but this is not a general extraction theorem for every fully-decorated d2/d3 multi-S system.
+- **Fully-decorated branch:** `s=d` cannot be passed through the `s<d` plateau/strict-loss lemmas. d4/d9 regular rows are impossible in the active E335--E340 range because their base charge is36>q; fully-decorated d2/d3 multi-S systems still require a universal extraction or finite-kernel theorem.
 
 This is the smallest current theorem-level gap statement supported by the inspected assets. It does not certify E335--E340, E407/E408, or the original EG617 theorem.
