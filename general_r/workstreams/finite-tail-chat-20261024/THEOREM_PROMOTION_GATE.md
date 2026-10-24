@@ -36,7 +36,7 @@ For every module certificate, the gate must verify:
 - instance SHA-256 and certificate SHA-256;
 - producer/generator SHA-256 and constraint-generation version;
 - an independent verifier that does not import producer code;
-- verifier SHA-256 and a replay command;
+- verifier SHA-256, generation command, verifier replay command, and gate replay command;
 - whether the module is applicable at this r;
 - whether the module proves only a necessary condition or closes the full graph case.
 
