@@ -79,16 +79,16 @@ The direction bound is t>=ceil(q/2), but it only invokes Brouwer's partition the
 |---:|---:|---:|---|
 | 2 (r=3) | at least 1 residual-low color; no two-direction net from this count | none | small case not covered by Brouwer |
 | 3 (r=4) | at least 2 | 0 | orthogonal partitions only |
-| 4 (r=5) | at least 2 | 0 | orthogonal partitions only |
-| 5 (r=6) | at least 3 | 1 Latin square | no obstruction |
-| 6 (r=7) | at least 3 | 1 Latin square | no obstruction |
+| 4 (r=5) | at least 3 | 1 Latin square | strengthened by J.W9 |
+| 5 (r=6) | at least 3 | 1 Latin square | no obstruction from count alone |
+| 6 (r=7) | at least 4 | 2 MOLS(6) | impossible; Case B is closed by J.W8/J.W9 |
 | 7 (r=8) | at least 4 | 2 MOLS(7) | available for prime-power order |
-| 8 (r=9) | at least 4 | 2 MOLS(8) | available for prime-power order |
+| 8 (r=9) | at least 5 | 3 MOLS(8) | available for prime-power order |
 | 9 (r=10) | at least 5 | 3 MOLS(9) | available for prime-power order |
-| 10 (r=11) | at least 5 | 3 MOLS(10) | existence remains open |
-| 14 (r=15) | at least 7 | 5 MOLS(14) | existence remains open; four MOLS(14) are known |
+| 10 (r=11) | at least 6 | 4 MOLS(10) | stronger than the known open 3-MOLS threshold; not excluded here |
+| 14 (r=15) | at least 8 | 6 MOLS(14) | stronger than the reported open 5-MOLS threshold; not excluded here |
 
-For q=10, a projective plane of order 10 is known not to exist; for q=14, Bruck–Ryser rules out a projective plane of order 14. Hence the full-affine-plane subcase K.RM3 is unavailable at q=10 and q=14, and the remaining Case B branches force respectively 3 MOLS(10) and 5 MOLS(14). Both are currently open design questions, so neither implication is a contradiction.
+For q=10, a projective plane of order 10 is known not to exist; for q=14, Bruck–Ryser rules out a projective plane of order 14. Hence the full-affine-plane subcase K.RM3 is unavailable at q=10 and q=14. The strict-budget theorem J.W9 strengthens the partial-net requirements to at least 4 MOLS(10) and 6 MOLS(14), respectively. The cited literature only establishes that the weaker 3-MOLS(10) and 5-MOLS(14) thresholds remain open; these stronger implications are not excluded here.
 
 Sources for the two open MOLS thresholds:
 - Three MOLS(10): Bright, Keita, Stevens, EJC 33(1) (2026), P1.30, DOI [10.37236/13960](https://doi.org/10.37236/13960), [arXiv:2503.10504](https://arxiv.org/abs/2503.10504).
@@ -172,3 +172,16 @@ This is a finite incidence kernel for the r=7 Case B, not a contradiction. The o
 ### K.RM5 audit boundary
 
 The 3-net plus one-transversal/six-near-transversal subkernel is realizable as a Latin-square incidence structure; see Q6_NEAR_TRANSVERSAL_OBSTRUCTION_AUDIT.md, commit 825c48ae4e5cc47e7feb6abab6337de62db6fd6c. Therefore it cannot be excluded by Euler–Tarry alone. The full EG617 kernel still additionally requires the three exceptional-star high-color graphs and the 14-root witness incidence.
+
+
+## Theorem K.RM6 — Strict residual budget and r=7 closure
+
+J branch commit c0c31e82b2bd8b4c3c5a7ab6092b660d16bd686b proves the full-contract root-block capacity theorem J.W8: for q=r-1>=4, equality sum b_i=C(q,2) is impossible. Therefore
+
+\[
+\sum_{i\ne c}b_i\le\binom q2-1,
+\]
+
+and at most floor((q-1)/2) residual complements are non-q-partite. At least ceil((q+1)/2) colors therefore give pairwise orthogonal q-clique partitions, strengthening the earlier bound by one direction for even q.
+
+For q=6 this forces at least four directions, hence two mutually orthogonal Latin squares of order 6, impossible by Euler–Tarry. Thus **Case B is impossible at r=7**. The explicit Latin-square example in Q6_NEAR_TRANSVERSAL_OBSTRUCTION_AUDIT.md realizes only the abstract 3-net plus one-transversal/six-near-transversal subkernel; the root-block coverage constraint prevents extending it to the full EG617 Case B contract.
