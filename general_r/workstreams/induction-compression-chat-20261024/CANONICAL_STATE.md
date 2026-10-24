@@ -47,7 +47,7 @@ Assume the tight case, choose x_0 in X, and suppose a color i != c has low slack
 - for s_i=1, or s_i=2 with r>=4, the exact blocker classification strengthens this to at most two witness-hosting blocks;
 - if all residual parts B_a are nonempty, the color-i defect graph on them has no independent transversal and satisfies the weighted obstruction inequality.
 
-This is a proved J/K interface, but it is conditional: no theorem yet guarantees a low-slack color at a vertex x_0 in the tight transversal X.
+The K branch also proves a universal global excess floor a_i>=r-1 for every color and a local degree-budget inequality for the number of low-slack colors at a vertex. These do not guarantee a low-slack color at a vertex x_0 in X. See the K branch LOW_SLACK_COORDINATIZATION.md.
 
 ## Geometry audit
 
