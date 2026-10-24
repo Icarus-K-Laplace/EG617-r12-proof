@@ -1049,6 +1049,32 @@ Let `k_j=|X∩V_j|`, `delta_j=|V_j|-r`, and `a_j=k_j-delta_j-1`. Since `V_j\X` i
 
 Therefore each target group contains at least `r-8` nonhubs forming a target-color clique. This improves the previous crude lower bound `r-36` that followed only from `|X|<=28`.
 
+### Corollary 16.5 — duplicate concentration controls the last hub
+
+If a target group `V_j` has size `r+9` and contains `Z_j` duplicate-label vertices, then
+
+`W <= 13r+4+Z_j`.
+
+Indeed, `sum_i(z_i-1)=sum_i z_i-(r-1)`, and at most `5r-8` vertices lie outside `V_j`; hence the hole budget is at most `Z_j+4r-7`. Also `C_total<=D<=x_0<=9r+11`, giving the displayed bound.
+
+If `|X|=14`, the hub lower bound and multi-hub surcharge imply
+
+`14(15r/16-183) <= 13r+4+Z_j+15*14*13`,
+
+so
+
+`Z_j >= r/8-5296`.
+
+Consequently, if `Z_j<r/8-5296`, then `|X|<=13`. In particular, a high stop with an `r+9` group and no duplicate vertices in that group has at most 13 hubs.
+
+### Corollary 16.6 — improved partial design bound
+
+For `a=6,r>=20,000,000`, the improved `|X|<=14` bound sharpens the earlier non-clean-class estimate to
+
+`(5r+2)+(12/5)(13r+6)+14(r-1) <= 51r`.
+
+Thus any high stop in this range contains a pairwise-linear partial resolvable `TD(6,r)` with at least **`r^2-52r` blocks**. If additionally `Z_j<r/8-5296` for an `r+9` group, then `|X|<=13` and the same calculation gives at least **`r^2-51r` blocks**.
+
 ### Failed shortcut explicitly rejected
 
 One tempting next step is to claim that the `K_r`-free property forces `Omega(r)` **target-color** cross-edges between each pair of nonhub cliques. This is false: the `K_r`-free condition instead forces many **complement-color** cross-pairs (edges of `F_0`), not edges counted by `M_0`. That direction cannot be added to the target-edge budget. No contradiction is claimed from this invalid shortcut.
