@@ -97,3 +97,24 @@ Branch heads checked after the universal S0 theorem was committed:
 - E407 Q32, minimum support \(v=29\): \(\delta\ge2\), \(\delta+\epsilon_U\le16\), \(\epsilon_U+2\delta\ge2\); the four-partite and non-four-partite completions remain OPEN. Do not use the withdrawn TD(4,7) distinguished-point argument.
 - E408 Q32 remains a separate 285-edge / excess-six core and is not covered by any of the 284-edge Q33 results.
 - The original \(K_{145}\to T61\) reduction bridge and the complete EG617(r=12) theorem remain OPEN / NOT_CERTIFIED.
+
+
+## Live refresh — 2026-10-25, fourth pass
+
+Current sibling heads reread:
+- emergency sprint: f4c3b06891d29238d4f9cca2588f442004b6dc97
+- E407 Q32 terminal / Cell-B closure line: 3f42fcce5761ca2372140618adda56f95fcbe253
+- zero-excess witness: 07d19abfd6c1c749c7360526e4a04a3eb865fb2e
+- ultimate closure: 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40
+- this witness-packing line before this sync: 6292f77598df9cf841f04b012b81f44753567cc3
+- general-r architecture/asymptotic: a922c4d7646eb8d0087bde8547562c8aace02ee2 / fa6a5f2b8b5d2a0fe821d50a4421884a69dc5366
+
+### Newly reconciled results
+
+1. **Universal E408 Q33 minimum-support improvement:** this line now proves \(S_0=\epsilon_U+2\delta\ge12\), not merely \(\ge11\), for the 31-point/56-witness boundary. The proof is independent of L being four-partite. The non-four-partite S0=11 case is therefore closed too.
+2. **E407 Q32 transversal/excess theorem:** the latest emergency line proves \(\epsilon_U+2\delta\ge9\), hence \(\delta\ge3\), for the 29-point/49-witness boundary. The proof uses disjointness of distinct 7-transversals, an omitted-point count excluding three such transversals, a charge to core excess, and the exact cross-edge budget. This supersedes the earlier \(\delta\ge2\) lower bound but does not close E407.
+3. **E407 Cell-B terminal:** the E407 Q32 terminal branch's E407_CELL_B_FULL_CLOSURE.md proves the \(|W|=23\) Cell-B subdivision normal form empty relative to the stated Brouwer/Kang–Pikhurko extremal inputs and the Cell-B color-certificate lemma. Combined with the prior E408 degree-20 exclusion, the sharp \(|W|=23\) Cell-B normal form is empty for both E407 and E408. This is a separate front-end terminal, not the same as the Q32/Q33 47-core completion.
+4. **E407 four-partite audit remains corrected:** the earlier TD(4,7)-plus-distinguished-unused-point inference is withdrawn. Do not use the resulting \(\delta\ge12\) or \(K_5\cup K_5\cup K_4\cup K_4\) claims.
+5. **E408 Q33 remaining work:** the minimum-support ledger is now \(S_0\ge12\), \(\delta+\epsilon_U\le17\). This still leaves larger values of \(S_0\), larger support sets, and the global seven-block completion. E408 Q32 remains separate at 285 core edges/excess six.
+
+No full E407/E408 terminal, T61-to-K145 bridge, or EG617(r=12) proof is closed.
