@@ -113,3 +113,10 @@ No theorem gap remains in this workstream. The highest-value action is external/
 - Final follow-up commits:
   - PUBLICATION_VERSION.md: 1490c51be95b614d514130f0950c16bcca978d80; 032d66697fd59a408256f2de248a4cff76b750bc; ae2308009c1d223642aa16d9b65c4cad55bfe00b
 - Final proof status remains INDEPENDENTLY_VERIFIED in the analytic-audit sense. Full graph-level SAT/ILP search and external human referee certification remain explicitly unclaimed.
+
+
+## 2026-10-24 — final equality-branch explicitness
+
+- Added an explicit exactness conclusion in both r=12 overlap branches: the two connector excesses plus the six-unit rectangle charge exhaust K, so every other vertex (including focused connectors) is exact.
+- Expanded the second c=4 overlap derivation to show the degree inequality, the max-charge bound, the positive-excess exclusion, and the remaining (1,8)/(8,1) signatures without relying on an implicit “same argument”.
+- Final publication proof commits: 032d66697fd59a408256f2de248a4cff76b750bc; 7b3628dd01cfb5788b4c49674bd65cf29c9c9ef4; 94f5fbd6fa2e2c0ff0fb79c28dd84c34e5d4e79c; 9725336511b03575d241703565eced6fb8bc4aa0.
