@@ -19,3 +19,9 @@ OPEN: A_ext*(r), at r>=67 or any larger uniform threshold.
 CONDITIONAL: the desired dichotomy follows if the precise high-stop extraction lemma in THEOREM.md is supplied, together with the pinned lower-terminal results.
 
 No actual counterexample colouring, no realized target high stop, and no design-terminal exclusion is claimed.
+
+## Uniform alternative extraction
+PROVED: minimal induced-rank extraction avoids predecessor and packing assumptions. It produces either explicit a=4/a=5 output hypotheses or a minimal-rank a>=6 object with alpha=a, omega<=r-1, independent-a transversal number >=r+1 and r<=delta<=r+a-4.
+At a=6 only delta=r,r+1,r+2 remains.
+No B_a budget is asserted for this new minimal-rank object.
+OPEN: eliminate or bypass this sharply defined terminal family; exact legal/anchored terminology retains the pinned upstream scope.

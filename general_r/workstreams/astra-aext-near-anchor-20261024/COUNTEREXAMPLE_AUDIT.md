@@ -31,3 +31,8 @@ Induced normalization uses averaging, not equality of residual edges and an oute
 The scalar target floor is not a target graph construction.
 A (4r+1) density contradiction needs its minimum-degree input.
 No solver status is used.
+
+## New extraction scope check
+Minimal induced-rank selection is well-founded on finite integers. It cannot inherit the old canonical B_a edge budget merely from the starting state. THEOREM section 7 intentionally uses only full-colour contextual caps.
+No r-clique packing, predecessor, or design completion is required for this reduction.
+The H_(a,r) obstruction is a non-target graph, so it does not refute the new target minimum-degree statement.

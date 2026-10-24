@@ -27,3 +27,12 @@ There is no arrow from this H to a full colouring.
 External theorem roots: Turan, Brooks, second-Turan in its n>=2k+1 regime.
 Pinned lower-terminal results are not upgraded by progress-log labels.
 The DAG contains no backward implication from P(r) or design exclusion.
+
+## Alternative, uniform branch (no block forcing)
+Original colouring -> Brooks anchor -> minimum induced rank a
+ -> [PROVED] 4<=a<=r-1, alpha=a, omega<=r-1, delta>=r
+ -> a=4: explicit residual hypotheses; pinned legal-core theorem
+ -> a=5: explicit irreducible anchored terminal hypotheses
+ -> a>=6: [PROVED] delta<=r+a-4, independent-a transversal>=r+1
+            -> [OPEN MHI] exclude or extract an exact target output.
+This path does not use greedy B_a budgets, predecessor label structures, D_low, or fixed-a asymptotics.

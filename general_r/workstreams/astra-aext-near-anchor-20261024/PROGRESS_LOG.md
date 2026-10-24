@@ -9,3 +9,9 @@ Constructed and analytically proved H_(a,r), a sharp single-colour family compat
 Isolated uniform high-stop extraction, including the initial no-predecessor branch.
 Headline remains OPEN. Package status PARTIAL.
 The commit SHA containing this entry is recorded in the subsequent publication receipt; a commit cannot contain its own SHA.
+
+Published first proof package: 345c17de6d096dd8649d304dc602bec3f8ec48ee.
+Exact polynomial identities and compressed sharpness construction checks passed.
+
+Second substantive result: minimal induced-rank extraction, uniformly for all r>=67, bypasses K_r packing and proves the terminal bound r<=delta<=r+a-4 for every a>=6. The earliest terminal has delta in {r,r+1,r+2}. This reduction retains the full colouring but deliberately does not inherit greedy B_a budgets.
+MHI remains OPEN; no A_EXT_STAR_PROVED claim.

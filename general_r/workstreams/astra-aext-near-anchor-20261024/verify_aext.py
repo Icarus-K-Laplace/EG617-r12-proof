@@ -60,6 +60,8 @@ t=r-1; ell=2
 critical=r*r*(-ell*ell+3*ell+t-1)+r*(-2*ell*t-2*ell-t*t+2*t+1)-2*t+2
 eq(critical,-4*r+4)
 
+eq((a*r+1)*(r+a-3)-2*U,(a-1)*r-3*a-1)
+
 def choose2(n): return n*(n-1)//2
 def p(k,n):
     q,b=divmod(n,k)

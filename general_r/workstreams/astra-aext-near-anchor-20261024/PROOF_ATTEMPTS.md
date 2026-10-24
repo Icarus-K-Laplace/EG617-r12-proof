@@ -14,3 +14,5 @@ Status: PARTIAL.
 6. The contextual 4r+1 cap itself is sound: U=2r^2+r+7. WITH delta>=r+1 its degree floor exceeds U by (3r-13)/2. The delta hypothesis and extraction legality remain separate obligations. This calculation does not eliminate high stops.
 
 Next mathematical task: exploit the impossibility of simultaneously packing the near-extremal colour graphs/label systems, or prove an induced descent that works without a predecessor. Do not strengthen a demonstrably sharp single-colour bound or invoke D_low to conceal this gap.
+
+7. A new uniform alternative succeeds in removing the block-packing prerequisite: minimize induced rank a directly in the original anchor nonneighbourhood. Minimality supplies K_r-freeness and delta>=r. The contextual cap then gives delta<=r+a-4 uniformly for every 6<=a<=r-1. Full proof in THEOREM sections 7-8. This strengthens the precise remaining obstruction, but does not close it. The old B_a edge bound must not be imported into the new choice.

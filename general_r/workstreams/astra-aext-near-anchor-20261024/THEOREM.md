@@ -119,3 +119,46 @@ This weaker, bypass-allowing version suffices; proving nonexistence of every suc
 CONDITIONAL conclusion: combine this obligation with the pinned a<=5 endpoint theorems to obtain A_ext*(r). The endpoint theorems, including full legal-core scope, have not all been independently re-proved in this round; they remain explicit inputs to that conditional statement.
 
 No uniform threshold for this obligation has been established. Neither recursion termination nor a fixed-a asymptotic design approximation supplies it.
+
+## 7. Minimal induced-rank extraction: uniform replacement for block forcing — PROVED
+For every integer r>=67, an original counterexample has an anchor v of degree <=r-1 as in section 2. Inside its nonneighbourhood, choose the LEAST integer a for which there is an induced X with
+|X|=ar+1 and alpha(X)<=a.
+Such an a exists and is <=r-1: the anchor nonneighbourhood has at least (r-1)r+1 vertices and alpha<=r-1.
+Choose any such X at that least a. This choice uses no edge-budget restriction and does not assume any target K_r exists.
+
+Then:
+(i) alpha(X)=a and 2<=a<=r-1.
+(ii) omega(X)<=r-1.
+(iii) Every induced ((a-1)r+1)-set in X has an independent a-set.
+Equivalently the transversal number of the independent-a-set hypergraph is >=r+1.
+(iv) delta(X)>=r.
+(v) X inherits the full original edge-colouring, all D_r caps, and the contextual cap U_(a,1).
+(vi) a=2 and a=3 are impossible.
+(vii) If a>=6 then r<=delta(X)<=r+a-4. In particular a=6 gives delta in {r,r+1,r+2}.
+
+Proof:
+a=1 would be a forbidden K_(r+1). If alpha(X)<=a-1, selecting (a-1)r+1 vertices contradicts minimality. This proves (i).
+If X contains K_r, removing it gives an induced ((a-1)r+1)-set of independence <=a-1 by the genuine-clique extension argument of section 3, again contradicting minimality. This proves (ii).
+Statement (iii) is minimality; deleting any r-set must leave an independent a-set. A transversal of size <=r would contradict this, and conversely.
+If d_X(w)<=r-1, its nonneighbourhood has at least (a-1)r+1 vertices and independence <=a-1. This proves (iv).
+Heredity proves (v); the contextual cap proof uses no B_a budget.
+For a=2, the cap is r^2-r+3, below the minimum-degree floor r(2r+1)/2 when r>2.
+For a=3, the cap is (3r^2-r+10)/2, below r(3r+1)/2 when r>5. This proves (vi).
+Finally, if delta(X)>=r+a-3, subtract twice the contextual cap from the degree-sum floor:
+(ar+1)(r+a-3)-2U_(a,1)=(a-1)r-3a-1.
+For a>=6 and r>=a+1 this is at least a^2-3a-2>0.
+This proves (vii) uniformly, with no fixed-a threshold or asymptotic estimate.
+
+Additional exact interface: for a minimum-degree vertex w with degree r+ell, 0<=ell<=a-4, its nonneighbourhood has (a-1)r-ell vertices and independence <=a-1.
+All those graphs are induced in the original colouring. No lower bound on their order beyond this formula is substituted.
+
+If a=4, X has the explicit contextual 4r+1 alpha/omega/cap hypotheses of the first target output.
+If a=5, X has alpha=5, omega<=r-1, delta>=r, the contextual cap, and contains no induced 4r+1 alpha<=4 subgraph; it remains inside the original anchor's nonneighbourhood.
+Thus, subject only to matching the pinned meaning of "legal" and "anchored" to these explicit contracts, A_ext* reduces to excluding or bypassing the a>=6 minimal-rank outputs.
+We do not claim B_a for X: choosing minimum rank does not preserve the old greedy edge budget.
+
+## 8. Sharper terminal obstruction — OPEN
+Let MHI(r) assert that no original counterexample admits a minimal induced-rank X from section 7 with a>=6; alternatively, a theorem producing either exact A_ext* output from such X suffices.
+MHI(r), for every r>=67, is a single remaining structural extraction obligation in this alternative architecture. Its hardest first size is 6r+1 with minimum degree in {r,r+1,r+2}, independent-6 transversal number >=r+1, and all original simultaneous colour constraints.
+The upper range a=r-1 is explicitly included, without requiring a predecessor block.
+This is not a definition of A_ext*: section 0 remains unchanged. MHI is an explicit sufficient new lemma, not an established fact or a claim that every abstract graph satisfying the listed necessary conditions is realizable.

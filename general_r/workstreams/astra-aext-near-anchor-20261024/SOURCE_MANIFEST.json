@@ -124,5 +124,11 @@
     "path": "general_r/workstreams/front-recurrence-chat-20261024/OUTER_BUDGET_DOMINANCE.md",
     "ref": "95c9df0e06de61c84c4cfed0ec00bbd48f0ebf64",
     "blob_sha": "223f5030f9ee0bacb01ff12f9f3eefafdfb4d55b"
+  },
+  {
+    "tag": "residual-core-extraction",
+    "path": "general_r/workstreams/residual-core-extraction-chat-20261024/RESIDUAL_BRANCH_CLOSURE.md",
+    "ref": "614a956a7e964f42c0818eca05e3ca9e26a6458a",
+    "blob_sha": "0cf72df5a7e0e59649713adbec1f41c2b75e7408"
   }
 ]
