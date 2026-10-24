@@ -220,3 +220,37 @@ The current headline gap is now:
 - `CANONICAL_STATE.md`: `d3dff82ce38e7016e04915278132bf5578f629fd`.
 
 Full Hub Propagation, exact core, and robust nonextension remain **OPEN**. No global counterexample or general-r closure is claimed.
+
+
+## 2026-10-24 — target-star permutation constraint
+
+### Conditional symbolic theorem
+
+Under the canonical hub-star regime, each of the five target groups has a hub (a_j), an internal target nonneighbor (y_j), and a full target cross-star to (B_{f(j)}), with (f(j)\ne j). The target independence cap (\alpha(G_0)\le5) forces
+[
+\boxed{f\text{ is a derangement permutation on the five groups}.}
+]
+Proof: if two distinct groups (j,k) target-star to the same group (ell), select the two internal nonedges (a_jy_j,a_ky_k), omit (B_\ell), and choose one ordinary point from each of the two remaining groups. The resulting six-set has no target edge.
+
+If the oversized group has a second hub (b_h) with its own internal nonneighbor and full target star, its destination must equal (f(h)); otherwise the same collision construction applies to (b_h) and the hub from the group mapping to that destination.
+
+Status: **PROVED_CONDITIONAL** on the canonical full-star model. Under the current explicit target-hub bounds, ordinary representatives exist for all sufficiently large (r).
+
+### Triangle obstruction
+
+The two hubs in the oversized group must be target-adjacent: if they were nonadjacent and share destination (B_{f(h)}), they plus an ordinary point in that group and one point from each of three groups outside ({h,f(h)}) would form a target-independent 6-set.
+
+If both oversized-group hubs and their common destination representative lie in the same non-target ideal block, their three pairwise edges are all target-colored, so they form an independent triple in that block. In a single-cover-block correction model, omitting the cover block and choosing one point from each other block yields an independent ((r+1))-set. Therefore that configuration requires either:
+- the two hubs be split across ideal blocks;
+- the block containing both hubs omit the common destination group (a nontransversal defect); or
+- at least a multi-block cover network, whose cost remains OPEN.
+
+### New implication
+
+The target cross-correction map cannot be an arbitrary star cluster. It must be a 5-cycle or a disjoint 2-cycle plus 3-cycle at the group level. This excludes the cheapest target-star clustering pattern and gives a finite structural state space for the next hub-block incidence classification.
+
+### Asset commit
+
+- `HUB_PROPAGATION_THEOREM.md`: `0c00f7715f84e7ea776e0059eed34d265d908c4d`.
+
+The abstract two-defect gadget from the previous pass remains valid only without target labels; it is not a global terminal counterexample. Full Hub Propagation and robust nonextension remain **OPEN**.
