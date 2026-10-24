@@ -105,7 +105,7 @@ For each such color, the complement is `K_{r+1}`-free and has exactly `x_i` fewe
 **Uniform partition stability is now proved.** By Füredi's quantitative Turán theorem, every non-target complement with deficit (x_i) can be made (r)-partite by deleting at most (x_i) edges. If (I_i) is the internal-edge defect and (M_i) the missing cross-pair defect, then
 `I_i<=x_i`, `M_i<=2x_i`, and the edit distance to a complete multipartite graph on that partition is `<=3x_i`. The part sizes (s_j), with (q=a), satisfy `sum_j (s_j-a)^2<=4x_i+1`.
 
-Applying the same theorem to the target complement (with (k=a), (q=r)) and summing over all colors yields a **global near-resolvable design**: at most `3S_a(r)` vertex pairs fail to belong to exactly one block across all color partitions. For fixed (a), this is (O(r)) bad pairs among (O(r^2)) total pairs.
+Applying the same theorem to the target complement (with (k=a), (q=r)) and summing over all colors yields a **global near-resolvable design**: at most `3S_a(r)` vertex pairs fail to be represented by exactly one block of their actual color and by no block of any other color. For fixed (a), this is (O(r)) bad pairs among (O(r^2)) total pairs.
 
 **Remaining gap:** turn this (O(r))-defect near-design and the predecessor-interface constraint into an (r)-vertex transversal of independent 6-sets, an earlier (R_5/R_4), or a contradiction. The exceptional-pair incidence pattern is not yet classified.
 
