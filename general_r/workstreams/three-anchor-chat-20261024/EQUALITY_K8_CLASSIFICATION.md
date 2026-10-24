@@ -110,7 +110,7 @@ Let \(s\) be the number of occupied focus slots. The focus-owner patterns alread
 
 - **\(s=0\):** the two \(V,W\) rectangle charges add to at least \(2(r-8)\). At \(r=12\), equality would force both connectors to have excess four, connector-degree zero, and zero-charge \((3,2)\) rectangles. The common-nonneighbour clique of \(V,W\) then forces each short-side rectangle vertex to meet both disjoint opposite-side rectangles, exceeding its external capacity three. For \(r\ge13\), the bound already exceeds eight.
 - **\(s=1\):** no \(K=8\) equality exists. If \(V\) owns \(X_3\) at \(r=12\), the \(W\) rectangle costs at least four. If \(U_1,U_2\) are nonadjacent, their same-anchor charges are disjoint and each costs at least three, giving total at least ten. If they are adjacent, their safe overlap charge is at least five: when both connector excesses are at most three, each sharpened local cost is at least five; if one excess is at least four, either the other connector has positive excess (so their connector-excess sum is at least five) or its zero-excess rectangle has charge at least five. Adding \(W\)'s rectangle gives at least nine. If a \(U_i\) owns the slot, the additive \(V,W\) costs already total at least nine. For \(r\ge13\), the additive pair lower bounds exceed eight.
-- **\(s=2\):** only the pattern with \(V\) owning \(X_3\) and \(W\) owning \(X_2\) can survive the local lower bounds. The two \(U\)-connectors are adjacent and nonfocused. For \(r\ge15\), the overlap inequality gives \(K\ge r-6+\max(k_1,k_2)\ge9\). At \(r=14\), equality eight forces an identical \((10,1)\) or \((1,10)\) \(R_{22}\) support and all eight units on its singleton; the opposite size-12 block again needs 24 external incidences but can receive at most twelve from the rectangle and the two focus connectors. Thus only \(r=12,13\), \(s=2\), the \(V/W\) ownership pattern remain OPEN.
+- **\(s=2\):** only the pattern with \(V\) owning \(X_3\) and \(W\) owning \(X_2\) can survive the local lower bounds. The two \(U\)-connectors are adjacent and nonfocused. For \(r\ge15\), the overlap inequality gives \(K\ge r-6+\max(k_1,k_2)\ge9\). At \(r=14\), equality eight forces an identical \((10,1)\) or \((1,10)\) \(R_{22}\) support and all eight units on its singleton; the opposite size-12 block again needs 24 external incidences but can receive at most twenty-two from the rectangle vertices and the two focus connectors. Thus only \(r=12,13\), \(s=2\), the \(V/W\) ownership pattern remain OPEN.
 
 ## 6. Current equality-layer verdict
 
@@ -124,7 +124,7 @@ More precisely, any remaining \(K=8\) configuration must belong to one of these 
 |---|---|
 | \(c=2,(0,0,0)\) | \(r=12\), either empty-part exceptional layer or the \((1,2)/(2,2)\) transversal-cover layer |
 | \(c=3,(0,0,1)\) | \(r=12,13,14\), exactly one pair connector focused |
-| \(c=4,(0,0,2)\) | \(r=12,f=0\) with a same-group adjacency; or \(r=12,13,f=2\) |
+| \(c=4,(0,0,2)\) | \(r=12,f=0\) with a same-group adjacency; (r=12,f=1); or (r=12,13,f=2) |
 | \(c=4,(0,1,1)\) | \(r=12,13,s=2\), \(V/W\) own the two deficit-one focus slots |
 
 This table is a **necessary-condition classification**, not a classification of realizable graphs. These remaining strata have not been fully eliminated or constructed. Accordingly, the exact \(K=8\) layer is still **OPEN_GAP**, and \(K\ge10\) is not claimed.
