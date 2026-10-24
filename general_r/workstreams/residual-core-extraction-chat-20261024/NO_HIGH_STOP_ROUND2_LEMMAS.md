@@ -365,7 +365,75 @@ Hence **`|X|<=116` for every `r>=1000`**. Every internal edge of the target comp
 
 The hub theorem is stronger than a generic (O(\sqrt r)) part-size bound: the target groups have absolute width, and all internal target defects pass through a constant-size high-cross-degree kernel. It does not yet show that all hub-protection parts have a common sink or that the `O(r)` non-target block defects meet the same kernel. A directed cycle of hub protection remains possible; the required next result is hub propagation or robust nonextension, not another stability estimate.
 
-## 6. Status ledger for this round
+## 6. Almost-complete resolvable transversal design forced by a high stop
+
+This theorem combines the predecessor label-capacity lemma with the constant-width target groups and hub cover above. It is the strongest structural consequence obtained in this round.
+
+### Theorem 8 — near-complete partial resolvable `TD(a,r)`
+
+Fix `a>=6`. For all sufficiently large `r`, any first `K_r`-free canonical stop `R_a` forces a partial resolvable transversal design on `a` target groups of sizes `r+O_a(1)` with
+
+`r^2-O_a(r^(3/2))` blocks.
+
+Every block has one vertex from each target group; any two blocks share at most one vertex; and blocks of a common non-target color form a partial parallel class.
+
+**Proof.** Let `C=binom(a,2)`. The exact excess ledger gives
+
+`sum_{i>0} x_i<=S_a(r)<=Cr` for `r>=a`.
+
+The predecessor label-capacity lemma gives
+
+`sum_{i>0} z_i=n-q_0<=ar+1<=(a+1)r`.
+
+Call a non-target color `i` good if
+
+`x_i<=2C sqrt(r)` and `z_i<=2(a+1)sqrt(r)`.
+
+By Markov counting, at most `sqrt(r)/2` colors violate the first bound and at most `sqrt(r)/2` violate the second. Therefore at least
+
+`r-1-sqrt(r)`
+
+colors are good.
+
+For a good color `i`, the exact hole identity
+
+`sum_{b in B}(a-|S_{i,b}|)=z_i-1`
+
+implies that at least `r-z_i+1>=r-2(a+1)sqrt(r)+1` of its label classes have size exactly `a`.
+
+By the hub theorem, for fixed `a` and sufficiently large `r`, there is a hub set `X` of size `O_a(1)` such that every target ideal group minus `X` is a target-color clique. At most `|X|` label classes of any one color meet `X`. Hence every good color contributes at least
+
+`r-2(a+1)sqrt(r)+1-|X|`
+
+size-`a` classes disjoint from `X`. Each such class is target-independent, so it intersects every clean target group in at most one vertex. Its size is `a`, so it is an exact transversal of all `a` groups.
+
+Classes of one color are disjoint. Classes of different colors cannot share two vertices, because their shared pair would have two distinct colors. Thus the clean transversal blocks form a partial resolvable transversal design, with at least
+
+`(r-1-sqrt(r))(r-2(a+1)sqrt(r)+1-O_a(1)) = r^2-O_a(r^(3/2))`
+
+blocks. \(\square\)
+
+### Explicit `a=6` bound
+
+For `a=6`, `S_6=14r+6<=15r` and `sum_i z_i<=6r+1<=7r`. Thus at most `sqrt(r)/2` colors have `x_i>30sqrt(r)`, and at most `sqrt(r)/2` have `z_i>14sqrt(r)`. At least `r-1-sqrt(r)` colors satisfy both bounds.
+
+For `r>=1000`, the cylinder theorem gives `|X|<=116`. Each good color therefore contributes at least
+
+`r-14sqrt(r)-115`
+
+clean transversal blocks. In total, the first-stop `R_6` contains a pairwise-linear partial resolvable transversal design on six groups of sizes `r+O(1)` with at least
+
+`(r-1-sqrt(r))(r-14sqrt(r)-115) >= r^2-15r^(3/2)-102r`
+
+blocks.
+
+Equivalently, all but `O(r^(3/2))` cross-group pairs are covered by exactly one of these clean blocks. This is a near-complete `TD(6,r)`-type geometry, not yet an exact `TD(6,r)` and not yet a contradiction.
+
+### Why this matters / remaining gap
+
+A high stop cannot be an arbitrary sparse perturbation of Turán structure: it carries almost `r^2` exact transversal blocks, arranged in almost-complete parallel classes, while all target internal defects pass through a bounded hub kernel. The next step is a **completion / robust nonextension theorem** for this near-complete resolvable transversal design, using the predecessor interface and the exact critical-core residue windows. `NO-HIGH-STOP` remains open.
+
+## 7. Status ledger for this round
 
 ### PROVED
 
@@ -388,4 +456,4 @@ The hub theorem is stronger than a generic (O(\sqrt r)) part-size bound: the tar
 \boxed{\texttt{NO-HIGH-STOP = OPEN}.}
 ]
 
-The critical-core potential has reduced the (a=6) case to four explicit residue windows, the color partitions form a global near-resolvable design with O(r) bad pairs, and all internal target-complement defects localize to at most 140 hubs when a=6 and r>=5601. No all-large-r contradiction has been established. The next highest-leverage step is to classify the hub-protection digraph and prove that it yields an earlier R5 or a contradiction.
+The critical-core potential has reduced the (a=6) case to four explicit residue windows, the color partitions form a global near-resolvable design, and any high stop forces an almost-complete partial resolvable TD(6,r) with `r^2-O(r^(3/2))` blocks plus a hub kernel of size at most 116 for `r>=1000`. No all-large-r contradiction has been established. The next highest-leverage step is a completion / robust nonextension theorem for this partial design.
