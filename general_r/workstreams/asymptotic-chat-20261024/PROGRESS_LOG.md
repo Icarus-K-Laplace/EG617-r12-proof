@@ -163,3 +163,8 @@ The clean-pair 2-SAT audit strengthens its four-block instance to six cross edge
 - Contextual cap plane and direct near-anchor route: architecture branch head a922c4d7646eb8d0087bde8547562c8aace02ee2.
 
 No unconditional all-large-r theorem was obtained. Unconditional r0 remains NOT CERTIFIED.
+
+
+### 7. Standalone common-interface asset
+
+The weighted transversal-cover proof and the C/D mappings are now recorded as a standalone theorem asset, COMMON_TRANSVERSAL_COVER_INTERFACE.md, commit 4e00edfb9e36d1078fc21af4ae2521e82a76935e. The file explicitly marks that this closes the shared counting interface only, not either terminal nonextension theorem.
