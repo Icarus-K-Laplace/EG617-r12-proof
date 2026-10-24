@@ -84,7 +84,7 @@ If successful, the large-r terminal reduces to an exact large transversal-design
 D1 remains reached conditionally. D2 is still the Chat-A interface. D3/D4 are not closed, but the large-r survivor has been reduced from arbitrary `O(r)`-defect geometry to a bounded target-hub kernel plus an `r^2-O(r)` partial resolvable TD core.
 
 
-## 2026-10-24 — Hub propagation / exact-core audit
+## 2026-10-24 — Hub propagation / exact-core audit (initial attempt; superseded below)
 
 ### Frozen source read
 
