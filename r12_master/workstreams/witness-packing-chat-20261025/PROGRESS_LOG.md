@@ -45,3 +45,13 @@ Next mathematical target: classify the E407 v=29 / 49-witness and E408 Q33 v=31 
 - Added TRANSVERSAL_BOUNDARY_AUDIT.md and extended the standard-library verifier; all arithmetic assertions passed.
 
 Current status: **OPEN / NOT_CERTIFIED**.
+
+
+## 2026-10-25 — universal E408 Q33 S0=10 exclusion
+
+- Refreshed live branch heads: emergency ad56a91c644458cb16dd590b7a4ed0e800978a81, ultimate closure 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40, zero-excess 98167ec779850a2ff57b1ec7113f939df42c35f4, master closure e46da35aedce7bbaaf11756b50192bd157956239.
+- Proved a universal capacity bound for the E408 Q33 v=31 / 56-witness boundary: any 7-transversal T is a K7, there is at most one such T, and at most four W-vertices can have U-neighbourhood T. Thus N7<=4 and S0>=10.
+- Excluded S0=10 without a four-partite assumption. Equality forces four degree-seven W vertices with a common K7 neighbourhood, twelve degree-eight vertices, exactly two T-type neighbourhoods, and ten R-only eight-set neighbourhoods. Their distinct-set intersection bound and multiplicity ledger force three disjoint sets with multiplicities (4,3,3); alpha(H)<=4 makes each set and its corresponding W group a clique, yielding K12, contrary to omega(H)<=11.
+- Added R12_E408_Q33_UNIVERSAL_S0_11.md and verify_e408_q33_universal_s0_11.py. The verifier was executed locally and returned E408_Q33_UNIVERSAL_S0_11_ARITHMETIC_OK; it checks arithmetic/case tables only, not the graph-theoretic proof.
+- Cross-audited and corrected this line's earlier shell-incidence union lemma: the exact identity is valid, but its original 11/10 support-union floors omitted up to four zero-shell-support core vertices. The safe floors are 7/6. Updated SHELL_INCIDENCE_UNION_LEMMA.md and verify_witness_packing.py; retracted the stronger unsupported numerical claim.
+- This theorem is conditional on the retained T61 / exact-129 / Q33 shell contract. The full E408 Q33 terminal, E407 Q32, E408 Q32, and original K145 theorem remain OPEN / NOT_CERTIFIED.
