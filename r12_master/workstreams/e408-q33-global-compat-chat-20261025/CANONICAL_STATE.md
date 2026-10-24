@@ -66,10 +66,10 @@ The earlier ten-witness-star file in the emergency sprint claims \(e(H[U])=135\)
 
 ## Latest isolated commits
 
-- Four-partite bound and cross-system analysis: 547cc2b2e4d02ef8027fab865ff2f2a1b343834a
-- Seven-block incidence ledger: 65e202dd4691b1444e33589a61932e18c87662e3
+- Four-partite bound and cross-system analysis: f392c169e549c68cff59caa7f27d968b0ee36d49
+- Seven-block incidence ledger: bb105ccbd3e6716aa926befbcea05c063110722b
 - Non-four-partite terminal contract: b36c1fd87d642186df78147aa203812a57f7ad15
-- Dependency audit and correction record: 2728d229eced08a1414bb794aac43ad38b769c64
-- Progress log: 96bb7d0911e7e7c685c5ee1f991c81ca8969ff36
+- Dependency audit and correction record: d6e7088605b23c68cac70cfeaa757bbbeaa47b91
+- Progress log: b9b2ebc8cc4659ca9d3c28e05f4e9d300b7d405b
 
 No graph-level contradiction or independently replayed UNSAT certificate has been produced. The terminal remains OPEN / NOT_CERTIFIED.
