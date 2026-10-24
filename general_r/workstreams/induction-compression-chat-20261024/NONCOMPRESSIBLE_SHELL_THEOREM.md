@@ -105,3 +105,10 @@ This yields an unconditional alternative: either a repeated witness color has b_
 For any same-color witness pair, the bipartite graph between their residual symmetric differences has a perfect matching; the same holds for the full witness symmetric differences. This strengthens the previous edge lower bound, but does not yet rule out the private-witness configuration.
 
 Case A is separately audited in COLORED_WITNESS_EDGE_BUDGET.md; its colored packing inequalities do not contradict the global color-edge floor.
+
+
+## Round 2 geometry corollary
+
+The residual budget yields more than a repeated-color dichotomy. Put q=r-1. Among the q colors i!=c, at least ceil(q/2) have b_i<=q-2. For q>=3 each has a q-clique partition of R by Brouwer's threshold, and any two such partitions are orthogonal. Thus Case B forces a q-net with at least ceil(q/2) directions. See Theorem J.W5 in ALIGNMENT_FREE_WITNESS_RIGIDITY.md, commit 009a546cf0d66e4060a601bba168674214e7ac6c.
+
+The net yields at least ceil(q/2)-2 mutually orthogonal Latin squares. For q=10, this would imply three MOLS(10), whose existence is open; this is a conditional design-theoretic implication, not a contradiction. No Kakeya bound is licensed because the net blocks have not been proved to lie in a shell.
