@@ -203,7 +203,61 @@ q_0+\sum_i z_i=n= S_{a+1}(r)-S_a(r).
 
 This is a genuine first-stop constraint: the predecessor interface is a near-permutation matrix, with one target edge per column or one duplicated non-target color. It gives a precise starting point for the (K_r)-transversal / label-class route, but no transversal theorem has yet been derived from it.
 
-## 4. Status ledger for this round
+## 4. Uniform partition stability from Füredi's theorem
+
+External theorem used: Füredi's quantitative Turán stability bound, explicitly recalled in Balogh–Clemen–Lavrov–Lidický–Pfender, *Making K_{r+1}-free graphs r-partite*, Combinatorics, Probability and Computing 30 (2021), 609–618, DOI [10.1017/S0963548320000590](https://doi.org/10.1017/S0963548320000590), §1: if a K_{k+1}-free graph F has e(F) >= t_k(n)-x, then at most x edges need to be deleted to make F k-partite.
+
+### Theorem 3 — quantitative partition stability for every color
+
+Let n=ar+1. For each color i, put k_0=a for the target color and k_i=r for non-target colors. Let G_i be its color graph on R_a and F_i=bar(G_i). Then F_i is K_{k_i+1}-free and
+
+`e(F_i)=t_{k_i}(n)-x_i`.
+
+Füredi's theorem supplies a partition P_i into k_i parts. Let:
+
+- I_i be the number of F_i-edges internal to parts;
+- M_i be the number of missing F_i-edges across parts;
+- Delta_i be the edge deficit of the complete k_i-partite graph on those same parts from t_{k_i}(n).
+
+Then
+
+`I_i<=x_i`,
+`Delta_i+M_i=x_i+I_i<=2x_i`,
+`Delta_i<=2x_i`, `M_i<=2x_i`,
+
+and the edit distance from F_i to the complete multipartite graph on P_i is
+
+`I_i+M_i<=3x_i`.
+
+Because n=ar+1 and k_i is either a or r, the balanced part sizes are one part of size q+1 and all other parts of size q, where q=r for i=0 and q=a for i>=1. If s_j are the actual part sizes and d_j=s_j-q, then sum d_j=1 and
+
+`sum_j d_j^2=2 Delta_i+1<=4x_i+1`.
+
+Consequently:
+
+- at most `4x_i+1` parts differ from size q;
+- every part differs from q by at most `floor(sqrt(4x_i+1))`;
+- each color's complement is within `3x_i` edge edits of a complete multipartite graph on the same vertex set.
+
+This is a uniform-in-r quantitative stability theorem; it does not rely on a fixed-r Erdős–Simonovits constant.
+
+### Theorem 4 — global near-resolvable design
+
+Apply Theorem 3 simultaneously to the target and all non-target colors. Since `sum_i x_i=S_a(r)`,
+
+`sum_i I_i<=S_a(r)`,
+`sum_i M_i<=2 S_a(r)`,
+`sum_i (I_i+M_i)<=3 S_a(r)`.
+
+Call a vertex pair bad if it belongs to no block in the collection of all color partitions, or belongs to blocks of at least two different color partitions. Every bad pair is charged to at least one defect edge counted among the I_i or M_i. Therefore
+
+`# bad pairs <= 3 S_a(r) = 3[(binom(a,2)-1)r+a]`.
+
+Thus the target partition into a row-blocks and the r-1 non-target partitions into r block-classes form an **approximate pairwise balanced / resolvable design**: all but O(a^2 r) of the O(a^2 r^2) vertex pairs lie in exactly one block. Across all color partitions, only O(a^2 r) internal or cross-edge defects occur. For fixed a, the proportion of bad pairs is O(1/r).
+
+This is a genuine structural upgrade from near-extremality in edge count. It still does not imply an exact transversal design or an earlier R_5/R_4 state: the allowed O(r) exceptional pairs are on the same scale as the missing-parallel-class deficit, so their concentration and incidence pattern must be analyzed rather than ignored.
+
+## 5. Status ledger for this round
 
 ### PROVED
 
