@@ -200,7 +200,7 @@ Since the balanced part sizes are q+1 once and q otherwise (q=r for the target p
 
 `sum_j (s_j-q)^2<=4x_i+1`.
 
-Summing over all colors and using `sum_i x_i=S_a(r)`, at most `3S_a(r)` vertex pairs fail to belong to exactly one block across all color partitions. Thus the target a-partition and the r-1 non-target r-partitions form a global approximate pairwise-balanced/resolvable design with O(a^2 r) bad pairs among O(a^2 r^2) total pairs.
+Summing over all colors and using `sum_i x_i=S_a(r)`, at most `3S_a(r)` vertex pairs fail to be represented by exactly one block of their actual color and by no block of any other color. Thus the target a-partition and the r-1 non-target r-partitions form a global approximate pairwise-balanced/resolvable design with O(a^2 r) bad pairs among O(a^2 r^2) total pairs.
 
 File: `NO_HIGH_STOP_ROUND2_LEMMAS.md`.
 
