@@ -116,3 +116,8 @@ It **still requires**:
 2. D_low: exclude the finite-offset near-anchor terminal family above.
 
 No unconditional r0 has been certified.
+
+
+## Round 3 — forced hub
+
+The low-offset family is now reduced to one structural condition: every surviving terminal has some h outside T union W with d_F(h,W)>=floor((r-j)/4)+1. This is proved by the exact duplicate-anchor incidence count. The next missing theorem is to exclude this hub under full colour ownership; D_low and A_ext* remain OPEN. No unconditional r0 is certified.
