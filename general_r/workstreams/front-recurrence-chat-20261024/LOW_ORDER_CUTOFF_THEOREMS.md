@@ -180,3 +180,72 @@ indices modulo 5, so only \(3^5=243\) count vectors need checking.
 - General-r improvements to the five edge-floor seed coordinates: **OPEN**.
 - All-state outer-budget dominance: **OPEN**.
 - Explicit all-large-r EG617 contradiction: **NOT PROVED**.
+
+## 7. Reproducible finite verifier for the r=4,5 examples
+
+The following standalone Python check exhausts all subsets of the two finite graphs and verifies the listed induced-cap tables. It is only a finite counterexample verifier, not part of the all-r proof.
+
+```python
+from itertools import combinations
+from math import comb
+
+def p_r(n, r):
+    q, b = divmod(n, r)
+    return r * comb(q, 2) + b * q
+
+def D_r(n, r):
+    return comb(n, 2) - (r - 1) * p_r(n, r)
+
+def alpha(n, edges):
+    best = 0
+    for mask in range(1 << n):
+        S = [v for v in range(n) if (mask >> v) & 1]
+        if all(tuple(sorted((u, v))) not in edges
+               for u, v in combinations(S, 2)):
+            best = max(best, len(S))
+    return best
+
+def complement(n, edges):
+    return {(u, v) for u in range(n) for v in range(u + 1, n)
+            if (u, v) not in edges}
+
+def audit(r, H):
+    n = 2 * r
+    J = complement(n, H)
+    assert alpha(n, J) <= 2
+    assert alpha(n, H) <= r - 1
+    assert alpha(n, H) == 3 if r == 4 else alpha(n, H) == 4
+    table = []
+    for m in range(1, n + 1):
+        maxima = []
+        for S in combinations(range(n), m):
+            maxima.append(sum(tuple(sorted((u, v))) in J
+                              for u, v in combinations(S, 2)))
+        max_e = max(maxima)
+        assert max_e <= D_r(m, r)
+        table.append((m, max_e, D_r(m, r)))
+    return J, table
+
+# r=4: triangle-free cubic graph on 8 vertices.
+H4 = {tuple(sorted(e)) for e in [
+    (0,1), (0,2), (0,3), (1,4), (1,6), (2,4),
+    (2,7), (3,5), (3,7), (4,5), (5,6), (6,7)
+]}
+J4, table4 = audit(4, H4)
+assert len(H4) == 12 and len(J4) == 16
+
+# r=5: balanced blow-up of C5, with two vertices per part.
+H5 = set()
+for i in range(5):
+    for j in ((i + 1) % 5, (i - 1) % 5):
+        for u in (2*i, 2*i+1):
+            for v in (2*j, 2*j+1):
+                if u < v:
+                    H5.add((u, v))
+H5 = {tuple(sorted(e)) for e in H5}
+J5, table5 = audit(5, H5)
+assert len(H5) == 20 and len(J5) == 25
+
+print("r=4:", table4)
+print("r=5:", table5)
+```
