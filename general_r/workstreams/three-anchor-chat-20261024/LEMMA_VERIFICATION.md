@@ -176,7 +176,7 @@ This closes \(c=2\) without the unexplained connector-budget step in the earlier
 ## 8. Boundary arithmetic cross-checks
 
 The script ARITHMETIC_AUDIT.py independently enumerates the exact local degree equations and \(K\le6\) relaxations for the delicate \(r=12,13\) cases:
-- \(c=3,r=12\): the only local low-budget signatures are the 19 rows printed by the script; the only local-cost-five signature is \((k,\gamma,a,b,n_2)=(5,0,2,2,0)\), and the only one-neighbor exception is \((6,0,2,2,1)\).
+- \(c=3,r=12\): the only local low-budget signatures are the 19 rows enumerated by the script and tabulated in PUBLICATION_VERSION.md; the only local-cost-five signature is \((k,\gamma,a,b,n_2)=(5,0,2,2,0)\), and the only one-neighbor exception is \((6,0,2,2,1)\).
 - \(c=3,r=13\): the only mixed-focus low-budget signature is \((k,\gamma,a,b,n_2)=(6,0,2,2,0)\).
 - \(c=4,(0,0,2),r=12\): the only adjacent-connector local equality with \(\gamma\ge1\) and \(k+R_{24}\le3\) is \((k,\gamma,a,b)=(3,1,4,2)\).
 - \(c=4,r=12\): the only arithmetic overlap relaxations have \(k_1=k_2=0\), \(\gamma_1=\gamma_2=1\), and each rectangle oriented \((1,8)\) or \((8,1)\). Mixed orientations are not actual \(K=6\) configurations: their six-unit charges lie on distinct vertices and add to at least twelve. If the orientation is the same but the charged singleton differs, the same contradiction applies; if the singleton is shared but the eight-set differs, that singleton would need more than its available external eight slots. Thus the two rectangles must have identical orientation and support.
