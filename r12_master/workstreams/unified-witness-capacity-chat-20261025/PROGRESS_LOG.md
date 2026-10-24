@@ -38,3 +38,11 @@
 - For a selected exact-129 witness labelled b, the label anchors it directly only to pairs containing b, at most \(\mu(Q)-1\le9\) pairs. Arbitrary pair witnesses from the zero-excess theorem remain unlabelled, so they cannot be charged to the exact-129 component budget without a label-transfer lemma.
 - Re-recorded the hub-complete implication: if the two rows' missing-hub sets cover S, any common independent-four witness must hit all three hubs. The template counts 39/17/39/9 are pair certificates, not distinct Q sets.
 - The strict multiplicity audit closes a potential overcounting error but does not yield a contradiction. Status remains OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 — label-only relaxation audit
+
+- Constructed an explicit 8-by-7 label array for the Q33 four-partite contract: seven pivot rows use p once plus six distinct B labels, one non-pivot row uses seven B labels, every D column uses p plus all seven B labels, and each of the seven B labels and p occurs seven times.
+- Independently checked row distinctness, column distinctness, and symbol frequencies. Result: all checks pass.
+- Scope warning: this is only a label-array relaxation. It does not assign the actual three large-part coordinates of the 56 witness K4s and therefore is not a witness-hypergraph realization. It proves that label counts alone cannot close the four-partite branch.
+- Added the label-array check to the independent arithmetic verifier.
