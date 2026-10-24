@@ -111,7 +111,7 @@ A fixed blocked coordinate can be covered by a local 9-edge two-coordinate barri
 
 ## 9. Target-star incidence constraint
 
-Under the full-star model, the five group-level destinations form a derangement permutation, not an arbitrary functional digraph. If two groups share a destination, their two internal missing pairs plus two ordinary singleton choices outside the source groups and the omitted destination give a target-independent 6-set.
+Under the **exact hub-star model** (every target cross-group edge is in the specified stars, with no additional cross edges), the five group-level destinations form a derangement permutation, not an arbitrary functional digraph. If two groups share a destination, their two internal missing pairs plus two ordinary singleton choices outside the source groups and the omitted destination give a target-independent 6-set.
 
 The oversized group’s second hub must share the same destination as its first hub, and the two hubs must be target-adjacent. If the two hubs and the common destination representative occur in one non-target ideal block, that block has a triangle of target-colored pairs; under a single-cover-block model this creates an independent triple that can be extended to an independent ((r+1))-set by omitting the cover block.
 
