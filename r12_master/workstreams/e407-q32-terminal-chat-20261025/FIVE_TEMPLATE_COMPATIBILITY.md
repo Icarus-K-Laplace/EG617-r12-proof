@@ -40,7 +40,7 @@ The new conditional theorem in FOUR_PARTITE_TERMINAL.md proves that \(\delta=16\
 - exactly five cross edges in \(H[U]\), forming a matching from the 8-part to the three 7-parts;
 - \(H[W]=K_5\cup K_5\cup K_4\cup K_4\);
 - all five 8-part endpoints have the same \(K_4\) as their exact \(W\)-neighbourhood;
-- that \(K_4\) is complete to the 8-part; the remaining \(K_4,K_5,K_5\) every vertex in the remaining components is complete to a 7-part. Labels may vary vertex-by-vertex, and a component-wide bijection is not proved.
+- that \(K_4\) is complete to the 8-part; every vertex in the remaining \(K_4,K_5,K_5\) components is complete to a 7-part. Labels may vary vertex-by-vertex, and a component-wide bijection is not proved.
 
 This reduces the extreme \(\delta=16\) case to a specific labelled incidence kernel. It does not yet show the kernel conflicts with any one of templates A–E.
 
