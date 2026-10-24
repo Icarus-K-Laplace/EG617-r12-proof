@@ -153,3 +153,89 @@ For `n=r^2+1`, if `s_i=e(G_i)-p_r(n)>=0`, then exactly
 > **`sum_i s_i=r^2(r-1)/2`.**
 
 Average slack is `C(r,2)`. Ordinary single-colour stability therefore leaves `Theta(r^2)` edits per colour; the front/design route needs a genuinely multicolour compatibility gain.
+
+
+## 8. Exact d2 scalar-boundary audit: the proposed linear margin is not derivable
+
+The current exact one-loss d2 identities are
+\[
+W=K+2r-2+a+b,\qquad W\ge3r-2,
+\]
+hence (K+a+b\ge r), with (b\in\{0,1\}). The inherited scalar bounds also include
+\[
+K\le2r-2,\quad q+\epsilon=3r+3-K/2,
+\]
+and, in the d2 view,
+\[
+q=2r-2+a+B,\qquad
+K\le2r+10-2a-2B.
+\]
+
+For every even (r\ge68), the following integer parameter family satisfies all of those recorded scalar constraints:
+\[
+\epsilon=0,\quad a=2,\quad b=0,\quad
+K=r-2,\quad B=r/2+4,\quad q=5r/2+4.
+\]
+Checks:
+- (q=2r-2+a+B=5r/2+4);
+- (q+\epsilon=3r+3-K/2=5r/2+4);
+- (W=K+2r-2+a+b=3r-2), exactly the required lower bound;
+- (2r+10-2a-2B=r-2=K), equality in the recorded K upper bound;
+- (8\le K\le2r-2) and (q\le3r-1) for (r\ge10);
+- (K+a=r).
+
+Therefore no fixed (c>0) and fixed (C) can make
+\[
+K+a\le(1-c)r+C
+\]
+a consequence of the current scalar ledger: the displayed family violates it for all sufficiently large even (r).
+
+**Boundary of this audit:** this is a parameter-level near-counterfamily, not a constructed legal graph or a disproof of a stronger graph-theoretic theorem. A valid proof of the desired margin must use a structural condition not included in the scalar identities.
+
+## 9. Owner-demand/capacity fallback
+
+Define (N) as the number of owners in one common-S family in a legal residual. The proved multicolour capacity is
+\[
+N_{\mathrm{capacity}}(r,\epsilon)
+\le\left\lfloor
+\frac{r-3+2\epsilon+\epsilon\sqrt{4\epsilon+1}}2
+\right\rfloor,
+\]
+so (N_{\mathrm{capacity}}=r/2+O_\epsilon(1)) for fixed residual deficit (epsilon).
+
+The missing input is an owner-demand theorem forcing some common-S family to have
+\[
+N_{\mathrm{required}}>(1/2+c)r-O_\epsilon(1)
+\]
+for a fixed (c>0), or a comparable strict gap. No such demand theorem is currently proved. The older hereditary sunflower bounds (N\le r-3+o(1)) for d2 and (N\le r-4+o(1)) for d3 have slope one and do not contradict a linear demand. Thus this fallback remains OPEN rather than a completed alternative.
+
+For the a=2 clean-pair block family, the block count (m) is a different quantity from common-S owner multiplicity (N); no identification between them is assumed. The current clean-pair capacity interval (4r/3+3\le m\le\lfloor3(r-1)/2\rfloor) is nonempty.
+
+## 10. Common weighted transversal-cover theorem
+
+**Lemma (TCC).** Let (G) be a graph and (B_1,\ldots,B_s) pairwise disjoint nonempty vertex sets. If every transversal (x_i\in B_i) contains at least one edge of (G), then
+\[
+1\le\sum_{1\le i<j\le s}
+\frac{e_G(B_i,B_j)}{|B_i||B_j|}.
+\]
+Proof: choose each (x_i) independently and uniformly. The number of selected cross-edges is at least one for every outcome; its expectation is the right-hand side.
+
+**Defect-pair variant.** If (uv\notin E(G)), (alpha(G)\le s+1), and (B_1,\ldots,B_s) are disjoint from ({u,v}), then every set ({u,v,x_1,\ldots,x_s}) contains an edge, so
+\[
+1\le\sum_{i=1}^s
+\frac{d_G(u,B_i)+d_G(v,B_i)}{|B_i|}
++
+\sum_{i<j}\frac{e_G(B_i,B_j)}{|B_i||B_j|}.
+\]
+
+### Exact C/D mappings
+
+- **Clean pair exchange (C):** take four clean blocks (P_i) of size two. Since (alpha(H)\le3), every one-endpoint transversal has an edge. TCC gives at least four cross-edges on each four-block subsystem. The exact 2-SAT audit strengthens this to **six** cross-edges. Double-counting gives (E_{\mathrm{cross}}\ge\binom m2). This remains compatible with the known linear capacity interval and does not close clean-pair nonextension.
+- **TD(5,r) terminal (D):** for a target-missing pair (uv) inside one target group, take one point from each of the other four groups. Since (alpha(G_0)\le5), the defect-pair TCC applies. With group sizes at least (L) and total target cross-edge budget (A), it gives
+  \[
+  d_{\mathrm{cross}}(u)+d_{\mathrm{cross}}(v)\ge L-A/L.
+  \]
+  This is the existing cylinder lower bound and bounded-hub concentration theorem. It does not by itself prove global defect-chain cost; that remains OPEN.
+- **Residual-core pivot (C common-S):** the support-transition identity (d_i(y_j)=2-|D_i\cap D_j|), owner-capacity theorem, and exact repivot transport are separate valid inputs. No theorem currently identifies the full core support system with the TD(5,r) blocks, so no such identification is made.
+
+The C/D transversal-cover interface is now precise and reusable, but the global terminal contradiction remains OPEN.
