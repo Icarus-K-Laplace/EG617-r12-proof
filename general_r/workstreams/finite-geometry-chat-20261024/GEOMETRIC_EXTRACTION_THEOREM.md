@@ -24,7 +24,7 @@ Consequently, writing e_k=m_q+q+a_k gives
 \boxed{a_k\ge q-1}
 \]
 
-for every color k that is low-slack at x. Thus if a_k<=q-2, color k is high-slack at every vertex.
+for every color k that is low-slack at x.
 
 ## Theorem K.G2 — Weighted defect-edge obstruction
 
@@ -47,6 +47,28 @@ Conditionally assume the robust shell hypergraph has matching number two, its mi
 If s_i=1 or 2, the exact small-blocker classification further confines the witnesses to at most two blocks for q>=4 (and for s_i=1 also when q=3).
 
 This is a rigorous cross-workstream bridge, but the alignment premise remains OPEN.
+
+## Theorem K.G4 — Universal global excess and local low-slack count
+
+The exact average-slack identity and the two-block degree bound imply
+
+\[
+\boxed{a_i\ge q-1\quad\text{for every color }i.}
+\]
+
+For any vertex x and threshold 1<=s<=q-2, the number of colors with s_i(x)<=s is at most
+
+\[
+\boxed{\left\lfloor\frac{q^2}{2q-s-1}\right\rfloor,}
+\]
+
+because every such color contributes at least 2q-s-1 to the degree of x. More precisely,
+
+\[
+\sum_{i:s_i(x)\le q-2}(2q-s_i(x)-1)\le q^2.
+\]
+
+Proofs and the universal excess-floor argument are in LOW_SLACK_COORDINATIZATION.md and HIGH_SLACK_ALTERNATIVE.md. This is a genuine multicolor degree-budget constraint, but does not force two low-slack colors at a common vertex.
 
 ## What is not proved
 
