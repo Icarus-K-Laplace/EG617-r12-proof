@@ -407,3 +407,28 @@ No full legal-core counterexample was constructed. The static block model remain
 - No finite r0 is certified.
 - The high-density AES branch now has an optional-degree-four theorem, an excess-charged exceptional set, and an exact no-double-counting budget; its remaining exceptional count can still be linear.
 - The low-density clean-pair branch remains open.
+
+
+### Round-5 exact-parameter follow-up
+
+Using h=r+1-2a, the off-part excess denominator is exactly
+
+3a-4-r=(r-3h-5)/2,
+
+so the exceptional-count budget sharpens to
+
+X<=floor((4r-4-2K_U)/(r-3h-5)),
+
+with denominator at least 16 throughout the stated AES high-density branch.
+
+The exact bound was propagated to the global budget, counterexample search, canonical state, closure ledger, and clean-pair nonextension note. The independent symbolic type-table audit passed all six off-part witness pairs and both residual triples per pair.
+
+Follow-up commits:
+
+- CLEAN_PAIR_GLOBAL_BUDGET.md exact h-bound: b2e8dd2ea7bbd8705eaafe8c4989e16007039aff
+- COUNTEREXAMPLE_SEARCH.md exact h-bound: 9a16ea33fd2287b508daa7b552bc1780185de24c
+- CANONICAL_STATE.md exact h-bound: 967640f3437acaa2ea9d4c5266052267d17cc4e5
+- TERMINATION_CLOSURE.md exact h-bound: b265b9d497b4e1b745f6cf40951b180970d06087
+- CLEAN_PAIR_NONEXTENSION.md exact h-bound: b32397fc4bbf75c9213bff18d2642b613874c004
+
+No new contradiction is certified.
