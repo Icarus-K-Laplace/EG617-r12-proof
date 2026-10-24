@@ -126,3 +126,44 @@ The external theorem used is M. Kang and O. Pikhurko, “Maximum K_{r+1}-free gr
 If this color i is the repeated witness color from J's Case B dichotomy, each residual witness Q_v is an independent q-set in G_i[R]. In Case 1 it is a transversal of the q blocks avoiding the q-1 defect edges. In Case 2 it either avoids the exceptional vertex and is a transversal avoiding the defect star, or contains the exceptional vertex and has one point in each of q-1 blocks, avoiding both the star and the exceptional vertex's color-i neighborhood.
 
 This is an exact finite incidence kernel at the first high-excess threshold. It is not yet excluded; if b_i>=q, the Kang–Pikhurko extremal equality classification no longer applies directly.
+
+
+## Theorem K.RM5 — Exact residual profile at q=6 (r=7), Case B
+
+Assume the tight-transversal Case B with q=6, so R has 36 vertices and six residual colors i!=c. The total residual excess satisfies
+
+\[
+\sum_{i\ne c}b_i\le\binom62=15.
+\]
+
+Let H_i be the complement of G_i[R]. Every q-partite H_i supplies a direction in a net, and these partitions are pairwise orthogonal. Four directions would give two mutually orthogonal Latin squares of order 6, which do not exist by Euler–Tarry (see Betten, *A direct proof of the non-existence of a MOL(6)*, Journal of Geometry 114 (2023), DOI [10.1007/s00022-023-00669-3](https://doi.org/10.1007/s00022-023-00669-3)). Therefore at most three H_i are 6-partite, and at least three are non-6-partite.
+
+By Brouwer's threshold, every non-6-partite H_i has b_i>=5. The budget then forces equality throughout:
+
+\[
+\boxed{\begin{aligned}
+&\text{exactly three colors have }b_i=5\text{ and non-6-partite }H_i,\\
+&\text{the other three colors have }b_i=0\text{ and give three orthogonal directions},\\
+&\sum_{i\ne c}b_i=15.
+\end{aligned}}
+\]
+
+Each of the three high colors is at the exact K.RM4 threshold, so each has the exceptional-star normal form. The three zero-excess colors partition R into three pairwise orthogonal families of six K_6 blocks: a 3-net, equivalently a Latin square of order 6.
+
+The omitted color c is also forced into an exact extremal profile. Since
+
+\[
+\binom{36}{2}=630,\qquad m_6=6\binom62=90,
+\]
+
+the six other colors use \(6\cdot90+15=555\) edges in R, so \(e(G_c[R])=75\). The full contract gives alpha(G_c[R])<=7, and 75 is exactly the Turan minimum for independence number at most 7. Hence G_c[R] is a union of seven monochromatic-c cliques of sizes
+
+\[
+\boxed{6,5,5,5,5,5,5.}
+\]
+
+The 6-clique is a full transversal of the three 6-by-6 directions; each of the six 5-cliques is a near-transversal of all three directions. These seven blocks partition all 36 points.
+
+Finally, J's witness-color dichotomy sharpens in this profile. Either at least one zero-excess color has two or more private witnesses, whose residual Q_v are transversals of that direction; or all three zero-excess colors occur at most once among the 14 witness roots, so at least 11 roots use the three high colors and one high color has at least four witnesses. That high color has the exceptional-star form above.
+
+This is a finite incidence kernel for the r=7 Case B, not a contradiction. The one-transversal-plus-six-near-transversal decomposition is not itself an orthogonal mate, so Euler–Tarry cannot be applied to exclude it. Case A is not covered.
