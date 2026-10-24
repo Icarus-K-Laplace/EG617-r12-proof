@@ -64,7 +64,7 @@ Equivalently,
 
 exactly, and the transformation is an involution.
 
-Proof: the other `m-1` class owners become d0. Conversely every d0 vertex in the y-view becomes an `(S,D)` owner after the inverse repivot, so there can be no additional d0 vertices. The reverse-class statement follows symmetrically.
+Proof: the other `m-1` class owners become d0. Conversely every d0 vertex in the y-view becomes an `(D,S)` owner after the inverse repivot, so there can be no additional d0 vertices. The reverse-class statement follows symmetrically.
 
 ### Exact zeta trichotomy on a q/tau-flat class move
 
@@ -106,7 +106,51 @@ The exact involution furthermore collapses each balanced repeated correction orb
 
 Thus repeated-support cycle length is no longer a source of complexity.
 
-## 5. Candidate fourth coordinate
+## 5. Exact fourth coordinate: plateau distance-one population
+
+Define
+
+`eta(p)`
+` = #{ x in A_p : x is regular, d_p(x)=1,`
+`      (q_x,tau_x,zeta(x))=(q_p,tau_p,zeta(p)) }`.
+
+Eta counts the degree-one neighbours of p inside the exact `Phi_3` plateau graph. It is an integer satisfying
+
+`0<=eta<=r+1`.
+
+Therefore
+
+> **`Phi_4=(q,tau,zeta,eta)`**
+
+is a genuine bounded lexicographic potential.
+
+### Exact d2 intersection transport
+
+Fix a neutral-free (`zeta=0`) `Phi_3`-flat d2 common-S family with distinct core supports `D_i`.
+
+After repivot through support `D_i`, another same-class owner with support `D_j` has exact new missing degree
+
+> **`2-|D_i intersect D_j|`.**
+
+Hence a one-point support overlap becomes a d1 plateau transition.
+
+If `G_S` is the support-intersection graph, every support D satisfies
+
+> **`eta(p_D)>=deg_(G_S)(D)`.**
+
+At a `Phi_4`-maximal pivot p,
+
+> **`Delta(G_S)<=eta(p)`.**
+
+Thus arbitrary d2 overlap is paid for by an already-visible d1 plateau population. A greedy independent set in `G_S` gives a pairwise-disjoint support subfamily of size at least
+
+> **`ceil(N/(eta+1))`.**
+
+This is the first proved fourth-coordinate control on the distinct-support plateau.
+
+**Status:** `PROVED_SYMBOLIC`.
+
+## 6. Candidate fifth coordinate
 
 On an equal-q plateau K is fixed. Define
 
@@ -134,20 +178,24 @@ and
 >
 > ` -sum_{u in D_y}kappa_u^2`.
 
-Thus `(q,tau,zeta,Q2)` is well-founded. Universal Q2 monotonicity is still open.
+Thus `(q,tau,zeta,eta,Q2)` is well-founded. Universal Q2 monotonicity is still open.
 
-## 6. Current potential theorem
+## 7. Current potential theorem
 
 Proved:
 
 1. `(q,tau)` is bounded and exact.
 2. K is redundant with q.
-3. zeta is a genuine third coordinate with an **exact** class-exchange update law.
-4. `Phi_3`-flat class exchanges are characterized by `m=zeta+1`.
+3. zeta is a genuine third coordinate with an exact class-exchange update law.
+4. `Phi_3`-flat class exchanges are characterized by the exact multiplicity/zeta involution.
 5. distinct `Phi_3`-flat moves live only at `zeta=0`.
 6. balanced repeated d2 exchanges are two-chamber involutions.
-7. Q2 is an exact bounded fourth-coordinate candidate.
+7. eta is a genuine fourth coordinate measuring d1 neighbours inside the `Phi_3` plateau.
+8. d2 support overlap transports exactly into eta; at `Phi_4` maximality `Delta(G_S)<=eta`.
+9. Q2 is an exact bounded fifth-coordinate candidate.
 
-The remaining potential blocker is therefore narrower than before:
+The remaining potential blocker is now narrower:
 
-> classify the neutral-free (`zeta=0`) fully-decorated **distinct-support** d2 plateau and find a fourth coordinate or finite structural reduction; separately eliminate the already-classified Balanced Two-Chamber terminal.
+> the first scalable distinct-support terminal begins at d2 allowance `a=2`; its large disjoint clean subsystem is the rigid Clean Pair-Exchange Orbit of `A2_CLEAN_PAIR_EXCHANGE_ORBIT.md`.
+
+The next potential question is whether Q2, or a simpler block statistic of the clean pair orbit, strictly improves unless that pair design is itself impossible.
