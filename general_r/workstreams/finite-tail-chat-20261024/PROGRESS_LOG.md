@@ -220,3 +220,12 @@ No new EG617(r) theorem is claimed.
 ### Source-provenance precision
 
 The admission matrix now binds both the endpoint generator's pinned broad ANCHOR_K8 source (`cd38647f85de9827a784288e69bad7a66d1e4e3a`) and the latest asymptotic status sync (`aa7fbbda16ff0170c9bf7c440ca961a7a8aab3c0`). The exact-three-anchor theorem remains a separate r>=12 source with its own premise. Every source record now carries `local_audit_status`, so upstream proof existence is not mislabeled as a proof rederived by this workstream.
+
+
+### Fixed-parameter source check — front recurrence
+
+The admission registry now has eight source records. The two additions are:
+- `FRONT_RECURRENCE_TERMINATION`: potential decreases for every r>3 conditional on a finite sound seed/cutoff package; the seed package and original-graph bridge remain open.
+- `LOW_ORDER_CUTOFF_THEOREMS`: M_r(2), M_r(3) cutoffs apply for r>=6 inside the abstract recurrence state contract. The r=4,5 examples are not original graph colorings.
+
+Thus r=6,...,11 have useful recurrence sublemmas, but no complete original-graph reduction; r=4,5 also remain blocked, and their abstract-state examples do not refute EG617(r). Matrix version: 1.1.0.
