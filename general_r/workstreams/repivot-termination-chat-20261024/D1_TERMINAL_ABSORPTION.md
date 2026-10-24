@@ -118,7 +118,7 @@ so c is bounded by a constant depending only on epsilon. If c>=2, the excess bou
 
 ## 7. Coupling status with the clean-pair kernel
 
-The clean-pair Round-2 result provides a separate high-density constraint: optional block-cross degree is at most four, while any outside vertex that fails to see a whole AES part pays excess at least 3a-4-r>=8. These constraints do not yet imply that a d1 support class must become a clean-pair d2 class. The missing step is still a certified transition that couples the d1 singleton supports to the d2 pair-exchange orbit without assuming an unproved shared charge deficit.
+The clean-pair Round-2 result provides a separate high-density constraint: optional block-cross degree is at most four, while any outside vertex that fails to see a whole AES part pays excess at least 3lambda-4-r>=8. These constraints do not yet imply that a d1 support class must become a clean-pair d2 class. The missing step is still a certified transition that couples the d1 singleton supports to the d2 pair-exchange orbit without assuming an unproved shared charge deficit.
 
 Status remains **OPEN** for every fixed c>=1. No absolute N bound is certified.
 
