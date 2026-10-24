@@ -74,7 +74,7 @@ SOURCE_REGISTRY = [
         "source_id": "EXACT_THREE_ANCHOR_K8",
         "theorem_statement": "For every integer r>=12, if H has 3r-1 vertices, alpha(H)<=3, omega(H)<=r-1, delta(H)>=r, and contains three pairwise nonadjacent vertices of degree exactly r, then K=2e(H)-r(3r-1)>=8.",
         "parameter_applicability": {"min_r": 12, "max_r": None},
-        "proof_type": "INDEPENDENTLY_VERIFIED_ANALYTIC_AUDIT",
+        "proof_type": "ANALYTIC_THEOREM_IN_SOURCE_BRANCH_SCOPE_REVIEWED_NOT_REPROVED_HERE",
         "assumption_ids": ["CORE_CONTRACT", "THREE_PAIRWISE_NONADJACENT_DEGREE_R_ANCHORS"],
         "terminal_contract": "exact three-anchor configuration only; does not by itself establish the broader near-anchor K8 hypothesis when the three-anchor premise is absent",
         "source_branch": "workstream/general-r-three-anchor-20261024",
@@ -112,12 +112,40 @@ SOURCE_REGISTRY = [
         "local_audit_status": "source receipt blob checked; recurrence arithmetic claim retained as source receipt; original-graph bridge remains open",
         "theorem_status": "ARITHMETIC_CERTIFIED_BRIDGE_OPEN"
     }
+    {
+        "source_id": "FRONT_RECURRENCE_TERMINATION",
+        "theorem_statement": "For every integer r>3, the natural-number potential Phi_r(a,n)=(r^2+2)a+n strictly decreases on each genuine recursive dependency in the contextual recurrence; hence the recurrence terminates conditional on a finite sound seed/cutoff package. This does not prove the seed package, all-state outer-budget dominance, or the original-graph bridge.",
+        "parameter_applicability": {"min_r": 4, "max_r": None},
+        "proof_type": "PROVED_SYMBOLIC_CONDITIONAL_ON_FINITE_SEED_PACKAGE",
+        "assumption_ids": ["FINITE_SOUND_SEED_CUTOFF_PACKAGE"],
+        "terminal_contract": "contextual recurrence only; no all-state seed dominance or original graph extraction",
+        "source_branch": "workstream/general-r-front-recurrence-20261024",
+        "source_commit": "f5fd2b931049a0426cdbfadeeee6a4be740a4290",
+        "source_path": "general_r/workstreams/front-recurrence-chat-20261024/CANONICAL_STATE.md",
+        "source_blob_sha": "00d571b4ecd9e378ebc65e58ec99f9d4e06d1451",
+        "local_audit_status": "source blob and r>3 quantifier checked; termination proof not rederived here",
+        "theorem_status": "CONDITIONAL_ON_SEED_PACKAGE"
+    },
+    {
+        "source_id": "LOW_ORDER_CUTOFF_THEOREMS",
+        "theorem_statement": "For every integer r>=6, M_r(2)<=2r-1 and M_r(3)<=3r for the abstract inherited-cap recurrence state class C_r(a,n). Explicit C_r(2,2r) examples at r=4,5 show M_r(2)<=2r-1 cannot be extended to those parameters. These are contextual sublemmas, not full EG617 reductions.",
+        "parameter_applicability": {"min_r": 6, "max_r": None},
+        "proof_type": "PROVED_ANALYTIC_WITH_EXTERNAL_AES_INPUT",
+        "assumption_ids": ["INHERITED_CAP_ABSTRACT_STATE_CONTRACT", "ANDRASFAI_ERDOS_SOS_THEOREM"],
+        "terminal_contract": "abstract recurrence state only; does not prove an original-graph reduction or EG617(r)",
+        "source_branch": "workstream/general-r-front-recurrence-20261024",
+        "source_commit": "f5fd2b931049a0426cdbfadeeee6a4be740a4290",
+        "source_path": "general_r/workstreams/front-recurrence-chat-20261024/LOW_ORDER_CUTOFF_THEOREMS.md",
+        "source_blob_sha": "82c8254643fcb0f405f63fb0a37740523fff94bf",
+        "local_audit_status": "source statement and r>=6 range checked; r=4,5 counterexamples are abstract state-contract examples, not full EG617 colorings; proof not rederived here",
+        "theorem_status": "PROVED_FOR_R_GE_6"
+    }
 ]
 
 RANGES = [
-    {"range_id": "R4_TO_R11", "min_r": 4, "max_r": 11, "meaning": "No certified general-r residual-core reduction source applies; module use is schema-only unless a parameter-specific reduction is attached."},
-    {"range_id": "R12_TO_R16", "min_r": 12, "max_r": 16, "meaning": "Conditional q-ceiling/backend source applies under RC; no extracted-residual theorem source for the complete core contract; broad near-anchor K8 remains open below 68."},
-    {"range_id": "R17_TO_R67", "min_r": 17, "max_r": 67, "meaning": "Core contract follows analytically once a legal 4r+1 residual has been extracted; global extraction remains open; broad near-anchor K8 remains open."},
+    {"range_id": "R4_TO_R11", "min_r": 4, "max_r": 11, "meaning": "No general residual-core reduction applies. The M_r(2) cutoff has explicit abstract-contract counterexamples at r=4,5; recurrence sublemmas do not constitute an original-graph reduction."},
+    {"range_id": "R12_TO_R16", "min_r": 12, "max_r": 16, "meaning": "Conditional q-ceiling/backend source applies under RC; no extracted-residual theorem source for the complete core contract; broad near-anchor K8 remains open below 68; recurrence seed package/dominance remain open."},
+    {"range_id": "R17_TO_R67", "min_r": 17, "max_r": 67, "meaning": "Core contract follows analytically once a legal 4r+1 residual has been extracted; global extraction remains open; broad near-anchor K8 remains open; recurrence seed package/dominance remain open."},
     {"range_id": "R68_PLUS", "min_r": 68, "max_r": None, "meaning": "Broad near-anchor K8 source applies, but RC/front extraction and endpoint/design terminal closure remain open; no unconditional all-large-r theorem."}
 ]
 
@@ -163,7 +191,7 @@ def expected_row(r: int) -> dict[str, Any]:
                 for assumption_id in ids
             },
             "eg617_promotion_status": "OPEN",
-            "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12" if not supported else "module implication may be certified conditionally, but this does not discharge the listed assumptions or prove EG617(r)"
+            "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction" if not supported else "module implication may be certified conditionally, but this does not discharge the listed assumptions or prove EG617(r)"
         }
 
     return {
@@ -175,7 +203,10 @@ def expected_row(r: int) -> dict[str, Any]:
             "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES" if broad_anchor else "OPEN_FOR_THIS_PARAMETER",
             "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES" if supported else "NO_APPLICABLE_SOURCE_BELOW_R12",
             "asymptotic_r0": "NOT_AVAILABLE",
-            "fixed_r12_recurrence": "COMPUTATION_CERTIFIED_ARITHMETIC_ONLY_BRIDGE_OPEN" if r == 12 else "NOT_APPLICABLE"
+            "fixed_r12_recurrence": "COMPUTATION_CERTIFIED_ARITHMETIC_ONLY_BRIDGE_OPEN" if r == 12 else "NOT_APPLICABLE",
+            "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+            "front_recurrence_low_order_cutoffs": "ABSTRACT_CONTRACT_COUNTEREXAMPLES_TO_M2_CUTOFF" if r < 6 else "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+            "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
             "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -192,6 +223,8 @@ def expected_row(r: int) -> dict[str, Any]:
         },
         "global_status": {
             "asymptotic_r0": "NOT_AVAILABLE",
+            "front_recurrence_termination": "CONDITIONAL_ON_SEED_PACKAGE",
+            "full_front_recurrence_reduction": "OPEN",
             "eg617_r_status": "OPEN",
             "full_finite_tail_admitted": False
         }
@@ -211,6 +244,8 @@ def verify_matrix(matrix_path: Path) -> dict[str, Any]:
     matrix = json.loads(raw.decode("utf-8"))
     if matrix.get("schema") != SCHEMA:
         raise AssertionError("unknown matrix schema")
+    if matrix.get("matrix_version") != "1.1.0":
+        raise AssertionError("unexpected matrix version")
     if matrix.get("repository") != REPO or matrix.get("branch") != BRANCH:
         raise AssertionError("repository/branch identity mismatch")
     if matrix.get("expected_base_head") != EXPECTED_BASE_HEAD:
@@ -242,7 +277,11 @@ def verify_matrix(matrix_path: Path) -> dict[str, Any]:
             {"min_r": 68, "max_r": None, "status": "PROVED_ANALYTIC_FOR_R_GE_68"}
         ],
         "exact_three_anchor_theorem_not_substitutable_for_broad_anchor_k8": True,
-        "asymptotic_r0": "NOT_AVAILABLE"
+        "asymptotic_r0": "NOT_AVAILABLE",
+        "front_recurrence_cutoffs_status_by_range": [
+            {"min_r": 4, "max_r": 5, "status": "ABSTRACT_CONTRACT_COUNTEREXAMPLES_TO_M2_CUTOFF"},
+            {"min_r": 6, "max_r": None, "status": "PROVED_SUBLEMMA_ONLY; FULL_REDUCTION_OPEN"}
+        ]
     }:
         raise AssertionError("admission policy mismatch")
     return {
