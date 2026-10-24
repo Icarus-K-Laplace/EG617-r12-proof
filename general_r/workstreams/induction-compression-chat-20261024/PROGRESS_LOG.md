@@ -103,3 +103,12 @@ Status: alignment-free structure PROVED; Case A contradiction, Case B contradict
 - Derived J.W9: at least ceil((q+1)/2) residual directions, improving the prior lower bound for even q.
 - Derived J.W10: Case B impossible at r=7 because it would force four directions and hence two orthogonal Latin squares of order 6.
 - Case A remains open; this is not yet a full r=7 compression theorem or an all-r induction.
+
+
+## 2026-10-24 — Round 12: strict budget; r=7 Case B closed
+
+- Proved the equality case sum b_i=C(q,2) impossible by Turan equality and root-block coverage capacities.
+- Tightened the universal Case B budget to sum b_i<=C(q,2)-1 for q>=4.
+- Improved the residual-net direction count to ceil((q+1)/2).
+- Derived that r=7 Case B would force four orthogonal order-6 partitions, contradicting Euler–Tarry.
+- Boundary remains explicit: this closes only the matching-number-two/tight-transversal branch, not Case A or the complete r=7 compression implication.
