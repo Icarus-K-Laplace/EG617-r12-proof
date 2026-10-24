@@ -138,3 +138,13 @@ See R12_TRANSVERSAL_BOUNDARY_CLASSIFICATION.md and its arithmetic verifier.
 - E407 Q32's v=29, 49-witness boundary cannot have \(\delta\le1\); hence \(\delta\ge2\), where \(\delta=e(\overline{H[U]})-294\) counts complement edges not covered by the selected K4 witnesses.
 - E408 Q33's v=31, 56-witness boundary must satisfy \(2\delta+\epsilon_U\ge8\), together with \(\delta+\epsilon_U\le17\).
 - These are genuine exclusions of low-extra-edge integer profiles, but the remaining boundary kernels are OPEN. No result is transferred to E408 Q32's 285-edge core.
+
+
+## F14. E408 Q33 four-partite equality kernel excluded (2026-10-25)
+
+See R12_E408_Q33_FOUR_PARTITE_S0_10_EXCLUSION.md and verify_e408_q33_four_partite_s0_10.py.
+
+- Under L four-partite and the 31-vertex/56-witness contract, the only possible S0=10 degree pattern reduces to six D-neighborhoods, three full-large-part neighborhoods per each of A/B/C, and one exceptional size-10 hitting set.
+- The exceptional hitting set is impossible for s=0,1,2 selected D vertices, by pair-counting against the three large-part pair systems and the extra-edge budget delta<=5.
+- Thus the four-partite E408 Q33 boundary satisfies S0=epsilon_U+2*delta>=11, strengthening the sibling result S0>=10.
+- The non-four-partite E408 Q33 branch remains OPEN; no full E408 Q33 terminal is closed.
