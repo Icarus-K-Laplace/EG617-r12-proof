@@ -89,3 +89,12 @@ Threshold accounting:
 Thus the shortest conditional numeric threshold is now **67**. The unconditional Problem-617 threshold remains **NOT CERTIFIED** because A_ext* and D_low are open.
 
 The d2 scalar inequality audit is also frozen: the family K=r−2, a=2, b=0, epsilon=0, B=r/2+4, q=5r/2+4 is consistent with all currently recorded scalar bounds and has K+a=r. It is not a legal graph counterexample, but no scalar-only proof of a strict sub-r margin can be valid.
+
+
+## v5 — forced-hub low-offset reduction (2026-10-24)
+
+- Bounded-W-incidence conditional: if d_F(o,W)<=B for all outside vertices, D_low follows for r>=7+4B. Status: PROVED_CONDITIONAL.
+- Unconditional structural consequence: every surviving low-offset terminal has max_o d_F(o,W)>=floor((r-j)/4)+1. Status: PROVED_ANALYTIC.
+- D_low and A_ext* remain OPEN; unconditional Problem 617 r0 remains NOT CERTIFIED.
+- If B=6 were established, the conditional D_low threshold would be r>=31, below the existing S67-low threshold, but B=6 has not been proved for the lower offsets.
+- The inequality 2r-9 > 5(3r-1)/8 has exact integer threshold r>=68. It controls the separate K>=8 route, not S67-low.
