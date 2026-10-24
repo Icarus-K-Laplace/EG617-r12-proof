@@ -72,7 +72,7 @@ Take another vertex \(w'\) in the same \(K_4\) as \(w\). It is adjacent to those
 
 Therefore every \(w\in W\) is adjacent to all vertices of at least one \(U\)-part. Since \(|N_H(w)\cap U|\le13<14\), it is adjacent to all vertices of exactly one part.
 
-## 4. Only one endpoint split survives
+## 5. Only one endpoint split survives
 
 Let \(k\) and \(5-k\) be the numbers of cross-edge \(D\)-endpoints whose \(W\)-neighbourhoods are the first and second \(K_4\), respectively. Up to order the possibilities are \((5,0),(4,1),(3,2)\).
 
