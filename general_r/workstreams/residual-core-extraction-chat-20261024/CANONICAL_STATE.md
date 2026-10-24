@@ -226,6 +226,26 @@ File: `NO_HIGH_STOP_ROUND2_LEMMAS.md`.
 
 **Limitation:** this localizes defects but does not yet prove that all hubs protect the same part or that the first-stop state is impossible.
 
+### 9C. Exact predecessor label-capacity structure
+
+Status: **`PROVED_SYMBOLIC`**.
+
+For every non-target color `i`, let `z_i` count vertices whose cross-edges to the predecessor target clique `B=K_r` duplicate color `i`. Then
+
+`z_i>=1`, `sum_i z_i>=r-1`, and `q_0<=(a-1)r+2`,
+
+where `q_0` is the number of target-color edges from `R_a` to `B`.
+
+Proof: for each `b in B`, vertices whose unique color-`i` edge to `B` goes to `b` form a color-`i` clique. Indeed, for any pair `u,v` in that class, the `r+1` vertices `(B\\{b}) union {u,v}` already exhibit every color except possibly `i`, so `uv` must have color `i`. The class is therefore target-independent and has size at most `alpha(G_0[R_a])=a`. There are `r` such classes, while `n-z_i=ar+1-z_i` vertices have a unique color-`i` edge, forcing `z_i>=1`.
+
+More exactly, if these classes are `S_{i,b}`, then
+
+`sum_{b in B}(a-|S_{i,b}|)=z_i-1`.
+
+So each non-target color partitions all but `z_i` vertices into `r` exact monochromatic cliques of size at most `a`; when `z_i=1`, all `r` classes have size exactly `a`.
+
+File: `NO_HIGH_STOP_ROUND2_LEMMAS.md`.
+
 ### 10. Critical-core residue windows
 
 Status: **`PROVED_ANALYTIC`** as a necessary-condition reduction.
