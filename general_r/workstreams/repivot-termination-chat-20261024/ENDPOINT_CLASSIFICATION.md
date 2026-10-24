@@ -42,199 +42,250 @@ The existing symbolic Bridge-B low-charge machinery absorbs the complete `b=2` s
 
 ---
 
-## 3. High Endpoint Absolute Owner Bound
+## 3. High Endpoint Three-Owner Theorem
 
 ### Theorem
 
-Let `Y` be the set of all regular shell vertices with missing degree
+Let `Y_hi` be the set of **all** regular shell vertices with missing degree
 
 `d_y>=r-2`.
 
-Then
+Then for every `r>=12`,
 
-> **`|Y|<=7`.**
+> **`|Y_hi|<=3`.**
 
-This is a bound on the total high-endpoint population, not merely on a single common-S class.
+This is a global high-endpoint bound across all missing sets; no common-S assumption is used.
 
 ### Proof
 
-Let `G=F[Y]` be the target graph induced by the high owners.
+Assume four distinct high owners `y_1,y_2,y_3,y_4` exist, and write `Z={y_1,y_2,y_3,y_4}`.
 
-For `y in Y`, the number of target neighbours of `y` inside the whole shell is
+#### Step 1: Z contains a target edge
 
-`r-d_y<=2`.
-
-Therefore
-
-`Delta(G)<=2`.                                                    (3.1)
-
-If four vertices `y_1,...,y_4` were pairwise target-nonadjacent, the symbolic zero-gap theorem would give
+If the four vertices were pairwise target-nonadjacent, the symbolic zero-gap theorem would give
 
 `D_{y_i} intersect D_{y_j}=empty`
 
-for every `i != j`. Since `|D_{y_i}|=d_{y_i}>=r-2`, the core would contain at least
+for every `i!=j`.
+
+Since every `|D_{y_i}|=d_{y_i}>=r-2`, the core H would contain at least
 
 `4(r-2)`
 
-vertices. But `|H|=3r-1`, and
+vertices. But
+
+`|H|=3r-1`
+
+and
 
 `4(r-2)>3r-1`
 
-for `r>=8`. Hence
+for every `r>=8`.
 
-`alpha(G)<=3`.                                                     (3.2)
+Therefore `F[Z]` contains at least one target edge. Equivalently,
 
-Because a graph of maximum degree two is 3-colourable,
+`e_M(Z)<=C(4,2)-1=5`.                                      (3.1)
 
-`alpha(G)>=ceil(|Y|/3)`,
+#### Step 2: four high owners already force many shell missing edges
 
-so initially `|Y|<=9`.
+Sum their missing degrees in the shell missing graph M:
 
-We sharpen this.
+`sum_{y in Z} d_y >=4(r-2)`.
 
-If no high owner has `d=r-2`, then every high owner has target shell degree at most one, so `Delta(G)<=1`. Hence
+The number of **distinct** missing edges incident with Z is
 
-`alpha(G)>=ceil(|Y|/2)`.
+`sum_{y in Z} d_y - e_M(Z)`,
 
-Together with (3.2), this gives `|Y|<=6`.
+because an internal missing edge of Z is counted twice in the degree sum and must be corrected once.
 
-It remains to assume that some `y` has `d_y=r-2`.
+Using (3.1),
 
-For this one owner, take the singleton common-S representation. Its shell target-neighbour set
+`e(M)>=4(r-2)-5=4r-13`.                                    (3.2)
 
-`T_y=A\(S_y union {y})`
+Since
 
-has size two. The allowance identity gives
+`q=e(M)+G_A>=e(M)`,
 
-`q=3(r-2)+a_y+B_y`,
+we obtain
 
-with
+`q>=4r-13`.                                                  (3.3)
 
-`a_y=e_M(S_y)+sum_{s in S_y} sigma_s >= e_M(S_y)`.
+But hypothesis B gives
 
-Since `q<=3r-1`,
+`q<=3r-1`.
 
-`a_y+B_y<=5`,
+For every `r>=13`,
 
-and hence
+`4r-13>3r-1`,
 
-> `e_M(S_y)<=5`.                                                   (3.3)
+contradiction.
 
-Let
+Thus only the boundary value `r=12` remains.
 
-`Z_y=Y\({y} union N_G(y))`.
+#### Step 3: the r=12 equality boundary is impossible
 
-Every vertex of `Z_y` is target-nonadjacent to `y`, hence lies in `S_y`. Put `k=|Z_y|`. By `Delta(G)<=2`,
+At `r=12`, (3.3) gives
 
-`k>=|Y|-3`.
+`q>=35`,
 
-Also `Delta(G[Z_y])<=2`, so
+while the strengthened ceiling gives `q<=35`. Hence equality holds throughout:
 
-`e_F(Z_y)<=k`.
+- `q=35`;
+- `e(M)=35`;
+- `G_A=0`, so every shell vertex is regular;
+- every selected high owner has `d_y=10`;
+- `e_M(Z)=5`, so `F[Z]` has exactly one target edge;
+- every missing edge of M is incident with Z.
+
+Therefore the nine vertices of `A\Z` contain no shell missing edge. Consequently
+
+`B_0={p} union (A\Z)`
+
+is a target clique of size 10, and every vertex of `B_0` has target degree exactly `r+1=13`.
+
+Moreover `q=35` together with `K>=8` and the residual edge cap forces equality in both:
+
+`E=D_12(49)=340`, `K=8`.
+
+Hence the multicolor equality regular-clique obstruction applies and says every regular target clique has size at most
+
+`floor((r-1)/2)=5`.
+
+This contradicts `|B_0|=10`.
+
+Therefore four high owners are impossible also for r=12.
 
 Thus
 
-`e_M(Z_y)=C(k,2)-e_F(Z_y)>=C(k,2)-k=k(k-3)/2`.
-
-Together with `Z_y subset S_y` and (3.3),
-
-`k(k-3)/2<=5`.
-
-Therefore `k<=5`, and hence `|Y|<=8`.
-
-Suppose for contradiction `|Y|=8`. Then for every `d=r-2` vertex y used above all inequalities are tight:
-
-- `d_G(y)=2`;
-- `k=5`;
-- `e_F(Z_y)=5`;
-- `G[Z_y]` has five vertices, five edges and maximum degree two.
-
-Therefore `G[Z_y]=C_5`. Since every vertex of this C5 already has degree two, the C5 is a connected component of G. The remaining three vertices form another component. Because `alpha(C5)=2` and `alpha(G)<=3`, the remaining component must have independence number one, hence it is `K_3`.
-
-So
-
-`G=C_5 disjoint_union K_3`.
-
-Every vertex of G now has G-degree two. A high owner has at most two target neighbours in the entire shell, therefore every vertex of G must actually have shell target degree exactly two, i.e. every high owner has `d=r-2`.
-
-Pick a vertex z of the C5. Its five non-neighbours in G consist of
-
-- the two C5 vertices at distance two from z, which are adjacent to each other; and
-- all three vertices of the K3.
-
-Thus `Z_z` induces exactly `K_2 disjoint_union K_3`, with four target edges. Hence
-
-`e_M(Z_z)=C(5,2)-4=6`.
-
-But `Z_z subset S_z` and (3.3) applied to z gives `e_M(S_z)<=5`, contradiction.
-
-Therefore `|Y|<=7`. QED.
+> **`|Y_hi|<=3` for every `r>=12`.** QED.
 
 **Status:** `PROVED_CONDITIONAL`.
 
 ---
 
-## 4. High Endpoint Fixed-Width Incidence Kernel
+## 4. High Endpoint Bounded-Complement Reduction Theorem
 
-### Theorem
+For a high owner define
 
-Let `Y` be as above. Then the complete incidence of high owners with the shell and with their core support sets admits an r-independent bounded skeleton:
+`s_y=r-d_y`.
 
-1. `|Y|<=7`;
-2. each shell target-neighbour complement `T_y` has `|T_y|=r-d_y<=2`;
-3. the union
-   `K_A=Y union (union_{y in Y} T_y)`
-   has size at most 21;
-4. every high-owner target edge to the shell is incident with `K_A`;
-5. the core owner-incidence signatures use at most 17 classes.
+Since `d_y in {r-2,r-1,r}`,
 
-### Proof of the signature bound
+`s_y in {2,1,0}`.
 
-For `v in H`, define
+The shell target-neighbour set of y is
 
-`I(v)={y in Y : v in D_y}`.
+`T_y=A\(S_y union {y})`
 
-If x and y are target-nonadjacent high owners, the zero-gap theorem gives
+and has exactly
 
-`D_x intersect D_y=empty`.
+`|T_y|=s_y<=2`.
 
-Therefore two vertices can occur together in `I(v)` only if they are adjacent in G. Hence every `I(v)` is a clique of G.
+By the Three-Owner Theorem there are at most three high owners. Hence the entire high endpoint has the following r-independent encoding.
 
-Now `|V(G)|<=7` and `Delta(G)<=2`. The nonempty cliques of G consist only of
+### Shell kernel
 
-- singleton vertices: at most 7;
-- edges: at most 7;
-- triangles: at most `floor(7/3)=2`, because in a maximum-degree-two graph every triangle is a connected component.
+Let
 
-Thus there are at most
+`K_A=Y_hi union (union_{y in Y_hi} T_y)`.
 
-`7+7+2=16`
+Then
 
-nonempty incidence signatures, and at most 17 after adding the empty signature.
+> **`|K_A|<=3+3*2=9`.**
 
-This proves a fixed-width interaction kernel. The multiplicities of the signature classes may depend on r; the *number and combinatorial types* of classes do not.
+Every target edge from a high owner to the shell is incident with this at-most-nine-point kernel. Outside it, every shell vertex is target-nonadjacent to every high owner.
+
+### Core incidence kernel
+
+For each `v in H`, define
+
+`I(v)={y in Y_hi : v in D_y}`.
+
+Because `|Y_hi|<=3`, there are at most
+
+> **`2^3=8`**
+
+possible owner-incidence signatures.
+
+The zero-gap theorem further forbids any signature containing a target-nonadjacent pair of owners, so only clique signatures of the at-most-three-vertex owner graph actually survive.
+
+### Finite high-endpoint skeleton
+
+Thus every high endpoint is encoded by:
+
+1. at most three owners;
+2. one complement parameter `s_y in {0,1,2}` per owner;
+3. a target graph on at most three owners;
+4. shell neighbour sets `T_y` of size at most two inside a kernel of size at most nine;
+5. at most eight core incidence-signature multiplicities;
+6. the transported excess/decoration integers attached to these fixed classes.
+
+The number of combinatorial skeleton types is independent of r. Only the integer multiplicities/excess values vary with r.
+
+> **High Endpoint Reduction Theorem.** Under A+B, every `d>=r-2` local state is equivalent, for repivot-compatibility purposes, to one of finitely many bounded-complement skeletons with at most three owners and `s in {0,1,2}`.
 
 **Status:** `PROVED_CONDITIONAL`.
 
-### Consequence
-
-High-endpoint multi-pivot compatibility can be written as a finite-dimensional integer system indexed by
-
-- a graph G on at most seven vertices with `Delta(G)<=2` and `alpha(G)<=3`;
-- shell complements `T_y` of size at most two;
-- at most seventeen core incidence-signature multiplicities.
-
-Therefore the high endpoint cannot generate an r-growing case tree. What remains is to eliminate the finite family of kernel types analytically or by an O(1)-sized certificate enumeration.
+This achieves the desired fixed-width high-endpoint reduction. The remaining task is to prove improvement/contradiction for each bounded skeleton family without expanding them into an r-dependent case tree.
 
 ---
 
-## 5. Surviving endpoint families
+## 5. Exact d2 common-S charge identity
+
+Let a common-S d2 family have
+
+- `S={s_1,s_2}`;
+- `b=e_M(S) in {0,1}`;
+- owner set Y of size N;
+- leftover `L=A\(S union Y)` of size `l=r-1-N`;
+- total common-S core charge `W=sum_{v in H}(kappa_v+e_F(v,S))`;
+- allowance `a=b+sigma_{s_1}+sigma_{s_2}`.
+
+The exact common-S ledger gives
+
+`W=K+2N+G_S+2b+m_ST`.
+
+Also
+
+`sum_{s in S} sigma_s=m_ST+G_S-2l`,
+
+so
+
+`G_S+m_ST=a-b+2l`.
+
+Substitution and `l=r-1-N` yield cancellation of N:
+
+> **`W=K+2r-2+a+b`.**                                    (5.1)
+
+This is exact and independent of owner multiplicity.
+
+For a d2 exact one-loss common-hub system with three distinct support classes, the pre-existing charge barrier gives
+
+`W>=|H|-1=3r-2`.
+
+Combining with (5.1):
+
+> **`K+a+b>=r`.**                                           (5.2)
+
+Thus every three-class d2 terminal must carry linearly large total core excess/allowance. In particular, any d2 regime with `K+a+b<=r-1` has at most two nontrivial common-hub support classes.
+
+The previously known concentrated state `K=8,a=3,b=1` gives
+
+`W=2r+10`,
+
+and (5.2) immediately yields `r<=12`; this explains its exact small-r cutoff.
+
+**Status:** `PROVED_SYMBOLIC` for (5.1), `PROVED_CONDITIONAL` for the three-class consequence (uses the existing one-loss pattern theorem and charge barrier).
+
+---
+
+## 6. Surviving endpoint families
 
 After the results above:
 
 - `d=3` common-S: **closed**;
-- `d=2`: scalable and still open in general plateau equality/positive-loss form;
+- `d=2`: scalable; three-class one-loss terminals must satisfy `K+a+b>=r`; global plateau equality/positive-loss closure remains open;
 - `d=1,0`: not yet frozen in this workstream;
-- `d>=r-2`: reduced to a fixed-width kernel with at most seven owners.
+- `d>=r-2`: **reduced to a finite bounded-complement skeleton with at most three total owners**.
 
 No medium degree survives.
