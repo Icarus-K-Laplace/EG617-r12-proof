@@ -1,0 +1,191 @@
+# Canonical state — general-r residual-core extraction
+
+Workstream branch: `workstream/general-r-residual-core-extraction-20261024`
+
+Directory: `general_r/workstreams/residual-core-extraction-chat-20261024/`
+
+Last major mathematical state: 2026-10-24.
+
+## PROVED
+
+### 1. R12 provenance map
+
+Status: `PROVED_SYMBOLIC` / `SOURCE_REPORTED`.
+
+- `r^2+1`, `5r+1`, `4r+1`, `3r-1`, `r+1` have been separated from fixed-r seeds.
+- The r=12 proof of residual minimum degree is confirmed to depend on lower-order Ramsey seeds and is not itself an all-r proof.
+- File: `R12_TO_GENERAL_DEPENDENCY_MAP.md`.
+
+### 2. Outer-ray invariant and trimming normalization
+
+Status: `PROVED_SYMBOLIC`.
+
+For anchor degree `d=r-s`, after `j` extracted `K_r` blocks with `a=r-1-j`,
+
+`n=ar+s`, so `n-ra=s` is invariant.
+
+More strongly, induced-subgraph averaging collapses every `s>=1` state to the critical `s=1` state `ar+1` without worsening the canonical edge budget.
+
+Files:
+
+- `OUTER_RAY_INVARIANT.md`;
+- `ANCHOR_NORMALIZATION_AND_GREEDY_EXTRACTION.md`.
+
+### 3. Minimum-degree anchor source
+
+Status: `PROVED_ANALYTIC`.
+
+For `r>=3`, the least-color graph has a minimum-degree anchor with
+
+`d<=r-1`.
+
+Proof: averaging plus Brooks; equality `delta>=r` would make the graph r-regular while `alpha<=r` forces chromatic number at least `r+1`.
+
+### 4. General residual-core minimum degree
+
+Status: **`PROVED_ANALYTIC`**.
+
+For every `r>=17`, any graph `H` on `3r-1` vertices satisfying
+
+- `alpha(H)<=3`;
+- `omega(H)<=r-1`;
+- the inherited least-color hereditary cap
+
+must satisfy
+
+> `delta(H)>=r`.
+
+Key chain:
+
+- exact `2r` exclusion;
+- boundary `d=r-1` compressed to a non-bipartite triangle-free graph on `2r-1` with edge count `(r-1)^2` or `(r-1)^2+1`;
+- shortest odd cycle forced to `C5`;
+- remainder forced to one of three near-complete-bipartite forms;
+- hereditary cap gives every boundary row defect at most 8;
+- any complement edge inside the `r-1` neighbor set requires two row defects summing to at least `r`;
+- clique cap forces such an edge;
+- contradiction for `r>=17`.
+
+File: `CORE_MINDEG_BOUNDARY_THEOREM.md`.
+
+External inputs: Andrasfai--Erdos--Sos and the classical Erdos non-bipartite triangle-free edge bound.
+
+### 5. Full 4r+1 residual branch
+
+Status: **`PROVED_ANALYTIC`** for `r>=17`.
+
+Any induced `F` on `4r+1` vertices satisfying
+
+- `alpha(F)<=4`;
+- `omega(F)<=r-1`;
+- hereditary cap
+
+automatically has
+
+`delta(F)=r+1`.
+
+Hence it has a degree-`(r+1)` pivot `p`, and
+
+`H=F-N[p]`
+
+satisfies the complete residual-core contract
+
+`|H|=3r-1`,
+`alpha(H)<=3`,
+`omega(H)<=r-1`,
+`delta(H)>=r`.
+
+File: `RESIDUAL_BRANCH_CLOSURE.md`.
+
+### 6. Canonical greedy block extraction
+
+Status: `PROVED_SYMBOLIC` plus `PROVED_ANALYTIC` for the low end when `r>=17`.
+
+After anchor normalization, states have
+
+`|R_a|=ar+1`,
+`alpha(R_a)<=a`,
+`e(R_a)<=B_a=r((a+1)r-a+1)/2`.
+
+If `R_a` contains a target-color `K_r`, deleting it yields the next canonical state `R_{a-1}` and reduces the alpha cap by one.
+
+For `r>=17`, a canonical process cannot pass below `a=4`; reaching `R_4` forces it to be `K_r`-free and therefore gives the residual branch.
+
+### 7. Exact 5r+1 terminal
+
+Status: `PROVED_SYMBOLIC` as a terminal definition/reduction.
+
+If the first `K_r`-free canonical stop is `a=5`, then
+
+`T_r` has
+
+- `5r+1` vertices;
+- `alpha<=5`, `omega<=r-1`;
+- hereditary cap;
+- `e<=3r^2-2r`;
+- no `K_r`.
+
+If it is irreducible to Branch A, then
+
+- `alpha(T_r)=5`;
+- the hypergraph of independent 5-sets has transversal number at least `r+1`;
+- `delta(T_r)>=r`;
+- every degree-r row satisfies an explicit independent-4 witness condition.
+
+File: `FIVE_R_TERMINAL.md`.
+
+## CONDITIONAL
+
+### Complete desired front-end dichotomy
+
+Status: `PROVED_CONDITIONAL` on one remaining lemma.
+
+For `r>=17`, if the first `K_r`-free canonical greedy stop cannot occur at `a>=6`, then every hypothetical counterexample yields exactly:
+
+- Branch A: a `4r+1` residual with the fully proved `3r-1` core contract; or
+- Branch B: the exact irreducible `5r+1` terminal of `FIVE_R_TERMINAL.md`.
+
+No backend d2/d3/support theorem is used.
+
+## OPEN
+
+### Single highest-leverage blocker
+
+> **NO-HIGH-STOP LEMMA.** For `r>=r0` (ideally `r0=17`), a canonical state
+>
+> `|R_a|=ar+1`,
+> `alpha(R_a)<=a`,
+> `omega(R_a)<=r-1`,
+> hereditary least-color cap,
+> `e(R_a)<=B_a`,
+>
+> cannot be the first `K_r`-free state when `a>=6`.
+
+This is now the only obstacle to the requested `4r+1 residual OR 5r+1 terminal` extraction theorem.
+
+Secondary open questions:
+
+- Can `r>=17` in the core theorem be lowered?
+- Does the irreducible `5r+1` terminal exist?
+- Can its independent-5 hypergraph be forced into a finite-geometric/resolvable design class?
+
+## DISPROVED
+
+No mathematical theorem has been marked `DISPROVED` in this workstream yet.
+
+The following *proof shortcuts* are rejected as invalid generalizations:
+
+- substituting `r` into the r=12 47/48-vertex edge seeds;
+- claiming r=12 recurrence certification proves all-r extraction;
+- assuming `delta(H)>=r` without the theorem above.
+
+## NEXT HIGHEST-LEVERAGE TARGET
+
+Prove the **NO-HIGH-STOP LEMMA** without parameterizing the 1752-node r=12 recurrence.
+
+Preferred attack:
+
+1. use the canonical budget identity `B_a-p_a(ar+1)=C(r,2)`;
+2. exploit the full hereditary cap, not only alpha/omega;
+3. search for a weighted deletion/transversal argument reducing any `a>=6` stop to a `5r+1` terminal, or derive a contradiction directly;
+4. keep the blocker as one theorem, not dozens of local cases.
