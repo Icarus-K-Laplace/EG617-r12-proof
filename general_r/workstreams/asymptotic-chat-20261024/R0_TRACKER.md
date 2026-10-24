@@ -84,7 +84,7 @@ Threshold accounting:
 - residual 4r+1 branch: impossible once r ≥ 17, with contextual cap gap (3r−13)/2;
 - 5r+1 terminal direct near-anchor extraction: r ≥ 67, relative to Liu–Ren–Wang 2025 (classical AES fallback r ≥ 71);
 - high-degree top layer |W|=2r−1: Cell B excluded for r ≥ 16, Cell A for r ≥ 25;
-- low-degree top layer delta=r, |W|=2r−1: still OPEN and included in D_low.
+- low-degree top layer delta=r, |W|=2r−1: now PROVED impossible for r≥25 by LOW_DEGREE_TOP_LAYER_CLOSURE.md; remaining offsets stop at 2r−2.
 
 Thus the shortest conditional numeric threshold is now **67**. The unconditional Problem-617 threshold remains **NOT CERTIFIED** because A_ext* and D_low are open.
 
