@@ -49,3 +49,14 @@ d3 common-missing-triangle cases through allowance 6 are absorbed by GLOBAL_INDE
 ## F5. Original-proof dependency check: contextual R(4,49)
 
 CONTEXTUAL_R449_FULL_COLOR_IMPOSSIBILITY.md gives a short conditional contradiction: e(F)>=319 from delta(F)>=13, while the eleven non-target colors each have at least79 edges under alpha(F)<=4, alpha(C)<=12, omega(C)<=4; hence e(F)<=307. If the F5 contract is the exact original-coloring contract, the abstract R(4,49) branch is bypassed for the original theorem. The abstract E333–E340 classification can remain open without blocking the T61-only proof path. This contract correspondence must be preserved in the final DAG.
+
+## F6. Shell/core maximum-independent-set witness capacity (new proved interface)
+
+**Contract.** T61 residual F with alpha(F)<=5, omega(F)<=11; legal pivot and 13-shell A; 47-core H with alpha(H)<=4; every 49-subset has alpha at least5; inherited cap D(n)=binom(n,2)-11p_12(n).
+
+**Proved.**
+1. If a shell row has t_a<=7, then H\N_H(a) has alpha exactly4. Otherwise the second-Turan lower bound p_3(n)+floor(n/3)-1 for n=47-t_a in 40..47 exceeds D(n).
+2. Every target edge ab in F[A] has at least one good endpoint. Thus at most five shell vertices are bad and at least eight are good.
+3. Under E408 Q33/d3, the exact budget beta+X+G_B=3 forces every B-row to have t_b<=6, hence each b has an independent 4-set Q_b in H anticomplete to it. For every a in S with ab in M, Q_b intersects N_H(a). At least five B-vertices have k_b>=2, so at least five witnesses hit at least two S-rows.
+
+**Minimum remaining gap.** Prove a witness-capacity / incidence incompatibility theorem for these maximum independent 4-sets against the same 284-edge core and the seven-block color constraints. The current lemma does not imply that witness sets coincide and does not eliminate Q33.
