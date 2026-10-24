@@ -154,3 +154,8 @@ Hashes:
 The promotion gate now dispatches by immutable module ID, binds both generator and verifier hashes, and uses the same status vocabulary for different local endpoint lemmas. Unknown module IDs/assumption IDs fail closed. The gate still always blocks EG617 promotion because these modules do not provide complete graph-state exhaustion or a contradiction.
 
 The r=13 endpoint-domain receipt was refreshed to the final gate hash. Both sample receipts explicitly show `PASS_CONDITIONAL_MODULE`, `CONDITIONAL_LEMMA_CERTIFIED`, and `eg617_r_proved=false`.
+
+
+### Final multi-module CLI replay
+
+With the final module-dispatch gate, end-to-end CLI replay passed for 10 scalar-profile cases (r=12,13,14,15,68 × two profiles) and three D1 shell-bound cases (r=12,13,68). Both verifiers rejected tampered certificates. The gate returned `BLOCKED_UNKNOWN_ASSUMPTION_ID` when RC was omitted from the machine-readable ledger, and r=11 remained `SCHEMA_ONLY`. All 13 successful module runs left `eg617_r_proved=false`.
