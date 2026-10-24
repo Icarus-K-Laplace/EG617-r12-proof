@@ -103,7 +103,7 @@ where t_x is the optional cross-block target degree of x. This is an uncondition
 A necessary correction: this does **not** prove that every outside vertex sees an entire part. It may have additional neighbours in classes other than its two chosen witnesses. The correct result is the following dichotomy.
 
 - If an outside vertex has a same-part witness pair, it sees that entire part.
-- If it has no same-part witness pair, one residual class triple has one optional relation of maximum degree four, one block matching, and one empty pair. The vertex must have at least a-4 neighbours in that residual triple, so
+- If it has no same-part witness pair, one residual class triple has one optional relation of maximum degree four, one block matching, and one empty pair. The vertex must have at least lambda-4 neighbours in that residual triple, so
 
   d_H(o,U)>=3a-4, and kappa_o>=3lambda-4-r>=8.
 
@@ -111,7 +111,7 @@ If X is the number of outside vertices of the second type, then
 
 X(3lambda-4-r) <= K_O <= 2r-2-K_U.
 
-Since h=r+1-2a, equivalently X<=floor((4r-4-2K_U)/(r-3h-5)), with denominator at least 16 in this branch.
+Since h=r+1-2lambda, equivalently X<=floor((4r-4-2K_U)/(r-3h-5)), with denominator at least 16 in this branch.
 
 Thus the remaining AES terminal has a bounded-degree optional block graph and at most floor((2r-2-K_U)/(3lambda-4-r)) exceptional outside vertices. This can still be linear near the lower AES threshold, so it is a structural reduction, not nonextension.
 
