@@ -702,3 +702,83 @@ This is only an abstract design model, not a full edge-coloring or a canonical h
 ### Current status
 
 `NO-HIGH-STOP = OPEN`. The best new necessary structure is a partial resolvable `TD(6,r)`-type system with at least `r^2-112r` clean blocks for `r>=1000`, plus at most 74 target hubs. The explicit design-only model rules out using this density as a contradiction. The next task is to classify and jointly charge the `O(r)` exceptional label classes.
+---
+
+## 2026-10-24 — Round 13: missing-slot budget and a 7–28 hub kernel
+
+### NEW THEOREM A — Global missing-group-slot budget
+
+For every predecessor label class `S_{i,b}`, let `g_{i,b}` be the number of target groups it meets. With `h_{i,b}=6-|S_{i,b}|` and `c_{i,b}=|S_{i,b}|-g_{i,b}`, its missing-group slots satisfy
+
+`m_{i,b}=6-g_{i,b}=h_{i,b}+c_{i,b}`.
+
+The exact hole identity gives `sum h=5r+2-q0<=5r+2`. Every repeated-group excess `c` is charged to internal `F0` edges: for group multiplicities `t_j`, `c=sum(t_j-1)<=sum binom(t_j,2)`. Such pairs are distinct across all color classes, so `sum c<=D<=x0<=9r+11`. Therefore
+
+`W=sum m_{i,b}<=14r+13`.
+
+### NEW THEOREM B — Each hub consumes at least `(r-65)/2` missing slots
+
+For a hub `x` in group `V_j`, let `W_x` sum the missing slots of all label classes containing `x`. At most one non-target color is duplicated at `x`; write `u_x∈{0,1}` for this event. For each other group `V_k`, every class containing `x` that meets `V_k` gives a distinct non-target neighbor of `x` in that group; different colors cannot give the same neighbor because a pair has only one color. If `m_{x,k}` classes containing `x` omit `V_k`,
+
+`d_C0(x,V_k)<=s_k-r+1+u_x+m_{x,k}`.
+
+Summing over the five other groups yields
+
+`d_C0(x)<=r+6-s_j+5u_x+W_x<=19+W_x`,
+
+using `s_j>=r-8`. The existing hub threshold is `d_C0(x)>=(r-27)/2`, hence
+
+`W_x>=(r-65)/2`.
+
+### NEW THEOREM C — Finite hub kernel
+
+The total hub-slot incidence satisfies
+
+`sum_{x∈X}W_x<=W+15|X|(|X|-1)`.
+
+Indeed, a class with `k>=2` hubs contributes at most `(k-1)m<=30` surcharge beyond its one contribution to `W`; each such class contains a hub pair, and no hub pair can occur in two different color classes. Thus there are at most `binom(|X|,2)` multi-hub classes.
+
+Combining this with `W<=14r+13` gives
+
+`|X|(r-65)/2<=14r+13+15|X|(|X|-1)`.
+
+The old hub theorem gives `|X|<=74` for `r>=1000`. For `29<=k<=74`, `f(k)=k(r-65)/2-15k(k-1)` is increasing when `r>=26272`; moreover `f(29)>14r+13` for `r>=26272`. Hence `|X|<=28` in that range.
+
+For the lower bound, put `delta_j=s_j-r`, so `sum delta_j=1`. Since the target graph is `K_r`-free, `alpha(F0[V_j])<=r-1`; therefore the minimum vertex-cover number of `F0[V_j]` is at least `delta_j+1` for each `delta_j>=0`. Since `X∩V_j` covers all internal `F0` edges, summing over non-smaller groups gives `|X|>=7`. Thus
+
+`7<=|X|<=28` for `a=6,r>=26272`.
+
+### NEW CONSEQUENCE — cleaner partial design
+
+With `|X|<=28`, the non-clean class bound becomes
+
+`(5r+2)+(12/5)(13r+6)+28(r-1)<=65r`.
+
+Thus any high stop in this range forces a pairwise-linear partial resolvable `TD(6,r)` with at least **`r^2-66r` blocks**.
+
+### Independent proof audit
+
+- The hub degree inequality uses only exact class membership and uniqueness of edge colors; it does not assume all classes are clean or full.
+- The global missing-slot budget separates holes from repeated-group excess, and the latter is charged to distinct internal target-complement edges.
+- The multi-hub surcharge is bounded because a fixed pair of hubs can share at most one monochromatic label class.
+- The lower bound `|X|>=7` uses only the target `K_r`-free condition plus the existing statement that every internal target-complement edge meets `X`.
+- The constants were checked at the endpoint `r=26272`: the inequality already excludes `|X|=29`, and monotonicity excludes all `29..74`.
+
+### Status
+
+- Missing-slot budget: `PROVED_ANALYTIC`.
+- Hub slot-consumption inequality: `PROVED_ANALYTIC`.
+- `7<=|X|<=28` for `a=6,r>=26272`: `PROVED_ANALYTIC` conditional on earlier stability/hub-cover lemmas.
+- Partial-design lower bound `r^2-66r`: `PROVED_ANALYTIC` conditional on the earlier alignment theorem.
+- `NO-HIGH-STOP`: **`OPEN`**. The hub kernel is finite but nonempty; the exceptional label classes are still not excluded.
+
+### GitHub commits
+
+- theorem file: `1946183077f52b30dc0a15fcfd63fecd1032b407`
+- canonical state: `326f85832f0700fe90946b067312294817b850af`
+- open gaps: `1e74eb8f448389dbb3509e47ebef8bcd03bd42ee`
+- progress log: this update
+
+### Next highest-priority task
+
+Use the fact that each of the 7–28 hubs has a missing-slot incidence of at least `(r-65)/2`, but the global slot budget is only `14r+13` plus the finite multi-hub surcharge. Classify the equality regime in this incidence inequality and determine whether the resulting 7–28 group-local hub pattern forces a rainbow-star / resolvable terminal or contradicts the exact predecessor-label pair obstruction. Do not revert to a scalar-only argument.
