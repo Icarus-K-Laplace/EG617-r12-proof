@@ -28,6 +28,7 @@ These are the latest heads observed in the repository at the time of this update
 - If \(\delta=16\), \(L=\overline{H[U]}\) is four-partite because it has 310 edges, exceeding the non-four-partite Brouwer threshold 309. The resulting \(7,7,7,8\) core is narrowed but **not excluded**: the \(4+1\) and \(3+2\) endpoint splits are impossible, while the \(5+0\) split remains open because the three non-endpoint \(D\)-vertices already meet the endpoint \(K_4\) and each has only one additional \(W\)-neighbour.
 - In that case, \(U\)-part sizes are \(7,7,7,8\), \(H[W]=K_5\cup K_5\cup K_4\cup K_4\), and the five cross edges in \(H[U]\) form a matching between the 8-part and the three 7-parts.
 - A reverse-saturation lemma additionally proves every vertex of W is adjacent to all vertices of exactly one U-part; this is needed for the endpoint-split argument.
+- New exact witness-array identity: for each D-vertex d, its number of missing small-part partners equals the number of exact-129 color classes omitting d. These multiplicities sum to 7; the five endpoint D-labels contribute at least 5, so at least three have multiplicity exactly 1 and at least one non-endpoint D-label has multiplicity 0. See DELTA16_WITNESS_ARRAY.md.
 - The five 8-part endpoints all have the same \(K_4\) as their exact \(W\)-neighbourhood; this \(K_4\) is complete to \(D\). Each vertex in the remaining \(K_4,K_5,K_5\) components is complete to some 7-part, but the full-part labels may vary vertex-by-vertex; no component-wide bijection has been proved.
 
 ## Status by case
