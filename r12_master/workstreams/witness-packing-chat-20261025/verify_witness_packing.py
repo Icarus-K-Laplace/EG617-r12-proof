@@ -83,10 +83,11 @@ def main() -> None:
     # e(A,H)=32+e(M), so the excess shell-incidence budget is e(M)-15.
     # For full rows (k_b=3), |union D_b| >= 15-beta-c_rest.
     assert 32 + 22 - 47 == 7  # example A profile: e(M)=22
-    assert 15 - 0 - 4 == 11  # Template A, n1<=4
-    assert 15 - 1 - 4 == 10  # Template C, beta=1, n1<=4
-    assert 11 > 3 and 10 > 3
-    print("Full-row support union: Template A >=11; Template C >=10")
+    # Up to four core vertices may have zero shell support; subtract z<=4.
+    assert 15 - 0 - 4 - 4 == 7  # Template A, n1<=4, z<=4
+    assert 15 - 1 - 4 - 4 == 6  # Template C, beta=1, n1<=4, z<=4
+    assert 7 > 3 and 6 > 3
+    print("Audited full-row support union: Template A >=7; Template C >=6")
 
     # Audit the m=10 star lemma's second-Turan inference. If e(H[U]) <=143,
     # then its complement has >=292 edges, above the non-tripartite bound
