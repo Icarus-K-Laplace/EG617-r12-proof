@@ -6,7 +6,7 @@ Scope: parameter compression r -> r-1 or r-c. Do not duplicate residual-core ext
 
 ## Current status
 
-**J1: achieved.** The exact shell criteria and the first noncompressibility structure theorem are proved.
+**J1: achieved.** The exact shell criteria and the noncompressibility packing/tight-transversal theorem are proved.
 
 **J2/J3/J4: OPEN.** No theorem yet proves that a hypothetical counterexample at r yields one at r-1.
 
@@ -23,22 +23,33 @@ Let I_i be the r-uniform hypergraph of independent r-sets in color graph G_i.
 
 The shell size is 2r-1 because r^2+1-(2r-1)=(r-1)^2+1.
 
-## New theorem: noncompressible shell => packing or tight critical transversal
+## Noncompressible shell => packing or tight critical transversal
 
 For a fixed c, let H_{-c}=union_{i != c} I_i. If no robust shell of size 2r-1 exists, then tau(H_{-c})>=2r.
 
 - If the matching number is at least three, there are three pairwise disjoint independent r-sets S_a in colors i_a != c. The counterexample property forces at least r edges between S_a and S_b in each distinct designated color among {i_a,i_b}; every outside vertex has at least one edge of color i_a into each S_a.
-- If the matching number is exactly two, the union X of a maximum matching is a minimum transversal of size 2r. Every v in X has a private witness T_v independent in some color i_v != c with T_v intersect X={v}; its other r-1 vertices lie in R=V\X.
+- If the matching number is exactly two, the union X of a maximum matching is a minimum transversal of size 2r. Every v in X has a private witness T_v independent in some color i_v != c with T_v intersect X={v}; its other r-1 vertices lie in R=V minus X.
 
-For r>=3, pigeonhole gives at least three private witnesses of the same designated color. Since no three witnesses can be pairwise disjoint, at least two of these same-color witnesses overlap in R. For same-color independent r-sets A,B with intersection size h, there are at least r-h cross-edges between A\B and B\A in that color.
+For r>=3, pigeonhole gives at least three private witnesses of the same designated color. Since no three witnesses can be pairwise disjoint, at least two of these same-color witnesses overlap in R. For same-color independent r-sets A,B with intersection size h, there are at least r-h cross-edges between A minus B and B minus A.
 
-The same matching-or-tight-transversal theorem applies to the exact fixed-merge hypergraph. Full proofs and colored-incidence inequalities are in NONCOMPRESSIBLE_SHELL_THEOREM.md.
+## New conditional bridge to low-slack geometry
+
+See TIGHT_TRANSVERSAL_LOW_SLACK_BRIDGE.md.
+
+Assume the tight case, choose x_0 in X, and suppose a color i != c has low slack 1<=s_i(x_0)<=r-2 on W=V minus {x_0}. Its q=r clique partition P_1,...,P_r and the residual parts B_a=P_a minus (X minus {x_0}) then obey:
+
+- every block hosting a private witness of color i contains at least r-s_i points of X minus {x_0};
+- hence the number of blocks that can host such witnesses is at most floor((2r-1)/(r-s_i));
+- if all residual parts B_a are nonempty, the color-i defect graph on them has no independent transversal and satisfies the weighted obstruction inequality
+  \[
+  \sum_{uv\in E(F_i)}\frac{1}{|B_{a(u)}||B_{a(v)}|}\ge1.
+  \]
+
+This is a proved J/K interface, but it is conditional: no theorem yet guarantees a low-slack color at a vertex x_0 in the tight transversal X.
 
 ## Geometry audit
 
-This is a genuine hypergraph-structural result, but not yet a geometric theorem. The packed independent sets are disjoint, not line-like blocks with pairwise intersections at most one. In the tight case, two same-color private residual blocks overlap, but no upper bound of one on intersections or direction structure has been proved. An abstract r-uniform hypergraph can have tau=2r and nu=2 without any affine geometry. Therefore no Kakeya bound is currently licensed.
-
-The missing bridge is graph-specific: upgrade the colored domination/private-witness constraints to many blocks with proved intersection constraints, or construct a shell directly.
+The packing/private-witness structure and the conditional low-slack interface do not yet imply affine geometry. There is no proved pairwise-intersection-at-most-one property for blocks and no three-direction family. No Kakeya bound is currently licensed.
 
 ## Affine-model obstruction
 
@@ -48,5 +59,6 @@ For the standard affine-plane coloring on r^2 points, reducing the independence 
 
 - COMPRESSION_CRITERION.md: corrected adaptive-recoloring caveat and exact fixed-merge criterion.
 - NONCOMPRESSIBLE_SHELL_THEOREM.md: proved packing / tight-transversal alternative and same-color overlap consequence.
-- COMPRESSION_OR_GEOMETRY.md: exact theorem boundary and the missing geometry bridge.
+- TIGHT_TRANSVERSAL_LOW_SLACK_BRIDGE.md: proved conditional witness-block concentration and weighted blocker interface.
+- COMPRESSION_OR_GEOMETRY.md: theorem boundary and exact missing bridge.
 - P(r) => P(r-1): **not established**.
