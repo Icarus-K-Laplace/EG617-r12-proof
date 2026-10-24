@@ -111,7 +111,7 @@ Applying the same theorem to the target complement (with (k=a), (q=r)) and summi
 
 Status: concentration `PROVED_SYMBOLIC`; uniform partition stability and global near-design `PROVED_ANALYTIC`; design trimming / partition incompatibility `OPEN`.
 
-**Stronger fixed-a target rigidity is proved:** for `r>=binom(a,2)+a+1`, the target ideal parts have constant width `r-binomial(a,2)+2 <= s_j <= r+binomial(a,2)-1`. For every internal target-complement edge `uv`, the product-cover inequality gives `d_C(u)+d_C(v)>=L-M_0/L`, where `L=min s_j` and `M_0<=2x_0`. Thus all such edges meet a hub set `X` with `|X|<=4M_0/(L-M_0/L)`. For `a=6`, `r>=1000` gives `r-13<=s_j<=r+14` and `|X|<=116`. The remaining gap is to show the hub-protection pattern yields an earlier stop or contradiction.
+**Stronger fixed-a target rigidity is proved:** for `r>=binom(a,2)+a+1`, the target ideal parts have constant width `r-binomial(a,2)+2 <= s_j <= r+binom(a,2)-1`. Brouwer's non-partite Turán bound further gives `x_0>=r` and `x_i>=a-1`, sharpening `x_0` and `M_0`. For `a=6`, `r>=22` gives `r-8<=s_j<=r+9`, and `r>=1000` gives `|X|<=74`. The predecessor identity now also yields a partial resolvable `TD(6,r)` with at least `r^2-(29/2)r^(3/2)-67r` blocks for `r>=1000`. The remaining gap is to align the small-defect Brouwer templates with the exact predecessor classes and prove hub propagation or contradiction.
 
 ## Candidate route D — critical-core residue potential
 
@@ -197,6 +197,7 @@ The analytic residual-core theorem proves `delta(H)>=r` for `r>=17`. The boundar
 - In the predecessor interface, every non-target color has `z_i>=1`, so at least `r-1` vertices duplicate a non-target color and `q_0<=(a-1)r+2`.
 - Brouwer's non-partite Turán bound gives `x_0>=r` and `x_i>=a-1` for every non-target color. Hence `x_0<=(binom(a,2)-a)r+2a-1` and `sum_{i>0}(x_i-(a-1))<=(binom(a,2)-a-1)r+2a-1`.
 - For fixed `a`, target ideal groups have absolute width and all internal target-complement edges localize to `|X|<=4M_0/(L-M_0/L)` hubs; after the Brouwer tightening, for `a=6` the groups have sizes `r-8` through `r+9` and at most 74 hubs suffice when `r>=1000`.
+- The exact predecessor label-capacity identity gives at least `r^2-(29/2)r^(3/2)-67r` clean blocks in a partial resolvable `TD(6,r)` for `r>=1000`.
 - An approximate resolvable-design skeleton with `O(a^2 r)` bad pairs is proved; an exact skeleton or design-trimming theorem is not.
 - The abstract ledger assignment in `NO_HIGH_STOP_ROUND2_LEMMAS.md` passes the exact scalar ledger, predecessor increments, target partition identity, hub-count and cross-pair budgets. It is not a graph counterexample, but certifies that scalar-only rearrangements cannot close the gap.
 - `NO-HIGH-STOP` remains **`OPEN`** for every claimed threshold `r>=r0`; no such `r0` has been established.
