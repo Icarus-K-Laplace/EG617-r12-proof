@@ -69,4 +69,4 @@ The crossed-pattern implication is valid as a conditional structural statement, 
 
 ## Full-contract caveat
 
-The K Local Slack Gap Theorem proves s_i(x)>=q-1 for every vertex and color in a full hypothetical q-counterexample. Thus s_i(x)=s_j(x)=1 cannot occur in such a counterexample. The crossed pattern remains a valid implication under its explicitly stated local hypotheses, but it is not a realizable local pattern under the full contract and must not be used as a live contradiction route. This is distinct from the residual-excess partitions on R=V\\X in RESIDUAL_MULTINET_EXTRACTION.md.
+The K Local Slack Gap Theorem proves s_i(x)>=q-1 for every vertex and color in a full hypothetical q-counterexample. Thus s_i(x)=s_j(x)=1 cannot occur in such a counterexample. The crossed pattern remains a valid implication under its explicitly stated local hypotheses, but it is not a realizable local pattern under the full contract and must not be used as a live contradiction route. This is distinct from the residual-excess partitions on R=V minus X in RESIDUAL_MULTINET_EXTRACTION.md.
