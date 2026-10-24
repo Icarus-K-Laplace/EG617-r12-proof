@@ -105,6 +105,17 @@
 | L26 | Local connector/focus skeleton relaxation for r=12,13,14,15 | VERIFIED_WITH_LIMITATIONS | All labelled c=3/c=4 connector graphs and allowed focus owners enumerated; relaxed survivors match the analytic boundary cases. Not a full graph search |
 | L27 | External graph/SAT counterexample search | VERIFIED_WITH_LIMITATIONS | Not run; no SAT/ILP backend installed. Not used as proof evidence |
 
+
+| L28 | Finite support for \(K\le16\) | VERIFIED | Positive excess support has size at most \(K\); anchors are exact |
+| L29 | \(c=2\), \(K=8\), \(r\ge13\) | PROVED_ANALYTIC | Empty-part self-consistency, transversal-cover size count, and \(r=13\) connector contradiction |
+| L30 | \(c=3\), mixed focus, \(r=14\), \(K=8\) | PROVED_ANALYTIC | Exact 23-profile list eliminated by common-nonneighbour clique and saturation |
+| L31 | \(c=4,(0,0,2)\), \(f=2\), \(r=13\), \(K=8\) | PROVED_ANALYTIC | One-sided local profile plus opposite-long-block external-incidence deficit |
+| L32 | \(c=4,(0,1,1)\), \(s=2\), \(r=14\), \(K=8\) | PROVED_ANALYTIC | The size-12 block requires 24 external incidences; equality supplies at most 22 |
+| L33 | \(K=8\Rightarrow r\le13\) | PROVED_ANALYTIC | Exhausts the four anchor geometries and their focus-owner cases for \(r\ge14\) |
+| L34 | Full \(K=8\) equality classification for \(r=12,13\) | OPEN_GAP | Remaining necessary strata listed in EQUALITY_K8_CLASSIFICATION.md; no graph realization claimed |
+| L35 | K8_LOCAL_PROFILE_AUDIT.py | VERIFIED_WITH_LIMITATIONS | Exact local integer/rectangle profiles only; not a full graph search |
+
+
 ## External results
 
 No external graph theorem is used in the Exact Three-Anchor Excess proof. The only ingredients are the stated graph hypotheses, degree counting, independent-set/clique contradictions, and integer inequalities.
