@@ -201,7 +201,46 @@ Consequently every color's excess is monotone nondecreasing when moving backward
 q_0+\sum_i z_i=n= S_{a+1}(r)-S_a(r).
 ]
 
-This is a genuine first-stop constraint: the predecessor interface is a near-permutation matrix, with one target edge per column or one duplicated non-target color. It gives a precise starting point for the (K_r)-transversal / label-class route, but no transversal theorem has yet been derived from it.
+This is a genuine first-stop constraint: the predecessor interface is a near-permutation matrix, with one target edge per column or one duplicated non-target color. The label-capacity lemma below strengthens it by proving that every non-target color must be duplicated at least once.
+
+### Theorem 6 — label capacity forces every non-target color to be duplicated
+
+For every non-target color (i),
+
+`z_i>=1`.
+
+Consequently
+
+`sum_i z_i>=r-1`,
+`q_0<=n-(r-1)=(a-1)r+2`.
+
+In words: at least (r-1) vertices of (R_a) have no target-color edge to (B), and every non-target color occurs twice on the (B)-neighborhood of at least one such vertex.
+
+**Proof.** Fix a non-target color (i) and (b\in B). Let (S_{i,b}) consist of vertices (v\in R_a) for which (vb) is the unique color-(i) edge from (v) to (B). For any two distinct (u,v\in S_{i,b}), the ((r+1))-set
+
+`(B\\{b}) union {u,v}`
+
+already contains every color other than (i): the clique (B\\{b}) supplies the target color, and each of (u,v) has its unique (i)-edge at the omitted vertex (b). Therefore the balanced-coloring property forces (uv) to have color (i). So (S_{i,b}) is independent in the target-color graph (G_0[R_a]). Since (alpha(G_0[R_a])=a),
+
+`|S_{i,b}|<=a`.
+
+Every vertex except those counted by (z_i) has exactly one color-(i) edge to (B), and hence lies in exactly one of the (r) classes (S_{i,b}). Thus
+
+`n-z_i=sum_{b in B}|S_{i,b}|<=ar`.
+
+Since (n=ar+1), (z_i\ge1). Summing over the (r-1) non-target colors gives the stated bounds. \(\square\)
+
+### Consequence for excess propagation
+
+At every canonical step (R_{a+1}\to R_a),
+
+`x_i(R_{a+1})-x_i(R_a)=z_i>=1` for every non-target color (i),
+
+while the target increment satisfies
+
+`x_0(R_{a+1})-x_0(R_a)=q_0< ar+1`.
+
+This is a strict strengthening of the earlier monotonicity statement: all non-target excesses increase at every predecessor step, not merely in aggregate. It does not by itself rule out a high stop because the total ledger has quadratic-in-(a) slack.
 
 ## 4. Uniform partition stability from Füredi's theorem
 
