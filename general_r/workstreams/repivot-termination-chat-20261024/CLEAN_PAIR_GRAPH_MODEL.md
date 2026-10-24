@@ -64,6 +64,39 @@ This local bound is not stronger than the asymptotic edge lower bound obtained f
 
 Enumerate the seven matching types above independently for each of the six pairs. For each of the 16 binary assignments, mark it independent iff it selects no edge in any M_ij. Reject a pattern if at least one assignment survives. Record the minimum sum of |M_ij| over rejected patterns and count the patterns attaining that minimum. The search space is finite and exhaustive; this audit does not replace an all-r proof.
 
+Self-contained exhaustive checker:
+
+```python
+from itertools import combinations, product
+
+# A matching in K_{2,2}: empty, four singletons, two perfect matchings.
+types = [(), ((0, 0),), ((0, 1),), ((1, 0),), ((1, 1),),
+         ((0, 0), (1, 1)), ((0, 1), (1, 0))]
+pairs = list(combinations(range(4), 2))
+assignments = list(product((0, 1), repeat=4))
+best = 99
+best_count = 0
+for pattern in product(range(7), repeat=6):
+    edges = []
+    for (i, j), t in zip(pairs, pattern):
+        edges.extend((i, a, j, b) for a, b in types[t])
+    satisfiable = any(
+        all(not (assignment[i] == a and assignment[j] == b)
+            for i, a, j, b in edges)
+        for assignment in assignments
+    )
+    if not satisfiable:
+        ecount = len(edges)
+        if ecount < best:
+            best, best_count = ecount, 1
+        elif ecount == best:
+            best_count += 1
+assert best == 6
+assert best_count == 160
+print(best, best_count)
+```
+
+
 ## 5. Saturated-interaction signed model
 
 If every block pair has exactly two target cross edges, encode its perfect matching by b_ij in {0,1}, where x_i^a x_j^b is an edge iff a XOR b = b_ij.
