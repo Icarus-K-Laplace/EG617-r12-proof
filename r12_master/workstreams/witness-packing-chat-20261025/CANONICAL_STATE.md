@@ -37,10 +37,16 @@ The emergency sibling's m=10 witness-star dichotomy e(H[U])=135 or >=144 is not 
 - E408 Q33 boundary budget is delta+epsilon_U<=17; the transversal floor adds no tighter inequality there.
 - A separate audit found the same logical gap in two sibling arguments: tripartite/four-partite does not imply complete multipartite. The four-partite boundary branches remain open.
 
+## Latest cross-branch reconciliation
+
+- E408 Q33 minimum-support boundary: this line proves (S_0=epsilon_U+2deltage11) without a four-partite assumption. The latest emergency sibling additionally excludes (S_0=11) **conditional on L being four-partite**, so that branch has (S_0ge12); the non-four-partite (S_0=11) branch remains open.
+- E407 Q32: a sibling audit withdrew the claimed TD(4,7) plus distinguished unused point reduction. The 49 witnesses on (7,7,7,8) do not force the eighth point to be unused. Keep only (deltage2), (delta+epsilon_Ule16), (epsilon_U+2deltage2) unless a separate global argument closes the four-partite design branch.
+- Shell-incidence support union was corrected in this line: allow (zle4) zero-shell-support core vertices. Safe full-row union floors are 7 (template A) and 6 (template C); the earlier 11/10 values are withdrawn.
+
 ## Open obligations
 
 - E407 Q32: eliminate the v=29, 49-witness boundary under the five template row-transversal systems.
-- E408 Q33: eliminate the v=31, 56-witness boundary using the zero-excess witnesses, high-k labels, and seven-block duplicate system.
+- E408 Q33: eliminate the remaining v=31, 56-witness profiles with (S_0ge11), including the non-four-partite (S_0=11) branch; larger support sizes and the global seven-block duplicate system remain open.
 - E408 Q32: still separate; its core has 285 edges and excess six. No excess-four theorem is transferred without proof.
 - Preserve the original K145-to-T61 bridge and all inherited Ramsey/extremal input contracts.
 
