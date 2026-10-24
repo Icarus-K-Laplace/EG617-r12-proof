@@ -36,9 +36,11 @@ For a legal 49-point residual F and every degree-13 pivot, the exact identity is
 | E329--E332 | `PROVED_RELATIVE_TO_REGISTERED_DEPENDENCIES` | `backend/E329_E332_CLOSURE.md`, `backend/E332_FULL_CLOSURE.md`, CORE211 and the q27/q28/q29 assets. | Keep inherited CORE211/q27/topology assumptions explicit for a self-contained manuscript; do not reopen the layer casework. |
 | E333 | `PROVED_CONDITIONAL` | `R12_E333_E334_REPIVOT_CLOSURE.md`: universal legal-core floor gives q<=28; q27 is excluded by the registered q27 shell theorem, and q28 repivots to q'>=30. | Retain the q27 inherited shell-floor and boundary-sublemma dependencies; V5 package replay is not needed for this edge-layer contradiction. |
 | E334 | `PROVED_CONDITIONAL` | `R12_E333_E334_REPIVOT_CLOSURE.md`: universal legal-core floor gives q<=29; q27 is excluded and q28/q29 repivot to q'>=30. | Same registered q27 shell dependencies plus q28/q29 repivot theorems; V7/V8 package replay is not needed for this edge-layer contradiction. |
-| E335--E340 | `OPEN`, with sharpened pivot ceilings | Universal legal-core floor gives q<=E-305, i.e. E335..E340 ceilings 30,31,32,33,34,35. Existing support/allowance machinery remains conditional on exhaustive extraction. | Prove the forcing bridge for the reduced q<=30..35 range and close the remaining higher-slack d2/d3 residues. |
+| E335--E340 | `OPEN`, with sharpened pivot ceilings | Universal legal-core floor gives q<=E-305, i.e. E335..E340 ceilings 30,31,32,33,34,35. `R12_E335_FRONTIER_REDUCTION.md` proves every E335 survivor has a q=30 pivot with e(H)=214 and K=8, conditional on q27/q28/q29 assets. | Eliminate the q30/e(H)=214 equality contract first, then propagate the reduced charge ceiling through E336--E340; close remaining higher-slack d2/d3 residues. |
 
 ## 2A. New backend results from this workstream
+
+`R12_E335_FRONTIER_REDUCTION.md` reduces the first still-open backend layer to a q=30 pivot with a 214-edge 35-core (K=8) and three independent degree-12 anchors. This is an equality reduction, not a closure.
 
 `R12_UNIVERSAL_CORE214_THEOREM.md` upgrades the legal-core floor from e(H)>=211 to e(H)>=214 under the full alpha<=3, omega<=11, minimum-degree-12 contract. `R12_E333_E334_REPIVOT_CLOSURE.md` then independently closes E333 and E334 relative to the registered q27 shell dependencies and q28/q29 repivot theorems.
 
@@ -63,6 +65,6 @@ The inspected repository itself states `NOT_CERTIFIED` in `CANONICAL_STATE.md` a
 ## 4. Working priorities
 
 1. Extend the new d3 multi-S extraction bound to the remaining owner counts / decorated branches, and prove the missing d2 extraction or finite kernel under the maximal-pivot contract; avoid re-running E-layer trees.
-2. Audit the retained q27 shell-floor/boundary dependencies and use the new q<=E-305 ceilings to reorganize E335--E340 without reopening E329--E332.
+2. Resolve the E335 q=30/e(H)=214 equality contract, then use its proof architecture to organize E336--E340 under q<=31..35; audit the retained q27 shell-floor/boundary dependencies.
 3. Integrate E407's five common-K11 templates with the same 284-edge core, once their actual template data are independently available.
 4. Integrate E408 Q32/Q33 local constraints with the seven-block global color system; do not infer contradiction from necessary inequalities alone.
