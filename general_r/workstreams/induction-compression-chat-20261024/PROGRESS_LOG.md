@@ -51,6 +51,7 @@
 - In the aligned J/K bridge, proved slack s_i=1, or s_i=2 for r>=4, confines all private witnesses of color i to at most two clique blocks; the three-block 1,1,2 residual pattern exceeds the 2r-1 shell budget.
 - The refined support bound is stronger than the generic floor((2r-1)/(r-s_i)) bound for the small cases r=4,5 with s_i=2.
 - No low-slack alignment theorem or global contradiction is claimed.
+- Integrated the K-line universal excess floor a_i>=r-1 and the local degree-budget bound into COMPRESSION_OR_GEOMETRY.md; these constraints do not yet force alignment with X.
 
 ### Status
 
