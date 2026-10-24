@@ -85,13 +85,53 @@ If s=0, this theorem forces some B_a to be empty, which is already impossible in
 s_i(x)\ge1\quad\text{for every vertex }x\text{ and every color }i.
 \]
 
+## Theorem K.6 — Weighted blocker and two-block forcing
+
+If all B_a are nonempty, the graph F_i consisting of defect edges whose endpoints both lie in the B_a parts has no independent transversal. Otherwise, selecting one point from each B_a without an F_i edge and adding x would give a (q+1)-set missing color i.
+
+The weighted blocker lemma gives
+
+\[
+\sum_{uv\in E(F_i)}\frac{1}{|B_{a(u)}||B_{a(v)}|}\ge1.
+\]
+
+Since |E(F_i)|<=s, there are two distinct blocks a,b with
+
+\[
+|B_a||B_b|\le s.
+\]
+
+For positive integers, |B_a|+|B_b|<=|B_a||B_b|+1<=s+1. Thus x has at least
+
+\[
+(q-|B_a|)+(q-|B_b|)\ge 2q-s-1
+\]
+
+color-i edges into these two blocks. Hence
+
+\[
+\boxed{d_i(x)\ge2q-s_i(x)-1.}
+\]
+
+Using e_i=m_q+q+a_i and s_i(x)=q+a_i-d_i(x), this implies the global excess bound
+
+\[
+\boxed{a_i\ge q-1.}
+\]
+
+Therefore **any color that is low-slack at even one vertex must have global excess at least q-1**. Equivalently, if a_i<=q-2, then s_i(x)>=q-1 for every vertex x.
+
+This is stronger than the one-block near-line bound q-s and gives a two-block degree constraint.
+
 ## Two-color transversal-blocking form
 
 When i and j both have low slack, their partitions are orthogonal. Every row block A_a has a nonempty set B_a^i of vertices whose edge to x is not i, and every column block Q_b has a nonempty set B_b^j of vertices whose edge to x is not j.
 
-Every choice of one vertex from each B_a^i must contain an edge of color i between chosen vertices; otherwise adding x gives a forbidden set missing color i. The cross-defect graph E_i, with exactly s_i edges, blocks every such transversal. In particular, some row has |B_a^i|<=s_i. The analogous statement holds for color j and its columns.
+Every choice of one vertex from each B_a^i must contain an edge of color i between chosen vertices; otherwise adding x gives a forbidden set missing color i. The analogous statement holds for color j and its columns.
 
-This is a precise local constraint on the extra-vertex color matrix. It does **not** yet prove that two low-slack colors cannot coexist when both slacks are positive.
+If s_i=1, the unique defect edge must join the unique non-i neighbor of x in each of two rows; thus those two row-neighbor sets are singletons. If s_i=2, the exact blocker classification in SMALL_SLACK_BLOCKER_CLASSIFICATION.md sharply constrains the residual parts. When both colors have slack one, SLACK_ONE_CROSS_PATTERN.md proves a crossed 2-by-2 pattern and a_i,a_j>=q-1.
+
+These are precise local constraints on the extra-vertex color matrix. They do **not** yet prove that two low-slack colors cannot coexist when both slacks are positive.
 
 ## Current gap
 
