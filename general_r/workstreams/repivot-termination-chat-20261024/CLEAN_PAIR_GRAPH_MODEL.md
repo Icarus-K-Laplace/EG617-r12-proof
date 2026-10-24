@@ -109,7 +109,7 @@ for every pair. Fix a reference block v and define the triangle-parity graph T o
 
 ij in E(T) iff b_iv XOR b_ij XOR b_jv = 1.
 
-The no-independent-4-transversal condition implies that T is triangle-free: a triangle in T would make the four-block parity system inconsistent in the required way? More precisely, the independent-transversal equations on {v,i,j,k} are satisfiable iff all three values b_iv XOR b_ij XOR b_jv, b_iv XOR b_ik XOR b_kv, b_ik XOR b_jk XOR b_jv equal 1. Hence a triangle of parity-1 edges is exactly a forbidden independent transversal, so T is triangle-free.
+The no-independent-4-transversal condition implies that T is triangle-free. The independent-transversal equations on {v,i,j,k} are satisfiable iff all three values b_iv XOR b_ij XOR b_jv, b_iv XOR b_ik XOR b_kv, b_ik XOR b_jk XOR b_jv equal 1. Hence a triangle of parity-1 edges would give a forbidden independent transversal, so T is triangle-free.
 
 A target clique transversal corresponds to an independent set in T together with the reference block. Thus omega(H) <= r-1 yields alpha(T) <= r-2. Also each clean endpoint has exactly one target neighbor in every other block plus its block mate, so its degree inside U is m; since its full core degree is at most r+1, this saturated subcase satisfies m <= r+1.
 
