@@ -88,3 +88,40 @@ The original core-certification part of H_A and all of H_B are both eliminated f
 A stronger-hypothesis finite-threshold variant remains:
 
 for every `r>=12`, original `H_A + H_B + H_C* + H_D => P(r)`.
+
+
+## Round 2 — minimal route update
+
+### A_ext* — exact contextual interface
+
+Status: **OPEN**.
+
+For a hypothetical counterexample, require either:
+1. an induced contextual (4r+1) residual (F_4) with (alpha(F_4)\le4), (omega(F_4)\le r-1), and the inherited full-colour cap; or
+2. an anchored contextual (5r+1) terminal (T) under the no-(4r+1)-extraction condition, with (alpha(T)=5), (omega(T)\le r-1), (delta(T)\ge r), and the inherited full-colour cap.
+
+The terminal definition and the forcing implication must remain separate: the anchored (5r+1) object is a proved conditional object, but forcing every counterexample into the (4r+1/5r+1) alternatives remains OPEN.
+
+### D_low — weakened downstream interface
+
+Status: **OPEN**.
+
+It is enough to contradict only the direct near-anchor outputs of the anchored (5r+1) terminal:
+- (delta(T)=r), triple ((r,\le r+1,\le r+1)), with (|W|\in\{2r-4,2r-3,2r-2,2r-1\});
+- (delta(T)=r+1), triple ((r+1,\le r+2,\le r+2)), with (|W|\in\{2r-7,\ldots,2r-2\}).
+
+The high-degree (|W|=2r-1) case is already excluded for (r\ge25) by the Cell A/B theorems. The low-degree (delta=r, |W|=2r-1) case is NOT covered by those theorems and remains OPEN.
+
+### S67-low — conditional synthesis
+
+For every (r\ge67),
+\[
+A_{\mathrm{ext}}^*(r)\land D_{\mathrm{low}}(r)\Longrightarrow P(r).
+\]
+This route does not require (H_B) or (C^*). It is not an unconditional theorem because both (A_{\mathrm{ext}}^*) and (D_{\mathrm{low}}) remain open.
+
+Imported source heads checked on 2026-10-24:
+- residual-core extraction: 7a4fb4c37cefec8d801fc7deb778568bfb24002e;
+- repivot termination: 35fec3eaaab70b31e10b41065634b35b02a28e6c;
+- design terminal: 5b4162c239d3dfad84d130c3015a0db5919228c4;
+- general-r architecture/contextual cap: a922c4d7646eb8d0087bde8547562c8aace02ee2.
