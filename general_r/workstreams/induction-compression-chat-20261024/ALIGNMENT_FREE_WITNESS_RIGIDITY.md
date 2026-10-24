@@ -228,3 +228,73 @@ The witness-color dichotomy then gives either repeated witnesses in a zero-exces
 ## r=7 audit correction — design subkernel is realizable
 
 The K branch has an explicit Latin-square incidence realization of the 3-net plus one-transversal/six-near-transversal partition forced in the r=7 Case B (K commit 825c48ae4e5cc47e7feb6abab6337de62db6fd6c, file Q6_NEAR_TRANSVERSAL_OBSTRUCTION_AUDIT.md). Thus this partition cannot be ruled out by Euler–Tarry alone. It is only an abstract design-level realization, not a full EG617 graph counterexample: the three exceptional-star high-color graphs, root colors, and cross-edges remain to be realized simultaneously or shown impossible.
+
+
+## Theorem J.W8 — Full-contract contradiction at residual Turan equality
+
+Assume Case B and q=r-1>=4. If
+
+\[
+\sum_{i\ne c}b_i=\binom q2,
+\]
+
+then, since \(e(G_c[R])=m_q-\sum_{i\ne c}b_i\), the omitted color satisfies
+
+\[
+e(G_c[R])=m_q-\binom q2=\frac{q(q-1)^2}{2}.
+\]
+
+This is the Turan minimum for a graph on q² vertices with independence number at most q+1. Equality forces G_c[R] to be a disjoint union of q+1 c-cliques with sizes
+
+\[
+q,\underbrace{q-1,\ldots,q-1}_{q\text{ blocks}}.
+\]
+
+Let these blocks be \(B_0,B_1,\ldots,B_q\), with |B_0|=q and |B_j|=q-1 for j>=1.
+
+### Root-block coverage
+
+For every root x in X, its color-c neighborhood in R contains an entire block B_j. Otherwise choose one non-neighbor of x from every block; the chosen q+1 points form a c-independent set Q, and Q union {x} has r+1=q+2 points but no c-edge, contradiction.
+
+### Capacity of each block
+
+- At most one root can be c-adjacent to every point of B_0. Two such roots x,y make B_0 union {x,y} an (r+1)-set with either only color c (if xy has color c, violating omega(G_c)<=r) or at most two colors (if xy has another color).
+- At most two roots can be c-adjacent to every point of any B_j, j>=1. Three such roots x,y,z make B_j union {x,y,z} an (r+1)-set. All edges except the three root-root edges have color c, so at most four colors occur. Since r=q+1>=5, this violates the counterexample condition.
+
+Assign each root one block fully contained in its color-c neighborhood. The block capacities give
+
+\[
+|X|\le1+2q<2q+2=|X|,
+\]
+
+a contradiction.
+
+Therefore, for every full hypothetical counterexample in Case B and every r>=5,
+
+\[
+\boxed{\sum_{i\ne c}b_i\le\binom{r-1}{2}-1.}
+\]
+
+This is a graph-level contradiction to the equality case, independent of witness-color alignment and independent of the MOLS classification.
+
+## Corollary J.W9 — Strictly stronger residual-net bound
+
+For q=r-1>=4, every non-q-partite complement \(\overline{G_i[R]}\) costs b_i>=q-1 by Brouwer's threshold. The strict budget in J.W8 therefore implies that at most floor((q-1)/2) of the q residual colors are non-q-partite. Consequently at least
+
+\[
+\boxed{\left\lceil\frac{q+1}{2}\right\rceil}
+\]
+
+colors give pairwise orthogonal q-clique partitions of R. Equivalently,
+
+\[
+N(q)\ge\left\lceil\frac{q+1}{2}\right\rceil-2.
+\]
+
+This improves J.W5 by one direction when q is even.
+
+## Corollary J.W10 — Case B is impossible at r=7
+
+For r=7, q=6, J.W9 forces at least four pairwise orthogonal partitions of a 36-point set into six 6-cliques. Four directions yield two mutually orthogonal Latin squares of order 6, which are ruled out by Euler–Tarry. Hence the matching-number-two/tight-transversal Case B cannot occur at r=7.
+
+This does not eliminate Case A (matching number at least three) and therefore does not prove the full r=7 compression implication.
