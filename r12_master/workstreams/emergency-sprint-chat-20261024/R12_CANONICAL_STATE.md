@@ -122,3 +122,30 @@ Added R12_E408_Q33_FOUR_PARTITE_S0_11_EXCLUSION.md (commit 4f5e9697d93e9173d2819
 The theorem assumes the E408 Q33 minimum-support contract and that L is four-partite. Under S0=11, delta is 4 or 5 and the outside-core edge budget is 125. The exact q_w degree patterns for k=3,4,5,6 seven-neighborhood vertices were enumerated. Group-capacity rules eliminate k=3/4 and the all-8/9 patterns. The only remaining profiles have an exceptional size-10 or size-11 hitting set T*. A spillover-aware degree identity shows that outside T* and at most one spillover point, vertices have zero excess and no extra L-edge. Each large-part complement then has at least four points, forcing a triangle in L[A0,B0,C0]; adjoining an unselected D point gives an independent 4-set disjoint from T*, contradicting alpha(H)<=4.
 
 Thus the four-partite E408 Q33 minimum-support branch now satisfies S0>=12. This is conditional and does not eliminate the non-four-partite branch. E407 Q32, E408 Q32, the T61-to-K145 bridge, and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+## Round 7 — live sibling refresh and stronger E407 transversal charge (2026-10-25)
+
+Latest sibling heads re-read:
+- witness packing: fc5d04e72ee28f6ce6d9ea0b24dbfeef5b628de6;
+- zero-excess witness: 3d96b0633489dcb9fe1b2e5eb783c6913ba7f028;
+- ultimate closure: 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40;
+- general-r architecture/asymptotic remain a922c4d7646eb8d0087bde8547562c8aace02ee2 / fa6a5f2b8b5d2a0fe821d50a4421884a69dc5366.
+
+The latest zero-excess line proves a stronger universal E407 minimal-support inequality than the earlier delta>=2 boundary classification. An independent proof was added here in R12_E407_TRANSVERSAL_EXCESS_BOUND.md (commit fbdab0144bc404639f7b0535f3d26437053fa19f); its arithmetic verifier is verify_e407_transversal_excess.py (corrected commit 900a22a89c8e64e2f8c6a854e7e3150cf695d86e), locally checked as E407_TRANSVERSAL_EXCESS_ARITHMETIC_OK.
+
+Proof chain:
+1. Distinct 7-transversals are disjoint by pair counting across the seven color classes.
+2. Three disjoint 7-transversals leave eight vertices; the omitted-point count and minimum degree force at least 16 omissions but exactly seven exist. Hence at most two distinct transversals occur.
+3. Charging each transversal's multiplicity to the core excess yields N7<=10+(epsilon_U+2delta)/7.
+4. The exact cross-edge budget gives N7>=20-(epsilon_U+2delta).
+5. Therefore epsilon_U+2delta>=9; since epsilon_U<=4, delta>=3.
+
+The E407 ledger is now
+```
+0 <= epsilon_U <= 4,
+delta + epsilon_U <= 16,
+epsilon_U + 2*delta >= 9,
+delta >= 3.
+```
+This is a boundary reduction only. E407 Q32 common-core completion, E408 Q32 (285-edge core), E408 Q33 non-four-partite branch, the T61-to-K145 bridge, and the original theorem remain OPEN / NOT_CERTIFIED.
