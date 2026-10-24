@@ -15,7 +15,16 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERIFIER = ROOT / "verify_endpoint_domain.py"
+MODULES = {
+    "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
+        "generator": ROOT / "generate_endpoint_domain.py",
+        "verifier": ROOT / "verify_endpoint_domain.py",
+    },
+    "D1_SHELL_CLASS_BOUND_V1": {
+        "generator": ROOT / "generate_d1_shell_bound.py",
+        "verifier": ROOT / "verify_d1_shell_bound.py",
+    },
+}
 DEFAULT_LEDGER = ROOT / "ASSUMPTION_LEDGER.md"
 
 
@@ -44,16 +53,21 @@ def status_applies(status_text: str, r: int) -> bool:
 
 
 def gate(certificate_path: Path, ledger_path: Path) -> dict:
+    envelope = json.loads(certificate_path.read_text(encoding="utf-8"))
+    instance = envelope["body"]["instance"]
+    module_id = instance.get("module_id")
+    module_tools = MODULES.get(module_id)
+    if module_tools is None:
+        raise AssertionError(f"unknown module ID: {module_id}")
+    verifier_path = module_tools["verifier"]
+    generator_path = module_tools["generator"]
     verification = subprocess.run(
-        [sys.executable, str(VERIFIER), str(certificate_path)],
+        [sys.executable, str(verifier_path), str(certificate_path)],
         check=True, capture_output=True, text=True,
     )
     verified = json.loads(verification.stdout)
-    if verified.get("status") != "PASS":
-        raise AssertionError("independent verifier did not return PASS")
-
-    envelope = json.loads(certificate_path.read_text(encoding="utf-8"))
-    instance = envelope["body"]["instance"]
+    if verified.get("status") != "PASS" or verified.get("module_id") != module_id:
+        raise AssertionError("independent verifier did not certify the expected module")
     r = instance["r"]
     ledger = ledger_path.read_text(encoding="utf-8")
     assumption_status = {}
@@ -90,17 +104,20 @@ def gate(certificate_path: Path, ledger_path: Path) -> dict:
         "gate_schema": "eg617-theorem-promotion-gate-v1",
         "status": module_gate,
         "module_status": conditional_module_status,
-        "module_id": instance["module_id"],
+        "module_id": module_id,
         "r": r,
-        "profile": instance["profile"],
+        "profile": instance.get("profile", "not-applicable"),
         "assumption_status": assumption_status,
         "assumptions_all_known": all_assumptions_known,
         "assumptions_all_proved_for_r": all_assumptions_proved,
         "instance_sha256": verified["instance_sha256"],
         "certificate_sha256": verified["certificate_sha256"],
+        "generator_path": generator_path.name,
+        "generator_sha256": sha256_file(generator_path),
+        "verifier_path": verifier_path.name,
         "verifier_sha256": verified["verifier_sha256"],
         "gate_sha256": sha256_file(Path(__file__)),
-        "replay_command": f"python verify_endpoint_domain.py {certificate_path}",
+        "replay_command": f"python {verifier_path.name} {certificate_path}",
         "conditional_lemma_promotion": "PASS" if source_supported and all_assumptions_known else "BLOCKED",
         "eg617_promotion_status": eg617_promotion_status,
         "eg617_r_proved": False,
