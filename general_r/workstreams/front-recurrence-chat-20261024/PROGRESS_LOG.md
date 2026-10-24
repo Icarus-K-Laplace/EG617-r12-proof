@@ -37,3 +37,30 @@ Derive uniform/asymptotic formulas for the low-order seed envelope and prove tha
 ### Next attack
 
 Do not parameterize more r=12 nodes. Instead derive analytic lower bounds for the five seed coordinates, beginning with `(2,2r-1)` and the two `a=3` coordinates, and test whether coarse asymptotics already imply the required outer dominance for sufficiently large r.
+
+## 2026-10-24 — H+I quantitative transfer audit
+
+### New proved statements
+1. The counterexample property is hereditary under induced vertex restriction, so the multicolor local-avoidance argument applies to every seed residual with at least r+1 vertices.
+2. For a distinguished color graph J with alpha(J)<=a, its local avoidance sets have alpha at most a-1, while the other colors have the inherited r-1 bound.
+3. The exact transfer inequality is
+   `2 T_2 + 3 T_3 <= m [ C(m-1,2) - Lambda_{r,a}(m) ]`,
+   with Lambda defined by the balanced-sum minimization in ASYMPTOTIC_SEED_ENVELOPE.md.
+4. The transfer plus the wedge identity yields `2 e(J)^2/m - e(J) <= m[C(m-1,2)-Lambda]`; this is an upper constraint on e(J), not a stronger lower seed floor.
+5. The exact outer-budget gap was derived in terms of `t=r-d`:
+   `U-p_a(ar+t)=C(r,2)-(a+1)t^2/(2a)+t-b(a-b)/(2a)`, where `b=t mod a`.
+6. At `t=1`, the exact gap is `C(r,2)`. The transfer's degree-free asymptotic relaxation leaves a factor-a scale gap at `m=ar+O(1)`.
+
+### Status update
+- H1: ACHIEVED.
+- H2: PROVED conditionally on a finite sound seed package.
+- H3: OPEN; no general-r improved seed excesses or cutoff theorem were obtained.
+- H4: remains conditional on all-state outer-budget dominance.
+- No explicit r0 is certified.
+
+### Commit trail for this pass
+- `ASYMPTOTIC_SEED_ENVELOPE.md`: `954d9e9d37fa1ac33ad6d4f650340480e2d1ad1c`
+- `OUTER_BUDGET_DOMINANCE.md`: `b82e9391600e736199bede03f6cd9d12e6344b6f`
+
+### Unique blocker
+Convert the valid induced multicolor inequality into a **lower** edge floor that incorporates `alpha<=a`, `omega<=r-1`, and inherited caps. Current transfer is directionally insufficient for seed closure.
