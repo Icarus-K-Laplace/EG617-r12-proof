@@ -83,3 +83,22 @@ No theorem gap remains in this workstream. The highest-value action is external/
   - CANONICAL_STATE.md: 437aeecaafd0db7d55bf47cb68b4131229355979
   - THEOREM.md: ab9f6dbbd5c0dc8527ef94117bec7c91c143a6b6
   - COUNTEREXAMPLE_SEARCH.md: b0890dae2b597fe100235dec67b9fdd4badc5bcb
+
+
+## 2026-10-24 — connector-skeleton enumeration and final audit polish
+
+- Added CONNECTOR_SKELETON_AUDIT.py and ran the committed source in Python.
+- Enumerated all 8 labelled c=3 connector graphs and all 64 labelled c=4 connector graphs, all connector excess allocations with total at most six, and all allowed focus-owner assignments for r=12,13,14,15 under local rectangle relaxations.
+- Results: c=3 has 44 relaxed low-budget skeletons at r=12, 4 at r=13, and none at r=14,15; c=4 (0,0,2) has only two r=12 two-focus overlap relaxations; c=4 (0,1,1) has only two r=12 two-slot overlap relaxations; no c=4 relaxed low-budget skeleton remains at r=13,14,15. The survivors match the already-analysed equality signatures, not actual graph counterexamples.
+- Added CONNECTOR_SKELETON_AUDIT_RESULTS.md and linked the artifact from canonical state, the dependency map, and the falsification ledger.
+- Corrected mathematical notation escaping in LEMMA_VERIFICATION.md and range notation in ARITHMETIC_AUDIT_RESULTS.md; re-fetched the final stored contents after updates.
+- Latest follow-up commits:
+  - CONNECTOR_SKELETON_AUDIT.py: bb302be3c055fe7fa9eb521e77ee6451988bf71a
+  - CONNECTOR_SKELETON_AUDIT_RESULTS.md: 525a555eebf2662ea2212c2a6df3c1169fd1fa2a
+  - LEMMA_VERIFICATION.md notation repair: a57b4f65065438f78c30c85f0ca7e4bf25bc1abc
+  - ARITHMETIC_AUDIT_RESULTS.md notation repair: 962a03f965d395868ea0d472736c1410cf90510a
+  - INDEPENDENT_AUDIT.md skeleton-search update: 825e8aa6611ee2595141b57a20c7ebd50adb535f
+  - CANONICAL_STATE.md artifact index update: bccfcc73fda70a67694500cd39f5d4b2cbcdbd7f
+  - COUNTEREXAMPLE_SEARCH.md skeleton-search update: d636a3efe2b9324df46083da90ff0a439bd9f34b
+  - PROOF_DEPENDENCY_MAP.md skeleton-audit row: 2584d8b12f808d5c59132e44a8635b0fecfb1878
+- Final limitation remains unchanged: no full graph-level SAT/ILP search and no external human referee certification.
