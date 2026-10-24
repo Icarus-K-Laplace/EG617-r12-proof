@@ -582,3 +582,61 @@ Thus the explicit `a=6` high-stop geometry contains at least `r^2-14.5r^(3/2)-67
 - theorem / improved TD bound: `57201f7dd23dca8a64ebfbbbace7ff38ca7317b4`
 - canonical state: `0fed2bcec9b9ae695903642cc783e741cbef6f3d`
 - open gaps: `c749557ab3e781663b814b3486a9e36028f05f2b`
+---
+
+## 2026-10-24 — Round 11: exact predecessor-label defect identity
+
+### NEW THEOREM A — Exact edge-defect identity
+
+For each non-target color `i`, let `S_{i,b}` be the unique-label class at predecessor vertex `b`, let `Z_i` be the `z_i` duplicated-color vertices, let `h_b=a-|S_{i,b}|`, and set `Q_i=sum_b binom(h_b,2)`. If
+
+- `M_i` counts color-`i` edges between distinct `S_{i,b}` classes;
+- `H_i` counts color-`i` edges from `Z_i` to the classes;
+- `K_i` counts color-`i` edges inside `Z_i`;
+
+then
+
+`M_i+H_i+K_i=x_i+(a-1)z_i+1-Q_i`.
+
+Proof: count the complement `F_i=bar(G_i)` edges by the three pair types, expand `sum_{b<c}s_bs_c` using `sum h_b=z_i-1`, and use `t_r(ar+1)=t_r(ar)+(r-1)a`. The concentration correction `Q_i` is necessary.
+
+### NEW THEOREM B — Duplicate-label pair obstruction
+
+For a duplicate vertex `v` with color-`i` labels `b,c`, define `A_b=N_{F_i}(v)∩S_{i,b}` and `A_c=N_{F_i}(v)∩S_{i,c}`. Every pair in `A_b×A_c` must have color `i`, because otherwise `(B\{b,c})∪{v,u,w}` would be an `(r+1)`-set omitting color `i`. Since `A_b∪A_c` is independent in `F_i` and `alpha(F_i)<=a`,
+
+`|A_b|+|A_c|<=a`.
+
+Summing edges incident to each duplicate gives
+
+`H_i>=a z_i-sum_b h_b deg_{L_i}(b)>=z_i(a-z_i+1)`
+
+when positive, where `L_i` is the multigraph of duplicated label pairs. Combining with the exact identity yields
+
+`M_i+K_i<=x_i+(z_i-1)^2-Q_i`.
+
+For `z_i=1`, `K_i=0` and `M_i>=|A_b||A_c|`; therefore
+
+`x_i>=a-1+(|A_b|-1)(|A_c|-1)`.
+
+Thus a non-target color at the Brouwer floor `x_i=a-1` must have one of the two duplicate-label classes with exactly one `F_i`-neighbor of the duplicate vertex.
+
+### Sharpness and adversarial audit
+
+The Kang–Pikhurko extremal construction gives a genuine per-color graph/interface profile with `a=6,x_i=5,z_i=6,Q_i=10`, `M_i=5,H_i=6,K_i=15`; the identity gives `26=5+5·6+1-10`. This is not a full `r`-coloring or a global counterexample. It proves that assuming `z_i=1` is invalid and that the new local inequalities are sharp on the known extremal template.
+
+### Status
+
+- Exact defect identity: `PROVED_SYMBOLIC`.
+- Duplicate-label pair obstruction: `PROVED_SYMBOLIC`.
+- One-duplicate strengthened excess inequality: `PROVED_SYMBOLIC`.
+- `NO-HIGH-STOP`: **`OPEN`**. The new results constrain each color's local extremal pattern but do not yet prevent compatible reuse of hubs/labels across different colors.
+
+### GitHub commits
+
+- theorem file: `43cecbcb44a36d0f001273e3ddd29826dd6c2214`
+- canonical state: `b02c3910576efdb0e369d9b07dc719ab5774222e`
+- open gaps: `8435a6d6d56956d02f0476c933ff5e0907ad36c0`
+
+### Next highest-priority task
+
+Classify the cross-color reuse obstruction: use the fact that each color with a near-extremal KP template forces a duplicated-label pair and a complete bipartite color-`i` patch, while any vertex pair can belong to only one color. Determine whether the resulting family of label-pair patches can fit inside the `a=6` target-group/hub incidence budget, and build an explicit abstract incidence family if scalar constraints still allow it.
