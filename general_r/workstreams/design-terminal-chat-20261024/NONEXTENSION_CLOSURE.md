@@ -57,3 +57,31 @@ Prove a **defect-chain cost theorem**:
 > Every chain/cycle of non-target missing pairs and cylinder covers that keeps every non-target color (K_6)-free must either exceed the combined non-target slack and target cross-cover budget, or produce an omitted-color ((r+1))-set.
 
 The proof must track pair ownership exactly and cannot assume an affine plane exists. Until then, robust nonextension remains **OPEN**, and no sufficiently-large-(r) terminal closure is claimed.
+
+
+## 5. New local obstruction: a two-defect cycle can close cheaply
+
+A fully checked one-color block gadget has:
+- one 6-block with a single missing pair;
+- one 5-block with a single missing pair;
+- nine cross-block additions;
+- (\alpha(G_i)\le r) and (K_6)-freeness;
+- slack (s_i=7), edit distance (11).
+
+The explicit construction and proof are in `HUB_PROPAGATION_THEOREM.md`. It is not a target-labelled full terminal, but it disproves the local inference that K6-freeness forces every cylinder cover to generate an additional defect or that the local slack must exceed 8.
+
+## 6. Exact target-label obstruction
+
+Suppose a target hub (w\in B_j) has a target cross-star into (B_k), and (x\in B_k) lies with (w) in a non-target ideal block. Then (wx) is a target-colored edge missing from that non-target color. For any candidate cover block, its (B_k)-representative (z) cannot be adjacent in the non-target color to either (w) or (x) when (z\notin X): both (wz) (target star) and (xz) (ordinary internal target edge) belong to color 0.
+
+Therefore a one-block cover must use an exceptional point in (X\), while an ordinary point forces a cover using other selected blocks or further target-internal deletions. This is the valid interface between target stability and non-target independence.
+
+However, a fixed blocked coordinate can be handled locally by a 9-edge two-coordinate barrier. Thus a lower bound must account for the complete multi-block constraint network and pair ownership, not only one cylinder.
+
+## 7. Updated minimum missing theorem
+
+The missing theorem is now more precise:
+
+> Under the exact target labels and pair-ownership rule, the total cost of all hub-block defects and all multi-block barriers across the (r-1) non-target colors exceeds the remaining global budget, unless an omitted-color ((r+1))-set exists.
+
+The block-level slack bound (s_i\ge9) is false in general (the local gadget has (s_i=7)); any proof must use the target labels and cross-color compatibility essentially. Robust nonextension remains **OPEN**.
