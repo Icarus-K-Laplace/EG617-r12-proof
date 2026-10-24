@@ -32,11 +32,17 @@ For a fixed c, let H_{-c}=union_{i != c} I_i. If no robust shell of size 2r-1 ex
 
 For r>=3, pigeonhole gives at least three private witnesses of the same designated color. Since no three witnesses can be pairwise disjoint, at least two of these same-color witnesses overlap in R. For same-color independent r-sets A,B with intersection size h, there are at least r-h cross-edges between A minus B and B minus A.
 
-## New conditional bridge to low-slack geometry
+## New quantitative overlap theorem
+
+In the matching-number-two case, the overlap graph on the 2r private witnesses has independence number at most two. Mantel's theorem therefore gives at least r(r-1) distinct intersecting witness pairs. Also, since the 2r residual (r-1)-sets lie in R of size (r-1)^2, incidence counting forces a point of R to belong to at least three private witnesses.
+
+Full proof and the equality graph profile are in WITNESS_INTERSECTION_DENSITY.md. This is a strong overlap statement, but it does not yet force a common witness color or affine-line geometry.
+
+## Conditional bridge to low-slack geometry
 
 See TIGHT_TRANSVERSAL_LOW_SLACK_BRIDGE.md.
 
-Assume the tight case, choose x_0 in X, and suppose a color i != c has low slack 1<=s_i(x_0)<=r-2 on W=V minus {x_0}. Its q=r clique partition P_1,...,P_r and the residual parts B_a=P_a minus (X minus {x_0}) then obey:
+Assume the tight case, choose x_0 in X, and suppose a color i != c has low slack 1<=s_i(x_0)<=r-2 on W=V minus {x_0}. Its r clique partition P_1,...,P_r and residual parts B_a=P_a minus (X minus {x_0}) then obey:
 
 - every block hosting a private witness of color i contains at least r-s_i points of X minus {x_0};
 - hence the number of blocks that can host such witnesses is at most floor((2r-1)/(r-s_i));
@@ -59,6 +65,7 @@ For the standard affine-plane coloring on r^2 points, reducing the independence 
 
 - COMPRESSION_CRITERION.md: corrected adaptive-recoloring caveat and exact fixed-merge criterion.
 - NONCOMPRESSIBLE_SHELL_THEOREM.md: proved packing / tight-transversal alternative and same-color overlap consequence.
+- WITNESS_INTERSECTION_DENSITY.md: proved at least r(r-1) intersecting witness pairs and a common residual hub.
 - TIGHT_TRANSVERSAL_LOW_SLACK_BRIDGE.md: proved conditional witness-block concentration and weighted blocker interface.
 - COMPRESSION_OR_GEOMETRY.md: theorem boundary and exact missing bridge.
 - P(r) => P(r-1): **not established**.
