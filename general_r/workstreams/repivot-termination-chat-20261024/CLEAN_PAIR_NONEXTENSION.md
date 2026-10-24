@@ -82,3 +82,51 @@ A complete proof must count the edges from U to O=H\U and the excess of O withou
 - Absolute bound on m: **OPEN**.
 - Clean Pair Nonextension: **OPEN**.
 - New all-large-r contradiction: **NONE**.
+
+
+## 7. Round-2 global budget refinement: optional degree and off-part excess
+
+The AES partite branch has a more rigid six-type structure, recorded in CLEAN_PAIR_GLOBAL_BUDGET.md. With type classes A0,A1,B0,B1,C0,C1 and block counts x,y,z, every type class has size at least
+
+a=m-r+1 >= ceil(r/3)+4.
+
+The two independent triples of type classes are
+
+T0=(A0,B1,C0),  T1=(A1,B0,C1).
+
+For each outside vertex o, alpha(H)<=3 forces o to be adjacent to an entire class from each triple. Assign one such witness class in each triple. The capacity slacks sum to exactly four in each triple, and the exact transported endpoint equation gives
+
+t_x <= kappa_x+u_T-1 <=4,
+
+where t_x is the optional cross-block target degree of x. This is an unconditional bounded-degree result for the optional edge system in the AES branch.
+
+A necessary correction: this does **not** prove that every outside vertex sees an entire part. It may have additional neighbours in classes other than its two chosen witnesses. The correct result is the following dichotomy.
+
+- If an outside vertex has a same-part witness pair, it sees that entire part.
+- If it has no same-part witness pair, one residual class triple has one optional relation of maximum degree four, one block matching, and one empty pair. The vertex must have at least a-4 neighbours in that residual triple, so
+
+  d_H(o,U)>=3a-4, and kappa_o>=3a-4-r>=8.
+
+If X is the number of outside vertices of the second type, then
+
+X(3a-4-r) <= K_O <= 2r-2-K_U.
+
+Thus the remaining AES terminal has a bounded-degree optional block graph and at most floor((2r-2-K_U)/(3a-4-r)) exceptional outside vertices. This can still be linear near the lower AES threshold, so it is a structural reduction, not nonextension.
+
+## 8. Exact no-double-counting identity
+
+Assign each nonexceptional outside vertex to a part it sees completely. Let g_i be the assigned group size and u_i=s_i+2-g_i. Then
+
+sum_i u_i=4+X.
+
+For each x in part U_i, let rho_x count its neighbours in O outside the group assigned to U_i. The endpoint degree identity gives
+
+t_x+rho_x=kappa_x+u_i-1,
+
+and hence
+
+2e_opt+E_foreign = K_U + sum_i n_i(u_i-1).
+
+Here e_opt counts optional H-edges inside U, and E_foreign counts outside-core edges to a part other than the endpoint's assigned part. This is exact no-double-counting, but the right side is not yet incompatible with K<=2r-2.
+
+Status: the high-density branch is now reduced more strongly, but Clean Pair Nonextension remains OPEN. The interval m<ceil(4r/3+3) is also unresolved by this line.
