@@ -102,3 +102,16 @@ Special fixed-parameter consequence: K's Theorem K.RM5 (commit eb238d01b9aebf98a
 
 
 Audit correction: the r=7 Case B's 3-net plus one-transversal/six-near-transversal design subkernel is realizable; see K branch commit 825c48ae4e5cc47e7feb6abab6337de62db6fd6c. It is not a full graph-level EG617 counterexample, but prevents claiming that the Latin-square partition alone is contradictory. The high-color exceptional-star and root/witness constraints are still the live gap.
+
+
+## Round 2 decisive subresult — Case B equality eliminated
+
+Theorem J.W8 (in ALIGNMENT_FREE_WITNESS_RIGIDITY.md, commit c0c31e82b2bd8b4c3c5a7ab6092b660d16bd686b) proves that in any full hypothetical counterexample with a tight-transversal Case B and r>=5,
+
+\[
+\sum_{i\ne c}b_i\le\binom{r-1}{2}-1.
+\]
+
+Equality would force the c-color graph on R to be q+1 disjoint cliques of sizes q and q-1 (q times), and every root must fully c-dominate one block. The block capacities sum to 2q+1, fewer than |X|=2q+2, contradiction.
+
+Consequently at least ceil((q+1)/2) residual colors have pairwise orthogonal q-clique partitions. At r=7 (q=6), four directions would give two orthogonal Latin squares of order 6, impossible. **Case B is closed at r=7.** Case A (matching number at least three) remains open, so the full compression implication is not yet proved.
