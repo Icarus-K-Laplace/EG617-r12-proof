@@ -45,7 +45,7 @@ The first inequality follows from \(r_xr_y\le(r_x^2+r_y^2)/2\); the second uses 
 
 ## 3. Exact support-boundary values
 
-At the E407 boundary \(N=49,c=7,v=29\):
+At the support boundary define \(\epsilon_U=\sum_{x\in U}\epsilon_x\) and \(\delta=e(\overline{H[U]})-6N\), the number of complement edges not covered by the witness blocks. At the E407 boundary \(N=49,c=7,v=29\):
 \[
 \sum r_x=196,\quad \sum o_x=7,\quad
 \sum_x\binom{r_x}{2}=567+\Omega,\quad 0\le\Omega\le15.
