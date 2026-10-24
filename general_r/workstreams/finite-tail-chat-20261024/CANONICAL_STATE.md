@@ -193,8 +193,8 @@ Added `PARAMETER_ADMISSION_MATRIX.json` and `PARAMETER_ADMISSION_VERIFIER.py`.
 
 - Explicit rows: r=4,...,100 (97 parameter rows), with a four-interval partition extending to every integer r>=4.
 - Source records: eight immutable theorem/asset records, including source commit, source path/blob, exact parameter applicability, proof type, assumptions, and terminal contract.
-- Matrix raw SHA-256: `037ebe8e26f0c72e135e3d6a560d4620f023cb52b0c4d8e87096c12e0a8828da`.
-- Admission verifier SHA-256: `08d8e58ae6713cf8ab94b1e2dbb3715cd920f4255d21792b7a6d801be04dc326`.
+- Matrix raw SHA-256: `cb386e6a66b82edf5783835e3d52c675717cdf1e2dd7293359cf23d90a6b228d`.
+- Admission verifier SHA-256: `4e027b49c8bf4d3bc54d270dbaca47f3805066bfc3bb9d8b96595a26d173b4c4`.
 - Theorem gate now calls the admission verifier before promotion and records the matrix/verifier fingerprints in its receipt.
 - Unified entry point: `generate_parametric_certificate.py`, which reuses the existing endpoint-domain and d1 generators rather than reimplementing their arithmetic.
 
