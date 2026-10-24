@@ -1,5 +1,8 @@
 # CANONICAL STATE — EG617 general-r asymptotic synthesis
 
+> **Round 3 override (2026-10-24):** unconditional all-large-r status remains **NOT CERTIFIED**. New UNIFORM_LOW_OFFSET_CLOSURE.md proves that every surviving low-offset terminal must contain an outside vertex h with d_F(h,W) >= floor((r-j)/4)+1, and that all offsets close if a uniform bound d_F(o,W)<=B is established. The required hub-exclusion theorem is still OPEN; do not promote this structural reduction to D_low closure.
+
+
 Updated: 2026-10-24
 
 Branch: `workstream/general-r-asymptotic-20261024`
