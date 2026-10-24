@@ -73,3 +73,15 @@ The earlier ten-witness-star file in the emergency sprint claims \(e(H[U])=135\)
 - Progress log: b9b2ebc8cc4659ca9d3c28e05f4e9d300b7d405b
 
 No graph-level contradiction or independently replayed UNSAT certificate has been produced. The terminal remains OPEN / NOT_CERTIFIED.
+
+
+## New low-slack global-compatibility result
+
+The pairwise exact-129 blocker theorem has now been integrated into SEVEN_BLOCK_INCIDENCE_LEDGER.md. For an exact-129 color C and a block with \(r_i(C)\le3\), all ten isolated K5 components are represented in exactly one row neighborhood, exactly two rows contain no full component, and each component-containing row has size at most seven. For any two blocks i,j with \(r_i(C),r_j(C)\le3\), the ten corresponding component representatives are forced C-edges forming a matching.
+
+This sharpens the labeled finite contract: every low-slack block induces a partition of the 56 selected witness labels into 12 row classes, each class a matching of pairwise-disjoint selected Q-sets and containing at most one Q from each selected color. The crude capacity \(12\cdot7=84\) still exceeds 56, so this is not yet a contradiction.
+
+## Latest isolated commits
+
+- Low-slack blocker normal form and forced component matchings: 9eac2189941dafc1e75cea36ac56bde1e15105b1
+- Dependency integration: b65203ae7b7354fad1849ae924347e0840c38255
