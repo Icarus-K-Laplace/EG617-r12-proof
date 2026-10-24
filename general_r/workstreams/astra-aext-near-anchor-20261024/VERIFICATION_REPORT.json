@@ -1,0 +1,8 @@
+{
+  "status": "EXACT_IDENTITIES_AND_CONSTRUCTION_CHECKED",
+  "polynomial_identities": "coefficient-exact over Q[r,a,s]",
+  "graph_check": "5-type gadget; a=3..30; analytic proof supplies all a",
+  "claim_scope": "single-colour sharpness, not a compatible colouring",
+  "A_ext_star": "OPEN",
+  "external_theorems_checked_by_script": false
+}

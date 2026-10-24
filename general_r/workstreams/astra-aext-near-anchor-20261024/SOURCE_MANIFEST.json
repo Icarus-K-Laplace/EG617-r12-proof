@@ -1,0 +1,128 @@
+[
+  {
+    "tag": "architecture",
+    "path": "general_r/WORKSTREAM_STATE.md",
+    "ref": "a922c4d7646eb8d0087bde8547562c8aace02ee2",
+    "blob_sha": "e4677d8e811fea805a687e20664f046d5d7f7da4"
+  },
+  {
+    "tag": "architecture",
+    "path": "CANONICAL_STATE.md",
+    "ref": "a922c4d7646eb8d0087bde8547562c8aace02ee2",
+    "blob_sha": "172a0e30733eecdfab4d5a429fabcc5bb983d6e9"
+  },
+  {
+    "tag": "asymptotic",
+    "path": "general_r/workstreams/asymptotic-chat-20261024/SUFFICIENTLY_LARGE_R_THEOREM.md",
+    "ref": "aa7fbbda16ff0170c9bf7c440ca961a7a8aab3c0",
+    "blob_sha": "7735f95321d4ca85e8f62e7ccbc9ee09800faecf"
+  },
+  {
+    "tag": "asymptotic",
+    "path": "general_r/workstreams/asymptotic-chat-20261024/SHORTEST_UNCONDITIONAL_ROUTE.md",
+    "ref": "aa7fbbda16ff0170c9bf7c440ca961a7a8aab3c0",
+    "blob_sha": "8193ef664b24cfa4cf0bae4237504d74ef038400"
+  },
+  {
+    "tag": "asymptotic",
+    "path": "general_r/workstreams/asymptotic-chat-20261024/ASSUMPTION_LEDGER.md",
+    "ref": "aa7fbbda16ff0170c9bf7c440ca961a7a8aab3c0",
+    "blob_sha": "89d124d8597caa94e856f29d4f462e3f962b58a4"
+  },
+  {
+    "tag": "asymptotic",
+    "path": "general_r/workstreams/asymptotic-chat-20261024/CANONICAL_STATE.md",
+    "ref": "aa7fbbda16ff0170c9bf7c440ca961a7a8aab3c0",
+    "blob_sha": "f4b8741a8d6c78044a81dccee229d2c5e4eb0ea8"
+  },
+  {
+    "tag": "front-recurrence",
+    "path": "general_r/workstreams/front-recurrence-chat-20261024/CANONICAL_STATE.md",
+    "ref": "95c9df0e06de61c84c4cfed0ec00bbd48f0ebf64",
+    "blob_sha": "15a07e0794a22f5cf349cca6c10d24a68c541d17"
+  },
+  {
+    "tag": "residual-core-extraction",
+    "path": "general_r/workstreams/residual-core-extraction-chat-20261024/CANONICAL_STATE.md",
+    "ref": "614a956a7e964f42c0818eca05e3ca9e26a6458a",
+    "blob_sha": "07e5ebd6ce5787c1b5df7484643add5130482082"
+  },
+  {
+    "tag": "front-recurrence",
+    "path": "general_r/workstreams/front-recurrence-chat-20261024/R12_RECURRENCE_DECOMPILATION.md",
+    "ref": "95c9df0e06de61c84c4cfed0ec00bbd48f0ebf64",
+    "blob_sha": "c68d2ca45b66c88ee88c312d97c4905b31e5a1b9"
+  },
+  {
+    "tag": "front-recurrence",
+    "path": "general_r/workstreams/front-recurrence-chat-20261024/SYMBOLIC_RECURRENCE.md",
+    "ref": "95c9df0e06de61c84c4cfed0ec00bbd48f0ebf64",
+    "blob_sha": "f5801b374748eb44d29a1783f0f9b9a54a5d173f"
+  },
+  {
+    "tag": "front-recurrence",
+    "path": "general_r/workstreams/front-recurrence-chat-20261024/POTENTIAL_FUNCTION.md",
+    "ref": "95c9df0e06de61c84c4cfed0ec00bbd48f0ebf64",
+    "blob_sha": "d17e5310bc139cb9011619b96af015ac62c4b5e9"
+  },
+  {
+    "tag": "front-recurrence",
+    "path": "general_r/workstreams/front-recurrence-chat-20261024/TERMINAL_TYPES.md",
+    "ref": "95c9df0e06de61c84c4cfed0ec00bbd48f0ebf64",
+    "blob_sha": "9a0ebeffe816a65564cc91f78fb55a73b968dc1d"
+  },
+  {
+    "tag": "architecture",
+    "path": "general_r/GENERAL_R_KS_CONTEXTUAL_CAP_PLANE.md",
+    "ref": "a922c4d7646eb8d0087bde8547562c8aace02ee2",
+    "blob_sha": "774dc0023d4d835bacf09e1a76d6bc44e38abbad"
+  },
+  {
+    "tag": "architecture",
+    "path": "general_r/GENERAL_R_LEAST_COLOR_MINDEG_AND_EXTENSION_BUDGET.md",
+    "ref": "a922c4d7646eb8d0087bde8547562c8aace02ee2",
+    "blob_sha": "033744f8f4f42385ac6ea0fb6921517d672e0a61"
+  },
+  {
+    "tag": "architecture",
+    "path": "general_r/GENERAL_R_FRONT_STRUCTURAL_SOURCE.md",
+    "ref": "a922c4d7646eb8d0087bde8547562c8aace02ee2",
+    "blob_sha": "d55d0fb03e48b2ac01b78db9c5c9ec52d224e0e4"
+  },
+  {
+    "tag": "architecture",
+    "path": "general_r/GENERAL_R_CONTEXTUAL_4R1_EXCLUSION.md",
+    "ref": "a922c4d7646eb8d0087bde8547562c8aace02ee2",
+    "blob_sha": "ee2f18a949d148ef023504db96b25407e09961ab"
+  },
+  {
+    "tag": "residual-core-extraction",
+    "path": "general_r/workstreams/residual-core-extraction-chat-20261024/ANCHOR_NORMALIZATION_AND_GREEDY_EXTRACTION.md",
+    "ref": "614a956a7e964f42c0818eca05e3ca9e26a6458a",
+    "blob_sha": "8bb4afd708f6cacd48db57ff6ffbd8aadba84376"
+  },
+  {
+    "tag": "residual-core-extraction",
+    "path": "general_r/workstreams/residual-core-extraction-chat-20261024/RECURRENCE_REPLACEMENT_POTENTIALS.md",
+    "ref": "614a956a7e964f42c0818eca05e3ca9e26a6458a",
+    "blob_sha": "a0f75af8fd9b1b222dac7c5b0e28ab7a0b70048c"
+  },
+  {
+    "tag": "residual-core-extraction",
+    "path": "general_r/workstreams/residual-core-extraction-chat-20261024/FIVE_R_TERMINAL.md",
+    "ref": "614a956a7e964f42c0818eca05e3ca9e26a6458a",
+    "blob_sha": "8ad6bfb167304b541a66d54dfd500cc08b3986bc"
+  },
+  {
+    "tag": "residual-core-extraction",
+    "path": "general_r/workstreams/residual-core-extraction-chat-20261024/NO_HIGH_STOP_ROUND2_LEMMAS.md",
+    "ref": "614a956a7e964f42c0818eca05e3ca9e26a6458a",
+    "blob_sha": "ba846d85135fedf28185f68fe669f3c52aa44e56"
+  },
+  {
+    "tag": "front-recurrence",
+    "path": "general_r/workstreams/front-recurrence-chat-20261024/OUTER_BUDGET_DOMINANCE.md",
+    "ref": "95c9df0e06de61c84c4cfed0ec00bbd48f0ebf64",
+    "blob_sha": "223f5030f9ee0bacb01ff12f9f3eefafdfb4d55b"
+  }
+]
