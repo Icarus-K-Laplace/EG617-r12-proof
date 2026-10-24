@@ -167,3 +167,8 @@ The 6-clique is a full transversal of the three 6-by-6 directions; each of the s
 Finally, J's witness-color dichotomy sharpens in this profile. Either at least one zero-excess color has two or more private witnesses, whose residual Q_v are transversals of that direction; or all three zero-excess colors occur at most once among the 14 witness roots, so at least 11 roots use the three high colors and one high color has at least four witnesses. That high color has the exceptional-star form above.
 
 This is a finite incidence kernel for the r=7 Case B, not a contradiction. The one-transversal-plus-six-near-transversal decomposition is not itself an orthogonal mate, so Euler–Tarry cannot be applied to exclude it. Case A is not covered.
+
+
+### K.RM5 audit boundary
+
+The 3-net plus one-transversal/six-near-transversal subkernel is realizable as a Latin-square incidence structure; see Q6_NEAR_TRANSVERSAL_OBSTRUCTION_AUDIT.md, commit 825c48ae4e5cc47e7feb6abab6337de62db6fd6c. Therefore it cannot be excluded by Euler–Tarry alone. The full EG617 kernel still additionally requires the three exceptional-star high-color graphs and the 14-root witness incidence.
