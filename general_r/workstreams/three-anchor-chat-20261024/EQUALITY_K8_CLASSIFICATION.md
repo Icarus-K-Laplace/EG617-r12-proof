@@ -3,7 +3,7 @@
 ## Status
 
 **FULL CLASSIFICATION: OPEN_GAP.**  
-**STRENGTHENING \(K\ge10\): NOT PROVED.**
+**STRENGTHENING \(K\ge10\) for all (r\ge12): NOT PROVED; for (r\ge14): PROVED.**
 
 This file records only consequences proved in Round 2. The previously certified theorem \(K\ge8\) remains unchanged. No integer profile or relaxed connector skeleton is presented as a realizable graph.
 
