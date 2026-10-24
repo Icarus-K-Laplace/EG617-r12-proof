@@ -1,0 +1,1 @@
+Rule: do not infer a general-r theorem by fitting r=12 constants. Every symbolic formula requires a derivation from definitions/reductions or a separately proved theorem.
