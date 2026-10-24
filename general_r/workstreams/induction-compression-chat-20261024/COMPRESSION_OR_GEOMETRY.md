@@ -94,3 +94,12 @@ Consequently either a repeated witness color has b_i<=r-3, in which case the com
 For every same-color pair, the graph on the symmetric differences has a perfect matching by Konig's theorem and the independence-number cap. A duplicate-safe incidence inequality records how many witness pairs one physical edge can serve. These are graph-level constraints, but neither branch is yet contradictory.
 
 The separate Case A packing inequalities count disjoint edge classes correctly; their r=3,4,5 evaluations remain below the universal color-edge floor and therefore do not close the packing branch.
+
+
+## 8. First high-excess threshold interface
+
+In the alignment-free Case B alternative, if the repeated witness color has residual excess b_i=q-1 (q=r-1), K's Kang–Pikhurko classification gives an exact finite normal form; see K branch commit b20a3dde117facb37e78c2311160a149e578b27c, Theorem K.RM4.
+
+Either G_i[R] is a q-clique partition plus q-1 cross-block color-i edges, or a single exceptional point can be deleted to leave q clique blocks (sizes q except one q-1) plus a nonempty star of cross-block color-i edges. The exceptional point has residual color-i degree 2q-2-a for 1<=a<=q-1.
+
+This is a finite incidence kernel at equality, not a contradiction. If b_i>=q, the exact extremal classification does not apply directly.
