@@ -88,3 +88,17 @@ A separate arithmetic check enumerated all 70 pairs q in {32,...,38}, N in {1,..
 ## 4. Audit limitation
 
 This audit independently checked algebraic consequences and source scope, not the entire 1752-node recurrence, every retained lower-order seed, every V11/V12 package, or every historical finite certificate. Those assets remain dependencies and require their own replay before the final theorem can be promoted.
+
+
+## 5. Independent check of the q<=38 d3 disjoint-support theorem
+
+The proof uses the exact second-view charge, not a numerical surrogate:
+
+- disjoint core supports give the third-view support size d'=6-|S_i intersect S_j|;
+- the nonnegative exchange remainder and maximum-q condition imply d'(13-d')<=q<=38;
+- therefore |S_i intersect S_j|>=2;
+- if the missing triples differ, d'=4 and the entire remainder is at most q-36, which also bounds the cross-edge count e_H(D_i,D_j).
+
+The transversal inequality was independently checked over every integer m from 1 through100 for c=0,1,2. The largest feasible m were respectively 3,3,6; the first impossible values were 4,4,7. These agree with the theorem's claimed capacities.
+
+This check certifies the arithmetic consequence of the stated block-transversal theorem. It does not independently replay the entire upstream pivot exchange proof, the legal-residual reduction, or the original recurrence.
