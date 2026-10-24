@@ -207,6 +207,7 @@ The analytic residual-core theorem proves `delta(H)>=r` for `r>=17`. The boundar
 - New slot accounting improves the hub kernel to `7<=|X|<=28` for `a=6,r>=26272`, and the clean partial design to at least `r^2-66r` blocks. This does not yet contradict the design-only model.
 - If a target group has size `r+9`, then `sum_{i>0}(x_i-5)<=20+Z_j-m_j`, where `Z_j` is its duplicate-vertex count and `m_j` its number of colors with a nonhub duplicate. Thus low duplicate concentration forces almost all non-target colors to attain the KP floor `x_i=5`.
 - For `x_i=5`, KP's exact equality construction has all base parts of size six. When also `z_i=1`, the predecessor label classes form that six-set partition except for at most two explicit exceptional blocks. The `z_i>1` interface remains unclassified.
+- In an `r+9` target part, at most `2 binom(k_j,2)<=756` collision units can lie in classes with at least three vertices in the part; all remaining collision units are hub–nonhub doubletons. If duplicate concentration is zero, at least `9r-765` such edges form a colored matching system.
 - `NO-HIGH-STOP` remains **`OPEN`** for every claimed threshold `r>=r0`; no such `r0` has been established.
 
 ## Next highest-leverage target
