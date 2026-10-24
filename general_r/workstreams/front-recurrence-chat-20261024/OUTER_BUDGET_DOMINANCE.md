@@ -64,3 +64,20 @@ The contextual $M_r(4)\le4r$ statement is a reductio assumption against the desi
 **No uniform outer-budget dominance theorem and no explicit $r_0$ have been proved.** The exact gap formula localizes the difficult region: small $t=r-d$, where the required excess over $p_a(n)$ is approximately $\binom r2$. The H+I transfer inequality is valid on induced residuals but presently gives an upper constraint, not the needed lower edge floor.
 
 Do not mark H3 as achieved until the remaining seed envelope and all-state integer comparison are proved.
+
+## Round 2 — Outer-state closure gained at t=1 (2026-10-24)
+
+The cutoff theorems in `LOW_ORDER_CUTOFF_THEOREMS.md` eliminate two additional t=1 states for every (r\ge6):
+- (a=2,n=2r+1): empty by (M_r(2)\le2r-1);
+- (a=3,n=3r+1): empty by (M_r(3)\le3r).
+
+The (a=3) proof has a direct cap check: minimum degree (h\ge r+1) gives
+[
+e(J)\ge\frac{(3r+1)(r+1)}2,
+\qquad D_r(3r+1)=\frac{3r^2+3r+6}{2},
+]
+and the difference is ((r-5)/2>0) for (r\ge6).
+
+The (a=4,n=4r+1) coordinate remains the intended extraction residual, not an unconditional state to eliminate. It is empty only under the contextual no-extraction reductio. The (a=5,n=5r+1) design terminal remains deliberately retained.
+
+Thus the exact gap formula is now paired with real elimination results, but all-state dominance is still OPEN: the remaining seed excesses and the other admissible outer states have not been uniformly closed. No (r_0) for EG617 is claimed.
