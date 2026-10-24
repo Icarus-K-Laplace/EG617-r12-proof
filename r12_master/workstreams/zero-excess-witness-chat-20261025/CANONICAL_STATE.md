@@ -99,3 +99,43 @@ New commit sequence:
 - high-support sibling audit: 0f46dab0656cd3e07627cb8e6df8b0cc02cd3c54
 
 The E407 non-four-partite boundary and the E408 Q33 v=31 boundary remain OPEN. E408 Q32 is still a separate 285-edge-core problem. EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+## Round 4 — live sibling refresh; corrected four-partite boundary analysis (2026-10-25)
+
+Live sibling heads reread:
+- ultimate closure: 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40;
+- emergency sprint: ad56a91c644458cb16dd590b7a4ed0e800978a81;
+- witness packing: 5d0e3ceab7895be1a947e46853f92bb84477f4e5;
+- this workstream: 3dbc0349a678e1f8b668e940967699f3b3de527a.
+
+### New result: E408 Q33 four-partite boundary S0 >= 11
+
+In R12_WITNESS_PACKING_BOUNDARY_KERNEL.md, Section 13 gives an independent proof that the four-partite E408 Q33 minimum-support boundary must satisfy
+\[
+S_0=\epsilon_U+2\delta\ge11,\qquad \delta+\epsilon_U\le17.
+\]
+Key ingredients:
+1. The 56 blocks force L's parts to be A,B,C (size 8) and D (size 7); each pair between D and a large part is used once, and unused pairs between large parts form perfect matchings.
+2. Every outside vertex with exactly seven core neighbours has neighbourhood D. Such vertices form a clique: otherwise an independent triple from A,B,C plus two nonadjacent such vertices would violate alpha(H)<=4. Since D is a 7-clique and no counterexample can contain a monochromatic K13, their count k is at most 5.
+3. This bound and the exact cross-edge budget exclude S0=8 and S0=9. At S0=10, only k=4 or5 is arithmetically possible; the size-8/9 transversal classification and a three-per-large-part capacity bound force at least ten full-large-part neighbourhoods, while only nine can occur. Hence S0>=11.
+
+This proof does not rely on the selected-pair count in the sibling R12_E408_Q33_FOUR_PARTITE_S0_10_EXCLUSION.md. That sibling's s=1/s=2 pair-count step is invalid as written: a selected pair absent from all Q blocks may be an H-edge, not necessarily an extra L-edge. The theorem's conclusion is independently recovered by Section 13 under the actual counterexample constraint.
+
+### Corrected E407 four-partite branch
+
+Audit of the earlier Sections 6/9 found that the 49 witness blocks do not force the eighth point of the (7,7,7,8) partition to be unused. For a seven-by-eight pair type, the seven unused pairs have degree one on the seven-point side but can have nonuniform degrees on the eight-point side. The earlier TD(4,7)-plus-unused-point reduction, and all conclusions depending on a distinguished z (including delta>=12 and the K5∪K5∪K4∪K4 structure), are withdrawn.
+
+The valid E407 v=29 / 49-block ledger remains
+\[
+\delta\ge2,\quad \delta+\epsilon_U\le16,\quad
+\epsilon_U+2\delta\ge2,\quad 0\le\epsilon_U\le4.
+\]
+The four-partite branch is still open; no invalid distinguished-point assumption is retained.
+
+Updated proof assets:
+- R12_WITNESS_PACKING_BOUNDARY_KERNEL.md — Sections 6 and 9 corrected; Section 13 adds the independent E408 S0>=11 proof.
+- verify_witness_boundary_arithmetic.py — arithmetic checks updated for the refined E408 degree windows.
+- Latest commits: boundary proof df41618effb2ce5e025f20258ecffd357af2f258; E407 audit correction 49afd66a18850049c80e4b48c073582a9ecf3473; verifier cleanup 3dbc0349a678e1f8b668e940967699f3b3de527a.
+
+Status firewall: E408 Q33 non-four-partite boundary remains OPEN; E407 Q32, E408 Q32 (285-edge core), other support sizes, and the original K145 bridge remain OPEN / NOT_CERTIFIED. No full EG617(r=12) proof is claimed.
