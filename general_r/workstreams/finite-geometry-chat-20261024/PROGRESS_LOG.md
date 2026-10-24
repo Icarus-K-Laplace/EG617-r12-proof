@@ -124,3 +124,12 @@ The specified `LITERATURE_AUDIT.md` did not exist on this branch at the start of
 - Proved the exact dichotomy: q equal clique blocks plus q-1 cross-block color edges, or an exceptional vertex whose deletion leaves q clique blocks (sizes q except one q-1) plus a nonempty star of cross-block defects.
 - Derived the exceptional vertex's exact residual color-i degree 2q-2-a, where the defect star has 1<=a<=q-1 edges.
 - Linked this threshold form into J's repeated high-excess witness branch. No exclusion of the incidence kernel has yet been proved.
+
+
+## 2026-10-24 — Round 6: exact q=6 / r=7 residual profile
+
+- Used the classical nonexistence of an orthogonal mate for a Latin square of order 6 to show that at most three residual color complements can be 6-partite.
+- Combined this with sum b_i<=15 and Brouwer's nonpartite threshold b_i>=5 to force exactly three nonpartite colors with b_i=5 and three zero-excess colors with b_i=0.
+- Forced the omitted color c to have exactly 75 edges on R, attaining the Turan minimum for alpha<=7; hence its graph is a union of seven cliques of sizes 6,5,5,5,5,5,5.
+- Identified the exact incidence kernel: a 3-net / Latin square of order 6, one c-clique that is a full transversal, six disjoint c-cliques that are near-transversals, and three high-color exceptional-star graphs.
+- This is not a contradiction: one full transversal plus six near-transversals does not automatically produce an orthogonal mate. Case A remains outside the reduction.
