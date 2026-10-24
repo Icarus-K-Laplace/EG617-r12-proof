@@ -27,9 +27,9 @@ Under the registered E408 seven-block equality system and Kang–Pikhurko exact-
 1. The number m of exact-129 non-target colors is 8, 9, or 10.
 2. Each exact-129 color has twelve pairwise-disjoint 5-cliques: ten isolated K5 components plus two K5 cliques inside the 11-point exceptional gadget. Every clique meets {p}∪A because α(H)≤4. The outside-H budget is fourteen vertices; depending on whether the gadget exceptional vertex lies in H, at least ten of the twelve cliques have exactly one outside-H vertex.
 3. Removing the unique outside vertex from each such clique gives an independent 4-set Q⊂H. Witnesses are disjoint within one color and intersect in at most one core vertex across different colors. Hence N≥10m, without assuming M[B]=∅.
-4. The correct 285-edge capacity inequality is (6N\le \binom v2-p_4(47-v)-12v+285-E_U). Capacity alone gives v≥37,39,41 for m=8,9,10; combining with ten disjoint witnesses from one color gives preliminary floors **v≥40,40,41**.
-5. The new low-support triple-pair capacity theorem improves this to **v≥44 for every m∈{8,9,10}**. If v≤43, the two double-shell cliques per exact color yield two disjoint core triples, and their pairs inside W=H\U are globally edge-disjoint. The exact pair budget rules out v=40,41,42,43 without assuming M[B]=∅.
-6. At v=44, W has three vertices. At most three colors can have their exceptional vertex in O_C=U\Q_C, and at least m−3 colors have each of their two core triples containing exactly one W vertex. This is the current strict terminal, not a complete contradiction.
+4. The correct 285-edge capacity inequality is: 6N ≤ binom(v,2) − p_4(47−v) − 12v + 285 − E_U. Capacity alone gives v≥37,39,41 for m=8,9,10; combining with ten disjoint witnesses from one color gives preliminary floors v≥40,40,41.
+5. The new low-support triple-pair capacity theorem improves this to **v≥44 for every m∈{8,9,10}**. If v≤43, the two double-shell cliques per exact color yield two disjoint core triples, and their pairs inside W (the vertices of H outside U) are globally edge-disjoint. The exact pair budget rules out v=40,41,42,43 without assuming M[B]=∅.
+6. At v=44, W has three vertices. At most three colors can have their exceptional vertex in O_C (the vertices of U omitted by that color’s ten witnesses), and at least m−3 colors have each of their two core triples containing exactly one W vertex. This is the current strict terminal, not a complete contradiction.
 
 ## Seven-block coupling
 

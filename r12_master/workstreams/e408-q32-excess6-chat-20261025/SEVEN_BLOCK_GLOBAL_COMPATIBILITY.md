@@ -101,7 +101,7 @@ All of the following are simultaneously necessary:
 2. Shell: 22≤e(M)≤32 and Σ_A g_a=32-e(M)≤10; zero-shell-support core vertices are allowed but at most six.
 3. Witness packing: N≥10m pairwise-linear independent 4-sets in H, uniformly over both shell-support cases.
 4. Support size: the scalar capacity floors are v≥40,40,41 for m=8,9,10, but the low-support triple-pair theorem strengthens this to **v≥44 uniformly**.
-5. At v=44, W=H\\U has three vertices. Pair uniqueness inside the two double-shell core triples forces at most three colors to have x_C∈O_C and at least m−3 colors to split W\\{x_C} one vertex into each triple. The M-edge pair and seven-block blocker constraints still need to be combined with this terminal.
+5. At v=44, W (the vertices of H outside U) has three vertices. Pair uniqueness inside the two double-shell core triples forces at most three colors to have x_C∈O_C and at least m−3 colors to split the two vertices of W other than x_C one vertex into each triple. The M-edge pair and seven-block blocker constraints still need to be combined with this terminal.
 6. Outer blocks: P_C+R_C+s_C=62, Σs_C=3, P_C≤55 for exact colors, and at least 11/20/29 distinct good isolated witness components are used as size-five blockers for m=8/9/10.
 
 No complete SAT/ILP/CSP instance has been built here. The remaining task is a graph-level compatibility theorem using the actual H adjacency, the shell labels on Q, and the seven-block blocker assignments. Do not promote these necessary constraints to a global contradiction.

@@ -117,7 +117,7 @@ Using only N≥10m, the capacity inequality by itself gives:
 | 9 | 90 | 540 | 39 |
 | 10 | 100 | 600 | 41 |
 
-There is also a stronger, immediate within-color bound: one exact-129 color already contributes ten disjoint 4-sets, so v≥40. Combining it with the capacity bound gives the actual current support floors:
+There is also a stronger, immediate within-color bound: one exact-129 color already contributes ten disjoint 4-sets, so v≥40. Combining it with the capacity bound gives the preliminary support floors before the triple-pair refinement in §6:
 
 \[
 \boxed{v\ge40\text{ if }m=8\text{ or }9;\qquad v\ge41\text{ if }m=10.}
