@@ -134,8 +134,6 @@ If k repeated exact classes simultaneously admit `Phi_3`-flat exchanges, then
 
 **Status:** exact involution `PROVED_SYMBOLIC`; clique-capacity product bound `PROVED_CONDITIONAL`.
 
-Full Level 4 is not yet certified because distinct-support plateau moves remain.
-
 ---
 
 # Theorem F — Balanced Two-Chamber Correction Theorem
@@ -186,13 +184,13 @@ For two same-shell-class owners with supports `D_i,D_j`, after repivoting throug
 
 Hence repeated / one-point-overlap / disjoint supports induce d0 / d1 / d2 correction transitions respectively.
 
-The following are proved using only valid core row-closure / `alpha(H)<=3` arguments:
+The valid low-allowance and matching reductions are:
 
 - `a=0`: `|E(Q)|<=3`;
-- `a=1`: `|E(Q)|<=12`;
+- `a=1`: `|E(Q)|<=9`;
 - for `a>=2`,
   > **`nu(Q)(a-1)<=W<=4r+9-a`;**
-- at `a=2`, all zero-weight support vertices number at most three, and the `(1,1)` target-support subgraph has maximum degree at most three;
+- at `a=2`, all zero-weight support vertices number at most three, and the zero-free `(1,1)` target-support subgraph has maximum degree at most three;
 - the induced hereditary capacity inequality from `D2_DISTINCT_SUPPORT_REDUCTION.md` holds in its stated range.
 
 **Status:** `PROVED_CONDITIONAL`.
@@ -201,7 +199,78 @@ The attempted stronger claim `nu(Q)<=3` independent of allowance is **retracted*
 
 ---
 
-# Theorem H — d2 scalar/core-support barrier
+# Theorem H — Exact fourth potential coordinate and plateau-distance compression
+
+Define
+
+`eta(p)`
+` = #{ regular shell owners x with d_p(x)=1 and`
+`       (q_x,tau_x,zeta(x))=(q_p,tau_p,zeta(p)) }`.
+
+Then
+
+> **`Phi_4=(q,tau,zeta,eta)`**
+
+is a genuine bounded lexicographic potential.
+
+For a neutral-free distinct d2 common-S plateau let `G_S` be the support-intersection graph. The exact transition identity gives
+
+`eta(p_D)>=deg_(G_S)(D)`.
+
+Hence at a `Phi_4`-maximal pivot
+
+> **`Delta(G_S)<=eta`.**
+
+A greedy independent set in `G_S` yields a pairwise-disjoint q-flat subfamily of size at least
+
+> **`ceil(N/(eta+1))`.**
+
+So support overlap is not a free scalable parameter: it is charged to the d1 plateau population.
+
+The eta population lies in at most five d1 shell classes. In the neutral-free slice one such class has `N_1>=ceil(eta/5)` distinct singleton supports. If c is its allowance, then under the inherited core cap `K<=2r-2`,
+
+> **`(N_1-1)c<=3r-2`.**
+
+Thus linear eta forces a linear d1 class with O(1) allowance.
+
+**Status:** eta/transition theorem `PROVED_SYMBOLIC`; d1 scale-transfer bound `PROVED_CONDITIONAL`.
+
+This is the first certified fourth potential coordinate.
+
+---
+
+# Theorem I — Allowance-2 Clean Pair-Exchange Orbit
+
+In any pairwise-disjoint q-flat `a=2` d2 subfamily, at most three supports contain a zero-weight endpoint. Every other support is a clean target K2 with endpoint weights `(1,1)`.
+
+Let `D_i,D_j` be two disjoint clean supports. Repivot through the owner of `D_i`. Then `D_j` remains
+
+- a d2 support;
+- q/tau/zeta-flat;
+- a target K2;
+- endpoint weights exactly `(1,1)` relative to the new shell pair `D_i`.
+
+Therefore a disjoint clean subsystem is closed under exchanging the distinguished shell pair with any clean core pair.
+
+The old shell pair becomes one reverse support of exactly one of three symbolic types:
+
+1. clean target K2 `(1,1)`;
+2. target K2 `(0,2)`;
+3. target nonedge `(0,1)`.
+
+Between two clean blocks the target cross graph is a matching of size0,1,or2 by row closure.
+
+Since the `(1,1)` support graph has maximum degree3, every unbounded `a=2` branch contains an unbounded clean matching subsystem, and every linear-size branch contains a linear-size one.
+
+Hence the scalable `a=2` terminal is no longer an arbitrary bounded-degree graph. It contains the rigid design object
+
+> **clean pair-exchange design + O(1) zero-containing special blocks.**
+
+**Status:** `PROVED_CONDITIONAL`.
+
+---
+
+# Theorem J — d2 scalar/core-support barrier
 
 For every d2 common-S system,
 
@@ -215,11 +284,18 @@ A three-class exact-one-loss common-hub subsystem requires
 
 ---
 
-# Theorem I — Plateau cycle rigidity
+# Theorem K — Plateau cycle rigidity
 
 A closed `(q,tau)`-non-improving cycle is q/tau-flat edgewise. Repeated-class edges are controlled exactly by zeta. If zeta is also flat, Theorem F collapses the repeated part to a two-state involution.
 
-Thus the unresolved correction complexity lies in distinct-support fully-decorated d2 moves, especially allowance `a>=2`.
+Distinct d2 overlap is controlled by eta. The first genuinely scalable distinct branch `a=2` contains a repivot-closed clean pair-exchange design by Theorem I.
+
+Thus every surviving long correction cycle must be assembled from
+
+- the balanced repeated two-chamber block;
+- bounded-allowance d1 plateau states;
+- the clean pair-exchange design;
+- at most three high-endpoint owners.
 
 **Status:** `PROVED_SYMBOLIC` / `PROVED_CONDITIONAL` as above.
 
@@ -241,45 +317,56 @@ Likewise the allowance-independent distinct-support `nu(Q)<=3` / six-hub collaps
 
 Current preferred potential:
 
-> **`Phi=(q,tau,zeta,...)`.**
+> **`Phi_4=(q,tau,zeta,eta)`.**
 
-The first three coordinates are genuine bounded integer coordinates, with an exact class-exchange law for zeta.
+All four coordinates are genuine bounded integers. Zeta has an exact class-exchange law and eta has an exact intersection-to-d1 transport law.
 
-The bounded candidate fourth coordinate remains
+A bounded fifth-coordinate candidate remains
 
 `Q2=sum_{v in H}kappa_v^2`.
 
 Universal Q2 monotonicity is open.
 
-A fourth coordinate is now needed primarily for the fully-decorated distinct-support d2 plateau with `a>=2`.
-
 ---
 
 # Remaining route to Level 4 / Level 5
 
-The principal scalable branch is:
+The principal scalable terminal has now changed form.
 
-> a fixed fully decorated d2 shell pair `S subset X`, `zeta=0`, with many distinct q-flat supports and allowance `a>=2`.
+The old blocker
 
-The repeated part has already collapsed to the Balanced Two-Chamber family. The distinct branch is absolutely bounded for `a=0,1` and partially structured at `a=2`.
+> arbitrary fully-decorated distinct-support d2 plateau at `a>=2`
 
-The next target is:
+has been reduced to:
 
-> **Allowance-2 Distinct-Support Closure.** Eliminate or finitely classify the max-degree-three weighted support graph at `a=2`, preferably via d1 correction transitions, row closure, or a fourth bounded potential.
+1. bounded-allowance d1 concentration, when eta is large;
+2. weighted d2 matching compression, when eta is small;
+3. at the first scalable level `a=2`, a large repivot-closed clean pair-exchange design plus O(1) special blocks.
 
-A successful `a=2` theorem should then indicate the scalable mechanism for general allowance.
+The next target is therefore:
+
+> **Clean Pair Nonextension Theorem.** Eliminate a sufficiently large clean K2 block system in which every inter-block target graph is a matching, no four blocks admit an independent transversal, and repivot may exchange the distinguished block without leaving the clean family.
+
+The preferred routes are:
+
+- hereditary-cap/stability contradiction;
+- clique-cap contradiction;
+- multicolor nonextension;
+- or a strict fifth-coordinate improvement, likely from transported excess (`Q2`) or a block-defect statistic.
+
+A successful theorem here would close the first genuinely scalable allowance layer and push the backend materially toward Level 5.
 
 ---
 
 # Certified success level
 
 - Level 1: d3 closure obtained.
-- Level 2: full low-endpoint elimination not yet; shell geometry is fixed-width and non-fully-decorated d2 plateaux are O(1)-bounded.
+- Level 2: full low-endpoint elimination not yet; shell geometry is fixed-width and the first two distinct d2 allowance layers are absolutely bounded.
 - **Level 3: achieved** — high endpoint is a finite three-owner bounded-complement skeleton.
-- Level 4: not yet achieved, but `Phi_3=(q,tau,zeta)` is a genuine three-coordinate potential with exact class-exchange dynamics.
+- **Level 4: partially achieved** — `Phi_4=(q,tau,zeta,eta)` is a genuine four-coordinate potential; the only scalable flat terminal currently visible is the clean pair design / bounded-allowance d1 package.
 - Level 5: open — no certified absolute r0 yet.
 - Level 6: open.
 
 # Single blocker
 
-> **Fully-decorated distinct-support d2 plateau at allowance `a>=2`, beginning with complete closure of `a=2`.**
+> **Clean Pair Nonextension Theorem, together with absorption of the bounded-allowance d1 terminal generated by eta.**
