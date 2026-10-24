@@ -322,3 +322,8 @@ Follow-up commits:
 - termination theorem Q2/blocker correction: 2439aa8a0d45f184fc5fc6286d96292a8df2f6da
 
 No all-large-r contradiction is certified.
+
+
+Allowance-one summary audit follow-up: the final summary line in D2_DISTINCT_SUPPORT_REDUCTION.md was also corrected from 12 to 9. Commit: d7fde7ad56f90288e0c2e19f70f6f78eaf0eeda0.
+
+The final CLEAN_PAIR_GRAPH_MODEL.md blob includes the embedded exhaustive checker and signed-parity wording audit (latest content commit d9641f2a2e07817c2ed9f0cecf8c2246639ff291).
