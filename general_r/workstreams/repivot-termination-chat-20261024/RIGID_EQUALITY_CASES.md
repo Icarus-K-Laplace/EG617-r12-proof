@@ -10,7 +10,7 @@ If `d=0`, then `S=D=empty`, `H_y=H`, `q_y=q`, and `tau_y=tau`. These moves are p
 
 ---
 
-## E1. d=1 one-vertex exchange — FIVE SHELL CLASSES, CORE RIGIDITY OPEN
+## E1. d=1 one-vertex exchange — AT MOST FIVE SHELL CLASSES
 
 Write `S={s}`, `D={u}`. Then
 
@@ -18,74 +18,86 @@ Write `S={s}`, `D={u}`. Then
 
 Thus q-improvement / flatness / loss is exactly comparison of the replaced core excess.
 
-The shell-incidence heavy-cover theorem adds a global restriction. Let
-
-`t_s=d_M(s)+g_s=e_F(s,H)`.
-
-Every d1 owner satisfies `t_s>=r`. Since `sum_A t_s<=6r-2`, all d1 missing partners lie in one set
+Let `t_s=d_M(s)+g_s=e_F(s,H)`. Every d1 owner satisfies `t_s>=r`. Since `sum_A t_s<=6r-2`, all d1 missing partners lie in a set
 
 `C_1={s:t_s>=r}`
 
 with
 
-> **`|C_1|<=5`.**
+> `|C_1|<=5`.
 
-Hence all d1 owners split into at most five shell common-S classes. The only remaining d1 growth is owner/core-support multiplicity inside those five classes.
+Hence all d1 owners split into at most five common-S shell classes. Remaining growth is owner/core-support multiplicity inside those classes.
 
-**Status:** exact exchange + five-class shell reduction `PROVED_CONDITIONAL`; final plateau/core-support closure `OPEN`.
+**Status:** shell reduction `PROVED_CONDITIONAL`; final q/tau-flat one-point core-exchange closure `OPEN`.
 
 ---
 
-## E2. d=2 low endpoint — FOUR-STAR SCALABLE TERMINAL
+## E2. d=2 low endpoint — FINITE SHELL CLASS FAMILY, CORE MULTIPLICITY OPEN
 
-For every common-S d2 system,
+For every d2 common-S system,
 
-> **`W=K+2r-2+a+b`,**
+> `W=K+2r-2+a+b`,
 
 where `b=e_M(S) in {0,1}`.
 
-The exact-one-loss common-hub subsystem has at most three distinct core support classes. If all three occur, the charge barrier gives
+The exact-one-loss common-hub subsystem has at most three distinct core support classes. If all three occur, the pattern charge barrier gives
 
-> **`K+a+b>=r`.**
+> `K+a+b>=r`.
 
-The shell-incidence theorem gives a second, independent global compression. Every d2 shell missing pair `{s,t}` satisfies
+### E2-S. Six-point shell support universe
 
-`t_s+t_t>=2(r-1)`.
+Let `U_2` be the union of all shell missing sets of all d2 regular owners. Singleton transport gives, for `S={u,v}`,
 
-Therefore every pair meets the fixed heavy set
+`sigma_u=t_u-r+1-b>=0`,
+` sigma_v=t_v-r+1-b>=0`.
 
-`C_2={v:t_v>=r-1}`, `|C_2|<=6`.
+Hence every active endpoint satisfies `t>=r-1`. Since `sum_A t_s<=6r-2`,
 
-More sharply, with
+> `|U_2|<=6`.
 
-`P={v:2t_v>=3(r-1)}`, `|P|<=4`,
+Therefore all d2 shell missing sets belong to at most
 
-`Q={v:2t_v>=r-1}`, `|Q|<=12`,
+> `C(6,2)=15`
 
-every d2 shell support either
+common-S classes. There is **no** r-growing shell-support graph.
 
-1. is incident with P, hence belongs to one of at most four star systems; or
-2. is entirely contained in Q, hence belongs to a bounded at-most-twelve-vertex core.
+If `b=1`, both endpoints satisfy `t>=r`, so such pairs lie inside the at-most-five-point set `C_1`.
 
-Thus the terminal inventory is:
+### E2-W. Weighted shell encoding
 
-### E2-A. Bounded shell core
+For `u in U_2`, define
 
-All support pairs lie inside Q. The shell support graph has O(1) vertices and finitely many combinatorial types.
+`h_u=t_u-(r-1)>=0`.
 
-### E2-B. Heavy stars
+For the class `S={u,v}`,
 
-At most four centers in P may carry r-growing families of distinct support leaves. This is now the **only** source of unbounded d2 shell-support diversity.
+> `a_{uv}=h_u+h_v-b_{uv}`.
 
-Within a common-S/core-support one-loss component, a three-class terminal additionally requires `K+a+b>=r`.
+Thus shell allowance data is encoded by one graph `M[U_2]` on at most six vertices plus at most six integer weights.
 
-### E2-C. Deep-loss isolated core-support blocks
+If `m=|U_2|`,
 
-At first-high-slack, loss>=2 core support classes are disjoint from every distinct core support class. They are block/transversal objects.
+`sum h_u <= (6-m)r+m-2`.
 
-Repeated non-fully-decorated plateau core supports are forbidden by tau-maximality.
+In the maximal case `m=6`,
 
-**Status:** four-star/bounded-core reduction `PROVED_CONDITIONAL`; E2-B multi-pivot elimination `OPEN`.
+`sum h_u<=4`
+
+and the total d2 owner count is at most two. Hence the six-endpoint boundary is already fully bounded.
+
+### E2-C. Remaining core-support terminal
+
+Inside each of the at most fifteen fixed shell classes, owners still carry core support sets `D_y`, q-loss/transported excess, support multiplicities, and possible deep-loss blocks.
+
+At first-high-slack:
+
+- exact one-loss distinct support classes obey the common-hub / at-most-three-class theorem;
+- loss>=2 support classes are disjoint from every distinct support class;
+- repeated non-fully-decorated plateau supports are forbidden by tau-maximality.
+
+The scalable obstruction is therefore no longer shell geometry. It is **core-support multiplicity and transported loss inside finitely many fixed shell classes**, especially the linearly-high three-class regime `K+a+b>=r`.
+
+**Status:** shell finite-class reduction `PROVED_CONDITIONAL`; finite-class core multi-pivot elimination `OPEN`.
 
 ---
 
@@ -118,10 +130,8 @@ Every closed `(q,tau)`-non-improving cycle is q-flat and tau-flat edge-by-edge; 
 Only the following remain:
 
 1. **E1:** at most five d1 shell classes, with q/tau-flat one-point core exchanges;
-2. **E2-A:** finite d2 shell-support core on at most twelve vertices;
-3. **E2-B:** at most four scalable d2 heavy-star systems, with the linearly-high scalar branch `K+a+b>=r` when three one-loss core-support classes occur;
-4. **E2-C:** isolated deep-loss core-support blocks;
-5. **EH:** at most three high-endpoint owners;
-6. **EC:** simultaneous equality cycles assembled from these pieces.
+2. **E2-C:** at most fifteen d2 shell classes, each carrying a core-support / transported-loss system; three one-loss core-support classes require `K+a+b>=r`;
+3. **EH:** at most three high-endpoint owners in a bounded-complement kernel;
+4. **EC:** simultaneous equality cycles assembled from these pieces.
 
-The only r-growing *distinct shell-support geometry* is E2-B: at most four weighted stars.
+No surviving family has an r-growing number of shell-support types. The only remaining r-growth is multiplicity/excess data inside finitely many classes.
