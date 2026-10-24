@@ -127,7 +127,7 @@ The r=4,...,100 sweep is a finite implementation audit, not a theorem for all r 
 
 ### Source/parameter admission
 
-The branch started at the requested HEAD `3d27693d9f9d5bf2586e0f0178228563d96de22b`. The committed matrix has raw SHA-256 `bcdcfa098cee564b136f6fa00405fb34d46a9fa60342b8d4a46f8f77cb8053f7`; the admission verifier file hash is `114f1fd8441ad4e1b91c7ee4cad82e9abf3c21d6c4453502c2e5413ce4d51b35`.
+The branch started at the requested HEAD `3d27693d9f9d5bf2586e0f0178228563d96de22b`. The committed matrix has raw SHA-256 `6ada61242bd6afa86ad4bb06e8549e5d5bfdbff348c5ffff6d32be445dc51cf3`; the admission verifier file hash is `43c42443d8fbfc6ddb67d2bb3f4923e0c70e2a92a6dba5818d692defad2d44d9`.
 
 A separate JS audit rebuilt the policy row for every r=4,...,100 and matched all 97 rows of the committed matrix. The independent admission-verifier logic was also exercised in a Python harness with queries for r=11, r=13 residual-core, r=13 near-anchor, r=68 near-anchor, and r=101 D1. It returned the expected blocked/conditional states; a tampered row was rejected. This harness was a separate logic replay, not a direct invocation of the committed CLI entry point.
 
@@ -163,3 +163,10 @@ The committed `GRAPH_SYMMETRY_VERIFIER.py` CLI and unified certificate wrapper h
 - New EG617(r) theorem: **NONE**.
 - `ASYMPTOTIC_R0`: **NOT AVAILABLE**.
 - RC/front extraction and remaining endpoint/design terminal closure: **OPEN**.
+
+
+Additional Round-2 fingerprints (raw-file SHA-256):
+- theorem-promotion gate: `7f3dfb534ecb6c6b81d129ee0c96a8a141277188f133d05fcf52f8206094ce84`
+- unified family wrapper: `8ab57ec8f005061fd1aa234b24e8e434d36bcbd77149e6caa9a1e5f7de9fc36a`
+- graph symmetry verifier: `6f6c484575772b72324ee0e4ad3495c93fb1b39ebb6f35e981fa54277a952f4c`
+- graph symmetry test vectors: `72ed53eb8f05d1a1531595076f018a5e31c8f66388cf230dfff70a88bfbdc05a`
