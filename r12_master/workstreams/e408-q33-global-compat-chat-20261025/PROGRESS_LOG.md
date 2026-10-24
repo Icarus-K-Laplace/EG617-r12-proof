@@ -35,3 +35,10 @@
 - Rechecked the \(S_0\ge22\) theorem after the low-slack integration. Closed two presentation gaps in the written proof: the part-size argument now explicitly excludes two 7-point parts because \(7\cdot7<56\), and the \((4,4,4)\) case in the \(m=6\) split now explicitly shows why three pairwise nonadjacent extra-neighbor sets cannot each union to a large part.
 - The corrected proof remains conditional only on the frozen four-partite Q33 contract and the already stated core/independence constraints. The remaining \(\delta\in[9,17]\) branch is still open.
 - Canonical state consolidated to remove duplicate sections and now explicitly records both proof audits and the current status.
+
+
+## 2026-10-25 — exceptional-row refinement and duplicate thresholds
+
+- Strengthened the low-slack normal form: the two rows containing no full K5 component have gadget portions whose union is all of U_C. Their complements are disjoint cliques of sizes 5+5, 5+4, or (for r_i=3) 5+3 / 4+4. If a is the overlap of the two gadget portions, and e,t count the additional gadget/component incidences in component rows, then the exact budget is \(r_i(C)=a+e+t\) with \(1\le a\le3\) and \(e+t\le2\).
+- Derived a duplicate-budget threshold: \(k_C=\#\{i:r_i(C)\le3\}\ge\max(0,7-\lfloor(55-P_C)/3\rfloor)\). Thus P_C thresholds 35,38,41,44,47,50,53 guarantee at least 1,2,3,4,5,6,7 low-slack blocks respectively.
+- Explicitly recorded the limitation: \(\sum_{C:s_C=0}P_C\ge69\) does not by itself force any one exact color to have P_C>=35, so these branch filters do not close the global terminal.
