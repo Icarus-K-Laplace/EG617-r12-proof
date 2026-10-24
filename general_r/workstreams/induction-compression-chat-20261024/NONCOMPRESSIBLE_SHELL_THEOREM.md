@@ -112,3 +112,14 @@ Case A is separately audited in COLORED_WITNESS_EDGE_BUDGET.md; its colored pack
 The residual budget yields more than a repeated-color dichotomy. Put q=r-1. Among the q colors i!=c, at least ceil(q/2) have b_i<=q-2. For q>=3 each has a q-clique partition of R by Brouwer's threshold, and any two such partitions are orthogonal. Thus Case B forces a q-net with at least ceil(q/2) directions. See Theorem J.W5 in ALIGNMENT_FREE_WITNESS_RIGIDITY.md, commit 009a546cf0d66e4060a601bba168674214e7ac6c.
 
 The net yields at least ceil(q/2)-2 mutually orthogonal Latin squares. For q=10, this would imply three MOLS(10), whose existence is open; this is a conditional design-theoretic implication, not a contradiction. No Kakeya bound is licensed because the net blocks have not been proved to lie in a shell.
+
+
+## Corollary J.N2 — Residual Turan equality is impossible for r>=5
+
+In the tight-transversal Case B, let q=r-1 and b_i=e(G_i[R])-q*C(q,2). Then
+
+\[
+\sum_{i\ne c}b_i\le\binom q2-1\qquad(q\ge4).
+\]
+
+Proof: if equality held, the omitted color graph G_c[R] would attain the Turan minimum for alpha<=q+1 and split into one c-clique of size q and q c-cliques of size q-1. Every x in X must have a color-c edge into every independent (q+1)-set that chooses one point from each block, so its c-neighborhood contains a whole block. At most one root can cover the size-q block, and at most two can cover any size-(q-1) block, because three roots plus that block form an (r+1)-set with at most four colors. Total root capacity is 1+2q<2q+2=|X|. Contradiction.
