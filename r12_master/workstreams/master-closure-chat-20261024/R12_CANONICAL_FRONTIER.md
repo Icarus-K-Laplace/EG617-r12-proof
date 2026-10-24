@@ -15,7 +15,7 @@ This file assigns status from proof bodies, contracts, source-audit notes, and r
 | E397--E406 | `PROVED_RELATIVE_TO_CANONICAL_ASSETS` | `front_end/E401_E404_CANONICAL_CLOSURE.md`, `E405_FULL_CLOSURE_CANONICAL.md`, `E406_FULL_CLOSURE.md`, and their cited bridges. | Preserve their exact inherited contracts; do not reopen or treat them as unconditional outside those contracts. |
 | E407, Q=27 | `PROVED` under the canonical E407/T61 contract | Recorded as closed in `OPEN_FRONTIERS.md`; earlier low-Q closure chain applies. | No new gap identified at this layer in the inspected assets. |
 | E407, Q=31 | `SOURCE_REPORTED / CONDITIONAL` | `front_end/T61_H13_V11_SOURCE_AUDIT.md`: delivered V11 reports exclusion relative to retained lower-order seeds; package replay remains pending. | Independent replay/re-certification of the retained seeds and V11 package. |
-| E407, Q=32 | `OPEN`; reduction is source-reported | `consolidation/V12_V8_SOURCE_REPORTED_AUDIT.md` reports five `rho=0) templates with a common regular K11, conditional on retained seeds. `front_end/E407_CELL_B_FULL_CLOSURE.md` excludes the separate sharp `|W|=23) Cell-B form only. | Prove that none of the five common-K11 templates can coexist with one and the same 284-edge core, or provide a certified legal completion (which would contradict the intended result). V12 replay remains pending. |
+| E407, Q=32 | `OPEN`; reduction is source-reported | `consolidation/V12_V8_SOURCE_REPORTED_AUDIT.md` reports five `rho=0` templates with a common regular K11, conditional on retained seeds. `front_end/E407_CELL_B_FULL_CLOSURE.md` excludes the separate sharp `|W|=23` Cell-B form only. | Prove that none of the five common-K11 templates can coexist with one and the same 284-edge core, or provide a certified legal completion (which would contradict the intended result). V12 replay remains pending. |
 | E408, Q=27,28 | `PROVED` under the canonical E408/T61 contract | Recorded closed in `OPEN_FRONTIERS.md`. | No new gap identified at these layers in the inspected assets. |
 | E408, Q=31 | `SOURCE_REPORTED / CONDITIONAL` | `front_end/T61_H13_V11_SOURCE_AUDIT.md`. | Independent replay/re-certification of retained seeds and package. |
 | E408, Q=32 | `OPEN` | `OPEN_FRONTIERS.md`, V11/V12 source-audit notes. | Full shell/core and global-color compatibility; E407 Q32 eliminations do not transfer automatically. |
@@ -23,7 +23,7 @@ This file assigns status from proof bodies, contracts, source-audit notes, and r
 
 ### E407/E408 cross-cutting facts
 
-- The `|W|=23) Cell-B normal form is excluded for both E407 and E408 by the proof bodies in `front_end/E407_CELL_B_FULL_CLOSURE.md` and `front_end/T61_H13_FULL_COLOR_DEGREE_AND_ANTINEIGHBORHOOD.md`, relative to their stated extremal inputs.
+- The `|W|=23` Cell-B normal form is excluded for both E407 and E408 by the proof bodies in `front_end/E407_CELL_B_FULL_CLOSURE.md` and `front_end/T61_H13_FULL_COLOR_DEGREE_AND_ANTINEIGHBORHOOD.md`, relative to their stated extremal inputs.
 - This does **not** close the remaining E407 Q32 templates or E408 Q32/Q33.
 - E408 Q33's exact d3 identity `beta + X + G_B = 3` is conditional on the retained V11 Q33 interface. It does not establish nonexistence of any of its four `beta` cases.
 
