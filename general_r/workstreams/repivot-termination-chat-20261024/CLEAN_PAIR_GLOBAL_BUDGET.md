@@ -135,6 +135,16 @@ so
 
 X <= floor((2r-2-K_U)/(3a-4-r)) <= floor((2r-2)/8).
 
+Since h=r+1-2a, the denominator has the exact form
+
+3a-4-r=(r-3h-5)/2,
+
+and hence
+
+X <= floor((4r-4-2K_U)/(r-3h-5)).
+
+The denominator is at least 16 throughout the stated high-density branch.
+
 This is a genuine dichotomy, but X can still be linear when a is close to r/3.
 
 ## 6. Part-seeing vertices and the global no-double-counting identity
