@@ -21,37 +21,48 @@ def cap285(v: int) -> int:
 
 def check_core_capacity() -> None:
     expected_p4 = {
-        20: 40, 19: 36, 18: 32, 17: 28, 16: 24,
-        15: 21, 14: 18, 13: 15, 12: 12, 11: 10, 10: 8,
+        10: 8, 9: 6, 8: 4, 7: 3, 6: 2, 5: 1, 4: 0, 3: 0,
     }
     for n, value in expected_p4.items():
         assert p4(n) == value, (n, p4(n), value)
 
     expected_cap = {
-        27: 272, 28: 291, 29: 311, 30: 332, 31: 354,
-        32: 376, 33: 399, 34: 423, 35: 448, 36: 473, 37: 499,
+        37: 499, 38: 526, 39: 554, 40: 582,
+        41: 611, 42: 641, 43: 672, 44: 703,
     }
     for v, value in expected_cap.items():
         assert cap285(v) == value, (v, cap285(v), value)
 
-    expected_profiles = {
-        8: (64, 384, 33),
-        9: (72, 432, 35),
-        10: (80, 480, 37),
+    # Capacity-only floors from N >= 10m.
+    capacity_profiles = {
+        8: (80, 480, 37),
+        9: (90, 540, 39),
+        10: (100, 600, 41),
     }
-    for m, (n_witnesses, six_n, v_min) in expected_profiles.items():
-        assert n_witnesses == 8 * m
+    for m, (n_witnesses, six_n, v_min) in capacity_profiles.items():
+        assert n_witnesses == 10 * m
         assert six_n == 6 * n_witnesses
         assert cap285(v_min - 1) < six_n
         assert cap285(v_min) >= six_n
-        assert all(cap285(v) < six_n for v in range(4, v_min))
-    assert cap285(33) - 6 * 64 == 15
-    assert cap285(35) - 6 * 72 == 16
-    assert cap285(37) - 6 * 80 == 19
+
+    # One exact color gives ten disjoint Q sets, hence v >= 40.
+    combined = {8: 40, 9: 40, 10: 41}
+    for m, v_min in combined.items():
+        n_witnesses, six_n, _ = capacity_profiles[m]
+        assert v_min >= 40
+        assert cap285(v_min) >= six_n
+
+    # An exact color with 11 disjoint witnesses forces v >= 44.
+    assert cap285(43) == 672
+    assert 4 * 11 == 44
+
+    # Exact slack budgets at the combined minimum support sizes.
+    assert cap285(40) - 6 * 80 == 102
+    assert cap285(40) - 6 * 90 == 42
+    assert cap285(41) - 6 * 100 == 11
 
 
 def check_shell_budget() -> None:
-    # Every non-target color has at least two edges on the 14-set {p} union A.
     assert comb(14, 2) - 11 * 2 == 69
     assert 13 + (78 - 22) == 69
     assert 22 <= 32
@@ -87,8 +98,6 @@ def check_outer_blocker_coupling() -> None:
         good_components = ceil(good_occurrences / 7)
         assert good_components == p_c // 7 + 1
 
-    # If P_C=55 then M_C>=70 and M_C<=70, so every component is used once
-    # in each of the seven outer blocks.
     assert 15 + 55 == 70
     assert 10 * 7 == 70
 

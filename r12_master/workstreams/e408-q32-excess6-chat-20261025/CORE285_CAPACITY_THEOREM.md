@@ -1,6 +1,6 @@
 # CORE285 capacity theorem — E408 Q32 / excess six
 
-Status: **PROVED_CONDITIONAL necessary-structure theorem** under the registered E408 outer embedding and exact-129 Type-I classification. This theorem is specific to e(H)=285 and total core excess six.
+Status: **PROVED_CONDITIONAL necessary-structure theorem** under the registered E408 outer embedding and Kang–Pikhurko Type-I equality classification. This theorem uses e(H)=285 and total core excess six throughout.
 
 ## 1. Contract and notation
 
@@ -40,30 +40,24 @@ Consequently m, the number of exact-129 colors, is in {8,9,10}.
 
 ## 2. Witness existence and linearity — no shell split assumed
 
-Fix an exact-129 color C. The registered Type-I equality classification gives ten isolated K5 components in C[R], plus an 11-vertex exceptional gadget consisting of two disjoint 5-cliques and one additional vertex. Thus there are twelve pairwise-disjoint 5-cliques in C[R]: the ten isolated components and the two 5-cliques in the gadget.
+Fix an exact-129 color C. The registered Type-I equality classification gives ten isolated K5 components in C[R], plus an 11-vertex exceptional gadget consisting of two disjoint 5-cliques and one additional vertex. Thus C[R] contains **twelve pairwise-disjoint 5-cliques**: the ten isolated components and the two 5-cliques in the gadget. The latter two are cliques even though they are not isolated components.
 
-Every one of these twelve 5-cliques intersects {p}∪A. Otherwise its five vertices would be independent in target H, contradicting α(H)≤4. There are only fourteen vertices in {p}∪A.
+Every one of these twelve 5-cliques intersects O={p}∪A. Otherwise its five vertices would be independent in target H, contradicting α(H)≤4. Let x be the exceptional vertex of the gadget.
 
-Let x be the exceptional vertex of the 11-point gadget.
+- If x∉H, then x consumes one of the fourteen outside-H vertices without belonging to any of the twelve 5-cliques. The twelve cliques use at most thirteen outside-H vertices, so their total number of outside vertices beyond the mandatory one per clique is at most one. At least eleven of the twelve cliques have exactly one outside-H vertex.
+- If x∈H, the twelve cliques use at most fourteen outside-H vertices, so there are at most two extra outside vertices beyond one per clique. At least ten of the twelve cliques have exactly one outside-H vertex.
 
-- If x∉H, then x consumes one of the fourteen outside vertices without belonging to any of the twelve 5-cliques. The twelve 5-cliques use at most thirteen outside vertices, so their total number of outside vertices beyond the mandatory one per clique is at most one.
-- If x∈H, the twelve 5-cliques use at most fourteen outside vertices, so the total excess beyond one per clique is at most two.
+Therefore every exact-129 color supplies at least ten pairwise-disjoint 4-sets Q⊂H obtained by removing the unique outside-H vertex from one of these 5-cliques. Since the five vertices form a C-clique, Q is independent in target H. If the outside vertex is a∈A, Q is also anticomplete to a in F; if it is p, anticompleteness is automatic because N_F(p)=A.
 
-It follows in either case that at most two of the ten isolated K5 components contain two or more vertices outside H. Therefore at least eight isolated K5 components have exactly one vertex y∈{p}∪A and four vertices Q⊂H.
+If x∈H and both extra outside vertices lie in the same 5-clique, that clique has three shell vertices; those three vertices form a triangle in M. In this case eleven of the twelve cliques have exactly one outside-H vertex. Hence **any exact-129 color with x∉H or with a three-shell-vertex K5 supplies at least eleven witnesses**.
 
-Because all edges of each K5 are C-colored, its four core vertices Q form an independent 4-set in H. If y∈A, Q is also anticomplete to y in F. If y=p, this is automatic because N_F(p)=A. Thus each such component supplies a valid independent-4 witness Q⊂H with a shell/pivot label y.
-
-Across distinct isolated components of the same color, the Q sets are disjoint. Across different colors, two Q sets cannot share two vertices: the edge joining those two vertices would be assigned two different colors. Hence the full witness family is pairwise linear.
-
-So every exact-129 color supplies at least eight witnesses, and the total number N satisfies
+Within one color, the witness sets are disjoint. Across different colors, two witness sets cannot share two core vertices, since their common edge would be assigned two colors. Thus the combined witness family is pairwise linear and
 
 \[
-N\ge8m.
+\boxed{N\ge10m.}
 \]
 
-A refinement is available: if the exceptional gadget vertex x lies outside H, that color supplies at least nine witnesses, since the total excess outside vertices among the twelve K5 cliques is then at most one.
-
-This argument does not use M[B]=∅, a d3 split, or any E407/E408 Q33 excess-four statement.
+The witness construction does not assume M[B]=∅, does not assume a d3 shell split, and does not import an excess-four core theorem.
 
 ## 3. The exact 285-edge capacity inequality
 
@@ -100,35 +94,36 @@ Define
 \operatorname{Cap}_{285}(v)=\binom v2-p_4(47-v)-12v+285.
 \]
 
-Then the necessary inequality is 6N≤Cap_285(v)-E_U. The constant is 285, not 284; the total excess term is E_U with total budget six.
+Then 6N≤Cap_285(v)-E_U. The constant is 285, not 284; the total excess term is E_U with total budget six.
 
-## 4. Exact integer boundary
-
-The arithmetic values around the support thresholds are:
+## 4. Exact integer support boundaries
 
 | v | 47-v | p_4(47-v) | Cap_285(v) |
 |---:|---:|---:|---:|
-| 27 | 20 | 40 | 272 |
-| 28 | 19 | 36 | 291 |
-| 29 | 18 | 32 | 311 |
-| 30 | 17 | 28 | 332 |
-| 31 | 16 | 24 | 354 |
-| 32 | 15 | 21 | 376 |
-| 33 | 14 | 18 | 399 |
-| 34 | 13 | 15 | 423 |
-| 35 | 12 | 12 | 448 |
-| 36 | 11 | 10 | 473 |
 | 37 | 10 | 8 | 499 |
+| 38 | 9 | 6 | 526 |
+| 39 | 8 | 4 | 554 |
+| 40 | 7 | 3 | 582 |
+| 41 | 6 | 2 | 611 |
+| 42 | 5 | 1 | 641 |
+| 43 | 4 | 0 | 672 |
+| 44 | 3 | 0 | 703 |
 
-Substituting N≥8m gives:
+Using only N≥10m, the capacity inequality by itself gives:
 
-| Exact-129 colors m | Witness floor N | Required complement edges 6N | Smallest possible v |
+| Exact-129 colors m | Witness floor N | Required complement edges 6N | Capacity-only floor on v |
 |---:|---:|---:|---:|
-| 8 | 64 | 384 | 33 |
-| 9 | 72 | 432 | 35 |
-| 10 | 80 | 480 | 37 |
+| 8 | 80 | 480 | 37 |
+| 9 | 90 | 540 | 39 |
+| 10 | 100 | 600 | 41 |
 
-These thresholds use E_U≥0; positive E_U can only strengthen them. If k of the m exact colors have x outside H, then N≥8m+k. Ignoring the additional subtraction E_U, this forces v≥34 for (m,k)=(8,k≥3), v≥35 for (8,k≥7), v≥36 for (9,k≥3), v≥37 for (9,k≥7), v≥38 for (10,k≥4), and v≥39 for (10,k≥8).
+There is also a stronger, immediate within-color bound: one exact-129 color already contributes ten disjoint 4-sets, so v≥40. Combining it with the capacity bound gives the actual current support floors:
+
+\[
+\boxed{v\ge40\text{ if }m=8\text{ or }9;\qquad v\ge41\text{ if }m=10.}
+\]
+
+If any exact-129 color supplies eleven witnesses, those eleven sets are disjoint and v≥44. In particular, if v≤43, every exact-129 color supplies exactly ten witnesses; its exceptional vertex x lies in H, and the two extra outside vertices must lie in two different K5 cliques, each with two shell vertices. Those two shell pairs are disjoint edges of M. Their edges have distinct colors across exact colors, so this low-support regime also carries at least 2m distinct, color-labelled edges of M.
 
 ## 5. Exact excess allocation on the support and its complement
 
@@ -139,18 +134,37 @@ s_W=e(H[W])-p_4(47-v)\ge0,\qquad
 r_U=e(\bar H[U])-6N\ge0.
 \]
 
-Here r_U counts complement edges in U not used by the witness K4s, and s_W is the edge slack over the minimum allowed by α(H[W])≤4. The derivation above gives the exact budget
+Here r_U counts complement edges in U not used by witness K4s, and s_W is the edge slack over the minimum allowed by α(H[W])≤4. The exact budget is
 
 \[
 \boxed{E_U+r_U+s_W=\operatorname{Cap}_{285}(v)-6N.}
 \]
 
-The degree excess on W is E_W=6-E_U. Thus the total six-unit core excess is allocated exactly between U and W, while the remaining complement-edge capacity is allocated between uncovered pairs inside U and excess edges inside W.
+The degree excess on W is E_W=6-E_U. Thus the six-unit core excess is allocated between U and W, while the remaining complement-edge capacity is allocated between uncovered pairs inside U and excess edges inside W.
 
-At the minimum witness floors and minimum support sizes, the right-hand sides are 15, 16, and 19 for m=8,9,10 respectively. If more than eight witnesses occur in any exact color, subtract six for every additional witness from the corresponding right-hand side.
+At the minimum support floors with the minimum witness counts, the boundary budgets are:
+
+| m | v | N | Cap_285(v)-6N | Exact budget |
+|---:|---:|---:|---:|---|
+| 8 | 40 | 80 | 102 | E_U+r_U+s_W=102 |
+| 9 | 40 | 90 | 42 | E_U+r_U+s_W=42 |
+| 10 | 41 | 100 | 11 | E_U+r_U+s_W=11 |
+
+### Additional exact normal form at m=10, v=41
+
+Each of the ten exact colors has ten disjoint witness 4-sets covering 40 of the 41 support vertices, leaving exactly one omitted point per color. Let k_u be the number of exact colors whose witness class omits u; then Σ_{u∈U}k_u=10. Let r_u be the number of unused complement edges incident to u, so Σr_u=2r_U. Pair counting gives
+
+\[
+d_{H[U]}(u)=10+3k_u-r_u,
+\]
+\[
+d_H(u,W)=2+(d_H(u)-12)-3k_u+r_u\ge0.
+\]
+
+The global edge ledger also gives e_H(U,W)=74-E_U-2s_W, while summing the pointwise formula gives e_H(U,W)=52+E_U+2r_U. These are equivalent to E_U+r_U+s_W=11. This is a strict finite terminal form, not a contradiction.
 
 ## 6. What this theorem does and does not prove
 
-**Proved under the named inputs:** witness existence, pairwise linearity, the 285-edge capacity inequality, the exact integer support floors, and the support/complement excess ledger. The result covers both M[B]=∅ and M[B]≠∅ shell-support cases.
+**Proved under the named inputs:** witness existence, pairwise linearity, the 285-edge capacity inequality, exact integer support floors, the support/complement excess ledger, and the low-support component allocation described above. The result covers both M[B]=∅ and M[B]≠∅ shell-support cases.
 
-**Not proved:** that any of the surviving support sizes is realizable; that the core adjacency graph exists; that the seven outer blocks can all be completed; or that the original K145 counterexample is impossible. Those remain the next global compatibility problem.
+**Not proved:** that any surviving support profile is realizable; that the 47-core graph exists; that the seven outer blocks can all be completed; or that the original K145 counterexample is impossible. Those remain the next global compatibility problem.

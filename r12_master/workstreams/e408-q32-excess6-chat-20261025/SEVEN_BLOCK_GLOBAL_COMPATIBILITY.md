@@ -38,22 +38,22 @@ Each of the ten isolated K5 components can appear at most once in each of seven 
 
 ## 3. Coupling blocker occurrences to core witnesses
 
-From the component-support classification, at least eight of the ten isolated K5 components in each exact-129 color have the form {y}∪Q with y∈{p}∪A and Q⊂H an independent 4-set. Call these the good witness components. At most two isolated components per color are not good, and they can account for at most 14 blocker occurrences across seven blocks.
+The core capacity theorem uses all twelve disjoint K5 cliques per exact color to extract at least ten independent 4-sets. For this outer-block argument, only the ten **isolated** K5 components can be size-five blockers. At least eight of those ten isolated components have exactly one outside-H vertex, so at most two isolated components per color are not core witnesses. The two non-witness components can account for at most 14 blocker occurrences across seven blocks.
 
-Consequently the number of good-component blocker occurrences for C is at least
+Consequently the number of good isolated-component blocker occurrences for C is at least
 
 \[
 M_C-14\ge P_C+1.
 \]
 
-A good component can be used at most once per block, hence at most seven times overall. If g_C is the number of distinct good witness components used as size-five blockers, then
+A good isolated component can be used at most once per block, hence at most seven times overall. If g_C is the number of distinct good isolated witness components used as size-five blockers, then
 
 \[
 \boxed{g_C\ge\left\lceil\frac{P_C+1}{7}\right\rceil
 =\left\lfloor\frac{P_C}{7}\right\rfloor+1.}
 \]
 
-If the exceptional gadget vertex x for color C lies outside H, there are at least nine good isolated components and at most one bad isolated component; the same argument strengthens to g_C≥floor(P_C/7)+2.
+If the exceptional gadget vertex x for color C lies outside H, at least nine isolated components are witnesses, leaving at most one non-witness isolated component; the same argument strengthens to g_C≥floor(P_C/7)+2.
 
 ## 4. Aggregate lower bounds across exact-129 colors
 
@@ -83,7 +83,7 @@ Therefore the seven-block near-Latin system forces
 \boxed{\sum_{s_C=0}g_C\ge9m-61.}
 \]
 
-| Exact-129 colors m | Σ exact P_C lower bound | Distinct good witness components used as blockers |
+| Exact-129 colors m | Σ exact P_C lower bound | Distinct isolated witness components used as blockers |
 |---:|---:|---:|
 | 8 | 69 | at least 11 |
 | 9 | 131 | at least 20 |
@@ -91,7 +91,7 @@ Therefore the seven-block near-Latin system forces
 
 If k of the m exceptional gadget vertices lie outside H, the last lower bound improves to 9m-61+k.
 
-This is stronger than merely counting 48/54/60 or more independent 4-sets: it certifies that a specified subset of at least 11/20/29 labelled witness components is linked to exact size-five blocker neighborhoods in the outer seven blocks. It still does not force a contradiction by itself.
+This certifies that a specified subset of at least 11/20/29 labelled witness components is linked to exact size-five blocker neighborhoods in the outer seven blocks. It still does not force a contradiction by itself.
 
 ## 5. Combined E408 Q32 terminal ledger
 
@@ -99,8 +99,9 @@ All of the following are simultaneously necessary:
 
 1. Core: e(H)=285, α(H)≤4, δ(H)≥12, total excess six.
 2. Shell: 22≤e(M)≤32 and Σ_A g_a=32-e(M)≤10; zero-shell-support core vertices are allowed but at most six.
-3. Witness packing: N≥8m pairwise-linear independent 4-sets in H, uniformly over both shell-support cases.
-4. Support size: v≥33,35,37 for m=8,9,10, respectively, with the exact capacity inequality 6N≤Cap_285(v)-E_U.
-5. Outer blocks: P_C+R_C+s_C=62, Σs_C=3, P_C≤55 for exact colors, and at least 11/20/29 distinct good witness components are used as size-five blockers for m=8/9/10.
+3. Witness packing: N≥10m pairwise-linear independent 4-sets in H, uniformly over both shell-support cases.
+4. Support size: v≥40 for m=8,9 and v≥41 for m=10. If any exact color supplies eleven single-outside K5s, then v≥44.
+5. Low-support shape: for v≤43, every exact color supplies exactly ten witnesses and has two distinct double-shell K5 cliques, yielding two disjoint M-edges of that color.
+6. Outer blocks: P_C+R_C+s_C=62, Σs_C=3, P_C≤55 for exact colors, and at least 11/20/29 distinct good isolated witness components are used as size-five blockers for m=8/9/10.
 
 No complete SAT/ILP/CSP instance has been built here. The remaining task is a graph-level compatibility theorem using the actual H adjacency, the shell labels on Q, and the seven-block blocker assignments. Do not promote these necessary constraints to a global contradiction.

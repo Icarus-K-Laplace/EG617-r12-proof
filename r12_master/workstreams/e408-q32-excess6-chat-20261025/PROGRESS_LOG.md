@@ -29,3 +29,19 @@ Rechecked the canonical distinction: E408 Q32 has e(H)=285 and total excess six;
 ## Current status
 
 **E408 Q32: OPEN / NOT_CERTIFIED.** The workstream has established a stronger necessary-structure reduction covering both M[B]=empty and M[B] nonempty. The next unresolved task is a graph-level compatibility/contradiction for the surviving core-support profiles and the labelled seven-block blocker assignments. No complete SAT/ILP/CSP model or UNSAT certificate is claimed.
+
+
+## 2026-10-25 — strengthened witness extraction: count the two gadget K5 cliques too
+
+A second audit of the registered Type-I exact-129 normal form showed that the two disjoint K5 cliques inside the 11-point gadget also yield independent 4-set witnesses whenever each has exactly one vertex outside H. They were omitted from the first conservative witness count because they are not isolated components, but isolation is not needed for core capacity; it is needed only for the outer size-five blocker theorem.
+
+Corrected core-capacity result:
+- There are twelve pairwise-disjoint K5 cliques per exact-129 color, not just the ten isolated components.
+- Since each must meet the 14-point outside-H set, at least ten of the twelve cliques have exactly one outside-H vertex. If the exceptional gadget vertex is outside H, at least eleven do.
+- Therefore N≥10m, not merely 8m. The capacity-only support floors are v≥37,39,41 for m=8,9,10.
+- Combining with the disjointness of the ten witnesses within any one color gives the stronger final floors v≥40,40,41. Any color with eleven witnesses forces v≥44.
+- For v≤43, every exact color has exactly ten witnesses, the exceptional vertex lies in H, and the two extra outside vertices occur in two distinct double-shell K5 cliques. These yield two disjoint M-edges per exact color.
+
+Updated CORE285_CAPACITY_THEOREM.md, CANONICAL_STATE.md, SHELL_SUPPORT_CLASSIFICATION.md, SEVEN_BLOCK_GLOBAL_COMPATIBILITY.md, CERTIFICATE_AND_VERIFIER.md, and verify_core285_capacity.py. The outer blocker coupling remains based only on the ten isolated components, preserving the distinction between a K5 clique witness and a size-five blocker component.
+
+The arithmetic verifier was rerun and returned CORE285_E408_Q32_ARITHMETIC_OK. This correction strengthens the necessary-structure reduction; it still does not prove the E408 Q32 terminal empty.

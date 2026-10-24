@@ -14,7 +14,7 @@ Allowed write scope: r12_master/workstreams/e408-q32-excess6-chat-20261025/
 The E408 residual is a 61-vertex target graph F with e(F)=408 and a legal degree-13 pivot p. Put A=N_F(p), |A|=13, and H=V(F)\(A∪{p}), |H|=47. The E408 Q32 interface is
 
 - e(H)=285;
-- alpha(H)≤4 and delta(H)≥12;
+- α(H)≤4 and δ(H)≥12;
 - total core excess Σ_H(d_H(x)-12)=2·285-47·12=6;
 - q=32, equivalently e(M)+G_A=32 for M=complement of F[A] and G_A=Σ_{a∈A}(d_F(a)-13).
 
@@ -25,19 +25,20 @@ The 284-edge/excess-four result used for E407 Q32 and E408 Q33 is not imported.
 Under the registered E408 seven-block equality system and Kang–Pikhurko exact-129 Type-I classification:
 
 1. The number m of exact-129 non-target colors is 8, 9, or 10.
-2. Each exact-129 color has ten isolated K5 components plus an 11-point gadget containing two further disjoint K5 cliques. Since alpha(H)≤4, every one of these twelve disjoint K5 cliques meets the 14-point set {p}∪A. Only two outside vertices remain beyond the twelve mandatory intersections.
-3. Hence at least eight of the ten isolated K5 components have exactly one vertex outside H. Removing that vertex gives an independent 4-set Q⊂H. Across all exact colors, these witnesses are pairwise linear: distinct sets intersect in at most one core vertex.
-4. Therefore there are at least N≥8m witnesses. The 285-edge capacity inequality gives support-union lower bounds:
-   - m=8: v=|U|≥33;
-   - m=9: v≥35;
-   - m=10: v≥37.
-   These hold without assuming M[B]=∅ and without an unproved shell-support split.
+2. Each exact-129 color has twelve pairwise-disjoint 5-cliques: ten isolated K5 components plus two K5 cliques inside the 11-point exceptional gadget. Every clique meets {p}∪A because α(H)≤4. The outside-H budget is fourteen vertices; depending on whether the gadget exceptional vertex lies in H, at least ten of the twelve cliques have exactly one outside-H vertex.
+3. Removing the unique outside vertex from each such clique gives an independent 4-set Q⊂H. Witnesses are disjoint within one color and intersect in at most one core vertex across different colors. Hence N≥10m, without assuming M[B]=∅.
+4. The correct 285-edge capacity inequality is
+   \[
+   6N\le \binom v2-p_4(47-v)-12v+285-E_U.
+   \]
+   Capacity alone gives v≥37,39,41 for m=8,9,10. Since one exact color already gives ten disjoint 4-sets, the combined support floors improve to **v≥40,40,41**, respectively.
+5. If any exact-129 color has eleven single-outside K5 cliques (in particular if its exceptional gadget vertex is outside H), then v≥44. Therefore every survivor with v≤43 has exactly ten witnesses per exact color, an exceptional vertex in H, and two distinct double-shell K5 cliques whose shell pairs are disjoint edges of M.
 
 ## Seven-block coupling
 
-For an exact-129 color C, the outer blocker theorem gives M_C≥15+P_C, where P_C is the block-block duplicate count and M_C counts size-five blocker occurrences. At most two isolated K5 components per color fail to be one-outside-H witnesses, and each isolated component can be used as a size-five blocker at most once per outer block. Thus at least ceil((P_C+1)/7) distinct witness components of C are used as outer blockers.
+For an exact-129 color C, the outer blocker theorem gives M_C≥15+P_C, where P_C is the block-block duplicate count and M_C counts size-five blocker occurrences. At most two isolated K5 components per color fail to be one-outside-H witnesses, and each isolated component can be used as a size-five blocker at most once per outer block. Thus at least ceil((P_C+1)/7) distinct isolated witness components of C are used as outer blockers.
 
-Using Σ_{exact C}P_C≥62m-427, the seven-block system forces at least 9m-61 distinct witness components to be used as blockers across exact colors: at least 11, 20, or 29 for m=8, 9, or 10 respectively. If k exact colors have their exceptional gadget vertex outside H, this lower bound strengthens to 9m-61+k.
+Using Σ_{exact C}P_C≥62m-427, the seven-block system forces at least 9m-61 distinct isolated witness components to be used as blockers across exact colors: at least 11, 20, or 29 for m=8,9,10 respectively. If k exact colors have their exceptional gadget vertex outside H, this lower bound strengthens to 9m-61+k.
 
 This is a genuine cross-interface constraint, not yet a contradiction.
 
@@ -45,7 +46,7 @@ This is a genuine cross-interface constraint, not yet a contradiction.
 
 The target 14-set {p}∪A contains at most 69 edges of the target color: each of the eleven other colors must contribute at least two edges on any 14 vertices, or it would have an independent 13-set. Since e_F({p}∪A)=91-e(M), this gives 22≤e(M)≤32 and 0≤G_A=32-e(M)≤10.
 
-The shell split into S and B with |S|=3, |B|=10 is **not assumed**. The companion classification file treats both the branch where a 10-point B with M[B]=∅ exists and the branch where every 10-point B has M[B]≠∅. The capacity theorem above is uniform across both.
+The split into S and B with |S|=3, |B|=10 is **not assumed**. The companion classification file treats both the branch where a 10-point B with M[B]=∅ exists and the branch where every 10-point B has M[B]≠∅. The capacity theorem above is uniform across both.
 
 ## Dependencies and limits
 

@@ -71,7 +71,7 @@ c\le10+2h,\qquad h\ge\left\lceil\frac{c-10}{2}\right\rceil\ge5.
 
 Also c≤30, so e(M)=32 forces β≥2 and e(M)=31 forces β≥1. The total row decoration remains Σg_a=32-e(M).
 
-The exact-129 witness theorem does not need this case assumption. If it holds, each one-outside K5 witness labelled by a shell vertex a must hit every row D_b=N_F(b)∩H for which ab∈E(M). Because M[B]=∅, any K5 component with two shell vertices cannot use two vertices of B; if it has three shell vertices, at least two lie in S.
+The exact-129 witness theorem does not need this case assumption. If it holds, each one-outside K5 witness labelled by a shell vertex a must hit every row D_b=N_F(b)∩H for which ab∈E(M). Because M[B]=∅, a K5 clique with two shell vertices cannot use two vertices of B; if it has three shell vertices, at least two lie in S.
 
 ### Case II — M has no independent 10-set
 
@@ -97,15 +97,21 @@ No row degree bound k_b≤3 is available here: a B vertex may have missing neigh
 
 For each exact-129 color, the Type-I equality structure has twelve pairwise-disjoint 5-cliques in C[R]: ten isolated K5 components and two K5 cliques in the 11-point gadget. Every such clique must meet {p}∪A, because α(H)≤4. Let x be the gadget's exceptional vertex.
 
-- If x∉H, the twelve K5 cliques have at most thirteen outside-H vertices available, so there is exactly one extra outside vertex beyond one per clique. At most one K5 clique has two outside vertices; all others have one.
-- If x∈H, the twelve K5 cliques have at most fourteen outside-H vertices available, so there are at most two extra outside vertices. The only possibilities are one K5 clique with three shell/pivot vertices, or two K5 cliques each with two shell/pivot vertices, or a subcase where the extras occur in the gadget cliques. No K5 clique can have four or more outside vertices.
+- If x∉H, the twelve K5 cliques have at most thirteen outside-H vertices available, so at least eleven cliques have exactly one outside-H vertex.
+- If x∈H, the twelve K5 cliques have at most fourteen outside-H vertices available, so at least ten cliques have exactly one outside-H vertex.
 - A K5 clique with two shell vertices requires their pair to be an edge of M. A K5 clique with three shell vertices requires a triangle in M. The pivot p cannot co-occur with a shell vertex in such a clique because p is target-adjacent to every shell vertex.
-- Among the ten isolated K5 components, at most two fail to have exactly one outside-H vertex. Therefore at least eight yield independent 4-sets in H. If x∉H, at least nine do.
+- The total number of extra outside vertices beyond one per K5 clique is at most two. Thus the only multi-outside patterns are one double-shell K5 (when x∉H), or one triple-shell K5 / two double-shell K5s (when x∈H).
 
-This exhausts the outside-support multiplicity patterns relevant to the witness floor. It does not classify every isomorphism type of M[B] in Case II, and no such classification is needed for the 285-edge capacity theorem: that theorem is uniform over all M.
+Removing the unique outside vertex from each single-outside clique yields an independent 4-set in H. Hence at least ten witnesses per exact-129 color are guaranteed; at least eleven are guaranteed if x∉H or if a triple-shell K5 occurs.
+
+### Rigid low-support terminal
+
+If the union U of all witnesses has v≤43, no exact-129 color can supply eleven disjoint witnesses. Thus every exact color has exactly ten single-outside K5s, x∈H, and two different K5 cliques each with two shell vertices. Their shell pairs are disjoint edges of M. The pair edges have different colors across exact colors, so the surviving low-support contract includes at least 2m distinct color-labelled edges of M, with two disjoint M-edges assigned to each exact-129 color.
+
+This classification is valid whether M[B]=∅ or M[B]≠∅. In Case I each of these pairs must touch S; in Case II pairs may lie inside B. The 285-edge capacity theorem then gives v≥40 for m=8,9 and v≥41 for m=10. It does not yet eliminate the resulting finite incidence system.
 
 ## 5. Cross-branch firewall
 
-The E407 Q32 and E408 Q33 284-edge/excess-four statements are not used. The only core excess identity here is Σ_H(d_H-12)=6. The stronger support floor v≥33/35/37 follows from the twelve-clique witness extraction and the 285-edge capacity theorem in CORE285_CAPACITY_THEOREM.md, irrespective of which of Case I or Case II holds.
+The E407 Q32 and E408 Q33 284-edge/excess-four statements are not used. The only core excess identity here is Σ_H(d_H-12)=6. The witness and capacity results are uniform across both shell-support cases.
 
-Remaining open question: combine the labelled shell-hit constraints and the surviving core support profiles with all seven outer K12 near-Latin blocks to obtain a contradiction or a smaller certified terminal.
+Remaining open question: combine the labelled shell-hit constraints and surviving core support profiles with all seven outer K12 near-Latin blocks to obtain a contradiction or a smaller certified terminal.
