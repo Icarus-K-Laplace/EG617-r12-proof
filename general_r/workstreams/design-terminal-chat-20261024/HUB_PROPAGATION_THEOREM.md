@@ -68,3 +68,64 @@ Prove a **joint cylinder-cover propagation theorem**: starting from a repeated-g
 3. spend enough globally distinct cross-pair capacity to exceed the exact budget.
 
 The target cross-cover and non-target cover must be counted together; the same pair cannot be charged twice. No complete propagation or nonextension theorem is claimed.
+
+
+## HP6. Exact two-defect local closure: a counterexample to naive propagation
+
+The claim “a cheap cylinder cover must create a further defect” is false at the abstract one-color block level. Here is an exact finite gadget.
+
+Let (r\ge3). Let the ideal partition (Q_i) have one 6-block
+[
+C=\{u,v,z_1,z_2,z_3,z_4\},
+]
+one 5-block
+[
+D=\{w,x,y_1,y_2,y_3\},
+]
+and (r-2) further 5-clique blocks. In the actual graph (G_i):
+- (C) is complete except for (uv);
+- (D) is complete except for (wx);
+- all other blocks remain cliques;
+- the only cross-block edges are
+[
+uw, vx, uy_1, uy_2, uy_3, z_1w, z_2w, z_3x, z_4x.
+]
+
+Then:
+1. every vertex of (D) is adjacent to (u) or (v), so an independent transversal doubling (C) at (uv) is blocked;
+2. every vertex of (C) is adjacent to (w) or (x), so an independent transversal doubling (D) at (wx) is blocked;
+3. if an independent set doubles both blocks, it contains (u,v,w,x), and the edges (uw) and (vx) block it;
+4. therefore (\alpha(G_i)\le r);
+5. (G_i) is (K_6)-free: (C) has only the two 5-cliques (C\setminus\{u\}) and (C\setminus\{v\}), no vertex of (D) is adjacent to either full 5-clique, and common neighborhoods of pairs from (D) in (C) have size at most one. No other block has cross edges.
+
+The ideal edge count is (p_r(5r+1)=10r+5). Exactly two ideal edges are deleted and nine cross-block edges are added, so
+[
+R_i=2,\quad A_i=9,\quad s_i=A_i-R_i=7,
+\quad |E(G_i)\triangle E(Q_i)|=11.
+]
+This gadget closes two defects with slack (7), without creating a third missing edge inside (C\) or (D). It disproves any local lemma claiming that α\((G_i)\le r) and (K_6)-freeness alone force indefinite defect propagation or a per-color slack cost (>8).
+
+**Important limitation:** the gadget is not a full terminal coloring and has not been assigned target-group labels. It may fail the target cross-star and pair-ownership constraints; those are now the essential global conditions.
+
+## HP7. Target-label obstruction to using the same two-block gadget
+
+Suppose (w\in B_j), (x\in B_k), (j\ne k), and the target cross correction contains the full star (wB_k\subseteq E(G_0)). Let (D\in Q_i) contain (w,x), and let (C\in Q_i) be a candidate cover block. Write (z_k\in C\cap B_k).
+
+If (z_k\notin X), then:
+- (wz_k\in E(G_0)), by the target star;
+- (xz_k\in E(G_0)), because it is an internal (B_k)-edge and all target internal deletions touch (X).
+
+Thus neither (wz_k) nor (xz_k) can be a (G_i)-edge. Consequently, a cover using only edges between (C) and (D) cannot block the transversal choice (z_k) unless (z_k\in X). If (z_k\notin X), the proof must use edges involving other selected blocks.
+
+This is a rigorous target-label obstruction, but it does not alone force the cover block to contain a hub: a multi-block transversal barrier can cover the choices with (z_k) fixed.
+
+### Cheap multi-block barrier audit
+
+For a fixed vertex (z), two clean 5-clique blocks (E,F), and nonneighbors (e\in E,f\in F), the following 9-edge pattern blocks every choice from (E\times F):
+- join (z) to the other four vertices of (E);
+- join (z) to the other four vertices of (F);
+- add the edge (ef).
+
+Every pair chosen from (E,F) either includes a neighbor of (z), or is exactly ((e,f)) and uses the edge (ef). The pattern is (K_6)-free locally: (z) has only four neighbors in either 5-clique, and there is only one edge between (E,F).
+
+Therefore, after a target-label obstruction, a second-coordinate barrier can cost only 9 edges locally; it is not automatically quadratic. A valid global proof must show that such barriers cannot be chained/overlapped compatibly across all colors under the (27r+15) total edit budget and exact pair ownership.
