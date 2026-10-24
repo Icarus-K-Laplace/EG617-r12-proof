@@ -46,3 +46,13 @@ Still OPEN:
 ## Non-transfer warning
 
 E407 Cell-B exclusion does not imply the V12 Q32 templates are Cell-B. E408's Q32/Q33 equality system does not inherit E407's local contradiction. No aggregate sum identity forces each local defect to vanish.
+
+## Cross-cutting shell/core witness-capacity constraint (new, proved)
+
+The independent workstream now proves the lemma in R12_SHELL_CORE_WITNESS_LEMMA.md.
+
+For any T61 shell row a, if t_a=|N_F(a) intersect H|<=7, then H\N_H(a) has an independent 4-set. The proof uses the inherited edge cap D(n) and Brouwer's second-Turan lower bound for n=40,...,47; the lower bounds exceed D(n) in every case. Separately, the contextual no-R(4,49) condition implies that at least eight shell vertices are good, since two bad shell vertices cannot be target-adjacent.
+
+For E408 Q33/d3, beta+X+G_B=3 gives G_B<=3, while k_b=d_M(b)<=3. Hence every b in B has t_b=k_b+g_b<=6 and is good. Choose an independent 4-set Q_b in H anticomplete to b. For every a in S with ab in M, Q_b must meet N_H(a), or else Q_b union {a,b} would be an independent 6-set. The exact Q33 budget forces at least five such B-vertices to have k_b>=2, so at least five independent-4 witnesses each hit at least two S-rows.
+
+This creates a concrete witness-capacity subproblem for the 284-edge core. It does not prove that the witness sets coincide or that their incidence patterns are impossible; Q33 remains OPEN.
