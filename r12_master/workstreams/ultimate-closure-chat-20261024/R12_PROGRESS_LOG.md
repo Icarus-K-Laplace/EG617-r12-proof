@@ -123,3 +123,13 @@ Added R12_E408_PAIRWISE_BLOCKER_COMPATIBILITY.md with an analytic proof and exac
 - Newly eliminated terminal contracts: 0.
 - E408 Q32/Q33 remains OPEN; no scalar identity is treated as a contradiction.
 - Next attack: classify allowed strict-slack neighborhood families under the per-core-vertex multiplicity cap 2, then intersect their block-pair extra-matchings with the seven-block duplicate ledger.
+
+
+### Cross-branch audit + pair-indexed zero-excess theorem (2026-10-25)
+
+- Read and reconciled latest sibling heads: emergency sprint 87a5842, emergency sprint chat 5258c5f, witness packing 38b5dce, zero-excess witness 8addc64, general-r architecture a922c4d, asymptotic fa6a5f2, and adversarial audit 7ea44fc. Sibling workstreams were not overwritten.
+- Independently recomputed all ten endpoint gaps in the robust zero-excess theorem; exact gaps are 30,22,14,5 and 44,38,31,23,15,6.
+- Proved the pair-indexed hub-cover strengthening: each pair of regular B rows in the 284-edge core has a common zero-excess independent-four witness; when the pair's missing-hub sets cover S, that witness must be hub-complete.
+- Exact labelled pair floors: A/C=39, B=17, D/E with full row=9; E with no full row has 45 endpoint-complete pair certificates. The arithmetic verifier checks these floors.
+- Audited exact-129 witness packing: preserve 7/8 total Q-set floors and support bounds v≥29/v≥31, but distinguish the possible pivot-containing {p}∪Q component from B-labelled {b}∪Q witnesses. Corrected safe global hub-complete labelled floors are A/B=21 each, C/D/E-full=28 each, and E-no-full endpoint-complete=49.
+- No terminal excluded. E407 Q32, E408 Q32/Q33, and original K145 bridge remain OPEN / NOT_CERTIFIED.

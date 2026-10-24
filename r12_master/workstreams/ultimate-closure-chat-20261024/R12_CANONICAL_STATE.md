@@ -102,3 +102,14 @@ Added R12_E408_PAIRWISE_BLOCKER_COMPATIBILITY.md. For an exact-129 non-target co
 The same proof sharpens the block-to-residual lower bound: e_C(B_i,R)>=62, with a rigid equality normal form consisting of ten distinct K5 blockers and two six-subsets of U covering U with one shared vertex. Equality gives exactly one duplicated R-to-block incidence. If P_C=55, all seven blocks are in this equality form and each K5 component plus its seven block representatives is a disjoint C-clique of size 12. Since sum_C P_C=252, at most four colors have P_C=55; therefore at least four of the at least eight exact-129 colors have a strict-slack block.
 
 This strengthens E408's global compatibility interface but does not close Q32/Q33. EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+## Sibling branch reconciliation and pair-indexed zero-excess theorem (2026-10-25)
+
+Read the latest available R12 sibling heads for emergency sprint, witness packing, zero-excess witness, and adjacent general-r architecture/asymptotic/adversarial-audit branches. See R12_SIBLING_BRANCH_RECONCILIATION.md for exact commit links and dependency firewalls.
+
+New result in R12_ZERO_EXCESS_PAIRWISE_HUB_COVER.md: in the 284-edge/excess-four core, every pair of regular B-rows (t_b,t_c≤3) has a common independent four-set entirely in H_0, anticomplete to both rows. If their missing-hub sets cover S, that common witness must hit all three hubs. Pair-indexed hub-complete certificate floors across E407 templates are A=39, B=17, C=39, D=9, E with a full row=9; these are labelled pairs, not distinct witness sets. In E408 Q33 the result applies to every pair among the at least seven undecorated rows; E408 Q32 retains the stricter |T_b∪T_c|≤4 limitation.
+
+Audit correction: the exact-129 K5 decomposition allows one no-S component {p}∪Q. Thus total independent-four packing floors of seven/eight per exact-129 color remain valid, but not all such Q are B-labelled. The safe hub-complete B-labelled floors are 3 per color for A/B and 4 per color for C/D/E with n_3≥1; E with n_3=0 gives 7 endpoint-complete labelled witnesses per color. Global E407 floors are 21/21/28/28/28, or 49 endpoint-complete for E's n_3=0 branch. Stronger sibling counts based on treating every no-S component as B-labelled are not promoted without a separate proof.
+
+The exact-129 witness-packing support theorem remains valid: |V_*|≥29 in E407 and |V_*|≥31 in E408 Q33, but this is not a contradiction. E407 common-core completion, E408 Q32 threshold-29 completion, E408 Q33 seven-block compatibility, and the original K145 bridge all remain OPEN / NOT_CERTIFIED.

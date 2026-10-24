@@ -101,3 +101,10 @@ where k counts the isolated K5 components fully covered by the union. This is fo
 Equality e_C(B_i,R)=62 has a rigid normal form: ten distinct exact K5 blockers plus two six-subsets of U covering U and intersecting in one vertex. Thus r_i(C)=1 is not just a scalar boundary; it fixes the entire local incidence pattern. Globally, sum_i(r_i(C)-1)=55-P_C; if P_C=55, all seven blocks have the equality form and each K5 component plus its seven representatives is a C-clique of size 12. At most four colors can have P_C=55 because sum_C P_C=252, so at least four exact-129 colors have a strict-slack block.
 
 Remaining gap: exploit the strict-slack blocker families and cross-block duplicate matchings to contradict the E408 global system. This theorem does not itself eliminate E408 Q32 or Q33.
+
+
+## F9. Pair-indexed zero-excess hub-cover system
+
+Under the 284-edge/excess-four core contract, any two regular B rows have a common independent four-set in H_0, by the six-deletion zero-excess theorem. If their missing-hub sets jointly cover S, the common set must hit every hub. The E407 labelled-pair lower bounds are A/C=39, B=17, D/E-full-row=9; these are pair certificates, not distinct four-sets. E's no-full-row case forces all B rows to miss both P3 endpoints and yields endpoint-complete common-witness certificates for all 45 row pairs.
+
+**Remaining limitation:** a single four-set can serve multiple row pairs. The theorem does not itself force a large family of distinct hub-complete witnesses and is not a terminal exclusion.
