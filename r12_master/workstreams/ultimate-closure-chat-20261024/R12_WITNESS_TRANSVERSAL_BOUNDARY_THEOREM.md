@@ -141,3 +141,8 @@ The theorem proves a seven-neighbour transversal floor for every core vertex out
 This is not yet a contradiction. In particular, the bounds e(H[W])>=32 for E407 and e(H[W])>=24 for E408 are compatible with the displayed upper bounds. The remaining attack must use the labelled shell rows, the exact-129 color classes, and the induced H[W] structure to eliminate the surviving integer windows.
 
 The invalid m=10 star dichotomy from the emergency sprint is not used: a tripartite complement need not be complete tripartite. The attempted E408 outer-block contradiction that promoted omega(C[R])<=5 to a global clique bound is also not used; its correction remains in the sibling audit file. EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+## 7. Subsequent four-partite refinement
+
+R12_E408_Q33_FOUR_PARTITE_S0_10_EXCLUSION.md now excludes the \(S_0=10\) equality kernel under the additional hypothesis that L is four-partite. Thus the four-partite E408 Q33 boundary has \(S_0=\epsilon_U+2\delta\ge11\). The non-four-partite branch remains open; the edge count \(e(L)\le353\) alone does not decide four-partiteness.
