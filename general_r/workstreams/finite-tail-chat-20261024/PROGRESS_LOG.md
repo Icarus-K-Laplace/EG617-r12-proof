@@ -215,3 +215,8 @@ Important execution caveat: the committed `PARAMETER_ADMISSION_VERIFIER.py`, `ge
 - unconditional asymptotic r0: NOT AVAILABLE.
 
 No new EG617(r) theorem is claimed.
+
+
+### Source-provenance precision
+
+The admission matrix now binds both the endpoint generator's pinned broad ANCHOR_K8 source (`cd38647f85de9827a784288e69bad7a66d1e4e3a`) and the latest asymptotic status sync (`aa7fbbda16ff0170c9bf7c440ca961a7a8aab3c0`). The exact-three-anchor theorem remains a separate r>=12 source with its own premise. Every source record now carries `local_audit_status`, so upstream proof existence is not mislabeled as a proof rederived by this workstream.
