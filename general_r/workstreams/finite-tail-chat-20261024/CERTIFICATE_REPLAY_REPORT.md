@@ -40,7 +40,7 @@ Hashes:
 - certificate SHA-256: `aa2123245e1bd6db9ab7056c3c2b0083f1d2f3828d39f40b54c731ba113b170a`
 - generator SHA-256: `b29179be0386b44168450cab23fa3591c187222a32194ee086a05a5bca4d6758`
 - independent verifier SHA-256: `c18a74703417faed2c453b588e0ea9a8b03244af04bfc0b5f4191ec8cc15de6a`
-- theorem-promotion gate SHA-256: `d239d700ecb2f246c750af4b1acb76d6c38b1bdf5c42dadaeeb3adaac23ef7bc`
+- theorem-promotion gate SHA-256: `da90253d941ceb184f5c74a603cda70c5dda466fd3936de484b82924783b032c`
 
 ## Commands
 
@@ -54,6 +54,44 @@ python theorem_promotion_gate.py certificates/endpoint_domain_r13_residual_core.
 ```
 
 The checked-in receipt binds the source assumption, hashes, verifier, gate, and the explicit non-promotion decision. The certificate's canonical hash is independent of pretty-print whitespace.
+
+## Second endpoint module: D1_SHELL_CLASS_BOUND_V1
+
+Certificate: `certificates/d1_shell_class_bound_r13.json`
+
+Receipt: `certificates/d1_shell_class_bound_r13_receipt.json`
+
+The sibling repivot endpoint theorem, source commit `35fec3eaaab70b31e10b41065634b35b02a28e6c`, proves conditionally under A+B and r>=12 that each distinct d1 missing-partner shell vertex contributes at least r to the shell-incidence sum, while the total is at most 6r-2. The exact arithmetic module checks N=0,...,6 and establishes that N=6 requires 6r incidences, exceeding the cap by exactly 2. Therefore the conditional shell-class bound is N<=5.
+
+For r=13:
+
+- incidence cap: 76;
+- N=5 requires 65 incidences and has slack 11;
+- N=6 requires 78 incidences and has deficit 2;
+- rows checked: 7;
+- independent verifier: `PASS`;
+- theorem-promotion gate: `PASS_CONDITIONAL_MODULE`;
+- RC and ANCHOR_K8 are both open for r=13;
+- bounded-allowance d1 nonextension remains OPEN; EG617(13) is **NOT PROVED**.
+
+Hashes:
+
+- instance SHA-256: `e2606f6a45ce41d5de4a5a184e2a32026259bc2992a73fbe82ce0833a4ae8a5e`
+- certificate SHA-256: `2b82b7c89b8afab0259728a21d6e28ea10ace8a97c7c46455511a381555b0bc8`
+- generator SHA-256: `b0d85a0877953490c5d724365b17c15dfc3113390a578a6813a7ba7b9183d5b6`
+- independent verifier SHA-256: `e05ff2311275143d7a3a1492141be42b40989c93361e32ec3c2e504a2e5d457a`
+- theorem-promotion gate SHA-256: `da90253d941ceb184f5c74a603cda70c5dda466fd3936de484b82924783b032c`
+
+Replay:
+
+```bash
+cd general_r/workstreams/finite-tail-chat-20261024
+python generate_d1_shell_bound.py 13 --output certificates/d1_shell_class_bound_r13.json
+python verify_d1_shell_bound.py certificates/d1_shell_class_bound_r13.json
+python theorem_promotion_gate.py certificates/d1_shell_class_bound_r13.json --receipt certificates/d1_shell_class_bound_r13_receipt.json
+```
+
+The verifier checks the exact arithmetic consequence independently; it does not re-prove the sibling's graph-theoretic shell-incidence lemmas. The result is a useful conditional endpoint bound, not an absolute d1 closure theorem.
 
 ## Test matrix
 
@@ -79,5 +117,5 @@ The r=4,...,100 sweep is a finite implementation audit, not a theorem for all r 
 - The generator and verifier are separate files.
 - The verifier does not import the generator and independently rebuilds the exact rows, candidate set, reflection classes, instance hash, and certificate hash.
 - The promotion gate invokes the verifier as a subprocess, checks every assumption ID against the ledger, and fails closed for unknown IDs or unsupported r.
-- The gate may promote the conditional arithmetic lemma, but never EG617(r), because this module only gives a necessary scalar domain.
+- The gate may promote conditional local endpoint lemmas, but never EG617(r), because neither module exhausts all legal graph states or proves a contradiction.
 - Graph-level color/vertex symmetry, endpoint d0/d1/d2/d3 closure, high-endpoint kernel closure, LRAT/DRAT, and exact ILP proof checking remain unimplemented or gated by open analytic theorems.
