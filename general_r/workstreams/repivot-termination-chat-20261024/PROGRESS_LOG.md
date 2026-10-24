@@ -489,3 +489,38 @@ Renamed the high-density offset lambda=m-r+1 to avoid confusing it with the d2 a
 ## Current status
 
 Clean Pair Nonextension remains OPEN. Bounded-allowance d1 absorption remains OPEN. The high-density branch now has a stronger shell-incidence bound and an overlap-corrected joint budget, but neither closes the remaining terminal. The low-density branch is still untouched, and no finite r0 is certified.
+
+
+### Round-6 follow-up — overlap correction, shell budget, and independent checks
+
+The shell-incidence estimate K_U>=2m-2r-b_2 was promoted to the canonical/global-budget documents. The resulting exceptional-set inequality is
+
+2m-2r-b_2+X L<=2r-2,
+X<=floor(2(r-1+h+b_2)/(r-3h-5)),
+
+where L=3lambda-4-r=(r-3h-5)/2. This improves the near-threshold bound to X<=r/6+O(1).
+
+The d1 file now records the overlap-corrected joint budget
+
+2m-2r-b_2+N_1(c-1)+X L
+-(c-1)J_2-min(c-1,L)J_X<=2r-2,
+
+and its eta-explicit version. For 3<=c<=L-1 the overlap terms vanish. The d2 matching inequality remains a separate necessary projection; no summation is made without a disjointness theorem.
+
+An independent finite parameter-grid check passed the identity L=(r-3h-5)/2, the bound L>=8 in the AES branch, and the overlap-correction inequality for c=1..12 and L=8..15. This is an algebraic sanity check, not a proof of graph-level nonextension.
+
+The high-density offset is now consistently named lambda=m-r+1, distinct from d2 allowance a_2=2. Canonical R19 was reconciled with R22: in the high-density branch m>r, no block lies wholly within one AES part.
+
+Follow-up commits:
+
+- CLEAN_PAIR_NONEXTENSION.md shell-incidence budget: c28659598983570830a6578ddb9f15749e98f07a
+- COUNTEREXAMPLE_SEARCH.md shell-incidence audit: d2f88df9f6d986d24d9ac403ac47d136c6f9bfb7
+- D1_TERMINAL_ABSORPTION.md overlap-corrected joint budget: dcbba8d55b881d55080ee9ad7c4967865c06a499
+- CANONICAL_STATE.md joint budget: 5abfc5e49b7b0bd5a6828b69717fa61a8b0012d1
+- CANONICAL_STATE.md no-same-part reconciliation: 8f5f6b7adc63815a8782a38cf0ab4182f0944ae0
+- TERMINATION_CLOSURE.md joint budget: 92f8590168464991b94608935d09661ce99a9f57
+- TERMINATION_THEOREM.md joint budget: 111d3893ee2775a8fbbf97ad1b0e0144992a08cb
+- CLEAN_PAIR_GLOBAL_BUDGET.md shell-incidence: c7051264abdb27c0d8055c6807bf7be2ccf34fad
+- CLEAN_PAIR_GLOBAL_BUDGET.md notation reconciliation: e1c315ec6ca008e25880a3e8fc59e3e58b407197
+
+No complete legal core has been ruled out in the entire parameter range, and no finite r0 is certified.
