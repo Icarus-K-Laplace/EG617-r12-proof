@@ -105,3 +105,21 @@ Added verify_row_transversal_counts.py (commit 3ee3d3213fec6136dea255a5cf5135bff
 - Q33 beta 0/1/2/3 high-k minima: 6/6/5/5.
 - Equality profiles are enumerated exactly, including the beta=3 profiles (0,5,0,5), (0,5,1,4), (1,4,0,5).
 This verifies only the row-count arithmetic; the graph-theoretic terminal remains open.
+
+
+### New theorem — E408 pairwise blocker compatibility (2026-10-24)
+
+Added R12_E408_PAIRWISE_BLOCKER_COMPATIBILITY.md with an analytic proof and exact boundary cases.
+
+- For any two vertices b,b' in the same outer target K12 block, their C-neighborhood blockers X_b,X_b' must leave no independent 11-set in R; otherwise b,b' extend it to an independent 13-set in the global exact-129 color C.
+- If k isolated K5 components are fully covered by X_b∪X_b', then the remaining gadget must satisfy alpha(C[U\(X_b∪X_b')])<=k.
+- Equality e_C(B_i,R)=62 is rigid: ten distinct exact K5 neighborhoods plus two six-subsets of U whose union is U and intersection has size one. This also proves exactly one duplicated core-to-block incidence.
+- The exact global identity is sum_i(r_i(C)-1)=55-P_C. If P_C=55, all seven blocks are rigid equality cases and each isolated K5 component plus its seven representatives is a C-clique of size 12.
+- Since sum_C P_C=252, at most four colors can have P_C=55; at least four of the at least eight exact-129 colors therefore have a strict-slack block.
+
+### Impact and status firewall
+
+- New proved local/global compatibility constraints: 1 theorem, 1 rigid equality characterization, 1 exact slack identity.
+- Newly eliminated terminal contracts: 0.
+- E408 Q32/Q33 remains OPEN; no scalar identity is treated as a contradiction.
+- Next attack: classify allowed strict-slack neighborhood families under the per-core-vertex multiplicity cap 2, then intersect their block-pair extra-matchings with the seven-block duplicate ledger.

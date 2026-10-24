@@ -90,3 +90,14 @@ See R12_ROW_TRANSVERSAL_AND_Q33_PACKING.md.
 For every missing shell edge ab and shell row t_a<=12, the 4-sets in H\D_a have independence number exactly4 and all must hit D_b. The five E407 templates therefore induce minimum transversal systems (size3 for full rows against a t=10 hub, size2 for pair rows against a t=11 hub, size1 for singleton rows against a t=12 hub), with PAIR-13 / TRI-24 overlap restrictions.
 
 For E408 Q33/d3, the exact-129 factor theorem yields at least six B-bearing K5 components with no S per exact-129 color. Combined with at least five high-k B rows, this forces at least one high-k no-S witness per exact-129 color, and at least two when beta is 0 or1. The resulting 8/16-witness packing is a necessary condition only; no terminal is excluded yet.
+
+
+## F8. E408 exact-129 pairwise blocker compatibility (new theorem, 2026-10-24)
+
+For each exact-129 color C and target block B_i, the twelve neighborhoods X_b=N_C(b)∩R satisfy the pairwise inequality
+alpha(C[U\(X_b∪X_{b'})]) <= k(X_b,X_{b'}),
+where k counts the isolated K5 components fully covered by the union. This is forced because b,b' are nonadjacent in C and an independent 11-set in R outside both neighborhoods would extend them to a forbidden independent 13-set in C.
+
+Equality e_C(B_i,R)=62 has a rigid normal form: ten distinct exact K5 blockers plus two six-subsets of U covering U and intersecting in one vertex. Thus r_i(C)=1 is not just a scalar boundary; it fixes the entire local incidence pattern. Globally, sum_i(r_i(C)-1)=55-P_C; if P_C=55, all seven blocks have the equality form and each K5 component plus its seven representatives is a C-clique of size 12. At most four colors can have P_C=55 because sum_C P_C=252, so at least four exact-129 colors have a strict-slack block.
+
+Remaining gap: exploit the strict-slack blocker families and cross-block duplicate matchings to contradict the E408 global system. This theorem does not itself eliminate E408 Q32 or Q33.

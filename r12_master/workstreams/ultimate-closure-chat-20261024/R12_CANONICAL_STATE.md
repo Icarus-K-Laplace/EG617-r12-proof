@@ -93,3 +93,12 @@ Added R12_ROW_TRANSVERSAL_AND_Q33_PACKING.md (commit 47b0f74c69f55f43aa9f033770a
 - For every missing shell edge ab, every independent 4-set in H\D_a hits D_b. This quantifies over all maximum independent 4-sets of the row-avoidance core and induces template-specific transversal systems for A–E.
 - In every exact-129 Q33 color, at least six B-bearing K5 components avoid S. The Q33 budget has at least five B rows with k_b>=2, so each exact-129 color yields at least one high-k no-S witness; beta=0/1 gives at least two per color. With at least eight exact-129 colors, this is a packing of at least 8 / 16 independent-4 witnesses with cross-color intersections at most one.
 - This is not yet an adjacency-sensitive contradiction. E407 Q32, E408 Q32 and E408 Q33 remain OPEN / NOT_CERTIFIED.
+
+
+## E408 exact-129 pairwise blocker theorem (proved, 2026-10-24)
+
+Added R12_E408_PAIRWISE_BLOCKER_COMPATIBILITY.md. For an exact-129 non-target color C and any target K12 block B_i, its twelve neighborhoods X_b=N_C(b)∩R obey a pairwise condition: if k is the number of isolated K5 components fully covered by X_b∪X_b', then alpha(C[U\(X_b∪X_b')])<=k for every distinct b,b' in B_i. This follows from the global alpha(C)<=12 condition, not from a local shell assumption.
+
+The same proof sharpens the block-to-residual lower bound: e_C(B_i,R)>=62, with a rigid equality normal form consisting of ten distinct K5 blockers and two six-subsets of U covering U with one shared vertex. Equality gives exactly one duplicated R-to-block incidence. If P_C=55, all seven blocks are in this equality form and each K5 component plus its seven block representatives is a disjoint C-clique of size 12. Since sum_C P_C=252, at most four colors have P_C=55; therefore at least four of the at least eight exact-129 colors have a strict-slack block.
+
+This strengthens E408's global compatibility interface but does not close Q32/Q33. EG617(r=12) remains OPEN / NOT_CERTIFIED.
