@@ -50,6 +50,14 @@ k_C=\#\{i:r_i(C)\le3\}\ge\max\left(0,7-\left\lfloor\frac{55-P_C}{3}\right\rfloor
 \]
 In particular, \(P_C\ge35,38,41,44,47,50,53\) guarantees at least 1,2,3,4,5,6,7 low-slack blocks, respectively. The aggregate \(\sum_{C:s_C=0}P_C\ge69\) alone does not force any single color to reach 35, so this is not global closure.
 
+## New theorem interface: row duplicate count up to five
+
+SEVEN_BLOCK_INCIDENCE_LEDGER.md now contains Theorem 10.1. For an exact-129 color C and block \(B_i\), if \(r_i(C)\le5\), then all ten isolated K5 components occur in exactly ten distinct component-containing rows, and the other two rows have gadget portions \(X,Y\) covering all of \(U_C\). Their overlap \(a\in\{1,\ldots,5\}\), their complements are disjoint cliques, and the exact charge identity is \(r_i(C)=a+e_i+t_i\).
+
+Corollary 10.2: if \(r_i(C)+r_j(C)\le6\), the same ten component labels force a C-colored matching of size ten between \(B_i\) and \(B_j\). Since \(R_C=62-P_C\), \(P_C\ge36\) guarantees at least one such block pair. This improves the earlier \(r_i\le3\) theorem without extending it past its proved range; \(r_i=6\) remains outside Theorem 10.1 because split-component boundary cases may occur.
+
+This is a verified conditional structure theorem, not a global contradiction: the aggregate \(\sum_{C:s_C=0}P_C\ge69\) still does not force a single exact color to have \(P_C\ge36\).
+
 ## Seven-block global ledger
 
 For each non-target color C,
