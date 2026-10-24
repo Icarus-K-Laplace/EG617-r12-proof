@@ -201,14 +201,25 @@ def check_partite_branch_capacity() -> None:
                 assert lower >= 0
 
 
+def check_pair_certificate_multiplicity() -> None:
+    # A graph-theoretic Q can certify only pairs among rows it avoids.
+    assert comb(10, 2) == 45
+    for mu in range(11):
+        assert comb(mu, 2) <= 45
+        if mu:
+            assert mu - 1 <= 9  # label-anchored pairs containing its own label
+
+
 def main() -> None:
     check_zero_excess_endpoint_tables()
     check_edge_ledgers()
     check_omission_tables()
     check_label_count_matrix()
     check_partite_branch_capacity()
+    check_pair_certificate_multiplicity()
     print("R12_UNIFIED_WITNESS_CAPACITY_ARITHMETIC_OK")
     print("Partite branch: exact Q33 incidence profile and labelled row caps verified.")
+    print("Pair-certificate multiplicity: max 45 unlabelled / 9 label-anchored pairs.")
     print("Scope: exact integer/degree ledgers only; no graph-realization certificate.")
 
 
