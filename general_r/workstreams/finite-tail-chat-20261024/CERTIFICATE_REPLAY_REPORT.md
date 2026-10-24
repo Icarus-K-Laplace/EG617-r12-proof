@@ -136,7 +136,7 @@ python PARAMETER_ADMISSION_VERIFIER.py PARAMETER_ADMISSION_MATRIX.json --query-r
 python PARAMETER_ADMISSION_VERIFIER.py PARAMETER_ADMISSION_MATRIX.json --query-r 68 --module D1_SHELL_CLASS_BOUND_V1
 \`\`\`
 
-The branch started at the requested HEAD `3d27693d9f9d5bf2586e0f0178228563d96de22b`. The committed matrix has raw SHA-256 `6ada61242bd6afa86ad4bb06e8549e5d5bfdbff348c5ffff6d32be445dc51cf3`; the admission verifier file hash is `43c42443d8fbfc6ddb67d2bb3f4923e0c70e2a92a6dba5818d692defad2d44d9`.
+The branch started at the requested HEAD `3d27693d9f9d5bf2586e0f0178228563d96de22b`. The committed matrix has raw SHA-256 `037ebe8e26f0c72e135e3d6a560d4620f023cb52b0c4d8e87096c12e0a8828da`; the admission verifier file hash is `08d8e58ae6713cf8ab94b1e2dbb3715cd920f4255d21792b7a6d801be04dc326`.
 
 A separate JS audit rebuilt the policy row for every r=4,...,100 and matched all 97 rows of the committed matrix. The independent admission-verifier logic was also exercised in a Python harness with queries for r=11, r=13 residual-core, r=13 near-anchor, r=68 near-anchor, and r=101 D1. It returned the expected blocked/conditional states; a tampered row was rejected. This harness was a separate logic replay, not a direct invocation of the committed CLI entry point.
 
@@ -179,3 +179,6 @@ Additional Round-2 fingerprints (raw-file SHA-256):
 - unified family wrapper: `8ab57ec8f005061fd1aa234b24e8e434d36bcbd77149e6caa9a1e5f7de9fc36a`
 - graph symmetry verifier: `6f6c484575772b72324ee0e4ad3495c93fb1b39ebb6f35e981fa54277a952f4c`
 - graph symmetry test vectors: `72ed53eb8f05d1a1531595076f018a5e31c8f66388cf230dfff70a88bfbdc05a`
+
+
+Source-proof scope: the registry's local audit fields explicitly mark upstream analytic proofs as source-reviewed but not re-proved in this workstream. This line does not copy sibling proofs into its own certified result; it records exact provenance and checks the applicability statements/ranges. The only new local mathematical outputs are conditional exact-arithmetic consequences, not EG617 theorems.
