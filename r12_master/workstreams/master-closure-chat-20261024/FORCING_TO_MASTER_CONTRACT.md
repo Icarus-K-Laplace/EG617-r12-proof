@@ -90,6 +90,8 @@ Examples:
 
 This is a genuine extraction/allowance theorem. It still leaves lower owner counts, fully-decorated classes, and the macroscopic shallow-loss classes to their separate contracts.
 
+## 6. The new `R12_D3_DISJOINT_SUPPORT_COMPATIBILITY.md` sharpens the disjoint-support branch: if two d3 supports are disjoint and their missing triples differ, then the exact second-view charge gives `e_H(D_i,D_j)<=q-36`. Hence the distinct-type block transversal has at most 3 blocks for q=36,37 and at most 6 for q=38; for q<=35, every disjoint-support subsystem is common-S. This reduces the disjoint-support multi-S branch to a bounded number of distinct missing-set types, but repeated blocks inside one common-S class remain governed by the shallow-loss contracts below.
+
 ## 6. The multi-S identity does not by itself close extraction
 
 Without a common-S assumption, `GLOBAL_MULTI_S_REPIVOT_COMPATIBILITY.md` proves the exact identity
