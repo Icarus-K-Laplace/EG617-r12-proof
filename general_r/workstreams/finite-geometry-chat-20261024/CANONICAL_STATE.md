@@ -159,3 +159,10 @@ At q=6 (r=7), this gives four directions, hence two orthogonal Latin squares of 
 Imported and audited J.W8 from J branch commit c0c31e82b2bd8b4c3c5a7ab6092b660d16bd686b. The equality case sum b_i=C(q,2) forces G_c[R] to be the Turan-minimal disjoint union of one q-clique and q (q-1)-cliques. Each root must fully c-cover a block; capacities 1 for the large block and 2 for every small block contradict |X|=2q+2. Hence sum b_i<=C(q,2)-1 for q>=4.
 
 This improves the residual-net bound to at least ceil((q+1)/2) directions. At r=7, q=6, at least four orthogonal partitions would yield two MOLS(6), impossible by Euler–Tarry. Case B at r=7 is CLOSED (impossible). Case A and the full r=7 theorem remain OPEN.
+
+
+## Round 6 — weighted blocker inequality; quantitative audit correction
+
+The valid imported theorem K.RM9 is in RESIDUAL_MULTINET_EXTRACTION.md, commit 5aaf0165442900de0f66231a0f75ed8195be884d. When the residual complement is (q+1)-partite, every root that fully c-covers no block must have weighted blocker sum W_x>=1, where cross-block c-edge uv contributes 1/(a_i(x)a_j(x)) and a_j(x) counts the root's c-nonneighbors in block B_j.
+
+The attempted K.RM8 quantitative strengthening was withdrawn in commit 4e978444c4c81c5b323c1430486a8024b5b5ab0c because it incorrectly sampled from whole blocks rather than the root-dependent nonneighbor sets. Do not use its claimed d>=C(k+1,2) bound. The valid strict endpoint d>=1 and the r=7 Case B exclusion remain intact.
