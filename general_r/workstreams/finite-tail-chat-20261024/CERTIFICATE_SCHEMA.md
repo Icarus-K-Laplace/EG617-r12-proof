@@ -33,6 +33,34 @@ theorem_status
 
 `theorem_status=PROVED` is permitted only when `bridge_status=PROVED` and every `assumption_id` in `ASSUMPTION_LEDGER.md` is certified for that same `r`.
 
+## 1A. Theorem-aware module manifest
+
+Every constraint module must additionally bind:
+
+```text
+module_id
+module_kind
+constraint_generation_version
+exact_theorem_statement
+source_branch
+source_commit
+source_path
+parameter_applicability
+assumption_ids
+canonical_variable_map
+constraint_ids_and_formulas
+instance_sha256
+certificate_sha256
+verifier_sha256
+replay_command
+module_promotion_status
+eg617_promotion_status
+```
+
+The manifest may be distributed across the immutable instance and its replay receipt, but both files must be committed together and hash-bound. The current endpoint module uses schema `eg617-endpoint-domain-certificate-v1` and generator version `endpoint-domain-generator-v1.0.0`.
+
+A conditional module may pass its module gate while EG617 promotion remains blocked. The receipt must explicitly record both decisions; a conditional pass is not an unconditional theorem.
+
 ## 2. Instance canonicalization
 
 V1 reduced CSP instances use `eg617-finite-tail-csp-v1`:
