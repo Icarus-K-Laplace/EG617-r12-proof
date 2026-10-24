@@ -52,6 +52,11 @@ def main() -> None:
     assert (7 + 3, 7 + 2) == (10, 9)
     assert (3 + 1) // 2 == 2
     assert 7 + 2 > 8
+    # In the (5,0) split, 3 non-endpoint D vertices go to 2 K5s, so one K5
+    # receives >=2. Each of its 5 vertices needs >=1 excess unit: 7 small-part
+    # neighbours plus 2 D neighbours, against baseline U-degree 8.
+    assert (3 + 1) // 2 == 2
+    assert 5 > 4
     assert 4 * (7 + 5 - 9) > 4
 
     print("E407_DELTA16_STRUCTURAL_KERNEL_ARITHMETIC_OK")
