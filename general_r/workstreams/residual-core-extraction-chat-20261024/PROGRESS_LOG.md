@@ -686,3 +686,19 @@ so at least **`r^2-112r`** clean transversal blocks exist.
 ### Next highest-priority task
 
 Analyze the `O(r)` exceptional classes. Determine whether the duplicate-label patches forced by the exact `r+1`-set property can be packed into a pairwise-linear design with the target-group hub incidences, or whether they force an earlier valid `R_5`. The first objective is an exact obstruction theorem for the exceptional-block incidence graph, not another asymptotic estimate.
+### Round 12 follow-up — design-only countermodel audit
+
+For every prime power `r>=7`, a field-based `TD(r+1,r)` restricts to `TD(6,r)`. Deleting one parallel class leaves `r^2-r` blocks in `r-1` parallel classes. Adding one unused point to one group gives group sizes `(r+1,r,r,r,r,r)` without changing the blocks. For `r>=112`, this meets the lower bound `r^2-112r`.
+
+This is only an abstract design model, not a full edge-coloring or a canonical high-stop graph. It establishes that even a pairwise-linear near-complete TD with `r-1` parallel classes is not contradictory by density alone. The next theorem must use the exceptional blocks' actual colors/labels and the target hub incidence.
+
+### Latest GitHub commits
+
+- theorem file (alignment theorem + design-only audit): `32ba6cef7c246f3dd82db2b002a8a8575c103c8d`
+- canonical state: `8bd13d7fd50b3441d65d3ac755a724d0596a0156`
+- open gaps: `92eb7de76041b80fd9e37865a0073c5a96f6a096`
+- progress log: this update
+
+### Current status
+
+`NO-HIGH-STOP = OPEN`. The best new necessary structure is a partial resolvable `TD(6,r)`-type system with at least `r^2-112r` clean blocks for `r>=1000`, plus at most 74 target hubs. The explicit design-only model rules out using this density as a contradiction. The next task is to classify and jointly charge the `O(r)` exceptional label classes.
