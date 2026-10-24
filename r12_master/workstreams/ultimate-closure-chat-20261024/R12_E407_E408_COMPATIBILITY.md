@@ -62,3 +62,18 @@ The scalar capacity bounds are not enough to close either layer: the 40 four-set
 - No aggregate sum identity is treated as forcing each local defect to zero.
 
 EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+## 6. Minimum-transversal boundary exclusions (2026-10-25)
+
+See R12_TRANSVERSAL_BOUNDARY_CLASSIFICATION.md.
+
+The linear exact-129 witness family has no two distinct 7-transversals with a nonempty intersection. This yields:
+- E407 Q32, v=29/m=49: \(\delta\ge2\), where \(\delta\) counts complement edges beyond the 294 edges covered by the 49 witness K4s.
+- E408 Q33, v=31/m=56: \(2\delta+\epsilon_U\ge8\), together with \(\delta+\epsilon_U\le17\).
+
+The low-budget proof uses the exact seven/eight color-class count and the degree-7 W-neighbourhoods; it does not rely on the withdrawn star dichotomy or the withdrawn E408 global-clique inference. The arithmetic verifier passed independently. These bounds eliminate low-budget profiles only, not either terminal.
+
+## 7. Shell-incidence union audit correction
+
+The imported shell-incidence union argument has a gap if a core vertex has zero neighbours in the 13-vertex shell: such a vertex contributes \(-1\) to the full sum \(\sum_x(r_A(x)-1)\). The frozen parent minimum-degree contract does not alone exclude this at a positive-excess core vertex. Since total core excess is four, at most four such vertices exist. The safe full-row support-union floors are therefore 7 for E407 template A and 6 for C; the stronger 11/10 floors require an additional zero-support exclusion. See R12_SHELL_INCIDENCE_UNION_AUDIT.md.
