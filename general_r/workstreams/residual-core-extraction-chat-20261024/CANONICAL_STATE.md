@@ -348,7 +348,7 @@ For `a=6,r>=1000`, `|X|<=74`, `sum_{i>0}x_i<=13r+6`, and `sum_{i>0}(z_i-1)<=5r+2
 
 `(5r+2)+(12/5)(13r+6)+74(r-1)<=111r`.
 
-Thus every first high stop `R_6` contains a pairwise-linear partial resolvable `TD(6,r)` with at least **`r^2-112r` blocks** for `r>=1000`. This improves the earlier `r^2-O(r^(3/2))` lower bound.
+Thus every first high stop `R_6` contains a pairwise-linear partial resolvable `TD(6,r)` with at least **`r^2-112r` blocks** for `r>=1000`; the later 7–28 hub-kernel theorem improves this to **`r^2-66r` blocks** for `r>=26272`. This improves the earlier `r^2-O(r^(3/2))` lower bound.
 
 Proof: `NO_HIGH_STOP_ROUND2_LEMMAS.md`, Section 9.
 
@@ -535,4 +535,4 @@ Rejected proof shortcuts:
 
 ## NEXT HIGHEST-LEVERAGE TARGET
 
-Prove a **joint incidence-packing / hub-propagation lemma** for `a=6`: use the sharpened part sizes `r-8` through `r+9`, at most 74 hubs for `r>=1000`, the excess floors `x_i>=5`, `x_0>=r`, the exact identity `M_i+H_i+K_i=x_i+5z_i+1-Q_i`, and the complete-bipartite pair obstruction between `A_b(v),A_c(v)`. The KP extremal template shows `z_i=6` is locally possible, so the next proof must combine these exact pair constraints across different colors and target groups; do not assume `z_i=1` or try another scalar-only contradiction. Show either that these hubs force an earlier `R_5` satisfying the edge budget, or that their incidence pattern contradicts the critical-core residue windows. Do not return to fixed-r recurrence or claim NO-HIGH-STOP closed before a proof exists.
+Prove a **cross-group matching/KP interface theorem** for the extreme `a=6` terminal. Use: `7<=|X|<=28` for `r>=26272`; the exact groupwise identity `W_j=Z_j+C_j-5(r-1)delta_j`; the concentration bound `sum(x_i-5)<=20+Z_j-m_j` when a group has size `r+9`; and the fact that all but at most 756 collision units are hub–nonhub doubletons. Classify the general `z_i>1` interfaces in the KP equality graph and prove that the resulting six-group block system cannot satisfy pairwise color uniqueness and the full predecessor label-capacity identities. Do not assume `z_i=1`, do not return to fixed-r recurrence, and do not claim NO-HIGH-STOP closed before a proof exists.
