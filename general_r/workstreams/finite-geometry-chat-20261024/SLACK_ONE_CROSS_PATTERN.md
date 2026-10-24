@@ -61,3 +61,7 @@ Thus simultaneous local slack one forces both colors to have global excess at le
 ## Audit boundary
 
 This is a necessary local pattern, not a contradiction. The other cross-grid edges can use colors outside {i,j}; the theorem does not assert that only two colors occur on W. It does not imply a third direction or an affine plane.
+
+## Round 2 contract audit — empty premise under full counterexample
+
+The crossed-pattern implication is valid as a conditional structural statement, but the new theorem `HIGH_SLACK_COMPATIBILITY.md` proves `s_i(x)>=q-1` for every color and vertex under the full counterexample contract. Consequently the premise `s_i(x)=s_j(x)=1` is impossible for q>=3. The crossed pattern is therefore vacuous in a full hypothetical counterexample and is not evidence that such a pattern can be realized. The new proof uses the q+1-set block-plus-x condition in addition to the blocker lemma.
