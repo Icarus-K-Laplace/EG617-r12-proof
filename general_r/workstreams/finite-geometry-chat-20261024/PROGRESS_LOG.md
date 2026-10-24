@@ -33,16 +33,20 @@
 - Recorded the J-line conditional bridge: a private witness of low-slack color i forces the residual part in its base block to have size <=s_i, so at most floor((2q-1)/(q-s_i)) blocks can host witnesses of that color.
 - The alignment premise (a low-slack color at a vertex in the tight transversal) is not yet established; no contradiction is claimed.
 
-## 2026-10-24 — Round 6: cross-line audit
+## 2026-10-24 — Round 6: small-slack exact structure
 
-- Rechecked the J-line witness-overlap statement and the K-line weighted blocker lemma for compatibility.
-- Confirmed the conditional bridge only uses the low-slack partition on W=V minus {x_0}, where x_0 is explicitly a point of the tight transversal X.
-- The bridge and weighted blocker are now documented in separate workstreams; no files outside this branch's directory were modified.
+- Classified one-edge blockers: the unique edge must join two singleton residual parts.
+- Classified two-edge blockers: either there is a singleton-singleton edge, or the two edges are disjoint transversal events joining a singleton part to the two vertices of a size-two part.
+- Used the J shell budget |Y|=2q-1 to rule out the three-part 1,1,2 pattern for q>=4; hence slack 1 or 2 confines private witnesses to at most two blocks.
+- Derived two-block forcing d_i(x)>=2q-s_i(x)-1 and global excess a_i>=q-1 for every color that is low-slack at any vertex.
+- Proved the simultaneous slack-one crossed 2-by-2 pattern and the excess lower bounds a_i,a_j>=q-1.
 
 ### Status
 
 - Low-slack coordinatization: PROVED.
-- Weighted blocker inequality: PROVED.
+- Weighted blocker inequality and two-block forcing: PROVED.
+- Global excess bound: PROVED.
+- Slack-one crossed pattern: PROVED conditionally.
 - Conditional J/K interface: PROVED.
 - Global low-slack alignment and high-slack contradiction: OPEN.
 - Kakeya bridge and prime-power headline theorem: OPEN.
