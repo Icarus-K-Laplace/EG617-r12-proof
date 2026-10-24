@@ -96,6 +96,8 @@ For X exceptional outside vertices,
 
 X(3a-4-r)<=K_O<=2r-2-K_U.
 
+Since h=r+1-2a, equivalently X<=floor((4r-4-2K_U)/(r-3h-5)); the denominator is at least 16 in the high-density branch.
+
 This is the correct statement; the stronger claim that every outside vertex sees a whole part is **not proved** and is not used.
 
 ## C-N9 — Exact clean-pair budget identity: PROVED_CONDITIONAL
