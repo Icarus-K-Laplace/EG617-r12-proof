@@ -294,60 +294,76 @@ Thus the target partition into a row-blocks and the r-1 non-target partitions in
 
 This is a genuine structural upgrade from near-extremality in edge count. It still does not imply an exact transversal design or an earlier R_5/R_4 state: the allowed O(r) exceptional pairs are on the same scale as the missing-parallel-class deficit, so their concentration and incidence pattern must be analyzed rather than ignored.
 
-## 5. Hub localization in the target complement
+## 5. Constant-width target parts and cylinder hub localization
 
-Let (G_0=G_0[R_a]) be the target-color graph at a first stop and (F_0=\overline{G_0}). Then (omega(F_0)=\alpha(G_0)=a), so (F_0) is (K_{a+1})-free. The all-color ledger gives (x_0\le S_a(r)), and
+Let (G_0=G_0[R_a]) be the target-color graph at a first stop and (F_0=\overline{G_0}). Then (omega(F_0)=\alpha(G_0)=a), so (F_0) is (K_{a+1})-free. Its exact Turán deficit is (x_0\le S_a(r)). Apply Füredi stability and let (V_1,\ldots,V_a) be the resulting partition. Write
 
-`e(F_0)=t_a(ar+1)-x_0`.
+`s_j=|V_j|`, `D= sum_j e(F_0[V_j])`, `M_0=# missing F_0 cross-pairs`.
 
-Apply Theorem 3 to obtain a partition (V_1\cup\cdots\cup V_a), with (I_0) internal edges of (F_0), (M_0) missing cross-pairs, and part-size deficit (Delta_0). Then
+Then
 
-`I_0<=x_0`, `M_0<=2x_0`, `Delta_0<=2x_0`,
+`D<=x_0`, `M_0<=2x_0`, `sum_j(s_j-r)^2<=4x_0+1`.
 
-`sum_j (|V_j|-r)^2=2 Delta_0+1<=4x_0+1`.
+### Theorem 5 — constant-width target groups
 
-### Theorem 5 — fixed-a hub localization
+For `r>=binom(a,2)+a+1`,
 
-For every fixed (a\ge6), if
+`r-binomial(a,2)+2 <= s_j <= r+binomial(a,2)-1` for every `j`.
 
-`r >= 200 a(a-1)+1`,
+**Proof.** For each target ideal group (V_j), every non-target color graph (G_i[V_j]) has independence number at most (r). Hence
 
-then every internal edge of (F_0[V_j]) has an endpoint (h) for which at least (2r/5) cross-pairs from (h) to some other part are missing from (F_0). Let (H) be the set of all such vertices. Then
+`e(F_0[V_j])=sum_{i=1}^{r-1}e(G_i[V_j]) >= (r-1)p_r(s_j) >= (r-1)(s_j-r)_+`.
 
-`|H| <= 5 a(a-1)`,
+Summing gives
 
-and every internal edge of (F_0) is incident to (H). In particular, each (V_j\setminus H) is a clique in the target-color graph (G_0).
+`(r-1)P<=D<=x_0<=S_a(r)`,
 
-**Proof.** Put (C=a(a-1)). Since (r\ge a), (S_a(r)\le Cr/2), so
+where `P=sum_j(s_j-r)_+`. Put `C=binom(a,2)`, so `S_a(r)=(C-1)r+a`. The threshold gives `S_a(r)<C(r-1)`, hence the integer `P<=C-1`. Since `sum_j(s_j-r)=1`, total negative deviation is `P-1`; therefore every part has negative deviation at most `C-2` and positive deviation at most `C-1`. \(\square\)
 
-`M_0<=2x_0<=Cr`,
-`sum_j (|V_j|-r)^2<=2Cr+1`.
+For `a=6`, this gives the absolute-width bound
 
-The stated threshold ensures (|V_j|\ge0.9r) for every (j), and (100M_0/r^2<1). Suppose an internal edge (uv\in E(F_0[V_j])) has neither endpoint missing at least (2r/5) cross-neighbors in any other part. For each (k\ne j), let
+`r-13<=s_j<=r+14` for every `r>=22`.
 
-`W_k=N_{F_0}(u)\cap N_{F_0}(v)\cap V_k`.
+### Theorem 6 — product-cover / cylinder inequality
 
-Then (|W_k|\ge |V_k|-4r/5\ge r/10). Choose one vertex independently and uniformly from each (W_k). Any fixed missing cross-pair between two of these sets is selected with probability at most (100/r^2). By the union bound, the probability of selecting any missing cross-pair is at most (100M_0/r^2<1). Thus there is a transversal with all cross-pairs present in (F_0). Together with (u,v), it forms a (K_{a+1}), contradiction.
+Let (C_0) be the graph of target-color edges crossing distinct parts of the partition, so `e(C_0)=M_0`, and let `d_C(v)` be its degree at vertex (v). Put
 
-Therefore every internal edge has an endpoint in (H). Each vertex of (H) has missing cross-degree at least (2r/5), while the sum of missing cross-degrees is (2M_0). Hence
+`L=min_j s_j`.
 
-`|H| (2r/5)<=2M_0`, so `|H|<=5M_0/r<=5C`.
+For every internal edge `uv in E(F_0[V_j])`,
 
-Deleting (H) removes all internal edges of (F_0); hence each remaining part is independent in (F_0), equivalently a target-color clique in (G_0).
+`d_C(u)+d_C(v) >= L-M_0/L`.  (CYL)
 
-### Sharpened a=6 instance
+**Proof.** Choose one vertex from each of the other `a-1` parts. Together with `u,v`, these vertices would form a (K_{a+1}) in (F_0) unless the tuple contains at least one cross-pair absent from (F_0), i.e. one edge of (C_0). A fixed edge of (C_0) incident to `u` or `v` covers at most a `1/L` fraction of all tuples; all other cross edges together cover at most `M_0/L^2`. The union bound gives
 
-For (a=6), (S_6(r)=14r+6). If (r\ge5601), then
+`1 <= (d_C(u)+d_C(v))/L + M_0/L^2`,
 
-`4S_6(r)+1=56r+25<=r^2/100`,
-`M_0<=28r+12`,
-`100M_0/r^2<1`.
+which rearranges to (CYL). \(\square\)
 
-The same proof yields a hub set (H) of size at most (140), with every internal edge of (F_0) incident to (H). This is an explicit fixed-case theorem for the (a=6) high-stop branch, not a contradiction to its existence.
+### Theorem 7 — bounded target-hub cover
+
+Define
+
+`H_r=L-M_0/L`,
+`X={v : d_C(v)>=H_r/2}`.
+
+Whenever `H_r>0`, (CYL) implies that `X` meets every internal edge of (F_0). Since `sum_v d_C(v)=2M_0`,
+
+`|X|<=4M_0/H_r`.  (HUB)
+
+For `a=6`, the constant-width theorem gives `L>=r-13`, and the excess ledger gives `M_0<=2S_6(r)=28r+12`. For every `r>=1000`,
+
+`H_r >= r-13-(28r+12)/(r-13) >= r-42`,
+
+and therefore
+
+`|X| <= 4(28r+12)/(r-42) <117`.
+
+Hence **`|X|<=116` for every `r>=1000`**. Every internal edge of the target complement is incident to this bounded hub set, and outside `X` every target ideal group is an actual target-color clique.
 
 ### Limitation / next use
 
-The theorem localizes all defects inside the target partition to (O(a^2)) hub vertices, but it does not yet show that the hubs point to one common part or that a five-part induced subset has clique number at most five in (F_0). A directed/cyclic pattern of hub-protection parts is not ruled out. The remaining target is a hub-propagation lemma that either produces an earlier (R_5) satisfying its edge budget or contradicts the first-stop interface.
+The hub theorem is stronger than a generic (O(\sqrt r)) part-size bound: the target groups have absolute width, and all internal target defects pass through a constant-size high-cross-degree kernel. It does not yet show that all hub-protection parts have a common sink or that the `O(r)` non-target block defects meet the same kernel. A directed cycle of hub protection remains possible; the required next result is hub propagation or robust nonextension, not another stability estimate.
 
 ## 6. Status ledger for this round
 
@@ -357,7 +373,7 @@ The theorem localizes all defects inside the target partition to (O(a^2)) hub ve
 - Uniform edit-distance partition stability and the global near-resolvable design are proved via Füredi.
 - The critical-core polynomial confines fixed-`a` residues to explicit bounded-width windows for `r>=R_a`.
 - The predecessor label-capacity lemma proves `z_i>=1` for every non-target color, with exact class-hole identity.
-- For fixed `a`, every internal edge of the target complement is incident to at most `5a(a-1)` hubs; for `a=6`, at most 140 hubs suffice for `r>=5601`.
+- For fixed `a`, target groups have absolute width and every internal target-complement edge is incident to at most `4M_0/H_r` hubs; for `a=6`, at most 116 hubs suffice for `r>=1000`.
 ### NOT PROVED
 
 - (a=6) is impossible.
