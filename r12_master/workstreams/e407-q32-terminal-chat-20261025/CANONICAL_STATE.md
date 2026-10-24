@@ -25,7 +25,7 @@ These are the latest heads observed in the repository at the time of this update
 
 - The E407 Q32 boundary has 49 linear independent 4-set witnesses on a 29-point support, with \(e(H)=284\), \(\alpha(H)\le4\), \(\delta(H)\ge12\), and total core excess 4.
 - The exact ledger gives \(3\le\delta\le16\), \(\delta+\epsilon_U\le16\), and the sibling transversal/excess lemma gives \(\epsilon_U+2\delta\ge9\).
-- If \(\delta=16\), \(L=\overline{H[U]}\) must be four-partite because it has 310 edges, exceeding the non-four-partite Brouwer threshold 309.
+- If \(\delta=16\), \(L=\overline{H[U]}\) is four-partite because it has 310 edges, exceeding the non-four-partite Brouwer threshold 309. The resulting \(7,7,7,8\) core is now **excluded**: the three non-endpoint \(D\)-vertices force two into one \(K_5\) component, costing at least five excess units, above the total four.
 - In that case, \(U\)-part sizes are \(7,7,7,8\), \(H[W]=K_5\cup K_5\cup K_4\cup K_4\), and the five cross edges in \(H[U]\) form a matching between the 8-part and the three 7-parts.
 - A reverse-saturation lemma additionally proves every vertex of W is adjacent to all vertices of exactly one U-part; this is needed for the endpoint-split argument.
 - The five 8-part endpoints all have the same \(K_4\) as their exact \(W\)-neighbourhood; this \(K_4\) is complete to \(D\). Each vertex in the remaining \(K_4,K_5,K_5\) components is complete to some 7-part, but the full-part labels may vary vertex-by-vertex; no component-wide bijection has been proved.
