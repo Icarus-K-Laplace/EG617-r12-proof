@@ -90,3 +90,28 @@ The total row-hit lower bound for the zero-excess labelled family is therefore a
 The robust graph theorem gives \(Q_{ab}\) for any two regular rows. It proves only that \(Q_{ab}\) is an independent four-set in \(H_0\), anticomplete to both rows. It does **not** assign a non-target color \(i\) for which \(\{a\}\cup Q_{ab}\) or \(\{b\}\cup Q_{ab}\) is a monochromatic \(K_5\). The exact-129 factor theorem certifies only its own monochromatic components.
 
 Therefore no valid edge-ownership argument may count the six internal pairs of \(Q_{ab}\) as belonging to a particular exact-129 color unless a separate **label-transfer/component-realization lemma** is proved. This is the minimal logical obstacle to converting pairwise common witnesses into a global labelled capacity contradiction.
+
+
+## 5. Pair-certificate multiplicity: exact bound and the remaining gap
+
+For an independent four-set \(Q\subseteq H_0\), define
+\[
+B(Q)=\{b\in B:Q\cap T_b=\varnothing\},\qquad \mu(Q)=|B(Q)|.
+\]
+The same \(Q\) is a valid common graph-theoretic witness for every unordered pair of rows from \(B(Q)\), so its exact pair-certificate multiplicity is
+\[
+\boxed{\binom{\mu(Q)}2\le\binom{10}{2}=45.}
+\]
+This is the only unconditional multiplicity cap supplied by the present row-size assumptions: each regular row has at most three zero-excess neighbors, but that is a bound on \(|T_b|\), not on how many row neighborhoods can avoid one fixed Q. Therefore the existence of 39, 17, or 9 hub-complete pair certificates in the five E407 templates does not imply that many distinct four-sets.
+
+If \(Q\) is an *actual selected witness* labelled by \(b\), then it can only be directly attached to the component of its exact-129 color with label b. It can be a common witness for a pair \(\{b,c\}\) only if it also avoids \(T_c\), giving at most \(\mu(Q)-1\le9\) such label-anchored pairs. This is still not a label-transfer theorem for an arbitrary \(Q_{bc}\) produced by the graph-theoretic existence result.
+
+## 6. Hub-complete consequence of the shell missing-set union
+
+Write \(S_b=N_M(b)\cap S\). If \(S_b\cup S_c=S\) and \(Q_{bc}\) is any common independent four-set avoiding both rows, then Q must hit every hub row in S. Otherwise some hub s missed by Q is also missed by at least one of b,c, making \(Q\cup\{b,s\}\) or \(Q\cup\{c,s\}\) an independent six-set in F.
+
+For the retained E407 row templates, the number of full rows \(n_3\) is at least 6/2/6/1 in templates A/B/C/D respectively; whenever \(n_3\ge1\), the number of labelled row-pair certificates forced to be hub-complete is
+\[
+\binom{10}{2}-\binom{10-n_3}{2}.
+\]
+These are **pair incidences, not distinct witnesses**. A single graph-theoretic Q can account for multiple pairs up to the multiplicity bound above, and the exact-129 factor theorem does not assign its label automatically.
