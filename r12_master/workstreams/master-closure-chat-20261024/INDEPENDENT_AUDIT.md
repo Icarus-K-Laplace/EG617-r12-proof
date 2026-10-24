@@ -127,3 +127,12 @@ For each c, the minimum lower-bound-minus-upper-bound margin over all profiles a
 No profile survives. The hand proof in R12_INDEPENDENT_TRIPLE_H4_EXTENSION.md gives a concise derivation: the general inequality handles c<=7, and the z3=2,3,4,>=5 split handles c=8.
 
 The theorem is therefore independently supported at the finite arithmetic layer. It still relies on the registered h<=3 and three-anchor closure theorems for its inherited cases.
+
+
+## 7. Independent finite audit of the total-excess-five extension
+
+For anchor excess patterns (3,1,1) and (2,2,1), enumerate c=5,...,9, t=9-c, and all nonnegative pair-connector counts n12+n13+n23=2c-9. The resulting exclusive-block sizes are x_i=12+e_i-c_i, with c_i equal to t plus the pair-connector incidences at anchor i. Discarding profiles with any x_i>10 leaves 145 profiles across the two patterns.
+
+For each profile, every allocation of at most one positive-excess vertex among the exclusive blocks was checked. With z_i=x_i-k_i sorted descending, the clique-cap corrected lower bound is z2*z3-1+z1, while the degree-sum upper bound is floor((sum_i x_i(12-x_i)+1-(12c-c^2-9))/2).
+
+All 145 profiles have strictly positive lower-minus-upper margin; the smallest margin is5 (at c=9). No connector profile survives. This independently verifies the finite arithmetic layer of R12_INDEPENDENT_TRIPLE_H5_EXTENSION.md. The graph-theoretic argument still relies on the registered three-anchor theorem for the final contradiction.
