@@ -70,12 +70,12 @@ R12_WITNESS_UNION_CAPACITY_REFINEMENT.md proves the core-capacity inequality
 \]
 for a pairwise-linear family of independent 4-sets in a legal 47-vertex, 284-edge core. The proof uses the minimum-edge Turán bound on the complement W of the witness union, and retains the nonnegative core excess \(E_U\) rather than dropping it prematurely.
 
-**Sharpened terminal union-size contracts:**
-- E407 templates A/B: if there are seven exact-129 colors, \(v\ge29\); if there are at least eight, \(v\ge31\).
-- E407 templates C/D/E: with seven exact-129 colors, \(v\ge32\); with at least eight, \(v\ge33\).
-- E408 Q33/d3: if \(\beta=e(M[S])=0\), \(v\ge31\); if \(\beta\ge1\), \(v\ge33\).
+**Corrected safe terminal union-size contracts:**
+- E407, any template: seven exact-129 colors give \(N\ge49\) and \(v\ge29\); at least eight colors give \(N\ge56\) and \(v\ge31\).
+- E408 Q33: eight exact-129 colors give \(N\ge56\) and \(v\ge31\) for any \(\beta=e(M[S])\).
+- Withdrawn: E407 C/D/E does not automatically provide eight no-S components per color, and \(\beta>0\) does not force eight no-S components in E408. An S-edge permits but does not force its endpoints into the same non-target K5.
 
-These refine the previous general witness-union bounds and isolate the boundary kernels, but do not eliminate them. The remaining union-size boundaries are E407 A/B with seven exact-129 colors and \(v=29\), E407 C/D/E with seven exact-129 colors and \(v=32\), and E408 Q33/d3 with \(\beta=0\) and \(v=31\).
+These are necessary-structure bounds, not terminal exclusions. The remaining core-capacity boundaries are E407 with exactly seven exact-129 colors and \(v=29\), and E408 Q33 with eight exact-129 colors and \(v=31\).
 
 **E408 Q32 is explicitly excluded from this application** until its own reduction certifies the required shell-support split; its core has 285 edges and excess six. No E407/E408 terminal is closed, and the root theorem remains OPEN / NOT_CERTIFIED.
 
@@ -89,9 +89,9 @@ The witness-union note now also proves the outside-core hitting inequality
 because every vertex outside U must hit every independent 4-set Q_i. This uses only α(H)≤4 and the exact core degree identity.
 
 At the remaining boundary sizes it yields:
-- E407 A/B, seven exact-129 colors, v=29: 2R+E_U≥4, while R+E_U≤16.
-- E407 C/D/E, seven exact-129 colors, v=32: every core-union vertex has multiplicity r_x=7, hence 2R+E_U≥56, while R+E_U≤39; in particular R≥26.
-- E408 Q33/d3, β=0, eight exact-129 colors, v=31: 2R+E_U≥7, while R+E_U≤17; in particular R≥2.
+- E407, any template with seven exact-129 colors and v=29: \(2R+E_U\ge4\), while \(R+E_U\le16\).
+- Conditional algebra only: if a separate proof supplies N=56 on v=32 with \(r_x\le7\), then \(2R+E_U\ge56\) and \(R+E_U\le39\). The current exact-129 count contract does not establish this N=56 premise for seven-color E407 C/D/E, so it is not used as a terminal application.
+- E408 Q33 with eight exact-129 colors and v=31, for any beta: \(2R+E_U\ge7\), while \(R+E_U\le17\).
 
 Here R counts complement edges not covered by the selected witness K4s, and E_U is the total core degree excess on U. These are stricter necessary conditions, not contradictions. E408 Q32 remains outside the contract. The headline theorem remains OPEN / NOT_CERTIFIED.
 
@@ -113,3 +113,12 @@ Added R12_CROSS_BRANCH_AUDIT_AND_S0_REPAIR.md (commit 5b40022ac171cc568cea6d4f03
 Therefore the four-partite E408 Q33 minimum-support contract still yields S0=epsilon_U+2delta>=11, now with a repaired argument. This remains conditional on the four-partite minimum-support contract; non-four-partite E408 Q33 remains OPEN.
 
 The cross-branch audit also corrected the witness-union applications: E407 C/D/E does not have an established N=56 family with exactly seven exact-129 colors, and E408 beta>0 does not alone give N>=64. The core-capacity and witness-hitting inequalities themselves remain PROVED. E407 Q32, E408 Q32 (285-edge core), E408 Q33 non-four-partite branch, the T61-to-K145 bridge, and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+## Round 6 — exclude S0=11 in the four-partite E408 Q33 boundary
+
+Added R12_E408_Q33_FOUR_PARTITE_S0_11_EXCLUSION.md (commit 4f5e9697d93e9173d2819d59bb5d6db687410f53) and exact profile checker verify_s0_11_profiles.py (latest commit c99283859b19642a50e4915c85a57987b31fe4bc).
+
+The theorem assumes the E408 Q33 minimum-support contract and that L is four-partite. Under S0=11, delta is 4 or 5 and the outside-core edge budget is 125. The exact q_w degree patterns for k=3,4,5,6 seven-neighborhood vertices were enumerated. Group-capacity rules eliminate k=3/4 and the all-8/9 patterns. The only remaining profiles have an exceptional size-10 or size-11 hitting set T*. A spillover-aware degree identity shows that outside T* and at most one spillover point, vertices have zero excess and no extra L-edge. Each large-part complement then has at least four points, forcing a triangle in L[A0,B0,C0]; adjoining an unselected D point gives an independent 4-set disjoint from T*, contradicting alpha(H)<=4.
+
+Thus the four-partite E408 Q33 minimum-support branch now satisfies S0>=12. This is conditional and does not eliminate the non-four-partite branch. E407 Q32, E408 Q32, the T61-to-K145 bridge, and EG617(r=12) remain OPEN / NOT_CERTIFIED.
