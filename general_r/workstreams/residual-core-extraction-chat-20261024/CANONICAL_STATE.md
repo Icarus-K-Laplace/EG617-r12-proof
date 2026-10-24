@@ -294,6 +294,38 @@ An additional audit shows that for fixed `a>=6`, `alpha(G_0)=a` is automatic onc
 
 File: `NO_HIGH_STOP_ROUND2_LEMMAS.md`.
 
+### 9E. Exact predecessor-label defect identity and pair obstruction
+
+Status: **`PROVED_SYMBOLIC`**, conditional only on the established first-stop predecessor interface and `alpha(G_0)=a`.
+
+For each non-target color `i`, let `S_{i,b}` be the vertices whose unique color-`i` edge to the predecessor clique `B=K_r` is at `b`, and let `Z_i` be the `z_i` vertices duplicating color `i`. Write `s_b=|S_{i,b}|`, `h_b=a-s_b`, and `Q_i=sum_b binom(h_b,2)`. If `M_i,H_i,K_i` count respectively color-`i` edges between different label classes, between `Z_i` and the classes, and inside `Z_i`, then the exact identity is
+
+`M_i+H_i+K_i=x_i+(a-1)z_i+1-Q_i`.
+
+The correction `Q_i` is essential; concentrated holes can change the defect count quadratically.
+
+For any duplicate vertex `v` whose two color-`i` labels are `b,c`, set `A_b=N_{F_i}(v) intersect S_{i,b}` and `A_c=N_{F_i}(v) intersect S_{i,c}`. The exact `r+1`-set condition forces every cross-pair in `A_b x A_c` to be color `i`; hence
+
+`|A_b|+|A_c|<=a`.
+
+Summing the corresponding edge counts yields
+
+`H_i>=a z_i-sum_b h_b deg_{L_i}(b)>=z_i(a-z_i+1)`
+
+when the last bound is positive, where `L_i` is the multigraph of duplicated label pairs. In combination with the exact identity,
+
+`M_i+K_i<=x_i+(z_i-1)^2-Q_i`.
+
+For `z_i=1`, this sharpens the excess floor to
+
+`x_i>=a-1+(|A_b|-1)(|A_c|-1)`;
+
+thus equality `x_i=a-1` requires one of the two duplicate-label classes to have exactly one `F_i`-neighbor of the duplicate vertex.
+
+**Sharpness / limitation.** The Kang–Pikhurko extremal template attains `a=6, x_i=5, z_i=6, Q_i=10` with `M_i=5,H_i=6,K_i=15`. This is a genuine single-color extremal graph/interface profile, not a full `r`-coloring or a global counterexample. Therefore one cannot assume `z_i=1`, and the new per-color inequalities do not alone close `NO-HIGH-STOP`.
+
+Proof and audit: `NO_HIGH_STOP_ROUND2_LEMMAS.md`, Section 8. External input: Kang–Pikhurko (2005), Theorems 1 and 4 / Lemma 5.
+
 ### 10. Critical-core residue windows
 
 Status: **`PROVED_ANALYTIC`** as a necessary-condition reduction.
@@ -388,4 +420,4 @@ Rejected proof shortcuts:
 
 ## NEXT HIGHEST-LEVERAGE TARGET
 
-Prove a **joint incidence-packing / hub-propagation lemma** for `a=6`: use the sharpened part sizes `r-8` through `r+9`, at most 74 hubs for `r>=1000`, the excess floors `x_i>=5`, `x_0>=r`, and the exact `z_i` label classes. The scalar parameter audit passes, so the next proof must exploit the equality/small-defect structure of the Brouwer extremal templates and its alignment with the predecessor classes; do not try another scalar-only contradiction. Show either that these hubs force an earlier `R_5` satisfying the edge budget, or that their incidence pattern contradicts the critical-core residue windows. Do not return to fixed-r recurrence or claim NO-HIGH-STOP closed before a proof exists.
+Prove a **joint incidence-packing / hub-propagation lemma** for `a=6`: use the sharpened part sizes `r-8` through `r+9`, at most 74 hubs for `r>=1000`, the excess floors `x_i>=5`, `x_0>=r`, the exact identity `M_i+H_i+K_i=x_i+5z_i+1-Q_i`, and the complete-bipartite pair obstruction between `A_b(v),A_c(v)`. The KP extremal template shows `z_i=6` is locally possible, so the next proof must combine these exact pair constraints across different colors and target groups; do not assume `z_i=1` or try another scalar-only contradiction. Show either that these hubs force an earlier `R_5` satisfying the edge budget, or that their incidence pattern contradicts the critical-core residue windows. Do not return to fixed-r recurrence or claim NO-HIGH-STOP closed before a proof exists.
