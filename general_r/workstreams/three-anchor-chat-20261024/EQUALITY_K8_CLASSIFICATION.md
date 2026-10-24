@@ -94,15 +94,24 @@ If \(s\le4\), the degree equation gives \(k+R_{22}\ge r-7+\gamma+n_2\). Hence th
 \[
 |M(u,v)|\ge 2r-5-x_u-k-b=15>r-1=14
 \]
-common nonneighbours, a forbidden clique. Therefore a \(K=8\) graph in the \(c=3\) geometry, if any, must be in the **mixed-focus branch with \(r\in\{12,13,14\}\)**. Those three boundary layers remain OPEN.
+common nonneighbours, a forbidden clique.
 
+The \(r=14\) mixed-focus layer also closes. Solving the exact equation \(a+b=11+\gamma+n_2-k\) together with \(k+R_{22}(a,b)\le8\) leaves only the following local patterns: (i) \(k+R_{22}=8,\gamma=n_2=0\), with \(a=1,b=10-k\) or \(a=10-k,b=1\) for \(0\le k\le6\), plus \((a,b)=(2,3),(3,2)\) when \(k=6\); (ii) \(k=7,(a,b)=(2,2),\gamma=n_2=0\), with one unit of global excess left; or (iii) \(k=8,(a,b)=(2,2),\gamma+n_2=1\).
+
+If \(b=1\), the common-nonneighbour bound gives \(|M(u,v)|\ge23-k-1>13\). If \(a=1\), the singleton \(x\in X_1\) carries all rectangle excess \(b-2=8-k\), is saturated by its \(b\) forced \(X_3\)-neighbours, and is nonadjacent to \(u\). Since \(v\) has no \(X_2\)-neighbours and focused \(u\) has at most one \(X_2\)-neighbour, at least eleven vertices of \(X_2\) also lie in \(M(u,v)\). The clique property of \(M(u,v)\) would force \(x\) adjacent to those vertices, impossible for the saturated \(x\).
+
+For \(k=6,(a,b)=(2,3)\) or \((3,2)\), the common-nonneighbour lower bound is at least fourteen, exceeding \(\omega(H)\le13\). For \(k=7,(a,b)=(2,2)\), the rectangle charge is zero and one excess unit remains: if it is not on \(u\), the same clique bound is at least fourteen; if it is on \(u\), the two exact long-side rectangle vertices are saturated by the two short-side vertices and are nonadjacent to \(u\), so the common-nonneighbour clique again forces impossible edges into \(X_2\).
+
+Finally, for \(k=8,(a,b)=(2,2)\), the rectangle vertices are exact and saturated. If \(n_2=1,\gamma=0\), they and at least ten vertices of \(X_2\) belong to \(M(u,v)\), contradicting saturation. If \(n_2=0,\gamma=1\), \(v\) is adjacent to exactly one of \(u,w\); let \(c\in\{u,w\}\) be the other connector, nonadjacent to \(v\). The saturated long-side rectangle vertices are nonadjacent to \(c\). Connector \(c=u\) cannot cover \(X_2\) (it has only one external slot beyond its focus), and \(c=w\) cannot cover \(X_2\) either (its exact degree and three anchor neighbours leave fewer than \(|X_2|=12\) exclusive slots). Thus some \(x\in X_2\) is a common nonneighbour of \(v,c\), and the common-nonneighbour clique forces an edge from a saturated rectangle vertex to \(x\), contradiction.
+
+Therefore \(c=3\) has no \(K=8\) configuration for \(r\ge14\). Any remaining \(c=3\) equality must be in the mixed-focus branch with \(r\in\{12,13\}\). Those two boundary layers remain OPEN.
 ## 4. The \(c=4\), deficits \((0,0,2)\) geometry
 
 Let \(f\) be the number of connectors focused on the short block \(X_3\).
 
 - **\(f=0\):** for \(r\ge14\), the standard pairwise additive lower bounds exceed eight. At \(r=13\), the only way to reach total eight is for both same-group connector pairs to be adjacent and each selected cross-group local cost to equal four. The equality case of the \(R_{24}\) threshold then forces connector excess four on each selected connector, already using all eight units, while the other cross-group rectangle has positive charge; contradiction. At \(r=12\), if neither same-group pair is adjacent, equality forces all four connectors to have excess two, zero connector-degree, and \((a,b)=(4,2)\) rectangles. Same-group supports are disjoint, and cross-group overlap in \(X_3\) is impossible by its capacity four. Thus the four short-block nonneighbour sets partition \(X_3\), and each exact \(X_3\)-vertex would have three connector neighbours plus four forced rectangle neighbours, exceeding capacity. So a remaining \(K=8\) candidate at \(r=12,f=0\) must have at least one same-group connector adjacency. This latter subcase remains OPEN.
 - **\(f=1\):** no \(K=8\) equality exists for \(r\ge13\). At \(r=13\), each nonfocused connector costs at least four; if the same-group pair is nonadjacent, all three rectangle charges add, and if adjacent, both members have connector-degree at least one and the sharpened \(R_{23}\) bound makes the pair's safe overlap charge at least six, while a cross-group rectangle adds at least four. For \(r\ge14\), a cross-group pair alone costs at least ten. The \(r=12,f=1\) layer remains OPEN: the original \(K\le6\) closure does not exclude an adjacent same-group overlap with two units of additional budget.
-- **\(f=2\):** for \(r\ge15\), the overlap lower bound gives \(K\ge r-6+\max(k_1,k_2)\ge9\). At \(r=14\), equality eight forces \(k_1=k_2=0\), \(\gamma=1\), and identical \(R_{22}\) supports of orientation \((10,1)\) or \((1,10)\), with all excess eight on the singleton vertex. Both orientations are impossible by external-incidence counting: the opposite long block has twelve exact vertices and needs 24 external incidences, but the rectangle vertices and the two focused connectors can supply at most twelve. Therefore only \(r=12,13\), \(f=2\), remain OPEN.
+- **\(f=2\):** for \(r\ge15\), the overlap lower bound gives \(K\ge r-6+\max(k_1,k_2)\ge9\). At \(r=14\), equality eight forces \(k_1=k_2=0\), \(\gamma=1\), and identical \(R_{22}\) supports of orientation \((10,1)\) or \((1,10)\), with all excess eight on the singleton vertex. Both orientations are impossible by external-incidence counting: the opposite long block has twelve exact vertices and needs 24 external incidences, but the rectangle vertices and the two focused connectors can supply at most twelve. At \(r=13\), the same overlap bound gives \(K\ge7+\max(k_1,k_2)\). Equality eight requires a rectangle with one side of size one and charge at least seven (or charge eight), and any second rectangle must share that singleton/support to avoid double charging. The singleton carries at least seven excess units; the opposite long block has eleven exact vertices requiring 22 external incidences, while the rectangle-side vertices, the two focused connectors, and the at most two opposite-block neighbours allowed by \(\gamma+n_k\) can supply fewer than 22. Thus \(r=13,f=2\) is also impossible. Only \(r=12,f=2\) remains OPEN.
 
 ## 5. The \(c=4\), deficits \((0,1,1)\) geometry
 
@@ -116,15 +125,16 @@ Let \(s\) be the number of occupied focus slots. The focus-owner patterns alread
 
 The following is proved:
 \[
-K=8\quad\Longrightarrow\quad r\le14.
+K=8\quad\Longrightarrow\quad r\le13.
 \]
+Consequently, by parity and the frozen (K\ge8) theorem, **(K\ge10) for every (r\ge14)**.
 More precisely, any remaining \(K=8\) configuration must belong to one of these strata:
 
 | Geometry | Remaining parameter stratum |
 |---|---|
 | \(c=2,(0,0,0)\) | \(r=12\), either empty-part exceptional layer or the \((1,2)/(2,2)\) transversal-cover layer |
-| \(c=3,(0,0,1)\) | \(r=12,13,14\), exactly one pair connector focused |
-| \(c=4,(0,0,2)\) | \(r=12,f=0\) with a same-group adjacency; (r=12,f=1); or (r=12,13,f=2) |
+| \(c=3,(0,0,1)\) | \(r=12,13\), exactly one pair connector focused |
+| \(c=4,(0,0,2)\) | \(r=12,f=0\) with a same-group adjacency; \(r=12,f=1\); or \(r=12,f=2\) |
 | \(c=4,(0,1,1)\) | \(r=12,13,s=2\), \(V/W\) own the two deficit-one focus slots |
 
 This table is a **necessary-condition classification**, not a classification of realizable graphs. These remaining strata have not been fully eliminated or constructed. Accordingly, the exact \(K=8\) layer is still **OPEN_GAP**, and \(K\ge10\) is not claimed.
