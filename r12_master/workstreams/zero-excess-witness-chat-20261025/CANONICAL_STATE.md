@@ -75,3 +75,27 @@ Cross-branch audit:
 - The claim that a missing edge in M[S] automatically reduces the number of S-intersecting K5 components for every fixed color is not justified by that fact alone. The safe universal count remains seven total Q blocks and six B-labelled blocks unless an additional forcing lemma is supplied.
 
 Headline status remains OPEN / NOT_CERTIFIED. The next target is to eliminate the two exact incidence kernels, not to add more scalar witness counts.
+
+
+## Round 3 — live sibling refresh; exact four-partite E407 reduction
+
+Latest sibling heads reread:
+- ultimate closure: 0bdce893225af4273fa5f95d68815ff79c130446;
+- witness packing: 5d0e3ceab7895be1a947e46853f92bb84477f4e5.
+
+New result in R12_WITNESS_PACKING_BOUNDARY_KERNEL.md:
+- In the E407 v=29 minimal-support branch, if L=bar(H[V_*]) is four-partite, then its parts are (7,7,7,8), the 49 Q-blocks form TD(4,7) on 28 active points plus one unused point z, and all extra L edges are incident to z.
+- If delta=e(L)-294, then d_H[V_*](z)=28-delta. The core degree cap gives delta>=12; the exact budget then forces epsilon_*=epsilon_z=16-delta, z has no W-neighbours, and e(H[W])=32 with H[W]=K5 union K5 union K4 union K4.
+- The group-label argument excludes delta=12 and delta=13: in those cases there are at most one positive-excess W vertex, so one K5 component is entirely zero-excess; its five vertices share one seven-point group as a common neighborhood, creating K12. Thus any four-partite E407 boundary must have delta in {14,15,16}.
+- The delta=14/15 branches force at least one positive-excess vertex in each K5 component. The delta=16 case still has an exceptional branch where all four excess units lie in one K4 component; otherwise the group-label structure applies. The four-partite branch is reduced, not closed.
+
+Latest sibling audits:
+- The general transversal lower bound tau(Q)>=7 is usable.
+- Do not infer non-four-partiteness by ruling out only the complete Turan graph; incomplete four-partite graphs remain possible.
+- Do not use the new beta-sensitive component floors until a color-specific co-location theorem is proved. omega(M[S]) bounds the number of S-vertices in one K5 component, not the number of distinct components meeting S. The safe universal count remains seven S-avoiding Q sets, at least six B-labelled, and at least two zero-excess B-labelled witnesses per exact-129 color.
+
+New commit sequence:
+- boundary-kernel extension and live audit: a8f3afbfe3be135352d39d4229224ceca1af0ae6
+- high-support sibling audit: 0f46dab0656cd3e07627cb8e6df8b0cc02cd3c54
+
+The E407 non-four-partite boundary and the E408 Q33 v=31 boundary remain OPEN. E408 Q32 is still a separate 285-edge-core problem. EG617(r=12) remains OPEN / NOT_CERTIFIED.
