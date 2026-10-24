@@ -33,7 +33,7 @@ These were not counterexamples; they are precisely the equality layers eliminate
 
 ## Computation status and limitations
 
-No theorem claim in this workstream is marked `COMPUTATION_CERTIFIED`. The committed ARITHMETIC_AUDIT.py script was executed and its local inequality/equality checks passed; the exact output is preserved in ARITHMETIC_AUDIT_RESULTS.md. These checks cover rectangle thresholds and relaxed boundary signatures only.
+No theorem claim in this workstream is marked `COMPUTATION_CERTIFIED`. The committed ARITHMETIC_AUDIT.py script was executed and its local inequality/equality checks passed; the exact output is preserved in ARITHMETIC_AUDIT_RESULTS.md. CONNECTOR_SKELETON_AUDIT.py was also executed: it enumerates all labelled connector adjacency graphs, connector-excess allocations with total at most six, and allowed focus-owner assignments for r=12,13,14,15 under local rectangle relaxations. Its output is preserved in CONNECTOR_SKELETON_AUDIT_RESULTS.md. These checks cover local arithmetic and connector skeletons only.
 
 **No full graph-level SAT/ILP counterexample search was run.** No Z3, OR-Tools, or PySAT backend was installed in the execution environment. Thus this file must not be read as a report of exhaustive graph enumeration. No source/verifier/checksum obligation for a graph search is claimed. The theorem is certified by the analytic proof in PUBLICATION_VERSION.md, not by computation.
 
