@@ -30,10 +30,24 @@
 
 ## 2026-10-25 — Round 3: witness-union capacity refinement
 
-- Added R12_WITNESS_UNION_CAPACITY_REFINEMENT.md (commit cd6bf8c631bb09bb6099f5f328949553ea9c56bc).
+- Added R12_WITNESS_UNION_CAPACITY_REFINEMENT.md (commit 9dd07314d73c721c9cc8b008b7a7166c825ce566).
 - Proved the exact core-capacity inequality \(6N\le e(\overline{H[U]})\le\binom v2-p_4(47-v)-12v+284-E_U\), retaining the nonnegative core excess on U.
 - Used the numeric caps \(C_{28}=290,C_{29}=310,C_{30}=331,C_{31}=353,C_{32}=375\) to sharpen the witness-union lower bounds.
 - E407 A/B: seven exact-129 colors imply \(v\ge29\); eight or more imply \(v\ge31\). E407 C/D/E: seven exact colors imply \(v\ge32\); eight or more imply \(v\ge33\). E408 Q33/d3: \(\beta=0\) implies \(v\ge31\), while \(\beta\ge1\) implies \(v\ge33\).
 - Remaining union-size boundary kernels are E407 A/B with exactly seven exact colors and \(v=29\), E407 C/D/E with exactly seven exact colors and \(v=32\), and E408 Q33/d3 with \(\beta=0,v=31\). These are not graph-level contradictions.
 - Explicitly did not transfer the 284-edge bound to E408 Q32, whose core has 285 edges and whose own shell-support split is not certified.
 - Current theorem status remains **OPEN / NOT_CERTIFIED**; no full parent graph was constructed or excluded in this round.
+
+
+## 2026-10-25 — Round 4: outside-core witness-hitting inequality
+
+- Extended R12_WITNESS_UNION_CAPACITY_REFINEMENT.md with the exact inequality
+  ```
+  sum(r_x*d_R(x)) + sum(r_x*epsilon_x) >= N*(3v-5) - 3*sum(r_x^2).
+  ```
+  Proof: each w outside the witness union U must hit every independent 4-set Q_i; count those hits with multiplicity r_x and substitute the exact core-degree identity.
+- E407 A/B boundary (seven exact-129 colors, v=29): the inequality forces 2R+E_U>=4, alongside the core cap R+E_U<=16.
+- E407 C/D/E boundary (seven exact-129 colors, v=32): r_x=7 for all 32 union vertices, forcing 2R+E_U>=56 and R+E_U<=39; hence at least 26 complement edges are not covered by the 56 witness K4s.
+- E408 Q33/d3 boundary (beta=0, eight exact-129 colors, v=31): forces 2R+E_U>=7 and R+E_U<=17; hence at least two complement edges remain uncovered.
+- Commit for the strengthened theorem file: fbd9b72a50d78b7e71ff0c733528aea9985b9885. Canonical-state sync: 2cbea843acdb5d5af91fc27bd479689856a453ec.
+- These are stricter necessary conditions, not terminal contradictions. No E407/E408 terminal is closed; E408 Q32 remains excluded until its own shell-support reduction is certified.
