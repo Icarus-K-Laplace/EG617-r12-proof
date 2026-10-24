@@ -39,13 +39,33 @@ The small-slack classification sharpens this: if s_i=1, or if s_i=2 and r>=4, al
 
 Full proof: TIGHT_TRANSVERSAL_LOW_SLACK_BRIDGE.md. Weighted lemma and small-edge classification are in the K branch.
 
-## 4. Exact remaining gap
+## 4. K-line global constraints now available
 
-The bridge is conditional on finding a low-slack color i != c at a vertex x_0 belonging to X. No theorem currently guarantees this alignment. Even when it holds, the witnesses are concentrated in a bounded number of clique blocks, but this does not yet force three directions, a net, or a contradiction.
+The finite-geometry branch has proved the universal excess floor
+
+\[
+a_i\ge r-1\quad\forall i,
+\qquad
+\sum_i(a_i-(r-1))=\frac{r(r-1)(r-2)}2.
+\]
+
+It has also proved the local degree-budget inequality
+
+\[
+\sum_{i:s_i(x)\le r-2}(2r-s_i(x)-1)\le r^2,
+\]
+
+so the number of colors with slack at most s is bounded by floor(r^2/(2r-s-1). These are genuine global/local constraints, but neither implies that a low-slack color occurs at a vertex x_0 in the tight transversal X.
+
+Canonical proof and graph-level sharpness note: [K-line LOW_SLACK_COORDINATIZATION.md](https://github.com/Icarus-K-Laplace/EG617-r12-proof/blob/workstream/general-r-finite-geometry-20261024/general_r/workstreams/finite-geometry-chat-20261024/LOW_SLACK_COORDINATIZATION.md).
+
+## 5. Exact remaining gap
+
+The J/K bridge is conditional on finding a low-slack color i != c at a vertex x_0 belonging to X. No theorem currently guarantees this alignment. Even when it holds, the witnesses are concentrated in a bounded number of clique blocks, but this does not yet force three directions, a net, or a contradiction.
 
 The abstract hypergraph example with two disjoint clusters of all r-subsets still shows that matching/transversal data alone are insufficient to force affine geometry.
 
-## 5. Current verdict
+## 6. Current verdict
 
 - Exact robust compression criterion: PROVED.
 - Exact fixed-merge criterion: PROVED.
@@ -53,7 +73,8 @@ The abstract hypergraph example with two disjoint clusters of all r-subsets stil
 - Tight case => at least r(r-1) intersecting witness pairs: PROVED.
 - Tight case => common residual hub in at least three witnesses: PROVED.
 - Tight case + aligned low-slack color => witness-block concentration and weighted blocker: PROVED.
-- Small-slack aligned case (s=1 or s=2, q>=4) => at most two witness-hosting blocks: PROVED.
+- Small-slack aligned case (s=1 or s=2, r>=4) => at most two witness-hosting blocks: PROVED.
+- Universal K-line excess floor and local degree budget: PROVED.
 - Existence of aligned low-slack color: OPEN.
 - No-shell => many line-like blocks: NOT PROVED.
 - Kakeya contradiction: NOT AUTHORIZED.
