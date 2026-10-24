@@ -163,11 +163,11 @@ The canonical greedy process first becomes `K_r`-free at `a=5`, and no `4r+1` Br
 
 ### Proof sketch
 
-Branch-A irreducibility is exactly equivalent to the independent-5 hypergraph resisting every r-vertex transversal. Minimum degree follows because a degree at most `r-1` vertex leaves at least `4r+1` nonneighbors with alpha at most 4.
+Alpha equality is now automatic from the canonical budget. Branch-A irreducibility is exactly equivalent to the independent-5 hypergraph resisting every r-vertex transversal. Minimum degree follows because a degree at most `r-1` vertex leaves at least `4r+1` nonneighbors with alpha at most 4.
 
 ### Dependency
 
-Residual branch closure.
+Residual branch closure + alpha-saturation theorem.
 
 ### Independent of r?
 
@@ -181,9 +181,55 @@ None beyond dependencies.
 
 Whether the terminal exists remains open.
 
+### GitHub commits
+
+- initial terminal: `4d2feba3cf8c52f9099fe14b7953eb637148df46`
+- alpha-equality strengthening: `fc774dd80d94c1abc508c285f435d5a5eedfbea2`
+
+---
+
+## 2026-10-24 — Round 5: scalar recurrence replacement
+
+### NEW THEOREM / LEMMA
+
+**Exact multicolour slack potential + critical-core potential.**
+
+### Hypotheses
+
+Canonical state `R_a` on `ar+1` vertices inside the full balanced r-colouring.
+
+### Exact conclusions
+
+1. If `x_0` is the target-colour excess above `p_a` and `x_i` the other colours' excess above `p_r`, then
+
+   `x_0 + sum x_i = S_a(r)=[a(a-1)r+2a-2r]/2`.
+
+2. `S_a-S_{a-1}=(a-1)r+1`.
+3. Every canonical state has exact `alpha(R_a)=a`.
+4. Every canonical state contains an induced `(r+1)`-critical core.
+5. At a `K_r`-free stop, its critical-core order is at least `3r-1` for `r>=4`.
+6. Writing the critical-core order as `lr+t`, compatibility with the hereditary cap and Kostochka--Yancey is exactly one quadratic inequality `P_{l,t}(r)<=0`.
+
+### Proof sketch
+
+The slack identity is exact edge partitioning across all r colours after subtracting their individual Turan minima. Alpha saturation follows because `p_{a-1}(ar+1)` already exceeds the canonical edge budget. Critical-core order is obtained by colliding Dirac/Kostochka--Yancey lower bounds with the hereditary least-colour upper cap.
+
+### Dependency
+
+- internal: canonical ray + full balanced-colouring alpha constraints;
+- external: Dirac critical-graph bound and Kostochka--Yancey 2014.
+
+### Independent of r?
+
+The identities are fully symbolic; the sharpened `|Q|>=3r-1` holds for `r>=4`.
+
+### Minimal remaining counterconfiguration
+
+A first `K_r`-free stop with `a>=6` satisfying simultaneously exact alpha saturation, the `S_a` ledger, the hereditary cap, and a critical-core residue passing `P_{l,t}(r)<=0`.
+
 ### GitHub commit
 
-`4d2feba3cf8c52f9099fe14b7953eb637148df46`
+`76f65dca0f1bf755a93b2a25331a238bd73383b2`
 
 ---
 
@@ -195,7 +241,8 @@ Status: `OPEN`.
 
 If this is closed, the requested front-end dichotomy is proved for all `r>=17` (or whatever final threshold the lemma requires).
 
-State commits:
+Latest state / proposal commits:
 
-- `CANONICAL_STATE.md`: `052d23b35f50515947ce9d7152073788a9f3f61a`
-- `OPEN_GAPS.md`: `43bdac3389de02bb8b4d0c83fdacd279e7718364`.
+- `CANONICAL_STATE.md`: `a5b61c918cd20dc99c139b457aa1aca7df6685a5`
+- `OPEN_GAPS.md`: `43bdac3389de02bb8b4d0c83fdacd279e7718364`
+- `UPSTREAM_PROPOSAL.md`: `43a5599f4eba7db1cdce03a6c8bbbe3ada10bc06`.
