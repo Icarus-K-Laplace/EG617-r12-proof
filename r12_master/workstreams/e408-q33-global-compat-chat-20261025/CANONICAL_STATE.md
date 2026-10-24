@@ -58,3 +58,18 @@ The remaining task is to prove a stability/packing contradiction in Case 1 or a 
 ## Scope firewall
 
 This result is conditional on the retained T61, exact-129 factor, 31-point/56-witness, and outer seven-block contracts. It does not close E408 Q32 (285-edge core), E407 Q32, or the original K145 theorem. The original reduction and lower-order seeds remain separate dependencies.
+
+
+## Audit correction
+
+The earlier ten-witness-star file in the emergency sprint claims \(e(H[U])=135\) or \(e(H[U])\ge144\). Its proof only establishes that the complement L is tripartite, not that it is complete tripartite; missing cross-part edges are not ruled out. This line does not use that dichotomy. See PROOF_DEPENDENCIES.md.
+
+## Latest isolated commits
+
+- Four-partite bound and cross-system analysis: 547cc2b2e4d02ef8027fab865ff2f2a1b343834a
+- Seven-block incidence ledger: 65e202dd4691b1444e33589a61932e18c87662e3
+- Non-four-partite terminal contract: b36c1fd87d642186df78147aa203812a57f7ad15
+- Dependency audit and correction record: 2728d229eced08a1414bb794aac43ad38b769c64
+- Progress log: 96bb7d0911e7e7c685c5ee1f991c81ca8969ff36
+
+No graph-level contradiction or independently replayed UNSAT certificate has been produced. The terminal remains OPEN / NOT_CERTIFIED.
