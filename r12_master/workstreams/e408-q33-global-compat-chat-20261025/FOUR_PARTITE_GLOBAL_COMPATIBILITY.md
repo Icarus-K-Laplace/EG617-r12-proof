@@ -109,7 +109,7 @@ and in each case \(x_1+x_2+x_3\le1\).
 The three vertices with the smallest extra counts are pairwise adjacent and adjacent to all three vertices with the largest counts. If any pair among the latter three were adjacent, those five vertices together with D would form a K12. Hence the three large-extra vertices would have to be pairwise nonadjacent.
 
 For any such nonadjacent pair, the union of their extra-neighbour sets must cover a full large part by Lemma 2.1, since the pairwise size sum is at most ten. This is impossible in each of the three size profiles:
-- For (4,4,4), every pair of four-sets must partition a large part. If (E_1\cup E_2=A) and (E_1\cup E_3=B), then (E_1\subseteq A\cap B), so (A=B) because distinct parts are disjoint. But then both (E_2) and (E_3) are the complement of (E_1) in A, so (E_2=E_3), whose union has size four and cannot cover a large part. Contradiction.
+- For (4,4,4), every pair of four-sets must partition a large part. If E1 union E2 is part A and E1 union E3 is part B, then E1 is contained in both A and B. Distinct parts are disjoint, so A=B. But then E2 and E3 are both the complement of E1 in A, hence E2=E3; their union has size four and cannot cover a large part. Contradiction.
 - For (4,4,5), the two four-sets must partition a large part D'. The five-set would have to cover D' with each four-set, so it would have to contain both complementary four-sets, impossible.
 - For (3,5,5), each three-plus-five pair must partition the same eight-point part. Both five-sets would then be the same complement of the three-set, so they could not cover a part when paired with each other.
 
