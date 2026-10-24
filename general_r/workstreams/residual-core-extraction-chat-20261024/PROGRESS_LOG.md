@@ -818,8 +818,9 @@ where `N_{2,j}` is the number of class intersections of size two. Such doubleton
 ### GitHub commits
 
 - collision/KP theorem file: `f07eb203e0c36830f8852fe8ba29427afa02d48e`
-- canonical state: pending update
-- open gaps: pending update
+- canonical state: `7f63239869ddeb945fab2fe0a5d6012757219791`
+- open gaps: `251493685cb54ab81504f0168e970e6cfb794624`
+- current theorem/status ledger: `af178874d723e9cc846dda224a8ea9540fedb0d4`
 - progress log: this update
 
 ### Next highest-priority task
