@@ -168,3 +168,26 @@ No unconditional all-large-r theorem was obtained. Unconditional r0 remains NOT 
 ### 7. Standalone common-interface asset
 
 The weighted transversal-cover proof and the C/D mappings are now recorded as a standalone theorem asset, COMMON_TRANSVERSAL_COVER_INTERFACE.md, commit 4e00edfb9e36d1078fc21af4ae2521e82a76935e. The file explicitly marks that this closes the shared counting interface only, not either terminal nonextension theorem.
+
+
+## 2026-10-24 — Round 3: close the low-degree |W|=2r−1 layer
+
+### New theorem
+
+Committed LOW_DEGREE_TOP_LAYER_CLOSURE.md at 301dcacab800fd95b7a750042ba92143cf0f2c5f. The proof uses only:
+1. the exact W-local Cell A/B normal forms;
+2. their pointwise outside-to-W target-degree bound d_F(o,W)≤6;
+3. alpha(F)≤5 and omega(F)≤r−1;
+4. the low near-anchor degree pattern (r,≤r+1,≤r+1).
+
+It first proves alpha(F[V\W])≤3, then shows every outside vertex must be adjacent to at least one anchor. The total anchor incidence surplus is at most three, while the clique cap forces at least 6+k incidences at multiply-attached vertices and the budget allows at most 2k+2, contradiction for k∈{0,1,2}.
+
+### Effect on synthesis
+
+The |W|=2r−1 terminal layer is now closed for both delta=r and delta=r+1 when r≥25. The D_low windows shrink to:
+- delta=r: |W|∈{2r−4,2r−3,2r−2};
+- delta=r+1: |W|∈{2r−7,...,2r−2}.
+
+This does not change the numerical conditional threshold r0=67, which remains controlled by direct near-anchor extraction. It does remove the final top-layer exception and narrows D_low to strictly lower offsets.
+
+Unconditional P(r0) remains NOT CERTIFIED: A_ext* and the lower-offset D_low theorem are still OPEN.
