@@ -2,290 +2,233 @@
 
 All statements are conditional on hypotheses A+B and `r>=12` unless stated otherwise.
 
-## 1. Endpoint collapse
+## 1. Degree endpoint collapse
 
-The strengthened ceiling is `q<=3r-1`. Every regular repivot of missing degree `d` has
+`K_r>=8` gives `q<=3r-1`. Every regular repivot with missing degree d satisfies
 
 `q_y>=d(r+1-d)`.
 
 For `4<=d<=r-3`,
 
-`d(r+1-d)>=4(r-3)>3r-1`
+`d(r+1-d)>=4(r-3)>3r-1`,
 
-for every `r>=12`. Therefore
+so no such degree occurs. Hence
 
-`d in {0,1,2,3,r-2,r-1,r}`.
-
-The scalable low endpoint is `d<=3`; the high endpoint is `d>=r-2`.
+> `d in {0,1,2,3,r-2,r-1,r}`.
 
 ---
 
-## 2. d3 common-S endpoint closes completely
+## 2. Global shell-incidence budget
 
-For a d3 common-S family,
+For `s in A`, define
 
-`q=3(r-2)+a+B`.
-
-The already-proved equality B-floor shows that `q=3r-1` is impossible: equality at the global charge ceiling forces hereditary edge equality, whereas the regular-clique extraction gives a lower bound `B>=6` for `r>=12`, contradicting `a+B=5`.
-
-Hence
-
-`q<=3r-2`,
-
-so
-
-`a+B<=4`, in particular `a<=4`.
-
-The existing symbolic Bridge-B low-charge machinery absorbs the complete `b=2` sector and the `b=1,a<=4` sector. Therefore no d3 common-S boundary remains.
-
-**Status:** `PROVED_CONDITIONAL` (uses A+B, equality B-floor, and the pre-existing low-charge absorption assets).
-
----
-
-## 3. High Endpoint Three-Owner Theorem
-
-### Theorem
-
-Let `Y_hi` be the set of **all** regular shell vertices with missing degree
-
-`d_y>=r-2`.
-
-Then for every `r>=12`,
-
-> **`|Y_hi|<=3`.**
-
-This is a global high-endpoint bound across all missing sets; no common-S assumption is used.
-
-### Proof
-
-Assume four distinct high owners `y_1,y_2,y_3,y_4` exist, and write `Z={y_1,y_2,y_3,y_4}`.
-
-#### Step 1: Z contains a target edge
-
-If the four vertices were pairwise target-nonadjacent, the symbolic zero-gap theorem would give
-
-`D_{y_i} intersect D_{y_j}=empty`
-
-for every `i!=j`.
-
-Since every `|D_{y_i}|=d_{y_i}>=r-2`, the core H would contain at least
-
-`4(r-2)`
-
-vertices. But
-
-`|H|=3r-1`
-
-and
-
-`4(r-2)>3r-1`
-
-for every `r>=8`.
-
-Therefore `F[Z]` contains at least one target edge. Equivalently,
-
-`e_M(Z)<=C(4,2)-1=5`.                                      (3.1)
-
-#### Step 2: four high owners already force many shell missing edges
-
-Sum their missing degrees in the shell missing graph M:
-
-`sum_{y in Z} d_y >=4(r-2)`.
-
-The number of **distinct** missing edges incident with Z is
-
-`sum_{y in Z} d_y - e_M(Z)`,
-
-because an internal missing edge of Z is counted twice in the degree sum and must be corrected once.
-
-Using (3.1),
-
-`e(M)>=4(r-2)-5=4r-13`.                                    (3.2)
-
-Since
-
-`q=e(M)+G_A>=e(M)`,
-
-we obtain
-
-`q>=4r-13`.                                                  (3.3)
-
-But hypothesis B gives
-
-`q<=3r-1`.
-
-For every `r>=13`,
-
-`4r-13>3r-1`,
-
-contradiction.
-
-Thus only the boundary value `r=12` remains.
-
-#### Step 3: the r=12 equality boundary is impossible
-
-At `r=12`, (3.3) gives
-
-`q>=35`,
-
-while the strengthened ceiling gives `q<=35`. Hence equality holds throughout:
-
-- `q=35`;
-- `e(M)=35`;
-- `G_A=0`, so every shell vertex is regular;
-- every selected high owner has `d_y=10`;
-- `e_M(Z)=5`, so `F[Z]` has exactly one target edge;
-- every missing edge of M is incident with Z.
-
-Therefore the nine vertices of `A\Z` contain no shell missing edge. Consequently
-
-`B_0={p} union (A\Z)`
-
-is a target clique of size 10, and every vertex of `B_0` has target degree exactly `r+1=13`.
-
-Moreover `q=35` together with `K>=8` and the residual edge cap forces equality in both:
-
-`E=D_12(49)=340`, `K=8`.
-
-Hence the multicolor equality regular-clique obstruction applies and says every regular target clique has size at most
-
-`floor((r-1)/2)=5`.
-
-This contradicts `|B_0|=10`.
-
-Therefore four high owners are impossible also for r=12.
-
-Thus
-
-> **`|Y_hi|<=3` for every `r>=12`.** QED.
-
-**Status:** `PROVED_CONDITIONAL`.
-
----
-
-## 4. High Endpoint Bounded-Complement Reduction Theorem
-
-For a high owner define
-
-`s_y=r-d_y`.
-
-Since `d_y in {r-2,r-1,r}`,
-
-`s_y in {2,1,0}`.
-
-The shell target-neighbour set of y is
-
-`T_y=A\(S_y union {y})`
-
-and has exactly
-
-`|T_y|=s_y<=2`.
-
-By the Three-Owner Theorem there are at most three high owners. Hence the entire high endpoint has the following r-independent encoding.
-
-### Shell kernel
-
-Let
-
-`K_A=Y_hi union (union_{y in Y_hi} T_y)`.
+`t_s=d_M(s)+g_s=e_F(s,H)`.
 
 Then
 
-> **`|K_A|<=3+3*2=9`.**
+> `sum_A t_s=2e(M)+G_A=2q-G_A<=6r-2`.                       (2.1)
 
-Every target edge from a high owner to the shell is incident with this at-most-nine-point kernel. Outside it, every shell vertex is target-nonadjacent to every high owner.
+For any regular owner y with missing set `S_y`, `|S_y|=d`, put `b_y=e_M(S_y)`. Singleton transport gives, pointwise for `s in S_y`,
 
-### Core incidence kernel
+> `sigma_s=t_s-(r+1-d)-m_{S_y}(s)>=0`,                       (2.2)
 
-For each `v in H`, define
+and after summing,
 
-`I(v)={y in Y_hi : v in D_y}`.
+> `sum_{s in S_y}t_s=d(r+1-d)+a_y+b_y`.                     (2.3)
 
-Because `|Y_hi|<=3`, there are at most
+This budget controls all low endpoints simultaneously.
 
-> **`2^3=8`**
+---
 
-possible owner-incidence signatures.
+## 3. d0 — neutral
 
-The zero-gap theorem further forbids any signature containing a target-nonadjacent pair of owners, so only clique signatures of the at-most-three-vertex owner graph actually survive.
+If d=0, then `S=D=empty`; the repivot preserves H, q and tau. It is only a pivot relabelling and is contracted.
 
-### Finite high-endpoint skeleton
+**Status:** `PROVED_SYMBOLIC`.
 
-Thus every high endpoint is encoded by:
+---
 
-1. at most three owners;
-2. one complement parameter `s_y in {0,1,2}` per owner;
-3. a target graph on at most three owners;
-4. shell neighbour sets `T_y` of size at most two inside a kernel of size at most nine;
-5. at most eight core incidence-signature multiplicities;
-6. the transported excess/decoration integers attached to these fixed classes.
+## 4. d1 — at most five shell classes
 
-The number of combinatorial skeleton types is independent of r. Only the integer multiplicities/excess values vary with r.
+For d=1, (2.2) gives `t_s>=r` for the unique missing partner. By (2.1), all d1 missing partners lie in a fixed set of at most five shell vertices.
 
-> **High Endpoint Reduction Theorem.** Under A+B, every `d>=r-2` local state is equivalent, for repivot-compatibility purposes, to one of finitely many bounded-complement skeletons with at most three owners and `s in {0,1,2}`.
+For `S={s}`, `D={u}`, the exact loss is
+
+> `q-q_y=kappa'_s-kappa_u`.
+
+Thus d1 is a one-point excess exchange inside at most five shell classes.
+
+**Status:** shell reduction and exchange identity `PROVED_CONDITIONAL`; final q/tau-flat rigidity `OPEN`.
+
+---
+
+## 5. d2 — six-point support universe
+
+For `S={u,v}`, put `b=e_M(S)`. Equation (2.2) gives
+
+` t_u,t_v>=r-1+b `.
+
+Let `U_2` be the union of all d2 shell missing sets. Then by (2.1)
+
+> **`|U_2|<=6`.**                                            (5.1)
+
+Therefore every d2 shell missing set is one of at most
+
+> **`C(6,2)=15`**                                            (5.2)
+
+pair classes, independent of r.
+
+If `h_u=t_u-(r-1)`, then a fixed shell class `{u,v}` has exact allowance
+
+> `a_{uv}=h_u+h_v-b_{uv}`.                                  (5.3)
+
+If `m=|U_2|`,
+
+`sum_{u in U_2}h_u<=(6-m)r+m-2`.
+
+In particular, if `m=6`, then `sum h_u<=4`, and the total number of d2 owners is at most two.
+
+Thus no d2 shell-support case count grows with r.
 
 **Status:** `PROVED_CONDITIONAL`.
 
-This achieves the desired fixed-width high-endpoint reduction. The remaining task is to prove improvement/contradiction for each bounded skeleton family without expanding them into an r-dependent case tree.
-
 ---
 
-## 5. Exact d2 common-S charge identity
+## 6. Fixed-class d2 plateau classification
 
-Let a common-S d2 family have
+Fix one of the at-most-fifteen d2 shell classes `S={u,v}` and let Y be all owners in that class. For core vertices put
 
-- `S={s_1,s_2}`;
-- `b=e_M(S) in {0,1}`;
-- owner set Y of size N;
-- leftover `L=A\(S union Y)` of size `l=r-1-N`;
-- total common-S core charge `W=sum_{v in H}(kappa_v+e_F(v,S))`;
-- allowance `a=b+sigma_{s_1}+sigma_{s_2}`.
+`w_x=kappa_x+e_F(x,S)`,
 
-The exact common-S ledger gives
+and for a 2-support D put
 
-`W=K+2N+G_S+2b+m_ST`.
+`mu(D)=1-e_H(D)`.
 
-Also
+Every owner y has exact integer loss
 
-`sum_{s in S} sigma_s=m_ST+G_S-2l`,
+> `ell_y=q-q_y=a-[w(D_y)+mu(D_y)]>=0`.                       (6.1)
+
+Let `lambda_x` be the number of owners whose support contains x. Support incidence gives
+
+`g_x>=w_x+lambda_x-1`,
 
 so
 
-`G_S+m_ST=a-b+2l`.
+> `lambda_x>=2 or w_x>=1  => x in X`.                        (6.2)
 
-Substitution and `l=r-1-N` yield cancellation of N:
+Let `s=|S intersect X|`. A q-flat row satisfies
 
-> **`W=K+2r-2+a+b`.**                                    (5.1)
+`|D_y intersect X|<=s`.
 
-This is exact and independent of owner multiplicity.
+### s=0
 
-For a d2 exact one-loss common-hub system with three distinct support classes, the pre-existing charge barrier gives
+Common-S transport forces `sigma_u=sigma_v=0`, hence `a=b`.
 
-`W>=|H|-1=3r-2`.
+Every endpoint of a q-flat support has `lambda=1`, `w=0`; q-flat supports are disjoint.
 
-Combining with (5.1):
+- if `b=0`, then `a=0`, so every owner is q-flat, every support is a target edge, distinct supports have no target cross-edges, and `alpha(H)<=3` gives
+  > `|Y|<=3`;
+- if `b=1`, at most one q-flat owner exists. Every strict row has loss one and a target-edge, zero-w support; distinct strict support classes have no target cross-edges, so there are at most three distinct strict support classes.
 
-> **`K+a+b>=r`.**                                           (5.2)
+### s=1
 
-Thus every three-class d2 terminal must carry linearly large total core excess/allowance. In particular, any d2 regime with `K+a+b<=r-1` has at most two nontrivial common-hub support classes.
+A q-flat support cannot repeat: repetition would decorate both of its endpoints, contradicting `|D_y intersect X|<=1`.
 
-The previously known concentrated state `K=8,a=3,b=1` gives
+The graph of q-flat supports is a disjoint union of stars and isolated edges. A repeated star center is decorated; its leaves have w=0. Row closure makes the center plus its leaves independent, so `alpha(H)<=3` permits at most two edges per star. Choosing one zero-w endpoint from each component and using row closure shows there are at most three components.
 
-`W=2r+10`,
+Therefore
 
-and (5.2) immediately yields `r<=12`; this explains its exact small-r cutoff.
+> **a fixed d2 class with `|S intersect X|=1` has at most six q-flat owners.**   (6.3)
 
-**Status:** `PROVED_SYMBOLIC` for (5.1), `PROVED_CONDITIONAL` for the three-class consequence (uses the existing one-loss pattern theorem and charge barrier).
+### s=2
+
+Tau imposes no cardinality restriction on a 2-support. Repeated q-flat supports can survive.
+
+Hence:
+
+> **The only d2 shell class in which the number of q-flat owners can scale with r is the fully decorated regime `S subset X`.**   (6.4)
+
+This is the unique scalable equal-q d2 endpoint.
+
+**Status:** `PROVED_CONDITIONAL`.
 
 ---
 
-## 6. Surviving endpoint families
+## 7. Exact d2 charge identity
 
-After the results above:
+For every d2 common-S system, with `b=e_M(S)`, allowance a and total core charge
 
-- `d=3` common-S: **closed**;
-- `d=2`: scalable; three-class one-loss terminals must satisfy `K+a+b>=r`; global plateau equality/positive-loss closure remains open;
-- `d=1,0`: not yet frozen in this workstream;
-- `d>=r-2`: **reduced to a finite bounded-complement skeleton with at most three total owners**.
+`W=sum_{x in H}(kappa_x+e_F(x,S))`,
 
-No medium degree survives.
+one has
+
+> `W=K+2r-2+a+b`.                                           (7.1)
+
+If an exact-one-loss common-hub subsystem has three distinct core support classes, the existing pattern charge barrier gives
+
+`W>=3r-2`, hence
+
+> `K+a+b>=r`.                                                (7.2)
+
+Thus any difficult three-class one-loss terminal lies in a linearly-high scalar regime.
+
+**Status:** (7.1) `PROVED_SYMBOLIC`; (7.2) `PROVED_CONDITIONAL`.
+
+---
+
+## 8. d3 — eliminated
+
+The equality B-floor excludes `q=3r-1` for d3. Therefore every d3 view has `q<=3r-2`, so `a+B<=4`. The declared low-charge Bridge-B assets absorb the remaining d3 sector.
+
+> **No d3 terminal remains.**
+
+**Status:** `PROVED_CONDITIONAL`.
+
+---
+
+## 9. High endpoint — at most three owners
+
+Let `Y_hi` be all regular shell vertices with `d>=r-2`.
+
+If four existed, zero-gap/core packing forces at least one target edge among them, so their incident shell missing edges number at least
+
+`4(r-2)-5=4r-13`.
+
+For `r>=13`, this exceeds `q<=3r-1`. At `r=12`, equality forces `q=35`, `G_A=0`, hereditary equality and a 10-vertex regular target clique, contradicting the multicolor equality regular-clique obstruction.
+
+Therefore
+
+> **`|Y_hi|<=3` for every `r>=12`.**                          (9.1)
+
+Writing `s_y=r-d_y in {0,1,2}`, all high-owner shell interaction lies in an at-most-nine-point kernel and core owner-incidence uses at most eight signatures.
+
+Thus the high endpoint is an r-independent bounded-complement skeleton.
+
+**Status:** `PROVED_CONDITIONAL`.
+
+---
+
+## 10. Low-owner clique
+
+Any two regular owners with `d<=3` are target-adjacent: otherwise zero-gap requires `S_x union S_y=A`, while the union has size at most six and `|A|=r+1>=13`.
+
+Hence all regular low-endpoint owners together with p form a target clique. From `omega(F)<=r-1`, there are at most `r-2` such owners.
+
+**Status:** `PROVED_SYMBOLIC`.
+
+---
+
+## 11. Canonical surviving endpoint families
+
+After all reductions:
+
+- d0: quotient-neutral;
+- d1: at most five shell classes; q/tau-flat one-point core exchange remains;
+- d2: at most six shell support vertices / fifteen shell classes;
+  - non-fully-decorated fixed classes have only O(1) q-flat skeletons;
+  - the **only scalable q-flat class** has a fully decorated shell pair `S subset X`;
+  - core-support multiplicity / transported loss inside that regime remains open;
+- d3: eliminated;
+- high endpoint: at most three owners in a finite bounded-complement skeleton.
+
+No endpoint has an r-growing number of shell-support types. The unique scalable equal-q mechanism is now **fully decorated fixed-class d2 core-support multiplicity**.
