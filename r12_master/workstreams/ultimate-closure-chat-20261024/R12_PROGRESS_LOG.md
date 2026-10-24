@@ -176,3 +176,17 @@ No sibling files were changed. The D-low and A-ext general-r results remain cond
 - E408 Q32 (285-edge core): OPEN and not covered by the 284-edge theorem.
 - E408 Q33 seven-block compatibility: OPEN.
 - Original K145-to-T61 bridge and full theorem: OPEN / NOT_CERTIFIED.
+
+
+### Round 6 — exclude the E408 Q33 four-partite S0=10 equality kernel (2026-10-25)
+
+Re-read the latest sibling updates:
+- Emergency sprint commit ad56a91c: witness-union capacity refinement; its general witness-hitting inequality is valid, but its E407 C/D/E boundary application relies on a component-count claim separately flagged for audit and is not imported here.
+- Zero-excess witness commit 98167ec: new four-partite E408 Q33 boundary analysis, including the S0=10 equality pattern. Its original S0>=10 result leaves one candidate; this workstream now excludes that candidate independently.
+- Zero-excess witness follow-up commit dab40653: confirms the four-partite part-size and extra-edge setup; no sibling files modified.
+
+**New theorem:** R12_E408_Q33_FOUR_PARTITE_S0_10_EXCLUSION.md proves that S0=10 is impossible under the four-partite L hypothesis. The proof first forces six size-7 D-neighbourhoods and nine size-8 full-large-part neighbourhoods, then rules out the exceptional size-10 transversal by three cases s=0,1,2. The s=1 case has 27 selected cross-part pairs but at most 20 possible explanations; the s=2 case requires at least seven extra L edges while delta<=5.
+
+**Verification:** verify_e408_q33_four_partite_s0_10.py passed exact integer pattern checks: E408_Q33_FOUR_PARTITE_S0_10_AUDIT_OK. This is a finite arithmetic/case-table audit, not a graph realization certificate.
+
+**Status update:** the four-partite E408 Q33 boundary now has S0>=11, jointly with delta+epsilon_U<=17. The non-four-partite boundary, E407 A/B and C/D/E kernels, E408 Q32 (285-edge core), T61-to-K145 bridge, and original theorem remain OPEN / NOT_CERTIFIED.
