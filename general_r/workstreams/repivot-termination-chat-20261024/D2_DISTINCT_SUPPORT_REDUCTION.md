@@ -91,44 +91,32 @@ Therefore
 
 ---
 
-## 4. Allowance a=1: at most twelve distinct supports
+## 4. Allowance a=1: at most nine distinct supports
 
 Equation (1.1) gives exactly two support types:
 
-1. target edge (`mu=0`) with endpoint weights `(0,1)`;
-2. target nonedge (`mu=1`) with endpoint weights `(0,0)`.
+1. target edge (mu=0) with endpoint weights (0,1);
+2. target nonedge (mu=1) with endpoint weights (0,0).
 
-Hence every support contains at least one zero-weight vertex.
+Hence every support contains at least one zero-weight endpoint.
 
-Let Z be the set of zero-weight vertices appearing in supports. Any two distinct vertices of Z are target-nonadjacent:
+For each zero-weight vertex z appearing in a support, define its support signature
+`sig(z)={D_i:z in D_i}`.
 
-- if they form one support, that support must be type `(0,0,mu=1)`;
-- otherwise, take a support containing one but not the other and apply row closure from the other zero-weight vertex.
+Distinct zero-weight signatures are pairwise target-nonadjacent by row closure. Indeed, if two zero-weight vertices occur in the same support, that support is a target nonedge; if they do not occur together, row closure applied to a support containing one but not the other rules out a target edge between them. Since `alpha(H)<=3`, there are at most three distinct zero-weight signatures.
 
-Thus Z is independent, so
+Fix one signature `Sigma`. If `|Sigma|>=3`, its supports share a unique zero-weight hub x and have the form
+`{x,u_1},...,{x,u_k}`.
+For each leaf u_i, allowance-one flatness gives `w(u_i)=1` when xu_i is a target edge and `w(u_i)=0` when xu_i is a target nonedge. Row closure applied to u_i against support {x,u_j} shows in either case that u_i u_j is a target nonedge. The leaves are therefore pairwise independent, so `k<=3`. If `|Sigma|<3`, the same bound is immediate.
 
-> **`|Z|<=3`.**                                               (4.1)
+Every support contains at least one zero-weight endpoint, and there are at most three distinct zero-weight signatures. Summing the at-most-three support labels per signature gives
 
-Now fix `x in Z`. The target-edge supports through x have distinct weight-one leaves `y_1,...,y_t`. For `i!=j`, row closure from `y_i` against the support `{x,y_j}` gives
+> **`a=1 => N<=9`.**                                         (4.3)
 
-`e_H(y_i,{x,y_j})<=1`.
+This sharpens the earlier coarse bound 12. The argument uses only `alpha(H)<=3`, not a global `alpha(F)<=3` assumption.
 
-Since `y_i x` is already a target edge, `y_i y_j` must be a target nonedge. Hence the leaves are independent and
-
-> **`t<=3`.**                                                 (4.2)
-
-Nonedge supports have both endpoints in Z, so there are at most `C(3,2)=3` of them.
-
-Therefore
-
-> **`a=1 => |E(Q)|<=3*3+C(3,2)=12`.**                        (4.3)
-
-This bound is deliberately coarse but absolute and sufficient for endpoint compression.
-
-**Status:** `PROVED_CONDITIONAL`.
-
----
-
+**Status:** `PROVED_CONDITIONAL` on the residual core contract; no hereditary cap is used.
+ 
 ## 5. General matching bound
 
 Let `nu(Q)` be the matching number of the distinct-support graph. For every support edge xy, (1.1) implies
