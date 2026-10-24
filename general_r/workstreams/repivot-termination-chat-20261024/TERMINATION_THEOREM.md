@@ -8,21 +8,19 @@ The intended final statement is:
 
 This full theorem is **OPEN**.
 
-What is now proved is the following endpoint-compression theorem, which removes every r-growing family except d2.
+What is now proved is a strong endpoint-compression package. All medium degrees disappear; d3 disappears; the high endpoint has at most three owners; and the low d1/d2 shell supports admit constant-size heavy transversals.
 
 ---
 
 # Theorem A — Conditional Endpoint Compression
 
-Assume A+B and `r>=12`. Choose a pivot maximal in
+Assume A+B and `r>=12`. Choose a pivot maximal in `(q,tau)`.
 
-`(q,tau)`.
-
-Then every regular shell vertex belongs to one of the following classes:
+Every regular shell vertex belongs to one of:
 
 1. `d=0`: neutral pivot symmetry; quotient it.
-2. `d=1`: one-vertex excess exchange.
-3. `d=2`: the only scalable support-interaction endpoint.
+2. `d=1`: one-vertex excess exchange; all shell missing partners lie in at most five heavy shell vertices.
+3. `d=2`: the only scalable support-interaction endpoint; every shell missing pair meets a six-vertex heavy set and every unbounded family of distinct pairs is confined to at most four stars.
 4. `d=3`: eliminated by the strengthened d3 charge/B-floor plus the existing low-charge Bridge-B absorption.
 5. `d>=r-2`: at most three such vertices exist in the entire shell, and their interaction is encoded by an r-independent bounded-complement skeleton.
 
@@ -33,25 +31,14 @@ Moreover:
 - every closed `(q,tau)`-non-improving repivot cycle is entirely q-flat and tau-flat;
 - K cannot serve as an additional potential coordinate because `Delta K=-2 Delta q`;
 - every repeated support on such a plateau cycle has a fully decorated shell partner;
-- every d2 common-S system has exact charge
-  `W=K+2r-2+a+b`;
-- a three-class d2 one-loss common-hub terminal must satisfy
-  `K+a+b>=r`.
+- every d2 common-S system has exact charge `W=K+2r-2+a+b`;
+- a three-class d2 one-loss common-hub terminal must satisfy `K+a+b>=r`.
 
 **Status:** `PROVED_CONDITIONAL`.
 
-## Proof map
-
-- medium-degree elimination: quadratic base + `q<=3r-1`;
-- d0: direct repivot identity;
-- d3: equality B-floor + low-charge absorption;
-- high endpoint: Four-Owner Missing-Edge Count + r=12 equality regular-clique obstruction;
-- cycle statement: telescoping q/K and tau;
-- d2 scalar reduction: exact common-S ledger + pattern charge barrier.
-
 ---
 
-# Theorem B — High Endpoint Reduction
+# Theorem B — High Endpoint Three-Owner / Bounded-Complement Reduction
 
 Under A+B, `r>=12`, all regular owners with `d>=r-2` form a set of size at most three.
 
@@ -92,53 +79,97 @@ Thus no-improvement cycles reduce to simultaneous equality classification.
 
 ---
 
+# Theorem D — Low-Endpoint Shell Heavy-Cover Compression
+
+Define
+
+`t_s=d_M(s)+g_s=e_F(s,H)`
+
+for shell vertices. Then
+
+`sum_A t_s=2e(M)+G_A<=2q<=6r-2`.
+
+For any regular owner y, using its singleton common-S representation with missing set S of size d, allowance a and `b=e_M(S)`, one has the exact identity
+
+> **`sum_{s in S} t_s=d(r+1-d)+a+b`.**
+
+Consequences:
+
+### d1
+
+The unique shell missing partner satisfies `t_s>=r`. Hence all d1 shell supports belong to a fixed set of at most five vertices. Thus there are at most five d1 common-S classes.
+
+### d2
+
+Every missing pair `{s,t}` satisfies
+
+`t_s+t_t>=2(r-1)`.
+
+Therefore every pair meets
+
+`C_2={v:t_v>=r-1}`,
+
+with
+
+`|C_2|<=6`.
+
+More sharply, let
+
+`P={v:2t_v>=3(r-1)}` and `Q={v:2t_v>=r-1}`.
+
+Then `|P|<=4`, `|Q|<=12`, and every d2 missing pair either
+
+- is incident with P, hence belongs to one of at most four scalable star families; or
+- lies entirely inside Q, an at-most-twelve-point bounded core.
+
+Thus arbitrary r-growing d2 support graphs are impossible: all unbounded distinct-support diversity is star-shaped around at most four hubs.
+
+**Status:** `PROVED_CONDITIONAL`.
+
+This is the key new compression on the previously unique scalable endpoint.
+
+---
+
 # Candidate refinement
 
 On a q-flat plateau define
 
 `Q2=sum kappa_v^2`.
 
-It is bounded by `K^2` and has an exact repivot update formula recorded in `POTENTIAL.md`.
-
-Therefore
+It is bounded by `K^2` and has an exact repivot update formula in `POTENTIAL.md`. Thus
 
 `Phi_3=(q,tau,Q2)`
 
-is a legitimate bounded lexicographic potential candidate.
+is a legitimate bounded lexicographic candidate.
 
-What is not yet proved is that every non-rigid equal-(q,tau) view admits a repivot increasing Q2. A different signature/overlap coordinate may be needed.
+What is not yet proved is universal Q2 improvement outside the rigid families. A signature/star multiplicity coordinate may be sharper for the remaining d2 star systems.
 
 ---
 
 # Remaining route to a sufficiently-large-r contradiction
 
-After Theorem A, a global terminal can only be assembled from:
+After Theorems A–D, a global terminal can only be assembled from:
 
-- d1 one-vertex exchanges;
-- d2 linearly-high equality/positive-loss systems (`K+a+b>=r` in the three-class branch) and isolated deep-loss blocks;
+- at most five d1 shell-support classes, each a one-vertex exchange system;
+- d2 support systems consisting of an at-most-twelve-vertex bounded core plus at most four scalable stars;
+- within d2, the linearly-high equality/positive-loss regime `K+a+b>=r` and isolated deep-loss blocks;
 - at most three high-endpoint bounded-complement owners;
 - simultaneous equality cycles among these pieces.
 
-The high endpoint no longer scales with r. The d3 endpoint is gone. Hence any sufficiently-large-r obstruction must now be carried by d2 (with d1 acting only as a one-point transport interface).
+The remaining r-growth is therefore no longer an arbitrary support hypergraph. It is confined to **at most four weighted d2 stars** (plus owner multiplicities inside finitely many fixed support classes).
 
-A Level-5 theorem will follow from either of the following two statements:
+A Level-5 theorem should now target the following narrower statement:
 
-### Route I — d2 plateau instability
+> **D2 Star Termination Lemma.** In a `(q,tau)`-maximal state, no scalable d2 star centered at a heavy shell vertex can support the linearly-high equality/positive-loss budget `K+a+b>=r` without either (i) producing a strict plateau-coordinate improvement, (ii) collapsing to repeated fully-decorated support, or (iii) violating a multi-pivot transported-excess sum.
 
-Prove that every d2 state satisfying `K+a+b>=r` has a strict repivot improvement in a bounded refinement of `(q,tau)` unless it is a finite rigid design; then kill that design by hereditary/support compatibility.
-
-### Route II — multi-pivot d2 defect sum
-
-Prove a cycle/sum inequality showing that a family of non-improving d2 repivots cannot simultaneously carry the linearly high scalar charge required by `K+a+b>=r`.
-
-Either route would leave only O(1) high owners plus d1 exchanges and should yield a genuine all-large-r terminal theorem.
+Proving this for one star and summing over the at most four hubs would leave only O(1)-sized endpoint kernels.
 
 ---
 
 # Certified success level
 
 - Level 1: d3 closure obtained (conditional on the declared upstream low-charge assets).
-- Level 2: not yet; d1/d2 remain.
+- Level 2: not yet; d1/d2 terminal elimination remains, although their shell-support geometry is now bounded/heavy-star compressed.
 - **Level 3: achieved** — high endpoint reduced to a finite three-owner bounded-complement skeleton.
 - Level 4: open — no globally strict refined potential yet.
 - Level 5: open — no certified absolute r0 yet.
@@ -146,4 +177,4 @@ Either route would leave only O(1) high owners plus d1 exchanges and should yiel
 
 # Single blocker
 
-> **D2 linearly-high plateau stability:** eliminate/rigidify all non-improving d2 systems whose scalar budget reaches the necessary range `K+a+b>=r`.
+> **D2 heavy-star plateau stability:** eliminate or rigidify the at most four scalable d2 star systems in the linearly-high regime `K+a+b>=r`.
