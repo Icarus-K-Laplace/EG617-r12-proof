@@ -125,3 +125,33 @@ in addition to (N-1)c<=3r-2 and N<=r-2. For c>=2 this is a stronger independent 
 The high-density clean-pair branch is now reduced to a six-type system with optional degree at most four and an excess-charged exceptional set. The exceptional count may still be linear near the AES threshold, so Clean Pair Nonextension is OPEN. The d1 class has an additional independent excess bound, but c=1 and fixed c>=2 multiplicities remain unresolved.
 
 No finite r0 and no all-large-r contradiction are certified.
+
+
+## C-N11 — Shell-incidence strengthening: PROVED_CONDITIONAL
+
+For the clean a_2=2 family,
+
+K_U>=2m-2r-b_2,
+
+because each of the 2m endpoints has kappa_x=1-e_F(x,S_2) and the shell pair has total incidence 2r+b_2. Together with the exceptional outside charge L=3lambda-4-r, this gives
+
+2m-2r-b_2+X L<=2r-2,
+
+and
+
+X<=floor(2(r-1+h+b_2)/(r-3h-5)).
+
+Near the lower AES threshold this improves the exceptional count to X<=r/6+O(1), still allowing linear X.
+
+## C-N12 — Overlap-corrected joint d1/d2 budget: PROVED_CONDITIONAL / OPEN
+
+For a d1 support set V_1 of size N_1 and allowance c, define J_2=|V_1 intersect U_2| and J_X=|V_1 intersect O_exc|. Then
+
+2m-2r-b_2+N_1(c-1)+X L
+-(c-1)J_2-min(c-1,L)J_X<=2r-2.
+
+Replacing N_1 by ceil(eta/5) gives an eta-explicit necessary inequality. For 3<=c<=L-1, both intersections vanish and the clean form is
+
+2m-2r-b_2+ceil(eta/5)(c-1)+X L<=2r-2.
+
+The d2 matching/allowance inequality remains ceil(N_2/(eta+1))(a_2-1)<=4r-4+a_2+b_2. These are separate necessary projections of the same budget and cannot be added without proving disjointness. Fixed-allowance d1 absorption remains OPEN.
