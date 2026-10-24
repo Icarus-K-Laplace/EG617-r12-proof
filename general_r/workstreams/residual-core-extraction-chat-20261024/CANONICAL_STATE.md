@@ -186,7 +186,7 @@ For `a=6`, `S_6=14r+6); for `r>=41), at least `floor(r/2)` non-target colors hav
 
 File: `NO_HIGH_STOP_ROUND2_LEMMAS.md`.
 
-**Important limitation:** this is simultaneous near-extremality in edge count, not yet a uniform edit-distance / partition stability theorem.
+**Round-2 refinement:** the following section upgrades edge-count concentration to a uniform edit-distance / partition stability theorem and a global near-resolvable design.
 
 ### 9A. Uniform partition stability and global near-resolvable design
 
