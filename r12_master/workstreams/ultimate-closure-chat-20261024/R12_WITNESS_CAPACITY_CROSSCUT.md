@@ -157,3 +157,10 @@ Therefore, for a regular row t_b<=3, failure to extend is possible only in the e
 - t_b<=1: impossible.
 
 So the E408 Q32 extension step is valid for every triple whose three vertices carry at most four total units of core excess; the only unresolved triple-extension exceptions must contain at least five of the six excess units. Do not silently reuse the excess-4 proof for the 285-edge core.
+
+
+## Cross-link: row-transversal and exact-129 packing refinement
+
+See R12_ROW_TRANSVERSAL_AND_Q33_PACKING.md for the strengthened all-independent-4-set statement: for every missing shell edge ab, every independent 4-set in H\N_H(a) intersects N_H(b). It yields minimum transversal systems for the five E407 templates, plus PAIR-13 / TRI-24 support-overlap restrictions.
+
+The same file sharpens Q33 component packing. Each exact-129 color has at least seven K5 components with no S vertex; at most one of those can contain p without B, because five H vertices would be an independent 5-set. Hence at least six no-S components contain B. The exact Q33 budget forces at least five B labels with k_b>=2, so every exact-129 color has at least one high-k no-S witness, and at least two if beta=0 or1. Across at least eight exact-129 colors this yields at least 8, or 16 in the beta=0/1 cases, pairwise-linear independent-4 witnesses. This is a stronger labelled packing constraint, not a completed contradiction.
