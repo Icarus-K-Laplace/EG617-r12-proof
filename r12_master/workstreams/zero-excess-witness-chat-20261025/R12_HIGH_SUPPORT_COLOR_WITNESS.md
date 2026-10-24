@@ -56,3 +56,10 @@ These are necessary conditions, not terminal contradictions. The only edge-count
 - It does not assume that all selected Q sets are disjoint across colors; only the proved intersection-at-most-one rule is used.
 - The claim in the sibling crosscut file that templates C/D/E automatically have eight S-avoiding K5 components requires an additional argument: an edge of M[S] does not force its endpoints to occupy the same K5 component of every fixed color. The safe universal count remains seven unless a stronger color-specific forcing lemma is supplied.
 - EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+## 7. Latest sibling audit (2026-10-25)
+
+The ultimate-closure branch has since added a beta-sensitive component-count argument. Do not use its stronger counts yet: the claim that omega(M[S])=2 implies at most two distinct K5 components meet S (and the analogous omega=1 claim) does not follow. The clique number bounds the number of S vertices inside one component; it does not bound how many different components may meet S. The safe count in Lemma 2.1 remains seven total S-avoiding components and six B-labelled components.
+
+The sibling witness-transversal theorem's bound tau(Q)>=7 is valid. Its separate assertion that L must be non-four-partite is not established by ruling out the complete Turan graph alone. A four-partite graph can omit cross-part edges. The boundary-kernel file now handles the four-partite E407 branch directly and reduces it to delta in {14,15,16}; the E408 Q33 four-partite branch remains open.
