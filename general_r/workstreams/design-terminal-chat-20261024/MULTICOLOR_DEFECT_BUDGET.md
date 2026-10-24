@@ -129,19 +129,18 @@ Otherwise the product (U_\ell\times U_m) has more pairs than there are target cr
 Since (A\le27r+15), at least two of the three remaining groups are covered by the four endpoint neighborhoods up to (O(\sqrt r)) exceptions. This is a robust stability constraint that does not assume an exact star map, but it currently requires a source-pair compatibility condition (no target cross edge among the four endpoints). Finding many compatible source pairs, or charging all conflicts, remains OPEN.
 
 
-## 11. Global color-ownership contradiction inside the oversized target group
+## 11. Corrected target-group color-ownership bound
 
-The bounded target hub theorem yields an absolute target-internal defect cap. For (r\ge6212), the refined hub bound gives (|X|\le108). Each hub has at most four nonneighbors among ordinary vertices of its own target group; all missing hub-hub pairs contribute at most (inom{|X|}{2}). Hence
+The preceding attempted (O(1)) upper bound on target-internal deletions was invalid. The ordinary set (B_j\setminus X) is a clique, so the target independence cap does not bound how many of its vertices can be nonadjacent to a hub.
+
+The valid result is a **lower bound**. Since some target group (B_h) has (|B_h|\ge r+1), every non-target color must have an edge inside a fixed ((r+1))-subset of (B_h). Unique edge ownership implies
 [
-\boxed{D\le4|X|+\binom{|X|}{2}\le6210.}
+\boxed{D_h:=\left|\binom{B_h}{2}\setminus E(G_0)\right|\ge r-1.}
 ]
+This lower bound is compatible with (D=O(r)); it does not by itself contradict the global budget.
 
-But some target group (B_h) has (|B_h|\ge r+1). Since each non-target color graph has independence number at most (r), every non-target color must own an edge inside a fixed ((r+1))-subset of (B_h). The (r-1) colors require (r-1) distinct target-internal deletions, so
+With (|X|\le108) for (r\ge6212), the safe upper bound is only
 [
-\boxed{D_h\ge r-1.}
+D_h\le108(r+27)+\binom{108}{2},
 ]
-For (r\ge6212), this contradicts (D_h\le D\le6210).
-
-This uses unique edge ownership and does not sum cover lower bounds; shared cover edges cannot affect it. Full derivation and the exact (r\ge6212) threshold are in `JOINT_DEFECT_PROPAGATION.md`.
-
-**Status:** **PROVED_ANALYTIC** for contextual terminal nonexistence at (r\ge6212). This bypasses rather than solves the local defect-cover incidence problem. The original front-end forcing interface remains OPEN.
+which is also (O(r)) and is not contradictory. The claimed (r\ge6212) terminal closure is withdrawn. See `JOINT_DEFECT_PROPAGATION.md` for the full proof audit.
