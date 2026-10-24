@@ -62,3 +62,13 @@ Source: R12_TRANSVERSAL_BOUNDARY_CLASSIFICATION.md; arithmetic audit: verify_tra
 R12_SHELL_INCIDENCE_UNION_AUDIT.md corrects an imported inequality: vertices with zero shell support contribute negative terms to the global sum. Since at most four core vertices can have zero shell support, the safe full-row support-union floors are 7 for E407 template A and 6 for C. The earlier 11/10 floors must not be used unless a separate theorem proves zero-support absence.
 
 The original proof DAG still has an OPEN T61 terminal and an OPEN original K145-to-T61 certification edge.
+
+
+## Added node — E408 Q33 four-partite S0=10 exclusion
+
+Source: R12_E408_Q33_FOUR_PARTITE_S0_10_EXCLUSION.md; arithmetic audit: verify_e408_q33_four_partite_s0_10.py.
+
+- Input: four-partite L on U, |U|=31, 56 linear independent-four witnesses, total core excess four, alpha(H)<=4, and the exact edge/excess ledger.
+- First-stage output: S0=epsilon_U+2*delta=10 forces k=6 degree-seven W-neighbourhoods equal to D; the remaining U-degrees are nine 8s and one 10, with the nine 8-neighbourhoods assigned three per large part.
+- Second-stage output: the exceptional size-ten hitting set has s=0,1,2 cases, each contradictory by incidence/pair counting.
+- Conclusion: in the four-partite branch S0>=11. This node does not eliminate the non-four-partite E408 Q33 branch or the full terminal.
