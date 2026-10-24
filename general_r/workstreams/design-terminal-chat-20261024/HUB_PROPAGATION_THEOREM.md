@@ -210,3 +210,27 @@ The valid surviving lower bound is: some (B_h) has size at least (r+1), and ever
 D_h:=\left|\binom{B_h}{2}\setminus E(G_0)\right|\ge r-1.
 ]
 This is compatible with the current (O(r)) budget. The claimed (r\ge6212) terminal closure is withdrawn; full terminal nonextension and multi-block cover accounting remain **OPEN**. See `JOINT_DEFECT_PROPAGATION.md` for the correction audit.
+
+
+## HP12. Exact incidence-matrix theorem for multi-block covers
+
+For a defect pair (d=(a,\{u,v\})) in a non-target ideal block (C_a), and cross-block additions (F_i=E(G_i)\setminus E(Q_i)), define (w_{d,e}) as:
+- (1/|C_b|) for an edge from (u) or (v) to (C_b), (b\ne a);
+- (1/(|C_p||C_q|)) for an edge between two blocks (C_p,C_q) both different from (C_a);
+- zero otherwise.
+
+Uniformly selecting one vertex from each other block yields the exact weighted cover inequality
+[
+\boxed{\sum_{e\in F_i}w_{d,e}\ge1.}
+]
+For a defect family (mathcal D_i), define (L_i(e)=\sum_{d\inmathcal D_i}w_{d,e}). Then
+[
+|\mathcal D_i|\le\sum_{e\in F_i}L_i(e).
+]
+This is the correct incidence-matrix accounting: it permits an edge to serve several defect rows in the same color while preserving unique ownership across colors. The load (L_i(e)) is not automatically at most one.
+
+If every block has size at least five and there are at most 24 additions, a defect cannot be covered by a remote-only network: each remote edge has weight at most (1/25), so the total is at most (24/25<1). At least one addition must meet a defect endpoint.
+
+For a matching of (q) defect pairs, each block size at least five, a single edge has load at most (2/5+q/25). This is rigorous but insufficient to exceed the budget at (q\le24).
+
+Full derivation and the (K_6)-free endpoint-star audit are in `DEFECT_COVER_INCIDENCE.md`. This is a strict subtheorem, not full Hub Propagation.
