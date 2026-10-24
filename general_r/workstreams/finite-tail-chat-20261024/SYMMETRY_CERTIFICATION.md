@@ -53,5 +53,7 @@ For a canonical-labeling implementation, pin the algorithm and version and inclu
 ## Current status
 
 - Scalar reflection: **IMPLEMENTED AND CHECKED** for the endpoint-domain certificate.
-- Color/vertex/canonical-labeling/stabilizer witness checker: **OPEN / NOT IMPLEMENTED**.
-- No graph-level search branch may currently be removed on the basis of these reserved reductions.
+- Graph witness schema and bounded exhaustive verifier: **IMPLEMENTED** in `GRAPH_SYMMETRY_WITNESS_SCHEMA.md` and `GRAPH_SYMMETRY_VERIFIER.py`.
+- Toy K3/two-color fixture: 8 states, 3 orbit representatives, 8 explicit witnesses; state-set digests independently reconstructed in Python.
+- Direct CLI replay of the committed graph verifier: **PENDING**; the current cross-check does not certify any EG617 graph-level reduction.
+- No graph-level search branch may currently be removed on the basis of these interfaces until the committed verifier replay and a complete theorem-specific state catalog are available.
