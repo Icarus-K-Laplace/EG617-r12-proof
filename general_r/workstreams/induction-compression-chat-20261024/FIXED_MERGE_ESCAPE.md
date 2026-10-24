@@ -61,13 +61,13 @@ and for a private witness T define its full missing-color set
 D(T)=\{i:T\text{ is independent in color }i\}.
 \]
 
-For a fixed merge c->j, the set X\\{v} is a successful shell **if and only if**
+For a fixed merge c->j, the set X minus {v} is a successful shell **if and only if**
 
 \[
 \boxed{D(T)=\{j\}\quad\text{for every }T\in\mathcal P(v).}
 \]
 
-Reason: because X is a transversal, X\\{v} can fail to hit H_{c,j} only on a private witness T in P(v). Such T survives in H_{c,j} exactly if it is independent in some untouched color k not in {c,j}, or is independent in both c and j. Thus all private witnesses must be independent in color j only: not in c and not in any other color.
+Reason: because X is a transversal, X minus {v} can fail to hit H_{c,j} only on a private witness T in P(v). Such T survives in H_{c,j} exactly if it is independent in some untouched color k not in {c,j}, or is independent in both c and j. Thus all private witnesses must be independent in color j only: not in c and not in any other color.
 
 This is an exact criterion for deleting one vertex from the tight 2r-point transversal, not a proof that such a vertex exists. Failure of every fixed merge means that for every j and every v there is at least one private witness whose missing-color set is not the singleton {j}. This may be due to multi-color witnesses; the current hypergraph data do not rule that out.
 
