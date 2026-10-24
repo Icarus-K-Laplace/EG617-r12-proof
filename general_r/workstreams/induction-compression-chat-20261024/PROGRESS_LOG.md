@@ -78,3 +78,11 @@ Status: alignment-free structure PROVED; Case A contradiction, Case B contradict
 - This yields a q-net with at least ceil(q/2) directions, where q=r-1, without any neighborhood-low-slack alignment.
 - Derived N(q)>=ceil(q/2)-2 MOLS(q). For r=11, Case B would force 3 MOLS(10); literature confirms this remains open, so it is a conditional reduction rather than a contradiction.
 - Proved a stronger subcase: if alpha(G_c[R])<=q, then all residual excesses vanish and R is an affine plane of order q. Extension by the 2r vertices X is still OPEN.
+
+
+## 2026-10-24 — Round 10: first high-excess threshold
+
+- Linked the high-color branch n_i>=4 to the exact residual classification at b_i=q-1.
+- The K branch's Kang–Pikhurko theorem yields either q equal clique blocks plus q-1 cross-block edges, or a single exceptional point whose deletion leaves q clique blocks (sizes q except one q-1) plus a nonempty defect star.
+- The exceptional point has exact residual color-i degree 2q-2-a, with 1<=a<=q-1.
+- The classification applies only at equality b_i=q-1; b_i>=q remains open and no contradiction is claimed.
