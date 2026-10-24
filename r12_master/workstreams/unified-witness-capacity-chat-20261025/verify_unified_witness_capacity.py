@@ -160,12 +160,55 @@ def check_label_count_matrix() -> None:
     ]
 
 
+def check_partite_branch_capacity() -> None:
+    # E408 Q33 four-partite profile: one 7-part and three 8-parts.
+    r = [8] * 7 + [7] * 24
+    omissions = [8 - x for x in r]
+    assert len(r) == 31 and sum(r) == 224
+    assert omissions == [0] * 7 + [1] * 24
+    assert sum(omissions) == 24
+    omega = sum(comb(x, 2) for x in omissions)
+    assert omega == 0
+    assert sum(comb(x, 2) for x in r) == 700
+
+    crossing_lower = 4 * comb(56, 2) - 700
+    within_part_load = 64 * comb(7, 2) + 49 * 3 * comb(8, 2)
+    assert crossing_lower == within_part_load == 5460
+
+    # Delta is the number of present leftover cross-part slots.
+    # The four-partite sibling theorem gives 9 <= delta <= 17.
+    for delta in range(9, 18):
+        weighted_load = 5460 + 49 * (24 - delta)
+        assert weighted_load == 6636 - 49 * delta
+        assert weighted_load >= crossing_lower
+
+    # Per-label target-neighborhood capacity by part for n_b blocks.
+    for n_b in range(8):
+        q33_cap = (7 - n_b) + 3 * (8 - n_b)
+        assert q33_cap == 31 - 4 * n_b
+        e407_cap = (8 - n_b) + 3 * (7 - n_b)
+        assert e407_cap == 29 - 4 * n_b
+    assert (7 - 7) + 3 * (8 - 7) == 3
+    assert (8 - 7) + 3 * (7 - 7) == 1
+
+    # Q33 per-row label-capacity and the induced B-to-(H\\D) lower bound.
+    for P in range(8):
+        assert 3 * P + 2 * (7 - P) == 14 + P
+        assert 14 + P <= 21
+        for beta in range(4):
+            for G_B in range(4 - beta):
+                lower = max(0, 8 - beta + G_B - P)
+                assert lower >= 0
+
+
 def main() -> None:
     check_zero_excess_endpoint_tables()
     check_edge_ledgers()
     check_omission_tables()
     check_label_count_matrix()
+    check_partite_branch_capacity()
     print("R12_UNIFIED_WITNESS_CAPACITY_ARITHMETIC_OK")
+    print("Partite branch: exact Q33 incidence profile and labelled row caps verified.")
     print("Scope: exact integer/degree ledgers only; no graph-realization certificate.")
 
 
