@@ -116,3 +116,14 @@ Under the **exact hub-star model** (every target cross-group edge is in the spec
 The oversized group’s second hub must share the same destination as its first hub, and the two hubs must be target-adjacent. If the two hubs and the common destination representative occur in one non-target ideal block, that block has a triangle of target-colored pairs; under a single-cover-block model this creates an independent triple that can be extended to an independent ((r+1))-set by omitting the cover block.
 
 This sharply restricts the low-cost configurations, but does not yet imply a numeric contradiction. The remaining budget calculation must distinguish the two cycle types (5-cycle versus 2+3) and the placement of the two oversized-group hubs.
+
+
+## 10. Robust pair-of-nonedges inequality
+
+For two internal target nonedges (P_j\subset B_j), (P_k\subset B_k), assume all four cross pairs between (P_j,P_k) are target nonedges. For each of the three remaining groups (ell), let (U_\ell) be the vertices having no target edge to any endpoint of (P_j\cup P_k). If (A) is the total target cross-edge count, then
+[
+\boxed{|U_\ell||U_m|\le A\quad(\ell\ne m).}
+]
+Otherwise the product (U_\ell\times U_m) has more pairs than there are target cross edges globally, so one can select a non-target pair and obtain a target-independent 6-set together with (P_j,P_k).
+
+Since (A\le27r+15), at least two of the three remaining groups are covered by the four endpoint neighborhoods up to (O(\sqrt r)) exceptions. This is a robust stability constraint that does not assume an exact star map, but it currently requires a source-pair compatibility condition (no target cross edge among the four endpoints). Finding many compatible source pairs, or charging all conflicts, remains OPEN.
