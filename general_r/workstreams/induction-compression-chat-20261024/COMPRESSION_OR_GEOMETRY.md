@@ -109,7 +109,7 @@ This is a finite incidence kernel at equality, not a contradiction. If b_i>=q, t
 
 For q=r-1=6, the finite-geometry branch proves an exact Case B profile (K branch commit eb238d01b9aebf98a7614dba00e2696a2f3d05cf): three zero-excess orthogonal directions, three non-q-partite colors at b_i=q-1=5 with exceptional-star normal forms, and the omitted color's seven clique blocks of sizes 6,5,5,5,5,5,5. The size-6 block is a transversal of the 3-net and the six size-5 blocks are near-transversals.
 
-This is a genuine finite incidence kernel, but not yet an excluded one. The absence of an orthogonal mate for order 6 cannot be applied directly, because the kernel supplies one full transversal plus six near-transversals, not six disjoint full transversals.
+This was the interim incidence description before the strict residual budget was proved. J.W8-J.W10 subsequently exclude the entire r=7 Case B directly: the strict budget forces four orthogonal order-6 directions, contradicting Euler–Tarry. The abstract one-transversal/six-near-transversal subpattern remains realizable, but the full graph-level contract cannot extend it.
 
 
 ## 10. Root-block rigidity closes the residual equality case
@@ -117,3 +117,10 @@ This is a genuine finite incidence kernel, but not yet an excluded one. The abse
 J.W8 proves that the upper endpoint \(\sum_{i\ne c}b_i=\binom q2\) is impossible in Case B for q>=4. The proof uses the exact Turan-equality partition of the omitted-color graph on R and a root-block capacity count, not a low-slack alignment assumption. Hence the number of orthogonal residual directions improves to at least ceil((q+1)/2).
 
 At q=6 (r=7), this forces four directions and therefore two mutually orthogonal Latin squares of order 6, which do not exist. Thus the tight-transversal Case B is impossible at r=7. The abstract one-transversal/six-near-transversal Latin-square pattern is realizable, but the 14-root full graph contract cannot extend it. The three-packing Case A remains OPEN, so no full compression theorem is claimed.
+
+
+## 11. Root-dependent blocker inequality and audit boundary
+
+J.W12 (ALIGNMENT_FREE_WITNESS_RIGIDITY.md, commit eb5aaee4e2957b8f18d1c62c886dab8d6d23337) proves that if the residual c-complement is (q+1)-partite, every root that fully c-covers no block must satisfy the weighted blocker inequality W_x>=1, where each cross-block c-edge contributes 1/(a_i(x)a_j(x)) and a_j(x) is the number of c-nonneighbors of that root in block j.
+
+The attempted quantitative extension J.W11 was withdrawn after audit (commit 87b7ad18cda97fcef378ffff63c8397936617f36): its random transversal sampled from full blocks instead of root-dependent candidate sets. No claim d>=C(k+1,2) is valid. The strict endpoint result d>=1 from J.W8 remains proved and sufficient for r=7 Case B closure. The weighted blocker inequality is a new interface, not yet a stronger global budget.
