@@ -20,3 +20,12 @@ Parallel abstract backend DAG (not silently identified with the T61 branch):
 - If the contextual R(4,49) contradiction is accepted as an original-coloring lemma, this abstract branch is not a required branch in the original theorem DAG, although its independent classification remains open.
 
 No cycle is used in this DAG. The V12/V8 packages remain source-reported until their exact archives/verifiers are replayed.
+
+## Added proved interface node (does not close a terminal)
+
+T61 shell/core witness lemma
+- Inputs: contextual no-R(4,49), alpha(H)<=4, omega(H)<=11, and the hereditary D(n) target-edge cap.
+- Outputs: t_a<=7 => an independent 4-set in H anticomplete to a; at least eight shell rows are good.
+- Q33/d3 specialization: all ten B-rows are good and their witnesses hit each S-row corresponding to an M-edge; at least five witnesses hit at least two S-rows.
+- Outgoing edge: feeds the E408 Q33 witness-capacity subproblem.
+- Status: PROVED as a constraint; no contradiction edge to bottom has been established.
