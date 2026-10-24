@@ -1,7 +1,7 @@
 # R12 witness-overlap capacity: exact incidence identity and failed scalar closure
 
 Date: 2026-10-25  
-Status: **PROVED_ANALYTIC necessary inequality; scalar contradiction OPEN.**  
+Status: **PROVED_ANALYTIC necessary inequality; scalar-only closure DISPROVED as a sufficient route.**  
 Scope: the selected exact-129 K5-component witnesses in E407 Q32 / E408 Q33.
 
 ## 1. Frozen family contract
