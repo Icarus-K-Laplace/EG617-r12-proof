@@ -1,72 +1,55 @@
-# Exact `r -> r-1` Compression Criterion
+# Exact r-to-(r-1) Compression Criterion
 
-Status: **PROVED**.
+Status: **PROVED, with the adaptive-recoloring distinction explicit**.
 
 ## Setup
 
-Let `chi` be an `r`-edge-coloring of `K_(r^2+1)` such that every `(r+1)`-vertex set sees every color. Let `G_i` be the spanning graph of color `i`.
+Let a hypothetical counterexample to P(r) be an r-edge-coloring of K_(r^2+1). Let G_i be its color graphs. Then every G_i satisfies alpha(G_i)<=r and omega(G_i)<=r.
 
-Fix a color `c`. Let `X subset V` have size `2r-1`, and let
+Choose colors c,j with c != j, a shell X of size 2r-1, and U=V\X, so |U|=(r-1)^2+1.
 
-`U := V \ X`,
+## Theorem J.1A — Robust sufficient criterion
 
-so
+If
 
-`|U| = r^2+1-(2r-1) = (r-1)^2+1`.
+\[
+\alpha(G_i[U])\le r-1 \qquad\text{for every }i\ne c,
+\]
 
-We ask whether, after deleting `X`, color `c` can be eliminated by recoloring only the surviving old `c`-edges into colors `[r]\{c}` so that the resulting `(r-1)`-coloring of `K_U` is a counterexample to `P(r-1)`.
+then deleting X and recoloring every surviving old c-edge arbitrarily into the other r-1 colors produces a counterexample to P(r-1).
 
-## Theorem J.1 — Exact Compression Criterion
+Proof: each new color-i graph contains G_i[U] for every i != c, so its independence number remains at most r-1. Thus every r-set in U contains every one of the r-1 colors.
 
-Such a recoloring exists **if and only if**
+Equivalently, X must hit every independent r-set in every untouched color graph. This is a **sufficient** criterion for unrestricted adaptive recoloring; it is not claimed to be necessary.
 
-`alpha(G_i[U]) <= r-1`
+## Theorem J.1B — Exact criterion for a fixed merge
 
-for every `i != c`.
+If every old c-edge in U is recolored to one fixed color j, then the merge succeeds if and only if both conditions hold:
 
-Equivalently, `X` intersects every independent `r`-set of every `G_i`, `i != c`.
+- alpha(G_i[U]) <= r-1 for every i not in {c,j};
+- alpha((G_c union G_j)[U]) <= r-1.
 
-### Proof
+The first family of colors is untouched. The merged color-j graph contains exactly the old c- and j-edges, so an r-set misses merged color j exactly when it is independent in both G_c and G_j.
 
-Suppose first that `alpha(G_i[U]) <= r-1` for every `i != c`.
+## Hypergraph form
 
-Recolor every old color-`c` edge inside `U` arbitrarily by one of the other `r-1` colors. For each `i != c`, the new color-`i` graph contains `G_i[U]` as a spanning subgraph, so its independence number is at most `r-1`. Therefore every `r`-vertex subset of `U` contains an edge of every one of the `r-1` new colors. Hence the new coloring is a counterexample to `P(r-1)`.
+Let I_i be the r-uniform hypergraph whose edges are the independent r-sets of G_i.
 
-Conversely, suppose a recoloring of only old color-`c` edges produces a counterexample to `P(r-1)`. For any `i != c`, all old color-`i` edges remain color `i`. If `G_i[U]` had an independent `r`-set `S`, then before recoloring `S` contains no old color-`i` edge. Recoloring color-`c` edges may add color-`i` edges, so this direction needs the natural restricted-elimination convention used by the theorem: choose the elimination map so that no old `c`-edge inside an independent `r`-set of another color is used to repair that color. Under unrestricted adaptive recoloring the exact iff statement is too strong.
+- Robust compression after eliminating c succeeds whenever X is a transversal of the union of I_i over i != c.
+- The fixed merge c -> j succeeds exactly when X is a transversal of
 
-Therefore the robust form used for induction is the following one-sided criterion:
+\[
+\left(\bigcup_{i\notin\{c,j\}} I_i\right)\cup(I_c\cap I_j).
+\]
 
-> If `alpha(G_i[U]) <= r-1` for every `i != c`, then arbitrary elimination of color `c` succeeds.
+Here I_c intersect I_j denotes the family of r-sets independent in both color graphs.
 
-And for **deletion-only / merge-into-a-fixed-color** compression, the condition is also necessary for every untouched color.
+This formulation cleanly separates the two legal compression rules.
 
-## Corrected canonical form
+## Lemma J.2 — Maximum independent r-sets dominate
 
-Because adaptive recoloring of color-`c` edges can repair missing untouched colors, the true exact equivalence depends on the elimination rule. We therefore record two versions.
+If S is an independent r-set in G_i, every vertex v outside S has at least one color-i edge to S. Otherwise S union {v} would be an independent (r+1)-set, contrary to the counterexample property.
 
-### J.1A — Robust sufficient criterion
+## Audit warning
 
-If `X` hits every independent `r`-set in every `G_i`, `i != c`, then deleting `X` and recoloring color `c` arbitrarily into the other colors yields an `(r-1)`-counterexample.
-
-### J.1B — Exact criterion for a fixed merge
-
-If all color-`c` edges are merged into one fixed color `j != c`, then compression succeeds iff
-
-- `alpha(G_i[U]) <= r-1` for every `i notin {c,j}`; and
-- `alpha((G_j union G_c)[U]) <= r-1`.
-
-This is immediate from the definition of the merged coloring.
-
-## Lemma J.2 — Maximum independent sets are dominating
-
-For every color `i`, every independent set `S` of size `r` in `G_i` dominates `V\S` in `G_i`.
-
-### Proof
-
-If some `v outside S` had no color-`i` neighbour in `S`, then `S union {v}` would be an independent set of size `r+1` in `G_i`, contradicting the counterexample property.
-
-## Interpretation
-
-The most conservative exact-induction problem is therefore a simultaneous transversal problem: find `X` of size `2r-1` that intersects all maximum independent sets of all colors except possibly the eliminated/absorbing color(s).
-
-This formulation is preferable to informal statements about 'deleting the sparsest color' because it identifies the actual obstruction.
+An unrestricted recoloring can add color-i edges to an old independent r-set of G_i, thereby repairing that set. Consequently, the robust condition above must not be promoted to an iff for adaptive recoloring. The exact iff statement in this file is only for the specified fixed merge.
