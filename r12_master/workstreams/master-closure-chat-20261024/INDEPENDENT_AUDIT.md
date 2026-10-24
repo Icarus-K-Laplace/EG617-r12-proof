@@ -136,3 +136,19 @@ For anchor excess patterns (3,1,1) and (2,2,1), enumerate c=5,...,9, t=9-c, and 
 For each profile, every allocation of at most one positive-excess vertex among the exclusive blocks was checked. With z_i=x_i-k_i sorted descending, the clique-cap corrected lower bound is z2*z3-1+z1, while the degree-sum upper bound is floor((sum_i x_i(12-x_i)+1-(12c-c^2-9))/2).
 
 All 145 profiles have strictly positive lower-minus-upper margin; the smallest margin is5 (at c=9). No connector profile survives. This independently verifies the finite arithmetic layer of R12_INDEPENDENT_TRIPLE_H5_EXTENSION.md. The graph-theoretic argument still relies on the registered three-anchor theorem for the final contradiction.
+
+
+## 8. Independent audit of the universal legal-core floor
+
+The core-floor implication is a direct counting argument. If K<=6, at most six vertices have degree above12, so at least29 of the 35 vertices have degree exactly12. Since omega(H)<=11, two degree-12 vertices a,b must be nonadjacent. Their open neighbourhoods have total union size at most24 and are disjoint from {a,b}, leaving at least 9 vertices outside {a,b} union N(a) union N(b). All nine are nonadjacent to both a,b. At most six vertices in H have positive excess, so at least three of those nine have degree12. Any one gives an independent triple of degree-12 vertices, to which the registered three-anchor theorem applies. Thus K<=6 is impossible and e(H)>=214.
+
+This argument uses the full legal-core contract; it does not strengthen CORE211 for graphs lacking omega(H)<=11.
+
+## 9. Independent E333/E334 charge audit
+
+With the exact identity E=91+q+e(H) and e(H)>=214, every pivot satisfies q<=E-305.
+
+- E333: q<=28. Exclude q=27 by the registered conditional q27 shell theorem; q=28 repivots to q'>=30, contradicting the same-residual ceiling q'<=28.
+- E334: q<=29. Exclude q=27; q=28 and q=29 each repivot to q'>=30, contradicting q'<=29.
+
+The repivot lower bounds apply to the new degree-13 pivot in the same graph, so the universal ceiling applies to that pivot too. E333/E334 are therefore closed relative to the registered q27 shell dependencies and the q28/q29 repivot theorems; the V5/V8 package replays are not needed for these two edge layers.
