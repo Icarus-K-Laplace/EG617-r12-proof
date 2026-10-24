@@ -45,7 +45,7 @@ The emergency sibling's m=10 witness-star dichotomy e(H[U])=135 or >=144 is not 
 
 ## Open obligations
 
-- E407 Q32: eliminate the v=29, 49-witness boundary under the five template row-transversal systems.
+- E407 Q32: use the stronger sibling bound epsilon_U+2delta>=9 (hence delta>=3) at v=29/49 witnesses, then eliminate the remaining common-core completion under the five template row-transversal systems.
 - E408 Q33: eliminate the remaining v=31, 56-witness profiles with (S_0ge11), including the non-four-partite (S_0=11) branch; larger support sizes and the global seven-block duplicate system remain open.
 - E408 Q32: still separate; its core has 285 edges and excess six. No excess-four theorem is transferred without proof.
 - Preserve the original K145-to-T61 bridge and all inherited Ramsey/extremal input contracts.
@@ -56,7 +56,7 @@ SHELL_INCIDENCE_UNION_LEMMA.md proves the exact identity e(A,H)-47=e(M)-15, but 
 
 ## New E408 Q33 theorem
 
-R12_E408_Q33_UNIVERSAL_S0_11.md proves under the 31-point/56-witness minimum-support contract that S0=epsilon_U+2delta>=11, without assuming L is four-partite. The proof first shows every 7-transversal is unique and can be the U-neighbourhood of at most four W vertices; equality S0=10 then forces a (4,3,3) family of R-only 8-neighbourhoods, which creates a K12 and contradicts omega(H)<=11. Arithmetic checks passed. This removes the S0=10 boundary, not the whole E408 Q33 terminal.
+R12_E408_Q33_UNIVERSAL_S0_11.md first excluded S0=10. The stronger R12_E408_Q33_UNIVERSAL_S0_12.md then excludes S0=11 without a four-partite assumption: k=N7 is 3 or 4; exact T-incidence and special-R-incidence counts force 9/10 R-only 8-transversals; a three-set partition lemma plus multiplicity bounds eliminates all cases, using K12 contradictions and the size-9 transversal when needed. Its arithmetic verifier returned E408_Q33_UNIVERSAL_S0_12_ARITHMETIC_OK. Thus the E408 Q33 v=31/56-witness boundary now has S0>=12 universally; the remaining S0>=12 profiles are still open.
 
 ## Verification assets
 
