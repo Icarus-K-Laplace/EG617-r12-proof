@@ -4,37 +4,33 @@ Assumptions: A+B, `r>=12`, the standard low-owner clique cap, and a pivot p maxi
 
 `Phi_3=(q,tau,zeta)`.
 
-Fix a d2 exact repeated class
+Fix a d2 exact class
 
-`Y=Y_{S,D}`
+`Y=Y_{S,D}(p)`
 
-with multiplicity m, and suppose repivot through one/every owner of this exact class is `Phi_3`-flat.
+of multiplicity m, and suppose repivot through its owners is `Phi_3`-flat.
 
-By the zeta exchange theorem,
+By the exact class-neutral involution,
 
-`m=zeta(p)+1`.
+`zeta(new)=m-1`.
 
-Let
+Phi3-flatness therefore gives
 
-`Z=Z_0(p)`
+> **`m=zeta(p)+1`.**                                         (0.1)
 
-be the d0 population, so `|Z|=m-1`, and define
+Let `Z=Z_0(p)`, so `|Z|=m-1`, and define
 
-> `C_0={p} union Z`,
->
-> `C_1=Y`.
+`C_0={p} union Z`,
 
-Then
+`C_1=Y`.
 
-`|C_0|=|C_1|=m`.
+Then `|C_0|=|C_1|=m`.
 
 ---
 
 ## 1. The correction block is a target K_(2m)
 
-Every vertex of `C_1` is a regular d2 owner; every vertex of Z is a regular d0 owner; p is the pivot.
-
-All regular low-endpoint owners are pairwise target-adjacent, and p is target-adjacent to every shell vertex. Therefore
+Every vertex of C1 is a regular d2 owner; every vertex of Z is a regular d0 owner; p is the pivot. All regular low-endpoint owners are pairwise target-adjacent, and p is target-adjacent to every shell vertex. Therefore
 
 > **`F[C_0 union C_1]=K_(2m)`.**                              (1.1)
 
@@ -42,49 +38,44 @@ Hence
 
 > **`2m<=r-1`.**                                             (1.2)
 
-This recovers the balanced multiplicity cap.
-
 ---
 
 ## 2. C0 is one neutral chamber
 
-For every `z in Z`, repivot p -> z is d0 neutral:
+For every `z in Z`, repivot `p -> z` is d0-neutral:
 
 - the core remains H;
 - q,tau,zeta are unchanged;
-- the other vertices of `C_0` remain the d0 population after swapping p and z;
-- the exact `(S,D)` class C1 is unchanged, because a neutral pivot swap changes neither H nor the missing/core-neighbour relation of the C1 owners.
+- the other vertices of C0 remain the d0 population after swapping p and z;
+- the exact `(S,D)` class C1 is unchanged.
 
 Thus every pivot in C0 represents the same quotient state:
 
 > **Chamber 0:** core H, d0 population `C_0\{pivot}`, exact d2 class C1 with pair `(S,D)`.
 
-All C0 pivots have the same `Phi_3` value.
-
 ---
 
-## 3. C1 is the reverse neutral chamber
+## 3. C1 is exactly the reverse neutral chamber
 
-Take any `y in C_1` and repivot through y.
+Take `y in C_1` and repivot through y. The exact class-neutral involution gives simultaneously
 
-The exchange theorem gives:
+> `zeta(y)=m-1=|C_1\{y}|`,
+>
+> `m_y(D,S)=zeta(p)+1=m`.
 
-- every vertex of `C_1\{y}` becomes d0;
-- every vertex of Z and p becomes a reverse d2 owner with shell missing set D and core support S.
+But `C_1\{y}` are already d0 in the y-view, so the first equality shows that they are **all** d0 vertices: no extra d0 vertex exists.
 
-Because the exchange is zeta-flat and `|C_1\{y}|=m-1=zeta`, there are no additional d0 vertices.
-
-Because p is globally `Phi_3`-maximal and y has the same `Phi_3` value, y is also maximal. The reverse class already has m vertices (`C_0`). If it were larger, a q/tau-flat reverse row would violate the zeta multiplicity bound. Hence the reverse class is exactly C0.
+Likewise `C_0` are already reverse `(D,S)` owners in the y-view, and `|C_0|=m`; the second equality shows that they are the **entire** reverse class: no extra reverse owner exists.
 
 The new core is
 
 > **`H'=(H\D) union S`.**                                    (3.1)
 
-Therefore every pivot in C1 represents the same quotient state:
+Hence every pivot in C1 represents the same quotient state:
 
-> **Chamber 1:** core H', d0 population `C_1\{pivot}`, exact reverse d2 class C0 with pair `(D,S)`.
+> **Chamber 1:** core H', d0 population `C_1\{pivot}`, exact reverse class C0 with pair `(D,S)`.
 
-All C1 pivots have the same `Phi_3` value.
+No maximality argument beyond the initial Phi3-flat equality is needed; exactness follows from the involution theorem.
 
 ---
 
@@ -99,11 +90,11 @@ Inside the 2m-vertex correction block:
 
 Therefore, after quotienting d0 relabellings,
 
-> **the complete balanced repeated-support correction graph is the two-state involution**
+> **the complete balanced correction graph is the two-state involution**
 >
-> **`H  <-->  H'`.**                                        (4.1)
+> **`H <--> H'`.**                                          (4.1)
 
-There is no longer a genuine long correction cycle to classify in this branch.
+There is no genuine long correction cycle in this branch.
 
 **Status:** `PROVED_CONDITIONAL`.
 
@@ -111,11 +102,7 @@ There is no longer a genuine long correction cycle to classify in this branch.
 
 ## 5. Allowance is invariant under the flat swap
 
-Let the old shell pair S have
-
-`b=e_M(S)`
-
-and class allowance a. For `s in S`, after the forward repivot,
+Let the old shell pair S have `b=e_M(S)` and class allowance a. For `s in S`, after the forward repivot,
 
 `kappa'_s=sigma_s-e_F(s,D)`.
 
@@ -131,11 +118,9 @@ The internal missing count of S as a core support in the reverse view is exactly
 
 `w'(S)+mu'(S)=(a-b)+b=a`.
 
-Since the reverse row is q-flat, its class allowance is exactly this defect. Thus
+Since the reverse row is q-flat, its class allowance equals this defect:
 
 > **`a_reverse=a_forward=a`.**                               (5.1)
-
-So allowance is an invariant of the two-chamber correction block.
 
 ---
 
@@ -145,15 +130,15 @@ Let
 
 `mu=1-e_H(D)`
 
-be the old internal missing count of D. In the reverse chamber D is a shell pair, so its shell missing indicator is
+be the old internal missing count of D. In the reverse chamber D is a shell pair, so
 
 > `b_reverse=mu`.                                            (6.1)
 
-Conversely S is a core support in H', with internal missing indicator
+Conversely S is a core support in H', with
 
 > `mu_reverse=b`.                                            (6.2)
 
-Thus the two chambers swap
+Thus the chambers exchange
 
 > **`(S,b) <-> (D,mu)`**                                     (6.3)
 
@@ -171,24 +156,20 @@ Therefore
 
 > **`kappa_H(D)-kappa_(H')(S)=b-mu`.**                        (6.4)
 
-So the only possible change in the total excess carried by the exchanged pair is the one-bit difference between their missing statuses.
-
 ---
 
 ## 7. Consequence for the termination program
 
-The zeta-balanced repeated-support branch is no longer an arbitrary correction-cycle family. It is one symbolic terminal family described by:
+The balanced repeated-support branch is one symbolic terminal family described by
 
-- a target clique `K_(2m)` split into two equal chambers C0,C1;
+- a target clique `K_(2m)` split into equal chambers C0,C1;
 - two fully decorated pairs S,D;
 - two legal cores H and `H-D+S`;
 - invariant allowance a;
 - exchanged missing indicators `b <-> mu`;
-- the exact excess relation (6.4);
+- exact excess relation (6.4);
 - multiplicity `m<=floor((r-1)/2)`.
 
-Hence the remaining repeated-support task is not cycle termination. It is the elimination (or further rigidity) of this **Balanced Two-Chamber Correction Block**.
+The repeated-support problem is therefore no longer cycle termination; it is elimination or further rigidity of this **Balanced Two-Chamber Correction Block**.
 
-The other remaining fully-decorated d2 branch is the genuinely distinct-support system.
-
-**Main impact:** the repeated correction-cycle part of the unique scalable d2 plateau has collapsed to a single two-state symbolic family independent of cycle length.
+The only remaining source of new scalable combinatorial structure is the distinct-support fully-decorated d2 branch.
