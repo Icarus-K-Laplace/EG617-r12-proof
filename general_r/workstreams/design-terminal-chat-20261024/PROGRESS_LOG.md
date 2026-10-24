@@ -254,3 +254,13 @@ The target cross-correction map cannot be an arbitrary star cluster. It must be 
 - `HUB_PROPAGATION_THEOREM.md`: `0c00f7715f84e7ea776e0059eed34d265d908c4d`.
 
 The abstract two-defect gadget from the previous pass remains valid only without target labels; it is not a global terminal counterexample. Full Hub Propagation and robust nonextension remain **OPEN**.
+
+
+### Follow-up asset synchronization — target-star constraint
+
+- `HUB_PROPAGATION_THEOREM.md`: `0c00f7715f84e7ea776e0059eed34d265d908c4d`.
+- `CANONICAL_STATE.md`: `c130416dcd08dea33d2f3d02618bc9b1b88c879b`.
+- `NONEXTENSION_CLOSURE.md`: `66f7207947aad4d2e713ac9e8c34d76da36570b6`.
+- `MULTICOLOR_DEFECT_BUDGET.md`: `155dc60bafa978342444c7dcb06e685eebba7e7f`.
+
+The full-star permutation result is conditional on the target-star reduction; no claim is made that every terminal has already been reduced to that form. The target-star block triangle obstruction is also conditional on the single-cover-block model. These restrictions are now explicit in the canonical state and nonextension analysis.
