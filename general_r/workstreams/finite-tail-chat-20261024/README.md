@@ -102,3 +102,21 @@ Opaque solver success, floating-point optimizer logs, or unreplayable search out
 No concrete all-large-r threshold `r0` has yet been certified by the sibling synthesis. The latest integration records three remaining asymptotic interfaces: front extraction/RC, residual endpoint terminal closure, and robust design-terminal stability. The three-anchor excess theorem is no longer an asymptotic blocker above r=68.
 
 Accordingly this workstream is now `CONDITIONAL_MODULE_CERTIFIED`, not `FINITE_TAIL_CLOSED`. No new EG617(r) theorem has been proved.
+
+
+## Round 2 — parameter-exact admission and parameterized families
+
+New assets in this directory:
+
+- `PARAMETER_ADMISSION_MATRIX.json`: explicit rows for r=4,...,100 plus an exact range partition for all r>=4; immutable source commits and theorem scopes are recorded separately from assumption discharge.
+- `PARAMETER_ADMISSION_VERIFIER.py`: independently rebuilds the source registry and all 97 explicit rows; supports parameter/module/profile queries and fails closed on matrix tampering.
+- `generate_parametric_certificate.py`: one admission-gated entry point that reuses the existing endpoint-domain and d1 generators and promotion gate.
+- `PARAMETRIC_ENDPOINT_CERTIFICATES.md`: module-family theorem statements, profile assumptions, and exact replay commands.
+- `FINITE_TAIL_RECEIPT_SCHEMA.md` / `FINITE_TAIL_REPLAY_PROTOCOL.md`: final theorem-receipt and replay contracts.
+- `GRAPH_SYMMETRY_WITNESS_SCHEMA.md`, `GRAPH_SYMMETRY_VERIFIER.py`, `GRAPH_SYMMETRY_TEST_VECTORS.json`: explicit role-preserving vertex/color permutation witnesses and an exhaustive toy completeness fixture.
+
+The source registry distinguishes the exact three-anchor theorem (r>=12, but only under its exact three-anchor premise) from the broad near-anchor `ANCHOR_K8` theorem (source applies only for r>=68). It does not transfer the former into the latter.
+
+The committed Python CLI replay remains to be run in a repository execution environment. In this session, the committed 97-row matrix was independently reconstructed in a separate JS audit; the verifier logic was exercised in a separate Python harness with fail-closed tampering, and the toy symmetry fixture was independently re-derived in Python. These checks do not prove EG617(r).
+
+Current global status remains **NO NEW EG617(r) THEOREM / ASYMPTOTIC_R0 NOT AVAILABLE**.
