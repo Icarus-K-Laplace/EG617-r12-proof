@@ -184,3 +184,32 @@ The required theorem is a **target-labelled global cover inequality**. The previ
 - Exact-core route: **OPEN**.
 - Robust nonextension: **OPEN**.
 - No sufficiently-large-(r) closure is claimed.
+
+
+## 2026-10-24 update — target-star permutation constraint
+
+### Conditional theorem: destination map is a derangement
+
+In the canonical hub-star model, each group (B_j) has a hub (a_j) with an internal target nonneighbor and a full target cross-star to (B_{f(j)}), where (f(j)\ne j). The target independence cap forces
+[
+\boxed{f\text{ is a derangement permutation on five groups}.}
+]
+If two groups share a destination, the two internal nonedges plus one point from each of the two groups outside the source groups and the omitted destination form a target-independent 6-set.
+
+If the oversized group has a second hub with an internal nonneighbor and a full star, its destination must equal the first hub's destination; otherwise the same collision contradiction applies. The two oversized-group hubs must be target-adjacent, since otherwise the two hubs plus an ordinary point in their group and three points from groups avoiding their shared destination form an independent 6-set.
+
+Status: **PROVED_CONDITIONAL** on the full-star model; it does not yet prove every terminal has that model.
+
+### Conditional triangle obstruction
+
+If the two oversized-group hubs and their common destination representative lie in one non-target ideal block, all three pairwise edges are target-colored, so they form an independent triple in (G_i). If all cross-block additions are confined to a single cover block, omitting that block yields an independent ((r+1))-set. Thus such a block requires a multi-block cover network, or the two hubs must be split / the block must omit the destination group.
+
+### Updated structural frontier
+
+The target correction map is no longer arbitrary: its five group-level destinations must form either a 5-cycle or a disjoint 2-cycle plus 3-cycle. The cheapest target-star clustering is ruled out. The next task is to classify the distribution of the oversized-group hubs across non-target ideal blocks and derive a lower bound for the required cover network.
+
+- Destination-injectivity: **PROVED_CONDITIONAL**.
+- Triangle obstruction: **PROVED_CONDITIONAL**.
+- Full Hub Propagation: **OPEN**.
+- Exact-core route: **OPEN**.
+- Robust nonextension: **OPEN**.
