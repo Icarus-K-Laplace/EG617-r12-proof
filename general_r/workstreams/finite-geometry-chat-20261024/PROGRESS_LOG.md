@@ -21,20 +21,23 @@
 ## 2026-10-24 — Round 4: strengthened local forcing and high-slack audit
 
 - Improved the near-line forcing lemma from q-2s to q-s using a greedy independent-transversal argument over the q blocks.
-- Proved every B_a of non-color-i neighbors of the extra vertex is nonempty in a counterexample; otherwise a monochromatic K_(q+1) appears.
-- Therefore s=0 is impossible on every q^2 restriction. Corrected the earlier weaker claim “at most one equality color” to the stronger statement “no exact-equality color.”
-- Derived the high-slack lower bound sum_i s_i(x)>=(q-1)^2 when at most one color is low-slack. This is compatible with the known total m_q, so it does not close the branch.
-- Gave a formal scalar profile satisfying every currently proved slack/degree identity with all colors high-slack. It is explicitly not claimed to be a graph realization; it certifies that scalar identities alone are insufficient.
-- Audited the Kakeya bridge: three full size-q blocks in distinct directions with pairwise intersections at most one would already exceed a 2q-1 shell for q>=3. The missing premise is extracting these blocks from the actual compression obstruction.
-- Verified the exact publication citation for Blokhuis–Mazzocca: *Building Bridges: Between Mathematics and Computer Science*, Bolyai Society Mathematical Studies 19, Springer (2008), pp. 205–218, DOI 10.1007/978-3-540-85221-6_6.
-- Rechecked the Brouwer threshold in Popielarz–Sahasrabudhe–Snyder (JCTB 132, 2018), Theorem 2.2, including the hypothesis n>=2r+1.
-- Audited and corrected the set-difference notation in the Kakeya bridge note.
+- Proved exact zero slack is impossible in any hypothetical counterexample.
+- Derived the high-slack lower bound sum_i s_i(x)>=(q-1)^2 when at most one color is low-slack; it is compatible with the known total m_q.
+- Audited the Kakeya bridge and the exact assumptions of Brouwer and Blokhuis–Mazzocca.
+
+## 2026-10-24 — Round 5: weighted blocker inequality and J/K interface
+
+- Proved the weighted independent-transversal obstruction:
+  sum over defect edges uv of 1/(|B_a||B_b|) >= 1 whenever every transversal contains a defect edge.
+- Derived the unweighted consequence |E(F)|>=min_{a<b}|B_a||B_b|, and hence a blocker with s<=q-2 edges must involve a pair of residual parts with product <=q-2.
+- Clarified that only defect edges with both endpoints in the residual non-i-neighbor parts can block the relevant transversals.
+- Recorded the J-line conditional bridge: in the tight-transversal case, a private witness of low-slack color i forces every point of the residual part in its base block to connect to the witness's partial transversal, giving block size <=s_i. Therefore at most floor((2q-1)/(q-s_i)) blocks can host witnesses of that color.
+- The alignment premise (a low-slack color at a vertex in the tight transversal) is not yet established; no contradiction is claimed.
 
 ### Status
 
-- Conditional low-slack geometric extraction: PROVED.
-- Exact zero-slack exclusion: PROVED.
-- Global two-low-slack extraction: OPEN.
-- High-slack contradiction: OPEN.
-- Kakeya contradiction from compression failure: OPEN.
-- Prime-power headline theorem: OPEN.
+- Low-slack coordinatization: PROVED.
+- Weighted blocker inequality: PROVED.
+- Conditional J/K interface: PROVED.
+- Global low-slack alignment and high-slack contradiction: OPEN.
+- Kakeya bridge and prime-power headline theorem: OPEN.
