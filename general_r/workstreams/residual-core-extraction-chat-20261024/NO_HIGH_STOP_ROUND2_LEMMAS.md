@@ -809,7 +809,11 @@ Fix a non-target color `i` and a duplicate vertex `v in Z_i intersect V_j` with 
 1. at least one of `S_{i,b},S_{i,c}` omits `V_j`, contributing a group-`j` missing label slot; or
 2. the two classes both meet `V_j`, and their group-`j` representatives form an internal `F_0[V_j]` edge of color `i` that lies between distinct label classes (so it is not counted by `c_{i,j}`).
 
-**Proof.** Put `A_b=N_{F_i}(v) intersect S_{i,b}` and similarly `A_c`. The exact `(r+1)`-set argument gives every pair in `A_b x A_c` color `i`. If both classes meet `V_j`, their representatives `y_b,y_c` lie in `A_b,A_c`: because `v` is not a hub and every internal `F_0` edge meets `X`, the pairs `vy_b,vy_c` are target-color edges, hence are `F_i` edges. Therefore `y_by_c` has color `i`. Since `b!=c`, this pair lies between distinct label classes, and it is an internal target-complement edge. If one class does not meet `V_j`, alternative 1 holds. `\square`
+**Proof.** Put `A_b=N_{F_i}(v) intersect S_{i,b}` and similarly `A_c`. The exact `(r+1)`-set argument gives every pair in `A_b x A_c` color `i`. If one class omits `V_j`, alternative 1 holds. Otherwise choose `y_b in S_{i,b} intersect V_j` and `y_c in S_{i,c} intersect V_j`.
+
+If both `y_b,y_c` were nonhubs, then `vy_b` and `vy_c` could not be internal `F_0` edges (such an edge must meet `X`), so both would be target-color edges and `y_b in A_b,y_c in A_c`. The product obstruction would force `y_by_c` to have color `i`, an internal `F_0` edge with no hub endpoint, impossible. Hence at least one of `y_b,y_c` is a hub; assume it is `y_b`.
+
+If `vy_b` has color `i`, it is already an internal `F_0[V_j]` edge between `Z_i` and a hub, not counted by `C_j`. Otherwise `y_b in A_b`. If `vy_c` has color `i`, that pair is likewise such an edge. In the remaining case `y_c in A_c`, so the product obstruction forces `y_by_c` to have color `i`; since `b!=c`, this is an internal edge between distinct label classes, again not counted by `C_j`. Thus alternative 2 holds. `\square`
 
 Consequently, if `m_j` is the number of non-target colors having at least one nonhub duplicate vertex in `V_j`, then
 
