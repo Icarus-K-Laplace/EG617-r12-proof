@@ -1,53 +1,49 @@
 # General-r Current Assessment
 
-Status: **OPEN**, but the architecture has changed materially after the contextual full-color cap and the `5r+1` all-large-r anchor extraction theorem.
+Status: **OPEN**, but the all-large-r architecture is now sharply compressed.
 
-## 1. New contextual cap principle
+## 1. Contextual full-color cap
 
-For a target residual on `kr+1` vertices arising inside the original balanced `r`-coloring, assume
+For a target residual on `kr+1` vertices arising inside the original balanced `r`-coloring, if
 
-`alpha(F)<=k`.
+`alpha(F)<=k`,
 
-For every non-target color `C_j` on the same vertex set,
+then every non-target color `C_j` on the same vertex set satisfies
 
-- `alpha(C_j)<=r` by the balanced-coloring condition;
-- `omega(C_j)<=k`, because a `(k+1)`-clique in `C_j` would be a target-independent `(k+1)`-set.
+- `alpha(C_j)<=r`;
+- `omega(C_j)<=k`.
 
-Using the exact Brouwer/Kang-Pikhurko second-Turan layer gives
+The exact Brouwer/Kang-Pikhurko second-Turán layer gives
 
 `e(C_j)>=p_r(kr+1)+(k-1)`.
 
-Therefore the target color satisfies the contextual cap
+Therefore
 
 > **`e(F)<=U_(k,r)`**, where
 >
 > `U_(k,r)=[k r^2+(k^2-4k+2)r+4k-2]/2`.
 
-This is strictly stronger than the old one-color hereditary cap because it remembers that all `r` colors must coexist on the same residual.
+This contextual cap is stronger than the old one-color hereditary cap because it remembers that all colors coexist on the same residual.
 
-## 2. The 4r+1 branch is dead
+## 2. The contextual 4r+1 branch is dead
 
 For `k=4`,
 
 `U_(4,r)=2r^2+r+7`.
 
-If a contextual `4r+1` residual has the front-end minimum-degree contract
+If a contextual `4r+1` residual has
 
 `delta(F)>=r+1`,
 
 then
 
-`e(F)>=(4r+1)(r+1)/2`.
+`e(F)>=(4r+1)(r+1)/2`,
 
-The lower bound exceeds `U_(4,r)` by
-
-`(3r-13)/2`.
+which exceeds `U_(4,r)` by `(3r-13)/2`.
 
 Hence:
 
-> **For every `r>=5`, the contextual `4r+1` branch is impossible as soon as `delta(F)>=r+1` is available.**
-
-Thus the old plan “extract 4r+1 residual, then run the 3r-1 backend” is no longer the preferred all-large-r route. In the original-coloring context, the 4r+1 residual should be killed immediately by full-color density compatibility.
+> **For every `r>=5`, the contextual `4r+1` branch is impossible once the minimum-degree contract is available.**
 
 At `r=12`, the existing front-end theorem already proves every genuine contextual `R(4,49)` residual has `delta>=13`; therefore the contextual `R(4,49)` branch is empty outright.
 
@@ -57,142 +53,197 @@ For `k=5`,
 
 `U_(5,r)=(5r^2+7r+18)/2`.
 
-If `delta(F)>=r+2`, then the degree lower bound exceeds this cap for every `r>=5`.
+If `delta(F)>=r+2`, the minimum-degree lower bound exceeds this cap for every `r>=5`.
 
-Hence any surviving contextual `5r+1` terminal with the natural lower minimum-degree source is forced into exactly the two layers
+Thus any surviving contextual `5r+1` terminal with the natural lower minimum-degree source is forced into exactly
 
 > **`delta(F) in {r,r+1}`.**
 
-This explains the r=12 T61 `h=12/13` split as the specialization of a general full-color stability phenomenon rather than a fixed-r accident.
+This explains the r=12 T61 `h=12/13` split as a general full-color stability phenomenon.
 
-## 4. 5r+1 anchor extraction is closed for r>=71
+## 4. Direct anchor extraction in every 5r+1 terminal for r>=67
 
-The file
+`GENERAL_R_5R1_ALL_LARGE_R_ANCHOR_EXTRACTION.md` proves:
 
-`GENERAL_R_5R1_ALL_LARGE_R_ANCHOR_EXTRACTION.md`
-
-proves, relative only to the classical Andrasfai-Erdos-Sos theorem and the contextual terminal contract:
-
-> **For every `r>=71`, every contextual `5r+1` terminal contains a direct near-anchor independent triple.**
+> **For every `r>=67`, every contextual `5r+1` terminal contains a direct near-anchor independent triple.**
 
 More precisely:
 
-- if `delta(F)=r`, there is an independent triple of degree pattern
+- if `delta(F)=r`, there is an independent triple `(r,<=r+1,<=r+1)`;
+- if `delta(F)=r+1`, there is an independent triple `(r+1,<=r+2,<=r+2)`.
 
-  `(r, <=r+1, <=r+1)`;
+The difficult `delta=r` branch is reduced to a constant-defect anti-neighbourhood system. Deleting vertices with extra defect at least3 removes at most5 points. Liu–Ren–Wang's degree-sensitive AES theorem, together with an actual lower bound on `Delta` coming from a degree-r low vertex, forces the complement to be 4-partite for `r>=67`. The endpoint cases `t=4,5` are then killed by clique-capacity and greedy K4-transversal arguments.
 
-- if `delta(F)=r+1`, there is an independent triple of degree pattern
+Using only the classical Andrásfai–Erdős–Sós theorem gives the independent fallback threshold `r>=71`.
 
-  `(r+1, <=r+2, <=r+2)`.
+## 5. Near-anchor common anti-neighbourhood is constant-width
 
-The difficult `delta=r` branch is reduced by a constant-defect ledger. Under the negation of the triple, a degree-r anchor has a non-neighbourhood split
+Let T be the extracted independent triple and W its common target anti-neighbourhood.
 
-`L union H`,
+Because `alpha(F)<=5`,
 
-with
+`alpha(F[W])<=2`.
 
-`|L|=r-1-s`, `0<=s<=8`,
+For every non-target color,
 
-and only `16-2s` excess units remain after charging baseline excess2 to H. Deleting vertices whose extra defect is at least3 removes at most5 points. AES then forces the complement of the remaining graph to be 4-partite for `r>=71`; the endpoint cases `t=4,5` are killed by clique-capacity and greedy K4-transversal arguments.
+`alpha(C_j[W])<=r`.
 
-Therefore the `5r+1` terminal no longer has a growing structural case tree for all large r.
+Hence
 
-## 5. The new large-r logical DAG
+`p_2(|W|)+(r-1)p_r(|W|)<=C(|W|,2)`.
 
-The preferred all-large-r architecture is now
+This forces `|W|<=2r+1` for `r>=6`.
+
+The two top layers are then eliminated:
+
+- `|W|=2r+1` is impossible for `r>=4` by the sharp non-bipartite triangle-free edge bound;
+- `|W|=2r` is impossible for `r>=11`: the slack ledger forces at least `r-2` non-target perfect matchings, hence the complement has minimum degree at least `r-2`, and triangle-free AES forces bipartiteness, contradicting the target clique cap.
+
+Therefore:
+
+- low terminal layer:
+
+  > **`2r-4 <= |W| <=2r-1`;**
+
+- high terminal layer:
+
+  > **`2r-7 <= |W| <=2r-1`.**
+
+So the remaining downstream geometry has only finitely many size offsets, independent of r.
+
+## 6. Exact top surviving layer |W|=2r-1
+
+At `|W|=2r-1`, total pair-count slack is exactly `r-1`.
+
+The sharp non-bipartite triangle-free theorem forces the target excess to be at least `r-2`, leaving exactly two integer cells.
+
+### Cell A
+
+- target excess `r-1`;
+- all non-target colors are exact near-perfect matchings.
+
+### Cell B
+
+- target excess `r-2`;
+- total non-target excess1;
+- the complement of the target on W attains equality in the non-bipartite triangle-free extremal theorem.
+
+Hence
+
+> **`bar(F[W]) = S(K_(r-1,r-1))`,**
+>
+> a single-edge subdivision of the complete bipartite graph.
+
+Moreover Cell B has a canonical genuine coloring obtained from a 1-factorization of `K_(r-1,r-1)` by subdividing one factor edge and assigning both subdivision edges the same factor color.
+
+Thus Cell B is a real local design extremizer, not a numerical artefact.
+
+## 7. Latin / rainbow extension reduction
+
+For an ordinary non-target factor color j in Cell B,
+
+`C_j[W]=M_j + isolated w`.
+
+For an outside color-j-independent set S, the exact extension condition is
+
+`1_(w in N_j(S)) + # {factor edges e subseteq N_j(S)} >= |S|`.
+
+Consequences:
+
+- a single outside vertex must either use its w-edge as a one-edge certificate or cover both endpoints of a factor edge;
+- across different colors, the chosen factor edges for one outside vertex are pairwise vertex-disjoint;
+- hence the minimum extension pattern is a large rainbow matching / Latin partial transversal;
+- for three anchors, in almost every factor the three selected certificates must be distinct.
+
+Therefore the sharp Cell B nonextension problem is a three-fold near-complete Latin partial-transversal extension problem, not arbitrary graph casework.
+
+## 8. Pointwise cross bound in Cell B
+
+For every outside vertex o in Cell B, the certificate constraints force at least `2r-4` of its `2r-1` edges into W to be non-target.
+
+Hence
+
+> **`d_F(o,W)<=3` for every outside vertex o.**
+
+This is an exact pointwise target-cross bound.
+
+## 9. High Cell B has only 22 defect units
+
+In the high terminal layer `delta(F)=r+1`, let A,B be the two `(r-1)` target cliques inside W and w the subdivision vertex.
+
+Inside W:
+
+- every A/B vertex has target degree `r-1`;
+- w has target degree `2r-4`.
+
+Write
+
+`d_F(s,O)=2+a_s` for side vertices,
+
+`x_w=d_F(w,O)`,
+
+and
+
+`kappa_o=d_F(o)-(r+1)` for outside vertices.
+
+The contextual edge cap gives total excess above `r+1` at most `r+17`, while w already contributes unavoidable excess `r-5` internally.
+
+Therefore
+
+> **`x_w + sum_s a_s + sum_o kappa_o <=22`.**
+
+Thus the high Cell B extension is a **22-defect problem independent of r**.
+
+In particular:
+
+- `x_w<=22`;
+- total side over-incidence is at most22;
+- all but at most22 outside vertices have exact target degree `r+1`;
+- every outside vertex has at most3 target neighbours in W.
+
+This is the strongest current downstream normal form.
+
+## 10. New all-large-r logical DAG
+
+The preferred architecture is now
 
 `hypothetical counterexample`
 
 `-> contextual extraction theorem`
 
-`-> either 4r+1 or 5r+1`
+`-> 4r+1 or 5r+1`
 
-`-> 4r+1 dies immediately by contextual cap`
+`-> 4r+1 dies immediately`
 
 `-> 5r+1 has delta in {r,r+1}`
 
-`-> for r>=71, direct near-anchor triple`
+`-> r>=67 gives direct near-anchor triple`
 
-`-> uniform near-anchor incompatibility theorem`
+`-> common anti-neighbourhood has constant size offset`
+
+`-> top cell is explicit subdivided-factorization design`
+
+`-> high cell has only22 extension defects`
+
+`-> uniform nonextension theorem`
 
 `-> contradiction`.
 
-Thus the two load-bearing missing results are now much cleaner:
+The old d2/d3 backend machinery remains valuable for fixed-r and finite-tail certification but is no longer the most direct all-large-r route.
 
-1. **upstream contextual extraction:** force the `4r+1 / 5r+1` dichotomy for all sufficiently large r;
-2. **downstream near-anchor incompatibility:** turn the extracted low-excess independent triple in the `5r+1` terminal into a contradiction.
+## 11. Load-bearing missing theorems
 
-The old symbolic d2/d3 support machinery remains valuable for fixed r and for equality diagnostics, but it is no longer the highest-leverage route to an all-large-r theorem.
+Only two major all-large-r ingredients remain:
 
-## 6. Existing symbolic backend assets remain valid
+1. **upstream contextual extraction:** force every hypothetical counterexample into the `4r+1 / 5r+1` dichotomy;
+2. **downstream design nonextension:** exclude the bounded-offset near-anchor survivors, in particular the Cell B subdivided-factorization extension.
 
-Conditional on a legal `4r+1` backend view, the following are still proved symbolically:
+For `r>=67`, the terminal anchor extraction itself is no longer open.
 
-- `e(F)=C(r+2,2)+q+e(H)`;
-- `K_r(H)=2(E-q-(2r^2+r+1))`;
-- exact regular-repivot identity;
-- row closure;
-- allowance localization;
-- zero-signature/sunflower decomposition;
-- repeated-support strict loss;
-- exact Bridge B transported-excess identity.
+## 12. r=12 implication
 
-These assets should now be treated primarily as fixed-r / finite-tail machinery, or as a fallback if the contextual extraction theorem outputs a weaker terminal contract than desired.
+For the fixed r=12 project, contextual `R(4,49)` is already impossible, so the front-end recurrence may treat no-49-extraction as a theorem. The only original front obstruction is T61.
 
-## 7. Multicolor near-extremal owner capacity
+The surviving T61 branch has `delta=13`, i.e. precisely the high terminal layer. Therefore if its near-anchor common anti-neighbourhood enters Cell B, it inherits the same 22-defect extension ledger.
 
-A second new consequence of full-color stability is a slope-1/2 owner bound near contextual extremality.
-
-If the residual contextual edge deficit is epsilon, a clique of target-degree-`r+1` vertices has size at most
-
-`[r-1+2epsilon+epsilon sqrt(4epsilon+1)]/2`.
-
-Hence any common-S owner family satisfies
-
-> **`N <= [r-3+2epsilon+epsilon sqrt(4epsilon+1)]/2`.**
-
-For fixed epsilon this is
-
-`N<=r/2+O_epsilon(1)`,
-
-improving the old hereditary sunflower capacities of slope1.
-
-This creates a genuine slope contradiction whenever shell forcing can produce a common-S class larger than `(1/2+o(1))r`.
-
-## 8. Current status of the old near-anchor/core theorem
-
-For a `3r-1` backend core, the direct forcing lemma still gives an independent triple `(r,<=r+1,<=r+1)` under the residual-core contract. The old desired statement
-
-`independent low-excess triple => K_r>=8`
-
-remains open in general.
-
-However, for the new all-large-r route the more relevant theorem is now the analogous **5r+1 terminal near-anchor incompatibility theorem**. It may be stronger and easier to formulate directly in the original residual rather than passing through a `3r-1` core.
-
-## 9. r=12 implication
-
-For the fixed r=12 project, the contextual 4r+1 cap combines with the already-proved front-end `delta(F)>=13` to show:
-
-> **no genuine contextual `R(4,49)` residual exists in the original balanced K145 coloring.**
-
-Therefore the contextual recurrence may treat the no-49-extraction condition as a theorem rather than a temporary assumption, and the only original front-end obstruction is the embedded T61 branch.
-
-This does not by itself close T61 or the full r=12 proof; it simplifies the front-end dependency DAG.
-
-## 10. Highest-leverage theorem now
-
-The highest-leverage general theorem is no longer a full residual-core extraction into the old backend. It is:
-
-> **Contextual 4r+1 / 5r+1 Extraction Theorem.** For all sufficiently large r, every hypothetical balanced r-coloring of `K_(r^2+1)` in its least-edge color contains either
->
-> - a contextual `4r+1` residual with minimum degree at least `r+1`, or
-> - a contextual `5r+1` terminal with minimum degree at least r and the inherited full-color completion constraints.
-
-Once this is proved:
-
-- the `4r+1` branch is impossible for all `r>=5`;
-- the `5r+1` terminal is forced into `delta in {r,r+1}`;
-- for `r>=71`, it automatically contains a direct near-anchor triple;
-- only one uniform near-anchor incompatibility theorem remains downstream.
-
-This is currently the shortest plausible path to an all-sufficiently-large-r theorem.
+This does not yet certify the full r=12 proof, but it gives a new cross-check and a much more structured route for the remaining high T61 states.
