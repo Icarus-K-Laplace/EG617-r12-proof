@@ -61,7 +61,7 @@ R12_WITNESS_OVERLAP_STAR_LEMMA.md records a proved structural reduction for repe
 
 Next attack: couple this overlap-star dichotomy to the 284-edge core's exact shell-incidence budget and the five E407 Q32 templates. The theorem remains OPEN / NOT_CERTIFIED.
 
-## Round 3 — witness-union capacity refinement (commit cd6bf8c631bb09bb6099f5f328949553ea9c56bc)
+## Round 3 — witness-union capacity refinement (commit 9dd07314d73c721c9cc8b008b7a7166c825ce566)
 
 R12_WITNESS_UNION_CAPACITY_REFINEMENT.md proves the core-capacity inequality
 \[
@@ -78,3 +78,19 @@ for a pairwise-linear family of independent 4-sets in a legal 47-vertex, 284-edg
 These refine the previous general witness-union bounds and isolate the boundary kernels, but do not eliminate them. The remaining union-size boundaries are E407 A/B with seven exact-129 colors and \(v=29\), E407 C/D/E with seven exact-129 colors and \(v=32\), and E408 Q33/d3 with \(\beta=0\) and \(v=31\).
 
 **E408 Q32 is explicitly excluded from this application** until its own reduction certifies the required shell-support split; its core has 285 edges and excess six. No E407/E408 terminal is closed, and the root theorem remains OPEN / NOT_CERTIFIED.
+
+
+## Round 4 — witness-hitting inequality and boundary residue (commit fbd9b72a50d78b7e71ff0c733528aea9985b9885)
+
+The witness-union note now also proves the outside-core hitting inequality
+```
+Σ r_x d_R(x) + Σ r_x ε_x ≥ N(3v−5) − 3Σ r_x²,
+```
+because every vertex outside U must hit every independent 4-set Q_i. This uses only α(H)≤4 and the exact core degree identity.
+
+At the remaining boundary sizes it yields:
+- E407 A/B, seven exact-129 colors, v=29: 2R+E_U≥4, while R+E_U≤16.
+- E407 C/D/E, seven exact-129 colors, v=32: every core-union vertex has multiplicity r_x=7, hence 2R+E_U≥56, while R+E_U≤39; in particular R≥26.
+- E408 Q33/d3, β=0, eight exact-129 colors, v=31: 2R+E_U≥7, while R+E_U≤17; in particular R≥2.
+
+Here R counts complement edges not covered by the selected witness K4s, and E_U is the total core degree excess on U. These are stricter necessary conditions, not contradictions. E408 Q32 remains outside the contract. The headline theorem remains OPEN / NOT_CERTIFIED.
