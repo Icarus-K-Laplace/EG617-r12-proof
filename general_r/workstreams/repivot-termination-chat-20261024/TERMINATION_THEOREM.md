@@ -6,39 +6,105 @@ The intended final statement is:
 
 > **Endpoint Repivot Stability Theorem.** For every sufficiently large r, under hypotheses A+B, every admissible local pivot view either admits a strict increase of a bounded lexicographic repivot potential or belongs to a finite r-independent family of rigid endpoint configurations, all of which are impossible.
 
-This full theorem is **OPEN**.
-
-What is now proved is a strong endpoint-compression package. All medium degrees disappear; d3 disappears; the high endpoint has at most three owners; and the low d1/d2 shell supports admit constant-size heavy transversals.
+The final contradiction theorem is **OPEN**. The shell-side endpoint classification is now fixed-width.
 
 ---
 
-# Theorem A — Conditional Endpoint Compression
+# Theorem A — Conditional Fixed-Width Endpoint Compression
 
-Assume A+B and `r>=12`. Choose a pivot maximal in `(q,tau)`.
+Assume A+B and `r>=12`, and choose a pivot maximal in `(q,tau)`.
 
-Every regular shell vertex belongs to one of:
+Then every regular shell vertex lies in one of the following endpoint classes:
 
 1. `d=0`: neutral pivot symmetry; quotient it.
-2. `d=1`: one-vertex excess exchange; all shell missing partners lie in at most five heavy shell vertices.
-3. `d=2`: the only scalable support-interaction endpoint; every shell missing pair meets a six-vertex heavy set and every unbounded family of distinct pairs is confined to at most four stars.
-4. `d=3`: eliminated by the strengthened d3 charge/B-floor plus the existing low-charge Bridge-B absorption.
-5. `d>=r-2`: at most three such vertices exist in the entire shell, and their interaction is encoded by an r-independent bounded-complement skeleton.
+2. `d=1`: one-vertex excess exchange; all shell missing partners lie in a set of at most five vertices, hence at most five shell common-S classes.
+3. `d=2`: all shell missing-set endpoints lie in a set of at most six vertices, hence at most fifteen shell common-S classes.
+4. `d=3`: eliminated by the d3 equality B-floor plus the declared low-charge Bridge-B absorption.
+5. `d>=r-2`: at most three such owners exist in the whole shell; their interaction is an r-independent bounded-complement kernel.
 
 No degree `4<=d<=r-3` occurs.
 
-Moreover:
+Consequently:
 
-- every closed `(q,tau)`-non-improving repivot cycle is entirely q-flat and tau-flat;
-- K cannot serve as an additional potential coordinate because `Delta K=-2 Delta q`;
-- every repeated support on such a plateau cycle has a fully decorated shell partner;
-- every d2 common-S system has exact charge `W=K+2r-2+a+b`;
-- a three-class d2 one-loss common-hub terminal must satisfy `K+a+b>=r`.
+> **The number of shell-side endpoint support types is bounded by an absolute constant independent of r.**
+
+There is no surviving r-growing shell-support case tree.
 
 **Status:** `PROVED_CONDITIONAL`.
 
 ---
 
-# Theorem B — High Endpoint Three-Owner / Bounded-Complement Reduction
+# Theorem B — Shell-Incidence Endpoint Kernel
+
+For shell vertices define
+
+`t_s=d_M(s)+g_s=e_F(s,H)`.
+
+Then
+
+`sum_A t_s=2e(M)+G_A=2q-G_A<=6r-2`.
+
+For any regular owner y with shell missing set S of size d and `b=e_M(S)`, singleton transport gives pointwise
+
+> `sigma_s=t_s-(r+1-d)-m_S(s)>=0` for every `s in S`,
+
+and, after summing,
+
+> `sum_{s in S} t_s=d(r+1-d)+a_y+b_y`.
+
+### d1 consequence
+
+For `S={s}`,
+
+`t_s>=r`.
+
+Thus all d1 shell support points lie in
+
+`C_1={s:t_s>=r}`
+
+with
+
+> `|C_1|<=5`.
+
+### d2 consequence
+
+For `S={u,v}` and `b=e_M(S)`,
+
+`t_u,t_v>=r-1+b`.
+
+Let `U_2` be the union of all d2 shell support pairs. Then
+
+> `|U_2|<=6`,
+
+so there are at most
+
+> `C(6,2)=15`
+
+d2 shell classes.
+
+Writing
+
+`h_u=t_u-(r-1)`,
+
+each d2 class satisfies
+
+> `a_{uv}=h_u+h_v-b_{uv}`.
+
+If `m=|U_2|`,
+
+`sum_{u in U_2} h_u <= (6-m)r+m-2`.
+
+At the maximal support-universe boundary `m=6`,
+
+`sum h_u<=4`
+
+and the total number of d2 owners is at most two. Thus even the maximal six-point shell kernel has bounded multiplicity/allowance.
+
+**Status:** `PROVED_CONDITIONAL`.
+
+---
+
+# Theorem C — High Endpoint Three-Owner / Bounded-Complement Reduction
 
 Under A+B, `r>=12`, all regular owners with `d>=r-2` form a set of size at most three.
 
@@ -57,124 +123,117 @@ The combinatorial skeleton family is independent of r.
 
 **Status:** `PROVED_CONDITIONAL`.
 
-This is the requested **Level 3** high-endpoint result.
+This achieves the requested **Level 3** high-endpoint reduction.
 
 ---
 
-# Theorem C — Plateau Cycle Rigidity
+# Theorem D — Low-Endpoint Owner Clique Lemma
 
-For a closed regular-repivot cycle in a fixed residual F:
+For `r>=12`, any two regular owners x,y with `d_x,d_y<=3` are target-adjacent.
 
-`sum Delta q=0`, `sum Delta K=0`.
+Indeed, if they were target-nonadjacent, zero-gap would require
 
-If every edge is non-improving in `(q,tau)`, then each edge has
+`S_x union S_y=A`,
 
-`Delta q=Delta tau=Delta K=0`.
+whereas
 
-Every repeated support on the cycle is fully decorated on its shell partner.
+`|S_x union S_y|<=6<r+1=|A|`.
 
-Thus no-improvement cycles reduce to simultaneous equality classification.
+Therefore all regular low-endpoint owners, together with the pivot p, form a target clique. Since `omega(F)<=r-1`, the total number of regular low-endpoint owners is at most
+
+> `r-2`.
+
+At hereditary equality, the multicolor equality regular-clique obstruction can sharpen this linear owner count further, but the fixed-width shell classification above does not need that refinement.
 
 **Status:** `PROVED_SYMBOLIC`.
 
 ---
 
-# Theorem D — Low-Endpoint Shell Heavy-Cover Compression
+# Theorem E — d2 scalar/core-support barrier
 
-Define
+For every d2 common-S system,
 
-`t_s=d_M(s)+g_s=e_F(s,H)`
+> `W=K+2r-2+a+b`.
 
-for shell vertices. Then
+For an exact-one-loss common-hub subsystem with three distinct core support classes, the existing charge barrier gives
 
-`sum_A t_s=2e(M)+G_A<=2q<=6r-2`.
+`W>=3r-2`,
 
-For any regular owner y, using its singleton common-S representation with missing set S of size d, allowance a and `b=e_M(S)`, one has the exact identity
+hence
 
-> **`sum_{s in S} t_s=d(r+1-d)+a+b`.**
+> `K+a+b>=r`.
 
-Consequences:
+Thus any difficult three-class d2 terminal must carry a linearly high excess/allowance budget. The shell pair S itself, however, now belongs to one of at most fifteen fixed classes.
 
-### d1
-
-The unique shell missing partner satisfies `t_s>=r`. Hence all d1 shell supports belong to a fixed set of at most five vertices. Thus there are at most five d1 common-S classes.
-
-### d2
-
-Every missing pair `{s,t}` satisfies
-
-`t_s+t_t>=2(r-1)`.
-
-Therefore every pair meets
-
-`C_2={v:t_v>=r-1}`,
-
-with
-
-`|C_2|<=6`.
-
-More sharply, let
-
-`P={v:2t_v>=3(r-1)}` and `Q={v:2t_v>=r-1}`.
-
-Then `|P|<=4`, `|Q|<=12`, and every d2 missing pair either
-
-- is incident with P, hence belongs to one of at most four scalable star families; or
-- lies entirely inside Q, an at-most-twelve-point bounded core.
-
-Thus arbitrary r-growing d2 support graphs are impossible: all unbounded distinct-support diversity is star-shaped around at most four hubs.
-
-**Status:** `PROVED_CONDITIONAL`.
-
-This is the key new compression on the previously unique scalable endpoint.
+**Status:** exact identity `PROVED_SYMBOLIC`; three-class consequence `PROVED_CONDITIONAL`.
 
 ---
 
-# Candidate refinement
+# Theorem F — Plateau Cycle Rigidity
 
-On a q-flat plateau define
+For a closed legal repivot cycle in a fixed residual graph,
 
-`Q2=sum kappa_v^2`.
+`sum Delta q=0`, `sum Delta K=0`.
 
-It is bounded by `K^2` and has an exact repivot update formula in `POTENTIAL.md`. Thus
+If every edge is non-improving in `(q,tau)`, then every edge is simultaneously q-flat and tau-flat. Every repeated support on such a cycle has a fully decorated shell partner.
+
+Thus any no-improvement cycle reduces to simultaneous equality classification inside the finite endpoint classes above.
+
+**Status:** `PROVED_SYMBOLIC`.
+
+---
+
+# Potential status
+
+`(q,tau)` is a genuine bounded lexicographic potential.
+
+K is not a new coordinate because
+
+`Delta K=-2 Delta q`.
+
+On a q-flat plateau,
+
+`Q2=sum_{v in H} kappa_v^2`
+
+is a bounded integer and has an exact repivot update formula in `POTENTIAL.md`. Hence
 
 `Phi_3=(q,tau,Q2)`
 
-is a legitimate bounded lexicographic candidate.
+is a legitimate candidate refinement, but universal Q2 monotonicity is not proved.
 
-What is not yet proved is universal Q2 improvement outside the rigid families. A signature/star multiplicity coordinate may be sharper for the remaining d2 star systems.
+The finite d2 shell kernel suggests a potentially sharper refinement by the ordered multiplicity/defect profile of the at-most-fifteen fixed d2 classes.
 
 ---
 
-# Remaining route to a sufficiently-large-r contradiction
+# What remains for Level 4 / Level 5
 
-After Theorems A–D, a global terminal can only be assembled from:
+After Theorems A–F, a global terminal can only be assembled from:
 
-- at most five d1 shell-support classes, each a one-vertex exchange system;
-- d2 support systems consisting of an at-most-twelve-vertex bounded core plus at most four scalable stars;
-- within d2, the linearly-high equality/positive-loss regime `K+a+b>=r` and isolated deep-loss blocks;
-- at most three high-endpoint bounded-complement owners;
-- simultaneous equality cycles among these pieces.
+- at most five d1 shell classes, with q/tau-flat one-point core exchanges;
+- at most fifteen d2 shell classes, each carrying owner multiplicity, core support sets, and transported loss/excess;
+- within a d2 class, the known one-loss common-hub / at-most-three-core-support-class structure and isolated deep-loss blocks;
+- at most three high-endpoint owners;
+- simultaneous equality cycles among these finitely many classes.
 
-The remaining r-growth is therefore no longer an arbitrary support hypergraph. It is confined to **at most four weighted d2 stars** (plus owner multiplicities inside finitely many fixed support classes).
+Thus **all r-growing combinatorial complexity has moved off the shell support hypergraph and into multiplicity/core-support data inside a constant number of classes.**
 
-A Level-5 theorem should now target the following narrower statement:
+The correct next theorem is now:
 
-> **D2 Star Termination Lemma.** In a `(q,tau)`-maximal state, no scalable d2 star centered at a heavy shell vertex can support the linearly-high equality/positive-loss budget `K+a+b>=r` without either (i) producing a strict plateau-coordinate improvement, (ii) collapsing to repeated fully-decorated support, or (iii) violating a multi-pivot transported-excess sum.
+> **Finite-Class d2 Core Multi-Pivot Theorem.** Fix a d2 shell class `S={u,v}`. With shell parameters `b`, `h_u`, `h_v`, `sigma_u`, `sigma_v`, and `a=h_u+h_v-b` fixed, any family of legal owners that is simultaneously non-improving in `(q,tau)` either admits a strict increase in a bounded refinement of the potential or collapses to a finite impossible core-support skeleton.
 
-Proving this for one star and summing over the at most four hubs would leave only O(1)-sized endpoint kernels.
+Proving this uniformly, then summing over at most fifteen shell classes, would remove the last scalable endpoint mechanism and is the most direct route to a sufficiently-large-r contradiction.
 
 ---
 
 # Certified success level
 
-- Level 1: d3 closure obtained (conditional on the declared upstream low-charge assets).
-- Level 2: not yet; d1/d2 terminal elimination remains, although their shell-support geometry is now bounded/heavy-star compressed.
+- Level 1: d3 closure obtained.
+- Level 2: full low endpoint elimination not yet; however d1/d2 **shell geometry is completely fixed-width**.
 - **Level 3: achieved** — high endpoint reduced to a finite three-owner bounded-complement skeleton.
-- Level 4: open — no globally strict refined potential yet.
+- Level 4: open — no globally strict third potential coordinate yet.
 - Level 5: open — no certified absolute r0 yet.
 - Level 6: open.
 
 # Single blocker
 
-> **D2 heavy-star plateau stability:** eliminate or rigidify the at most four scalable d2 star systems in the linearly-high regime `K+a+b>=r`.
+> **Finite-class d2 core-support multi-pivot compatibility:** eliminate or rigidify simultaneous non-improving owner families inside one fixed d2 shell class, then combine across the at-most-fifteen classes.
