@@ -208,39 +208,47 @@ External theorem: Füredi's quantitative Turán stability bound, recalled in Bal
 
 **Limitation:** this is a near-resolvable design with O(r) exceptional pairs, not an exact design and not yet an earlier-stop theorem.
 
-### 9B. Constant-width target groups and cylinder hub localization
+### 9B. Brouwer-tightened target groups and cylinder hub localization
 
-Status: **`PROVED_ANALYTIC`** for each fixed `a>=6` and `r>=binom(a,2)+a+1`; the sharpened `a=6` hub bound holds for `r>=1000`.
+Status: **`PROVED_ANALYTIC`** for every fixed `a>=6`, conditional on the exact high-stop contract; for `a=6`, the improved numerical bounds hold for `r>=22` and the hub bound below for `r>=1000`.
 
-Let `F_0=bar(G_0[R_a])`. Since `alpha(G_0[R_a])=a`, `F_0` is `K_{a+1}`-free. Füredi's partition has internal-edge count `D<=x_0`, missing cross-pair count `M_0<=2x_0`, and `x_0<=S_a(r)`.
+The non-partite Turán bound gives the simultaneous color floors `x_0>=r` and `x_i>=a-1` for every non-target color. The target floor uses the Kang–Pikhurko equality classification to rule out equality at `x_0=r-1`; the non-target floor is Brouwer's bound and may be attained.
 
-For a target ideal group `V_j` of size `s_j`, the hereditary cap gives `e(F_0[V_j])=sum_{i>0} e(G_i[V_j]) >= (r-1)p_r(s_j) >= (r-1)(s_j-r)_+`. Hence, writing `C=binom(a,2)` and `P=sum_j(s_j-r)_+`,
+Combining the floors with `sum_i x_i=S_a(r)=(binom(a,2)-1)r+a` yields
 
-`(r-1)P<=D<=x_0<=S_a(r)=(C-1)r+a`.
+`x_0<=(binom(a,2)-a)r+2a-1`,
+`sum_{i>0}(x_i-(a-1))<=(binom(a,2)-a-1)r+2a-1`.
 
-For `r>=C+a+1`, `P<=C-1`, so
+For `a=6`,
 
-`r-C+2<=s_j<=r+C-1`.
+`x_0<=9r+11`,
+`sum_{i>0}(x_i-5)<=8r+11`.
 
-For `a=6`, all target groups have **absolute width** `r-13<=s_j<=r+14` for `r>=22`.
+Let `F_0=bar(G_0[R_a])`. Füredi's partition has internal-edge count `D<=x_0`, missing cross-pair count `M_0<=2x_0`, and balanced-part imbalance `Delta`. For a target ideal group `V_j` of size `s_j`, the hereditary cap gives
 
-Now let `C_0` be the graph of target-color edges crossing different target groups. For every internal edge `uv` of `F_0` in one group, the product-cover argument gives
+`e(F_0[V_j])=sum_{i>0}e(G_i[V_j]) >= (r-1)(s_j-r)_+`.
 
-`d_{C_0}(u)+d_{C_0}(v)>=L-M_0/L`,
+Writing `C=binom(a,2)` and `P=sum_j(s_j-r)_+`, we obtain `(r-1)P<=D<=x_0`. For `r>=C+a+1`,
 
-where `L=min_j s_j`. Define `H_r=L-M_0/L` and `X={v:d_{C_0}(v)>=H_r/2}`. Whenever `H_r>0`, every internal target-complement edge meets `X`, and
+`r-C+a+1<=s_j<=r+C-a`.
 
-`|X|<=4M_0/H_r`.
+For `a=6`, this sharpens the group range to **`r-8<=s_j<=r+9`** for `r>=22`.
 
-For `a=6`, `L>=r-13` and `M_0<=28r+12`. For every `r>=1000`, `H_r>=r-42`, giving
+Let `C_0` be the target-color graph crossing distinct ideal groups and `L=min_j s_j`. For every internal edge `uv` of `F_0`, the product-cover argument gives
 
-`|X|<=4(28r+12)/(r-42)<117`.
+`d_{C_0}(u)+d_{C_0}(v)>=L-M_0/L`.
 
-Thus **at most 116 hubs suffice for every `r>=1000`**; outside this set, every target ideal group is an actual target-color clique.
+Set `H_r=L-M_0/L` and `X={v:d_{C_0}(v)>=H_r/2}`. If `H_r>0`, every internal target-complement edge meets `X`, and `|X|<=4M_0/H_r`.
+
+For `a=6`, `L>=r-8` and `M_0<=18r+22`. For `r>=1000`, `M_0/L<=19`, so `H_r>=r-27` and
+
+`|X|<=4(18r+22)/(r-27)<75`.
+
+Thus **at most 74 hubs suffice for `a=6, r>=1000`**, improving the previous bound 116.
 
 File: `NO_HIGH_STOP_ROUND2_LEMMAS.md`.
 
-**Limitation:** target internal defects are localized, but this does not yet show that all non-target block defects or hub-protection parts share a common kernel. Hub propagation / robust nonextension remains open.
+**Limitation:** the sharper hub and group-size bounds still do not prove that the non-target block defects share the same kernel or that the high stop is impossible.
 
 ### 9C. Exact predecessor label-capacity structure
 
@@ -259,6 +267,24 @@ More exactly, if these classes are `S_{i,b}`, then
 `sum_{b in B}(a-|S_{i,b}|)=z_i-1`.
 
 So each non-target color partitions all but `z_i` vertices into `r` exact monochromatic cliques of size at most `a`; when `z_i=1`, all `r` classes have size exactly `a`.
+
+File: `NO_HIGH_STOP_ROUND2_LEMMAS.md`.
+
+### 9D. Brouwer excess vector and scalar-feasibility audit
+
+Status: **`PROVED_ANALYTIC`** for the all-color floors; **`ABSTRACT_PARAMETER_COUNTERMODEL`** for the numerical audit (not a graph counterexample).
+
+At an exact high stop, `F_0=bar(G_0)` is non-`a`-partite and `K_{a+1}`-free. Brouwer gives `x_0>=r-1`; the Kang–Pikhurko equality classification gives an independent set of size at least `r` in an equality graph, so the terminal cap `omega(G_0)<=r-1` strengthens this to `x_0>=r`.
+
+For every non-target `i`, `F_i=bar(G_i)` is non-`r`-partite and `K_{r+1}`-free: `omega(G_i)<=a` because color-`i` cliques are target-independent, so an `r`-partite `F_i` would have at most `ar` vertices. Brouwer therefore gives `x_i>=a-1`.
+
+Consequently the excess above these individual floors satisfies
+
+`sum_{i>0}(x_i-(a-1))<=(binom(a,2)-a-1)r+2a-1`.
+
+For `a=6`, the upper bound is `8r+11`. The explicit abstract assignment in `NO_HIGH_STOP_ROUND2_LEMMAS.md` satisfies the exact excess ledger, predecessor increments, target partition identity, stability budgets, hub-count bound, and cross-pair count. It is **not** a real graph or coloring certificate; it shows only that these scalar constraints cannot by themselves close `NO-HIGH-STOP`.
+
+An additional audit shows that for fixed `a>=6`, `alpha(G_0)=a` is automatic once `r>=a^2` (and for `a=6`, once `r>=24`): otherwise `e(G_0)>=p_{a-1}(ar+1)`, but the elementary bound `p_{a-1}-p_a >= (ar+1)^2/(2a(a-1))-a/8` exceeds the entire excess budget `S_a(r)`. This threshold is not uniform when `a` grows with `r`.
 
 File: `NO_HIGH_STOP_ROUND2_LEMMAS.md`.
 
@@ -322,7 +348,7 @@ This remains open. Specifically:
 
 - `a=6) has **not** been closed;
 - no induction/trim theorem is known for arbitrary `a>=7);
-- uniform edit-distance partition stability is proved via Füredi, target ideal groups have absolute width, and fixed-a target-complement defects localize to O(a^2) hubs; exact/near-orthogonality incidence analysis and design trimming remain open;
+- uniform edit-distance partition stability is proved via Füredi, target ideal groups have absolute width, and fixed-a target-complement defects localize to O(a^2) hubs; Brouwer floors now sharpen the excess vector, but the scalar-feasibility audit shows that joint incidence analysis and design trimming remain open;
 - approximate orthogonality, an exact resolvable-design skeleton, and a design-trimming implication are not proved.
 
 The blocker is now a precise structural problem. Any high-stop candidate must simultaneously satisfy:
@@ -356,4 +382,4 @@ Rejected proof shortcuts:
 
 ## NEXT HIGHEST-LEVERAGE TARGET
 
-Prove a **hub-propagation / design-trimming lemma** for the `a=6` target complement: its ideal parts have sizes `r-13` through `r+14`, and its internal edges are incident to at most 116 hubs for `r>=1000`; combine this with every non-target color being duplicated at least once on the predecessor clique interface. Show either that these hubs force an earlier `R_5` satisfying the edge budget, or that their incidence pattern contradicts the critical-core residue windows. Do not return to fixed-r recurrence or claim NO-HIGH-STOP closed before a proof exists.
+Prove a **joint incidence-packing / hub-propagation lemma** for `a=6`: use the sharpened part sizes `r-8` through `r+9`, at most 74 hubs for `r>=1000`, the excess floors `x_i>=5`, `x_0>=r`, and the exact `z_i` label classes. The scalar parameter audit passes, so the next proof must exploit the equality/small-defect structure of the Brouwer extremal templates and its alignment with the predecessor classes; do not try another scalar-only contradiction. Show either that these hubs force an earlier `R_5` satisfying the edge budget, or that their incidence pattern contradicts the critical-core residue windows. Do not return to fixed-r recurrence or claim NO-HIGH-STOP closed before a proof exists.
