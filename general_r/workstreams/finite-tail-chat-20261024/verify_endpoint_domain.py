@@ -38,26 +38,25 @@ def sha256(obj: object) -> str:
 
 
 def expected_reflection_classes(candidates: list[int], r: int) -> list[dict]:
-    remaining = set(candidates)
+    candidate_set = set(candidates)
+    visited = set()
     result = []
-    while remaining:
-        d = min(remaining)
+    for d in candidates:
+        if d in visited:
+            continue
         partner = r + 1 - d
         if partner == d:
             members = [d]
             rule = "fixed_point"
-        elif 0 <= partner <= r and partner in remaining:
-            members = sorted([d, partner])
+        elif 0 <= partner <= r and partner in candidate_set:
+            members = sorted((d, partner))
             rule = "paired_by_scalar_reflection"
         elif partner < 0 or partner > r:
             members = [d]
             rule = "unpaired_boundary_partner_outside_legal_domain"
         else:
-            if partner not in candidates:
-                raise AssertionError("reflection does not preserve necessary-bound domain")
-            members = [d]
-            rule = "partner_already_accounted"
-        remaining.difference_update(members)
+            raise AssertionError("reflection does not preserve necessary-bound domain")
+        visited.update(members)
         result.append({"representative": min(members), "members": members, "rule": rule})
     return result
 
