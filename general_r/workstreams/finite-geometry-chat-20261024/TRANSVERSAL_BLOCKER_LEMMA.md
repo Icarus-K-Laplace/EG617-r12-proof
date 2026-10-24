@@ -52,3 +52,7 @@ If some B_a is empty, Y contains a full color-i clique block, which trivially hi
 ## Limitation
 
 This lemma is a necessary condition, not a full characterization of independent-transversal obstructions. It does not by itself imply a contradiction for two orthogonal partitions, nor does it create line-like blocks in three directions. Its value is quantitative: it localizes where the small number of defect edges must lie.
+
+## Round 2 application — local slack gap
+
+The weighted blocker lemma is now used together with a separate block-plus-vertex constraint in `HIGH_SLACK_COMPATIBILITY.md`. If local slack s<=q-2, the low-slack structure supplies q monochromatic K_q blocks. The q+1-set `{x} union A_a` forces at most one color-i edge from x into each block, hence d_i(x)<=q. The blocker gives d_i(x)>=2q-s-1>=q+1, contradiction. Thus under the full counterexample contract the weighted blocker does not realize a small-slack configuration; it certifies the local gap `s_i(x)>=q-1`.
