@@ -100,7 +100,7 @@ The command-line generator -> verifier -> promotion gate completed successfully 
 - r=12, 13, 14, 15;
 - r=68.
 
-The 10 scalar-profile runs returned `PASS` from the independent verifier and `PASS_CONDITIONAL_MODULE` from the module gate. The D1 shell-count module additionally passed end-to-end at r=12,13,68 (three more runs). All 13 final-gate runs explicitly reported `eg617_r_proved=false`.
+The 10 scalar-profile runs returned `PASS` from the independent verifier and `PASS_CONDITIONAL_MODULE` from the module gate. The D1 shell-count module additionally passed end-to-end at r=12,13,68 (three more runs). All 13 matrix runs explicitly reported `eg617_r_proved=false`. After the final replay-command metadata update changed the gate hash, both committed r=13 sample certificates were rerun through the final gate and passed; both receipts bind the current gate hash.
 
 Additional exact checks:
 
