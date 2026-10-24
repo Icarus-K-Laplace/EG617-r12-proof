@@ -107,10 +107,10 @@ The terminal definition and the forcing implication must remain separate: the an
 Status: **OPEN**.
 
 It is enough to contradict only the direct near-anchor outputs of the anchored (5r+1) terminal:
-- (delta(T)=r), triple ((r,\le r+1,\le r+1)), with (|W|\in\{2r-4,2r-3,2r-2,2r-1\});
+- (delta(T)=r), triple ((r,\le r+1,\le r+1)), with (|W|\in\{2r-4,2r-3,2r-2\});
 - (delta(T)=r+1), triple ((r+1,\le r+2,\le r+2)), with (|W|\in\{2r-7,\ldots,2r-2\}).
 
-The high-degree (|W|=2r-1) case is already excluded for (r\ge25) by the Cell A/B theorems. The low-degree (delta=r, |W|=2r-1) case is NOT covered by those theorems and remains OPEN.
+The high-degree (|W|=2r-1) case is excluded for (r\ge25) by the Cell A/B theorems. The low-degree (delta=r, |W|=2r-1) case is now separately excluded for (r\ge25) by LOW_DEGREE_TOP_LAYER_CLOSURE.md (commit 301dcacab800fd95b7a750042ba92143cf0f2c5f). All remaining D_low cases have |W|≤2r−2.
 
 ### S67-low — conditional synthesis
 
