@@ -985,8 +985,8 @@ If `Z_j=0`, then `m_j=0`, at least `9(r-1)` collision units occur, and at most 2
 - The critical-core polynomial confines fixed-`a` residues to explicit bounded-width windows for `r>=R_a`.
 - The predecessor label-capacity lemma proves `z_i>=1` for every non-target color, with exact class-hole identity.
 - The exact predecessor-label defect identity, two-label product obstruction, and stability-part alignment lemma are proved.
-- Every fixed-a high stop contains a pairwise-linear partial resolvable `TD(a,r)` with `r^2-O_a(r)` blocks; for `a=6,r>=1000`, at least `r^2-112r` blocks are forced.
-- For fixed `a`, target groups have absolute width and every internal target-complement edge is incident to at most `4M_0/H_r` hubs; after Brouwer tightening, for `a=6` at most 74 hubs suffice for `r>=1000`.
+- Every fixed-a high stop contains a pairwise-linear partial resolvable `TD(a,r)` with `r^2-O_a(r)` blocks; for `a=6,r>=1000`, at least `r^2-112r` blocks are forced, and for `r>=26272` the improved bound is `r^2-66r`.
+- For fixed `a`, target groups have absolute width and every internal target-complement edge is incident to at most `4M_0/H_r` hubs; for `a=6`, `|X|<=74` when `r>=1000`, improved to `7<=|X|<=28` when `r>=26272`.
 ### NOT PROVED
 
 - (a=6) is impossible.
@@ -1001,4 +1001,4 @@ If `Z_j=0`, then `m_j=0`, at least `9(r-1)` collision units occur, and at most 2
 \boxed{\texttt{NO-HIGH-STOP = OPEN}.}
 ]
 
-The critical-core potential has reduced the (a=6) case to four explicit residue windows. Any high stop forces a pairwise-linear partial resolvable `TD(6,r)` with at least `r^2-112r` blocks and a hub kernel of size at most 74 for `r>=1000`. The linear-defect theorem aligns all but `O_a(r)` predecessor classes with stability parts. This is a strong necessary structure, but no design-completion or earlier-stop theorem is proved; `NO-HIGH-STOP` remains open. The scalar and local KP countermodels show why neither scalar-only inequalities nor assuming `z_i=1` will suffice. The next highest-leverage step is to classify the `O(r)` exceptional blocks jointly across colors and derive a contradiction from their incidence with the hub kernel..
+The critical-core potential has reduced the (a=6) case to four explicit residue windows. For `r>=26272`, any high stop has `7<=|X|<=28` and a pairwise-linear partial resolvable `TD(6,r)` with at least `r^2-66r` clean blocks. If a target part has size `r+9`, then `sum_{i>0}(x_i-5)<=20+Z_j-m_j`; when duplicate concentration is low, almost all colors attain the KP floor `x_i=5`. At that floor all KP base parts have size six, and for `z_i=1` the predecessor classes differ from the base partition in at most two blocks. In an `r+9` part, at most 756 collision units can lie in classes of size at least three; the rest form hub–nonhub doubletons and a colored matching system. This is not yet a contradiction: the `z_i>1` KP interface and cross-group matching compatibility remain open. `NO-HIGH-STOP` remains open.
