@@ -65,3 +65,18 @@ For the standard affine-plane coloring on r^2 points, reducing the independence 
 - TIGHT_TRANSVERSAL_LOW_SLACK_BRIDGE.md: proved conditional witness-block concentration, small-slack support, and weighted blocker interface.
 - COMPRESSION_OR_GEOMETRY.md: theorem boundary and exact missing bridge.
 - P(r) => P(r-1): **not established**.
+
+
+## Round 2 — alignment-free residual witness rigidity
+
+New proof asset: ALIGNMENT_FREE_WITNESS_RIGIDITY.md.
+
+- **Residual edge budget (PROVED):** in Case B, with R=V\\X, |R|=(r-1)^2, and b_i=e(G_i[R])-(r-1)C(r-1,2), every b_i>=0 and sum_{i!=c} b_i <= C(r-1,2).
+- **Alignment-free dichotomy (PROVED):** either a repeated witness color has b_i<=r-3, giving a q=r-1 clique partition of R and making all its residual witnesses transversals; or some witness color occurs at least four times.
+- **Same-color witness rigidity (PROVED):** for every same-color pair, both the residual symmetric difference and the full witness symmetric difference have perfect matchings. An edge-ownership inequality counts repeated use of the same physical edge without double-charging it.
+- **Case A colored-packing budget (PROVED):** see COLORED_WITNESS_EDGE_BUDGET.md. The exact per-color bound and r=3,4,5 label-pattern audit do not exceed the known full-color floor, so Case A remains open.
+- **Fixed merge (OPEN):** see FIXED_MERGE_ESCAPE.md for the exact private-witness criterion and a pure-hypergraph obstruction; neither proves nor refutes a graph-level fixed-merge theorem.
+
+Important cross-line correction: K's Local Slack Gap Theorem proves that under the full hypothetical-counterexample contract, every neighborhood slack s_i(x)>=r-1. Thus the earlier J/K bridge requiring s_i(x_0)<=r-2 at x_0 in X has an impossible premise in a full counterexample. It remains a valid conditional lemma, but the alignment-free residual theorem above is the live route: its excess b_i is measured on R, not on a full neighborhood V\\{x}.
+
+Current verdict: no full graph-level contradiction, no guaranteed fixed merge, and no not-P(r) => not-P(r-1) theorem yet.
