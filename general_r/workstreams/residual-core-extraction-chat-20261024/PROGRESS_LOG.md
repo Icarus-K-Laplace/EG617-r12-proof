@@ -826,3 +826,52 @@ where `N_{2,j}` is the number of class intersections of size two. Such doubleton
 ### Next highest-priority task
 
 Analyze the general `z_i>1` KP interface. In the extremal `(r+9,r-8,r^4)` profile, determine whether each `x_i=5` color forces a bounded-defect partition of its six-vertex KP base parts whose omitted vertices exactly match the groupwise missing-slot vector. Seek a cross-color incompatibility with the hub–nonhub doubleton matchings; do not assume `z_i=1`.
+---
+
+## 2026-10-24 — Round 15: K7 common-neighborhood blocker and 14-hub theorem
+
+### NEW THEOREM A — Common-neighborhood blocker
+
+For every internal edge `xy` of a target part `V_j`, at least one of the five other parts `V_k` has fewer than `r/16` common `F0` neighbors of `x,y`, for `r>=20,000,000`. Otherwise there are at least `(r/16)^5` transversal tuples; at most `M0(r+9)^3 <=(18r+22)(r+9)^3` can be spoiled by missing `F0` cross-pairs. The former count exceeds the latter at this threshold, giving a `K7` in `F0`.
+
+### NEW THEOREM B — Hub blocker degree and slot consumption
+
+For each hub `x`, its internal degree is at least `(r-27)/2`. Pigeonholing its internal neighbors over five blocker groups gives one `V_k` with at least `(r-27)/10` witnesses. Counting target-color cross pairs from these witnesses shows
+
+`d_F0(x,V_k)<=r/16+181`.
+
+Consequently at most that many non-target colors can have their label class containing `x` meet `V_k`; after allowing one duplicated color at `x`,
+
+`W_x>=15r/16-183`.
+
+### NEW THEOREM C — Hub kernel at most 14
+
+Using `sum_x W_x<=W+15|X|(|X|-1)`, `W<=14r+13`, and the existing `|X|<=28`, any `k=|X|>=15` would require
+
+`k(15r/16-183)<=14r+13+15k(k-1)`.
+
+The left side minus surcharge is increasing for `15<=k<=28`; at `k=15` it exceeds the right side whenever `r/16>5908`. Hence, for `r>=20,000,000`,
+
+`7<=|X|<=14`.
+
+Then `a_j=k_j-delta_j-1>=0` and `sum a_j=|X|-7<=7`, so each target part has at least `r-8` nonhubs forming a target-color clique.
+
+### NEW CONDITIONAL REFINEMENT
+
+If an `r+9` part contains `Z_j` duplicate-label vertices, then `W<=13r+4+Z_j`. If `|X|=14`, the slot lower bound forces `Z_j>=r/8-5296`. Thus if `Z_j<r/8-5296`, then `|X|<=13`. The partial-design block bound is now `r^2-52r` for all `r>=20,000,000`, and `r^2-51r` in this low-duplicate subcase.
+
+### Failed approach audit
+
+A proposed lower bound on `M0` from `K_r`-freeness between nonhub cliques was rejected: the relevant missing pairs are edges of `F0`, not target-color edges counted by `M0`. The proof does not use that invalid direction. This leaves the 7–14 hub terminal open.
+
+### GitHub commits
+
+- K7 blocker and 14-hub theorem: `18d5350d0bdc447a981fd49bbdd8c45a1e1b59b5`
+- duplicate-concentration / improved TD bound: `740d7e1454cf338ed2a206ad6c633859840cb7e7`
+- canonical state: pending update
+- open gaps: pending update
+- progress log: this update
+
+### Next highest-priority task
+
+Classify the blocker-group map `X -> {V_k}` for the 7–14 hubs. Use the fact that every hub has at least `15r/16-O(1)` target edges into its blocker group, while the total target cross-edge budget is `M0<=18r+22`. The individual bound permits 7–14 hubs; the next theorem must exploit shared blocker groups, target-clique constraints, and exact label-class incidence jointly.
