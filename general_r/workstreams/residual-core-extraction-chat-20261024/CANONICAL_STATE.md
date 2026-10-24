@@ -416,6 +416,31 @@ For any color with `x_i=5`, `F_i` attains the Kang–Pikhurko bound for a non-`r
 
 **Limitation:** if `Z_j-m_j` is large, the excess bound weakens by exactly that concentration term. Moreover, many colors may have `z_i>1`; the `z_i=1` KP block classification does not cover those cases. The cross-color incidence contradiction remains open.
 
+### 9J. Collision concentration and colored hub–nonhub matching system
+
+Status: **`PROVED_ANALYTIC`** conditional on the existing hub-cover and predecessor-interface lemmas.
+
+For a target group `V_j`, put `t_{i,b,j}=|S_{i,b}∩V_j|`, `C_j=Σ(t_{i,b,j}-1)_+`, `N_{2,j=#{(i,b):t_{i,b,j}=2}`, and `k_j=|X∩V_j|`. Every class intersection of size `t` contains at most one nonhub, since each pair in it is an internal `F_0` edge and every such edge meets `X`. For `t>=3`, its `t-1` collision units consume at least `binom(t-1,2)` distinct hub–hub pairs. Pair uniqueness therefore gives
+
+`C_j-N_{2,j}<=2 binom(k_j,2)`.
+
+Every doubleton class consists of one hub and one nonhub; these pairs form a simple bipartite graph between `X∩V_j` and `V_j\X`, and within each color they form a matching. For `|V_j|=r+9`,
+
+`N_{2,j}>=9(r-1)-Z_j-2 binom(k_j,2)`,
+
+where `Z_j=Σ_i z_{i,j}`. Since `k_j<=28` for `r>=26272`,
+
+`N_{2,j}>=9r-765-Z_j`.
+
+If `Z_j=0`, at least `9r-765` collision pairs are doubletons; no more than 756 collision units can be concentrated in intersections of size at least three.
+
+Combining with the extreme-part excess bound gives
+
+`Σ_{i>0}(x_i-5)<=20+Z_j-m_j`.
+
+Thus the extreme `r+9` part, when duplicate concentration is low, must carry a near-complete colored matching system on a hub set of size 10–28, and almost all non-target colors attain the Brouwer floor. This is not yet a contradiction: a matching system in a `K_{10,r-1}`-type host is locally feasible. The missing theorem must couple its matchings to the other five groups and the exact KP equality templates.
+
+Proof: `NO_HIGH_STOP_ROUND2_LEMMAS.md`, Section 13.
 ### 10. Critical-core residue windows
 
 Status: **`PROVED_ANALYTIC`** as a necessary-condition reduction.
