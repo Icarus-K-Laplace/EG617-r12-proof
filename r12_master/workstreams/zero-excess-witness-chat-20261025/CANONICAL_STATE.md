@@ -27,3 +27,21 @@ This supplies necessary witness structure but does not eliminate any E407/E408 t
 ## Repository discipline
 
 Only \`r12_master/workstreams/zero-excess-witness-chat-20261025/\` is modified by this branch. The sprint/master/ultimate-closure branches were read-only references.
+
+
+## Round-2 overlap audit
+
+Added \`R12_WITNESS_OVERLAP_CAPACITY.md\` with a pairwise crossing lemma and exact edge-load identity. For a linear family of \(m\) independent 4-sets, every pair requires at least three cross-edges, and the total crossing count is exactly \(\sum_{xy\in E(H)}r_xr_y\).
+
+For \(m=5c\) selected K5 witnesses from \(c\) exact-129 colors, the current scalar cap gives only
+\[
+\sum_{xy\in E(H)}r_xr_y\le122c^2,
+\]
+versus lower bound \(3\binom{5c}{2}\). At \(c=7,8\) these are \(5978>1785\) and \(7808>2340\), so this route is insufficient. No contradiction is claimed.
+
+- Pairwise witness crossing lemma: **PROVED_ANALYTIC**.
+- Exact edge-load identity: **PROVED_ANALYTIC**.
+- Scalar overlap contradiction: **OPEN / DISPROVED as a sufficient route**.
+- Labelled shell-incidence overlap bound: **OPEN**.
+- E407 Q32 and E408 Q32/Q33: **OPEN**.
+- EG617(r=12): **OPEN / NOT_CERTIFIED**.
