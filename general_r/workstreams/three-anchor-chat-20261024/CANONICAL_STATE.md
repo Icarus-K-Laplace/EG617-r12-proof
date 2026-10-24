@@ -65,7 +65,8 @@ Four pair connectors, block sizes `(r-2,r-3,r-3)`.
 - `INDEPENDENT_AUDIT.md`: certification findings, exact limitations, and audit scope.
 - `LEMMA_VERIFICATION.md`: full rectangle-charge additivity and empty-part proofs.
 - `PROOF_DEPENDENCY_MAP.md`: theorem dependency DAG and lemma ledger.
-- `ARITHMETIC_AUDIT.py` / `ARITHMETIC_AUDIT_RESULTS.md`: reproducible local arithmetic checks; not a graph search.
+- `ARITHMETIC_AUDIT.py` / `ARITHMETIC_AUDIT_RESULTS.md`: reproducible local arithmetic checks.
+- `CONNECTOR_SKELETON_AUDIT.py` / `CONNECTOR_SKELETON_AUDIT_RESULTS.md`: exhaustive labelled connector/focus skeleton relaxations for `r=12,13,14,15`; not a whole-graph search.
 - `UNIFIED_SHORT_PROOF.md`: concise proof summary; some derivation details are intentionally deferred to the full proof.
 - `THEOREM.md`: theorem ledger and consequences.
 - `R12_UNIFIED_CLOSURE.md`: detailed `r=12` equality analysis retained as supporting record.
