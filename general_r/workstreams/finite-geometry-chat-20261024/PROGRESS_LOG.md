@@ -27,12 +27,17 @@
 
 ## 2026-10-24 — Round 5: weighted blocker inequality and J/K interface
 
-- Proved the weighted independent-transversal obstruction:
-  sum over defect edges uv of 1/(|B_a||B_b|) >= 1 whenever every transversal contains a defect edge.
-- Derived the unweighted consequence |E(F)|>=min_{a<b}|B_a||B_b|, and hence a blocker with s<=q-2 edges must involve a pair of residual parts with product <=q-2.
+- Proved the weighted independent-transversal obstruction: sum over defect edges uv of 1/(|B_a||B_b|) >= 1 whenever every transversal contains a defect edge.
+- Derived |E(F)|>=min_{a<b}|B_a||B_b|; if every part has size at least k, then |E(F)|>=k^2.
 - Clarified that only defect edges with both endpoints in the residual non-i-neighbor parts can block the relevant transversals.
-- Recorded the J-line conditional bridge: in the tight-transversal case, a private witness of low-slack color i forces every point of the residual part in its base block to connect to the witness's partial transversal, giving block size <=s_i. Therefore at most floor((2q-1)/(q-s_i)) blocks can host witnesses of that color.
+- Recorded the J-line conditional bridge: a private witness of low-slack color i forces the residual part in its base block to have size <=s_i, so at most floor((2q-1)/(q-s_i)) blocks can host witnesses of that color.
 - The alignment premise (a low-slack color at a vertex in the tight transversal) is not yet established; no contradiction is claimed.
+
+## 2026-10-24 — Round 6: cross-line audit
+
+- Rechecked the J-line witness-overlap statement and the K-line weighted blocker lemma for compatibility.
+- Confirmed the conditional bridge only uses the low-slack partition on W=V minus {x_0}, where x_0 is explicitly a point of the tight transversal X.
+- The bridge and weighted blocker are now documented in separate workstreams; no files outside this branch's directory were modified.
 
 ### Status
 
