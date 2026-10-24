@@ -433,7 +433,97 @@ Equivalently, all but `O(r^(3/2))` cross-group pairs are covered by exactly one 
 
 A high stop cannot be an arbitrary sparse perturbation of Turán structure: it carries almost `r^2` exact transversal blocks, arranged in almost-complete parallel classes, while all target internal defects pass through a bounded hub kernel. The next step is a **completion / robust nonextension theorem** for this near-complete resolvable transversal design, using the predecessor interface and the exact critical-core residue windows. `NO-HIGH-STOP` remains open.
 
-## 7. Status ledger for this round
+## 7. Brouwer excess floors and a scalar-feasibility audit
+
+This section sharpens the simultaneous ledger using the non-partite Turán theorem. It also records a deliberate abstract parameter countermodel: the scalar ledger, target-part sizes, hub cardinality, and pair-count identities alone do not rule out a high stop.
+
+### Theorem 9 — all-color Brouwer floors
+
+Assume a high-stop state with `n=ar+1`, `alpha(G_0)=a`, `omega(G_0)<=r-1`, and for every non-target color `i`, `alpha(G_i)<=r`. Let `F_i=bar(G_i)` and `x_i=t_{k_i}(n)-e(F_i)` as in the excess ledger, with `k_0=a` and `k_i=r` for `i>0`. Put `C=binom(a,2)`.
+
+Then
+
+`x_0>=r`,
+`x_i>=a-1` for every `i>0`.
+
+**Proof for the target color.** `F_0` is `K_{a+1}`-free. It is not `a`-partite: otherwise each independent part has size at most `alpha(F_0)=omega(G_0)<=r-1`, so `n<=a(r-1)<ar+1`. Brouwer's bound gives `x_0>=floor(n/a)-1=r-1`. If equality held, the Kang–Pikhurko equality classification gives an independent set in `F_0` of size at least `floor(n/a)=r`, contradicting `alpha(F_0)<=r-1`. Hence `x_0>=r`.
+
+**Proof for a non-target color.** A color-`i` clique is target-independent, so `omega(G_i)<=alpha(G_0)=a` and therefore `alpha(F_i)<=a`. Also `F_i` is `K_{r+1}`-free. It cannot be `r`-partite, since its independent parts would each have size at most `a`, forcing `n<=ar`. Brouwer's bound gives
+
+`e(F_i)<=t_r(n)-floor(n/r)+1=t_r(n)-a+1`,
+
+so `x_i>=a-1`. This bound is sharp at the scalar level; no claim that equality is impossible is made. \(\square\)
+
+### Corollary 9.1 — tightened excess and hub budgets
+
+Combining the floors with the exact ledger
+
+`x_0+sum_{i>0}x_i=S_a(r)=(C-1)r+a`,
+
+gives
+
+`x_0 <= (C-a)r+2a-1`,
+`sum_{i>0}(x_i-(a-1)) <= (C-a-1)r+2a-1`.
+
+For `a=6`, these become
+
+`x_0<=9r+11`,
+`sum_{i>0}(x_i-5)<=8r+11`.
+
+Since `D<=x_0` and `(r-1)P<=D`, where `P=sum_j(|V_j|-r)_+`, the target ideal parts satisfy, for `a=6` and `r>=22`,
+
+`r-8<=|V_j|<=r+9`.
+
+Also `M_0<=2x_0`, so
+
+`M_0<=18r+22`.
+
+Using the product-cover hub theorem with `L>=r-8`, for `r>=1000`
+
+`H_r=L-M_0/L >= r-27`,
+`|X|<=4M_0/H_r <= 4(18r+22)/(r-27)<75`.
+
+Thus **`|X|<=74` for `a=6, r>=1000`**, improving the earlier bound 116. The proof only uses the existing Füredi stability and cylinder inequality; no hub-propagation conclusion is inferred.
+
+### Audit lemma 9.2 — when `alpha(G_0)=a` is automatic
+
+For fixed `a>=6`, if `r>=a^2`, the exact excess ledger itself forces `alpha(G_0)=a` (assuming only the canonical upper bound `alpha(G_0)<=a`). For `a=6`, the same argument already works for `r>=24`.
+
+Indeed, if `alpha(G_0)<=a-1`, then `e(G_0)>=p_{a-1}(n)`, while `e(G_0)=p_a(n)+x_0<=p_a(n)+S_a(r)`. The balanced-partition square-sum bounds give
+
+`p_{a-1}(n)-p_a(n) >= n^2/(2a(a-1))-a/8`,
+
+which is greater than `S_a(r)` for fixed `a>=6, r>=a^2`; for `a=6`, it is greater than `14r+6` for `r>=24`. This contradiction proves the claim. For `a` growing with `r`, this argument does not give a uniform threshold; that regime is not silently covered.
+
+### Abstract parameter countermodel — scalar constraints do not close the gap
+
+For `a=6` and any sufficiently large integer `r`, consider the following **abstract ledger assignment**:
+
+`x_0=9r+11`, `x_i=5` for all `r-1` non-target colors;
+`z_i=1` for all `i`, `q_0=5r+2`;
+`(|V_1|,...,|V_6|)=(r+1,r,r,r,r,r)`, `Delta=0`;
+`D=7`, `M_0=9r+18`, `|X|=7`.
+
+These numbers pass the currently proved scalar checks:
+
+- Exact excess: `x_0+sum_i x_i=(9r+11)+5(r-1)=14r+6=S_6(r)`.
+- Exact predecessor interface: `sum_i z_i=r-1`, `q_0=6r+1-(r-1)=5r+2`; predecessor increments are `x'_0=x_0+q_0=14r+13`, `x'_i=x_i+z_i=6`, summing to `S_7(r)=20r+7`.
+- Target partition identity: `x_0=Delta+M_0-D=9r+11`.
+- Stability budgets: `D<=x_0` and `M_0<=2x_0`.
+- Group sizes meet the sharpened `r-8` to `r+9` range. Seven hubs are enough at the counting level to leave at most `r-1` ordinary vertices in each group (two hubs in the `r+1` group, one in each other group).
+- If all `z_i=1` classes are transversals, their blocks cover `15r(r-1)` cross-group pairs, leaving `20r` pairs; the assignment `M_0+(11(r-1)-D)=(9r+18)+(11r-18)=20r` passes the global cross-pair count as well.
+
+**Status of this object: `ABSTRACT_PARAMETER_COUNTERMODEL`, not a graph counterexample.** It does not certify a real edge-coloring, the full `K_{r+1}`-free constraints for every `F_i`, or the equality-case incidence pattern in Brouwer's theorem. Its purpose is narrower and important: the exact scalar ledgers, the improved hub count, and the pair-count identity alone still permit a formally consistent high-stop budget. Any proof of NO-HIGH-STOP must use additional incidence information, not merely rearrange these scalar inequalities.
+
+### Consequence and next attack
+
+The strongest new interface is now the **Brouwer excess vector**
+
+`y_i:=x_i-(a-1)>=0`, with `sum_i y_i <= (C-a-1)r+2a-1`.
+
+For `a=6`, the total non-target excess above the sharp individual floor is at most `8r+11`. The next step is to classify the `y_i=0` / small-`y_i` color graphs using the Kang–Pikhurko extremal templates and align their two-star defect pattern with the predecessor label classes `S_{i,b}`. The required theorem is a joint incidence-packing inequality linking those extremal templates to `D`, `M_0`, and the bounded hub kernel. The scalar countermodel above shows why another scalar-only refinement will not suffice.
+
+## 8. Status ledger for this round
 
 ### PROVED
 
@@ -456,4 +546,4 @@ A high stop cannot be an arbitrary sparse perturbation of Turán structure: it c
 \boxed{\texttt{NO-HIGH-STOP = OPEN}.}
 ]
 
-The critical-core potential has reduced the (a=6) case to four explicit residue windows, the color partitions form a global near-resolvable design, and any high stop forces an almost-complete partial resolvable TD(6,r) with `r^2-O(r^(3/2))` blocks plus a hub kernel of size at most 116 for `r>=1000`. No all-large-r contradiction has been established. The next highest-leverage step is a completion / robust nonextension theorem for this partial design.
+The critical-core potential has reduced the (a=6) case to four explicit residue windows, the color partitions form a global near-resolvable design, and any high stop forces an almost-complete partial resolvable TD(6,r) with `r^2-O(r^(3/2))` blocks plus a hub kernel of size at most 74 for `r>=1000`. Brouwer floors now sharpen the excess vector, but the explicit abstract ledger countermodel shows scalar and pair-count constraints still do not contradict a high stop. The next highest-leverage step is to align the equality/small-defect Brouwer templates with the exact predecessor classes and derive a joint incidence-packing contradiction.
