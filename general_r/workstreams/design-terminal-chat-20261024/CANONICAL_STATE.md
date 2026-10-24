@@ -248,3 +248,17 @@ A bounded hub set can still support (O(r)) internal missing edges: each hub may 
 - Full front-end forcing: **OPEN**.
 
 Full correction: `JOINT_DEFECT_PROPAGATION.md`.
+
+
+## 2026-10-24 — defect-cover incidence follow-up
+
+The attempted large-r closure above remains withdrawn. A valid replacement subtheorem is now recorded in `DEFECT_COVER_INCIDENCE.md`: for each missing ideal pair, uniformly choosing one vertex from every other nonempty block gives an exact weighted cover inequality. Endpoint edges have weight (1/|C_b|); edges between two remote blocks have weight (1/(|C_p||C_q|)).
+
+For a family of defects, the per-edge load records how often one edge contributes to different defect rows. For a matching of q defects with all blocks of size at least five, one edge has load at most (2/5+q/25). This bound is not sufficient to force a global contradiction.
+
+A remote-only cover with at most 24 additions is impossible in that block-size regime, since each edge contributes at most (1/25) and the total weight is at most (24/25).
+
+- Exact multi-block incidence inequality: **PROVED_ANALYTIC**.
+- Remote-only cover exclusion for at most 24 additions and block sizes at least five: **PROVED_ANALYTIC**.
+- Shared-edge global budget contradiction: **OPEN**.
+- Full Hub Propagation and terminal nonextension: **OPEN**.
