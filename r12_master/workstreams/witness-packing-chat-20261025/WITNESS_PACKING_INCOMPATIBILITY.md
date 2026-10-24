@@ -1,150 +1,166 @@
-# Fixed-r=12 Sprint — Labelled Witness-Packing Incompatibility
+# Fixed-r=12 Sprint — Labelled Witness Packing and Core-Support Bounds
 
 Date: 2026-10-25  
-Branch: `workstream/r12-witness-packing-chat-20261025`
+Branch: workstream/r12-witness-packing-chat-20261025
 
-## Status summary
+## Status
 
-- **PROVED_CONDITIONAL:** each exact-129 non-target color in the E407 Q32 / E408 Q33 shell interface yields at least seven pairwise-linear independent 4-sets in the 47-core.
-- **PROVED_CONDITIONAL:** the union of these witnesses has at least 29 core vertices in E407 Q32 and at least 31 core vertices in E408 Q33.
-- **OPEN:** this lower bound does not yet contradict the 284-edge core. The unresolved color-count boundary is E407 `129^7,130^4` and E408 Q33 `129^8,130^3`.
+- **PROVED_CONDITIONAL:** each exact-129 color supplies at least seven independent four-sets in the 47-core, but only six are guaranteed to have labels in the ten-vertex shell set B.
+- **PROVED_CONDITIONAL:** in the 284-edge core, each exact-129 color supplies at least two B-labelled witness four-sets whose vertices all have core degree 12. Thus there are at least 14 such witnesses in E407 Q32 and at least 16 in E408 Q33.
+- **PROVED_CONDITIONAL:** the full seven-set-per-color family has union size at least 29 in E407 Q32 and at least 31 in E408 Q33. If E407 has at least eight exact-129 colors, its union also has size at least 31.
+- **OPEN:** the boundary kernels are not excluded. The only residual edge-count profiles not removed by the support bound are \(129^7,130^4\) for E407 Q32 and \(129^8,130^3\) for E408 Q33.
 
-This file does not claim the original EG617 theorem is proved.
+All claims below retain the T61 and exact-129 factor contracts. This is not a proof of the original EG617 theorem.
 
-## 1. Exact hypotheses
+## 1. Frozen hypotheses
 
-Let (F) be the 61-vertex target residual graph with the retained T61 contract. Write
+Let F be a 61-vertex target residual, with a legal degree-13 pivot p, shell A=N_F(p), |A|=13, and core H=V(F)\(A union {p}), |H|=47. The retained contract includes
 
-[
-V(F)=\{p\}\sqcup A\sqcup H,\qquad |A|=13,\quad |H|=47,
-]
+\[
+\alpha(F)\le5,\quad \omega(F)\le11,\quad
+\alpha(H)\le4,\quad \omega(H)\le11,\quad
+\delta(H)\ge12.
+\]
 
-where (p) is adjacent in (F) to every vertex of (A) and to no vertex of (H). The core satisfies
+For E407 Q32 and E408 Q33, the core has
 
-[
-\alpha(H)\le4,\quad \delta(H)\ge12,\quad e(H)=284,\quad
-\sum_{x\in H}(d_H(x)-12)=4.
-]
+\[
+e(H)=284,\qquad
+\sum_{x\in H}(d_H(x)-12)=2e(H)-47\cdot12=4.
+\]
 
-Write (A=S\sqcup B), with (|S|=3), (|B|=10), and assume (B) is a target clique, so (M[B]=\varnothing). The two interfaces considered are:
+Write A=S dot-union B, where |S|=3 and |B|=10, with B a target clique. Let X={x in H:d_H(x)>12}. Since every positive excess is an integer,
 
-1. **E407 Q32:** (e(F)=407), all ten (B)-rows are regular and (t_b=d_F(b,H)\le3), and the retained V12 shell reduction has one of the five registered templates.
-2. **E408 Q33:** (e(F)=408), with the registered Q33/d3 shell interface and (B) target-clique property. No (t_b\le3) assumption is used below for this interface.
+\[
+|X|\le\sum_{x\in H}(d_H(x)-12)=4.
+\]
 
-For every non-target color (C) on (F), use the registered T61 color-factor theorem: (e(C[F])\ge129); if equality holds, (C[F]) has ten disjoint isolated (K_5) components and an 11-vertex residual gadget (U_C). Every (C)-monochromatic (K_5) is an independent 5-set in (F), because all its edges have color (C), not the target color.
+For each exact-129 non-target color C, assume the retained constrained second-Turán/Kang–Pikhurko factor theorem: C[F] has ten vertex-disjoint isolated K5 components and an 11-vertex exceptional gadget U_C. Every such K5 is target-independent.
 
-The edge totals are
+## 2. Correct component count: seven Q-sets, six B-labelled Q-sets
 
-[
+**Lemma 2.1.** Every exact-129 color C supplies at least seven distinct independent four-sets Q contained in H, pairwise disjoint within C, arising from K5 components that avoid S. At least six of these have the labelled form {b} union Q with b in B and b anticomplete to Q. The possible seventh is the H-part of a component {p} union Q.
+
+**Proof.** The ten K5 components are disjoint and there are only three vertices in S, so at least seven components avoid S. At most one of these contains p. A component containing p cannot contain any vertex of A, because p is target-adjacent to all of A; its other four vertices therefore lie in H and give a set Q. Every other component avoiding S and p lies in B union H. It cannot contain two B vertices because B is a target clique, and it cannot lie entirely in H because that would be a target-independent five-set in H. Hence it has exactly one b in B and four vertices Q in H. This gives at least six B-labelled components and at least seven Q-sets total. ∎
+
+If p lies in U_C rather than in a K5 component, all seven or more components avoiding S are B-labelled. The conservative count used below is seven total Q-sets and six B-labelled Q-sets per exact-129 color.
+
+For two selected Q-sets from different colors, the intersection has size at most one: if they shared two core vertices, their common edge would be assigned two non-target colors. Within a color, the selected components are disjoint. Thus the family of all selected Q-sets is linear (pairwise intersections at most one).
+
+## 3. Zero-excess strengthening
+
+**Lemma 3.1.** In the 284-edge core, each exact-129 color has at least two B-labelled witnesses {b} union Q for which every q in Q has d_H(q)=12.
+
+**Proof.** By Lemma 2.1, there are at least six B-labelled Q-sets disjoint within the color. At most |X|≤4 of these disjoint sets can meet X: each set that meets X uses at least one distinct vertex of X. Therefore at least two of the six Q-sets lie wholly in H\X, and all four vertices of each have core degree 12. ∎
+
+Consequences under the exact-129 color-count contract:
+
+- E407 Q32 has at least seven exact-129 colors, hence at least 14 pairwise-linear zero-excess B-labelled witnesses.
+- E408 Q33 has at least eight exact-129 colors, hence at least 16 such witnesses.
+
+These are actual monochromatic K5-component witnesses, so their cross-color intersection cap is valid. This improves the one-zero-excess-witness lower bound in the sibling zero-excess workstream by combining its degree theorem with the corrected six-B-label component count.
+
+## 4. Turán support bound for the union of all seven Q-sets per color
+
+Let \(\mathcal Q\) contain seven selected Q-sets from every exact-129 color, including the possible p+Q set. Let m=|\(\mathcal Q\)| and V_* be their union, with v=|V_*|. Since the family is linear, each Q contributes six distinct edges to \(\overline H[V_*]\), and no edge is counted twice. Therefore
+
+\[
+e(\overline H[V_*])\ge6m.
+\]
+
+Since \(\alpha(H)\le4\), the graph \(\overline H[V_*]\) is K5-free, so
+
+\[
+e(\overline H[V_*])\le t_4(v),
+\]
+
+where t_4(v) is the balanced complete four-partite Turán edge count.
+
+The exact color totals on F are
+
+\[
 \binom{61}{2}-407=1423=11\cdot129+4,
 \]
-[
+\[
 \binom{61}{2}-408=1422=11\cdot129+3.
-]
+\]
 
-Consequently E407 Q32 has at least seven exact-129 colors, and E408 Q33 has at least eight.
+Thus E407 has at least seven exact-129 colors and E408 has at least eight.
 
-## 2. Seven-witness lemma per exact-129 color
+### Theorem 4.1 (union-size lower bounds)
 
-**Lemma 2.1.** In either interface, each exact-129 color supplies at least seven distinct sets (Q\subseteq H) with (|Q|=4), (alpha(H[Q])=4), such that (Q) is anticomplete in (F) to a corresponding shell label (b\in B), except that one of the seven witnesses may instead be the (H)-part of a component (\{p\}\cup Q). The selected sets are obtained from distinct (K_5) components.
+- E407 Q32: m≥49 and v≥29.
+- E408 Q33: m≥56 and v≥31.
+- If E407 has at least eight exact-129 colors, then m≥56 and v≥31.
+- If E408 has at least nine exact-129 colors, then m≥63 and v≥32.
 
-**Proof.**
+**Proof, E407 with seven exact-129 colors.** Since 6m≥294 and t_4(27)=273, v≥28. Suppose v=28. Then t_4(28)=294, so \(\overline H[V_*]\) is the extremal complete balanced four-partite graph with four parts of size seven. Hence H[V_*] is four disjoint K7s and e(H[V_*])=84.
 
-The ten (K_5) components are vertex-disjoint. At most three can contain a vertex of (S), so at least seven contain no (S)-vertex.
+Let \(\epsilon_*=\sum_{x\in V_*}(d_H(x)-12)\ge0\) and W=H\V_*. The degree sum on V_* is 336+\(\epsilon_*\), so
 
-A component with no (S)-vertex cannot consist of five vertices of (H), because that would give an independent 5-set in (H). It cannot contain both (p) and a vertex of (B), since (p) is target-adjacent to all of (A). Therefore every component with no (S)-vertex is either:
+\[
+e_H(V_*,W)=336+\epsilon_*-2\cdot84=168+\epsilon_*.
+\]
 
-- (\{b\}\cup Q), with (b\in B) and (Q\subset H), (|Q|=4); or
-- (\{p\}\cup Q), with (Q\subset H), (|Q|=4).
+Therefore
 
-If (p) lies in a (K_5) component, it occupies one of the no-(S) components and contributes one (p+Q) witness; the other six or more no-(S) components give (b+Q) witnesses. If (p) lies in the gadget rather than a (K_5) component, all seven or more no-(S) components must be of the (b+Q) form. In both cases there are at least seven (Q)-sets.
-
-Each (Q) is independent in (H) because the corresponding (K_5) is monochromatic in a non-target color. \(\square\)
-
-## 3. Global linearity across colors
-
-Select seven such (K_5)-component witnesses from every exact-129 color. Within a color, the components are disjoint. Across distinct colors, two components cannot share two vertices: their common edge would then have two colors. Hence any two selected (Q)-sets intersect in at most one vertex.
-
-Let (\mathcal Q) be the resulting family, (n=|\mathcal Q|), and (V_* = \bigcup_{Q\in\mathcal Q}Q), (v=|V_*|). Every (Q) contributes six distinct edges to (\overline H[V_*]), and no edge is contributed twice. Thus
-
-[
-e(\overline H[V_*])\ge6n.
-]
-
-Also \(\alpha(H)\le4\) implies \(\overline H[V_*]\) is (K_5)-free, so Turán gives
-
-[
-e(\overline H[V_*])\le t_4(v).
-]
-
-Therefore:
-
-- E407 Q32: (n\ge7\cdot7=49), so (e(\overline H[V_*])\ge294).
-- E408 Q33: (n\ge8\cdot7=56), so (e(\overline H[V_*])\ge336).
-
-## 4. Union-size theorem
-
-**Theorem 4.1 (Witness-packing support lower bound).**
-
-Under the hypotheses in Section 1,
-
-[
-\boxed{|V_*|\ge29\quad\text{for E407 Q32},}
-]
-and
-[
-\boxed{|V_*|\ge31\quad\text{for E408 Q33}.}
-]
-
-**Proof for E407 Q32.** Since (t_4(27)=273<294), we have (v\ge28). If (v=28), then (t_4(28)=294), so \(\overline H[V_*]=T_4(28)\), with four parts of size seven. There are exactly 49 witnesses and (H[V_*]) is the disjoint union of four (K_7)'s, so (e(H[V_*])=84).
-
-Let (\epsilon_* = \sum_{x\in V_*}(d_H(x)-12)\ge0). The degree sum on (V_*) is (336+\epsilon_*), hence
-
-[
-e_H(V_*,H\setminus V_*)=336+\epsilon_*-2\cdot84
-=168+\epsilon_*.
-]
-
-Writing (W=H\setminus V_*), we get
-
-[
+\[
 e(H[W])=284-84-(168+\epsilon_*)=32-\epsilon_*\le32.
-]
+\]
 
-But (|W|=19) and \(\alpha(H[W])\le4\). By the complement form of Turán's theorem,
+But |W|=19 and \(\alpha(H[W])\le4\), so the complement form of Turán gives
 
-[
+\[
 e(H[W])\ge\binom{19}{2}-t_4(19)=171-135=36,
-]
+\]
 
-a contradiction. Therefore (v\ge29).
+a contradiction. Thus v≥29.
 
-**Proof for E408 Q33.** Since (t_4(29)=315<336), (v\ge30). Suppose (v=30). Then
+**Proof, E408 Q33 or E407 with at least eight exact-129 colors.** Here 6m≥336. Since t_4(29)=315, v≥30. Suppose v=30. Then e(\(\overline H[V_*]\))≥336, while t_4(30)=337. Brouwer's second-Turán bound says a K5-free non-four-partite graph on 30 vertices has at most \(337-\lfloor30/4\rfloor+1=331\) edges. Hence \(\overline H[V_*]\) is four-partite.
 
-[
-e(\overline H[V_*])\ge336,
-\qquad t_4(30)=337.
-]
+Every Q in \(\mathcal Q\) is a K4 in \(\overline H[V_*]\), so it uses one vertex from each part. Since there are at least 56 Q-sets and their edges are pairwise disjoint, every pair of parts of sizes \(n_i,n_j\) must satisfy \(n_i n_j\ge56\). If any part has size at most six, another has size at most eight and their product is at most 48. If every part has size at least seven, the only partitions of 30 are (7,7,7,9) and (7,7,8,8), each containing a pair of parts of product 49. Both contradict \(n_i n_j\ge56\). Hence v≥31.
 
-Brouwer's non-partite Turán bound implies that a (K_5)-free graph on 30 vertices with at least (t_4(30)-\lfloor30/4\rfloor+2=332) edges is 4-partite. Thus \(\overline H[V_*]\) is 4-partite.
+For E408 with at least nine exact-129 colors, 6m≥378>t_4(31)=360, so v≥32. ∎
 
-Every selected (K_4) witness meets each part once. Pairwise edge-disjointness therefore forces every pair of part sizes (n_i,n_j) to satisfy (n_i n_j\ge56). No partition of 30 into four positive part sizes has this property: if any part is at most six, another part is at most eight and their product is at most 48; if all parts are at least seven, the partition is either ((7,7,7,9)) or ((7,7,8,8)), each containing a pair of size-seven parts with product 49. Contradiction. Hence (v\ge31). \(\square\)
+## 5. Exact unresolved color-count boundary
 
-## 5. Color-count boundary and stronger conditional outcomes
+The residual non-target edge excess over 11 times 129 is four for E407 and three for E408.
 
-The exact-129 count is not yet fixed.
+- E407 is not removed by this theorem only at the profile \(129^7,130^4\). If there are eight or more exact-129 colors, v≥31.
+- E408 Q33 is not removed only at \(129^8,130^3\). If there are nine or more exact-129 colors, v≥32.
 
-- E407 Q32: if at least eight colors have exactly 129 edges, then (n\ge56); the same Turán calculation gives (v\ge31). The only unresolved edge-count profile at this stage is (129^7,130^4), for which the unconditional component packing gives (n\ge49) and (v\ge29).
-- E408 Q33: if at least nine colors have exactly 129 edges, then (n\ge63); since (t_4(31)=360<378), (v\ge32). The only unresolved edge-count profile is (129^8,130^3), for which (n\ge56) and (v\ge31).
+The support theorem is not a graph-completion UNSAT certificate. In the two remaining profiles, it only proves v≥29 / v≥31 respectively.
 
-For E407 Q32 only, the regular-row extension lemma additionally says that an independent triple (X\subseteq H_b) extends to an independent 4-set in (H_b) whenever (t_b\le3): otherwise (H_b\subseteq\bigcup_{x\in X}N_H[x]), whose size is at most (39+\epsilon(X)\le43), contradicting (|H_b|\ge44). This gives a local eighth witness in many individual exact-129 colors when a (K_5) component contains one (S)-vertex and one (B)-vertex. It is **not** counted in the global linear packing above, because extension witnesses from different colors are not automatically pairwise linear.
+## 6. Imported E408 Q33 high-k and outer-block constraints
 
-## 6. What this does not prove
+The latest ultimate-closure workstream proves under the Q33/d3 contract that at least five B-rows have k_b≥2. At most four B labels can lie outside the no-S K5 components of an exact-129 color, so:
 
-The support lower bound (v\ge29) / (v\ge31) is a new structural restriction, not a contradiction for the full 47-core. The (v\ge31) branch leaves at most 16 core vertices outside the witness union, but no theorem yet rules out that configuration.
+- each exact-129 color has at least one high-k, no-S B-labelled witness;
+- if beta=0 or 1, it has at least two;
+- each such witness hits at least two S-rows and at least three shell rows in total.
 
-Dependencies: retained T61 color-factor theorem; exact-129 component decomposition; legal pivot/core contract; (\alpha(H)\le4); and the stated E407 Q32 or E408 Q33 shell interface. No use is made of the invalid global assumption (\alpha(F)\le3).
+Separately, the outer seven-block E408 analysis proves \(M_C\ge15+P_C\), where M_C counts size-five blocker occurrences and P_C is the outer-block duplicate count. These outer-block constraints are not silently identified with the inner shell labels B. A joint contradiction linking the two systems remains open.
 
-## 7. Next single blocker
+## 7. Cross-branch proof audit: high-multiplicity star lemma
 
-**Classify the (v=31), (n=56) boundary for E408 Q33 (and the analogous (v=29), (n=49) boundary for E407 Q32):** combine the near-Turán complement on (V_*), the exact core degree/excess budget, and the fact that every vertex outside (V_*) must hit every witness (Q\in\mathcal Q). A complete result must eliminate the boundary or produce an explicitly verified surviving structural kernel.
+The latest emergency branch's file R12_WITNESS_OVERLAP_STAR_LEMMA.md correctly proves that m witness sets sharing a core vertex x have disjoint remaining triples P_i, that \(\alpha(H[\cup P_i])\le3\), and that \(e(H[\cup P_i])\ge3\binom m2\).
+
+However, its claimed m=10 dichotomy
+
+\[
+e(H[U])=135\quad\text{or}\quad e(H[U])\ge144
+\]
+
+does not follow from the stated second-Turán step. If e(H[U])≤143, the complement L has at least 292 edges, so Brouwer forces L to be tripartite. The ten disjoint triangles P_i imply its three parts each have size ten, but tripartite does not mean complete tripartite. The valid conclusion is that H[U] consists of three K10s plus g cross-part edges with \(0\le g\le8\). The local configuration “three K10s plus one cross edge whose endpoints lie in different P_i” has e(H[U])=136, all P_i remain independent triples, and \(\alpha(H[U])=3\); hence the inference to g=0 is not justified by the local argument alone.
+
+This identifies a proof gap in that dichotomy, not a counterexample to the full 47-core theorem. The full global degree/excess contract might still exclude g=1,...,8, but that exclusion must be proved separately. This workstream does not use the unsupported dichotomy.
+
+## 8. Next mathematical target
+
+The next target is the boundary kernel, not more scalar incidence sums:
+
+1. For E407, analyze v=29 with 49 linear K4 witnesses, the 284-edge core, and the exact shell-row transversals.
+2. For E408 Q33, analyze v=31 with 56 linear K4 witnesses, the zero-excess subfamily, high-k row labels, and the seven-block duplicate system.
+3. Charge every core edge and every shell-core edge with explicit multiplicity. Do not sum local witness costs across overlapping sets without a proved multiplicity bound.
+
+EG617(r=12) remains OPEN / NOT_CERTIFIED.
