@@ -195,10 +195,12 @@ The analytic residual-core theorem proves `delta(H)>=r` for `r>=17`. The boundar
 - No induced `R_{a-1}` extraction theorem for arbitrary `a>=7` is proved.
 - The excess ledger plus Füredi's theorem gives simultaneous uniform partition stability and a global near-resolvable design with at most `3S_a(r)` bad pairs.
 - In the predecessor interface, every non-target color has `z_i>=1`, so at least `r-1` vertices duplicate a non-target color and `q_0<=(a-1)r+2`.
-- For fixed `a`, target ideal groups have absolute width and all internal target-complement edges localize to `|X|<=4M_0/(L-M_0/L)` hubs; for `a=6`, at most 116 hubs suffice when `r>=1000`.
+- Brouwer's non-partite Turán bound gives `x_0>=r` and `x_i>=a-1` for every non-target color. Hence `x_0<=(binom(a,2)-a)r+2a-1` and `sum_{i>0}(x_i-(a-1))<=(binom(a,2)-a-1)r+2a-1`.
+- For fixed `a`, target ideal groups have absolute width and all internal target-complement edges localize to `|X|<=4M_0/(L-M_0/L)` hubs; after the Brouwer tightening, for `a=6` the groups have sizes `r-8` through `r+9` and at most 74 hubs suffice when `r>=1000`.
 - An approximate resolvable-design skeleton with `O(a^2 r)` bad pairs is proved; an exact skeleton or design-trimming theorem is not.
+- The abstract ledger assignment in `NO_HIGH_STOP_ROUND2_LEMMAS.md` passes the exact scalar ledger, predecessor increments, target partition identity, hub-count and cross-pair budgets. It is not a graph counterexample, but certifies that scalar-only rearrangements cannot close the gap.
 - `NO-HIGH-STOP` remains **`OPEN`** for every claimed threshold `r>=r0`; no such `r0` has been established.
 
 ## Next highest-leverage target
 
-Analyze the hub-protection digraph in the `a=6` target complement, using the constant-width groups `r-13<=s_j<=r+14` and `|X|<=116` for `r>=1000`, together with the label-capacity bounds `z_i>=1`, `q_0<=5r+2`. Prove either an earlier `R_5` with the correct edge budget or a contradiction with the four critical-core residue windows. Do not return to fixed-r recurrence, and do not promote a necessary residue condition to a contradiction.
+Prove a **joint incidence-packing / hub-propagation lemma** for `a=6`, using `r-8<=s_j<=r+9`, `|X|<=74` for `r>=1000`, the Brouwer floors `x_i>=5`, `x_0>=r`, and the exact predecessor label classes `z_i>=1`. The next step must classify the equality / small-defect Brouwer templates and align their two-star defect patterns with the `S_{i,b}` classes. The scalar parameter countermodel shows that another scalar-only inequality is insufficient. Prove either an earlier `R_5` with the correct edge budget or a contradiction with the four critical-core residue windows.
