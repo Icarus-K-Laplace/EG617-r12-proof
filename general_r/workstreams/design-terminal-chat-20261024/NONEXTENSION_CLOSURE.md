@@ -104,3 +104,20 @@ This is **PROVED_CONDITIONAL** on the exact hub-star reduction. The current (O(r
 If both oversized-group hubs and their common destination representative occur in one non-target ideal block, the three pairwise edges are target-colored, so that block contains an independent triple in (G_i). In a single-cover-block correction model this is impossible: omit the cover block and choose one point from each of the other (r-2) blocks to obtain an independent ((r+1))-set.
 
 Hence either the two hubs are separated, the shared block omits their destination group, or a multi-block cover network is required. The latter network's minimum cost is the current blocker.
+
+
+## 10. New terminal nonextension theorem: bounded internal-defect capacity
+
+**Theorem — PROVED_ANALYTIC for (r\ge6212), under the contextual terminal contract.**
+
+The established target hub concentration gives (|X|\le108) in this range. Since every target internal deletion touches (X), and (B_j\setminus X) is a target clique, each hub has at most four missing target edges to ordinary vertices in its own group. Therefore
+[
+D_j\le4x_j+\binom{x_j}{2},\qquad
+D=\sum_jD_j\le4|X|+\binom{|X|}{2}\le6210.
+]
+
+Choose (B_h) with (|B_h|\ge r+1), which exists because (sum_j|B_j|=5r+1). For each non-target color (i), (alpha(G_i)\le r) forces a color-(i) edge inside a fixed ((r+1))-subset of (B_h). These (r-1) edges are distinct by unique color ownership and all are target-internal deletions. Hence (D_h\ge r-1\ge6211), contradiction.
+
+This is a robust terminal nonextension theorem: it does not assume exact stars, does not classify multi-block covers, and does not double-count a repair edge. It uses the full target alpha cap, the inherited (alpha(G_i)\le r) constraints, and the already-proved bounded hub theorem.
+
+**Boundary:** this closes the contextual ((5r+1))-terminal for all (r\ge6212), not the full Erdős Problem 617. The implication that every hypothetical counterexample failing the ((4r+1))-residual branch enters this terminal remains OPEN. Literal Hub Propagation remains an open mechanism even though terminal nonexistence is now proved by another route.
