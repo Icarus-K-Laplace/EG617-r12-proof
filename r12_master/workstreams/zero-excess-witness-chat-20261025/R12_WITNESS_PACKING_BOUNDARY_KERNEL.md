@@ -245,3 +245,30 @@ First, the sibling R12_WITNESS_TRANSVERSAL_BOUNDARY_THEOREM.md has a valid trans
 Second, R12_BETA_SENSITIVE_ZERO_EXCESS_PACKING.md claims stronger B-labelled witness floors for beta=e(M[S])=1,2,3 by using omega(M[S]) to bound the number of K5 components meeting S. The stated implication is invalid: omega(M[S]) bounds the number of S vertices that one fixed-color component may contain, not the number of distinct components that can meet S. Three S vertices may occupy three different K5 components. Without a color-specific co-location theorem, do not promote those beta-sensitive counts. The safe universal floor remains seven total S-avoiding Q sets and six B-labelled ones per exact-129 color, giving at least two zero-excess B-labelled witnesses per color.
 
 The transversal floor itself remains usable: every vertex outside the selected witness union has at least seven neighbours into it. No terminal is certified closed.
+
+
+## 11. E408 Q33 four-partite branch: a stronger transversal-capacity floor
+
+Assume the E408 Q33 v=31 boundary and that L is four-partite. The 56 edge-disjoint Q blocks force part sizes (8,8,8,7). Write A,B,C for the three eight-point parts and D for the seven-point part.
+
+For each pair D-A, D-B, and D-C there are exactly 56 possible pairs and 56 blocks, so every such pair occurs in exactly one Q block. Every point of D therefore occurs in eight blocks, while every point of A union B union C occurs in seven blocks. The 24 pairs not covered by Q blocks are the eight missing pairs in each of A-B, A-C, and B-C. Since L is four-partite, its extra edges beyond the 336 witness edges can only be among these 24 pairs. Thus delta=e(L)-336 counts selected extra L edges among them, and the H-edges between the three large parts number exactly 24-delta.
+
+The core budget still gives delta+epsilon_U<=17. The exact core degree identities give:
+- each point of D has degree 6 inside H[U] and hence d_H(v,W)=6+epsilon_v;
+- each point of A union B union C has degree 7 plus its H-neighbours among the unrepresented pairs of the other large parts;
+- x=e_H(U,W)=114+epsilon_U+2delta;
+- e(H[W])=41-epsilon_U-delta.
+
+Every w in W must hit all 56 Q blocks. If it has exactly seven neighbours in U, those seven points must all have block-incidence eight, hence they are exactly D: each Q contains one D point, and the seven points of D hit all 56 blocks. At most six W vertices can have exactly seven neighbours in U, because at least three vertices of D have epsilon_v=0 (the total core excess is only four), and each such vertex has exactly six neighbours in W. If n_7 is the number of W vertices with seven neighbours in U, then
+\[
+x\ge 7n_7+8(16-n_7)=128-n_7\ge122.
+\]
+Combining with x=114+epsilon_U+2delta yields the new necessary inequality
+\[
+\boxed{\epsilon_U+2\delta\ge8}.
+\]
+Therefore the E408 Q33 four-partite boundary must satisfy
+\[
+\boxed{\delta+\epsilon_U\le17,\qquad \epsilon_U+2\delta\ge8}.
+\]
+In particular delta cannot be 0 or 1. This does not yet eliminate the four-partite branch; it sharpens the remaining integer kernel without assuming that L is complete four-partite.
