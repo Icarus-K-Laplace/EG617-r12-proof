@@ -13,8 +13,28 @@ def p4(n: int) -> int:
     return sum(comb(s, 2) for s in sizes)
 
 
+def nondecreasing_patterns(n: int, total: int, lo: int = 8, hi: int = 10):
+    out = []
+
+    def rec(prefix, left, slots, minimum):
+        if slots == 0:
+            if left == 0:
+                out.append(tuple(prefix))
+            return
+        for value in range(minimum, hi + 1):
+            if value > left:
+                break
+            if left - value < lo * (slots - 1):
+                continue
+            if left - value > hi * (slots - 1):
+                continue
+            rec(prefix + [value], left - value, slots - 1, value)
+
+    rec([], total, n, lo)
+    return out
+
+
 def main() -> None:
-    # Four-partite E408 Q33 S0=10 budget.
     profiles = [
         (delta, 10 - 2 * delta)
         for delta in range(18)
@@ -24,16 +44,18 @@ def main() -> None:
     assert profiles == [(3, 4), (4, 2), (5, 0)]
     assert all(delta - 2 >= 1 for delta, _ in profiles)
 
-    # k=4,5,6 are the only integer possibilities from x=124 and q_w>=8
-    # outside the k seven-neighborhood vertices.
+    # k seven-neighborhood vertices and 16-k others of degree at least eight.
     assert [128 - k <= 124 for k in range(7)] == [
         False, False, False, False, True, True, True
     ]
     assert 124 - 7 * 4 == 96 == 8 * 12
     assert 124 - 7 * 5 == 89 == 8 * 10 + 9
     assert 124 - 7 * 6 == 82
-    assert {tuple([8] * 8 + [9, 9]), tuple([8] * 9 + [10])} == {
-        tuple([8] * 8 + [9, 9]), tuple([8] * 9 + [10])
+    assert nondecreasing_patterns(12, 96) == [(8,) * 12]
+    assert nondecreasing_patterns(11, 89) == [(8,) * 10 + (9,)]
+    assert set(nondecreasing_patterns(10, 82)) == {
+        (8,) * 8 + (9, 9),
+        (8,) * 9 + (10,),
     }
 
     # Repaired s=1 count: non-Q selected pairs are bounded by the three
@@ -56,10 +78,7 @@ def main() -> None:
     # at least four points, which supplies the triangle extension.
     assert 5 + 5 - 6 == 4
     assert p4(16) == 24
-
-    # Safe core-capacity thresholds: p4(18)=32, p4(16)=24.
     assert p4(18) == 32
-    assert p4(16) == 24
     print("CROSS_BRANCH_AUDIT_ARITHMETIC_OK")
 
 
