@@ -802,6 +802,12 @@ If `s_j=|V_j|=r+delta_j`, then
 
 which rearranges to the first identity. Summing over `i=1,...,r-1` gives the second. `\square`
 
+### Collision-edge injection
+
+For each `S_{i,b}` and target group `V_j`, put `t=|S_{i,b} intersect V_j|`. Since `S_{i,b}` is a color-`i` clique, every pair in this intersection is an internal `F_0[V_j]` edge. Every such edge meets `X_j=X intersect V_j`; therefore the intersection contains at most one nonhub. If `t>=2` and exactly one vertex is a nonhub, the `t-1` collision units can be injected into the `t-1` hub–nonhub edges. If all `t` vertices are hubs, inject the `t-1` units into any `t-1` distinct hub–hub edges. These selected edges are distinct across all label classes and colors because a vertex pair has only one color.
+
+Consequently `C_j=sum_{i,b}(t_{i,b,j}-1)_+` can be represented by a selected set of exactly `C_j` distinct edges of `F_0[V_j]`; `D_j-C_j` counts the remaining internal edges. This justifies the subtraction in the following duplicate-witness inequality.
+
 ### Lemma 13.2 — duplicate vertices force a missing-slot / internal-edge alternative
 
 Fix a non-target color `i` and a duplicate vertex `v in Z_i intersect V_j` with `v notin X`. Let `b,c` be its two duplicated color-`i` labels at the predecessor clique. Then at least one of the following holds:
