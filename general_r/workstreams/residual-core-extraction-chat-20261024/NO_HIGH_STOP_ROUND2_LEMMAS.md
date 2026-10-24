@@ -249,11 +249,11 @@ Apply Theorem 3 simultaneously to the target and all non-target colors. Since `s
 `sum_i M_i<=2 S_a(r)`,
 `sum_i (I_i+M_i)<=3 S_a(r)`.
 
-Call a vertex pair bad if it belongs to no block in the collection of all color partitions, or belongs to blocks of at least two different color partitions. Every bad pair is charged to at least one defect edge counted among the I_i or M_i. Therefore
+Call a vertex pair good if it lies in exactly one block across all color partitions and that block belongs to the pair's actual edge color. A pair is bad otherwise: either it is not in a block of its actual color, or it also lies in a block of a wrong color. Every bad pair is charged to at least one defect edge counted among the I_i or M_i: a pair missing from its actual-color partition is a missing cross-pair, while a pair inside a wrong-color block is an internal edge of that color's complement. Therefore
 
 `# bad pairs <= 3 S_a(r) = 3[(binom(a,2)-1)r+a]`.
 
-Thus the target partition into a row-blocks and the r-1 non-target partitions into r block-classes form an **approximate pairwise balanced / resolvable design**: all but O(a^2 r) of the O(a^2 r^2) vertex pairs lie in exactly one block. Across all color partitions, only O(a^2 r) internal or cross-edge defects occur. For fixed a, the proportion of bad pairs is O(1/r).
+Thus the target partition into a row-blocks and the r-1 non-target partitions into r block-classes form an **approximate pairwise balanced / resolvable design**: all but O(a^2 r) of the O(a^2 r^2) vertex pairs are represented by exactly one block of their actual color and by no block of any other color. Across all color partitions, only O(a^2 r) internal or cross-edge defects occur. For fixed a, the proportion of bad pairs is O(1/r).
 
 This is a genuine structural upgrade from near-extremality in edge count. It still does not imply an exact transversal design or an earlier R_5/R_4 state: the allowed O(r) exceptional pairs are on the same scale as the missing-parallel-class deficit, so their concentration and incidence pattern must be analyzed rather than ignored.
 
