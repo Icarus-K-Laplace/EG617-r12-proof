@@ -95,7 +95,15 @@ R_{33}\ge s-6,& R_{33}\ge s-4\quad(s\ge7).
 \end{array}
 \]
 
-**Proof.** The general inequality \(R_{pq}\ge a+b-p-q\) follows by splitting according to whether \(a>q\) and \(b>p\). For the sharpened inequalities, split into the three nonzero-charge regions: \(a\le q,b>p\); \(a>q,b\le p\); and \(a>q,b>p\). In the first region, for example, \(R_{pq}=a(b-p)\); in the second, \(R_{pq}=b(a-q)\); in the third, \(R_{pq}=a(b-p)+b(a-q)\). Subtracting the claimed right-hand sides gives nonnegative expressions in each region. The threshold \(s\ge p+q+1\) rules out the zero-charge rectangle. The explicit expansions and boundary minima for all four functions are recorded in LEMMA_VERIFICATION.md. ∎
+**Proof.** For all \(p,q\ge0\), \(R_{pq}(a,b)\ge a+b-p-q\). If neither threshold is exceeded, the right-hand side is nonpositive. If only \(b>p\), then \(R_{pq}=a(b-p)\ge b-p\ge a+b-p-q\) because \(a\le q\); the case only \(a>q\) is symmetric. If both thresholds are exceeded, the two terms are at least \(b-p\) and \(a-q\).
+
+For the sharpened bounds, split by which thresholds are exceeded:
+- \(R_{22}\): if \(a\le2<b\), then \(R_{22}=a(b-2)\ge a+b-3\); the symmetric case is identical. If \(a,b\ge3\), then \(R_{22}-(a+b-3)=2ab-3a-3b+3\ge0\), with minimum at \((3,3)\). The region \(a,b\le2\) has \(a+b\le4\), so it is excluded when \(a+b\ge5\).
+- \(R_{23}\): if \(a\le3,b\ge3\), then \(R_{23}=a(b-2)\) and \(R_{23}-(a+b-4)=(a-1)(b-3)+1\ge0\). If \(a\ge4,b\le2\), then \(R_{23}=b(a-3)\) and \(R_{23}-(a+b-4)=(b-1)(a-4)\ge0\). If \(a\ge4,b\ge3\), then \(R_{23}-(a+b-4)=2ab-3a-4b+4\ge0\), with minimum at \((4,3)\). The zero-charge region has sum at most five.
+- \(R_{24}\): if \(a\le4,b\ge3\), then \(R_{24}=a(b-2)\) and \(R_{24}-(a+b-5)=(a-1)(b-3)+2\ge0\). If \(a\ge5,b\le2\), then \(R_{24}=b(a-4)\) and \(R_{24}-(a+b-5)=(b-1)(a-5)\ge0\). If \(a\ge5,b\ge3\), then \(R_{24}-(a+b-5)=2ab-3a-5b+5\ge0\), with minimum at \((5,3)\). The zero-charge region has sum at most six.
+- \(R_{33}\): if \(a\le3,b\ge4\), then \(R_{33}=a(b-3)\) and \(R_{33}-(a+b-4)=(a-1)(b-4)\ge0\); the symmetric case is identical. If \(a,b\ge4\), then \(R_{33}-(a+b-4)=2ab-4a-4b+4\ge0\), with minimum at \((4,4)\). The zero-charge region has sum at most six.
+
+The same case splits, without the one-unit improvement, give the four baseline bounds \(R_{22}\ge a+b-4\), \(R_{23}\ge a+b-5\), \(R_{24}\ge a+b-6\), and \(R_{33}\ge a+b-6\). ∎
 
 ### Lemma 2.4 (additivity)
 
@@ -214,14 +222,17 @@ k=6,\quad \gamma=0,\quad (a,b)=(2,2).
 \]
 The exact degree equation forces \(v\) to have no neighbor in the opposite long block. All other vertices are exact. The two long-side rectangle vertices use both external slots on the two \(X_3\)-rectangle vertices, and the latter use their three slots on those two vertices and focused connector \(u\). Choose \(x\) in the long-side rectangle and \(y\) in the opposite long block. Then \(v,w,x,y\) can fail to be independent only if \(wy\) is an edge. Thus \(w\) must see all \(r-2=11\) vertices of that block, in addition to its three anchors, impossible for the exact degree-\(13\) vertex \(w\).
 
-It remains to check \(r=12\). The same degree equation is
+It remains to check \(r=12\). The exact degree equation is
 \[
 a+b=9+\gamma+n_2-k,
 \]
-where \(n_2\) is the number of neighbors of \(v\) in the opposite long block. The arithmetic threshold bounds show:
-- if \(\gamma\ge2\), the local cost exceeds six;
-- if \(\gamma=1\), the only low-budget signature is \(k=6,(a,b)=(2,2),n_2=0\);
-- if \(\gamma=0,n_2=0\), the only signatures with \(k+R_{22}\le6\) are
+where \(n_2\) is the number of neighbors of \(v\) in the opposite long block. The effective capacities are \((2,2)\).
+
+If \(\gamma\ge2\), then \(a+b\ge11+n_2-k\). If \(a+b\ge5\), the sharpened bound gives \(k+R_{22}\ge k+(a+b-3)\ge8+n_2\); if \(a+b\le4\), then \(k\ge7+n_2\), impossible. Thus \(\gamma\le1\).
+
+If \(\gamma=1\), then \(a+b\ge10+n_2-k\). If \(a+b\ge5\), then \(k+R_{22}\ge7+n_2\); otherwise \(k\ge6+n_2\), so the only possible low-budget case is \(k=6,n_2=0,a+b=4\). Since \(R_{22}=0\) is then required, \((a,b)=(2,2)\).
+
+If \(\gamma=0\) and \(n_2\ge1\), then \(a+b\ge10-k\). When \(a+b\ge5\), the local cost is at least \(k+a+b-3\ge7\). When \(a+b\le4\), \(k\ge6\); the only possibility is \(k=6,n_2=1,a+b=4\), and \(R_{22}=0\) forces \((a,b)=(2,2)\). If \(\gamma=0,n_2=0\), then \(a+b=9-k\); direct splitting by \(k=0,\ldots,6\) gives exactly the table below for \(k+R_{22}\le6\):
 \[
 \begin{array}{c|l}
 k&(a,b)\\ \hline
@@ -234,12 +245,13 @@ k&(a,b)\\ \hline
 6&(1,2),(2,1).
 \end{array}
 \]
-The only extra \(\gamma=0\) signature is \(k=6,(a,b)=(2,2),n_2=1\). These are all the local arithmetic possibilities under the budget.
+The sole local-cost-five row is \(k=5,(a,b)=(2,2)\); every other listed row has local cost six. These are all the low-budget signatures.
 
 For the \(\gamma=1\) signature, exactly one of \(uv,vw\) is an edge. A long-side rectangle vertex \(x\) is saturated by its two \(X_3\)-rectangle edges, and has no other external neighbors. If \(vw\) is absent, then for every \(y\in X_2\), the set \(\{v,w,x,y\}\) forces \(wy\); hence \(w\) is complete to \(X_2\), creating the forbidden clique \(X_2\cup\{a_2,w\}\). If \(uv\) is absent, the same argument forces \(u\) complete to \(X_2\), impossible because exact focused \(u\) already has its two anchor neighbors and all nine \(X_3\) neighbors.
 
-For \(\gamma=0,n_2=0\), every listed low-budget rectangle has a saturated rectangle vertex \(s\) nonadjacent to \(w\) and to every vertex of \(X_2\). For all rows with local cost six, the charge is tight and a positive-charge vertex is saturated; in the sole local-cost-five row \((k,a,b)=(5,2,2)\), parity forces \(K=6\), leaving only one excess unit beyond the listed charge, so at least one of the four rectangle vertices remains exact and saturated. Then \(\{v,w,s,y\}\) forces \(w\) adjacent to every \(y\in X_2\), yielding the same forbidden clique. In the remaining one-neighbor row \(k=6,(a,b)=(2,2),n_2=1\), all other vertices are exact. A long-side rectangle vertex \(x\) is saturated and nonadjacent to \(u\) and all of \(X_2\). For every \(y\in X_2\) other than the single neighbor of \(v\), \(\{v,u,x,y\}\) forces \(uy\). This gives at least nine \(X_2\)-neighbors to exact \(u\), in addition to its two anchors and all nine \(X_3\)-neighbors, impossible. Thus \(c=3\) is closed for all \(r\ge12\).
+For \(\gamma=0,n_2=0\), each local-cost-six row has a saturated rectangle vertex: the positive term in \(R_{22}\) is exactly the excess needed to meet the forced rectangle degree, and all budget is already spent. In the sole local-cost-five row \((k,a,b)=(5,2,2)\), parity forces \(K=6\), leaving only one excess unit beyond the listed charge, so at least one of the four rectangle vertices remains exact and saturated. A saturated vertex \(s\) is nonadjacent to \(w\) and to every vertex of \(X_2\): on the long side its rectangle neighbors fill its two external slots; on the short side its two rectangle neighbors plus focused connector \(u\) fill its three slots. Since \(v\) is nonadjacent to \(w\) and all of \(X_2\), \(\{v,w,s,y\}\) forces \(w\) adjacent to every \(y\in X_2\), yielding the same forbidden clique.
 
+In the remaining one-neighbor row \(k=6,(a,b)=(2,2),n_2=1\), all other vertices are exact. A long-side rectangle vertex \(x\) is saturated and nonadjacent to \(u\) and all of \(X_2\). For every \(y\in X_2\) other than the single neighbor of \(v\), \(\{v,u,x,y\}\) forces \(uy\). This gives at least nine \(X_2\)-neighbors to exact \(u\), in addition to its two anchors and all nine \(X_3\)-neighbors, impossible. Thus \(c=3\) is closed for all \(r\ge12\).
 ## 5. Case \(c=4\), deficits \((0,0,2)\)
 
 The block sizes are \((r-2,r-2,r-4)\). All four connectors are pair connectors incident with \(a_3\); two miss \(a_1\) and two miss \(a_2\). A connector is focused if it is complete to \(X_3\).
@@ -286,7 +298,7 @@ For \(r\ge13\), this sum is at least seven, so \(R_{22}\ge a+b-3\ge r-6-m\). Con
 K\ge k_1+k_2+R_{22}\ge r-6+\max(k_1,k_2)\ge7.
 \]
 
-At \(r=12\), the only possible overlap arithmetic under \(K\le6\) is \(k_1=k_2=0\), both connector-degrees equal one, and each rectangle has \(R_{22}=6\) with orientation \((a,b)=(1,8)\) or \((8,1)\). Indeed, if either \(k_i>0\), the other rectangle's required sum at least nine forces a charge of at least six, already exceeding the budget after adding the positive connector excess. If \(k_i=0\), its sum is at least \(8+\gamma_i\); \(\gamma_i\ge2\) forces \(R_{22}\ge7\), so \(\gamma_i=1\), the sum is nine, and equality in \(R_{22}\ge6\) leaves only the two stated orientations.
+At \(r=12\), the only possible overlap arithmetic under \(K\le6\) is \(k_1=k_2=0\), both connector-degrees equal one, and each rectangle has \(R_{22}=6\) with orientation \((a,b)=(1,8)\) or \((8,1)\). To see that no positive \(k_i\) survives, if one \(k_i=0\), its sum is at least nine and its \(R_{22}\)-charge is at least six, so any positive excess on the other connector exceeds the budget. If both \(k_i>0\) and both are at most four, then \(R_i\ge6-k_i\), so \(k_1+k_2+\max(R_1,R_2)\ge6+\max(k_1,k_2)>6\). If one \(k_i\ge5\), the other positive connector has excess at most four unless the connector-excess sum already exceeds six; its rectangle charge is at least \(6-k_j\), again making the total exceed six. Thus both excesses are zero. Now \(a_i+b_i\ge8+\gamma_i\). If \(\gamma_i\ge2\), then \(a_i+b_i\ge10\) and \(R_{22}\ge7\), so \(\gamma_i=1\). Each sum is then at least nine, and equality in \(R_{22}\ge6\) leaves only the two stated orientations.
 
 The two rectangles must have identical orientation and support. If their charged singleton vertices differed, six excess units would be required on each. If the orientations differed, the six-unit charges would lie in different blocks and add. If they share the singleton but have different eight-sets, that singleton would need more than its available eight external neighbors.
 
