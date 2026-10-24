@@ -99,7 +99,7 @@ It emits all d-rows from 0 through r, exact slack values, candidate degrees, sca
 - instance SHA-256: `65909c3589061e7463e807579bdde059ee7ae4d20f57f53158e5a612ae2d6c42`;
 - certificate SHA-256: `aa2123245e1bd6db9ab7056c3c2b0083f1d2f3828d39f40b54c731ba113b170a`;
 - verifier SHA-256: `c18a74703417faed2c453b588e0ea9a8b03244af04bfc0b5f4191ec8cc15de6a`;
-- gate SHA-256: `d239d700ecb2f246c750af4b1acb76d6c38b1bdf5c42dadaeeb3adaac23ef7bc`;
+- gate SHA-256: `5b6c242d11a4efacb99b1e41d499ef50bf26ad709b704ad56b084ce038a075f5`;
 - gate result: `PASS_CONDITIONAL_MODULE`;
 - RC status: `OPEN`;
 - EG617(13): **not proved**.
