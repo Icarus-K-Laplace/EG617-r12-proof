@@ -1,23 +1,49 @@
 # Equality and near-equality cases
 
-## c=2 branch
+The parity lemma removes the entire apparent `K=7` layer: every `K_r` is even, so a counterexample has `K<=6`.
 
-The analytic proof leaves only one apparent arithmetic escape before the final contradiction:
+## c=2
+No equality layer survives. The previous apparent `r=12,K=7,(2,2,10)` escape is impossible already by parity.
 
-- `r=12`;
-- `K=7`;
-- both triple connectors have excess zero and are nonadjacent;
-- all seven positive-excess exclusive vertices have excess exactly one;
-- for each connector the exact nonneighbour block sizes are `(2,2,10)`.
+## c=3
+For `r>=14`, all focus/nonfocus inequalities are strict enough to force `K>=8`.
 
-The degree-2 transversal-cover lemma then forces the two size-2 exact parts to span a complete `K_{2,2}`. Those four vertices exhaust their entire cross-X degree capacity and have no cross edges to the size-10 part.
+At `r=13`, the only mixed-focus arithmetic boundary under `K<=6` is
 
-Every positive-excess vertex is nonadjacent to both connectors. Pick such a vertex `p` in one of the two small blocks. The opposite size-2 exact set has no edges to `p` or to the size-10 exact set. Therefore the independent-4 prohibition forces `p` to be adjacent to all ten vertices of the large exact set. But `p` has excess one and no connector neighbours, hence cross-X degree exactly three. Contradiction.
+- one pair connector focused on `X3`;
+- the other pair connector `v` nonfocused;
+- `v` has excess `6` and connector-degree `0`;
+- its nonneighbour rectangle has size `(2,2)` between the zero-deficit block and `X3`;
+- every other vertex is exact.
 
-Thus the c=2 equality layer is empty.
+This boundary is impossible because the triple connector would have to be adjacent to all eleven vertices of the opposite zero-deficit block while already adjacent to the three anchors.
 
-## Remaining equality program
+## c=4, deficits (0,0,2)
+At most two connectors can focus on `X3`, so at least two are nonfocused.
 
-For `c=3,4`, equality analysis should be organized by connector focus rather than by partitions of the integer 7. A pair connector missing anchor `ak` forces a complete bipartite graph between its nonneighbour sets in the other two exclusive blocks. Because exact exclusive vertices have cross-X capacities `2+d_i`, this gives direct lower bounds on where excess must live.
+The only boundary layers that reach total budget six are:
 
-The target is to show that every low-excess connector has a unique focus block, then classify the finite focus assignment among 3 or 4 connectors. This should replace a raw enumeration of the 15 integer partitions of 7.
+- `r=16`: a single nonfocused connector can attain local cost six, but two required nonfocused connectors cannot coexist because different-group charges add and same-group nonadjacent supports are disjoint; adjacency raises local cost above six.
+- `r=15`: an adjacent nonfocused connector can stay within budget only with connector excess `k=6`; two such connectors are impossible.
+- `r=14`: the only two-connector overlap escape is two adjacent same-group connectors with `k=0` and identical `(a,b)=(10,1)` rectangles. Their common `X3` vertex carries all six excess units and has no remaining connector slot, contradicting the focused pair from the other group.
+- `r=13`: a different-group equality pair would require `(k,a,b)=(3,4,2)` for both, exhausting all six units and leaving their `X3` rectangle vertices unavailable to the required focused connectors. Hence the nonfocused pair must be same-group; the other-group focused pair then lowers the effective `X3` capacity from four to two, after which both adjacency and nonadjacency alternatives exceed budget.
+
+Thus no equality case survives.
+
+## c=4, deficits (0,1,1)
+No two connectors can focus on the same deficit-1 block.
+
+The boundary layers are:
+
+- `r=16`: both `(0,1)` connectors must focus, leaving two nonfocused type-U connectors; disjoint-support charge is at least twelve.
+- `r=15`: the same focus pattern holds; an adjacent type-U connector would need `k=6`, so two are impossible.
+- `r=14`: a nonfocused `(0,1)` connector would have the unique boundary `k=6`, connector-degree `0`, rectangle `(3,2)`. It would force each other connector to be complete to the same deficit-1 block, contradicting focus collision. Thus both `(0,1)` connectors focus, and the remaining type-U pair cannot fit budget.
+- `r=13`: if either `(0,1)` connector is nonfocused, additive rectangle charges exceed six. Hence both focus. A nonadjacent type-U pair can hit `K=6` only through two `(k,a,b)=(3,3,3)` layers, but then exact rectangle vertices have no slot for the focused connectors. An adjacent type-U pair receives one focused connector neighbour on each side, reducing both effective capacities to two and forcing `k=6` on each connector.
+
+Thus the equality set is empty for every `r>=13`.
+
+## Final equality status
+
+For the parameterized theorem (`r>=13`), there are **no surviving `K=0,2,4,6` configurations** in any of the four anchor geometries.
+
+The only non-parameterized residue is proof-engineering at `r=12`: the parent project already has a complete closure, but this workstream has not yet rewritten that closure into the new focus/rectangle language.
