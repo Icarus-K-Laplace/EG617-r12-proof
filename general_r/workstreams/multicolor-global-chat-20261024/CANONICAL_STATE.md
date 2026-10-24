@@ -109,3 +109,11 @@ The workstream now has a common variable V linking global color imbalance, local
 Single-color Turan stability still allows `Theta(r^2)` edits per typical color. The missing multicolor theorem must show that the row-signature collision budget forces these edit sets to be strongly correlated/orthogonal, yielding two near-clique partitions with an almost permutation intersection matrix.
 
 The most direct next target is a robust two-partition compatibility lemma strong enough to feed the already proved affine-plane-style nonextension mechanism.
+
+## H+I Joint Audit — 2026-10-24
+
+The induced-residual transfer is PROVED: restricting a counterexample coloring to any induced subset preserves the every-(r+1)-set-sees-all-colors property, and the distinguished color's stronger alpha<=a assumption improves its local avoidance floor to p_{a-1}. The resulting `Lambda_{r,a}(m)` inequality is recorded in `MULTICOLOR_TO_SEED_INTERFACE.md`.
+
+However, the derived inequality is not a lower seed-floor theorem. It currently gives an upper consistency constraint on the distinguished color's edge count, and the degree-free relaxation leaves a factor-a asymptotic gap at m=ar+O(1).
+
+The robust partition route now has the exact collision-mass bound `sum_ab C(M_ab,2)<=E_i+E_j`, but stability only gives E_i=O(r^2) for the guaranteed pair. An explicit margin-compatible matrix shows this does not force o(r^2) exceptional cells. The requested strict low-slack/high-slack dichotomy, I2, I3, I4, and an explicit r0 remain OPEN.
