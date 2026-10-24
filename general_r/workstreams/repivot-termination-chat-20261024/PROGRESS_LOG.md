@@ -249,3 +249,60 @@ No all-large-r contradiction is certified yet, but arbitrary `a=2` support graph
 # NEXT SINGLE BLOCKER
 
 > **Clean Pair Nonextension Theorem:** rule out a sufficiently large repivot-closed clean K2 block system with matching cross graphs and no independent 4-transversal, or prove a strict fifth-coordinate improvement on it. The same mechanism should absorb the bounded-allowance d1 concentration forced by eta.
+
+---
+
+# 2026-10-24 — Round 4: clean-pair model, AES reduction, and terminal audit
+
+## Result 21 — Exact block graph / 2-SAT model
+
+Added CLEAN_PAIR_GRAPH_MODEL.md. Every block pair is one of seven partial matchings of K2,2. A selected endpoint transversal is independent exactly when its 2-CNF is satisfiable.
+
+Exhaustive finite audit checked all 7^6 = 117,649 labelled four-block patterns and all 16 assignments per pattern. An unsatisfiable four-block restriction needs at least six target cross edges; 160 labelled patterns attain this minimum. This is a local finite result, not an all-r theorem.
+
+## Result 22 — High-density AES reduction
+
+Added CLEAN_PAIR_NONEXTENSION.md. For U the union of m clean blocks, G=overline(H[U]) is K4-free and
+
+delta(G) >= max(m-1, 2m-r-2).
+
+For m >= ceil(4r/3+3), the Andrasfai-Erdos-Sos theorem makes G 3-partite. Thus U is covered by three target cliques and m <= floor(3(r-1)/2). The surviving interval remains linear and nonempty.
+
+Status: PROVED_CONDITIONAL. Clean Pair Nonextension itself remains OPEN.
+
+## Result 23 — d1 terminal exact transition
+
+Added D1_TERMINAL_ABSORPTION.md. A fixed singleton class of allowance c and multiplicity N is closed under one-point exchange, with
+
+kappa'_{u_j}=c-e_H(u_i,u_j), w'_{u_j}=c.
+
+Known bounds: c=0 implies N<=3; c>=1 implies N<=r-2; (N-1)c<=3r-2. Linear eta forces c=O(1), but not N=O(1).
+
+Status: exact transition / scale transfer PROVED_CONDITIONAL; final d1 absorption OPEN.
+
+## Result 24 — Q2 universal-monotonicity claim retracted
+
+Added FIFTH_COORDINATE_AUDIT.md. The exact Q2 increment is retained, and clean endpoints contribute a_z-b_zi. No sign follows from the clean weight equation.
+
+More decisively, a reversible Phi4-flat repivot has a Phi4-flat reverse move and the Q2 increments have opposite signs. Therefore “every nontrivial Phi4-flat move strictly increases Q2” is DISPROVED_AS_STATED. Q2 may select a maximal representative but cannot itself eliminate the terminal.
+
+## Result 25 — canonical closure ledger
+
+Added TERMINATION_CLOSURE.md and promoted the exact statuses to CANONICAL_STATE.md and TERMINATION_THEOREM.md. The previous a=1 d2 bound was also reconciled: the canonical bound is N<=9, not the older coarse 12.
+
+Actual commits in this round:
+
+- D2 allowance-one audit: cb7e273cba267e35b56303047a80101572ca6ac0
+- CLEAN_PAIR_GRAPH_MODEL.md: c5f6a275d2ac47af94474751a785d410af06fb8b
+- CLEAN_PAIR_NONEXTENSION.md: 2ab7ef93e92c9a50ee19a864855daf761af1a4a9
+- D1_TERMINAL_ABSORPTION.md: 122dac7a970be5d9139bd89e4fe47e3283f54304
+- FIFTH_COORDINATE_AUDIT.md: 0972805e9eceaad2ec415853cb85423785dab592
+- TERMINATION_CLOSURE.md: 9001213208e298a229b99a41b59d7ade56f96a27
+- CANONICAL_STATE.md promotion: 60bd693fa33a5c33d1db0db5254d1fa700c3db2c
+- TERMINATION_THEOREM.md promotion: 9eba15de98a3c32186bea7b8b1db9bcaa80e11ee
+
+## Current outcome
+
+C-N1 is partially achieved. C-N2, C-N3, C-N5 and C-N6 remain OPEN. The proposed universal C-N4 strict-Q2 route is DISPROVED_AS_STATED. No new all-large-r contradiction and no finite r0 are certified.
+
+Next useful work: derive a no-double-counting inequality coupling U, the outside core H\\U, the old shell-pair incidence total 2r+b, and the global excess cap. Do not enlarge the case tree without such an inequality.
