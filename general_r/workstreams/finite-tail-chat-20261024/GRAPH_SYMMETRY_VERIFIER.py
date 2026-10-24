@@ -248,7 +248,7 @@ def verify_test_vectors(path: Path) -> dict[str, Any]:
     vertices = spec["vertices"]
     colors = spec["colors"]
     edge_pairs = spec["edge_pairs"]
-    if len(vertices) > MAX_VERTICES or len(colors) ** len(edge_pairs) > 10_000:
+    if len(vertices) > MAX_VERTICES or len(colors) > 10 or len(colors) ** len(edge_pairs) > 10_000:
         raise AssertionError("test vector exceeds bounded exhaustive enumeration limits")
     assignments = list(itertools.product(colors, repeat=len(edge_pairs)))
     expected_states = []
@@ -275,6 +275,12 @@ def verify_test_vectors(path: Path) -> dict[str, Any]:
     rep_codes = [canonical_encoding(rep_objects[rep_id]) for rep_id in expected_ids]
     if len(rep_codes) != len(set(rep_codes)):
         raise AssertionError("two retained representatives belong to the same orbit")
+    role_groups = [sum(1 for v in vertices if spec["role_partition"][v] == role) for role in sorted(set(spec["role_partition"].values()))]
+    color_groups = [sum(1 for color in colors if spec["color_partition"][color] == cls) for cls in sorted(set(spec["color_partition"].values()))]
+    group_order = math.prod(math.factorial(n) for n in role_groups) * math.prod(math.factorial(n) for n in color_groups)
+    expected_meta = {"state_count": len(states), "orbit_count": len(representatives), "representative_ids": expected_ids, "group_order": group_order}
+    if vectors.get("expected") != expected_meta:
+        raise AssertionError("test fixture summary metadata mismatch")
 
     witnesses = vectors.get("witnesses")
     if not isinstance(witnesses, list) or len(witnesses) != len(states):
