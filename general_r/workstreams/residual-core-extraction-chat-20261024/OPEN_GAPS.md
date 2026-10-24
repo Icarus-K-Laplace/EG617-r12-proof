@@ -111,7 +111,7 @@ Applying the same theorem to the target complement (with (k=a), (q=r)) and summi
 
 Status: concentration `PROVED_SYMBOLIC`; uniform partition stability and global near-design `PROVED_ANALYTIC`; design trimming / partition incompatibility `OPEN`.
 
-**Fixed-a hub localization is also proved:** in the target complement `F_0`, every internal edge is incident to a hub set of size at most `5a(a-1)` for `r>=200a(a-1)+1`; for `a=6`, `|H|<=140` for `r>=5601`. The proof uses part-size concentration, a transversal union bound, and `M_0<=2x_0`. The remaining gap is to show the hub-protection pattern yields an earlier stop or contradiction.
+**Stronger fixed-a target rigidity is proved:** for `r>=binom(a,2)+a+1`, the target ideal parts have constant width `r-binomial(a,2)+2 <= s_j <= r+binomial(a,2)-1`. For every internal target-complement edge `uv`, the product-cover inequality gives `d_C(u)+d_C(v)>=L-M_0/L`, where `L=min s_j` and `M_0<=2x_0`. Thus all such edges meet a hub set `X` with `|X|<=4M_0/(L-M_0/L)`. For `a=6`, `r>=1000` gives `r-13<=s_j<=r+14` and `|X|<=116`. The remaining gap is to show the hub-protection pattern yields an earlier stop or contradiction.
 
 ## Candidate route D — critical-core residue potential
 
@@ -195,10 +195,10 @@ The analytic residual-core theorem proves `delta(H)>=r` for `r>=17`. The boundar
 - No induced `R_{a-1}` extraction theorem for arbitrary `a>=7` is proved.
 - The excess ledger plus Füredi's theorem gives simultaneous uniform partition stability and a global near-resolvable design with at most `3S_a(r)` bad pairs.
 - In the predecessor interface, every non-target color has `z_i>=1`, so at least `r-1` vertices duplicate a non-target color and `q_0<=(a-1)r+2`.
-- For fixed `a`, all internal edges of the target complement localize to at most `5a(a-1)` hubs; for `a=6`, at most 140 hubs suffice when `r>=5601`.
+- For fixed `a`, target ideal groups have absolute width and all internal target-complement edges localize to `|X|<=4M_0/(L-M_0/L)` hubs; for `a=6`, at most 116 hubs suffice when `r>=1000`.
 - An approximate resolvable-design skeleton with `O(a^2 r)` bad pairs is proved; an exact skeleton or design-trimming theorem is not.
 - `NO-HIGH-STOP` remains **`OPEN`** for every claimed threshold `r>=r0`; no such `r0` has been established.
 
 ## Next highest-leverage target
 
-Analyze the hub-protection digraph in the `a=6` target complement, using `|H|<=140` for `r>=5601` and the label-capacity bounds `z_i>=1`, `q_0<=5r+2`. Prove either an earlier `R_5` with the correct edge budget or a contradiction with the four critical-core residue windows. Do not return to fixed-r recurrence, and do not promote a necessary residue condition to a contradiction.
+Analyze the hub-protection digraph in the `a=6` target complement, using the constant-width groups `r-13<=s_j<=r+14` and `|X|<=116` for `r>=1000`, together with the label-capacity bounds `z_i>=1`, `q_0<=5r+2`. Prove either an earlier `R_5` with the correct edge budget or a contradiction with the four critical-core residue windows. Do not return to fixed-r recurrence, and do not promote a necessary residue condition to a contradiction.
