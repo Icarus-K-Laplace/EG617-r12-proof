@@ -69,15 +69,7 @@ t_r(n):=\binom n2-p_r(n).
 
 Consequently at least half of the non-target complements are within (a^2-1) edges of the exact Turán maximum. Section 4 below closes the uniform partition-stability subgap using Füredi's quantitative theorem.
 
-**Open stability issue.** The number of parts (r) grows with the parameter. A fixed-(r) stability statement cannot be applied with constants silently assumed uniform in (r). We still need a quantitative uniform lemma of the form
-
-[
-e(F)\ge t_r(ar+1)-C
-\Longrightarrow
-F\text{ is within }f(a,C)\text{ edits of }T_r(ar+1),
-]
-
-with an explicit (f) independent of (r). This implication is not claimed here.
+**Historical note.** The uniform edit-distance issue identified in the initial concentration analysis is resolved by Theorem 3 in Section 4 below, using Füredi's quantitative Turán theorem.
 
 ## 2. Exact residue windows from the critical-core polynomial
 
@@ -361,10 +353,11 @@ The theorem localizes all defects inside the target partition to (O(a^2)) hub ve
 
 ### PROVED
 
-- At least \(\lfloor r/2\rfloor\) non-target colors are within (a^2-1) edges of the exact Turán maximum in the complement.
-- The critical-core polynomial confines fixed-(a) residues to explicit bounded-width windows for (r\ge R_a).
-- The predecessor-clique cross-color incidence and excess increments are exact.
-
+- At least `floor(r/2)` non-target colors are within `a^2-1` edges of the exact Turán maximum in the complement.
+- Uniform edit-distance partition stability and the global near-resolvable design are proved via Füredi.
+- The critical-core polynomial confines fixed-`a` residues to explicit bounded-width windows for `r>=R_a`.
+- The predecessor label-capacity lemma proves `z_i>=1` for every non-target color, with exact class-hole identity.
+- For fixed `a`, every internal edge of the target complement is incident to at most `5a(a-1)` hubs; for `a=6`, at most 140 hubs suffice for `r>=5601`.
 ### NOT PROVED
 
 - (a=6) is impossible.
