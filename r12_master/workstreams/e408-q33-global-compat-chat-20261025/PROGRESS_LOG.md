@@ -18,3 +18,13 @@
 - The proof's critical finite split is: \(m\le4\) contradicts D-to-W incidence; \(m=5\) gives a K12 directly; \(m\ge7\) contradicts the total excess; \(m=6\) leaves only three top-extra profiles (3,5,5), (4,4,4), (4,4,5), each of which cannot have all three vertices pairwise nonadjacent. Thus \(S_0\le21\) is excluded under the four-partite contract.
 - Confirmed that this theorem does not use the uncertified ten-witness-star dichotomy. The latter's tripartite-versus-complete-tripartite gap is explicitly documented in PROOF_DEPENDENCIES.md.
 - The remaining branch is not solved: non-four-partite L remains in the second-Turán interval, and the four-partite branch with \(S_0\ge22\) still needs a genuine cross-layer contradiction or independently replayable finite certificate.
+
+
+## 2026-10-25 — low-slack blocker normal form and audit repair
+
+- Integrated the read-only pairwise blocker-compatibility theorem from the ultimate-closure branch. Clarified that its proof extends from same-block pairs to cross-block pairs only when the two outer vertices are assumed nonadjacent in C.
+- Derived a low-slack theorem for an exact-129 color and any outer block with \(r_i(C)\le3\): all ten isolated K5 components are represented in exactly one row neighborhood, exactly two rows contain no full component, and each component-containing row has size at most seven.
+- Audit caught a gap in the first draft of this theorem: two rows that individually contain no full component can jointly cover a component, so their pairwise blocker parameter need not be zero. Replaced that argument with the stronger, simpler gadget-incidence count: three no-component rows each contribute at least six incidences to the 11-point gadget, giving at least 18 gadget incidences, whereas the one-or-two rule allows at most \(11+r_i(C)\le14\). The committed proof now uses this valid contradiction.
+- Cross-block consequence: when \(r_i(C),r_j(C)\le3\), each of the ten component labels has a unique representative in each block. The two representatives must be C-adjacent: each row contains the component plus at most two extra vertices, so at least seven gadget vertices remain outside their union, contradicting pairwise compatibility if the representatives were C-nonadjacent.
+- For each low-slack block, the 56 selected witness labels are partitioned among 12 row vertices; each row class is a matching of pairwise-disjoint Q-sets and contains at most one Q from each selected color. The immediate capacity bound \(12\cdot7=84\) still exceeds 56. This is a sharper finite contract, not a terminal contradiction.
+- E408 Q33 remains OPEN / NOT_CERTIFIED; the non-four-partite L branch and the four-partite branch with \(S_0\ge22\) remain unresolved.
