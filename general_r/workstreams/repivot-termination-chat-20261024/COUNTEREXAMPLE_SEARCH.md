@@ -29,7 +29,7 @@ This validates the *type relation table* only. It does not imply the outside ver
 
 The class-assignment slacks satisfy sum u_T=4 in each witness triple, so every optional H-degree is at most four.
 
-If an outside vertex o has no pair of fully-seen witness classes from the same part, choose any witness pair from T0,T1. The pair is off-part. In one residual triple with relation pattern M,O,empty, if o had fewer than a-4 neighbours in the union of those three classes, every residual class would still have at least five vertices. We could choose:
+If an outside vertex o has no pair of fully-seen witness classes from the same part, choose any witness pair from T0,T1. The pair is off-part. In one residual triple with relation pattern M,O,empty, if o had fewer than lambda-4 neighbours in the union of those three classes, every residual class would still have at least five vertices. We could choose:
 
 1. a vertex in one optional endpoint class;
 2. a non-neighbour in the other optional endpoint class, since its optional degree is at most four;
