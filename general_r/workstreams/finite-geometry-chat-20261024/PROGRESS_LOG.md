@@ -14,8 +14,18 @@
 
 `K1/K2/K3/K4 = OPEN` as headline prime-power theorems.
 
-However, exact orthogonality/nonextension prerequisites are now cleanly isolated.
+## 2026-10-24 — Round 2
+
+- Imported and verified the exact Brouwer non-r-partite Turan threshold: a `K_(q+1)`-free graph on `q^2` vertices with at least `t_q(q^2)-q+2` edges is q-partite.
+- Proved the low-slack coordinatization theorem: if a color graph on a `q^2` restriction has Turan-complement slack `s<=q-2`, then the vertex set partitions into exactly `q` monochromatic `K_q` blocks and there are exactly `s` additional same-color edges between blocks.
+- Proved that two colors in this low-slack window have exactly orthogonal block partitions. Thus the restriction is canonically a `q x q` grid even though each color may have up to `q-2` defect edges.
+- Proved near-line forcing for the deleted ambient vertex: for a low-slack color with defect count `s`, some `K_q` block has at most `2s` non-color-i edges to the deleted vertex, hence at least `q-2s` color-i attachments.
+- This upgrades the K-line from exact equality to a linear stability window.
+
+### Refined bottleneck
+
+The local structure is now strong whenever two colors satisfy `s<=q-2`. The unresolved global step is to force two colors into that window, or to show that the alternative (all but at most one color having slack at least `q-1`) creates a different contradiction/design terminal.
 
 ### Next attack
 
-Quantify near-equality. Seek a theorem saying that if two or more colors on a `q^2` restriction have sufficiently small Turan slack, then after deleting/repairing a controlled number of vertices or edges they induce near-orthogonal clique partitions. The extra vertex should then force either exact orthogonality or a large Kakeya-type exceptional set.
+Study the exact local slack identity across colors and vertices, then combine it with edge-degree averaging and the low-slack partition theorem. For prime powers, if a large set of blocks/directions emerges, invoke finite-field incidence/Kakeya tools only after this coordinatization step.
