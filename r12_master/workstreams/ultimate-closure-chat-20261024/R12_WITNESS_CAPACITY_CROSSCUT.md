@@ -6,13 +6,13 @@ Purpose: derive constraints common to all five E407 Q32 templates and the E408 Q
 
 ## 1. Frozen contract
 
-Let F be a 61-vertex T61 residual with alpha(F)<=5, omega(F)<=11, a regular degree-13 pivot p, shell A=N_F(p) of size13, and core H=V(F)\(A union {p}) of size47. Assume e(H)=284, delta(H)>=12, so
+Let F be a 61-vertex T61 residual with alpha(F)<=5, omega(F)<=11, a regular degree-13 pivot p, shell A=N_F(p) of size13, and core H=V(F)\(A union {p}) of size47. The exact layers used below are E407 Q32 / E408 Q33 with e(H)=284 and E408 Q32 with e(H)=285; in all cases delta(H)>=12. Write
 
     epsilon(x)=d_H(x)-12 >=0,   sum_H epsilon(x)=2*284-47*12=4.
 
 For a in A, N_H(a)=N_F(a) intersect H. For a regular shell vertex b with missing-neighbourhood T_b=N_M(b) intersect S and t_b=d_M(b)+g_b<=3, put H_b=H\N_H(b). The witness lemma gives alpha(H_b)=4.
 
-In E407 Q32, all ten vertices B=A\S are regular and t_b=k_b=d_M(b)<=3. In E408 Q33/d3, k_b<=3 and beta+X+G_B=3, so at least seven B vertices have g_b=0 and t_b=k_b<=3; every B vertex has t_b<=6.
+In E407 Q32, all ten vertices B=A\S are regular and t_b=k_b=d_M(b)<=3. In E408 Q33/d3, k_b<=3 and beta+X+G_B=3, so at least seven B vertices have g_b=0 and t_b=k_b<=3; every B vertex has t_b<=6. The shell-support and hub-cover lemmas below apply to all three layers; extension guarantees are stated separately for the excess-4 and excess-6 cores.
 
 ## 2. Universal three-shell-row support
 
@@ -114,3 +114,46 @@ The highest-value next lemma is a *labelled witness-packing incompatibility theo
 - E408 Q33: at least five pairwise disjoint no-S K5 witness sets per exact-129 color, at least eight exact-129 colors, cross-color intersections at most one, and the row-hit budget 7-beta per color.
 
 It must exploit the 284-edge / four-excess degree structure and the actual adjacency graph H, not merely sum the scalar incidences. Until this theorem is proved, all five E407 templates and E408 Q32/Q33 remain OPEN.
+
+
+## 8. Template-specific hub-complete / high-B-degree dichotomy
+
+For Q subset H independent of size four, put
+
+    W_B(Q)={b in B : Q intersects N_H(b)},
+    W_S(Q)={s in S : Q intersects N_H(s)}.
+
+For any s in S not in W_S(Q), every B vertex missing to s must lie in W_B(Q). Otherwise Q, s, and an unhit missing B vertex form an independent 6-set. Therefore
+
+    |W_B(Q)| >= d_M(s,B)   for each s in S\W_S(Q).
+
+The row-type count constraints for the five V12 templates imply:
+
+- Template A: n3>=6, so every hub has at least six missing B neighbours.
+- Template B: n3>=2+2n0>=2, so every hub has at least two missing B neighbours.
+- Template C: n3>=6, so every hub has at least six missing B neighbours.
+- Template D: n3>=1+2n0>=1, so every hub has at least one missing B neighbour.
+- Template E: each end of the P3 missing graph has at least n2+n3>=5 missing B neighbours. The centre can have zero missing B neighbours, but if it is the only unhit hub then Lemma 2.1 forces Q to hit at least one B row.
+
+Consequently, for A and C, every witness Q_b either hits all three hubs or has |W_B(Q_b)|>=6. In the latter case it can be anticomplete to at most four B labels, and its four core vertices carry at least two units of parent target-degree excess:
+
+    sum_{x in Q_b}(d_F(x)-13)
+      = epsilon(Q_b)+sum_{x in Q_b} d_A(x)-4 >= 2.
+
+Thus if all ten B rows in A or C are witnessed only by non-hub-complete sets, at least three distinct witness sets are necessary. This is a real reduction, but not a contradiction: witness sets may overlap, and a hub-complete witness remains a live escape.
+
+For B, D, and E the same formula gives the row-specific weaker capacities listed above. These bounds apply uniformly to all five templates and do not assume that the Q_b are distinct.
+
+## 9. Excess-sensitive extension rule for E408 Q32
+
+E408 Q32 has e(H)=285, so sum epsilon_H=6 rather than4. The universal support and hub-cover lemmas still apply. For an independent triple X in H_b, nonextension implies
+
+    47-t_b <= 39+epsilon(X),
+    t_b >= 8-epsilon(X).
+
+Therefore, for a regular row t_b<=3, failure to extend is possible only in the exceptional cases:
+- t_b=3 and epsilon(X)>=5;
+- t_b=2 and epsilon(X)>=6;
+- t_b<=1: impossible.
+
+So the E408 Q32 extension step is valid for every triple whose three vertices carry at most four total units of core excess; the only unresolved triple-extension exceptions must contain at least five of the six excess units. Do not silently reuse the excess-4 proof for the 285-edge core.
