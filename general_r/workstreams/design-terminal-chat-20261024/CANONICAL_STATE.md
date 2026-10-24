@@ -135,7 +135,7 @@ This section supersedes the earlier Hub Propagation subsection and any claim tha
 
 1. **Conditional ordinary-label cylinder lemma — PROVED_CONDITIONAL.** If every other ideal block contains an ordinary (B_k\setminus X) point for some (k\ne j), then a missing off-hub repeated pair (uv\subset B_j\setminus X) forces at least (r-1) non-target edits. The full hypothesis is recorded in `HUB_PROPAGATION_THEOREM.md`.
 2. **Target-alpha K6 exclusion — PROVED_ANALYTIC.** (\alpha(G_0)\le5) implies every non-target (G_i) is (K_6)-free. Thus a one-block star cover to a clean 5-clique ideal block is impossible: it would create a (K_6) in (G_i).
-3. **Defect propagation insight — PROVED_ANALYTIC locally.** Any cheap cylinder cover must make its cover block non-clique in the actual non-target color; the resulting new defect must itself be covered. The global chain/cycle cost is still **OPEN**.
+3. **Defect propagation insight — PROVED_ANALYTIC locally.** A full one-block star cover to a size-5 ideal block must make that block non-clique in the actual non-target color, or it creates a forbidden K6; the resulting new defect must itself be covered. The global chain/cycle cost is still **OPEN**.
 4. **Exact cross-pair budget — PROVED_SYMBOLIC.**
 [
 A=9r+5-\Delta_0+D-S_{\rm non},
