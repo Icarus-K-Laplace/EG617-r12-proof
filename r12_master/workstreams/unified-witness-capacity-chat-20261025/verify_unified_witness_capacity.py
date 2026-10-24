@@ -210,6 +210,34 @@ def check_pair_certificate_multiplicity() -> None:
             assert mu - 1 <= 9  # label-anchored pairs containing its own label
 
 
+def check_q33_label_array_relaxation() -> None:
+    # Seven pivot rows plus one non-pivot row; seven B-label symbols.
+    # The array checks only label incidence, not actual Q-coordinate realization.
+    rows = []
+    for i in range(7):
+        row = []
+        for j in range(7):
+            row.append("p" if i == j else (i + j) % 7)
+        rows.append(row)
+    rows.append([(2 * j) % 7 for j in range(7)])
+
+    assert all(len(set(row)) == 7 for row in [rows[7]])
+    for i in range(7):
+        assert rows[i].count("p") == 1
+        symbols = [x for x in rows[i] if x != "p"]
+        assert len(symbols) == 6 and len(set(symbols)) == 6
+
+    for j in range(7):
+        col = [rows[i][j] for i in range(8)]
+        assert col.count("p") == 1
+        b_symbols = [x for x in col if x != "p"]
+        assert sorted(b_symbols) == list(range(7))
+
+    for symbol in range(7):
+        assert sum(row.count(symbol) for row in rows) == 7
+    assert sum(row.count("p") for row in rows) == 7
+
+
 def main() -> None:
     check_zero_excess_endpoint_tables()
     check_edge_ledgers()
@@ -217,9 +245,11 @@ def main() -> None:
     check_label_count_matrix()
     check_partite_branch_capacity()
     check_pair_certificate_multiplicity()
+    check_q33_label_array_relaxation()
     print("R12_UNIFIED_WITNESS_CAPACITY_ARITHMETIC_OK")
     print("Partite branch: exact Q33 incidence profile and labelled row caps verified.")
     print("Pair-certificate multiplicity: max 45 unlabelled / 9 label-anchored pairs.")
+    print("Q33 label-only array relaxation verified; no block-coordinate realization implied.")
     print("Scope: exact integer/degree ledgers only; no graph-realization certificate.")
 
 
