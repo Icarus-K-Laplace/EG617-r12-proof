@@ -115,7 +115,7 @@ In particular, every optional cross degree is at most 4. If u_T=0, then every x 
 
 The witness pair chosen for an outside vertex o consists of one class from T0 and one from T1. If the two classes belong to the same part, o sees that entire part. If they belong to different parts, the remaining type classes contain a triple whose three pair relations are: one optional graph of maximum degree at most 4, one block matching, and one empty H-pair.
 
-For that residual triple, any set of fewer than a-4 neighbours of o cannot hit all independent transversals. Indeed, after deleting those neighbours, each of the three classes still has at least five vertices. Choose a vertex in the endpoint class of the optional relation, a non-neighbour of it in the other optional class (possible because the optional degree is at most 4), and a vertex in the matching class other than the unique block mate. The resulting triple is pairwise H-nonadjacent and also nonadjacent to o, contradicting alpha(H)<=3.
+For that residual triple, any set of fewer than lambda-4 neighbours of o cannot hit all independent transversals. Indeed, after deleting those neighbours, each of the three classes still has at least five vertices. Choose a vertex in the endpoint class of the optional relation, a non-neighbour of it in the other optional class (possible because the optional degree is at most 4), and a vertex in the matching class other than the unique block mate. The resulting triple is pairwise H-nonadjacent and also nonadjacent to o, contradicting alpha(H)<=3.
 
 Therefore, for any cross-part witness pair,
 
@@ -135,7 +135,7 @@ so
 
 X <= floor((2r-2-K_U)/(3lambda-4-r)) <= floor((2r-2)/8).
 
-Since h=r+1-2a, the denominator has the exact form
+Since h=r+1-2lambda, the denominator has the exact form
 
 3lambda-4-r=(r-3h-5)/2,
 
