@@ -38,11 +38,11 @@ If an outside vertex o has no pair of fully-seen witness classes from the same p
 These three vertices are pairwise H-nonadjacent and nonadjacent to o, violating alpha(H)<=3. Thus
 
 d_H(o,U)>=3a-4,
-kappa_o>=3a-4-r>=8.
+kappa_o>=3lambda-4-r>=8.
 
 For X such exceptional vertices,
 
-X(3a-4-r)<=K_O<=2r-2-K_U.
+X(3lambda-4-r)<=K_O<=2r-2-K_U.
 
 This is the correct replacement for the invalid all-parts claim. Since h=r+1-2a, the exact bound is X<=floor((4r-4-2K_U)/(r-3h-5)); the denominator is at least 16 in the high-density branch. X can still be linear near a=ceil(r/3)+4.
 
@@ -50,7 +50,7 @@ This is the correct replacement for the invalid all-parts claim. Since h=r+1-2a,
 
 ### h=2
 
-Here all part deficits s_i vanish, and no outside vertex can see a whole part because each part is a clique of size r-1. Hence X=2. Also a=(r-1)/2, so each exceptional outside vertex has
+Here all part deficits s_i vanish, and no outside vertex can see a whole part because each part is a clique of size r-1. Hence X=2. Also lambda=(r-1)/2, so each exceptional outside vertex has
 
 kappa_o >= 3(r-1)/2 -4-r = (r-11)/2.
 
@@ -85,7 +85,7 @@ A second naive relaxation sets X=0 and makes each O_i a clique. It immediately f
 
 ## 6. Remaining search targets
 
-1. Show that exceptional vertices cannot occupy the allowed excess budget at scale X=Theta(r), or improve the lower bound kappa_o>=3a-4-r using the full residual neighbourhood.
+1. Show that exceptional vertices cannot occupy the allowed excess budget at scale X=Theta(r), or improve the lower bound kappa_o>=3lambda-4-r using the full residual neighbourhood.
 2. Combine the exact class-assignment slack sum 4 with the part-assignment slack sum 4+X and the d1 population eta.
 3. Use the inherited clique constraint omega(H[O_i])<=s_i together with the O-graph's alpha constraint, without treating a local block relaxation as a full core.
 4. For h=2, use K_O>=r-11 together with a lower bound on K_U or cross-incidence to obtain a contradiction; the current bound alone is insufficient.
