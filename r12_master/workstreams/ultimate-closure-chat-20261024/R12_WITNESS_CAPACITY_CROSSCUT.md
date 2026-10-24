@@ -8,9 +8,9 @@ Purpose: derive constraints common to all five E407 Q32 templates and the E408 Q
 
 Let F be a 61-vertex T61 residual with alpha(F)<=5, omega(F)<=11, a regular degree-13 pivot p, shell A=N_F(p) of size13, and core H=V(F)\(A union {p}) of size47. The exact layers used below are E407 Q32 / E408 Q33 with e(H)=284 and E408 Q32 with e(H)=285; in all cases delta(H)>=12. Write
 
-    epsilon(x)=d_H(x)-12 >=0,   sum_H epsilon(x)=2*284-47*12=4.
+    epsilon(x)=d_H(x)-12 >=0,   sum_H epsilon(x)=2e(H)-47*12; this is 4 when e(H)=284 and 6 when e(H)=285.
 
-For a in A, N_H(a)=N_F(a) intersect H. For a regular shell vertex b with missing-neighbourhood T_b=N_M(b) intersect S and t_b=d_M(b)+g_b<=3, put H_b=H\N_H(b). The witness lemma gives alpha(H_b)=4.
+For a in A, N_H(a)=N_F(a) intersect H. For a regular shell vertex b with missing-neighbourhood T_b=N_M(b) intersect S and t_b=d_M(b)+g_b<=3, put H_b=H\N_H(b). The small-row witness lemma gives alpha(H_b)=4 for t_b<=7. Extension of a prescribed independent triple is a separate, excess-sensitive statement.
 
 In E407 Q32, all ten vertices B=A\S are regular and t_b=k_b=d_M(b)<=3. In E408 Q33/d3, k_b<=3 and beta+X+G_B=3, so at least seven B vertices have g_b=0 and t_b=k_b<=3; every B vertex has t_b<=6. The shell-support and hub-cover lemmas below apply to all three layers; extension guarantees are stated separately for the excess-4 and excess-6 cores.
 
