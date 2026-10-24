@@ -133,3 +133,12 @@ Since affine planes of orders 10 and 14 do not exist, the full-affine-plane subc
 The residual multinet theorem is supplemented by Theorem K.RM4 in RESIDUAL_MULTINET_EXTRACTION.md. At b_i=q-1, the complement graph is an extremal non-q-partite K_{q+1}-free graph if it is not q-partite. Kang–Pikhurko's exact classification gives a one-exceptional-vertex form; in the q-partite alternative, G_i[R] is q equal clique blocks plus q-1 cross-block defects. The nonpartite form has a residual exceptional point of color-i degree 2q-2-a, 1<=a<=q-1.
 
 This theorem is exact at the first high-excess threshold only. It refines the repeated-witness-color branch but does not exclude it; b_i>=q remains OPEN.
+
+
+## Round 4 — exact r=7 Case B profile
+
+Theorem K.RM5 is proved in RESIDUAL_MULTINET_EXTRACTION.md (commit eb238d01b9aebf98a7614dba00e2696a2f3d05cf). For q=6, absence of an orthogonal mate of order 6 bounds the number of q-partite residual color complements by three. The residual budget then forces exactly three non-q-partite colors with b_i=5 and three zero-excess colors with b_i=0.
+
+The three zero-excess colors give a 3-net / Latin square of order 6. The omitted color c has exactly 75 edges on R and is a union of seven c-cliques of sizes 6,5,5,5,5,5,5. The 6-clique is a full transversal of the three directions; the six 5-cliques are near-transversals. Each high color is at the Kang–Pikhurko exceptional-star threshold.
+
+This is an exact finite incidence kernel for Case B at r=7, not a contradiction. The partition into one transversal and six near-transversals does not itself give an orthogonal mate, so the Euler–Tarry theorem alone does not exclude it.
