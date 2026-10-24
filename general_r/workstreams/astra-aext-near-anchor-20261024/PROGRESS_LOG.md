@@ -15,3 +15,6 @@ Exact polynomial identities and compressed sharpness construction checks passed.
 
 Second substantive result: minimal induced-rank extraction, uniformly for all r>=67, bypasses K_r packing and proves the terminal bound r<=delta<=r+a-4 for every a>=6. The earliest terminal has delta in {r,r+1,r+2}. This reduction retains the full colouring but deliberately does not inherit greedy B_a budgets.
 MHI remains OPEN; no A_EXT_STAR_PROVED claim.
+
+Published minimal-rank theorem: f08f9aec5547c55cb99bb8e182e9ba99190bb53e.
+Publication audit: compared against frozen architecture; all nine changed files are inside the authorized workstream prefix. The exact-arithmetic verifier passed again after adding the minimum-degree identity. No sibling modifications. This final bookkeeping commit records both substantive proof commits above.
