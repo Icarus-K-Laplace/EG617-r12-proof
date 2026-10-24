@@ -8,44 +8,66 @@ Scope: prime-power / finite-geometry route only. Do not treat existence of an af
 
 For `q` a prime power, prove `P(q)` or at least `P(q)` for all sufficiently large prime powers.
 
-## First-round status
+## Current status
 
-**K1 not yet achieved**, but two structural facts are now isolated and one strategic obstruction is explicit.
+The headline prime-power theorem remains OPEN, but the first quantitative coordinatization theorem is now proved. This is stronger than the previous equality-only statement and is valid for every integer `q>=3`.
 
-### K.1 — Two exact `q^2` Turan partitions force orthogonality
+### K.1 — Exact equality orthogonality
 
-On any `q^2`-vertex restriction, if two color graphs both attain the minimum edge count compatible with independence number at most `q`, then each is a disjoint union of `q` copies of `K_q`. Because the two colors are edge-disjoint, every block of one partition meets every block of the other in at most one point. There are exactly `q^2` block pairs and `q^2` points, so every intersection has size exactly one.
+On any `q^2`-vertex restriction, if two color graphs both attain the minimum edge count compatible with independence number at most `q`, then each is a disjoint union of `q` copies of `K_q`, and the two clique partitions are exactly orthogonal.
 
-Thus the two clique partitions are abstractly orthogonal, with no field assumption.
+Combined with the existing abstract two-partition nonextension theorem, a hypothetical counterexample on `q^2+1` vertices has at most one Turan-equality color on every `q^2` restriction.
 
-Combined with the already-proved two-partition nonextension theorem in `GENERAL_R_AFFINE_PLANE_NONEXTENSION.md`, a hypothetical counterexample on `q^2+1` vertices has the property:
+### K.2 — Low-slack coordinatization (PROVED)
 
-> for every removed vertex `x`, among the `q` color graphs on `V\{x}`, at most one color can be exactly Turan-minimal.
+Let
 
-### K.2 — Prime-power assumption is currently inert before coordinatization
+`m_q=q*C(q,2)`
 
-An arbitrary coloring of `K_(q^2+1)` does not come with a canonical identification of `q^2` vertices with `F_q^2`. Therefore polynomial, character-sum, or association-scheme methods cannot be applied directly merely because `q` is a prime power.
+and on a `q^2` restriction define a color's slack by
 
-A field-specific proof must first extract one of:
+`s_i=e(G_i)-m_q`.
 
-- two or more near/exact orthogonal clique partitions;
-- an affine-net / resolvable-design incidence structure;
-- a coordinate-bearing difference structure.
+Using Brouwer's exact non-r-partite Turan threshold, if
 
-Hence the immediate K-line target is **structural extraction/coordinatization**, not a raw polynomial identity on arbitrary vertex labels.
+`0<=s_i<=q-2`,
 
-### K.3 — Kakeya connection
+then the restriction partitions into exactly `q` monochromatic `K_q` blocks for color `i`, with exactly `s_i` additional color-`i` edges between the blocks.
 
-If a deletion/compression obstruction in an affine model requires the deleted set to contain a whole line in many directions, the deleted set is a partial Kakeya/Besicovitch set. Known planar finite-field Kakeya bounds are quadratic in `q`, whereas the induction shell has only linear size `2q-1`.
+If two distinct colors both satisfy this low-slack inequality, their two block partitions are exactly orthogonal. Hence the vertex set is canonically a `q x q` grid; only the cross-block defect edges remain.
 
-This strongly supports a dichotomy strategy:
+### K.3 — Near-line forcing for the extra vertex (PROVED)
 
-> small shell succeeds, or failure forces enough affine directions that finite-geometry nonextension/Kakeya bounds become available.
+For a low-slack color with defect count `s`, the deleted ambient vertex `x` has, in some extracted `K_q` block, at least
 
-## Next theorem target
+`q-2s`
 
-Prove a quantitative **multicolor near-Turan coordinatization lemma** on a `q^2` restriction:
+incident edges of that color. This follows because otherwise one can choose a non-color-i representative from every block outside the endpoints of all defect edges, yielding a forbidden independent transversal together with `x`.
 
-> if several color graphs have sufficiently small Turan slack, then two of them admit clique partitions (possibly after `o(q^2)` edits) whose block-intersection matrix is close to the all-ones matrix.
+For `s=0` this recovers the full-line forcing in the affine-plane nonextension theorem.
 
-Then use the extra vertex to upgrade robust orthogonality to an exact contradiction.
+### K.4 — Prime-power assumption is still downstream
+
+An arbitrary coloring of `K_(q^2+1)` has no canonical `F_q^2` coordinates. Prime-power algebra becomes legitimate only after structural extraction. The low-slack theorem is now one concrete extraction mechanism.
+
+If many extracted blocks/directions appear, then finite-field incidence, Kakeya, Rédei, character-sum, or association-scheme methods become plausible. Before that point, field methods would be acting on invented coordinates.
+
+### K.5 — Compression/Kakeya bridge
+
+A shell that must contain a full line in many extracted directions is a partial Kakeya/Besicovitch configuration. The elementary bound
+
+`|K|>=tq-C(t,2)`
+
+for one full line in each of `t` distinct affine directions is already quadratic when `t=Theta(q)`, while the induction shell has size only `2q-1`.
+
+## Precise current bottleneck
+
+The local theorem is strong if two colors have slack at most `q-2`. What is not yet proved is a global statement forcing two such colors on the same `q^2` restriction.
+
+Thus the next theorem should be one of:
+
+1. a slack-distribution theorem forcing two low-slack colors;
+2. a complementary theorem showing that if at most one color is low-slack, then the high-slack colors force a different design/nonextension contradiction;
+3. for prime powers, a coordinatized incidence theorem showing that even the defect edges in two low-slack directions cannot coexist with the extra vertex.
+
+Headline status: `K1/K2/K3/K4 = OPEN`, but the low-slack structural subgoal is now achieved.
