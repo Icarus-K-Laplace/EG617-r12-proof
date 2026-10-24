@@ -159,6 +159,8 @@ If `q_0` is the number of target cross-edges and `z_i` counts the duplicated non
 
 This is a new exact interface constraint and gives monotone excesses backward through the greedy process.
 
+**Stronger exact conclusion:** for every non-target color `i`, `z_i>=1`. The vertices with a unique `i`-colored neighbor `b` in `B` split into `r` classes `S_{i,b}` of size at most `a`, because any two vertices in one class must be joined by color `i`. Hence `ar+1-z_i<=ar`, so `z_i>=1`, `sum_i z_i>=r-1`, and `q_0<=(a-1)r+2`. The exact hole identity is `sum_b(a-|S_{i,b}|)=z_i-1`; if `z_i=1`, all `r` classes have size exactly `a`.
+
 **Remaining gap:** turn the near-permutation interface and the clique-transversal property into an induced `R_{a-1}` theorem or an exact design-trimming contradiction.
 
 Status: interface `PROVED_SYMBOLIC`; high-a induction `OPEN`.
