@@ -102,3 +102,17 @@ The C and D terminal interfaces share a precise, proved transversal-cover accoun
 - D needs defect propagation beyond the bounded hub kernel.
 
 This closes the **common counting-interface question**, not the full C or D terminal nonextension theorem. No unconditional all-large-r result follows from this lemma alone.
+
+
+## Round 3 low-offset exact cover consequence
+
+Let T be the independent near-anchor triple, W its common target anti-neighbourhood, and o a vertex outside T union W that is target-nonadjacent to all three anchors. Since alpha(F)<=5, N_F(o,W) must meet every edge of J_W=complement of F[W]: otherwise an edge uv of J_W with both endpoints target-nonadjacent to o would make T union {o,u,v} a target-independent 6-set.
+
+Hence N_F(o,W) is an actual vertex cover, not merely a fractional cover, and
+
+d_F(o,W) >= tau(J_W)
+= |W|-alpha(J_W)
+>= |W|-(r-1)
+= r-j+1.
+
+This exact integer cover bound is stronger than the weighted expectation bound for this particular one-vertex obstruction. It is used in the Round-3 bounded-incidence collapse proof. It does not bound d_F(o,W) from above, and therefore does not by itself close the low-offset terminals.
