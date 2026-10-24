@@ -19,33 +19,33 @@ Both statements follow by adjoining $v$ to a forbidden independent set. Thus the
 ## 2. Exact transfer inequality
 
 Let $p_k(s)$ be the minimum edge count in an $s$-vertex graph with independence number at most $k$. For $k,\ell\ge1$, define
-[
+$$
 \Pi_{k,\ell}(S)=\min_{y_1+\cdots+y_\ell=S,\ y_q\in\mathbb Z_{\ge0}}
 \sum_{q=1}^{\ell}p_k(y_q).
-]
+$$
 Since $\sum_i x_i(v)=(r-1)(m-1)$, set
-[
+$$
 \Lambda_{r,a}(m)=\min_{0\le x\le m-1}
 \left[p_{a-1}(x)+
 \Pi_{r-1,r-1}((r-1)(m-1)-x)\right].
-]
+$$
 For triangle counts $T_2,T_3$ on $X$ (exactly two colors and monochromatic, respectively), the exact identity
-[
+$$
 \sum_{v\in X}\left[\binom{m-1}{2}-\sum_i e_i(W_i(v))\right]
 =2T_2+3T_3
-]
+$$
 and the local Turán floors imply
-[
+$$
 \boxed{2T_2+3T_3\le
 m\left[\binom{m-1}{2}-\Lambda_{r,a}(m)\right].}
-]
+$$
 This is a genuine multicolor-to-induced-residual theorem: it uses the edge partition, the inherited $(r+1)$-set property, and the stronger target-color independence cap $a$.
 
 Also, with $W=\sum_{v,i}\binom{d_i(v)}2=T_2+3T_3$, Jensen gives
-[
+$$
 \frac{2e(J)^2}{m}-e(J)\le
 m\left[\binom{m-1}{2}-\Lambda_{r,a}(m)\right].
-]
+$$
 The inequality is a consistency/upper-envelope constraint on $e(J)$, not an improved lower floor.
 
 ## 3. Why the five seed coordinates are not closed
@@ -60,9 +60,9 @@ The universal Turán floors are:
 At $r=12$, the certified floors are respectively $131,210,234,284,308$, which exceed these baselines by $10,23,36,31,44$. The transfer inequality does not prove these excesses for general $r$.
 
 For fixed $a\ge2$ and $m=ar+O(1)$, the degree-free relaxation has
-[
+$$
 \Lambda_{r,a}(m)=\left(\frac{a(a-1)}2+o(1)\right)r^2.
-]
+$$
 Consequently its right-hand side is $(a^2/2+o(1))r^3$, whereas the target-color wedge lower bound at $e(J)=p_a(m)$ is only $(a/2+o(1))r^3$. The resulting factor-$a$ scale gap means this relaxation cannot force a positive excess over $p_a(m)$.
 
 A degree-profile refinement of the transfer inequality is still mathematically possible. It has not yet yielded an all-r lower floor, and the inequality's present direction must not be reversed.
