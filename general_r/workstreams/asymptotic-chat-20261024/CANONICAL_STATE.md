@@ -10,43 +10,64 @@ Branch: `workstream/general-r-asymptotic-20261024`
 
 The strongest current synthesis theorem is:
 
-> **Theorem S68 — CONDITIONAL_ON_A_C*_D + ASYMPTOTIC_ANALYTIC.**
+> **S68-v2 — CONDITIONAL_ON_Aext_C*_D + ASYMPTOTIC_ANALYTIC.**
 >
-> For every `r>=68`, if the front residual/design dichotomy H_A, the remaining endpoint terminal closure H_C*, and the design-terminal nonextension H_D hold at r, then `P(r)` holds.
+> For every `r>=68`, if the upstream extraction/design dichotomy `H_A^ext`, remaining endpoint terminal closure `H_C*`, and design-terminal stability/nonextension `H_D` hold at r, then `P(r)` holds.
 
-The Exact Three-Anchor hypothesis H_B is no longer assumed for r>=68; it is derived from the legal core contract using parity, near-anchor reduction and the sibling AES theorem.
+Two formerly load-bearing hypotheses are now derived rather than assumed:
+
+1. the complete legal residual pivot/core contract follows automatically from an extracted `4r+1` residual for every `r>=17`;
+2. Exact Three-Anchor `K>=8` follows analytically for every `r>=68`.
 
 ## 1. Current strongest theorem: r>=68
 
-`H_A + H_C* + H_D => P(r)` for every `r>=68`.
+`H_A^ext + H_C* + H_D => P(r)` for every `r>=68`.
 
-If H_B is explicitly assumed, the corresponding composition works already for every `r>=12`.
+Here `H_A^ext` only asks:
 
-## 2. Hypotheses still required
+> force an induced `4r+1` residual with `alpha<=4`, `omega<=r-1`, inherited least-colour cap, or a controlled `5r+1` design-like terminal.
 
-### H_A — OPEN
-All-large-r front extraction: every counterexample reaches either a legal `4r+1` residual/core contract or a controlled `5r+1` design-like terminal.
+It no longer assumes `delta(F)=r+1`, an exact pivot, or `delta(H)>=r`.
+
+## 2. Proven residual branch certification
+
+Sibling residual-extraction theorem, head
+
+`07cd8fb58ffd93d234b1e8b6104f939175d7fbda`:
+
+for every `r>=17`, an extracted legal `4r+1` residual automatically has
+
+- `delta(F)=r+1`;
+- a degree-`(r+1)` pivot;
+- core `|H|=3r-1`, `alpha(H)<=3`, `omega(H)<=r-1`, `delta(H)>=r`.
+
+Thus the front open problem is now purely upstream extraction/stopping classification.
+
+## 3. Hypotheses still open
+
+### H_A^ext — OPEN
+Force `4r+1` residual or controlled `5r+1` terminal.
 
 ### H_C* — OPEN
-Only the remaining endpoint terminal closure is needed, not necessarily a universal repivot potential. Current unresolved scalable backend content is concentrated in d2, plus d0/d1 and the finite high skeleton.
+Terminal-only backend closure is enough; a universal potential is not required. Remaining content is dominated by scalable d2, plus d0/d1 and finite high skeletons.
 
 ### H_D — OPEN
-Robust classification/nonextension of the `5r+1` design-like terminal. Exact affine-plane nonextension is already proved; the missing step is stability/classification into that rigid class.
+Robust classification/nonextension of the `5r+1` design-like terminal. Exact affine-plane nonextension is already proved.
 
-### H_B — PROVED_ANALYTIC for r>=68
-Not an asymptotic hypothesis above 68. Still open in the sibling theorem for 12<=r<=67.
+### H_B — no longer asymptotic hypothesis
+Latest checked three-anchor head `a98ef900be419993e3fe63d37a0cf82fa104c455`; full theorem remains `PROVED_ANALYTIC` for r>=68 and open below 68.
 
-## 3. Current minimal r0
+## 4. Current minimum r0
 
-- H_B-free minimal-hypothesis synthesis record: **68**.
-- With H_B assumed: **12**.
-- Unconditional Problem 617 r0: **not yet finite/proved** because H_A, H_C*, H_D remain open.
+- H_B-free, core-certification-free conditional synthesis: **68**.
+- With original full H_A and H_B assumed: **12**.
+- Unconditional Problem 617 r0: **not yet finite/proved**, because A_ext, C*, D remain open.
 
-Relative to the start of this workstream, the H_B-free synthesized threshold improved from no finite value to 68.
+The latest residual theorem strengthens the hypotheses but does not lower numeric r0 because its threshold 17 is below 68.
 
-## 4. Inequality controlling r0
+## 5. Inequality controlling r0
 
-The current 68 is controlled only by the sibling three-anchor complement/AES threshold:
+The sole active numeric threshold is
 
 `2r-9 > 5(3r-1)/8`
 
@@ -54,77 +75,65 @@ iff
 
 `r>67`.
 
-No current backend endpoint inequality intrinsically requires r=68.
+This is the three-anchor complement/AES threshold. Backend endpoint collapse is already valid from r>=12 once K>=8; residual certification is valid from r>=17.
 
-## 5. Master asymptotic ledger identity
+## 6. Master asymptotic conservation law
 
-With residual deficit
+Let
 
 `epsilon=D_r(4r+1)-e(F)`
 
-and core excess
+and
 
-`K=2e(H)-r(3r-1)`,
+`K=2e(H)-r(3r-1)`.
+
+Then
 
 > **`K=6r+6-2epsilon-2q`**
 
-or equivalently
+or
 
 > **`q+epsilon=3r+3-K/2`.**
 
-K is always even.
+K is always even. Hence `K>=7` is equivalent to `K>=8`.
 
-Consequences:
+A generic K-floor `K>=kappa` eliminates all medium supports once
 
-- `K>=7` is exactly equivalent to `K>=8`;
-- baseline `K>=2` gives `q<=3r+2-epsilon`;
-- anchor `K>=8` gives `q<=3r-1-epsilon`.
-
-## 6. Endpoint width / terminal boundedness
-
-Under K>=8:
-
-`d in {0,1,2,3,r-2,r-1,r}`.
-
-So the support-degree family has O(1) endpoint width.
-
-Current stronger terminal information:
-
-- d3 common-S: **closed**;
-- high endpoint: **at most 3 owners**, shell interaction kernel `<=9`, core incidence signatures `<=8`; hence a finite bounded-complement skeleton;
-- d2: **still scalable**; one-loss three-class states obey `K+a+b>=r`;
-- d0/d1: not yet frozen.
-
-Therefore the entire backend is **not yet proved to have O(1) exact combinatorial type count**, because d2 multiplicities/charge parameters and d0/d1 remain scalable. The high endpoint itself is O(1)-skeletonized.
+`r>15-epsilon-kappa/2`.
 
 ## 7. Certified small-r-only pathologies
 
-1. d2 concentrated state `K=8,a=3,b=1`: requires `r<=12`.
-2. d4 / d=(r-3) medium-support family: impossible for r>=15 from baseline K>=2; impossible for every r>=12 under K>=8.
-3. four high owners: coarse slope contradiction for r>=13; r=12 equality separately closed.
-4. balanced `(r+1,r+1,r+1)` near-anchor coarse-cover exception: only r=12.
-5. d3 allowance-five/top-q frontier: stronger than small-r-only — completely closed under A+B for all r>=12.
+1. d2 concentrated `K=8,a=3,b=1` three-class state: only `r<=12`;
+2. d4 / d=(r-3) medium states: gone from r>=15 using baseline K>=2, and for all r>=12 under K>=8;
+3. four high owners: coarse slope contradiction from r>=13, r=12 equality separately closed;
+4. balanced `(r+1)^3` near-anchor extra coarse-cover cell: only r=12;
+5. d3 allowance-five/top-q frontier: fully closed under the residual/anchor setup for all r>=12;
+6. d2 charge-one disjoint-support proliferation: uniformly bounded by eight, not a growing-r family.
 
-## 8. Sibling result most sensitive for r0
+## 8. Backend terminal boundedness
 
-Numerically: **three-anchor threshold 68** is the only current source of the value 68.
+Under K>=8,
 
-For unconditional existence of any all-large-r theorem, however, the more serious blocker is **H_A front extraction**, followed by H_C* and H_D.
+`d in {0,1,2,3,r-2,r-1,r}`.
 
-Thus:
+So support-degree width is O(1).
 
-- improve B => lower r0;
-- prove A/C*/D at any finite thresholds => convert the conditional synthesis into a genuine infinite-family theorem.
+Stronger:
 
-## 9. New multicolour / decoration synthesis
+- d3 common-S: closed;
+- high endpoint: at most 3 owners, shell kernel <=9, core signatures <=8, hence finite bounded-complement skeleton;
+- d2: still scalable, with one-loss three-class barrier `K+a+b>=r`;
+- d0/d1: not yet frozen.
 
-The architecture-side shell dichotomy gives a slope-half bound on low regular shell vertices. Combining it with the stronger sibling bound of at most three high regular owners yields
+Therefore the **full backend exact type count is not yet proved O(1)**. The obstruction is d2 plus d0/d1, not the high endpoint.
 
-> **`tau >= [r-3-2epsilon-epsilon sqrt(4epsilon+1)]/2`**
+## 9. Multicolour decoration synthesis
 
-for the number tau of decorated shell vertices in the fixed-deficit near-extremal branch.
+The near-extremal shell dichotomy bounds low regular vertices by the fixed-deficit multicolour clique capacity. Combining that with the stronger high-owner bound `<=3` gives
 
-Hence for fixed epsilon,
+> **`tau >= [r-3-2epsilon-epsilon sqrt(4epsilon+1)]/2`.**
+
+For fixed epsilon,
 
 > **`tau >= r/2-O_epsilon(1)`.**
 
@@ -132,53 +141,41 @@ Together with exact transport
 
 `tau_y-tau_p=|D_y intersect X|-|S_y intersect X|`,
 
-this says any fixed-deficit non-improving terminal must organize a linear number of decorations into a rigid incidence system. This is currently the best candidate for bypassing a full global repivot-potential theorem.
+any fixed-deficit non-improving terminal must organize linearly many decorations into a rigid incidence system.
 
-## 10. Next highest-leverage inequalities
+## 10. Sibling sensitivity
 
-Two targets, in order:
+For numeric r0: three-anchor threshold 68 is most sensitive.
 
-### Backend d2 target
+For existence of an unconditional infinite-family theorem:
 
-From the exact d2 one-loss three-class barrier
+1. A_ext extraction/stopping dichotomy;
+2. C* endpoint closure, especially d2;
+3. D design stability;
+4. lowering three-anchor below 68 is optimization only.
+
+## 11. Next highest-leverage asymptotic inequality
+
+The clearest scalar backend target is:
+
+from surviving d2
 
 `K+a+b>=r`,
 
-prove any upper bound
+prove for some fixed c>0
 
-> **`K+a <= (1-c)r+O(1)`**
+> **`K+a <= (1-c)r+O(1)`.**
 
-for some fixed c>0 in every terminal branch. This would kill the scalable three-class d2 family for all sufficiently large r.
+This would kill the scalable three-class d2 terminal for all sufficiently large r.
 
-Alternative: force common-S owner demand
+Alternative multicolour route: force common-S owner demand `N>(1/2+c)r-O(1)` and contradict the slope-half owner capacity.
 
-`N>(1/2+c)r-O(1)`
+Potential/design route: combine `tau>=r/2-O_epsilon(1)` with transport to force strict improvement or a bounded-parameter design.
 
-and contradict the multicolour slope-half capacity.
-
-### Potential/design target
-
-Use
-
-`tau>=r/2-O_epsilon(1)`
-
-to show a legal repivot strictly increases tau unless the decoration incidence matrix has an O(1)-parameter design form. Such a theorem could merge H_C* and part of H_D into one asymptotic rigidity statement.
-
-## Imported sibling heads used in this state
+## Imported sibling heads used
 
 - architecture base: `3dc54c38e13a71e8a12330c3c36b1aa1063aacaa`;
-- three-anchor: `0c226d78e39e3da2a594f8a6121a864d2efa09ea`;
-- repivot termination: `2974fd80882a4545a3a1a569418405ec4e3bdebc`;
+- residual extraction: `07cd8fb58ffd93d234b1e8b6104f939175d7fbda`;
+- three-anchor latest checked: `a98ef900be419993e3fe63d37a0cf82fa104c455`;
+- repivot termination imported: `2974fd80882a4545a3a1a569418405ec4e3bdebc`;
 - near-extremal shell dichotomy: `578830ff3fd9eab94f2bb5a498d90a1a303ba2e1`.
-
-## Files in this workstream
-
-- `CANONICAL_STATE.md`
-- `ASSUMPTION_LEDGER.md`
-- `ASYMPTOTIC_INEQUALITIES.md`
-- `R0_TRACKER.md`
-- `SUFFICIENTLY_LARGE_R_THEOREM.md`
-- `DEPENDENCY_DAG.md`
-- `PROGRESS_LOG.md`
-- `SMALL_R_ARTIFACTS.md`
-- `HYPOTHESIS_SENSITIVITY.md`
