@@ -22,55 +22,41 @@ If two colors have slack <=q-2 on the same W, their two block partitions are exa
 
 For x outside W, let B_a be the non-color-i neighbors of x inside the i-block P_a. Every B_a is nonempty in a counterexample, since an empty B_a would make P_a union {x} a monochromatic K_(q+1).
 
-If s_i cross-block color-i defect edges exist, a greedy independent-transversal argument proves
+If s_i cross-block color-i defect edges exist, a greedy independent-transversal argument proves min_a |B_a|<=s_i, so x has at least q-s_i color-i edges into some block. At s_i=0, this forces a monochromatic K_(q+1); therefore every local slack in a genuine counterexample is at least one.
+
+### 3. Weighted independent-transversal blocker
+
+See TRANSVERSAL_BLOCKER_LEMMA.md. If B_1,...,B_q are nonempty parts of sizes b_a and a graph F with edges only between parts has no independent transversal, then
 
 \[
-\min_a |B_a|\le s_i.
+\sum_{uv\in E(F)}\frac{1}{b_{a(u)}b_{a(v)}}\ge1.
 \]
 
-Hence some block has at least q-s_i edges to x of color i. This strengthens the earlier q-2s_i estimate.
+Hence |E(F)|>=min_{a<b} b_a b_b, and if all parts have size at least k then |E(F)|>=k^2.
 
-At s_i=0, the result forces B_a empty, a contradiction. Therefore every hypothetical counterexample satisfies
+Applied to a low-slack color i, the only edges that can block transversals are the defect edges whose two endpoints both lie in the non-i-neighbor residual parts B_a. If all B_a are nonempty, these edges satisfy the weighted bound; defect edges outside the residual parts do not help.
 
-\[
-s_i(x)\ge1\quad\text{for every color }i\text{ and vertex }x.
-\]
+### 4. Global slack dictionary
 
-So exact Turan equality is individually impossible on every q^2-point restriction; it is not merely the case that at most one equality color can occur.
-
-### 3. Global slack dictionary
-
-For N=q^2+1, every color has e_i>=m_q+q. Writing e_i=m_q+q+a_i gives
-
-\[
-\sum_i a_i=m_q,\quad
-s_i(x)=q+a_i-d_i(x),\quad
-\sum_i s_i(x)=m_q.
-\]
-
-Also \(\sum_x s_i(x)=q(q-1)+(q^2-1)a_i\). These identities are proved, but scalar averaging alone does not force two low-slack colors.
+For N=q^2+1, every color has e_i>=m_q+q. Writing e_i=m_q+q+a_i gives sum_i a_i=m_q, s_i(x)=q+a_i-d_i(x), and sum_i s_i(x)=m_q. Also sum_x s_i(x)=q(q-1)+(q^2-1)a_i. Scalar averaging alone does not force two low-slack colors.
 
 ## High-slack branch: audited, not closed
 
-If at most one color is low-slack at x, then \(\sum_i s_i(x)\ge(q-1)^2\), which is compatible with m_q. The formal profile a_i=q(q-1)/2, d_i(x)=q, s_i(x)=q(q-1)/2 satisfies all current scalar identities, although it is not asserted to be graph-realizable.
-
-Thus a genuine multicolor compatibility inequality is still needed. No high-slack contradiction has been proved.
+If at most one color is low-slack at x, then sum_i s_i(x)>=(q-1)^2, compatible with m_q. A formal scalar profile with all colors high-slack satisfies the currently proved scalar identities, though it is not claimed to be graph-realizable. A genuine multicolor compatibility inequality is still needed.
 
 ## Finite geometry: exact limits
 
 - Two low-slack colors give two orthogonal partitions only.
 - q being a prime power does not coordinatize arbitrary extracted partitions.
-- The partial Kakeya bound is valid only after extracting full size-q blocks in distinct directions with pairwise intersections at most one.
-- Three such full lines already occupy at least 3q-3 points, exceeding a 2q-1 shell for q>=3. But J has not proved that a noncompressible shell must contain these lines.
-
-External hypotheses and citations are audited in KAKeya_BRIDGE_AUDIT.md.
+- Three full size-q blocks in distinct directions with pairwise intersections at most one would exceed a 2q-1 shell, but no such blocks have been extracted from compression failure.
+- The J/K bridge is conditional: if a tight transversal X contains x_0 and a color i != c is low-slack on V minus {x_0}, then the private witnesses of color i are confined to a bounded number of clique blocks, with exact bound floor((2q-1)/(q-s_i).
 
 ## Current verdict
 
 - Local low-slack coordinatization: PROVED.
-- Positive-slack two-direction structure: PROVED conditionally.
-- Exact zero-slack exclusion: PROVED.
-- Global extraction of two low-slack colors: OPEN.
-- High-slack alternative contradiction: OPEN.
+- Weighted transversal-blocker inequality: PROVED.
+- Conditional tight-transversal interface: PROVED on J branch.
+- Global low-slack extraction / alignment: OPEN.
+- High-slack contradiction: OPEN.
 - Full affine-plane/net completion: OPEN.
 - Prime-power P(q): OPEN.
