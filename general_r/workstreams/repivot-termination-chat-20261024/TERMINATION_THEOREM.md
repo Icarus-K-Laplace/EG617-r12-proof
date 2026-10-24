@@ -359,7 +359,7 @@ where t_x is the optional cross-block H-degree. Thus the optional cross-block gr
 
 # Theorem P — Off-Part Witness Excess Dichotomy
 
-If an outside vertex o has no pair of fully-seen witness classes from the same AES part, then any witness pair from T0,T1 is off-part. One residual class triple has one optional relation of maximum degree four, one block matching, and one empty relation. Since every class has size at least a>4, fewer than a-4 neighbours of o in that residual triple would leave an independent transversal of size three. Therefore
+If an outside vertex o has no pair of fully-seen witness classes from the same AES part, then any witness pair from T0,T1 is off-part. One residual class triple has one optional relation of maximum degree four, one block matching, and one empty relation. Since every class has size at least lambda>4, fewer than lambda-4 neighbours of o in that residual triple would leave an independent transversal of size three. Therefore
 
 d_H(o,U)>=3a-4,  kappa_o>=3lambda-4-r>=8.
 
