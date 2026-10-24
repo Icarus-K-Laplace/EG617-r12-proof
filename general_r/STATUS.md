@@ -1,0 +1,1 @@
+Current focus: constant provenance, residual-core source, symbolic backend identity, anchor/support/repivot parameterization. Fixed-r case expansion is deprioritized.
