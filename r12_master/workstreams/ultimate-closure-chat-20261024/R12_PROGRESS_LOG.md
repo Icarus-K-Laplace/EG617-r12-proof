@@ -146,3 +146,33 @@ Added R12_E408_PAIRWISE_BLOCKER_COMPATIBILITY.md with an analytic proof and exac
 - Independent arithmetic and incidence replays passed for the zero-excess bounds, tau>=7 boundary, delta=16 endpoint, full-row support union, and modified TD example.
 
 Status remains OPEN / NOT_CERTIFIED. Next attack: classify the 310-edge four-partite support family with its 49 linear K4s and five missing cross-pairs, then impose the full core degree/excess and shell-color constraints.
+
+
+### Round 5 — minimum-transversal classification and low-budget boundary exclusions (2026-10-25)
+
+**Cross-branch refresh.** Re-read the latest heads of:
+- witness-packing: 6131cedc (shell-incidence union theorem and arithmetic audit);
+- zero-excess witness: f3c9ef6b (zero-excess theorem, high-support dichotomy, and scalar-overlap route);
+- emergency sprint: 87a58429 (exact-129 packing and the withdrawn star dichotomy);
+- Astra D-low: c71b29d3;
+- Astra A-ext: ad6e4ebe.
+
+No sibling files were changed. The D-low and A-ext general-r results remain conditional/partial and are not imported as a fixed-r=12 closure.
+
+**New theorem.** Added R12_TRANSVERSAL_BOUNDARY_CLASSIFICATION.md:
+1. Distinct 7-transversals in either linear witness family are disjoint, by a pair-counting argument across color classes.
+2. E407 Q32, v=29/m=49: the boundary parameter delta cannot be 0 or 1. Therefore delta>=2.
+3. E408 Q33, v=31/m=56: the joint boundary budget must satisfy 2*delta+epsilon_U>=8, alongside delta+epsilon_U<=17.
+4. The proof excludes three-component and two-component 7-transversal patterns in the E408 low-budget branch, using the exact eight-color matching count 56>49.
+
+**Verification.** Added verify_transversal_boundary_classification.py. Independently recomputed p4(18)=32, p4(16)=24, p2(24)=132 and all relevant low-budget integer inequalities. Result: TRANSVERSAL_BOUNDARY_CLASSIFICATION_AUDIT_OK. The verifier is an arithmetic regression check, not a graph realization certificate.
+
+**Audit correction.** Added R12_SHELL_INCIDENCE_UNION_AUDIT.md. The shell-incidence identity is exact, but the prior 11/10 union-floor proof did not account for core vertices x with r_A(x)=0. At most four such vertices exist, so the safe full-row support-union floors are 7 (template A) and 6 (template C). This correction supersedes the earlier 11/10 wording in this workstream; no claim is made that the sibling branch itself has been edited.
+
+**Impact.**
+- New boundary integer profiles excluded: E407 delta<=1; E408 Q33 2*delta+epsilon_U<=7.
+- Full terminals excluded in this round: 0.
+- E407 Q32 common-core completion: OPEN.
+- E408 Q32 (285-edge core): OPEN and not covered by the 284-edge theorem.
+- E408 Q33 seven-block compatibility: OPEN.
+- Original K145-to-T61 bridge and full theorem: OPEN / NOT_CERTIFIED.
