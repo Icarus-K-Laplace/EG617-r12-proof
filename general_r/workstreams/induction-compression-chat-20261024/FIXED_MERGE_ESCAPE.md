@@ -45,3 +45,32 @@ The new Case B residual budget and color dichotomy are in ALIGNMENT_FREE_WITNESS
 - perfect matchings on symmetric differences of same-color witnesses.
 
 No implication that a fixed merge must succeed has yet been derived from these graph constraints.
+
+
+## Exact private-witness criterion for dropping one shell vertex
+
+Let X be a minimum transversal of H_{-c} with |X|=2r. For v in X, define its private-witness family
+
+\[
+\mathcal P(v)=\{T\in\mathcal H_{-c}:T\cap X=\{v\}\},
+\]
+
+and for a private witness T define its full missing-color set
+
+\[
+D(T)=\{i:T\text{ is independent in color }i\}.
+\]
+
+For a fixed merge c->j, the set X\\{v} is a successful shell **if and only if**
+
+\[
+\boxed{D(T)=\{j\}\quad\text{for every }T\in\mathcal P(v).}
+\]
+
+Reason: because X is a transversal, X\\{v} can fail to hit H_{c,j} only on a private witness T in P(v). Such T survives in H_{c,j} exactly if it is independent in some untouched color k not in {c,j}, or is independent in both c and j. Thus all private witnesses must be independent in color j only: not in c and not in any other color.
+
+This is an exact criterion for deleting one vertex from the tight 2r-point transversal, not a proof that such a vertex exists. Failure of every fixed merge means that for every j and every v there is at least one private witness whose missing-color set is not the singleton {j}. This may be due to multi-color witnesses; the current hypergraph data do not rule that out.
+
+## Updated status
+
+The alignment-free residual theorem now also extracts a q-net with at least ceil(q/2) directions in Case B for q=r-1>=3; see ALIGNMENT_FREE_WITNESS_RIGIDITY.md, Theorem J.W5. This is useful geometric structure but does not imply a fixed merge or a shell of size 2r-1.
