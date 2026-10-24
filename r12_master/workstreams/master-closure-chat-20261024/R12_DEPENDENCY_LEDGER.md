@@ -54,7 +54,7 @@ Key sources:
 - `backend/GLOBAL_FORCING_TO_MASTER_ALLOWANCE_COVERAGE.md`;
 - `backend/GLOBAL_FORCING_TO_MASTER_V3_SYNTHESIS.md`.
 
-The new `R12_INDEPENDENT_TRIPLE_H4_EXTENSION.md` proves the pure-core independent-triple theorem through total excess four, strengthening the d3 triangular anchor envelope through allowance a=7. The a=8 total-excess-five case remains open.
+The new `R12_INDEPENDENT_TRIPLE_H4_EXTENSION.md` and `R12_INDEPENDENT_TRIPLE_H5_EXTENSION.md` prove the pure-core independent-triple theorem through total excess five, strengthening the d3 triangular anchor envelope through allowance a=8. This closes the independent-triple transport branch under the common-S contract.
 
 The new `R12_D3_DISJOINT_SUPPORT_COMPATIBILITY.md` theorem adds a second extraction interface: for disjoint d3 supports, distinct missing triples force cross-density at most `q-36`; the transversal theorem bounds distinct missing-set types by 1 / 3 / 6 at q<=35 / q=36,37 / q=38. This theorem does not bound repeated common-S support blocks.
 
