@@ -85,3 +85,22 @@ The missing theorem is now more precise:
 > Under the exact target labels and pair-ownership rule, the total cost of all hub-block defects and all multi-block barriers across the (r-1) non-target colors exceeds the remaining global budget, unless an omitted-color ((r+1))-set exists.
 
 The block-level slack bound (s_i\ge9) is false in general (the local gadget has (s_i=7)); any proof must use the target labels and cross-color compatibility essentially. Robust nonextension remains **OPEN**.
+
+
+## 8. New finite-geometry constraint: target-star destinations are a derangement
+
+In the canonical full-star model, choose one hub (a_j\in B_j) and one internal target nonneighbor (y_j\in B_j) for each of the five groups. If (a_j) has target edges to every point of (B_{f(j)}), then (\alpha(G_0)\le5) forces (f) to be a permutation without fixed points. A repeated destination (f(j)=f(k)=\ell) would allow the six-set formed by the two internal nonedges, omitting (B_\ell), and selecting one point from each of the two remaining groups.
+
+Thus the group-level target-star pattern has only two cycle types:
+- one 5-cycle;
+- one 2-cycle plus one 3-cycle.
+
+For the oversized group, the second hub must share the same destination as the first; otherwise its destination collides with one of the other four groups. The two hubs must themselves be target-adjacent, or an independent triple within the oversized group plus three points avoiding their common destination gives a target-independent 6-set.
+
+This is **PROVED_CONDITIONAL** on the full-star reduction. It shrinks the finite-geometry search space but does not yet close the branch.
+
+## 9. Triangle obstruction in the non-target partition
+
+If both oversized-group hubs and their common destination representative occur in one non-target ideal block, the three pairwise edges are target-colored, so that block contains an independent triple in (G_i). In a single-cover-block correction model this is impossible: omit the cover block and choose one point from each of the other (r-2) blocks to obtain an independent ((r+1))-set.
+
+Hence either the two hubs are separated, the shared block omits their destination group, or a multi-block cover network is required. The latter network's minimum cost is the current blocker.
