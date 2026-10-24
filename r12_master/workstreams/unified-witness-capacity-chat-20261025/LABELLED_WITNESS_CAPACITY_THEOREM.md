@@ -23,7 +23,7 @@ Let \(c=7\) for E407 Q32 and \(c=8\) for E408 Q33. Select seven witnesses from e
 \[
 U=\bigcup_{i=1}^{c}\bigcup_{j=1}^{7}Q_{ij},\qquad |U|=v.
 \]
-The minimum-support boundaries are \((c,v)=(7,29)\) and \((8,31)\). Write \(W=V(H)\setminus U\), \(r_x=|\{(i,j):x\in Q_{ij}\}|\), and \(o_x=c-r_x\).
+The minimum-support boundaries are \((c,v)=(7,29)\) and \((8,31)\). Write \(W=V(H)\setminus U\), \(r_x=|\{(i,j):x\in Q_{ij}\}|\), and \(o_x=c-r_x\). At the boundary define \(\epsilon_U=\sum_{x\in U}\epsilon_x\) and \(\delta=e(\overline{H[U]})-42c\), the number of complement edges not covered by the selected witness blocks.
 
 ## 2. The labelled-packing theorem
 
