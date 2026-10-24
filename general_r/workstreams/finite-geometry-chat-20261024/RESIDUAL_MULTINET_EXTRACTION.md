@@ -69,3 +69,27 @@ This is only a structural subcase. No theorem here shows that the resulting affi
 2. In Case B, the q-net may have only ceil(q/2) directions; it need not complete to an affine plane.
 3. The net blocks are not automatically all required to lie in a deletion shell, so the bound tq-C(t,2) cannot be applied to |X| without an additional theorem.
 4. No contradiction to P(r), no fixed-merge escape, and no implication not-P(r) => not-P(r-1) is proved here.
+
+
+## Small-order and non-prime-power audit
+
+The direction bound is t>=ceil(q/2), but it only invokes Brouwer's partition theorem for q>=3. The first values are:
+
+| q=r-1 | Guaranteed directions t | MOLS forced in Case B | Status of the design implication |
+|---:|---:|---:|---|
+| 2 (r=3) | at least 1 residual-low color; no two-direction net from this count | none | small case not covered by Brouwer |
+| 3 (r=4) | at least 2 | 0 | orthogonal partitions only |
+| 4 (r=5) | at least 2 | 0 | orthogonal partitions only |
+| 5 (r=6) | at least 3 | 1 Latin square | no obstruction |
+| 6 (r=7) | at least 3 | 1 Latin square | no obstruction |
+| 7 (r=8) | at least 4 | 2 MOLS(7) | available for prime-power order |
+| 8 (r=9) | at least 4 | 2 MOLS(8) | available for prime-power order |
+| 9 (r=10) | at least 5 | 3 MOLS(9) | available for prime-power order |
+| 10 (r=11) | at least 5 | 3 MOLS(10) | existence remains open |
+| 14 (r=15) | at least 7 | 5 MOLS(14) | existence remains open; four MOLS(14) are known |
+
+For q=10, a projective plane of order 10 is known not to exist; for q=14, Bruck–Ryser rules out a projective plane of order 14. Hence the full-affine-plane subcase K.RM3 is unavailable at q=10 and q=14, and the remaining Case B branches force respectively 3 MOLS(10) and 5 MOLS(14). Both are currently open design questions, so neither implication is a contradiction.
+
+Sources for the two open MOLS thresholds:
+- Three MOLS(10): Bright, Keita, Stevens, EJC 33(1) (2026), P1.30, DOI [10.37236/13960](https://doi.org/10.37236/13960), [arXiv:2503.10504](https://arxiv.org/abs/2503.10504).
+- Five MOLS(14): Todorov constructed four MOLS(14), DOI [10.1002/jcd.21298](https://doi.org/10.1002/jcd.21298); the existence of a fifth is reported open in the literature on MOLS/difference covering arrays.
