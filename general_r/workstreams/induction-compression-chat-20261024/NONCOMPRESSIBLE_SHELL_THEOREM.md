@@ -51,7 +51,7 @@ Every v in X is essential: X minus {v} is not a transversal. Therefore there exi
 T_v\cap X=\{v\}.
 \]
 
-Each T_v has exactly r-1 vertices outside X. The outside set R=V\X has size (r-1)^2.
+Each T_v has exactly r-1 vertices outside X. The outside set R=V minus X has size (r-1)^2.
 
 For r>=3, there are 2r private witnesses but only r-1 possible designated colors. By pigeonhole, at least three witnesses T_u,T_v,T_w have the same designated color i != c. Since the matching number of H_{-c} is exactly two, these three witnesses cannot be pairwise disjoint. Thus at least two of their residual blocks T_z minus {z} intersect at a point of R. This is a genuine same-color overlap forced by noncompressibility, though not yet an affine-line structure.
 
@@ -90,7 +90,7 @@ Writing n_i for the number of private witnesses assigned color i, either:
 - some repeated witness color has n_i>=2 and residual excess b_i<=r-3, so Brouwer/Turan gives an (r-1)-clique-block partition of R and every Q_v of that color is a transversal; or
 - some color has at least four private witnesses.
 
-For every same-color pair u,v, both the residual difference graph between Q_u\\Q_v and Q_v\\Q_u and the full difference graph between T_u\\T_v and T_v\\T_u contain perfect matchings. The edge-ownership inequality explicitly bounds reuse of one color-i edge by endpoint witness-incidence multiplicities. These are graph-level rigidity constraints, not yet a contradiction.
+For every same-color pair u,v, both the residual difference graph between Q_u minus Q_v and Q_v minus Q_u and the full difference graph between T_u minus T_v and T_v minus T_u contain perfect matchings. The edge-ownership inequality explicitly bounds reuse of one color-i edge by endpoint witness-incidence multiplicities. These are graph-level rigidity constraints, not yet a contradiction.
 
 ## Round 2 addendum — residual budget and pairwise matching rigidity
 
