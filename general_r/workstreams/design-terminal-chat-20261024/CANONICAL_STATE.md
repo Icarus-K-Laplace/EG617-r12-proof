@@ -117,47 +117,9 @@ This changes the asymptotic picture materially: target internal corrections cann
 If this propagation is proved, deleting `O(1)` exceptional vertices should expose an exact or near-exact large `TD(5,r)` core, making a robust nonextension theorem substantially more accessible.
 
 
-## 2026-10-24 update — Hub propagation audit
+## 2026-10-24 initial hub audit (superseded)
 
-### New proved component
-
-For each non-target ideal partition (Q_i=\bigcup_{a=1}^rK(C_a)), let (d_i) count repeated target-group incidences and (m_{ij}=r-\#\{a:C_a\cap B_j\ne\varnothing\}). Then
-[
-\sum_{j=1}^5m_{ij}=d_i-1.
-]
-If a repeated-group pair (uv\subset B_j\setminus X) is absent from (G_i) and (d_i\le5), then
-[
-|E(G_i)\triangle E(Q_i)|\ge(6-d_i)(r-1).
-]
-For (r\ge44), at most 27 non-target colors can contain such a low-incidence off-hub pair. Status: **PROVED_ANALYTIC**. Full proof: `HUB_PROPAGATION_THEOREM.md`.
-
-### High-incidence warning
-
-A concrete one-color block system with (d_i=6), eight nonclean blocks, (s_i=9), edit distance (10), and size energy (23) satisfies (\alpha(G_i)\le r) while its repeated-group pairs lie outside (X). It is not a full terminal coloring, but it proves that scalar stability budgets and one-color independence alone do **not** force all non-target defects into the target hub set. Status of the naive local propagation claim: **DISPROVED**. Full global Hub Propagation remains **OPEN**.
-
-### Exact-core / nonextension status
-
-The (r^2-O(r)) clean-block count still does not imply an exact TD or two exact orthogonal partitions. Up to (\lfloor(8r+5)/9\rfloor=\Theta(r)) copies of the local high-incidence pattern fit the scalar non-target slack budget; whether they can coexist with global pair-disjointness and the target cross-cover is unresolved.
-
-The sharp remaining blocker is a **global pair-disjointness / trap-completion inequality** ruling out a linear family of high-incidence traps, or else an explicit globally compatible construction. No such inequality is currently proved.
-
-Updated success levels:
-- D1: conditionally achieved.
-- D2: **OPEN** (Chat A interface).
-- Low-incidence part of hub propagation: **PROVED_ANALYTIC**.
-- Full Hub Propagation: **OPEN**.
-- D3 exact terminal classification: **OPEN**.
-- D4 robust nonextension: **OPEN**.
-- D5: **OPEN**.
-
-Latest substantive assets:
-- `HUB_PROPAGATION_THEOREM.md`
-- `MULTICOLOR_DEFECT_BUDGET.md`
-- `ROBUST_EXACT_CORE.md`
-- `NONEXTENSION_CLOSURE.md`
-
-This update supersedes any earlier suggestion that the bounded target-hub result alone should expose an exact core after deleting (O(1)) vertices; that conclusion requires the still-open non-target propagation theorem.
-
+An initial low-incidence edit bound was proposed, along with a (d_i=6) singleton/4-block pattern. Adversarial checking found both proof gaps: the low-incidence argument ignored hub-incident target deletions and ordinary-label gaps; the (d_i=6) pattern failed to control independent sets that double two missing pairs. These claims were withdrawn. The corrected status and surviving results are recorded immediately below.
 
 ## 2026-10-24 correction — adversarial hub/cylinder audit
 
