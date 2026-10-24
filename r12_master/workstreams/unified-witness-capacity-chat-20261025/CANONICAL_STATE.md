@@ -69,3 +69,8 @@ No sibling workstream was modified.
 ## Refined obstruction
 
 The Q33 scalar relaxation with Omega=24 cannot be four-partite; it is only evidence that the scalar inequalities do not eliminate the non-four-partite branch. The four-partite branch now has exact incidence and label caps, but these remain compatible with the current edge budgets. The non-four-partite branch still requires a packing/stability theorem using the 56 labelled K4s beyond the second-Turán bound.
+
+
+## Shell-row multiplicity audit — 2026-10-25
+
+For a fixed common independent-four set Q, define \(\mu(Q)\) as the number of regular B rows it avoids. It can serve at most \(\binom{\mu(Q)}2\le45\) graph-theoretic pair certificates. The current \(|T_b|\le3\) condition does not imply a smaller universal cap. If Q is an actual selected exact-129 witness labelled b, the directly label-anchored pairs containing b are at most \(\mu(Q)-1\le9\); arbitrary \(Q_{bc}\) from the zero-excess existence theorem are not automatically labelled components. Thus the pairwise hub-cover count cannot be summed as though each pair had a distinct witness.
