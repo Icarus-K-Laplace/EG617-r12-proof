@@ -45,3 +45,16 @@ The support-compatibility synthesis uses the weaker anchor consequence e(H)>=213
 - Proved outputs: t_a<=7 implies alpha(H\N_H(a))=4; every target edge in F[A] has at least one good endpoint; at least eight shell vertices are good.
 - Conditional downstream specialization: in E408 Q33/d3, beta+X+G_B=3 implies all ten B rows have t_b<=6 and hence a maximum independent 4-set witness; each witness hits every S-row corresponding to an M-edge.
 - Limitation: no uniqueness/coincidence theorem for the witnesses has been proved. This node does not close Q32/Q33.
+
+
+## Added cross-cutting witness-capacity dependency
+
+- Source: R12_WITNESS_CAPACITY_CROSSCUT.md.
+- Inputs: T61 contract, alpha(F)<=5, omega(F)<=11, e(H)=284, delta(H)>=12, sum epsilon_H=4; exact E407/E408 row contracts as stated in the theorem file.
+- Proved outputs: each independent 4-set in H hits at least three shell rows; its hit-hub set covers M[S] and contains every missing hub of its witness b; any independent triple in H_b extends to an independent 4-set when t_b<=3; nonextension at larger t_b forces t_b>=8-epsilon(X).
+- E408 Q33 conditional output: at least five no-S K5 components per exact-129 color, at least 7-beta missing-hub incidences across any selected five labels, and cross-color Q-set intersections at most one.
+- Limitation: the resulting scalar packing bounds are not contradictory; the same-core E407 templates and E408 Q32/Q33 remain OPEN.
+
+## Independent replay status
+
+V11 and V12 package SHA256 checks and their separate verifier scripts were rerun. Status is COMPUTATION_CERTIFIED for the finite state coverage only; no parent graph is claimed completed, and analytic rule applicability retains its explicit lower-order contracts.
