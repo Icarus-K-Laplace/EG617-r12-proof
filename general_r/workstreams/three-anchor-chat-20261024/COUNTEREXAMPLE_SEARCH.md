@@ -40,3 +40,26 @@ No theorem claim in this workstream is marked `COMPUTATION_CERTIFIED`. The commi
 ## Final falsification status
 
 The analytic proof and the local arithmetic cross-checks found no surviving equality configuration. The Exact Three-Anchor Excess Theorem is marked INDEPENDENTLY_VERIFIED by the analytic audit; full graph-level counterexample search remains unperformed, and external human referee review remains advisable.
+
+
+---
+
+# Round 2 — \(K=8\) falsification status
+
+## Analytic boundary result
+
+The new analytic audit proves \(K=8\Rightarrow r\le13\), hence \(K\ge10\) for all \(r\ge14\). The remaining \(K=8\) strata are enumerated in EQUALITY_K8_CLASSIFICATION.md. The \(r=12,13\) equality layer remains OPEN.
+
+## Reproducible local profile search
+
+K8_LOCAL_PROFILE_AUDIT.py enumerates the exact connector-degree equations and \(R_{22}\) charges in the delicate mixed-focus/overlap branches. Its assertions verify:
+- the complete 23-row \(c=3,r=14\) local profile list;
+- the sole \(c=3,r=15\) local profile and the empty \(r=16\) local profile set;
+- the one-sided local profiles at \(r=13\) under the global \(k\le1\) overlap restriction;
+- the two \((10,1)/(1,10)\) \(r=14\) equality orientations in both \(c=4\) overlap branches.
+
+Exact output and limitations are recorded in K8_LOCAL_PROFILE_AUDIT_RESULTS.md.
+
+## Explicit search limitation
+
+This remains an integer/rectangle relaxation, not a whole-graph generator. It does not enforce every independent-four or clique constraint simultaneously, and it does not establish graph realizability. No graph-level SAT/ILP search was run. No candidate has been promoted to an actual \(K=8\) graph, and no conclusion \(K\ge10\) is asserted for \(r=12,13\).
