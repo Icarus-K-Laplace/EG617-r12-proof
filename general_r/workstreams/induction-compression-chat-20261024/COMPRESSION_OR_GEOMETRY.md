@@ -103,3 +103,10 @@ In the alignment-free Case B alternative, if the repeated witness color has resi
 Either G_i[R] is a q-clique partition plus q-1 cross-block color-i edges, or a single exceptional point can be deleted to leave q clique blocks (sizes q except one q-1) plus a nonempty star of cross-block color-i edges. The exceptional point has residual color-i degree 2q-2-a for 1<=a<=q-1.
 
 This is a finite incidence kernel at equality, not a contradiction. If b_i>=q, the exact extremal classification does not apply directly.
+
+
+## 9. Exact small-parameter kernel at r=7
+
+For q=r-1=6, the finite-geometry branch proves an exact Case B profile (K branch commit eb238d01b9aebf98a7614dba00e2696a2f3d05cf): three zero-excess orthogonal directions, three non-q-partite colors at b_i=q-1=5 with exceptional-star normal forms, and the omitted color's seven clique blocks of sizes 6,5,5,5,5,5,5. The size-6 block is a transversal of the 3-net and the six size-5 blocks are near-transversals.
+
+This is a genuine finite incidence kernel, but not yet an excluded one. The absence of an orthogonal mate for order 6 cannot be applied directly, because the kernel supplies one full transversal plus six near-transversals, not six disjoint full transversals.
