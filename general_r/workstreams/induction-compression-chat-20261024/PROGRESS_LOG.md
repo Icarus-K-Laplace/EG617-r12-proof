@@ -56,3 +56,16 @@
 ### Status
 
 The strongest result is **compressible shell OR packing/tight-critical-transversal structure**, now with dense witness overlap and a conditional quantitative interface to low-slack geometry. Full geometry and P(r) => P(r-1) remain OPEN.
+
+
+## 2026-10-24 — Round 8: alignment-free residual witness rigidity
+
+- Proved the residual edge-budget identity/bound in the tight-transversal Case B: sum_{i != c} b_i <= C(r-1,2), with each b_i>=0.
+- Proved the alignment-free dichotomy: a repeated witness color either has residual excess b_i<=r-3 and yields a q=r-1 clique partition/transversal family on R, or some witness color occurs at least four times.
+- Strengthened same-color witness overlap: the bipartite graph between the two residual symmetric differences has a perfect matching; so does the full symmetric-difference graph on the two witnesses.
+- Added a duplicate-safe edge-ownership inequality, charging a color edge by at most the product of endpoint witness-incidence counts.
+- Added COLORED_WITNESS_EDGE_BUDGET.md: exact cross-edge budget for disjoint colored packing and explicit all-equal / exactly-two-equal / all-distinct Case A audits at r=3,4,5. These inequalities are valid but do not exceed the global color-edge floor.
+- Audited fixed merge: the private-witness deletion criterion is exact; the existing pure-hypergraph obstruction is not graph-realizable and proves no graph-level impossibility.
+- Cross-line correction from K: the full-counterexample local-slack theorem makes the former aligned neighborhood-low-slack premise impossible. The new residual-excess partition branch is on R and is logically distinct.
+
+Status: alignment-free structure PROVED; Case A contradiction, Case B contradiction, fixed-merge escape, and not-P(r) => not-P(r-1) remain OPEN.
