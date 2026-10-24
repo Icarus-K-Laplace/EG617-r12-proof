@@ -106,18 +106,14 @@ If both oversized-group hubs and their common destination representative occur i
 Hence either the two hubs are separated, the shared block omits their destination group, or a multi-block cover network is required. The latter network's minimum cost is the current blocker.
 
 
-## 10. New terminal nonextension theorem: bounded internal-defect capacity
+## 10. Correction: attempted bounded-defect nonextension withdrawn
 
-**Theorem — PROVED_ANALYTIC for (r\ge6212), under the contextual terminal contract.**
+The proposed theorem that no terminal exists for (r\ge6212) is **withdrawn**. Its proof incorrectly claimed that a hub has at most four nonneighbors in (B_j\setminus X). Those vertices form a clique; five of them plus the hub are not an independent six-set. Therefore the asserted constant bound (D\le6210) is false as a deduction.
 
-The established target hub concentration gives (|X|\le108) in this range. Since every target internal deletion touches (X), and (B_j\setminus X) is a target clique, each hub has at most four missing target edges to ordinary vertices in its own group. Therefore
+The valid color-ownership statement survives: for a target group (B_h) with (|B_h|\ge r+1), every non-target color must have an edge inside any fixed ((r+1))-subset of (B_h). These edges have distinct colors, so
 [
-D_j\le4x_j+\binom{x_j}{2},\qquad
-D=\sum_jD_j\le4|X|+\binom{|X|}{2}\le6210.
+D_h:=\left|\binom{B_h}{2}\setminus E(G_0)\right|\ge r-1.
 ]
+But the known hub bound permits (O(r)) missing edges incident to (O(1)) hubs, so this lower bound does not yield a contradiction.
 
-Choose (B_h) with (|B_h|\ge r+1), which exists because (sum_j|B_j|=5r+1). For each non-target color (i), (alpha(G_i)\le r) forces a color-(i) edge inside a fixed ((r+1))-subset of (B_h). These (r-1) edges are distinct by unique color ownership and all are target-internal deletions. Hence (D_h\ge r-1\ge6211), contradiction.
-
-This is a robust terminal nonextension theorem: it does not assume exact stars, does not classify multi-block covers, and does not double-count a repair edge. It uses the full target alpha cap, the inherited (alpha(G_i)\le r) constraints, and the already-proved bounded hub theorem.
-
-**Boundary:** this closes the contextual ((5r+1))-terminal for all (r\ge6212), not the full Erdős Problem 617. The implication that every hypothetical counterexample failing the ((4r+1))-residual branch enters this terminal remains OPEN. Literal Hub Propagation remains an open mechanism even though terminal nonexistence is now proved by another route.
+**Correct status:** bounded target hub set is **PROVED_ANALYTIC**; (D_h\ge r-1) is **PROVED_ANALYTIC**; terminal nonextension for all sufficiently large (r) is **OPEN**; the multi-block cover-network budget remains **OPEN**. See `JOINT_DEFECT_PROPAGATION.md` for the full correction and local obstruction.
