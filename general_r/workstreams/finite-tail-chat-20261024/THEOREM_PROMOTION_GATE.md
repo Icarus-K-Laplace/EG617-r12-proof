@@ -22,7 +22,7 @@ Passing levels 1–3 does not imply level 4.
 | `ANALYTICALLY_DISCHARGED` | every consumed assumption has a theorem source applicable to this exact r | conditionality removed for this module only |
 | `EG617_PROVED` | complete reduction equivalence, exhaustive canonical state space, sound symmetry witnesses, verified contradiction certificate, and all assumptions discharged | EG617(r) is proved |
 
-The endpoint-domain module added in this workstream can reach `CONDITIONAL_LEMMA_CERTIFIED`; it cannot reach `EG617_PROVED`.
+The `ENDPOINT_DOMAIN_LOWER_BOUND_V1` and `D1_SHELL_CLASS_BOUND_V1` modules can reach `CONDITIONAL_LEMMA_CERTIFIED`; neither can reach `EG617_PROVED`. The latter records the proved-conditional d1 shell count consequence `N<=5` from the sibling endpoint classification, while the bounded-allowance d1 nonextension theorem remains open.
 
 ## Mandatory gate checks
 
