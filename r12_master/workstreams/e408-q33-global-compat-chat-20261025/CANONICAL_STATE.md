@@ -71,6 +71,6 @@ The next proof target is a stability/packing contradiction in Case 1 or a genuin
 - Four-partite proof audit: 2c73c2c8f9eb4b38cc69171be5d767dbe7adae49
 - Low-slack blocker proof repair: 75a7a877ab4879cf8dcc2e11e76ecfe64c582e0d
 - Pairwise blocker scope audit: f272b81656d6abcee4afee5ec26b9262a47f42b0
-- Progress log: 8edc7609e15a998daf7ae6365a38fde5819aee50
+- Progress log with both audits: 0d9b19ce8acb094b7e239250988b5edb492a5977
 
 **Status remains OPEN / NOT_CERTIFIED.**
