@@ -6,7 +6,7 @@ Branch: `workstream/general-r-finite-tail-20261024`
 
 Directory: `general_r/workstreams/finite-tail-chat-20261024/`
 
-Headline status: **FRAMEWORK_READY / NO NEW r CERTIFIED YET**.
+Headline status: **CONDITIONAL_MODULE_CERTIFIED / NO NEW EG617(r) THEOREM**.
 
 The workstream now has a deterministic reduced-CSP generator, immutable hashes, an independent tiny verifier, an explicit analytic-assumption ledger, and a universal certificate interface. It does **not** claim an EG617 parameter is closed merely because the reduced scalar instance is generated or verified.
 
@@ -140,7 +140,22 @@ Immediate solver admission policy:
 
 This prevents wasting computation on parameters that analytic theory already collapses or on instances whose bridge is not yet proved.
 
-## 9. Next finite-tail implementation target
+## 9. Theorem-promotion milestone — 2026-10-24
+
+A first real conditional endpoint module has completed the full producer -> certificate -> independent verifier -> theorem-promotion gate path:
+
+- module: `ENDPOINT_DOMAIN_LOWER_BOUND_V1`;
+- committed artifact: `certificates/endpoint_domain_r13_residual_core.json`;
+- replay receipt: `certificates/endpoint_domain_r13_residual_core_receipt.json`;
+- r=13 residual-core instance SHA-256: `0b6dce65ae4ac393e5170c6330f7e571800dc34c0fbcb990d57f3718675ddfef`;
+- certificate SHA-256: `2b2526cd2281e44425ebe0dd3ef08fc04cf95c04f5003e918de3a0496f4976f4`;
+- verifier SHA-256: `1a6ac72042fa7b3a95215c3e2854f661a6cd63c11b879d865af028a91962e6e4`;
+- gate: `PASS_CONDITIONAL_MODULE`; theorem status: `CONDITIONAL_LEMMA_CERTIFIED`;
+- RC remains `OPEN`, so EG617(13) remains **NOT PROVED**.
+
+The verifier independently re-derives all 14 d-rows and the reflection partition. CLI replay passed for r=12,13,14,15,68 under both profiles. A finite arithmetic audit over r=4,...,100 passed; this is not an all-r theorem. Tampering and unknown-ledger-ID tests failed closed as intended.
+
+## 10. Next finite-tail implementation target
 
 Once a sibling workstream supplies a stable terminal contract, build the graph/SAT adapter with:
 
