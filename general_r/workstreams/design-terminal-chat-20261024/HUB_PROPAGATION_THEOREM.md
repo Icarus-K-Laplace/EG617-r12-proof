@@ -173,3 +173,27 @@ If all cross-block additions of (G_i) are incident to a single cover block (D), 
 - share a nontransversal block omitting (B_k), while the extra-point constraint forces another defective block.
 
 Status: **PROVED_CONDITIONAL**. Without the single-cover-block hypothesis, a multi-block barrier could still block the independent triple; its cost remains open.
+
+
+## HP10. Robust pair-of-nonedges coverage inequality
+
+This lemma permits arbitrary additional target cross edges, but it is conditional on the four endpoints of the two internal nonedges having no target-colored cross edge between the source groups.
+
+Let (P_j=\{a_j,y_j\}\subset B_j) and (P_k=\{a_k,y_k\}\subset B_k), (j\ne k), be two internal target nonedges. Assume all four cross pairs between (P_j) and (P_k) are absent from (G_0). For each remaining group (ell\notin\{j,k\}), define the common ordinary-safe set
+[
+U_\ell=B_\ell\setminus\bigl(N_{G_0}(a_j)\cup N_{G_0}(y_j)\cup N_{G_0}(a_k)\cup N_{G_0}(y_k)\bigr).
+]
+Let (A=e_{G_0}(W;B_1,\ldots,B_5)) be the total number of target cross-group edges. Then for any two distinct remaining groups (ell,m),
+[
+\boxed{|U_\ell|\,|U_m|\le A.}
+]
+
+**Proof.** If the product exceeded (A), there would be more than (A) pairs in (U_\ell\times U_m), while only (A) target cross edges exist in total. Hence some (x\in U_\ell,y\in U_m) satisfy (xy\notin E(G_0)). By the definitions of the (U)-sets, neither (x) nor (y) has a target edge to any of the four endpoints in (P_j\cup P_k); the four cross pairs between (P_j,P_k) are also target nonedges by hypothesis. Thus
+[
+P_j\cup P_k\cup\{x,y\}
+]
+is a target-independent 6-set, contradiction.
+
+Consequently, among the three groups outside ({j,k}), at most one can have (|U_\ell|>\sqrt A). At least two groups are therefore covered up to at most (\sqrt A) exceptional points by the target neighborhoods of the four endpoints.
+
+Since (A\le27r+15), the exceptional threshold is (O(\sqrt r)). This is a genuine robust statement, but the condition that the two source nonedges have no target-colored cross edge between their endpoints is not yet guaranteed for a useful family of pairs. The missing next step is to either find many such compatible pairs or charge the endpoint-conflict edges to the global (O(r)) budget.
