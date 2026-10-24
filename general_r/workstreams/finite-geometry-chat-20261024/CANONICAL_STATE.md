@@ -18,7 +18,7 @@ For q>=3, Brouwer's non-r-partite Turan threshold implies that if 0<=s_i<=q-2, t
 
 If two colors have slack <=q-2 on the same W, their two block partitions are exactly orthogonal. This is a 2-net/grid, not yet a full affine plane.
 
-### 2. Strengthened local forcing and global excess
+### 2. Strengthened local forcing and universal global excess
 
 For x outside W, let B_a be the non-color-i neighbors of x inside the i-block P_a. Every B_a is nonempty in a counterexample. The one-block greedy argument gives min_a |B_a|<=s_i.
 
@@ -28,13 +28,13 @@ The weighted blocker inequality improves this: the defect graph on the B_a parts
 d_i(x)\ge2q-s_i(x)-1.
 \]
 
-Writing e_i=m_q+q+a_i and s_i(x)=q+a_i-d_i(x) yields
+Writing e_i=m_q+q+a_i and s_i(x)=q+a_i-d_i(x) yields a_i>=q-1 whenever color i is low-slack at a vertex. The exact average-slack identity then upgrades this to the universal bound
 
 \[
-\boxed{a_i\ge q-1}
+\boxed{a_i\ge q-1\quad\forall i.}
 \]
 
-for every color that is low-slack at any vertex. Therefore any color with a_i<=q-2 must satisfy s_i(x)>=q-1 for every x.
+If a_i<=q-2, the average local slack would be below q-1, forcing a low-slack vertex and contradicting the local bound. The total excess above this universal floor is q(q-1)(q-2)/2.
 
 ### 3. Weighted blocker and small-slack classification
 
@@ -46,7 +46,7 @@ See TRANSVERSAL_BLOCKER_LEMMA.md and SMALL_SLACK_BLOCKER_CLASSIFICATION.md. The 
 
 If there is only one relevant defect edge, it must join two singleton residual parts. If there are at most two relevant edges, either there is a singleton-singleton edge or the two edges join a singleton part to the two different vertices of a size-two part.
 
-The latter can involve three parts for arbitrary residual parts. **Only in the aligned J-shell setting** where B_a=P_a minus Y and |Y|=2q-1 is the three-part 1,1,2 pattern ruled out for q>=4.
+The latter can involve three parts for arbitrary residual parts. Only in the aligned J-shell setting, where B_a=P_a minus Y and |Y|=2q-1, is the three-part 1,1,2 pattern ruled out for q>=4.
 
 ### 4. Slack-one crossed pattern
 
@@ -60,7 +60,7 @@ For N=q^2+1, every color has e_i>=m_q+q. Writing e_i=m_q+q+a_i gives sum_i a_i=m
 
 ## High-slack branch: audited, not closed
 
-If at most one color is low-slack at x, then sum_i s_i(x)>=(q-1)^2, compatible with m_q. A formal scalar profile with all colors high-slack satisfies the currently proved scalar identities, though it is not claimed to be graph-realizable. A genuine multicolor compatibility inequality is still needed.
+If at most one color is low-slack at x, then sum_i s_i(x)>=(q-1)^2, compatible with m_q. The formal scalar profile a_i=q(q-1)/2, d_i(x)=q, s_i(x)=q(q-1)/2 satisfies all current scalar identities, including a_i>=q-1, but is not claimed to be graph-realizable. A genuine multicolor compatibility inequality is still needed.
 
 ## Finite geometry: exact limits
 
@@ -73,7 +73,7 @@ If at most one color is low-slack at x, then sum_i s_i(x)>=(q-1)^2, compatible w
 
 - Low-slack coordinatization: PROVED.
 - Weighted blocker inequality and two-block forcing: PROVED.
-- Global excess bound a_i>=q-1 for any low-slack color: PROVED.
+- Universal global excess floor a_i>=q-1: PROVED.
 - Slack-one crossed pattern: PROVED conditionally.
 - Conditional tight-transversal interface: PROVED.
 - Global low-slack extraction / alignment: OPEN.
