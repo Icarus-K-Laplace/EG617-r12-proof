@@ -84,10 +84,10 @@ The next proof target is a stability/packing contradiction in Case 1 or a genuin
 
 ## Latest isolated commits
 
-- Four-partite proof audit and notation cleanup: f32121750a7899607974609b71f72273132ab4fe
-- Low-slack blocker proof repair: 75a7a877ab4879cf8dcc2e11e76ecfe64c582e0d
-- Exceptional-row refinement and duplicate thresholds: c34a6a095b437d9b18d44cfd629ed3ce75894fcf
-- Pairwise blocker scope audit: f272b81656d6abcee4afee5ec26b9262a47f42b0
-- Progress log: 42d4646bc5d594d074d9a7c32af85ae7fb4415f2
+- Independent audit of extended row theorem: 120af51e20552216521a389145704d305b90feaa
+- Explicit one-repeat deduction: c1815118748fc540260391b1dcd9814a769b3dc1
+- One-exception-row proof repair: 552ca5825e1504e6e7ad6a133abbd4fe230d2a7f
+- Theorem 10.1 / Corollary 10.2: 73f02a07d4722e09af203cbc0ac8d5d82af405e4
+- Dependencies and canonical integration: f21259a2a44caa9ba022025ca0c8cb92c52a0bfc / 02b76c419106ddc1d408c27c2ac2f5d2c4895362
 
 **Status remains OPEN / NOT_CERTIFIED.**
