@@ -145,3 +145,10 @@ This is an exact finite incidence kernel for Case B at r=7, not a contradiction.
 
 
 Audit correction for r=7: the design-level subkernel from K.RM5 is realizable. K branch file Q6_NEAR_TRANSVERSAL_OBSTRUCTION_AUDIT.md (commit 825c48ae4e5cc47e7feb6abab6337de62db6fd6c) gives an explicit order-6 Latin square partitioned into one full transversal and six disjoint near-transversals. This is not a full graph-level EG617 coloring, but it proves that the net-plus-clique-size pattern alone cannot be ruled out by the nonexistence of an orthogonal mate. The missing constraints are the three exceptional-star color graphs and root/witness incidence.
+
+
+## Round 5 — strict residual budget and r=7 Case B closure
+
+J branch commit c0c31e82b2bd8b4c3c5a7ab6092b660d16bd686b proves J.W8/J.W9: for q=r-1>=4, the equality residual budget sum b_i=C(q,2) creates q+1 c-clique blocks of sizes q and q-1 (q times). Every root must be c-adjacent to an entire block, but block capacities are 1 for the size-q block and 2 for each size-(q-1) block, totaling 2q+1<|X|=2q+2. Hence equality is impossible and at least ceil((q+1)/2) residual directions are forced.
+
+At q=6 (r=7), this gives four directions, hence two orthogonal Latin squares of order 6, impossible. **The tight-transversal Case B is now CLOSED at r=7.** The Latin-square-only near-transversal partition remains realizable but cannot satisfy the full root-block constraints. Case A remains OPEN.
