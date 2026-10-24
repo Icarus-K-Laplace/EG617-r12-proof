@@ -1,0 +1,368 @@
+{
+  "status": "COMPUTATION_CERTIFIED",
+  "scope": "Exact arithmetic and finite regression; all-r proof is analytic in THEOREM.md",
+  "polynomials": {
+    "twice_cut_residual_coefficients": [
+      [
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        -6
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        5
+      ],
+      [
+        0,
+        1,
+        0,
+        1,
+        -2
+      ],
+      [
+        0,
+        2,
+        0,
+        0,
+        3
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        -2
+      ]
+    ],
+    "contextual_cap": "5r^2+7r+18",
+    "coefficient_identity_checked": true
+  },
+  "offsets": [
+    {
+      "epsilon": 0,
+      "c": 2,
+      "eta": [
+        0,
+        1,
+        2
+      ],
+      "W_slack_constant": -1,
+      "endpoint_excess_margin_at_r67": 35,
+      "endpoint_excess_margin_slope": 1
+    },
+    {
+      "epsilon": 0,
+      "c": 3,
+      "eta": [
+        1,
+        2
+      ],
+      "W_slack_constant": -1,
+      "endpoint_excess_margin_at_r67": 28,
+      "endpoint_excess_margin_slope": 1
+    },
+    {
+      "epsilon": 0,
+      "c": 4,
+      "eta": [
+        2
+      ],
+      "W_slack_constant": 0,
+      "endpoint_excess_margin_at_r67": 21,
+      "endpoint_excess_margin_slope": 1
+    },
+    {
+      "epsilon": 1,
+      "c": 2,
+      "eta": [
+        0,
+        1,
+        2
+      ],
+      "W_slack_constant": -1,
+      "endpoint_excess_margin_at_r67": 46,
+      "endpoint_excess_margin_slope": 1
+    },
+    {
+      "epsilon": 1,
+      "c": 3,
+      "eta": [
+        0,
+        1,
+        2
+      ],
+      "W_slack_constant": -1,
+      "endpoint_excess_margin_at_r67": 44,
+      "endpoint_excess_margin_slope": 1
+    },
+    {
+      "epsilon": 1,
+      "c": 4,
+      "eta": [
+        0,
+        1,
+        2
+      ],
+      "W_slack_constant": 0,
+      "endpoint_excess_margin_at_r67": 42,
+      "endpoint_excess_margin_slope": 1
+    },
+    {
+      "epsilon": 1,
+      "c": 5,
+      "eta": [
+        0,
+        1,
+        2
+      ],
+      "W_slack_constant": 1,
+      "endpoint_excess_margin_at_r67": 40,
+      "endpoint_excess_margin_slope": 1
+    },
+    {
+      "epsilon": 1,
+      "c": 6,
+      "eta": [
+        1,
+        2
+      ],
+      "W_slack_constant": 3,
+      "endpoint_excess_margin_at_r67": 38,
+      "endpoint_excess_margin_slope": 1
+    },
+    {
+      "epsilon": 1,
+      "c": 7,
+      "eta": [
+        2
+      ],
+      "W_slack_constant": 5,
+      "endpoint_excess_margin_at_r67": 36,
+      "endpoint_excess_margin_slope": 1
+    }
+  ],
+  "capacity_table": [
+    {
+      "m": 6,
+      "p5": 1,
+      "low_upper_r": 67,
+      "high_upper_r": 61
+    },
+    {
+      "m": 7,
+      "p5": 2,
+      "low_upper_r": 86,
+      "high_upper_r": 79
+    },
+    {
+      "m": 8,
+      "p5": 3,
+      "low_upper_r": 108,
+      "high_upper_r": 100
+    },
+    {
+      "m": 9,
+      "p5": 4,
+      "low_upper_r": 133,
+      "high_upper_r": 124
+    },
+    {
+      "m": 10,
+      "p5": 5,
+      "low_upper_r": 161,
+      "high_upper_r": 151
+    },
+    {
+      "m": 11,
+      "p5": 7,
+      "low_upper_r": 189,
+      "high_upper_r": 178
+    },
+    {
+      "m": 12,
+      "p5": 9,
+      "low_upper_r": 220,
+      "high_upper_r": 208
+    }
+  ],
+  "sparse_regression": [
+    {
+      "n": 1,
+      "labeled_graphs": 1,
+      "triangle_free": 1,
+      "e_minus_tau_at_most_1": 1
+    },
+    {
+      "n": 2,
+      "labeled_graphs": 2,
+      "triangle_free": 2,
+      "e_minus_tau_at_most_1": 2
+    },
+    {
+      "n": 3,
+      "labeled_graphs": 8,
+      "triangle_free": 7,
+      "e_minus_tau_at_most_1": 7
+    },
+    {
+      "n": 4,
+      "labeled_graphs": 64,
+      "triangle_free": 41,
+      "e_minus_tau_at_most_1": 34
+    },
+    {
+      "n": 5,
+      "labeled_graphs": 1024,
+      "triangle_free": 388,
+      "e_minus_tau_at_most_1": 146
+    },
+    {
+      "n": 6,
+      "labeled_graphs": 32768,
+      "triangle_free": 5789,
+      "e_minus_tau_at_most_1": 676
+    }
+  ],
+  "split_cover": {
+    "n": 11,
+    "edges": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        1,
+        10
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        6,
+        10
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        7,
+        9
+      ],
+      [
+        7,
+        10
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        8,
+        10
+      ],
+      [
+        9,
+        10
+      ]
+    ],
+    "edge_count": 29,
+    "alpha": 2,
+    "omega": 5,
+    "subsets_checked": 2048,
+    "full_terminal": false
+  },
+  "analytic_exclusion_threshold": {
+    "all_nine_cells": 221,
+    "high_degree_cells": 209
+  }
+}
