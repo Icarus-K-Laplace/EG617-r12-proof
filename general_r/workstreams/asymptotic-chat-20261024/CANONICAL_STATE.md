@@ -194,10 +194,10 @@ The route bypasses (C^*) and the exact three-anchor floor as explicit hypotheses
 1. A legal (4r+1) residual is impossible for (r\ge17), by the residual contract plus the contextual ((k,s)=(4,1)) cap gap ((3r-13)/2>0).
 2. A contextual anchored (5r+1) terminal has (delta\in\{r,r+1\}); for (r\ge67), direct near-anchor extraction applies.
 3. The common anti-neighbourhood satisfies (2r-4\le|W|\le2r+1) in the (delta=r) branch and (2r-7\le|W|\le2r+1) in the (delta=r+1) branch. The layers (2r,2r+1) are impossible for (r\ge11).
-4. In the high-degree branch (delta=r+1), the (|W|=2r-1) Cell A/B layer is impossible for (r\ge25). The low-degree branch (delta=r), (|W|=2r-1), remains OPEN.
+4. The (|W|=2r-1) layer is impossible in both branches for (r\ge25): high-degree (delta=r+1) by Cell A/B edge-count closure; low-degree (delta=r) by LOW_DEGREE_TOP_LAYER_CLOSURE.md.
 
-The narrowed downstream interface (D_{\mathrm{low}}) is therefore:
-- (delta=r): (|W|\in\{2r-4,2r-3,2r-2,2r-1\});
+The current downstream interface (D_{\mathrm{low}}) is therefore:
+- (delta=r): (|W|\in\{2r-4,2r-3,2r-2\});
 - (delta=r+1): (|W|\in\{2r-7,\ldots,2r-2\}).
 
 The scalable d2 target (K+a\le(1-c)r+O(1)) has failed a strict derivability audit: an exact parameter family satisfies all currently recorded scalar constraints with (K+a=r). This is not a legal graph counterexample; it proves that a scalar-only proof of that inequality cannot work without a new structural input.
