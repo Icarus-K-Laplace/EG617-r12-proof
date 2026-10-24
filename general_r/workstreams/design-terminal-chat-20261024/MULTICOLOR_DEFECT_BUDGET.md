@@ -127,3 +127,21 @@ For two internal target nonedges (P_j\subset B_j), (P_k\subset B_k), assume all 
 Otherwise the product (U_\ell\times U_m) has more pairs than there are target cross edges globally, so one can select a non-target pair and obtain a target-independent 6-set together with (P_j,P_k).
 
 Since (A\le27r+15), at least two of the three remaining groups are covered by the four endpoint neighborhoods up to (O(\sqrt r)) exceptions. This is a robust stability constraint that does not assume an exact star map, but it currently requires a source-pair compatibility condition (no target cross edge among the four endpoints). Finding many compatible source pairs, or charging all conflicts, remains OPEN.
+
+
+## 11. Global color-ownership contradiction inside the oversized target group
+
+The bounded target hub theorem yields an absolute target-internal defect cap. For (r\ge6212), the refined hub bound gives (|X|\le108). Each hub has at most four nonneighbors among ordinary vertices of its own target group; all missing hub-hub pairs contribute at most (inom{|X|}{2}). Hence
+[
+\boxed{D\le4|X|+\binom{|X|}{2}\le6210.}
+]
+
+But some target group (B_h) has (|B_h|\ge r+1). Since each non-target color graph has independence number at most (r), every non-target color must own an edge inside a fixed ((r+1))-subset of (B_h). The (r-1) colors require (r-1) distinct target-internal deletions, so
+[
+\boxed{D_h\ge r-1.}
+]
+For (r\ge6212), this contradicts (D_h\le D\le6210).
+
+This uses unique edge ownership and does not sum cover lower bounds; shared cover edges cannot affect it. Full derivation and the exact (r\ge6212) threshold are in `JOINT_DEFECT_PROPAGATION.md`.
+
+**Status:** **PROVED_ANALYTIC** for contextual terminal nonexistence at (r\ge6212). This bypasses rather than solves the local defect-cover incidence problem. The original front-end forcing interface remains OPEN.
