@@ -8,7 +8,7 @@ Scope: symbolic decompilation/termination of the r=12 contextual front recurrenc
 
 - **H1 (<10 symbolic transitions): ACHIEVED.** The 1752 r=12 nodes compress to seven transition schemas.
 - **H2 (general termination conditional on symbolic seeds): PROVED for every `r>3`.** The natural-number potential `Phi_r(a,n)=(r^2+2)a+n` strictly decreases on every genuine recursive dependency.
-- **H3 (all sufficiently large r front recurrence): OPEN.** No uniform low-order seed envelope has yet been proved.
+- **H3 (all sufficiently large r front recurrence): OPEN.** The cutoffs `M_r(2)<=2r-1` and `M_r(3)<=3r` are now proved for `r>=6`, but the uniform edge-floor seed envelope and all-state dominance remain open.
 - **H4 (`4r+1` residual OR `5r+1` terminal): CONDITIONAL THEOREM PROVED.** It follows once the recurrence floors dominate every symbolic outer budget except the extraction/design coordinates.
 
 ## Current symbolic state
@@ -72,7 +72,7 @@ At r=12 the exact certificate proves this reduction, with the latter equal to T6
 
 The r=12 recurrence architecture uses, beyond automatic bases and contextual `a=4` exclusion, only:
 
-- cutoffs `M_2<=2r-1`, `M_3<=3r` at r=12;
+- cutoffs `M_r(2)<=2r-1`, `M_r(3)<=3r` proved for all `r>=6` (the abstract-contract cutoff fails at r=4,5);
 - five edge-floor coordinates `(2,2r-1)`, `(3,3r-1)`, `(3,3r)`, `(4,4r-1)`, `(4,4r)`.
 
 At r=12 the floor values are 131,210,234,284,308. This is a structurally sufficient seed interface; mathematical minimality among all possible interfaces is not claimed.
@@ -101,3 +101,13 @@ A rigorous hereditary multicolor-to-residual transfer lemma is now proved and do
 The outer-budget comparison has an exact symbolic gap formula in `OUTER_BUDGET_DOMINANCE.md`. With `a=r-1-j`, `t=r-d`, `n=ar+t`, and `b=t mod a`,
 `U_r(d,j)-p_a(n)=C(r,2)-(a+1)t^2/(2a)+t-b(a-b)/(2a)`.
 At `t=1), the gap is exactly `C(r,2)`. The all-state dominance theorem and an explicit asymptotic threshold remain OPEN; no `r_0` is certified.
+
+
+## Round 2 — Low-order cutoff advance (2026-10-24)
+
+The new `LOW_ORDER_CUTOFF_THEOREMS.md` proves:
+- `M_r(2)<=2r-1` for `r>=6`, using the inherited cap on the complement, a triangle-free maximum-degree bound, and the Andrásfai–Erdős–Sós theorem at the boundary `n=2r`.
+- `M_r(3)<=3r` for `r>=6`, using a minimum-degree pivot to an `a=2` core and the exact inequality `2(r-1)p_r(n)>n(2r-1)`.
+- Consequently the outer `t=1` states `(a,n)=(2,2r+1)` and `(3,3r+1)` are eliminated for `r>=6`.
+
+The stronger `M_r(2)<=2r-1` claim is not all-r: explicit graphs in the abstract state contract show it fails at `r=4,5`. The `a=4,n=4r+1` coordinate remains the intended extraction terminal, not an unconditional exclusion. The five seed edge-floor excesses and all-state outer dominance remain OPEN; no EG617 threshold `r_0` is claimed.
