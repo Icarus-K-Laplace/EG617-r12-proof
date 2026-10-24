@@ -185,3 +185,30 @@ J branch commit c0c31e82b2bd8b4c3c5a7ab6092b660d16bd686b proves the full-contrac
 and at most floor((q-1)/2) residual complements are non-q-partite. At least ceil((q+1)/2) colors therefore give pairwise orthogonal q-clique partitions, strengthening the earlier bound by one direction for even q.
 
 For q=6 this forces at least four directions, hence two mutually orthogonal Latin squares of order 6, impossible by Euler–Tarry. Thus **Case B is impossible at r=7**. The explicit Latin-square example in Q6_NEAR_TRANSVERSAL_OBSTRUCTION_AUDIT.md realizes only the abstract 3-net plus one-transversal/six-near-transversal subkernel; the root-block coverage constraint prevents extending it to the full EG617 Case B contract.
+
+
+## Theorem K.RM6 — Strict residual excess budget
+
+**Source:** J branch workstream/general-r-induction-compression-20261024, commit c0c31e82b2bd8b4c3c5a7ab6092b660d16bd686b, file ALIGNMENT_FREE_WITNESS_RIGIDITY.md, Theorem J.W8.
+
+Under the full hypothetical-counterexample contract and Case B, for q=r-1>=4,
+
+\[
+\boxed{\sum_{i\ne c}b_i\le \binom q2-1.}
+\]
+
+Proof audit: if equality held in the earlier bound, the omitted color c would attain the Turan minimum for alpha(G_c[R])<=q+1. Its graph would be exactly q+1 disjoint cliques of sizes q,q-1,...,q-1. For every x in X, the color-c neighborhood of x must contain an entire block; otherwise choose one c-nonneighbor from each block to get a c-independent (q+1)-set in R which remains c-independent with x, contradicting the full counterexample property. A q-block can be fully contained in at most one root's c-neighborhood; a (q-1)-block can be fully contained in at most two, since three roots plus that block form a (q+2)-set using at most four colors, fewer than r=q+1 for q>=4. Therefore |X|<=1+2q, contradicting |X|=2q+2.
+
+Consequently at most floor((q-1)/2) residual colors are non-q-partite, because each such color costs b_i>=q-1. Thus at least
+
+\[
+\boxed{\left\lceil\frac{q+1}{2}\right\rceil}
+\]
+
+colors give pairwise orthogonal q-clique partitions of R.
+
+### Corollary K.RM7 — Case B impossible for r=7
+
+For r=7, q=6, the strict bound forces at least four orthogonal 6-clique partitions on the 36-point set R. Taking two as row/column partitions, the other two yield a pair of mutually orthogonal Latin squares of order 6, ruled out by Euler–Tarry. Hence Case B is impossible at r=7.
+
+Boundary: this does not eliminate Case A (matching number at least three), and it does not prove the full r=7 theorem or an all-r induction.
