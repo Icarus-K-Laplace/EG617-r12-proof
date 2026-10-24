@@ -88,7 +88,7 @@ A complete proof must count the edges from U to O=H\U and the excess of O withou
 
 The AES partite branch has a more rigid six-type structure, recorded in CLEAN_PAIR_GLOBAL_BUDGET.md. With type classes A0,A1,B0,B1,C0,C1 and block counts x,y,z, every type class has size at least
 
-a=m-r+1 >= ceil(r/3)+4.
+lambda=m-r+1 >= ceil(r/3)+4.
 
 The two independent triples of type classes are
 
@@ -105,15 +105,15 @@ A necessary correction: this does **not** prove that every outside vertex sees a
 - If an outside vertex has a same-part witness pair, it sees that entire part.
 - If it has no same-part witness pair, one residual class triple has one optional relation of maximum degree four, one block matching, and one empty pair. The vertex must have at least a-4 neighbours in that residual triple, so
 
-  d_H(o,U)>=3a-4, and kappa_o>=3a-4-r>=8.
+  d_H(o,U)>=3a-4, and kappa_o>=3lambda-4-r>=8.
 
 If X is the number of outside vertices of the second type, then
 
-X(3a-4-r) <= K_O <= 2r-2-K_U.
+X(3lambda-4-r) <= K_O <= 2r-2-K_U.
 
 Since h=r+1-2a, equivalently X<=floor((4r-4-2K_U)/(r-3h-5)), with denominator at least 16 in this branch.
 
-Thus the remaining AES terminal has a bounded-degree optional block graph and at most floor((2r-2-K_U)/(3a-4-r)) exceptional outside vertices. This can still be linear near the lower AES threshold, so it is a structural reduction, not nonextension.
+Thus the remaining AES terminal has a bounded-degree optional block graph and at most floor((2r-2-K_U)/(3lambda-4-r)) exceptional outside vertices. This can still be linear near the lower AES threshold, so it is a structural reduction, not nonextension.
 
 ## 8. Exact no-double-counting identity
 
