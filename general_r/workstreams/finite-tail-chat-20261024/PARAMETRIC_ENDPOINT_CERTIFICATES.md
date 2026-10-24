@@ -78,3 +78,8 @@ This is a scalar necessary-condition simplification conditional on RC. It is not
 ## Parameter coverage
 
 `PARAMETER_ADMISSION_MATRIX.json` carries explicit rows r=4,...,100 plus a complete range partition for all integers r>=4. `PARAMETER_ADMISSION_VERIFIER.py` independently reconstructs every explicit row, checks the source registry and range partition, and supports query mode for arbitrary r>=4 (including r>100). Its PASS is an admission-policy audit, not an EG617 theorem.
+
+
+## Low-order recurrence sources do not widen module admission
+
+The front-recurrence branch additionally proves its abstract `M_r(2)` and `M_r(3)` cutoff sublemmas for `r>=6), while `r=4,5` have abstract-contract counterexamples to the `M_r(2)` cutoff. Its potential theorem proves recurrence termination conditional on a finite sound seed/cutoff package for every `r>3). These results do not provide a complete reduction from an original EG617 coloring to the recurrence contract. Consequently the endpoint-domain and D1 certificate families remain blocked for theorem-level use below r=12.
