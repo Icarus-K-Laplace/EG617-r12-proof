@@ -18,25 +18,41 @@ For q>=3, Brouwer's non-r-partite Turan threshold implies that if 0<=s_i<=q-2, t
 
 If two colors have slack <=q-2 on the same W, their two block partitions are exactly orthogonal. This is a 2-net/grid, not yet a full affine plane.
 
-### 2. Strengthened near-line forcing
+### 2. Strengthened local forcing and global excess
 
-For x outside W, let B_a be the non-color-i neighbors of x inside the i-block P_a. Every B_a is nonempty in a counterexample, since an empty B_a would make P_a union {x} a monochromatic K_(q+1).
+For x outside W, let B_a be the non-color-i neighbors of x inside the i-block P_a. Every B_a is nonempty in a counterexample. The one-block greedy argument gives min_a |B_a|<=s_i.
 
-If s_i cross-block color-i defect edges exist, a greedy independent-transversal argument proves min_a |B_a|<=s_i, so x has at least q-s_i color-i edges into some block. At s_i=0, this forces a monochromatic K_(q+1); therefore every local slack in a genuine counterexample is at least one.
-
-### 3. Weighted independent-transversal blocker
-
-See TRANSVERSAL_BLOCKER_LEMMA.md. If B_1,...,B_q are nonempty parts of sizes b_a and a graph F with edges only between parts has no independent transversal, then
+The weighted blocker inequality improves this: the defect graph on the B_a parts has no independent transversal, so some pair satisfies |B_a||B_b|<=s_i. Hence
 
 \[
-\sum_{uv\in E(F)}\frac{1}{b_{a(u)}b_{a(v)}}\ge1.
+d_i(x)\ge2q-s_i(x)-1.
 \]
 
-Hence |E(F)|>=min_{a<b} b_a b_b, and if all parts have size at least k then |E(F)|>=k^2.
+Writing e_i=m_q+q+a_i and s_i(x)=q+a_i-d_i(x) yields
 
-Applied to a low-slack color i, the only edges that can block transversals are the defect edges whose two endpoints both lie in the residual non-i-neighbor parts B_a. If all B_a are nonempty, these edges satisfy the weighted bound; defect edges outside the residual parts do not help.
+\[
+\boxed{a_i\ge q-1}
+\]
 
-### 4. Global slack dictionary
+for every color that is low-slack at any vertex. Therefore any color with a_i<=q-2 must satisfy s_i(x)>=q-1 for every x.
+
+### 3. Weighted blocker and small-slack classification
+
+See TRANSVERSAL_BLOCKER_LEMMA.md and SMALL_SLACK_BLOCKER_CLASSIFICATION.md. The weighted inequality is
+
+\[
+\sum_{uv\in E(F)}\frac{1}{|B_{a(u)}||B_{a(v)}|}\ge1.
+\]
+
+If there is only one relevant defect edge, it must join two singleton residual parts. If there are at most two relevant edges, either there is a singleton-singleton edge or the two edges join a singleton part to the two different vertices of a size-two part. The latter may involve three parts, but the J-shell size budget rules that case out for q>=4.
+
+### 4. Slack-one crossed pattern
+
+If two distinct colors i,j have s_i(x)=s_j(x)=1 on the same q^2 restriction, the partitions are orthogonal. Their unique defect edges and extra-vertex labels force a crossed 2-by-2 pattern: the i-defect edge joins two cells whose edges to x are color j, while the j-defect edge joins two cells whose edges to x are color i. Also a_i,a_j>=q-1.
+
+Full proof: SLACK_ONE_CROSS_PATTERN.md. This is a rigid local pattern, not a contradiction.
+
+### 5. Global slack dictionary
 
 For N=q^2+1, every color has e_i>=m_q+q. Writing e_i=m_q+q+a_i gives sum_i a_i=m_q, s_i(x)=q+a_i-d_i(x), and sum_i s_i(x)=m_q. Also sum_x s_i(x)=q(q-1)+(q^2-1)a_i. Scalar averaging alone does not force two low-slack colors.
 
@@ -49,13 +65,15 @@ If at most one color is low-slack at x, then sum_i s_i(x)>=(q-1)^2, compatible w
 - Two low-slack colors give two orthogonal partitions only.
 - q being a prime power does not coordinatize arbitrary extracted partitions.
 - Three full size-q blocks in distinct directions with pairwise intersections at most one would exceed a 2q-1 shell, but no such blocks have been extracted from compression failure.
-- The J/K bridge is conditional: if a tight transversal X contains x_0 and a color i != c is low-slack on V minus {x_0}, then private witnesses of color i are confined to at most floor((2q-1)/(q-s_i)) clique blocks.
+- The J/K bridge is conditional: if a tight transversal X contains x_0 and a color i != c is low-slack on V minus {x_0}, then private witnesses of color i are confined to a bounded number of clique blocks, and for slack 1 or 2 they are confined to at most two blocks (q>=4).
 
 ## Current verdict
 
-- Local low-slack coordinatization: PROVED.
-- Weighted transversal-blocker inequality: PROVED.
-- Conditional tight-transversal interface: PROVED on J branch.
+- Low-slack coordinatization: PROVED.
+- Weighted blocker inequality and two-block forcing: PROVED.
+- Global excess bound a_i>=q-1 for any low-slack color: PROVED.
+- Slack-one crossed pattern: PROVED conditionally.
+- Conditional tight-transversal interface: PROVED.
 - Global low-slack extraction / alignment: OPEN.
 - High-slack contradiction: OPEN.
 - Full affine-plane/net completion: OPEN.
