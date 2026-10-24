@@ -93,3 +93,11 @@ The blocker is now singular and quantitative:
 > for every outer state except the `4r+1` extraction and `5r+1` design terminal.
 
 The recurrence architecture and its termination are no longer blockers.
+
+## H+I Joint Audit — 2026-10-24
+
+A rigorous hereditary multicolor-to-residual transfer lemma is now proved and documented in `ASYMPTOTIC_SEED_ENVELOPE.md`. The stronger target-color avoidance floor is valid on each induced residual, but the derived moment inequality currently supplies an upper constraint on its edge count rather than the lower edge floor needed by the recurrence. Therefore no general-r improvement to the five seed floors is claimed.
+
+The outer-budget comparison has an exact symbolic gap formula in `OUTER_BUDGET_DOMINANCE.md`. With `a=r-1-j`, `t=r-d`, `n=ar+t`, and `b=t mod a`,
+`U_r(d,j)-p_a(n)=C(r,2)-(a+1)t^2/(2a)+t-b(a-b)/(2a)`.
+At `t=1), the gap is exactly `C(r,2)`. The all-state dominance theorem and an explicit asymptotic threshold remain OPEN; no `r_0` is certified.
