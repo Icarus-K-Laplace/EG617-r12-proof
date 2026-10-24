@@ -78,3 +78,32 @@ or equivalently
 In particular (s_0\ge r) implies (A\ge r-\Delta_0+D). Cylinder lower bounds for different deleted edges cannot simply be summed: they may reuse a hub star.
 
 **Status:** identities and K6 exclusion are **PROVED_ANALYTIC**; defect-chain budget and Hub Propagation remain **OPEN**.
+
+
+## 7. Exact two-defect closure and the slack threshold
+
+The block-level gadget in `HUB_PROPAGATION_THEOREM.md` has one 6-block and one 5-block, with exactly two missing ideal edges and nine added cross-block edges:
+[
+R_i=2,\quad A_i=9,\quad s_i=7,\quad
+|E(G_i)\triangle E(Q_i)|=11.
+]
+It satisfies both (\alpha(G_i)\le r) and (K_6)-freeness. Therefore the local requirements do not imply (s_i\ge9), nor do they force a third defect after two defects interact.
+
+This matters numerically: the inherited aggregate budget is
+[
+\sum_{i>0}s_i\le8r+5.
+]
+A hypothetical family with (s_i=7) or (8) in most colors is not excluded by this inequality alone. The total edit bound (27r+15) likewise permits (11(r-1)) edits at the scalar level.
+
+## 8. Target labels create the real obstruction
+
+The two-defect gadget has not been completed into a target-labelled terminal. If a missing edge (wx) in a non-target ideal block is a target cross-star edge (wB_k\), then the point (z_k\in B_k) in any other ideal block has both (wz_k) and (xz_k) target-colored whenever (z_k\notin X). It cannot serve as a (G_i)-neighbor of either endpoint.
+
+Thus the cover must either:
+- use a hub (z_k\in X\) in that coordinate;
+- use edges involving other selected blocks; or
+- exploit a further target-internal deletion.
+
+A fixed blocked coordinate can be covered by a local 9-edge two-coordinate barrier (four neighbors into each of two 5-blocks plus the edge between their two nonneighbors), so merely saying “the cover propagates” does not give a growing lower bound.
+
+**Updated blocker:** prove a target-labelled, pair-ownership-aware lower bound on the *entire* cover system. It must rule out repeating constant-size local gadgets across colors, not merely rule out one gadget in isolation.
