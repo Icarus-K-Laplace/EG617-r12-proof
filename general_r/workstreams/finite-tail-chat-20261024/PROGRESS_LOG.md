@@ -159,3 +159,59 @@ The r=13 endpoint-domain receipt was refreshed to the final gate hash. Both samp
 ### Final multi-module CLI replay
 
 With the final module-dispatch gate, end-to-end CLI replay passed for 10 scalar-profile cases (r=12,13,14,15,68 × two profiles) and three D1 shell-bound cases (r=12,13,68). Both verifiers rejected tampered certificates. The gate returned `BLOCKED_UNKNOWN_ASSUMPTION_ID` when RC was omitted from the machine-readable ledger, and r=11 remained `SCHEMA_ONLY`. All 13 matrix runs left `eg617_r_proved=false`. After the final gate was extended to record generation, verifier, and gate replay commands, the two committed r=13 sample certificates were replayed again through that final gate and both passed.
+
+
+## 2026-10-24 — FT-004: parameter-exact admission + replayable family interface
+
+Status: **MATRIX BUILT / PARAMETRIC FAMILIES WIRED / TOY SYMMETRY INTERFACE BUILT / NO EG617(r) THEOREM**.
+
+### 1. Admission matrix
+
+Added `PARAMETER_ADMISSION_MATRIX.json` with:
+- explicit rows r=4,...,100;
+- four non-overlapping ranges covering all r>=4;
+- six immutable source/asset records with commit, path, blob hash, quantifiers/range, proof type, assumptions, and terminal contract;
+- per-module/per-profile admission and assumption state.
+
+The independent matrix verifier reconstructs the row policy, checks source registry and range partition, and supports queries for arbitrary r>=4. A separate JS audit compared all 97 committed rows with independently reconstructed rows: **97/97 matched**. A separate Python harness exercised the verifier logic and rejected a tampered row.
+
+### 2. Source-range reconciliation
+
+The matrix explicitly distinguishes:
+- RC q-ceiling source applicable for r>=12 only under RC;
+- the full residual/core contract proved for r>=17 **once a legal 4r+1 residual exists**, while extraction remains open;
+- broad near-anchor ANCHOR_K8 proved only for r>=68;
+- exact-three-anchor K8 proved for r>=12 only under the exact three-anchor premise;
+- the r=12 recurrence arithmetic receipt, whose graph-level bridge remains OPEN.
+
+The exact three-anchor theorem is not used as a substitute for the broader near-anchor theorem.
+
+### 3. Parameterized certificate family
+
+Added `generate_parametric_certificate.py` and `PARAMETRIC_ENDPOINT_CERTIFICATES.md`. The wrapper checks source admission, then delegates to the existing module generators and promotion gate. It refuses r<12 for theorem-level family generation. The gate now records admission matrix and verifier hashes.
+
+Exact arithmetic replay (independent Python harness):
+- endpoint domain: 5,073 d-values checked for r=12,...,100;
+- D1: 623 class-count rows checked for r=12,...,100;
+- medium-degree boundary: r=12 -> {4,9}, r=13 -> {4,10}, r=14 -> {4,11}, r>=15 -> empty under baseline q-cap;
+- D1 six-class deficit is exactly 2 for every tested r.
+
+### 4. Receipt and symmetry interfaces
+
+Added `FINITE_TAIL_RECEIPT_SCHEMA.md` and `FINITE_TAIL_REPLAY_PROTOCOL.md`.
+
+Added `GRAPH_SYMMETRY_WITNESS_SCHEMA.md`, `GRAPH_SYMMETRY_VERIFIER.py`, and `GRAPH_SYMMETRY_TEST_VECTORS.json`. The toy K3/two-color fixture has 8 states, 3 orbits, and 8 explicit witnesses. An independent Python reconstruction matched both committed state-set digests and validated all 8 witness mappings.
+
+Important execution caveat: the committed `PARAMETER_ADMISSION_VERIFIER.py`, `generate_parametric_certificate.py`, `theorem_promotion_gate.py`, and `GRAPH_SYMMETRY_VERIFIER.py` CLI commands have not been run directly against the remote branch in this session. The matrix, arithmetic, and toy symmetry logic received independent harness checks; the committed CLI replay remains an explicit next step.
+
+### 5. Remaining blockers
+
+- r=4,...,11: no applicable general residual-core reduction source registered.
+- RC/front extraction: OPEN for all parameters.
+- broad ANCHOR_K8: OPEN for 12<=r<68; source applies for r>=68.
+- bounded-allowance d1 nonextension and d2 terminal closure: OPEN.
+- robust design-terminal nonextension: OPEN.
+- graph-level symmetry completeness for actual EG617 states: OPEN.
+- unconditional asymptotic r0: NOT AVAILABLE.
+
+No new EG617(r) theorem is claimed.
