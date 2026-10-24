@@ -21,7 +21,7 @@ For a regular shell vertex y, write `S_y=N_M(y)`, `D_y=N_H(y)`, `d_y=|S_y|=|D_y|
 
 `q_y=d_y(13-d_y)+B_y+kappa(D_y)+mu(D_y)+e_F(S_y,D_y)`,
 
-with every term after the base term nonnegative. Hence every legal row has `q_y<=q), but this alone does not imply common missing sets or low cross-density.
+with every term after the base term nonnegative. Hence every legal row has `q_y<=q`, but this alone does not imply common missing sets or low cross-density.
 
 ## 2. The anchor branch is genuinely closed
 
@@ -31,7 +31,7 @@ If a legal 35-core contains three pairwise nonadjacent degree-12 vertices, then 
 - `GLOBAL_THREE_ANCHOR_K4_EQUALITY_CLOSURE.md`;
 - `GLOBAL_THREE_ANCHOR_K6_FULL_CLOSURE.md`;
 
-gives `K>=8), equivalently `e(H)>=214). Therefore
+gives `K>=8`, equivalently `e(H)>=214`. Therefore
 
 > **Anchor envelope:** `q<=E-305`.
 
@@ -39,13 +39,13 @@ This part is proved under the stated core contract. What is not automatic is the
 
 ## 3. The common-S master theorem is conditional, but strong
 
-For a common-S owner family with support size d, row allowance a, charge `w_v=kappa_v+e_F(v,S)), and row closure `e_H(v,D)<=w_v), the following are proved under their exact contracts:
+For a common-S owner family with support size d, row allowance a, charge `w_v=kappa_v+e_F(v,S)`, and row closure `e_H(v,D)<=w_v`, the following are proved under their exact contracts:
 
-1. Boundary one-loss rows `Delta(D)=d-1) with the relevant low-cross bounds enter the Global Support-Compatibility Master Theorem.
+1. Boundary one-loss rows `Delta(D)=d-1` with the relevant low-cross bounds enter the Global Support-Compatibility Master Theorem.
 2. Three zero-charge incidence signatures give three independent degree-12 anchors.
 3. At most two signatures collapse the boundary one-loss system to at most three canonical sunflower patterns.
 4. Hereditary packing bounds each nontrivial pattern's owner multiplicity (d2 at most9; low-charge d3 at most8).
-5. The first-high-slack decomposition controls the plateau, exact one-loss and deeper-loss layers when `a=d).
+5. The first-high-slack decomposition controls the plateau, exact one-loss and deeper-loss layers when `a=d`.
 
 The dependencies are `backend/GLOBAL_SUPPORT_COMPATIBILITY_MASTER_THEOREM.md`, `GLOBAL_FIRST_HIGH_SLACK_MASTER_REDUCTION.md`, `GLOBAL_FORCING_TO_MASTER_ALLOWANCE_COVERAGE.md`, and the linked signature/transversal/packing theorems.
 
@@ -53,11 +53,11 @@ The dependencies are `backend/GLOBAL_SUPPORT_COMPATIBILITY_MASTER_THEOREM.md`, `
 
 ## 4. Exact common-S coverage already available
 
-For a common-S family with `s=|S intersect X|<d), let `ell_y=q-q_y) and `a) be the ambient allowance. The loss-layer theorem proves:
+For a common-S family with `s=|S intersect X|<d`, let `ell_y=q-q_y` and `a` be the ambient allowance. The loss-layer theorem proves:
 
 - `ell_y>a-(d-1)`: the support is disjoint from every distinct support class;
 - `ell_y=a-(d-1)`: every proper overlap is endpoint-saturated and all shared charge is zero;
-- only `1<=ell_y<=a-d) can retain genuine shallow-loss overlap freedom for repeated supports.
+- only `1<=ell_y<=a-d` can retain genuine shallow-loss overlap freedom for repeated supports.
 
 Thus the known common-S residual windows are exact:
 
@@ -68,7 +68,7 @@ Thus the known common-S residual windows are exact:
 | d=3, S an independent triple | allowance through `a<=6` enters the anchor envelope via the independent-triple theorem | only `a=7,8` can remain; the no-anchor transport equality patterns are (1,1,2) at a=7 and (1,1,3)/(1,2,2) at a=8 |
 | d=4 or d=9, q<=38 | non-fully-decorated systems are subcritical; fully-decorated multi-leftover Bridge C is closed | no new common-S Bridge-C case remains |
 
-The d3 triangle statement uses `GLOBAL_INDEPENDENT_TRIPLE_MIN_ANCHOR_THEOREM.md`, `GLOBAL_INDEPENDENT_TRIPLE_H3_THEOREM.md`, and the exact anchor-transport identity. For `a=7,8), if any transported excess is zero or any support intersection creates a zero transported degree, the anchor branch applies; only the all-positive listed distributions avoid that immediate route.
+The d3 triangle statement uses `GLOBAL_INDEPENDENT_TRIPLE_MIN_ANCHOR_THEOREM.md`, `GLOBAL_INDEPENDENT_TRIPLE_H3_THEOREM.md`, and the exact anchor-transport identity. For `a=7,8`, if any transported excess is zero or any support intersection creates a zero transported degree, the anchor branch applies; only the all-positive listed distributions avoid that immediate route.
 
 This table is exhaustive **inside the stated common-S / decoration contracts**, not for arbitrary multi-S shell systems.
 
@@ -76,11 +76,11 @@ This table is exhaustive **inside the stated common-S / decoration contracts**, 
 
 The new workstream theorem `R12_D3_MULTIS_EXTRACTION_BOUND.md` proves a useful extension of the q32 extraction:
 
-- any family Y of regular d3 shell vertices is a target clique, so `N=|Y|<=10);
+- any family Y of regular d3 shell vertices is a target clique, so `N=|Y|<=10`;
 - all missing triples lie in `Q=A\Y`;
 - if a common-S class has size n, then its common-S allowance obeys
   `a_S<=q-30-N+n`;
-- hence every nonempty class has `n>=N+30-q).
+- hence every nonempty class has `n>=N+30-q`.
 
 Examples:
 - N=9, q<=34: all nine rows have one common missing triple;
@@ -112,11 +112,11 @@ The missing theorem must begin with the frozen maximal-pivot contract in Section
 
 For each active row y define
 
-- `S_y), `D_y), `d_y);
-- `B_y=e_M(T_y)+G_(T_y));
-- `a_y=q-d_y(13-d_y)-B_y);
-- `kappa_v=d_H(v)-12), `lambda_v=#{y:v in D_y});
-- `mu_y=C(d_y,2)-e_H(D_y)).
+- `S_y`, `D_y`, `d_y`;
+- `B_y=e_M(T_y)+G_(T_y)`;
+- `a_y=q-d_y(13-d_y)-B_y`;
+- `kappa_v=d_H(v)-12`, `lambda_v=#{y:v in D_y}`;
+- `mu_y=C(d_y,2)-e_H(D_y)`.
 
 The accepted constraints include
 
@@ -130,7 +130,7 @@ plus the all-pivot row-closure and exact decoration-transport identities.
 
 **Required conclusion:** prove that every such legal survivor satisfies at least one of:
 
-1. a legal core contains three pairwise nonadjacent degree-12 vertices, so `q<=E-305);
+1. a legal core contains three pairwise nonadjacent degree-12 vertices, so `q<=E-305`);
 2. an active subsystem has one common S, `s<d), and the exact boundary one-loss/low-cross contract, or descends to it through a rigorously bounded finite higher-slack equality layer;
 3. a finite incidence kernel is obtained with every constraint derived from the original graph contract, and that kernel is independently eliminated.
 
