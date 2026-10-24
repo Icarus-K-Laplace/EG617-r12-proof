@@ -46,6 +46,18 @@ Hence there are exactly three distinct sets \(S_1,S_2,S_3\). If their union had 
 
 For a partition \(R=S_1\dot\cup S_2\dot\cup S_3\) by three R-only 8-transversals, let \(G_i\subset W\) be the W-vertices whose U-neighbourhood is \(S_i\). Each S_i is a clique in H: if u,v in S_i were nonadjacent, choose a in S_j nonadjacent to both (each vertex has at most one H-neighbour in S_j), then b in S_k nonadjacent to u,v,a, and append any t in T to obtain an independent five-set. Each G_i is also a clique: if w,w' in G_i were nonadjacent, choose nonadjacent a in S_j and b in S_k, then \(\{w,w',a,b,t\}\) is independent for any t in T. Therefore, if \(|G_i|=4\), \(S_i\cup G_i\) is a K12, contradicting \(\omega(H)\le11\).
 
+
+**Pair-counting extension.** Let \(S\subset R\) be an 8-point transversal of all seven partitions, and let \(Y\subset R\) be a \(q\)-point transversal of \(d\) of those partitions, where \(q\in\{8,9,10\}\). If \(s=|S\cap Y|<8\), then in each of the \(d\) partitions the \(8-s\) points of \(S\setminus Y\) pair with distinct points of \(Y\setminus S\). The same pair cannot recur in two partitions, by linearity. Hence
+\[
+d(8-s)\le(8-s)(q-s),
+\]
+so \(s\le q-d\). In particular:
+- a distinct 8-point transversal of six partitions meets S in at most two points;
+- a 9-point transversal of all seven partitions, unless it contains S, meets S in at most two points;
+- a 10-point transversal of all seven partitions, unless it contains S, meets S in at most three points.
+
+This is the pair-counting step used in the degree-nine cases below.
+
 ## 3. Assume \(S_0=11\)
 
 The cross-edge count is
