@@ -64,3 +64,9 @@ Do not parameterize more r=12 nodes. Instead derive analytic lower bounds for th
 
 ### Unique blocker
 Convert the valid induced multicolor inequality into a **lower** edge floor that incorporates `alpha<=a`, `omega<=r-1`, and inherited caps. Current transfer is directionally insufficient for seed closure.
+
+### Formatting/verification follow-up
+
+The display-math delimiters in both joint-audit notes were normalized and the exact outer-gap identity was independently checked over integer parameters in a finite verification sweep. Latest note commits:
+- seed note formatting: `0f64a7f9413717bacb661551000fa19e4d01d5e8`
+- outer-gap note formatting: `ffb399e6b09973b2eb2270ccbeb50192ccc4b14d`
