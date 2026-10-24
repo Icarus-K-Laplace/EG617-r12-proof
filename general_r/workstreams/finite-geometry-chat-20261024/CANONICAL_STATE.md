@@ -152,3 +152,10 @@ Audit correction for r=7: the design-level subkernel from K.RM5 is realizable. K
 J branch commit c0c31e82b2bd8b4c3c5a7ab6092b660d16bd686b proves J.W8/J.W9: for q=r-1>=4, the equality residual budget sum b_i=C(q,2) creates q+1 c-clique blocks of sizes q and q-1 (q times). Every root must be c-adjacent to an entire block, but block capacities are 1 for the size-q block and 2 for each size-(q-1) block, totaling 2q+1<|X|=2q+2. Hence equality is impossible and at least ceil((q+1)/2) residual directions are forced.
 
 At q=6 (r=7), this gives four directions, hence two orthogonal Latin squares of order 6, impossible. **The tight-transversal Case B is now CLOSED at r=7.** The Latin-square-only near-transversal partition remains realizable but cannot satisfy the full root-block constraints. Case A remains OPEN.
+
+
+## Round 5 — strict residual budget and r=7 Case B
+
+Imported and audited J.W8 from J branch commit c0c31e82b2bd8b4c3c5a7ab6092b660d16bd686b. The equality case sum b_i=C(q,2) forces G_c[R] to be the Turan-minimal disjoint union of one q-clique and q (q-1)-cliques. Each root must fully c-cover a block; capacities 1 for the large block and 2 for every small block contradict |X|=2q+2. Hence sum b_i<=C(q,2)-1 for q>=4.
+
+This improves the residual-net bound to at least ceil((q+1)/2) directions. At r=7, q=6, at least four orthogonal partitions would yield two MOLS(6), impossible by Euler–Tarry. Case B at r=7 is CLOSED (impossible). Case A and the full r=7 theorem remain OPEN.
