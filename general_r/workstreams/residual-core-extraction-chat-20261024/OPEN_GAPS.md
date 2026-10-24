@@ -102,11 +102,14 @@ The new simultaneous-concentration theorem is stronger:
 
 For each such color, the complement is `K_{r+1}`-free and has exactly `x_i` fewer edges than the Turán maximum.
 
-**Remaining gap:** prove a uniform-in-`r` edit-distance stability lemma for `K_{r+1}`-free graphs on `ar+1` vertices with Turán deficit `O(a^2)`. Standard stability statements with constants depending on fixed clique parameter cannot be applied while silently letting that parameter grow with r.
+**Uniform partition stability is now proved.** By Füredi's quantitative Turán theorem, every non-target complement with deficit (x_i) can be made (r)-partite by deleting at most (x_i) edges. If (I_i) is the internal-edge defect and (M_i) the missing cross-pair defect, then
+`I_i<=x_i`, `M_i<=2x_i`, and the edit distance to a complete multipartite graph on that partition is `<=3x_i`. The part sizes (s_j), with (q=a), satisfy `sum_j (s_j-a)^2<=4x_i+1`.
 
-If this is proved, then compare the resulting partitions. Pairwise intersections of exact color-clique blocks are at most one; for approximate partitions, all defect edges must be tracked explicitly.
+Applying the same theorem to the target complement (with (k=a), (q=r)) and summing over all colors yields a **global near-resolvable design**: at most `3S_a(r)` vertex pairs fail to belong to exactly one block across all color partitions. For fixed (a), this is (O(r)) bad pairs among (O(r^2)) total pairs.
 
-Status: concentration `PROVED_SYMBOLIC`; uniform partition stability and partition incompatibility `OPEN`.
+**Remaining gap:** turn this (O(r))-defect near-design and the predecessor-interface constraint into an (r)-vertex transversal of independent 6-sets, an earlier (R_5/R_4), or a contradiction. The exceptional-pair incidence pattern is not yet classified.
+
+Status: concentration `PROVED_SYMBOLIC`; uniform partition stability and global near-design `PROVED_ANALYTIC`; design trimming / partition incompatibility `OPEN`.
 
 ## Candidate route D — critical-core residue potential
 
@@ -184,10 +187,10 @@ The analytic residual-core theorem proves `delta(H)>=r` for `r>=17`. The boundar
 
 - `a=6` is **not closed**.
 - No induced `R_{a-1}` extraction theorem for arbitrary `a>=7` is proved.
-- The excess ledger yields simultaneous near-extremality in edge count, but not yet simultaneous structural stability.
-- No exact resolvable-design skeleton has been proved.
+- The excess ledger plus Füredi's theorem gives simultaneous uniform partition stability and a global near-resolvable design with at most `3S_a(r)` bad pairs.
+- An approximate resolvable-design skeleton with `O(a^2 r)` bad pairs is proved; an exact skeleton or design-trimming theorem is not.
 - `NO-HIGH-STOP` remains **`OPEN`** for every claimed threshold `r>=r0`; no such `r0` has been established.
 
 ## Next highest-leverage target
 
-Prove the uniform Turán edit-stability lemma in Candidate C for the first case `a=6`, then combine it with the predecessor interface and the four critical-core residue windows. Do not return to fixed-r recurrence, and do not promote a necessary residue condition to a contradiction.
+Analyze the `O(a^2 r)` exceptional-pair incidence pattern in the global near-resolvable design, combining it with the exact predecessor-interface lemma and the four `a=6` critical-core residue windows. Try to show the exceptional pairs have an `r`-vertex transversal (yielding an earlier `R_5`) or force a contradiction. Do not return to fixed-r recurrence, and do not promote a necessary residue condition to a contradiction.
