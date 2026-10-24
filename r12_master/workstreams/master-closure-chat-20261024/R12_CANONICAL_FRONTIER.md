@@ -42,6 +42,10 @@ with a 35-point core H. The three-anchor theorem is now stronger than CORE211: u
 | E334 | `SOURCE_REPORTED / CONDITIONAL` | `consolidation/V12_V8_SOURCE_REPORTED_AUDIT.md` reports E334 empty relative to retained backend/V7 forcing. The independent graph-theoretic K>=8 theorem is in `backend/GLOBAL_THREE_ANCHOR_K6_FULL_CLOSURE.md`. | Independently replay/certify the V7/V8 forcing/extraction package that puts every E334 survivor into the three-anchor contract. Do not promote the source report itself to unconditional PROVED. |
 | E335--E340 | `OPEN` | `backend/GLOBAL_FORCING_TO_MASTER_V3_SYNTHESIS.md`, `GLOBAL_FORCING_TO_MASTER_ALLOWANCE_COVERAGE.md`, and `GLOBAL_SUPPORT_COMPATIBILITY_MASTER_THEOREM.md` provide a strong conditional structural stack. | Exhaustive extraction from an arbitrary legal maximal-pivot shell to the master contract, plus the finite higher-slack residues described in the companion forcing document. |
 
+## 2A. New backend result from this workstream
+
+`r12_master/workstreams/master-closure-chat-20261024/R12_D3_MULTIS_EXTRACTION_BOUND.md` proves an allowance-localization theorem for every regular d3 owner family through q=38. For N=9, it forces a single common missing triple through q=34, at most two common-S classes at q=35, and gives class-size-dependent subcritical/first-high-slack bounds through q=38. This is a genuine extraction advance, but does not cover d2 multi-S systems, lower-owner d3 systems, or every fully-decorated/shallow-loss class.
+
 ## 3. Overall theorem and proof-body status
 
 The required final chain remains:
@@ -52,7 +56,7 @@ The inspected repository itself states `NOT_CERTIFIED` in `CANONICAL_STATE.md` a
 
 ## 4. Working priorities
 
-1. Prove or reduce the backend forcing-to-master bridge under an explicit maximal-pivot contract; avoid re-running E-layer trees.
+1. Extend the new d3 multi-S extraction bound to the remaining owner counts / decorated branches, and prove the missing d2 extraction or finite kernel under the maximal-pivot contract; avoid re-running E-layer trees.
 2. Keep E333 and E334 at their evidence-qualified statuses.
 3. Integrate E407's five common-K11 templates with the same 284-edge core, once their actual template data are independently available.
 4. Integrate E408 Q32/Q33 local constraints with the seven-block global color system; do not infer contradiction from necessary inequalities alone.
