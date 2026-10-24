@@ -96,3 +96,6 @@ Current theorem boundary unchanged: Case A is not closed, Case B is not contradi
 
 
 Threshold refinement: if the repeated witness color in the high-excess branch has b_i=q-1, K's exact Kang–Pikhurko interface gives a finite normal form (q-clique partition plus q-1 defects, or one exceptional point and a defect star after deletion). Exact source: K branch commit b20a3dde117facb37e78c2311160a149e578b27c, RESIDUAL_MULTINET_EXTRACTION.md, Theorem K.RM4. This remains a structured kernel, not a contradiction; b_i>=q remains unclassified.
+
+
+Special fixed-parameter consequence: K's Theorem K.RM5 (commit eb238d01b9aebf98a7614dba00e2696a2f3d05cf) gives an exact Case B profile at r=7: three zero-excess directions, three exceptional-star colors with b_i=5, and the omitted color's seven clique blocks of sizes 6,5,5,5,5,5,5. The size-6 block is a transversal of the 3-net and the six size-5 blocks are near-transversals. This is a finite incidence kernel, not yet a contradiction.
