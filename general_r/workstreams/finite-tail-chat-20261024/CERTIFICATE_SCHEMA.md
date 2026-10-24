@@ -51,8 +51,11 @@ canonical_variable_map
 constraint_ids_and_formulas
 instance_sha256
 certificate_sha256
+generator_sha256
 verifier_sha256
+generation_command
 replay_command
+gate_replay_command
 module_promotion_status
 eg617_promotion_status
 ```
