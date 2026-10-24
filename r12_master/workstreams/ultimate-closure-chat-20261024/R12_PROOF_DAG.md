@@ -40,3 +40,8 @@ The theorem R12_WITNESS_CAPACITY_CROSSCUT.md is a necessary-structure node:
 - E408 Q33 supplies at least five no-S K5 witnesses per exact-129 color and at least 7-beta hub-hit incidences across any selected five.
 
 This node feeds E407's five-template/core completion problem and E408's exact-129 witness-packing problem. It does not currently feed a contradiction node.
+
+
+## Added E407 row-profile reduction
+
+For the five V12 templates, the row-count constraints imply the hub-missing degree floors recorded in R12_WITNESS_CAPACITY_CROSSCUT.md. In A/C, any Q_b missing a hub must hit at least six B rows, so it can witness at most four B labels and its four vertices carry parent target-degree excess at least2. This leaves two precise branches: hub-complete witnesses, or a high-B-degree witness family with nontrivial overlaps. No contradiction node has been established.
