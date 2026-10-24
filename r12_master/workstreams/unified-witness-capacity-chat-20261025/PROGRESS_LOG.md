@@ -11,3 +11,11 @@
 - Added a scalar-relaxation gap audit. Explicit E407 and E408 integer profiles satisfy all current omission/cross-edge/core-capacity inequalities; these are not graph counterexamples.
 - Exact remaining blocker: graph-theoretic common witnesses are not automatically exact-129 color components. A separate label-transfer/component-realization lemma or sharper hub-capacity/incidence-design theorem is needed.
 - Status remains OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 — finite arithmetic replay
+
+- Independently replayed the exact endpoint-gap tables, all E407 omission-profile maxima for S=9..32, all E408 Q33 omission-profile maxima for S0=12..34, the two edge-ledger examples, and the 8-by-10 label-count matrix in local Python.
+- Result: R12_UNIFIED_WITNESS_CAPACITY_ARITHMETIC_OK. This validates only the integer/degree ledgers and finite profile search; it is not a graph search and does not certify realization of the witness hypergraph.
+- Corrected the shell-row note to restrict the per-row capacity-three statement to zero-excess witnesses, because the regular-row degree cap is only certified on H0.
+- Latest workstream head before this log update: cbd0cdf950cc8c8c74d06fee26122b5fe2dff44c.
