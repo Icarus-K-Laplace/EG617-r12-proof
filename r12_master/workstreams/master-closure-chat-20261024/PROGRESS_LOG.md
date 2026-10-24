@@ -52,6 +52,14 @@ Let H have 35 vertices, alpha(H)<=3, omega(H)<=11, delta(H)>=12. Any independent
 
 The only new case beyond the h<=4 theorem is anchor excess pattern (3,1,1) or (2,2,1). Under K<=6, the other 32 vertices contain at most one positive-excess vertex. The connector partition gives c+t=9. A clique-cap corrected independent-transversal lower bound z2*z3-1+z1 contradicts the degree-sum upper bound in all c=5..9 layers. The c=9 endpoint is split by z3=2,3,4,>=5. Thus the common-S independent-triple transport branch is closed through its full a<=8 ceiling.
 
+- 77289a6a57cff7f545e6eeffdd36995efc44b8a6 — **new global core theorem:** every legal 35-core with alpha<=3, omega<=11, and delta>=12 has e(H)>=214, without first extracting three anchors.
+- e9e5a484e4609683f80a3cf89a52305f319c7bff — **new layer closure:** E333 and E334 are empty relative to the registered q27 shell dependencies plus q28/q29 repivots; the V5/V8 package replays are unnecessary for these two layers.
+- 4ee34865ac325f82f89d67b4a7c1651bcb98e980, 3d21e5761b74062872cc32d71fdaf054273a6532, 612393146e8f63023c7c9bd5de44c7900a89b093, d7d0131f419a35d548c63923050ff46bea4587b3 — audited and propagated the universal core floor, E333/E334 closure, and updated status boundary.
+
+## New global legal-core floor and low-layer closure
+
+Under the full legal-core contract, K<=6 would imply at least29 degree-12 vertices. The clique cap gives a nonadjacent degree-12 pair; their at least nine common nonneighbours include a third degree-12 vertex, and the registered three-anchor theorem forces K>=8. Hence e(H)>=214 for every legal core and q<=E-305 for every pivot. This tightens E333/E334 to q<=28/q<=29; the q27 exclusion and q28/q29 profitable repivots then contradict those ceilings. E333/E334 are now PROVED_CONDITIONAL on the registered q27 shell dependencies and q28/q29 repivot theorems. The high-layer backend is reduced to q<=30..35 for E335..E340, but the universal forcing bridge remains open.
+
 ## Independent checks performed
 
 - Rechecked the exact 870-edge color decomposition and global sums: sum P=252, sum R=427, sum s=3; non-target edge total is 9570.
@@ -60,6 +68,7 @@ The only new case beyond the h<=4 theorem is anchor excess pattern (3,1,1) or (2
 - Rechecked the d3 disjoint-support theorem by evaluating the exact block-transversal inequality for all block counts 1..100 and c=0,1,2; capacities are 3,3,6.
 - Rechecked that the h=4 theorem's 55 connector-count profiles have no survivors after the clique-cap correction; minimum lower-minus-upper margin is6.
 - Rechecked all 145 h=5 connector profiles across both anchor-degree patterns; no survivors and minimum lower-minus-upper margin5.
+- Rechecked the universal core-floor count (29 degree-12 vertices, at least9 common nonneighbours, at least3 degree-12 common nonneighbours) and the E333/E334 charge ceilings.
 - Rechecked that E407 Cell-B exclusion does not imply full E407 closure.
 - Rechecked that E408 exact-129 blocker constraints and Q33 local conditions are necessary conditions only; no global incompatibility theorem has been proved.
 
