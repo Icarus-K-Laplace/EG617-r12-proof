@@ -28,10 +28,10 @@ The contextual \(R(4,49)\) branch has a short contradiction only under the exact
 
 ## New result in this sprint line
 
-R12_EXACT129_WITNESS_PACKING_STRENGTHENING.md proves, under a legal d3 shell-support split with \(M[B]=\varnothing\), that each exact-129 color has at least seven no-\(S\) \(K_5\) witness sets \(\{b\}\cup Q\), not merely five. Consequently:
-- E407 has at least 49 labelled witness 4-sets across its at least seven exact-129 colors;
-- E408 Q33/d3 has at least 56 across its at least eight exact-129 colors;
-- E407 templates A/C have at least two hub-complete witnesses per exact-129 color, hence at least 14 hub-complete witness occurrences.
+R12_EXACT129_WITNESS_PACKING_STRENGTHENING.md proves, under a legal d3 shell-support split with \(M[B]=\varnothing\), that each exact-129 color has at least six no-\(S\), B-labelled \(K_5\) witness sets \(\{b\}\cup Q\). The initial seven-per-color count omitted the possibility that one no-\(S\) component contains pivot p; this has been corrected in R12_EXACT129_WITNESS_PACKING_STRENGTHENING.md. Consequently:
+- E407 has at least 42 labelled witness 4-sets across its at least seven exact-129 colors;
+- E408 Q33/d3 has at least 48 across its at least eight exact-129 colors;
+- E407 templates A/C have at least one hub-complete witness per exact-129 color, hence at least seven hub-complete witness occurrences.
 
 These are necessary-structure results only. They do not certify a graph-level contradiction.
 
@@ -42,3 +42,15 @@ Only files under r12_master/workstreams/emergency-sprint-chat-20261024/ may be m
 ## Next attack
 
 Build an exact labelled witness-overlap/capacity theorem for the 284-edge core, starting with the E407 A/C forced hub-complete occurrences and then applying the same framework to E408 Q33/d3. In parallel, audit every use of the T61 reduction against the original \(K_{145}\) hypothesis; do not substitute the open abstract E333–E340 backend for that bridge.
+
+## Round 2 — global blocker occurrence budget and proof-audit correction
+
+R12_E408_BLOCKER_OCCURRENCE_BUDGET.md (commit dc0c62892b3885941694f92dc9d41edbc2979761) proves, for each exact-129 color C in the outer seven-block E408 equality system,
+\[
+M_C\ge15+P_C,
+\]
+where M_C counts size-five blocker occurrences across the seven outer K12 blocks and P_C is the color-C duplicate budget among block-block edges. Summed over the m=8,9,10 exact-129 colors, this gives \(\sum M_C\ge77m-427\), i.e. 189, 266, or 343 according to m. This is a valid necessary-condition refinement; it does not close E408.
+
+Audit correction: an attempted stronger E408 contradiction incorrectly promoted \(\omega(C[R])\le5\) on the 61-point T61 residual to a global \(\omega(C)\le5\), although outer block vertices are outside that residual. The resulting claim \(e_C(B_i,R)\ge72\) and the derived 885-edge contradiction were withdrawn. E408 Q32/Q33 remain OPEN.
+
+The witness-packing theorem was also corrected: a no-S isolated K5 component can contain pivot p, so at most six B-labelled no-S components per exact-129 color are guaranteed without an extra lemma excluding p from such a component. The E407 A/C capacity corollary consequently gives at least one, not two, hub-complete witnesses per exact-129 color. No terminal is closed.
