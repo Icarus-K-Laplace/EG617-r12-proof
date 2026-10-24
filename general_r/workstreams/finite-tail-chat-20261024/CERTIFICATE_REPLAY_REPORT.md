@@ -121,3 +121,45 @@ The r=4,...,100 sweep is a finite implementation audit, not a theorem for all r 
 - The promotion gate invokes the verifier as a subprocess, checks every assumption ID against the ledger, and fails closed for unknown IDs or unsupported r.
 - The gate may promote conditional local endpoint lemmas, but never EG617(r), because neither module exhausts all legal graph states or proves a contradiction.
 - Graph-level color/vertex symmetry, endpoint d0/d1/d2/d3 closure, high-endpoint kernel closure, LRAT/DRAT, and exact ILP proof checking remain unimplemented or gated by open analytic theorems.
+
+
+## Round 2 — parameter admission and family audit
+
+### Source/parameter admission
+
+The branch started at the requested HEAD `3d27693d9f9d5bf2586e0f0178228563d96de22b`. The committed matrix has raw SHA-256 `bcdcfa098cee564b136f6fa00405fb34d46a9fa60342b8d4a46f8f77cb8053f7`; the admission verifier file hash is `114f1fd8441ad4e1b91c7ee4cad82e9abf3c21d6c4453502c2e5413ce4d51b35`.
+
+A separate JS audit rebuilt the policy row for every r=4,...,100 and matched all 97 rows of the committed matrix. The independent admission-verifier logic was also exercised in a Python harness with queries for r=11, r=13 residual-core, r=13 near-anchor, r=68 near-anchor, and r=101 D1. It returned the expected blocked/conditional states; a tampered row was rejected. This harness was a separate logic replay, not a direct invocation of the committed CLI entry point.
+
+Parameter conclusions:
+- r=4,...,11: `BLOCKED_SOURCE_REDUCTION_NOT_APPLICABLE`;
+- r=12,...,16: RC-dependent scalar module is conditional; broad ANCHOR_K8 remains open;
+- r=17,...,67: the residual/core contract follows if a legal residual is extracted, but global extraction remains open;
+- r>=68: broad ANCHOR_K8 source applies, but RC/front extraction and terminal closure remain open;
+- the exact three-anchor K8 theorem is applicable for r>=12 only under its exact three-anchor hypothesis, and is not substituted for broad ANCHOR_K8.
+
+### Parameterized exact-arithmetic audit
+
+An independent Python arithmetic harness rechecked 5,073 endpoint-domain d rows for r=12,...,100 and 623 D1 class-count rows for the same parameter range. It confirmed:
+- baseline q-cap medium candidates are d=4 and r-3 for r=12,13,14;
+- no medium candidates remain for r>=15 under q<=3r+2;
+- under q<=3r-1, d=4 and its reflection are excluded for all r>=12;
+- for every tested r, six D1 classes require 6r incidences versus cap 6r-2 (gap exactly 2), so N<=5 under the cited conditional incidence lemmas.
+
+### Graph symmetry fixture
+
+The committed toy fixture exhausts all 8 colorings of K3 with two colors and has 3 orbit representatives under the role-preserving shell swap and color swap. A separate Python reconstruction verified all 8 explicit mappings and matched the committed digests:
+
+- pre-quotient state-set SHA-256: `1c10fd6173e748ff06f912ebae87d5bf4c6c2002a88ad54f8671a53a9fc0d18c`;
+- post-quotient orbit-set SHA-256: `344254a1cfc131a437ced79dff954c6e79ca02c7a8ca7ff97556d7c770b752cf`.
+
+The committed `GRAPH_SYMMETRY_VERIFIER.py` CLI and unified certificate wrapper have **not** yet been executed directly in a repository runtime. The interface and test vectors are committed; do not claim the direct CLI replay passed.
+
+### Promotion verdict
+
+- Admission matrix: **constructed; 97/97 explicit rows independently matched**.
+- Parametric certificate-family interface: **constructed; reuses existing generators/verifiers**.
+- Graph symmetry witness interface: **constructed; toy fixture independently cross-checked, direct CLI replay pending**.
+- New EG617(r) theorem: **NONE**.
+- `ASYMPTOTIC_R0`: **NOT AVAILABLE**.
+- RC/front extraction and remaining endpoint/design terminal closure: **OPEN**.
