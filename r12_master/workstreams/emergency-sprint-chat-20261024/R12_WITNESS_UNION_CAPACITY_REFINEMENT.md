@@ -127,15 +127,13 @@ This inequality couples witness overlap, uncovered complement edges, and core ex
 
 ### Boundary consequences
 
-**E407 A/B, seven exact colors, v=29.** Here N=49, r_x≤7 and Σr_x=196. Convexity gives Σr_x²≥1330. Hence the witness-hitting inequality gives
+**E407, seven exact colors, v=29.** The witness-hitting inequality in this note gives the weaker bound \(2R+E_U\ge4\). The newer transversal/excess theorem in R12_E407_TRANSVERSAL_EXCESS_BOUND.md strengthens this to
 ```
-Σ r_x d_R(x) + Σ r_x ε_x ≥ 28.
+R + E_U <= 16,
+2R + E_U >= 9,
+R >= 3.
 ```
-Since Σd_R(x)=2R, this implies 14R+7E_U≥28, or
-```
-2R + E_U ≥ 4,     R + E_U ≤ 16.
-```
-The second inequality is the core-capacity bound C₂₉=310 with e(L)=294+R.
+The first is the core-capacity bound C₂₉=310; the latter two use the exact transversal multiplicity and core-excess charge. The stronger theorem supersedes the weaker application here.
 
 **Conditional algebra only (not an E407 C/D/E application).** If some separately certified argument supplies N=56 pairwise-linear witnesses on v=32 vertices with at most seven occurrences per vertex, then r_x=7 for every x and the witness-hitting inequality gives
 ```
@@ -172,3 +170,8 @@ For each, combine the near-Turán structure of the complement of H[U] with per-c
 ## Cross-branch audit correction (2026-10-25)
 
 The latest ultimate-closure and witness-packing sibling heads were refreshed before using this note. Their audit correctly warns that `omega(M[S])<=2` does not imply that an S-edge's endpoints lie in the same non-target K5 component. The earlier beta-sensitive claim “β≥1 gives eight no-S components per color” is withdrawn here. The core-capacity and witness-hitting theorems remain valid; only the unsupported E407 C/D/E and E408 β>0 applications are removed. See `R12_CROSS_BRANCH_AUDIT_AND_S0_REPAIR.md`.
+
+
+## Stronger E407 boundary result imported after live sibling refresh
+
+The latest zero-excess branch proves a universal E407 Q32 v=29 / 49-witness inequality (\epsilon_U+2\delta\ge9), hence \(\delta\ge3\), without a four-partite assumption. An independent proof is now recorded in this branch as `R12_E407_TRANSVERSAL_EXCESS_BOUND.md` (commit fbdab0144bc404639f7b0535f3d26437053fa19f). This supersedes the weaker `2R+E_U\ge4` application above. The remaining E407 ledger is still open.
