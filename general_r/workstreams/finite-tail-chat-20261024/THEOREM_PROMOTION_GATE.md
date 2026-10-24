@@ -61,7 +61,7 @@ The gate uses the immutable module ID to select `verify_d1_shell_bound.py`; the 
 ## Current status
 
 - Module gate: `PASS_CONDITIONAL_MODULE` for r >= 12 after replay.
-- For r < 12: `SCHEMA_ONLY` because the general RC reduction is not certified there.
+- For r < 12: `BLOCKED_SOURCE_REDUCTION_NOT_APPLICABLE` for theorem-level module admission; raw generator output is schema-only.
 - EG617 theorem promotion: **BLOCKED**. RC/front extraction is open, and the modules only prove local necessary-domain / shell-class bounds; neither exhausts graph states or proves a contradiction.
 - No new EG617(r) theorem is claimed.
 
