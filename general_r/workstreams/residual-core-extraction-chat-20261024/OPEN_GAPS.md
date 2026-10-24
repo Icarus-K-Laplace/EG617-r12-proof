@@ -13,12 +13,19 @@ This is the only load-bearing gap remaining before the all-sufficiently-large-r 
 For `r>=17` (or some explicit `r0`) there is no first `K_r`-free canonical state `R_a` with `a>=6` satisfying
 
 - `|R_a|=ar+1`;
-- `alpha(R_a)<=a`;
+- **`alpha(R_a)=a`**;
 - `omega(R_a)<=r-1`;
 - every induced subgraph satisfies the least-color hereditary cap;
 - `e(R_a)<=B_a`, where
 
-  `B_a=r((a+1)r-a+1)/2`.
+  `B_a=r((a+1)r-a+1)/2`;
+- the exact all-colour excess ledger
+
+  `x_0+sum_{i=1}^{r-1}x_i=S_a(r)`
+
+  with
+
+  `S_a(r)=[a(a-1)r+2a-2r]/2`.
 
 Equivalently, canonical greedy extraction must continue until at least `a=5`.
 
@@ -27,62 +34,86 @@ Equivalently, canonical greedy extraction must continue until at least `a=5`.
 - arbitrary anchor defect `s` has already been removed by induced trimming;
 - if the process reaches `a=4`, Branch A is completely proved;
 - if it stops at `a=5`, an exact `5r+1` terminal is defined;
-- it cannot pass below `a=4` for `r>=17`.
+- it cannot pass below `a=4` for `r>=17`;
+- alpha is automatically saturated at every canonical state;
+- every high stop contains an induced `(r+1)`-critical core of order at least `3r-1`, whose order `lr+t` must satisfy the exact polynomial feasibility test `P_{l,t}(r)<=0` from `RECURRENCE_REPLACEMENT_POTENTIALS.md`.
 
 Thus there is no second hidden front-end gap.
 
 ## Candidate route A — weighted alpha-5 extraction
 
-For `a>5`, note the exact budget difference
+For `a>5`,
 
 `B_a-B_5=(a-5) C(r,2)`.
 
-Also, pure random induced trimming from `ar+1` vertices down to `5r+1` improves the edge budget strongly enough:
+Pure random induced trimming from `ar+1` vertices down to `5r+1` improves the edge budget strongly enough:
 
 `B_a * C(5r+1,2)/C(ar+1,2) < B_5`.
 
-After clearing denominators, the surplus is
+After clearing denominators, the margin is
 
 `r^2(a-5)(6ar^2-4ar+5r^2+6r+1)/2 >0`.
 
-So **edge count alone is not the obstruction**: there always exists a `5r+1` induced subset with edge count below the terminal budget.
+So **edge count alone is not the obstruction**. The only missing property is `alpha<=5`.
 
-The only missing property is `alpha<=5`.
+Equivalent deletion form:
 
-This suggests the clean reformulation:
+> find a deletion set of size `(a-5)r` which hits every independent 6-set while retaining the already-available edge margin.
 
-> find a `5r+1` induced subset that simultaneously has `alpha<=5` and respects the already-available edge budget.
+This is a weighted transversal problem for the independent-6 hypergraph.
 
-Equivalently, find a deletion set of size `(a-5)r` that
+Status: `OPEN`.
 
-1. hits every independent 6-set; and
-2. deletes enough incident edges to preserve `e<=B_5`.
+## Candidate route B — independent-6 transversal rigidity
 
-This is a weighted transversal problem for the hypergraph of independent 6-sets.
-
-Status: `OPEN`, but now a single precise combinatorial lemma.
-
-## Candidate route B — hereditary-cap pressure on independent-6 transversals
-
-If every `5r+1` induced subset has alpha at least 6, then every `(a-5)r`-vertex deletion misses some independent 6-set. In hypergraph language, the independent-6 hypergraph has transversal number at least
+If every `5r+1` induced subset has alpha at least 6, then the independent-6 hypergraph has transversal number at least
 
 `(a-5)r+1`.
 
-Try to combine this very large transversal number with the hereditary least-color cap. The cap is much stronger than ordinary Ramsey/Turan information and was exactly what closed the `delta(H)=r-1` boundary.
+Combine this large transversal number with:
+
+- exact alpha saturation;
+- the hereditary cap;
+- the critical-core lower order `>=3r-1`;
+- the all-colour slack ledger.
+
+The goal is an O(1)-condition design terminal, not a new case tree.
 
 Status: `OPEN`.
 
-## Candidate route C — analytic replacement of the recurrence
+## Candidate route C — multicolour near-Turan partitions
 
-The r=12 recurrence at the critical `a=6` state proves an edge lower bound exactly one above the canonical budget (`475>474`). Seek an all-r inequality of the form
+The exact ledger gives
 
-`e(R_6)>=B_6+1`
+`min_{i>=1} x_i <= floor(S_a(r)/(r-1))`.
 
-under the hereditary cap and `K_r`-free condition, then lift from `a>6` to `a=6` by a monotone deletion or transversal argument.
+For fixed a and large r this tends to
 
-Do not parameterize all recurrence rows.
+`a(a-1)/2-1`.
 
-Status: `OPEN`.
+Thus at least one non-target colour is only O(a^2) edges above its exact `p_r(ar+1)` minimum; in fact a positive fraction of the non-target colours have O(a^2) excess by Markov.
+
+The complement of such a colour is K_{r+1}-free and O(a^2) edges below the r-partite Turan maximum. The intended next step is an exact/stability partition theorem producing r near-blocks of size about a. Because different colour classes are edge-disjoint, many such near-partitions should behave like a partial resolvable design.
+
+Target implication:
+
+> either these near-partitions yield a `5r+1` induced alpha-5 subset, or they satisfy an exact resolvable-design contract that can be closed separately.
+
+Status: `OPEN`; this is currently the preferred route.
+
+## Candidate route D — critical-core residue potential
+
+Every high stop contains an `(r+1)`-critical induced core `Q` with
+
+`|Q|>=3r-1`.
+
+Writing `|Q|=lr+t`, `0<=t<r`, the hereditary cap and Kostochka--Yancey imply
+
+`P_{l,t}(r)<=0`.
+
+For fixed l and large r, this excludes middle residues and confines the core order to bounded-width windows around multiples of r. This is a genuine bounded-width reduction and may be coupled to Route C.
+
+Status: `PROVED_ANALYTIC` as a reduction; it does not by itself close GAP 1.
 
 ## GAP 2 — existence/closure of the 5r+1 terminal
 
@@ -90,7 +121,7 @@ Status: `OPEN`, but **not load-bearing for the extraction dichotomy** once GAP 1
 
 An irreducible terminal has the exact contract in `FIVE_R_TERMINAL.md`, including
 
-- `alpha=5`;
+- `alpha=5` automatically;
 - independent-5 hypergraph transversal number `>=r+1`;
 - `delta>=r`;
 - hereditary cap;
