@@ -106,7 +106,7 @@ This proves the new case h=4. Together with the minimum-anchor and h<=3 theorems
 
 ## Backend consequence
 
-For a d3 common-S family whose missing triple is independent in the target graph, the exact transport theorem gives h_y<=a-3 in every owner-repivot core. The present theorem therefore extends the E-305 three-anchor envelope from allowance a<=6 to **a<=7**. The only triangular allowance not covered by this argument is a=8, where the remaining no-anchor patterns have total excess four or five (the total-four case is now closed; total five remains open).
+For a d3 common-S family whose missing triple is independent in the target graph, the exact transport theorem gives h_y<=a-3 in every owner-repivot core. The present theorem therefore extends the E-305 three-anchor envelope from allowance a<=6 to **a<=7**. The companion R12_INDEPENDENT_TRIPLE_H5_EXTENSION.md now closes allowance a=8 as well; the full independent-triple branch through the q<=38 d3 ceiling is covered.
 
 ## Independent finite check
 
