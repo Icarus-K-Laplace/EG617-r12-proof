@@ -86,3 +86,11 @@ Status: alignment-free structure PROVED; Case A contradiction, Case B contradict
 - The K branch's Kang–Pikhurko theorem yields either q equal clique blocks plus q-1 cross-block edges, or a single exceptional point whose deletion leaves q clique blocks (sizes q except one q-1) plus a nonempty defect star.
 - The exceptional point has exact residual color-i degree 2q-2-a, with 1<=a<=q-1.
 - The classification applies only at equality b_i=q-1; b_i>=q remains open and no contradiction is claimed.
+
+
+## 2026-10-24 — Round 11: r=7 Case B exact profile
+
+- Imported K.RM5 by exact source commit, without copying its proof.
+- In the matching-number-two branch at r=7, the residual colors are forced into three zero-excess directions and three b_i=5 exceptional-star colors.
+- The omitted color graph on R is exactly seven cliques of sizes 6,5,5,5,5,5,5; the blocks form one transversal and six near-transversals of the 3-net.
+- This sharpens the r=7 Case B to a finite incidence kernel. It does not exclude the kernel, Case A, or prove not-P(r) => not-P(r-1).
