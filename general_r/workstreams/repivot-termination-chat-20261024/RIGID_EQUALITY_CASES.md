@@ -1,10 +1,14 @@
 # Rigid Equality Cases
 
-Canonical inventory after the current endpoint/potential reductions. Assumptions: A+B, `r>=12`.
+Canonical inventory after the current endpoint/potential reductions. Assumptions: A+B, `r>=12`, plus the standard global alpha/omega caps when explicitly invoked.
 
 ## E0. d=0 neutral pivot class — QUOTIENTED
 
-If `d=0`, then `S=D=empty`, `H_y=H`, `q_y=q`, and `tau_y=tau`. These moves are pure pivot relabellings and are contracted in the repivot graph.
+If `d=0`, then `S=D=empty`, the core, q and tau are unchanged. Neutral repivots also preserve
+
+`zeta=#{d0 regular shell owners}`.
+
+They are pure pivot relabellings and are contracted.
 
 **Status:** `PROVED_SYMBOLIC`.
 
@@ -12,98 +16,129 @@ If `d=0`, then `S=D=empty`, `H_y=H`, `q_y=q`, and `tau_y=tau`. These moves are p
 
 ## E1. d=1 one-vertex exchange — AT MOST FIVE SHELL CLASSES
 
-Write `S={s}`, `D={u}`. Then
+For `S={s}`, `D={u}`,
 
-`ell=q-q_y=kappa'_s-kappa_u`.
+`q-q_y=kappa'_s-kappa_u`.
 
-Thus q-improvement / flatness / loss is exactly comparison of the replaced core excess.
-
-Let `t_s=d_M(s)+g_s=e_F(s,H)`. Every d1 owner satisfies `t_s>=r`. Since `sum_A t_s<=6r-2`, all d1 missing partners lie in a set
-
-`C_1={s:t_s>=r}`
-
-with
-
-> `|C_1|<=5`.
-
-Hence all d1 owners split into at most five common-S shell classes. Remaining growth is owner/core-support multiplicity inside those classes.
+Every d1 missing partner has shell-to-core incidence `t_s>=r`, while `sum_A t_s<=6r-2`; hence all d1 shell supports lie in at most five vertices/classes.
 
 **Status:** shell reduction `PROVED_CONDITIONAL`; final q/tau-flat one-point core-exchange closure `OPEN`.
 
 ---
 
-## E2. d=2 low endpoint — FINITE SHELL CLASS FAMILY, CORE MULTIPLICITY OPEN
-
-For every d2 common-S system,
-
-> `W=K+2r-2+a+b`,
-
-where `b=e_M(S) in {0,1}`.
-
-The exact-one-loss common-hub subsystem has at most three distinct core support classes. If all three occur, the pattern charge barrier gives
-
-> `K+a+b>=r`.
+## E2. d=2 — FINITE SHELL FAMILY, UNIQUE SCALABLE PLATEAU
 
 ### E2-S. Six-point shell support universe
 
-Let `U_2` be the union of all shell missing sets of all d2 regular owners. Singleton transport gives, for `S={u,v}`,
+All d2 shell missing-set endpoints lie in one set `U_2` with
 
-`sigma_u=t_u-r+1-b>=0`,
-` sigma_v=t_v-r+1-b>=0`.
+`|U_2|<=6`.
 
-Hence every active endpoint satisfies `t>=r-1`. Since `sum_A t_s<=6r-2`,
+Hence there are at most fifteen d2 shell classes `S={u,v}`. Writing
 
-> `|U_2|<=6`.
+`h_u=t_u-(r-1)`,
 
-Therefore all d2 shell missing sets belong to at most
+each class has exact allowance
 
-> `C(6,2)=15`
+`a_{uv}=h_u+h_v-b_{uv}`.
 
-common-S classes. There is **no** r-growing shell-support graph.
+There is no r-growing shell-support graph.
 
-If `b=1`, both endpoints satisfy `t>=r`, so such pairs lie inside the at-most-five-point set `C_1`.
+### E2-P0. Fixed class with no decorated shell endpoint
 
-### E2-W. Weighted shell encoding
+Let `s=|S intersect X|=0`.
 
-For `u in U_2`, define
+Common-S transport forces `a=b`.
 
-`h_u=t_u-(r-1)>=0`.
+- `b=0`: every owner is q-flat and there are at most three owners total.
+- `b=1`: at most one q-flat owner; all strict rows have zero-w target-edge supports, with at most three distinct strict support classes.
 
-For the class `S={u,v}`,
+So this regime is fixed-width.
 
-> `a_{uv}=h_u+h_v-b_{uv}`.
+### E2-P1. Fixed class with one decorated shell endpoint
 
-Thus shell allowance data is encoded by one graph `M[U_2]` on at most six vertices plus at most six integer weights.
+If `s=1`, every q-flat support is unique. The q-flat support graph is a disjoint union of at most three components, each an isolated edge or a star with at most two edges.
 
-If `m=|U_2|`,
+Therefore
 
-`sum h_u <= (6-m)r+m-2`.
+> `# q-flat owners <=6`.
 
-In the maximal case `m=6`,
+So this regime is also fixed-width.
 
-`sum h_u<=4`
+### E2-P2. Fully decorated shell pair — UNIQUE SCALABLE EQUAL-q REGIME
 
-and the total d2 owner count is at most two. Hence the six-endpoint boundary is already fully bounded.
+Only
 
-### E2-C. Remaining core-support terminal
+> `S subset X`
 
-Inside each of the at most fifteen fixed shell classes, owners still carry core support sets `D_y`, q-loss/transported excess, support multiplicities, and possible deep-loss blocks.
+can carry an r-growing family of q-flat owners.
 
-At first-high-slack:
+For a fixed class, with
 
-- exact one-loss distinct support classes obey the common-hub / at-most-three-class theorem;
-- loss>=2 support classes are disjoint from every distinct support class;
-- repeated non-fully-decorated plateau supports are forbidden by tau-maximality.
+`w_x=kappa_x+e_F(x,S)`, `mu(D)=1-e_H(D)`,
 
-The scalable obstruction is therefore no longer shell geometry. It is **core-support multiplicity and transported loss inside finitely many fixed shell classes**, especially the linearly-high three-class regime `K+a+b>=r`.
+every owner has
 
-**Status:** shell finite-class reduction `PROVED_CONDITIONAL`; finite-class core multi-pivot elimination `OPEN`.
+`ell_y=q-q_y=a-[w(D_y)+mu(D_y)]`.
+
+This is the unique scalable d2 plateau block.
+
+### E2-R. Repeated q/tau-flat class — zeta controlled
+
+Define
+
+`zeta=#{d0 regular shell owners}`
+
+and potential
+
+`Phi_3=(q,tau,zeta)`.
+
+If an exact `(S,D)` class has multiplicity m and one row is q/tau-flat, repivoting it makes the other `m-1` owners d0. Hence
+
+`zeta(new)>=m-1`.
+
+At `Phi_3` maximality,
+
+> `m<=zeta+1`.
+
+If equality is zeta-flat, then the old d0 population together with the old pivot becomes a reverse `(D,S)` class of multiplicity at least m, while the other `m-1` old class owners become exactly the full new d0 population. Thus equality is a multiplicity-balanced correction exchange.
+
+For d2, q/tau-flat repetition forces both D and S to be fully decorated.
+
+### E2-N. Nonedge support branch — neutral-population excess bound
+
+If a q-flat core support D is a target nonedge, the common-nonneighbour clique argument gives
+
+> `kappa(D)>=zeta-1`.
+
+Therefore
+
+> `a>=zeta`.
+
+So if `a<zeta`, every q-flat support must be a target edge. At the sharp nonedge boundary `a=zeta`, one gets the rigid equalities
+
+- `kappa(D)=zeta-1`;
+- no common H target-neighbour of the two support vertices;
+- `e_F(S,D)=0`;
+- a saturated common-nonneighbour clique containing p and all d0 owners.
+
+### E2-C. Remaining fully-decorated core-support terminal
+
+The only scalable d2 work left is therefore:
+
+1. distinct-support q-flat systems with `S subset X`;
+2. `zeta`-balanced repeated-class correction cycles;
+3. positive-loss rows coupled to those plateau systems.
+
+The old first-high-slack assets remain available inside these blocks: one-loss common-hub / at-most-three-class structure, deep-loss disjointness, and the scalar barrier `K+a+b>=r` for a three-class one-loss system.
+
+**Status:** all reductions above `PROVED_CONDITIONAL` / `PROVED_SYMBOLIC`; final E2-C elimination `OPEN`.
 
 ---
 
 ## E3. d=3 endpoint — ELIMINATED
 
-The equality B-floor removes allowance five, giving `a+B<=4`; the declared low-charge Bridge-B assets absorb the remaining d3 sector.
+Equality B-floor gives `a+B<=4`; the declared low-charge Bridge-B machinery absorbs the remaining d3 sector.
 
 **Status:** `PROVED_CONDITIONAL`.
 
@@ -113,15 +148,17 @@ The equality B-floor removes allowance five, giving `a+B<=4`; the declared low-c
 
 There are at most three high owners total. With `s_y=r-d_y in {0,1,2}`, every high terminal has an at-most-nine-point shell kernel and at most eight core owner-incidence signature classes.
 
-**Status:** reduction `PROVED_CONDITIONAL`; elimination `OPEN`.
+**Status:** reduction `PROVED_CONDITIONAL`; final elimination `OPEN`.
 
 ---
 
-## EC. Closed non-improving cycles — SIMULTANEOUS EQUALITY ONLY
+## EC. Closed non-improving cycles
 
-Every closed `(q,tau)`-non-improving cycle is q-flat and tau-flat edge-by-edge; every repeated core support on it has a fully decorated shell partner.
+Every closed `(q,tau)`-non-improving cycle is q/tau-flat edgewise. Appending zeta gives a genuine third coordinate on repeated-class exchanges: any closed `Phi_3`-non-improving cycle containing such exchanges must be zeta-flat there, hence multiplicity-balanced.
 
-**Status:** `PROVED_SYMBOLIC`; simultaneous-equality cycle elimination `OPEN`.
+Thus the repeated-support part of a correction cycle is no longer arbitrary: it must alternate exact support/neutral-population exchanges with matched multiplicities.
+
+**Status:** reduction `PROVED_SYMBOLIC`; balanced-cycle elimination `OPEN`.
 
 ---
 
@@ -129,9 +166,9 @@ Every closed `(q,tau)`-non-improving cycle is q-flat and tau-flat edge-by-edge; 
 
 Only the following remain:
 
-1. **E1:** at most five d1 shell classes, with q/tau-flat one-point core exchanges;
-2. **E2-C:** at most fifteen d2 shell classes, each carrying a core-support / transported-loss system; three one-loss core-support classes require `K+a+b>=r`;
-3. **EH:** at most three high-endpoint owners in a bounded-complement kernel;
-4. **EC:** simultaneous equality cycles assembled from these pieces.
+1. **E1:** at most five d1 shell classes with q/tau-flat one-point core exchanges;
+2. **E2-C:** at most fifteen d2 shell classes, but only fully-decorated pairs can carry scalable q-flat multiplicity; their remaining subbranches are distinct-support systems and zeta-balanced repeated correction cycles;
+3. **EH:** at most three high-endpoint owners;
+4. **EC:** simultaneous equality cycles assembled from these finite endpoint blocks.
 
-No surviving family has an r-growing number of shell-support types. The only remaining r-growth is multiplicity/excess data inside finitely many classes.
+No surviving family has an r-growing number of shell-support types. The unique scalable equal-q mechanism is now the fully-decorated fixed-class d2 core-support system.
