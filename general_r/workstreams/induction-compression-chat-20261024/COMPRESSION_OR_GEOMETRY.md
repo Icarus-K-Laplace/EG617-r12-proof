@@ -1,6 +1,6 @@
 # Compression-or-Geometry: Current Theorem and Exact Gap
 
-Status: **Compression-or-hypergraph-structure is proved; quantitative witness overlap and a conditional low-slack interface are proved; full finite-geometry dichotomy remains OPEN.**
+Status: **Alignment-free residual witness dichotomy is proved; full graph-level contradiction and finite-geometry dichotomy remain OPEN.**
 
 ## 1. Exact alternatives
 
@@ -75,7 +75,22 @@ The abstract hypergraph example with two disjoint clusters of all r-subsets stil
 - Tight case + aligned low-slack color => witness-block concentration and weighted blocker: PROVED.
 - Small-slack aligned case (s=1 or s=2, r>=4) => at most two witness-hosting blocks: PROVED.
 - Universal K-line excess floor and local degree budget: PROVED.
-- Existence of aligned low-slack color: OPEN.
+- Existence of a full-counterexample neighborhood color with slack s_i(x)<=r-2: IMPOSSIBLE by K's Local Slack Gap Theorem; the earlier aligned bridge is conditional but vacuous under the full contract.
 - No-shell => many line-like blocks: NOT PROVED.
 - Kakeya contradiction: NOT AUTHORIZED.
-- P(r) => P(r-1): NOT ESTABLISHED.
+- Alignment-free residual budget/dichotomy and same-color symmetric-difference matchings: PROVED in ALIGNMENT_FREE_WITNESS_RIGIDITY.md.\n- Case A colored-packing budget and small-r label audit: PROVED but noncontradictory in COLORED_WITNESS_EDGE_BUDGET.md.\n- P(r) => P(r-1): NOT ESTABLISHED.
+
+
+## 7. Alignment-free residual witness theorem (new)
+
+In Case B, let R=V\\X and b_i=e(G_i[R])-m_{r-1} for i != c. The exact residual budget gives
+
+\[
+b_i\ge0,\qquad \sum_{i\ne c}b_i\le \binom{r-1}{2}.
+\]
+
+Consequently either a repeated witness color has b_i<=r-3, in which case the complement-Turan/Brouwer argument gives a q=r-1 clique partition of R and every residual witness of that color is a transversal; or one color appears on at least four private witnesses. The latter follows because if every repeated color had b_i>=r-2, at most floor((r-1)/2) colors could repeat, leaving insufficient slots to distribute 2r witness roots with every class of size at most three.
+
+For every same-color pair, the graph on the symmetric differences has a perfect matching by Konig's theorem and the independence-number cap. A duplicate-safe incidence inequality records how many witness pairs one physical edge can serve. These are graph-level constraints, but neither branch is yet contradictory.
+
+The separate Case A packing inequalities count disjoint edge classes correctly; their r=3,4,5 evaluations remain below the universal color-edge floor and therefore do not close the packing branch.
