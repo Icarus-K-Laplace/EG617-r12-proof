@@ -6,169 +6,188 @@ Scope: backend termination only. Front extraction and anchor-excess are upstream
 
 ## Conditional hypotheses
 
-- **A (residual-core contract).** Every legal backend view has a core `H` with `|H|=3r-1`, `alpha(H)<=3`, `omega(H)<=r-1`, `delta(H)>=r`; every legal regular repivot again has a valid core with minimum degree at least r.
-- **B (anchor excess).** Every legal core satisfies `K_r>=8`.
+- **A.** Legal cores have `|H|=3r-1`, `alpha(H)<=3`, `omega(H)<=r-1`, `delta(H)>=r`; legal repivots preserve the core contract.
+- **B.** `K_r>=8`.
 
-Hence `q<=3r-1`. For `r>=12`, no regular missing degree `4<=d<=r-3` is possible, so
+Hence `q<=3r-1`. For `r>=12`, regular missing degrees satisfy
 
 `d in {0,1,2,3,r-2,r-1,r}`.
 
-## Exact identities in force
+The standard backend global alpha/omega caps are invoked explicitly only where stated below.
+
+## Exact identities
 
 `e(F)=C(r+2,2)+q+e(H)`.
 
 `K_r=2(E-q-(2r^2+r+1))`.
 
-For a regular repivot `p -> y`,
-
 `q_y=d(r+1-d)+B_y+kappa(D_y)+m(D_y)+e_F(S_y,D_y)`.
 
 Transport:
 
-`kappa'_z=w_z-e_H(z,D_y)` for `z in H\D_y`,
+`kappa'_z=w_z-e_H(z,D_y)`,
 
-`kappa'_s=sigma_s-e_F(s,D_y)` for `s in S_y`.
-
-Potential:
-
-`Psi_2=(q,tau)`, `tau=|A intersect {v:d_F(v)>r+1}|`.
+`kappa'_s=sigma_s-e_F(s,D_y)`.
 
 ## Proved results
 
-### R1. Plateau transport / cycle identity — PROVED_SYMBOLIC
+### R1. q/K cycle identity — PROVED_SYMBOLIC
 
-`K_y-K_p=-2(q_y-q_p)`. Hence K is affine-redundant with q. Every closed q-non-improving cycle is q-flat; every closed `(q,tau)`-non-improving cycle is q-flat and tau-flat edgewise. Repeated non-fully-decorated supports cannot occur on such a plateau cycle.
+`K_y-K_p=-2(q_y-q_p)`.
+
+K is redundant with q. Closed q-non-improving cycles are q-flat; closed `(q,tau)`-non-improving cycles are q/tau-flat edgewise.
 
 ### R2. d0 neutral symmetry — PROVED_SYMBOLIC
 
-For d=0, `S=D=empty`; H, q and tau are unchanged. Contract these pivot relabellings.
+d0 repivots preserve the core, q and tau and are quotientable.
 
-### R3. Global shell-incidence budget — PROVED_CONDITIONAL
+### R3. Shell-incidence budget — PROVED_CONDITIONAL
 
-For `s in A`, define
+For shell `s`,
 
-`t_s=d_M(s)+g_s=e_F(s,H)`.
+`t_s=d_M(s)+g_s=e_F(s,H)`
 
-Then
+satisfies
 
-`sum_A t_s=2e(M)+G_A=2q-G_A<=6r-2`.
+`sum_A t_s=2e(M)+G_A<=6r-2`.
 
-For any regular owner with missing set S of size d,
+For a regular owner with missing set S of size d,
 
-`sigma_s=t_s-(r+1-d)-m_S(s)>=0`
-
-for every `s in S`, and
+`sigma_s=t_s-(r+1-d)-m_S(s)>=0`,
 
 `sum_{s in S}t_s=d(r+1-d)+a+b`.
 
-### R4. d1 finite shell-support reduction — PROVED_CONDITIONAL
+### R4. d1 finite shell universe — PROVED_CONDITIONAL
 
-Every d1 missing partner satisfies `t_s>=r`; hence all d1 shell supports lie in at most five vertices/classes. For `S={s}`, `D={u}`,
+Every d1 missing partner has `t_s>=r`, so there are at most five d1 shell classes. Exact loss:
 
 `q-q_y=kappa'_s-kappa_u`.
 
-Final q/tau-flat one-point exchange rigidity remains open.
-
 ### R5. d2 Six-Point Support-Universe Theorem — PROVED_CONDITIONAL
 
-For a d2 shell pair `S={u,v}` with `b=e_M(S)`, both endpoints satisfy
+Every endpoint of a d2 shell pair has `t>=r-1+b`. Hence the union `U_2` of all d2 shell support endpoints satisfies
 
-`t_u,t_v>=r-1+b`.
+`|U_2|<=6`,
 
-Thus the union `U_2` of all d2 shell support endpoints has
+so there are at most fifteen d2 shell classes.
 
-> `|U_2|<=6`,
-
-and there are at most
-
-> `C(6,2)=15`
-
-d2 shell classes, independent of r.
-
-Writing `h_u=t_u-(r-1)`, every class has exact allowance
+With `h_u=t_u-(r-1)`, class allowance is
 
 `a_{uv}=h_u+h_v-b_{uv}`.
 
-If `m=|U_2|`, then
-
-`sum h_u<=(6-m)r+m-2`.
-
-At `m=6`, `sum h_u<=4` and the total d2 owner count is at most two.
+If all six endpoints are active, `sum h<=4` and the total number of d2 owners is at most two.
 
 ### R6. Fixed-Class d2 Plateau Skeleton — PROVED_CONDITIONAL
 
-Fix one d2 shell class `S={u,v}` and all its owners Y. Put
+For a fixed d2 shell class S, define
 
-`w_x=kappa_x+e_F(x,S)`, `mu(D)=1-e_H(D)`, and `lambda_x=#{y:x in D_y}`.
+`w_x=kappa_x+e_F(x,S)`, `mu(D)=1-e_H(D)`, `lambda_x=#{owners with x in D}`.
 
-Every owner has exact loss
+Every owner has
 
-> `ell_y=q-q_y=a-[w(D_y)+mu(D_y)]>=0`.
+`ell=q-q_y=a-[w(D)+mu(D)]>=0`.
 
-Support incidence forces
+Incidence forces
 
-> `lambda_x>=2 or w_x>=1 => x in X`.
+`lambda_x>=2 or w_x>=1 => x in X`.
 
 Let `s=|S intersect X|`.
 
-- **s=0:** common-S transport forces `a=b`. If `b=0`, every owner is q-flat and `|Y|<=3`. If `b=1`, there is at most one q-flat owner; strict support types are at most three.
-- **s=1:** q-flat supports cannot repeat. Their graph is a disjoint union of at most three components, each an isolated edge or a star with at most two edges. Hence there are at most six q-flat owners.
-- **s=2:** this is the only class in which q-flat owner multiplicity can scale with r.
+- `s=0`: if b=0, the entire class has at most three owners; if b=1, at most one q-flat owner and at most three distinct strict support types.
+- `s=1`: q-flat supports are unique and form at most three tiny star/edge components; at most six q-flat owners.
+- `s=2`: the only regime where q-flat owner multiplicity can scale.
 
-Therefore the unique scalable equal-q d2 regime is
+Thus the unique scalable equal-q d2 mechanism is a fixed fully decorated shell pair `S subset X`.
 
-> **a fixed shell pair `S subset X` whose two shell endpoints are both globally decorated.**
+### R7. Genuine third coordinate zeta — PROVED_SYMBOLIC
 
-The exact class defect sum is
+Define
 
-`sum_y ell_y = Na - sum_x lambda_x w_x - sum_y mu(D_y)`.
+`zeta(p)=#{regular shell owners with d=0}`
 
-For `s<=1`, if `F0` is the q-flat owner count, `F0<=6`, so
+and
 
-`sum_x lambda_x w_x + sum_y mu(D_y) <= N(a-1)+F0`.
+> **`Phi_3=(q,tau,zeta)`.**
 
-### R7. Exact d2 common-S charge identity — PROVED_SYMBOLIC
+Zeta is bounded and invariant under neutral d0 repivots.
 
-For every d2 common-S system,
+If an exact repeated `(S,D)` owner class has multiplicity m, repivoting one owner makes the other `m-1` owners d0, while all old d0 owners plus p become a reverse `(D,S)` class. Hence
 
-> `W=K+2r-2+a+b`.
+`zeta(new)>=m-1`.
 
-If a one-loss common-hub subsystem has three distinct core support classes, the existing pattern barrier gives
+On a q/tau-flat move, `m>=zeta+2` strictly improves `Phi_3`. Therefore at a `Phi_3`-maximal pivot
 
-> `K+a+b>=r`.
+> `m<=zeta+1`
 
-### R8. d3 closure — PROVED_CONDITIONAL
+for every q/tau-flat repeated exact class.
 
-The equality B-floor removes allowance five. Every d3 local/common-S representation has `q<=3r-2`, hence `a+B<=4`. With the declared upstream low-charge absorption, no d3 terminal remains.
+If equality is zeta-flat, the exchange is multiplicity-balanced.
 
-### R9. High Endpoint Three-Owner Theorem — PROVED_CONDITIONAL
+### R8. Balanced correction-cycle capacity — PROVED_CONDITIONAL
 
-Let `Y_hi` be all regular shell vertices with `d_y>=r-2`. Then
+For a `Phi_3`-flat repeated d2 class, `m=zeta+1`. The class owners, all zeta d0 owners and p form a target clique of size `2m`, hence
 
-> `|Y_hi|<=3`
+`m<=floor((r-1)/2)`.
 
-for every `r>=12`.
+If k distinct repeated exact classes simultaneously admit `Phi_3`-flat moves, then
 
-Four high owners force at least `4r-13` distinct shell missing edges. This contradicts `q<=3r-1` for `r>=13`; at r=12 equality forces hereditary equality and a 10-vertex regular target clique, contradicting the multicolor equality clique obstruction.
+> **`(k+1)(zeta+1)<=r-1`.**
 
-### R10. High Endpoint Bounded-Complement Reduction — PROVED_CONDITIONAL
+Thus balanced repeated correction cycles have an exact neutral-population/clique-capacity tradeoff.
 
-For high owners put `s_y=r-d_y in {0,1,2}`. There are at most three owners, their shell interaction kernel has at most nine vertices, and core owner-incidence has at most eight signatures. The high endpoint is an r-independent finite skeleton.
+### R9. Missing-pair / neutral-population bound — PROVED_SYMBOLIC
 
-### R11. Low-Endpoint Owner Clique Lemma — PROVED_SYMBOLIC
+For a target-nonedge core pair D, the standard common-nonneighbour argument plus p and the zeta d0 owners gives
 
-Any two regular owners with `d<=3` are target-adjacent for `r>=12`; otherwise zero-gap would require `S_x union S_y=A`, but the union has size at most six. Hence all regular low-endpoint owners together with p form a target clique, so there are at most `r-2` low owners.
+> **`kappa(D)>=zeta-1`.**
+
+For a q-flat d2 owner with nonedge support D,
+
+> **`a>=zeta`.**
+
+Hence if `a<zeta`, every q-flat d2 support must be a target edge. At equality `a=zeta`, a nonedge support collapses to a saturated common-nonneighbour template with `kappa(D)=zeta-1`, no common H target-neighbour and `e_F(S,D)=0`.
+
+This uses the standard global `alpha(F)<=3`, `omega(F)<=r-1` backend caps.
+
+### R10. Exact d2 common-S charge identity — PROVED_SYMBOLIC
+
+`W=K+2r-2+a+b`.
+
+A three-class one-loss common-hub subsystem requires `K+a+b>=r`.
+
+### R11. d3 closure — PROVED_CONDITIONAL
+
+The equality B-floor forces `q<=3r-2`, `a+B<=4`; the declared low-charge Bridge-B assets eliminate the remaining d3 sector.
+
+### R12. High Endpoint Three-Owner Theorem — PROVED_CONDITIONAL
+
+All regular owners with `d>=r-2` number at most three. Their bounded-complement encoding uses at most nine shell interaction vertices and eight core incidence signatures.
+
+### R13. Low-owner clique lemma — PROVED_SYMBOLIC
+
+Any two regular owners with `d<=3` are target-adjacent for `r>=12`, so together with p they form a target clique; there are at most `r-2` low owners.
+
+## Potential status
+
+Current preferred potential:
+
+> **`Phi=(q,tau,zeta,...)`.**
+
+The first three coordinates are genuine bounded integer coordinates; zeta has a proved strict improvement criterion on repeated q/tau plateaux.
+
+`Q2=sum kappa^2` remains an exact bounded fourth-coordinate candidate, but universal monotonicity is not proved.
 
 ## Current theorem level
 
 - d0: quotient-neutral.
-- d1: <=5 shell classes; core exchange closure open.
+- d1: <=5 shell classes; final core-exchange rigidity open.
 - d2 shell geometry: <=6 support vertices / <=15 classes.
-- d2 q-flat geometry: every non-fully-decorated fixed class has an absolute q-flat bound; only a fully decorated shell pair can carry scalable q-flat multiplicity.
+- d2 plateau geometry: every non-fully-decorated class is O(1)-bounded in q-flat rows; only `S subset X` can scale.
+- repeated fully-decorated d2 classes: controlled by zeta; flat equality is a balanced reverse exchange satisfying the product clique bound.
+- nonedge q-flat supports: require `a>=zeta` and have a rigid equality boundary.
 - d3: eliminated.
 - high endpoint: <=3 owners, finite bounded-complement skeleton.
-- global potential: `(q,tau)` exact; K redundant; `Q2=sum kappa^2` is an exact bounded third-coordinate candidate but monotonicity is unproved.
 
 ## Unique next blocker
 
-**Fully-decorated fixed-class d2 plateau compatibility.** Fix one d2 shell pair `S={u,v} subset X`. Prove that a scalable family of q-flat owners with core 2-supports `D_y` either yields a strict bounded-potential refinement or collapses to a finite impossible repeated-support / incidence skeleton. This is now the only scalable equal-q d2 mechanism.
+**Fully-decorated fixed-class d2 plateau compatibility.** For one shell pair `S subset X`, eliminate or rigidify (i) distinct-support q-flat systems and (ii) zeta-balanced repeated correction cycles. This is the only scalable equal-q endpoint mechanism left.
