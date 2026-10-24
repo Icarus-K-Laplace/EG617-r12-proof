@@ -10,110 +10,69 @@ Only
 
 `general_r/workstreams/repivot-termination-chat-20261024/`
 
-was modified.
-
-Upstream front extraction and anchor-excess proof were not reopened.
+was modified. Upstream front extraction and anchor-excess proof were not reopened.
 
 ---
 
 ## Results 1–10 — endpoint compression package
 
-Previously certified this round:
+Certified this round:
 
-1. `Delta K=-2 Delta q`; closed non-improving cycles are q/tau-flat (`PROVED_SYMBOLIC`).
-2. d3 frontier eliminated under A+B plus declared low-charge assets (`PROVED_CONDITIONAL`).
-3. all high owners `d>=r-2` number at most three (`PROVED_CONDITIONAL`).
-4. high endpoint has <=9 shell-kernel vertices / <=8 core signatures (`PROVED_CONDITIONAL`, Level 3).
-5. exact d2 charge `W=K+2r-2+a+b`; three one-loss support classes imply `K+a+b>=r`.
+1. `Delta K=-2 Delta q`; closed non-improving cycles are q/tau-flat.
+2. d3 eliminated under A+B plus declared low-charge assets.
+3. high owners `d>=r-2` number at most three.
+4. high endpoint <=9 shell-kernel vertices / <=8 core signatures.
+5. d2 `W=K+2r-2+a+b`; three one-loss support classes imply `K+a+b>=r`.
 6. d0 neutral symmetry.
 7. d1 exact one-point exchange.
-8. exact shell-incidence identity `t_s=d_M(s)+g_s=e_F(s,H)` and total budget `sum t_s<=6r-2`.
+8. shell-incidence identity `t_s=d_M(s)+g_s=e_F(s,H)`, `sum t_s<=6r-2`.
 9. d1 <=5 shell classes; d2 support universe <=6 shell vertices / <=15 pair classes.
 10. all low regular owners form a target clique; total low-owner count <=r-2.
 
-Key earlier commits:
+Earlier key commits:
 
-- potential baseline: `6cdf26de92f9b3c656f4f89799ecb3490f7836af`
-- high three-owner theorem: `c93345b91d1f4c5bb90ffe328c2aef811e24dc86`
-- six-point shell theorem: `009a618b431adbc162b22792d05d8b59770b873a`
-- initial fixed-width termination theorem: `a62a6f132095b3d389710964297415bfdf6adf6f`
+- `6cdf26de92f9b3c656f4f89799ecb3490f7836af` potential baseline
+- `c93345b91d1f4c5bb90ffe328c2aef811e24dc86` high three-owner theorem
+- `009a618b431adbc162b22792d05d8b59770b873a` six-point shell theorem
+- `a62a6f132095b3d389710964297415bfdf6adf6f` initial fixed-width termination theorem
 
 ---
 
-## Result 11 — Fixed-Class d2 Plateau Skeleton Theorem
+## Result 11 — Fixed-Class d2 Plateau Skeleton
 
-Fix one d2 shell class `S={u,v}` and all its owners.
-
-With
-
-`w_x=kappa_x+e_F(x,S)`, `mu(D)=1-e_H(D)`,
-
-every owner has exact q-loss
+For one fixed d2 shell pair S:
 
 `ell=a-[w(D)+mu(D)]`.
 
-Support incidence forces
+If `s=|S intersect X|`:
 
-`lambda_x>=2 or w_x>=1 => x in X`.
+- s=0: b=0 gives <=3 owners total; b=1 gives <=1 q-flat owner and <=3 strict support types;
+- s=1: q-flat support graph has <=3 components, each an isolated edge or <=2-edge star; <=6 q-flat owners;
+- s=2: unique regime where q-flat multiplicity can scale.
 
-Let `s=|S intersect X|`.
-
-### s=0
-
-Common-S transport forces `a=b`.
-
-- b=0: every owner is q-flat and the entire class has at most three owners.
-- b=1: at most one q-flat owner; strict rows have zero-w target-edge supports and at most three distinct support classes.
-
-### s=1
-
-Q-flat supports cannot repeat. Their graph is a disjoint union of at most three components, each an isolated edge or a star with at most two edges.
-
-Hence
-
-> `# q-flat owners<=6`.
-
-### s=2
-
-This is the only class in which q-flat multiplicity can scale.
-
-Therefore:
-
-> **the unique scalable equal-q d2 regime is a fixed fully decorated shell pair `S subset X`.**
+Therefore only a fully decorated shell pair `S subset X` can support a scalable equal-q d2 system.
 
 Status: `PROVED_CONDITIONAL`.
 
-Main file commit:
+Commits:
 
-`4e84810280a91bed3b1feb4487bc348bf1625400`.
-
-Endpoint-classification promotion:
-
-`1ebed3f47a300c59ebfaff39991048bbb7ade1b0`.
-
-Canonical promotion:
-
-`267eeb5a3bf7e759e8bf1cae3d672d6051dc034a`.
+- `4e84810280a91bed3b1feb4487bc348bf1625400` theorem
+- `1ebed3f47a300c59ebfaff39991048bbb7ade1b0` endpoint classification
+- `267eeb5a3bf7e759e8bf1cae3d672d6051dc034a` canonical promotion
 
 ---
 
 ## Result 12 — Repeated-Class Exchange Duality
 
-For an exact `(S,D)` class of multiplicity m, repivot through one owner y.
+An exact `(S,D)` class of multiplicity m transforms under one owner repivot as follows:
 
-Then:
-
-- the other `m-1` owners become d0 exactly;
-- every old d0 owner becomes a reverse `(D,S)` owner;
-- the old pivot p also becomes a reverse `(D,S)` owner.
-
-This is an exact support/neutral-population exchange, not merely a charging inequality.
+- the other `m-1` owners become d0;
+- all old d0 owners become reverse `(D,S)` owners;
+- p itself becomes a reverse `(D,S)` owner.
 
 Status: `PROVED_SYMBOLIC`.
 
-Initial commit:
-
-`18fa7cd785313fbd82624041ba81cb78e7bf6b29`.
+Commit: `18fa7cd785313fbd82624041ba81cb78e7bf6b29`.
 
 ---
 
@@ -121,98 +80,123 @@ Initial commit:
 
 Define
 
-`zeta(p)=#{regular d0 owners in the current shell}`
+`zeta=#{regular d0 owners}`,
 
-and
+`Phi_3=(q,tau,zeta)`.
 
-> **`Phi_3=(q,tau,zeta)`.**
-
-Zeta is bounded and is invariant under d0 neutral repivots.
-
-For a q/tau-flat exact repeated class of multiplicity m,
+Zeta is bounded and d0-invariant. For a q/tau-flat repeated exact class of multiplicity m,
 
 `zeta(new)>=m-1`.
 
-Therefore
+Hence
 
-> **`m>=zeta+2` gives strict `Phi_3` improvement.**
+> `m>=zeta+2` gives strict `Phi_3` improvement.
 
-At a `Phi_3`-maximal pivot,
+At `Phi_3` maximality every q/tau-flat repeated class satisfies
 
-> **every q/tau-flat repeated class has `m<=zeta+1`.**
-
-If equality is zeta-flat, the exchange is multiplicity-balanced.
+`m<=zeta+1`.
 
 Status: `PROVED_SYMBOLIC`.
 
-Potential promotion commit:
-
-`ea26065301a37d7ab7daed8813c75c4aa843209c`.
+Potential commit: `ea26065301a37d7ab7daed8813c75c4aa843209c`.
 
 ---
 
-## Result 14 — Balanced correction-cycle clique capacity
+## Result 14 — Balanced repeated-class capacity
 
-For a `Phi_3`-flat repeated d2 class,
+A `Phi_3`-flat repeated d2 class has
 
 `m=zeta+1`.
 
-Its m owners, the zeta=m-1 d0 owners and p form a target clique of size 2m. Hence
+Its owners, the zeta d0 owners and p form a target `K_(2m)`, so
 
-> `m<=floor((r-1)/2)`.
+`m<=floor((r-1)/2)`.
 
-If k distinct exact repeated classes simultaneously admit `Phi_3`-flat exchanges, every one has multiplicity `zeta+1`, and the combined low-owner clique gives
+If k repeated exact classes simultaneously admit `Phi_3`-flat exchanges,
 
-> **`(k+1)(zeta+1)<=r-1`.**
+> `(k+1)(zeta+1)<=r-1`.
 
-Status: `PROVED_CONDITIONAL` on the standard backend clique cap.
+Status: `PROVED_CONDITIONAL`.
 
-Commit:
-
-`99317c0a29549a07061fbe9d9f4831576f535aa3`.
+Commit: `99317c0a29549a07061fbe9d9f4831576f535aa3`.
 
 ---
 
 ## Result 15 — Missing-Pair / Neutral-Population Bound
 
-Let D be a target-nonedge core pair. Its common H-nonneighbours form a clique and have size at least
+For a target-nonedge core pair D,
 
-`r-3-kappa(D)`.
-
-The pivot and all zeta d0 owners are also common nonneighbours of D. The clique cap yields
-
-> **`kappa(D)>=zeta-1`.**
+> `kappa(D)>=zeta-1`.
 
 For a q-flat d2 row with nonedge support,
 
-`a=w(D)+1>=kappa(D)+1`,
+> `a>=zeta`.
 
-so
+Thus `a<zeta` forces every q-flat d2 support to be a target edge. At `a=zeta`, the nonedge support is a saturated common-nonneighbour equality template.
 
-> **`a>=zeta`.**
+Status: `PROVED_SYMBOLIC` under standard global alpha/omega caps.
 
-Thus if `a<zeta`, every q-flat d2 support is forced to be a target edge.
-
-At the sharp boundary `a=zeta`, a nonedge support has the rigid equalities
-
-- `kappa(D)=zeta-1`;
-- no common H target-neighbour;
-- `e_F(S,D)=0`;
-- saturated common-nonneighbour clique.
-
-Status: `PROVED_SYMBOLIC` under the standard global alpha/omega backend caps.
-
-Commit:
-
-`123a99b121e0bd4e48bd4be59a54c84c61edf9cd`.
+Commit: `123a99b121e0bd4e48bd4be59a54c84c61edf9cd`.
 
 ---
 
-## Canonical promotions after Results 11–15
+## Result 16 — Balanced Two-Chamber Correction Theorem
+
+The zeta-balanced repeated correction-cycle branch collapses completely modulo d0 relabelling.
+
+Let a `Phi_3`-flat repeated exact d2 class have multiplicity
+
+`m=zeta+1`.
+
+Define
+
+`C_0={p} union Z_0(p)`,
+
+`C_1=Y_{S,D}`.
+
+Then
+
+- `|C_0|=|C_1|=m`;
+- `F[C_0 union C_1]=K_(2m)`;
+- all pivots in C0 represent the same core state H;
+- all pivots in C1 represent the same reverse state `H'=(H\D) union S`;
+- moves inside a chamber are d0-neutral;
+- moves between chambers are the same S/D core exchange.
+
+Therefore, modulo neutral pivot relabelling,
+
+> **the entire repeated correction orbit is the two-state involution `H <--> H'`.**
+
+No long repeated correction cycle remains.
+
+Additional exact invariants:
+
+- forward and reverse d2 allowance are equal: `a'=a`;
+- shell/core missing indicators exchange `b <-> mu`;
+- exchanged-pair excess obeys
+  `kappa_H(D)-kappa_(H')(S)=b-mu`.
+
+Status: `PROVED_CONDITIONAL`.
+
+Main theorem commit:
+
+`3776325f7b6591722e79fbadf62ef8cbf908d4eb`.
+
+Canonical promotion:
+
+`3a575c96b18925744c99fd0c9b9721e575736af3`.
+
+Termination theorem promotion:
+
+`776c7bc566620cb21e5319e5e00ca673f8fd6089`.
+
+---
+
+## Other current canonical commits
 
 - rigid equality inventory: `aad87161e85466baba2bb56b3c1556b06bac7047`
-- current canonical state: `f2536233c1538a390a2a1175c4a9d22953eb60f2`
-- current termination theorem: `7d620158674759e2da91c1accd2af569de31e0b6`
+- canonical state before Result 16: `f2536233c1538a390a2a1175c4a9d22953eb60f2`
+- canonical state including Result 16: `3a575c96b18925744c99fd0c9b9721e575736af3`
 
 ---
 
@@ -222,9 +206,9 @@ Commit:
 - d0: quotient-neutral;
 - d1: <=5 shell classes; final q/tau-flat core exchange remains;
 - d2 shell side: <=6 support vertices / <=15 classes;
-- d2 plateau: every class with <=1 decorated shell endpoint has an absolute q-flat bound;
-- **only fully decorated d2 shell pairs can carry scalable q-flat systems**;
-- repeated fully-decorated classes are controlled by zeta; flat equality is a balanced reverse exchange satisfying `(k+1)(zeta+1)<=r-1`;
+- all d2 classes with <=1 decorated shell endpoint have absolute q-flat bounds;
+- only fully decorated d2 shell pairs can carry scalable q-flat systems;
+- repeated fully-decorated branch: either zeta improves, or the branch is the single Balanced Two-Chamber symbolic family;
 - q-flat nonedge supports require `a>=zeta` and have a rigid equality boundary;
 - d3: eliminated;
 - high endpoint: <=3 owners, finite bounded-complement skeleton.
@@ -233,27 +217,30 @@ Commit:
 
 Current preferred potential:
 
-> **`Phi=(q,tau,zeta,...)`.**
+> `Phi=(q,tau,zeta,...)`.
 
-Unlike the earlier Q2 proposal, zeta has a proved strict-improvement theorem on repeated q/tau plateaux.
-
-`Q2=sum kappa^2` remains an exact bounded fourth-coordinate candidate; universal monotonicity is open.
+Zeta is a proved third coordinate on repeated q/tau plateaux. `Q2=sum kappa^2` remains an exact bounded fourth-coordinate candidate.
 
 # SCALING
 
-The number of shell-side endpoint types is absolute-constant in r.
+Shell-side endpoint type count is absolute-constant in r.
 
-The only remaining scalable equal-q structure is internal to one of at most fifteen d2 shell classes and requires a fully decorated shell pair. Its repeated component is quantitatively tied to zeta; its nonedge component is tied to allowance by `a>=zeta`.
+The repeated correction-cycle branch no longer has cycle-length complexity: it is a two-state symbolic family.
+
+The only remaining scalable **new combinatorial** structure is many distinct q-flat core 2-supports inside one fully decorated d2 shell class.
 
 # MAIN-THEOREM IMPACT
 
-The project has moved beyond shell endpoint compression: a nontrivial third potential coordinate is now certified, and the unique scalable d2 plateau has been split into two sharply constrained pieces:
+This round reached the user's desired fixed-width philosophy at the shell level and partially at the core-support level:
 
-1. distinct-support fully-decorated systems;
-2. zeta-balanced repeated correction cycles.
+- high endpoint: <=3 owners;
+- d1/d2 shell support types: absolute constants;
+- non-fully-decorated d2 plateau: absolute q-flat bounds;
+- repeated fully-decorated correction cycles: two-state family;
+- only distinct-support fully-decorated d2 plateau remains genuinely scalable.
 
 No all-large-r contradiction is certified yet.
 
 # NEXT SINGLE BLOCKER
 
-> **Fully-Decorated d2 Plateau Theorem:** for one fixed `S subset X`, eliminate or rigidify the remaining distinct-support q-flat system and the zeta-balanced repeated correction cycles, ideally by a fourth bounded coordinate or a cycle-sum / hereditary-cap equality theorem.
+> **Fully-Decorated Distinct-Support d2 Plateau Theorem:** for one fixed `S subset X`, prove that a `Phi_3`-maximal family of many distinct q-flat core 2-supports either improves a fourth bounded coordinate or collapses to a finite weighted support skeleton. After that, the remaining terminals are the finite distinct-support skeleton and the Balanced Two-Chamber block.
