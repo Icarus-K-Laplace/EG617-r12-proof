@@ -105,7 +105,7 @@ After anchor normalization, states have
 `alpha(R_a)<=a`,
 `e(R_a)<=B_a=r((a+1)r-a+1)/2`.
 
-If `R_a` contains a target-colour `K_r`, deleting it yields the next canonical state `R_{a-1}`.
+If `R_a` contains a target-color `K_r`, deleting it yields the next canonical state `R_{a-1}`.
 
 For `r>=17`, a canonical process cannot pass below `a=4`; reaching `R_4` forces it to be `K_r`-free and therefore gives the residual branch.
 
@@ -119,7 +119,7 @@ File: `RECURRENCE_REPLACEMENT_POTENTIALS.md`.
 
 For a canonical state on `ar+1` vertices, if `x_0` is the target-colour excess above `p_a` and `x_i` are the other colours' excesses above `p_r`, then
 
-> `x_0 + sum_{i=1}^{r-1} x_i = S_a(r)`
+> `x_0 + sum x_i = S_a(r)`
 
 with
 
@@ -145,13 +145,11 @@ Every canonical stop contains an induced `(r+1)`-critical graph `Q`. At a `K_r`-
 
 > `|Q|>=3r-1` for `r>=4`.
 
-Writing `|Q|=lr+t`, `0<=t<r`, compatibility with the hereditary cap and the Kostochka--Yancey critical-graph bound is exactly the single scalar inequality
+Writing `|Q|=lr+t`, `0<=t<r`, compatibility with the hereditary cap and the Kostochka--Yancey critical-graph bound is exactly one scalar inequality
 
 `P_{l,t}(r)<=0`
 
 recorded in `RECURRENCE_REPLACEMENT_POTENTIALS.md`.
-
-Thus candidate critical-core orders lie in bounded-width residue windows rather than a 1752-node arithmetic tree.
 
 ### 8. Exact 5r+1 terminal
 
@@ -170,11 +168,68 @@ If irreducible to Branch A, the independent-5 hypergraph has transversal number 
 
 File: `FIVE_R_TERMINAL.md`.
 
+### 9. High-stop excess concentration
+
+Status: **`PROVED_SYMBOLIC`**.
+
+For any first stop with `a>=6`, define
+
+`C_{a,r}=ceil(2 S_a(r)/(r-1))`.
+
+At least `floor(r/2)` non-target colors satisfy
+
+`x_i<=C_{a,r}<=a^2-1`.
+
+Equivalently, at least half of the non-target complements are `K_{r+1}`-free graphs within `a^2-1` edges of the exact Turán maximum.
+
+For `a=6`, `S_6=14r+6); for `r>=41), at least `floor(r/2)` non-target colors have `x_i<=29`.
+
+File: `NO_HIGH_STOP_ROUND2_LEMMAS.md`.
+
+**Important limitation:** this is simultaneous near-extremality in edge count, not yet a uniform edit-distance / partition stability theorem.
+
+### 10. Critical-core residue windows
+
+Status: **`PROVED_ANALYTIC`** as a necessary-condition reduction.
+
+For `q=lr+t`, `0<=t<r`, if `r>=R_l=l(l-1)^2(l-2)+2l+2` and `P_{l,t}(r)<=0), then
+
+`t<=l^2-3l+1` or `r-t<=l^2-l-1`.
+
+For fixed `a`, this confines the critical-core order to bounded-width windows around multiples of `r`. In the `a=6` case, `R_6=614), and the only necessary candidate windows are
+
+`[3r-1,3r+1] U [4r-5,4r+5] U [5r-11,5r+11] U [6r-19,6r+1]`
+
+for `r>=614`.
+
+These windows exclude every middle-residue regime, but do not by themselves eliminate the remaining regimes.
+
+File: `NO_HIGH_STOP_ROUND2_LEMMAS.md`.
+
+### 11. First-stop predecessor interface
+
+Status: **`PROVED_SYMBOLIC`**.
+
+If `B=K_r` is the target clique deleted from predecessor `R_{a+1}) to obtain the first stop `R_a`, then each `v in R_a` has either:
+
+- exactly one target-color edge to `B), and every non-target color occurs exactly once on `vB); or
+- no target-color edge to `B), and exactly one non-target color is duplicated on `vB).
+
+If `q_0` is the number of target cross-edges and `z_i` counts vertices whose duplicated non-target color is `i), then
+
+`sum z_i=ar+1-q_0`,
+`x_0(R_{a+1})=x_0(R_a)+q_0`,
+`x_i(R_{a+1})=x_i(R_a)+z_i`.
+
+Thus each color excess is monotone when moving backward one canonical step, with exact total increment `S_{a+1}-S_a=ar+1`.
+
+File: `NO_HIGH_STOP_ROUND2_LEMMAS.md`.
+
 ## CONDITIONAL
 
 ### Complete desired front-end dichotomy
 
-Status: `PROVED_CONDITIONAL` on one remaining structural lemma.
+Status: `PROVED_CONDITIONAL` on the NO-HIGH-STOP lemma.
 
 For `r>=17`, if the first `K_r`-free canonical greedy stop cannot occur at `a>=6`, then every hypothetical counterexample yields exactly:
 
@@ -189,21 +244,28 @@ No backend d2/d3/support theorem is used.
 
 > **NO-HIGH-STOP LEMMA.** For all sufficiently large `r`, a first `K_r`-free canonical state cannot occur at `a>=6`.
 
-This is now the only obstacle to the requested `4r+1 residual OR 5r+1 terminal` extraction theorem.
+This remains open. Specifically:
 
-The blocker is no longer an unstructured recurrence problem. Any counterexample must simultaneously satisfy:
+- `a=6) has **not** been closed;
+- no induction/trim theorem is known for arbitrary `a>=7);
+- simultaneous near-extremality in edge count is proved, but uniform edit-distance stability is not;
+- approximate orthogonality, an exact resolvable-design skeleton, and a design-trimming implication are not proved.
+
+The blocker is now a precise structural problem. Any high-stop candidate must simultaneously satisfy:
 
 1. exact alpha saturation `alpha=a`;
 2. the exact all-colour excess ledger `S_a(r)`;
-3. a `K_r`-free target colour;
+3. a `K_r`-free target color;
 4. a large `(r+1)`-critical core whose order passes `P_{l,t}(r)<=0`;
-5. the full hereditary cap on every induced subgraph.
+5. at least half the non-target colors are within `a^2-1` edges of their Turán extremum;
+6. the exact predecessor-interface near-permutation condition;
+7. the full hereditary cap on every induced subgraph.
 
 Secondary open questions:
 
-- lower the current `r>=17` threshold in the Level-A core theorem;
+- lower the current `r>=17` threshold in the core theorem;
 - decide whether the irreducible `5r+1` terminal exists;
-- turn the near-minimal non-target colours forced by `S_a(r)` into a resolvable-design classification.
+- turn near-minimal non-target colors into a uniform quantitative partition theorem and then a resolvable-design classification.
 
 ## DISPROVED
 
@@ -214,14 +276,13 @@ Rejected proof shortcuts:
 - substituting `r` into the r=12 47/48-vertex edge seeds;
 - claiming r=12 recurrence certification proves all-r extraction;
 - assuming `delta(H)>=r` without the analytic theorem;
-- treating numerical matching at r=12 as symbolic provenance.
+- treating numerical matching at r=12 as symbolic provenance;
+- treating near-Turán edge count alone as proof of an exact partition/design.
 
 ## NEXT HIGHEST-LEVERAGE TARGET
 
-Prove the **NO-HIGH-STOP LEMMA** by combining the all-colour slack potential with near-Turan stability of one or more non-target colours.
+Prove **uniform Turán edit stability** for the regime
 
-Preferred formulation:
+`n=ar+1`, `a` fixed (first `a=6`), `F` is `K_{r+1}`-free, and `t_r(n)-e(F)=O(a^2)),
 
-> show that a first `K_r`-free canonical stop with `a>=6` forces enough of the other `r-1` colours to be O(a^2)-close to their balanced `r`-block minimum that the induced block systems either (i) yield a `5r+1` alpha-5 subset, or (ii) satisfy an exact resolvable-design contract that can be independently excluded.
-
-Do not return to a parameterized replay of the r=12 recurrence.
+with an explicit edit bound independent of `r`. Combine it with the exact predecessor-interface lemma and the `a=6` residue windows. Do not return to fixed-r recurrence or claim NO-HIGH-STOP closed before a proof exists.
