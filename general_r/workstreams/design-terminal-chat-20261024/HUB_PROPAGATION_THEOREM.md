@@ -199,24 +199,14 @@ Consequently, among the three groups outside ({j,k}), at most one can have (|U_\
 Since (A\le27r+15), the exceptional threshold is (O(\sqrt r)). This is a genuine robust statement, but the condition that the two source nonedges have no target-colored cross edge between their endpoints is not yet guaranteed for a useful family of pairs. The missing next step is to either find many such compatible pairs or charge the endpoint-conflict edges to the global (O(r)) budget.
 
 
-## HP11. Terminal closure by bounded target-internal defect capacity
+## HP11. Withdrawn shortcut: target internal deletions are not (O(1))
 
-A new global argument bypasses the unresolved multi-block cover-network cost.
+The attempted shortcut “(|X|=O(1)) and (alpha(G_0)\le5) imply (D=O(1))” is **DISPROVED as a proof step**. It incorrectly treated five vertices in (B_j\setminus X), which form a clique, as an independent set.
 
-From the established hub theorem, for (r\ge6212), (|X|\le108), every target-internal missing edge touches (X), and each (B_j\setminus X) is a target clique. Since (alpha(G_0)\le5), each hub has at most four target-nonneighbors in (B_j\setminus X). Thus, writing (x_j=|X\cap B_j|),
+A hub can have (Theta(r)) nonneighbors inside its ordinary target clique without violating the target independence cap. The clique cap (omega(G_0)\le r-1) limits its number of neighbors in that clique to at most (r-2), but this is not an (O(1)) bound on missing edges.
+
+The valid surviving lower bound is: some (B_h) has size at least (r+1), and every non-target color must own an edge inside a fixed ((r+1))-subset of (B_h). By unique color ownership,
 [
-D_j:=\left|\binom{B_j}{2}\setminus E(G_0)\right|
-\le4x_j+\binom{x_j}{2},
+D_h:=\left|\binom{B_h}{2}\setminus E(G_0)\right|\ge r-1.
 ]
-and globally
-[
-D\le4|X|+\binom{|X|}{2}\le6210.
-]
-
-At least one target ideal group (B_h) has size at least (r+1). Each of the (r-1) non-target colors must have an edge inside any fixed ((r+1))-subset of (B_h), since (alpha(G_i)\le r). Those (r-1) edges have distinct colors and are all target-internal deletions, so (D_h\ge r-1). This contradicts (D_h\le D\le6210) when (r\ge6212).
-
-Full proof and the monotonicity calculation giving (|X|\le108) are in `JOINT_DEFECT_PROPAGATION.md`.
-
-**Status: PROVED_ANALYTIC:** no legal contextual ((5r+1))-terminal exists for (r\ge6212), under the established target stability/hub-concentration inputs.
-
-**Scope caveat:** this does not prove the literal multi-block Hub Propagation Theorem; it bypasses that mechanism. The front-end implication forcing every hypothetical counterexample into the legal terminal remains OPEN, so this is not an unconditional proof of Erdős Problem 617.
+This is compatible with the current (O(r)) budget. The claimed (r\ge6212) terminal closure is withdrawn; full terminal nonextension and multi-block cover accounting remain **OPEN**. See `JOINT_DEFECT_PROPAGATION.md` for the correction audit.
