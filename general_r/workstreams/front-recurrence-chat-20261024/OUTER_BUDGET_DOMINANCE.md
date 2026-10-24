@@ -7,41 +7,41 @@ Status: **EXACT GAP FORMULA PROVED; uniform dominance OPEN; no $r_0$ certified.*
 
 For an outer state let
 `a=r-1-j`, `d\le r-1`, and `t=r-d\in\{1,\ldots,r\}`. Then
-[
+$$
 n=r^2-d-jr=ar+t.
-]
+$$
 The anchor/block budget is
-[
+$$
 U_r(d,j)=\frac{r(r^2+1)}2-\binom{d+1}{2}-j\binom r2.
-]
+$$
 Substituting $d=r-t$ and $j=r-1-a$ gives the exact form
-[
+$$
 \boxed{U_r(d,j)=\frac{(a+1)r(r-1)}2+rt-\binom t2.}
-]
+$$
 
 Write $b=t\bmod a$, with $0\le b<a$. The exact balanced Turán floor is
-[
+$$
 p_a(ar+t)=a\binom r2+rt+\frac{t(t-a)}{2a}+\frac{b(a-b)}{2a}.
-]
+$$
 Consequently,
-[
+$$
 \boxed{U_r(d,j)-p_a(n)=
 \binom r2-\frac{(a+1)t^2}{2a}+t-\frac{b(a-b)}{2a}.}
-]
+$$
 These identities hold for integer $r>3$, $a\ge2$, and $1\le t\le r$; the $a=0,1$ rows are handled by the recurrence's base/cutoff rules.
 
 ## 2. What the elementary envelope closes
 
 The elementary envelope $B_r(a,n)\ge p_a(n)$ beats the outer budget only where the displayed gap is negative. For fixed $a$ and large $r$, the sign changes at leading order near
-[
+$$
 t\approx r\sqrt{\frac{a}{a+1}}.
-]
+$$
 This is only a leading-order guide; exact decisions must use the boxed integer formula including $b$ and lower-order terms. It does not close the states with small $t$.
 
 At the anchor boundary $t=1$,
-[
+$$
 \boxed{U_r-p_a(ar+1)=\binom r2.}
-]
+$$
 Thus the recurrence must generate a genuinely stronger floor at this boundary if that state is to be excluded. The multicolor transfer lemma in `ASYMPTOTIC_SEED_ENVELOPE.md` has not supplied that lower floor.
 
 For the two intended terminal coordinates, $t=1$ and:
