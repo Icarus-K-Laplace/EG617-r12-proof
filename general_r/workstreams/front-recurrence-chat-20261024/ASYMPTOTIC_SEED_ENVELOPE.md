@@ -97,3 +97,18 @@ so the right-hand side is $(a^2/2+o(1))r^3$. At the basic Turán floor $e(J)=p_a
 **Not proved:** any of the five r=12 seed excesses as an all-r lower bound; the general $M_r(2),M_r(3)$ cutoffs; or a seed envelope strong enough to close all outer budgets.
 
 The safe universal envelope currently available from this route is only $B_r(a,n)\ge p_a(n)$, which is already part of H's recurrence and is quantitatively insufficient near $t=1$.
+
+## Round 2 — Proven threshold cutoffs (2026-10-24)
+
+The new proof in `LOW_ORDER_CUTOFF_THEOREMS.md` establishes
+[
+M_r(2)\le2r-1,\qquad M_r(3)\le3r
+\quad\text{for every }r\ge6.
+]
+The (a=2) cutoff uses the complement (H=\overline J): the inherited cap requires (e(H)\ge(r-1)p_r(n)), while (alpha(H)\le r-1) and triangle-freeness imply (e(H)\le n(r-1)/2). This excludes (n\ge2r+1). At (n=2r), equality forces an ((r-1))-regular triangle-free graph; Andrásfai–Erdős–Sós makes it bipartite for (r\ge6), contradicting (alpha(H)\le r-1).
+
+The (a=3) cutoff follows by minimum-degree pivot into the (a=2) core and the exact inequality
+[
+2(r-1)p_r(n)>n(2r-1),\quad n\ge3r+1,\ r\ge6.
+]
+These are **cutoff advances**, not improvements to the five edge-floor coordinates. The abstract-contract cases (r=4,5) are exceptions: explicit induced-cap-satisfying graphs at (n=2r) show the desired (M_r(2)\le2r-1) statement is false there. The all-large-r front closure remains OPEN.
