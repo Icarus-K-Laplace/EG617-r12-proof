@@ -67,17 +67,16 @@ Do not mark H3 as achieved until the remaining seed envelope and all-state integ
 
 ## Round 2 — Outer-state closure gained at t=1 (2026-10-24)
 
-The cutoff theorems in `LOW_ORDER_CUTOFF_THEOREMS.md` eliminate two additional t=1 states for every (r\ge6):
-- (a=2,n=2r+1): empty by (M_r(2)\le2r-1);
-- (a=3,n=3r+1): empty by (M_r(3)\le3r).
+The cutoff theorems in `LOW_ORDER_CUTOFF_THEOREMS.md` eliminate two t=1 states for every integer r >= 6:
 
-The (a=3) proof has a direct cap check: minimum degree (h\ge r+1) gives
-[
-e(J)\ge\frac{(3r+1)(r+1)}2,
-\qquad D_r(3r+1)=\frac{3r^2+3r+6}{2},
-]
-and the difference is ((r-5)/2>0) for (r\ge6).
+- (a,n) = (2,2r+1) is empty by M_r(2) <= 2r-1.
+- (a,n) = (3,3r+1) is empty by M_r(3) <= 3r.
 
-The (a=4,n=4r+1) coordinate remains the intended extraction residual, not an unconditional state to eliminate. It is empty only under the contextual no-extraction reductio. The (a=5,n=5r+1) design terminal remains deliberately retained.
+At the a=3 boundary, the minimum-degree pivot gives h >= r+1, so
+`e(J) >= (3r+1)(r+1)/2`, while
+`D_r(3r+1) = (3r^2+3r+6)/2`.
+The lower bound exceeds the cap by (r-5)/2, which is positive for r >= 6.
 
-Thus the exact gap formula is now paired with real elimination results, but all-state dominance is still OPEN: the remaining seed excesses and the other admissible outer states have not been uniformly closed. No (r_0) for EG617 is claimed.
+The (a,n) = (4,4r+1) coordinate remains the intended extraction residual, not an unconditional state to eliminate. It is empty only under the contextual no-extraction reductio. The (a,n) = (5,5r+1) design terminal remains deliberately retained.
+
+Thus the exact gap formula is now paired with real elimination results, but all-state dominance is still OPEN: the remaining seed excesses and other admissible outer states have not been uniformly closed. No r_0 for EG617 is claimed.
