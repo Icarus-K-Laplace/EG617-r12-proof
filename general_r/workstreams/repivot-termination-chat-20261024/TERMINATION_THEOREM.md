@@ -397,6 +397,43 @@ alongside (N-1)c<=3r-2 and N<=r-2. For fixed c>=2 this remains a linear bound, a
 
 **Status:** PROVED_CONDITIONAL; bounded-allowance d1 absorption OPEN.
 
+# Theorem S — Shell-Incidence Exceptional Budget
+
+For the clean a_2=2 family, kappa_x=1-e_F(x,S_2) on each of its 2m endpoints. Since e_F(S_2,H)=2r+b_2,
+
+K_U>=2m-2r-b_2.
+
+Combining with the exceptional off-part charge L=3lambda-4-r, where lambda=m-r+1 and h=r+1-2lambda, gives
+
+2m-2r-b_2+X L<=2r-2,
+
+hence
+
+X<=floor(2(r-1+h+b_2)/(r-3h-5)).
+
+At the lower AES threshold this is X<=r/6+O(1), which is stronger than the parameter-free X<=r/4+O(1) but still permits a linear exceptional set.
+
+**Status:** PROVED_CONDITIONAL.
+
+# Theorem T — Overlap-Corrected Joint d1/d2 Budget
+
+Let V_1 be a d1 support class of size N_1 and allowance c. Put J_2=|V_1 intersect U_2| and J_X=|V_1 intersect O_exc|. Then
+
+2m-2r-b_2+N_1(c-1)+X L
+-(c-1)J_2-min(c-1,L)J_X<=2r-2.
+
+Since N_1>=ceil(eta/5), the same inequality holds with N_1 replaced by ceil(eta/5). If 3<=c<=L-1, the d1 supports are disjoint from both the clean endpoints and the exceptional set, so
+
+2m-2r-b_2+ceil(eta/5)(c-1)+X L<=2r-2.
+
+The separate d2 matching inequality is
+
+ceil(N_2/(eta+1))(a_2-1)<=4r-4+a_2+b_2.
+
+These are two necessary projections of the same core budget, not additive budgets. The lower-density branch and the d1 overlap cases c=1, c=2, c>=L remain OPEN.
+
+**Status:** PROVED_CONDITIONAL; no terminal closure yet.
+
 # Explicit audit retractions
 
 The earlier `Missing-Pair / Neutral-Population Bound` is **not a theorem** under the actual backend. In particular the statements
