@@ -54,6 +54,8 @@ Key sources:
 - `backend/GLOBAL_FORCING_TO_MASTER_ALLOWANCE_COVERAGE.md`;
 - `backend/GLOBAL_FORCING_TO_MASTER_V3_SYNTHESIS.md`.
 
+The new `R12_D3_DISJOINT_SUPPORT_COMPATIBILITY.md` theorem adds a second extraction interface: for disjoint d3 supports, distinct missing triples force cross-density at most `q-36`; the transversal theorem bounds distinct missing-set types by 1 / 3 / 6 at q<=35 / q=36,37 / q=38. This theorem does not bound repeated common-S support blocks.
+
 The new workstream theorem `r12_master/workstreams/master-closure-chat-20261024/R12_D3_MULTIS_EXTRACTION_BOUND.md` adds the exact class-size allowance bound `a_S<=q-30-N+n` for d3 owner families through q=38. It is derived from the V3 zero-gap identity and exact exchange formula; it does not close lower-owner or fully-decorated branches.
 
 The master theorem's low-cross bounds and boundary one-loss equality are hypotheses. They cannot be inferred from signature count alone.
