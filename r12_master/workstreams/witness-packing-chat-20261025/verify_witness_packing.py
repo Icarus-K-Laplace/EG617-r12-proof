@@ -79,6 +79,15 @@ def main() -> None:
     assert 8 * 2 == 16
     print("Zero-excess B-labelled witnesses: E407 >=14; E408 Q33 >=16")
 
+    # Shell-incidence union lemma for E407 Q32 templates A/C.
+    # e(A,H)=32+e(M), so the excess shell-incidence budget is e(M)-15.
+    # For full rows (k_b=3), |union D_b| >= 15-beta-c_rest.
+    assert 32 + 22 - 47 == 7  # example A profile: e(M)=22
+    assert 15 - 0 - 4 == 11  # Template A, n1<=4
+    assert 15 - 1 - 4 == 10  # Template C, beta=1, n1<=4
+    assert 11 > 3 and 10 > 3
+    print("Full-row support union: Template A >=11; Template C >=10")
+
     # Audit the m=10 star lemma's second-Turan inference. If e(H[U]) <=143,
     # then its complement has >=292 edges, above the non-tripartite bound
     # 300 - floor(30/3) + 1 = 291. This forces tripartiteness, not completeness.
