@@ -369,7 +369,7 @@ A bounded fifth-coordinate candidate remains
 
 `Q2=sum_{v in H}kappa_v^2`.
 
-Universal Q2 monotonicity is open.
+Universal strict increase on every reversible Phi4-flat move is DISPROVED_AS_STATED; Q2 may still select a representative but cannot alone eliminate the terminal.
 
 ---
 
@@ -396,7 +396,7 @@ The preferred routes are:
 - hereditary-cap/stability contradiction;
 - clique-cap contradiction;
 - multicolor nonextension;
-- or a strict fifth-coordinate improvement, likely from transported excess (`Q2`) or a block-defect statistic.
+- or a different structural terminal elimination; universal strict Q2 increase is impossible by reversibility.
 
 A successful theorem here would close the first genuinely scalable allowance layer and push the backend materially toward Level 5.
 
