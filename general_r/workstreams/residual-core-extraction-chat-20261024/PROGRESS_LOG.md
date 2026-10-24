@@ -19,7 +19,7 @@ For `r>=17`, `H` has `3r-1` vertices, `alpha(H)<=3`, `omega(H)<=r-1`, and inheri
 1. A `2r` induced obstruction with alpha at most 2 is impossible by exact cap + triangle-free complement + AES.
 2. Hence `delta(H)>=r-1`.
 3. If `d(v)=r-1`, the complement on the `2r-1` nonneighbors is non-bipartite triangle-free with exactly `(r-1)^2` or `(r-1)^2+1` edges.
-4. A shortest odd-cycle argument forces a `C5`; the remaining `2r-6` vertices are exactly a near-complete bipartite graph with total defect at most one.
+4. A shortest-odd-cycle argument forces a `C5`; the remaining `2r-6` vertices are exactly a near-complete bipartite graph with total defect at most one.
 5. Full hereditary cap on `C5 + one bipartition side + b` forces every row defect from the neighbor set `B=N_H(v)` into the nonneighbor set to be at most 8.
 6. Any complement edge inside `B` needs two row defects summing to at least `r`; `omega(H)<=r-1` forces such a complement edge.
 7. Contradiction for `r>=17`.
@@ -208,11 +208,11 @@ Canonical state `R_a` on `ar+1` vertices inside the full balanced r-colouring.
 3. Every canonical state has exact `alpha(R_a)=a`.
 4. Every canonical state contains an induced `(r+1)`-critical core.
 5. At a `K_r`-free stop, its critical-core order is at least `3r-1` for `r>=4`.
-6. Writing the critical-core order as `lr+t`, compatibility with the hereditary cap and Kostochka--Yancey is exactly one quadratic inequality `P_{l,t}(r)<=0`.
+6. Writing the critical-core order as `lr+t`, `0<=t<r`, compatibility with the hereditary cap and Kostochka--Yancey is exactly one quadratic inequality `P_{l,t}(r)<=0`.
 
 ### Proof sketch
 
-The slack identity is exact edge partitioning across all r colours after subtracting their individual Turan minima. Alpha saturation follows because `p_{a-1}(ar+1)` already exceeds the canonical edge budget. Critical-core order is obtained by colliding Dirac/Kostochka--Yancey lower bounds with the hereditary least-colour upper cap.
+The slack identity is exact edge partitioning across all r colours after subtracting their individual Turan minima. Alpha saturation follows because `p_{a-1}(ar+1)` already exceeds the canonical edge budget. Critical-core order is obtained by colliding Dirac/Kostochka--Yancey lower bounds with the hereditary least-color upper cap.
 
 ### Dependency
 
@@ -233,16 +233,112 @@ A first `K_r`-free stop with `a>=6` satisfying simultaneously exact alpha satura
 
 ---
 
+## 2026-10-24 — Round 6: high-stop concentration + exact predecessor interface
+
+### NEW THEOREM / LEMMA A — Simultaneous excess concentration
+
+### Hypotheses
+
+First `K_r`-free canonical stop `R_a`, `a>=6`, `r>=a+1`, with exact ledger `sum_i x_i=S_a(r)`.
+
+### Exact conclusion
+
+At least `floor(r/2)` non-target colors satisfy
+
+`x_i<=C_{a,r}:=ceil(2S_a(r)/(r-1))<=a^2-1`.
+
+For each such color, its complement is `K_{r+1}`-free and exactly `x_i` edges below the Turán maximum. For `a=6,r>=41`, at least `floor(r/2)` colors have `x_i<=29`.
+
+### Proof sketch
+
+Markov counting: if more than half of the `r-1` non-target excesses exceeded `C_{a,r}`, their sum would exceed `S_a(r)`. The bound `C_{a,r}<=a^2-1` follows from `r>=a+1`.
+
+### Dependency / range
+
+Purely symbolic, uniform for all canonical `a<=r-1`; no external theorem.
+
+### Status
+
+`PROVED_SYMBOLIC`. This is edge-count near-extremality only; it does not yet give an edit-distance partition theorem.
+
+### NEW THEOREM / LEMMA B — Critical-core residue windows
+
+### Hypotheses
+
+Critical core order `q=lr+t`, `0<=t<r`, with `P_{l,t}(r)<=0` and `l>=2`.
+
+### Exact conclusion
+
+For `r>=R_l=l(l-1)^2(l-2)+2l+2`, feasibility forces
+
+`t<=l^2-3l+1` or `r-t<=l^2-l-1`.
+
+For `a=6,r>=614`, the only possible core-order windows are
+
+`[3r-1,3r+1]`, `[4r-5,4r+5]`, `[5r-11,5r+11]`, `[6r-19,6r+1]`.
+
+### Proof sketch
+
+Rewrite `P/r` as a concave quadratic in `t`, and also in `u=r-t`. At the first integer outside each proposed boundary window and at the midpoint, the corresponding quadratic is positive for `r>=R_l`; concavity excludes the entire middle interval.
+
+### Dependency / range
+
+Symbolic algebra plus the already-approved Kostochka--Yancey compatibility inequality. Uniform for each fixed `l` once `r>=R_l`; not uniform for unbounded `a` without further work.
+
+### Status
+
+`PROVED_ANALYTIC` as a necessary-condition reduction. It kills all middle residues, but does not eliminate the surviving windows or close `a=6`.
+
+### NEW THEOREM / LEMMA C — First-stop predecessor interface
+
+### Hypotheses
+
+`R_a` is the first `K_r`-free state, and `B=K_r` is the target clique removed from predecessor `R_{a+1}`.
+
+### Exact conclusion
+
+For each outside vertex `v`, the `r` edges `vB` either contain one target edge and every non-target color exactly once, or contain no target edge and exactly one duplicated non-target color. If `q_0` is the target cross-edge count and `z_i` counts duplicated color `i`, then
+
+`sum_i z_i=ar+1-q_0`,
+
+`x_0(R_{a+1})=x_0(R_a)+q_0`,
+
+`x_i(R_{a+1})=x_i(R_a)+z_i`.
+
+### Proof sketch
+
+Every `r+1`-vertex set `B union {v}` must contain every color; `B` already supplies the target color. Counting the remaining `r` cross-edges yields the two alternatives and the excess increment identities.
+
+### Dependency / range
+
+Exact balanced-coloring property only; all r.
+
+### Status
+
+`PROVED_SYMBOLIC`. The lemma is a new input for the clique-transversal route, but no induced `R_{a-1}` theorem follows yet.
+
+### Minimal remaining counterconfiguration
+
+A first high stop satisfying the excess ledger, simultaneous near-Turán edge counts, one of the surviving critical-core windows, and the predecessor near-permutation interface.
+
+### GitHub commit
+
+`365f6b4e98fc49cd5586eef97afde2d52c0e8e35`
+
+---
+
 ## Current single blocker
 
-Status: `OPEN`.
+Status: **`OPEN`**.
 
 **NO-HIGH-STOP LEMMA:** a canonical greedy process cannot first become `K_r`-free at `a>=6` for all sufficiently large `r`.
+
+Round 6 did not close this theorem. Specifically, `a=6` is still open; no high-a induction trim is proved; uniform Turán edit stability and a design-trimming implication are open.
 
 If this is closed, the requested front-end dichotomy is proved for all `r>=17` (or whatever final threshold the lemma requires).
 
 Latest state / proposal commits:
 
-- `CANONICAL_STATE.md`: `a5b61c918cd20dc99c139b457aa1aca7df6685a5`
-- `OPEN_GAPS.md`: `43bdac3389de02bb8b4d0c83fdacd279e7718364`
-- `UPSTREAM_PROPOSAL.md`: `43a5599f4eba7db1cdce03a6c8bbbe3ada10bc06`.
+- `CANONICAL_STATE.md`: `ea5f2a8d104239cf4d65a1b52d27960170db2bea`
+- `OPEN_GAPS.md`: pending Round 6 update
+- `NO_HIGH_STOP_ROUND2_LEMMAS.md`: `365f6b4e98fc49cd5586eef97afde2d52c0e8e35`.
