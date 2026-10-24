@@ -335,7 +335,7 @@ The final CLEAN_PAIR_GRAPH_MODEL.md blob includes the embedded exhaustive checke
 
 ## Result 26 — Six-type AES structure and optional degree <=4
 
-Added CLEAN_PAIR_GLOBAL_BUDGET.md. In the high-density AES branch, no clean block can lie wholly within one part. The block counts x,y,z satisfy x,y,z>=a=m-r+1, and the six type classes have two independent transversal triples T0=(A0,B1,C0), T1=(A1,B0,C1).
+Added CLEAN_PAIR_GLOBAL_BUDGET.md. In the high-density AES branch, no clean block can lie wholly within one part. The block counts x,y,z satisfy x,y,z>=lambda=m-r+1, and the six type classes have two independent transversal triples T0=(A0,B1,C0), T1=(A1,B0,C1).
 
 Assigning each outside vertex one fully-seen witness class in each triple gives capacity slack exactly 4 per triple. The exact endpoint equation yields optional cross-block target degree t_x<=4. A separate symbolic case audit checked all nine T0 x T1 witness pairs and both residual class triples for each off-part pair; all six off-part cases have the expected (optional, matching, empty) relation pattern.
 
@@ -348,11 +348,11 @@ The first draft of the global-budget note overclaimed that every outside vertex 
 The correct theorem is:
 
 - if an outside vertex has a same-part pair of fully-seen witness classes, it sees a whole part;
-- otherwise, an independent-transversal argument in a residual (optional, matching, empty) triple gives d_H(o,U)>=3a-4 and kappa_o>=3a-4-r>=8.
+- otherwise, an independent-transversal argument in a residual (optional, matching, empty) triple gives d_H(o,U)>=3a-4 and kappa_o>=3lambda-4-r>=8.
 
 For X exceptional vertices,
 
-X(3a-4-r)<=K_O<=2r-2-K_U.
+X(3lambda-4-r)<=K_O<=2r-2-K_U.
 
 This bounds X by O(r) but does not make it O(1) near the lower AES threshold.
 
@@ -413,7 +413,7 @@ No full legal-core counterexample was constructed. The static block model remain
 
 Using h=r+1-2a, the off-part excess denominator is exactly
 
-3a-4-r=(r-3h-5)/2,
+3lambda-4-r=(r-3h-5)/2,
 
 so the exceptional-count budget sharpens to
 
