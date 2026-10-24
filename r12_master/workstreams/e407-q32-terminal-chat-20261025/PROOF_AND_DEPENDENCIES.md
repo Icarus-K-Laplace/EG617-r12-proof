@@ -1,7 +1,7 @@
 # E407 Q32 terminal — proof and dependency ledger
 
 Date: 2026-10-25  
-Status: **E407 Q32 OPEN / NOT_CERTIFIED; the \(\delta=16\) boundary is excluded under the retained core/witness contract.**
+Status: **E407 Q32 OPEN / NOT_CERTIFIED; the \(\delta=16\) boundary is narrowed to an open labelled kernel.**
 
 ## 1. Dependency chain currently supported
 
