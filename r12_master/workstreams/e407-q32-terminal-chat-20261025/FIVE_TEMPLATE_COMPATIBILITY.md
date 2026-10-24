@@ -35,25 +35,26 @@ The witness-packing branch at f5d3daa07403877ede9885e1bd5c2f46b16d81da confirms 
 
 ## 3. New common-core restriction
 
-The new conditional theorem in FOUR_PARTITE_TERMINAL.md proves that \(\delta=16\) is automatically four-partite, and forces the exact structure:
+The \(\delta=16\) boundary is now **excluded** under the frozen core/witness contract. The proof proceeds through:
 - \(U\)-parts \(7,7,7,8\);
-- exactly five cross edges in \(H[U]\), forming a matching from the 8-part to the three 7-parts;
+- exactly five cross edges in \(H[U]\), matching on both sides;
 - \(H[W]=K_5\cup K_5\cup K_4\cup K_4\);
-- all five 8-part endpoints have the same \(K_4\) as their exact \(W\)-neighbourhood;
-- that \(K_4\) is complete to the 8-part; every vertex in the remaining \(K_4,K_5,K_5\) components is complete to a 7-part. Labels may vary vertex-by-vertex, and a component-wide bijection is not proved.
+- a reverse-saturation lemma: every \(W\)-vertex is complete to exactly one \(U\)-part;
+- exclusion of the \((4,1)\) and \((3,2)\) endpoint splits by degree excess;
+- exclusion of the final \((5,0)\) split, since three non-endpoint \(D\)-vertices must distribute across two \(K_5\) components, forcing five excess units in one component although the core has only four.
 
-The reverse-saturation and endpoint-split argument now excludes the entire \(\delta=16\) branch under the frozen core/witness contract: the last \(5+0\) split forces at least five units of degree excess inside one \(K_5\), but the core has only four. This closes only that boundary, not any of the five templates in full.
+This removes only \(\delta=16\). It does not close templates A–E because \(\delta\le15\) remains possible.
 
 ## 4. Template-by-template status
 
 | Template | Existing witness consequence | New result in this line | Status |
 |---|---|---|---|
-| A | \(\ge28\) hub-complete \(Q\)'s | Applies the common-core \(\delta=16\) structural kernel; no row contradiction yet | OPEN |
-| B | \(\ge28\) hub-complete \(Q\)'s | The \\(\delta=16\\) subcase is excluded; lower-\\(\delta\\) cases remain open | OPEN |
-| C | \(\ge35\) hub-complete \(Q\)'s | Same | OPEN |
-| D | \(\ge35\) hub-complete \(Q\)'s | Same | OPEN |
-| E, at least one full row | \(\ge35\) hub-complete \(Q\)'s | Same | OPEN |
-| E, no full row | \(\ge42\) witnesses hitting both \(P_3\) endpoints | Same core kernel; endpoint-row compatibility not yet tested | OPEN |
+| A | \(\ge28\) hub-complete \(Q\)'s | \(\delta=16\) subcase excluded; lower-\(\delta\) cases remain open | OPEN |
+| B | \(\ge28\) hub-complete \(Q\)'s | \(\delta=16\) subcase excluded; lower-\(\delta\) cases remain open | OPEN |
+| C | \(\ge35\) hub-complete \(Q\)'s | \(\delta=16\) subcase excluded; lower-\(\delta\) cases remain open | OPEN |
+| D | \(\ge35\) hub-complete \(Q\)'s | \(\delta=16\) subcase excluded; lower-\(\delta\) cases remain open | OPEN |
+| E, at least one full row | \(\ge35\) hub-complete \(Q\)'s | \(\delta=16\) subcase excluded; lower-\(\delta\) cases remain open | OPEN |
+| E, no full row | \(\ge42\) witnesses hitting both \(P_3\) endpoints | \(\delta=16\) subcase excluded; endpoint-row compatibility for lower \(\delta\) remains open | OPEN |
 
 ## 5. What is not claimed
 
