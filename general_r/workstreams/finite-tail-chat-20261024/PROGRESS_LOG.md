@@ -122,3 +122,35 @@ The finite sweep is an implementation audit only, not an all-r proof. No graph-l
 - d0/d1/d2/d3 endpoint closure and high-endpoint kernel are not encoded as hard constraints.
 - Graph-level color/vertex symmetry witnesses are specified but not implemented.
 - Design-terminal classification/nonextension remains an external OPEN gate.
+
+
+## 2026-10-24 — FT-003: first endpoint-class theorem module replayed
+
+Status: **TWO CONDITIONAL MODULES CERTIFIED / NO EG617(r) PROMOTED**.
+
+### New endpoint module
+
+Added:
+
+- `generate_d1_shell_bound.py`;
+- `verify_d1_shell_bound.py`;
+- `certificates/d1_shell_class_bound_r13.json`;
+- `certificates/d1_shell_class_bound_r13_receipt.json`.
+
+The source is sibling repivot endpoint classification commit `35fec3eaaab70b31e10b41065634b35b02a28e6c`, whose conditional theorem under A+B and r>=12 gives d1 partner incidence `t_s>=r` and total shell incidence `sum_A t_s<=6r-2`.
+
+For r=13, the exact arithmetic verifier checks N=0,...,6. N=6 needs 78 incidences while the cap is 76, a contradiction by exactly 2; hence at most five d1 shell classes. This does **not** bound multiplicity within a class and does not close the d1 terminal.
+
+Hashes:
+
+- instance SHA-256: `e2606f6a45ce41d5de4a5a184e2a32026259bc2992a73fbe82ce0833a4ae8a5e`;
+- certificate SHA-256: `2b82b7c89b8afab0259728a21d6e28ea10ace8a97c7c46455511a381555b0bc8`;
+- generator SHA-256: `b0d85a0877953490c5d724365b17c15dfc3113390a578a6813a7ba7b9183d5b6`;
+- verifier SHA-256: `e05ff2311275143d7a3a1492141be42b40989c93361e32ec3c2e504a2e5d457a`;
+- final multi-module gate SHA-256: `da90253d941ceb184f5c74a603cda70c5dda466fd3936de484b82924783b032c`.
+
+### Gate hardening
+
+The promotion gate now dispatches by immutable module ID, binds both generator and verifier hashes, and uses the same status vocabulary for different local endpoint lemmas. Unknown module IDs/assumption IDs fail closed. The gate still always blocks EG617 promotion because these modules do not provide complete graph-state exhaustion or a contradiction.
+
+The r=13 endpoint-domain receipt was refreshed to the final gate hash. Both sample receipts explicitly show `PASS_CONDITIONAL_MODULE`, `CONDITIONAL_LEMMA_CERTIFIED`, and `eg617_r_proved=false`.
