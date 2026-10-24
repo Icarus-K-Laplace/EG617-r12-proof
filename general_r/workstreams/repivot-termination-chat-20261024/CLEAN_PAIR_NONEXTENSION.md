@@ -132,3 +132,20 @@ and hence
 Here e_opt counts optional H-edges inside U, and E_foreign counts outside-core edges to a part other than the endpoint's assigned part. This is exact no-double-counting, but the right side is not yet incompatible with K<=2r-2.
 
 Status: the high-density branch is now reduced more strongly, but Clean Pair Nonextension remains OPEN. The interval m<ceil(4r/3+3) is also unresolved by this line.
+
+
+## 9. Shell-incidence strengthening of the exceptional budget
+
+For every clean endpoint x in U, kappa_x+e_F(x,S_2)=1. The total incidence of the distinguished shell pair is e_F(S_2,H)=2r+b_2, with b_2 in {0,1}. Hence
+
+K_U>=2m-2r-b_2.
+
+Combining this with the off-part excess lemma gives the stronger no-double-counting budget
+
+2m-2r-b_2 + X(3lambda-4-r) <= 2r-2,
+
+where lambda=m-r+1 and h=3r-1-2m. Equivalently,
+
+X <= floor(2(r-1+h+b_2)/(r-3h-5)).
+
+At the lower AES threshold this sharpens the parameter-free bound to X<=r/6+O(1), but X can still be linear. The remaining high-density terminal is not eliminated.
