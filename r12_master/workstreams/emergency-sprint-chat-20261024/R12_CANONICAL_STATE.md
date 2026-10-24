@@ -54,3 +54,10 @@ where M_C counts size-five blocker occurrences across the seven outer K12 blocks
 Audit correction: an attempted stronger E408 contradiction incorrectly promoted \(\omega(C[R])\le5\) on the 61-point T61 residual to a global \(\omega(C)\le5\), although outer block vertices are outside that residual. The resulting claim \(e_C(B_i,R)\ge72\) and the derived 885-edge contradiction were withdrawn. E408 Q32/Q33 remain OPEN.
 
 The witness-packing theorem was also corrected: a no-S isolated K5 component can contain pivot p, so at most six B-labelled no-S components per exact-129 color are guaranteed without an extra lemma excluding p from such a component. The E407 A/C capacity corollary consequently gives at least one, not two, hub-complete witnesses per exact-129 color. No terminal is closed.
+
+
+## New witness-overlap result (2026-10-25)
+
+R12_WITNESS_OVERLAP_STAR_LEMMA.md records a proved structural reduction for repeated witnesses. If \(m\) witness sets share one core vertex, their other triples are disjoint and span at least \(3\binom m2\) core edges. In the extreme \(m=10\) case, either \(e(H[U])\ge144\), or \(H[U]=3K_{10}\); in the latter case the common vertex must have positive core excess. Neither branch is yet excluded.
+
+Next attack: couple this overlap-star dichotomy to the 284-edge core's exact shell-incidence budget and the five E407 Q32 templates. The theorem remains OPEN / NOT_CERTIFIED.
