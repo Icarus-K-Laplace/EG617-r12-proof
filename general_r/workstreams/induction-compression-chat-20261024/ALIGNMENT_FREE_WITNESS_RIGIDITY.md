@@ -15,7 +15,7 @@ T_v=\{v\}\cup Q_v,\qquad |Q_v|=r-1,\qquad Q_v\subset R,
 independent in its designated color i_v != c. Put
 
 \[
-C_i=\{v\in X:i_v=i_v\},\quad n_i=|C_i|,\quad
+C_i=\{v\in X:i_v=i\},\quad n_i=|C_i|,\quad
 S=\{i\ne c:n_i>0\}.
 \]
 
