@@ -58,3 +58,11 @@
 - Derived the cross-color budget sum_C eta_ij(C) <= 12 for each block pair, because the seven-block near-Latin ledger has exactly 12 duplicate units per block pair.
 - This creates a precise finite interface between exceptional gadget geometry and outer duplicate budgets. It does not close the terminal because the same/matching complement pattern can persist without forcing positive duplicates.
 - Updated only this workstream's verifier and notes; no sibling paths changed.
+
+
+## 2026-10-25 — exceptional-row alpha-two theorem
+
+- Proved that the graph induced by all exceptional rows of one exact-129 color across low-slack blocks has independence number at most two. A hypothetical independent triple has pairwise-disjoint complementary gadget cliques of total size 9–11, hence at least 22 incidences into the 11-point gadget; the three row neighborhoods have at most24 total incidences (at most22 when two rows share a block), leaving at most two component incidences. They cannot cover any isolated K5 component, so one vertex from each of ten components plus the triple would form an independent13-set.
+- Therefore, for every low-slack block pair, the non-C edges among the two exceptional rows on each side form a matching, and at least two C edges are present among those four vertices.
+- Across k low-slack blocks, the exceptional-row graph has at least k(k-1) C edges. Equality in the alpha<=2 Turan bound forces two disjoint K_k cliques, with opposite exceptional-row types in each block.
+- Independent arithmetic replay passed: EXCEPTIONAL_ROW_ALPHA2_REPLAY_OK. The equality structure remains feasible and does not itself close Q33.
