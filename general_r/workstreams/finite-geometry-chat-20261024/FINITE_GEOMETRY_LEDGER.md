@@ -1,66 +1,51 @@
 # Finite-Geometry Ledger
 
-## 1. What affine geometry already gives
+## 1. Brouwer threshold: exact assumptions
 
-The architecture branch already proves:
+The local low-slack theorem uses Brouwer's non-r-partite Turan threshold in the form stated by Popielarz–Sahasrabudhe–Snyder, JCTB 132 (2018), Theorem 2.2:
 
-> the standard affine-plane coloring on `q^2` points cannot be extended by one vertex while preserving the property that every `(q+1)`-set sees all `q` colors.
+If n>=2r+1 and H is K_(r+1)-free on n vertices, then
 
-Only two orthogonal clique partitions are needed for that proof.
+\[
+e(H)\ge t_r(n)-\lfloor n/r\rfloor+2
+\]
 
-Therefore K-line work should not re-prove affine nonextension. The missing step is extraction/stability: force two sufficiently rigid near-partitions from an arbitrary hypothetical counterexample.
+implies H is r-partite.
 
-## 2. Prime-power hypothesis: precise role
+Reference: https://doi.org/10.1016/j.jctb.2018.04.001. The condition n>=2r+1 is explicit. Here n=q^2 and r=q, so q>=3 suffices. Related extremal characterization: M. Kang and O. Pikhurko, “Maximum K_(r+1)-free graphs which are not r-partite” (2005).
 
-The statement `q` is a prime power guarantees the existence of the Desarguesian affine plane `AG(2,q)` and the field `F_q`, but an arbitrary coloring has no canonical coordinates.
+## 2. Exact and near-exact color restrictions
 
-Thus the following implication is **invalid without an extraction theorem**:
+For a q^2-point restriction, m_q=q*C(q,2) is the minimum edge count of a color graph with independence number at most q. If its slack s is at most q-2, the complement crosses Brouwer's threshold and the color graph partitions into q K_q blocks with s cross-block defect edges.
 
-`q prime power => arbitrary color classes are algebraic direction classes`.
+A greedy independent-transversal argument improves the extra-vertex near-line forcing to q-s attachments. In particular, s=0 would force a monochromatic K_(q+1), so every local slack in a genuine counterexample is at least one.
 
-Polynomial method, character sums, Bose-Mesner algebra, and finite-field incidence bounds become legitimate only after a coordinate-bearing incidence object has been extracted.
+Two positive low-slack colors yield two orthogonal partitions. They do not alone yield a full affine plane, a complete net, or field coordinates.
 
-## 3. Kakeya/Besicovitch bridge
+## 3. Partial Kakeya / line-union inequality
 
-In an affine plane, if a deletion set must completely contain one line from many distinct directions, its union is a partial Kakeya configuration.
+If L_1,...,L_t are q-point sets with |L_a intersect L_b|<=1 for all a != b, then
 
-For all `q+1` directions, the elementary pair-intersection argument gives the universal lower bound
+\[
+|\bigcup_a L_a|\ge tq-\binom t2.
+\]
 
-`|K| >= C(q+1,2) = q(q+1)/2`.
+This is elementary inclusion-exclusion. It applies to full lines from distinct directions in an affine plane. For t=3 it gives |union|>=3q-3, which exceeds a shell of size 2q-1 for every q>=3.
 
-For odd prime powers, the sharp planar finite-field Kakeya theorem is stronger:
+The key missing premise is not the inequality: it is extraction of three full size-q blocks from distinct directions that the same shell must contain. The current compression theorem gives disjoint independent sets or private witnesses, not such lines.
 
-`|K| >= q(q+1)/2 + (q-1)/2`.
+## 4. Full finite-field Kakeya theorem: scope
 
-The key strategic point is scale: Kakeya obstruction size is `Theta(q^2)`, whereas the induction shell `2q-1` is only `Theta(q)`.
+A Kakeya set in AG(2,q) over F_q contains a full affine line in every one of the q+1 directions. For odd q, Blokhuis–Mazzocca prove the sharp bound
 
-Hence once a failed compression can be shown to contain full lines in `Omega(q)` genuinely distinct directions, a contradiction with a linear shell becomes plausible even without needing the sharp constant.
+\[
+|K|\ge\frac{q(q+1)}2+\frac{q-1}2.
+\]
 
-## 4. Partial-direction elementary bound
+Reference: A. Blokhuis and F. Mazzocca, “The Finite Field Kakeya Problem,” arXiv:0911.4370. This assumes the Desarguesian affine plane over a finite field and a full line in every direction; it cannot be applied to an arbitrary coloring or to two orthogonal partitions. For even q, the elementary all-direction pair-intersection bound is q(q+1)/2.
 
-If a set contains one full affine line from each of `t` distinct directions, then
+The sharp Kakeya theorem is not needed for the present shell calculation: three extracted full directions would already suffice. However, no such extraction has been proved.
 
-`|K| >= tq - C(t,2)`.
+## 5. Prime-power warning
 
-Proof: each line has `q` points and each pair of distinct-direction lines intersects in at most one point; use the first two terms of inclusion-exclusion.
-
-Consequently, if `|K| <= 2q-1`, then necessarily
-
-`tq - C(t,2) <= 2q-1`.
-
-For `t>=3` and large `q`, this already becomes restrictive; for `t` linear in `q`, the lower bound is quadratic.
-
-## 5. Structural target suggested by the literature
-
-Do not try to apply Dvir/Nullstellensatz directly to the original coloring. Instead prove a bridge of the form:
-
-> many low-slack colors => many almost-clique blocks => after cleaning, one line-like block per many directions must be simultaneously respected by the exceptional vertex or by any compression shell.
-
-At that point finite-plane Kakeya/nonextension results can finish the argument.
-
-## Literature anchors
-
-- A. Blokhuis and F. Mazzocca, *The Finite Field Kakeya Problem*, Bolyai Society Mathematical Studies 19 (2008); arXiv:0911.4370.
-- S. Ball, *On sets of points in a finite affine plane containing a line in every direction* (planar Kakeya lower bounds).
-
-These are supporting tools only; they do not by themselves prove Problem 617.
+The existence of AG(2,q) for prime-power q does not imply that an arbitrary counterexample coloring has its vertices coordinatized by F_q^2. Even a family of mutually orthogonal partitions need not, without additional hypotheses, be the complete Desarguesian affine plane. Polynomial, character-sum, or field-incidence methods must wait until the relevant coordinates and incidence structure are proved.
