@@ -326,3 +326,25 @@ This is compatible with the (O(r)) budget and does not close the terminal.
 - `ROBUST_EXACT_CORE.md` corrected: `e836fe0771645b5731e2a598a58b4161aa63ad02`.
 
 The E/asymptotic interface files `LOW_DEGREE_TOP_LAYER_CLOSURE.md` and `COMMON_TRANSVERSAL_COVER_INTERFACE.md` were read on `workstream/general-r-asymptotic-20261024`; neither was modified.
+
+
+### Follow-up: exact multi-block cover incidence theorem
+
+Added `DEFECT_COVER_INCIDENCE.md` with the exact weighted cover inequality
+[
+\sum_{e\in F_i}w_{d,e}\ge1
+]
+for each missing ideal-block pair, and the per-edge load (L_i(e)=\sum_dw_{d,e}) that makes shared-edge reuse explicit. It covers arbitrary multi-block networks and enforces unique ownership across colors.
+
+New strict corollary: if all ideal blocks have size at least five and a color has at most 24 additions, the cover of a defect cannot be remote-only; remote edges contribute at most (1/25) each, so total weight is at most (24/25). At least one addition must meet a defect endpoint.
+
+For a matching of q defect pairs, all blocks of size at least five, the load of any edge is at most (2/5+q/25). This does not yet force the global budget contradiction.
+
+Commits:
+- `DEFECT_COVER_INCIDENCE.md`: `69097d88cd787c65a05cf753a1c389fa4caa953a`.
+- `HUB_PROPAGATION_THEOREM.md`: `5705bec09ab5dafe7b7651fcd2467a6a27f80046`.
+- `MULTICOLOR_DEFECT_BUDGET.md`: `f191de59b8a35751dd51de355aedbbf13d35e349`.
+- `NONEXTENSION_CLOSURE.md`: `08615b551c0a21c9a3fb47c9975cbfdfe430f193`.
+- `CANONICAL_STATE.md`: `2c0ee8bf1b603e3b174325e8bd4de7c6b18e469b`.
+
+The (r\ge6212) terminal-closure claim remains withdrawn. The correct current status is: incidence inequality **PROVED_ANALYTIC**; remote-only exclusion **PROVED_ANALYTIC** under its size/edit hypotheses; shared-edge global contradiction and terminal nonextension **OPEN**.
