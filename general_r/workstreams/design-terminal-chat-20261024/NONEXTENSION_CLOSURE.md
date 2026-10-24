@@ -89,7 +89,7 @@ The block-level slack bound (s_i\ge9) is false in general (the local gadget has 
 
 ## 8. New finite-geometry constraint: target-star destinations are a derangement
 
-In the canonical full-star model, choose one hub (a_j\in B_j) and one internal target nonneighbor (y_j\in B_j) for each of the five groups. If (a_j) has target edges to every point of (B_{f(j)}), then (\alpha(G_0)\le5) forces (f) to be a permutation without fixed points. A repeated destination (f(j)=f(k)=\ell) would allow the six-set formed by the two internal nonedges, omitting (B_\ell), and selecting one point from each of the two remaining groups.
+In the **exact hub-star model** (all target cross-group edges lie in the specified hub stars, with no additional cross edges), choose one hub (a_j\in B_j) and one internal target nonneighbor (y_j\in B_j) for each of the five groups. If (a_j) has target edges to every point of (B_{f(j)}), then (\alpha(G_0)\le5) forces (f) to be a permutation without fixed points. A repeated destination (f(j)=f(k)=\ell) would allow the six-set formed by the two internal nonedges, omitting (B_\ell), and selecting one point from each of the two remaining groups.
 
 Thus the group-level target-star pattern has only two cycle types:
 - one 5-cycle;
@@ -97,7 +97,7 @@ Thus the group-level target-star pattern has only two cycle types:
 
 For the oversized group, the second hub must share the same destination as the first; otherwise its destination collides with one of the other four groups. The two hubs must themselves be target-adjacent, or an independent triple within the oversized group plus three points avoiding their common destination gives a target-independent 6-set.
 
-This is **PROVED_CONDITIONAL** on the full-star reduction. It shrinks the finite-geometry search space but does not yet close the branch.
+This is **PROVED_CONDITIONAL** on the exact hub-star reduction. The current (O(r)) cross-edge budget does not prove exactness; a robust version allowing exceptional cross edges remains OPEN. It shrinks the finite-geometry search space but does not yet close the branch.
 
 ## 9. Triangle obstruction in the non-target partition
 
