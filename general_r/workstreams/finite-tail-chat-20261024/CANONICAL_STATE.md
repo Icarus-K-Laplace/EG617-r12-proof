@@ -147,9 +147,9 @@ A first real conditional endpoint module has completed the full producer -> cert
 - module: `ENDPOINT_DOMAIN_LOWER_BOUND_V1`;
 - committed artifact: `certificates/endpoint_domain_r13_residual_core.json`;
 - replay receipt: `certificates/endpoint_domain_r13_residual_core_receipt.json`;
-- r=13 residual-core instance SHA-256: `0b6dce65ae4ac393e5170c6330f7e571800dc34c0fbcb990d57f3718675ddfef`;
-- certificate SHA-256: `2b2526cd2281e44425ebe0dd3ef08fc04cf95c04f5003e918de3a0496f4976f4`;
-- verifier SHA-256: `1a6ac72042fa7b3a95215c3e2854f661a6cd63c11b879d865af028a91962e6e4`;
+- r=13 residual-core instance SHA-256: `65909c3589061e7463e807579bdde059ee7ae4d20f57f53158e5a612ae2d6c42`;
+- certificate SHA-256: `aa2123245e1bd6db9ab7056c3c2b0083f1d2f3828d39f40b54c731ba113b170a`;
+- verifier SHA-256: `c18a74703417faed2c453b588e0ea9a8b03244af04bfc0b5f4191ec8cc15de6a`;
 - gate: `PASS_CONDITIONAL_MODULE`; theorem status: `CONDITIONAL_LEMMA_CERTIFIED`;
 - RC remains `OPEN`, so EG617(13) remains **NOT PROVED**.
 
