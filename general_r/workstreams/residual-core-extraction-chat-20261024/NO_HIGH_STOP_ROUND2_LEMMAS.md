@@ -67,7 +67,7 @@ e(F_i)=t_r(ar+1)-x_i,
 t_r(n):=\binom n2-p_r(n).
 ]
 
-Consequently at least half of the non-target complements are within (a^2-1) edges of the exact Turán maximum. This is a proved edge-count concentration theorem, not yet a partition/edit-distance stability theorem.
+Consequently at least half of the non-target complements are within (a^2-1) edges of the exact Turán maximum. Section 4 below closes the uniform partition-stability subgap using Füredi's quantitative theorem.
 
 **Open stability issue.** The number of parts (r) grows with the parameter. A fixed-(r) stability statement cannot be applied with constants silently assumed uniform in (r). We still need a quantitative uniform lemma of the form
 
@@ -257,7 +257,62 @@ Thus the target partition into a row-blocks and the r-1 non-target partitions in
 
 This is a genuine structural upgrade from near-extremality in edge count. It still does not imply an exact transversal design or an earlier R_5/R_4 state: the allowed O(r) exceptional pairs are on the same scale as the missing-parallel-class deficit, so their concentration and incidence pattern must be analyzed rather than ignored.
 
-## 5. Status ledger for this round
+## 5. Hub localization in the target complement
+
+Let (G_0=G_0[R_a]) be the target-color graph at a first stop and (F_0=\overline{G_0}). Then (omega(F_0)=\alpha(G_0)=a), so (F_0) is (K_{a+1})-free. The all-color ledger gives (x_0\le S_a(r)), and
+
+`e(F_0)=t_a(ar+1)-x_0`.
+
+Apply Theorem 3 to obtain a partition (V_1\cup\cdots\cup V_a), with (I_0) internal edges of (F_0), (M_0) missing cross-pairs, and part-size deficit (Delta_0). Then
+
+`I_0<=x_0`, `M_0<=2x_0`, `Delta_0<=2x_0`,
+
+`sum_j (|V_j|-r)^2=2 Delta_0+1<=4x_0+1`.
+
+### Theorem 5 — fixed-a hub localization
+
+For every fixed (a\ge6), if
+
+`r >= 200 a(a-1)+1`,
+
+then every internal edge of (F_0[V_j]) has an endpoint (h) for which at least (2r/5) cross-pairs from (h) to some other part are missing from (F_0). Let (H) be the set of all such vertices. Then
+
+`|H| <= 5 a(a-1)`,
+
+and every internal edge of (F_0) is incident to (H). In particular, each (V_j\setminus H) is a clique in the target-color graph (G_0).
+
+**Proof.** Put (C=a(a-1)). Since (r\ge a), (S_a(r)\le Cr/2), so
+
+`M_0<=2x_0<=Cr`,
+`sum_j (|V_j|-r)^2<=2Cr+1`.
+
+The stated threshold ensures (|V_j|\ge0.9r) for every (j), and (100M_0/r^2<1). Suppose an internal edge (uv\in E(F_0[V_j])) has neither endpoint missing at least (2r/5) cross-neighbors in any other part. For each (k\ne j), let
+
+`W_k=N_{F_0}(u)\cap N_{F_0}(v)\cap V_k`.
+
+Then (|W_k|\ge |V_k|-4r/5\ge r/10). Choose one vertex independently and uniformly from each (W_k). Any fixed missing cross-pair between two of these sets is selected with probability at most (100/r^2). By the union bound, the probability of selecting any missing cross-pair is at most (100M_0/r^2<1). Thus there is a transversal with all cross-pairs present in (F_0). Together with (u,v), it forms a (K_{a+1}), contradiction.
+
+Therefore every internal edge has an endpoint in (H). Each vertex of (H) has missing cross-degree at least (2r/5), while the sum of missing cross-degrees is (2M_0). Hence
+
+`|H| (2r/5)<=2M_0`, so `|H|<=5M_0/r<=5C`.
+
+Deleting (H) removes all internal edges of (F_0); hence each remaining part is independent in (F_0), equivalently a target-color clique in (G_0).
+
+### Sharpened a=6 instance
+
+For (a=6), (S_6(r)=14r+6). If (r\ge5601), then
+
+`4S_6(r)+1=56r+25<=r^2/100`,
+`M_0<=28r+12`,
+`100M_0/r^2<1`.
+
+The same proof yields a hub set (H) of size at most (140), with every internal edge of (F_0) incident to (H). This is an explicit fixed-case theorem for the (a=6) high-stop branch, not a contradiction to its existence.
+
+### Limitation / next use
+
+The theorem localizes all defects inside the target partition to (O(a^2)) hub vertices, but it does not yet show that the hubs point to one common part or that a five-part induced subset has clique number at most five in (F_0). A directed/cyclic pattern of hub-protection parts is not ruled out. The remaining target is a hub-propagation lemma that either produces an earlier (R_5) satisfying its edge budget or contradicts the first-stop interface.
+
+## 6. Status ledger for this round
 
 ### PROVED
 
@@ -279,4 +334,4 @@ This is a genuine structural upgrade from near-extremality in edge count. It sti
 \boxed{\texttt{NO-HIGH-STOP = OPEN}.}
 ]
 
-The critical-core potential has reduced the (a=6) case to four explicit residue windows, while the color partitions now form a global near-resolvable design with O(r) bad pairs for fixed a. No all-large-r contradiction has been established. The next highest-leverage step is to classify the incidence pattern of those O(r) bad pairs and prove they admit an r-vertex transversal or force a contradiction.
+The critical-core potential has reduced the (a=6) case to four explicit residue windows, the color partitions form a global near-resolvable design with O(r) bad pairs, and all internal target-complement defects localize to at most 140 hubs when a=6 and r>=5601. No all-large-r contradiction has been established. The next highest-leverage step is to classify the hub-protection digraph and prove that it yields an earlier R5 or a contradiction.
