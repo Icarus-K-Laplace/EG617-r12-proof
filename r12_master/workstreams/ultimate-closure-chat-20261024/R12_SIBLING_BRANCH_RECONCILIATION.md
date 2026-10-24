@@ -76,3 +76,12 @@ Own-branch addition R12_TRANSVERSAL_BOUNDARY_CLASSIFICATION.md proves:
 - E407 Q32 boundary: delta>=2 for the v=29 / 49-witness kernel.
 - E408 Q33 boundary: 2*delta+epsilon_U>=8 for the v=31 / 56-witness kernel.
 The exact arithmetic regression verifier passed. These are boundary-profile exclusions, not terminal exclusions; E407 Q32, E408 Q32/Q33, and K145 remain OPEN / NOT_CERTIFIED.
+
+
+## 7. Latest sibling refresh — four-partite E408 Q33 refinement (2026-10-25)
+
+New sibling commits re-read:
+- Emergency sprint: ad56a91c644458cb16dd590b7a4ed0e800978a81. Its witness-hitting inequality is algebraically valid under the stated linear-family contract; the E407 C/D/E application is not imported because its eight-witness-per-color premise remains separately audited.
+- Zero-excess witness: 98167ec779850a2ff57b1ec7113f939df42c35f4 and dab4065382e508e514bf3297c16e9ddc773beb97. These establish the four-partite E408 Q33 S0>=10 analysis and the residual degree pattern.
+
+This workstream independently excludes the residual S0=10 size-ten hitting set in R12_E408_Q33_FOUR_PARTITE_S0_10_EXCLUSION.md. The result strengthens only the four-partite E408 Q33 branch to S0>=11; it does not settle the non-four-partite branch or the terminal. No sibling branch was modified.
