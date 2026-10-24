@@ -37,16 +37,22 @@
 
 - Classified one-edge blockers: the unique edge must join two singleton residual parts.
 - Classified two-edge blockers: either there is a singleton-singleton edge, or the two edges are disjoint transversal events joining a singleton part to the two vertices of a size-two part.
-- Clarified the scope of the shell-budget step: the three-part 1,1,2 pattern is ruled out only for residual parts arising from the aligned J shell Y, not for arbitrary extra-vertex neighbor sets.
+- Clarified that the shell-budget exclusion of the three-part 1,1,2 pattern applies only to residual parts from the aligned J shell.
 - In the aligned J/K bridge, slack 1 or 2 confines private witnesses to at most two blocks for q>=4 (and slack 1 also for q=3).
-- Derived two-block forcing d_i(x)>=2q-s_i(x)-1 and global excess a_i>=q-1 for every color that is low-slack at any vertex.
-- Proved the simultaneous slack-one crossed 2-by-2 pattern and the excess lower bounds a_i,a_j>=q-1.
+- Derived two-block forcing d_i(x)>=2q-s_i(x)-1 and the local-to-global implication a_i>=q-1 for every low-slack color.
+
+## 2026-10-24 — Round 7: universal global excess
+
+- Combined the local-to-global implication with the exact average-slack identity.
+- Proved every color satisfies a_i>=q-1, not merely colors that are low-slack at some vertex: if a_i<=q-2, the average slack is below q-1, forcing a low-slack vertex and contradiction.
+- Recorded the exact total excess above the universal floor: sum_i(a_i-(q-1))=q(q-1)(q-2)/2.
+- The universal excess floor is a real global theorem, but does not close the high-slack branch or force two low-slack colors at a common vertex.
 
 ### Status
 
 - Low-slack coordinatization: PROVED.
 - Weighted blocker inequality and two-block forcing: PROVED.
-- Global excess bound: PROVED.
+- Universal global excess floor: PROVED.
 - Slack-one crossed pattern: PROVED conditionally.
 - Conditional J/K interface: PROVED.
 - Global low-slack alignment and high-slack contradiction: OPEN.
