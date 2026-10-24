@@ -69,3 +69,31 @@ The branch heads were checked again immediately before this update:
 - The earlier emergency star lemma has the same complete-partite/non-complete-partite gap. Its m=10 equality dichotomy remains unaudited and is not used here.
 
 The full EG617(r=12) result remains OPEN / NOT_CERTIFIED.
+
+
+## Live refresh — 2026-10-25, third pass
+
+Branch heads checked after the universal S0 theorem was committed:
+
+- emergency sprint: 70d050655f0d03c38f3fef40c4a9f936e9ed1463
+- ultimate closure: 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40
+- zero-excess witness: c1604037ab9045543dcb0bad805a37459b907906
+- master closure: e46da35aedce7bbaaf11756b50192bd157956239
+- this witness-packing line: 27eb86f5c5fe5b1f1cc0574095ac90b4b5976b71
+- general-r architecture: a922c4d7646eb8d0087bde8547562c8aace02ee2
+- general-r asymptotic: fa6a5f2b8b5d2a0fe821d50a4421884a69dc5366
+
+### New fixed-r=12 developments
+
+1. **This line: universal E408 Q33 \(S_0\ge11\).** R12_E408_Q33_UNIVERSAL_S0_11.md excludes \(S_0=10\) at the 31-point/56-witness minimum-support boundary without assuming L is four-partite. It derives a unique 7-transversal, four degree-seven W-neighbours sharing that K7, two T-type size-eight neighbourhoods, and a (4,3,3) multiplicity partition of ten R-only neighbourhoods. The resulting K12 contradicts \(\omega(H)\le11\). This is a conditional boundary theorem, not a full terminal closure.
+2. **Emergency sprint: four-partite E408 Q33 \(S_0\ne11\).** R12_E408_Q33_FOUR_PARTITE_S0_11_EXCLUSION.md uses exact U-degree profiles, the 8/9-point transversal classification, full-part neighbourhood capacities, and a triangle obstruction. Its argument is internally consistent under the stated four-partite contract; the accompanying verifier checks integer profiles only. Combined with the \(S_0=10\) exclusion, the four-partite branch has \(S_0\ge12\). The non-four-partite branch remains open.
+3. **Zero-excess line: E407 four-partite TD(4,7) overclaim withdrawn.** The 49 witness blocks on parts (7,7,7,8) do not force an unused eighth point. For each seven-by-eight pair type, the seven unused pairs have degree one on the seven-point side but can have nonuniform degrees on the eight-point side. Therefore the distinguished-point reduction, \(\delta\ge12\), \(\epsilon_U=16-\delta\), and the forced \(H[W]=K_5\cup K_5\cup K_4\cup K_4\) conclusion are withdrawn. The valid E407 ledger remains \(\delta\ge2\), \(\delta+\epsilon_U\le16\), and \(\epsilon_U+2\delta\ge2\).
+4. **Shell-incidence correction in this line.** SHELL_INCIDENCE_UNION_LEMMA.md was corrected to account for up to four core vertices with zero shell support. Its safe E407 full-row support-union floors are 7 (template A) and 6 (template C), not the earlier unsupported 11/10.
+5. **General-r branches:** the architecture and asymptotic heads have not advanced since a922c4d / fa6a5f2 in this refresh. They remain separate conditional routes and are not imported as fixed-r=12 proofs.
+
+### Combined boundary status after reconciliation
+
+- E408 Q33, minimum support \(v=31\): universally \(S_0\ge11\); if L is four-partite, \(S_0\ge12\). The non-four-partite \(S_0=11\) case remains OPEN, as do larger support sizes.
+- E407 Q32, minimum support \(v=29\): \(\delta\ge2\), \(\delta+\epsilon_U\le16\), \(\epsilon_U+2\delta\ge2\); the four-partite and non-four-partite completions remain OPEN. Do not use the withdrawn TD(4,7) distinguished-point argument.
+- E408 Q32 remains a separate 285-edge / excess-six core and is not covered by any of the 284-edge Q33 results.
+- The original \(K_{145}\to T61\) reduction bridge and the complete EG617(r=12) theorem remain OPEN / NOT_CERTIFIED.
