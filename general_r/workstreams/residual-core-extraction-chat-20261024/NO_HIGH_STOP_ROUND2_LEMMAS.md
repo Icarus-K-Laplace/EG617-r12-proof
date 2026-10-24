@@ -670,9 +670,17 @@ Therefore every first `K_r`-free `R_6` contains a pairwise-linear partial resolv
 
 blocks for every `r>=1000`. This improves the earlier explicit `r^2-(29/2)r^(3/2)-67r` bound.
 
+### Design-only countermodel — why the partial-TD bound is not a contradiction
+
+For any prime power `r>=7`, the finite-field construction gives a `TD(6,r)` with `r^2` blocks and `r` parallel classes (restrict the standard field-based `TD(r+1,r)` to six groups). Delete one parallel class. The remaining `r^2-r` blocks form a pairwise-linear partial resolvable `TD(6,r)` with `r-1` parallel classes. Add one unused point to one group, giving group sizes `(r+1,r,r,r,r,r)` without changing the blocks.
+
+For `r>=112`, this abstract design already exceeds the necessary lower bound `r^2-112r`. Thus the `r^2-O(r)` partial-design theorem, even with exact pairwise linearity and `r-1` resolvable classes, is not by itself contradictory.
+
+**Scope warning:** this is a design-only model, not a full edge-coloring of `K_{r^2+1}` and not a graph satisfying the entire canonical high-stop contract. It does not check the excess ledger, the exceptional edge colors, or the full hereditary cap. Its role is to rule out the shortcut 'near-complete TD therefore impossible'; the missing contradiction must use the exceptional-block color/label incidence and the target hub structure.
+
 ### Limitation and adversarial audit
 
-This is a stronger necessary structure, not a contradiction. The exceptional `O_a(r)` classes may carry all the non-extension obstruction; the theorem does not complete the design or show that an earlier `R_5` exists. The proof uses only the existing Füredi stability bounds, the exact predecessor-label partition, `alpha(F_i)<=a`, and the bounded hub theorem. No fixed-`r` computation is promoted to an all-`r` result.
+This is a stronger necessary structure, not a contradiction. The exceptional `O_a(r)` classes may carry all the non-extension obstruction; the theorem does not complete the design or show that an earlier `R_5` exists. A field-based `TD(6,r)` with one parallel class removed gives a design-only model with `r^2-r` blocks, so design density alone cannot close the gap. The proof uses only the existing Füredi stability bounds, the exact predecessor-label partition, `alpha(F_i)<=a`, and the bounded hub theorem. No fixed-`r` computation is promoted to an all-`r` result.
 
 ## 9. Status ledger for this round
 
