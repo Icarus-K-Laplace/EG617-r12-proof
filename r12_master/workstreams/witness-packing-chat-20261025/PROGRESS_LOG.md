@@ -55,3 +55,12 @@ Current status: **OPEN / NOT_CERTIFIED**.
 - Added R12_E408_Q33_UNIVERSAL_S0_11.md and verify_e408_q33_universal_s0_11.py. The verifier was executed locally and returned E408_Q33_UNIVERSAL_S0_11_ARITHMETIC_OK; it checks arithmetic/case tables only, not the graph-theoretic proof.
 - Cross-audited and corrected this line's earlier shell-incidence union lemma: the exact identity is valid, but its original 11/10 support-union floors omitted up to four zero-shell-support core vertices. The safe floors are 7/6. Updated SHELL_INCIDENCE_UNION_LEMMA.md and verify_witness_packing.py; retracted the stronger unsupported numerical claim.
 - This theorem is conditional on the retained T61 / exact-129 / Q33 shell contract. The full E408 Q33 terminal, E407 Q32, E408 Q32, and original K145 theorem remain OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 — third live sibling refresh
+
+- Read emergency head 70d050655f0d03c38f3fef40c4a9f936e9ed1463 and zero-excess head c1604037ab9045543dcb0bad805a37459b907906; checked the general-r architecture/asymptotic heads remained a922c4d7646eb8d0087bde8547562c8aace02ee2 and fa6a5f2b8b5d2a0fe821d50a4421884a69dc5366.
+- Imported the latest conditional result: the four-partite E408 Q33 minimum-support branch also excludes S0=11, giving S0>=12 if L is four-partite. This line's universal theorem only guarantees S0>=11; the non-four-partite S0=11 branch is still open.
+- Corrected the E407 branch ledger after the zero-excess audit withdrew the distinguished-unused-point / TD(4,7) claim. Retained only the valid E407 inequalities delta>=2, delta+epsilon_U<=16, epsilon_U+2delta>=2.
+- Updated CROSS_BRANCH_SYNC_20261025.md with exact current sibling heads and the combined frontier.
+- No full E407/E408 terminal or original K145 theorem is closed.
