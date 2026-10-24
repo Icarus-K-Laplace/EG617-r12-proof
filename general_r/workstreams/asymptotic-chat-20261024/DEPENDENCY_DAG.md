@@ -14,10 +14,10 @@ Hypothetical Problem-617 counterexample
 **5r+1 branch:** delta(T) ≥ r plus contextual cap → delta(T) ∈ {r,r+1} [PROVED] → direct near-anchor triple for r ≥ 67 [PROVED] → common-antineighbourhood compression [PROVED] → |W|=2r, 2r+1 impossible for r ≥ 11 [PROVED] → if delta(T)=r+1, |W|=2r−1 Cell A/B excluded for r ≥ 25 [PROVED] → D_low finite-offset terminal nonextension [OPEN] → P(r).
 
 The exact remaining windows for D_low are:
-- delta(T)=r: 2r−4 ≤ |W| ≤ 2r−1;
+- delta(T)=r: 2r−4 ≤ |W| ≤ 2r−2;
 - delta(T)=r+1: 2r−7 ≤ |W| ≤ 2r−2.
 
-**Do not remove the low-degree |W|=2r−1 case:** the Cell A/B exclusion theorems use the high terminal assumption delta(T)=r+1.
+The Cell A/B edge-count theorems use delta(T)=r+1, but LOW_DEGREE_TOP_LAYER_CLOSURE proves the delta(T)=r top layer separately. Therefore |W|=2r−1 is now excluded in both branches for r ≥ 25.
 
 ## Conditional theorem S67-low
 
@@ -57,3 +57,4 @@ This shared interface is useful accounting, **not** a terminal contradiction by 
 - Contextual cap plane: current architecture head a922c4d7646eb8d0087bde8547562c8aace02ee2.
 - C repivot endpoint: current head 35fec3eaaab70b31e10b41065634b35b02a28e6c.
 - D design terminal: current head 5b4162c239d3dfad84d130c3015a0db5919228c4.
+- Low-degree top-layer closure: commit 301dcacab800fd95b7a750042ba92143cf0f2c5f.
