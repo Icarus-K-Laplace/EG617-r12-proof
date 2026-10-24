@@ -175,6 +175,15 @@ This is stronger than the previous AES reduction: it proves that every outside-c
 
 It is **not yet a contradiction**. The remaining kernel can still have h=Theta(r), with s_A+s_B+s_C=h-2 and u_A+u_B+u_C=4. The exact budget (6.3) does not by itself contradict K_U+K_O<=2r-2; the residual degrees and clique/independence constraints inside O must still be used.
 
-A small endpoint consequence is immediate: h=2 is impossible, because then all s_i=0, hence all g_i=0 by the clique cap, contradicting sum g_i=h. The h=3 case is addressed in COUNTEREXAMPLE_SEARCH.md; its remaining subcase requires an additional degree/excess argument and is not promoted here unless separately verified.
+Two endpoint values are now excluded.
 
-Status: AES-to-three-part reduction and outside-neighbour transversal theorem **PROVED_CONDITIONAL**; global clean-pair nonextension **OPEN**.
+- **h=2:** equation (2.1) gives s_A=s_B=s_C=0. The clique cap forces g_A=g_B=g_C=0, contradicting sum g_i=h.
+- **h=3:** the deficit vector is a permutation of (1,0,0). The two zero-deficit parts have g_i=0, so all three outside vertices are assigned to the remaining part A, with s_A=1 and g_A=3. Then omega(H[O])<=s_A=1, so O is an independent triple. Since u_A=0, every vertex in A has kappa=1 and t=rho=0, and hence contributes exactly three edges to O: e_H(A,O)=3(r-2). Every vertex in B union C must have at least one neighbour in O, or it together with the independent triple O would form an independent 4-set. Thus e_H(B union C,O)>=2(r-1). As e_H(O)=0,
+
+  K_O = e_H(A union B union C,O)-3r >= 5r-8-3r=2r-8.
+
+  But K_A>=|A|=r-2, so K_O<=2r-2-K_A<=r. For r>=12 this contradicts 2r-8<=r. Therefore h=3 is impossible as well.
+
+Consequently the AES high-density terminal, if it exists, must have **h>=4** (equivalently m<=floor((3r-5)/2)). The remaining parameter window is still linear in r.
+
+Status: AES-to-three-part reduction, outside-neighbour transversal theorem, and h in {2,3} exclusion are **PROVED_CONDITIONAL**; global clean-pair nonextension remains **OPEN**.
