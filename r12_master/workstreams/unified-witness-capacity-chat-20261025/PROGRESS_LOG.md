@@ -30,3 +30,11 @@
 - Proved that the generic crossing-edge lower bound is exactly saturated by within-part edges in any four-partite witness branch. For Q33, the weighted crossing load is \(5460+49(24-\delta)\), whereas the generic lower bound is exactly 5460. Thus edge-charge summation alone cannot exclude the four-partite branch.
 - Updated the exact-arithmetic verifier with partite multiplicity, omission, label-row and edge-load checks. Replayed the new arithmetic independently in Python: NEW_PARTITE_LABEL_CAPACITY_ARITHMETIC_OK.
 - Minimal remaining gap is now more specific: a contradiction must either force a labelled restriction on the unused cross-part pair slots / shell rows in the four-partite branch, or prove a packing/stability exclusion for the non-four-partite 56-K4 system. No graph counterexample or full EG617 proof is claimed.
+
+
+## 2026-10-25 — shell-row multiplicity audit
+
+- Added the exact multiplicity parameter \(\mu(Q)=|\{b\in B:Q\cap T_b=\varnothing\}|\) for a common graph-theoretic witness. A fixed Q can represent at most \(\binom{\mu(Q)}2\le45\) row pairs; the regular-row degree cap does not give a smaller universal multiplicity bound.
+- For a selected exact-129 witness labelled b, the label anchors it directly only to pairs containing b, at most \(\mu(Q)-1\le9\) pairs. Arbitrary pair witnesses from the zero-excess theorem remain unlabelled, so they cannot be charged to the exact-129 component budget without a label-transfer lemma.
+- Re-recorded the hub-complete implication: if the two rows' missing-hub sets cover S, any common independent-four witness must hit all three hubs. The template counts 39/17/39/9 are pair certificates, not distinct Q sets.
+- The strict multiplicity audit closes a potential overcounting error but does not yield a contradiction. Status remains OPEN / NOT_CERTIFIED.
