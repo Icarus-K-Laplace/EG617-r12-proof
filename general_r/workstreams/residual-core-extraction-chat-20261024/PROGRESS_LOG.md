@@ -567,3 +567,18 @@ Classify the equality / small-defect Brouwer templates for non-target colors and
 - Brouwer floors + scalar audit: `e1628f77a9818ab85bf2de09169f8977156f69fb`
 - canonical state: `ffd70661b2487739cb92d6983d61cc71cb17371d`
 - open gaps: `424a0acab12d6e4366c4d6e2bbbf1b7f225fa3dc`
+### Round 10 follow-up — sharpened partial `TD(6,r)` block count
+
+The explicit partial-design bound no longer needs a simultaneous `x_i` good-color cutoff: the exact predecessor identity alone gives `sum_i z_i<=6r+1<=7r`. Fewer than `sqrt(r)/2` colors can have `z_i>14sqrt(r)`, so at least `r-1-sqrt(r)/2` colors are good. Each contributes at least `r-14sqrt(r)+1-|X|` full classes avoiding hubs.
+
+With the new `|X|<=74` bound, each good color contributes at least `r-14sqrt(r)-73` clean transversal blocks, and
+
+`(r-1-sqrt(r)/2)(r-14sqrt(r)-73) >= r^2-(29/2)r^(3/2)-67r`.
+
+Thus the explicit `a=6` high-stop geometry contains at least `r^2-14.5r^(3/2)-67r` pairwise-linear partial resolvable transversal blocks for `r>=1000`. This is a sharper necessary structure, not an exact TD or a contradiction.
+
+### GitHub commits for follow-up
+
+- theorem / improved TD bound: `57201f7dd23dca8a64ebfbbbace7ff38ca7317b4`
+- canonical state: pending update
+- open gaps: pending update
