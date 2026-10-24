@@ -74,7 +74,7 @@ In particular,
 
 This is the weighted obstruction bound from the K-line theorem. It identifies which defect edges are actually useful for blocking transversals.
 
-## Full-contract caveat from K's Local Slack Gap Theorem\n\nThe K branch has proved that for every vertex x and color i in a full hypothetical counterexample, the neighborhood slack satisfies s_i(x)>=r-1. Thus the premise 1<=s_i(x_0)<=r-2 used above cannot occur in the actual full-contract setting. The conditional block-host theorem remains mathematically valid, but it must not be used as if an aligned low-slack neighborhood exists. The current unconditional Case B route is ALIGNMENT_FREE_WITNESS_RIGIDITY.md, where the excess is measured on R=V\\X, not on a full neighborhood.\n\n## What remains open
+## Full-contract caveat from K's Local Slack Gap Theorem\n\nThe K branch has proved that for every vertex x and color i in a full hypothetical counterexample, the neighborhood slack satisfies s_i(x)>=r-1. Thus the premise 1<=s_i(x_0)<=r-2 used above cannot occur in the actual full-contract setting. The conditional block-host theorem remains mathematically valid, but it must not be used as if an aligned low-slack neighborhood exists. The current unconditional Case B route is ALIGNMENT_FREE_WITNESS_RIGIDITY.md, where the excess is measured on R=V minus X, not on a full neighborhood.\n\n## What remains open
 
 - The theorem is conditional on a common vertex x_0 in the tight transversal X and a low-slack color i != c there.
 - It does not force such a low-slack color to exist on X.
