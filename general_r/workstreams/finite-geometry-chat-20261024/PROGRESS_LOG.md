@@ -28,6 +28,7 @@
 - Audited the Kakeya bridge: three full size-q blocks in distinct directions with pairwise intersections at most one would already exceed a 2q-1 shell for q>=3. The missing premise is extracting these blocks from the actual compression obstruction.
 - Verified the exact publication citation for Blokhuis–Mazzocca: *Building Bridges: Between Mathematics and Computer Science*, Bolyai Society Mathematical Studies 19, Springer (2008), pp. 205–218, DOI 10.1007/978-3-540-85221-6_6.
 - Rechecked the Brouwer threshold in Popielarz–Sahasrabudhe–Snyder (JCTB 132, 2018), Theorem 2.2, including the hypothesis n>=2r+1.
+- Audited and corrected the set-difference notation in the Kakeya bridge note.
 
 ### Status
 
