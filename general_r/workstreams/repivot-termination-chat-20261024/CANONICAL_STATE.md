@@ -14,7 +14,7 @@ The symbolic backend setup additionally has
 - `alpha(F)<=4`;
 - `omega(F)<=r-1`.
 
-**Important audited distinction:** the global independence cap is `alpha(F)<=4`, not `alpha(F)<=3`. Arguments forbidding independent 4-sets in F are invalid and are not part of the canonical state.
+**Important audited distinction:** the global independence cap is `alpha(F)<=4`, not `alpha(F)<=3`. Arguments forbidding independent 4-sets in F are invalid and are not part of the canonical state. Independent 4-sets are forbidden only when all four vertices lie in a legal core H, where `alpha(H)<=3`.
 
 Hence `q<=3r-1`. For `r>=12`, regular missing degrees satisfy
 
@@ -112,7 +112,7 @@ and
 
 > **`Phi_3=(q,tau,zeta)`.**
 
-For the complete exact class `Y_{S,D}(p)` of multiplicity m containing the repivot owner y, the exchange is exact:
+For the complete exact class `Y_{S,D}(p)` of multiplicity m containing a repivot owner y, the exchange is exact:
 
 > **`zeta(y)=m-1`,**
 >
@@ -184,13 +184,76 @@ For a fixed fully decorated d2 shell class in the genuine `Phi_3`-flat distinct 
 
 - exact transition identity: after repivot through support `D_i`, another same-class support `D_j` has new missing degree `2-|D_i intersect D_j|`;
 - `a=0`: at most 3 distinct q-flat supports;
-- `a=1`: at most 12 distinct q-flat supports;
+- `a=1`: at most **9** distinct q-flat supports (sharpening the earlier coarse bound12);
 - for `a>=2`, matching number satisfies the valid weighted bound
   `nu(Q)(a-1)<=W<=4r+9-a`;
-- the `a=2` branch reduces to at most three zero-weight hubs plus a maximum-degree-three `(1,1)` target-support subgraph;
+- the `a=2` branch reduces to at most three zero-weight support vertices plus a maximum-degree-three `(1,1)` target-support subgraph;
 - a hereditary owner/support capacity inequality is available in its stated induced-set range.
 
 The stronger allowance-independent matching-three claim has been **retracted** because it incorrectly assumed `alpha(F)<=3`.
+
+### R15. Exact fourth coordinate eta / intersection-to-d1 transport — PROVED_SYMBOLIC
+
+Define
+
+`eta(p)=#{regular d1 shell owners x with (q_x,tau_x,zeta(x))=(q_p,tau_p,zeta(p))}`.
+
+Then
+
+> **`Phi_4=(q,tau,zeta,eta)`**
+
+is a bounded integer lexicographic potential.
+
+For one neutral-free distinct d2 common-S plateau, let `G_S` be the support-intersection graph. The exact pair-set exchange gives
+
+`d_i(y_j)=2-|D_i intersect D_j|`.
+
+Hence one-point overlaps become d1 plateau transitions. At a `Phi_4`-maximal pivot,
+
+> **`Delta(G_S)<=eta`.**
+
+Therefore the fixed class contains a pairwise-disjoint q-flat support subfamily of size at least
+
+> **`ceil(N/(eta+1))`.**
+
+So d2 overlap complexity is no longer independent: it is charged to the d1 plateau population.
+
+### R16. d1 scale-transfer inequality — PROVED_CONDITIONAL
+
+The eta population lies in at most five d1 shell classes. One class has size
+
+`N_1>=ceil(eta/5)`.
+
+In the neutral-free plateau slice its singleton core supports are distinct. If c is that d1 class allowance, then
+
+`N_1 c<=K+r+c`.
+
+Under the inherited hereditary core cap `K<=2r-2`,
+
+> **`(N_1-1)c<=3r-2`.**
+
+If `c=0`, row closure gives `N_1<=3`.
+
+Hence a linear eta population forces a linear d1 class with absolute-constant allowance.
+
+### R17. Allowance-2 Clean Pair-Exchange Orbit — PROVED_CONDITIONAL
+
+Inside any pairwise-disjoint q-flat `a=2` d2 subfamily, at most three supports contain a zero-weight endpoint. Every other support is a clean target K2 with endpoint weights `(1,1)`.
+
+If a clean support `D_i` is used for repivot, every other disjoint clean support `D_j` remains
+
+- d2;
+- q/tau/zeta-flat;
+- a target K2;
+- endpoint weights exactly `(1,1)` relative to the new shell pair `D_i`.
+
+Thus the large clean subsystem is repivot-closed under exchanging the distinguished shell pair with any clean core pair.
+
+Between two clean blocks the target cross graph is a matching of size0,1,or2. Consequently every scalable `a=2` branch contains a large rigid terminal of the form
+
+> **clean pair-exchange design + O(1) zero-containing special blocks.**
+
+This is the first genuinely scalable design terminal extracted from the backend.
 
 ## Explicit retractions from the canonical theory
 
@@ -206,23 +269,23 @@ Likewise `D2_DISTINCT_MATCHING_COLLAPSE.md` is marked `DISPROVED_AS_STATED`; its
 
 Current preferred potential:
 
-> **`Phi=(q,tau,zeta,...)`.**
+> **`Phi_4=(q,tau,zeta,eta)`.**
 
-The first three coordinates are genuine bounded integer coordinates; zeta has an exact update law on every exact class exchange.
+All four coordinates are genuine bounded integers. Eta controls support overlap by converting one-point d2 overlaps exactly into d1 plateau transitions.
 
-`Q2=sum kappa^2` remains an exact bounded fourth-coordinate candidate, but universal monotonicity is not proved.
+`Q2=sum kappa^2` remains an exact bounded fifth-coordinate candidate, but universal monotonicity is not proved.
 
 ## Current theorem level
 
 - d0: quotient-neutral.
-- d1: <=5 shell classes; final core-exchange rigidity open.
+- d1: <=5 shell classes; any linear eta concentration has bounded allowance; final d1 core-exchange rigidity remains open.
 - d2 shell geometry: <=6 support vertices / <=15 classes.
 - d2 plateau geometry: every non-fully-decorated class is O(1)-bounded in q-flat rows; only `S subset X` can scale.
 - repeated fully-decorated d2 classes: either improve zeta or collapse to the Balanced Two-Chamber family.
-- distinct fully-decorated d2 classes: `a=0,1` absolutely bounded; `a>=2` remains the principal scalable branch, with weighted matching/hereditary constraints.
+- distinct fully-decorated d2 classes: `a=0,1` absolutely bounded; d2 overlap is controlled by eta; `a=2` contains a large repivot-closed clean pair design; higher allowance obeys weighted matching compression.
 - d3: eliminated.
 - high endpoint: <=3 owners, finite bounded-complement skeleton.
 
 ## Unique next blocker
 
-**Fully-decorated distinct-support d2 plateau for allowance `a>=2`.** The repeated branch is already two-chamber. The valid next step is to close the `a=2` max-degree-three support graph or prove a general weighted matching/row-closure compression without assuming `alpha(F)<=3`.
+**Clean Pair Nonextension / bounded-allowance d1 terminal.** Prove that a sufficiently large repivot-closed clean K2 pair system with matching cross graphs and no independent 4-transversal is incompatible with the hereditary/clique/multicolor constraints, or else derive a fifth-coordinate improvement. In parallel this same theorem should absorb the bounded-allowance d1 concentration forced by eta.
