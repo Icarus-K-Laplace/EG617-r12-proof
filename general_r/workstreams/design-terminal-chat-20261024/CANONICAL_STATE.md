@@ -134,8 +134,8 @@ This section supersedes the earlier Hub Propagation subsection and any claim tha
 ### Valid new statements
 
 1. **Conditional ordinary-label cylinder lemma — PROVED_CONDITIONAL.** If every other ideal block contains an ordinary (B_k\setminus X) point for some (k\ne j), then a missing off-hub repeated pair (uv\subset B_j\setminus X) forces at least (r-1) non-target edits. The full hypothesis is recorded in `HUB_PROPAGATION_THEOREM.md`.
-2. **Target-alpha K6 exclusion — PROVED_ANALYTIC.** (\alpha(G_0)\le5) implies every non-target (G_i) is (K_6)-free. Thus a one-block star cover to a clean 5-clique ideal block is impossible: it would create a (K_6) in (G_i).
-3. **Defect propagation insight — PROVED_ANALYTIC locally.** A full one-block star cover to a size-5 ideal block must make that block non-clique in the actual non-target color, or it creates a forbidden K6; the resulting new defect must itself be covered. The global chain/cycle cost is still **OPEN**.
+2. **Target-alpha K6 exclusion — PROVED_ANALYTIC.** (\alpha(G_0)\le5) implies every non-target (G_i) is (K_6)-free. Thus a **single-endpoint full star** to a clean 5-clique ideal block is impossible: it would create a (K_6) in (G_i). A split two-endpoint star can avoid this local K6 obstruction.
+3. **Defect propagation insight — PROVED_CONDITIONAL.** A single-endpoint full star to a size-5 clique creates a forbidden K6, but split two-endpoint covers and multi-block barriers remain possible. The claim that every cheap cover creates a further defect is not proved.
 4. **Exact cross-pair budget — PROVED_SYMBOLIC.**
 [
 A=9r+5-\Delta_0+D-S_{\rm non},
@@ -157,3 +157,30 @@ The remaining task is a **defect-chain cost theorem**: every cover of a non-targ
 - D5: **OPEN**.
 
 Corrected assets: `HUB_PROPAGATION_THEOREM.md`, `MULTICOLOR_DEFECT_BUDGET.md`, `ROBUST_EXACT_CORE.md`, `NONEXTENSION_CLOSURE.md`, `PROGRESS_LOG.md`.
+
+
+## 2026-10-24 update — exact local closure and target-label blocker
+
+### New verified local gadget
+
+A two-block one-color gadget has one 6-block with a single missing pair, one 5-block with a single missing pair, and nine cross-block additions. It satisfies (\alpha(G_i)\le r) and (K_6)-freeness, with
+[
+R_i=2,\quad A_i=9,\quad s_i=7,\quad
+|E(G_i)\triangle E(Q_i)|=11.
+]
+Full construction and verification are in `HUB_PROPAGATION_THEOREM.md`. It is **not** a target-labelled terminal coloring, but it proves that the non-target local conditions alone do not force a third defect or (s_i>8).
+
+### Target-label obstruction
+
+If (w\in B_j) has a target cross-star to (B_k), and (x\in B_k) lies in the same non-target ideal block as (w), then (wx) is a target-colored edge missing from (G_i). In a candidate cover block, an ordinary (z_k\in B_k\setminus X) cannot be adjacent to either (w) or (x) in (G_i), since both (wz_k) and (xz_k) are target-colored. A one-block cover therefore needs an exceptional (B_k)-point, or else the cover must involve other selected blocks / a further target-internal deletion.
+
+A 9-edge two-coordinate barrier can handle one fixed blocked coordinate locally, so the global proof must count the full multi-block barrier network and pair ownership.
+
+### Current blocker (updated)
+
+The required theorem is a **target-labelled global cover inequality**. The previous simpler claim that K6-freeness forces every cheap cover to propagate indefinitely is too strong. The two-block gadget shows the local slack can be 7; the target labels are what may force higher cost or a global contradiction.
+
+- Full Hub Propagation: **OPEN**.
+- Exact-core route: **OPEN**.
+- Robust nonextension: **OPEN**.
+- No sufficiently-large-(r) closure is claimed.
