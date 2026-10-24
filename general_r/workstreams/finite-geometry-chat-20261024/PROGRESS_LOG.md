@@ -22,10 +22,30 @@
 - Proved near-line forcing for the deleted ambient vertex: for a low-slack color with defect count `s`, some `K_q` block has at most `2s` non-color-i edges to the deleted vertex, hence at least `q-2s` color-i attachments.
 - This upgrades the K-line from exact equality to a linear stability window.
 
+## 2026-10-24 — Round 3
+
+- Derived a new ambient edge floor by summing all `q^2`-restriction Turan floors over deleted vertices:
+
+  `e_i >= m_q+q`, where `m_q=q^2(q-1)/2`.
+
+- Defined ambient excess `a_i=e_i-(m_q+q)>=0` and proved the exact global mass identity
+
+  `sum_i a_i=m_q`.
+
+- Derived the exact local slack dictionary
+
+  `s_i(x)=q+a_i-d_i(x)`.
+
+- Hence the Brouwer coordinatization window `s_i(x)<=q-2` is exactly the relative high-degree condition
+
+  `d_i(x)>=a_i+2`.
+
+- Proved `sum_i s_i(x)=m_q` for every vertex and
+
+  `sum_x s_i(x)=q(q-1)+(q^2-1)a_i` for each color.
+
 ### Refined bottleneck
 
-The local structure is now strong whenever two colors satisfy `s<=q-2`. The unresolved global step is to force two colors into that window, or to show that the alternative (all but at most one color having slack at least `q-1`) creates a different contradiction/design terminal.
+The K-line has now reduced the extraction step to a multicolor degree/excess problem: force two pairs `(i,x)` at the same vertex with `d_i(x)>=a_i+2`, or prove that the failure of such pairs globally forces another rigid design terminal.
 
-### Next attack
-
-Study the exact local slack identity across colors and vertices, then combine it with edge-degree averaging and the low-slack partition theorem. For prime powers, if a large set of blocks/directions emerges, invoke finite-field incidence/Kakeya tools only after this coordinatization step.
+Simple one-color averaging cannot do this because the mean ambient excess is `q(q-1)/2`, much larger than a typical color degree. A genuinely multicolor compatibility inequality is required.
