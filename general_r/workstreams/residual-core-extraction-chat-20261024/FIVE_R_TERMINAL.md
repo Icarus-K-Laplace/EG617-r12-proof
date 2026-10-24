@@ -11,11 +11,13 @@ Define `T=T_r`.
 `T` satisfies
 
 - `|T|=5r+1`;
-- `alpha(T)<=5`;
+- **`alpha(T)=5`**;
 - `omega(T)<=r-1`;
 - every induced subgraph inherits the least-color cap;
 - `e(T)<=3r^2-2r`;
 - `T` contains no target-color `K_r`.
+
+The equality `alpha(T)=5` is automatic from the alpha-saturation theorem in `RECURRENCE_REPLACEMENT_POTENTIALS.md`: a canonical `R_a` cannot have alpha below a without violating its edge budget.
 
 This is an exact symbolic contract, not an analogy.
 
@@ -23,7 +25,7 @@ This is an exact symbolic contract, not an analogy.
 
 If `T` contains an induced `F` on `4r+1` vertices with `alpha(F)<=4`, then `omega(F)<=r-1` and the hereditary cap are automatic. `RESIDUAL_BRANCH_CLOSURE.md` then gives Branch A.
 
-Therefore an **irreducible** 5r+1 terminal (one from which Branch A cannot already be extracted) must satisfy the following equivalent design condition.
+Therefore an **irreducible** 5r+1 terminal (one from which Branch A cannot already be extracted) has the following equivalent design condition.
 
 ### Independent-5 hypergraph
 
@@ -35,15 +37,13 @@ Let `tau(I_5(T))` be its vertex-transversal number.
 
 Then irreducibility is equivalent to
 
-> `alpha(T)=5` and `tau(I_5(T))>=r+1`.
+> `tau(I_5(T))>=r+1`.
 
 ### Proof of equivalence
 
 If `tau(I_5(T))<=r`, extend a transversal to an `r`-vertex set `Z`. Then `T-Z` has exactly `4r+1` vertices and contains no independent 5-set, hence `alpha(T-Z)<=4`; this is Branch A.
 
 Conversely, if an induced `4r+1` graph `F=T-Z` has `alpha(F)<=4`, then its deleted `r`-set `Z` meets every independent 5-set of `T`. Thus `tau(I_5(T))<=r`.
-
-If `alpha(T)<=4`, every `4r+1` induced subgraph already gives Branch A, so an irreducible terminal must have `alpha(T)=5`.
 
 Status: `PROVED_SYMBOLIC`.
 
@@ -65,7 +65,7 @@ has at least
 
 `5r-d_T(v)>=4r+1`
 
-vertices. Because `alpha(T)<=5`, `alpha(A)<=4`: an independent 5-set in `A` together with `v` would be independent of size 6 in `T`.
+vertices. Because `alpha(T)=5`, `alpha(A)<=4`: an independent 5-set in `A` together with `v` would be independent of size 6 in `T`.
 
 Choose any `4r+1` vertices of `A`. The induced graph has alpha at most 4 and hence gives Branch A, contradiction.
 
@@ -106,7 +106,7 @@ This is a concrete block-incidence requirement on every degree-r row, not an aff
 Let `L=bar T`. Then an irreducible terminal satisfies
 
 - `|L|=5r+1`;
-- `omega(L)=5` (not merely `<=5`);
+- `omega(L)=5`;
 - `alpha(L)<=r-1`;
 - every `n`-vertex induced subgraph has at least `(r-1)p_r(n)` edges;
 - the family of `K_5` vertex sets in `L` has transversal number at least `r+1`;
