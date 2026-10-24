@@ -1,55 +1,45 @@
-# Stability Conjecture — corrected formulation
+# Stability Conjecture — F-002 update
 
 ## KILLED formulation
 
-The following naive target is false if “distance” means edge recolorings to one standard affine coloring:
+Edge-edit stability to one fixed standard affine coloring is false. On every affine plane, the leftover parallel class \(Q\) may be colored edge-by-edge arbitrarily while the \(r\) pure classes \(P_i\) preserve balance. This produces \(\Theta(r^3)\) variable edge labels.
 
-> every balanced coloring on `r^2-O(r)` or `r^2` vertices is `O(r)` / `o(r^2)` edits from the standard construction with one heavy color.
+## Correct invariant
 
-Reason: an affine plane supports arbitrary recoloring of every edge in the leftover parallel class `Q`, while preserving balance. There are `Theta(r^3)` such edges.
-
-## Correct invariant: partition skeleton
-
-The stability object should forget the exact colors on leftover edges and recover a system of near-orthogonal partitions.
-
-### Skeleton Stability v1
-
-For sufficiently large `r`, let `C` be a balanced `r`-coloring on at least `r^2-Cr` vertices. Then after deleting `O_C(r)` vertices (or another explicitly controlled defect set), there exist many colors `i` with a partition of almost all remaining vertices into `r+O_C(1)` color-`i` cliques of size `r+O_C(1)`, and the partitions are pairwise almost orthogonal.
-
-This is still conjectural.
+The target remains recovery of an orthogonal-partition skeleton, not the exact edge coloring of \(Q\).
 
 ### Skeleton Stability v2 — counterexample-specific
 
-A more relevant form avoids classifying all balanced `K_{r^2}` colorings:
+If a coloring of \(K_{r^2}\) is the restriction of a hypothetical balanced coloring of \(K_{r^2+1}\), then its color graphs and the new-point neighborhoods should jointly force enough near-orthogonal clique partitions to invoke a robust nonextension theorem.
 
-> If `C` is the restriction of a hypothetical balanced coloring of `K_{r^2+1}` obtained by deleting one vertex, then `C` contains an `r`-net skeleton (or at least enough of one to invoke a robust version of the matching-preclusion nonextension argument).
+This is still OPEN.
 
-The extension hypothesis is extra information and should be exploited; classifying arbitrary sharp examples is unnecessarily strong.
+## New quantitative evidence
 
-### Common-deletion perfection target
+For a fixed deleted vertex, the color slacks satisfy
+\[
+s_i\ge0,\qquad \sum_i s_i=r\binom r2.
+\]
+Taking the two smallest slacks and applying Füredi's partition lemma gives two \(r\)-partitions with
+\[
+\sum_{a,b}\binom{|P_a\cap Q_b|}{2}\le s_i+s_j\le r(r-1),
+\]
+and part-size variance at most \(4s_i,4s_j\). The two selected colors both have independence number exactly \(r\).
 
-The strongest clean sufficient theorem is:
+If two colors have the much stronger condition \(s_i,s_j\le r-2\), Brouwer's theorem yields an exact orthogonal pair. But the slack budget does not guarantee this hypothesis: the arbitrary-leftover affine family can have every \(s_i\ge r-1\).
 
-> In every hypothetical balanced coloring of `K_{r^2+1}`, there exists a vertex `x` such that, for every color `i`, `C_i-x` contains a spanning partition into `r` monochromatic `K_r` blocks.
+The collision bound itself is insufficient for matrix stability. For even \(r\), a matrix with entries two on an \(r/2\)-regular bipartite support and zero elsewhere has all row/column sums \(r\) and collision budget \(r^2/2\), yet no entries equal one. This is an abstract block-system obstruction, not a full coloring counterexample.
 
-If true, the perfect-sector classification and nonextension theorem finish Problem 617 immediately.
+## Neighborhood-sensitive stability
 
-## Turan-scale evidence
+The missing structure is not just a Turán partition. For each color \(i\), the new-point set \(A_i=N_i(x)\) must hit every \(K_r\) in \(H_i=\overline{G_i}\), equivalently \(H_i[V\setminus A_i]\) is \(K_r\)-free.
 
-For `n=r^2+1`, each color complement is `K_{r+1}`-free. The exact Turan lower bound on a color class is
+A new Brouwer/Kang–Pikhurko reduction proves that any color with \(s_i\le\binom r2\) must have \(|A_i|\ge3\) for \(r\ge4\). The cases \(3\le |A_i|<r\) remain open.
 
-`T_r = C(r+1,2)+(r-1)C(r,2) = r(r^2-r+2)/2`.
+## Status
 
-The total excess over these `r` minima is
-
-`C(r^2+1,2)-r*T_r = r^2(r-1)/2`.
-
-Hence the average excess per color is only `Theta(r^2)` while each color has `Theta(r^3)` edges. So on a relative scale most color classes are near their Turan extremum. This is evidence for partition stability, but standard fixed-`r` Turan stability cannot simply be quoted uniformly because here the forbidden clique size `r+1` grows with `n`.
-
-## Research direction
-
-Highest-value next lemma:
-
-> obtain an explicit growing-`r` stability theorem for a graph on `r^2+O(1)` vertices with `alpha<=r` and only `O(r^2)` edges above the Turan minimum, strong enough to produce an actual or near clique partition.
-
-Then combine two or more such partitions using edge-disjointness to force near orthogonality.
+- Fixed-edge-coloring stability: DISPROVED.
+- Quantitative two-color near-partition extraction: PROVED_CONDITIONAL.
+- Low-slack exact orthogonal pair: PROVED_CONDITIONAL.
+- Neighborhood-sensitive reconstruction: OPEN.
+- Robust nonextension and all-large-\(r\) theorem: OPEN.

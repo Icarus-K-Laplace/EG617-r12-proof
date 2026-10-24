@@ -2,9 +2,36 @@
 
 ## 2026-10-24 — F-001
 
-- Read the mother-branch affine-plane nonextension theorem and the original 1999 Erdős--Gyárfás construction.
-- Corrected the sharp-family picture: the unused affine parallel class can be colored edge-by-edge arbitrarily while each color retains one full parallel class and balance on `K_{r^2}`.
-- Killed naive `O(r)` / `o(r^2)` edge-edit stability to one standard affine coloring; the correct invariant is an orthogonal-partition skeleton.
-- Proved the grid matching-preclusion lemma: a set meeting every permutation transversal in an `r x r` grid has size at least `r`; equality (`r>=3`) is exactly a full row or full column.
-- Proved Theorem F4.1: **every** affine-skeleton sharp coloring, with arbitrary leftover-edge colors, is nonextendable to `r^2+1` for every `r>=3`.
-- Identified the new unique blocker: reconstruct the net/orthogonal-partition skeleton from an arbitrary hypothetical counterexample restriction.
+- Read the mother-branch affine-plane nonextension theorem and the original 1999 Erdős–Gyárfás construction.
+- Corrected the sharp-family picture: the unused affine parallel class can be colored edge-by-edge arbitrarily while each color retains one full parallel class and balance on \(K_{r^2}\).
+- Killed naive \(O(r)\) / \(o(r^2)\) edge-edit stability to one standard affine coloring; the correct invariant is an orthogonal-partition skeleton.
+- Proved the grid matching-preclusion lemma: a set meeting every permutation transversal in an \(r\times r\) grid has size at least \(r\); equality for \(r\ge3\) is exactly a full row or full column.
+- Proved the arbitrary-leftover affine-skeleton nonextension theorem for every \(r\ge3\).
+- Identified skeleton reconstruction as the remaining headline blocker.
+
+## 2026-10-24 — F-002: quantitative near-partitions and neighborhood slack
+
+### New proved assets
+
+1. **Exact slack budget.** On any \(r^2\)-point restriction, \(s_i=e(G_i)-r\binom r2\ge0\) and \(\sum_i s_i=r\binom r2\).
+2. **Two-color near-partition extraction.** Choose the two smallest slacks. Füredi's partition lemma gives two \(r\)-partitions with internal defect at most \(s_i,s_j\), cross-color defect at most \(2s_i,2s_j\), part-size variance at most \(4s_i,4s_j\), and intersection collision budget \(\sum_{a,b}\binom{M_{ab}}2\le s_i+s_j\le r(r-1)\).
+3. **Two selected colors have \(\alpha=r\).** Since the second-smallest slack is at most \(r^2/2\), it is below \(T_r(r^2)-T_{r-1}(r^2)=(r^2+r+2)/2\); neither selected color can have independence number at most \(r-1\).
+4. **New-point neighborhood condition.** For \(A_i=N_i(x)\), \(H_i=\overline{G_i}\), the complement induced on \(V\setminus A_i\) is \(K_r\)-free.
+5. **Low-slack neighborhood lemma.** For \(r\ge4\), any color with \(s_i\le\binom r2\) must have \(|A_i|\ge3\). The proof uses Brouwer's non-partite Turán bound and the Kang–Pikhurko classification in the \(d_i=2\) boundary case.
+
+### Red-team finding inside F
+
+The collision budget alone does not force orthogonality. For even \(r\), the matrix with entries two on an \(r/2\)-regular bipartite support and zero elsewhere has row/column sums \(r\), collision budget \(r^2/2\), and no entries equal to one. This is an abstract block-system obstruction, not a full coloring counterexample.
+
+### Still open
+
+- Reconstruct an exact \(r\)-net from arbitrary near-partitions plus the color-label constraints.
+- Close the high-slack branch using the new-point hitting condition.
+- Prove a robust nonextension theorem for approximate skeletons.
+- All-large-\(r\) and all-\(r\) Problem 617 remain OPEN.
+
+### External dependencies
+
+- Füredi partition lemma: Balogh et al., *Making \(K_{r+1}\)-free graphs \(r\)-partite*, CPC 30 (2021), DOI 10.1017/S0963548320000590.
+- Brouwer non-partite Turán bound: if a \(K_{q+1}\)-free graph on \(m\ge2q+1\) vertices is not \(q\)-partite, then \(e\le T_q(m)-\lfloor m/q\rfloor+1\).
+- Kang–Pikhurko extremal classification for equality in Brouwer's bound: *Maximum \(K_{r+1}\)-free graphs which are not \(r\)-partite*, Matematychni Studii 24 (2005), 12–20, DOI 10.30970/ms.24.1.12-20.

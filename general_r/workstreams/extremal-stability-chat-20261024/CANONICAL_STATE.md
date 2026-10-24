@@ -1,58 +1,48 @@
 # CHAT F — Canonical State
 
-Branch: `workstream/general-r-extremal-stability-20261024`
+Branch: workstream/general-r-extremal-stability-20261024
 
-Headline target: explain the `r^2` threshold through extremal/design rigidity and prove nonextension to `r^2+1` without using the residual-core / three-anchor / repivot backend.
+Headline target: explain the \(r^2\) threshold through extremal/design rigidity and prove nonextension to \(r^2+1\) without using residual-core, three-anchor, or repivot machinery.
 
-## Round F-001 status
+## Frozen result F4 — exact affine-skeleton nonextension
 
-### F1 — known sharpness: PARTIALLY CLOSED
+For every \(r\ge3\), an affine-plane skeleton on \(r^2\) points with \(r\) pure parallel classes \(P_1,\ldots,P_r\) and an arbitrarily colored leftover class \(Q\) cannot be extended by one new vertex. The proof is in NONEXTENSION_THEOREMS.md and is not repeated in this round.
 
-For every order `r` admitting an affine plane, there is a much larger sharp family on `r^2` points than the usual presentation “`r-1` parallel classes plus one color containing two classes”.
+## F-002 — proved reconstruction assets
 
-Take the `r+1` parallel classes `P_1,...,P_r,Q`. For each color `i`, color every edge lying on a line of `P_i` with color `i`. Every remaining edge lies on a line of `Q`; color those edges **arbitrarily** with any of the `r` colors.
+### Exact slack accounting
 
-Every color still contains the full partition `P_i` into `r` monochromatic `K_r` blocks. Hence every `(r+1)`-set contains a color-`i` edge, for every `i`. Therefore every such assignment is balanced on `K_{r^2}`.
+For a fixed deleted vertex \(x\), let \(G_i\) be the color-\(i\) graph on the remaining \(r^2\) points and \(s_i=e(G_i)-r\binom r2\). Then \(s_i\ge0\) and \(\sum_i s_i=r\binom r2\).
 
-If `m_0=r*C(r,2)=r^2(r-1)/2` is the number of edges in one parallel class, this gives `r^{m_0}` labeled leftover-edge assignments before quotienting by isomorphism.
+### Quantitative two-color near-partition theorem
 
-Consequence: edge-edit stability to one “standard” affine coloring at scale `O(r)` or `o(r^2)` is false. The correct stability object is the **orthogonal partition skeleton**, not the exact leftover-edge coloring.
+Choose the two smallest slacks. Füredi's partition lemma gives two partitions into \(r\) parts, with internal defects at most \(s_i,s_j\), cross-color defects at most \(2s_i,2s_j\), and intersection matrix \(M\) satisfying
+\[
+\sum_{a,b}\binom{M_{ab}}2\le s_i+s_j\le r(r-1).
+\]
+Each selected slack is at most \(r^2/2\), so both selected colors have independence number exactly \(r\).
 
-### F2 — local regularity: OPEN
+### Low-slack exact orthogonal-pair theorem
 
-No theorem yet forces all color-degree vectors near the affine vector. Exact affine examples already have large flexibility in edge allocation on the leftover class.
+If two colors happen to satisfy \(s_i,s_j\le r-2\), Brouwer's theorem makes both complements \(r\)-partite. Edge-disjointness forces their clique partitions to be exactly orthogonal, with every intersection size one. This gives two orthogonal partitions, not yet an \(r\)-net.
 
-### F3 — stability: REFORMULATED
+### New-point neighborhood constraint
 
-The useful target is now:
+For \(A_i=N_i(x)\), \(B_i=V\setminus A_i\), and \(H_i=\overline{G_i}\), \(H_i[B_i]\) is \(K_r\)-free. The low-slack neighborhood lemma shows that, for \(r\ge4\), any color with \(s_i\le\binom r2\) must have \(|A_i|\ge3\). This uses Brouwer's theorem and the Kang–Pikhurko equality classification.
 
-> Reconstruct `r` pairwise orthogonal spanning `r`-clique partitions (an `r`-net skeleton), possibly after deleting `O(r)` exceptional vertices/edges, rather than approximate a particular edge-coloring.
+## Important limitation
 
-A particularly strong sufficient statement for Problem 617 would be:
+The collision budget does not force the intersection matrix close to the all-ones matrix: explicit abstract matrices with entries 0 and 2 satisfy the budget. The exact affine-skeleton theorem cannot be applied to approximate partitions without a robust transversal-hitting theorem.
 
-> **Common-deletion perfection target.** In a hypothetical balanced coloring of `K_{r^2+1}`, there exists a vertex `x` such that for every color, the restriction to `V\{x}` contains a spanning partition into `r` monochromatic `K_r` blocks.
+## Current status
 
-The present round does not prove this.
+- F1 known sharp family: PARTIALLY CLOSED; affine-plane orders only.
+- F2 local regularity: OPEN.
+- F3 orthogonal-skeleton stability: PARTIAL PROGRESS, headline theorem OPEN.
+- F4 exact affine-skeleton nonextension: PROVED.
+- F5 robust nonextension for arbitrary approximate skeletons: OPEN.
+- F6 all-\(r\) Problem 617: OPEN.
 
-### F4 — canonical design nonextension: PROVED for the full affine-skeleton family
+## Unique blocker
 
-A new theorem proves that the entire arbitrary-leftover family above is nonextendable for every `r>=3`; the proof does **not** require two pure colors.
-
-Core mechanism: for a hypothetical new vertex `x`, each incident color class `A_i=N_i(x)` must hit every permutation transversal of the orthogonal pair `(P_i,Q)`. Minimum matching-preclusion in `K_{r,r}` gives `|A_i|>=r`; summing forces equality for every color. Equality blockers are exactly one `P_i`-line or one `Q`-line. A `Q`-line blocker for color `i` further forces every edge on every other `Q`-line to have color `i`. Hence at most one color can use a `Q`-line blocker; at most one color can use a `P_i`-line blocker because two lines from different `P_i` classes intersect. For `r>=3` this cannot accommodate all `r` colors.
-
-Full proof: `NONEXTENSION_THEOREMS.md`.
-
-### F5/F6 — all-large/all-r: OPEN
-
-The missing bridge is a stability/reconstruction theorem showing that an arbitrary hypothetical extremal restriction contains the affine/net skeleton. The nonextension side is no longer the main blocker.
-
-## Prime-power versus arbitrary r
-
-- Affine planes exist for every prime-power order, so the sharp family and the proved nonextension theorem apply there.
-- Affine planes are known not to exist for some composite orders (notably 6 and 10); no finite affine/projective plane is known at any non-prime-power order in general.
-- The abstract perfect-sector route uses only orthogonal partitions / nets plus the classical deficiency-one completion theorem; it does not require field coordinates.
-- Existence of balanced `K_{r^2}` colorings outside the net/perfect sector for arbitrary non-prime-power `r` remains a separate question.
-
-## Unique largest blocker
-
-> **Skeleton reconstruction:** prove that every `r^2` restriction arising from a hypothetical `K_{r^2+1}` counterexample contains enough orthogonal `r`-clique partitions to enter the proved nonextension theorem.
+Use the color labels and the new-point hitting condition to upgrade the quantitative two-color near-partitions into enough exact orthogonal partitions, or prove that every distributed-defect alternative already forces an \((r+1)\)-set missing a color.
