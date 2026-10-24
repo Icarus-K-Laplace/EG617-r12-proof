@@ -137,3 +137,15 @@ Added R12_TRANSVERSAL_BOUNDARY_CLASSIFICATION.md and verify_transversal_boundary
 - E408 Q33: the v=31, m=56 boundary must satisfy 2*delta+epsilon_U>=8, jointly with delta+epsilon_U<=17.
 - Exact arithmetic regression checks passed for all admissible low-budget integer profiles.
 - These are boundary-profile exclusions only. E407 Q32, E408 Q32/Q33, the T61 terminal, and the original K145 proof remain OPEN / NOT_CERTIFIED.
+
+
+## Round-6 update — E408 Q33 four-partite S0=10 excluded
+
+Added R12_E408_Q33_FOUR_PARTITE_S0_10_EXCLUSION.md and verify_e408_q33_four_partite_s0_10.py.
+
+Under the four-partite L hypothesis at the v=31, m=56 boundary, the degree ledger with S0=epsilon_U+2*delta=10 forces a unique candidate pattern after the zero-excess D-capacity and large-part capacity constraints: six W vertices with N_U=D, nine with a full large part (three each for A/B/C), and one size-10 hitting set T*. The T* cases s=|T*∩D|=0,1,2 are all impossible:
+- s=0 forces each large-part intersection at most three, total at most nine;
+- s=1 forces (3,3,3), then 27 selected cross-part pairs cannot be accounted for by at most six unselected-D double-hit pairs, at most nine selected-D pairs, and delta<=5 extra L edges;
+- s=2 forces (3,3,2), requiring at least seven extra L edges while delta<=5.
+
+Therefore S0>=11 in the four-partite branch. Exact integer-pattern audit passed. The non-four-partite E408 Q33 branch remains open; E408 Q32 remains out of scope.
