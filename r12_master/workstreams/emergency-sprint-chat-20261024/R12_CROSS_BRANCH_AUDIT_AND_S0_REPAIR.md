@@ -109,3 +109,8 @@ under the stated four-partite E408 Q33 minimum-support contract.
 This repairs the conclusion of the sibling S0=10 note without using its invalid “non-Q pairs must be extra L-edges” assertions. The repaired proof uses the stronger universal fact that every independent 4-set must be hit by every outside vertex.
 
 It is still conditional on the four-partite minimum-support contract. The non-four-partite E408 Q33 branch remains open. E408 Q32's 285-edge/excess-six core is not covered. E407 Q32's common-core completion remains open. The T61-to-K145 reduction and the original theorem remain OPEN / NOT_CERTIFIED.
+
+
+## Subsequent strengthening (2026-10-25)
+
+The later file `R12_E408_Q33_FOUR_PARTITE_S0_11_EXCLUSION.md` excludes S0=11 as well as S0=10, giving S0>=12 under the same four-partite minimum-support contract. Separately, `R12_E407_TRANSVERSAL_EXCESS_BOUND.md` strengthens the E407 v=29/49-witness bound to epsilon_U+2delta>=9 and delta>=3 without any four-partite assumption. This audit file records the earlier repaired S0=10 step; use the two later theorem files for the stronger current statements.
