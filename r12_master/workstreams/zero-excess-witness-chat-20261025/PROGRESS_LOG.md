@@ -71,3 +71,10 @@ Commits:
 - \`R12_WITNESS_OVERLAP_CAPACITY.md\` (initial): \`c49e9b83a4888ae8573e3657af90687f5e7c7459\`.
 - \`R12_WITNESS_OVERLAP_CAPACITY.md\` (corrected arithmetic): \`21a11a95de35cba62f45c07409e58b3f88cbb482\`.
 
+
+
+### Arithmetic replay asset
+
+Added \`verify_zero_excess_arithmetic.py\`. It checks every \((E,k,t)\) integer row in the Turán comparison, verifies the gap decreases to the listed endpoint, and checks the exact scalar witness-overlap lower/upper bounds. It explicitly states that this is arithmetic verification only, not a graph-search certificate.
+
+Commit: \`0cabc72f444ad64a215c1a4e30d99ff00bbeaae2\`.
