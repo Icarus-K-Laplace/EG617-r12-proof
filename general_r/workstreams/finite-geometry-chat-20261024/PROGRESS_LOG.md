@@ -158,3 +158,11 @@ The specified `LITERATURE_AUDIT.md` did not exist on this branch at the start of
 - Every root must fully c-cover one of these blocks; the capacities (large block: at most one root; small block: at most two) contradict |X|=2q+2.
 - Therefore sum b_i<=C(q,2)-1 for q>=4, improving the guaranteed net to ceil((q+1)/2) directions.
 - For q=6 (r=7), four directions imply two MOLS(6), ruled out by Euler–Tarry. Case B is closed; Case A remains open.
+
+
+## 2026-10-24 — Round 9: weighted blocker inequality and proof audit
+
+- Imported J.W12 as K.RM9: every root that fully c-covers no block must satisfy a root-dependent weighted blocker sum W_x>=1.
+- The random selection is over each root's nonneighbor candidate set A_j(x), so each cross-block edge contributes 1/(a_i a_j). This is the correct conditional blocker inequality.
+- Withdrew K.RM8 in commit 4e978444c4c81c5b323c1430486a8024b5b5ab0c after finding that its random transversal incorrectly sampled from entire blocks.
+- No quantitative budget beyond d>=1 is claimed. The r=7 Case B closure remains valid; the full r=7 theorem and Case A remain open.
