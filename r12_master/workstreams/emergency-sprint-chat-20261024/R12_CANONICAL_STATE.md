@@ -94,3 +94,22 @@ At the remaining boundary sizes it yields:
 - E408 Q33/d3, β=0, eight exact-129 colors, v=31: 2R+E_U≥7, while R+E_U≤17; in particular R≥2.
 
 Here R counts complement edges not covered by the selected witness K4s, and E_U is the total core degree excess on U. These are stricter necessary conditions, not contradictions. E408 Q32 remains outside the contract. The headline theorem remains OPEN / NOT_CERTIFIED.
+
+
+## Round 5 — cross-branch proof audit and repaired E408 Q33 four-partite boundary (2026-10-25)
+
+Live sibling heads refreshed read-only:
+- emergency sprint: ad56a91c644458cb16dd590b7a4ed0e800978a81;
+- ultimate closure: 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40;
+- witness packing: 5d0e3ceab7895be1a947e46853f92bb84477f4e5;
+- zero-excess witness: 98167ec779850a2ff57b1ec7113f939df42c35f4;
+- general-r architecture: a922c4d7646eb8d0087bde8547562c8aace02ee2;
+- general-r asymptotic: fa6a5f2b8b5d2a0fe821d50a4421884a69dc5366.
+
+Added R12_CROSS_BRANCH_AUDIT_AND_S0_REPAIR.md (commit 5b40022ac171cc568cea6d4f034bc66ce3f8ef3b). It identifies and repairs two invalid counting steps in the sibling S0=10 proof:
+- For s=1, the proof must not classify every selected non-Q pair as an extra L-edge; such pairs can be H-edges. The repaired count uses at most nine selected non-Q pairs (the unused matchings), giving 27 <= 6+9+9=24, contradiction.
+- For s=2, the proof must not infer seven extra L-edges from seven selected non-Q pairs. The repaired argument derives that no extra L-edge touches the unselected large-part sets, then finds a triangle in L[A0,B0,C0]. Adding any unselected d in D gives an independent 4-set disjoint from the exceptional neighborhood T*, contradicting alpha(H)<=4.
+
+Therefore the four-partite E408 Q33 minimum-support contract still yields S0=epsilon_U+2delta>=11, now with a repaired argument. This remains conditional on the four-partite minimum-support contract; non-four-partite E408 Q33 remains OPEN.
+
+The cross-branch audit also corrected the witness-union applications: E407 C/D/E does not have an established N=56 family with exactly seven exact-129 colors, and E408 beta>0 does not alone give N>=64. The core-capacity and witness-hitting inequalities themselves remain PROVED. E407 Q32, E408 Q32 (285-edge core), E408 Q33 non-four-partite branch, the T61-to-K145 bridge, and EG617(r=12) remain OPEN / NOT_CERTIFIED.
