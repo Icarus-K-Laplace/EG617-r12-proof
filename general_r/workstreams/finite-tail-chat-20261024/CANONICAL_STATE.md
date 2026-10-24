@@ -253,3 +253,8 @@ Round-2 implementation fingerprints:
 ### Source-proof scope note
 
 The admission registry freezes exact source commits, paths, and blob hashes and verifies their parameter statements/ranges. It does not claim that this finite-tail workstream independently reproved every upstream analytic theorem. Each source record has a `local_audit_status` distinguishing source-scope verification from proof reproduction; only the D1 integer consequence and toy symmetry fixture received separate local arithmetic/witness checks here.
+
+
+### Front-recurrence source nuance
+
+The matrix now records `FRONT_RECURRENCE_TERMINATION` and `LOW_ORDER_CUTOFF_THEOREMS` as additional source entries. The potential-function theorem is valid for r>3 conditional on a finite sound seed/cutoff package; M_r(2), M_r(3) cutoffs are proved for r>=6 inside the abstract recurrence contract. The r=4,5 examples refute extension of the abstract M_r(2) cutoff only, not EG617(r). The complete original-graph bridge, seed-floor package, and all-state outer-budget dominance remain OPEN.
