@@ -28,7 +28,7 @@
 ## 2026-10-24 — Round 4: tight-case color overlap
 
 - In the matching-number-two case, the 2r private witnesses use only r-1 possible colors other than c. Pigeonhole forces at least three private witnesses with one common designated color for r>=3.
-- Since the hypergraph matching number is two, those three same-color witnesses cannot be pairwise disjoint; at least two of their residual (r-1)-sets intersect in R=V\\X.
+- Since the hypergraph matching number is two, those three same-color witnesses cannot be pairwise disjoint; at least two of their residual (r-1)-sets intersect in R, the vertex set V minus X.
 - Proved the general overlap-edge lemma: if two independent r-sets in one color intersect in h points, there are at least r-h same-color edges between their set differences.
 - The overlap is useful structure but is not an affine-line theorem; no pairwise intersection upper bound or direction family follows yet.
 
