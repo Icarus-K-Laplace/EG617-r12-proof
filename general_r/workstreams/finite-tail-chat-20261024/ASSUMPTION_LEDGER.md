@@ -148,7 +148,7 @@ The machine-readable registry distinguishes **source theorem applicability** fro
 ### D1_SHELL_CLASS_BOUND source
 
 - Source: branch `workstream/general-r-repivot-termination-20261024`, commit `35fec3eaaab70b31e10b41065634b35b02a28e6`, file `general_r/workstreams/repivot-termination-chat-20261024/ENDPOINT_CLASSIFICATION.md`.
-- Range: `r>=12), conditional on A+B / RC + broad ANCHOR_K8.
+- Range: `r>=12`, conditional on A+B / RC + broad ANCHOR_K8.
 - Conclusion: at most five distinct d1 shell classes. This does not bound owner multiplicity within a class and does not close d1 nonextension.
 
 ### Additional source-premise IDs
@@ -160,3 +160,12 @@ The machine-readable registry distinguishes **source theorem applicability** fro
 - `R12_CONTEXTUAL_RECURRENCE_BRIDGE: OPEN` — the historical r=12 arithmetic replay does not close the graph-level bridge.
 
 The parameter-admission matrix explicitly keeps all of these distinctions. No source in this ledger currently certifies an unconditional asymptotic threshold `r0); `ASYMPTOTIC_R0=NOT_AVAILABLE`.
+
+
+## Machine-readable source-premise status additions
+
+- EXTRACTED_4R_PLUS_1_RESIDUAL: OPEN
+- NEAR_ANCHOR_TERMINAL_CONTRACT: CONDITIONAL
+- CORE_CONTRACT: CONDITIONAL_ON_RC
+- THREE_PAIRWISE_NONADJACENT_DEGREE_R_ANCHORS: CONDITIONAL
+- R12_CONTEXTUAL_RECURRENCE_BRIDGE: OPEN
