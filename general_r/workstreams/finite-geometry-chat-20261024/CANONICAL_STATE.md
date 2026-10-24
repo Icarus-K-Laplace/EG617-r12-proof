@@ -142,3 +142,6 @@ Theorem K.RM5 is proved in RESIDUAL_MULTINET_EXTRACTION.md (commit eb238d01b9aeb
 The three zero-excess colors give a 3-net / Latin square of order 6. The omitted color c has exactly 75 edges on R and is a union of seven c-cliques of sizes 6,5,5,5,5,5,5. The 6-clique is a full transversal of the three directions; the six 5-cliques are near-transversals. Each high color is at the Kang–Pikhurko exceptional-star threshold.
 
 This is an exact finite incidence kernel for Case B at r=7, not a contradiction. The partition into one transversal and six near-transversals does not itself give an orthogonal mate, so the Euler–Tarry theorem alone does not exclude it.
+
+
+Audit correction for r=7: the design-level subkernel from K.RM5 is realizable. K branch file Q6_NEAR_TRANSVERSAL_OBSTRUCTION_AUDIT.md (commit 825c48ae4e5cc47e7feb6abab6337de62db6fd6c) gives an explicit order-6 Latin square partitioned into one full transversal and six disjoint near-transversals. This is not a full graph-level EG617 coloring, but it proves that the net-plus-clique-size pattern alone cannot be ruled out by the nonexistence of an orthogonal mate. The missing constraints are the three exceptional-star color graphs and root/witness incidence.
