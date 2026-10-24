@@ -83,18 +83,19 @@ These applications are conditional on the retained T61 contracts and the exact-1
 There are at least seven exact-129 colors because the residual has 1423 = 11·129 + 4 non-target edges.
 
 - **Templates A/B:** at least seven no-S components per exact-129 color. With exactly seven exact-129 colors, N≥49, so v≥29. With at least eight exact-129 colors, N≥56, so v≥31.
-- **Templates C/D/E:** at least eight no-S components per exact-129 color. With exactly seven exact-129 colors, N≥56, so v≥31; the eight disjoint witnesses from one color strengthen this to v≥32. With at least eight exact-129 colors, N≥64, so v≥33.
+- **All templates A–E, safe count:** at least seven no-S components per exact-129 color. The core part Q of a component containing pivot p is still an independent 4-set in H, so it contributes to the total Q-family even though it is not B-labelled. With exactly seven exact-129 colors, N≥49 and v≥29; with at least eight exact-129 colors, N≥56 and v≥31.
+- **Audit restriction:** the stronger claim of eight no-S components per color in templates C/D/E is not certified by the current contracts. An edge among two S-vertices permits them to share a non-target K5 but does not force that co-location. Do not use N≥56 (or v≥32) for seven-color C/D/E without a separate color-specific lemma.
 
-Thus the only A/B union-size boundary not removed by this theorem is the seven-exact-color case v=29. For C/D/E the remaining seven-exact-color boundary is v=32. These are necessary-structure reductions, not terminal contradictions.
+Thus the core-capacity theorem alone leaves the seven-exact-color boundary v=29 for every E407 template. With at least eight exact-129 colors it gives v≥31. These are necessary-structure reductions, not terminal contradictions.
 
 ### E408 Q33/d3
 
 There are at least eight exact-129 colors because the residual has 1422 = 11·129 + 3 non-target edges. Let β = e(M[S]).
 
 - If β=0, at most three exact-129 K₅ components can meet S, so at least seven per color are disjoint from S. Hence N≥56 and v≥31.
-- If β≥1, at most two such components can meet S, so at least eight per color are disjoint from S. Hence N≥64 and v≥33.
+- If β≥1, the safe universal count remains at least seven no-S components per color; β>0 alone does not force two S-vertices to co-locate in one component. Thus N≥56 and v≥31 still hold from eight exact-129 colors, but N≥64/v≥33 is not established.
 
-Consequently, the unresolved union-size boundary in this application is β=0, v=31. This does not exclude the seven-block near-Latin completion or prove the remaining boundary impossible.
+Consequently, the core-capacity boundary is v=31 for E408 Q33 regardless of β. This does not exclude the seven-block near-Latin completion or prove the remaining boundary impossible.
 
 ## 5. Witness-hitting inequality
 
@@ -136,19 +137,18 @@ Since Σd_R(x)=2R, this implies 14R+7E_U≥28, or
 ```
 The second inequality is the core-capacity bound C₂₉=310 with e(L)=294+R.
 
-**E407 C/D/E, seven exact colors, v=32.** Here N=56, r_x≤7 and Σr_x=224 across 32 vertices, so every r_x=7. The witness-hitting inequality yields
+**Conditional algebra only (not an E407 C/D/E application).** If some separately certified argument supplies N=56 pairwise-linear witnesses on v=32 vertices with at most seven occurrences per vertex, then r_x=7 for every x and the witness-hitting inequality gives
 ```
-14R + 7E_U ≥ 392,
 2R + E_U ≥ 56,     R + E_U ≤ 39.
 ```
-As E_U≤4, at least 26 complement edges remain uncovered by the 56 witness K₄s.
+This would force R≥26, but the present exact-129 count contract does not establish N=56 for seven-color E407 C/D/E, so this conditional calculation is not used to shrink that terminal.
 
-**E408 Q33/d3, β=0, eight exact colors, v=31.** Here N=56, r_x≤8 and Σr_x=224. The minimum possible square sum is 1624, so
+**E408 Q33/d3, eight exact colors, v=31.** Here N=56, r_x≤8 and Σr_x=224. The minimum possible square sum is 1624, so
 ```
 Σ r_x d_R(x) + Σ r_x ε_x ≥ 56,
 2R + E_U ≥ 7,     R + E_U ≤ 17.
 ```
-As E_U≤4, at least two complement edges remain uncovered by the 56 witness K₄s.
+As E_U≤4, at least two complement edges remain uncovered by the 56 witness K₄s. This calculation is valid for all β, using the safe seven-witness-per-color floor.
 
 These are sharper necessary conditions on the remaining boundary kernels, not contradictions.
 
@@ -162,8 +162,13 @@ These are sharper necessary conditions on the remaining boundary kernels, not co
 ## 7. Immediate next attack
 
 Attack the three sharpened boundary kernels separately:
-1. E407 A/B, seven exact-129 colors, v=29;
-2. E407 C/D/E, seven exact-129 colors, v=32;
-3. E408 Q33, β=0, eight exact-129 colors, v=31.
+1. E407, any template, exactly seven exact-129 colors, v=29;
+2. E407, at least eight exact-129 colors, v≥31;
+3. E408 Q33, eight exact-129 colors, v=31 for any β.
 
 For each, combine the near-Turán structure of the complement of H[U] with per-color parallel classes and labelled shell-row incidences. Do not assume the witness blocks form a complete transversal design unless equality in the relevant edge cap is actually forced.
+
+
+## Cross-branch audit correction (2026-10-25)
+
+The latest ultimate-closure and witness-packing sibling heads were refreshed before using this note. Their audit correctly warns that `omega(M[S])<=2` does not imply that an S-edge's endpoints lie in the same non-target K5 component. The earlier beta-sensitive claim “β≥1 gives eight no-S components per color” is withdrawn here. The core-capacity and witness-hitting theorems remain valid; only the unsupported E407 C/D/E and E408 β>0 applications are removed. See `R12_CROSS_BRANCH_AUDIT_AND_S0_REPAIR.md`.
