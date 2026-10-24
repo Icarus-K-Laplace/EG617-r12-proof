@@ -42,3 +42,11 @@
 - Strengthened the low-slack normal form: the two rows containing no full K5 component have gadget portions whose union is all of U_C. Their complements are disjoint cliques of sizes 5+5, 5+4, or (for r_i=3) 5+3 / 4+4. If a is the overlap of the two gadget portions, and e,t count the additional gadget/component incidences in component rows, then the exact budget is \(r_i(C)=a+e+t\) with \(1\le a\le3\) and \(e+t\le2\).
 - Derived a duplicate-budget threshold: \(k_C=\#\{i:r_i(C)\le3\}\ge\max(0,7-\lfloor(55-P_C)/3\rfloor)\). Thus P_C thresholds 35,38,41,44,47,50,53 guarantee at least 1,2,3,4,5,6,7 low-slack blocks respectively.
 - Explicitly recorded the limitation: \(\sum_{C:s_C=0}P_C\ge69\) does not by itself force any one exact color to have P_C>=35, so these branch filters do not close the global terminal.
+
+## 2026-10-25 — extended exact-129 row theorem
+
+- Proved and committed Theorem 10.1 for every exact-129 color/block with \(r_i(C)\le5\). It strengthens the earlier \(r_i\le3\) normal form and explicitly handles the critical \(r_i=5\) boundary: one no-component row or a double-component row would force at least 67 incidences, exceeding \(61+r_i\le66\).
+- The two no-component rows cannot jointly cover a K5 component when \(r_i\le5\); doing so adds five component incidences to the baseline 62, again forcing at least 67. Pairwise blocker compatibility therefore forces their gadget portions to cover all 11 gadget vertices.
+- Derived the exact charge identity \(r_i=a+e_i+t_i\) and the complete complement-clique size profiles for \(a=1,\ldots,5\).
+- Proved Corollary 10.2: if \(r_i+r_j\le6\), the ten unique component representatives form a forced C-colored matching between the two blocks. A color with \(P_C\ge36\) necessarily has at least one such pair.
+- Scope remains conditional and E408 Q33 remains OPEN / NOT_CERTIFIED. The aggregate duplicate bound does not yet force \(P_C\ge36\) for any single exact-129 color.
