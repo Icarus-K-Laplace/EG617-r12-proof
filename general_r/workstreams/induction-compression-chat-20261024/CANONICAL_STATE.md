@@ -80,3 +80,16 @@ New proof asset: ALIGNMENT_FREE_WITNESS_RIGIDITY.md.
 Important cross-line correction: K's Local Slack Gap Theorem proves that under the full hypothetical-counterexample contract, every neighborhood slack s_i(x)>=r-1. Thus the earlier J/K bridge requiring s_i(x_0)<=r-2 at x_0 in X has an impossible premise in a full counterexample. It remains a valid conditional lemma, but the alignment-free residual theorem above is the live route: its excess b_i is measured on R, not on a full neighborhood V\\{x}.
 
 Current verdict: no full graph-level contradiction, no guaranteed fixed merge, and no not-P(r) => not-P(r-1) theorem yet.
+
+
+## Round 2 — residual multinet extraction
+
+The strongest new geometry-facing result is Theorem J.W5 in ALIGNMENT_FREE_WITNESS_RIGIDITY.md (source commit 009a546cf0d66e4060a601bba168674214e7ac6c).
+
+In Case B, q=r-1 and R=V\\X has q² vertices. The residual excess budget is sum_{i!=c} b_i<=C(q,2), so at least ceil(q/2) of the q colors i!=c have b_i<=q-2. For q>=3, Brouwer's threshold gives q-clique partitions on R for each such color; any two partitions are orthogonal. Thus the tight-transversal case unconditionally extracts a q-net with at least ceil(q/2) directions.
+
+This does not rely on the now-vacuous neighborhood-low-slack bridge. Residual excess b_i on R is distinct from full-neighborhood slack s_i(x), which K proves is always >=r-1.
+
+Exact design interface: N(q)>=ceil(q/2)-2 MOLS(q). For r=11, Case B implies three MOLS(10), an open question, not a contradiction. If the omitted color c also has alpha(G_c[R])<=q, the budget forces a full affine plane of order q; extension by X remains open.
+
+Current theorem boundary unchanged: Case A is not closed, Case B is not contradicted, no fixed merge is guaranteed, and not-P(r) => not-P(r-1) remains unproved.
