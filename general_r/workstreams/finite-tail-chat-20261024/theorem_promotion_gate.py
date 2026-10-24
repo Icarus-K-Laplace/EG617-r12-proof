@@ -69,6 +69,20 @@ def gate(certificate_path: Path, ledger_path: Path) -> dict:
     if verified.get("status") != "PASS" or verified.get("module_id") != module_id:
         raise AssertionError("independent verifier did not certify the expected module")
     r = instance["r"]
+    profile = instance.get("profile", "not-applicable")
+    admission_verifier = ROOT / "parameter_admission_verifier.py"
+    admission_matrix = ROOT / "PARAMETER_ADMISSION_MATRIX.json"
+    admission_command = [
+        sys.executable, str(admission_verifier), str(admission_matrix),
+        "--query-r", str(r), "--module", module_id,
+    ]
+    if profile != "not-applicable":
+        admission_command.extend(["--profile", profile])
+    admission_run = subprocess.run(
+        admission_command, check=True, capture_output=True, text=True,
+    )
+    admission_payload = json.loads(admission_run.stdout)
+    admission = admission_payload["query"]
     ledger = ledger_path.read_text(encoding="utf-8")
     assumption_status = {}
     for assumption_id in instance["assumption_ids"]:
@@ -78,7 +92,7 @@ def gate(certificate_path: Path, ledger_path: Path) -> dict:
             "proved_for_this_r": status_applies(status_text, r),
         }
 
-    source_supported = r >= 12
+    source_supported = bool(admission["source_applicable"])
     all_assumptions_known = all(x["ledger_status"] != "UNKNOWN" for x in assumption_status.values())
     all_assumptions_proved = all(x["proved_for_this_r"] for x in assumption_status.values())
     if not all_assumptions_known:
@@ -111,7 +125,15 @@ def gate(certificate_path: Path, ledger_path: Path) -> dict:
         "module_status": conditional_module_status,
         "module_id": module_id,
         "r": r,
-        "profile": instance.get("profile", "not-applicable"),
+        "profile": profile,
+        "admission_status": admission["admission_status"],
+        "admission_source_ids": admission["source_ids"],
+        "admission_required_assumption_ids": admission["required_assumption_ids"],
+        "admission_matrix_path": admission_matrix.name,
+        "admission_matrix_sha256": admission_payload["matrix_sha256"],
+        "admission_verifier_path": admission_verifier.name,
+        "admission_verifier_sha256": admission_payload["verifier_sha256"],
+        "admission_command": "python parameter_admission_verifier.py PARAMETER_ADMISSION_MATRIX.json --query-r " + str(r) + " --module " + module_id + ("" if profile == "not-applicable" else " --profile " + profile),
         "assumption_status": assumption_status,
         "assumptions_all_known": all_assumptions_known,
         "assumptions_all_proved_for_r": all_assumptions_proved,
