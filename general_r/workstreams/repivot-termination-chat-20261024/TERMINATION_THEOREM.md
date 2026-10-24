@@ -347,7 +347,7 @@ These bounds do not imply an absolute N bound for c>=1.
 
 # Theorem O — Six-Type Optional-Degree Bound in the AES Branch
 
-Assume A+B and m>=ceil(4r/3+3). In the AES 3-partition, the clean block counts x,y,z all satisfy x,y,z>=a=m-r+1>=ceil(r/3)+4. The two type triples T0=(A0,B1,C0) and T1=(A1,B0,C1) each have no H edges between their classes.
+Assume A+B and m>=ceil(4r/3+3). In the AES 3-partition, the clean block counts x,y,z all satisfy x,y,z>=lambda=m-r+1>=ceil(r/3)+4. The two type triples T0=(A0,B1,C0) and T1=(A1,B0,C1) each have no H edges between their classes.
 
 Assign every outside vertex one fully-seen witness class in each triple. For each type class T in part i, the assigned count N_T is at most s_i+2, where n_i=r-1-s_i. The three assignment slacks in either triple sum to exactly four. The transported endpoint identity yields
 
@@ -361,11 +361,11 @@ where t_x is the optional cross-block H-degree. Thus the optional cross-block gr
 
 If an outside vertex o has no pair of fully-seen witness classes from the same AES part, then any witness pair from T0,T1 is off-part. One residual class triple has one optional relation of maximum degree four, one block matching, and one empty relation. Since every class has size at least a>4, fewer than a-4 neighbours of o in that residual triple would leave an independent transversal of size three. Therefore
 
-d_H(o,U)>=3a-4,  kappa_o>=3a-4-r>=8.
+d_H(o,U)>=3a-4,  kappa_o>=3lambda-4-r>=8.
 
 For X such exceptional outside vertices,
 
-X(3a-4-r)<=K_O<=2r-2-K_U.
+X(3lambda-4-r)<=K_O<=2r-2-K_U.
 
 The claim that every outside vertex sees an entire part is NOT established; the exceptional set may still be linear near the lower AES threshold.
 
