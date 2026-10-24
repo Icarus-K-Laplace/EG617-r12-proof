@@ -640,3 +640,49 @@ The Kang–Pikhurko extremal construction gives a genuine per-color graph/interf
 ### Next highest-priority task
 
 Classify the cross-color reuse obstruction: use the fact that each color with a near-extremal KP template forces a duplicated-label pair and a complete bipartite color-`i` patch, while any vertex pair can belong to only one color. Determine whether the resulting family of label-pair patches can fit inside the `a=6` target-group/hub incidence budget, and build an explicit abstract incidence family if scalar constraints still allow it.
+---
+
+## 2026-10-24 — Round 12: linear-defect alignment theorem
+
+### NEW THEOREM A — Stability-part alignment
+
+For each non-target color `i`, let `P_{i,j}` be the Füredi stability partition of `F_i=bar(G_i)` with internal edges `I_i^*<=x_i` and missing cross-pairs `M_i^*<=2x_i`. The exact predecessor label classes `S_{i,b}` are disjoint independent sets in `F_i` of sizes at most `a`.
+
+- A full class `|S_{i,b}|=a` split across stability parts creates at least `a-1` missing cross-pairs. Therefore at most `2x_i/(a-1)` full classes are split.
+- If a stability part contains exactly one full label class plus extra vertices, each extra vertex needs an internal `F_i` edge to that class (otherwise `alpha(F_i)>a`); such classes charge at most `I_i^*`.
+- If a part contains `k>=2` full classes, each pair of classes has at least `a` internal `F_i` edges between them: the bipartite cross graph on `2a` vertices has independence number at most `a`, so its vertex-cover number and edge count are at least `a`. Since `k<=2 binom(k,2)`, all full classes in multi-class parts number at most `2I_i^*/a`.
+
+Thus at most `2x_i/(a-1)+2x_i` full label classes fail to equal a stability part.
+
+### NEW THEOREM B — Linear-defect partial resolvable `TD(a,r)`
+
+A predecessor class is clean if it is full, equals a stability part, and avoids the target hub set `X`. Such a class is a transversal of the `a` target groups, since every group outside `X` is a target-color clique.
+
+Across all non-target colors, the number of non-clean classes is at most
+
+`sum_i(z_i-1) + (2/(a-1)+2)sum_i x_i + (r-1)|X|`.
+
+Use `sum_i(z_i-1)<=(a-1)r+2`, `sum_{i>0}x_i<=S_a(r)-x_0<=(binom(a,2)-2)r+a` from `x_0>=r`, and `|X|=O_a(1)`. Therefore only `O_a(r)` of the `r(r-1)` classes fail to be clean, and every fixed-a high stop forces a partial resolvable `TD(a,r)` with `r^2-O_a(r)` blocks.
+
+For `a=6,r>=1000`, the bound `|X|<=74` gives
+
+`non-clean <= (5r+2)+(12/5)(13r+6)+74(r-1) <=111r`,
+
+so at least **`r^2-112r`** clean transversal blocks exist.
+
+### Independent audit and limitations
+
+- Split classes are charged to disjoint missing cross-pairs; contained classes are charged to internal edges; the two-full-class case uses `alpha(F_i)<=a` and the elementary identity `alpha+tau=2a` for the induced bipartite cross graph.
+- A clean class has size `a`, avoids all hubs, and is independent in `F_i`; each target group outside the hub set is a target clique, so it meets every group at most once and therefore exactly once.
+- Blocks of one color are disjoint; blocks of different colors share at most one vertex. This proves pairwise linearity and partial resolvability.
+- This is not a completion theorem. `O(r)` exceptional classes remain, and `NO-HIGH-STOP` remains `OPEN`.
+
+### GitHub commits
+
+- theorem file: `9c2a3e2d507853e1310706348fa466eaffe44c47`
+- canonical state: `76d50bd75f9c2a993c3b3343e800852d2acffa8d`
+- open gaps: `f3827e8c9b75e30de4fa10e6277cb934b64bd716`
+
+### Next highest-priority task
+
+Analyze the `O(r)` exceptional classes. Determine whether the duplicate-label patches forced by the exact `r+1`-set property can be packed into a pairwise-linear design with the target-group hub incidences, or whether they force an earlier valid `R_5`. The first objective is an exact obstruction theorem for the exceptional-block incidence graph, not another asymptotic estimate.
