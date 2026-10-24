@@ -29,20 +29,18 @@ This file assigns status from proof bodies, contracts, source-audit notes, and r
 
 ## 2. Backend R(4,49) frontier
 
-For a legal 49-point residual F and a degree-13 pivot, the exact identity is
-
-`E = 91 + q + e(H)`,
-
-with a 35-point core H. The three-anchor theorem is now stronger than CORE211: under `alpha(H)<=3`, `omega(H)<=11`, `delta(H)>=12`, three independent degree-12 anchors force `e(H)>=214`, hence `q<=E-305`. This is a conditional envelope: a survivor must first be shown to have the anchors.
+For a legal 49-point residual F and every degree-13 pivot, the exact identity is `E = 91 + q + e(H)`, with a 35-point core H. The new `R12_UNIVERSAL_CORE214_THEOREM.md` proves that the full legal-core contract itself forces `e(H)>=214`: if a core had excess K<=6, at least29 vertices would have degree12; `omega(H)<=11` gives a nonadjacent degree-12 pair, whose at least nine common nonneighbours include a third degree-12 vertex. The registered three-anchor theorem then contradicts K<=6. Therefore every legal pivot, without separately extracting anchors, satisfies `q<=E-305`.
 
 | Layer | Evidence-based status | Contract / evidence | Exact remaining gap |
 |---|---|---|---|
 | E329--E332 | `PROVED_RELATIVE_TO_REGISTERED_DEPENDENCIES` | `backend/E329_E332_CLOSURE.md`, `backend/E332_FULL_CLOSURE.md`, CORE211 and the q27/q28/q29 assets. | Keep inherited CORE211/q27/topology assumptions explicit for a self-contained manuscript; do not reopen the layer casework. |
-| E333 | `PROVED_RELATIVE_TO_CANONICAL_V4` | `backend/E333_V5_CANONICAL_CLOSURE.md`; the V5 arithmetic verifier is reported as independently rerun and its 12 endpoint inequalities passed. | The upstream legal-backend certification, all-pivot core-minimum-degree contract, and V4 forcing theorem remain retained dependencies; this is not a proof from the raw K145 assumption alone. |
-| E334 | `SOURCE_REPORTED / CONDITIONAL` | `consolidation/V12_V8_SOURCE_REPORTED_AUDIT.md` reports E334 empty relative to retained backend/V7 forcing. The independent graph-theoretic K>=8 theorem is in `backend/GLOBAL_THREE_ANCHOR_K6_FULL_CLOSURE.md`. | Independently replay/certify the V7/V8 forcing/extraction package that puts every E334 survivor into the three-anchor contract. Do not promote the source report itself to unconditional PROVED. |
-| E335--E340 | `OPEN` | `backend/GLOBAL_FORCING_TO_MASTER_V3_SYNTHESIS.md`, `GLOBAL_FORCING_TO_MASTER_ALLOWANCE_COVERAGE.md`, and `GLOBAL_SUPPORT_COMPATIBILITY_MASTER_THEOREM.md` provide a strong conditional structural stack. | Exhaustive extraction from an arbitrary legal maximal-pivot shell to the master contract, plus the finite higher-slack residues described in the companion forcing document. |
+| E333 | `PROVED_CONDITIONAL` | `R12_E333_E334_REPIVOT_CLOSURE.md`: universal legal-core floor gives q<=28; q27 is excluded by the registered q27 shell theorem, and q28 repivots to q'>=30. | Retain the q27 inherited shell-floor and boundary-sublemma dependencies; V5 package replay is not needed for this edge-layer contradiction. |
+| E334 | `PROVED_CONDITIONAL` | `R12_E333_E334_REPIVOT_CLOSURE.md`: universal legal-core floor gives q<=29; q27 is excluded and q28/q29 repivot to q'>=30. | Same registered q27 shell dependencies plus q28/q29 repivot theorems; V7/V8 package replay is not needed for this edge-layer contradiction. |
+| E335--E340 | `OPEN`, with sharpened pivot ceilings | Universal legal-core floor gives q<=E-305, i.e. E335..E340 ceilings 30,31,32,33,34,35. Existing support/allowance machinery remains conditional on exhaustive extraction. | Prove the forcing bridge for the reduced q<=30..35 range and close the remaining higher-slack d2/d3 residues. |
 
 ## 2A. New backend results from this workstream
+
+`R12_UNIVERSAL_CORE214_THEOREM.md` upgrades the legal-core floor from e(H)>=211 to e(H)>=214 under the full alpha<=3, omega<=11, minimum-degree-12 contract. `R12_E333_E334_REPIVOT_CLOSURE.md` then independently closes E333 and E334 relative to the registered q27 shell dependencies and q28/q29 repivot theorems.
 
 `r12_master/workstreams/master-closure-chat-20261024/R12_D3_MULTIS_EXTRACTION_BOUND.md` proves an allowance-localization theorem for every regular d3 owner family through q=38. For N=9, it forces a single common missing triple through q=34, at most two common-S classes at q=35, and gives class-size-dependent subcritical/first-high-slack bounds through q=38. This is a genuine extraction advance, but does not cover d2 multi-S systems, lower-owner d3 systems, or every fully-decorated/shallow-loss class.
 
@@ -65,6 +63,6 @@ The inspected repository itself states `NOT_CERTIFIED` in `CANONICAL_STATE.md` a
 ## 4. Working priorities
 
 1. Extend the new d3 multi-S extraction bound to the remaining owner counts / decorated branches, and prove the missing d2 extraction or finite kernel under the maximal-pivot contract; avoid re-running E-layer trees.
-2. Keep E333 and E334 at their evidence-qualified statuses.
+2. Audit the retained q27 shell-floor/boundary dependencies and use the new q<=E-305 ceilings to reorganize E335--E340 without reopening E329--E332.
 3. Integrate E407's five common-K11 templates with the same 284-edge core, once their actual template data are independently available.
 4. Integrate E408 Q32/Q33 local constraints with the seven-block global color system; do not infer contradiction from necessary inequalities alone.
