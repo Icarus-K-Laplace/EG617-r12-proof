@@ -26,11 +26,18 @@ It does **not** repeat the r=12 proof independently for every r. The architectur
 
 - `generate_instance.py` — deterministic V1 reduced-CSP generator.
 - `verify_instance.py` — independent re-derivation/hash verifier; does not import the generator.
+- `generate_endpoint_domain.py` / `verify_endpoint_domain.py` — exact missing-degree necessary-domain module and independent verifier.
+- `generate_d1_shell_bound.py` / `verify_d1_shell_bound.py` — conditional d1 shell-class count module (`N<=5`) and independent verifier.
+- `theorem_promotion_gate.py` — module-ID dispatch, assumption-ledger checks, producer/verifier hashes, and separate conditional-vs-EG617 promotion decisions.
 - `ASSUMPTION_LEDGER.md` — analytic/machine boundary and per-assumption scope.
 - `CERTIFICATE_SCHEMA.md` — universal certificate/replay contract.
 - `TEST_VECTORS.json` — frozen r=12..15 regression hashes.
 - `CANONICAL_STATE.md` — current support, search-space and certification matrix.
 - `PROGRESS_LOG.md` — chronological workstream updates.
+- `THEOREM_PROMOTION_GATE.md`, `ENDPOINT_MODULE_SCHEMA.md`, `SYMMETRY_CERTIFICATION.md`, `GRAPH_CSP_ADAPTER.md` — theorem-aware module and symmetry contracts.
+- `CERTIFICATE_REPLAY_REPORT.md` — exact replay results, hashes, and adversarial checks.
+- `certificates/endpoint_domain_r13_residual_core.json` plus receipt — verified conditional scalar-domain module.
+- `certificates/d1_shell_class_bound_r13.json` plus receipt — verified conditional d1 shell-class bound.
 
 ## Deterministic generation
 
@@ -70,7 +77,7 @@ Combining this with the applicable q ceiling determines the legal missing-degree
 - from r>=15, all medium missing degrees disappear;
 - under ANCHOR_K8, the medium degrees disappear already from r>=12.
 
-The first module, `ENDPOINT_DOMAIN_LOWER_BOUND_V1`, now turns this necessary inequality into a complete exact certificate and independent replay. It proves only the necessary scalar domain; it does not close any endpoint class. The next graph/SAT adapter will instantiate only endpoint terminal modules whose analytic premises are certified for that parameter.
+Two modules now pass the conditional promotion gate: `ENDPOINT_DOMAIN_LOWER_BOUND_V1` certifies the necessary scalar domain, and `D1_SHELL_CLASS_BOUND_V1` certifies the conditional bound of at most five d1 shell classes. Neither closes the d1 terminal or proves graph nonexistence. The next graph/SAT adapter will instantiate only endpoint terminal modules whose analytic premises are certified for that parameter.
 
 ## Symmetry policy
 
