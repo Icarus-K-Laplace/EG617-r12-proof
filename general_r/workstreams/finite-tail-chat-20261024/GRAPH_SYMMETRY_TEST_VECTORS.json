@@ -1,0 +1,724 @@
+{
+  "schema": "eg617-graph-symmetry-test-vectors-v1",
+  "test_id": "TOY_K3_TWO_COLORS_PIVOT_AND_SHELL",
+  "state_space_spec": {
+    "vertices": [
+      "p",
+      "a",
+      "b"
+    ],
+    "colors": [
+      "red",
+      "blue"
+    ],
+    "role_partition": {
+      "p": "pivot",
+      "a": "shell",
+      "b": "shell"
+    },
+    "color_partition": {
+      "red": "ordinary",
+      "blue": "ordinary"
+    },
+    "edge_pairs": [
+      [
+        "p",
+        "a"
+      ],
+      [
+        "p",
+        "b"
+      ],
+      [
+        "a",
+        "b"
+      ]
+    ],
+    "constraints": {
+      "global": [
+        "each edge receives exactly one color",
+        "simple undirected graph"
+      ],
+      "vertex_indexed": [],
+      "color_indexed": []
+    }
+  },
+  "states": [
+    {
+      "state_id": "000",
+      "object": {
+        "schema": "eg617-colored-incidence-object-v1",
+        "vertices": [
+          "p",
+          "a",
+          "b"
+        ],
+        "colors": [
+          "red",
+          "blue"
+        ],
+        "role_partition": {
+          "p": "pivot",
+          "a": "shell",
+          "b": "shell"
+        },
+        "color_partition": {
+          "red": "ordinary",
+          "blue": "ordinary"
+        },
+        "edges": [
+          {
+            "u": "a",
+            "v": "b",
+            "color": "red"
+          },
+          {
+            "u": "a",
+            "v": "p",
+            "color": "red"
+          },
+          {
+            "u": "b",
+            "v": "p",
+            "color": "red"
+          }
+        ],
+        "constraints": {
+          "global": [
+            "each edge receives exactly one color",
+            "simple undirected graph"
+          ],
+          "vertex_indexed": [],
+          "color_indexed": []
+        }
+      }
+    },
+    {
+      "state_id": "001",
+      "object": {
+        "schema": "eg617-colored-incidence-object-v1",
+        "vertices": [
+          "p",
+          "a",
+          "b"
+        ],
+        "colors": [
+          "red",
+          "blue"
+        ],
+        "role_partition": {
+          "p": "pivot",
+          "a": "shell",
+          "b": "shell"
+        },
+        "color_partition": {
+          "red": "ordinary",
+          "blue": "ordinary"
+        },
+        "edges": [
+          {
+            "u": "a",
+            "v": "b",
+            "color": "blue"
+          },
+          {
+            "u": "a",
+            "v": "p",
+            "color": "red"
+          },
+          {
+            "u": "b",
+            "v": "p",
+            "color": "red"
+          }
+        ],
+        "constraints": {
+          "global": [
+            "each edge receives exactly one color",
+            "simple undirected graph"
+          ],
+          "vertex_indexed": [],
+          "color_indexed": []
+        }
+      }
+    },
+    {
+      "state_id": "010",
+      "object": {
+        "schema": "eg617-colored-incidence-object-v1",
+        "vertices": [
+          "p",
+          "a",
+          "b"
+        ],
+        "colors": [
+          "red",
+          "blue"
+        ],
+        "role_partition": {
+          "p": "pivot",
+          "a": "shell",
+          "b": "shell"
+        },
+        "color_partition": {
+          "red": "ordinary",
+          "blue": "ordinary"
+        },
+        "edges": [
+          {
+            "u": "b",
+            "v": "p",
+            "color": "blue"
+          },
+          {
+            "u": "a",
+            "v": "b",
+            "color": "red"
+          },
+          {
+            "u": "a",
+            "v": "p",
+            "color": "red"
+          }
+        ],
+        "constraints": {
+          "global": [
+            "each edge receives exactly one color",
+            "simple undirected graph"
+          ],
+          "vertex_indexed": [],
+          "color_indexed": []
+        }
+      }
+    },
+    {
+      "state_id": "011",
+      "object": {
+        "schema": "eg617-colored-incidence-object-v1",
+        "vertices": [
+          "p",
+          "a",
+          "b"
+        ],
+        "colors": [
+          "red",
+          "blue"
+        ],
+        "role_partition": {
+          "p": "pivot",
+          "a": "shell",
+          "b": "shell"
+        },
+        "color_partition": {
+          "red": "ordinary",
+          "blue": "ordinary"
+        },
+        "edges": [
+          {
+            "u": "a",
+            "v": "b",
+            "color": "blue"
+          },
+          {
+            "u": "b",
+            "v": "p",
+            "color": "blue"
+          },
+          {
+            "u": "a",
+            "v": "p",
+            "color": "red"
+          }
+        ],
+        "constraints": {
+          "global": [
+            "each edge receives exactly one color",
+            "simple undirected graph"
+          ],
+          "vertex_indexed": [],
+          "color_indexed": []
+        }
+      }
+    },
+    {
+      "state_id": "100",
+      "object": {
+        "schema": "eg617-colored-incidence-object-v1",
+        "vertices": [
+          "p",
+          "a",
+          "b"
+        ],
+        "colors": [
+          "red",
+          "blue"
+        ],
+        "role_partition": {
+          "p": "pivot",
+          "a": "shell",
+          "b": "shell"
+        },
+        "color_partition": {
+          "red": "ordinary",
+          "blue": "ordinary"
+        },
+        "edges": [
+          {
+            "u": "a",
+            "v": "p",
+            "color": "blue"
+          },
+          {
+            "u": "a",
+            "v": "b",
+            "color": "red"
+          },
+          {
+            "u": "b",
+            "v": "p",
+            "color": "red"
+          }
+        ],
+        "constraints": {
+          "global": [
+            "each edge receives exactly one color",
+            "simple undirected graph"
+          ],
+          "vertex_indexed": [],
+          "color_indexed": []
+        }
+      }
+    },
+    {
+      "state_id": "101",
+      "object": {
+        "schema": "eg617-colored-incidence-object-v1",
+        "vertices": [
+          "p",
+          "a",
+          "b"
+        ],
+        "colors": [
+          "red",
+          "blue"
+        ],
+        "role_partition": {
+          "p": "pivot",
+          "a": "shell",
+          "b": "shell"
+        },
+        "color_partition": {
+          "red": "ordinary",
+          "blue": "ordinary"
+        },
+        "edges": [
+          {
+            "u": "a",
+            "v": "b",
+            "color": "blue"
+          },
+          {
+            "u": "a",
+            "v": "p",
+            "color": "blue"
+          },
+          {
+            "u": "b",
+            "v": "p",
+            "color": "red"
+          }
+        ],
+        "constraints": {
+          "global": [
+            "each edge receives exactly one color",
+            "simple undirected graph"
+          ],
+          "vertex_indexed": [],
+          "color_indexed": []
+        }
+      }
+    },
+    {
+      "state_id": "110",
+      "object": {
+        "schema": "eg617-colored-incidence-object-v1",
+        "vertices": [
+          "p",
+          "a",
+          "b"
+        ],
+        "colors": [
+          "red",
+          "blue"
+        ],
+        "role_partition": {
+          "p": "pivot",
+          "a": "shell",
+          "b": "shell"
+        },
+        "color_partition": {
+          "red": "ordinary",
+          "blue": "ordinary"
+        },
+        "edges": [
+          {
+            "u": "a",
+            "v": "p",
+            "color": "blue"
+          },
+          {
+            "u": "b",
+            "v": "p",
+            "color": "blue"
+          },
+          {
+            "u": "a",
+            "v": "b",
+            "color": "red"
+          }
+        ],
+        "constraints": {
+          "global": [
+            "each edge receives exactly one color",
+            "simple undirected graph"
+          ],
+          "vertex_indexed": [],
+          "color_indexed": []
+        }
+      }
+    },
+    {
+      "state_id": "111",
+      "object": {
+        "schema": "eg617-colored-incidence-object-v1",
+        "vertices": [
+          "p",
+          "a",
+          "b"
+        ],
+        "colors": [
+          "red",
+          "blue"
+        ],
+        "role_partition": {
+          "p": "pivot",
+          "a": "shell",
+          "b": "shell"
+        },
+        "color_partition": {
+          "red": "ordinary",
+          "blue": "ordinary"
+        },
+        "edges": [
+          {
+            "u": "a",
+            "v": "b",
+            "color": "blue"
+          },
+          {
+            "u": "a",
+            "v": "p",
+            "color": "blue"
+          },
+          {
+            "u": "b",
+            "v": "p",
+            "color": "blue"
+          }
+        ],
+        "constraints": {
+          "global": [
+            "each edge receives exactly one color",
+            "simple undirected graph"
+          ],
+          "vertex_indexed": [],
+          "color_indexed": []
+        }
+      }
+    }
+  ],
+  "representatives": [
+    {
+      "representative_id": "000",
+      "object": {
+        "schema": "eg617-colored-incidence-object-v1",
+        "vertices": [
+          "p",
+          "a",
+          "b"
+        ],
+        "colors": [
+          "red",
+          "blue"
+        ],
+        "role_partition": {
+          "p": "pivot",
+          "a": "shell",
+          "b": "shell"
+        },
+        "color_partition": {
+          "red": "ordinary",
+          "blue": "ordinary"
+        },
+        "edges": [
+          {
+            "u": "a",
+            "v": "b",
+            "color": "red"
+          },
+          {
+            "u": "a",
+            "v": "p",
+            "color": "red"
+          },
+          {
+            "u": "b",
+            "v": "p",
+            "color": "red"
+          }
+        ],
+        "constraints": {
+          "global": [
+            "each edge receives exactly one color",
+            "simple undirected graph"
+          ],
+          "vertex_indexed": [],
+          "color_indexed": []
+        }
+      }
+    },
+    {
+      "representative_id": "001",
+      "object": {
+        "schema": "eg617-colored-incidence-object-v1",
+        "vertices": [
+          "p",
+          "a",
+          "b"
+        ],
+        "colors": [
+          "red",
+          "blue"
+        ],
+        "role_partition": {
+          "p": "pivot",
+          "a": "shell",
+          "b": "shell"
+        },
+        "color_partition": {
+          "red": "ordinary",
+          "blue": "ordinary"
+        },
+        "edges": [
+          {
+            "u": "a",
+            "v": "b",
+            "color": "blue"
+          },
+          {
+            "u": "a",
+            "v": "p",
+            "color": "red"
+          },
+          {
+            "u": "b",
+            "v": "p",
+            "color": "red"
+          }
+        ],
+        "constraints": {
+          "global": [
+            "each edge receives exactly one color",
+            "simple undirected graph"
+          ],
+          "vertex_indexed": [],
+          "color_indexed": []
+        }
+      }
+    },
+    {
+      "representative_id": "010",
+      "object": {
+        "schema": "eg617-colored-incidence-object-v1",
+        "vertices": [
+          "p",
+          "a",
+          "b"
+        ],
+        "colors": [
+          "red",
+          "blue"
+        ],
+        "role_partition": {
+          "p": "pivot",
+          "a": "shell",
+          "b": "shell"
+        },
+        "color_partition": {
+          "red": "ordinary",
+          "blue": "ordinary"
+        },
+        "edges": [
+          {
+            "u": "b",
+            "v": "p",
+            "color": "blue"
+          },
+          {
+            "u": "a",
+            "v": "b",
+            "color": "red"
+          },
+          {
+            "u": "a",
+            "v": "p",
+            "color": "red"
+          }
+        ],
+        "constraints": {
+          "global": [
+            "each edge receives exactly one color",
+            "simple undirected graph"
+          ],
+          "vertex_indexed": [],
+          "color_indexed": []
+        }
+      }
+    }
+  ],
+  "witnesses": [
+    {
+      "state_id": "000",
+      "representative_id": "000",
+      "vertex_permutation": {
+        "p": "p",
+        "a": "a",
+        "b": "b"
+      },
+      "color_permutation": {
+        "red": "red",
+        "blue": "blue"
+      },
+      "original_canonical_encoding": "{\"colors\":[{\"class\":\"ordinary\",\"id\":\"c0\"},{\"class\":\"ordinary\",\"id\":\"c1\"}],\"constraints\":{\"color_indexed\":[],\"global\":[\"each edge receives exactly one color\",\"simple undirected graph\"],\"vertex_indexed\":[]},\"edges\":[{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v1\"},{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v2\"},{\"color\":\"c0\",\"u\":\"v1\",\"v\":\"v2\"}],\"schema\":\"eg617-colored-incidence-object-v1\",\"vertices\":[{\"id\":\"v0\",\"role\":\"pivot\"},{\"id\":\"v1\",\"role\":\"shell\"},{\"id\":\"v2\",\"role\":\"shell\"}]}",
+      "representative_canonical_encoding": "{\"colors\":[{\"class\":\"ordinary\",\"id\":\"c0\"},{\"class\":\"ordinary\",\"id\":\"c1\"}],\"constraints\":{\"color_indexed\":[],\"global\":[\"each edge receives exactly one color\",\"simple undirected graph\"],\"vertex_indexed\":[]},\"edges\":[{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v1\"},{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v2\"},{\"color\":\"c0\",\"u\":\"v1\",\"v\":\"v2\"}],\"schema\":\"eg617-colored-incidence-object-v1\",\"vertices\":[{\"id\":\"v0\",\"role\":\"pivot\"},{\"id\":\"v1\",\"role\":\"shell\"},{\"id\":\"v2\",\"role\":\"shell\"}]}"
+    },
+    {
+      "state_id": "001",
+      "representative_id": "001",
+      "vertex_permutation": {
+        "p": "p",
+        "a": "a",
+        "b": "b"
+      },
+      "color_permutation": {
+        "red": "red",
+        "blue": "blue"
+      },
+      "original_canonical_encoding": "{\"colors\":[{\"class\":\"ordinary\",\"id\":\"c0\"},{\"class\":\"ordinary\",\"id\":\"c1\"}],\"constraints\":{\"color_indexed\":[],\"global\":[\"each edge receives exactly one color\",\"simple undirected graph\"],\"vertex_indexed\":[]},\"edges\":[{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v1\"},{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v2\"},{\"color\":\"c1\",\"u\":\"v1\",\"v\":\"v2\"}],\"schema\":\"eg617-colored-incidence-object-v1\",\"vertices\":[{\"id\":\"v0\",\"role\":\"pivot\"},{\"id\":\"v1\",\"role\":\"shell\"},{\"id\":\"v2\",\"role\":\"shell\"}]}",
+      "representative_canonical_encoding": "{\"colors\":[{\"class\":\"ordinary\",\"id\":\"c0\"},{\"class\":\"ordinary\",\"id\":\"c1\"}],\"constraints\":{\"color_indexed\":[],\"global\":[\"each edge receives exactly one color\",\"simple undirected graph\"],\"vertex_indexed\":[]},\"edges\":[{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v1\"},{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v2\"},{\"color\":\"c1\",\"u\":\"v1\",\"v\":\"v2\"}],\"schema\":\"eg617-colored-incidence-object-v1\",\"vertices\":[{\"id\":\"v0\",\"role\":\"pivot\"},{\"id\":\"v1\",\"role\":\"shell\"},{\"id\":\"v2\",\"role\":\"shell\"}]}"
+    },
+    {
+      "state_id": "010",
+      "representative_id": "010",
+      "vertex_permutation": {
+        "p": "p",
+        "a": "a",
+        "b": "b"
+      },
+      "color_permutation": {
+        "red": "red",
+        "blue": "blue"
+      },
+      "original_canonical_encoding": "{\"colors\":[{\"class\":\"ordinary\",\"id\":\"c0\"},{\"class\":\"ordinary\",\"id\":\"c1\"}],\"constraints\":{\"color_indexed\":[],\"global\":[\"each edge receives exactly one color\",\"simple undirected graph\"],\"vertex_indexed\":[]},\"edges\":[{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v1\"},{\"color\":\"c0\",\"u\":\"v1\",\"v\":\"v2\"},{\"color\":\"c1\",\"u\":\"v0\",\"v\":\"v2\"}],\"schema\":\"eg617-colored-incidence-object-v1\",\"vertices\":[{\"id\":\"v0\",\"role\":\"pivot\"},{\"id\":\"v1\",\"role\":\"shell\"},{\"id\":\"v2\",\"role\":\"shell\"}]}",
+      "representative_canonical_encoding": "{\"colors\":[{\"class\":\"ordinary\",\"id\":\"c0\"},{\"class\":\"ordinary\",\"id\":\"c1\"}],\"constraints\":{\"color_indexed\":[],\"global\":[\"each edge receives exactly one color\",\"simple undirected graph\"],\"vertex_indexed\":[]},\"edges\":[{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v1\"},{\"color\":\"c0\",\"u\":\"v1\",\"v\":\"v2\"},{\"color\":\"c1\",\"u\":\"v0\",\"v\":\"v2\"}],\"schema\":\"eg617-colored-incidence-object-v1\",\"vertices\":[{\"id\":\"v0\",\"role\":\"pivot\"},{\"id\":\"v1\",\"role\":\"shell\"},{\"id\":\"v2\",\"role\":\"shell\"}]}"
+    },
+    {
+      "state_id": "011",
+      "representative_id": "010",
+      "vertex_permutation": {
+        "p": "p",
+        "a": "b",
+        "b": "a"
+      },
+      "color_permutation": {
+        "red": "blue",
+        "blue": "red"
+      },
+      "original_canonical_encoding": "{\"colors\":[{\"class\":\"ordinary\",\"id\":\"c0\"},{\"class\":\"ordinary\",\"id\":\"c1\"}],\"constraints\":{\"color_indexed\":[],\"global\":[\"each edge receives exactly one color\",\"simple undirected graph\"],\"vertex_indexed\":[]},\"edges\":[{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v1\"},{\"color\":\"c0\",\"u\":\"v1\",\"v\":\"v2\"},{\"color\":\"c1\",\"u\":\"v0\",\"v\":\"v2\"}],\"schema\":\"eg617-colored-incidence-object-v1\",\"vertices\":[{\"id\":\"v0\",\"role\":\"pivot\"},{\"id\":\"v1\",\"role\":\"shell\"},{\"id\":\"v2\",\"role\":\"shell\"}]}",
+      "representative_canonical_encoding": "{\"colors\":[{\"class\":\"ordinary\",\"id\":\"c0\"},{\"class\":\"ordinary\",\"id\":\"c1\"}],\"constraints\":{\"color_indexed\":[],\"global\":[\"each edge receives exactly one color\",\"simple undirected graph\"],\"vertex_indexed\":[]},\"edges\":[{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v1\"},{\"color\":\"c0\",\"u\":\"v1\",\"v\":\"v2\"},{\"color\":\"c1\",\"u\":\"v0\",\"v\":\"v2\"}],\"schema\":\"eg617-colored-incidence-object-v1\",\"vertices\":[{\"id\":\"v0\",\"role\":\"pivot\"},{\"id\":\"v1\",\"role\":\"shell\"},{\"id\":\"v2\",\"role\":\"shell\"}]}"
+    },
+    {
+      "state_id": "100",
+      "representative_id": "010",
+      "vertex_permutation": {
+        "p": "p",
+        "a": "b",
+        "b": "a"
+      },
+      "color_permutation": {
+        "red": "red",
+        "blue": "blue"
+      },
+      "original_canonical_encoding": "{\"colors\":[{\"class\":\"ordinary\",\"id\":\"c0\"},{\"class\":\"ordinary\",\"id\":\"c1\"}],\"constraints\":{\"color_indexed\":[],\"global\":[\"each edge receives exactly one color\",\"simple undirected graph\"],\"vertex_indexed\":[]},\"edges\":[{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v1\"},{\"color\":\"c0\",\"u\":\"v1\",\"v\":\"v2\"},{\"color\":\"c1\",\"u\":\"v0\",\"v\":\"v2\"}],\"schema\":\"eg617-colored-incidence-object-v1\",\"vertices\":[{\"id\":\"v0\",\"role\":\"pivot\"},{\"id\":\"v1\",\"role\":\"shell\"},{\"id\":\"v2\",\"role\":\"shell\"}]}",
+      "representative_canonical_encoding": "{\"colors\":[{\"class\":\"ordinary\",\"id\":\"c0\"},{\"class\":\"ordinary\",\"id\":\"c1\"}],\"constraints\":{\"color_indexed\":[],\"global\":[\"each edge receives exactly one color\",\"simple undirected graph\"],\"vertex_indexed\":[]},\"edges\":[{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v1\"},{\"color\":\"c0\",\"u\":\"v1\",\"v\":\"v2\"},{\"color\":\"c1\",\"u\":\"v0\",\"v\":\"v2\"}],\"schema\":\"eg617-colored-incidence-object-v1\",\"vertices\":[{\"id\":\"v0\",\"role\":\"pivot\"},{\"id\":\"v1\",\"role\":\"shell\"},{\"id\":\"v2\",\"role\":\"shell\"}]}"
+    },
+    {
+      "state_id": "101",
+      "representative_id": "010",
+      "vertex_permutation": {
+        "p": "p",
+        "a": "a",
+        "b": "b"
+      },
+      "color_permutation": {
+        "red": "blue",
+        "blue": "red"
+      },
+      "original_canonical_encoding": "{\"colors\":[{\"class\":\"ordinary\",\"id\":\"c0\"},{\"class\":\"ordinary\",\"id\":\"c1\"}],\"constraints\":{\"color_indexed\":[],\"global\":[\"each edge receives exactly one color\",\"simple undirected graph\"],\"vertex_indexed\":[]},\"edges\":[{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v1\"},{\"color\":\"c0\",\"u\":\"v1\",\"v\":\"v2\"},{\"color\":\"c1\",\"u\":\"v0\",\"v\":\"v2\"}],\"schema\":\"eg617-colored-incidence-object-v1\",\"vertices\":[{\"id\":\"v0\",\"role\":\"pivot\"},{\"id\":\"v1\",\"role\":\"shell\"},{\"id\":\"v2\",\"role\":\"shell\"}]}",
+      "representative_canonical_encoding": "{\"colors\":[{\"class\":\"ordinary\",\"id\":\"c0\"},{\"class\":\"ordinary\",\"id\":\"c1\"}],\"constraints\":{\"color_indexed\":[],\"global\":[\"each edge receives exactly one color\",\"simple undirected graph\"],\"vertex_indexed\":[]},\"edges\":[{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v1\"},{\"color\":\"c0\",\"u\":\"v1\",\"v\":\"v2\"},{\"color\":\"c1\",\"u\":\"v0\",\"v\":\"v2\"}],\"schema\":\"eg617-colored-incidence-object-v1\",\"vertices\":[{\"id\":\"v0\",\"role\":\"pivot\"},{\"id\":\"v1\",\"role\":\"shell\"},{\"id\":\"v2\",\"role\":\"shell\"}]}"
+    },
+    {
+      "state_id": "110",
+      "representative_id": "001",
+      "vertex_permutation": {
+        "p": "p",
+        "a": "a",
+        "b": "b"
+      },
+      "color_permutation": {
+        "red": "blue",
+        "blue": "red"
+      },
+      "original_canonical_encoding": "{\"colors\":[{\"class\":\"ordinary\",\"id\":\"c0\"},{\"class\":\"ordinary\",\"id\":\"c1\"}],\"constraints\":{\"color_indexed\":[],\"global\":[\"each edge receives exactly one color\",\"simple undirected graph\"],\"vertex_indexed\":[]},\"edges\":[{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v1\"},{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v2\"},{\"color\":\"c1\",\"u\":\"v1\",\"v\":\"v2\"}],\"schema\":\"eg617-colored-incidence-object-v1\",\"vertices\":[{\"id\":\"v0\",\"role\":\"pivot\"},{\"id\":\"v1\",\"role\":\"shell\"},{\"id\":\"v2\",\"role\":\"shell\"}]}",
+      "representative_canonical_encoding": "{\"colors\":[{\"class\":\"ordinary\",\"id\":\"c0\"},{\"class\":\"ordinary\",\"id\":\"c1\"}],\"constraints\":{\"color_indexed\":[],\"global\":[\"each edge receives exactly one color\",\"simple undirected graph\"],\"vertex_indexed\":[]},\"edges\":[{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v1\"},{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v2\"},{\"color\":\"c1\",\"u\":\"v1\",\"v\":\"v2\"}],\"schema\":\"eg617-colored-incidence-object-v1\",\"vertices\":[{\"id\":\"v0\",\"role\":\"pivot\"},{\"id\":\"v1\",\"role\":\"shell\"},{\"id\":\"v2\",\"role\":\"shell\"}]}"
+    },
+    {
+      "state_id": "111",
+      "representative_id": "000",
+      "vertex_permutation": {
+        "p": "p",
+        "a": "a",
+        "b": "b"
+      },
+      "color_permutation": {
+        "red": "blue",
+        "blue": "red"
+      },
+      "original_canonical_encoding": "{\"colors\":[{\"class\":\"ordinary\",\"id\":\"c0\"},{\"class\":\"ordinary\",\"id\":\"c1\"}],\"constraints\":{\"color_indexed\":[],\"global\":[\"each edge receives exactly one color\",\"simple undirected graph\"],\"vertex_indexed\":[]},\"edges\":[{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v1\"},{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v2\"},{\"color\":\"c0\",\"u\":\"v1\",\"v\":\"v2\"}],\"schema\":\"eg617-colored-incidence-object-v1\",\"vertices\":[{\"id\":\"v0\",\"role\":\"pivot\"},{\"id\":\"v1\",\"role\":\"shell\"},{\"id\":\"v2\",\"role\":\"shell\"}]}",
+      "representative_canonical_encoding": "{\"colors\":[{\"class\":\"ordinary\",\"id\":\"c0\"},{\"class\":\"ordinary\",\"id\":\"c1\"}],\"constraints\":{\"color_indexed\":[],\"global\":[\"each edge receives exactly one color\",\"simple undirected graph\"],\"vertex_indexed\":[]},\"edges\":[{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v1\"},{\"color\":\"c0\",\"u\":\"v0\",\"v\":\"v2\"},{\"color\":\"c0\",\"u\":\"v1\",\"v\":\"v2\"}],\"schema\":\"eg617-colored-incidence-object-v1\",\"vertices\":[{\"id\":\"v0\",\"role\":\"pivot\"},{\"id\":\"v1\",\"role\":\"shell\"},{\"id\":\"v2\",\"role\":\"shell\"}]}"
+    }
+  ],
+  "prequotient_state_set_sha256": "1c10fd6173e748ff06f912ebae87d5bf4c6c2002a88ad54f8671a53a9fc0d18c",
+  "postquotient_orbit_set_sha256": "344254a1cfc131a437ced79dff954c6e79ca02c7a8ca7ff97556d7c770b752cf",
+  "expected": {
+    "state_count": 8,
+    "orbit_count": 3,
+    "representative_ids": [
+      "000",
+      "001",
+      "010"
+    ],
+    "group_order": 4
+  },
+  "scope_warning": "Toy exhaustive colored-incidence fixture only; no EG617 graph-level symmetry reduction is certified."
+}
