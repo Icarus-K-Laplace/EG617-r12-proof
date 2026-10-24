@@ -177,3 +177,27 @@ The dichotomy is unconditional in Case B and bypasses the former requirement to 
 - Branch B gives at least four same-color maximum independent sets in R, a dense overlap graph, and perfect matchings on every pairwise symmetric difference.
 
 A further theorem must exclude one of these graph-level kernels or combine it with the matching pair S_1,S_2 defining X. No full contradiction and no \(\neg P(r)\Rightarrow\neg P(r-1)\) theorem is claimed.
+
+
+## Theorem J.W5 — Alignment-free residual multinet extraction
+
+Let q=r-1 and retain the Case B setup. There are exactly q colors i!=c. From Theorem J.W1,
+
+\[
+\sum_{i\ne c}b_i\le\binom q2,\qquad b_i\ge0.
+\]
+
+Call a color residual-low if \(b_i\le q-2\). Every color that is not residual-low has \(b_i\ge q-1\), so there are at most
+
+\[
+\left\lfloor\frac{\binom q2}{q-1}\right\rfloor
+=\left\lfloor\frac q2\right\rfloor
+\]
+
+such colors. Therefore at least \(\lceil q/2\rceil\) colors are residual-low.
+
+For q>=3, each residual-low color i has, by the complement-Turan/Brouwer argument, a partition of R into q nonempty color-i clique blocks. If i and j are two distinct residual-low colors, every j-block is independent in G_i[R] and has size at most q; because q such blocks cover q² points, each has size exactly q. The same applies to i-blocks. A j-block meets each i-block in at most one point and has q points across q i-blocks, so it meets every i-block exactly once.
+
+Hence the residual-low colors define a **q-net with at least ceil(q/2) directions**: R is a q²-point set, and each residual-low color supplies a partition into q blocks of size q, with any two blocks from different partitions intersecting in exactly one point.
+
+This is an unconditional finite-geometry extraction from Case B for every r>=4. It is not a full affine plane: the number of directions is only guaranteed to be at least ceil((r-1)/2), and no theorem yet completes the net or connects its blocks to a shell-hitting lower bound. The construction does not contradict K's Local Slack Gap Theorem, because b_i is an excess on R=V\\X, not the neighborhood slack on V\\{x}.
