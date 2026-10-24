@@ -77,3 +77,10 @@ Projective planes of orders 10 and 14 do not exist, so K.RM3 cannot occur for th
 For q>=3 and b_i=q-1, let H_i be the complement of G_i[R]. Then H_i is K_{q+1}-free and e(H_i)=t_q(q²)-q+1. Kang and Pikhurko determine the maximum edge count and all extremal graphs among non-q-partite K_{q+1}-free graphs: M. Kang and O. Pikhurko, “Maximum K_{r+1}-free graphs which are not r-partite,” *Matematychni Studii* 24(1) (2005), 12–20, DOI [10.30970/ms.24.1.12-20](https://doi.org/10.30970/ms.24.1.12-20), Theorem 4 and Lemma 5.
 
 If H_i is q-partite, G_i[R] consists of q K_q blocks plus exactly q-1 cross-block color-i edges. If H_i is not q-partite, the extremal classification yields one exceptional point y; after deleting y, G_i[R minus {y}] has q clique blocks, sizes q except one q-1, plus a nonempty star of color-i cross-block edges. If that star has a edges, 1<=a<=q-1, then d_i^R(y)=2q-2-a. This is exact only at b_i=q-1.
+
+
+## 7. Exact q=6 residual profile
+
+In Case B with q=6, any four residual color partitions would give two mutually orthogonal Latin squares of order 6. Euler–Tarry rules this out; see D. Betten, “A direct proof of the non-existence of a MOL(6),” *Journal of Geometry* 114 (2023), DOI [10.1007/s00022-023-00669-3](https://doi.org/10.1007/s00022-023-00669-3).
+
+Thus at most three residual color complements are 6-partite. Since every non-6-partite complement costs b_i>=5 and sum b_i<=15, exactly three colors have b_i=5 and are non-6-partite, while the other three have b_i=0 and form a 3-net. The omitted color has e_c[R]=75, so its graph is the union of seven cliques of sizes 6,5,5,5,5,5,5. This exact incidence kernel is not yet excluded.
