@@ -92,7 +92,7 @@ If z_3=2, then (z_1,z_2,z_3)=(10,10,2). The two available positive-excess vertic
 
 If z_3=3, the only possible sorted triples are (10,10,3) and (10,9,3). The corresponding x-profiles are (10,10,4) and (10,9,5). The respective lower bounds in (1) are 39 and36, while the corresponding upper bounds are25 and30.
 
-If z_3=4, the possible sorted triples are (10,10,4), (10,9,4), (10,8,4), and (9,9,4). The corresponding x-profiles are (10,10,4), (10,9,5), (10,8,6), and (9,9,6). The lower bounds in (1) are respectively 49,45,41,44; the upper bounds are 25,30,33,34. Every pair contradicts.
+If z_3=4, the possible sorted triples are (10,10,4), (10,9,4), (10,8,4), and (9,9,4). The maximum possible E_cross upper bounds over the corresponding x-profiles are respectively 25,30,33,34 (attained at x-profiles (10,10,4), (10,9,5), (10,8,6), and (9,9,6)). The lower bounds in (1) are respectively 49,45,41,44. Every pair contradicts.
 
 Finally, if z_3>=5, the constraints z_1+z_2+z_3>=22 and z_1<=10 imply z_2+z_3>=12. If z_3=5, then z_2>=7 and the minimum of (1) is44, attained at (10,7,5). If z_3>=6, the minimum is at least45. Both exceed E_cross<=37.
 
