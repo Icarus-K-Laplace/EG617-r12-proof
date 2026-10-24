@@ -25,7 +25,7 @@ For a W-vertex whose U-neighbourhood is not an R-only 8-set, call each of its ne
 \[
 s_r=3+\epsilon_r+j_r-a_r. \tag{1}
 \]
-If \(S\subset R\) is one distinct R-only 8-neighbourhood occurring m times, then
+Under the contradiction hypothesis \(S_0=11\), if \(S\subset R\) is one distinct R-only 8-neighbourhood occurring m times, then
 \[
 8m\le\sum_{r\in S}s_r
 \le24+\sum_{r\in R}(\epsilon_r+j_r)
