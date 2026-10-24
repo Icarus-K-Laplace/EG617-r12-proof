@@ -62,7 +62,7 @@ The exact 284-edge contract applies to E407 Q32 and E408 Q33. E408 Q32 has a 285
 
 Read-only source: branch workstream/r12-ultimate-closure-20261024, file r12_master/workstreams/ultimate-closure-chat-20261024/R12_E408_PAIRWISE_BLOCKER_COMPATIBILITY.md, blob SHA b49421769477461ed26b3418a5cfd1a851cbb52d.
 
-The imported theorem states that for two outer-row blocker neighborhoods X,Y of one exact-129 color, if k is the number of isolated K5 components fully covered by X union Y, then
+The source theorem is stated for two rows in the same target block. Its proof uses only that the two outer vertices are nonadjacent in color C, so it extends to a cross-block pair whenever those two vertices are assumed C-nonadjacent. For two such blocker neighborhoods X,Y of one exact-129 color, if k is the number of isolated K5 components fully covered by X union Y, then
 \[
 \alpha(C[U_C\setminus(X\cup Y)])\le k.
 \]
