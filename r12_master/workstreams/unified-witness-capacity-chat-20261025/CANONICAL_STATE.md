@@ -47,3 +47,25 @@ See the four theorem/audit files in this directory and verify_unified_witness_ca
 The finite arithmetic and omission-profile enumerations were independently replayed in local Python and matched the checked-in verifier's expected tables. Result: R12_UNIFIED_WITNESS_CAPACITY_ARITHMETIC_OK. This is arithmetic verification only, not a graph search or witness-design realization certificate.
 
 Latest progress-log commit: 6e374337ccf90fdb56de93669420f130bd3cdc5b.
+
+
+## 2026-10-25 continuation — labelled partite capacity
+
+### New proved-conditional results
+
+1. **Per-part label-row capacity.** If the witness complement L is four-partite and every selected Q is a transversal, then a shell label b occurring in n_b selected components has at most |V_j|-n_b target neighbors in each part V_j, hence at most |U|-4n_b target neighbors in U. This follows because the n_b same-label witness sets are disjoint and b is target-anticomplete to each.
+2. **Q33 four-partite exact incidence.** Under the eight-color / 56-transversal contract with parts (8,8,8,7), every size-seven-part vertex has witness multiplicity 8 and every large-part vertex multiplicity 7. Thus the omission profile is exactly (0^7,1^24), Omega=0, and the eight color omission triples partition the 24 large-part points.
+3. **Labelled seven-point-part cap.** At each point of the size-seven part, the eight incident witness labels are distinct; at least seven are B labels. Hence each such point has at most three B-row target neighbors, or at most two if it has no pivot-labelled witness. Globally e_F(B,D)<=14+P<=21. Combined with the retained K_B>=22-beta, this gives e_F(B,H\\D)>=max(0,8-beta+G_B-P). It is a necessary constraint, not a contradiction.
+4. **Four-partite edge-charge saturation.** In any four-partite witness branch, within-part H-edges contribute exactly 4-|Q_i intersection Q_j| for every witness pair. Therefore the generic pairwise crossing inequality is sharp on the within-part edges. For Q33 the exact weighted load is 5460+49(24-delta); the lower bound is 5460 and only implies delta<=24, compatible with the current delta in [9,17].
+
+### Current sibling results incorporated (read-only)
+
+- E408 Q33 global compatibility: workstream/r12-e408-q33-global-compat-20261025, head df396de8ffc1f9c390fe3e240d0d085715f86b5b; its four-partite theorem proves S0>=22, hence delta>=9.
+- Row-transversal / pairwise hub-cover: workstream/r12-ultimate-closure-20261024, head 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40.
+- Witness-packing / universal Q33 S0>=12: workstream/r12-witness-packing-chat-20261025, head f5d3daa07403877ede9885e1bd5c2f46b16d81da.
+
+No sibling workstream was modified.
+
+## Refined obstruction
+
+The Q33 scalar relaxation with Omega=24 cannot be four-partite; it is only evidence that the scalar inequalities do not eliminate the non-four-partite branch. The four-partite branch now has exact incidence and label caps, but these remain compatible with the current edge budgets. The non-four-partite branch still requires a packing/stability theorem using the 56 labelled K4s beyond the second-Turán bound.
