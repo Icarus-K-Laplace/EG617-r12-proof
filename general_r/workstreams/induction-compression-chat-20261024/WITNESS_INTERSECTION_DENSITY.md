@@ -47,3 +47,14 @@ This is a graph-theoretic equality profile, not a claim that it is realizable by
 ## What this does not prove
 
 The theorem forces many witness overlaps and a residual point shared by at least three witnesses. It does not show that the shared point has the same witness color, that intersections have size one, or that witness sets form affine lines. Those upgrades remain open.
+
+
+## Round 2 — same-color perfect-matching strengthening
+
+For same-color witnesses T_u={u}∪Q_u and T_v={v}∪Q_v, let h=|Q_u∩Q_v|. The graph of color-i edges between Q_u\\Q_v and Q_v\\Q_u has a perfect matching of size r-1-h; the graph between T_u\\T_v and T_v\\T_u has a perfect matching of size r-h. Proof: the intersection is isolated from the two difference sets in the color-i graph; the independence cap bounds the independence number of the remaining bipartite graph by one side size; Konig's theorem then supplies a perfect matching.
+
+In particular, if uv is not color i, every perfect matching on the full symmetric difference must match both root vertices to residual vertices, so there are at least two color-i root-to-residual edges joining {u,v} to Q_u △ Q_v. More precisely, each root has a color-i neighbor in the other witness's residual difference set.
+
+A duplicate-safe accounting inequality is recorded in ALIGNMENT_FREE_WITNESS_RIGIDITY.md: for each color-i edge xy, at most mu_i(x)mu_i(y) same-color witness pairs can use it in their selected perfect matchings, where mu_i(x) counts same-color witnesses containing x. This avoids incorrectly summing pairwise lower bounds as if all required edges were distinct.
+
+These strengthening lemmas are not a contradiction: one edge may serve several witness pairs, and no global edge-budget excess has yet been proved.
