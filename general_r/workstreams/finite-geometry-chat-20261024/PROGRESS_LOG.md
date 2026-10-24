@@ -37,7 +37,8 @@
 
 - Classified one-edge blockers: the unique edge must join two singleton residual parts.
 - Classified two-edge blockers: either there is a singleton-singleton edge, or the two edges are disjoint transversal events joining a singleton part to the two vertices of a size-two part.
-- Used the J shell budget |Y|=2q-1 to rule out the three-part 1,1,2 pattern for q>=4; hence slack 1 or 2 confines private witnesses to at most two blocks.
+- Clarified the scope of the shell-budget step: the three-part 1,1,2 pattern is ruled out only for residual parts arising from the aligned J shell Y, not for arbitrary extra-vertex neighbor sets.
+- In the aligned J/K bridge, slack 1 or 2 confines private witnesses to at most two blocks for q>=4 (and slack 1 also for q=3).
 - Derived two-block forcing d_i(x)>=2q-s_i(x)-1 and global excess a_i>=q-1 for every color that is low-slack at any vertex.
 - Proved the simultaneous slack-one crossed 2-by-2 pattern and the excess lower bounds a_i,a_j>=q-1.
 
