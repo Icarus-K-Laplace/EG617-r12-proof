@@ -162,7 +162,36 @@ so their total excess above the universal floor is
 =\frac{q(q-1)(q-2)}2.
 \]
 
-This global bound is rigorous but does not force a low-slack color at any prescribed vertex, and it does not close the high-slack branch.
+### Graph-level sharpness of the floor
+
+The bound a_i>=q-1 cannot be improved using only the single-color constraints alpha(G_i)<=q and omega(G_i)<=q. On q^2+1 vertices, take q disjoint color-i K_q blocks P_1,...,P_q and one extra vertex x. Add one color-i edge uv between designated vertices u in P_1 and v in P_2. Join x in color i to every vertex of P_1 minus {u} and every vertex of P_2 minus {v}, and give x no color-i edges into P_3,...,P_q.
+
+Then
+
+\[
+e(G_i)=m_q+1+2(q-1)=m_q+2q-1,
+\]
+
+so a_i=q-1. Any independent set avoiding x has at most one point per block; an independent set containing x cannot contain both u and v because uv is a color-i edge. Hence alpha(G_i)<=q. A clique containing x uses at most q-1 vertices from one of P_1,P_2, while a clique avoiding x cannot use vertices from multiple blocks except the single cross-edge endpoints; hence omega(G_i)<=q.
+
+This is only a **single-color graph construction**, not an r-coloring counterexample. It shows the global excess floor is sharp for the individual graph constraints.
+
+## Theorem K.8 — Local multicolor degree budget
+
+For any vertex x and threshold 1<=s<=q-2, let L_s(x)={i:s_i(x)<=s}. Every color in L_s(x) satisfies d_i(x)>=2q-s-1. Since color degrees sum to q^2,
+
+\[
+\boxed{|L_s(x)|\le
+\left\lfloor\frac{q^2}{2q-s-1}\right\rfloor.}
+\]
+
+More precisely,
+
+\[
+\boxed{\sum_{i:s_i(x)\le q-2}(2q-s_i(x)-1)\le q^2.}
+\]
+
+In particular, at most floor((q+1)/2) colors can have slack one at a fixed vertex, and at least one color has slack at least q-1 there. This is a genuine multicolor compatibility inequality, but not a contradiction.
 
 ## Two-color transversal-blocking form
 
