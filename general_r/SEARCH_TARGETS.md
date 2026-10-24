@@ -1,0 +1,1 @@
+Search targets: 145, 61, 49, 35, 13, 91, backend identity, pivot degree, residual core, T61, contextual recurrence, hereditary cap.
