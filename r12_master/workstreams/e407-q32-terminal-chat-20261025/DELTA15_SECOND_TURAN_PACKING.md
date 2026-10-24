@@ -111,6 +111,23 @@ There are further vertex-level equality conditions:
 
 These are exact packing conditions. They do not yet contradict the balanced profile.
 
+### Color-class omission ledger
+
+Each exact-129 color class contains seven disjoint 4-sets, so it uses 28 of the 29 vertices of \(U\) and omits exactly one vertex.
+
+- A class with no \(x\)-block uses one vertex from each of \(P_1,P_2,P_3,P_4\) in every block, so it covers all 28 base vertices and omits \(x\).
+- A class with an \(x\)-block of type \(A\) covers all of \(P_1,P_3,P_4\) and six vertices of \(P_2\), so it omits one \(P_2\)-vertex.
+- A class with an \(x\)-block of type \(y\) covers all of \(P_2,P_3,P_4\) and six vertices of \(P_1\), so it omits one \(P_1\)-vertex.
+
+Let \(o_v\) be the number of color classes omitting \(v\). Then
+\[
+o_x=7-t,\quad \sum_{v\in P_1}o_v=t_y,\quad
+\sum_{v\in P_2}o_v=t_A,\quad o_v=0\ \ (v\in P_3\cup P_4).
+\]
+Each vertex occurs in \(7-o_v\) witness blocks, so its leave degree is \(d_L(v)-3(7-o_v)\). This recovers the exact residues above: \(3o_v\) on \(P_1\) and \(P_2\setminus\{y\}\), \(1\) on \(P_3\cup P_4\), and \(15+a-3t\) at \(x\). At \(y\), the formula is \(1-a+3o_y\).
+
+This ledger ties the 15-edge leave to the seven color classes; it still does not give a contradiction.
+
 ## 5. Remaining obstruction
 
 The \(\delta=15\) non-four-partite branch is reduced to one balanced Kang–Pikhurko construction with:
