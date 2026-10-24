@@ -340,5 +340,5 @@ If this is closed, the requested front-end dichotomy is proved for all `r>=17` (
 Latest state / proposal commits:
 
 - `CANONICAL_STATE.md`: `ea5f2a8d104239cf4d65a1b52d27960170db2bea`
-- `OPEN_GAPS.md`: pending Round 6 update
+- `OPEN_GAPS.md`: `defa92989e533889406398ac7b67442a89ff75a1`
 - `NO_HIGH_STOP_ROUND2_LEMMAS.md`: `365f6b4e98fc49cd5586eef97afde2d52c0e8e35`.
