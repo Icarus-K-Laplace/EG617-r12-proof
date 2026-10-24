@@ -273,7 +273,7 @@ If m>=ceil(4r/3+3), the Andrasfai-Erdos-Sos theorem gives that G is 3-partite. H
 
 m<=floor(3(r-1)/2).
 
-At most three blocks can have both endpoints in one part; every other block meets two parts. This is structural compression only. The remaining interval is nonempty, so no nonextension contradiction follows.
+In the high-density branch m>r, no clean block can have both endpoints in one part; all blocks meet two parts. This is structural compression only. The remaining interval is nonempty, so no nonextension contradiction follows.
 
 ### R20. Fifth-coordinate reversibility audit — PROVED_SYMBOLIC / DISPROVED_AS_STATED
 
