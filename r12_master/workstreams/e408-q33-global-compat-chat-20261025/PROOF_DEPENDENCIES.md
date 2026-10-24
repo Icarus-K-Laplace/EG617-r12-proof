@@ -73,3 +73,9 @@ This workstream extends that theorem for r_i(C)<=3 in SEVEN_BLOCK_INCIDENCE_LEDG
 ## 7. Scope caution
 
 A forced same-component edge across two outer blocks is not automatically a duplicate-color edge. It can be one of the baseline 12 edges of color C between those blocks. The new theorem is a structural compatibility constraint, not a contradiction and not a claim that the global seven-block system is UNSAT.
+
+## 8. Extended low-duplicate blocker theorem
+
+Theorem 10.1 and Corollary 10.2 are proved in SEVEN_BLOCK_INCIDENCE_LEDGER.md under the same exact-129 factor and seven-block equality contracts. The proof uses the one-or-two rule, the individual blocker lower bound, and the pairwise blocker compatibility theorem from ultimate-closure blob `b49421769477461ed26b3418a5cfd1a851cbb52d`.
+
+The extension is valid for \(r_i(C)\le5\), not asserted for \(r_i(C)=6\). At \(r_i=6\), the two no-component rows can in principle split the five vertices of a K5 component between them, so the \(k=0\) step needs a separate boundary analysis. Cross-block matching is proved only when \(r_i(C)+r_j(C)\le6\); its ten edges are not automatically duplicate-budget charges.
