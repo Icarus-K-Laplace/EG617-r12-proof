@@ -48,3 +48,10 @@ Therefore the design-level subkernel “one transversal plus six disjoint near-t
 This is an **abstract Latin-square incidence example**, not a full graph-level EG617 counterexample. It does not supply the three non-6-partite residual color graphs at b_i=5, their exceptional-star defects, the 14 witness roots, or the required edge colors between R and X.
 
 The audit rules out only the overstrong claim that the 3-net plus the (6,5,5,5,5,5,5) partition is itself impossible. Any proof closing r=7 Case B must use the additional high-color exceptional-star constraints or the witness/root incidence conditions.
+
+
+## Cross-line full-contract update
+
+J branch commit c0c31e82b2bd8b4c3c5a7ab6092b660d16bd686b proves the root-block capacity theorem J.W8. It shows the full EG617 Case B cannot realize the residual equality profile at q=6: every one of the 14 roots would need to fully c-dominate one of seven c-clique blocks, but the block capacities total only 13. Combined with the Euler–Tarry bound, this closes Case B at r=7.
+
+The explicit Latin square above remains a valid **abstract design-level realization** of the net/near-transversal subkernel. It is not a counterexample to J.W8 because it does not include the outside root vertices and their color-c neighborhood requirements.
