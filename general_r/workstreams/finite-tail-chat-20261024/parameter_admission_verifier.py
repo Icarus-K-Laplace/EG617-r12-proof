@@ -109,8 +109,8 @@ RANGES = [
 ]
 
 MODULE_REGISTRY = [
-    {"module_id": "ENDPOINT_DOMAIN_LOWER_BOUND_V1", "generator": "generate_endpoint_domain.py", "generator_version": "endpoint-domain-generator-v1.0.0", "verifier": "verify_endpoint_domain.py", "profiles": ["residual-core", "near-anchor"], "source_ids": ["RC_Q_CEILING", "ANCHOR_K8_NEAR"], "scope": "necessary missing-degree scalar domain only"},
-    {"module_id": "D1_SHELL_CLASS_BOUND_V1", "generator": "generate_d1_shell_bound.py", "generator_version": "d1-shell-bound-generator-v1.0.0", "verifier": "verify_d1_shell_bound.py", "profiles": ["not-applicable"], "source_ids": ["D1_SHELL_CLASS_BOUND"], "scope": "conditional d1 shell-class count N<=5 only"}
+    {"module_id": "ENDPOINT_DOMAIN_LOWER_BOUND_V1", "generator": "generate_endpoint_domain.py", "generator_version": "endpoint-domain-generator-v1.0.0", "verifier": "verify_endpoint_domain.py", "profiles": ["residual-core", "near-anchor"], "source_ids_by_profile": {"residual-core": ["RC_Q_CEILING"], "near-anchor": ["RC_Q_CEILING", "ANCHOR_K8_NEAR"]}, "scope": "necessary missing-degree scalar domain only"},
+    {"module_id": "D1_SHELL_CLASS_BOUND_V1", "generator": "generate_d1_shell_bound.py", "generator_version": "d1-shell-bound-generator-v1.0.0", "verifier": "verify_d1_shell_bound.py", "profiles": ["not-applicable"], "source_ids": ["D1_SHELL_CLASS_BOUND", "RC_Q_CEILING", "ANCHOR_K8_NEAR"], "scope": "conditional d1 shell-class count N<=5 only"}
 ]
 
 
@@ -265,7 +265,7 @@ def query_admission(r: int, module_id: str, profile: str | None) -> dict[str, An
         "source_ids": (
             ["RC_Q_CEILING"] if module_id == "ENDPOINT_DOMAIN_LOWER_BOUND_V1" and profile == "residual-core"
             else ["RC_Q_CEILING", "ANCHOR_K8_NEAR"] if module_id == "ENDPOINT_DOMAIN_LOWER_BOUND_V1"
-            else ["D1_SHELL_CLASS_BOUND"]
+            else ["D1_SHELL_CLASS_BOUND", "RC_Q_CEILING", "ANCHOR_K8_NEAR"]
         ),
         "eg617_r_proved": False
     }
