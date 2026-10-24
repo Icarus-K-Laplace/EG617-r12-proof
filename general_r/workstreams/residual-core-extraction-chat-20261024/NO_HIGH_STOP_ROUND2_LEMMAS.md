@@ -269,8 +269,8 @@ This is a genuine structural upgrade from near-extremality in edge count. It sti
 
 - (a=6) is impossible.
 - Any (a\ge7) candidate contains a legal induced (R_{a-1}).
-- Uniform quantitative edit-distance stability with growing part count (r).
-- Pairwise approximate orthogonality / a resolvable-design skeleton.
+- A uniform edit-distance partition-stability theorem is now proved via Füredi.
+- Exact pairwise orthogonality / an exact resolvable-design skeleton.
 - A design-trimming implication yielding an earlier (R_5) or (R_4).
 
 ### Current verdict
@@ -279,4 +279,4 @@ This is a genuine structural upgrade from near-extremality in edge count. It sti
 \boxed{\texttt{NO-HIGH-STOP = OPEN}.}
 ]
 
-The critical-core potential has reduced the (a=6) case to four explicit residue windows, but no all-large-(r) contradiction has been established. The next highest-leverage step is to prove uniform Turán edit stability for fixed (a), (C=O(a^2)), and growing (r), then combine it with the exact predecessor-interface lemma.
+The critical-core potential has reduced the (a=6) case to four explicit residue windows, while the color partitions now form a global near-resolvable design with O(r) bad pairs for fixed a. No all-large-r contradiction has been established. The next highest-leverage step is to classify the incidence pattern of those O(r) bad pairs and prove they admit an r-vertex transversal or force a contradiction.
