@@ -19,7 +19,7 @@ Audit policy: theorem status is inherited only with its explicit contract and de
 
 ## 2. R(4,49) backend chain
 
-For a legal residual F, `E=91+q+e(H)`. CORE211 gives `e(H)>=211` under its full residual-core contract. The three-anchor theorem strengthens this to `e(H)>=214` when three independent degree-12 anchors are actually established.
+For a legal residual F, `E=91+q+e(H)`. The new `R12_UNIVERSAL_CORE214_THEOREM.md` proves `e(H)>=214` for every legal core under the full inherited contract `alpha(H)<=3`, `omega(H)<=11`, `delta(H)>=12`; it does not require separately establishing anchors. Thus every legal pivot has `q<=E-305`.
 
 | Node | Required input / contract | Canonical evidence | Status boundary |
 |---|---|---|---|
