@@ -106,3 +106,13 @@ Thus for `4<=r<12` the generated payload is a **schema/encoding test only** unle
 - `CONDITIONAL`: implication proved only after one or more explicit assumption IDs.
 - `OPEN`: required implication not yet certified.
 - `SCHEMA_ONLY`: deterministic instance/certificate plumbing exists, but no theorem claim follows.
+
+
+## Machine-readable theorem-gate snapshot (2026-10-24)
+
+The theorem-promotion gate reads these lines as the current explicit status interface. A range-limited theorem is considered applicable only when the requested r lies in its stated range.
+
+- RC: OPEN
+- ANCHOR_K8: PROVED_ANALYTIC for r>=68; OPEN for 12<=r<68
+- ASYMPTOTIC_R0: OPEN
+- R12_FRONTEND_REC: COMPUTATION_CERTIFIED_ARITHMETIC_ONLY; BRIDGE_OPEN
