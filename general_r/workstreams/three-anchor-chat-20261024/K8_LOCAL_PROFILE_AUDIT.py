@@ -44,7 +44,7 @@ def profiles(r, geometry, budget=8):
 
 
 def main():
-    p14 = profiles(14, "c3_mixed")
+    c3_r14 = profiles(14, "c3_mixed")
     expected = set()
     for k in range(9):
         expected.add((k, 0, 0, 1, 10 - k, 8 - k, 8))
@@ -54,7 +54,7 @@ def main():
     expected.add((7, 0, 0, 2, 2, 0, 7))
     expected.add((8, 0, 1, 2, 2, 0, 8))
     expected.add((8, 1, 0, 2, 2, 0, 8))
-    assert set(p14) == expected, (set(p14) - expected, expected - set(p14))
+    assert set(c3_r14) == expected, (set(c3_r14) - expected, expected - set(c3_r14))
 
     p15 = profiles(15, "c3_mixed")
     assert p15 == [(8, 0, 0, 2, 2, 0, 8)], p15
@@ -77,7 +77,7 @@ def main():
             f"r=14 equality profiles: {p14}"
         )
 
-    print(f"c=3 mixed r=14 local profiles with cost <=8: {len(p14)} checked separately above")
+    print(f"c=3 mixed r=14 local profiles with cost <=8: {len(c3_r14)}")
     print("PASS: c=3 r=14 complete profile list, r=15 exceptional profile, r=16 empty.")
     print("LIMITATION: local integer/rectangle profiles only; no full graph H or SAT/ILP search.")
 
