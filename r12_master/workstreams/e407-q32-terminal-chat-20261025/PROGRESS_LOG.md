@@ -53,3 +53,29 @@ An attempted closure of the \((5,0)\) endpoint split was invalid and is withdraw
 - E408 Q32/Q33 and the original \(K_{145}\)-to-T61 bridge: untouched.
 
 Next, characterize the three extra \(D\)-to-\(W\) edges and the full-part labels of the 14 vertices outside the endpoint \(K_4\), then intersect this incidence system with the five V12 shell templates. Do not claim \(\delta=16\) closed until the \((5,0)\) kernel is excluded or realized.
+
+
+## 2026-10-25 — Round 3: exact witness-array multiplicities
+
+### New proved identity
+
+Under the \(\delta=16\) four-partite boundary, the 49 witness blocks and seven exact-129 color classes induce a resolvable Latin-square incidence system:
+
+- every \(A\)-\(B\), \(A\)-\(C\), and \(B\)-\(C\) pair occurs in exactly one block;
+- each color class is a transversal of the resulting order-7 Latin square;
+- each color class uses seven distinct \(D\)-vertices and omits exactly one of the eight;
+- for every \(d\in D\), the number \(r_d\) of colors omitting \(d\) equals the number of missing witness partners of \(d\) in each of \(A,B,C\).
+
+Thus \(\sum_{d\in D}r_d=7\). The five actual \(H[U]\) cross edges are five matching pairs among these missing pairs, so each of the five endpoint labels has \(r_d\ge1\). Therefore endpoint labels use at least five omission units, leaving at most two for the three non-endpoint labels. At least three endpoint labels have \(r_d=1\), and at least one non-endpoint \(D\)-vertex has \(r_d=0\) and appears in every color class.
+
+The full statement and proof are in DELTA16_WITNESS_ARRAY.md.
+
+### Why this matters
+
+This converts the 49-witness count into a precise incidence/omission identity. It does not by itself exclude the surviving \((5,0)\) \(W\)-kernel or any of templates A–E. The next step is to combine the omission multiplicities with the template-specific shell-row/hub-hit requirements rather than use only scalar incidence totals.
+
+### Current status
+
+- \(\delta=16\): OPEN, narrowed to the labelled \((5,0)\) kernel plus the exact witness-array constraints.
+- \(\delta\le15\): OPEN.
+- E407 Q32 overall: OPEN / NOT_CERTIFIED.
