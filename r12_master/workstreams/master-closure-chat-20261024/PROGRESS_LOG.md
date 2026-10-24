@@ -44,6 +44,14 @@ For N=9 this forces one common missing triple through q=34; at q=35 there are at
 
 Let H have 35 vertices, alpha(H)<=3, omega(H)<=11, delta(H)>=12. Any independent triple with total degree excess above12 at most4 forces K=2e(H)-420>=8. The only new case beyond the existing h<=3 theorem is degree pattern (14,13,13). Under K<=6, the connector partition has c+t=8 and outside-anchor excess at most2. A clique-cap correction strengthens the independent-transversal edge lower bound to z2*z3-1+z1; this eliminates all 55 connector-count profiles, with minimum arithmetic contradiction margin6. Therefore the d3 common-S independent-triple branch is absorbed into the E-305 envelope through allowance a=7. The remaining no-anchor triangular case is allowance a=8 with total excess five, patterns (1,1,3) or (1,2,2).
 
+- 801cd96154a594d75807e3d39c0f474dfb781d79 — **new theorem:** every independent triple in the 35-core with total excess at most five forces K>=8; this closes the common-S d3 independent-triple branch through allowance a=8.
+- 3279beb23defff45c5bf4db69b5b51e9ef429791 — independent finite audit of the h=5 connector profiles: 145 profiles across the two anchor-degree patterns, no survivors, minimum margin5.
+- 8c0e042d8895a0517fe75dcf4e2b46d7bb9e40d5, 460cd22661795431d43dd2feec89115cbc45b9b7, 0e2b247ef1833fb3e330c44de1955d30241e940a, bdf372ec706e8cc01e3e08ad580261dbaa0578b2, eb1df1d338315562415b469d3b93330973415a12 — propagated the h=5 closure through the H4 note, forcing contract, canonical frontier, dependency ledger, and final-boundary checkpoint.
+
+## New theorem: independent triples through excess five
+
+The only new case beyond the h<=4 theorem is anchor excess pattern (3,1,1) or (2,2,1). Under K<=6, the other 32 vertices contain at most one positive-excess vertex. The connector partition gives c+t=9. A clique-cap corrected independent-transversal lower bound z2*z3-1+z1 contradicts the degree-sum upper bound in all c=5..9 layers. The c=9 endpoint is split by z3=2,3,4,>=5. Thus the common-S independent-triple transport branch is closed through its full a<=8 ceiling.
+
 ## Independent checks performed
 
 - Rechecked the exact 870-edge color decomposition and global sums: sum P=252, sum R=427, sum s=3; non-target edge total is 9570.
@@ -51,6 +59,7 @@ Let H have 35 vertices, alpha(H)<=3, omega(H)<=11, delta(H)>=12. Any independent
 - Checked the d3 allowance bound over the 70 pairs q=32..38 and N=1..10.
 - Rechecked the d3 disjoint-support theorem by evaluating the exact block-transversal inequality for all block counts 1..100 and c=0,1,2; capacities are 3,3,6.
 - Rechecked that the h=4 theorem's 55 connector-count profiles have no survivors after the clique-cap correction; minimum lower-minus-upper margin is6.
+- Rechecked all 145 h=5 connector profiles across both anchor-degree patterns; no survivors and minimum lower-minus-upper margin5.
 - Rechecked that E407 Cell-B exclusion does not imply full E407 closure.
 - Rechecked that E408 exact-129 blocker constraints and Q33 local conditions are necessary conditions only; no global incompatibility theorem has been proved.
 
