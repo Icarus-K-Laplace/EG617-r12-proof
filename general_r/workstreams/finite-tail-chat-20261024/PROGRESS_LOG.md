@@ -99,7 +99,7 @@ It emits all d-rows from 0 through r, exact slack values, candidate degrees, sca
 - instance SHA-256: `65909c3589061e7463e807579bdde059ee7ae4d20f57f53158e5a612ae2d6c42`;
 - certificate SHA-256: `aa2123245e1bd6db9ab7056c3c2b0083f1d2f3828d39f40b54c731ba113b170a`;
 - verifier SHA-256: `c18a74703417faed2c453b588e0ea9a8b03244af04bfc0b5f4191ec8cc15de6a`;
-- gate SHA-256: `5b6c242d11a4efacb99b1e41d499ef50bf26ad709b704ad56b084ce038a075f5`;
+- gate SHA-256: `415191c88737a23e03df41c011b5d4fdb01537f4455985a2f26d0a30968e565d`;
 - gate result: `PASS_CONDITIONAL_MODULE`;
 - RC status: `OPEN`;
 - EG617(13): **not proved**.
@@ -147,7 +147,7 @@ Hashes:
 - certificate SHA-256: `2b82b7c89b8afab0259728a21d6e28ea10ace8a97c7c46455511a381555b0bc8`;
 - generator SHA-256: `b0d85a0877953490c5d724365b17c15dfc3113390a578a6813a7ba7b9183d5b6`;
 - verifier SHA-256: `e05ff2311275143d7a3a1492141be42b40989c93361e32ec3c2e504a2e5d457a`;
-- final multi-module gate SHA-256: `5b6c242d11a4efacb99b1e41d499ef50bf26ad709b704ad56b084ce038a075f5`.
+- final multi-module gate SHA-256: `415191c88737a23e03df41c011b5d4fdb01537f4455985a2f26d0a30968e565d`.
 
 ### Gate hardening
 
