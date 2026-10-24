@@ -113,3 +113,12 @@ New result in R12_ZERO_EXCESS_PAIRWISE_HUB_COVER.md: in the 284-edge/excess-four
 Audit correction: the exact-129 K5 decomposition allows one no-S component {p}∪Q. Thus total independent-four packing floors of seven/eight per exact-129 color remain valid, but not all such Q are B-labelled. The safe hub-complete B-labelled floors are 3 per color for A/B and 4 per color for C/D/E with n_3≥1; E with n_3=0 gives 7 endpoint-complete labelled witnesses per color. Global E407 floors are 21/21/28/28/28, or 49 endpoint-complete for E's n_3=0 branch. Stronger sibling counts based on treating every no-S component as B-labelled are not promoted without a separate proof.
 
 The exact-129 witness-packing support theorem remains valid: |V_*|≥29 in E407 and |V_*|≥31 in E408 Q33, but this is not a contradiction. E407 common-core completion, E408 Q32 threshold-29 completion, E408 Q33 seven-block compatibility, and the original K145 bridge all remain OPEN / NOT_CERTIFIED.
+
+
+## Live sibling refresh and beta-sensitive zero-excess packing (2026-10-25)
+
+Latest sibling refresh: witness-packing head 2bb0982 and zero-excess head f3c9ef6 were read; the current same-branch witness-transversal boundary theorem at commit 78c30e8 was also audited and its arithmetic verifier independently replayed.
+
+New beta-sensitive result in R12_BETA_SENSITIVE_ZERO_EXCESS_PACKING.md: the exact-129 component structure gives at least 6/7/8 B-labelled no-S K5 witnesses per color for beta=0 / beta in {1,2} / beta=3. Since at most four core vertices have positive excess and these Q sets are disjoint within a color, this yields at least 2/3/4 zero-excess component witnesses per exact-129 color. Global floors: E407 A/B=14, C/D=21, E=21; E408 Q33 beta=0/1/2/3 gives 16/24/24/32.
+
+The current boundary theorem also proves tau(Q)>=7 for the E407 (29,49) and E408 Q33 (31,56) witness families. Thus every core vertex outside the support has at least seven neighbors into it. Boundary windows remain compatible; no terminal is closed. The emergency witness-star edge dichotomy is audited and not used because tripartite does not imply complete tripartite.

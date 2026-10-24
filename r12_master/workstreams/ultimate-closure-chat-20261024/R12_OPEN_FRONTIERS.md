@@ -108,3 +108,14 @@ Remaining gap: exploit the strict-slack blocker families and cross-block duplica
 Under the 284-edge/excess-four core contract, any two regular B rows have a common independent four-set in H_0, by the six-deletion zero-excess theorem. If their missing-hub sets jointly cover S, the common set must hit every hub. The E407 labelled-pair lower bounds are A/C=39, B=17, D/E-full-row=9; these are pair certificates, not distinct four-sets. E's no-full-row case forces all B rows to miss both P3 endpoints and yields endpoint-complete common-witness certificates for all 45 row pairs.
 
 **Remaining limitation:** a single four-set can serve multiple row pairs. The theorem does not itself force a large family of distinct hub-complete witnesses and is not a terminal exclusion.
+
+
+## F10. Beta-sensitive zero-excess component packing
+
+For an exact-129 color, the number of B-labelled no-S K5 witnesses is at least 6, 7, or 8 according as beta=e(M[S]) is 0, 1/2, or 3. At most four such disjoint Q-sets can meet the positive-excess core vertices. Thus the zero-excess labelled floors per color are 2, 3, 4, giving E407 global floors 14/21/21 for templates A/B, C/D, E, and E408 Q33 floors 16/24/24/32 by beta. The sets are linear across colors.
+
+## F11. Linear-witness transversal boundary
+
+The latest boundary theorem proves tau(Q)>=7 for the E407 v=29,m=49 and E408 Q33 v=31,m=56 support-boundary families. Hence every vertex outside their union has at least seven core neighbors into the union. E407 has delta+epsilon_U<=16 and epsilon_U+2delta>=2, plus delta<=15; E408 Q33 has delta+epsilon_U<=17. The displayed budgets are not contradictory yet.
+
+The high-multiplicity star dichotomy e(H[U])=135 or >=144 is not accepted: its proof only forces the complement to be tripartite, not complete tripartite.

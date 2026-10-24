@@ -50,3 +50,15 @@ This audit does not invalidate the 7/8 total independent-four packing theorem or
 - General-r: sibling symbolic progress is conditional on stated extremal inputs; no unconditional r_0 certified.
 
 The full theorem remains **OPEN / NOT_CERTIFIED**. No conditional shell theorem, count bound, or computational coverage result is promoted to a proof for K145.
+
+
+## 5. Later live refresh — 2026-10-25
+
+After the first reconciliation commit, the witness-packing branch advanced to [2bb0982ea89f87eaf0e7aec3ec87590e53bd297b](https://github.com/Icarus-K-Laplace/EG617-r12-proof/commit/2bb0982ea89f87eaf0e7aec3ec87590e53bd297b), and the zero-excess branch advanced to [f3c9ef6b3a4bfadad4f70a16bb0e7c6434bb0777](https://github.com/Icarus-K-Laplace/EG617-r12-proof/commit/f3c9ef6b3a4bfadad4f70a16bb0e7c6434bb0777). The former adds a stronger zero-excess component-witness count and the star-lemma audit; the latter adds an arithmetic verifier for the high-support label dichotomy.
+
+The current ultimate-closure branch also acquired [R12_WITNESS_TRANSVERSAL_BOUNDARY_THEOREM.md](https://github.com/Icarus-K-Laplace/EG617-r12-proof/blob/workstream/r12-ultimate-closure-20261024/r12_master/workstreams/ultimate-closure-chat-20261024/R12_WITNESS_TRANSVERSAL_BOUNDARY_THEOREM.md) and a corrected verifier at [commit 78c30e86b0f432464ca5375695da97a27b230878](https://github.com/Icarus-K-Laplace/EG617-r12-proof/commit/78c30e86b0f432464ca5375695da97a27b230878). We independently replayed its arithmetic checks. It proves the transversal floor tau(Q)>=7 at the E407 (v,m)=(29,49) and E408 Q33 (31,56) support boundaries, hence every outside core vertex has at least seven neighbors into the selected witness union. The exact boundary windows are:
+- E407: delta+epsilon_U<=16, epsilon_U+2delta>=2, and delta<=15;
+- E408 Q33: delta+epsilon_U<=17.
+These are stronger necessary constraints but still compatible with the remaining induced-subgraph lower bounds.
+
+The beta-sensitive component count is recorded in R12_BETA_SENSITIVE_ZERO_EXCESS_PACKING.md. The emergency star lemma's basic incidence facts are retained, but its asserted e(H[U])=135 or >=144 dichotomy is not used: the second-Turan step proves tripartiteness, not completeness.
