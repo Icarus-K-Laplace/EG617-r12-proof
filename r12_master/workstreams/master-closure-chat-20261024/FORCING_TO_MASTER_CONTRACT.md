@@ -65,10 +65,10 @@ Thus the known common-S residual windows are exact:
 |---:|---|---|
 | d=2 | `a<=1` subcritical; `a=2` first-high-slack decomposition | `a>=3`, repeated rows with `1<=ell<=a-2` |
 | d=3, non-triangular S | `a<=2` subcritical; `a=3` first-high-slack decomposition | `a>=4`, repeated rows with `1<=ell<=a-3` |
-| d=3, S an independent triple | allowance through `a<=6` enters the anchor envelope via the independent-triple theorem | the new `R12_INDEPENDENT_TRIPLE_H4_EXTENSION.md` closes a=7 as well; only a=8 remains, with no-anchor patterns of total excess five: (1,1,3) or (1,2,2) |
+| d=3, S an independent triple | allowance through `a<=6` enters the anchor envelope via the independent-triple theorem | the new `R12_INDEPENDENT_TRIPLE_H4_EXTENSION.md` closes a=7 and `R12_INDEPENDENT_TRIPLE_H5_EXTENSION.md` closes a=8; all independent-triple allowances through the d3 ceiling are covered |
 | d=4 or d=9, q<=38 | non-fully-decorated systems are subcritical; fully-decorated multi-leftover Bridge C is closed | no new common-S Bridge-C case remains |
 
-The d3 triangle statement uses `GLOBAL_INDEPENDENT_TRIPLE_MIN_ANCHOR_THEOREM.md`, `GLOBAL_INDEPENDENT_TRIPLE_H3_THEOREM.md`, and the exact anchor-transport identity. For `a=8`, if any transported excess is zero or any support intersection creates a zero transported degree, the anchor branch applies; only the all-positive total-excess-five distributions (1,1,3) and (1,2,2) avoid that immediate route.
+The d3 triangle statement uses `GLOBAL_INDEPENDENT_TRIPLE_MIN_ANCHOR_THEOREM.md`, `GLOBAL_INDEPENDENT_TRIPLE_H3_THEOREM.md`, and the exact anchor-transport identity. The all-positive total-excess-five distributions (1,1,3) and (1,2,2) at a=8 are now closed by `R12_INDEPENDENT_TRIPLE_H5_EXTENSION.md`.
 
 This table is exhaustive **inside the stated common-S / decoration contracts**, not for arbitrary multi-S shell systems.
 
@@ -141,7 +141,7 @@ The current assets prove this conclusion only for specific subfamilies (includin
 ### Minimal open variables / barriers
 
 - **Multi-S extraction:** no proof yet covers all d2 systems or d3 systems with fewer owners / fully decorated classes at every q layer.
-- **Low-support shallow loss:** d2 `1<=ell<=a-2`; d3 non-triangular `1<=ell<=a-3`; plus the d3 triangular `a=8` total-excess-five near-anchor equality distributions.
+- **Low-support shallow loss:** d2 `1<=ell<=a-2`; d3 non-triangular `1<=ell<=a-3`; The d3 independent-triple allowance through a=8 is closed; the remaining d3 shallow-loss barrier is the non-triangular missing-set branch.
 - **Low-cross certification:** for an extracted family, the pairwise cross bounds used by the block-transversal theorem must be derived from its actual allowance/exchange identities, not assumed.
 - **Fully-decorated branch:** `s=d` cannot be passed through the `s<d` plateau/strict-loss lemmas. The d4/d9 common-S escape is closed, but this is not a general extraction theorem for every fully-decorated d2/d3 multi-S system.
 
