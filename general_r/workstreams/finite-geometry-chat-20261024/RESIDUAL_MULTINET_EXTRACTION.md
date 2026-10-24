@@ -219,3 +219,18 @@ Boundary: this does not eliminate Case A (matching number at least three), and i
 The quantitative root-block extension imported from J commit 5466f79333f0e8b1694c181c2ece4ae907086a37 is **invalid and withdrawn**. Its random transversal was sampled from full clique blocks, but a contradiction for a root requires selecting only from that root's nonneighbor subset in each block. Those subsets can be singletons; the probability bound used in the attempted proof therefore fails.
 
 Do not use the claimed \(d\ge \binom{k+1}{2}\) bound, its numerical thresholds, or the corresponding stronger net direction count. The independently audited J.W8 strict endpoint bound \(d\ge1\) remains valid, and it is enough to close the q=6 / r=7 Case B using the Euler–Tarry obstruction. Any stronger excess bound must explicitly handle root-dependent transversal blockers.
+
+
+## Theorem K.RM9 — Root-dependent weighted blocker inequality
+
+Exact source: J branch workstream/general-r-induction-compression-20261024, commit eb5aaee4e2957b8f18d1c62c886dab8d6d23337e, file ALIGNMENT_FREE_WITNESS_RIGIDITY.md, Theorem J.W12.
+
+Assume \(H_c=\overline{G_c[R]}\) is \((q+1)\)-partite with blocks \(B_j\), and let E be the set of cross-block color-c edges in G_c[R]. For a root x that does not fully c-cover any block, set \(A_j(x)=\{v\in B_j: xv\text{ is not color }c\}\), with \(a_j(x)=|A_j(x)|\ge1\). A uniformly random transversal selecting one vertex from each A_j has expected number of cross-block c-edges
+
+\[
+W_x=\sum_{\substack{uv\in E\\u\in B_i,\ v\in B_j}}\frac1{a_i(x)a_j(x)}.
+\]
+
+If W_x<1, a c-independent transversal exists and adjoining x gives a forbidden c-independent (r+1)-set. Thus every root that fully covers no block must satisfy W_x>=1.
+
+This is the correct blocker-weight condition: choices must be sampled from the root's nonneighbor sets, not the full blocks. It is a necessary structural inequality, not a quantitative lower bound on |E| by itself. The attempted stronger bound in the withdrawn K.RM8 is invalid and must not be reused.
