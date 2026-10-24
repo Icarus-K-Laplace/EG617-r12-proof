@@ -42,9 +42,13 @@ with a 35-point core H. The three-anchor theorem is now stronger than CORE211: u
 | E334 | `SOURCE_REPORTED / CONDITIONAL` | `consolidation/V12_V8_SOURCE_REPORTED_AUDIT.md` reports E334 empty relative to retained backend/V7 forcing. The independent graph-theoretic K>=8 theorem is in `backend/GLOBAL_THREE_ANCHOR_K6_FULL_CLOSURE.md`. | Independently replay/certify the V7/V8 forcing/extraction package that puts every E334 survivor into the three-anchor contract. Do not promote the source report itself to unconditional PROVED. |
 | E335--E340 | `OPEN` | `backend/GLOBAL_FORCING_TO_MASTER_V3_SYNTHESIS.md`, `GLOBAL_FORCING_TO_MASTER_ALLOWANCE_COVERAGE.md`, and `GLOBAL_SUPPORT_COMPATIBILITY_MASTER_THEOREM.md` provide a strong conditional structural stack. | Exhaustive extraction from an arbitrary legal maximal-pivot shell to the master contract, plus the finite higher-slack residues described in the companion forcing document. |
 
-## 2A. New backend result from this workstream
+## 2A. New backend results from this workstream
 
 `r12_master/workstreams/master-closure-chat-20261024/R12_D3_MULTIS_EXTRACTION_BOUND.md` proves an allowance-localization theorem for every regular d3 owner family through q=38. For N=9, it forces a single common missing triple through q=34, at most two common-S classes at q=35, and gives class-size-dependent subcritical/first-high-slack bounds through q=38. This is a genuine extraction advance, but does not cover d2 multi-S systems, lower-owner d3 systems, or every fully-decorated/shallow-loss class.
+
+### d3 disjoint-support compatibility through q=38
+
+`R12_D3_DISJOINT_SUPPORT_COMPATIBILITY.md` proves that disjoint d3 core supports have missing triples intersecting in at least two vertices. If the triples differ, their core cross-edge count is at most `q-36`. The block-transversal theorem then bounds the number of distinct missing-triple types in any disjoint-support family by 1 for q<=35, 3 for q=36,37, and 6 for q=38. This strengthens the old q<=32 extraction interface, but does not bound repeated-common-S support multiplicity or intersecting supports.
 
 ## 3. Overall theorem and proof-body status
 
