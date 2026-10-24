@@ -94,8 +94,8 @@ The global high-slack contradiction remains OPEN: `sum_i s_i(x)=m_q` is compatib
 - Universal global excess floor a_i>=q-1: PROVED.
 - Local multicolor degree-budget inequality: PROVED.
 - Slack-one crossed pattern: PROVED as a conditional lemma; its premise is vacuous in a full hypothetical counterexample.
-- Conditional tight-transversal interface: PROVED.
-- Global low-slack alignment: OPEN.
+- Conditional tight-transversal interface: PROVED as a conditional lemma; its low-slack premise is vacuous under the full counterexample contract.
+- Global low-slack alignment: NOT APPLICABLE under the full counterexample contract, because no local low-slack color exists.
 - High-slack contradiction: OPEN.
 - Full affine-plane/net completion: OPEN.
 - Prime-power P(q): OPEN.
