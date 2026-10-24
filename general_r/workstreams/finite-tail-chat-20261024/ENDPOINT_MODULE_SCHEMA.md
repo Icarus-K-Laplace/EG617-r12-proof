@@ -57,6 +57,24 @@ The generator emits:
 
 The independent verifier reconstructs these fields from `r` and the profile without importing the generator. It checks row completeness and order, every arithmetic value, every candidate, every reflection class, both hashes, and the fixed theorem scope.
 
+## Second module: D1_SHELL_CLASS_BOUND_V1
+
+Under the sibling endpoint classification's hypotheses A+B and r>=12, each distinct d1 missing-partner shell vertex has incidence at least r, while the total shell incidence is at most 6r-2. Thus if N is the number of d1 shell classes,
+
+`N*r <= 6r-2`.
+
+Six classes would require `6r` incidences, exceeding the cap by exactly 2; hence `N<=5`. The module certificate checks N=0,...,6 exactly and uses monotonicity to exclude every N>=7. It does not prove bounded multiplicity inside one of the five classes.
+
+Replay:
+
+```bash
+python generate_d1_shell_bound.py 13 --output certificates/d1_shell_class_bound_r13.json
+python verify_d1_shell_bound.py certificates/d1_shell_class_bound_r13.json
+python theorem_promotion_gate.py certificates/d1_shell_class_bound_r13.json --receipt certificates/d1_shell_class_bound_r13_receipt.json
+```
+
+The module consumes `RC + ANCHOR_K8`, is conditional for r=12,...,67, and remains conditional on RC even for r>=68. Its arithmetic certificate verifies the counting implication; it does not independently prove the upstream graph-theoretic shell lemmas.
+
 ## Conditional vs hard constraints
 
 - If the reduction source is not applicable at this r, the module is `SCHEMA_ONLY`.
