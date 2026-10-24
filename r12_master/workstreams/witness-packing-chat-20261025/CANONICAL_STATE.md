@@ -37,6 +37,10 @@ The emergency sibling's m=10 witness-star dichotomy e(H[U])=135 or >=144 is not 
 - E408 Q32: still separate; its core has 285 edges and excess six. No excess-four theorem is transferred without proof.
 - Preserve the original K145-to-T61 bridge and all inherited Ramsey/extremal input contracts.
 
+## New shell-incidence theorem
+
+SHELL_INCIDENCE_UNION_LEMMA.md proves the exact duplicate shell-incidence budget e(A,H)-47=e(M)-15. It yields a union of at least 11 core vertices among the full B-row supports in E407 template A and at least 10 in template C. It excludes the extreme common-three-vertex support pattern, but partial overlap patterns remain open.
+
 ## Verification assets
 
 - WITNESS_PACKING_INCOMPATIBILITY.md — full proof and boundary derivations.
