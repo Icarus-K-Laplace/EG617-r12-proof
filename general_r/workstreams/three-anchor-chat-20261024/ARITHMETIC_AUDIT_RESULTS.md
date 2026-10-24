@@ -24,7 +24,7 @@ LIMITATION: this script checks local arithmetic relaxations only; it is not a gr
 
 ## Interpretation
 
-- All eight stated threshold inequalities passed for every pair (1le a,ble100); the exact zero-charge conditions also passed on that range.
+- All eight stated threshold inequalities passed for every pair 1 <= a,b <= 100; the exact zero-charge conditions also passed on that range.
 - The finite c=3 boundary enumeration agrees with the analytic equality classification: at (r=13) only ((k,gamma,a,b,n_2)=(6,0,2,2,0)) survives the local relaxation; at (r=12), the 19 listed local signatures are exactly those used in the proof and are then eliminated structurally.
 - The c=4 arithmetic checks reproduce the unique (R_{24}) equality at (r=12) and the four relaxed orientation pairs in each two-focus overlap branch. The mixed-orientation pairs are not actual (K=6) configurations because their six-unit charges lie on distinct vertices; identical-orientation equality further forces identical supports by saturation.
 - These are consistency checks of local arithmetic, not enumeration of graphs satisfying all global constraints.
