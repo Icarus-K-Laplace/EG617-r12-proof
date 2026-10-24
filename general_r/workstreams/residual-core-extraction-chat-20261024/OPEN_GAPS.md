@@ -111,6 +111,8 @@ Applying the same theorem to the target complement (with (k=a), (q=r)) and summi
 
 Status: concentration `PROVED_SYMBOLIC`; uniform partition stability and global near-design `PROVED_ANALYTIC`; design trimming / partition incompatibility `OPEN`.
 
+**Fixed-a hub localization is also proved:** in the target complement `F_0`, every internal edge is incident to a hub set of size at most `5a(a-1)` for `r>=200a(a-1)+1`; for `a=6`, `|H|<=140` for `r>=5601`. The proof uses part-size concentration, a transversal union bound, and `M_0<=2x_0`. The remaining gap is to show the hub-protection pattern yields an earlier stop or contradiction.
+
 ## Candidate route D — critical-core residue potential
 
 Every high stop contains an `(r+1)`-critical induced core `Q` with
@@ -161,6 +163,8 @@ This is a new exact interface constraint and gives monotone excesses backward th
 
 **Stronger exact conclusion:** for every non-target color `i`, `z_i>=1`. The vertices with a unique `i`-colored neighbor `b` in `B` split into `r` classes `S_{i,b}` of size at most `a`, because any two vertices in one class must be joined by color `i`. Hence `ar+1-z_i<=ar`, so `z_i>=1`, `sum_i z_i>=r-1`, and `q_0<=(a-1)r+2`. The exact hole identity is `sum_b(a-|S_{i,b}|)=z_i-1`; if `z_i=1`, all `r` classes have size exactly `a`.
 
+**Stronger exact conclusion:** for every non-target color `i`, `z_i>=1`. The vertices with a unique `i`-colored neighbor `b` in `B` split into `r` classes `S_{i,b}` of size at most `a`, because any two vertices in one class must be joined by color `i`. Hence `ar+1-z_i<=ar`, so `z_i>=1`, `sum_i z_i>=r-1`, and `q_0<=(a-1)r+2`. The exact hole identity is `sum_b(a-|S_{i,b}|)=z_i-1`; if `z_i=1`, all `r` classes have size exactly `a`.
+
 **Remaining gap:** turn the near-permutation interface and the clique-transversal property into an induced `R_{a-1}` theorem or an exact design-trimming contradiction.
 
 Status: interface `PROVED_SYMBOLIC`; high-a induction `OPEN`.
@@ -190,9 +194,11 @@ The analytic residual-core theorem proves `delta(H)>=r` for `r>=17`. The boundar
 - `a=6` is **not closed**.
 - No induced `R_{a-1}` extraction theorem for arbitrary `a>=7` is proved.
 - The excess ledger plus Füredi's theorem gives simultaneous uniform partition stability and a global near-resolvable design with at most `3S_a(r)` bad pairs.
+- In the predecessor interface, every non-target color has `z_i>=1`, so at least `r-1` vertices duplicate a non-target color and `q_0<=(a-1)r+2`.
+- For fixed `a`, all internal edges of the target complement localize to at most `5a(a-1)` hubs; for `a=6`, at most 140 hubs suffice when `r>=5601`.
 - An approximate resolvable-design skeleton with `O(a^2 r)` bad pairs is proved; an exact skeleton or design-trimming theorem is not.
 - `NO-HIGH-STOP` remains **`OPEN`** for every claimed threshold `r>=r0`; no such `r0` has been established.
 
 ## Next highest-leverage target
 
-Analyze the `O(a^2 r)` exceptional-pair incidence pattern in the global near-resolvable design, combining it with the exact predecessor-interface lemma and the four `a=6` critical-core residue windows. Try to show the exceptional pairs have an `r`-vertex transversal (yielding an earlier `R_5`) or force a contradiction. Do not return to fixed-r recurrence, and do not promote a necessary residue condition to a contradiction.
+Analyze the hub-protection digraph in the `a=6` target complement, using `|H|<=140` for `r>=5601` and the label-capacity bounds `z_i>=1`, `q_0<=5r+2`. Prove either an earlier `R_5` with the correct edge budget or a contradiction with the four critical-core residue windows. Do not return to fixed-r recurrence, and do not promote a necessary residue condition to a contradiction.
