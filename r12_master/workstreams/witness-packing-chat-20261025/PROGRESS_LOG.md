@@ -32,3 +32,16 @@ Next mathematical target: classify the E407 v=29 / 49-witness and E408 Q33 v=31 
 - Added the arithmetic checks to verify_witness_packing.py and reran the full assertion set successfully.
 - New proof asset: SHELL_INCIDENCE_UNION_LEMMA.md; commit 73d8882b3d923c3d2406b215580d0cbc4f922c47.
 - Verifier update: commit 1bf54e51ddd6860ec800afe1f22fd7d41d85594e.
+
+
+## 2026-10-25 — transversal boundary audit and live branch refresh
+
+- Re-read latest ultimate-closure head 78c30e86b0f432464ca5375695da97a27b230878 and zero-excess head f3c9ef6b3a4bfadad4f70a16bb0e7c6434bb0777 after branch heads advanced.
+- Independently verified the linear-family transversal bound tau(Q)>=7 for (v,m)=(29,49) and (31,56), giving at least seven core cross-neighbours for every vertex outside the witness support.
+- Recomputed exact E407 and E408 boundary budgets. E407 has delta+epsilon_U<=16 and epsilon_U+2delta>=2; E408 has delta+epsilon_U<=17.
+- Found the latest boundary note again infers non-four-partiteness from ruling out complete four-partiteness. Corrected the logical scope: a near-complete four-partite design-like branch remains possible; Brouwer's non-partite bound applies only conditionally.
+- Imported pair-indexed zero-excess common witnesses and the high-support exact-129 dichotomy, preserving the distinction between labelled pair certificates and distinct witness sets.
+- Flagged an unsupported stronger component-count claim for templates C/D/E; retained only the universally proved six B-labelled component count.
+- Added TRANSVERSAL_BOUNDARY_AUDIT.md and extended the standard-library verifier; all arithmetic assertions passed.
+
+Current status: **OPEN / NOT_CERTIFIED**.
