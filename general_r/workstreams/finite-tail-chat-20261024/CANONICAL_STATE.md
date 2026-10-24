@@ -193,8 +193,8 @@ Added `PARAMETER_ADMISSION_MATRIX.json` and `PARAMETER_ADMISSION_VERIFIER.py`.
 
 - Explicit rows: r=4,...,100 (97 parameter rows), with a four-interval partition extending to every integer r>=4.
 - Source records: six immutable theorem/asset records, including source commit, source path/blob, exact parameter applicability, proof type, assumptions, and terminal contract.
-- Matrix raw SHA-256: `bcdcfa098cee564b136f6fa00405fb34d46a9fa60342b8d4a46f8f77cb8053f7`.
-- Admission verifier SHA-256: `114f1fd8441ad4e1b91c7ee4cad82e9abf3c21d6c4453502c2e5413ce4d51b35`.
+- Matrix raw SHA-256: `6ada61242bd6afa86ad4bb06e8549e5d5bfdbff348c5ffff6d32be445dc51cf3`.
+- Admission verifier SHA-256: `43c42443d8fbfc6ddb67d2bb3f4923e0c70e2a92a6dba5818d692defad2d44d9`.
 - Theorem gate now calls the admission verifier before promotion and records the matrix/verifier fingerprints in its receipt.
 - Unified entry point: `generate_parametric_certificate.py`, which reuses the existing endpoint-domain and d1 generators rather than reimplementing their arithmetic.
 
@@ -241,3 +241,10 @@ The committed graph-verifier CLI has not yet been run directly in a repository e
 - New EG617(r) theorem: **NONE**.
 - `ASYMPTOTIC_R0`: **NOT AVAILABLE**.
 - `RC` and global extraction: **OPEN**.
+
+
+Round-2 implementation fingerprints:
+- theorem gate SHA-256: `7f3dfb534ecb6c6b81d129ee0c96a8a141277188f133d05fcf52f8206094ce84`
+- unified family wrapper SHA-256: `8ab57ec8f005061fd1aa234b24e8e434d36bcbd77149e6caa9a1e5f7de9fc36a`
+- graph symmetry verifier SHA-256: `6f6c484575772b72324ee0e4ad3495c93fb1b39ebb6f35e981fa54277a952f4c`
+- graph symmetry test-vector file SHA-256: `72ed53eb8f05d1a1531595076f018a5e31c8f66388cf230dfff70a88bfbdc05a`
