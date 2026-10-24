@@ -94,3 +94,12 @@ Status: alignment-free structure PROVED; Case A contradiction, Case B contradict
 - In the matching-number-two branch at r=7, the residual colors are forced into three zero-excess directions and three b_i=5 exceptional-star colors.
 - The omitted color graph on R is exactly seven cliques of sizes 6,5,5,5,5,5,5; the blocks form one transversal and six near-transversals of the 3-net.
 - This sharpens the r=7 Case B to a finite incidence kernel. It does not exclude the kernel, Case A, or prove not-P(r) => not-P(r-1).
+
+
+## 2026-10-24 — Round 12: root-block capacity contradiction
+
+- Proved J.W8: residual Turan equality is impossible in Case B for every r>=5.
+- Key mechanism: if the omitted-color residual graph is a disjoint union of one q-clique and q cliques of size q-1, every root must have a color-c neighborhood containing a full block. A size-q block can be fully covered by at most one root; a size-(q-1) block by at most two. Total capacity 1+2q is less than |X|=2q+2.
+- Derived J.W9: at least ceil((q+1)/2) residual directions, improving the prior lower bound for even q.
+- Derived J.W10: Case B impossible at r=7 because it would force four directions and hence two orthogonal Latin squares of order 6.
+- Case A remains open; this is not yet a full r=7 compression theorem or an all-r induction.
