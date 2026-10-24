@@ -226,3 +226,27 @@ Otherwise there are more candidate pairs in (U_\ell\times U_m) than target cross
 Because (A\le27r+15), at least two of the three remaining groups have at most (O(\sqrt r)) points outside the union of the four endpoint neighborhoods. This gives a robust partial version of the exact-star destination constraint.
 
 Status: **PROVED_CONDITIONAL** on compatibility of the two source nonedges (their four cross pairs must be target-nonedges). The open bridge is to find a sufficiently large family of compatible source pairs or charge the conflicts to the global budget. Full Hub Propagation remains **OPEN**.
+
+
+## 2026-10-24 — contextual terminal closed for (r\ge6212) by target-defect capacity
+
+### New theorem — PROVED_ANALYTIC
+
+The target stability/hub theorem gives, for (r\ge6212), (|X|\le108), all target-internal missing edges incident to (X), and each (B_j\setminus X) a target clique. Since (alpha(G_0)\le5), each hub has at most four nonneighbors among ordinary vertices of its own group. Thus
+[
+D=\sum_j\left|\binom{B_j}{2}\setminus E(G_0)\right|
+\le4|X|+\binom{|X|}{2}\le6210.
+]
+
+But one target ideal group (B_h) has size at least (r+1). Every non-target color (G_i) must have an edge inside any fixed ((r+1))-subset of (B_h), because (alpha(G_i)\le r). The (r-1) colors require distinct edges, all of which are target-internal deletions. Hence (D_h\ge r-1\ge6211), contradiction.
+
+Full proof, including the monotonicity calculation sharpening (|X|\le114) to (|X|\le108) for (r\ge6212), is in `JOINT_DEFECT_PROPAGATION.md`.
+
+### Correct interpretation of this advance
+
+- **Contextual ((5r+1))-terminal nonexistence:** **PROVED_ANALYTIC for all (r\ge6212)**, under the already-proved target stability/hub-concentration inputs.
+- **Literal multi-block Hub Propagation Theorem:** still **OPEN** as a mechanism; the terminal contradiction bypasses rather than solves its edge-cover classification.
+- **Exact-core route:** no exact TD/affine plane has been derived or needed for this closure.
+- **Full Erdős Problem 617 for all sufficiently large (r):** still **OPEN**, because the front-end implication forcing every hypothetical counterexample into either the ((4r+1)) residual branch or this legal ((5r+1)) terminal remains unproved.
+
+The proof counts each target-deleted edge by its unique color and does not sum cylinder charges. It is robust to shared cover edges and does not assume exact-star structure, prime-power order, or constant per-vertex non-target edit degree.
