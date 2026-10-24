@@ -116,3 +116,13 @@ Under J's Case B contract, put q=r-1 and R=V minus X, |R|=q². The residual exce
 Exact consequence: N(q)>=ceil(q/2)-2 MOLS of order q. In particular, a hypothetical r=11 Case B counterexample forces three MOLS(10), whose existence remains open (Bright–Keita–Stevens, EJC 33(1) (2026), DOI 10.37236/13960). This is a conditional structural reduction, not a contradiction.
 
 Subcase: if alpha(G_c[R])<=q as well, then all residual excesses vanish and R is an affine plane of order q. No extension contradiction with X has yet been proved. Case A remains outside this extraction.
+
+
+## Targeted finite-geometry subproblems exposed by Case B
+
+The residual q-net theorem gives two useful non-prime-power reductions:
+
+- r=11 (q=10): Case B forces at least 5 directions, hence 3 MOLS(10). The general existence question remains open (Bright–Keita–Stevens, EJC 2026, DOI 10.37236/13960).
+- r=15 (q=14): Case B forces at least 7 directions, hence 5 MOLS(14). Four MOLS(14) are known, while existence of a fifth remains open (Todorov, JCD 2012, DOI 10.1002/jcd.21298; subsequent MOLS literature).
+
+Since affine planes of orders 10 and 14 do not exist, the full-affine-plane subcase is unavailable at these q. These are conditional reductions of Case B only; Case A remains open and neither design implication is a contradiction.
