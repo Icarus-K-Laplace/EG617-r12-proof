@@ -13,7 +13,7 @@ Hence `q<=3r-1`. For `r>=12`, regular missing degrees satisfy
 
 `d in {0,1,2,3,r-2,r-1,r}`.
 
-The standard backend global alpha/omega caps are invoked explicitly only where stated below.
+Standard global backend alpha/omega caps are invoked explicitly where needed.
 
 ## Exact identities
 
@@ -45,9 +45,7 @@ d0 repivots preserve the core, q and tau and are quotientable.
 
 For shell `s`,
 
-`t_s=d_M(s)+g_s=e_F(s,H)`
-
-satisfies
+`t_s=d_M(s)+g_s=e_F(s,H)`,
 
 `sum_A t_s=2e(M)+G_A<=6r-2`.
 
@@ -111,21 +109,19 @@ and
 
 Zeta is bounded and invariant under neutral d0 repivots.
 
-If an exact repeated `(S,D)` owner class has multiplicity m, repivoting one owner makes the other `m-1` owners d0, while all old d0 owners plus p become a reverse `(D,S)` class. Hence
+If an exact repeated `(S,D)` class has multiplicity m, repivoting one owner makes the other `m-1` owners d0, while all old d0 owners plus p become a reverse `(D,S)` class. Hence
 
 `zeta(new)>=m-1`.
 
 On a q/tau-flat move, `m>=zeta+2` strictly improves `Phi_3`. Therefore at a `Phi_3`-maximal pivot
 
-> `m<=zeta+1`
+`m<=zeta+1`
 
 for every q/tau-flat repeated exact class.
 
-If equality is zeta-flat, the exchange is multiplicity-balanced.
+### R8. Balanced repeated-class capacity — PROVED_CONDITIONAL
 
-### R8. Balanced correction-cycle capacity — PROVED_CONDITIONAL
-
-For a `Phi_3`-flat repeated d2 class, `m=zeta+1`. The class owners, all zeta d0 owners and p form a target clique of size `2m`, hence
+A `Phi_3`-flat repeated d2 class has `m=zeta+1`. Its owners, all zeta d0 owners and p form a target clique of size `2m`, hence
 
 `m<=floor((r-1)/2)`.
 
@@ -133,9 +129,31 @@ If k distinct repeated exact classes simultaneously admit `Phi_3`-flat moves, th
 
 > **`(k+1)(zeta+1)<=r-1`.**
 
-Thus balanced repeated correction cycles have an exact neutral-population/clique-capacity tradeoff.
+### R9. Balanced Two-Chamber Correction Theorem — PROVED_CONDITIONAL
 
-### R9. Missing-pair / neutral-population bound — PROVED_SYMBOLIC
+For a `Phi_3`-flat exact repeated d2 class, let
+
+`C_0={p} union Z_0(p)`, `C_1=Y_{S,D}`.
+
+Then `|C_0|=|C_1|=m=zeta+1` and `F[C_0 union C_1]=K_(2m)`.
+
+Modulo d0-neutral pivot relabellings, the entire repeated correction orbit has only two states:
+
+> **Chamber 0:** core H, exact class `(S,D)` on C1;
+>
+> **Chamber 1:** core `H'=(H\D) union S`, exact reverse class `(D,S)` on C0.
+
+Thus every balanced repeated correction cycle collapses to the two-state involution
+
+> **`H <--> H'`.**
+
+The d2 allowance a is invariant under the swap. If `b=e_M(S)` and `mu=1-e_H(D)`, then the chambers exchange `b <-> mu`, and
+
+> `kappa_H(D)-kappa_(H')(S)=b-mu`.
+
+Therefore the repeated-support cycle problem is reduced to one symbolic two-chamber terminal family; no long correction cycle remains in this branch.
+
+### R10. Missing-pair / neutral-population bound — PROVED_SYMBOLIC
 
 For a target-nonedge core pair D, the standard common-nonneighbour argument plus p and the zeta d0 owners gives
 
@@ -145,25 +163,23 @@ For a q-flat d2 owner with nonedge support D,
 
 > **`a>=zeta`.**
 
-Hence if `a<zeta`, every q-flat d2 support must be a target edge. At equality `a=zeta`, a nonedge support collapses to a saturated common-nonneighbour template with `kappa(D)=zeta-1`, no common H target-neighbour and `e_F(S,D)=0`.
+If `a<zeta`, every q-flat d2 support must be a target edge. At equality `a=zeta`, a nonedge support collapses to a saturated common-nonneighbour template with `kappa(D)=zeta-1`, no common H target-neighbour and `e_F(S,D)=0`.
 
-This uses the standard global `alpha(F)<=3`, `omega(F)<=r-1` backend caps.
-
-### R10. Exact d2 common-S charge identity — PROVED_SYMBOLIC
+### R11. Exact d2 common-S charge identity — PROVED_SYMBOLIC
 
 `W=K+2r-2+a+b`.
 
 A three-class one-loss common-hub subsystem requires `K+a+b>=r`.
 
-### R11. d3 closure — PROVED_CONDITIONAL
+### R12. d3 closure — PROVED_CONDITIONAL
 
 The equality B-floor forces `q<=3r-2`, `a+B<=4`; the declared low-charge Bridge-B assets eliminate the remaining d3 sector.
 
-### R12. High Endpoint Three-Owner Theorem — PROVED_CONDITIONAL
+### R13. High Endpoint Three-Owner Theorem — PROVED_CONDITIONAL
 
 All regular owners with `d>=r-2` number at most three. Their bounded-complement encoding uses at most nine shell interaction vertices and eight core incidence signatures.
 
-### R13. Low-owner clique lemma — PROVED_SYMBOLIC
+### R14. Low-owner clique lemma — PROVED_SYMBOLIC
 
 Any two regular owners with `d<=3` are target-adjacent for `r>=12`, so together with p they form a target clique; there are at most `r-2` low owners.
 
@@ -183,11 +199,11 @@ The first three coordinates are genuine bounded integer coordinates; zeta has a 
 - d1: <=5 shell classes; final core-exchange rigidity open.
 - d2 shell geometry: <=6 support vertices / <=15 classes.
 - d2 plateau geometry: every non-fully-decorated class is O(1)-bounded in q-flat rows; only `S subset X` can scale.
-- repeated fully-decorated d2 classes: controlled by zeta; flat equality is a balanced reverse exchange satisfying the product clique bound.
+- repeated fully-decorated d2 classes: either improve zeta or collapse to the single Balanced Two-Chamber Correction family.
 - nonedge q-flat supports: require `a>=zeta` and have a rigid equality boundary.
 - d3: eliminated.
 - high endpoint: <=3 owners, finite bounded-complement skeleton.
 
 ## Unique next blocker
 
-**Fully-decorated fixed-class d2 plateau compatibility.** For one shell pair `S subset X`, eliminate or rigidify (i) distinct-support q-flat systems and (ii) zeta-balanced repeated correction cycles. This is the only scalable equal-q endpoint mechanism left.
+**Fully-decorated distinct-support d2 plateau theorem.** The repeated-class correction-cycle branch is now reduced to one two-chamber symbolic family. The remaining scalable combinatorial blocker is a fixed decorated shell pair `S subset X` carrying many distinct q-flat core 2-supports; simultaneously, the two-chamber family still needs a final contradiction or hereditary equality exclusion.
