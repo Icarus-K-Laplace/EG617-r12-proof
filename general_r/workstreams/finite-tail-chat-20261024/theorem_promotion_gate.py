@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Theorem-promotion gate for finite-tail endpoint-domain certificates.
+"""Theorem-promotion gate for finite-tail endpoint modules.
 
 A verified conditional lemma may be promoted as conditional. This gate never
-promotes EG617(r) from a necessary-domain module, even if its arithmetic passes.
+promotes EG617(r) from a local endpoint lemma, even if its arithmetic passes.
 """
 from __future__ import annotations
 
@@ -91,7 +91,7 @@ def gate(certificate_path: Path, ledger_path: Path) -> dict:
         conditional_module_status = "CONDITIONAL_LEMMA_CERTIFIED"
         module_gate = "PASS_CONDITIONAL_MODULE"
 
-    # This module gives a necessary domain only, never a contradiction or graph closure.
+    # These modules give local endpoint bounds only, never a complete graph contradiction.
     eg617_promotion_status = "BLOCKED_MODULE_IS_NOT_A_COMPLETE_GRAPH_CONTRADICTION"
     if not all_assumptions_known:
         eg617_reason = "one or more assumption IDs are absent from the machine-readable ledger"
