@@ -100,7 +100,7 @@ A rigorous hereditary multicolor-to-residual transfer lemma is now proved and do
 
 The outer-budget comparison has an exact symbolic gap formula in `OUTER_BUDGET_DOMINANCE.md`. With `a=r-1-j`, `t=r-d`, `n=ar+t`, and `b=t mod a`,
 `U_r(d,j)-p_a(n)=C(r,2)-(a+1)t^2/(2a)+t-b(a-b)/(2a)`.
-At `t=1), the gap is exactly `C(r,2)`. The all-state dominance theorem and an explicit asymptotic threshold remain OPEN; no `r_0` is certified.
+At `t=1`, the gap is exactly `C(r,2)`. The all-state dominance theorem and an explicit asymptotic threshold remain OPEN; no `r_0` is certified.
 
 
 ## Round 2 — Low-order cutoff advance (2026-10-24)
