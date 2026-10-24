@@ -394,6 +394,28 @@ Proof: `NO_HIGH_STOP_ROUND2_LEMMAS.md`, Section 10.
 
 **Limitation:** this is a tighter finite-kernel theorem, not a contradiction. A field-based partial TD with `r^2-r` blocks still satisfies the block-density lower bound; the exceptional label/color incidence remains open.
 
+### 9I. Extreme-part excess concentration and exact KP interface
+
+Status: **`PROVED_ANALYTIC`** for the groupwise inequality; **`PROVED_CONDITIONAL`** for the KP equality structure under `x_i=5` (and, for the block-partition classification, `z_i=1`).
+
+For a target part `V_j` of size `r+delta_j`, let `Z_j=sum_i z_{i,j}` and let `m_j` count non-target colors having a nonhub duplicate vertex in `V_j`. The groupwise inequality gives
+
+`D_j >= m_j-Z_j+(r-1)delta_j`.
+
+Since `D_j<=x_0` and `sum_{i>0}(x_i-5)=9r+11-x_0`,
+
+`sum_{i>0}(x_i-5) <= (9-delta_j)r+11+delta_j+Z_j-m_j`.
+
+In particular, if `|V_j|=r+9`, then
+
+`sum_{i>0}(x_i-5) <= 20+Z_j-m_j`.
+
+Thus when each color represented by a duplicate in this part contributes only one such vertex (or `Z_j=0`), at most 20 non-target colors can exceed the Brouwer floor `x_i=5`; at least `r-21` colors are exact KP extremizers.
+
+For any color with `x_i=5`, `F_i` attains the Kang–Pikhurko bound for a non-`r`-partite `K_{r+1}`-free graph on `6r+1` vertices. Because `alpha(F_i)<=6`, all `r` base parts in the KP construction have exactly six vertices. If also `z_i=1`, the predecessor classes are disjoint six-sets covering all but one vertex; direct classification of the independent six-sets shows they are the base parts, except for at most two exceptional blocks in the three explicit swap cases listed in `NO_HIGH_STOP_ROUND2_LEMMAS.md`, Section 12.
+
+**Limitation:** if `Z_j-m_j` is large, the excess bound weakens by exactly that concentration term. Moreover, many colors may have `z_i>1`; the `z_i=1` KP block classification does not cover those cases. The cross-color incidence contradiction remains open.
+
 ### 10. Critical-core residue windows
 
 Status: **`PROVED_ANALYTIC`** as a necessary-condition reduction.
