@@ -107,3 +107,12 @@ The specified `LITERATURE_AUDIT.md` did not exist on this branch at the start of
 - Derived the exact design implication N(q)>=ceil(q/2)-2 for mutually orthogonal Latin squares.
 - Special audit: r=11 (q=10) Case B implies three MOLS(10). Current literature records this as open; this is a conditional reduction, not a contradiction.
 - If alpha(G_c[R])<=q, all b_i=0 and R is a full affine plane of order q. The extension of that plane by the 2r outside vertices remains OPEN.
+
+
+## 2026-10-24 — Round 4: finite-geometry target audit
+
+- Audited the small q boundary: q=2 gives only one residual-low color; the Brouwer net extraction begins at q=3.
+- Derived the MOLS implications for selected q values from t>=ceil(q/2).
+- Identified two potentially informative composite-order reductions: r=11 => 3 MOLS(10) in Case B, and r=15 => 5 MOLS(14) in Case B.
+- Verified literature status: 3 MOLS(10) remains open in the 2026 SAT investigation; four MOLS(14) are known, while a fifth is reported open. No nonexistence is assumed.
+- For q=10 and q=14, known nonexistence of affine planes rules out the full-affine-plane subcase K.RM3, but not the partial-net branch.
