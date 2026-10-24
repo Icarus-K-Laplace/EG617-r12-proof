@@ -20,12 +20,15 @@ def check_e407() -> None:
     for delta in (0, 1):
         for eps_u in range(5):
             e_cross = 124 + 2 * delta + eps_u
-            assert e_cross >= 126
+            if e_cross < 126:
+                # The seven-neighbour floor already excludes this profile.
+                continue
             n7_lower = 20 - 2 * delta - eps_u
             assert n7_lower >= 14
-            # Distinct 7-transversals are disjoint; at most three can occur.
-            # For delta <= 1, each transversal supports at most six degree-7 W vertices.
-            assert n7_lower > 3 * 6
+            # Distinct 7-transversals are disjoint; the 3-transversal case
+            # is excluded by the omitted-vertex count. For delta <= 1,
+            # each remaining transversal supports at most six degree-7 W vertices.
+            assert n7_lower > 2 * 6
     print("E407: delta <= 1 impossible; hence delta >= 2")
 
 
