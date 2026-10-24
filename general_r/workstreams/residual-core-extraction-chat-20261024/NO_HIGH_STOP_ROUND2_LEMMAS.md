@@ -230,6 +230,12 @@ Every vertex except those counted by (z_i) has exactly one color-(i) edge to (B)
 
 Since (n=ar+1), (z_i\ge1). Summing over the (r-1) non-target colors gives the stated bounds. \(\square\)
 
+Moreover, the class sizes satisfy the exact hole identity
+
+`sum_{b in B}(a-|S_{i,b}|)=z_i-1`.
+
+Thus the predecessor clique induces, for every non-target color, an exact partition of all but (z_i) vertices of (R_a) into (r) monochromatic (i)-cliques, each of size at most (a). The total unused capacity of these (r) classes is exactly (z_i-1). If (z_i=1), all (r) classes have size exactly (a).
+
 ### Consequence for excess propagation
 
 At every canonical step (R_{a+1}\to R_a),
