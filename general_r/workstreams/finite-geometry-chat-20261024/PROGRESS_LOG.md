@@ -149,3 +149,12 @@ The specified `LITERATURE_AUDIT.md` did not exist on this branch at the start of
 - Strengthened the residual net bound to at least ceil((q+1)/2) directions; for q even this improves the previous count by one.
 - At q=6, the strict bound forces four directions, which would yield two orthogonal Latin squares of order 6. Euler–Tarry rules this out, so Case B is impossible at r=7.
 - The abstract Latin-square subkernel remains realizable; the full root-neighborhood constraints are what produce the contradiction. Case A remains open.
+
+
+## 2026-10-24 — Round 8: strict residual budget and r=7 Case B
+
+- Imported J.W8 by exact commit reference and checked the equality-case argument.
+- Equality in sum b_i<=C(q,2) forces the omitted color graph to be the Turan-minimal union of one q-clique and q smaller (q-1)-cliques.
+- Every root must fully c-cover one of these blocks; the capacities (large block: at most one root; small block: at most two) contradict |X|=2q+2.
+- Therefore sum b_i<=C(q,2)-1 for q>=4, improving the guaranteed net to ceil((q+1)/2) directions.
+- For q=6 (r=7), four directions imply two MOLS(6), ruled out by Euler–Tarry. Case B is closed; Case A remains open.
