@@ -33,8 +33,8 @@
 - Added R12_WITNESS_UNION_CAPACITY_REFINEMENT.md (commit 9dd07314d73c721c9cc8b008b7a7166c825ce566).
 - Proved the exact core-capacity inequality \(6N\le e(\overline{H[U]})\le\binom v2-p_4(47-v)-12v+284-E_U\), retaining the nonnegative core excess on U.
 - Used the numeric caps \(C_{28}=290,C_{29}=310,C_{30}=331,C_{31}=353,C_{32}=375\) to sharpen the witness-union lower bounds.
-- E407 A/B: seven exact-129 colors imply \(v\ge29\); eight or more imply \(v\ge31\). E407 C/D/E: seven exact colors imply \(v\ge32\); eight or more imply \(v\ge33\). E408 Q33/d3: \(\beta=0\) implies \(v\ge31\), while \(\beta\ge1\) implies \(v\ge33\).
-- Remaining union-size boundary kernels are E407 A/B with exactly seven exact colors and \(v=29\), E407 C/D/E with exactly seven exact colors and \(v=32\), and E408 Q33/d3 with \(\beta=0,v=31\). These are not graph-level contradictions.
+- Corrected safe counts: E407 any template has \(v\ge29\) with exactly seven exact-129 colors and \(v\ge31\) with at least eight; E408 Q33 has \(v\ge31\) for eight exact-129 colors at any beta.
+- Audit correction: the claimed eight no-S components per color in E407 C/D/E, and the beta>0 implication in E408 Q33, do not follow. An S-edge permits but does not force its endpoints into one K5 component. These stronger counts were withdrawn; the remaining capacity boundaries are E407 seven-color \(v=29\) and E408 Q33 eight-color \(v=31\).
 - Explicitly did not transfer the 284-edge bound to E408 Q32, whose core has 285 edges and whose own shell-support split is not certified.
 - Current theorem status remains **OPEN / NOT_CERTIFIED**; no full parent graph was constructed or excluded in this round.
 
@@ -47,7 +47,19 @@
   ```
   Proof: each w outside the witness union U must hit every independent 4-set Q_i; count those hits with multiplicity r_x and substitute the exact core-degree identity.
 - E407 A/B boundary (seven exact-129 colors, v=29): the inequality forces 2R+E_U>=4, alongside the core cap R+E_U<=16.
-- E407 C/D/E boundary (seven exact-129 colors, v=32): r_x=7 for all 32 union vertices, forcing 2R+E_U>=56 and R+E_U<=39; hence at least 26 complement edges are not covered by the 56 witness K4s.
-- E408 Q33/d3 boundary (beta=0, eight exact-129 colors, v=31): forces 2R+E_U>=7 and R+E_U<=17; hence at least two complement edges remain uncovered.
+- Conditional algebra only: if an independent argument supplies N=56 on v=32 with r_x<=7, then 2R+E_U>=56 and R+E_U<=39. The present exact-129 count contract does not establish that premise for seven-color E407 C/D/E, so no terminal application is claimed.
+- E408 Q33 boundary (eight exact-129 colors, v=31, any beta): forces 2R+E_U>=7 and R+E_U<=17; hence at least two complement edges remain uncovered.
 - Commit for the strengthened theorem file: fbd9b72a50d78b7e71ff0c733528aea9985b9885. Canonical-state sync: 2cbea843acdb5d5af91fc27bd479689856a453ec.
 - These are stricter necessary conditions, not terminal contradictions. No E407/E408 terminal is closed; E408 Q32 remains excluded until its own shell-support reduction is certified.
+
+
+## 2026-10-25 — Round 5: live sibling audit and repaired four-partite E408 Q33 boundary
+
+- Refreshed latest heads from emergency sprint (ad56a91), ultimate closure (1aa47d1), witness packing (5d0e3ce), zero-excess witness (98167ec), general-r architecture (a922c4d), and general-r asymptotic (fa6a5f2). Sibling branches were read-only.
+- Corrected the beta-sensitive witness-count application in R12_WITNESS_UNION_CAPACITY_REFINEMENT.md: beta>0 does not force two S vertices into the same K5 component. Safe E407 floors are N>=49 for seven exact-129 colors and N>=56 for eight; safe E408 Q33 floor is N>=56 for eight exact-129 colors, regardless of beta.
+- Added R12_CROSS_BRANCH_AUDIT_AND_S0_REPAIR.md (commit 5b40022ac171cc568cea6d4f034bc66ce3f8ef3b).
+- Independently audited the sibling E408 Q33 four-partite S0=10 proof. Its original s=1 and s=2 steps incorrectly treated selected pairs not lying in a Q block as necessarily extra L-edges, although such pairs may be H-edges.
+- Repaired s=1 by counting all selected non-Q pairs through the unused perfect matchings: 27 selected cross-part pairs cannot fit into 6 pairs from unselected-D blocks, at most 9 from the selected-D class, and at most 9 non-Q pairs; 27<=24 is impossible.
+- Repaired s=2 using the degree identity epsilon_x+j_x=1[x in T*]. It implies no extra L-edge touches A0∪B0∪C0. The unused matchings then give degrees 4 from A0 to B0 and 5 from each of A0,B0 to C0, forcing a triangle in L[A0,B0,C0]. With any unselected d in D this yields an independent 4-set disjoint from T*=N_H(w*)∩U, contradicting alpha(H)<=4.
+- Thus the four-partite E408 Q33 minimum-support contract still excludes S0=10 and forces epsilon_U+2delta>=11, now with a repaired proof. This does not close the non-four-partite branch.
+- Headline status remains OPEN / NOT_CERTIFIED. E407 Q32 same-core completion, E408 Q32's separate 285-edge core, E408 Q33 non-four-partite completion, and the original K145 bridge remain open.
