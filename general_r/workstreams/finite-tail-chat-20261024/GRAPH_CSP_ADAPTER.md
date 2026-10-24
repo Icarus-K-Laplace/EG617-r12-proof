@@ -57,3 +57,16 @@ For bounded enumeration, record the deterministic successor rule and a digest of
 ## Hard prohibition
 
 Never add a conjectural endpoint closure, clean-pair nonextension, bounded-allowance d1 closure, or design-terminal nonextension as a CNF clause merely because it is expected to be true. The source theorem and its assumption IDs must precede the clause in the theorem ledger. An UNSAT proof under an unproved clause certifies only the augmented conditional system, not EG617(r).
+
+
+## Round 2 — admission matrix and symmetry witness interface
+
+The parameter gate is now an explicit upstream adapter:
+
+1. validate `PARAMETER_ADMISSION_MATRIX.json` with `PARAMETER_ADMISSION_VERIFIER.py`;
+2. query exact r/module/profile;
+3. reject theorem-level admission below r=12 unless a separate parameter-specific reduction is registered;
+4. preserve RC and ANCHOR_K8 as explicit assumptions when their broad contracts are not discharged;
+5. only then generate a local conditional module certificate.
+
+A graph-level witness schema and small exhaustive reference verifier now exist. They check role-preserving vertex bijections, color-class-preserving color bijections, exact colored-edge incidence, indexed constraints, canonical encodings, one witness per state, and pairwise inequivalence of representatives. The K3/two-color fixture is only a test of this interface. It is not a graph-level EG617 instance, and no SAT/UNSAT search was started.
