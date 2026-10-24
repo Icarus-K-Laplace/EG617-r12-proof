@@ -49,3 +49,14 @@ The sharp Kakeya theorem assumes the Desarguesian affine plane over a finite fie
 ## 5. Prime-power warning
 
 The existence of AG(2,q) for prime-power q does not imply that an arbitrary counterexample coloring has its vertices coordinatized by F_q^2. Even a family of mutually orthogonal partitions need not, without additional hypotheses, be the complete Desarguesian affine plane. Polynomial, character-sum, or field-incidence methods must wait until the relevant coordinates and incidence structure are proved.
+
+
+## 4. Residual multinet interface from J
+
+Source: J branch workstream/general-r-induction-compression-20261024, commit 009a546cf0d66e4060a601bba168674214e7ac6c, file ALIGNMENT_FREE_WITNESS_RIGIDITY.md, Theorems J.W1/J.W5.
+
+Under the tight-transversal Case B contract, q=r-1 and R=V\\X have |R|=q²; for q colors i!=c, alpha(G_i[R])<=q and residual excesses b_i satisfy sum b_i<=C(q,2). At least ceil(q/2) colors have b_i<=q-2. Brouwer's threshold gives q-clique partitions for those colors; any two are orthogonal, giving a q-net with at least ceil(q/2) directions. This is a conditional consequence of J's graph-level theorem, not a claim that arbitrary colorings have such nets.
+
+The t-net gives N(q)>=t-2>=ceil(q/2)-2 mutually orthogonal Latin squares. For q=10 (the r=11 Case B), it would imply three MOLS(10). Current source audit: Bright, Keita, and Stevens, “Myrvold's Results on Orthogonal Triples of 10 x 10 Latin Squares: A SAT Investigation,” Electronic Journal of Combinatorics 33(1) (2026), P1.30, DOI [10.37236/13960](https://doi.org/10.37236/13960), preprint [arXiv:2503.10504](https://arxiv.org/abs/2503.10504), reports the general 3-MOLS(10) existence question remains open; its SAT results resolve restricted cases only. Do not label this as a contradiction.
+
+If alpha(G_c[R])<=q also, the edge budget forces all residual excesses to vanish, yielding a full affine plane of order q. Whether it can be extended by the 2r outside vertices under the EG617 counterexample contract remains OPEN.
