@@ -104,6 +104,30 @@ def main() -> None:
     assert 435 - local_e_h_u == 299
     print("Star-lemma audit: tripartite does not imply complete; g=1 gives e=136")
 
+    # Independent audit of the linear-witness transversal theorem.
+    for t in range(0, 5):
+        assert t * ((29 - t) // 3) + comb(t, 2) < 49
+    for t in range(0, 6):
+        assert t * ((31 - t) // 3) + comb(t, 2) < 56
+    assert 2 * 49 - 5 * ((29 - 5) // 3) == 58 > 5 * ((29 - 1) // 3)
+    assert 2 * 49 - 6 * ((29 - 6) // 3) == 56 > 6 * ((29 - 1) // 3)
+    assert 2 * 56 - 6 * ((31 - 6) // 3) == 64 > 6 * ((31 - 1) // 3)
+    print("Transversal floor: tau(Q)>=7 for both boundary kernels")
+
+    # Correct boundary windows; do not infer non-four-partiteness from a
+    # failure to be complete four-partite.
+    assert comb(29, 2) - 294 == 112
+    assert comb(29, 2) - (294 + 16) == 96
+    assert 284 - 96 - (124 + 2 * 16) == 32
+    assert comb(31, 2) - 336 == 129
+    assert comb(31, 2) - (336 + 17) == 112
+    assert 284 - 112 - (114 + 2 * 17) == 24
+    assert turan_edges(29, 4) - (294 + 16) == 5
+    assert turan_edges(31, 4) - (336 + 17) == 7
+    assert turan_edges(29, 4) - 294 == 21
+    assert turan_edges(31, 4) - 336 == 24
+    print("Boundary windows: E407 delta+eps_U<=16; E408 delta+eps_U<=17")
+
     print("ALL WITNESS-PACKING ARITHMETIC CHECKS PASSED")
     print("Scope: arithmetic only; no graph-completion or root-theorem certificate.")
 
