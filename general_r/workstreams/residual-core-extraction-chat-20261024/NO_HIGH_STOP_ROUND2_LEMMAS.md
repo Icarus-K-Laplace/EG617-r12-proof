@@ -682,6 +682,101 @@ For `r>=112`, this abstract design already exceeds the necessary lower bound `r^
 
 This is a stronger necessary structure, not a contradiction. The exceptional `O_a(r)` classes may carry all the non-extension obstruction; the theorem does not complete the design or show that an earlier `R_5` exists. A field-based `TD(6,r)` with one parallel class removed gives a design-only model with `r^2-r` blocks, so design density alone cannot close the gap. The proof uses only the existing Füredi stability bounds, the exact predecessor-label partition, `alpha(F_i)<=a`, and the bounded hub theorem. No fixed-`r` computation is promoted to an all-`r` result.
 
+## 10. Hub-incidence slot budget: a 7-to-28 hub kernel
+
+This section improves the hub localization by using the exact predecessor-label partitions. It is a necessary structural theorem, not a contradiction.
+
+Let `V_1,...,V_6` be the target-stability groups in a first high-stop `R_6`, with `r-8<=s_j=|V_j|<=r+9` for `r>=22`. For each non-target color `i`, each label class `S_{i,b}` has size `s_{i,b}<=6`. Let `g_{i,b}` be the number of target groups it meets and define its missing-group-slot count
+
+`m_{i,b}=6-g_{i,b}`.
+
+Also set `h_{i,b}=6-s_{i,b}` and `c_{i,b}=s_{i,b}-g_{i,b}`. Then
+
+`m_{i,b}=h_{i,b}+c_{i,b}`,
+`sum_{i,b} h_{i,b}=sum_i(z_i-1)=5r+2-q_0<=5r+2`,
+`sum_{i,b} c_{i,b}<=D<=x_0<=9r+11`,
+
+where `D=sum_j e(F_0[V_j])` is the number of internal target-complement edges. The inequality `sum c<=D` holds because a class with multiplicities `t_1,...,t_6` contributes `sum(t_j-1)` to `c`, while its internal edges contribute `sum binom(t_j,2)>=sum(t_j-1)`; these internal pairs are disjoint across all color classes. Therefore the total missing-slot budget is
+
+`W:=sum_{i,b}m_{i,b}<=14r+13`.  (WS)
+
+### Lemma 12.1 — every hub consumes linearly many missing group slots
+
+For each hub `x in X`, let `j(x)` be its target group and define
+
+`W_x=sum_{i:x notin Z_i} m_{i,b_i(x)}`,
+
+where `b_i(x)` is the unique predecessor label of `x` in color `i`. At most one color has `x in Z_i`. Then
+
+`d_{C_0}(x)<=r+6-s_{j(x)}+5 1_{x in union_i Z_i}+W_x<=19+W_x`.
+
+Consequently, for `r>=1000`,
+
+`W_x>=(r-65)/2`.
+
+**Proof.** Fix a target group `V_k` with `k!=j(x)`. For each non-target color `i` for which `x notin Z_i` and the class `S_{i,b_i(x)}` meets `V_k`, choose one vertex `y_i in S_{i,b_i(x)} intersect V_k`. The pair `xy_i` has color `i`; these chosen vertices are distinct for different colors because an edge has only one color. Thus `x` has at least
+
+`(r-1-u_x)-m_{x,k}`
+
+non-target neighbors in `V_k`, where `u_x=1` if `x in union_i Z_i` and `0` otherwise, and `m_{x,k}` counts the classes containing `x` that omit `V_k`. Therefore
+
+`d_{C_0}(x,V_k)<=s_k-r+1+u_x+m_{x,k}`.
+
+Summing over the five groups other than `V_{j(x)}` gives
+
+`d_{C_0}(x)<=r+6-s_{j(x)}+5u_x+W_x<=14+5+W_x=19+W_x`.
+
+Since `x` is a hub, `d_{C_0}(x)>=H_r/2>=(r-27)/2`; rearranging gives `W_x>=(r-65)/2`. `\square`
+
+### Lemma 12.2 — multiple-hub classes have bounded total surcharge
+
+Let `k_{i,b}=|S_{i,b} intersect X|`. Then
+
+`sum_{x in X} W_x <= W+15|X|(|X|-1)`.
+
+**Proof.** A class containing `k` hubs contributes `k m_{i,b}` to the left and `m_{i,b}` to `W`. If `k>=2`, then `k<=6`, `m_{i,b}<=6`, so the surcharge is at most `30`. A pair of hubs can share at most one label class over all colors, because that pair has only one edge color. Hence there are at most `binom(|X|,2)` classes containing at least two hubs, and the total surcharge is at most `30 binom(|X|,2)=15|X|(|X|-1)`. `\square`
+
+### Theorem 12.3 — at most 28 hubs for sufficiently large `r`
+
+For `a=6` and `r>=26272`,
+
+`7<=|X|<=28`.
+
+**Upper bound proof.** By Lemmas 12.1–12.2 and (WS),
+
+`|X|(r-65)/2 <= 14r+13+15|X|(|X|-1)`.  (HK)
+
+The previously proved hub cover gives `|X|<=74` for `r>=1000`. For `29<=|X|<=74`, the function
+
+`f(k)=k(r-65)/2-15k(k-1)`
+
+is increasing when `r>=26272`. At `k=29`, `f(29)>14r+13` for `r>=26272`, contradicting (HK). Thus `|X|<=28`.
+
+**Lower bound proof.** Put `delta_j=s_j-r`, so `sum_j delta_j=1`. Since `G_0[R_6]` is `K_r`-free, `alpha(F_0[V_j])=omega(G_0[V_j])<=r-1`. Hence the minimum vertex-cover number of `F_0[V_j]` is at least `s_j-r+1=delta_j+1` whenever `delta_j>=0`. Every internal `F_0` edge meets `X`, so `X intersect V_j` is a vertex cover of `F_0[V_j]`. If `N` is the set of groups with negative `delta_j`, then
+
+`|X|>=sum_{j:notin N}(delta_j+1)=7+sum_{j in N}(-delta_j)-|N|>=7`.
+
+Thus the hub kernel is nonempty and in fact has between 7 and 28 vertices for `r>=26272`. `\square`
+
+### Corollary 12.4 — sharpened linear-defect partial design
+
+For `a=6,r>=26272`, the number of non-clean predecessor classes is at most
+
+`(5r+2)+(12/5)(13r+6)+28(r-1)<=65r`.
+
+Therefore a first high stop contains a pairwise-linear partial resolvable `TD(6,r)` with at least
+
+`r^2-66r`
+
+clean blocks.
+
+### Scope and adversarial audit
+
+- The theorem is independent of the earlier `z_i=1` special case; it uses every color's exact label partition and permits arbitrary `z_i>=1`.
+- The upper bound counts missing group slots, not merely non-clean classes. The multiple-hub correction is necessary and is controlled by pairwise uniqueness of edge colors.
+- The lower bound `|X|>=7` uses only `K_r`-freeness of the target color and the fact that every internal target-complement edge meets `X`.
+- This does **not** contradict a high stop. A design-only TD with one parallel class deleted has `r^2-r` blocks and still exceeds `r^2-66r`; the remaining blocker is the exceptional classes' color/label incidence.
+
 ## 9. Status ledger for this round
 
 ### PROVED
