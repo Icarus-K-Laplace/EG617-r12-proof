@@ -70,3 +70,22 @@ This is useful as an independent asymptotic window, although the sibling common-
 4. prove D at any finite threshold.
 
 A huge threshold in C* or D is acceptable initially; it would still create the first true infinite-family theorem once all three open components have finite thresholds.
+
+
+## v4 — S67-low near-anchor route (2026-10-24)
+
+| version | theorem | hypotheses | r0 | controlling threshold | status |
+|---|---|---|---:|---|---|
+| v4 | P(r) | A_ext* + D_low | 67 | direct near-anchor extraction inside the 5r+1 terminal | CONDITIONAL_ON_Aext_Dlow |
+
+This is a **different route**, not a numeric improvement of the same hypothesis set as S68-v2. It replaces the broad C*+D endpoint assumptions with the narrower D_low near-anchor terminal contract and bypasses the exact three-anchor hypothesis H_B.
+
+Threshold accounting:
+- residual 4r+1 branch: impossible once r ≥ 17, with contextual cap gap (3r−13)/2;
+- 5r+1 terminal direct near-anchor extraction: r ≥ 67, relative to Liu–Ren–Wang 2025 (classical AES fallback r ≥ 71);
+- high-degree top layer |W|=2r−1: Cell B excluded for r ≥ 16, Cell A for r ≥ 25;
+- low-degree top layer delta=r, |W|=2r−1: still OPEN and included in D_low.
+
+Thus the shortest conditional numeric threshold is now **67**. The unconditional Problem-617 threshold remains **NOT CERTIFIED** because A_ext* and D_low are open.
+
+The d2 scalar inequality audit is also frozen: the family K=r−2, a=2, b=0, epsilon=0, B=r/2+4, q=5r/2+4 is consistent with all currently recorded scalar bounds and has K+a=r. It is not a legal graph counterexample, but no scalar-only proof of a strict sub-r margin can be valid.
