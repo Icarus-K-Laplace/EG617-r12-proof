@@ -289,3 +289,51 @@ Latest assets:
 - `CANONICAL_STATE.md`: `019381c2f1543f9e4868b8ffe9e1e9d0b1a09716`.
 
 The exact-star permutation theorem's exactness qualification was also synchronized to `NONEXTENSION_CLOSURE.md` (commit `d5332842f97d21737f4f8aa62e930c9a4ed0715b`) and `CANONICAL_STATE.md` (commit `27adfaa3dd1b123744977e6ca364ac69587db917`).
+
+
+## 2026-10-24 Round 2 — terminal branch closed for (r\ge6212) by defect capacity
+
+### New theorem
+
+Added `JOINT_DEFECT_PROPAGATION.md`, proving:
+
+> **Bounded target-defect nonextension.** Under the full contextual terminal contract, no legal ((5r+1))-terminal exists for (r\ge6212).
+
+The proof is independent of exact-star reduction and multi-block cover classification.
+
+1. From the existing hub theorem, (X\le108) for (r\ge6212), every target-internal deletion touches (X), and each (B_j\setminus X) is an actual target clique.
+2. The target independence cap (alpha(G_0)\le5) means each hub has at most four missing target edges to ordinary vertices in its own group.
+3. Therefore the total number (D) of target-internal deletions satisfies
+   [
+   D\le4|X|+\binom{|X|}{2}\le4\cdot108+\binom{108}{2}=6210.
+   ]
+4. Some target ideal group (B_h) has (|B_h|\ge r+1). The inherited contextual property (alpha(G_i[W])\le r) forces every one of the (r-1) non-target colors to own an edge inside a fixed ((r+1))-subset of (B_h). Unique edge ownership makes these (r-1) distinct target-internal deletions, so (D_h\ge r-1\ge6211), contradiction.
+
+The (|X|\le108) sharpening is explicit: (Phi(r)=4(27r+15)/H_r) is decreasing for (r\ge6212), and (Phi(6212)<109).
+
+### Audit scope
+
+- The proof uses the full contextual color-avoidance property, in particular (alpha(G_i[W])\le r) for each non-target color. It is not a theorem about arbitrary abstract colored graphs lacking that inherited condition.
+- No defect-cover lower bounds are summed. Shared edges cannot be double-counted because the proof counts unique target-internal pairs and their unique actual colors.
+- Non-target (K_6)-freeness, exact-star form, prime-power assumptions, and exact TD structure are not needed for this shortcut.
+- The literal multi-block Hub Propagation mechanism remains **OPEN**; the terminal branch is closed by a different, stronger target-side capacity contradiction.
+- The front-end implication from every hypothetical counterexample to either the ((4r+1)) residual branch or the contextual ((5r+1)) terminal remains **OPEN**. Hence this is not an unconditional all-large-(r) proof of Erdős Problem 617.
+
+### Cross-workstream read-only check
+
+Read on the E/asymptotic branch `workstream/general-r-asymptotic-20261024`:
+- `LOW_DEGREE_TOP_LAYER_CLOSURE.md`;
+- `COMMON_TRANSVERSAL_COVER_INTERFACE.md`.
+
+The latter confirms the reusable weighted transversal-cover inequality, but its stronger local cover refinements do not replace the target-group argument above. No E-line files were modified.
+
+### Commits from this round
+
+- `JOINT_DEFECT_PROPAGATION.md`: `928b635d93617fee648a045888a6e6380404fe54`.
+- `HUB_PROPAGATION_THEOREM.md`: `b3ddf15e738fa4ff54d982ddca7a2e9902a1a665`.
+- `MULTICOLOR_DEFECT_BUDGET.md`: `11816183a67086dfc6e32e60f5571102a0b20508`.
+- `NONEXTENSION_CLOSURE.md`: `fd9a550733a1b3b68b80223d02f75cb87da16cb2`.
+- `CANONICAL_STATE.md`: `2ca0979d4c21d0d8c86fdb8ff552564c7b4cfa22`.
+- `ROBUST_EXACT_CORE.md`: `b7d7f6bbe734f73c88ec5e71d87b65c77697d1e0`.
+
+**Final status for this round:** contextual terminal nonexistence **PROVED_ANALYTIC for (r\ge6212)**; literal robust Hub Propagation **OPEN**; full Erdős Problem 617 front-end **OPEN**.
