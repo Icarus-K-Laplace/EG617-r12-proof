@@ -156,3 +156,15 @@ No theorem gap remains in this workstream. The highest-value action is external/
   - PROOF_DEPENDENCY_MAP.md: 26a321fd296155ee8a97a75e2e720c470866cd03
   - EQUALITY_K8_CLASSIFICATION.md: d1b6d132df67268d9097b111634165edc65b8b67; status corrections: aa7334366517f4d703608faf0c62537000dd4ddd, b2c9cbf67ce7bce4b4d35aa7e889edaed503f5a8
 - Pre-log branch head was b2c9cbf67ce7bce4b4d35aa7e889edaed503f5a8. The next commit records this progress entry.
+
+
+## 2026-10-24 — post-audit consistency fixes
+
+- Re-examined the \(r=13,c=4,(0,0,2),f=2\) overlap proof. Corrected the equality description: the two large rectangle sides need not be nested; the singleton's **union load** determines its excess. The external-incidence contradiction remains valid using the union size \(q+2\le10\) and at most two opposite-block connector neighbours.
+- Corrected the final equality-layer wording to state precisely that \(K\ge10\) is proved for \(r\ge14\), while the \(r=12,13\) equality layer remains OPEN.
+- Re-ran the local integer-profile assertions in Python: \(c=3,r=14\) has exactly 23 profiles, \(r=15\) has the single \((8,0,0,2,2,0,8)\) profile, and \(r=16\) has none; the \(c=4\) \(r=13,14\) overlap assertions also passed. Results output ordering was aligned with the committed script.
+- Follow-up commits:
+  - union-load correction in EQUALITY_K8_CLASSIFICATION.md: b07c97ff5fe69bf22464c8a26155fa8ca805694e
+  - K=10 scope correction in EQUALITY_K8_CLASSIFICATION.md: 34510e37da00f92b2336e5a9f07c38e716d1fa40
+  - exact profile output ordering: 67fb8defa7ac67fd43c9194486bae2d0a471c366
+- Pre-log branch head: 67fb8defa7ac67fd43c9194486bae2d0a471c366.
