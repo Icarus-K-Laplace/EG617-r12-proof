@@ -110,3 +110,14 @@ This array has the required label-only properties:
 - each B label occurs exactly seven times, and p occurs exactly seven times.
 
 Thus the row/column no-repeat conditions and the label-capacity bound are not contradictory. This is **only a label-array relaxation**: it does not assign the actual A1/A2/A3 coordinates of the 56 K4s, so it is not a witness-hypergraph or colored-graph construction. The unresolved geometric condition is that every label class, every color class, and every D-column must simultaneously form the required disjoint transversal systems with all pairwise coordinate pairs unique.
+
+
+## 9. New outer exceptional-row coupling bound
+
+For any exact-129 color C and block pair (i,j) with both \(r_i(C),r_j(C)\le3\), the ten isolated K5 components force ten C-colored matching edges between the blocks. The two exceptional rows on each side have complementary gadget cliques \(A_i,B_i\) and \(A_j,B_j\). Every nonempty intersection among these four cliques forces the corresponding exceptional-row edge to be C-colored. If the 2x2 intersection mask has k nonempty cells, ell occupied rows and c occupied columns, then
+\[
+d_{ij}(C)\ge k+\max(2-\ell,2-c)-2.
+\]
+This is zero for a single cell or a two-cell matching, one for an adjacent two-cell mask or any three-cell mask, and two for the full mask. Hence the sum of these forced costs over all exact colors low-slack on the same block pair is at most 12.
+
+**Gap remains:** no proof yet excludes the one-cell / matching patterns simultaneously across the seven blocks. The new inequality is a branch filter, not an UNSAT certificate.
