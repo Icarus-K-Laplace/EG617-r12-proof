@@ -20,3 +20,12 @@
 - Corrected the witness-packing count: among seven components avoiding S, one may contain pivot p. The proved lower bound is six B-labelled no-S K5 witnesses per exact-129 color, yielding at least 42 for E407 and 48 for E408 Q33/d3.
 - Corrected the E407 A/C corollary from at least two to at least one hub-complete witness per exact-129 color, hence at least seven occurrences overall.
 - No E407/E408 terminal is closed. The next target remains a labelled overlap/capacity theorem that combines these corrected witness sets with the 284-edge core and exact outer-block budgets.
+
+
+## 2026-10-25 — second structural result: high-multiplicity witness stars
+
+- Proved the witness-star lemma in R12_WITNESS_OVERLAP_STAR_LEMMA.md. If \(m\) labelled witness 4-sets share a core vertex \(x\), their other triples are disjoint and their union \(U\) has \(\alpha(H[U])\le3\). Turán gives \(e(H[U])\ge3\binom m2\), and every vertex in a triple has at least \(m-1\) neighbours in the other triples.
+- For the extremal \(m=10\) case, the second Turán theorem shows \(e(H[U])\le143\) forces \(H[U]=3K_{10}\); thus \(e(H[U])\) must be 135 or at least 144.
+- Ruled out the \(3K_{10}\) case when \(\varepsilon_x=0\): the four core non-neighbours of \(x\) would have to be complete to one of the three \(K_{10}\) cliques; two share a clique, and the degree/excess budget lets us choose non-neighbours in each other clique, creating an independent 5-set. Hence a 10-witness star in the Turán-equality regime forces \(\varepsilon_x\ge1\).
+- This is a structural reduction, not a contradiction: the \(e(H[U])\ge144\) regime and the \(3K_{10}\) regime with \(\varepsilon_x\ge1\) remain open. Need combine with the shell incidence ledger and the actual five Q32 template labels.
+- Commit: 11ea1ae6971319d746f99a23d333a3336d142f7b.
