@@ -239,3 +239,8 @@ Proof: choose each (x_i) independently and uniformly. The number of selected cro
 - **Residual-core pivot (C common-S):** the support-transition identity (d_i(y_j)=2-|D_i\cap D_j|), owner-capacity theorem, and exact repivot transport are separate valid inputs. No theorem currently identifies the full core support system with the TD(5,r) blocks, so no such identification is made.
 
 The C/D transversal-cover interface is now precise and reusable, but the global terminal contradiction remains OPEN.
+
+
+## Round 3: low-offset hub reduction
+
+For j=2,...,7, the exact W-local surplus is g_r(j)=floor((2r-j)^2/4)-(r-1)(r-j), with values r-1, r-1, r, r+1, r+3, r+5. If every outside vertex o has d_F(o,W)<=B, the exact duplicate-anchor count contradicts both anchor-degree branches once r>=j+4B. Therefore every survivor has some o in O' with d_F(o,W)>=floor((r-j)/4)+1. This is a structural reduction, not a nonexistence theorem; full-terminal hub exclusion remains open.
