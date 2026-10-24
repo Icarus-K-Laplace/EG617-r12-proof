@@ -212,3 +212,25 @@ colors give pairwise orthogonal q-clique partitions of R.
 For r=7, q=6, the strict bound forces at least four orthogonal 6-clique partitions on the 36-point set R. Taking two as row/column partitions, the other two yield a pair of mutually orthogonal Latin squares of order 6, ruled out by Euler–Tarry. Hence Case B is impossible at r=7.
 
 Boundary: this does not eliminate Case A (matching number at least three), and it does not prove the full r=7 theorem or an all-r induction.
+
+
+## Theorem K.RM8 — Quantitative root-block rigidity
+
+**Exact source:** J branch workstream/general-r-induction-compression-20261024, commit 5466f79333f0e8b1694c181c2ece4ae907086a37, file ALIGNMENT_FREE_WITNESS_RIGIDITY.md, Theorem J.W11.
+
+Let q=r-1>=4 and \(d=\binom q2-\sum_{i\ne c}b_i=e(G_c[R])-q(q-1)^2/2\). For every integer k>=1 satisfying \(\binom{k+2}{2}<q\),
+
+\[
+\boxed{d\ge\binom{k+1}{2}.}
+\]
+
+Proof outline: if d were smaller, the complement of G_c[R] would be a K_{q+2}-free graph within the Brouwer/Kang–Pikhurko threshold and hence (q+1)-partite. The part sizes must all be at least q-k, because a smaller part alone would cost at least C(k+1,2) edges above the balanced Turan minimum. There are at most d cross-block c-edges, so a uniformly random transversal of the blocks selects no cross-block c-edge with positive probability. Thus every root must fully c-cover a block. A block of size s can be fully covered by at most q+1-s roots, since q+2-s such roots together with the block form an (r+1)-set using fewer than r colors. Summing capacities gives at most 2q+1 roots, contradicting |X|=2q+2.
+
+If k_q is the largest integer with C(k_q+2,2)<q, the best bound from this argument is
+
+\[
+\boxed{\sum_{i\ne c}b_i
+\le\binom q2-\binom{k_q+1}{2}.}
+\]
+
+Numerical thresholds: q=6 gives d>=1; q=7 through 10 gives d>=3; q=11 through 15 gives d>=6; q=16 through 20 gives d>=10. This improves the residual net budget but does not by itself eliminate every Case B for arbitrary q.
