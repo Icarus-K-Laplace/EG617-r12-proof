@@ -179,3 +179,28 @@ A finite result closes parameter `r` only after the following conjunction is che
 `AND independent replay verifies`
 
 Only then may a row move from `UNVERIFIED/CONDITIONAL` to `CERTIFIED` in the finite-tail matrix.
+
+
+## 1B. Parameter-exact theorem admission
+
+`PARAMETER_ADMISSION_MATRIX.json` is the source/range registry for theorem modules. It records immutable source commits and blob hashes separately from whether the hypotheses have been discharged for the queried r.
+
+Run:
+
+```bash
+python PARAMETER_ADMISSION_VERIFIER.py PARAMETER_ADMISSION_MATRIX.json --audit-range 4 100
+python PARAMETER_ADMISSION_VERIFIER.py PARAMETER_ADMISSION_MATRIX.json --query-r 13 --module ENDPOINT_DOMAIN_LOWER_BOUND_V1 --profile residual-core
+python PARAMETER_ADMISSION_VERIFIER.py PARAMETER_ADMISSION_MATRIX.json --query-r 68 --module D1_SHELL_CLASS_BOUND_V1
+```
+
+The verifier rebuilds every explicit row r=4,...,100, validates the source registry/range partition, and can resolve any r>=4 from the complete range rules. A row with an applicable source can still be `CONDITIONAL`; source applicability is not assumption discharge. r<12 returns `BLOCKED_SOURCE_REDUCTION_NOT_APPLICABLE`.
+
+The exact-three-anchor K8 source (r>=12 under its three-anchor premise) is kept distinct from the broad near-anchor ANCHOR_K8 source (r>=68). They are not interchangeable theorem contracts.
+
+## 1C. Unified parameterized family entry point
+
+`generate_parametric_certificate.py` accepts a module ID, r, profile (where applicable), output path, and receipt path. It first runs the independent admission verifier, then reuses the already-existing module generator and promotion gate. It does not reimplement the endpoint arithmetic or D1 class-count proof.
+
+## 6A. Final finite-tail theorem receipt
+
+See `FINITE_TAIL_RECEIPT_SCHEMA.md`. The final EG617(r) receipt must bind the full theorem statement, analytic reduction and exact source, assumption IDs, complete finite state space, symmetry witness, certificate and verifier hashes, replay commands, bridge status, and final promotion status. Local conditional-module receipts are not final theorem receipts.
