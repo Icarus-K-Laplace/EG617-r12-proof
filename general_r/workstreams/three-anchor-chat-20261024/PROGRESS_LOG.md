@@ -102,3 +102,14 @@ No theorem gap remains in this workstream. The highest-value action is external/
   - COUNTEREXAMPLE_SEARCH.md skeleton-search update: d636a3efe2b9324df46083da90ff0a439bd9f34b
   - PROOF_DEPENDENCY_MAP.md skeleton-audit row: 2584d8b12f808d5c59132e44a8635b0fecfb1878
 - Final limitation remains unchanged: no full graph-level SAT/ILP search and no external human referee certification.
+
+
+## 2026-10-24 — final publication-proof line audit
+
+- Re-read the final stored PUBLICATION_VERSION.md after the arithmetic and skeleton checks.
+- Added explicit budget-exhaustion statements in both r=12 overlap branches: once k1+k2 plus the rectangle charge reaches six, all other vertices, including focused connectors, must be exact. This makes the degree counts used in the equality contradictions explicit.
+- Expanded the c=4 (0,0,2) orientation (8,1) degree count and the c=4 (0,1,1) orientation degree counts so the saturated-vertex contradictions can be checked without inference.
+- Made the R_pq zero-set characterization explicit in the publication proof.
+- Final follow-up commits:
+  - PUBLICATION_VERSION.md: 1490c51be95b614d514130f0950c16bcca978d80; 032d66697fd59a408256f2de248a4cff76b750bc; ae2308009c1d223642aa16d9b65c4cad55bfe00b
+- Final proof status remains INDEPENDENTLY_VERIFIED in the analytic-audit sense. Full graph-level SAT/ILP search and external human referee certification remain explicitly unclaimed.
