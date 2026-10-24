@@ -88,6 +88,6 @@ Any E407 Q32 completion with \(\delta=16\) must satisfy all of the following:
 2. \(H[U]\) has the 91 within-part edges plus a matching of five cross edges from \(D\) to the three 7-parts.
 3. \(H[W]=K_5\cup K_5\cup K_4\cup K_4\), with all four excess units in \(W\).
 4. The five cross-edge endpoints in \(D\) all have the same \(K_4\) as their exact \(W\)-neighbourhood; this \(K_4\) is complete to \(D\).
-5. The other three \(W\)-components are each complete, vertex-by-vertex, to small parts; their small-part labels need not be assumed constant within a component without an additional proof.
+5. Every vertex in the remaining \(K_4,K_5,K_5\) components is complete to a small part. Labels may vary within a component. A small part cannot label every vertex of two distinct components, but a component-wide bijection is not proved.
 
 This is a structural reduction, **not** a contradiction. The five V12 shell templates still need to be checked against the resulting labelled incidence design and the hub-neighbourhood requirements. In particular, no claim is made that the residual design is realizable, nor that it is impossible.
