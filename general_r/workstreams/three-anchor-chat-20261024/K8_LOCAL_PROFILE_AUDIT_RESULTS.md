@@ -11,13 +11,13 @@ The tuple convention is
 
 ## Output
 
-\`\`\`text
+```text
 c4_002_f2: r=13 profiles with k<=1: 10; r=14 equality profiles: [(0, 1, 0, 10, 1, 8, 8), (0, 1, 0, 1, 10, 8, 8)]
 c4_011_s2: r=13 profiles with k<=1: 12; r=14 equality profiles: [(0, 1, 0, 10, 1, 8, 8), (0, 1, 0, 1, 10, 8, 8)]
 c=3 mixed r=14 local profiles with cost <=8: 23
 PASS: c=3 r=14 complete profile list, r=15 exceptional profile, r=16 empty.
 LIMITATION: local integer/rectangle profiles only; no full graph H or SAT/ILP search.
-\`\`\`
+```
 
 ## \(c=3\), mixed-focus boundary
 
