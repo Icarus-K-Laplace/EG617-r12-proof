@@ -11,10 +11,10 @@ Prove that every 12-edge-coloring of K145 contains a 13-vertex set missing at le
 
 1. The original counterexample reduction and contextual recurrence provide a front-end dichotomy to a legal R(4,49) residual or a T61 terminal, subject to the complete recurrence stopping contract and inherited caps.
 2. The T61 h12 branch and E397--E406 have canonical closure assets under their stated dependencies.
-3. The T61 E407/E408 frontier is not fully closed: E407 Q32 retains common-K11 template/core compatibility; E408 Q32/Q33 retain global compatibility obligations. Excluding the sharp `|W|=23) Cell-B form is only one subcase.
+3. The T61 E407/E408 frontier is not fully closed: E407 Q32 retains common-K11 template/core compatibility; E408 Q32/Q33 retain global compatibility obligations. Excluding the sharp `|W|=23` Cell-B form is only one subcase.
 4. The R(4,49) backend E329--E332 has a closure chain relative to CORE211 and the q27/q28/q29 contracts.
 5. E333 has a V5 canonical closure relative to its V4 forcing and legal-backend contracts. E334 is source-reported conditional on V7/V8 forcing pending independent replay. E335--E340 remain open.
-6. The three-anchor branch yields `e(H)>=214) and `q<=E-305) once three independent degree-12 anchors are established. The new d3 multi-S theorem localizes high-charge d3 owner families, but it does not establish the universal forcing theorem.
+6. The three-anchor branch yields `e(H)>=214` and `q<=E-305) once three independent degree-12 anchors are established. The new d3 multi-S theorem localizes high-charge d3 owner families, but it does not establish the universal forcing theorem.
 
 ## Why no final contradiction is certified
 
