@@ -144,3 +144,20 @@ With (|X|\le108) for (r\ge6212), the safe upper bound is only
 D_h\le108(r+27)+\binom{108}{2},
 ]
 which is also (O(r)) and is not contradictory. The claimed (r\ge6212) terminal closure is withdrawn. See `JOINT_DEFECT_PROPAGATION.md` for the full proof audit.
+
+
+## 12. Defect-cover incidence matrix (multi-block accounting)
+
+The exact incidence-matrix formulation is now recorded in `DEFECT_COVER_INCIDENCE.md`. For each defect pair (d=(a,\{u,v\})), the product-space argument gives
+[
+\sum_{e\in F_i}w_{d,e}\ge1,
+]
+with endpoint-edge weight (1/|C_b|) and remote-edge weight (1/(|C_p||C_q|)). Summing over a family of defects yields
+[
+|\mathcal D_i|\le\sum_{e\in F_i}L_i(e),\qquad
+L_i(e)=\sum_{d\in\mathcal D_i}w_{d,e}.
+]
+
+This prevents hidden double-counting: an edge's reuse is explicitly its load. But the load can exceed one, so this identity does not yet imply (|F_i|\ge|\mathcal D_i|). For a matching of (q) defects and block sizes at least five, (L_i(e)\le2/5+q/25); this bound is too weak to force a contradiction at (q\le24).
+
+The strict corollary is that, in the all-block-sizes-at-least-five regime, a color with at most 24 additions cannot cover a defect using only edges remote from its endpoints. This narrows the cover type but leaves mixed endpoint/remote networks open.
