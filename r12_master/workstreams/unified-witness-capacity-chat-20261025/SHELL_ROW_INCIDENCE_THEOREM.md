@@ -70,7 +70,7 @@ Then the exact identity and valid inequalities are
 I_a=\sum_{x\in N_a}r_x,\qquad
 R_a\le I_a\le c|N_a|.
 \]
-For a regular B row with \(|N_a\cap H_0|\le3\), the zero-excess subfamily satisfies \(I_a^{(0)}\le3c\), and at most three pairwise-disjoint witnesses of any one color can hit that row.
+For a regular B row with \(|N_a\cap H_0|\le3\), the zero-excess subfamily satisfies \(I_a^{(0)}\le3c\), and at most three pairwise-disjoint zero-excess witnesses of any one color can hit that row. No analogous bound of three is asserted here for witnesses containing positive-excess vertices.
 
 If \(Q\) is labelled by \(b\in B\), then \(Q\cap N_b=\varnothing\): the label is target-anticomplete to its four-point part. A core vertex \(x\) cannot occur in two witnesses with the same label, since the shell-core edge \(bx\) would be assigned two colours. Consequently, if \(L_x\subseteq B\) is the set of distinct B labels on witnesses containing \(x\), then
 \[
