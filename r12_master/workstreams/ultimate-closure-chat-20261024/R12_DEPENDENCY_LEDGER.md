@@ -37,3 +37,11 @@ Since 319>307, contradiction.
 ## Stale theorem wording
 
 The support-compatibility synthesis uses the weaker anchor consequence e(H)>=213 and q<=E-304. The later K=6 full closure proves e(H)>=214 and q<=E-305 when three independent degree-12 anchors exist. The stronger bound may be used only after those anchors are actually established.
+
+## Added dependency: shell/core witness capacity
+
+- Source: R12_SHELL_CORE_WITNESS_LEMMA.md.
+- Required upstream contract: 61-point T61 residual; alpha(F)<=5, omega(F)<=11; 47-core H with alpha(H)<=4; contextual no-R(4,49) exclusion for every 49-subset; inherited target-edge cap D(n).
+- Proved outputs: t_a<=7 implies alpha(H\N_H(a))=4; every target edge in F[A] has at least one good endpoint; at least eight shell vertices are good.
+- Conditional downstream specialization: in E408 Q33/d3, beta+X+G_B=3 implies all ten B rows have t_b<=6 and hence a maximum independent 4-set witness; each witness hits every S-row corresponding to an M-edge.
+- Limitation: no uniqueness/coincidence theorem for the witnesses has been proved. This node does not close Q32/Q33.
