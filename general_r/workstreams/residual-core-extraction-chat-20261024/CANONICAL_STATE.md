@@ -208,23 +208,39 @@ External theorem: Füredi's quantitative Turán stability bound, recalled in Bal
 
 **Limitation:** this is a near-resolvable design with O(r) exceptional pairs, not an exact design and not yet an earlier-stop theorem.
 
-### 9B. Fixed-a hub localization in the target complement
+### 9B. Constant-width target groups and cylinder hub localization
 
-Status: **`PROVED_ANALYTIC`** for each fixed `a>=6` and `r>=200a(a-1)+1`; sharpened to `a=6, r>=5601`.
+Status: **`PROVED_ANALYTIC`** for each fixed `a>=6` and `r>=binom(a,2)+a+1`; the sharpened `a=6` hub bound holds for `r>=1000`.
 
-Let `F_0=bar(G_0[R_a])`. Since `alpha(G_0[R_a])=a`, `F_0` is `K_{a+1}`-free and has Turán deficit `x_0<=S_a(r)`. Füredi's partition has internal-edge count `I_0<=x_0`, missing cross-pair count `M_0<=2x_0`, and
+Let `F_0=bar(G_0[R_a])`. Since `alpha(G_0[R_a])=a`, `F_0` is `K_{a+1}`-free. Füredi's partition has internal-edge count `D<=x_0`, missing cross-pair count `M_0<=2x_0`, and `x_0<=S_a(r)`.
 
-`sum_j (|V_j|-r)^2<=4x_0+1`.
+For a target ideal group `V_j` of size `s_j`, the hereditary cap gives `e(F_0[V_j])=sum_{i>0} e(G_i[V_j]) >= (r-1)p_r(s_j) >= (r-1)(s_j-r)_+`. Hence, writing `C=binom(a,2)` and `P=sum_j(s_j-r)_+`,
 
-For fixed `a`, when `r>=200a(a-1)+1`, every part has size at least `0.9r`, and `M_0<=a(a-1)r`. A union-bound transversal argument shows that every internal edge of `F_0` has an endpoint missing at least `2r/5` cross-neighbors in some other part. The set `H` of such vertices satisfies
+`(r-1)P<=D<=x_0<=S_a(r)=(C-1)r+a`.
 
-`|H|<=5a(a-1)`.
+For `r>=C+a+1`, `P<=C-1`, so
 
-Thus every internal edge of the target complement is incident to a bounded hub set; deleting `H` makes each part a target-color clique. In the `a=6` case, the sharper bounds `S_6=14r+6`, `M_0<=28r+12` give `|H|<=140` for `r>=5601`.
+`r-C+2<=s_j<=r+C-1`.
+
+For `a=6`, all target groups have **absolute width** `r-13<=s_j<=r+14` for `r>=22`.
+
+Now let `C_0` be the graph of target-color edges crossing different target groups. For every internal edge `uv` of `F_0` in one group, the product-cover argument gives
+
+`d_{C_0}(u)+d_{C_0}(v)>=L-M_0/L`,
+
+where `L=min_j s_j`. Define `H_r=L-M_0/L` and `X={v:d_{C_0}(v)>=H_r/2}`. Whenever `H_r>0`, every internal target-complement edge meets `X`, and
+
+`|X|<=4M_0/H_r`.
+
+For `a=6`, `L>=r-13` and `M_0<=28r+12`. For every `r>=1000`, `H_r>=r-42`, giving
+
+`|X|<=4(28r+12)/(r-42)<117`.
+
+Thus **at most 116 hubs suffice for every `r>=1000`**; outside this set, every target ideal group is an actual target-color clique.
 
 File: `NO_HIGH_STOP_ROUND2_LEMMAS.md`.
 
-**Limitation:** this localizes defects but does not yet prove that all hubs protect the same part or that the first-stop state is impossible.
+**Limitation:** target internal defects are localized, but this does not yet show that all non-target block defects or hub-protection parts share a common kernel. Hub propagation / robust nonextension remains open.
 
 ### 9C. Exact predecessor label-capacity structure
 
@@ -306,7 +322,7 @@ This remains open. Specifically:
 
 - `a=6) has **not** been closed;
 - no induction/trim theorem is known for arbitrary `a>=7);
-- uniform edit-distance partition stability is proved via Füredi, and fixed-a target-complement defects localize to O(a^2) hubs; exact/near-orthogonality incidence analysis and design trimming remain open;
+- uniform edit-distance partition stability is proved via Füredi, target ideal groups have absolute width, and fixed-a target-complement defects localize to O(a^2) hubs; exact/near-orthogonality incidence analysis and design trimming remain open;
 - approximate orthogonality, an exact resolvable-design skeleton, and a design-trimming implication are not proved.
 
 The blocker is now a precise structural problem. Any high-stop candidate must simultaneously satisfy:
@@ -340,4 +356,4 @@ Rejected proof shortcuts:
 
 ## NEXT HIGHEST-LEVERAGE TARGET
 
-Prove a **hub-propagation / design-trimming lemma** for the `a=6` target complement: its internal edges are incident to at most 140 hubs for `r>=5601`, and every non-target color is duplicated at least once on the predecessor clique interface. Show either that these hubs force an earlier `R_5` satisfying the edge budget, or that their incidence pattern contradicts the critical-core residue windows. Do not return to fixed-r recurrence or claim NO-HIGH-STOP closed before a proof exists.
+Prove a **hub-propagation / design-trimming lemma** for the `a=6` target complement: its ideal parts have sizes `r-13` through `r+14`, and its internal edges are incident to at most 116 hubs for `r>=1000`; combine this with every non-target color being duplicated at least once on the predecessor clique interface. Show either that these hubs force an earlier `R_5` satisfying the edge budget, or that their incidence pattern contradicts the critical-core residue windows. Do not return to fixed-r recurrence or claim NO-HIGH-STOP closed before a proof exists.
