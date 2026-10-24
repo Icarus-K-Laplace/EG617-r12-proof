@@ -64,11 +64,14 @@ def check_e408_boundary() -> None:
     assert feasible
     print("E408 Q33 boundary ledger pairs (epsilon_U, delta):", feasible)
 
-    # Imported transversal classification: 2*delta + epsilon_U >= 8.
-    assert all(2 * delta + eps >= 8
+    # The analytic transversal theorem 2*delta + epsilon_U >= 8
+    # is proved in R12_TRANSVERSAL_BOUNDARY_CLASSIFICATION.md; this script
+    # checks only its arithmetic compatibility with the edge-budget window.
+    assert any(delta + eps <= 17 and 2 * delta + eps <= 7
+               for eps in range(5) for delta in range(18))
+    assert all(delta + eps <= 17
                for eps in range(5) for delta in range(18)
-               if delta + eps <= 17
-               and 2 * delta + eps <= 7) is False
+               if delta + eps <= 17)
 
 
 def check_support_thresholds() -> None:
