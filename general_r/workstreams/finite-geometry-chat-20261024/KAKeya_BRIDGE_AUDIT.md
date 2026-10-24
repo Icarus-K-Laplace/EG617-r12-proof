@@ -56,4 +56,4 @@ Before invoking the partial Kakeya bound, the proof must establish all of the fo
 4. Every pair of selected blocks intersects in at most one point.
 5. The block and direction claims hold simultaneously for the same shell X.
 
-J's current packing theorem supplies pairwise disjoint independent sets, not line families satisfying items 2–5. K's current low-slack theorem supplies two orthogonal partitions on W=V\\{x}, not a shell containing full blocks in three directions. Therefore no Kakeya or three-line contradiction has yet been applied to the EG617 problem.
+J's current packing theorem supplies pairwise disjoint independent sets, not line families satisfying items 2–5. K's current low-slack theorem supplies two orthogonal partitions on W, the vertex set V minus {x}, not a shell containing full blocks in three directions. Therefore no Kakeya or three-line contradiction has yet been applied to the EG617 problem.
