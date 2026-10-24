@@ -1,68 +1,52 @@
 # General-r 5r+1 All-Large-r Anchor Extraction
 
-Status: **PROVED_RELATIVE_TO_CLASSICAL_ANDRASFAI_ERDOS_SOS**, conditional on the contextual `5r+1` terminal contract and the contextual full-color cap already proved in this workstream.
+Status: **PROVED_RELATIVE_TO_LIU_REN_WANG_2025**; a purely classical Andrásfai–Erdős–Sós fallback gives the weaker threshold `r>=71`.
 
-## 1. Terminal setup
+Conditional inputs:
 
-Let `F` be a contextual target-color residual on
-
-`n=5r+1`
-
-vertices arising from the original balanced `r`-coloring. Assume
-
-- `alpha(F)<=5`;
-- `omega(F)<=r-1`;
+- the contextual `5r+1` terminal contract;
 - the contextual full-color cap
 
   `e(F) <= U_(5,r)=(5r^2+7r+18)/2`;
 
+- `alpha(F)<=5`, `omega(F)<=r-1`;
 - `delta(F) in {r,r+1}`.
 
-The cap gives the total excess over degree r
+## 1. Degree-r+1 branch
 
-`K_r(F)=sum_v(d_F(v)-r)=2e(F)-r(5r+1) <= 6r+18`.
+If `delta(F)=r+1`, choose a degree-(r+1) vertex a.
 
-We prove that for every `r>=71`, F contains a direct near-anchor independent triple.
-
----
-
-## 2. The delta=r+1 branch
-
-Assume `delta(F)=r+1` and choose a degree-(r+1) vertex a.
-
-If there is no independent triple `{a,u,v}` with
+If no independent triple `{a,u,v}` has
 
 `d_F(u),d_F(v)<=r+2`,
 
-then among the `4r-1` non-neighbours of a, the vertices of degree at most `r+2` form a clique. Since `omega(F)<=r-1`, there are at most `r-1` such vertices. Hence at least `3r` non-neighbours have degree at least `r+3`, i.e. excess at least2 over the minimum degree `r+1`.
+then the at-most-(r+2) vertices in the `4r-1` non-neighbours of a form a clique, hence there are at most `r-1` of them. Therefore at least `3r` non-neighbours have excess at least2 above `r+1`.
 
-But the total excess over `r+1` is
+But
 
-`2e(F)-(r+1)(5r+1) <= r+17`.
+`2e(F)-(r+1)(5r+1)<=r+17`,
 
-For every `r>=5`, `6r>r+17`, contradiction.
+while `3r` vertices of excess at least2 require at least `6r` excess. Contradiction for every `r>=5`.
 
-Therefore for every `r>=5`, the `delta=r+1` branch contains an independent triple of degree pattern
+Hence the `delta=r+1` branch contains an independent triple of degrees
 
-> **`(r+1, <=r+2, <=r+2)`.**
+> **`(r+1,<=r+2,<=r+2)`.**
 
----
+## 2. Constant-defect reduction in the degree-r branch
 
-## 3. Constant-defect reduction in the delta=r branch
-
-Assume now `delta(F)=r` and choose a degree-r vertex a. Put
+Assume `delta(F)=r` and choose a degree-r vertex a. Let
 
 `Z=V(F)\N_F[a]`,
 
 so `|Z|=4r`.
 
-Suppose there is no independent triple `{a,u,v}` with
+Assume no independent triple `{a,u,v}` satisfies
 
 `d_F(u),d_F(v)<=r+1`.
 
-Let
+Define
 
-`L={z in Z : d_F(z)<=r+1}`
+`L={z in Z:d_F(z)<=r+1}`
 
 and `H=Z\L`.
 
@@ -74,205 +58,202 @@ with `s>=0`. Hence
 
 `|H|=3r+1+s`.
 
-Every point of H has degree at least `r+2`, so
+The contextual cap gives total excess over r
 
-`K_r(F)>=2|H|=6r+2+2s`.
+`K_r(F)=2e(F)-r(5r+1)<=6r+18`.
 
-Together with `K_r(F)<=6r+18`, this yields
+Every h in H has excess at least2, so
+
+`6r+2+2s<=K_r(F)<=6r+18`,
+
+and therefore
 
 > **`0<=s<=8`.**
 
-Define for h in H
+For h in H define
 
 `lambda_h=d_F(h)-(r+2)>=0`.
 
-After charging the baseline excess2 to every H-vertex, the remaining excess ledger gives
+After charging the baseline2 to H,
 
 > **`sum_(h in H) lambda_h <=16-2s`.**
 
-This is the constant-defect core of the proof.
-
----
-
-## 4. Delete only high lambda-exceptions
+## 3. Delete only lambda>=3 exceptions
 
 Let
 
-`E={h in H : lambda_h>=3}`
+`E={h in H:lambda_h>=3}`
 
-and put `t=|E|`. Since each point of E consumes at least3 units of the at-most16 defect budget,
+and `t=|E|`. Then
 
 > **`t<=5`.**
 
-Set
+Put
 
 `Z'=Z\E`,
 
 so `|Z'|=4r-t`.
 
-Every point of `Z'` has target degree at most `r+4`:
-
-- points of L have degree at most `r+1`;
-- points of `H\E` have `lambda_h<=2`, hence degree at most `r+4`.
+Every z in Z' has target degree at most `r+4`.
 
 Let
 
 `J'=bar(F[Z'])`.
 
-Because a is target-nonadjacent to all of Z and `alpha(F)<=5`, the full complement `bar(F[Z])` is K5-free; therefore J' is K5-free.
+Since a is target-nonadjacent to all of Z and `alpha(F)<=5`, the full complement `bar(F[Z])` is K5-free; hence J' is K5-free.
 
-For every z in Z',
-
-`d_(J')(z)>=|Z'|-1-d_F(z)`
-
-and hence
+Also
 
 > **`delta(J')>=3r-t-5`.**
 
----
+## 4. 2025 degree-sensitive AES sharpening
 
-## 5. AES forces J' to be 4-partite for r>=71
+Liu–Ren–Wang prove the following strengthening of the Andrásfai–Erdős–Sós theorem for K5-free graphs:
 
-The classical Andrasfai-Erdos-Sos theorem states that a K_(ell+1)-free graph G on n vertices with
+if G has order n, minimum degree delta and maximum degree Delta, then G is 4-partite whenever
 
-`delta(G) > ((3ell-4)/(3ell-1)) n`
+`delta > min{ (4/5)n-Delta/10, n-(Delta+1)/3 }`.
 
-is ell-partite.
+The maximum, over all possible Delta, of the right-hand minimum occurs where the two expressions are equal. Solving gives
 
-Take `ell=4`. For J' the condition is
+`Delta=(6n-10)/7`
 
-`3r-t-5 > (8/11)(4r-t)`.
+and common value
 
-This is equivalent to
+> **`(5n+1)/7`.**
 
-> **`r>3t+55`.**
+Therefore the following Delta-free corollary is immediate:
 
-Since `t<=5`, every `r>=71` satisfies the condition. Thus for `r>=71`, J' is 4-partite.
+> **Every K5-free graph G with `delta(G)>(5|G|+1)/7` is 4-partite.**
 
-Each part of a 4-partition of J' is a clique in F and therefore has size at most `r-1`.
+Apply this to J'. We need
 
-If `t<=3`, four parts can cover at most `4r-4` vertices, while
+`3r-t-5 > [5(4r-t)+1]/7`,
 
-`|Z'|=4r-t>=4r-3`,
+which is equivalent to
 
-impossible.
+> **`r>2t+36`.**
 
-Thus only `t=4` and `t=5` require analysis.
+Since `t<=5`, every
 
----
+> **`r>=47`**
 
-## 6. The t=4 endpoint is impossible
+forces J' to be 4-partite.
 
-If `t=4`, then `|Z'|=4r-4`. Since J' is 4-partite and every part has size at most `r-1`, all four parts have size exactly `r-1`.
+For comparison, the classical AES threshold `8|J'|/11` gives `r>=71`.
 
-Also every vertex of J' has at most6 missing cross-edges, because the complete 4-partite graph on four `(r-1)`-parts has cross-degree `3r-3`, whereas
+## 5. Capacity immediately kills t<=3
+
+Every part of a 4-partition of J' is a clique in F, hence has size at most `r-1`.
+
+If `t<=3`, four parts cover at most `4r-4` vertices, but
+
+`|Z'|=4r-t>=4r-3`.
+
+Contradiction.
+
+Only `t=4,5` remain.
+
+## 6. Endpoint t=4
+
+Now `|Z'|=4r-4`, so all four parts have size exactly `r-1`.
+
+The complete 4-partite cross-degree is `3r-3`, whereas
 
 `delta(J')>=3r-9`.
 
-Fix an exceptional vertex e in E. The other three exceptional vertices consume at least9 lambda-units, so
+Thus each J'-vertex misses at most6 possible cross-edges.
 
-`lambda_e<=16-9=7`.
+Fix e in E. The other three exceptional vertices consume at least9 lambda-units, so
 
-Hence
+`lambda_e<=7`,
+
+hence
 
 `d_F(e)<=r+9`.
 
 Therefore e has at least
 
-`(4r-4)-(r+9)=3r-13`
+`3r-13`
 
 J-neighbours in Z'. Let their intersections with the four parts be `N_1,...,N_4`.
 
-No `N_i` is empty: otherwise e is target-adjacent to an entire `(r-1)`-clique, creating a target `K_r`, contrary to `omega(F)<=r-1`.
+No `N_i` is empty, because otherwise e is target-adjacent to an entire target `K_(r-1)`, producing a forbidden target `K_r`.
 
-Order the four sizes increasingly. For `r>=29`, the total lower bound `sum|N_i|>=3r-13` implies
+For `r>=29`, the total lower bound `sum|N_i|>=3r-13`, together with the fact that each previously chosen J'-vertex forbids at most6 candidates in each later part, gives a greedy K4 transversal through `N_1,...,N_4`.
 
-- the second size is at least7;
-- the third size is at least13;
-- the fourth size is at least19.
+Together with e this is a K5 in `bar(F[Z])`, contradiction.
 
-Since every chosen J'-vertex forbids at most6 vertices in each later part, a greedy choice produces one point from each `N_i` spanning a `K_4` in J'. Together with e this gives a `K_5` in `bar(F[Z])`, contradiction.
+Thus t=4 is impossible throughout the relevant range `r>=47`.
 
-Thus `t=4` is impossible for the range `r>=71` relevant here.
+## 7. Endpoint t=5
 
----
-
-## 7. The t=5 endpoint is impossible
-
-Assume `t=5`. Since five exceptional vertices already consume at least15 units while the defect budget is at most `16-2s`, necessarily
+Five exceptional vertices consume at least15 defect units, so the budget `16-2s` forces
 
 > **`s=0`.**
 
-Moreover each exceptional vertex satisfies `lambda_e<=4`, because the other four consume at least12 units. Thus
+Each exceptional e then satisfies
 
-> **`d_F(e)<=r+6` for every e in E.**
+`lambda_e<=4`,
 
-Now `|Z'|=4r-5`. Four parts of size at most `r-1` covering Z' must have sizes
+hence
+
+`d_F(e)<=r+6`.
+
+Since `|Z'|=4r-5`, the four part sizes must be
 
 > **`(r-2,r-1,r-1,r-1)`.**
 
 Call the unique small part `P_0`.
 
-The minimum-degree bound gives
+Now
 
-`delta(J')>=3r-10`.
+`delta(J')>=3r-10`,
 
-Hence every J'-vertex misses at most7 possible cross-edges.
+so each J'-vertex misses at most7 possible cross-edges.
 
-Fix e in E. Since `d_F(e)<=r+6`, e has at least
+Each exceptional e has at least
 
-`(4r-5)-(r+6)=3r-11`
+`3r-11`
 
 J-neighbours in Z'.
 
-If e has a J-neighbour in every one of the four parts, then for `r>=32` the same greedy transversal argument (now allowing at most7 forbidden vertices per previous choice) produces a `K_4` in J' all adjacent to e, giving a forbidden K5 in `bar(F[Z])`.
+If e has at least one J-neighbour in every part, then for `r>=32` a greedy transversal produces a K4 in J' all adjacent to e, yielding a forbidden K5 in `bar(F[Z])`.
 
-Therefore every e in E has no J-neighbour in at least one part.
+Therefore every exceptional e has no J-neighbour in one part.
 
-It cannot miss all J-neighbours in any of the three `(r-1)`-parts, because then e is target-adjacent to an entire target `K_(r-1)`, again producing a target `K_r`.
+It cannot be one of the three `(r-1)`-parts, because then e is target-adjacent to a target `K_(r-1)` and forms K_r. Hence every exceptional e has no J-neighbour in the same small part `P_0`.
 
-Thus for every e in E the unique part with no J-neighbour is `P_0`. Equivalently,
+Equivalently, every exceptional vertex is target-adjacent to all of the target clique `P_0` of size `r-2`.
 
-> **every exceptional vertex is target-adjacent to every vertex of the target clique P_0 of size r-2.**
+If two exceptional vertices were target-adjacent, together with `P_0` they would form a target K_r. Thus the five exceptional vertices are pairwise target-nonadjacent.
 
-If two exceptional vertices e,f were target-adjacent, then
-
-`P_0 union {e,f}`
-
-would be a target `K_r`, impossible. Therefore the five exceptional vertices form a target-independent set.
-
-But the original degree-r anchor a is target-nonadjacent to all of Z, hence to all five exceptional vertices. Thus
+The original anchor a is target-nonadjacent to all of Z, hence to all five exceptional vertices. Therefore
 
 `{a} union E`
 
 is an independent6-set, contradicting `alpha(F)<=5`.
 
-Therefore `t=5` is impossible.
+Thus t=5 is impossible.
 
----
-
-## 8. Combined theorem with threshold 71
-
-We have eliminated every no-near-anchor configuration in the `delta=r` branch for `r>=71`. Therefore:
+## 8. Final theorem
 
 > **5r+1 All-Large-r Direct Anchor Extraction Theorem.**
 >
-> Under the contextual terminal contract above, for every `r>=71`, every `5r+1` terminal contains a direct near-anchor independent triple. More precisely:
+> Under the contextual terminal contract, for every `r>=47`, every `5r+1` terminal contains a direct near-anchor independent triple.
 >
 > - if `delta(F)=r`, there is an independent triple of degrees `(r,<=r+1,<=r+1)`;
 > - if `delta(F)=r+1`, there is an independent triple of degrees `(r+1,<=r+2,<=r+2)`.
 
-Thus the structural extraction problem inside the `5r+1` terminal is completely closed for all `r>=71`.
+Thus the structural extraction problem inside the `5r+1` terminal is closed for all `r>=47` relative to Liu–Ren–Wang 2025.
 
-The remaining large-r downstream obligation is a uniform near-anchor excess / incompatibility theorem, not a growing terminal case tree.
+Using only the classical Andrásfai–Erdős–Sós theorem, the same proof gives `r>=71`.
 
 ## 9. Logical boundary
 
-This theorem does **not** by itself prove Erdős Problem 617 for all large r. It still depends on:
+This theorem does not yet prove Erdős Problem 617 for all large r. It still needs:
 
-1. an upstream theorem forcing every hypothetical counterexample into the contextual `4r+1` or `5r+1` alternatives;
-2. the contextual full-color cap for the `5r+1` terminal;
-3. the inherited clique bound `omega(F)<=r-1`;
-4. a downstream theorem turning the extracted near-anchor triple into contradiction.
+1. an upstream theorem forcing every hypothetical counterexample into the contextual `4r+1 / 5r+1` alternatives;
+2. a downstream theorem converting the extracted near-anchor triple into contradiction.
 
-The `4r+1` alternative is already impossible for `r>=5` by the contextual cap theorem in this workstream. Hence, once the upstream extraction theorem is available, the only large-r downstream gap is the uniform near-anchor contradiction.
+The contextual `4r+1` branch is already impossible for `r>=5`. Hence, after upstream extraction, the only large-r downstream obstruction is the uniform near-anchor incompatibility theorem.
