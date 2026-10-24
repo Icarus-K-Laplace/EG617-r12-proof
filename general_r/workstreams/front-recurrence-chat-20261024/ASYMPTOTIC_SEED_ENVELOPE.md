@@ -100,15 +100,13 @@ The safe universal envelope currently available from this route is only $B_r(a,n
 
 ## Round 2 — Proven threshold cutoffs (2026-10-24)
 
-The new proof in `LOW_ORDER_CUTOFF_THEOREMS.md` establishes
-[
-M_r(2)\le2r-1,\qquad M_r(3)\le3r
-\quad\text{for every }r\ge6.
-]
-The (a=2) cutoff uses the complement (H=\overline J): the inherited cap requires (e(H)\ge(r-1)p_r(n)), while (alpha(H)\le r-1) and triangle-freeness imply (e(H)\le n(r-1)/2). This excludes (n\ge2r+1). At (n=2r), equality forces an ((r-1))-regular triangle-free graph; Andrásfai–Erdős–Sós makes it bipartite for (r\ge6), contradicting (alpha(H)\le r-1).
+The proof in `LOW_ORDER_CUTOFF_THEOREMS.md` establishes, for every integer r >= 6:
 
-The (a=3) cutoff follows by minimum-degree pivot into the (a=2) core and the exact inequality
-[
-2(r-1)p_r(n)>n(2r-1),\quad n\ge3r+1,\ r\ge6.
-]
-These are **cutoff advances**, not improvements to the five edge-floor coordinates. The abstract-contract cases (r=4,5) are exceptions: explicit induced-cap-satisfying graphs at (n=2r) show the desired (M_r(2)\le2r-1) statement is false there. The all-large-r front closure remains OPEN.
+- `M_r(2) <= 2r-1`;
+- `M_r(3) <= 3r`.
+
+For a=2, the complement H is triangle-free, alpha(H) <= r-1, and hence Delta(H) <= r-1. The inherited cap requires e(H) >= (r-1)p_r(n), contradicting e(H) <= n(r-1)/2 whenever n >= 2r+1 because p_r(n) > n/2. At n=2r equality forces H to be (r-1)-regular. Andrásfai–Erdős–Sós makes it bipartite for r >= 6, contradicting alpha(H) <= r-1.
+
+For a=3, minimum-degree pivoting gives h >= n-2r. The lower edge bound beats the cap exactly when 2(r-1)p_r(n) > n(2r-1), verified for every integer n >= 3r+1 and r >= 6.
+
+These are cutoff advances, not improvements to the five edge-floor coordinates. The abstract-contract cases r=4,5 are exceptions: explicit induced-cap-satisfying graphs at n=2r show M_r(2) <= 2r-1 is false there. The all-large-r front closure remains OPEN.
