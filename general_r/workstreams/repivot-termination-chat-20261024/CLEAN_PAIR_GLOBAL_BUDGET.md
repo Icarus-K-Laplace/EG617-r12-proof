@@ -145,7 +145,7 @@ X <= floor((4r-4-2K_U)/(r-3h-5)).
 
 The denominator is at least 16 throughout the stated high-density branch.
 
-This is a genuine dichotomy, but X can still be linear when a is close to r/3.
+This is a genuine dichotomy, but X can still be linear when lambda is close to r/3.
 
 ## 6. Shell-incidence lower bound and strengthened exceptional budget
 
