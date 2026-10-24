@@ -580,5 +580,5 @@ Thus the explicit `a=6` high-stop geometry contains at least `r^2-14.5r^(3/2)-67
 ### GitHub commits for follow-up
 
 - theorem / improved TD bound: `57201f7dd23dca8a64ebfbbbace7ff38ca7317b4`
-- canonical state: pending update
-- open gaps: pending update
+- canonical state: `0fed2bcec9b9ae695903642cc783e741cbef6f3d`
+- open gaps: `c749557ab3e781663b814b3486a9e36028f05f2b`
