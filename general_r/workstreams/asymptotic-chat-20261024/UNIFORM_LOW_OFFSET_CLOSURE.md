@@ -20,3 +20,8 @@ Low branch: D=k-j+2 and H>=6+k, giving 2j<=k-2, impossible for j>=2,k<=2.
 High branch: D=k-j+5 and H>=9+k, giving 2j<=k+1<=3, also impossible.
 
 Taking B=floor((r-j)/4) proves that every surviving terminal must have max_o d_F(o,W)>=floor((r-j)/4)+1. This forced-hub conclusion is proved; excluding the hub remains open.
+
+
+## Local W extremizer
+
+The local slack identity cannot force target excess above its minimum. Let q=r-1, m=2r-j, a=ceil(m/2), b=floor(m/2). Take J_W=K_{a,b} and F[W]=K_a union K_b. Colour each cross edge (u,v) by (u+v) mod q. Each colour class is a matching; restricting the q-by-q addition table leaves at least m-q=r-j+1 edges of each colour. Thus each non-target colour on W has independence number at most r-1, while alpha(F[W])=2, omega(F[W])<=r-1, and delta_0=0. This is only a W-local example, not a complete terminal.
