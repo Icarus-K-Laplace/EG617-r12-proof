@@ -372,7 +372,7 @@ Summing over all colors yields
 
 `sum_i I_i<=S_a(r)`, `sum_i M_i<=2S_a(r)`, and total partition defects `<=3S_a(r)`.
 
-Therefore at most `3S_a(r)` vertex pairs fail to belong to exactly one block across all color partitions. For fixed `a`, this is `O(r)` bad pairs among `Theta(r^2)` total pairs: a global approximate pairwise-balanced/resolvable design.
+Therefore at most `3S_a(r)` vertex pairs fail to be represented by exactly one block of their actual color and by no block of any other color. For fixed `a`, this is `O(r)` bad pairs among `Theta(r^2)` total pairs: a global approximate pairwise-balanced/resolvable design.
 
 ### Proof sketch
 
