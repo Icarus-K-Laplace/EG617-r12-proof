@@ -1,73 +1,76 @@
-# CHAT K — Finite Geometry / Prime-Power Route
+# CHAT K — Finite Geometry / Low-Slack Coordinatization
 
-Branch: `workstream/general-r-finite-geometry-20261024`
+Branch: workstream/general-r-finite-geometry-20261024
 
-Scope: prime-power / finite-geometry route only. Do not treat existence of an affine plane as a proof of Problem 617.
+Target: prove P(q) for prime powers q, or a sufficiently-large prime-power family. The headline theorem remains OPEN.
 
-## Target
+## Proved local theorems
 
-For `q` a prime power, prove `P(q)` or at least `P(q)` for all sufficiently large prime powers.
+### 1. Low-slack coordinatization
 
-## Current status
+On any q^2-point restriction W of a hypothetical counterexample, define
 
-The headline prime-power theorem remains OPEN, but the first quantitative coordinatization theorem is now proved. This is stronger than the previous equality-only statement and is valid for every integer `q>=3`.
+\[
+m_q=q\binom q2,\qquad s_i=e(G_i[W])-m_q.
+\]
 
-### K.1 — Exact equality orthogonality
+For q>=3, Brouwer's non-r-partite Turan threshold implies that if 0<=s_i<=q-2, then G_i[W] consists of q disjoint monochromatic K_q blocks plus exactly s_i same-color cross-block edges.
 
-On any `q^2`-vertex restriction, if two color graphs both attain the minimum edge count compatible with independence number at most `q`, then each is a disjoint union of `q` copies of `K_q`, and the two clique partitions are exactly orthogonal.
+If two colors have slack <=q-2 on the same W, their two block partitions are exactly orthogonal. This is a 2-net/grid, not yet a full affine plane.
 
-Combined with the existing abstract two-partition nonextension theorem, a hypothetical counterexample on `q^2+1` vertices has at most one Turan-equality color on every `q^2` restriction.
+### 2. Strengthened near-line forcing
 
-### K.2 — Low-slack coordinatization (PROVED)
+For x outside W, let B_a be the non-color-i neighbors of x inside the i-block P_a. Every B_a is nonempty in a counterexample, since an empty B_a would make P_a union {x} a monochromatic K_(q+1).
 
-Let
+If s_i cross-block color-i defect edges exist, a greedy independent-transversal argument proves
 
-`m_q=q*C(q,2)`
+\[
+\min_a |B_a|\le s_i.
+\]
 
-and on a `q^2` restriction define a color's slack by
+Hence some block has at least q-s_i edges to x of color i. This strengthens the earlier q-2s_i estimate.
 
-`s_i=e(G_i)-m_q`.
+At s_i=0, the result forces B_a empty, a contradiction. Therefore every hypothetical counterexample satisfies
 
-Using Brouwer's exact non-r-partite Turan threshold, if
+\[
+s_i(x)\ge1\quad\text{for every color }i\text{ and vertex }x.
+\]
 
-`0<=s_i<=q-2`,
+So exact Turan equality is individually impossible on every q^2-point restriction; it is not merely the case that at most one equality color can occur.
 
-then the restriction partitions into exactly `q` monochromatic `K_q` blocks for color `i`, with exactly `s_i` additional color-`i` edges between the blocks.
+### 3. Global slack dictionary
 
-If two distinct colors both satisfy this low-slack inequality, their two block partitions are exactly orthogonal. Hence the vertex set is canonically a `q x q` grid; only the cross-block defect edges remain.
+For N=q^2+1, every color has e_i>=m_q+q. Writing e_i=m_q+q+a_i gives
 
-### K.3 — Near-line forcing for the extra vertex (PROVED)
+\[
+\sum_i a_i=m_q,\quad
+s_i(x)=q+a_i-d_i(x),\quad
+\sum_i s_i(x)=m_q.
+\]
 
-For a low-slack color with defect count `s`, the deleted ambient vertex `x` has, in some extracted `K_q` block, at least
+Also \(\sum_x s_i(x)=q(q-1)+(q^2-1)a_i\). These identities are proved, but scalar averaging alone does not force two low-slack colors.
 
-`q-2s`
+## High-slack branch: audited, not closed
 
-incident edges of that color. This follows because otherwise one can choose a non-color-i representative from every block outside the endpoints of all defect edges, yielding a forbidden independent transversal together with `x`.
+If at most one color is low-slack at x, then \(\sum_i s_i(x)\ge(q-1)^2\), which is compatible with m_q. The formal profile a_i=q(q-1)/2, d_i(x)=q, s_i(x)=q(q-1)/2 satisfies all current scalar identities, although it is not asserted to be graph-realizable.
 
-For `s=0` this recovers the full-line forcing in the affine-plane nonextension theorem.
+Thus a genuine multicolor compatibility inequality is still needed. No high-slack contradiction has been proved.
 
-### K.4 — Prime-power assumption is still downstream
+## Finite geometry: exact limits
 
-An arbitrary coloring of `K_(q^2+1)` has no canonical `F_q^2` coordinates. Prime-power algebra becomes legitimate only after structural extraction. The low-slack theorem is now one concrete extraction mechanism.
+- Two low-slack colors give two orthogonal partitions only.
+- q being a prime power does not coordinatize arbitrary extracted partitions.
+- The partial Kakeya bound is valid only after extracting full size-q blocks in distinct directions with pairwise intersections at most one.
+- Three such full lines already occupy at least 3q-3 points, exceeding a 2q-1 shell for q>=3. But J has not proved that a noncompressible shell must contain these lines.
 
-If many extracted blocks/directions appear, then finite-field incidence, Kakeya, Rédei, character-sum, or association-scheme methods become plausible. Before that point, field methods would be acting on invented coordinates.
+External hypotheses and citations are audited in KAKeya_BRIDGE_AUDIT.md.
 
-### K.5 — Compression/Kakeya bridge
+## Current verdict
 
-A shell that must contain a full line in many extracted directions is a partial Kakeya/Besicovitch configuration. The elementary bound
-
-`|K|>=tq-C(t,2)`
-
-for one full line in each of `t` distinct affine directions is already quadratic when `t=Theta(q)`, while the induction shell has size only `2q-1`.
-
-## Precise current bottleneck
-
-The local theorem is strong if two colors have slack at most `q-2`. What is not yet proved is a global statement forcing two such colors on the same `q^2` restriction.
-
-Thus the next theorem should be one of:
-
-1. a slack-distribution theorem forcing two low-slack colors;
-2. a complementary theorem showing that if at most one color is low-slack, then the high-slack colors force a different design/nonextension contradiction;
-3. for prime powers, a coordinatized incidence theorem showing that even the defect edges in two low-slack directions cannot coexist with the extra vertex.
-
-Headline status: `K1/K2/K3/K4 = OPEN`, but the low-slack structural subgoal is now achieved.
+- Local low-slack coordinatization: PROVED.
+- Positive-slack two-direction structure: PROVED conditionally.
+- Exact zero-slack exclusion: PROVED.
+- Global extraction of two low-slack colors: OPEN.
+- High-slack alternative contradiction: OPEN.
+- Full affine-plane/net completion: OPEN.
+- Prime-power P(q): OPEN.
