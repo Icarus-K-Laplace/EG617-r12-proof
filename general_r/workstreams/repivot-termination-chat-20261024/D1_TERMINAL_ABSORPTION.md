@@ -85,3 +85,39 @@ A valid absorption proof must use information not captured by the one-point exch
 No such inequality is currently certified.
 
 Status: exact transition and scale transfer **PROVED_CONDITIONAL**; c=0 closure **PROVED_CONDITIONAL**; bounded-allowance d1 nonextension **OPEN**.
+
+
+## 6. Round-2 independent excess budget and joint scale certificate
+
+For every singleton support u_i, the common weight identity is
+
+c = kappa_{u_i}+e_F(u_i,S).
+
+Since S is a singleton, e_F(u_i,S) is 0 or 1. Hence
+
+kappa_{u_i} in {c-1,c}.                                    (6.1)
+
+Let K_U=sum_i kappa_{u_i}. Then the following are simultaneous necessary conditions:
+
+- **Inherited excess:** N(c-1)<=K_U<=K<=2r-2.
+- **Common-S charge:** Nc<=K+r+c<=3r-2+c.
+- **Owner clique:** N<=r-2.
+- **Shell incidence:** the number of supports with kappa=c-1 is at most e_F(S,H)=r+c.
+
+The first bound is independent of the common-S charge inequality and is stronger when c>=2. In particular,
+
+N <= min(r-2, floor((2r-2)/(c-1))) for c>=2.                (6.2)
+
+This still permits N=Theta(r) for each fixed c, so it does not prove absolute absorption. For c=1, (6.1) gives only kappa in {0,1}; the zero-excess supports are shell-neighbours and the one-excess supports spend one unit each from K. The current cap allows both populations to be linear.
+
+Combining this with the eta scale-transfer theorem gives a joint, exact statement. If eta>=epsilon r, some d1 class has N>=epsilon r/5. Its allowance c obeys
+
+N(c-1)<=2r-2,  (N-1)c<=3r-2,
+
+so c is bounded by a constant depending only on epsilon. If c>=2, the excess bound (6.2) applies; if c=1, the support population remains open. This is a second budget on the d1 class, but it does not by itself yield N=O(1).
+
+## 7. Coupling status with the clean-pair kernel
+
+The clean-pair Round-2 result provides a separate high-density constraint: optional block-cross degree is at most four, while any outside vertex that fails to see a whole AES part pays excess at least 3a-4-r>=8. These constraints do not yet imply that a d1 support class must become a clean-pair d2 class. The missing step is still a certified transition that couples the d1 singleton supports to the d2 pair-exchange orbit without assuming an unproved shared charge deficit.
+
+Status remains **OPEN** for every fixed c>=1. No absolute N bound is certified.
