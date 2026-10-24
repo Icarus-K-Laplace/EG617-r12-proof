@@ -16,7 +16,8 @@ Contract:
 - `alpha(H)<=3`;
 - `omega(H)<=r-1`;
 - `delta(H)>=r`;
-- the inherited hereditary cap used by the general-r backend is valid.
+- the inherited hereditary cap used by the general-r backend is valid;
+- legal repivots used by the backend preserve the core contract (the backend closure interface remains conditional until its upstream gates are discharged).
 
 Once RC is available, the proved symbolic backend gives
 
