@@ -28,3 +28,10 @@
 - Cross-block consequence: when \(r_i(C),r_j(C)\le3\), each of the ten component labels has a unique representative in each block. The two representatives must be C-adjacent: each row contains the component plus at most two extra vertices, so at least seven gadget vertices remain outside their union, contradicting pairwise compatibility if the representatives were C-nonadjacent.
 - For each low-slack block, the 56 selected witness labels are partitioned among 12 row vertices; each row class is a matching of pairwise-disjoint Q-sets and contains at most one Q from each selected color. The immediate capacity bound \(12\cdot7=84\) still exceeds 56. This is a sharper finite contract, not a terminal contradiction.
 - E408 Q33 remains OPEN / NOT_CERTIFIED; the non-four-partite L branch and the four-partite branch with \(S_0\ge22\) remain unresolved.
+
+
+## 2026-10-25 — four-partite proof audit
+
+- Rechecked the \(S_0\ge22\) theorem after the low-slack integration. Closed two presentation gaps in the written proof: the part-size argument now explicitly excludes two 7-point parts because \(7\cdot7<56\), and the \((4,4,4)\) case in the \(m=6\) split now explicitly shows why three pairwise nonadjacent extra-neighbor sets cannot each union to a large part.
+- The corrected proof remains conditional only on the frozen four-partite Q33 contract and the already stated core/independence constraints. The remaining \(\delta\in[9,17]\) branch is still open.
+- Canonical state consolidated to remove duplicate sections and now explicitly records both proof audits and the current status.
