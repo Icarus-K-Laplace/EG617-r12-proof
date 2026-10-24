@@ -45,15 +45,15 @@ def check_e407_boundary() -> None:
     assert all(20 - 2 * delta - eps > 12
                for delta in (0, 1) for eps in range(5))
 
-    # For delta=2, N_7 <= 12 while N_7 >= 16-epsilon_U, forcing
-    # epsilon_U=4 and N_7=12. Two transversals each carry six W vertices.
-    assert all(16 - eps > 12 for eps in range(4))
-    assert 16 - 4 == 12
-    assert 12 == 2 * 6
-    # Each of the two transversals has five vertices not incident to its
-    # unique J-edge; these ten vertices would each have excess at least one.
-    assert 2 * (7 - 2) == 10
-    assert 10 > 4
+    # The general transversal-capacity inequality gives
+    # S=2*delta+epsilon_U >= 9. For delta=2 and epsilon_U<=4, S<=8;
+    # the N_7 lower bound exceeds the N_7 upper bound for every such S.
+    for eps in range(5):
+        s = 4 + eps
+        assert 20 - s > 10 + s / 7
+    assert all(delta >= 3
+               for eps in range(5) for delta in range(17)
+               if delta + eps <= 16 and 2 * delta + eps >= 9)
 
 
 def check_e408_boundary() -> None:
