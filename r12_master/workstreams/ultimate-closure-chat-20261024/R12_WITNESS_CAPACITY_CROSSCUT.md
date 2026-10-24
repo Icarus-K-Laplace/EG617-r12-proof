@@ -166,3 +166,15 @@ For E407 Q32 templates A/C, each exact-129 non-target color supplies at least se
 Across colors, witness 4-sets form a linear family. Moreover, any two independent 4-sets in a graph with alpha(H)<=4, intersecting in at most one vertex, have a perfect matching between their exclusive parts (Hall's theorem). Thus each disjoint pair forces at least four core edges, and each pair intersecting once forces a matching on the remaining triples.
 
 Full proof and limitations: R12_E407_Q32_COLOR_FACTOR_CROSSCUT.md. This does not close A/C or B/D/E: edge reuse across different color-pairs remains unbounded by the current argument.
+
+
+## F-007 — extend exact-129 witness packing to all five E407 templates
+
+The full component argument now covers A–E.
+
+- A/B: M[S] is empty and n3>=1, so there are at least seven no-S K5 components per exact-129 color; at most three witnesses can miss a hub because every such witness must hit each full B-row, whose target degree into H is three. Thus at least four hub-complete witnesses per color, 28 globally.
+- C/D: M[S] is one edge, so at least eight K5 components avoid S; the same full-row capacity gives at least five hub-complete witnesses per color, 35 globally.
+- E with n3>=1: at least eight no-S components and the same capacity give at least five hub-complete witnesses per color, 35 globally.
+- E with n3=0: the row constraints force every B-row to be an ends-pair row. B∩U<=2 and at most two K5 components can meet S, so at least six B-occupied no-S components remain. Each associated Q must hit both P3 endpoints, giving at least 42 endpoint-complete witnesses globally.
+
+All families are linear across colors and satisfy the Hall matching lemma. This covers the witness-count branch for every template, but it does not exclude a 284-edge core: the cross-color reuse of matching edges remains uncontrolled.

@@ -218,3 +218,7 @@ There is no remaining generic d4/d9 bridge.
 4. independently replay V8; V11/V12 replay is complete and recorded in `r12_master/workstreams/ultimate-closure-chat-20261024/R12_V11_V12_REPLAY.md`.
 
 The full EG617 r=12 theorem remains **OPEN / NOT_CERTIFIED**.
+
+### E407 Q32 — 2026-10-25 witness-count update
+
+A new exact-129 color-factor lemma now covers all five common-K11 templates at the witness-packing layer: A/B force at least 28 hub-complete independent 4-sets; C/D and E with a full row force at least 35; E without a full row forces at least 42 sets hitting both P3 endpoints. Pairwise Hall-matching constraints apply across the linear witness family. This is not a contradiction; the 284-edge core compatibility remains OPEN because cross-color edge reuse is not yet bounded.

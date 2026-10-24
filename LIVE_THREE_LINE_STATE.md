@@ -173,3 +173,12 @@ Remaining obligations:
 - V11/V12 replay is complete; independent V8 package replay remains pending.
 
 The full EG617 r=12 theorem remains **OPEN / NOT_CERTIFIED**.
+
+## Emergency sprint update — E407 witness packing
+
+The exact-129 color-factor argument now covers all five E407 Q32 templates at the witness-count level:
+- A/B: at least 28 hub-complete independent 4-sets;
+- C/D and E with a full row: at least 35;
+- E without a full row: at least 42 independent 4-sets hitting both P3 endpoints.
+
+These sets are pairwise linear across colors and satisfy pairwise Hall matching. The theorem remains OPEN / NOT_CERTIFIED because no contradiction with the 284-edge core has been derived; cross-color matching-edge reuse is the current blocker.

@@ -73,3 +73,14 @@ The fresh color-factor theorem in R12_E407_Q32_COLOR_FACTOR_CROSSCUT.md proves:
 - any two witness sets have at most one common vertex, and their exclusive parts admit a Hall perfect matching in the 284-edge core.
 
 This strengthens the local witness-capacity constraint but does not rule out A/C. It does not cover templates B/D/E, and no cross-color edge-reuse bound sufficient for contradiction has been established.
+
+
+## 6. F-007 — witness-count coverage now spans A–E
+
+The exact-129 color-factor argument now gives a necessary witness family for every E407 Q32 template:
+- A/B: 28 hub-complete independent 4-sets;
+- C/D: 35 hub-complete independent 4-sets;
+- E with at least one full row: 35 hub-complete independent 4-sets;
+- E with no full rows: 42 independent 4-sets hitting both endpoints of M[S].
+
+Every family is pairwise linear across colors and obeys the Hall matching lemma. This does not yet exclude any template: the common-core completion obstruction still needs a bound on how often the same 284-core edge can serve as a matching edge for multiple witness-block pairs.

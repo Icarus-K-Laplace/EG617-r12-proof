@@ -70,3 +70,32 @@ This sharpens the earlier “hub-complete or high-B-degree” dichotomy: A/C can
 It does not yet contradict e(H)=284, the degree sequence with total excess four, or the 13-row shell capacities. Cross-pair edges can be reused by witness pairs from different colors; a valid next step must bound this reuse or classify the resulting incidence kernel. Templates B, D, and E are not covered by the hub-complete count above.
 
 Dependencies: V12's finite E407 shell reduction; retained D(14)/template row contracts; Kang–Pikhurko Type-I exact-129 classification. No residual-core, three-anchor, or repivot theorem from sibling workstreams is used.
+
+
+## 6. Extension to templates B, D, and E: all-five witness count
+
+The same component argument covers the remaining shell templates, with a separate endpoint-complete branch for E.
+
+For templates A–D, the row constraints imply \(n_3\ge1\), where \(n_3\) is the number of full B-rows with \(k_b=3\). Every non-hub-complete independent 4-set must hit every full row: if it misses any hub \(s\), then it must hit each \(b\) with \(sb\\in M\), including all full rows. Since each full row has exactly three target neighbors in H and the selected Q-sets are disjoint within one color, at most three selected component witnesses can fail to be hub-complete.
+
+The no-S component counts are:
+- A and B: at least seven, since \(F[S]\) is a clique and at most three K5 components meet S;
+- C and D: at least eight, since M[S] is one edge, so the three hubs can occupy at most two K5 components.
+
+Therefore every exact-129 color gives at least four hub-complete witnesses in A/B and at least five in C/D. With at least seven exact-129 colors, the totals are at least 28 for A/B and 35 for C/D.
+
+For E, if \(n_3\\ge1\), the same full-row argument and the at-least-eight no-S components give at least five hub-complete witnesses per exact-129 color, hence at least 35 overall.
+
+If \(n_3=0\) in E, the row constraint \(3n_0+2n_1+n_2\\le10\) and \(n_0+n_1+n_2=10\) force \(n_0=n_1=0,n_2=10\): every B-row misses exactly the two endpoints of the P3. The exact-129 Type-I structure has at most two B vertices in U, so at least eight B vertices occupy K5 components. Since M[S]=P3 permits at most two K5 components to meet S, at least six B-occupied components are disjoint from S. Their four-core-vertex witnesses are anticomplete to their associated b and must hit both P3 endpoints, or Q∪{b,endpoint} would be an independent 6-set. Thus E's exceptional n3=0 branch supplies at least six endpoint-complete witnesses per exact-129 color, hence at least 42 endpoint-complete sets overall.
+
+So all five templates now have a certified witness-packing consequence:
+| Template | Required witness family across exact-129 colors |
+|---|---|
+| A | at least 28 hub-complete independent 4-sets |
+| B | at least 28 hub-complete independent 4-sets |
+| C | at least 35 hub-complete independent 4-sets |
+| D | at least 35 hub-complete independent 4-sets |
+| E, n3>=1 | at least 35 hub-complete independent 4-sets |
+| E, n3=0 | at least 42 independent 4-sets hitting both endpoints of M[S] |
+
+All selected families remain linear across colors and obey the Hall-perfect-matching lemma in Section 4. This closes the **witness-count** gap across A–E, not the common-core completion gap. No contradiction with the 284-edge core has yet been derived; bounding cross-color reuse of matching edges remains the unique blocker.

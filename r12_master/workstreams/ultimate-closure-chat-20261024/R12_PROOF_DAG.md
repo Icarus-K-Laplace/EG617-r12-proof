@@ -54,3 +54,13 @@ Input: E407 Q32, one of templates A/C, exact-129 Type-I classification, and the 
 Output: at least 28 (A) / 35 (C) hub-complete independent 4-sets in the same 284-edge core; cross-color linearity; Hall-perfect-matching constraints between every pair of witness blocks.
 
 Status: PROVED_CONDITIONAL. It does not produce a contradiction node. Remaining gap: bound cross-pair edge reuse or classify the core incidence kernel; templates B/D/E remain outside this result.
+
+
+## F-007 — all-five-template witness packing
+
+The exact-129 component method now yields:
+- A/B: at least 28 hub-complete independent 4-sets;
+- C/D and E with n3>=1: at least 35 hub-complete independent 4-sets;
+- E with n3=0: at least 42 independent 4-sets hitting both P3 endpoints.
+
+These are PROVED_CONDITIONAL on the retained E407 shell contracts and exact-129 Type-I classification. All five templates are covered at the witness-count layer. No contradiction node exists yet; the remaining blocker is a quantitative bound on cross-color reuse of the pairwise Hall matchings inside the 284-edge core.
