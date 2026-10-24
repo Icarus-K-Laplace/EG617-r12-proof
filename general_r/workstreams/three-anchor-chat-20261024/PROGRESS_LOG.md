@@ -126,3 +126,33 @@ No theorem gap remains in this workstream. The highest-value action is external/
 
 - Aligned LEMMA_VERIFICATION.md wording with the committed arithmetic script: the script enumerates and asserts the 19 c=3, r=12 signatures; the complete table is displayed in PUBLICATION_VERSION.md, while the script's stdout reports the count and exceptional rows rather than printing every row.
 - Commit: b5a8845c3e0d373d0afbea6bb051671bc1d3c81c
+
+
+## 2026-10-24 — Round 2: exact \(K=8\) rigidity
+
+- Read the current branch versions of CANONICAL_STATE.md, PUBLICATION_VERSION.md, INDEPENDENT_AUDIT.md, LEMMA_VERIFICATION.md, PROOF_DEPENDENCY_MAP.md, EQUALITY_CASES.md, COUNTEREXAMPLE_SEARCH.md, THEOREM.md, and PROGRESS_LOG.md before starting the equality-layer work.
+- Kept the frozen \(K\ge8\) theorem unchanged; did not repeat the \(K\le6\) contradiction proof.
+- Re-derived the exact pair-connector degree identity
+  \[
+  a+b=r-2-d_i-d_j+\gamma_z+n_k-x_z
+  \]
+  and wrote the backend-safe per-vertex union-load interface \(x_v\ge(|F_v|-(2+d_i))_+\), with each forced external neighbour included only once.
+- Proved the new analytic boundary theorem \(K=8\Rightarrow r\le13\). By parity and the frozen theorem, this gives the genuine strengthening \(K\ge10\) for every \(r\ge14\).
+- Closed the \(c=2,r=13\) equality layer by exact equality in the transversal-cover count and the second connector's impossible demand for at least sixteen exclusive neighbours.
+- Exhausted the \(c=3,r=14\) local \(R_{22}\) profile list (23 profiles) and eliminated it using common-nonneighbour cliques and saturated rectangle vertices. Also eliminated the sole \(r=15\) profile and all \(r\ge16\) profiles.
+- Eliminated \(c=4,(0,0,2)\) two-focus equality at \(r=13,14\), and \(c=4,(0,1,1)\) two-slot equality at \(r=14\), using exact degree equations plus opposite-block external-incidence deficits.
+- Remaining \(K=8\) necessary strata are now restricted to \(r=12,13\): \(c=2,r=12\); \(c=3,r=12,13\) mixed-focus; \(c=4,(0,0,2),r=12\) with \(f=0,1,2\) as specified in EQUALITY_K8_CLASSIFICATION.md; and \(c=4,(0,1,1),r=12,13,s=2\) with \(V/W\) owning the two deficit-one focus slots. These are necessary conditions only; no graph realization is claimed.
+- Added EQUALITY_K8_CLASSIFICATION.md, NEAR_MINIMAL_EXCESS_RIGIDITY.md, BACKEND_INTERFACE.md, K8_LOCAL_PROFILE_AUDIT.py, and K8_LOCAL_PROFILE_AUDIT_RESULTS.md; updated canonical state, theorem ledger, equality cases, audit, dependency map, and counterexample-search ledger.
+- Executed an independent local integer-profile check. It verified the complete 23-row \(c=3,r=14\) list, the sole \(r=15\) profile, no \(r=16\) profile, and the one-sided \(c=4\) overlap profiles at \(r=13,14\). This is not a whole-graph search.
+- Full \(K=8\) classification remains OPEN for \(r=12,13\); \(K\ge10\) is **not** claimed for those parameters. No whole-graph SAT/ILP search was run.
+- Key Round-2 commits:
+  - K8_LOCAL_PROFILE_AUDIT.py: c5aa3f8e6c72b6d5fb56e2abffa8e5b8859fbb6b; output fix: 1336cbfd9368bce2e15a69393892b7b59aa20935
+  - K8_LOCAL_PROFILE_AUDIT_RESULTS.md: 38c2119bcc397ef93306689ee26a22c99a684f7a; formatting fix: 8ee83eabb83e22499b14663fc127ed4072404b05
+  - THEOREM.md: a99b2e7f2df4ed7b1c93683bdde304c9e9207046
+  - CANONICAL_STATE.md: 9621b306ea119c5b2d7a6153fa9e42b77246daa3; artifact index: 3ca7eddc9a48311db8646821a481aedfc396e20f
+  - EQUALITY_CASES.md: 31ccb83099dddc94304823c1e64d4c2e90211343
+  - COUNTEREXAMPLE_SEARCH.md: 3d978805e37976fa7402dd2ff1a480a7bd2c0d5d
+  - INDEPENDENT_AUDIT.md: d976ce72c32696774c575dbfdd63e961ba12f302
+  - PROOF_DEPENDENCY_MAP.md: 26a321fd296155ee8a97a75e2e720c470866cd03
+  - EQUALITY_K8_CLASSIFICATION.md: d1b6d132df67268d9097b111634165edc65b8b67; status corrections: aa7334366517f4d703608faf0c62537000dd4ddd, b2c9cbf67ce7bce4b4d35aa7e889edaed503f5a8
+- Pre-log branch head was b2c9cbf67ce7bce4b4d35aa7e889edaed503f5a8. The next commit records this progress entry.
