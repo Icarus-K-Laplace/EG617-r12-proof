@@ -316,3 +316,11 @@ There are three large parts, hence at most nine W vertices can have a full-large
 in the E408 Q33 four-partite branch.
 
 This closes the S_0=8 and S_0=9 layers only. The remaining four-partite integer kernel has S_0>=10, delta+epsilon_U<=17; it is still OPEN.
+
+
+At the equality boundary S_0=10, the same argument leaves only one incidence pattern. If k<=5, at least ten of the remaining W vertices have size-8/9 full-large-part neighbourhoods, exceeding the capacity of nine. If k=6 but the remaining ten vertices have two size-9 neighbourhoods rather than one size-10 neighbourhood, all ten are again full-large-part neighbourhoods, impossible. Thus the only unexcluded equality pattern is:
+- k=6 vertices have neighbourhood exactly D;
+- nine vertices have size-8 neighbourhoods equal to large parts, exactly three assigned to each of A,B,C;
+- one vertex w_* has a size-10 hitting set containing no entire part.
+
+For this equality pattern, delta is in {3,4,5} and epsilon_U=10-2delta. The exceptional hitting set T_*=N_H(w_*) intersect U cannot contain all of D, since at least three zero-excess points of D are already saturated by the six size-7 vertices. If T_* contains s points of D, then s<=2 and it must contain at least eight points from A union B union C, because every unselected d in D has eight blocks that must be hit by distinct large-part points. In particular, the only remaining four-partite equality kernel is a single size-10 non-group transversal interacting with the six D-neighbourhood vertices and the three-per-large-group size-8 classes. This is still OPEN, but is substantially narrower than the original shell/core incidence system.
