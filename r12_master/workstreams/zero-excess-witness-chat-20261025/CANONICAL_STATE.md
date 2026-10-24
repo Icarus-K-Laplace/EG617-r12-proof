@@ -45,3 +45,8 @@ versus lower bound \(3\binom{5c}{2}\). At \(c=7,8\) these are \(5978>1785\) and 
 - Labelled shell-incidence overlap bound: **OPEN**.
 - E407 Q32 and E408 Q32/Q33: **OPEN**.
 - EG617(r=12): **OPEN / NOT_CERTIFIED**.
+
+
+## Arithmetic audit asset
+
+\`verify_zero_excess_arithmetic.py\` checks the complete finite integer table for the zero-excess theorem and the witness-overlap scalar comparison. It does not certify any graph completion or substitute for the analytic proof.
