@@ -81,3 +81,12 @@ The row-count screen yields n3>=6 in templates A and C, n3>=2+2n0 in B, n3>=1+2n
 - B/D/E: analogous but weaker hub-row capacities are specified in R12_WITNESS_CAPACITY_CROSSCUT.md.
 
 The remaining escape is a hub-complete witness, or an overlap pattern in which the excess cost of high-B-degree witness sets is reused by shared core vertices. The proof cannot sum excess over overlapping witnesses. Next attack: classify the overlap graph of ten Q_b sets and use exact core degree 12+epsilon to control common triples/pairs.
+
+
+## F7. Row-transversal and high-k witness packing (new)
+
+See R12_ROW_TRANSVERSAL_AND_Q33_PACKING.md.
+
+For every missing shell edge ab and shell row t_a<=12, the 4-sets in H\D_a have independence number exactly4 and all must hit D_b. The five E407 templates therefore induce minimum transversal systems (size3 for full rows against a t=10 hub, size2 for pair rows against a t=11 hub, size1 for singleton rows against a t=12 hub), with PAIR-13 / TRI-24 overlap restrictions.
+
+For E408 Q33/d3, the exact-129 factor theorem yields at least six B-bearing K5 components with no S per exact-129 color. Combined with at least five high-k B rows, this forces at least one high-k no-S witness per exact-129 color, and at least two when beta is 0 or1. The resulting 8/16-witness packing is a necessary condition only; no terminal is excluded yet.
