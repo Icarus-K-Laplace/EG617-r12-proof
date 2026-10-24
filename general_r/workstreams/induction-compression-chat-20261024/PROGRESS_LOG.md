@@ -2,35 +2,29 @@
 
 ## 2026-10-24 — Round 1
 
-- Created isolated branch/workstream from `workstream/general-r-architecture-20261024`.
-- Audited the exact arithmetic identity `r^2+1-(2r-1)=(r-1)^2+1`.
-- Converted robust `r -> r-1` compression into a simultaneous maximum-independent-set transversal condition.
-- Proved every independent `r`-set in a color graph of a counterexample is dominating.
-- Audited and corrected an initially overstrong iff claim: adaptive recoloring of the eliminated color can repair missing colors, so the canonical theorem distinguishes a robust sufficient criterion from an exact fixed-merge criterion.
-- Proved an affine-plane sharp-model obstruction: a `2r-1` shell cannot generically lower the independence number of all surviving exact parallel-class colors for `r>=5`.
-- Identified partial Kakeya/Besicovitch geometry as the natural obstruction language for shells that must contain full blocks in many directions.
-
-### Status
-
-`J1 = ACHIEVED`.
-
-`J2/J3/J4 = OPEN`.
+- Created isolated branch/workstream from workstream/general-r-architecture-20261024.
+- Audited the exact arithmetic identity r^2+1-(2r-1)=(r-1)^2+1.
+- Converted robust r -> r-1 compression into a simultaneous maximum-independent-set transversal condition.
+- Proved every independent r-set in a color graph of a counterexample is dominating.
+- Corrected the overstrong unrestricted adaptive-recoloring iff claim; only the robust direction is sufficient, while the fixed merge has an exact iff criterion.
+- Proved an affine-plane sharp-model obstruction to purely hereditary shell deletion.
 
 ## 2026-10-24 — Round 2
 
-- Proved the maximum-independent-set packing lemma. For `t` pairwise disjoint independent `r`-sets in one color graph, every pair of sets has at least `r` cross edges and every outside vertex has at least one neighbor in each packed set.
-- Derived
+- Proved the maximum-independent-set packing lemma for pairwise disjoint independent r-sets in one color graph.
+- Derived the cross-edge floor r*C(t,2)+t(r^2+1-tr) and its equality incidence structure.
 
-  `e(G_i) >= r*C(t,2)+t(r^2+1-tr)`.
+## 2026-10-24 — Round 3: compression failure audit
 
-- Equality forces perfect matchings between every pair of packed independent sets and exactly one incidence from each outside vertex into each packed set.
-- At `t=r` this lower bound equals the ordinary Turan-complement minimum `p_r(r^2+1)`. A genuine counterexample cannot attain equality because Turan equality contains a monochromatic `K_(r+1)`.
-- Hypergraph consequence: a maximal matching of size `t` in the family of maximum independent sets gives a transversal of size at most `rt`. Therefore failure of small transversals forces a large packing, and a large packing forces matching/Latin-square-like geometry.
+- Formalized the robust shell as a transversal of H_{-c}=union_{i != c} I_i.
+- Proved that failure of every robust shell for fixed c gives tau(H_{-c})>=2r.
+- By tau<=r*nu, proved a matching of size at least two.
+- Split the outcome rigorously: either three disjoint colored independent-set witnesses exist, or a maximum matching has size two and its 2r-point union is a minimum transversal with a private independent-set witness for every point.
+- Extended the same argument to the exact fixed-merge hypergraph (union of untouched-color independent-set families plus the common independent sets of colors c and j).
+- Derived colored cross-edge constraints from the domination property.
+- Added an abstract hypergraph example with tau=2r and nu=2 to show that hypergraph matching/transversal data alone do not force affine geometry.
+- Explicitly disallowed Kakeya use until full size-r blocks and pairwise intersection <=1 are proved.
 
-### Refined next attack
+### Status
 
-Turn the qualitative dichotomy
-
-`small transversal OR design-like packing`
-
-into a simultaneous multicolor statement strong enough to fit the exact `2r-1` shell budget. In particular, exploit overlap between transversals for different colors rather than summing their sizes independently.
+The strongest proved result is **compressible shell OR packing/tight-critical-transversal structure**. The desired **compressible shell OR rigid finite geometry** is still OPEN. J2/J3/J4 remain OPEN.
