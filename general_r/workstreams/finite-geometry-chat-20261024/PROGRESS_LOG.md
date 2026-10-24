@@ -26,6 +26,8 @@
 - Derived the high-slack lower bound sum_i s_i(x)>=(q-1)^2 when at most one color is low-slack. This is compatible with the known total m_q, so it does not close the branch.
 - Gave a formal scalar profile satisfying every currently proved slack/degree identity with all colors high-slack. It is explicitly not claimed to be a graph realization; it certifies that scalar identities alone are insufficient.
 - Audited the Kakeya bridge: three full size-q blocks in distinct directions with pairwise intersections at most one would already exceed a 2q-1 shell for q>=3. The missing premise is extracting these blocks from the actual compression obstruction.
+- Verified the exact publication citation for Blokhuis–Mazzocca: *Building Bridges: Between Mathematics and Computer Science*, Bolyai Society Mathematical Studies 19, Springer (2008), pp. 205–218, DOI 10.1007/978-3-540-85221-6_6.
+- Rechecked the Brouwer threshold in Popielarz–Sahasrabudhe–Snyder (JCTB 132, 2018), Theorem 2.2, including the hypothesis n>=2r+1.
 
 ### Status
 
