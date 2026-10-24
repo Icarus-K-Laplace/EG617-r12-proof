@@ -47,4 +47,4 @@ These are the latest heads observed in the repository at the time of this update
 
 ## Verification status
 
-The local arithmetic/kernel audit script is named verify_e407_delta16_kernel.py. Its result is recorded in PROGRESS_LOG.md. It verifies exact integer ledgers and the finite endpoint-split inequalities only; it does not certify graph realizability.
+The local arithmetic/terminal audit script is named verify_e407_delta16_kernel.py. It checks the exact ledgers and finite excess-budget contradictions. It is a consistency check, not a graph-realization certificate; the mathematical exclusion is supplied by FOUR_PARTITE_TERMINAL.md under the stated core/witness contract.
