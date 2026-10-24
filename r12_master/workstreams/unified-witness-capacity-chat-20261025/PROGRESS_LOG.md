@@ -19,3 +19,14 @@
 - Result: R12_UNIFIED_WITNESS_CAPACITY_ARITHMETIC_OK. This validates only the integer/degree ledgers and finite profile search; it is not a graph search and does not certify realization of the witness hypergraph.
 - Corrected the shell-row note to restrict the per-row capacity-three statement to zero-excess witnesses, because the regular-row degree cap is only certified on H0.
 - Latest workstream head before this log update: cbd0cdf950cc8c8c74d06fee26122b5fe2dff44c.
+
+
+## 2026-10-25 — labelled four-partite capacity continuation
+
+- Refreshed the current Q33 global-compatibility result (read-only sibling head df396de8ffc1f9c390fe3e240d0d085715f86b5b): under the four-partite contract it proves \(S_0\ge22\), so \(9\le\delta\le17\).
+- Proved a per-part label-row capacity lemma: if a shell label b occurs in n_b selected transversals of a four-partite L, then its target neighborhood avoids n_b vertices in every part, giving \(|D_b\cap V_j|\le |V_j|-n_b\).
+- In the Q33 four-partite branch, the 56 edge-disjoint transversals force multiplicities \(r=8\) on the size-seven part and \(r=7\) on all three size-eight parts. The omission profile is exactly \((0^7,1^{24})\), so \(\Omega=0\) and the eight color omission triples partition the 24 large-part vertices.
+- Derived a labelled shell-row cap on the size-seven part: the eight incident witness labels are distinct, so each such point has at most three B-row target neighbors (at most two without a pivot-labelled witness), giving \(e_F(B,D)\le14+P\le21\). Combining with \(K_B\ge22-\beta\) yields the explicit lower bound \(e_F(B,H\setminus D)\ge\max(0,8-\beta+G_B-P)\). It remains compatible with current budgets.
+- Proved that the generic crossing-edge lower bound is exactly saturated by within-part edges in any four-partite witness branch. For Q33, the weighted crossing load is \(5460+49(24-\delta)\), whereas the generic lower bound is exactly 5460. Thus edge-charge summation alone cannot exclude the four-partite branch.
+- Updated the exact-arithmetic verifier with partite multiplicity, omission, label-row and edge-load checks. Replayed the new arithmetic independently in Python: NEW_PARTITE_LABEL_CAPACITY_ARITHMETIC_OK.
+- Minimal remaining gap is now more specific: a contradiction must either force a labelled restriction on the unused cross-part pair slots / shell rows in the four-partite branch, or prove a packing/stability exclusion for the non-four-partite 56-K4 system. No graph counterexample or full EG617 proof is claimed.
