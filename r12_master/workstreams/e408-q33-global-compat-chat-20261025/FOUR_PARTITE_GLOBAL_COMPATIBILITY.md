@@ -9,7 +9,7 @@ Assume the Q33 minimum-support contract and that L=overline(H[U]) is four-partit
 \[
 |A|=|B|=|C|=8,\qquad |D|=7.
 \]
-Indeed, every pair between D and a large part occurs in exactly one witness; hence all \(7\cdot8=56\) such pairs are used. The eight unused pairs between any two large parts form a perfect matching: each vertex of one part appears in seven witnesses with seven distinct vertices of the other part.
+Every pair of part sizes must have product at least 56 because the 56 witnesses use distinct cross-part pairs. A part of size at most six would force each other part to have size at least ten, impossible on 31 vertices. Thus the smallest part has size at least seven; if all four parts had size at least eight there would be at least 32 vertices. Hence the part sizes are exactly 8,8,8,7. Every pair between D and a large part occurs in exactly one witness, so all 7·8=56 such pairs are used. The eight unused pairs between any two large parts form a perfect matching: each vertex of one part appears in seven witnesses with seven distinct vertices of the other part.
 
 Consequences:
 - D is a clique K7 in H[U], and each d in D has exactly six H-neighbours inside U.
@@ -96,7 +96,7 @@ This implies
 \[
 E_Z\ge4m-12.
 \]
-To see this, if \(x_4\ge4\), then \(x_4,\ldots,x_m\ge4\); if \(x_4\le3\), then \(x_5,\ldots,x_m\ge5\), which gives an even larger lower bound. But (1) gives \(E_Z\le E_Z+E_N=S_0+m-14\le m+7\). For \(m\ge7\), \(4m-12>m+7\), contradiction.
+To see this, if x4>=4, then x4,...,xm are all at least four, giving E_Z>=4(m-3). If x4<=3, then x5>=8-x4 and x6,...,xm are at least x5, so E_Z>=x4+(m-4)(8-x4)>=5m-17>=4m-12 for m>=7.. But (1) gives \(E_Z\le E_Z+E_N=S_0+m-14\le m+7\). For \(m\ge7\), \(4m-12>m+7\), contradiction.
 
 ### Case 4: \(m=6\)
 
