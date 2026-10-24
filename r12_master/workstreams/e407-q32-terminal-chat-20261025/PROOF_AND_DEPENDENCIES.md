@@ -37,11 +37,13 @@ Status: **E407 Q32 OPEN / NOT_CERTIFIED; the \(\delta=16\) boundary is narrowed 
 &\Downarrow\\
 &\begin{cases}
 \delta=16:\ \text{open; reduced to the labelled }5+0\text{ kernel},\\
-\delta\le15:\ \text{four-partite near-extremal or non-four-partite cases OPEN}.
+\delta=15,\ L\text{ non-four-partite}:\ \text{two KP base profiles excluded; balanced }(7,7,7,7)\text{ leave OPEN},\\
+\delta=15,\ L\text{ four-partite}:\ \text{near-extremal case OPEN},\\
+\delta\le14:\ \text{four-partite and non-four-partite cases OPEN}.
 \end{cases}\\
 &\Downarrow\ \text{missing template-to-core incompatibility theorem for }\delta\le15\\
 &\text{E407 Q32 excluded}\quad\text{(NOT YET PROVED).}
 \end{aligned}
 \]
 
-There is no circular dependency in the \(\delta=16\) structural reduction: it uses only the E407 core contract, the 49-block linearity, the exact ledger, Turán/Brouwer bounds, and \(\alpha(H)\le4\). The proof still depends on the upstream validity of the 49-witness boundary.
+There is no circular dependency in the \(\delta=16\) structural reduction: it uses only the E407 core contract, the 49-block linearity, the exact ledger, Turán/Brouwer bounds, and \(\alpha(H)\le4\). The δ=15 non-four-partite reduction depends on the Kang–Pikhurko equality classification (cited in DELTA15_SECOND_TURAN_PACKING.md). All remaining cases still depend on the upstream validity of the 49-witness boundary.
