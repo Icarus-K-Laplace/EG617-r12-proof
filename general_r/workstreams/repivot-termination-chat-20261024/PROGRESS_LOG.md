@@ -306,3 +306,19 @@ Actual commits in this round:
 C-N1 is partially achieved. C-N2, C-N3, C-N5 and C-N6 remain OPEN. The proposed universal C-N4 strict-Q2 route is DISPROVED_AS_STATED. No new all-large-r contradiction and no finite r0 are certified.
 
 Next useful work: derive a no-double-counting inequality coupling U, the outside core H\\U, the old shell-pair incidence total 2r+b, and the global excess cap. Do not enlarge the case tree without such an inequality.
+
+
+### Round 4 follow-up audit
+
+The block-model verifier is now embedded in CLEAN_PAIR_GRAPH_MODEL.md. The signed full-matching subcase was clarified: the triangle-parity graph must be triangle-free, because a parity-1 triangle would produce an independent transversal on four blocks.
+
+The canonical blocker language was corrected: universal strict Q2 increase is not merely unproved; it is impossible on every reversible Phi4-flat edge. Q2 may remain a tie-breaker, but terminal elimination must be structural or use a genuinely directed operation.
+
+Follow-up commits:
+
+- embedded exhaustive verifier: 4424460ddb23d53b4ded7a056c528d34a47002e2
+- signed-parity wording audit: d9641f2a2e07817c2ed9f0cecf8c2246639ff291
+- canonical Q2/blocker correction: 02d644bf5dafce51a7572146c8fbae6f85391c09
+- termination theorem Q2/blocker correction: 2439aa8a0d45f184fc5fc6286d96292a8df2f6da
+
+No all-large-r contradiction is certified.
