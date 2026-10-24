@@ -94,7 +94,7 @@ For every same-color pair u,v, both the residual difference graph between Q_u\\Q
 
 ## Round 2 addendum — residual budget and pairwise matching rigidity
 
-The alignment gap is bypassed by ALIGNMENT_FREE_WITNESS_RIGIDITY.md. In Case B, the residual graph on R=V\\X, of size (r-1)^2, satisfies alpha(G_i[R])<=r-1 for every i!=c. Its excesses b_i=e(G_i[R])-m_{r-1} obey
+The alignment gap is bypassed by ALIGNMENT_FREE_WITNESS_RIGIDITY.md. In Case B, the residual graph on R=V minus X, of size (r-1)^2, satisfies alpha(G_i[R])<=r-1 for every i!=c. Its excesses b_i=e(G_i[R])-m_{r-1} obey
 
 \[
 b_i\ge0,\qquad \sum_{i\ne c}b_i\le\binom{r-1}{2}.
