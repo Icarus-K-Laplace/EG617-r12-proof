@@ -117,7 +117,7 @@ The r=4,...,100 sweep is a finite implementation audit, not a theorem for all r 
 ## Independence and scope audit
 
 - The generator and verifier are separate files.
-- The verifier does not import the generator and independently rebuilds the exact rows, candidate set, reflection classes, instance hash, and certificate hash.
+- The verifier does not import the generator and independently rebuilds the exact rows, candidate set, reflection classes, instance hash, and certificate hash. Its reflection-class partition uses a different visited-set algorithm from the producer's remaining-set algorithm.
 - The promotion gate invokes the verifier as a subprocess, checks every assumption ID against the ledger, and fails closed for unknown IDs or unsupported r.
 - The gate may promote conditional local endpoint lemmas, but never EG617(r), because neither module exhausts all legal graph states or proves a contradiction.
 - Graph-level color/vertex symmetry, endpoint d0/d1/d2/d3 closure, high-endpoint kernel closure, LRAT/DRAT, and exact ILP proof checking remain unimplemented or gated by open analytic theorems.
