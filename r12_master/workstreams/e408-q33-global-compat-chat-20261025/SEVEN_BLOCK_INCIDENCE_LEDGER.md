@@ -231,3 +231,44 @@ Useful thresholds:
 | P_C >= 53 | all 7 |
 
 For each such block, Theorem 7.1 and the two-exceptional-row refinement apply. This gives a precise way to turn a large per-color duplicate budget into forced component matchings across multiple block pairs. The aggregate lower bound \(\sum_{C:s_C=0}P_C\ge69\) alone does not force any one color to reach P_C>=35, so this threshold is a conditional branch filter rather than a global closure.
+
+
+## 10. Extended low-duplicate blocker theorem (\(r_i(C)\le5\))
+
+Theorem 10.1. Fix an exact-129 color C and a target block \(B_i\). If \(r:=r_i(C)\le5\), then the twelve neighborhoods \(X_b=N_C(b)\cap R\) have the following structure:
+
+1. Exactly ten neighborhoods contain a full isolated K5 component, one for each of the ten components, with no component represented twice and no row containing two full components.
+2. The other two neighborhoods contain no full K5 component. Their gadget portions \(X,Y\subset U_C\) satisfy \(X\cup Y=U_C\), \(|X|,|Y|\ge6\), and \(a:=|X\cap Y|\in\{1,\ldots,5\}\).
+3. The complements \(U_C\setminus X\) and \(U_C\setminus Y\) are disjoint cliques in \(C[U_C]\), each of size at most five. Their unordered size profiles are:
+   - \(a=1\): \((5,5)\);
+   - \(a=2\): \((5,4)\);
+   - \(a=3\): \((5,3)\) or \((4,4)\);
+   - \(a=4\): \((5,2)\) or \((4,3)\);
+   - \(a=5\): \((5,1)\), \((4,2)\), or \((3,3)\).
+4. If \(e_i\) is the number of gadget-vertex incidences in the ten component-containing rows, beyond their ten mandatory K5s, and \(t_i\) is the number of component-vertex incidences beyond the one mandatory occurrence of each component vertex, then the exact identity is
+\[
+\boxed{r_i(C)=a+e_i+t_i.} \tag{10}
+\]
+
+**Proof.** Every vertex of R has C-degree one or two into \(B_i\), so the total incidence into \(U_C\) is \(11+r_U\le11+r\le16\). A row containing no full K5 component has at least six neighbors in \(U_C\). Hence there are at most two such rows.
+
+There cannot be zero such rows: then the twelve component-containing rows contribute at least 60 incidences, and the eleven gadget vertices require at least eleven additional incidences, giving \(e_C(B_i,R)\ge71>61+r\). There cannot be exactly one: eleven component-containing rows then give at least 55 incidences, and the lone no-component row contributes at least six gadget incidences. Among eleven full-component rows, some component repeats. Pairwise blocker compatibility for the two rows containing that component requires their union to contain at least six gadget vertices, adding at least six gadget incidences beyond the 55+6 baseline. Thus \(e_C(B_i,R)\ge67>61+r\).
+
+So there are exactly two no-component rows and ten component-containing rows. No component-containing row can contain two full K5s, since that would give
+\(e_C(B_i,R)\ge10+9\cdot5+2\cdot6=67>61+r\).
+If a component were repeated among the ten rows, another component would be absent from their full-component occurrences. Its five vertices must still occur in some row, adding at least five incidences beyond the baseline \(10\cdot5+2\cdot6=62\), again giving at least 67. Hence each component occurs in exactly one row.
+
+The two no-component rows cannot jointly cover a full K5 component: doing so adds five component-vertex incidences beyond the baseline 62, giving at least 67. Thus the pairwise blocker theorem applies with \(k=0\), forcing their gadget portions to cover all of \(U_C\). Each complement is a clique by the individual blocker lemma; the complements are disjoint because \(X\cup Y=U_C\). Since \(|X|,|Y|\ge6\), their overlap \(a\) is at least one; since \(a\le r\le5\), it is at most five. The listed profiles follow from \(|U_C\setminus X|+|U_C\setminus Y|=11-a\) and the clique-number cap five.
+
+Finally, the ten mandatory component rows contribute 50 incidences, while the two gadget portions contribute \(|X|+|Y|=11+a\). All other row incidences are exactly \(e_i+t_i\). Therefore
+\(e_C(B_i,R)=50+(11+a)+e_i+t_i=61+r_i(C)\), proving (10). \(\square\)
+
+**Corollary 10.2 (forced component matching across blocks).** If \(r_i(C)+r_j(C)\le6\), then for every isolated K5 component \(K_\ell\) of \(C[R]\), its unique representatives \(x_i(\ell)\in B_i\), \(x_j(\ell)\in B_j\) are C-adjacent. The ten resulting edges form a matching between \(B_i\) and \(B_j\).
+
+**Proof.** Both row counts are at most five, so Theorem 10.1 gives unique component representatives. The row \(X_{x_i(\ell)}\) contains \(K_\ell\) plus at most \(r_i(C)-1\) extra vertices, because the baseline total incidence is 62 and the total beyond it is \(r_i(C)-1\). Likewise on side j. Their union therefore contains at most
+\[
+(r_i(C)-1)+(r_j(C)-1)\le4
+\]
+vertices outside \(K_\ell\). It cannot contain a second K5 component, and it meets \(U_C\) in at most four vertices, leaving at least seven gadget vertices outside the union. If the representatives were C-nonadjacent, pairwise blocker compatibility with \(k=1\) would force the remaining gadget to have independence number at most one, hence to be a clique of size at most five. Contradiction. Distinct component labels have distinct representatives in each block, so the ten forced edges form a matching. \(\square\)
+
+**Budget corollary.** Since \(R_C=62-P_C=\sum_i r_i(C)\), if \(P_C\ge36\), then \(R_C\le26\). A seven-tuple of positive integers with every pair-sum at least seven has sum at least 27 (its sorted minimum is \(3,4,4,4,4,4,4\)). Hence \(P_C\ge36\) guarantees at least one block pair \(i,j\) with \(r_i(C)+r_j(C)\le6\), and thus a forced ten-edge component matching. This is a conditional branch filter; the aggregate exact-color bound \(\sum_{C:s_C=0}P_C\ge69\) alone does not force any one color to reach 36.
