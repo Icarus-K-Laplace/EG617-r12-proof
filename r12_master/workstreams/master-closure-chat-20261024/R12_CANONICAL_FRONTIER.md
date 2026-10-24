@@ -46,6 +46,10 @@ with a 35-point core H. The three-anchor theorem is now stronger than CORE211: u
 
 `r12_master/workstreams/master-closure-chat-20261024/R12_D3_MULTIS_EXTRACTION_BOUND.md` proves an allowance-localization theorem for every regular d3 owner family through q=38. For N=9, it forces a single common missing triple through q=34, at most two common-S classes at q=35, and gives class-size-dependent subcritical/first-high-slack bounds through q=38. This is a genuine extraction advance, but does not cover d2 multi-S systems, lower-owner d3 systems, or every fully-decorated/shallow-loss class.
 
+### Independent-triple extension through total excess four
+
+`R12_INDEPENDENT_TRIPLE_H4_EXTENSION.md` proves that any independent triple in a 35-core with alpha<=3, omega<=11, and minimum degree12, whose total excess above12 is at most4, forces K>=8 (e(H)>=214). This extends the common-S independent-triple anchor envelope from allowance a<=6 to a<=7. The only remaining independent-triple allowance is a=8 with total-excess-five patterns (1,1,3) or (1,2,2).
+
 ### d3 disjoint-support compatibility through q=38
 
 `R12_D3_DISJOINT_SUPPORT_COMPATIBILITY.md` proves that disjoint d3 core supports have missing triples intersecting in at least two vertices. If the triples differ, their core cross-edge count is at most `q-36`. The block-transversal theorem then bounds the number of distinct missing-triple types in any disjoint-support family by 1 for q<=35, 3 for q=36,37, and 6 for q=38. This strengthens the old q<=32 extraction interface, but does not bound repeated-common-S support multiplicity or intersecting supports.
