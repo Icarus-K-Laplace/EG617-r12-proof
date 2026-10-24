@@ -114,3 +114,18 @@ Current status:
 - \(\delta=15\) non-four-partite: only the balanced Kang–Pikhurko base profile remains; OPEN.
 - \(\delta=15\) four-partite, \(\delta=14\), and \(\delta\le13\): OPEN.
 - E407 Q32 overall: OPEN / NOT_CERTIFIED.
+
+
+### Round 4 addendum — core-degree restriction on the KP exceptional vertex
+
+Using \(d_{H[U]}(x)=13-a\), the core minimum degree, and the already classified \(H[W]\) profiles, the exceptional vertex has
+\[
+d_H(x,W)=a-1+\epsilon_x.
+\]
+The independence-number constraint forces it to be complete to a whole \(W\)-clique component. In the one-cross-edge \(K_4,K_4,K_5,K_5\) profile, degree at most five still forces a whole component because avoiding an independent transversal without completing a component would require at least six neighbours.
+
+This reduces the Kang–Pikhurko subset size from \(a=1,\ldots,6\) to **\(a\in\{4,5,6\}\)**:
+- with \(\epsilon_U=0\), the \(K_3\cup K_5^3\) profile permits \(a\ge4\), while the profiles with minimum clique size four require \(a\ge5\);
+- with \(\epsilon_U=1\), \(H[W]=K_4\cup K_4\cup K_5\cup K_5\), so \(a\ge4\), and \(a=4\) forces \(\epsilon_x=1\).
+
+This is another necessary-condition reduction; the balanced \((7,7,7,7)\) equality profile remains OPEN.
