@@ -131,3 +131,17 @@ The four symbolic anchor geometries are exhausted for the full range `r>=12`. Th
 > **Exact Three-Anchor Excess Theorem.** Let `r>=12` and let `H` be a graph on `3r-1` vertices with `alpha(H)<=3`, `omega(H)<=r-1`, `delta(H)>=r`. If `H` contains three pairwise nonadjacent degree-`r` vertices, then `2e(H)-r(3r-1)>=8`.
 
 This is a direct analytic theorem, not a finite-r computation or a citation to the old `r=12` case closure.
+
+
+---
+
+## Corollary — Round-2 near-minimal rigidity
+
+Under the same hypotheses, the excess satisfies the stronger bound
+\[
+\boxed{K_r(H)\ge10\qquad\text{for every }r\ge14.}
+\]
+
+Equivalently, the equality layer \(K_r(H)=8\) is confined to \(r=12,13\). This follows from the parity of \(K_r\), the frozen theorem \(K_r\ge8\), and the Round-2 analytic classification of all four anchor geometries at \(K=8\) for \(r\ge14\).
+
+**Status:** PROVED_ANALYTIC within this workstream. The full \(K=8\) equality classification at \(r=12,13\) remains OPEN; no claim \(K_r\ge10\) is made for those two parameters.
