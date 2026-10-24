@@ -75,3 +75,13 @@ V11 and V12 package SHA256 checks and their separate verifier scripts were rerun
 - Under the frozen contract, \(r_A(x)=0\) can occur at a core vertex with positive excess. There are at most four such vertices.
 - Corrected full-row support-union floors: E407 template A >=7; template C >=6. The imported 11/10 floors are not certified unless zero-shell-support absence is proved separately.
 - This audit changes no root dependency and closes no terminal.
+
+
+## Added dependency: E408 Q33 four-partite S0=10 exclusion
+
+- Source: R12_E408_Q33_FOUR_PARTITE_S0_10_EXCLUSION.md.
+- Inputs: the 31-vertex/56-witness boundary; L four-partite with parts (8,8,8,7); exact D-large pair coverage; \(\alpha(H)\le4\); core excess four; the seven-neighbour floor for W.
+- Intermediate constraints: \(\delta\in\{3,4,5\}\) if \(S_0=10\); at least three zero-excess vertices in D; at most three W-neighbourhoods can contain any given large part; a size-8/9 hitting set either contains all of D or a full large part.
+- Output: the sole candidate degree pattern with a size-10 exceptional hitting set is contradictory in each \(s=|T_*\cap D|\in\{0,1,2\}\) case. Thus four-partite E408 Q33 has \(S_0\ge11\).
+- Audit: verify_e408_q33_four_partite_s0_10.py passed integer-pattern checks; no graph-realization claim.
+- Scope firewall: does not apply to non-four-partite L or E408 Q32.
