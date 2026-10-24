@@ -85,6 +85,7 @@ The original theorem status above is unchanged. New results are recorded separat
 - **OPEN_GAP:** full equality classification for \(r=12,13\). No actual \(K=8\) graph has been constructed, and these strata have not all been eliminated.
 - Remaining necessary strata are listed in EQUALITY_K8_CLASSIFICATION.md.
 - The exact union-load accounting interface is in BACKEND_INTERFACE.md.
+- The reusable finite-support and rectangle-threshold result is in NEAR_MINIMAL_EXCESS_RIGIDITY.md.
 - The local integer/rectangle profile audit is in K8_LOCAL_PROFILE_AUDIT.py and K8_LOCAL_PROFILE_AUDIT_RESULTS.md. These are not full-graph search results.
 
 ### Remaining \(K=8\) strata
