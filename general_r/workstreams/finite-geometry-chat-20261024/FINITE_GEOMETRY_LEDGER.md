@@ -70,3 +70,10 @@ The residual q-net lower bound forces N(q)>=ceil(q/2)-2 only in J's Case B.
 - q=14 (r=15): this is N(14)>=5. Four MOLS(14) were constructed by Todorov, *Four Mutually Orthogonal Latin Squares of Order 14*, Journal of Combinatorial Designs 20 (2012), DOI [10.1002/jcd.21298](https://doi.org/10.1002/jcd.21298). The existence of a fifth is still reported open in the MOLS literature.
 
 Projective planes of orders 10 and 14 do not exist, so K.RM3 cannot occur for these q. The residual partial-net implications remain open rather than contradictory. No full EG617 theorem follows from these design facts.
+
+
+## 6. First high-excess threshold theorem
+
+For q>=3 and b_i=q-1, let H_i be the complement of G_i[R]. Then H_i is K_{q+1}-free and e(H_i)=t_q(q²)-q+1. Kang and Pikhurko determine the maximum edge count and all extremal graphs among non-q-partite K_{q+1}-free graphs: M. Kang and O. Pikhurko, “Maximum K_{r+1}-free graphs which are not r-partite,” *Matematychni Studii* 24(1) (2005), 12–20, DOI [10.30970/ms.24.1.12-20](https://doi.org/10.30970/ms.24.1.12-20), Theorem 4 and Lemma 5.
+
+If H_i is q-partite, G_i[R] consists of q K_q blocks plus exactly q-1 cross-block color-i edges. If H_i is not q-partite, the extremal classification yields one exceptional point y; after deleting y, G_i[R\\{y}] has q clique blocks, sizes q except one q-1, plus a nonempty star of color-i cross-block edges. If that star has a edges, 1<=a<=q-1, then d_i^R(y)=2q-2-a. This is exact only at b_i=q-1.
