@@ -115,3 +115,16 @@ Theorem J.W8 (in ALIGNMENT_FREE_WITNESS_RIGIDITY.md, commit c0c31e82b2bd8b4c3c5a
 Equality would force the c-color graph on R to be q+1 disjoint cliques of sizes q and q-1 (q times), and every root must fully c-dominate one block. The block capacities sum to 2q+1, fewer than |X|=2q+2, contradiction.
 
 Consequently at least ceil((q+1)/2) residual colors have pairwise orthogonal q-clique partitions. At r=7 (q=6), four directions would give two orthogonal Latin squares of order 6, impossible. **Case B is closed at r=7.** Case A (matching number at least three) remains open, so the full compression implication is not yet proved.
+
+
+## Round 12 — strict residual budget; r=7 Case B closed
+
+Theorem J.W8 proves that the equality case in the residual budget is impossible. For q=r-1>=4,
+
+\[
+\sum_{i\ne c}b_i\le\binom q2-1.
+\]
+
+The equality graph in the omitted color would be one q-clique plus q cliques of size q-1. Each external root must fully c-cover one block, but the block capacities sum to only 1+2q<|X|=2q+2. Therefore at least ceil((q+1)/2) residual colors are q-partite and yield pairwise orthogonal partitions.
+
+At r=7, this forces four orthogonal order-6 partitions and hence two MOLS(6), impossible by Euler–Tarry. Thus the tight-transversal Case B is CLOSED at r=7. Case A (matching number >=3) and the full r=7 theorem remain OPEN.
