@@ -107,10 +107,10 @@ There are two exact cases.
 
 **Case 1: H_i is q-partite.** Its q parts have size at most q because alpha(G_i[R])<=q; since they cover q² vertices, all parts have size q. The graph G_i[R] is therefore a union of q K_q blocks plus exactly q-1 color-i cross-block edges.
 
-**Case 2: H_i is not q-partite.** By the exact extremal classification of Kang–Pikhurko, H_i is a maximum-edge non-q-partite K_{q+1}-free graph and has an exceptional vertex y such that H_i-y is q-partite, with the extremal construction's only missing cross-part pairs forming a nonempty star. Equivalently, R\\{y} has q clique blocks under color i, with sizes q except for one block of size q-1, plus a nonempty star of color-i cross-block edges with a leaves, where 1<=a<=q-1. Since
+**Case 2: H_i is not q-partite.** By the exact extremal classification of Kang–Pikhurko, H_i is a maximum-edge non-q-partite K_{q+1}-free graph and has an exceptional vertex y such that H_i-y is q-partite, with the extremal construction's only missing cross-part pairs forming a nonempty star. Equivalently, R minus {y} has q clique blocks under color i, with sizes q except for one block of size q-1, plus a nonempty star of color-i cross-block edges with a leaves, where 1<=a<=q-1. Since
 
 \[
-e(G_i[R\\{y}])=m_q-(q-1)+a,\qquad e(G_i[R])=m_q+q-1,
+e(G_i[R\setminus\{y\}])=m_q-(q-1)+a,\qquad e(G_i[R])=m_q+q-1,
 \]
 
 the exceptional point has exact residual color-i degree
