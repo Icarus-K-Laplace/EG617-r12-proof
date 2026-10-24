@@ -45,3 +45,20 @@ This node feeds E407's five-template/core completion problem and E408's exact-12
 ## Added E407 row-profile reduction
 
 For the five V12 templates, the row-count constraints imply the hub-missing degree floors recorded in R12_WITNESS_CAPACITY_CROSSCUT.md. In A/C, any Q_b missing a hub must hit at least six B rows, so it can witness at most four B labels and its four vertices carry parent target-degree excess at least2. This leaves two precise branches: hub-complete witnesses, or a high-B-degree witness family with nontrivial overlaps. No contradiction node has been established.
+
+
+## Added boundary-classification node — minimum 7-transversals (2026-10-25)
+
+Source: R12_TRANSVERSAL_BOUNDARY_CLASSIFICATION.md; arithmetic audit: verify_transversal_boundary_classification.py.
+
+- Input: the exact-129 linear independent-four witness family at the support-boundary kernels; \(\alpha(H)\le4\), \(\delta(H)\ge12\), total excess four, and the seven-neighbour transversal floor.
+- Shared lemma: distinct 7-transversals are disjoint by pair counting across selected color classes.
+- E407 Q32 output: \(\delta_{\mathrm{pack}}\ge2\), where \(\delta_{\mathrm{pack}}\) is the number of complement edges in \(\overline{H[U]}\) not covered by the 49 selected witness K4s.
+- E408 Q33 output: \(2\delta_{\mathrm{pack}}+\epsilon_U\ge8\), with \(\delta_{\mathrm{pack}}+\epsilon_U\le17\).
+- These remove low-budget boundary profiles only. They do not construct a contradiction for the surviving profiles and do not cover E408 Q32's 285-edge core.
+
+## Audit firewall — shell-incidence union bound
+
+R12_SHELL_INCIDENCE_UNION_AUDIT.md corrects an imported inequality: vertices with zero shell support contribute negative terms to the global sum. Since at most four core vertices can have zero shell support, the safe full-row support-union floors are 7 for E407 template A and 6 for C. The earlier 11/10 floors must not be used unless a separate theorem proves zero-support absence.
+
+The original proof DAG still has an OPEN T61 terminal and an OPEN original K145-to-T61 certification edge.
