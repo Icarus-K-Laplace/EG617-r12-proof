@@ -213,3 +213,16 @@ The target correction map is no longer arbitrary: its five group-level destinati
 - Full Hub Propagation: **OPEN**.
 - Exact-core route: **OPEN**.
 - Robust nonextension: **OPEN**.
+
+
+## 2026-10-24 update — robust pair-of-nonedges inequality
+
+For two internal target nonedges (P_j\subset B_j), (P_k\subset B_k) with all four cross pairs between them target-nonedges, define (U_\ell) in each remaining group as the vertices with no target edge to any endpoint of (P_j\cup P_k). If (A) is the total target cross-edge count, then
+[
+\boxed{|U_\ell||U_m|\le A\quad(\ell\ne m).}
+]
+Otherwise there are more candidate pairs in (U_\ell\times U_m) than target cross edges globally, so one pair avoids the target color and forms a target-independent 6-set with (P_j,P_k).
+
+Because (A\le27r+15), at least two of the three remaining groups have at most (O(\sqrt r)) points outside the union of the four endpoint neighborhoods. This gives a robust partial version of the exact-star destination constraint.
+
+Status: **PROVED_CONDITIONAL** on compatibility of the two source nonedges (their four cross pairs must be target-nonedges). The open bridge is to find a sufficiently large family of compatible source pairs or charge the conflicts to the global budget. Full Hub Propagation remains **OPEN**.
