@@ -65,8 +65,12 @@ def gate(certificate_path: Path, ledger_path: Path) -> dict:
         }
 
     source_supported = r >= 12
+    all_assumptions_known = all(x["ledger_status"] != "UNKNOWN" for x in assumption_status.values())
     all_assumptions_proved = all(x["proved_for_this_r"] for x in assumption_status.values())
-    if not source_supported:
+    if not all_assumptions_known:
+        conditional_module_status = "BLOCKED_UNKNOWN_ASSUMPTION_ID"
+        module_gate = "BLOCKED_UNKNOWN_ASSUMPTION_ID"
+    elif not source_supported:
         conditional_module_status = "SCHEMA_ONLY"
         module_gate = "BLOCKED_SOURCE_REDUCTION_NOT_APPLICABLE"
     else:
@@ -75,7 +79,9 @@ def gate(certificate_path: Path, ledger_path: Path) -> dict:
 
     # This module gives a necessary domain only, never a contradiction or graph closure.
     eg617_promotion_status = "BLOCKED_MODULE_IS_ONLY_NECESSARY_DOMAIN"
-    if not all_assumptions_proved:
+    if not all_assumptions_known:
+        eg617_reason = "one or more assumption IDs are absent from the machine-readable ledger"
+    elif not all_assumptions_proved:
         eg617_reason = "one or more analytic assumptions are not proved for this r"
     else:
         eg617_reason = "even with assumptions discharged, endpoint-domain pruning is not a graph nonexistence proof"
@@ -88,13 +94,14 @@ def gate(certificate_path: Path, ledger_path: Path) -> dict:
         "r": r,
         "profile": instance["profile"],
         "assumption_status": assumption_status,
+        "assumptions_all_known": all_assumptions_known,
         "assumptions_all_proved_for_r": all_assumptions_proved,
         "instance_sha256": verified["instance_sha256"],
         "certificate_sha256": verified["certificate_sha256"],
         "verifier_sha256": verified["verifier_sha256"],
         "gate_sha256": sha256_file(Path(__file__)),
         "replay_command": f"python verify_endpoint_domain.py {certificate_path}",
-        "conditional_lemma_promotion": "PASS" if source_supported else "BLOCKED",
+        "conditional_lemma_promotion": "PASS" if source_supported and all_assumptions_known else "BLOCKED",
         "eg617_promotion_status": eg617_promotion_status,
         "eg617_r_proved": False,
         "eg617_promotion_reason": eg617_reason,
