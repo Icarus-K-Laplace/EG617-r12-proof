@@ -178,3 +178,45 @@ The genuine next theorem is a **defect-chain cost theorem**: any one-block cylin
 - Corrected `NONEXTENSION_CLOSURE.md`: `86405ff8a9a1aa5c7a3b050645d58b7db2d68318`.
 
 Current status remains: full Hub Propagation **OPEN**; exact-core route **OPEN**; robust nonextension **OPEN**. No general-r terminal closure is claimed.
+
+
+## 2026-10-24 — exact two-defect closure and target-label audit
+
+### New rigorous local construction
+
+Added an explicit one-color block gadget:
+- one 6-block (C=K_6-uv);
+- one 5-block (D=K_5-wx);
+- (r-2) further clean (K_5) blocks;
+- nine cross-block edges, listed in `HUB_PROPAGATION_THEOREM.md`.
+
+The verification checks:
+- (\alpha(G_i)\le r), including independent sets doubling both defective blocks;
+- (K_6)-freeness by enumerating possible distributions of a 6-clique across (C,D);
+- exact counts (R_i=2,A_i=9,s_i=7), edit distance (11).
+
+This is only an abstract one-color block system; target-group labels and global edge ownership are not completed. It shows the local (alpha\le r)+(K_6)-free conditions alone do not force a third defect or a per-color slack (>8).
+
+### Target-label obstruction
+
+If a target hub (w\in B_j) has a target cross-star into (B_k), and (x\in B_k) lies in the same non-target ideal block as (w), then (wx) is a target-colored edge absent from that non-target color. For any other block's ordinary point (z_k\in B_k\setminus X), both (wz_k) (target star) and (xz_k) (ordinary internal target edge) are target-colored. Thus (z_k) cannot connect to either endpoint in the non-target color. A cover using only the block-to-block edges must use a hub in that group; otherwise it must invoke a multi-block barrier or another target-internal deletion.
+
+### Multi-block barrier audit
+
+For a fixed vertex (z), two clean (K_5) blocks (E,F), and nonneighbors (e\in E,f\in F), the 9-edge pattern (z\) to (E\setminus\{e\}), (z\) to (F\setminus\{f\}), plus (ef), blocks every choice from (E\times F) while remaining locally (K_6)-free. Hence “a blocked coordinate forces a hub” is false without restricting the allowed cross-block edges.
+
+### Interpretation and blocker
+
+The earlier informal defect-chain slogan is too strong. A pair of defects can close at slack 7 in the abstract local model. The full terminal may still be impossible because the target labels and unique color ownership forbid repeating these gadgets globally, but that needs a new theorem.
+
+The current headline gap is now:
+> **Target-labelled global cover inequality:** lower-bound the total cost of all hub-block defects and multi-block barriers across (r-1) colors, enforcing the exact target star labels, internal deletion set, and unique edge ownership.
+
+### Asset commits
+
+- `HUB_PROPAGATION_THEOREM.md`: `9cb35aa9c56ec46ad4060adebb45cdd47d78b019`.
+- `MULTICOLOR_DEFECT_BUDGET.md`: `7f07536987f2596e785c1b9ccc01635ccf430061`.
+- `NONEXTENSION_CLOSURE.md`: `4c985aacea3ebf48f61461ddef7baeae46e89190`.
+- `CANONICAL_STATE.md`: `d3dff82ce38e7016e04915278132bf5578f629fd`.
+
+Full Hub Propagation, exact core, and robust nonextension remain **OPEN**. No global counterexample or general-r closure is claimed.
