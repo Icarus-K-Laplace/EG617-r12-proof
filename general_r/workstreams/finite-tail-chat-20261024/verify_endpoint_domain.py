@@ -91,6 +91,7 @@ def independently_derive_body(r: int, profile: str) -> dict:
         "schema": SCHEMA,
         "module_id": "ENDPOINT_DOMAIN_LOWER_BOUND_V1",
         "module_kind": "necessary-domain-pruning",
+        "constraint_generation_version": "endpoint-domain-generator-v1.0.0",
         "r": r,
         "profile": profile,
         "statement": (
