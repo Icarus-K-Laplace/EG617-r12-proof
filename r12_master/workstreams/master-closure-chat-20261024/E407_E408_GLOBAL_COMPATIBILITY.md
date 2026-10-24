@@ -76,7 +76,7 @@ The exact allowance identity is
 
 > **`beta+X+G_B=3`.**
 
-The D(14) hereditary cap and `e(M)=c_S+beta) give `c_S>=22-beta`. Further,
+The D(14) hereditary cap and `e(M)=c_S+beta` give `c_S>=22-beta`. Further,
 
 - at least `7+beta+X` of the ten B-rows are regular;
 - at least 3, 4, 4, or 5 regular B-rows have `k_b>=2` for `beta=0,1,2,3`, respectively;
