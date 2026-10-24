@@ -20,7 +20,7 @@ edges. Therefore:
 - at \(\delta=15\), the non-four-partite case is the exact second-Turán boundary \(e(L)=309\), and cannot be discarded by the edge count alone;
 - \(\delta\le14\) remains below that threshold.
 
-No proof currently excludes the \(\delta\le15\) non-four-partite branch. The five regular-\(K_{11}\) templates must be combined with their labelled witness system, not replaced by the scalar edge count.
+The \(\delta=15\) non-four-partite branch is now excluded by DELTA15_SECOND_TURAN_PACKING.md, using the Kang–Pikhurko equality classification and incompatible \(x,y\) degrees into \(W\). The \(\delta\le14\) non-four-partite branch remains OPEN. The five regular-\(K_{11}\) templates must be combined with their labelled witness system, not replaced by the scalar edge count.
 
 ## 2. If \(L\) is four-partite and \(\delta\in\{14,15,16\}\)
 
