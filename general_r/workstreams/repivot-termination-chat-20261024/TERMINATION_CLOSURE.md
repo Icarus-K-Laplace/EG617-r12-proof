@@ -90,11 +90,11 @@ so the optional cross-block graph has maximum degree at most four. This conclusi
 
 If an outside vertex has no same-part pair of fully-seen witness classes, a residual class triple with relation pattern (optional, matching, empty) forces at least a-4 additional neighbours in U. Therefore
 
-kappa_o>=3a-4-r>=8.
+kappa_o>=3lambda-4-r>=8.
 
 For X exceptional outside vertices,
 
-X(3a-4-r)<=K_O<=2r-2-K_U.
+X(3lambda-4-r)<=K_O<=2r-2-K_U.
 
 Since h=r+1-2a, equivalently X<=floor((4r-4-2K_U)/(r-3h-5)); the denominator is at least 16 in the high-density branch.
 
