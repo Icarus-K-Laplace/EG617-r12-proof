@@ -82,3 +82,68 @@ If successful, the large-r terminal reduces to an exact large transversal-design
 ### Status
 
 D1 remains reached conditionally. D2 is still the Chat-A interface. D3/D4 are not closed, but the large-r survivor has been reduced from arbitrary `O(r)`-defect geometry to a bounded target-hub kernel plus an `r^2-O(r)` partial resolvable TD core.
+
+
+## 2026-10-24 — Hub propagation / exact-core audit
+
+### Frozen source read
+
+Read and froze the current versions of:
+- `CANONICAL_STATE.md`
+- `DESIGN_TERMINAL_DEFINITION.md`
+- `DEFECT_CONCENTRATION.md`
+- `STABILITY_THEOREMS.md`
+- `NONEXTENSION.md`
+- `COUNTEREXAMPLES.md`
+- `R12_TO_GENERAL_SOURCE.md`
+- `T61_GENERALIZATION_MAP.md`
+- `PROGRESS_LOG.md`
+
+No sibling branch or directory was modified.
+
+### New theorem: low-incidence hub propagation
+
+For a non-target ideal partition (Q_i=\bigcup_{a=1}^rK(C_a)), define repeated-group incidence (d_i) and missing-group incidences (m_{ij}). The exact identity is
+[
+\sum_{j=1}^5m_{ij}=d_i-1.
+]
+If a repeated-group pair (uv\subset B_j\setminus X) is missing from (G_i) and (d_i\le5), then
+[
+|E(G_i)\triangle E(Q_i)|\ge(6-d_i)(r-1).
+]
+Proof: (m_{ij}\ge1), otherwise (u,v) plus one (B_j)-point from each other block is an (i)-independent ((r+1))-set. At least (6-d_i) other group labels occur in every block. For each such label, every point in each other block must be joined in (G_i) to (u) or (v), giving ((r-1)) distinct cross-block edits per label.
+
+Thus for (r\ge44), at most 27 colors can contain a low-incidence ((d_i\le5)) repeated-group pair away from the target hub set. Status: **PROVED_ANALYTIC**.
+
+### Counterexample attack: high-incidence trap
+
+An explicit one-color abstract block system was constructed for every (r\ge8):
+- six 6-blocks, one singleton, one 4-block, and (r-8) 5-transversals;
+- target-group sizes exactly ((r,r,r,r,r+1));
+- repeated-group incidence (d_i=6);
+- ideal excess (Delta_i=11), six deleted repeated-group edges and four added cross-block edges;
+- actual color slack (s_i=9), edit distance (10), size energy (23), and (\alpha(G_i)\le r).
+
+The singleton label is 1; the 4-block has labels 2,3,4,5; their four cross edges block every ((r+1))-set that doubles a missing repeated-group pair. The six repeated pairs can all be placed outside (X).
+
+This is **not** a full terminal coloring: other colors, target cross-cover, and global pair-disjointness have not been completed. It does disprove the naive local inference that scalar stability and a one-color independence condition alone force every non-target defect to touch (X). Up to (lfloor(8r+5)/9\rfloor=\Theta(r)) such patterns fit the scalar non-target slack bound, so the high-incidence regime cannot be discarded by budget rhetoric alone.
+
+### New assets and commits
+
+- `HUB_PROPAGATION_THEOREM.md`: HP-LI proof and explicit high-incidence obstruction. Commit: `ac5dbeb393a661a85a13e3b24e74a2a2933f520b`.
+- `MULTICOLOR_DEFECT_BUDGET.md`: exact per-color ledger and global defect accounting. Commit: `085d81cf4c5868784e231ceacd4396b84c9988b9`.
+- `ROBUST_EXACT_CORE.md`: exact-core boundary and missing interface theorem. Commit: `99d8d3afb51a0bca18f4abd7dbd5424d6d81a816`.
+- `NONEXTENSION_CLOSURE.md`: exact cross-pair budget and nonextension blocker. Commit: `f6e2cf8ae9dec20a8153c22b9dc6a9a3024d8d54`.
+
+### Current blocker
+
+The remaining task is a **global pair-disjointness / trap-completion inequality**: rule out a linear family of (d_i\ge6) local traps after enforcing that every cross-group pair has exactly one actual color, target cross edges are unavailable to non-target colors, and target internal deletions are a finite resource. Alternatively, construct a globally compatible family. No such inequality is proved yet.
+
+### Status
+
+- D1: conditionally reached as before.
+- Low-incidence part of D3: **PROVED_ANALYTIC**.
+- Full Hub Propagation: **OPEN**.
+- Exact-core route: **OPEN**.
+- Robust nonextension D4: **OPEN**.
+- No sufficiently-large-(r) closure is claimed.
