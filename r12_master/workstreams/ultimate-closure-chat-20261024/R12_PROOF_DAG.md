@@ -19,7 +19,7 @@ Parallel abstract backend DAG (not silently identified with the T61 branch):
 - E333 conditional closure; E334 source-reported forcing closure with independent graph obstruction; E335–E340 OPEN.
 - If the contextual R(4,49) contradiction is accepted as an original-coloring lemma, this abstract branch is not a required branch in the original theorem DAG, although its independent classification remains open.
 
-No cycle is used in this DAG. The V12/V8 packages remain source-reported until their exact archives/verifiers are replayed.
+No cycle is used in this DAG. V11/V12 finite-state certificates are now independently replayed and COMPUTATION_CERTIFIED. Their analytic exclusion rules retain their stated contracts; no completed parent graph is claimed. V8/E334 package-level forcing bridge remains source-reported pending replay.
 
 ## Added proved interface node (does not close a terminal)
 
@@ -29,3 +29,14 @@ T61 shell/core witness lemma
 - Q33/d3 specialization: all ten B-rows are good and their witnesses hit each S-row corresponding to an M-edge; at least five witnesses hit at least two S-rows.
 - Outgoing edge: feeds the E408 Q33 witness-capacity subproblem.
 - Status: PROVED as a constraint; no contradiction edge to bottom has been established.
+
+
+## Added witness-capacity node
+
+The theorem R12_WITNESS_CAPACITY_CROSSCUT.md is a necessary-structure node:
+- each independent 4-set in H hits at least three shell rows;
+- its hit hubs cover M[S] and include all missing hubs of its associated b;
+- independent triples extend inside H_b for t_b<=3, with defect-sensitive failure condition t_b>=8-epsilon(X);
+- E408 Q33 supplies at least five no-S K5 witnesses per exact-129 color and at least 7-beta hub-hit incidences across any selected five.
+
+This node feeds E407's five-template/core completion problem and E408's exact-129 witness-packing problem. It does not currently feed a contradiction node.
