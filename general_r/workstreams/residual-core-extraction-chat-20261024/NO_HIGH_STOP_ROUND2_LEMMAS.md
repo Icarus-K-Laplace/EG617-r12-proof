@@ -777,6 +777,79 @@ clean blocks.
 - The lower bound `|X|>=7` uses only `K_r`-freeness of the target color and the fact that every internal target-complement edge meets `X`.
 - This does **not** contradict a high stop. A design-only TD with one parallel class deleted has `r^2-r` blocks and still exceeds `r^2-66r`; the remaining blocker is the exceptional classes' color/label incidence.
 
+## 11. Groupwise collision identity and the near-saturation audit
+
+This section isolates how the `r+O(1)` target groups interact with the predecessor label classes. It also gives an abstract parameter family that passes these necessary equations, so it is not promoted to a graph counterexample.
+
+For each color `i` and target group `V_j`, define
+
+`z_{i,j}=|Z_i intersect V_j|`,
+`c_{i,j}=sum_b (|S_{i,b} intersect V_j|-1)_+`,
+`w_{i,j}=|{b:S_{i,b} intersect V_j=emptyset}|`.
+
+Here `c_{i,j}` is the collision excess of label classes inside group `V_j`; the number of internal `F_0` edges within that group is at least `sum_i c_{i,j}`. Put `Z_j=sum_i z_{i,j}` and `C_j=sum_i c_{i,j}`.
+
+### Lemma 13.1 — exact groupwise label-slot identity
+
+If `s_j=|V_j|=r+delta_j`, then
+
+`w_{i,j}=z_{i,j}+c_{i,j}-delta_j`,
+`W_j:=sum_i w_{i,j}=Z_j+C_j-(r-1)delta_j`.  (GSI)
+
+**Proof.** Of the `s_j` vertices in `V_j`, exactly `z_{i,j}` have no unique color-`i` label at `B`. The remaining `s_j-z_{i,j}` label occurrences use `r-w_{i,j}` distinct labels; repeated occurrences contribute exactly `c_{i,j}`. Thus
+
+`s_j-z_{i,j}=(r-w_{i,j})+c_{i,j}`,
+
+which rearranges to the first identity. Summing over `i=1,...,r-1` gives the second. `\square`
+
+### Lemma 13.2 — duplicate vertices force a missing-slot / internal-edge alternative
+
+Fix a non-target color `i` and a duplicate vertex `v in Z_i intersect V_j` with `v notin X`. Let `b,c` be its two duplicated color-`i` labels at the predecessor clique. Then at least one of the following holds:
+
+1. at least one of `S_{i,b},S_{i,c}` omits `V_j`, contributing a group-`j` missing label slot; or
+2. the two classes both meet `V_j`, and their group-`j` representatives form an internal `F_0[V_j]` edge of color `i` that lies between distinct label classes (so it is not counted by `c_{i,j}`).
+
+**Proof.** Put `A_b=N_{F_i}(v) intersect S_{i,b}` and similarly `A_c`. The exact `(r+1)`-set argument gives every pair in `A_b x A_c` color `i`. If both classes meet `V_j`, their representatives `y_b,y_c` lie in `A_b,A_c`: because `v` is not a hub and every internal `F_0` edge meets `X`, the pairs `vy_b,vy_c` are target-color edges, hence are `F_i` edges. Therefore `y_by_c` has color `i`. Since `b!=c`, this pair lies between distinct label classes, and it is an internal target-complement edge. If one class does not meet `V_j`, alternative 1 holds. `\square`
+
+Consequently, if `m_j` is the number of non-target colors having at least one nonhub duplicate vertex in `V_j`, then
+
+`W_j + (D_j-C_j) >= m_j`,
+
+where `D_j=e(F_0[V_j])`. Combining this with (GSI) gives the exact necessary inequality
+
+`D_j >= m_j-Z_j+(r-1)delta_j`.  (GCI)
+
+Since `Z_j<=s_j=r+delta_j`, a coarser form is
+
+`D_j >= m_j-r+(r-2)delta_j`.
+
+### Corollary 13.3 — a largest-part saturation condition
+
+If a target group has size `r+9`, then regardless of where its duplicate vertices lie,
+
+`D_j >= C_j >= 9(r-1)-Z_j >= 8r-18`.
+
+This follows from (GSI) and `W_j>=0`. Thus any such part nearly saturates the target excess budget `x_0<=9r+11`; all internal defects in the other five groups together have budget at most `r+29`.
+
+### Abstract parameter-family audit (not a graph counterexample)
+
+For every sufficiently large `r`, the following abstract values satisfy the exact excess ledger, group-size sum, predecessor increments, groupwise slot identities, target stability inequalities, and the just-derived collision lower bounds:
+
+- group sizes `(r+9,r-8,r,r,r,r)`, so `delta=(9,-8,0,0,0,0)` and the Turán partition imbalance is `Delta=72`;
+- `z_i=1` for all `r-1` non-target colors, hence `q_0=5r+2` and total hole budget is zero;
+- put the unique duplicate vertex in the `r-8` group for `r-8` colors and in the four `r` groups for the remaining 7 colors;
+- assign 9 large-group collision units to each color, totaling `C_1=9(r-1)`; for the 7 colors whose duplicate lies outside the `r-8` group, add one extra internal edge in that duplicate's regular group, so `D=9(r-1)+7=9r-2`;
+- set `x_0=9r-2` and `M_0=x_0+D-Delta=18r-76`, which satisfies `D<=x_0`, `M_0<=2x_0`, and `x_0<=9r+11`;
+- the exact excess ledger then gives `sum_{i>0}x_i=5r+8`, realized by 13 colors with `x_i=6` and the remaining `r-14` colors with `x_i=5` (for `r>=14`).
+
+The class/group incidence bookkeeping can assign 9 classes per color to repeat in the large group: for colors whose duplicate is in the small group, all 9 such classes omit that group; for the other 7 colors, 8 omit the small group and one omits the duplicate's regular group. This leaves the 7 additional internal edges between distinct label classes.
+
+**Scope warning.** This is only an abstract parameter/incidence model. It does not construct the actual cross-group pair system, verify pairwise color uniqueness for every pair, or verify every `F_i` is `K_{r+1}`-free with the required Kang–Pikhurko equality structure. It shows that the scalar ledger and the groupwise slot equations alone still do not contradict the extreme `r+9 / r-8` profile.
+
+### Research implication
+
+The extreme-part case is now sharply isolated: if `delta_max=9`, then `x_0` is forced to be at least `8r-O(1)`, and the remaining non-target excess above their `a-1=5` floors is only `O(1)` if the large part's collision count is near its maximum. The next attack must use the *actual equality structure* of colors with `x_i=5`, not only their edge counts, to test whether the required 9-class collision pattern is compatible with the local extremal template.
+
 ## 9. Status ledger for this round
 
 ### PROVED
