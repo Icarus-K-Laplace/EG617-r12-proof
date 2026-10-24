@@ -76,3 +76,18 @@ A witness edge of H_{c,j} has a designated required-color set C_a: either a sing
 The packing sets in Case A are pairwise disjoint, not affine lines. In Case B, private residual blocks have a forced overlap somewhere, but no upper bound of one on pairwise intersections and no direction structure have been proved. Therefore the theorem does **not** yet imply an affine plane, a net, or a Kakeya lower bound.
 
 The remaining graph-specific challenge is to show that the colored domination and private-witness constraints force many additional blocks or constrain their intersections. Without that step, the headline geometric dichotomy remains open.
+
+
+## Round 2 addendum — alignment-free Case B constraints
+
+The new theorem file ALIGNMENT_FREE_WITNESS_RIGIDITY.md proves an unconditional residual budget and dichotomy without assuming any low-slack vertex lies in X:
+
+\[
+\sum_{i\ne c}\big(e(G_i[R])-m_{r-1}\big)\le\binom{r-1}{2}.
+\]
+
+Writing n_i for the number of private witnesses assigned color i, either:
+- some repeated witness color has n_i>=2 and residual excess b_i<=r-3, so Brouwer/Turan gives an (r-1)-clique-block partition of R and every Q_v of that color is a transversal; or
+- some color has at least four private witnesses.
+
+For every same-color pair u,v, both the residual difference graph between Q_u\\Q_v and Q_v\\Q_u and the full difference graph between T_u\\T_v and T_v\\T_u contain perfect matchings. The edge-ownership inequality explicitly bounds reuse of one color-i edge by endpoint witness-incidence multiplicities. These are graph-level rigidity constraints, not yet a contradiction.
