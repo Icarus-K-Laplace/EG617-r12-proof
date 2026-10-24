@@ -11,7 +11,7 @@ Status of the headline theorem: **OPEN / NOT_CERTIFIED**.
 - E407_CELL_B_FULL_CLOSURE.md eliminates the sharp |W|=23 Cell-B near-anchor design; it does not establish that every Q32 template lies in that cell.
 - The 284-edge core has degree excess 2*284-47*12=4 when delta(H)>=12.
 
-**Minimum gap.** Prove that no one of the five exact templates can coexist with the same legal 284-edge core, or prove a single joint incompatibility theorem eliminating all five. The template-to-core correspondence and all retained-seed dependencies must be explicit. V12 remains SOURCE_REPORTED until its package is independently replayed.
+**Minimum gap.** Prove that no one of the five exact templates can coexist with the same legal 284-edge core, or prove a single joint incompatibility theorem eliminating all five. The template-to-core correspondence and all retained-seed dependencies must be explicit. V12's finite kernel certificate has now been independently replayed (8,677 weight vectors; 17,957 states; 1,984 labelled shells; 554 open entries). The analytic exclusions and the same-core completion theorem remain conditional/open; replay is not a parent-graph UNSAT proof.
 
 ## F2. E408 Q32 and Q33
 
@@ -60,3 +60,15 @@ CONTEXTUAL_R449_FULL_COLOR_IMPOSSIBILITY.md gives a short conditional contradict
 3. Under E408 Q33/d3, the exact budget beta+X+G_B=3 forces every B-row to have t_b<=6, hence each b has an independent 4-set Q_b in H anticomplete to it. For every a in S with ab in M, Q_b intersects N_H(a). At least five B-vertices have k_b>=2, so at least five witnesses hit at least two S-rows.
 
 **Minimum remaining gap.** Prove a witness-capacity / incidence incompatibility theorem for these maximum independent 4-sets against the same 284-edge core and the seven-block color constraints. The current lemma does not imply that witness sets coincide and does not eliminate Q33.
+
+
+## F6. Witness-capacity cross-cut theorem (new proved interface)
+
+See R12_WITNESS_CAPACITY_CROSSCUT.md.
+
+- Every independent 4-set Q in the 47-core hits at least three distinct shell rows, by alpha(F)<=5 and omega(F)<=11.
+- For each b-witness, its hit hubs contain T_b and cover every edge of M[S].
+- Every independent triple in H_b extends to an independent 4-set when t_b<=3. For t_b=4,5,6, a failure to extend requires epsilon(X)>=8-t_b, so it must capture most/all of the four core-excess units.
+- In E408 Q33, every exact-129 color has at least five no-S K5-component witnesses; the selected five labels have sum k_b>=7-beta. Their 4-sets are disjoint within a color and intersect in at most one vertex across colors.
+
+**Remaining gap.** The resulting scalar capacity bounds do not contradict any of the five E407 templates or the E408 Q32/Q33 seven-block systems. The next proof must use the actual 284-edge H adjacency and the labelled row-hit patterns.
