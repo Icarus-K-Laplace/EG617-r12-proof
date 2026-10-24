@@ -327,6 +327,39 @@ N(c-1)<=K_U<=2r-2,
 
 in addition to (N-1)c<=3r-2 and N<=r-2. This improves the independent budget for c>=2 but does not yield N=O(1) for fixed c. d1 absorption remains OPEN.
 
+### R26. Shell-incidence lower bound on clean excess — PROVED_CONDITIONAL
+
+For the clean a_2=2 family, each endpoint satisfies kappa_x+e_F(x,S_2)=1. Since e_F(S_2,H)=2r+b_2,
+
+K_U>=2m-2r-b_2.
+
+Combining this with the exceptional outside excess L=3lambda-4-r, where lambda=m-r+1 and h=r+1-2lambda, gives
+
+2m-2r-b_2+X L<=2r-2,
+
+and therefore
+
+X<=floor(2(r-1+h+b_2)/(r-3h-5)).
+
+At the lower AES threshold this improves the parameter-free exceptional count to X<=r/6+O(1), but it still permits linear X.
+
+### R27. Overlap-corrected joint d1/d2/excess budget — PROVED_CONDITIONAL
+
+Let V_1 be a d1 support class of size N_1 and allowance c. Let J_2=|V_1 intersect U_2| and J_X=|V_1 intersect O_exc|. The exact no-double-counting inequality is
+
+2m-2r-b_2+N_1(c-1)+X L
+-(c-1)J_2-min(c-1,L)J_X<=2r-2.
+
+Since N_1>=ceil(eta/5), the same bound holds with N_1 replaced by ceil(eta/5). For 3<=c<=L-1, the support set is disjoint from both the clean endpoints (kappa<=1) and exceptional vertices (kappa>=L), so the overlap terms vanish:
+
+2m-2r-b_2+ceil(eta/5)(c-1)+X L<=2r-2.
+
+The d2 matching inequality remains
+
+ceil(N_2/(eta+1))(a_2-1)<=4r-4+a_2+b_2.
+
+These are two necessary projections of the core budget; their left-hand sides must not be added without a separate disjointness theorem. The joint system still does not close c=1, c=2, c>=L, or the lower-density clean-pair branch.
+
 ## Explicit retractions from the canonical theory
 
 The file `D2_MISSING_PAIR_NEUTRAL_BOUND.md` is retained as a negative audit certificate. Its claimed consequences
@@ -360,4 +393,4 @@ All four coordinates are genuine bounded integers. Eta controls support overlap 
 
 ## Unique next blocker
 
-**Clean Pair Nonextension / bounded-allowance d1 terminal.** In the AES high-density branch, use the optional-degree-four bound and off-part excess charge to eliminate or tightly classify the exceptional outside set X; then combine the exact identity 2e_opt+E_foreign=K_U+sum_i n_i(u_i-1) with the remaining core degrees. In parallel, use N(c-1)<=K_U and the eta coupling to close fixed-allowance d1 classes. The lower-density branch m<ceil(4r/3+3) remains open. A universal strict Q2-increase route is ruled out by reversibility.
+**Clean Pair Nonextension / bounded-allowance d1 terminal.** In the AES high-density branch, combine the shell-incidence bound K_U>=2m-2r-b_2 with the exceptional excess and the overlap-corrected joint d1/d2 budget; then use 2e_opt+E_foreign=K_U+sum_i n_i(u_i-1) with the remaining core degrees. The cases c=1, c=2 and c>=L still need distinct overlap handling. The lower-density branch m<ceil(4r/3+3) remains open. A universal strict Q2-increase route is ruled out by reversibility.
