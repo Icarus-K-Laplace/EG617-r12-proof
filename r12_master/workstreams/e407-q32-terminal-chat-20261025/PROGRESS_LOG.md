@@ -79,3 +79,38 @@ This converts the 49-witness count into a precise incidence/omission identity. I
 - \(\delta=16\): OPEN, narrowed to the labelled \((5,0)\) kernel plus the exact witness-array constraints.
 - \(\delta\le15\): OPEN.
 - E407 Q32 overall: OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 — Round 4: \(\delta=15\) non-four-partite branch reduced
+
+### New proved result
+
+At \(\delta=15\), a non-four-partite \(K_5\)-free graph \(L\) on 29 vertices has 309 edges, exactly the Brouwer second-Turán maximum. Applying the Kang–Pikhurko equality classification, \(L\) has a 28-vertex complete four-partite base plus an exceptional vertex \(x\), with base part profile one of
+\[
+(7,7,7,7),\quad(6,7,7,8),\quad(6,6,8,8).
+\]
+
+Using the 49 pairwise edge-disjoint witness \(K_4\)'s:
+- Let \(A\) be the proper nonempty subset in the Kang–Pikhurko construction, \(a=|A|\), and \(t\) the number of witness blocks containing \(x\).
+- \(P_1P_2\)-edge capacity gives \(t\ge49-n_1n_2+a\).
+- The exceptional vertex has degree \(n_3+n_4+a+1\), and each \(x\)-block uses three distinct \(x\)-edges, so \(3t\le n_3+n_4+a+1\).
+
+These two inequalities eliminate the base profiles \((6,7,7,8)\) and \((6,6,8,8)\). Thus only the balanced base profile \((7,7,7,7)\) can survive.
+
+For that profile:
+- \(a\le t\le\lfloor(15+a)/3\rfloor\);
+- \(t_A,t_y\) (the two possible types of \(x\)-block) must be \((a,0)\), \((a-1,1)\), or \((a,1)\);
+- every one of the 49 \(P_3P_4\) pairs is used by exactly one witness block;
+- the 15-edge leave has exact pair-type counts, and every vertex in \(P_3\cup P_4\) has leave-degree exactly one.
+
+The full proof and exact leave ledger are in DELTA15_SECOND_TURAN_PACKING.md. The equality classification is cited there to Kang–Pikhurko (2005).
+
+### Effect and limits
+
+This is a genuine reduction of the \(\delta=15\) non-four-partite branch, not its elimination. The balanced equality construction and its exact 15-edge leave remain compatible at the current counting level; the shell-row/hub constraints must still be applied.
+
+Current status:
+- \(\delta=16\): OPEN, narrowed to the \((5,0)\) endpoint kernel.
+- \(\delta=15\) non-four-partite: only the balanced Kang–Pikhurko base profile remains; OPEN.
+- \(\delta=15\) four-partite, \(\delta=14\), and \(\delta\le13\): OPEN.
+- E407 Q32 overall: OPEN / NOT_CERTIFIED.
