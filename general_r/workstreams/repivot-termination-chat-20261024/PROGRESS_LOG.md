@@ -524,3 +524,14 @@ Follow-up commits:
 - CLEAN_PAIR_GLOBAL_BUDGET.md notation reconciliation: e1c315ec6ca008e25880a3e8fc59e3e58b407197
 
 No complete legal core has been ruled out in the entire parameter range, and no finite r0 is certified.
+
+
+### Final notation consistency audit
+
+A final cross-file scan found three legacy references to the high-density offset using the letter a. They have been corrected to lambda in TERMINATION_CLOSURE.md, POTENTIAL_AUDIT.md, and D1_TERMINAL_ABSORPTION.md, so the notation no longer conflicts with the d2 allowance a_2=2.
+
+- TERMINATION_CLOSURE.md: dea6a2bbb4ec8e7a43edd270fb099173a855632f
+- POTENTIAL_AUDIT.md: cc6718dc58dfff95cf219c0472937725cbe56e4c
+- D1_TERMINAL_ABSORPTION.md: 5edc49ccc3e11ed7d923cd0eac8c21e48473e610
+
+No new mathematical claim is inferred from this notation cleanup.
