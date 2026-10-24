@@ -20,117 +20,111 @@ For `p -> y`,
 
 Thus `(q,tau)` is a bounded integer lexicographic potential.
 
----
-
 ## 2. K is redundant with q
 
-The backend identity gives
+`K_p=2(E-q_p-(2r^2+r+1))`, hence
 
-`K_p=2(E-q_p-(2r^2+r+1))`.
+> **`K_y-K_p=-2(q_y-q_p)`.**
 
-Hence every repivot satisfies
-
-> **`K_y-K_p=-2(q_y-q_p)=2(q_p-q_y)`.**
-
-Thus K cannot be an independent potential coordinate.
-
-On a closed repivot cycle, q-loss telescopes to zero. Therefore a closed q-non-improving cycle is q-flat edgewise; if it is non-improving in `(q,tau)`, then tau also remains flat edgewise.
-
-Repeated non-fully-decorated support cannot occur on such a cycle.
+Thus K cannot be an independent coordinate. Closed q-non-improving cycles are q-flat; closed `(q,tau)`-non-improving cycles are q/tau-flat edgewise.
 
 **Status:** `PROVED_SYMBOLIC`.
 
----
-
-## 3. New proved third coordinate: neutral-owner population
+## 3. Exact third coordinate: neutral-owner population
 
 Define
 
-> `zeta(p)=#{y in A_p : y is regular and d_y=0}`.
+`zeta(p)=#{y in A_p:y regular and d_y=0}`
 
-Then
+and
 
 > **`Phi_3(p)=(q_p,tau_p,zeta(p))`.**
 
-This is a bounded integer lexicographic potential because `0<=zeta<=r+1`.
+Zeta is bounded by `r+1` and is invariant under d0 neutral pivot relabellings.
 
-### d0 invariance
+### Exact class-neutral involution
 
-Repivoting through a d0 owner only swaps the two regular pivots. Every other d0 owner remains d0 and the old pivot becomes d0. Therefore
+Let
 
-> `zeta(y)=zeta(p)`
+`Y_{S,D}(p)={x in A_p:x regular,S_x=S,D_x=D}`
 
-on a d0 neutral repivot.
+be the complete exact class containing the repivot owner y, and let
 
-So zeta descends to the quotient by neutral pivot relabellings.
+`m=m_p(S,D)`.
 
-### Repeated-class exchange duality
+Then the repivot `p -> y` satisfies the exact identities
 
-Suppose y lies in an exact repeated owner class with common pair `(S,D)` and multiplicity m:
+> **`zeta(y)=m-1`,**
+>
+> **`m_y(D,S)=zeta(p)+1`.**
 
-`S_x=S`, `D_x=D`
+Equivalently,
 
-for every owner x in the class.
+> **`(m,zeta) -> (zeta+1,m-1)`**
 
-After repivoting through y:
+exactly, and the transformation is an involution.
 
-- every other one of the `m-1` owners becomes d0;
-- every old d0 owner becomes a reverse `(D,S)` owner;
-- the old pivot p also becomes a reverse `(D,S)` owner.
+Proof: the other `m-1` class owners become d0. Conversely every d0 vertex in the y-view becomes an `(S,D)` owner after the inverse repivot, so there can be no additional d0 vertices. The reverse-class statement follows symmetrically.
 
-Hence
+### Exact zeta trichotomy on a q/tau-flat class move
 
-> **`zeta(y)>=m-1`.**
+Because `zeta(y)=m-1`:
 
-Therefore, if the move is q-flat and tau-flat and
+- `m>=zeta(p)+2` gives strict `Phi_3` improvement;
+- `m=zeta(p)+1` is exactly `Phi_3`-flat;
+- `m<=zeta(p)` strictly decreases the third coordinate.
 
-`m>=zeta(p)+2`,
+Thus at `Phi_3` maximality every q/tau-flat exact class satisfies
 
-then
+> **`m<=zeta+1`.**
 
-> **`Phi_3(y)>_lex Phi_3(p)`.**
+A distinct exact class has `m=1`, so every q/tau-flat distinct-class move sends
 
-At a `Phi_3`-maximal pivot:
+> **`zeta -> 0`.**
 
-> **every q/tau-flat exact repeated class has multiplicity `m<=zeta+1`.**   (3.1)
+Hence a genuinely `Phi_3`-flat distinct-support move is possible only in the neutral-free slice
 
-This is a genuine monotonicity theorem, not merely a candidate coordinate.
+> **`zeta=0`.**
 
-### Equality rigidity
+For a repeated d2 support, both support vertices are decorated; tau-flatness then forces the shell pair S to be fully decorated as well.
 
-If `m=zeta+1` and the repivot is `Phi_3`-flat, then the `m-1` surviving owners from the repeated class account for the entire new d0 population. Simultaneously, the reverse `(D,S)` class has multiplicity at least `zeta+1=m`.
+**Status:** `PROVED_SYMBOLIC`.
 
-Thus a closed `Phi_3`-flat repeated-class correction cycle must satisfy exact multiplicity balance at every class exchange.
+## 4. Balanced repeated branch
 
-For d2, repeated support decorates both vertices of D. Tau-flatness then forces both shell endpoints in S to be decorated as well. Hence every `Phi_3`-flat repeated d2 exchange lies in the unique fully-decorated shell-pair regime.
+If a repeated d2 class is `Phi_3`-flat, then `m=zeta+1`. The class owners, all zeta d0 owners and p form a target clique of size `2m`, so
 
-**Status:** coordinate bounded/exact and repeated-class improvement criterion `PROVED_SYMBOLIC`; balanced-cycle elimination `OPEN`.
+`m<=floor((r-1)/2)`.
 
----
+More generally, if k exact classes simultaneously admit `Phi_3`-flat exchanges,
 
-## 4. Excess concentration as a candidate fourth coordinate
+> **`(k+1)(zeta+1)<=r-1`.**
 
-On an equal-q plateau, K is fixed. Define
+The exact involution furthermore collapses each balanced repeated correction orbit, modulo d0 relabellings, to the two chamber states
 
-`Q2(H)=sum_{v in H}kappa_v^2`.
+`H <--> H-D+S`.
 
-For fixed K,
+Thus repeated-support cycle length is no longer a source of complexity.
 
-`0<=Q2<=K^2`.
+## 5. Candidate fourth coordinate
+
+On an equal-q plateau K is fixed. Define
+
+`Q2(H)=sum_{v in H}kappa_v^2`,
+
+so `0<=Q2<=K^2`.
 
 For `p -> y`, put
 
-`delta_z=e_F(z,S_y)-e_H(z,D_y)`
+`delta_z=e_F(z,S_y)-e_H(z,D_y)` for `z in H\D_y`.
 
-for `z in H\D_y`. Then
+Then
 
 `kappa'_z=kappa_z+delta_z`,
 
-and for `s in S_y`,
+`kappa'_s=sigma_s-e_F(s,D_y)` for `s in S_y`,
 
-`kappa'_s=sigma_s-e_F(s,D_y)`.
-
-Therefore
+and
 
 > `Q2(H_y)-Q2(H)`
 >
@@ -140,29 +134,7 @@ Therefore
 >
 > ` -sum_{u in D_y}kappa_u^2`.
 
-Thus
-
-`(q,tau,zeta,Q2)`
-
-is a well-founded candidate refinement.
-
-Universal monotonicity of Q2 on `Phi_3`-flat moves is not proved.
-
-**Status:** exact/bounded `PROVED_SYMBOLIC`; universal improvement `OPEN`.
-
----
-
-## 5. Positive-loss transport
-
-If `ell=q_p-q_y`, then
-
-`K_y-K_p=2ell`.
-
-Thus positive q-loss raises the new-core total excess. A proof restricted to the `K=8` plateau cannot control positive-loss moves.
-
-Conversely q-flat moves preserve K, so all remaining potential work on such moves is redistribution at fixed total excess.
-
----
+Thus `(q,tau,zeta,Q2)` is well-founded. Universal Q2 monotonicity is still open.
 
 ## 6. Current potential theorem
 
@@ -170,12 +142,12 @@ Proved:
 
 1. `(q,tau)` is bounded and exact.
 2. K is redundant with q.
-3. every closed `(q,tau)`-non-improving cycle is simultaneous q/tau equality.
-4. repeated non-fully-decorated support cannot lie on such a plateau cycle.
-5. `zeta` is a genuine third coordinate with a proved repeated-class improvement criterion.
-6. at `Phi_3` maximality, any q/tau-flat repeated class has multiplicity at most `zeta+1`; equality is a rigid reverse-class / neutral-population exchange.
-7. `Q2` is an exact bounded candidate fourth coordinate.
+3. zeta is a genuine third coordinate with an **exact** class-exchange update law.
+4. `Phi_3`-flat class exchanges are characterized by `m=zeta+1`.
+5. distinct `Phi_3`-flat moves live only at `zeta=0`.
+6. balanced repeated d2 exchanges are two-chamber involutions.
+7. Q2 is an exact bounded fourth-coordinate candidate.
 
-Remaining potential blocker:
+The remaining potential blocker is therefore narrower than before:
 
-> classify `Phi_3`-flat fully-decorated d2 systems, separating (i) distinct-support systems from (ii) zeta-balanced repeated-class correction cycles, and prove either Q2 or another bounded incidence coordinate strictly improves outside a finite rigid skeleton.
+> classify the neutral-free (`zeta=0`) fully-decorated **distinct-support** d2 plateau and find a fourth coordinate or finite structural reduction; separately eliminate the already-classified Balanced Two-Chamber terminal.
