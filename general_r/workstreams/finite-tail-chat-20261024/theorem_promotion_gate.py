@@ -100,6 +100,11 @@ def gate(certificate_path: Path, ledger_path: Path) -> dict:
     else:
         eg617_reason = "even with assumptions discharged, this local endpoint lemma does not exhaust all legal graph states or prove a contradiction"
 
+    if module_id == "ENDPOINT_DOMAIN_LOWER_BOUND_V1":
+        generation_command = f"python {generator_path.name} {r} --profile {instance['profile']} --output {certificate_path}"
+    else:
+        generation_command = f"python {generator_path.name} {r} --output {certificate_path}"
+
     return {
         "gate_schema": "eg617-theorem-promotion-gate-v1",
         "status": module_gate,
@@ -117,7 +122,9 @@ def gate(certificate_path: Path, ledger_path: Path) -> dict:
         "verifier_path": verifier_path.name,
         "verifier_sha256": verified["verifier_sha256"],
         "gate_sha256": sha256_file(Path(__file__)),
+        "generation_command": generation_command,
         "replay_command": f"python {verifier_path.name} {certificate_path}",
+        "gate_replay_command": f"python theorem_promotion_gate.py {certificate_path}",
         "conditional_lemma_promotion": "PASS" if source_supported and all_assumptions_known else "BLOCKED",
         "eg617_promotion_status": eg617_promotion_status,
         "eg617_r_proved": False,
