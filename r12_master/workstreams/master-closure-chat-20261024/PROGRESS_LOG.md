@@ -33,11 +33,14 @@ hence n >= N+30-q.
 
 For N=9 this forces one common missing triple through q=34; at q=35 there are at most two classes and each is subcritical; at q=36--38 it localizes higher allowance to classes of explicitly bounded size. The theorem is proved under the legal backend / all-pivot core-minimum-degree contract. It does not close d2 multi-S, lower-owner d3, all fully-decorated cases, or every shallow-loss class.
 
+- 8e0f951a537247cf75abe84a5066583e7d63ebf4 — **new mathematical result:** d3 disjoint-support compatibility through q=38; distinct missing triples force cross-edge count at most q-36, giving at most 3 distinct-type blocks for q=36,37 and at most 6 for q=38.
+
 ## Independent checks performed
 
 - Rechecked the exact 870-edge color decomposition and global sums: sum P=252, sum R=427, sum s=3; non-target edge total is 9570.
 - Re-derived the Q33 d3 budget beta+X+G_B=3 and the ten feasible aggregate triples.
 - Checked the d3 allowance bound over the 70 pairs q=32..38 and N=1..10.
+- Rechecked the d3 disjoint-support theorem by evaluating the exact block-transversal inequality for all block counts 1..100 and c=0,1,2; capacities are 3,3,6.
 - Rechecked that E407 Cell-B exclusion does not imply full E407 closure.
 - Rechecked that E408 exact-129 blocker constraints and Q33 local conditions are necessary conditions only; no global incompatibility theorem has been proved.
 
