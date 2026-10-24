@@ -64,3 +64,21 @@ A complete unified contradiction needs at least one of the following new results
 3. **Incidence-design exclusion:** prove that the omission profiles and same-label disjointness constraints cannot be realized by a linear 4-uniform family whose blocks are transversals of every core vertex in \(W\).
 
 No such proposition is established in this workstream yet. The smallest failure is the label-transfer gap: the graph-theoretic witness is unlabelled, while the colour-unique edge-ownership argument applies only to actual monochromatic \(K_5\) components.
+
+
+## 5. Cross-workstream audit: four-partite Q33 has a stricter labelled profile
+
+The latest E408 Q33 global-compatibility workstream proves, under its explicit four-partite contract, \(S_0\ge22\) and hence \(9\le\delta\le17\). This workstream adds the following exact consequences:
+
+- The 56 transversals force \(r=8\) on the size-seven part and \(r=7\) on each size-eight part.
+- The color omission triples partition the 24 large-part vertices, so \(\Omega=0\).
+- A shell label \(b\) occurring in \(n_b\) selected witnesses has at most \(7-n_b\) target neighbors in the size-seven part and at most \(8-n_b\) in each size-eight part. In particular, if \(n_b=7\), its target neighborhood in U is confined to at most three vertices, one per large part.
+- At each vertex of the size-seven part, the eight incident witness labels are distinct; it has at most three B-row target neighbors, or at most two if no pivot-labelled witness contains it. Thus \(e_F(B,D)\le14+P\le21\).
+
+The earlier scalar Q33 relaxation \((o_x)=(6,2^9,0^{21})\), with \(\Omega=24\), therefore cannot lie in the four-partite branch. It remains only a witness that the *unlabelled scalar inequalities* do not exclude the non-four-partite branch; it is not a graph or hypergraph counterexample.
+
+## 6. Why the edge-charge route is not enough in the four-partite branch
+
+For any four-partite witness system, the within-part target edges contribute exactly \(4-s_{ij}\) edges for every pair of witnesses with intersection size \(s_{ij}\). Thus the generic pairwise crossing lower bound is attained by those within-part edges. In Q33 the exact weighted crossing load is \(5460+49(24-\delta)\), while the lower bound is exactly \(5460\). The current \(\delta\in[9,17]\) leaves this inequality consistent.
+
+**Minimal obstruction recorded:** the current proof has no theorem forcing an additional *labelled* incompatibility among the 24 unused cross-part pair slots or the B-row neighborhoods. Re-summing the same unlabelled crossing costs cannot close the four-partite branch. The non-four-partite branch still requires a packing/stability theorem beyond the second-Turán bound.
