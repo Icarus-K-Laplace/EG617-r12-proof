@@ -43,9 +43,20 @@ The E408 seven-block theorem gives P_C+R_C+s_C=62 and sum s_C=3. The exact129 bl
 ## 6. Unverified items
 
 - F7 recurrence generator/verifier replay and the exact archive.
-- V11/V12 package replay; current consolidation labels those claims SOURCE_REPORTED / INDEPENDENT_REPLAY_PENDING.
+- V11/V12 finite package replay is now complete; analytic rule applicability and the same-core completion theorem remain conditional/open.
 - V8 package-level E334 forcing bridge replay.
 - Universal extraction from arbitrary shell survivors to the common-S support master contract.
 - Full E407 Q32 and E408 Q32/Q33 terminal exclusion.
+
+## 7. V11/V12 finite certificate replay
+
+Fresh local replays were run from the Library-delivered archives after SHA256SUMS checks passed:
+- V11: 684 kernel weight assignments, 349 outside-count states, 259 labelled necessary shells; status COMPUTATION_CERTIFIED; certificate hash 0baffc39ee481b27af53fda36a8fe40b8cd8c527103b5126060857c4eaacd09b.
+- V12 E407 Q32: 8,677 weight vectors, 17,957 count states, 1,984 labelled shells; 90 D3/rho=1, 1,192 near-K12, 148 K9-pair-row entries screened; 554 remain OPEN; certificate hash cab4e67bc501fe51c06f8fc008443b870aebf8794528af1a3045e83be7d6db30.
+- Neither verifier used a SAT/ILP solver; neither claims a completed parent graph. See R12_V11_V12_REPLAY.md for archive hashes and commands.
+
+## 8. Witness-capacity audit
+
+The new cross-cut theorem derives a three-shell-row support condition, a hub vertex-cover condition, and a defect-sensitive triple-extension rule. It also proves the E408 Q33 exact-129 component packing lower bounds. These constraints do not contradict the five E407 templates or the E408 seven-block system by scalar counting alone. The actual adjacency-sensitive packing theorem remains open.
 
 Conclusion: current state remains OPEN / NOT_CERTIFIED.
