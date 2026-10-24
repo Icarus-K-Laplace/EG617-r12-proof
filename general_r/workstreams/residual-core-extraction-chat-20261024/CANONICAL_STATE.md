@@ -326,6 +326,33 @@ thus equality `x_i=a-1` requires one of the two duplicate-label classes to have 
 
 Proof and audit: `NO_HIGH_STOP_ROUND2_LEMMAS.md`, Section 8. External input: Kang–Pikhurko (2005), Theorems 1 and 4 / Lemma 5.
 
+### 9F. Linear-defect alignment with the predecessor label classes
+
+Status: **`PROVED_ANALYTIC`** for each fixed `a>=6` and all sufficiently large `r`; explicit `a=6` bound for `r>=1000`.
+
+Let `P_{i,1},...,P_{i,r}` be the Füredi stability partition of `F_i=bar(G_i)`, with internal-edge count `I_i^*<=x_i` and missing cross-pair count `M_i^*<=2x_i`. The exact predecessor classes `S_{i,b}` have size at most `a` and are independent in `F_i`.
+
+**Alignment lemma.** For each non-target color `i`, at most
+
+`2x_i/(a-1)+2x_i`
+
+full classes `S_{i,b}` of size `a` fail to equal a part of the stability partition. Proof: a full class split across parts uses at least `a-1` missing cross-pairs, giving at most `2x_i/(a-1)` such classes. If a full class is contained in a larger part with no other full class, every extra vertex requires an internal `F_i` edge to it, so these classes charge at most `I_i^*`. If a part contains `k>=2` full classes, every pair of such classes has at least `a` internal `F_i` edges between them because `alpha(F_i)<=a`; therefore their number is at most `2I_i^*/a`. The contained-but-not-equal total is at most `2x_i`.
+
+**Linear-defect partial-design theorem.** The total number of non-clean predecessor classes is at most
+
+`sum_{i>0}(z_i-1) + (2/(a-1)+2)sum_{i>0}x_i + (r-1)|X|`.
+
+Use `sum(z_i-1)<=(a-1)r+2`, `sum_{i>0}x_i<=S_a(r)-x_0<=(binom(a,2)-2)r+a` from `x_0>=r`, and `|X|=O_a(1)`. Hence all but `O_a(r)` of the `r(r-1)` label classes are size-`a` transversals disjoint from the hub set and equal to a stability part. They form a pairwise-linear partial resolvable `TD(a,r)` with `r^2-O_a(r)` blocks.
+
+For `a=6,r>=1000`, `|X|<=74`, `sum_{i>0}x_i<=13r+6`, and `sum_{i>0}(z_i-1)<=5r+2`; the non-clean class count is at most
+
+`(5r+2)+(12/5)(13r+6)+74(r-1)<=111r`.
+
+Thus every first high stop `R_6` contains a pairwise-linear partial resolvable `TD(6,r)` with at least **`r^2-112r` blocks** for `r>=1000`. This improves the earlier `r^2-O(r^(3/2))` lower bound.
+
+Proof: `NO_HIGH_STOP_ROUND2_LEMMAS.md`, Section 9.
+
+**Limitation:** a linear number of exceptional classes may still carry the entire obstruction; this does not prove exact completion, earlier-stop extraction, or NO-HIGH-STOP.
 ### 10. Critical-core residue windows
 
 Status: **`PROVED_ANALYTIC`** as a necessary-condition reduction.
