@@ -12,10 +12,10 @@ This file records only consequences proved in Round 2. The previously certified 
 Write \(x_v=d_H(v)-r\). Then \(x_v\in\mathbb Z_{\ge0}\), \(\sum_v x_v=8\), and \(x_{a_i}=0\) for the three anchors. Thus the positive-excess support has size at most eight. Up to order, its possible positive partitions are exactly
 \[
 \begin{gathered}
-8;\ 7+1;\ 6+2;\ 6+1+1;\ 5+3;\ 5+2+1;\ 5+1+1+1;\\
-4+4;\ 4+3+1;\ 4+2+2;\ 4+2+1+1;\ 4+1+1+1+1;\\
-3+3+2;\ 3+3+1+1;\ 3+2+2+1;\ 3+2+1+1+1;\\
-3+1+1+1+1+1;\ 2+2+2+2;\ 2+2+2+1+1;\\
+8;\ 7+1;\ 6+2;\ 6+1+1;\ 5+3;\ 5+2+1;\ 5+1+1+1;\
+4+4;\ 4+3+1;\ 4+2+2;\ 4+2+1+1;\ 4+1+1+1+1;\
+3+3+2;\ 3+3+1+1;\ 3+2+2+1;\ 3+2+1+1+1;\
+3+1+1+1+1+1;\ 2+2+2+2;\ 2+2+2+1+1;\
 2+2+1+1+1+1;\ 2+1+1+1+1+1+1;\ 1+1+1+1+1+1+1+1.
 \end{gathered}
 \]
@@ -129,7 +129,7 @@ The following is proved:
 \[
 K=8\quad\Longrightarrow\quad r\le13.
 \]
-Consequently, by parity and the frozen (K\ge8) theorem, **(K\ge10) for every (r\ge14)**.
+Consequently, by parity and the frozen theorem, **\(K\ge10\) for every \(r\ge14\)**.
 More precisely, any remaining \(K=8\) configuration must belong to one of these strata:
 
 | Geometry | Remaining parameter stratum |
