@@ -88,3 +88,40 @@ Every label in \(L_x\) is a shell row anticomplete to \(x\) in the target-color 
 d_F(x,B)\le11-r_x.
 \]
 This is a genuine labelled constraint, but it is only an upper bound on the B-row degree of \(x\). The present hypotheses do not force a matching lower bound on B-row incidence, because zero-excess vertices may obtain their required shell support through the three hub rows. This is the exact capacity gap; do not convert it into a contradiction without another hub/row theorem.
+
+
+## 5. Four-partite branch: the crossing inequality is exactly saturated by within-part edges
+
+Suppose \(L=\overline{H[U]}\) is four-partite and every selected witness \(Q_i\) is a transversal of its four parts. For any pair \(Q_i,Q_j\), let \(s_{ij}=|Q_i\cap Q_j|\in\{0,1\}\). In every part where the two transversals choose different vertices, that pair is an edge of \(H[U]\), because a four-partite graph \(L\) has no within-part edges. There are exactly \(4-s_{ij}\) such parts. Hence the within-part edges already contribute exactly the lower-bound amount \(4-s_{ij}\) for every witness pair.
+
+Summing over all pairs gives the exact identity
+\[
+\boxed{
+\sum_{\substack{xy\in E(H[U])\\x,y\text{ in the same part of }L}}r_xr_y
+=4\binom N2-\sum_{x\in U}\binom{r_x}{2}.
+} \tag{4}
+\]
+Thus the generic crossing inequality (2) is sharp in every four-partite witness branch. Any additional target edges of \(H[U]\) between different parts only add positive load to the left side; the lower bound alone cannot exclude such a branch. This identifies a precise limitation of the unlabelled edge-charge method rather than incorrectly treating it as a contradiction.
+
+### Exact Q33 value
+
+For the E408 Q33 four-partite profile \((8,8,8,7)\), Theorem 6.2 of LABELLED_WITNESS_CAPACITY_THEOREM.md gives \(r=8\) on the seven-point part \(D\) and \(r=7\) on the other 24 points. The within-part target edges contribute
+\[
+64\binom72+49\cdot3\binom82
+=1344+4116
+=\boxed{5460}.
+\]
+Also \(\sum_x\binom{r_x}{2}=700\), so the generic lower bound is
+\[
+4\binom{56}{2}-700=6160-700=\boxed{5460}.
+\]
+The 24 unused cross-part pair slots are the only possible extra edges of \(H[U]\) between different parts. Since \(\delta\) of these slots are present as leftover edges of \(L\), the other \(24-\delta\) are edges of \(H[U]\), each with weight \(7\cdot7=49\). Consequently
+\[
+\boxed{
+\sum_{xy\in E(H[U])}r_xr_y
+=5460+49(24-\delta)=6636-49\delta.
+}
+\]
+The crossing inequality reduces to \(5460\le5460+49(24-\delta)\), i.e. only \(\delta\le24\). The current core budget \(\delta\le17\) and four-partite theorem \(\delta\ge9\) are compatible with it. A further contradiction must force an additional labelled restriction on the unused slots or on the shell rows; generic edge ownership cannot do the job alone.
+
+The same saturation identity (4) applies to a four-partite E407 branch, even though its part sizes and multiplicity profile differ.
