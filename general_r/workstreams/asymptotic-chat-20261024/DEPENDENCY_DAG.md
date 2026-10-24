@@ -11,7 +11,7 @@ Hypothetical Problem-617 counterexample
 
 **4r+1 branch:** residual contract for r ≥ 17 [PROVED] → delta(F)=r+1 → contextual U_(4,1) cap gap (3r−13)/2 > 0 [PROVED] → contradiction.
 
-**5r+1 branch:** delta(T) ≥ r plus contextual cap → delta(T) ∈ {r,r+1} [PROVED] → direct near-anchor triple for r ≥ 67 [PROVED] → common-antineighbourhood compression [PROVED] → |W|=2r, 2r+1 impossible for r ≥ 11 [PROVED] → if delta(T)=r+1, |W|=2r−1 Cell A/B excluded for r ≥ 25 [PROVED] → D_low finite-offset terminal nonextension [OPEN] → P(r).
+**5r+1 branch:** delta(T) ≥ r plus contextual cap → delta(T) ∈ {r,r+1} [PROVED] → direct near-anchor triple for r ≥ 67 [PROVED] → common-antineighbourhood compression [PROVED] → |W|=2r, 2r+1 impossible for r ≥ 11 [PROVED] → |W|=2r−1 excluded in both branches for r ≥ 25: Cell A/B for delta(T)=r+1 and LOW_DEGREE_TOP_LAYER_CLOSURE for delta(T)=r [PROVED] → D_low finite-offset terminal nonextension [OPEN] → P(r).
 
 The exact remaining windows for D_low are:
 - delta(T)=r: 2r−4 ≤ |W| ≤ 2r−2;
