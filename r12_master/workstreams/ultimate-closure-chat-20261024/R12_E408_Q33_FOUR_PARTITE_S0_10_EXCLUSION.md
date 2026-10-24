@@ -49,9 +49,9 @@ of the remaining W vertices must have a full large-part neighbourhood. The capac
 
 If k=6, the ten remaining vertices have total U-degree \(124-42=82\). As each has degree at least eight, their only possible degree multisets are
 \[
-(8^{10}),\quad (8^9,9),\quad (8^8,9^2),\quad (8^9,10),
+(8^8,9^2),\quad (8^9,10).
 \]
-with the first three ruled out by the same “at least ten full-large-part neighbourhoods, capacity nine” argument. Thus the only possible pattern is:
+The first is ruled out by the same “at least ten full-large-part neighbourhoods, capacity nine” argument. Thus the only possible pattern is:
 - six W vertices have U-neighbourhood D;
 - nine W vertices have U-neighbourhood equal to a full large part, exactly three for each of A,B,C;
 - one exceptional vertex \(w_*\) has \(T_*=N_H(w_*)\cap U\) of size ten, containing no full large part and not all of D.
