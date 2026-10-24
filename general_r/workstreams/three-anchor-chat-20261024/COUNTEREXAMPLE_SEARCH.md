@@ -31,12 +31,12 @@ Several low-budget quotient patterns appeared during exploration. Each exposed a
 
 These were not counterexamples; they are precisely the equality layers eliminated in the final proof.
 
-## Computation status
+## Computation status and limitations
 
-No theorem claim in this workstream is marked `COMPUTATION_CERTIFIED`. Small integer checks were used privately only to discover sharp equality patterns. Every promoted statement is expressed as a finite analytic threshold/equality argument in `PROOF_ATTEMPTS.md` or `R12_UNIFIED_CLOSURE.md`.
+No theorem claim in this workstream is marked `COMPUTATION_CERTIFIED`. The committed ARITHMETIC_AUDIT.py script was executed and its local inequality/equality checks passed; the exact output is preserved in ARITHMETIC_AUDIT_RESULTS.md. These checks cover rectangle thresholds and relaxed boundary signatures only.
 
-Therefore there is no source/verifier/checksum obligation attached to the final theorem.
+**No full graph-level SAT/ILP counterexample search was run.** No Z3, OR-Tools, or PySAT backend was installed in the execution environment. Thus this file must not be read as a report of exhaustive graph enumeration. No source/verifier/checksum obligation for a graph search is claimed. The theorem is certified by the analytic proof in PUBLICATION_VERSION.md, not by computation.
 
 ## Final falsification status
 
-The conjectured threshold `K_r>=8` survived all direct symbolic and low-budget equality attacks and is now proved for the entire target range `r>=12`.
+The analytic proof and the local arithmetic cross-checks found no surviving equality configuration. The Exact Three-Anchor Excess Theorem is marked INDEPENDENTLY_VERIFIED by the analytic audit; full graph-level counterexample search remains unperformed, and external human referee review remains advisable.
