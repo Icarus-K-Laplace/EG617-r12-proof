@@ -84,7 +84,35 @@ so
 
 Thus the entire d3 top-q / allowance-five frontier disappears, not merely the specific `b=1,a=5` cell.
 
-## 4. d2 side consequence
+## 4. Entire d3 sector disappears at hereditary equality
+
+There is a stronger consequence at the maximum residual edge layer itself.
+
+Assume
+
+`e(F)=D_r(4r+1)`
+
+and the strengthened near-anchor core floor `K_r>=8`, hence `q<=3r-1`.
+
+For any d3 common-S family, the equality B-floor gives
+
+`B >= r-1-floor((r-1)/2)`.
+
+For every `r>=12`, the right side is at least6. Since `a>=0`,
+
+`q=3(r-2)+a+B >=3r-6+6=3r`,
+
+contradicting `q<=3r-1`.
+
+Therefore:
+
+> **Maximum-edge d3 exclusion.** For every `r>=12`, under the residual-core contract and the general near-anchor theorem, a hereditary-cap equality residual `e(F)=D_r(4r+1)` contains no regular shell vertex of missing degree3.
+
+A single regular d3 vertex would itself define a one-owner common-S family, so no multiplicity assumption is involved.
+
+This is strictly stronger than excluding the allowance-five boundary. It removes the whole d3 sector from the maximum residual edge layer.
+
+## 5. d2 side consequence
 
 For d=2, `B=0` already creates the target clique
 
@@ -104,6 +132,6 @@ At hereditary equality the stronger B-floor gives
 
 This may be useful for later d2 positive-loss equality analysis.
 
-## 5. Strategic consequence
+## 6. Strategic consequence
 
-Conditional on the general exact/near-anchor theorem, the scalable d3 common-S sector is now confined to a fixed allowance window `a<=4` for every r>=12. Therefore no d3 higher-slack hierarchy survives asymptotically.
+Conditional on the general exact/near-anchor theorem, the scalable d3 common-S sector is confined to `a<=4` in every residual and disappears entirely at the maximum hereditary edge layer. Therefore no d3 higher-slack hierarchy survives asymptotically.
