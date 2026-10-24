@@ -504,7 +504,7 @@ For `a=6` and any sufficiently large integer `r`, consider the following **abstr
 `(|V_1|,...,|V_6|)=(r+1,r,r,r,r,r)`, `Delta=0`;
 `D=7`, `M_0=9r+18`, `|X|=7`.
 
-These numbers pass the currently proved scalar checks:
+Place all `r-1` duplicated vertices (one for each color) in the `r+1` target group; the remaining two vertices there can be its hubs, and each color's `r` label classes can be transversal at the group-count level. These numbers pass the currently proved scalar checks:
 
 - Exact excess: `x_0+sum_i x_i=(9r+11)+5(r-1)=14r+6=S_6(r)`.
 - Exact predecessor interface: `sum_i z_i=r-1`, `q_0=6r+1-(r-1)=5r+2`; predecessor increments are `x'_0=x_0+q_0=14r+13`, `x'_i=x_i+z_i=6`, summing to `S_7(r)=20r+7`.
