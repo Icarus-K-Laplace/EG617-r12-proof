@@ -46,3 +46,15 @@
 - Independently checked row distinctness, column distinctness, and symbol frequencies. Result: all checks pass.
 - Scope warning: this is only a label-array relaxation. It does not assign the actual three large-part coordinates of the 56 witness K4s and therefore is not a witness-hypergraph realization. It proves that label counts alone cannot close the four-partite branch.
 - Added the label-array check to the independent arithmetic verifier.
+
+
+## 2026-10-25 — exceptional-row cross-block coupling
+
+- Refreshed E408 Q33 sibling head fec0100abbb6124d1efdad39f2f4b352e1c8bc76; its exceptional-row refinement is conditional on the exact-129 Type-I factor theorem and remains OPEN.
+- Proved a new conditional block-pair inequality. For two low-slack blocks, each nonempty intersection between their exceptional complement cliques forces the corresponding exceptional-row edge to be C-colored. Together with the ten component-representative matching edges and the requirement that every row/column has at least one C edge, this yields:
+  d_ij(C) >= k + max(2-ell, 2-c) - 2,
+  where k is the number of nonempty cells in the 2x2 intersection mask and ell/c are its occupied row/column counts.
+- Exhaustively checked all 15 nonempty 2x2 masks: one-cell and matching patterns cost zero; adjacent two-cell and three-cell patterns cost one; the full mask costs two. Independent replay passed (EXCEPTIONAL_ROW_MASK_REPLAY_OK).
+- Derived the cross-color budget sum_C eta_ij(C) <= 12 for each block pair, because the seven-block near-Latin ledger has exactly 12 duplicate units per block pair.
+- This creates a precise finite interface between exceptional gadget geometry and outer duplicate budgets. It does not close the terminal because the same/matching complement pattern can persist without forcing positive duplicates.
+- Updated only this workstream's verifier and notes; no sibling paths changed.
