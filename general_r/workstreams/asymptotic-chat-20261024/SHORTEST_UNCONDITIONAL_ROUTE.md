@@ -69,12 +69,12 @@ The common-antineighbourhood compression theorem gives the initial windows:
 \]
 It eliminates |W|=2r and 2r+1 for r ≥ 11.
 
-For the **high-minimum-degree branch** delta(T)=r+1, the two imported top-layer nonextension theorems eliminate |W|=2r−1:
-- Cell B is impossible for r ≥ 16;
-- Cell A is impossible for r ≥ 25.
+For the **high-minimum-degree branch** delta(T)=r+1, the imported Cell B and Cell A nonextension theorems eliminate |W|=2r−1 for r ≥ 25.
+
+For the **low-minimum-degree branch** delta(T)=r, the new LOW_DEGREE_TOP_LAYER_CLOSURE.md theorem also eliminates |W|=2r−1 for r ≥ 25. It uses the W-local Cell A/B pointwise target-degree bound, proves alpha(F[V\W])≤3, and then derives an anchor-incidence contradiction: the unique-anchor neighbourhoods would be target cliques, but the duplicate-incidence budget is at most three.
 
 Thus the remaining terminal interface is finite-width:
-- delta(T)=r: 2r−4 ≤ |W| ≤ 2r−1;
+- delta(T)=r: 2r−4 ≤ |W| ≤ 2r−2;
 - delta(T)=r+1: 2r−7 ≤ |W| ≤ 2r−2.
 
 If D_low excludes these remaining configurations, Branch T is impossible. This proves S67-low.
@@ -85,10 +85,10 @@ The low-layer theorem must cover these cases, with all inherited colour and embe
 
 | Anchor minimum degree | Required near-anchor triple | Remaining |W| values |
 |---|---|---|
-| delta(T)=r | (r, ≤r+1, ≤r+1) | 2r−4, 2r−3, 2r−2, 2r−1 |
+| delta(T)=r | (r, ≤r+1, ≤r+1) | 2r−4, 2r−3, 2r−2 |
 | delta(T)=r+1 | (r+1, ≤r+2, ≤r+2) | 2r−7, …, 2r−2 |
 
-**Important:** the existing Cell A/B high-layer exclusions assume delta(T)=r+1. They do **not** eliminate the |W|=2r−1 case when delta(T)=r. That low-degree top layer remains part of D_low.
+The Cell A/B edge-count exclusions use delta(T)=r+1, but the new LOW_DEGREE_TOP_LAYER_CLOSURE.md proof independently excludes the low-degree delta(T)=r, |W|=2r−1 case for r ≥ 25. The remaining D_low windows therefore have |W|≤2r−2 in both anchor-degree branches.
 
 ## 4. Imported source ledger
 
@@ -100,6 +100,7 @@ All imports retain their original contracts; no statement is promoted beyond its
 - **Common anti-neighbourhood compression:** general_r/GENERAL_R_NEAR_ANCHOR_COMMON_ANTINEIGHBORHOOD.md; same architecture branch.
 - **Cell B high-layer exclusion:** general_r/GENERAL_R_CELL_B_HIGH_LAYER_FULL_EXCLUSION_R16.md, r ≥ 16, relative to Brouwer second-Turán and the stated Cell-B normal form.
 - **Cell A high-layer exclusion:** general_r/GENERAL_R_CELL_A_HIGH_LAYER_FULL_EXCLUSION_R25.md, r ≥ 25, relative to the sharp non-bipartite triangle-free extremal theorem and Brouwer second-Turán, under the stated Cell-A normal form.
+- **Low-degree top-layer closure:** LOW_DEGREE_TOP_LAYER_CLOSURE.md, commit 301dcacab800fd95b7a750042ba92143cf0f2c5f; this closes delta(T)=r, |W|=2r−1 using the exact Cell A/B local certificates and the duplicate-anchor-incidence budget.
 - **Current D terminal contract:** design-terminal branch head 5b4162c239d3dfad84d130c3015a0db5919228c4; the global defect-chain propagation remains OPEN.
 - **Current C endpoint contract:** repivot branch head 35fec3eaaab70b31e10b41065634b35b02a28e6c; clean-pair nonextension remains OPEN.
 
