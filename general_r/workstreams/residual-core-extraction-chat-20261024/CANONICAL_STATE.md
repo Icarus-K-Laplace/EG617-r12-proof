@@ -362,6 +362,38 @@ For every prime power `r>=7`, the field-based `TD(r+1,r)` restricts to a `TD(6,r
 Therefore neither `r^2-O(r)` density, pairwise linearity, nor `r-1` parallel classes alone imply a contradiction. This model does not satisfy/check the full canonical edge-coloring, excess, hereditary-cap, or exceptional-label constraints. The remaining target must exploit the `O(r)` exceptional blocks jointly with their color labels and target-hub incidences.
 
 File: `NO_HIGH_STOP_ROUND2_LEMMAS.md`, Section 9.
+### 9H. Hub-incidence slot budget and finite hub kernel
+
+Status: **`PROVED_ANALYTIC`** for `a=6,r>=26272`, conditional only on the already-proved stability, hub-cover, and predecessor-interface lemmas.
+
+For each label class `S_{i,b}`, let `g_{i,b}` be the number of target groups it meets and `m_{i,b}=6-g_{i,b}` its missing-group-slot count. With `h_{i,b}=6-|S_{i,b}|` and `c_{i,b}=|S_{i,b}|-g_{i,b}`,
+
+`m_{i,b}=h_{i,b}+c_{i,b}`.
+
+The exact hole identity and class-internal edge charging give
+
+`W=sum m_{i,b}<=sum_i(z_i-1)+D<=5r+2+x_0<=14r+13`.
+
+For a hub `x` in target group `V_j`, let `W_x` be the missing slots in the classes containing `x`. Since at most one non-target color is duplicated at a vertex, its classes provide at least `r-1-u_x-m_{x,k}` distinct non-target neighbors in every other group `V_k`. Therefore
+
+`d_{C_0}(x)<=r+6-|V_j|+5u_x+W_x<=19+W_x`.
+
+As `d_{C_0}(x)>=(r-27)/2`, every hub consumes at least `(r-65)/2` missing group slots.
+
+Because two hubs can share at most one label class over all colors, the multi-hub surcharge is at most `15|X|(|X|-1)`. Thus
+
+`|X|(r-65)/2<=14r+13+15|X|(|X|-1)`.
+
+Combining this with the previous `|X|<=74` bound gives **`|X|<=28` for `r>=26272`**.
+
+Conversely, target-color `K_r`-freeness implies that `X∩V_j` is a vertex cover of `F_0[V_j]` of size at least `|V_j|-r+1` whenever `|V_j|>=r`. Summing these bounds over the non-smaller groups and using `sum_j(|V_j|-r)=1` gives **`|X|>=7`**. Hence the high-stop hub kernel has **7–28 vertices** in this range.
+
+Updating the partial-design bound with `|X|<=28` yields at least **`r^2-66r` clean blocks** in a pairwise-linear partial resolvable `TD(6,r)` for `r>=26272`.
+
+Proof: `NO_HIGH_STOP_ROUND2_LEMMAS.md`, Section 10.
+
+**Limitation:** this is a tighter finite-kernel theorem, not a contradiction. A field-based partial TD with `r^2-r` blocks still satisfies the block-density lower bound; the exceptional label/color incidence remains open.
+
 ### 10. Critical-core residue windows
 
 Status: **`PROVED_ANALYTIC`** as a necessary-condition reduction.
