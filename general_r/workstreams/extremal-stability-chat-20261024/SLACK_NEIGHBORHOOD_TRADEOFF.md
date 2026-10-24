@@ -68,3 +68,42 @@ This is not a K_(r^2+1) counterexample. It shows that scalar summation alone can
 - Low-slack linear bound: PROVED_CONDITIONAL.
 - Scalar contradiction: DISPROVED as a strategy by the feasible d_i=r, s_i=C witness.
 - Full joint rigidity / all-r theorem: OPEN.
+
+
+## 7. Cross-color incidence inside a neighborhood
+
+If \(d_i\ge r\), then for every \(j\ne i\), every \(r\)-subset of \(A_i\) must contain a color-\(j\) edge; otherwise \(x\) plus that subset misses color \(j\). Hence
+\[
+\alpha(G_j[A_i])\le r-1,\qquad e(G_j[A_i])\ge p_{r-1}(d_i).
+\]
+Also \(\alpha(G_i[A_i])\le r\), so \(e(G_i[A_i])\ge p_r(d_i)\). Since the color graphs partition the edges inside \(A_i\),
+\[
+\binom{d_i}{2}\ge p_r(d_i)+(r-1)p_{r-1}(d_i).
+\]
+Using \(p_q(d+1)-p_q(d)=\lfloor d/q\rfloor\), the right-hand side equals \(\binom{d}{2}\) at \(d=r(r-1)\), while the difference
+\[
+f(d)=\binom d2-p_r(d)-(r-1)p_{r-1}(d)
+\]
+strictly decreases for \(r(r-1)\le d<r^2\). Thus
+\[
+\boxed{d_i\le r(r-1).}
+\]
+This is a graph-level neighborhood constraint, independent of the slack argument.
+
+## 8. Global exclusion of extremely large neighborhoods
+
+The Brouwer tradeoff implies the coarse bound
+\[
+s_i\ge C+2r-1-rd_i
+\]
+for every \(d_i\): for \(d_i<r\) this is weaker than the displayed Brouwer bound, and for \(d_i\ge r\) its right side is nonpositive. Summing over \(j\ne i\), with \(m=r^2-d_i=\sum_{j\ne i}d_j\), gives
+\[
+m_0\ge\sum_{j\ne i}s_j\ge(r-1)(C+2r-1)-rm.
+\]
+Consequently
+\[
+m\ge\left\lceil\frac{3r^2-5r+2}{2r}\right\rceil,
+\quad
+\boxed{d_i\le r^2-\left\lceil\frac{3r^2-5r+2}{2r}\right\rceil.}
+\]
+For \(r\ge5\), this improves the simpler \(d_i\le r^2-r\) bound. It rules out a single color taking all but about \(1.5r\) vertices, but does not control the central regime \(d_i\approx r\).

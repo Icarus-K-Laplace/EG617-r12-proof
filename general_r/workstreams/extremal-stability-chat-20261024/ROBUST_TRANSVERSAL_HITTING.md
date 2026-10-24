@@ -34,3 +34,14 @@ This proves the joint tradeoff in SLACK_NEIGHBORHOOD_TRADEOFF.md.
 - Weighted transversal lemma: PROVED_ANALYTIC.
 - EG617 slack-neighborhood application: PROVED_CONDITIONAL on Füredi's partition lemma.
 - Exact skeleton reconstruction: OPEN.
+
+
+## Cross-color neighborhood richness
+
+For \(d_i\ge r\), every \(r\)-subset \(S\subseteq A_i\) appears with \(x\) in an \((r+1)\)-set whose \(x\)-edges are all color \(i\). Therefore each color \(j\ne i\) must appear inside every such \(S\), so \(\alpha(G_j[A_i])\le r-1\). Also \(\alpha(G_i[A_i])\le r\). Hence
+\[
+\binom{d_i}{2}\ge p_r(d_i)+(r-1)p_{r-1}(d_i).
+\]
+The discrete increment \(p_q(d+1)-p_q(d)=\lfloor d/q\rfloor\) shows equality at \(d=r(r-1)\) and strict failure for larger \(d\le r^2\). Thus \(d_i\le r(r-1)\).
+
+This is a genuine cross-color incidence constraint on the neighborhood, but it still allows \(d_i=r\) for all colors.

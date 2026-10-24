@@ -31,3 +31,18 @@ The budget permits up to r-2 colors with s_i>r^2/2 (integer strictness included)
 - Two smallest colors have degree at least Omega(sqrt(r)): PROVED_CONDITIONAL.
 - Global contradiction from slack layering alone: DISPROVED as a strategy by d_i=r, s_i=C.
 - Cross-color incidence closure: OPEN.
+
+
+## 5. Cross-color exclusion of an extreme neighborhood
+
+The per-color Brouwer inequality implies \(s_i\ge C+2r-1-rd_i\) for every \(d_i\). Fix i and let \(m=r^2-d_i=\sum_{j\ne i}d_j\). Then
+\[
+m_0\ge\sum_{j\ne i}s_j\ge(r-1)(C+2r-1)-rm.
+\]
+Thus
+\[
+m\ge\left\lceil\frac{3r^2-5r+2}{2r}\right\rceil,
+\]
+so no color neighborhood can contain all but fewer than about \(1.5r\) old vertices. For r>=5 this is stronger than the local \(d_i\le r^2-r\) incidence bound.
+
+This only eliminates an extreme tail. It does not rule out the scalar optimum \(d_i=r\).

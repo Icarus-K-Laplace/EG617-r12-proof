@@ -33,3 +33,14 @@ A successful next theorem must charge defects across colors, or classify the inc
 - Scalar joint slack–degree inequality: PROVED_CONDITIONAL.
 - Rigidity-or-direct-obstruction dichotomy: OPEN.
 - All-large-r theorem: OPEN.
+
+
+## Proved subtheorem R/O-3 — extreme-neighborhood exclusion
+
+For every color i,
+\[
+d_i\le r^2-\left\lceil\frac{3r^2-5r+2}{2r}\right\rceil.
+\]
+This follows by summing the coarse Brouwer lower bound \(s_j\ge C+2r-1-rd_j\) over all colors \(j\ne i\) and using the exact global slack budget. Separately, the within-\(A_i\) color-richness condition gives \(d_i\le r(r-1)\). For r>=5 the global bound is stronger.
+
+This excludes a single neighborhood containing all but fewer than roughly \(1.5r\) vertices, but does not constrain the central degree regime near r.

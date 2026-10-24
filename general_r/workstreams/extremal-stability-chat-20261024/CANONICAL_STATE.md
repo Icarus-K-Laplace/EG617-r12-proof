@@ -79,3 +79,14 @@ Scalar optimization does not close the theorem: d_i=r and s_i=binom(r,2) for all
 - All-large-r / all-r theorem: OPEN.
 
 Unique blocker: a cross-color incidence theorem coupling all A_i hitting constraints with the unique color assigned to each old edge.
+
+
+## F-005 — cross-color incidence and extreme-neighborhood exclusion
+
+A further necessary condition uses the fact that every r-subset of A_i, together with x, already has all x-edges colored i. Hence every other color j must appear inside every r-subset of A_i; equivalently alpha(G_j[A_i])<=r-1 for j!=i. Combining this with alpha(G_i[A_i])<=r yields d_i<=r(r-1).
+
+Summing the coarse Brouwer inequality s_j>=C+2r-1-rd_j over j!=i gives the stronger extreme-tail bound
+d_i<=r^2-ceil((3r^2-5r+2)/(2r)).
+For r>=5, no neighborhood can contain all but fewer than about 1.5r old vertices.
+
+This is a cross-color incidence result, but it does not constrain the central regime d_i≈r. The scalar optimum d_i=r, s_i=C remains feasible.

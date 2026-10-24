@@ -59,3 +59,12 @@ The collision budget alone does not force orthogonality. For even \(r\), the mat
 Current status: joint local rigidity PROVED_CONDITIONAL; robust exact skeleton reconstruction OPEN; direct missing-color obstruction for distributed defects OPEN; all-large-r/all-r theorem OPEN.
 
 External dependencies remain Füredi's partition lemma, Brouwer's non-partite Turán bound, and Kang–Pikhurko's equality classification for the d_i=2 boundary.
+
+
+## 2026-10-24 — F-005: cross-color incidence / extreme tail
+
+- Derived a color-richness constraint inside A_i: if d_i>=r, then every r-subset of A_i must contain each color j!=i, so alpha(G_j[A_i])<=r-1.
+- Combining Turán edge lower bounds inside A_i gives d_i<=r(r-1).
+- Summing the coarse Brouwer slack lower bound over all colors except i gives d_i<=r^2-ceil((3r^2-5r+2)/(2r)); for r>=5 this excludes a neighborhood containing all but roughly 1.5r vertices.
+- This rules out an extreme degree tail but leaves d_i=r for all colors feasible at the scalar level.
+- The unique blocker remains simultaneous cross-color incidence in the central regime, not more one-color slack algebra.

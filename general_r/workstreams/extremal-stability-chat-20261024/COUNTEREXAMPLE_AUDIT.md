@@ -34,3 +34,12 @@ For even r, take an r/2-regular bipartite support on row/column indices and put 
 ## Status
 
 No full graph-level counterexample to Problem 617 has been found. No all-large-r theorem has been proved. The main negative finding is that scalar optimization and intersection-collision budgets alone are insufficient.
+
+
+## 6. Cross-color incidence audit
+
+For \(d_i\ge r\), every \(r\)-subset of \(A_i\) must contain every color \(j\ne i\). Therefore \(\alpha(G_j[A_i])\le r-1\), while \(\alpha(G_i[A_i])\le r\). This gives
+\[
+\binom{d_i}{2}\ge p_r(d_i)+(r-1)p_{r-1}(d_i),
+\]
+which rules out \(d_i>r(r-1)\). Separately, global slack summation rules out \(d_i>r^2-\lceil(3r^2-5r+2)/(2r)\rceil\). These are genuine necessary constraints, but both leave \(d_i=r\) fully feasible.

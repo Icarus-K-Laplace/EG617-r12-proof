@@ -165,3 +165,16 @@ The F-003 defect argument also works for s_i<=r^2/2. For 1<=d_i<r, the Turán de
 - Linear low-slack rigidity: PROVED_CONDITIONAL.
 - Scalar summation as a complete proof: DISPROVED as a strategy by d_i=r, s_i=C for all i.
 - Cross-color incidence theorem and robust skeleton reconstruction: OPEN.
+
+
+## 8. F-005 — cross-color neighborhood incidence
+
+If d_i>=r, every r-subset of A_i, together with x, is an (r+1)-set whose x-edges all have color i. Therefore every other color j must occur inside every r-subset of A_i, so alpha(G_j[A_i])<=r-1 for j!=i. Also alpha(G_i[A_i])<=r. Consequently
+binom(d_i,2) >= p_r(d_i)+(r-1)p_(r-1)(d_i).
+Using p_q(d+1)-p_q(d)=floor(d/q), equality holds at d_i=r(r-1), and the inequality fails for larger d_i<=r^2. Thus d_i<=r(r-1).
+
+A separate global slack sum gives
+d_i <= r^2-ceil((3r^2-5r+2)/(2r)).
+For r>=5 this is stronger and excludes any neighborhood containing all but fewer than roughly 1.5r old vertices.
+
+These are necessary conditions only. They do not constrain the central regime d_i≈r, where the scalar optimum remains feasible.
