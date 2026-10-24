@@ -64,3 +64,13 @@ Current status: **OPEN / NOT_CERTIFIED**.
 - Corrected the E407 branch ledger after the zero-excess audit withdrew the distinguished-unused-point / TD(4,7) claim. Retained only the valid E407 inequalities delta>=2, delta+epsilon_U<=16, epsilon_U+2delta>=2.
 - Updated CROSS_BRANCH_SYNC_20261025.md with exact current sibling heads and the combined frontier.
 - No full E407/E408 terminal or original K145 theorem is closed.
+
+
+## 2026-10-25 — universal E408 Q33 S0=11 exclusion
+
+- Extended the prior universal S0>=11 boundary theorem to prove S0>=12 without a four-partite assumption; added R12_E408_Q33_UNIVERSAL_S0_12.md and verify_e408_q33_universal_s0_12.py.
+- Under S0=11, the cross-edge sum is 125 and N7 is either 3 or 4. The N7=3 profile forces 13 degree-eight W-neighbourhoods, exactly three T-type and ten R-only. The N7=4 profile forces eleven degree-eight neighbourhoods and one degree-nine neighbourhood; exact T-incidence leaves only b=7,1,0 cases.
+- In every case, the special-incidence ledger leaves at most one uncovered R-point. The linear 8-set family then has exactly three distinct sets partitioning R. Multiplicity cases either violate special-incidence capacity, yield a K12, or force the degree-nine neighbourhood to equal/contain one partition part and then create a K12.
+- Executed the arithmetic verifier locally: E408_Q33_UNIVERSAL_S0_12_ARITHMETIC_OK. It verifies arithmetic/profile tables only, not the graph-theoretic argument.
+- Latest fixed-r=12 sibling refresh also found: E407 Q32 minimum-support bound strengthened to epsilon_U+2delta>=9 and delta>=3 (emergency head f4c3b06891d29238d4f9cca2588f442004b6dc97); E407 |W|=23 Cell-B completion is empty relative to the stated Brouwer/Kang–Pikhurko and saturation inputs (branch workstream/r12-e407-q32-terminal head 3f42fcce5761ca2372140618adda56f95fcbe253).
+- E408 Q33 minimum-support ledger is now S0>=12 and delta+epsilon_U<=17. It still does not eliminate S0>=12 or larger support sizes. E407 Q32 common-core completion, E408 Q32, the T61-to-K145 bridge, and EG617(r=12) remain OPEN / NOT_CERTIFIED.
