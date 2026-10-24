@@ -40,14 +40,13 @@ def check_core_budget():
     # E407: v=29, m=49, e(L)=294+delta, epsilon_U in [0,4].
     for delta in range(16):
         for eps_u in range(5):
-            if delta + eps_u <= 16:
+            if delta + eps_u <= 16 and eps_u + 2 * delta >= 2:
                 e_u = 112 - delta
                 e_cross = 124 + 2 * delta + eps_u
                 e_w = 48 - delta - eps_u
                 assert e_cross == 12 * 29 + eps_u - 2 * e_u
                 assert e_w == 284 - e_u - e_cross
                 assert e_w >= 32
-                assert eps_u + 2 * delta >= 2
     # E408 Q33: v=31, m=56, e(L)=336+delta.
     for delta in range(18):
         for eps_u in range(5):
