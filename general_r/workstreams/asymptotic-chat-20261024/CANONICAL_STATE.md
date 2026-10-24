@@ -210,3 +210,19 @@ The broad (C^*) backend route remains valid but is no longer the shortest depend
 
 
 Standalone common-interface proof asset: COMMON_TRANSVERSAL_COVER_INTERFACE.md (commit 4e00edfb9e36d1078fc21af4ae2521e82a76935e). It proves the weighted transversal-cover lemma and states the exact C/D instantiations and their limits.
+
+
+## Round 3 — low-degree top-layer theorem closed
+
+A new symbolic proof closes the previously remaining low-degree top layer:
+- If delta(T)=r and |W|=2r−1, the exact Cell A/B W-local certificate gives d_F(o,W)≤6 for every o outside W.
+- Hence alpha(F[V\W])≤3. Every vertex outside T∪W must see at least one anchor; otherwise its target neighbourhood in W would be a vertex cover of the complement of F[W] of size at least r, contradicting d_F(o,W)≤6.
+- The anchor-incidence surplus is at most three. Yet each anchor's unique-neighbour set plus the anchor is a target clique, forcing at least two duplicate-neighbour incidences per degree-r anchor and three per degree-(r+1) anchor. The lower bound 6+k contradicts the upper bound 2k+2 for k≤2.
+
+Proof asset: LOW_DEGREE_TOP_LAYER_CLOSURE.md, commit 301dcacab800fd95b7a750042ba92143cf0f2c5f.
+
+Consequently |W|=2r−1 is now excluded in both terminal degree branches for r≥25. The updated D_low windows are:
+- delta=r: 2r−4 ≤ |W| ≤ 2r−2;
+- delta=r+1: 2r−7 ≤ |W| ≤ 2r−2.
+
+This closes a real terminal sub-interface, but does not close the lower offsets or A_ext*. The conditional S67-low theorem remains the strongest synthesis; unconditional r0 remains NOT CERTIFIED.
