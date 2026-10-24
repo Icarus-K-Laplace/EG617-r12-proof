@@ -8,218 +8,207 @@ This theorem compresses the shell missing sets of all low-endpoint regular owner
 
 For each shell vertex `s in A`, define
 
-`t_s=d_M(s)+g_s`.
-
-By the symbolic backend degree ledger, `t_s` is exactly the number of target neighbours of s in the core H:
-
-` t_s=e_F(s,H) `.
+`t_s=d_M(s)+g_s=e_F(s,H)`.
 
 Summing over A,
 
-`sum_{s in A} t_s=2e(M)+G_A`.
-
-Since
-
-`q=e(M)+G_A`,
-
-we obtain
-
-`sum_A t_s=2q-G_A<=2q`.
+`sum_A t_s=2e(M)+G_A=2q-G_A<=2q`.
 
 Under hypothesis B,
 
 > **`sum_A t_s<=6r-2`.**                                    (1.1)
 
-Thus the entire shell has only O(r) core-incidence mass.
-
 ---
 
-## 2. Exact singleton allowance identity
+## 2. Exact singleton transport identity
 
 Let y be any regular shell owner. Put
 
-`S=S_y=N_M(y)`, `|S|=d`,
-
-and let
-
-`b=e_M(S)`.
+`S=S_y=N_M(y)`, `|S|=d`, `b=e_M(S)`.
 
 Use y alone as a singleton common-S family. Then
 
 `L=A\(S union {y})`, `|L|=r-d`.
 
-For `s in S`,
+For `s in S`, because y is a missing neighbour of s,
 
-`d_M(s)=1+m_S(s)+m_L(s)`
+`d_M(s)=1+m_S(s)+m_L(s)`.
 
-because y is one missing neighbour of s. Hence
+Hence the exact transport slack is
 
-`sigma_s=m_L(s)+g_s-|L|`
+> **`sigma_s=t_s-(r+1-d)-m_S(s)`.**                          (2.1)
 
-`=t_s-1-m_S(s)-(r-d)`
+Legal repivot-core minimum degree gives
 
-`=t_s-(r+1-d)-m_S(s)`.
+> **`sigma_s>=0` for every s in S.**                         (2.2)
 
-Summing over S and using
+Summing (2.1) and using `sum m_S(s)=2b` gives
 
-`sum_{s in S} m_S(s)=2b`,
+`sum_S sigma_s=sum_S t_s-d(r+1-d)-2b`.
 
-we get
+Allowance localization `a=b+sum_S sigma_s` therefore yields
 
-`sum_{s in S} sigma_s`
-`=sum_{s in S}t_s-d(r+1-d)-2b`.
+> **`sum_{s in S_y} t_s=d(r+1-d)+a_y+b_y`.**                (2.3)
 
-The exact allowance localization is
+The pointwise inequalities (2.1)–(2.2) are stronger than the summed bound and drive the endpoint collapse below.
 
-`a=b+sum_{s in S}sigma_s`.
-
-Therefore:
-
-> **Singleton incidence identity**
->
-> **`sum_{s in S_y} t_s=d(r+1-d)+a_y+b_y`.**                (2.1)
-
-In particular, because `a_y,b_y>=0`,
-
-> **`sum_{s in S_y} t_s>=d(r+1-d)`.**                       (2.2)
-
-This is exact and independent of owner multiplicity.
-
-**Status:** `PROVED_SYMBOLIC`.
+**Status:** `PROVED_SYMBOLIC` conditional only on the legal repivot-core minimum-degree contract.
 
 ---
 
-## 3. d1 support set has size at most five
+## 3. d1: at most five shell support classes
 
-For d=1, (2.2) gives, for the unique shell missing partner s,
+For d=1, `m_S(s)=0`, so (2.1) gives
+
+`sigma_s=t_s-r>=0`.
+
+Thus the unique missing partner of every d1 owner satisfies
 
 `t_s>=r`.
 
-Define
+Let
 
-`C_1={s in A:t_s>=r}`.
+`C_1={s:t_s>=r}`.
 
 By (1.1),
 
-`|C_1| r<=6r-2`,
-
-so for every r>=3,
-
-> **`|C_1|<=5`.**                                            (3.1)
+`|C_1|<=floor((6r-2)/r)=5`.
 
 Therefore:
 
-> **Every d1 regular owner has its unique shell missing partner in one fixed set of at most five shell vertices.**
+> **D1 Shell-Support Reduction. Every d1 regular owner has its unique shell missing partner in one fixed set of at most five vertices.**
 
-Consequently all d1 owners split into at most five common-S classes.
+Hence there are at most five d1 common-S classes, independent of r.
 
-**Status:** `PROVED_CONDITIONAL` (uses q ceiling from B).
+**Status:** `PROVED_CONDITIONAL` (A+B).
 
 ---
 
-## 4. d2 support graph has a six-vertex transversal
+## 4. d2: all support endpoints lie in at most six shell vertices
 
-For d=2, every shell missing pair `S_y={s,t}` satisfies
+Let `S={s,t}` and put
 
-`t_s+t_t>=2(r-1)`.                                           (4.1)
+`b=e_M(S) in {0,1}`.
 
-Hence at least one endpoint has
+For each endpoint, `m_S=b`. Equation (2.1) becomes
+
+> `sigma_s=t_s-r+1-b`,
+>
+> `sigma_t=t_t-r+1-b`.
+
+By nonnegativity of transport slack,
+
+> **`t_s,t_t>=r-1+b`.**                                     (4.1)
+
+In particular every endpoint of every d2 shell missing pair satisfies
 
 `t>=r-1`.
 
 Define
 
-`C_2={s in A:t_s>=r-1}`.
+`U_2={v in A : v occurs in S_y for some d2 regular owner y}`.
 
-By (1.1), for r>=6,
+Then `U_2 subset {v:t_v>=r-1}`. By (1.1), for `r>=6`,
 
-`|C_2|<=floor((6r-2)/(r-1))<=6`.
+> **`|U_2|<=6`.**                                            (4.2)
 
 Therefore:
 
-> **Every d2 shell missing pair meets the fixed heavy set `C_2`, with `|C_2|<=6`.**   (4.2)
+> **D2 Six-Point Support-Universe Theorem. All shell missing pairs of all d2 regular owners are 2-subsets of one fixed set `U_2` of at most six shell vertices.**
 
-Equivalently, the graph whose edges are the distinct d2 shell missing pairs has vertex-cover number at most six.
+Consequently the number of distinct d2 shell missing sets is at most
 
-This is a global statement across all d2 owners and all common-S classes.
+> **`C(6,2)=15`.**                                           (4.3)
+
+If a d2 support pair is itself a shell missing edge (`b=1`), then both endpoints satisfy `t>=r`; hence every such pair lies inside the even smaller set `C_1`, of size at most five.
+
+This is strictly stronger than the earlier six-vertex-transversal / four-star reduction: no r-growing shell-support family survives at all.
 
 **Status:** `PROVED_CONDITIONAL`.
 
 ---
 
-## 5. d2 star-plus-bounded-core refinement
+## 5. d2 weighted six-vertex encoding
 
-Define the superheavy set
+For every active d2 endpoint `u in U_2`, define
 
-`P={s in A: 2t_s>=3(r-1)}`
+`h_u=t_u-(r-1)>=0`.
 
-and the half-heavy set
+For a support pair `S={u,v}` with `b_{uv}=e_M({u,v})`, equation (2.3) specializes to
 
-`Q={s in A: 2t_s>=r-1}`.
+> **`a_{uv}=h_u+h_v-b_{uv}`.**                               (5.1)
 
-From (1.1), for r>=12,
+Thus the allowance of every one of the at most fifteen d2 shell classes is determined by
 
-`|P|<=floor((12r-4)/(3r-3))<=4`,
+- a graph `M[U_2]` on at most six vertices; and
+- at most six nonnegative integer weights `h_u`.
 
-and
+No additional r-dependent shell combinatorics remains.
 
-`|Q|<=floor((12r-4)/(r-1))<=12`.                             (5.1)
+The global incidence budget also yields
 
-Take a d2 support edge `{s,t}`.
+`sum_{u in U_2} [(r-1)+h_u] <=6r-2`,
 
-If it meets P, it lies in one of at most four star families centered at P.
+hence if `m=|U_2|`,
 
-If it does not meet P, then both endpoints have
+> **`sum_{u in U_2} h_u <= (6-m)r+m-2`.**                    (5.2)
 
-`t_s,t_t<3(r-1)/2`.
+If `m=6`, this collapses further to
 
-Together with (4.1), this forces
+> **`sum h_u<=4`.**                                          (5.3)
 
-`t_s>(r-1)/2`, `t_t>(r-1)/2`,
-
-so both endpoints lie in Q.
-
-Therefore:
-
-> **D2 Star-Core Reduction.** Every d2 shell missing pair is either
->
-> 1. incident with one of at most four superheavy hubs in P; or
-> 2. entirely contained in a bounded set Q of at most twelve shell vertices.   (5.2)
-
-Thus every r-growing family of *distinct* d2 shell supports is confined to at most four stars. All non-star support diversity lives inside an r-independent twelve-vertex core.
-
-**Status:** `PROVED_CONDITIONAL`.
+So the maximal six-endpoint case has a completely bounded allowance profile independent of r.
 
 ---
 
-## 6. d3 side remark
+## 6. Owner-count / endpoint-count tradeoff
 
-For d=3, (2.2) gives
+Every regular d2 owner y itself has
 
-`sum_{s in S_y}t_s>=3(r-2)`.
+`t_y=d_M(y)+g_y=2`.
 
-Hence each d3 support meets
+No d2 owner can lie in `U_2`: two d2 owners are target-adjacent (otherwise zero-gap would require the union of two 2-sets to equal A), so one d2 owner cannot be a missing-set endpoint of another.
 
-`C_3={s:t_s>=r-2}`.
+Let N be the total number of d2 regular owners and `m=|U_2|`. From (1.1),
 
-The global budget gives
+`m(r-1)+2N<=6r-2`.
 
-- `|C_3|<=7` at r=12;
-- `|C_3|<=6` for every r>=13.
+Therefore
 
-The d3 endpoint is already eliminated by the stronger Bridge-B/B-floor argument, so this is recorded only as consistency evidence.
+> **`2N<=(6-m)r+m-2`.**                                     (6.1)
+
+In particular:
+
+- `m=6 => N<=2`;
+- `m=5 => N<=floor((r+3)/2)`;
+- if `N>(r+3)/2`, then necessarily `m<=4`, so there are at most six distinct d2 shell support classes.
+
+This gives a useful multiplicity-versus-support-diversity tradeoff for the next multi-pivot theorem.
 
 ---
 
-## 7. Main-theorem impact
+## 7. d3 consistency bound
 
-Before this theorem, d1 and d2 shell supports could a priori range over O(r) shell vertices with no fixed transversal.
+For d=3, (2.1) gives
 
-After it:
+`sigma_s=t_s-r+2-m_S(s)>=0`,
 
-- d1 has at most five shell support classes;
-- d2 has transversal number at most six;
-- all unbounded d2 support diversity lies in at most four star systems;
-- the remaining d2 support graph is contained in at most twelve shell vertices.
+so every d3 support endpoint satisfies
 
-Therefore the only genuinely scalable low-endpoint geometry has the form of **at most four weighted d2 stars**. This is the correct object for the next multi-pivot compatibility theorem; there is no need to enumerate arbitrary pair-support graphs.
+`t_s>=r-2`.
+
+Thus all d3 shell support endpoints lie in at most seven vertices for r=12 and at most six for r>=13. The d3 endpoint is already eliminated by the stronger B-floor/low-charge argument.
+
+---
+
+## 8. Main-theorem impact
+
+The low endpoint shell geometry is now fixed-width:
+
+- d1: at most 5 shell support types;
+- d2: at most 6 support vertices and at most 15 shell support types;
+- d3: eliminated.
+
+Hence **no low-endpoint shell-support case count grows with r**. Any remaining r-growth occurs only through owner multiplicities and the core-support / transported-excess systems *inside finitely many common-S classes*.
+
+The next theorem should therefore be a finite-class multi-pivot transport theorem, not a shell-support classification theorem.
