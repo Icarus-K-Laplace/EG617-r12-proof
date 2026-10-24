@@ -70,3 +70,25 @@ Convert the valid induced multicolor inequality into a **lower** edge floor that
 The display-math delimiters in both joint-audit notes were normalized and the exact outer-gap identity was independently checked over integer parameters in a finite verification sweep. Latest note commits:
 - seed note formatting: `0f64a7f9413717bacb661551000fa19e4d01d5e8`
 - outer-gap note formatting: `ffb399e6b09973b2eb2270ccbeb50192ccc4b14d`
+
+## 2026-10-24 — Round 2: threshold low-order cutoffs
+
+### New proved theorem package
+1. Proved `M_r(2)<=2r-1` for all `r>=6`. For n>=2r+1, complement H is triangle-free and `Delta(H)<=r-1`; the inherited cap forces `e(H)>n(r-1)/2), contradiction. At n=2r, equality forces H to be (r-1)-regular; Andrásfai–Erdős–Sós makes it bipartite for r>=6, contradicting alpha(H)<=r-1.
+2. Proved `M_r(3)<=3r` for all `r>=6`. A minimum-degree pivot has core size at most 2r-1; therefore h>=n-2r. The edge floor `e(J)>=n(n-2r)/2` beats the inherited cap exactly when `2(r-1)p_r(n)>n(2r-1)`, verified for every integer n>=3r+1 and r>=6.
+3. Eliminated the t=1 outer states `(a,n)=(2,2r+1)` and `(3,3r+1)` for all r>=6.
+4. Audited the low-r boundary: the abstract contract admits examples at `(r,n)=(4,8)` and `(5,10)`, so `M_r(2)<=2r-1` must remain thresholded. These are not full EG617 colorings.
+5. Recorded exact dependency and assumption ledgers; the contextual `a=4,n=4r+1` cutoff remains only under the no-extraction reductio.
+
+### Status
+- H1: ACHIEVED.
+- H2: PROVED conditionally on a finite sound seed/cutoff package.
+- Low-order cutoffs: `M_r(2)<=2r-1`, `M_r(3)<=3r` PROVED for r>=6.
+- Five general-r seed excesses: OPEN.
+- All-state outer-budget dominance: OPEN.
+- Explicit all-large-r EG617 threshold: NOT PROVED.
+
+### New artifacts
+- `LOW_ORDER_CUTOFF_THEOREMS.md`
+- `DEPENDENCY_DAG.md`
+- `ASSUMPTION_LEDGER.md`
