@@ -54,6 +54,8 @@ Key sources:
 - `backend/GLOBAL_FORCING_TO_MASTER_ALLOWANCE_COVERAGE.md`;
 - `backend/GLOBAL_FORCING_TO_MASTER_V3_SYNTHESIS.md`.
 
+The new workstream theorem `r12_master/workstreams/master-closure-chat-20261024/R12_D3_MULTIS_EXTRACTION_BOUND.md` adds the exact class-size allowance bound `a_S<=q-30-N+n` for d3 owner families through q=38. It is derived from the V3 zero-gap identity and exact exchange formula; it does not close lower-owner or fully-decorated branches.
+
 The master theorem's low-cross bounds and boundary one-loss equality are hypotheses. They cannot be inferred from signature count alone.
 
 ## 4. External theorem dependencies
