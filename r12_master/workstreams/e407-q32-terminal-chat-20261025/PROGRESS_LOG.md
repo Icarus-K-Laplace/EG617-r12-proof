@@ -16,6 +16,8 @@ Ran the local arithmetic/kernel audit script. Output: E407_DELTA16_STRUCTURAL_KE
 
 The script checks exact edge ledgers, integer partition profiles, and finite excess inequalities. It does not verify graph realization, all graph-theoretic lemmas, or the original K145 theorem.
 
+A reverse-saturation lemma was also proved: every vertex of W is complete to exactly one U-part. The proof handles the exceptional possibility of a 13-neighbour W-vertex and excludes it by the four-endpoint K4 degree contradiction.
+
 ### Global effect
 
 - New closed contracts: 1 structural reduction (delta=16 boundary).
@@ -26,4 +28,4 @@ The script checks exact edge ledgers, integer partition profiles, and finite exc
 
 ### Next attack
 
-Combine the forced delta=16 part-to-component assignment with the exact row/hub requirements of templates A-E. In parallel, use the near-Turan classification for delta=14,15 to bound the remaining cross edges in H[W]. Do not claim any template closed until an actual incompatibility proof is obtained.
+Combine the forced vertex-level U-part neighbourhoods and common-K4 endpoint structure with the exact row/hub requirements of templates A-E. In parallel, use the near-Turan classification for delta=14,15 to bound the remaining cross edges in H[W]. Do not claim any template closed until an actual incompatibility proof is obtained.
