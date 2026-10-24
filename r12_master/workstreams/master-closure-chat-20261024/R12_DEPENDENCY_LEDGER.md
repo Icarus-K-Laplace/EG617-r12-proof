@@ -38,7 +38,7 @@ The reusable common-S stack is conditional, not an automatic theorem about every
 1. Exact common-S exchange / row-closure identities.
 2. Lexicographic maximality of `(q,tau)`, giving the repeated-support strict-loss rule.
 3. Zero-charge incidence signatures and the signature/anchor dichotomy.
-4. If three signatures occur: three independent degree-12 anchors; `GLOBAL_THREE_ANCHOR_K6_FULL_CLOSURE.md` yields `K>=8), hence `q<=E-305`.
+4. If three signatures occur: three independent degree-12 anchors; `GLOBAL_THREE_ANCHOR_K6_FULL_CLOSURE.md` yields `K>=8`, hence `q<=E-305`.
 5. If at most two signatures occur: zero-skeleton/sunflower patterns, but only for the boundary one-loss contract.
 6. Low-cross hypotheses imply matching/transversal bounds.
 7. Hereditary packing bounds each canonical pattern's owner capacity.
