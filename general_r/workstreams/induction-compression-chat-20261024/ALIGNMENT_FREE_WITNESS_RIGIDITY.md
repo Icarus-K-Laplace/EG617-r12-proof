@@ -223,3 +223,8 @@ Under Case B at r=7:
 - the 6-clique is a transversal of all three directions, and the six 5-cliques are pairwise disjoint near-transversals.
 
 The witness-color dichotomy then gives either repeated witnesses in a zero-excess direction, or at least four witnesses in one of the three high colors. This is a precise finite kernel for the r=7 Case B, but it remains OPEN whether the one-transversal/six-near-transversal partition can occur together with the three exceptional-star color graphs. This does not close Case A or prove the all-r induction.
+
+
+## r=7 audit correction — design subkernel is realizable
+
+The K branch has an explicit Latin-square incidence realization of the 3-net plus one-transversal/six-near-transversal partition forced in the r=7 Case B (K commit 825c48ae4e5cc47e7feb6abab6337de62db6fd6c, file Q6_NEAR_TRANSVERSAL_OBSTRUCTION_AUDIT.md). Thus this partition cannot be ruled out by Euler–Tarry alone. It is only an abstract design-level realization, not a full EG617 graph counterexample: the three exceptional-star high-color graphs, root colors, and cross-edges remain to be realized simultaneously or shown impossible.
