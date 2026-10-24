@@ -113,3 +113,26 @@ UNIFIED_SHORT_PROOF.md remains a concise summary; by itself it omits some deriva
 **External human referee certification: not yet obtained.**
 
 No OPEN_GAP or DISPROVED mathematical lemma remains in the stated theorem proof.
+
+
+---
+
+# Round 2 — independent audit of the \(K=8\) equality layer
+
+## Separate verdict
+
+- Frozen theorem \(K\ge8\) for all \(r\ge12\): remains INDEPENDENTLY_VERIFIED in the analytic-audit sense described above.
+- New strengthening \(K\ge10\) for all \(r\ge14\): PROVED_ANALYTIC in this workstream.
+- Full \(K=8\) equality classification: OPEN_GAP for \(r=12,13\).
+- No actual \(K=8\) graph has been constructed.
+- No whole-graph SAT/ILP search was run.
+
+The Round-2 derivation is recorded in EQUALITY_K8_CLASSIFICATION.md. The local integer-profile assertions are reproducible from K8_LOCAL_PROFILE_AUDIT.py and its results file. They cross-check the critical local equations; they are not computational proof of graph nonexistence.
+
+The strongest new theorem is
+\[
+K=8\implies r\le13,
+\]
+which, using parity and the frozen \(K\ge8\) theorem, yields \(K\ge10\) for every \(r\ge14\). The remaining necessary strata are \(c=2,r=12\); \(c=3,r=12,13\) mixed-focus; \(c=4,(0,0,2),r=12\) with \(f=0,1,2\) as specified; and \(c=4,(0,1,1),r=12,13,s=2\) with the \(V/W\) ownership pattern.
+
+This Round-2 result is an internal analytic proof audit, not external human referee certification. The open \(r=12,13\) equality layer must not be labelled complete.
