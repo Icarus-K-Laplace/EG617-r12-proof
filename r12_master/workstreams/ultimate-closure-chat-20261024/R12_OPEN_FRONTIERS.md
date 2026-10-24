@@ -72,3 +72,12 @@ See R12_WITNESS_CAPACITY_CROSSCUT.md.
 - In E408 Q33, every exact-129 color has at least five no-S K5-component witnesses; the selected five labels have sum k_b>=7-beta. Their 4-sets are disjoint within a color and intersect in at most one vertex across colors.
 
 **Remaining gap.** The resulting scalar capacity bounds do not contradict any of the five E407 templates or the E408 Q32/Q33 seven-block systems. The next proof must use the actual 284-edge H adjacency and the labelled row-hit patterns.
+
+
+## F7. E407 template hub-complete escape versus high-B-degree witnesses
+
+The row-count screen yields n3>=6 in templates A and C, n3>=2+2n0 in B, n3>=1+2n0 in D, and n2+n3>=5 for each end hub in E. Therefore:
+- A/C: every independent-4 witness that misses any hub must hit at least six B rows, has parent target-degree excess at least2 on its four core vertices, and can witness at most four B labels.
+- B/D/E: analogous but weaker hub-row capacities are specified in R12_WITNESS_CAPACITY_CROSSCUT.md.
+
+The remaining escape is a hub-complete witness, or an overlap pattern in which the excess cost of high-B-degree witness sets is reused by shared core vertices. The proof cannot sum excess over overlapping witnesses. Next attack: classify the overlap graph of ten Q_b sets and use exact core degree 12+epsilon to control common triples/pairs.
