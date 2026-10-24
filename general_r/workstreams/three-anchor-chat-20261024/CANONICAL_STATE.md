@@ -11,64 +11,64 @@ Assume `r>=12`, `|V(H)|=3r-1`, `alpha(H)<=3`, `omega(H)<=r-1`, `delta(H)>=r`, an
 
 **EXACT THREE-ANCHOR EXCESS THEOREM: `PROVED_ANALYTIC` for every `r>=12`.**
 
-This is now a **Level-4 completion**: the proof no longer cites the historical fixed-`r=12` closure. The same anchor-partition / focus / rectangle language closes `r=12` directly; see `R12_UNIFIED_CLOSURE.md`.
+This is a **Level-4 completion** and now has a unified short proof: `UNIFIED_SHORT_PROOF.md`.
+
+The proof does not depend on the historical fixed-`r=12` closure, computation-certified graph enumeration, or separate `r=13..16` case tables.
 
 ## Core reductions
 
-1. `K_r` is always even. Hence a counterexample to `K_r>=8` has `K_r<=6`.
+1. `K_r` is always even, so a counterexample to `K_r>=8` has `K_r<=6`.
 2. Every non-anchor meets at least one anchor.
 3. With exclusive blocks `Xi`, connector count `c`, triple-connector count `t`, and deficits `d_i=(r-2)-|Xi|`:
    - `c+t=4`;
    - `d_1+d_2+d_3=c-2`;
    - only `(0,0,0)`, `(0,0,1)`, `(0,0,2)`, `(0,1,1)` occur.
-4. If `q_i` is the number of connectors missing `ai`, then `q_i=d_j+d_k`. Thus connector incidence types are completely fixed by the deficit vector.
-5. A pair connector missing anchor `ak` forces a complete bipartite rectangle between its nonneighbour sets in the two incident exclusive blocks.
-6. Two nonadjacent connectors have a common-nonneighbour set which is a clique.
-7. Two nonadjacent pair connectors missing the same anchor have disjoint nonneighbour supports in both incident exclusive blocks.
-8. Focus means completeness to an incident near-maximal exclusive block. Focused neighbours consume baseline external slots on that block, strengthening `R24 -> R23 -> R22` or `R33 -> R23 -> R22` rectangle charges.
+4. If `q_i` is the number of connectors missing `ai`, then `q_i=d_j+d_k`, fixing every connector type multiset.
+5. Pair-connector nonneighbour sets form complete bipartite rectangles, converted into excess charges `R_pq` using exact baseline external capacities.
+6. Two nonadjacent connectors have a common-nonneighbour clique.
+7. Two nonadjacent pair connectors missing the same anchor have disjoint nonneighbour supports.
+8. Focused neighbours consume baseline external capacity and strengthen rectangle charges: `R24 -> R23 -> R22` and `R33 -> R23 -> R22`.
 
-## Closed geometries
+## Unified closures
 
-### c=2 / deficits (0,0,0)
+### c=2 / deficits `(0,0,0)`
 Two triple connectors, block sizes `(r-2,r-2,r-2)`.
 
-**Closed for all `r>=12`** by the degree-2 tripartite transversal-cover lemma.
+**Closed for every `r>=12`.** If an exact-nonneighbour part `E_i` were empty, self-consistency of the remaining two parts forces
 
-### c=3 / deficits (0,0,1)
+`S >= m(S+3-m) > S`,
+
+where `m>=1` is the number of positive-excess nonneighbours in the empty part and `S>=m` their total excess. Thus all three exact-nonneighbour parts are nonempty. The cross graph on them has maximum degree two and no independent transversal; the degree-two transversal-cover lemma plus `sum|E_i|>=2r-9` gives the contradiction.
+
+### c=3 / deficits `(0,0,1)`
 One triple connector, two pair connectors, block sizes `(r-2,r-2,r-3)`.
 
-**Closed for all `r>=12`.** For `r>=13` the mixed-focus rectangle charge closes symbolically. At `r=12`, both-nonfocus and both-focus branches are impossible; the unique mixed-focus low-budget layers force a saturated rectangle vertex, which in turn forces either the triple connector or the focused connector to see essentially/all of the opposite 10-clique, producing a 12-clique or an impossible degree count.
+**Closed for every `r>=12`.** Both nonfocused costs at least `2r-16>=8`; both focused violate the clique cap. In the mixed branch, the nonfocused rectangle is effective `R22`. For `r>=14` its local charge is already at least seven; `r=13` has one `(6,2,2)` equality layer, killed by forcing the triple connector to complete the opposite long block; `r=12` has only saturated-rectangle low-budget layers, all killed by the same independent-4 forcing.
 
-### c=4 / deficits (0,0,2)
+### c=4 / deficits `(0,0,2)`
 Four pair connectors, block sizes `(r-2,r-2,r-4)`.
 
-**Closed for all `r>=12`.** For `r>=13` this is the existing focus/nonfocus closure. At `r=12`, let `f` be the number of connectors focused on the short block. The focus cap gives `f<=2`.
+**Closed for every `r>=12` by one focus-count proof.** At most two connectors focus on the short block. For `f=0` and `f=1`, additive `R24/R23` charges exceed six. For `f=2`, the only possible nonfocused pair is adjacent and same-group. For `r>=13`, choosing the smaller connector excess gives
 
-- `f=0`: additive `R24` charges exceed six; the only putative double-adjacency equality would require excess 3 on all four connectors.
-- `f=1`: effective `R23` charges on the three nonfocused connectors exceed six.
-- `f=2`: effective `R22` leaves only two equality skeletons, `(a,b)=(1,8)` or `(8,1)`, with all six excess units on one exclusive vertex. Each skeleton creates an independent 4-set or an oversized common-nonneighbour clique.
+`K >= r-6+max(k1,k2) >=7`.
 
-### c=4 / deficits (0,1,1)
+At `r=12`, equality reduces to `(1,8)/(8,1)` `R22` skeletons, each impossible.
+
+### c=4 / deficits `(0,1,1)`
 Four pair connectors, block sizes `(r-2,r-3,r-3)`.
 
-**Closed for all `r>=12`.** No two connectors may focus on the same deficit-1 block. At `r=12`, classify by the number `s` of occupied focus slots among the two deficit-1 blocks:
-
-- `s=0`: the two `(0,1)` connector rectangles already add to at least 8;
-- `s=1`: an additive `R23/R22` pair costs at least 7;
-- `s=2`: every ownership pattern except `V` focusing one block and `W` the other costs at least 9; the remaining two-U overlap branch reduces to the same `(1,8)/(8,1)` equality skeletons and is eliminated by an independent 4-set.
-
-## Independent complement check
-Let `J=bar H`. Then `J` is `K4`-free and
-
-`d_J(v)=2r-2-(d_H(v)-r)`.
-
-Under a counterexample `K<=6`, `delta(J)>=2r-8`. Classical Andrasfai–Erdos–Sos gives an independent coarse proof for sufficiently large `r`; the focus/rectangle proof is strictly stronger and reaches the full range `r>=12`.
+**Closed for every `r>=12` by focus-slot count.** Each deficit-1 block has at most one focus owner. For zero or one occupied focus slot, additive charges exceed six. With both occupied, every owner pattern except `V`/`W` ownership is immediately too expensive; the remaining two-U overlap branch is the same `R22` overlap as above, giving `K>=7` for `r>=13` and only the impossible `(1,8)/(8,1)` skeletons at `r=12`.
 
 ## Main files
 
-- `THEOREM.md`: theorem statement and branch-by-branch closure.
-- `PROOF_ATTEMPTS.md`: parameterized proof for `r>=13` and core lemmas.
-- `R12_UNIFIED_CLOSURE.md`: direct analytic absorption of `r=12` into the same proof language.
-- `EQUALITY_CASES.md`: low-budget equality layers and their elimination.
-- `COUNTEREXAMPLE_SEARCH.md`: falsification status and relaxed-candidate notes.
-- `PROGRESS_LOG.md`: chronological research record.
+- `UNIFIED_SHORT_PROOF.md`: preferred canonical proof, designed to be publication-length rather than case-table length.
+- `THEOREM.md`: theorem ledger and consequences.
+- `R12_UNIFIED_CLOSURE.md`: detailed `r=12` equality analysis retained as backup.
+- `PROOF_ATTEMPTS.md`: historical derivation and earlier boundary proofs.
+- `EQUALITY_CASES.md`: equality-layer ledger.
+- `COUNTEREXAMPLE_SEARCH.md`: falsification record.
+- `PROGRESS_LOG.md`: chronological progress.
+
+## Next action
+
+No internal theorem gap remains. Before upstream promotion, obtain an independent line-by-line proof review of `UNIFIED_SHORT_PROOF.md`, especially the rectangle-charge additivity and the `c=2` empty-part self-consistency lemma.
