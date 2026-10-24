@@ -32,10 +32,10 @@ Use the newer proof bodies and audit notes, but do not infer certification solel
 
 These are successive theorem layers, not contradictory statements:
 
-1. The lower-bound file rules out `K<=2) and establishes `K>=4).
+1. The lower-bound file rules out `K<=2` and establishes `K>=4`.
 2. `backend/GLOBAL_THREE_ANCHOR_K4_EQUALITY_CLOSURE.md` closes the K=4 equality layer.
 3. `backend/GLOBAL_THREE_ANCHOR_K6_FULL_CLOSURE.md` closes the exhaustive K=6 connector partition.
-4. Since `K=2e(H)-420` is even, the combined theorem yields `K>=8), hence `e(H)>=214).
+4. Since `K=2e(H)-420` is even, the combined theorem yields `K>=8`, hence `e(H)>=214`.
 
 The valid K>=8 envelope is therefore conditional on the complete chain, especially the K=4 and K=6 closures; it must not be attributed to the K>=4 file alone.
 
@@ -69,7 +69,7 @@ V11 is the later claimed mathematical advance, but its package replay is still p
 
 ### Apparent discrepancy
 
-`front_end/E407_CELL_B_FULL_CLOSURE.md` proves no E407 `|W|=23) Cell-B completion, while the global frontier still lists E407 Q32 open.
+`front_end/E407_CELL_B_FULL_CLOSURE.md` proves no E407 `|W|=23` Cell-B completion, while the global frontier still lists E407 Q32 open.
 
 ### Resolution
 
@@ -83,7 +83,7 @@ These statements concern different scopes. The Cell-B theorem excludes one sharp
 
 ### Resolution
 
-The exact identity is conditional on the retained V11 Q33 interface and only classifies a necessary integer budget. It does not eliminate `beta=0,1,2,3), prove the core graph exists, or extend the local shell to the global seven-block near-Latin coloring. E408 Q33 remains OPEN.
+The exact identity is conditional on the retained V11 Q33 interface and only classifies a necessary integer budget. It does not eliminate `beta=0,1,2,3`, prove the core graph exists, or extend the local shell to the global seven-block near-Latin coloring. E408 Q33 remains OPEN.
 
 ## 7. General status policy for this workstream
 
