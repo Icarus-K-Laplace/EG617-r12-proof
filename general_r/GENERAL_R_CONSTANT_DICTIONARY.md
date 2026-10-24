@@ -1,24 +1,44 @@
 # General-r Constant Dictionary
 
-Status: WORKING DRAFT. Every entry must eventually be tagged `STRUCTURAL_R_FORMULA`, `R12_ACCIDENT`, or `UNKNOWN_ORIGIN` with a proof/source.
+Status: UPDATED AFTER SYMBOLIC PROOF ARCHAEOLOGY.
 
-| r=12 constant | candidate symbolic form | current tag | proof/source status |
+Tags:
+
+- `STRUCTURAL_R_FORMULA`: derived symbolically from the problem/reduction once its stated setup holds;
+- `R12_ACCIDENT`: no surviving symbolic interpretation is known;
+- `UNKNOWN_ORIGIN`: provenance/general formula still unresolved.
+
+A conditional structural formula is still tagged structural when the formula itself is proved, but its upstream forcing hypothesis is stated explicitly.
+
+| r=12 constant | symbolic form | tag | exact status |
 |---:|---|---|---|
-|145|`r^2+1`|UNKNOWN_ORIGIN|Needs derivation from original EG617 reduction, not numeric fit.|
-|61|`5r+1`|UNKNOWN_ORIGIN|Needs front-end recurrence provenance.|
-|49|`4r+1`|UNKNOWN_ORIGIN|Needs derivation of Ramsey residual.|
-|35|`3r-1`|PLAUSIBLE_SYMBOLIC|Matches pivot of degree `r+1` inside a `4r+1` residual; general source not yet certified.|
-|13|`r+1`|PLAUSIBLE_SYMBOLIC|Likely pivot/shell size; general source not yet certified.|
-|12|`r`|STRUCTURAL_R_FORMULA candidate|Core minimum-degree floor in r=12; general lower-order seed still open.|
-|91|`C(r+2,2)`|PLAUSIBLE_SYMBOLIC|At r=12, `C(14,2)=91`; exact backend derivation pending.|
-|211|`?`|UNKNOWN_ORIGIN|Likely minimum core-edge layer `((3r-1)r+K_min)/2`; requires general seed.|
-|214|`?`|R12_DATA_POINT|Equals `(35*12+8)/2`; comes from r=12 near-anchor theorem `K>=8`. General `f(r)` unknown.|
-|305|`?`|R12_DATA_POINT|From backend identity plus `e(H)>=214`: `91+214=305`; symbolic form depends on backend base term and general anchor excess.|
-|284|`?`|UNKNOWN_ORIGIN|Requires provenance from q31 / 47-core shell identities.|
-|27,30,31|`q_*(r)-O(1)` candidate|UNKNOWN_ORIGIN|Need symbolic critical-q derivation.|
-|6,8,9 owner/support caps|`C_r(d,pattern,W)`|R12_DATA_POINT|Derived from r=12 hereditary cap; symbolic cap function still to derive.|
-|3,6 allowance thresholds|functions of `d`, shallow-loss width|PARTLY_STRUCTURAL|`d-1`, `a=d`, `a-e_M(S)<=3` have structural origin; fixed numbers require symbolic rewrite.|
+|145|`r^2+1`|STRUCTURAL_R_FORMULA|The original Erdős–Gyárfás conjecture is stated on `K_(r^2+1)`.|
+|870|`r(r^2+1)/2`|STRUCTURAL_R_FORMULA|Least-color average edge upper bound.|
+|61|`5r+1`|STRUCTURAL_R_FORMULA|In the anchor/block schema `|R|=r^2-d-jr`; at `d=r-1,j=r-6` this is `5r+1`. General forcing to this stop remains OPEN.|
+|49|`4r+1`|STRUCTURAL_R_FORMULA|Same schema with `d=r-1,j=r-5`. General forcing to this stop remains OPEN.|
+|35|`3r-1`|STRUCTURAL_R_FORMULA|Conditional on a `4r+1` residual and a degree-`r+1` pivot: `(4r+1)-1-(r+1)=3r-1`.|
+|13|`r+1`|STRUCTURAL_R_FORMULA|Shell/pivot size in the symbolic backend setup. The all-r theorem forcing minimum degree `r+1` is OPEN.|
+|12|`r`|STRUCTURAL_R_FORMULA|Baseline core degree/excess coordinate. The all-r theorem `delta(H_r)>=r` is OPEN.|
+|91|`C(r+2,2)`|STRUCTURAL_R_FORMULA|Exact symbolic backend edge-partition constant.|
+|301|`2r^2+r+1`|STRUCTURAL_R_FORMULA|Exact excess identity `K_r=2(E-q-(2r^2+r+1))`.|
+|211|`[r(3r-1)+2]/2`|STRUCTURAL_R_FORMULA|For every `r>=12` under the general residual-core contract, AES excludes `K_r=0`, so `K_r>=2`.|
+|214|`[r(3r-1)+8]/2` candidate|UNKNOWN_ORIGIN as all-r theorem|At r=12 this follows from exact/near three-anchor `K>=8`. General exact-three-anchor theorem remains OPEN.|
+|305|`C(r+2,2)+[r(3r-1)+f(r)]/2`|STRUCTURAL SCHEMA|At r=12, `f(12)=8`, giving305. General `f(r)` is the anchor-excess problem.|
+|284|unknown symbolic lower-order floor|UNKNOWN_ORIGIN|r=12 front/core seed; needs lower-order general Ramsey/cap theorem.|
+|27,30,31|roots/window of `d(r+1-d)<=Q` plus layer arithmetic|PARTLY_STRUCTURAL|The quadratic repivot base is symbolic, but the exact critical q-window forced by the front/backend layers is not yet generalized.|
+|36|`4(r-3)` only at d=4 is not fundamental; general base is `d(r+1-d)`|R12_ACCIDENT as standalone constant|The real structural object is the quadratic `d(r+1-d)` and symmetry `d<->r+1-d`.|
+|9 (d2 owner cap)|`r-3+o(1)`|STRUCTURAL_R_FORMULA|Exact formula: `N<=r-3+(k^2-3k+6)/(2(r-k))`.|
+|8 (d3 Type-H/P cap)|`r-4+o(1)`|STRUCTURAL_R_FORMULA|Exact Type-H/P formulas in `GENERAL_R_OWNER_CAPACITY.md`; the r=12 Type-H k=3 exception is a small-r equality artifact.|
+|3 zero-signature cap|`alpha(H)`|STRUCTURAL_R_FORMULA|General incidence-signature theorem gives at most `alpha(H)` zero signatures; here the residual target is `alpha(H)<=3`.|
+|allowance overlap threshold `d-1`|`d-1`|STRUCTURAL_R_FORMULA|From `h(d-h)>=d-1` for proper overlap.|
+|first high slack `a=d`|`d`|STRUCTURAL_R_FORMULA|Exact loss-layer threshold, not a fixed-r constant.|
+|near-anchor excess threshold3|currently constant `h<=3`|UNKNOWN as optimal all-r threshold|r=12 theorem reduces this to exact three-anchor `K>=8`; symbolic reduction works for r>=12, but exact-anchor closure is open.|
 
-## Required proof archaeology
+## Main conclusion
 
-For every row above, locate the earliest theorem/reduction that introduces the number, then rewrite that argument with symbolic r before changing the tag.
+Most conspicuous r=12 backend constants are not accidents. The unresolved constants now concentrate in two upstream objects:
+
+1. lower-order/front-end Ramsey-cap floors that force the `4r+1`, degree-`r+1` residual-core setup;
+2. the general exact-three-anchor excess function `f(r)`.
+
+The owner/support constants 8 and9 are fully explained as evaluations of symbolic hereditary-cap formulas and therefore should no longer be treated as fixed-case phenomena.
