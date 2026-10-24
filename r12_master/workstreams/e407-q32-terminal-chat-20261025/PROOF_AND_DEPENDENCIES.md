@@ -15,6 +15,7 @@ Status: **E407 Q32 OPEN / NOT_CERTIFIED.**
    \]
 6. **Sibling transversal/excess theorem** gives \(\epsilon_U+2\delta\ge9\) and \(\delta\ge3\), under the same boundary contract.
 7. **This line's theorem**: if \(\delta=16\), Brouwer's second-Turán bound forces \(L=\overline{H[U]}\) four-partite; equality and degree accounting force the unique \(\delta=16\) structural kernel in FOUR_PARTITE_TERMINAL.md.
+8. **Reverse saturation**: under the resulting (K_5cup K_5cup K_4cup K_4) structure, every (win W) is adjacent to all vertices of exactly one (U)-part. This is proved before the endpoint split and is not assumed as an input.
 
 ## 2. Exact external/input dependencies
 
