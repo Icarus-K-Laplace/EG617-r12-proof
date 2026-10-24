@@ -112,3 +112,11 @@ Status: alignment-free structure PROVED; Case A contradiction, Case B contradict
 - Improved the residual-net direction count to ceil((q+1)/2).
 - Derived that r=7 Case B would force four orthogonal order-6 partitions, contradicting Euler–Tarry.
 - Boundary remains explicit: this closes only the matching-number-two/tight-transversal branch, not Case A or the complete r=7 compression implication.
+
+
+## 2026-10-24 — Round 13: weighted blocker inequality and audit correction
+
+- Added Theorem J.W12: for a root x with no fully c-covered residual block, random selection from its root-dependent nonneighbor candidate sets yields the necessary weighted blocker sum W_x>=1.
+- The inequality explicitly weights each cross-block c-edge by 1/(a_i(x)a_j(x)); it is valid and gives an exact obstruction certificate for any attempted residual transversal.
+- Audited the attempted quantitative root-block extension J.W11 and found a flaw: it sampled from full blocks rather than the root's candidate sets. The claimed d>=C(k+1,2) strengthening was withdrawn in commit 87b7ad18cda97fcef378ffff63c8397936617f36.
+- Current valid budget remains d>=1 (J.W8). Case B at r=7 is closed; Case A and all-r induction remain open.
