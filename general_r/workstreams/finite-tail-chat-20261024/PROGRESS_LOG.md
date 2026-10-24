@@ -158,4 +158,4 @@ The r=13 endpoint-domain receipt was refreshed to the final gate hash. Both samp
 
 ### Final multi-module CLI replay
 
-With the final module-dispatch gate, end-to-end CLI replay passed for 10 scalar-profile cases (r=12,13,14,15,68 × two profiles) and three D1 shell-bound cases (r=12,13,68). Both verifiers rejected tampered certificates. The gate returned `BLOCKED_UNKNOWN_ASSUMPTION_ID` when RC was omitted from the machine-readable ledger, and r=11 remained `SCHEMA_ONLY`. All 13 successful module runs left `eg617_r_proved=false`.
+With the final module-dispatch gate, end-to-end CLI replay passed for 10 scalar-profile cases (r=12,13,14,15,68 × two profiles) and three D1 shell-bound cases (r=12,13,68). Both verifiers rejected tampered certificates. The gate returned `BLOCKED_UNKNOWN_ASSUMPTION_ID` when RC was omitted from the machine-readable ledger, and r=11 remained `SCHEMA_ONLY`. All 13 matrix runs left `eg617_r_proved=false`. After the final gate was extended to record generation, verifier, and gate replay commands, the two committed r=13 sample certificates were replayed again through that final gate and both passed.
