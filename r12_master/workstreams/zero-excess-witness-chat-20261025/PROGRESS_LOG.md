@@ -78,3 +78,10 @@ Commits:
 Added \`verify_zero_excess_arithmetic.py\`. It checks every \((E,k,t)\) integer row in the Turán comparison, verifies the gap decreases to the listed endpoint, and checks the exact scalar witness-overlap lower/upper bounds. It explicitly states that this is arithmetic verification only, not a graph-search certificate.
 
 Commit: \`0cabc72f444ad64a215c1a4e30d99ff00bbeaae2\`.
+
+
+### Status correction and final audit
+
+The scalar edge-load route is now marked **DISPROVED as a sufficient route** (not as a theorem about the graph). The valid pairwise-crossing inequality remains proved; its scalar upper bound is too weak by the explicit numerical comparisons above. The actual terminal-exclusion problem remains OPEN.
+
+Commit: \`adce64d75cee84b28e765392eb8c8bf5ebf24b19\`.
