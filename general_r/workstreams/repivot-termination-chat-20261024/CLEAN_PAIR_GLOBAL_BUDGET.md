@@ -19,9 +19,9 @@ m >= ceil(4r/3+3).
 
 Put
 
-a=m-r+1,  h=|H\U|=3r-1-2m=r+1-2a.
+lambda=m-r+1,  h=|H\U|=3r-1-2m=r+1-2lambda.
 
-In the nonempty AES interval, m<=floor(3(r-1)/2), so h>=2. The lower threshold gives a>=ceil(r/3)+4 and h<=floor(r/3)-7; in particular a>h+10 and every block-type class below has size >4.
+In the nonempty AES interval, m<=floor(3(r-1)/2), so h>=2. The lower threshold gives lambda>=ceil(r/3)+4 and h<=floor(r/3)-7; in particular lambda>h+10 and every block-type class below has size >4.
 
 Every clean endpoint x has w_x=1, hence kappa_x=d_H(x)-r in {0,1} and d_H(x)=r+kappa_x.
 
@@ -43,7 +43,7 @@ Then m=x+y+z and
 
 The clique cap yields
 
-x,y,z >= a=m-r+1.
+x,y,z >= lambda=m-r+1.
 
 Write n_A=|A|=r-1-s_A and similarly for B,C. Then
 
@@ -121,23 +121,23 @@ Therefore, for any cross-part witness pair,
 
 d_H(o,U) >= 2a+(a-4)=3a-4.
 
-Since a>=ceil(r/3)+4,
+Since lambda>=ceil(r/3)+4,
 
-kappa_o=d_H(o)-r >= 3a-4-r >= 8.                       (5.1)
+kappa_o=d_H(o)-r >= 3lambda-4-r >= 8.                       (5.1)
 
 Call o **exceptional** if it has no pair of fully-seen witness classes from the same part. Every nonexceptional outside vertex sees an entire part; every exceptional outside vertex satisfies (5.1).
 
 If X is the number of exceptional outside vertices, the inherited excess cap gives
 
-X(3a-4-r) <= K_O <= 2r-2-K_U,                             (5.2)
+X(3lambda-4-r) <= K_O <= 2r-2-K_U,                             (5.2)
 
 so
 
-X <= floor((2r-2-K_U)/(3a-4-r)) <= floor((2r-2)/8).
+X <= floor((2r-2-K_U)/(3lambda-4-r)) <= floor((2r-2)/8).
 
 Since h=r+1-2a, the denominator has the exact form
 
-3a-4-r=(r-3h-5)/2,
+3lambda-4-r=(r-3h-5)/2,
 
 and hence
 
@@ -163,13 +163,13 @@ K_U=sum_{x in U}kappa_x >= 2m-(2r+b).                       (6.1)
 
 The exceptional set O_exc is disjoint from U. Combining (5.1) with (6.1) gives the stronger joint budget
 
-2m-2r-b + X(3a-4-r) <= K_U+K_O <= 2r-2,
+2m-2r-b + X(3lambda-4-r) <= K_U+K_O <= 2r-2,
 
 or
 
-X(3a-4-r) <= 4r-2-2m+b.                                    (6.2)
+X(3lambda-4-r) <= 4r-2-2m+b.                                    (6.2)
 
-Since 2m=3r-1-h and 3a-4-r=(r-3h-5)/2, this becomes
+Since 2m=3r-1-h and 3lambda-4-r=(r-3h-5)/2, this becomes
 
 X <= floor(2(r-1+h+b)/(r-3h-5)).                            (6.3)
 
@@ -211,7 +211,7 @@ For each assigned group O_i, every clique Q in H[O_i] combines with U_i into a c
 The new structural result is an **outside-neighbour dichotomy**, not a theorem that every outside vertex sees an entire part. It proves:
 
 - every optional cross degree is at most four;
-- every outside vertex either sees a whole part or has excess at least 3a-4-r>=8;
+- every outside vertex either sees a whole part or has excess at least 3lambda-4-r>=8;
 - the number X of exceptional vertices obeys (5.2);
 - the part-seeing subpopulation has a three-part assignment with total slack 4+X and exact budget (6.3).
 
