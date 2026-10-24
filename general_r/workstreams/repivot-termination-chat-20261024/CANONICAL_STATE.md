@@ -10,15 +10,15 @@ Scope: backend termination only. The front extraction and anchor-excess theorem 
   `|H|=3r-1`, `alpha(H)<=3`, `omega(H)<=r-1`, `delta(H)>=r`, and every legal regular repivot again has core minimum degree at least `r`.
 - **B (anchor excess).** Every legal core satisfies `K_r>=8`.
 
-Consequently the strengthened charge ceiling is
+Consequently
 
 `q<=3r-1`.
 
-For every `r>=12`, the quadratic repivot base excludes every regular missing degree
+For every `r>=12`, the quadratic repivot base excludes
 
 `4<=d<=r-3`.
 
-Thus only the endpoint degrees
+Thus only
 
 `d in {0,1,2,3,r-2,r-1,r}`
 
@@ -34,64 +34,79 @@ For a regular repivot `p -> y`,
 
 `q_y=d(r+1-d)+B_y+kappa(D_y)+m(D_y)+e_F(S_y,D_y)`.
 
-For `z in H\D_y`,
+Transport:
 
-`kappa'_z=w_z-e_H(z,D_y)`.
+`kappa'_z=w_z-e_H(z,D_y)` for `z in H\D_y`,
 
-For `s in S_y`,
+`kappa'_s=sigma_s-e_F(s,D_y)` for `s in S_y`.
 
-`kappa'_s=sigma_s-e_F(s,D_y)`.
-
-The bounded two-coordinate potential is
+Potential:
 
 `Psi_2=(q,tau)`, `tau=|A intersect {v:d_F(v)>r+1}|`.
 
 ## Results proved in this workstream
 
-### R1. Plateau transport / cycle identity
-
-For every regular repivot in a fixed residual graph,
+### R1. Plateau transport / cycle identity — PROVED_SYMBOLIC
 
 `K_y-K_p=-2(q_y-q_p)=2(q_p-q_y)`.
 
-Hence `K` is not an independent potential coordinate. On every closed repivot cycle the signed q-loss sums to zero. If every step is q-non-improving, every step is q-flat. If every step is also `(q,tau)`-non-improving, every step is both q-flat and tau-flat.
+Therefore K is affine-redundant with q. Every closed q-non-improving repivot cycle is q-flat; every closed `(q,tau)`-non-improving cycle is simultaneously q-flat and tau-flat. Repeated non-fully-decorated supports cannot occur on such a plateau cycle.
 
-### R2. d3 common-S closure
+### R2. d3 closure — PROVED_CONDITIONAL
 
-Using the existing equality B-floor, every d3 common-S family satisfies
+The equality B-floor eliminates the allowance-five frontier. Every d3 local/common-S representation satisfies
 
-`q<=3r-2`, hence `a+B<=4` and `a<=4` for every `r>=12`.
+`q<=3r-2`, hence `a+B<=4`.
 
-Together with the existing low-charge absorption (`b=2` and `b=1,a<=4`), the d3 common-S endpoint has no surviving terminal under A+B.
+Together with the pre-existing low-charge absorption (`b=2` and `b=1,a<=4`), no d3 terminal survives under A+B.
 
-### R3. High-endpoint absolute owner bound
+### R3. High Endpoint Three-Owner Theorem — PROVED_CONDITIONAL
 
-Let `Y_hi` be all regular shell vertices with `d_y>=r-2`. Then for every `r>=12`,
+Let `Y_hi` be **all** regular shell vertices with `d_y>=r-2`. Then
 
-`|Y_hi|<=7`.
+> `|Y_hi|<=3`
 
-This is stronger than the previous per-common-S multiplicity bound `<=3`: it bounds the total number of high-endpoint regular owners, even across different missing sets.
+for every `r>=12`.
 
-### R4. High-endpoint fixed-width incidence kernel
+Proof mechanism: any four high owners have at least one target edge by zero-gap/core packing, so their incident shell missing edges number at least `4r-13`. For `r>=13` this exceeds `q<=3r-1`. At the sole equality boundary `r=12`, four owners force `q=35`, hereditary equality and a 10-vertex regular target clique, contradicting the multicolor equality regular-clique obstruction.
 
-For `Y=Y_hi`, the target graph `G=F[Y]` has `Delta(G)<=2`, `alpha(G)<=3`, and `|Y|<=7`.
+This is a global bound across different missing sets, not a per-common-S bound.
 
-Each high owner has a shell target-neighbour complement `T_y` of size at most 2. Hence all high-owner shell incidences are supported on a kernel of at most `|Y|+sum|T_y|<=21` shell vertices.
+### R4. High Endpoint Bounded-Complement Reduction — PROVED_CONDITIONAL
 
-For each core vertex `v`, define its owner-incidence signature
+For high owners put `s_y=r-d_y in {0,1,2}`. Since there are at most three owners:
 
-`I(v)={y in Y : v in D_y}`.
+- all high-owner shell target-neighbour sets live in a kernel of at most 9 vertices;
+- core membership in the support sets `D_y` has at most `2^3=8` incidence-signature classes;
+- the owner graph has at most three vertices.
 
-The zero-gap theorem implies `I(v)` is a clique of `G`. A graph with `Delta<=2` and at most 7 vertices has at most 16 nonempty cliques (at most 7 vertices, 7 edges and 2 triangles), so the core owner-incidence data uses at most 17 signature classes including the empty signature.
+Hence the high endpoint is an r-independent finite skeleton. This reaches the intended **Level 3 high-endpoint reduction**.
 
-Thus the high endpoint is an r-independent finite-width interaction skeleton.
+### R5. Exact d2 charge identity — PROVED_SYMBOLIC
+
+For every d2 common-S system, with `b=e_M(S) in {0,1}`, allowance a, and total common-S core charge W,
+
+> `W=K+2r-2+a+b`.
+
+If a one-loss common-hub system has three distinct support classes, the existing charge barrier `W>=3r-2` implies
+
+> `K+a+b>=r`.
+
+Thus three-class d2 terminals can exist only in a linearly high excess/allowance regime. The known state `(K,a,b)=(8,3,1)` therefore forces `r<=12` immediately.
+
+### R6. d0 neutral symmetry — PROVED_SYMBOLIC
+
+If a regular owner has d=0, then `S=D=empty`, the core is unchanged, and the repivot preserves both q and tau exactly. Such moves are pure pivot relabellings and can be quotiented out of any termination graph.
 
 ## Current theorem level
 
-- Low endpoint: d3 common-S branch closed; d2 global equality/positive-loss branch still open; d0/d1 not yet frozen.
-- High endpoint: reduced to a fixed-width kernel with at most 7 owners, 21 shell interaction vertices and 17 core incidence-signature classes. Full contradiction of every high kernel remains open.
-- Global potential: `(q,tau)` is exact and bounded. `K` is redundant with q. A third plateau coordinate is still required.
+- d0: quotient-neutral, frozen.
+- d3: closed under the stated upstream low-charge assets.
+- high endpoint: finite bounded-complement skeleton, at most three total owners.
+- d2: exact scalar charge reduction obtained, but the linearly high `K+a+b>=r` terminal regime remains.
+- d1: exact one-vertex exchange still needs a closure/rigidity theorem.
+- global potential: `(q,tau)` exact; K redundant; an equal-plateau refinement is still required.
 
 ## Unique next blocker
 
-**d2 Plateau Equality/Positive-Loss Stability:** prove that every d2 state which is non-improving in `(q,tau)` either contradicts support compatibility/transport or collapses to a bounded rigid skeleton. This is now the only scalable low-endpoint obstruction.
+**d2 linearly-high plateau stability:** eliminate or rigidify d2 non-improving states with `K+a+b>=r`. This is now the only endpoint family whose structural size can still scale with r.
