@@ -75,6 +75,28 @@ Four pair connectors, block sizes `(r-2,r-3,r-3)`.
 - `COUNTEREXAMPLE_SEARCH.md`: falsification record and search limitations.
 - `PROGRESS_LOG.md`: chronological progress.
 
+
+## Round 2 — Exact \(K=8\) equality and near-minimal rigidity
+
+The original theorem status above is unchanged. New results are recorded separately:
+
+- **PROVED_ANALYTIC:** if \(K_r(H)=8\), then \(r\le13\).
+- **PROVED_ANALYTIC:** \(K_r(H)\ge10\) for all \(r\ge14\), using parity and the frozen \(K_r\ge8\) theorem.
+- **OPEN_GAP:** full equality classification for \(r=12,13\). No actual \(K=8\) graph has been constructed, and these strata have not all been eliminated.
+- Remaining necessary strata are listed in EQUALITY_K8_CLASSIFICATION.md.
+- The exact union-load accounting interface is in BACKEND_INTERFACE.md.
+- The local integer/rectangle profile audit is in K8_LOCAL_PROFILE_AUDIT.py and K8_LOCAL_PROFILE_AUDIT_RESULTS.md. These are not full-graph search results.
+
+### Remaining \(K=8\) strata
+
+- \(c=2,(0,0,0)\): \(r=12\).
+- \(c=3,(0,0,1)\): \(r=12,13\), mixed-focus branch only.
+- \(c=4,(0,0,2)\): \(r=12\), \(f=0\) with same-group adjacency, \(f=1\), or \(f=2\).
+- \(c=4,(0,1,1)\): \(r=12,13\), \(s=2\), with \(V/W\) owning the two deficit-one focus slots.
+
+No whole-graph SAT/ILP search was run. The original theorem remains independently verified analytically; the Round-2 equality classification remains open.
+
+
 ## Next action
 
-The analytic theorem has passed this independent proof audit. Before journal submission or upstream promotion, obtain an external human line-by-line review. The full graph-level SAT/ILP counterexample search remains unperformed and is not part of the proof basis.
+Prioritize the \(r=13\) mixed-focus \(c=3\) layer and the \(r=13\), \(s=2\) overlap layer in the \(c=4,(0,1,1)\) geometry. Seek either a full structural contradiction or an explicit graph realization. Do not promote a local integer/connector skeleton to a graph without checking every independent-four, clique, and degree constraint.
