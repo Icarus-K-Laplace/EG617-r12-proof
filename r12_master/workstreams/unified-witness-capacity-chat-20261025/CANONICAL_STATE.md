@@ -85,3 +85,8 @@ Read-only canonical sources also refreshed during this continuation:
 - E408/Q33 global compatibility branch: workstream/r12-e408-q33-global-compat-20261025, head df396de8ffc1f9c390fe3e240d0d085715f86b5b. Its four-partite branch has \(S_0\ge22\), while the non-four-partite terminal remains open.
 
 All three sources were read-only; the only changed files remain in this workstream directory.
+
+
+## Label-only feasibility check — 2026-10-25
+
+The Q33 four-partite row/column label constraints admit an explicit 8-by-7 array: seven rows each contain p once and six distinct B labels, the eighth row contains seven B labels, each D column contains p plus all seven B labels, and every B label and p occurs seven times. This is only a label-incidence relaxation, not a realization of the 56 labelled K4s; it confirms that label counts alone are insufficient.
