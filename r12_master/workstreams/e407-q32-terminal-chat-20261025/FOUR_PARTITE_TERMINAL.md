@@ -54,13 +54,31 @@ For each small-part vertex \(x\in A\cup B\cup C\), the 49 blocks contain \(x\) e
 
 Consequently the five cross edges are a matching between five distinct vertices of \(D\) and five distinct vertices of \(A\cup B\cup C\). Each of those five \(D\)-vertices has exactly four neighbours in \(W\), and its \(W\)-neighbourhood is exactly one of the two \(K_4\) components.
 
+## 4. Every W-vertex is complete to one whole U-part
+
+This reverse saturation is needed before allocating the endpoint split. Fix \(w\in W\), and put \(T=N_H(w)\cap U\). Since a \(K_5\)-component vertex has \(8+\epsilon_w\) neighbours in \(U\), and a \(K_4\)-component vertex has \(9+\epsilon_w\), with total excess four, \(|T|\le13\).
+
+Suppose \(T\) contains no whole part. Then each of \(A'=A\setminus T\), \(B'=B\setminus T\), \(C'=C\setminus T\), \(D'=D\setminus T\) is nonempty. For every \(d\in D'\), every triple \((a,b,c)\in A'\times B'\times C'\) must contain an \(H\)-edge from \(d\) to one of \(a,b,c\); otherwise \(\{a,b,c,d,w\}\) is an independent 5-set. The only cross edges of \(H[U]\) are the five \(D\)-to-small-part edges, and each \(d\) is incident to at most one. Thus at least one of \(A',B',C'\) must be a singleton containing that unique neighbour of \(d\).
+
+There cannot be two singleton sets among \(A',B',C'\): then \(T\) contains six vertices from each of two 7-parts, while the third small part still has a non-neighbour, leaving at least seven vertices in \(D'\). But each \(d\in D'\) would have to use one of the two singleton vertices as its unique cross-edge neighbour, and each small vertex is incident to at most one cross edge. This gives \(|D'|\le2\), contradiction. Three singleton sets would require \(|T|\ge18\), also impossible.
+
+So exactly one of \(A',B',C'\) is a singleton, say \(A'=\{a\}\). Every \(d\in D'\) must be adjacent to \(a\), so \(|D'|\le1\); since \(D'\ne\varnothing\), it is a singleton \(\{d\}\). The size bound \(|T|\le13\) now forces
+\[
+T=(A\setminus\{a\})\cup(D\setminus\{d\}),\qquad |T|=13,
+\]
+and \(ad\in E(H)\). Hence \(w\) is a \(K_4\)-component vertex with excess four; all other vertices of \(W\) have excess zero. The four \(D\)-endpoints other than \(d\) are all adjacent to \(w\), so their exact \(W\)-neighbourhood is the \(K_4\)-component containing \(w\). The fifth endpoint \(d\) has the other \(K_4\) as its \(W\)-neighbourhood.
+
+Take another vertex \(w'\) in the same \(K_4\) as \(w\). It is adjacent to those same four \(D\)-endpoints and nonadjacent to \(d\). If \(w'\) had no whole \(U\)-part in its neighbourhood, the argument above would force its neighbourhood to be \((P\setminus\{p\})\cup(D\setminus\{d\})\) for a 7-part \(P\), hence to have 13 \(U\)-neighbours. But \(w'\) has excess zero and therefore exactly nine \(U\)-neighbours. If instead \(w'\) has a whole \(U\)-part, it cannot be \(D\) because \(w'd\notin E(H)\); a small part plus the four \(D\)-endpoints gives at least \(7+4=11\) \(U\)-neighbours, again impossible. Contradiction.
+
+Therefore every \(w\in W\) is adjacent to all vertices of at least one \(U\)-part. Since \(|N_H(w)\cap U|\le13<14\), it is adjacent to all vertices of exactly one part.
+
 ## 4. Only one endpoint split survives
 
 Let \(k\) and \(5-k\) be the numbers of cross-edge \(D\)-endpoints whose \(W\)-neighbourhoods are the first and second \(K_4\), respectively. Up to order the possibilities are \((5,0),(4,1),(3,2)\).
 
 - **Split \((4,1)\) is impossible.** The \(K_4\) containing four endpoints cannot be complete to \(D\), because the endpoint in the other component has no neighbours there. Each of its four vertices must instead be complete to a small part, and therefore has at least \(7+4=11\) neighbours in \(U\). A \(K_4\)-vertex has \(9+\epsilon_w\) neighbours in \(U\), so each needs \(\epsilon_w\ge2\), costing at least eight excess units, but the whole core has only four.
 - **Split \((3,2)\) is impossible.** Neither \(K_4\) can be complete to \(D\), so each of its vertices must be complete to a small part. The component with three endpoints forces \(\epsilon_w\ge1\) for each of its four vertices, using all four excess units. Its vertices have exactly \(D_3\cup P_w\) as their \(U\)-neighbourhood, where \(D_3\) is the set of three endpoints and \(P_w\) is one small part. The other \(K_4\) vertices have exactly \(D_2\cup P'_w\) as their \(U\)-neighbourhood. Hence none of the three non-endpoint vertices of \(D\) is adjacent to either \(K_4\). Each such vertex has five neighbours in \(W\), so it must be complete to a \(K_5\) component. By pigeonhole, at least two of the three are complete to the same \(K_5\). Every vertex of that \(K_5\) must also be complete to a small part of size seven, giving at least nine \(U\)-neighbours, but its degree into \(U\) is exactly eight because all excess is already spent. Contradiction.
-- **Therefore the split is \((5,0)\).** All five \(D\)-endpoints have the same \(K_4\) as their \(W\)-neighbourhood. That \(K_4\) cannot be complete to a small part: its four vertices would each need \(7+5=12\) \(U\)-neighbours, requiring at least three excess units apiece. It must be complete to \(D\). The remaining \(K_4\) and the two \(K_5\) components cannot be complete to \(D\), and each must be complete to a small part. These three components must use three distinct small parts, because a small-part vertex has at most six neighbours in \(W\).
+- **Therefore the split is \((5,0)\).** All five \(D\)-endpoints have the same \(K_4\) as their \(W\)-neighbourhood. That \(K_4\) cannot be complete to a small part: its four vertices would each need \(7+5=12\) \(U\)-neighbours, requiring at least three excess units apiece. It must be complete to \(D\). The remaining \(K_4\) and the two \(K_5\) components cannot be complete to \(D\), and each must be complete to a small part. The full-part labels may vary vertex-by-vertex within each of these three components. However, a small part cannot be the full-part label of every vertex in two distinct components: each vertex of that small part would then have at least eight neighbours in (W), while its (W)-degree is at most six.
 
 ## 5. Exact surviving \(\delta=16\) kernel
 
