@@ -16,7 +16,7 @@ Status: **E407 Q32 OPEN / NOT_CERTIFIED; the \(\delta=16\) boundary is excluded 
 6. **Sibling transversal/excess theorem** gives \(\epsilon_U+2\delta\ge9\) and \(\delta\ge3\), under the same boundary contract.
 7. **Four-partite reduction at \(\delta=16\)**: \(L=\overline{H[U]}\) has 310 edges, exceeding the non-four-partite Brouwer threshold 309, so it is four-partite. The 49 linear witnesses force \(U\)-part sizes \(7,7,7,8\); the exact ledger forces \(H[W]=K_5\cup K_5\cup K_4\cup K_4\).
 8. **Reverse saturation**: under this structure, every \(w\in W\) is adjacent to all vertices of exactly one \(U\)-part. This is proved from \(\alpha(H)\le4\), the matching structure of the five \(U\)-cross-edges, and the total excess budget.
-9. **Endpoint split exclusion**: the \(4+1\), \(3+2\), and \(5+0\) allocations of the five \(D\)-endpoints across the two \(K_4\) components each contradict the total degree-excess budget. Therefore the entire \(\delta=16\) branch is excluded under this contract.
+9. **Endpoint split reduction**: the \(4+1\) and \(3+2\) allocations of the five \(D\)-endpoints across the two \(K_4\) components contradict the total degree-excess budget. The \(5+0\) split survives as a labelled kernel: its endpoint \(K_4\) is complete to \(D\), and each non-endpoint \(D\)-vertex has exactly one additional \(W\)-neighbour outside that \(K_4\).
 
 ## 2. Exact external/input dependencies
 
@@ -36,7 +36,7 @@ Status: **E407 Q32 OPEN / NOT_CERTIFIED; the \(\delta=16\) boundary is excluded 
 &|U|=29,\ |W|=18,\ 3\le\delta\le16\\
 &\Downarrow\\
 &\begin{cases}
-\delta=16:\ \text{excluded by endpoint-split excess contradiction},\\
+\delta=16:\ \text{open; reduced to the labelled }5+0\text{ kernel},\\
 \delta\le15:\ \text{four-partite near-extremal or non-four-partite cases OPEN}.
 \end{cases}\\
 &\Downarrow\ \text{missing template-to-core incompatibility theorem for }\delta\le15\\
@@ -44,4 +44,4 @@ Status: **E407 Q32 OPEN / NOT_CERTIFIED; the \(\delta=16\) boundary is excluded 
 \end{aligned}
 \]
 
-There is no circular dependency in the \(\delta=16\) exclusion: it uses only the E407 core contract, the 49-block linearity, the exact ledger, Turán/Brouwer bounds, and \(\alpha(H)\le4\). The proof still depends on the upstream validity of the 49-witness boundary.
+There is no circular dependency in the \(\delta=16\) structural reduction: it uses only the E407 core contract, the 49-block linearity, the exact ledger, Turán/Brouwer bounds, and \(\alpha(H)\le4\). The proof still depends on the upstream validity of the 49-witness boundary.
