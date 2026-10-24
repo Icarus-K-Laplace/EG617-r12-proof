@@ -192,7 +192,7 @@ Starting HEAD was verified as `3d27693d9f9d5bf2586e0f0178228563d96de22b`. All ne
 Added `PARAMETER_ADMISSION_MATRIX.json` and `PARAMETER_ADMISSION_VERIFIER.py`.
 
 - Explicit rows: r=4,...,100 (97 parameter rows), with a four-interval partition extending to every integer r>=4.
-- Source records: six immutable theorem/asset records, including source commit, source path/blob, exact parameter applicability, proof type, assumptions, and terminal contract.
+- Source records: eight immutable theorem/asset records, including source commit, source path/blob, exact parameter applicability, proof type, assumptions, and terminal contract.
 - Matrix raw SHA-256: `037ebe8e26f0c72e135e3d6a560d4620f023cb52b0c4d8e87096c12e0a8828da`.
 - Admission verifier SHA-256: `08d8e58ae6713cf8ab94b1e2dbb3715cd920f4255d21792b7a6d801be04dc326`.
 - Theorem gate now calls the admission verifier before promotion and records the matrix/verifier fingerprints in its receipt.
@@ -202,7 +202,7 @@ Added `PARAMETER_ADMISSION_MATRIX.json` and `PARAMETER_ADMISSION_VERIFIER.py`.
 
 | Parameter range | Admitted facts | Still open |
 |---|---|---|
-| 4<=r<=11 | schema/encoding tests only | no registered general residual-core reduction; modules blocked from theorem-level admission |
+| 4<=r<=11 | no registered general residual-core reduction | r=4,5 are counterexamples only to the abstract M_r(2) cutoff contract; r=6..11 have low-order recurrence cutoff sublemmas, but no full original-graph reduction |
 | r=12..16 | conditional q-ceiling source applies under RC; fixed r=12 recurrence arithmetic is replayed | RC/front extraction; broad ANCHOR_K8 below 68; recurrence bridge |
 | r=17..67 | full core contract follows analytically once a legal 4r+1 residual has been extracted | global residual extraction; broad ANCHOR_K8 below 68; endpoint/design closure |
 | r>=68 | broad near-anchor ANCHOR_K8 source applies | RC/front extraction and terminal closure; no unconditional all-large-r theorem |
