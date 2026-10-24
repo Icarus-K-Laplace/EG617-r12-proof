@@ -183,3 +183,65 @@ The next step is no longer to improve scalar witness counts. It is to eliminate 
 - E408 Q33: 56 linear K4 blocks on 31 points, with g+epsilon_*<=17, 24 total incidence deficits, high-k labels, and the outer seven-block duplicate constraints.
 
 Any continuation must charge each edge once, account for the maximum block multiplicity of a vertex, and preserve the difference between the 284-edge Q32/Q33 core and the 285-edge E408 Q32 core. No full EG617(r=12) proof is certified.
+
+
+## 9. General four-partite E407 boundary: eliminate delta=12,13
+
+The E407 boundary audit must retain both possibilities: L may be four-partite or non-four-partite. The following analysis treats the four-partite branch directly rather than inferring non-four-partiteness by excluding only the complete Turan graph.
+
+Assume L is four-partite. The 49 edge-disjoint Q blocks force part sizes (7,7,7,8). The blocks cover every pair between any two of the three seven-point parts, and every pair between a seven-point part and the seven used points of the eight-point part. Exactly one point z in the eight-point part is unused by all Q blocks. All 294 witness edges lie between the active 28 points; the only possible additional L edges are z-to-active-point edges. Therefore
+\[
+\delta=e(L)-294=d_L(z,U\setminus\{z\}).
+\]
+The complement H[U] consists of four cliques of sizes 7,7,7,8, plus 21-delta H-edges from z to the active 28 points. In particular,
+\[
+d_{H[U]}(z)=7+(21-\delta)=28-\delta.
+\]
+Since every core degree is at most 16, delta>=12.
+
+Combining this with the already proved boundary budget delta+epsilon_U<=16 gives
+\[
+\epsilon_U\le16-\delta.
+\]
+But z itself has excess at least
+\[
+\epsilon_z\ge d_{H[U]}(z)-12=16-\delta.
+\]
+Hence equality holds throughout:
+\[
+\boxed{\epsilon_U=\epsilon_z=16-\delta}.
+\]
+All excess inside U is concentrated at z, z has no neighbour in W, the remaining excess is
+\[
+\epsilon_W=\delta-12,
+\]
+and
+\[
+e(H[W])=32,\qquad H[W]=K_5\dot\cup K_5\dot\cup K_4\dot\cup K_4.
+\]
+Thus the four-partite branch has delta in {12,13,14,15,16}.
+
+For a zero-excess w in W, its neighbourhood T_w=N_H(w) intersect U has size 8 if w lies in a K5 component of H[W], and size 9 if it lies in a K4 component. It hits all 49 Q blocks. As shown in Section 6, every hitting set of size 8 or 9 contains a unique whole seven-point TD group plus respectively one or two extra points.
+
+If delta=12 or 13, then epsilon_W is 0 or 1, so every W clique component contains a zero-excess vertex. The group-label argument in Section 6 applies. For delta=12, both K5 components are entirely zero-excess; for delta=13, at least one K5 component is entirely zero-excess. In either case its five vertices all have the same seven-point group label, so together with that group they form a K12, contradicting omega(H)<=11. Therefore
+\[
+\boxed{\text{if L is four-partite, then delta}\ge14.}
+\]
+
+At delta=14, epsilon_W=2, and each K5 component must contain one positive-excess vertex; those two units are forced one into each K5 component. Since each such vertex has a nine-point hitting set, its full group must differ from the group label of the four zero-excess vertices in that K5 component, or a K12 appears. At delta=15, epsilon_W=3 and each K5 still requires at least one positive-excess vertex. At delta=16, epsilon_W=4; the only case in which the four-component group-label argument is unavailable is when all four positive-excess vertices occupy one K4 component. That exceptional branch remains OPEN.
+
+This is a strict reduction of the E407 four-partite boundary, not its closure. The non-four-partite branch remains separately OPEN and must not be inferred from ruling out the complete four-partite graph.
+
+## 10. Live sibling refresh and audit update
+
+After the initial branch intake in Section 1, the following sibling heads advanced and were reread:
+- ultimate closure: 0bdce893225af4273fa5f95d68815ff79c130446;
+- witness packing: 5d0e3ceab7895be1a947e46853f92bb84477f4e5.
+
+Two additional findings are now recorded.
+
+First, the sibling R12_WITNESS_TRANSVERSAL_BOUNDARY_THEOREM.md has a valid transversal floor tau(Q)>=7 and valid edge-budget identities, but its claimed conclusion that L is non-four-partite is not established by ruling out only the complete four-partite graph. A four-partite L may omit cross-part edges. The E407 delta=16 corner in Section 6 is a valid four-partite subcase; Section 9 extends that analysis to the full four-partite E407 branch.
+
+Second, R12_BETA_SENSITIVE_ZERO_EXCESS_PACKING.md claims stronger B-labelled witness floors for beta=e(M[S])=1,2,3 by using omega(M[S]) to bound the number of K5 components meeting S. The stated implication is invalid: omega(M[S]) bounds the number of S vertices that one fixed-color component may contain, not the number of distinct components that can meet S. Three S vertices may occupy three different K5 components. Without a color-specific co-location theorem, do not promote those beta-sensitive counts. The safe universal floor remains seven total S-avoiding Q sets and six B-labelled ones per exact-129 color, giving at least two zero-excess B-labelled witnesses per color.
+
+The transversal floor itself remains usable: every vertex outside the selected witness union has at least seven neighbours into it. No terminal is certified closed.
