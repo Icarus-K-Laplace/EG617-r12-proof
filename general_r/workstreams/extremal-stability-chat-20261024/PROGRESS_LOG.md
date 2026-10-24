@@ -35,3 +35,12 @@ The collision budget alone does not force orthogonality. For even \(r\), the mat
 - Füredi partition lemma: Balogh et al., *Making \(K_{r+1}\)-free graphs \(r\)-partite*, CPC 30 (2021), DOI 10.1017/S0963548320000590.
 - Brouwer non-partite Turán bound: if a \(K_{q+1}\)-free graph on \(m\ge2q+1\) vertices is not \(q\)-partite, then \(e\le T_q(m)-\lfloor m/q\rfloor+1\).
 - Kang–Pikhurko extremal classification for equality in Brouwer's bound: *Maximum \(K_{r+1}\)-free graphs which are not \(r\)-partite*, Matematychni Studii 24 (2005), 12–20, DOI 10.30970/ms.24.1.12-20.
+
+
+## 2026-10-24 — F-003: square-root neighborhood lower bound
+
+- Strengthened the low-slack neighborhood lemma from \(d_i\ge3\) to \(d_i\ge\max\{3,\lceil\sqrt{r/1024}\rceil\}\) for every color with \(s_i\le\binom r2\).
+- Key exact reduction: the Turán deficit \(t\) of \(H_i[V\setminus A_i]\) relative to \(T_{r-1}\) obeys \(t\le r(d_i-1)\).
+- Füredi's partition gives at most \(2r(d_i-1)\) missing cross-edges and part-size variance at most \(4rd_i\).
+- A random-transversal blocker count shows that the oversized parts require at least \(r^2/(512d_i)\) missing cross-edges, contradicting the upper bound when \(r>1024d_i^2\).
+- Status: PROVED_CONDITIONAL on Füredi, Brouwer, and Kang–Pikhurko. This does not yet force \(d_i\ge r\) or close the arbitrary-counterexample reconstruction.

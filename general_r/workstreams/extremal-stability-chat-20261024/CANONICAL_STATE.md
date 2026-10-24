@@ -46,3 +46,15 @@ The collision budget does not force the intersection matrix close to the all-one
 ## Unique blocker
 
 Use the color labels and the new-point hitting condition to upgrade the quantitative two-color near-partitions into enough exact orthogonal partitions, or prove that every distributed-defect alternative already forces an \((r+1)\)-set missing a color.
+
+
+## F-003 — stronger neighborhood lower bound
+
+For every color \(i\) with \(s_i\le\binom r2\), the new-point degree satisfies
+\[
+|N_i(x)|\ge\max\!\left\{3,\left\lceil\sqrt{r/1024}\right\rceil\right\}
+\qquad(r\ge4).
+\]
+This follows from the Turán deficit bound \(t\le r(d_i-1)\), Füredi's partition lemma, and a random-transversal defect count. Full proof: ROBUST_NONEXTENSION.md.
+
+This is quantitative local progress, not a full reconstruction theorem. The cases \(d_i\) between order \(\sqrt r\) and \(r-1\) remain open, as does the high-slack branch.

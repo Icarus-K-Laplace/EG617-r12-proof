@@ -90,3 +90,55 @@ To close the arbitrary case, one must prove a robust transversal-hitting theorem
 - Low-slack neighborhood lemma \(s_i\le\binom r2\Rightarrow d_i\ge3\): PROVED_CONDITIONAL on Brouwer and Kang–Pikhurko.
 - Robust nonextension for arbitrary near-skeletons: OPEN.
 - All-large-\(r\) theorem: OPEN.
+
+
+## 5. Quantitative small-degree exclusion: \(d_i=\Omega(\sqrt r)\)
+
+The preceding lemma can be strengthened using the full partition defect budget.
+
+Fix a color with \(s_i\le C:=\binom r2\), and suppose \(1\le d:=d_i<r\). Put \(m=r^2-d\) and \(H=H_i[B_i]\). Its Turán deficit relative to \(T_{r-1}(m)\) is
+\[
+t:=T_{r-1}(m)-e(H)\ge0.
+\]
+From \(e(H_i)\ge T_r(r^2)-C\) and \(e(H_i)\le e(H)+dm+\binom d2\), exact cancellation gives
+\[
+t\le m_0+C-p_{r-1}(r^2-d)=r(d-1).
+\]
+Here \(p_{r-1}(r^2-d)-m_0=r(r+1-2d)/2\) for \(1\le d<r\).
+
+Apply Füredi's partition lemma to \(H\), which is \(K_r\)-free. It gives a partition into \(q=r-1\) parts \(V_1,\ldots,V_q\), with at most \(t\) internal edges and at most \(b\le2t\le2r(d-1)\) missing cross-edges. If \(n_a=|V_a|\) and \(\mu=m/q\), the same lemma gives
+\[
+\sum_a(n_a-\mu)^2\le4t+q/4\le4rd.
+\]
+Since \(\mu>r\), the part-size sum exceeds \(qr\) by exactly \(r-d\). Let \(k\) be the number of parts of size greater than \(r\). Every such part contains an internal edge, because \(\alpha(H)\le r\). By Cauchy–Schwarz,
+\[
+r-d\le\sqrt{k\sum_a(n_a-\mu)^2}+k\le2\sqrt{krd}+k.
+\]
+Consequently \(k\ge r/(64d)\) whenever \(d\le r/2\): if \(k<r/(64d)\), the right-hand side is less than \(r/4+r/64<r/2\), contradicting \(r-d\ge r/2\).
+
+Now use the following transversal-defect count. Select one internal edge \(u_av_a\) from each of the \(k\) oversized parts. For a fixed edge, choose a uniformly random transversal consisting of one vertex from each of the other \(q-1\) parts. Because \(H\) is \(K_{q+1}=K_r\)-free, every such transversal together with \(u_a,v_a\) must contain a missing cross-edge. If \(c_a\) is the number of missing cross-edges incident to \(u_a\) or \(v_a\), then a missing edge incident to an endpoint is selected with probability at most \(1/L\), while any other missing cross-edge is selected with probability at most \(1/L^2\), where \(L\) is a lower bound on all part sizes. Hence
+\[
+1\le c_a/L+b/L^2,\qquad c_a\ge L-b/L.
+\]
+Summing over the selected internal edges gives \(\sum_a c_a\le2b\), since each missing edge has at most two selected endpoints. Therefore
+\[
+b(2+k/L)\ge kL.
+\]
+
+If \(d<\sqrt{r/1024}\), then \(d\le r/16\), all parts have size at least \(L=r/2\), and \(k\le r-1\) gives \(k/L<2\). Thus
+\[
+b\ge kL/4\ge \frac{r^2}{512d}.
+\]
+But the slack bound gives \(b\le2r(d-1)<2rd\). These inequalities contradict \(r>1024d^2\).
+
+Combining this with the \(d=0,1,2\) exclusions above proves the stronger theorem:
+\[
+\boxed{
+s_i\le\binom r2
+\quad\Longrightarrow\quad
+d_i\ge \max\!\left\{3,\left\lceil\sqrt{r/1024}\right\rceil\right\}
+\qquad(r\ge4).
+}
+\]
+
+This is an all-\(r\) quantitative neighborhood lower bound, conditional only on the cited Füredi, Brouwer, and Kang–Pikhurko inputs. It still does not force \(d_i\ge r\), so it is not a nonextension theorem.

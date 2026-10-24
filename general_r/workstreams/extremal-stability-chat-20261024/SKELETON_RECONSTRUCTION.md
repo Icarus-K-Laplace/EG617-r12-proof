@@ -46,7 +46,7 @@ and analogously \(a_j\le s_j,\ b_j\le2s_j\).
 
 Interpretation in the original coloring:
 
-- each \(P_a\) is a color-\(i\) clique with at most \(a_i\) missing color-\(i\) pairs in total across all parts;
+- the total number of non-color-\(i\) pairs internal to the \(P_a\)'s is \(a_i\le s_i\), so the parts are monochromatic cliques except for these explicitly counted defects;
 - at most \(b_i\le2s_i\) color-\(i\) edges cross the partition \(\mathcal P\);
 - the analogous statements hold for color \(j\).
 
@@ -98,3 +98,15 @@ Therefore the proved output is quantitative near-partition extraction, not exact
 - Two selected colors have \(\alpha=r\): PROVED_ANALYTIC.
 - Exact net reconstruction from an arbitrary restriction: OPEN.
 - All-large-\(r\) / all-\(r\) theorem: OPEN.
+
+
+## 5. F-003 addendum — low-slack neighborhoods cannot be too small
+
+For a color with \(s_i\le\binom r2\), the new-point neighborhood size \(d_i=|N_i(x)|\) satisfies
+\[
+d_i\ge \max\!\left\{3,\left\lceil\sqrt{r/1024}\right\rceil\right\}
+\qquad(r\ge4).
+\]
+The proof combines the exact inequality \(t\le r(d_i-1)\) for the Turán deficit of \(H_i[V\setminus A_i]\), Füredi's partition lemma, and a transversal-defect count. Full proof is in ROBUST_NONEXTENSION.md.
+
+This strengthens the previous \(d_i\ge3\) boundary result to \(d_i=\Omega(\sqrt r)\). It remains a local constraint and does not reconstruct the full net.

@@ -56,3 +56,15 @@ The next step is to combine this K_r-free induced-subgraph condition with \(\alp
 - Two low-slack colors imply an exact orthogonal pair: PROVED_CONDITIONAL.
 - Low-slack/high-slack dichotomy closing all counterexamples: OPEN.
 - All-large-\(r\) theorem: OPEN.
+
+
+## 6. F-003: high slack cannot be avoided by a scalar argument, but small neighborhoods are constrained
+
+The extension condition plus Füredi stability gives a new quantitative statement: if \(s_i\le\binom r2\), then
+\[
+|A_i|\ge\max\!\left\{3,\left\lceil\sqrt{r/1024}\right\rceil\right\}
+\quad(r\ge4).
+\]
+Thus a low-slack color cannot have a tiny new-point neighborhood. The proof uses a transversal-defect count on the near-\(T_{r-1}\) graph \(H_i[B_i]\), not merely the scalar slack identity.
+
+This does not eliminate the high-slack branch: a color with \(d_i<\sqrt{r/1024}\) must have slack \(s_i>\binom r2\), but the total slack budget can accommodate several such colors. A further cross-color argument is needed.

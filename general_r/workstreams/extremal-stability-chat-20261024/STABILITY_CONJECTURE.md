@@ -43,3 +43,14 @@ A new Brouwer/Kang–Pikhurko reduction proves that any color with \(s_i\le\bino
 - Low-slack exact orthogonal pair: PROVED_CONDITIONAL.
 - Neighborhood-sensitive reconstruction: OPEN.
 - Robust nonextension and all-large-\(r\) theorem: OPEN.
+
+
+## F-003 update: neighborhood-sensitive stability
+
+The new-point data now yields a quantitative theorem beyond scalar slack accounting. For each color \(i\) with \(s_i\le\binom r2\), its incident set \(A_i=N_i(x)\) must satisfy
+\[
+|A_i|\ge\max\!\left\{3,\left\lceil\sqrt{r/1024}\right\rceil\right\}.
+\]
+The proof derives a \(T_{r-1}\)-deficit upper bound \(t\le r(|A_i|-1)\), then compares Füredi's cross-defect budget with the missing-edge cost needed to block all clique-completion transversals.
+
+This still falls short of \(|A_i|=r\), and it does not force exact orthogonal partitions. The arbitrary-counterexample reconstruction conjecture remains OPEN.
