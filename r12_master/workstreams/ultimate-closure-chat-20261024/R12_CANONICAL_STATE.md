@@ -51,3 +51,15 @@ The main-branch summaries are not synchronized:
 ## Certification rule
 
 No status is promoted because a report says CLOSED. A result is promoted only after its precise contract, source proof, dependency scope, and any computation certificate are checked. The full theorem stays OPEN until the T61 terminal is excluded and the proof DAG has no unproved edge.
+
+## Round-2 proved cross-cutting lemma
+
+Added R12_SHELL_CORE_WITNESS_LEMMA.md (commit 020b64d5fdf3a4aa3abe66d86be3489565760b22).
+
+Under the retained T61 contextual contract:
+- any shell row of size t_a<=7 has an independent 4-set in the 47-core anticomplete to that shell vertex;
+- at least eight of the thirteen shell vertices are good in this sense, because bad vertices form an independent set in F[A];
+- in the retained E408 Q33/d3 interface, the exact budget beta+X+G_B=3 forces every one of the ten B-vertices to be good;
+- each such witness Q_b must hit every support row N_H(a) for which ab is a missing target edge. At least five B-witnesses hit at least two S-rows.
+
+This is a proved compatibility constraint, not a terminal exclusion. EG617(r=12) remains OPEN / NOT_CERTIFIED.
