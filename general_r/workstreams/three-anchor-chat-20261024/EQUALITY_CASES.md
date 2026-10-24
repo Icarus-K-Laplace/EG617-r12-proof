@@ -56,3 +56,32 @@ Each orientation gives an independent 4-set using one exact focused connector, o
 For every `r>=12`, there are **no surviving `K=0,2,4,6` configurations** in any of the four exact-anchor geometries.
 
 Therefore the Exact Three-Anchor Excess Theorem is closed analytically on the full stated range, with no separate fixed-`r=12` residue.
+
+
+---
+
+# Round 2 — Exact \(K=8\) layer (separate from the frozen \(K\le6\) closure)
+
+## Proved rigidity
+
+The new analytic boundary result is
+\[
+K=8\implies r\le13,\qquad\text{hence }K\ge10\text{ for }r\ge14.
+\]
+This does not follow from the old \(K\le6\) proof alone; it uses new equality-layer analysis.
+
+- \(c=2\): \(r\ge13\) is excluded at \(K=8\). At \(r=13\), equality in the transversal-cover count forces \(E_1=E_2=2,E_3=11\), complete \(E_1-E_2\) adjacency, no positive exclusive excess, and an impossible degree requirement for the second connector. The \(r=12\) layer remains open.
+- \(c=3\): both-focused and both-nonfocused branches are excluded. Mixed-focus \(r=14\) has 23 exact local profiles of cost at most eight; all are eliminated by common-nonneighbour cliques and saturated rectangle vertices. \(r=15\) has one local profile and is eliminated by a clique of size 15; \(r\ge16\) is excluded by the charge threshold. Mixed-focus \(r=12,13\) remain open.
+- \(c=4,(0,0,2)\): \(f=0\) and \(f=1\) are excluded for \(r\ge13\). The \(f=2\) branch is excluded for \(r\ge13\) by local profile and external-incidence counting, and for \(r\ge14\) independently by the overlap bound plus saturation. Only \(r=12\) remains, with \(f=0\) and a same-group adjacency, \(f=1\), or \(f=2\).
+- \(c=4,(0,1,1)\): \(s=0,1\) are excluded. The \(s=2\) owner patterns reduce to \(V/W\) owning both deficit-one focus slots. The \(r=14\) equality is excluded by the opposite size-12 block's external-incidence requirement; \(r=12,13\) remain open.
+
+## Exact remaining necessary strata
+
+| Geometry | Remaining \(K=8\) layer |
+|---|---|
+| \(c=2,(0,0,0)\) | \(r=12\), empty-part exceptional layer or nonempty \((1,2)/(2,2)\) transversal-cover layer |
+| \(c=3,(0,0,1)\) | \(r=12,13\), mixed-focus only |
+| \(c=4,(0,0,2)\) | \(r=12,f=0\) with same-group adjacency; \(r=12,f=1\); \(r=12,f=2\) |
+| \(c=4,(0,1,1)\) | \(r=12,13,s=2\), \(V/W\) own both deficit-one focus slots |
+
+These are necessary-condition strata, not known realizable graphs. No \(K=8\) graph has been constructed, and the classification is still OPEN. See EQUALITY_K8_CLASSIFICATION.md for the proofs and exact equality constraints.
