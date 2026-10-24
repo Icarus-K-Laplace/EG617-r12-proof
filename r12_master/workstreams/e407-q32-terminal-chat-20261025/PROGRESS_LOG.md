@@ -129,3 +129,39 @@ This reduces the Kang–Pikhurko subset size from \(a=1,\ldots,6\) to **\(a\in\{
 - with \(\epsilon_U=1\), \(H[W]=K_4\cup K_4\cup K_5\cup K_5\), so \(a\ge4\), and \(a=4\) forces \(\epsilon_x=1\).
 
 This is another necessary-condition reduction; the balanced \((7,7,7,7)\) equality profile remains OPEN.
+
+
+## 2026-10-25 — Round 5: \(\delta=15\) non-four-partite branch excluded
+
+### New terminal contradiction
+
+The balanced Kang–Pikhurko profile left after Round 4 is now excluded by combining the exceptional vertices \(x,y\) with the independent-set constraint on \(H\).
+
+For the balanced \((7,7,7,7)\) base and \(a=|A|\):
+\[
+d_{H[U]}(x)=13-a,\qquad d_{H[U]}(y)=6+a,
+\]
+so
+\[
+d_H(x,W)=a-1+\epsilon_x,\qquad d_H(y,W)=6-a+\epsilon_y,
+\qquad \epsilon_x+\epsilon_y\le\epsilon_U\le1.
+\]
+
+The exact core ledger gives \(e(H[W])=33-\epsilon_U\). Since \(\alpha(H[W])\le4\), the complement on 18 vertices has 120 or 121 edges, above the non-four-partite second-Turán threshold 118. Hence \(\overline{H[W]}\) is four-partite, and the allowed \(H[W]\) profiles are:
+- \(\epsilon_U=0\): \(K_3\cup K_5^3\), \(K_4^3\cup K_6\), or \(K_4\cup K_4\cup K_5\cup K_5\) plus one cross edge;
+- \(\epsilon_U=1\): \(K_4\cup K_4\cup K_5\cup K_5\).
+
+Every \(u\in U\) must be complete to a whole \(W\)-clique part when the parts are anticomplete. In the one-cross-edge profile, the same conclusion holds for \(u\) with at most five \(W\)-neighbours: otherwise it needs at least six neighbours to block all independent transversals.
+
+- If \(\epsilon_U=0\), \(x\) requires \(a-1\) to be at least the smallest part size, while \(y\) requires \(6-a\) to be at least that same minimum. The three profiles respectively force \(a\ge4,a\le3\); \(a\ge5,a\le2\); and \(a\ge5,a\le2\). Each is impossible.
+- If \(\epsilon_U=1\), all parts have size at least four, forcing \(a-1+\epsilon_x\ge4\) and \(6-a+\epsilon_y\ge4\). Thus \(a\ge4\) but \(a\le3\), contradiction.
+
+Therefore the whole \(\delta=15\), \(L\) non-four-partite branch is **EXCLUDED**, under the retained 49-witness/core contract and the Kang–Pikhurko equality classification.
+
+### Current frontier
+
+- \(\delta=16\): OPEN, reduced to the labelled \((5,0)\) endpoint kernel.
+- \(\delta=15\), \(L\) non-four-partite: **EXCLUDED**.
+- \(\delta=15\), \(L\) four-partite: OPEN.
+- \(\delta=14\) and lower: OPEN.
+- E407 Q32 overall: OPEN / NOT_CERTIFIED; no complete \(K_{145}\) proof is claimed.
