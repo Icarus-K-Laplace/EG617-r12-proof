@@ -535,3 +535,15 @@ A final cross-file scan found three legacy references to the high-density offset
 - D1_TERMINAL_ABSORPTION.md: 5edc49ccc3e11ed7d923cd0eac8c21e48473e610
 
 No new mathematical claim is inferred from this notation cleanup.
+
+
+### Offset-notation final sweep
+
+A second scan found remaining uses of the letter a for the AES offset in the canonical state, theorem ledger, counterexample search, and global budget. These are now consistently lambda; a/a_2 is reserved for the d2 allowance.
+
+- CANONICAL_STATE.md: c752a29edb5d51af0674fa87170ef2a73474c4a8
+- TERMINATION_THEOREM.md: b5b461305add0375c3725c378ab5d243e6193216
+- COUNTEREXAMPLE_SEARCH.md: 4386e6df5ee3d1137b0116e9f39180df507566de
+- CLEAN_PAIR_GLOBAL_BUDGET.md: 5f809e23858b4390608e8802f8cdc8d6ae3f61a2
+
+The mathematical statements are unchanged; this is a notation-only consistency fix.
