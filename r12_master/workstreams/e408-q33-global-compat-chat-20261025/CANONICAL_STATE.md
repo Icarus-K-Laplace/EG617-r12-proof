@@ -42,6 +42,14 @@ Proof audit: an initial draft incorrectly assumed that two row neighborhoods whi
 
 For each low-slack block, the 56 selected witness labels are assigned to 12 row classes. Each class consists of pairwise-disjoint Q-sets and contains at most one Q from each selected color. The crude capacity 12*7=84 exceeds 56, so this condition alone is feasible and is not a contradiction.
 
+The two no-component rows have a sharper profile: their 11-point gadget portions cover all of \(U_C\), and their complements are disjoint cliques of sizes 5+5, 5+4, or 5+3 / 4+4 according to the overlap \(a=1,2,3\). The exact repeated-incidence identity is \(r_i(C)=a+e+t\), with \(e+t\le2\). See the exceptional-row refinement in SEVEN_BLOCK_INCIDENCE_LEDGER.md.
+
+For a color with duplicate budget \(P_C\), the number of low-slack blocks satisfies
+\[
+k_C=\#\{i:r_i(C)\le3\}\ge\max\left(0,7-\left\lfloor\frac{55-P_C}{3}\right\rfloor\right).
+\]
+In particular, \(P_C\ge35,38,41,44,47,50,53\) guarantees at least 1,2,3,4,5,6,7 low-slack blocks, respectively. The aggregate \(\sum_{C:s_C=0}P_C\ge69\) alone does not force any single color to reach 35, so this is not global closure.
+
 ## Seven-block global ledger
 
 For each non-target color C,
@@ -68,9 +76,10 @@ The next proof target is a stability/packing contradiction in Case 1 or a genuin
 
 ## Latest isolated commits
 
-- Four-partite proof audit: 2c73c2c8f9eb4b38cc69171be5d767dbe7adae49
+- Four-partite proof audit and notation cleanup: f32121750a7899607974609b71f72273132ab4fe
 - Low-slack blocker proof repair: 75a7a877ab4879cf8dcc2e11e76ecfe64c582e0d
+- Exceptional-row refinement and duplicate thresholds: c34a6a095b437d9b18d44cfd629ed3ce75894fcf
 - Pairwise blocker scope audit: f272b81656d6abcee4afee5ec26b9262a47f42b0
-- Progress log with both audits: 0d9b19ce8acb094b7e239250988b5edb492a5977
+- Progress log: 42d4646bc5d594d074d9a7c32af85ae7fb4415f2
 
 **Status remains OPEN / NOT_CERTIFIED.**
