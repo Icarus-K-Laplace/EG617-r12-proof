@@ -34,7 +34,7 @@ Writing e_i=m_q+q+a_i and s_i(x)=q+a_i-d_i(x) yields a_i>=q-1 whenever color i i
 \boxed{a_i\ge q-1\quad\forall i.}
 \]
 
-If a_i<=q-2, the average local slack would be below q-1, forcing a low-slack vertex and contradiction. The total excess above this universal floor is q(q-1)(q-2)/2.
+If a_i<=q-2, the average local slack would be below q-1, forcing a low-slack vertex and contradiction. The total excess above this universal floor is q(q-1)(q-2)/2. The floor is sharp for the single-color graph constraints alpha(G_i),omega(G_i)<=q: a q-block-plus-extra-vertex construction attains a_i=q-1, although this is not a full coloring counterexample.
 
 ### 3. Local multicolor degree budget
 
