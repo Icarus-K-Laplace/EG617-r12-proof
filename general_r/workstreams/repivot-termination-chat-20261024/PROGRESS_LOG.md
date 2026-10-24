@@ -18,20 +18,18 @@ Only files under
 
 were modified.
 
-### Upstream assets audited
-
-Read and used as starting assets:
+### Upstream assets used as starting assets
 
 - exact symbolic backend identity;
 - strengthened `q<=3r-1` endpoint collapse under `K>=8`;
 - `(q,tau)` potential and repeated-support strict tau loss;
-- allowance localization and anchor transport;
+- allowance localization / anchor transport;
 - support/signature/sunflower machinery;
 - owner-capacity formulas;
 - Bridge-B transported excess;
 - common-S equality B-floor;
 - multicolor equality regular-clique obstruction;
-- d2 one-loss common-hub theorem and charge barrier;
+- d2 one-loss common-hub theorem and pattern charge barrier;
 - common-S charge localization;
 - first-high-slack decomposition.
 
@@ -39,111 +37,93 @@ No front extraction or anchor-excess proof was reopened.
 
 ---
 
-## New result 1 — Exact plateau cycle identity
-
-For every regular repivot in one fixed residual graph,
+## Result 1 — Plateau transport / closed-cycle rigidity
 
 `Delta K=-2 Delta q`.
 
-Hence K is redundant as a potential coordinate. Closed q-non-improving cycles are q-flat; closed `(q,tau)`-non-improving cycles are q/tau-flat edgewise. Repeated non-fully-decorated supports cannot occur on such a cycle.
+K is redundant as a potential coordinate. Closed q-non-improving cycles are q-flat; closed `(q,tau)`-non-improving cycles are q/tau-flat edgewise. Repeated non-fully-decorated supports cannot occur on such a cycle.
 
 Status: `PROVED_SYMBOLIC`.
 
-Commit introducing potential file:
+Potential commit:
 
 `6cdf26de92f9b3c656f4f89799ecb3490f7836af`.
 
 ---
 
-## New result 2 — d3 frontier disappears
+## Result 2 — d3 frontier disappears
 
-The equality B-floor forces every d3 local/common-S view below the top ceiling:
+Equality B-floor forces
 
-`q<=3r-2`, hence `a+B<=4`.
+`q<=3r-2`, `a+B<=4`.
 
-Using the declared upstream low-charge absorption (`b=2`, and `b=1,a<=4`), no d3 terminal remains.
+The declared low-charge Bridge-B assets absorb the remaining d3 sector.
 
 Status: `PROVED_CONDITIONAL`.
 
 ---
 
-## New result 3 — High Endpoint Three-Owner Theorem
+## Result 3 — High Endpoint Three-Owner Theorem
 
-Let `Y_hi` be all regular shell vertices with `d>=r-2`. Then
+For all `r>=12`, the total number of regular owners with `d>=r-2` is at most three.
 
-> `|Y_hi|<=3`
-
-for every `r>=12`.
-
-Core proof:
-
-- four pairwise target-nonadjacent high owners would have pairwise-disjoint core supports by zero-gap and require `4(r-2)>3r-1` core vertices;
-- therefore any four high owners span a target edge, so their internal shell missing-edge count is at most5;
-- their four missing degrees force at least `4r-13` distinct shell missing edges;
-- for `r>=13`, this exceeds `q<=3r-1`;
-- at `r=12`, equality forces `q=35`, `G_A=0`, hereditary equality and a 10-vertex regular target clique, contradicting the multicolor equality clique obstruction.
+Proof uses four-owner core packing / missing-edge count; `r>=13` dies from `4r-13>3r-1`; the `r=12` equality boundary forces a 10-vertex regular target clique and is killed by the multicolor equality regular-clique obstruction.
 
 Status: `PROVED_CONDITIONAL`.
 
-Main commit:
+Commit:
 
 `c93345b91d1f4c5bb90ffe328c2aef811e24dc86`.
 
 ---
 
-## New result 4 — High Endpoint Bounded-Complement Reduction
+## Result 4 — High bounded-complement kernel
 
-Put `s=r-d in {0,1,2}` for high owners. Since there are at most three owners:
+For high owners, `s=r-d in {0,1,2}`. Since there are at most three owners:
 
-- shell high-owner interaction kernel has size at most9;
-- core owner-incidence data has at most8 signatures;
-- owner graph has at most3 vertices.
-
-Thus high endpoint is an r-independent finite skeleton.
+- shell interaction kernel <=9 vertices;
+- core owner-incidence <=8 signatures;
+- owner graph <=3 vertices.
 
 Status: `PROVED_CONDITIONAL`.
 
-Success level impact: **Level 3 achieved**.
+Success level: **Level 3 achieved**.
 
 ---
 
-## New result 5 — Exact d2 charge identity
+## Result 5 — Exact d2 common-S charge identity
 
 For every d2 common-S family,
 
-> `W=K+2r-2+a+b`.
+`W=K+2r-2+a+b`.
 
-For a three-class one-loss common-hub subsystem, the existing charge barrier `W>=3r-2` gives
+If an exact-one-loss common-hub subsystem has three distinct core support classes, the upstream charge barrier gives
 
-> `K+a+b>=r`.
+`K+a+b>=r`.
 
-Thus the troublesome d2 three-class branch is forced into a linearly-high excess/allowance regime.
-
-Status: identity `PROVED_SYMBOLIC`; barrier consequence `PROVED_CONDITIONAL`.
+Status: identity `PROVED_SYMBOLIC`; three-class consequence `PROVED_CONDITIONAL`.
 
 ---
 
-## New result 6 — d0 neutral symmetry
+## Result 6 — d0 neutral symmetry
 
-A d0 regular repivot has `S=D=empty`, preserves H, q and tau, and is only a pivot relabelling. Contract these edges in the repivot graph.
+A d0 repivot preserves H, q and tau and is only pivot relabelling. Contract it.
 
 Status: `PROVED_SYMBOLIC`.
 
 ---
 
-## New result 7 — d1 exact exchange
+## Result 7 — d1 exact one-point exchange
 
 For d1, `S={s}`, `D={u}`,
 
-> `ell=q-q_y=kappa'_s-kappa_u`.
-
-Thus d1 q-loss is exactly one-vertex excess replacement.
+`ell=q-q_y=kappa'_s-kappa_u`.
 
 Status: `PROVED_SYMBOLIC`.
 
 ---
 
-## New result 8 — Shell-Incidence Heavy-Cover Theorem
+## Result 8 — Shell-incidence identity
 
 Define
 
@@ -153,43 +133,79 @@ Then
 
 `sum_A t_s=2e(M)+G_A<=2q<=6r-2`.
 
-For every regular owner y with missing set S of size d,
+For any regular owner y with shell missing set S, `|S|=d`, and `b=e_M(S)`, singleton transport gives pointwise
 
-> `sum_{s in S} t_s=d(r+1-d)+a_y+b_y`.
+`sigma_s=t_s-(r+1-d)-m_S(s)>=0`,
 
-Consequences:
+and summed
+
+`sum_{s in S}t_s=d(r+1-d)+a_y+b_y`.
+
+Status: `PROVED_SYMBOLIC` plus A+B for the global numerical cap.
+
+---
+
+## Result 9 — Strong d1/d2 finite shell-support theorem
+
+This **supersedes** the earlier weaker four-star decomposition.
 
 ### d1
 
-Every missing partner has `t_s>=r`, so all d1 shell supports lie in at most5 vertices.
+Every d1 missing partner has `t_s>=r`; all d1 shell support points lie in at most five vertices. Hence <=5 d1 shell classes.
 
 ### d2
 
-Every missing pair has endpoint-sum at least `2(r-1)`, so every pair meets a heavy set of at most6 vertices.
+For `S={u,v}` and `b=e_M(S)`, pointwise slack gives
 
-With thresholds
+`t_u,t_v>=r-1+b`.
 
-`P={2t>=3(r-1)}`, `|P|<=4`,
+Therefore every endpoint of every d2 shell missing pair lies in a common set `U_2` with
 
-`Q={2t>=r-1}`, `|Q|<=12`,
+> `|U_2|<=6`.
 
-every d2 pair is either incident with P or fully contained in Q.
+Hence all d2 shell supports belong to at most
 
-Therefore all r-growing distinct d2 shell-support geometry is confined to **at most four star families**; all other pair supports lie in an at-most-twelve-vertex bounded core.
+> `C(6,2)=15`
+
+classes. There is **no r-growing d2 shell-support graph**.
+
+With `h_u=t_u-(r-1)`, each class has exact shell allowance
+
+`a_{uv}=h_u+h_v-b_{uv}`.
+
+If `m=|U_2|`,
+
+`sum h_u <= (6-m)r+m-2`.
+
+For `m=6`, `sum h_u<=4` and the total d2 owner count is at most two.
 
 Status: `PROVED_CONDITIONAL`.
 
-Commit:
+Strong shell-incidence file commit:
 
-`574d50e65bfdc7b63e9017f61609905215683f5a`.
+`009a618b431adbc162b22792d05d8b59770b873a`.
 
-Termination theorem updated at:
+Canonical promotion:
 
-`b7c64e08eba10aff65e35b41e09d51858cc35951`.
+`dba4a666a3e06682248112d20a6515d092250fbf`.
 
-Rigid terminal inventory updated at:
+Rigid-terminal promotion:
 
-`054c80592463632fe30588e40b0cb049f42da9c4`.
+`57d7e62fcc68fcbf5b1eceeb70827b279296160e`.
+
+Termination-theorem promotion:
+
+`a62a6f132095b3d389710964297415bfdf6adf6f`.
+
+---
+
+## Result 10 — Low-Endpoint Owner Clique Lemma
+
+For `r>=12`, any two regular owners with `d<=3` are target-adjacent. Otherwise zero-gap requires `S_x union S_y=A`, while the union has size at most six and `|A|=r+1>=13`.
+
+Thus all regular low-endpoint owners together with p form a target clique, so there are at most `r-2` such owners by `omega(F)<=r-1`.
+
+Status: `PROVED_SYMBOLIC`.
 
 ---
 
@@ -197,25 +213,27 @@ Rigid terminal inventory updated at:
 
 - medium `4<=d<=r-3`: impossible;
 - d0: quotient-neutral;
-- d1: at most five shell support classes, core exchange closure open;
-- d2: bounded twelve-vertex shell core plus at most four scalable heavy stars; linearly-high equality/positive-loss branch open;
+- d1: <=5 shell classes; q/tau-flat one-point core exchange remains;
+- d2: <=6 shell support vertices and <=15 shell classes; remaining difficulty is owner/core-support/transported-loss multiplicity inside these fixed classes;
 - d3: eliminated;
-- high d>=r-2: at most three owners, finite bounded-complement skeleton.
+- high `d>=r-2`: <=3 owners, finite bounded-complement skeleton.
 
-# Current potential status
+Thus **no surviving endpoint has an r-growing number of shell-support types**.
+
+# Potential status
 
 `(q,tau)` is genuine and bounded.
 
 K is redundant with q.
 
-`Q2=sum kappa^2` is an exact bounded candidate third coordinate with a closed update formula, but universal monotonicity is open.
+`Q2=sum kappa^2` is an exact bounded third-coordinate candidate with a closed update formula; universal monotonicity remains open.
 
 # MAIN-THEOREM IMPACT
 
-The general backend is no longer a growing endpoint case tree. Every source of r-growing *distinct support geometry* has been eliminated except at most four d2 heavy-star systems.
+The user's core design goal has been achieved at the shell-support level: case count now decreases/collapses to absolute constants rather than growing with r.
 
-No absolute sufficiently-large-r contradiction is certified yet.
+What is not yet proved is an all-large-r contradiction. The remaining scalability is multiplicity and core-support/excess data inside finitely many common-S classes.
 
 # NEXT SINGLE BLOCKER
 
-> **D2 Heavy-Star Multi-Pivot Compatibility:** for one scalable star centered at a high shell-incidence vertex, prove that simultaneous non-improvement of its owner repivots is impossible or forces a finite rigid equality skeleton. Then sum over the at most four hubs.
+> **Finite-Class d2 Core Multi-Pivot Compatibility:** fix one d2 shell pair `S={u,v}` with its exact parameters `b,h_u,h_v,sigma_u,sigma_v,a`; prove that simultaneous non-improving owners in this class either improve a bounded plateau coordinate or collapse to a finite impossible core-support skeleton. Then combine across at most fifteen classes.
