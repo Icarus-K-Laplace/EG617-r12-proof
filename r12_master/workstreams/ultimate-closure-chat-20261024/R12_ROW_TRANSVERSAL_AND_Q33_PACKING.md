@@ -100,3 +100,19 @@ This is a labelled packing theorem, not a contradiction by itself. It must be co
 - E408 Q33 joint compatibility of the high-k witness packing, all core rows, and the seven-block duplicate system.
 
 No proof status is promoted to EG617(r=12) complete.
+
+
+## 6. Exact count replay
+
+The arithmetic floors in Sections 3–4 are independently checked by the standard-library script verify_row_transversal_counts.py.
+
+Command:
+    python verify_row_transversal_counts.py
+
+Expected output includes:
+- E407 minimum high-k row counts A/B/C/D/E = 6/8/6/7/5;
+- Q33 minimum high-k row counts for beta=0,1,2,3 = 6/6/5/5;
+- the only E407 template-E profile attaining five high-k rows is (n0,n1,n2,n3)=(0,5,0,5);
+- the Q33 beta=2 five-high-row profile is (0,5,0,5), and beta=3 profiles are (0,5,0,5), (0,5,1,4), and (1,4,0,5).
+
+The script checks finite integer arithmetic only. It does not check graph realization, the Ramsey input contracts, or the global seven-block contradiction.
