@@ -333,12 +333,73 @@ Status: **`OPEN`**.
 
 **NO-HIGH-STOP LEMMA:** a canonical greedy process cannot first become `K_r`-free at `a>=6` for all sufficiently large `r`.
 
-Round 6 did not close this theorem. Specifically, `a=6` is still open; no high-a induction trim is proved; uniform Turán edit stability and a design-trimming implication are open.
+Round 6 did not close this theorem. Round 7 closed the uniform partition-stability subgap using Füredi's theorem and proved a global near-resolvable design with at most `3S_a(r)` bad pairs. However, `a=6` is still open; no high-a induction trim or design-trimming contradiction is proved.
 
 If this is closed, the requested front-end dichotomy is proved for all `r>=17` (or whatever final threshold the lemma requires).
 
 Latest state / proposal commits:
 
-- `CANONICAL_STATE.md`: `ea5f2a8d104239cf4d65a1b52d27960170db2bea`
-- `OPEN_GAPS.md`: `defa92989e533889406398ac7b67442a89ff75a1`
-- `NO_HIGH_STOP_ROUND2_LEMMAS.md`: `365f6b4e98fc49cd5586eef97afde2d52c0e8e35`.
+- `CANONICAL_STATE.md`: `00b152a60dbb479cb32e233a3a7480ecebbb2a03`
+- `OPEN_GAPS.md`: `a671769e80c9aeb4702c4848fe63d08165395871`
+- `NO_HIGH_STOP_ROUND2_LEMMAS.md`: `c4886cf7f4f8f2cfbc0a0ab23b737c7e83303cea`.
+---
+
+## 2026-10-24 — Round 7: uniform partition stability -> global near-resolvable design
+
+### NEW THEOREM / LEMMA
+
+**Global near-resolvable design theorem for a first high stop.**
+
+### Hypotheses
+
+First `K_r`-free canonical stop `R_a`, with `n=ar+1`, exact all-colour ledger `sum_i x_i=S_a(r)`, and inherited hereditary caps.
+
+### Exact conclusions
+
+For every color i, let `F_i` be the complement of its color graph; the target color uses `k_0=a`, and each non-target color uses `k_i=r`. Then `F_i` is `K_{k_i+1}`-free with exact Turán deficit `x_i`.
+
+By Füredi's quantitative Turán theorem, there is a `k_i`-part partition with at most `x_i` internal edges to delete. If `I_i` counts internal edges, `M_i` missing cross-pairs, and `Delta_i` part-size imbalance, then
+
+`I_i<=x_i`, `Delta_i+M_i=x_i+I_i<=2x_i`, and `I_i+M_i<=3x_i`.
+
+The part sizes `s_j` satisfy
+
+`sum_j (s_j-q)^2=2 Delta_i+1<=4x_i+1`,
+
+where `q=r` for the target partition and `q=a` for non-target partitions.
+
+Summing over all colors yields
+
+`sum_i I_i<=S_a(r)`, `sum_i M_i<=2S_a(r)`, and total partition defects `<=3S_a(r)`.
+
+Therefore at most `3S_a(r)` vertex pairs fail to belong to exactly one block across all color partitions. For fixed `a`, this is `O(r)` bad pairs among `Theta(r^2)` total pairs: a global approximate pairwise-balanced/resolvable design.
+
+### Proof sketch
+
+Use Füredi's theorem that a `K_{k+1}`-free graph with `t_k(n)-x` edges can be made `k`-partite by deleting at most `x` edges. The identity `x=Delta+M-I` gives the stated bounds. A pair that is in no partition block is charged to a missing cross-pair defect; a pair in multiple color blocks is charged to an internal-edge defect in at least one of those colors.
+
+### Dependency
+
+Internal: exact all-colour excess ledger. External: Füredi's quantitative Turán stability bound, as recalled by Balogh–Clemen–Lavrov–Lidický–Pfender, *Making K_{r+1}-free graphs r-partite* (2021), DOI `10.1017/S0963548320000590`.
+
+### Independent of r?
+
+Yes: the partition/edit bounds are uniform in the growing clique parameter. The total bad-pair count is symbolic in `a,r`.
+
+### Does this close NO-HIGH-STOP?
+
+No. The near-design can have `O(r)` exceptional pairs, on the same scale as the missing-class budget. Their incidence pattern has not yet been shown to admit an `r`-vertex transversal or to contradict first-stop minimality.
+
+### New status
+
+- uniform partition stability: `PROVED_ANALYTIC`;
+- global near-resolvable design: `PROVED_ANALYTIC`;
+- `a=6` exclusion: `OPEN`;
+- arbitrary `a>=7` induction trim: `OPEN`;
+- `NO-HIGH-STOP`: `OPEN`.
+
+### GitHub commits
+
+- theorem asset: `c4886cf7f4f8f2cfbc0a0ab23b737c7e83303cea`
+- canonical state: `00b152a60dbb479cb32e233a3a7480ecebbb2a03`
+- open gaps: `a671769e80c9aeb4702c4848fe63d08165395871`
