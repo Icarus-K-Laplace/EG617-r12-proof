@@ -117,3 +117,46 @@ The theorem-promotion gate reads these lines as the current explicit status inte
 - ANCHOR_K8: PROVED_ANALYTIC for r>=68; OPEN for 12<=r<68
 - ASYMPTOTIC_R0: OPEN
 - R12_FRONTEND_REC: COMPUTATION_CERTIFIED_ARITHMETIC_ONLY; BRIDGE_OPEN
+
+
+## Parameter-exact source reconciliation — 2026-10-24
+
+The machine-readable registry distinguishes **source theorem applicability** from **discharge of the assumption needed by the original EG617 reduction**.
+
+### RC_FROM_EXTRACTED_RESIDUAL
+
+- Source: branch `workstream/general-r-residual-core-extraction-20261024`, commit `614a956a7e964f42c0818eca05e3ca9e26a6458a`, file `general_r/workstreams/residual-core-extraction-chat-20261024/RESIDUAL_BRANCH_CLOSURE.md`.
+- Range: every `r>=17).
+- Theorem: once an induced legal `4r+1` residual exists, the full residual/core contract follows analytically.
+- Status: **PROVED ANALYTICALLY CONDITIONAL ON EXTRACTION**. The extraction/stopping dichotomy from the original counterexample remains OPEN, so this does not change the global RC status to PROVED.
+
+### ANCHOR_K8 — broad near-anchor contract
+
+- Broad theorem source: branch `workstream/general-r-asymptotic-20261024`, commit `aa7fbbda16ff0170c9bf7c440ca961a7a8aab3c0`, file `general_r/workstreams/asymptotic-chat-20261024/CANONICAL_STATE.md`.
+- Range: `r>=68) only.
+- Status: **PROVED_ANALYTIC_FOR_R_GE_68** in the stated broad near-anchor context; OPEN for `12<=r<68).
+- Do not infer the broad theorem below 68 from the exact-anchor theorem below.
+
+### EXACT_THREE_ANCHOR_K8 — specialized theorem, not a substitute for broad ANCHOR_K8
+
+- Source: branch `workstream/general-r-three-anchor-20261024`, commit `a934c3ccc22b6991cca5ba82f49ac9f3400748f0`, file `general_r/workstreams/three-anchor-chat-20261024/PUBLICATION_VERSION.md`.
+- Range: every `r>=12).
+- Exact contract: `|V(H)|=3r-1), `alpha(H)<=3), `omega(H)<=r-1), `delta(H)>=r), and three pairwise nonadjacent vertices of degree exactly `r).
+- Conclusion: `K=2e(H)-r(3r-1)>=8).
+- Status: independently audited analytic proof under that exact three-anchor hypothesis. This does **not** discharge broad `ANCHOR_K8) when the three-anchor premise is not established.
+
+### D1_SHELL_CLASS_BOUND source
+
+- Source: branch `workstream/general-r-repivot-termination-20261024`, commit `35fec3eaaab70b31e10b41065634b35b02a28e6`, file `general_r/workstreams/repivot-termination-chat-20261024/ENDPOINT_CLASSIFICATION.md`.
+- Range: `r>=12), conditional on A+B / RC + broad ANCHOR_K8.
+- Conclusion: at most five distinct d1 shell classes. This does not bound owner multiplicity within a class and does not close d1 nonextension.
+
+### Additional source-premise IDs
+
+- `EXTRACTED_4R_PLUS_1_RESIDUAL: OPEN` — a conditional input to the r>=17 residual/core theorem; global extraction remains open.
+- `NEAR_ANCHOR_TERMINAL_CONTRACT: CONDITIONAL` — must be established by the active analytic branch for the exact object; it is not supplied by a scalar certificate.
+- `CORE_CONTRACT: CONDITIONAL_ON_RC` — the exact core hypotheses required by the specialized three-anchor theorem.
+- `THREE_PAIRWISE_NONADJACENT_DEGREE_R_ANCHORS: CONDITIONAL` — a premise, not a universally established configuration.
+- `R12_CONTEXTUAL_RECURRENCE_BRIDGE: OPEN` — the historical r=12 arithmetic replay does not close the graph-level bridge.
+
+The parameter-admission matrix explicitly keeps all of these distinctions. No source in this ledger currently certifies an unconditional asymptotic threshold `r0); `ASYMPTOTIC_R0=NOT_AVAILABLE`.
