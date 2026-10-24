@@ -295,7 +295,7 @@ The six endpoint type classes A0,A1,B0,B1,C0,C1 have two independent transversal
 
 ### R23. Off-part witness excess — PROVED_CONDITIONAL
 
-An outside vertex with no same-part pair of fully-seen witness classes has a residual type triple with relation pattern (optional, matching, empty). Since each class has size at least a>4 and optional degree at most four, it must have at least a-4 additional neighbours in that residual triple. Therefore
+An outside vertex with no same-part pair of fully-seen witness classes has a residual type triple with relation pattern (optional, matching, empty). Since each class has size at least lambda>4 and optional degree at most four, it must have at least lambda-4 additional neighbours in that residual triple. Therefore
 
 kappa_o>=3lambda-4-r>=8.
 
