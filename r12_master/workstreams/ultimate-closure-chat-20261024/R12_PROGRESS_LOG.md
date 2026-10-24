@@ -54,3 +54,26 @@ Committed R12_SHELL_CORE_WITNESS_LEMMA.md at 020b64d5fdf3a4aa3abe66d86be34895657
 - Independent arithmetic check: exact values p_3(n)+floor(n/3)-1 versus D(n), n=40..47, all strictly exceed the cap (minimum gap 7 at n=40).
 - GitHub commit: 020b64d5fdf3a4aa3abe66d86be3489565760b22 for the theorem file; follow-up state updates are being committed in this sequence.
 - Next attack: turn the Q33 witness condition into a capacity contradiction using the four-unit core excess and seven-block near-Latin completion. Do not assume Q_b coincide or that aggregate defects vanish.
+
+
+## 2026-10-24 — Round 3: independent certificate replay and witness-capacity cross-cut
+
+### Replay
+- Independently reran V11 SHA256SUMS and verify_kernel_certificate.py: 684 weight assignments, 349 outside-count states, 259 labelled shells, 252 Family-A and 7 Family-B states; no completed parent graphs claimed.
+- Independently reran V12 SHA256SUMS and verify_q32_certificate.py: 8,677 weight vectors, 17,957 count states, 1,984 labelled shells; 90 D3/rho=1, 1,192 near-K12, 148 K9-pair-row screens; 554 remain OPEN under five rho=0 templates.
+- Replay is COMPUTATION_CERTIFIED for finite coverage only, not a proof that the remaining templates have no parent completion.
+
+### New theorem
+Committed R12_WITNESS_CAPACITY_CROSSCUT.md:
+1. Every independent 4-set in H hits at least three shell rows, using alpha(F)<=5 and omega(F)<=11.
+2. The hub-hit set of Q_b contains every missing hub of b and covers M[S].
+3. Every independent triple in H_b extends to an independent 4-set when t_b<=3; a nonextension for larger t_b requires t_b>=8-epsilon(X).
+4. In E408 Q33, each exact-129 color has at least five no-S K5 components; any selected five labels have sum k_b>=7-beta; their Q sets are disjoint within a color and pairwise intersect at most one across colors.
+
+### Impact
+- New proved necessary-structure lemmas: 3.
+- Open terminal contracts eliminated: 0.
+- E407 Q32: finite state coverage is now independently replayed; same-core completion remains OPEN.
+- E408 Q32/Q33: remains OPEN. Corrected arithmetic: Q32 gives e(H)=285 and excess6; Q33 gives e(H)=284 and excess4.
+- No scalar-capacity contradiction is claimed: 40 Q sets contribute 160 core memberships, below the coarse 47*11=517 cap.
+- Next attack: prove or disprove a labelled witness-packing incompatibility for the 284-edge core, while treating E408 Q32's 285-edge core separately.
