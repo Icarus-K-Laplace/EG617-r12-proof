@@ -120,7 +120,7 @@ The valid transversal theorem proves tau(Q)>=7 for the E407 v=29,m=49 and E408 Q
 
 For E407 the unconditional window is delta+epsilon_U<=16 and epsilon_U+2delta>=2, with 0<=delta<=16. The sharper delta<=15 bound is conditional on proving L non-four-partite. If delta=16, L is forced four-partite but non-complete. For E408 Q33, delta+epsilon_U<=17; the non-complete four-partite branch remains arithmetically compatible.
 
-The high-multiplicity star dichotomy e(H[U])=135 or >=144 is not accepted: its proof only forces the complement to be tripartite, not complete tripartite. The full-row shell-incidence union theorem additionally gives |union D_b|>=11 in E407 template A and >=10 in C. These results do not yet close any terminal.
+The high-multiplicity star dichotomy e(H[U])=135 or >=144 is not accepted: its proof only forces the complement to be tripartite, not complete tripartite. Audit correction: the shell-incidence union proof has a zero-support gap; safe full-row support-union floors are >=7 in E407 template A and >=6 in C, not 11/10, unless one separately proves every core vertex has a shell neighbour. See R12_SHELL_INCIDENCE_UNION_AUDIT.md. These results do not yet close any terminal.
 
 
 ## F12. E407 g=16, epsilon_U=0 corner
@@ -128,3 +128,13 @@ The high-multiplicity star dichotomy e(H[U])=135 or >=144 is not accepted: its p
 The valid boundary identities give e(L)=310, e(H[U])=96, e(U,W)=156, e(H[W])=32; Brouwer forces L four-partite with part sizes (7,7,7,8). The 49 witnesses cover every pair between the three seven-point parts once, while 21 pair slots between the eight-point part and the three seven-point parts remain unused; five of these are missing from L.
 
 A live audit constructed a modified TD(4,7) where the eighth point is used in one block, and a size-8 transversal T hits all 49 blocks without containing a whole part. Therefore “the eighth point is unused”, “all five missing edges meet one point”, and “every size-8/9 transversal contains a whole part” are not consequences of pairwise linearity alone. The full-core corner remains OPEN; additional degree, shell-support, or color-label constraints are needed.
+
+
+## F13. Minimum-transversal boundary classification (new, 2026-10-25)
+
+See R12_TRANSVERSAL_BOUNDARY_CLASSIFICATION.md and its arithmetic verifier.
+
+- The witness family has no two distinct 7-transversals with a nonempty intersection; pair counting across color classes forces distinct transversals to be disjoint.
+- E407 Q32's v=29, 49-witness boundary cannot have \(\delta\le1\); hence \(\delta\ge2\), where \(\delta=e(\overline{H[U]})-294\) counts complement edges not covered by the selected K4 witnesses.
+- E408 Q33's v=31, 56-witness boundary must satisfy \(2\delta+\epsilon_U\ge8\), together with \(\delta+\epsilon_U\le17\).
+- These are genuine exclusions of low-extra-edge integer profiles, but the remaining boundary kernels are OPEN. No result is transferred to E408 Q32's 285-edge core.
