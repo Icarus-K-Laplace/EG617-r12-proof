@@ -48,11 +48,13 @@ Every regular repivot of missing degree d satisfies
 
 `q_y>=d(r+1-d)`.
 
+Here `0<=d<=r`, since d is the missing degree inside an `(r+1)`-point shell and the vertex itself is not counted.
+
 At a maximum-q state under the global ceiling, any legal regular missing degree must satisfy
 
 `d(r+1-d)<=3r+2`.
 
-Because the quadratic is symmetric under `d<->r+1-d`, the possible d-values lie near the two endpoints.
+The quadratic is symmetric under `d<->r+1-d`, subject to the actual domain `0<=d<=r`.
 
 ## 4. Large-r collapse
 
@@ -68,7 +70,7 @@ Therefore:
 
 > **For every r>=15, every regular shell vertex at a legal maximal backend pivot has missing degree**
 >
-> **`d in {0,1,2,3,r-2,r-1,r,r+1}`.**
+> **`d in {0,1,2,3,r-2,r-1,r}`.**
 
 Thus all intermediate support sizes disappear automatically for sufficiently large r.
 
