@@ -411,7 +411,7 @@ No full legal-core counterexample was constructed. The static block model remain
 
 ### Round-5 exact-parameter follow-up
 
-Using h=r+1-2a, the off-part excess denominator is exactly
+Using h=r+1-2lambda, the off-part excess denominator is exactly
 
 3lambda-4-r=(r-3h-5)/2,
 
