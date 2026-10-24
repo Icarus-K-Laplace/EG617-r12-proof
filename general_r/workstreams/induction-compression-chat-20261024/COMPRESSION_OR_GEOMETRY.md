@@ -61,7 +61,7 @@ Canonical proof and graph-level sharpness note: [K-line LOW_SLACK_COORDINATIZATI
 
 ## 5. Exact remaining gap
 
-The J/K bridge is conditional on finding a low-slack color i != c at a vertex x_0 belonging to X. No theorem currently guarantees this alignment. Even when it holds, the witnesses are concentrated in a bounded number of clique blocks, but this does not yet force three directions, a net, or a contradiction.
+The old J/K neighborhood-low-slack bridge has an impossible premise under the full counterexample contract: K's Local Slack Gap Theorem gives s_i(x)>=r-1 for every x,i. The live Case B route is instead the alignment-free residual-excess theorem in ALIGNMENT_FREE_WITNESS_RIGIDITY.md, which extracts a q-net from R=V\\X. That net is genuine geometry, but its blocks are not shown to lie in a deletion shell and it does not yet imply a contradiction.
 
 The abstract hypergraph example with two disjoint clusters of all r-subsets still shows that matching/transversal data alone are insufficient to force affine geometry.
 
@@ -76,8 +76,8 @@ The abstract hypergraph example with two disjoint clusters of all r-subsets stil
 - Small-slack aligned case (s=1 or s=2, r>=4) => at most two witness-hosting blocks: PROVED.
 - Universal K-line excess floor and local degree budget: PROVED.
 - Existence of a full-counterexample neighborhood color with slack s_i(x)<=r-2: IMPOSSIBLE by K's Local Slack Gap Theorem; the earlier aligned bridge is conditional but vacuous under the full contract.
-- No-shell => many line-like blocks: NOT PROVED.
-- Kakeya contradiction: NOT AUTHORIZED.
+- Case B => residual q-net with at least ceil(q/2) orthogonal directions (q=r-1): PROVED.\n- No-shell => a deletion shell containing the net blocks: NOT PROVED.
+- Kakeya contradiction: NOT AUTHORIZED; the net blocks have not been shown to be shell-hitting objects.
 - Alignment-free residual budget/dichotomy and same-color symmetric-difference matchings: PROVED in ALIGNMENT_FREE_WITNESS_RIGIDITY.md.\n- Case A colored-packing budget and small-r label audit: PROVED but noncontradictory in COLORED_WITNESS_EDGE_BUDGET.md.\n- P(r) => P(r-1): NOT ESTABLISHED.
 
 
