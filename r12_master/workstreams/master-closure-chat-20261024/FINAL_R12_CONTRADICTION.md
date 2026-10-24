@@ -20,7 +20,7 @@ Prove that every 12-edge-coloring of K145 contains a 13-vertex set missing at le
 
 The two terminal branches still have unresolved cases:
 
-- **R(4,49) backend:** the exact maximal-pivot multi-S system is not yet proved to force three anchors, an admissible common-S / boundary-one-loss contract, or an independently eliminated finite incidence kernel. Higher-slack d2/d3 shallow-loss states and the fully decorated d2/d3 branch are not all covered. The common-S independent-triple branch no longer contributes an open case. The unresolved backend work is now concentrated in d2 multi-S/shallow-loss, non-triangular d3 shallow-loss, fully decorated branches, and universal extraction.
+- **R(4,49) backend:** E335--E340 remain open. The universal floor reduces their pivot ceilings to q<=30,31,32,33,34,35 respectively, but the exact maximal-pivot multi-S system is not yet proved to force an admissible common-S / boundary-one-loss contract or an independently eliminated finite incidence kernel. The common-S independent-triple branch is closed; remaining backend work is concentrated in d2 multi-S/shallow-loss, non-triangular d3 shallow-loss, and universal extraction.
 - **T61:** E407's five source-reported Q32 common-K11 templates have not been independently replayed and eliminated against one 284-edge core. E408 Q32/Q33 have not been shown incompatible with the same 284-edge core and the global seven-block near-Latin system.
 
 The new inequalities do not bridge these gaps automatically. In particular, the E408 Q33 identity `beta+X+G_B=3` is a necessary condition, not a contradiction.
