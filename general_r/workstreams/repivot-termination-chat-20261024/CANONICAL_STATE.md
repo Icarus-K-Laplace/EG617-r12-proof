@@ -305,7 +305,7 @@ Current preferred potential:
 
 All four coordinates are genuine bounded integers. Eta controls support overlap by converting one-point d2 overlaps exactly into d1 plateau transitions.
 
-`Q2=sum kappa^2` remains an exact bounded fifth-coordinate candidate, but universal monotonicity is not proved.
+`Q2=sum kappa^2` is an exact bounded statistic, but universal strict increase on every reversible Phi4-flat move is DISPROVED_AS_STATED. It may select a representative; it cannot by itself eliminate the terminal.
 
 ## Current theorem level
 
@@ -320,4 +320,4 @@ All four coordinates are genuine bounded integers. Eta controls support overlap 
 
 ## Unique next blocker
 
-**Clean Pair Nonextension / bounded-allowance d1 terminal.** Prove that a sufficiently large repivot-closed clean K2 pair system with matching cross graphs and no independent 4-transversal is incompatible with the hereditary/clique/multicolor constraints, or else derive a fifth-coordinate improvement. In parallel this same theorem should absorb the bounded-allowance d1 concentration forced by eta.
+**Clean Pair Nonextension / bounded-allowance d1 terminal.** Prove that a sufficiently large repivot-closed clean K2 pair system is incompatible with the hereditary/clique/multicolor constraints, and absorb the bounded-allowance d1 concentration forced by eta. A universal strict Q2-increase route is ruled out by reversibility.
