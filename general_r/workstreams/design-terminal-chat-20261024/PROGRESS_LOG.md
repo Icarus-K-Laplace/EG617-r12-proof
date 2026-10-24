@@ -272,3 +272,20 @@ The destination-injectivity lemma has been tightened: it assumes the **exact hub
 
 Corrected commit:
 - `HUB_PROPAGATION_THEOREM.md`: `8f99c7c48fab62810930253fe27903f2db5bfd75`.
+
+
+### Robust source-pair inequality and exact-star caveat
+
+Added HP10:
+- for two internal target nonedges (P_j,P_k) whose four cross pairs are all target-nonedges, define the common non-neighborhood sets (U_\ell) in each of the three other groups;
+- prove the exact inequality (|U_\ell||U_m|\le A), where (A\le27r+15) is the total target cross-edge count;
+- conclude at least two of the three remaining groups are covered up to (O(\sqrt r)) exceptions by the four endpoints' target neighborhoods.
+
+This is robust to arbitrary additional target cross edges, but requires compatible source nonedges. The exact-star permutation theorem remains conditional; it is not claimed for a general (O(r))-edge perturbation.
+
+Latest assets:
+- `HUB_PROPAGATION_THEOREM.md`: `371449e4f8a9aa707c8e7f97a92054b689ab2016`.
+- `MULTICOLOR_DEFECT_BUDGET.md`: `9d194d43d2f94e05f375a681c9f56e8475fafa28`.
+- `CANONICAL_STATE.md`: `019381c2f1543f9e4868b8ffe9e1e9d0b1a09716`.
+
+The exact-star permutation theorem's exactness qualification was also synchronized to `NONEXTENSION_CLOSURE.md` (commit `d5332842f97d21737f4f8aa62e930c9a4ed0715b`) and `CANONICAL_STATE.md` (commit `27adfaa3dd1b123744977e6ca364ac69587db917`).
