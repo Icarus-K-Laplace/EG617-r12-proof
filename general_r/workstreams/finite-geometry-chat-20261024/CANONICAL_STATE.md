@@ -44,7 +44,9 @@ See TRANSVERSAL_BLOCKER_LEMMA.md and SMALL_SLACK_BLOCKER_CLASSIFICATION.md. The 
 \sum_{uv\in E(F)}\frac{1}{|B_{a(u)}||B_{a(v)}|}\ge1.
 \]
 
-If there is only one relevant defect edge, it must join two singleton residual parts. If there are at most two relevant edges, either there is a singleton-singleton edge or the two edges join a singleton part to the two different vertices of a size-two part. The latter may involve three parts, but the J-shell size budget rules that case out for q>=4.
+If there is only one relevant defect edge, it must join two singleton residual parts. If there are at most two relevant edges, either there is a singleton-singleton edge or the two edges join a singleton part to the two different vertices of a size-two part.
+
+The latter can involve three parts for arbitrary residual parts. **Only in the aligned J-shell setting** where B_a=P_a minus Y and |Y|=2q-1 is the three-part 1,1,2 pattern ruled out for q>=4.
 
 ### 4. Slack-one crossed pattern
 
@@ -65,7 +67,7 @@ If at most one color is low-slack at x, then sum_i s_i(x)>=(q-1)^2, compatible w
 - Two low-slack colors give two orthogonal partitions only.
 - q being a prime power does not coordinatize arbitrary extracted partitions.
 - Three full size-q blocks in distinct directions with pairwise intersections at most one would exceed a 2q-1 shell, but no such blocks have been extracted from compression failure.
-- The J/K bridge is conditional: if a tight transversal X contains x_0 and a color i != c is low-slack on V minus {x_0}, then private witnesses of color i are confined to a bounded number of clique blocks, and for slack 1 or 2 they are confined to at most two blocks (q>=4).
+- The J/K bridge is conditional: if a tight transversal X contains x_0 and a color i != c is low-slack on V minus {x_0}, then private witnesses of color i are confined to a bounded number of clique blocks, and in the aligned shell case slack 1 or 2 confines them to at most two blocks (q>=4).
 
 ## Current verdict
 
