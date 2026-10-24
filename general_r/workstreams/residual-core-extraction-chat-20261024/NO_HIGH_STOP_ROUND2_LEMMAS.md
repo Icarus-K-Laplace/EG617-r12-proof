@@ -369,7 +369,6 @@ The theorem localizes all defects inside the target partition to (O(a^2)) hub ve
 
 - (a=6) is impossible.
 - Any (a\ge7) candidate contains a legal induced (R_{a-1}).
-- A uniform edit-distance partition-stability theorem is proved via Füredi.
 - Exact pairwise orthogonality / an exact resolvable-design skeleton.
 - Hub propagation to a common target part; the hub-localization theorem alone does not give it.
 - A design-trimming implication yielding an earlier (R_5) or (R_4).
