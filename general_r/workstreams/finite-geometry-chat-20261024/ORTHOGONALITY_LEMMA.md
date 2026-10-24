@@ -1,65 +1,37 @@
 # Exact Orthogonality from Two Turan-Equality Colors
 
-Status: **PROVED for all `q>=2`; no prime-power assumption needed.**
+Status: **PROVED for all q>=2** as a graph statement. For a hypothetical counterexample with q>=3, a stronger consequence rules out even one exact-equality color.
 
-## Setup
+## Setup and equality theorem
 
-Let `W` be a set of `q^2` vertices in an edge-coloring, and let `G_i[W]`, `G_j[W]` be two color graphs satisfying
+Let W have q^2 vertices and let G_i[W] be a color graph with alpha(G_i[W])<=q. The minimum edge count is
 
-`alpha(G_i[W]) <= q`, `alpha(G_j[W]) <= q`.
+\[
+m_q=q\binom q2.
+\]
 
-The minimum number of edges in a `q^2`-vertex graph with independence number at most `q` is
+Equality holds exactly when G_i[W] is a disjoint union of q copies of K_q.
 
-`m_q := q*C(q,2) = q^2(q-1)/2`.
+## Theorem K.1 — Two equality partitions are orthogonal
 
-This is the complement form of Turan's theorem. Equality holds iff the graph is a disjoint union of `q` cliques `K_q`.
+If distinct colors i,j both have exactly m_q edges on W, their equality partitions A_1,...,A_q and B_1,...,B_q satisfy
 
-## Theorem K.1
+\[
+|A_a\cap B_b|=1
+\]
 
-If
+for every a,b.
 
-`e(G_i[W]) = e(G_j[W]) = m_q`,
+Proof: no intersection can contain two vertices, since the edge between them would have both colors i and j. There are q^2 block intersections and q^2 vertices, so every intersection has size one.
 
-then the two clique decompositions are orthogonal: every `i`-clique meets every `j`-clique in exactly one vertex.
+## Stronger counterexample corollary — No exact-equality color on any restriction
 
-### Proof
+Let x be the vertex outside W in a hypothetical counterexample on q^2+1 vertices. If one color i had e(G_i[W])=m_q, then K.5 in LOW_SLACK_COORDINATIZATION.md with s=0 forces a block A_a such that every edge from x to A_a has color i. Since A_a itself is a color-i K_q, A_a union {x} is a monochromatic K_(q+1), contradicting the counterexample property.
 
-Equality in Turan gives partitions
+Therefore
 
-`W = A_1 disjoint union ... disjoint union A_q`,
+\[
+\boxed{s_i(x)=e(G_i-x)-m_q\ge1\quad\text{for every }i,x.}
+\]
 
-`W = B_1 disjoint union ... disjoint union B_q`,
-
-with every `A_a` and `B_b` of size `q`, and with all pairs inside `A_a` colored `i`, all pairs inside `B_b` colored `j`.
-
-Because the edge-coloring assigns a unique color to each edge, no intersection `A_a intersect B_b` can contain two vertices: otherwise the edge between those two vertices would simultaneously have colors `i` and `j`.
-
-Hence
-
-`|A_a intersect B_b| <= 1`
-
-for all `a,b`.
-
-There are `q^2` ordered block pairs `(a,b)` and exactly `q^2` vertices. Every vertex lies in exactly one such intersection. Therefore all `q^2` intersections have size exactly one.
-
-## Corollary K.2 — Local nonextension test
-
-Let `chi` be a hypothetical counterexample to `P(q)` on `q^2+1` vertices. Fix any vertex `x` and put `W=V\{x}`.
-
-Then **at most one** color graph on `W` can have exactly `m_q` edges.
-
-### Proof
-
-If two colors were exact, Theorem K.1 would give two orthogonal `q`-by-`q` clique partitions on `W`. The abstract two-partition nonextension theorem already proved in `GENERAL_R_AFFINE_PLANE_NONEXTENSION.md` says that no new vertex `x` can be attached while keeping every `(q+1)`-set incident with both colors. Contradiction.
-
-## Equivalent slack form
-
-For each color `i` and removed vertex `x`, define
-
-`s_i(x) := e(G_i)-d_i(x)-m_q >= 0`.
-
-Then in any counterexample to `P(q)`, for every vertex `x`,
-
-`#{ i : s_i(x)=0 } <= 1`.
-
-This is an exact multicolor anti-equality constraint. It is a natural starting point for a quantitative stability theorem in which `s_i(x)` is small but nonzero.
+This is stronger than the earlier “at most one equality color” statement. The two-partition orthogonality theorem remains valid and useful for positive low slacks, but exact equality is individually impossible in a genuine counterexample.
