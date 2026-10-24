@@ -378,3 +378,60 @@ throughout the four-partite E408 Q33 minimum-support boundary.
 The sibling file R12_E408_Q33_FOUR_PARTITE_S0_10_EXCLUSION.md correctly identifies the possible degree pattern \((7^6,8^9,10)\) if S0=10 and k=6, but its final selected-pair inequalities in the s=1 and s=2 cases are not justified. A pair of selected large-part vertices that is not contained in a Q block need not be an extra L-edge: it can instead be an H-edge, because four-partiteness of L does not mean L is complete four-partite. The independent clique-capacity proof above avoids this invalid inference and still excludes S0=10 under the retained core contract.
 
 Scope remains the four-partite, minimum-support E408 Q33 kernel only. The non-four-partite branch, other support sizes, E408 Q32, E407, and the original K145 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## 14. E407 Q32 49-witness boundary: exclude delta=2
+
+This strengthens the general E407 boundary from \(\delta\ge2\) to
+\[
+\boxed{\delta\ge3}.
+\]
+No four-partite assumption is used.
+
+### 14.1 At most two 7-transversals; each supports at most six W vertices
+
+Let \(\mathcal Q\) be the 49-block family on U, with seven color classes of seven disjoint Q-blocks each. A 7-transversal is a 7-set meeting every Q block.
+
+Two distinct 7-transversals cannot overlap: if they overlap in s∈{1,…,6} points, then in each of the seven colors the \(7-s\) blocks indexed by the first transversal's exclusive points pair them with distinct exclusive points of the second; pairwise linearity forbids any such pair from repeating across colors, requiring \(7(7-s)\le(7-s)^2\), impossible.
+
+There cannot be three pairwise-disjoint 7-transversals \(T_1,T_2,T_3\). They would leave R=U\\(T_1∪T_2∪T_3) of size eight. Every Q would contain one point from each T_i and one point from R. Let q_r be the number of colors whose seven-block class omits r. Since each color covers 28 of the 29 U-points, \(\sum_{r\in R}q_r=7\). For each r, in the \(7-q_r\) colors where r is covered, its pairs with each T_i are distinct by linearity, so r has at most q_r H-neighbours in each T_i. Therefore
+\[
+d_H(r)\le 7+3q_r.
+\]
+Since \(d_H(r)\ge12\), each q_r≥2, giving \(\sum_R q_r\ge16\), contradiction. Thus there are at most two distinct 7-transversals that occur as W-neighbourhoods.
+
+For a fixed 7-transversal T, let \(W_T=\{w\in W:N_H(w)\cap U=T\}\). The set W_T is a clique: choose any Q containing x∈T; because T hits every block and each color class has seven disjoint blocks, Q meets T exactly once, so Q\\{x} is an independent triple in U\\T. Every vertex in W_T is anticomplete to U\\T. If two W_T vertices were nonadjacent, they plus that triple would form an independent five-set, contradicting \(\alpha(H)\le4\).
+
+Each w∈W_T has \(d_H(w,W)=12+\epsilon_w-7=5+\epsilon_w\). If \(|W_T|\ge7\), the clique W_T forces every w∈W_T to have \(\epsilon_w\ge1\), so the total core excess would be at least seven, contradicting \(\sum_H\epsilon_x=4\). Hence \(|W_T|\le6\), and the total number N_7 of degree-seven W-neighbourhoods satisfies
+\[
+\boxed{N_7\le12}. \tag{14.1}
+\]
+
+### 14.2 The delta=2 equality pattern is impossible
+
+For the E407 boundary,
+\[
+e_H(U,W)=124+2\delta+\epsilon_U,\qquad
+N_7\ge20-2\delta-\epsilon_U.
+\]
+If \(\delta=2\), (14.1) implies
+\[
+12\ge N_7\ge16-\epsilon_U.
+\]
+Since \(\epsilon_U\le4\), this forces \(\epsilon_U=4\), \(N_7=12\), and \(\epsilon_W=0\). There must be exactly two 7-transversals \(T_1,T_2\), each supporting six vertices of W with that U-neighbourhood.
+
+Each \(W_{T_i}\) is a K6. Its vertices have degree five inside W because \(\epsilon_W=0\) and each has exactly seven U-neighbours; hence they have no W-neighbours outside their own K6.
+
+Each T_i must contain at least one J-edge: otherwise T_i is a K7 in H, and together with the K6 \(W_{T_i}\) would give a monochromatic K13. Since \(\delta=2\), there is exactly one J-edge inside each T_i and no J-edge elsewhere.
+
+The 49 Q-blocks use every pair in \(T_1\times T_2\) exactly once, so H has no edges between T_1 and T_2. Put \(R=U\\(T_1∪T_2)\), so |R|=15. Every Q has one point in each T_i and two points in R. For any x∈T_i, the seven Q-blocks containing x use 14 distinct vertices of R, because a repeated x–r pair would violate linearity. Exactly one x–r pair is therefore uncovered by all Q-blocks. Since all J-edges are already inside T_1 and T_2, that uncovered pair is an H-edge. Thus each x∈T_i has exactly one H-neighbour in R.
+
+Now take any x∈T_i not incident to its unique J-edge. It has six H-neighbours inside T_i, one H-neighbour in R, and all six vertices of \(W_{T_i}\) as H-neighbours. Therefore \(d_H(x)\ge13\), so \(\epsilon_x\ge1\). Each T_i has five such non-endpoints, giving at least ten units of core excess, contradicting the total excess four.
+
+Therefore \(\delta\ne2\), and the already-proved \(\delta\ge2\) yields
+\[
+\boxed{\delta\ge3}
+\]
+for the full E407 Q32 v=29 / 49-witness boundary, whether L is four-partite or not.
+
+This still does not eliminate the boundary: \(\delta=3,\ldots,16\) remain subject to the joint core-budget constraints.
