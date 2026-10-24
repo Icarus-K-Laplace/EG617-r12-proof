@@ -121,3 +121,10 @@ d_{ij}(C)\ge k+\max(2-\ell,2-c)-2.
 This is zero for a single cell or a two-cell matching, one for an adjacent two-cell mask or any three-cell mask, and two for the full mask. Hence the sum of these forced costs over all exact colors low-slack on the same block pair is at most 12.
 
 **Gap remains:** no proof yet excludes the one-cell / matching patterns simultaneously across the seven blocks. The new inequality is a branch filter, not an UNSAT certificate.
+
+
+## 10. Exceptional-row graph alpha-two constraint
+
+For one exact-129 color C, take both exceptional rows from every low-slack outer block. Their induced C-graph has independence number at most two. Any independent triple would have pairwise-disjoint complementary cliques in the 11-point gadget; this forces at least22 gadget incidences but the three rows have at most24 total incidences, leaving at most two incidences in the ten isolated K5 components. Thus no K5 component can be fully covered, and one vertex from each component plus the triple contradicts alpha(C)<=12.
+
+For k low-slack blocks, the exceptional-row graph has at least k(k-1) C-edges. If equality holds, it is exactly two disjoint K_k cliques, with the two exceptional rows in every block on opposite sides. This identifies the exact zero-excess pattern; deviations consume duplicate budget but are not yet ruled out.
