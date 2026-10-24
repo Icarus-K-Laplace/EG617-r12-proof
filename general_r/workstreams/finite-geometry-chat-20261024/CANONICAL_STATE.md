@@ -106,3 +106,13 @@ The global high-slack contradiction remains OPEN: `sum_i s_i(x)=m_q` is compatib
 For every full hypothetical counterexample, `s_i(x)>=q-1` for all `x,i`. The proof combines (i) the low-slack structure theorem, (ii) the weighted blocker, and (iii) the q+1-set color-coverage condition on `{x} union A_a` for each monochromatic K_q block. Each block can contain at most one i-neighbor of x, while the blocker would force at least q+1 such neighbors if `s_i(x)<=q-2`.
 
 This is a new exact multicolor rigidity theorem, but not an EG617 contradiction and not an H seed-floor theorem. See `HIGH_SLACK_COMPATIBILITY.md` and `SEED_FLOOR_INTERFACE.md`. The prior small-slack structural statements remain conditional graph lemmas; they must not be described as realizable local patterns of a counterexample.
+
+## Round 2 — residual multinet extraction from J's tight-transversal case
+
+New cross-workstream theorem: RESIDUAL_MULTINET_EXTRACTION.md. It cites J branch commit 009a546cf0d66e4060a601bba168674214e7ac6c and does not copy an unverified proof.
+
+Under J's Case B contract, put q=r-1 and R=V\\X, |R|=q². The residual excesses of the q colors i!=c satisfy b_i>=0 and sum b_i<=C(q,2). Therefore at least ceil(q/2) colors have b_i<=q-2. For q>=3, Brouwer's threshold gives a q-clique partition for each such color, and any two of these partitions are orthogonal. Hence Case B forces a q-net with at least ceil(q/2) directions.
+
+Exact consequence: N(q)>=ceil(q/2)-2 MOLS of order q. In particular, a hypothetical r=11 Case B counterexample forces three MOLS(10), whose existence remains open (Bright–Keita–Stevens, EJC 33(1) (2026), DOI 10.37236/13960). This is a conditional structural reduction, not a contradiction.
+
+Subcase: if alpha(G_c[R])<=q as well, then all residual excesses vanish and R is an affine plane of order q. No extension contradiction with X has yet been proved. Case A remains outside this extraction.
