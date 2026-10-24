@@ -74,9 +74,11 @@ Full proof: SLACK_ONE_CROSS_PATTERN.md. This is a rigid local pattern, not a con
 
 For N=q^2+1, every color has e_i>=m_q+q. Writing e_i=m_q+q+a_i gives sum_i a_i=m_q, s_i(x)=q+a_i-d_i(x), and sum_i s_i(x)=m_q. Also sum_x s_i(x)=q(q-1)+(q^2-1)a_i. Scalar averaging alone does not force two low-slack colors.
 
-## High-slack branch: audited, not closed
+## Round 2 high-slack audit — local gap proved, global contradiction open
 
-If at most one color is low-slack at x, then sum_i s_i(x)>=(q-1)^2, compatible with m_q. The formal scalar profile a_i=q(q-1)/2, d_i(x)=q, s_i(x)=q(q-1)/2 satisfies all current scalar identities, including a_i>=q-1, but is not claimed to be graph-realizable. A genuine multicolor compatibility inequality is still needed.
+The new theorem in `HIGH_SLACK_COMPATIBILITY.md` proves `s_i(x)>=q-1` for every vertex x and every color i in a full hypothetical counterexample. Thus no color can be low-slack at any vertex; the former `at most one low-slack color` branch is superseded. This follows by combining the existing low-slack block decomposition and weighted blocker with the fact that each block plus x must contain all q colors.
+
+The global high-slack contradiction remains OPEN: `sum_i s_i(x)=m_q` is compatible with every term being at least q-1. The formal scalar profile remains only an abstract scalar profile, not a graph-realizable example.
 
 ## Finite geometry: exact limits
 
@@ -87,13 +89,20 @@ If at most one color is low-slack at x, then sum_i s_i(x)>=(q-1)^2, compatible w
 
 ## Current verdict
 
-- Low-slack coordinatization: PROVED.
+- Low-slack coordinatization conditional theorem: PROVED, but its premise `s_i(x)<=q-2` is impossible under the full counterexample contract by the new local slack-gap theorem.
 - Weighted blocker inequality and two-block forcing: PROVED.
 - Universal global excess floor a_i>=q-1: PROVED.
 - Local multicolor degree-budget inequality: PROVED.
-- Slack-one crossed pattern: PROVED conditionally.
+- Slack-one crossed pattern: PROVED as a conditional lemma; its premise is vacuous in a full hypothetical counterexample.
 - Conditional tight-transversal interface: PROVED.
 - Global low-slack alignment: OPEN.
 - High-slack contradiction: OPEN.
 - Full affine-plane/net completion: OPEN.
 - Prime-power P(q): OPEN.
+
+
+## Round 2 — Local Slack Gap Theorem
+
+For every full hypothetical counterexample, `s_i(x)>=q-1` for all `x,i`. The proof combines (i) the low-slack structure theorem, (ii) the weighted blocker, and (iii) the q+1-set color-coverage condition on `{x} union A_a` for each monochromatic K_q block. Each block can contain at most one i-neighbor of x, while the blocker would force at least q+1 such neighbors if `s_i(x)<=q-2`.
+
+This is a new exact multicolor rigidity theorem, but not an EG617 contradiction and not an H seed-floor theorem. See `HIGH_SLACK_COMPATIBILITY.md` and `SEED_FLOOR_INTERFACE.md`. The prior small-slack structural statements remain conditional graph lemmas; they must not be described as realizable local patterns of a counterexample.
