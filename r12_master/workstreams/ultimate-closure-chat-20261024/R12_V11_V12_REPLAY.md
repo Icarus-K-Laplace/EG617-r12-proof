@@ -62,3 +62,8 @@ The finite kernel certificate and the screen's labelled-state coverage replay as
 - It says nothing that closes E408 Q32 or Q33: V12's E408 sections explicitly retain OPEN status and do not claim exhaustive E408 coverage.
 
 Accordingly, the V11/V12 finite enumeration status is now COMPUTATION_CERTIFIED / INDEPENDENTLY REPLAYED in this workstream, while the E407 and E408 terminal exclusion remains OPEN.
+
+
+## Checksum-order note
+
+The pristine ZIPs were re-extracted into fresh directories and every entry in each SHA256SUMS.txt passed **before** the verifier was run. The verifier intentionally rewrites its own replay JSON, and the V12 verifier also regenerates Q32_KERNEL_CASE_TABLE.csv. Running sha256sum -c again in that mutated working directory will therefore report those generated outputs as changed. This is expected; it is not an archive-integrity failure. Re-extract the original ZIP to repeat the clean pre-run checksum check.
