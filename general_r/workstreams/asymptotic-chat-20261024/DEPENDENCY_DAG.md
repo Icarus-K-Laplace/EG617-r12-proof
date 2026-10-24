@@ -1,97 +1,59 @@
 # Dependency DAG — Asymptotic Synthesis
 
-## Current headline DAG
+Updated: 2026-10-24  
+Branch: workstream/general-r-asymptotic-20261024
 
-```text
-Problem 617 counterexample at r>=68
-        |
-        v
- H_A^ext: extract legal 4r+1 residual OR 5r+1 design terminal  [OPEN]
-        |
-        +-----------------------------+
-        |                             |
-        v                             v
-  4r+1 induced residual          5r+1 design terminal
-        |                             |
-        v                             v
- residual-contract theorem       H_D robust nonextension [OPEN]
-      r>=17 [PROVED]
-        |
-        v
- core H: |H|=3r-1, alpha<=3, omega<=r-1, delta>=r
-        |
-        +--> direct near-anchor triple
-                  |
-                  | if K<=7, parity => K<=6
-                  v
-           near-anchor reduction
-                  |
-                  v
-           exact degree-r triple
-                  |
-                  v
-     three-anchor AES theorem r>=68 [PROVED_ANALYTIC]
-                  |
-                  v
-               K>=8
-                  |
-                  v
-     q+epsilon = 3r+3-K/2
-                  |
-                  v
-           q<=3r-1-epsilon
-                  |
-                  v
-        medium d=4,...,r-3 impossible
-                  |
-        +---------+-----------------------+
-        |             |          |        |
-      d0/d1          d2         d3     high d>=r-2
-        |             |          |        |
-        |             |          v        v
-        |             |      closed    <=3 owners,
-        |             |                 <=9 shell kernel,
-        |             |                 <=8 signatures
-        +-------------+--------------------+
-                      |
-                      v
-          H_C* remaining endpoint closure [OPEN]
-                      |
-                      v
-             residual contradiction
-```
+## Primary route: bypass the scalable d2 backend
 
-Full theorem needs both H_A^ext branches to die.
+Hypothetical Problem-617 counterexample  
+→ A_ext*: contextual 4r+1 / anchored 5r+1 dichotomy [OPEN]  
+→ either a 4r+1 residual or an anchored 5r+1 terminal.
 
-## Newly closed front dependency
+**4r+1 branch:** residual contract for r ≥ 17 [PROVED] → delta(F)=r+1 → contextual U_(4,1) cap gap (3r−13)/2 > 0 [PROVED] → contradiction.
 
-The following node is no longer open above r=17:
+**5r+1 branch:** delta(T) ≥ r plus contextual cap → delta(T) ∈ {r,r+1} [PROVED] → direct near-anchor triple for r ≥ 67 [PROVED] → common-antineighbourhood compression [PROVED] → |W|=2r, 2r+1 impossible for r ≥ 11 [PROVED] → if delta(T)=r+1, |W|=2r−1 Cell A/B excluded for r ≥ 25 [PROVED] → D_low finite-offset terminal nonextension [OPEN] → P(r).
 
-> from an extracted `4r+1` residual satisfying `alpha<=4`, `omega<=r-1`, and the inherited cap, derive `delta(F)=r+1`, an exact degree-(r+1) pivot, and core `delta(H)>=r`.
+The exact remaining windows for D_low are:
+- delta(T)=r: 2r−4 ≤ |W| ≤ 2r−1;
+- delta(T)=r+1: 2r−7 ≤ |W| ≤ 2r−2.
 
-This is `PROVED_ANALYTIC` in the residual-extraction sibling. Consequently the asymptotic front blocker is strictly upstream: **extract 4r+1, or land in a controlled 5r+1 terminal**.
+**Do not remove the low-degree |W|=2r−1 case:** the Cell A/B exclusion theorems use the high terminal assumption delta(T)=r+1.
 
-## Proven imported nodes
+## Conditional theorem S67-low
 
-- hereditary cap and exact `4r+1` / `5r+1` order algebra;
-- extracted-residual contract for r>=17;
-- backend conservation and repivot identities;
-- near-anchor reductions;
-- exact three-anchor contradiction for r>=68;
-- medium support exclusion;
-- d3 common-S closure;
-- high endpoint bounded kernel;
-- exact affine-plane nonextension model.
+For every r ≥ 67,
+\[
+A_{ext}^*(r)\land D_{low}(r)\Longrightarrow P(r).
+\]
+Status: CONDITIONAL_ON_Aext_Dlow + ASYMPTOTIC_ANALYTIC.
 
-## Open nodes blocking unconditional all-large-r
+This route does not invoke H_B or C*. It also weakens H_D: only the finite-offset near-anchor terminal family must be excluded, not every design-like terminal in full generality.
 
-1. **A_ext:** upstream extraction / stopping classification;
-2. **C-d2:** scalable d2 plateau/equality/positive-loss closure;
-3. **C-d0/d1:** freeze/close the shallow endpoint sectors;
-4. **C-high:** contradiction/improvement for remaining bounded high skeletons;
-5. **D-stability:** classify the 5r+1 terminal into a nonextendable rigid design class.
+## Legacy backend route S68-v2
 
-## Non-blockers above 68
+The earlier route remains valid as a separate conditional composition:
+\[
+A_{ext}(r)\land C^*(r)\land D(r)\Longrightarrow P(r),
+\qquad r\ge68.
+\]
+Status: CONDITIONAL_ON_Aext_C*_D + ASYMPTOTIC_ANALYTIC.
 
-- residual core minimum-degree certification: proved from extracted residual for r>=17;
-- Exact Three-Anchor H_B: derived analytically for r>=68.
+It is no longer the shortest route because the contextual 4r+1 branch is already killed by the full-colour (k,s) cap and the 5r+1 terminal has a direct near-anchor reduction.
+
+## Shared C/D transversal-cover interface
+
+A single weighted transversal-cover lemma applies to two distinct objects without identifying them:
+
+1. **Clean pair exchange:** for every four clean 2-blocks, alpha(H) ≤ 3 forces every endpoint transversal to contain a target edge. The exact 2-SAT audit strengthens the elementary cover inequality to at least six cross-block target edges.
+2. **TD(5,r) terminal:** a missing target pair in one target group plus one point from each of the other four groups is a six-set; alpha(G0) ≤ 5 forces a target cross edge. The weighted cover inequality yields the existing cylinder lower bound and bounded-hub concentration.
+
+The residual-core common-S pivot system is connected by separate exact repivot/owner-capacity identities; no unproved graph isomorphism between it and the TD block system is assumed.
+
+This shared interface is useful accounting, **not** a terminal contradiction by itself. The clean-pair branch still has a linear feasible interval, and the TD branch still has an OPEN defect-chain propagation problem.
+
+## Imported nodes and provenance
+
+- Residual branch closure: theorem source commit 07cd8fb58ffd93d234b1e8b6104f939175d7fbda; current residual source head 7a4fb4c37cefec8d801fc7deb778568bfb24002e.
+- Contextual cap plane: current architecture head a922c4d7646eb8d0087bde8547562c8aace02ee2.
+- C repivot endpoint: current head 35fec3eaaab70b31e10b41065634b35b02a28e6c.
+- D design terminal: current head 5b4162c239d3dfad84d130c3015a0db5919228c4.
