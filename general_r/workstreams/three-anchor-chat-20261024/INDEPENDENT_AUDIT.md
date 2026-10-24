@@ -92,7 +92,7 @@ Every excess is nonnegative; \(K\) is even; excluding \(K\le6\) proves \(K\ge8\)
 
 ## Computational status and limitations
 
-The local arithmetic verifier passed all checks recorded in ARITHMETIC_AUDIT_RESULTS.md. It is a finite cross-check of threshold inequalities and equality signatures only.
+The local arithmetic verifier passed all checks recorded in ARITHMETIC_AUDIT_RESULTS.md. CONNECTOR_SKELETON_AUDIT.py also enumerated every labelled c=3/c=4 connector adjacency graph, allowed focus-owner assignment, and connector-excess allocation for r=12,13,14,15 under the local rectangle relaxation; the outputs are in CONNECTOR_SKELETON_AUDIT_RESULTS.md. Its only low-budget c=4 survivors are the already-analyzed r=12 two-focus overlap signatures, and its r=13 c=3 survivors are variants of the single (6,0,2,2,0) signature. These are relaxed skeleton checks, not graph enumeration.
 
 **No full graph-level SAT/ILP counterexample search was run.** No Z3, OR-Tools, or PySAT backend was installed. The proof is not being certified by computation, and no graph-level exhaustive-search claim is made. This limitation does not leave a mathematical proof gap because the theorem's proof is analytic; it does mean the requested independent graph-constraint search remains unperformed.
 
@@ -102,6 +102,7 @@ The local arithmetic verifier passed all checks recorded in ARITHMETIC_AUDIT_RES
 - LEMMA_VERIFICATION.md gives the charge-additivity proof, complete empty-part derivation, and the degree-two cover proof.
 - PROOF_DEPENDENCY_MAP.md records the dependencies and status of every substantive lemma.
 - ARITHMETIC_AUDIT.py and ARITHMETIC_AUDIT_RESULTS.md provide the reproducible local arithmetic cross-check.
+- CONNECTOR_SKELETON_AUDIT.py and CONNECTOR_SKELETON_AUDIT_RESULTS.md enumerate connector adjacency/focus skeleton relaxations; they are not a whole-graph search.
 
 UNIFIED_SHORT_PROOF.md remains a concise summary; by itself it omits some derivation details that are now supplied in the publication version and helper-lemma file.
 
