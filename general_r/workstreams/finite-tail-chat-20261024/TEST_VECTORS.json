@@ -1,0 +1,62 @@
+{
+  "schema": "eg617-finite-tail-test-vectors-v1",
+  "scope": "deterministic reduced-CSP generator regression vectors only; no EG617 theorem claim",
+  "vectors": [
+    {
+      "r": 12,
+      "profile": "residual-core",
+      "payload_sha256": "5c5a0b373badd75a567e1022388489d1af96daa5b0fa31faa04fa7aac1d017d6",
+      "candidate_missing_degrees": [0, 1, 2, 3, 4, 9, 10, 11, 12],
+      "orbit_representatives": [0, 1, 2, 3, 4]
+    },
+    {
+      "r": 12,
+      "profile": "near-anchor",
+      "payload_sha256": "f53aa7b72e2a10962dc44a59dce5c8ed6ad4da451d03ce66d04b0be4baa95747",
+      "candidate_missing_degrees": [0, 1, 2, 3, 10, 11, 12],
+      "orbit_representatives": [0, 1, 2, 3]
+    },
+    {
+      "r": 13,
+      "profile": "residual-core",
+      "payload_sha256": "cb981c74dbe6940cc9612dbb5b0509dd2dc08239fe2b71af7f6c43f059a1c551",
+      "candidate_missing_degrees": [0, 1, 2, 3, 4, 10, 11, 12, 13],
+      "orbit_representatives": [0, 1, 2, 3, 4]
+    },
+    {
+      "r": 13,
+      "profile": "near-anchor",
+      "payload_sha256": "cae385bd5e9fd8ddde967a7c04abad8419a2ac22c1f918916257a0756d679254",
+      "candidate_missing_degrees": [0, 1, 2, 3, 11, 12, 13],
+      "orbit_representatives": [0, 1, 2, 3]
+    },
+    {
+      "r": 14,
+      "profile": "residual-core",
+      "payload_sha256": "a74df5ddce80b0657be8b4c256bbca590633f61059f32a58baac64fe50157a2f",
+      "candidate_missing_degrees": [0, 1, 2, 3, 4, 11, 12, 13, 14],
+      "orbit_representatives": [0, 1, 2, 3, 4]
+    },
+    {
+      "r": 14,
+      "profile": "near-anchor",
+      "payload_sha256": "4e52bf8f9809f930bd69baa49eac9df665a95072ef337cf4c0100f9fb7142f12",
+      "candidate_missing_degrees": [0, 1, 2, 3, 12, 13, 14],
+      "orbit_representatives": [0, 1, 2, 3]
+    },
+    {
+      "r": 15,
+      "profile": "residual-core",
+      "payload_sha256": "8a633b97f0130b4b0f81489d143327da704d222b0e35fb55653854c0e270d2e6",
+      "candidate_missing_degrees": [0, 1, 2, 3, 13, 14, 15],
+      "orbit_representatives": [0, 1, 2, 3]
+    },
+    {
+      "r": 15,
+      "profile": "near-anchor",
+      "payload_sha256": "062a7212fff1c82ef29c923130db644d3811db8defd02ec7976db1336041af55",
+      "candidate_missing_degrees": [0, 1, 2, 3, 13, 14, 15],
+      "orbit_representatives": [0, 1, 2, 3]
+    }
+  ]
+}
