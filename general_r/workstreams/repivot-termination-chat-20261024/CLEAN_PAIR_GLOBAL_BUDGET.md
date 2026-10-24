@@ -119,7 +119,7 @@ For that residual triple, any set of fewer than lambda-4 neighbours of o cannot 
 
 Therefore, for any cross-part witness pair,
 
-d_H(o,U) >= 2a+(a-4)=3a-4.
+d_H(o,U) >= 2lambda+(lambda-4)=3lambda-4.
 
 Since lambda>=ceil(r/3)+4,
 
