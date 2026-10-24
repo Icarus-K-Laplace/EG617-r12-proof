@@ -31,6 +31,7 @@ The remaining research target is only Level 4: absorb `r=12` into the same short
 5. A pair connector missing anchor `ak` forces a complete bipartite rectangle between its nonneighbour sets in the two incident exclusive blocks.
 6. Two nonadjacent connectors have a common-nonneighbour set which is a clique.
 7. Two nonadjacent pair connectors missing the same anchor have disjoint nonneighbour supports in both incident exclusive blocks.
+8. **Focus convention:** a connector is said to focus on `Xi` only when it is adjacent to anchor `ai` and is complete to the corresponding exclusive block `Xi`. Completeness to a third, non-incident block is not counted as focus. All focus-collision arguments use this incident-block convention.
 
 ## Closed geometries
 
@@ -52,7 +53,7 @@ Four pair connectors, block sizes `(r-2,r-2,r-4)`.
 ### c=4 / deficits (0,1,1)
 Four pair connectors, block sizes `(r-2,r-3,r-3)`.
 
-**Closed for all `r>=13`**. No two connectors can focus on the same deficit-1 block: adjacency gives an `r`-clique, while nonadjacency gives a common-nonneighbour clique larger than `r-1`. Thus at least two connectors are nonfocused; local `(3,3)` and `(2,3)` rectangle charges close all `r>=13`, with the small boundary layers handled analytically.
+**Closed for all `r>=13`**. No two connectors can focus on the same incident deficit-1 block: adjacency gives an `r`-clique, while nonadjacency gives a common-nonneighbour clique larger than `r-1`. Thus at least two connectors are nonfocused; local `(3,3)` and `(2,3)` rectangle charges close all `r>=13`, with the small boundary layers handled analytically.
 
 ## Independent complement check
 Let `J=bar H`. Then `J` is `K4`-free and
