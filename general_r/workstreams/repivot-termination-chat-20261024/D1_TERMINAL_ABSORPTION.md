@@ -121,3 +121,53 @@ so c is bounded by a constant depending only on epsilon. If c>=2, the excess bou
 The clean-pair Round-2 result provides a separate high-density constraint: optional block-cross degree is at most four, while any outside vertex that fails to see a whole AES part pays excess at least 3a-4-r>=8. These constraints do not yet imply that a d1 support class must become a clean-pair d2 class. The missing step is still a certified transition that couples the d1 singleton supports to the d2 pair-exchange orbit without assuming an unproved shared charge deficit.
 
 Status remains **OPEN** for every fixed c>=1. No absolute N bound is certified.
+
+
+## 8. Joint eta / d2 matching / d1 allowance / excess budget
+
+This section combines the d1 and clean-pair budgets without assuming their support sets are disjoint.
+
+Let:
+
+- U_2 be the 2m endpoints of the clean a_2=2 matching in the high-density branch;
+- b_2=e_M(S_2) in {0,1} for its distinguished shell pair;
+- O_exc be the X outside-core vertices with kappa>=L, where
+  L=3lambda-4-r=(r-3h-5)/2>=8 and lambda=m-r+1;
+- V_1 be the N_1 distinct singleton supports in a fixed d1 class of allowance c;
+- J_2=|V_1 intersect U_2| and J_X=|V_1 intersect O_exc|.
+
+The clean shell-incidence budget gives
+
+K_{U_2}>=2m-2r-b_2.                                           (8.1)
+
+Every vertex in V_1 has kappa in {c-1,c}. To avoid double-counting overlaps, the union of U_2, O_exc and V_1 gives the exact necessary inequality
+
+2m-2r-b_2 + N_1(c-1) + X L
+-(c-1)J_2 - min(c-1,L)J_X <= 2r-2.                           (8.2)
+
+The correction terms are sufficient: a d1 support overlapping U_2 can only occur for c<=2 and is charged at most c-1; an overlap with O_exc is charged by the smaller of the two lower bounds c-1 and L. U_2 and O_exc themselves are disjoint.
+
+Since N_1>=ceil(eta/5), a weaker eta-explicit necessary inequality is
+
+2m-2r-b_2 + ceil(eta/5)(c-1) + X L
+-(c-1)J_2 - min(c-1,L)J_X <= 2r-2.                           (8.3)
+
+In the especially useful disjoint subcase 3<=c<=L-1, both intersections vanish (kappa on U_2 is at most one; kappa on O_exc is at least L). Then
+
+2m-2r-b_2 + ceil(eta/5)(c-1) + X L <= 2r-2,                  (8.4)
+
+or equivalently
+
+ceil(eta/5)(c-1)+X L <= 4r-2-2m+b_2.                         (8.5)
+
+Because m>=ceil(4r/3+3), the right side is at most 4r/3-8+b_2. This is a genuine joint constraint: a linear eta population with c>=3 consumes the same inherited excess budget that pays for exceptional off-part vertices.
+
+Independently, the d2 plateau matching inequality remains
+
+ceil(N_2/(eta+1))(a_2-1) <= 4r-4+a_2+b_2,                   (8.6)
+
+where N_2 is the number of distinct supports in the original d2 plateau and a_2 its allowance. For the clean-pair branch a_2=2 and m is the extracted matching size.
+
+Equations (8.3) and (8.6) form the joint budget certificate for eta, matching number, allowance and excess. They are two projections of the same core budget; **do not add their left-hand sides**, because the d2 plateau charge inequality may overlap the support sets used in (8.3).
+
+This is a new necessary inequality system, not a closure theorem. It leaves c=1, c=2 overlap cases, c>=L overlap cases, and the lower-density clean-pair branch unresolved.
