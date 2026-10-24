@@ -90,3 +90,32 @@ All three sources were read-only; the only changed files remain in this workstre
 ## Label-only feasibility check — 2026-10-25
 
 The Q33 four-partite row/column label constraints admit an explicit 8-by-7 array: seven rows each contain p once and six distinct B labels, the eighth row contains seven B labels, each D column contains p plus all seven B labels, and every B label and p occurs seven times. This is only a label-incidence relaxation, not a realization of the 56 labelled K4s; it confirms that label counts alone are insufficient.
+
+
+## 2026-10-25 continuation — outer exceptional-row coupling
+
+### New conditional theorem
+
+Added OUTER_EXCEPTIONAL_ROW_COUPLING.md. For an exact-129 color and two outer blocks both satisfying \(r_i(C),r_j(C)\le3\):
+
+1. Each block has ten unique K5-component rows and two exceptional rows.
+2. The two exceptional-row complements \(A_i,B_i\) and \(A_j,B_j\) are disjoint cliques in the 11-point gadget, with profiles (5,5), (5,4), (5,3), or (4,4).
+3. Every nonempty intersection among these four complement pairs forces the corresponding exceptional-row edge to have color C.
+4. Let k be the number of nonempty cells in the 2x2 intersection matrix and let \(\ell,c\) be its nonempty row/column counts. The block-pair duplicate budget obeys
+   \[
+   d_{ij}(C)\ge k+\max(2-\ell,2-c)-2.
+   \]
+   Therefore an adjacent two-cell pattern or any three-cell pattern costs at least one duplicate unit; a full 2x2 pattern costs at least two.
+5. Summing over low-slack block pairs yields a lower bound on \(P_C\); summing over colors for a fixed block pair gives the cross-color constraint \(\sum_C\eta_{ij}(C)\le12\).
+
+### Independent finite replay
+
+Enumerated all 15 nonempty 2x2 masks in JavaScript. The exact duplicate-cost distribution is 6 masks at cost 0, 8 at cost 1, and 1 at cost 2; all four allowed complement-size profiles pass. Output: EXCEPTIONAL_ROW_MASK_REPLAY_OK. The Python verifier was updated to include the same exhaustive mask checks.
+
+### Refreshed sibling status (read-only)
+
+The latest E408 Q33 branch head is fec0100abbb6124d1efdad39f2f4b352e1c8bc76 (commit: exceptional-row refinement and duplicate thresholds). It independently records the two-exceptional-row gadget coverage and the low-slack thresholds. Its terminal remains OPEN / NOT_CERTIFIED. No sibling workstream was modified.
+
+### Remaining gap
+
+The new inequality does not force a positive duplicate cost when the intersection cells form one cell or a two-cell matching. Identical exceptional complement pairs across all low-slack blocks remain a compatible relaxation. A further theorem must show that the actual gadget and seven-block labels force non-matching patterns often enough, or couple them to the core K4 coordinates. EG617(r=12) remains OPEN / NOT_CERTIFIED.
