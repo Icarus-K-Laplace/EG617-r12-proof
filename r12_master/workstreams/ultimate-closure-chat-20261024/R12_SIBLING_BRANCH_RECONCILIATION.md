@@ -52,10 +52,27 @@ The full theorem remains **OPEN / NOT_CERTIFIED**. No conditional shell theorem,
 
 ## 5. Live refresh — latest sibling heads checked 2026-10-25
 
-- Witness-packing branch latest read: [5d0e3ce](https://github.com/Icarus-K-Laplace/EG617-r12-proof/commit/5d0e3ceab7895be1a947e46853f92bb84477f4e5). Its shell-incidence union lemma proves full-row support union at least 11 in template A and at least 10 in C. Its transversal audit correctly treats the E407 bound delta<=15 as conditional on non-four-partiteness.
+- Witness-packing branch latest read at that audit: [5d0e3ce](https://github.com/Icarus-K-Laplace/EG617-r12-proof/commit/5d0e3ceab7895be1a947e46853f92bb84477f4e5). A later audit in this workstream found a missing nonnegative-term condition in the imported shell-incidence union inequality: zero-shell-support core vertices can contribute -1 to the global sum. With z<=4 from the core-excess budget, the safe full-row union floors are 7 in template A and 6 in C, not 11/10, unless z=0 is separately proved. See R12_SHELL_INCIDENCE_UNION_AUDIT.md. The exact shell/core edge identity remains valid. The E407 bound delta<=15 remains conditional on non-four-partiteness.
 - Zero-excess branch latest read: [2b433e2](https://github.com/Icarus-K-Laplace/EG617-r12-proof/commit/2b433e2f1580e28dfd17db0006e6cc664b4be991). It derives the E407 g=16, epsilon_U=0 four-partite corner, but its “unused eighth point” and subsequent full-group hitting-set inference are not justified by pairwise linearity alone; see R12_E407_G16_EPS0_CORNER_AUDIT.md.
 - The current ultimate-closure branch includes the witness-transversal boundary theorem. Its tau(Q)>=7 proof is valid, but the claimed unconditional non-four-partiteness is not. The correct E407 window is delta<=16; if delta=16, Brouwer's bound forces L to be four-partite, not non-four-partite. The E408 Q33 four-partite branch also remains open.
 - The beta-sensitive component-count draft in R12_BETA_SENSITIVE_ZERO_EXCESS_PACKING.md has been withdrawn. Its corrected replacement is R12_EXACT129_ZERO_EXCESS_COMPONENT_PACKING.md.
 - Added R12_FULL_ROW_SUPPORT_UNION.md and R12_E407_G16_EPS0_CORNER_AUDIT.md. The local TD(4,7) construction shows the eighth point can be used in one block, and an 8-point transversal can hit all 49 blocks without containing a whole part. This audits the local incidence inference only; it is not a full-core counterexample.
 
 All sibling workstreams remain separate; this branch only adds its own reconciliation and proof-audit artifacts. EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+## 6. Live sibling refresh and new boundary theorem — 2026-10-25
+
+Latest heads re-read from this workstream:
+- Emergency sprint: 87a58429070cffbd90991045e0375102fcc4ec0d.
+- Witness packing: 6131cedc18f83224464d9389273928b566b7447f, including the new shell-incidence union theorem and verifier update.
+- Zero-excess witness: f3c9ef6b3a4bfadad4f70a16bb0e7c6434bb0777.
+- Astra D-low terminal: c71b29d3c5b661cdcf00404e545933893c44598b.
+- Astra A-ext near-anchor: ad6e4ebe152e3918b9c5fe67f461ba402b1445d8.
+
+No sibling workstream was modified. The D-low and A-ext results are general-r partial theorems and are not treated as fixed-r=12 closure.
+
+Own-branch addition R12_TRANSVERSAL_BOUNDARY_CLASSIFICATION.md proves:
+- E407 Q32 boundary: delta>=2 for the v=29 / 49-witness kernel.
+- E408 Q33 boundary: 2*delta+epsilon_U>=8 for the v=31 / 56-witness kernel.
+The exact arithmetic regression verifier passed. These are boundary-profile exclusions, not terminal exclusions; E407 Q32, E408 Q32/Q33, and K145 remain OPEN / NOT_CERTIFIED.
