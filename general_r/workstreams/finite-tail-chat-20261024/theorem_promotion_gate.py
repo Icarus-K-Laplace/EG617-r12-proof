@@ -98,7 +98,7 @@ def gate(certificate_path: Path, ledger_path: Path) -> dict:
     elif not all_assumptions_proved:
         eg617_reason = "one or more analytic assumptions are not proved for this r"
     else:
-        eg617_reason = "even with assumptions discharged, endpoint-domain pruning is not a graph nonexistence proof"
+        eg617_reason = "even with assumptions discharged, this local endpoint lemma does not exhaust all legal graph states or prove a contradiction"
 
     return {
         "gate_schema": "eg617-theorem-promotion-gate-v1",
