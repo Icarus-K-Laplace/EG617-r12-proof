@@ -58,3 +58,20 @@ The support-compatibility synthesis uses the weaker anchor consequence e(H)>=213
 ## Independent replay status
 
 V11 and V12 package SHA256 checks and their separate verifier scripts were rerun. Status is COMPUTATION_CERTIFIED for the finite state coverage only; no parent graph is claimed completed, and analytic rule applicability retains its explicit lower-order contracts.
+
+
+## Added dependency: minimum-transversal boundary classification
+
+- Source: R12_TRANSVERSAL_BOUNDARY_CLASSIFICATION.md.
+- Inputs: exact-129 factor classification; seven selected Q-sets per selected color; cross-color linearity; \(\alpha(H)\le4\); core excess four; the seven-neighbour transversal theorem.
+- E407 Q32 output: the 29-vertex / 49-witness boundary requires at least two complement edges not covered by the witness K4s.
+- E408 Q33 output: the 31-vertex / 56-witness boundary requires \(2\delta+\epsilon_U\ge8\), and the existing core edge ledger gives \(\delta+\epsilon_U\le17\).
+- Status: PROVED_CONDITIONAL necessary-structure theorem. The arithmetic verifier is a regression check only. No remaining boundary profile is eliminated by this node, and E408 Q32 is excluded from its scope.
+
+## Audit correction: shell-incidence union lemma
+
+- Source: R12_SHELL_INCIDENCE_UNION_AUDIT.md.
+- The identity \(\sum_x(r_A(x)-1)=e(M)-15\) is exact, but comparing a support-restricted sum to the full sum requires \(r_A(x)\ge1\) off the support.
+- Under the frozen contract, \(r_A(x)=0\) can occur at a core vertex with positive excess. There are at most four such vertices.
+- Corrected full-row support-union floors: E407 template A >=7; template C >=6. The imported 11/10 floors are not certified unless zero-shell-support absence is proved separately.
+- This audit changes no root dependency and closes no terminal.
