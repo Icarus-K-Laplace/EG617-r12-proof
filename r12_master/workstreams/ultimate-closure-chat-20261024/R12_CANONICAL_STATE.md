@@ -115,10 +115,12 @@ Audit correction: the exact-129 K5 decomposition allows one no-S component {p}�
 The exact-129 witness-packing support theorem remains valid: |V_*|≥29 in E407 and |V_*|≥31 in E408 Q33, but this is not a contradiction. E407 common-core completion, E408 Q32 threshold-29 completion, E408 Q33 seven-block compatibility, and the original K145 bridge all remain OPEN / NOT_CERTIFIED.
 
 
-## Live sibling refresh and beta-sensitive zero-excess packing (2026-10-25)
+## Live sibling refresh and corrected zero-excess count (2026-10-25)
 
-Latest sibling refresh: witness-packing head 2bb0982 and zero-excess head f3c9ef6 were read; the current same-branch witness-transversal boundary theorem at commit 78c30e8 was also audited and its arithmetic verifier independently replayed.
+Latest witness-packing head 5d0e3ce and zero-excess head aba9b81 were read. The beta-sensitive component-count strengthening was withdrawn after audit: the maximum number of S vertices in one K5 is not an upper bound on the number of K5 components meeting S.
 
-New beta-sensitive result in R12_BETA_SENSITIVE_ZERO_EXCESS_PACKING.md: the exact-129 component structure gives at least 6/7/8 B-labelled no-S K5 witnesses per color for beta=0 / beta in {1,2} / beta=3. Since at most four core vertices have positive excess and these Q sets are disjoint within a color, this yields at least 2/3/4 zero-excess component witnesses per exact-129 color. Global floors: E407 A/B=14, C/D=21, E=21; E408 Q33 beta=0/1/2/3 gives 16/24/24/32.
+The safe exact-129 factor count is at least six B-labelled no-S K5 components per color, hence at least two zero-excess B-labelled witnesses per exact-129 color (14 globally in E407; 16 in E408 Q33). If a full row exists, at least three B-labelled witnesses per color are hub-complete; E with no full row yields six endpoint-complete witnesses per color. See R12_EXACT129_ZERO_EXCESS_COMPONENT_PACKING.md.
 
-The current boundary theorem also proves tau(Q)>=7 for the E407 (29,49) and E408 Q33 (31,56) witness families. Thus every core vertex outside the support has at least seven neighbors into it. Boundary windows remain compatible; no terminal is closed. The emergency witness-star edge dichotomy is audited and not used because tripartite does not imply complete tripartite.
+The shell-incidence union lemma gives full-row support union at least 11 in template A and 10 in C. The transversal boundary theorem proves tau(Q)>=7, but the E407 delta<=15 bound is conditional on L being non-four-partite; unconditionally delta may be 16, forcing a non-complete four-partite branch. The E408 Q33 non-complete four-partite branch is also open.
+
+The emergency witness-star dichotomy is not used because tripartite does not imply complete tripartite. EG617(r=12) remains OPEN / NOT_CERTIFIED.

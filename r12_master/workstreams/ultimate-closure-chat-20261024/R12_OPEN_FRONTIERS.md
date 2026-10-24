@@ -110,12 +110,14 @@ Under the 284-edge/excess-four core contract, any two regular B rows have a comm
 **Remaining limitation:** a single four-set can serve multiple row pairs. The theorem does not itself force a large family of distinct hub-complete witnesses and is not a terminal exclusion.
 
 
-## F10. Beta-sensitive zero-excess component packing
+## F10. Corrected exact-129 zero-excess component packing
 
-For an exact-129 color, the number of B-labelled no-S K5 witnesses is at least 6, 7, or 8 according as beta=e(M[S]) is 0, 1/2, or 3. At most four such disjoint Q-sets can meet the positive-excess core vertices. Thus the zero-excess labelled floors per color are 2, 3, 4, giving E407 global floors 14/21/21 for templates A/B, C/D, E, and E408 Q33 floors 16/24/24/32 by beta. The sets are linear across colors.
+Every exact-129 color has at least six B-labelled no-S K5 components and at least two zero-excess labelled witnesses, giving 14 witnesses in E407 and 16 in E408 Q33. Do not use the withdrawn beta-sensitive 6/7/8 component count. If a full B row exists, each exact-129 color has at least three hub-complete B-labelled witnesses; E with no full row has at least six endpoint-complete witnesses per color.
 
 ## F11. Linear-witness transversal boundary
 
-The latest boundary theorem proves tau(Q)>=7 for the E407 v=29,m=49 and E408 Q33 v=31,m=56 support-boundary families. Hence every vertex outside their union has at least seven core neighbors into the union. E407 has delta+epsilon_U<=16 and epsilon_U+2delta>=2, plus delta<=15; E408 Q33 has delta+epsilon_U<=17. The displayed budgets are not contradictory yet.
+The valid transversal theorem proves tau(Q)>=7 for the E407 v=29,m=49 and E408 Q33 v=31,m=56 support-boundary families. Hence every vertex outside their union has at least seven neighbors into the union.
 
-The high-multiplicity star dichotomy e(H[U])=135 or >=144 is not accepted: its proof only forces the complement to be tripartite, not complete tripartite.
+For E407 the unconditional window is delta+epsilon_U<=16 and epsilon_U+2delta>=2, with 0<=delta<=16. The sharper delta<=15 bound is conditional on proving L non-four-partite. If delta=16, L is forced four-partite but non-complete. For E408 Q33, delta+epsilon_U<=17; the non-complete four-partite branch remains arithmetically compatible.
+
+The high-multiplicity star dichotomy e(H[U])=135 or >=144 is not accepted: its proof only forces the complement to be tripartite, not complete tripartite. The full-row shell-incidence union theorem additionally gives |union D_b|>=11 in E407 template A and >=10 in C. These results do not yet close any terminal.

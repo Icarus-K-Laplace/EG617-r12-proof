@@ -135,10 +135,14 @@ Added R12_E408_PAIRWISE_BLOCKER_COMPATIBILITY.md with an analytic proof and exac
 - No terminal excluded. E407 Q32, E408 Q32/Q33, and original K145 bridge remain OPEN / NOT_CERTIFIED.
 
 
-### Live sibling refresh and boundary-kernel analysis (2026-10-25)
+### Live sibling refresh, correction, and shell-incidence theorem (2026-10-25)
 
-- Re-read witness-packing head 2bb0982 and zero-excess head f3c9ef6; the latest witness branch raises the exact-129 zero-excess component count to at least two per color and audits the emergency star lemma.
-- Audited the current same-branch R12_WITNESS_TRANSVERSAL_BOUNDARY_THEOREM.md. Its transversal proof and integer windows were independently replayed; arithmetic verifier passes.
-- Proved the beta-sensitive component count: for beta=0/1,2/3, exact-129 colors give at least 6/7/8 B-labelled no-S components, and therefore at least 2/3/4 zero-excess component witnesses per color. Global E407 floors: 14/21/21; E408 Q33: 16/24/24/32 by beta.
-- Added R12_BETA_SENSITIVE_ZERO_EXCESS_PACKING.md and R12_WITNESS_STAR_DICHOTOMY_AUDIT.md; updated the standard-library verifier.
-- Status remains OPEN / NOT_CERTIFIED. The next attack must combine tau(Q)>=7 with zero-excess component labels and the exact boundary windows, not another scalar incidence sum.
+- Re-read the latest witness-packing head 5d0e3ce and zero-excess head aba9b81, plus the current same-branch boundary theorem. The zero-excess sibling explicitly corrected the universal count to six B-labelled components per exact-129 color.
+- **Correction:** withdrew the beta-sensitive 6/7/8 component-count claim. A pair of S vertices that may share a non-target K5 need not be in the same component. Safe floors are six B-labelled components and two zero-excess B-labelled witnesses per exact-129 color: 14 in E407, 16 in E408 Q33.
+- If a full row exists, each exact-129 color supplies at least three hub-complete B-labelled witnesses (21 globally in E407). In E with no full row, six witnesses per color hit both P3 endpoints (42 globally).
+- Imported and proved the shell-incidence union lower bound: full-row supports have union size at least 11 in E407 template A and at least 10 in C.
+- Audited the witness-transversal boundary theorem: tau(Q)>=7 and the degree/edge identities are valid, but Brouwer only applies after non-four-partiteness is proved. Correct unconditional E407 range is delta<=16; delta=16 forces a non-complete four-partite branch. E408 Q33 likewise retains a non-complete four-partite branch.
+- Corrected verify_witness_transversal_boundary.py to include the admissible delta=16, epsilon_U=0 endpoint. Arithmetic checks passed independently.
+- Added R12_EXACT129_ZERO_EXCESS_COMPONENT_PACKING.md, R12_FULL_ROW_SUPPORT_UNION.md, and R12_WITNESS_STAR_DICHOTOMY_AUDIT.md; marked the beta-sensitive draft WITHDRAWN.
+
+Status remains OPEN / NOT_CERTIFIED. Next attack: classify the non-complete four-partite boundary branch and combine it with the full-row support union and zero-excess labelled witnesses.

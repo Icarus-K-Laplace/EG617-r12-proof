@@ -29,18 +29,16 @@ All sibling workstreams remain separate. No sibling files were overwritten or me
 
 ## 3. Corrected B-labelled witness counts
 
-The component decomposition permits a no-S K5 component of the form {p}∪Q. There can be at most one such component, but it is not a B-labelled witness: Q is not known to be anticomplete to any B-row. Therefore the safe count is:
+The universally valid count is:
+- At least seven K5 components avoid S, because |S|=3 and the ten components are disjoint.
+- At most one of those components contains pivot p.
+- Each remaining component avoiding both S and p must be {b}∪Q with b∈B and Q⊂H, because B is a target clique and alpha(H)≤4.
 
-| Shell type | No-S components | B-labelled components |
-|---|---:|---:|
-| A/B, M[S] empty | at least 7 | at least 6 |
-| C/D/E, at most two components can meet S | at least 8 | at least 7 |
+Hence every exact-129 color has at least six B-labelled components, regardless of beta. It is invalid to infer seven/eight B-labelled components merely because a pair/triple of S vertices is allowed to share a non-target K5; allowed co-location is not forced co-location.
 
-This distinction matters when counting hub-complete witnesses. If n_3≥1, every B-labelled component witness that misses any hub must hit a fixed full B-row's three-element core neighborhood. Since the component witnesses are disjoint within one color, at most three can miss a hub. The safe consequences are 3 hub-complete B-labelled witnesses per exact-129 color for A/B and 4 for C/D/E, not 4/5 from counting all no-S components without a B-label.
+Since at most four core vertices have positive excess, at least two of the six disjoint B-labelled Q sets per exact-129 color are zero-excess. This gives global floors 14 in E407 and 16 in E408 Q33.
 
-For E with n_3=0, the row constraints force all ten B-rows to miss the two endpoints of the P3. At least seven B-labelled no-S components remain per exact-129 color, and each Q hits both endpoints. Thus at least 49 endpoint-complete labelled witnesses occur globally over the seven guaranteed exact-129 colors.
-
-This audit does not invalidate the 7/8 total independent-four packing theorem or its |V_*| support bounds: the Q from a pivot-containing component is still an independent four-set in H. It only blocks using that Q in a proof that requires an associated B-row.
+If a full row exists, at most three B-labelled Q sets per color can fail hub-completeness, because every such Q must hit the full row's three-element support and the Q sets are disjoint within the color. Therefore the safe floor is three hub-complete labelled witnesses per exact-129 color (21 globally in E407). If E has no full row, all B rows miss both P3 endpoints, so six witnesses per color hit both endpoints (42 globally).
 
 ## 4. Current headline status
 
@@ -52,13 +50,12 @@ This audit does not invalidate the 7/8 total independent-four packing theorem or
 The full theorem remains **OPEN / NOT_CERTIFIED**. No conditional shell theorem, count bound, or computational coverage result is promoted to a proof for K145.
 
 
-## 5. Later live refresh — 2026-10-25
+## 5. Live refresh — latest sibling heads checked 2026-10-25
 
-After the first reconciliation commit, the witness-packing branch advanced to [2bb0982ea89f87eaf0e7aec3ec87590e53bd297b](https://github.com/Icarus-K-Laplace/EG617-r12-proof/commit/2bb0982ea89f87eaf0e7aec3ec87590e53bd297b), and the zero-excess branch advanced to [f3c9ef6b3a4bfadad4f70a16bb0e7c6434bb0777](https://github.com/Icarus-K-Laplace/EG617-r12-proof/commit/f3c9ef6b3a4bfadad4f70a16bb0e7c6434bb0777). The former adds a stronger zero-excess component-witness count and the star-lemma audit; the latter adds an arithmetic verifier for the high-support label dichotomy.
+- Witness-packing branch latest read: [5d0e3ce](https://github.com/Icarus-K-Laplace/EG617-r12-proof/commit/5d0e3ceab7895be1a947e46853f92bb84477f4e5). Its shell-incidence union lemma proves full-row support union at least 11 in template A and at least 10 in C. Its transversal audit correctly treats the E407 bound delta<=15 as conditional on non-four-partiteness.
+- Zero-excess branch latest read: [aba9b81](https://github.com/Icarus-K-Laplace/EG617-r12-proof/commit/aba9b8126ed6a62e5ba15c7d6f0a1c989ab4c183). It confirms the universal six B-labelled component count and at least two zero-excess labelled witnesses per exact-129 color; for h>=6, each exact-129 color has at least two high-k labelled witnesses, while h=5 still forces at least one.
+- The current ultimate-closure branch includes the witness-transversal boundary theorem. Its tau(Q)>=7 proof is valid, but the claimed unconditional non-four-partiteness is not. The correct E407 window is delta<=16; if delta=16, Brouwer's bound forces L to be four-partite, not non-four-partite. The E408 Q33 four-partite branch also remains open.
+- The beta-sensitive component-count draft in R12_BETA_SENSITIVE_ZERO_EXCESS_PACKING.md has been withdrawn. Its corrected replacement is R12_EXACT129_ZERO_EXCESS_COMPONENT_PACKING.md.
+- Added R12_FULL_ROW_SUPPORT_UNION.md from the sibling shell-incidence theorem.
 
-The current ultimate-closure branch also acquired [R12_WITNESS_TRANSVERSAL_BOUNDARY_THEOREM.md](https://github.com/Icarus-K-Laplace/EG617-r12-proof/blob/workstream/r12-ultimate-closure-20261024/r12_master/workstreams/ultimate-closure-chat-20261024/R12_WITNESS_TRANSVERSAL_BOUNDARY_THEOREM.md) and a corrected verifier at [commit 78c30e86b0f432464ca5375695da97a27b230878](https://github.com/Icarus-K-Laplace/EG617-r12-proof/commit/78c30e86b0f432464ca5375695da97a27b230878). We independently replayed its arithmetic checks. It proves the transversal floor tau(Q)>=7 at the E407 (v,m)=(29,49) and E408 Q33 (31,56) support boundaries, hence every outside core vertex has at least seven neighbors into the selected witness union. The exact boundary windows are:
-- E407: delta+epsilon_U<=16, epsilon_U+2delta>=2, and delta<=15;
-- E408 Q33: delta+epsilon_U<=17.
-These are stronger necessary constraints but still compatible with the remaining induced-subgraph lower bounds.
-
-The beta-sensitive component count is recorded in R12_BETA_SENSITIVE_ZERO_EXCESS_PACKING.md. The emergency star lemma's basic incidence facts are retained, but its asserted e(H[U])=135 or >=144 dichotomy is not used: the second-Turan step proves tripartiteness, not completeness.
+All sibling workstreams remain separate; this branch only adds its own reconciliation and proof-audit artifacts. EG617(r=12) remains OPEN / NOT_CERTIFIED.
