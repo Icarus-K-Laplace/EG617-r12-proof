@@ -169,7 +169,7 @@ A second, genuine endpoint-class module is now replayed:
 - verifier SHA-256: `e05ff2311275143d7a3a1492141be42b40989c93361e32ec3c2e504a2e5d457a`;
 - gate: `PASS_CONDITIONAL_MODULE`; RC and ANCHOR_K8 remain open at r=13; bounded-allowance d1 nonextension remains OPEN.
 
-The independent arithmetic verifier re-derives all seven class-count rows. These are conditional local theorems only: neither module proves EG617(13), and neither closes all endpoint states. The r=4,...,100 audit is a finite implementation test, not an all-r theorem. Tampering and unknown-ledger-ID tests fail closed as intended.
+The independent arithmetic verifier re-derives all seven class-count rows. Final CLI replay passed for the scalar profiles at r=12,13,14,15,68 and for the D1 shell module at r=12,13,68 (13 module/profile runs total). These are conditional local theorems only: neither module proves EG617(13), and neither closes all endpoint states. The r=4,...,100 audit is a finite implementation test, not an all-r theorem. Both module verifiers reject tampered rows, and unknown-ledger-ID tests fail closed as intended.
 
 ## 10. Next finite-tail implementation target
 
