@@ -83,3 +83,13 @@ The cross-cut theorem now also gives a template-sensitive dichotomy. If Q is an 
 - E: each end hub misses at least five B vertices; if the centre is the only unhit hub, the universal three-row support forces at least one B hit.
 
 The V11/V12 finite certificate replays passed from pristine extractions. These reductions do not eliminate a template; they isolate the high-B-degree versus hub-complete escape.
+
+
+## Round-4 theorem update — row transversals and Q33 packing
+
+Added R12_ROW_TRANSVERSAL_AND_Q33_PACKING.md (commit 47b0f74c69f55f43aa9f033770affc2f1766278f).
+
+- PAIR-13 / TRI-24 force pairwise/triple shell-row union floors of 13 and 24.
+- For every missing shell edge ab, every independent 4-set in H\D_a hits D_b. This quantifies over all maximum independent 4-sets of the row-avoidance core and induces template-specific transversal systems for A–E.
+- In every exact-129 Q33 color, at least six B-bearing K5 components avoid S. The Q33 budget has at least five B rows with k_b>=2, so each exact-129 color yields at least one high-k no-S witness; beta=0/1 gives at least two per color. With at least eight exact-129 colors, this is a packing of at least 8 / 16 independent-4 witnesses with cross-color intersections at most one.
+- This is not yet an adjacency-sensitive contradiction. E407 Q32, E408 Q32 and E408 Q33 remain OPEN / NOT_CERTIFIED.
