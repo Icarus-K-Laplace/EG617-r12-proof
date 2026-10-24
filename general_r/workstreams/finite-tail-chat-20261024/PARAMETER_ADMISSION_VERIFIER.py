@@ -111,7 +111,7 @@ SOURCE_REGISTRY = [
         "source_blob_sha": "2b414301e2db36031b707dc1c0d5f546c02b89da",
         "local_audit_status": "source receipt blob checked; recurrence arithmetic claim retained as source receipt; original-graph bridge remains open",
         "theorem_status": "ARITHMETIC_CERTIFIED_BRIDGE_OPEN"
-    }
+    },
     {
         "source_id": "FRONT_RECURRENCE_TERMINATION",
         "theorem_statement": "For every integer r>3, the natural-number potential Phi_r(a,n)=(r^2+2)a+n strictly decreases on each genuine recursive dependency in the contextual recurrence; hence the recurrence terminates conditional on a finite sound seed/cutoff package. This does not prove the seed package, all-state outer-budget dominance, or the original-graph bridge.",
