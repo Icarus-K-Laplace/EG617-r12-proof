@@ -441,6 +441,39 @@ Combining with the extreme-part excess bound gives
 Thus the extreme `r+9` part, when duplicate concentration is low, must carry a near-complete colored matching system on a hub set of size 10–28, and almost all non-target colors attain the Brouwer floor. This is not yet a contradiction: a matching system in a `K_{10,r-1}`-type host is locally feasible. The missing theorem must couple its matchings to the other five groups and the exact KP equality templates.
 
 Proof: `NO_HIGH_STOP_ROUND2_LEMMAS.md`, Section 13.
+### 9K. K7 blocker theorem and 14-hub kernel
+
+Status: **`PROVED_ANALYTIC`** for `a=6,r>=20,000,000`, conditional on the established Turán-stability, hub-cover, and predecessor-slot lemmas.
+
+For any internal edge `xy` of `F_0[V_j]`, the `K_7`-free condition and `M_0<=18r+22` imply that some other target group `V_k` has
+
+`|N_{F_0}(x)∩N_{F_0}(y)∩V_k|<r/16`.
+
+Otherwise there would be at least `(r/16)^5` transversal 5-tuples in the common neighborhoods, while the at most `M_0` missing cross-pairs can spoil at most `M_0(r+9)^3` tuples; for `r>=20,000,000`, the former is larger and a `K_7` results.
+
+For each hub `x`, pigeonholing its at least `(r-27)/2` internal neighbors gives a group `V_k` with
+
+`d_{F_0}(x,V_k)<=r/16+181`.
+
+Since each nonduplicate color contributes a distinct `F_0` neighbor if its label class meets `V_k`, at least
+
+`W_x>=15r/16-183`
+
+missing group slots are charged to classes containing `x`.
+
+Summing over hubs and using `W<=14r+13` plus the multi-hub surcharge `15|X|(|X|-1)` excludes `|X|>=15`. Thus
+
+`7<=|X|<=14`.
+
+Since `a_j=|X∩V_j|-(|V_j|-r)-1>=0` and `Σ_j a_j=|X|-7<=7`, every target group has at least `r-8` nonhubs, which form a target-color clique.
+
+**Duplicate-concentration refinement.** If an `r+9` target group contains `Z_j` duplicate-label vertices, then `W<=13r+4+Z_j`. Hence `|X|=14` would imply `Z_j>=r/8-5296`; if `Z_j<r/8-5296`, then `|X|<=13`.
+
+**Partial-design consequence.** The clean-block bound improves to at least `r^2-52r` for `r>=20,000,000`, and to `r^2-51r` when an `r+9` group has `Z_j<r/8-5296`.
+
+Proof: `NO_HIGH_STOP_ROUND2_LEMMAS.md`, Section 14.
+
+**Limitation:** the hub kernel is smaller, but no contradiction to the remaining 7–14 hub terminal has been proved. A tempting argument that `K_r`-freeness forces many target-color cross edges between nonhub cliques was rejected: the condition instead forces complement-color edges, so it cannot be charged to `M_0`.
 ### 10. Critical-core residue windows
 
 Status: **`PROVED_ANALYTIC`** as a necessary-condition reduction.
