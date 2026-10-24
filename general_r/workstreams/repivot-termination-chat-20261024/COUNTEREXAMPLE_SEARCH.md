@@ -44,7 +44,7 @@ For X such exceptional vertices,
 
 X(3a-4-r)<=K_O<=2r-2-K_U.
 
-This is the correct replacement for the invalid all-parts claim. X can still be linear near a=ceil(r/3)+4.
+This is the correct replacement for the invalid all-parts claim. Since h=r+1-2a, the exact bound is X<=floor((4r-4-2K_U)/(r-3h-5)); the denominator is at least 16 in the high-density branch. X can still be linear near a=ceil(r/3)+4.
 
 ## 4. Boundary checks
 
