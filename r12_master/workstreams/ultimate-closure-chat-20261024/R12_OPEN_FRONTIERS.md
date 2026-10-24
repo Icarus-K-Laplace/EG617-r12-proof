@@ -121,3 +121,10 @@ The valid transversal theorem proves tau(Q)>=7 for the E407 v=29,m=49 and E408 Q
 For E407 the unconditional window is delta+epsilon_U<=16 and epsilon_U+2delta>=2, with 0<=delta<=16. The sharper delta<=15 bound is conditional on proving L non-four-partite. If delta=16, L is forced four-partite but non-complete. For E408 Q33, delta+epsilon_U<=17; the non-complete four-partite branch remains arithmetically compatible.
 
 The high-multiplicity star dichotomy e(H[U])=135 or >=144 is not accepted: its proof only forces the complement to be tripartite, not complete tripartite. The full-row shell-incidence union theorem additionally gives |union D_b|>=11 in E407 template A and >=10 in C. These results do not yet close any terminal.
+
+
+## F12. E407 g=16, epsilon_U=0 corner
+
+The valid boundary identities give e(L)=310, e(H[U])=96, e(U,W)=156, e(H[W])=32; Brouwer forces L four-partite with part sizes (7,7,7,8). The 49 witnesses cover every pair between the three seven-point parts once, while 21 pair slots between the eight-point part and the three seven-point parts remain unused; five of these are missing from L.
+
+A live audit constructed a modified TD(4,7) where the eighth point is used in one block, and a size-8 transversal T hits all 49 blocks without containing a whole part. Therefore “the eighth point is unused”, “all five missing edges meet one point”, and “every size-8/9 transversal contains a whole part” are not consequences of pairwise linearity alone. The full-core corner remains OPEN; additional degree, shell-support, or color-label constraints are needed.

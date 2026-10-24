@@ -115,12 +115,14 @@ Audit correction: the exact-129 K5 decomposition allows one no-S component {p}�
 The exact-129 witness-packing support theorem remains valid: |V_*|≥29 in E407 and |V_*|≥31 in E408 Q33, but this is not a contradiction. E407 common-core completion, E408 Q32 threshold-29 completion, E408 Q33 seven-block compatibility, and the original K145 bridge all remain OPEN / NOT_CERTIFIED.
 
 
-## Live sibling refresh and corrected zero-excess count (2026-10-25)
+## Live sibling refresh and corner audit (2026-10-25)
 
-Latest witness-packing head 5d0e3ce and zero-excess head aba9b81 were read. The beta-sensitive component-count strengthening was withdrawn after audit: the maximum number of S vertices in one K5 is not an upper bound on the number of K5 components meeting S.
+Latest witness-packing head 5d0e3ce and zero-excess head 2b433e2 were read. The beta-sensitive component-count strengthening was withdrawn after audit: the maximum number of S vertices in one K5 is not an upper bound on the number of K5 components meeting S.
 
 The safe exact-129 factor count is at least six B-labelled no-S K5 components per color, hence at least two zero-excess B-labelled witnesses per exact-129 color (14 globally in E407; 16 in E408 Q33). If a full row exists, at least three B-labelled witnesses per color are hub-complete; E with no full row yields six endpoint-complete witnesses per color. See R12_EXACT129_ZERO_EXCESS_COMPONENT_PACKING.md.
 
 The shell-incidence union lemma gives full-row support union at least 11 in template A and 10 in C. The transversal boundary theorem proves tau(Q)>=7, but the E407 delta<=15 bound is conditional on L being non-four-partite; unconditionally delta may be 16, forcing a non-complete four-partite branch. The E408 Q33 non-complete four-partite branch is also open.
 
-The emergency witness-star dichotomy is not used because tripartite does not imply complete tripartite. EG617(r=12) remains OPEN / NOT_CERTIFIED.
+The latest zero-excess branch derives the E407 g=16, epsilon_U=0 four-partite corner. Its further inference that the eighth point is unused, that all five missing edges are incident to it, and that size-8/9 transversals contain a whole part is audited in R12_E407_G16_EPS0_CORNER_AUDIT.md. A modified TD(4,7) gives a local incidence counterexample to those inferences; it does not refute the full core theorem.
+
+EG617(r=12) remains OPEN / NOT_CERTIFIED.

@@ -53,9 +53,9 @@ The full theorem remains **OPEN / NOT_CERTIFIED**. No conditional shell theorem,
 ## 5. Live refresh — latest sibling heads checked 2026-10-25
 
 - Witness-packing branch latest read: [5d0e3ce](https://github.com/Icarus-K-Laplace/EG617-r12-proof/commit/5d0e3ceab7895be1a947e46853f92bb84477f4e5). Its shell-incidence union lemma proves full-row support union at least 11 in template A and at least 10 in C. Its transversal audit correctly treats the E407 bound delta<=15 as conditional on non-four-partiteness.
-- Zero-excess branch latest read: [aba9b81](https://github.com/Icarus-K-Laplace/EG617-r12-proof/commit/aba9b8126ed6a62e5ba15c7d6f0a1c989ab4c183). It confirms the universal six B-labelled component count and at least two zero-excess labelled witnesses per exact-129 color; for h>=6, each exact-129 color has at least two high-k labelled witnesses, while h=5 still forces at least one.
+- Zero-excess branch latest read: [2b433e2](https://github.com/Icarus-K-Laplace/EG617-r12-proof/commit/2b433e2f1580e28dfd17db0006e6cc664b4be991). It derives the E407 g=16, epsilon_U=0 four-partite corner, but its “unused eighth point” and subsequent full-group hitting-set inference are not justified by pairwise linearity alone; see R12_E407_G16_EPS0_CORNER_AUDIT.md.
 - The current ultimate-closure branch includes the witness-transversal boundary theorem. Its tau(Q)>=7 proof is valid, but the claimed unconditional non-four-partiteness is not. The correct E407 window is delta<=16; if delta=16, Brouwer's bound forces L to be four-partite, not non-four-partite. The E408 Q33 four-partite branch also remains open.
 - The beta-sensitive component-count draft in R12_BETA_SENSITIVE_ZERO_EXCESS_PACKING.md has been withdrawn. Its corrected replacement is R12_EXACT129_ZERO_EXCESS_COMPONENT_PACKING.md.
-- Added R12_FULL_ROW_SUPPORT_UNION.md from the sibling shell-incidence theorem.
+- Added R12_FULL_ROW_SUPPORT_UNION.md and R12_E407_G16_EPS0_CORNER_AUDIT.md. The local TD(4,7) construction shows the eighth point can be used in one block, and an 8-point transversal can hit all 49 blocks without containing a whole part. This audits the local incidence inference only; it is not a full-core counterexample.
 
 All sibling workstreams remain separate; this branch only adds its own reconciliation and proof-audit artifacts. EG617(r=12) remains OPEN / NOT_CERTIFIED.
