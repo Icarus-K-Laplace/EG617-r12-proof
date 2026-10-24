@@ -97,3 +97,11 @@ Committed R12_ROW_TRANSVERSAL_AND_Q33_PACKING.md.
 - E407 Q32 same-284-core completion: OPEN.
 - E408 Q32 threshold-29 exhaustive coverage: OPEN.
 - E408 Q33 seven-block compatibility: OPEN.
+
+
+### Exact count verifier
+Added verify_row_transversal_counts.py (commit 3ee3d3213fec6136dea255a5cf5135bff0f9ab78) and ran it locally. All exact count checks passed:
+- E407 A/B/C/D/E high-k minima: 6/8/6/7/5.
+- Q33 beta 0/1/2/3 high-k minima: 6/6/5/5.
+- Equality profiles are enumerated exactly, including the beta=3 profiles (0,5,0,5), (0,5,1,4), (1,4,0,5).
+This verifies only the row-count arithmetic; the graph-theoretic terminal remains open.
