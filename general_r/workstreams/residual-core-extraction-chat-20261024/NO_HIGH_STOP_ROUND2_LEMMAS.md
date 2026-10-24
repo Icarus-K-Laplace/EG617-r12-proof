@@ -682,7 +682,9 @@ This is a stronger necessary structure, not a contradiction. The exceptional `O_
 - Uniform edit-distance partition stability and the global near-resolvable design are proved via Füredi.
 - The critical-core polynomial confines fixed-`a` residues to explicit bounded-width windows for `r>=R_a`.
 - The predecessor label-capacity lemma proves `z_i>=1` for every non-target color, with exact class-hole identity.
-- For fixed `a`, target groups have absolute width and every internal target-complement edge is incident to at most `4M_0/H_r` hubs; for `a=6`, at most 116 hubs suffice for `r>=1000`.
+- The exact predecessor-label defect identity, two-label product obstruction, and stability-part alignment lemma are proved.
+- Every fixed-a high stop contains a pairwise-linear partial resolvable `TD(a,r)` with `r^2-O_a(r)` blocks; for `a=6,r>=1000`, at least `r^2-112r` blocks are forced.
+- For fixed `a`, target groups have absolute width and every internal target-complement edge is incident to at most `4M_0/H_r` hubs; after Brouwer tightening, for `a=6` at most 74 hubs suffice for `r>=1000`.
 ### NOT PROVED
 
 - (a=6) is impossible.
@@ -697,4 +699,4 @@ This is a stronger necessary structure, not a contradiction. The exceptional `O_
 \boxed{\texttt{NO-HIGH-STOP = OPEN}.}
 ]
 
-The critical-core potential has reduced the (a=6) case to four explicit residue windows, and any high stop forces a pairwise-linear partial resolvable TD(6,r) with at least `r^2-112r` blocks plus a hub kernel of size at most 74 for `r>=1000`. The linear-defect theorem aligns all but O_a(r) predecessor classes with stability parts; NO-HIGH-STOP remains open. Brouwer floors now sharpen the excess vector, but the explicit abstract ledger countermodel shows scalar and pair-count constraints still do not contradict a high stop. The next highest-leverage step is to align the equality/small-defect Brouwer templates with the exact predecessor classes and derive a joint incidence-packing contradiction.
+The critical-core potential has reduced the (a=6) case to four explicit residue windows. Any high stop forces a pairwise-linear partial resolvable `TD(6,r)` with at least `r^2-112r` blocks and a hub kernel of size at most 74 for `r>=1000`. The linear-defect theorem aligns all but `O_a(r)` predecessor classes with stability parts. This is a strong necessary structure, but no design-completion or earlier-stop theorem is proved; `NO-HIGH-STOP` remains open. The scalar and local KP countermodels show why neither scalar-only inequalities nor assuming `z_i=1` will suffice. The next highest-leverage step is to classify the `O(r)` exceptional blocks jointly across colors and derive a contradiction from their incidence with the hub kernel..
