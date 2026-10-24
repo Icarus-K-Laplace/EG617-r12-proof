@@ -128,3 +128,10 @@ Theorem J.W8 proves that the equality case in the residual budget is impossible.
 The equality graph in the omitted color would be one q-clique plus q cliques of size q-1. Each external root must fully c-cover one block, but the block capacities sum to only 1+2q<|X|=2q+2. Therefore at least ceil((q+1)/2) residual colors are q-partite and yield pairwise orthogonal partitions.
 
 At r=7, this forces four orthogonal order-6 partitions and hence two MOLS(6), impossible by Euler–Tarry. Thus the tight-transversal Case B is CLOSED at r=7. Case A (matching number >=3) and the full r=7 theorem remain OPEN.
+
+
+## Round 13 — weighted blocker inequality; quantitative audit correction
+
+The valid new result is Theorem J.W12 in ALIGNMENT_FREE_WITNESS_RIGIDITY.md, commit eb5aaee4e2957b8f18d1c62c886dab8d6d23337e. Under a conditional (q+1)-partite residual c-complement, every root that fully c-covers no block must satisfy a root-dependent weighted blocker sum W_x>=1, where each cross-block c-edge uv contributes 1/(|A_i(x)||A_j(x)|) and A_j(x) is the set of c-nonneighbors of x in block B_j. The proof samples from these candidate sets, not from full blocks.
+
+Audit correction: the attempted J.W11 quantitative strengthening in commit 5466f79333f0e8b1694c181c2ece4ae907086a37 was withdrawn in commit 87b7ad18cda97fcef378ffff63c8397936617f36. Its random-transversal probability bound incorrectly used full block sizes instead of root-dependent candidate-set sizes. Do not use the claimed d>=C(k+1,2) bound. The valid strict endpoint result J.W8 remains d>=1; Case B at r=7 remains closed by J.W9-J.W10. Case A and the full all-r compression implication remain OPEN.
