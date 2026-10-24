@@ -337,3 +337,15 @@ The latter confirms the reusable weighted transversal-cover inequality, but its 
 - `ROBUST_EXACT_CORE.md`: `b7d7f6bbe734f73c88ec5e71d87b65c77697d1e0`.
 
 **Final status for this round:** contextual terminal nonexistence **PROVED_ANALYTIC for (r\ge6212)**; literal robust Hub Propagation **OPEN**; full Erdős Problem 617 front-end **OPEN**.
+
+
+### Status-table reconciliation
+
+Updated the canonical success-level table so it no longer leaves D4 marked OPEN after the new theorem:
+- `CANONICAL_STATE.md`: `c7097ed765fd3bc829c6e48927e5334ec23c5cce`.
+
+Correct status:
+- D2/front-end forcing: **OPEN**.
+- D4/contextual terminal nonextension: **PROVED_ANALYTIC for (r\ge6212)**.
+- Literal edge-by-edge Hub Propagation mechanism: **OPEN**.
+- D5 / finite remaining cases and full original-problem closure: **OPEN**.
