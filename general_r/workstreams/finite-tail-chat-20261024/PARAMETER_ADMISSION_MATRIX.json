@@ -159,10 +159,15 @@
         "residual-core",
         "near-anchor"
       ],
-      "source_ids": [
-        "RC_Q_CEILING",
-        "ANCHOR_K8_NEAR"
-      ],
+      "source_ids_by_profile": {
+        "residual-core": [
+          "RC_Q_CEILING"
+        ],
+        "near-anchor": [
+          "RC_Q_CEILING",
+          "ANCHOR_K8_NEAR"
+        ]
+      },
       "scope": "necessary missing-degree scalar domain only"
     },
     {
@@ -174,7 +179,9 @@
         "not-applicable"
       ],
       "source_ids": [
-        "D1_SHELL_CLASS_BOUND"
+        "D1_SHELL_CLASS_BOUND",
+        "RC_Q_CEILING",
+        "ANCHOR_K8_NEAR"
       ],
       "scope": "conditional d1 shell-class count N<=5 only"
     }
