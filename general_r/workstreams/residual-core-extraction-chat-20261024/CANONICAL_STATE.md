@@ -12,8 +12,8 @@ Last major mathematical state: 2026-10-24.
 
 Status: `PROVED_SYMBOLIC` / `SOURCE_REPORTED`.
 
-- `r^2+1`, `5r+1`, `4r+1`, `3r-1`, `r+1` have been separated from fixed-r seeds.
-- The r=12 proof of residual minimum degree is confirmed to depend on lower-order Ramsey seeds and is not itself an all-r proof.
+- `r^2+1`, `5r+1`, `4r+1`, `3r-1`, `r+1` are genuinely structural orders.
+- The r=12 proof of residual minimum degree depends on lower-order Ramsey seeds and is not itself an all-r proof.
 - File: `R12_TO_GENERAL_DEPENDENCY_MAP.md`.
 
 ### 2. Outer-ray invariant and trimming normalization
@@ -24,7 +24,7 @@ For anchor degree `d=r-s`, after `j` extracted `K_r` blocks with `a=r-1-j`,
 
 `n=ar+s`, so `n-ra=s` is invariant.
 
-More strongly, induced-subgraph averaging collapses every `s>=1` state to the critical `s=1` state `ar+1` without worsening the canonical edge budget.
+Induced-subgraph averaging collapses every `s>=1` state to the critical `s=1` state `ar+1` without worsening the canonical edge budget.
 
 Files:
 
@@ -35,13 +35,11 @@ Files:
 
 Status: `PROVED_ANALYTIC`.
 
-For `r>=3`, the least-color graph has a minimum-degree anchor with
+For `r>=3`, the least-color graph has a minimum-degree anchor with `d<=r-1`.
 
-`d<=r-1`.
+Proof: averaging plus Brooks; `delta>=r` would make the graph r-regular while `alpha<=r` forces chromatic number at least `r+1`.
 
-Proof: averaging plus Brooks; equality `delta>=r` would make the graph r-regular while `alpha<=r` forces chromatic number at least `r+1`.
-
-### 4. General residual-core minimum degree
+### 4. General residual-core minimum degree — LEVEL A
 
 Status: **`PROVED_ANALYTIC`**.
 
@@ -53,7 +51,7 @@ For every `r>=17`, any graph `H` on `3r-1` vertices satisfying
 
 must satisfy
 
-> `delta(H)>=r`.
+> **`delta(H)>=r`.**
 
 Key chain:
 
@@ -82,7 +80,7 @@ Any induced `F` on `4r+1` vertices satisfying
 
 automatically has
 
-`delta(F)=r+1`.
+> `delta(F)=r+1`.
 
 Hence it has a degree-`(r+1)` pivot `p`, and
 
@@ -107,30 +105,68 @@ After anchor normalization, states have
 `alpha(R_a)<=a`,
 `e(R_a)<=B_a=r((a+1)r-a+1)/2`.
 
-If `R_a` contains a target-color `K_r`, deleting it yields the next canonical state `R_{a-1}` and reduces the alpha cap by one.
+If `R_a` contains a target-colour `K_r`, deleting it yields the next canonical state `R_{a-1}`.
 
 For `r>=17`, a canonical process cannot pass below `a=4`; reaching `R_4` forces it to be `K_r`-free and therefore gives the residual branch.
 
-### 7. Exact 5r+1 terminal
+### 7. Recurrence-replacement scalar potentials
+
+Status: `PROVED_SYMBOLIC` / `PROVED_ANALYTIC`.
+
+File: `RECURRENCE_REPLACEMENT_POTENTIALS.md`.
+
+#### Exact all-colour excess ledger
+
+For a canonical state on `ar+1` vertices, if `x_0` is the target-colour excess above `p_a` and `x_i` are the other colours' excesses above `p_r`, then
+
+> `x_0 + sum_{i=1}^{r-1} x_i = S_a(r)`
+
+with
+
+> `S_a(r)=[a(a-1)r+2a-2r]/2`.
+
+Moreover
+
+`S_a-S_{a-1}=(a-1)r+1`.
+
+This is a genuine all-r scalar potential replacing much of the recurrence bookkeeping.
+
+#### Alpha saturation
+
+Every canonical state has
+
+> `alpha(R_a)=a`,
+
+not merely `<=a`.
+
+#### Critical-core potential
+
+Every canonical stop contains an induced `(r+1)`-critical graph `Q`. At a `K_r`-free stop,
+
+> `|Q|>=3r-1` for `r>=4`.
+
+Writing `|Q|=lr+t`, `0<=t<r`, compatibility with the hereditary cap and the Kostochka--Yancey critical-graph bound is exactly the single scalar inequality
+
+`P_{l,t}(r)<=0`
+
+recorded in `RECURRENCE_REPLACEMENT_POTENTIALS.md`.
+
+Thus candidate critical-core orders lie in bounded-width residue windows rather than a 1752-node arithmetic tree.
+
+### 8. Exact 5r+1 terminal
 
 Status: `PROVED_SYMBOLIC` as a terminal definition/reduction.
 
-If the first `K_r`-free canonical stop is `a=5`, then
-
-`T_r` has
+If the first `K_r`-free canonical stop is `a=5`, then `T_r` has
 
 - `5r+1` vertices;
-- `alpha<=5`, `omega<=r-1`;
+- **`alpha(T_r)=5`**;
+- `omega(T_r)<=r-1`;
 - hereditary cap;
-- `e<=3r^2-2r`;
+- `e(T_r)<=3r^2-2r`;
 - no `K_r`.
 
-If it is irreducible to Branch A, then
-
-- `alpha(T_r)=5`;
-- the hypergraph of independent 5-sets has transversal number at least `r+1`;
-- `delta(T_r)>=r`;
-- every degree-r row satisfies an explicit independent-4 witness condition.
+If irreducible to Branch A, the independent-5 hypergraph has transversal number at least `r+1`, `delta(T_r)>=r`, and every degree-r row satisfies an explicit independent-4 witness condition.
 
 File: `FIVE_R_TERMINAL.md`.
 
@@ -138,12 +174,12 @@ File: `FIVE_R_TERMINAL.md`.
 
 ### Complete desired front-end dichotomy
 
-Status: `PROVED_CONDITIONAL` on one remaining lemma.
+Status: `PROVED_CONDITIONAL` on one remaining structural lemma.
 
 For `r>=17`, if the first `K_r`-free canonical greedy stop cannot occur at `a>=6`, then every hypothetical counterexample yields exactly:
 
 - Branch A: a `4r+1` residual with the fully proved `3r-1` core contract; or
-- Branch B: the exact irreducible `5r+1` terminal of `FIVE_R_TERMINAL.md`.
+- Branch B: the exact irreducible `5r+1` terminal.
 
 No backend d2/d3/support theorem is used.
 
@@ -151,41 +187,41 @@ No backend d2/d3/support theorem is used.
 
 ### Single highest-leverage blocker
 
-> **NO-HIGH-STOP LEMMA.** For `r>=r0` (ideally `r0=17`), a canonical state
->
-> `|R_a|=ar+1`,
-> `alpha(R_a)<=a`,
-> `omega(R_a)<=r-1`,
-> hereditary least-color cap,
-> `e(R_a)<=B_a`,
->
-> cannot be the first `K_r`-free state when `a>=6`.
+> **NO-HIGH-STOP LEMMA.** For all sufficiently large `r`, a first `K_r`-free canonical state cannot occur at `a>=6`.
 
 This is now the only obstacle to the requested `4r+1 residual OR 5r+1 terminal` extraction theorem.
 
+The blocker is no longer an unstructured recurrence problem. Any counterexample must simultaneously satisfy:
+
+1. exact alpha saturation `alpha=a`;
+2. the exact all-colour excess ledger `S_a(r)`;
+3. a `K_r`-free target colour;
+4. a large `(r+1)`-critical core whose order passes `P_{l,t}(r)<=0`;
+5. the full hereditary cap on every induced subgraph.
+
 Secondary open questions:
 
-- Can `r>=17` in the core theorem be lowered?
-- Does the irreducible `5r+1` terminal exist?
-- Can its independent-5 hypergraph be forced into a finite-geometric/resolvable design class?
+- lower the current `r>=17` threshold in the Level-A core theorem;
+- decide whether the irreducible `5r+1` terminal exists;
+- turn the near-minimal non-target colours forced by `S_a(r)` into a resolvable-design classification.
 
 ## DISPROVED
 
-No mathematical theorem has been marked `DISPROVED` in this workstream yet.
+No mathematical theorem has been marked `DISPROVED` in this workstream.
 
-The following *proof shortcuts* are rejected as invalid generalizations:
+Rejected proof shortcuts:
 
 - substituting `r` into the r=12 47/48-vertex edge seeds;
 - claiming r=12 recurrence certification proves all-r extraction;
-- assuming `delta(H)>=r` without the theorem above.
+- assuming `delta(H)>=r` without the analytic theorem;
+- treating numerical matching at r=12 as symbolic provenance.
 
 ## NEXT HIGHEST-LEVERAGE TARGET
 
-Prove the **NO-HIGH-STOP LEMMA** without parameterizing the 1752-node r=12 recurrence.
+Prove the **NO-HIGH-STOP LEMMA** by combining the all-colour slack potential with near-Turan stability of one or more non-target colours.
 
-Preferred attack:
+Preferred formulation:
 
-1. use the canonical budget identity `B_a-p_a(ar+1)=C(r,2)`;
-2. exploit the full hereditary cap, not only alpha/omega;
-3. search for a weighted deletion/transversal argument reducing any `a>=6` stop to a `5r+1` terminal, or derive a contradiction directly;
-4. keep the blocker as one theorem, not dozens of local cases.
+> show that a first `K_r`-free canonical stop with `a>=6` forces enough of the other `r-1` colours to be O(a^2)-close to their balanced `r`-block minimum that the induced block systems either (i) yield a `5r+1` alpha-5 subset, or (ii) satisfy an exact resolvable-design contract that can be independently excluded.
+
+Do not return to a parameterized replay of the r=12 recurrence.
