@@ -42,12 +42,13 @@ Combined with RC this improves the right-edge ceiling to
 
 `q<=3r-1`.
 
-Current analytic status: the asymptotic sibling records an analytic proof for every `r>=68`. For `12<=r<68`, this finite-tail workstream does **not** assume it silently; a parameter-specific proof/certificate is required before a `near-anchor` instance can be used in a theorem chain.
+Current analytic status: the broad near-anchor source is applicable only for `r>=68`. For `12<=r<68`, this finite-tail workstream does **not** assume it silently; a parameter-specific proof/certificate is required before a `near-anchor` instance can use the broad `ANCHOR_K8` profile.
 
-Integration references:
+Pinned source used by the existing endpoint generator: branch `workstream/general-r-asymptotic-20261024`, commit `cd38647f85de9827a784288e69bad7a66d1e4e3a`, file `general_r/workstreams/asymptotic-chat-20261024/HYPOTHESIS_SENSITIVITY.md`.
 
-- asymptotic head observed: `cd38647f85de9827a784288e69bad7a66d1e4e3a`;
-- three-anchor head observed: `a98ef900be419993e3fe63d37a0cf82fa104c455`.
+Latest status sync: commit `aa7fbbda16ff0170c9bf7c440ca961a7a8aab3c0`, file `general_r/workstreams/asymptotic-chat-20261024/CANONICAL_STATE.md`; it preserves the same `r>=68` scope and records A_ext, C*, D as open.
+
+Three-anchor sibling head: `a934c3ccc22b6991cca5ba82f49ac9f3400748f0`; its exact three-anchor theorem is separately registered and is not interchangeable with this broader profile.
 
 ## QCAP_BASE — baseline q ceiling
 
