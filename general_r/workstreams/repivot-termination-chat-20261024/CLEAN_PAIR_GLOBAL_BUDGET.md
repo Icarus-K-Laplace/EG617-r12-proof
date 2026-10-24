@@ -147,7 +147,35 @@ The denominator is at least 16 throughout the stated high-density branch.
 
 This is a genuine dichotomy, but X can still be linear when a is close to r/3.
 
-## 6. Part-seeing vertices and the global no-double-counting identity
+## 6. Shell-incidence lower bound and strengthened exceptional budget
+
+For every clean endpoint x in U, the clean weight equation is
+
+kappa_x+e_F(x,S)=1,
+
+so kappa_x=1-e_F(x,S), with e_F(x,S) in {0,1}. The total incidence of the old shell pair is
+
+e_F(S,H)=2r+b,  b in {0,1}.
+
+Therefore at most 2r+b endpoints of U have zero excess, and
+
+K_U=sum_{x in U}kappa_x >= 2m-(2r+b).                       (6.1)
+
+The exceptional set O_exc is disjoint from U. Combining (5.1) with (6.1) gives the stronger joint budget
+
+2m-2r-b + X(3a-4-r) <= K_U+K_O <= 2r-2,
+
+or
+
+X(3a-4-r) <= 4r-2-2m+b.                                    (6.2)
+
+Since 2m=3r-1-h and 3a-4-r=(r-3h-5)/2, this becomes
+
+X <= floor(2(r-1+h+b)/(r-3h-5)).                            (6.3)
+
+The denominator r-3h-5 is at least 16 in the high-density branch. At the lower AES threshold, (6.3) gives X<=r/6+O(1), improving the earlier parameter-free X<=r/4+O(1). The exceptional set may still be linear, so this is not a contradiction.
+
+## 7. Part-seeing vertices and the global no-double-counting identity
 
 Assign every nonexceptional outside vertex to one part it sees completely. Let O_i be the assigned vertices for part i, g_i=|O_i|, and define
 
@@ -178,7 +206,7 @@ The class-witness slacks u_T from Section 4 remain distinct from the part-assign
 
 For each assigned group O_i, every clique Q in H[O_i] combines with U_i into a clique, so omega(H[O_i])<=s_i.
 
-## 7. What this does and does not close
+## 8. What this does and does not close
 
 The new structural result is an **outside-neighbour dichotomy**, not a theorem that every outside vertex sees an entire part. It proves:
 
@@ -187,7 +215,7 @@ The new structural result is an **outside-neighbour dichotomy**, not a theorem t
 - the number X of exceptional vertices obeys (5.2);
 - the part-seeing subpopulation has a three-part assignment with total slack 4+X and exact budget (6.3).
 
-The remaining terminal can still have X=Theta(r) near the lower AES threshold. Thus the full linear interval is not eliminated.
+The remaining terminal can still have X=Theta(r) near the lower AES threshold, although the shell-incidence budget sharpens its coefficient to at most about 1/6 in that regime. Thus the full linear interval is not eliminated.
 
 Boundary audit:
 - If h=2, all s_i=0, so no outside vertex can see a whole part; hence X=2 and (5.1) gives K_O>=r-11. This does not contradict the total budget by itself.
