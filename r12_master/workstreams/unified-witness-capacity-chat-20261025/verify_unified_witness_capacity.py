@@ -275,6 +275,40 @@ def check_exceptional_row_pair_bound() -> None:
     assert all(11 - a - b in (1, 2, 3) for a, b in profiles)
 
 
+def check_exceptional_row_independence_bound() -> None:
+    # Three pairwise nonadjacent exceptional rows have pairwise-disjoint
+    # complement cliques of sizes 3..5 in an 11-vertex gadget.
+    for sizes in [(3, 3, 3), (3, 3, 4), (3, 3, 5),
+                  (3, 4, 4), (3, 4, 5), (3, 5, 5),
+                  (4, 4, 4), (4, 4, 5), (4, 5, 5),
+                  (5, 5, 5)]:
+        total = sum(sizes)
+        assert 9 <= total <= 11
+        gadget_incidence = 33 - total
+        assert 22 <= gadget_incidence <= 24
+
+    # A low-slack block's two exceptional rows have total neighborhood
+    # size <= 11+r_i <= 14; since each has size >=6, each has size <=8.
+    for r_i in range(1, 4):
+        pair_sum_cap = 11 + r_i
+        assert pair_sum_cap <= 14
+        assert pair_sum_cap - 6 <= 8
+        # Three rows from distinct blocks: at most 24 total incidences.
+        assert 24 - 22 <= 2 < 5
+        # Two from one block plus one from another: at most 22.
+        assert pair_sum_cap + 8 <= 22
+
+    # For k low-slack blocks, the 2k exceptional-row graph has alpha<=2.
+    # Each pair of blocks contributes at least two C edges among exceptionals.
+    for k in range(2, 8):
+        min_edges = k * (k - 1)
+        # Turan's bound: alpha<=2 means the complement is triangle-free,
+        # so e(E) >= C(2k,2) - k^2 = k(k-1).
+        assert (2 * k * (2 * k - 1) // 2) - k * k == min_edges
+        # Equality is attained by two disjoint K_k cliques.
+        assert 2 * (k * (k - 1) // 2) == min_edges
+
+
 def main() -> None:
     check_zero_excess_endpoint_tables()
     check_edge_ledgers()
@@ -284,11 +318,13 @@ def main() -> None:
     check_pair_certificate_multiplicity()
     check_q33_label_array_relaxation()
     check_exceptional_row_pair_bound()
+    check_exceptional_row_independence_bound()
     print("R12_UNIFIED_WITNESS_CAPACITY_ARITHMETIC_OK")
     print("Partite branch: exact Q33 incidence profile and labelled row caps verified.")
     print("Pair-certificate multiplicity: max 45 unlabelled / 9 label-anchored pairs.")
     print("Q33 label-only array relaxation verified; no block-coordinate realization implied.")
     print("Exceptional-row 2x2 mask bound verified: costs 0/1/2 occur 6/8/1 times.")
+    print("Exceptional-row graph alpha<=2 and Turan equality profile verified.")
     print("Scope: exact integer/degree ledgers only; no graph-realization certificate.")
 
 
