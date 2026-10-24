@@ -129,3 +129,47 @@ For a fixed vertex (z), two clean 5-clique blocks (E,F), and nonneighbors (e\in 
 Every pair chosen from (E,F) either includes a neighbor of (z), or is exactly ((e,f)) and uses the edge (ef). The pattern is (K_6)-free locally: (z) has only four neighbors in either 5-clique, and there is only one edge between (E,F).
 
 Therefore, after a target-label obstruction, a second-coordinate barrier can cost only 9 edges locally; it is not automatically quadratic. A valid global proof must show that such barriers cannot be chained/overlapped compatibly across all colors under the (27r+15) total edit budget and exact pair ownership.
+
+
+## HP8. Destination-injectivity theorem for the canonical hub-star model
+
+This is a **conditional symbolic theorem** for the target-star regime, not yet a theorem that every terminal lies in that regime.
+
+Assume five target groups (B_1,\ldots,B_5). For each group (j), suppose there is a hub (a_j\in B_j) with an internal target nonneighbor (y_j\in B_j) and a full target cross-star
+[
+a_jB_{f(j)}\subseteq E(G_0),\qquad f(j)\ne j.
+]
+Assume also (a_jy_j\notin E(G_0)). If (alpha(G_0)\le5), then
+[
+\boxed{f:\{1,\ldots,5\}\to\{1,\ldots,5\}\text{ is a derangement permutation}.}
+]
+
+**Proof.** If (f(j)=f(k)=\ell) for distinct (j,k), then (\ell\notin\{j,k\}). Choose one ordinary point from each of the two remaining groups outside ({j,k,\ell}). Together with
+[
+a_j,y_j,a_k,y_k
+]
+these give six points. The only possible within-group pairs (a_jy_j,a_ky_k) are target nonedges; the two hub stars point to the omitted group (B_\ell); and all other chosen points are ordinary, so no target cross-star is incident to them. This is a target-independent 6-set, contradiction. Thus (f) is injective; on five groups it is a permutation, and (f(j)\ne j) makes it a derangement. **Status: PROVED_CONDITIONAL.**
+
+### Extra hub in the oversized group
+
+Suppose (B_h) has a second hub (b_h\ne a_h), with an internal target nonneighbor and a full target star (b_hB_g\subseteq E(G_0)). The same argument shows
+[
+\boxed{g=f(h).}
+]
+Indeed, if (g\ne f(h)), the permutation (f) has some (j\ne h) with (f(j)=g), and the two internal nonedges in groups (h,j) plus one point from each of the two groups outside ({h,j,g}) give an omitted-color 6-set.
+
+This is a useful restriction: the two hubs in the oversized group must have the **same destination group**, while the five group-level destinations form a derangement.
+
+## HP9. Triangle obstruction for co-locating the two oversized-group hubs
+
+Let (a_h,b_h\in B_h) be the two hubs, with (a_hb_h\in E(G_0)), and suppose both target-star to (B_k), where (k=f(h)). If a non-target ideal block (C\in Q_i) contains (a_h,b_h) and its (B_k)-representative (x_k), then all three pairs
+[
+a_hb_h,quad a_hx_k,quad b_hx_k
+]
+are target-colored and absent from (G_i). Thus the missing-edge graph (Q_i[C]\setminus G_i[C]) contains a triangle, and ({a_h,b_h,x_k}) is independent in (G_i[C]).
+
+If all cross-block additions of (G_i) are incident to a single cover block (D), this is impossible: omit (D) and choose one vertex from each of the other (r-2) blocks to obtain an independent ((r+1))-set. Hence in this regime the two hubs cannot share a block that also contains the destination-group representative. They must either:
+- lie in different ideal blocks; or
+- share a nontransversal block omitting (B_k), while the extra-point constraint forces another defective block.
+
+Status: **PROVED_CONDITIONAL**. Without the single-cover-block hypothesis, a multi-block barrier could still block the independent triple; its cost remains open.
