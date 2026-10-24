@@ -1,7 +1,7 @@
 # E407 Q32: \(\delta=15\) non-four-partite second-Turán packing
 
 Date: 2026-10-25  
-Status: **PROVED structural reduction under the frozen 49-witness contract; the remaining balanced construction is OPEN.**
+Status: **PROVED exclusion of the entire \\(\delta=15\\) non-four-partite branch**, conditional on the retained 49-witness/core contract and the Kang–Pikhurko equality classification.
 
 ## 1. Contract and equality classification
 
@@ -151,13 +151,62 @@ Applying this to \(x\) gives:
 
 Therefore the Kang–Pikhurko subset size \(a\in\{1,\ldots,6\}\) is reduced to \(a\in\{4,5,6\}\); \(a=4\) survives only with \(H[W]=K_3\cup K_5^3,\epsilon_U=0\), or with \(\epsilon_U=1,\epsilon_x=1\). This is a necessary condition, not a contradiction.
 
-## 5. Remaining obstruction
+## 5. Exact leave ledger in the balanced profile
 
-The \(\delta=15\) non-four-partite branch is reduced to one balanced Kang–Pikhurko construction with:
+Before using the core-to-\(W\) degree constraints below, the edge-packing analysis reduces the non-four-partite branch to one balanced Kang–Pikhurko construction with:
 - \(a\in\{1,\ldots,6\}\);
 - one of the three \((t_A,t_y,t)\) patterns above;
 - a 49-block \(K_4\) edge-packing that covers every \(P_3P_4\) pair;
 - the prescribed 15-edge leave and its vertex-level degree residues;
-- the original exact-129 color-class and shell-row/hub constraints.
+- the exact color-class omission ledger.
 
-The next step is to intersect this exact leave structure with the seven color classes and their template-specific hub-hit requirements. Until that compatibility is excluded, \(\delta=15\) non-four-partite remains OPEN and E407 Q32 remains OPEN / NOT_CERTIFIED.
+The balanced profile is then eliminated by the following core-degree argument.
+
+## 6. The core-to-\(W\) degree constraints exclude the balanced profile
+
+The exact ledger gives
+\[
+e(H[W])=48-\epsilon_U-\delta=33-\epsilon_U,\qquad
+\epsilon_U\in\{0,1\}.
+\]
+Since \(\alpha(H[W])\le4\), the complement \(\overline{H[W]}\) is \(K_5\)-free. It has 120 edges if \(\epsilon_U=0\), and 121 if \(\epsilon_U=1\). The non-four-partite Brouwer bound on 18 vertices is
+\[
+t_4(18)-\lfloor18/4\rfloor+1=121-4+1=118.
+\]
+Therefore \(\overline{H[W]}\) is four-partite in either case. The possible \(H[W]\) clique-part profiles are exactly those listed in NON_FOUR_PARTITE_TERMINAL.md; this \(W\)-side classification does not assume that \(L\) is four-partite.
+
+In the surviving balanced Kang–Pikhurko profile, the exceptional vertex \(x\) and distinguished base vertex \(y\) have
+\[
+d_{H[U]}(x)=13-a,\qquad d_{H[U]}(y)=6+a.
+\]
+Writing \(\epsilon_x=d_H(x)-12\) and \(\epsilon_y=d_H(y)-12\),
+\[
+d_H(x,W)=a-1+\epsilon_x,\qquad d_H(y,W)=6-a+\epsilon_y,\qquad
+\epsilon_x+\epsilon_y\le\epsilon_U\le1. \tag{3}
+\]
+
+For a disjoint union of four clique parts in \(H[W]\), every \(u\in U\) must be complete to at least one whole part: otherwise choose a non-neighbour of \(u\) from each part to obtain an independent 5-set. The same is true in the one-cross-edge \((4,4,5,5)\) profile for any \(u\) with at most five \(W\)-neighbours. If \(u\) were not complete to any part, avoiding an independent transversal would require its neighbourhood to contain all but the cross-edge endpoint in each of the two endpoint parts, costing at least \(3+3=6\) neighbours.
+
+Now split by \(\epsilon_U\).
+
+### Case \(\epsilon_U=0\)
+
+Then \(\epsilon_x=\epsilon_y=0\), so the two \(W\)-degrees in (3) are \(a-1\) and \(6-a\).
+
+- If \(H[W]=K_3\cup K_5\cup K_5\cup K_5\), both \(x\) and \(y\) must be complete to a component of size at least three. This requires \(a-1\ge3\) and \(6-a\ge3\), i.e. \(a\ge4\) and \(a\le3\), contradiction.
+- If \(H[W]=K_4\cup K_4\cup K_4\cup K_6\), both must have at least four \(W\)-neighbours. This requires \(a\ge5\) and \(a\le2\), contradiction.
+- If \(H[W]\) has clique-part sizes \((4,4,5,5)\) with one cross edge, both \(W\)-degrees are at most five, so both must be complete to a whole part of size at least four. Again \(a\ge5\) and \(a\le2\), contradiction.
+
+Thus \(\epsilon_U=0\) is impossible.
+
+### Case \(\epsilon_U=1\)
+
+Here \(H[W]=K_4\cup K_4\cup K_5\cup K_5\), a disjoint union of cliques of minimum size four. Equation (3) and the whole-part condition imply
+\[
+a-1+\epsilon_x\ge4,\qquad 6-a+\epsilon_y\ge4.
+\]
+The first inequality gives \(a\ge5-\epsilon_x\ge4\); the second gives \(a\le2+\epsilon_y\le3\). Contradiction.
+
+Therefore the balanced Kang–Pikhurko profile is impossible as well.
+
+> **Conclusion:** the \(\delta=15\), \(L\) non-four-partite branch is excluded under the retained core/witness contract. This does not exclude the \(\delta=15\) four-partite branch, \(\delta=16\), or any lower-\(\delta\) branch; E407 Q32 overall remains OPEN / NOT_CERTIFIED.
