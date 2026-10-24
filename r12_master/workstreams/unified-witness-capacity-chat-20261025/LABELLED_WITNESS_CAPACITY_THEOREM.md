@@ -160,3 +160,57 @@ where \(p_4(w)=\binom w2-t_4(w)\), the minimum edge count of a \(w\)-vertex grap
 \end{array}
 \]
 These inequalities are consistent with the omission-capacity refinements. The theorem closes no terminal by itself. The precise unresolved bridge is to turn the labelled row-hit constraints of the selected \(Q\)'s into an additional upper bound on the right side of (1), or into a stronger lower bound on \(e_H(U,W)\). An arbitrary independent four-set supplied by the zero-excess theorem cannot be inserted into the labelled family without a separate color-component lemma.
+
+
+## 6. Labelled row capacity in the four-partite branches
+
+This section is conditional on the corresponding terminal being genuinely four-partite and every selected witness being a transversal of its four parts. It does not assume the non-four-partite branch away.
+
+### Lemma 6.1 (per-part label-row capacity)
+
+Let \(L=\overline{H[U]}\) be four-partite with parts \(V_1,\ldots,V_4\), and let every selected witness \(Q\) be a transversal \(Q\cap V_j\) of size one. For a shell label \(b\in B\), let \(n_b\) be the number of selected witnesses labelled \(b\), and let \(D_b=N_F(b)\cap H\) be its target-colour core neighborhood. Then
+\[
+\boxed{|D_b\cap V_j|\le |V_j|-n_b\quad(j=1,\ldots,4),}
+\qquad
+\boxed{|D_b\cap U|\le |U|-4n_b.}
+\]
+In particular, in E407's part sizes \((8,7,7,7)\), \(n_b=7\) forces \(D_b\cap U\) to lie in at most one point of the size-eight part. In E408 Q33's part sizes \((8,8,8,7)\), \(n_b=7\) forces \(D_b\cap U\) to lie in at most one point in each of the three size-eight parts and no point in the size-seven part. If \(t_b=|D_b|\), these give
+\[
+|D_b\cap W|\ge \max\{0,t_b-(|U|-4n_b)\}.
+\]
+
+**Proof.** The \(n_b\) witness blocks carrying label \(b\) are pairwise vertex-disjoint: otherwise the edge from \(b\) to a shared core vertex would be assigned two non-target colors. Since each block is a transversal, these blocks occupy \(n_b\) distinct vertices in every part \(V_j\). Each labelled block is anticomplete to \(b\) in the target graph, so \(D_b\) avoids every one of these occupied vertices. At most \(|V_j|-n_b\) vertices in part \(V_j\) remain available to \(D_b\). Summing the four part bounds proves the second inequality. The W-bound follows by subtracting the maximum possible number of neighbors in U from \(t_b\). \(\square\)
+
+### Theorem 6.2 (exact Q33 four-partite incidence profile)
+
+Assume the E408 Q33 minimum-support contract and that \(L\) is four-partite with parts \(A_1,A_2,A_3,D\) of sizes \(8,8,8,7\). The 56 selected witness K4s are edge-disjoint transversals, seven from each of eight exact-129 colors. Then
+\[
+r_d=8\quad(d\in D),\qquad r_x=7\quad(x\in A_1\cup A_2\cup A_3).
+\]
+Consequently the omission multiplicities satisfy
+\[
+o_d=0\quad(d\in D),\qquad o_x=1\quad(x\in A_1\cup A_2\cup A_3),
+\qquad \boxed{\Omega=\sum_{x\in U}\binom{o_x}{2}=0.}
+\]
+Equivalently, the eight color omission triples partition the 24 vertices of \(A_1\cup A_2\cup A_3\); no two colors omit the same support vertex.
+
+**Proof.** Each color has seven pairwise-disjoint transversals and therefore uses every vertex of D exactly once, so every \(d\in D\) lies in eight blocks. For \(x\in A_1\), edge-disjointness implies that no pair \((x,d)\) can be used twice. There are only seven choices of \(d\), so \(r_x\le7\). There are \(56\) total incidences with \(A_1\), spread over eight vertices, hence every vertex of \(A_1\) has multiplicity exactly seven. The same argument applies to \(A_2,A_3\). Thus every large-part vertex is omitted by exactly one of the eight color classes, while no D vertex is omitted. \(\square\)
+
+### Corollary 6.3 (Q33 label budget on the seven-point part)
+
+Under Theorem 6.2, the eight blocks through any fixed \(d\in D\) have eight distinct labels: a repeated label would produce two same-label witnesses sharing \(d\). At most one label is the pivot \(p\). Hence each \(d\) has at least seven distinct B labels and is target-adjacent to at most three B rows; if no pivot-labelled witness contains \(d\), it has eight B labels and is target-adjacent to at most two B rows.
+
+If \(P\) is the number of pivot-labelled selected witnesses, the pivot witnesses occupy \(P\) distinct points of D, so
+\[
+\boxed{e_F(B,D)\le 3P+2(7-P)=14+P\le21.}
+\]
+Under the retained Q33/d3 row budget \(K_B:=\sum_{b\in B}k_b\ge22-\beta\) and \(G_B:=\sum_b g_b\), where \(t_b=k_b+g_b\), it follows that
+\[
+\boxed{e_F(B,H\setminus D)\ge
+\max\{0,\ 8-\beta+G_B-P\}.}
+\]
+This is a genuine labelled row-capacity constraint. It does not by itself contradict the current budget; it records the minimum target incidence that must leave the seven-point part.
+
+## 7. Cross-terminal interpretation
+
+The generic omission-capacity inequality remains valid in both terminal types. The partite theorem sharpens it in the Q33 four-partite branch to the exact profile \(\Omega=0\), whereas the non-four-partite branch retains the broader omission profiles. Therefore any future use of the scalar profile \(\Omega>0\) to exclude Q33 must explicitly be a non-four-partite argument; it cannot be used against the four-partite branch. Conversely, the Q33 four-partite label-row cap \(|D_b\cap D|\le7-n_b\) is not available in the non-four-partite branch.
