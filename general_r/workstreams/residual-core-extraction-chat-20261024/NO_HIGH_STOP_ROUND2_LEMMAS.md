@@ -807,13 +807,13 @@ which rearranges to the first identity. Summing over `i=1,...,r-1` gives the sec
 Fix a non-target color `i` and a duplicate vertex `v in Z_i intersect V_j` with `v notin X`. Let `b,c` be its two duplicated color-`i` labels at the predecessor clique. Then at least one of the following holds:
 
 1. at least one of `S_{i,b},S_{i,c}` omits `V_j`, contributing a group-`j` missing label slot; or
-2. the two classes both meet `V_j`, and their group-`j` representatives form an internal `F_0[V_j]` edge of color `i` that lies between distinct label classes (so it is not counted by `c_{i,j}`).
+2. the two classes both meet `V_j`, and there is an internal `F_0[V_j]` edge of color `i` that is not inside a single label class `S_{i,b}` (so it is not among the collision edges counted by `c_{i,j}`).
 
 **Proof.** Put `A_b=N_{F_i}(v) intersect S_{i,b}` and similarly `A_c`. The exact `(r+1)`-set argument gives every pair in `A_b x A_c` color `i`. If one class omits `V_j`, alternative 1 holds. Otherwise choose `y_b in S_{i,b} intersect V_j` and `y_c in S_{i,c} intersect V_j`.
 
 If both `y_b,y_c` were nonhubs, then `vy_b` and `vy_c` could not be internal `F_0` edges (such an edge must meet `X`), so both would be target-color edges and `y_b in A_b,y_c in A_c`. The product obstruction would force `y_by_c` to have color `i`, an internal `F_0` edge with no hub endpoint, impossible. Hence at least one of `y_b,y_c` is a hub; assume it is `y_b`.
 
-If `vy_b` has color `i`, it is already an internal `F_0[V_j]` edge between `Z_i` and a hub, not counted by `C_j`. Otherwise `y_b in A_b`. If `vy_c` has color `i`, that pair is likewise such an edge. In the remaining case `y_c in A_c`, so the product obstruction forces `y_by_c` to have color `i`; since `b!=c`, this is an internal edge between distinct label classes, again not counted by `C_j`. Thus alternative 2 holds. `\square`
+If `vy_b` has color `i`, it is already an internal `F_0[V_j]` edge between `Z_i` and a hub, not counted by `C_j`. Otherwise `y_b in A_b`. If `vy_c` has color `i`, that pair is likewise such an edge. In the remaining case `y_c in A_c`, so the product obstruction forces `y_by_c` to have color `i`; since `b!=c`, this is an internal edge between distinct label classes, again not counted by `C_j`. Thus alternative 2 holds. The witness may be incident to the duplicate vertex `v` (which lies in `Z_i`), or may join two distinct label classes; the claim is only that it is outside the within-class collision-edge collection. `\square`
 
 Consequently, if `m_j` is the number of non-target colors having at least one nonhub duplicate vertex in `V_j`, then
 
@@ -853,6 +853,74 @@ The class/group incidence bookkeeping can assign 9 classes per color to repeat i
 ### Research implication
 
 The extreme-part case is now sharply isolated: if `delta_max=9`, then `x_0` is forced to be at least `8r-O(1)`, and the remaining non-target excess above their `a-1=5` floors is only `O(1)` if the large part's collision count is near its maximum. The next attack must use the *actual equality structure* of colors with `x_i=5`, not only their edge counts, to test whether the required 9-class collision pattern is compatible with the local extremal template.
+
+## 12. Extreme target-part excess forces a near-KP equality vector
+
+This result combines the groupwise incidence inequality with the exact all-color excess budget. It does not assume the largest part is the only nontrivial one.
+
+### Theorem 14.1 — conditional KP-equality concentration
+
+Let `V_j` be a target-stability part with `|V_j|=r+delta_j`, `delta_j>=1`. Let `Z_j=sum_i z_{i,j}` be the number of duplicate-label vertices in this part, and let `m_j` be the number of non-target colors having at least one **nonhub** duplicate vertex in `V_j`. Define the non-target excesses `y_i=x_i-5>=0` for `a=6`, so
+
+`sum_{i>0} y_i=9r+11-x_0`.
+
+Then
+
+`sum_{i>0}y_i <= (9-delta_j)r + 11+delta_j + Z_j-m_j`.  (KP-C)
+
+In the extreme case `delta_j=9`,
+
+`sum_{i>0}(x_i-5) <= 20+Z_j-m_j`.  (KP-9)
+
+**Proof.** The groupwise incidence inequality (GCI) gives
+
+`D_j >= m_j-Z_j+(r-1)delta_j`.
+
+Since `D_j<=x_0`,
+
+`x_0 >= m_j-Z_j+(r-1)delta_j`.
+
+Subtract from the exact total excess `x_0+sum_i x_i=14r+6`, or equivalently use `sum_i(x_i-5)=9r+11-x_0`, to obtain
+
+`sum_i y_i <= 9r+11 -m_j+Z_j-(r-1)delta_j`,
+
+which is exactly (KP-C). Setting `delta_j=9` yields (KP-9). `\square`
+
+Here `Z_j-m_j=sum_{i:z_{i,j}>0}(z_{i,j}-1)` is the duplicate concentration beyond one vertex per active color. Thus if `delta_j=9` and every active color contributes exactly one duplicate vertex to `V_j` (in particular, if `Z_j=0`), then the total excess above Brouwer's floor across **all** non-target colors is at most 20. Consequently at most 20 colors can have `x_i>=6`; at least `r-21` colors satisfy `x_i=5`.
+
+### Lemma 14.2 — exact KP base-part sizes at the Brouwer floor
+
+Suppose `a=6`, `x_i=5`, and `F_i=bar(G_i)` is a high-stop non-target color graph. Then the Kang–Pikhurko equality classification applies: `F_i` is one of their extremal non-`r`-partite `K_{r+1}`-free graphs on `n=6r+1` vertices. In its canonical construction, the `r` base parts `N_1,...,N_r` satisfy
+
+`sum_j |N_j|=n-1=6r`,
+`|N_j|<=alpha(F_i)<=6` for each `j`.
+
+Hence every base part has **exactly six vertices**.
+
+**Proof.** The high-stop hypotheses give `F_i` is `K_{r+1}`-free and `alpha(F_i)<=6`. Since `x_i=5=t_r(6r+1)-e(F_i)` and `floor((6r+1)/r)=6`, Brouwer's bound is attained with equality. Kang–Pikhurko's theorem classifies all such extremal graphs by their construction from `r` base parts on `n-1` vertices plus one special vertex. Each base part is independent in `F_i`, hence has size at most six; their sizes sum to `6r`, so all are six. `\square`
+
+### Lemma 14.3 — the `z_i=1` interface has at most two exceptional blocks
+
+Under Lemma 14.2, additionally suppose `z_i=1`. The predecessor hole identity forces every `S_{i,b}` to have size six, and the `r` classes partition all vertices except the unique duplicate vertex. In the Kang–Pikhurko construction, every independent set of size six is either a base part `N_j`, or one of the following exceptional sets when its stated size condition holds:
+
+- `{x} union (N_t minus {y})`, always of size six;
+- `{x} union (N_s minus A*)`, of size six only when `|A*|=1`;
+- `A* union {y}`, of size six only when `|A*|=5`.
+
+These are all the possibilities: an independent set not containing `x` lies in a single base part, unless it uses the only deleted cross-edges and is contained in `A* union {y}`; an independent set containing `x` can use vertices from only `N_s minus A*` or `N_t minus {y}`, but not both because all cross-edges between these two sets remain. Since the `S_{i,b}` are disjoint and cover all but one vertex, at most two classes can be exceptional. More precisely, the possible noncanonical partitions are:
+
+1. replace `N_t` by `{x} union (N_t minus {y})` and omit `y`;
+2. if `|A*|=1`, replace `N_s` by `{x} union (N_s minus A*)` and omit the sole vertex of `A*`;
+3. if `|A*|=5`, replace `N_s,N_t` by `{x} union (N_t minus {y})` and `A* union {y}`, omitting the sole vertex of `N_s minus A*`.
+
+Otherwise the classes are the base parts and the omitted vertex is `x`. Thus a `z_i=1,x_i=5` color has a canonical six-set partition with at most two exceptional blocks, not an arbitrary partition.
+
+### Scope / countermodel audit
+
+- (KP-C) is valid for every `delta_j>=1`; it only uses the established groupwise inequality and the exact global excess ledger.
+- If `delta_j=9` but `Z_j-m_j` is large, (KP-9) is weaker by exactly that concentration term. The theorem does not silently assume duplicates are spread across colors.
+- Lemmas 14.2–14.3 apply only to colors with `x_i=5`, and Lemma 14.3 additionally requires `z_i=1`. The current scalar countermodel has `delta=(9,-8,0,0,0,0)`, `Z_1=m_1=0`, and `x_0=9r-2`, so it gives `sum_i y_i=13`, consistent with (KP-9); it is not a graph counterexample.
+- The remaining blocker is to control colors with `z_i>1` and to show that the near-KP partitions across colors cannot jointly realize the target-group hub incidences. No contradiction to `NO-HIGH-STOP` is claimed.
 
 ## 9. Status ledger for this round
 
