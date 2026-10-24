@@ -928,6 +928,54 @@ Otherwise the classes are the base parts and the omitted vertex is `x`. Thus a `
 - Lemmas 14.2–14.3 apply only to colors with `x_i=5`, and Lemma 14.3 additionally requires `z_i=1`. The current scalar countermodel has `delta=(9,-8,0,0,0,0)`, `Z_1=m_1=0`, and `x_0=9r-2`, so it gives `sum_i y_i=13`, consistent with (KP-9); it is not a graph counterexample.
 - The remaining blocker is to control colors with `z_i>1` and to show that the near-KP partitions across colors cannot jointly realize the target-group hub incidences. No contradiction to `NO-HIGH-STOP` is claimed.
 
+## 13. Collision concentration: almost all large-part defects are hub–nonhub doubletons
+
+Let `V_j` be a target part, `s_j=|V_j|`, `X_j=X intersect V_j`, and `k_j=|X_j|`. Write
+
+`t_{i,b,j}=|S_{i,b} intersect V_j|`,
+`C_j=sum_{i,b}(t_{i,b,j}-1)_+`,
+`N_{2,j}=#{(i,b): t_{i,b,j}=2}`.
+
+### Lemma 15.1 — bounded contribution from intersections of size at least three
+
+`C_j-N_{2,j} <= 2 binom(k_j,2)`.  (CC)
+
+**Proof.** Every pair inside `S_{i,b} intersect V_j` is an internal `F_0[V_j]` edge, so it meets `X_j`. Thus every such intersection contains at most one nonhub. If its size is `t>=3`, it contains at least `t-1` hubs and hence at least `binom(t-1,2)` hub–hub pairs. Its collision contribution is `t-1<=2 binom(t-1,2)`. The hub–hub pairs used by different classes/colors are distinct because a pair has only one edge color and same-color label classes are disjoint. Summing over all `t>=3` intersections proves (CC). `\square`
+
+### Corollary 15.2 — large-part collisions form a colored matching system
+
+Every class with `t_{i,b,j}=2` consists of exactly one hub and one nonhub. The corresponding pairs form a simple bipartite graph between `X_j` and `V_j minus X_j`; within each color, these pairs form a matching, and different colors use distinct pairs. Moreover,
+
+`N_{2,j} >= C_j-2 binom(k_j,2)`.
+
+Thus, for a part of size `r+9`, the groupwise identity yields
+
+`N_{2,j} >= 9(r-1)-Z_j-2 binom(k_j,2)`,
+
+where `Z_j=sum_i z_{i,j}`. Since the global hub theorem gives `k_j<=|X|<=28` for `r>=26272`,
+
+`N_{2,j} >= 9r-765-Z_j`.
+
+In particular, if `Z_j=0`, at least `9r-765` of the internal label-class collision edges are hub–nonhub doubletons. All but at most `756` collision units can lie in larger intersections, independent of `r`.
+
+### Corollary 15.3 — the target-edge budget leaves at most `20+Z_j-m_j` non-target excess
+
+For `delta_j=9`, the previous groupwise inequality gives
+
+`x_0 >= D_j >= 9(r-1)-Z_j+m_j`.
+
+Therefore
+
+`sum_{i>0}(x_i-5) <= 20+Z_j-m_j`.
+
+If `Z_j=0`, then `m_j=0`, at least `9(r-1)` collision units occur, and at most 20 units of target excess remain outside this group's internal-edge lower bound. Combined with (CC), this says that for sufficiently large `r`, a hypothetical `r+9` part must support a near-complete colored hub–nonhub matching system, while all but at most 20 non-target excess units sit at the Brouwer floor.
+
+### Adversarial audit / limitation
+
+- This theorem rules out concentrating a linear number of collision units into large classes: any class of size at least three consumes hub–hub pairs, and only `binom(k_j,2)<=378` such pairs exist when `k_j<=28`.
+- The bound is consistent with the abstract `(r+9,r-8,r,r,r,r)` parameter model: with `Z_j=0`, its `9(r-1)` collision units can all be doubletons and `x_0=9r-2` leaves 13 units above the lower bound.
+- The resulting colored matching system is not itself impossible: for `k_j=10`, each color can in principle use a matching of size nine in a `K_{10,r-1}`-type host. The missing theorem must couple this matching system to the other five groups and the exact KP templates; this local capacity result does not close `NO-HIGH-STOP`.
+
 ## 9. Status ledger for this round
 
 ### PROVED
