@@ -147,7 +147,7 @@ Hashes:
 - certificate SHA-256: `2b82b7c89b8afab0259728a21d6e28ea10ace8a97c7c46455511a381555b0bc8`;
 - generator SHA-256: `b0d85a0877953490c5d724365b17c15dfc3113390a578a6813a7ba7b9183d5b6`;
 - verifier SHA-256: `e05ff2311275143d7a3a1492141be42b40989c93361e32ec3c2e504a2e5d457a`;
-- final multi-module gate SHA-256: `da90253d941ceb184f5c74a603cda70c5dda466fd3936de484b82924783b032c`.
+- final multi-module gate SHA-256: `5b6c242d11a4efacb99b1e41d499ef50bf26ad709b704ad56b084ce038a075f5`.
 
 ### Gate hardening
 
