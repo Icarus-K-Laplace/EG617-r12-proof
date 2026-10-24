@@ -82,3 +82,10 @@ The earlier scalar Q33 relaxation \((o_x)=(6,2^9,0^{21})\), with \(\Omega=24\), 
 For any four-partite witness system, the within-part target edges contribute exactly \(4-s_{ij}\) edges for every pair of witnesses with intersection size \(s_{ij}\). Thus the generic pairwise crossing lower bound is attained by those within-part edges. In Q33 the exact weighted crossing load is \(5460+49(24-\delta)\), while the lower bound is exactly \(5460\). The current \(\delta\in[9,17]\) leaves this inequality consistent.
 
 **Minimal obstruction recorded:** the current proof has no theorem forcing an additional *labelled* incompatibility among the 24 unused cross-part pair slots or the B-row neighborhoods. Re-summing the same unlabelled crossing costs cannot close the four-partite branch. The non-four-partite branch still requires a packing/stability theorem beyond the second-Turán bound.
+
+
+## 7. Shell-row pair multiplicity audit
+
+For a fixed independent four-set Q, let \(\mu(Q)\) be the number of regular B rows to which Q is anticomplete. It can certify at most \(\binom{\mu(Q)}2\le45\) unordered row pairs. The regular-row bound \(|T_b|\le3\) does not improve this to a smaller universal number: it controls each row's neighborhood size, not the union of rows avoided by Q.
+
+If Q is a selected exact-129 witness with label b, the component label anchors it directly only to pairs containing b; there are at most \(\mu(Q)-1\le9\) such pairs. The zero-excess existence theorem does not turn its arbitrary pair witness \(Q_{bc}\) into one of these labelled components. This is a separate multiplicity/label-transfer gap, not an arithmetic gap.
