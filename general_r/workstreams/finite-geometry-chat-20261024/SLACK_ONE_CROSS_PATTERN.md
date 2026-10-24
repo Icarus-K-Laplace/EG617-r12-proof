@@ -1,6 +1,6 @@
 # Simultaneous Slack-One Cross Pattern
 
-Status: **PROVED for q>=3; a rigid local pattern, not a contradiction**.
+Status: **PROVED conditionally for q>=3; premise is impossible under the full hypothetical-counterexample contract by the Local Slack Gap Theorem.**
 
 ## Setup
 
@@ -65,3 +65,8 @@ This is a necessary local pattern, not a contradiction. The other cross-grid edg
 ## Round 2 contract audit — empty premise under full counterexample
 
 The crossed-pattern implication is valid as a conditional structural statement, but the new theorem `HIGH_SLACK_COMPATIBILITY.md` proves `s_i(x)>=q-1` for every color and vertex under the full counterexample contract. Consequently the premise `s_i(x)=s_j(x)=1` is impossible for q>=3. The crossed pattern is therefore vacuous in a full hypothetical counterexample and is not evidence that such a pattern can be realized. The new proof uses the q+1-set block-plus-x condition in addition to the blocker lemma.
+
+
+## Full-contract caveat
+
+The K Local Slack Gap Theorem proves s_i(x)>=q-1 for every vertex and color in a full hypothetical q-counterexample. Thus s_i(x)=s_j(x)=1 cannot occur in such a counterexample. The crossed pattern remains a valid implication under its explicitly stated local hypotheses, but it is not a realizable local pattern under the full contract and must not be used as a live contradiction route. This is distinct from the residual-excess partitions on R=V\\X in RESIDUAL_MULTINET_EXTRACTION.md.
