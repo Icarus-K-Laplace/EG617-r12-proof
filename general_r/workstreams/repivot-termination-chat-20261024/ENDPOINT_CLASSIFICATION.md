@@ -2,183 +2,177 @@
 
 All statements are conditional on hypotheses A+B and `r>=12` unless stated otherwise.
 
+Audited caps:
+
+- `alpha(F)<=4`, `omega(F)<=r-1`;
+- every legal core H has `alpha(H)<=3`, `omega(H)<=r-1`, `delta(H)>=r`.
+
+Do not use an independent-4 contradiction unless all four vertices lie in H.
+
+---
+
 ## 1. Degree endpoint collapse
 
-`K_r>=8` gives `q<=3r-1`. Every regular repivot with missing degree d satisfies
+`K_r>=8` gives `q<=3r-1`. Since every regular repivot of missing degree d satisfies
 
-`q_y>=d(r+1-d)`.
+`q_y>=d(r+1-d)`,
 
-For `4<=d<=r-3`,
+all medium degrees are impossible:
 
-`d(r+1-d)>=4(r-3)>3r-1`,
-
-so no such degree occurs. Hence
-
-> `d in {0,1,2,3,r-2,r-1,r}`.
+> **`d in {0,1,2,3,r-2,r-1,r}`.**
 
 ---
 
-## 2. Global shell-incidence budget
+## 2. Shell-incidence kernel
 
-For `s in A`, define
+For `s in A`,
 
-`t_s=d_M(s)+g_s=e_F(s,H)`.
+`t_s=d_M(s)+g_s=e_F(s,H)`,
 
-Then
+and
 
-> `sum_A t_s=2e(M)+G_A=2q-G_A<=6r-2`.                       (2.1)
+> `sum_A t_s<=6r-2`.
 
-For any regular owner y with missing set `S_y`, `|S_y|=d`, put `b_y=e_M(S_y)`. Singleton transport gives, pointwise for `s in S_y`,
+For a regular owner with missing set S, `|S|=d`,
 
-> `sigma_s=t_s-(r+1-d)-m_{S_y}(s)>=0`,                       (2.2)
+`sigma_s=t_s-(r+1-d)-m_S(s)>=0`,
 
-and after summing,
+`sum_(s in S)t_s=d(r+1-d)+a+b`.
 
-> `sum_{s in S_y}t_s=d(r+1-d)+a_y+b_y`.                     (2.3)
+Consequences:
 
-This budget controls all low endpoints simultaneously.
+- d1 missing partners lie in at most5 shell vertices/classes;
+- all d2 missing-set endpoints lie in at most6 shell vertices, hence at most15 pair classes.
+
+Thus shell-side low-endpoint type count is absolute-constant in r.
 
 ---
 
-## 3. d0 — neutral
+## 3. d0
 
-If d=0, then `S=D=empty`; the repivot preserves H, q and tau. It is only a pivot relabelling and is contracted.
+d0 is neutral: same core, q and tau. Quotient it.
 
 **Status:** `PROVED_SYMBOLIC`.
 
 ---
 
-## 4. d1 — at most five shell classes
+## 4. d1
 
-For d=1, (2.2) gives `t_s>=r` for the unique missing partner. By (2.1), all d1 missing partners lie in a fixed set of at most five shell vertices.
-
-For `S={s}`, `D={u}`, the exact loss is
+There are at most5 shell singleton classes. For `S={s}`, `D={u}`,
 
 > `q-q_y=kappa'_s-kappa_u`.
 
-Thus d1 is a one-point excess exchange inside at most five shell classes.
+In the neutral-free plateau slice, the new eta-coordinate population is distributed among these five classes. If one class has N1 flat owners and allowance c, then under the inherited core cap `K<=2r-2`,
 
-**Status:** shell reduction and exchange identity `PROVED_CONDITIONAL`; final q/tau-flat rigidity `OPEN`.
+> **`(N1-1)c<=3r-2`.**
 
----
+If c=0, row closure gives `N1<=3`.
 
-## 5. d2 — six-point support universe
+Hence every linear d1 plateau concentration has O(1) allowance.
 
-For `S={u,v}`, put `b=e_M(S)`. Equation (2.2) gives
-
-` t_u,t_v>=r-1+b `.
-
-Let `U_2` be the union of all d2 shell missing sets. Then by (2.1)
-
-> **`|U_2|<=6`.**                                            (5.1)
-
-Therefore every d2 shell missing set is one of at most
-
-> **`C(6,2)=15`**                                            (5.2)
-
-pair classes, independent of r.
-
-If `h_u=t_u-(r-1)`, then a fixed shell class `{u,v}` has exact allowance
-
-> `a_{uv}=h_u+h_v-b_{uv}`.                                  (5.3)
-
-If `m=|U_2|`,
-
-`sum_{u in U_2}h_u<=(6-m)r+m-2`.
-
-In particular, if `m=6`, then `sum h_u<=4`, and the total number of d2 owners is at most two.
-
-Thus no d2 shell-support case count grows with r.
-
-**Status:** `PROVED_CONDITIONAL`.
+**Status:** shell/exchange `PROVED_CONDITIONAL`; scale-transfer `PROVED_CONDITIONAL`; final bounded-allowance d1 rigidity `OPEN`.
 
 ---
 
-## 6. Fixed-class d2 plateau classification
+## 5. d2 shell universe
 
-Fix one of the at-most-fifteen d2 shell classes `S={u,v}` and let Y be all owners in that class. For core vertices put
+Every d2 missing pair belongs to one of at most15 shell pair classes.
 
-`w_x=kappa_x+e_F(x,S)`,
+For a fixed class `S={u,v}`, put
 
-and for a 2-support D put
+`w_x=kappa_x+e_F(x,S)`, `mu(D)=1-e_H(D)`.
 
-`mu(D)=1-e_H(D)`.
+Every owner satisfies
 
-Every owner y has exact integer loss
+> `ell=q-q_y=a-[w(D)+mu(D)]>=0`.
 
-> `ell_y=q-q_y=a-[w(D_y)+mu(D_y)]>=0`.                       (6.1)
+Let `s=|S intersect X|`.
 
-Let `lambda_x` be the number of owners whose support contains x. Support incidence gives
+- `s=0`: fixed-width, at most3 owners in the clean b=0 plateau and only O(1) strict types when b=1;
+- `s=1`: at most6 q-flat owners;
+- `s=2`: unique scalable equal-q regime.
 
-`g_x>=w_x+lambda_x-1`,
-
-so
-
-> `lambda_x>=2 or w_x>=1  => x in X`.                        (6.2)
-
-Let `s=|S intersect X|`. A q-flat row satisfies
-
-`|D_y intersect X|<=s`.
-
-### s=0
-
-Common-S transport forces `sigma_u=sigma_v=0`, hence `a=b`.
-
-Every endpoint of a q-flat support has `lambda=1`, `w=0`; q-flat supports are disjoint.
-
-- if `b=0`, then `a=0`, so every owner is q-flat, every support is a target edge, distinct supports have no target cross-edges, and `alpha(H)<=3` gives
-  > `|Y|<=3`;
-- if `b=1`, at most one q-flat owner exists. Every strict row has loss one and a target-edge, zero-w support; distinct strict support classes have no target cross-edges, so there are at most three distinct strict support classes.
-
-### s=1
-
-A q-flat support cannot repeat: repetition would decorate both of its endpoints, contradicting `|D_y intersect X|<=1`.
-
-The graph of q-flat supports is a disjoint union of stars and isolated edges. A repeated star center is decorated; its leaves have w=0. Row closure makes the center plus its leaves independent, so `alpha(H)<=3` permits at most two edges per star. Choosing one zero-w endpoint from each component and using row closure shows there are at most three components.
-
-Therefore
-
-> **a fixed d2 class with `|S intersect X|=1` has at most six q-flat owners.**   (6.3)
-
-### s=2
-
-Tau imposes no cardinality restriction on a 2-support. Repeated q-flat supports can survive.
-
-Hence:
-
-> **The only d2 shell class in which the number of q-flat owners can scale with r is the fully decorated regime `S subset X`.**   (6.4)
-
-This is the unique scalable equal-q d2 endpoint.
-
-**Status:** `PROVED_CONDITIONAL`.
+So only a fully decorated shell pair `S subset X` can scale.
 
 ---
 
-## 7. Exact d2 charge identity
+## 6. d2 repeated branch
 
-For every d2 common-S system, with `b=e_M(S)`, allowance a and total core charge
+For exact class multiplicity m and neutral population zeta,
 
-`W=sum_{x in H}(kappa_x+e_F(x,S))`,
+> `zeta(new)=m-1`,
+>
+> `m_reverse=zeta+1`.
 
-one has
+At `Phi_3=(q,tau,zeta)` maximality, `m<=zeta+1`.
 
-> `W=K+2r-2+a+b`.                                           (7.1)
+The flat equality branch `m=zeta+1` is the Balanced Two-Chamber terminal
 
-If an exact-one-loss common-hub subsystem has three distinct core support classes, the existing pattern charge barrier gives
+> `H <--> H-D+S`,
 
-`W>=3r-2`, hence
+with no longer correction cycle.
 
-> `K+a+b>=r`.                                                (7.2)
-
-Thus any difficult three-class one-loss terminal lies in a linearly-high scalar regime.
-
-**Status:** (7.1) `PROVED_SYMBOLIC`; (7.2) `PROVED_CONDITIONAL`.
+**Status:** `PROVED_SYMBOLIC` / `PROVED_CONDITIONAL`.
 
 ---
 
-## 8. d3 — eliminated
+## 7. d2 distinct fully-decorated branch
 
-The equality B-floor excludes `q=3r-1` for d3. Therefore every d3 view has `q<=3r-2`, so `a+B<=4`. The declared low-charge Bridge-B assets absorb the remaining d3 sector.
+Work in the genuine neutral-free `Phi_3`-flat slice `zeta=0`.
+
+For two same-class supports `D_i,D_j`, repivot through `D_i` gives exact new missing degree
+
+> **`2-|D_i intersect D_j|`.**
+
+Thus support overlap is literally a d1 correction transition.
+
+### Fourth coordinate
+
+Define
+
+`eta(p)=#{regular d1 owners x on the same (q,tau,zeta) plateau as p}`.
+
+Then
+
+> **`Phi_4=(q,tau,zeta,eta)`**
+
+is bounded. If `G_S` is the support-intersection graph, then at `Phi_4` maximality
+
+> **`Delta(G_S)<=eta`.**
+
+Hence a class of N supports contains a disjoint subfamily of size at least
+
+> **`ceil(N/(eta+1))`.**
+
+### Low allowances
+
+- `a=0`: at most3 distinct flat supports;
+- `a=1`: at most9 distinct flat supports;
+- `a>=2`: every disjoint subfamily of size nu satisfies the weighted matching bound
+  > `nu(a-1)<=W<=4r+9-a`.
+
+### First scalable layer a=2
+
+At a=2:
+
+- zero-weight support vertices number at most3;
+- the zero-free `(1,1)` target-support graph has maximum degree3;
+- every unbounded family contains an unbounded disjoint clean subsystem;
+- every linear-size family contains a linear-size one.
+
+A clean block is a target K2 whose two endpoints both have common-S weight1.
+
+Repivot through one clean block preserves every other disjoint clean block as a clean d2 block of allowance2. Thus the scalable a=2 terminal contains the repivot-closed
+
+> **Clean Pair-Exchange Design:** clean K2 blocks, each inter-block target graph a matching of size0,1,or2, plus at most O(1) zero-containing special blocks.
+
+**Status:** `PROVED_CONDITIONAL`; Clean Pair Nonextension is `OPEN`.
+
+---
+
+## 8. d3
+
+Equality B-floor gives `q<=3r-2` and `a+B<=4`; declared low-charge Bridge-B assets eliminate the sector.
 
 > **No d3 terminal remains.**
 
@@ -186,49 +180,25 @@ The equality B-floor excludes `q=3r-1` for d3. Therefore every d3 view has `q<=3
 
 ---
 
-## 9. High endpoint — at most three owners
+## 9. High endpoint
 
-Let `Y_hi` be all regular shell vertices with `d>=r-2`.
+All regular owners with `d>=r-2` number at most3.
 
-If four existed, zero-gap/core packing forces at least one target edge among them, so their incident shell missing edges number at least
-
-`4(r-2)-5=4r-13`.
-
-For `r>=13`, this exceeds `q<=3r-1`. At `r=12`, equality forces `q=35`, `G_A=0`, hereditary equality and a 10-vertex regular target clique, contradicting the multicolor equality regular-clique obstruction.
-
-Therefore
-
-> **`|Y_hi|<=3` for every `r>=12`.**                          (9.1)
-
-Writing `s_y=r-d_y in {0,1,2}`, all high-owner shell interaction lies in an at-most-nine-point kernel and core owner-incidence uses at most eight signatures.
-
-Thus the high endpoint is an r-independent bounded-complement skeleton.
+Writing `r-d in {0,1,2}`, their interaction is a bounded-complement kernel with at most9 shell interaction vertices and at most8 core owner-incidence signatures.
 
 **Status:** `PROVED_CONDITIONAL`.
 
 ---
 
-## 10. Low-owner clique
+## 10. Canonical surviving terminal families
 
-Any two regular owners with `d<=3` are target-adjacent: otherwise zero-gap requires `S_x union S_y=A`, while the union has size at most six and `|A|=r+1>=13`.
+Only four structural packages remain:
 
-Hence all regular low-endpoint owners together with p form a target clique. From `omega(F)<=r-1`, there are at most `r-2` such owners.
+1. bounded-allowance d1 singleton-exchange systems in at most5 shell classes;
+2. the Balanced Two-Chamber repeated d2 terminal;
+3. the Clean Pair-Exchange distinct d2 terminal beginning at allowance2, with higher allowance controlled by eta/matching compression;
+4. at most3 high-endpoint owners.
 
-**Status:** `PROVED_SYMBOLIC`.
+No surviving endpoint has an r-growing number of shell-support types.
 
----
-
-## 11. Canonical surviving endpoint families
-
-After all reductions:
-
-- d0: quotient-neutral;
-- d1: at most five shell classes; q/tau-flat one-point core exchange remains;
-- d2: at most six shell support vertices / fifteen shell classes;
-  - non-fully-decorated fixed classes have only O(1) q-flat skeletons;
-  - the **only scalable q-flat class** has a fully decorated shell pair `S subset X`;
-  - core-support multiplicity / transported loss inside that regime remains open;
-- d3: eliminated;
-- high endpoint: at most three owners in a finite bounded-complement skeleton.
-
-No endpoint has an r-growing number of shell-support types. The unique scalable equal-q mechanism is now **fully decorated fixed-class d2 core-support multiplicity**.
+The unique currently visible r-growing **local design object** is the clean allowance-2 pair system.
