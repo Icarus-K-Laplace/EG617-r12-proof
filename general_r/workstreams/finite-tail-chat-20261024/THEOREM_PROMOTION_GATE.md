@@ -84,3 +84,6 @@ The matrix differentiates:
 - r>=68: broad ANCHOR_K8 source applies, but RC/front extraction and terminal closure remain open.
 
 The specialized exact-three-anchor theorem for r>=12 is recorded separately and is not treated as proof of the broad near-anchor hypothesis when its anchor premise is absent.
+
+
+The front-recurrence source is also recorded: its potential-function termination theorem applies for r>3 only conditional on a finite sound seed/cutoff package; its M_r(2), M_r(3) cutoff sublemmas apply for r>=6. At r=4,5 the examples are counterexamples to the abstract cutoff contract only. Neither result completes the original-graph reduction, so it does not widen finite-tail module admission below r=12.
