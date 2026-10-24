@@ -60,6 +60,13 @@ The only new case beyond the h<=4 theorem is anchor excess pattern (3,1,1) or (2
 
 Under the full legal-core contract, K<=6 would imply at least29 degree-12 vertices. The clique cap gives a nonadjacent degree-12 pair; their at least nine common nonneighbours include a third degree-12 vertex, and the registered three-anchor theorem forces K>=8. Hence e(H)>=214 for every legal core and q<=E-305 for every pivot. This tightens E333/E334 to q<=28/q<=29; the q27 exclusion and q28/q29 profitable repivots then contradict those ceilings. E333/E334 are now PROVED_CONDITIONAL on the registered q27 shell dependencies and q28/q29 repivot theorems. The high-layer backend is reduced to q<=30..35 for E335..E340, but the universal forcing bridge remains open.
 
+- a5f9bec661ab4b89725a567f6ac3db28d91f0f9e — **new E335 reduction:** any legal E335 survivor has a q=30 pivot with e(H)=214, K=8, and three independent degree-12 anchors, relative to q27/q28/q29 assets.
+- d7907adc0e80e10b698db978d142f14109c4c717, fbec567823b9689bd617a779b21d72d74f174ff8, a347c5e746266d46bd23687f6c1b328b8a016ad9 — propagated the E335 equality frontier into the canonical frontier, dependency ledger, and final-boundary checkpoint.
+
+## New E335 frontier
+
+The universal core floor gives q<=30 at E335. q27 is excluded, and q28/q29 profitable repivots force a q30 pivot. The exact edge identity then gives e(H)=214 and K=8. Since K=8 leaves at least27 degree-12 vertices, the clique cap and common-nonneighbour count force three independent degree-12 anchors in this core. The remaining E335 problem is now the joint q30 shell / K=8 core equality contract; this is a reduction, not a closure.
+
 ## Independent checks performed
 
 - Rechecked the exact 870-edge color decomposition and global sums: sum P=252, sum R=427, sum s=3; non-target edge total is 9570.
@@ -69,6 +76,7 @@ Under the full legal-core contract, K<=6 would imply at least29 degree-12 vertic
 - Rechecked that the h=4 theorem's 55 connector-count profiles have no survivors after the clique-cap correction; minimum lower-minus-upper margin is6.
 - Rechecked all 145 h=5 connector profiles across both anchor-degree patterns; no survivors and minimum lower-minus-upper margin5.
 - Rechecked the universal core-floor count (29 degree-12 vertices, at least9 common nonneighbours, at least3 degree-12 common nonneighbours) and the E333/E334 charge ceilings.
+- Rechecked E335: q<=30, q27 excluded, q28/q29 repivot to q>=30, so q30/e(H)=214; K=8 gives at least one degree-12 common nonneighbour completing the three-anchor set.
 - Rechecked that E407 Cell-B exclusion does not imply full E407 closure.
 - Rechecked that E408 exact-129 blocker constraints and Q33 local conditions are necessary conditions only; no global incompatibility theorem has been proved.
 
