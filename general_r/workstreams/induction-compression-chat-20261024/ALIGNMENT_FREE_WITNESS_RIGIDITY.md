@@ -210,3 +210,16 @@ In the second branch of J.W2, the repeated witness color i satisfies b_i>=r-2=q-
 Precisely, either G_i[R] is a q-clique partition plus q-1 cross-block color-i edges, or deleting one exceptional residual point leaves q clique blocks (sizes q except one q-1) plus a nonempty star of color-i cross-block edges. In the latter case the exceptional point's residual color-i degree is 2q-2-a for some 1<=a<=q-1.
 
 This imports the exact extremal theorem without copying its proof. It refines the high-color branch to a finite incidence kernel at equality, but does not exclude the kernel. If b_i>=q, this extremal equality classification does not directly apply.
+
+
+## Theorem J.W7 — Exact r=7 Case B interface
+
+The K branch has closed the residual edge-budget profile when q=r-1=6; see commit eb238d01b9aebf98a7614dba00e2696a2f3d05cf, file general_r/workstreams/finite-geometry-chat-20261024/RESIDUAL_MULTINET_EXTRACTION.md, Theorem K.RM5.
+
+Under Case B at r=7:
+- exactly three colors i!=c have b_i=0 and form three pairwise orthogonal 6-clique partitions of R;
+- exactly three colors have b_i=5 and are non-6-partite, each at the Kang–Pikhurko exceptional-star threshold;
+- G_c[R] is the union of seven c-cliques of sizes 6,5,5,5,5,5,5;
+- the 6-clique is a transversal of all three directions, and the six 5-cliques are pairwise disjoint near-transversals.
+
+The witness-color dichotomy then gives either repeated witnesses in a zero-excess direction, or at least four witnesses in one of the three high colors. This is a precise finite kernel for the r=7 Case B, but it remains OPEN whether the one-transversal/six-near-transversal partition can occur together with the three exceptional-star color graphs. This does not close Case A or prove the all-r induction.
