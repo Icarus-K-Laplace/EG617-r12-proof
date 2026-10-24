@@ -69,3 +69,12 @@ The strongest result is **compressible shell OR packing/tight-critical-transvers
 - Cross-line correction from K: the full-counterexample local-slack theorem makes the former aligned neighborhood-low-slack premise impossible. The new residual-excess partition branch is on R and is logically distinct.
 
 Status: alignment-free structure PROVED; Case A contradiction, Case B contradiction, fixed-merge escape, and not-P(r) => not-P(r-1) remain OPEN.
+
+
+## 2026-10-24 — Round 9: residual multinet extraction
+
+- From the residual budget and Brouwer threshold, extracted at least ceil((r-1)/2) residual-low colors on R in Case B.
+- Proved their clique partitions are pairwise orthogonal: each cross-color block is independent in the other color, has size at most q=r-1, and q blocks cover q² points; hence all blocks have size q and all cross-direction intersections are exactly one.
+- This yields a q-net with at least ceil(q/2) directions, where q=r-1, without any neighborhood-low-slack alignment.
+- Derived N(q)>=ceil(q/2)-2 MOLS(q). For r=11, Case B would force 3 MOLS(10); literature confirms this remains open, so it is a conditional reduction rather than a contradiction.
+- Proved a stronger subcase: if alpha(G_c[R])<=q, then all residual excesses vanish and R is an affine plane of order q. Extension by the 2r vertices X is still OPEN.
