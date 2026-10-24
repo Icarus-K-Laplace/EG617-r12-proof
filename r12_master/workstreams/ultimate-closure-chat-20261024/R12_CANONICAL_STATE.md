@@ -72,3 +72,14 @@ R12_WITNESS_CAPACITY_CROSSCUT.md proves a universal three-shell-row support lemm
 The V11 and V12 archives were independently replayed from the Library-delivered ZIPs; SHA256SUMS passed and both independent verifiers returned COMPUTATION_CERTIFIED. See R12_V11_V12_REPLAY.md. This certifies finite enumeration coverage only, not analytic completion exclusion.
 
 Arithmetic correction: E408 Q32 has e(H)=285 and core excess 6; the 284-edge / excess-4 core is E407 Q32 and E408 Q33.
+
+
+## Template-specific hub-capacity reduction (proved, 2026-10-24)
+
+The cross-cut theorem now also gives a template-sensitive dichotomy. If Q is an independent 4-set in H and misses a hub s, then every B vertex missing to s must be a target neighbour of Q. The exact V12 row-count constraints imply:
+- A and C: every hub misses at least six B vertices, so a witness missing any hub must hit at least six B rows and carries at least two units of parent target-degree excess. Such a set can witness at most four B labels; absent a hub-complete witness, at least three distinct witness sets are required.
+- B: every hub misses at least two B vertices.
+- D: every hub misses at least one B vertex.
+- E: each end hub misses at least five B vertices; if the centre is the only unhit hub, the universal three-row support forces at least one B hit.
+
+The V11/V12 finite certificate replays passed from pristine extractions. These reductions do not eliminate a template; they isolate the high-B-degree versus hub-complete escape.
