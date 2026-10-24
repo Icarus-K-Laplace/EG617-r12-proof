@@ -66,7 +66,7 @@ The wrapper refuses `r<12` with `BLOCKED_SOURCE_REDUCTION_NOT_APPLICABLE`. The r
 
 ## Boundary audit
 
-Under the baseline `q_cap=3r+2), the only candidates in the medium interval `4<=d<=r-3` are:
+Under the baseline `q_cap=3r+2`, the only candidates in the medium interval `4<=d<=r-3` are:
 
 - r=12: d=4 and d=9;
 - r=13: d=4 and d=10;
