@@ -27,16 +27,16 @@ The shell size is 2r-1 because r^2+1-(2r-1)=(r-1)^2+1.
 
 For a fixed c, let H_{-c}=union_{i != c} I_i. If no robust shell of size 2r-1 exists, then tau(H_{-c})>=2r.
 
-For every r-uniform hypergraph, tau <= r nu because the union of a maximal matching is a transversal. Hence H_{-c} has a matching of size at least two.
+- If the matching number is at least three, there are three pairwise disjoint independent r-sets S_a in colors i_a != c. The counterexample property forces at least r edges between S_a and S_b in each distinct designated color among {i_a,i_b}; every outside vertex has at least one edge of color i_a into each S_a.
+- If the matching number is exactly two, the union X of a maximum matching is a minimum transversal of size 2r. Every v in X has a private witness T_v independent in some color i_v != c with T_v intersect X={v}; its other r-1 vertices lie in R=V\X.
 
-- If its matching number is at least three, there are three pairwise disjoint independent r-sets S_a in colors i_a != c. The counterexample property forces at least r edges between S_a and S_b in each distinct designated color among {i_a,i_b}; every outside vertex has at least one edge of color i_a into each S_a.
-- If its matching number is exactly two, the union X of any maximum matching has size 2r and is a minimum transversal. Every v in X has a private witness independent r-set T_v in some color i_v != c with T_v intersect X={v}.
+For r>=3, pigeonhole gives at least three private witnesses of the same designated color. Since no three witnesses can be pairwise disjoint, at least two of these same-color witnesses overlap in R. For same-color independent r-sets A,B with intersection size h, there are at least r-h cross-edges between A\B and B\A in that color.
 
-The same theorem applies to the fixed-merge hypergraph. The complete proof and colored-incidence inequalities are in NONCOMPRESSIBLE_SHELL_THEOREM.md.
+The same matching-or-tight-transversal theorem applies to the exact fixed-merge hypergraph. Full proofs and colored-incidence inequalities are in NONCOMPRESSIBLE_SHELL_THEOREM.md.
 
 ## Geometry audit
 
-This is a genuine hypergraph-structural result, but not yet a geometric theorem. The packed independent sets are disjoint, not line-like blocks with pairwise intersections at most one. An abstract r-uniform hypergraph can have tau=2r and nu=2 without any affine geometry. Therefore no Kakeya bound is currently licensed.
+This is a genuine hypergraph-structural result, but not yet a geometric theorem. The packed independent sets are disjoint, not line-like blocks with pairwise intersections at most one. In the tight case, two same-color private residual blocks overlap, but no upper bound of one on intersections or direction structure has been proved. An abstract r-uniform hypergraph can have tau=2r and nu=2 without any affine geometry. Therefore no Kakeya bound is currently licensed.
 
 The missing bridge is graph-specific: upgrade the colored domination/private-witness constraints to many blocks with proved intersection constraints, or construct a shell directly.
 
@@ -47,6 +47,6 @@ For the standard affine-plane coloring on r^2 points, reducing the independence 
 ## Deliverables and latest status
 
 - COMPRESSION_CRITERION.md: corrected adaptive-recoloring caveat and exact fixed-merge criterion.
-- NONCOMPRESSIBLE_SHELL_THEOREM.md: proved packing / tight-transversal alternative.
+- NONCOMPRESSIBLE_SHELL_THEOREM.md: proved packing / tight-transversal alternative and same-color overlap consequence.
 - COMPRESSION_OR_GEOMETRY.md: exact theorem boundary and the missing geometry bridge.
 - P(r) => P(r-1): **not established**.
