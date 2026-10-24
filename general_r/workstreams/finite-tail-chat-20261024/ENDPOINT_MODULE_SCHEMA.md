@@ -6,7 +6,7 @@ The theorem-aware path is
 
 `r -> certified theorem gates -> canonical constraints -> reduced CSP -> certificate -> independent verifier -> theorem-promotion gate`.
 
-Each module is an immutable contract, not a bag of solver clauses. It binds a theorem statement, source commit, applicability, assumption IDs, variable map, generator version, instance hash, certificate hash, verifier hash, replay command, and promotion state.
+Each module is an immutable contract, not a bag of solver clauses. It binds a theorem statement, source commit, applicability, assumption IDs, variable map, generator version, instance hash, certificate hash, generator/verifier hashes, generation command, verifier replay command, gate replay command, and promotion state.
 
 ## Module manifest fields
 
