@@ -1,118 +1,98 @@
-# Low-Slack Coordinatization on a `q^2` Restriction
+# Low-Slack Coordinatization on a q^2 Restriction
 
-Status: **PROVED, using Brouwer's non-r-partite Turan theorem.**
+Status: **PROVED for every integer q>=3**, using Brouwer's non-r-partite Turan threshold. No prime-power assumption is needed.
 
-The theorem is valid for all integers `q>=3`; no prime-power assumption is needed.
+## External theorem and exact assumptions
 
-## External theorem used
+Brouwer's theorem in the form stated by Popielarz–Sahasrabudhe–Snyder, JCTB 132 (2018), Theorem 2.2, says: if n>=2r+1 and H is a K_(r+1)-free n-vertex graph with
 
-Brouwer's refinement of Turan's theorem:
+\[
+e(H)\ge t_r(n)-\lfloor n/r\rfloor+2,
+\]
 
-> If `H` is a `K_(r+1)`-free graph on `n>=2r+1` vertices and
->
-> `e(H) >= t_r(n)-floor(n/r)+2`,
->
-> then `H` is `r`-partite.
+then H is r-partite. The published source is https://doi.org/10.1016/j.jctb.2018.04.001. The same threshold is related to Kang–Pikhurko, “Maximum K_(r+1)-free graphs which are not r-partite” (2005).
 
-Modern references include Kang--Pikhurko, *Maximum K_(r+1)-free graphs which are not r-partite* (2005), and Popielarz--Sahasrabudhe--Snyder, JCTB 132 (2018), which restates the Brouwer threshold.
+Here n=q^2 and r=q; the hypothesis n>=2q+1 holds for q>=3.
 
 ## Setup
 
-Let `W` be a `q^2`-vertex subset of a hypothetical counterexample to `P(q)`, and let `G_i=G_i[W]` be one color graph.
+Let W be a q^2-vertex subset of a hypothetical counterexample to P(q), and let G_i[W] be one color graph. Then alpha(G_i[W])<=q and omega(G_i[W])<=q.
 
-Because the ambient coloring is a counterexample,
+Set
 
-`alpha(G_i)<=q`, `omega(G_i)<=q`.
+\[
+m_q=q\binom q2=\frac{q^2(q-1)}2,\qquad
+s_i=e(G_i[W])-m_q\ge0.
+\]
 
-Define
-
-`m_q := q*C(q,2) = q^2(q-1)/2`,
-
-which is the minimum number of edges in a `q^2`-vertex graph with independence number at most `q`, and define the local Turan slack
-
-`s_i := e(G_i)-m_q >= 0`.
+The floor m_q follows from Turan complementarity: a graph with independence number at most q has at least m_q edges on q^2 vertices.
 
 ## Theorem K.3 — Low-slack clique-partition extraction
 
-If
+If 0<=s_i<=q-2, then W partitions into q blocks P_1,...,P_q such that:
 
-`0 <= s_i <= q-2`,
-
-then `W` has a partition
-
-`W=P_1 disjoint union ... disjoint union P_q`
-
-such that
-
-- `|P_a|=q` for every `a`;
-- every `P_a` induces a monochromatic `K_q` of color `i`;
-- exactly `s_i` additional color-`i` edges run between distinct blocks.
+- each block has size q;
+- every block induces a monochromatic K_q of color i;
+- exactly s_i additional color-i edges run between distinct blocks.
 
 ### Proof
 
-Let `H=overline(G_i)`. Since `alpha(G_i)<=q`, the graph `H` is `K_(q+1)`-free.
+Let H be the complement of G_i[W]. Since alpha(G_i[W])<=q, H is K_(q+1)-free. Also
 
-Moreover
+\[
+e(H)=t_q(q^2)-s_i\ge t_q(q^2)-q+2.
+\]
 
-`e(H)=C(q^2,2)-m_q-s_i=t_q(q^2)-s_i`.
+Brouwer's theorem makes H q-partite. Its q parts are cliques in G_i; because omega(G_i)<=q, each part has at most q vertices. Since they cover q^2 vertices, there are exactly q parts of size q. The within-part edges contribute m_q color-i edges, leaving exactly s_i cross-block edges.
 
-If `s_i<=q-2`, then
+## Corollary K.4 — Two low-slack colors give exact orthogonal partitions
 
-`e(H)>=t_q(q^2)-q+2`.
+If distinct colors i,j both have slack at most q-2 on W, their block partitions are orthogonal:
 
-For `q>=3`, `q^2>=2q+1`, so Brouwer's theorem implies that `H` is `q`-partite.
+\[
+|P_a\cap Q_b|=1\quad\text{for every }a,b.
+\]
 
-Each part of this `q`-partition is independent in `H`, hence a clique in `G_i`. Since `omega(G_i)<=q`, every part has size at most `q`. There are at most `q` parts covering `q^2` vertices, so there are exactly `q` nonempty parts and every one has size exactly `q`.
+No intersection can contain two vertices, because their edge would have to carry both colors i and j. There are q^2 intersections and q^2 points, so every intersection has size one.
 
-The within-part edges contribute exactly `m_q` color-`i` edges. Since `e(G_i)=m_q+s_i`, precisely `s_i` color-`i` edges remain between different blocks.
+This produces a q-by-q grid with two directions. It does not by itself produce a full affine plane or field coordinates.
 
-## Corollary K.4 — Two low-slack colors give exact orthogonal coordinates
+## Theorem K.5 — Strengthened near-line forcing from the extra vertex
 
-If distinct colors `i,j` both satisfy
+Let x be the unique ambient vertex outside W and suppose color i has the partition above with slack s=s_i. For each block P_a, define
 
-`s_i,s_j <= q-2`,
+\[
+B_a:=\{v\in P_a: xv\text{ is not color }i\}.
+\]
 
-then their extracted block partitions `P_1,...,P_q` and `Q_1,...,Q_q` obey
+In a hypothetical counterexample every B_a is nonempty: otherwise P_a union {x} is a monochromatic K_(q+1) of color i.
 
-`|P_a intersect Q_b|=1`
+Let E_i be the set of the s color-i edges crossing between distinct P_a blocks. Then
 
-for every `a,b`.
+\[
+\boxed{\min_a |B_a|\le s.}
+\]
+
+Consequently some block has at least q-s color-i edges to x. This strengthens the previous q-2s bound.
 
 ### Proof
 
-No intersection can contain two vertices, because the edge between two such vertices would simultaneously lie in the color-`i` clique `P_a` and the color-`j` clique `Q_b`. There are `q^2` intersections and `q^2` vertices, each vertex lying in exactly one intersection, so all intersections have size exactly one.
+Suppose every |B_a|>=s+1. Process the blocks one at a time. In the current B_a, at most s vertices are joined by an E_i edge to a previously selected representative, because E_i has only s edges in total. Choose a vertex not so joined. Greedy selection yields one vertex from each B_a with no color-i cross-edge; there are no within-block pairs because only one vertex is chosen per block. All chosen vertices have non-color-i edges to x. Their union with x is a (q+1)-set missing color i, contradiction.
 
-Thus two low-slack colors canonically coordinatize `W` as a `q x q` grid. The only deviations from the two direction-class model are at most `q-2` extra cross-block edges in each color.
+If s=0, this theorem forces some B_a to be empty, which is already impossible in a counterexample. Therefore every hypothetical counterexample satisfies
 
-## Lemma K.5 — Near-line forcing from a low-slack color
+\[
+s_i(x)\ge1\quad\text{for every vertex }x\text{ and every color }i.
+\]
 
-Let `x` be the deleted ambient vertex and suppose color `i` has the partition above with slack `s=s_i`. Let `B_a subset P_a` be the vertices `v` for which edge `xv` is not color `i`.
+## Two-color transversal-blocking form
 
-If every `B_a` is nonempty, then the union of the `B_a` cannot contain an independent transversal for the color-`i` graph, because such a transversal together with `x` would form a `(q+1)`-set missing color `i`.
+When i and j both have low slack, their partitions are orthogonal. Every row block A_a has a nonempty set B_a^i of vertices whose edge to x is not i, and every column block Q_b has a nonempty set B_b^j of vertices whose edge to x is not j.
 
-Let `E_i^cross` be the set of the `s` cross-block color-`i` edges. If every `B_a` contained a vertex not incident with `E_i^cross`, choosing such a vertex from every block would give an independent transversal. Therefore some block satisfies
+Every choice of one vertex from each B_a^i must contain an edge of color i between chosen vertices; otherwise adding x gives a forbidden set missing color i. The cross-defect graph E_i, with exactly s_i edges, blocks every such transversal. In particular, some row has |B_a^i|<=s_i. The analogous statement holds for color j and its columns.
 
-`B_a subset V(E_i^cross)`,
+This is a precise local constraint on the extra-vertex color matrix. It does **not** yet prove that two low-slack colors cannot coexist when both slacks are positive.
 
-hence
+## Current gap
 
-`|B_a| <= 2s`.
-
-Equivalently, for some monochromatic `K_q` block `P_a`, the new vertex `x` has color-`i` edges to at least
-
-`q-2s`
-
-vertices of `P_a`.
-
-For `s=0` this recovers the exact full-line forcing used in the affine-plane nonextension proof.
-
-## Significance
-
-This is the first quantitative coordinatization lemma on the K-line:
-
-- exact equality is not required;
-- the threshold is linear (`s<=q-2`), not infinitesimal;
-- two low-slack colors already produce an exact orthogonal grid;
-- the extra vertex sees an almost-monochromatic block when the cross-defect set is small.
-
-The remaining issue is global: current total-slack identities do not yet force two colors into this low-slack window.
+No theorem currently forces two colors into the window 1<=s_i(x)<=q-2 on any common q^2 restriction. Nor has the transversal-blocking condition for two orthogonal partitions been shown to yield a contradiction for positive slacks.
