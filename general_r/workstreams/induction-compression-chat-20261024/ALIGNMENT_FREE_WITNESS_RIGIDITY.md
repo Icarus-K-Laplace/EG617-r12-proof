@@ -298,3 +298,78 @@ This improves J.W5 by one direction when q is even.
 For r=7, q=6, J.W9 forces at least four pairwise orthogonal partitions of a 36-point set into six 6-cliques. Four directions yield two mutually orthogonal Latin squares of order 6, which are ruled out by Euler–Tarry. Hence the matching-number-two/tight-transversal Case B cannot occur at r=7.
 
 This does not eliminate Case A (matching number at least three) and therefore does not prove the full r=7 compression implication.
+
+
+## Theorem J.W11 — Quantitative root-block rigidity
+
+Let q=r-1>=4, and in Case B define
+
+\[
+d:=\binom q2-\sum_{i\ne c}b_i
+=e(G_c[R])-e_{\min},
+\qquad e_{\min}=\frac{q(q-1)^2}{2}.
+\]
+
+Thus d is the edge excess of the omitted-color graph G_c[R] above its Turan minimum. Theorem J.W8 proved d>=1.
+
+Now fix any integer k>=1 satisfying
+
+\[
+\binom{k+2}{2}<q.
+\]
+
+Then the stronger bound holds:
+
+\[
+\boxed{d\ge\binom{k+1}{2}.}
+\]
+
+In particular, if k_q is the largest integer satisfying C(k_q+2,2)<q, then
+
+\[
+\boxed{\sum_{i\ne c}b_i
+\le \binom q2-\binom{k_q+1}{2}.}
+\]
+
+### Proof
+
+Suppose instead that \(d\le D:=\binom{k+1}{2}-1\). Since \(D<q-2\), the complement \(H_c=\overline{G_c[R]}\) is \(K_{q+2}\)-free and has more than \(T_{q+1}(q^2)-q+2\) edges. By the Brouwer/Kang–Pikhurko non-partite threshold, \(H_c\) must be \((q+1)\)-partite. Let its parts be \(B_1,\ldots,B_{q+1}\), of sizes \(s_j\). Then every \(B_j\) is a c-clique in \(G_c[R]\), and the c-edges between distinct blocks are exactly the missing cross-edges of \(H_c\).
+
+The balanced partition of \(q^2\) points into \(q+1\) parts has sizes \(q,q-1,\ldots,q-1\). If some part has size \(q-\ell\), where \(\ell\ge k+1\), convexity shows that even after balancing all remaining q parts, the internal-clique edge count exceeds the balanced minimum by at least \(\binom{\ell}{2}\ge\binom{k+1}{2}>D\). Since the total excess d also pays for every cross-block c-edge, this is impossible. Hence every part satisfies
+
+\[
+s_j\ge q-k.
+\]
+
+There are at most d cross-block c-edges. Choose one vertex independently and uniformly from each block. A fixed cross-block edge is selected with probability at most \(1/(q-k)^2\). Therefore the expected number of selected c-edges is at most
+
+\[
+\frac{D}{(q-k)^2}<1,
+\]
+
+so some transversal \(Q\) contains no c-edge. If a root \(x\in X\) were not c-adjacent to every vertex of any whole block, choose a c-nonneighbor of x from each block and apply the same transversal argument to obtain a c-independent set \(Q'\cup\{x\}\) of size \(q+2=r+1\), contradicting the full counterexample. Thus every root fully c-covers at least one block.
+
+For a block \(B_j\) of size \(s_j\), if \(q+2-s_j\) roots all fully c-covered it, those roots together with \(B_j\) would form an \((r+1)\)-set using at most
+
+\[
+1+\binom{q+2-s_j}{2}
+\le 1+\binom{k+2}{2}<q+1=r
+\]
+
+colors, again impossible. Hence at most \(q+1-s_j\) roots can cover \(B_j\). Summing over all blocks gives
+
+\[
+|X|\le\sum_{j=1}^{q+1}(q+1-s_j)
+=(q+1)^2-q^2=2q+1,
+\]
+
+contradicting \(|X|=2q+2\). Therefore \(d>D\), and integrality gives \(d\ge\binom{k+1}{2}\). ∎
+
+### Consequences
+
+- q=6: k_q=1, so d>=1; together with the MOLS obstruction this already closes Case B at r=7.
+- q=7,8,9,10: k_q=2, so d>=3.
+- q=11,12,13,14,15: k_q=3, so d>=6.
+- q=16 through 20: k_q=4, so d>=10.
+
+The theorem is a quantitative strengthening of J.W8. It does not by itself close Case B for every r: the resulting net direction count still needs to be compared with known nonexistence results for MOLS or other design constraints.
