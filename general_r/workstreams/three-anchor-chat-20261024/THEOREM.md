@@ -12,9 +12,9 @@ If `H` contains three pairwise nonadjacent vertices `a1,a2,a3` of degree exactly
 
 `K_r(H)=2e(H)-r(3r-1)>=8`.
 
-**STATUS: `PROVED_ANALYTIC` for every `r>=12` (Level 4).**
+**STATUS: `INDEPENDENTLY_VERIFIED` by an analytic proof audit for every `r>=12` (Level 4).**
 
-The proof is a single parameterized anchor-partition / focus / rectangle argument. The former `r=12` residue has been absorbed directly in `R12_UNIFIED_CLOSURE.md`; no historical fixed-r case table is now needed for this theorem.
+The publication-canonical proof is `PUBLICATION_VERSION.md`; the audit and full helper-lemma derivations are in `INDEPENDENT_AUDIT.md` and `LEMMA_VERIFICATION.md`. The former `r=12` residue has been absorbed into the same focus/rectangle proof. No historical fixed-r case table is needed. No full graph-level SAT/ILP search was run, and an external human referee review remains advisable.
 
 ---
 
