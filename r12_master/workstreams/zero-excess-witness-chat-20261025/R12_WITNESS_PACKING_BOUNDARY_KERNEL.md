@@ -324,3 +324,89 @@ At the equality boundary S_0=10, the same argument leaves only one incidence pat
 - one vertex w_* has a size-10 hitting set containing no entire part.
 
 For this equality pattern, delta is in {3,4,5} and epsilon_U=10-2delta. The exceptional hitting set T_*=N_H(w_*) intersect U cannot contain all of D, since at least three zero-excess points of D are already saturated by the six size-7 vertices. If T_* contains s points of D, then s<=2 and it must contain at least eight points from A union B union C, because every unselected d in D has eight blocks that must be hit by distinct large-part points. In particular, the only remaining four-partite equality kernel is a single size-10 non-group transversal interacting with the six D-neighbourhood vertices and the three-per-large-group size-8 classes. This is still OPEN, but is substantially narrower than the original shell/core incidence system.
+
+
+## 13. E408 Q33 four-partite branch: independent exclusion of S0=9 and S0=10
+
+This section supersedes the preliminary “S0=10 residual kernel” statement at the end of Section 12. It gives a shorter proof of the stronger bound S0>=11. The proof does **not** use the selected-pair count in the sibling S0=10 note; that count is not valid as written because a selected pair that is not in a Q block may be an H-edge, not necessarily an extra L-edge.
+
+### 13.1 The degree-seven neighborhood class is a clique
+
+Retain the four-partite E408 Q33 setup of Section 11: L has parts A,B,C of size eight and D of size seven; the 56 witness blocks cover every D–A, D–B, and D–C pair exactly once. Between each pair of large parts, the eight pairs not used by Q blocks form a perfect matching. Since H is the complement of L on U, every H-edge between two large parts belongs to that matching, so each vertex has at most one H-neighbour in each other large part.
+
+Let
+\[
+W_7=\{w\in W:|N_H(w)\cap U|=7\},\qquad k=|W_7|.
+\]
+Every w in W_7 has \(N_H(w)\cap U=D\): a 7-set hitting all 56 blocks must consist of points of block-incidence eight, and precisely the seven D points have that incidence.
+
+There is an independent triple \(a\in A,b\in B,c\in C\). Choose any a; at most one vertex of B is H-adjacent to a, so choose b nonadjacent to a. Each of a and b has at most one H-neighbour in C, so choose c nonadjacent to both. If two vertices \(w,w'\in W_7\) were nonadjacent, then \(w,w',a,b,c\) would be an independent five-set: both w and w' are anticomplete to A∪B∪C. This contradicts \(\alpha(H)\le4\). Therefore W_7 is a clique.
+
+The set D is also a clique, and every vertex in W_7 is adjacent to every vertex in D. Hence H contains a clique of size \(7+k\). A counterexample to EG617 cannot contain a monochromatic K13, so \(\omega(H)\le12\) and
+\[
+\boxed{k\le5}. \tag{13.1}
+\]
+
+This uses only the universal counterexample constraint \(\omega(H)\le12\), not the stronger \(\omega(H)\le11\) premise used in some sibling lemmas.
+
+### 13.2 A size-eight or size-nine transversal contains D or a full large part
+
+Let T⊂U hit every witness block and have size eight or nine. If T does not contain all of D, choose d∈D\\T. Its eight witness blocks require eight distinct selected vertices from A∪B∪C, since each selected large-part point occurs in at most one block containing d. Thus T has at most one D point and at least eight large-part points.
+
+Suppose no large part is fully contained in T. For any omitted point a∈A, the seven blocks containing a must be hit by selected vertices outside A. The at-most-one selected D point can hit at most one of these blocks, and each selected point in B∪C can hit at most one, by pair uniqueness. Hence
+\[
+|T\cap A|\le |T|-7\le2.
+\]
+The same holds for B and C, so T contains at most six large-part points, contradiction. Therefore
+\[
+\boxed{\text{every 8- or 9-point transversal contains all of D or a full part A,B,C.}} \tag{13.2}
+\]
+
+### 13.3 Capacity of full-large-part neighborhoods
+
+Write \(S_0=\epsilon_U+2\delta\), so
+\[
+e_H(U,W)=114+S_0.
+\]
+For a large part G∈{A,B,C}, each of its eight vertices has seven H-neighbours within G and exactly two potential H-neighbours in the other large parts (one along each unused-pair matching). If a vertex v∈G has no incident extra L-edge from J, both potential cross-pairs are H-edges, so \(d_H(v,U)=9\).
+
+At most \(\delta\) vertices of G are incident to J, because every J-edge has at most one endpoint in G. At most \(\epsilon_U\) vertices of G have positive excess. Therefore at least
+\[
+8-\delta-\epsilon_U=8+\delta-S_0
+\]
+vertices in G have zero excess and no incident J-edge. For \(S_0=9\), the core budget and \(\epsilon_U\le4\) force \(\delta\in\{3,4\}\), so this lower bound is \(\delta-1\ge2\). For \(S_0=10\), they force \(\delta\in\{3,4,5\}\), so it is \(\delta-2\ge1\).
+
+Each such vertex v has \(d_H(v,U)=9\) and total degree 12, so it has exactly three neighbours in W. Thus for each large part G, at most three vertices of W can have a U-neighbourhood containing all of G. Across A,B,C, there are at most nine W vertices with a full-large-part neighborhood.
+
+For any fixed set of at least three zero-excess vertices in D, each has exactly six W-neighbours: its degree inside U is six, and its total degree is 12. Every W vertex whose U-neighbourhood contains all of D is adjacent to all these vertices. Since k members of W_7 already do so, there can be at most \(6-k\) additional such W vertices. Combined with (13.2), among W vertices with U-degree eight or nine, all but at most \(6-k\) must have a full-large-part neighborhood.
+
+### 13.4 Exclude S0=9
+
+If \(S_0=9\), then \(x=e_H(U,W)=123\). Since every W vertex has U-degree at least seven and all but the k vertices in W_7 have degree at least eight,
+\[
+123=x\ge7k+8(16-k)=128-k.
+\]
+By (13.1), k≤5, so equality forces k=5. The other eleven W vertices must all have U-degree exactly eight, since their total U-degree is \(123-35=88=11\cdot8\).
+
+At most \(6-k=1\) of these eleven neighborhoods can contain all of D. By (13.2), at least ten must contain a full large part. But the capacity bound in Section 13.3 allows at most three per large part, hence at most nine in total. Contradiction. Thus S0≠9. The same inequality and k≤5 already exclude S0≤8, so \(S_0\ge10\).
+
+### 13.5 Exclude S0=10
+
+If \(S_0=10\), then x=124. The same inequality gives k≥4; with k≤5, only k=4 or k=5 are possible.
+
+- If k=4, the other twelve vertices have total U-degree \(124-28=96\), so all twelve have U-degree eight.
+- If k=5, the other eleven have total U-degree \(124-35=89\), so ten have U-degree eight and one has U-degree nine.
+
+In either case, at least ten vertices have U-degree eight or nine. At most \(6-k\le2\) of these can have a U-neighbourhood containing all of D. By (13.2), at least ten must have a full-large-part neighborhood. The capacity bound allows at most nine, contradiction.
+
+Therefore
+\[
+\boxed{S_0=\epsilon_U+2\delta\ge11}
+\]
+throughout the four-partite E408 Q33 minimum-support boundary.
+
+### 13.6 Audit of the sibling pair-count proof
+
+The sibling file R12_E408_Q33_FOUR_PARTITE_S0_10_EXCLUSION.md correctly identifies the possible degree pattern \((7^6,8^9,10)\) if S0=10 and k=6, but its final selected-pair inequalities in the s=1 and s=2 cases are not justified. A pair of selected large-part vertices that is not contained in a Q block need not be an extra L-edge: it can instead be an H-edge, because four-partiteness of L does not mean L is complete four-partite. The independent clique-capacity proof above avoids this invalid inference and still excludes S0=10 under the retained core contract.
+
+Scope remains the four-partite, minimum-support E408 Q33 kernel only. The non-four-partite branch, other support sizes, E408 Q32, E407, and the original K145 bridge remain OPEN / NOT_CERTIFIED.
