@@ -452,3 +452,53 @@ Deleting `H` makes every target partition part a target-color clique. This local
 - label-capacity lemma: `c67a1e18ecd3e8b443513f1a272892aa225386fc`
 - canonical state: `06d8ab213b721aebd36b0fc06b5862277eaa6fa3`
 - open gaps: `ad962ed6dd44eb32a634727dd4aa52eaa16c0fa7`
+---
+
+## 2026-10-24 — Round 9: absolute-width target groups and product-cover hub theorem
+
+### NEW THEOREM A — Constant-width target ideal groups
+
+Let `F_0=bar(G_0[R_a])` and use the Füredi partition into `a` target ideal groups `V_j`, with `s_j=|V_j|`. The internal target-complement edge count satisfies `D<=x_0`, while for each group
+
+`e(F_0[V_j])=sum_{i>0}e(G_i[V_j]) >= (r-1)p_r(s_j) >= (r-1)(s_j-r)_+`.
+
+Thus, with `P=sum_j(s_j-r)_+`,
+
+`(r-1)P<=D<=x_0<=S_a(r)=(binom(a,2)-1)r+a`.
+
+For `r>=binom(a,2)+a+1`, integer rounding gives `P<=binom(a,2)-1`. Since `sum_j(s_j-r)=1`,
+
+`r-binomial(a,2)+2 <= s_j <= r+binomial(a,2)-1`.
+
+For `a=6`, every target ideal group has size `r-13` through `r+14` for all `r>=22`. This replaces the earlier `r+O(sqrt r)` energy estimate with an absolute-width theorem.
+
+### NEW THEOREM B — Product-cover / cylinder inequality
+
+Let `C_0` be the graph of target-color edges crossing distinct target ideal groups, so `e(C_0)=M_0`, and let `L=min_j s_j`. For every internal edge `uv` of `F_0` in one group,
+
+`d_{C_0}(u)+d_{C_0}(v) >= L-M_0/L`.
+
+Proof: every transversal choosing one vertex from each other target group, together with `u,v`, would be a `K_{a+1}` in `F_0` unless it contains a cross pair absent from `F_0`, i.e. a target-color cross edge. Each such edge incident to `u` or `v` covers at most `1/L` of the transversal space; all other cross edges together cover at most `M_0/L^2`. The union bound yields the inequality.
+
+### NEW THEOREM C — Improved bounded hub cover
+
+Let `H_r=L-M_0/L` and `X={v:d_{C_0}(v)>=H_r/2}`. If `H_r>0`, every internal target-complement edge meets `X`, and
+
+`|X|<=4M_0/H_r`.
+
+For `a=6`, `L>=r-13`, `M_0<=2x_0<=28r+12`. For `r>=1000`,
+
+`H_r>=r-42`,
+`|X|<=4(28r+12)/(r-42)<117`.
+
+Therefore **at most 116 hubs suffice for all `r>=1000`**; outside them, every target ideal group is an actual target-color clique.
+
+### Interpretation / limitation
+
+The target-side structure is now much more rigid: absolute-width groups and a constant-size hub kernel are proved. This still does not show that the `O(r)` non-target block defects propagate through the same kernel, nor does it rule out directed cycles of hub protection. `NO-HIGH-STOP` remains `OPEN`.
+
+### GitHub commits
+
+- strengthened hub theorem: `4e4c0511944a9e4cf8c615e8e289696349dfc2c9`
+- canonical state: `2b7d1fb36538ce32c276c083445d114bdb8aef01`
+- open gaps: `6a576e565b977a478fc67e1b89acd5580c894c9e`
