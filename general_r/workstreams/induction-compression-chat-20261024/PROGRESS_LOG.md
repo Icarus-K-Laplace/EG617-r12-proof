@@ -23,22 +23,29 @@
 - Extended the same argument to the exact fixed-merge hypergraph (union of untouched-color independent-set families plus the common independent sets of colors c and j).
 - Derived colored cross-edge constraints from the domination property.
 - Added an abstract hypergraph example with tau=2r and nu=2 to show that hypergraph matching/transversal data alone do not force affine geometry.
-- Explicitly disallowed Kakeya use until full size-r blocks and pairwise intersection <=1 are proved.
 
 ## 2026-10-24 — Round 4: tight-case color overlap
 
-- In the matching-number-two case, the 2r private witnesses use only r-1 possible colors other than c. Pigeonhole forces at least three private witnesses with one common designated color for r>=3.
-- Since the hypergraph matching number is two, those three same-color witnesses cannot be pairwise disjoint; at least two of their residual (r-1)-sets intersect in R, the vertex set V minus X.
+- In the matching-number-two case, the 2r private witnesses use only r-1 possible designated colors. Pigeonhole forces at least three private witnesses with one common designated color for r>=3.
+- Since the hypergraph matching number is two, those three same-color witnesses cannot be pairwise disjoint; at least two of their residual (r-1)-sets intersect in R=V minus X.
 - Proved the general overlap-edge lemma: if two independent r-sets in one color intersect in h points, there are at least r-h same-color edges between their set differences.
 
 ## 2026-10-24 — Round 5: J/K low-slack interface
 
-- In the tight-transversal case, aligned a vertex x_0 in X with a low-slack color i != c on W=V minus {x_0}.
+- In the tight-transversal case, aligned x_0 in X with a low-slack color i != c on W=V minus {x_0}.
 - Proved each private witness of color i is an independent transversal of the low-slack clique partition, with its other r-1 points outside X.
-- Proved every residual point in the omitted witness block must have a color-i defect edge into that partial transversal, giving residual block size <= s_i.
+- Proved every residual point in the omitted witness block must have a color-i defect edge into the witness's partial transversal, giving block size <= s_i.
 - Proved the number of blocks that can host private witnesses of a low-slack color is at most floor((2r-1)/(r-s_i)).
 - Identified the exact remaining alignment gap: no result yet guarantees a low-slack color at a vertex belonging to the tight transversal.
 
+## 2026-10-24 — Round 6: quantitative witness overlap
+
+- Defined the overlap graph on 2r private witnesses, adjacent when their residual (r-1)-sets intersect.
+- Matching number two implies the overlap graph has independence number at most two; Mantel's theorem yields at least r(r-1) intersecting witness pairs.
+- Independently, incidence counting forces a residual point contained in at least three private witnesses.
+- Recorded the exact extremal overlap-graph profile: equality requires the overlap graph to be two disjoint K_r components, equivalently the disjointness graph is K_{r,r}.
+- Explicitly noted that this is not yet affine geometry and does not force same-color intersection.
+
 ### Status
 
-The strongest result is **compressible shell OR packing/tight-critical-transversal structure**, now with a conditional quantitative interface to low-slack geometry. Full geometry and P(r) => P(r-1) remain OPEN.
+The strongest result is **compressible shell OR packing/tight-critical-transversal structure**, now with dense witness overlap and a conditional quantitative interface to low-slack geometry. Full geometry and P(r) => P(r-1) remain OPEN.
