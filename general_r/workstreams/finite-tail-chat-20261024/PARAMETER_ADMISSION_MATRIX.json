@@ -1,6 +1,6 @@
 {
   "schema": "eg617-parameter-admission-matrix-v1",
-  "matrix_version": "1.0.0",
+  "matrix_version": "1.1.0",
   "repository": "Icarus-K-Laplace/EG617-r12-proof",
   "branch": "workstream/general-r-finite-tail-20261024",
   "directory": "general_r/workstreams/finite-tail-chat-20261024/",
@@ -15,19 +15,19 @@
       "range_id": "R4_TO_R11",
       "min_r": 4,
       "max_r": 11,
-      "meaning": "No certified general-r residual-core reduction source applies; module use is schema-only unless a parameter-specific reduction is attached."
+      "meaning": "No general residual-core reduction applies. The M_r(2) cutoff has explicit abstract-contract counterexamples at r=4,5; recurrence sublemmas do not constitute an original-graph reduction."
     },
     {
       "range_id": "R12_TO_R16",
       "min_r": 12,
       "max_r": 16,
-      "meaning": "Conditional q-ceiling/backend source applies under RC; no extracted-residual theorem source for the complete core contract; broad near-anchor K8 remains open below 68."
+      "meaning": "Conditional q-ceiling/backend source applies under RC; no extracted-residual theorem source for the complete core contract; broad near-anchor K8 remains open below 68; recurrence seed package/dominance remain open."
     },
     {
       "range_id": "R17_TO_R67",
       "min_r": 17,
       "max_r": 67,
-      "meaning": "Core contract follows analytically once a legal 4r+1 residual has been extracted; global extraction remains open; broad near-anchor K8 remains open."
+      "meaning": "Core contract follows analytically once a legal 4r+1 residual has been extracted; global extraction remains open; broad near-anchor K8 remains open; recurrence seed package/dominance remain open."
     },
     {
       "range_id": "R68_PLUS",
@@ -109,7 +109,7 @@
         "min_r": 12,
         "max_r": null
       },
-      "proof_type": "INDEPENDENTLY_VERIFIED_ANALYTIC_AUDIT",
+      "proof_type": "ANALYTIC_THEOREM_IN_SOURCE_BRANCH_SCOPE_REVIEWED_NOT_REPROVED_HERE",
       "assumption_ids": [
         "CORE_CONTRACT",
         "THREE_PAIRWISE_NONADJACENT_DEGREE_R_ANCHORS"
@@ -160,6 +160,45 @@
       "source_blob_sha": "2b414301e2db36031b707dc1c0d5f546c02b89da",
       "theorem_status": "ARITHMETIC_CERTIFIED_BRIDGE_OPEN",
       "local_audit_status": "source receipt blob checked; recurrence arithmetic claim retained as source receipt; original-graph bridge remains open"
+    },
+    {
+      "source_id": "FRONT_RECURRENCE_TERMINATION",
+      "theorem_statement": "For every integer r>3, the natural-number potential Phi_r(a,n)=(r^2+2)a+n strictly decreases on each genuine recursive dependency in the contextual recurrence; hence the recurrence terminates conditional on a finite sound seed/cutoff package. This does not prove the seed package, all-state outer-budget dominance, or the original-graph bridge.",
+      "parameter_applicability": {
+        "min_r": 4,
+        "max_r": null
+      },
+      "proof_type": "PROVED_SYMBOLIC_CONDITIONAL_ON_FINITE_SEED_PACKAGE",
+      "assumption_ids": [
+        "FINITE_SOUND_SEED_CUTOFF_PACKAGE"
+      ],
+      "terminal_contract": "contextual recurrence only; no all-state seed dominance or original graph extraction",
+      "source_branch": "workstream/general-r-front-recurrence-20261024",
+      "source_commit": "f5fd2b931049a0426cdbfadeeee6a4be740a4290",
+      "source_path": "general_r/workstreams/front-recurrence-chat-20261024/CANONICAL_STATE.md",
+      "source_blob_sha": "00d571b4ecd9e378ebc65e58ec99f9d4e06d1451",
+      "local_audit_status": "source blob and r>3 quantifier checked; termination proof not rederived here",
+      "theorem_status": "CONDITIONAL_ON_SEED_PACKAGE"
+    },
+    {
+      "source_id": "LOW_ORDER_CUTOFF_THEOREMS",
+      "theorem_statement": "For every integer r>=6, M_r(2)<=2r-1 and M_r(3)<=3r for the abstract inherited-cap recurrence state class C_r(a,n). Explicit C_r(2,2r) examples at r=4,5 show M_r(2)<=2r-1 cannot be extended to those parameters. These are contextual sublemmas, not full EG617 reductions.",
+      "parameter_applicability": {
+        "min_r": 6,
+        "max_r": null
+      },
+      "proof_type": "PROVED_ANALYTIC_WITH_EXTERNAL_AES_INPUT",
+      "assumption_ids": [
+        "INHERITED_CAP_ABSTRACT_STATE_CONTRACT",
+        "ANDRASFAI_ERDOS_SOS_THEOREM"
+      ],
+      "terminal_contract": "abstract recurrence state only; does not prove an original-graph reduction or EG617(r)",
+      "source_branch": "workstream/general-r-front-recurrence-20261024",
+      "source_commit": "f5fd2b931049a0426cdbfadeeee6a4be740a4290",
+      "source_path": "general_r/workstreams/front-recurrence-chat-20261024/LOW_ORDER_CUTOFF_THEOREMS.md",
+      "source_blob_sha": "82c8254643fcb0f405f63fb0a37740523fff94bf",
+      "local_audit_status": "source statement and r>=6 range checked; r=4,5 counterexamples are abstract state-contract examples, not full EG617 colorings; proof not rederived here",
+      "theorem_status": "PROVED_FOR_R_GE_6"
     }
   ],
   "module_registry": [
@@ -213,7 +252,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "NO_APPLICABLE_SOURCE_BELOW_R12",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "ABSTRACT_CONTRACT_COUNTEREXAMPLES_TO_M2_CUTOFF",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -227,7 +269,7 @@
                 "RC": "OPEN"
               },
               "eg617_promotion_status": "OPEN",
-              "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+              "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
             },
             "near-anchor": {
               "source_applicable": false,
@@ -241,7 +283,7 @@
                 "ANCHOR_K8": "OPEN"
               },
               "eg617_promotion_status": "OPEN",
-              "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+              "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
             }
           },
           "D1_SHELL_CLASS_BOUND_V1": {
@@ -256,7 +298,7 @@
               "ANCHOR_K8": "OPEN"
             },
             "eg617_promotion_status": "OPEN",
-            "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+            "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
           }
         },
         "scalar_boundary_audit": {
@@ -296,7 +338,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "NO_APPLICABLE_SOURCE_BELOW_R12",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "ABSTRACT_CONTRACT_COUNTEREXAMPLES_TO_M2_CUTOFF",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -310,7 +355,7 @@
                 "RC": "OPEN"
               },
               "eg617_promotion_status": "OPEN",
-              "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+              "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
             },
             "near-anchor": {
               "source_applicable": false,
@@ -324,7 +369,7 @@
                 "ANCHOR_K8": "OPEN"
               },
               "eg617_promotion_status": "OPEN",
-              "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+              "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
             }
           },
           "D1_SHELL_CLASS_BOUND_V1": {
@@ -339,7 +384,7 @@
               "ANCHOR_K8": "OPEN"
             },
             "eg617_promotion_status": "OPEN",
-            "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+            "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
           }
         },
         "scalar_boundary_audit": {
@@ -379,7 +424,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "NO_APPLICABLE_SOURCE_BELOW_R12",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -393,7 +441,7 @@
                 "RC": "OPEN"
               },
               "eg617_promotion_status": "OPEN",
-              "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+              "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
             },
             "near-anchor": {
               "source_applicable": false,
@@ -407,7 +455,7 @@
                 "ANCHOR_K8": "OPEN"
               },
               "eg617_promotion_status": "OPEN",
-              "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+              "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
             }
           },
           "D1_SHELL_CLASS_BOUND_V1": {
@@ -422,7 +470,7 @@
               "ANCHOR_K8": "OPEN"
             },
             "eg617_promotion_status": "OPEN",
-            "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+            "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
           }
         },
         "scalar_boundary_audit": {
@@ -462,7 +510,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "NO_APPLICABLE_SOURCE_BELOW_R12",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -476,7 +527,7 @@
                 "RC": "OPEN"
               },
               "eg617_promotion_status": "OPEN",
-              "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+              "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
             },
             "near-anchor": {
               "source_applicable": false,
@@ -490,7 +541,7 @@
                 "ANCHOR_K8": "OPEN"
               },
               "eg617_promotion_status": "OPEN",
-              "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+              "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
             }
           },
           "D1_SHELL_CLASS_BOUND_V1": {
@@ -505,7 +556,7 @@
               "ANCHOR_K8": "OPEN"
             },
             "eg617_promotion_status": "OPEN",
-            "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+            "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
           }
         },
         "scalar_boundary_audit": {
@@ -545,7 +596,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "NO_APPLICABLE_SOURCE_BELOW_R12",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -559,7 +613,7 @@
                 "RC": "OPEN"
               },
               "eg617_promotion_status": "OPEN",
-              "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+              "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
             },
             "near-anchor": {
               "source_applicable": false,
@@ -573,7 +627,7 @@
                 "ANCHOR_K8": "OPEN"
               },
               "eg617_promotion_status": "OPEN",
-              "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+              "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
             }
           },
           "D1_SHELL_CLASS_BOUND_V1": {
@@ -588,7 +642,7 @@
               "ANCHOR_K8": "OPEN"
             },
             "eg617_promotion_status": "OPEN",
-            "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+            "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
           }
         },
         "scalar_boundary_audit": {
@@ -628,7 +682,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "NO_APPLICABLE_SOURCE_BELOW_R12",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -642,7 +699,7 @@
                 "RC": "OPEN"
               },
               "eg617_promotion_status": "OPEN",
-              "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+              "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
             },
             "near-anchor": {
               "source_applicable": false,
@@ -656,7 +713,7 @@
                 "ANCHOR_K8": "OPEN"
               },
               "eg617_promotion_status": "OPEN",
-              "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+              "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
             }
           },
           "D1_SHELL_CLASS_BOUND_V1": {
@@ -671,7 +728,7 @@
               "ANCHOR_K8": "OPEN"
             },
             "eg617_promotion_status": "OPEN",
-            "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+            "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
           }
         },
         "scalar_boundary_audit": {
@@ -711,7 +768,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "NO_APPLICABLE_SOURCE_BELOW_R12",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -725,7 +785,7 @@
                 "RC": "OPEN"
               },
               "eg617_promotion_status": "OPEN",
-              "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+              "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
             },
             "near-anchor": {
               "source_applicable": false,
@@ -739,7 +799,7 @@
                 "ANCHOR_K8": "OPEN"
               },
               "eg617_promotion_status": "OPEN",
-              "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+              "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
             }
           },
           "D1_SHELL_CLASS_BOUND_V1": {
@@ -754,7 +814,7 @@
               "ANCHOR_K8": "OPEN"
             },
             "eg617_promotion_status": "OPEN",
-            "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+            "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
           }
         },
         "scalar_boundary_audit": {
@@ -794,7 +854,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "NO_APPLICABLE_SOURCE_BELOW_R12",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -808,7 +871,7 @@
                 "RC": "OPEN"
               },
               "eg617_promotion_status": "OPEN",
-              "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+              "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
             },
             "near-anchor": {
               "source_applicable": false,
@@ -822,7 +885,7 @@
                 "ANCHOR_K8": "OPEN"
               },
               "eg617_promotion_status": "OPEN",
-              "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+              "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
             }
           },
           "D1_SHELL_CLASS_BOUND_V1": {
@@ -837,7 +900,7 @@
               "ANCHOR_K8": "OPEN"
             },
             "eg617_promotion_status": "OPEN",
-            "reason": "general residual-core source is stated for r>=12; no parameter-specific reduction is registered for r<12"
+            "reason": "no parameter-specific reduction is registered for the original graph; recurrence cutoff sublemmas alone do not complete the reduction"
           }
         },
         "scalar_boundary_audit": {
@@ -877,7 +940,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "COMPUTATION_CERTIFIED_ARITHMETIC_ONLY_BRIDGE_OPEN"
+          "fixed_r12_recurrence": "COMPUTATION_CERTIFIED_ARITHMETIC_ONLY_BRIDGE_OPEN",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -966,7 +1032,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -1055,7 +1124,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -1144,7 +1216,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -1230,7 +1305,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -1316,7 +1394,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -1402,7 +1483,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -1488,7 +1572,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -1574,7 +1661,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -1660,7 +1750,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -1746,7 +1839,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -1832,7 +1928,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -1918,7 +2017,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -2004,7 +2106,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -2090,7 +2195,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -2176,7 +2284,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -2262,7 +2373,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -2348,7 +2462,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -2434,7 +2551,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -2520,7 +2640,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -2606,7 +2729,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -2692,7 +2818,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -2778,7 +2907,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -2864,7 +2996,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -2950,7 +3085,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -3036,7 +3174,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -3122,7 +3263,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -3208,7 +3352,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -3294,7 +3441,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -3380,7 +3530,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -3466,7 +3619,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -3552,7 +3708,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -3638,7 +3797,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -3724,7 +3886,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -3810,7 +3975,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -3896,7 +4064,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -3982,7 +4153,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -4068,7 +4242,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -4154,7 +4331,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -4240,7 +4420,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -4326,7 +4509,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -4412,7 +4598,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -4498,7 +4687,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -4584,7 +4776,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -4670,7 +4865,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -4756,7 +4954,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -4842,7 +5043,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -4928,7 +5132,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -5014,7 +5221,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -5100,7 +5310,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -5186,7 +5399,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -5272,7 +5488,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -5358,7 +5577,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -5444,7 +5666,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -5530,7 +5755,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -5616,7 +5844,10 @@
           "broad_near_anchor_k8": "OPEN_FOR_THIS_PARAMETER",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -5702,7 +5933,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -5788,7 +6022,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -5874,7 +6111,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -5960,7 +6200,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -6046,7 +6289,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -6132,7 +6378,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -6218,7 +6467,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -6304,7 +6556,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -6390,7 +6645,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -6476,7 +6734,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -6562,7 +6823,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -6648,7 +6912,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -6734,7 +7001,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -6820,7 +7090,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -6906,7 +7179,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -6992,7 +7268,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -7078,7 +7357,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -7164,7 +7446,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -7250,7 +7535,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -7336,7 +7624,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -7422,7 +7713,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -7508,7 +7802,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -7594,7 +7891,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -7680,7 +7980,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -7766,7 +8069,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -7852,7 +8158,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -7938,7 +8247,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -8024,7 +8336,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -8110,7 +8425,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -8196,7 +8514,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -8282,7 +8603,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -8368,7 +8692,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -8454,7 +8781,10 @@
           "broad_near_anchor_k8": "PROVED_ANALYTIC_SOURCE_APPLIES",
           "exact_three_anchor_k8": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES",
           "asymptotic_r0": "NOT_AVAILABLE",
-          "fixed_r12_recurrence": "NOT_APPLICABLE"
+          "fixed_r12_recurrence": "NOT_APPLICABLE",
+          "front_recurrence_termination": "PROVED_CONDITIONAL_ON_SEED_PACKAGE",
+          "front_recurrence_low_order_cutoffs": "PROVED_SUBLEMMA_FOR_CONTEXTUAL_RECURRENCE_CONTRACT",
+          "full_front_recurrence_reduction": "OPEN_SEED_FLOORS_AND_ALL_STATE_DOMINANCE"
         },
         "module_admission": {
           "ENDPOINT_DOMAIN_LOWER_BOUND_V1": {
@@ -8551,6 +8881,18 @@
       }
     ],
     "exact_three_anchor_theorem_not_substitutable_for_broad_anchor_k8": true,
-    "asymptotic_r0": "NOT_AVAILABLE"
+    "asymptotic_r0": "NOT_AVAILABLE",
+    "front_recurrence_cutoffs_status_by_range": [
+      {
+        "min_r": 4,
+        "max_r": 5,
+        "status": "ABSTRACT_CONTRACT_COUNTEREXAMPLES_TO_M2_CUTOFF"
+      },
+      {
+        "min_r": 6,
+        "max_r": null,
+        "status": "PROVED_SUBLEMMA_ONLY; FULL_REDUCTION_OPEN"
+      }
+    ]
   }
 }
