@@ -255,6 +255,38 @@ Between two clean blocks the target cross graph is a matching of size0,1,or2. Co
 
 This is the first genuinely scalable design terminal extracted from the backend.
 
+### R18. Clean-pair block model and 2-SAT audit — PROVED_SYMBOLIC / FINITE-ENUMERATION
+
+The clean pair terminal is encoded by blocks P_i={x_i^0,x_i^1}; each block-pair interaction M_ij is one of the seven partial matchings of K_2,2. A chosen endpoint transversal is independent exactly when the corresponding 2-CNF formula is satisfiable.
+
+An exhaustive check of all 7^6=117,649 labelled four-block interaction patterns, each with all 16 endpoint assignments, found that an unsatisfiable four-block system requires at least six target cross edges. This is a local finite theorem; it does not yield an absolute bound on the number of blocks.
+
+The static three-clique-plus-block-matching model shows that the matching rule and alpha(H)<=3 alone permit arbitrarily large block systems. It is a local model, not a full legal-core counterexample.
+
+### R19. High-density clean-pair reduction — PROVED_CONDITIONAL
+
+For U the union of m clean blocks and G=overline(H[U]), one has K4-free G and
+
+delta(G)>=max(m-1,2m-r-2).
+
+If m>=ceil(4r/3+3), the Andrasfai-Erdos-Sos theorem gives that G is 3-partite. Hence U is covered by three target cliques of size at most r-1 and
+
+m<=floor(3(r-1)/2).
+
+At most three blocks can have both endpoints in one part; every other block meets two parts. This is structural compression only. The remaining interval is nonempty, so no nonextension contradiction follows.
+
+### R20. Fifth-coordinate reversibility audit — PROVED_SYMBOLIC / DISPROVED_AS_STATED
+
+The exact Q2 increment is recorded in FIFTH_COORDINATE_AUDIT.md. If p->y is Phi4-flat, its reverse is also Phi4-flat and
+
+Delta Q2(y->p)=-Delta Q2(p->y).
+
+Therefore universal strict increase of Q2 on every nontrivial reversible Phi4-flat move is impossible. Q2 remains a bounded statistic, but a fifth-coordinate terminal elimination is open.
+
+### R21. Bounded-allowance d1 terminal — PROVED_CONDITIONAL / OPEN
+
+For a fixed d1 class of allowance c and multiplicity N, the exact singleton exchange preserves common-S weight c. If c=0, N<=3. If c>=1, the clique cap gives N<=r-2, and the inherited core cap gives (N-1)c<=3r-2. Linear eta concentration forces c=O(1), but does not bound N independently of r. Final d1 absorption remains open.
+
 ## Explicit retractions from the canonical theory
 
 The file `D2_MISSING_PAIR_NEUTRAL_BOUND.md` is retained as a negative audit certificate. Its claimed consequences
