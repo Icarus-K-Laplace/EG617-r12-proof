@@ -1,0 +1,22 @@
+# R12 proof DAG — current audited version
+
+Headline target: original balanced coloring of K145 -> contradiction.
+
+1. Assume a balanced 12-coloring of K145.
+2. Choose a least-edge target color G; e(G)<=870. [PROVED by counting]
+3. Apply the FRONTEND_BRIDGE_THEOREM anchor/block recurrence. Its 1752-node, 144-stop certificate is repository-reported; this workstream has not rerun the generator/verifier. [SOURCE_REPORTED / REPLAY NOT DONE]
+4. The recurrence's contextual split is induced R(4,49) or embedded T61. [SOURCE_REPORTED under F6–F8]
+5. R(4,49) branch: under the exact F5 original-coloring contract, delta(F)>=13 and alpha(F)<=4. The target has at least319 edges; each other color has at least79, forcing target edges at most307. Contradiction. [PROVED_CONDITIONAL on F5 and second-Turan theorem]
+6. Therefore the only live original-proof branch is embedded T61, provided steps 3–5 retain their exact contracts.
+7. T61:
+   - E397–E406: repository-canonical closure under stated contracts.
+   - E407: sharp Cell-B |W|=23 subcase excluded; Q32 five-template / common-K11 versus 284-core completion remains OPEN.
+   - E408: sharp Cell-B |W|=23 subcase excluded; Q32 and Q33 seven-block/color-factor compatibility remains OPEN.
+8. Hence the original proof currently terminates at an unexcluded T61 state. [OPEN]
+
+Parallel abstract backend DAG (not silently identified with the T61 branch):
+- Legal abstract R(4,49) -> degree-13 pivot -> 35-core H and E-layer.
+- E333 conditional closure; E334 source-reported forcing closure with independent graph obstruction; E335–E340 OPEN.
+- If the contextual R(4,49) contradiction is accepted as an original-coloring lemma, this abstract branch is not a required branch in the original theorem DAG, although its independent classification remains open.
+
+No cycle is used in this DAG. The V12/V8 packages remain source-reported until their exact archives/verifiers are replayed.
