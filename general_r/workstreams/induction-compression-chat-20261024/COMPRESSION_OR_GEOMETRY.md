@@ -21,7 +21,13 @@ For each fixed merge c -> j, replace the hypergraph by
 
 A transversal of size 2r-1 is exactly a successful fixed-merge shell. If none exists, the same packing/tight-transversal alternative applies.
 
-## 2. Why this is not yet geometric rigidity
+## 2. Additional structure in the tight case
+
+If the matching number is exactly two, the minimum 2r-point transversal X has a private independent r-set T_v for every v in X, with T_v intersect X={v}. There are only r-1 possible witness colors other than the eliminated color, so at least three private witnesses have the same designated color. Since no three hyperedges can be pairwise disjoint, at least two of those same-color witnesses share a point outside X. For two same-color independent r-sets with intersection size h, the color graph has at least r-h cross-edges between their differences.
+
+This is a proved common-color overlap, but it is not yet a line theorem: the overlap can be larger than one, and no complete direction family is established.
+
+## 3. Why this is not yet geometric rigidity
 
 The hypergraph implication uses only uniformity:
 
@@ -35,7 +41,7 @@ But uniform-hypergraph data alone cannot force affine geometry. For example, on 
 
 This is **not** claimed to be realizable as the independent-set hypergraphs of a counterexample coloring. It is an audit example showing that tau/nu alone cannot supply the missing geometry.
 
-## 3. Exact Kakeya-bridge requirements
+## 4. Exact Kakeya-bridge requirements
 
 To use the elementary inequality
 
@@ -43,7 +49,7 @@ To use the elementary inequality
 |X|\ge tq-\binom t2,
 \]
 
-one must already have t subsets of size q, each wholly contained in X, with every pair intersecting in at most one point. For an affine-plane interpretation, these must be full lines in t distinct directions. The present compression theorem yields disjoint independent r-sets, not such lines, so the Kakeya inequality is not yet applicable.
+one must already have t subsets of size q, each wholly contained in X, with every pair intersecting in at most one point. For an affine-plane interpretation, these must be full lines in t distinct directions. The present compression theorem yields disjoint independent r-sets and private witnesses, not such lines, so the Kakeya inequality is not yet applicable.
 
 In an affine plane, three full lines from three distinct directions already require at least 3q-3 points. For q>=3,
 
@@ -53,13 +59,14 @@ In an affine plane, three full lines from three distinct directions already requ
 
 Thus a future bridge need only extract three genuinely distinct line-like directions that the shell must fully contain; it need not extract all q+1 directions. The extraction and pairwise-intersection hypotheses are currently OPEN.
 
-## 4. Current verdict
+## 5. Current verdict
 
 - Exact robust compression criterion: PROVED.
 - Exact fixed-merge criterion: PROVED.
 - No-shell => packing or tight critical transversal: PROVED.
+- Tight case => at least two same-color private residual blocks overlap: PROVED.
 - No-shell => many line-like blocks: NOT PROVED.
-- Kakeya contradiction: NOT AUTHORIZED until full-line blocks and their intersection hypotheses are derived.
+- Kakeya contradiction: NOT AUTHORIZED until full size-r blocks and their intersection hypotheses are derived.
 - P(r) => P(r-1): NOT ESTABLISHED.
 
 The correct next theorem is a graph-specific upgrade from the packing/private-witness certificate to either a shell or a family of blocks with proved intersection constraints.
