@@ -92,3 +92,19 @@ The display-math delimiters in both joint-audit notes were normalized and the ex
 - `LOW_ORDER_CUTOFF_THEOREMS.md`
 - `DEPENDENCY_DAG.md`
 - `ASSUMPTION_LEDGER.md`
+
+## Round 2 — Final synchronization audit
+
+### Final mathematical status
+- `M_r(2)<=2r-1` and `M_r(3)<=3r` are PROVED for every integer r>=6.
+- The t=1 outer states a=2 and a=3 are eliminated for r>=6.
+- The abstract contract has explicit r=4,5 examples at n=2r, so the stronger a=2 cutoff is correctly thresholded.
+- Five all-r seed-floor excesses and all-state outer-budget dominance remain OPEN. The a=4,n=4r+1 extraction state is retained unless the contextual no-extraction reductio is assumed. No EG617 all-large-r r0 is claimed.
+
+### Commit trail
+- Integrated cutoff theorem, dependency DAG, and assumption ledger: `15a6a781cd7d94bc67c94cc4f71ff534ab9ffdd9`.
+- Added finite small-parameter verifier: `6e616edc9035d9257b123a8922ae38193de25a34`.
+- Subsequent exact-status / formatting updates are included in the current branch history; this log update is based on the branch head `51c9e391cac93836e7894750314a385e865fc5fa`.
+
+### Reproducibility
+`LOW_ORDER_CUTOFF_THEOREMS.md` contains the full all-r proof and a finite verifier for the r=4,5 abstract-contract obstructions. `DEPENDENCY_DAG.md` and `ASSUMPTION_LEDGER.md` record the precise dependencies and conditional boundaries.
