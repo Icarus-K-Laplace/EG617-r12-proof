@@ -38,7 +38,7 @@ def check_transversal_boundary(v: int, m: int, count_cutoff: int, incidence_ts):
 
 def check_core_budget():
     # E407: v=29, m=49, e(L)=294+delta, epsilon_U in [0,4].
-    for delta in range(16):
+    for delta in range(17):
         for eps_u in range(5):
             if delta + eps_u <= 16 and eps_u + 2 * delta >= 2:
                 e_u = 112 - delta
@@ -66,7 +66,7 @@ def main():
     assert p_k(16, 4) == 24
     assert t_k(29, 4) == 315
     assert t_k(31, 4) == 360
-    assert t_k(29, 4) - 29 // 4 + 1 == 309
+    assert t_k(29, 4) - 29 // 4 + 1 == 309  # conditional if L is non-four-partite
     assert t_k(31, 4) - 31 // 4 + 1 == 354
     check_transversal_boundary(29, 49, 4, (5, 6))
     check_transversal_boundary(31, 56, 5, (6,))

@@ -88,14 +88,13 @@ Equation (5) gives e_H(U,W)>=7|W|=126. Combining with (6),
 \[
 \boxed{\epsilon_U+2\delta\ge2.} \tag{9}
 \]
-Finally, L is K5-free. The budget gives e(L)<=310. If L were complete four-partite, every pair of parts would have product at least 49, because the 49 edge-disjoint K4 witnesses use a distinct pair across every pair of parts. On 29 vertices this forces part sizes (8,7,7,7), whose complete four-partite graph has 315 edges, contradicting e(L)<=310. Thus L is non-four-partite; Brouwer's second-Turan bound gives e(L)<=309, hence
-\[
-0\le\delta\le15.
-\]
+Finally, L is K5-free and the edge budget gives e(L)=294+delta<=310, hence the unconditional bound is 0<=delta<=16. If L were complete four-partite, the 49 edge-disjoint K4 witnesses force part sizes (8,7,7,7), whose complete four-partite graph has 315 edges, contradicting e(L)<=310. This only rules out a complete four-partite graph; a non-complete four-partite subgraph is not excluded.
 
-So the E407 boundary must satisfy the joint integer window
+If L is separately proved non-four-partite, Brouwer's second-Turan bound gives e(L)<=309 and therefore delta<=15. In particular, delta=16 forces L to be four-partite, with parts (8,7,7,7) and five cross-part edges deleted from the complete four-partite graph. The 49 witnesses use 294 distinct edges, leaving 16 existing edges not used by witnesses, so the present arithmetic does not rule this branch out.
+
+So the unconditional E407 boundary window is
 \[
-0\le\delta\le15,\quad 0\le\epsilon_U\le4,\quad
+0\le\delta\le16,\quad 0\le\epsilon_U\le4,\quad
 \delta+\epsilon_U\le16,\quad \epsilon_U+2\delta\ge2.
 \]
 In particular, the zero-extra-edge case delta=0 forces at least two of the four core-excess units to lie inside U.
@@ -130,7 +129,7 @@ Thus the E408 boundary window is
 0\le\delta\le17,\quad 0\le\epsilon_U\le4,\quad
 \delta+\epsilon_U\le17.
 \]
-The K5-free complement L is non-four-partite: if it were complete four-partite, the 56 edge-disjoint K4 witnesses force every pair of part sizes to have product at least 56, which on 31 vertices forces part sizes (8,8,8,7) and hence 360 edges, contradicting e(L)<=353.
+The K5-free complement L cannot be complete four-partite: the 56 edge-disjoint K4 witnesses force every pair of part sizes to have product at least 56, which on 31 vertices forces part sizes (8,8,8,7) and hence 360 edges, contradicting e(L)<=353. This does not prove that L is non-four-partite. A four-partite subgraph with up to seven cross-part edges deleted has 353 edges and is not ruled out by the current budget. Brouwer's non-four-partite bound is 354, weaker than e(L)<=353, so it does not tighten the boundary window.
 
 ## 6. Interpretation and status firewall
 
