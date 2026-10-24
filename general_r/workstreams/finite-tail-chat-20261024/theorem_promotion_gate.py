@@ -83,6 +83,8 @@ def gate(certificate_path: Path, ledger_path: Path) -> dict:
     )
     admission_payload = json.loads(admission_run.stdout)
     admission = admission_payload["query"]
+    if sorted(instance.get("assumption_ids", [])) != sorted(admission["required_assumption_ids"]):
+        raise AssertionError("instance assumption IDs do not match the parameter admission matrix")
     ledger = ledger_path.read_text(encoding="utf-8")
     assumption_status = {}
     for assumption_id in instance["assumption_ids"]:
