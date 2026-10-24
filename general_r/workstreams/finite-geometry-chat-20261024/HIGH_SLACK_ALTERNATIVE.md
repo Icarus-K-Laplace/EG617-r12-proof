@@ -1,6 +1,6 @@
 # High-Slack Alternative: Exact Arithmetic and Open Gap
 
-Status: **The scalar slack identities and the universal excess floor are PROVED; the high-slack contradiction is OPEN**.
+Status: **The scalar slack identities, universal excess floor, and a local multicolor degree constraint are PROVED; the high-slack contradiction is OPEN**.
 
 ## Definitions
 
@@ -48,7 +48,41 @@ Therefore
 
 This is a genuine global strengthening over merely ruling out exact Turan equality.
 
-## Theorem K.H2 — Necessary bound if at most one color is low-slack at a fixed vertex
+## Theorem K.H2 — Local degree budget for low-slack colors
+
+For any vertex x, let
+
+\[
+L_s(x)=\{i:s_i(x)\le s\},\qquad 1\le s\le q-2.
+\]
+
+Every i in L_s(x) satisfies the two-block degree bound
+
+\[
+d_i(x)\ge2q-s_i(x)-1\ge2q-s-1.
+\]
+
+Since the color degrees at x sum to q^2,
+
+\[
+\boxed{|L_s(x)|\le
+\left\lfloor\frac{q^2}{2q-s-1}\right\rfloor.}
+\]
+
+More precisely, the full low-slack set L(x)={i:s_i(x)<=q-2} satisfies the weighted constraint
+
+\[
+\boxed{\sum_{i\in L(x)}(2q-s_i(x)-1)\le q^2.}
+\]
+
+Consequences:
+- At most floor((q+1)/2) colors can have slack exactly 1 at a fixed vertex.
+- At most q-1 colors can be low-slack at any fixed vertex, so at least one color has slack at least q-1 there.
+- More generally, colors with very small slack consume a large, explicitly quantified part of the vertex's total degree budget.
+
+This is a genuine multicolor compatibility inequality, but it is not yet a contradiction.
+
+## Theorem K.H3 — Necessary bound if at most one color is low-slack at a fixed vertex
 
 If at a fixed vertex x at most one color has s_i(x)<=q-2, then at least q-1 colors satisfy s_i(x)>=q-1. Hence
 
@@ -87,7 +121,7 @@ Its purpose is to certify that the currently proved scalar identities alone cann
 
 One needs a genuinely multicolor graph-compatibility inequality that uses more than edge totals and degree sums, for example:
 
-- a restriction on how many colors can have d_i(x) <= a_i+1 simultaneously;
+- a restriction on the pattern of degree vectors d_i(x) beyond the weighted bound above;
 - a degree/excess inequality using alpha(G_i)<=q and omega(G_i)<=q together;
 - or a direct proof that a high-slack configuration creates a forbidden independent transversal or a design terminal.
 
