@@ -117,3 +117,16 @@ D_h:=\left|\binom{B_h}{2}\setminus E(G_0)\right|\ge r-1.
 But the known hub bound permits (O(r)) missing edges incident to (O(1)) hubs, so this lower bound does not yield a contradiction.
 
 **Correct status:** bounded target hub set is **PROVED_ANALYTIC**; (D_h\ge r-1) is **PROVED_ANALYTIC**; terminal nonextension for all sufficiently large (r) is **OPEN**; the multi-block cover-network budget remains **OPEN**. See `JOINT_DEFECT_PROPAGATION.md` for the full correction and local obstruction.
+
+
+## 11. Multi-block incidence accounting after the correction audit
+
+The exact defect-cover incidence matrix is in `DEFECT_COVER_INCIDENCE.md`. For a missing ideal pair (uv\subset C_a), every transversal of the other (r-1) nonempty blocks must be hit by a (G_i)-edge. Uniform random selection gives
+[
+\sum_{e\in F_i}w_{d,e}\ge1,
+]
+where endpoint edges carry weight (1/|C_b|) and remote edges weight (1/(|C_p||C_q|)).
+
+This rigorously covers multi-block networks. It also makes the sharing problem explicit: one edge can contribute to several defect rows in the same color, and the load is not generally at most one.
+
+A valid corollary is that if every ideal block has size at least five and (|F_i|\le24), then a defect cannot be protected by a remote-only network, because its total weight would be at most (24/25<1). At least one addition must meet a defect endpoint. The mixed-network case and the global load bound remain **OPEN**.
