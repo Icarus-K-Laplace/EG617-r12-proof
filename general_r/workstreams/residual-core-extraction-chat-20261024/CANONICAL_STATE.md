@@ -188,6 +188,26 @@ File: `NO_HIGH_STOP_ROUND2_LEMMAS.md`.
 
 **Important limitation:** this is simultaneous near-extremality in edge count, not yet a uniform edit-distance / partition stability theorem.
 
+### 9A. Uniform partition stability and global near-resolvable design
+
+Status: **`PROVED_ANALYTIC`**, conditional only on the already-established exact excess ledger and Füredi's quantitative Turán theorem.
+
+For each color i, the complement F_i is K_{k_i+1}-free with exact Turán deficit x_i, where k_0=a and k_i=r for non-target colors. Füredi's theorem gives a k_i-partition with at most x_i internal edges to delete. If I_i is the internal-edge defect, M_i the missing cross-pair defect, and Delta_i the part-size imbalance, then
+
+`I_i<=x_i`, `Delta_i+M_i=x_i+I_i<=2x_i`, and `I_i+M_i<=3x_i`.
+
+Since the balanced part sizes are q+1 once and q otherwise (q=r for the target partition, q=a for non-target partitions), the actual part sizes s_j obey
+
+`sum_j (s_j-q)^2<=4x_i+1`.
+
+Summing over all colors and using `sum_i x_i=S_a(r)`, at most `3S_a(r)` vertex pairs fail to belong to exactly one block across all color partitions. Thus the target a-partition and the r-1 non-target r-partitions form a global approximate pairwise-balanced/resolvable design with O(a^2 r) bad pairs among O(a^2 r^2) total pairs.
+
+File: `NO_HIGH_STOP_ROUND2_LEMMAS.md`.
+
+External theorem: Füredi's quantitative Turán stability bound, recalled in Balogh–Clemen–Lavrov–Lidický–Pfender (2021), DOI 10.1017/S0963548320000590.
+
+**Limitation:** this is a near-resolvable design with O(r) exceptional pairs, not an exact design and not yet an earlier-stop theorem.
+
 ### 10. Critical-core residue windows
 
 Status: **`PROVED_ANALYTIC`** as a necessary-condition reduction.
@@ -248,7 +268,7 @@ This remains open. Specifically:
 
 - `a=6) has **not** been closed;
 - no induction/trim theorem is known for arbitrary `a>=7);
-- simultaneous near-extremality in edge count is proved, but uniform edit-distance stability is not;
+- uniform edit-distance partition stability is now proved via Füredi, but exact/near-orthogonality incidence analysis and design trimming remain open;
 - approximate orthogonality, an exact resolvable-design skeleton, and a design-trimming implication are not proved.
 
 The blocker is now a precise structural problem. Any high-stop candidate must simultaneously satisfy:
