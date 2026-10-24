@@ -37,3 +37,20 @@ No open terminal contract has been eliminated in this round. The proof DAG is cl
 
 ### Next attack
 Prove a joint T61 shell/core incompatibility theorem that uses the original no-R(4,49) condition on every 49-subset together with the 284-edge core and exact color-factor constraints. Do not promote source-reported V12/V8 statements without replay.
+
+## 2026-10-24 — Round 2: shell/core witness-capacity theorem
+
+### New proved statement
+Committed R12_SHELL_CORE_WITNESS_LEMMA.md at 020b64d5fdf3a4aa3abe66d86be3489565760b22.
+
+1. **Small-row lemma.** For a T61 shell vertex a, t_a<=7 implies alpha(H\N_H(a))=4. If alpha were <=3, the induced n=47-t_a vertex graph has n in [40,47], alpha<=3 and omega<=11. Brouwer's second-Turan lower bound exceeds the inherited target-edge cap D(n) for each of these eight n-values.
+2. **Pair-extension lemma.** Every target edge ab in F[A] has at least one good endpoint, since H union {a,b} is a 49-set and must have alpha>=5. Hence at most five shell rows are bad and at least eight are good.
+3. **Q33/d3 consequence.** The exact budget beta+X+G_B=3 gives g_b<=3, and k_b<=3, so t_b<=6 for every b in B. All ten B-rows therefore have independent-4 witnesses Q_b. If ab is a missing target edge, Q_b must intersect N_H(a); otherwise Q_b union {a,b} is an independent 6-set. The scalar budget guarantees at least five B-vertices with k_b>=2, so at least five witnesses hit at least two S-rows.
+
+### Quantified impact
+- New proved interface constraints: 1 theorem with 3 consequences.
+- Open terminal contracts eliminated: **0**.
+- E407 Q32 / E408 Q32/Q33 range: narrowed only by an added witness-incidence condition; no terminal exclusion claimed.
+- Independent arithmetic check: exact values p_3(n)+floor(n/3)-1 versus D(n), n=40..47, all strictly exceed the cap (minimum gap 7 at n=40).
+- GitHub commit: 020b64d5fdf3a4aa3abe66d86be3489565760b22 for the theorem file; follow-up state updates are being committed in this sequence.
+- Next attack: turn the Q33 witness condition into a capacity contradiction using the four-unit core excess and seven-block near-Latin completion. Do not assume Q_b coincide or that aggregate defects vanish.
