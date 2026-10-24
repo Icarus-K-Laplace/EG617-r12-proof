@@ -50,3 +50,10 @@
 - Derived the exact charge identity \(r_i=a+e_i+t_i\) and the complete complement-clique size profiles for \(a=1,\ldots,5\).
 - Proved Corollary 10.2: if \(r_i+r_j\le6\), the ten unique component representatives form a forced C-colored matching between the two blocks. A color with \(P_C\ge36\) necessarily has at least one such pair.
 - Scope remains conditional and E408 Q33 remains OPEN / NOT_CERTIFIED. The aggregate duplicate bound does not yet force \(P_C\ge36\) for any single exact-129 color.
+
+
+## 2026-10-25 — independent audit of Theorem 10.1
+
+- Re-audited the \(r_i\le5\) proof after committing it. The delicate one-no-component-row branch requires ruling out \(k\ge2\) in the pairwise blocker theorem before deriving six gadget incidences. The proof now explicitly uses the duplicate budget: \(r_i\le5\) permits at most one repeated K5 component; all ten components must then be represented, so the union of the repeated pair cannot cover a second component. Hence \(k=1\), and the six-gadget-incidence bound is valid.
+- Made the one-repeat deduction explicit in the committed theorem. The \(r_i=5\) boundary is now handled without assuming pairwise compatibility with \(k=1\) prematurely.
+- No graph-level UNSAT result follows from this lemma alone. The exact-129 colors may still have \(r_i(C)\ge6\) across most blocks, and the aggregate duplicate ledger does not force a color to have \(P_C\ge36\).
