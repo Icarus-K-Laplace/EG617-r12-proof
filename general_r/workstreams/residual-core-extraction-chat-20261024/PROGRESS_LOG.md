@@ -782,3 +782,46 @@ Thus any high stop in this range forces a pairwise-linear partial resolvable `TD
 ### Next highest-priority task
 
 Use the fact that each of the 7–28 hubs has a missing-slot incidence of at least `(r-65)/2`, but the global slot budget is only `14r+13` plus the finite multi-hub surcharge. Classify the equality regime in this incidence inequality and determine whether the resulting 7–28 group-local hub pattern forces a rainbow-star / resolvable terminal or contradicts the exact predecessor-label pair obstruction. Do not revert to a scalar-only argument.
+---
+
+## 2026-10-24 — Round 14: extreme-part KP concentration and collision matching
+
+### NEW THEOREM A — Extreme-part excess concentration
+
+For a target part `V_j` with `|V_j|=r+delta_j`, let `Z_j` be the duplicate-vertex count and `m_j` the number of non-target colors with at least one nonhub duplicate in that part. From `D_j>=m_j-Z_j+(r-1)delta_j`, `D_j<=x0`, and the exact excess ledger,
+
+`sum_{i>0}(x_i-5) <= (9-delta_j)r+11+delta_j+Z_j-m_j`.
+
+For `delta_j=9`, this is `sum(x_i-5)<=20+Z_j-m_j`. If `Z_j=m_j` (in particular if `Z_j=0`), at most 20 non-target colors can have excess above the Brouwer floor; at least `r-21` colors have `x_i=5`.
+
+### NEW THEOREM B — Exact KP equality interface when `x_i=5,z_i=1`
+
+At `x_i=5`, the graph `F_i` attains the Kang–Pikhurko maximum for non-`r`-partite `K_{r+1}`-free graphs on `6r+1` vertices. Since `alpha(F_i)<=6`, all `r` base parts in the KP construction have size exactly six. If `z_i=1`, all predecessor classes are six-sets partitioning all but one vertex. Classifying independent six-sets in the KP graph shows that the partition is the base partition except for at most two exceptional blocks. The only noncanonical swaps are: replace `N_t` by `{x}∪(N_t\{y})` and omit `y`; replace `N_s` by `{x}∪(N_s\A*)` and omit the unique `A*` vertex when `|A*|=1`; or, when `|A*|=5`, replace `N_s,N_t` by `{x}∪(N_t\{y})` and `A*∪{y}`, omitting the unique vertex in `N_s\A*`.
+
+### NEW THEOREM C — Collision concentration into doubletons
+
+For each target part `V_j`, the collision count is `C_j=Σ(t_{i,b,j}-1)_+`. Every class intersection has at most one nonhub. If its size `t>=3`, its `t-1` collision units consume at least `binom(t-1,2)` hub–hub pairs. Since hub–hub pairs are unique across colors,
+
+`C_j-N_{2,j}<=2 binom(k_j,2)`,
+
+where `N_{2,j}` is the number of class intersections of size two. Such doubletons each consist of one hub and one nonhub and form a colored bipartite matching system. If `|V_j|=r+9`, `Z_j=0`, and `k_j<=28`, then
+
+`N_{2,j}>=9(r-1)-756=9r-765`.
+
+### Independent audit / limitations
+
+- Corrected Lemma 13.2 to state only that the witness edge is outside the within-class collision collection; it need not join two label classes, since it can join a duplicate vertex to a hub.
+- The collision-edge injection explicitly maps each unit `t-1` to distinct internal `F0` edges; this justifies using `D_j-C_j` as remaining-edge slack.
+- The scalar countermodel with profile `(r+9,r-8,r,r,r,r)` and `Z_1=0` passes the new inequality: it has `sum(x_i-5)=13<=20` and can realize all `9(r-1)` collision units as doubletons at the abstract incidence level.
+- The `z_i=1` equality partition theorem does not classify `z_i>1`; that is now the central interface gap. The matching system is locally feasible, so no contradiction is claimed.
+
+### GitHub commits
+
+- collision/KP theorem file: `f07eb203e0c36830f8852fe8ba29427afa02d48e`
+- canonical state: pending update
+- open gaps: pending update
+- progress log: this update
+
+### Next highest-priority task
+
+Analyze the general `z_i>1` KP interface. In the extremal `(r+9,r-8,r^4)` profile, determine whether each `x_i=5` color forces a bounded-defect partition of its six-vertex KP base parts whose omitted vertices exactly match the groupwise missing-slot vector. Seek a cross-color incompatibility with the hub–nonhub doubleton matchings; do not assume `z_i=1`.
