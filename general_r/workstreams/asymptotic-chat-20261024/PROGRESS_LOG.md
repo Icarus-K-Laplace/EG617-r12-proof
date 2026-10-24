@@ -191,3 +191,8 @@ The |W|=2r−1 terminal layer is now closed for both delta=r and delta=r+1 when 
 This does not change the numerical conditional threshold r0=67, which remains controlled by direct near-anchor extraction. It does remove the final top-layer exception and narrows D_low to strictly lower offsets.
 
 Unconditional P(r0) remains NOT CERTIFIED: A_ext* and the lower-offset D_low theorem are still OPEN.
+
+
+## 2026-10-24 — Round 3
+
+Derived the exact W-local slack g_r(j)=floor((2r-j)^2/4)-(r-1)(r-j) for j=2,...,7: r-1, r-1, r, r+1, r+3, r+5. Proved that a uniform bound d_F(o,W)<=B forces a contradiction when r>=j+4B; hence every surviving low-offset terminal has some h with d_F(h,W)>=floor((r-j)/4)+1. The hub exclusion remains OPEN, as do D_low and A_ext*. No unconditional r0 is certified. The inequality 2r-9 > 5(3r-1)/8 has exact threshold r>=68; S67-low is a separate route that bypasses it.
