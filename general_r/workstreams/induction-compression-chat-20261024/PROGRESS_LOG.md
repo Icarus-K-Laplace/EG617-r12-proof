@@ -42,9 +42,15 @@
 
 - Defined the overlap graph on 2r private witnesses, adjacent when their residual (r-1)-sets intersect.
 - Matching number two implies the overlap graph has independence number at most two; Mantel's theorem yields at least r(r-1) intersecting witness pairs.
-- Independently, incidence counting forces a residual point contained in at least three private witnesses.
-- Recorded the exact extremal overlap-graph profile: equality requires the overlap graph to be two disjoint K_r components, equivalently the disjointness graph is K_{r,r}.
-- Explicitly noted that this is not yet affine geometry and does not force same-color intersection.
+- Incidence counting forces a residual point contained in at least three private witnesses.
+- Recorded the extremal overlap-graph profile: equality requires the overlap graph to be two disjoint K_r components, equivalently the disjointness graph is K_{r,r}.
+
+## 2026-10-24 — Round 7: exact small-slack support
+
+- Used the exact one-/two-edge independent-transversal blocker classification from the K branch.
+- In the aligned J/K bridge, proved slack s_i=1, or s_i=2 for r>=4, confines all private witnesses of color i to at most two clique blocks; the three-block 1,1,2 residual pattern exceeds the 2r-1 shell budget.
+- The refined support bound is stronger than the generic floor((2r-1)/(r-s_i)) bound for the small cases r=4,5 with s_i=2.
+- No low-slack alignment theorem or global contradiction is claimed.
 
 ### Status
 
