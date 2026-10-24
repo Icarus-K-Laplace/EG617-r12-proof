@@ -19,20 +19,8 @@ with class size `n=|Y_S|`.
 Then:
 
 1. Y is a target clique and `N<=10`.
-2. For each class Y_S, its common-S allowance
-   `a_S=q-30-B_S`, where `B_S=e_M(A\S)+G_(A\S)`, satisfies the exact bound
-   [
-   0\le a_S\le q-30-N+n.
-   ]
-3. Consequently every nonempty class satisfies
-   [
-   n\ge N+30-q.
-   ]
-   The number of distinct missing-triple classes is therefore at most
-   [
-   \min\left\{\binom{13-N}{3},\left\lfloor\frac{N}{N+30-q}\right\rfloor\right\}
-   ]
-   whenever the denominator is positive.
+2. For each class Y_S, its common-S allowance `a_S=q-30-B_S`, where `B_S=e_M(A\\S)+G_(A\\S)`, satisfies `0 <= a_S <= q-30-N+n`.
+3. Consequently every nonempty class satisfies `n >= N+30-q`. The number of distinct missing-triple classes is at most `min(C(13-N,3), floor(N/(N+30-q)) )` whenever the denominator is positive.
 4. More sharply, a class of size n enters the already-classified common-S allowance regimes whenever its actual `a_S` is at most3; the formula above shows exactly when that is forced by N, q and n.
 
 ## Proof
