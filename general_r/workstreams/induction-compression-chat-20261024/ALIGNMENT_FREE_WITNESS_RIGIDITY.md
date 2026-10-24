@@ -201,3 +201,12 @@ For q>=3, each residual-low color i has, by the complement-Turan/Brouwer argumen
 Hence the residual-low colors define a **q-net with at least ceil(q/2) directions**: R is a q²-point set, and each residual-low color supplies a partition into q blocks of size q, with any two blocks from different partitions intersecting in exactly one point.
 
 This is an unconditional finite-geometry extraction from Case B for every r>=4. It is not a full affine plane: the number of directions is only guaranteed to be at least ceil((r-1)/2), and no theorem yet completes the net or connects its blocks to a shell-hitting lower bound. The construction does not contradict K's Local Slack Gap Theorem, because b_i is an excess on R=V minus X, not the neighborhood slack on V minus {x}.
+
+
+## Theorem J.W6 — Threshold high-excess interface
+
+In the second branch of J.W2, the repeated witness color i satisfies b_i>=r-2=q-1. If equality b_i=q-1 holds, the exact K-line normal form K.RM4 applies; see K branch commit b20a3dde117facb37e78c2311160a149e578b27c, file general_r/workstreams/finite-geometry-chat-20261024/RESIDUAL_MULTINET_EXTRACTION.md.
+
+Precisely, either G_i[R] is a q-clique partition plus q-1 cross-block color-i edges, or deleting one exceptional residual point leaves q clique blocks (sizes q except one q-1) plus a nonempty star of color-i cross-block edges. In the latter case the exceptional point's residual color-i degree is 2q-2-a for some 1<=a<=q-1.
+
+This imports the exact extremal theorem without copying its proof. It refines the high-color branch to a finite incidence kernel at equality, but does not exclude the kernel. If b_i>=q, this extremal equality classification does not directly apply.
