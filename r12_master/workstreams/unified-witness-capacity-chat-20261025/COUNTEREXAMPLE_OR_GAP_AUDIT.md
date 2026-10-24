@@ -89,3 +89,24 @@ For any four-partite witness system, the within-part target edges contribute exa
 For a fixed independent four-set Q, let \(\mu(Q)\) be the number of regular B rows to which Q is anticomplete. It can certify at most \(\binom{\mu(Q)}2\le45\) unordered row pairs. The regular-row bound \(|T_b|\le3\) does not improve this to a smaller universal number: it controls each row's neighborhood size, not the union of rows avoided by Q.
 
 If Q is a selected exact-129 witness with label b, the component label anchors it directly only to pairs containing b; there are at most \(\mu(Q)-1\le9\) such pairs. The zero-excess existence theorem does not turn its arbitrary pair witness \(Q_{bc}\) into one of these labelled components. This is a separate multiplicity/label-transfer gap, not an arithmetic gap.
+
+
+## 8. Explicit label-array relaxation that survives
+
+The Q33 four-partite label constraints alone are feasible. Index the eight exact-129 colors by \(0,\ldots,6,*\), the seven D-points by \(0,\ldots,6\), and seven of the ten B labels by \(b_0,\ldots,b_6\). Define the 7-by-7 pivot-color subarray by
+\[
+\lambda(i,j)=
+\begin{cases}
+p,&i=j,\\
+b_{i+j\pmod 7},&i\ne j,
+\end{cases}
+\]
+and the non-pivot color row by \(\lambda(*,j)=b_{2j\pmod7}\).
+
+This array has the required label-only properties:
+- each of the seven pivot rows contains p once and six distinct B labels;
+- the non-pivot row contains seven distinct B labels;
+- each D column contains p once and all seven B labels once;
+- each B label occurs exactly seven times, and p occurs exactly seven times.
+
+Thus the row/column no-repeat conditions and the label-capacity bound are not contradictory. This is **only a label-array relaxation**: it does not assign the actual A1/A2/A3 coordinates of the 56 K4s, so it is not a witness-hypergraph or colored-graph construction. The unresolved geometric condition is that every label class, every color class, and every D-column must simultaneously form the required disjoint transversal systems with all pairwise coordinate pairs unique.
