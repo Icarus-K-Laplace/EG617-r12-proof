@@ -68,3 +68,9 @@ Choose two colors with controlled Turan slack, obtain near-clique partitions, ex
 
 ### Unique blocker
 Prove a quantitative inequality that either forces a pair of colors to have o(r^2) simultaneous partition error, or rules out the alternative slack profile. The existing moment bound is compatible with the balanced slack vector `s_i=C(r,2)`.
+
+### Formatting/verification follow-up
+
+The display-math delimiters in both joint-audit notes were normalized. The intersection-matrix example was checked against its row/column margins and collision-mass count.
+- transfer note formatting: `42892481886e0061c98dfe36d5320f276170387c`
+- robust partition note formatting: `28be4e660adaae92bb9354a8300deea547cc9a33`
