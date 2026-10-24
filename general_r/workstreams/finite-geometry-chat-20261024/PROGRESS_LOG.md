@@ -140,3 +140,12 @@ The specified `LITERATURE_AUDIT.md` did not exist on this branch at the start of
 - Enumerated the 9,408 reduced Latin squares of order 6; the second generated square gives an explicit design-level realization of the K.RM5 partition: one full transversal and six disjoint near-transversals of size 5.
 - Stored a concrete Latin square and label matrix in Q6_NEAR_TRANSVERSAL_OBSTRUCTION_AUDIT.md (commit 825c48ae4e5cc47e7feb6abab6337de62db6fd6c).
 - This does not realize the full EG617 graph contract. It does show that Euler–Tarry cannot exclude the 3-net plus (6,5,5,5,5,5,5) partition alone; the exceptional-star color graphs and 14-root witness incidence must be used.
+
+
+## 2026-10-24 — Round 8: strict budget and r=7 Case B closure
+
+- Imported J.W8/J.W9 from J commit c0c31e82b2bd8b4c3c5a7ab6092b660d16bd686b.
+- Proved equality sum b_i=C(q,2) impossible for every Case B full counterexample with q>=4, by root-block coverage and capacity counting.
+- Strengthened the residual net bound to at least ceil((q+1)/2) directions; for q even this improves the previous count by one.
+- At q=6, the strict bound forces four directions, which would yield two orthogonal Latin squares of order 6. Euler–Tarry rules this out, so Case B is impossible at r=7.
+- The abstract Latin-square subkernel remains realizable; the full root-neighborhood constraints are what produce the contradiction. Case A remains open.
