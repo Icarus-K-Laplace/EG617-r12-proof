@@ -34,6 +34,7 @@ For every module certificate, the gate must verify:
 - exact integer/rational arithmetic, with no floating-point rounding;
 - canonical variable map and complete constraint-generation version;
 - instance SHA-256 and certificate SHA-256;
+- producer/generator SHA-256 and constraint-generation version;
 - an independent verifier that does not import producer code;
 - verifier SHA-256 and a replay command;
 - whether the module is applicable at this r;
