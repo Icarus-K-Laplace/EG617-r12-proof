@@ -96,9 +96,9 @@ It emits all d-rows from 0 through r, exact slack values, candidate degrees, sca
 - r=13, profile=residual-core;
 - 14 complete rows; q_cap=41;
 - candidate degrees: `[0,1,2,3,4,10,11,12,13]`;
-- instance SHA-256: `0b6dce65ae4ac393e5170c6330f7e571800dc34c0fbcb990d57f3718675ddfef`;
-- certificate SHA-256: `2b2526cd2281e44425ebe0dd3ef08fc04cf95c04f5003e918de3a0496f4976f4`;
-- verifier SHA-256: `1a6ac72042fa7b3a95215c3e2854f661a6cd63c11b879d865af028a91962e6e4`;
+- instance SHA-256: `65909c3589061e7463e807579bdde059ee7ae4d20f57f53158e5a612ae2d6c42`;
+- certificate SHA-256: `aa2123245e1bd6db9ab7056c3c2b0083f1d2f3828d39f40b54c731ba113b170a`;
+- verifier SHA-256: `c18a74703417faed2c453b588e0ea9a8b03244af04bfc0b5f4191ec8cc15de6a`;
 - gate SHA-256: `d239d700ecb2f246c750af4b1acb76d6c38b1bdf5c42dadaeeb3adaac23ef7bc`;
 - gate result: `PASS_CONDITIONAL_MODULE`;
 - RC status: `OPEN`;
