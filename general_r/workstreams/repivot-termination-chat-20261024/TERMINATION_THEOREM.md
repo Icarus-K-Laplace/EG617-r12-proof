@@ -301,6 +301,50 @@ Thus every surviving long correction cycle must be assembled from
 
 ---
 
+# Theorem L — Exact Clean-Pair Block Model and High-Density Reduction
+
+For the allowance-2 clean terminal, every block pair is one of the seven partial matchings of K_2,2. Independent transversals are encoded by a 2-CNF formula. Exhaustive enumeration of all 7^6 labelled four-block patterns gives a minimum of six target cross edges for an unsatisfiable four-block restriction.
+
+Let U be the union of m clean blocks and G=overline(H[U]). Then G is K4-free, every block is an independent pair in G, and every pair of blocks has at least two cross edges in G. For each x in U,
+
+delta(G)>=max(m-1,2m-r-2).
+
+If m>=ceil(4r/3+3), then delta(G)>5|U|/8. The Andrasfai-Erdos-Sos theorem makes G 3-partite, so U is covered by three target cliques and m<=floor(3(r-1)/2).
+
+**Status:** block encoding and local enumeration PROVED_SYMBOLIC / finite-exhaustive; high-density reduction PROVED_CONDITIONAL; Clean Pair Nonextension remains OPEN. The high-density interval is still linear and nonempty.
+
+# Theorem M — Reversible Fifth-Coordinate Obstruction
+
+For Q2=sum kappa_v^2, the exact increment is
+
+Delta Q2 =
+sum_{z in H\D_y}[2 kappa_z delta_z+delta_z^2]
++sum_{s in S_y}[sigma_s-e_F(s,D_y)]^2
+-sum_{u in D_y}kappa_u^2,
+
+where delta_z=e_F(z,S_y)-e_H(z,D_y).
+
+For a clean endpoint z in another block, its contribution simplifies to a_z-b_zi, where a_z=e_F(z,S) and b_zi=e_H(z,D_i); no sign follows from the clean weight equation alone.
+
+More fundamentally, every legal repivot is reversible. If a move is Phi4-flat, its reverse is Phi4-flat and has the opposite Q2 increment. Therefore the proposed universal condition “every nontrivial Phi4-flat move strictly increases Q2” is DISPROVED AS STATED. Q2 may select a maximal representative but cannot alone eliminate a reversible terminal.
+
+# Theorem N — Bounded-Allowance d1 Terminal Ledger
+
+For a fixed d1 singleton class of allowance c and multiplicity N, distinct q-flat supports remain a d1 class under one-point exchange, with transported excess
+
+kappa'_u_j=c-e_H(u_i,u_j),  w'_u_j=c.
+
+The known bounds are:
+
+- c=0 implies N<=3;
+- c>=1 implies N<=r-2 by the low-owner clique cap;
+- (N-1)c<=3r-2 under K<=2r-2;
+- eta=Omega(r) forces c=O(1).
+
+These bounds do not imply an absolute N bound for c>=1.
+
+**Status:** exact transition and scale transfer PROVED_CONDITIONAL; final d1 absorption OPEN.
+
 # Explicit audit retractions
 
 The earlier `Missing-Pair / Neutral-Population Bound` is **not a theorem** under the actual backend. In particular the statements
