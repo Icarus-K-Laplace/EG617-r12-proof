@@ -2,9 +2,9 @@
 
 ## Admission before generation
 
-1. Run `python parameter_admission_verifier.py PARAMETER_ADMISSION_MATRIX.json --audit-range 4 100`.
+1. Run `python PARAMETER_ADMISSION_VERIFIER.py PARAMETER_ADMISSION_MATRIX.json --audit-range 4 100`.
 2. Query the exact parameter/module/profile, for example:
-   `python parameter_admission_verifier.py PARAMETER_ADMISSION_MATRIX.json --query-r 13 --module ENDPOINT_DOMAIN_LOWER_BOUND_V1 --profile residual-core`.
+   `python PARAMETER_ADMISSION_VERIFIER.py PARAMETER_ADMISSION_MATRIX.json --query-r 13 --module ENDPOINT_DOMAIN_LOWER_BOUND_V1 --profile residual-core`.
 3. If the query returns `BLOCKED_SOURCE_REDUCTION_NOT_APPLICABLE`, do not promote a generated schema instance as a theorem-level certificate.
 4. If it returns `CONDITIONAL`, preserve the required assumption IDs in the certificate and receipt.
 
