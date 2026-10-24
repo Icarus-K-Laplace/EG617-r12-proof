@@ -111,79 +111,76 @@ t_x <= kappa_x+u_T-1.                                     (4.2)
 
 In particular, every optional cross degree is at most 4. If u_T=0, then every x in T has kappa_x=1 and t_x=0. If u_T=1 and kappa_x=0, then t_x=0.
 
-## 5. Every outside vertex must see an entire part
+## 5. Off-part witnesses force high excess
 
-We now show that the two witness classes chosen for o cannot belong to different parts.
+The witness pair chosen for an outside vertex o consists of one class from T0 and one from T1. If the two classes belong to the same part, o sees that entire part. If they belong to different parts, the remaining type classes contain a triple whose three pair relations are: one optional graph of maximum degree at most 4, one block matching, and one empty H-pair.
 
-There are six off-part witness pairs. In each case, the remaining class triple has two pair relations that are respectively an empty H-pair and a block matching, and its third relation is an optional graph of maximum degree at most 4. Since x,y,z>=a>4, an H-independent transversal of that remaining triple exists:
+For that residual triple, any set of fewer than a-4 neighbours of o cannot hit all independent transversals. Indeed, after deleting those neighbours, each of the three classes still has at least five vertices. Choose a vertex in the endpoint class of the optional relation, a non-neighbour of it in the other optional class (possible because the optional degree is at most 4), and a vertex in the matching class other than the unique block mate. The resulting triple is pairwise H-nonadjacent and also nonadjacent to o, contradicting alpha(H)<=3.
 
-| Witness pair | Remaining triple | Independent-transversal choice |
-|---|---|---|
-| A0,B0 | A1,B1,C1 | choose b in B1; choose a in A1 outside its at-most-4 optional neighbours; choose c in C1 other than b's block mate |
-| A0,C1 | A1,B1,C0 | choose a in A1; choose b in B1 outside its optional neighbours; choose c in C0 other than a's block mate |
-| B1,A1 | A0,B0,C0 | choose b in B0; choose a in A0 other than b's block mate; choose c in C0 outside b's optional neighbours |
-| B1,C1 | A1,B0,C0 | choose c in C0; choose a in A1 other than c's block mate; choose b in B0 outside c's optional neighbours |
-| C0,A1 | A0,B0,C1 | choose a in A0; choose b in B0 other than a's block mate; choose c in C1 outside a's optional neighbours |
-| C0,B0 | A0,B1,C1 | choose b in B1; choose c in C1 other than b's block mate; choose a in A0 outside c's optional neighbours |
+Therefore, for any cross-part witness pair,
 
-Each chosen triple is pairwise H-nonadjacent. The outside vertex o is nonadjacent to every vertex in the two unchosen type classes, because it was assigned to the other witness classes in T0 and T1. Thus o plus the triple would be an independent 4-set in H, a contradiction.
+d_H(o,U) >= 2a+(a-4)=3a-4.
 
-Therefore the two witness classes must be the two type classes of the same part. We have proved:
+Since a>=ceil(r/3)+4,
 
-> **Outside-neighbour transversal theorem.** Every o in O is adjacent in H to every vertex of at least one entire part A, B, or C.
+kappa_o=d_H(o)-r >= 3a-4-r >= 8.                       (5.1)
 
-This uses alpha(H)<=3, not alpha(F)<=3.
+Call o **exceptional** if it has no pair of fully-seen witness classes from the same part. Every nonexceptional outside vertex sees an entire part; every exceptional outside vertex satisfies (5.1).
 
-## 6. Three-part assignment kernel and no-double-counting identity
+If X is the number of exceptional outside vertices, the inherited excess cap gives
 
-Assign each o in O to one part it sees completely. Let O_i be the assigned outside vertices for part i, g_i=|O_i|, and
+X(3a-4-r) <= K_O <= 2r-2-K_U,                             (5.2)
+
+so
+
+X <= floor((2r-2-K_U)/(3a-4-r)) <= floor((2r-2)/8).
+
+This is a genuine dichotomy, but X can still be linear when a is close to r/3.
+
+## 6. Part-seeing vertices and the global no-double-counting identity
+
+Assign every nonexceptional outside vertex to one part it sees completely. Let O_i be the assigned vertices for part i, g_i=|O_i|, and define
 
 u_i=s_i+2-g_i.
 
-By (3.1), g_i<=s_i+2. Since sum_i g_i=h and sum_i s_i=h-2,
+Then g_i<=s_i+2, u_i>=0, and
 
-u_i>=0,   sum_i u_i=4,   g_i=s_i+2-u_i.                  (6.1)
+sum_i u_i = (h-2)+6-(h-X)=4+X.                            (6.1)
 
-If s_i=0, then g_i=0: otherwise an outside vertex adjacent to all of the size-(r-1) clique U_i would create a target clique of size r.
+If s_i=0, then g_i=0, because a vertex adjacent to all of the size-(r-1) clique U_i would create a target clique of size r.
 
-For x in U_i define rho_x to be its number of neighbours in O\O_i (foreign-assignment incidences). Because all O_i vertices are adjacent to all of U_i,
+For x in U_i let rho_x be the number of its neighbours in O\O_i, including neighbours in other assigned groups and in the exceptional set. Since every vertex of O_i is adjacent to every vertex of U_i,
 
 d_H(x,O)=g_i+rho_x.
 
-Combining with (3.1) gives the exact resource split
+Combining this with (3.1) gives the exact resource split
 
 t_x+rho_x = kappa_x+u_i-1.                               (6.2)
 
-This counts each optional U-edge twice over its endpoints and each foreign O-U edge once over its U endpoint. Summing (6.2) over U yields
+Let e_opt be the number of optional H-edges inside U, and E_foreign=sum_{x in U}rho_x. Each optional edge is counted twice by sum t_x, while each foreign O-U edge is counted once by sum rho_x. Thus
 
 2 e_opt + E_foreign
-= K_U + sum_i n_i(u_i-1),                                 (6.3)
+= K_U + sum_i n_i(u_i-1).                                 (6.3)
 
-where e_opt is the number of optional H-edges inside U, E_foreign=sum_{x in U}rho_x, and K_U=sum_{x in U}kappa_x. No edge is double-counted across the two terms.
+This is a no-double-counting identity. It couples the optional-edge budget, the outside assignment, and the core excess. It does not by itself close the remaining terminal because X can be positive and the part-assignment slack then sums to 4+X.
 
-Consequences:
+The class-witness slacks u_T from Section 4 remain distinct from the part-assignment slacks u_i. The former always sum to 4 and give the unconditional optional-degree bound t_x<=4. The latter sum to 4+X.
 
-- Every optional cross degree t_x is at most u_i<=4.
-- If u_i=0, then every x in U_i has kappa_x=1 and t_x=rho_x=0.
-- If u_i=1 and kappa_x=0, then t_x=rho_x=0.
-- For every clique Q in H[O_i], U_i union Q is a clique, so omega(H[O_i])<=s_i.
-- Since sum u_i=4, the high-density terminal is reduced to a three-part assignment with only four total units of assignment slack, optional degree at most four, and the exact budget (6.3).
+For each assigned group O_i, every clique Q in H[O_i] combines with U_i into a clique, so omega(H[O_i])<=s_i.
 
 ## 7. What this does and does not close
 
-This is stronger than the previous AES reduction: it proves that every outside-core vertex sees an entire part, not merely that U is three-partite. It also makes the optional cross-edge graph bounded-degree and couples the assignment deficits to excess exactly.
+The new structural result is an **outside-neighbour dichotomy**, not a theorem that every outside vertex sees an entire part. It proves:
 
-It is **not yet a contradiction**. The remaining kernel can still have h=Theta(r), with s_A+s_B+s_C=h-2 and u_A+u_B+u_C=4. The exact budget (6.3) does not by itself contradict K_U+K_O<=2r-2; the residual degrees and clique/independence constraints inside O must still be used.
+- every optional cross degree is at most four;
+- every outside vertex either sees a whole part or has excess at least 3a-4-r>=8;
+- the number X of exceptional vertices obeys (5.2);
+- the part-seeing subpopulation has a three-part assignment with total slack 4+X and exact budget (6.3).
 
-Two endpoint values are now excluded.
+The remaining terminal can still have X=Theta(r) near the lower AES threshold. Thus the full linear interval is not eliminated.
 
-- **h=2:** equation (2.1) gives s_A=s_B=s_C=0. The clique cap forces g_A=g_B=g_C=0, contradicting sum g_i=h.
-- **h=3:** the deficit vector is a permutation of (1,0,0). The two zero-deficit parts have g_i=0, so all three outside vertices are assigned to the remaining part A, with s_A=1 and g_A=3. Then omega(H[O])<=s_A=1, so O is an independent triple. Since u_A=0, every vertex in A has kappa=1 and t=rho=0, and hence contributes exactly three edges to O: e_H(A,O)=3(r-2). Every vertex in B union C must have at least one neighbour in O, or it together with the independent triple O would form an independent 4-set. Thus e_H(B union C,O)>=2(r-1). As e_H(O)=0,
+Boundary audit:
+- If h=2, all s_i=0, so no outside vertex can see a whole part; hence X=2 and (5.1) gives K_O>=r-11. This does not contradict the total budget by itself.
+- If h=3, the deficit vector is a permutation of (1,0,0). The case X=0 is impossible: all outside vertices would be assigned to the unique part with deficit one, making O independent; then e_H(U,O)>=5r-8 and K_O>=2r-8, while K_U>=r-2, contradicting K<=2r-2 for r>=12. But exceptional vertices have not been excluded, so h=3 remains open.
 
-  K_O = e_H(A union B union C,O)-3r >= 5r-8-3r=2r-8.
-
-  But K_A>=|A|=r-2, so K_O<=2r-2-K_A<=r. For r>=12 this contradicts 2r-8<=r. Therefore h=3 is impossible as well.
-
-Consequently the AES high-density terminal, if it exists, must have **h>=4** (equivalently m<=floor((3r-5)/2)). The remaining parameter window is still linear in r.
-
-Status: AES-to-three-part reduction, outside-neighbour transversal theorem, and h in {2,3} exclusion are **PROVED_CONDITIONAL**; global clean-pair nonextension remains **OPEN**.
+Status: AES-to-three-part reduction, class-slack bound, off-part excess lemma, and identity (6.3) **PROVED_CONDITIONAL**; global clean-pair nonextension **OPEN**.
