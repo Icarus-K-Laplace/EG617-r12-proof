@@ -9,11 +9,11 @@ Assume `r>=12`, `|V(H)|=3r-1`, `alpha(H)<=3`, `omega(H)<=r-1`, `delta(H)>=r`, an
 
 ## Current verdict
 
-**EXACT THREE-ANCHOR EXCESS THEOREM: `PROVED_ANALYTIC` for every `r>=12`.**
+**EXACT THREE-ANCHOR EXCESS THEOREM: `INDEPENDENTLY_VERIFIED` (analytic proof audit) for every `r>=12`.**
 
-This is a **Level-4 completion** and now has a unified short proof: `UNIFIED_SHORT_PROOF.md`.
+This is a **Level-4 completion**. The publication-canonical full proof is `PUBLICATION_VERSION.md`, supported by `LEMMA_VERIFICATION.md`, `PROOF_DEPENDENCY_MAP.md`, and the local arithmetic verifier `ARITHMETIC_AUDIT.py`. `UNIFIED_SHORT_PROOF.md` remains a concise summary and omits some derivation details now supplied in the publication version.
 
-The proof does not depend on the historical fixed-`r=12` closure, computation-certified graph enumeration, or separate `r=13..16` case tables.
+The theorem proof does not depend on the historical fixed-`r=12` closure, computation-certified graph enumeration, or separate `r=13..16` case tables. No full graph-level SAT/ILP search was run; no external human referee certification has yet been obtained.
 
 ## Core reductions
 
@@ -61,14 +61,19 @@ Four pair connectors, block sizes `(r-2,r-3,r-3)`.
 
 ## Main files
 
-- `UNIFIED_SHORT_PROOF.md`: preferred canonical proof, designed to be publication-length rather than case-table length.
+- `PUBLICATION_VERSION.md`: full publication-grade proof version checked in the independent audit.
+- `INDEPENDENT_AUDIT.md`: certification findings, exact limitations, and audit scope.
+- `LEMMA_VERIFICATION.md`: full rectangle-charge additivity and empty-part proofs.
+- `PROOF_DEPENDENCY_MAP.md`: theorem dependency DAG and lemma ledger.
+- `ARITHMETIC_AUDIT.py` / `ARITHMETIC_AUDIT_RESULTS.md`: reproducible local arithmetic checks; not a graph search.
+- `UNIFIED_SHORT_PROOF.md`: concise proof summary; some derivation details are intentionally deferred to the full proof.
 - `THEOREM.md`: theorem ledger and consequences.
-- `R12_UNIFIED_CLOSURE.md`: detailed `r=12` equality analysis retained as backup.
+- `R12_UNIFIED_CLOSURE.md`: detailed `r=12` equality analysis retained as supporting record.
 - `PROOF_ATTEMPTS.md`: historical derivation and earlier boundary proofs.
 - `EQUALITY_CASES.md`: equality-layer ledger.
-- `COUNTEREXAMPLE_SEARCH.md`: falsification record.
+- `COUNTEREXAMPLE_SEARCH.md`: falsification record and search limitations.
 - `PROGRESS_LOG.md`: chronological progress.
 
 ## Next action
 
-No internal theorem gap remains. Before upstream promotion, obtain an independent line-by-line proof review of `UNIFIED_SHORT_PROOF.md`, especially the rectangle-charge additivity and the `c=2` empty-part self-consistency lemma.
+The analytic theorem has passed this independent proof audit. Before journal submission or upstream promotion, obtain an external human line-by-line review. The full graph-level SAT/ILP counterexample search remains unperformed and is not part of the proof basis.
