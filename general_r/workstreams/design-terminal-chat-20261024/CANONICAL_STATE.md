@@ -107,7 +107,7 @@ This changes the asymptotic picture materially: target internal corrections cann
 - D1: **achieved conditionally** on reaching `d=r-1,j=r-6`.
 - D2: **OPEN** — Chat A interface still has to force the stop.
 - D3: **OPEN as a classification route**; later theorem proves the contextual terminal family is empty for all `r>=6212`.
-- D4: **PROVED_ANALYTIC for `r>=6212`** under the full contextual terminal contract, by bounded target-defect capacity; see `JOINT_DEFECT_PROPAGATION.md`.
+- D4: **OPEN**; the attempted `r>=6212` closure was withdrawn after finding an invalid clique/independence inference.
 - D5: **OPEN** for the remaining finite parameter range; this does not close the front-end forcing interface.
 
 ## Single largest blocker
@@ -228,25 +228,23 @@ Because (A\le27r+15), at least two of the three remaining groups have at most (O
 Status: **PROVED_CONDITIONAL** on compatibility of the two source nonedges (their four cross pairs must be target-nonedges). The open bridge is to find a sufficiently large family of compatible source pairs or charge the conflicts to the global budget. Full Hub Propagation remains **OPEN**.
 
 
-## 2026-10-24 — contextual terminal closed for (r\ge6212) by target-defect capacity
+## 2026-10-24 — attempted bounded target-defect closure withdrawn
 
-### New theorem — PROVED_ANALYTIC
+The claimed (r\ge6212) terminal nonexistence theorem is **WITHDRAWN** after adversarial review. The proof incorrectly asserted that a hub has at most four target-nonneighbors in (B_j\setminus X). Those ordinary vertices form a clique, so this does not produce an independent six-set. Consequently the claimed constant upper bound (D\le6210) was not proved.
 
-The target stability/hub theorem gives, for (r\ge6212), (|X|\le108), all target-internal missing edges incident to (X), and each (B_j\setminus X) a target clique. Since (alpha(G_0)\le5), each hub has at most four nonneighbors among ordinary vertices of its own group. Thus
+The valid surviving statement is the color-ownership lower bound: some (B_h) has size at least (r+1), and each non-target color must own an edge inside any fixed ((r+1))-subset of (B_h). Hence
 [
-D=\sum_j\left|\binom{B_j}{2}\setminus E(G_0)\right|
-\le4|X|+\binom{|X|}{2}\le6210.
+D_h:=\left|\binom{B_h}{2}\setminus E(G_0)\right|\ge r-1.
 ]
+This is compatible with the current (O(r)) edit budget and does not close the terminal.
 
-But one target ideal group (B_h) has size at least (r+1). Every non-target color (G_i) must have an edge inside any fixed ((r+1))-subset of (B_h), because (alpha(G_i)\le r). The (r-1) colors require distinct edges, all of which are target-internal deletions. Hence (D_h\ge r-1\ge6211), contradiction.
+A bounded hub set can still support (O(r)) internal missing edges: each hub may be nonadjacent to (Theta(r)) points of the ordinary clique. The clique cap (omega(G_0)\le r-1) limits its internal neighbors, not its nonneighbors.
 
-Full proof, including the monotonicity calculation sharpening (|X|\le114) to (|X|\le108) for (r\ge6212), is in `JOINT_DEFECT_PROPAGATION.md`.
+- Bounded target hub concentration: **PROVED_ANALYTIC**.
+- Oversized-group lower bound (D_h\ge r-1): **PROVED_ANALYTIC**.
+- Constant target-defect cap: **DISPROVED as stated**.
+- Contextual terminal nonextension for sufficiently large (r): **OPEN**.
+- Literal multi-block Hub Propagation: **OPEN**.
+- Full front-end forcing: **OPEN**.
 
-### Correct interpretation of this advance
-
-- **Contextual ((5r+1))-terminal nonexistence:** **PROVED_ANALYTIC for all (r\ge6212)**, under the already-proved target stability/hub-concentration inputs.
-- **Literal multi-block Hub Propagation Theorem:** still **OPEN** as a mechanism; the terminal contradiction bypasses rather than solves its edge-cover classification.
-- **Exact-core route:** no exact TD/affine plane has been derived or needed for this closure.
-- **Full Erdős Problem 617 for all sufficiently large (r):** still **OPEN**, because the front-end implication forcing every hypothetical counterexample into either the ((4r+1)) residual branch or this legal ((5r+1)) terminal remains unproved.
-
-The proof counts each target-deleted edge by its unique color and does not sum cylinder charges. It is robust to shared cover edges and does not assume exact-star structure, prime-power order, or constant per-vertex non-target edit degree.
+Full correction: `JOINT_DEFECT_PROPAGATION.md`.
