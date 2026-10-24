@@ -32,6 +32,7 @@ SOURCE_REGISTRY = [
         "source_commit": "a922c4d7646eb8d0087bde8547562c8aace02ee2",
         "source_path": "general_r/GENERAL_R_Q_CEILING_AND_MISSING_DEGREES.md",
         "source_blob_sha": "85d6ef9d4bf283a35f842fc1e1bf0993f26097b8",
+        "local_audit_status": "source blob and r>=12 scope checked; symbolic proof not rederived in this workstream",
         "theorem_status": "CONDITIONAL"
     },
     {
@@ -45,6 +46,7 @@ SOURCE_REGISTRY = [
         "source_commit": "614a956a7e964f42c0818eca05e3ca9e26a6458a",
         "source_path": "general_r/workstreams/residual-core-extraction-chat-20261024/RESIDUAL_BRANCH_CLOSURE.md",
         "source_blob_sha": "0cf72df5a7e0e59649713adbec1f41c2b75e7408",
+        "local_audit_status": "source blob and r>=17 conditional scope checked; extraction premise remains open; proof not rederived here",
         "theorem_status": "CONDITIONAL_ON_EXTRACTION"
     },
     {
@@ -65,6 +67,7 @@ SOURCE_REGISTRY = [
             "blob_sha": "f4b8741a8d6c78044a81dccee229d2c5e4eb0ea8",
             "meaning": "latest branch-level status sync; preserves the same broad r>=68 applicability and says A_ext, C*, D remain open"
         },
+        "local_audit_status": "pinned source blob and r>=68 scope checked; latest sync blob checked; analytic proof not rederived here",
         "theorem_status": "PROVED_ANALYTIC_FOR_R_GE_68"
     },
     {
@@ -78,6 +81,7 @@ SOURCE_REGISTRY = [
         "source_commit": "a934c3ccc22b6991cca5ba82f49ac9f3400748f0",
         "source_path": "general_r/workstreams/three-anchor-chat-20261024/PUBLICATION_VERSION.md",
         "source_blob_sha": "ef1e93744dc14b7f3fdb474df8e0c98590676806",
+        "local_audit_status": "source theorem statement and r>=12 scope checked; proof not rederived in this workstream",
         "theorem_status": "PROVED_FOR_EXACT_ANCHOR_HYPOTHESES"
     },
     {
@@ -91,6 +95,7 @@ SOURCE_REGISTRY = [
         "source_commit": "35fec3eaaab70b31e10b41065634b35b02a28e6",
         "source_path": "general_r/workstreams/repivot-termination-chat-20261024/ENDPOINT_CLASSIFICATION.md",
         "source_blob_sha": "7665a0dafec0e163f47255cdd5efc92d6e9e71f7",
+        "local_audit_status": "source statement and r>=12 scope checked; integer consequence independently audited here; graph-theoretic incidence premises not rederived here",
         "theorem_status": "CONDITIONAL_ON_RC_AND_ANCHOR_K8"
     },
     {
@@ -104,6 +109,7 @@ SOURCE_REGISTRY = [
         "source_commit": "a922c4d7646eb8d0087bde8547562c8aace02ee2",
         "source_path": "certificates/frontend_line_a_v1/VERIFICATION_RECEIPT.json",
         "source_blob_sha": "2b414301e2db36031b707dc1c0d5f546c02b89da",
+        "local_audit_status": "source receipt blob checked; recurrence arithmetic claim retained as source receipt; original-graph bridge remains open",
         "theorem_status": "ARITHMETIC_CERTIFIED_BRIDGE_OPEN"
     }
 ]
