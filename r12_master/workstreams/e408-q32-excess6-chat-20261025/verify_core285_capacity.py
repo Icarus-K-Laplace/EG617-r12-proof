@@ -62,7 +62,41 @@ def check_core_capacity() -> None:
     assert cap285(41) - 6 * 100 == 11
 
 
-def check_shell_budget() -> None:
+def check_low_support_triple_pairs() -> None:
+    # In the v <= 43 normal form, the two double-shell core triples and x_C
+    # partition W union O_C. A pair inside W cannot occur in two such triples
+    # because its edge would receive two non-target colors.
+    expected = {
+        40: (7, 0, 6, None, 21),
+        41: (6, 1, 4, 6, 15),
+        42: (5, 2, 2, 4, 10),
+        43: (4, 3, 1, 2, 6),
+    }
+
+    def min_pair_cost(total_w_vertices: int) -> int:
+        return min(
+            comb(k, 2) + comb(total_w_vertices - k, 2)
+            for k in range(max(0, total_w_vertices - 3), min(3, total_w_vertices) + 1)
+        )
+
+    for v, (w, outside_support, cost_x_in_w, cost_x_in_o, pair_cap) in expected.items():
+        assert w == 47 - v
+        assert outside_support == v - 40
+        assert pair_cap == comb(w, 2)
+        assert min_pair_cost(w - 1) == cost_x_in_w
+        if cost_x_in_o is not None:
+            assert min_pair_cost(w) == cost_x_in_o
+        assert 8 * cost_x_in_w > pair_cap, (v, cost_x_in_w, pair_cap)
+
+    # At v=44, W has three vertices and O_C has four. If x_C lies in O_C,
+    # the two triples contain all three W vertices, so at least one W-pair
+    # is used. Since W has only three pairs, at most three colors can do this.
+    assert 44 - 40 == 4
+    assert comb(3, 2) == 3
+    assert 8 - 3 == 5 and 9 - 3 == 6 and 10 - 3 == 7
+
+
+def check_shell_budget() -> None
     assert comb(14, 2) - 11 * 2 == 69
     assert 13 + (78 - 22) == 69
     assert 22 <= 32
@@ -104,6 +138,7 @@ def check_outer_blocker_coupling() -> None:
 
 if __name__ == "__main__":
     check_core_capacity()
+    check_low_support_triple_pairs()
     check_shell_budget()
     check_outer_blocker_coupling()
     print("CORE285_E408_Q32_ARITHMETIC_OK")

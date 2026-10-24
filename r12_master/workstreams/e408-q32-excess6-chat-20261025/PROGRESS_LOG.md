@@ -45,3 +45,18 @@ Corrected core-capacity result:
 Updated CORE285_CAPACITY_THEOREM.md, CANONICAL_STATE.md, SHELL_SUPPORT_CLASSIFICATION.md, SEVEN_BLOCK_GLOBAL_COMPATIBILITY.md, CERTIFICATE_AND_VERIFIER.md, and verify_core285_capacity.py. The outer blocker coupling remains based only on the ten isolated components, preserving the distinction between a K5 clique witness and a size-five blocker component.
 
 The standard-library arithmetic assertions matching the committed verifier were rerun and passed (CORE285_E408_Q32_ARITHMETIC_OK). The committed script is the reproducible checker; it certifies arithmetic only, not the KP classification or graph realizability. This correction strengthens the necessary-structure reduction; it still does not prove the E408 Q32 terminal empty.
+
+
+## 2026-10-25 — new low-support triple-pair capacity theorem
+
+The 10-witness/color partition was pushed beyond the scalar \(p_4\) capacity inequality.
+
+- In any hypothetical \(v\le43\) support, every exact-129 color has exactly ten single-outside \(K_5\) cliques, two double-shell \(K_5\) cliques, and an exceptional vertex \(x_C\in H\).
+- The two double-shell cliques have disjoint independent 3-point core parts \(T_{C,1},T_{C,2}\). Together with \(x_C\), they partition \(W\dot\cup O_C\), where \(W=H\setminus U\), \(|W|=47-v\), and \(|O_C|=v-40\).
+- Every pair of W-vertices occurring in one of these triples is a distinct non-target edge; it cannot recur in any other color's triple. Thus \(\sum_C[\binom{|T_{C,1}\cap W|}{2}+\binom{|T_{C,2}\cap W|}{2}]\le\binom{|W|}{2}\).
+- Exact boundary arithmetic: v=40 costs at least 6 W-pairs per color (capacity 21); v=41 costs at least 4 (capacity 15); v=42 costs at least 2 (capacity 10); v=43 costs at least 1 (capacity 6). Since m≥8 exact colors, all four cases contradict pair capacity.
+- **New strict reduction: v≥44 for every E408 Q32 candidate**, uniformly over both M[B]=empty and M[B] nonempty shell-support branches.
+- At v=44, W has size3; at most three colors can have x_C∈O_C, and at least m−3 colors have each of their two triples containing exactly one W vertex. This is the current next terminal.
+- No claim is made that v≥44 is a full contradiction. The exceptional gadget's detailed degree is not assumed; the proof uses only the twelve-clique factorization and edge-color uniqueness.
+
+Added LOW_SUPPORT_TRIPLE_PAIR_CAPACITY.md and extended the standard-library arithmetic verifier. Status remains **OPEN / NOT_CERTIFIED**.

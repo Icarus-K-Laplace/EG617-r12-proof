@@ -163,7 +163,13 @@ d_H(u,W)=2+(d_H(u)-12)-3k_u+r_u\ge0.
 
 The global edge ledger also gives e_H(U,W)=74-E_U-2s_W, while summing the pointwise formula gives e_H(U,W)=52+E_U+2r_U. These are equivalent to E_U+r_U+s_W=11. This is a strict finite terminal form, not a contradiction.
 
-## 6. What this theorem does and does not prove
+## 6. Low-support triple-pair capacity theorem
+
+The separate file LOW_SUPPORT_TRIPLE_PAIR_CAPACITY.md proves a stronger support floor using the two three-point core parts of the double-shell (K_5) cliques. If (v<44), every exact color has exactly ten one-outside cliques, two double-shell cliques, and (x_C\in H). The two core triples and (x_C) partition (W\dot\cup O_C), where (W=H\setminus U), (|W|=47-v), and (|O_C|=v-40). Every pair of (W)-vertices used by one of these triples is a distinct non-target edge, so the total pair load is at most (inom{|W|}{2}). The exact boundary costs for (v=40,41,42,43) are respectively 6, 4, 2, 1 per color, while the available pair counts are 21, 15, 10, 6. Since there are at least eight exact colors, every boundary is impossible. Thus the global support floor is now **(v\ge44)**, uniformly over both shell-support branches.
+
+At (v=44), (|W|=3). Pair uniqueness further implies at most three colors have (x_C\in O_C), and at least (m-3) colors split the two vertices of (W\setminus\{x_C\}) one per triple. This is a strict normal-form reduction, not closure.
+
+## 7. What this theorem does and does not prove
 
 **Proved under the named inputs:** witness existence, pairwise linearity, the 285-edge capacity inequality, exact integer support floors, the support/complement excess ledger, and the low-support component allocation described above. The result covers both M[B]=∅ and M[B]≠∅ shell-support cases.
 
