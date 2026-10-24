@@ -102,3 +102,28 @@ The proof uses the exact second-view charge, not a numerical surrogate:
 The transversal inequality was independently checked over every integer m from 1 through100 for c=0,1,2. The largest feasible m were respectively 3,3,6; the first impossible values were 4,4,7. These agree with the theorem's claimed capacities.
 
 This check certifies the arithmetic consequence of the stated block-transversal theorem. It does not independently replay the entire upstream pivot exchange proof, the legal-residual reduction, or the original recurrence.
+
+
+## 6. Independent finite audit of the total-excess-four anchor extension
+
+Under the only new anchor pattern (14,13,13) and the contradiction assumption K<=6, the outside-anchor excess budget is at most two. With c connectors and t triple-connectors, c+t=8. Let n12,n13,n23 be the numbers of pair-connectors of the three types; then n12+n13+n23=2c-8 and
+
+- x1=14-(t+n12+n13);
+- x2=13-(t+n12+n23);
+- x3=13-(t+n13+n23).
+
+Enumerating all nonnegative pair-count triples with x_i<=10 gives 55 profiles: 1, 5, 10, 16, 23 for c=4,5,6,7,8 respectively. For every profile, every allocation of at most two positive-excess vertices among the exclusive blocks was checked. Let z_i=x_i-k_i, with k_i>=0 and sum k_i<=2, and sort z1>=z2>=z3. Since z2+z3>=20-c>=12, the clique-cap correction gives the lower bound z2*z3-1+z1 on cross edges whenever no independent transversal exists.
+
+For each c, the minimum lower-bound-minus-upper-bound margin over all profiles and allocations was:
+
+| c | Profiles | Minimum contradiction margin |
+|---:|---:|---:|
+| 4 | 1 | 46 |
+| 5 | 5 | 36 |
+| 6 | 10 | 26 |
+| 7 | 16 | 16 |
+| 8 | 23 | 6 |
+
+No profile survives. The hand proof in R12_INDEPENDENT_TRIPLE_H4_EXTENSION.md gives a concise derivation: the general inequality handles c<=7, and the z3=2,3,4,>=5 split handles c=8.
+
+The theorem is therefore independently supported at the finite arithmetic layer. It still relies on the registered h<=3 and three-anchor closure theorems for its inherited cases.
