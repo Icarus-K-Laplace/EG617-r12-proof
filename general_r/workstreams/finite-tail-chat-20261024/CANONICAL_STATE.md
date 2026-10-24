@@ -183,3 +183,61 @@ Once a sibling workstream supplies a stable terminal contract, build the graph/S
 - a tiny independent receipt verifier.
 
 Until then, keep the V1 harness as the regression-tested theorem/instance boundary rather than expanding a speculative brute-force encoding.
+
+
+## 11. Round 2 — parameter-exact theorem admission
+
+Starting HEAD was verified as `3d27693d9f9d5bf2586e0f0178228563d96de22b`. All new and modified files remain inside this workstream directory.
+
+Added `PARAMETER_ADMISSION_MATRIX.json` and `PARAMETER_ADMISSION_VERIFIER.py`.
+
+- Explicit rows: r=4,...,100 (97 parameter rows), with a four-interval partition extending to every integer r>=4.
+- Source records: six immutable theorem/asset records, including source commit, source path/blob, exact parameter applicability, proof type, assumptions, and terminal contract.
+- Matrix raw SHA-256: `bcdcfa098cee564b136f6fa00405fb34d46a9fa60342b8d4a46f8f77cb8053f7`.
+- Admission verifier SHA-256: `114f1fd8441ad4e1b91c7ee4cad82e9abf3c21d6c4453502c2e5413ce4d51b35`.
+- Theorem gate now calls the admission verifier before promotion and records the matrix/verifier fingerprints in its receipt.
+- Unified entry point: `generate_parametric_certificate.py`, which reuses the existing endpoint-domain and d1 generators rather than reimplementing their arithmetic.
+
+### Parameter status
+
+| Parameter range | Admitted facts | Still open |
+|---|---|---|
+| 4<=r<=11 | schema/encoding tests only | no registered general residual-core reduction; modules blocked from theorem-level admission |
+| r=12..16 | conditional q-ceiling source applies under RC; fixed r=12 recurrence arithmetic is replayed | RC/front extraction; broad ANCHOR_K8 below 68; recurrence bridge |
+| r=17..67 | full core contract follows analytically once a legal 4r+1 residual has been extracted | global residual extraction; broad ANCHOR_K8 below 68; endpoint/design closure |
+| r>=68 | broad near-anchor ANCHOR_K8 source applies | RC/front extraction and terminal closure; no unconditional all-large-r theorem |
+
+The exact three-anchor K8 theorem is a separate source for r>=12, but only when three pairwise nonadjacent degree-r anchors are actually established. It is not substituted for the broader near-anchor ANCHOR_K8 assumption.
+
+The scalar audit confirms that under q<=3r+2, the only medium-interval candidates are d=4 and d=r-3 at r=12,13,14; there are none for r>=15. This is a necessary-domain simplification under RC, not a graph-level theorem.
+
+## 12. Parameterized certificate families and receipt contract
+
+- `ENDPOINT_DOMAIN_LOWER_BOUND_V1`: one certificate per r/profile, with all d=0,...,r reconstructed by the independent verifier.
+- `D1_SHELL_CLASS_BOUND_V1`: one certificate per r>=12, with N=0,...,6 checked exactly; N=6 exceeds the incidence cap by 2. Owner multiplicity remains unbounded by this lemma.
+- `FINITE_TAIL_RECEIPT_SCHEMA.md` and `FINITE_TAIL_REPLAY_PROTOCOL.md` define the full theorem-receipt interface and promotion invariant.
+
+Independent arithmetic audit performed in a Python harness:
+- endpoint-domain arithmetic checked for r=12,...,100, 5,073 d-rows;
+- D1 checked for r=12,...,100, 623 class-count rows;
+- r=12,13,14 medium boundary candidates and r>=15 elimination matched the exact formulas;
+- six d1 classes contradicted the cap by exactly 2 for every tested r.
+
+## 13. Graph-level symmetry interface
+
+Added `GRAPH_SYMMETRY_WITNESS_SCHEMA.md`, `GRAPH_SYMMETRY_VERIFIER.py`, and `GRAPH_SYMMETRY_TEST_VECTORS.json`.
+
+The toy fixture has 8 fully enumerated edge-colorings of K3, one distinguished pivot and a two-vertex shell role; exhaustive role-preserving vertex swap and global color swap yield 3 orbits. The independent Python reconstruction checked all 8 witness mappings and matched the committed pre/post state-set hashes:
+- pre-quotient: `1c10fd6173e748ff06f912ebae87d5bf4c6c2002a88ad54f8671a53a9fc0d18c`;
+- post-quotient: `344254a1cfc131a437ced79dff954c6e79ca02c7a8ca7ff97556d7c770b752cf`.
+
+The committed graph-verifier CLI has not yet been run directly in a repository execution environment. Therefore this is an independently cross-checked toy fixture/interface, not a claim that graph-level EG617 symmetry reduction is certified.
+
+## 14. Round 2 promotion verdict
+
+- Theorem-admission matrix: constructed; 97/97 committed rows matched an independent reconstruction.
+- Parameterized certificate-family interface: constructed; source applicability is checked before generation and the promotion gate rechecks it.
+- Graph-symmetry witness interface: constructed; bounded toy fixture cross-checked independently; committed CLI replay pending.
+- New EG617(r) theorem: **NONE**.
+- `ASYMPTOTIC_R0`: **NOT AVAILABLE**.
+- `RC` and global extraction: **OPEN**.
