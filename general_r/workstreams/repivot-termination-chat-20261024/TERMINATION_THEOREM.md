@@ -6,234 +6,271 @@ The intended final statement is:
 
 > **Endpoint Repivot Stability Theorem.** For every sufficiently large r, under hypotheses A+B, every admissible local pivot view either admits a strict increase of a bounded lexicographic repivot potential or belongs to a finite r-independent family of rigid endpoint configurations, all of which are impossible.
 
-The final contradiction theorem is **OPEN**. The shell-side endpoint classification is now fixed-width.
+The final contradiction theorem is **OPEN**. The endpoint classification is fixed-width and a genuine third potential coordinate is now proved on the repeated-support plateau.
 
 ---
 
 # Theorem A — Conditional Fixed-Width Endpoint Compression
 
-Assume A+B and `r>=12`, and choose a pivot maximal in `(q,tau)`.
+Assume A+B and `r>=12`.
 
-Then every regular shell vertex lies in one of the following endpoint classes:
+Every regular shell owner has
 
-1. `d=0`: neutral pivot symmetry; quotient it.
-2. `d=1`: one-vertex excess exchange; all shell missing partners lie in a set of at most five vertices, hence at most five shell common-S classes.
-3. `d=2`: all shell missing-set endpoints lie in a set of at most six vertices, hence at most fifteen shell common-S classes.
-4. `d=3`: eliminated by the d3 equality B-floor plus the declared low-charge Bridge-B absorption.
-5. `d>=r-2`: at most three such owners exist in the whole shell; their interaction is an r-independent bounded-complement kernel.
+`d in {0,1,2,3,r-2,r-1,r}`.
 
-No degree `4<=d<=r-3` occurs.
+Moreover:
 
-Consequently:
+1. d0 is neutral and quotientable;
+2. d1 missing partners lie in at most five shell vertices/classes;
+3. all d2 shell missing-set endpoints lie in at most six vertices, hence at most fifteen shell classes;
+4. d3 is eliminated by the equality B-floor plus the declared low-charge Bridge-B absorption;
+5. all high owners `d>=r-2` number at most three and form a bounded-complement kernel.
 
-> **The number of shell-side endpoint support types is bounded by an absolute constant independent of r.**
+Thus
 
-There is no surviving r-growing shell-support case tree.
+> **the number of shell-side endpoint support types is bounded by an absolute constant independent of r.**
 
-**Status:** `PROVED_CONDITIONAL`.
-
----
-
-# Theorem B — Shell-Incidence Endpoint Kernel
-
-For shell vertices define
-
-`t_s=d_M(s)+g_s=e_F(s,H)`.
-
-Then
-
-`sum_A t_s=2e(M)+G_A=2q-G_A<=6r-2`.
-
-For any regular owner y with shell missing set S of size d and `b=e_M(S)`, singleton transport gives pointwise
-
-> `sigma_s=t_s-(r+1-d)-m_S(s)>=0` for every `s in S`,
-
-and, after summing,
-
-> `sum_{s in S} t_s=d(r+1-d)+a_y+b_y`.
-
-### d1 consequence
-
-For `S={s}`,
-
-`t_s>=r`.
-
-Thus all d1 shell support points lie in
-
-`C_1={s:t_s>=r}`
-
-with
-
-> `|C_1|<=5`.
-
-### d2 consequence
-
-For `S={u,v}` and `b=e_M(S)`,
-
-`t_u,t_v>=r-1+b`.
-
-Let `U_2` be the union of all d2 shell support pairs. Then
-
-> `|U_2|<=6`,
-
-so there are at most
-
-> `C(6,2)=15`
-
-d2 shell classes.
-
-Writing
-
-`h_u=t_u-(r-1)`,
-
-each d2 class satisfies
-
-> `a_{uv}=h_u+h_v-b_{uv}`.
-
-If `m=|U_2|`,
-
-`sum_{u in U_2} h_u <= (6-m)r+m-2`.
-
-At the maximal support-universe boundary `m=6`,
-
-`sum h_u<=4`
-
-and the total number of d2 owners is at most two. Thus even the maximal six-point shell kernel has bounded multiplicity/allowance.
+There is no r-growing shell-support case tree.
 
 **Status:** `PROVED_CONDITIONAL`.
 
 ---
 
-# Theorem C — High Endpoint Three-Owner / Bounded-Complement Reduction
+# Theorem B — Shell-Incidence Kernel
 
-Under A+B, `r>=12`, all regular owners with `d>=r-2` form a set of size at most three.
+For shell vertices
 
-Writing
+`t_s=d_M(s)+g_s=e_F(s,H)`
 
-`s=r-d in {0,1,2}`,
+one has
 
-every high-endpoint state is represented by a finite skeleton with
+`sum_A t_s=2e(M)+G_A<=2q<=6r-2`.
 
-- at most three owners;
-- shell target-neighbour complements of size at most two;
-- a shell interaction kernel of size at most nine;
-- at most eight core owner-incidence signature classes.
+For every regular owner with shell missing set S of size d,
 
-The combinatorial skeleton family is independent of r.
+` sigma_s=t_s-(r+1-d)-m_S(s)>=0 `
+
+for each `s in S`, and
+
+` sum_{s in S}t_s=d(r+1-d)+a+b `.
+
+Consequences:
+
+- d1 support universe size <=5;
+- d2 support universe size <=6, hence <=15 pair classes;
+- for a d2 class `S={u,v}`, with `h_u=t_u-(r-1)`, allowance is
+  `a=h_u+h_v-b`;
+- if the d2 support universe has all six vertices active, then `sum h<=4` and there are at most two d2 owners total.
 
 **Status:** `PROVED_CONDITIONAL`.
 
-This achieves the requested **Level 3** high-endpoint reduction.
+---
+
+# Theorem C — Fixed-Class d2 Plateau Reduction
+
+Fix one d2 shell class `S={u,v}` and all owners Y in that class. Put
+
+`w_x=kappa_x+e_F(x,S)`, `mu(D)=1-e_H(D)`,
+
+and let a be the class allowance.
+
+Every owner has exact loss
+
+> `ell_y=q-q_y=a-[w(D_y)+mu(D_y)]>=0`.                       (C1)
+
+Let `lambda_x=#{y:x in D_y}`. Support incidence gives
+
+> `lambda_x>=2 or w_x>=1 => x in X`.                         (C2)
+
+Write `s=|S intersect X|`.
+
+### s=0
+
+Common-S transport gives `a=b`.
+
+- b=0: every owner is q-flat and the entire class has at most three owners;
+- b=1: at most one q-flat owner and at most three distinct strict support classes.
+
+### s=1
+
+Q-flat supports cannot repeat. Their support graph has at most three components, each an isolated edge or a star with at most two edges. Hence
+
+> `# q-flat owners<=6`.
+
+### s=2
+
+This is the only regime in which q-flat owner multiplicity can scale with r.
+
+Therefore
+
+> **the unique scalable equal-q d2 mechanism is a fixed fully-decorated shell pair `S subset X`.**
+
+**Status:** `PROVED_CONDITIONAL`.
 
 ---
 
-# Theorem D — Low-Endpoint Owner Clique Lemma
+# Theorem D — High Endpoint Three-Owner Reduction
 
-For `r>=12`, any two regular owners x,y with `d_x,d_y<=3` are target-adjacent.
+All regular owners with `d>=r-2` number at most three.
 
-Indeed, if they were target-nonadjacent, zero-gap would require
+With `s_y=r-d_y in {0,1,2}`, their shell interaction lies in an at-most-nine-point kernel and core owner-incidence uses at most eight signatures.
 
-`S_x union S_y=A`,
+**Status:** `PROVED_CONDITIONAL`.
 
-whereas
-
-`|S_x union S_y|<=6<r+1=|A|`.
-
-Therefore all regular low-endpoint owners, together with the pivot p, form a target clique. Since `omega(F)<=r-1`, the total number of regular low-endpoint owners is at most
-
-> `r-2`.
-
-At hereditary equality, the multicolor equality regular-clique obstruction can sharpen this linear owner count further, but the fixed-width shell classification above does not need that refinement.
-
-**Status:** `PROVED_SYMBOLIC`.
+This achieves Level 3 high-endpoint reduction.
 
 ---
 
-# Theorem E — d2 scalar/core-support barrier
+# Theorem E — Genuine third potential coordinate
+
+Define
+
+`zeta(p)=#{regular shell owners with d=0}`
+
+and
+
+> **`Phi_3=(q,tau,zeta)`.**
+
+Zeta is bounded, integer-valued, and invariant under neutral d0 pivot relabellings.
+
+Let y belong to an exact repeated `(S,D)` owner class of multiplicity m. Repivoting through y makes the other `m-1` class owners d0, while every old d0 owner together with the old pivot becomes a reverse `(D,S)` owner. Hence
+
+`zeta(y)>=m-1`.
+
+Therefore, on a q/tau-flat move,
+
+> **if `m>=zeta(p)+2`, then `Phi_3(y)>Phi_3(p)`.**            (E1)
+
+At a `Phi_3`-maximal pivot,
+
+> **every q/tau-flat exact repeated class has `m<=zeta+1`.** (E2)
+
+If equality is zeta-flat, then the exchange is multiplicity-balanced: the other `m-1` old class owners become exactly the full new d0 population and the reverse `(D,S)` class has multiplicity at least m.
+
+For d2, such a repeated q/tau-flat exchange necessarily lies in the fully-decorated shell-pair regime.
+
+Using the low-owner clique cap, if k exact repeated classes simultaneously admit `Phi_3`-flat exchanges, then every one has multiplicity `zeta+1` and
+
+> **`(k+1)(zeta+1)<=r-1`.**                                  (E3)
+
+In particular a balanced repeated class has
+
+`m<=floor((r-1)/2)`.
+
+**Status:** zeta coordinate and repeated-class improvement `PROVED_SYMBOLIC`; clique-capacity bound `PROVED_CONDITIONAL` on the standard backend clique cap.
+
+This is the first proved refinement beyond `(q,tau)` in this workstream. It does not yet establish a globally strict potential on every plateau move, so full Level 4 remains open.
+
+---
+
+# Theorem F — Missing-Pair / Neutral-Population Bound
+
+Let D be a target-nonedge core pair. Its common target-nonneighbours in H number at least
+
+`r-3-kappa(D)`
+
+and form a target clique. The pivot p and all zeta d0 owners are also common nonneighbours of D. The global clique cap therefore yields
+
+> **`kappa(D)>=zeta-1`.**                                    (F1)
+
+If D is the support of a q-flat d2 owner in a fixed class of allowance a, then
+
+`a=w(D)+1>=kappa(D)+1`,
+
+so
+
+> **`a>=zeta`.**                                             (F2)
+
+Thus:
+
+> **if `a<zeta`, every q-flat d2 support must be a target edge.**
+
+At the sharp boundary `a=zeta`, a nonedge support has a rigid saturated common-nonneighbour template: `kappa(D)=zeta-1`, no common H target-neighbour, and no target edge from S to D.
+
+**Status:** `PROVED_SYMBOLIC` under the standard global alpha/omega backend caps.
+
+---
+
+# Theorem G — d2 scalar/core-support barrier
 
 For every d2 common-S system,
 
 > `W=K+2r-2+a+b`.
 
-For an exact-one-loss common-hub subsystem with three distinct core support classes, the existing charge barrier gives
-
-`W>=3r-2`,
-
-hence
+A three-class exact-one-loss common-hub subsystem requires
 
 > `K+a+b>=r`.
 
-Thus any difficult three-class d2 terminal must carry a linearly high excess/allowance budget. The shell pair S itself, however, now belongs to one of at most fifteen fixed classes.
+Thus the historical difficult d2 branch is forced into a linearly-high scalar regime, but its shell class is now one of at most fifteen fixed classes.
 
-**Status:** exact identity `PROVED_SYMBOLIC`; three-class consequence `PROVED_CONDITIONAL`.
+**Status:** identity `PROVED_SYMBOLIC`; barrier consequence `PROVED_CONDITIONAL`.
 
 ---
 
-# Theorem F — Plateau Cycle Rigidity
+# Theorem H — Plateau Cycle Rigidity
 
-For a closed legal repivot cycle in a fixed residual graph,
+For a closed legal repivot cycle,
 
-`sum Delta q=0`, `sum Delta K=0`.
+`sum Delta q=0` and `sum Delta K=0`.
 
-If every edge is non-improving in `(q,tau)`, then every edge is simultaneously q-flat and tau-flat. Every repeated support on such a cycle has a fully decorated shell partner.
+A closed `(q,tau)`-non-improving cycle is q/tau-flat edgewise. Appending zeta, every repeated-class edge of a closed `Phi_3`-non-improving cycle must also be zeta-flat, hence multiplicity-balanced and subject to (E3).
 
-Thus any no-improvement cycle reduces to simultaneous equality classification inside the finite endpoint classes above.
+Thus repeated-support correction cycles have become rigid balanced exchange systems rather than arbitrary support repetitions.
 
-**Status:** `PROVED_SYMBOLIC`.
+**Status:** `PROVED_SYMBOLIC`; complete balanced-cycle elimination `OPEN`.
 
 ---
 
 # Potential status
 
-`(q,tau)` is a genuine bounded lexicographic potential.
+Current preferred potential:
 
-K is not a new coordinate because
+> **`Phi=(q,tau,zeta,...)`.**
 
-`Delta K=-2 Delta q`.
+The first three coordinates are genuine bounded integer coordinates. Zeta has a proved strict-improvement theorem on repeated q/tau plateaux.
 
-On a q-flat plateau,
+A candidate fourth coordinate is
 
-`Q2=sum_{v in H} kappa_v^2`
+`Q2=sum_{v in H}kappa_v^2`,
 
-is a bounded integer and has an exact repivot update formula in `POTENTIAL.md`. Hence
+whose exact update is recorded in `POTENTIAL.md`. Universal Q2 monotonicity is not proved.
 
-`Phi_3=(q,tau,Q2)`
+A fourth coordinate is needed only after the reductions above, specifically for:
 
-is a legitimate candidate refinement, but universal Q2 monotonicity is not proved.
-
-The finite d2 shell kernel suggests a potentially sharper refinement by the ordered multiplicity/defect profile of the at-most-fifteen fixed d2 classes.
+1. distinct-support fully-decorated d2 plateau systems;
+2. zeta-balanced repeated d2 correction cycles.
 
 ---
 
 # What remains for Level 4 / Level 5
 
-After Theorems A–F, a global terminal can only be assembled from:
+After Theorems A-H, the only scalable equal-q endpoint mechanism is:
 
-- at most five d1 shell classes, with q/tau-flat one-point core exchanges;
-- at most fifteen d2 shell classes, each carrying owner multiplicity, core support sets, and transported loss/excess;
-- within a d2 class, the known one-loss common-hub / at-most-three-core-support-class structure and isolated deep-loss blocks;
-- at most three high-endpoint owners;
-- simultaneous equality cycles among these finitely many classes.
+> a fixed d2 shell pair `S subset X`, carrying either
+> - a distinct-support q-flat system, or
+> - zeta-balanced repeated support classes satisfying `(k+1)(zeta+1)<=r-1`.
 
-Thus **all r-growing combinatorial complexity has moved off the shell support hypergraph and into multiplicity/core-support data inside a constant number of classes.**
+Nonedge q-flat supports additionally require `a>=zeta`; below that threshold only target-edge supports survive.
 
-The correct next theorem is now:
+Everything else is either quotient-neutral, O(1)-bounded, eliminated, or part of the at-most-three-owner high kernel.
 
-> **Finite-Class d2 Core Multi-Pivot Theorem.** Fix a d2 shell class `S={u,v}`. With shell parameters `b`, `h_u`, `h_v`, `sigma_u`, `sigma_v`, and `a=h_u+h_v-b` fixed, any family of legal owners that is simultaneously non-improving in `(q,tau)` either admits a strict increase in a bounded refinement of the potential or collapses to a finite impossible core-support skeleton.
+The next theorem should therefore be narrower than the previous finite-class statement:
 
-Proving this uniformly, then summing over at most fifteen shell classes, would remove the last scalable endpoint mechanism and is the most direct route to a sufficiently-large-r contradiction.
+> **Fully-Decorated d2 Plateau Theorem.** For a fixed decorated shell pair `S subset X`, every `Phi_3`-maximal q-flat support system either admits a strict fourth-coordinate improvement or belongs to a finite rigid family of target-edge / saturated-nonedge correction skeletons.
+
+A proof of this theorem, followed by elimination of the resulting rigid skeletons, is the direct path to Level 4 and then an all-large-r contradiction.
 
 ---
 
 # Certified success level
 
 - Level 1: d3 closure obtained.
-- Level 2: full low endpoint elimination not yet; however d1/d2 **shell geometry is completely fixed-width**.
-- **Level 3: achieved** — high endpoint reduced to a finite three-owner bounded-complement skeleton.
-- Level 4: open — no globally strict third potential coordinate yet.
+- Level 2: full low-endpoint elimination not yet; d1/d2 shell geometry is fixed-width and all non-fully-decorated d2 plateau classes are O(1)-bounded.
+- **Level 3: achieved** — high endpoint is a finite three-owner bounded-complement skeleton.
+- Level 4: **not yet achieved**, but a genuine third coordinate `zeta` with strict repeated-class monotonicity is proved.
 - Level 5: open — no certified absolute r0 yet.
 - Level 6: open.
 
 # Single blocker
 
-> **Finite-class d2 core-support multi-pivot compatibility:** eliminate or rigidify simultaneous non-improving owner families inside one fixed d2 shell class, then combine across the at-most-fifteen classes.
+> **Fully-decorated fixed-class d2 plateau compatibility:** eliminate or rigidify distinct-support systems and zeta-balanced repeated correction cycles for one shell pair `S subset X`.
