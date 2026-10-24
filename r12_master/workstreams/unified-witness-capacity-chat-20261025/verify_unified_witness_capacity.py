@@ -238,6 +238,43 @@ def check_q33_label_array_relaxation() -> None:
     assert sum(row.count("p") for row in rows) == 7
 
 
+def check_exceptional_row_pair_bound() -> None:
+    # Enumerate every nonempty 2x2 forced-edge mask between exceptional rows.
+    # A nonzero intersection cell forces the corresponding C edge.
+    counts = {0: 0, 1: 0, 2: 0}
+    for mask in range(1, 16):
+        cells = [(r, c) for r in range(2) for c in range(2)
+                 if mask & (1 << (2 * r + c))]
+        k = len(cells)
+        left = {r for r, _ in cells}
+        right = {c for _, c in cells}
+        ell, cc = len(left), len(right)
+        eta = k + max(2 - ell, 2 - cc) - 2
+        assert eta >= 0
+        counts[eta] += 1
+
+        if k == 1:
+            assert eta == 0
+        elif k == 2:
+            # Two cells are either a matching (zero cost) or adjacent (cost one).
+            assert eta == (0 if ell == 2 and cc == 2 else 1)
+        elif k == 3:
+            assert eta == 1
+        else:
+            assert k == 4 and eta == 2
+
+    # Four one-cell masks + two matching masks cost zero;
+    # four adjacent two-cell masks + four three-cell masks cost one;
+    # the full mask costs two.
+    assert counts == {0: 6, 1: 8, 2: 1}
+
+    profiles = {(5, 5), (5, 4), (5, 3), (4, 4)}
+    for a, b in profiles:
+        assert 3 <= b <= a <= 5
+        assert 11 - a - b in (1, 2, 3)
+    assert all(11 - a - b in (1, 2, 3) for a, b in profiles)
+
+
 def main() -> None:
     check_zero_excess_endpoint_tables()
     check_edge_ledgers()
@@ -246,10 +283,12 @@ def main() -> None:
     check_partite_branch_capacity()
     check_pair_certificate_multiplicity()
     check_q33_label_array_relaxation()
+    check_exceptional_row_pair_bound()
     print("R12_UNIFIED_WITNESS_CAPACITY_ARITHMETIC_OK")
     print("Partite branch: exact Q33 incidence profile and labelled row caps verified.")
     print("Pair-certificate multiplicity: max 45 unlabelled / 9 label-anchored pairs.")
     print("Q33 label-only array relaxation verified; no block-coordinate realization implied.")
+    print("Exceptional-row 2x2 mask bound verified: costs 0/1/2 occur 6/8/1 times.")
     print("Scope: exact integer/degree ledgers only; no graph-realization certificate.")
 
 
