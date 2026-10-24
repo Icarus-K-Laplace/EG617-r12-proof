@@ -105,10 +105,10 @@ A_{\mathrm{ext}}^*(r)\land D_{\mathrm{low}}(r)\Longrightarrow P(r),
 It bypasses (H_B), (C^*), and the broad (H_D) classification. The only downstream requirement is to exclude the finite-offset near-anchor terminal family after the direct (5r+1) extraction theorem.
 
 The remaining (D_{\mathrm{low}}) contract is:
-- (delta=r): (|W|\in\{2r-4,2r-3,2r-2,2r-1\});
+- (delta=r): (|W|\in\{2r-4,2r-3,2r-2\});
 - (delta=r+1): (|W|\in\{2r-7,\ldots,2r-2\}).
 
-The high-degree (|W|=2r-1) layer is closed for (r\ge25); the low-degree (delta=r, |W|=2r-1) layer remains open.
+The |W|=2r−1 layer is now closed in both branches for (r\ge25): the high-degree branch uses the Cell A/B edge-count exclusions, and the low-degree branch uses the duplicate-anchor-incidence theorem in LOW_DEGREE_TOP_LAYER_CLOSURE.md.
 
 ## 11. d2 inequality verdict
 
