@@ -272,3 +272,47 @@ Therefore the E408 Q33 four-partite boundary must satisfy
 \boxed{\delta+\epsilon_U\le17,\qquad \epsilon_U+2\delta\ge8}.
 \]
 In particular delta cannot be 0 or 1. This does not yet eliminate the four-partite branch; it sharpens the remaining integer kernel without assuming that L is complete four-partite.
+
+
+## 12. E408 Q33 four-partite branch: exclude epsilon_U+2delta=8,9
+
+Continue under the four-partite E408 setup of Section 11. Let
+\[
+S_0=\epsilon_U+2\delta,
+\qquad x=114+S_0.
+\]
+Section 11 gives S_0>=8. We now prove the stronger necessary condition
+\[
+\boxed{S_0\ge10}.
+\]
+
+Suppose S_0 is 8 or 9. Let k be the number of W vertices with exactly seven neighbours in U. Section 11 proves that each such neighbourhood is exactly D, the seven-point part. Since every W vertex has at least seven neighbours in U,
+\[
+x\ge 7k+8(16-k)=128-k.
+\]
+As x=114+S_0 and k<=6, this forces k=6 when S_0=8, and k in {5,6} when S_0=9. The remaining 10 or 11 vertices therefore have neighbourhood size 8 or 9 only:
+- S_0=8: ten vertices of size 8;
+- S_0=9, k=6: nine of size 8 and one of size 9;
+- S_0=9, k=5: eleven of size 8.
+
+For a hitting set T of size 8 or 9, the block-incidence structure gives a simple classification. If T omits a point d in D, then the eight blocks containing d must be hit by vertices in A union B union C; pair uniqueness means at least eight such vertices are required. Thus a size-8 hitting set omitting D lies entirely in A union B union C, and a size-9 hitting set omitting D contains at most one point of D. If no one of the three large parts were fully contained in T, pair uniqueness at a missing point of each large part would force each large-part intersection to have size at most one (for |T|=8) or at most two (for |T|=9), too few to reach the required total size. Hence every size-8 or size-9 hitting set either contains all of D or contains an entire large part A, B, or C.
+
+At least three vertices of D have zero excess, so each has exactly six neighbours in W. The k vertices with neighbourhood D already use all k of these incidences. Therefore at most 6-k additional W vertices can have a neighbourhood containing D. Since there are 16-k vertices outside the size-7 class, at least
+\[
+(16-k)-(6-k)=10
+\]
+of them must have neighbourhood equal to a full large part.
+
+It remains to bound how many W vertices can be adjacent to a given large part G. For each pair of large parts, the eight pairs not used by Q blocks form a perfect matching: each vertex of either large part occurs in seven blocks, so exactly one of its eight possible partners is omitted. Thus each vertex of G has two potential H-neighbours in the other large parts, one from each of the two missing-pair matchings. The delta extra L-edges can affect at most delta vertices of G, so at least 8-delta vertices of G retain both H-neighbours. Since the excess sum in U is epsilon_U=S_0-2delta, at least
+\[
+8-\delta-\epsilon_U=8+\delta-S_0
+\]
+of these vertices have zero excess. Under S_0 in {8,9}, delta>=2 (otherwise epsilon_U=S_0-2delta>4), so this number is at least one. Such a vertex has core degree 12, degree 7+2=9 inside U, and therefore exactly three neighbours in W. Every W vertex whose neighbourhood contains the full group G is adjacent to this vertex, so at most three W vertices can have G as their full-group neighbourhood.
+
+There are three large parts, hence at most nine W vertices can have a full-large-part neighbourhood. This contradicts the ten required above. Therefore
+\[
+\boxed{\epsilon_U+2\delta\ge10}
+\]
+in the E408 Q33 four-partite branch.
+
+This closes the S_0=8 and S_0=9 layers only. The remaining four-partite integer kernel has S_0>=10, delta+epsilon_U<=17; it is still OPEN.
