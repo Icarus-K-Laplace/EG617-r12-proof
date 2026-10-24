@@ -9,7 +9,7 @@ Assume the Q33 minimum-support contract and that L=overline(H[U]) is four-partit
 \[
 |A|=|B|=|C|=8,\qquad |D|=7.
 \]
-Every pair of part sizes must have product at least 56 because the 56 witnesses use distinct cross-part pairs. A part of size at most six would force each other part to have size at least ten, impossible on 31 vertices. Thus the smallest part has size at least seven; if all four parts had size at least eight there would be at least 32 vertices. Hence the part sizes are exactly 8,8,8,7. Every pair between D and a large part occurs in exactly one witness, so all 7·8=56 such pairs are used. The eight unused pairs between any two large parts form a perfect matching: each vertex of one part appears in seven witnesses with seven distinct vertices of the other part.
+Every pair of part sizes must have product at least 56 because the 56 witnesses use distinct cross-part pairs. A part of size at most six would force each other part to have size at least ten, impossible on 31 vertices. Thus every part has size at least seven, and at most one part can have size seven because (7cdot7<56). If all four parts had size at least eight there would be at least 32 vertices. Hence exactly one part has size seven and the other three have size eight. Every pair between D and a large part occurs in exactly one witness, so all 7·8=56 such pairs are used. The eight unused pairs between any two large parts form a perfect matching: each vertex of one part appears in seven witnesses with seven distinct vertices of the other part.
 
 Consequences:
 - D is a clique K7 in H[U], and each d in D has exactly six H-neighbours inside U.
@@ -109,7 +109,7 @@ and in each case \(x_1+x_2+x_3\le1\).
 The three vertices with the smallest extra counts are pairwise adjacent and adjacent to all three vertices with the largest counts. If any pair among the latter three were adjacent, those five vertices together with D would form a K12. Hence the three large-extra vertices would have to be pairwise nonadjacent.
 
 For any such nonadjacent pair, the union of their extra-neighbour sets must cover a full large part by Lemma 2.1, since the pairwise size sum is at most ten. This is impossible in each of the three size profiles:
-- For (4,4,4), each pair of four-sets would have to be disjoint and equal to an eight-point large part. Three pairwise disjoint four-sets cannot all fit in an eight-point part.
+- For (4,4,4), every pair of four-sets must partition a large part. If (E_1\cup E_2=A) and (E_1\cup E_3=B), then (E_1\subseteq A\cap B), so (A=B) because distinct parts are disjoint. But then both (E_2) and (E_3) are the complement of (E_1) in A, so (E_2=E_3), whose union has size four and cannot cover a large part. Contradiction.
 - For (4,4,5), the two four-sets must partition a large part D'. The five-set would have to cover D' with each four-set, so it would have to contain both complementary four-sets, impossible.
 - For (3,5,5), each three-plus-five pair must partition the same eight-point part. Both five-sets would then be the same complement of the three-set, so they could not cover a part when paired with each other.
 
