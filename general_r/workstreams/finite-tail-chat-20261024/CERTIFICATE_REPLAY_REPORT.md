@@ -188,8 +188,8 @@ Source-proof scope: the registry's local audit fields explicitly mark upstream a
 
 The current front-recurrence source was checked at branch `workstream/general-r-front-recurrence-20261024`, commit `f5fd2b931049a0426cdbfadeeee6a4be740a4290`:
 
-- `LOW_ORDER_CUTOFF_THEOREMS.md` proves `M_r(2)<=2r-1` and `M_r(3)<=3r) for `r>=6` inside its abstract inherited-cap recurrence state contract.
+- `LOW_ORDER_CUTOFF_THEOREMS.md` proves `M_r(2)<=2r-1` and `M_r(3)<=3r for `r>=6` inside its abstract inherited-cap recurrence state contract.
 - At `r=4,5`, the source exhibits abstract-state counterexamples to extending the `M_r(2)` cutoff. These are **not** original graph colorings and do not refute EG617(r).
-- The source's potential-function theorem gives termination for `r>3) conditional on a finite sound seed/cutoff package; seed floors and all-state outer-budget dominance remain OPEN.
+- The source's potential-function theorem gives termination for `r>3` conditional on a finite sound seed/cutoff package; seed floors and all-state outer-budget dominance remain OPEN.
 
 These source facts are now explicit in matrix v1.1.0. They are admitted as contextual sublemmas only. For every `4<=r<12`, the complete original-graph reduction remains blocked; the matrix does not substitute a recurrence sublemma for it.
