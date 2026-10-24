@@ -170,3 +170,13 @@ The parameter-admission matrix explicitly keeps all of these distinctions. No so
 - CORE_CONTRACT: CONDITIONAL_ON_RC
 - THREE_PAIRWISE_NONADJACENT_DEGREE_R_ANCHORS: CONDITIONAL
 - R12_CONTEXTUAL_RECURRENCE_BRIDGE: OPEN
+
+
+### Front-recurrence source premises (not a full original-graph reduction)
+
+- FINITE_SOUND_SEED_CUTOFF_PACKAGE: CONDITIONAL
+- INHERITED_CAP_ABSTRACT_STATE_CONTRACT: CONDITIONAL
+- ANDRASFAI_ERDOS_SOS_THEOREM: PROVED_EXTERNAL
+- ALL_STATE_OUTER_BUDGET_DOMINANCE: OPEN
+
+The front-recurrence potential theorem applies for every r>3 only after a finite sound seed/cutoff package is supplied. The low-order cutoff theorem proves its M_r(2), M_r(3) sublemmas for r>=6; the r=4,5 examples are counterexamples to the abstract cutoff contract only. Neither fact alone proves or refutes EG617(r).
