@@ -10,11 +10,11 @@ Let p be a maximum-q degree-13 pivot in a legal 49-point residual F, with shell 
 
 `|S_y|=|D_y|=3`,
 
-where `S_y=N_M(y)` and `D_y=N_H(y)`. Write `N=|Y|), assume `q<=38`, and partition Y into common-missing-triple classes
+where `S_y=N_M(y)` and `D_y=N_H(y)`. Write `N=|Y|`, assume `q<=38`, and partition Y into common-missing-triple classes
 
 `Y_S={y in Y:S_y=S}`,
 
-with class size `n=|Y_S|).
+with class size `n=|Y_S|`.
 
 Then:
 
@@ -43,7 +43,7 @@ By the nonadjacent regular zero-gap identity in `backend/HIGH_LAYER_V3_JOINT_CAN
 
 `S_y union S_z=A`.
 
-But `|S_y union S_z|<=6<13=|A|`. This is impossible. Hence Y is a target clique. Since p is adjacent to every vertex in A, `{p} union Y` is a target clique of size N+1. The legal residual has `omega(F)<=11), so N<=10.
+But `|S_y union S_z|<=6<13=|A|`. This is impossible. Hence Y is a target clique. Since p is adjacent to every vertex in A, `{p} union Y` is a target clique of size N+1. The legal residual has `omega(F)<=11`, so N<=10.
 
 ### Step 2: missing triples live in the small complement
 
@@ -59,7 +59,7 @@ For each z in Y\Y_S, choose `x_z in S_z\S`, which is nonempty because S_z and S 
 
 `e_M(T)>=N-n`.
 
-Also `G_T>=0). There are no missing edges from Y_S to T, because every owner in Y_S is adjacent to every point outside its common missing triple. Hence
+Also `G_T>=0`. There are no missing edges from Y_S to T, because every owner in Y_S is adjacent to every point outside its common missing triple. Hence
 
 `B_S=e_M(A\S)+G_(A\S)=e_M(T)+G_T>=N-n`.
 
@@ -69,7 +69,7 @@ For any y in Y_S, the exact exchange formula from `HIGH_LAYER_V3_JOINT_CANONICAL
 
 `q_y=30+B_S+kappa(D_y)+mu(D_y)+e_F(S,D_y)`.
 
-Every term after B_S is nonnegative. Maximality gives `q_y<=q), so
+Every term after B_S is nonnegative. Maximality gives `q_y<=q`, so
 
 `0<=a_S:=q-30-B_S`.
 
@@ -77,7 +77,7 @@ Using `B_S>=N-n` gives
 
 `a_S<=q-30-N+n`.
 
-Rearranging `a_S>=0) gives `n>=N+30-q). The number of classes is bounded both by the number `binom(13-N,3)` of possible triples in Q and by the sum of their sizes N. This proves the theorem.
+Rearranging `a_S>=0` gives `n>=N+30-q`. The number of classes is bounded both by the number `binom(13-N,3)` of possible triples in Q and by the sum of their sizes N. This proves the theorem.
 
 ## Immediate consequences for the current frontier
 
@@ -85,10 +85,10 @@ The formula is useful because it localizes the remaining multi-S problem by **cl
 
 - **N=10:** Q has exactly three vertices, so all rows have the same missing triple.
 - **N=9, q<=34:** every occurring class has size at least5; two such classes would require at least10 owners. Thus all nine rows share one missing triple.
-- **N=9, q=35:** every occurring class has size at least4, so at most two classes occur. Each class has allowance `a_S<=n-4`; classes of size4 or5 are subcritical (`a_S<=1)).
-- **N=9, q=36:** every class has size at least3 and at most three classes occur. Classes of size at most5 have `a_S<=2); only a class of size at least6 can reach first-high-slack allowance3.
-- **N=9, q=37:** every class has size at least2; `a_S<=n-2). Classes of size at most4 are subcritical.
-- **N=9, q=38:** `a_S<=n-1). Classes of size at most3 are subcritical, and a size-4 class has allowance at most3.
+- **N=9, q=35:** every occurring class has size at least4, so at most two classes occur. Each class has allowance `a_S<=n-4`; classes of size4 or5 are subcritical (`a_S<=1`).
+- **N=9, q=36:** every class has size at least3 and at most three classes occur. Classes of size at most5 have `a_S<=2`; only a class of size at least6 can reach first-high-slack allowance3.
+- **N=9, q=37:** every class has size at least2; `a_S<=n-2`. Classes of size at most4 are subcritical.
+- **N=9, q=38:** `a_S<=n-1`. Classes of size at most3 are subcritical, and a size-4 class has allowance at most3.
 - For smaller N, the same exact formula applies. For example, at N=8 and q<=35, each class has `a_S<=n-3`; small classes are forced into subcritical or first-high-slack regimes.
 
 Whenever a class has `s=|S intersect X|<3`, these allowance bounds place it in the existing subcritical / first-high-slack / loss-layer machinery. If `s=3`, the lexicographic strict-loss argument is unavailable and the fully-decorated branch must be handled separately; this theorem does not silently apply the `s<3` lemmas to it.
