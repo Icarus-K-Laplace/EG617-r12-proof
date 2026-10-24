@@ -61,7 +61,7 @@ Canonical proof and graph-level sharpness note: [K-line LOW_SLACK_COORDINATIZATI
 
 ## 5. Exact remaining gap
 
-The old J/K neighborhood-low-slack bridge has an impossible premise under the full counterexample contract: K's Local Slack Gap Theorem gives s_i(x)>=r-1 for every x,i. The live Case B route is instead the alignment-free residual-excess theorem in ALIGNMENT_FREE_WITNESS_RIGIDITY.md, which extracts a q-net from R=V\\X. That net is genuine geometry, but its blocks are not shown to lie in a deletion shell and it does not yet imply a contradiction.
+The old J/K neighborhood-low-slack bridge has an impossible premise under the full counterexample contract: K's Local Slack Gap Theorem gives s_i(x)>=r-1 for every x,i. The live Case B route is instead the alignment-free residual-excess theorem in ALIGNMENT_FREE_WITNESS_RIGIDITY.md, which extracts a q-net from R=V minus X. That net is genuine geometry, but its blocks are not shown to lie in a deletion shell and it does not yet imply a contradiction.
 
 The abstract hypergraph example with two disjoint clusters of all r-subsets still shows that matching/transversal data alone are insufficient to force affine geometry.
 
@@ -83,7 +83,7 @@ The abstract hypergraph example with two disjoint clusters of all r-subsets stil
 
 ## 7. Alignment-free residual witness theorem (new)
 
-In Case B, let R=V\\X and b_i=e(G_i[R])-m_{r-1} for i != c. The exact residual budget gives
+In Case B, let R=V minus X and b_i=e(G_i[R])-m_{r-1} for i != c. The exact residual budget gives
 
 \[
 b_i\ge0,\qquad \sum_{i\ne c}b_i\le \binom{r-1}{2}.
