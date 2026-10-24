@@ -377,57 +377,43 @@ Fix `a>=6`. For all sufficiently large `r`, any first `K_r`-free canonical stop 
 
 Every block has one vertex from each target group; any two blocks share at most one vertex; and blocks of a common non-target color form a partial parallel class.
 
-**Proof.** Let `C=binom(a,2)`. The exact excess ledger gives
-
-`sum_{i>0} x_i<=S_a(r)<=Cr` for `r>=a`.
-
-The predecessor label-capacity lemma gives
+**Proof.** The exact predecessor identity gives
 
 `sum_{i>0} z_i=n-q_0<=ar+1<=(a+1)r`.
 
-Call a non-target color `i` good if
+Call a non-target color `i` good when `z_i<=2(a+1)sqrt(r)`. Markov counting shows that fewer than `sqrt(r)/2` colors are bad, so at least
 
-`x_i<=2C sqrt(r)` and `z_i<=2(a+1)sqrt(r)`.
+`r-1-sqrt(r)/2`
 
-By Markov counting, at most `sqrt(r)/2` colors violate the first bound and at most `sqrt(r)/2` violate the second. Therefore at least
-
-`r-1-sqrt(r)`
-
-colors are good.
-
-For a good color `i`, the exact hole identity
+colors are good. The exact hole identity
 
 `sum_{b in B}(a-|S_{i,b}|)=z_i-1`
 
-implies that at least `r-z_i+1>=r-2(a+1)sqrt(r)+1` of its label classes have size exactly `a`.
+implies that a good color has at least `r-2(a+1)sqrt(r)+1` label classes of size exactly `a`.
 
-By the hub theorem, for fixed `a` and sufficiently large `r`, there is a hub set `X` of size `O_a(1)` such that every target ideal group minus `X` is a target-color clique. At most `|X|` label classes of any one color meet `X`. Hence every good color contributes at least
+By the fixed-`a` hub theorem, the target ideal groups have sizes `r+O_a(1)` and there is a set `X` of size `O_a(1)` such that each group minus `X` is a target-color clique. Since the classes `S_{i,b}` for a fixed color are disjoint, at most `|X|` classes meet `X`. Every remaining size-`a` class is target-independent and intersects each clean target group at most once, hence is an exact transversal.
 
-`r-2(a+1)sqrt(r)+1-|X|`
+Blocks of one color are disjoint; blocks of distinct colors share at most one point because every vertex pair has only one color. Therefore the clean blocks form a partial resolvable transversal design with at least
 
-size-`a` classes disjoint from `X`. Each such class is target-independent, so it intersects every clean target group in at most one vertex. Its size is `a`, so it is an exact transversal of all `a` groups.
-
-Classes of one color are disjoint. Classes of different colors cannot share two vertices, because their shared pair would have two distinct colors. Thus the clean transversal blocks form a partial resolvable transversal design, with at least
-
-`(r-1-sqrt(r))(r-2(a+1)sqrt(r)+1-O_a(1)) = r^2-O_a(r^(3/2))`
+`(r-1-sqrt(r)/2)(r-2(a+1)sqrt(r)+1-O_a(1)) = r^2-(2a+5/2)r^(3/2)-O_a(r)`
 
 blocks. \(\square\)
 
 ### Explicit `a=6` bound
 
-For `a=6`, `S_6=14r+6<=15r` and `sum_i z_i<=6r+1<=7r`. Thus at most `sqrt(r)/2` colors have `x_i>30sqrt(r)`, and at most `sqrt(r)/2` have `z_i>14sqrt(r)`. At least `r-1-sqrt(r)` colors satisfy both bounds.
+For `a=6`, `sum_i z_i<=6r+1<=7r`, so fewer than `sqrt(r)/2` colors have `z_i>14sqrt(r)`. At least `r-1-sqrt(r)/2` colors are good.
 
-For `r>=1000`, the cylinder theorem gives `|X|<=116`. Each good color therefore contributes at least
+The Brouwer-tightened hub theorem gives `|X|<=74` and target group sizes `r-8` through `r+9` for `r>=1000`. Each good color contributes at least
 
-`r-14sqrt(r)-115`
+`r-14sqrt(r)-73`
 
-clean transversal blocks. In total, the first-stop `R_6` contains a pairwise-linear partial resolvable transversal design on six groups of sizes `r+O(1)` with at least
+clean transversal blocks. Thus the first-stop `R_6` contains a pairwise-linear partial resolvable transversal design on six groups with at least
 
-`(r-1-sqrt(r))(r-14sqrt(r)-115) >= r^2-15r^(3/2)-102r`
+`(r-1-sqrt(r)/2)(r-14sqrt(r)-73) >= r^2-(29/2)r^(3/2)-67r`
 
-blocks.
+blocks for `r>=1000`.
 
-Equivalently, all but `O(r^(3/2))` cross-group pairs are covered by exactly one of these clean blocks. This is a near-complete `TD(6,r)`-type geometry, not yet an exact `TD(6,r)` and not yet a contradiction.
+Equivalently, all but `O(r^(3/2))` cross-group pairs are covered by exactly one clean block. This is a near-complete `TD(6,r)`-type geometry, not an exact design and not a contradiction.
 
 ### Why this matters / remaining gap
 
@@ -546,4 +532,4 @@ For `a=6`, the total non-target excess above the sharp individual floor is at mo
 \boxed{\texttt{NO-HIGH-STOP = OPEN}.}
 ]
 
-The critical-core potential has reduced the (a=6) case to four explicit residue windows, the color partitions form a global near-resolvable design, and any high stop forces an almost-complete partial resolvable TD(6,r) with `r^2-O(r^(3/2))` blocks plus a hub kernel of size at most 74 for `r>=1000`. Brouwer floors now sharpen the excess vector, but the explicit abstract ledger countermodel shows scalar and pair-count constraints still do not contradict a high stop. The next highest-leverage step is to align the equality/small-defect Brouwer templates with the exact predecessor classes and derive a joint incidence-packing contradiction.
+The critical-core potential has reduced the (a=6) case to four explicit residue windows, the color partitions form a global near-resolvable design, and any high stop forces an almost-complete partial resolvable TD(6,r) with at least `r^2-(29/2)r^(3/2)-67r` blocks plus a hub kernel of size at most 74 for `r>=1000`. Brouwer floors now sharpen the excess vector, but the explicit abstract ledger countermodel shows scalar and pair-count constraints still do not contradict a high stop. The next highest-leverage step is to align the equality/small-defect Brouwer templates with the exact predecessor classes and derive a joint incidence-packing contradiction.
