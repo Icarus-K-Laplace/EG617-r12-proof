@@ -147,3 +147,34 @@ The remaining task is a **global pair-disjointness / trap-completion inequality*
 - Exact-core route: **OPEN**.
 - Robust nonextension D4: **OPEN**.
 - No sufficiently-large-(r) closure is claimed.
+
+
+## 2026-10-24 — mandatory correction after adversarial audit
+
+This section **supersedes the preceding initial Hub Propagation claim**.
+
+### Withdrawn claims
+
+1. The unconditional claim `d_i<=5 => (6-d_i)(r-1)` edits for every off-hub repeated pair is **DISPROVED as stated**. Its proof incorrectly assumed that every selected same-group pair is target-colored, overlooking hub-incident target deletions and blocks with no ordinary point of a given target group.
+2. The proposed (d_i=6) singleton/4-block pattern was not a valid (\alpha(G_i)\le r) example: an independent set can double two missing repeated-group pairs and omit the special cover block. It is withdrawn.
+3. Therefore the prior statement “at most 27 colors have a low-incidence off-hub pair” is withdrawn.
+
+### Valid replacement results
+
+- **Conditional ordinary-label cylinder lemma:** if some (k\ne j) has a point in (B_k\setminus X) in every block other than the block containing the missing pair (uv\subset B_j\setminus X), then (|E(G_i)\triangle E(Q_i)|\ge r-1). This proof is valid because every selected same-group pair is target-colored.
+- **K6 exclusion:** since (\alpha(G_0)\le5), every non-target color graph (G_i) is (K_6)-free. Hence a full star from a vertex to a clean 5-clique ideal block is forbidden.
+- **Cheap local one-color cover audit:** a (d_i=1) ideal partition with one repeated pair (uv) can be made (\alpha(G_i)\le r) at constant cost by joining (u) to a whole transversal block. But then (u\cup C\) is a (K_6) in (G_i), violating the full target-α contract. This is not a full-terminal counterexample; it identifies the missing joint constraint.
+- **Exact budget identity:** (A=9r+5-\Delta_0+D-S_{\rm non}), with (A) target cross edges, (D) target internal deletions, and (S_{\rm non}=\sum_{i>0}s_i).
+
+### Current blocker
+
+The genuine next theorem is a **defect-chain cost theorem**: any one-block cylinder cover must create another defect to avoid a (K_6); that defect needs its own cover. Prove that the resulting chain/cycle exceeds the combined (O(r)) non-target slack and target cross-cover budget, counting each pair once. The current work does not yet prove that lower bound.
+
+### Corrected asset commits
+
+- Corrected `HUB_PROPAGATION_THEOREM.md`: `4c9c9b38d5e05b47108638cae1cfd93a10775c09`.
+- Corrected `MULTICOLOR_DEFECT_BUDGET.md`: `d73eaecb8abc865751177ec6f79c97e2afc2474e`.
+- Corrected `ROBUST_EXACT_CORE.md`: `4a12f2eb296393a86437b2c6eed6d6cbfe26dfc2`.
+- Corrected `NONEXTENSION_CLOSURE.md`: `86405ff8a9a1aa5c7a3b050645d58b7db2d68318`.
+
+Current status remains: full Hub Propagation **OPEN**; exact-core route **OPEN**; robust nonextension **OPEN**. No general-r terminal closure is claimed.
