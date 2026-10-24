@@ -120,3 +120,9 @@ No theorem gap remains in this workstream. The highest-value action is external/
 - Added an explicit exactness conclusion in both r=12 overlap branches: the two connector excesses plus the six-unit rectangle charge exhaust K, so every other vertex (including focused connectors) is exact.
 - Expanded the second c=4 overlap derivation to show the degree inequality, the max-charge bound, the positive-excess exclusion, and the remaining (1,8)/(8,1) signatures without relying on an implicit “same argument”.
 - Final publication proof commits: 032d66697fd59a408256f2de248a4cff76b750bc; 7b3628dd01cfb5788b4c49674bd65cf29c9c9ef4; 94f5fbd6fa2e2c0ff0fb79c28dd84c34e5d4e79c; 9725336511b03575d241703565eced6fb8bc4aa0.
+
+
+## 2026-10-24 — final wording consistency check
+
+- Aligned LEMMA_VERIFICATION.md wording with the committed arithmetic script: the script enumerates and asserts the 19 c=3, r=12 signatures; the complete table is displayed in PUBLICATION_VERSION.md, while the script's stdout reports the count and exceptional rows rather than printing every row.
+- Commit: b5a8845c3e0d373d0afbea6bb051671bc1d3c81c
