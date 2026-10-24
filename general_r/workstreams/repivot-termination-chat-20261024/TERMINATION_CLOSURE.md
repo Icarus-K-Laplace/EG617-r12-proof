@@ -88,7 +88,7 @@ so the optional cross-block graph has maximum degree at most four. This conclusi
 
 ## C-N8 — Off-part witness excess: PROVED_CONDITIONAL
 
-If an outside vertex has no same-part pair of fully-seen witness classes, a residual class triple with relation pattern (optional, matching, empty) forces at least a-4 additional neighbours in U. Therefore
+If an outside vertex has no same-part pair of fully-seen witness classes, a residual class triple with relation pattern (optional, matching, empty) forces at least lambda-4 additional neighbours in U. Therefore
 
 kappa_o>=3lambda-4-r>=8.
 
