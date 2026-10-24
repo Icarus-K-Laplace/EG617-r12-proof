@@ -119,3 +119,20 @@ The latest E408 Q33 branch head is fec0100abbb6124d1efdad39f2f4b352e1c8bc76 (com
 ### Remaining gap
 
 The new inequality does not force a positive duplicate cost when the intersection cells form one cell or a two-cell matching. Identical exceptional complement pairs across all low-slack blocks remain a compatible relaxation. A further theorem must show that the actual gadget and seven-block labels force non-matching patterns often enough, or couple them to the core K4 coordinates. EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 continuation — exceptional-row alpha-two theorem
+
+Strengthened the outer coupling result. For any exact-129 color C, collect the two exceptional rows from every block with \(r_i(C)\le3\). The induced C-graph on this collection has
+\[
+\boxed{\alpha\le2.}
+\]
+
+Proof: a pairwise nonadjacent triple has pairwise-disjoint complementary gadget cliques, each of size at least three. The three rows have at least 22 incidences into the 11-point gadget but at most 24 total neighborhood incidences (at most 22 if two rows are from one block). Hence at most two incidences lie outside the gadget, too few to cover a K5 component. Choosing one vertex from each of the ten isolated K5 components and adding the three rows would give a C-independent 13-set.
+
+Consequences:
+- Between any two low-slack blocks, the C-nonedges among their four exceptional rows form a matching; hence there are at least two C-edges among the four rows.
+- For k low-slack blocks, the exceptional-row graph has at least \(k(k-1)\) edges. Equality in the alpha<=2 Turan bound forces it to be \(K_k\dot\cup K_k\), so the two exceptional rows in each block occupy opposite cliques.
+- This equality structure is compatible with the two-type exceptional-row pattern. Extra edges cost duplicate budget, but no contradiction has yet been derived from the current global budgets.
+
+The updated verifier includes finite arithmetic checks for the alpha-two argument and Turan equality. Independent replay passed: EXCEPTIONAL_ROW_ALPHA2_REPLAY_OK. EG617(r=12) remains OPEN / NOT_CERTIFIED.
