@@ -55,9 +55,16 @@ SOURCE_REGISTRY = [
         "assumption_ids": ["RC", "NEAR_ANCHOR_TERMINAL_CONTRACT"],
         "terminal_contract": "broad near-anchor contract of the asymptotic synthesis; not interchangeable with the exact-three-independent-degree-r-anchor theorem",
         "source_branch": "workstream/general-r-asymptotic-20261024",
-        "source_commit": "aa7fbbda16ff0170c9bf7c440ca961a7a8aab3c0",
-        "source_path": "general_r/workstreams/asymptotic-chat-20261024/CANONICAL_STATE.md",
-        "source_blob_sha": "f4b8741a8d6c78044a81dccee229d2c5e4eb0ea8",
+        "source_commit": "cd38647f85de9827a784288e69bad7a66d1e4e3a",
+        "source_path": "general_r/workstreams/asymptotic-chat-20261024/HYPOTHESIS_SENSITIVITY.md",
+        "source_blob_sha": "174e162e197d087e6edb9fde561a7875bf028d20",
+        "latest_sync": {
+            "branch": "workstream/general-r-asymptotic-20261024",
+            "commit": "aa7fbbda16ff0170c9bf7c440ca961a7a8aab3c0",
+            "path": "general_r/workstreams/asymptotic-chat-20261024/CANONICAL_STATE.md",
+            "blob_sha": "f4b8741a8d6c78044a81dccee229d2c5e4eb0ea8",
+            "meaning": "latest branch-level status sync; preserves the same broad r>=68 applicability and says A_ext, C*, D remain open"
+        },
         "theorem_status": "PROVED_ANALYTIC_FOR_R_GE_68"
     },
     {
