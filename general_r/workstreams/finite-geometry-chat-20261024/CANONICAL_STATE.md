@@ -34,7 +34,7 @@ See TRANSVERSAL_BLOCKER_LEMMA.md. If B_1,...,B_q are nonempty parts of sizes b_a
 
 Hence |E(F)|>=min_{a<b} b_a b_b, and if all parts have size at least k then |E(F)|>=k^2.
 
-Applied to a low-slack color i, the only edges that can block transversals are the defect edges whose two endpoints both lie in the non-i-neighbor residual parts B_a. If all B_a are nonempty, these edges satisfy the weighted bound; defect edges outside the residual parts do not help.
+Applied to a low-slack color i, the only edges that can block transversals are the defect edges whose two endpoints both lie in the residual non-i-neighbor parts B_a. If all B_a are nonempty, these edges satisfy the weighted bound; defect edges outside the residual parts do not help.
 
 ### 4. Global slack dictionary
 
@@ -49,7 +49,7 @@ If at most one color is low-slack at x, then sum_i s_i(x)>=(q-1)^2, compatible w
 - Two low-slack colors give two orthogonal partitions only.
 - q being a prime power does not coordinatize arbitrary extracted partitions.
 - Three full size-q blocks in distinct directions with pairwise intersections at most one would exceed a 2q-1 shell, but no such blocks have been extracted from compression failure.
-- The J/K bridge is conditional: if a tight transversal X contains x_0 and a color i != c is low-slack on V minus {x_0}, then the private witnesses of color i are confined to a bounded number of clique blocks, with exact bound floor((2q-1)/(q-s_i).
+- The J/K bridge is conditional: if a tight transversal X contains x_0 and a color i != c is low-slack on V minus {x_0}, then private witnesses of color i are confined to at most floor((2q-1)/(q-s_i)) clique blocks.
 
 ## Current verdict
 
