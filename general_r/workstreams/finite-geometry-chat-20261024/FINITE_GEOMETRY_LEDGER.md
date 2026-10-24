@@ -42,9 +42,9 @@ A Kakeya set in AG(2,q) over F_q contains a full affine line in every one of the
 |K|\ge\frac{q(q+1)}2+\frac{q-1}2.
 \]
 
-Reference: A. Blokhuis and F. Mazzocca, “The Finite Field Kakeya Problem,” arXiv:0911.4370. This assumes the Desarguesian affine plane over a finite field and a full line in every direction; it cannot be applied to an arbitrary coloring or to two orthogonal partitions. For even q, the elementary all-direction pair-intersection bound is q(q+1)/2.
+Published reference: A. Blokhuis and F. Mazzocca, “The finite field Kakeya problem,” in M. Grötschel and G.O.H. Katona (eds.), *Building Bridges: Between Mathematics and Computer Science*, Bolyai Society Mathematical Studies 19, Springer, 2008, pp. 205–218, DOI https://doi.org/10.1007/978-3-540-85221-6_6. Preprint: https://arxiv.org/abs/0911.4370. For even q, the elementary all-direction pair-intersection bound is q(q+1)/2.
 
-The sharp Kakeya theorem is not needed for the present shell calculation: three extracted full directions would already suffice. However, no such extraction has been proved.
+The sharp Kakeya theorem assumes the Desarguesian affine plane over a finite field and a full line in every direction; it cannot be applied to an arbitrary coloring or to two orthogonal partitions. The sharp bound is not needed for the present shell calculation: three extracted full directions would already suffice. However, no such extraction has been proved.
 
 ## 5. Prime-power warning
 
