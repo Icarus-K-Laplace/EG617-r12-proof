@@ -4,11 +4,18 @@
 
 > **Endpoint Repivot Stability Theorem.** For every sufficiently large r, under hypotheses A+B, every admissible local pivot view either admits a strict increase of a bounded lexicographic repivot potential or belongs to a finite r-independent family of rigid endpoint configurations, all of which are impossible.
 
-The final contradiction theorem is **OPEN**. What is now proved is a fixed-width endpoint theorem plus a genuine third potential coordinate and a two-state classification of the repeated correction-cycle branch.
+The final contradiction theorem is **OPEN**.
+
+The audited backend setup is
+
+- `alpha(F)<=4`, `omega(F)<=r-1`;
+- core `H` has `alpha(H)<=3`, `omega(H)<=r-1`, `delta(H)>=r`.
+
+Independent 4-sets in F are **not** forbidden. All statements below respect this distinction.
 
 ---
 
-# Theorem A — Conditional Fixed-Width Endpoint Compression
+# Theorem A — Conditional Fixed-Width Shell Endpoint Compression
 
 Assume A+B and `r>=12`.
 
@@ -24,7 +31,7 @@ Moreover:
 4. d3 is eliminated by the equality B-floor plus the declared low-charge Bridge-B absorption;
 5. all high owners `d>=r-2` number at most three and form a bounded-complement kernel.
 
-Thus the shell-side endpoint type count is absolute-constant in r.
+Thus the **shell-side** endpoint type count is absolute-constant in r.
 
 **Status:** `PROVED_CONDITIONAL`.
 
@@ -95,7 +102,7 @@ This achieves Level 3 high-endpoint reduction.
 
 ---
 
-# Theorem E — Genuine third potential coordinate
+# Theorem E — Exact third potential coordinate
 
 Define
 
@@ -105,25 +112,27 @@ and
 
 > **`Phi_3=(q,tau,zeta)`.**
 
-Zeta is bounded and invariant under d0 neutral relabellings.
+For the complete exact class `Y_{S,D}(p)` of multiplicity m containing a repivot owner y,
 
-If an exact repeated `(S,D)` class has multiplicity m, repivoting one owner makes the other `m-1` owners d0, while every old d0 owner together with p becomes a reverse `(D,S)` owner. Hence
+> **`zeta(y)=m-1`,**
+>
+> **`m_y(D,S)=zeta(p)+1`.**
 
-`zeta(new)>=m-1`.
+Thus `(m,zeta)->(zeta+1,m-1)` is an exact involution.
 
-Thus on a q/tau-flat move,
+On a q/tau-flat move:
 
-> `m>=zeta+2 =>` strict `Phi_3` improvement.
+- `m>=zeta+2` strictly improves `Phi_3`;
+- `m=zeta+1` is exactly `Phi_3`-flat;
+- `m<=zeta` lowers zeta.
 
-At `Phi_3` maximality,
+A distinct exact class has m=1, so every q/tau-flat distinct-class move sends zeta exactly to zero. Therefore a genuinely `Phi_3`-flat distinct-support move lies in the neutral-free slice `zeta=0`.
 
-> `m<=zeta+1`.
-
-If k distinct exact repeated classes admit `Phi_3`-flat exchanges, every one has multiplicity `zeta+1` and
+If k repeated exact classes simultaneously admit `Phi_3`-flat exchanges, then
 
 > **`(k+1)(zeta+1)<=r-1`.**
 
-**Status:** zeta monotonicity `PROVED_SYMBOLIC`; clique-capacity product bound `PROVED_CONDITIONAL`.
+**Status:** exact involution `PROVED_SYMBOLIC`; clique-capacity product bound `PROVED_CONDITIONAL`.
 
 Full Level 4 is not yet certified because distinct-support plateau moves remain.
 
@@ -145,33 +154,17 @@ Then
 
 `F[C_0 union C_1]=K_(2m)`.
 
-All pivots in C0 are d0-neutral representatives of one core state H. All pivots in C1 are d0-neutral representatives of the reverse core state
+Modulo neutral relabellings, the entire repeated correction orbit is exactly
 
-`H'=(H\D) union S`.
+> **`H <--> H'=(H\D) union S`.**
 
-Modulo neutral relabellings, the entire repeated correction orbit is therefore exactly
+There is no longer correction cycle in this branch.
 
-> **`H <--> H'`.**
-
-No longer correction cycle exists in this branch.
-
-The d2 allowance is invariant:
-
-> `a_reverse=a_forward`.
-
-If
-
-`b=e_M(S)`, `mu=1-e_H(D)`,
-
-then the two chambers exchange
-
-`b <-> mu`
-
-and the exchanged-pair excess satisfies
+The d2 allowance is invariant. If `b=e_M(S)` and `mu=1-e_H(D)`, the chambers exchange `b <-> mu`, and
 
 > `kappa_H(D)-kappa_(H')(S)=b-mu`.
 
-Thus the repeated correction-cycle problem is compressed to one symbolic two-chamber terminal family with
+Thus the repeated branch is one two-state symbolic terminal with
 
 `m<=floor((r-1)/2)`.
 
@@ -179,30 +172,32 @@ Thus the repeated correction-cycle problem is compressed to one symbolic two-cha
 
 ---
 
-# Theorem G — Missing-Pair / Neutral-Population Bound
+# Theorem G — Distinct fully-decorated d2 reduction
 
-For a target-nonedge core pair D, its common H-nonneighbour clique has size at least
+Work in one fixed fully decorated shell class `S subset X` on the genuine `Phi_3`-flat distinct slice `zeta=0`. Let Q be the simple graph of distinct q-flat core 2-supports.
 
-`r-3-kappa(D)`.
+For every support `xy`,
 
-Adding p and all zeta d0 owners and using the global clique cap gives
+> `w_x+w_y+mu(xy)=a`.
 
-> **`kappa(D)>=zeta-1`.**
+For two same-shell-class owners with supports `D_i,D_j`, after repivoting through `D_i` the other owner has new missing degree
 
-If D supports a q-flat d2 owner of allowance a, then
+> **`2-|D_i intersect D_j|`.**
 
-> **`a>=zeta`.**
+Hence repeated / one-point-overlap / disjoint supports induce d0 / d1 / d2 correction transitions respectively.
 
-Hence if `a<zeta`, every q-flat d2 support is a target edge.
+The following are proved using only valid core row-closure / `alpha(H)<=3` arguments:
 
-At `a=zeta`, a nonedge support has the rigid boundary
+- `a=0`: `|E(Q)|<=3`;
+- `a=1`: `|E(Q)|<=12`;
+- for `a>=2`,
+  > **`nu(Q)(a-1)<=W<=4r+9-a`;**
+- at `a=2`, all zero-weight support vertices number at most three, and the `(1,1)` target-support subgraph has maximum degree at most three;
+- the induced hereditary capacity inequality from `D2_DISTINCT_SUPPORT_REDUCTION.md` holds in its stated range.
 
-- `kappa(D)=zeta-1`;
-- no common H target-neighbour;
-- `e_F(S,D)=0`;
-- saturated common-nonneighbour clique.
+**Status:** `PROVED_CONDITIONAL`.
 
-**Status:** `PROVED_SYMBOLIC` under the standard global alpha/omega caps.
+The attempted stronger claim `nu(Q)<=3` independent of allowance is **retracted**: it incorrectly used `alpha(F)<=3`. The actual backend has `alpha(F)<=4`.
 
 ---
 
@@ -222,11 +217,23 @@ A three-class exact-one-loss common-hub subsystem requires
 
 # Theorem I — Plateau cycle rigidity
 
-A closed `(q,tau)`-non-improving cycle is q/tau-flat edgewise. Repeated-class edges are controlled by zeta. When zeta is also flat, Theorem F shows that the repeated part of the cycle has only two quotient states.
+A closed `(q,tau)`-non-improving cycle is q/tau-flat edgewise. Repeated-class edges are controlled exactly by zeta. If zeta is also flat, Theorem F collapses the repeated part to a two-state involution.
 
-Therefore the only correction-cycle complexity not already collapsed to a two-state involution must come from **distinct-support fully-decorated d2 moves**.
+Thus the unresolved correction complexity lies in distinct-support fully-decorated d2 moves, especially allowance `a>=2`.
 
 **Status:** `PROVED_SYMBOLIC` / `PROVED_CONDITIONAL` as above.
+
+---
+
+# Explicit audit retractions
+
+The earlier `Missing-Pair / Neutral-Population Bound` is **not a theorem** under the actual backend. In particular the statements
+
+`kappa(D)>=zeta-1`, `a>=zeta`
+
+must not be used; they relied on treating an independent 4-set in F as forbidden.
+
+Likewise the allowance-independent distinct-support `nu(Q)<=3` / six-hub collapse is retracted for the same reason.
 
 ---
 
@@ -236,48 +243,43 @@ Current preferred potential:
 
 > **`Phi=(q,tau,zeta,...)`.**
 
-The first three coordinates are genuine bounded integer coordinates, and zeta has a proved strict-improvement theorem on repeated q/tau plateaux.
+The first three coordinates are genuine bounded integer coordinates, with an exact class-exchange law for zeta.
 
-The exact bounded candidate fourth coordinate remains
+The bounded candidate fourth coordinate remains
 
 `Q2=sum_{v in H}kappa_v^2`.
 
 Universal Q2 monotonicity is open.
 
-A fourth coordinate is now needed primarily for the **distinct-support fully-decorated d2 plateau**. The repeated branch is already a single symbolic two-chamber terminal.
+A fourth coordinate is now needed primarily for the fully-decorated distinct-support d2 plateau with `a>=2`.
 
 ---
 
 # Remaining route to Level 4 / Level 5
 
-The only scalable source of new combinatorial complexity is:
+The principal scalable branch is:
 
-> a fixed fully decorated d2 shell pair `S subset X` with many **distinct** q-flat core 2-supports.
+> a fixed fully decorated d2 shell pair `S subset X`, `zeta=0`, with many distinct q-flat supports and allowance `a>=2`.
 
-The repeated part has already collapsed to the Balanced Two-Chamber family. Nonedge supports require `a>=zeta`; below that threshold only target-edge supports survive.
+The repeated part has already collapsed to the Balanced Two-Chamber family. The distinct branch is absolutely bounded for `a=0,1` and partially structured at `a=2`.
 
-The next target is therefore:
+The next target is:
 
-> **Fully-Decorated Distinct-Support Theorem.** For a fixed decorated pair S, every `Phi_3`-maximal family of distinct q-flat supports either admits a strict fourth-coordinate improvement or collapses to a finite weighted support skeleton.
+> **Allowance-2 Distinct-Support Closure.** Eliminate or finitely classify the max-degree-three weighted support graph at `a=2`, preferably via d1 correction transitions, row closure, or a fourth bounded potential.
 
-After that theorem, only two bounded symbolic terminals remain to kill:
-
-1. the finite distinct-support skeleton;
-2. the Balanced Two-Chamber Correction Block.
-
-A hereditary/equality contradiction for those terminals would yield the desired all-large-r theorem.
+A successful `a=2` theorem should then indicate the scalable mechanism for general allowance.
 
 ---
 
 # Certified success level
 
 - Level 1: d3 closure obtained.
-- Level 2: full low-endpoint elimination not yet; all non-fully-decorated d2 plateau classes are O(1)-bounded.
+- Level 2: full low-endpoint elimination not yet; shell geometry is fixed-width and non-fully-decorated d2 plateaux are O(1)-bounded.
 - **Level 3: achieved** — high endpoint is a finite three-owner bounded-complement skeleton.
-- Level 4: not yet achieved, but `Phi_3=(q,tau,zeta)` is a genuine three-coordinate potential with a proved repeated-support improvement theorem.
+- Level 4: not yet achieved, but `Phi_3=(q,tau,zeta)` is a genuine three-coordinate potential with exact class-exchange dynamics.
 - Level 5: open — no certified absolute r0 yet.
 - Level 6: open.
 
 # Single blocker
 
-> **Fully-decorated distinct-support d2 plateau theorem.** The repeated correction-cycle branch has been compressed to a single two-chamber symbolic terminal; distinct q-flat supports are the only remaining scalable combinatorial mechanism.
+> **Fully-decorated distinct-support d2 plateau at allowance `a>=2`, beginning with complete closure of `a=2`.**
