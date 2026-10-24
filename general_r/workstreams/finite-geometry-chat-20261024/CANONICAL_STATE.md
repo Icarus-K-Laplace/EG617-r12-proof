@@ -111,7 +111,7 @@ This is a new exact multicolor rigidity theorem, but not an EG617 contradiction 
 
 New cross-workstream theorem: RESIDUAL_MULTINET_EXTRACTION.md. It cites J branch commit 009a546cf0d66e4060a601bba168674214e7ac6c and does not copy an unverified proof.
 
-Under J's Case B contract, put q=r-1 and R=V\\X, |R|=q². The residual excesses of the q colors i!=c satisfy b_i>=0 and sum b_i<=C(q,2). Therefore at least ceil(q/2) colors have b_i<=q-2. For q>=3, Brouwer's threshold gives a q-clique partition for each such color, and any two of these partitions are orthogonal. Hence Case B forces a q-net with at least ceil(q/2) directions.
+Under J's Case B contract, put q=r-1 and R=V minus X, |R|=q². The residual excesses of the q colors i!=c satisfy b_i>=0 and sum b_i<=C(q,2). Therefore at least ceil(q/2) colors have b_i<=q-2. For q>=3, Brouwer's threshold gives a q-clique partition for each such color, and any two of these partitions are orthogonal. Hence Case B forces a q-net with at least ceil(q/2) directions.
 
 Exact consequence: N(q)>=ceil(q/2)-2 MOLS of order q. In particular, a hypothetical r=11 Case B counterexample forces three MOLS(10), whose existence remains open (Bright–Keita–Stevens, EJC 33(1) (2026), DOI 10.37236/13960). This is a conditional structural reduction, not a contradiction.
 
