@@ -46,7 +46,7 @@ because their within-part edge count is at most \(e(H[W])\le34\). The number of 
 | 15 | 1 | 32 | (4,4,5,5) | 0 |
 | 16 | 0 | 32 | (4,4,5,5) | 0 |
 
-For \(\delta=16\), FOUR_PARTITE_TERMINAL.md now excludes the entire branch: after forcing \(H[W]=K_5\cup K_5\cup K_4\cup K_4\), every endpoint split leads to a degree-excess contradiction. For \(\delta=14,15\), the remaining \(W\)-part profiles are not yet reconciled with the five shell templates.
+For \(\delta=16\), FOUR_PARTITE_TERMINAL.md forces the exact \(H[W]=K_5\cup K_5\cup K_4\cup K_4\) structure and excludes the \(4+1\) and \(3+2\) endpoint splits, but the \(5+0\) labelled kernel remains OPEN. For \(\delta=14,15\), the remaining \(W\)-part profiles are not yet reconciled with the five shell templates.
 
 ## 3. Next minimal obstacle
 
