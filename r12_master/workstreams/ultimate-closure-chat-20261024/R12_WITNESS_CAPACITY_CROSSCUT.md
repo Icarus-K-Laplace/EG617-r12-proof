@@ -157,3 +157,12 @@ Therefore, for a regular row t_b<=3, failure to extend is possible only in the e
 - t_b<=1: impossible.
 
 So the E408 Q32 extension step is valid for every triple whose three vertices carry at most four total units of core excess; the only unresolved triple-extension exceptions must contain at least five of the six excess units. Do not silently reuse the excess-4 proof for the 285-edge core.
+
+
+## F-006 — exact-129 color-factor crosscut (2026-10-25)
+
+For E407 Q32 templates A/C, each exact-129 non-target color supplies at least seven/eight independent core 4-sets from its isolated K5 components disjoint from S. The shell row count gives n3>=6, n1<=4<n3, and c_S=3n3+n1<4n3. Any such witness that misses a hub must hit at least n3 B-rows, costing at least n3 distinct B-H target edges. Since the witnesses are disjoint within one color and the total B-H budget is c_S, at most three witnesses per exact color can miss a hub. Hence each exact-129 color yields at least four hub-complete witnesses in A and five in C. There are at least seven exact-129 colors, so totals are at least 28 and 35, respectively.
+
+Across colors, witness 4-sets form a linear family. Moreover, any two independent 4-sets in a graph with alpha(H)<=4, intersecting in at most one vertex, have a perfect matching between their exclusive parts (Hall's theorem). Thus each disjoint pair forces at least four core edges, and each pair intersecting once forces a matching on the remaining triples.
+
+Full proof and limitations: R12_E407_Q32_COLOR_FACTOR_CROSSCUT.md. This does not close A/C or B/D/E: edge reuse across different color-pairs remains unbounded by the current argument.

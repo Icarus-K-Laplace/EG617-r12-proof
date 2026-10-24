@@ -123,3 +123,23 @@ There is no remaining E332, E401--E406, or source-replay obligation for those cl
 ## Certification warning
 
 EG617 r=12 remains OPEN until both remaining obligations are discharged.
+
+
+## Emergency r=12 sprint overlay — 2026-10-25
+
+This overlay supersedes older frontier descriptions above where they conflict. The theorem remains **OPEN / NOT_CERTIFIED**.
+
+### Front end
+
+- E397–E406 are closed under their recorded contracts.
+- E407 Q32: V12's finite kernel/shell certificate has been independently replayed. The fresh archive hash is 0c3c69a7baf94a816eff29f3a079b97ac7750d0e8b8fd2773330469c4b8c5e36; all 28 manifest entries passed. The verifier reproduced 8,677 weight vectors, 17,957 count states, 1,984 labelled necessary shells, and 554 OPEN shell states after the three recorded screens. This certifies finite coverage only, not a completed parent graph.
+- The 554 states reduce to five rho=0 templates sharing a regular K11 against one 284-edge core. A new exact-129 color-factor argument now proves at least 28 hub-complete independent 4-sets for template A and 35 for template C, with pairwise linearity and Hall-perfect-matching constraints. This does not yet contradict the core degree/edge budget; templates B/D/E remain open. Full proof: r12_master/workstreams/ultimate-closure-chat-20261024/R12_E407_Q32_COLOR_FACTOR_CROSSCUT.md.
+- E408 Q32 and Q33 remain OPEN. The E407 Q32 certificate cannot be transferred to the 285-edge Q32 core without a separate threshold certificate; Q33's seven-block near-Latin system still lacks a global contradiction.
+
+### Backend
+
+E335–E340 remain open. In the E335 three-anchor branch, the retained state is q=30, e(H)=214, K=8, with equality/connector cases not all discharged. No backend result is silently used to close E407.
+
+### Dependencies and certification
+
+The new A/C theorem depends on the retained E407 shell-row contract and Kang–Pikhurko's exact-129 Type-I classification. The V12 replay verifies the finite certificate only; analytic screen rules retain their explicit lower-order hypotheses. No residual-core, three-anchor, or repivot theorem from sibling workstreams is used in the new A/C argument.

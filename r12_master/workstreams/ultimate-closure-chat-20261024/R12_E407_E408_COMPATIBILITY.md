@@ -62,3 +62,14 @@ The scalar capacity bounds are not enough to close either layer: the 40 four-set
 - No aggregate sum identity is treated as forcing each local defect to zero.
 
 EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+## 5. New E407 Q32 A/C crosscut
+
+The fresh color-factor theorem in R12_E407_Q32_COLOR_FACTOR_CROSSCUT.md proves:
+- at least seven/eight independent core 4-sets per exact-129 color from K5 components disjoint from the hub triple S;
+- at least four/five of these are hub-complete in templates A/C;
+- at least 28/35 hub-complete witness sets across the at least seven exact-129 colors;
+- any two witness sets have at most one common vertex, and their exclusive parts admit a Hall perfect matching in the 284-edge core.
+
+This strengthens the local witness-capacity constraint but does not rule out A/C. It does not cover templates B/D/E, and no cross-color edge-reuse bound sufficient for contradiction has been established.

@@ -6,15 +6,15 @@ This is the synchronized human-readable live state. It contains research results
 
 Canonical unconditional/retained closure remains `E397..E406 = EMPTY` under the stated contracts.
 
-Delivered V11/V12 supersede the older source-level frontier. Independent archive replay of V12 in this assistant session is still pending because the local archive executor is failing at the client level.
+Delivered V11/V12 supersede the older source-level frontier. Both packages have been independently replayed; the fresh V12 extraction passed all 28 manifest checks and reproduced the certificate. This certifies finite enumeration only, not analytic screen rules or the remaining core-completion problem.
 
-Source-reported V12 state, conditional on the retained lower-order seeds:
+Replay-certified finite V12 state, conditional on the retained lower-order seeds:
 
 - E407 maximum `Q=31` is excluded by V11;
 - E408 maximum `Q=31` is excluded by V11;
 - V12 proves `Xi >= L + 2k - 2` for `k in {8,9,10}`;
 - the common-K10 external pair-row union therefore carries at least18 units of excess;
-- the delivered V12 verifier reportedly replayed 8,677 weight assignments and 17,957 counting states;
+- the fresh V12 replay verified 8,677 weight assignments and 17,957 counting states;
 - E407 maximum `Q=32` is reduced to five `rho=0` templates with a common regular `K11`;
 - the unresolved V12 bridge is whether those five templates can coexist with one 284-edge core;
 - E408 `Q=32,33` remain OPEN.
@@ -170,6 +170,6 @@ Remaining obligations:
 - T61 E407 Q32: five common-K11 templates versus one 284-edge core;
 - T61 E408 Q32/Q33;
 - backend E335..E340 through the forcing-to-master-contract bridge and finite K=6 equality windows;
-- independent replay of delivered V12/V8 packages when archive execution is available.
+- V11/V12 replay is complete; independent V8 package replay remains pending.
 
 The full EG617 r=12 theorem remains **OPEN / NOT_CERTIFIED**.

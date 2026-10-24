@@ -4,7 +4,7 @@
 
 The continuous closed interval remains `E397..E406 = EMPTY` under the stated contracts.
 
-Delivered V11/V12 remain source-reported relative to retained lower-order seeds; V12 package replay is still pending in this assistant session because the archive executor is failing.
+V11 and V12 packages have been independently replayed from retained archives; the V12 manifest passed 28/28 checks and its verifier reproduced the 8,677-weight / 17,957-state certificate. This certifies finite shell-state coverage only. Analytic screens remain conditional on their retained lower-order inputs, and E407 Q32 still has 554 OPEN shell states.
 
 ### E407
 
@@ -12,7 +12,7 @@ Delivered V11/V12 remain source-reported relative to retained lower-order seeds;
 - `Q=31`: source-reported CONDITIONAL-CLOSED by V11;
 - `Q=32`: OPEN.
 
-V12 source-reports that every maximum-Q32 shell is reduced to five `rho=0` templates sharing a common regular `K11`. The first unresolved bridge is global completion compatibility:
+The replayed V12 certificate reduces every maximum-Q32 shell to five `rho=0` templates sharing a common regular `K11`. The first unresolved bridge is global completion compatibility:
 
 > can any of the five templates coexist with the same 284-edge core?
 
@@ -215,6 +215,6 @@ There is no remaining generic d4/d9 bridge.
 1. E407 Q32: rule out the five common-K11 templates against one 284-edge core;
 2. E408 Q32/Q33;
 3. backend E335..E340 through Bridge A plus the finite Bridge-B shallow-loss residue;
-4. independently replay V12/V8 once archive execution is available.
+4. independently replay V8; V11/V12 replay is complete and recorded in `r12_master/workstreams/ultimate-closure-chat-20261024/R12_V11_V12_REPLAY.md`.
 
 The full EG617 r=12 theorem remains **OPEN / NOT_CERTIFIED**.

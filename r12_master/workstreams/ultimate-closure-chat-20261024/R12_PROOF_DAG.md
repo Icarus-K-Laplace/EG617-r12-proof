@@ -45,3 +45,12 @@ This node feeds E407's five-template/core completion problem and E408's exact-12
 ## Added E407 row-profile reduction
 
 For the five V12 templates, the row-count constraints imply the hub-missing degree floors recorded in R12_WITNESS_CAPACITY_CROSSCUT.md. In A/C, any Q_b missing a hub must hit at least six B rows, so it can witness at most four B labels and its four vertices carry parent target-degree excess at least2. This leaves two precise branches: hub-complete witnesses, or a high-B-degree witness family with nontrivial overlaps. No contradiction node has been established.
+
+
+## F-006 — E407 A/C color-factor witness packing
+
+Input: E407 Q32, one of templates A/C, exact-129 Type-I classification, and the recorded row-count contract.
+
+Output: at least 28 (A) / 35 (C) hub-complete independent 4-sets in the same 284-edge core; cross-color linearity; Hall-perfect-matching constraints between every pair of witness blocks.
+
+Status: PROVED_CONDITIONAL. It does not produce a contradiction node. Remaining gap: bound cross-pair edge reuse or classify the core incidence kernel; templates B/D/E remain outside this result.

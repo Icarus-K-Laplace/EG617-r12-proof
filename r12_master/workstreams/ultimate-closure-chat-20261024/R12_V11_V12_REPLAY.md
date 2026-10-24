@@ -67,3 +67,17 @@ Accordingly, the V11/V12 finite enumeration status is now COMPUTATION_CERTIFIED 
 ## Checksum-order note
 
 The pristine ZIPs were re-extracted into fresh directories and every entry in each SHA256SUMS.txt passed **before** the verifier was run. The verifier intentionally rewrites its own replay JSON, and the V12 verifier also regenerates Q32_KERNEL_CASE_TABLE.csv. Running sha256sum -c again in that mutated working directory will therefore report those generated outputs as changed. This is expected; it is not an archive-integrity failure. Re-extract the original ZIP to repeat the clean pre-run checksum check.
+
+
+## Fresh V12 replay during the emergency sprint — 2026-10-25
+
+A fresh extraction of the retained V12 ZIP was verified before running the verifier. Archive SHA-256 again matched
+0c3c69a7baf94a816eff29f3a079b97ac7750d0e8b8fd2773330469c4b8c5e36; all 28 entries in SHA256SUMS.txt returned OK. Running python -B verify_q32_certificate.py reproduced:
+- COMPUTATION_CERTIFIED;
+- 8,677 kernel weight vectors and 17,957 count states;
+- 1,984 labelled necessary shells;
+- 90 D3/rho=1, 1,192 near-K12-capacity, 148 K9-pair-row exclusions;
+- 554 OPEN entries and zero completed parent graphs;
+- certificate SHA-256 cab4e67bc501fe51c06f8fc008443b870aebf8794528af1a3045e83be7d6db30.
+
+This is a repeated independent replay of the supplied finite certificate, not an independent proof of the analytic screen rules or the remaining 554 shell/core completions.
