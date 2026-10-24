@@ -1,14 +1,13 @@
-# Robust exact core: current theorem boundary
+# Robust exact core: current theorem boundary after the cylinder audit
 
 ## Status
 
-- **PROVED_ANALYTIC:** the existing stability theorem gives (r^2-O(r)) clean transversal blocks.
-- **PROVED_ANALYTIC:** HP-LI forces a linear edit charge for low-incidence off-hub repeated pairs.
-- **OPEN:** deletion of (O(1)) vertices yielding two exact orthogonal partitions.
+- **PROVED_ANALYTIC:** the stability theorem gives (r^2-O(r)) clean transversal blocks.
+- **PROVED_CONDITIONAL:** a linear edit charge holds when an ordinary same-group label is represented outside the target hub set in every other block.
+- **PROVED_ANALYTIC:** every non-target color graph is (K_6)-free under (\alpha(G_0)\le5).
+- **OPEN:** deleting (O(1)) vertices to obtain exact orthogonal partitions.
 - **OPEN:** an (O(r))-repair theorem whose every repair conflicts with the coloring constraints.
-- **OPEN:** direct nonextension from the near-design without exactifying it.
-
-No affine-plane or prime-power existence assumption is made.
+- **OPEN:** robust nonextension directly from the near-design.
 
 ## 1. What the clean-block count actually gives
 
@@ -18,29 +17,32 @@ r^2-93r-54
 ]
 size-5 exact transversals, pairwise linear, in partial parallel classes. This is (r^2-O(r)) blocks, not a complete resolvable (TD(5,r)).
 
-The complement of this family may still contain (O(r)) bad ideal blocks and (O(r)) pair-multiplicity defects. The local high-incidence pattern in `HUB_PROPAGATION_THEOREM.md` has eight nonclean blocks in one color and obeys the current per-color scalar budgets. Thus the present theorem does not imply that the exceptional blocks meet (X), nor that deleting (O(1)) vertices repairs them.
+The complement may still contain (O(r)) bad ideal blocks and (O(r)) pair-multiplicity defects. Nothing in the count alone proves that these defects meet the target hub set or can be repaired by deleting (O(1)) vertices.
 
-## 2. Conditional exact-core statement
+## 2. Cylinder audit: a local one-color shortcut is globally forbidden
 
-The following is valid but presently only a conditional interface:
+For a non-target color (i), a missing pair (uv) in one ideal block can be blocked by adding a star from (u) to all five vertices of a clean transversal block (C). This costs only five added edges and may make (\alpha(G_i)\le r).
 
-> If one can exhibit a common (5r)-point subset (W'\subseteq W) and (r) pairwise edge-disjoint parallel classes, each consisting of (r) exact size-5 transversals of the five (r)-point groups, with every cross-group pair covered exactly once, then (W') is an exact (TD(5,r)) (equivalently, four mutually orthogonal Latin-square structure).
+But if (C) remains a (K_5) in (G_i), then (C\cup\{u\}) is a (K_6) in (G_i), contradicting (\alpha(G_0)\le5). Thus the target alpha condition forces at least one further missing edge in the cover block. That new defect itself requires protection against an independent transversal.
 
-This condition is much stronger than the existing partial-TD result. It is not currently derived from the (O(r)) defect budget. Also, a (TD(5,r)) is not automatically an affine plane of order (r); no affine-plane theorem may be invoked without checking the exact design parameters.
+A previously explored (d_i=6) abstract trap is withdrawn: it did not establish (\alpha(G_i)\le r), because two missing pairs could be selected simultaneously while omitting the special cover block. It must not be used as a counterexample or theorem input.
 
-The upstream exact affine/net nonextension theorem applies only after its own exact partition hypotheses are established. It does not apply to the current (5r+1)-vertex terminal merely because the terminal is close to a transversal design.
+## 3. Why exactification still does not follow
 
-## 3. Why the obvious repair argument is invalid
+The current theorem does not yet prove that the defect-propagation chain terminates in a contradiction. It could, in principle, branch or cycle among:
+- repeated-group missing pairs;
+- target cross edges inside ideal transversal blocks;
+- added cross-block edges in non-target colors;
+- hub-incident target deletions.
 
-An argument of the form “there are only (O(r)) defects, so delete (O(1)) vertices and obtain an exact core” is false as a counting inference: (O(r)) defects can touch (\Theta(r)) distinct vertices. The target-side hub theorem rules this out only for **target internal deletions**. It says nothing yet about non-target block-incidence defects or repeated/missing cross-pairs.
+All actual pairs have one color, so a valid proof must track pair ownership exactly. A local repair of one partition can consume a pair already needed by another color; target edges are not free repair resources.
 
-Similarly, a repair operation on one non-target partition may reassign a cross-group pair that is already owned by another color. Such a repair is not local in the multicolor edge partition unless its pair ownership is explicitly tracked.
+The upstream exact affine/net nonextension theorem applies only once its exact orthogonal-partition hypotheses are established. The current (5r+1)-vertex terminal is not such a structure merely because it is close to a partial TD.
 
 ## 4. Minimum missing theorem
 
-A sufficient next result would be either:
+The next sufficient result is a **defect-chain cost theorem**:
 
-1. **Hub propagation:** every high-incidence (d_i\ge6) trap away from (X) forces enough cross-color pair conflicts that only (O(1)) colors can contain one; or
-2. **Global completion inequality:** if (q) colors contain the explicit (d_i=6) local trap, then their cross-pair demand plus the target cross-cover demand exceeds the cross-pair universe or the available non-target slack.
+> Every chain/cycle of missing edges and cylinder covers that keeps each non-target color (K_6)-free has total non-target slack plus target cross-cover cost exceeding the exact global budget, unless it creates an omitted-color ((r+1))-set.
 
-The current aggregate inequalities allow (q=\Theta(r)) at the scalar level. The unresolved step is to prove that such local traps cannot be made globally pair-disjoint. Until that is done, neither exact-core route nor robust nonextension is closed.
+This must count each pair once and cannot assume an affine plane exists. Until this is proved, no exact-core or robust nonextension closure is claimed.
