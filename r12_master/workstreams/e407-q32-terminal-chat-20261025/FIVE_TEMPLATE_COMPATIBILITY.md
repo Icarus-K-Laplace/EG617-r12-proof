@@ -59,7 +59,7 @@ The \((5,0)\) labelled incidence kernel has not yet been contradicted or realize
 ## 5. What is not claimed
 
 - No one of the five templates is closed by this theorem.
-- The \(\delta=15\) non-four-partite case is reduced to the balanced Kang–Pikhurko base profile and exact 15-edge leave; it remains open.
+- The \(\delta=15\) non-four-partite case is **excluded**: the Kang–Pikhurko equality reduction and incompatible (x,y) degrees into (W) rule out all three base profiles.
 - The \(\delta=14,15\) four-partite cases remain open, with the \(W\)-profiles in NON_FOUR_PARTITE_TERMINAL.md.
 - The \(\delta\le14\) non-four-partite cases remain open.
 - No proof is claimed that the residual incidence design can or cannot be realized.
