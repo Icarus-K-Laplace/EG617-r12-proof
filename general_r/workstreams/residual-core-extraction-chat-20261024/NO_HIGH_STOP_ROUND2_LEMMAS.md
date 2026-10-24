@@ -203,7 +203,7 @@ q_0+\sum_i z_i=n= S_{a+1}(r)-S_a(r).
 
 This is a genuine first-stop constraint: the predecessor interface is a near-permutation matrix, with one target edge per column or one duplicated non-target color. The label-capacity lemma below strengthens it by proving that every non-target color must be duplicated at least once.
 
-### Theorem 6 — label capacity forces every non-target color to be duplicated
+### Label-capacity lemma — every non-target color is duplicated
 
 For every non-target color (i),
 
@@ -363,8 +363,9 @@ The theorem localizes all defects inside the target partition to (O(a^2)) hub ve
 
 - (a=6) is impossible.
 - Any (a\ge7) candidate contains a legal induced (R_{a-1}).
-- A uniform edit-distance partition-stability theorem is now proved via Füredi.
+- A uniform edit-distance partition-stability theorem is proved via Füredi.
 - Exact pairwise orthogonality / an exact resolvable-design skeleton.
+- Hub propagation to a common target part; the hub-localization theorem alone does not give it.
 - A design-trimming implication yielding an earlier (R_5) or (R_4).
 
 ### Current verdict
