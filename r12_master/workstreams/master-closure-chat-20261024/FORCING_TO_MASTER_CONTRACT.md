@@ -141,6 +141,6 @@ The current assets prove this conclusion only for specific subfamilies (includin
 - **Multi-S extraction:** no proof yet covers all d2 systems or d3 systems with fewer owners / fully decorated classes at every q layer.
 - **Low-support shallow loss:** d2 `1<=ell<=a-2`; d3 non-triangular `1<=ell<=a-3`; plus the d3 triangular `a=7,8` near-anchor equality distributions.
 - **Low-cross certification:** for an extracted family, the pairwise cross bounds used by the block-transversal theorem must be derived from its actual allowance/exchange identities, not assumed.
-- **Fully-decorated branch:** `s=d) cannot be passed through the `s<d` plateau/strict-loss lemmas. The d4/d9 common-S escape is closed, but this is not a general extraction theorem for every fully-decorated d2/d3 multi-S system.
+- **Fully-decorated branch:** `s=d` cannot be passed through the `s<d` plateau/strict-loss lemmas. The d4/d9 common-S escape is closed, but this is not a general extraction theorem for every fully-decorated d2/d3 multi-S system.
 
 This is the smallest current theorem-level gap statement supported by the inspected assets. It does not certify E335--E340, E407/E408, or the original EG617 theorem.
