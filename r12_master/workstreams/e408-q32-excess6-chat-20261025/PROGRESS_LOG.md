@@ -44,4 +44,4 @@ Corrected core-capacity result:
 
 Updated CORE285_CAPACITY_THEOREM.md, CANONICAL_STATE.md, SHELL_SUPPORT_CLASSIFICATION.md, SEVEN_BLOCK_GLOBAL_COMPATIBILITY.md, CERTIFICATE_AND_VERIFIER.md, and verify_core285_capacity.py. The outer blocker coupling remains based only on the ten isolated components, preserving the distinction between a K5 clique witness and a size-five blocker component.
 
-The arithmetic verifier was rerun and returned CORE285_E408_Q32_ARITHMETIC_OK. This correction strengthens the necessary-structure reduction; it still does not prove the E408 Q32 terminal empty.
+The standard-library arithmetic assertions matching the committed verifier were rerun and passed (CORE285_E408_Q32_ARITHMETIC_OK). The committed script is the reproducible checker; it certifies arithmetic only, not the KP classification or graph realizability. This correction strengthens the necessary-structure reduction; it still does not prove the E408 Q32 terminal empty.
