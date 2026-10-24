@@ -17,6 +17,8 @@ def main() -> None:
     assert p4(18) == 32
     for epsilon_u in range(5):
         for delta in range(17):
+            if delta + epsilon_u > 16:
+                continue
             e_hu = 112 - delta
             cross = 124 + epsilon_u + 2 * delta
             e_hw = 48 - epsilon_u - delta
