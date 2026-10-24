@@ -136,7 +136,7 @@ python PARAMETER_ADMISSION_VERIFIER.py PARAMETER_ADMISSION_MATRIX.json --query-r
 python PARAMETER_ADMISSION_VERIFIER.py PARAMETER_ADMISSION_MATRIX.json --query-r 68 --module D1_SHELL_CLASS_BOUND_V1
 \`\`\`
 
-The branch started at the requested HEAD `3d27693d9f9d5bf2586e0f0178228563d96de22b`. The committed matrix has raw SHA-256 `037ebe8e26f0c72e135e3d6a560d4620f023cb52b0c4d8e87096c12e0a8828da`; the admission verifier file hash is `08d8e58ae6713cf8ab94b1e2dbb3715cd920f4255d21792b7a6d801be04dc326`.
+The branch started at the requested HEAD `3d27693d9f9d5bf2586e0f0178228563d96de22b`. The committed matrix has raw SHA-256 `cb386e6a66b82edf5783835e3d52c675717cdf1e2dd7293359cf23d90a6b228d`; the admission verifier file hash is `4e027b49c8bf4d3bc54d270dbaca47f3805066bfc3bb9d8b96595a26d173b4c4`.
 
 A separate JS audit rebuilt the policy row for every r=4,...,100 and matched all 97 rows of the committed matrix. The independent admission-verifier logic was also exercised in a Python harness with queries for r=11, r=13 residual-core, r=13 near-anchor, r=68 near-anchor, and r=101 D1. It returned the expected blocked/conditional states; a tampered row was rejected. This harness was a separate logic replay, not a direct invocation of the committed CLI entry point.
 
