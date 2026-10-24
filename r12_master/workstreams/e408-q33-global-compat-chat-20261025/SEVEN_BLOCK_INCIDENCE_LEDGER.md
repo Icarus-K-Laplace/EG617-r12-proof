@@ -202,3 +202,32 @@ For a fixed outer row \(x\), its C-neighborhoods \(N_C(x)\cap R\) across differe
 Hence every low-slack block induces a 12-row partition of the 56 selected witness labels into matching classes, with at least six labels from each of the eight selected colors represented in the partition. Across two low-slack blocks, the component-label matching edges above must be edge-disjoint across colors, since an outer-block pair has only one edge color.
 
 This is a sharper, explicitly labelled finite compatibility problem. It is **not yet an impossibility proof**: the 56 labels give 56 component occurrences per block, while the crude row capacity is \(12\cdot7=84\), so the immediate capacity inequality remains feasible.
+
+
+## 9. Duplicate-budget thresholds for low-slack blocks
+
+For an exact-129 color C, \(R_C=62-P_C\) and every block has \(r_i(C)\ge1\). Let h be the number of blocks with \(r_i(C)\ge4\). Then
+\[
+R_C=\sum_i r_i(C)\ge4h+(7-h)=7+3h,
+\]
+so
+\[
+h\le\left\lfloor\frac{55-P_C}{3}\right\rfloor.
+\]
+Consequently the number \(k_C\) of blocks with \(r_i(C)\le3\) satisfies
+\[
+\boxed{k_C\ge\max\left(0,\,7-\left\lfloor\frac{55-P_C}{3}\right\rfloor\right).}
+\]
+
+Useful thresholds:
+| Duplicate count P_C | Guaranteed blocks with r_i(C)<=3 |
+|---:|---:|
+| P_C >= 35 | at least 1 |
+| P_C >= 38 | at least 2 |
+| P_C >= 41 | at least 3 |
+| P_C >= 44 | at least 4 |
+| P_C >= 47 | at least 5 |
+| P_C >= 50 | at least 6 |
+| P_C >= 53 | all 7 |
+
+For each such block, Theorem 7.1 and the two-exceptional-row refinement apply. This gives a precise way to turn a large per-color duplicate budget into forced component matchings across multiple block pairs. The aggregate lower bound \(\sum_{C:s_C=0}P_C\ge69\) alone does not force any one color to reach P_C>=35, so this threshold is a conditional branch filter rather than a global closure.
