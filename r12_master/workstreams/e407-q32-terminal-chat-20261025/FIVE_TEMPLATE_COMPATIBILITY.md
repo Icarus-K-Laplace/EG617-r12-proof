@@ -42,14 +42,14 @@ The new conditional theorem in FOUR_PARTITE_TERMINAL.md proves that \(\delta=16\
 - all five 8-part endpoints have the same \(K_4\) as their exact \(W\)-neighbourhood;
 - that \(K_4\) is complete to the 8-part; every vertex in the remaining \(K_4,K_5,K_5\) components is complete to a 7-part. Labels may vary vertex-by-vertex, and a component-wide bijection is not proved.
 
-This reduces the extreme \(\delta=16\) case to a specific labelled incidence kernel. It does not yet show the kernel conflicts with any one of templates A–E.
+The reverse-saturation and endpoint-split argument now excludes the entire \(\delta=16\) branch under the frozen core/witness contract: the last \(5+0\) split forces at least five units of degree excess inside one \(K_5\), but the core has only four. This closes only that boundary, not any of the five templates in full.
 
 ## 4. Template-by-template status
 
 | Template | Existing witness consequence | New result in this line | Status |
 |---|---|---|---|
 | A | \(\ge28\) hub-complete \(Q\)'s | Applies the common-core \(\delta=16\) structural kernel; no row contradiction yet | OPEN |
-| B | \(\ge28\) hub-complete \(Q\)'s | Same | OPEN |
+| B | \(\ge28\) hub-complete \(Q\)'s | The \\(\delta=16\\) subcase is excluded; lower-\\(\delta\\) cases remain open | OPEN |
 | C | \(\ge35\) hub-complete \(Q\)'s | Same | OPEN |
 | D | \(\ge35\) hub-complete \(Q\)'s | Same | OPEN |
 | E, at least one full row | \(\ge35\) hub-complete \(Q\)'s | Same | OPEN |
