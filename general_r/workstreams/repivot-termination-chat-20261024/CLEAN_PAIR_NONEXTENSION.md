@@ -111,6 +111,8 @@ If X is the number of outside vertices of the second type, then
 
 X(3a-4-r) <= K_O <= 2r-2-K_U.
 
+Since h=r+1-2a, equivalently X<=floor((4r-4-2K_U)/(r-3h-5)), with denominator at least 16 in this branch.
+
 Thus the remaining AES terminal has a bounded-degree optional block graph and at most floor((2r-2-K_U)/(3a-4-r)) exceptional outside vertices. This can still be linear near the lower AES threshold, so it is a structural reduction, not nonextension.
 
 ## 8. Exact no-double-counting identity
