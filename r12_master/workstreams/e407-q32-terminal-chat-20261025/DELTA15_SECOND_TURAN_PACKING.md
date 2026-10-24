@@ -128,6 +128,29 @@ Each vertex occurs in \(7-o_v\) witness blocks, so its leave degree is \(d_L(v)-
 
 This ledger ties the 15-edge leave to the seven color classes; it still does not give a contradiction.
 
+### Core-to-\(W\) degree restriction on the exceptional vertex
+
+The Kang–Pikhurko exceptional vertex \(x\) is also a vertex of \(H[U]\). Since \(|U|=29\) and \(d_L(x)=15+a\),
+\[
+d_{H[U]}(x)=28-d_L(x)=13-a,
+\qquad
+d_H(x,W)=12+\epsilon_x-(13-a)=a-1+\epsilon_x.
+\]
+Here \(0\le\epsilon_x\le\epsilon_U\le1\).
+
+The \(\delta=15\) \(W\)-profiles are already classified in NON_FOUR_PARTITE_TERMINAL.md:
+- if \(\epsilon_U=0\), \(H[W]\) is either \(K_3\cup K_5\cup K_5\cup K_5\), \(K_4\cup K_4\cup K_4\cup K_6\), or \(K_4\cup K_4\cup K_5\cup K_5\) plus one cross edge;
+- if \(\epsilon_U=1\), \(H[W]=K_4\cup K_4\cup K_5\cup K_5\).
+
+When \(H[W]\) is a disjoint union of four cliques, \(\alpha(H)\le4\) forces every \(u\in U\) to be complete to at least one whole clique component; otherwise one non-neighbour from each component, together with \(u\), is an independent 5-set. The same conclusion holds in the one-cross-edge profile for a vertex with at most five \(W\)-neighbours: avoiding an independent transversal without being complete to a component would require adjacency to at least three vertices in each of the two endpoint \(K_4\)'s, already six neighbours.
+
+Applying this to \(x\) gives:
+- \(\epsilon_U=0\), profile \(K_3\cup K_5^3\): \(a-1\ge3\), so \(a\ge4\);
+- \(\epsilon_U=0\), either profile with minimum clique size four: \(a-1\ge4\), so \(a\ge5\);
+- \(\epsilon_U=1\): \(a-1+\epsilon_x\ge4\), so \(a\ge4\), and if \(a=4\), the unique unit of \(U\)-excess must be at \(x\) (\(\epsilon_x=1\)).
+
+Therefore the Kang–Pikhurko subset size \(a\in\{1,\ldots,6\}\) is reduced to \(a\in\{4,5,6\}\); \(a=4\) survives only with \(H[W]=K_3\cup K_5^3,\epsilon_U=0\), or with \(\epsilon_U=1,\epsilon_x=1\). This is a necessary condition, not a contradiction.
+
 ## 5. Remaining obstruction
 
 The \(\delta=15\) non-four-partite branch is reduced to one balanced Kang–Pikhurko construction with:
