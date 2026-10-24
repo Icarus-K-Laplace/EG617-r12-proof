@@ -92,3 +92,22 @@ A second naive relaxation sets X=0 and makes each O_i a clique. It immediately f
 5. For h=3, eliminate X>=1 or account for its excess more sharply.
 
 Current status: finite type-table audit **PASS**; off-part excess lemma **PROVED_CONDITIONAL**; full legal-core counterexample **NOT FOUND**; Clean-Pair Nonextension **OPEN**.
+
+
+## 7. Shell-incidence cross-check
+
+For the clean a_2=2 family, every endpoint has kappa_x=1-e_F(x,S_2), and e_F(S_2,H)=2r+b_2. Thus
+
+K_U>=2m-2r-b_2.
+
+The exceptional outside vertices are disjoint from U and each pays at least L=3lambda-4-r, where lambda=m-r+1. Consequently
+
+2m-2r-b_2+X L<=2r-2,
+
+or
+
+X<=floor(2(r-1+h+b_2)/(r-3h-5)).
+
+This sharpens the prior K_U-free estimate to X<=r/6+O(1) near the lower AES threshold. It still allows a linear exceptional set and does not certify a contradiction.
+
+For h=2, the bound K_U>=r-3-b_2 and K_O>=r-11 imply only K>=2r-14-b_2, which remains below the allowed cap 2r-2. This endpoint is still open.
