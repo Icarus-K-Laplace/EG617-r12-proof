@@ -1,29 +1,40 @@
 # Counterexample search
 
-Status: **no genuine counterexample found; full c=3/c=4 search still open.**
+## Verdict
 
-## Search discipline
-A candidate must satisfy all of:
+**No genuine counterexample exists for `r>=13` under the stated contract, by the analytic proof in `PROOF_ATTEMPTS.md`.**
+
+The parent project already contains the independent `r=12` closure. Thus no actual counterexample is known for any `r>=12`.
+
+## Falsification discipline
+A candidate was required to satisfy simultaneously:
 
 - `|H|=3r-1`;
 - `alpha(H)<=3`;
 - `omega(H)<=r-1`;
 - `delta(H)>=r`;
 - three pairwise nonadjacent degree-r anchors;
-- `K_r<=7`.
+- `K_r<=7` (equivalently, by parity, `K_r<=6`).
 
-No quotient or degree-feasible skeleton is promoted as a counterexample unless it realizes an actual graph satisfying every condition.
+No quotient skeleton or degree-feasible relaxation was ever promoted as a graph counterexample.
 
-## Analytic elimination already stronger than search for c=2
-The full `c=2` family is now analytically impossible for every `r>=12`, so there is nothing left to search in the `(r-2,r-2,r-2)` block geometry.
+## Relaxed candidates that failed
 
-A useful false skeleton appeared during relaxation work: two triple connectors can each concentrate almost all of their X-neighbours in one block while a sparse cross graph satisfies aggregate degree sums. Such skeletons pass coarse edge-count constraints but fail the independent-4 condition once exact-degree cross-capacity is enforced. This is exactly what motivated the degree-2 tripartite transversal-cover lemma.
+Several low-budget quotient patterns appeared during exploration. They were useful because each exposed a missing structural inequality:
 
-## Remaining finite skeletons
-Only these geometries remain:
+1. **c=2 concentration skeletons.** Aggregate degree sums permit a triple connector to concentrate its X-neighbours in one block, but exact-degree vertices then have cross-degree at most two. The independent-4 condition converts this into the tripartite transversal-cover lemma and kills the skeleton.
+2. **c=3 mixed-focus r=13 boundary.** Aggregate rectangle accounting permits `K=6` with a `(2,2)` nonneighbour rectangle. Exactness then forces the triple connector to cover all eleven vertices of the opposite zero-deficit block, exceeding its degree budget.
+3. **c=4 (0,0,2), r=14 overlap boundary.** Two same-group nonfocused connectors can share a formal `K=6` rectangle only when both use the same `(10,1)` support. The unique `X3` vertex is then saturated and cannot be adjacent to the required focused connectors.
+4. **c=4 (0,1,1), r=13 boundary.** Two nonadjacent type-U connectors can formally spend exactly six connector excess units with `(3,3)` rectangles, but focused connectors already consume one external slot on every rectangle vertex, destroying exactness.
 
-1. `c=3`: deficits `(0,0,1)`, hence one triple connector and two pair connectors;
-2. `c=4`: deficits `(0,0,2)`, hence four pair connectors with missing-anchor multiplicities `(2,2,0)`;
-3. `c=4`: deficits `(0,1,1)`, hence four pair connectors with missing-anchor multiplicities `(2,1,1)`.
+These were not counterexamples; they are precisely the equality layers eliminated in the final proof.
 
-The next search will enumerate only the constant-sized connector incidence/focus skeleton, not all `O(r^2)` edges. Any computational elimination will be accompanied by source, deterministic verifier, completeness contract, and checksum before being marked `COMPUTATION_CERTIFIED`.
+## Computation status
+
+No theorem claim in this workstream is marked `COMPUTATION_CERTIFIED`. Small integer checks were used only privately to discover sharp equality patterns; every promoted claim has been replaced by an analytic inequality/equality argument in `PROOF_ATTEMPTS.md`.
+
+Therefore there is no source/verifier/checksum obligation attached to the final theorem.
+
+## Remaining falsification target
+
+Only Level-4 proof cleanup remains: test whether the new focus/rectangle proof itself can absorb `r=12` without invoking the historical fixed-r closure. A failure there would not disprove the theorem; it would only show that a separate `r=12` lemma remains necessary.
