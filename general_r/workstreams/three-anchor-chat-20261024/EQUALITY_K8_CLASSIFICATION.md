@@ -139,4 +139,4 @@ More precisely, any remaining \(K=8\) configuration must belong to one of these 
 | \(c=4,(0,0,2)\) | \(r=12,f=0\) with a same-group adjacency; \(r=12,f=1\); or \(r=12,f=2\) |
 | \(c=4,(0,1,1)\) | \(r=12,13,s=2\), \(V/W\) own the two deficit-one focus slots |
 
-This table is a **necessary-condition classification**, not a classification of realizable graphs. These remaining strata have not been fully eliminated or constructed. Accordingly, the exact \(K=8\) layer is still **OPEN_GAP**, and \(K\ge10\) is not claimed.
+This table is a **necessary-condition classification**, not a classification of realizable graphs. These remaining strata have not been fully eliminated or constructed. Accordingly, the exact \(K=8\) layer is still **OPEN_GAP** for \(r=12,13\); the proved bound \(K\ge10\) applies for \(r\ge14\).
