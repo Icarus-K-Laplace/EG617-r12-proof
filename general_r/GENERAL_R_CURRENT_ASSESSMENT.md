@@ -1,226 +1,198 @@
 # General-r Current Assessment
 
-## 1. Which r=12 constants are now parameterized?
+Status: **OPEN**, but the architecture has changed materially after the contextual full-color cap and the `5r+1` all-large-r anchor extraction theorem.
 
-Successfully parameterized:
+## 1. New contextual cap principle
 
-- `145 = r^2+1`;
-- least-color edge budget `870 -> r(r^2+1)/2`;
-- hereditary cap `D_r(n)=C(n,2)-(r-1)p_r(n)`;
-- `49 -> 4r+1` and `61 -> 5r+1` inside the anchor/block-packing algebra;
-- `13 -> r+1` as the symbolic backend shell degree;
-- `35 -> 3r-1` conditional on the 4r+1 residual and degree-(r+1) pivot;
-- `91 -> C(r+2,2)`;
-- `301 -> 2r^2+r+1`;
-- `211 -> [r(3r-1)+2]/2` for r>=12 under the general residual-core contract;
-- `38 -> q_*(r)=3r+2` at the maximum 4r+1 residual layer;
-- owner caps 9/8 -> symbolic `r-3+o(1)` / `r-4+o(1)` formulas;
-- support overlap threshold `d-1`, first-high-slack `a=d`, and allowance transport are symbolic;
-- Bridge A core cap `221 -> D_r(3r-1)=(3r^2+r-2)/2`, giving exact core-excess ceiling `K_r<=2r-2`.
+For a target residual on `kr+1` vertices arising inside the original balanced `r`-coloring, assume
 
-Still not parameterized as proved all-r facts:
+`alpha(F)<=k`.
 
-- the r=12 lower-order edge floor284 and related recurrence seeds;
-- the exact near-anchor value `K>=8` beyond r=12;
-- fixed q27/q30/q31 provenance beyond their symbolic quadratic/layer interpretation.
+For every non-target color `C_j` on the same vertex set,
 
-## 2. Is the general residual-core source proved?
+- `alpha(C_j)<=r` by the balanced-coloring condition;
+- `omega(C_j)<=k`, because a `(k+1)`-clique in `C_j` would be a target-independent `(k+1)`-set.
 
-Not fully.
+Using the exact Brouwer/Kang-Pikhurko second-Turan layer gives
 
-Conditional algebra proves:
+`e(C_j)>=p_r(kr+1)+(k-1)`.
 
-- if F has order4r+1 and pivot degree r+1, then `|H|=3r-1`;
-- `omega(H)<=r-1` is inherited from F;
-- `alpha(H)<=3` follows from `alpha(F)<=4` and the pivot.
+Therefore the target color satisfies the contextual cap
 
-The load-bearing missing statement is
+> **`e(F)<=U_(k,r)`**, where
+>
+> `U_(k,r)=[k r^2+(k^2-4k+2)r+4k-2]/2`.
 
-> **`delta(H)>=r` for all relevant general-r pivot cores.**
+This is strictly stronger than the old one-color hereditary cap because it remembers that all `r` colors must coexist on the same residual.
 
-At r=12 this comes from lower-order Ramsey/cap seeds. There is currently no all-r source theorem.
+## 2. The 4r+1 branch is dead
 
-## 3. Exact symbolic backend identity
+For `k=4`,
 
-Under the general backend setup:
+`U_(4,r)=2r^2+r+7`.
 
-> `e(F)=C(r+2,2)+q+e(H)`.
+If a contextual `4r+1` residual has the front-end minimum-degree contract
 
-With
+`delta(F)>=r+1`,
 
-`K_r=2e(H)-r(3r-1)`, one has
+then
 
-> `K_r=2(E-q-(2r^2+r+1))`.
+`e(F)>=(4r+1)(r+1)/2`.
 
-For a regular repivot of missing degree d:
+The lower bound exceeds `U_(4,r)` by
 
-> `q_y=d(r+1-d)+B_y+kappa(D_y)+m(D_y)+e_F(S_y,D_y)`.
+`(3r-13)/2`.
 
-## 4. Direct near-anchor forcing is now all-r under the residual-core contract
+Hence:
 
-Bridge A parameterizes exactly.
+> **For every `r>=5`, the contextual `4r+1` branch is impossible as soon as `delta(F)>=r+1` is available.**
 
-For `|H|=3r-1`, the inherited hereditary cap gives
+Thus the old plan “extract 4r+1 residual, then run the 3r-1 backend” is no longer the preferred all-large-r route. In the original-coloring context, the 4r+1 residual should be killed immediately by full-color density compatibility.
 
-`p_r(3r-1)=3r-2`,
+At `r=12`, the existing front-end theorem already proves every genuine contextual `R(4,49)` residual has `delta>=13`; therefore the contextual `R(4,49)` branch is empty outright.
 
-`D_r(3r-1)=(3r^2+r-2)/2`,
+## 3. Why 5r+1 is the first genuine terminal
 
-and therefore
+For `k=5`,
 
-> **`K_r(H)<=2r-2`.**
+`U_(5,r)=(5r^2+7r+18)/2`.
 
-A general graph lemma with
+If `delta(F)>=r+2`, then the degree lower bound exceeds this cap for every `r>=5`.
 
-`n=3r-1`, `delta=r`, `omega=r-1`, `t=r-1`
+Hence any surviving contextual `5r+1` terminal with the natural lower minimum-degree source is forced into exactly the two layers
 
-then forces an independent triple with degree pattern
+> **`delta(F) in {r,r+1}`.**
 
-> **`(r, <=r+1, <=r+1)`.**
+This explains the r=12 T61 `h=12/13` split as the specialization of a general full-color stability phenomenon rather than a fixed-r accident.
 
-Thus every genuine core directly enters the near-anchor alternative. Common-S/signature extraction is no longer needed to *produce* anchors once the residual-core contract is available.
+## 4. 5r+1 anchor extraction is closed for r>=71
 
-The remaining anchor theorem is now precisely:
+The file
 
-> independent triple of total excess <=3 => `K_r>=8`?
+`GENERAL_R_5R1_ALL_LARGE_R_ANCHOR_EXTRACTION.md`
 
-Equivalently, after the already-proved reductions, the exact degree-r three-anchor theorem remains the only general anchor gap.
+proves, relative only to the classical Andrasfai-Erdos-Sos theorem and the contextual terminal contract:
 
-## 5. Which support-compatibility parts are all-r?
+> **For every `r>=71`, every contextual `5r+1` terminal contains a direct near-anchor independent triple.**
 
-Conditional on the residual/common-S contract, the following are fully symbolic:
+More precisely:
 
+- if `delta(F)=r`, there is an independent triple of degree pattern
+
+  `(r, <=r+1, <=r+1)`;
+
+- if `delta(F)=r+1`, there is an independent triple of degree pattern
+
+  `(r+1, <=r+2, <=r+2)`.
+
+The difficult `delta=r` branch is reduced by a constant-defect ledger. Under the negation of the triple, a degree-r anchor has a non-neighbourhood split
+
+`L union H`,
+
+with
+
+`|L|=r-1-s`, `0<=s<=8`,
+
+and only `16-2s` excess units remain after charging baseline excess2 to H. Deleting vertices whose extra defect is at least3 removes at most5 points. AES then forces the complement of the remaining graph to be 4-partite for `r>=71`; the endpoint cases `t=4,5` are killed by clique-capacity and greedy K4-transversal arguments.
+
+Therefore the `5r+1` terminal no longer has a growing structural case tree for all large r.
+
+## 5. The new large-r logical DAG
+
+The preferred all-large-r architecture is now
+
+`hypothetical counterexample`
+
+`-> contextual extraction theorem`
+
+`-> either 4r+1 or 5r+1`
+
+`-> 4r+1 dies immediately by contextual cap`
+
+`-> 5r+1 has delta in {r,r+1}`
+
+`-> for r>=71, direct near-anchor triple`
+
+`-> uniform near-anchor incompatibility theorem`
+
+`-> contradiction`.
+
+Thus the two load-bearing missing results are now much cleaner:
+
+1. **upstream contextual extraction:** force the `4r+1 / 5r+1` dichotomy for all sufficiently large r;
+2. **downstream near-anchor incompatibility:** turn the extracted low-excess independent triple in the `5r+1` terminal into a contradiction.
+
+The old symbolic d2/d3 support machinery remains valuable for fixed r and for equality diagnostics, but it is no longer the highest-leverage route to an all-large-r theorem.
+
+## 6. Existing symbolic backend assets remain valid
+
+Conditional on a legal `4r+1` backend view, the following are still proved symbolically:
+
+- `e(F)=C(r+2,2)+q+e(H)`;
+- `K_r(H)=2(E-q-(2r^2+r+1))`;
+- exact regular-repivot identity;
 - row closure;
 - allowance localization;
-- anchor transport;
-- zero-charge incidence signatures;
-- signature diversity -> independent exact anchors;
-- <=2 signatures -> <=3 zero-skeleton patterns;
-- exact sunflower decomposition;
-- d2 common-hub and d3 Type-H/Type-P geometry;
-- loss-layer overlap threshold and repeated-support strict loss;
-- exact Bridge B transport identity `kappa'_z=w_z-e_H(z,D_y)`;
-- general missing-pair common-nonneighbour count.
+- zero-signature/sunflower decomposition;
+- repeated-support strict loss;
+- exact Bridge B transported-excess identity.
 
-The common-S machinery should now be viewed as an equality/positive-loss incompatibility engine, not the primary anchor-extraction engine.
+These assets should now be treated primarily as fixed-r / finite-tail machinery, or as a fallback if the contextual extraction theorem outputs a weaker terminal contract than desired.
 
-## 6. General owner capacity
+## 7. Multicolor near-extremal owner capacity
 
-In the first hereditary-cap range:
+A second new consequence of full-color stability is a slope-1/2 owner bound near contextual extremality.
 
-### d2 common hub
+If the residual contextual edge deficit is epsilon, a clique of target-degree-`r+1` vertices has size at most
 
-`N<=r-3+(k^2-3k+6)/(2(r-k))`.
+`[r-1+2epsilon+epsilon sqrt(4epsilon+1)]/2`.
 
-### d3 Type H
+Hence any common-S owner family satisfies
 
-`N<=r-4+(2k^2-6k+7)/(r+1-2k)`.
+> **`N <= [r-3+2epsilon+epsilon sqrt(4epsilon+1)]/2`.**
 
-### d3 Type P
+For fixed epsilon this is
 
-`N<=r-4+(k^2-3k+10)/(2(r-k))`.
+`N<=r/2+O_epsilon(1)`,
 
-For fixed k<=3 and sufficiently large r these integerize to `r-3` and `r-4`.
+improving the old hereditary sunflower capacities of slope1.
 
-Thus owner capacity is linear with slope1; owner packing alone does not provide a slope contradiction.
+This creates a genuine slope contradiction whenever shell forcing can produce a common-S class larger than `(1/2+o(1))r`.
 
-## 7. Bridge B general consequences
+## 8. Current status of the old near-anchor/core theorem
 
-The exact transported-excess identity is symbolic:
+For a `3r-1` backend core, the direct forcing lemma still gives an independent triple `(r,<=r+1,<=r+1)` under the residual-core contract. The old desired statement
 
-`kappa'_z=w_z-e_H(z,D_y)`.
+`independent low-excess triple => K_r>=8`
 
-For a nonadjacent pair of total new excess rho in a `(3r-1)`-core, the number of common non-neighbours is
+remains open in general.
 
-> **`r-3-rho+codeg(u,v)`.**
+However, for the new all-large-r route the more relevant theorem is now the analogous **5r+1 terminal near-anchor incompatibility theorem**. It may be stronger and easier to formulate directly in the original residual rather than passing through a `3r-1` core.
 
-Thus the low-charge pair mechanism gets easier as r grows, conditional on the general near-anchor theorem.
+## 9. r=12 implication
 
-A major small-r collapse also occurs. The first d2 positive-loss concentrated state with
+For the fixed r=12 project, the contextual 4r+1 cap combines with the already-proved front-end `delta(F)>=13` to show:
 
-`K_r=8, a=3, ell=1`, no outside zero, and at least two distinct supports
+> **no genuine contextual `R(4,49)` residual exists in the original balanced K145 coloring.**
 
-has charge sum
+Therefore the contextual recurrence may treat the no-49-extraction condition as a theorem rather than a temporary assumption, and the only original front-end obstruction is the embedded T61 branch.
 
-`W=2r+10`.
+This does not by itself close T61 or the full r=12 proof; it simplifies the front-end dependency DAG.
 
-All zeros lie in the intersection of the distinct 2-supports, so at most one zero exists and hence `W>=3r-2`. Therefore
+## 10. Highest-leverage theorem now
 
-> **`r<=12`.**
+The highest-leverage general theorem is no longer a full residual-core extraction into the old backend. It is:
 
-So this entire concentration state is impossible for every `r>=13`; the r=12 `0,1^34` profile is an exact small-r boundary artifact.
-
-If the general near-anchor theorem gives `K_r>=8`, then `q<=3r-1`. For d=3 this implies `a<=5` for every r>=12. Hence all d3 complexity is uniformly bounded: b=2 is fully in the low-charge window, b=1 is absorbed through a<=4, and only the symbolic boundary `b=1,a=5` survives the pair-excess<=3 test.
-
-## 8. Is there a monotone symbolic repivot potential?
-
-Partially.
-
-`(q,tau)` is a genuine bounded symbolic lexicographic potential, and repeated non-fully-decorated plateau supports strictly improve tau at equal q.
-
-What is OPEN is a global theorem that every non-rigid local view improves `(q,tau)` or a finite refinement of it. Higher-slack equality can currently preserve both coordinates.
-
-Bridge B confirms that numerical envelope absorption alone is insufficient: positive-loss owner cores have `K_y=K+2ell_y`, so equality/incompatibility must cover more than the `K_y=8` plateau.
-
-## 9. Do we have a sufficiently-large-r contradiction?
-
-Not yet.
-
-But the asymptotic reduction is now stronger than before.
-
-Baseline:
-
-- `q<=3r+2` from the universal core floor;
-- for r>=15, missing degrees `4,...,r-3` are impossible.
-
-Conditional on the general near-anchor theorem, direct Bridge A forcing applies to every core and yields
-
-> **`K_r>=8` and `q<=3r-1`.**
-
-Then for every r>=12, not merely r>=15,
-
-> **`4<=d<=r-3` is impossible.**
-
-The only scalable support sizes are d<=3; high endpoint sizes d>=r-2 have at most three common-S owners.
-
-Moreover the first d2 positive-loss concentration is absent for all r>=13, and d3 has only one fixed `b=1,a=5` equality boundary beyond the low-charge bridge.
-
-Thus the large-r backend has become a bounded-width endpoint problem rather than a growing case tree.
-
-Ordinary one-color Turán stability remains insufficient by itself because average color slack is Theta(r^2); a multicolor compatibility gain is still needed for the front/design route.
-
-## 10. Largest general front-end gap
-
-The r=12 recurrence already has a symbolic form in local variables, but its order cutoffs and edge seeds are fixed-r.
-
-The largest front gap is:
-
-> prove an all-r (or all-r>=r0) contextual recurrence/extraction theorem forcing either a 4r+1 residual of minimum degree r+1 or a controlled 5r+1 design-like terminal, and certify `delta(H_r)>=r` for the resulting cores.
-
-This gap is now even more important because once `delta(H_r)>=r` is available, direct near-anchor forcing turns on automatically for every genuine core.
-
-## 11. Best candidate for the eventual Problem 617 main theorem
-
-> **Direct-Anchor Defect Stability Theorem.** Every extremal counterexample admits a legal residual-core view. The hereditary cap then directly forces a low-excess independent triple. Either the resulting anchor equality is incompatible with the core, or every surviving equality configuration is concentrated into a bounded d<=3 support/design structure; any non-rigid such structure admits a strict repivot potential improvement.
-
-Compared with the previous architecture, the anchor-extraction component no longer needs a common-S dichotomy. Common-S machinery moves downstream and is used only to kill equality/positive-loss structures.
-
-# Unique highest-leverage general-r bridge lemma
-
-## General Residual-Core Extraction Lemma
-
-> **For all sufficiently large r, every hypothetical balanced r-coloring of `K_(r^2+1)` contains, in its least-edge color, either**
+> **Contextual 4r+1 / 5r+1 Extraction Theorem.** For all sufficiently large r, every hypothetical balanced r-coloring of `K_(r^2+1)` in its least-edge color contains either
 >
-> **(A)** an induced residual F on `4r+1` vertices with `alpha(F)<=4`, `omega(F)<=r-1`, `delta(F)=r+1`, such that every legal degree-(r+1) pivot core H satisfies `|H|=3r-1` and `delta(H)>=r`; **or**
->
-> **(B)** a `5r+1` design-like terminal which is already forced into the multicolor near-Turán stability/nonextension branch.
+> - a contextual `4r+1` residual with minimum degree at least `r+1`, or
+> - a contextual `5r+1` terminal with minimum degree at least r and the inherited full-color completion constraints.
 
-Why this remains the unique highest-leverage bridge:
+Once this is proved:
 
-1. once it supplies the residual-core contract, direct near-anchor forcing is automatic by hereditary cap;
-2. a general near-anchor theorem would then immediately sharpen q to `3r-1` for every core;
-3. all medium missing degrees vanish for every r>=12;
-4. Bridge B reduces to bounded d2/d3 equality incompatibility rather than broad extraction;
-5. it replaces the r=12 1752-node recurrence by one all-r theorem and activates essentially the entire symbolic backend stack.
+- the `4r+1` branch is impossible for all `r>=5`;
+- the `5r+1` terminal is forced into `delta in {r,r+1}`;
+- for `r>=71`, it automatically contains a direct near-anchor triple;
+- only one uniform near-anchor incompatibility theorem remains downstream.
 
-This remains the theorem that should receive the largest share of research effort.
+This is currently the shortest plausible path to an all-sufficiently-large-r theorem.
