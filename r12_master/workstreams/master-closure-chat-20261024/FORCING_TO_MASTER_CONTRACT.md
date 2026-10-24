@@ -23,19 +23,11 @@ For a regular shell vertex y, write `S_y=N_M(y)`, `D_y=N_H(y)`, `d_y=|S_y|=|D_y|
 
 with every term after the base term nonnegative. Hence every legal row has `q_y<=q`, but this alone does not imply common missing sets or low cross-density.
 
-## 2. The anchor branch is genuinely closed
+## 2. Universal legal-core floor (new)
 
-If a legal 35-core contains three pairwise nonadjacent degree-12 vertices, then the connector/excess chain
+The theorem `R12_UNIVERSAL_CORE214_THEOREM.md` proves `e(H)>=214` for every legal 35-core, without first extracting anchors: K<=6 would give at least29 degree-12 vertices; the clique cap forces a nonadjacent pair, whose at least nine common nonneighbours include a third degree-12 vertex; the registered three-anchor theorem then contradicts K<=6.
 
-- `GLOBAL_THREE_ANCHOR_EXCESS_LOWER_BOUND.md`;
-- `GLOBAL_THREE_ANCHOR_K4_EQUALITY_CLOSURE.md`;
-- `GLOBAL_THREE_ANCHOR_K6_FULL_CLOSURE.md`;
-
-gives `K>=8`, equivalently `e(H)>=214`. Therefore
-
-> **Anchor envelope:** `q<=E-305`.
-
-This part is proved under the stated core contract. What is not automatic is the existence of those anchors in every arbitrary survivor.
+Therefore the exact pivot identity gives the unconditional legal-residual ceiling `q<=E-305` at every degree-13 pivot. For the active E335--E340 layers this means q<=30,31,32,33,34,35 respectively. The remaining forcing problem is not to produce anchors in order to obtain this edge bound; it is to force each surviving shell into the support-compatibility or finite shallow-loss contradictions.
 
 ## 3. The common-S master theorem is conditional, but strong
 
@@ -64,9 +56,9 @@ Thus the known common-S residual windows are exact:
 | support size | already covered common-S regimes | remaining common-S window |
 |---:|---|---|
 | d=2 | `a<=1` subcritical; `a=2` first-high-slack decomposition | `a>=3`, repeated rows with `1<=ell<=a-2` |
-| d=3, non-triangular S | `a<=2` subcritical; `a=3` first-high-slack decomposition | `a>=4`, repeated rows with `1<=ell<=a-3` |
+| d=3, non-triangular S | `a<=2` subcritical; `a=3` first-high-slack decomposition | In the active E335--E340 range, q<=35 and hence a<=5: only a=4,5 with `1<=ell<=a-3` remain |
 | d=3, S an independent triple | allowance through `a<=6` enters the anchor envelope via the independent-triple theorem | the new `R12_INDEPENDENT_TRIPLE_H4_EXTENSION.md` closes a=7 and `R12_INDEPENDENT_TRIPLE_H5_EXTENSION.md` closes a=8; all independent-triple allowances through the d3 ceiling are covered |
-| d=4 or d=9, q<=38 | non-fully-decorated systems are subcritical; fully-decorated multi-leftover Bridge C is closed | no new common-S Bridge-C case remains |
+| d=4 or d=9, generic q<=38 | non-fully-decorated systems are subcritical; fully-decorated multi-leftover Bridge C is closed | In the active E335--E340 range q<=35, so a regular d4/d9 row is impossible because its base charge is36 |
 
 The d3 triangle statement uses `GLOBAL_INDEPENDENT_TRIPLE_MIN_ANCHOR_THEOREM.md`, `GLOBAL_INDEPENDENT_TRIPLE_H3_THEOREM.md`, and the exact anchor-transport identity. The all-positive total-excess-five distributions (1,1,3) and (1,2,2) at a=8 are now closed by `R12_INDEPENDENT_TRIPLE_H5_EXTENSION.md`.
 
