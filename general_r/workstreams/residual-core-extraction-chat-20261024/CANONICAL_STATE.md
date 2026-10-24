@@ -353,6 +353,15 @@ Thus every first high stop `R_6` contains a pairwise-linear partial resolvable `
 Proof: `NO_HIGH_STOP_ROUND2_LEMMAS.md`, Section 9.
 
 **Limitation:** a linear number of exceptional classes may still carry the entire obstruction; this does not prove exact completion, earlier-stop extraction, or NO-HIGH-STOP.
+### 9G. Design-density countermodel audit
+
+Status: **`ABSTRACT_DESIGN_COUNTERMODEL`**, not a graph/coloring counterexample.
+
+For every prime power `r>=7`, the field-based `TD(r+1,r)` restricts to a `TD(6,r)`. Deleting one parallel class leaves `r^2-r` blocks in `r-1` parallel classes. Adding an unused point to one group gives group sizes `(r+1,r,r,r,r,r)` while preserving the block system. For `r>=112`, this already exceeds the necessary `r^2-112r` block lower bound.
+
+Therefore neither `r^2-O(r)` density, pairwise linearity, nor `r-1` parallel classes alone imply a contradiction. This model does not satisfy/check the full canonical edge-coloring, excess, hereditary-cap, or exceptional-label constraints. The remaining target must exploit the `O(r)` exceptional blocks jointly with their color labels and target-hub incidences.
+
+File: `NO_HIGH_STOP_ROUND2_LEMMAS.md`, Section 9.
 ### 10. Critical-core residue windows
 
 Status: **`PROVED_ANALYTIC`** as a necessary-condition reduction.
