@@ -287,6 +287,44 @@ Therefore universal strict increase of Q2 on every nontrivial reversible Phi4-fl
 
 For a fixed d1 class of allowance c and multiplicity N, the exact singleton exchange preserves common-S weight c. If c=0, N<=3. If c>=1, the clique cap gives N<=r-2, and the inherited core cap gives (N-1)c<=3r-2. Linear eta concentration forces c=O(1), but does not bound N independently of r. Final d1 absorption remains open.
 
+### R22. AES six-type optional-degree bound — PROVED_CONDITIONAL
+
+In the high-density branch m>=ceil(4r/3+3), AES gives a 3-partition A,B,C of G=overline(H[U]). No clean block lies wholly in one part, and the three block counts x,y,z satisfy x,y,z>=a=m-r+1>=ceil(r/3)+4.
+
+The six endpoint type classes A0,A1,B0,B1,C0,C1 have two independent transversal triples T0=(A0,B1,C0), T1=(A1,B0,C1). Assign each outside vertex one fully-seen witness class in each triple. The assignment slack in each triple sums to four. The exact endpoint equation gives optional cross-block degree t_x<=kappa_x+u_T-1<=4.
+
+### R23. Off-part witness excess — PROVED_CONDITIONAL
+
+An outside vertex with no same-part pair of fully-seen witness classes has a residual type triple with relation pattern (optional, matching, empty). Since each class has size at least a>4 and optional degree at most four, it must have at least a-4 additional neighbours in that residual triple. Therefore
+
+kappa_o>=3a-4-r>=8.
+
+If X is the number of such exceptional outside vertices, then
+
+X(3a-4-r)<=K_O<=2r-2-K_U.
+
+The stronger claim that every outside vertex sees a whole part is not established. The exceptional set may still be linear near the AES threshold.
+
+### R24. Exact clean-pair budget — PROVED_CONDITIONAL
+
+Assign every nonexceptional outside vertex to a part it sees completely. Let g_i be the assigned group size and u_i=s_i+2-g_i. Then sum_i u_i=4+X. For x in part U_i, let rho_x count neighbours in O outside its assigned group. The exact resource split is
+
+t_x+rho_x=kappa_x+u_i-1,
+
+and hence
+
+2 e_opt + E_foreign = K_U + sum_i n_i(u_i-1).
+
+Here e_opt counts optional target edges inside U and E_foreign counts outside-core edges to vertices in a different assigned part. Each edge is counted exactly once in E_foreign and twice in the optional-edge endpoint sum. This is an exact budget identity, not yet a contradiction.
+
+### R25. Independent d1 excess budget — PROVED_CONDITIONAL / OPEN
+
+For a d1 singleton class of allowance c and multiplicity N, every support u_i satisfies kappa_{u_i} in {c-1,c}, because c=kappa_{u_i}+e_F(u_i,S) and S is a singleton. Therefore
+
+N(c-1)<=K_U<=2r-2,
+
+in addition to (N-1)c<=3r-2 and N<=r-2. This improves the independent budget for c>=2 but does not yield N=O(1) for fixed c. d1 absorption remains OPEN.
+
 ## Explicit retractions from the canonical theory
 
 The file `D2_MISSING_PAIR_NEUTRAL_BOUND.md` is retained as a negative audit certificate. Its claimed consequences
@@ -320,4 +358,4 @@ All four coordinates are genuine bounded integers. Eta controls support overlap 
 
 ## Unique next blocker
 
-**Clean Pair Nonextension / bounded-allowance d1 terminal.** Prove that a sufficiently large repivot-closed clean K2 pair system is incompatible with the hereditary/clique/multicolor constraints, and absorb the bounded-allowance d1 concentration forced by eta. A universal strict Q2-increase route is ruled out by reversibility.
+**Clean Pair Nonextension / bounded-allowance d1 terminal.** In the AES high-density branch, use the optional-degree-four bound and off-part excess charge to eliminate or tightly classify the exceptional outside set X; then combine the exact identity 2e_opt+E_foreign=K_U+sum_i n_i(u_i-1) with the remaining core degrees. In parallel, use N(c-1)<=K_U and the eta coupling to close fixed-allowance d1 classes. The lower-density branch m<ceil(4r/3+3) remains open. A universal strict Q2-increase route is ruled out by reversibility.
