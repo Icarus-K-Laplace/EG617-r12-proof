@@ -428,6 +428,17 @@ def check_duplicate_budget_k12_packing_bound() -> None:
         assert count > 0
         assert maximum == expected
 
+    # Seven selected components among ten imply at least P_C-48
+    # selected witnesses are in the common size-five blocker intersection.
+    for P in range(49, 63):
+        common_lower = max(0, P - 45)
+        selected_lower = max(0, 7 + common_lower - 10)
+        assert selected_lower >= P - 48
+        if P == 49:
+            assert selected_lower == 1
+        if P == 50:
+            assert selected_lower == 2
+
     # If R <= 11, no pair sum can exceed 6 because the other five entries
     # each contribute at least one.
     for R in range(7, 12):
@@ -457,7 +468,7 @@ def main() -> None:
     print("Near-complete component matching budget checked for all r_i,r_j in 1..5.")
     print("Missing-diagonal duplicate-charge boundary arithmetic verified.")
     print("Aggregate scalar relaxation verified; it is not a graph-level counterexample.")
-    print("Duplicate-budget K12 packing lower bound and high-P profiles verified.")
+    print("Duplicate-budget K12 packing and labelled-witness extension bounds verified.")
     print("Scope: exact integer/degree ledgers only; no graph-realization certificate.")
 
 
