@@ -164,13 +164,33 @@ while the four-partite subcase retains its separate stronger bound \(S_0\ge22\).
 
 The \(P_C=50,r_i=6\) corner has a new conditional proof in R12_P50_R6_DOUBLE_STAR_EXCLUSION.md. Its reduction is \(R_C=12\), so the other six block budgets are all one. It selects one no-component row from each block and uses the exact gadget alignment predicate to form a \(K_{12}\) with an outside gadget vertex having at least two \(C\)-edges into the clique. The dedicated verifier checks 49,212 gadget configurations (204 Case A/B and 49,008 Case C), with zero failures in the independent in-session replay. The graph-level proof still depends on the stated row classifications and exact-129 factor theorem.
 
-The sibling result for \(P_C=49,r_i=6\) is in workstream/r12-unified-witness-capacity-20261025, OUTER_EXCEPTIONAL_ROW_COUPLING.md §12; verifier blob SHA 23cd4ef874faadbd5931c5e3553a1a55415c7a79. Both results are local corner exclusions only. The universal \(P_C\le49\) and \(P_C\le48\) claims remain not certified.
-
+The sibling result for \(P_C=49,r_i=6\) is in workstream/r12-unified-witness-capacity-20261025, OUTER_EXCEPTIONAL_ROW_COUPLING.md §12; verifier blob SHA 23cd4ef874faadbd5931c5e3553a1a55415c7a79. It remains a local corner exclusion and does not itself establish a universal cap.
 
 ### Additional \(P_C=50\) high-profile exclusions
 
-R12_P50_REMAINING_HIGH_PROFILES_EXCLUSION.md and verify_p50_remaining_high_profiles.py now exclude the profiles \((5,2,1^5)\) and \((4,3,1^5)\). The proof selects one no-component row from each of the two non-\(r=1\) blocks and one from each of the five \(r=1\) blocks. A finite gadget alignment yields a \(K_{12}\) and an external vertex with at least two \(C\)-edges into it.
+R12_P50_REMAINING_HIGH_PROFILES_EXCLUSION.md and verify_p50_remaining_high_profiles.py exclude the profiles \((5,2,1^5)\) and \((4,3,1^5)\). The proof selects one no-component row from each of the two non-\(r=1\) blocks and one from each of the five \(r=1\) blocks. A finite gadget alignment yields a \(K_{12}\) and an external vertex with at least two \(C\)-edges into it. The only incidence-sensitive subcases are when both non-\(r=1\) blocks have complement profile \((5,5)\); the verifier exhausts all allowed partial-component allocations and finds an aligned pair with at most four partial component incidences. The independent replay passed 1,656,848 base configurations, zero failures.
 
-The only incidence-sensitive subcases are the \((5,5)\)-complement profile in both non-\(r=1\) blocks. The verifier exhausts every allowed partial-component allocation and finds an aligned pair with at most four partial component incidences, ensuring no pair of selected rows covers a full isolated \(K_5\). The independent in-session replay passed 1,656,848 base configurations, zero failures.
+### Common-star theorem and arithmetic correction
 
-Together with the \(P_C=50,r_i=6\) result, this leaves only four possible \(P_C=50\) profiles with \(\max_i r_i\le4\): \((4,2,2,2,1^3)\), \((3,3,2,1^4)\), \((3,2,2,2,2,1^2)\), and \((2^5,1^2)\). These force ten component-labelled \(K_{12}\)'s but remain open under the valid star-capacity condition. The universal \(P_C\le49\) and \(P_C\le48\) caps remain **NOT CERTIFIED**.
+The correct seven positive integer profiles summing to \(R_C=12\) are
+\[
+(6,1^6),\ (5,2,1^5),\ (4,3,1^5),\ (4,2,2,1^4),\
+(3,3,2,1^4),\ (3,2,2,2,1^3),\ (2^5,1^2).
+\]
+Earlier progress notes mistakenly listed \((4,2,2,2,1^3)\) and \((3,2,2,2,2,1^2)\); both sum to 13, not 12. The canonical state, high-profile theorem, and active ledger have been corrected.
+
+R12_HIGH_P_COLOR_CAP_COMMON_STAR.md and verify_high_p_common_star.py establish a finite common-\((D,w)\) property for every allowed row-complement pair tuple with seven budgets \(1\le r_i\le5\) and total \(\sum_i r_i\le12\). The checker covers 18 budget profiles, four gadget normal forms, 72 profile/form cases, and 2,405,684 DP transitions; no empty common-candidate intersection occurs.
+
+If every pair of selected no-component rows has partial component incidence sum at most four, the common point \(w\) forces pairwise \(C\)-adjacency, and the seven rows plus \(D\) form a monochromatic \(K_{12}\). Seven proper omitted subsets of the six-point set \(U_C\setminus D\) then force an outside vertex with at least two \(C\)-edges into that clique, contradicting the valid star-capacity lemma.
+
+- If \(P_C\ge51\), then \(R_C\le11\) and every pair satisfies \(r_i+r_j\le6\), so the common-star argument excludes the profile.
+- If \(P_C=50\) and \(\max_i r_i\le4\), the four profiles \((4,2,2,1^4)\), \((3,3,2,1^4)\), \((3,2,2,2,1^3)\), and \((2^5,1^2)\) satisfy the same pairwise budget condition and are excluded.
+- The other three \(P_C=50\) profiles are excluded by the \(r_i=6\) double-star theorem and the two high-profile double-star theorems.
+
+Therefore the conditional colorwise cap
+\[
+\boxed{P_C\le49\quad\text{for every exact-129 color }C}
+\]
+is now established under the retained exact-129 factor, row-profile, pairwise-blocker, gadget-normal-form, and seven-block equality contracts. The stronger cap \(P_C\le48\) remains **NOT CERTIFIED**. E408 Q33 and EG617(\(r=12\)) remain **OPEN / NOT_CERTIFIED**.
+
+Verifier commit: c413b1065e9926d00ad1319f2e8d8a815e4850b5. Theorem commit: 04b5ec6f9a1e118faee2216208e1f13361fb8d43.
