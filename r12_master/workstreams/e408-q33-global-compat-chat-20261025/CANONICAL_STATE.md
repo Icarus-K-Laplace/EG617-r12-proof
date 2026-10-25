@@ -92,10 +92,11 @@ The next proof target is a stability/packing contradiction in Case 1 or a genuin
 
 ## Latest isolated commits
 
-- Independent audit of extended row theorem: 120af51e20552216521a389145704d305b90feaa
-- Explicit one-repeat deduction: c1815118748fc540260391b1dcd9814a769b3dc1
-- One-exception-row proof repair: 552ca5825e1504e6e7ad6a133abbd4fe230d2a7f
+- Exact \(r_i(C)=6\) classification and 6+1 cross-block matching: 6a1f034fe9d0b2ba5ca49acde9ae57a3c2d652ce
+- Dependency integration: a2ae2ec243711ca8ff94e3d7c507a97ffacd8386
+- Canonical integration: e143d8e9f4e20ad2ec0e06783e163db8079cb2a6
+- Theorem 11.1 / Corollary 11.2: c74b01170b4bab70e148e541b1c610279013f106
+- Independent audit of Theorem 10.1: 120af51e20552216521a389145704d305b90feaa
 - Theorem 10.1 / Corollary 10.2: 73f02a07d4722e09af203cbc0ac8d5d82af405e4
-- Dependencies and canonical integration: f21259a2a44caa9ba022025ca0c8cb92c52a0bfc / 02b76c419106ddc1d408c27c2ac2f5d2c4895362
 
 **Status remains OPEN / NOT_CERTIFIED.**
