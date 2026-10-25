@@ -328,3 +328,18 @@ because the union contains exactly one complete \(K_5\). But \(X_x\cup X_y\) cov
 In Case A, every label has a single-component row with at most five extra vertices (for the repeated label, choose the smaller of its two disjoint gadget portions). In Case C, each component-containing row has at most five extra incidences because the total excess above the 62-incidence baseline is five, and no row contains two full components. In Case B with \(m=10\), the nine fully represented labels have such rows. In Case B with \(m=11\), at most two labels lack a single-component row, namely the components that occur only in the double-component row; if one of them is the repeated component, it also has a single-component representative elsewhere. The selected representatives are distinct on each side, so the forced edges form the claimed matching. \(\square\)
 
 **Scope.** Theorem 11.1 classifies the exact \(r_i(C)=6\) boundary but does not by itself eliminate any of its cases. Corollary 11.2 extends the earlier ten-edge matching interface to a guaranteed eight-edge matching when the two block budgets are \(6\) and \(1\); the forced edges remain baseline edges unless a separate duplicate-incidence argument says otherwise.
+
+
+**Corollary 11.3 (high-\(P_C\) boundary forces a packing of maximum cliques).** Suppose \(C\) is exact-129, \(P_C\in\{49,50\}\), and some block \(B_i\) has \(r_i(C)=6\). Then:
+- if \(P_C=50\), \(C\) contains at least eight vertex-disjoint \(K_{12}\) cliques, each consisting of one \(K_\ell\) component and one representative from each of the seven outer blocks;
+- if \(P_C=49\), \(C\) contains at least seven such vertex-disjoint \(K_{12}\) cliques.
+
+**Proof.** Since \(R_C=62-P_C\), the six other block budgets sum to six when \(P_C=50\), so all six equal one. When \(P_C=49\), those six budgets sum to seven, so five equal one and the remaining one equals two.
+
+For \(P_C=50\), Corollary 11.2 supplies at least eight component labels whose representatives in \(B_i\) are C-adjacent to the exact \(K_\ell\) representatives in all six \(r_j=1\) blocks. The representatives for a fixed \(K_\ell\) in the six low-slack blocks are pairwise C-adjacent by Corollary 10.2, and every representative is C-adjacent to all five vertices of \(K_\ell\). Each such label therefore gives a \(K_{12}\).
+
+For \(P_C=49\), the \(r_j=2\) block has at least \(11-2=9\) distinct exact size-five blockers by (5). The \(r_i=6\) block has at least eight clean single-component labels by Corollary 11.2. Their label sets intersect in at least \(8+9-10=7\) components. For each common label, the representatives in the \(r_i=6\) and \(r_j=2\) blocks are C-adjacent by the same pairwise blocker argument as Corollary 11.2; representatives in the \(r_j=2\) and \(r=1\) blocks are C-adjacent by Corollary 10.2, as are representatives in any two \(r=1\) blocks. Thus each common label extends to a \(K_{12}\).
+
+Distinct labels use disjoint residual \(K_5\) components and distinct outer representatives, so the resulting cliques are vertex-disjoint. \(\square\)
+
+This is a packing consequence, not a contradiction: \(\omega(C)\le12\) permits disjoint maximum cliques, and the present ledger does not yet show that the forced packing is incompatible with the remaining 870-edge color budget.
