@@ -49,7 +49,7 @@ If a small non-neighbour set is a singleton, or if two small non-neighbour sets 
 
 ## 3. The \(\epsilon_U=1\) branch is impossible
 
-Now \(H[W]=K_4\cup K_4\cup K_5\cup K_5\), and the total excess in \(W\) is only three. By Lemma 2.2, every \(w\in W\) is complete to a \(U\)-part: a \(K_4\)-vertex has \(9+\epsilon_w\le12\) neighbours in \(U\), while a \(K_5\)-vertex has \(8+\epsilon_w\le11\).
+Now \(H[W]=K_4\cup K_4\cup K_5\cup K_5\), and the total excess in \(W\) is only three. Lemma 2.2 rules out a no-whole-part vertex unless it is a \(K_4\)-vertex \(w\) with \(\epsilon_w=3\) in the exceptional 12-neighbour pattern. That exceptional pattern is impossible here: its unique \(d\in D\) has \(t_d=2\) and \(W\)-neighbourhood a \(K_4\) not containing \(w\); all seven vertices of \(D\setminus\{d\}\) are adjacent to \(w\), and each must then be adjacent to every vertex of \(w\)'s \(K_4\)-part (a degree-four \(D\)-vertex is complete to that part; a degree-five one is complete to that part plus one extra). The other three vertices of that \(K_4\) have zero excess, cannot be complete to \(D\), and would have at least seven \(D\)-neighbours plus a full small part, impossible. Thus every \(w\in W\) is complete to a \(U\)-part.
 
 At least five distinct \(D\)-vertices have a cross edge in \(H[U]\). Every such vertex has exactly four \(W\)-neighbours and is therefore adjacent to all four vertices of one \(K_4\) part. (If the unique excess vertex is in \(D\) and has \(t_d=2\), it too has \(W\)-degree four; if it has \(t_d=1\), the other five endpoints still have degree four.)
 
@@ -65,7 +65,7 @@ Here all \(U\)-vertices have degree 12 and \(W\) has total excess four.
 
 Every \(D\)-endpoint has four \(W\)-neighbours, and Lemma 2.1 forces these to be exactly one of the two \(K_4\) parts. Six endpoints are distributed across those two parts, so one part \(C\) has \(k\ge3\) endpoint neighbours. It cannot be complete to \(D\), or \(D\cup C\) would be \(K_{12}\).
 
-If a vertex \(w\in C\) had no whole \(U\)-part, Lemma 2.2 would give 13 \(U\)-neighbours, requiring \(\epsilon_w=4\); the other three vertices of \(C\) would then have zero excess but, being adjacent to at least \(k\ge3\) endpoints and not complete to \(D\), would need at least \(7+k\ge10\) \(U\)-neighbours. Thus every \(w\in C\) is complete to a small part and requires \(\epsilon_w\ge k-2\ge1\). The other \(K_4\) part also has at least three endpoints and is likewise not complete to \(D\), so it costs at least four more excess units. Total excess at least eight contradicts four.
+Here every (d\in D) has (t_d\le1), so Lemma 2.2 implies that a vertex of (C) with no whole (U)-part has at least 13 (U)-neighbours and hence \\(\epsilon_w=4\\); the other three vertices of \\(C\\) would then have zero excess but, being adjacent to at least \\(k\ge3\\) endpoints and not complete to \\(D\\), would need at least \\(7+k\ge10\\) \\(U\\)-neighbours. Thus every \(w\in C\) is complete to a small part and requires \(\epsilon_w\ge k-2\ge1\). The other \(K_4\) part also has at least three endpoints and is likewise not complete to \(D\), so it costs at least four more excess units. Total excess at least eight contradicts four.
 
 ### 4.2. \(H[W]=K_4^3\cup K_6\)
 
