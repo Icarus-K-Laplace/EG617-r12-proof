@@ -76,7 +76,7 @@ d_C(z,K_{12})\le1,
 \]
 not \(d_C(z,K_{12})=0\). A single external \(C\)-edge is allowed.
 
-The former proofs of the \(P_C=50,r_i=6\) corner and the claimed caps \(P_C\le49\), \(P_C\le48\) are withdrawn because they used the invalid single-edge inference. The specific \(P_C=50,r_i=6\) corner is now independently excluded by the corrected double-star theorem R12_P50_R6_DOUBLE_STAR_EXCLUSION.md and its 49,212-case finite verifier. A read-only sibling theorem also excludes the local \(P_C=49,r_i=6\) corner using the same valid double-star principle. However, the universal caps \(P_C\le49\), \(P_C\le48\), and the other \(P_C=49\) profiles remain **NOT CERTIFIED**. The profiles \((5,2,1^5)\) and \((4,3,1^5)\) at \(P_C=50\) have now also been excluded by a separate double-star theorem; only the four profiles with \(\max_i r_i\le4\) remain at \(P_C=50\). The former drafts remain on audit hold and are preserved in \`ARCHIVE_UNCERTIFIED_OUTER_CAPS_20261025.md\`; do not use them as dependencies.
+The former proofs of the \(P_C=50,r_i=6\) corner and the claimed caps \(P_C\le49\), \(P_C\le48\) are withdrawn because they used the invalid single-edge inference. The \(P_C=50,r_i=6\) corner is now independently excluded by R12_P50_R6_DOUBLE_STAR_EXCLUSION.md; the profiles \((5,2,1^5)\) and \((4,3,1^5)\) are excluded by R12_P50_REMAINING_HIGH_PROFILES_EXCLUSION.md. The four remaining correct profiles with \(\max_i r_i\le4\) are \((4,2,2,1^4)\), \((3,3,2,1^4)\), \((3,2,2,2,1^3)\), and \((2^5,1^2)\); the earlier alternatives \((4,2,2,2,1^3)\) and \((3,2,2,2,2,1^2)\) were an arithmetic transcription error because they sum to 13, not 12. These four profiles and all \(P_C\ge51\) profiles are now excluded by R12_HIGH_P_COLOR_CAP_COMMON_STAR.md, establishing the conditional colorwise cap \(P_C\le49\). The stronger cap \(P_C\le48\), which would exclude \(P_C=49\), remains **NOT CERTIFIED**. The former drafts remain on audit hold and are preserved in \`ARCHIVE_UNCERTIFIED_OUTER_CAPS_20261025.md\`; do not use them as dependencies.
 
 ## Result 4: universal E408 Q33 minimum-support bound \(S_0\ge13\)
 
@@ -118,21 +118,20 @@ The next proof target is a stability/packing contradiction in Case 1 or a genuin
 - All results here remain conditional on the retained T61 reduction, exact-129 factor theorem, 31-point/56-witness minimum-support boundary, and outer seven-block equality contract.
 - This workstream does not close E408 Q32 (285-edge core), E407 Q32, or the original K145 theorem.
 
-- The former outer (P_C\le49), (P_C\le48), and (P_C=50,r_i=6) conclusions are on audit hold because the single-external-edge isolation inference is false.
+- The former single-edge proofs are on audit hold; the independent double-star/common-star proofs now establish the conditional cap P_C\le49, while P_C\le48 remains NOT CERTIFIED.
 
 ## Latest isolated commits
 
+- Common-star finite verifier: c413b1065e9926d00ad1319f2e8d8a815e4850b5
+- Conditional colorwise \(P_C\le49\) theorem: 04b5ec6f9a1e118faee2216208e1f13361fb8d43
+- Active ledger profile correction and common-star theorem integration: 1a41ecfc88e25207d0f52e52d43e4a48a76b4dc6
+- Corrected \(P_C=50\) high-profile partition arithmetic: d55d0e43a1b17fd9ef2b5dd7971560f1dcc4025d
 - S0=12 exclusion theorem, including row-identity and disjoint-part audit: a1cc059324df01bfa1afec5bf20ba7a1194dd249
-- S0=12 arithmetic profile verifier (deduplicated profile output): 4093c6f03aa5ca60f80765264e90590cdf85d5f1
-- Active seven-block ledger corrected to withdraw the invalid isolation lemma: c80e36782de9a0dfb5a6eb3b8059aa343e136774
-- Repaired local (P_C=50,r_i=6) corner via double-star: 07b6891eefac7163b1a0fbc1c2529126c2b5b1d7; verifier 2c42edbf6996bc733f7df1ee5a182c5e8954447e
-- Updated active ledger with repaired local corner: e714b150a0d63fff1b7fa295fd8fa372e91c6950
-- Excluded P_C=50 profiles (5,2,1^5) and (4,3,1^5): 4a1bd39ba4e08854fd35907d051a44451259b07c
-- Finite verifier for the two remaining high profiles: d33fe53aa7cd63f1fff9cb337231e39e449b28d7
-- Active ledger updated with high-profile exclusions: 682ea469f41a31d07573ee6ec08c31f6ad27294e
-- Updated proof dependency map: 5a01f8e4614e70fe4c3582b56d701ba6c7011471
-- Progress log update: b8e54cb68a977d012073eb9e2a1125db9528bacb
-- Preserved the prior outer-cap proof attempts with a NOT CERTIFIED warning: a0a8f21d872b261b24580ad5e9f15942046cc74f
-- Marked P49/P48 outer-cap drafts NOT CERTIFIED: a11d93b8d9a3cd58aa7f6f8da58ae3e90def8391; cfcb8f70f856dd742d3a658551b97f5d65e17fb3
+- S0=12 arithmetic profile verifier: 4093c6f03aa5ca60f80765264e90590cdf85d5f1
+- Repaired local \(P_C=50,r_i=6\) corner via double-star: 07b6891eefac7163b1a0fbc1c2529126c2b5b1d7; verifier 2c42edbf6996bc733f7df1ee5a182c5e8954447e
+- \(P_C=50\) profiles \((5,2,1^5)\), \((4,3,1^5)\) and finite verifier: 4a1bd39ba4e08854fd35907d051a44451259b07c; d33fe53aa7cd63f1fff9cb337231e39e449b28d7
+- Active ledger updates: e714b150a0d63fff1b7fa295fd8fa372e91c6950; 1a41ecfc88e25207d0f52e52d43e4a48a76b4dc6
+- Proof dependency map update pending in this continuation.
+- Archived uncertified outer-cap drafts and P49/P48 audit holds: a0a8f21d872b261b24580ad5e9f15942046cc74f; a11d93b8d9a3cd58aa7f6f8da58ae3e90def8391; cfcb8f70f856dd742d3a658551b97f5d65e17fb3
 
 **Current status: E408 Q33 and EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.**
