@@ -54,7 +54,7 @@ The inherited file DELTA14_EPSU1_2_ANTICOMPL_COMPONENT_PROFILES.md discusses \(K
 
 ## 5. Next highest-leverage target
 
-**Current target: classify the general 15-vertex saturated kernel J.** Determine whether every 15-vertex, 49-edge, triangle-free, non-bipartite triangle-saturated J compatible with the two orthogonal near-perfect-matching decompositions has a degree-4 vertex or is isomorphic to the explicit (5,5,2,1,2) C5-blow-up. The explicit blow-up has now been shown to admit no full 47-core extension for any epsilon_U in {0,1,2}; do not mistake this candidate-specific exclusion for a classification of all J. In parallel, start the delta<=13 branch from a fresh exact ledger.
+**Current target: move to the remaining delta<=13 ledger and the five E407 shell templates.** The general delta=14 non-four-partite saturated terminal is now conditionally excluded by DELTA14_SATURATED_KERNEL_CLASSIFICATION.md together with DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md. This closure depends on the retained alpha-critical kernel reduction, especially the unaudited Didin-preprint component-count step. Do not promote the whole E407 Q32 boundary or EG617(r=12) to closed.
 
 ## Round 14 update — current live frontier
 
@@ -105,3 +105,10 @@ The transversal argument depends on the singleton \(d_0\) of the explicit C5-blo
 DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md excludes epsilon_U=1,2 for the explicit C5-blow-up local graph; Round 19 already excluded epsilon_U=0. The local candidate therefore cannot extend to the full 47-core under the retained contracts.
 
 This does not close the general non-four-partite saturated branch. The remaining saturated-kernel question is whether other 15-vertex triangle-free, non-bipartite, triangle-saturated graphs with 49 edges and the required witness-induced matching structure exist and, if so, whether any can extend. The delta<=13 cases, five shell templates, and upstream bridge remain OPEN / NOT_CERTIFIED.
+
+
+## Round 22 update — general saturated delta=14 branch closed conditionally
+
+DELTA14_SATURATED_KERNEL_CLASSIFICATION.md proves that any admissible J in the retained 15-vertex kernel contract must have a degree-4 vertex v; J-v is K7,7 minus K2,2, and J is the C5 blow-up with part sizes (1,2,5,5,2). The earlier candidate-extension theorem then rules out every W-extension for epsilon_U=0,1,2. Therefore this entire saturated delta=14 subcase is conditionally excluded.
+
+The proof uses the AES equality case at minimum degree 2n/5 and the Brouwer/Kang–Pikhurko bound for non-bipartite triangle-free graphs on 14 vertices. The upstream extraction of the 15-vertex J remains conditional on the Didin-preprint component-count theorem. Remaining live gaps: delta<=13, all five E407 shell templates, and the original K145-to-T61 bridge.
