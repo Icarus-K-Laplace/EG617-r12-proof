@@ -122,24 +122,10 @@ The next proof target is a stability/packing contradiction in Case 1 or a genuin
 
 ## Latest isolated commits
 
-- Audited and repaired P48 boundary proof: 6a1b3b428f85e5600f1786f812571cbf1a7ee434
-- Corrected \(r=8,n=1\) excess wording: 658b0881a69b87fb35fe713765e6fbee7b470613
-- Clarified 53+53 verifier scope: 6b5b356b1c3e8c70a7b8a296d6af46863b6a2a49
-- Updated exact alignment certificate: 06a1ff0507035e44829586a1f543b63643a957ae
-- P48 boundary exclusion theorem (initial): 26ef67f0a9cd139e7bfb29655987e9f5ad58a528
-- Clarified impossible pair-sum-seven no-second branch: 9408fcd6f26f1e4b1c566192044e1e00054c497f
-- Expanded exact-129 gadget alignment certificate (initial): 320dbcdb82bc42ae8f770084ae8c9f72491eaea2
-- Extended finite gadget verifier (initial): 2209c1764182a1aaa5b945469d8edf9fc81cffa5
-- Corrected \(6+1\) Case C branch in the \(P_C=49\) proof: 333cc2d6cbd48b01dde395ad8b1135b6c10a3d26
-- Refined \(P_C=49\) proof for pair-sum-eight and \(r_i=6\) cases: 787427120154b300f5d9c7f137c5cb366cfa434a
-- Complete \(r_i=7\) budget analysis and finite alignment source: a2a4557b990075f1e6cf34f85dd93394fd6008b7
-- Initial \(P_C=49\) boundary theorem: d55bdd28227fab0813b145282474d82e300e6550
-- Universal exact-129 budget cap \(P_C\le49\): 39809f71b0b6602590e90cb632a017f8719000bb
+- S0=12 exclusion theorem, including row-identity and disjoint-part audit: a1cc059324df01bfa1afec5bf20ba7a1194dd249
+- S0=12 arithmetic profile verifier: fe4e72e53395843395af92177f08e66717eecae5
+- Active seven-block ledger corrected to withdraw the invalid isolation lemma: c80e36782de9a0dfb5a6eb3b8059aa343e136774
+- Preserved the prior outer-cap proof attempts with a NOT CERTIFIED warning: a0a8f21d872b261b24580ad5e9f15942046cc74f
+- Marked P49/P48 outer-cap drafts NOT CERTIFIED: a11d93b8d9a3cd58aa7f6f8da58ae3e90def8391; cfcb8f70f856dd742d3a658551b97f5d65e17fb3
 
-**Status remains OPEN / NOT_CERTIFIED.**
-
-- S0=12 equality exclusion theorem: 9560a699ab2665b2e9d433c1e52a4ae7292babd7 (final proof-audit notation fix)
-- S0=12 degree-profile verifier: fe4e72e53395843395af92177f08e66717eecae5
-- Active outer-cap ledger corrected to withdraw invalid isolation lemma: c80e36782de9a0dfb5a6eb3b8059aa343e136774
-- Preserved uncertified outer-cap drafts with warning: a0a8f21d872b261b24580ad5e9f15942046cc74f
-- P49/P48 outer-cap drafts marked NOT CERTIFIED: a11d93b8d9a3cd58aa7f6f8da58ae3e90def8391; cfcb8f70f856dd742d3a658551b97f5d65e17fb3
+**Current status: E408 Q33 and EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.**
