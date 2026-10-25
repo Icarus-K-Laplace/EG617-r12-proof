@@ -76,7 +76,7 @@ d_C(z,K_{12})\le1,
 \]
 not \(d_C(z,K_{12})=0\). A single external \(C\)-edge is allowed.
 
-Therefore the former \(P_C=50,r_i=6\) exclusion and the claimed caps \(P_C\le49\) and \(P_C\le48\) are **NOT CERTIFIED** on this branch until repaired by an argument that forces at least two external \(C\)-edges from one outside vertex or another independent contradiction. The detailed P49/P48 drafts remain in the workstream but carry an explicit audit hold; the earlier sections 13–16 were preserved in \`ARCHIVE_UNCERTIFIED_OUTER_CAPS_20261025.md\`. Do not use these outer caps as dependencies.
+The former proofs of the \(P_C=50,r_i=6\) corner and the claimed caps \(P_C\le49\), \(P_C\le48\) are withdrawn because they used the invalid single-edge inference. The specific \(P_C=50,r_i=6\) corner is now independently excluded by the corrected double-star theorem R12_P50_R6_DOUBLE_STAR_EXCLUSION.md and its 49,212-case finite verifier. A read-only sibling theorem also excludes the local \(P_C=49,r_i=6\) corner using the same valid double-star principle. However, the universal caps \(P_C\le49\), \(P_C\le48\), and the other \(P_C=50\)/\(P_C=49\) profiles remain **NOT CERTIFIED**. The former drafts remain on audit hold and are preserved in \`ARCHIVE_UNCERTIFIED_OUTER_CAPS_20261025.md\`; do not use them as dependencies.
 
 ## Result 4: universal E408 Q33 minimum-support bound \(S_0\ge13\)
 
@@ -125,6 +125,8 @@ The next proof target is a stability/packing contradiction in Case 1 or a genuin
 - S0=12 exclusion theorem, including row-identity and disjoint-part audit: a1cc059324df01bfa1afec5bf20ba7a1194dd249
 - S0=12 arithmetic profile verifier: fe4e72e53395843395af92177f08e66717eecae5
 - Active seven-block ledger corrected to withdraw the invalid isolation lemma: c80e36782de9a0dfb5a6eb3b8059aa343e136774
+- Repaired local (P_C=50,r_i=6) corner via double-star: 07b6891eefac7163b1a0fbc1c2529126c2b5b1d7; verifier 2c42edbf6996bc733f7df1ee5a182c5e8954447e
+- Updated active ledger with repaired local corner: e714b150a0d63fff1b7fa295fd8fa372e91c6950
 - Preserved the prior outer-cap proof attempts with a NOT CERTIFIED warning: a0a8f21d872b261b24580ad5e9f15942046cc74f
 - Marked P49/P48 outer-cap drafts NOT CERTIFIED: a11d93b8d9a3cd58aa7f6f8da58ae3e90def8391; cfcb8f70f856dd742d3a658551b97f5d65e17fb3
 
