@@ -1,7 +1,7 @@
 # Exact-129 boundary exclusion: \(P_C=48\)
 
 Date: 2026-10-25  
-Status: **PROVED_WITH_FINITE_GADGET_CERTIFICATE**, conditional on the retained exact-129 factor theorem and seven-block equality contract.  
+Status: **NOT CERTIFIED — AUDIT HOLD**. The proof uses single-external-(C)-edge contradictions from monochromatic (K_{12})'s; the valid star condition permits one such edge, so the claimed (P_C=48) exclusion is not established.  
 Scope: excludes the next integer layer after P49_BOUNDARY_EXCLUSION.md; it does not close E408 Q33.
 
 ## 1. Statement
