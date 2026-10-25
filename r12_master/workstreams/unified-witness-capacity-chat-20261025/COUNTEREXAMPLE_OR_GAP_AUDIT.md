@@ -191,21 +191,18 @@ Under top-cell A and \(r_i(C)=1\), the exact row normal form gives \(e_C(B_i,W)\
 This is an ownership refinement, not a global contradiction. Across blocks, the row normal form still allows the unique duplicates to split between W and O. A terminal proof must combine these locations with the target degree vector and the cross-edge defect sum \(\sum_C t_C=K_W\) (E408) or \(K_W+1\) (E407).
 
 
-## 16. External-edge closure of the \(P_C=50,r_i=6\) corner
+## 16. Critical audit: a single external C-edge is allowed
 
-The latest sibling theorem proves that every monochromatic \(K_{12}\) in a non-target color is isolated: an outside vertex's 12 incident edges to the clique must contain each of the other eleven colors, so the clique's color cannot occur on any of those edges.
+The earlier sibling-based claim that every monochromatic \(K_{12}\) is isolated in its color is invalid as stated. For an outside vertex \(z\), the 12 edges to a \(C\)-colored \(K_{12}\) must contain all eleven colors \(D\ne C\), but the twelfth edge may be color \(C\). The valid conclusion is
+\[
+\boxed{d_C(z,K_{12})\le1.}
+\]
+A contradiction requires at least two external \(C\)-edges from the same outside vertex into the \(K_{12}\). Consequently, sibling proofs whose only contradiction is a single external \(C\)-edge—including the current \(P_C\le49\) and \(P_C\le48\) boundary proofs—are NOT CERTIFIED until independently repaired. This workstream does not use those bounds as assumptions.
 
-If \(m\) disjoint \(C\)-colored \(K_{12}\)'s each use one representative from each of the seven outer blocks, the remaining \(12-m\) vertices in each block have a C-bipartite graph of minimum degree one and maximum degree two across any block pair. Therefore \(P_C\le21(12-m)\).
+## 17. Conditional local exclusion of \(P_C=49,r_i=6\)
 
-Applying the exact \(r_i=6\) cases and the six low-slack blocks excludes \(P_C=50,r_i=6\): Cases A/B force an external edge on a \(K_{12}\); Case C either has such an edge or yields ten isolated K12s and the bound \(P_C\le42\). The proof is recorded on sibling head 8b4bfef7a9e3d957c7150af30aadba703a08d31f. The remaining nearby corner \(P_C=49,r_i=6\) is still open; do not promote the P=50 argument to it without handling the single \(r_i=2\) block.
+Section 12 of OUTER_EXCEPTIONAL_ROW_COUPLING.md now uses the correct double-star condition. The exact verifier covers all four gadget normal forms, the exact Case-C complement profiles, all \(r=1\) omitted-pair types, and all \(r=2\) pairs. Its in-session predicate replay passed 2,132 Case-A/B configurations and 412,768 exact-profile Case-C configurations.
 
+The row-incidence safety condition is explicit: in Case C, \(d_K\le |H_1|+|H_2|-5\). For profiles \((5,5)\) and \((5,4)\), one of the two high rows has at most two partial component incidences, and both high-row choices are verified. For the remaining profiles, \(d_K\le3\), so either high row is safe. The \(r=2\) row contributes at most one partial component incidence. This prevents any selected pair of row-neighborhoods from covering a full isolated \(K_5\) and makes the pairwise blocker argument valid.
 
-## 16. P=49, r=6 corner closed conditionally; remaining profile ledger
-
-Theorem 12.1 and verify_p49_r6_gadget_exclusion.py eliminate every exact-129 configuration with \(P_C=49\) and a block budget \(r_i=6\), under the retained exact gadget normal form and row contracts. The finite search covers all four gadget parameters and all permitted \(r=1\), \(r=2\), and \(r=6\) omitted-complement patterns. It does not replace the upstream proof of those contracts.
-
-Combining with sibling E408 Q33 Theorem 14.1 (\(P_C\le49\)), a \(P_C=49\) exact color has \(R_C=13\). The only possible block-budget profile with an entry at least eight is \((7,1,1,1,1,1,1)\); the \(r=6\) profile \((6,2,1,1,1,1,1)\) is excluded. If all entries are at most five, the sorted positive 7-tuples of sum 13 are:
-- excluded by Corollary 10.2 and the isolated-K12 cap: \((3,3,3,1,1,1,1)\), \((4,2,2,2,1,1,1)\), \((3,3,2,2,1,1,1)\), \((3,2,2,2,2,1,1)\), \((2,2,2,2,2,2,1)\);
-- still open because one pair sum is at least seven: \((5,3,1,1,1,1,1)\), \((4,4,1,1,1,1,1)\), \((5,2,2,1,1,1,1)\), \((4,3,2,1,1,1,1)\).
-
-The \(r=7\) profile and the four high-pair profiles remain unresolved. No full theorem closure follows.
+This is a conditional exclusion of the single corner \(P_C=49,r_i=6\), not a colorwise bound \(P_C\le49\). The sibling bound \(P_C\le49\) is not currently a certified dependency because its published proof uses the invalid isolation lemma. The remaining colorwise \(P_C=49\) profiles and the aggregate eleven-color ledger therefore remain open.
