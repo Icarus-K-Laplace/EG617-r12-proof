@@ -18,7 +18,7 @@ These are the latest heads observed in the repository at the time of this update
 - The E407 Q32 boundary has 49 linear independent 4-set witnesses on a 29-point support, with \(e(H)=284\), \(\alpha(H)\le4\), \(\delta(H)\ge12\), and total core excess 4.
 - The exact ledger gives \(3\le\delta\le16\), \(\delta+\epsilon_U\le16\), and the sibling transversal/excess lemma gives \(\epsilon_U+2\delta\ge9\).
 - The \(\delta=16\) four-partite branch is **EXCLUDED**. The 4+1 and 3+2 endpoint splits violate the excess budget; the 5+0 split forces its endpoint \(K_4\) to be complete to the 8-part, creating a forbidden \(K_{12}\). See FOUR_PARTITE_TERMINAL.md.
-- The \(\delta=15\) four-partite branch is reduced in DELTA15_FOUR_PARTITE_TERMINAL.md: \(\epsilon_U=1\) is excluded, and for \(\epsilon_U=0\) the \(K_4^3\cup K_6\) and one-cross-edge \((4,4,5,5)\) profiles are excluded. The only remaining profile is \(H[W]=K_3\cup K_5^3\), with the \(K_3\) complete to the 8-part \(D\), giving an allowed \(K_{11}\) that still must be reconciled with the shell templates.
+- The \(\delta=15\) four-partite branch is **EXCLUDED** in DELTA15_FOUR_PARTITE_TERMINAL.md: after eliminating three W-profiles, the last \(K_3\cup K_5^3\) profile forces \(k_A=k_B=k_C=5\), so any cross-edge endpoint has a forbidden \(K_{12}\) neighbourhood.
 - The \(\delta=15\) non-four-partite branch is **excluded** under the retained core/witness contract: Kang–Pikhurko equality reduces it to a balanced \((7,7,7,7)\) base, and the exceptional vertices \(x,y\) have incompatible required degrees into \(W\). The full reduction and contradiction are in DELTA15_SECOND_TURAN_PACKING.md.
 - The final \(\delta=15\) contradiction compares \(d_H(x,W)=a-1+\epsilon_x\) and \(d_H(y,W)=6-a+\epsilon_y\). Whole-part saturation in \(W\) forces incompatible lower bounds on \(a\), for both \(\epsilon_U=0\) and \(\epsilon_U=1\).
 - In that case, \(U\)-part sizes are \(7,7,7,8\), \(H[W]=K_5\cup K_5\cup K_4\cup K_4\), and the five cross edges in \(H[U]\) form a matching between the 8-part and the three 7-parts.
@@ -33,7 +33,7 @@ These are the latest heads observed in the repository at the time of this update
 | E407 template D | OPEN |
 | E407 template E | OPEN |
 | \(\delta=16\) four-partite extreme | EXCLUDED by endpoint-split analysis and forbidden \(K_{12}\) |
-| \(\delta=15\) four-partite | \\(\epsilon_U=1\\) and two \\(\epsilon_U=0\\) W-profiles excluded; only \\(K_3\cup K_5^3\\), with \\(D\cup K_3=K_{11}\\), remains OPEN |
+| \(\delta=15\) four-partite | EXCLUDED by W-profile saturation and forbidden \(K_{12}\) |
 | \(\delta=15\) non-four-partite | EXCLUDED under KP equality + core-to-\(W\) degree contradiction |
 | \(\delta=14\) four-partite | W-part profiles classified, compatibility OPEN |
 | \(\delta\le14\) non-four-partite | OPEN |
