@@ -6,6 +6,7 @@ bounds, and the two scalar-relaxation examples. It is not a graph search and
 does not certify realization of a witness hypergraph or a colored graph.
 """
 from math import comb
+from itertools import product
 
 
 def p3(n: int) -> int:
@@ -401,6 +402,38 @@ def check_scalar_budget_relaxation() -> None:
     assert all(min(row) >= 7 for row in exact_r)
 
 
+def check_duplicate_budget_k12_packing_bound() -> None:
+    # The common size-five blocker bound gives at least max(0, P_C-45)
+    # common component labels, hence disjoint K12 cliques.
+    for R in range(7, 63):
+        P = 62 - R
+        common_lower = max(0, 17 - R)
+        assert common_lower == max(0, P - 45)
+
+    # Exhaust all positive profiles (r_0,...,r_6) with r_i <= 5
+    # for the near-terminal sums R=11,12,13.
+    expected_high_pairs = {11: 0, 12: 1, 13: 2}
+    for R, expected in expected_high_pairs.items():
+        maximum = -1
+        count = 0
+        for profile in product(range(1, 6), repeat=7):
+            if sum(profile) != R:
+                continue
+            count += 1
+            high_pairs = sum(
+                1 for i in range(7) for j in range(i+1, 7)
+                if profile[i] + profile[j] >= 7
+            )
+            maximum = max(maximum, high_pairs)
+        assert count > 0
+        assert maximum == expected
+
+    # If R <= 11, no pair sum can exceed 6 because the other five entries
+    # each contribute at least one.
+    for R in range(7, 12):
+        assert R - 5 <= 6
+
+
 def main() -> None:
     check_zero_excess_endpoint_tables()
     check_edge_ledgers()
@@ -414,6 +447,7 @@ def main() -> None:
     check_near_complete_component_matching_bound()
     check_missing_diagonal_duplicate_charge()
     check_scalar_budget_relaxation()
+    check_duplicate_budget_k12_packing_bound()
     print("R12_UNIFIED_WITNESS_CAPACITY_ARITHMETIC_OK")
     print("Partite branch: exact Q33 incidence profile and labelled row caps verified.")
     print("Pair-certificate multiplicity: max 45 unlabelled / 9 label-anchored pairs.")
@@ -423,6 +457,7 @@ def main() -> None:
     print("Near-complete component matching budget checked for all r_i,r_j in 1..5.")
     print("Missing-diagonal duplicate-charge boundary arithmetic verified.")
     print("Aggregate scalar relaxation verified; it is not a graph-level counterexample.")
+    print("Duplicate-budget K12 packing lower bound and high-P profiles verified.")
     print("Scope: exact integer/degree ledgers only; no graph-realization certificate.")
 
 
