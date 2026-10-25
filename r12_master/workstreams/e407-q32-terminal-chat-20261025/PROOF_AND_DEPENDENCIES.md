@@ -192,3 +192,12 @@ The verifier exhausts finite label/excess arithmetic only. The analytic graph le
 ## Round 28 — two-cross-edge W-profile reduction
 
 DELTA13_EPS1_TWO_CROSS_EDGE_PROFILE_REDUCTION.md establishes, under the retained 49-witness/core contract and four-partite-U hypothesis, the exact Type-I/Type-II blocker classification for W-unsaturated U-vertices and the capacity bounds |S_K4|<=9, |S_K5|<=2+E_i. The arithmetic verifier checks the degree/edge ledger and finite capacity arithmetic only. The graph-theoretic blocker classification, reverse-saturation lemma, and label-capacity arguments remain analytic proof dependencies; no SAT/ILP result is used. The profile remains open only at the k>=5 labelled exception system (provided at least one W-cross-edge meets a K4).
+
+
+## Round 29 — audited saturated-kernel extension theorem
+
+The earlier draft of DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md used the invalid implication (|S_P|le11-|P|) for the total common-neighbour set of a clique part. That draft was withdrawn. The replacement proof uses (i) independent transversals for the (epsilon_U=0) and one-cross-edge profiles, (ii) a 15-versus-13 incidence count for the (K_3cup3K_5) profile, and (iii) an A/B assignment reduction followed by a ten-versus-four incidence contradiction for (epsilon_U=2). No total common-neighbour cardinality bound is inferred from clique number alone.
+
+DELTA14_SATURATED_KERNEL_CLASSIFICATION.md now includes the boundary cases (X=A) and (Y=B) in the bipartition balance step. Its proof remains conditional on the cited Andrásfai–Erdős–Sós equality case, Brouwer's second-Turán bound, and the component-count step in DELTA14_SATURATED_ALPHA_CRITICAL_REDUCTION.md, which depends on Didin's 2026 preprint theorem and has not been independently audited here.
+
+Under those retained dependencies, the general (delta=14), non-four-partite, (K_5)-saturated terminal is conditionally excluded. This does not close the other (delta) cases, the five shell templates, or the (K_{145})-to-T61 bridge. The two arithmetic scripts were updated but are not claimed as executed in this round.
