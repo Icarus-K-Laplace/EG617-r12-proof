@@ -58,9 +58,9 @@ The pairwise blocker theorem gives two alternatives:
   Thus each omitted pair has type \(55,54,53,\) or \(44\), and the two pairs cannot both have type \(53\). The pair/pair alignment certificate supplies a common \(D\), giving the external-edge contradiction.
 - **No second full component is covered.** The remaining gadget must have independence number at most one. Since \(\omega(C[U])=5\), the two neighborhoods must cover at least six gadget vertices, hence \(e_i+e_j\ge6\). Therefore
   \[
-  a_i+a_j+t_i+t_j\le s-6\le3,
+  a_i+a_j+t_i+t_j\le s-6\le3.
   \]
-  so both omitted pairs have type \(55\) or \(54\). The same alignment argument gives a contradiction.
+  When \(s=7\), this would force \(a_i+a_j+t_i+t_j\le1\), impossible because \(a_i,a_j\ge1\); so the no-second-component branch cannot occur. When \(s=8\), both omitted pairs have type \(55\); when \(s=9\), both have type \(55\) or \(54\). The same alignment argument gives a contradiction.
 
 For completeness, the five remaining budgets have sum \(14-s\le7\):
 - if \(s=7\), they are either \((3,1^4)\) or \((2,2,1^3)\);
