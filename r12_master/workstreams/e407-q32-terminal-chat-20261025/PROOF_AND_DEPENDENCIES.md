@@ -166,3 +166,10 @@ The new verifier checks only integer partitions, excess allocations, and numeric
 DELTA13_EPS1_K3K5K5K5_ONE_CROSS_EDGE.md excludes the \(K_3\dot\cup3K_5\) W-profile plus one cross-edge under the four-partite-U and 49-witness contract. The proof preserves the unique possible degree-seven unsaturated-U exception rather than assuming all U vertices are saturated: the \(d_H(u,W)=6\) case contradicts the component capacity, while the \(d_H(u,W)=7\) case can occur at most once. Therefore at least 28 U vertices lie in the component common-neighbour cover, but the total cover capacity is at most 26.
 
 The verifier checks the finite capacity totals and the strict gap only. The other \(\delta=13\) W-cross-edge profiles remain open.
+
+
+## Round 25 — delta-13 \(3K_4\dot\cup K_6\) with K4–K6 cross-edge
+
+DELTA13_EPS1_3K4_K6_K4K6_EDGE.md excludes this profile under the four-partite-U and 49-witness contract. The proof uses the exact eight-edge U-cross-edge ledger, the independent-transversal saturation lower bound, reverse saturation for W-vertices, and componentwise label/excess capacities. The verifier checks the numeric edge ledger and the final \(28<29\) capacity contradiction only; the graph lemmas remain analytic.
+
+The placement with the cross-edge between two K4 components is not covered by this result.
