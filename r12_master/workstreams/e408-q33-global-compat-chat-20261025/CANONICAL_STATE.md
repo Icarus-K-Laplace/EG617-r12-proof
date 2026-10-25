@@ -76,7 +76,7 @@ d_C(z,K_{12})\le1,
 \]
 not \(d_C(z,K_{12})=0\). A single external \(C\)-edge is allowed.
 
-The former proofs of the \(P_C=50,r_i=6\) corner and the claimed caps \(P_C\le49\), \(P_C\le48\) are withdrawn because they used the invalid single-edge inference. The specific \(P_C=50,r_i=6\) corner is now independently excluded by the corrected double-star theorem R12_P50_R6_DOUBLE_STAR_EXCLUSION.md and its 49,212-case finite verifier. A read-only sibling theorem also excludes the local \(P_C=49,r_i=6\) corner using the same valid double-star principle. However, the universal caps \(P_C\le49\), \(P_C\le48\), and the other \(P_C=50\)/\(P_C=49\) profiles remain **NOT CERTIFIED**. The former drafts remain on audit hold and are preserved in \`ARCHIVE_UNCERTIFIED_OUTER_CAPS_20261025.md\`; do not use them as dependencies.
+The former proofs of the \(P_C=50,r_i=6\) corner and the claimed caps \(P_C\le49\), \(P_C\le48\) are withdrawn because they used the invalid single-edge inference. The specific \(P_C=50,r_i=6\) corner is now independently excluded by the corrected double-star theorem R12_P50_R6_DOUBLE_STAR_EXCLUSION.md and its 49,212-case finite verifier. A read-only sibling theorem also excludes the local \(P_C=49,r_i=6\) corner using the same valid double-star principle. However, the universal caps \(P_C\le49\), \(P_C\le48\), and the other \(P_C=49\) profiles remain **NOT CERTIFIED**. The profiles \((5,2,1^5)\) and \((4,3,1^5)\) at \(P_C=50\) have now also been excluded by a separate double-star theorem; only the four profiles with \(\max_i r_i\le4\) remain at \(P_C=50\). The former drafts remain on audit hold and are preserved in \`ARCHIVE_UNCERTIFIED_OUTER_CAPS_20261025.md\`; do not use them as dependencies.
 
 ## Result 4: universal E408 Q33 minimum-support bound \(S_0\ge13\)
 
@@ -127,6 +127,9 @@ The next proof target is a stability/packing contradiction in Case 1 or a genuin
 - Active seven-block ledger corrected to withdraw the invalid isolation lemma: c80e36782de9a0dfb5a6eb3b8059aa343e136774
 - Repaired local (P_C=50,r_i=6) corner via double-star: 07b6891eefac7163b1a0fbc1c2529126c2b5b1d7; verifier 2c42edbf6996bc733f7df1ee5a182c5e8954447e
 - Updated active ledger with repaired local corner: e714b150a0d63fff1b7fa295fd8fa372e91c6950
+- Excluded P_C=50 profiles (5,2,1^5) and (4,3,1^5): 4a1bd39ba4e08854fd35907d051a44451259b07c
+- Finite verifier for the two remaining high profiles: d33fe53aa7cd63f1fff9cb337231e39e449b28d7
+- Active ledger updated with high-profile exclusions: 682ea469f41a31d07573ee6ec08c31f6ad27294e
 - Updated proof dependency map: 5a01f8e4614e70fe4c3582b56d701ba6c7011471
 - Progress log update: b8e54cb68a977d012073eb9e2a1125db9528bacb
 - Preserved the prior outer-cap proof attempts with a NOT CERTIFIED warning: a0a8f21d872b261b24580ad5e9f15942046cc74f
