@@ -118,3 +118,10 @@ This does not exclude any W-cross-edge profile, \(\epsilon_U=0\), non-four-parti
 The \(K_3\dot\cup3K_5\) W-profile with one cross-edge is now excluded for \(\delta=13,\epsilon_U=1\), under the four-partite-U contract. If the edge joins two K5s, no U-vertex can be W-unsaturated. If it joins K3 to K5, the only possible unsaturated U-vertex has \(d_H(u,W)=7\), \(\epsilon_u=1\), and \(t_u=0\); there can be at most one such vertex. The component common-neighbour capacity is at most 26, below the required 28.
 
 Still open at \(\delta=13\) in the four-partite-U branch: \(3K_4\dot\cup K_6\) plus one edge and \(2K_4\dot\cup2K_5\) plus two edges for \(\epsilon_U=1\), and \(2K_4\dot\cup2K_5\) plus one edge for \(\epsilon_U=2\), as well as the \(\epsilon_U=0\) row. All five shell templates A–E remain OPEN.
+
+
+## Round 25 — delta-13 \(3K_4\dot\cup K_6\), cross-edge K4–K6
+
+The \(\delta=13,\epsilon_U=1\) W-profile \(3K_4\dot\cup K_6\) plus one cross-edge is now excluded when that edge joins \(K_4\) to \(K_6\). The four common-neighbour sets have capacities at most \(9,9,9,1\), totalling 28, while all 29 U-vertices must be W-saturated. See DELTA13_EPS1_3K4_K6_K4K6_EDGE.md.
+
+Still open: the same profile with its edge between two K4s; \(2K_4\dot\cup2K_5\) plus two edges at \(\epsilon_U=1\); \(2K_4\dot\cup2K_5\) plus one edge at \(\epsilon_U=2\); and all other \(\delta=13\) and lower branches. Templates A–E remain OPEN.
