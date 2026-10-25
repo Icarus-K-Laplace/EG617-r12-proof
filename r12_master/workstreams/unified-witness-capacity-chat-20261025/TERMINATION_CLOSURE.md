@@ -85,3 +85,10 @@ This is a new conditional structural theorem, not a terminal contradiction. The 
 If an exact-129 color has \(t_C=0\) and Type-A W-intersection, then \(U[O]=K_4\cup K_4\), \(U[W]=K_2\cup K_1\), and the 16 cross edges are rigid up to the parameter \(a\in\{0,1,2,3\}\). The gadget degree multiset is \(5^{10},8\) or \(5^9,6,7\), so every gadget vertex has degree at least five. In particular, a Type-A zero-defect gadget contributes at least one unit of vertex degree above the generic exact-color floor four for each of its eleven gadget vertices.
 
 The four-value degree-profile arithmetic was independently checked. This local rigidity can be combined with the vertexwise degree equation, but the present aggregate budget has enough slack to accommodate it; no contradiction is claimed.
+
+
+## 9. Low-slack duplicate ownership
+
+For an exact-129 color with \(r_i(C)=1\) in top-cell A, the exact row theorem forces ten exact K5 rows and two six-vertex gadget rows. The W-incidence profile gives \(e_C(B_i,W)=23\) or 24. Since every \(w\in W\) must see all eleven non-target colors among its 12 edges to \(B_i\), exactly one non-target color is repeated at each \((w,B_i)\). Therefore the unique repeated-C incidence in this block lies in W iff \(e_C(B_i,W)=24\), and in O iff it is 23.
+
+This gives a local interface between the exact gadget-pair choice and the global duplicate ledger. It still does not determine the seven-block location pattern, so it must be combined with the target degree vector and the exact cross-edge defect identity rather than treated as closure.
