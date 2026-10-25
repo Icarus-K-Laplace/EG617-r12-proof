@@ -7,7 +7,7 @@ Status: **PROVED_CONDITIONAL** under the retained 284-edge/core contract and Tur
 
 At \(\delta=14\), the four-partite U-complement contract gives \(e(H[U])=98\), and the exact degree ledger gives
 \[
-e(H[W])=32-\epsilon_U+2=32
+e(H[W])=34-\epsilon_U=32
 \]
 when \(\epsilon_U=2\). Equivalently, the W-side excess is \(E_W=4-\epsilon_U=2\).
 
@@ -38,4 +38,4 @@ where \(E_{5,1}+E_{5,2}\le E_W=2\). Since the four anticomplete W-components for
 \]
 a contradiction.
 
-Therefore the entire \(\delta=14,\epsilon_U=2\), four-partite branch is **EXCLUDED** under the retained contracts. This conclusion uses Turán's equality characterization to certify the unique W-profile, and the explicit common-neighbour capacity proof in the cited workstream file to exclude it.
+Therefore the entire \(\delta=14,\epsilon_U=2\), four-partite branch is **EXCLUDED** under the retained contracts. This conclusion uses Turán's equality characterization to certify the unique W-profile, and the explicit common-neighbour capacity proof in Section 5 of the cited workstream file to exclude it. Scope warning: the same cited note's Section 3 discusses \(K_3\cup K_5^3\) at \(\epsilon_U=2\), but that profile has 33 edges and is incompatible with the present exact ledger \(e(H[W])=32\); that subsection is not used here.
