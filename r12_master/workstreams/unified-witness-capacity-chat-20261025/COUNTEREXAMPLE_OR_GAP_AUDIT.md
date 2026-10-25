@@ -201,7 +201,7 @@ A contradiction requires at least two external \(C\)-edges from the same outside
 
 ## 17. Conditional local exclusion of \(P_C=49,r_i=6\)
 
-Section 12 of OUTER_EXCEPTIONAL_ROW_COUPLING.md now uses the correct double-star condition. The exact verifier covers all four gadget normal forms, the exact Case-C complement profiles, all \(r=1\) omitted-pair types, and all \(r=2\) pairs. Its in-session predicate replay passed 2,132 Case-A/B configurations and 412,768 exact-profile Case-C configurations.
+Section 12 of OUTER_EXCEPTIONAL_ROW_COUPLING.md now uses the correct double-star condition. The exact verifier covers all four gadget normal forms, the exact Case-C complement profiles, all \(r=1\) omitted-pair types, and all \(r=2\) pairs. Its in-session predicate replay passed 2,132 Case-A/B configurations and 512,768 exact-profile Case-C configurations.
 
 The row-incidence safety condition is explicit: in Case C, \(d_K\le |H_1|+|H_2|-5\). For profiles \((5,5)\) and \((5,4)\), one of the two high rows has at most two partial component incidences, and both high-row choices are verified. For the remaining profiles, \(d_K\le3\), so either high row is safe. The \(r=2\) row contributes at most one partial component incidence. This prevents any selected pair of row-neighborhoods from covering a full isolated \(K_5\) and makes the pairwise blocker argument valid.
 
