@@ -2,7 +2,7 @@
 
 Date: 2026-10-25  
 Status: **PROVED_CONDITIONAL** under the exact-129 factor theorem, seven-block row-profile contract, exact gadget normal form, and pairwise-blocker theorem.  
-Scope: excludes nine of the eleven \(P_C=49\) budget profiles. The only remaining profiles are \((6,2,1^5)\) and \((7,1^6)\); this theorem alone does not establish \(P_C\le48\).
+Scope: excludes five \(P_C=49\) profiles outright and two more by an incidence-aware common-star verifier. For \((4,4,1^5)\) and \((4,3,2,1^4)\), it verifies the missing-component-edge branch only; the all-component-edges-present branch remains open.
 
 ## 1. Correct \(P_C=49\) profile partition
 
@@ -49,7 +49,7 @@ also admit a common-\((D,w)\) selection, but their largest two block budgets do 
 
 For all four gadget normal forms, no reachable state kills every candidate. The finite replay checks eight profile/form cases and 5,343,724 transitions, with at most 27,714 reachable states. Hence every permitted row-pair/allocation tuple has a common \((D,w)\) and a selection with \(p_i+p_j\le4\) for all pairs. The same double-star contradiction from Section 3 applies.
 
-## 5. Fixed-\(D\) alignment for \((4,4,1^5)\)
+## 5. Missing-edge branch for \((4,4,1^5)\)
 
 Assume a missing \(C\)-edge between component representatives in the two \(r=4\) blocks. If their union covers a second isolated \(K_5\), then
 \[
@@ -61,7 +61,7 @@ The verifier exhausts all \(55/55\), \(55/54\), \(54/55\), and \(54/54\) pair ty
 
 The finite verifier checks 117,608 pair-type/allocation tuples, with zero failures.
 
-## 6. Fixed-\(D\) alignment for \((4,3,2,1^4)\)
+## 6. Missing-edge branch for \((4,3,2,1^4)\)
 
 Consider a missing \(C\)-edge between representatives in the \(r=4\) and \(r=3\) blocks. If no second component is covered, their union leaves at least six gadget vertices, contradicting the \(k=1\) blocker condition. Hence a second component is covered and the exact budget identity forces both omitted-pair profiles to be \(55\), with combined partial-component incidence five.
 
@@ -79,8 +79,8 @@ The complete checker is verify_p49_low_budget_double_star.py. It combines:
 
 All finite checks pass. The checker verifies gadget alignment and integer incidence bookkeeping; it does not machine-verify the upstream graph-theoretic contracts.
 
-**Conclusion:** every \(P_C=49\) profile with \(\max_i r_i\le5\) is excluded under the stated contracts. The only remaining \(P_C=49\) profiles are
+**Conclusion:** the finite checks outright exclude the five pair-budget-safe profiles and the two incidence-sensitive profiles \((5,3,1^5)\), \((5,2,2,1^4)\). They also close the missing-component-edge branches for \((4,4,1^5)\) and \((4,3,2,1^4)\), but do not rule out the branch where all component-representative edges are \(C\)-colored. After the separate \(r=6,r=2\) double-star theorem, the only unresolved \(P_C=49\) profiles are
 \[
-\boxed{(6,2,1^5)\quad\text{and}\quad(7,1^6).}
+\boxed{(4,4,1^5),\quad (4,3,2,1^4),\quad (7,1^6),}
 \]
-The full \(P_C=49\) boundary, the stronger cap \(P_C\le48\), E408 Q33, and EG617(\(r=12\)) remain **OPEN / NOT_CERTIFIED** until these two high-block profiles are closed.
+where the first two remain only in their all-component-edges-present branches. The full \(P_C=49\) boundary and EG617(\(r=12\)) remain **OPEN / NOT_CERTIFIED**.
