@@ -69,3 +69,8 @@ The theorem DELTA14_EPS0_K3K5X1_K5K5_EDGE.md excludes the \(K_3\cup K_5^3\) W-pr
 
 ### Complete delta-14, epsilon_U=0 four-partite W-row exclusion
 DELTA14_EPS0_K3K5X1_K3K5_EDGE.md excludes the last profile \(K_3\cup K_5^3\) with the cross-edge between \(K_3\) and \(K_5\). Together with the preceding three profile exclusions, this eliminates every four-partite \(H[W]\) profile at \(\delta=14,\epsilon_U=0\), under the retained support-boundary and witness contract. It does not eliminate \(\delta=14,\epsilon_U=1,2\), the non-four-partite branch, or \(\delta\le13\).
+
+
+### Round 12 — \(\delta=14,\epsilon_U=1\), no-cross-edge \(K_4^3\cup K_6\)
+
+DELTA14_EPS1_K4K4K4K6_NO_CROSS_EDGE.md excludes this profile using D-component assignments and the exact external-incidence identity \(R=1-2q+\sum_{d\in D}\epsilon_d\). This gives \(R\le2\) and forces every K4 component receiving at least three D assignments to have too many non-D-complete vertices; the four-unit W-excess contradiction follows. Together with the prior \(K_3\cup K_5^3\) exclusion, only the \((4,4,5,5)\)+one-cross-edge W-profile remains in the four-partite \(\delta=14,\epsilon_U=1\) row.
