@@ -111,3 +111,10 @@ DELTA14_NONPARTITE_AUGMENTABLE_TERMINAL_CLOSURE.md closes the augmentable-edge r
 Under the four-partite-U branch of the shared 49-witness contract, all no-cross-edge W profiles at \(\delta=13\) with \(\epsilon_U=1,2,3\) are now excluded. The exact profiles are \(K_3\dot\cup K_4\dot\cup K_5\dot\cup K_6\), \(K_3\dot\cup3K_5\), \(3K_4\dot\cup K_6\), and \(2K_4\dot\cup2K_5\). Their common-neighbour capacities sum to at most 27, 28, 28, and 23, respectively, below \(|U|=29\). See DELTA13_FOUR_PARTITE_NO_CROSS_W_PROFILES.md.
 
 This does not exclude any W-cross-edge profile, \(\epsilon_U=0\), non-four-partite U-complement at \(\delta=13\), or \(\delta\le12\). Templates A–E remain OPEN because the residual shell-label compatibility has not been eliminated.
+
+
+## Round 24 — delta-13 \(\epsilon_U=1\), \(K_3\cup3K_5\) plus one edge
+
+The \(K_3\dot\cup3K_5\) W-profile with one cross-edge is now excluded for \(\delta=13,\epsilon_U=1\), under the four-partite-U contract. If the edge joins two K5s, no U-vertex can be W-unsaturated. If it joins K3 to K5, the only possible unsaturated U-vertex has \(d_H(u,W)=7\), \(\epsilon_u=1\), and \(t_u=0\); there can be at most one such vertex. The component common-neighbour capacity is at most 26, below the required 28.
+
+Still open at \(\delta=13\) in the four-partite-U branch: \(3K_4\dot\cup K_6\) plus one edge and \(2K_4\dot\cup2K_5\) plus two edges for \(\epsilon_U=1\), and \(2K_4\dot\cup2K_5\) plus one edge for \(\epsilon_U=2\), as well as the \(\epsilon_U=0\) row. All five shell templates A–E remain OPEN.
