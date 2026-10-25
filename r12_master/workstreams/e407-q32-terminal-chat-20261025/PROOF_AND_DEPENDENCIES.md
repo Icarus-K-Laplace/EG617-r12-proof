@@ -16,7 +16,7 @@ Status: **E407 Q32 OPEN / NOT_CERTIFIED; the \(\delta=16\) branch is excluded un
 6. **Sibling transversal/excess theorem** gives \(\epsilon_U+2\delta\ge9\) and \(\delta\ge3\), under the same boundary contract.
 7. **Four-partite reduction at \(\delta=16\)**: \(L=\overline{H[U]}\) has 310 edges, exceeding the non-four-partite Brouwer threshold 309, so it is four-partite. The 49 linear witnesses force \(U\)-part sizes \(7,7,7,8\); the exact ledger forces \(H[W]=K_5\cup K_5\cup K_4\cup K_4\).
 8. **Reverse saturation**: under this structure, every \(w\in W\) is adjacent to all vertices of exactly one \(U\)-part. This is proved from \(\alpha(H)\le4\), the matching structure of the five \(U\)-cross-edges, and the total excess budget.
-9. **Endpoint-split terminal exclusion**: the (4+1) and (3+2) allocations contradict the four-unit excess budget. In the (5+0) allocation, the endpoint (K_4) is forced complete to the 8-part, yielding a forbidden (K_{12}). Thus (delta=16) is excluded.
+9. **Endpoint-split terminal exclusion**: the \(4+1\) and \(3+2\) allocations contradict the four-unit excess budget. In the \(5+0\) allocation, the endpoint \(K_4\) is forced complete to the 8-part, yielding a forbidden \(K_{12}\). Thus \(\delta=16\) is excluded.
 
 ## 2. Exact external/input dependencies
 
@@ -41,7 +41,7 @@ Status: **E407 Q32 OPEN / NOT_CERTIFIED; the \(\delta=16\) branch is excluded un
 \delta=15,\ L\text{ four-partite}:\ \text{only }H[W]=K_3\cup K_5^3\text{ remains, with }D\cup K_3=K_{11};\text{ shell compatibility OPEN},\\
 \delta\le14:\ \text{four-partite and non-four-partite cases OPEN}.
 \end{cases}\\
-&\Downarrow\ \text{missing template-to-core incompatibility theorem for }\delta\le15\\
+&\Downarrow\ \text{remaining }K_{11}\text{ shell incompatibility at }\delta=15\text{, plus all }\delta\le14\text{ cases}\\
 &\text{E407 Q32 excluded}\quad\text{(NOT YET PROVED).}
 \end{aligned}
 \]
