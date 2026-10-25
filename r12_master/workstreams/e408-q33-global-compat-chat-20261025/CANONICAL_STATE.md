@@ -94,10 +94,11 @@ The next proof target is a stability/packing contradiction in Case 1 or a genuin
 
 ## Latest isolated commits
 
-- High-\(P_C\) clique-packing consequence and progress log: 061e72603d4b9cf8ab56e2d4286582e8fd7a8db5
-- Proof-dependency integration: 6aaa2a6cc508344bc320cd49d254ba228b1df344
+- Live sibling-head refresh and dependency audit: 7ead15c3d79b0099a650be1157b8e68cc9574a17
+- Canonical integration of high-\(P_C\) clique-packing corollary: 097aad468745c6b62101200969938981ad376910
+- High-\(P_C\) clique-packing proof dependencies: 6aaa2a6cc508344bc320cd49d254ba228b1df344
+- High-\(P_C\) clique-packing progress log: 061e72603d4b9cf8ab56e2d4286582e8fd7a8db5
 - Gadget equality refinement: a8afd7cb13cc3902c2b6ec5afe37cfacd43eb308
-- Canonical commit-list refresh: 9fc8e3d9fc315cb35c2d49b3ab65673d67ba8ed6
 - Exact \(r_i(C)=6\) classification and 6+1 matching: 6a1f034fe9d0b2ba5ca49acde9ae57a3c2d652ce
 - Theorem 11.1 / Corollary 11.2: c74b01170b4bab70e148e541b1c610279013f106
 - Theorem 10.1 / Corollary 10.2: 73f02a07d4722e09af203cbc0ac8d5d82af405e4
