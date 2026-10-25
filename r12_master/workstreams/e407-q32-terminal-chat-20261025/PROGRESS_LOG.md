@@ -262,3 +262,34 @@ Thus the whole \(\delta=15\) four-partite branch is **EXCLUDED** under the retai
 - \(\delta=15\), four-partite: **EXCLUDED** by the label-count/K12 contradiction.
 - \(\delta\le14\): OPEN (four-partite and non-four-partite cases).
 - E407 Q32 overall: **OPEN / NOT_CERTIFIED**.
+
+
+## 2026-10-25 — Round 9: \(\delta=14,\epsilon_U=0\) cover-capacity contradiction
+
+### New theorem
+
+Under the 49-witness boundary, four-partite U-complement, \(\omega(H)\le11\), and the W-profile \(H[W]=K_3\dot\cup K_4\dot\cup K_5\dot\cup K_6\), define \(S_s\) as the U-vertices complete to the W-clique \(K_s\). Independence-number saturation requires the four sets to cover all 29 points of U.
+
+A reverse-saturation lemma says every W vertex of U-degree at most 11 is complete to a whole U-part. The only possible non-saturated vertices in the \(K_3,K_4,K_5\) components consume at least 2,3,4 units of excess respectively; the common-neighbour set is bounded by a zero/low-excess companion. Label each saturated W vertex by a U-part and count its extra U-edges. The resulting bounds are
+\[
+|S_6|\le\lfloor E_6/2\rfloor,\quad
+|S_5|\le5+E_5,\quad
+|S_4|\le8+E_4+\mathbf1_{\{E_4=0\}},\quad
+|S_3|\le9+E_3+\mathbf1_{\{E_3=0\}},
+\]
+where \(E_3+E_4+E_5+E_6=4\). Hence
+\[
+\sum_s|S_s|\le26-\lceil E_6/2\rceil
++\mathbf1_{\{E_3=0\}}+\mathbf1_{\{E_4=0\}}\le28,
+\]
+contradicting the required cover of 29 U-vertices.
+
+The proof is in DELTA14_EPS0_K3K4K5K6_COVER_CAPACITY.md. The finite arithmetic replay is in verify_delta14_eps0_cover_capacity.py; all 35 excess profiles pass the bound, with maximum 28.
+
+### Frontier change
+
+Together with DELTA14_EPS0_K4_PROFILE_EXCLUSIONS.md, three of the four \(\delta=14,\epsilon_U=0\) W profiles are now excluded. The only remaining profile in that row is \(K_3\cup K_5^3\) plus one cross edge. The \(\epsilon_U=1,2\) rows, \(\delta=14\) non-four-partite branch, and \(\delta\le13\) remain open.
+
+### Limits
+
+This is conditional on the retained T61/core/witness contract and W-profile classification. It does not close a full shell template, E407 Q32, or EG617(r=12).
