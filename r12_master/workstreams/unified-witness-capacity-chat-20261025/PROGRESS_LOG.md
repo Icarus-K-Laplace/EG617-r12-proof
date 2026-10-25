@@ -161,3 +161,12 @@
 - Lemma 13.2: \(m\) disjoint color-C K12s, each using one vertex from every outer block, force \(P_C\le21(12-m)\) by the one-or-two rule on the remaining block vertices.
 - Theorem 13.3 eliminates \(P_C=50,r_i=6\): cases A/B produce a K12 with an external color-C edge; case C either does likewise or forces ten isolated K12s and \(P_C\le42\).
 - Therefore any exact color with \(P_C=50\) has all \(r_i\le5\), and the existing low-budget theorem yields at least nine common component labels. \(P_C=49,r_i=6\) is not yet excluded.
+
+
+## 2026-10-25 — finite gadget contradiction excludes \(P_C=49,r_i=6\)
+
+- Added Theorem 12.1 to OUTER_EXCEPTIONAL_ROW_COUPLING.md. For \(P_C=49\), the residual block budget is \(R_C=13\), so an \(r_i=6\) block leaves five \(r=1\) blocks and one \(r=2\) block.
+- Built a finite exact verifier over all four 11-vertex gadget normal forms. It enumerates all disjoint K5/K5 pairs for \(r=1\), K5/K5 and K5/K4 pairs for \(r=2\), and all admissible \(r=6\) Case-C complement pairs. For each configuration it finds a common K5 core and seven outer representatives whose omitted sets pairwise intersect; the high row then has an external same-color edge from the resulting K12.
+- Ran the committed checker locally: PASS for all 159,244 checks (380 A/B and 158,864 C checks). No floating-point arithmetic or external library is used.
+- This closes the \(P_C=49,r_i=6\) corner conditionally on the retained reduction/gadget/row contracts. It does not close EG617.
+- Using sibling Q33's \(P_C\le49\) theorem, the \(P_C=49\) profiles now reduce to the open \(r=7\) profile \((7,1^6)\) and four all-\(r\le5\) high-pair profiles: \((5,3,1^5)\), \((4,4,1^5)\), \((5,2,2,1^4)\), and \((4,3,2,1^4)\). Five all-\(r\le5\) profiles with every pair sum \(\le6\) are excluded by ten isolated K12s and the \(P_C\le42\) cap.
