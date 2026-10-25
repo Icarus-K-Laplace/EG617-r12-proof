@@ -121,92 +121,11 @@ The following sibling heads were re-read after the local \(r_i=6\) work; all wer
 These updates do not invalidate the new row-budget theorems. The Q33 non-four-partite support interval and the four-partite \(S_0\ge22\) branch both remain open; this workstream's next global obligation is still to combine the outer row/component labels with the 56 inner witness labels without charging baseline edges as duplicates.
 
 
-## 12. Isolated-\(K_{12}\) budget cap and \(P_C=50\) exclusion
+## 12. Outer exact-129 cap proofs — NOT CERTIFIED
 
-Lemma 13.1 / Lemma 13.2 / Theorem 13.3 in SEVEN_BLOCK_INCIDENCE_LEDGER.md use:
-1. The original balanced-coloring contract: for every color \(D\), \(\alpha(D)\le12\).
-2. The seven-block one-or-two rule: for each \(x\in B_i\) and \(B_j\), every non-target color occurs at least once on the 12 edges \(xB_j\), and one color occurs twice.
-3. The exact-129 row classification in Theorem 11.1 and the gadget normal form in Theorem 12.1.
+The former sections 12–15 claimed a \(P_C=50,r_i=6\) exclusion, a universal \(P_C\le49\) cap, a \(P_C=49\) exclusion, and a \(P_C=48\) exclusion. Cross-branch audit found that the key isolation lemma is false: a monochromatic \(K_{12}\) can have one external edge of its own color. The valid condition is only \(d_C(z,K_{12})\le1\) for each outside vertex \(z\). Therefore any subcase whose sole contradiction is one external \(C\)-edge is not valid.
 
-A monochromatic \(C\)-colored \(K_{12}\) is isolated in \(C\): each outside vertex must see all eleven colors \(D\ne C\) on its twelve edges to the clique, so none of those edges can be \(C\). If \(m\) disjoint such cliques each meet all seven target blocks once, the remaining \(k=12-m\) vertices per target block can only connect in color \(C\) to the remaining \(k\) vertices of another block. Their bipartite graph has minimum degree one and maximum degree two, giving \(d_{ij}(C)\le k\) and \(P_C\le21k\).
-
-For \(P_C=50\), \(R_C=12\) forces the row-budget vector \((6,1,1,1,1,1,1)\). The four cases in Theorem 11.1 each yield at least ten isolated \(C\)-colored \(K_{12}\)'s, so \(P_C\le42\), contradiction. The case split is:
-- \(n=1\): 10 label-based plus at least 1 gadget-based \(K_{12}\);
-- \(n=2,k=1,m=10\): 9 label-based plus 2 gadget-based;
-- \(n=2,k=1,m=11\): at least 8 label-based plus 2 gadget-based;
-- \(n=2,k=0\): all 10 component labels clean.
-
-This excludes only the exact \(P_C=50,r_i=6\) corner. The \(P_C=49,r_i=6\) branch and E408 Q33 overall remain open; no upstream dependency is closed by this result.
-
-
-## 13. Universal exact-129 budget cap \(P_C\le49\)
-
-Theorem 14.1 in SEVEN_BLOCK_INCIDENCE_LEDGER.md proves \(P_C\le49\) for every exact-129 color. Its dependencies are:
-- Theorem 10.1 / Corollary 10.2: unique component rows and forced component matching whenever \(r_i+r_j\le6\).
-- Theorem 12.1: the exact 5-clique normal form in \(U_C\), including the disjoint-pair structure of the two no-component rows.
-- Lemmas 13.1–13.2: monochromatic \(K_{12}\) isolation and the duplicate cap \(P_C\le21(12-m)\) for \(m\) disjoint \(K_{12}\)'s meeting every target block once.
-- Theorem 13.3: exclusion of the \(P_C=50,r_i=6\) profile.
-
-For \(P_C\ge51\), every block-pair budget sum is at most six, so all ten labels produce \(K_{12}\)'s. For \(P_C=50\), the only positive budget vectors with a pair sum greater than six are \((5,2,1^5)\) and \((4,3,1^5)\), besides the already-excluded \((6,1^6)\). In either exceptional vector, a missing same-label edge between the high-budget blocks forces the two row neighborhoods to cover a second full \(K_5\); equality in the incidence budget then forces both gadget overlap parameters to equal one, yielding the external-edge contradiction from a gadget-based \(K_{12}\). Thus every \(P_C\ge50\) is excluded.
-
-The result is colorwise and conditional on the retained exact-129 factor and seven-block contracts. It does not close the aggregate color ledger or the original \(K_{145}\) theorem.
-
-
-## 14. Exclusion of the \(P_C=49\) boundary
-
-P49_BOUNDARY_EXCLUSION.md proves \(P_C\ne49\), hence \(P_C\le48\) and \(R_C\ge14\), conditional on the retained exact-129 factor theorem and seven-block equality contract.
-
-Dependencies:
-- Theorem 10.1 / Corollary 10.2: the exact row normal form for \(r_i\le5\) and forced component edges when \(r_i+r_j\le6\).
-- Theorem 11.1: exhaustive \(r_i=6\) row classification, including the Case A/B/C split.
-- Theorem 12.1: the four exact 11-vertex gadget normal forms and their \(K_5\) lists.
-- Lemmas 13.1–13.2: monochromatic \(K_{12}\) isolation and \(P_C\le21(12-m)\) for \(m\) disjoint block-transversal \(K_{12}\)'s.
-- GADGET_ALIGNMENT_VERIFIER.js / GADGET_ALIGNMENT_CERTIFICATE.md: finite alignment property for high omitted cliques of size four or five and low omitted pairs of type \((5,5)\) or \((5,4)\).
-
-The exact integer profiles when \(R_C=13\) are classified by largest pair-sum: all pair sums at most six; pair-sum seven \((5,2,2,1^4)\), \((4,3,2,1^4)\); pair-sum eight \((7,1^6)\), \((6,2,1^5)\), \((5,3,1^5)\), \((4,4,1^5)\). Each profile is excluded in the theorem file. The only new computation is fixed-size and exhaustive on four 11-vertex graphs: 2,156 alignment checks, zero failures, with exact expected clique and pair counts asserted in source.
-
-Proof audit notes:
-- For pair-sum eight, blocker compatibility does **not** always force a second full component: the leftover gadget can be a \(K_5\). The proof now handles both branches; in the no-second-component branch, at least six gadget vertices must be covered, forcing the equality overlap profile \(a_i=a_j=1\) in the \(r_i,r_j\le5\) case.
-- For the \(r_i=6\) Case C branch, the \(6+1\) no-second-component option is impossible by the \(17\)-incidence ceiling; the proof does not incorrectly charge it as a second-component case.
-- The \(r_i=7\) profile is handled by counting full-component occurrences, component excess, and gadget incidences; cases with a gadget-only row having a size-four or size-five omitted clique use the extended alignment verifier.
-
-This theorem is a colorwise bound only. It does not close the aggregate eleven-color ledger, either 56-witness support geometry, E408 Q33, or EG617(r=12).
-
-
-## 15. Exclusion of the \(P_C=48\) boundary
-
-P48_BOUNDARY_EXCLUSION.md proves \(P_C\ne48\), hence \(P_C\le47\) and \(R_C\ge15\), conditional on the retained exact-129 factor theorem and seven-block equality contract.
-
-Dependencies:
-- Theorem 10.1 / Corollary 10.2: low-budget row normal form and forced same-component edges when \(r_i+r_j\le6\).
-- Theorem 11.1: exhaustive \(r_i=6\) row classification.
-- Theorem 12.1: the four exact 11-vertex gadget normal forms.
-- Lemmas 13.1–13.2: isolated monochromatic \(K_{12}\)'s and the duplicate-budget cap from disjoint block-transversal \(K_{12}\)'s.
-- GADGET_ALIGNMENT_VERIFIER.js / GADGET_ALIGNMENT_CERTIFICATE.md: the expanded finite alignment facts, exhaustively checked in 467,696 cases.
-
-The \(R_C=14\) positive seven-tuples are exhausted by:
-\[
-\begin{gathered}
-r_i\le5\ \text{for all }i;\quad
-(6,3,1^5),\quad(6,2,2,1^4),\\
-(7,2,1^5),\quad(8,1^6).
-\end{gathered}
-\]
-The all-low case uses the missing-edge dichotomy: a second full component costs at least five component incidences; without one, at least six gadget incidences must be covered. The remaining profiles use the \(r_i=6\) classification or full-component occurrence counts. The finite alignment checker intentionally does not assert universal alignment for the \(53+53\) pair/pair case or for a high \(K_4\) against a low \(53\) pair in isolation; both broader assertions have counterexamples, and the proof avoids them.
-
-This strengthens the colorwise conditional interface from \(P_C\le48\) to \(P_C\le47\), but it does not close the aggregate eleven-color ledger, the 56-witness global compatibility, E408 Q33, or EG617(r=12).
-
-
-### Post-commit audit corrections (2026-10-25)
-
-The P48 proof was tightened after a line-by-line audit:
-- The \(r_i=3\) omitted-pair type is not restricted to \(53/44\); depending on the overlap \(a\), all four types \(55,54,53,44\) can occur.
-- For \(r_i=6\), Case C, the proof now tracks \(d_U\) (repeated gadget-incidence excess), \(e_i\) (gadget incidences in component rows), and \(E\cap F\) separately. In particular, \(53/44\) high-pair types force \(d_U=3,e_i=0\), which makes the omitted cliques disjoint; overlapping \(55/54\) cases use a single omitted \(K_5\).
-- For \(r_i=7,8\), the \(n=2\) case no longer assumes \(t_i=0\) from the number of represented full components. It branches on \(t_i+e_i\): a large sum yields a gadget-only row omitting a \(K_4/K_5\), while a small sum rules out both a second full component and six gadget incidences.
-- The \(53+53\) pair/pair alignment is not a valid universal lemma. The proof avoids invoking it: the all-low case is ruled out by the pair-sum budget; the \((6,3,1^5)\) case is handled directly by the \(t_i+t_j<5\) and \(e_i+e_j<6\) inequalities.
-
-The fixed-gadget certificate remains 467,696 checks with zero failures. These corrections improve the local proof accounting; they do not change the conditional status or close E408 Q33.
-
+These four outer-cap claims are **NOT CERTIFIED** and must not be used as dependencies. The detailed P49/P48 drafts remain available but are marked audit hold; their previous text is preserved in ARCHIVE_UNCERTIFIED_OUTER_CAPS_20261025.md. A repaired proof must force at least two external \(C\)-edges from the same outside vertex or give another independent contradiction. The local row-normal-form results through Theorem 12 remain separate from this withdrawn global inference.
 
 ## 2026-10-25 audit correction and new inner-core result
 
