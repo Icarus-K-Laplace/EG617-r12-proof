@@ -44,7 +44,7 @@ We need the reverse-saturation lemma. If \(w\in W\) is not complete to any of \(
 
 If \(|D'|=1\), the total number of non-neighbours in \(U\) is at most \(t_d+7+7+1=t_d+15\), so \(d_H(w,U)\ge14-t_d\ge12\). If \(|D'|=2\), two distinct small non-neighbour sets have size at most two and the third has size at most seven; thus there are at most \(2+2+7+2=13\) non-neighbours, giving \(d_H(w,U)\ge16\). If \(|D'|=3\), all three small non-neighbour sets have size at most two, giving at most \(2+2+2+3=9\) non-neighbours and \(d_H(w,U)\ge20\). If \(D'=\varnothing\), \(w\) is complete to \(D\), contrary to the assumed failure of part-saturation. Therefore
 \[
-\boxed{w\text{ not complete to any U-part}\ \Longrightarrow\ d_H(w,U)\ge12.} \tag{1\)
+\boxed{w\text{ not complete to any U-part}\ \Longrightarrow\ d_H(w,U)\ge12.} \tag{1}
 
 For \(w\in C_s\), \(d_H(w,U)=13-s+\epsilon_w\). In particular every vertex of \(C_6\) is part-saturated, because \(7+\epsilon_w\le11\).
 
