@@ -452,3 +452,22 @@ The K4 common-neighbour capacity is at most nine in the listed cases; the K5 cap
 ### Frontier change
 
 For \(\delta=14\) and four-partite \(L\), the only remaining W-profile is \(\epsilon_U=1\) with \(H[W]=K_4\cup K_4\cup K_5\cup K_5\) plus one W-cross-edge. The \(\delta=14\) non-four-partite branch and all \(\delta\le13\) branches remain open. E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 — Round 14: \(\delta=14,\epsilon_U=2\) four-partite row excluded
+
+### Exact Turán-equality reduction
+
+The ledger gives \(e(H[W])=34-\epsilon_U=32\). Since \(\alpha(H[W])\le4\), Turán's theorem gives \(e(H[W])\ge\binom{18}{2}-t_4(18)=32\). Equality forces the unique profile \(K_4\dot\cup K_4\dot\cup K_5\dot\cup K_5\), with no cross-edges.
+
+The retained Section 5 proof in DELTA14_EPSU1_2_ANTICOMPL_COMPONENT_PROFILES.md applies to this exact profile. It gives K4 common-neighbour caps 9 and K5 caps \(2+E_i\); because W-excess is 2, the four common-neighbour sets have total capacity at most \(9+9+2+2+2=24<29\). This contradicts their required cover of U.
+
+Added DELTA14_EPS2_W_PROFILE_CLASSIFICATION.md and verify_delta14_eps2_w_profile.py. Arithmetic replay passed. An inherited note's Section 3 mentions \(K_3\cup K_5^3\) at \(\epsilon_U=2\), but that graph has 33 edges and is incompatible with the exact 32-edge W ledger; it is not used.
+
+### Updated frontier
+
+- \(\delta=14\), four-partite: **EXCLUDED** for all allowed \(\epsilon_U=0,1,2\).
+- \(\delta=15\), four-partite and non-four-partite: **EXCLUDED** under retained contracts.
+- \(\delta=16\), four-partite: **EXCLUDED** under retained contracts.
+- Open: \(\delta=14\) non-four-partite and \(\delta\le13\).
+- Five E407 Q32 shell templates and EG617(r=12): **OPEN / NOT_CERTIFIED**.
