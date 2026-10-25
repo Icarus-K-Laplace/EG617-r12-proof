@@ -401,3 +401,32 @@ Added DELTA14_EPS1_K4K4K4K6_NO_CROSS_EDGE.md and verify_delta14_eps1_k4k4k4k6.py
 - \(\delta=14\), non-four-partite: OPEN.
 - \(\delta\le13\): OPEN.
 - Five E407 shell templates and EG617(r=12): **OPEN / NOT_CERTIFIED**.
+
+
+## 2026-10-25 — Round 13: final \(\delta=14,\epsilon_U=1\) W-profile excluded
+
+### New theorem
+
+For \(H[W]\) with clique sizes \((4,4,5,5)\) and one cross-edge, every D vertex is complete to a unique W component. Let \(q_5\) count D vertices assigned to a K5. The exact incidence identity is \(R=1-q_5+E_D\le2\), where \(R\) counts D-W edges outside the assigned component. Since \(q_5\le1+E_D\le2\), at least six of the eight D vertices are assigned to the two K4s, so one K4 receives \(k\ge3\).
+
+The \(R\le2\) bound forces at least \(4,4,4,3,2\) vertices in that K4 not to be complete to all of D when \(k=3,4,5,6,7\). Any such vertex must be complete to a small U-part; otherwise reverse saturation and the excess ledger produce a second zero-excess non-D-complete vertex of impossible degree. The resulting minimum W-excess demands are \(4,8,12,12,10\), all greater than the available three. The case \(k=8\) gives a forbidden \(K_{12}\).
+
+Added DELTA14_EPS1_K4K4K5K5_ONE_CROSS_EDGE.md and its arithmetic verifier. The verifier's deliberately malformed K12 assertion was caught and replaced before replay; the corrected arithmetic passed.
+
+### Exact profile classification
+
+Added DELTA14_EPS1_W_PROFILE_CLASSIFICATION.md and verify_delta14_eps1_w_profiles.py. For \(G=\overline{H[W]}\), \(e(G)=120\), \(G\) is K5-free, and \(t_4(18)=121\). Brouwer's second-Turán bound puts every non-four-partite K5-free graph below or at 118 edges, so \(G\) must be four-partite. Exact partition arithmetic leaves only:
+- \(K_3\cup K_5^3\), no cross-edge in \(H[W]\);
+- \(K_4^3\cup K_6\), no cross-edge;
+- \((4,4,5,5)\) clique components plus one cross-edge.
+
+All three H[W] profiles are now excluded by the three independent terminal theorems. The sorted partition verifier passed.
+
+### Frontier update
+
+- \(\delta=14,\epsilon_U=0\), four-partite: **EXCLUDED** (all four W profiles).
+- \(\delta=14,\epsilon_U=1\), four-partite: **EXCLUDED** (all three W profiles, with Brouwer dependency explicit).
+- \(\delta=14,\epsilon_U=2\): OPEN.
+- \(\delta=14\), non-four-partite: OPEN.
+- \(\delta\le13\): OPEN.
+- Five E407 shell templates and EG617(r=12): **OPEN / NOT_CERTIFIED**.
