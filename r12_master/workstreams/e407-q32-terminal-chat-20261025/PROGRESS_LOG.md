@@ -618,3 +618,25 @@ The degree cap \(\Delta(J)\le7\) forces the bipartition of \(J-v\) to have sizes
 The earlier full-core extension theorem excludes this unique graph for every \(\epsilon_U\in\{0,1,2\}\). Therefore the **entire \(\delta=14\), non-four-partite, \(K_5\)-saturated terminal is conditionally excluded**, rather than only one candidate. The condition is inherited from the alpha-critical kernel reduction, whose component-count step uses Didin's 2026 preprint theorem and remains unaudited here.
 
 This does not close E407 Q32 overall: the \(\delta\le13\) cases, five shell templates A–E, and the original \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 — Round 23: delta-13 four-partite-U / no-cross-W profiles
+
+Added DELTA13_FOUR_PARTITE_NO_CROSS_W_PROFILES.md and verify_delta13_four_partite_no_cross_w_profiles.py.
+
+### Structural reduction
+- For a four-partite \(L=\overline{H[U]}\), each witness is a transversal K4. Seven disjoint witnesses per exact-color class force every U-part to have size at least seven, hence the sizes are \((7,7,7,8)\).
+- Across seven classes, all 49 pairs between any two small parts are used exactly once. Therefore H[U] cross-edges occur only between D and the three small parts; since \(e(H[U])=99\), there are exactly eight. Every small vertex has seven distinct D partners in witness blocks, so at most one H[U] cross-edge at that vertex.
+- If H[W] is a union of four anticomplete clique components, every U-vertex and every D-vertex is complete to a whole W-component. The reverse-saturation lemma bounds any unsaturated W-vertex's U-degree below by \(9+m-\epsilon_U\).
+
+### Four exact closures
+- \(\epsilon_U=1\), W profile \((3,4,5,6)\): common-neighbour cover at most 27.
+- \(\epsilon_U=2\), W profile \((3,5,5,5)\): cover at most 28, including the exceptional unsaturated-K5 case; profile \((4,4,4,6)\): cover at most 28.
+- \(\epsilon_U=3\), W profile \((4,4,5,5)\): cover at most 23.
+- In every case the four common-neighbour sets must cover 29 U vertices, contradiction.
+
+### Verification and scope
+- Arithmetic replay passed: DELTA13_FOUR_PARTITE_NO_CROSS_W_PROFILES_ARITHMETIC_OK.
+- The verifier checks profile enumeration and finite capacity arithmetic only; it does not machine-prove the analytic saturation/label arguments.
+- Status: **PROVED_CONDITIONAL** for the four listed no-cross-W profiles; E407 Q32 remains OPEN / NOT_CERTIFIED.
+- Next target: delta-13 four-partite-U W-cross-edge profiles, starting with \(\epsilon_U=1\).
