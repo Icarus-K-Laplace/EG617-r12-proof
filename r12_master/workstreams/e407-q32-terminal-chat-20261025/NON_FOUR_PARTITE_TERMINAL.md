@@ -58,3 +58,6 @@ The next nontrivial step is an adjacency-sensitive theorem that links:
 A bare count of edges or witness incidences does not establish incompatibility.
 
 **Update (2026-10-25):** At \(\delta=14,\epsilon_U=0\), the cover-capacity proof in DELTA14_EPS0_K3K4K5K6_COVER_CAPACITY.md excludes the \((3,4,5,6)\) profile with zero W-cross-edges. DELTA14_EPS0_K4_PROFILE_EXCLUSIONS.md excludes \((4,4,5,5)\) with two cross edges and \((4,4,4,6)\) with one cross edge. Thus only \((3,5,5,5)\) with one cross edge remains in this \(\epsilon_U=0\) four-partite row. The \(\epsilon_U=1,2\) rows and the \(\delta=14\) non-four-partite branch remain OPEN.
+
+
+**Update (2026-10-25, Round 10):** The remaining \(\delta=14,\epsilon_U=0\) profile \((3,5,5,5)\) with one W-cross-edge is further split by endpoint placement. DELTA14_EPS0_K3K5X1_K5K5_EDGE.md excludes the placement joining two \(K_5\) parts by a 29-point cover versus a 27-point capacity bound. Only the placement joining the \(K_3\) to a \(K_5\) remains OPEN.
