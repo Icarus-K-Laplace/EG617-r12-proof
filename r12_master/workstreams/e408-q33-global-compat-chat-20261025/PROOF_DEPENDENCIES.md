@@ -206,3 +206,36 @@ The P48 proof was tightened after a line-by-line audit:
 - The \(53+53\) pair/pair alignment is not a valid universal lemma. The proof avoids invoking it: the all-low case is ruled out by the pair-sum budget; the \((6,3,1^5)\) case is handled directly by the \(t_i+t_j<5\) and \(e_i+e_j<6\) inequalities.
 
 The fixed-gadget certificate remains 467,696 checks with zero failures. These corrections improve the local proof accounting; they do not change the conditional status or close E408 Q33.
+
+
+## 2026-10-25 audit correction and new inner-core result
+
+### Outer star correction — mandatory dependency firewall
+
+For a monochromatic \(K_{12}\) of color \(C\) in a balanced 12-coloring, any outside vertex \(z\) has twelve edges to the clique. These edges must include each of the eleven colors other than \(C\), hence
+\[
+d_C(z,K_{12})\le1.
+\]
+The conclusion \(d_C(z,K_{12})=0\) is invalid: one external \(C\)-edge is allowed. Therefore the former outer claims \(P_C\le49\), \(P_C\le48\), and the \(P_C=50,r_i=6\) exclusion are **NOT CERTIFIED** on this branch until the relevant subcases are repaired to force at least two external \(C\)-edges from the same outside vertex or another independent contradiction. The historical attempts are preserved in ARCHIVE_UNCERTIFIED_OUTER_CAPS_20261025.md; the P49/P48 drafts are explicitly marked audit hold. Do not cite those caps as dependencies.
+
+The exact-129 row-normal-form results through Theorem 12 and the finite gadget alignment certificate are separate local claims. Their own incidence assumptions still need to be respected, but they do not imply the withdrawn isolation statement.
+
+### New conditional inner-core theorem
+
+R12_E408_Q33_S0_12_EXCLUSION.md excludes \(S_0=12\) in the 31-point/56-witness E408 Q33 minimum-support boundary. It assumes the previously established conditional theorem \(S_0\ge12\) and its unique seven-point transversal structure, then uses the row identity
+\[
+s_r=3+g_r-a_r
+\]
+to enumerate the 14 possible outside-degree profiles. Each profile is contradicted by the multiplicity of the three R-only 8-transversals, the special-incidence budget, or a \(K_{12}\) **inside \(H\)**. These are valid contradictions to \(\omega(H)\le11\) and do not use the invalid outer isolation lemma.
+
+The arithmetic verifier verify_s0_12_exclusion.py checks:
+- all 14 degree profiles under \(\sum_Wq_w=126\), \(0\le\epsilon_T\le4\), and the zero-excess \(T\)-degree constraints;
+- the row-sum identity \(8m=84-\epsilon_T-A\);
+- all multiplicity partitions of \(m=8,9,10\) into three positive parts of size at most four;
+- the incidence thresholds for multiplicity-one/two/four parts and the uncovered-point bounds.
+
+The verifier checks arithmetic only. The graph-theoretic lemmas and upstream T61/exact-129/witness-packing contracts remain proof dependencies. The new conclusion is
+\[
+S_0\ge13,\qquad \delta\ge5,
+\]
+while the four-partite subcase retains its separate stronger bound \(S_0\ge22\). This does not close E408 Q33, E407 Q32, E408 Q32, or EG617(\(r=12\)).
