@@ -75,9 +75,24 @@ and the only types with largest-pair sum eight are
 \]
 All other types have every pair-sum at most six. For any pair with \(r_i+r_j\le6\), Corollary 10.2 forces the ten component-representative edges across that pair.
 
-### Case I: every pair-sum is at most six
+### Case I: every pair-sum is at most six — REPAIRED
 
-All ten labels have adjacent representatives across every block pair. Lemma 2.2 gives a contradiction to \(P_C=49\).
+The old Lemma 2.2 argument is not used here. The five possible profiles in this case are
+\[
+(2^6,1),\quad (3,2^4,1^2),\quad (3^2,2^2,1^3),\quad
+(3^3,1^4),\quad (4,2^3,1^3).
+\]
+The common-star screen in R12_P49_COMMON_STAR_SCREEN.md and its finite verifier establish that each profile has a common gadget \(K_5\) \(D\) and a point \(w\) shared by one omitted clique from each block pair, with every selected omitted clique disjoint from \(D\).
+
+Since \(r_i+r_j\le6\), the selected no-component rows have partial component incidences
+\[
+p_i+p_j\le(r_i-1)+(r_j-1)\le4.
+\]
+The pairwise-blocker lemma therefore forces every pair of selected outer rows to be \(C\)-adjacent. Together with \(D\), they form a \(C\)-colored \(K_{12}\), say \(Q\).
+
+Let \(V'=U_C\setminus D\), so \(|V'|=6\), and let \(G_i\subset V'\) be the seven selected omitted cliques. Each \(|G_i|\le5\), so each \(V'\setminus G_i\) is nonempty. Their total size is at least seven, hence some \(z\in V'\) is omitted by at least two \(G_i\). Thus \(z\) has at least two \(C\)-edges into \(Q\), contradicting the valid star-capacity bound \(d_C(z,Q)\le1\).
+
+This closes Case I conditionally under the retained exact-129 factor, row-profile, pairwise-blocker, and gadget-normal-form contracts. It does not use the invalid claim that a monochromatic \(K_{12}\) has no external \(C\)-edge.
 
 ### Case II: the largest pair-sum is seven
 
@@ -151,3 +166,8 @@ This excludes type \((7,1^6)\) as well. Together with Cases I–IV, every possib
 - The only new finite computation is the exhaustive 11-vertex gadget alignment verifier; no growing-in-\(r\) graph search is used.
 - The result improves \(R_C\ge13\) to \(R_C\ge14\) for every exact-129 color.
 - It does not prove a contradiction for the full eleven-color budget, does not close the non-four-partite or four-partite 56-witness branches, and does not prove EG617(r=12).
+
+
+## 5. Audit status update — 2026-10-25
+
+Only Case I above has been repaired. Cases II–V still contain uses of the withdrawn isolated-\(K_{12}\) inference or consequences derived from it and remain **NOT CERTIFIED**. In particular, the concluding sentence of the historical proof claiming that every \(R_C=13\) profile is impossible is withdrawn. The current certified scope is the five profiles listed in Case I only; the six profiles listed in R12_P49_COMMON_STAR_SCREEN.md remain open. Do not cite the overall \(P_C\le48\) statement at the start of this file as proved.
