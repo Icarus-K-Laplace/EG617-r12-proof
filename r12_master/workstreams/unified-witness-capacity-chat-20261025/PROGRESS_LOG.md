@@ -144,3 +144,11 @@
 - The alpha/omega constraints and exact cross-edge count force a four-valued parameter \(a\in\{0,1,2,3\}\): one matched W endpoint has degree \(5+a\), the unmatched W gadget vertex has degree \(8-a\), and the remaining nine gadget vertices have degree five.
 - Thus the gadget degree multiset is \(5^{10},8\) or \(5^9,6,7\); all eleven gadget vertices have degree at least five. The independent Python arithmetic replay passed all four profiles.
 - This is a conditional local classification only. The remaining global obstacle is still to show the 11 color partitions on O cannot coexist with the target degree and witness constraints.
+
+
+## 2026-10-25 — identify the repeated-color vertex in each r_i=1 block
+
+- Combined the top-cell-A intersection profile with the exact row theorem for \(r_i(C)=1\). The ten component rows are exact K5 neighborhoods and the two exceptional rows are complements of disjoint K5s in the gadget.
+- The component rows contribute 20 W incidences in Type A or 19 in Type B. The two exceptional rows contribute 3/4 or 4/5 respectively, so total \(e_C(B_i,W)\) is exactly 23 or24.
+- Since every vertex w and every target block B_i must see all eleven non-target colors among the 12 incident edges (else B_i∪{w} is a forbidden independent 13-set in a missing color), exactly one non-target color is repeated at each (w,B_i). Thus the unique C-duplicate for \(r_i(C)=1\) lies in W iff \(e_C(B_i,W)=24\), and in O iff the count is23.
+- Refreshed E408 Q33: c01f7dc6951b2bb7ea5209f252b1644ca0ecd40a adds exact gadget clique normal form and strengthened high-budget packings; no closure claimed.
