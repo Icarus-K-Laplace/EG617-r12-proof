@@ -157,3 +157,21 @@ To audit the tempting inference “\(\sum_{C\text{ exact}}P_C\ge69\), therefore 
 For the eight exact colors, the seven \(r_i(C)\) values can all be chosen in \(\{7,8\}\) (four 8s and three 7s), so no pair falls under the \(r_i,r_j\le5\) near-matching theorem. The aggregate bound \(P_{\rm exact}\ge69\) therefore does not force a single exact color into the low-budget structural regime.
 
 The verifier independently checks this integer relaxation. It is **not** a graph-level counterexample: it does not realize the K5 components, gadget neighborhoods, target-core witness sets, or all graph constraints. Its role is to prove that scalar edge budgets alone cannot close the theorem; the missing ingredient must couple the nonexact colors or witness geometry to the exact-color block rows.
+
+
+## 13. Top-cell-A cross-edge defect ledger
+
+Under the T61 sibling top-cell-A contract \(|W|=23\), \(|O|=38\), \(e_F(W)=132\), and \(e_C(W)=11\) for all eleven non-target colors, set
+\[
+K_W=\sum_{w\in W}(d_F(w)-13),\qquad t_C=e_C(O)-42.
+\]
+Since \(\alpha(C[O])\le12\), Turan gives \(t_C\ge0\). The exact edge identities yield
+\[
+\sum_Ct_C=K_W\quad(E=408),\qquad
+\sum_Ct_C=K_W+1\quad(E=407).
+\]
+This replaces an unconstrained cross-edge count with a nonnegative defect budget tied exactly to the target degree excess on W.
+
+For an exact-129 color, the matching condition on W and the ten-K5-plus-gadget factor theorem force component intersections \(2^{10}\) or \(2^9,1\). The gadget intersects W in 3 or 4 vertices; its W-induced graph has one edge or two disjoint edges. The K5 components contribute 10 or 9 of the 11 W edges. Degree floors in the gadget give \(e_C(O)\le48\), hence \(0\le t_C\le6\).
+
+At \(t_C=0\), the induced graph \(C[O]\) is a disjoint union of ten triangles and two K4s. Across all eleven colors these equality partitions are pairwise edge-disjoint and leave exactly the target graph \(F[O]\). This is a near-Turan design problem, but no impossibility has yet been proved. In particular, the defect identity is not itself a graph-realization certificate and does not close Cell A.
