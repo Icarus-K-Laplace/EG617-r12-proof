@@ -326,3 +326,23 @@ After swapping A,B and x,y if needed, there is an integer \(a\in\{0,1,2,3\}\) su
 Thus the gadget degree multiset is either \(5^{10},8\) or \(5^9,6,7\). In particular, the unique W-vertex unmatched by \(C[W]\) in this Type-A case has \(C\)-degree at least five, rather than merely the generic exact-color floor four.
 
 **Proof.** Since \(t_C=0\), \(U[O]\) is two disjoint K4s and \(U[W]\) is \(K_2\cup K_1\). The graph U has 29 edges, so exactly \(29-12-1=16\) edges cross between \(W\cap U\) and \(O\cap U\). Independence number at most two forces every W-vertex to be complete to at least one of A,B; otherwise a missed vertex from each K4 forms an independent triple with it. The adjacent vertices x,y must be complete to opposite K4s, since a common K4 plus x,y would be a K6. WLOG x is complete to A and y to B. Let A0 be the vertices of A missed by z. Since yz is a nonedge, y must be adjacent to every vertex of A0; otherwise one such vertex with y,z is an independent triple. The mandatory cross edges already total \(4+4+(8-|A_0|)+|A_0|=16\), so there are no additional cross edges: x has no B-neighbors, \(N(y)\cap A=A_0\), and \(N(z)\cap A=A\setminus A_0\). If \(|A_0|=4\), then x and y are both complete to A and create a K6; hence \(a=|A_0|\le3\). This gives the stated degree sequence. \(\square\)
+
+
+### Corollary 11.5 (where the unique duplicate lies in a low-slack block)
+
+Assume the hypotheses of Theorem 11.1 and let an outer block \(B_i\) have \(r_i(C)=1\). The exact row theorem (E408 Q33, Theorem 10.1) gives ten component rows and two exceptional rows; because the total incidence is \(61+r_i=62\), the component rows are exactly their ten \(K_5\)'s and the exceptional rows are six-vertex subsets \(U\setminus D_1,U\setminus D_2\), where \(D_1,D_2\) are disjoint \(K_5\)'s in \(U\).
+
+The component rows contribute 20 W-incidences in Type A and 19 in Type B. Since \(D_1,D_2\) are disjoint and cover all but one gadget vertex, their total W-intersection size is 2 or 3 in Type A, and 3 or 4 in Type B. Hence the two exceptional rows contribute respectively 4 or 3 W-incidences in Type A, and 5 or 4 in Type B. Therefore
+\[
+\boxed{e_C(B_i,W)\in\{23,24\}.}
+\]
+
+For every \(w\in W\), the 12 edges from \(w\) to \(B_i\) must contain each of the eleven non-target colors at least once; otherwise \(B_i\cup\{w\}\) is an independent 13-set in a missing color. The target color has no edges between \(B_i\) and \(R\) under the seven-block equality ledger, so exactly one non-target color is repeated at each \((w,B_i)\). It follows that
+\[
+e_C(B_i,W)=23+r_i^W(C),
+\]
+where \(r_i^W(C)\in\{0,1\}\) records whether the unique repeated-C vertex in block \(i\) lies in \(W\). Thus the row-incidence calculation identifies the location of the unique duplicate:
+- \(e_C(B_i,W)=23\): the duplicate lies in \(O=R\setminus W\);
+- \(e_C(B_i,W)=24\): the duplicate lies in \(W\).
+
+This links the exact-129 gadget clique-pair choice to the global duplicate ownership ledger. It is not a contradiction by itself; across seven blocks, the repeated vertices can still be distributed between W and O unless a further witness constraint rules out the aggregate pattern.
