@@ -310,3 +310,19 @@ In Type A, the ten \(K_5\) components contribute 30 edges inside \(O\), while \(
 If \(t_C=0\), equality in Turán's bound forces \(C[O]\) to be a disjoint union of ten \(K_3\)'s and two \(K_4\)'s. This is consistent with either Type A (ten component triangles plus two gadget \(K_4\)'s) or Type B (nine component triangles, one component \(K_4\), and a gadget \(K_4\cup K_3\)).
 
 **Scope warning.** The defect identity is an exact global budget, not yet a contradiction. It says the total excess of the eleven induced graphs \(C[O]\) above their 42-edge Turán floor equals the target degree excess on \(W\) (plus one for E407). The next step must exploit the simultaneous edge-disjoint \(K_3/K_4\)-partition structure when many \(t_C=0\), or prove that the positive \(t_C\)'s cannot be distributed as the identity allows.
+
+
+### Corollary 11.4 (rigidity of the Type-A gadget at zero defect)
+
+Suppose \(C\) is exact-129, \(t_C=0\), and its W-intersection is Type A. Then \(U[O]\) is \(K_4\cup K_4\), while \(U[W]\) is \(K_2\cup K_1\). Write \(U[O]=A\cup B\), with \(A,B\) the two K4s, and \(U[W]=\{x,y,z\}\), with \(xy\in E(U)\) and z isolated in \(U[W]\).
+
+After swapping A,B and x,y if needed, there is an integer \(a\in\{0,1,2,3\}\) such that:
+- x is complete to A and has no neighbors in B;
+- y is complete to B and has exactly a neighbors in A;
+- z is complete to B and to exactly \(4-a\) vertices of A;
+- the A-neighborhoods of y and z partition A;
+- every vertex of \(A\cup B\) and x has degree 5 in U, while \(d_U(y)=5+a\) and \(d_U(z)=8-a\).
+
+Thus the gadget degree multiset is either \(5^{10},8\) or \(5^9,6,7\). In particular, the unique W-vertex unmatched by \(C[W]\) in this Type-A case has \(C\)-degree at least five, rather than merely the generic exact-color floor four.
+
+**Proof.** Since \(t_C=0\), \(U[O]\) is two disjoint K4s and \(U[W]\) is \(K_2\cup K_1\). The graph U has 29 edges, so exactly \(29-12-1=16\) edges cross between \(W\cap U\) and \(O\cap U\). Independence number at most two forces every W-vertex to be complete to at least one of A,B; otherwise a missed vertex from each K4 forms an independent triple with it. The adjacent vertices x,y must be complete to opposite K4s, since a common K4 plus x,y would be a K6. WLOG x is complete to A and y to B. Let A0 be the vertices of A missed by z. Since yz is a nonedge, y must be adjacent to every vertex of A0; otherwise one such vertex with y,z is an independent triple. The mandatory cross edges already total \(4+4+(8-|A_0|)+|A_0|=16\), so there are no additional cross edges: x has no B-neighbors, \(N(y)\cap A=A_0\), and \(N(z)\cap A=A\setminus A_0\). If \(|A_0|=4\), then x and y are both complete to A and create a K6; hence \(a=|A_0|\le3\). This gives the stated degree sequence. \(\square\)
