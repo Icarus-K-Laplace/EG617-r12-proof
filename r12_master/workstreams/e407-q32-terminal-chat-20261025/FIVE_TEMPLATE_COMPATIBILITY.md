@@ -99,3 +99,8 @@ The new theorem DELTA14_NONPARTITE_AUGMENTABLE_EDGE_REDUCTION.md splits the non-
 2. If \(L\) has no augmentable nonedge, then \(L\) is \(K_5\)-saturated; this branch is not covered by the equality classification and remains open.
 
 This is not a template closure. All five shell templates A–E remain OPEN, and the reduction remains conditional on the retained T61/49-witness contract.
+
+
+## 3G. Round 16 — augmentable-edge subcase excluded
+
+DELTA14_NONPARTITE_AUGMENTABLE_TERMINAL_CLOSURE.md closes the augmentable-edge route of the non-four-partite \(\delta=14\) branch. The sole terminal from Round 15 is eliminated by a four-component common-neighbour capacity proof. The only remaining non-four-partite \(\delta=14\) possibility is a \(K_5\)-saturated \(L\). No shell template A–E is thereby closed, and the \(\delta\le13\) branch remains open.

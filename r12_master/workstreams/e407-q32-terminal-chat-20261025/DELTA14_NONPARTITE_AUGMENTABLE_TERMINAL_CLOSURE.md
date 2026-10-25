@@ -72,11 +72,10 @@ R=(P_1\setminus A)\cup(P_2\setminus\{y\}),\qquad |R|=13-a.
 \]
 Thus \(d_H(w,U)\ge13-a\), which gives \(\epsilon_w\ge5-a\).
 
-If the star does not cover every tuple, a direct transversal check with the single edge \(uv\) shows \(d_H(w,U)\ge12\), except for the mixed pattern where \(uv=pq\) with \(p\in A\), \(q\in P_2\setminus\{y\}\), and
-\[
-A_1=\{p\},\qquad A_2=\{y,q\}.
-\]
-In that pattern \(w\) has at least \(6+5=11\) neighbours in \(U\), so \(d_H(w,U)=11\) and \(\epsilon_w=3\). This proves the claim. \(\square\)
+If the star does not cover every tuple, the single edge \(uv\) must cover all tuples not covered by the star. Checking the part-pair of \(uv\):
+- for \(uv\) of type \(P_1P_2\), the only mixed pattern below 12 neighbours is \(uv=pq\), with \(p\in A\), \(q\in P_2\setminus\{y\}\), \(A_1=\{p\}\), and \(A_2=\{y,q\}\). It forces at least \(6+5=11\) U-neighbours;
+- for any other part-pair, either the edge alone must block all transversals (requiring at least six neighbours in each endpoint part, hence at least 12 total), or the mixed star/edge pattern costs at least 12.
+Thus outside the star-only case, \(d_H(w,U)\ge11\); equality can occur only in the displayed \(P_1P_2\) mixed pattern. Since \(d_H(w,U)=8+\epsilon_w\le11\), that pattern has \(d_H(w,U)=11\) and \(\epsilon_w=3\). \(\square\)
 
 **Lemma 5.2.** If \(C_i\cong K_5\) contains an unsaturated vertex, then
 \[
@@ -127,7 +126,7 @@ again contradicting (1).
 
 This is possible only for \(a=4\), and all unsaturated vertices must be star-only; the mixed pattern would consume all three W-excess units. Each such vertex has \(R=(P_1\setminus A)\cup(P_2\setminus\{y\})\) in its U-neighbourhood.
 
-No endpoint of \(uv\) can lie in \(R\), because each endpoint has only four W-neighbours, whereas a vertex of \(R\) adjacent to two different unsaturated \(K_5\) components would have at least two such neighbours plus all three neighbours in \(C_0\). Hence \(uv\) cannot join \(P_1\) to \(P_2\), nor \(P_2\) to \(P_3\) or \(P_4\); its small-side endpoint must lie in \(A\), and its other endpoint in \(P_3\) or \(P_4\). Thus \(R\), \(x\), \(y\), and \(z\) are disjoint.
+No endpoint of \(uv\) that lies in \(P_1\cup P_2\) can lie in \(R\): such an endpoint has W-degree four, but a vertex of \(R\) adjacent to two different unsaturated \(K_5\) components would have at least two such neighbours plus all three neighbours in \(C_0\). Since the leave has no \(P_3P_4\) edge and \(uv\) is not incident to \(y\), the only remaining type is \(P_1P_3\) or \(P_1P_4\), with the \(P_1\) endpoint in \(A\). Thus \(R\), \(x\), \(y\), and \(z\) are disjoint.
 
 Every vertex of \(R\) has W-degree five and is adjacent to a vertex in each of two distinct \(K_5\) components. It cannot be complete to either such component, nor to a third \(K_5\); by the unique-component property it must be complete to \(C_0\). Therefore \(n_0\ge |R|+3=12\). But two unsaturated components use at least two W-excess units, so \(E_0\le1\), and \(C_0\) has a zero-excess vertex of U-degree ten. Hence \(n_0\le10\), contradiction.
 

@@ -24,7 +24,7 @@ These results remain conditional on the upstream 61-point residual/T61 bridge, t
 
 ### Gap A — \(\delta=14\), non-four-partite \(L=\overline{H[U]}\)
 
-Here \(|U|=29\), \(e(H[U])=98\), and \(e(L)=308\). The Turán number is \(t_4(29)=315\); Brouwer's non-four-partite upper bound is \(315-\lfloor29/4\rfloor+1=309\). Thus the edge count alone does **not** rule out a non-four-partite \(L\): 308 lies one below the Brouwer cap. A structural classification of the \(K_5\)-free graphs at this near-extremal boundary, together with the 49 linear independent-4 witnesses and the W-degree ledger, is needed.
+Here \(|U|=29\), \(e(H[U])=98\), and \(e(L)=308\). The Turán number is \(t_4(29)=315\); Brouwer's non-four-partite upper bound is 309. The augmentable-edge subcase is now excluded by DELTA14_NONPARTITE_AUGMENTABLE_TERMINAL_CLOSURE.md. The sole remaining possibility is that \(L\) is \(K_5\)-saturated: every nonedge creates a \(K_5\), so the 309-edge Kang–Pikhurko equality classification cannot be invoked by adding an edge. The next theorem must either exclude this saturated case using the 49 linear witnesses and the exact degree ledger, or give a rigid structural classification of it.
 
 ### Gap B — \(\delta\le13\)
 
@@ -54,9 +54,9 @@ The inherited file DELTA14_EPSU1_2_ANTICOMPL_COMPONENT_PROFILES.md discusses \(K
 
 ## 5. Next highest-leverage target
 
-**Finish the δ=14 non-four-partite fork now isolated by DELTA14_NONPARTITE_AUGMENTABLE_EDGE_REDUCTION.md.** First eliminate the sole augmentable-edge terminal ε_U=1, H[W]=K_3∪ K_5^3 with x,y both complete to K_3; in parallel, prove that a non-four-partite L with the 49-witness packing cannot be K_5-saturated, or classify that saturated case. The edge-augmentation theorem does not cover the saturated branch.
+**Attack the sole remaining δ=14 non-four-partite case: prove that a 308-edge, K5-free, non-four-partite L with the 49-witness packing cannot be K5-saturated, or classify that saturated case exactly.** The augmentable-edge subcase is now excluded by DELTA14_NONPARTITE_AUGMENTABLE_TERMINAL_CLOSURE.md; adding any nonedge in the saturated case creates a K5, so the 309-edge equality classification is unavailable.
 
-Do not continue adding scalar inequalities unless they reduce one of these two explicit cases or yield a direct witness/core contradiction. Once δ=14 is closed, attack δ≤13 with a fresh exact ledger; do not reuse the δ=14 W-profile table without re-deriving its hypotheses.
+After closing or rigidly classifying the saturated case, move to δ≤13 using a fresh exact ledger. Do not reuse the δ=14 W-profile table without re-deriving its hypotheses. The five shell templates A–E and the upstream K145-to-T61 bridge remain independent obligations.
 
 Until these branches and the T61 bridge are certified, E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
 
@@ -70,3 +70,10 @@ The live structural gaps are now only:
 2. \(\delta\le13\), where the \(\delta=14\) four-partite profile arguments do not transfer unchanged.
 
 E407 Q32, all five shell templates A–E, and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+## Round 16 update — augmentable-edge branch closed
+
+Under the retained T61/49-witness contract, the only \(\delta=14\) non-four-partite branch not excluded is now \(K_5\)-saturated \(L\). The augmentable-edge terminal has been eliminated by the partition \(U=S_0\dot\cup S_1\dot\cup S_2\dot\cup S_3\) and the common-neighbour capacity bounds \(n_i\le4+E_i\) for saturated \(K_5\) components and \(n_i\le7\) for unsaturated ones. The arithmetic verifier reports maxima 25, 27, and 25 for the all-saturated, one-star-unsaturated, and exceptional mixed cases, all below 29; the multiple-unsaturated case is ruled out structurally by the 9-point shared set \(R\).
+
+The current highest-leverage target is the \(K_5\)-saturated case. The \(\delta\le13\) cases, five shell templates, and the \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.

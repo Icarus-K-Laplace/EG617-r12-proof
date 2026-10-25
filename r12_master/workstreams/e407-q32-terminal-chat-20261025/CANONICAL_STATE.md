@@ -138,3 +138,16 @@ The added edge \(uv\) must be one of the balanced KP leave types \(P_1P_2,P_1P_3
 The verifier enumerates all integer values of \(a,\epsilon_x,\epsilon_y,I_x,I_y\) and both saturated/unsaturated statuses under the proven component thresholds. It returns exactly the two terminals above. This is arithmetic replay only, not a graph-realization certificate.
 
 **Status:** PROVED_CONDITIONAL strict reduction for the augmentable-edge subcase. Still OPEN: eliminate the two residual terminals above, or prove that \(L\) must have an augmentable nonedge; separately handle the case where \(L\) is \(K_5\)-saturated. The \(\delta\le13\) branch and the five shell templates remain open; E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+## Round 16 — close the \(\delta=14\) augmentable-edge branch
+
+Added DELTA14_NONPARTITE_AUGMENTABLE_TERMINAL_CLOSURE.md and verify_delta14_augmentable_terminal.py.
+
+The preceding augmentable-edge reduction left only \(\epsilon_U=1\), \(H[W]=K_3\dot\cup K_5^3\), with \(x,y,z\) complete to the \(K_3\), and a balanced KP base on four 7-vertex parts plus one exceptional vertex. The new proof assigns every \(u\in U\) to the unique W-component to which it is complete: every \(u\) must be complete to at least one component by \(\alpha(H)\le4\), and \(d_H(u,W)\le6<3+5\) prevents it from being complete to two components. Hence the four common-neighbour sets partition all 29 vertices of \(U\).
+
+The key new capacity improvement is that a U-part-saturated \(K_5\) component has common-neighbour capacity \(n_i\le4+E_i\), not merely \(5+E_i\): equality in the coarser bound would force four of the five labels to one base part and the fifth label to carry \(5+E_i\) extra edges, exceeding its available \(1+\epsilon_w\le1+E_i\). An unsaturated \(K_5\) component has \(n_i\le7\); its unsaturated vertex has positive excess, and a zero-excess companion is complete to a 7-part, giving the intersection cap 6+1.
+
+The excess split \(E_0+E_1+E_2+E_3=3\) now rules out: all three \(K_5\) components saturated; exactly one star-only unsaturated component; the exceptional mixed \(P_1P_2\) pattern; and two or more unsaturated components. In the last case, the shared set \(R=(P_1\\setminus A)\\cup(P_2\\setminus\\{y\\})\) would have to lie in the common neighbourhood of the \(K_3\), forcing at least 12 common neighbours despite a zero-excess \(K_3\) vertex of U-degree 10.
+
+**Result:** the entire \(\delta=14\), non-four-partite augmentable-edge subcase is excluded under the retained contracts. The only remaining case at this boundary is \(K_5\)-saturated \(L\), with no augmentable nonedge. This is a genuine conditional theorem, not a closure of E407 Q32 or EG617(r=12).

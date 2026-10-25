@@ -131,4 +131,4 @@ The leave table in DELTA15_SECOND_TURAN_PACKING.md has no \(P_3P_4\) leave edge,
 
 ## 6. What remains open
 
-This theorem does **not** rule out the final \(\epsilon_U=1\), \(K_3\cup K_5^3\) augmentable-edge terminal. It also does not treat the case where \(L\) has no augmentable nonedge, i.e. \(L\) is \(K_5\)-saturated. Those are now two explicit subproblems within the \(\delta=14\), non-four-partite branch. The \(\delta\le13\) cases and all five E407 shell templates remain open. E407 Q32 and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
+The follow-up theorem DELTA14_NONPARTITE_AUGMENTABLE_TERMINAL_CLOSURE.md eliminates the final \(\epsilon_U=1\), \(K_3\cup K_5^3\) augmentable-edge terminal by a four-component common-neighbour capacity argument. Thus, under the retained contracts, the only remaining \(\delta=14\), non-four-partite possibility is that \(L\) is \(K_5\)-saturated (no augmentable nonedge). The \(\delta\le13\) cases and all five E407 shell templates remain open. E407 Q32 and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
