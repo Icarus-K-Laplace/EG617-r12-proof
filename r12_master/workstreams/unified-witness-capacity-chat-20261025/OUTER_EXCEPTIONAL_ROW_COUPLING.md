@@ -346,3 +346,44 @@ where \(r_i^W(C)\in\{0,1\}\) records whether the unique repeated-C vertex in blo
 - \(e_C(B_i,W)=24\): the duplicate lies in \(W\).
 
 This links the exact-129 gadget clique-pair choice to the global duplicate ownership ledger. It is not a contradiction by itself; across seven blocks, the repeated vertices can still be distributed between W and O unless a further witness constraint rules out the aggregate pattern.
+
+
+## 12. The \(P_C=49,\ r_i(C)=6\) corner is excluded
+
+### Theorem 12.1 (seven-block gadget contradiction at the \(49/6\) boundary)
+
+Assume the retained exact-129 factor theorem, the seven-block incidence contract, the exact gadget normal form in the E408 Q33 sibling ledger, and the isolated-monochromatic-\(K_{12}\) lemma. Then no exact-129 color \(C\) can satisfy
+\[
+P_C=49,\qquad r_i(C)=6
+\]
+for any block \(B_i\).
+
+**Proof.** Since \(P_C+R_C=62\) for an exact-129 color, \(R_C=13\). The other six positive block budgets sum to seven, so they are five \(r_j=1\) blocks and one \(r_k=2\) block.
+
+For each \(r_j=1\) block, the two no-component row neighborhoods have gadget complements forming a disjoint \(K_5,K_5\) pair. For the \(r_k=2\) block, Theorem 10.1 allows the complement profile \((5,5)\) or \((5,4)\), again with disjoint cliques. In the \(r_i=6\) block:
+- Cases A/B of the exact \(r_i=6\) classification have a no-component row with gadget complement \(H\) a \(K_5\);
+- Case C has two no-component rows whose gadget complements \(H_1,H_2\) are disjoint cliques of sizes at most five and with \(|H_1|+|H_2|\ge5\).
+
+The remaining local task is a finite gadget selection. In each of the four exact gadget normal forms, let \(\mathcal P_1\) be all disjoint \(K_5,K_5\) pairs (the possible \(r=1\) complements), and call a gadget \(K_5\) **good** if every pair in \(\mathcal P_1\) has a member disjoint from it. The exact verifier **verify_p49_r6_gadget_exclusion.py** checks:
+
+1. For every Case-A/B high complement \(H\in\mathcal K_5(U_C)\) and every allowed \(r=2\) complement pair \(Q\) of profile \((5,5)\) or \((5,4)\), there is a good \(K_5\), denoted \(D\), disjoint from \(H\), and a member \(Q'\in Q\) disjoint from \(D\) with \(H\cap Q'\ne\varnothing\).
+2. For every Case-C pair \(H_1,H_2\) of disjoint clique complements with \(|H_1|,|H_2|\le5\) and \(|H_1|+|H_2|\ge5\), and every allowed \(r=2\) pair \(Q\), one can choose \(H\in\{H_1,H_2\}\), a good \(K_5=D\) disjoint from \(H\), and \(Q'\in Q\) disjoint from \(D\) such that \(H\cap Q'\ne\varnothing\). The search includes every clique-complement configuration satisfying these necessary conditions, so it over-enumerates the actual row profiles.
+
+Fix the resulting \(H,D,Q'\). In each of the five \(r=1\) blocks choose a no-component row whose omitted \(K_5\), say \(L_j\), is disjoint from \(D\); this is possible by the definition of a good core. Then \(H,L_1,\ldots,L_5,Q'\) are subsets of the six-set \(U_C\setminus D\). The finite check gives \(H\cap Q'\ne\varnothing\); also \(|H|\ge2\), so \(H\) intersects every \(L_j\), and \(Q'\), of size four or five, intersects every \(L_j\). Any two \(L_j,L_{j'}\) intersect because they are five-subsets of a six-set.
+
+Whenever two omitted sets intersect, their row neighborhoods leave a gadget vertex nonadjacent to both outer vertices. The selected rows contain no full \(K_5\) component in their neighborhoods: the five \(r=1\) rows and the high \(r=6\) row have no component vertices, while the \(r=2\) row can have at most one extra component-vertex incidence. Thus their union cannot cover a full component. If two selected outer vertices were C-nonadjacent, the remaining gadget vertex together with one vertex from each of the ten isolated \(K_5\) components and the two outer vertices would form a C-independent 13-set. Therefore the five \(r=1\) representatives, the \(r=2\) representative, and the \(r=6\) representative are pairwise C-adjacent. Each is also C-adjacent to every vertex of \(D\), so they and \(D\) form a C-colored \(K_{12}\).
+
+But the \(r=6\) representative has gadget neighborhood \(U_C\setminus H\), and \(H\cap D=\varnothing\), \(|H|\le5\). Thus \(U_C\setminus H\) contains \(D\) and at least one further gadget vertex outside \(D\). The high-block representative has a C-edge to that outside vertex, contradicting the isolated-\(K_{12}\) lemma. \(\square\)
+
+### Finite-verifier record
+
+The standalone exact checker enumerates the four normal forms \(b=1,2,3,4\), all gadget \(K_4/K_5\) cliques, every disjoint \(r=1\) \(K_5/K_5\) pair, every \(r=2\) \(K_5/K_5\) or \(K_5/K_4\) pair, and every admissible Case-C complement pair. It uses only exact vertex sets and integer combinatorics. The local replay returned:
+
+| \(b\) | \(K_5\) cliques | \(K_4\) cliques | \(r=1\) pairs | good cores | Case-C pairs | \(r=2\) pairs | Case A/B checks | Case C checks |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 1 | 4 | 18 | 3 | 2 | 1,578 | 31 | 124 | 48,918 |
+| 2 | 3 | 15 | 2 | 3 | 1,387 | 22 | 66 | 30,514 |
+| 3 | 3 | 15 | 2 | 3 | 1,387 | 22 | 66 | 30,514 |
+| 4 | 4 | 18 | 3 | 2 | 1,578 | 31 | 124 | 48,918 |
+
+All 159,244 checks passed (380 Case-A/B checks and 158,864 Case-C checks). The verifier is committed in this workstream. The theorem is conditional on the retained reduction and gadget/row contracts; it closes this local \(P_C=49,r_i=6\) branch, not the original \(K_{145}\) problem.
