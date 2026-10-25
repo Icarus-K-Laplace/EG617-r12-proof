@@ -140,3 +140,19 @@ If a same-component pair \(x_i(\ell),x_j(\ell)\) is nonadjacent, its two row-nei
 and \(m_{ij}(C)\le1\) whenever \(r_i(C),r_j(C)\le5\).
 
 This counts only row-to-residual incidence charges. It does not count the six internal edges of a selected K4 witness and does not alter the target-core crossing-edge multiplicity identity in (1)–(3).
+
+
+## 7. Missing component diagonals are charged to duplicate edges
+
+For an exact-129 color C, take a pair of outer blocks i,j with \(r_i(C),r_j(C)\le5\). Let \(m_{ij}(C)\) be the number of absent same-component edges \(x_i(\ell)x_j(\ell)\) among the ten K5 labels. The near-complete matching theorem gives \(m_{ij}\le1\). If \(m_{ij}=1\) and \(d_{ij}(C)=0\), the block-pair graph has exactly 12 edges and minimum degree one on both sides, so it is a perfect matching. The unmatched component rows must be paired with exceptional rows; this leaves an independent triple of exceptional rows. The missing diagonal consumes at least five of the combined extra row-neighborhood incidences \(r_i+r_j-2\le8\), leaving at most three, too few to cover a full K5 component. One vertex from each isolated K5 component plus the triple gives a C-independent 13-set, contradiction.
+
+Therefore
+\[
+\boxed{m_{ij}(C)\le d_{ij}(C).}
+\]
+Summing over all low-budget block pairs gives
+\[
+\sum_{\{i,j\}\subseteq\mathcal I_C}m_{ij}(C)
+\le \sum_{\{i,j\}\subseteq\mathcal I_C}d_{ij}(C)\le P_C.
+\]
+This is a labelled edge-ownership statement: one missing component alignment consumes at least one duplicate unit, and the same duplicate unit is charged at most once in this inequality.
