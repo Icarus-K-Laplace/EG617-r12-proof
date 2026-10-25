@@ -112,6 +112,7 @@ The next proof target is a stability/packing contradiction in Case 1 or a genuin
 
 ## Latest isolated commits
 
+- Explicit external-edge contradiction in the \(P_C=50\) proof: 6dc384e3bc5b5825ade24c6377601d8dc1f0ae2b
 - Isolated-\(K_{12}\) duplicate cap and \(P_C=50\) exclusion: 772aa7c0d43db747d707f93ee41e96cf1f30a737
 - Exact gadget normal form and strengthened high-budget packing: c01f7dc6951b2bb7ea5209f252b1644ca0ecd40a
 - Live sibling audit and Corollary 11.3 independent check: 597f0db0c7f37e97bb2bb448f0a50bf1f4872809
