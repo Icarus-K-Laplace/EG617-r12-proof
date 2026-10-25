@@ -84,7 +84,7 @@ Theorem 13.3 excludes the corner \(P_C=50\) and \(r_i(C)=6\). The budget identit
 
 Thus \(P_C\le21(12-10)=42\), contradicting \(P_C=50\). This is a genuine global contradiction for that exact-129 budget corner, not merely a packing observation.
 
-**Scope:** the \(P_C=49,\ r_i=6\) corner remains open. Its current guaranteed packing can leave nine isolated \(K_{12}\)'s, and the generic cap gives only \(P_C\le63\). E408 Q33 and the original \(K_{145}\) theorem remain OPEN / NOT_CERTIFIED.
+**Historical scope note:** at the time of Theorem 13.3, the adjacent \(P_C=49\) boundary remained open. Result 6 and P49_BOUNDARY_EXCLUSION.md now exclude the entire \(P_C=49\) layer, including every \(r_i=6\) profile. E408 Q33 and the original \(K_{145}\) theorem remain OPEN / NOT_CERTIFIED.
 
 ## Result 5: universal exact-129 budget cap \(P_C\le49\)
 
