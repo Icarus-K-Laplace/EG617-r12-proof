@@ -133,3 +133,8 @@ This refutes any proposed contradiction based solely on the 29-point saturated g
 DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md proves, under the retained core contract and the explicit local model in DELTA14_SATURATED_LOCAL_MODEL.md, that no W-extension exists for epsilon_U=1 or 2. Combined with the independent-transversal exclusion of epsilon_U=0 in DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md, the explicit (5,5,2,1,2) blow-up has no full 47-core extension.
 
 The new arithmetic verifier checks only finite profile enumeration, forbidden-transversal fractions, and A/B assignment-count patterns; it does not machine-check the analytic independent-set arguments. The Didin preprint dependency in DELTA14_SATURATED_ALPHA_CRITICAL_REDUCTION.md remains unaudited. Most importantly, the saturated-kernel reduction does not prove all admissible J's are the explicit blow-up. Therefore this does not close the general delta=14 saturated branch, any of the five shell templates, delta<=13, or the K145-to-T61 bridge.
+
+
+## Round 21 — C5-blow-up subclass
+
+DELTA14_C5_BLOWUP_PROFILE_CLASSIFICATION.md classifies the C5-blow-up subclass by exact finite enumeration of positive five-part compositions with total 15, edge count 49, and Delta(J)<=7. Seven dihedral classes satisfy the vertex/edge ledger before the degree cap; exactly one survives the cap, the (1,2,5,5,2) profile. The verifier confirms the finite enumeration only. Combining with Round 20 excludes every full-core extension in this subclass. The general J terminal remains open because triangle-free saturated graphs need not be C5 blow-ups.
