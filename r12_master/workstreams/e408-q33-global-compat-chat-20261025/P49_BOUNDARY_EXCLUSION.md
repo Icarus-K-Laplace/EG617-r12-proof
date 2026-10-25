@@ -97,27 +97,37 @@ All other block-pairs have sum at most six. Hence every label is adjacent across
 
 ### Case III: largest-pair sum eight, type \((5,3,1^5)\) or \((4,4,1^5)\)
 
-Let \(i,j\) be the unique pair with \(r_i+r_j=8\); both values are at most five. If a component-label edge across this pair were missing, blocker compatibility again forces a second full component in the union. Theorem 10.1 ensures that each component row contains exactly one full component, so this costs at least five extra component incidences:
-\[
-t_i+t_j\ge5.
-\]
-Consequently
-\[
-a_i+a_j+e_i+e_j=8-(t_i+t_j)\le3.
-\]
-Since \(a_i,a_j\ge1\), one block has \(a=1\) and the other has \(a\le2\). The \(a=1\) block has two disjoint \(K_5\) omitted sets and therefore a row containing either canonical \(D\in\mathcal D_s\). The \(a\le2\) block has at least one omitted \(K_5\), disjoint from one of the canonical \(D\)'s. Choose that \(D\); the five \(r=1\) blocks also have rows containing it. Lemma 2.3 gives the external-edge contradiction. Thus the unique pair-sum-eight edge cannot be missing. All other pairs have sum at most six, so Lemma 2.2 applies.
+Let \(i,j\) be the unique pair with \(r_i+r_j=8\); both values are at most five. Suppose a component-label edge across this pair is missing. The pairwise blocker condition says that if the union contains no second full \(K_5\) component, then the remaining gadget vertices must form a clique of size at most five, so the two row-neighborhoods must cover at least six vertices of \(U_C\).
+
+There are two cases.
+
+- **A second component is covered.** Since each component row contains exactly one full component under Theorem 10.1, its five vertices are extra component incidences, so \(t_i+t_j\ge5\). Hence
+  \[
+  a_i+a_j+e_i+e_j=8-(t_i+t_j)\le3.
+  \]
+  Thus one block has \(a=1\) and the other has \(a\le2\). The \(a=1\) block has two disjoint \(K_5\) omitted sets; the other has at least one \(K_5\) omitted set. Choose a common \(D\in\mathcal D_s\) using Lemma 2.3, and select gadget-only rows containing \(D\) in these two blocks and all five \(r=1\) blocks. Their omitted sets pairwise intersect, so the selected outer vertices and \(D\) form a \(K_{12}\) with an external \(C\)-edge.
+- **No second component is covered.** The two component rows must cover at least six gadget vertices. Since every gadget vertex is already covered by the two gadget-only rows in each block, gadget incidences in component rows are duplicate gadget incidences counted by \(e_i,e_j\). Therefore \(e_i+e_j\ge6\). But
+  \[
+  8=r_i+r_j=a_i+a_j+e_i+e_j+t_i+t_j,\qquad a_i+a_j\ge2.
+  \]
+  Equality forces \(e_i+e_j=6\), \(a_i=a_j=1\), and \(t_i=t_j=0\). Both blocks then have the rigid pair of disjoint \(K_5\) omitted sets, so the same gadget-only-row \(K_{12}\) contradiction applies.
+
+Thus the unique pair-sum-eight edge cannot be missing. All other pairs have sum at most six, so Lemma 2.2 applies.
 
 ### Case IV: type \((6,2,1^5)\)
 
-Let \(i,j\) be the \(r_i=6,r_j=2\) blocks. We first show that no component-label edge can be missing between them.
+Let \(B_i,B_j\) be the \(r_i=6,r_j=2\) blocks. We show that no component-label edge can be missing between the \(r_i=6\) block and any other block.
 
-Suppose one were missing. The two row-neighborhoods must cover a second full \(K_5\) component. In Case A or B of Theorem 11.1, the \(r_i=6\) block already has a gadget-only row with exactly six gadget neighbors, whose omitted set is a \(K_5\). In Case C, each component row contains exactly one full component, so the second component costs \(t_i+t_j\ge5\). Since \(t_j\le1\), we have \(t_i\ge4\); the gadget excess in the \(r_i=6\) block is therefore at most two, and its two gadget-only rows have at least six neighbors each but at most thirteen gadget incidences in total. At least one has exactly six neighbors, again giving an omitted \(K_5\).
+If the \(r_i=6\) block is in Case A or B of Theorem 11.1, it has a gadget-only row with exactly six gadget neighbors, whose omitted set is a \(K_5\). If it is in Case C, it has two gadget-only rows and total gadget incidence \(11+u_i\le17\).
 
-The \(r_j=2\) block has omitted pair of type \((5,5)\) or \((5,4)\) by Theorem 10.1. Lemma 2.3 aligns the \(r_i=6\) omitted \(K_5\), that pair, and the five \(r=1\) blocks to a common \(D\), yielding a \(K_{12}\) with an external \(C\)-edge. Contradiction.
+Consider a missing edge for a label \(\ell\).
 
-Now consider any pair consisting of the \(r_i=6\) block and an \(r=1\) block. If a component-label edge were missing, the \(r=1\) row is exactly one \(K_\ell\), so the \(r_i=6\) row itself would have to contain a second full \(K_5\). Cases A and C of Theorem 11.1 and Case B with \(m=10\) forbid such a row. The only remaining subcase is Case B with \(m=11\), where Theorem 11.1 gives two six-neighbor gadget-only rows with omitted \(K_5\)'s; Lemma 2.3, using the \(r=2\) block's \((5,5)\) or \((5,4)\) pair, gives the same external-edge contradiction.
+- **Across the \(6+2\) pair.** If the two neighborhoods cover a second full component, then in Case C its five vertices are extra component incidences, so \(t_i+t_j\ge5\). Since \(t_j\le1\), \(t_i\ge4\), whence \(u_i=6-t_i\le2\); the two gadget-only rows have at most thirteen gadget incidences total, so one has six or seven gadget neighbors. If no second component is covered, the blocker condition requires the two neighborhoods to cover at least six gadget vertices. The \(r_j=2\) component row has at most one gadget neighbor, so the \(r_i=6\) component row has at least five. In Case C, the two gadget-only rows contribute at least twelve more gadget incidences; the total is at most seventeen, forcing the component row to have exactly five and both gadget-only rows to have exactly six. Thus, in every subcase, the \(r_i=6\) block has a gadget-only row whose omitted set is a clique of size four or five.
+- **Across a \(6+1\) pair.** The \(r=1\) row is exactly \(K_\ell\), with no gadget neighbors. If no second component is covered, the \(r_i=6\) row would need at least six gadget neighbors. In Case C this would require at least \(12+6=18\) gadget incidences, exceeding its maximum of seventeen. Hence a missing edge in Case C must cover a second component; then \(t_i\ge5\), \(u_i\le1\), and the two gadget-only rows both have exactly six gadget neighbors. Cases A and B already have a six-neighbor gadget-only row.
 
-All edges across the \(6+2\), \(6+1\), and remaining low-budget block pairs are therefore forced. If any row repeats a component or contains two components, Lemma 2.2 gives an immediate external-edge contradiction; otherwise the ten \(K_{12}\)'s are disjoint and \(P_C\le42\). Both alternatives contradict \(P_C=49\).
+In every possible missing-edge subcase, Lemma 2.3 now aligns the \(r_i=6\) gadget-only row, the \(r_j=2\) block's omitted pair of type \((5,5)\) or \((5,4)\), and the five \(r=1\) blocks to a common \(D\). This gives a \(K_{12}\) with an external \(C\)-edge, contradiction.
+
+All edges across \(6+2\) and \(6+1\) pairs are therefore forced; every remaining block pair has sum at most six. If any row repeats a component or contains two components, Lemma 2.2 gives an immediate external-edge contradiction; otherwise the ten \(K_{12}\)'s are disjoint and \(P_C\le42\). Both alternatives contradict \(P_C=49\).
 
 ### Case V: type \((7,1^6)\)
 
