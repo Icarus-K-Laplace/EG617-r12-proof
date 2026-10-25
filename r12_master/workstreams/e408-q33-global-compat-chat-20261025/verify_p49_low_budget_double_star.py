@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Finite gadget/incidence verifier for the nine P_C=49 profiles with max r_i<=5.
+"""Finite gadget/incidence verifier for P_C=49 profiles with max r_i<=5.
 
 Three proof modes are checked:
 1. Basic common-(D,w) DP for the five profiles whose pairwise budgets imply
    p_i+p_j<=4 automatically.
 2. Incidence-aware common-(D,w) DP for (5,3,1^5) and (5,2,2,1^4).
-3. Fixed-D-family alignment with incidence allocations for (4,4,1^5) and
-   (4,3,2,1^4), where the missing-edge blocker analysis forces the restricted
-   pair profiles checked below.
+3. Fixed-D-family alignment with incidence allocations for the missing-edge
+   branches of (4,4,1^5) and (4,3,2,1^4). The all-component-edges-present
+   branches for those two profiles are not closed by this script.
 
 The verifier checks the finite 11-vertex gadget and integer incidence
 bookkeeping only. The exact-129 factor theorem, row-profile theorem, and
@@ -355,7 +355,7 @@ def main():
     print("fixed-D (4,4,1^5) incidence alignments:", align44_checks)
     print("fixed-D (4,3,2,1^4) incidence alignments:", align432_checks)
     print("Total form/profile families checked:", basic_checks + incidence_checks + 8)
-    print("Scope: excludes all P_C=49 profiles with max r_i<=5; r=(6,2,1^5) and r=(7,1^6) are outside this script.")
+    print("Scope: closes seven profiles with max r_i<=5 outright and the missing-edge branches of two more; it does not close the all-component-edges-present branches of (4,4,1^5) or (4,3,2,1^4).")
 
 
 if __name__ == "__main__":
