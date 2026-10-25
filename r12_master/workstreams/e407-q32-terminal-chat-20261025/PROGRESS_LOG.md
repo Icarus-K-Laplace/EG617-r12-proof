@@ -430,3 +430,25 @@ All three H[W] profiles are now excluded by the three independent terminal theor
 - \(\delta=14\), non-four-partite: OPEN.
 - \(\delta\le13\): OPEN.
 - Five E407 shell templates and EG617(r=12): **OPEN / NOT_CERTIFIED**.
+
+
+## 2026-10-25 — Round 12: four additional \(\delta=14\), \(\epsilon_U=1,2\) profiles excluded
+
+### New theorem
+
+Added DELTA14_EPSU1_2_ANTICOMPL_COMPONENT_PROFILES.md. For W with four anticomplete clique components, U is covered by their common-neighbour sets. A generalized reverse-saturation lemma gives
+\[
+d_H(w,U)\ge9+m-\epsilon_U
+\]
+for any W-vertex not complete to a U-part, where \(m\) is the smallest W-component size. It follows from \(t_d\le5+\epsilon_d-m\) and the distinct-small-part condition for different non-neighbouring D-vertices.
+
+Using component label loads and the reduced W-excess budget \(E_W=4-\epsilon_U\), the following are excluded:
+- \(\epsilon_U=1,2\), \(H[W]=K_3\cup K_5^3\);
+- \(\epsilon_U=1\), \(H[W]=K_4^3\cup K_6\);
+- \(\epsilon_U=2\), \(H[W]=K_4\cup K_4\cup K_5\cup K_5\).
+
+The K4 common-neighbour capacity is at most nine in the listed cases; the K5 cap in the \(\epsilon_U=2\) profile is at most \(2+E_i\). The resulting total cover bounds are at most 28, 28, and 24 respectively, below \(|U|=29\). Arithmetic replay: verify_delta14_epsilonU1_2_profiles.py.
+
+### Frontier change
+
+For \(\delta=14\) and four-partite \(L\), the only remaining W-profile is \(\epsilon_U=1\) with \(H[W]=K_4\cup K_4\cup K_5\cup K_5\) plus one W-cross-edge. The \(\delta=14\) non-four-partite branch and all \(\delta\le13\) branches remain open. E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
