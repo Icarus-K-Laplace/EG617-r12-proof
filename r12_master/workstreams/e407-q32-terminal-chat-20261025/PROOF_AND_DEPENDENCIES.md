@@ -159,3 +159,10 @@ Combining this classification with DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSI
 New conditional result: DELTA13_FOUR_PARTITE_NO_CROSS_W_PROFILES.md. Under the E407 49-witness boundary and the four-partite hypothesis for \(L=\overline{H[U]}\), the witness blocks force U parts \((7,7,7,8)\), saturate all small-small pairs, and imply each small vertex has at most one cross-edge into D. If \(\delta=13\) and \(H[W]\) is a disjoint union of four cliques, exact edge ledgers allow only four profiles for \(\epsilon_U=1,2,3\); componentwise common-neighbour capacities are strictly below 29, contradiction.
 
 The new verifier checks only integer partitions, excess allocations, and numeric bounds. The graph-theoretic reverse-saturation and component-capacity arguments are analytic and remain subject to independent human review. No claim is made for W-cross-edge profiles, \(\epsilon_U=0\), non-four-partite U-complements, \(\delta\le12\), or the upstream K145-to-T61 bridge.
+
+
+## Round 24 — delta-13 \(\epsilon_U=1\), one-cross-edge W-profile
+
+DELTA13_EPS1_K3K5K5K5_ONE_CROSS_EDGE.md excludes the \(K_3\dot\cup3K_5\) W-profile plus one cross-edge under the four-partite-U and 49-witness contract. The proof preserves the unique possible degree-seven unsaturated-U exception rather than assuming all U vertices are saturated: the \(d_H(u,W)=6\) case contradicts the component capacity, while the \(d_H(u,W)=7\) case can occur at most once. Therefore at least 28 U vertices lie in the component common-neighbour cover, but the total cover capacity is at most 26.
+
+The verifier checks the finite capacity totals and the strict gap only. The other \(\delta=13\) W-cross-edge profiles remain open.
