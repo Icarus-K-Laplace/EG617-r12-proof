@@ -23,8 +23,10 @@ all alignment properties used by P49_BOUNDARY_EXCLUSION.md and the R=14
 boundary analysis.
 
 IMPORTANT SCOPE:
-  * The pair/pair alignment assertion deliberately excludes type (5,3)+(5,3).
-    That combination is ruled out by the integer budget in every use below.
+  * The pair/pair alignment assertion deliberately excludes type (5,3)+(5,3);
+    it is not universally alignable. P48_BOUNDARY_EXCLUSION.md rules out the
+    all-low occurrence by the pair-sum budget and handles the (6,3,1^5)
+    occurrence directly from the component/gadget excess inequalities.
   * No claim is made for a high K4 against a low (5,3) pair in isolation; that
     broader assertion has a counterexample for s=2,3.
   * These are fixed-size gadget checks, not a graph-completion certificate.
