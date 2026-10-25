@@ -58,3 +58,10 @@ The present inequalities do not rule out all three options. In particular, the s
 - Missing-diagonal incidence arithmetic replay: PASS for all 25 pairs \(r_i,r_j\in\{1,\ldots,5\}\).
 - No full graph-realization SAT/ILP certificate has been generated.
 - All changes are confined to r12_master/workstreams/unified-witness-capacity-chat-20261025/.
+
+
+## 6. Labelled witness extension
+
+The seven selected witness components of an exact-129 color lie among the ten isolated K5 components. The common size-five blocker set across all seven outer blocks has size at least \(P_C-45\); inclusion-exclusion therefore forces at least \(\max(0,P_C-48)\) selected witness components to be common blockers. If \(P_C\ge49\), at least one selected witness-labelled K5 extends with its seven outer representatives to a monochromatic K12; if \(P_C=50\), at least two extend. If \(P_C\ge51\), the stronger all-ten-component alignment result applies.
+
+This makes the high-\(P_C\) branch explicitly label-aware. The scalar relaxation still permits \(P_C=9\) for all eight exact colors, so no such branch is forced by aggregate budgets alone.
