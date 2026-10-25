@@ -29,6 +29,7 @@ These are the latest heads observed in the repository at the time of this update
 - New exact witness-array identity: for each D-vertex d, its number of missing small-part partners equals the number of exact-129 color classes omitting d. These multiplicities sum to 7; the five endpoint D-labels contribute at least 5, so at least three have multiplicity exactly 1 and at least one non-endpoint D-label has multiplicity 0. See DELTA16_WITNESS_ARRAY.md.
 - New Round 23 theorem: when \(\delta=13\), \(L=\overline{H[U]}\) is four-partite, and \(H[W]\) is a disjoint union of four cliques, every case with \(\epsilon_U\in\{1,2,3\}\) is excluded by DELTA13_FOUR_PARTITE_NO_CROSS_W_PROFILES.md. The common-neighbour cover capacities are at most 27, 28, 28, and 23 for the profiles \((3,4,5,6)\), \((3,5,5,5)\), \((4,4,4,6)\), and \((4,4,5,5)\), respectively.
 - New Round 24 theorem: at \(\delta=13,\epsilon_U=1\), the four-partite-U profile \(H[W]=K_3\dot\cup3K_5\) plus one cross-edge is also **EXCLUDED** by DELTA13_EPS1_K3K5K5K5_ONE_CROSS_EDGE.md. The proof allows at most one unsaturated U-vertex; its common-neighbour cover capacity is at most 26, below 28.
+- New Round 25 theorem: at \(\delta=13,\epsilon_U=1\), the \(3K_4\dot\cup K_6\) W-profile with its unique cross-edge joining \(K_4\) to \(K_6\) is **EXCLUDED** by DELTA13_EPS1_3K4_K6_K4K6_EDGE.md. All U vertices are W-saturated, and the four common-neighbour capacities sum to at most 28 < 29.
 ## Status by case
 | Case | Status |
 |---|---|
@@ -44,6 +45,7 @@ These are the latest heads observed in the repository at the time of this update
 | \(\delta=14\) non-four-partite, saturated \(L\) | PROVED_CONDITIONAL excluded: every admissible J is the C5 blow-up, and its full-core extension is impossible |
 | \(\delta=13\), four-partite \(L\), no-cross-edge \(H[W]\), \(\epsilon_U\in\{1,2,3\}\) | EXCLUDED by common-neighbour cover capacity |
 | \(\delta=13\), four-partite \(L\), \(\epsilon_U=1\), \(K_3\dot\cup3K_5\) plus one W-cross-edge | EXCLUDED by common-neighbour cover capacity |
+| \(\delta=13\), four-partite \(L\), \(\epsilon_U=1\), \(3K_4\dot\cup K_6\) plus a \(K_4\)-\(K_6\) edge | EXCLUDED by common-neighbour cover capacity |
 | \(\delta\le13\) other cases | OPEN |
 | E407 Q32 overall | OPEN / NOT_CERTIFIED |
 | EG617(r=12) | OPEN / NOT_CERTIFIED |
@@ -253,3 +255,12 @@ Added DELTA13_EPS1_K3K5K5K5_ONE_CROSS_EDGE.md and verify_delta13_eps1_k3k5_one_c
 The component common-neighbour capacities sum to at most \(23+E_W=26\). At least 28 U-vertices must be covered by those sets, contradiction. The arithmetic replay passed with DELTA13_EPS1_K3K5K5K5_ONE_CROSS_EDGE_ARITHMETIC_OK; it checks only the capacity totals and the strict integer gap, not the analytic graph lemmas.
 
 Remaining \(\delta=13\) four-partite-U profiles include \((4,4,4,6)\) plus one W-cross-edge and \((4,4,5,5)\) plus two W-cross-edges at \(\epsilon_U=1\), and \((4,4,5,5)\) plus one W-cross-edge at \(\epsilon_U=2\). The \(\epsilon_U=0\), non-four-partite, \(\delta\le12\), five-template global compatibility, and upstream bridge gaps remain open.
+
+
+## Round 25 — delta-13 epsilonU=1, 3K4+K6 with K4-K6 cross-edge
+
+Added DELTA13_EPS1_3K4_K6_K4K6_EDGE.md and verify_delta13_eps1_3k4_k6_k4k6_edge.py. The transversal bound forces every U-vertex to be W-saturated: any nonsaturated U-vertex would need W-degree at least eight, while the degree ledger gives at most seven on small U-parts and six on D. The same bound forces every D vertex to be W-saturated, giving \(t_d\le2\) and a reverse-saturation lower bound \(d_H(w,U)\ge12\) for any W-vertex not complete to a U-part.
+
+This yields component capacities at most 9 for each of the three K4 components and at most \(\lfloor E_6/2\rfloor\le1\) for K6. Their sum is at most 28, contradicting the required cover of 29 U vertices. Arithmetic replay passed with DELTA13_EPS1_3K4_K6_K4K6_EDGE_ARITHMETIC_OK.
+
+Remaining in this local profile family: the single edge joining two K4 components. Other open cases include the \(\epsilon_U=1\), \(2K_4\dot\cup2K_5\)-plus-two-edge profile; \(\epsilon_U=2\), \(2K_4\dot\cup2K_5\)-plus-one-edge profile; \(\epsilon_U=0\); non-four-partite U-complements; \(\delta\le12\); five-template global compatibility; and the upstream bridge.
