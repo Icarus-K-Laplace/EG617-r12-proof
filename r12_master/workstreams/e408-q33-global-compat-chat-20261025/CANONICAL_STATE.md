@@ -125,14 +125,14 @@ The next proof target is a stability/packing contradiction in Case 1 or a genuin
 - Common-star finite verifier: c413b1065e9926d00ad1319f2e8d8a815e4850b5
 - Conditional colorwise \(P_C\le49\) theorem: 04b5ec6f9a1e118faee2216208e1f13361fb8d43
 - Active ledger profile correction and common-star theorem integration: 1a41ecfc88e25207d0f52e52d43e4a48a76b4dc6
-- Corrected \(P_C=50\) high-profile partition arithmetic: d55d0e43a1b17fd9ef2b5dd7971560f1dcc4025d
+- Proof dependency map update: 94f0edd87b05f28d271bfc611fbf882ecb8f8cb0
+- Progress log updated to mark obsolete \(P_C\le47/48/49\) attempts withdrawn: 7bcb314fcd2059e877912a49104934435fd3ebd7
+- Corrected \(P_C=50\) high-profile partition arithmetic and removed duplicated sections: d55d0e43a1b17fd9ef2b5dd7971560f1dcc4025d; 379c1e4c8a9a511431c8de22d79c9ecf852355eb; 3215fe96fec61f4bcdd8d95f86d69d5c3e0b5adf
+- Refreshed local \(P_C=50,r_i=6\) theorem scope: c7c0793973bc8095f48cf1dbfb3e18712dceee54
 - S0=12 exclusion theorem, including row-identity and disjoint-part audit: a1cc059324df01bfa1afec5bf20ba7a1194dd249
 - S0=12 arithmetic profile verifier: 4093c6f03aa5ca60f80765264e90590cdf85d5f1
 - Repaired local \(P_C=50,r_i=6\) corner via double-star: 07b6891eefac7163b1a0fbc1c2529126c2b5b1d7; verifier 2c42edbf6996bc733f7df1ee5a182c5e8954447e
 - \(P_C=50\) profiles \((5,2,1^5)\), \((4,3,1^5)\) and finite verifier: 4a1bd39ba4e08854fd35907d051a44451259b07c; d33fe53aa7cd63f1fff9cb337231e39e449b28d7
-- Active ledger updates: e714b150a0d63fff1b7fa295fd8fa372e91c6950; 1a41ecfc88e25207d0f52e52d43e4a48a76b4dc6
-- Proof dependency map update: 94f0edd87b05f28d271bfc611fbf882ecb8f8cb0
-- Progress log update: 076f19c104bf94aedd6034a1372004cd1cf1d217
 - Archived uncertified outer-cap drafts and P49/P48 audit holds: a0a8f21d872b261b24580ad5e9f15942046cc74f; a11d93b8d9a3cd58aa7f6f8da58ae3e90def8391; cfcb8f70f856dd742d3a658551b97f5d65e17fb3
 
-**Current status: E408 Q33 and EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.**
+**Current status: the conditional colorwise cap \(P_C\le49\) is established. E408 Q33 and EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.**
