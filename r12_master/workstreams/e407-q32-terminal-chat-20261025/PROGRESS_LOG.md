@@ -726,3 +726,10 @@ The general saturated-kernel classification was also patched to handle the previ
 The corrected files are DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md, verify_delta14_saturated_candidate_extension_exclusion.py, DELTA14_SATURATED_KERNEL_CLASSIFICATION.md, and verify_delta14_saturated_kernel_classification.py. The scripts were updated in this round; no claim is made here that they were executed in the live environment.
 
 Remaining frontier: (delta=13,epsilon_U=1), (2K_4cup2K_5) with two W-cross-edges; then the remaining (delta=13) profiles and (deltale12). The five shell templates and (K_{145})-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 — Round 30: exclude disjoint same-pair K4–K5 cross-edges
+
+The new file DELTA13_EPS1_TWO_CROSS_EDGE_K4K5_DISJOINT_CLOSED.md closes the disjoint-edge placement where both W-cross-edges join the same K4 and K5. Because the two edges are disjoint, the exact transversal-blocker classification admits only Type-I exceptions. Each Type-I K4–K5 exception has seven W-neighbours, forcing (epsilon_u=1,t_u=0); hence there can be at most one. The previously established K4-incident component-capacity bound forces (kge5), contradiction.
+
+The same-pair placement frontier now has four open cases: K4–K4 matching; K4–K4 star; K4–K5 star centred in the K4; K4–K5 star centred in the K5. The arithmetic verifier was added but not executed in this turn. No full (delta=13) profile or E407 Q32 closure is claimed.
