@@ -113,3 +113,8 @@ Thus \(\epsilon_U=2\) is excluded.
 Combining this with the \(\epsilon_U=0\) exclusion in DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md, the explicit \((5,5,2,1,2)\) \(C_5\)-blow-up local model has **no full 47-core extension for any \(\epsilon_U\in\{0,1,2\}\)**.
 
 This is candidate-specific, not a closure of the general saturated \(\delta=14\) branch. The earlier \(\alpha\)-critical reduction only forces \(J\) to be a 15-vertex, 49-edge, triangle-free, non-bipartite triangle-saturated graph with the witness-induced matching structure; it does not classify every such \(J\) as the explicit blow-up. Other admissible \(J\)'s remain OPEN. The \(\delta\le13\) cases, all five shell templates A–E, and the original \(K_{145}\)-to-T61 bridge also remain OPEN / NOT_CERTIFIED.
+
+
+## Round 22 scope update
+
+The previous section's “candidate-specific” limitation is superseded by DELTA14_SATURATED_KERNEL_CLASSIFICATION.md. Under the retained alpha-critical kernel contract, every admissible triangle-free, non-bipartite, triangle-saturated \(J\) with \(n=15,e=49,\Delta\le7\) is the explicit \(C_5\)-blow-up treated here. Thus the no-extension result applies to the **entire saturated \(\delta=14\) terminal conditionally**, not only to a single guessed graph. The upstream Didin-preprint component-count dependency remains unaudited; no claim is made that E407 Q32 or EG617(\(r=12\)) overall is solved.
