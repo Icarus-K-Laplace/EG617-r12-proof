@@ -62,7 +62,15 @@ where \(m=\min_i|C_i|\).
 \[
 \boxed{d_H(w,U)\ge 9+m-\epsilon_U.} \tag{4}
 \]
-Indeed, let \(D'\) and \(A',B',C'\) be its non-neighbour sets in the four U-parts. For each \(d\in D'\), every triple in \(A'\times B'\times C'\) must contain a vertex joined to \(d\) by an \(H[U]\) cross-edge, or that triple together with \(w,d\) would be an independent 5-set. Hence at least one of \(A',B',C'\) is contained in \(N_H(d)\), and its size is at most \(t_d\). Distinct \(d\in D'\) require distinct small parts, by (1). For \(|D'|=1\), (3) gives at most \((5+\epsilon_U-m)+7+7+1\) non-neighbours in \(U\), proving (4). For \(|D'|=2\), the two selected small non-neighbour sets are distinct and each has size at most \(5+\epsilon_U-m\); this gives a stronger lower bound. For \(|D'|=3\), all three small sets have that bound and again give a stronger lower bound. The case \(D'=\varnothing\) would make \(w\) complete to \(D\), contrary to assumption.
+Indeed, let \(D'\) and \(A',B',C'\) be its non-neighbour sets in the four U-parts. For each \(d\in D'\), every triple in \(A'\times B'\times C'\) must contain a vertex joined to \(d\) by an \(H[U]\) cross-edge, or that triple together with \(w,d\) would be an independent 5-set. Hence at least one of \(A',B',C'\) is contained in \(N_H(d)\), and its size is at most \(t_d\). Distinct \(d\in D'\) require distinct small parts, by (1). For \(|D'|=1\), (3) gives at most \((5+\epsilon_U-m)+7+7+1\) non-neighbours in \(U\), proving (4). For \(|D'|=2\), the two selected small non-neighbour sets are distinct and each has size at most \(5+\epsilon_U-m\), while the third has size at most seven. Hence
+\[
+d_H(w,U)\ge 29-\{2(5+\epsilon_U-m)+7+2\}=10-2\epsilon_U+2m.
+\]
+This exceeds \(9+m-\epsilon_U\) by \(m+1-\epsilon_U\ge1\). For \(|D'|=3\), all three small sets have size at most \(5+\epsilon_U-m\), so
+\[
+d_H(w,U)\ge29-\{3(5+\epsilon_U-m)+3\}=11-3\epsilon_U+3m,
+\]
+which exceeds \(9+m-\epsilon_U\) by \(2(m+1-\epsilon_U)\ge2\). The case \(D'=\varnothing\) would make \(w\) complete to \(D\), contrary to assumption.
 
 A W-vertex complete to a U-part has a unique such part: its U-degree is at most \(13\), whereas two U-parts together have at least \(7+7=14\) vertices. Call that part its label. For a component \(C_s\cong K_s\), write \(E_s=\sum_{w\in C_s}\epsilon_w\). A labelled vertex has U-degree \(13-s+\epsilon_w\); its extra-edge load beyond its label part is at most \(6-s+\epsilon_w\) for a small-part label, and at most \(5-s+\epsilon_w\) for label \(D\).
 
@@ -91,7 +99,7 @@ The common-neighbour capacities are
 |S_6|\le\lfloor E_6/2\rfloor. \tag{5}
 \]
 Justification:
-- For \(K_3\), if all vertices are labelled and labels are mixed, each common neighbour uses an extra edge, with total load at most \(9+E_3\). If all labels agree, the label part has size 7 or 8 and each common neighbour outside it uses three extra edges; the bound in (5) follows. If a vertex is unsaturated, its excess is at least one; the remaining U-degree bounds give the same cap.
+- For \(K_3\), if all vertices are labelled and labels are mixed, each common neighbour uses an extra edge, with total load at most \(9+E_3\). If all labels agree, the label part has size 7 or 8 and each common neighbour outside it uses three extra edges; the bound in (5) follows. If a vertex is unsaturated, its excess is at least one. For (E_3=1), a zero-excess companion has U-degree ten, so (|S_3|le10). For (E_3=2), there is again a zero-excess companion and the same bound applies. For (E_3=3), either a zero-excess vertex gives (|S_3|le10), or all three excesses equal one and all three U-degrees are eleven, giving (|S_3|le11). These are within the cap in (5).
 - For \(K_4\), mixed labels give the \(8+E_4\) cap. A common label \(D\) is forbidden by \(\omega(H)\le11\); a common small label contributes its seven vertices and each additional common neighbour costs four extra edges, giving the indicator correction when \(E_4=0\). If a vertex is unsaturated, (4) forces excess at least two, and a zero-excess companion has U-degree nine, giving \(|S_4|\le9\), within (5).
 - For \(K_5\), a common label is forbidden because \(K_5\) joined to a U-part of size at least seven contains \(K_{12}\). Every common neighbour uses an extra edge. If a W-vertex is unsaturated, (4) forces its excess to be three; the other four vertices then have U-degree eight and give the same cap.
 - Every \(K_6\)-vertex is saturated because its U-degree is at most ten. No five vertices of \(K_6\) can share a small label, and no four can share label \(D\), or a \(K_{12}\) would result. Each common neighbour therefore uses at least two extra edges. Total load is at most \(E_6\), proving the last bound.
