@@ -97,3 +97,10 @@ The local arithmetic verifier checks exact ledgers and the finite excess inequal
 - Added DELTA14_EPS1_W_PROFILE_CLASSIFICATION.md. Applying Brouwer's second-Turán bound to \(\overline{H[W]}\) (18 vertices, 120 edges, K5-free) forces four-partiteness; exact integer partition enumeration leaves precisely the three profiles handled by the three epsilonU=1 theorems.
 - Both arithmetic verifiers were replayed locally. The complete \(\delta=14,\epsilon_U=1\), four-partite row is now EXCLUDED under the retained core contracts and Brouwer's theorem.
 - Still open: \(\delta=14,\epsilon_U=2\), non-four-partite \(\delta=14\), and \(\delta\le13\). E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+## New Round 12 result — four additional \(\delta=14\), \(\epsilon_U=1,2\) profiles excluded
+- Added DELTA14_EPSU1_2_ANTICOMPL_COMPONENT_PROFILES.md.
+- Excluded: \(K_3\cup K_5^3\) for \(\epsilon_U=1,2\); \(K_4^3\cup K_6\) for \(\epsilon_U=1\); \(K_4\cup K_4\cup K_5\cup K_5\) for \(\epsilon_U=2\).
+- The proofs use the generalized reverse-saturation threshold \(d_H(w,U)\ge9+m-\epsilon_U\), where \(m\) is the smallest W-component size, and component-specific label-load bounds. Arithmetic replay: verify_delta14_epsilonU1_2_profiles.py.
+- The only \(\delta=14\) four-partite W-profile still open is \(\epsilon_U=1\), \(H[W]=K_4\cup K_4\cup K_5\cup K_5\) with one cross-edge. The \(\delta=14\) non-four-partite branch and all \(\delta\le13\) cases remain open; E407 Q32 and EG617 remain OPEN / NOT_CERTIFIED.
