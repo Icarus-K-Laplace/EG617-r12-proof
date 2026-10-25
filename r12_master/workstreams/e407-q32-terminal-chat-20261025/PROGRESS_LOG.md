@@ -670,3 +670,15 @@ Added DELTA13_EPS1_3K4_K6_K4K6_EDGE.md and verify_delta13_eps1_3k4_k6_k4k6_edge.
 - Final cover contradiction: \(29\le\sum_i|S_i|\le9+9+9+1=28\), impossible.
 - Arithmetic replay passed: DELTA13_EPS1_3K4_K6_K4K6_EDGE_ARITHMETIC_OK.
 - Scope: only the K4–K6 edge placement is closed; the K4–K4 placement and all other open branches remain open.
+
+
+## 2026-10-25 — Round 26: delta-13 \(3K_4\dot\cup K_6\), K4–K4 cross-edge
+
+Added DELTA13_EPS1_3K4_K6_K4K4_EDGE.md and verify_delta13_eps1_3k4_k6_k4k4_edge.py.
+
+- A nonsaturated D vertex would have \(\epsilon_d=1,t_d=0\); the other seven D vertices have zero excess and at most one cross-edge each, so they cannot supply the exact eight U-cross-edges. Hence all D vertices are W-saturated and \(t_d\le2\).
+- Reverse saturation gives U-degree at least 12 for any W vertex not complete to a U-part.
+- A nonsaturated U vertex has W-degree at least six. Degree six is impossible by comparing \(|S_2|+|S_3|\ge14-\epsilon_u-\epsilon_y\) with \(|S_2|+|S_3|\le9+\lfloor(3-\epsilon_y)/2\rfloor\). Degree seven forces the unique possible exception \(\epsilon_u=1,t_u=0\).
+- If all U vertices are saturated, \(29\le\sum_i|S_i|\le28\), contradiction. If one exception exists, at least 28 vertices must be covered. Any K4 capacity below nine gives total capacity at most 27. If all three K4 capacities equal nine, their labels must be small U-parts; the exceptional vertex's part is excluded, so two components share one of the other two labels, causing a seven-vertex overlap and preventing coverage.
+- Arithmetic replay passed: DELTA13_EPS1_3K4_K4K4_EDGE_ARITHMETIC_OK.
+- Status: **PROVED_CONDITIONAL** for this placement; combined with Round 25, both placements of the \(3K_4\dot\cup K_6\)-plus-one-edge profile are excluded. E407 Q32 remains OPEN / NOT_CERTIFIED.
