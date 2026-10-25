@@ -315,3 +315,23 @@ Added DELTA14_EPS0_K3K5K5K5_CROSS_EDGE_CLOSURE.md and verify_delta14_eps0_k3k5_c
 - \(\delta=14,\epsilon_U=0\) four-partite: **EXCLUDED** (all four W profiles).
 - Still open: \(\delta=14,\epsilon_U\in\{1,2\}\), \(\delta=14\) non-four-partite, and \(\delta\le13\).
 - E407 Q32 overall and EG617(r=12): **OPEN / NOT_CERTIFIED**. The five shell templates A–E remain open.
+
+
+## 2026-10-25 — Round 11: \(\delta=14,\epsilon_U=1\) no-cross-edge profile excluded
+
+### New theorem
+
+For the \(e(H[W])=33\) profile \(H[W]=K_3\dot\cup K_5^3\), the four clique components are pairwise anticomplete. Thus every \(u\in U\) must be complete to one component, or a non-neighbour from each component together with \(u\) forms an independent 5-set.
+
+Because every \(d\in D\) is also complete to a W-component, \(d_H(d,W)=5-t_d+\epsilon_d\ge3\), so \(t_d\le2+\epsilon_d\le3\). The reverse-saturation lemma then gives \(d_H(w,U)\ge11\) for any W vertex not complete to a U-part. An unsaturated K5 vertex must have excess 3, leaving a zero-excess companion and proving \(|S_i|\le5+E_i\); saturated components obey the same bound by label/extra-edge counting. For \(C_0=K_3\), \(|S_0|\le10+\lfloor E_0/3\rfloor\). Since W-excess sums to three, the total common-neighbour cover is at most 28, contradicting \(|U|=29\).
+
+Added DELTA14_EPS1_K3K5K5K5_NO_CROSS_EDGE.md and verify_delta14_eps1_k3k5_profile.py. Arithmetic replay passed for all 20 component-excess allocations.
+
+### Frontier update
+
+- \(\delta=14,\epsilon_U=0\), four-partite: **EXCLUDED** (all four W profiles).
+- \(\delta=14,\epsilon_U=1\): \(K_3\cup K_5^3\) with no W-cross-edge **EXCLUDED**; other W profiles OPEN.
+- \(\delta=14,\epsilon_U=2\): OPEN.
+- \(\delta=14\), non-four-partite: OPEN.
+- \(\delta\le13\): OPEN.
+- Five E407 shell templates and EG617(r=12): **OPEN / NOT_CERTIFIED**.
