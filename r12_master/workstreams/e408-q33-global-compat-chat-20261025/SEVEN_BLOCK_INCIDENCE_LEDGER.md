@@ -343,3 +343,45 @@ For \(P_C=49\), the \(r_j=2\) block has at least \(11-2=9\) distinct exact size-
 Distinct labels use disjoint residual \(K_5\) components and distinct outer representatives, so the resulting cliques are vertex-disjoint. \(\square\)
 
 This is a packing consequence, not a contradiction: \(\omega(C)\le12\) permits disjoint maximum cliques, and the present ledger does not yet show that the forced packing is incompatible with the remaining 870-edge color budget.
+
+
+## 12. Exact gadget normal form and two-clique packing
+
+**Theorem 12.1 (exact 5-clique structure of the 11-point gadget).** Under the retained exact-129 Type-I factor contract, let \(A,B\subset U_C\) be the two distinguished disjoint \(K_5\)'s and let \(x\) be the remaining vertex. Then \(e(C[U_C])=29\), \(\alpha(C[U_C])=2\), and \(\omega(C[U_C])=5\) force the following normal form.
+
+Let \(A_0=\{a\in A: ax\notin E(C)\}\), \(B_0=\{b\in B: bx\notin E(C)\}\), with sizes \(a,b\). The independence-number condition forces every edge between \(A_0\) and \(B_0\). Since the 20 edges internal to \(A\cup B\) leave exactly nine other edges,
+\[
+(5-a)+(5-b)+e_C(A,B)=9,\qquad e_C(A,B)\ge ab,
+\]
+so \((a-1)(b-1)\le0\). After swapping \(A,B\), take \(a=1\); then \(b\in\{1,2,3,4\}\) and the cross edges are exactly \(A_0\times B_0\).
+
+Besides \(A,B\), the only possible \(K_5\)'s in \(U_C\) are
+\[
+A'=(A\setminus A_0)\cup\{x\},
+\]
+and, only at the endpoints, \(B'=(B\setminus B_0)\cup\{x\}\) when \(b=1\), or \(D'=A_0\cup B_0\) when \(b=4\). Consequently the possible unordered pairs of disjoint \(K_5\)'s are:
+- \(b=1\): \(\{A,B\},\{A',B\},\{A,B'\}\);
+- \(b=2,3\): \(\{A,B\},\{A',B\}\);
+- \(b=4\): \(\{A,B\},\{A',B\},\{A',D'\}\).
+
+In particular, there exist two fixed disjoint \(K_5\)'s \(D_1,D_2\) such that every possible disjoint \(K_5\)-pair \(\{E,F\}\) has one member disjoint from \(D_1\) and the other disjoint from \(D_2\). One can take \((D_1,D_2)=(A,B)\) for \(b\le3\), and \((D_1,D_2)=(A',B)\) for \(b=4\).
+
+**Proof.** The counting argument above gives the cross-edge normal form. A clique containing \(x\) and vertices from \(A\) can use only \(A\setminus A_0\), so its only possible size-five instance is \(A'\); the analogous clique on the B side exists only when \(b=1\). A clique not containing \(x\) that meets both \(A\) and \(B\) must lie in \(A_0\cup B_0\), so it has size five only when \(b=4\). This lists all size-five cliques. Checking their disjoint pairs gives the displayed list and the fixed pair \(D_1,D_2\). \(\square\)
+
+**Corollary 12.2 (gadget clique packing from low-slack blocks).** Let \(J\) be any set of \(m\) target blocks with \(r_i(C)\in\{1,2\}\), and suppose at most one of them has \(r_i(C)=2\). Then \(C\) contains two vertex-disjoint cliques of sizes at least \(m+5\) and \(m+5\) if all \(r_i=1\); if one block has \(r_i=2\), it contains vertex-disjoint cliques of sizes \(m+5\) and \(m+4\).
+
+In particular:
+- six blocks with \(r_i=1\) force two vertex-disjoint \(K_{11}\)'s in \(C\);
+- five blocks with \(r_i=1\) plus one block with \(r_i=2\) force vertex-disjoint \(K_{11}\) and \(K_{10}\).
+
+**Proof.** For every \(r_i=1\) block, Theorem 10.1 gives two no-component rows whose neighborhoods in \(U_C\) are complements of a disjoint \(K_5\)-pair. By Theorem 12.1, one row's neighborhood contains \(D_1\) and the other contains \(D_2\). The omitted five-sets for all \(D_1\)-rows are 5-subsets of the six-set \(U_C\setminus D_1\), so any two intersect in at least four vertices. If two such outer vertices were C-nonadjacent, the pairwise blocker theorem with \(k=0\) would require their neighborhoods to cover all of \(U_C\), equivalently their omitted five-sets to be disjoint. Contradiction. Thus the selected \(D_1\)-rows form a clique together with \(D_1\), and similarly for \(D_2\). The two cliques are disjoint because \(D_1,D_2\) are disjoint and no 5-set can be disjoint from both.
+
+For \(r_i=2\), Theorem 10.1 permits overlap \(a=1\) or \(a=2\); the complement profile is respectively \((5,5)\) or \((5,4)\). Thus at least one no-component row has a five-clique complement \(E\). By Theorem 12.1, \(E\) is disjoint from one of \(D_1,D_2\), so that row extends the corresponding clique by one vertex. It cannot extend both, and the other clique remains at size \(m+4\). \(\square\)
+
+**Corollary 12.3 (strengthened high-\(P_C\) packing).** In the setting of Corollary 11.3:
+- \(P_C=50\) forces eight vertex-disjoint \(K_{12}\)'s and four additional vertex-disjoint \(K_{11}\)'s. These cliques cover 140 vertices and contain \(748\) internal C-edges.
+- \(P_C=49\) forces seven vertex-disjoint \(K_{12}\)'s, four vertex-disjoint \(K_{11}\)'s, and one vertex-disjoint \(K_{10}\). These cliques cover 138 vertices and contain \(727\) internal C-edges.
+
+For \(P_C=50\), the six \(r=1\) blocks supply ten label-based \(K_{11}\)'s, at least eight extended to \(K_{12}\) by Corollary 11.2; Corollary 12.2 supplies two disjoint gadget \(K_{11}\)'s. For \(P_C=49\), the five \(r=1\) blocks and the \(r=2\) block supply ten label-based \(K_{11}\)'s, at least seven extended to \(K_{12}\); Corollary 12.2 supplies one gadget \(K_{11}\) and one gadget \(K_{10}\).
+
+**Scope.** These packing bounds are strictly stronger than Corollary 11.3 but still do not contradict the exact 870-edge budget: the packings leave respectively 122 and 143 C-edges outside their clique interiors. A separate argument must constrain those remaining edges or link the packings to the other colors.
