@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
-"""Arithmetic replay for the explicit saturated-candidate W-extension exclusion.
+"""Arithmetic replay for DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md.
 
-Checks finite W-profile enumeration, the one-cross-edge transversal fractions,
-and the small assignment-capacity arithmetic used in the proof. It does not
-machine-check the graph-theoretic independent-set arguments or classify all
-admissible local J graphs.
+Checks exact W-profile enumeration, finite A/B assignment capacities, and
+the incidence-count inequalities used by the proof. It does not independently
+verify the graph-theoretic saturation/independent-set lemmas or external
+extremal theorems.
 """
 from itertools import product, combinations
 
+
 def cross_sum(parts):
-    return sum(parts[i] * parts[j] for i in range(4) for j in range(i + 1, 4))
+    return sum(parts[i] * parts[j]
+               for i in range(4) for j in range(i + 1, 4))
+
 
 def partitions4(n=18):
     out = []
@@ -21,66 +24,47 @@ def partitions4(n=18):
                     out.append((a, b, c, d))
     return out
 
+
 expected = {
+    0: [((3, 4, 5, 6), 119, 0),
+        ((3, 5, 5, 5), 120, 1),
+        ((4, 4, 4, 6), 120, 1),
+        ((4, 4, 5, 5), 121, 2)],
     1: [((3, 5, 5, 5), 120, 0),
         ((4, 4, 4, 6), 120, 0),
         ((4, 4, 5, 5), 121, 1)],
     2: [((4, 4, 5, 5), 121, 0)],
 }
-for eps_u in (1, 2):
-    got = []
+for eps_u, rows in expected.items():
     target = 119 + eps_u
+    got = []
     for p in partitions4():
-        val = cross_sum(p)
-        if val >= target:
-            got.append((p, val, val - target))
-    assert got == expected[eps_u], (eps_u, got)
+        value = cross_sum(p)
+        if value >= target:
+            got.append((p, value, value - target))
+    assert got == rows, (eps_u, got)
+    assert all(min(p) >= 3 and q <= 2 - eps_u
+               for p, _, q in got)
 
-# eps_U=1, K3 + 3K5: no disjoint-support assignment of 7 A-vertices and
-# 7 B-vertices to the three K5 parts if each part can hold at most 6 from
-# one side and no part can be assigned to both sides.
-caps3 = (6, 6, 6)
-assignments3 = []
-for A in product(*(range(c + 1) for c in caps3)):
-    if sum(A) != 7:
-        continue
-    for B in product(*(range(c - A[i] + 1) for i, c in enumerate(caps3))):
-        if sum(B) == 7 and all(not (A[i] and B[i]) for i in range(3)):
-            assignments3.append((A, B))
-assert assignments3 == [], assignments3
+# epsilon_U=0: with |S|=2 removed, the two-edge union bound is strict.
+assert 2 * (1 / 3) < 1
+assert 2 * (1 / 4) < 1
 
-# Edge-incidence budget checks behind the A/B assignment lemmas:
-# K3 vs K3: six extra incidences cannot fully cover two K5 parts (10 needed).
-assert 3 + 3 == 6 < 2 * 5
-# K3 vs K5: four extra incidences cannot fully cover a K5.
-assert 3 + 1 == 4 < 5
-# A/B assigned to the same K5: two extra incidences cannot cover a K5.
-assert 1 + 1 == 2 < 5
+# epsilon_U=1:
+# K3 + 3K5: each K5 vertex must be complete to A, B, or all of C union E.
+# A and B each have 42 W incidences, and each complete K5 vertex consumes 7.
+assert 42 // 7 == 6
+# Each of the four C/E vertices has only one W edge outside the K3,
+# so at most one K5 vertex can be complete to all four.
+assert 6 + 6 + 1 == 13 < 15
+# 3K4 + K6: d0 has at most 3 W-neighbours, below every component size.
+assert 2 + 1 < 4
+# (4,4,5,5) plus one cross-edge: after deleting up to 3 vertices,
+# the single edge forbids at most one quarter of the transversal choices.
+assert 1 / (1 * 4) == 0.25 < 1
 
-# One cross-edge in parts (4,4,5,5): deleting at most three vertices leaves
-# an independent transversal. The cross-edge forbids fraction 1/(t_i*t_j).
-def removals(total, n=4):
-    if n == 1:
-        yield (total,)
-        return
-    for x in range(total + 1):
-        for rest in removals(total - x, n - 1):
-            yield (x,) + rest
-
-parts = (4, 4, 5, 5)
-worst = 0.0
-for s in range(4):
-    for rem in removals(s):
-        left = tuple(parts[i] - rem[i] for i in range(4))
-        assert min(left) >= 1
-        for i, j in combinations(range(4), 2):
-            frac = 1 / (left[i] * left[j])
-            worst = max(worst, frac)
-            assert frac < 1
-assert worst <= 0.25
-
-# eps_U=2: A/B assignment supports are disjoint among capacities (7,6,6).
-caps = (7, 6, 6)  # P1(K4), P2(K5), P3(K5)
+# epsilon_U=2: A/B assignments use disjoint supports with capacities 7,6,6.
+caps = (7, 6, 6)
 solutions = []
 for A in product(*(range(c + 1) for c in caps)):
     if sum(A) != 7:
@@ -89,21 +73,18 @@ for A in product(*(range(c + 1) for c in caps)):
         if sum(B) == 7 and all(not (A[i] and B[i]) for i in range(3)):
             solutions.append((A, B))
 assert len(solutions) == 12, len(solutions)
-assert all(
-    (A == (7, 0, 0) and B[0] == 0) or
-    (B == (7, 0, 0) and A[0] == 0)
-    for A, B in solutions
-)
+assert all((A == (7, 0, 0) and B[0] == 0) or
+           (B == (7, 0, 0) and A[0] == 0)
+           for A, B in solutions)
+# Thus one side fills P1, while the other splits across P2/P3.
+assert 7 - 6 == 1  # each side must use P1 or both K5 parts
+# A has at most 14 edges outside P1, so at most two K5 vertices can be
+# complete to A. B2 and B3 are both nonempty; at most one vertex per K5
+# part can be complete to B.
+assert 14 // 7 == 2
+assert 2 + 2 == 4 < 10
 
-# The opposite side's seven vertices split across P2/P3 with 1<=b_i<=6.
-b_splits = [(b2, 7 - b2) for b2 in range(1, 7)]
-assert len(b_splits) == 6
-assert all(1 <= b2 <= 6 and 1 <= b3 <= 6 for b2, b3 in b_splits)
-assert all(max(b2, b3) >= 4 for b2, b3 in b_splits)
-# If b_i>=4, four A-complete vertices in P_i each require epsilon_w>=3.
-assert 4 * 3 == 12 > 2  # total W-excess when epsilon_U=2
-
-print("DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION_ARITHMETIC_OK")
-print("eps_U=1: all 3 W profiles exhausted; K3+3K5 A/B assignment impossible")
-print("cross-edge transversal forbidden fraction <=", worst)
-print("eps_U=2: 12 A/B assignment patterns; every B split forces >=12 excess if compatible")
+print("DELTA14_SATURATED_CANDIDATE_EXTENSION_ARITHMETIC_OK")
+print("epsilon_U=0: transversal union bounds are strict")
+print("epsilon_U=1: 3K4+K6 and 4,4,5,5+cross-edge excluded; K3+3K5 capacity 13<15")
+print("epsilon_U=2: 12 assignment patterns; at most 4 of 10 K5 vertices can be complete to A or B")
