@@ -599,3 +599,22 @@ The general saturated branch remains OPEN because other admissible 15-vertex J's
 Added DELTA14_C5_BLOWUP_PROFILE_CLASSIFICATION.md and verify_c5_blowup_profile.py. Independent enumeration of all positive ordered five-part compositions of 15 found seven dihedral classes with edge count 49. After applying the witness-forced condition Delta(J)<=7, exactly one dihedral class remains: (1,2,5,5,2), equivalent to the explicit (5,5,2,1,2) candidate.
 
 Since Round 20 excludes every full-core extension of that candidate, the entire C5-blow-up subclass is now excluded under the retained contracts. Scope firewall: the general saturated-kernel reduction does not prove that J is a C5 blow-up, so non-C5-blow-up saturated graphs remain OPEN. No conclusion is promoted to E407 Q32 or EG617(r=12) overall.
+
+
+## 2026-10-25 — Round 22: classify every admissible saturated kernel J
+
+Added DELTA14_SATURATED_KERNEL_CLASSIFICATION.md and verify_delta14_saturated_kernel_classification.py. Independent arithmetic replay passed: DELTA14_SATURATED_KERNEL_CLASSIFICATION_ARITHMETIC_OK.
+
+### Structural argument
+
+The witness-induced matching decomposition gives \(\Delta(J)\le7\). If \(\delta(J)\ge6=2(15)/5\), the AES equality case forces \(J\) to be bipartite or \(C_5(3)\); non-bipartiteness and \(e(J)=49\) rule out both. Thus \(J\) has a vertex \(v\) of degree \(d\le5\).
+
+By the Brouwer/Kang–Pikhurko bound, a non-bipartite triangle-free graph on 14 vertices has at most \(49-7+1=43\) edges. Since \(e(J-v)=49-d\ge44\), \(J-v\) is bipartite. Saturation forces every missing cross-edge of \(J-v\) to have endpoints in \(N(v)\), and triangle-freeness forces every cross-pair between \(N(v)\cap X\) and \(N(v)\cap Y\) to be missing. Thus the missing cross-edge graph is exactly \(K_{a,b}\), where \(a+b=d\).
+
+The degree cap \(\Delta(J)\le7\) forces the bipartition of \(J-v\) to have sizes \(7+7\). Then \(ab=d=a+b\), so \(a=b=2\) and \(d=4\). Hence \(J-v=K_{7,7}\setminus K_{2,2}\), and adding \(v\) yields the unique C5 blow-up with part sizes \((1,2,5,5,2)\).
+
+### Consequence and scope
+
+The earlier full-core extension theorem excludes this unique graph for every \(\epsilon_U\in\{0,1,2\}\). Therefore the **entire \(\delta=14\), non-four-partite, \(K_5\)-saturated terminal is conditionally excluded**, rather than only one candidate. The condition is inherited from the alpha-critical kernel reduction, whose component-count step uses Didin's 2026 preprint theorem and remains unaudited here.
+
+This does not close E407 Q32 overall: the \(\delta\le13\) cases, five shell templates A–E, and the original \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
