@@ -228,3 +228,16 @@ Therefore at most one selected witness can lie in the gadget; at least six of th
 \max(0,6+(P_C-45)-10)=\max(0,P_C-49).
 \]
 So \(P_C\ge50\) guarantees at least one selected witness component extends to a monochromatic K12, and \(P_C=51\) guarantees at least two. This does not contradict the target statement. The original \(K_{145}\) theorem and the global eleven-color ledger remain OPEN / NOT_CERTIFIED.
+
+
+## 20. Exact-component reservoir and the \(m=10\) high-support terminal
+
+The shell contract strengthens the factor transfer further than the selected-family lemma. Every isolated K5 component avoids S and must meet \(V(R)\setminus H\), since \(\alpha(H)\le4\). Its shell vertices can only be in \(B\cup\{p\}\), and any two vertices of \(B\cup\{p\}\) are target-colored; hence a C-component contains at most one such vertex. Every component therefore has exactly one shell label and four core vertices. All ten isolated components are shell witnesses, with ten distinct labels and at least nine B labels per exact color.
+
+Let \(U_{\rm comp}\) be the union of all ten core four-sets from each of \(m\) exact colors. Since each point belongs to at most one component four-set per color, \(|U_{\rm comp}|\ge40\). If \(m=10\) and \(|U_{\rm comp}|=40\), the 100 component K4s contribute 600 pairwise distinct edges to the complement core. But \(W=H\setminus U_{\rm comp}\) has seven vertices and \(\alpha(H[W])\le4\), giving \(e(H[W])\ge3\); the degree ledger then gives
+\[
+e(\overline{H[U_{\rm comp}]})=584-\epsilon_U-e(H[W])\le581.
+\]
+Contradiction. Hence \(m=10\) forces \(|U_{\rm comp}|\ge41\). At support 41, the component K4s leave at most ten additional complement edges. This near-decomposition terminal is open.
+
+This does not close the seven-witness minimum-support boundary: the support-minimizing seven-set family can still use a gadget witness and may have smaller union than \(U_{\rm comp}\). The \(m=8,9\) full-component supports and \(m=10,v\ge41\) terminal remain open.
