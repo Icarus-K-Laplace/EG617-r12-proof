@@ -66,3 +66,10 @@ The local arithmetic verifier checks exact ledgers and the finite excess inequal
 - Since \(E_0+E_1+E_2+E_3=3\), the total cover capacity is at most \(28-E_0+\lfloor E_0/3\rfloor\le28\), contradicting \(|U|=29\).
 - The verifier replayed all 20 component-excess allocations. This excludes only this \(\epsilon_U=1\) W-profile, not the entire \(\epsilon_U=1\) row.
 - Still open: other \(\delta=14,\epsilon_U=1\) W profiles, \(\epsilon_U=2\), non-four-partite \(\delta=14\), and \(\delta\le13\). E407 Q32 and EG617 remain OPEN / NOT_CERTIFIED.
+
+
+## New Round 10 result — delta=14 K5--K5 cross-edge exclusion
+- Added DELTA14_EPS0_K3K5X1_K5K5_EDGE.md. If the single W-cross-edge in the \(K_3\cup K_5^3\) profile joins two \(K_5\) components, every \(u\in U\) is still complete to a whole W-component: otherwise it would need at least eight W-neighbours, while \(d_H(u,W)\le6\).
+- The four common-neighbour sets therefore cover all 29 U vertices. Component/excess accounting gives \(\sum |S_s|\le26+\mathbf1_{\{E_T=0\}}\le27\), contradiction.
+- Arithmetic replay: verify_delta14_k5_cross_edge_capacity.py; 35 excess allocations checked, maximum bound 27.
+- The only \(\delta=14,\epsilon_U=0\) four-partite W-profile remaining is \(K_3\cup K_5^3\) with the cross-edge between \(K_3\) and a \(K_5\). This placement remains OPEN. Other \(\epsilon_U\), non-four-partite, and \(\delta\le13\) branches remain open; E407 Q32 and EG617 remain OPEN / NOT_CERTIFIED.
