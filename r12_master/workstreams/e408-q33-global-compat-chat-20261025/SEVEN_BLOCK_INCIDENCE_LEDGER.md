@@ -401,3 +401,13 @@ Consequently, any branch whose only contradiction is “a monochromatic \(K_{12}
 Sections 1–12 remain the current conditional outer-row and gadget-normal-form results, subject to their own contracts. The inner-core theorem \`R12_E408_Q33_S0_12_EXCLUSION.md\` is separate: its \(K_{12}\) contradictions are cliques inside \(H\) and use \(\omega(H)\le11\), not the withdrawn outer isolation claim.
 
 The global E408 Q33 terminal and EG617(\(r=12\)) remain **OPEN / NOT_CERTIFIED**.
+
+## 14. Repaired local corner: \(P_C=50,\ r_i(C)=6\) excluded by double-star
+
+The former single-edge proof of this corner is withdrawn, but the exact corner has now been repaired independently in R12_P50_R6_DOUBLE_STAR_EXCLUSION.md. If \(P_C=50\) and some \(r_i=6\), then \(R_C=12\) and the six other block budgets are all one. Select one no-component row from the \(r=6\) block and one from each of the six \(r=1\) blocks. The finite gadget alignment verifier finds a \(K_5\) clique \(D\) disjoint from all seven omitted gadget sets, so the seven selected rows plus \(D\) form a \(C\)-colored \(K_{12}\).
+
+The crucial correction is the **double-star** condition. The verifier produces a gadget vertex \(z\) adjacent to the selected high row and either to \(D\) or to at least one selected low row. Thus \(d_C(z,K_{12})\ge2\), contradicting the valid star bound \(d_C(z,K_{12})\le1\). The dedicated finite replay passed 204 Case-A/B and 49,008 Case-C configurations (49,212 total, zero failures).
+
+A read-only sibling result also excludes the local corner \(P_C=49,\ r_i=6\) by the same double-star principle: workstream/r12-unified-witness-capacity-20261025, OUTER_EXCEPTIONAL_ROW_COUPLING.md §12, verifier blob 23cd4ef874faadbd5931c5e3553a1a55415c7a79. That result is local only.
+
+**Scope firewall:** these two local \(r_i=6\) corners do not establish the universal \(P_C\le49\) cap. The \(P_C=50\) profiles \((5,2,1^5)\) and \((4,3,1^5)\), the other \(P_C=49\) profiles, the claimed \(P_C=48\) boundary, and the aggregate eleven-color ledger remain open. The earlier single-edge proofs remain archived and uncertified.
