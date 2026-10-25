@@ -733,3 +733,18 @@ Remaining frontier: (delta=13,epsilon_U=1), (2K_4cup2K_5) with two W-cross-edges
 The new file DELTA13_EPS1_TWO_CROSS_EDGE_K4K5_DISJOINT_CLOSED.md closes the disjoint-edge placement where both W-cross-edges join the same K4 and K5. Because the two edges are disjoint, the exact transversal-blocker classification admits only Type-I exceptions. Each Type-I K4–K5 exception has seven W-neighbours, forcing (epsilon_u=1,t_u=0); hence there can be at most one. The previously established K4-incident component-capacity bound forces (kge5), contradiction.
 
 The same-pair placement frontier now has four open cases: K4–K4 matching; K4–K4 star; K4–K5 star centred in the K4; K4–K5 star centred in the K5. The arithmetic verifier was added but not executed in this turn. No full (delta=13) profile or E407 Q32 closure is claimed.
+
+
+## 2026-10-26 — Round 31: close the full delta-13, epsilon_U=1 two-cross-edge W-profile
+
+Added DELTA13_EPS1_TWO_CROSS_EDGE_TERMINAL_CLOSURE.md and verify_delta13_eps1_two_cross_edge_terminal_closure.py.
+
+The proof starts from the exact \(k\ge5\) W-unsaturated-U floor whenever a W-cross-edge meets a K4. The blocker product argument leaves Type I (single-edge singleton blocker) and Type II (same-pair star blocker) only. It closes the four remaining same-pair placements:
+
+1. **K4-K4 matching/star:** at least six D-vertices have \(t_d=1,\epsilon_d=0\) and W-neighbourhood exactly one K4. A small-part exception can be chosen nonadjacent to one of them; the missed endpoint in the other K4 plus one non-neighbour from each K5 gives an independent 5-set.
+2. **K4-K5 star centred in either part:** at least three zero-excess small Type-II exceptions exist. A reverse-saturation argument shows some D-vertex has W-neighbourhood exactly the incident K4; it need not be one of the \(t_d=1,\epsilon_d=0\) vertices. The Type-II exception, one missed endpoint in the shared K5, and one vertex from each other W component give an independent 5-set.
+3. The same-pair disjoint K4-K5 placement was already excluded in Round 30; different-pair and K5-K5 placements were excluded in Round 28.
+
+The arithmetic verifier passed its checks in the reasoning environment: all eight incidence profiles have capacity maxima \(23,23,24,23,24,24,24,25\); every profile with a K4-incident edge has cap at most 24; every feasible D-part \(t\)-vector has at least six vertices with \(t=1,\epsilon=0\). The verifier is not a machine proof of the analytic lemmas.
+
+**Status:** the entire four-partite-\(L\), \(\delta=13,\epsilon_U=1\), \(H[W]=2K_4\cup2K_5\) plus two-cross-edge profile is **PROVED_CONDITIONAL excluded**. E407 Q32 and EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.
