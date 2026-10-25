@@ -252,3 +252,24 @@ Let \(\mathcal W_C\) be seven distinct selected witness components among the ten
 Therefore, if \(P_C\ge49\), at least one selected witness component is extended by one exact blocker row from every outer block to a monochromatic K12. If \(P_C=50\), at least two selected witness components extend. For a selected witness \(K_\ell=\{b\}\cup Q\), the clique is \(\{b\}\cup Q\cup\{x_0(\ell),\ldots,x_6(\ell)\}\).
 
 This is the labelled version of the K12 packing bound. It does not turn the K12 into an EG617 contradiction; the remaining work is to force a high-\(P_C\) exact color or prove that such labelled clique extensions conflict with the global shell/core incidence ledger.
+
+
+## 11. Labelled double-star capacity for component-extended \(K_{12}\)'s
+
+**Theorem 11.1.** Let \(C\) be an exact-129 color and let \(K_\ell\) be one of its ten isolated \(K_5\) components. Suppose exact blocker representatives \(x_i(\ell)\in B_i\) exist in all seven outer blocks, so
+\[
+Q_\ell=K_\ell\cup\{x_0(\ell),\ldots,x_6(\ell)\}
+\]
+is a \(C\)-colored \(K_{12}\). For every gadget vertex \(z\in U_C\),
+\[
+\boxed{\sum_{i=0}^{6}\mathbf 1\{z\in N_C(x_i(\ell))\}\le1.}
+\]
+Equivalently, the seven labelled gadget-neighborhood sets
+\[
+G_i(\ell)=N_C(x_i(\ell))\cap U_C
+\]
+are pairwise disjoint, and \(\sum_i|G_i(\ell)|\le11\).
+
+**Proof.** The exact-129 factorization makes \(K_\ell\) an isolated component of \(C[R]\), so \(z\in U_C\) has no \(C\)-edge to any vertex of \(K_\ell\). If \(z\) had \(C\)-edges to two distinct representatives \(x_i(\ell),x_j(\ell)\), then \(z\) would have at least two \(C\)-edges into the \(C\)-colored \(K_{12}\), contradicting the valid star-capacity lemma \(d_C(z,Q_\ell)\le1\). \(\square\)
+
+This is a labelled, cross-block incidence constraint; it is stronger than saying that one external edge is impossible. It does not alone yield a contradiction: the existing row excess budgets can still leave at most six gadget incidences on a fixed label across the seven selected rows, below the 11-vertex capacity. The next useful step is to couple these pairwise-disjoint \(G_i(\ell)\) sets across several selected witness labels and the core witness incidence ledger, while charging every repeated edge only once.
