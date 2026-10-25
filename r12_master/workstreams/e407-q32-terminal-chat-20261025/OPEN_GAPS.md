@@ -153,3 +153,10 @@ The new DELTA13_EPS1_K4K4K4K6_ONE_CROSS_EDGE.md independently closes both K4–K
 The profile H[W]=2K4 union 2K5 plus two cross-edges is reduced as follows. The exact transversal-blocker lemma classifies every W-unsaturated U-vertex as Type I (one-edge blocker with singleton endpoint non-neighbour sets) or Type II (same-pair two-edge star with non-neighbour-set sizes 2 and 1). The common-neighbour capacity proof gives |S_K4|<=9 and |S_K5|<=2+E_i, hence k>=4; if any cross-edge meets a K4, then k>=5. If both edges lie between the K5 parts, the blocker classification gives k<=1, so that placement is excluded.
 
 **Remaining exact blocker:** at least five U-vertices are W-unsaturated, the two-edge graph has at least one endpoint in a K4 part, and each exception has one of the certified Type-I/Type-II forms. The next step is a joint labelled-incidence contradiction for this k>=5 family. This is a strict reduction, not full closure.
+
+
+## Round 29 — saturated (delta=14) terminal closed conditionally; audit correction recorded
+
+The earlier candidate-extension proof's total common-neighbour bound (|S_P|le11-|P|) was invalid and has been withdrawn. The replacement in DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md uses valid independent-set and incidence-count arguments. Under the explicit local model, it excludes (epsilon_U=0,1,2); the separate kernel-classification theorem identifies every admissible saturated kernel (J) with that model, conditional on the alpha-critical reduction and its unverified external Didin-preprint dependency. Thus the general (delta=14), non-four-partite, (K_5)-saturated terminal is now conditionally closed.
+
+**Next target:** (delta=13,epsilon_U=1), (2K_4dotcup2K_5) with two W-cross-edges, retaining the exact Type-I/Type-II blocker contract in DELTA13_EPS1_TWO_CROSS_EDGE_PROFILE_REDUCTION.md. Then handle the remaining (delta=13) profiles, (delta=13,epsilon_U=0), non-four-partite U-complements, and (deltale12). The five shell templates and (K_{145})-to-T61 bridge remain OPEN / NOT_CERTIFIED.
