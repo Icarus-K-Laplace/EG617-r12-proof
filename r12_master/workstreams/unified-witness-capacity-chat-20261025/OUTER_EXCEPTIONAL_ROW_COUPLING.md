@@ -234,3 +234,23 @@ Combining Theorem 9.1 with the near-complete matching theorem and the sibling \(
 - If \(P_C=49\), then at least four such cliques follow from Theorem 9.1. This improves to at least seven if one \(r_i=6\), and at least eight if every \(r_i\le5\).
 
 This is a reusable branch certificate, not a contradiction: the original coloring contract permits disjoint monochromatic \(K_{12}\) cliques.
+
+
+## 10. Labelled selected-witness extension
+
+Let \(\mathcal W_C\) be any seven selected witness components certified by the exact-129 factor theorem. These are seven distinct members of the ten isolated K5 components. Let \(\mathcal K_C^*=\bigcap_{i=0}^6\mathcal K_i(C)\) be the set of components that are exact size-five blockers in every outer block.
+
+By Theorem 9.1,
+\[
+|\mathcal W_C\cap\mathcal K_C^*|
+\ge |\mathcal W_C|+|\mathcal K_C^*|-10
+\ge 7+(P_C-45)-10
+=P_C-48.
+\]
+Thus, whenever \(P_C\ge49\), at least one of the seven selected witness components is common to all seven blocks and extends to a monochromatic K12. If \(P_C=50\), at least two selected witness components extend this way. If \(P_C\ge51\), the stronger all-ten-component alignment theorem applies.
+
+For a selected component \(K_\ell=\{b\}\cup Q\), with \(b\in B\cup\{p\}\) and \(Q\) its labelled core four-set, the resulting K12 is explicitly
+\[
+\{b\}\cup Q\cup\{x_0(\ell),\ldots,x_6(\ell)\}.
+\]
+This is a genuine labelled extension of a selected four-point witness, not merely an unlabelled clique-packing count. It remains a branch certificate rather than a contradiction: a monochromatic K12 is allowed by the original coloring contract, and aggregate budgets do not force any exact color to have \(P_C\ge49\).
