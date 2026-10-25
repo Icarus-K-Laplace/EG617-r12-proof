@@ -139,6 +139,8 @@ This is a partial profile closure only. The archived P49 boundary proof remains 
 ## Latest isolated commits
 
 - P49 common-star finite screen: 84a59a5bcab57a8536c8d3a45af481f46427c6e3
+- P49 Case I repaired; Cases II–V explicitly retained as NOT CERTIFIED: 8662900d1d9cff04a9a4872e38786f2f897ed79d
+- P49 audit-status progress update: afc14599de7f713c5bd7f0f418f3a2c9bb53af16
 - P49 profile analysis: 44f40e49a6ca84893c2cd26ef31b9dfd9c6b0875
 - Progress log update: c8d4f076b6f6bce1b91210be69514ca01353e8bf
 - Proof dependency map update: 8e9612dbaf5f3b70273895b40b9796d810fac412
