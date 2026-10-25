@@ -1,7 +1,7 @@
 # Exact-129 budget boundary: exclusion of \(P_C=49\)
 
 Date: 2026-10-25  
-Status: **PROVED_WITH_FINITE_GADGET_CERTIFICATE**, conditional on the retained E408 seven-block equality contract and exact-129 factor theorem.  
+Status: **NOT CERTIFIED — AUDIT HOLD**. The proof uses single-external-(C)-edge contradictions from monochromatic (K_{12})'s; the valid star condition permits one such edge, so the claimed (P_C=49) exclusion is not established.  
 Scope: a colorwise improvement from \(P_C\le49\) to \(P_C\le48\). It does not close E408 Q33.
 
 ## 1. Statement
