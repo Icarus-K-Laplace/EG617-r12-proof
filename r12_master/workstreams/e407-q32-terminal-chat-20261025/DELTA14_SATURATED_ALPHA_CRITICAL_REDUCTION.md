@@ -1,7 +1,7 @@
 # E407 Q32: strict reduction of the \u03b4=14 K5-saturated branch
 
 Date: 2026-10-25  
-Status: **PROVED_CONDITIONAL strict reduction**, not a contradiction. Dependencies: the retained T61/49-witness core contract; Brouwer's second-Tur\u00e1n bound for non-bipartite triangle-free graphs; and the stated theorem from Didin's 2026 author-prepared preprint, whose journal submission was under review as of 2026-09-18.
+Status: **PROVED_CONDITIONAL strict reduction**, not a contradiction. Dependencies: the retained T61/49-witness core contract; Brouwer's second-Turan bound for non-bipartite triangle-free graphs; and the stated theorem from Didin's 2026 author-prepared preprint, whose journal submission was under review as of 2026-09-18.
 
 ## 1. Frozen terminal contract
 
@@ -31,13 +31,13 @@ Moreover, every proper spanning subgraph of \(G\) has independence number at lea
 
 We use the following external result, stated here as an explicit dependency rather than reproved:
 
-> **Didin's independence-number Tur\u00e1n bound (2026 preprint).** If a graph has \(n\) vertices, \(m\) edges, independence number \(\alpha\), and \(p\) is the maximum number of connected components among its spanning \(\alpha\)-critical subgraphs with the same independence number, then, with \(s=\alpha-p\),
+> **Didin's independence-number Turan bound (2026 preprint).** If a graph has \(n\) vertices, \(m\) edges, independence number \(\alpha\), and \(p\) is the maximum number of connected components among its spanning \(\alpha\)-critical subgraphs with the same independence number, then, with \(s=\alpha-p\),
 > \[
 > m\ge t(n+s,\alpha)-s,
 > \]
 > where \(t(N,\alpha)\) is the edge count of the balanced disjoint union of \(\alpha\) cliques on \(N\) vertices.
 
-Source: Maksim Didin, *A Generalization of Tur\u00e1n's Theorem for Graphs with a Given Independence Number*, author-prepared preprint, Zenodo record 22831382, version 1 (2026-09-18; described there as submitted to the Journal of Graph Theory and under review). The proof of this external theorem has not been independently audited in this workstream.
+Source: Maksim Didin, *A Generalization of Turan's Theorem for Graphs with a Given Independence Number*, author-prepared preprint, Zenodo record 22831382, version 1 (2026-09-18; described there as submitted to the Journal of Graph Theory and under review). The proof of this external theorem has not been independently audited in this workstream.
 
 Let \(p\) be the number of components of \(G\). We have \(p\le4\), since every component contributes at least one to \(\alpha(G)=4\). If \(p=4\), every component has independence number one and is therefore a clique; then \(L\) is complete four-partite, contrary to the contract. Hence \(p\le3\).
 
@@ -71,7 +71,7 @@ Put \(J=\overline C=L[V(C)]\). Since \(\alpha(C)=2\), the graph \(J\) is triangl
 
 The graph \(J\) cannot be bipartite. Indeed, a bipartite triangle-free saturated graph must be complete bipartite: any missing cross-part edge could otherwise be added without creating a triangle. The complement of a complete bipartite graph is a disjoint union of two cliques, contradicting connectedness of \(C\).
 
-Brouwer's second-Tur\u00e1n bound for a non-bipartite triangle-free graph gives
+Brouwer's second-Turan bound for a non-bipartite triangle-free graph gives
 \[
 e(J)\le \left\lfloor\frac{c^2}{4}\right\rfloor
 -\left\lfloor\frac c2\right\rfloor+1.
@@ -139,6 +139,6 @@ This is a **strict reduction**, not an exclusion. The saturated branch has been 
 
 Dependencies and limitations:
 - The component-count step uses Didin's 2026 author-prepared preprint theorem, which remains an external, not independently audited dependency here.
-- The triangle-free bound uses Brouwer's second-Tur\u00e1n theorem.
+- The triangle-free bound uses Brouwer's second-Turan theorem.
 - The integer verifier checks only the arithmetic enumeration, not graph realization or the external theorem.
 - The five E407 shell templates, the low-\(\delta\) cases, the original \(K_{145}\)-to-T61 bridge, and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
