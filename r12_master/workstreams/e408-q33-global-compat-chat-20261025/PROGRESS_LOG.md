@@ -99,3 +99,11 @@
 
 
 - Proof-audit refinement: Cases A and B in Theorem 13.3 actually yield an immediate contradiction, because a six-neighbor gadget row plus the six low-block representatives and a fixed \(D_j\cong K_5\) would form a \(C\)-colored \(K_{12}\), while that row also has a \(C\)-edge to the one gadget vertex outside \(D_j\). Lemma 13.1 forbids any such external edge. Case C is handled by the isolated-clique duplicate cap. The theorem proof was rewritten to make this fork explicit.
+
+
+## 2026-10-25 — universal exact-129 outer budget cap
+
+- Proved Theorem 14.1: every exact-129 color has \(P_C\le49\), equivalently \(R_C\ge13\), under the retained contracts.
+- For \(P_C\ge51\), \(R_C\le11\), so every block-pair budget sum is at most six. Corollary 10.2 forces all ten component matchings across all 21 block pairs, yielding ten C-colored \(K_{12}\)'s. Any extra C-neighbor outside a designated \(K_5\) contradicts isolation; with no extras, the clique-budget cap gives \(P_C\le42\).
+- For \(P_C=50\), the \(r_i=6\) vector was already excluded by Theorem 13.3. The only other positive budget vectors with a pair sum above six are \((5,2,1^5)\) and \((4,3,1^5)\). If the one exceptional same-label edge is present, the \(K_{12}\) argument applies. If absent, pairwise blocker compatibility forces the two rows to cover a second full \(K_5\), which exhausts their five extra incidences and forces both overlap parameters to equal one. The resulting gadget-based \(K_{12}\) has an external C-edge, contradiction.
+- Independent audit checked the positive-partition enumeration for \(R_C=12\), the exceptional pair-sum cases, and the exact incidence equality \(a_i=a_j=1\). The universal cap is a proved colorwise constraint, not a full E408 or \(K_{145}\) closure.
