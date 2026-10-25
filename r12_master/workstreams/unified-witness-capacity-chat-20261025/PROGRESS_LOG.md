@@ -126,3 +126,13 @@
 - E407 Q32 branch advanced again to bd385f7dfe102deb426810baf1999a8e94dd488f. The latest canonical state now excludes both the \(\delta=16\) and \(\delta=15\) four-partite extremes; E407 remains open on templates A–E, the \(\delta=14\) compatibility branch, and the low-excess non-four-partite branch.
 - E408 Q33 remains at a6bbb918c3484bedd1a4eafb410901288cdff085 with the \(r_i=6\) row classification; E408 Q32, witness-packing, zero-excess-witness, and ultimate-closure heads were also refreshed and recorded in CANONICAL_STATE.md.
 - This workstream remains isolated: the repository compare against the initial head shows changes only under r12_master/workstreams/unified-witness-capacity-chat-20261025/.
+
+
+## 2026-10-25 — top-cell-A cross-layer theorem
+
+- Refreshed sibling heads: E407 Q32 bd385f7dfe102deb426810baf1999a8e94dd488f; E408 Q32 a0ba6db26c7e8b00a4217dcbcbf298895dff93ce; E408 Q33 a6bbb918c3484bedd1a4eafb410901288cdff085; witness-packing f5d3daa07403877ede9885e1bd5c2f46b16d81da; zero-excess 07d19abfd6c1c749c7360526e4a04a3eb865fb2e; ultimate closure 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40.
+- Combined the sibling \(|W|=23\), \(e_F(W)=132\), near-perfect-matching cell with the exact-129 factor theorem. Every exact color's ten K5 components intersect W in profile \(2^{10}\) or \(2^9,1\); its gadget intersects W in 3 or 4 vertices and contributes respectively one or two W-edges.
+- Proved the exact global cross-edge defect identity \(\sum_C t_C=K_W\) for E408 and \(K_W+1\) for E407, where \(t_C=e_C(O)-42\ge0\), \(O=V(F)\\W\), and \(K_W\) is the target degree excess inside W.
+- Proved \(0\le t_C\le6\) for every exact-129 color. At \(t_C=0\), equality in the 38-vertex Turan floor forces C[O] to be ten triangles plus two K4s.
+- Added finite arithmetic checks for both intersection profiles, the 42-edge Turan floor, the exact-color t-cap arithmetic, and the global identity for every possible \(K_W\).
+- Status remains OPEN / NOT_CERTIFIED: the new ledger is an exact coupling but does not itself prohibit a feasible \(t_C\) distribution or the resulting partial clique-partition design.
