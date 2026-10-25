@@ -38,7 +38,7 @@ Status: **E407 Q32 OPEN / NOT_CERTIFIED; the \(\delta=16\) branch is excluded un
 &\begin{cases}
 \delta=16:\ \text{excluded by endpoint-split excess + forbidden }K_{12},\\
 \delta=15,\ L\text{ non-four-partite}:\ \text{excluded by KP equality + incompatible }x,y\text{ degrees into }W,\\
-\delta=15,\ L\text{ four-partite}:\ \text{only }H[W]=K_3\cup K_5^3\text{ remains, with }D\cup K_3=K_{11};\text{ shell compatibility OPEN},\\
+\delta=15,\ L\text{ four-partite}:\ \text{excluded by final }K_3\cup K_5^3\text{ label-count contradiction},\\
 \delta\le14:\ \text{four-partite and non-four-partite cases OPEN}.
 \end{cases}\\
 &\Downarrow\ \text{remaining }K_{11}\text{ shell incompatibility at }\delta=15\text{, plus all }\delta\le14\text{ cases}\\
