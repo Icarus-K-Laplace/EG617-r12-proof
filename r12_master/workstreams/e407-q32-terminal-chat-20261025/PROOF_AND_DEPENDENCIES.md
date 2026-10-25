@@ -201,3 +201,8 @@ The earlier draft of DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md used the
 DELTA14_SATURATED_KERNEL_CLASSIFICATION.md now includes the boundary cases (X=A) and (Y=B) in the bipartition balance step. Its proof remains conditional on the cited Andrásfai–Erdős–Sós equality case, Brouwer's second-Turán bound, and the component-count step in DELTA14_SATURATED_ALPHA_CRITICAL_REDUCTION.md, which depends on Didin's 2026 preprint theorem and has not been independently audited here.
 
 Under those retained dependencies, the general (delta=14), non-four-partite, (K_5)-saturated terminal is conditionally excluded. This does not close the other (delta) cases, the five shell templates, or the (K_{145})-to-T61 bridge. The two arithmetic scripts were updated but are not claimed as executed in this round.
+
+
+## Round 30 — same-pair disjoint K4–K5 placement
+
+Under the exact two-cross-edge blocker classification and the K4-incident cover bound, the same-pair disjoint K4–K5 placement is excluded: no Type-II blocker is possible, and every Type-I exception needs seven W-neighbours, so only the unique positive-excess U vertex can be exceptional, contradicting the required (k\ge5). The verifier checks the strict integer inequalities only; the blocker and component-capacity lemmas remain analytic dependencies.
