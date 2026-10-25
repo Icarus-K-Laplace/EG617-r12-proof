@@ -141,3 +141,19 @@ m_{ij}(C)\le \left\lfloor\frac{r_i(C)+r_j(C)-2}{5}\right\rfloor\le1.
 This extends the full matching result from \(r_i+r_j\le6\) to a near-matching result for every pair with \(r_i,r_j\le5\).
 
 Boundary refinement (2026-10-25): Theorem 8.1 now proves that a missing diagonal does imply \(d_{ij}(C)\ge1\). If \(d_{ij}=0\), the 12 edges form a perfect matching; with one missing component diagonal, this forces an independent triple of exceptional rows. The missing diagonal uses at least five of the at-most-eight extra row incidences, leaving at most three, too few to cover any K5 component; one vertex from each of the ten components plus the triple contradicts \(\alpha(C)\le12\). This closes the previous edge-ownership gap for \(r_i,r_j\le5\), but does not yet yield a global terminal contradiction.
+
+
+## 12. Explicit scalar relaxation: aggregate budgets do not force a high-P exact color
+
+To audit the tempting inference “\(\sum_{C\text{ exact}}P_C\ge69\), therefore some exact color has \(P_C\ge36\),” an explicit integer relaxation was constructed. It satisfies all of the following **aggregate ledgers** simultaneously:
+
+- eight exact colors each have \((P_C,R_C,s_C)=(9,53,0)\);
+- three nonexact colors have \((P_C,R_C,s_C)=(59,2,1),(60,1,1),(61,0,1)\);
+- every color satisfies \(P_C+R_C+s_C=62\);
+- \(\sum_C P_C=252\), \(\sum_C R_C=427\), and \(\sum_C s_C=3\);
+- the seven block-column totals satisfy \(\sum_C r_i(C)=61\) for every outer block;
+- an explicit 11-by-21 nonnegative integer \(d_{ij}(C)\) ledger exists with \(\sum_C d_{ij}(C)=12\) for every block pair and the stated \(P_C\) row sums.
+
+For the eight exact colors, the seven \(r_i(C)\) values can all be chosen in \(\{7,8\}\) (four 8s and three 7s), so no pair falls under the \(r_i,r_j\le5\) near-matching theorem. The aggregate bound \(P_{\rm exact}\ge69\) therefore does not force a single exact color into the low-budget structural regime.
+
+The verifier independently checks this integer relaxation. It is **not** a graph-level counterexample: it does not realize the K5 components, gadget neighborhoods, target-core witness sets, or all graph constraints. Its role is to prove that scalar edge budgets alone cannot close the theorem; the missing ingredient must couple the nonexact colors or witness geometry to the exact-color block rows.
