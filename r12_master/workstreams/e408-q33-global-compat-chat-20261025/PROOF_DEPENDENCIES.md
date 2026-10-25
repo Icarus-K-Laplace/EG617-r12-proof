@@ -135,7 +135,7 @@ For a monochromatic \(K_{12}\) of color \(C\) in a balanced 12-coloring, any out
 \[
 d_C(z,K_{12})\le1.
 \]
-The conclusion \(d_C(z,K_{12})=0\) is invalid: one external \(C\)-edge is allowed. Therefore the former outer claims \(P_C\le49\), \(P_C\le48\), and the \(P_C=50,r_i=6\) exclusion are **NOT CERTIFIED** on this branch until the relevant subcases are repaired to force at least two external \(C\)-edges from the same outside vertex or another independent contradiction. The historical attempts are preserved in ARCHIVE_UNCERTIFIED_OUTER_CAPS_20261025.md; the P49/P48 drafts are explicitly marked audit hold. Do not cite those caps as dependencies.
+The conclusion \(d_C(z,K_{12})=0\) is invalid: one external \(C\)-edge is allowed. Therefore the former proofs of the \(P_C\le49\) and \(P_C\le48\) caps remain **NOT CERTIFIED**, and the former single-edge proof of the \(P_C=50,r_i=6\) corner is withdrawn. That specific \(P_C=50,r_i=6\) corner is now excluded independently by R12_P50_R6_DOUBLE_STAR_EXCLUSION.md, using a verifier that forces \(d_C(z,K_{12})\ge2\). A read-only sibling theorem also excludes the local \(P_C=49,r_i=6\) corner via a double-star. These local corner exclusions do not imply a universal cap. The historical attempts are preserved in ARCHIVE_UNCERTIFIED_OUTER_CAPS_20261025.md; the P49/P48 drafts remain on audit hold. Do not cite those caps as dependencies.
 
 The exact-129 row-normal-form results through Theorem 12 and the finite gadget alignment certificate are separate local claims. Their own incidence assumptions still need to be respected, but they do not imply the withdrawn isolation statement.
 
@@ -158,3 +158,10 @@ The verifier checks arithmetic only. The graph-theoretic lemmas and upstream T61
 S_0\ge13,\qquad \delta\ge5,
 \]
 while the four-partite subcase retains its separate stronger bound \(S_0\ge22\). This does not close E408 Q33, E407 Q32, E408 Q32, or EG617(\(r=12\)).
+
+
+### Repaired local double-star corner
+
+The \(P_C=50,r_i=6\) corner has a new conditional proof in R12_P50_R6_DOUBLE_STAR_EXCLUSION.md. Its reduction is \(R_C=12\), so the other six block budgets are all one. It selects one no-component row from each block and uses the exact gadget alignment predicate to form a \(K_{12}\) with an outside gadget vertex having at least two \(C\)-edges into the clique. The dedicated verifier checks 49,212 gadget configurations (204 Case A/B and 49,008 Case C), with zero failures in the independent in-session replay. The graph-level proof still depends on the stated row classifications and exact-129 factor theorem.
+
+The sibling result for \(P_C=49,r_i=6\) is in workstream/r12-unified-witness-capacity-20261025, OUTER_EXCEPTIONAL_ROW_COUPLING.md §12; verifier blob SHA 23cd4ef874faadbd5931c5e3553a1a55415c7a79. Both results are local corner exclusions only. The universal \(P_C\le49\) and \(P_C\le48\) claims remain not certified.
