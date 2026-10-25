@@ -577,18 +577,18 @@ The general saturated branch remains OPEN because other admissible \(J\) graphs 
 
 ## 2026-10-25 — Round 20: exclude all W extensions of the explicit saturated candidate
 
-Added DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md and its arithmetic verifier. Independent replay passed: DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION_ARITHMETIC_OK.
+Added DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md and its arithmetic verifier. Independent replay passed: \`DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION_ARITHMETIC_OK\`.
 
-### epsilon_U=1
+### \(\epsilon_U=1\)
 
-The exact W ledger has three profiles. For K3 dot-union 3K5 and 3K4 dot-union K6, every u in U must be complete to a W part, and omega(H)<=11 bounds the common-neighbour capacities by 8+6+6+6=26 and 7+7+7+5=26, respectively, contradicting |U|=29. For the (4,4,5,5) profile with one cross-edge, the singleton d0 has at most three W-neighbours; an independent transversal avoiding those vertices exists, contradicting alpha(H)<=4.
+The exact W ledger has three profiles. For \(K_3\dot\cup3K_5\), every U-vertex is assigned to a unique W part. The singleton \(d_0\) and the independent triple \(\{d_0,a,b\}\), for \(a\in A,b\in B\), force A/B vertices away from the \(K_3\) and forbid an A/B pair from sharing a \(K_5\): otherwise two distinct K5 parts retain common non-neighbours, yielding an independent 5-set. Each side needs at least two K5 parts because a K5 can host at most six vertices from one side without a K12; the two sides need disjoint part supports, impossible with three K5 parts. For \(3K_4\dot\cup K_6\), \(d_0\) has at most three W-neighbours but every part has size at least four. For the \((4,4,5,5)\) profile with one cross-edge, an independent transversal avoiding \(N_W(d_0)\) exists.
 
-### epsilon_U=2
+### \(\epsilon_U=2\)
 
-Turán equality forces H[W]=K4 dot-union K4 dot-union K5 dot-union K5. The low-degree singleton d0 must carry all two units of U-excess and be complete to one K4 part P0. Using d0, a in A, and b in B as a fixed independent triple, the proof shows no A/B pair can be assigned to the same W part or to P0. Common-neighbour capacities (7,6,6) force one side to fill the other K4 with all seven vertices, and the other side to occupy the two K5 parts. The four C/E vertices must then join P0; after accounting for d0, C/E, and the A/B side assignments, at most seven total slots remain for ten X/Y vertices. Contradiction.
+Turán equality forces \(H[W]=K_4\dot\cup K_4\dot\cup K_5\dot\cup K_5\). The low-degree singleton \(d_0\) must carry all two units of U-excess and be complete to one K4 part \(P_0\). Using \(d_0,a\in A,b\in B\) as an independent triple, the proof forces A/B assignments to disjoint W parts; one side fills the other K4 and the other side splits across the two K5 parts. The four C/E vertices must be complete to \(P_0\), since sharing the other K4 with A/B would create an independent 5-set using one vertex from each K5 part. Then every vertex in the two K5 parts must be complete to A or B. Since B is split across both K5 parts and each B vertex has only one extra edge outside its assigned part, at most one vertex per K5 can be B-complete; at least four vertices in each K5 are A-complete. Their degrees force \(\epsilon_w\ge b_i-1\) on four vertices, so any \(b_i\ge4\) would consume at least 12 W-excess units. Since \(b_2+b_3=7\), such an \(i\) exists, contradicting the available W-excess 2.
 
-### Scope
+### Scope and verifier audit
 
-Together with Round 19's epsilon_U=0 exclusion, the explicit (5,5,2,1,2) blow-up has no extension to the 47-vertex core for any epsilon_U in {0,1,2}. The verifier checks profile arithmetic, one-edge transversal fractions, and the 12 possible disjoint-support A/B count patterns. It does not certify the graph-theoretic lemmas or classify all saturated J graphs.
+Together with Round 19's \(\epsilon_U=0\) exclusion, the explicit \((5,5,2,1,2)\) blow-up has no extension to the 47-vertex core for any \(\epsilon_U\in\{0,1,2\}\). The verifier checks profile arithmetic, one-edge transversal fractions, and the 12 possible disjoint-support A/B count patterns. It does not certify the analytic independent-set arguments or classify all saturated J graphs. The earlier draft's generic bound \(|S_P|\le11-|P|\) for a common-neighbour set was invalid because \(S_P\) need not be a clique; the final proof does not use that bound and instead applies clique-size limits only to A/B vertices that are known to form a clique.
 
-The general saturated branch remains OPEN because other admissible 15-vertex J's have not been ruled out. The delta<=13 cases, five shell templates A-E, and the K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+The general saturated branch remains OPEN because other admissible 15-vertex J's have not been ruled out. The \(\delta\le13\) cases, five shell templates A–E, and the \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
