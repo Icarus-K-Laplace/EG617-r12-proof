@@ -206,3 +206,14 @@ Section 12 of OUTER_EXCEPTIONAL_ROW_COUPLING.md now uses the correct double-star
 The row-incidence safety condition is explicit: in Case C, \(d_K\le |H_1|+|H_2|-5\). For profiles \((5,5)\) and \((5,4)\), one of the two high rows has at most two partial component incidences, and both high-row choices are verified. For the remaining profiles, \(d_K\le3\), so either high row is safe. The \(r=2\) row contributes at most one partial component incidence. This prevents any selected pair of row-neighborhoods from covering a full isolated \(K_5\) and makes the pairwise blocker argument valid.
 
 This is a conditional exclusion of the single corner \(P_C=49,r_i=6\), not a colorwise bound \(P_C\le49\). The sibling bound \(P_C\le49\) is not currently a certified dependency because its published proof uses the invalid isolation lemma. The remaining colorwise \(P_C=49\) profiles and the aggregate eleven-color ledger therefore remain open.
+
+
+## 18. Witness-to-component transfer floor
+
+The seven graph-theoretic four-set witnesses of an exact-129 color are not automatically seven distinct isolated K5 components. Each labelled K5 is either an isolated component or wholly inside the 11-point gadget \(U_C\). Since the seven four-sets are pairwise disjoint, at most \(\lfloor11/4\rfloor=2\) can lie in \(U_C\). Therefore at least five selected witness K5s are isolated components; at least four of the six B-labelled witnesses are components.
+
+The component intersection bound in Section 9 remains \(|\mathcal K_C^*|\ge P_C-45\). With only \(|\mathcal W_C|\ge5\), the guaranteed intersection is
+\[
+|\mathcal W_C\cap\mathcal K_C^*|\ge\max(0,P_C-50).
+\]
+Thus the current labelled extension theorem forces a selected witness component into a K12 only for \(P_C\ge51\). Any claimed \(P_C\ge49\) or \(P_C=50\) threshold requires a separate proof that seven selected witnesses transfer to seven distinct isolated components. That label-transfer obligation remains OPEN.
