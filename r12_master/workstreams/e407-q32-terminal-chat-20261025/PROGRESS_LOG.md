@@ -557,3 +557,8 @@ Added DELTA14_SATURATED_LOCAL_MODEL.md and verify_delta14_saturated_local_model.
 The Round 17 idea to prove that the 15-vertex saturated graph with the two matching decompositions cannot exist is refuted by this explicit local model. This is **not** a counterexample to EG617: no \(W\)-extension, 47-core, or shell-row labeling is supplied. The next target is the global extension problem. In the zero-excess-on-\(U\) case, the local model requires \(U\)-to-\(W\) degrees \(6^{14},5^{10},4^4,2^1\), total 152.
 
 Status remains OPEN / NOT_CERTIFIED for the saturated terminal, E407 Q32, and EG617(\(r=12\)).
+
+
+### Cross-workstream check — latest E408 Q33 state
+
+Re-read the live sibling branch head 6f2a350d043aed41b8bb551449cae54a159a3cfe. The E408 Q33 workstream now conditionally establishes the exact-color cap \(P_C\le49\) (equivalently \(R_C\ge13\)); \(P_C\le48\) remains NOT CERTIFIED. This helps the global sprint but does not close the E408 Q33 terminal and does not directly close the E407 \(\delta=14\) local-model extension.
