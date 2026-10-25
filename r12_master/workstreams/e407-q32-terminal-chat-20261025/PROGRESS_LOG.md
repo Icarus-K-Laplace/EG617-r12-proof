@@ -592,3 +592,10 @@ Turán equality forces \(H[W]=K_4\dot\cup K_4\dot\cup K_5\dot\cup K_5\). The low
 Together with Round 19's \(\epsilon_U=0\) exclusion, the explicit \((5,5,2,1,2)\) blow-up has no extension to the 47-vertex core for any \(\epsilon_U\in\{0,1,2\}\). The verifier checks profile arithmetic, one-edge transversal fractions, and the 12 possible disjoint-support A/B count patterns. It does not certify the analytic independent-set arguments or classify all saturated J graphs. The earlier draft's generic bound \(|S_P|\le11-|P|\) for a common-neighbour set was invalid because \(S_P\) need not be a clique; the final proof does not use that bound and instead applies clique-size limits only to A/B vertices that are known to form a clique.
 
 The general saturated branch remains OPEN because other admissible 15-vertex J's have not been ruled out. The \(\delta\le13\) cases, five shell templates A–E, and the \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 — Round 21: exact C5-blow-up profile classification
+
+Added DELTA14_C5_BLOWUP_PROFILE_CLASSIFICATION.md and verify_c5_blowup_profile.py. Independent enumeration of all positive ordered five-part compositions of 15 found seven dihedral classes with edge count 49. After applying the witness-forced condition Delta(J)<=7, exactly one dihedral class remains: (1,2,5,5,2), equivalent to the explicit (5,5,2,1,2) candidate.
+
+Since Round 20 excludes every full-core extension of that candidate, the entire C5-blow-up subclass is now excluded under the retained contracts. Scope firewall: the general saturated-kernel reduction does not prove that J is a C5 blow-up, so non-C5-blow-up saturated graphs remain OPEN. No conclusion is promoted to E407 Q32 or EG617(r=12) overall.
