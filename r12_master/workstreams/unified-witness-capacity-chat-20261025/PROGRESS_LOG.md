@@ -185,3 +185,14 @@
 - Rechecked the factor contract against the graph-theoretic shell witness theorem. A witness K5 \(\{\lambda\}\cup Q\) is either one of the ten isolated K5 components or lies wholly in the 11-point gadget \(U_C\); it is not automatically a component.
 - Because the seven selected four-sets \(Q\) are pairwise disjoint and \(|U_C|=11\), at most two witness K5s can lie in \(U_C\). Thus at least five of seven are isolated-component witnesses, and at least four of the six B-labelled witnesses are isolated components.
 - Corrected LABELLED_WITNESS_CAPACITY_THEOREM.md: the overlap with all-block exact blockers is now bounded below by \(\max(0,P_C-50)\), not \(\max(0,P_C-48)\). The currently proved component-extension threshold is \(P_C\ge51\); the stronger seven-component transfer is OPEN.
+
+
+## 2026-10-25 — S-avoidance improves exact-component transfer
+
+- Revisited the component-transfer gap using the full shell contract, not only the gadget size \(|U_C|=11\).
+- The ten isolated K5 components all avoid \(S\), with \(|S|=3\), so \(S\subseteq U_C\) and \(|U_C\setminus S|=8\).
+- Each selected shell witness \(\{\lambda\}\cup Q\) avoids \(S\), where \(Q\subseteq H\) is a four-set and \(\lambda\in B\cup\{p\}\) lies outside \(H\). If two selected witnesses lay in the gadget, their disjoint Q-sets would fill all eight non-S gadget vertices, leaving no slot for either witness label. Thus at most one witness lies in the gadget.
+- New proved transfer floor: at least six of seven selected witness K5s are isolated components, including at least five of the six B-labelled witnesses.
+- With at least \(P_C-45\) components represented by exact size-five blocker rows in all seven outer blocks, inclusion-exclusion over the ten isolated components gives at least \(\max(0,P_C-49)\) selected witness components also represented in every outer block.
+- Consequence: \(P_C\ge50\) forces at least one selected witness component to extend to a monochromatic K12; \(P_C=51\) forces at least two. This is not itself a contradiction. Do not infer that an external vertex having one C-edge into a monochromatic K12 is impossible; only \(d_C(z,K_{12})\le1\) is certified.
+- Updated LABELLED_WITNESS_CAPACITY_THEOREM.md and canonical state. EG617(r=12) remains OPEN / NOT_CERTIFIED.
