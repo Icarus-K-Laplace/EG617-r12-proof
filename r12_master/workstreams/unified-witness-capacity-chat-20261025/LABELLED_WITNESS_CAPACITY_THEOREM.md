@@ -280,3 +280,54 @@ are pairwise disjoint, and \(\sum_i|G_i(\ell)|\le11\).
 **Proof.** The exact-129 factorization makes \(K_\ell\) an isolated component of \(C[R]\), so \(z\in U_C\) has no \(C\)-edge to any vertex of \(K_\ell\). If \(z\) had \(C\)-edges to two distinct representatives \(x_i(\ell),x_j(\ell)\), then \(z\) would have at least two \(C\)-edges into the \(C\)-colored \(K_{12}\), contradicting the valid star-capacity lemma \(d_C(z,Q_\ell)\le1\). \(\square\)
 
 This is a labelled, cross-block incidence constraint; it is stronger than saying that one external edge is impossible. It does not alone yield a contradiction: the existing row excess budgets can still leave at most six gadget incidences on a fixed label across the seven selected rows, below the 11-vertex capacity. The next useful step is to couple these pairwise-disjoint \(G_i(\ell)\) sets across several selected witness labels and the core witness incidence ledger, while charging every repeated edge only once.
+
+
+## 12. Full exact-component witness reservoir and the \(m=10\) support obstruction
+
+The selected seven-witness family used in the minimum-support terminal is not the same object as the full set of exact-factor components. The factor theorem gives a larger, independently certified family.
+
+**Theorem 12.1 (all ten isolated components are shell witnesses).** Under the common contract, every one of the ten isolated \(K_5\) components of an exact-129 color \(C\) has exactly one vertex outside \(H\), and this vertex belongs to \(B\cup\{p\}\). Hence each component has the form
+\[
+K_\ell=\{\lambda_\ell\}\cup Q_\ell,\qquad
+\lambda_\ell\in B\cup\{p\},\quad Q_\ell\subseteq H,\quad |Q_\ell|=4,
+\]
+where \(Q_\ell\) is an independent four-set in the target core.
+
+**Proof.** Each isolated component avoids \(S\). It must meet \(V(R)\setminus H=\{p\}\cup S\cup B\), since otherwise its five vertices would form an independent five-set in \(H\), contrary to \(\alpha(H)\le4\). As the component avoids \(S\), every outside-\(H\) vertex in it belongs to \(B\cup\{p\}\). But \(B\) is a clique in the target-color graph and \(p\) is target-adjacent to every vertex of \(B\). Thus no two vertices of \(B\cup\{p\}\) can lie in the same \(C\)-colored \(K_5\). The component therefore has exactly one outside-\(H\) vertex and four core vertices. \(\square\)
+
+The ten \(Q_\ell\)'s are pairwise disjoint within one color. Across distinct colors, two such four-sets intersect in at most one point, because a shared pair would give the same core edge two colors. Thus for \(m\) exact-129 colors, the union \(U_{\rm comp}\) of **all ten component four-sets per color** satisfies
+\[
+|U_{\rm comp}|\ge \frac{40m}{m}=40.
+\]
+This is a different support family from the seven-per-color family minimized in the E407/E408 boundary analysis; its support must not be silently identified with the earlier \(v=29\) or \(v=31\) support.
+
+**Corollary 12.2 (the \(m=10,\ |U_{\rm comp}|=40\) case is impossible).** Suppose \(m=10\) and \(|U_{\rm comp}|=40\). Then each color's ten four-sets partition \(U_{\rm comp}\). The 100 four-sets are pairwise edge-disjoint \(K_4\)'s in \(\overline{H[U_{\rm comp}]}\), requiring at least \(600\) edges there.
+
+Let \(W=H\setminus U_{\rm comp}\), so \(|W|=7\), and write \(\epsilon_U=\sum_{x\in U_{\rm comp}}(d_H(x)-12)\ge0\). Since \(\alpha(H[W])\le4\), Turán's theorem gives
+\[
+e(H[W])\ge {7\choose2}-t_4(7)=21-18=3.
+\]
+The core degree ledger gives
+\[
+e(H[U_{\rm comp}])=12\cdot40-284+\epsilon_U+e(H[W])
+=196+\epsilon_U+e(H[W]).
+\]
+Therefore
+\[
+e(\overline{H[U_{\rm comp}]})
+=780-e(H[U_{\rm comp}])
+=584-\epsilon_U-e(H[W])
+\le581,
+\]
+contradicting the required 600 edges. Consequently, if \(m=10\), then
+\[
+\boxed{|U_{\rm comp}|\ge41.}
+\]
+
+**Residual \(m=10,\ |U_{\rm comp}|=41\) contract.** If the component-witness union has size 41, then each of the ten colors omits exactly one point from its ten disjoint four-sets. Here \(|W|=6\), \(e(H[W])\ge {6\choose2}-t_4(6)=15-13=2\), and
+\[
+e(\overline{H[U_{\rm comp}]})=612-\epsilon_U-e(H[W])\le610.
+\]
+Thus the 100 component \(K_4\)'s account for 600 pairwise distinct complement edges, leaving at most ten additional edges in \(\overline{H[U_{\rm comp}]}\). This is a sharp new terminal contract, not yet a contradiction. It may be attacked as a near-decomposition / partial transversal-design problem coupled to the 47-core degree ledger.
+
+**Scope firewall.** The theorem closes the existence side of the component-label transfer gap: all ten factor components really are shell witnesses. It does *not* imply that the particular seven witnesses chosen to minimize support are all component-backed, nor does it close their \(v=29/31\) boundary. The full-component support \(U_{\rm comp}\) has its own \(v\ge40\) regime, which remains to be analyzed for \(m=8,9\) and for \(m=10,v\ge41\).
