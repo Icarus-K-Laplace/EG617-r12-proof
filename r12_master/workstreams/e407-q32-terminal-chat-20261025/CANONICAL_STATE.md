@@ -302,3 +302,17 @@ The new result does not close the profile, but it replaces a broad two-cross-edg
 - If both W-cross-edges lie between the two K5 parts, the blocker classification allows at most one unsaturated U-vertex, contradicting the global capacity floor. That placement is therefore excluded entirely.
 
 The verifier is an arithmetic check, not a graph-realization certificate. The surviving blocker patterns with k>=5 remain OPEN; E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+## Round 29 — audited saturated-kernel extension closure and proof correction
+
+A critical proof audit found that an earlier draft's inference `|S_P|<=11-|P|` for the total common-neighbour set of a clique (P), based only on (omega(H)le11), was invalid. That draft has been withdrawn. The replacement proof in DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md no longer uses that inference.
+
+The corrected incidence/independent-set argument now excludes all three (epsilon_U) cases for the explicit ((5,5,2,1,2)) local model:
+- (epsilon_U=0): the independent-transversal argument remains valid for every W profile with at most two cross-edges.
+- (epsilon_U=1): (3K_4dotcup K_6) is impossible because (d_0) has at most three W-neighbours but must be complete to a W component; the ((4,4,5,5))+one-cross-edge profile is excluded by an independent transversal avoiding (N_W(d_0)); the (K_3dotcup3K_5) profile is excluded by a 15-versus-13 incidence count. Each K5 W vertex must be complete to A, B, or all of (Ccup E), but at most 6 can be complete to A, at most 6 to B, and at most 1 to all four (C/E) vertices.
+- (epsilon_U=2): the exact W profile is (2K_4dotcup2K_5). The independent-set argument forces A/B assignment supports to be disjoint, with one side filling the other K4. Then at most two K5 W vertices can be complete to A (only 14 A-edges leave that K4) and at most two can be complete to B (both B-assignment groups are nonempty and each B vertex has only one edge outside its assigned K5). But all ten K5 W vertices must be complete to A or B, contradiction.
+
+The kernel classification file was also audited: the first draft of its balance step omitted the cases (X=A) and (Y=B). The proof now handles these boundary cases by the exact edge equation and verifies the unique ((7,7)) split. The arithmetic verifier was expanded to enumerate all bipartition sizes.
+
+**Current status:** the (delta=14), non-four-partite, (K_5)-saturated terminal is conditionally excluded under the retained alpha-critical reduction and its external Didin-preprint dependency. This does not close the remaining (delta=13) W-cross-edge profiles, (deltale12), the five shell templates as a global compatibility problem, or the (K_{145})-to-T61 bridge. E407 Q32 and EG617((r=12)) remain OPEN / NOT_CERTIFIED overall.
