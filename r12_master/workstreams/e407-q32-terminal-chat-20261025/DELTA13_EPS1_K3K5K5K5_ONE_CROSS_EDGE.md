@@ -31,9 +31,9 @@ so \(E_0+E_1+E_2+E_3=3\).
 
 ## 2. Transversal saturation and D-to-W degree bounds
 
-If a vertex \(u\in U\) is not complete to any W-component, its non-neighbour sets in the two components containing \(x,y\) must be exactly \(\{x\}\) and \(\{y\}\); otherwise one can choose one non-neighbour from each of the four components while avoiding the unique cross-edge, producing an independent 5-set with \(u\). It is also nonadjacent to every vertex of the other two components. Thus:
-- if \(xy\) joins \(C_0\) to a \(K_5\), then \(d_H(u,W)=6\);
-- if \(xy\) joins two \(K_5\)'s, then \(d_H(u,W)=8\).
+If a vertex \(u\in U\) is not complete to any W-component, its non-neighbour sets in the two components containing \(x,y\) must be exactly \(\{x\}\) and \(\{y\}\); otherwise one can choose one non-neighbour from each of the four components while avoiding the unique cross-edge, producing an independent 5-set with \(u\). Its non-neighbour sets in the other two components are nonempty but need not be the whole components. Therefore the total number of W-non-neighbours is at most 12 if \(xy\) joins \(C_0\) to a \(K_5\), and at most 10 if \(xy\) joins two \(K_5\)'s. Consequently:
+- if \(xy\) joins \(C_0\) to a \(K_5\), then \(d_H(u,W)\ge6\), with equality only when \(u\) is nonadjacent to every vertex in the other two \(K_5\)'s;
+- if \(xy\) joins two \(K_5\)'s, then \(d_H(u,W)\ge8\), with equality only when \(u\) is nonadjacent to every vertex in the other two components.
 
 For \(d\in D\), the same alternatives apply if \(d\) is not W-saturated. In the \(K_3\)-\(K_5\) placement, the exceptional degree \(d_H(d,W)=6\) forces \(5+\epsilon_d-t_d=6\), hence \(\epsilon_d=1,t_d=0\); this can occur for at most one \(d\). Every other \(d\) is W-saturated and satisfies \(t_d\le2+\epsilon_d\le2\). In the \(K_5\)-\(K_5\) placement, degree eight would require \(t_d=\epsilon_d-3<0\), impossible because \(\epsilon_d\le\epsilon_U=1\); hence every \(d\) is W-saturated and \(t_d\le2+\epsilon_d\le3\). In either placement, at most one \(D\)-vertex has \(t_d=3\), and every other \(D\)-vertex has \(t_d\le2\).
 
@@ -41,11 +41,14 @@ For \(d\in D\), the same alternatives apply if \(d\) is not W-saturated. In the 
 
 ### Case I: \(xy\) joins \(C_0\) to \(C_1\)
 
-Suppose \(u\in U\) is not W-saturated. Then \(d_H(u,W)=6\), so \(d_H(u,U)=6+\epsilon_u\) and \(\epsilon_u\in\{0,1\}\). Because \(u\) misses \(x,y\) and all of \(C_2\cup C_3\), every \(v\in U\setminus N_H[u]\) that is nonadjacent to \(y\) must be complete to \(C_2\) or to \(C_3\). Otherwise choosing a non-neighbour of \(v\) in each of \(C_2,C_3\) gives an independent 5-set \(\{u,v,y,b,c\}\). Since \(d_H(y,U)=7+\epsilon_y\), it follows that
+Suppose \(u\in U\) is not W-saturated. Then \(d_H(u,W)\ge6\), so \(d_H(u,U)\le6+\epsilon_u\le7\). If \(d_H(u,W)=6\), then \(u\) is nonadjacent to all of \(C_2\cup C_3\), and \(d_H(u,U)=6+\epsilon_u\). Every \(v\in U\setminus N_H[u]\) that is nonadjacent to \(y\) must then be complete to \(C_2\) or to \(C_3\). Otherwise choosing a non-neighbour of \(v\) in each of \(C_2,C_3\) gives an independent 5-set \(\{u,v,y,b,c\}\). Since \(d_H(y,U)=7+\epsilon_y\), this yields
 \[
 |S_2|+|S_3|\ge (22-\epsilon_u)-(7+\epsilon_y)
 =15-\epsilon_u-\epsilon_y. \tag{1}
 \]
+As \(|S_2|+|S_3|\le13-\epsilon_y\), this is impossible because \(\epsilon_u\le1\).
+
+If instead \(d_H(u,W)=7\), the degree equation forces \(u\) to be a small-part vertex with \(\epsilon_u=1,t_u=0\), so \(d_H(u,U)=6\). Its W-neighbourhood consists of exactly one vertex \(z\) in one of \(C_2,C_3\), while \(u\) is nonadjacent to \(x,y\) and to every other vertex of \(C_2\cup C_3\). This is the only remaining nonsaturated-U pattern. Because \(\epsilon_U=1\), there can be at most one such \(u\).
 
 For each of \(C_2,C_3\), we claim \(|S_i|\le5+E_i\). If every vertex of \(C_i\) is complete to a U-part, label it by that part. A common label is forbidden because \(K_5\) plus any U-part of size at least seven contains a \(K_{12}\). Every common neighbour therefore uses at least one extra edge outside the chosen labels; the total load is at most \(5+E_i\). If a vertex \(w\in C_i\) is not complete to a U-part, the D-neighbourhood argument below gives \(d_H(w,U)\ge11\), so \(\epsilon_w\ge3\). Since \(E_W=3\), the other four vertices of \(C_i\) have U-degree eight and force \(|S_i|\le8=5+E_i\).
 
@@ -61,10 +64,10 @@ because \(E_2+E_3\le E_W-\epsilon_y=3-\epsilon_y\). Equations (1)–(2) are inco
 
 A nonsaturated \(u\in U\) would have \(d_H(u,W)=8\). But for a small-part vertex \(d_H(u,W)=6+\epsilon_u-t_u\le7\), and for \(d\in D\), \(d_H(d,W)=5+\epsilon_d-t_d\le6\). Contradiction.
 
-Thus in either placement every \(u\in U\) is W-saturated. The four sets \(S_i\) cover \(U\), so
+Thus every U-vertex is W-saturated in the \(K_5\)-\(K_5\) placement. In the \(K_3\)-\(K_5\) placement, the \(d_H(u,W)=6\) case is impossible and at most one \(d_H(u,W)=7\) exception can remain. Therefore at least 28 of the 29 vertices of \(U\) are W-saturated, so
 \[
-29\le\sum_{i=0}^3|S_i|. \tag{3}
-\]
+28\le\sum_{i=0}^3|S_i|. \tag{3}
+]
 
 ## 4. Component capacities
 
@@ -89,6 +92,6 @@ Both contradict (3).
 
 ## 5. Conclusion and scope
 
-The \(\delta=13,\epsilon_U=1\), four-partite-U profile \(K_3\dot\cup3K_5\) plus one W-cross-edge is **EXCLUDED**, regardless of which two components the edge joins.
+The \(\delta=13,\epsilon_U=1\), four-partite-U profile \(K_3\dot\cup3K_5\) plus one W-cross-edge is **EXCLUDED**, regardless of which two components the edge joins. The proof allows one potential degree-7 W-neighbourhood exception in the \(K_3\)-\(K_5\) placement, but shows that all other U-vertices are saturated; the common-neighbour capacity is at most 26, below the required 28.
 
 This does not exclude the \((4,4,4,6)\)-plus-one-edge or \((4,4,5,5)\)-plus-two-edge profiles at \(\epsilon_U=1\), the \(\epsilon_U=0\) row, non-four-partite U-complements, \(\delta\le12\), the five shell templates globally, or the upstream \(K_{145}\)-to-T61 bridge. E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
