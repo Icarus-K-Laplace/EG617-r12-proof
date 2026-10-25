@@ -83,3 +83,16 @@
 - Re-read the latest emergency-sprint, ultimate-closure, witness-packing, zero-excess-witness, and E407 Q32 branches. E407's non-four-partite \(\delta=15\) subcase is excluded under its own contract, but E407 Q32 overall remains OPEN. E408 Q33 still has \(S_0\ge12\) universally and \(S_0\ge22\) in the four-partite branch; the larger-support/global terminal remains open.
 - Independently checked Corollary 11.3: \(P_C=50\) gives the block-budget vector \((6,1,1,1,1,1,1)\); \(P_C=49\) gives \((6,2,1,1,1,1,1)\). The clean-label/exact-blocker intersection in the latter case has size at least \(8+9-10=7\). The clique construction uses all seven blocks and the same \(K_5\) component, and different labels yield vertex-disjoint cliques.
 - No imported sibling result contradicts or closes this line. The remaining need is still a global incompatibility theorem linking the forced outer clique/edge patterns to the 56 labeled inner witnesses.
+
+
+## 2026-10-25 — genuine exclusion of the \(P_C=50,\ r_i=6\) corner
+
+- Proved Lemma 13.1: a monochromatic \(C\)-colored \(K_{12}\) is an isolated component of \(C\). For any outside vertex, the 12 edges to the clique must contain all eleven other colors at least once, so no edge can be \(C\).
+- Proved Lemma 13.2: if \(m\) vertex-disjoint \(C\)-colored \(K_{12}\)'s each meet every target block once, then \(P_C\le21(12-m)\). After removing the \(m\) isolated clique representatives, each target block has \(12-m\) leftover vertices; the remaining C-edge bipartite graph for every block pair has minimum degree 1 and maximum degree 2.
+- Used Theorem 11.1 to split \(r_i=6\) into its four terminal profiles. When \(P_C=50\), the other six block budgets are all one. Every profile forces at least ten isolated C-colored \(K_{12}\)'s:
+  - \(n=1\): 10 label-based plus a gadget-based \(K_{12}\);
+  - \(n=2,k=1,m=10\): 9 label-based plus 2 gadget-based;
+  - \(n=2,k=1,m=11\): at least 8 label-based plus 2 gadget-based;
+  - \(n=2,k=0\): all ten component rows are clean.
+- Therefore \(P_C\le21(12-10)=42\), contradicting \(P_C=50\). The exact \(P_C=50,r_i=6\) corner is now **EXCLUDED** under the retained contracts.
+- The adjacent \(P_C=49,r_i=6\) branch is not closed: the current packing can guarantee only nine isolated \(K_{12}\)'s, giving \(P_C\le63\), which is insufficient. E408 Q33 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
