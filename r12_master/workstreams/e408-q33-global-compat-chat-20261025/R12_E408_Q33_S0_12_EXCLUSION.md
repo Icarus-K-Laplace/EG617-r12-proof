@@ -18,7 +18,7 @@ For \(r\in R\), let \(j_r\) be the degree of \(r\) in the \(\delta\) leftover ed
 \[
 \sum_{r\in R}g_r=S_0-\epsilon_T.
 \]
-For each \(r\), let \(a_r\) count the special incidences at \(r\) from \(W\)-vertices whose \(U\)-neighborhood is not an \(R\)-only \(8\)-set. If \(s_r\) is the number of \(R\)-only \(8\)-neighborhoods containing \(r\), the exact row identity is
+Each \(r\in R\) lies in one \(Q\)-block for each \(t\in T\), so the \(21\) incident \(L\)-edges contributed by these seven witness \(K_4\)'s are distinct; thus \(d_L(r)=21+j_r\). Since \(d_H(r,U)=30-d_L(r)=9-j_r\), it follows that \(d_H(r,W)=12+\epsilon_r-d_H(r,U)=3+\epsilon_r+j_r\). For each \(r\), let \(a_r\) count the special incidences at \(r\) from \(W\)-vertices whose \(U\)-neighborhood is not an \(R\)-only \(8\)-set. If \(s_r\) is the number of \(R\)-only \(8\)-neighborhoods containing \(r\), the exact row identity is
 \[
 s_r=3+g_r-a_r. \tag{1}
 \]
@@ -89,6 +89,8 @@ For each row, \(m\) is the number of \(R\)-only \(8\)-neighborhoods, and \(A\) i
 | 4 | two \(9\)'s, ten \(8\)'s | \(b_y,b_z\in\{0,1\}\), \(a=2\) | \(B=b_y+b_z\) | 8 | \(20-B\) |
 | 4 | one \(10\), eleven \(8\)'s | \(b=7,a=1\) | 0 | 10 | 4 |
 | 4 | one \(10\), eleven \(8\)'s | \(b\in\{0,1,2\},a=2\) | \(b\) | 9 | \(12-b\) |
+
+An uncovered point \(r\) has \(s_r=0\), so (1) forces \(a_r=3+g_r\ge3\). This gives the uncovered-point bounds used below: with four total special incidences there can be at most one uncovered point; with three \(T\)-type extras plus one high vertex, an uncovered point requires at least two \(T\)-type extras and the high vertex at the same point, so there is at most one; with one \(T\)-type extra plus two high vertices, there is at most one; with two \(T\)-type extras and two high vertices, every uncovered point must receive at least one of those two \(T\)-type extras, so there are at most two. When both high \(q=9\) vertices have \(b=7\), each has only two \(R\)-neighbors and no point can receive three special incidences. When the high \(q=10\) vertex has \(b=7\), its three \(R\)-neighbors plus one \(T\)-type extra give at most two incidences per point, so there are no uncovered points.
 
 The remaining subcases are excluded as follows.
 
