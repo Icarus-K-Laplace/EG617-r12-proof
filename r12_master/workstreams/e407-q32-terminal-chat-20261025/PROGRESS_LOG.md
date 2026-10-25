@@ -226,3 +226,15 @@ Full proof and exact ledger: DELTA15_FOUR_PARTITE_TERMINAL.md.
 - \(\delta=15\) four-partite: reduced to \(H[W]=K_3\cup K_5^3\), with \(D\cup K_3=K_{11}\); **OPEN**.
 - \(\delta\le14\): **OPEN**.
 - E407 Q32 overall: **OPEN / NOT_CERTIFIED**.
+
+
+### Round 7 proof audit addendum — degree-two \(D\)-endpoint exception
+
+A careful audit found that the generic “no whole \(U\)-part implies at least 13 \(U\)-neighbours” lemma needs one exception when a \(D\)-vertex has cross-degree two: a \(W\)-vertex can have exactly 12 \(U\)-neighbours, missing that \(D\)-vertex and two matched vertices in one small part. The lemma in DELTA15_FOUR_PARTITE_TERMINAL.md has been corrected to state this exact exception.
+
+The terminal reductions remain valid:
+- In the \(\epsilon_U=1\) profile, the exception would consume all three \(W\)-excess units at a \(K_4\)-vertex; the other three vertices in its \(K_4\)-part are then adjacent to all seven remaining \(D\)-vertices and cannot meet their degree requirements.
+- In the \(\epsilon_U=0\), \(K_3\cup K_5^3\) profile, any \(D\)-vertex with positive cross-degree is complete to the \(K_3\). This rules out the exceptional no-part pattern for a \(K_3\)-vertex; for a \(K_5\)-vertex it conflicts with the fact that the exceptional pattern is adjacent to all but one \(D\)-vertex while at least one other \(D\)-vertex has positive cross-degree.
+- In the minimum-part-size-four profiles, every \(D\)-vertex has cross-degree at most one, so the exception cannot arise.
+
+The \(\delta=15\) four-partite frontier remains exactly the one stated above: only \(H[W]=K_3\cup K_5^3\), with \(D\cup K_3\cong K_{11}\), remains open.
