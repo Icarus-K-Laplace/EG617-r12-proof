@@ -1,7 +1,7 @@
 # E407 Q32 terminal — proof and dependency ledger
 
 Date: 2026-10-25  
-Status: **E407 Q32 OPEN / NOT_CERTIFIED; the \(\delta=16\) branch is excluded under the retained core/witness contract.**
+Status: **E407 Q32 OPEN / NOT_CERTIFIED; \(\delta=16\) and the \(\delta=14,\epsilon_U=0\) four-partite branch are excluded under the retained core/witness contract.**
 
 ## 1. Dependency chain currently supported
 
@@ -39,7 +39,7 @@ Status: **E407 Q32 OPEN / NOT_CERTIFIED; the \(\delta=16\) branch is excluded un
 \delta=16:\ \text{excluded by endpoint-split excess + forbidden }K_{12},\\
 \delta=15,\ L\text{ non-four-partite}:\ \text{excluded by KP equality + incompatible }x,y\text{ degrees into }W,\\
 \delta=15,\ L\text{ four-partite}:\ \text{excluded by final }K_3\cup K_5^3\text{ label-count contradiction},\\
-\delta=14,\ L\text{ four-partite},\ \epsilon_U=0:\ \text{three W profiles excluded; one remains},\\
+\delta=14,\ L\text{ four-partite},\ \epsilon_U=0:\ \text{all four W profiles excluded},\\
 \delta=14,\ L\text{ non-four-partite},\ \epsilon_U\in\{1,2\},\ \delta\le13:\ \text{OPEN}.
 \end{cases}\\
 &\Downarrow\ \text{remaining }K_{11}\text{ shell incompatibility at }\delta=15\text{, plus all }\delta\le14\text{ cases}\\
@@ -50,4 +50,9 @@ Status: **E407 Q32 OPEN / NOT_CERTIFIED; the \(\delta=16\) branch is excluded un
 There is no circular dependency in the \(\delta=16\) exclusion: it uses only the E407 core contract, 49-block linearity, the exact ledger, Turán/Brouwer bounds, \(\alpha(H)\le4\), and the inherited \(\omega(H)\le11\) bound from the T61 parent. The \(\delta=15\) non-four-partite exclusion additionally depends on the Kang–Pikhurko equality classification and W-side Brouwer bound. All remaining cases depend on the upstream validity of the 49-witness boundary.
 
 ### New delta-14 sub-branch closure
-The proof DELTA14_EPS0_K3K4K5K6_COVER_CAPACITY.md excludes the \(K_3\dot\cup K_4\dot\cup K_5\dot\cup K_6\) W-profile by proving that the four common-neighbour sets cannot cover all 29 U-vertices. Together with DELTA14_EPS0_K4_PROFILE_EXCLUSIONS.md, this leaves only the \(K_3\cup K_5^3\) plus one-cross-edge profile in the \(\delta=14,\epsilon_U=0\), four-partite row. No claim is made for \(\epsilon_U=1,2\) or non-four-partite \(L\).
+The proof DELTA14_EPS0_K3K4K5K6_COVER_CAPACITY.md excludes the \(K_3\dot\cup K_4\dot\cup K_5\dot\cup K_6\) W-profile, and DELTA14_EPS0_K3K5K5K5_CROSS_EDGE_CLOSURE.md excludes the final \(K_3\cup K_5^3\) plus one-cross-edge profile. Together with DELTA14_EPS0_K4_PROFILE_EXCLUSIONS.md, this closes the entire \(\delta=14,\epsilon_U=0\), four-partite row. No claim is made for \(\epsilon_U=1,2\) or non-four-partite \(L\).
+
+
+### Round 10 — final \(\delta=14,\epsilon_U=0\) four-partite profile
+
+DELTA14_EPS0_K3K5K5K5_CROSS_EDGE_CLOSURE.md proves the last W-profile impossible. It first uses \(\alpha(H)\le4\) and the unique W-cross-edge to show every \(D\)-vertex is complete to a W-component, hence \(t_d\le2\). This yields the reverse-saturation bound \(d_H(w,U)\ge12\) for any W-vertex not complete to a U-part. The only possible unsaturated U-vertex has the exact endpoint singleton pattern in the \(K_3\)-to-\(K_5\) edge case; its induced common-neighbour demand exceeds the two other K5 capacities by one. With all U-vertices saturated, the four component capacities total at most 27, contradicting \(|U|=29\). The arithmetic verifier checks the finite excess and capacity arithmetic but does not replace the analytic proof.
