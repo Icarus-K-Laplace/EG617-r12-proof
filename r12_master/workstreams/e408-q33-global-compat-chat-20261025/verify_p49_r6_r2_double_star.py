@@ -90,8 +90,8 @@ def allocations(H, J, r):
     extra_budget = r - (11 - len(H) - len(J))
     return [
         (p, q)
-        for p in range(min(4, extra_budget) + 1)
-        for q in range(min(4, extra_budget - p) + 1)
+        for p in range(extra_budget + 1)
+        for q in range(extra_budget - p + 1)
     ]
 
 
@@ -172,7 +172,7 @@ def main():
         case_bc_total += checks
 
     assert case_a_total == 452
-    assert case_bc_total == 570290
+    assert case_bc_total == 570942
 
     print("PASS: P_C=49 profile (6,2,1^5)")
     print("Case A single-row alignments:", case_a_total)
