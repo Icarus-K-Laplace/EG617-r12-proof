@@ -354,6 +354,53 @@ def check_missing_diagonal_duplicate_charge() -> None:
     assert 3 < 5
 
 
+def check_scalar_budget_relaxation() -> None:
+    # Explicit scalar relaxation showing that aggregate P_exact >= 69 does
+    # not force any exact color to have P_C >= 36. This is not a graph model.
+    patterns = [
+        [1,1,1,1,0,0,0],
+        [0,1,1,1,1,0,0],
+        [0,0,1,1,1,1,0],
+        [0,0,0,1,1,1,1],
+        [1,0,0,0,1,1,1],
+        [1,1,0,0,0,1,1],
+        [1,1,1,0,0,0,1],
+        [0,0,0,1,1,1,1],
+    ]
+    exact_r = [[7 + x for x in row] for row in patterns]
+    assert all(sum(row) == 53 for row in exact_r)
+    exact_cols = [sum(row[j] for row in exact_r) for j in range(7)]
+    assert exact_cols == [60,60,60,61,61,61,61]
+
+    nonexact_r = [
+        [1,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0],
+        [0,1,1,0,0,0,0],
+    ]
+    assert [sum(row) for row in nonexact_r] == [1,0,2]
+    assert [exact_cols[j] + sum(row[j] for row in nonexact_r)
+            for j in range(7)] == [61]*7
+
+    d_exact = [[1]*9 + [0]*12 for _ in range(8)]
+    d_non = [[0]*21 for _ in range(3)]
+    for j in range(9):
+        for c in range(3):
+            d_non[c][j] = 1
+        d_non[j % 3][j] += 1
+    for j in range(9,21):
+        d_non[0][j], d_non[1][j], d_non[2][j] = (
+            (3,4,5) if j == 9 else (4,4,4)
+        )
+    assert [sum(row) for row in d_exact] == [9]*8
+    assert [sum(row) for row in d_non] == [59,60,61]
+    assert [sum(row[j] for row in d_exact+d_non) for j in range(21)] == [12]*21
+    assert all(9+53 == 62 for _ in range(8))
+    assert (59+2+1, 60+1+1, 61+0+1) == (62,62,62)
+    assert sum(sum(row) for row in d_exact+d_non) == 252
+    assert sum(sum(row) for row in exact_r+nonexact_r) == 427
+    assert all(min(row) >= 7 for row in exact_r)
+
+
 def main() -> None:
     check_zero_excess_endpoint_tables()
     check_edge_ledgers()
@@ -366,6 +413,7 @@ def main() -> None:
     check_exceptional_row_independence_bound()
     check_near_complete_component_matching_bound()
     check_missing_diagonal_duplicate_charge()
+    check_scalar_budget_relaxation()
     print("R12_UNIFIED_WITNESS_CAPACITY_ARITHMETIC_OK")
     print("Partite branch: exact Q33 incidence profile and labelled row caps verified.")
     print("Pair-certificate multiplicity: max 45 unlabelled / 9 label-anchored pairs.")
@@ -374,6 +422,7 @@ def main() -> None:
     print("Exceptional-row graph alpha<=2 and Turan equality profile verified.")
     print("Near-complete component matching budget checked for all r_i,r_j in 1..5.")
     print("Missing-diagonal duplicate-charge boundary arithmetic verified.")
+    print("Aggregate scalar relaxation verified; it is not a graph-level counterexample.")
     print("Scope: exact integer/degree ledgers only; no graph-realization certificate.")
 
 
