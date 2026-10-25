@@ -138,7 +138,6 @@ def main():
     for b in range(1, 5):
         vertices, adjacency = make_gadget(b)
         K5 = cliques(vertices, adjacency, 5)
-        assert len(K5) == expected_pair_counts[b][0] if False else True
         # Candidate pairs exclude w in D; such a w could not belong to a
         # complement disjoint from D anyway.
         candidate_universe = frozenset(
