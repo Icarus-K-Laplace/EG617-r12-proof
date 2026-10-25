@@ -171,3 +171,14 @@ This excludes type \((7,1^6)\) as well. Together with Cases I–IV, every possib
 ## 5. Audit status update — 2026-10-25
 
 Only Case I above has been repaired. Cases II–V still contain uses of the withdrawn isolated-\(K_{12}\) inference or consequences derived from it and remain **NOT CERTIFIED**. In particular, the concluding sentence of the historical proof claiming that every \(R_C=13\) profile is impossible is withdrawn. The current certified scope is the five profiles listed in Case I only; the six profiles listed in R12_P49_COMMON_STAR_SCREEN.md remain open. Do not cite the overall \(P_C\le48\) statement at the start of this file as proved.
+
+
+## 6. Audit status update — incidence-sensitive repairs
+
+The common-star screen and incidence-sensitive follow-up now independently exclude seven of the eleven \(R_C=13\) profiles. In addition to Case I, the profiles \((5,2,2,1^4)\) and \((5,3,1^5)\) are closed by R12_P49_INCIDENCE_SENSITIVE_SCREEN.md and verify_p49_incidence_sensitive.py. These results do not rely on the historical single-external-edge inference.
+
+The four profiles still open are
+\[
+(4,3,2,1^4),\quad (4,4,1^5),\quad (6,2,1^5),\quad (7,1^6).
+\]
+The historical arguments in Cases II–V are not certified as written. In particular, the global conclusion \(P_C\le48\) remains **NOT CERTIFIED**; only the seven individually listed profile exclusions are currently authorized. E408 Q33 and EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.
