@@ -219,15 +219,19 @@ Refreshed all six sibling branches again before finalizing this round:
 Created TERMINATION_CLOSURE.md with the conditional theorem ledger, the scalar-relaxation obstruction, the minimal missing bridge, dependencies, and verification scope. All reads of sibling branches were read-only.
 
 
-## 2026-10-25 continuation — selected-witness extension (corrected)
+## 2026-10-25 continuation — selected-witness extension (corrected, S-avoidance strengthening)
 
-The graph-theoretic witness family does not automatically consist of seven isolated K5 components. Each labelled witness K5 is either one of the ten isolated components or lies wholly in the 11-point gadget \(U_C\). Since the seven selected four-sets are pairwise disjoint and \(|U_C|=11\), at most two witnesses lie in the gadget. The proved transfer floor is therefore five isolated-component witnesses, including at least four of the six B-labelled witnesses.
+The graph-theoretic witness family does not automatically consist of seven isolated K5 components. However, the earlier five-component transfer floor can be strengthened to six.
 
-The common exact size-five blocker set across the seven outer blocks has size at least \(P_C-45\). With only five component witnesses guaranteed, inclusion-exclusion yields
+The exact-129 factorization has ten isolated K5 components avoiding the three-point set \(S\), plus an 11-point gadget \(U_C\). Hence \(S\subseteq U_C\) and \(|U_C\setminus S|=8\). Every selected witness \(\{\lambda\}\cup Q\) avoids \(S\), with \(Q\subseteq H\setminus S\) a four-set and \(\lambda\in B\cup\{p\}\) outside \(H\). If two selected witnesses lay in \(U_C\), their disjoint four-sets would occupy all eight points of \(U_C\setminus S\), leaving no room for the first witness's shell label. Thus at most one selected witness lies in the gadget and at least six of seven are distinct isolated-component witnesses. At least five of the six B-labelled witnesses are isolated components.
+
+The common exact size-five blocker set across the seven outer blocks has size at least \(P_C-45\). Inclusion-exclusion across the ten isolated components now gives
 \[
-|\mathcal W_C\cap\mathcal K_C^*|\ge\max(0,P_C-50).
+|\mathcal W_C\cap\mathcal K_C^*|
+\ge\max(0,6+(P_C-45)-10)
+=\max(0,P_C-49).
 \]
-Thus the current label-aware extension threshold is \(P_C\ge51\), not \(P_C\ge49\). A seven-witness-to-seven-component transfer theorem remains OPEN. This is still a structural bound, not a contradiction, and aggregate budgets do not force any exact color to \(P_C\ge51\).
+Therefore \(P_C\ge50\) guarantees at least one selected witness component extends by exact blocker rows from all seven outer blocks to a monochromatic \(K_{12}\); \(P_C=51\) guarantees at least two. This is a structural packing constraint, not a terminal contradiction, because a monochromatic \(K_{12}\) is allowed.
 
 ## 2026-10-25 sibling refresh correction
 
@@ -293,12 +297,12 @@ The local \(P_C=49,r_i(C)=6\) result in Section 12 of OUTER_EXCEPTIONAL_ROW_COUP
 The in-session replay of the revised finite predicates passed 2,132 Case-A/B configurations and 512,768 exact-profile Case-C configurations, 514,900 total. This is a conditional local theorem under the exact-129 factor, gadget normal form, and row contracts. It **does not** prove \(P_C\le49\), does not close the aggregate eleven-color ledger, and does not solve EG617(r=12).
 
 
-## 2026-10-25 label-transfer audit — seven graph witnesses are not seven components
+## 2026-10-25 label-transfer audit — S-avoidance strengthens the component floor
 
-A separate audit of LABELLED_WITNESS_CAPACITY_THEOREM.md found that the graph-theoretic seven-witness lemma must not be conflated with the ten-component exact-129 factorization. A labelled witness \(\{\lambda\}\cup Q\) is a C-colored \(K_5\), so it lies either in one isolated \(K_5\) component or wholly in the 11-point gadget \(U_C\). In the latter case \(Q\subseteq U_C\). Since the seven selected \(Q\)-sets are pairwise disjoint and \(|U_C|=11\), at most two witnesses can lie in the gadget. Therefore the currently proved transfer floor is **at least five isolated-component witnesses per exact color**, including at least four of the six B-labelled witnesses—not seven.
+The previous generic estimate \(\lfloor 11/4\rfloor=2\) gadget witnesses ignored that all selected witnesses avoid \(S\). The ten isolated components avoid \(S\), so all three vertices of \(S\) belong to \(U_C\). Thus \(|U_C\setminus S|=8\). Two gadget witnesses would have disjoint four-sets filling these eight vertices, while the shell label of either witness is an additional non-S gadget vertex outside \(H\), impossible. At most one selected witness can lie in the gadget.
 
-Accordingly, the selected-witness extension threshold is corrected: with \(|\mathcal W_C|\ge5\) and \(|\mathcal K_C^*|\ge P_C-45\), only
+Corrected transfer floor: at least six of the seven selected witness K5s are isolated components; at least five of the six B-labelled witnesses are isolated components. With \(|\mathcal K_C^*|\ge P_C-45\) among ten components,
 \[
-|\mathcal W_C\cap\mathcal K_C^*|\ge\max(0,P_C-50)
+|\mathcal W_C\cap\mathcal K_C^*|\ge\max(0,P_C-49).
 \]
-is guaranteed. A component-extended witness \(K_{12}\) is forced by this intersection argument only for \(P_C\ge51\), not \(P_C\ge49\). A stronger seven-witness-to-seven-component label-transfer theorem remains open. This respects the rule that arbitrary graph-theoretic common witnesses do not inherit exact-129 component labels automatically.
+Thus the selected-witness extension threshold improves from \(P_C\ge51\) to \(P_C\ge50\). This remains a labelled packing constraint only; it does not itself contradict the K145 coloring or close EG617(r=12).
