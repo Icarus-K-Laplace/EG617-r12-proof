@@ -35,7 +35,7 @@ If a vertex \(u\in U\) is not complete to any W-component, its non-neighbour set
 - if \(xy\) joins \(C_0\) to a \(K_5\), then \(d_H(u,W)\ge6\), with equality only when \(u\) is nonadjacent to every vertex in the other two \(K_5\)'s;
 - if \(xy\) joins two \(K_5\)'s, then \(d_H(u,W)\ge8\), with equality only when \(u\) is nonadjacent to every vertex in the other two components.
 
-For \(d\in D\), the same alternatives apply if \(d\) is not W-saturated. In the \(K_3\)-\(K_5\) placement, the exceptional degree \(d_H(d,W)=6\) forces \(5+\epsilon_d-t_d=6\), hence \(\epsilon_d=1,t_d=0\); this can occur for at most one \(d\). Every other \(d\) is W-saturated and satisfies \(t_d\le2+\epsilon_d\le2\). In the \(K_5\)-\(K_5\) placement, degree eight would require \(t_d=\epsilon_d-3<0\), impossible because \(\epsilon_d\le\epsilon_U=1\); hence every \(d\) is W-saturated and \(t_d\le2+\epsilon_d\le3\). In either placement, at most one \(D\)-vertex has \(t_d=3\), and every other \(D\)-vertex has \(t_d\le2\).
+For \(d\in D\), the same alternatives apply if \(d\) is not W-saturated. In the \(K_3\)-\(K_5\) placement, a nonsaturated \(d\) must have \(d_H(d,W)\ge6\), while \(d_H(d,W)=5+\epsilon_d-t_d\le6\); hence \(d_H(d,W)=6\), forcing \(\epsilon_d=1,t_d=0\). This can occur for at most one \(d\). Every W-saturated \(d\) satisfies \(t_d\le2+\epsilon_d\). In the \(K_5\)-\(K_5\) placement, a nonsaturated \(d\) would require \(d_H(d,W)\ge8\), but \(d_H(d,W)=5+\epsilon_d-t_d\le6\), impossible; hence every \(d\in D\) is W-saturated and \(t_d\le2+\epsilon_d\). In either placement, at most one \(D\)-vertex has \(t_d=3\), and every other \(D\)-vertex has \(t_d\le2\).
 
 ## 3. Every U-vertex is complete to a W-component
 
@@ -67,28 +67,21 @@ A nonsaturated \(u\in U\) would have \(d_H(u,W)=8\). But for a small-part vertex
 Thus every U-vertex is W-saturated in the \(K_5\)-\(K_5\) placement. In the \(K_3\)-\(K_5\) placement, the \(d_H(u,W)=6\) case is impossible and at most one \(d_H(u,W)=7\) exception can remain. Therefore at least 28 of the 29 vertices of \(U\) are W-saturated, so
 \[
 28\le\sum_{i=0}^3|S_i|. \tag{3}
-]
+\]
 
 ## 4. Component capacities
 
-For a \(K_5\) not incident to \(xy\), the preceding unsaturated-vertex bound gives \(|S_i|\le5+E_i\). For the \(K_5\) component incident to \(xy\), its endpoint \(y\) has U-degree \(7+\epsilon_y\). If a non-endpoint vertex were unsaturated, it would need excess three; then \(E_i=3,\epsilon_y=0\), and \(|S_i|\le d_H(y,U)=7=4+E_i\). Otherwise label all five vertices by their unique U-parts. No common label is possible by \(\omega(H)\le11\); the endpoint's extra-edge load is at most \(\epsilon_y\), and the other four loads sum to at most \(4+E_i-\epsilon_y\). Thus the incident K5 has
-\[
-|S_i|\le4+E_i. \tag{4}
-\]
-
-If the \(K_3\) component is incident to \(xy\), its endpoint has U-degree \(9+\epsilon_x\), hence \(|S_0|\le9+E_0\). If it is not incident to \(xy\), every triangle vertex has U-degree \(10+\epsilon_w\), giving \(|S_0|\le10+E_0\).
-
-If \(xy\) joins \(C_0\) to a \(K_5\), these bounds imply
+For a \(K_5\) not incident to \(xy\), the preceding unsaturated-vertex bound gives \(|S_i|\le5+E_i\). For the \(K_5\) component incident to \(xy\), its endpoint \(y\) has U-degree \(7+\epsilon_y\). If \(xy\) joins \(C_0\) to a \(K_5\), these bounds imply
 \[
 \sum_i|S_i|\le(9+E_0)+(4+E_1)+(5+E_2)+(5+E_3)
-=23+E_W=26<29.
+=23+E_W=26<28.
 \]
-If \(xy\) joins two \(K_5\)'s, they imply
+At least 28 vertices of \(U\) are W-saturated in this placement, so their membership in the \(S_i\)'s contradicts this bound. If \(xy\) joins two \(K_5\)'s, all 29 vertices are W-saturated and
 \[
 \sum_i|S_i|\le(10+E_0)+(4+E_1)+(4+E_2)+(5+E_3)
-=23+E_W=26<29.
+=23+E_W=26<29,
 \]
-Both contradict (3).
+again a contradiction.
 
 ## 5. Conclusion and scope
 
