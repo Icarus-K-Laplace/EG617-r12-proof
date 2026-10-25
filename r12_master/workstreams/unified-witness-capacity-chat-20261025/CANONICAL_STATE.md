@@ -9,16 +9,17 @@ Allowed directory: r12_master/workstreams/unified-witness-capacity-chat-20261025
 
 **EG617(r=12): OPEN / NOT_CERTIFIED.** This workstream has proved a reusable conditional labelled-incidence theorem and a finite omission-capacity refinement, but has not excluded the remaining E407/E408 terminal candidates.
 
-## Live source heads read before work
+## Latest sibling source heads re-read for this continuation
 
 - Emergency sprint: f4c3b06891d29238d4f9cca2588f442004b6dc97
-- Ultimate closure / E408 Q32 line: 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40
-- Zero-excess witness line: 07d19abfd6c1c749c7360526e4a04a3eb865fb2e
-- E407 Q32 terminal / Cell-B line: 3f42fcce5761ca2372140618adda56f95fcbe253
-- Witness-packing line (latest universal E408 Q33 S0>=12 theorem): f5d3daa07403877ede9885e1bd5c2f46b16d81da
-- Base master-closure head used to create this branch: e46da35aedce7bbaaf11756b50192bd157956239
+- E407 Q32 terminal: 4ac46745e862571e96cf488b67f6ce2d0ff99afe
+- E408 Q32 excess-six (285-edge core): a0ba6db26c7e8b00a4217dcbcbf298895dff93ce
+- E408 Q33 global compatibility: a8cf20bdb7d40458df456980c34c370244a838c3
+- Witness-packing: f5d3daa07403877ede9885e1bd5c2f46b16d81da
+- Zero-excess witness: 07d19abfd6c1c749c7360526e4a04a3eb865fb2e
+- Ultimate closure: 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40
 
-The source branches were read-only; no sibling path was edited.
+All sibling reads were read-only. The Q33 canonical state still contains an external-star inference that is invalid as stated; see the audit below. No sibling branch or directory was modified.
 
 ## Canonical mathematical results
 
