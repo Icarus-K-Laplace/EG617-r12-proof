@@ -135,7 +135,7 @@ In particular, \(\Delta(J)\le7\) and
 
 ## 7. Status and next exact target
 
-This is a **strict reduction**, not an exclusion. The saturated branch has been reduced to a single 15-vertex graph-realization problem. The next target is to prove that no triangle-free, non-bipartite, triangle-saturated 15-vertex graph with 49 edges admits the two orthogonal near-perfect matching decompositions above, or to classify such graphs and then impose the remaining shell/core constraints.
+This is a **strict reduction**, not an exclusion. The saturated branch has been reduced to a single 15-vertex graph-realization problem. That graph-only target is now superseded: DELTA14_SATURATED_LOCAL_MODEL.md explicitly realizes a triangle-free, non-bipartite, triangle-saturated 15-vertex graph with 49 edges and the required orthogonal matching decompositions. The next target is the full W/core/shell extension, not a contradiction from the 15-vertex graph alone.
 
 Dependencies and limitations:
 - The component-count step uses Didin's 2026 author-prepared preprint theorem, which remains an external, not independently audited dependency here.
