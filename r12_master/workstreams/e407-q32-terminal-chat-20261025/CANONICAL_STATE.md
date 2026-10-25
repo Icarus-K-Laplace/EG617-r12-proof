@@ -21,7 +21,7 @@ These are the latest heads observed in the repository at the time of this update
 - The exact ledger gives \(3\le\delta\le16\), \(\delta+\epsilon_U\le16\), and the sibling transversal/excess lemma gives \(\epsilon_U+2\delta\ge9\).
 - The \(\delta=16\) four-partite branch is **EXCLUDED**. The 4+1 and 3+2 endpoint splits violate the excess budget; the 5+0 split forces its endpoint \(K_4\) to be complete to the 8-part, creating a forbidden \(K_{12}\). See FOUR_PARTITE_TERMINAL.md and DELTA16_K12_CLIQUE_OBSTRUCTION.md for the standalone one-exception proof.
 - The \(\delta=15\) four-partite branch is **EXCLUDED** in DELTA15_FOUR_PARTITE_TERMINAL.md: after eliminating three W-profiles, the last \(K_3\cup K_5^3\) profile forces \(k_A=k_B=k_C=5\), so any cross-edge endpoint has a forbidden \(K_{12}\) neighbourhood.
-- The \(\delta=14\) non-four-partite augmentable-edge branch is **excluded**. For the explicit C5-blow-up local candidate only, DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md and DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md exclude every \(\epsilon_U\in\{0,1,2\}\) full-core extension. The general saturated branch remains OPEN because the local reduction does not force every admissible J to be this blow-up.
+- The \(\delta=14\) non-four-partite augmentable-edge branch is **excluded**. The saturated branch is now **PROVED_CONDITIONAL**: DELTA14_SATURATED_KERNEL_CLASSIFICATION.md proves every admissible 15-vertex kernel J is the explicit \((1,2,5,5,2)\) C5 blow-up, and DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md excludes every full-core extension for \(\epsilon_U\in\{0,1,2\}\). This relies on the retained alpha-critical kernel reduction, including the unaudited Didin-preprint component-count dependency.
 - The \(\delta=15\) non-four-partite branch is **excluded** under the retained core/witness contract: Kang–Pikhurko equality reduces it to a balanced \((7,7,7,7)\) base, and the exceptional vertices \(x,y\) have incompatible required degrees into \(W\). The full reduction and contradiction are in DELTA15_SECOND_TURAN_PACKING.md.
 - The final \(\delta=15\) contradiction compares \(d_H(x,W)=a-1+\epsilon_x\) and \(d_H(y,W)=6-a+\epsilon_y\). Whole-part saturation in \(W\) forces incompatible lower bounds on \(a\), for both \(\epsilon_U=0\) and \(\epsilon_U=1\).
 - In that case, \(U\)-part sizes are \(7,7,7,8\), \(H[W]=K_5\cup K_5\cup K_4\cup K_4\), and the five cross edges in \(H[U]\) form a matching between the 8-part and the three 7-parts.
@@ -39,7 +39,7 @@ These are the latest heads observed in the repository at the time of this update
 | \(\delta=15\) four-partite | EXCLUDED by W-profile saturation and forbidden \(K_{12}\) |
 | \(\delta=15\) non-four-partite | EXCLUDED under KP equality + core-to-\(W\) degree contradiction |
 | \(\delta=14\) four-partite | \(\epsilon_U=0,1,2\): all W profiles excluded; \(\epsilon_U=1\) exhaustiveness uses Brouwer, \(\epsilon_U=2\) is Turán equality |
-| \(\delta=14\) non-four-partite, saturated \(L\) | OPEN generally; the explicit C5-blow-up local candidate has no full-core extension for any \(\epsilon_U\in\{0,1,2\}\) |
+| \(\delta=14\) non-four-partite, saturated \(L\) | PROVED_CONDITIONAL excluded: every admissible J is the C5 blow-up, and its full-core extension is impossible |
 | \(\delta\le13\) non-four-partite | OPEN |
 | E407 Q32 overall | OPEN / NOT_CERTIFIED |
 | EG617(r=12) | OPEN / NOT_CERTIFIED |
@@ -219,3 +219,15 @@ The verifier checks W-profile arithmetic, transversal forbidden fractions, and t
 Added DELTA14_C5_BLOWUP_PROFILE_CLASSIFICATION.md and verify_c5_blowup_profile.py. Independent exact enumeration passed: seven dihedral classes of positive five-part C5 blow-ups have 15 vertices and 49 edges, but only one satisfies the witness-forced maximum-degree condition Delta(J)<=7, namely (1,2,5,5,2), equivalent to (5,5,2,1,2). The explicit candidate is already excluded from all full-core extensions by Round 20.
 
 This closes the C5-blow-up subfamily only. It does not prove that every admissible saturated kernel J is a C5 blow-up. The remaining general terminal consists of potential non-C5-blow-up triangle-free, non-bipartite, triangle-saturated 15-vertex, 49-edge graphs compatible with the two orthogonal near-perfect matching decompositions. E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+## Round 22 — general \(\delta=14\) saturated-kernel classification
+
+Added DELTA14_SATURATED_KERNEL_CLASSIFICATION.md and verify_delta14_saturated_kernel_classification.py. The finite arithmetic verifier passed with the unique solution \(d=4\), a \(7+7\) bipartition of \(J-v\), and exactly a missing \(K_{2,2}\); this reconstructs the C5 blow-up \((1,2,5,5,2)\).
+
+The argument is now general within the retained kernel contract:
+1. The AES equality case forces \(\delta(J)\le5\), since otherwise a non-bipartite triangle-free 15-vertex graph with minimum degree at least six would be \(C_5(3)\), with only 45 edges.
+2. Brouwer/Kang–Pikhurko gives at most 43 edges for a non-bipartite triangle-free 14-vertex graph. Thus deleting a degree-\(d\le5\) vertex leaves a bipartite graph.
+3. Saturation forces the missing cross-edges of \(J-v\) to be exactly \(K_{a,b}\), where \(a+b=d\). The maximum-degree bound \(\Delta(J)\le7\) forces the bipartition to be \(7+7\), so \(ab=d=a+b\), giving \(a=b=2,d=4\).
+
+Combining with the already verified candidate-specific extension exclusion closes the **general \(\delta=14\), non-four-partite, \(K_5\)-saturated terminal conditionally**. The condition is essential: the upstream component-count reduction still depends on Didin's 2026 preprint theorem, not independently audited here. The \(\delta\le13\) cases, five shell templates A–E, E407 Q32 overall, and the \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
