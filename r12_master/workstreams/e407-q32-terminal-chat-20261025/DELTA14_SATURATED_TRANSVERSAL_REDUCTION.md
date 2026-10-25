@@ -79,8 +79,8 @@ A second consequence will be used below: if all four parts have size at least fo
 
 If \(\epsilon_U=0\), then \(\epsilon_{d_0}=0\), and (1) gives \(|N_W(d_0)|=2\). By the independent-transversal lemma, there exists an independent four-set \(T\subseteq W\setminus N_W(d_0)\). Since \(T\) is independent and \(d_0\) is anticomplete to it, \(T\cup\{d_0\}\) is an independent five-set in \(H\), contradicting \(\alpha(H)\le4\).
 
-Therefore:
-\[
-\boxed{\text{For this **explicit C5-blow-up local candidate**, no full-core extension exists with \(\epsilon_U=0\); if \(\epsilon_U=1\) or \(2\), the W-side must have one of the two exact profiles above. This does **not** exclude the general saturated non-four-partite branch, because other admissible graphs \(J\) have not been classified or ruled out. It also does not close any of the five shell templates or prove EG617(\(r=12\)).
+Therefore, the explicit candidate has no extension when \\(\\epsilon_U=0\\).
 
-The result is conditional on the retained local-model reduction and Brouwer's second-Turán theorem. The theorem does not claim that either residual terminal is realizable.
+The \\(\\epsilon_U=1\\) and \\(\\epsilon_U=2\\) residual W profiles are now excluded for this candidate by DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md. Combining the two files, the explicit \\((5,5,2,1,2)\\) blow-up candidate has no full 47-core extension for any \\(\\epsilon_U\\in\\{0,1,2\\}\\).
+
+This is **candidate-specific only**. The saturated-branch reduction does not prove that every admissible 15-vertex graph \\(J\\) is this blow-up. Other admissible \\(J\\)'s, the \\(\\delta\\le13\\) cases, all five shell templates, and the original \\(K_{145}\\)-to-T61 bridge remain OPEN / NOT_CERTIFIED. The result remains conditional on the retained core contracts and Brouwer's second-Turán theorem.
