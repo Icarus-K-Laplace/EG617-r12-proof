@@ -166,3 +166,28 @@ where \(m_{ij}\) is the number of missing component diagonals. Hence \(m_{ij}\le
 **Corollary 7.2.** Every pair of blocks with \(r_i(C),r_j(C)\le5\) has at least nine C-edges joining same-label component representatives. If \(r_i(C)+r_j(C)\le6\), the sharper sibling theorem gives all ten. If exactly one diagonal is missing and \(r_i(C)+r_j(C)=7\), the five extra-incidence units are fully exhausted by covering a second K5 component; no extra incidence can enter the gadget.
 
 This is a labelled near-matching statement, not a claim that the entire block-pair graph is a matching. Cross-label edges and edges incident to exceptional rows remain possible and must be charged separately in \(d_{ij}(C)\).
+
+
+## 8. A missing component diagonal must spend a block-pair duplicate
+
+**Theorem 8.1 (label mismatch is charged to \(d_{ij}\)).** Under the hypotheses of Theorem 7.1,
+\[
+\boxed{m_{ij}(C)\le d_{ij}(C).}
+\]
+Consequently, for \(\mathcal I_C=\{i:r_i(C)\le5\}\),
+\[
+\boxed{
+\sum_{\{i,j\}\subseteq\mathcal I_C}m_{ij}(C)
+\le
+\sum_{\{i,j\}\subseteq\mathcal I_C}d_{ij}(C)
+\le P_C.
+}
+\]
+
+**Proof.** Theorem 7.1 gives \(m_{ij}\in\{0,1\}\). It remains to show that \(m_{ij}=1\) forces \(d_{ij}\ge1\). Suppose instead \(m_{ij}=1\) and \(d_{ij}=0\). Then \(e_C(B_i,B_j)=12\); since every one of the 12 vertices on each side has C-degree at least one into the other block, the C-bipartite graph between the blocks is a perfect matching.
+
+Nine component diagonals are present. The remaining three left rows and three right rows consist of the two exceptional rows and the unmatched component representative on each side. Since the missing same-label pair is not an edge, the perfect matching must pair each unmatched component representative to an exceptional row on the opposite side, and pair the two remaining exceptional rows to each other. Let \(x\) be the exceptional row on the left paired to the unmatched component row on the right, and let \(y,z\) be the two exceptional rows on the right. Then \(x,y,z\) are pairwise C-nonadjacent: \(y,z\) lie in the same target block, and the perfect matching gives x no edge to either of them.
+
+The missing diagonal already consumes at least five of the combined extra-incidence budget \(r_i+r_j-2\le8\). At most three extra incidences remain across all other rows in the two blocks. Since an exceptional row's baseline neighborhood lies in \(U_C\), the union of \(N_C(x)\), \(N_C(y)\), and \(N_C(z)\) cannot cover an entire isolated K5 component: covering one would require five component-vertex incidences, but at most three remain. Choose one vertex outside this union from each of the ten isolated K5 components. Those ten vertices are pairwise C-nonadjacent and anticomplete to \(x,y,z\), producing a C-independent 13-set, contradiction. Thus \(d_{ij}\ge1\) whenever \(m_{ij}=1\), proving the claim. \(\square\)
+
+This is the desired edge-ownership link: every missing same-component label alignment among low-budget blocks is paid for by at least one unit of the exact block-pair duplicate ledger. It does not charge a missing diagonal twice, and it does not claim that every duplicate edge creates a missing diagonal.
