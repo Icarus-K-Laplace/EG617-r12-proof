@@ -348,42 +348,50 @@ where \(r_i^W(C)\in\{0,1\}\) records whether the unique repeated-C vertex in blo
 This links the exact-129 gadget clique-pair choice to the global duplicate ownership ledger. It is not a contradiction by itself; across seven blocks, the repeated vertices can still be distributed between W and O unless a further witness constraint rules out the aggregate pattern.
 
 
-## 12. The \(P_C=49,\ r_i(C)=6\) corner: corrected external-star contradiction
+## 12. The \(P_C=49,\ r_i(C)=6\) corner: exact double-star audit
 
-### Lemma 12.1 (the correct monochromatic-\(K_{12}\) external-star constraint)
+### Lemma 12.1 (external-star capacity)
 
-Let \(Q\) be a \(C\)-colored \(K_{12}\) in a 12-coloring satisfying the no-missing-color condition on every 13-set, and let \(z\notin Q\). Since \(Q\) is independent in each color \(D\ne C\), the 12 edges from \(z\) to \(Q\) must contain every one of the eleven colors \(D\ne C\). Consequently
+Let \(Q\) be a \(C\)-colored \(K_{12}\) in a 12-coloring with no independent 13-set in any color, and let \(z\notin Q\). Every one of the eleven colors \(D\ne C\) must occur on the 12 edges from \(z\) to \(Q\); otherwise \(Q\cup\{z\}\) is a \(D\)-independent 13-set. Hence
 \[
 d_C(z,Q)\le1.
 \]
-If \(d_C(z,Q)=1\), then the other eleven edges contain the eleven colors \(D\ne C\) exactly once each, so the star \(zQ\) is rainbow in all twelve colors. Thus an external \(C\)-edge alone is **not** a contradiction; a contradiction follows if any outside vertex has at least two \(C\)-edges into \(Q\).
+A single external \(C\)-edge is allowed; the contradiction is \(d_C(z,Q)\ge2\). This is the correct star-capacity statement and does not use the invalid stronger assertion that every monochromatic \(K_{12}\) is \(C\)-isolated.
 
-This corrects the tempting but invalid inference that every monochromatic \(K_{12}\) must be \(C\)-isolated. Counting the eleven other colors in twelve edges does not rule out one \(C\)-edge.
+### Theorem 12.2 (conditional exclusion of \(P_C=49,\ r_i(C)=6\))
 
-### Theorem 12.2 (finite gadget selection forces a forbidden double-\(C\) external star)
+Assume the exact-129 factor theorem, the seven-block row-incidence contract, the exact 11-vertex gadget normal form, and the row classifications for \(r=1,2,6\). Then no exact-129 color \(C\) can satisfy
+\[
+P_C=49,\qquad r_i(C)=6.
+\]
 
-Assume the retained exact-129 factor theorem, the seven-block row contract, the exact gadget normal form in the E408 Q33 sibling ledger, and the isolated-K5 component/blocker compatibility facts. Then no exact-129 color \(C\) can satisfy \(P_C=49\) and \(r_i(C)=6\), **provided the finite verifier below is replayed against the exact gadget and row contracts**.
+**Proof.** Since \(P_C+R_C=62\), \(R_C=13\). The six other positive row budgets sum to seven, so there are five \(r_j=1\) blocks and one \(r_k=2\) block. Each \(r=1\) block supplies a pair of disjoint \(K_5/K_5\) gadget complements. The \(r=2\) block supplies a disjoint \(K_5/K_5\) or \(K_5/K_4\) complement pair.
 
-**Proof.** Since \(P_C+R_C=62\), \(R_C=13\). The other six positive block budgets are five \(r_j=1\) blocks and one \(r_k=2\) block. For each \(r_j=1\) block, the two no-component row complements in \(U_C\) form a disjoint \(K_5,K_5\) pair. For the \(r_k=2\) block, the allowed complement profile is \((5,5)\) or \((5,4)\), with disjoint cliques. For the \(r_i=6\) block:
-- Cases A/B have a no-component row with gadget complement \(H\) a \(K_5\);
-- Case C has two no-component rows with disjoint clique complements \(H_1,H_2\), each of size at most five and with \(|H_1|+|H_2|\ge5\).
+The \(r_i=6\) row theorem gives two types of high block:
+- In Cases A/B, a gadget-only row has a \(K_5\) complement \(H\). In the \(m=10\) subcase of Case B, the five partial component incidences are distributed across the two gadget-only rows, so one of them has at most two; the finite check below verifies the alignment for every possible \(K_5\) complement. Cases A and B with no partial component incidences are included as well.
+- In Case C, the two gadget-only rows have disjoint clique complements \(H_1,H_2\) with one of the exact profiles
+\[
+(5,5),(5,4),(5,3),(4,4),(5,2),(4,3),(5,1),(4,2),(3,3).
+\]
+Writing \(d_K\) for their total partial component incidence and \(d_U\) for repeated gadget incidence, the row identity gives \(d_K+d_U=6\), while \(d_U\ge a=11-|H_1|-|H_2|\). Therefore
+\[
+d_K\le |H_1|+|H_2|-5.
+\]
+For profiles \((5,5)\) and \((5,4)\), \(d_K\le5\) or \(4\), so one of the two high rows has at most two partial component incidences. The checker verifies alignment for each \(H_1\) and \(H_2\) separately. For every other profile \(d_K\le3\), so either high row has at most three partial component incidences and is safe for the construction below.
 
-The strengthened exact checker, **verify_p49_r6_gadget_exclusion.py**, enumerates all four gadget normal forms and every permitted complement pattern. It chooses a \(K_5\) core \(D\), one high-row complement \(H\), one \(r=2\) complement \(Q'\), and compatible \(r=1\) complements \(L_j\). The construction ensures:
-- \(D\) is disjoint from every chosen omitted set, so all seven outer representatives are adjacent in color \(C\) to \(D\);
-- the omitted sets \(H,Q',L_1,\ldots,L_5\) pairwise intersect, so the corresponding outer representatives are pairwise \(C\)-adjacent by the 13-independent-set blocker argument;
-- there is an external gadget vertex \(z\in U_C\setminus(D\cup H)\) that is \(C\)-adjacent to the high-block representative and also \(C\)-adjacent to at least one of \(D\), the \(r=2\) representative, or an \(r=1\) representative.
+The exact verifier, verify_p49_r6_gadget_exclusion.py, checks the finite gadget selection. For the selected high complement \(H\), the \(r=2\) pair \(Q_1,Q_2\), and every nonempty set of \(r=1\) complement-pair types that can occur among the five low-budget blocks, it finds a \(K_5\) core \(D\), a selected \(Q\in\{Q_1,Q_2\}\), and a compatible omitted \(K_5\) set \(L\) for every low-pair type such that:
+1. \(D\) is disjoint from \(H,Q,L\);
+2. \(H\cap Q\ne\varnothing\) and \(H\cap L\ne\varnothing\);
+3. some \(z\in U_C\setminus(D\cup H)\) is adjacent in color \(C\) to at least one vertex of \(D\), or is outside \(Q\), or is outside one selected \(L\).
 
-The last condition is the essential correction. It gives \(d_C(z,Q)\ge2\) for the constructed \(C\)-colored \(K_{12}\), contradicting Lemma 12.1. The selected rows cannot collectively cover a full isolated \(K_5\) component: the \(r=1\) rows have no component vertices; the high row in Case C lies in \(U_C\); and in Cases A/B the row can be chosen to contain at most two vertices of the sole partially represented component in the exceptional \(m=10\) subcase, while the \(r=2\) row has at most one extra component-vertex incidence. Therefore any pair of selected rows whose omitted sets intersect leaves a vertex from every isolated component available for the blocker argument. \(\square\)
+The third condition gives \(z\) a \(C\)-edge to the high-block representative and at least one additional \(C\)-edge into the proposed clique. The \(r=1\) selected rows have no component-vertex incidences. The \(r=2\) selected row has at most one partial component incidence. The high row is chosen with at most two partial component incidences in the risky profiles, and at most three in the other profiles. Thus no pair of selected row-neighborhoods can cover all five vertices of an isolated \(K_5\) component.
 
-### Finite-verifier record
+All selected omitted sets lie in \(U_C\setminus D\). Their intersections are forced by conditions 2–3 and the fact that \(Q,L\) have size four or five inside this six-set. Consequently, for any two selected outer rows, a gadget vertex is missed by both. Since their neighborhoods do not cover a full isolated \(K_5\) component, one can choose one vertex from each of the ten isolated components and this common missed gadget vertex. If the two outer rows were not \(C\)-adjacent, these eleven residual vertices plus the two rows would be a \(C\)-independent 13-set. Hence all seven selected outer rows are pairwise \(C\)-adjacent. They also all see \(D\), so \(D\) and the seven rows form a \(C\)-colored \(K_{12}\).
 
-The checker covers every nonempty subset of possible \(r=1\) complement-pair types (a subset records exactly which pair types occur among the five \(r=1\) blocks), every \(r=2\) pair of profile \((5,5)\) or \((5,4)\), every \(r=6\) Case-A/B complement, and every admissible disjoint Case-C complement pair. It uses exact vertex sets and no third-party libraries. The local replay of the strengthened version returned:
+The verifier supplies an external \(z\) with at least two \(C\)-edges into this \(K_{12}\), contradicting Lemma 12.1. \(\square\)
 
-| \(b\) | \(K_5\) cliques | \(K_4\) cliques | \(r=1\) pairs | Case-C pairs | \(r=2\) pairs | Case A/B checks | Case C checks |
-|---:|---:|---:|---:|---:|---:|---:|---:|
-| 1 | 4 | 18 | 3 | 1,578 | 31 | 868 | 342,426 |
-| 2 | 3 | 15 | 2 | 1,387 | 22 | 198 | 91,542 |
-| 3 | 3 | 15 | 2 | 1,387 | 22 | 198 | 91,542 |
-| 4 | 4 | 18 | 3 | 1,578 | 31 | 868 | 342,426 |
+### Finite-verifier record and scope
 
-All 870,068 finite configurations passed: 2,132 Case-A/B checks and 867,936 Case-C checks. This is conditional on the upstream gadget/row contracts and the soundness of the exact verifier; it does not close the original \(K_{145}\) theorem or independently certify the T61 reduction.
+The revised exact checker covers all four gadget normal forms, all disjoint \(r=1\) \(K_5/K_5\) pairs, all \(r=2\) \(K_5/K_5\) and \(K_5/K_4\) pairs, every nonempty subset of low-block pair types, and the exact Case-C complement-size profiles. The in-session replay of these predicates passed 2,132 Case-A/B configurations and 412,768 exact-profile Case-C configurations (414,900 total). For risky Case-C profiles \((5,5)\) and \((5,4)\), it checks both high-row choices; for the other profiles, it checks the existence of a safe high-row choice. No single-external-edge contradiction is used.
+
+This theorem is conditional on the retained reduction, exact-129 factor theorem, gadget normal form, and row-incidence classifications. It excludes the \(P_C=49,r_i=6\) corner under those contracts; it does not establish \(P_C\le49\), close the aggregate eleven-color ledger, or prove the original \(K_{145}\) theorem.
