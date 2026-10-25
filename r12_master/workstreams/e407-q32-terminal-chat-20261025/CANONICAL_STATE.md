@@ -21,7 +21,7 @@ These are the latest heads observed in the repository at the time of this update
 - The exact ledger gives \(3\le\delta\le16\), \(\delta+\epsilon_U\le16\), and the sibling transversal/excess lemma gives \(\epsilon_U+2\delta\ge9\).
 - The \(\delta=16\) four-partite branch is **EXCLUDED**. The 4+1 and 3+2 endpoint splits violate the excess budget; the 5+0 split forces its endpoint \(K_4\) to be complete to the 8-part, creating a forbidden \(K_{12}\). See FOUR_PARTITE_TERMINAL.md and DELTA16_K12_CLIQUE_OBSTRUCTION.md for the standalone one-exception proof.
 - The \(\delta=15\) four-partite branch is **EXCLUDED** in DELTA15_FOUR_PARTITE_TERMINAL.md: after eliminating three W-profiles, the last \(K_3\cup K_5^3\) profile forces \(k_A=k_B=k_C=5\), so any cross-edge endpoint has a forbidden \(K_{12}\) neighbourhood.
-- The \(\delta=14\) non-four-partite augmentable-edge branch is **excluded**. For the explicit C5-blow-up local candidate only, DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md excludes \(\epsilon_U=0\) and reduces \(\epsilon_U=1,2\) to two exact W-extension terminals. The general saturated branch remains OPEN because the local reduction does not force every admissible J to be this blow-up.
+- The \(\delta=14\) non-four-partite augmentable-edge branch is **excluded**. For the explicit C5-blow-up local candidate only, DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md and DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md exclude every \(\epsilon_U\in\{0,1,2\}\) full-core extension. The general saturated branch remains OPEN because the local reduction does not force every admissible J to be this blow-up.
 - The \(\delta=15\) non-four-partite branch is **excluded** under the retained core/witness contract: Kang–Pikhurko equality reduces it to a balanced \((7,7,7,7)\) base, and the exceptional vertices \(x,y\) have incompatible required degrees into \(W\). The full reduction and contradiction are in DELTA15_SECOND_TURAN_PACKING.md.
 - The final \(\delta=15\) contradiction compares \(d_H(x,W)=a-1+\epsilon_x\) and \(d_H(y,W)=6-a+\epsilon_y\). Whole-part saturation in \(W\) forces incompatible lower bounds on \(a\), for both \(\epsilon_U=0\) and \(\epsilon_U=1\).
 - In that case, \(U\)-part sizes are \(7,7,7,8\), \(H[W]=K_5\cup K_5\cup K_4\cup K_4\), and the five cross edges in \(H[U]\) form a matching between the 8-part and the three 7-parts.
@@ -39,7 +39,7 @@ These are the latest heads observed in the repository at the time of this update
 | \(\delta=15\) four-partite | EXCLUDED by W-profile saturation and forbidden \(K_{12}\) |
 | \(\delta=15\) non-four-partite | EXCLUDED under KP equality + core-to-\(W\) degree contradiction |
 | \(\delta=14\) four-partite | \(\epsilon_U=0,1,2\): all W profiles excluded; \(\epsilon_U=1\) exhaustiveness uses Brouwer, \(\epsilon_U=2\) is Turán equality |
-| \(\delta=14\) non-four-partite, saturated \(L\) | OPEN generally; for the explicit C5-blow-up local candidate, \(\epsilon_U=0\) is excluded and \(\epsilon_U=1,2\) reduce to two exact W terminals |
+| \(\delta=14\) non-four-partite, saturated \(L\) | OPEN generally; the explicit C5-blow-up local candidate has no full-core extension for any \(\epsilon_U\in\{0,1,2\}\) |
 | \(\delta\le13\) non-four-partite | OPEN |
 | E407 Q32 overall | OPEN / NOT_CERTIFIED |
 | EG617(r=12) | OPEN / NOT_CERTIFIED |
@@ -204,11 +204,11 @@ The saturated-branch reduction has **not** shown that every allowed \(J\) is thi
 
 ## Round 20 — explicit saturated local candidate has no full-core extension
 
-Added DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md and verify_delta14_saturated_candidate_extension_exclusion.py. Independent arithmetic replay returned `DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION_ARITHMETIC_OK`.
+Added DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md and verify_delta14_saturated_candidate_extension_exclusion.py. Independent arithmetic replay returned \`DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION_ARITHMETIC_OK\`.
 
 For the explicit (5,5,2,1,2) blow-up local model, the remaining W-extension terminals are now excluded:
-- epsilon_U=1: the K3 + 3K5 and 3K4 + K6 profiles violate the omega(H)<=11 common-neighbour capacity (maximum cover 26<29); the (4,4,5,5) plus one-cross-edge profile admits an independent transversal avoiding N_W(d0), giving an independent 5-set.
-- epsilon_U=2: d0 must be complete to a K4. Pairwise independent-set constraints force the A- and B-assignments to distinct W parts, with one side filling the other K4. The four C/E vertices then fill the d0-side K4 up to five common neighbours, leaving at most seven total slots for the ten X/Y vertices, contradiction.
-- Together with the epsilon_U=0 independent-transversal exclusion, the explicit candidate has no full 47-core extension for any epsilon_U in {0,1,2}.
+- \(\epsilon_U=1\): for \(K_3\dot\cup3K_5\), assignment-to-component plus the independent triple \(d_0,a,b\) shows A/B vertices cannot be assigned to the \(K_3\), and cannot share a \(K_5\); each side then needs two disjoint \(K_5\) parts although only three exist. The \(3K_4\dot\cup K_6\) profile is impossible because \(d_0\) has at most three W-neighbours while every part has size at least four. The \((4,4,5,5)\) plus one-cross-edge profile admits an independent transversal avoiding \(N_W(d_0)\).
+- \(\epsilon_U=2\): \(d_0\) must be complete to one \(K_4\). Independent-set constraints force the A/B assignments to disjoint W parts; one side fills the other \(K_4\), and the other splits across the two \(K_5\)'s. The four C/E vertices must be complete to \(d_0\)'s \(K_4\). Every vertex of the two \(K_5\)'s must be complete to A or B; at least four in each must be A-complete. Degree/excess counting then forces at least 12 W-excess units, exceeding the available two.
+- Together with the \(\epsilon_U=0\) independent-transversal exclusion, the explicit candidate has no full 47-core extension for any \(\epsilon_U\in\{0,1,2\}\).
 
 The verifier checks W-profile arithmetic, transversal forbidden fractions, and the 12 finite A/B assignment patterns. It does not machine-check the graph-theoretic independent-set arguments. This is not a universal closure: the 15-vertex saturated graph J has not been classified, and the alpha-critical reduction only gives necessary conditions for J. The general delta=14 saturated branch, delta<=13, the five shell templates, and the K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
