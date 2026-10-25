@@ -469,6 +469,17 @@ def check_cell_a_cross_edge_defect_identity() -> None:
         gadget_O_upper = 29 - p["gadget_edges_W"] - p["gadget_WO_min"]
         assert p["component_O_edges"] + gadget_O_upper == 48
         assert 42 <= p["component_O_edges"] + gadget_O_upper <= 48
+    # In Type A with t_C=0, U has 16 W-O edges and its degree
+    # multiset is 5^9,(5+a),(8-a), for a=0,1,2,3.
+    for a in range(4):
+        gadget_degrees = [5] * 9 + [5 + a, 8 - a]
+        assert len(gadget_degrees) == 11
+        assert min(gadget_degrees) == 5
+        assert sum(gadget_degrees) == 58
+        assert sorted(gadget_degrees) in (
+            [5]*10 + [8],
+            [5]*9 + [6,7],
+        )
     # At t_C=0, the equality partition of O has ten triangles and two K4s.
     assert 10 * comb(3, 2) + 2 * comb(4, 2) == 42
     assert 10 * 3 + 2 * 4 == 38
@@ -515,7 +526,7 @@ def main() -> None:
     print("Missing-diagonal duplicate-charge boundary arithmetic verified.")
     print("Aggregate scalar relaxation verified; it is not a graph-level counterexample.")
     print("Duplicate-budget K12 packing and labelled-witness extension bounds verified.")
-    print("Cell-A exact-color intersection profiles and global cross-edge defect identity verified.")
+    print("Cell-A exact-color intersection profiles, Type-A zero-defect gadget, and global cross-edge defect identity verified.")
     print("Scope: exact integer/degree ledgers only; no graph-realization certificate.")
 
 
