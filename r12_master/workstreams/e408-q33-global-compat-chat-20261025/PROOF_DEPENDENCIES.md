@@ -212,3 +212,20 @@ The common-star DP fails for \((4,4,1^5)\) in gadget forms \(b=1,4\) and for \((
 The first two require an alignment method without a common point; the next two require incidence-sensitive row selection; the last two require separate high-budget case analysis.
 
 **Scope firewall:** this is a partial exclusion of five integer profiles, not a proof that \(P_C\ne49\). The historical P49_BOUNDARY_EXCLUSION.md remains NOT CERTIFIED as a whole. No conclusion \(P_C\le48\) is authorized; E408 Q33 and EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.
+
+
+## 14. Incidence-sensitive closure of \((5,2^2,1^4)\) and \((5,3,1^5)\) at \(P_C=49\)
+
+The theorem note R12_P49_INCIDENCE_SENSITIVE_SCREEN.md and verifier verify_p49_incidence_sensitive.py refine the common-star screen by retaining the partial component-incidence count \(p\) attached to each of the two no-component rows in a block. The exact row identity gives \(p_H+p_J\le r-a\), where \(a=11-|H|-|J|\). The checker enumerates all nonnegative allocations within this bound, so it covers every actual row system under the registered row theorem.
+
+For profile \((5,2^2,1^4)\), the threshold mode \(p_5\le3,p_2\le1,p_1=0\) is sufficient. The verifier checks all four gadget normal forms, 503,748 transitions in total, with no empty common-star state.
+
+For profile \((5,3,1^5)\), the three modes \((p_5,p_3)\in(\le2,\le2),(\le3,\le1),(\le4,0)\), with \(p_1=0\), cover every incidence assignment satisfying \(p_5+p_3\le4\). The multi-mode verifier checks all four gadget forms, 1,417,758 transitions in total, and no reachable state makes all three mode intersections empty.
+
+In each profile a mode supplies a common \(D,w\) star with every selected pair's partial component-incidence sum at most four. The pairwise-blocker lemma makes the selected rows pairwise \(C\)-adjacent; the seven omission sets then force an outside vertex with at least two \(C\)-edges into the resulting \(K_{12}\). This excludes both profiles conditionally.
+
+The P49 boundary is now reduced to four profiles:
+\[
+(4,3,2,1^4),\ (4,4,1^5),\ (6,2,1^5),\ (7,1^6).
+\]
+This does not close \(P_C=49\), and no \(P_C\le48\) claim is authorized. E408 Q33 and EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.
