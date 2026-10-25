@@ -1,0 +1,60 @@
+# Unified witness-capacity termination closure
+
+Date: 2026-10-25  
+Status: **OPEN / NOT_CERTIFIED**. No complete E407 Q32, E408 Q33, or original EG617(r=12) contradiction is claimed.
+
+## 1. Conditional results established in this workstream
+
+1. **Zero-excess common witness (graph-theoretic only).** In a 284-edge, 47-vertex core with \(\alpha(H)\le4\), \(\delta(H)\ge12\), and total excess four, deleting all positive-excess vertices and then at most six more vertices leaves an independent four-set. For two regular shell rows, this yields a common independent four-set when the union of their zero-excess neighborhoods has size at most six. It does not assign an exact-129 color label to that four-set.
+2. **Exact-129 exceptional-row incidence.** Under the Type-I exact-129 factor theorem and seven-block equality ledger, every block has \(e_C(B_i,R)=61+r_i(C)\), and its row-neighborhood excess above the \(10\cdot5+2\cdot6=62\) baseline is \(r_i(C)-1\).
+3. **Exceptional-row graph constraints.** For \(r_i(C)\le3\), the exceptional-row graph has independence number at most two. For any pair with \(r_i+r_j\le6\), all ten same-component diagonals are present.
+4. **Near-complete component matching.** For any exact-129 color and any pair \(r_i,r_j\le5\), at most one of ten same-component representative edges can be missing:
+   \[
+   m_{ij}(C)\le\left\lfloor\frac{r_i+r_j-2}{5}\right\rfloor\le1.
+   \]
+5. **Duplicate charging.** A missing same-component diagonal must consume at least one unit of the block-pair duplicate \(d_{ij}(C)\); hence \(m_{ij}(C)\le d_{ij}(C)\) and the sum of missing diagonal labels across low-budget pairs is at most \(P_C\).
+6. **Duplicate-budget-to-clique packing.** For every exact-129 color,
+   \[
+   \nu_{12}(C)\ge\max(0,P_C-45).
+   \]
+   In particular, \(P_C\ge51\) forces ten vertex-disjoint monochromatic \(K_{12}\) cliques; \(P_C=50\) forces at least eight; \(P_C=49\) forces at least four, with stronger profile-specific cases.
+
+All of these statements depend on the retained exact-129 factor/blocker theorem and outer seven-block equality contract. They do not apply to an arbitrary color graph without those hypotheses.
+
+## 2. Explicitly identified non-closure
+
+The graph-theoretic common-witness theorem does not label an arbitrary independent four-set by a monochromatic K5 component. Counting those common witnesses as exact-129 components would be an invalid label transfer.
+
+An explicit scalar relaxation satisfies all aggregate equalities
+\[
+P_C+R_C+s_C=62,\quad \sum_C P_C=252,\quad
+\sum_C R_C=427,\quad \sum_C s_C=3,
+\]
+as well as all seven block-column totals and all 21 block-pair duplicate totals, while all eight exact colors have \(P_C=9\) and \(r_i(C)\in\{7,8\}\). It is not a graph-level counterexample, but it proves aggregate budgets alone do not force a high-\(P_C\) exact color into the near-matching branch.
+
+## 3. Minimal missing mathematical bridge
+
+A complete closure still needs at least one of the following:
+
+- a **label-transfer/component-realization lemma** that assigns a valid exact-129 component label to common graph-theoretic witnesses, with edge ownership checked; or
+- a **near-exact-color structural theorem** for the three colors with \(s_C>0\), strong enough to prevent them from absorbing the entire duplicate budget; or
+- a **global labelled incidence inequality** that couples the seven-block duplicate variables \(d_{ij}(C)\), the residual row variables \(r_i(C)\), and the core witness multiplicities without double counting.
+
+The present inequalities do not rule out all three options. In particular, the scalar relaxation above is not promoted to a colored-graph realization and does not establish that a counterexample exists.
+
+## 4. Dependencies and scope
+
+- Conditional core contract: 47 vertices, \(\alpha(H)\le4\), \(\delta(H)\ge12\), and 284 edges with total degree excess four.
+- Exact-129 color factor theorem: ten isolated K5 components plus an 11-point gadget with clique number five and independence number two.
+- Seven-block equality system: \(P_C+R_C+s_C=62\), \(\sum_C d_{ij}(C)=12\), and \(\sum_C r_i(C)=61\).
+- The original \(K_{145}\) reduction and the core/shell contracts remain external dependencies; no unconditional EG617 result follows here.
+- This workstream covers the shared 284-edge E407 Q32 / E408 Q33 setting. It does not close the separate 285-edge E408 Q32 branch.
+
+## 5. Verification and repository hygiene
+
+- Exact integer profile checks for \(R_C=11,12,13\): PASS (210, 455, 875 profiles; maximum high-sum pair counts 0, 1, 2).
+- Scalar budget relaxation replay: PASS.
+- Exceptional-row mask replay: PASS (15 nonempty masks).
+- Missing-diagonal incidence arithmetic replay: PASS for all 25 pairs \(r_i,r_j\in\{1,\ldots,5\}\).
+- No full graph-realization SAT/ILP certificate has been generated.
+- All changes are confined to r12_master/workstreams/unified-witness-capacity-chat-20261025/.
