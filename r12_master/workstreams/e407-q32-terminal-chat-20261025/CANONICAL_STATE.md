@@ -36,7 +36,7 @@ These are the latest heads observed in the repository at the time of this update
 | \(\delta=16\) four-partite extreme | EXCLUDED by endpoint-split analysis and forbidden \(K_{12}\) |
 | \(\delta=15\) four-partite | EXCLUDED by W-profile saturation and forbidden \(K_{12}\) |
 | \(\delta=15\) non-four-partite | EXCLUDED under KP equality + core-to-\(W\) degree contradiction |
-| \(\delta=14\) four-partite | \(\epsilon_U=0\): all four W-profiles excluded; \(\epsilon_U=1,2\) open |
+| \(\delta=14\) four-partite | \(\epsilon_U=0\): all four W-profiles excluded; \(\epsilon_U=1\): no-cross-edge \(K_3\cup K_5^3\) excluded; other \(\epsilon_U=1\) profiles and \(\epsilon_U=2\) open |
 | \(\delta\le14\) non-four-partite | OPEN |
 | E407 Q32 overall | OPEN / NOT_CERTIFIED |
 | EG617(r=12) | OPEN / NOT_CERTIFIED |
@@ -56,3 +56,13 @@ The local arithmetic verifier checks exact ledgers and the finite excess inequal
 - Once all 29 U-vertices are saturated, the four component capacities sum to at most \(27\), contradicting the required cover of \(U\).
 - Added verify_delta14_eps0_k3k5_cross_edge.py; arithmetic replay passed locally: all 35 W-excess allocations yield cover cap 27, and the exceptional-vertex lower/upper bounds differ by exactly one.
 - Therefore the entire \(\delta=14,\epsilon_U=0\), four-partite branch is EXCLUDED under the retained contracts. This does not close \(\epsilon_U=1,2\), \(\delta=14\) non-four-partite, \(\delta\le13\), any full V12 template, E407 Q32, or EG617(r=12).
+
+
+## New Round 11 result — exclude \(\delta=14,\epsilon_U=1\), \(H[W]=K_3\cup K_5^3\) without a cross-edge
+
+- Added DELTA14_EPS1_K3K5K5K5_NO_CROSS_EDGE.md. Because the four W clique components are pairwise anticomplete, every \(u\in U\) is complete to at least one component; hence their four common-neighbour sets cover \(U\).
+- Every \(d\in D\) is also complete to a W component, forcing \(t_d\le2+\epsilon_d\le3\). The resulting reverse-saturation bound is \(d_H(w,U)\ge11\) for any W vertex not complete to a U-part.
+- For each \(K_5\) component, either all vertices admit U-part labels and extra-edge counting gives \(|S_i|\le5+E_i\), or one unsaturated vertex has excess 3 and a zero-excess companion gives the same bound. For \(K_3\), \(|S_0|\le10+\lfloor E_0/3\rfloor\).
+- Since \(E_0+E_1+E_2+E_3=3\), the total cover capacity is at most \(28-E_0+\lfloor E_0/3\rfloor\le28\), contradicting \(|U|=29\).
+- The verifier replayed all 20 component-excess allocations. This excludes only this \(\epsilon_U=1\) W-profile, not the entire \(\epsilon_U=1\) row.
+- Still open: other \(\delta=14,\epsilon_U=1\) W profiles, \(\epsilon_U=2\), non-four-partite \(\delta=14\), and \(\delta\le13\). E407 Q32 and EG617 remain OPEN / NOT_CERTIFIED.
