@@ -199,3 +199,30 @@ The \(W\)-side Brouwer bound forces the stated four-clique-part profiles. Indepe
 - \(\delta\le14\): OPEN (both four-partite and non-four-partite cases where allowed).
 - E407 Q32 overall: **OPEN / NOT_CERTIFIED**.
 - E408 Q32/Q33 and the original \(K_{145}\)-to-T61 bridge: untouched.
+
+
+## 2026-10-25 — Round 7: \(\delta=15\) four-partite W-profile reduction
+
+### New result
+
+The four-partite \(\delta=15\) boundary has six cross edges between the 8-part \(D\) and the three 7-parts; the six small-side endpoints are distinct. The core excess is \(\epsilon_U\in\{0,1\}\).
+
+Using \(\alpha(H)\le4\), degree saturation, and \(\omega(H)\le11\), the following subcases are excluded:
+
+- **\(\epsilon_U=1\)**, where \(H[W]=K_4\cup K_4\cup K_5\cup K_5\): at least five \(D\)-endpoints have exact \(K_4\) W-neighbourhoods, so one \(K_4\) receives at least three. If it is complete to \(D\), it yields \(K_{12}\); otherwise its four vertices each require positive W-excess, but the W-excess budget is only three.
+- **\(\epsilon_U=0\), \(H[W]=K_4\cup K_4\cup K_5\cup K_5\) plus one cross edge**: six endpoints split across the two \(K_4\) parts force at least four excess units in each part, exceeding the total four.
+- **\(\epsilon_U=0\), \(H[W]=K_4^3\cup K_6\)**: all nine \(D\)-vertices must be assigned to one of the three \(K_4\) parts by their full W-neighbourhood; the corresponding endpoint counts \(n_1+n_2+n_3=9\) force at least \(4\sum_i\max(0,n_i-2)\ge12\) excess units, again impossible.
+
+Thus the only remaining \(\delta=15\) four-partite profile is \(H[W]=K_3\cup K_5^3\) with \(\epsilon_U=0\).
+
+In that profile, the \(K_3\) component must be complete to \(D\). Otherwise its common D-neighbourhood has size at most four; at least four D vertices are then nonadjacent to it and must be complete to the three \(K_5\) parts. Two share a \(K_5\), forcing five positive excess units. Hence the residual contains an allowed \(K_{11}\), namely \(D\cup K_3\), which remains to be checked against the shell templates.
+
+Full proof and exact ledger: DELTA15_FOUR_PARTITE_TERMINAL.md.
+
+### Current frontier
+
+- \(\delta=16\) four-partite: **EXCLUDED**.
+- \(\delta=15\) non-four-partite: **EXCLUDED** under the retained contract and Kang–Pikhurko equality classification.
+- \(\delta=15\) four-partite: reduced to \(H[W]=K_3\cup K_5^3\), with \(D\cup K_3=K_{11}\); **OPEN**.
+- \(\delta\le14\): **OPEN**.
+- E407 Q32 overall: **OPEN / NOT_CERTIFIED**.
