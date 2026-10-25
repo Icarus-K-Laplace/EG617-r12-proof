@@ -61,3 +61,6 @@ A bare count of edges or witness incidences does not establish incompatibility.
 
 
 **Update (2026-10-25, Round 10):** The remaining \(\delta=14,\epsilon_U=0\) profile \((3,5,5,5)\) with one W-cross-edge is further split by endpoint placement. DELTA14_EPS0_K3K5X1_K5K5_EDGE.md excludes the placement joining two \(K_5\) parts by a 29-point cover versus a 27-point capacity bound. Only the placement joining the \(K_3\) to a \(K_5\) remains OPEN.
+
+
+**Update (2026-10-25, Round 11):** DELTA14_EPS0_K3K5X1_K3K5_EDGE.md excludes the last \((3,5,5,5)\) profile with a cross-edge between \(K_3\) and \(K_5\). Combined with the three earlier exclusions, **all four-partite W profiles at \(\delta=14,\epsilon_U=0\) are excluded**. The \(\epsilon_U=1,2\) and \(\delta=14\) non-four-partite cases remain OPEN.
