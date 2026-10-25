@@ -89,3 +89,10 @@ H[U]=K_7\dot\cup K_7\dot\cup D,\quad
 The complement of \(D\) is a triangle-free non-bipartite saturated graph with 49 edges, and the witness family induces two orthogonal near-perfect matching decompositions of its edge set.
 
 This does **not** yet rule out the terminal graph. The external Didin preprint theorem is explicitly an unverified dependency, and the graph-realization problem for the 15-vertex kernel remains OPEN. The \(\delta\le13\) cases, five shell templates A–E, and upstream \(K_{145}\)-to-T61 bridge also remain OPEN / NOT_CERTIFIED.
+
+
+## Round 18 update — local-only saturated obstruction is false
+
+DELTA14_SATURATED_LOCAL_MODEL.md constructs and verifies a genuine local realization of the 29-point saturated non-four-partite graph and its 49 linear witnesses, partitioned into seven disjoint classes of seven. Thus one must **not** try to close the branch using only the 29-point graph, \(K_5\)-saturation, the 98-edge ledger, and the abstract 49-witness packing: those constraints are compatible.
+
+The remaining task is to determine whether this local model—or any other surviving \(\delta=14\) model—can extend to the required 18-vertex \(W\), 47-vertex core, and shell-row labels. In the explicit model, if all degree excess lies in \(W\), the required \(U\)-to-\(W\) degrees are \(6^{14},5^{10},4^4,2^1\), totaling 152. The exact core independence/clique conditions and five shell templates must be enforced simultaneously. No global completion or counterexample has been constructed.
