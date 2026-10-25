@@ -65,7 +65,7 @@ The proofs DELTA14_EPS0_K4_PROFILE_EXCLUSIONS.md, DELTA14_EPS0_K3K4K5K6_COVER_CA
 
 - No one of the five templates is closed by this theorem.
 - The \(\delta=15\) non-four-partite case is **excluded**: the Kang–Pikhurko equality reduction and incompatible (x,y) degrees into (W) rule out all three base profiles.
-- At \(\delta=14,\epsilon_U=0\), all four four-partite W profiles are excluded. At \(\epsilon_U=1\), all three W profiles are excluded by DELTA14_EPS1_K3K5K5K5_NO_CROSS_EDGE.md, DELTA14_EPS1_K4K4K4K6_NO_CROSS_EDGE.md, and DELTA14_EPS1_K4K4K5K5_ONE_CROSS_EDGE.md; exhaustiveness is proved in DELTA14_EPS1_W_PROFILE_CLASSIFICATION.md using Brouwer's second-Turán bound. The \(\epsilon_U=2\) and non-four-partite branches remain open. The \(\delta=15\) four-partite branch is excluded.
+- At \(\delta=14,\epsilon_U=0,1,2\), all four-partite W profiles are excluded. The \(\epsilon_U=1\) list is exhaustive by DELTA14_EPS1_W_PROFILE_CLASSIFICATION.md and Brouwer's second-Turán bound; the \(\epsilon_U=2\) profile is forced by Turán equality and excluded by DELTA14_EPSU1_2_ANTICOMPL_COMPONENT_PROFILES.md, Section 5. The \(\delta=14\) non-four-partite branch remains open. The \(\delta=15\) four-partite branch is excluded.
 - The \(\delta\le14\) non-four-partite cases remain open.
 - No proof is claimed that the residual incidence design can or cannot be realized.
 - E408 Q32/Q33 and the original \(K_{145}\)-to-T61 bridge are outside this line's closure claim.
@@ -85,3 +85,8 @@ DELTA14_EPS1_K4K4K4K6_NO_CROSS_EDGE.md excludes \(H[W]=K_4^3\cup K_6\). Its key 
 ## 3D. Delta-14, \(\epsilon_U=1\), exact W-profile closure
 
 The exact W-profile classification is in DELTA14_EPS1_W_PROFILE_CLASSIFICATION.md. Its three possibilities are all excluded by the no-cross-edge \(K_3\cup K_5^3\) theorem, the no-cross-edge \(K_4^3\cup K_6\) theorem, and DELTA14_EPS1_K4K4K5K5_ONE_CROSS_EDGE.md. This closes the full four-partite \(\epsilon_U=1\) row under the retained contracts and Brouwer's second-Turán theorem.
+
+
+## 3E. Delta-14, \(\epsilon_U=2\), unique W profile
+
+At \(\epsilon_U=2\), the exact edge ledger gives \(e(H[W])=32\), the minimum allowed by \(\alpha(H[W])\le4\). Turán equality forces \(H[W]=K_4\cup K_4\cup K_5\cup K_5\), with no cross-edge. Section 5 of DELTA14_EPSU1_2_ANTICOMPL_COMPONENT_PROFILES.md excludes this profile by the common-neighbour cover bound 24<29. The mention of \(K_3\cup K_5^3\) for \(\epsilon_U=2\) in that note's Section 3 is not an admissible profile here because it has 33 rather than 32 edges.
