@@ -37,8 +37,8 @@ The valid star-capacity lemma says \(d_C(z,K_{12})\le1\): the twelve edges from 
 
 The checker is verify_p49_r6_r2_double_star.py. It enumerates:
 - 452 Case-A single-row / \(r=2\) alignment configurations;
-- 570,290 Case-B/C pair-type and incidence-allocation configurations;
-- **570,742 total configurations, zero failures**.
+- 570,942 Case-B/C pair-type and incidence-allocation configurations;
+- **571,394 total configurations, zero failures**.
 
 This is exact gadget/incidence verification, conditional on the upstream row classifications and universal-\(D\) contract.
 
