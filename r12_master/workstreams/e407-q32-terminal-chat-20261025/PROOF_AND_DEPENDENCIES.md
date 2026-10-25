@@ -16,7 +16,7 @@ Status: **E407 Q32 OPEN / NOT_CERTIFIED; the \(\delta=16\) branch is excluded un
 6. **Sibling transversal/excess theorem** gives \(\epsilon_U+2\delta\ge9\) and \(\delta\ge3\), under the same boundary contract.
 7. **Four-partite reduction at \(\delta=16\)**: \(L=\overline{H[U]}\) has 310 edges, exceeding the non-four-partite Brouwer threshold 309, so it is four-partite. The 49 linear witnesses force \(U\)-part sizes \(7,7,7,8\); the exact ledger forces \(H[W]=K_5\cup K_5\cup K_4\cup K_4\).
 8. **Reverse saturation**: under this structure, every \(w\in W\) is adjacent to all vertices of exactly one \(U\)-part. This is proved from \(\alpha(H)\le4\), the matching structure of the five \(U\)-cross-edges, and the total excess budget.
-9. **Endpoint-split terminal exclusion**: the \(4+1\) and \(3+2\) allocations contradict the four-unit excess budget. In the \(5+0\) allocation, the endpoint \(K_4\) is forced complete to the 8-part, yielding a forbidden \(K_{12}\). Thus \(\delta=16\) is excluded.
+9. **Endpoint-split terminal exclusion**: the \(4+1\) and \(3+2\) allocations contradict the four-unit excess budget. In the \(5+0\) allocation, at most one endpoint-\(K_4\) vertex can fail to be complete to the 8-part; the one-exception case contradicts the requirement that each \(U\)-vertex be complete to a whole \(W\)-clique component. Hence all four endpoint-\(K_4\) vertices are complete to the 8-part, producing a forbidden \(K_{12}\). See DELTA16_K12_CLIQUE_OBSTRUCTION.md for the standalone proof.
 
 ## 2. Exact external/input dependencies
 
@@ -46,4 +46,4 @@ Status: **E407 Q32 OPEN / NOT_CERTIFIED; the \(\delta=16\) branch is excluded un
 \end{aligned}
 \]
 
-There is no circular dependency in the \(\delta=16\) exclusion: it uses only the E407 core contract, 49-block linearity, the exact ledger, Turán/Brouwer bounds, \(\alpha(H)\le4\), and \(\omega(H)\le11\). The \(\delta=15\) non-four-partite exclusion additionally depends on the Kang–Pikhurko equality classification and W-side Brouwer bound. All remaining cases depend on the upstream validity of the 49-witness boundary.
+There is no circular dependency in the \(\delta=16\) exclusion: it uses only the E407 core contract, 49-block linearity, the exact ledger, Turán/Brouwer bounds, \(\alpha(H)\le4\), and the inherited \(\omega(H)\le11\) bound from the T61 parent. The \(\delta=15\) non-four-partite exclusion additionally depends on the Kang–Pikhurko equality classification and W-side Brouwer bound. All remaining cases depend on the upstream validity of the 49-witness boundary.
