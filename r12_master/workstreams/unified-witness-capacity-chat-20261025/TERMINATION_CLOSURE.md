@@ -94,19 +94,10 @@ For an exact-129 color with \(r_i(C)=1\) in top-cell A, the exact row theorem fo
 This gives a local interface between the exact gadget-pair choice and the global duplicate ledger. It still does not determine the seven-block location pattern, so it must be combined with the target degree vector and the exact cross-edge defect identity rather than treated as closure.
 
 
-## 10. Sibling external-edge theorem: eliminate \(P_C=50,r_i=6\)
+## 10. Corrected external-star audit and current local closure
 
-The latest E408 Q33 sibling proof establishes that every monochromatic \(K_{12}\) is isolated in its color and that \(m\) disjoint such cliques, each using one representative from every outer block, imply \(P_C\le21(12-m)\). It then excludes the exact-129 corner \(P_C=50,r_i(C)=6\) by the three cases in the \(r_i=6\) classification.
+The sibling statement that every monochromatic \(K_{12}\) is isolated is false as stated. The 12-edge star from an outside vertex must contain all eleven other colors, so the correct bound is \(d_C(z,K_{12})\le1\), not zero. A single external \(C\)-edge is allowed. Therefore sibling \(P_C\le49\), \(P_C\le48\), and \(P_C=50,r_i=6\) arguments that rely only on one external \(C\)-edge are not certified until repaired. They are not dependencies of the current local theorem.
 
-This sharpens the high-budget branch: any exact-129 color with \(P_C=50\) has \(r_i(C)\le5\) for all seven blocks, and the existing low-budget alignment result gives at least nine common component labels. The \(P_C=49,r_i=6\) corner remains open because one of the six other blocks has \(r_i=2\), so the all-six-\(r_i=1\) external-edge argument does not transfer verbatim.
+**Conditional local closure:** Section 12 of OUTER_EXCEPTIONAL_ROW_COUPLING.md excludes \(P_C=49,r_i(C)=6\) by forcing an outside vertex to have at least two \(C\)-edges into a constructed \(C\)-colored \(K_{12}\). The finite checker uses the exact Case-C complement profiles and the safe-row incidence split. The in-session predicate replay passed 2,132 Case-A/B configurations and 412,768 exact-profile Case-C configurations. Dependencies remain the exact-129 factor theorem, the seven-block row contract, the exact 11-vertex gadget normal form, and the \(r=1,2,6\) row classifications.
 
-
-## 10. P=49, r=6 exclusion and residual terminal profiles
-
-The new finite gadget theorem in OUTER_EXCEPTIONAL_ROW_COUPLING.md, Section 12, conditionally excludes \(P_C=49,r_i(C)=6\). Its checker exhausts 159,244 configurations across the four exact gadget normal forms. It uses the isolated-\(K_{12}\) lemma to convert the finite gadget selection into a contradiction; upstream T61, exact-129 factor, gadget normal-form, and row contracts remain dependencies.
-
-Conditional on the sibling Q33 cap \(P_C\le49\), the \(P_C=49\) residual budget is \(R_C=13\). A block budget \(r_i\ge8\) is impossible by positivity of the other six entries; \(r_i=6\) is now excluded. For all \(r_i\le5\), any profile with every pair sum at most six gives ten isolated \(K_{12}\)'s and contradicts \(P_C=49\). The remaining profiles are:
-- \((7,1^6)\), not covered by the \(r=6\) theorem;
-- \((5,3,1^5)\), \((4,4,1^5)\), \((5,2,2,1^4)\), and \((4,3,2,1^4)\), each with at least one high pair whose sum is at least seven.
-
-These are the next terminal targets. The full E408 Q33 ledger and original \(K_{145}\) theorem remain OPEN / NOT_CERTIFIED.
+This local result does not establish \(P_C\le49\) for all exact-129 colors and must not be used to prune the global budget profiles without a separately certified colorwise cap. The labelled witness/core capacity theorem and the aggregate eleven-color ledger remain open. EG617(r=12) is **OPEN / NOT_CERTIFIED**.
