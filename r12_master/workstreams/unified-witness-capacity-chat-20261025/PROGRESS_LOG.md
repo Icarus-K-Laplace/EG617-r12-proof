@@ -152,3 +152,12 @@
 - The component rows contribute 20 W incidences in Type A or 19 in Type B. The two exceptional rows contribute 3/4 or 4/5 respectively, so total \(e_C(B_i,W)\) is exactly 23 or24.
 - Since every vertex w and every target block B_i must see all eleven non-target colors among the 12 incident edges (else B_i∪{w} is a forbidden independent 13-set in a missing color), exactly one non-target color is repeated at each (w,B_i). Thus the unique C-duplicate for \(r_i(C)=1\) lies in W iff \(e_C(B_i,W)=24\), and in O iff the count is23.
 - Refreshed E408 Q33: c01f7dc6951b2bb7ea5209f252b1644ca0ecd40a adds exact gadget clique normal form and strengthened high-budget packings; no closure claimed.
+
+
+## 2026-10-25 — sibling external-edge contradiction closes the P_C=50, r_i=6 corner
+
+- Refreshed E408 Q33 to 8b4bfef7a9e3d957c7150af30aadba703a08d31f and read its new external-edge proof.
+- Lemma 13.1: any monochromatic K12 is isolated in its color, because the 12 edges from an outside vertex to the clique must contain all eleven other colors, leaving no edge of the clique's color.
+- Lemma 13.2: \(m\) disjoint color-C K12s, each using one vertex from every outer block, force \(P_C\le21(12-m)\) by the one-or-two rule on the remaining block vertices.
+- Theorem 13.3 eliminates \(P_C=50,r_i=6\): cases A/B produce a K12 with an external color-C edge; case C either does likewise or forces ten isolated K12s and \(P_C\le42\).
+- Therefore any exact color with \(P_C=50\) has all \(r_i\le5\), and the existing low-budget theorem yields at least nine common component labels. \(P_C=49,r_i=6\) is not yet excluded.
