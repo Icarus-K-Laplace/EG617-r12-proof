@@ -512,3 +512,31 @@ The key new capacity improvement is that a U-part-saturated \(K_5\) component ha
 The excess split \(E_0+E_1+E_2+E_3=3\) now rules out: all three \(K_5\) components saturated; exactly one star-only unsaturated component; the exceptional mixed \(P_1P_2\) pattern; and two or more unsaturated components. In the last case, the shared set \(R=(P_1\\setminus A)\\cup(P_2\\setminus\\{y\\})\) would have to lie in the common neighbourhood of the \(K_3\), forcing at least 12 common neighbours despite a zero-excess \(K_3\) vertex of U-degree 10.
 
 **Result:** the entire \(\delta=14\), non-four-partite augmentable-edge subcase is excluded under the retained contracts. The only remaining case at this boundary is \(K_5\)-saturated \(L\), with no augmentable nonedge. This is a genuine conditional theorem, not a closure of E407 Q32 or EG617(r=12).
+
+
+## 2026-10-25 — Round 17: strict reduction of the \(\delta=14\) saturated branch
+
+### New structural result
+
+Added DELTA14_SATURATED_ALPHA_CRITICAL_REDUCTION.md. If \(L=\overline{H[U]}\) is \(K_5\)-saturated, then \(G=H[U]\) is \(\alpha\)-critical with \(\alpha(G)=4\). Under Didin's 2026 preprint lower bound \(e(G)\ge t(n+s,\alpha)-s\), where \(s=\alpha-p\) and \(p\) is the maximum component count of a spanning \(\alpha\)-critical subgraph with the same independence number, the non-four-partite condition forces exactly three components:
+\[
+G=K_a\dot\cup K_b\dot\cup C,\qquad
+\alpha(K_a)=\alpha(K_b)=1,\quad\alpha(C)=2.
+\]
+The 49 pairwise edge-disjoint witness \(K_4\)'s force \(ab\ge49\) and \(e(\overline C)\ge49\). Brouwer's second-Turán bound gives \(e(C)\ge\lfloor |C|^2/4\rfloor-1\). Exact enumeration with \(a+b+|C|=29\) and \(e(G)=98\) leaves only
+\[
+(a,b,|C|,e(C),e(\overline C))=(7,7,15,56,49).
+\]
+
+Because there are exactly 49 \(A\)-\(B\) pairs and exactly 49 edges in \(\overline C\), each witness uses every such pair and every such edge once. For each fixed \(a\in A\) and \(b\in B\), the corresponding seven edges of \(\overline C\) form a matching of size seven. Thus the terminal graph must admit two orthogonal proper 7-edge-colorings, each color class a near-perfect matching on 15 vertices.
+
+### Verification and dependency firewall
+
+- Ran an independent exact integer enumeration: unique candidate \((7,7,15,56,49)\).
+- Added verify_delta14_saturated_alpha_critical.py for replay.
+- The graph reduction uses Brouwer's established second-Turán bound and Didin's author-prepared 2026 preprint theorem. The Zenodo record described that preprint as submitted to JGT and under review; its proof has not been independently audited here, so the component-count step remains conditional on that external theorem.
+- The verifier certifies only the arithmetic enumeration, not the graph lemmas or graph realization.
+
+### Current status
+
+This is a strict structural reduction, **not a contradiction**. The 15-vertex triangle-free saturated kernel and its orthogonal near-perfect matching decompositions remain OPEN. E407 Q32, all five shell templates, the \(\delta\le13\) cases, and EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.
