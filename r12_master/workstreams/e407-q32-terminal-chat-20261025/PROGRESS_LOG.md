@@ -640,3 +640,20 @@ Added DELTA13_FOUR_PARTITE_NO_CROSS_W_PROFILES.md and verify_delta13_four_partit
 - The verifier checks profile enumeration and finite capacity arithmetic only; it does not machine-prove the analytic saturation/label arguments.
 - Status: **PROVED_CONDITIONAL** for the four listed no-cross-W profiles; E407 Q32 remains OPEN / NOT_CERTIFIED.
 - Next target: delta-13 four-partite-U W-cross-edge profiles, starting with \(\epsilon_U=1\).
+
+
+## 2026-10-25 — Round 24: delta-13 epsilonU=1 one-cross-edge profile
+
+Added DELTA13_EPS1_K3K5K5K5_ONE_CROSS_EDGE.md and verify_delta13_eps1_k3k5_one_cross_edge.py.
+
+### Exact saturation split
+- With one W-cross-edge, any U vertex not complete to a whole W component must have non-neighbour sets exactly the two edge endpoints in their components; the other two component non-neighbour sets need only be nonempty.
+- If the edge joins K3 to K5, such a U vertex has W-degree at least 6. The degree-6 case forces full non-neighbourhood in the other two K5s and gives \(|S_2|+|S_3|\ge15-\epsilon_u-\epsilon_y\), while the component capacities give at most \(13-\epsilon_y\), contradiction.
+- The only surviving local saturation exception is \(d_H(u,W)=7,\epsilon_u=1,t_u=0\), with exactly one W-neighbour in one of the other K5 components. Since \(\epsilon_U=1\), at most one U vertex can be exceptional.
+- If the edge joins two K5s, nonsaturation would require W-degree at least 8, but all U vertices have W-degree at most 7.
+
+### Cover contradiction
+- For nonincident K5 components, \(|S_i|\le5+E_i\). For the incident K5, \(|S_i|\le4+E_i\). The triangle capacity is at most \(9+E_0\) or \(10+E_0\), depending on whether it meets the cross-edge.
+- The total component cover is at most \(23+E_W=26\). At least 28 U vertices must be covered, contradiction.
+- Arithmetic replay passed: DELTA13_EPS1_K3K5K5K5_ONE_CROSS_EDGE_ARITHMETIC_OK.
+- Status: **PROVED_CONDITIONAL** for this one-cross-edge profile; E407 Q32 remains OPEN / NOT_CERTIFIED.
