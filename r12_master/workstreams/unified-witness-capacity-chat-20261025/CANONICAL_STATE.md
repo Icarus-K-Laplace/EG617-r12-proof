@@ -216,3 +216,12 @@ Refreshed all six sibling branches again before finalizing this round:
 - Ultimate closure: 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40.
 
 Created TERMINATION_CLOSURE.md with the conditional theorem ledger, the scalar-relaxation obstruction, the minimal missing bridge, dependencies, and verification scope. All reads of sibling branches were read-only.
+
+
+## 2026-10-25 continuation — selected-witness extension
+
+The K12 packing theorem now has a direct labelled corollary. The exact-129 factor theorem supplies seven selected witness components among ten isolated K5 components. If \(\mathcal K_C^*\) is the common exact size-five blocker set across all seven outer blocks, then \(|\mathcal K_C^*|\ge P_C-45\), so
+\[
+|\mathcal W_C\cap\mathcal K_C^*|\ge\max(0,P_C-48).
+\]
+Thus \(P_C\ge49\) forces at least one selected witness component to extend to a monochromatic K12 containing its labelled core four-set and shell label; \(P_C=50\) forces at least two. This links the outer duplicate budget directly to the labelled witness family. It is still not a contradiction, and the scalar relaxation shows that no exact color is forced to \(P_C\ge49\) by aggregate budgets alone.
