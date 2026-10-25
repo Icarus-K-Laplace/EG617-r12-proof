@@ -36,7 +36,7 @@ These are the latest heads observed in the repository at the time of this update
 | \(\delta=16\) four-partite extreme | EXCLUDED by endpoint-split analysis and forbidden \(K_{12}\) |
 | \(\delta=15\) four-partite | EXCLUDED by W-profile saturation and forbidden \(K_{12}\) |
 | \(\delta=15\) non-four-partite | EXCLUDED under KP equality + core-to-\(W\) degree contradiction |
-| \(\delta=14\) four-partite | \(\epsilon_U=0\): all four W-profiles excluded; \(\epsilon_U=1\): no-cross-edge \(K_3\cup K_5^3\) and \(K_4^3\cup K_6\) excluded; \((4,4,5,5)\)+one-cross-edge, \(\epsilon_U=2\) open |
+| \(\delta=14\) four-partite | \(\epsilon_U=0,1\): all W profiles excluded (the \(\epsilon_U=1\) profile list is certified via Brouwer); \(\epsilon_U=2\) open |
 | \(\delta\le14\) non-four-partite | OPEN |
 | E407 Q32 overall | OPEN / NOT_CERTIFIED |
 | EG617(r=12) | OPEN / NOT_CERTIFIED |
@@ -88,3 +88,12 @@ The local arithmetic verifier checks exact ledgers and the finite excess inequal
 - If a \(K_4\) component receives \(k\ge3\) D-assignments, its external-incidence budget limits how many vertices can be complete to all of D. The remaining vertices must be complete to small U-parts, forcing total W-excess greater than 3. Hence every \(K_4\) receives at most two D-assignments, impossible for seven or eight D-vertices distributed across three \(K_4\)'s.
 - Added verify_delta14_eps1_k4k4k4k6.py; arithmetic replay passed. A verifier bookkeeping error was caught and fixed before replay.
 - The \(\epsilon_U=1\) no-cross-edge \(K_3\cup K_5^3\) and \(K_4^3\cup K_6\) profiles are now excluded. The \((4,4,5,5)\)+one-cross-edge profile remains open, as does \(\epsilon_U=2\), non-four-partite \(\delta=14\), and \(\delta\le13\). E407 Q32 remains OPEN / NOT_CERTIFIED.
+
+
+## New Round 13 result — close the final \(\delta=14,\epsilon_U=1\) W-profile
+
+- Added DELTA14_EPS1_K4K4K5K5_ONE_CROSS_EDGE.md. Every D-vertex is assigned to a unique W-component; the exact external-incidence count \(R=1-q_5+\sum_D\epsilon_d\le2\) forces at least six D-vertices to be assigned to the two K4 components.
+- A K4 receiving \(k\ge3\) D assignments would need too much W-excess: external incidence limits the number of vertices complete to all of D, and every remaining vertex must be complete to a small U-part. The minimum excess demand is \(4,8,12,12,10\) for \(k=3,4,5,6,7\); \(k=8\) gives a forbidden K12.
+- Added DELTA14_EPS1_W_PROFILE_CLASSIFICATION.md. Applying Brouwer's second-Turán bound to \(\overline{H[W]}\) (18 vertices, 120 edges, K5-free) forces four-partiteness; exact integer partition enumeration leaves precisely the three profiles handled by the three epsilonU=1 theorems.
+- Both arithmetic verifiers were replayed locally. The complete \(\delta=14,\epsilon_U=1\), four-partite row is now EXCLUDED under the retained core contracts and Brouwer's theorem.
+- Still open: \(\delta=14,\epsilon_U=2\), non-four-partite \(\delta=14\), and \(\delta\le13\). E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
