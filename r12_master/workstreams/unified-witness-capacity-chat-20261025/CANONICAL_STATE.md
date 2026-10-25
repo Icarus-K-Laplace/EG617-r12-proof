@@ -281,3 +281,22 @@ I audited the proof structure:
 - In Case C, any extra incidence outside a selected component creates an external edge to a label-based \(K_{12}\); otherwise ten isolated label-based \(K_{12}\)'s exist, giving \(P_C\le21(2)=42\), contradicting 50.
 
 Consequence for this workstream: if an exact-129 color has \(P_C=50\), it cannot have any \(r_i(C)=6\). Since \(\sum_i r_i=12\), all \(r_i\le5\), and the existing low-budget alignment theorem yields at least nine common component labels in this branch. This is a sibling theorem under the retained exact-129 and seven-block contracts, not an unconditional EG617 proof. The \(P_C=49,r_i=6\) corner remains open.
+
+
+## 2026-10-25 continuation — exclude the \(P_C=49,r_i=6\) corner
+
+Added Theorem 12.1 in OUTER_EXCEPTIONAL_ROW_COUPLING.md and the exact standalone checker verify_p49_r6_gadget_exclusion.py.
+
+**Theorem (conditional):** under the retained exact-129 factor theorem, seven-block row contracts, gadget normal form, and isolated-\(K_{12}\) lemma, an exact color cannot have \(P_C=49\) and any \(r_i(C)=6\). Here \(R_C=62-P_C=13\), so the other six block budgets are five 1s and one 2. The \(r=1\) blocks supply disjoint \(K_5/K_5\) omitted-complement pairs; the \(r=2\) block supplies a disjoint \(K_5/K_5\) or \(K_5/K_4\) pair; the \(r=6\) cases supply either a \(K_5\) complement or a disjoint pair of clique complements with total size at least five. A finite exact enumeration of all four gadget normal forms selects a common \(K_5\) core and seven outer rows. Pairwise intersections of omitted sets force a monochromatic \(K_{12}\), while the selected \(r=6\) row has an extra C-neighbor outside it, contradicting \(K_{12}\)-isolation.
+
+The local replay of the committed checker passed 159,244 exact set-combinatorics checks: 380 Case-A/B checks and 158,864 Case-C checks. Per-normal-form clique and configuration counts are recorded in the theorem file. This is a finite conditional theorem, not a claim that the original \(K_{145}\) proof is closed.
+
+**Updated P=49 frontier, conditional on the sibling Q33 theorem \(P_C\le49\):** with \(R_C=13\), \(r_i\ge8\) is impossible. The \(r_i=6\) profile \((6,2,1,1,1,1,1)\) is now excluded. If all \(r_i\le5\), the five sorted profiles with every pair sum at most six also contradict \(P_C=49\), because Corollary 10.2 forces ten isolated \(K_{12}\)'s and hence \(P_C\le42\). The remaining sorted profiles are
+\[
+(7,1,1,1,1,1,1),\quad
+(5,3,1,1,1,1,1),\quad
+(4,4,1,1,1,1,1),\quad
+(5,2,2,1,1,1,1),\quad
+(4,3,2,1,1,1,1).
+\]
+The \(r=7\) profile remains a separate open branch; the four high-pair profiles with all \(r_i\le5\) also remain open. Do not infer \(r_i\le5\) globally from the \(r_i=6\) theorem alone.
