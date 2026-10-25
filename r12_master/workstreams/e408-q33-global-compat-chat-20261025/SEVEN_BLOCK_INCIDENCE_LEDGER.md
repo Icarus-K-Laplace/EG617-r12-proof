@@ -409,19 +409,14 @@ P_C=50,\qquad r_i(C)=6
 \]
 for any target block \(B_i\).
 
-**Proof.** Since \(R_C=62-P_C=12\) and all seven \(r_j(C)\ge1\), the other six blocks have \(r_j(C)=1\). Thus all six have the exact two-gadget-row structure of Theorem 10.1.
+**Proof.** Since \(R_C=62-P_C=12\) and all seven \(r_j(C)\ge1\), the other six blocks have \(r_j(C)=1\). Each therefore supplies, for each of \(D_1,D_2\), a gadget-row representative whose neighborhood is \(U_C\setminus E_j\), where \(E_j\) is a five-clique disjoint from that \(D\).
 
-Apply Theorem 11.1 to the exceptional block \(B_i\).
+First suppose the \(r_i=6\) block is in Case A or Case B of Theorem 11.1. It has at least one no-component row with a six-vertex gadget neighborhood \(U_C\setminus E\), where \(E\) is a five-clique. By Theorem 12.1, \(E\) is disjoint from one of \(D_1,D_2\); call it \(D\). Then \(E\) and each low-block omitted set \(E_j\) are five-subsets of the six-set \(U_C\setminus D\), so they intersect. Pairwise blocker compatibility forces the high-block row to be \(C\)-adjacent to all six low-block representatives of type \(D\). Together with \(D\), these seven outer vertices form a \(C\)-colored \(K_{12}\). But the high-block row also has a \(C\)-edge to the unique vertex in \(U_C\setminus(D\cup E)\), which lies outside this \(K_{12}\), contradicting Lemma 13.1. Hence Cases A and B are impossible.
 
-- **Case A (\(n=1\)).** Every one of the ten component labels has a single-component row with at most five extra vertices, so all ten labels extend to ten vertex-disjoint \(C\)-colored \(K_{12}\)'s across the seven blocks. The one no-component row has a six-set neighborhood whose complement is a \(K_5\); by Theorem 12.1 that complement is disjoint from \(D_1\) or \(D_2\). The row therefore extends one of the two gadget \(K_{11}\)'s supplied by Corollary 12.2 to a further \(K_{12}\). Hence \(m\ge11\).
-- **Case B with \(k=1,m=10\).** The nine fully represented component labels each have a single-component row with at most five extra vertices, yielding nine label-based \(K_{12}\)'s. The two no-component rows have six-set neighborhoods with complementary disjoint \(K_5\)'s, so they extend both gadget cliques to two further \(K_{12}\)'s. Hence \(m\ge11\).
-- **Case B with \(k=1,m=11\).** Theorem 11.2 gives at least eight clean component labels, and the two no-component rows extend both gadget cliques to \(K_{12}\)'s. Hence \(m\ge10\).
-- **Case C (\(k=0,m=10\)).** The two no-component row neighborhoods cover \(U_C\), and their overlap \(a\ge1\). The remaining incidence budget for all component-containing rows is \(e_i+t_i=6-a\le5\). Each of the ten component rows therefore contains one full \(K_5\) plus at most five extra vertices. All ten labels are clean and yield ten label-based \(K_{12}\)'s, so \(m\ge10\).
-
-In every case, there are at least ten vertex-disjoint \(C\)-colored \(K_{12}\)'s, each meeting every target block exactly once. Lemma 13.2 then gives
+It remains to consider Case C. The two no-component neighborhoods \(X,Y\subset U_C\) cover \(U_C\) and have overlap \(a=|X\cap Y|\ge1\). Write \(e_i\) for the gadget incidences in the ten component-containing rows beyond their mandatory full \(K_5\)'s, and \(t_i\) for component-vertex incidences beyond the mandatory one occurrence per component. The gadget excess is \(d_U=a+e_i\), the component excess is \(d_K=t_i\), and \(d_U+d_K=6\); hence
 \[
-P_C\le21(12-10)=42,
+e_i+t_i=6-a\le5.
 \]
-contradicting \(P_C=50\). \(\square\)
+Each of the ten component rows contains one full \(K_\ell\) and at most five additional vertices. For each label \(\ell\), its row and the six exact \(K_\ell\)-rows in the \(r_j=1\) blocks are forced C-adjacent by pairwise blocker compatibility, so they form a \(C\)-colored \(K_{12}\). If any of the ten high-block rows has an additional \(C\)-neighbor outside its full \(K_\ell\), this \(K_{12}\) has an external \(C\)-edge, contradicting Lemma 13.1. Otherwise all ten label-based \(K_{12}\)'s are isolated. Lemma 13.2 then gives \(P_C\le21(12-10)=42\), again contradicting \(P_C=50\). \(\square\)
 
 **Consequence.** The high-budget clique-packing corner in Corollary 11.3 is not merely compatible with the edge budget: its \(P_C=50,r_i=6\) branch is now excluded analytically. The \(P_C=49,r_i=6\) branch is not covered by Theorem 13.3; the current guaranteed packing there can leave nine isolated \(K_{12}\)'s, for which Lemma 13.2 only gives \(P_C\le63\).
