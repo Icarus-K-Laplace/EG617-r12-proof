@@ -96,6 +96,23 @@ The proof excludes \(P_C\ge51\) because then every block-pair sum \(r_i+r_j\le6\
 
 This is a genuine colorwise global bound. It still does not close the aggregate E408 Q33 ledger or the original \(K_{145}\) theorem.
 
+## Result 6: the exact-129 \(P_C=49\) boundary is excluded
+
+**Theorem:** under the retained seven-block equality contract and exact-129 factor theorem, every exact-129 color satisfies
+\[
+\boxed{P_C\le48,\qquad R_C\ge14.}
+\]
+Theorem 14.1 had already given \(P_C\le49\). The new proof in P49_BOUNDARY_EXCLUSION.md excludes the equality layer \(P_C=49\) by enumerating the possible positive seven-tuples with \(R_C=13\):
+- pair-sum at most six: all ten component labels force \(K_{12}\)'s;
+- pair-sum seven: both high blocks are forced to the \(a=1\) gadget boundary, giving an external-edge contradiction;
+- pair-sum eight with \((5,3,1^5)\) or \((4,4,1^5)\): either a second component is covered or the equality case forces both overlaps \(a=1\);
+- \((6,2,1^5)\): the \(r_i=6\) cases A/B are excluded by the gadget alignment lemma; case C is excluded by its component-row and gadget-incidence budgets;
+- \((7,1^6)\): the full-component row count and gadget incidence budget reduce all subcases to a gadget alignment contradiction or ten disjoint \(K_{12}\)'s.
+
+The proof depends on a finite, exact 11-vertex gadget alignment lemma. GADGET_ALIGNMENT_VERIFIER.js exhausts all \(2^{11}\) subsets in each of the four exact normal forms and passes 2,156 alignment checks (0 failures); the output counts are recorded in GADGET_ALIGNMENT_CERTIFICATE.md. This is a fixed-size gadget check, not a growing graph search.
+
+**Scope:** this is a stronger colorwise interface, not global closure. The aggregate eleven-color budget and the 56-witness/core compatibility remain open; E408 Q33 and EG617(r=12) are still **OPEN / NOT_CERTIFIED**.
+
 ## Seven-block global ledger
 
 For each non-target color C,
@@ -122,11 +139,12 @@ The next proof target is a stability/packing contradiction in Case 1 or a genuin
 
 ## Latest isolated commits
 
+- Corrected \(6+1\) Case C branch in the \(P_C=49\) proof: 333cc2d6cbd48b01dde395ad8b1135b6c10a3d26
+- Refined \(P_C=49\) proof for pair-sum-eight and \(r_i=6\) cases: 787427120154b300f5d9c7f137c5cb366cfa434a
+- Complete \(r_i=7\) budget analysis and finite alignment source: a2a4557b990075f1e6cf34f85dd93394fd6008b7
+- Gadget alignment certificate: d576cf81cd52d3c3c49550cac0ba886a97b63b37
+- Extended size-four gadget alignment verifier: 6c84ffb136c72554ea682ff29fc8d94d640e4fa0
+- Initial \(P_C=49\) boundary theorem: d55bdd28227fab0813b145282474d82e300e6550
 - Universal exact-129 budget cap \(P_C\le49\): 39809f71b0b6602590e90cb632a017f8719000bb
-- Explicit external-edge contradiction in the \(P_C=50\) proof: 6dc384e3bc5b5825ade24c6377601d8dc1f0ae2b
-- Isolated-\(K_{12}\) duplicate cap and \(P_C=50\) corner exclusion: 772aa7c0d43db747d707f93ee41e96cf1f30a737
-- Exact gadget normal form: c01f7dc6951b2bb7ea5209f252b1644ca0ecd40a
-- Exact \(r_i(C)=6\) classification: 6a1f034fe9d0b2ba5ca49acde9ae57a3c2d652ce
-- Theorem 10.1 / Corollary 10.2: 73f02a07d4722e09af203cbc0ac8d5d82af405e4
 
 **Status remains OPEN / NOT_CERTIFIED.**
