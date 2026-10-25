@@ -1,7 +1,7 @@
 # E407 Q32 \(\delta=16\): exact witness-array constraints
 
 Date: 2026-10-25  
-Status: **PROVED under the frozen \(\delta=16\) core/witness contract; compatibility with the shell templates remains OPEN.**
+Status: **PROVED exact incidence identity under the frozen \(\delta=16\) core/witness contract. The branch is separately EXCLUDED in FOUR_PARTITE_TERMINAL.md.**
 
 ## 1. Contract
 
@@ -57,7 +57,7 @@ If \(r_d=0\), then \(d\) appears in all seven color classes and is paired with e
 
 ## 5. What this does and does not close
 
-This identity is stronger than the scalar block count: it fixes the multiplicity of every missing \(D\)-partner and ties that multiplicity to the exact-129 color omitted from each class. It is an exact incidence constraint, not a contradiction.
+This identity is stronger than the scalar block count: it fixes the multiplicity of every missing D-partner and ties that multiplicity to the exact-129 color omitted from each class. It is an exact incidence constraint; the separate endpoint-split proof now excludes the whole \(\delta=16\) branch by forcing a forbidden \(K_{12}\).
 
 The next useful compatibility test is to combine:
 - the five prescribed missing pairs that are actual \(H[U]\) edges;
@@ -65,4 +65,4 @@ The next useful compatibility test is to combine:
 - the shell-template-specific hub-hit requirements for each color class;
 - the \(W\)-side \((5,0)\) labelled kernel in `FOUR_PARTITE_TERMINAL.md`.
 
-No claim is made that the Latin-square/transversal incidence system is unrealizable in isolation. Its compatibility with the complete E407 core is moot at \\(\delta=16\\), because the W-side endpoint argument already excludes that core. E407 Q32 remains OPEN / NOT_CERTIFIED for other \\(\delta\\)-values.
+No claim is made that the Latin-square/transversal incidence system is unrealizable in isolation. Its compatibility with a complete E407 core at \(\delta=16\) is moot because the W-side endpoint argument excludes that core. E407 Q32 remains OPEN / NOT_CERTIFIED for other \(\delta\)-values.
