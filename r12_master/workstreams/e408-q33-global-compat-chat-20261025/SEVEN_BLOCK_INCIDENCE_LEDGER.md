@@ -47,7 +47,7 @@ At least eight colors have \(s_C=0\), i.e. exact-129 restrictions to R. For ever
 \[
 R_C\ge7,\qquad P_C\le55. \tag{3}
 \]
-The boundary theorems in Sections 15–16 (full proofs in P49_BOUNDARY_EXCLUSION.md and P48_BOUNDARY_EXCLUSION.md) strengthen this to \(R_C\ge15,\ P_C\le47\). Earlier ledger calculations retain their original displayed baseline bound so their local derivations remain auditable.
+The former Sections 15–16 claimed \(R_C\ge15,\ P_C\le47\), but those outer-cap proofs are now **NOT CERTIFIED** because they use the invalid single-external-edge isolation inference. The only unconditional row-level bound used here is the baseline \(R_C\ge7,\ P_C\le55\); stronger outer caps must not be used until repaired.
 The three nonexact colors have \(\sum s_C=3\) and \(\sum P_C\le183\). Therefore
 \[
 \sum_{C:s_C=0}P_C\ge252-183=69. \tag{4}
@@ -139,7 +139,7 @@ For E408 Q33 at the minimum-support boundary, the inner family has 56 labeled K4
 The global and local systems therefore have to satisfy all of the following at once:
 
 1. 56 edge-disjoint witness K4s in L, union U of size31.
-2. \(e(L)=336+\delta\), \(S_0=\epsilon_U+2\delta\ge12\), and the degree identities in NON_FOUR_PARTITE_TERMINAL.md.
+2. \(e(L)=336+\delta\), \(S_0=\epsilon_U+2\delta\ge13\) in the general 31-point/56-witness boundary, and the degree identities in NON_FOUR_PARTITE_TERMINAL.md.
 3. The exact-129 component labels and high-k shell labels in Sections 2–3.
 4. The outer duplicate budgets (1)–(4) and occurrence lower bounds (6)–(9).
 5. For any repeated exact component label across outer blocks, the corresponding block representatives are joined by a C-colored edge.
