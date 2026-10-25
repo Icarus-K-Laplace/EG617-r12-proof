@@ -54,7 +54,7 @@ The inherited file DELTA14_EPSU1_2_ANTICOMPL_COMPONENT_PROFILES.md discusses \(K
 
 ## 5. Next highest-leverage target
 
-**First close the model-classification gap:** determine whether every 15-vertex, 49-edge, triangle-free, non-bipartite triangle-saturated \(J\) compatible with the two orthogonal near-perfect-matching decompositions must have a degree-4 vertex or be isomorphic to the explicit \((5,5,2,1,2)\) C5-blow-up. Until that is proved, do not promote the candidate-specific transversal result to the entire saturated branch. In parallel, finish the two explicit-candidate extension terminals \(\epsilon_U=1,2\). Then move to \(\delta\le13\) with a fresh exact ledger.
+**Current target: classify the general 15-vertex saturated kernel J.** Determine whether every 15-vertex, 49-edge, triangle-free, non-bipartite triangle-saturated J compatible with the two orthogonal near-perfect-matching decompositions has a degree-4 vertex or is isomorphic to the explicit (5,5,2,1,2) C5-blow-up. The explicit blow-up has now been shown to admit no full 47-core extension for any epsilon_U in {0,1,2}; do not mistake this candidate-specific exclusion for a classification of all J. In parallel, start the delta<=13 branch from a fresh exact ledger.
 
 ## Round 14 update — current live frontier
 
@@ -98,3 +98,10 @@ The remaining task is to determine whether this local model—or any other survi
 The transversal argument depends on the singleton \(d_0\) of the explicit C5-blow-up J, with \(d_J(d_0)=4\). That local graph is a verified realization, not a classification theorem for all saturated J graphs. Therefore:
 - candidate-specific result: \(\epsilon_U=0\) is impossible; \(\epsilon_U=1,2\) force the stated W profiles;
 - general saturated non-four-partite \(\delta=14\) branch: **OPEN** until the admissible J family is classified or the required low-degree property is proved universally.
+
+
+## Round 20 update — explicit local candidate's extension terminals closed
+
+DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md excludes epsilon_U=1,2 for the explicit C5-blow-up local graph; Round 19 already excluded epsilon_U=0. The local candidate therefore cannot extend to the full 47-core under the retained contracts.
+
+This does not close the general non-four-partite saturated branch. The remaining saturated-kernel question is whether other 15-vertex triangle-free, non-bipartite, triangle-saturated graphs with 49 edges and the required witness-induced matching structure exist and, if so, whether any can extend. The delta<=13 cases, five shell templates, and upstream bridge remain OPEN / NOT_CERTIFIED.
