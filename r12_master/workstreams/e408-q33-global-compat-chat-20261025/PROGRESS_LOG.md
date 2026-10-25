@@ -57,3 +57,13 @@
 - Re-audited the \(r_i\le5\) proof after committing it. The delicate one-no-component-row branch requires ruling out \(k\ge2\) in the pairwise blocker theorem before deriving six gadget incidences. The proof now explicitly uses the duplicate budget: \(r_i\le5\) permits at most one repeated K5 component; all ten components must then be represented, so the union of the repeated pair cannot cover a second component. Hence \(k=1\), and the six-gadget-incidence bound is valid.
 - Made the one-repeat deduction explicit in the committed theorem. The \(r_i=5\) boundary is now handled without assuming pairwise compatibility with \(k=1\) prematurely.
 - No graph-level UNSAT result follows from this lemma alone. The exact-129 colors may still have \(r_i(C)\ge6\) across most blocks, and the aggregate duplicate ledger does not force a color to have \(P_C\ge36\).
+
+
+## 2026-10-25 — exact \(r_i(C)=6\) boundary classified
+
+- Proved Theorem 11.1. For a fixed exact-129 color/block with duplicate budget six, the number of rows containing no complete isolated \(K_5\) is exactly one or two.
+- The one-exception-row case is rigid: one \(K_5\) is fully represented twice; the eleven full-component rows each contain one component; the repeated pair's gadget portions are disjoint and have union size six; this six-set and the no-component row's six-set cover the 11-point gadget with one common vertex. The duplicate split is \(d_K=5,d_U=1\).
+- With two exception rows, either no full component repeats (ten distinct single-component rows, with the five extra duplicate incidences split as \(d_K+(d_U-1)=5\)), or one full component repeats and \(d_K=5,d_U=1\). In the latter branch, ten full occurrences mean one component is missing from the full-row list and appears only partially; eleven occurrences mean one double-component row, all ten labels represented, and one label repeated.
+- Proved Corollary 11.2: when another block has \(r_j(C)=1\), at least eight component labels force C-colored edges across the two blocks. The subcase bounds are 10 / 10 / 9 / at least 8 as recorded in the theorem.
+- Independent audit checked the incidence equations \(r_i=d_K+d_U=6\), the cap \(n\le2\) from \(6n\le11+d_U\le17\), the exclusion \(n=0\), and every branch in the occurrence count \(m\in\{10,11\}\). Cross-block forced edges are explicitly not charged to \(P_C\).
+- This is a conditional local classification only. E408 Q33 remains OPEN / NOT_CERTIFIED; no global UNSAT or original \(K_{145}\) proof is claimed.
