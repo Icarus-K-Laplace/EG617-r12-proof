@@ -53,7 +53,7 @@ def enumerate_profiles():
                 assert q_sum == 126
                 assert 8 * m == 84 - eps_t - A
                 profiles.append(
-                    (n7, high_qs, b_tuple, a, eps_t, m, A)
+                    (n7, high_qs, tuple(sorted(b_tuple)), a, eps_t, m, A)
                 )
     return sorted(profiles, key=lambda p: (p[0], p[1], p[2], p[3]))
 
