@@ -43,10 +43,11 @@ Summing over the eleven non-target colors,
 \]
 For every block i, \(\sum_Cr_i(C)=61\).
 
-At least eight colors have \(s_C=0\), i.e. exact-129 restrictions to R. For every exact-129 color, the retained blocker theorem gives \(r_i(C)\ge1\) for each block i, so
+At least eight colors have \(s_C=0\), i.e. exact-129 restrictions to R. For every exact-129 color, the retained blocker theorem gives \(r_i(C)\ge1\) for each block i, so the baseline bound is
 \[
 R_C\ge7,\qquad P_C\le55. \tag{3}
 \]
+The later boundary theorem (Section 15; full proof in P49_BOUNDARY_EXCLUSION.md) strengthens this to \(R_C\ge14,\ P_C\le48\). Earlier ledger calculations retain their original displayed baseline bound so their local derivations remain auditable.
 The three nonexact colors have \(\sum s_C=3\) and \(\sum P_C\le183\). Therefore
 \[
 \sum_{C:s_C=0}P_C\ge252-183=69. \tag{4}
@@ -419,7 +420,7 @@ e_i+t_i=6-a\le5.
 \]
 Each of the ten component rows contains one full \(K_\ell\) and at most five additional vertices. For each label \(\ell\), its row and the six exact \(K_\ell\)-rows in the \(r_j=1\) blocks are forced C-adjacent by pairwise blocker compatibility, so they form a \(C\)-colored \(K_{12}\). If any of the ten high-block rows has an additional \(C\)-neighbor outside its full \(K_\ell\), this \(K_{12}\) has an external \(C\)-edge, contradicting Lemma 13.1. Otherwise all ten label-based \(K_{12}\)'s are isolated. Lemma 13.2 then gives \(P_C\le21(12-10)=42\), again contradicting \(P_C=50\). \(\square\)
 
-**Consequence.** The high-budget clique-packing corner in Corollary 11.3 is not merely compatible with the edge budget: its \(P_C=50,r_i=6\) branch is now excluded analytically. The \(P_C=49,r_i=6\) branch is not covered by Theorem 13.3; the current guaranteed packing there can leave nine isolated \(K_{12}\)'s, for which Lemma 13.2 only gives \(P_C\le63\).
+**Historical scope note.** The \(P_C=50,r_i=6\) corner is excluded by Theorem 13.3. The \(P_C=49,r_i=6\) packing statement above was a conditional packing result, not a contradiction; Section 15 later excludes the entire \(P_C=49\) layer, including every \(r_i=6\) profile.
 
 
 ## 14. Global exact-129 duplicate cap: \(P_C\le49\)
@@ -458,3 +459,14 @@ Therefore every label's high-pair representatives are adjacent. All ten label-ba
 The cases \(P_C\ge51\) and \(P_C=50\) are both excluded, proving \(P_C\le49\). \(\square\)
 
 **Consequence.** For each exact-129 color, the outer residual duplicate budget obeys \(R_C\ge13\). This is a colorwise theorem; it does not yet close the aggregate E408 Q33 ledger or establish the original \(K_{145}\) result.
+
+
+## 15. Exclusion of the \(P_C=49\) boundary
+
+Under the retained seven-block equality contract and exact-129 factor theorem,
+\[
+\boxed{P_C\le48,\qquad R_C\ge14.}
+\]
+The proof is recorded in P49_BOUNDARY_EXCLUSION.md. It exhausts all positive seven-tuples with \(R_C=13\), using Theorems 10.1, 11.1 and 12.1, the isolated-\(K_{12}\) budget cap (Lemma 13.2), and the finite 11-vertex gadget alignment certificate. The exact budget profiles \((5,2,2,1^4)\), \((4,3,2,1^4)\), \((7,1^6)\), \((6,2,1^5)\), \((5,3,1^5)\), and \((4,4,1^5)\) are all excluded, as are profiles with every pair-sum at most six.
+
+The finite verifier checks 2,156 alignment cases over the four exact gadget normal forms, with zero failures. This strengthens the colorwise duplicate-budget interface but does not close the aggregate eleven-color ledger, the 56-witness global compatibility, E408 Q33, or EG617(r=12).
