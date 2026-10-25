@@ -175,3 +175,12 @@ External theorem status is explicit: Didin's 2026 preprint was listed as under r
 - Witness packing: f5d3daa07403877ede9885e1bd5c2f46b16d81da.
 - Zero-excess witness: 07d19abfd6c1c749c7360526e4a04a3eb865fb2e.
 - E408 Q32 excess-six branch remains separate at a0ba6db26c7e8b00a4217dcbcbf298895dff93ce.
+
+
+## Round 18 — the saturated 29-point local model is explicitly realizable
+
+Added DELTA14_SATURATED_LOCAL_MODEL.md and verify_delta14_saturated_local_model.py. A blow-up \(J\) of \(C_5\) with part sizes \((5,5,2,1,2)\) has 15 vertices, 49 edges, is triangle-free and triangle-saturated, and is non-bipartite. The graph \(L\) formed by joining \(J\) to two independent 7-sets is \(K_5\)-free, \(K_5\)-saturated, non-four-partite, and has 308 edges. Its complement \(H_U\) has 29 vertices, 98 edges, and independence number four.
+
+The explicit \(\mathbb Z_7^2\) cell labeling maps all 49 cells bijectively to \(E(J)\). The third color \(\kappa=x+y\bmod7\) gives seven classes of seven vertex-disjoint independent 4-sets; globally the 49 witnesses are pairwise linear and cover all of \(U\). The standard-library verifier checks the graph counts, saturation, cell bijection, and witness packing.
+
+This **invalidates the proposed local-only contradiction target** from Round 17. It does not construct \(W\), the full 47-vertex core, or the shell-row labels. For \(\epsilon_U=0\), the model imposes \(U\)-to-\(W\) degree sequence \(6^{14},5^{10},4^4,2^1\) (sum 152), which becomes a concrete next interface target. E407 Q32 and EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.
