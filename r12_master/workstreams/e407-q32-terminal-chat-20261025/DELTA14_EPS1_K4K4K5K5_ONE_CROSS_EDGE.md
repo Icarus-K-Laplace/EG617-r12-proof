@@ -31,7 +31,7 @@ with W-neighbourhood consisting of the three non-endpoint vertices in each \(K_4
 
 We first rule out this exceptional case. The other seven D-vertices have zero excess and must be complete to a W-component. Each has \(t_d\le1\); since the seven cross-edges of \(H[U]\) have total cross-degree seven, all seven have \(t_d=1\), and each is assigned to a \(K_4\) component. One \(K_4\), call it \(C\), receives \(k\ge4\) of these D-vertices. The exceptional vertex is adjacent to the three non-endpoint vertices of \(C\), so each non-endpoint vertex of \(C\) has at least \(k+1\) D-neighbours; the cross-edge endpoint has at least \(k\).
 
-Here \(t_d\le1\) for all \(d\). The reverse-saturation argument in Section 3 shows that any W-vertex not complete to a U-part would have at least 13 U-neighbours, but a \(K_4\)-vertex has U-degree at most 12. Thus every vertex \(w\in C\) is complete to a U-part. Since no vertex of \(C\) is complete to \(D\) (there are only \(k+1<8\) D-neighbours), it is complete to a small U-part. A non-endpoint \(w\in C\) therefore satisfies
+Here \(t_d\le1\) for all \(d\). The reverse-saturation argument in Section 3 shows that any W-vertex not complete to a U-part would have at least 13 U-neighbours, but a \(K_4\)-vertex has U-degree at most 12. Thus every vertex \(w\in C\) is complete to a U-part. If \(k=7\), the cross-edge endpoint of \(C\) is not complete to \(D\) and would need at least \(7+k=14\) U-neighbours from a small U-part plus its D-neighbours, while its U-degree is at most 11; contradiction. For \(k=4,5,6\), no vertex of \(C\) is complete to \(D\), so every vertex of \(C\) is complete to a small U-part. A non-endpoint \(w\in C\) therefore satisfies
 \[
 9+\epsilon_w=d_H(w,U)\ge7+(k+1),
 \]
@@ -50,6 +50,7 @@ so \(q_5\le2\). At least six D-vertices are assigned to the two \(K_4\) componen
 Let \(R\) count all D-to-W edges whose W endpoint lies outside the component assigned to that D vertex. A D-vertex assigned to a \(K_4\) contributes \(1+\epsilon_d-t_d\), and one assigned to a \(K_5\) contributes \(\epsilon_d-t_d\). Therefore
 \[
 \boxed{R=1-q_5+\sum_{d\in D}\epsilon_d\le2.} \tag{1}
+\]
 
 ## 3. The heavily assigned \(K_4\) forces excess beyond the budget
 
