@@ -86,6 +86,16 @@ Thus \(P_C\le21(12-10)=42\), contradicting \(P_C=50\). This is a genuine global 
 
 **Scope:** the \(P_C=49,\ r_i=6\) corner remains open. Its current guaranteed packing can leave nine isolated \(K_{12}\)'s, and the generic cap gives only \(P_C\le63\). E408 Q33 and the original \(K_{145}\) theorem remain OPEN / NOT_CERTIFIED.
 
+## Result 5: universal exact-129 budget cap \(P_C\le49\)
+
+Theorem 14.1 now proves that every exact-129 color satisfies
+\[
+\boxed{P_C\le49,\qquad R_C\ge13.}
+\]
+The proof excludes \(P_C\ge51\) because then every block-pair sum \(r_i+r_j\le6\), forcing ten component matchings across every block pair and hence ten monochromatic \(K_{12}\)'s. At \(P_C=50\), the \(r_i=6\) profile is excluded by Theorem 13.3; the only remaining possible positive budget vectors are \((5,2,1^5)\) and \((4,3,1^5)\). For these, all label edges are forced except possibly the high-budget pair. If that edge is present, the same isolated-\(K_{12}\) contradiction applies; if absent, blocker compatibility forces the two rows to cover a second full \(K_5\), which forces both high-budget blocks to have overlap \(a=1\), producing a gadget-based \(K_{12}\) with an external \(C\)-edge. Thus \(P_C=50\) is impossible in every case.
+
+This is a genuine colorwise global bound. It still does not close the aggregate E408 Q33 ledger or the original \(K_{145}\) theorem.
+
 ## Seven-block global ledger
 
 For each non-target color C,
@@ -112,12 +122,11 @@ The next proof target is a stability/packing contradiction in Case 1 or a genuin
 
 ## Latest isolated commits
 
+- Universal exact-129 budget cap \(P_C\le49\): 39809f71b0b6602590e90cb632a017f8719000bb
 - Explicit external-edge contradiction in the \(P_C=50\) proof: 6dc384e3bc5b5825ade24c6377601d8dc1f0ae2b
-- Isolated-\(K_{12}\) duplicate cap and \(P_C=50\) exclusion: 772aa7c0d43db747d707f93ee41e96cf1f30a737
-- Exact gadget normal form and strengthened high-budget packing: c01f7dc6951b2bb7ea5209f252b1644ca0ecd40a
-- Live sibling audit and Corollary 11.3 independent check: 597f0db0c7f37e97bb2bb448f0a50bf1f4872809
-- Exact \(r_i(C)=6\) classification and 6+1 matching: 6a1f034fe9d0b2ba5ca49acde9ae57a3c2d652ce
-- Theorem 11.1 / Corollary 11.2: c74b01170b4bab70e148e541b1c610279013f106
+- Isolated-\(K_{12}\) duplicate cap and \(P_C=50\) corner exclusion: 772aa7c0d43db747d707f93ee41e96cf1f30a737
+- Exact gadget normal form: c01f7dc6951b2bb7ea5209f252b1644ca0ecd40a
+- Exact \(r_i(C)=6\) classification: 6a1f034fe9d0b2ba5ca49acde9ae57a3c2d652ce
 - Theorem 10.1 / Corollary 10.2: 73f02a07d4722e09af203cbc0ac8d5d82af405e4
 
 **Status remains OPEN / NOT_CERTIFIED.**
