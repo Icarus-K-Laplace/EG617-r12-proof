@@ -124,14 +124,14 @@ Round 24 also excludes the \(\delta=13,\epsilon_U=1\) profile \(K_3\dot\cup3K_5\
 
 DELTA13_EPS1_K3K5K5K5_ONE_CROSS_EDGE.md excludes \(H[W]=K_3\dot\cup3K_5\) plus one edge for \(\delta=13,\epsilon_U=1\), under the four-partite-U contract. The exact transversal argument permits at most one nonsaturated U-vertex; the common-neighbour capacity sum is at most 26, while at least 28 U-vertices must be covered.
 
-The immediate next target is the remaining \(\epsilon_U=1\) profiles with W-cross-edges: \(3K_4\dot\cup K_6\) plus one edge and \(2K_4\dot\cup2K_5\) plus two edges.
+The immediate next target is the remaining \(\epsilon_U=1\) profile \(2K_4\dot\cup2K_5\) plus two W-cross-edges, followed by the \(\epsilon_U=2\), \(2K_4\dot\cup2K_5\)-plus-one-edge profile.
 
 
 ## Round 25 update — delta-13 K4-K6 cross-edge
 
 DELTA13_EPS1_3K4_K6_K4K6_EDGE.md excludes the \(\epsilon_U=1\), \(3K_4\dot\cup K_6\) W-profile when the unique W-cross-edge joins a \(K_4\) to the \(K_6\). All U-vertices are W-saturated, and common-neighbour capacities are at most \(9+9+9+1=28<29\).
 
-The next local target is the same profile with its cross-edge between two K4 components.
+The K4–K4 placement was closed in Round 26; the next local target is \(2K_4\dot\cup2K_5\) plus two W-cross-edges at \(\epsilon_U=1\).
 
 
 ## Round 26 update — both \(3K_4\dot\cup K_6\) edge placements
