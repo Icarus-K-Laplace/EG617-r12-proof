@@ -214,3 +214,13 @@ This is a genuine labelled row-capacity constraint. It does not by itself contra
 ## 7. Cross-terminal interpretation
 
 The generic omission-capacity inequality remains valid in both terminal types. The partite theorem sharpens it in the Q33 four-partite branch to the exact profile \(\Omega=0\), whereas the non-four-partite branch retains the broader omission profiles. Therefore any future use of the scalar profile \(\Omega>0\) to exclude Q33 must explicitly be a non-four-partite argument; it cannot be used against the four-partite branch. Conversely, the Q33 four-partite label-row cap \(|D_b\cap D|\le7-n_b\) is not available in the non-four-partite branch.
+
+
+## 8. Cross-terminal interface to the exact-129 outer-block system
+
+The core-witness omission ledger and the exact-129 outer-block ledger are distinct but now have an explicit interface. For each exact-129 color C, the seven-block equality system supplies \(P_C+R_C=62\) and the low-budget block set \(\mathcal I_C=\{i:r_i(C)\le5\}\). The outer-row theorem proves that every pair in \(\mathcal I_C\) has at least nine of ten same-component representative edges, and every missing diagonal costs at least one unit of \(d_{ij}(C)\). Thus
+\[
+\sum_{\{i,j\}\subseteq\mathcal I_C}m_{ij}(C)\le P_C.
+\]
+
+This bound is reusable in both the E407 Q32 and E408 Q33 minimum-support contracts because it depends on the shared exact-129 factor theorem and seven-block equality system, not on the 29-point versus 31-point support profile. It does not itself improve the target-core inequality (1) or assign labels to arbitrary graph-theoretic common witnesses; the label-transfer barrier in Section 5 remains.
