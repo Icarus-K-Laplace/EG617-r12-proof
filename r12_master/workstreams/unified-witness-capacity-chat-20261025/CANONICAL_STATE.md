@@ -232,3 +232,25 @@ Thus \(P_C\ge49\) forces at least one selected witness component to extend to a 
 A later read supersedes the E407 head recorded in the previous section. The latest E407 Q32 branch is now bd385f7dfe102deb426810baf1999a8e94dd488f. Its newest commit clarifies the standalone \(\delta=16\) clique obstruction; the current canonical state now records both the \(\delta=16\) four-partite extreme and the \(\delta=15\) four-partite branch as EXCLUDED under their retained contracts. E407 overall remains OPEN because templates A–E, the \(\delta=14\) compatibility branch, and the low-excess non-four-partite branch are still open.
 
 Other latest sibling heads are unchanged: E408 Q32 a0ba6db26c7e8b00a4217dcbcbf298895dff93ce; E408 Q33 a6bbb918c3484bedd1a4eafb410901288cdff085; witness-packing f5d3daa07403877ede9885e1bd5c2f46b16d81da; zero-excess witness 07d19abfd6c1c749c7360526e4a04a3eb865fb2e; ultimate closure 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40.
+
+
+## 2026-10-25 continuation — E407/E408 top-cell-A cross-layer rigidity
+
+Added Theorems 11.1–11.2 and Corollary 11.3 to OUTER_EXCEPTIONAL_ROW_COUPLING.md, conditionally combining the sibling T61 top-cell-A theorem with the exact-129 factor theorem.
+
+**Exact intersection pattern.** Since each non-target color is a near-perfect matching on the 23-point set W, every isolated K5 component of an exact-129 color intersects W in at most two vertices. The 11-point gadget U must intersect W in 3 or 4 vertices because alpha(U)<=2. Consequently the ten K5 components meet W in exactly one of two profiles: \(2^{10}\), or \(2^9,1\). The gadget restriction is respectively one edge plus an isolate, or a two-edge perfect matching. Thus every exact color contributes at least nine component edges to its W matching.
+
+**Global defect identity.** Let O=V(F)\\W (38 vertices), \(\kappa_v=d_F(v)-13\), \(K_W=\sum_{w\in W}\kappa_w\), and \(t_C=e_C(O)-42\). The Turan floor gives \(t_C\ge0\). The exact cross-edge ledger is
+\[
+e_C(W,O)=76+s_C-t_C,\qquad
+e_F(W,O)=35+K_W.
+\]
+Summing over colors and using \(\sum_C s_C=411-E\) yields
+\[
+\sum_C t_C=K_W+411-E-3.
+\]
+Hence E408 gives \(\sum_C t_C=K_W\), and E407 gives \(\sum_C t_C=K_W+1\).
+
+**Exact-color defect cap.** In either intersection profile, the ten K5 components and the gadget degree floor imply \(42\le e_C(O)\le48\), so \(0\le t_C\le6\) for exact-129 colors. When \(t_C=0\), equality in Turan forces \(C[O]\) to be ten K3s plus two K4s. This creates a near-Turan decomposition problem on O shared by all eleven non-target colors.
+
+The arithmetic replay passed for all \(K_W\in[0,23]\) in E408 and \(K_W\in[0,21]\) in E407. This is a conditional exact ledger, not a contradiction. The next gap is to exploit simultaneous edge-disjoint 10-triangle/2-K4 partitions when many colors have \(t_C=0\), or to show the \(t_C\) distribution cannot meet the target shell/core geometry.
