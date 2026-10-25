@@ -225,3 +225,10 @@ The K12 packing theorem now has a direct labelled corollary. The exact-129 facto
 |\mathcal W_C\cap\mathcal K_C^*|\ge\max(0,P_C-48).
 \]
 Thus \(P_C\ge49\) forces at least one selected witness component to extend to a monochromatic K12 containing its labelled core four-set and shell label; \(P_C=50\) forces at least two. This links the outer duplicate budget directly to the labelled witness family. It is still not a contradiction, and the scalar relaxation shows that no exact color is forced to \(P_C\ge49\) by aggregate budgets alone.
+
+
+## 2026-10-25 sibling refresh correction
+
+A later read supersedes the E407 head recorded in the previous section. The latest E407 Q32 branch is now bd385f7dfe102deb426810baf1999a8e94dd488f. Its newest commit clarifies the standalone \(\delta=16\) clique obstruction; the current canonical state now records both the \(\delta=16\) four-partite extreme and the \(\delta=15\) four-partite branch as EXCLUDED under their retained contracts. E407 overall remains OPEN because templates A–E, the \(\delta=14\) compatibility branch, and the low-excess non-four-partite branch are still open.
+
+Other latest sibling heads are unchanged: E408 Q32 a0ba6db26c7e8b00a4217dcbcbf298895dff93ce; E408 Q33 a6bbb918c3484bedd1a4eafb410901288cdff085; witness-packing f5d3daa07403877ede9885e1bd5c2f46b16d81da; zero-excess witness 07d19abfd6c1c749c7360526e4a04a3eb865fb2e; ultimate closure 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40.
