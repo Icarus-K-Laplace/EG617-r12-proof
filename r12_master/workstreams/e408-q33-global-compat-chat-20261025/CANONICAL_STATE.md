@@ -113,6 +113,20 @@ The proof depends on a finite, exact 11-vertex gadget alignment lemma. GADGET_AL
 
 **Scope:** this is a stronger colorwise interface, not global closure. The aggregate eleven-color budget and the 56-witness/core compatibility remain open; E408 Q33 and EG617(r=12) are still **OPEN / NOT_CERTIFIED**.
 
+## Result 7: the exact-129 \(P_C=48\) boundary is excluded
+
+**Theorem:** under the retained exact-129 factor theorem and seven-block equality contract,
+\[
+\boxed{P_C\le47,\qquad R_C\ge15.}
+\]
+Theorem 14.1 had given \(P_C\le49\), and Result 6 excluded \(P_C=49\). The new proof in P48_BOUNDARY_EXCLUSION.md excludes \(R_C=14\), by splitting the integer profiles into:
+- all seven budgets at most five, where the missing-edge blocker dichotomy plus fixed-gadget alignment handles every pair-sum \(7,8,9\);
+- \((6,3,1^5)\) and \((6,2,2,1^4)\), using Theorem 11.1 and alignment with one or two \(r=2\) blocks;
+- \((7,2,1^5)\), using full-component occurrence counts and the one-/two-/three-gadget-only-row cases;
+- \((8,1^6)\), using the corresponding \(r=8\) row-count and incidence budget.
+
+The verifier and certificate were extended to 467,696 exact alignment checks over the four 11-vertex normal forms, with zero failures. This is a stronger **colorwise conditional bound**, not a global contradiction. The aggregate eleven-color ledger, the 56-witness support geometry, E408 Q33, and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
+
 ## Seven-block global ledger
 
 For each non-target color C,
@@ -139,11 +153,13 @@ The next proof target is a stability/packing contradiction in Case 1 or a genuin
 
 ## Latest isolated commits
 
+- P48 boundary exclusion theorem: 26ef67f0a9cd139e7bfb29655987e9f5ad58a528
+- Clarified impossible pair-sum-seven no-second branch: 9408fcd6f26f1e4b1c566192044e1e00054c497f
+- Expanded exact-129 gadget alignment certificate: 320dbcdb82bc42ae8f770084ae8c9f72491eaea2
+- Extended finite gadget verifier: 2209c1764182a1aaa5b945469d8edf9fc81cffa5
 - Corrected \(6+1\) Case C branch in the \(P_C=49\) proof: 333cc2d6cbd48b01dde395ad8b1135b6c10a3d26
 - Refined \(P_C=49\) proof for pair-sum-eight and \(r_i=6\) cases: 787427120154b300f5d9c7f137c5cb366cfa434a
 - Complete \(r_i=7\) budget analysis and finite alignment source: a2a4557b990075f1e6cf34f85dd93394fd6008b7
-- Gadget alignment certificate: d576cf81cd52d3c3c49550cac0ba886a97b63b37
-- Extended size-four gadget alignment verifier: 6c84ffb136c72554ea682ff29fc8d94d640e4fa0
 - Initial \(P_C=49\) boundary theorem: d55bdd28227fab0813b145282474d82e300e6550
 - Universal exact-129 budget cap \(P_C\le49\): 39809f71b0b6602590e90cb632a017f8719000bb
 
