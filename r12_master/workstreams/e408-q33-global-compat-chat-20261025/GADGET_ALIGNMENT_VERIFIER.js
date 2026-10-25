@@ -19,16 +19,18 @@ For each s, G_s is the following list of "universal" K5 cliques:
 where A'={a1,a2,a3,a4,x}.
 
 The verifier exhaustively enumerates all 2^11 vertex subsets, checks clique
-status by all internal pairs, then checks:
-  (i) every K5 E is disjoint from some D in G_s;
+status by all internal pairs, then checks every omitted set E of size four or
+five that is a clique, every disjoint K5/K5 pair, and every disjoint K5/K4
+pair. It certifies:
+  (i) every such E is disjoint from some D in G_s;
   (ii) every D in G_s has a disjoint member in every disjoint K5/K5 pair;
-  (iii) for every K5 E and every disjoint low-block omitted pair (F,G),
-       where |F|=5 and |G| is 4 or 5, some D in G_s is disjoint from E
+  (iii) for every E and every disjoint low-block omitted pair (F,G),
+       where (|F|,|G|)=(5,5) or (5,4), some D in G_s is disjoint from E
        and from at least one of F,G.
 A row whose omitted set is disjoint from D has a C-neighborhood containing D.
-All such omitted sets lie in U\\D, a 6-set; since they have size at least 4,
-they pairwise intersect. The blocker lemma then forces the corresponding
-outer vertices to be C-adjacent.
+All such omitted sets lie in U\\D, a 6-set; since they have size at least four,
+they pairwise intersect. The blocker compatibility theorem then forces the
+corresponding outer vertices to be C-adjacent.
 
 No external packages or randomness are used.
 */
@@ -90,10 +92,10 @@ function maskOf(vertices) {
 }
 
 const expected = {
-  1: { k5: 4, k4: 18, p55: 3, p54: 28, tests55: 12, tests54: 112 },
-  2: { k5: 3, k4: 15, p55: 2, p54: 20, tests55: 6, tests54: 60 },
-  3: { k5: 3, k4: 15, p55: 2, p54: 20, tests55: 6, tests54: 60 },
-  4: { k5: 4, k4: 18, p55: 3, p54: 28, tests55: 12, tests54: 112 }
+  1: { k5: 4, k4: 18, p55: 3, p54: 28, tests55K5: 12, tests54K5: 112, tests55K4: 54, tests54K4: 504 },
+  2: { k5: 3, k4: 15, p55: 2, p54: 20, tests55K5: 6, tests54K5: 60, tests55K4: 30, tests54K4: 300 },
+  3: { k5: 3, k4: 15, p55: 2, p54: 20, tests55K5: 6, tests54K5: 60, tests55K4: 30, tests54K4: 300 },
+  4: { k5: 4, k4: 18, p55: 3, p54: 28, tests55K5: 12, tests54K5: 112, tests55K4: 54, tests54K4: 504 }
 };
 const A = maskOf([0, 1, 2, 3, 4]);
 const B = maskOf([5, 6, 7, 8, 9]);
@@ -106,8 +108,7 @@ const universal = {
 };
 
 const summary = [];
-let totalTests55 = 0;
-let totalTests54 = 0;
+let total55K5 = 0, total54K5 = 0, total55K4 = 0, total54K4 = 0;
 for (let s = 1; s <= 4; s++) {
   const adjacency = makeGadget(s);
   const K5 = enumerateCliques(adjacency, 11, 5);
@@ -137,37 +138,57 @@ for (let s = 1; s <= 4; s++) {
         "s=" + s + ": D fails to align with a disjoint K5/K5 pair");
     }
   }
-  for (const E of K5) {
+
+  // Every high omitted clique E of size 4 or 5 must align with a universal D.
+  for (const E of [...K5, ...K4]) {
     assert(universal[s].some(D => disjoint(D, E)),
-      "s=" + s + ": some K5 E is disjoint from no universal D");
+      "s=" + s + ": some size-4/5 clique E is disjoint from no universal D");
   }
 
-  let tests55 = 0;
-  let tests54 = 0;
+  let tests55K5 = 0, tests54K5 = 0, tests55K4 = 0, tests54K4 = 0;
   for (const E of K5) {
     for (const [F, G] of p55) {
-      tests55++;
+      tests55K5++;
       assert(universal[s].some(D =>
         disjoint(D, E) && (disjoint(D, F) || disjoint(D, G))),
-      "s=" + s + ": no alignment for high E and low K5/K5 pair");
+      "s=" + s + ": no K5/K5 alignment for high K5 E");
     }
     for (const [F, G] of p54) {
-      tests54++;
+      tests54K5++;
       assert(universal[s].some(D =>
         disjoint(D, E) && (disjoint(D, F) || disjoint(D, G))),
-      "s=" + s + ": no alignment for high E and low K5/K4 pair");
+      "s=" + s + ": no K5/K4 alignment for high K5 E");
     }
   }
-  assert(tests55 === exp.tests55, "s=" + s + ": incomplete K5/K5 alignment sweep");
-  assert(tests54 === exp.tests54, "s=" + s + ": incomplete K5/K4 alignment sweep");
-  totalTests55 += tests55;
-  totalTests54 += tests54;
+  for (const E of K4) {
+    for (const [F, G] of p55) {
+      tests55K4++;
+      assert(universal[s].some(D =>
+        disjoint(D, E) && (disjoint(D, F) || disjoint(D, G))),
+      "s=" + s + ": no K5/K5 alignment for high K4 E");
+    }
+    for (const [F, G] of p54) {
+      tests54K4++;
+      assert(universal[s].some(D =>
+        disjoint(D, E) && (disjoint(D, F) || disjoint(D, G))),
+      "s=" + s + ": no K5/K4 alignment for high K4 E");
+    }
+  }
+  assert(tests55K5 === exp.tests55K5, "s=" + s + ": incomplete K5-high/K5-pair sweep");
+  assert(tests54K5 === exp.tests54K5, "s=" + s + ": incomplete K5-high/K5-K4-pair sweep");
+  assert(tests55K4 === exp.tests55K4, "s=" + s + ": incomplete K4-high/K5-pair sweep");
+  assert(tests54K4 === exp.tests54K4, "s=" + s + ": incomplete K4-high/K5-K4-pair sweep");
+  total55K5 += tests55K5; total54K5 += tests54K5;
+  total55K4 += tests55K4; total54K4 += tests54K4;
   summary.push({ s, K5: K5.length, K4: K4.length,
     disjointK5Pairs: p55.length, disjointK5K4Pairs: p54.length,
-    alignmentChecks55: tests55, alignmentChecks54: tests54, failures: 0 });
+    highK5Checks55: tests55K5, highK5Checks54: tests54K5,
+    highK4Checks55: tests55K4, highK4Checks54: tests54K4, failures: 0 });
 }
-assert(totalTests55 === 36, "global K5/K5 test count mismatch");
-assert(totalTests54 === 344, "global K5/K4 test count mismatch");
+assert(total55K5 === 36, "global K5-high/K5-pair test count mismatch");
+assert(total54K5 === 344, "global K5-high/K5-K4-pair test count mismatch");
+assert(total55K4 === 168, "global K4-high/K5-pair test count mismatch");
+assert(total54K4 === 1608, "global K4-high/K5-K4-pair test count mismatch");
 process.stdout.write(JSON.stringify({
   contract: "exact 11-vertex normal form; s=1,2,3,4",
   universalCliqueSets: {
@@ -177,8 +198,13 @@ process.stdout.write(JSON.stringify({
     4: ["A'", "B"]
   },
   summary,
-  totalAlignmentChecks55: totalTests55,
-  totalAlignmentChecks54: totalTests54,
+  alignmentChecks: {
+    highK5_vs_K5Pair: total55K5,
+    highK5_vs_K5K4Pair: total54K5,
+    highK4_vs_K5Pair: total55K4,
+    highK4_vs_K5K4Pair: total54K4
+  },
+  totalAlignmentChecks: total55K5 + total54K5 + total55K4 + total54K4,
   totalFailures: 0,
   result: "PASS"
 }, null, 2) + "\n");
