@@ -194,3 +194,21 @@ Therefore the conditional colorwise cap
 is now established under the retained exact-129 factor, row-profile, pairwise-blocker, gadget-normal-form, and seven-block equality contracts. The stronger cap \(P_C\le48\) remains **NOT CERTIFIED**. E408 Q33 and EG617(\(r=12\)) remain **OPEN / NOT_CERTIFIED**.
 
 Verifier commit: c413b1065e9926d00ad1319f2e8d8a815e4850b5. Theorem commit: 04b5ec6f9a1e118faee2216208e1f13361fb8d43.
+
+## 13. \(P_C=49\) common-star screen — partial closure only
+
+The new files R12_P49_COMMON_STAR_SCREEN.md and verify_p49_common_star_screen.py extend the finite common-star DP to the exact boundary \(R_C=13\). An independent in-session reimplementation reproduced the committed verifier's arithmetic for the \(R_C\le12\) theorem and then checked all nine profiles with \(R_C=13\) and \(\max r_i\le5\) across four gadget normal forms.
+
+Five profiles are excluded conditionally:
+\[
+(2^6,1),\ (3,2^4,1^2),\ (3^2,2^2,1^3),\ (3^3,1^4),\ (4,2^3,1^3).
+\]
+Their pairwise budget sums are at most six, so the selected no-component rows have component-incidence sum at most four. The common-star alignment yields a monochromatic \(K_{12}\), and seven nonempty omission sets in a six-point set force a vertex with at least two external \(C\)-edges, contradicting the valid star-capacity bound.
+
+The common-star DP fails for \((4,4,1^5)\) in gadget forms \(b=1,4\) and for \((4,3,2,1^4)\) in forms \(b=2,3\). The remaining six \(P_C=49\) profiles are:
+\[
+(4,3,2,1^4),\ (4,4,1^5),\ (5,2^2,1^4),\ (5,3,1^5),\ (6,2,1^5),\ (7,1^6).
+\]
+The first two require an alignment method without a common point; the next two require incidence-sensitive row selection; the last two require separate high-budget case analysis.
+
+**Scope firewall:** this is a partial exclusion of five integer profiles, not a proof that \(P_C\ne49\). The historical P49_BOUNDARY_EXCLUSION.md remains NOT CERTIFIED as a whole. No conclusion \(P_C\le48\) is authorized; E408 Q33 and EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.
