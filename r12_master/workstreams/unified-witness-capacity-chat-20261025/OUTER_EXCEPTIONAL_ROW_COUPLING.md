@@ -236,24 +236,50 @@ Combining Theorem 9.1 with the near-complete matching theorem and the sibling \(
 This is a reusable branch certificate, not a contradiction: the original coloring contract permits disjoint monochromatic \(K_{12}\) cliques.
 
 
-## 10. Labelled selected-witness extension — corrected transfer floor
+## 10. Selected support family versus the full exact-component witness reservoir
 
-The seven graph-theoretic witnesses for an exact-129 color are not automatically seven distinct isolated \(K_5\) components. A labelled witness \(\{\lambda\}\cup Q\) is a C-colored \(K_5\); because \(C[R]\) consists of ten isolated \(K_5\) components plus the 11-point gadget \(U_C\), each witness lies either in an isolated component or wholly in \(U_C\). If it lies in \(U_C\), its four-set \(Q\) lies in \(U_C\). The seven selected four-sets are disjoint and \(|U_C|=11\), so at most two can lie in the gadget. Thus the proved transfer floor is
-\[
-|\mathcal W_C|\ge5,
-\]
-with at least four of the six B-labelled witnesses among these isolated components. A stronger seven-component transfer is not assumed.
+### 10.1 The seven-witness minimum-support family
 
-Let \(\mathcal K_C^*=\bigcap_{i=0}^6\mathcal K_i(C)\) be the components that are exact size-five blockers in every outer block. Theorem 9.1 gives \(|\mathcal K_C^*|\ge P_C-45\). Therefore
+The seven graph-theoretic witnesses used in the E407/E408 minimum-support analysis are not automatically all isolated K5 components. However, all selected witnesses avoid \(S\), and the ten isolated K5 components also avoid \(S\). Hence \(S\subseteq U_C\) and \(|U_C\setminus S|=8\). Two selected gadget witnesses would have disjoint four-sets filling these eight non-S gadget vertices, leaving no room for the shell label of either witness. Thus at most one of the seven selected witnesses lies in the gadget and at least six are isolated-component witnesses.
+
+For the original selected family \(\mathcal W_C\), the intersection with the all-block blocker set \(\mathcal K_C^*\) therefore satisfies
 \[
 |\mathcal W_C\cap\mathcal K_C^*|
-\ge \max(0,|\mathcal W_C|+|\mathcal K_C^*|-10)
-\ge \max(0,P_C-50).
+\ge\max(0,6+(P_C-45)-10)
+=\max(0,P_C-49).
 \]
-Consequently, the current label-transfer theorem guarantees that a selected witness component extends by exact blocker rows to a monochromatic \(K_{12}\) only when \(P_C\ge51\). At \(P_C=49\) or \(50\), this intersection bound gives zero. The earlier threshold \(P_C\ge49\) would require a separate theorem transferring seven selected witnesses to seven distinct isolated components.
+This gives a selected-witness extension threshold \(P_C\ge50\). It is a packing constraint, not a contradiction, and it applies specifically to the chosen seven-witness support family.
 
-This is a labelled extension bound, not a contradiction: a monochromatic \(K_{12}\) is permitted by the original coloring contract, and no high-\(P_C\) exact color is forced by the aggregate scalar ledger alone.
+### 10.2 All ten exact components are shell witnesses
 
+A stronger independent fact follows from the full shell contract. Each isolated K5 component avoids \(S\), and must meet \(V(R)\setminus H=\{p\}\cup S\cup B\) because \(\alpha(H)\le4\). Its outside-\(H\) vertices therefore lie in \(B\cup\{p\}\). But \(B\) is a clique in the target-color graph and \(p\) is target-adjacent to every vertex of \(B\), so a C-colored K5 component contains at most one vertex of \(B\cup\{p\}\). Consequently every isolated component has exactly one shell label and four core vertices:
+\[
+K_\ell=\{\lambda_\ell\}\cup Q_\ell,\qquad
+\lambda_\ell\in B\cup\{p\},\quad Q_\ell\subseteq H,\quad |Q_\ell|=4.
+\]
+Thus the exact-129 factorization supplies ten component-backed shell witnesses per color. This does not imply that the seven witnesses minimizing support are all selected from these ten; their union is a different support problem.
+
+### 10.3 A new high-support reduction when \(m=10\)
+
+Let \(U_{\rm comp}\) be the union of all ten component four-sets from each of \(m\) exact-129 colors. Same-color sets are disjoint, and any two sets from different colors intersect in at most one vertex, so \(|U_{\rm comp}|\ge40\).
+
+If \(m=10\) and \(|U_{\rm comp}|=40\), the 100 component K4s partition the 40-point support colorwise and contribute 600 distinct edges to \(\overline{H[U_{\rm comp}]}\). But \(W=H\setminus U_{\rm comp}\) has seven vertices and \(\alpha(H[W])\le4\), so \(e(H[W])\ge21-t_4(7)=3\). The exact degree ledger gives
+\[
+e(H[U_{\rm comp}])=480-284+\epsilon_U+e(H[W])
+=196+\epsilon_U+e(H[W]),
+\]
+hence
+\[
+e(\overline{H[U_{\rm comp}]})
+=584-\epsilon_U-e(H[W])\le581,
+\]
+a contradiction. Therefore \(m=10\) forces \(|U_{\rm comp}|\ge41\).
+
+At \(|U_{\rm comp}|=41\), each of the ten colors omits exactly one point from its ten disjoint four-sets. Since \(|W|=6\) and \(e(H[W])\ge2\), the degree ledger gives
+\[
+e(\overline{H[U_{\rm comp}]})=612-\epsilon_U-e(H[W])\le610.
+\]
+The 100 component K4s already account for 600 distinct edges, leaving at most ten additional edges. This creates a separate near-decomposition / partial transversal-design terminal. The cases \(m=8,9\) with \(|U_{\rm comp}|\ge40\), and \(m=10\) with \(|U_{\rm comp}|\ge41\), remain OPEN.
 ## 11. E407/E408 top-cell-A interface: exact-color factorization across \(W\sqcup O\)
 
 This section is conditional on the sibling theorem in front_end/T61_H13_FULL_COLOR_DEGREE_AND_ANTINEIGHBORHOOD.md, Sections 5–6: \(|W|=23\), \(|O|=38\), \(e_F(W)=132\), and every non-target color restricts to a near-perfect matching of 11 edges on \(W\). It is also conditional on front_end/E408_EXACT129_BLOCKER_DUPLICATE_THEOREM.md, which classifies every exact-129 color as ten isolated \(K_5\) components plus an 11-vertex gadget \(U\), with \(\alpha(U)=2\), \(\omega(U)=5\), and \(e(U)=29\).
