@@ -306,3 +306,14 @@ Corrected transfer floor: at least six of the seven selected witness K5s are iso
 |\mathcal W_C\cap\mathcal K_C^*|\ge\max(0,P_C-49).
 \]
 Thus the selected-witness extension threshold improves from \(P_C\ge51\) to \(P_C\ge50\). This remains a labelled packing constraint only; it does not itself contradict the K145 coloring or close EG617(r=12).
+
+
+## 2026-10-25 continuation — all ten exact components are shell witnesses
+
+A stronger exact-factor argument is now recorded in LABELLED_WITNESS_CAPACITY_THEOREM.md, Theorem 12.1. Every isolated K5 component avoids S and must meet \(V(R)\setminus H\), since \(\alpha(H)\le4\). Its outside-H vertices lie in \(B\cup\{p\}\); because \(B\) is a target-color clique and \(p\) is target-adjacent to every vertex of \(B\), a C-colored component contains at most one such vertex. Therefore every isolated component has exactly one shell label and four core vertices. The ten component labels are distinct, so every exact-129 color has ten component-backed shell witnesses, at least nine B-labelled.
+
+This does not identify the particular seven witnesses minimizing support with seven of these ten components. The selected minimum-support family still has at least six component-backed witnesses by the S-avoidance lemma, but its support union may be smaller than the union of all ten components per color.
+
+New independent high-support reduction: let \(U_{\rm comp}\) be the union of all ten component four-sets per exact color. Then \(|U_{\rm comp}|\ge40\). If \(m=10\) exact colors and \(|U_{\rm comp}|=40\), the 100 component K4s require 600 distinct edges in \(\overline{H[U_{\rm comp}]}\), while the 284-edge core ledger and \(\alpha(H[W])\le4\) give at most 581. Contradiction. Hence \(m=10\Rightarrow |U_{\rm comp}|\ge41\). At support 41, the 100 K4s leave at most ten additional complement edges; this is the next near-decomposition terminal, not yet closed.
+
+The original seven-per-color support boundary \(v=29/31\), the \(m=8,9\) full-component supports \(v\ge40\), the \(m=10,v\ge41\) terminal, the global eleven-color ledger, and the K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
