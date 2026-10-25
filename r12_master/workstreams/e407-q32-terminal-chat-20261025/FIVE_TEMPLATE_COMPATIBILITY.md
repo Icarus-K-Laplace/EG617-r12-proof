@@ -1,5 +1,7 @@
 # E407 Q32 — five-template / common-core compatibility
 
+**Current status as of Round 31:** the four-partite-\(L\), \(\delta=13,\epsilon_U=1\), \(2K_4\cup2K_5\)-plus-two-cross-edge W-profile is EXCLUDED by DELTA13_EPS1_TWO_CROSS_EDGE_TERMINAL_CLOSURE.md. The \(\epsilon_U=2\) one-cross-edge profile, \(\epsilon_U=0\), non-four-partite \(L\), \(\delta\le12\), and templates A–E globally remain OPEN / NOT_CERTIFIED.
+
 Date: 2026-10-25  
 Status: **OPEN**. The five \(\rho=0\) templates have not been eliminated.
 
@@ -139,3 +141,8 @@ Still open at \(\delta=13\) in the four-partite-U branch: \(2K_4\dot\cup2K_5\) p
 The profile is not yet excluded, but it now has a strict exception-count contract. The exact two-edge transversal lemma reduces every U-vertex not complete to a W component to Type I (one-edge blocker with singleton endpoint non-neighbour sets) or Type II (same-pair two-edge star with non-neighbour-set sizes 2 and 1). K4 common-neighbour capacity is at most 9; K5 capacity is at most 2+E_i. Hence at least four U-vertices are W-unsaturated. If any cross-edge touches a K4, the capacity sharpens to 24 and at least five exceptions are necessary. If both edges lie between the K5 components, at most one exception is possible, contradicting the capacity floor; that placement is excluded. See DELTA13_EPS1_TWO_CROSS_EDGE_PROFILE_REDUCTION.md.
 
 Remaining: eliminate the k>=5 Type-I/Type-II labelled exception system. E407 Q32 remains OPEN.
+
+
+## Round 31 — close the last same-pair placements in the \(\delta=13,\epsilon_U=1\) two-edge profile
+
+The new DELTA13_EPS1_TWO_CROSS_EDGE_TERMINAL_CLOSURE.md excludes the K4-K4 matching/star and both K4-K5 star placements. Combined with the existing different-pair, K5-K5, and disjoint K4-K5 exclusions, no placement of the two W-cross-edges realizes the \(2K_4\cup2K_5\) W-profile under the retained four-partite-U/core contract. This is one W-profile closure, not a closure of templates A–E or E407 Q32 overall.
