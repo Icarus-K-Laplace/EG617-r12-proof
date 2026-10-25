@@ -125,7 +125,9 @@ Theorem 14.1 had given \(P_C\le49\), and Result 6 excluded \(P_C=49\). The new p
 - \((7,2,1^5)\), using full-component occurrence counts and the one-/two-/three-gadget-only-row cases;
 - \((8,1^6)\), using the corresponding \(r=8\) row-count and incidence budget.
 
-The verifier and certificate were extended to 467,696 exact alignment checks over the four 11-vertex normal forms, with zero failures. This is a stronger **colorwise conditional bound**, not a global contradiction. The aggregate eleven-color ledger, the 56-witness support geometry, E408 Q33, and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
+The verifier and certificate cover 467,696 exact alignment checks over the four 11-vertex normal forms, with zero failures. A line-by-line audit corrected three proof hazards before retaining the conditional claim: (i) \(r_i=3\) does not force pair type \(53/44\); all \(55/54/53/44\) types are now handled, (ii) the \(r_i=6\), Case C proof now distinguishes total gadget excess \(d_U\), component-row gadget incidences \(e_i\), and the overlap/uncovered vertices of the two gadget-only rows instead of assuming their union is \(U\), and (iii) the \(r_i=7,8\) cases no longer assume \(t_i=0\) merely from \(q=10\) and no double full-component row. They branch on \(t_i+e_i\) and either produce an omitted \(K_4/K_5\) or force the edge by the \(5/6\)-incidence thresholds.
+
+The \(53+53\) pair/pair configuration is not universally alignable. The proof avoids that alignment: the all-low branch excludes it by the pair-sum budget, and the \((6,3,1^5)\) branch closes it directly from \(t_i+t_j<5\) and \(e_i+e_j<6\). This is a stronger **colorwise conditional bound**, not a global contradiction. The aggregate eleven-color ledger, the 56-witness support geometry, E408 Q33, and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
 
 ## Seven-block global ledger
 
@@ -153,10 +155,14 @@ The next proof target is a stability/packing contradiction in Case 1 or a genuin
 
 ## Latest isolated commits
 
-- P48 boundary exclusion theorem: 26ef67f0a9cd139e7bfb29655987e9f5ad58a528
+- Audited and repaired P48 boundary proof: 6a1b3b428f85e5600f1786f812571cbf1a7ee434
+- Corrected \(r=8,n=1\) excess wording: 658b0881a69b87fb35fe713765e6fbee7b470613
+- Clarified 53+53 verifier scope: 6b5b356b1c3e8c70a7b8a296d6af46863b6a2a49
+- Updated exact alignment certificate: 06a1ff0507035e44829586a1f543b63643a957ae
+- P48 boundary exclusion theorem (initial): 26ef67f0a9cd139e7bfb29655987e9f5ad58a528
 - Clarified impossible pair-sum-seven no-second branch: 9408fcd6f26f1e4b1c566192044e1e00054c497f
-- Expanded exact-129 gadget alignment certificate: 320dbcdb82bc42ae8f770084ae8c9f72491eaea2
-- Extended finite gadget verifier: 2209c1764182a1aaa5b945469d8edf9fc81cffa5
+- Expanded exact-129 gadget alignment certificate (initial): 320dbcdb82bc42ae8f770084ae8c9f72491eaea2
+- Extended finite gadget verifier (initial): 2209c1764182a1aaa5b945469d8edf9fc81cffa5
 - Corrected \(6+1\) Case C branch in the \(P_C=49\) proof: 333cc2d6cbd48b01dde395ad8b1135b6c10a3d26
 - Refined \(P_C=49\) proof for pair-sum-eight and \(r_i=6\) cases: 787427120154b300f5d9c7f137c5cb366cfa434a
 - Complete \(r_i=7\) budget analysis and finite alignment source: a2a4557b990075f1e6cf34f85dd93394fd6008b7
