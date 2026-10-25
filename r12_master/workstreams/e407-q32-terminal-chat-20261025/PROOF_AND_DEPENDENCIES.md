@@ -1,7 +1,7 @@
 # E407 Q32 terminal — proof and dependency ledger
 
 Date: 2026-10-25  
-Status: **E407 Q32 OPEN / NOT_CERTIFIED; \(\delta=16\) and the \(\delta=14,\epsilon_U=0\) four-partite branch are excluded under the retained core/witness contract.**
+Status: **E407 Q32 OPEN / NOT_CERTIFIED; all four-partite \(\delta=14\) branches (\(\epsilon_U=0,1,2\)) and the retained \(\delta=15,\delta=16\) branches are excluded under their stated contracts.**
 
 ## 1. Dependency chain currently supported
 
@@ -85,3 +85,12 @@ DELTA14_EPS1_W_PROFILE_CLASSIFICATION.md proves the W-profile list is exhaustive
 
 ### Delta-14 no-W-cross-edge profiles at \(\epsilon_U=1,2\)
 DELTA14_EPSU1_2_ANTICOMPL_COMPONENT_PROFILES.md excludes four further profiles by cover-capacity contradictions: \(K_3\cup K_5^3\) for both \(\epsilon_U=1,2\), \(K_4^3\cup K_6\) for \(\epsilon_U=1\), and \(K_4\cup K_4\cup K_5\cup K_5\) for \(\epsilon_U=2\). The only remaining four-partite W-profile at \(\delta=14\) is \(\epsilon_U=1\), \(K_4\cup K_4\cup K_5\cup K_5\) with one W-cross-edge. This is conditional on the retained support-boundary/witness contract and the listed W-profile classification.
+
+
+### Round 14 — full \(\delta=14\), four-partite row
+
+DELTA14_EPS2_W_PROFILE_CLASSIFICATION.md closes the \(\epsilon_U=2\) case. The exact ledger gives \(e(H[W])=34-\epsilon_U=32\), and \(\alpha(H[W])\le4\) forces equality in Turán's bound. Thus the only profile is \(K_4\cup K_4\cup K_5\cup K_5\) with no cross-edges. Section 5 of DELTA14_EPSU1_2_ANTICOMPL_COMPONENT_PROFILES.md proves the common-neighbour capacity is at most 24, contradicting \(|U|=29\).
+
+The source note's Section 3 mention of \(K_3\cup K_5^3\) at \(\epsilon_U=2\) is inconsistent with the exact ledger (that profile has 33 edges); it is explicitly excluded from this branch's admissible profile list and is not used.
+
+**Current structural frontier under the retained core/witness contract:** all four-partite cases at \(\delta=14\) are excluded for \(\epsilon_U=0,1,2\); \(\delta=15\) and \(\delta=16\) are excluded in their retained branches. The open front-end cases are \(\delta=14\) non-four-partite and \(\delta\le13\). E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
