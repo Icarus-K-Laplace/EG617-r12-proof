@@ -411,7 +411,8 @@ def check_duplicate_budget_k12_packing_bound() -> None:
         assert common_lower == max(0, P - 45)
 
     # Exhaust all positive profiles (r_0,...,r_6) with r_i <= 5
-    # for the near-terminal sums R=11,12,13.
+    # for the near-terminal sums R=11,12,13. These are conditional profile
+    # checks, not evidence that the sibling P_C<=49 cap is certified.
     expected_high_pairs = {11: 0, 12: 1, 13: 2}
     for R, expected in expected_high_pairs.items():
         maximum = -1
@@ -421,29 +422,37 @@ def check_duplicate_budget_k12_packing_bound() -> None:
                 continue
             count += 1
             high_pairs = sum(
-                1 for i in range(7) for j in range(i+1, 7)
+                1 for i in range(7) for j in range(i + 1, 7)
                 if profile[i] + profile[j] >= 7
             )
             maximum = max(maximum, high_pairs)
         assert count > 0
         assert maximum == expected
 
-    # Seven selected components among ten imply at least P_C-48
-    # selected witnesses are in the common size-five blocker intersection.
+    # Conditional arithmetic only: if a separate label-transfer theorem
+    # established seven selected witness components, then their intersection
+    # with the common blocker set would have size at least max(0,P_C-48).
     for P in range(49, 56):
         common_lower = max(0, P - 45)
-        selected_lower = max(0, 7 + common_lower - 10)
-        assert selected_lower >= P - 48
-        if P == 49:
-            assert selected_lower == 1
-        if P == 50:
-            assert selected_lower == 2
+        selected_if_seven = max(0, 7 + common_lower - 10)
+        assert selected_if_seven >= max(0, P - 48)
+
+    # Actual proved transfer floor: seven disjoint graph witnesses in an
+    # 11-point gadget can contribute at most two gadget-contained witnesses,
+    # so at least five selected witnesses are isolated components.
+    for P in range(0, 56):
+        common_lower = max(0, P - 45)
+        selected_if_five = max(0, 5 + common_lower - 10)
+        assert selected_if_five >= max(0, P - 50)
+        if P <= 50:
+            assert selected_if_five == 0
+        if P >= 51:
+            assert selected_if_five >= 1
 
     # If R <= 11, no pair sum can exceed 6 because the other five entries
-    # each contribute at least one.
+    # each contribute at least one. This is an arithmetic conditional only.
     for R in range(7, 12):
         assert R - 5 <= 6
-
 
 def check_cell_a_cross_edge_defect_identity() -> None:
     # Turan floor for 38 vertices with alpha <= 12: two K4 parts and
@@ -538,7 +547,7 @@ def main() -> None:
     print("Near-complete component matching budget checked for all r_i,r_j in 1..5.")
     print("Missing-diagonal duplicate-charge boundary arithmetic verified.")
     print("Aggregate scalar relaxation verified; it is not a graph-level counterexample.")
-    print("Duplicate-budget K12 packing and labelled-witness extension bounds verified.")
+    print("Duplicate-budget K12 packing arithmetic verified; seven-component transfer remains conditional, while the proved five-component floor gives threshold P_C>=51.")
     print("Cell-A intersection profiles, Type-A zero-defect gadget, low-slack duplicate ownership, and cross-edge defect identity verified.")
     print("Scope: exact integer/degree ledgers only; no graph-realization certificate.")
 
