@@ -131,7 +131,8 @@ The next proof target is a stability/packing contradiction in Case 1 or a genuin
 - Repaired local \(P_C=50,r_i=6\) corner via double-star: 07b6891eefac7163b1a0fbc1c2529126c2b5b1d7; verifier 2c42edbf6996bc733f7df1ee5a182c5e8954447e
 - \(P_C=50\) profiles \((5,2,1^5)\), \((4,3,1^5)\) and finite verifier: 4a1bd39ba4e08854fd35907d051a44451259b07c; d33fe53aa7cd63f1fff9cb337231e39e449b28d7
 - Active ledger updates: e714b150a0d63fff1b7fa295fd8fa372e91c6950; 1a41ecfc88e25207d0f52e52d43e4a48a76b4dc6
-- Proof dependency map update pending in this continuation.
+- Proof dependency map update: 94f0edd87b05f28d271bfc611fbf882ecb8f8cb0
+- Progress log update: 076f19c104bf94aedd6034a1372004cd1cf1d217
 - Archived uncertified outer-cap drafts and P49/P48 audit holds: a0a8f21d872b261b24580ad5e9f15942046cc74f; a11d93b8d9a3cd58aa7f6f8da58ae3e90def8391; cfcb8f70f856dd742d3a658551b97f5d65e17fb3
 
 **Current status: E408 Q33 and EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.**
