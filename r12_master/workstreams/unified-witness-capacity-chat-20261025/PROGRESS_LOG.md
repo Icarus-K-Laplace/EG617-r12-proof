@@ -119,3 +119,10 @@
 - Thus \(P_C\ge49\) forces at least one selected witness-labelled K12, and \(P_C=50\) forces at least two. This is a labelled incidence result, not an unlabelled packing count alone.
 - Added the threshold arithmetic to the verifier and restricted it to the feasible exact-color range \(P_C\le55\).
 - The aggregate scalar relaxation still permits every exact color to have \(P_C=9\); therefore this result identifies a useful branch but does not force entry into it.
+
+
+## 2026-10-25 — last sibling-head refresh
+
+- E407 Q32 branch advanced again to bd385f7dfe102deb426810baf1999a8e94dd488f. The latest canonical state now excludes both the \(\delta=16\) and \(\delta=15\) four-partite extremes; E407 remains open on templates A–E, the \(\delta=14\) compatibility branch, and the low-excess non-four-partite branch.
+- E408 Q33 remains at a6bbb918c3484bedd1a4eafb410901288cdff085 with the \(r_i=6\) row classification; E408 Q32, witness-packing, zero-excess-witness, and ultimate-closure heads were also refreshed and recorded in CANONICAL_STATE.md.
+- This workstream remains isolated: the repository compare against the initial head shows changes only under r12_master/workstreams/unified-witness-capacity-chat-20261025/.
