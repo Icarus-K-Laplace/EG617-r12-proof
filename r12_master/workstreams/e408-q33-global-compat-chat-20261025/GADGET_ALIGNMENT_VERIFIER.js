@@ -2,37 +2,32 @@
 "use strict";
 
 /*
-Deterministic finite verifier for the 11-vertex exact-129 gadget alignment lemma.
+Deterministic finite verifier for the exact-129 11-vertex gadget alignment lemmas.
 
-Input contract:
-  A = {a0,...,a4}, B = {b0,...,b4}, and x.
-  A and B are cliques. For a parameter s in {1,2,3,4}, a0 is adjacent
-  to b0,...,b_(s-1); x is adjacent to a1,...,a4 and b_s,...,b4.
-  There are no other cross-edges.
-This is exactly the normal form derived from alpha(U)=2, omega(U)=5,
-e(U)=29 after swapping A and B so that |A_0|=1.
+Normal form for each s in {1,2,3,4}:
+  A={a0,...,a4}, B={b0,...,b4}, x.
+  A and B are cliques.
+  a0 is adjacent to b0,...,b_(s-1).
+  x is adjacent to a1,...,a4 and b_s,...,b4.
+  No other cross-edges.
+This is the normal form from Theorem 12.1.
 
-For each s, G_s is the following list of "universal" K5 cliques:
+Universal K5 family:
   s=1: {A,B}
   s=2,3: {A,B,A'}
-  s=4: {A',B}
-where A'={a1,a2,a3,a4,x}.
+  s=4: {A',B}, where A'={a1,a2,a3,a4,x}.
 
-The verifier exhaustively enumerates all 2^11 vertex subsets, checks clique
-status by all internal pairs, then checks every omitted set E of size four or
-five that is a clique, every disjoint K5/K5 pair, and every disjoint K5/K4
-pair. It certifies:
-  (i) every such E is disjoint from some D in G_s;
-  (ii) every D in G_s has a disjoint member in every disjoint K5/K5 pair;
-  (iii) for every E and every disjoint low-block omitted pair (F,G),
-       where (|F|,|G|)=(5,5) or (5,4), some D in G_s is disjoint from E
-       and from at least one of F,G.
-A row whose omitted set is disjoint from D has a C-neighborhood containing D.
-All such omitted sets lie in U\\D, a 6-set; since they have size at least four,
-they pairwise intersect. The blocker compatibility theorem then forces the
-corresponding outer vertices to be C-adjacent.
+The script exhausts every subset of each 11-vertex graph, tests clique status
+pairwise, builds every disjoint clique pair of the indicated sizes, and checks
+all alignment properties used by P49_BOUNDARY_EXCLUSION.md and the R=14
+boundary analysis.
 
-No external packages or randomness are used.
+IMPORTANT SCOPE:
+  * The pair/pair alignment assertion deliberately excludes type (5,3)+(5,3).
+    That combination is ruled out by the integer budget in every use below.
+  * No claim is made for a high K4 against a low (5,3) pair in isolation; that
+    broader assertion has a counterexample for s=2,3.
+  * These are fixed-size gadget checks, not a graph-completion certificate.
 */
 
 function fail(message) {
@@ -51,9 +46,7 @@ function isClique(mask, adjacency, n) {
   for (let i = 0; i < n; i++) {
     if (((mask >>> i) & 1) === 0) continue;
     for (let j = i + 1; j < n; j++) {
-      if (((mask >>> j) & 1) && ((adjacency[i] >>> j) & 1) === 0) {
-        return false;
-      }
+      if (((mask >>> j) & 1) && ((adjacency[i] >>> j) & 1) === 0) return false;
     }
   }
   return true;
@@ -73,15 +66,9 @@ function edge(adjacency, u, v) {
   adjacency[v] |= 1 << u;
 }
 function makeGadget(s) {
-  const n = 11;
-  const adjacency = Array(n).fill(0);
-  // A={0,...,4}, B={5,...,9}, x=10.
-  for (let i = 0; i < 5; i++) {
-    for (let j = i + 1; j < 5; j++) edge(adjacency, i, j);
-  }
-  for (let i = 5; i < 10; i++) {
-    for (let j = i + 1; j < 10; j++) edge(adjacency, i, j);
-  }
+  const adjacency = Array(11).fill(0);
+  for (let i = 0; i < 5; i++) for (let j = i + 1; j < 5; j++) edge(adjacency, i, j);
+  for (let i = 5; i < 10; i++) for (let j = i + 1; j < 10; j++) edge(adjacency, i, j);
   for (let j = 5; j < 5 + s; j++) edge(adjacency, 0, j);
   for (let i = 1; i < 5; i++) edge(adjacency, 10, i);
   for (let j = 5 + s; j < 10; j++) edge(adjacency, 10, j);
@@ -90,12 +77,36 @@ function makeGadget(s) {
 function maskOf(vertices) {
   return vertices.reduce((m, v) => m | (1 << v), 0);
 }
+function disjointPairs(bySize, type) {
+  const a = Number(type[0]), b = Number(type[1]), out = [];
+  if (a === b) {
+    const xs = bySize[a];
+    for (let i = 0; i < xs.length; i++) {
+      for (let j = i + 1; j < xs.length; j++) {
+        if (disjoint(xs[i], xs[j])) out.push({ E: xs[i], F: xs[j], type });
+      }
+    }
+  } else {
+    for (const E of bySize[a]) {
+      for (const F of bySize[b]) {
+        if (disjoint(E, F)) out.push({ E, F, type });
+      }
+    }
+  }
+  return out;
+}
+function pairHasMemberDisjoint(D, pair, minSize = 0) {
+  return [pair.E, pair.F].some(E => popcount(E) >= minSize && disjoint(D, E));
+}
+function findD(families, predicate) {
+  return families.some(D => predicate(D));
+}
 
 const expected = {
-  1: { k5: 4, k4: 18, p55: 3, p54: 28, tests55K5: 12, tests54K5: 112, tests55K4: 54, tests54K4: 504 },
-  2: { k5: 3, k4: 15, p55: 2, p54: 20, tests55K5: 6, tests54K5: 60, tests55K4: 30, tests54K4: 300 },
-  3: { k5: 3, k4: 15, p55: 2, p54: 20, tests55K5: 6, tests54K5: 60, tests55K4: 30, tests54K4: 300 },
-  4: { k5: 4, k4: 18, p55: 3, p54: 28, tests55K5: 12, tests54K5: 112, tests55K4: 54, tests54K4: 504 }
+  1: { k3: 32, k4: 18, k5: 4, p55: 3, p54: 28, p53: 52, p44: 65 },
+  2: { k3: 30, k4: 15, k5: 3, p55: 2, p54: 20, p53: 40, p44: 50 },
+  3: { k3: 30, k4: 15, k5: 3, p55: 2, p54: 20, p53: 40, p44: 50 },
+  4: { k3: 32, k4: 18, k5: 4, p55: 3, p54: 28, p53: 52, p44: 65 }
 };
 const A = maskOf([0, 1, 2, 3, 4]);
 const B = maskOf([5, 6, 7, 8, 9]);
@@ -108,89 +119,166 @@ const universal = {
 };
 
 const summary = [];
-let total55K5 = 0, total54K5 = 0, total55K4 = 0, total54K4 = 0;
+const totals = {
+  baseHighK5: 0, baseHighK4: 0, highK3Low55: 0,
+  highK5Low53or44: 0, highK5TwoLowPairs: 0,
+  pairPairExcept53_53: 0, tripleHighPairTwoLowPairs: 0
+};
+let totalFailures = 0;
+
 for (let s = 1; s <= 4; s++) {
   const adjacency = makeGadget(s);
-  const K5 = enumerateCliques(adjacency, 11, 5);
-  const K4 = enumerateCliques(adjacency, 11, 4);
-  const p55 = [];
-  for (let i = 0; i < K5.length; i++) {
-    for (let j = i + 1; j < K5.length; j++) {
-      if (disjoint(K5[i], K5[j])) p55.push([K5[i], K5[j]]);
-    }
-  }
-  const p54 = [];
-  for (const F of K5) {
-    for (const G of K4) {
-      if (disjoint(F, G)) p54.push([F, G]);
-    }
-  }
+  const bySize = {
+    3: enumerateCliques(adjacency, 11, 3),
+    4: enumerateCliques(adjacency, 11, 4),
+    5: enumerateCliques(adjacency, 11, 5)
+  };
+  const p55 = disjointPairs(bySize, "55");
+  const p54 = disjointPairs(bySize, "54");
+  const p53 = disjointPairs(bySize, "53");
+  const p44 = disjointPairs(bySize, "44");
+  const low = [...p55, ...p54];
+  const highPairs = [...p55, ...p54, ...p53, ...p44];
   const exp = expected[s];
-  assert(K5.length === exp.k5, "s=" + s + ": unexpected K5 count " + K5.length);
-  assert(K4.length === exp.k4, "s=" + s + ": unexpected K4 count " + K4.length);
-  assert(p55.length === exp.p55, "s=" + s + ": unexpected disjoint K5-pair count");
-  assert(p54.length === exp.p54, "s=" + s + ": unexpected disjoint K5/K4-pair count");
+
+  assert(bySize[3].length === exp.k3, "s=" + s + ": K3 count mismatch");
+  assert(bySize[4].length === exp.k4, "s=" + s + ": K4 count mismatch");
+  assert(bySize[5].length === exp.k5, "s=" + s + ": K5 count mismatch");
+  assert(p55.length === exp.p55, "s=" + s + ": disjoint K5/K5 pair count mismatch");
+  assert(p54.length === exp.p54, "s=" + s + ": disjoint K5/K4 pair count mismatch");
+  assert(p53.length === exp.p53, "s=" + s + ": disjoint K5/K3 pair count mismatch");
+  assert(p44.length === exp.p44, "s=" + s + ": disjoint K4/K4 pair count mismatch");
 
   for (const D of universal[s]) {
-    assert(K5.includes(D), "s=" + s + ": universal D is not a K5");
-    for (const [F, G] of p55) {
-      assert(disjoint(D, F) || disjoint(D, G),
-        "s=" + s + ": D fails to align with a disjoint K5/K5 pair");
+    assert(bySize[5].includes(D), "s=" + s + ": universal set is not a K5");
+    for (const pair of p55) {
+      assert(pairHasMemberDisjoint(D, pair),
+        "s=" + s + ": a universal D misses both members of a disjoint K5/K5 pair");
     }
   }
 
-  // Every high omitted clique E of size 4 or 5 must align with a universal D.
-  for (const E of [...K5, ...K4]) {
-    assert(universal[s].some(D => disjoint(D, E)),
-      "s=" + s + ": some size-4/5 clique E is disjoint from no universal D");
+  let baseHighK5 = 0, baseHighK4 = 0, highK3Low55 = 0;
+  let highK5Low53or44 = 0, highK5TwoLowPairs = 0;
+  let pairPairExcept53_53 = 0, tripleHighPairTwoLowPairs = 0;
+  let failures = 0;
+
+  // Original lemma: high omitted E of size 5 or 4, low pair of type 55 or 54.
+  for (const E of bySize[5]) {
+    for (const pair of low) {
+      baseHighK5++;
+      if (!findD(universal[s], D => disjoint(D, E) && pairHasMemberDisjoint(D, pair, 4))) {
+        failures++;
+      }
+    }
+  }
+  for (const E of bySize[4]) {
+    for (const pair of low) {
+      baseHighK4++;
+      if (!findD(universal[s], D => disjoint(D, E) && pairHasMemberDisjoint(D, pair, 4))) {
+        failures++;
+      }
+    }
   }
 
-  let tests55K5 = 0, tests54K5 = 0, tests55K4 = 0, tests54K4 = 0;
-  for (const E of K5) {
-    for (const [F, G] of p55) {
-      tests55K5++;
-      assert(universal[s].some(D =>
-        disjoint(D, E) && (disjoint(D, F) || disjoint(D, G))),
-      "s=" + s + ": no K5/K5 alignment for high K5 E");
-    }
-    for (const [F, G] of p54) {
-      tests54K5++;
-      assert(universal[s].some(D =>
-        disjoint(D, E) && (disjoint(D, F) || disjoint(D, G))),
-      "s=" + s + ": no K5/K4 alignment for high K5 E");
+  // R=14 r=7/8 terminal: high omitted K3 against six r=1 blocks (type 55).
+  for (const E of bySize[3]) {
+    for (const pair of p55) {
+      highK3Low55++;
+      if (!findD(universal[s], D => disjoint(D, E) && pairHasMemberDisjoint(D, pair, 5))) {
+        failures++;
+      }
     }
   }
-  for (const E of K4) {
-    for (const [F, G] of p55) {
-      tests55K4++;
-      assert(universal[s].some(D =>
-        disjoint(D, E) && (disjoint(D, F) || disjoint(D, G))),
-      "s=" + s + ": no K5/K5 alignment for high K4 E");
-    }
-    for (const [F, G] of p54) {
-      tests54K4++;
-      assert(universal[s].some(D =>
-        disjoint(D, E) && (disjoint(D, F) || disjoint(D, G))),
-      "s=" + s + ": no K5/K4 alignment for high K4 E");
+
+  // r=6 with r=3: a high gadget-only row has omitted K5; low pair is 53 or 44.
+  for (const E of bySize[5]) {
+    for (const pair of [...p53, ...p44]) {
+      highK5Low53or44++;
+      if (!findD(universal[s], D => disjoint(D, E) && pairHasMemberDisjoint(D, pair, 4))) {
+        failures++;
+      }
     }
   }
-  assert(tests55K5 === exp.tests55K5, "s=" + s + ": incomplete K5-high/K5-pair sweep");
-  assert(tests54K5 === exp.tests54K5, "s=" + s + ": incomplete K5-high/K5-K4-pair sweep");
-  assert(tests55K4 === exp.tests55K4, "s=" + s + ": incomplete K4-high/K5-pair sweep");
-  assert(tests54K4 === exp.tests54K4, "s=" + s + ": incomplete K4-high/K5-K4-pair sweep");
-  total55K5 += tests55K5; total54K5 += tests54K5;
-  total55K4 += tests55K4; total54K4 += tests54K4;
-  summary.push({ s, K5: K5.length, K4: K4.length,
-    disjointK5Pairs: p55.length, disjointK5K4Pairs: p54.length,
-    highK5Checks55: tests55K5, highK5Checks54: tests54K5,
-    highK4Checks55: tests55K4, highK4Checks54: tests54K4, failures: 0 });
+
+  // r=6 Case A/B with two r=2 blocks: one fixed high omitted K5 and two low pairs 55/54.
+  for (const E of bySize[5]) {
+    for (const p of low) {
+      for (const q of low) {
+        highK5TwoLowPairs++;
+        if (!findD(universal[s], D =>
+          disjoint(D, E) && pairHasMemberDisjoint(D, p, 4) && pairHasMemberDisjoint(D, q, 4))) {
+          failures++;
+        }
+      }
+    }
+  }
+
+  // Two omitted pairs: select a member of size >=4 from each.
+  // Exclude 53+53, which is ruled out by the R<=14 missing-edge budget.
+  for (const p of highPairs) {
+    for (const q of highPairs) {
+      if (p.type === "53" && q.type === "53") continue;
+      pairPairExcept53_53++;
+      if (!findD(universal[s], D =>
+        pairHasMemberDisjoint(D, p, 4) && pairHasMemberDisjoint(D, q, 4))) {
+        failures++;
+      }
+    }
+  }
+
+  // One high omitted pair and two low pairs of type 55/54.
+  for (const p of highPairs) {
+    for (const q of low) {
+      for (const z of low) {
+        tripleHighPairTwoLowPairs++;
+        if (!findD(universal[s], D =>
+          pairHasMemberDisjoint(D, p, 4) &&
+          pairHasMemberDisjoint(D, q, 4) &&
+          pairHasMemberDisjoint(D, z, 4))) {
+          failures++;
+        }
+      }
+    }
+  }
+
+  totals.baseHighK5 += baseHighK5;
+  totals.baseHighK4 += baseHighK4;
+  totals.highK3Low55 += highK3Low55;
+  totals.highK5Low53or44 += highK5Low53or44;
+  totals.highK5TwoLowPairs += highK5TwoLowPairs;
+  totals.pairPairExcept53_53 += pairPairExcept53_53;
+  totals.tripleHighPairTwoLowPairs += tripleHighPairTwoLowPairs;
+  totalFailures += failures;
+  summary.push({
+    s,
+    cliqueCounts: { K3: bySize[3].length, K4: bySize[4].length, K5: bySize[5].length },
+    pairCounts: { "55": p55.length, "54": p54.length, "53": p53.length, "44": p44.length },
+    alignmentChecks: {
+      highK5Low55or54: baseHighK5,
+      highK4Low55or54: baseHighK4,
+      highK3Low55: highK3Low55,
+      highK5Low53or44: highK5Low53or44,
+      highK5TwoLowPairs: highK5TwoLowPairs,
+      pairPairExcept53_53: pairPairExcept53_53,
+      tripleHighPairTwoLowPairs: tripleHighPairTwoLowPairs
+    },
+    failures
+  });
 }
-assert(total55K5 === 36, "global K5-high/K5-pair test count mismatch");
-assert(total54K5 === 344, "global K5-high/K5-K4-pair test count mismatch");
-assert(total55K4 === 168, "global K4-high/K5-pair test count mismatch");
-assert(total54K4 === 1608, "global K4-high/K5-K4-pair test count mismatch");
+
+const totalChecks = Object.values(totals).reduce((a, b) => a + b, 0);
+assert(totals.baseHighK5 === 380, "global high-K5 base count mismatch");
+assert(totals.baseHighK4 === 1776, "global high-K4 base count mismatch");
+assert(totals.highK3Low55 === 312, "global high-K3/low-55 count mismatch");
+assert(totals.highK5Low53or44 === 1476, "global high-K5/low-53-or-44 count mismatch");
+assert(totals.highK5TwoLowPairs === 10592, "global high-K5/two-low-pair count mismatch");
+assert(totals.pairPairExcept53_53 === 60288, "global pair-pair count mismatch");
+assert(totals.tripleHighPairTwoLowPairs === 392872, "global triple-alignment count mismatch");
+assert(totalChecks === 467696, "global alignment test total mismatch");
+assert(totalFailures === 0, "one or more alignment checks failed");
+
 process.stdout.write(JSON.stringify({
-  contract: "exact 11-vertex normal form; s=1,2,3,4",
+  contract: "four exact 11-vertex normal forms; all 2^11 subsets per form",
   universalCliqueSets: {
     1: ["A", "B"],
     2: ["A", "B", "A'"],
@@ -198,13 +286,8 @@ process.stdout.write(JSON.stringify({
     4: ["A'", "B"]
   },
   summary,
-  alignmentChecks: {
-    highK5_vs_K5Pair: total55K5,
-    highK5_vs_K5K4Pair: total54K5,
-    highK4_vs_K5Pair: total55K4,
-    highK4_vs_K5K4Pair: total54K4
-  },
-  totalAlignmentChecks: total55K5 + total54K5 + total55K4 + total54K4,
-  totalFailures: 0,
+  totals,
+  totalChecks,
+  totalFailures,
   result: "PASS"
 }, null, 2) + "\n");
