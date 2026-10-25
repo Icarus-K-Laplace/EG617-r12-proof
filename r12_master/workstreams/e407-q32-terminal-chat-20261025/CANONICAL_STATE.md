@@ -27,6 +27,7 @@ These are the latest heads observed in the repository at the time of this update
 - In that case, \(U\)-part sizes are \(7,7,7,8\), \(H[W]=K_5\cup K_5\cup K_4\cup K_4\), and the five cross edges in \(H[U]\) form a matching between the 8-part and the three 7-parts.
 - For \(\delta=16\), a reverse-saturation lemma proves every \(w\in W\) is complete to exactly one \(U\)-part; it is used in the endpoint-split proof.
 - New exact witness-array identity: for each D-vertex d, its number of missing small-part partners equals the number of exact-129 color classes omitting d. These multiplicities sum to 7; the five endpoint D-labels contribute at least 5, so at least three have multiplicity exactly 1 and at least one non-endpoint D-label has multiplicity 0. See DELTA16_WITNESS_ARRAY.md.
+- New Round 23 theorem: when \(\delta=13\), \(L=\overline{H[U]}\) is four-partite, and \(H[W]\) is a disjoint union of four cliques, every case with \(\epsilon_U\in\{1,2,3\}\) is excluded by DELTA13_FOUR_PARTITE_NO_CROSS_W_PROFILES.md. The common-neighbour cover capacities are at most 27, 28, 28, and 23 for the profiles \((3,4,5,6)\), \((3,5,5,5)\), \((4,4,4,6)\), and \((4,4,5,5)\), respectively.
 ## Status by case
 | Case | Status |
 |---|---|
@@ -40,7 +41,8 @@ These are the latest heads observed in the repository at the time of this update
 | \(\delta=15\) non-four-partite | EXCLUDED under KP equality + core-to-\(W\) degree contradiction |
 | \(\delta=14\) four-partite | \(\epsilon_U=0,1,2\): all W profiles excluded; \(\epsilon_U=1\) exhaustiveness uses Brouwer, \(\epsilon_U=2\) is Turán equality |
 | \(\delta=14\) non-four-partite, saturated \(L\) | PROVED_CONDITIONAL excluded: every admissible J is the C5 blow-up, and its full-core extension is impossible |
-| \(\delta\le13\) non-four-partite | OPEN |
+| \(\delta=13\), four-partite \(L\), no-cross-edge \(H[W]\), \(\epsilon_U\in\{1,2,3\}\) | EXCLUDED by common-neighbour cover capacity |
+| \(\delta\le13\) other cases | OPEN |
 | E407 Q32 overall | OPEN / NOT_CERTIFIED |
 | EG617(r=12) | OPEN / NOT_CERTIFIED |
 ## Verification status
@@ -231,3 +233,12 @@ The argument is now general within the retained kernel contract:
 3. Saturation forces the missing cross-edges of \(J-v\) to be exactly \(K_{a,b}\), where \(a+b=d\). The maximum-degree bound \(\Delta(J)\le7\) forces the bipartition to be \(7+7\), so \(ab=d=a+b\), giving \(a=b=2,d=4\).
 
 Combining with the already verified candidate-specific extension exclusion closes the **general \(\delta=14\), non-four-partite, \(K_5\)-saturated terminal conditionally**. The condition is essential: the upstream component-count reduction still depends on Didin's 2026 preprint theorem, not independently audited here. The \(\delta\le13\) cases, five shell templates A–E, E407 Q32 overall, and the \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## Round 23 — delta-13 four-partite U / no-cross W closure
+
+Added DELTA13_FOUR_PARTITE_NO_CROSS_W_PROFILES.md and verify_delta13_four_partite_no_cross_w_profiles.py. Under the retained 49-witness contract, a four-partite \(L=\overline{H[U]}\) forces U-part sizes \((7,7,7,8)\), all small-small pairs to be used by witnesses, and at most one H[U] cross-edge at each small-part vertex. For \(\delta=13\), the no-cross W profiles are exactly \((3,4,5,6)\) at \(\epsilon_U=1\), \((3,5,5,5)\) or \((4,4,4,6)\) at \(\epsilon_U=2\), and \((4,4,5,5)\) at \(\epsilon_U=3\).
+
+The component common-neighbour sets must cover all 29 U vertices. Exact label/excess accounting bounds their total sizes by at most 27, 28, 28, and 23, respectively, so every listed profile is impossible. The finite arithmetic verifier passed with output DELTA13_FOUR_PARTITE_NO_CROSS_W_PROFILES_ARITHMETIC_OK; it checks profile enumeration and numeric capacity ceilings only, not the analytic graph lemmas.
+
+Remaining: \(\delta=13,\epsilon_U=0\); W-cross-edge profiles; non-four-partite U-complement cases; \(\delta\le12\); all five templates as a global compatibility problem; and the upstream \(K_{145}\)-to-T61 bridge. E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
