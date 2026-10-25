@@ -70,3 +70,8 @@ If neither cross-edge meets a K4, both edges lie between the two K5 parts. Secti
 **New theorem:** under the retained E407 Q32 core/witness contract and the four-partite-U hypothesis, the delta=13, epsilon_U=1, 2K4 union 2K5 plus two-cross-edge profile has no realization with fewer than five W-unsaturated U-vertices. The all-K5-cross-edge placement is excluded entirely.
 
 This is not yet a contradiction for the full profile: the remaining exact terminal has at least five U-vertices that are not complete to any W clique part, each governed by the Type-I/Type-II blocker classification. The next task is to combine those blocker patterns with the 49-witness labelled incidence system and the component labels to rule out k>=5. E407 Q32, all five shell templates, and the original K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## Round 30 placement cross-reference
+
+The same-pair disjoint K4–K5 placement is now separately excluded in DELTA13_EPS1_TWO_CROSS_EDGE_K4K5_DISJOINT_CLOSED.md. In that placement the two edges are disjoint, so Type-II blockers are impossible; a Type-I blocker across K4–K5 forces seven W-neighbours and can occur at most once under epsilon_U=1, contradicting the k>=5 cover bound. The remaining four same-pair placements are listed in DELTA13_EPS1_TWO_CROSS_EDGE_PLACEMENT_REDUCTION.md.
