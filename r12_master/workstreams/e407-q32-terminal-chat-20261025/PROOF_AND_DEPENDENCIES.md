@@ -62,3 +62,6 @@ DELTA14_EPS0_K3K5K5K5_CROSS_EDGE_CLOSURE.md proves the last W-profile impossible
 ### Round 11 — \(\delta=14,\epsilon_U=1\) no-cross-edge profile
 
 DELTA14_EPS1_K3K5K5K5_NO_CROSS_EDGE.md gives a conditional contradiction by covering \(U\) with the four common-neighbour sets. It proves \(t_d\le3\), a reverse-saturation floor \(d_H(w,U)\ge11\), the K5 capacity \(|S_i|\le5+E_i\), and the K3 cap \(|S_0|\le10+\lfloor E_0/3\rfloor\). The total capacity is at most 28, less than \(|U|=29\). The arithmetic verifier checks all 20 nonnegative W-excess allocations.
+
+### Delta-14 cross-edge placement refinement
+The theorem DELTA14_EPS0_K3K5X1_K5K5_EDGE.md excludes the \(K_3\cup K_5^3\) W-profile when its single cross-edge joins two \(K_5\) components. In that placement the four W-component common-neighbour sets must cover all 29 U vertices, but the excess-budget upper bound is at most 27. Only the placement joining \(K_3\) to a \(K_5\) remains in the \(\delta=14,\epsilon_U=0\), four-partite row. The latter remains OPEN.
