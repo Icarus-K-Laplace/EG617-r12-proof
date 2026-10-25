@@ -175,3 +175,10 @@ This replaces an unconstrained cross-edge count with a nonnegative defect budget
 For an exact-129 color, the matching condition on W and the ten-K5-plus-gadget factor theorem force component intersections \(2^{10}\) or \(2^9,1\). The gadget intersects W in 3 or 4 vertices; its W-induced graph has one edge or two disjoint edges. The K5 components contribute 10 or 9 of the 11 W edges. Degree floors in the gadget give \(e_C(O)\le48\), hence \(0\le t_C\le6\).
 
 At \(t_C=0\), the induced graph \(C[O]\) is a disjoint union of ten triangles and two K4s. Across all eleven colors these equality partitions are pairwise edge-disjoint and leave exactly the target graph \(F[O]\). This is a near-Turan design problem, but no impossibility has yet been proved. In particular, the defect identity is not itself a graph-realization certificate and does not close Cell A.
+
+
+## 14. Zero-defect Type-A gadget refinement
+
+When an exact-129 color has \(t_C=0\) and Type-A W-intersection, the 11-point gadget has \(U[O]=K_4\cup K_4\), \(U[W]=K_2\cup K_1\), and 16 cross edges. The independence-number and clique-number constraints force the two adjacent W-gadget vertices to be complete to opposite K4s; the isolated W-gadget vertex is complete to one K4 and misses \(a\in\{0,1,2,3\}\) vertices of the other, while its adjacent endpoint covers exactly those missed vertices. The gadget degree multiset is \(5^{10},8\) or \(5^9,6,7\).
+
+Consequently, in this specific equality case no gadget vertex has C-degree four. This can be used in vertexwise degree budgets: each Type-A \(t_C=0\) gadget membership costs at least one unit above the exact-color degree floor four. It remains a local constraint; current aggregate excess budgets can accommodate it, so no terminal closure follows.
