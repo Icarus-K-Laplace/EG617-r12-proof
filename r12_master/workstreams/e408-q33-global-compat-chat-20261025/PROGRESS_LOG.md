@@ -96,3 +96,6 @@
   - \(n=2,k=0\): all ten component rows are clean.
 - Therefore \(P_C\le21(12-10)=42\), contradicting \(P_C=50\). The exact \(P_C=50,r_i=6\) corner is now **EXCLUDED** under the retained contracts.
 - The adjacent \(P_C=49,r_i=6\) branch is not closed: the current packing can guarantee only nine isolated \(K_{12}\)'s, giving \(P_C\le63\), which is insufficient. E408 Q33 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+- Proof-audit refinement: Cases A and B in Theorem 13.3 actually yield an immediate contradiction, because a six-neighbor gadget row plus the six low-block representatives and a fixed \(D_j\cong K_5\) would form a \(C\)-colored \(K_{12}\), while that row also has a \(C\)-edge to the one gadget vertex outside \(D_j\). Lemma 13.1 forbids any such external edge. Case C is handled by the isolated-clique duplicate cap. The theorem proof was rewritten to make this fork explicit.
