@@ -60,12 +60,17 @@ The present inequalities do not rule out all three options. In particular, the s
 - All changes are confined to r12_master/workstreams/unified-witness-capacity-chat-20261025/.
 
 
-## 6. Labelled witness extension
+## 6. Labelled witness extension — corrected transfer floor
 
-The seven selected witness components of an exact-129 color lie among the ten isolated K5 components. The common size-five blocker set across all seven outer blocks has size at least \(P_C-45\); inclusion-exclusion therefore forces at least \(\max(0,P_C-48)\) selected witness components to be common blockers. If \(P_C\ge49\), at least one selected witness-labelled K5 extends with its seven outer representatives to a monochromatic K12; if \(P_C=50\), at least two extend. If \(P_C\ge51\), the stronger all-ten-component alignment result applies.
+The seven graph-theoretic witnesses of an exact-129 color are not automatically seven isolated K5 components. Each labelled witness K5 lies either in one of the ten isolated components or wholly in the 11-point gadget \(U_C\). Since its four-set \(Q\) is part of seven pairwise disjoint four-sets and \(|U_C|=11\), at most two witnesses lie in the gadget. Hence at least five selected witnesses are isolated components, including at least four of the six B-labelled witnesses.
 
-This makes the high-\(P_C\) branch explicitly label-aware. The scalar relaxation still permits \(P_C=9\) for all eight exact colors, so no such branch is forced by aggregate budgets alone.
+The common exact size-five blocker set across all seven outer blocks has size at least \(P_C-45\). The valid intersection bound is therefore
+\[
+|\mathcal W_C\cap\mathcal K_C^*|\ge\max(0,P_C-50),
+\]
+not \(\max(0,P_C-48)\). A labelled witness component is guaranteed to extend to a monochromatic K12 by this argument only for \(P_C\ge51\). The stronger seven-component transfer needed for a \(P_C\ge49\) threshold remains OPEN.
 
+This does not turn a monochromatic K12 into a contradiction. The scalar relaxation still permits low \(P_C\) for all exact colors, so a global labelled incidence inequality or a component-realization theorem remains necessary.
 
 ## 7. Top-cell-A exact cross-edge defect identity
 
