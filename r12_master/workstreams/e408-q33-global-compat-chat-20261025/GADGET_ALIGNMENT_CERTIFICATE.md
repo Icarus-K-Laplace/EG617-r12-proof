@@ -3,8 +3,8 @@
 Date: 2026-10-25  
 Status: **FINITE_GADGET_VERIFIED**  
 Verifier source: GADGET_ALIGNMENT_VERIFIER.js  
-Verifier source commit: 6c84ffb136c72554ea682ff29fc8d94d640e4fa0  
-Current verifier blob SHA: 91abc289801c6c6837a5ea7d8993035ed2568cbd
+Verifier source commit: 2209c1764182a1aaa5b945469d8edf9fc81cffa5  
+Verifier blob SHA: bc3dbb9dec2f169c09f4afb9d663a3e163c55c2c
 
 ## Contract
 
@@ -14,31 +14,43 @@ For each \(s\in\{1,2,3,4\}\), the verifier builds the exact 11-vertex normal for
 - \(x\) is adjacent to \(a_1,\ldots,a_4\) and \(b_s,\ldots,b_4\);
 - there are no other cross-edges.
 
-It enumerates every subset of the 11 vertices and tests clique status by checking every internal pair. This covers all \(2^{11}=2048\) subsets for each of the four normal forms. It then exhausts every high omitted clique \(E\) of size four or five and every disjoint low omitted pair of type \((5,5)\) or \((5,4)\).
+It exhausts all \(2^{11}=2048\) vertex subsets in each normal form and checks clique status by every internal pair. It then enumerates every disjoint clique pair of the required sizes and checks the alignment statements below.
 
-## Exact counts
+## Exact exhaustive counts
 
-| \(s\) | \(K_5\) cliques | \(K_4\) cliques | disjoint \(K_5/K_5\) pairs | disjoint \(K_5/K_4\) pairs | high \(K_5\) alignment checks | high \(K_4\) alignment checks | failures |
+| \(s\) | \(K_3\) | \(K_4\) | \(K_5\) | disjoint 55 pairs | disjoint 54 pairs | disjoint 53 pairs | disjoint 44 pairs |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 1 | 4 | 18 | 3 | 28 | 124 | 558 | 0 |
-| 2 | 3 | 15 | 2 | 20 | 66 | 330 | 0 |
-| 3 | 3 | 15 | 2 | 20 | 66 | 330 | 0 |
-| 4 | 4 | 18 | 3 | 28 | 124 | 558 | 0 |
-| **Total** |  |  |  |  | **380** | **1,776** | **0** |
+| 1 | 32 | 18 | 4 | 3 | 28 | 52 | 65 |
+| 2 | 30 | 15 | 3 | 2 | 20 | 40 | 50 |
+| 3 | 30 | 15 | 3 | 2 | 20 | 40 | 50 |
+| 4 | 32 | 18 | 4 | 3 | 28 | 52 | 65 |
 
-The 380 high-\(K_5\) checks split into 36 checks against low \((5,5)\) pairs and 344 against low \((5,4)\) pairs. The 1,776 high-\(K_4\) checks split into 168 and 1,608 respectively. All \(2,156\) alignment checks passed in the deterministic in-session replay of the verifier's enumeration algorithm.
-
-The universal \(K_5\)-families are:
+The universal \(K_5\) families are
 \[
 \mathcal D_1=\{A,B\},\quad
 \mathcal D_2=\mathcal D_3=\{A,B,A'\},\quad
 \mathcal D_4=\{A',B\},
 \qquad A'=(A\setminus\{a_0\})\cup\{x\}.
 \]
-For every tested high omitted clique \(E\), some \(D\in\mathcal D_s\) is disjoint from \(E\) and from at least one member of the low omitted pair. Every disjoint \(K_5/K_5\) pair also has a member disjoint from each \(D\in\mathcal D_s\).
+Every universal \(D\) has a disjoint member in every disjoint \(55\) pair.
 
-## Completeness and scope
+The verifier asserts all of the following, with no failures:
 
-The graph normal form is derived analytically in Theorem 12.1. Given that contract, the verifier is exhaustive because every subset of the 11 vertices is enumerated, every \(K_4\) and \(K_5\) is discovered by exact pairwise clique testing, and every eligible disjoint pair is tested. This is a fixed-size gadget check, not an expanding-\(r\) graph search.
+| Alignment property | Checks |
+|---|---:|
+| High omitted \(K_5\) vs low pair 55/54 | 380 |
+| High omitted \(K_4\) vs low pair 55/54 | 1,776 |
+| High omitted \(K_3\) vs low pair 55 | 312 |
+| High omitted \(K_5\) vs low pair 53/44 | 1,476 |
+| Fixed high omitted \(K_5\) vs two low pairs 55/54 | 10,592 |
+| Two omitted pairs, types 55/54/53/44, excluding 53+53 | 60,288 |
+| One omitted pair of type 55/54/53/44 vs two low pairs 55/54 | 392,872 |
+| **Total alignment checks** | **467,696** |
 
-The certificate proves only the finite alignment lemma used by P49_BOUNDARY_EXCLUSION.md. It does not independently certify the exact-129 factor theorem, the seven-block equality embedding, or the full EG617(r=12) theorem.
+The pair/pair property chooses a member of size at least four from each pair, so the chosen omitted sets lie in the six-set \(U\setminus D\) and pairwise intersect. The triple property likewise chooses size-at-least-four members from all three pairs.
+
+The \(53+53\) pair/pair combination is deliberately excluded: it is not universally alignable by this \(D\)-family, and the \(R_C=14\) missing-edge budget rules it out whenever that alignment is invoked. The verifier does **not** claim that a high \(K_4\) can always be aligned with a low \(53\) pair in isolation; that broader claim has counterexamples for \(s=2,3\). The \(K_3\)-against-\(54\) property is also not asserted; it has counterexamples for \(s=2,3\).
+
+## Scope
+
+These are exact finite checks on four fixed 11-vertex graphs. They certify only the gadget alignment lemmas used by P49_BOUNDARY_EXCLUSION.md and the R=14 boundary analysis. They do not independently certify the exact-129 factor theorem, the seven-block equality embedding, the global 56-witness reduction, or EG617(r=12).
