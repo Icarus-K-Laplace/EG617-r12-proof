@@ -32,7 +32,7 @@ The current sibling transversal/excess contract gives
 \[
 3\le\delta,\qquad \epsilon_U+2\delta\ge9,\qquad \delta+\epsilon_U\le16.
 \]
-The remaining low-\(\delta\) cases have not been converted into a finite, exhaustive structural classification. The four-partite arguments at \(\delta=14\) must not be silently reused: the U-part sizes, \(e(H[U])\), W-edge budget, and W-side excess all change with \(\delta\).
+New Round 23 closes the \(\delta=13\), four-partite-U, no-cross-edge-W profiles for \(\epsilon_U=1,2,3\), with common-neighbour cover bounds 27, 28, 28, and 23. The remaining cases include \(\delta=13,\epsilon_U=0\), \(\delta=13\) W-cross-edge profiles, non-four-partite U-complements, and \(\delta\le12\). The argument is specific to the stated no-cross profiles; it does not silently extend to other structures.
 
 ### Gap C — five common-core shell templates A–E
 
@@ -112,3 +112,10 @@ This does not close the general non-four-partite saturated branch. The remaining
 DELTA14_SATURATED_KERNEL_CLASSIFICATION.md proves that any admissible J in the retained 15-vertex kernel contract must have a degree-4 vertex v; J-v is K7,7 minus K2,2, and J is the C5 blow-up with part sizes (1,2,5,5,2). The earlier candidate-extension theorem then rules out every W-extension for epsilon_U=0,1,2. Therefore this entire saturated delta=14 subcase is conditionally excluded.
 
 The proof uses the AES equality case at minimum degree 2n/5 and the Brouwer/Kang–Pikhurko bound for non-bipartite triangle-free graphs on 14 vertices. The upstream extraction of the 15-vertex J remains conditional on the Didin-preprint component-count theorem. Remaining live gaps: delta<=13, all five E407 shell templates, and the original K145-to-T61 bridge.
+
+
+## Round 23 update — delta-13 no-cross-edge W profiles
+
+DELTA13_FOUR_PARTITE_NO_CROSS_W_PROFILES.md closes all four no-cross-edge W profiles compatible with \(\delta=13\), \(\epsilon_U\in\{1,2,3\}\), under the four-partite U-complement contract. The proof combines the 49 transversal witnesses, the exact eight U-cross-edge ledger, a reverse-saturation lemma, and componentwise common-neighbour capacities. The arithmetic verifier independently checks the profile list and capacity arithmetic.
+
+The next high-leverage target is the \(\delta=13\) four-partite U branch with W-cross-edges, starting with \(\epsilon_U=1\) and its one-/two-cross-edge W profiles. Do not claim the entire \(\delta=13\) row is closed.
