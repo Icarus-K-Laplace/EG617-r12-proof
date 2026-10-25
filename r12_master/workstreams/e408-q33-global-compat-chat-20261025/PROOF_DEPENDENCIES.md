@@ -103,3 +103,19 @@ Corollary 11.3 in SEVEN_BLOCK_INCIDENCE_LEDGER.md is a consequence of Theorem 11
 - if \(P_C=49\) and some \(r_i=6\), the other budgets are five ones and one two; intersecting the at-least-eight clean labels with the at-least-nine exact blockers in the \(r=2\) block forces at least seven vertex-disjoint \(K_{12}\) cliques.
 
 Each clique consists of one isolated \(K_5\) component and one outer representative from each block. This is a structural packing consequence, not an exclusion: \(\omega(C)\le12\) allows maximum cliques, and no contradiction with the remaining 870-edge budget has been proved.
+
+
+## 11. Live sibling refresh (2026-10-25)
+
+The following sibling heads were re-read after the local \(r_i=6\) work; all were read-only:
+
+| Branch | Current head | Relevant update |
+|---|---|---|
+| workstream/r12-e407-q32-terminal-20261025 | dfdfe9a15b156b29f11579e072879d14bc224aad | E407 Q32 non-four-partite \(\delta=15\) branch excluded under its retained contract; E407 Q32 overall remains OPEN. |
+| workstream/r12-emergency-sprint-chat-20261025 | 5258c5fe17af3bf17eb7a2bfb08315c9be9116cd | Reconfirmed the exact-129 blocker theorem and the outer seven-block equality system; Q32/Q33 terminal remains open. |
+| workstream/r12-emergency-sprint-20261024 | f4c3b06891d29238d4f9cca2588f442004b6dc97 | The global proof DAG still has E407/E408 as the active T61 window; no original \(K_{145}\) closure. |
+| workstream/r12-ultimate-closure-20261024 | 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40 | Pairwise blocker compatibility remains the dependency used in Theorems 10.1 and 11.1. |
+| workstream/r12-witness-packing-chat-20261025 | f5d3daa07403877ede9885e1bd5c2f46b16d81da | Universal Q33 minimum-support bound \(S_0\ge12\); no global labelled terminal contradiction. |
+| workstream/r12-zero-excess-witness-20261025 | 07d19abfd6c1c749c7360526e4a04a3eb865fb2e | The labelled overlap-capacity route remains open; its scalar edge-load bound is explicitly insufficient. |
+
+These updates do not invalidate the new row-budget theorems. The Q33 non-four-partite support interval and the four-partite \(S_0\ge22\) branch both remain open; this workstream's next global obligation is still to combine the outer row/component labels with the 56 inner witness labels without charging baseline edges as duplicates.
