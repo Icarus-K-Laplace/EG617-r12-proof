@@ -119,9 +119,9 @@ The checked-in verifier exhausts these integer possibilities. There is exactly o
 
 Under the saturated-branch contract, the induced structure must be
 \[
-\boxed{H[U]=K_7\ \dot\cup\ K_7\ \dot\cup\ C_{15}},
+\boxed{H[U]=K_7\ \dot\cup\ K_7\ \dot\cup\ D},
 \]
-where \(C_{15}\) here denotes a connected 15-vertex \(\alpha\)-critical graph with \(\alpha(C_{15})=2\) and 56 edges (not a claim that it is a 15-cycle). Its complement \(J\) is a triangle-free, non-bipartite, triangle-saturated graph on 15 vertices with exactly 49 edges.
+where \(D\) here denotes a connected 15-vertex \(\alpha\)-critical graph with \(\alpha(D)=2\) and 56 edges (not a claim that it is a 15-cycle). Its complement \(J\) is a triangle-free, non-bipartite, triangle-saturated graph on 15 vertices with exactly 49 edges.
 
 Since \(|A||B|=e(J)=49\), every one of the 49 witnesses uses a different \(A\)-\(B\) pair and a different edge of \(J\); both sets of 49 objects are exhausted. For each fixed \(a_0\in A\), the seven witness edges in \(J\) paired with \(a_0\) form a matching: if two shared a vertex \(x\in V(J)\), their witness \(K_4\)'s would share the edge \(a_0x\). The same holds for each fixed \(b_0\in B\). Therefore:
 - \(E(J)\) has a proper edge-coloring by the seven labels in \(A\), each color class a 7-edge matching;
