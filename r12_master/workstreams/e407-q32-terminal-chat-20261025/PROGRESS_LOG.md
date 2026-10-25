@@ -238,3 +238,27 @@ The terminal reductions remain valid:
 - In the minimum-part-size-four profiles, every \(D\)-vertex has cross-degree at most one, so the exception cannot arise.
 
 The \(\delta=15\) four-partite frontier remains exactly the one stated above: only \(H[W]=K_3\cup K_5^3\), with \(D\cup K_3\cong K_{11}\), remains open.
+
+
+## 2026-10-25 — Round 8: \(\delta=15\) four-partite branch fully excluded
+
+### Final contradiction
+
+The last surviving \(\epsilon_U=0\), \(H[W]=K_3\cup K_5^3\) profile is now excluded. From the previous round, the \(K_3\) component \(C_0\) is complete to \(D\), and every vertex in the three \(K_5\) parts is complete to exactly one small \(U\)-part. Let \(k_P\) count the \(K_5\)-vertices labelled to small part \(P\in\{A,B,C\}\). Then
+\[
+k_A+k_B+k_C=15.
+\]
+
+If a small part has a cross-edge endpoint, that endpoint has exactly five \(W\)-neighbours, so \(k_P\le5\). If a part has no endpoint, its seven vertices all have \(W\)-degree six; \(k_P=6\) would make the same six labelled vertices the entire \(W\)-neighbourhood of every vertex in that part. The independent-set saturation condition then forces a whole \(K_5\) part inside those six vertices, making all five vertices of that \(K_5\) labelled to \(P\), which creates a forbidden \(K_{12}\). Therefore \(k_P\le5\) for all three small parts, and the sum forces \(k_A=k_B=k_C=5\).
+
+There is at least one cross-edge endpoint \(u\), with \(u\in P\). It has exactly five \(W\)-neighbours, precisely the five vertices labelled \(P\). Its neighbourhood must contain a whole \(W\)-clique part; it cannot be the \(K_3\), whose vertices are labelled \(D\), so it must be one of the \(K_5\) parts. All five vertices of that \(K_5\) are then labelled \(P\), again giving \(P\cup K_5\cong K_{12}\), contradiction.
+
+Thus the whole \(\delta=15\) four-partite branch is **EXCLUDED** under the retained core/witness contract. The full proof is in DELTA15_FOUR_PARTITE_TERMINAL.md.
+
+### Updated frontier
+
+- \(\delta=16\), four-partite: **EXCLUDED**.
+- \(\delta=15\), non-four-partite: **EXCLUDED** under the retained contract and Kang–Pikhurko equality classification.
+- \(\delta=15\), four-partite: **EXCLUDED** by the label-count/K12 contradiction.
+- \(\delta\le14\): OPEN (four-partite and non-four-partite cases).
+- E407 Q32 overall: **OPEN / NOT_CERTIFIED**.
