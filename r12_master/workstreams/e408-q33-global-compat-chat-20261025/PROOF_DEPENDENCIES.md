@@ -119,3 +119,21 @@ The following sibling heads were re-read after the local \(r_i=6\) work; all wer
 | workstream/r12-zero-excess-witness-20261025 | 07d19abfd6c1c749c7360526e4a04a3eb865fb2e | The labelled overlap-capacity route remains open; its scalar edge-load bound is explicitly insufficient. |
 
 These updates do not invalidate the new row-budget theorems. The Q33 non-four-partite support interval and the four-partite \(S_0\ge22\) branch both remain open; this workstream's next global obligation is still to combine the outer row/component labels with the 56 inner witness labels without charging baseline edges as duplicates.
+
+
+## 12. Isolated-\(K_{12}\) budget cap and \(P_C=50\) exclusion
+
+Lemma 13.1 / Lemma 13.2 / Theorem 13.3 in SEVEN_BLOCK_INCIDENCE_LEDGER.md use:
+1. The original balanced-coloring contract: for every color \(D\), \(\alpha(D)\le12\).
+2. The seven-block one-or-two rule: for each \(x\in B_i\) and \(B_j\), every non-target color occurs at least once on the 12 edges \(xB_j\), and one color occurs twice.
+3. The exact-129 row classification in Theorem 11.1 and the gadget normal form in Theorem 12.1.
+
+A monochromatic \(C\)-colored \(K_{12}\) is isolated in \(C\): each outside vertex must see all eleven colors \(D\ne C\) on its twelve edges to the clique, so none of those edges can be \(C\). If \(m\) disjoint such cliques each meet all seven target blocks once, the remaining \(k=12-m\) vertices per target block can only connect in color \(C\) to the remaining \(k\) vertices of another block. Their bipartite graph has minimum degree one and maximum degree two, giving \(d_{ij}(C)\le k\) and \(P_C\le21k\).
+
+For \(P_C=50\), \(R_C=12\) forces the row-budget vector \((6,1,1,1,1,1,1)\). The four cases in Theorem 11.1 each yield at least ten isolated \(C\)-colored \(K_{12}\)'s, so \(P_C\le42\), contradiction. The case split is:
+- \(n=1\): 10 label-based plus at least 1 gadget-based \(K_{12}\);
+- \(n=2,k=1,m=10\): 9 label-based plus 2 gadget-based;
+- \(n=2,k=1,m=11\): at least 8 label-based plus 2 gadget-based;
+- \(n=2,k=0\): all 10 component labels clean.
+
+This excludes only the exact \(P_C=50,r_i=6\) corner. The \(P_C=49,r_i=6\) branch and E408 Q33 overall remain open; no upstream dependency is closed by this result.
