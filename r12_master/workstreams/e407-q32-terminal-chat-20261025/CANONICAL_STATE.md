@@ -275,3 +275,17 @@ Added DELTA13_EPS1_3K4_K6_K4K4_EDGE.md and verify_delta13_eps1_3k4_k6_k4k4_edge.
 For U vertices, the degree-six nonsaturation case contradicts the cover capacity of the nonincident K4 and K6; the only remaining possible exception is one degree-seven vertex with \(\epsilon_u=1,t_u=0\). The total component capacity is at most 28. If this one exception exists, equality would force all three K4 capacities to be nine; each would then be labelled by one small U-part, but the exceptional vertex's own part is forbidden as a label. Two K4 components must share one of the other two small-part labels, creating an overlap of at least seven vertices and preventing coverage of 28. Thus the profile is excluded.
 
 Arithmetic replay passed with DELTA13_EPS1_3K4_K6_K4K4_EDGE_ARITHMETIC_OK. Both placements of the unique W-cross-edge in the \(\epsilon_U=1\), \(3K_4\dot\cup K_6\) profile are now excluded.
+
+
+## Round 25 — delta-13 epsilon_U=1, 3K4 + K6 with one W-cross-edge excluded
+
+Added DELTA13_EPS1_K4K4K4K6_ONE_CROSS_EDGE.md and verify_delta13_eps1_k4k4k4k6_one_cross_edge.py. Independent finite label/load replay passed: DELTA13_EPS1_K4K4K4K6_ONE_CROSS_EDGE_ARITHMETIC_OK.
+
+The proof handles both placements of the unique W-cross-edge:
+- If it joins K4 to K6, a U-vertex not complete to a W-part would need at least 3+5=8 W-neighbours, but the degree budget is at most seven. Thus all 29 U-vertices are covered by the four component common-neighbour sets.
+- If it joins two K4s, every nonsaturated U-vertex must see all six non-endpoint vertices of those K4s. The nonsaturated set E is a clique: two nonadjacent exceptions, together with an edge endpoint and common non-neighbours in the third K4 and K6, would form an independent 5-set. The U-part structure forces E into one U-part. If |E|=k>0, each of the two incident K4 common-neighbour sets has capacity at most 9-k+floor(E_i/3); the remaining K4 has capacity at most 9 and K6 at most floor(E_6/2). This is strictly below the required 29-k saturated U-vertices.
+- A reverse-saturation lemma shows every W vertex except possibly one non-endpoint K4 vertex with excess three is labelled by a unique U-part. Label-load counting gives |S_i|<=9 for every K4 and |S_6|<=floor(E_6/2)<=1. If no U exceptions exist, the total capacity is at most 28<29.
+
+The finite verifier exhausts K4 label/excess profiles (8,925 valid assignments in each endpoint regime, plus the one-unlabelled cases) and K6 label/excess profiles (107,325 non-endpoint and 30,615 endpoint assignments). It checks the arithmetic/load bounds only; it does not machine-prove the analytic saturation and exception-clique lemmas.
+
+This closes the \(3K_4\dot\cup K_6\) plus one-cross-edge profile for \(\delta=13,\epsilon_U=1\), under the four-partite-U/core contract. The \((4,4,5,5)\)-plus-two-cross-edges profile at \(\epsilon_U=1\), the \(\epsilon_U=2\) one-cross-edge profile, \(\epsilon_U=0\), non-four-partite U-complements, \(\delta\le12\), all five shell templates as a global compatibility problem, and the \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
