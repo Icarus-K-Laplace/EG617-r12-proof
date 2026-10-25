@@ -67,3 +67,6 @@ A bare count of edges or witness incidences does not establish incompatibility.
 
 
 **Update (2026-10-25, Round 12):** DELTA14_EPSU1_2_ANTICOMPL_COMPONENT_PROFILES.md excludes the no-cross-edge profiles \(K_3\cup K_5^3\) for \(\epsilon_U=1,2\), \(K_4^3\cup K_6\) for \(\epsilon_U=1\), and \(K_4\cup K_4\cup K_5\cup K_5\) for \(\epsilon_U=2\). Thus the only \(\delta=14\) four-partite W-profile still open is \(\epsilon_U=1\), \(K_4\cup K_4\cup K_5\cup K_5\) plus one W-cross-edge.
+
+
+**Update (2026-10-25, Round 14):** The remaining \(\delta=14\) four-partite rows are now closed. For \(\epsilon_U=1\), DELTA14_EPS1_W_PROFILE_CLASSIFICATION.md proves the exact three-profile list using Brouwer's second-Turán bound, and each profile is excluded by its own capacity theorem. For \(\epsilon_U=2\), the exact ledger gives \(e(H[W])=32\), so Turán equality forces \(K_4\cup K_4\cup K_5\cup K_5\), excluded by Section 5 of DELTA14_EPSU1_2_ANTICOMPL_COMPONENT_PROFILES.md. Therefore all \(\delta=14\), four-partite \(L\) cases are excluded for \(\epsilon_U=0,1,2\). The live frontier in this file is now \(\delta=14\) non-four-partite and \(\delta\le13\); E407 Q32 remains OPEN.
