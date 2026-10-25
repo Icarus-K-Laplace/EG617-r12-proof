@@ -224,3 +224,19 @@ The core-witness omission ledger and the exact-129 outer-block ledger are distin
 \]
 
 This bound is reusable in both the E407 Q32 and E408 Q33 minimum-support contracts because it depends on the shared exact-129 factor theorem and seven-block equality system, not on the 29-point versus 31-point support profile. It does not itself improve the target-core inequality (1) or assign labels to arbitrary graph-theoretic common witnesses; the label-transfer barrier in Section 5 remains.
+
+
+## 9. Exact-color duplicate budget and disjoint K12 packing
+
+For any exact-129 color C, the outer-block size-five blocker count satisfies \(n_i(C)\ge11-r_i(C)\). The ten isolated K5 components are the only size-five blockers, and each can serve at most one row in a given target block. Therefore at least
+\[
+10-\sum_{i=0}^6(10-n_i(C))
+\ge 10-\sum_{i=0}^6(r_i(C)-1)
+= P_C-45
+\]
+component labels are size-five blockers in every outer block. Each such component plus its seven exact blocker rows is a monochromatic K12, and distinct labels give vertex-disjoint cliques. Hence
+\[
+\nu_{12}(C)\ge\max(0,P_C-45).
+\]
+
+This is a cross-terminal consequence of the exact-129 factor theorem and seven-block incidence system, independent of whether the target core has 284 or 285 edges. It does not by itself contradict the K145 coloring: a monochromatic K12 is permitted by the target statement, so the remaining task is to turn the packing into a capacity conflict with the labelled four-point witnesses or another color's structure.
