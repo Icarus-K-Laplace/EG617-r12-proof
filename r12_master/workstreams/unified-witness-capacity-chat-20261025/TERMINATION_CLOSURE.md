@@ -113,3 +113,14 @@ This local result does not establish \(P_C\le49\) for all exact-129 colors and m
 The graph-theoretic shell witness family and the exact-129 factor components are distinct structures. A labelled witness K5 is either one of the ten isolated components or lies wholly in the 11-point gadget. Pairwise disjointness of seven four-sets and the gadget size 11 imply at most two gadget witnesses, hence at least five isolated-component witnesses (and at least four B-labelled component witnesses). No stronger seven-component transfer is certified.
 
 Combining this floor with the all-block exact-blocker bound \(|\mathcal K_C^*|\ge P_C-45\) gives only \(|\mathcal W_C\cap\mathcal K_C^*|\ge\max(0,P_C-50)\). Therefore the label-based K12 extension is guaranteed only at \(P_C\ge51\), not \(P_C\ge49\). The stronger label-transfer theorem and the aggregate core/witness contradiction remain OPEN.
+
+
+## 7. Latest correction: S-avoiding witness transfer floor is six
+
+The earlier generic \(|U_C|=11\) argument gave only five isolated-component witnesses. The selected witnesses all avoid \(S\), and the ten isolated K5 components avoid \(S\), so \(S\subseteq U_C\) and \(|U_C\setminus S|=8\). Two selected gadget witnesses would use disjoint four-sets covering these eight vertices, while a witness label outside \(H\) would require a ninth non-S gadget vertex. Hence at most one selected witness is in the gadget and at least six of seven selected witnesses are isolated K5 components.
+
+Combining \(|\mathcal W_C|\ge6\) with the all-block component bound \(|\mathcal K_C^*|\ge P_C-45\) gives
+\[
+|\mathcal W_C\cap\mathcal K_C^*|\ge\max(0,P_C-49).
+\]
+Thus \(P_C\ge50\) forces at least one selected component to extend to a monochromatic K12, and \(P_C=51\) forces at least two. This improves the label-aware threshold but is not a contradiction; all full-terminal and root-bridge obligations remain OPEN / NOT_CERTIFIED.
