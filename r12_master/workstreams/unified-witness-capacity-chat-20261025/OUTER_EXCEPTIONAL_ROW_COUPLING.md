@@ -191,3 +191,46 @@ Nine component diagonals are present. The remaining three left rows and three ri
 The missing diagonal already consumes at least five of the combined extra-incidence budget \(r_i+r_j-2\le8\). At most three extra incidences remain across all other rows in the two blocks. Since an exceptional row's baseline neighborhood lies in \(U_C\), the union of \(N_C(x)\), \(N_C(y)\), and \(N_C(z)\) cannot cover an entire isolated K5 component: covering one would require five component-vertex incidences, but at most three remain. Choose one vertex outside this union from each of the ten isolated K5 components. Those ten vertices are pairwise C-nonadjacent and anticomplete to \(x,y,z\), producing a C-independent 13-set, contradiction. Thus \(d_{ij}\ge1\) whenever \(m_{ij}=1\), proving the claim. \(\square\)
 
 This is the desired edge-ownership link: every missing same-component label alignment among low-budget blocks is paid for by at least one unit of the exact block-pair duplicate ledger. It does not charge a missing diagonal twice, and it does not claim that every duplicate edge creates a missing diagonal.
+
+
+## 9. Duplicate-budget-to-\(K_{12}\)-packing theorem
+
+For an exact-129 color C, let \(n_i(C)\) be the number of outer-block rows \(b\in B_i\) with
+\[
+|N_C(b)\cap R|=5.
+\]
+By the exact blocker theorem, each such neighborhood is one of the ten isolated K5 components, and no component can be used by two size-five blockers in the same block. Write \(\mathcal K_i(C)\subseteq\{1,\ldots,10\}\) for the set of component labels used in block \(B_i\).
+
+The incidence ledger gives \(e_C(B_i,R)=61+r_i(C)\). Every other row is a blocker of size at least six, so
+\[
+5n_i(C)+6(12-n_i(C))\le61+r_i(C),
+\qquad
+n_i(C)\ge11-r_i(C).
+\]
+Consequently,
+\[
+\begin{aligned}
+\left|\bigcap_{i=0}^6\mathcal K_i(C)\right|
+&\ge10-\sum_{i=0}^6(10-n_i(C))\\
+&\ge10-\sum_{i=0}^6(r_i(C)-1)\\
+&=17-R_C=P_C-45.
+\end{aligned}
+\]
+
+**Theorem 9.1 (duplicate budget forces disjoint maximum cliques).**
+\[
+\boxed{\nu_{12}(C)\ge \max\{0,P_C-45\},}
+\]
+where \(\nu_{12}(C)\) is the maximum number of vertex-disjoint monochromatic \(K_{12}\) cliques in color C.
+
+**Proof.** Every label in \(\bigcap_i\mathcal K_i(C)\) gives one exact size-five blocker row \(x_i(\ell)\) in each of the seven outer blocks. If \(x_i(\ell)\) and \(x_j(\ell)\) were C-nonadjacent, their neighborhoods into R would both equal \(K_\ell\). One vertex from each of the other nine isolated K5 components, an independent pair in \(U_C\), and the two rows would form a C-independent 13-set. Thus the seven representatives are pairwise C-adjacent, and together with \(K_\ell\) form a monochromatic \(K_{12}\). Different labels use disjoint K5 components and distinct rows in every block, so the resulting \(K_{12}\) cliques are vertex-disjoint. \(\square\)
+
+### Refined high-\(P_C\) branches
+
+Combining Theorem 9.1 with the near-complete matching theorem and the sibling \(r_i(C)=6\) classification gives:
+
+- If \(P_C\ge51\), then \(R_C\le11\), every pair satisfies \(r_i+r_j\le6\), and all ten components extend to ten vertex-disjoint \(K_{12}\) cliques.
+- If \(P_C=50\), then there are at least eight such cliques. If all \(r_i\le5\), at most one block pair has sum \(r_i+r_j\ge7\), so at least nine component labels align globally. If one \(r_i=6\), the other six parameters are all one and the sibling \(6+1\) theorem gives at least eight.
+- If \(P_C=49\), then at least four such cliques follow from Theorem 9.1. This improves to at least seven if one \(r_i=6\), and at least eight if every \(r_i\le5\).
+
+This is a reusable branch certificate, not a contradiction: the original coloring contract permits disjoint monochromatic \(K_{12}\) cliques.
