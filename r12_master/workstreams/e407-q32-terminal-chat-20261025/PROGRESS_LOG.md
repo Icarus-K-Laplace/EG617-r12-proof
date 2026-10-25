@@ -540,3 +540,20 @@ Because there are exactly 49 \(A\)-\(B\) pairs and exactly 49 edges in \(\overli
 ### Current status
 
 This is a strict structural reduction, **not a contradiction**. The 15-vertex triangle-free saturated kernel and its orthogonal near-perfect matching decompositions remain OPEN. E407 Q32, all five shell templates, the \(\delta\le13\) cases, and EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 — Round 18: construct the saturated local boundary instead of pursuing a false local contradiction
+
+### Explicit construction
+
+Built \(J\), a blow-up of \(C_5\) with consecutive part sizes \((5,5,2,1,2)\). It is triangle-free, triangle-saturated, non-bipartite, and has 49 edges. Joining it to two independent 7-sets \(A,B\) gives a 29-vertex \(K_5\)-saturated non-four-partite graph \(L\) with 308 edges; \(H_U=\overline L\) has 98 edges and independence number four.
+
+A concrete \(\mathbb Z_7^2\) cell-to-edge labeling uses the five translation permutations \(y=x+i\), \(i\in\{0,1,2,3,4\}\), and five affine permutations \(y=2x+j\), \(j\in\{0,1,2,4,5\}\), with explicit assignments for the 20 high-low and 4 low-low edges. The third coloring \(\kappa=x+y\pmod7\) is proper at every vertex. It partitions the 49 independent 4-sets into seven classes of seven pairwise-disjoint witnesses. All 49 witnesses cover \(U\), and any two intersect in at most one vertex.
+
+Added DELTA14_SATURATED_LOCAL_MODEL.md and verify_delta14_saturated_local_model.py. An independent Python check passed the graph counts, triangle-free/saturation checks, cell bijection, pairwise linearity, and seven-color witness packing.
+
+### Research consequence
+
+The Round 17 idea to prove that the 15-vertex saturated graph with the two matching decompositions cannot exist is refuted by this explicit local model. This is **not** a counterexample to EG617: no \(W\)-extension, 47-core, or shell-row labeling is supplied. The next target is the global extension problem. In the zero-excess-on-\(U\) case, the local model requires \(U\)-to-\(W\) degrees \(6^{14},5^{10},4^4,2^1\), total 152.
+
+Status remains OPEN / NOT_CERTIFIED for the saturated terminal, E407 Q32, and EG617(\(r=12\)).
