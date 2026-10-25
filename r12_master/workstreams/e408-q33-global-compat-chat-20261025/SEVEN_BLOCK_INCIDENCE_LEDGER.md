@@ -274,3 +274,56 @@ Finally, the ten mandatory component rows contribute 50 incidences, while the tw
 vertices outside \(K_\ell\). It cannot contain a second K5 component, and it meets \(U_C\) in at most four vertices, leaving at least seven gadget vertices outside the union. If the representatives were C-nonadjacent, pairwise blocker compatibility with \(k=1\) would force the remaining gadget to have independence number at most one, hence to be a clique of size at most five. Contradiction. Distinct component labels have distinct representatives in each block, so the ten forced edges form a matching. \(\square\)
 
 **Budget corollary.** Since \(R_C=62-P_C=\sum_i r_i(C)\), if \(P_C\ge36\), then \(R_C\le26\). A seven-tuple of positive integers with every pair-sum at least seven has sum at least 27 (its sorted minimum is \(3,4,4,4,4,4,4\)). Hence \(P_C\ge36\) guarantees at least one block pair \(i,j\) with \(r_i(C)+r_j(C)\le6\), and thus a forced ten-edge component matching. This is a conditional branch filter; the aggregate exact-color bound \(\sum_{C:s_C=0}P_C\ge69\) alone does not force any one color to reach 36.
+
+
+## 11. Exact boundary classification at \(r_i(C)=6\)
+
+Fix an exact-129 color \(C\) and target block \(B_i\), and assume \(r_i(C)=6\). For each \(K_\ell\), let \(m_\ell\) be the number of row neighborhoods \(X_b\) containing all of \(K_\ell\). Put
+\[
+m=\sum_{\ell=1}^{10}m_\ell,\qquad
+k=\#\{\ell:m_\ell=2\}.
+\]
+Let \(d_K\) be the number of repeated incidences among the 50 vertices in the ten \(K_5\) components, and \(d_U\) the number of repeated incidences among the 11 vertices of the gadget \(U_C\). Thus \(d_K+d_U=6\). Let \(n\) be the number of rows containing no complete \(K_5\) component.
+
+**Theorem 11.1 (six-duplicate boundary).** Exactly one of the following cases holds.
+
+**Case A: \(n=1\).**
+- \(k=1\), \(m=11\); every component-containing row contains exactly one full \(K_5\), all ten components are represented, and one component is represented twice.
+- \(d_K=5\), \(d_U=1\).
+- The no-component row has exactly six gadget vertices. The two rows representing the repeated component have disjoint gadget portions whose union has size six. That six-set and the no-component row's gadget six-set cover \(U_C\) and intersect in exactly one vertex.
+- Every other row has no gadget vertices, and no component vertex has any repeated incidence beyond the five vertices of the repeated \(K_5\).
+
+**Case B: \(n=2\) and \(k=1\).**
+- \(d_K=5\), \(d_U=1\).
+- Each no-component row has exactly six gadget vertices, their gadget portions intersect in exactly one vertex, and no other row contains a gadget vertex.
+- There are two possible full-component occurrence profiles:
+  1. \(m=10\): each of the ten component-containing rows contains exactly one full component; one component is represented twice and one component is not fully contained in any row. The five vertices of the latter component each occur exactly once in the row family, but only as partial component incidences.
+  2. \(m=11\): one component-containing row contains two full components, the other nine each contain one, all ten components are represented, and one component is represented twice. No component vertex occurs outside these full-component occurrences.
+
+**Case C: \(n=2\) and \(k=0\).**
+- \(m=10\): each of the ten component-containing rows contains exactly one distinct full component, and all ten components are represented once.
+- \(1\le d_U\le6\), \(d_K=6-d_U\le5\). The five incidences above the baseline \(50+12=62\) split exactly as
+\[
+d_K+(d_U-1)=5.
+\]
+Here \(d_K\) counts partial appearances of component vertices beyond their unique full-component row, while \(d_U\) counts repeated gadget incidences.
+
+**Proof.** Every no-component row has at least six gadget vertices. The gadget has exactly \(11+d_U\le17\) total row incidences, so \(n\le2\). Also \(m_\ell\le2\) for every component, and every repeated full component contributes five repeated component incidences; hence \(k\le1\) and \(m\le10+k\le11\). If \(n=0\), all twelve rows contain a full component, so \(m\ge12\), impossible. Thus \(n\in\{1,2\}\).
+
+If \(n=1\), then \(m\ge11\), hence \(m=11\) and \(k=1\). The two rows containing the repeated component must have gadget union of size at least six by pairwise blocker compatibility. Together with the no-component row's six gadget incidences, this gives at least twelve gadget incidences, so \(d_U\ge1\). Since \(d_K\ge5\) and \(d_K+d_U=6\), equality holds: \(d_K=5,d_U=1\). Equality in the gadget-incidence lower bound gives the stated disjointness, six-set sizes, one-point intersection, and absence of gadget incidences in all other rows. The five repeated component incidences are exhausted by the repeated \(K_5\).
+
+If \(n=2\), the two no-component rows give at least twelve gadget incidences, so \(d_U\ge1\) and \(d_K\le5\). If \(k=1\), then \(d_K\ge5\), so \(d_K=5,d_U=1\). Also \(10\le m\le11\). When \(m=10\), ten rows each contain one full component, with nine distinct labels; hence one label is repeated and one is absent from the full-component rows. Its five vertices must occur once each as partial component incidences. When \(m=11\), exactly one of the ten rows contains two full components, all ten labels are represented, and one label is repeated. In either subcase the twelve gadget incidences are exactly the two no-component rows' six each, with a one-point overlap; all other rows have no gadget vertices. The component-incidence budget \(d_K=5\) rules out any further repeated component vertices.
+
+Finally, if \(k=0\), then \(m\le10\), while the ten component-containing rows give \(m\ge10\). Thus \(m=10\), with exactly one distinct full component in each such row. The identity \(d_K+d_U=6\) and \(d_U\ge1\) gives \(d_K\le5\), and the displayed excess identity follows. These cases exhaust all possibilities. \(\square\)
+
+**Corollary 11.2 (cross-block matching at the \(6+1\) boundary).** If \(r_i(C)=6\) and \(r_j(C)=1\), then at least eight of the ten \(K_5\) component labels force \(C\)-colored edges between \(B_i\) and \(B_j\); these edges form a matching of size at least eight. In Cases A and C, all ten labels force such edges. In Case B with \(m=10\), nine labels force them. In Case B with \(m=11\), at least eight labels force them.
+
+**Proof.** Since \(r_j(C)=1\), Theorem 10.1 gives a row in \(B_j\) whose neighborhood is exactly \(K_\ell\), for every label \(\ell\). Suppose \(x\in B_i\) is a row representative containing exactly one full \(K_\ell\) and at most five additional vertices, and let \(y\in B_j\) be the exact \(K_\ell\) representative. If \(xy\) were not \(C\)-colored, pairwise blocker compatibility would give
+\[
+\alpha\!\left(C[U_C\setminus(X_x\cup X_y)]\right)\le1,
+\]
+because the union contains exactly one complete \(K_5\). But \(X_x\cup X_y\) covers at most five gadget vertices, leaving at least six vertices of \(U_C\); this remaining graph cannot be a clique because \(\omega(C[U_C])=5\). Contradiction.
+
+In Case A, every label has a single-component row with at most five extra vertices (for the repeated label, choose the smaller of its two disjoint gadget portions). In Case C, each component-containing row has at most five extra incidences because the total excess above the 62-incidence baseline is five, and no row contains two full components. In Case B with \(m=10\), the nine fully represented labels have such rows. In Case B with \(m=11\), at most two labels lack a single-component row, namely the components that occur only in the double-component row; if one of them is the repeated component, it also has a single-component representative elsewhere. The selected representatives are distinct on each side, so the forced edges form the claimed matching. \(\square\)
+
+**Scope.** Theorem 11.1 classifies the exact \(r_i(C)=6\) boundary but does not by itself eliminate any of its cases. Corollary 11.2 extends the earlier ten-edge matching interface to a guaranteed eight-edge matching when the two block budgets are \(6\) and \(1\); the forced edges remain baseline edges unless a separate duplicate-incidence argument says otherwise.
