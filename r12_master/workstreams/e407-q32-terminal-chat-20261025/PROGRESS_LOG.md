@@ -657,3 +657,16 @@ Added DELTA13_EPS1_K3K5K5K5_ONE_CROSS_EDGE.md and verify_delta13_eps1_k3k5_one_c
 - The total component cover is at most \(23+E_W=26\). At least 28 U vertices must be covered, contradiction.
 - Arithmetic replay passed: DELTA13_EPS1_K3K5K5K5_ONE_CROSS_EDGE_ARITHMETIC_OK.
 - Status: **PROVED_CONDITIONAL** for this one-cross-edge profile; E407 Q32 remains OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 — Round 25: delta-13 \(3K_4\dot\cup K_6\), K4–K6 cross-edge
+
+Added DELTA13_EPS1_3K4_K6_K4K6_EDGE.md and verify_delta13_eps1_3k4_k6_k4k6_edge.py.
+
+- The U-side transversal argument forces all U vertices W-saturated: the only cross-edge in W is between a K4 and K6, so a nonsaturated U vertex would need at least eight W-neighbours; the exact degree ledger allows at most seven.
+- Every D vertex is also W-saturated, since \(d_H(d,W)\le6<8\). The minimum W component size four then gives \(t_d\le1+\epsilon_d\le2\).
+- Reverse saturation shows any W vertex not complete to a U-part has U-degree at least 12. Hence all K6 vertices are U-part-saturated, and only a non-endpoint K4 vertex with excess three could be unsaturated; its zero-excess companions still force the K4 capacity to be at most nine.
+- The three K4 common-neighbour capacities are each at most nine. K6 common neighbours use at least two extra edges each, so \(|S_3|\le\lfloor E_3/2\rfloor\le1\).
+- Final cover contradiction: \(29\le\sum_i|S_i|\le9+9+9+1=28\), impossible.
+- Arithmetic replay passed: DELTA13_EPS1_3K4_K6_K4K6_EDGE_ARITHMETIC_OK.
+- Scope: only the K4–K6 edge placement is closed; the K4–K4 placement and all other open branches remain open.
