@@ -140,4 +140,4 @@ m_{ij}(C)\le \left\lfloor\frac{r_i(C)+r_j(C)-2}{5}\right\rfloor\le1.
 \]
 This extends the full matching result from \(r_i+r_j\le6\) to a near-matching result for every pair with \(r_i,r_j\le5\).
 
-Boundary warning: the theorem does **not** imply that a missing diagonal always contributes \(d_{ij}(C)\ge1\), because for \(r_i+r_j\ge7\) the remaining component rows can potentially be matched to exceptional rows. The exact edge budget and all 2x2 interaction types still need separate accounting. No global contradiction follows yet.
+Boundary refinement (2026-10-25): Theorem 8.1 now proves that a missing diagonal does imply \(d_{ij}(C)\ge1\). If \(d_{ij}=0\), the 12 edges form a perfect matching; with one missing component diagonal, this forces an independent triple of exceptional rows. The missing diagonal uses at least five of the at-most-eight extra row incidences, leaving at most three, too few to cover any K5 component; one vertex from each of the ten components plus the triple contradicts \(\alpha(C)\le12\). This closes the previous edge-ownership gap for \(r_i,r_j\le5\), but does not yet yield a global terminal contradiction.
