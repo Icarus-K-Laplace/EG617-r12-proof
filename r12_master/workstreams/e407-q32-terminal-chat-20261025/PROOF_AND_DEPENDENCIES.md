@@ -173,3 +173,10 @@ The verifier checks the finite capacity totals and the strict gap only. The othe
 DELTA13_EPS1_3K4_K6_K4K6_EDGE.md excludes this profile under the four-partite-U and 49-witness contract. The proof uses the exact eight-edge U-cross-edge ledger, the independent-transversal saturation lower bound, reverse saturation for W-vertices, and componentwise label/excess capacities. The verifier checks the numeric edge ledger and the final \(28<29\) capacity contradiction only; the graph lemmas remain analytic.
 
 The placement with the cross-edge between two K4 components is not covered by this result.
+
+
+## Round 26 — delta-13 \(3K_4\dot\cup K_6\) with K4–K4 cross-edge
+
+DELTA13_EPS1_3K4_K6_K4K4_EDGE.md closes the remaining edge placement. The proof uses the exact eight-cross-edge budget to force D saturation, then reverse saturation and component common-neighbour capacities. The degree-six U exception is impossible; a degree-seven exception is unique and is eliminated by equality-case overlap among the K4 common-neighbour sets.
+
+The arithmetic verifier checks only the numeric degree gaps, edge ledger, and overlap bound. This result, together with Round 25, excludes the full one-cross-edge \(3K_4\dot\cup K_6\) profile for \(\delta=13,\epsilon_U=1\).
