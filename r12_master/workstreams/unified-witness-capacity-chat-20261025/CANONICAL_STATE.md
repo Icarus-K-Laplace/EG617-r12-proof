@@ -160,3 +160,19 @@ The verifier now checks all \(25\) integer pairs \(r_i,r_j\in\{1,\ldots,5\}\), t
 - E408 Q32 remains a separate 285-edge core and is not covered by the 284-edge conclusions here.
 
 No sibling workstream was modified. The new theorem is a structural strengthening, not a complete terminal contradiction. EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 continuation — mismatch-to-duplicate charging
+
+The near-complete matching theorem now has a stronger edge-ownership corollary. For any exact-129 color C and any pair of outer blocks with \(r_i(C),r_j(C)\le5\), let \(m_{ij}(C)\) count missing same-component diagonal edges. Then
+\[
+m_{ij}(C)\le1,\qquad \boxed{m_{ij}(C)\le d_{ij}(C)}.
+\]
+The second inequality is proved by contradiction: if one diagonal were missing while \(d_{ij}=0\), the block-pair C graph would be a perfect matching. The remaining rows force an independent triple of exceptional rows. The missing diagonal consumes at least five of the at-most-eight extra row-neighborhood incidences, leaving at most three—insufficient to cover any full K5 component. One vertex from each of the ten components plus the triple gives a C-independent 13-set.
+
+Thus the exact global duplicate budget pays for every missing component-label alignment:
+\[
+\sum_{\{i,j\}\subseteq\mathcal I_C}m_{ij}(C)\le P_C,
+\quad \mathcal I_C=\{i:r_i(C)\le5\}.
+\]
+The Python arithmetic replay independently checked all 25 row-budget pairs and the sum-seven boundary. Result: PASS. This is a conditional cross-block theorem; it does not yet bound \(P_C\) tightly enough to eliminate the remaining terminals.
