@@ -134,3 +134,35 @@ E_C^{\rm exc}=K_k\ \dot\cup\ K_k.
 The two cliques must choose opposite exceptional rows from each block, because the two rows within one target block are C-nonadjacent. Thus the zero-excess pattern is a globally consistent two-type split of the exceptional rows. Any departure from this two-clique structure requires additional C-edges among exceptional rows and consumes duplicate budget.
 
 This theorem strengthens the local edge-cover argument: it rules out independent triples across all low-slack blocks, not just a particular pairwise intersection mask. It still permits the two-clique extremal pattern and therefore does not close Q33.
+
+
+## 7. Near-complete labelled component matching for every low-row-budget pair
+
+The exact-129 row theorem (Theorem 10.1 in the E408 Q33 sibling ledger) gives, whenever \(r_i(C)\le5\), ten distinct component-containing rows
+\[
+x_i(1),\ldots,x_i(10),\qquad
+K_\ell\subseteq N_C(x_i(\ell))\cap R,
+\]
+one for each isolated \(K_5\) component \(K_\ell\) of \(C[R]\), and two exceptional rows. The total number of neighborhood incidences beyond the baseline \(10\cdot5+2\cdot6=62\) is exactly \(r_i(C)-1\). In particular, across the ten component rows, the sum of all extra incidences beyond their own \(K_\ell\) is at most \(r_i(C)-1\).
+
+**Theorem 7.1 (at most one missing component diagonal).** If \(r_i(C),r_j(C)\le5\), then among the ten same-component pairs
+\[
+\{x_i(\ell),x_j(\ell)\},\qquad \ell=1,\ldots,10,
+\]
+at most one pair is nonadjacent in color C.
+
+**Proof.** Fix a label \(\ell\) for which \(x_i(\ell)\) and \(x_j(\ell)\) are nonadjacent. Their neighborhoods contain the full component \(K_\ell\). Let \(E_i(\ell)\) and \(E_j(\ell)\) be the extra neighborhood incidences of these two rows outside \(K_\ell\). If their union does not cover another entire \(K_5\) component, one vertex can be chosen outside their union from each of the other nine components. If at least six gadget vertices of \(U_C\) also remain outside their union, those vertices contain an independent pair because \(\omega(C[U_C])=5\). The nine component vertices, that independent pair, and the two nonadjacent rows would form a C-independent 13-set.
+
+Therefore a missing diagonal requires either (a) at least five extra incidences to cover all vertices of a second K5 component, or (b) at least six extra incidences into \(U_C\) to leave at most five gadget vertices. In either case,
+\[
+|E_i(\ell)|+|E_j(\ell)|\ge5.
+\]
+For distinct missing labels, the incidences belong to distinct component rows, so their extra-incidence charges are disjoint. Summing over all missing labels gives
+\[
+5m_{ij}\le (r_i(C)-1)+(r_j(C)-1)\le8,
+\]
+where \(m_{ij}\) is the number of missing component diagonals. Hence \(m_{ij}\le1\). \(\square\)
+
+**Corollary 7.2.** Every pair of blocks with \(r_i(C),r_j(C)\le5\) has at least nine C-edges joining same-label component representatives. If \(r_i(C)+r_j(C)\le6\), the sharper sibling theorem gives all ten. If exactly one diagonal is missing and \(r_i(C)+r_j(C)=7\), the five extra-incidence units are fully exhausted by covering a second K5 component; no extra incidence can enter the gadget.
+
+This is a labelled near-matching statement, not a claim that the entire block-pair graph is a matching. Cross-label edges and edges incident to exceptional rows remain possible and must be charged separately in \(d_{ij}(C)\).
