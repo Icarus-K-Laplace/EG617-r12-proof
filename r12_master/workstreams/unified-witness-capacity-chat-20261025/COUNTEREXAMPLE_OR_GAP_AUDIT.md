@@ -189,3 +189,12 @@ Consequently, in this specific equality case no gadget vertex has C-degree four.
 Under top-cell A and \(r_i(C)=1\), the exact row normal form gives \(e_C(B_i,W)\in\{23,24\}\): component rows contribute 20 W-incidences in Type A or 19 in Type B, and the two exceptional gadget rows contribute the complementary 3/4 or 4/5. Each \(w\in W\) must see all eleven non-target colors among its 12 edges to \(B_i\), so one non-target color is repeated and the target color is absent on that star. Therefore the only repeated-C incidence in block i is in W exactly when \(e_C(B_i,W)=24\); otherwise it lies in O.
 
 This is an ownership refinement, not a global contradiction. Across blocks, the row normal form still allows the unique duplicates to split between W and O. A terminal proof must combine these locations with the target degree vector and the cross-edge defect sum \(\sum_C t_C=K_W\) (E408) or \(K_W+1\) (E407).
+
+
+## 16. External-edge closure of the \(P_C=50,r_i=6\) corner
+
+The latest sibling theorem proves that every monochromatic \(K_{12}\) in a non-target color is isolated: an outside vertex's 12 incident edges to the clique must contain each of the other eleven colors, so the clique's color cannot occur on any of those edges.
+
+If \(m\) disjoint \(C\)-colored \(K_{12}\)'s each use one representative from each of the seven outer blocks, the remaining \(12-m\) vertices in each block have a C-bipartite graph of minimum degree one and maximum degree two across any block pair. Therefore \(P_C\le21(12-m)\).
+
+Applying the exact \(r_i=6\) cases and the six low-slack blocks excludes \(P_C=50,r_i=6\): Cases A/B force an external edge on a \(K_{12}\); Case C either has such an edge or yields ten isolated K12s and the bound \(P_C\le42\). The proof is recorded on sibling head 8b4bfef7a9e3d957c7150af30aadba703a08d31f. The remaining nearby corner \(P_C=49,r_i=6\) is still open; do not promote the P=50 argument to it without handling the single \(r_i=2\) block.
