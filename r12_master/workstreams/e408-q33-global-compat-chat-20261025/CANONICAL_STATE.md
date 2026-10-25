@@ -123,10 +123,12 @@ The next proof target is a stability/packing contradiction in Case 1 or a genuin
 ## Latest isolated commits
 
 - S0=12 exclusion theorem, including row-identity and disjoint-part audit: a1cc059324df01bfa1afec5bf20ba7a1194dd249
-- S0=12 arithmetic profile verifier: fe4e72e53395843395af92177f08e66717eecae5
+- S0=12 arithmetic profile verifier (deduplicated profile output): 4093c6f03aa5ca60f80765264e90590cdf85d5f1
 - Active seven-block ledger corrected to withdraw the invalid isolation lemma: c80e36782de9a0dfb5a6eb3b8059aa343e136774
 - Repaired local (P_C=50,r_i=6) corner via double-star: 07b6891eefac7163b1a0fbc1c2529126c2b5b1d7; verifier 2c42edbf6996bc733f7df1ee5a182c5e8954447e
 - Updated active ledger with repaired local corner: e714b150a0d63fff1b7fa295fd8fa372e91c6950
+- Updated proof dependency map: 5a01f8e4614e70fe4c3582b56d701ba6c7011471
+- Progress log update: b8e54cb68a977d012073eb9e2a1125db9528bacb
 - Preserved the prior outer-cap proof attempts with a NOT CERTIFIED warning: a0a8f21d872b261b24580ad5e9f15942046cc74f
 - Marked P49/P48 outer-cap drafts NOT CERTIFIED: a11d93b8d9a3cd58aa7f6f8da58ae3e90def8391; cfcb8f70f856dd742d3a658551b97f5d65e17fb3
 
