@@ -206,3 +206,10 @@ Under those retained dependencies, the general (delta=14), non-four-partite, (K_
 ## Round 30 — same-pair disjoint K4–K5 placement
 
 Under the exact two-cross-edge blocker classification and the K4-incident cover bound, the same-pair disjoint K4–K5 placement is excluded: no Type-II blocker is possible, and every Type-I exception needs seven W-neighbours, so only the unique positive-excess U vertex can be exceptional, contradicting the required (k\ge5). The verifier checks the strict integer inequalities only; the blocker and component-capacity lemmas remain analytic dependencies.
+
+
+## Round 31 — complete closure of the \(\delta=13,\epsilon_U=1\), \(2K_4\cup2K_5\)+two-edge W-profile
+
+DELTA13_EPS1_TWO_CROSS_EDGE_TERMINAL_CLOSURE.md closes all four formerly open same-pair placements. The proof depends on the retained exact Type-I/Type-II blocker classification, the K4/K5 common-neighbour capacity bounds, the reverse-saturation fact that an unlabelled K4 W-vertex must carry all three W-excess units, and the inherited \(\omega(H)\le11\) bound. The standard-library verifier checks integer ledgers/capacity profiles and feasible D-part \(t\)-vectors only; it is not a graph-realization certificate.
+
+The resulting closed contract is still conditional on the T61/49-witness upstream bridge and exact-129 factor theorem. It does not close \(\epsilon_U=2\) one-edge W profiles, \(\epsilon_U=0\), non-four-partite \(L\), \(\delta\le12\), any full V12 shell template A–E, or the original \(K_{145}\) theorem.
