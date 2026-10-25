@@ -34,4 +34,4 @@ This is a finite arithmetic classification of the blow-up subclass; it does **no
 
 The 49-witness matching structure gives \(\Delta(J)\le7\), and the saturated-kernel ledger gives \(|V(J)|=15,e(J)=49\). Therefore, **if** the remaining saturated kernel can be shown to be a \(C_5\)-blow-up, it must be the explicit local model already excluded from every full-core extension in DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md.
 
-The outstanding general gap is now sharply stated: exclude or classify non-\(C_5\)-blow-up triangle-free, non-bipartite, triangle-saturated 15-vertex graphs with 49 edges and the two witness-induced orthogonal near-perfect matching decompositions.
+The general kernel classification in DELTA14_SATURATED_KERNEL_CLASSIFICATION.md now proves that every admissible J in the retained saturated-kernel contract is a C5 blow-up, so this finite profile result and the candidate-extension exclusion conditionally close the entire saturated delta=14 terminal. The remaining project gaps are delta<=13, the five E407 shell templates, and the original K145-to-T61 bridge.
