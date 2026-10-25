@@ -61,4 +61,4 @@ The dedicated verifier is verify_p50_r6_double_star.py. It enumerates the four e
 
 This finite check verifies gadget alignment only; it does not machine-verify the upstream row classifications or exact-129 factor theorem.
 
-Therefore the specific corner \(P_C=50,r_i(C)=6\) is excluded under the stated contracts. The other \(P_C=50\) profiles \((5,2,1^5)\) and \((4,3,1^5)\) are **not** closed by this theorem. The universal \(P_C\le49\) claim remains **NOT CERTIFIED**, and E408 Q33 / EG617(\(r=12\)) remain **OPEN / NOT_CERTIFIED**.
+Therefore the specific corner \(P_C=50,r_i(C)=6\) is excluded under the stated contracts. The other \(P_C=50\) profiles \((5,2,1^5)\) and \((4,3,1^5)\) are **not** closed by this theorem alone; they are handled by R12_P50_REMAINING_HIGH_PROFILES_EXCLUSION.md. The conditional universal cap \(P_C\le49\) is now established separately by R12_HIGH_P_COLOR_CAP_COMMON_STAR.md. E408 Q33 / EG617(\(r=12\)) remain **OPEN / NOT_CERTIFIED**.
