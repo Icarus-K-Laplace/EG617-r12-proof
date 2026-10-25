@@ -65,7 +65,12 @@ The proofs DELTA14_EPS0_K4_PROFILE_EXCLUSIONS.md, DELTA14_EPS0_K3K4K5K6_COVER_CA
 
 - No one of the five templates is closed by this theorem.
 - The \(\delta=15\) non-four-partite case is **excluded**: the Kang–Pikhurko equality reduction and incompatible (x,y) degrees into (W) rule out all three base profiles.
-- At \(\delta=14,\epsilon_U=0\), all four four-partite W profiles are excluded. The \(\epsilon_U=1,2\) and non-four-partite branches remain open. The \(\delta=15\) four-partite branch is excluded.
+- At \(\delta=14,\epsilon_U=0\), all four four-partite W profiles are excluded. At \(\epsilon_U=1\), the no-cross-edge \(K_3\cup K_5^3\) profile is also excluded by DELTA14_EPS1_K3K5K5K5_NO_CROSS_EDGE.md. Other \(\epsilon_U=1\) profiles, \(\epsilon_U=2\), and non-four-partite branches remain open. The \(\delta=15\) four-partite branch is excluded.
 - The \(\delta\le14\) non-four-partite cases remain open.
 - No proof is claimed that the residual incidence design can or cannot be realized.
 - E408 Q32/Q33 and the original \(K_{145}\)-to-T61 bridge are outside this line's closure claim.
+
+
+## 3B. Delta-14, \(\epsilon_U=1\) profile
+
+DELTA14_EPS1_K3K5K5K5_NO_CROSS_EDGE.md excludes the no-cross-edge \(K_3\cup K_5^3\) profile at \(e(H[W])=33\) by a cover bound of 28. This is one profile only; the \((4,4,4,6)\) and \((4,4,5,5)\)+one-cross-edge profiles remain open at this row.
