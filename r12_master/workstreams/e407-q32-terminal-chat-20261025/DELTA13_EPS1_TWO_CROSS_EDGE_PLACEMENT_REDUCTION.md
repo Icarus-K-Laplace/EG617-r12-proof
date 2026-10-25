@@ -36,7 +36,7 @@ If all U-vertices are W-saturated (complete to some \(C_i\)), then
 
 Let \(u\in U\) be not complete to any \(C_i\). Choose a non-neighbour set \(T_i\subseteq C_i\), nonempty for each \(i\). To prevent an independent transversal, every choice from \(T_1\times T_2\times T_3\times T_4\) must contain one of the two W-cross-edges.
 
-If the two cross-edges are on four distinct clique pairs, every \(T_i\) must be the singleton endpoint of its unique incident cross-edge. Then
+If the two cross-edges join disjoint pairs of clique parts, touching all four parts, every \(T_i\) must be the singleton endpoint of its unique incident cross-edge. Then
 \[
 d_H(u,W)\ge(4-1)+(4-1)+(5-1)+(5-1)=14.
 \]
