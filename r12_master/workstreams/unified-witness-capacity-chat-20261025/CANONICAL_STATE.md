@@ -270,3 +270,14 @@ Added Corollary 11.5 in OUTER_EXCEPTIONAL_ROW_COUPLING.md. Under top-cell A, if 
 Every \(w\in W\) has at least one edge of each of the eleven non-target colors to \(B_i\), because otherwise \(B_i\cup\{w\}\) is a 13-set missing that color. The 12 edges from w to B_i therefore contain exactly one repeated non-target color and no target-color edge. Consequently \(e_C(B_i,W)=23+r_i^W(C)\): value 23 means the unique repeated-C vertex lies in O; value 24 means it lies in W. This identifies the duplicate location from the exact gadget-pair profile and avoids treating baseline edges as duplicates.
 
 Latest sibling refresh: E408 Q33 advanced to c01f7dc6951b2bb7ea5209f252b1644ca0ecd40a with Theorem 12.1 gadget normal form and stronger \(P_C=49,50\) clique packings. E407 Q32 remains bd385f7dfe102deb426810baf1999a8e94dd488f; E408 Q32 remains a0ba6db26c7e8b00a4217dcbcbf298895dff93ce; witness-packing f5d3daa07403877ede9885e1bd5c2f46b16d81da; zero-excess 07d19abfd6c1c749c7360526e4a04a3eb865fb2e; ultimate closure 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40.
+
+
+## 2026-10-25 live sibling integration — P_C=50, r_i=6 is excluded
+
+The latest E408 Q33 sibling head is 8b4bfef7a9e3d957c7150af30aadba703a08d31f. It adds Lemma 13.1 (every monochromatic \(K_{12}\) is isolated in its color), Lemma 13.2 (if an exact color has \(m\) vertex-disjoint \(K_{12}\)'s each meeting all seven outer blocks once, then \(P_C\le21(12-m)\)), and Theorem 13.3 excluding the corner \(P_C=50\), \(r_i(C)=6\).
+
+I audited the proof structure:
+- Cases A/B of the exact \(r_i=6\) classification force a high-block exceptional row to create a \(K_{12}\) with six low-slack representatives, while retaining a color edge to an outside gadget vertex; this contradicts the isolated-\(K_{12}\) lemma.
+- In Case C, any extra incidence outside a selected component creates an external edge to a label-based \(K_{12}\); otherwise ten isolated label-based \(K_{12}\)'s exist, giving \(P_C\le21(2)=42\), contradicting 50.
+
+Consequence for this workstream: if an exact-129 color has \(P_C=50\), it cannot have any \(r_i(C)=6\). Since \(\sum_i r_i=12\), all \(r_i\le5\), and the existing low-budget alignment theorem yields at least nine common component labels in this branch. This is a sibling theorem under the retained exact-129 and seven-block contracts, not an unconditional EG617 proof. The \(P_C=49,r_i=6\) corner remains open.
