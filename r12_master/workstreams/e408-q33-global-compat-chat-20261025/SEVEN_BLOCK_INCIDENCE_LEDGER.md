@@ -291,6 +291,7 @@ Let \(d_K\) be the number of repeated incidences among the 50 vertices in the te
 - \(k=1\), \(m=11\); every component-containing row contains exactly one full \(K_5\), all ten components are represented, and one component is represented twice.
 - \(d_K=5\), \(d_U=1\).
 - The no-component row has exactly six gadget vertices. The two rows representing the repeated component have disjoint gadget portions whose union has size six. That six-set and the no-component row's gadget six-set cover \(U_C\) and intersect in exactly one vertex.
+- The complement of each of those two six-sets is a five-vertex clique in \(C[U_C]\); these two five-cliques are disjoint, and together with the unique common vertex of the six-sets they partition \(U_C\).
 - Every other row has no gadget vertices, and no component vertex has any repeated incidence beyond the five vertices of the repeated \(K_5\).
 
 **Case B: \(n=2\) and \(k=1\).**
