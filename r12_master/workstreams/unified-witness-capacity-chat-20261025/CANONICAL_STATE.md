@@ -136,3 +136,27 @@ Consequences:
 - This equality structure is compatible with the two-type exceptional-row pattern. Extra edges cost duplicate budget, but no contradiction has yet been derived from the current global budgets.
 
 The updated verifier includes finite arithmetic checks for the alpha-two argument and Turan equality. Independent replay passed: EXCEPTIONAL_ROW_ALPHA2_REPLAY_OK. EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 continuation — near-complete component matching
+
+### New cross-block theorem
+
+Added Section 7 to OUTER_EXCEPTIONAL_ROW_COUPLING.md. Under the exact-129 Type-I row theorem, if two outer target blocks have duplicate parameters \(r_i(C),r_j(C)\le5\), each contains ten distinct rows representing the ten isolated K5 components. For any component label \(\ell\), if the two corresponding rows are nonadjacent in color C, their extra neighborhood incidences must either cover another full K5 component (at least five incidences) or cover at least six gadget vertices (at least six incidences). The total extra-incidence budget across the two blocks is \(r_i+r_j-2\le8\). Different missing labels use disjoint row-incidence charges. Therefore at most one same-component diagonal can be missing:
+\[
+m_{ij}(C)\le\left\lfloor\frac{r_i(C)+r_j(C)-2}{5}\right\rfloor\le1.
+\]
+Thus every such block pair has at least nine of the ten same-component representative edges. If \(r_i+r_j\le6\), all ten are forced, recovering the sharper known case. If \(r_i+r_j=7\) and one diagonal is missing, all five extra-incidence units must cover a second K5 component; none can be spent in the gadget.
+
+### Independent finite arithmetic check
+
+The verifier now checks all \(25\) integer pairs \(r_i,r_j\in\{1,\ldots,5\}\), the zero-missing threshold \(r_i+r_j\le6\), and the four sum-seven boundary pairs. This is an arithmetic consistency check; the graph-theoretic proof is the incidence argument above.
+
+### Latest sibling heads refreshed
+
+- E407 Q32 terminal: 7cced6ef1a4a8716aff95b3d704b579c3c0af859 — the \(\delta=15\) non-four-partite branch excludes two KP base profiles, but the balanced \((7,7,7,7)\) base remains open.
+- E408 Q33 global compatibility: 131a362d2aa759a828bbd572a69aeff5e2062dfe — the exact-129 row theorem extends to \(r_i\le5\), and \(r_i+r_j\le6\) forces a ten-component matching.
+- Ultimate closure: 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40 — the four-partite Q33 \(S_0=10\) equality kernel is excluded; the four-partite branch has \(S_0\ge22\), while the non-four-partite branch remains open.
+- E408 Q32 remains a separate 285-edge core and is not covered by the 284-edge conclusions here.
+
+No sibling workstream was modified. The new theorem is a structural strengthening, not a complete terminal contradiction. EG617(r=12) remains OPEN / NOT_CERTIFIED.
