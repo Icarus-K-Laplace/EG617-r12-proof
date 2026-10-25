@@ -79,3 +79,18 @@ A forced same-component edge across two outer blocks is not automatically a dupl
 Theorem 10.1 and Corollary 10.2 are proved in SEVEN_BLOCK_INCIDENCE_LEDGER.md under the same exact-129 factor and seven-block equality contracts. The proof uses the one-or-two rule, the individual blocker lower bound, and the pairwise blocker compatibility theorem from ultimate-closure blob `b49421769477461ed26b3418a5cfd1a851cbb52d`.
 
 The extension is valid for \(r_i(C)\le5\), not asserted for \(r_i(C)=6\). At \(r_i=6\), the two no-component rows can in principle split the five vertices of a K5 component between them, so the \(k=0\) step needs a separate boundary analysis. Cross-block matching is proved only when \(r_i(C)+r_j(C)\le6\); its ten edges are not automatically duplicate-budget charges.
+
+
+## 9. Exact \(r_i(C)=6\) boundary and cross-block interface
+
+Theorem 11.1 and Corollary 11.2 are recorded in SEVEN_BLOCK_INCIDENCE_LEDGER.md and depend only on the frozen exact-129 row contract:
+- each of the 61 residual vertices has color-C degree one or two into every target block;
+- a row without a full isolated \(K_5\) has at least six gadget vertices;
+- each \(K_5\) component is fully contained in at most two rows;
+- pairwise blocker compatibility: for two outer vertices assumed nonadjacent in C, the gadget independence number after deleting their two neighborhoods is at most the number of full \(K_5\) components covered by their union.
+
+The proof splits the duplicate budget as \(r_i=d_K+d_U=6\). The number of no-component rows is at most two because the 11-vertex gadget has at most 17 row incidences; zero is impossible because twelve full-component rows would exceed the ten labels plus the single permitted repeated full component. The \(n=1\) case forces \(d_K=5,d_U=1\); the \(n=2\) cases are divided by whether a full \(K_5\) repeats.
+
+Corollary 11.2 additionally uses Theorem 10.1 at \(r_j=1\), which gives exact row neighborhoods \(K_\ell\). At least eight component labels in the \(r_i=6\) block have a single-component row with at most five extra vertices; pairwise blocker compatibility then forces adjacency to the corresponding exact \(K_\ell\) row in the \(r_j=1\) block.
+
+**Scope firewall:** these forced edges are not automatically duplicate-budget contributions. No global incompatibility, terminal exclusion, or original \(K_{145}\) proof is claimed.
