@@ -187,3 +187,24 @@ The new theorem excludes the \(R_C=14\) profiles \((6,3,1^5)\), \((6,2,2,1^4)\),
 - Dependency map: 727e9fcd2cb56081831f9f1d5a8ac396a0a95091
 
 **Scope:** the \(P_C\le47\) theorem is colorwise and conditional. The aggregate eleven-color ledger, both 56-witness support branches, E408 Q33, and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 — post-commit proof audit and correction
+
+A line-by-line audit found assumptions in the first P48 draft that needed repair before relying on the \(P_C\le47\) conditional bound:
+
+1. An \(r_i=3\) block can have omitted-pair type \(55\), \(54\), \(53\), or \(44\); the type depends on the overlap \(a\), since \(r_i=a+e_i+t_i\).
+2. In the \(r_i=6\), Case C branch, the two gadget-only rows are not automatically known to cover all of \(U_C\). The corrected proof tracks total repeated gadget excess \(d_U\), component-row gadget incidence \(e_i\), and the intersection of their omitted cliques. For \(d_U\le3\), a high \(53/44\) pair forces \(e_i=0\) and is therefore disjoint; a \(55/54\) profile contains a \(K_5\) that can be aligned individually. For \(d_U\ge4\), either the missing-edge incidence thresholds force the edge or \(e_i\ge4\) yields a row omitting a \(K_5\).
+3. In the \(r_i=7,8\), \(n=2\) branches, representing all ten full components once does not by itself imply \(t_i=0\), because partial component incidences can remain. The corrected proof splits on \(t_i+e_i\): a large sum yields a row omitting a \(K_4/K_5\); a small sum rules out both a second full component and six gadget incidences.
+4. The \(53+53\) pair/pair alignment is not universal. It is no longer used: the all-low occurrence is ruled out by the pair-sum budget, and the \((6,3,1^5)\) occurrence is closed directly from \(t_i+t_j<5\) and \(e_i+e_j<6\).
+
+The finite gadget verifier still records 467,696 checks with zero failures. The theorem remains conditional on the retained exact-129 factor theorem and seven-block equality contract; E408 Q33 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+### Audit-correction commits
+
+- Corrected P48 proof: 6a1b3b428f85e5600f1786f812571cbf1a7ee434
+- Clarified \(r=8,n=1\) excess wording: 658b0881a69b87fb35fe713765e6fbee7b470613
+- Clarified 53+53 verifier scope: 6b5b356b1c3e8c70a7b8a296d6af46863b6a2a49
+- Updated alignment certificate: 06a1ff0507035e44829586a1f543b63643a957ae
+- Updated seven-block ledger: 7416d7ff2834190e517bcc1a5363bd6b07cfbb2f
+- Updated dependency map: cb48797b4b8579ea54e5ff5b0c754b6e0040b291
