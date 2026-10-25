@@ -152,3 +152,10 @@ References:
 - Kang and Pikhurko, “Maximum \(K_{r+1}\)-free graphs which are not \(r\)-partite,” Matematychni Studii 24 (2005), Theorem 1: https://matstud.org.ua/texts/2005/24_1/24_1_012_020.pdf
 
 Combining this classification with DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md conditionally excludes the entire saturated non-four-partite delta=14 terminal. The arithmetic verifier checks the finite numerical deductions only. The upstream reduction to the 15-vertex kernel still depends on Didin's 2026 preprint theorem in DELTA14_SATURATED_ALPHA_CRITICAL_REDUCTION.md; its proof has not been independently audited in this workstream. E407 Q32 overall, delta<=13, the five shell templates, and the K145-to-T61 bridge remain open.
+
+
+## Round 23 — delta-13 four-partite U / anticomplete W theorem
+
+New conditional result: DELTA13_FOUR_PARTITE_NO_CROSS_W_PROFILES.md. Under the E407 49-witness boundary and the four-partite hypothesis for \(L=\overline{H[U]}\), the witness blocks force U parts \((7,7,7,8)\), saturate all small-small pairs, and imply each small vertex has at most one cross-edge into D. If \(\delta=13\) and \(H[W]\) is a disjoint union of four cliques, exact edge ledgers allow only four profiles for \(\epsilon_U=1,2,3\); componentwise common-neighbour capacities are strictly below 29, contradiction.
+
+The new verifier checks only integer partitions, excess allocations, and numeric bounds. The graph-theoretic reverse-saturation and component-capacity arguments are analytic and remain subject to independent human review. No claim is made for W-cross-edge profiles, \(\epsilon_U=0\), non-four-partite U-complements, \(\delta\le12\), or the upstream K145-to-T61 bridge.
