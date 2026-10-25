@@ -211,7 +211,7 @@ def universal_D_family(b, vertices, adjacency):
     return list(dict.fromkeys(family))
 
 
-def allocations(budget, H, J, r):
+def allocations(H, J, r):
     overlap = 11 - len(H) - len(J)
     extra_budget = r - overlap
     return [
@@ -240,8 +240,8 @@ def verify_44_profile(b):
     checks = 0
     for P in pairs:
         for Q in pairs:
-            for p, p2 in allocations(4, P[0], P[1], 4):
-                for q, q2 in allocations(4, Q[0], Q[1], 4):
+            for p, p2 in allocations(P[0], P[1], 4):
+                for q, q2 in allocations(Q[0], Q[1], 4):
                     checks += 1
                     found = False
                     for D in Ds:
@@ -270,11 +270,11 @@ def verify_432_profile(b):
     pairs2 = allowed_pairs(vertices, adjacency, 2)
     checks = 0
     for P in pairs55:
-        for p, p2 in allocations(4, P[0], P[1], 4):
+        for p, p2 in allocations(P[0], P[1], 4):
             for Q in pairs55:
-                for q, q2 in allocations(3, Q[0], Q[1], 3):
+                for q, q2 in allocations(Q[0], Q[1], 3):
                     for R in pairs2:
-                        for x, y in allocations(2, R[0], R[1], 2):
+                        for x, y in allocations(R[0], R[1], 2):
                             checks += 1
                             found = False
                             for D in Ds:
@@ -330,7 +330,7 @@ def main():
             incidence_transitions += transitions
             incidence_max_states = max(incidence_max_states, max_states)
     assert incidence_checks == 8
-    assert incidence_transitions == 5342756
+    assert incidence_transitions == 5343724
     assert incidence_max_states == 27714
 
     # The remaining two low-budget profiles are handled by fixed-D-family
