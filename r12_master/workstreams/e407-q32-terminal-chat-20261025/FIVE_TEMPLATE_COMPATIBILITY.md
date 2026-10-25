@@ -46,6 +46,10 @@ This closes only \(\delta=16\), not E407 Q32 overall. The \(\delta=15\) non-four
 
 The entire \(\delta=15\) four-partite branch is now EXCLUDED by DELTA15_FOUR_PARTITE_TERMINAL.md: the final \(K_3\cup K_5^3\) profile forces all three small-part label counts to equal five, so any cross-edge endpoint has a forbidden \(K_{12}\) neighbourhood.
 
+
+## 3A. Delta-14 cover-capacity result
+The proof DELTA14_EPS0_K3K4K5K6_COVER_CAPACITY.md excludes the \(\delta=14,\epsilon_U=0\) W-profile \(K_3\dot\cup K_4\dot\cup K_5\dot\cup K_6\). Together with DELTA14_EPS0_K4_PROFILE_EXCLUSIONS.md, this removes three of the four \(\epsilon_U=0\) W profiles. The only surviving profile in that row is \(K_3\cup K_5^3\) with one W-cross-edge. This remains a common-core structural result; it does not close any of templates A–E.
+
 ## 4. Template-by-template status
 
 | Template | Existing witness consequence | New result in this line | Status |
@@ -61,7 +65,7 @@ The entire \(\delta=15\) four-partite branch is now EXCLUDED by DELTA15_FOUR_PAR
 
 - No one of the five templates is closed by this theorem.
 - The \(\delta=15\) non-four-partite case is **excluded**: the Kang–Pikhurko equality reduction and incompatible (x,y) degrees into (W) rule out all three base profiles.
-- The \(\delta=14,15\) four-partite cases remain open, with the \(W\)-profiles in NON_FOUR_PARTITE_TERMINAL.md.
+- At \(\delta=14,\epsilon_U=0\), three four-partite W profiles are now excluded; the \(K_3\cup K_5^3\) plus one-cross-edge profile remains. The \(\epsilon_U=1,2\) and non-four-partite branches remain open. The \(\delta=15\) four-partite branch is excluded.
 - The \(\delta\le14\) non-four-partite cases remain open.
 - No proof is claimed that the residual incidence design can or cannot be realized.
 - E408 Q32/Q33 and the original \(K_{145}\)-to-T61 bridge are outside this line's closure claim.
