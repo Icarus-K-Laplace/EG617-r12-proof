@@ -32,12 +32,20 @@ Here \(\epsilon_U=\sum_{u\in U}(d_H(u)-12)\). The \(W\)-side clique-part profile
 
 If \(H[W]\) has the single cross edge between two \(K_4\) parts, the same conclusion holds for any \(u\) with \(d_H(u,W)\le5\): if \(u\) were not complete to any part, its non-neighbour sets in the two endpoint \(K_4\)'s would have to be the singleton cross-edge endpoints, forcing at least \(3+3=6\) neighbours in \(W\).
 
-**Lemma 2.2 (no whole \(U\)-part is expensive).** Suppose the six \(H[U]\) cross edges are \(D\)-to-small, every small vertex has cross-degree at most one, and every \(d\in D\) has cross-degree at most two. If \(w\in W\) is not complete to any of \(A,B,C,D\), then
+**Lemma 2.2 (no-whole-part alternatives).** Under the six-cross-edge contract, if \(w\in W\) is not complete to any of \(A,B,C,D\), then either
 \[
-d_H(w,U)\ge13.
+d_H(w,U)\ge13,
 \]
+or there is a unique \(d\in D\) with \(t_d=2\), and two vertices \(a_1,a_2\) in one small part \(P\) such that
+\[
+N_H(w,U)=(P\setminus\{a_1,a_2\})\cup(D\setminus\{d\}),
+\qquad d_H(w,U)=12.
+\]
+In the exceptional case, \(d\) is adjacent in \(H[U]\) to both \(a_1,a_2\), and \(w\) is nonadjacent to \(d\). In particular, if every \(d\in D\) has \(t_d\le1\), then a no-whole-part vertex has at least 13 \(U\)-neighbours.
 
-**Proof.** Let \(A',B',C',D'\) be the non-neighbour sets of \(w\) in the four parts; all are nonempty. For any \(d\in D'\), every triple in \(A'\times B'\times C'\) must contain a cross edge to \(d\), or that triple together with \(d,w\) would be an independent 5-set. Since \(d\) has at most two cross neighbours, one of the three small non-neighbour sets must have size at most two. If it is a singleton, every \(d\in D'\) is adjacent to that one small vertex, so \(|D'|\le1\); \(w\) then has at least six neighbours in that small part and seven in \(D\), totalling 13. If it has size two, every \(d\in D'\) must be adjacent to both vertices, and the small-side degree cap again gives \(|D'|\le1\); then \(w\) has at least \(5+6+6+7=24\) neighbours in \(U\). Both alternatives imply the claimed lower bound. \(\square\)
+**Proof.** Let \(A',B',C',D'\) be the non-neighbour sets of \(w\) in the four parts; all are nonempty. For each \(d\in D'\), every triple in \(A'\times B'\times C'\) must contain a cross edge to \(d\), or that triple together with \(d,w\) would be an independent 5-set. Equivalently, at least one of \(A',B',C'\) must be contained in the cross-neighbourhood of \(d\), so one such set has size at most \(t_d\le2\).
+
+If a small non-neighbour set is a singleton, or if two small non-neighbour sets have size at most two, counting vertices outside these non-neighbour sets and using the small-side degree cap one gives at least 13 neighbours of \(w\). The only way to have fewer is for exactly one small non-neighbour set to have size two, the other two small non-neighbour sets to be the full 7-parts, and \(D'=\{d\}\). Then \(d\) must be adjacent to both vertices of that size-two set. The neighbourhood of \(w\) in \(U\) consists of the other five vertices of that small part and all seven vertices of \(D\setminus\{d\}\), so it has exactly 12 vertices. \(\square\`
 
 ## 3. The \(\epsilon_U=1\) branch is impossible
 
