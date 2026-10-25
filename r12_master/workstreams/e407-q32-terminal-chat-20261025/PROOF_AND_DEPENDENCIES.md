@@ -138,3 +138,17 @@ The new arithmetic verifier checks only finite profile enumeration, forbidden-tr
 ## Round 21 — C5-blow-up subclass
 
 DELTA14_C5_BLOWUP_PROFILE_CLASSIFICATION.md classifies the C5-blow-up subclass by exact finite enumeration of positive five-part compositions with total 15, edge count 49, and Delta(J)<=7. Seven dihedral classes satisfy the vertex/edge ledger before the degree cap; exactly one survives the cap, the (1,2,5,5,2) profile. The verifier confirms the finite enumeration only. Combining with Round 20 excludes every full-core extension in this subclass. The general J terminal remains open because triangle-free saturated graphs need not be C5 blow-ups.
+
+
+## Round 22 — general 15-vertex saturated-kernel classification
+
+DELTA14_SATURATED_KERNEL_CLASSIFICATION.md proves that every triangle-free, non-bipartite, triangle-saturated \(J\) with \(n=15,e=49,\Delta\le7\) is the C5 blow-up with part sizes \((1,2,5,5,2)\). The proof uses:
+- the AES equality case: a triangle-free graph with minimum degree at least \(2n/5\) is bipartite or the balanced C5 blow-up (for \(n=15\), \(C_5(3)\) has 45 edges);
+- the Brouwer/Kang–Pikhurko bound \(e(G)\le t_2(14)-7+1=43\) for a non-bipartite triangle-free graph on 14 vertices;
+- the saturation and \(\Delta\le7\) deductions in the new note.
+
+References:
+- Keevash and Sudakov, “Sparse halves in triangle-free graphs,” JCTB 96 (2006), Section 3, p. 617: https://people.maths.ox.ac.uk/keevash/papers/sparse-halves-journal.pdf
+- Kang and Pikhurko, “Maximum \(K_{r+1}\)-free graphs which are not \(r\)-partite,” Matematychni Studii 24 (2005), Theorem 1: https://matstud.org.ua/texts/2005/24_1/24_1_012_020.pdf
+
+Combining this classification with DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md conditionally excludes the entire saturated non-four-partite delta=14 terminal. The arithmetic verifier checks the finite numerical deductions only. The upstream reduction to the 15-vertex kernel still depends on Didin's 2026 preprint theorem in DELTA14_SATURATED_ALPHA_CRITICAL_REDUCTION.md; its proof has not been independently audited in this workstream. E407 Q32 overall, delta<=13, the five shell templates, and the K145-to-T61 bridge remain open.
