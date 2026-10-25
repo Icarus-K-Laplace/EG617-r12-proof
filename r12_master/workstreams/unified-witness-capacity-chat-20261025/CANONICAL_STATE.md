@@ -218,14 +218,15 @@ Refreshed all six sibling branches again before finalizing this round:
 Created TERMINATION_CLOSURE.md with the conditional theorem ledger, the scalar-relaxation obstruction, the minimal missing bridge, dependencies, and verification scope. All reads of sibling branches were read-only.
 
 
-## 2026-10-25 continuation — selected-witness extension
+## 2026-10-25 continuation — selected-witness extension (corrected)
 
-The K12 packing theorem now has a direct labelled corollary. The exact-129 factor theorem supplies seven selected witness components among ten isolated K5 components. If \(\mathcal K_C^*\) is the common exact size-five blocker set across all seven outer blocks, then \(|\mathcal K_C^*|\ge P_C-45\), so
+The graph-theoretic witness family does not automatically consist of seven isolated K5 components. Each labelled witness K5 is either one of the ten isolated components or lies wholly in the 11-point gadget \(U_C\). Since the seven selected four-sets are pairwise disjoint and \(|U_C|=11\), at most two witnesses lie in the gadget. The proved transfer floor is therefore five isolated-component witnesses, including at least four of the six B-labelled witnesses.
+
+The common exact size-five blocker set across the seven outer blocks has size at least \(P_C-45\). With only five component witnesses guaranteed, inclusion-exclusion yields
 \[
-|\mathcal W_C\cap\mathcal K_C^*|\ge\max(0,P_C-48).
+|\mathcal W_C\cap\mathcal K_C^*|\ge\max(0,P_C-50).
 \]
-Thus \(P_C\ge49\) forces at least one selected witness component to extend to a monochromatic K12 containing its labelled core four-set and shell label; \(P_C=50\) forces at least two. This links the outer duplicate budget directly to the labelled witness family. It is still not a contradiction, and the scalar relaxation shows that no exact color is forced to \(P_C\ge49\) by aggregate budgets alone.
-
+Thus the current label-aware extension threshold is \(P_C\ge51\), not \(P_C\ge49\). A seven-witness-to-seven-component transfer theorem remains OPEN. This is still a structural bound, not a contradiction, and aggregate budgets do not force any exact color to \(P_C\ge51\).
 
 ## 2026-10-25 sibling refresh correction
 
