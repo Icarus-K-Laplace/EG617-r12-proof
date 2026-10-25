@@ -104,3 +104,10 @@ This is not a template closure. All five shell templates A–E remain OPEN, and 
 ## 3G. Round 16 — augmentable-edge subcase excluded
 
 DELTA14_NONPARTITE_AUGMENTABLE_TERMINAL_CLOSURE.md closes the augmentable-edge route of the non-four-partite \(\delta=14\) branch. The sole terminal from Round 15 is eliminated by a four-component common-neighbour capacity proof. The only remaining non-four-partite \(\delta=14\) possibility is a \(K_5\)-saturated \(L\). No shell template A–E is thereby closed, and the \(\delta\le13\) branch remains open.
+
+
+## Round 23 — delta-13 no-cross-edge W profiles
+
+Under the four-partite-U branch of the shared 49-witness contract, all no-cross-edge W profiles at \(\delta=13\) with \(\epsilon_U=1,2,3\) are now excluded. The exact profiles are \(K_3\dot\cup K_4\dot\cup K_5\dot\cup K_6\), \(K_3\dot\cup3K_5\), \(3K_4\dot\cup K_6\), and \(2K_4\dot\cup2K_5\). Their common-neighbour capacities sum to at most 27, 28, 28, and 23, respectively, below \(|U|=29\). See DELTA13_FOUR_PARTITE_NO_CROSS_W_PROFILES.md.
+
+This does not exclude any W-cross-edge profile, \(\epsilon_U=0\), non-four-partite U-complement at \(\delta=13\), or \(\delta\le12\). Templates A–E remain OPEN because the residual shell-label compatibility has not been eliminated.
