@@ -24,7 +24,7 @@ These results remain conditional on the upstream 61-point residual/T61 bridge, t
 
 ### Gap A — \(\delta=14\), non-four-partite \(L=\overline{H[U]}\)
 
-Here \(|U|=29\), \(e(H[U])=98\), and \(e(L)=308\). The Turán number is \(t_4(29)=315\); Brouwer's non-four-partite upper bound is 309. The augmentable-edge subcase is now excluded by DELTA14_NONPARTITE_AUGMENTABLE_TERMINAL_CLOSURE.md. The sole remaining possibility is that \(L\) is \(K_5\)-saturated: every nonedge creates a \(K_5\), so the 309-edge Kang–Pikhurko equality classification cannot be invoked by adding an edge. The next theorem must either exclude this saturated case using the 49 linear witnesses and the exact degree ledger, or give a rigid structural classification of it.
+Here \(|U|=29\), \(e(H[U])=98\), and \(e(L)=308\). The Turán number is \(t_4(29)=315\); Brouwer's non-four-partite upper bound is 309. The augmentable-edge subcase is now excluded by DELTA14_NONPARTITE_AUGMENTABLE_TERMINAL_CLOSURE.md. The sole remaining possibility was that \(L\) is \(K_5\)-saturated. The local-model reduction plus DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md now excludes its \(\epsilon_U=0\) branch and reduces \(\epsilon_U=1,2\) to two exact terminals: \(K_3\cup K_5^3\) with \(d_0\) complete to \(K_3\), or \(K_4^2\cup K_5^2\) with \(d_0\) complete to a \(K_4\). These two extensions remain OPEN.
 
 ### Gap B — \(\delta\le13\)
 
@@ -54,7 +54,7 @@ The inherited file DELTA14_EPSU1_2_ANTICOMPL_COMPONENT_PROFILES.md discusses \(K
 
 ## 5. Next highest-leverage target
 
-**Attack the sole remaining δ=14 non-four-partite case: prove that a 308-edge, K5-free, non-four-partite L with the 49-witness packing cannot be K5-saturated, or classify that saturated case exactly.** The augmentable-edge subcase is now excluded by DELTA14_NONPARTITE_AUGMENTABLE_TERMINAL_CLOSURE.md; adding any nonedge in the saturated case creates a K5, so the 309-edge equality classification is unavailable.
+**Close the two residual saturated-core extensions at \(\delta=14\): (i) \(\epsilon_U=1\), \(H[W]=K_3\cup K_5^3\), \(N_W(d_0)=V(K_3)\); (ii) \(\epsilon_U=2\), \(H[W]=K_4^2\cup K_5^2\), \(N_W(d_0)=V(K_4)\).** The \(\epsilon_U=0\) case is now excluded by independent-transversal capacity. After these are closed or classified, move to \(\delta\le13\) with a fresh exact ledger.
 
 After closing or rigidly classifying the saturated case, move to δ≤13 using a fresh exact ledger. Do not reuse the δ=14 W-profile table without re-deriving its hypotheses. The five shell templates A–E and the upstream K145-to-T61 bridge remain independent obligations.
 
@@ -96,3 +96,12 @@ This does **not** yet rule out the terminal graph. The external Didin preprint t
 DELTA14_SATURATED_LOCAL_MODEL.md constructs and verifies a genuine local realization of the 29-point saturated non-four-partite graph and its 49 linear witnesses, partitioned into seven disjoint classes of seven. Thus one must **not** try to close the branch using only the 29-point graph, \(K_5\)-saturation, the 98-edge ledger, and the abstract 49-witness packing: those constraints are compatible.
 
 The remaining task is to determine whether this local model—or any other surviving \(\delta=14\) model—can extend to the required 18-vertex \(W\), 47-vertex core, and shell-row labels. In the explicit model, if all degree excess lies in \(W\), the required \(U\)-to-\(W\) degrees are \(6^{14},5^{10},4^4,2^1\), totaling 152. The exact core independence/clique conditions and five shell templates must be enforced simultaneously. No global completion or counterexample has been constructed.
+
+
+## Round 19 update — independent-transversal closure of the zero-excess saturated branch
+
+DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md proves that the forced local model contains \(d_0\in U\) with \(d_{H[U]}(d_0)=10\). Brouwer's second-Turán bound forces \(H[W]\) to be four clique parts of size at least three with at most \(2-\epsilon_U\) cross edges. The independent-transversal lemma rules out \(\epsilon_U=0\). It further forces:
+- \(\epsilon_U=1\): \(H[W]=K_3\cup K_5^3\), \(d_0\) has excess one and is complete to the \(K_3\);
+- \(\epsilon_U=2\): \(H[W]=K_4^2\cup K_5^2\), \(d_0\) has excess two and is complete to one \(K_4\).
+
+The saturated branch is **not closed**; these two exact W-extension terminals remain.

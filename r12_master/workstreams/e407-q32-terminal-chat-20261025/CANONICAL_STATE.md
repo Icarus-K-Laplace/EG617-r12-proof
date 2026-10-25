@@ -21,6 +21,7 @@ These are the latest heads observed in the repository at the time of this update
 - The exact ledger gives \(3\le\delta\le16\), \(\delta+\epsilon_U\le16\), and the sibling transversal/excess lemma gives \(\epsilon_U+2\delta\ge9\).
 - The \(\delta=16\) four-partite branch is **EXCLUDED**. The 4+1 and 3+2 endpoint splits violate the excess budget; the 5+0 split forces its endpoint \(K_4\) to be complete to the 8-part, creating a forbidden \(K_{12}\). See FOUR_PARTITE_TERMINAL.md and DELTA16_K12_CLIQUE_OBSTRUCTION.md for the standalone one-exception proof.
 - The \(\delta=15\) four-partite branch is **EXCLUDED** in DELTA15_FOUR_PARTITE_TERMINAL.md: after eliminating three W-profiles, the last \(K_3\cup K_5^3\) profile forces \(k_A=k_B=k_C=5\), so any cross-edge endpoint has a forbidden \(K_{12}\) neighbourhood.
+- The \(\delta=14\) non-four-partite augmentable-edge branch is **excluded**; the saturated branch has \(\epsilon_U=0\) excluded and \(\epsilon_U=1,2\) reduced to two exact W-extension terminals by DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md.
 - The \(\delta=15\) non-four-partite branch is **excluded** under the retained core/witness contract: Kang–Pikhurko equality reduces it to a balanced \((7,7,7,7)\) base, and the exceptional vertices \(x,y\) have incompatible required degrees into \(W\). The full reduction and contradiction are in DELTA15_SECOND_TURAN_PACKING.md.
 - The final \(\delta=15\) contradiction compares \(d_H(x,W)=a-1+\epsilon_x\) and \(d_H(y,W)=6-a+\epsilon_y\). Whole-part saturation in \(W\) forces incompatible lower bounds on \(a\), for both \(\epsilon_U=0\) and \(\epsilon_U=1\).
 - In that case, \(U\)-part sizes are \(7,7,7,8\), \(H[W]=K_5\cup K_5\cup K_4\cup K_4\), and the five cross edges in \(H[U]\) form a matching between the 8-part and the three 7-parts.
@@ -38,7 +39,8 @@ These are the latest heads observed in the repository at the time of this update
 | \(\delta=15\) four-partite | EXCLUDED by W-profile saturation and forbidden \(K_{12}\) |
 | \(\delta=15\) non-four-partite | EXCLUDED under KP equality + core-to-\(W\) degree contradiction |
 | \(\delta=14\) four-partite | \(\epsilon_U=0,1,2\): all W profiles excluded; \(\epsilon_U=1\) exhaustiveness uses Brouwer, \(\epsilon_U=2\) is Turán equality |
-| \(\delta\le14\) non-four-partite | OPEN |
+| \(\delta=14\) non-four-partite, saturated \(L\) | \(\epsilon_U=0\) EXCLUDED by independent-transversal capacity; \(\epsilon_U=1\) reduced to \(K_3\cup K_5^3\) with \(d_0\) complete to \(K_3\); \(\epsilon_U=2\) reduced to \(K_4^2\cup K_5^2\) with \(d_0\) complete to a \(K_4\) |
+| \(\delta\le13\) non-four-partite | OPEN |
 | E407 Q32 overall | OPEN / NOT_CERTIFIED |
 | EG617(r=12) | OPEN / NOT_CERTIFIED |
 ## Verification status
@@ -189,3 +191,16 @@ This **invalidates the proposed local-only contradiction target** from Round 17.
 ### Latest sibling read after Round 18
 - E408 Q33 global compatibility branch head: 6f2a350d043aed41b8bb551449cae54a159a3cfe. Its latest canonical state reports the conditional colorwise cap \(P_C\le49\), hence \(R_C\ge13\); the stronger \(P_C\le48\) remains NOT CERTIFIED. The E408 Q33 terminal and original \(K_{145}\) theorem remain OPEN.
 - This is a separate seven-block/color-factor constraint and has not been imported as an E407 closure.
+
+
+## Round 19 — independent-transversal reduction of the saturated delta-14 branch
+
+Added DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md and verify_delta14_saturated_transversal_reduction.py.
+
+- The forced saturated local model has a distinguished vertex \(d_0\in U\) with \(d_{H[U]}(d_0)=10\), hence \(d_H(d_0,W)=2+\epsilon_{d_0}\).
+- Brouwer's second-Turán bound forces \(\overline{H[W]}\) to be four-partite because it is \(K_5\)-free with \(119+\epsilon_U\) edges, above the non-four-partite cap 118. The clique-part sizes are all at least three and the number of cross edges in \(H[W]\) is at most \(2-\epsilon_U\).
+- New independent-transversal lemma: any two vertices of \(W\) miss an independent transversal of the four clique parts when each part has size at least three and there are at most two cross edges. Therefore \(\epsilon_U=0\) is impossible.
+- For \(\epsilon_U=1\), all profiles with minimum part size at least four are excluded because at most one cross edge cannot be hit by a three-set; the sole terminal is \(H[W]=K_3\cup K_5^3\), \(\epsilon_{d_0}=1\), and \(N_W(d_0)\) is exactly the \(K_3\).
+- For \(\epsilon_U=2\), Turán equality forces \(H[W]=K_4^2\cup K_5^2\); the transversal number is four, so \(\epsilon_{d_0}=2\) and \(N_W(d_0)\) is exactly one \(K_4\).
+- The standard-library verifier checks the integer partition table and union-bound estimates. It is not a full graph-realization certificate.
+- Status: **PROVED_CONDITIONAL strict reduction**. The saturated \(\delta=14\) branch remains OPEN in the two \(\epsilon_U=1,2\) terminals; all five shell templates and the \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
