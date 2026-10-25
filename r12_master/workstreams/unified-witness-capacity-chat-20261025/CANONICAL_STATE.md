@@ -254,3 +254,10 @@ Hence E408 gives \(\sum_C t_C=K_W\), and E407 gives \(\sum_C t_C=K_W+1\).
 **Exact-color defect cap.** In either intersection profile, the ten K5 components and the gadget degree floor imply \(42\le e_C(O)\le48\), so \(0\le t_C\le6\) for exact-129 colors. When \(t_C=0\), equality in Turan forces \(C[O]\) to be ten K3s plus two K4s. This creates a near-Turan decomposition problem on O shared by all eleven non-target colors.
 
 The arithmetic replay passed for all \(K_W\in[0,23]\) in E408 and \(K_W\in[0,21]\) in E407. This is a conditional exact ledger, not a contradiction. The next gap is to exploit simultaneous edge-disjoint 10-triangle/2-K4 partitions when many colors have \(t_C=0\), or to show the \(t_C\) distribution cannot meet the target shell/core geometry.
+
+
+## 2026-10-25 continuation — zero-defect Type-A gadget rigidity
+
+Added Corollary 11.4. In the exact-129 Type-A intersection profile with \(t_C=0\), \(U[O]=K_4\cup K_4\), \(U[W]=K_2\cup K_1\), and the gadget has exactly 16 cross edges. The independence-number cap forces the two adjacent W-gadget vertices to be complete to opposite K4s. The isolated W-gadget vertex must be complete to one K4 and to all but \(a\) vertices of the other, while the adjacent endpoint on the latter side covers those \(a\) missed vertices. The 16-edge budget then leaves no additional cross edges and forces \(a\in\{0,1,2,3\}\).
+
+The resulting gadget degree multiset is either \(5^{10},8\) or \(5^9,6,7\). In particular, every gadget vertex has degree at least five, and the W vertex unmatched by \(C[W]\) has degree \(5\)–\(8\). The verifier's degree-profile arithmetic passed for all four values of \(a\). This strengthens the zero-defect structural case but does not by itself force a contradiction with the target degree ledger.
