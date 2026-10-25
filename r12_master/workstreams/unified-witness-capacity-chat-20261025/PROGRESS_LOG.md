@@ -66,3 +66,13 @@
 - Therefore, for every low-slack block pair, the non-C edges among the two exceptional rows on each side form a matching, and at least two C edges are present among those four vertices.
 - Across k low-slack blocks, the exceptional-row graph has at least k(k-1) C edges. Equality in the alpha<=2 Turan bound forces two disjoint K_k cliques, with opposite exceptional-row types in each block.
 - Independent arithmetic replay passed: EXCEPTIONAL_ROW_ALPHA2_REPLAY_OK. The equality structure remains feasible and does not itself close Q33.
+
+
+## 2026-10-25 — near-complete component matching across outer blocks
+
+- Refreshed E407, E408 Q33, E408 Q32, witness-packing, zero-excess, and ultimate-closure branch heads before continuing. No sibling branch or directory was modified.
+- Used the latest Q33 Theorem 10.1 (exact-129 row normal form for \(r_i(C)\le5\)) to strengthen the cross-block component-matching statement. Each block has ten unique component rows and two exceptional rows; total neighborhood incidence beyond the baseline 62 is \(r_i(C)-1\).
+- For a missing same-component diagonal between blocks i,j, the two corresponding row neighborhoods must spend at least five extra incidences: either cover another entire K5 component, or cover at least six vertices of the 11-point gadget so that no independent pair remains. Distinct missing labels use disjoint row-incidence charges.
+- Since \(r_i+r_j-2\le8\), at most one of ten same-component diagonals can be missing for any pair with \(r_i,r_j\le5\). This gives at least nine same-label component edges; when \(r_i+r_j\le6\), all ten remain forced. At the sum-seven boundary, a missing diagonal consumes exactly five extra incidences and must cover a second K5.
+- Added arithmetic verifier checks for all 25 row-budget pairs and the sum-seven boundary. Scope: exact arithmetic check plus a conditional analytic lemma, not a graph-realization certificate.
+- Current obstruction: this near-matching theorem does not bound how many extra cross-label edges can occur in the 21 block pairs, nor does it force the missing diagonal patterns to contradict the witness labels. Terminal status remains OPEN / NOT_CERTIFIED.
