@@ -30,6 +30,7 @@ These are the latest heads observed in the repository at the time of this update
 - New Round 23 theorem: when \(\delta=13\), \(L=\overline{H[U]}\) is four-partite, and \(H[W]\) is a disjoint union of four cliques, every case with \(\epsilon_U\in\{1,2,3\}\) is excluded by DELTA13_FOUR_PARTITE_NO_CROSS_W_PROFILES.md. The common-neighbour cover capacities are at most 27, 28, 28, and 23 for the profiles \((3,4,5,6)\), \((3,5,5,5)\), \((4,4,4,6)\), and \((4,4,5,5)\), respectively.
 - New Round 24 theorem: at \(\delta=13,\epsilon_U=1\), the four-partite-U profile \(H[W]=K_3\dot\cup3K_5\) plus one cross-edge is also **EXCLUDED** by DELTA13_EPS1_K3K5K5K5_ONE_CROSS_EDGE.md. The proof allows at most one unsaturated U-vertex; its common-neighbour cover capacity is at most 26, below 28.
 - New Round 25 theorem: at \(\delta=13,\epsilon_U=1\), the \(3K_4\dot\cup K_6\) W-profile with its unique cross-edge joining \(K_4\) to \(K_6\) is **EXCLUDED** by DELTA13_EPS1_3K4_K6_K4K6_EDGE.md. All U vertices are W-saturated, and the four common-neighbour capacities sum to at most 28 < 29.
+- New Round 26 theorem: the remaining \(\delta=13,\epsilon_U=1\), \(3K_4\dot\cup K_6\)-plus-one-edge placement, where the edge joins two \(K_4\)'s, is **EXCLUDED** by DELTA13_EPS1_3K4_K6_K4K4_EDGE.md. The possible degree-seven U exception is handled by a capacity-equality overlap argument. Together with Round 25, both placements of the single cross-edge are closed.
 ## Status by case
 | Case | Status |
 |---|---|
@@ -46,6 +47,7 @@ These are the latest heads observed in the repository at the time of this update
 | \(\delta=13\), four-partite \(L\), no-cross-edge \(H[W]\), \(\epsilon_U\in\{1,2,3\}\) | EXCLUDED by common-neighbour cover capacity |
 | \(\delta=13\), four-partite \(L\), \(\epsilon_U=1\), \(K_3\dot\cup3K_5\) plus one W-cross-edge | EXCLUDED by common-neighbour cover capacity |
 | \(\delta=13\), four-partite \(L\), \(\epsilon_U=1\), \(3K_4\dot\cup K_6\) plus a \(K_4\)-\(K_6\) edge | EXCLUDED by common-neighbour cover capacity |
+| \(\delta=13\), four-partite \(L\), \(\epsilon_U=1\), \(3K_4\dot\cup K_6\) plus a \(K_4\)-\(K_4\) edge | EXCLUDED by saturation/capacity overlap |
 | \(\delta\le13\) other cases | OPEN |
 | E407 Q32 overall | OPEN / NOT_CERTIFIED |
 | EG617(r=12) | OPEN / NOT_CERTIFIED |
@@ -264,3 +266,12 @@ Added DELTA13_EPS1_3K4_K6_K4K6_EDGE.md and verify_delta13_eps1_3k4_k6_k4k6_edge.
 This yields component capacities at most 9 for each of the three K4 components and at most \(\lfloor E_6/2\rfloor\le1\) for K6. Their sum is at most 28, contradicting the required cover of 29 U vertices. Arithmetic replay passed with DELTA13_EPS1_3K4_K6_K4K6_EDGE_ARITHMETIC_OK.
 
 Remaining in this local profile family: the single edge joining two K4 components. Other open cases include the \(\epsilon_U=1\), \(2K_4\dot\cup2K_5\)-plus-two-edge profile; \(\epsilon_U=2\), \(2K_4\dot\cup2K_5\)-plus-one-edge profile; \(\epsilon_U=0\); non-four-partite U-complements; \(\delta\le12\); five-template global compatibility; and the upstream bridge.
+
+
+## Round 26 — delta-13 epsilonU=1, 3K4+K6 with K4-K4 cross-edge
+
+Added DELTA13_EPS1_3K4_K6_K4K4_EDGE.md and verify_delta13_eps1_3k4_k6_k4k4_edge.py. The D-vertex saturation proof uses the exact eight-edge U-cross-edge ledger: a nonsaturated D vertex would have excess one and no U-cross-edges, leaving at most seven cross-edges among the other seven D vertices. Hence all D vertices are saturated and \(t_d\le2\); reverse saturation gives \(d_H(w,U)\ge12\) for W vertices not complete to a U-part.
+
+For U vertices, the degree-six nonsaturation case contradicts the cover capacity of the nonincident K4 and K6; the only remaining possible exception is one degree-seven vertex with \(\epsilon_u=1,t_u=0\). The total component capacity is at most 28. If this one exception exists, equality would force all three K4 capacities to be nine; each would then be labelled by one small U-part, but the exceptional vertex's own part is forbidden as a label. Two K4 components must share one of the other two small-part labels, creating an overlap of at least seven vertices and preventing coverage of 28. Thus the profile is excluded.
+
+Arithmetic replay passed with DELTA13_EPS1_3K4_K6_K4K4_EDGE_ARITHMETIC_OK. Both placements of the unique W-cross-edge in the \(\epsilon_U=1\), \(3K_4\dot\cup K_6\) profile are now excluded.
