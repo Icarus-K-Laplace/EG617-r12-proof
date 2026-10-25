@@ -289,3 +289,14 @@ This proves only the local corner \(P_C=49,r_i=6\), conditional on the exact-129
 The local \(P_C=49,r_i(C)=6\) result in Section 12 of OUTER_EXCEPTIONAL_ROW_COUPLING.md has been rewritten to use the valid **double-star** condition \(d_C(z,K_{12})\ge2\), not the false isolation claim. Its finite checker now uses the exact Case-C complement-size profiles and distinguishes high-row profiles where both candidate high rows must be checked from profiles where either row is incidence-safe. The component-incidence argument is explicit: the selected high gadget-only row has at most two partial component incidences in the risky profiles and at most three otherwise; the selected \(r=2\) row has at most one. Hence no pair of selected rows covers a full isolated \(K_5\), which is needed for the pairwise blocker step.
 
 The in-session replay of the revised finite predicates passed 2,132 Case-A/B configurations and 512,768 exact-profile Case-C configurations, 514,900 total. This is a conditional local theorem under the exact-129 factor, gadget normal form, and row contracts. It **does not** prove \(P_C\le49\), does not close the aggregate eleven-color ledger, and does not solve EG617(r=12).
+
+
+## 2026-10-25 label-transfer audit — seven graph witnesses are not seven components
+
+A separate audit of LABELLED_WITNESS_CAPACITY_THEOREM.md found that the graph-theoretic seven-witness lemma must not be conflated with the ten-component exact-129 factorization. A labelled witness \(\{\lambda\}\cup Q\) is a C-colored \(K_5\), so it lies either in one isolated \(K_5\) component or wholly in the 11-point gadget \(U_C\). In the latter case \(Q\subseteq U_C\). Since the seven selected \(Q\)-sets are pairwise disjoint and \(|U_C|=11\), at most two witnesses can lie in the gadget. Therefore the currently proved transfer floor is **at least five isolated-component witnesses per exact color**, including at least four of the six B-labelled witnesses—not seven.
+
+Accordingly, the selected-witness extension threshold is corrected: with \(|\mathcal W_C|\ge5\) and \(|\mathcal K_C^*|\ge P_C-45\), only
+\[
+|\mathcal W_C\cap\mathcal K_C^*|\ge\max(0,P_C-50)
+\]
+is guaranteed. A component-extended witness \(K_{12}\) is forced by this intersection argument only for \(P_C\ge51\), not \(P_C\ge49\). A stronger seven-witness-to-seven-component label-transfer theorem remains open. This respects the rule that arbitrary graph-theoretic common witnesses do not inherit exact-129 component labels automatically.
