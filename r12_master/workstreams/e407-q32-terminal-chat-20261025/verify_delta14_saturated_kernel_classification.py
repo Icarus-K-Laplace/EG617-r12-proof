@@ -15,7 +15,7 @@ assert 49 - 5 == 44 > 49 - 7 + 1  # any J-v with d<=5 is bipartite
 solutions = []
 for d in range(1, 6):
     e_del = e - d
-    for p in range(5, 10):  # p(14-p) >= e_del
+    for p in range(1, 14):  # audit every bipartition size, including boundary cases
         q = 14 - p
         if p * q < e_del:
             continue
