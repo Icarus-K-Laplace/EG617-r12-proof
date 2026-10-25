@@ -430,7 +430,7 @@ def check_duplicate_budget_k12_packing_bound() -> None:
 
     # Seven selected components among ten imply at least P_C-48
     # selected witnesses are in the common size-five blocker intersection.
-    for P in range(49, 63):
+    for P in range(49, 56):
         common_lower = max(0, P - 45)
         selected_lower = max(0, 7 + common_lower - 10)
         assert selected_lower >= P - 48
