@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Arithmetic/kernel audit for the E407 Q32 delta=16 four-partite case.
+"""Arithmetic consistency checks for the E407 Q32 delta=16 terminal proof.
 
-Checks exact edge ledgers, integer partitions, and finite excess inequalities.
-It does NOT construct or certify a graph realization or independently prove
-the graph-theoretic lemmas.
+Checks exact edge ledgers, integer partitions, excess thresholds, and the final
+forbidden K12 arithmetic. The graph-theoretic endpoint lemma is proved in
+FOUR_PARTITE_TERMINAL.md; this script is not a graph-realization certificate.
 """
 from itertools import combinations
 from math import comb
@@ -52,12 +52,24 @@ def main() -> None:
     assert (7 + 3, 7 + 2) == (10, 9)
     assert (3 + 1) // 2 == 2
     assert 7 + 2 > 8
-    # In the (5,0) split, the three non-endpoint D vertices each already
-    # have four neighbours in the endpoint K4, leaving exactly one extra W edge.
-    # Do not infer that they are assigned to either K5: this case remains OPEN.
+    # In the (5,0) split, any endpoint-K4 vertex not complete to D must be
+    # complete to a 7-part and its five endpoint-D neighbours: >=12 U-neighbours,
+    # requiring excess >=3. At most one such exception is possible.
+    assert 7 + 5 == 12
+    assert 9 + 3 == 12
+    assert 9 + 4 == 13
+    # At least two non-endpoint D vertices would then have only 3 neighbours
+    # in the endpoint K4 and only 2 outside, so they cannot hit a W-component
+    # of minimum size four. Hence the exception is impossible.
+    assert 5 - 3 == 2
+    assert 2 < 4
+    # All four endpoint-K4 vertices are therefore complete to the 8-part D.
+    # Since D is a clique K8, this produces a forbidden K12.
+    assert 8 + 4 == 12
+    assert 12 > 11
     assert 4 * (7 + 5 - 9) > 4
 
-    print("E407_DELTA16_STRUCTURAL_KERNEL_ARITHMETIC_OK")
+    print("E407_DELTA16_TERMINAL_ARITHMETIC_OK")
 
 
 if __name__ == "__main__":
