@@ -377,3 +377,27 @@ Proof: DELTA14_EPS0_K3K5X1_K3K5_EDGE.md. Arithmetic replay: verify_delta14_k3_k5
 ### Frontier change
 
 All four-partite W-profiles at \(\delta=14,\epsilon_U=0\) are now excluded. This is still conditional on the retained T61/core/49-witness contract and the stated near-Turán W-profile classification. Remaining: \(\delta=14,\epsilon_U=1,2\), \(\delta=14\) non-four-partite, and all \(\delta\le13\). E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 — Round 12: \(\delta=14,\epsilon_U=1\), no-cross-edge \(K_4^3\cup K_6\) excluded
+
+### Exact external-incidence theorem
+
+Every \(d\in D\) is complete to exactly one W-component, because \(H[W]\) has four pairwise anticomplete clique components and \(d\) cannot have eight W-neighbours. If a D-vertex is assigned to \(K_6\), it must have \(\epsilon_d=1,t_d=0\); hence at most one such vertex exists. Let \(q\in\{0,1\}\) count these vertices, and let \(R\) be the number of D-to-W incidences outside the component assigned to their D endpoint. Exact accounting gives
+\[
+R=1-2q+\sum_{d\in D}\epsilon_d.
+\]
+Thus \(R\le2\) if \(q=0\), and \(R=0\) if \(q=1\).
+
+If a K4 component receives \(k\ge3\) D assignments, a vertex of that K4 complete to all of D uses \(8-k\) external incidences. Therefore at most \(0,0,0,1,2\) vertices can be D-complete when \(k=3,4,5,6,7\), respectively. The remaining vertices must be complete to a small U-part; reverse saturation rules out the unsaturated exception, and their required W-excess exceeds the available three units. A K4 cannot receive eight D assignments either, as that creates a K12. Hence each of the three K4 components receives at most two D vertices, impossible when seven or eight D vertices must be assigned among them.
+
+Added DELTA14_EPS1_K4K4K4K6_NO_CROSS_EDGE.md and verify_delta14_eps1_k4k4k4k6.py. Arithmetic replay passed. The verifier's initial E_D branch typo was corrected and the corrected arithmetic was rerun successfully.
+
+### Frontier update
+
+- \(\delta=14,\epsilon_U=0\), four-partite: **EXCLUDED** (all four W profiles).
+- \(\delta=14,\epsilon_U=1\): both no-cross-edge profiles \(K_3\cup K_5^3\) and \(K_4^3\cup K_6\) **EXCLUDED**; the \((4,4,5,5)\)+one-cross-edge profile remains open.
+- \(\delta=14,\epsilon_U=2\): OPEN.
+- \(\delta=14\), non-four-partite: OPEN.
+- \(\delta\le13\): OPEN.
+- Five E407 shell templates and EG617(r=12): **OPEN / NOT_CERTIFIED**.
