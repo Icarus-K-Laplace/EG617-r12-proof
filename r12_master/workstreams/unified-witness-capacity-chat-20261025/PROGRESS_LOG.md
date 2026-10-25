@@ -136,3 +136,11 @@
 - Proved \(0\le t_C\le6\) for every exact-129 color. At \(t_C=0\), equality in the 38-vertex Turan floor forces C[O] to be ten triangles plus two K4s.
 - Added finite arithmetic checks for both intersection profiles, the 42-edge Turan floor, the exact-color t-cap arithmetic, and the global identity for every possible \(K_W\).
 - Status remains OPEN / NOT_CERTIFIED: the new ledger is an exact coupling but does not itself prohibit a feasible \(t_C\) distribution or the resulting partial clique-partition design.
+
+
+## 2026-10-25 — classify Type-A gadget at zero defect
+
+- In the \(t_C=0\), Type-A case, the gadget splits as \(U[O]=K_4\cup K_4\) and \(U[W]=K_2\cup K_1\). Its cross-edge count is exactly 16.
+- The alpha/omega constraints and exact cross-edge count force a four-valued parameter \(a\in\{0,1,2,3\}\): one matched W endpoint has degree \(5+a\), the unmatched W gadget vertex has degree \(8-a\), and the remaining nine gadget vertices have degree five.
+- Thus the gadget degree multiset is \(5^{10},8\) or \(5^9,6,7\); all eleven gadget vertices have degree at least five. The independent Python arithmetic replay passed all four profiles.
+- This is a conditional local classification only. The remaining global obstacle is still to show the 11 color partitions on O cannot coexist with the target degree and witness constraints.
