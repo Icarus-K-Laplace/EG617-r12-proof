@@ -184,3 +184,8 @@ Added DELTA14_SATURATED_LOCAL_MODEL.md and verify_delta14_saturated_local_model.
 The explicit \(\mathbb Z_7^2\) cell labeling maps all 49 cells bijectively to \(E(J)\). The third color \(\kappa=x+y\bmod7\) gives seven classes of seven vertex-disjoint independent 4-sets; globally the 49 witnesses are pairwise linear and cover all of \(U\). The standard-library verifier checks the graph counts, saturation, cell bijection, and witness packing.
 
 This **invalidates the proposed local-only contradiction target** from Round 17. It does not construct \(W\), the full 47-vertex core, or the shell-row labels. For \(\epsilon_U=0\), the model imposes \(U\)-to-\(W\) degree sequence \(6^{14},5^{10},4^4,2^1\) (sum 152), which becomes a concrete next interface target. E407 Q32 and EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.
+
+
+### Latest sibling read after Round 18
+- E408 Q33 global compatibility branch head: 6f2a350d043aed41b8bb551449cae54a159a3cfe. Its latest canonical state reports the conditional colorwise cap \(P_C\le49\), hence \(R_C\ge13\); the stronger \(P_C\le48\) remains NOT CERTIFIED. The E408 Q33 terminal and original \(K_{145}\) theorem remain OPEN.
+- This is a separate seven-block/color-factor constraint and has not been imported as an E407 closure.
