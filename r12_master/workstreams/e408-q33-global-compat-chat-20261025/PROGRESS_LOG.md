@@ -149,3 +149,41 @@ for every exact-129 color \(C\). This excludes the \(R_C=13\) equality layer tha
 - Dependency map update: a73b899d6e15fca7427cdaef7f2f64eb5f0ed4f4
 
 **Scope:** the \(P_C\le48\) result is a colorwise conditional theorem. E408 Q33, both four-partite and non-four-partite 56-witness terminals, and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 — \(P_C=48\) boundary excluded; cap strengthened to 47
+
+### Main result
+
+Under the retained exact-129 factor theorem and seven-block equality contract, the colorwise duplicate cap is now
+\[
+\boxed{P_C\le47,\qquad R_C\ge15.}
+\]
+The new theorem excludes the \(R_C=14\) profiles \((6,3,1^5)\), \((6,2,2,1^4)\), \((7,2,1^5)\), \((8,1^6)\), and the all-low-budget case.
+
+### Expanded finite alignment certificate
+
+- Extended GADGET_ALIGNMENT_VERIFIER.js to check single-row, pair/pair, and triple alignment properties across all four exact 11-vertex gadget normal forms.
+- Deterministic in-session replay: **467,696 alignment checks, zero failures**.
+- Exact categories: 2,156 base \(K_4/K_5\)-to-\((55)/(54)\) checks; 312 \(K_3\)-to-\((55)\); 1,476 \(K_5\)-to-\((53)/(44)\); 10,592 fixed-\(K_5\)-plus-two-low-pair checks; 60,288 pair/pair checks excluding \(53+53\); 392,872 triple-alignment checks.
+- The verifier explicitly avoids two false overclaims: not every \(53+53\) pair/pair configuration aligns, and a high \(K_4\) does not always align with a low \(53\) pair in isolation.
+
+### Proof outline
+
+- All \(r_i\le5\): a missing edge forces either a second full component (at least five component excess) or coverage of at least six gadget vertices. The budget \(R_C=14\) limits the omitted-pair types to the certified alignment cases.
+- \((6,3,1^5)\): Theorem 11.1 Cases A/B give a fixed omitted \(K_5\); Case C either forces all component edges or aligns the high/low omitted pairs, with the \(53+53\) exception ruled out directly by the budget.
+- \((6,2,2,1^4)\): Cases A/B align one \(K_5\) with two \(r=2\) pairs; Case C is handled by triple alignment or direct edge forcing.
+- \((7,2,1^5)\): row-count cases \(n=0,1,2,3\) are resolved by occurrence counts, gadget incidence bounds, alignment, or ten isolated \(K_{12}\)'s.
+- \((8,1^6)\): analogous \(n=0,1,2,3\) split; high gadget-only rows align, while low gadget incidence forces all component edges.
+
+### Commits
+
+- P48 boundary theorem: 26ef67f0a9cd139e7bfb29655987e9f5ad58a528
+- Pair-sum-seven branch clarification: 9408fcd6f26f1e4b1c566192044e1e00054c497f
+- Alignment certificate: 320dbcdb82bc42ae8f770084ae8c9f72491eaea2
+- Alignment verifier: 2209c1764182a1aaa5b945469d8edf9fc81cffa5
+- Canonical state: 4284f17c132d9cb6dc9b5dba8fdefc0f13828265
+- Seven-block ledger: 5d002b324c2346afca57d770d07d6502b768118c
+- Dependency map: 727e9fcd2cb56081831f9f1d5a8ac396a0a95091
+
+**Scope:** the \(P_C\le47\) theorem is colorwise and conditional. The aggregate eleven-color ledger, both 56-witness support branches, E408 Q33, and EG617(r=12) remain OPEN / NOT_CERTIFIED.
