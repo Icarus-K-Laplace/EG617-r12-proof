@@ -77,3 +77,15 @@ E407 Q32, all five shell templates A–E, and EG617(r=12) remain OPEN / NOT_CERT
 Under the retained T61/49-witness contract, the only \(\delta=14\) non-four-partite branch not excluded is now \(K_5\)-saturated \(L\). The augmentable-edge terminal has been eliminated by the partition \(U=S_0\dot\cup S_1\dot\cup S_2\dot\cup S_3\) and the common-neighbour capacity bounds \(n_i\le4+E_i\) for saturated \(K_5\) components and \(n_i\le7\) for unsaturated ones. The arithmetic verifier reports maxima 25, 27, and 25 for the all-saturated, one-star-unsaturated, and exceptional mixed cases, all below 29; the multiple-unsaturated case is ruled out structurally by the 9-point shared set \(R\).
 
 The current highest-leverage target is the \(K_5\)-saturated case. The \(\delta\le13\) cases, five shell templates, and the \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## Round 17 update — the \(\delta=14\) saturated branch has one exact residual kernel
+
+The augmentable-edge subcase remains excluded. For the remaining \(K_5\)-saturated non-four-partite case, the new conditional reduction in DELTA14_SATURATED_ALPHA_CRITICAL_REDUCTION.md proves that \(G=H[U]\) is \(\alpha\)-critical and, conditional on Didin's 2026 preprint theorem, has exactly three connected components. The 49 witness \(K_4\)'s and the exact 98-edge ledger force the unique profile
+\[
+H[U]=K_7\dot\cup K_7\dot\cup C_{15},\quad
+\alpha(C_{15})=2,\quad e(C_{15})=56.
+\]
+The complement of \(C_{15}\) is a triangle-free non-bipartite saturated graph with 49 edges, and the witness family induces two orthogonal near-perfect matching decompositions of its edge set.
+
+This does **not** yet rule out the terminal graph. The external Didin preprint theorem is explicitly an unverified dependency, and the graph-realization problem for the 15-vertex kernel remains OPEN. The \(\delta\le13\) cases, five shell templates A–E, and upstream \(K_{145}\)-to-T61 bridge also remain OPEN / NOT_CERTIFIED.
