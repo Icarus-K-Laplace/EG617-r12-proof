@@ -10,7 +10,8 @@ Directory: r12_master/workstreams/e407-q32-terminal-chat-20261025/
 - ultimate closure: 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40
 - witness packing: f5d3daa07403877ede9885e1bd5c2f46b16d81da
 - zero-excess witness: 07d19abfd6c1c749c7360526e4a04a3eb865fb2e
-- unified witness capacity: 1f1e25cc08bd198d8dfb48f812beb4ed525b6dd5
+- unified witness capacity: 9935e0d2343fc08d9e65d51ff495cfb260d6de95
+- E408 Q33 global compatibility: d70b6a2b9c4929b6b9315fcfd4bd29848920323b
 - Astra dlow terminal: c71b29d3c5b661cdcf00404e545933893c44598b
 - Astra aext near-anchor: ad6e4ebe152e3918b9c5fe67f461ba402b1445d8
 - base main at branch creation: 3f42fcce5761ca2372140618adda56f95fcbe253
@@ -151,3 +152,26 @@ The key new capacity improvement is that a U-part-saturated \(K_5\) component ha
 The excess split \(E_0+E_1+E_2+E_3=3\) now rules out: all three \(K_5\) components saturated; exactly one star-only unsaturated component; the exceptional mixed \(P_1P_2\) pattern; and two or more unsaturated components. In the last case, the shared set \(R=(P_1\\setminus A)\\cup(P_2\\setminus\\{y\\})\) would have to lie in the common neighbourhood of the \(K_3\), forcing at least 12 common neighbours despite a zero-excess \(K_3\) vertex of U-degree 10.
 
 **Result:** the entire \(\delta=14\), non-four-partite augmentable-edge subcase is excluded under the retained contracts. The only remaining case at this boundary is \(K_5\)-saturated \(L\), with no augmentable nonedge. This is a genuine conditional theorem, not a closure of E407 Q32 or EG617(r=12).
+
+
+## Round 17 — \(\delta=14\) saturated branch reduced to one labelled kernel
+
+Added DELTA14_SATURATED_ALPHA_CRITICAL_REDUCTION.md and verify_delta14_saturated_alpha_critical.py.
+
+Under the retained 29-point/49-witness core contract, if the non-four-partite \(L=\overline{H[U]}\) is \(K_5\)-saturated, then \(G=H[U]\) is \(\alpha\)-critical with \(\alpha(G)=4\). Conditional on Didin's 2026 author-prepared preprint theorem for graphs with prescribed independence number, the number of components of \(G\) must be exactly three; the four-component case would make \(L\) complete four-partite.
+
+The component split is forced to \(K_a\dot\cup K_b\dot\cup C\) with \(\alpha(C)=2\). Brouwer's second-Turán bound and the 49 edge-disjoint \(K_4\) witnesses then leave exactly one arithmetic profile:
+\[
+(a,b,|C|,e(C),e(\overline C))=(7,7,15,56,49).
+\]
+All 49 witnesses exhaust both \(A\times B\) and \(E(\overline C)\). Hence \(\overline C\) must be a triangle-free, non-bipartite, triangle-saturated graph on 15 vertices with 49 edges whose edge set admits two orthogonal decompositions into seven near-perfect matchings. This is a strict reduction, not an exclusion.
+
+External theorem status is explicit: Didin's 2026 preprint was listed as under review; its proof has not been independently audited in this workstream. The arithmetic verifier checks the integer enumeration only. The remaining saturated kernel, \(\delta\le13\), all five shell templates, and the \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+
+### Cross-branch refresh
+- E408 Q33 global compatibility branch: d70b6a2b9c4929b6b9315fcfd4bd29848920323b. It now reports the conditional universal minimum-support improvement \(S_0\ge13\) (hence \(\delta\ge5\)); its terminal remains open.
+- Unified witness-capacity branch: 9935e0d2343fc08d9e65d51ff495cfb260d6de95.
+- Emergency sprint chat: 5258c5fe17af3bf17eb7a2bfb08315c9be9116cd.
+- Witness packing: f5d3daa07403877ede9885e1bd5c2f46b16d81da.
+- Zero-excess witness: 07d19abfd6c1c749c7360526e4a04a3eb865fb2e.
+- E408 Q32 excess-six branch remains separate at a0ba6db26c7e8b00a4217dcbcbf298895dff93ce.
