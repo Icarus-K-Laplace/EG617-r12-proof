@@ -99,3 +99,14 @@ This gives a local interface between the exact gadget-pair choice and the global
 The latest E408 Q33 sibling proof establishes that every monochromatic \(K_{12}\) is isolated in its color and that \(m\) disjoint such cliques, each using one representative from every outer block, imply \(P_C\le21(12-m)\). It then excludes the exact-129 corner \(P_C=50,r_i(C)=6\) by the three cases in the \(r_i=6\) classification.
 
 This sharpens the high-budget branch: any exact-129 color with \(P_C=50\) has \(r_i(C)\le5\) for all seven blocks, and the existing low-budget alignment result gives at least nine common component labels. The \(P_C=49,r_i=6\) corner remains open because one of the six other blocks has \(r_i=2\), so the all-six-\(r_i=1\) external-edge argument does not transfer verbatim.
+
+
+## 10. P=49, r=6 exclusion and residual terminal profiles
+
+The new finite gadget theorem in OUTER_EXCEPTIONAL_ROW_COUPLING.md, Section 12, conditionally excludes \(P_C=49,r_i(C)=6\). Its checker exhausts 159,244 configurations across the four exact gadget normal forms. It uses the isolated-\(K_{12}\) lemma to convert the finite gadget selection into a contradiction; upstream T61, exact-129 factor, gadget normal-form, and row contracts remain dependencies.
+
+Conditional on the sibling Q33 cap \(P_C\le49\), the \(P_C=49\) residual budget is \(R_C=13\). A block budget \(r_i\ge8\) is impossible by positivity of the other six entries; \(r_i=6\) is now excluded. For all \(r_i\le5\), any profile with every pair sum at most six gives ten isolated \(K_{12}\)'s and contradicts \(P_C=49\). The remaining profiles are:
+- \((7,1^6)\), not covered by the \(r=6\) theorem;
+- \((5,3,1^5)\), \((4,4,1^5)\), \((5,2,2,1^4)\), and \((4,3,2,1^4)\), each with at least one high pair whose sum is at least seven.
+
+These are the next terminal targets. The full E408 Q33 ledger and original \(K_{145}\) theorem remain OPEN / NOT_CERTIFIED.
