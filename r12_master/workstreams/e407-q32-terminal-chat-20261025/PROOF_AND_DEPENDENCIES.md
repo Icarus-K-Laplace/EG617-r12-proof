@@ -108,3 +108,14 @@ The standard-library verifier checks the finite integer degree/status enumeratio
 DELTA14_NONPARTITE_AUGMENTABLE_TERMINAL_CLOSURE.md closes the sole augmentable-edge terminal from Round 15. The four common-neighbour sets of \(C_0\cong K_3\) and \(C_1,C_2,C_3\cong K_5\) partition \(U\), since every \(u\in U\) must be complete to a W-component and \(d_H(u,W)\le6<8\). The new label-capacity lemma gives \(n_i\le4+E_i\) for a U-part-saturated \(K_5\) component, with equality in the former \(5+E_i\) bound impossible; an unsaturated \(K_5\) component has \(n_i\le7\). The \(E_0+E_1+E_2+E_3=3\) case split excludes all saturated, single-unsaturated, exceptional mixed, and multi-unsaturated patterns. The finite arithmetic bounds are replayed by verify_delta14_augmentable_terminal.py.
 
 **Dependency boundary:** this closes only the augmentable-edge subcase, conditional on the balanced KP equality reduction, the 49-witness contract, the exact U/W degree ledger, \(\alpha(H)\le4\), and \(\omega(H)\le11\). The \(K_5\)-saturated branch remains open, as do \(\delta\le13\), all five shell templates, and the original \(K_{145}\)-to-T61 bridge.
+
+
+## Round 17 dependency addition — \(\delta=14\) saturated alpha-critical reduction
+
+The new file DELTA14_SATURATED_ALPHA_CRITICAL_REDUCTION.md introduces one explicit external dependency:
+
+- Maksim Didin, *A Generalization of Turán's Theorem for Graphs with a Given Independence Number*, author-prepared preprint, Zenodo record 22831382, version 1 dated 2026-09-18. The Zenodo description states that the manuscript was submitted to the Journal of Graph Theory and was under review at that date.
+- Used statement: for a graph with \(n\) vertices, \(m\) edges, independence number \(\alpha\), and \(p\) the maximum number of components among spanning \(\alpha\)-critical subgraphs with the same independence number, put \(s=\alpha-p\). Then \(m\ge t(n+s,\alpha)-s\).
+- This statement is **not independently reproved or audited** in this workstream; any conclusion using it remains conditional until the theorem is independently checked or accepted as a trusted external result.
+
+With that dependency, the \(\delta=14\) \(K_5\)-saturated non-four-partite branch reduces to \(K_7\dot\cup K_7\dot\cup C_{15}\), where \(C_{15}\) is a connected \(\alpha\)-critical graph with independence number two and 56 edges. The complement of \(C_{15}\) must be triangle-free, non-bipartite, triangle-saturated, have 49 edges, and admit the two orthogonal near-perfect matching decompositions forced by the witness family. This remains an open terminal, not a proof of EG617.
