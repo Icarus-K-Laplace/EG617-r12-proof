@@ -92,3 +92,10 @@ The four-value degree-profile arithmetic was independently checked. This local r
 For an exact-129 color with \(r_i(C)=1\) in top-cell A, the exact row theorem forces ten exact K5 rows and two six-vertex gadget rows. The W-incidence profile gives \(e_C(B_i,W)=23\) or 24. Since every \(w\in W\) must see all eleven non-target colors among its 12 edges to \(B_i\), exactly one non-target color is repeated at each \((w,B_i)\). Therefore the unique repeated-C incidence in this block lies in W iff \(e_C(B_i,W)=24\), and in O iff it is 23.
 
 This gives a local interface between the exact gadget-pair choice and the global duplicate ledger. It still does not determine the seven-block location pattern, so it must be combined with the target degree vector and the exact cross-edge defect identity rather than treated as closure.
+
+
+## 10. Sibling external-edge theorem: eliminate \(P_C=50,r_i=6\)
+
+The latest E408 Q33 sibling proof establishes that every monochromatic \(K_{12}\) is isolated in its color and that \(m\) disjoint such cliques, each using one representative from every outer block, imply \(P_C\le21(12-m)\). It then excludes the exact-129 corner \(P_C=50,r_i(C)=6\) by the three cases in the \(r_i=6\) classification.
+
+This sharpens the high-budget branch: any exact-129 color with \(P_C=50\) has \(r_i(C)\le5\) for all seven blocks, and the existing low-budget alignment result gives at least nine common component labels. The \(P_C=49,r_i=6\) corner remains open because one of the six other blocks has \(r_i=2\), so the all-six-\(r_i=1\) external-edge argument does not transfer verbatim.
