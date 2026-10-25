@@ -120,8 +120,28 @@ The next proof target is a stability/packing contradiction in Case 1 or a genuin
 
 - The former single-edge proofs are on audit hold; the independent double-star/common-star proofs now establish the conditional cap P_C\le49, while P_C\le48 remains NOT CERTIFIED.
 
+## \(P_C=49\) boundary screen — partial result
+
+The common-star finite verifier was independently reimplemented and replayed in-session. The \(R_C\le12\) result reproduces the exact four gadget clique counts, row-pair counts, 72 profile/form checks, 2,405,684 DP transitions, and maximum 2,625 reachable intersection states.
+
+For \(P_C=49\), \(R_C=13\), there are eleven positive seven-part profiles. The extended DP checks the nine profiles with \(\max r_i\le5\) across four gadget normal forms (36 checks, 5,021,134 transitions, maximum 3,329 states). It fails to find a common star only for \((4,4,1^5)\) in forms \(b=1,4\) and \((4,3,2,1^4)\) in forms \(b=2,3\).
+
+Five profiles with all pairwise budget sums at most six are now excluded by the common-star plus double-star argument:
+\[
+(2^6,1),\ (3,2^4,1^2),\ (3^2,2^2,1^3),\ (3^3,1^4),\ (4,2^3,1^3).
+\]
+The remaining six \(P_C=49\) profiles are
+\[
+(4,3,2,1^4),\ (4,4,1^5),\ (5,2^2,1^4),\ (5,3,1^5),\ (6,2,1^5),\ (7,1^6).
+\]
+This is a partial profile closure only. The archived P49 boundary proof remains NOT CERTIFIED, \(P_C\le48\) is not established, and E408 Q33 / EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.
+
 ## Latest isolated commits
 
+- P49 common-star finite screen: 84a59a5bcab57a8536c8d3a45af481f46427c6e3
+- P49 profile analysis: 44f40e49a6ca84893c2cd26ef31b9dfd9c6b0875
+- Progress log update: c8d4f076b6f6bce1b91210be69514ca01353e8bf
+- Proof dependency map update: 8e9612dbaf5f3b70273895b40b9796d810fac412
 - Common-star finite verifier: c413b1065e9926d00ad1319f2e8d8a815e4850b5
 - Conditional colorwise \(P_C\le49\) theorem: 04b5ec6f9a1e118faee2216208e1f13361fb8d43
 - Active ledger profile correction and common-star theorem integration: 1a41ecfc88e25207d0f52e52d43e4a48a76b4dc6
