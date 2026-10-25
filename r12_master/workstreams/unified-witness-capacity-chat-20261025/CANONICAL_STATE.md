@@ -183,3 +183,22 @@ The Python arithmetic replay independently checked all 25 row-budget pairs and t
 Added a reproducible scalar relaxation in COUNTEREXAMPLE_OR_GAP_AUDIT.md and the verifier. It satisfies \(P_C+R_C+s_C=62\) for all 11 colors, \(\sum P_C=252\), \(\sum R_C=427\), \(\sum s_C=3\), every block-column sum \(\sum_C r_i(C)=61\), and every block-pair duplicate column sum \(\sum_C d_{ij}(C)=12\). Yet all eight exact colors can have \(P_C=9\) and \(r_i(C)\in\{7,8\}\), with the three nonexact colors absorbing \(P=(59,60,61)\).
 
 This is an explicit **aggregate relaxation**, not a graph-level counterexample. It establishes that the aggregate \(P_{\rm exact}\ge69\) inequality cannot force any exact color to satisfy \(P_C\ge36\), so the new near-matching theorem cannot be activated from aggregate budgets alone. A terminal proof must add a genuine graph/witness constraint coupling the three nonexact colors or the component-label geometry to these scalar variables.
+
+
+## 2026-10-25 continuation — duplicate budget forces common component cliques
+
+Added Theorem 9.1 in OUTER_EXCEPTIONAL_ROW_COUPLING.md. For every exact-129 color C, let \(n_i(C)\) be the number of size-five blocker rows in outer block \(B_i\). The exact blocker theorem says each such row corresponds to one distinct K5 component; the incidence ledger yields \(n_i(C)\ge11-r_i(C)\). Therefore the number of K5 component labels represented by size-five blockers in all seven blocks is at least
+\[
+10-\sum_i(10-n_i)\ge17-R_C=P_C-45.
+\]
+Each common label has seven outer representatives with C-neighborhood exactly that K5 component. Any pair of representatives must be adjacent or else the two rows, one vertex from each of the other nine components, and an independent pair in the gadget form a C-independent 13-set. Hence each common label extends to a vertex-disjoint monochromatic K12:
+\[
+\boxed{\nu_{12}(C)\ge\max(0,P_C-45).}
+\]
+
+The same file records the stronger high-budget cases:
+- \(P_C\ge51\): all ten K5 components extend to ten disjoint K12s.
+- \(P_C=50\): at least eight disjoint K12s.
+- \(P_C=49\): at least four disjoint K12s, with stronger bounds when the row profile is more regular.
+
+The verifier now exhausts all positive \(r\)-profiles with \(r_i\le5\) and \(R_C=11,12,13\), confirming the maximum number of block pairs with sum at least seven is 0, 1, and 2, respectively. This is exact finite arithmetic supporting the branch split; the clique-packing theorem is conditional on the exact-129 factor/blocker contract.
