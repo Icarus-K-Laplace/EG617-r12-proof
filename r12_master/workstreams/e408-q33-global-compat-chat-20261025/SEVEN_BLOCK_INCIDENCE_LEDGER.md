@@ -385,3 +385,43 @@ For \(r_i=2\), Theorem 10.1 permits overlap \(a=1\) or \(a=2\); the complement p
 For \(P_C=50\), the six \(r=1\) blocks supply ten label-based \(K_{11}\)'s, at least eight extended to \(K_{12}\) by Corollary 11.2; Corollary 12.2 supplies two disjoint gadget \(K_{11}\)'s. For \(P_C=49\), the five \(r=1\) blocks and the \(r=2\) block supply ten label-based \(K_{11}\)'s, at least seven extended to \(K_{12}\); Corollary 12.2 supplies one gadget \(K_{11}\) and one gadget \(K_{10}\).
 
 **Scope.** These packing bounds are strictly stronger than Corollary 11.3 but still do not contradict the exact 870-edge budget: the packings leave respectively 122 and 143 C-edges outside their clique interiors. A separate argument must constrain those remaining edges or link the packings to the other colors.
+
+
+## 13. Isolated-\(K_{12}\) duplicate cap and exclusion of \(P_C=50,r_{\max}=6\)
+
+**Lemma 13.1 (a monochromatic \(K_{12}\) is an isolated component).** In any balanced 12-coloring, if \(Q\) is a \(C\)-colored \(K_{12}\), then every edge from \(Q\) to a vertex \(z\notin Q\) has a color different from \(C\). Indeed, \(Q\) is independent in every color \(D\ne C\); each of the twelve edges from \(z\) to \(Q\) must contain all eleven colors \(D\ne C\), leaving exactly one duplicated color and no edge of color \(C\). Consequently, any two disjoint \(C\)-colored \(K_{12}\)'s are \(C\)-anticomplete.
+
+**Lemma 13.2 (isolated-clique duplicate cap).** Suppose a fixed exact-129 color \(C\) contains \(m\) vertex-disjoint \(C\)-colored \(K_{12}\)'s, each containing exactly one vertex from each of the seven target blocks \(B_0,\ldots,B_6\). Then
+\[
+\boxed{P_C\le21(12-m).}
+\]
+
+**Proof.** Each selected \(K_{12}\) is an isolated component by Lemma 13.1. For any block pair \(B_i,B_j\), the \(m\) selected cliques contribute exactly \(m\) disjoint \(C\)-edges, one per clique, and no \(C\)-edges from their representatives to any other vertex. Put \(k=12-m\). The remaining \(k\) vertices in each block must have at least one \(C\)-neighbor in the opposite block, by the one-or-two rule; their \(C\)-neighbors can only lie among the remaining \(k\) vertices on the other side. Their bipartite \(C\)-graph therefore has minimum degree at least one and maximum degree at most two, so it has \(k\le e'\le2k\) edges. Hence
+\[
+e_C(B_i,B_j)=m+e'=12+d_{ij}(C),\qquad
+d_{ij}(C)=e'-k\le k.
+\]
+Summing over the 21 block pairs proves the bound. \(\square\)
+
+**Theorem 13.3 (the \(P_C=50\), \(r_i(C)=6\) corner is impossible).** Under the retained exact-129 and seven-block contracts, no exact-129 color \(C\) can satisfy
+\[
+P_C=50,\qquad r_i(C)=6
+\]
+for any target block \(B_i\).
+
+**Proof.** Since \(R_C=62-P_C=12\) and all seven \(r_j(C)\ge1\), the other six blocks have \(r_j(C)=1\). Thus all six have the exact two-gadget-row structure of Theorem 10.1.
+
+Apply Theorem 11.1 to the exceptional block \(B_i\).
+
+- **Case A (\(n=1\)).** Every one of the ten component labels has a single-component row with at most five extra vertices, so all ten labels extend to ten vertex-disjoint \(C\)-colored \(K_{12}\)'s across the seven blocks. The one no-component row has a six-set neighborhood whose complement is a \(K_5\); by Theorem 12.1 that complement is disjoint from \(D_1\) or \(D_2\). The row therefore extends one of the two gadget \(K_{11}\)'s supplied by Corollary 12.2 to a further \(K_{12}\). Hence \(m\ge11\).
+- **Case B with \(k=1,m=10\).** The nine fully represented component labels each have a single-component row with at most five extra vertices, yielding nine label-based \(K_{12}\)'s. The two no-component rows have six-set neighborhoods with complementary disjoint \(K_5\)'s, so they extend both gadget cliques to two further \(K_{12}\)'s. Hence \(m\ge11\).
+- **Case B with \(k=1,m=11\).** Theorem 11.2 gives at least eight clean component labels, and the two no-component rows extend both gadget cliques to \(K_{12}\)'s. Hence \(m\ge10\).
+- **Case C (\(k=0,m=10\)).** The two no-component row neighborhoods cover \(U_C\), and their overlap \(a\ge1\). The remaining incidence budget for all component-containing rows is \(e_i+t_i=6-a\le5\). Each of the ten component rows therefore contains one full \(K_5\) plus at most five extra vertices. All ten labels are clean and yield ten label-based \(K_{12}\)'s, so \(m\ge10\).
+
+In every case, there are at least ten vertex-disjoint \(C\)-colored \(K_{12}\)'s, each meeting every target block exactly once. Lemma 13.2 then gives
+\[
+P_C\le21(12-10)=42,
+\]
+contradicting \(P_C=50\). \(\square\)
+
+**Consequence.** The high-budget clique-packing corner in Corollary 11.3 is not merely compatible with the edge budget: its \(P_C=50,r_i=6\) branch is now excluded analytically. The \(P_C=49,r_i=6\) branch is not covered by Theorem 13.3; the current guaranteed packing there can leave nine isolated \(K_{12}\)'s, for which Lemma 13.2 only gives \(P_C\le63\).
