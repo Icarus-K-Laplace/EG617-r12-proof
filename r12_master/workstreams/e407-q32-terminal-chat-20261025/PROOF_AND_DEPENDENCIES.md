@@ -49,10 +49,16 @@ Status: **E407 Q32 OPEN / NOT_CERTIFIED; \(\delta=16\) and the \(\delta=14,\epsi
 
 There is no circular dependency in the \(\delta=16\) exclusion: it uses only the E407 core contract, 49-block linearity, the exact ledger, Turán/Brouwer bounds, \(\alpha(H)\le4\), and the inherited \(\omega(H)\le11\) bound from the T61 parent. The \(\delta=15\) non-four-partite exclusion additionally depends on the Kang–Pikhurko equality classification and W-side Brouwer bound. All remaining cases depend on the upstream validity of the 49-witness boundary.
 
-### New delta-14 sub-branch closure
-The proof DELTA14_EPS0_K3K4K5K6_COVER_CAPACITY.md excludes the \(K_3\dot\cup K_4\dot\cup K_5\dot\cup K_6\) W-profile, and DELTA14_EPS0_K3K5K5K5_CROSS_EDGE_CLOSURE.md excludes the final \(K_3\cup K_5^3\) plus one-cross-edge profile. Together with DELTA14_EPS0_K4_PROFILE_EXCLUSIONS.md, this closes the entire \(\delta=14,\epsilon_U=0\), four-partite row. No claim is made for \(\epsilon_U=1,2\) or non-four-partite \(L\).
+### Delta-14 four-partite closures
 
+The proofs DELTA14_EPS0_K4_PROFILE_EXCLUSIONS.md, DELTA14_EPS0_K3K4K5K6_COVER_CAPACITY.md, and DELTA14_EPS0_K3K5K5K5_CROSS_EDGE_CLOSURE.md close the entire \(\delta=14,\epsilon_U=0\), four-partite row. The last profile is excluded by a common-neighbour capacity bound of 27, below \(|U|=29\).
+
+DELTA14_EPS1_K3K5K5K5_NO_CROSS_EDGE.md additionally excludes the no-cross-edge \(K_3\cup K_5^3\) profile at \(\epsilon_U=1\). Other \(\epsilon_U=1\) W profiles, \(\epsilon_U=2\), non-four-partite \(L\), and \(\delta\le13\) remain open.
 
 ### Round 10 — final \(\delta=14,\epsilon_U=0\) four-partite profile
 
 DELTA14_EPS0_K3K5K5K5_CROSS_EDGE_CLOSURE.md proves the last W-profile impossible. It first uses \(\alpha(H)\le4\) and the unique W-cross-edge to show every \(D\)-vertex is complete to a W-component, hence \(t_d\le2\). This yields the reverse-saturation bound \(d_H(w,U)\ge12\) for any W-vertex not complete to a U-part. The only possible unsaturated U-vertex has the exact endpoint singleton pattern in the \(K_3\)-to-\(K_5\) edge case; its induced common-neighbour demand exceeds the two other K5 capacities by one. With all U-vertices saturated, the four component capacities total at most 27, contradicting \(|U|=29\). The arithmetic verifier checks the finite excess and capacity arithmetic but does not replace the analytic proof.
+
+### Round 11 — \(\delta=14,\epsilon_U=1\) no-cross-edge profile
+
+DELTA14_EPS1_K3K5K5K5_NO_CROSS_EDGE.md gives a conditional contradiction by covering \(U\) with the four common-neighbour sets. It proves \(t_d\le3\), a reverse-saturation floor \(d_H(w,U)\ge11\), the K5 capacity \(|S_i|\le5+E_i\), and the K3 cap \(|S_0|\le10+\lfloor E_0/3\rfloor\). The total capacity is at most 28, less than \(|U|=29\). The arithmetic verifier checks all 20 nonnegative W-excess allocations.
