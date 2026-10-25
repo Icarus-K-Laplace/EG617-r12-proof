@@ -13,7 +13,7 @@ assert TOTAL_EXCESS == 4 and EPS_W == 3
 assert 3 * (4 * 3 // 2) + 6 * 5 // 2 == 33
 
 for q in (0, 1):
-    E_D = 0 if q == 1 else 1  # if q=1, the K6-assigned D vertex owns epsilon_U=1
+    E_D = 1  # if q=1, the K6-assigned D vertex owns epsilon_U=1; if q=0, use the worst-case D-excess
     R = 1 - 2 * q + E_D
     assert R == (0 if q == 1 else 2)
     for k in range(3, 8):
