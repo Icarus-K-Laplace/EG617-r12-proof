@@ -253,3 +253,11 @@ This correction supersedes the two incorrect profile strings in the preceding lo
 ### Commits
 - P49 common-star finite screen: 84a59a5bcab57a8536c8d3a45af481f46427c6e3
 - P49 profile analysis: 44f40e49a6ca84893c2cd26ef31b9dfd9c6b0875
+
+
+## 2026-10-25 continuation — repair the \(P_C=49\) Case I only
+
+- Revisited the archived P49 boundary proof after the common-star screen. Replaced Case I (all pair sums at most six) with the valid common-star plus double-star argument. It now excludes exactly the five profiles listed in R12_P49_COMMON_STAR_SCREEN.md.
+- Added an explicit audit-status note to P49_BOUNDARY_EXCLUSION.md: Cases II–V and the historical conclusion \(P_C\le48\) remain withdrawn / NOT CERTIFIED. The update avoids allowing the repaired Case I to be mistaken for a full boundary proof.
+- Independently checked the exact \(R_C=13\) integer partition: eleven profiles total, five in the repaired pair-budget class and six unresolved. The profile bookkeeping in the new screen matches this enumeration.
+- Latest repair commit: 8662900d1d9cff04a9a4872e38786f2f897ed79d.
