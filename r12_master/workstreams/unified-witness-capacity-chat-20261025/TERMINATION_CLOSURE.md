@@ -101,3 +101,10 @@ The sibling statement that every monochromatic \(K_{12}\) is isolated is false a
 **Conditional local closure:** Section 12 of OUTER_EXCEPTIONAL_ROW_COUPLING.md excludes \(P_C=49,r_i(C)=6\) by forcing an outside vertex to have at least two \(C\)-edges into a constructed \(C\)-colored \(K_{12}\). The finite checker uses the exact Case-C complement profiles and the safe-row incidence split. The in-session predicate replay passed 2,132 Case-A/B configurations and 512,768 exact-profile Case-C configurations. Dependencies remain the exact-129 factor theorem, the seven-block row contract, the exact 11-vertex gadget normal form, and the \(r=1,2,6\) row classifications.
 
 This local result does not establish \(P_C\le49\) for all exact-129 colors and must not be used to prune the global budget profiles without a separately certified colorwise cap. The labelled witness/core capacity theorem and the aggregate eleven-color ledger remain open. EG617(r=12) is **OPEN / NOT_CERTIFIED**.
+
+
+## 11. Witness label-transfer obligation
+
+The graph-theoretic shell witness family and the exact-129 factor components are distinct structures. A labelled witness K5 is either one of the ten isolated components or lies wholly in the 11-point gadget. Pairwise disjointness of seven four-sets and the gadget size 11 imply at most two gadget witnesses, hence at least five isolated-component witnesses (and at least four B-labelled component witnesses). No stronger seven-component transfer is certified.
+
+Combining this floor with the all-block exact-blocker bound \(|\mathcal K_C^*|\ge P_C-45\) gives only \(|\mathcal W_C\cap\mathcal K_C^*|\ge\max(0,P_C-50)\). Therefore the label-based K12 extension is guaranteed only at \(P_C\ge51\), not \(P_C\ge49\). The stronger label-transfer theorem and the aggregate core/witness contradiction remain OPEN.
