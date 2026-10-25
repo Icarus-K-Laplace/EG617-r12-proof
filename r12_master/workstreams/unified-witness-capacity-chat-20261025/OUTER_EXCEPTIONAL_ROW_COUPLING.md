@@ -254,3 +254,59 @@ For a selected component \(K_\ell=\{b\}\cup Q\), with \(b\in B\cup\{p\}\) and \(
 \{b\}\cup Q\cup\{x_0(\ell),\ldots,x_6(\ell)\}.
 \]
 This is a genuine labelled extension of a selected four-point witness, not merely an unlabelled clique-packing count. It remains a branch certificate rather than a contradiction: a monochromatic K12 is allowed by the original coloring contract, and aggregate budgets do not force any exact color to have \(P_C\ge49\).
+
+
+## 11. E407/E408 top-cell-A interface: exact-color factorization across \(W\sqcup O\)
+
+This section is conditional on the sibling theorem in front_end/T61_H13_FULL_COLOR_DEGREE_AND_ANTINEIGHBORHOOD.md, Sections 5–6: \(|W|=23\), \(|O|=38\), \(e_F(W)=132\), and every non-target color restricts to a near-perfect matching of 11 edges on \(W\). It is also conditional on front_end/E408_EXACT129_BLOCKER_DUPLICATE_THEOREM.md, which classifies every exact-129 color as ten isolated \(K_5\) components plus an 11-vertex gadget \(U\), with \(\alpha(U)=2\), \(\omega(U)=5\), and \(e(U)=29\).
+
+### Theorem 11.1 (exact intersection pattern)
+
+For every exact-129 color \(C\), its ten isolated \(K_5\) components meet \(W\) in one of exactly two ways:
+
+- **Type A:** every component has two vertices in \(W\); \(U\cap W\) has three vertices and \(C[U\cap W]\) is one edge plus an isolated vertex.
+- **Type B:** nine components have two vertices in \(W\), one component has one vertex in \(W\); \(U\cap W\) has four vertices and \(C[U\cap W]\) is a perfect matching of two edges.
+
+In particular, every one of the ten \(K_5\) components meets \(W\), and at least nine of them contribute a component edge to the near-perfect matching \(C[W]\).
+
+**Proof.** Since \(C[W]\) is a matching, each \(K_5\) component meets \(W\) in at most two vertices. The ten components therefore cover at most 20 vertices of \(W\), so \(|U\cap W|\ge3\). But \(C[U\cap W]\) is also a matching and \(\alpha(U)\le2\); a matching on at least five vertices has an independent set of size at least three. Thus \(|U\cap W|\le4\). Hence \(|U\cap W|\in\{3,4\}\), and the ten component intersections sum to 20 or 19. With ten summands each at most two, the only profiles are \(2^{10}\) and \(2^9,1\). The component edges account for 10 or 9 of the 11 edges in \(C[W]\), respectively; the remaining 1 or 2 edges lie in \(U\cap W\), giving the stated matching profiles. \(\square\)
+
+### Theorem 11.2 (exact global cross-edge defect ledger)
+
+Let
+\[
+\kappa_v=d_F(v)-13,\qquad K_W=\sum_{w\in W}\kappa_w,
+\qquad t_C=e_C(O)-42.
+\]
+For every non-target color \(C\), \(t_C\ge0\): the 38-vertex graph \(C[O]\) has independence number at most 12, so Turán's bound gives \(e_C(O)\ge p_{12}(38)=42\).
+
+Let \(s_C=e_C(V(F))-129\), with \(\sum_Cs_C=411-E\). Because \(e_C(W)=11\),
+\[
+e_C(W,O)=129+s_C-11-(42+t_C)=76+s_C-t_C.
+\]
+On the target side,
+\[
+e_F(W,O)=\sum_{w\in W}d_F(w)-2e_F(W)
+=13\cdot23+K_W-264=35+K_W.
+\]
+Since \(W\times O\) has \(23\cdot38=874\) pairs, summing the non-target cross edges and equating the two ledgers yields
+\[
+\boxed{\sum_Ct_C=K_W+411-E-3.}
+\]
+Equivalently,
+\[
+\boxed{\sum_Ct_C=K_W\quad(E=408),\qquad
+\sum_Ct_C=K_W+1\quad(E=407).}
+\]
+
+### Corollary 11.3 (exact-color defect cap and equality profile)
+
+For an exact-129 color \(C\), the intersection types in Theorem 11.1 imply
+\[
+\boxed{0\le t_C\le6.}
+\]
+In Type A, the ten \(K_5\) components contribute 30 edges inside \(O\), while \(U\cap W\) has one edge and its three vertices each have degree at least four in \(U\); therefore at least ten \(U\)-edges cross from \(W\cap U\) to \(O\cap U\), so \(e_C(O)\le30+(29-1-10)=48\). In Type B, the components contribute \(9\binom32+\binom42=33\) edges inside \(O\); the four vertices of \(U\cap W\) each need at least three cross-neighbors, giving \(e_C(O)\le33+(29-2-12)=48\). Combine this with \(e_C(O)\ge42\).
+
+If \(t_C=0\), equality in Turán's bound forces \(C[O]\) to be a disjoint union of ten \(K_3\)'s and two \(K_4\)'s. This is consistent with either Type A (ten component triangles plus two gadget \(K_4\)'s) or Type B (nine component triangles, one component \(K_4\), and a gadget \(K_4\cup K_3\)).
+
+**Scope warning.** The defect identity is an exact global budget, not yet a contradiction. It says the total excess of the eleven induced graphs \(C[O]\) above their 42-edge Turán floor equals the target degree excess on \(W\) (plus one for E407). The next step must exploit the simultaneous edge-disjoint \(K_3/K_4\)-partition structure when many \(t_C=0\), or prove that the positive \(t_C\)'s cannot be distributed as the identity allows.
