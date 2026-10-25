@@ -335,3 +335,23 @@ Added DELTA14_EPS1_K3K5K5K5_NO_CROSS_EDGE.md and verify_delta14_eps1_k3k5_profil
 - \(\delta=14\), non-four-partite: OPEN.
 - \(\delta\le13\): OPEN.
 - Five E407 shell templates and EG617(r=12): **OPEN / NOT_CERTIFIED**.
+
+
+## 2026-10-25 — Round 10: \(\delta=14,\epsilon_U=0\), cross-edge between two \(K_5\)'s excluded
+
+### New theorem
+
+For \(H[W]=K_3\cup K_5^3\) with the unique cross-edge joining two \(K_5\) components \(P,Q\), any \(u\in U\) has at most six W-neighbours. If it were not complete to any W-component, an independent transversal could be blocked only by choosing both endpoints of the cross-edge; this would force \(u\) to have at least \(4+4=8\) W-neighbours. Therefore the four component common-neighbour sets cover \(U\).
+
+The reverse-saturation lemma and excess budget give
+\[
+|S_T|\le9+E_T+\mathbf1_{\{E_T=0\}},\quad
+|S_P|\le4+E_P,\quad |S_Q|\le4+E_Q,\quad |S_R|\le5+E_R,
+\]
+where \(E_T+E_P+E_Q+E_R=4\). Hence the total cover capacity is at most 27, contradicting \(|U|=29\). Full proof: DELTA14_EPS0_K3K5X1_K5K5_EDGE.md.
+
+Arithmetic replay: verify_delta14_k5_cross_edge_capacity.py checked all 35 integer excess profiles; the maximum bound is 27.
+
+### Frontier
+
+The only remaining \(\delta=14,\epsilon_U=0\), four-partite W-profile is \(K_3\cup K_5^3\) with the unique cross-edge joining \(K_3\) to a \(K_5\). That endpoint placement remains OPEN. The \(\epsilon_U=1,2\), non-four-partite, and \(\delta\le13\) cases remain open. E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
