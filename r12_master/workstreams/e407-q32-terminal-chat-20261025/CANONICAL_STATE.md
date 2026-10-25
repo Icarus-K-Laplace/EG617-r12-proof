@@ -36,7 +36,7 @@ These are the latest heads observed in the repository at the time of this update
 | \(\delta=16\) four-partite extreme | EXCLUDED by endpoint-split analysis and forbidden \(K_{12}\) |
 | \(\delta=15\) four-partite | EXCLUDED by W-profile saturation and forbidden \(K_{12}\) |
 | \(\delta=15\) non-four-partite | EXCLUDED under KP equality + core-to-\(W\) degree contradiction |
-| \(\delta=14\) four-partite | \(\epsilon_U=0,1\): all W profiles excluded (the \(\epsilon_U=1\) profile list is certified via Brouwer); \(\epsilon_U=2\) open |
+| \(\delta=14\) four-partite | \(\epsilon_U=0,1,2\): all W profiles excluded; \(\epsilon_U=1\) exhaustiveness uses Brouwer, \(\epsilon_U=2\) is Turán equality |
 | \(\delta\le14\) non-four-partite | OPEN |
 | E407 Q32 overall | OPEN / NOT_CERTIFIED |
 | EG617(r=12) | OPEN / NOT_CERTIFIED |
@@ -104,3 +104,13 @@ The local arithmetic verifier checks exact ledgers and the finite excess inequal
 - Excluded: \(K_3\cup K_5^3\) for \(\epsilon_U=1,2\); \(K_4^3\cup K_6\) for \(\epsilon_U=1\); \(K_4\cup K_4\cup K_5\cup K_5\) for \(\epsilon_U=2\).
 - The proofs use the generalized reverse-saturation threshold \(d_H(w,U)\ge9+m-\epsilon_U\), where \(m\) is the smallest W-component size, and component-specific label-load bounds. Arithmetic replay: verify_delta14_epsilonU1_2_profiles.py.
 - The only \(\delta=14\) four-partite W-profile still open is \(\epsilon_U=1\), \(H[W]=K_4\cup K_4\cup K_5\cup K_5\) with one cross-edge. The \(\delta=14\) non-four-partite branch and all \(\delta\le13\) cases remain open; E407 Q32 and EG617 remain OPEN / NOT_CERTIFIED.
+
+
+## New Round 14 result — close the full \(\delta=14,\epsilon_U=2\) four-partite row
+
+- Added DELTA14_EPS2_W_PROFILE_CLASSIFICATION.md. The exact ledger gives \(e(H[W])=34-\epsilon_U=32\); since \(\alpha(H[W])\le4\), Turán's bound is met with equality. Thus \(H[W]\) must be \(K_4\cup K_4\cup K_5\cup K_5\) with no cross-edges.
+- The retained common-neighbour capacity proof in DELTA14_EPSU1_2_ANTICOMPL_COMPONENT_PROFILES.md, Section 5, applies to this exact profile and gives \(\sum_s|S_s|\le24<29\). Hence the unique profile is impossible.
+- Added verify_delta14_eps2_w_profile.py; exact arithmetic replay passed.
+- Audit note: Section 3 of DELTA14_EPSU1_2_ANTICOMPL_COMPONENT_PROFILES.md mentions \(K_3\cup K_5^3\) for \(\epsilon_U=2\), but that graph has 33 edges and violates the exact \(e(H[W])=32\) ledger. It is not used as an admissible profile.
+- The full \(\delta=14\), four-partite branch is now EXCLUDED for every allowed \(\epsilon_U\in\{0,1,2\}\), under the retained core/witness contracts and the stated Turán/Brouwer dependencies.
+- Still open: \(\delta=14\) non-four-partite and \(\delta\le13\). E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
