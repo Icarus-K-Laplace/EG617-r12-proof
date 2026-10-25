@@ -142,3 +142,10 @@ Dependencies and limitations:
 - The triangle-free bound uses Brouwer's second-Turan theorem.
 - The integer verifier checks only the arithmetic enumeration, not graph realization or the external theorem.
 - The five E407 shell templates, the low-\(\delta\) cases, the original \(K_{145}\)-to-T61 bridge, and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
+
+
+## 8. Correction: the 15-vertex local obstruction is realizable
+
+The proposed target in Section 7—proving that no triangle-free, non-bipartite, triangle-saturated 15-vertex graph with 49 edges admits the matching structure—is now known to be false. DELTA14_SATURATED_LOCAL_MODEL.md gives an explicit blow-up of \(C_5\) with part sizes \((5,5,2,1,2)\), together with a verified cell-to-edge bijection and the third coloring \(\kappa=x+y\pmod7\). It realizes the 29-point saturated graph and all 49 witness sets, partitioned into seven classes of seven disjoint witnesses.
+
+The correct next target is the extension problem: can this local \(H[U]\) be completed by \(W\) and the shell rows while satisfying the exact degree, clique, independence, and row-label constraints? The local model does not provide such a completion and is not a global counterexample.
