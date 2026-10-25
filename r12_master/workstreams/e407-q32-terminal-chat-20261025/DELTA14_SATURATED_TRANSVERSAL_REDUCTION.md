@@ -1,7 +1,7 @@
 # E407 Q32: independent-transversal reduction of the saturated \(\delta=14\) branch
 
 Date: 2026-10-25  
-Status: **PROVED_CONDITIONAL strict reduction; not a full core or EG617 contradiction.**
+Status: **PROVED_CONDITIONAL for the explicit C5-blow-up candidate only; not a universal saturated-branch theorem.**
 
 Dependencies: the retained 47-core / 49-witness contract; the saturated-local-model reduction in DELTA14_SATURATED_ALPHA_CRITICAL_REDUCTION.md (whose component-count step depends on Didin's 2026 preprint theorem); and Brouwer's second Turán theorem for non-four-partite \(K_5\)-free graphs.
 
@@ -18,11 +18,13 @@ e(H[U])=98,\qquad e(H[W])=34-\epsilon_U,\qquad
 0\le\epsilon_U:=\sum_{u\in U}(d_H(u)-12)\le2.
 \]
 
-The saturated-local-model reduction forces
+For this candidate-specific theorem, assume the local graph is exactly
 \[
 H[U]=K_7^A\ \dot\cup\ K_7^B\ \dot\cup\ \overline J,
 \]
-where \(J\) is a 15-vertex triangle-free, non-bipartite, triangle-saturated graph with 49 edges. In the explicit and now verified local realization, \(J\) is the \(C_5\)-blow-up with part sizes \((5,5,2,1,2)\). Its singleton vertex \(d_0\) has \(d_J(d_0)=4\), hence
+where \(J\) is the explicitly verified \(C_5\)-blow-up with part sizes \((5,5,2,1,2)\). This is one realizable local model, not a classification of every graph \(J\) allowed by the saturated-branch reduction. The broader reduction only gives a 15-vertex triangle-free, non-bipartite, triangle-saturated graph with 49 edges; it does **not** yet prove that every such \(J\) is this blow-up.
+
+The singleton vertex \(d_0\) of this explicit \(J\) has \(d_J(d_0)=4\), hence
 \[
 d_{H[U]}(d_0)=14-d_J(d_0)=10.
 \]
@@ -79,41 +81,6 @@ If \(\epsilon_U=0\), then \(\epsilon_{d_0}=0\), and (1) gives \(|N_W(d_0)|=2\). 
 
 Therefore:
 \[
-\boxed{\text{The saturated non-four-partite }\delta=14,\ \epsilon_U=0\text{ branch is excluded.}}
-\]
-
-## 5. Exact residual at \(\epsilon_U=1\)
-
-Here \(e(\overline{H[W]})=120\), so the only part-size profiles are
-\[
-(3,5,5,5),\quad (4,4,4,6),\quad (4,4,5,5),
-\]
-with cross-edge counts \(0,0,1\), respectively.
-
-In the latter two profiles every part has size at least four and there is at most one cross-edge. The strengthened transversal lemma shows that every set of at most three vertices misses an independent transversal. But (1) gives \(|N_W(d_0)|=2+\epsilon_{d_0}\le3\), impossible.
-
-Hence the only remaining possibility is
-\[
-\boxed{
-\epsilon_U=1,\quad H[W]=K_3\dot\cup K_5\dot\cup K_5\dot\cup K_5,\quad
-\epsilon_{d_0}=1,\quad N_W(d_0)=V(K_3).
-}
-\]
-The equality \(N_W(d_0)=V(K_3)\) follows because in a disjoint union of cliques a set hits every independent transversal exactly when it contains an entire part; a three-set can only be the \(K_3\) part.
-
-## 6. Exact residual at \(\epsilon_U=2\)
-
-Here \(e(\overline{H[W]})=121=t_4(18)\). Turán equality forces the balanced four-partition \((4,4,5,5)\), with no cross-edges. Every independent transversal is a choice of one vertex from each part, so its transversal number is four. Equation (1) gives \(|N_W(d_0)|=2+\epsilon_{d_0}\le4\), hence equality is forced:
-\[
-\boxed{
-\epsilon_U=2,\quad H[W]=K_4\dot\cup K_4\dot\cup K_5\dot\cup K_5,\quad
-\epsilon_{d_0}=2,\quad N_W(d_0)=V(K_4)
-}
-\]
-for one of the two \(K_4\) components.
-
-## 7. Conclusion and scope
-
-The saturated non-four-partite \(\delta=14\) branch is now reduced to only two labelled extension terminals, one for \(\epsilon_U=1\) and one for \(\epsilon_U=2\); the \(\epsilon_U=0\) branch is eliminated. This is **not** a full exclusion of the saturated branch, not a closure of any of the five shell templates, and not a proof of EG617(\(r=12\)).
+\boxed{\text{For this **explicit C5-blow-up local candidate**, no full-core extension exists with \(\epsilon_U=0\); if \(\epsilon_U=1\) or \(2\), the W-side must have one of the two exact profiles above. This does **not** exclude the general saturated non-four-partite branch, because other admissible graphs \(J\) have not been classified or ruled out. It also does not close any of the five shell templates or prove EG617(\(r=12\)).
 
 The result is conditional on the retained local-model reduction and Brouwer's second-Turán theorem. The theorem does not claim that either residual terminal is realizable.

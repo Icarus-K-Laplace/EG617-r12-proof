@@ -564,14 +564,12 @@ Status remains OPEN / NOT_CERTIFIED for the saturated terminal, E407 Q32, and EG
 Re-read the live sibling branch head 6f2a350d043aed41b8bb551449cae54a159a3cfe. The E408 Q33 workstream now conditionally establishes the exact-color cap \(P_C\le49\) (equivalently \(R_C\ge13\)); \(P_C\le48\) remains NOT CERTIFIED. This helps the global sprint but does not close the E408 Q33 terminal and does not directly close the E407 \(\delta=14\) local-model extension.
 
 
-## 2026-10-25 — Round 19: independent-transversal reduction for saturated delta-14
+## 2026-10-25 — Round 19: candidate-specific independent-transversal reduction (scope audited)
 
-Added DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md and its standard-library verifier.
+Added DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md and its standard-library verifier. Independent replay passed: DELTA14_SATURATED_TRANSVERSAL_REDUCTION_OK.
 
-The new argument uses the forced local model \(H[U]=K_7\dot\cup K_7\dot\cup\overline J\), where the singleton vertex \(d_0\in J\) has \(d_J(d_0)=4\) and hence \(d_{H[U]}(d_0)=10\). Thus \(d_H(d_0,W)=2+\epsilon_{d_0}\).
+**Scope correction:** the proof uses the singleton \(d_0\) of the explicit C5-blow-up \(J\) from DELTA14_SATURATED_LOCAL_MODEL.md, which has \(d_J(d_0)=4\) and \(d_{H[U]}(d_0)=10\). The broader saturated-local-model reduction does not prove that every admissible \(J\) is isomorphic to this blow-up. The theorem is therefore conditional on this explicit candidate, not a universal exclusion of the saturated branch.
 
-For every \(\epsilon_U\in\{0,1,2\}\), the complement \(\overline{H[W]}\) is \(K_5\)-free with \(119+\epsilon_U\) edges. Brouwer's second-Turán bound forces it to be four-partite. The resulting partition of \(W\) has four clique parts, each of size at least three, and at most \(2-\epsilon_U\) cross edges in \(H[W]\).
+For the explicit candidate only, the exact W ledger and Brouwer's second-Turán theorem force four clique parts of size at least three with at most \(2-\epsilon_U\) cross edges. Independent-transversal capacity rules out \(\epsilon_U=0\). The \(\epsilon_U=1\) and \(\epsilon_U=2\) cases reduce respectively to \(K_3\cup K_5^3\) with \(d_0\) complete to \(K_3\), and \(K_4^2\cup K_5^2\) with \(d_0\) complete to a \(K_4\). These are still open extension terminals.
 
-A union-bound transversal lemma proves that any set of at most two W-vertices misses an independent transversal under these conditions. Hence \(\epsilon_U=0\) is impossible. At \(\epsilon_U=1\), the only surviving profile is \(K_3\cup K_5^3\) with \(d_0\) complete to the \(K_3\). At \(\epsilon_U=2\), Turán equality forces \(K_4^2\cup K_5^2\), and \(d_0\) must be complete to one \(K_4\). This is a strict reduction, not a contradiction for the two remaining terminals.
-
-Verifier result: DELTA14_SATURATED_TRANSVERSAL_REDUCTION_OK. Dependencies include the Didin 2026 preprint used by the saturated local-model reduction and Brouwer's second-Turán theorem; the Didin proof is not independently audited here. The five E407 shell templates, \(\delta\le13\), and the original \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+The general saturated branch remains OPEN because other admissible \(J\) graphs have not been classified. The five E407 shell templates, \(\delta\le13\), and the original \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.

@@ -2,8 +2,9 @@
 """Arithmetic verifier for DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md.
 
 Standard-library only. Checks the exact four-part partition profiles and
-replays the union-bound transversal estimates. It does not verify Didin's
-external theorem or realize a full 47-vertex core.
+replays the union-bound transversal estimates for the explicit C5-blow-up
+candidate. It does not classify all saturated J graphs, verify external
+extremal theorems, or realize a full 47-vertex core.
 """
 from itertools import combinations
 

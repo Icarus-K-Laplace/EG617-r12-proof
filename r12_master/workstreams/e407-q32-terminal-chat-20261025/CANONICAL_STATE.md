@@ -21,7 +21,7 @@ These are the latest heads observed in the repository at the time of this update
 - The exact ledger gives \(3\le\delta\le16\), \(\delta+\epsilon_U\le16\), and the sibling transversal/excess lemma gives \(\epsilon_U+2\delta\ge9\).
 - The \(\delta=16\) four-partite branch is **EXCLUDED**. The 4+1 and 3+2 endpoint splits violate the excess budget; the 5+0 split forces its endpoint \(K_4\) to be complete to the 8-part, creating a forbidden \(K_{12}\). See FOUR_PARTITE_TERMINAL.md and DELTA16_K12_CLIQUE_OBSTRUCTION.md for the standalone one-exception proof.
 - The \(\delta=15\) four-partite branch is **EXCLUDED** in DELTA15_FOUR_PARTITE_TERMINAL.md: after eliminating three W-profiles, the last \(K_3\cup K_5^3\) profile forces \(k_A=k_B=k_C=5\), so any cross-edge endpoint has a forbidden \(K_{12}\) neighbourhood.
-- The \(\delta=14\) non-four-partite augmentable-edge branch is **excluded**; the saturated branch has \(\epsilon_U=0\) excluded and \(\epsilon_U=1,2\) reduced to two exact W-extension terminals by DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md.
+- The \(\delta=14\) non-four-partite augmentable-edge branch is **excluded**. For the explicit C5-blow-up local candidate only, DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md excludes \(\epsilon_U=0\) and reduces \(\epsilon_U=1,2\) to two exact W-extension terminals. The general saturated branch remains OPEN because the local reduction does not force every admissible J to be this blow-up.
 - The \(\delta=15\) non-four-partite branch is **excluded** under the retained core/witness contract: Kang–Pikhurko equality reduces it to a balanced \((7,7,7,7)\) base, and the exceptional vertices \(x,y\) have incompatible required degrees into \(W\). The full reduction and contradiction are in DELTA15_SECOND_TURAN_PACKING.md.
 - The final \(\delta=15\) contradiction compares \(d_H(x,W)=a-1+\epsilon_x\) and \(d_H(y,W)=6-a+\epsilon_y\). Whole-part saturation in \(W\) forces incompatible lower bounds on \(a\), for both \(\epsilon_U=0\) and \(\epsilon_U=1\).
 - In that case, \(U\)-part sizes are \(7,7,7,8\), \(H[W]=K_5\cup K_5\cup K_4\cup K_4\), and the five cross edges in \(H[U]\) form a matching between the 8-part and the three 7-parts.
@@ -39,7 +39,7 @@ These are the latest heads observed in the repository at the time of this update
 | \(\delta=15\) four-partite | EXCLUDED by W-profile saturation and forbidden \(K_{12}\) |
 | \(\delta=15\) non-four-partite | EXCLUDED under KP equality + core-to-\(W\) degree contradiction |
 | \(\delta=14\) four-partite | \(\epsilon_U=0,1,2\): all W profiles excluded; \(\epsilon_U=1\) exhaustiveness uses Brouwer, \(\epsilon_U=2\) is Turán equality |
-| \(\delta=14\) non-four-partite, saturated \(L\) | \(\epsilon_U=0\) EXCLUDED by independent-transversal capacity; \(\epsilon_U=1\) reduced to \(K_3\cup K_5^3\) with \(d_0\) complete to \(K_3\); \(\epsilon_U=2\) reduced to \(K_4^2\cup K_5^2\) with \(d_0\) complete to a \(K_4\) |
+| \(\delta=14\) non-four-partite, saturated \(L\) | OPEN generally; for the explicit C5-blow-up local candidate, \(\epsilon_U=0\) is excluded and \(\epsilon_U=1,2\) reduce to two exact W terminals |
 | \(\delta\le13\) non-four-partite | OPEN |
 | E407 Q32 overall | OPEN / NOT_CERTIFIED |
 | EG617(r=12) | OPEN / NOT_CERTIFIED |
@@ -143,7 +143,7 @@ The verifier enumerates all integer values of \(a,\epsilon_x,\epsilon_y,I_x,I_y\
 **Status:** PROVED_CONDITIONAL strict reduction for the augmentable-edge subcase. Still OPEN: eliminate the two residual terminals above, or prove that \(L\) must have an augmentable nonedge; separately handle the case where \(L\) is \(K_5\)-saturated. The \(\delta\le13\) branch and the five shell templates remain open; E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
 
 
-## Round 16 — close the \(\delta=14\) augmentable-edge branch
+- The \(\delta=14\) non-four-partite augmentable-edge branch is **excluded**. For the explicit C5-blow-up local candidate only, DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md excludes \(\epsilon_U=0\) and reduces \(\epsilon_U=1,2\) to two exact W-extension terminals. The general saturated branch remains OPEN because the local reduction does not force every admissible J to be this blow-up.
 
 Added DELTA14_NONPARTITE_AUGMENTABLE_TERMINAL_CLOSURE.md and verify_delta14_augmentable_terminal.py.
 
@@ -193,14 +193,10 @@ This **invalidates the proposed local-only contradiction target** from Round 17.
 - This is a separate seven-block/color-factor constraint and has not been imported as an E407 closure.
 
 
-## Round 19 — independent-transversal reduction of the saturated delta-14 branch
+## Round 19 — candidate-specific independent-transversal reduction
 
-Added DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md and verify_delta14_saturated_transversal_reduction.py.
+Added DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md and verify_delta14_saturated_transversal_reduction.py. The theorem is **conditional on the explicit C5-blow-up local candidate** in DELTA14_SATURATED_LOCAL_MODEL.md. It is not universal over all saturated J graphs.
 
-- The forced saturated local model has a distinguished vertex \(d_0\in U\) with \(d_{H[U]}(d_0)=10\), hence \(d_H(d_0,W)=2+\epsilon_{d_0}\).
-- Brouwer's second-Turán bound forces \(\overline{H[W]}\) to be four-partite because it is \(K_5\)-free with \(119+\epsilon_U\) edges, above the non-four-partite cap 118. The clique-part sizes are all at least three and the number of cross edges in \(H[W]\) is at most \(2-\epsilon_U\).
-- New independent-transversal lemma: any two vertices of \(W\) miss an independent transversal of the four clique parts when each part has size at least three and there are at most two cross edges. Therefore \(\epsilon_U=0\) is impossible.
-- For \(\epsilon_U=1\), all profiles with minimum part size at least four are excluded because at most one cross edge cannot be hit by a three-set; the sole terminal is \(H[W]=K_3\cup K_5^3\), \(\epsilon_{d_0}=1\), and \(N_W(d_0)\) is exactly the \(K_3\).
-- For \(\epsilon_U=2\), Turán equality forces \(H[W]=K_4^2\cup K_5^2\); the transversal number is four, so \(\epsilon_{d_0}=2\) and \(N_W(d_0)\) is exactly one \(K_4\).
-- The standard-library verifier checks the integer partition table and union-bound estimates. It is not a full graph-realization certificate.
-- Status: **PROVED_CONDITIONAL strict reduction**. The saturated \(\delta=14\) branch remains OPEN in the two \(\epsilon_U=1,2\) terminals; all five shell templates and the \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+For that candidate, the distinguished singleton \(d_0\in J\) has \(d_J(d_0)=4\), hence \(d_{H[U]}(d_0)=10\). Brouwer's second-Turán bound forces \(\overline{H[W]}\) to be four-partite, with four clique parts of size at least three and at most \(2-\epsilon_U\) cross edges in \(H[W]\). Independent-transversal capacity excludes this candidate when \(\epsilon_U=0\); for \(\epsilon_U=1,2\), it forces the two stated W profiles and \(d_0\)'s complete neighborhood into the smallest clique component.
+
+The saturated-branch reduction has **not** shown that every allowed \(J\) is this blow-up. Thus the general saturated branch, the five shell templates, \(\delta\le13\), and the original \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.

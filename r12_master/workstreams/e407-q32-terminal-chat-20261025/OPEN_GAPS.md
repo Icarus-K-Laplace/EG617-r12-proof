@@ -24,7 +24,7 @@ These results remain conditional on the upstream 61-point residual/T61 bridge, t
 
 ### Gap A — \(\delta=14\), non-four-partite \(L=\overline{H[U]}\)
 
-Here \(|U|=29\), \(e(H[U])=98\), and \(e(L)=308\). The Turán number is \(t_4(29)=315\); Brouwer's non-four-partite upper bound is 309. The augmentable-edge subcase is now excluded by DELTA14_NONPARTITE_AUGMENTABLE_TERMINAL_CLOSURE.md. The sole remaining possibility was that \(L\) is \(K_5\)-saturated. The local-model reduction plus DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md now excludes its \(\epsilon_U=0\) branch and reduces \(\epsilon_U=1,2\) to two exact terminals: \(K_3\cup K_5^3\) with \(d_0\) complete to \(K_3\), or \(K_4^2\cup K_5^2\) with \(d_0\) complete to a \(K_4\). These two extensions remain OPEN.
+Here \(|U|=29\), \(e(H[U])=98\), and \(e(L)=308\). The Turán number is \(t_4(29)=315\); Brouwer's non-four-partite upper bound is 309. The augmentable-edge subcase is now excluded by DELTA14_NONPARTITE_AUGMENTABLE_TERMINAL_CLOSURE.md. The remaining saturated case is still OPEN. DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md gives a strict extension reduction **only for the explicit C5-blow-up candidate** in DELTA14_SATURATED_LOCAL_MODEL.md: its \(\epsilon_U=0\) extension is impossible, and \(\epsilon_U=1,2\) force two exact W terminals. The local-model reduction does not prove that every admissible 15-vertex saturated graph \(J\) is this blow-up. The next general theorem must classify the admissible \(J\)'s or derive a degree/transversal property that holds for all of them.
 
 ### Gap B — \(\delta\le13\)
 
@@ -54,12 +54,7 @@ The inherited file DELTA14_EPSU1_2_ANTICOMPL_COMPONENT_PROFILES.md discusses \(K
 
 ## 5. Next highest-leverage target
 
-**Close the two residual saturated-core extensions at \(\delta=14\): (i) \(\epsilon_U=1\), \(H[W]=K_3\cup K_5^3\), \(N_W(d_0)=V(K_3)\); (ii) \(\epsilon_U=2\), \(H[W]=K_4^2\cup K_5^2\), \(N_W(d_0)=V(K_4)\).** The \(\epsilon_U=0\) case is now excluded by independent-transversal capacity. After these are closed or classified, move to \(\delta\le13\) with a fresh exact ledger.
-
-After closing or rigidly classifying the saturated case, move to δ≤13 using a fresh exact ledger. Do not reuse the δ=14 W-profile table without re-deriving its hypotheses. The five shell templates A–E and the upstream K145-to-T61 bridge remain independent obligations.
-
-Until these branches and the T61 bridge are certified, E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
-
+**First close the model-classification gap:** determine whether every 15-vertex, 49-edge, triangle-free, non-bipartite triangle-saturated \(J\) compatible with the two orthogonal near-perfect-matching decompositions must have a degree-4 vertex or be isomorphic to the explicit \((5,5,2,1,2)\) C5-blow-up. Until that is proved, do not promote the candidate-specific transversal result to the entire saturated branch. In parallel, finish the two explicit-candidate extension terminals \(\epsilon_U=1,2\). Then move to \(\delta\le13\) with a fresh exact ledger.
 
 ## Round 14 update — current live frontier
 
@@ -98,10 +93,8 @@ DELTA14_SATURATED_LOCAL_MODEL.md constructs and verifies a genuine local realiza
 The remaining task is to determine whether this local model—or any other surviving \(\delta=14\) model—can extend to the required 18-vertex \(W\), 47-vertex core, and shell-row labels. In the explicit model, if all degree excess lies in \(W\), the required \(U\)-to-\(W\) degrees are \(6^{14},5^{10},4^4,2^1\), totaling 152. The exact core independence/clique conditions and five shell templates must be enforced simultaneously. No global completion or counterexample has been constructed.
 
 
-## Round 19 update — independent-transversal closure of the zero-excess saturated branch
+## Round 19 scope correction — explicit local candidate only
 
-DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md proves that the forced local model contains \(d_0\in U\) with \(d_{H[U]}(d_0)=10\). Brouwer's second-Turán bound forces \(H[W]\) to be four clique parts of size at least three with at most \(2-\epsilon_U\) cross edges. The independent-transversal lemma rules out \(\epsilon_U=0\). It further forces:
-- \(\epsilon_U=1\): \(H[W]=K_3\cup K_5^3\), \(d_0\) has excess one and is complete to the \(K_3\);
-- \(\epsilon_U=2\): \(H[W]=K_4^2\cup K_5^2\), \(d_0\) has excess two and is complete to one \(K_4\).
-
-The saturated branch is **not closed**; these two exact W-extension terminals remain.
+The transversal argument depends on the singleton \(d_0\) of the explicit C5-blow-up J, with \(d_J(d_0)=4\). That local graph is a verified realization, not a classification theorem for all saturated J graphs. Therefore:
+- candidate-specific result: \(\epsilon_U=0\) is impossible; \(\epsilon_U=1,2\) force the stated W profiles;
+- general saturated non-four-partite \(\delta=14\) branch: **OPEN** until the admissible J family is classified or the required low-degree property is proved universally.
