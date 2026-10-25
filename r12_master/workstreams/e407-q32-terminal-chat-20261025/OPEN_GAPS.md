@@ -118,4 +118,11 @@ The proof uses the AES equality case at minimum degree 2n/5 and the Brouwer/Kang
 
 DELTA13_FOUR_PARTITE_NO_CROSS_W_PROFILES.md closes all four no-cross-edge W profiles compatible with \(\delta=13\), \(\epsilon_U\in\{1,2,3\}\), under the four-partite U-complement contract. The proof combines the 49 transversal witnesses, the exact eight U-cross-edge ledger, a reverse-saturation lemma, and componentwise common-neighbour capacities. The arithmetic verifier independently checks the profile list and capacity arithmetic.
 
-The next high-leverage target is the \(\delta=13\) four-partite U branch with W-cross-edges, starting with \(\epsilon_U=1\) and its one-/two-cross-edge W profiles. Do not claim the entire \(\delta=13\) row is closed.
+Round 24 also excludes the \(\delta=13,\epsilon_U=1) profile (K_3cup3K_5) with one W-cross-edge. The next target is the remaining (epsilon_U=1) profiles: (3K_4cup K_6) plus one edge and (2K_4cup2K_5) plus two edges. Then handle the (epsilon_U=2) ((4,4,5,5))-plus-one-edge profile, (epsilon_U=0), non-four-partite (U)-complements, and (deltale12). Do not claim the entire (delta=13) row is closed.
+
+
+## Round 24 update — delta-13 one-cross-edge profile
+
+DELTA13_EPS1_K3K5K5K5_ONE_CROSS_EDGE.md excludes \(H[W]=K_3\dot\cup3K_5\) plus one edge for \(\delta=13,\epsilon_U=1\), under the four-partite-U contract. The exact transversal argument permits at most one nonsaturated U-vertex; the common-neighbour capacity sum is at most 26, while at least 28 U-vertices must be covered.
+
+The immediate next target is the remaining \(\epsilon_U=1\) profiles with W-cross-edges: \(3K_4\dot\cup K_6\) plus one edge and \(2K_4\dot\cup2K_5\) plus two edges.
