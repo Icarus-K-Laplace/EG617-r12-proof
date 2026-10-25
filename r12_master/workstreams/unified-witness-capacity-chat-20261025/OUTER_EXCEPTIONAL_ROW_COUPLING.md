@@ -236,25 +236,23 @@ Combining Theorem 9.1 with the near-complete matching theorem and the sibling \(
 This is a reusable branch certificate, not a contradiction: the original coloring contract permits disjoint monochromatic \(K_{12}\) cliques.
 
 
-## 10. Labelled selected-witness extension
+## 10. Labelled selected-witness extension — corrected transfer floor
 
-Let \(\mathcal W_C\) be any seven selected witness components certified by the exact-129 factor theorem. These are seven distinct members of the ten isolated K5 components. Let \(\mathcal K_C^*=\bigcap_{i=0}^6\mathcal K_i(C)\) be the set of components that are exact size-five blockers in every outer block.
+The seven graph-theoretic witnesses for an exact-129 color are not automatically seven distinct isolated \(K_5\) components. A labelled witness \(\{\lambda\}\cup Q\) is a C-colored \(K_5\); because \(C[R]\) consists of ten isolated \(K_5\) components plus the 11-point gadget \(U_C\), each witness lies either in an isolated component or wholly in \(U_C\). If it lies in \(U_C\), its four-set \(Q\) lies in \(U_C\). The seven selected four-sets are disjoint and \(|U_C|=11\), so at most two can lie in the gadget. Thus the proved transfer floor is
+\[
+|\mathcal W_C|\ge5,
+\]
+with at least four of the six B-labelled witnesses among these isolated components. A stronger seven-component transfer is not assumed.
 
-By Theorem 9.1,
+Let \(\mathcal K_C^*=\bigcap_{i=0}^6\mathcal K_i(C)\) be the components that are exact size-five blockers in every outer block. Theorem 9.1 gives \(|\mathcal K_C^*|\ge P_C-45\). Therefore
 \[
 |\mathcal W_C\cap\mathcal K_C^*|
-\ge |\mathcal W_C|+|\mathcal K_C^*|-10
-\ge 7+(P_C-45)-10
-=P_C-48.
+\ge \max(0,|\mathcal W_C|+|\mathcal K_C^*|-10)
+\ge \max(0,P_C-50).
 \]
-Thus, whenever \(P_C\ge49\), at least one of the seven selected witness components is common to all seven blocks and extends to a monochromatic K12. If \(P_C=50\), at least two selected witness components extend this way. If \(P_C\ge51\), the stronger all-ten-component alignment theorem applies.
+Consequently, the current label-transfer theorem guarantees that a selected witness component extends by exact blocker rows to a monochromatic \(K_{12}\) only when \(P_C\ge51\). At \(P_C=49\) or \(50\), this intersection bound gives zero. The earlier threshold \(P_C\ge49\) would require a separate theorem transferring seven selected witnesses to seven distinct isolated components.
 
-For a selected component \(K_\ell=\{b\}\cup Q\), with \(b\in B\cup\{p\}\) and \(Q\) its labelled core four-set, the resulting K12 is explicitly
-\[
-\{b\}\cup Q\cup\{x_0(\ell),\ldots,x_6(\ell)\}.
-\]
-This is a genuine labelled extension of a selected four-point witness, not merely an unlabelled clique-packing count. It remains a branch certificate rather than a contradiction: a monochromatic K12 is allowed by the original coloring contract, and aggregate budgets do not force any exact color to have \(P_C\ge49\).
-
+This is a labelled extension bound, not a contradiction: a monochromatic \(K_{12}\) is permitted by the original coloring contract, and no high-\(P_C\) exact color is forced by the aggregate scalar ledger alone.
 
 ## 11. E407/E408 top-cell-A interface: exact-color factorization across \(W\sqcup O\)
 
