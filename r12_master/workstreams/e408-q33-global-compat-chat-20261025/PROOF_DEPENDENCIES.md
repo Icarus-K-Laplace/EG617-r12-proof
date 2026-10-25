@@ -171,3 +171,27 @@ Proof audit notes:
 - The \(r_i=7\) profile is handled by counting full-component occurrences, component excess, and gadget incidences; cases with a gadget-only row having a size-four or size-five omitted clique use the extended alignment verifier.
 
 This theorem is a colorwise bound only. It does not close the aggregate eleven-color ledger, either 56-witness support geometry, E408 Q33, or EG617(r=12).
+
+
+## 15. Exclusion of the \(P_C=48\) boundary
+
+P48_BOUNDARY_EXCLUSION.md proves \(P_C\ne48\), hence \(P_C\le47\) and \(R_C\ge15\), conditional on the retained exact-129 factor theorem and seven-block equality contract.
+
+Dependencies:
+- Theorem 10.1 / Corollary 10.2: low-budget row normal form and forced same-component edges when \(r_i+r_j\le6\).
+- Theorem 11.1: exhaustive \(r_i=6\) row classification.
+- Theorem 12.1: the four exact 11-vertex gadget normal forms.
+- Lemmas 13.1–13.2: isolated monochromatic \(K_{12}\)'s and the duplicate-budget cap from disjoint block-transversal \(K_{12}\)'s.
+- GADGET_ALIGNMENT_VERIFIER.js / GADGET_ALIGNMENT_CERTIFICATE.md: the expanded finite alignment facts, exhaustively checked in 467,696 cases.
+
+The \(R_C=14\) positive seven-tuples are exhausted by:
+\[
+\begin{gathered}
+r_i\le5\ \text{for all }i;\quad
+(6,3,1^5),\quad(6,2,2,1^4),\\
+(7,2,1^5),\quad(8,1^6).
+\end{gathered}
+\]
+The all-low case uses the missing-edge dichotomy: a second full component costs at least five component incidences; without one, at least six gadget incidences must be covered. The remaining profiles use the \(r_i=6\) classification or full-component occurrence counts. The finite alignment checker intentionally does not assert universal alignment for the \(53+53\) pair/pair case or for a high \(K_4\) against a low \(53\) pair in isolation; both broader assertions have counterexamples, and the proof avoids them.
+
+This strengthens the colorwise conditional interface from \(P_C\le48\) to \(P_C\le47\), but it does not close the aggregate eleven-color ledger, the 56-witness global compatibility, E408 Q33, or EG617(r=12).
