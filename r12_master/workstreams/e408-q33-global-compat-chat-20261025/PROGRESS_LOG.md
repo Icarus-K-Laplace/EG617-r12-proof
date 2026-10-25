@@ -273,3 +273,26 @@ Cross-branch reconciliation also found a separate conditional sibling theorem ex
 - Active ledger update: e714b150a0d63fff1b7fa295fd8fa372e91c6950
 - Canonical state update: 14024726e042bd167ac6da444a8b0a61f0f6ecfd
 - Dependency map update: 5a01f8e4614e70fe4c3582b56d701ba6c7011471
+
+
+## 2026-10-25 continuation — exclude \(P_C=50\) profiles \((5,2,1^5)\) and \((4,3,1^5)\)
+
+Built on the corrected double-star method rather than the withdrawn isolation lemma.
+
+For \(P_C=50\), \(R_C=12\). The remaining high positive profiles after the \(r_i=6\) corner are \((5,2,1^5)\) and \((4,3,1^5)\). For each profile, choose one no-component row from each of the two non-\(r=1\) blocks and one from each of the five \(r=1\) blocks. The gadget verifier finds a \(K_5\) \(D\) disjoint from all selected omitted complements, with all pairwise intersections needed for the blocker argument, and an outside gadget vertex \(z\) that sees the high row and at least one more vertex of the \(K_{12}\). This yields \(d_C(z,K_{12})\ge2\), contradicting the correct \(d_C(z,K_{12})\le1\) bound.
+
+The component-incidence budget is the key proof safeguard. For a block with omitted-complement sizes \(s,t\), \(a=11-s-t\) and the total partial component incidence is at most \(r-a\). The only dangerous cases are when both non-\(r=1\) blocks have complement profile \((5,5)\); then the verifier exhausts all allocations \(p_1+p_2\le r_H-a_H\) and \(q_1+q_2\le r_Q-a_Q\), requiring an aligned choice with \(p_H+q_Q\le4\). All other complement-profile pairs have combined budget at most four already.
+
+Added R12_P50_REMAINING_HIGH_PROFILES_EXCLUSION.md and verify_p50_remaining_high_profiles.py. Independent replay passed:
+- \((5,2,1^5)\): 512,618 non-sensitive plus 150 sensitive base configurations;
+- \((4,3,1^5)\): 1,143,930 non-sensitive plus 150 sensitive base configurations;
+- 1,656,848 base configurations total, zero failures, with every sensitive case expanded over all component-incidence allocations.
+
+Combining this with the \(P_C=50,r_i=6\) theorem excludes three of the seven positive profiles summing to \(R_C=12\). Only \((4,2,2,2,1^3)\), \((3,3,2,1^4)\), \((3,2,2,2,2,1^2)\), and \((2^5,1^2)\) remain at \(P_C=50\). These profiles force ten component-labelled \(K_{12}\)'s, but the old edge-budget contradiction depended on the invalid isolation inference. The universal \(P_C\le49\) cap remains **NOT CERTIFIED**.
+
+### Commits
+- Remaining high-profile theorem: 4a1bd39ba4e08854fd35907d051a44451259b07c
+- Remaining high-profile verifier: d33fe53aa7cd63f1fff9cb337231e39e449b28d7
+- Active ledger update: 682ea469f41a31d07573ee6ec08c31f6ad27294e
+- Canonical state update: 455673197a67288520f8528c753a5aa5d5e5feec
+- Dependency map update: 087aba82e410b86b0750493d5835ea8da5d8800f
