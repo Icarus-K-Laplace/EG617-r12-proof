@@ -411,3 +411,19 @@ The crucial correction is the **double-star** condition. The verifier produces a
 A read-only sibling result also excludes the local corner \(P_C=49,\ r_i=6\) by the same double-star principle: workstream/r12-unified-witness-capacity-20261025, OUTER_EXCEPTIONAL_ROW_COUPLING.md §12, verifier blob 23cd4ef874faadbd5931c5e3553a1a55415c7a79. That result is local only.
 
 **Scope firewall:** these two local \(r_i=6\) corners do not establish the universal \(P_C\le49\) cap. The \(P_C=50\) profiles \((5,2,1^5)\) and \((4,3,1^5)\), the other \(P_C=49\) profiles, the claimed \(P_C=48\) boundary, and the aggregate eleven-color ledger remain open. The earlier single-edge proofs remain archived and uncertified.
+
+
+## 15. Repaired double-star exclusions for \(P_C=50\) profiles \((5,2,1^5)\) and \((4,3,1^5)\)
+
+The remaining two high profiles are now excluded in R12_P50_REMAINING_HIGH_PROFILES_EXCLUSION.md. The proof selects one no-component row from the \(r=5\) and \(r=2\) blocks, or from the \(r=4\) and \(r=3\) blocks, plus one no-component row from each of the five \(r=1\) blocks. The exact gadget verifier finds a \(K_5\) \(D\) disjoint from the selected row complements and an external gadget vertex \(z\) with at least two \(C\)-edges into the resulting \(K_{12}\).
+
+The only component-incidence-sensitive cases are when both selected row-complement pairs have profile \((5,5)\). The verifier enumerates every partial-component allocation \(p_1+p_2\le r_H-a_H\), \(q_1+q_2\le r_Q-a_Q\), and insists on an aligned row choice with \(p_H+q_Q\le4\), so no pair of selected rows can jointly cover a full isolated \(K_5\). All other complement-profile pairs have combined incidence budget at most four and are safe without a further split.
+
+The committed verifier verify_p50_remaining_high_profiles.py passed 1,656,848 base configurations (512,768 for \((5,2,1^5)\) and 1,144,080 for \((4,3,1^5)\)); the sensitive configurations were each expanded over every allowed component-incidence allocation. No failures occurred in the independent in-session replay.
+
+Combining Sections 14–15, the profiles \((6,1^6)\), \((5,2,1^5)\), and \((4,3,1^5)\) are excluded at \(P_C=50\). The only remaining \(P_C=50\) profiles have \(\max_i r_i\le4\):
+\[
+(4,2,2,2,1^3),\quad (3,3,2,1^4),\quad
+(3,2,2,2,2,1^2),\quad (2^5,1^2).
+\]
+These force ten component-labelled \(K_{12}\)'s but are not yet contradicted by a valid star-capacity argument. The universal \(P_C\le49\) cap remains **NOT CERTIFIED**.
