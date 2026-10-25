@@ -420,3 +420,41 @@ e_i+t_i=6-a\le5.
 Each of the ten component rows contains one full \(K_\ell\) and at most five additional vertices. For each label \(\ell\), its row and the six exact \(K_\ell\)-rows in the \(r_j=1\) blocks are forced C-adjacent by pairwise blocker compatibility, so they form a \(C\)-colored \(K_{12}\). If any of the ten high-block rows has an additional \(C\)-neighbor outside its full \(K_\ell\), this \(K_{12}\) has an external \(C\)-edge, contradicting Lemma 13.1. Otherwise all ten label-based \(K_{12}\)'s are isolated. Lemma 13.2 then gives \(P_C\le21(12-10)=42\), again contradicting \(P_C=50\). \(\square\)
 
 **Consequence.** The high-budget clique-packing corner in Corollary 11.3 is not merely compatible with the edge budget: its \(P_C=50,r_i=6\) branch is now excluded analytically. The \(P_C=49,r_i=6\) branch is not covered by Theorem 13.3; the current guaranteed packing there can leave nine isolated \(K_{12}\)'s, for which Lemma 13.2 only gives \(P_C\le63\).
+
+
+## 14. Global exact-129 duplicate cap: \(P_C\le49\)
+
+**Theorem 14.1.** Under the retained exact-129 and seven-block contracts, every exact-129 non-target color satisfies
+\[
+\boxed{P_C\le49.}
+\]
+
+**Proof.**
+
+**Step 1: \(P_C\ge51\) is impossible.** Here \(R_C=62-P_C\le11\). Since every \(r_i(C)\ge1\), for every pair \(i\ne j\),
+\[
+r_i(C)+r_j(C)\le R_C-5\le6.
+\]
+Corollary 10.2 therefore forces the two representatives of each component \(K_\ell\) to be \(C\)-adjacent across every pair of target blocks. Thus, for each of the ten labels \(\ell\), \(K_\ell\) plus its seven outer representatives forms a \(C\)-colored \(K_{12}\). If any representative row has a \(C\)-neighbor outside its \(K_\ell\), Lemma 13.1 is contradicted. Otherwise the ten \(K_{12}\)'s are isolated, and Lemma 13.2 gives \(P_C\le21(12-10)=42\). Either way, \(P_C\ge51\) is impossible.
+
+**Step 2: \(P_C=50\) with a block \(r_i=6\) is impossible.** This is Theorem 13.3.
+
+**Step 3: \(P_C=50\) with all \(r_i\le5\) is impossible.** Now \(R_C=12\). The only positive seven-tuples with sum 12 that have a pair sum exceeding six are
+\[
+(5,2,1,1,1,1,1),\qquad (4,3,1,1,1,1,1),
+\]
+up to permutation. In every other profile, Corollary 10.2 forces all ten label-based \(K_{12}\)'s, and the same isolated-clique argument gives a contradiction.
+
+Consider either exceptional profile and let \(B_i,B_j\) be its unique high-budget pair, with \(r_i+r_j=7\). Every pair other than \((i,j)\) has sum at most six, so for a fixed component label \(\ell\), the seven representatives form a \(C\)-clique of size eleven with the only possibly missing edge being \(x_i(\ell)x_j(\ell)\). If that edge is present, the clique is a \(K_{12}\), and Lemma 13.1 forces both representative rows to have no extra \(C\)-neighbors; otherwise the case is already contradictory.
+
+Suppose instead \(x_i(\ell)x_j(\ell)\) is absent. Pairwise blocker compatibility then requires \(X_{x_i(\ell)}\cup X_{x_j(\ell)}\) to contain a second full \(K_5\) component: without it, at most \(r_i+r_j-2=5\) extra vertices leave at least six gadget vertices, which cannot have independence number at most one. Covering the second component requires at least five extra component incidences, so equality forces
+\[
+a_i=a_j=1,\qquad e_i=e_j=0,\qquad t_i+t_j=5.
+\]
+The \(a_i=a_j=1\) profiles give each of the two high-budget blocks a pair of no-component rows whose complements are disjoint \(K_5\)'s. Thus both high-budget blocks, as well as the five \(r=1\) blocks, have a row whose neighborhood contains the same fixed \(D\in\{D_1,D_2\}\). Their omitted \(K_5\)'s are all five-subsets of \(U_C\setminus D\), so they pairwise intersect. Pairwise blocker compatibility forces all seven selected outer vertices to be \(C\)-adjacent; together with \(D\) they form a \(C\)-colored \(K_{12}\), while each high-block row has an extra \(C\)-neighbor outside \(D\). This contradicts Lemma 13.1.
+
+Therefore every label's high-pair representatives are adjacent. All ten label-based \(K_{12}\)'s follow, and the isolated-clique duplicate cap again gives \(P_C\le42\), contradiction.
+
+The cases \(P_C\ge51\) and \(P_C=50\) are both excluded, proving \(P_C\le49\). \(\square\)
+
+**Consequence.** For each exact-129 color, the outer residual duplicate budget obeys \(R_C\ge13\). This is a colorwise theorem; it does not yet close the aggregate E408 Q33 ledger or establish the original \(K_{145}\) result.
