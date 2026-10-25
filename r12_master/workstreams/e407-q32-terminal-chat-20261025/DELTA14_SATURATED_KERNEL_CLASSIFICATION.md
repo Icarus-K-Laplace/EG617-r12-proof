@@ -56,24 +56,27 @@ e(J-v)=p(14-p)-ab=49-d. \tag{1}
 
 ### 4. The bipartition must be balanced
 
-If \(p\le6\), then \(p-a\ge1\) because \(a\le4\). Any vertex \(x\in X\setminus A\) is adjacent in \(J-v\) to every vertex of \(Y\), since all missing cross-edges lie in \(A\times B\). Hence
-\[
-d_J(x)=14-p\ge8,
-\]
-contradicting \(\Delta(J)\le7\). Thus \(p\ge7\).
+Write (q=14-p=|Y|). If both (X\setminus A) and (Y\setminus B) are nonempty, a vertex in (X\setminus A) has degree (q), while a vertex in (Y\setminus B) has degree (p), because the only missing cross-edges are in (A\times B). The maximum-degree bound (Delta(J)\le7) then gives (q\le7) and (p\le7), hence (p=q=7).
 
-Similarly, if \(p\ge8\), then \(|Y|=14-p\ge5>b\), so \(Y\setminus B\ne\varnothing\). Every vertex \(y\in Y\setminus B\) is adjacent to every vertex of \(X\), giving \(d_J(y)=p\ge8\), again a contradiction. Thus \(p\le7\).
+It remains to exclude the boundary cases where one of those two sets is empty.
 
-Consequently \(p=7\), and equation (1) becomes
-\[
-49-ab=49-d,
-\qquad\text{so}\qquad ab=d=a+b.
-\]
-For positive integers \(a,b\), the equation \(ab=a+b\) is equivalent to
-\[
-(a-1)(b-1)=1,
-\]
-hence \(a=b=2\) and \(d=4\).
+If (X\setminus A=\varnothing), then (p=a\le4). Since (b\ge1), (d=a+b\ge p+1), and (d\le5). Equation (1) becomes
+[
+p(14-d)=49-d.
+]
+But (p\le d-1), so
+[
+p(14-d)\le(d-1)(14-d)\le36<44\le49-d,
+]
+a contradiction.
+
+Similarly, if (Y\setminus B=\varnothing), then (q=b\le4), (d=a+b\ge q+1), and equation (1) becomes (q(14-d)=49-d). The same inequality gives a contradiction. Both sets cannot be empty because then (p=a\le4) and (q=b\le4), contradicting (p+q=14).
+
+Therefore (p=q=7). Equation (1) now gives
+[
+49-ab=49-d,qquad\text{so}\qquad ab=d=a+b.
+]
+For positive integers (a,b), this is equivalent to ((a-1)(b-1)=1), hence (a=b=2) and (d=4).
 
 ### 5. Identify the graph
 
