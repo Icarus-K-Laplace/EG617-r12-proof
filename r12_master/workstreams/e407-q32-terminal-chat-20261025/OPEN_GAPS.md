@@ -24,7 +24,7 @@ These results remain conditional on the upstream 61-point residual/T61 bridge, t
 
 ### Gap A — \(\delta=14\), non-four-partite \(L=\overline{H[U]}\)
 
-Here \(|U|=29\), \(e(H[U])=98\), and \(e(L)=308\). The Turán number is \(t_4(29)=315\); Brouwer's non-four-partite upper bound is 309. The augmentable-edge subcase is now excluded by DELTA14_NONPARTITE_AUGMENTABLE_TERMINAL_CLOSURE.md. The remaining saturated case is still OPEN. DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md gives a strict extension reduction **only for the explicit C5-blow-up candidate** in DELTA14_SATURATED_LOCAL_MODEL.md: its \(\epsilon_U=0\) extension is impossible, and \(\epsilon_U=1,2\) force two exact W terminals. The local-model reduction does not prove that every admissible 15-vertex saturated graph \(J\) is this blow-up. The next general theorem must classify the admissible \(J\)'s or derive a degree/transversal property that holds for all of them.
+Here \(|U|=29\), \(e(H[U])=98\), and \(e(L)=308\). The Turán number is \(t_4(29)=315\); Brouwer's non-four-partite upper bound is 309. The augmentable-edge subcase is now excluded by DELTA14_NONPARTITE_AUGMENTABLE_TERMINAL_CLOSURE.md. The saturated case is now **PROVED_CONDITIONAL excluded** by DELTA14_SATURATED_KERNEL_CLASSIFICATION.md and DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md: under the retained alpha-critical kernel reduction, every admissible \(J\) is the \(C_5\)-blow-up with parts \((1,2,5,5,2)\), and it has no full-core extension for \(\epsilon_U\in\{0,1,2\}\). This still depends on the unaudited Didin-preprint component-count step.
 
 ### Gap B — \(\delta\le13\)
 
@@ -32,7 +32,7 @@ The retained transversal/excess contract gives
 \[
 3\le\delta,\qquad \epsilon_U+2\delta\ge9,\qquad \delta+\epsilon_U\le16.
 \]
-At \(\delta=13\), the four-partite-U, no-cross-edge-W profiles for \(\epsilon_U=1,2,3\) are excluded. At \(\epsilon_U=1\), both one-cross-edge placements of \(3K_4\dot\cup K_6\) and the \(K_3\dot\cup3K_5\)-plus-one-edge profile are also excluded. Still open in this four-partite-U row are \(2K_4\dot\cup2K_5\) plus two edges at \(\epsilon_U=1\), and \(2K_4\dot\cup2K_5\) plus one edge at \(\epsilon_U=2\). Also open are \(\epsilon_U=0\), non-four-partite U-complements, and \(\delta\le12\). The excluded profiles are conditional on the retained 49-witness/core contract; they do not close the whole \(\delta=13\) row.
+At \(\delta=13\), the four-partite-U, no-cross-edge-W profiles for \(\epsilon_U=1,2,3\) are excluded. At \(\epsilon_U=1\), both one-cross-edge placements of \(3K_4\dot\cup K_6\) and the \(K_3\dot\cup3K_5\)-plus-one-edge profile are also excluded. The \(\epsilon_U=1\), \(2K_4\dot\cup2K_5\)-plus-two-edge profile is now **EXCLUDED** by DELTA13_EPS1_TWO_CROSS_EDGE_TERMINAL_CLOSURE.md. Still open in this four-partite-U row is the \(\epsilon_U=2\), \(2K_4\dot\cup2K_5\)-plus-one-edge profile. The excluded profiles are conditional on the retained 49-witness/core contract; they do not close the whole \(\delta=13\) row.
 
 ### Gap C — five common-core shell templates A–E
 
@@ -165,3 +165,15 @@ The earlier candidate-extension proof's total common-neighbour bound (|S_P|le11-
 ## Round 30 update — one more delta-13 placement excluded
 
 DELTA13_EPS1_TWO_CROSS_EDGE_K4K5_DISJOINT_CLOSED.md excludes the same-pair disjoint K4–K5 placement. The two-edge blocker classification leaves only four same-pair placements open: K4–K4 matching, K4–K4 star, K4–K5 star centred in K4, and K4–K5 star centred in K5. The latter may support degree-six Type-II exceptions and remains open. All other branches listed in Round 29 remain OPEN / NOT_CERTIFIED.
+
+
+## Round 31 — complete closure of the delta-13, epsilon_U=1, two-cross-edge profile
+
+Added DELTA13_EPS1_TWO_CROSS_EDGE_TERMINAL_CLOSURE.md and verify_delta13_eps1_two_cross_edge_terminal_closure.py.
+
+- The common component-capacity theorem gives \(\sum_i|S_i|\le24\) whenever a W-cross-edge meets a K4, hence at least five W-unsaturated U-vertices.
+- The exact Type-I/Type-II transversal-blocker classification excludes the disjoint K4-K5 placement (already recorded in Round 30), and the new proof closes the four remaining same-pair placements.
+- For K4-K4 matching/star, a zero-excess small-part exception and a D-part vertex of W-degree four yield an independent 5-set.
+- For K4-K5 stars, at least six D-vertices have \(t_d=1,\epsilon_d=0\). A reverse-saturation argument forces some D-vertex to have W-neighbourhood exactly the incident K4; it need not be one of the \(t_d=1,\epsilon_d=0\) vertices. Pairing it with a zero-excess Type-II exception gives an independent 5-set.
+- The arithmetic verifier checks all eight integer capacity profiles, the ledger, and the D-part \(t\)-vector lower bound. It does not certify the analytic blocker, reverse-saturation, or independent-set arguments.
+- Remaining front-end gaps include the \(\delta=13,\epsilon_U=2\) one-cross-edge profile, \(\epsilon_U=0\), non-four-partite \(L\), \(\delta\le12\), the five shell templates globally, and the original \(K_{145}\)-to-T61 bridge. E407 Q32 and EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.
