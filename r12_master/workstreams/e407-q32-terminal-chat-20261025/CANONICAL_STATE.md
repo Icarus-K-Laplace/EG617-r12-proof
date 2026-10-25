@@ -31,6 +31,7 @@ These are the latest heads observed in the repository at the time of this update
 - New Round 24 theorem: at \(\delta=13,\epsilon_U=1\), the four-partite-U profile \(H[W]=K_3\dot\cup3K_5\) plus one cross-edge is also **EXCLUDED** by DELTA13_EPS1_K3K5K5K5_ONE_CROSS_EDGE.md. The proof allows at most one unsaturated U-vertex; its common-neighbour cover capacity is at most 26, below 28.
 - New Round 25 theorem: at \(\delta=13,\epsilon_U=1\), the \(3K_4\dot\cup K_6\) W-profile with its unique cross-edge joining \(K_4\) to \(K_6\) is **EXCLUDED** by DELTA13_EPS1_3K4_K6_K4K6_EDGE.md. All U vertices are W-saturated, and the four common-neighbour capacities sum to at most 28 < 29.
 - New Round 26 theorem: the remaining \(\delta=13,\epsilon_U=1\), \(3K_4\dot\cup K_6\)-plus-one-edge placement, where the edge joins two \(K_4\)'s, is **EXCLUDED** by DELTA13_EPS1_3K4_K6_K4K4_EDGE.md. The possible degree-seven U exception is handled by a capacity-equality overlap argument. Together with Round 25, both placements of the single cross-edge are closed.
+- New Round 31 theorem: the complete \(\delta=13,\epsilon_U=1\), four-partite-\(L\), \(H[W]=2K_4\cup2K_5\) plus two-cross-edge profile is **EXCLUDED**. The four formerly open same-pair placements are closed by the \(k\ge5\) exception floor, exact Type-I/Type-II blocker classification, and an independent-5-set contradiction. See DELTA13_EPS1_TWO_CROSS_EDGE_TERMINAL_CLOSURE.md; the arithmetic verifier is separate from the analytic proof.
 ## Status by case
 | Case | Status |
 |---|---|
@@ -48,6 +49,7 @@ These are the latest heads observed in the repository at the time of this update
 | \(\delta=13\), four-partite \(L\), \(\epsilon_U=1\), \(K_3\dot\cup3K_5\) plus one W-cross-edge | EXCLUDED by common-neighbour cover capacity |
 | \(\delta=13\), four-partite \(L\), \(\epsilon_U=1\), \(3K_4\dot\cup K_6\) plus a \(K_4\)-\(K_6\) edge | EXCLUDED by common-neighbour cover capacity |
 | \(\delta=13\), four-partite \(L\), \(\epsilon_U=1\), \(3K_4\dot\cup K_6\) plus a \(K_4\)-\(K_4\) edge | EXCLUDED by saturation/capacity overlap |
+| \(\delta=13,\epsilon_U=1\), four-partite \(L\), \(2K_4\cup2K_5\) plus two W-cross-edges | EXCLUDED under retained core/witness contract |
 | \(\delta\le13\) other cases | OPEN |
 | E407 Q32 overall | OPEN / NOT_CERTIFIED |
 | EG617(r=12) | OPEN / NOT_CERTIFIED |
