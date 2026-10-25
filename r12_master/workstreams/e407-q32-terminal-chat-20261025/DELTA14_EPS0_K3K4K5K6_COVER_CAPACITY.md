@@ -15,7 +15,7 @@ with 49 pairwise edge-disjoint independent four-sets on \(U\), and
 e(\overline{H[U]})=294+\delta,\qquad
 e(H[U])=112-\delta.
 \]
-Suppose \(\delta=14\), \(\epsilon_U=0\), and the four-partite \(U\)-complement has parts \(A,B,C,D\) of sizes \(7,7,7,8\). The seven extra edges of \(H[U]\) form a matching from seven distinct vertices of \(A\cup B\cup C\) into \(D\). Write \(t_d=d_{H[U]}(d)-7\) for \(d\in D\). Then
+Suppose \(\delta=14\), \(\epsilon_U=0\), and the four-partite \(U\)-complement has parts \(A,B,C,D\) of sizes \(7,7,7,8\). The seven cross-edges of \(H[U]\) have seven distinct endpoints in \(A\cup B\cup C\); a vertex of \(D\) may be incident to more than one of them. Write \(t_d=d_{H[U]}(d)-7\) for \(d\in D\). Then
 \[
 \sum_{d\in D}t_d=7.
 \]
