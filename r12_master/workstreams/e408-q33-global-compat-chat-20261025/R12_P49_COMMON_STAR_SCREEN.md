@@ -39,20 +39,23 @@ The valid star-capacity bound says any outside vertex has at most one \(C\)-edge
 
 Consequently, these five \(R_C=13\) profiles are excluded under the retained exact-129 factor, row-profile, pairwise-blocker, and gadget-normal-form contracts.
 
-## 3. Six profiles still open
+## 3. Four profiles remain open after the incidence-sensitive follow-up
 
-The remaining six profiles are
+At the first screen, six profiles remained:
 \[
 (4,3,2,1^4),\quad (4,4,1^5),\quad
 (5,2^2,1^4),\quad (5,3,1^5),\quad
 (6,2,1^5),\quad (7,1^6).
 \]
+The incidence-sensitive verifier R12_P49_INCIDENCE_SENSITIVE_SCREEN.md has since closed \((5,2^2,1^4)\) and \((5,3,1^5)\). The four profiles still open are
+\[
+(4,3,2,1^4),\quad (4,4,1^5),\quad (6,2,1^5),\quad (7,1^6).
+\]
 
-They divide into three proof obligations:
+They split into two proof obligations:
 
-1. **No common-star certificate in two profiles:** \((4,3,2,1^4)\) and \((4,4,1^5)\). The finite DP has explicit failure witnesses; these require a pairwise-intersection alignment not dependent on a common point, or a different construction.
-2. **Common star exists, but component-incidence budget is not automatically enough:** \((5,2^2,1^4)\) and \((5,3,1^5)\). The largest pair sums are 7 and 8, so \(p_i+p_j\le4\) is not guaranteed from budgets alone. Need incidence-sensitive row selection or a direct double-star argument.
-3. **High-budget row cases:** \((6,2,1^5)\) and \((7,1^6)\). These need a corrected star-capacity proof based on Theorem 11.1 cases, not the withdrawn isolated-\(K_{12}\) inference.
+1. **No common-star certificate:** \((4,3,2,1^4)\) and \((4,4,1^5)\). The finite DP has explicit failure witnesses; these require a pairwise-intersection alignment not dependent on a common point, or a different construction.
+2. **High-budget row cases:** \((6,2,1^5)\) and \((7,1^6)\). These need a corrected star-capacity proof based on Theorem 11.1 cases, not the withdrawn isolated-\(K_{12}\) inference.
 
 The archived P49_BOUNDARY_EXCLUSION.md remains **NOT CERTIFIED** as a whole because its global argument uses the invalid claim that every monochromatic \(K_{12}\) has zero external edges of its own color. This note repairs only the five profiles above; it does not claim \(P_C\le48\), and it does not close E408 Q33 or EG617(\(r=12\)).
 
