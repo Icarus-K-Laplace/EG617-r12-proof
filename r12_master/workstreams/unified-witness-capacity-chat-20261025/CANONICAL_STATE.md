@@ -176,3 +176,10 @@ Thus the exact global duplicate budget pays for every missing component-label al
 \quad \mathcal I_C=\{i:r_i(C)\le5\}.
 \]
 The Python arithmetic replay independently checked all 25 row-budget pairs and the sum-seven boundary. Result: PASS. This is a conditional cross-block theorem; it does not yet bound \(P_C\) tightly enough to eliminate the remaining terminals.
+
+
+## 2026-10-25 continuation — aggregate-budget relaxation audit
+
+Added a reproducible scalar relaxation in COUNTEREXAMPLE_OR_GAP_AUDIT.md and the verifier. It satisfies \(P_C+R_C+s_C=62\) for all 11 colors, \(\sum P_C=252\), \(\sum R_C=427\), \(\sum s_C=3\), every block-column sum \(\sum_C r_i(C)=61\), and every block-pair duplicate column sum \(\sum_C d_{ij}(C)=12\). Yet all eight exact colors can have \(P_C=9\) and \(r_i(C)\in\{7,8\}\), with the three nonexact colors absorbing \(P=(59,60,61)\).
+
+This is an explicit **aggregate relaxation**, not a graph-level counterexample. It establishes that the aggregate \(P_{\rm exact}\ge69\) inequality cannot force any exact color to satisfy \(P_C\ge36\), so the new near-matching theorem cannot be activated from aggregate budgets alone. A terminal proof must add a genuine graph/witness constraint coupling the three nonexact colors or the component-label geometry to these scalar variables.
