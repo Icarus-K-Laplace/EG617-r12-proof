@@ -139,3 +139,10 @@ The K4–K4 placement was closed in Round 26; the next local target is \(2K_4\do
 The K4–K4 placement is now excluded as well. If the only possible degree-seven unsaturated U-vertex exists, all but one U-vertex must be covered by the four common-neighbour sets. Equality in the total capacity forces all three K4 capacities to be nine and their labels to be small U-parts. The exceptional vertex's own part cannot be a label; by pigeonhole two K4 components share one of the other two small parts, so their common-neighbour sets overlap in at least seven vertices. Their union cannot cover 28 vertices.
 
 Thus both placements of the unique W-cross-edge in the \(\delta=13,\epsilon_U=1\), \(3K_4\dot\cup K_6\) profile are closed.
+
+
+## Round 27 audit update — independent proof and current frontier
+
+The new DELTA13_EPS1_K4K4K4K6_ONE_CROSS_EDGE.md independently closes both K4–K6 and K4–K4 placements of the \(\delta=13,\epsilon_U=1\), \(3K_4\dot\cup K_6\)-plus-one-edge profile. Unlike a proof that assumes at most one nonsaturated U vertex, it permits an arbitrary exception set \(E\) and derives the strict cover inequality \(29-k>29-2k\) when \(k=|E|>0\). The finite verifier confirms the label/load arithmetic, not the analytic graph lemmas.
+
+**Next target:** \(\delta=13,\epsilon_U=1\), \(2K_4\dot\cup2K_5\) plus two W-cross-edges. Then handle the \(\epsilon_U=2\), \((4,4,5,5)\)-plus-one-cross-edge profile, \(\epsilon_U=0\), non-four-partite U-complements, and \(\delta\le12\). The five shell templates and \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
