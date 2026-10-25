@@ -212,3 +212,10 @@ For the explicit (5,5,2,1,2) blow-up local model, the remaining W-extension term
 - Together with the \(\epsilon_U=0\) independent-transversal exclusion, the explicit candidate has no full 47-core extension for any \(\epsilon_U\in\{0,1,2\}\).
 
 The verifier checks W-profile arithmetic, transversal forbidden fractions, and the 12 finite A/B assignment patterns. It does not machine-check the graph-theoretic independent-set arguments. This is not a universal closure: the 15-vertex saturated graph J has not been classified, and the alpha-critical reduction only gives necessary conditions for J. The general delta=14 saturated branch, delta<=13, the five shell templates, and the K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## Round 21 — classify the entire C5-blow-up subclass
+
+Added DELTA14_C5_BLOWUP_PROFILE_CLASSIFICATION.md and verify_c5_blowup_profile.py. Independent exact enumeration passed: seven dihedral classes of positive five-part C5 blow-ups have 15 vertices and 49 edges, but only one satisfies the witness-forced maximum-degree condition Delta(J)<=7, namely (1,2,5,5,2), equivalent to (5,5,2,1,2). The explicit candidate is already excluded from all full-core extensions by Round 20.
+
+This closes the C5-blow-up subfamily only. It does not prove that every admissible saturated kernel J is a C5 blow-up. The remaining general terminal consists of potential non-C5-blow-up triangle-free, non-bipartite, triangle-saturated 15-vertex, 49-edge graphs compatible with the two orthogonal near-perfect matching decompositions. E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
