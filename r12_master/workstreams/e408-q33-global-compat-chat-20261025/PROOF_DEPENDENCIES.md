@@ -137,3 +137,16 @@ For \(P_C=50\), \(R_C=12\) forces the row-budget vector \((6,1,1,1,1,1,1)\). The
 - \(n=2,k=0\): all 10 component labels clean.
 
 This excludes only the exact \(P_C=50,r_i=6\) corner. The \(P_C=49,r_i=6\) branch and E408 Q33 overall remain open; no upstream dependency is closed by this result.
+
+
+## 13. Universal exact-129 budget cap \(P_C\le49\)
+
+Theorem 14.1 in SEVEN_BLOCK_INCIDENCE_LEDGER.md proves \(P_C\le49\) for every exact-129 color. Its dependencies are:
+- Theorem 10.1 / Corollary 10.2: unique component rows and forced component matching whenever \(r_i+r_j\le6\).
+- Theorem 12.1: the exact 5-clique normal form in \(U_C\), including the disjoint-pair structure of the two no-component rows.
+- Lemmas 13.1–13.2: monochromatic \(K_{12}\) isolation and the duplicate cap \(P_C\le21(12-m)\) for \(m\) disjoint \(K_{12}\)'s meeting every target block once.
+- Theorem 13.3: exclusion of the \(P_C=50,r_i=6\) profile.
+
+For \(P_C\ge51\), every block-pair budget sum is at most six, so all ten labels produce \(K_{12}\)'s. For \(P_C=50\), the only positive budget vectors with a pair sum greater than six are \((5,2,1^5)\) and \((4,3,1^5)\), besides the already-excluded \((6,1^6)\). In either exceptional vector, a missing same-label edge between the high-budget blocks forces the two row neighborhoods to cover a second full \(K_5\); equality in the incidence budget then forces both gadget overlap parameters to equal one, yielding the external-edge contradiction from a gadget-based \(K_{12}\). Thus every \(P_C\ge50\) is excluded.
+
+The result is colorwise and conditional on the retained exact-129 factor and seven-block contracts. It does not close the aggregate color ledger or the original \(K_{145}\) theorem.
