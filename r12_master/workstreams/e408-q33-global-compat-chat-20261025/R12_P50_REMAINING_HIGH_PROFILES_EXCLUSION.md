@@ -70,7 +70,3 @@ Combining this result with the \(P_C=50,r_i=6\) exclusion leaves the four correc
 (3,2,2,2,1^3),\quad (2^5,1^2).
 \]
 The earlier list with \((4,2,2,2,1^3)\) and \((3,2,2,2,2,1^2)\) was an arithmetic transcription error: both sum to 13, not 12. These four profiles are now excluded by R12_HIGH_P_COLOR_CAP_COMMON_STAR.md. Together, the three double-star exclusions and the common-star theorem establish the conditional colorwise cap \(P_C\le49\). The stronger cap \(P_C\le48\), E408 Q33, and EG617(\(r=12\)) remain **OPEN / NOT_CERTIFIED**.
-
-Date: 2026-10-25  
-Status: **PROVED_CONDITIONAL** under the retained exact-129 factor theorem, seven-block row-incidence contract, and exact 11-vertex gadget normal form.  
-Scope: excludes the profiles \((5,2,1^5)\) and \((4,3,1^5)\) at \(P_C=50\). It does not yet exclude all \(P_C=50\) cases.
