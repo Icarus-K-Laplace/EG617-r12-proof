@@ -272,35 +272,15 @@ Every \(w\in W\) has at least one edge of each of the eleven non-target colors t
 Latest sibling refresh: E408 Q33 advanced to c01f7dc6951b2bb7ea5209f252b1644ca0ecd40a with Theorem 12.1 gadget normal form and stronger \(P_C=49,50\) clique packings. E407 Q32 remains bd385f7dfe102deb426810baf1999a8e94dd488f; E408 Q32 remains a0ba6db26c7e8b00a4217dcbcbf298895dff93ce; witness-packing f5d3daa07403877ede9885e1bd5c2f46b16d81da; zero-excess 07d19abfd6c1c749c7360526e4a04a3eb865fb2e; ultimate closure 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40.
 
 
-## 2026-10-25 live sibling integration — P_C=50, r_i=6 is excluded
+## 2026-10-25 sibling audit — external-edge claims are not certified
 
-The latest E408 Q33 sibling head is 8b4bfef7a9e3d957c7150af30aadba703a08d31f. It adds Lemma 13.1 (every monochromatic \(K_{12}\) is isolated in its color), Lemma 13.2 (if an exact color has \(m\) vertex-disjoint \(K_{12}\)'s each meeting all seven outer blocks once, then \(P_C\le21(12-m)\)), and Theorem 13.3 excluding the corner \(P_C=50\), \(r_i(C)=6\).
+The sibling E408 Q33 argument that \(P_C=50,r_i=6\) is excluded relies in places on the assertion that a single external \(C\)-edge from a monochromatic \(K_{12}\) is impossible. That assertion is false as stated: the star condition gives only \(d_C(z,K_{12})\le1\). The sibling \(P_C\le49\) and \(P_C\le48\) proofs similarly use the invalid isolation lemma and must not be used as certified budget caps until repaired.
 
-I audited the proof structure:
-- Cases A/B of the exact \(r_i=6\) classification force a high-block exceptional row to create a \(K_{12}\) with six low-slack representatives, while retaining a color edge to an outside gadget vertex; this contradicts the isolated-\(K_{12}\) lemma.
-- In Case C, any extra incidence outside a selected component creates an external edge to a label-based \(K_{12}\); otherwise ten isolated label-based \(K_{12}\)'s exist, giving \(P_C\le21(2)=42\), contradicting 50.
+## 2026-10-25 continuation — conditional local exclusion of \(P_C=49,r_i=6\)
 
-Consequence for this workstream: if an exact-129 color has \(P_C=50\), it cannot have any \(r_i(C)=6\). Since \(\sum_i r_i=12\), all \(r_i\le5\), and the existing low-budget alignment theorem yields at least nine common component labels in this branch. This is a sibling theorem under the retained exact-129 and seven-block contracts, not an unconditional EG617 proof. The \(P_C=49,r_i=6\) corner remains open.
+The local theorem in OUTER_EXCEPTIONAL_ROW_COUPLING.md is independent of the invalid isolation lemma. It now constructs a \(C\)-colored \(K_{12}\) and forces one external vertex to have at least two \(C\)-edges into it. The exact verifier uses all four gadget normal forms, exact Case-C complement profiles, and the safe-row component-incidence split. The revised predicate replay passed 2,132 Case-A/B configurations and 512,768 exact-profile Case-C configurations (514,900 total).
 
-
-## 2026-10-25 continuation — exclude the \(P_C=49,r_i=6\) corner
-
-Added Theorem 12.1 in OUTER_EXCEPTIONAL_ROW_COUPLING.md and the exact standalone checker verify_p49_r6_gadget_exclusion.py.
-
-**Theorem (conditional):** under the retained exact-129 factor theorem, seven-block row contracts, gadget normal form, and isolated-\(K_{12}\) lemma, an exact color cannot have \(P_C=49\) and any \(r_i(C)=6\). Here \(R_C=62-P_C=13\), so the other six block budgets are five 1s and one 2. The \(r=1\) blocks supply disjoint \(K_5/K_5\) omitted-complement pairs; the \(r=2\) block supplies a disjoint \(K_5/K_5\) or \(K_5/K_4\) pair; the \(r=6\) cases supply either a \(K_5\) complement or a disjoint pair of clique complements with total size at least five. A finite exact enumeration of all four gadget normal forms selects a common \(K_5\) core and seven outer rows. Pairwise intersections of omitted sets force a monochromatic \(K_{12}\), while the selected \(r=6\) row has an extra C-neighbor outside it, contradicting \(K_{12}\)-isolation.
-
-The local replay of the committed checker passed 159,244 exact set-combinatorics checks: 380 Case-A/B checks and 158,864 Case-C checks. Per-normal-form clique and configuration counts are recorded in the theorem file. This is a finite conditional theorem, not a claim that the original \(K_{145}\) proof is closed.
-
-**Updated P=49 frontier, conditional on the sibling Q33 theorem \(P_C\le49\):** with \(R_C=13\), \(r_i\ge8\) is impossible. The \(r_i=6\) profile \((6,2,1,1,1,1,1)\) is now excluded. If all \(r_i\le5\), the five sorted profiles with every pair sum at most six also contradict \(P_C=49\), because Corollary 10.2 forces ten isolated \(K_{12}\)'s and hence \(P_C\le42\). The remaining sorted profiles are
-\[
-(7,1,1,1,1,1,1),\quad
-(5,3,1,1,1,1,1),\quad
-(4,4,1,1,1,1,1),\quad
-(5,2,2,1,1,1,1),\quad
-(4,3,2,1,1,1,1).
-\]
-The \(r=7\) profile remains a separate open branch; the four high-pair profiles with all \(r_i\le5\) also remain open. Do not infer \(r_i\le5\) globally from the \(r_i=6\) theorem alone.
-
+This proves only the local corner \(P_C=49,r_i=6\), conditional on the exact-129 factor theorem, seven-block contract, gadget normal form, and row classifications. It does not prove \(P_C\le49\), does not close the aggregate eleven-color ledger, and does not prove EG617(r=12).
 
 ## 2026-10-25 proof audit — external edge versus double-star; P49/r=6 verifier strengthened
 
@@ -308,4 +288,4 @@ The \(r=7\) profile remains a separate open branch; the four high-pair profiles 
 
 The local \(P_C=49,r_i(C)=6\) result in Section 12 of OUTER_EXCEPTIONAL_ROW_COUPLING.md has been rewritten to use the valid **double-star** condition \(d_C(z,K_{12})\ge2\), not the false isolation claim. Its finite checker now uses the exact Case-C complement-size profiles and distinguishes high-row profiles where both candidate high rows must be checked from profiles where either row is incidence-safe. The component-incidence argument is explicit: the selected high gadget-only row has at most two partial component incidences in the risky profiles and at most three otherwise; the selected \(r=2\) row has at most one. Hence no pair of selected rows covers a full isolated \(K_5\), which is needed for the pairwise blocker step.
 
-The in-session replay of the revised finite predicates passed 2,132 Case-A/B configurations and 412,768 exact-profile Case-C configurations, 414,900 total. This is a conditional local theorem under the exact-129 factor, gadget normal form, and row contracts. It **does not** prove \(P_C\le49\), does not close the aggregate eleven-color ledger, and does not solve EG617(r=12).
+The in-session replay of the revised finite predicates passed 2,132 Case-A/B configurations and 512,768 exact-profile Case-C configurations, 514,900 total. This is a conditional local theorem under the exact-129 factor, gadget normal form, and row contracts. It **does not** prove \(P_C\le49\), does not close the aggregate eleven-color ledger, and does not solve EG617(r=12).
