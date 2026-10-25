@@ -195,3 +195,14 @@ r_i\le5\ \text{for all }i;\quad
 The all-low case uses the missing-edge dichotomy: a second full component costs at least five component incidences; without one, at least six gadget incidences must be covered. The remaining profiles use the \(r_i=6\) classification or full-component occurrence counts. The finite alignment checker intentionally does not assert universal alignment for the \(53+53\) pair/pair case or for a high \(K_4\) against a low \(53\) pair in isolation; both broader assertions have counterexamples, and the proof avoids them.
 
 This strengthens the colorwise conditional interface from \(P_C\le48\) to \(P_C\le47\), but it does not close the aggregate eleven-color ledger, the 56-witness global compatibility, E408 Q33, or EG617(r=12).
+
+
+### Post-commit audit corrections (2026-10-25)
+
+The P48 proof was tightened after a line-by-line audit:
+- The \(r_i=3\) omitted-pair type is not restricted to \(53/44\); depending on the overlap \(a\), all four types \(55,54,53,44\) can occur.
+- For \(r_i=6\), Case C, the proof now tracks \(d_U\) (repeated gadget-incidence excess), \(e_i\) (gadget incidences in component rows), and \(E\cap F\) separately. In particular, \(53/44\) high-pair types force \(d_U=3,e_i=0\), which makes the omitted cliques disjoint; overlapping \(55/54\) cases use a single omitted \(K_5\).
+- For \(r_i=7,8\), the \(n=2\) case no longer assumes \(t_i=0\) from the number of represented full components. It branches on \(t_i+e_i\): a large sum yields a gadget-only row omitting a \(K_4/K_5\), while a small sum rules out both a second full component and six gadget incidences.
+- The \(53+53\) pair/pair alignment is not a valid universal lemma. The proof avoids invoking it: the all-low case is ruled out by the pair-sum budget; the \((6,3,1^5)\) case is handled directly by the \(t_i+t_j<5\) and \(e_i+e_j<6\) inequalities.
+
+The fixed-gadget certificate remains 467,696 checks with zero failures. These corrections improve the local proof accounting; they do not change the conditional status or close E408 Q33.
