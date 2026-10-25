@@ -705,3 +705,24 @@ The new result does not close the profile, but it replaces a broad two-cross-edg
 - If both W-cross-edges lie between the two K5 parts, the blocker classification allows at most one unsaturated U-vertex, contradicting the global capacity floor. That placement is therefore excluded entirely.
 
 The verifier is an arithmetic check, not a graph-realization certificate. The surviving blocker patterns with k>=5 remain OPEN; E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 — Round 29: replace invalid capacity argument with incidence contradiction
+
+**Audit correction:** an earlier draft incorrectly inferred (|S_P|le11-|P|) for the entire common-neighbour set of a W clique from (omega(H)le11). Since that set need not be a clique, the inference was invalid. The draft has been withdrawn and replaced. The new proof uses only valid per-clique assignment caps for vertices from A or B (which are themselves cliques), plus independent-set and edge-incidence counting.
+
+### Corrected (epsilon_U=1) closure
+
+- (3K_4cup K_6): impossible because (d_0) has at most three W-neighbours and must be complete to one W component of size at least four.
+- (K_4cup K_4cup K_5cup K_5) plus one cross-edge: independent transversal avoiding the at-most-three neighbours of (d_0) gives an independent 5-set.
+- (K_3cup3K_5): (d_0) must be complete to (K_3). Each (C/E) vertex has one W edge outside that (K_3), so at most one K5 vertex can be complete to all four C/E vertices. Every K5 W vertex must be complete to A, B, or all C/E; the incidence budgets permit at most (6+6+1=13) of the 15 K5 vertices. Contradiction.
+
+### Corrected (epsilon_U=2) closure
+
+The W profile is (2K_4cup2K_5), and (d_0) is complete to a K4 (P_0). The A/B assignment reduction is valid because A and B are cliques: their supports are disjoint among the other three W parts, and one side fills the remaining K4 (P_1). The ten vertices in the two K5 parts must each be complete to A or B, by the independent 4-set ({a,b,c,d_0}) for (ain A,bin B,cin Ccup E). But at most two K5 vertices can be complete to A (14 available A-edges outside (P_1)) and at most two to B (both B-assignment groups are nonempty, and each B vertex has only one extra W edge). Contradiction.
+
+The general saturated-kernel classification was also patched to handle the previously omitted (X=A) and (Y=B) boundary cases in its balanced-bipartition step. Its external-theorem dependencies remain conditional and explicit.
+
+The corrected files are DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md, verify_delta14_saturated_candidate_extension_exclusion.py, DELTA14_SATURATED_KERNEL_CLASSIFICATION.md, and verify_delta14_saturated_kernel_classification.py. The scripts were updated in this round; no claim is made here that they were executed in the live environment.
+
+Remaining frontier: (delta=13,epsilon_U=1), (2K_4cup2K_5) with two W-cross-edges; then the remaining (delta=13) profiles and (deltale12). The five shell templates and (K_{145})-to-T61 bridge remain OPEN / NOT_CERTIFIED.
