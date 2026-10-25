@@ -69,3 +69,10 @@
 - This is a conditional local classification only. E408 Q33 remains OPEN / NOT_CERTIFIED; no global UNSAT or original \(K_{145}\) proof is claimed.
 
 - Equality-case refinement: in the \(n=1\) branch, the complements of the repeated-pair gadget six-set and the no-component-row gadget six-set are disjoint five-cliques in \(C[U_C]\). They partition the gadget together with the unique vertex shared by the two six-sets. This is a sharper canonical description of the exceptional row.
+
+
+## 2026-10-25 — high-\(P_C\) consequence of the \(6+1\) boundary
+
+- Added Corollary 11.3. If an exact-129 color has \(P_C=50\) and a block with \(r_i=6\), the other six block budgets must all be one; at least eight component labels then complete to vertex-disjoint monochromatic \(K_{12}\) cliques across all seven blocks.
+- If \(P_C=49\) and some block has \(r_i=6\), the other six budgets are five ones and one two. The \(r=2\) block has at least nine distinct exact blockers, intersecting the at-least-eight clean labels from the \(r=6\) block in at least seven labels. These labels complete to at least seven vertex-disjoint monochromatic \(K_{12}\) cliques.
+- This connects the duplicate budget to an explicit global packing pattern. It is not a contradiction: the current proof does not show that these maximum cliques violate the remaining color-edge budget.
