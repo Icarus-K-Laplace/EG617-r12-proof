@@ -83,9 +83,9 @@ The current highest-leverage target is the \(K_5\)-saturated case. The \(\delta\
 
 The augmentable-edge subcase remains excluded. For the remaining \(K_5\)-saturated non-four-partite case, the new conditional reduction in DELTA14_SATURATED_ALPHA_CRITICAL_REDUCTION.md proves that \(G=H[U]\) is \(\alpha\)-critical and, conditional on Didin's 2026 preprint theorem, has exactly three connected components. The 49 witness \(K_4\)'s and the exact 98-edge ledger force the unique profile
 \[
-H[U]=K_7\dot\cup K_7\dot\cup C_{15},\quad
-\alpha(C_{15})=2,\quad e(C_{15})=56.
+H[U]=K_7\dot\cup K_7\dot\cup D,\quad
+\alpha(D)=2,\quad e(D)=56.
 \]
-The complement of \(C_{15}\) is a triangle-free non-bipartite saturated graph with 49 edges, and the witness family induces two orthogonal near-perfect matching decompositions of its edge set.
+The complement of \(D\) is a triangle-free non-bipartite saturated graph with 49 edges, and the witness family induces two orthogonal near-perfect matching decompositions of its edge set.
 
 This does **not** yet rule out the terminal graph. The external Didin preprint theorem is explicitly an unverified dependency, and the graph-realization problem for the 15-vertex kernel remains OPEN. The \(\delta\le13\) cases, five shell templates A–E, and upstream \(K_{145}\)-to-T61 bridge also remain OPEN / NOT_CERTIFIED.
