@@ -160,3 +160,8 @@ The profile H[W]=2K4 union 2K5 plus two cross-edges is reduced as follows. The e
 The earlier candidate-extension proof's total common-neighbour bound (|S_P|le11-|P|) was invalid and has been withdrawn. The replacement in DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md uses valid independent-set and incidence-count arguments. Under the explicit local model, it excludes (epsilon_U=0,1,2); the separate kernel-classification theorem identifies every admissible saturated kernel (J) with that model, conditional on the alpha-critical reduction and its unverified external Didin-preprint dependency. Thus the general (delta=14), non-four-partite, (K_5)-saturated terminal is now conditionally closed.
 
 **Next target:** (delta=13,epsilon_U=1), (2K_4dotcup2K_5) with two W-cross-edges, retaining the exact Type-I/Type-II blocker contract in DELTA13_EPS1_TWO_CROSS_EDGE_PROFILE_REDUCTION.md. Then handle the remaining (delta=13) profiles, (delta=13,epsilon_U=0), non-four-partite U-complements, and (deltale12). The five shell templates and (K_{145})-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## Round 30 update — one more delta-13 placement excluded
+
+DELTA13_EPS1_TWO_CROSS_EDGE_K4K5_DISJOINT_CLOSED.md excludes the same-pair disjoint K4–K5 placement. The two-edge blocker classification leaves only four same-pair placements open: K4–K4 matching, K4–K4 star, K4–K5 star centred in K4, and K4–K5 star centred in K5. The latter may support degree-six Type-II exceptions and remains open. All other branches listed in Round 29 remain OPEN / NOT_CERTIFIED.
