@@ -42,9 +42,9 @@ These are the latest heads observed in the repository at the time of this update
 | E407 template C | OPEN |
 | E407 template D | OPEN |
 | E407 template E | OPEN |
-| \(\delta=16\) four-partite extreme | OPEN; reduced to the labelled \(5+0\) endpoint kernel |
+| \(\delta=16\) four-partite extreme | EXCLUDED by endpoint-split analysis and forbidden \(K_{12}\) |
 | \(\delta=15\) four-partite | W-part profiles classified, compatibility OPEN |
-| \(\delta=15\) non-four-partite | two KP base profiles excluded; balanced \(7,7,7,7\) base remains, with \(a\ge4\) and exact 15-edge leave OPEN |
+| \(\delta=15\) non-four-partite | EXCLUDED under KP equality + core-to-\(W\) degree contradiction |
 | \(\delta=14\) four-partite | W-part profiles classified, compatibility OPEN |
 | \(\delta\le14\) non-four-partite | OPEN |
 | E407 Q32 overall | OPEN / NOT_CERTIFIED |
@@ -52,4 +52,4 @@ These are the latest heads observed in the repository at the time of this update
 
 ## Verification status
 
-The local arithmetic/terminal audit script is named verify_e407_delta16_kernel.py. It checks the exact ledgers and finite excess-budget contradictions. It is a consistency check, not a graph-realization certificate; the \(5+0\) endpoint kernel remains OPEN; the verifier does not certify graph realizability.
+The local arithmetic verifier checks exact ledgers and the finite excess inequalities only. The analytic endpoint-split proof in FOUR_PARTITE_TERMINAL.md excludes the full \(\delta=16\) branch under the retained core/witness contract; this verifier is not a graph-realization certificate.
