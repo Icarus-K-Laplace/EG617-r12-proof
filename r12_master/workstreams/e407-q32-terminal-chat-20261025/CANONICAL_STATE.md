@@ -28,6 +28,7 @@ These are the latest heads observed in the repository at the time of this update
 - For \(\delta=16\), a reverse-saturation lemma proves every \(w\in W\) is complete to exactly one \(U\)-part; it is used in the endpoint-split proof.
 - New exact witness-array identity: for each D-vertex d, its number of missing small-part partners equals the number of exact-129 color classes omitting d. These multiplicities sum to 7; the five endpoint D-labels contribute at least 5, so at least three have multiplicity exactly 1 and at least one non-endpoint D-label has multiplicity 0. See DELTA16_WITNESS_ARRAY.md.
 - New Round 23 theorem: when \(\delta=13\), \(L=\overline{H[U]}\) is four-partite, and \(H[W]\) is a disjoint union of four cliques, every case with \(\epsilon_U\in\{1,2,3\}\) is excluded by DELTA13_FOUR_PARTITE_NO_CROSS_W_PROFILES.md. The common-neighbour cover capacities are at most 27, 28, 28, and 23 for the profiles \((3,4,5,6)\), \((3,5,5,5)\), \((4,4,4,6)\), and \((4,4,5,5)\), respectively.
+- New Round 24 theorem: at \(\delta=13,\epsilon_U=1\), the four-partite-U profile \(H[W]=K_3\dot\cup3K_5\) plus one cross-edge is also **EXCLUDED** by DELTA13_EPS1_K3K5K5K5_ONE_CROSS_EDGE.md. The proof allows at most one unsaturated U-vertex; its common-neighbour cover capacity is at most 26, below 28.
 ## Status by case
 | Case | Status |
 |---|---|
@@ -42,6 +43,7 @@ These are the latest heads observed in the repository at the time of this update
 | \(\delta=14\) four-partite | \(\epsilon_U=0,1,2\): all W profiles excluded; \(\epsilon_U=1\) exhaustiveness uses Brouwer, \(\epsilon_U=2\) is Turán equality |
 | \(\delta=14\) non-four-partite, saturated \(L\) | PROVED_CONDITIONAL excluded: every admissible J is the C5 blow-up, and its full-core extension is impossible |
 | \(\delta=13\), four-partite \(L\), no-cross-edge \(H[W]\), \(\epsilon_U\in\{1,2,3\}\) | EXCLUDED by common-neighbour cover capacity |
+| \(\delta=13\), four-partite \(L\), \(\epsilon_U=1\), \(K_3\dot\cup3K_5\) plus one W-cross-edge | EXCLUDED by common-neighbour cover capacity |
 | \(\delta\le13\) other cases | OPEN |
 | E407 Q32 overall | OPEN / NOT_CERTIFIED |
 | EG617(r=12) | OPEN / NOT_CERTIFIED |
@@ -242,3 +244,12 @@ Added DELTA13_FOUR_PARTITE_NO_CROSS_W_PROFILES.md and verify_delta13_four_partit
 The component common-neighbour sets must cover all 29 U vertices. Exact label/excess accounting bounds their total sizes by at most 27, 28, 28, and 23, respectively, so every listed profile is impossible. The finite arithmetic verifier passed with output DELTA13_FOUR_PARTITE_NO_CROSS_W_PROFILES_ARITHMETIC_OK; it checks profile enumeration and numeric capacity ceilings only, not the analytic graph lemmas.
 
 Remaining: \(\delta=13,\epsilon_U=0\); W-cross-edge profiles; non-four-partite U-complement cases; \(\delta\le12\); all five templates as a global compatibility problem; and the upstream \(K_{145}\)-to-T61 bridge. E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+## Round 24 — delta-13 epsilonU=1, K3 plus three K5s with one W-cross-edge
+
+Added DELTA13_EPS1_K3K5K5K5_ONE_CROSS_EDGE.md and verify_delta13_eps1_k3k5_one_cross_edge.py. The proof corrects for the possibility that a nonsaturated U-vertex has degree seven into W: in the \(K_3\)-\(K_5\) edge placement this can happen for at most one U-vertex, and the \(d_H(u,W)=6\) alternative is ruled out by a strict common-neighbour lower/upper bound. In the \(K_5\)-\(K_5\) edge placement every U-vertex is W-saturated.
+
+The component common-neighbour capacities sum to at most \(23+E_W=26\). At least 28 U-vertices must be covered by those sets, contradiction. The arithmetic replay passed with DELTA13_EPS1_K3K5K5K5_ONE_CROSS_EDGE_ARITHMETIC_OK; it checks only the capacity totals and the strict integer gap, not the analytic graph lemmas.
+
+Remaining \(\delta=13\) four-partite-U profiles include \((4,4,4,6)\) plus one W-cross-edge and \((4,4,5,5)\) plus two W-cross-edges at \(\epsilon_U=1\), and \((4,4,5,5)\) plus one W-cross-edge at \(\epsilon_U=2\). The \(\epsilon_U=0\), non-four-partite, \(\delta\le12\), five-template global compatibility, and upstream bridge gaps remain open.
