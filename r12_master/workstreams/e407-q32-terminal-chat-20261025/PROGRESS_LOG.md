@@ -573,3 +573,22 @@ Added DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md and its standard-library verifi
 For the explicit candidate only, the exact W ledger and Brouwer's second-Turán theorem force four clique parts of size at least three with at most \(2-\epsilon_U\) cross edges. Independent-transversal capacity rules out \(\epsilon_U=0\). The \(\epsilon_U=1\) and \(\epsilon_U=2\) cases reduce respectively to \(K_3\cup K_5^3\) with \(d_0\) complete to \(K_3\), and \(K_4^2\cup K_5^2\) with \(d_0\) complete to a \(K_4\). These are still open extension terminals.
 
 The general saturated branch remains OPEN because other admissible \(J\) graphs have not been classified. The five E407 shell templates, \(\delta\le13\), and the original \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 — Round 20: exclude all W extensions of the explicit saturated candidate
+
+Added DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md and its arithmetic verifier. Independent replay passed: DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION_ARITHMETIC_OK.
+
+### epsilon_U=1
+
+The exact W ledger has three profiles. For K3 dot-union 3K5 and 3K4 dot-union K6, every u in U must be complete to a W part, and omega(H)<=11 bounds the common-neighbour capacities by 8+6+6+6=26 and 7+7+7+5=26, respectively, contradicting |U|=29. For the (4,4,5,5) profile with one cross-edge, the singleton d0 has at most three W-neighbours; an independent transversal avoiding those vertices exists, contradicting alpha(H)<=4.
+
+### epsilon_U=2
+
+Turán equality forces H[W]=K4 dot-union K4 dot-union K5 dot-union K5. The low-degree singleton d0 must carry all two units of U-excess and be complete to one K4 part P0. Using d0, a in A, and b in B as a fixed independent triple, the proof shows no A/B pair can be assigned to the same W part or to P0. Common-neighbour capacities (7,6,6) force one side to fill the other K4 with all seven vertices, and the other side to occupy the two K5 parts. The four C/E vertices must then join P0; after accounting for d0, C/E, and the A/B side assignments, at most seven total slots remain for ten X/Y vertices. Contradiction.
+
+### Scope
+
+Together with Round 19's epsilon_U=0 exclusion, the explicit (5,5,2,1,2) blow-up has no extension to the 47-vertex core for any epsilon_U in {0,1,2}. The verifier checks profile arithmetic, one-edge transversal fractions, and the 12 possible disjoint-support A/B count patterns. It does not certify the graph-theoretic lemmas or classify all saturated J graphs.
+
+The general saturated branch remains OPEN because other admissible 15-vertex J's have not been ruled out. The delta<=13 cases, five shell templates A-E, and the K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
