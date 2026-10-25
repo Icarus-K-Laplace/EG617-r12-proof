@@ -132,10 +132,9 @@ of the three \(K_4\) parts; the eighth has \(t_d=0\) and five \(W\)-neighbours.
 
 Let \(n_1+n_2+n_3=7\) be the endpoint counts in the three \(K_4\) parts.
 
-- If \(\max n_i\ge4\), a \(K_4\) receiving \(k\ge4\) endpoints has at least
-  three exact-neighbourhood \(D\)-vertices outside it. Every vertex of this
-  \(K_4\) is therefore complete to a small \(U\)-part by (1), and requires
-  \(\epsilon_w\ge k-2\ge2\). This costs at least eight excess units, impossible.
+- If the maximum endpoint load is (k=4) or (5), at least two exact-neighbourhood (D)-vertices lie outside that (K_4). By (1), every vertex of the loaded (K_4) is complete to a small (U)-part and requires (epsilon_wge k-2); the four vertices therefore consume at least eight excess units.
+- If (k=6), the one exact-neighbourhood endpoint outside the loaded (K_4) has (t_d=1). For each (w) in the loaded component, either (D') has at least two vertices, forcing a small-part neighbourhood, or (D') is that single (t_d=1) vertex, in which case (2) gives (d_H(w,U)ge13). Either way (epsilon_wge4), impossible for all four vertices.
+- If (k=7), the remaining (t_d=0) vertex has five (W)-neighbours. With one (W)-cross-edge it must be complete to a (K_4) plus one extra neighbour. If that (K_4) is the loaded component, (D) and the component form a forbidden (K_{12}). Otherwise at least one vertex of the loaded component misses the (t_d=0) vertex; it then cannot be a no-whole-part exception and would need seven (D)-neighbours plus a whole small part, giving at least 14 (U)-neighbours, impossible.
 
 - Otherwise the only profile is \((3,2,2)\), up to permutation. In the
   \(K_4\) receiving three endpoints, every vertex has at least four
