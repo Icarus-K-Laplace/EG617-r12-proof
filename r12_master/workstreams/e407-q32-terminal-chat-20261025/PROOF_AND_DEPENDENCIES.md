@@ -1,7 +1,7 @@
 # E407 Q32 terminal — proof and dependency ledger
 
 Date: 2026-10-25  
-Status: **E407 Q32 OPEN / NOT_CERTIFIED; the \(\delta=16\) boundary is narrowed to an open labelled kernel.**
+Status: **E407 Q32 OPEN / NOT_CERTIFIED; the \(\delta=16\) branch is excluded under the retained core/witness contract.**
 
 ## 1. Dependency chain currently supported
 
@@ -16,7 +16,7 @@ Status: **E407 Q32 OPEN / NOT_CERTIFIED; the \(\delta=16\) boundary is narrowed 
 6. **Sibling transversal/excess theorem** gives \(\epsilon_U+2\delta\ge9\) and \(\delta\ge3\), under the same boundary contract.
 7. **Four-partite reduction at \(\delta=16\)**: \(L=\overline{H[U]}\) has 310 edges, exceeding the non-four-partite Brouwer threshold 309, so it is four-partite. The 49 linear witnesses force \(U\)-part sizes \(7,7,7,8\); the exact ledger forces \(H[W]=K_5\cup K_5\cup K_4\cup K_4\).
 8. **Reverse saturation**: under this structure, every \(w\in W\) is adjacent to all vertices of exactly one \(U\)-part. This is proved from \(\alpha(H)\le4\), the matching structure of the five \(U\)-cross-edges, and the total excess budget.
-9. **Endpoint split reduction**: the \(4+1\) and \(3+2\) allocations of the five \(D\)-endpoints across the two \(K_4\) components contradict the total degree-excess budget. The \(5+0\) split survives as a labelled kernel: its endpoint \(K_4\) is complete to \(D\), and each non-endpoint \(D\)-vertex has exactly one additional \(W\)-neighbour outside that \(K_4\).
+9. **Endpoint-split terminal exclusion**: the (4+1) and (3+2) allocations contradict the four-unit excess budget. In the (5+0) allocation, the endpoint (K_4) is forced complete to the 8-part, yielding a forbidden (K_{12}). Thus (delta=16) is excluded.
 
 ## 2. Exact external/input dependencies
 
@@ -36,7 +36,7 @@ Status: **E407 Q32 OPEN / NOT_CERTIFIED; the \(\delta=16\) boundary is narrowed 
 &|U|=29,\ |W|=18,\ 3\le\delta\le16\\
 &\Downarrow\\
 &\begin{cases}
-\delta=16:\ \text{open; reduced to the labelled }5+0\text{ kernel},\\
+\delta=16:\ \text{excluded by endpoint-split excess + forbidden }K_{12},\\
 \delta=15,\ L\text{ non-four-partite}:\ \text{excluded by KP equality + incompatible }x,y\text{ degrees into }W,\\
 \delta=15,\ L\text{ four-partite}:\ \text{near-extremal case OPEN},\\
 \delta\le14:\ \text{four-partite and non-four-partite cases OPEN}.
@@ -46,4 +46,4 @@ Status: **E407 Q32 OPEN / NOT_CERTIFIED; the \(\delta=16\) boundary is narrowed 
 \end{aligned}
 \]
 
-There is no circular dependency in the \(\delta=16\) structural reduction: it uses only the E407 core contract, the 49-block linearity, the exact ledger, Turán/Brouwer bounds, and \(\alpha(H)\le4\). The δ=15 non-four-partite exclusion depends on the Kang–Pikhurko equality classification (cited in DELTA15_SECOND_TURAN_PACKING.md), the W-side Brouwer bound, and the retained core/witness contract. All remaining cases still depend on the upstream validity of the 49-witness boundary.
+There is no circular dependency in the \(\delta=16\) exclusion: it uses only the E407 core contract, 49-block linearity, the exact ledger, Turán/Brouwer bounds, \(\alpha(H)\le4\), and \(\omega(H)\le11\). The \(\delta=15\) non-four-partite exclusion additionally depends on the Kang–Pikhurko equality classification and W-side Brouwer bound. All remaining cases depend on the upstream validity of the 49-witness boundary.
