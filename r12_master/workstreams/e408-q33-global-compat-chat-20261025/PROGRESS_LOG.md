@@ -248,3 +248,28 @@ E408 Q33 remains OPEN / NOT_CERTIFIED. The four-partite support branch has \(S_0
 - P49/P48 audit holds: a11d93b8d9a3cd58aa7f6f8da58ae3e90def8391; cfcb8f70f856dd742d3a658551b97f5d65e17fb3
 - Canonical state update: 5b82013a9b6200480d10b574d750eb7d7c8070bb
 - Dependency map update: c7fc225531eea0eeec8720864b667dcacf9a19fe
+
+
+## 2026-10-25 continuation — repaired \(P_C=50,r_i=6\) corner with double-star
+
+The outer-star audit initially withdrew the former \(P_C=50,r_i=6\) proof because it treated a single external \(C\)-edge from a monochromatic \(K_{12}\) as impossible. This continuation repairs that exact corner rather than restoring the invalid lemma.
+
+**Theorem added:** under the retained exact-129 factor theorem, seven-block row contract, gadget normal form, and \(r=1,6\) row classifications, the profile \(P_C=50,\ r_i(C)=6\) is impossible.
+
+- The identity \(P_C+R_C=62\) forces \(R_C=12\), so the other six block budgets are all \(r_j=1\).
+- Select one no-component row from the \(r=6\) block and one no-component row from each \(r=1\) block.
+- The exact gadget alignment predicate supplies a \(K_5\) clique \(D\) disjoint from all seven omitted gadget sets; pairwise intersections of the omitted sets give a valid pairwise-blocker proof that the seven rows plus \(D\) form a monochromatic \(K_{12}\).
+- The verifier supplies a gadget vertex \(z\) adjacent to the high row and also either to \(D\) or to a selected low row. Hence \(d_C(z,K_{12})\ge2\), contradicting the correct star-capacity bound \(d_C(z,K_{12})\le1\).
+
+Added R12_P50_R6_DOUBLE_STAR_EXCLUSION.md and verify_p50_r6_double_star.py. The finite replay passed 204 Case-A/B and 49,008 Case-C configurations, 49,212 total, zero failures. The script verifies the gadget alignment predicate only; row classifications and the exact-129 factor theorem remain explicit dependencies.
+
+Cross-branch reconciliation also found a separate conditional sibling theorem excluding \(P_C=49,r_i=6\) via the same double-star method: workstream/r12-unified-witness-capacity-20261025, OUTER_EXCEPTIONAL_ROW_COUPLING.md §12, verifier blob 23cd4ef874faadbd5931c5e3553a1a55415c7a79. This is a local corner result, not a universal cap.
+
+**Important remaining limit:** the other \(P_C=50\) profiles \((5,2,1^5)\), \((4,3,1^5)\), the other \(P_C=49\) profiles, and the claimed \(P_C=48\) boundary remain NOT CERTIFIED because their existing proofs still use single-external-edge contradictions. E408 Q33 and EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.
+
+### Commits
+- P50/r6 double-star theorem: 07b6891eefac7163b1a0fbc1c2529126c2b5b1d7
+- P50/r6 finite verifier: 2c42edbf6996bc733f7df1ee5a182c5e8954447e
+- Active ledger update: e714b150a0d63fff1b7fa295fd8fa372e91c6950
+- Canonical state update: 14024726e042bd167ac6da444a8b0a61f0f6ecfd
+- Dependency map update: 5a01f8e4614e70fe4c3582b56d701ba6c7011471
