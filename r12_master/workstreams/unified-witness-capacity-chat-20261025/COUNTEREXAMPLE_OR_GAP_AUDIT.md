@@ -128,3 +128,16 @@ This is zero for a single cell or a two-cell matching, one for an adjacent two-c
 For one exact-129 color C, take both exceptional rows from every low-slack outer block. Their induced C-graph has independence number at most two. Any independent triple would have pairwise-disjoint complementary cliques in the 11-point gadget; this forces at least22 gadget incidences but the three rows have at most24 total incidences, leaving at most two incidences in the ten isolated K5 components. Thus no K5 component can be fully covered, and one vertex from each component plus the triple contradicts alpha(C)<=12.
 
 For k low-slack blocks, the exceptional-row graph has at least k(k-1) C-edges. If equality holds, it is exactly two disjoint K_k cliques, with the two exceptional rows in every block on opposite sides. This identifies the exact zero-excess pattern; deviations consume duplicate budget but are not yet ruled out.
+
+
+## 11. Near-complete component matching under \(r_i,r_j\le5\)
+
+For an exact-129 color C, each outer block with \(r_i(C)\le5\) has one row containing each isolated K5 component \(K_\ell\). The total extra row-neighborhood incidence beyond the ten K5 baselines and two six-incidence exceptional baselines is \(r_i(C)-1\).
+
+If the same-label representatives of \(K_\ell\) in blocks i,j are nonadjacent, then unless their extra neighborhoods cover a second K5 component (five incidences), at least six gadget vertices must be covered to leave at most five vertices in the 11-point gadget. Thus each missing diagonal costs at least five extra incidences. Across distinct labels the charges use distinct row incidences, so
+\[
+m_{ij}(C)\le \left\lfloor\frac{r_i(C)+r_j(C)-2}{5}\right\rfloor\le1.
+\]
+This extends the full matching result from \(r_i+r_j\le6\) to a near-matching result for every pair with \(r_i,r_j\le5\).
+
+Boundary warning: the theorem does **not** imply that a missing diagonal always contributes \(d_{ij}(C)\ge1\), because for \(r_i+r_j\ge7\) the remaining component rows can potentially be matched to exceptional rows. The exact edge budget and all 2x2 interaction types still need separate accounting. No global contradiction follows yet.
