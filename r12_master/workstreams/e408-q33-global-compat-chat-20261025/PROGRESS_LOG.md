@@ -288,7 +288,7 @@ Added R12_P50_REMAINING_HIGH_PROFILES_EXCLUSION.md and verify_p50_remaining_high
 - \((4,3,1^5)\): 1,143,930 non-sensitive plus 150 sensitive base configurations;
 - 1,656,848 base configurations total, zero failures, with every sensitive case expanded over all component-incidence allocations.
 
-Combining this with the \(P_C=50,r_i=6\) theorem excludes three of the seven positive profiles summing to \(R_C=12\). Only \((4,2,2,2,1^3)\), \((3,3,2,1^4)\), \((3,2,2,2,2,1^2)\), and \((2^5,1^2)\) remain at \(P_C=50\). These profiles force ten component-labelled \(K_{12}\)'s, but the old edge-budget contradiction depended on the invalid isolation inference. The universal \(P_C\le49\) cap remains **NOT CERTIFIED**.
+Combining the \(P_C=50,r_i=6\) theorem with the two high-profile double-star exclusions leaves the four correct profiles \((4,2,2,1^4)\), \((3,3,2,1^4)\), \((3,2,2,2,1^3)\), and \((2^5,1^2)\). The earlier list used \((4,2,2,2,1^3)\) and \((3,2,2,2,2,1^2)\), both of which sum to 13 rather than 12. The four correct low profiles are now excluded by the common-star theorem below; the colorwise cap \(P_C\le49\) is conditionally established, while \(P_C\le48\) remains NOT CERTIFIED.
 
 ### Commits
 - Remaining high-profile theorem: 4a1bd39ba4e08854fd35907d051a44451259b07c
@@ -296,3 +296,44 @@ Combining this with the \(P_C=50,r_i=6\) theorem excludes three of the seven pos
 - Active ledger update: 682ea469f41a31d07573ee6ec08c31f6ad27294e
 - Canonical state update: 455673197a67288520f8528c753a5aa5d5e5feec
 - Dependency map update: 087aba82e410b86b0750493d5835ea8da5d8800f
+
+
+## 2026-10-25 continuation — common-star theorem establishes conditional \(P_C\le49\)
+
+### Finite gadget certificate
+
+Added R12_HIGH_P_COLOR_CAP_COMMON_STAR.md and verify_high_p_common_star.py. For each of the four exact 11-point gadget normal forms, the verifier enumerates every disjoint clique pair with the registered complement-size profile for budgets \(r=1,\ldots,5\). A pair's candidate set consists of all \((D,w)\) such that \(D\) is a gadget \(K_5\), \(w\notin D\), and one complement contains \(w\) while avoiding \(D\).
+
+The dynamic program takes every intersection of candidate sets over all seven-block budget profiles with \(1\le r_i\le5\) and \(\sum_i r_i\le12\). It checked 18 sorted profiles across four normal forms (72 cases), 2,405,684 transitions, and at most 2,625 reachable intersection states. No empty intersection occurred. I independently replayed the same finite logic in Python: all 72 profile/form pairs passed, with the same 2,405,684 transition count and maximum state count 2,625.
+
+### Mathematical consequence
+
+For every allowed row-pair tuple in this range, there is a common \(K_5\) \(D\) and common gadget point \(w\) contained in one selected complement from every block, with all selected complements disjoint from \(D\). If every pair of selected rows has at most four partial component incidences in total, then their complements intersect at \(w\), so the pairwise-blocker theorem forces the seven rows to be pairwise \(C\)-adjacent. Together with \(D\), they form a monochromatic \(K_{12}\).
+
+Each selected complement is a proper subset of the six-point set \(U_C\setminus D\), so the seven omission sets have total size at least seven. Pigeonhole gives an external gadget vertex omitted by at least two selected complements, hence \(C\)-adjacent to at least two vertices of the \(K_{12}\). This contradicts the valid star-capacity bound \(d_C(z,K_{12})\le1\), not an invalid isolation claim.
+
+- \(P_C\ge51\): \(\sum r_i\le11\), so \(r_i+r_j\le6\) for every pair and the component-incidence budget is at most four.
+- \(P_C=50\), \(\max r_i\le4\): the four correct profiles are \((4,2,2,1^4)\), \((3,3,2,1^4)\), \((3,2,2,2,1^3)\), and \((2^5,1^2)\); they also satisfy the pairwise budget condition.
+- \(P_C=50\), \(\max r_i\ge5\): \((6,1^6)\) is closed by the \(r_i=6\) double-star theorem; \((5,2,1^5)\) and \((4,3,1^5)\) are closed by the incidence-sensitive double-star verifier.
+
+Therefore every exact-129 color satisfies the conditional cap
+\[
+\boxed{P_C\le49,\quad R_C\ge13.}
+\]
+This is a corrected proof independent of the withdrawn outer-isolation lemma. The old attempt at \(P_C\le48\) (excluding \(P_C=49\)) remains NOT CERTIFIED because its single-external-edge inference is invalid. E408 Q33, E407 Q32, E408 Q32, and EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.
+
+### Arithmetic audit note
+
+The seven positive profiles summing to \(R_C=12\) are exactly
+\[
+(6,1^6), (5,2,1^5), (4,3,1^5), (4,2,2,1^4),
+(3,3,2,1^4), (3,2,2,2,1^3), (2^5,1^2).
+\]
+This correction supersedes the two incorrect profile strings in the preceding log entry and the earlier draft of R12_P50_REMAINING_HIGH_PROFILES_EXCLUSION.md.
+
+### Commits
+- Common-star verifier: c413b1065e9926d00ad1319f2e8d8a815e4850b5
+- Common-star conditional cap theorem: 04b5ec6f9a1e118faee2216208e1f13361fb8d43
+- Corrected active incidence ledger: 1a41ecfc88e25207d0f52e52d43e4a48a76b4dc6
+- Corrected high-profile theorem: d55d0e43a1b17fd9ef2b5dd7971560f1dcc4025d
+- Updated proof dependency map: 94f0edd87b05f28d271bfc611fbf882ecb8f8cb0
