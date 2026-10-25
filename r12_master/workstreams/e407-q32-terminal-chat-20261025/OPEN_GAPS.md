@@ -61,3 +61,14 @@ Do not continue adding isolated scalar inequalities unless they either:
 2. yield a direct witness/core incompatibility contradiction.
 
 Until Gap A or Gap B is closed and the T61 bridge is certified, E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+## Round 14 update — current live frontier
+
+All four-partite cases at \(\delta=14\) are now excluded for every allowed \(\epsilon_U\in\{0,1,2\}\). The \(\epsilon_U=2\) case is forced to the unique Turán-equality W profile and excluded by the common-neighbour cap in DELTA14_EPSU1_2_ANTICOMPL_COMPONENT_PROFILES.md, Section 5.
+
+The live structural gaps are now only:
+1. \(\delta=14\) with \(L=\overline{H[U]}\) non-four-partite;
+2. \(\delta\le13\), where the \(\delta=14\) four-partite profile arguments do not transfer unchanged.
+
+E407 Q32, all five shell templates A–E, and EG617(r=12) remain OPEN / NOT_CERTIFIED.
