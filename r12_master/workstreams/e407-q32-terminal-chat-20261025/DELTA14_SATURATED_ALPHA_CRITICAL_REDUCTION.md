@@ -149,3 +149,10 @@ Dependencies and limitations:
 The proposed target in Section 7—proving that no triangle-free, non-bipartite, triangle-saturated 15-vertex graph with 49 edges admits the matching structure—is now known to be false. DELTA14_SATURATED_LOCAL_MODEL.md gives an explicit blow-up of \(C_5\) with part sizes \((5,5,2,1,2)\), together with a verified cell-to-edge bijection and the third coloring \(\kappa=x+y\pmod7\). It realizes the 29-point saturated graph and all 49 witness sets, partitioned into seven classes of seven disjoint witnesses.
 
 The correct next target is the extension problem: can this local \(H[U]\) be completed by \(W\) and the shell rows while satisfying the exact degree, clique, independence, and row-label constraints? The local model does not provide such a completion and is not a global counterexample.
+
+
+## Round 22 correction — the saturated-kernel classification is now complete
+
+The graph-only gap and the full-core extension gap are now both closed under the retained kernel contract. DELTA14_SATURATED_KERNEL_CLASSIFICATION.md proves that every admissible \(J\) is the blow-up of \(C_5\) with part sizes \((1,2,5,5,2)\). DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md proves that this graph has no full-core extension for any \(\epsilon_U\in\{0,1,2\}\).
+
+Therefore the **general \(\delta=14\), non-four-partite, \(K_5\)-saturated terminal is conditionally excluded**. The condition is inherited from this file's alpha-critical component-count reduction, which uses Didin's 2026 preprint theorem; that theorem's proof has not been independently audited here. The \(\delta\le13\) cases, five shell templates, and \(K_{145}\)-to-T61 bridge remain open.
