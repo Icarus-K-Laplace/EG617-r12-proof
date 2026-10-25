@@ -102,3 +102,11 @@
 - Concluded \(\nu_{12}(C)\ge\max(0,P_C-45)\). Combined with the near-matching theorem, \(P_C\ge51\) yields ten disjoint K12s; the \(P_C=50\) and \(P_C=49\) branches have the explicit bounds recorded in the canonical theorem.
 - Added exhaustive integer-profile checks for \(R_C=11,12,13\) with all \(r_i\le5\): the maximum number of block pairs with \(r_i+r_j\ge7\) is 0, 1, 2. Independent arithmetic replay is pending the next verifier pass.
 - This is a structural branch certificate, not a contradiction: the coloring hypothesis allows monochromatic K12 cliques. The unresolved issue remains forcing the aggregate duplicate budget into a branch whose K12 packing or witness geometry is impossible.
+
+
+## 2026-10-25 — final audit for this continuation
+
+- Independent Python replay passed for the exact-profile enumeration: \(R_C=11,12,13\) yield 210, 455, and 875 profiles with \(r_i\le5\), and maximum counts of pairs with \(r_i+r_j\ge7\) equal 0, 1, and 2.
+- Independent Python replay also passed the scalar budget relaxation and the formula \(\max(0,17-R_C)=\max(0,P_C-45)\).
+- Created TERMINATION_CLOSURE.md. It explicitly preserves OPEN / NOT_CERTIFIED, distinguishes analytic lemmas from arithmetic checks, and names the missing bridge: label transfer, near-exact-color structure, or a global labelled incidence inequality.
+- Latest sibling heads were refreshed and recorded in CANONICAL_STATE.md. All changes remain confined to this workstream; no full graph realization or original K145 proof is claimed.
