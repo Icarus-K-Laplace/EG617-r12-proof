@@ -124,7 +124,7 @@ def main():
     print("maximum reachable intersection states:", max_states)
     print("common-star failures:", sorted(failures))
     print("closed by common-star plus pair-budget <=6:", sorted(CLOSED_BY_PAIR_BUDGET))
-    print("remaining P_C=49 profiles:", sorted(UNRESOLVED))
+    print("profiles requiring incidence-sensitive/high-budget follow-up at this screen stage:", sorted(UNRESOLVED))
     print("Scope: partial colorwise boundary screen only; P_C=49 remains open.")
 
 
