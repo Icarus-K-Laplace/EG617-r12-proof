@@ -682,3 +682,12 @@ Added DELTA13_EPS1_3K4_K6_K4K4_EDGE.md and verify_delta13_eps1_3k4_k6_k4k4_edge.
 - If all U vertices are saturated, \(29\le\sum_i|S_i|\le28\), contradiction. If one exception exists, at least 28 vertices must be covered. Any K4 capacity below nine gives total capacity at most 27. If all three K4 capacities equal nine, their labels must be small U-parts; the exceptional vertex's part is excluded, so two components share one of the other two labels, causing a seven-vertex overlap and preventing coverage.
 - Arithmetic replay passed: DELTA13_EPS1_3K4_K4K4_EDGE_ARITHMETIC_OK.
 - Status: **PROVED_CONDITIONAL** for this placement; combined with Round 25, both placements of the \(3K_4\dot\cup K_6\)-plus-one-edge profile are excluded. E407 Q32 remains OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 — Round 27: independent arbitrary-exception proof for the delta-13 \(3K_4\dot\cup K_6\) profile
+
+Added DELTA13_EPS1_K4K4K4K6_ONE_CROSS_EDGE.md and its standard-library arithmetic verifier. Replay passed: DELTA13_EPS1_K4K4K4K6_ONE_CROSS_EDGE_ARITHMETIC_OK.
+
+This is an independent proof of both unique-cross-edge placements. It is intentionally stronger in its treatment of the K4–K4 placement than a reduction that first attempts to eliminate every degree-six U exception: it permits an arbitrary exception set \(E\), \(k=|E|\). Every exception sees all six non-endpoint vertices of the two incident K4s and misses both endpoints. The reverse-saturation lemma labels every W vertex except possibly one non-endpoint K4 vertex with excess three. The component capacities are \(|S_{K_4}|\le9\) and \(|S_{K_6}|\le\lfloor E_6/2\rfloor\le1\). If \(k>0\), each incident K4 improves to \(|S_i|\le9-k+\lfloor E_i/3\rfloor\), so the total cover is at most \(29-2k\), but at least \(29-k\) U vertices must be covered. Contradiction. If \(k=0\), the total cover is at most 28<29.
+
+The finite verifier exhausts the K4 label/excess load profiles and the K6 label/excess profiles. It does not machine-prove the analytic saturation or reverse-saturation lemmas. The full \(\delta=13,\epsilon_U=1\), \(3K_4\dot\cup K_6\)-plus-one-edge profile is closed under the four-partite-U/core contract. Next target: \(2K_4\dot\cup2K_5\) plus two W-cross-edges at \(\epsilon_U=1\).
