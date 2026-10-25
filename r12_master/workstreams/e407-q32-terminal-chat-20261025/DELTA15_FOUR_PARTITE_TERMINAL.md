@@ -115,4 +115,22 @@ In the surviving case:
 - every \(K_5\)-vertex is complete to one small \(U\)-part (it cannot be complete to \(D\), which would create \(K_{13}\); the possible no-part exception would force adjacency to all but one \(D\)-vertex, including another positive-\(t_d\) vertex that is complete to \(C_0\)); its off-label degree is \(1+\epsilon_w\). Of the \(15+\epsilon_{K_5}\) off-label incidences across the three \(K_5\)'s, ten go to \(D\), leaving \(5+\epsilon_{K_5}\) edges to the small parts;
 - if \(k_A,k_B,k_C\) count the full-part labels among the 15 \(K_5\)-vertices, then \(k_A+k_B+k_C=15\), and \(k_P\le5\) if \(P\) contains a cross-edge endpoint, \(k_P\le6\) otherwise. No \(K_5\) part can have all five vertices labelled to the same small part, as that would create \(K_{12}\).
 
-The remaining work is to combine this exact \(K_{11}\)-core structure with the five shell templates and their hub-row/transversal constraints. E407 Q32 remains **OPEN / NOT_CERTIFIED**.
+## 7. The remaining \(K_3\cup K_5^3\) profile is impossible
+
+For each small part \(P\in\{A,B,C\}\), let \(k_P\) be the number of vertices in the three \(K_5\) parts of \(H[W]\) that are complete to \(P\). Every \(K_5\)-vertex has exactly one such full-part label, so
+\[
+k_A+k_B+k_C=15.
+\]
+The \(K_3\) vertices are complete to \(D\), and each has only \(2+\epsilon_w\le6\) neighbours in the small parts, so none is counted among the \(k_P\).
+
+If \(P\) contains a cross-edge endpoint \(u\), then \(d_H(u,W)=5\). Since every vertex labelled \(P\) is adjacent to all of \(P\), this gives \(k_P\le5\).
+
+Now suppose \(P\) contains no cross-edge endpoint. Every \(u\in P\) then has \(d_H(u,W)=6\). If \(k_P=6\), all six labelled vertices are exactly \(N_H(u,W)\) for every \(u\in P\). By \(\alpha(H)\le4\), this six-set must contain a whole \(W\)-clique part. It contains no \(K_3\)-vertex, so it must contain an entire \(K_5\) part. All five vertices of that \(K_5\) would then be labelled \(P\), making \(P\cup K_5\) a forbidden \(K_{12}\). Hence \(k_P\le5\) also when \(P\) has no cross-edge endpoint.
+
+Thus every \(k_P\le5\), and the sum identity forces
+\[
+k_A=k_B=k_C=5.
+\]
+There are six cross-edge endpoints, so choose one, \(u\in P\). It has exactly five \(W\)-neighbours, and those are precisely the five vertices labelled \(P\). Again \(\alpha(H)\le4\) forces this neighbourhood to contain a whole \(W\)-clique part. It cannot be the \(K_3\), whose vertices are labelled \(D\); it must be a \(K_5\) part. All five vertices of that \(K_5\) are labelled \(P\), so \(P\cup K_5\cong K_{12}\), contradicting \(\omega(H)\le11\).
+
+Therefore the final \(K_3\cup K_5^3\) profile is also impossible. Together with Sections 3–4, this excludes the entire \(\delta=15\) four-partite branch under the retained core/witness contract. The remaining E407 Q32 cases have \(\delta\le14\), and E407 Q32 overall remains **OPEN / NOT_CERTIFIED**.
