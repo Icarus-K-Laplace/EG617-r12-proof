@@ -200,3 +200,15 @@ Added DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md and verify_delta14_saturated_tr
 For that candidate, the distinguished singleton \(d_0\in J\) has \(d_J(d_0)=4\), hence \(d_{H[U]}(d_0)=10\). Brouwer's second-Turán bound forces \(\overline{H[W]}\) to be four-partite, with four clique parts of size at least three and at most \(2-\epsilon_U\) cross edges in \(H[W]\). Independent-transversal capacity excludes this candidate when \(\epsilon_U=0\); for \(\epsilon_U=1,2\), it forces the two stated W profiles and \(d_0\)'s complete neighborhood into the smallest clique component.
 
 The saturated-branch reduction has **not** shown that every allowed \(J\) is this blow-up. Thus the general saturated branch, the five shell templates, \(\delta\le13\), and the original \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## Round 20 — explicit saturated local candidate has no full-core extension
+
+Added DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md and verify_delta14_saturated_candidate_extension_exclusion.py. Independent arithmetic replay returned `DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION_ARITHMETIC_OK`.
+
+For the explicit (5,5,2,1,2) blow-up local model, the remaining W-extension terminals are now excluded:
+- epsilon_U=1: the K3 + 3K5 and 3K4 + K6 profiles violate the omega(H)<=11 common-neighbour capacity (maximum cover 26<29); the (4,4,5,5) plus one-cross-edge profile admits an independent transversal avoiding N_W(d0), giving an independent 5-set.
+- epsilon_U=2: d0 must be complete to a K4. Pairwise independent-set constraints force the A- and B-assignments to distinct W parts, with one side filling the other K4. The four C/E vertices then fill the d0-side K4 up to five common neighbours, leaving at most seven total slots for the ten X/Y vertices, contradiction.
+- Together with the epsilon_U=0 independent-transversal exclusion, the explicit candidate has no full 47-core extension for any epsilon_U in {0,1,2}.
+
+The verifier checks W-profile arithmetic, transversal forbidden fractions, and the 12 finite A/B assignment patterns. It does not machine-check the graph-theoretic independent-set arguments. This is not a universal closure: the 15-vertex saturated graph J has not been classified, and the alpha-critical reduction only gives necessary conditions for J. The general delta=14 saturated branch, delta<=13, the five shell templates, and the K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
