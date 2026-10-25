@@ -1,7 +1,7 @@
 # E407 Q32: reduce the delta-13 epsilon_U=1, 2K4 + 2K5 W-profile with two cross-edges
 
 Date: 2026-10-25  
-Status: **PROVED_CONDITIONAL for all placements where the two W-cross-edges join different pairs of clique parts, for both K5–K5 placements, and for the same-pair disjoint K4–K5 placement.** Four same-pair placements remain OPEN.
+Status: **PROVED_CONDITIONAL: every placement of the two W-cross-edges is excluded** under the retained core/witness contract. The four formerly open same-pair placements are closed in DELTA13_EPS1_TWO_CROSS_EDGE_TERMINAL_CLOSURE.md.
 
 ## 1. Contract
 
@@ -93,16 +93,10 @@ If the two edges are disjoint, a nonsaturated U-vertex would need at least \(4+4
 
 Both K5–K5 placements are excluded.
 
-## 6. Exact residual terminal list
+## 6. Complete same-pair terminal closure
 
-The same-pair disjoint K4–K5 placement is now excluded in DELTA13_EPS1_TWO_CROSS_EDGE_K4K5_DISJOINT_CLOSED.md: Type II blockers are impossible for disjoint edges, while every Type-I K4–K5 blocker requires seven W-neighbours and hence the unique positive-excess U vertex. This gives at most one exception, contradicting the component-cover requirement k>=5.
+The same-pair disjoint K4-K5 placement is excluded in DELTA13_EPS1_TWO_CROSS_EDGE_K4K5_DISJOINT_CLOSED.md. The four other formerly open placements—K4-K4 matching, K4-K4 star, K4-K5 star centred in the K4, and K4-K5 star centred in the K5—are excluded in DELTA13_EPS1_TWO_CROSS_EDGE_TERMINAL_CLOSURE.md.
 
-The only same-pair placements still OPEN are:
-1. both edges between the two K4 parts, forming a matching;
-2. both edges between the two K4 parts, forming a star;
-3. both edges between a K4 and a K5, sharing an endpoint in the K4;
-4. both edges between a K4 and a K5, sharing an endpoint in the K5.
+The proof combines the common \(k\ge5\) exception floor, the exact Type-I/Type-II blocker classification, the fact that at least six D-vertices have \(t_d=1,\epsilon_d=0\), and an independent-5-set contradiction. Therefore the entire four-partite-\(L\), \(\delta=13,\epsilon_U=1\), \(2K_4\cup2K_5\)-plus-two-cross-edge W-profile is **EXCLUDED** under the retained core/witness contract.
 
-The fourth placement has maximum total capacity 28 but can have degree-six U-exceptions, so it is not promoted to a contradiction here. The other three remaining placements can reach the capacity ceiling 29 and require equality/exception analysis.
-
-This note does not close the entire \(\delta=13,\epsilon_U=1\), \(2K_4\dot\cup2K_5\)-plus-two-cross-edge profile. The \(\epsilon_U=2\) one-cross-edge profile, \(\epsilon_U=0\), non-four-partite U-complements, \(\delta\le12\), the five shell templates globally, and the \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+The \(\epsilon_U=2\) one-cross-edge profile, the \(\epsilon_U=0\) row, non-four-partite \(L\), \(\delta\le12\), the five shell templates globally, and the \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
