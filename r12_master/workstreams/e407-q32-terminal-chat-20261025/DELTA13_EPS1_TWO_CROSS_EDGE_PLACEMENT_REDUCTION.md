@@ -60,7 +60,7 @@ A reverse-saturation lemma under this four-partite-U contract gives
 \[
 w\text{ not complete to any U-part}\Longrightarrow d_H(w,U)\ge12.
 \]
-Indeed, \(t_d\le2\) for \(d\in D\): a W-saturated \(d\) has at least four W-neighbours, while a nonsaturated one can occur only in a K4–K4 single-edge blocker and then has \(\epsilon_d=1,t_d=0\). For an unlabelled \(w\), each non-neighbour \(d\in D\) forces one of the non-neighbour sets in \(A,B,C\) to have size at most two; distinct \(d\)'s force distinct small parts. The resulting non-neighbour counts are at most \(17,13,9\) for one, two, or three such D-vertices, so \(d_H(w,U)\ge12\).
+Indeed, \(t_d\le2\) for \(d\in D\): a W-saturated \(d\) has at least four W-neighbours, giving \(t_d\le1+\epsilon_d\le2\). If \(d\) is not W-saturated, the two-edge blocker structure requires at least five W-neighbours (the minimum is the K4–K4 star), so \(5+\epsilon_d-t_d\ge5\) and \(t_d\le\epsilon_d\le1\). For an unlabelled \(w\), each non-neighbour \(d\in D\) forces one of the non-neighbour sets in \(A,B,C\) to have size at most two; distinct \(d\)'s force distinct small parts. The resulting non-neighbour counts are at most \(17,13,9\) for one, two, or three such D-vertices, so \(d_H(w,U)\ge12\).
 
 Hence every K5 vertex is labelled by a unique U-part, because its U-degree is at most eleven. For a K5 component,
 \[
