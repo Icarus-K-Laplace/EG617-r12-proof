@@ -27,4 +27,4 @@ for k in range(3, 8):
     required_excess = non_D_complete * (k - 2)
     assert required_excess > EPS_W, (k, m_max, required_excess)
 
-assert 8 > 11  # deliberately false would be a bad check; use the clique size identity instead
+assert 8 + 4 == 12  # D union a fully D-complete K4 is a forbidden K12
