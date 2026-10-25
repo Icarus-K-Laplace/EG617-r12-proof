@@ -11,7 +11,7 @@ Directory: r12_master/workstreams/e407-q32-terminal-chat-20261025/
 - witness packing: f5d3daa07403877ede9885e1bd5c2f46b16d81da
 - zero-excess witness: 07d19abfd6c1c749c7360526e4a04a3eb865fb2e
 - unified witness capacity: 9935e0d2343fc08d9e65d51ff495cfb260d6de95
-- E408 Q33 global compatibility: d70b6a2b9c4929b6b9315fcfd4bd29848920323b
+- E408 Q33 global compatibility: cf2782082643af46403865c5d66744ea8fe03dd9
 - Astra dlow terminal: c71b29d3c5b661cdcf00404e545933893c44598b
 - Astra aext near-anchor: ad6e4ebe152e3918b9c5fe67f461ba402b1445d8
 - base main at branch creation: 3f42fcce5761ca2372140618adda56f95fcbe253
