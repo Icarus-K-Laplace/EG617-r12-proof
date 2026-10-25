@@ -124,3 +124,12 @@ Combining \(|\mathcal W_C|\ge6\) with the all-block component bound \(|\mathcal 
 |\mathcal W_C\cap\mathcal K_C^*|\ge\max(0,P_C-49).
 \]
 Thus \(P_C\ge50\) forces at least one selected component to extend to a monochromatic K12, and \(P_C=51\) forces at least two. This improves the label-aware threshold but is not a contradiction; all full-terminal and root-bridge obligations remain OPEN / NOT_CERTIFIED.
+
+
+## 13. Exact-component reservoir: ten witnesses per exact color
+
+Every isolated K5 component of an exact-129 color avoids S. It must contain a vertex outside H because \(\alpha(H)\le4\). The outside-H vertices in such a component lie in \(B\cup\{p\}\), and any two such vertices are target-adjacent; therefore each component has exactly one outside-H label and four core vertices. All ten components are shell witnesses, with ten distinct labels and at least nine B-labelled witnesses per exact color.
+
+For the union \(U_{\rm comp}\) of all ten component four-sets per exact color, \(|U_{\rm comp}|\ge40\). If there are \(m=10\) exact colors, \(|U_{\rm comp}|=40\) is impossible: the 100 component K4s require 600 distinct complement edges, but the core degree ledger and Turán bound on the seven-point complement \(W\) give at most 581. Hence \(m=10\Rightarrow |U_{\rm comp}|\ge41\). At \(v=41\), the 100 component K4s use 600 of at most 610 complement edges, leaving a near-decomposition problem.
+
+The full-component support is distinct from the seven-witness minimum-support union; it does not close the latter's \(v=29/31\) terminal. \(m=8,9\) and \(m=10,v\ge41\) remain OPEN / NOT_CERTIFIED.
