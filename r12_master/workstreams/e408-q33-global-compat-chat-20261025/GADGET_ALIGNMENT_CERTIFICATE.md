@@ -3,8 +3,8 @@
 Date: 2026-10-25  
 Status: **FINITE_GADGET_VERIFIED**  
 Verifier source: GADGET_ALIGNMENT_VERIFIER.js  
-Verifier source commit: 2209c1764182a1aaa5b945469d8edf9fc81cffa5  
-Verifier blob SHA: bc3dbb9dec2f169c09f4afb9d663a3e163c55c2c
+Verifier source commit: 6b5b356b1c3e8c70a7b8a296d6af46863b6a2a49  
+Verifier blob SHA: 5ea65b9b190de378121aa6a4d326f053ff329bb9
 
 ## Contract
 
@@ -49,7 +49,9 @@ The verifier asserts all of the following, with no failures:
 
 The pair/pair property chooses a member of size at least four from each pair, so the chosen omitted sets lie in the six-set \(U\setminus D\) and pairwise intersect. The triple property likewise chooses size-at-least-four members from all three pairs.
 
-The \(53+53\) pair/pair combination is deliberately excluded: it is not universally alignable by this \(D\)-family, and the \(R_C=14\) missing-edge budget rules it out whenever that alignment is invoked. The verifier does **not** claim that a high \(K_4\) can always be aligned with a low \(53\) pair in isolation; that broader claim has counterexamples for \(s=2,3\). The \(K_3\)-against-\(54\) property is also not asserted; it has counterexamples for \(s=2,3\).
+The \(53+53\) pair/pair combination is deliberately excluded because it is not universally alignable by this \(D\)-family. The proof never invokes that alignment: the all-low occurrence is excluded by the pair-sum budget, while the \((6,3,1^5)\) occurrence is handled directly by its component/gadget excess inequalities. The verifier does **not** claim that a high \(K_4\) can always be aligned with a low \(53\) pair in isolation; that broader claim has counterexamples for \(s=2,3\). The \(K_3\)-against-\(54\) property is also not asserted; it has counterexamples for \(s=2,3\).
+
+For the high-\(K_5\)-versus-\(53\) checks, the minimum allowed low omitted-set size is three. If the chosen low member is the \(K_3\), its size together with the high \(K_5\) is \(5+3=8>6\); both lie in \(U\\setminus D\), so they necessarily intersect. This is sufficient for the blocker step and is distinct from the unproved high-\(K_4\)-versus-\(53\) assertion.
 
 ## Scope
 
