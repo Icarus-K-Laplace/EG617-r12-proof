@@ -6,10 +6,11 @@ Directory: r12_master/workstreams/e407-q32-terminal-chat-20261025/
 ## Headline
 **EG617(r=12): OPEN / NOT_CERTIFIED. E407 Q32: OPEN.**
 ## Live sibling heads read
-- emergency sprint: f4c3b06891d29238d4f9cca2588f442004b6dc97
+- emergency sprint: 5258c5fe17af3bf17eb7a2bfb08315c9be9116cd
 - ultimate closure: 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40
 - witness packing: f5d3daa07403877ede9885e1bd5c2f46b16d81da
 - zero-excess witness: 07d19abfd6c1c749c7360526e4a04a3eb865fb2e
+- unified witness capacity: c6461a4ef3f3ff3624e23334c17ade3cd56bf470
 - Astra dlow terminal: c71b29d3c5b661cdcf00404e545933893c44598b
 - Astra aext near-anchor: ad6e4ebe152e3918b9c5fe67f461ba402b1445d8
 - base main at branch creation: 3f42fcce5761ca2372140618adda56f95fcbe253
@@ -17,7 +18,7 @@ These are the latest heads observed in the repository at the time of this update
 ## Established under retained contracts
 - The E407 Q32 boundary has 49 linear independent 4-set witnesses on a 29-point support, with \(e(H)=284\), \(\alpha(H)\le4\), \(\delta(H)\ge12\), and total core excess 4.
 - The exact ledger gives \(3\le\delta\le16\), \(\delta+\epsilon_U\le16\), and the sibling transversal/excess lemma gives \(\epsilon_U+2\delta\ge9\).
-- The \(\delta=16\) four-partite branch is **EXCLUDED**. The 4+1 and 3+2 endpoint splits violate the excess budget; the 5+0 split forces its endpoint \(K_4\) to be complete to the 8-part, creating a forbidden \(K_{12}\). See FOUR_PARTITE_TERMINAL.md.
+- The \(\delta=16\) four-partite branch is **EXCLUDED**. The 4+1 and 3+2 endpoint splits violate the excess budget; the 5+0 split forces its endpoint \(K_4\) to be complete to the 8-part, creating a forbidden \(K_{12}\). See FOUR_PARTITE_TERMINAL.md and DELTA16_K12_CLIQUE_OBSTRUCTION.md for the standalone one-exception proof.
 - The \(\delta=15\) four-partite branch is **EXCLUDED** in DELTA15_FOUR_PARTITE_TERMINAL.md: after eliminating three W-profiles, the last \(K_3\cup K_5^3\) profile forces \(k_A=k_B=k_C=5\), so any cross-edge endpoint has a forbidden \(K_{12}\) neighbourhood.
 - The \(\delta=15\) non-four-partite branch is **excluded** under the retained core/witness contract: Kang–Pikhurko equality reduces it to a balanced \((7,7,7,7)\) base, and the exceptional vertices \(x,y\) have incompatible required degrees into \(W\). The full reduction and contradiction are in DELTA15_SECOND_TURAN_PACKING.md.
 - The final \(\delta=15\) contradiction compares \(d_H(x,W)=a-1+\epsilon_x\) and \(d_H(y,W)=6-a+\epsilon_y\). Whole-part saturation in \(W\) forces incompatible lower bounds on \(a\), for both \(\epsilon_U=0\) and \(\epsilon_U=1\).
