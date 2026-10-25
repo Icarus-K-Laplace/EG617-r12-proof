@@ -180,3 +180,10 @@ The placement with the cross-edge between two K4 components is not covered by th
 DELTA13_EPS1_3K4_K6_K4K4_EDGE.md closes the remaining edge placement. The proof uses the exact eight-cross-edge budget to force D saturation, then reverse saturation and component common-neighbour capacities. The degree-six U exception is impossible; a degree-seven exception is unique and is eliminated by equality-case overlap among the K4 common-neighbour sets.
 
 The arithmetic verifier checks only the numeric degree gaps, edge ledger, and overlap bound. This result, together with Round 25, excludes the full one-cross-edge \(3K_4\dot\cup K_6\) profile for \(\delta=13,\epsilon_U=1\).
+
+
+## Round 27 — independent robust closure of the \(3K_4\dot\cup K_6\) one-cross-edge profile
+
+DELTA13_EPS1_K4K4K4K6_ONE_CROSS_EDGE.md proves the \(\delta=13,\epsilon_U=1\), four-partite-U profile \(3K_4\dot\cup K_6\) plus one W-cross-edge is impossible in either edge placement. The proof treats an arbitrary set of nonsaturated U vertices in the K4–K4 placement, avoiding any need to assume the degree-six exception is absent. It combines reverse saturation, a finite label-load capacity bound \(|S_{K_4}|\le9\), the K6 bound \(|S_{K_6}|\le\lfloor E_6/2\rfloor\), and a strict \(29-k\) versus \(29-2k\) cover contradiction.
+
+The verifier exhausts finite label/excess arithmetic only. The analytic graph lemmas remain human-proof dependencies. This result is conditional on the 49-witness core contract, the four-partite hypothesis for \(L=\overline{H[U]}\), and \(\omega(H)\le11\); it does not close the remaining \(\delta=13\) W-cross-edge profiles, \(\epsilon_U=0\), non-four-partite U-complements, \(\delta\le12\), the five shell templates globally, or the \(K_{145}\)-to-T61 bridge.
