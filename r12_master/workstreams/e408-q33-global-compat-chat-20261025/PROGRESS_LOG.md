@@ -76,3 +76,10 @@
 - Added Corollary 11.3. If an exact-129 color has \(P_C=50\) and a block with \(r_i=6\), the other six block budgets must all be one; at least eight component labels then complete to vertex-disjoint monochromatic \(K_{12}\) cliques across all seven blocks.
 - If \(P_C=49\) and some block has \(r_i=6\), the other six budgets are five ones and one two. The \(r=2\) block has at least nine distinct exact blockers, intersecting the at-least-eight clean labels from the \(r=6\) block in at least seven labels. These labels complete to at least seven vertex-disjoint monochromatic \(K_{12}\) cliques.
 - This connects the duplicate budget to an explicit global packing pattern. It is not a contradiction: the current proof does not show that these maximum cliques violate the remaining color-edge budget.
+
+
+## 2026-10-25 — live sibling audit and Corollary 11.3 replay
+
+- Re-read the latest emergency-sprint, ultimate-closure, witness-packing, zero-excess-witness, and E407 Q32 branches. E407's non-four-partite \(\delta=15\) subcase is excluded under its own contract, but E407 Q32 overall remains OPEN. E408 Q33 still has \(S_0\ge12\) universally and \(S_0\ge22\) in the four-partite branch; the larger-support/global terminal remains open.
+- Independently checked Corollary 11.3: \(P_C=50\) gives the block-budget vector \((6,1,1,1,1,1,1)\); \(P_C=49\) gives \((6,2,1,1,1,1,1)\). The clean-label/exact-blocker intersection in the latter case has size at least \(8+9-10=7\). The clique construction uses all seven blocks and the same \(K_5\) component, and different labels yield vertex-disjoint cliques.
+- No imported sibling result contradicts or closes this line. The remaining need is still a global incompatibility theorem linking the forced outer clique/edge patterns to the 56 labeled inner witnesses.
