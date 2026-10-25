@@ -208,3 +208,43 @@ The finite gadget verifier still records 467,696 checks with zero failures. The 
 - Updated alignment certificate: 06a1ff0507035e44829586a1f543b63643a957ae
 - Updated seven-block ledger: 7416d7ff2834190e517bcc1a5363bd6b07cfbb2f
 - Updated dependency map: cb48797b4b8579ea54e5ff5b0c754b6e0040b291
+
+
+## 2026-10-25 continuation — inner-core \(S_0=12\) equality excluded; outer-star audit correction
+
+### New conditional inner-core theorem
+
+Added R12_E408_Q33_S0_12_EXCLUSION.md. Under the retained T61, exact-129 factor, and 31-point/56-witness contracts, the case \(S_0=\epsilon_U+2\delta=12\) is impossible, improving the universal minimum-support bound to
+\[
+\boxed{S_0\ge13,\qquad \delta\ge5.}
+\]
+The four-partite branch retains its separate stronger \(S_0\ge22\) result.
+
+The proof uses the exact row identity \(s_r=3+g_r-a_r\), the degree sum \(\sum_Wq_w=126\), and the \(T\)-to-\(W\) degree ledger. The possible \(q_w\) profiles reduce to 14 cases after imposing \(0\le\epsilon_T\le4\) and the degree constraints at zero-excess points of \(T\). Each case is excluded by multiplicity of the three R-only 8-transversals, a special-incidence lower bound, or a \(K_{12}\) contained entirely in \(H\), contradicting \(\omega(H)\le11\).
+
+Added verify_s0_12_exclusion.py. An independent replay of its finite arithmetic logic returned exactly 14 canonical degree profiles; the row identity \(8m=84-\epsilon_T-A\), multiplicity partitions for \(m=8,9,10\), and the uncovered-point incidence bounds all passed. This is arithmetic verification only, not a machine proof of the graph lemmas.
+
+### Important cross-branch correction: outer isolation lemma invalid
+
+The sibling unified-witness-capacity audit exposed a false inference in the former outer Lemma 13.1: a monochromatic \(K_{12}\) need not be isolated. The correct star condition is only \(d_C(z,K_{12})\le1\) for every outside vertex \(z\); a single external \(C\)-edge is allowed.
+
+Accordingly:
+- withdrew Sections 13–16 from the active SEVEN_BLOCK_INCIDENCE_LEDGER.md and preserved them in ARCHIVE_UNCERTIFIED_OUTER_CAPS_20261025.md;
+- marked P49_BOUNDARY_EXCLUSION.md and P48_BOUNDARY_EXCLUSION.md as **NOT CERTIFIED — AUDIT HOLD**;
+- corrected CANONICAL_STATE.md and PROOF_DEPENDENCIES.md so \(P_C\le49\), \(P_C\le48\), and the \(P_C=50,r_i=6\) corner are not used as proved dependencies until repaired.
+
+This correction does not affect the new inner-core \(S_0\ge13\) theorem: its \(K_{12}\) contradictions occur inside \(H\) and use \(\omega(H)\le11\), not an external-edge argument.
+
+### Current blocker
+
+E408 Q33 remains OPEN / NOT_CERTIFIED. The four-partite support branch has \(S_0\ge22\); the general 31-point/56-witness boundary has \(S_0\ge13\). The remaining task is a valid global compatibility contradiction linking the inner witness structure to the outer seven-block/color system, without relying on the withdrawn single-external-edge inference.
+
+### Commits
+
+- Inner theorem proof audit: a1cc059324df01bfa1afec5bf20ba7a1194dd249
+- Arithmetic verifier: 4093c6f03aa5ca60f80765264e90590cdf85d5f1
+- Active ledger audit correction: c80e36782de9a0dfb5a6eb3b8059aa343e136774
+- Archived uncertified outer-cap drafts: a0a8f21d872b261b24580ad5e9f15942046cc74f
+- P49/P48 audit holds: a11d93b8d9a3cd58aa7f6f8da58ae3e90def8391; cfcb8f70f856dd742d3a658551b97f5d65e17fb3
+- Canonical state update: 5b82013a9b6200480d10b574d750eb7d7c8070bb
+- Dependency map update: c7fc225531eea0eeec8720864b667dcacf9a19fe
