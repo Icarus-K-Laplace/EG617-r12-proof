@@ -165,3 +165,12 @@ while the four-partite subcase retains its separate stronger bound \(S_0\ge22\).
 The \(P_C=50,r_i=6\) corner has a new conditional proof in R12_P50_R6_DOUBLE_STAR_EXCLUSION.md. Its reduction is \(R_C=12\), so the other six block budgets are all one. It selects one no-component row from each block and uses the exact gadget alignment predicate to form a \(K_{12}\) with an outside gadget vertex having at least two \(C\)-edges into the clique. The dedicated verifier checks 49,212 gadget configurations (204 Case A/B and 49,008 Case C), with zero failures in the independent in-session replay. The graph-level proof still depends on the stated row classifications and exact-129 factor theorem.
 
 The sibling result for \(P_C=49,r_i=6\) is in workstream/r12-unified-witness-capacity-20261025, OUTER_EXCEPTIONAL_ROW_COUPLING.md §12; verifier blob SHA 23cd4ef874faadbd5931c5e3553a1a55415c7a79. Both results are local corner exclusions only. The universal \(P_C\le49\) and \(P_C\le48\) claims remain not certified.
+
+
+### Additional \(P_C=50\) high-profile exclusions
+
+R12_P50_REMAINING_HIGH_PROFILES_EXCLUSION.md and verify_p50_remaining_high_profiles.py now exclude the profiles \((5,2,1^5)\) and \((4,3,1^5)\). The proof selects one no-component row from each of the two non-\(r=1\) blocks and one from each of the five \(r=1\) blocks. A finite gadget alignment yields a \(K_{12}\) and an external vertex with at least two \(C\)-edges into it.
+
+The only incidence-sensitive subcases are the \((5,5)\)-complement profile in both non-\(r=1\) blocks. The verifier exhausts every allowed partial-component allocation and finds an aligned pair with at most four partial component incidences, ensuring no pair of selected rows covers a full isolated \(K_5\). The independent in-session replay passed 1,656,848 base configurations, zero failures.
+
+Together with the \(P_C=50,r_i=6\) result, this leaves only four possible \(P_C=50\) profiles with \(\max_i r_i\le4\): \((4,2,2,2,1^3)\), \((3,3,2,1^4)\), \((3,2,2,2,2,1^2)\), and \((2^5,1^2)\). These force ten component-labelled \(K_{12}\)'s but remain open under the valid star-capacity condition. The universal \(P_C\le49\) and \(P_C\le48\) caps remain **NOT CERTIFIED**.
