@@ -94,3 +94,12 @@ The proof splits the duplicate budget as \(r_i=d_K+d_U=6\). The number of no-com
 Corollary 11.2 additionally uses Theorem 10.1 at \(r_j=1\), which gives exact row neighborhoods \(K_\ell\). At least eight component labels in the \(r_i=6\) block have a single-component row with at most five extra vertices; pairwise blocker compatibility then forces adjacency to the corresponding exact \(K_\ell\) row in the \(r_j=1\) block.
 
 **Scope firewall:** these forced edges are not automatically duplicate-budget contributions. No global incompatibility, terminal exclusion, or original \(K_{145}\) proof is claimed.
+
+
+## 10. High-\(P_C\) maximum-clique packing corollary
+
+Corollary 11.3 in SEVEN_BLOCK_INCIDENCE_LEDGER.md is a consequence of Theorem 11.1 / Corollary 11.2 and the exact duplicate identity \(R_C=62-P_C\):
+- if \(P_C=50\) and some \(r_i=6\), all other six block budgets equal one and at least eight vertex-disjoint \(C\)-colored \(K_{12}\) cliques are forced;
+- if \(P_C=49\) and some \(r_i=6\), the other budgets are five ones and one two; intersecting the at-least-eight clean labels with the at-least-nine exact blockers in the \(r=2\) block forces at least seven vertex-disjoint \(K_{12}\) cliques.
+
+Each clique consists of one isolated \(K_5\) component and one outer representative from each block. This is a structural packing consequence, not an exclusion: \(\omega(C)\le12\) allows maximum cliques, and no contradiction with the remaining 870-edge budget has been proved.
