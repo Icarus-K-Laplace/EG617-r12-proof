@@ -1,7 +1,7 @@
 # E407 Q32: reduce the delta-13 epsilon_U=1, 2K4 + 2K5 W-profile with two cross-edges
 
 Date: 2026-10-25  
-Status: **PROVED_CONDITIONAL for all placements where the two W-cross-edges join different pairs of clique parts, and for both K5–K5 placements.** Five same-pair K4/K5 placements remain OPEN.
+Status: **PROVED_CONDITIONAL for all placements where the two W-cross-edges join different pairs of clique parts, for both K5–K5 placements, and for the same-pair disjoint K4–K5 placement.** Four same-pair placements remain OPEN.
 
 ## 1. Contract
 
@@ -95,12 +95,14 @@ Both K5–K5 placements are excluded.
 
 ## 6. Exact residual terminal list
 
-The only same-pair placements not closed by this note are:
-1. both edges between the two K4 parts (a matching or a star);
-2. both edges between a K4 and a K5, disjoint;
+The same-pair disjoint K4–K5 placement is now excluded in DELTA13_EPS1_TWO_CROSS_EDGE_K4K5_DISJOINT_CLOSED.md: Type II blockers are impossible for disjoint edges, while every Type-I K4–K5 blocker requires seven W-neighbours and hence the unique positive-excess U vertex. This gives at most one exception, contradicting the component-cover requirement k>=5.
+
+The only same-pair placements still OPEN are:
+1. both edges between the two K4 parts, forming a matching;
+2. both edges between the two K4 parts, forming a star;
 3. both edges between a K4 and a K5, sharing an endpoint in the K4;
 4. both edges between a K4 and a K5, sharing an endpoint in the K5.
 
-The last placement has maximum total capacity 28 but can have degree-six U-exceptions, so it is not promoted to a contradiction here. The other four residual placements can reach the capacity ceiling 29 and require equality/exception analysis.
+The fourth placement has maximum total capacity 28 but can have degree-six U-exceptions, so it is not promoted to a contradiction here. The other three remaining placements can reach the capacity ceiling 29 and require equality/exception analysis.
 
 This note does not close the entire \(\delta=13,\epsilon_U=1\), \(2K_4\dot\cup2K_5\)-plus-two-cross-edge profile. The \(\epsilon_U=2\) one-cross-edge profile, \(\epsilon_U=0\), non-four-partite U-complements, \(\delta\le12\), the five shell templates globally, and the \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
