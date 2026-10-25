@@ -36,7 +36,7 @@ These are the latest heads observed in the repository at the time of this update
 | \(\delta=16\) four-partite extreme | EXCLUDED by endpoint-split analysis and forbidden \(K_{12}\) |
 | \(\delta=15\) four-partite | EXCLUDED by W-profile saturation and forbidden \(K_{12}\) |
 | \(\delta=15\) non-four-partite | EXCLUDED under KP equality + core-to-\(W\) degree contradiction |
-| \(\delta=14\) four-partite | ε_U=0: three W-profiles excluded; one cross-edge profile remains; ε_U=1,2 open |
+| \(\delta=14\) four-partite | \(\epsilon_U=0\): all four W-profiles excluded; \(\epsilon_U=1,2\) open |
 | \(\delta\le14\) non-four-partite | OPEN |
 | E407 Q32 overall | OPEN / NOT_CERTIFIED |
 | EG617(r=12) | OPEN / NOT_CERTIFIED |
@@ -44,6 +44,15 @@ These are the latest heads observed in the repository at the time of this update
 The local arithmetic verifier checks exact ledgers and the finite excess inequalities only. The analytic endpoint-split proof in FOUR_PARTITE_TERMINAL.md excludes the full \(\delta=16\) branch under the retained core/witness contract; this verifier is not a graph-realization certificate.
 ## New Round 9 result — delta=14, epsilon_U=0 cover-capacity exclusion
 - Added DELTA14_EPS0_K3K4K5K6_COVER_CAPACITY.md: the no-cross-edge \(H[W]=K_3\dot\cup K_4\dot\cup K_5\dot\cup K_6\) profile is excluded by a common-neighbour cover bound. Defining \(S_s\) as the U-vertices complete to \(C_s\), the four components must cover all 29 U-vertices, but exact extra-edge/excess accounting gives \(\sum_s|S_s|\le28\).
-- Together with DELTA14_EPS0_K4_PROFILE_EXCLUSIONS.md, this excludes three of the four \(\delta=14,\epsilon_U=0\) W profiles. The sole remaining profile in that row is \(K_3\cup K_5^3\) plus one W-cross-edge.
+- At the time of Round 9, three of the four \(\delta=14,\epsilon_U=0\) W profiles were excluded; this historical frontier was closed in Round 10 below.
 - Arithmetic replay: verify_delta14_eps0_cover_capacity.py; all 35 excess partitions with \(E_3+E_4+E_5+E_6=4\) give a cover upper bound at most 28.
-- Remaining: \(\delta=14,\epsilon_U=0\) one-cross-edge profile; \(\epsilon_U=1,2\); \(\delta=14\) non-four-partite; \(\delta\le13\). E407 Q32 and EG617 remain OPEN / NOT_CERTIFIED.
+- Round 9 remaining frontier (superseded by Round 10): \(\epsilon_U=0\) one-cross-edge profile; \(\epsilon_U=1,2\); \(\delta=14\) non-four-partite; \(\delta\le13\). E407 Q32 and EG617 remain OPEN / NOT_CERTIFIED.
+
+
+## New Round 10 result — close the final \(\delta=14,\epsilon_U=0\) four-partite W-profile
+
+- Added DELTA14_EPS0_K3K5K5K5_CROSS_EDGE_CLOSURE.md: excludes \(H[W]=K_3\cup K_5^3\) plus one cross-edge by exact common-neighbour capacity.
+- The only possible failure of U-to-W-component saturation is a small-part non-endpoint \(u\), and only when the W-cross-edge joins \(K_3\) to \(K_5\). Its exact non-neighbour pattern forces \(|S_2\cup S_3|\ge15-\epsilon_y\), while the two K5 capacities give \(|S_2|+|S_3|\le14-\epsilon_y\), a contradiction.
+- Once all 29 U-vertices are saturated, the four component capacities sum to at most \(27\), contradicting the required cover of \(U\).
+- Added verify_delta14_eps0_k3k5_cross_edge.py; arithmetic replay passed locally: all 35 W-excess allocations yield cover cap 27, and the exceptional-vertex lower/upper bounds differ by exactly one.
+- Therefore the entire \(\delta=14,\epsilon_U=0\), four-partite branch is EXCLUDED under the retained contracts. This does not close \(\epsilon_U=1,2\), \(\delta=14\) non-four-partite, \(\delta\le13\), any full V12 template, E407 Q32, or EG617(r=12).
