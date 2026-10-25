@@ -65,3 +65,16 @@ The present inequalities do not rule out all three options. In particular, the s
 The seven selected witness components of an exact-129 color lie among the ten isolated K5 components. The common size-five blocker set across all seven outer blocks has size at least \(P_C-45\); inclusion-exclusion therefore forces at least \(\max(0,P_C-48)\) selected witness components to be common blockers. If \(P_C\ge49\), at least one selected witness-labelled K5 extends with its seven outer representatives to a monochromatic K12; if \(P_C=50\), at least two extend. If \(P_C\ge51\), the stronger all-ten-component alignment result applies.
 
 This makes the high-\(P_C\) branch explicitly label-aware. The scalar relaxation still permits \(P_C=9\) for all eight exact colors, so no such branch is forced by aggregate budgets alone.
+
+
+## 7. Top-cell-A exact cross-edge defect identity
+
+Under the retained T61 Cell-A contract \(|W|=23\), \(|O|=38\), \(e_F(W)=132\), and \(e_C(W)=11\) for every non-target color, define \(K_W=\sum_{w\in W}(d_F(w)-13)\) and \(t_C=e_C(O)-42\). Since every \(C[O]\) has independence number at most 12, \(t_C\ge0\). Exact cross-edge accounting gives
+\[
+\sum_C t_C=K_W+411-E-3.
+\]
+Therefore E408 has \(\sum t_C=K_W\), and E407 has \(\sum t_C=K_W+1\).
+
+For exact-129 colors, the K5-factor/gadget intersection with W is forced to profile \(2^{10}\) or \(2^9,1\), and \(0\le t_C\le6\). If \(t_C=0\), equality in Turan forces \(C[O]\) to be ten disjoint triangles and two disjoint K4s. Thus a possible closure route is now precise: prove that the eleven edge-disjoint near-Turan partitions of O cannot coexist with the target graph's degree, shell and witness constraints, or force a positive defect distribution inconsistent with the exact sum above.
+
+This is a new conditional structural theorem, not a terminal contradiction. The T61 reduction and top-cell-A contract remain dependencies; E408 Cell B is already excluded separately by the sibling theorem.
