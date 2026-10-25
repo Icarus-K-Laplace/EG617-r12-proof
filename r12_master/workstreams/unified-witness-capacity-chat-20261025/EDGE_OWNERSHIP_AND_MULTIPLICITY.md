@@ -125,3 +125,18 @@ The 24 unused cross-part pair slots are the only possible extra edges of \(H[U]\
 The crossing inequality reduces to \(5460\le5460+49(24-\delta)\), i.e. only \(\delta\le24\). The current core budget \(\delta\le17\) and four-partite theorem \(\delta\ge9\) are compatible with it. A further contradiction must force an additional labelled restriction on the unused slots or on the shell rows; generic edge ownership cannot do the job alone.
 
 The same saturation identity (4) applies to a four-partite E407 branch, even though its part sizes and multiplicity profile differ.
+
+
+## 6. Exact-129 row-incidence budget and missing-diagonal ownership
+
+This ledger is distinct from the core-witness multiplicity \(r_x\) in Sections 1–5. Here \(r_i(C)\) is the block-to-residual duplicate parameter in the seven-outer-block equality system.
+
+For an exact-129 color C and an outer block with \(r_i(C)\le5\), Theorem 10.1 of the E408 Q33 row ledger gives ten component rows and two exceptional rows. The ten component rows contribute baseline incidence 50; the two exceptional rows contribute at least 12. Since \(e_C(B_i,R)=61+r_i(C)\), the total extra incidence beyond this baseline 62 is exactly \(r_i(C)-1\).
+
+If a same-component pair \(x_i(\ell),x_j(\ell)\) is nonadjacent, its two row-neighborhoods must spend at least five extra incidences outside \(K_\ell\): either five vertices cover a second K5 component, or at least six gadget vertices are covered. For distinct labels \(\ell\), these charges belong to distinct row incidences. Hence
+\[
+5m_{ij}(C)\le r_i(C)+r_j(C)-2,
+\]
+and \(m_{ij}(C)\le1\) whenever \(r_i(C),r_j(C)\le5\).
+
+This counts only row-to-residual incidence charges. It does not count the six internal edges of a selected K4 witness and does not alter the target-core crossing-edge multiplicity identity in (1)–(3).
