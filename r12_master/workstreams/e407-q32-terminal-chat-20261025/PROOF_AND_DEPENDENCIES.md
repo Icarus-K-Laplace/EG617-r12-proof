@@ -126,3 +126,10 @@ With that dependency, the \(\delta=14\) \(K_5\)-saturated non-four-partite branc
 DELTA14_SATURATED_LOCAL_MODEL.md and its standard-library verifier give an explicit local realization of the 29-point saturated non-four-partite boundary. No new external theorem is used in that construction. The verifier checks \(e(H_U)=98\), \(e(L)=308\), \(K_5\)-freeness and \(K_5\)-saturation of \(L\), the 49-cell bijection to \(E(J)\), and the seven classes of seven pairwise-disjoint witnesses.
 
 This refutes any proposed contradiction based solely on the 29-point saturated graph and its 49-witness packing. It does **not** provide the 18-vertex \(W\), full 47-core, or shell-row extension. The Didin preprint dependency in DELTA14_SATURATED_ALPHA_CRITICAL_REDUCTION.md remains explicit and unaudited; the global terminal remains open.
+
+
+## Round 20 — candidate-specific full-core extension exclusion
+
+DELTA14_SATURATED_CANDIDATE_EXTENSION_EXCLUSION.md proves, under the retained core contract and the explicit local model in DELTA14_SATURATED_LOCAL_MODEL.md, that no W-extension exists for epsilon_U=1 or 2. Combined with the independent-transversal exclusion of epsilon_U=0 in DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md, the explicit (5,5,2,1,2) blow-up has no full 47-core extension.
+
+The new arithmetic verifier checks only finite profile enumeration, forbidden-transversal fractions, and A/B assignment-count patterns; it does not machine-check the analytic independent-set arguments. The Didin preprint dependency in DELTA14_SATURATED_ALPHA_CRITICAL_REDUCTION.md remains unaudited. Most importantly, the saturated-kernel reduction does not prove all admissible J's are the explicit blow-up. Therefore this does not close the general delta=14 saturated branch, any of the five shell templates, delta<=13, or the K145-to-T61 bridge.
