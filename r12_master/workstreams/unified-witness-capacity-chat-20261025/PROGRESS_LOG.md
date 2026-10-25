@@ -110,3 +110,12 @@
 - Independent Python replay also passed the scalar budget relaxation and the formula \(\max(0,17-R_C)=\max(0,P_C-45)\).
 - Created TERMINATION_CLOSURE.md. It explicitly preserves OPEN / NOT_CERTIFIED, distinguishes analytic lemmas from arithmetic checks, and names the missing bridge: label transfer, near-exact-color structure, or a global labelled incidence inequality.
 - Latest sibling heads were refreshed and recorded in CANONICAL_STATE.md. All changes remain confined to this workstream; no full graph realization or original K145 proof is claimed.
+
+
+## 2026-10-25 — labelled selected-witness K12 extension
+
+- Intersected the seven selected witness components of an exact-129 color with the common size-five blocker component set across all seven outer blocks.
+- Since the latter has size at least \(P_C-45\) in a ten-component universe, inclusion-exclusion gives at least \(\max(0,P_C-48)\) selected witness components that extend to a monochromatic K12.
+- Thus \(P_C\ge49\) forces at least one selected witness-labelled K12, and \(P_C=50\) forces at least two. This is a labelled incidence result, not an unlabelled packing count alone.
+- Added the threshold arithmetic to the verifier and restricted it to the feasible exact-color range \(P_C\le55\).
+- The aggregate scalar relaxation still permits every exact color to have \(P_C=9\); therefore this result identifies a useful branch but does not force entry into it.
