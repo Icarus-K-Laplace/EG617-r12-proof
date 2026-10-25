@@ -125,3 +125,10 @@ Still open at \(\delta=13\) in the four-partite-U branch: \(3K_4\dot\cup K_6\) p
 The \(\delta=13,\epsilon_U=1\) W-profile \(3K_4\dot\cup K_6\) plus one cross-edge is now excluded when that edge joins \(K_4\) to \(K_6\). The four common-neighbour sets have capacities at most \(9,9,9,1\), totalling 28, while all 29 U-vertices must be W-saturated. See DELTA13_EPS1_3K4_K6_K4K6_EDGE.md.
 
 Still open: the same profile with its edge between two K4s; \(2K_4\dot\cup2K_5\) plus two edges at \(\epsilon_U=1\); \(2K_4\dot\cup2K_5\) plus one edge at \(\epsilon_U=2\); and all other \(\delta=13\) and lower branches. Templates A–E remain OPEN.
+
+
+## Round 26 — delta-13 \(3K_4\dot\cup K_6\) plus one cross-edge, both placements
+
+The K4–K4 placement is excluded by DELTA13_EPS1_3K4_K6_K4K4_EDGE.md. The only possible unsaturated U vertex has degree seven into W, excess one, and no U-cross-edge; all other U vertices are saturated. A common-neighbour cover of at least 28 vertices would require total capacity 28. If all three K4 capacities equal nine, each must have a common small-part label; the exceptional vertex's part cannot be one of these labels, so two components share one of the other two labels and overlap on a seven-vertex part. This contradicts coverage. Together with Round 25, both cross-edge placements for this W-profile are excluded.
+
+Still open at \(\delta=13\) in the four-partite-U branch: \(2K_4\dot\cup2K_5\) plus two edges at \(\epsilon_U=1\), \(2K_4\dot\cup2K_5\) plus one edge at \(\epsilon_U=2\), the \(\epsilon_U=0\) row, non-four-partite U-complements, and \(\delta\le12\). Templates A–E remain OPEN.
