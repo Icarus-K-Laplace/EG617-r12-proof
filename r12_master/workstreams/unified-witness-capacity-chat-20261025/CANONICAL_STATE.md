@@ -261,3 +261,12 @@ The arithmetic replay passed for all \(K_W\in[0,23]\) in E408 and \(K_W\in[0,21]
 Added Corollary 11.4. In the exact-129 Type-A intersection profile with \(t_C=0\), \(U[O]=K_4\cup K_4\), \(U[W]=K_2\cup K_1\), and the gadget has exactly 16 cross edges. The independence-number cap forces the two adjacent W-gadget vertices to be complete to opposite K4s. The isolated W-gadget vertex must be complete to one K4 and to all but \(a\) vertices of the other, while the adjacent endpoint on the latter side covers those \(a\) missed vertices. The 16-edge budget then leaves no additional cross edges and forces \(a\in\{0,1,2,3\}\).
 
 The resulting gadget degree multiset is either \(5^{10},8\) or \(5^9,6,7\). In particular, every gadget vertex has degree at least five, and the W vertex unmatched by \(C[W]\) has degree \(5\)–\(8\). The verifier's degree-profile arithmetic passed for all four values of \(a\). This strengthens the zero-defect structural case but does not by itself force a contradiction with the target degree ledger.
+
+
+## 2026-10-25 continuation — low-slack duplicate location
+
+Added Corollary 11.5 in OUTER_EXCEPTIONAL_ROW_COUPLING.md. Under top-cell A, if an exact-129 color has \(r_i(C)=1\), the exact row theorem forces ten component rows of size five and two exceptional rows of size six. The K5-component W incidences are 20 in Type A and 19 in Type B; disjoint exceptional gadget K5s cover all but one gadget vertex, so their two complement rows contribute 3/4 W-incidences in Type A and 4/5 in Type B. Thus \(e_C(B_i,W)\in\{23,24\}\).
+
+Every \(w\in W\) has at least one edge of each of the eleven non-target colors to \(B_i\), because otherwise \(B_i\cup\{w\}\) is a 13-set missing that color. The 12 edges from w to B_i therefore contain exactly one repeated non-target color and no target-color edge. Consequently \(e_C(B_i,W)=23+r_i^W(C)\): value 23 means the unique repeated-C vertex lies in O; value 24 means it lies in W. This identifies the duplicate location from the exact gadget-pair profile and avoids treating baseline edges as duplicates.
+
+Latest sibling refresh: E408 Q33 advanced to c01f7dc6951b2bb7ea5209f252b1644ca0ecd40a with Theorem 12.1 gadget normal form and stronger \(P_C=49,50\) clique packings. E407 Q32 remains bd385f7dfe102deb426810baf1999a8e94dd488f; E408 Q32 remains a0ba6db26c7e8b00a4217dcbcbf298895dff93ce; witness-packing f5d3daa07403877ede9885e1bd5c2f46b16d81da; zero-excess 07d19abfd6c1c749c7360526e4a04a3eb865fb2e; ultimate closure 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40.
