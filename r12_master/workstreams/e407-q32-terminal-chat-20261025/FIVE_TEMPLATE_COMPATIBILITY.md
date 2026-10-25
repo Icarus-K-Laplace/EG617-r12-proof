@@ -44,6 +44,8 @@ The \(\delta=16\) four-partite boundary is **EXCLUDED** by FOUR_PARTITE_TERMINAL
 
 This closes only \(\delta=16\), not E407 Q32 overall. The \(\delta=15\) non-four-partite branch is also excluded under the retained core/witness contract by DELTA15_SECOND_TURAN_PACKING.md.
 
+The \(\delta=15\) four-partite branch is now reduced to a single remaining W-profile by DELTA15_FOUR_PARTITE_TERMINAL.md: \(H[W]=K_3\cup K_5^3\), with the K3 complete to D and \(D\cup K_3\cong K_{11}\). This profile remains OPEN pending compatibility with the five shell templates.
+
 ## 4. Template-by-template status
 
 | Template | Existing witness consequence | New result in this line | Status |
