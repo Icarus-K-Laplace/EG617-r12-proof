@@ -46,9 +46,9 @@ d_H(w,U)=13-s+\epsilon_w-c_w
 \]
 when \(w\) belongs to a \(K_s\) component and \(c_w=1\) at a cross-edge endpoint, \(0\) otherwise.
 
-For \(P,Q\), the endpoint has U-degree \(7+\epsilon_w\le11\), so every vertex of those components is part-saturated. For \(R\), every vertex is saturated unless one has \(\epsilon_w=4\); in that exceptional case the other four vertices have excess zero and U-degree eight, which directly gives \(|S_R|\le8\le5+\epsilon_R\).
+For \(P,Q\), the cross-edge endpoint has U-degree \(7+\epsilon_w\le11\), so it is always part-saturated. A non-endpoint vertex in either component can fail part-saturation only if its excess is four. In that exceptional case the endpoint has excess zero and U-degree seven, giving \(|S_P|\le7\le4+\epsilon_P\) (or the analogous bound for \(Q\)). For \(R\), an unsaturated vertex likewise must have excess four; the other four vertices have excess zero and U-degree eight, giving \(|S_R|\le8\le5+\epsilon_R\).
 
-Choose one U-part label for each saturated vertex of a \(K_5\). A full common label of all five vertices is impossible: \(K_5\) joined to a U-part of size at least seven would give a \(K_{12}\) or larger. Hence every \(u\in S_P\) requires at least one extra edge outside a chosen label part. The total extra-edge load in \(P\) is at most \(4+\epsilon_P\): its four non-endpoint vertices contribute at most \(1+\epsilon_w\) each and endpoint \(p\) contributes at most \(\epsilon_p\). Thus
+It remains to consider components whose vertices are all part-saturated. Choose one U-part label for each vertex. A full common label of all five vertices is impossible: \(K_5\) joined to a U-part of size at least seven would give a \(K_{12}\) or larger. Hence every \(u\in S_P\) requires at least one extra edge outside a chosen label part. The total extra-edge load in \(P\) is at most \(4+\epsilon_P\): its four non-endpoint vertices contribute at most \(1+\epsilon_w\) each and endpoint \(p\) contributes at most \(\epsilon_p\). Thus
 \[
 |S_P|\le4+\epsilon_P.
 \]
