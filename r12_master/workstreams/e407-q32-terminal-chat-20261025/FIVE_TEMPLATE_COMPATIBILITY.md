@@ -90,3 +90,12 @@ The exact W-profile classification is in DELTA14_EPS1_W_PROFILE_CLASSIFICATION.m
 ## 3E. Delta-14, \(\epsilon_U=2\), unique W profile
 
 At \(\epsilon_U=2\), the exact edge ledger gives \(e(H[W])=32\), the minimum allowed by \(\alpha(H[W])\le4\). Turán equality forces \(H[W]=K_4\cup K_4\cup K_5\cup K_5\), with no cross-edge. Section 5 of DELTA14_EPSU1_2_ANTICOMPL_COMPONENT_PROFILES.md excludes this profile by the common-neighbour cover bound 24<29. The mention of \(K_3\cup K_5^3\) for \(\epsilon_U=2\) in that note's Section 3 is not an admissible profile here because it has 33 rather than 32 edges.
+
+
+## 3F. Round 15 — non-four-partite \(\delta=14\) augmentation fork
+
+The new theorem DELTA14_NONPARTITE_AUGMENTABLE_EDGE_REDUCTION.md splits the non-four-partite \(\delta=14\) case into two explicit routes:
+1. If \(L\) has an augmentable nonedge, it reduces to the unique \(\epsilon_U=1\), \(K_3\cup K_5^3\) balanced-KP terminal, with \(x,y\) both complete to the \(K_3\) and the added edge disjoint from \(\{x,y\}\).
+2. If \(L\) has no augmentable nonedge, then \(L\) is \(K_5\)-saturated; this branch is not covered by the equality classification and remains open.
+
+This is not a template closure. All five shell templates A–E remain OPEN, and the reduction remains conditional on the retained T61/49-witness contract.

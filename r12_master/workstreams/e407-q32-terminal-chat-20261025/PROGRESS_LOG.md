@@ -471,3 +471,29 @@ Added DELTA14_EPS2_W_PROFILE_CLASSIFICATION.md and verify_delta14_eps2_w_profile
 - \(\delta=16\), four-partite: **EXCLUDED** under retained contracts.
 - Open: \(\delta=14\) non-four-partite and \(\delta\le13\).
 - Five E407 Q32 shell templates and EG617(r=12): **OPEN / NOT_CERTIFIED**.
+
+
+
+
+## Round 15 — \(\delta=14\) non-four-partite augmentable-edge reduction
+
+Added DELTA14_NONPARTITE_AUGMENTABLE_EDGE_REDUCTION.md and verify_delta14_nonpartite_augmentable_edge.py.
+
+Let \(L=\overline{H[U]}\) be non-four-partite with \(e(L)=308\). If there exists a nonedge \(uv\) for which \(L+uv\) remains \(K_5\)-free, then \(L+uv\) is a 309-edge non-four-partite \(K_5\)-free graph. Brouwer's second-Turán theorem and the Kang–Pikhurko equality classification apply. The 49 edge-disjoint witness blocks exclude the two unbalanced equality profiles, forcing the balanced \((7,7,7,7)\) base.
+
+Using the exact exceptional-vertex degrees and the exhaustive \(W\)-profile list, the sum
+\[
+d_H(x,W)+d_H(y,W)=5+\epsilon_x+\epsilon_y-I_x-I_y\le5+\epsilon_U
+\]
+eliminates every profile except one strict terminal:
+- \(\epsilon_U=1\);
+- \(H[W]=K_3\dot\cup K_5^3\), with no cross edges;
+- \(x,y\) both have exactly three \(W\)-neighbours and are complete to the \(K_3\);
+- \(uv\) is incident to neither \(x\) nor \(y\);
+- \((a,\epsilon_x,\epsilon_y)=(3,1,0)\) or \((4,0,1)\).
+
+The added edge \(uv\) must be one of the balanced KP leave types \(P_1P_2,P_1P_3,P_1P_4,P_2P_3,P_2P_4\), not \(P_3P_4\). Hence at least one endpoint lies in \(P_1\) or \(P_2\setminus\{y\}\); its \(W\)-degree is four, so it too is complete to the \(K_3\). This gives a third vertex in the \(K_3\)'s common neighbourhood.
+
+The verifier enumerates all integer values of \(a,\epsilon_x,\epsilon_y,I_x,I_y\) and both saturated/unsaturated statuses under the proven component thresholds. It returns exactly the two terminals above. This is arithmetic replay only, not a graph-realization certificate.
+
+**Status:** PROVED_CONDITIONAL strict reduction for the augmentable-edge subcase. Still OPEN: eliminate the two residual terminals above, or prove that \(L\) must have an augmentable nonedge; separately handle the case where \(L\) is \(K_5\)-saturated. The \(\delta\le13\) branch and the five shell templates remain open; E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.

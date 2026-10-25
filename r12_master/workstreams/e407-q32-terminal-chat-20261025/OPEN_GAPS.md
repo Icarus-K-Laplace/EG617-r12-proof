@@ -54,13 +54,11 @@ The inherited file DELTA14_EPSU1_2_ANTICOMPL_COMPONENT_PROFILES.md discusses \(K
 
 ## 5. Next highest-leverage target
 
-**Prove a near-extremal non-four-partite classification for \(L\) on 29 vertices with \(\alpha(L)\le4\) and \(e(L)=308\), then couple the resulting exceptional-vertex/partite-core structure to the 49 linear witnesses and the exact degree-excess ledger.**
+**Finish the δ=14 non-four-partite fork now isolated by DELTA14_NONPARTITE_AUGMENTABLE_EDGE_REDUCTION.md.** First eliminate the sole augmentable-edge terminal ε_U=1, H[W]=K_3∪ K_5^3 with x,y both complete to K_3; in parallel, prove that a non-four-partite L with the 49-witness packing cannot be K_5-saturated, or classify that saturated case. The edge-augmentation theorem does not cover the saturated branch.
 
-Do not continue adding isolated scalar inequalities unless they either:
-1. reduce this non-four-partite branch to a bounded list of exact profiles; or
-2. yield a direct witness/core incompatibility contradiction.
+Do not continue adding scalar inequalities unless they reduce one of these two explicit cases or yield a direct witness/core contradiction. Once δ=14 is closed, attack δ≤13 with a fresh exact ledger; do not reuse the δ=14 W-profile table without re-deriving its hypotheses.
 
-Until Gap A or Gap B is closed and the T61 bridge is certified, E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+Until these branches and the T61 bridge are certified, E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
 
 
 ## Round 14 update — current live frontier

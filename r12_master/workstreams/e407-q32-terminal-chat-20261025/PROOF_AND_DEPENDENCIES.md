@@ -94,3 +94,10 @@ DELTA14_EPS2_W_PROFILE_CLASSIFICATION.md closes the \(\epsilon_U=2\) case. The e
 The source note's Section 3 mention of \(K_3\cup K_5^3\) at \(\epsilon_U=2\) is inconsistent with the exact ledger (that profile has 33 edges); it is explicitly excluded from this branch's admissible profile list and is not used.
 
 **Current structural frontier under the retained core/witness contract:** all four-partite cases at \(\delta=14\) are excluded for \(\epsilon_U=0,1,2\); \(\delta=15\) and \(\delta=16\) are excluded in their retained branches. The open front-end cases are \(\delta=14\) non-four-partite and \(\delta\le13\). E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+### Round 15 — \(\delta=14\) non-four-partite augmentable-edge reduction
+
+DELTA14_NONPARTITE_AUGMENTABLE_EDGE_REDUCTION.md proves a strict conditional reduction. If a non-four-partite \(L\) with \(e(L)=308\) has any nonedge \(uv\) whose addition preserves \(K_5\)-freeness, then \(L+uv\) is a 309-edge Brouwer/Kang–Pikhurko equality graph. The 49-witness packing rules out the two unbalanced base profiles, forcing the balanced \((7,7,7,7)\) base. The exact exceptional-vertex \(W\)-degree sum and the exhaustive \(\epsilon_U\)-dependent \(W\)-profile list then leave only \(\epsilon_U=1\), \(H[W]=K_3\cup K_5^3\), \(x,y\) both complete to the \(K_3\), \(uv\cap\{x,y\}=\varnothing\), and \((a,\epsilon_x,\epsilon_y)\in\{(3,1,0),(4,0,1)\}\). The added edge also forces a third vertex into the \(K_3\)'s common neighbourhood.
+
+The standard-library verifier checks the finite integer degree/status enumeration. The proof remains conditional on the retained T61/49-witness contract and the cited Brouwer/Kang–Pikhurko results. It does not eliminate the residual terminal or the \(K_5\)-saturated case.
