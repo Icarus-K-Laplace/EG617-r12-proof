@@ -48,11 +48,7 @@ Now suppose \(xy\) joins two \(K_4\)'s, with endpoints \(x\in C_1\), \(y\in C_2\
 
 Let \(E\subseteq U\) be the set of U-vertices not complete to any W-part, and \(k=|E|\). Every \(u\in E\) has at most one W-neighbour outside the six non-endpoint vertices of \(C_1\cup C_2\). Thus it has at least three non-neighbours in \(C_3\) and at least five in \(C_6\).
 
-The set \(E\) is a clique in \(H[U]\). Indeed, if \(u,v\in E\) were nonadjacent, they would share a non-neighbour \(c\in C_3\) and a non-neighbour \(z\in C_6\), since each has at most one neighbour outside the six endpoint-component vertices. Then
-\[
-\{u,v,x,c,z\}
-\]
-would be an independent 5-set. The U-side structure implies that a clique can meet at most one of \(A,B,C\); moreover, a D-exception cannot coexist with a small-part exception, since a D-exception has \(\epsilon=1,t=0\), while a small exception adjacent to D would require \(\epsilon=1,t=1\). Consequently \(E\) is contained in a single U-part. Every vertex of \(E\) is adjacent to all six non-endpoint vertices of \(C_1\cup C_2\), and neither \(x\) nor \(y\) is adjacent to any vertex of \(E\).
+Every vertex of \(E\) is adjacent to all six non-endpoint vertices of \(C_1\cup C_2\), and neither \(x\) nor \(y\) is adjacent to any vertex of \(E\). Because each exception has W-degree at most seven, it has at most one additional W-neighbour outside those six vertices. In particular, each exception has at least three non-neighbours in \(C_3\) and at least five in \(C_6\). No bound on the number or mutual adjacency of the exceptions is needed below.
 
 ## 3. W-vertices are labelled by U-parts, except for at most one
 
