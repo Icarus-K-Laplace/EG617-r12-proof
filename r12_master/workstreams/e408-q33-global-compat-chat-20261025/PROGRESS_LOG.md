@@ -261,3 +261,19 @@ This correction supersedes the two incorrect profile strings in the preceding lo
 - Added an explicit audit-status note to P49_BOUNDARY_EXCLUSION.md: Cases II–V and the historical conclusion \(P_C\le48\) remain withdrawn / NOT CERTIFIED. The update avoids allowing the repaired Case I to be mistaken for a full boundary proof.
 - Independently checked the exact \(R_C=13\) integer partition: eleven profiles total, five in the repaired pair-budget class and six unresolved. The profile bookkeeping in the new screen matches this enumeration.
 - Latest repair commit: 8662900d1d9cff04a9a4872e38786f2f897ed79d.
+
+
+## 2026-10-25 continuation — incidence-sensitive closure of two more \(P_C=49\) profiles
+
+- Built a stronger finite verifier that carries each no-component row's partial component incidence \(p\), using the exact bound \(p_H+p_J\le r-a\), rather than only the budget \(r\).
+- Closed profile \((5,2^2,1^4)\) with one threshold mode \(p_5\le3,\ p_2\le1,\ p_1=0\). The four gadget normal forms were checked over 503,748 total transitions; no empty admissible common-star state occurred.
+- Closed profile \((5,3,1^5)\) with three modes \((p_5,p_3)\in(\le2,\le2),(\le3,\le1),(\le4,0)\), all requiring \(p_1=0\). These modes cover every pairwise-safe incidence assignment. The four gadget forms were checked over 1,417,758 total transitions; no state made all three modes empty.
+- Both profiles now yield a common \(D,w\) star with every selected pair's partial component incidences summing to at most four. The pairwise-blocker lemma forces a monochromatic \(K_{12}\), and seven omission sets in a six-point set force the valid double-star contradiction.
+- Added R12_P49_INCIDENCE_SENSITIVE_SCREEN.md and verify_p49_incidence_sensitive.py. The first-stage P49 screen was updated to distinguish its earlier six follow-up profiles from the current four remaining profiles.
+- Current \(P_C=49\) boundary status: seven of eleven profiles excluded; four remain open: \((4,3,2,1^4)\), \((4,4,1^5)\), \((6,2,1^5)\), \((7,1^6)\). The full P49 boundary and \(P_C\le48\) remain NOT CERTIFIED; E408 Q33 and EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.
+
+### Commits
+- Incidence-sensitive verifier: 54a26037460bdb15ae35cf027b8f141ea2179a3e
+- Incidence-sensitive theorem note: c884358a548ec679a5e9e46a0471161bd472ea5e
+- Updated first-stage P49 screen: 511fe9bd1cfed4ea292004165876a0c05b2c4231
+- Updated first-stage verifier scope label: 3b155a0e1408ead60ddc67d0c1471458cd58dfb7
