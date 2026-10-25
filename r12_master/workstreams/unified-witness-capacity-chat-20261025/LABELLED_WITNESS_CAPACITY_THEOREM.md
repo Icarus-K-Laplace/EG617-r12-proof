@@ -240,3 +240,15 @@ component labels are size-five blockers in every outer block. Each such componen
 \]
 
 This is a cross-terminal consequence of the exact-129 factor theorem and seven-block incidence system, independent of whether the target core has 284 or 285 edges. It does not by itself contradict the K145 coloring: a monochromatic K12 is permitted by the target statement, so the remaining task is to turn the packing into a capacity conflict with the labelled four-point witnesses or another color's structure.
+
+
+## 10. Selected-witness extension threshold
+
+Let \(\mathcal W_C\) be seven distinct selected witness components among the ten isolated K5 components, and let \(\mathcal K_C^*\) be the components represented by exact size-five blocker rows in all seven outer blocks. Since \(|\mathcal W_C|=7\) and \(|\mathcal K_C^*|\ge P_C-45\),
+\[
+|\mathcal W_C\cap\mathcal K_C^*|
+\ge \max(0,P_C-48).
+\]
+Therefore, if \(P_C\ge49\), at least one selected witness component is extended by one exact blocker row from every outer block to a monochromatic K12. If \(P_C=50\), at least two selected witness components extend. For a selected witness \(K_\ell=\{b\}\cup Q\), the clique is \(\{b\}\cup Q\cup\{x_0(\ell),\ldots,x_6(\ell)\}\).
+
+This is the labelled version of the K12 packing bound. It does not turn the K12 into an EG617 contradiction; the remaining work is to force a high-\(P_C\) exact color or prove that such labelled clique extensions conflict with the global shell/core incidence ledger.
