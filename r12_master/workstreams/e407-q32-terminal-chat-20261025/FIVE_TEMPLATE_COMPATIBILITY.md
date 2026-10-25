@@ -35,26 +35,25 @@ The witness-packing branch at f5d3daa07403877ede9885e1bd5c2f46b16d81da confirms 
 
 ## 3. New common-core restriction
 
-The \(\delta=16\) boundary is narrowed to a labelled kernel but remains **OPEN**. The proof establishes:
-- \(U\)-parts \(7,7,7,8\);
-- exactly five cross edges in \(H[U]\), matching on both sides;
+The \(\delta=16\) four-partite boundary is **EXCLUDED** by FOUR_PARTITE_TERMINAL.md:
+- \(U\)-parts are \(7,7,7,8\);
+- the five cross edges in \(H[U]\) form a matching;
 - \(H[W]=K_5\cup K_5\cup K_4\cup K_4\);
-- a reverse-saturation lemma: every \(W\)-vertex is complete to exactly one \(U\)-part;
-- exclusion of the \((4,1)\) and \((3,2)\) endpoint splits by degree excess;
-- in the surviving \((5,0)\) split, the endpoint \(K_4\) is complete to \(D\), while every vertex of the other \(K_4,K_5,K_5\) components is complete to a small part. The three non-endpoint \(D\)-vertices each have exactly one additional \(W\)-neighbour outside the endpoint \(K_4\).
+- the \((4,1)\) and \((3,2)\) endpoint splits violate the four-unit excess budget;
+- in the \((5,0)\) split, the endpoint \(K_4\) is forced complete to \(D\), producing a forbidden \(K_{12}\).
 
-The \((5,0)\) labelled incidence kernel has not yet been contradicted or realized. Lower-\(\delta\) cases also remain open.
+This closes only \(\delta=16\), not E407 Q32 overall. The \(\delta=15\) non-four-partite branch is also excluded under the retained core/witness contract by DELTA15_SECOND_TURAN_PACKING.md.
 
 ## 4. Template-by-template status
 
 | Template | Existing witness consequence | New result in this line | Status |
 |---|---|---|---|
-| A | \(\ge28\) hub-complete \(Q\)'s | \(\delta=16\) narrowed to the \((5,0)\) kernel; lower-\(\delta\) cases open | OPEN |
-| B | \(\ge28\) hub-complete \(Q\)'s | \(\delta=16\) narrowed to the \((5,0)\) kernel; lower-\(\delta\) cases open | OPEN |
-| C | \(\ge35\) hub-complete \(Q\)'s | \(\delta=16\) narrowed to the \((5,0)\) kernel; lower-\(\delta\) cases open | OPEN |
-| D | \(\ge35\) hub-complete \(Q\)'s | \(\delta=16\) narrowed to the \((5,0)\) kernel; lower-\(\delta\) cases open | OPEN |
-| E, at least one full row | \(\ge35\) hub-complete \(Q\)'s | \(\delta=16\) narrowed to the \((5,0)\) kernel; lower-\(\delta\) cases open | OPEN |
-| E, no full row | \(\ge42\) witnesses hitting both \(P_3\) endpoints | \(\delta=16\) narrowed to the \((5,0)\) kernel; endpoint-row compatibility for lower \(\delta\) remains open | OPEN |
+| A | \(\ge28\) hub-complete \(Q\)'s | \(\delta=16\) excluded; lower-\(\delta\) cases open | OPEN |
+| B | \(\ge28\) hub-complete \(Q\)'s | \(\delta=16\) excluded; lower-\(\delta\) cases open | OPEN |
+| C | \(\ge35\) hub-complete \(Q\)'s | \(\delta=16\) excluded; lower-\(\delta\) cases open | OPEN |
+| D | \(\ge35\) hub-complete \(Q\)'s | \(\delta=16\) excluded; lower-\(\delta\) cases open | OPEN |
+| E, at least one full row | \(\ge35\) hub-complete \(Q\)'s | \(\delta=16\) excluded; lower-\(\delta\) cases open | OPEN |
+| E, no full row | \(\ge42\) witnesses hitting both \(P_3\) endpoints | \(\delta=16\) excluded; endpoint-row compatibility for lower \(\delta\) remains open | OPEN |
 
 ## 5. What is not claimed
 
