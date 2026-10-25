@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 """Exact finite verifier for the P_C=49, r_i(C)=6 gadget contradiction.
 
-No third-party packages are required.  The four gadgets are the exact
-11-vertex normal forms from the retained exact-129 gadget theorem.  The
-checker exhausts:
-  * all K5/K4 cliques in each normal form;
+No third-party packages are required. The four gadgets are the exact 11-vertex
+normal forms from the retained exact-129 gadget theorem. The checker exhausts:
+  * all K4/K5 cliques in each normal form;
   * all disjoint K5/K5 pairs for r=1 blocks;
-  * all disjoint K5/K5 and K5/K4 complement pairs for an r=2 block;
-  * all admissible disjoint clique-complement pairs for Case C at r=6.
+  * all disjoint K5/K5 and K5/K4 pairs for the r=2 block;
+  * all admissible disjoint clique-complement pairs for r=6 Case C.
 
-A PASS means that for every such local configuration, a K5 core K and
-high-row complement H can be selected so that the seven outer rows and K
-form a monochromatic K12 with an external same-color edge.  The analytic
-contradiction then uses the isolated-K12 lemma.
+The final check uses the correct external-star condition: a monochromatic K12
+may have one external edge of its color. The verifier therefore requires a
+selected external gadget vertex to have at least TWO edges of color C into the
+constructed K12 (one to the high-block row and one to the core, r=2 row, or a
+selected r=1 row). That violates the 11-other-colors/12-edge star count.
 """
 from itertools import combinations
 
@@ -55,19 +55,56 @@ def cliques(vertices, adjacency, size):
 
 def disjoint_pairs(cliques_a, cliques_b=None):
     if cliques_b is None:
-        cliques_b = cliques_a
         return [
             (X, Y)
             for i, X in enumerate(cliques_a)
             for Y in cliques_a[i + 1 :]
             if X.isdisjoint(Y)
         ]
-    return [
-        (X, Y)
-        for X in cliques_a
-        for Y in cliques_b
-        if X.isdisjoint(Y)
-    ]
+    return [(X, Y) for X in cliques_a for Y in cliques_b if X.isdisjoint(Y)]
+
+
+def has_external_second_C_edge(H, D, Q_pair, low_pair_types, low_pairs,
+                               vertices, adjacency):
+    U = set(vertices)
+    if not H.isdisjoint(D):
+        return False
+
+    # For every low-block pair type that occurs, choose an omitted K5 L
+    # disjoint from the common core D and intersecting the high complement H.
+    eligible_by_type = {}
+    for pair_type in low_pair_types:
+        eligible = [
+            L for L in low_pairs[pair_type]
+            if L.isdisjoint(D) and H.intersection(L)
+        ]
+        if not eligible:
+            return False
+        eligible_by_type[pair_type] = eligible
+
+    # Choose the omitted clique Q' for the r=2 row.
+    for Q in Q_pair:
+        if not Q.isdisjoint(D) or not H.intersection(Q):
+            continue
+        # The high-block row has C-edges to every z in this set, including at
+        # least one vertex outside the core D.
+        for z in U - set(D) - set(H):
+            # If z also sees D in C, it has a second C-edge into the K12.
+            if adjacency[z].intersection(D):
+                return True
+            # Otherwise, Q' omits z exactly when z is in Q. If not, the r=2
+            # row supplies the second C-edge.
+            if z not in Q:
+                return True
+            # Otherwise, choose a low-block row whose omitted K5 excludes z.
+            # This gives z a C-edge to that row as well as to the high row.
+            if any(
+                z not in L
+                for eligible in eligible_by_type.values()
+                for L in eligible
+            ):
+                return True
+    return False
 
 
 def verify():
@@ -76,48 +113,34 @@ def verify():
         vertices, adjacency = make_gadget(b)
         K5 = cliques(vertices, adjacency, 5)
         K4 = cliques(vertices, adjacency, 4)
-
-        # Each r=1 block has one of these disjoint K5-pairs as its two
-        # no-component-row complements.
         low_pairs = disjoint_pairs(K5)
-
-        # A core K is good if every possible r=1 pair has a member L
-        # disjoint from K.  The corresponding row neighborhood V(U)\\L
-        # then contains K.
-        good_cores = [
-            K
-            for K in K5
-            if all(any(L.isdisjoint(K) for L in pair) for pair in low_pairs)
+        r2_pairs = disjoint_pairs(K5) + disjoint_pairs(K5, K4)
+        pair_type_subsets = [
+            {i for i in range(len(low_pairs)) if mask & (1 << i)}
+            for mask in range(1, 1 << len(low_pairs))
         ]
-        assert good_cores
 
-        # The r=2 block has complement profile (5,5) or (5,4).
-        r2_pairs = disjoint_pairs(K5)
-        r2_pairs += disjoint_pairs(K5, K4)
-
-        # Case A/B at r=6: the no-component row has complement H=K5.
+        # Cases A/B: the selected high no-component row has a K5 complement H.
         ab_checks = 0
         for H in K5:
-            for Q5, Q4 in r2_pairs:
-                ab_checks += 1
-                found = any(
-                    H.isdisjoint(K)
-                    and any(
-                        Q.isdisjoint(K) and bool(H.intersection(Q))
-                        for Q in (Q5, Q4)
+            for Q_pair in r2_pairs:
+                for pair_types in pair_type_subsets:
+                    ab_checks += 1
+                    found = any(
+                        has_external_second_C_edge(
+                            H, D, Q_pair, pair_types, low_pairs,
+                            vertices, adjacency
+                        )
+                        for D in K5
                     )
-                    for K in good_cores
-                )
-                assert found, (
-                    "Case A/B failure",
-                    b,
-                    tuple(sorted(H)),
-                    tuple(sorted(Q5)),
-                    tuple(sorted(Q4)),
-                )
+                    assert found, (
+                        "Case A/B failure", b, tuple(sorted(H)),
+                        tuple(tuple(sorted(Q)) for Q in Q_pair),
+                        sorted(pair_types)
+                    )
 
-        # Case C at r=6: complements H1,H2 are disjoint cliques,
-        # each of size <=5, with |H1|+|H2| >=5.
+        # Case C: complements H1,H2 are disjoint cliques of sizes <=5 with
+        # |H1|+|H2| >=5. The enumeration includes every such admissible pair.
         clique_by_size = {k: cliques(vertices, adjacency, k) for k in range(1, 6)}
         clique_by_size[0] = [frozenset()]
         high_pairs = []
@@ -127,57 +150,40 @@ def verify():
                 for H1 in clique_by_size[s]:
                     for H2 in clique_by_size[t]:
                         if H1.isdisjoint(H2) and s + t >= 5:
-                            key = tuple(
-                                sorted((tuple(sorted(H1)), tuple(sorted(H2))))
-                            )
+                            key = tuple(sorted((tuple(sorted(H1)), tuple(sorted(H2)))))
                             if key not in seen:
                                 seen.add(key)
                                 high_pairs.append((H1, H2))
 
         case_c_checks = 0
         for H1, H2 in high_pairs:
-            for Q5, Q4 in r2_pairs:
-                case_c_checks += 1
-                found = any(
-                    len(H) >= 2
-                    and H.isdisjoint(K)
-                    and any(
-                        Q.isdisjoint(K) and bool(H.intersection(Q))
-                        for Q in (Q5, Q4)
+            for Q_pair in r2_pairs:
+                for pair_types in pair_type_subsets:
+                    case_c_checks += 1
+                    found = any(
+                        has_external_second_C_edge(
+                            H, D, Q_pair, pair_types, low_pairs,
+                            vertices, adjacency
+                        )
+                        for H in (H1, H2)
+                        for D in K5
                     )
-                    for H in (H1, H2)
-                    for K in good_cores
-                )
-                assert found, (
-                    "Case C failure",
-                    b,
-                    tuple(sorted(H1)),
-                    tuple(sorted(H2)),
-                    tuple(sorted(Q5)),
-                    tuple(sorted(Q4)),
-                )
+                    assert found, (
+                        "Case C failure", b,
+                        tuple(tuple(sorted(H)) for H in (H1, H2)),
+                        tuple(tuple(sorted(Q)) for Q in Q_pair),
+                        sorted(pair_types)
+                    )
 
-        summary.append(
-            (
-                b,
-                len(K5),
-                len(K4),
-                len(low_pairs),
-                len(good_cores),
-                len(high_pairs),
-                len(r2_pairs),
-                ab_checks,
-                case_c_checks,
-            )
-        )
+        summary.append((
+            b, len(K5), len(K4), len(low_pairs), len(K5), len(high_pairs),
+            len(r2_pairs), ab_checks, case_c_checks
+        ))
 
-    print(
-        "b | K5 | K4 | r1-pairs | good-cores | r6-C-pairs | r2-pairs "
-        "| A/B checks | C checks"
-    )
+    print("b | K5 | K4 | r1-pairs | K5 core candidates | Case-C pairs | r2-pairs | A/B checks | C checks")
     for row in summary:
         print(" | ".join(str(x) for x in row))
-    print("PASS: all exact gadget configurations satisfy the contradiction interface.")
+    print("PASS: every admissible local configuration yields a K12 with an outside vertex having at least two C-edges into it.")
 
 
 if __name__ == "__main__":
