@@ -178,3 +178,10 @@
 - Rewrote the local \(P_C=49,r_i=6\) argument to use a double-\(C\)-edge contradiction. Added the safe-row incidence split for Cases A/B/C and restricted the verifier to the exact Case-C complement profiles from the row theorem.
 - Replayed the finite predicates: 2,132 Case-A/B configurations and 512,768 exact-profile Case-C configurations passed. The checker tests both high-row choices for the risky \((5,5)\) and \((5,4)\) profiles; other profiles have at most three total partial component incidences and admit either safe high row.
 - Scope remains conditional: this excludes only the \(P_C=49,r_i=6\) corner under the retained exact-129/gadget/row contracts. It cannot be combined with the sibling \(P_C\le49\) cap until that cap is independently repaired. The original \(K_{145}\) theorem remains OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 — separate graph witnesses from isolated exact-129 components
+
+- Rechecked the factor contract against the graph-theoretic shell witness theorem. A witness K5 \(\{\lambda\}\cup Q\) is either one of the ten isolated K5 components or lies wholly in the 11-point gadget \(U_C\); it is not automatically a component.
+- Because the seven selected four-sets \(Q\) are pairwise disjoint and \(|U_C|=11\), at most two witness K5s can lie in \(U_C\). Thus at least five of seven are isolated-component witnesses, and at least four of the six B-labelled witnesses are isolated components.
+- Corrected LABELLED_WITNESS_CAPACITY_THEOREM.md: the overlap with all-block exact blockers is now bounded below by \(\max(0,P_C-50)\), not \(\max(0,P_C-48)\). The currently proved component-extension threshold is \(P_C\ge51\); the stronger seven-component transfer is OPEN.
