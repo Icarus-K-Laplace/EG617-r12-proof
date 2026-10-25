@@ -33,7 +33,7 @@ Then \(\sum_i E_i=4\).
 
 ## 2. Transversal saturation and \(t_d\le2\)
 
-Call \(z\in U\) W-saturated if it is complete to one of the four clique components of \(H[W]\). If it is not W-saturated, each component has a non-neighbour of \(z\). The only edge between components is \(xy\). For the selected four non-neighbours to fail to form an independent 4-set, the non-neighbour sets in the two components containing \(x,y\) must be exactly \(\{x\}\) and \(\{y\}\); otherwise choose a non-endpoint in one of those sets and avoid the unique cross-edge.
+Call \(z\in U\) W-saturated if it is complete to one of the four clique components of \(H[W]\). If it is not W-saturated, each component has a non-neighbour of \(z\). The only edge between components is \(xy\). Every choice of one non-neighbour from each component must contain the cross-edge \(xy\), or those four vertices together with \(z\) form an independent 5-set. Hence the non-neighbour sets in the two components containing \(x,y\) must be exactly \(\{x\}\) and \(\{y\}\); otherwise one can choose a non-endpoint and avoid the unique cross-edge.
 
 Consequently, the total number of W-non-neighbours of a non-saturated vertex is at most
 \[
@@ -78,7 +78,7 @@ First consider a \(K_5\) component \(C_i\) not incident to \(xy\). Each \(w\in C
 \[
 d_H(w,U)=8+\epsilon_w.
 \]
-If \(w\) is W-side-unsaturated, then it is not complete to any U-part. For each \(d\in D\) nonadjacent to \(w\), the \(\alpha(H)\le4\) condition forces at least one of the three small-part non-neighbour sets of \(w\) to be contained in \(N_H(d)\cap(A\cup B\cup C)\). By (2), that set has size at most 2; distinct such \(d\)'s must be assigned distinct small parts because every small-side vertex has at most one cross-edge in \(H[U]\). It follows that if \(w\) is not complete to a U-part, then \(d_H(w,U)\ge12\). Therefore an unsaturated \(w\in C_i\) has \(\epsilon_w=4\); one of the other four vertices of \(C_i\) has excess 0 and U-degree 8. Thus \(|S_i|\le8\le5+E_i\).
+If \(w\) is W-side-unsaturated, then it is not complete to any U-part. For each \(d\in D\) nonadjacent to \(w\), the \(\alpha(H)\le4\) condition forces at least one of the three small-part non-neighbour sets of \(w\) to be contained in \(N_H(d)\cap(A\cup B\cup C)\). By (2), that set has size at most 2; distinct such \(d\)'s must be assigned distinct small parts because every small-side vertex has at most one cross-edge in \(H[U]\). Thus \(|D'|\le3\). If \(|D'|=1,2,3\), the number of non-neighbours in \(U\) is at most respectively \(1+2+7+7=17\), \(2+2+2+7=13\), or \(3+2+2+2=9\). In every case \(d_H(w,U)\ge12\). Therefore an unsaturated \(w\in C_i\) has \(\epsilon_w=4\); one of the other four vertices of \(C_i\) has excess 0 and U-degree 8. Thus \(|S_i|\le8\le5+E_i\).
 
 If every vertex of \(C_i\) is complete to a U-part, label each \(w\in C_i\) by one such part \(P(w)\). The number of its U-edges outside that part is at most \(1+\epsilon_w\). No single U-part can label all five vertices: otherwise a small part together with \(C_i\) gives a \(K_{12}\), or \(D\cup C_i\) gives a \(K_{13}\). Every \(u\in S_i\) therefore uses at least one edge \(uw\) outside the label part of \(w\). Counting these distinct extra edges yields
 \[
