@@ -68,6 +68,24 @@ Corollary 11.3 adds a high-budget consequence: if \(P_C=50\) and one block has \
 
 This closes the local \(r_i=6\) classification gap but is not a global contradiction. Forced edges may still be baseline block-pair edges and are not charged to \(P_C\) without an independent duplicate-incidence argument.
 
+## Result 4: \(P_C=50,\ r_i(C)=6\) is excluded
+
+The new Lemma 13.1 proves that any monochromatic \(K_{12}\) in a balanced 12-coloring is an isolated component of that color: every vertex outside it must see all eleven other colors on its twelve edges to the clique, leaving no edge of the clique's own color. Lemma 13.2 then gives the exact budget cap
+\[
+P_C\le21(12-m)
+\]
+whenever \(C\) contains \(m\) vertex-disjoint monochromatic \(K_{12}\)'s, each meeting every target block in exactly one vertex.
+
+Theorem 13.3 excludes the corner \(P_C=50\) and \(r_i(C)=6\). The budget identity forces the other six block budgets to equal one. The complete \(r_i=6\) classification then guarantees at least ten isolated \(C\)-colored \(K_{12}\)'s in every case:
+- \(n=1\): ten label-based cliques plus a gadget-based clique;
+- \(n=2,k=1,m=10\): nine label-based plus two gadget-based cliques;
+- \(n=2,k=1,m=11\): at least eight label-based plus two gadget-based cliques;
+- \(n=2,k=0\): all ten component labels are clean and yield ten label-based cliques.
+
+Thus \(P_C\le21(12-10)=42\), contradicting \(P_C=50\). This is a genuine global contradiction for that exact-129 budget corner, not merely a packing observation.
+
+**Scope:** the \(P_C=49,\ r_i=6\) corner remains open. Its current guaranteed packing can leave nine isolated \(K_{12}\)'s, and the generic cap gives only \(P_C\le63\). E408 Q33 and the original \(K_{145}\) theorem remain OPEN / NOT_CERTIFIED.
+
 ## Seven-block global ledger
 
 For each non-target color C,
@@ -94,11 +112,9 @@ The next proof target is a stability/packing contradiction in Case 1 or a genuin
 
 ## Latest isolated commits
 
+- Isolated-\(K_{12}\) duplicate cap and \(P_C=50\) exclusion: 772aa7c0d43db747d707f93ee41e96cf1f30a737
+- Exact gadget normal form and strengthened high-budget packing: c01f7dc6951b2bb7ea5209f252b1644ca0ecd40a
 - Live sibling audit and Corollary 11.3 independent check: 597f0db0c7f37e97bb2bb448f0a50bf1f4872809
-- High-\(P_C\) clique-packing theorem: c1cf309955e6435ef3aaad498bc136d5f24ddc6b
-- Live sibling-head dependency refresh: 7ead15c3d79b0099a650be1157b8e68cc9574a17
-- Canonical integration of high-\(P_C\) clique-packing corollary: 097aad468745c6b62101200969938981ad376910
-- Proof-dependency integration: 6aaa2a6cc508344bc320cd49d254ba228b1df344
 - Exact \(r_i(C)=6\) classification and 6+1 matching: 6a1f034fe9d0b2ba5ca49acde9ae57a3c2d652ce
 - Theorem 11.1 / Corollary 11.2: c74b01170b4bab70e148e541b1c610279013f106
 - Theorem 10.1 / Corollary 10.2: 73f02a07d4722e09af203cbc0ac8d5d82af405e4
