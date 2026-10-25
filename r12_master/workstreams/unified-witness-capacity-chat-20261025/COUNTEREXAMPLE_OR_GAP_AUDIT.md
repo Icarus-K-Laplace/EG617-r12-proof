@@ -198,3 +198,14 @@ The latest sibling theorem proves that every monochromatic \(K_{12}\) in a non-t
 If \(m\) disjoint \(C\)-colored \(K_{12}\)'s each use one representative from each of the seven outer blocks, the remaining \(12-m\) vertices in each block have a C-bipartite graph of minimum degree one and maximum degree two across any block pair. Therefore \(P_C\le21(12-m)\).
 
 Applying the exact \(r_i=6\) cases and the six low-slack blocks excludes \(P_C=50,r_i=6\): Cases A/B force an external edge on a \(K_{12}\); Case C either has such an edge or yields ten isolated K12s and the bound \(P_C\le42\). The proof is recorded on sibling head 8b4bfef7a9e3d957c7150af30aadba703a08d31f. The remaining nearby corner \(P_C=49,r_i=6\) is still open; do not promote the P=50 argument to it without handling the single \(r_i=2\) block.
+
+
+## 16. P=49, r=6 corner closed conditionally; remaining profile ledger
+
+Theorem 12.1 and verify_p49_r6_gadget_exclusion.py eliminate every exact-129 configuration with \(P_C=49\) and a block budget \(r_i=6\), under the retained exact gadget normal form and row contracts. The finite search covers all four gadget parameters and all permitted \(r=1\), \(r=2\), and \(r=6\) omitted-complement patterns. It does not replace the upstream proof of those contracts.
+
+Combining with sibling E408 Q33 Theorem 14.1 (\(P_C\le49\)), a \(P_C=49\) exact color has \(R_C=13\). The only possible block-budget profile with an entry at least eight is \((7,1,1,1,1,1,1)\); the \(r=6\) profile \((6,2,1,1,1,1,1)\) is excluded. If all entries are at most five, the sorted positive 7-tuples of sum 13 are:
+- excluded by Corollary 10.2 and the isolated-K12 cap: \((3,3,3,1,1,1,1)\), \((4,2,2,2,1,1,1)\), \((3,3,2,2,1,1,1)\), \((3,2,2,2,2,1,1)\), \((2,2,2,2,2,2,1)\);
+- still open because one pair sum is at least seven: \((5,3,1,1,1,1,1)\), \((4,4,1,1,1,1,1)\), \((5,2,2,1,1,1,1)\), \((4,3,2,1,1,1,1)\).
+
+The \(r=7\) profile and the four high-pair profiles remain unresolved. No full theorem closure follows.
