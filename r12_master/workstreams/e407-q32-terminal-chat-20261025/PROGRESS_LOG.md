@@ -355,3 +355,25 @@ Arithmetic replay: verify_delta14_k5_cross_edge_capacity.py checked all 35 integ
 ### Frontier
 
 The only remaining \(\delta=14,\epsilon_U=0\), four-partite W-profile is \(K_3\cup K_5^3\) with the unique cross-edge joining \(K_3\) to a \(K_5\). That endpoint placement remains OPEN. The \(\epsilon_U=1,2\), non-four-partite, and \(\delta\le13\) cases remain open. E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 — Round 11: final \(\delta=14,\epsilon_U=0\) W-profile excluded
+
+### New theorem
+
+The remaining profile \(H[W]=K_3\cup K_5^3\) with its unique cross-edge joining \(K_3\) to a \(K_5\) is now excluded.
+
+Let \(T=K_3\), with cross-edge endpoint \(a\in T\), and let \(D_0=N_D(T)\). If \(T\) is not complete to \(D\), all vertices of \(T\) must be complete to small U-parts: otherwise reverse saturation supplies a non-neighbour \(d\in D\) with \(t_d>0\), but every positive-\(t_d\) vertex is complete to \(T\). The exact degree budget forces \(|D_0|=4\), \((\epsilon_a,\epsilon_{t_1},\epsilon_{t_2})=(2,1,1)\), and each T-vertex's U-neighbourhood is \(D_0\) plus one entire small part. The resulting three label patterns bound the U-cover by at most 25.
+
+If \(T\) is complete to \(D\), then \(D\subseteq S_T\), and
+\[
+|S_T|\le8+\lfloor(5+E_T)/3\rfloor,\qquad
+|X|\le2+\lfloor E_T/2\rfloor,
+\]
+where \(X\) consists of U-vertices not complete to any W-component. The component-cover bound is \(27,27,26,25,25\) for \(E_T=0,1,2,3,4\). Only the equality-bound cases need further treatment; there, \(|X|\) maximal forces \(S_T=D\), lowering the total to at most 28. Thus all cases contradict the required 29-point cover.
+
+Proof: DELTA14_EPS0_K3K5X1_K3K5_EDGE.md. Arithmetic replay: verify_delta14_k3_k5_cross_edge.py; all 35 excess allocations pass, corrected maximum 28.
+
+### Frontier change
+
+All four-partite W-profiles at \(\delta=14,\epsilon_U=0\) are now excluded. This is still conditional on the retained T61/core/49-witness contract and the stated near-Turán W-profile classification. Remaining: \(\delta=14,\epsilon_U=1,2\), \(\delta=14\) non-four-partite, and all \(\delta\le13\). E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
