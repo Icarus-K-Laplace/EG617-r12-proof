@@ -40,15 +40,12 @@ Every \(d\in D\) is likewise complete to a whole \(W\)-component. Since \(d_H(d,
 0\le t_d\le2.
 \]
 
-We also need the reverse saturation lemma from the same matching contract. If \(w\in W\) is not complete to any of \(A,B,C,D\), let \(D'\) and \(A',B',C'\) be its non-neighbour sets in those parts. For each \(d\in D'\), every triple in \(A'\times B'\times C'\) must contain an \(H[U]\)-edge to \(d\); otherwise that triple, \(d\), and \(w\) form an independent five-set. Because every small-part vertex is incident to at most one cross edge and \(t_d\le2\), this gives
+We need the reverse-saturation lemma. If \(w\in W\) is not complete to any of \(A,B,C,D\), let \(D'\) and \(A',B',C'\) be its non-neighbour sets in those parts; all four sets are nonempty. For each \(d\in D'\), every triple in \(A'\times B'\times C'\) must contain a vertex adjacent to \(d\) in \(H[U]\), or that triple together with \(d,w\) would be an independent five-set. Equivalently, at least one of \(A',B',C'\) is contained in \(N_H(d)\cap(A\cup B\cup C)\), and so has size at most \(t_d\le2\). The chosen small part must be different for distinct \(d\in D'\): a small-side vertex has at most one cross-edge, so it cannot lie in the cross-neighbourhoods of two different vertices of \(D\). Hence \(|D'|\le3\).
+
+If \(|D'|=1\), the total number of non-neighbours in \(U\) is at most \(t_d+7+7+1=t_d+15\), so \(d_H(w,U)\ge14-t_d\ge12\). If \(|D'|=2\), two distinct small non-neighbour sets have size at most two and the third has size at most seven; thus there are at most \(2+2+7+2=13\) non-neighbours, giving \(d_H(w,U)\ge16\). If \(|D'|=3\), all three small non-neighbour sets have size at most two, giving at most \(2+2+2+3=9\) non-neighbours and \(d_H(w,U)\ge20\). If \(D'=\varnothing\), \(w\) is complete to \(D\), contrary to the assumed failure of part-saturation. Therefore
 \[
-|D'|=1\Rightarrow d_H(w,U)\ge14-t_d\ge12,\qquad
-|D'|\ge2\Rightarrow d_H(w,U)\ge14.
-\]
-If \(D'=\varnothing\), \(w\) is complete to \(D\), contrary to the assumed failure of part-saturation. Therefore
-\[
-\boxed{w\text{ not complete to any U-part}\ \Longrightarrow\ d_H(w,U)\ge12.} \tag{1}
-\]
+\boxed{w\text{ not complete to any U-part}\ \Longrightarrow\ d_H(w,U)\ge12.} \tag{1\)
+
 For \(w\in C_s\), \(d_H(w,U)=13-s+\epsilon_w\). In particular every vertex of \(C_6\) is part-saturated, because \(7+\epsilon_w\le11\).
 
 ## 3. Common-neighbour cover
