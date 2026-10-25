@@ -25,13 +25,13 @@ These are the latest heads observed in the repository at the time of this update
 
 - The E407 Q32 boundary has 49 linear independent 4-set witnesses on a 29-point support, with \(e(H)=284\), \(\alpha(H)\le4\), \(\delta(H)\ge12\), and total core excess 4.
 - The exact ledger gives \(3\le\delta\le16\), \(\delta+\epsilon_U\le16\), and the sibling transversal/excess lemma gives \(\epsilon_U+2\delta\ge9\).
-- If \(\delta=16\), \(L=\overline{H[U]}\) is four-partite because it has 310 edges, exceeding the non-four-partite Brouwer threshold 309. The resulting \(7,7,7,8\) core is narrowed but **not excluded**: the \(4+1\) and \(3+2\) endpoint splits are impossible, while the \(5+0\) split remains open because the three non-endpoint \(D\)-vertices already meet the endpoint \(K_4\) and each has only one additional \(W\)-neighbour.
+- The \\(\delta=16\\) four-partite branch is **EXCLUDED**. The 4+1 and 3+2 endpoint splits violate the excess budget; the 5+0 split forces its endpoint \\(K_4\\) to be complete to the 8-part, creating a forbidden \\(K_{12}\\). See FOUR_PARTITE_TERMINAL.md.
 - The \(\delta=15\) non-four-partite branch is **excluded** under the retained core/witness contract: Kang–Pikhurko equality reduces it to a balanced \((7,7,7,7)\) base, and the exceptional vertices \(x,y\) have incompatible required degrees into \(W\). The full reduction and contradiction are in DELTA15_SECOND_TURAN_PACKING.md.
 - The final \(\delta=15\) contradiction compares \(d_H(x,W)=a-1+\epsilon_x\) and \(d_H(y,W)=6-a+\epsilon_y\). Whole-part saturation in \(W\) forces incompatible lower bounds on \(a\), for both \(\epsilon_U=0\) and \(\epsilon_U=1\).
 - In that case, \(U\)-part sizes are \(7,7,7,8\), \(H[W]=K_5\cup K_5\cup K_4\cup K_4\), and the five cross edges in \(H[U]\) form a matching between the 8-part and the three 7-parts.
 - A reverse-saturation lemma additionally proves every vertex of W is adjacent to all vertices of exactly one U-part; this is needed for the endpoint-split argument.
 - New exact witness-array identity: for each D-vertex d, its number of missing small-part partners equals the number of exact-129 color classes omitting d. These multiplicities sum to 7; the five endpoint D-labels contribute at least 5, so at least three have multiplicity exactly 1 and at least one non-endpoint D-label has multiplicity 0. See DELTA16_WITNESS_ARRAY.md.
-- The five 8-part endpoints all have the same \(K_4\) as their exact \(W\)-neighbourhood; this \(K_4\) is complete to \(D\). Each vertex in the remaining \(K_4,K_5,K_5\) components is complete to some 7-part, but the full-part labels may vary vertex-by-vertex; no component-wide bijection has been proved.
+- The \\(\delta=16\\) endpoint-split proof establishes that the 5+0 endpoint \\(K_4\\) is complete to \\(D\\), yielding a forbidden \\(K_{12}\\); no labelled 5+0 kernel remains.
 
 ## Status by case
 
