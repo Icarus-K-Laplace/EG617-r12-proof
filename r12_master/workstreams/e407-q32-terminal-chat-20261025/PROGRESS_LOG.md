@@ -293,3 +293,25 @@ Together with DELTA14_EPS0_K4_PROFILE_EXCLUSIONS.md, three of the four \(\delta=
 ### Limits
 
 This is conditional on the retained T61/core/witness contract and W-profile classification. It does not close a full shell template, E407 Q32, or EG617(r=12).
+
+
+## 2026-10-25 — Round 10: final \(\delta=14,\epsilon_U=0\) four-partite profile excluded
+
+### New theorem
+
+The last W-profile \(K_3\cup K_5^3\) plus one cross-edge is now excluded under the retained 49-witness/core and four-partite contracts.
+
+1. **Saturation geometry.** If a vertex misses every W clique component, its non-neighbour sets at the two endpoints of the unique W-cross-edge must be singleton endpoint sets. The maximum possible number of W-non-neighbours is 12 when the edge joins \(K_3\) to \(K_5\), and 10 when it joins two \(K_5\)'s. Since each \(D\)-vertex has at least 13 W-non-neighbours, all \(D\)-vertices are component-saturated, forcing \(t_d\le2\).
+2. **Reverse saturation.** With \(t_d\le2\), a W-vertex not complete to any U-part has \(d_H(w,U)\ge12\), by counting non-neighbours in \(D,A,B,C\). Thus a non-endpoint K5 vertex can be unsaturated only when its excess is four; a K5 endpoint cannot be unsaturated.
+3. **Exception elimination.** The only possible unsaturated U-vertex \(u\) lies at a non-endpoint small-part vertex when the W-cross-edge joins \(K_3\) to \(K_5\). It is anticomplete to the two other K5 components. Every \(v\in U\setminus N[u]\) nonadjacent to the K5 endpoint \(y\) must be complete to one of those two K5s, giving \(|S_2|+|S_3|\ge15-\epsilon_y\). Their capacity is at most \(10+E_2+E_3\le14-\epsilon_y\), contradiction.
+4. **Cover capacity.** With all U-vertices saturated, the component capacities sum to at most 27 in either cross-edge placement, whereas the four common-neighbour sets must cover 29 vertices.
+
+Added DELTA14_EPS0_K3K5K5K5_CROSS_EDGE_CLOSURE.md and verify_delta14_eps0_k3k5_cross_edge.py. Arithmetic replay passed: the exceptional-vertex lower bound exceeds its upper bound by one for every \(\epsilon_y\in\{0,\dots,4\}\), and all 35 nonnegative excess allocations give cover cap 27.
+
+### Frontier update
+
+- \(\delta=16\) four-partite: **EXCLUDED**.
+- \(\delta=15\) four-partite and non-four-partite: **EXCLUDED** under the retained contracts.
+- \(\delta=14,\epsilon_U=0\) four-partite: **EXCLUDED** (all four W profiles).
+- Still open: \(\delta=14,\epsilon_U\in\{1,2\}\), \(\delta=14\) non-four-partite, and \(\delta\le13\).
+- E407 Q32 overall and EG617(r=12): **OPEN / NOT_CERTIFIED**. The five shell templates A–E remain open.
