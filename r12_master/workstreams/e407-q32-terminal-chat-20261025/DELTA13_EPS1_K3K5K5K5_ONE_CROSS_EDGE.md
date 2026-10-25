@@ -58,7 +58,7 @@ Consequently
 \[
 |S_2|+|S_3|\le10+E_2+E_3\le13-\epsilon_y, \tag{2}
 \]
-because \(E_2+E_3\le E_W-\epsilon_y=3-\epsilon_y\). Equations (1)–(2) are incompatible: their bounds differ by at least \(2-\epsilon_u\ge1\). Hence no such \(u\) exists.
+because \(E_2+E_3\le E_W-\epsilon_y=3-\epsilon_y\). Equations (1)–(2) are incompatible: their bounds differ by at least \(2-\epsilon_u\ge1\). Hence the \(d_H(u,W)=6\) nonsaturated case is impossible.
 
 ### Case II: \(xy\) joins two \(K_5\) components
 
