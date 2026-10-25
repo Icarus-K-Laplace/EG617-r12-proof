@@ -56,27 +56,27 @@ e(J-v)=p(14-p)-ab=49-d. \tag{1}
 
 ### 4. The bipartition must be balanced
 
-Write (q=14-p=|Y|). If both (X\setminus A) and (Y\setminus B) are nonempty, a vertex in (X\setminus A) has degree (q), while a vertex in (Y\setminus B) has degree (p), because the only missing cross-edges are in (A\times B). The maximum-degree bound (Delta(J)\le7) then gives (q\le7) and (p\le7), hence (p=q=7).
+Write \(q=14-p=|Y|\). If both \(X\setminus A\) and \(Y\setminus B\) are nonempty, a vertex in \(X\setminus A\) has degree \(q\), while a vertex in \(Y\setminus B\) has degree \(p\), because the only missing cross-edges are in \(A\times B\). The maximum-degree bound \(\Delta(J)\le7\) then gives \(q\le7\) and \(p\le7\), hence \(p=q=7\).
 
 It remains to exclude the boundary cases where one of those two sets is empty.
 
-If (X\setminus A=\varnothing), then (p=a\le4). Since (b\ge1), (d=a+b\ge p+1), and (d\le5). Equation (1) becomes
-[
+If \(X\setminus A=\varnothing\), then \(p=a\le4\). Since \(b\ge1\), \(d=a+b\ge p+1\), and \(d\le5\). Equation (1) becomes
+\[
 p(14-d)=49-d.
-]
-But (p\le d-1), so
-[
+\]
+But \(p\le d-1\), so
+\[
 p(14-d)\le(d-1)(14-d)\le36<44\le49-d,
-]
+\]
 a contradiction.
 
-Similarly, if (Y\setminus B=\varnothing), then (q=b\le4), (d=a+b\ge q+1), and equation (1) becomes (q(14-d)=49-d). The same inequality gives a contradiction. Both sets cannot be empty because then (p=a\le4) and (q=b\le4), contradicting (p+q=14).
+Similarly, if \(Y\setminus B=\varnothing\), then \(q=b\le4\), \(d=a+b\ge q+1\), and equation (1) becomes \(q(14-d)=49-d\). The same inequality gives a contradiction. Both sets cannot be empty because then \(p=a\le4\) and \(q=b\le4\), contradicting \(p+q=14\).
 
-Therefore (p=q=7). Equation (1) now gives
-[
-49-ab=49-d,qquad\text{so}\qquad ab=d=a+b.
-]
-For positive integers (a,b), this is equivalent to ((a-1)(b-1)=1), hence (a=b=2) and (d=4).
+Therefore \(p=q=7\). Equation (1) now gives
+\[
+49-ab=49-d,\qquad\text{so}\qquad ab=d=a+b.
+\]
+For positive integers \(a,b\), this is equivalent to \((a-1)(b-1)=1\), hence \(a=b=2\) and \(d=4\).
 
 ### 5. Identify the graph
 
