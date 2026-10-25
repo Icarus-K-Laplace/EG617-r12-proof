@@ -64,6 +64,8 @@ Theorem 11.1 in SEVEN_BLOCK_INCIDENCE_LEDGER.md classifies \(r_i(C)=6\) complete
 
 Corollary 11.2: if one block has \(r_i(C)=6\) and another has \(r_j(C)=1\), at least eight component labels force a \(C\)-colored matching across those blocks; the lower bound is ten in the rigid one-row case and the no-repeated-full-component case, nine in the \(m=10\) split-label case, and at least eight in the \(m=11\) double-row case.
 
+Corollary 11.3 adds a high-budget consequence: if \(P_C=50\) and one block has \(r_i=6\), at least eight vertex-disjoint monochromatic \(K_{12}\) cliques are forced; if \(P_C=49\), at least seven are forced. These are valid packing constraints, not contradictions by themselves.
+
 This closes the local \(r_i=6\) classification gap but is not a global contradiction. Forced edges may still be baseline block-pair edges and are not charged to \(P_C\) without an independent duplicate-incidence argument.
 
 ## Seven-block global ledger
@@ -92,10 +94,11 @@ The next proof target is a stability/packing contradiction in Case 1 or a genuin
 
 ## Latest isolated commits
 
-- Equality-case refinement and progress log: e6d7009df9aa6352ee4554ff0536ab4a84da8a90
-- Exact \(r_i(C)=6\) classification and 6+1 cross-block matching: 6a1f034fe9d0b2ba5ca49acde9ae57a3c2d652ce
-- Dependency integration: a2ae2ec243711ca8ff94e3d7c507a97ffacd8386
-- Canonical integration: e143d8e9f4e20ad2ec0e06783e163db8079cb2a6
+- High-\(P_C\) clique-packing consequence and progress log: 061e72603d4b9cf8ab56e2d4286582e8fd7a8db5
+- Proof-dependency integration: 6aaa2a6cc508344bc320cd49d254ba228b1df344
+- Gadget equality refinement: a8afd7cb13cc3902c2b6ec5afe37cfacd43eb308
+- Canonical commit-list refresh: 9fc8e3d9fc315cb35c2d49b3ab65673d67ba8ed6
+- Exact \(r_i(C)=6\) classification and 6+1 matching: 6a1f034fe9d0b2ba5ca49acde9ae57a3c2d652ce
 - Theorem 11.1 / Corollary 11.2: c74b01170b4bab70e148e541b1c610279013f106
 - Theorem 10.1 / Corollary 10.2: 73f02a07d4722e09af203cbc0ac8d5d82af405e4
 
