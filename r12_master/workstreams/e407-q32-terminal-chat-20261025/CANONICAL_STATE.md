@@ -288,3 +288,17 @@ This proof independently covers both placements of the W-cross-edge and does not
 The finite verifier exhausts 8,925 valid K4 label/excess assignments in each endpoint regime, the corresponding one-unlabelled cases, and 107,325 non-endpoint / 30,615 endpoint K6 label/excess assignments. It checks finite load arithmetic, not the analytic saturation and degree lemmas.
 
 This confirms the entire \(\delta=13,\epsilon_U=1\), \(3K_4\dot\cup K_6\)-plus-one-edge profile is excluded under the four-partite-U/core contract. Next target remains \(2K_4\dot\cup2K_5\) plus two W-cross-edges at \(\epsilon_U=1\); E407 Q32 overall remains OPEN / NOT_CERTIFIED.
+
+
+## Round 28 — exact two-cross-edge reduction for the delta-13, epsilon_U=1 W-profile
+
+Added DELTA13_EPS1_TWO_CROSS_EDGE_PROFILE_REDUCTION.md and verify_delta13_eps1_two_cross_edge_profile.py.
+
+The new result does not close the profile, but it replaces a broad two-cross-edge case with a strict terminal contract:
+
+- Exact blocker classification: every U-vertex not complete to a W clique is either blocked by one edge whose endpoint non-neighbour sets are singletons, or by a two-edge star between the same pair of W components with non-neighbour-set sizes 2 and 1. The only alternative cylinder-cover pattern would force at least nine W-neighbours, exceeding the degree cap seven.
+- Component capacity: every K4 common-neighbour set has size at most 9; every K5 common-neighbour set has size at most 2+E_i. The finite load arithmetic is replayed by the new verifier.
+- Global consequence: sum_i |S_i|<=25, so at least four of the 29 U-vertices are W-unsaturated. If a W-cross-edge meets a K4, the sharper capacity is at most 24, so at least five U-vertices are W-unsaturated.
+- If both W-cross-edges lie between the two K5 parts, the blocker classification allows at most one unsaturated U-vertex, contradicting the global capacity floor. That placement is therefore excluded entirely.
+
+The verifier is an arithmetic check, not a graph-realization certificate. The surviving blocker patterns with k>=5 remain OPEN; E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.

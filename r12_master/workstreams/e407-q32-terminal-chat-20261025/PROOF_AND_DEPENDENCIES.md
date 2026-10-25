@@ -187,3 +187,8 @@ The arithmetic verifier checks only the numeric degree gaps, edge ledger, and ov
 DELTA13_EPS1_K4K4K4K6_ONE_CROSS_EDGE.md proves the \(\delta=13,\epsilon_U=1\), four-partite-U profile \(3K_4\dot\cup K_6\) plus one W-cross-edge is impossible in either edge placement. The proof treats an arbitrary set of nonsaturated U vertices in the K4–K4 placement, avoiding any need to assume the degree-six exception is absent. It combines reverse saturation, a finite label-load capacity bound \(|S_{K_4}|\le9\), the K6 bound \(|S_{K_6}|\le\lfloor E_6/2\rfloor\), and a strict \(29-k\) versus \(29-2k\) cover contradiction.
 
 The verifier exhausts finite label/excess arithmetic only. The analytic graph lemmas remain human-proof dependencies. This result is conditional on the 49-witness core contract, the four-partite hypothesis for \(L=\overline{H[U]}\), and \(\omega(H)\le11\); it does not close the remaining \(\delta=13\) W-cross-edge profiles, \(\epsilon_U=0\), non-four-partite U-complements, \(\delta\le12\), the five shell templates globally, or the \(K_{145}\)-to-T61 bridge.
+
+
+## Round 28 — two-cross-edge W-profile reduction
+
+DELTA13_EPS1_TWO_CROSS_EDGE_PROFILE_REDUCTION.md establishes, under the retained 49-witness/core contract and four-partite-U hypothesis, the exact Type-I/Type-II blocker classification for W-unsaturated U-vertices and the capacity bounds |S_K4|<=9, |S_K5|<=2+E_i. The arithmetic verifier checks the degree/edge ledger and finite capacity arithmetic only. The graph-theoretic blocker classification, reverse-saturation lemma, and label-capacity arguments remain analytic proof dependencies; no SAT/ILP result is used. The profile remains open only at the k>=5 labelled exception system (provided at least one W-cross-edge meets a K4).

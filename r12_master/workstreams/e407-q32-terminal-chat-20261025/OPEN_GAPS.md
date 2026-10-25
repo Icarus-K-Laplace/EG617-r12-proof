@@ -146,3 +146,10 @@ Thus both placements of the unique W-cross-edge in the \(\delta=13,\epsilon_U=1\
 The new DELTA13_EPS1_K4K4K4K6_ONE_CROSS_EDGE.md independently closes both K4–K6 and K4–K4 placements of the \(\delta=13,\epsilon_U=1\), \(3K_4\dot\cup K_6\)-plus-one-edge profile. Unlike a proof that assumes at most one nonsaturated U vertex, it permits an arbitrary exception set \(E\) and derives the strict cover inequality \(29-k>29-2k\) when \(k=|E|>0\). The finite verifier confirms the label/load arithmetic, not the analytic graph lemmas.
 
 **Next target:** \(\delta=13,\epsilon_U=1\), \(2K_4\dot\cup2K_5\) plus two W-cross-edges. Then handle the \(\epsilon_U=2\), \((4,4,5,5)\)-plus-one-cross-edge profile, \(\epsilon_U=0\), non-four-partite U-complements, and \(\delta\le12\). The five shell templates and \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## Round 28 — remaining delta-13, epsilon_U=1, two-cross-edge profile
+
+The profile H[W]=2K4 union 2K5 plus two cross-edges is reduced as follows. The exact transversal-blocker lemma classifies every W-unsaturated U-vertex as Type I (one-edge blocker with singleton endpoint non-neighbour sets) or Type II (same-pair two-edge star with non-neighbour-set sizes 2 and 1). The common-neighbour capacity proof gives |S_K4|<=9 and |S_K5|<=2+E_i, hence k>=4; if any cross-edge meets a K4, then k>=5. If both edges lie between the K5 parts, the blocker classification gives k<=1, so that placement is excluded.
+
+**Remaining exact blocker:** at least five U-vertices are W-unsaturated, the two-edge graph has at least one endpoint in a K4 part, and each exception has one of the certified Type-I/Type-II forms. The next step is a joint labelled-incidence contradiction for this k>=5 family. This is a strict reduction, not full closure.

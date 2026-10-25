@@ -132,3 +132,10 @@ Still open: the same profile with its edge between two K4s; \(2K_4\dot\cup2K_5\)
 The K4–K4 placement is excluded by DELTA13_EPS1_3K4_K6_K4K4_EDGE.md. The only possible unsaturated U vertex has degree seven into W, excess one, and no U-cross-edge; all other U vertices are saturated. A common-neighbour cover of at least 28 vertices would require total capacity 28. If all three K4 capacities equal nine, each must have a common small-part label; the exceptional vertex's part cannot be one of these labels, so two components share one of the other two labels and overlap on a seven-vertex part. This contradicts coverage. Together with Round 25, both cross-edge placements for this W-profile are excluded.
 
 Still open at \(\delta=13\) in the four-partite-U branch: \(2K_4\dot\cup2K_5\) plus two edges at \(\epsilon_U=1\), \(2K_4\dot\cup2K_5\) plus one edge at \(\epsilon_U=2\), the \(\epsilon_U=0\) row, non-four-partite U-complements, and \(\delta\le12\). Templates A–E remain OPEN.
+
+
+## Round 28 — delta-13 epsilon_U=1, 2K4 union 2K5 plus two W-cross-edges
+
+The profile is not yet excluded, but it now has a strict exception-count contract. The exact two-edge transversal lemma reduces every U-vertex not complete to a W component to Type I (one-edge blocker with singleton endpoint non-neighbour sets) or Type II (same-pair two-edge star with non-neighbour-set sizes 2 and 1). K4 common-neighbour capacity is at most 9; K5 capacity is at most 2+E_i. Hence at least four U-vertices are W-unsaturated. If any cross-edge touches a K4, the capacity sharpens to 24 and at least five exceptions are necessary. If both edges lie between the K5 components, at most one exception is possible, contradicting the capacity floor; that placement is excluded. See DELTA13_EPS1_TWO_CROSS_EDGE_PROFILE_REDUCTION.md.
+
+Remaining: eliminate the k>=5 Type-I/Type-II labelled exception system. E407 Q32 remains OPEN.
