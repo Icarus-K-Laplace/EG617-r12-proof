@@ -1,7 +1,7 @@
 # Unified labelled witness-capacity theorem (E407 Q32 / E408 Q33)
 
 Date: 2026-10-25  
-Status: **PROVED_CONDITIONAL; LABEL TRANSFER LIMITED** under the retained T61 shell contract and exact-129 factor theorem. The graph-theoretic witness family is kept separate from the ten isolated K5 components; only the transfer proved in Section 1 is used. This is a cross-terminal structural theorem, not a terminal contradiction.
+Status: **PROVED_CONDITIONAL; SELECTED-SUPPORT TRANSFER LIMITED** under the retained T61 shell contract and exact-129 factor theorem. Section 12 proves that all ten exact components are shell witnesses, while the seven-witness minimum-support family can still contain one gadget witness. The full-component support is a separate higher-support route, not a terminal contradiction.
 
 ## 1. Common contract
 
@@ -294,6 +294,8 @@ K_\ell=\{\lambda_\ell\}\cup Q_\ell,\qquad
 where \(Q_\ell\) is an independent four-set in the target core.
 
 **Proof.** Each isolated component avoids \(S\). It must meet \(V(R)\setminus H=\{p\}\cup S\cup B\), since otherwise its five vertices would form an independent five-set in \(H\), contrary to \(\alpha(H)\le4\). As the component avoids \(S\), every outside-\(H\) vertex in it belongs to \(B\cup\{p\}\). But \(B\) is a clique in the target-color graph and \(p\) is target-adjacent to every vertex of \(B\). Thus no two vertices of \(B\cup\{p\}\) can lie in the same \(C\)-colored \(K_5\). The component therefore has exactly one outside-\(H\) vertex and four core vertices. \(\square\)
+
+The ten component labels are distinct because the components are vertex-disjoint. Since the label set (B\cup\{p\}) has eleven vertices, at least nine of the ten labels are in (B). Thus every exact-129 color has ten component-backed shell witnesses, at least nine B-labelled.
 
 The ten \(Q_\ell\)'s are pairwise disjoint within one color. Across distinct colors, two such four-sets intersect in at most one point, because a shared pair would give the same core edge two colors. Thus for \(m\) exact-129 colors, the union \(U_{\rm comp}\) of **all ten component four-sets per color** satisfies
 \[
