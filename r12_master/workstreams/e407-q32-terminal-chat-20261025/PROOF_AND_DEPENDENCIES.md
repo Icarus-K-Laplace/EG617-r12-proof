@@ -74,3 +74,10 @@ DELTA14_EPS0_K3K5X1_K3K5_EDGE.md excludes the last profile \(K_3\cup K_5^3\) wit
 ### Round 12 — \(\delta=14,\epsilon_U=1\), no-cross-edge \(K_4^3\cup K_6\)
 
 DELTA14_EPS1_K4K4K4K6_NO_CROSS_EDGE.md excludes this profile using D-component assignments and the exact external-incidence identity \(R=1-2q+\sum_{d\in D}\epsilon_d\). This gives \(R\le2\) and forces every K4 component receiving at least three D assignments to have too many non-D-complete vertices; the four-unit W-excess contradiction follows. Together with the prior \(K_3\cup K_5^3\) exclusion, only the \((4,4,5,5)\)+one-cross-edge W-profile remains in the four-partite \(\delta=14,\epsilon_U=1\) row.
+
+
+### Round 13 — complete \(\delta=14,\epsilon_U=1\) four-partite W-row
+
+DELTA14_EPS1_K4K4K5K5_ONE_CROSS_EDGE.md excludes the remaining \((4,4,5,5)\)+one-cross-edge profile. The exact D-assignment count gives \(q_5\le2\), so at least six D vertices are assigned to the two K4 components. The external-incidence budget \(R=1-q_5+\sum_D\epsilon_d\le2\) prevents a K4 receiving \(k\ge3\) D assignments from having enough vertices complete to all of D; its remaining vertices force more than the three available W-excess units.
+
+DELTA14_EPS1_W_PROFILE_CLASSIFICATION.md proves the W-profile list is exhaustive under Brouwer's second-Turán theorem: \(\overline{H[W]}\) is K5-free with 120 edges; the non-four-partite cap is 118, below 120; the only four-partite profiles are \(K_3\cup K_5^3\), \(K_4^3\cup K_6\), and \((4,4,5,5)\) with one missing cross-edge in the complement. Each of these three H[W] profiles has now been excluded. Hence the full \(\delta=14,\epsilon_U=1\), four-partite row is closed under the retained contracts and Brouwer's theorem.
