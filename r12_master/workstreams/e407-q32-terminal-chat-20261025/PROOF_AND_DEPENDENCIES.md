@@ -65,3 +65,7 @@ DELTA14_EPS1_K3K5K5K5_NO_CROSS_EDGE.md gives a conditional contradiction by cove
 
 ### Delta-14 cross-edge placement refinement
 The theorem DELTA14_EPS0_K3K5X1_K5K5_EDGE.md excludes the \(K_3\cup K_5^3\) W-profile when its single cross-edge joins two \(K_5\) components. In that placement the four W-component common-neighbour sets must cover all 29 U vertices, but the excess-budget upper bound is at most 27. Only the placement joining \(K_3\) to a \(K_5\) remains in the \(\delta=14,\epsilon_U=0\), four-partite row. The latter remains OPEN.
+
+
+### Complete delta-14, epsilon_U=0 four-partite W-row exclusion
+DELTA14_EPS0_K3K5X1_K3K5_EDGE.md excludes the last profile \(K_3\cup K_5^3\) with the cross-edge between \(K_3\) and \(K_5\). Together with the preceding three profile exclusions, this eliminates every four-partite \(H[W]\) profile at \(\delta=14,\epsilon_U=0\), under the retained support-boundary and witness contract. It does not eliminate \(\delta=14,\epsilon_U=1,2\), the non-four-partite branch, or \(\delta\le13\).
