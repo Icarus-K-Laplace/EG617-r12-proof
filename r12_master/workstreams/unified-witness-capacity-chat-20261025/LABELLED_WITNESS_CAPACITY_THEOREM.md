@@ -19,7 +19,9 @@ Q_{i1},\ldots,Q_{i7}\subseteq V(H),\qquad |Q_{ij}|=4,
 \]
 avoiding \(S\), with at least six B-labelled witnesses of the form \(\{b\}\cup Q_{ij}\), \(b\in B\). Any seventh witness has a label in \(B\cup\{p\}\), where \(p\) is the shell pivot. Across distinct colors, any two selected \(Q\)-sets intersect in at most one vertex, since a shared pair would assign one edge two colors.
 
-The exact-129 factor theorem is a separate input: \(C[R]\) consists of ten isolated \(K_5\) components and an 11-point gadget \(U_C\), with no color-\(C\) edges between these pieces. Every labelled witness \(\{\lambda\}\cup Q_{ij}\) is a C-colored \(K_5\), so it lies wholly in one isolated component or wholly in \(U_C\). In the latter case \(Q_{ij}\subseteq U_C\). Since the seven \(Q_{ij}\) are disjoint and \(|U_C|=11\), at most \(\lfloor 11/4\rfloor=2\) witnesses can lie in the gadget. Therefore at least five of the seven witness \(K_5\)'s are isolated components, and at least four of the six B-labelled witnesses are isolated components. **No claim that all seven witnesses are isolated components is made without an additional label-transfer lemma.**
+The exact-129 factor theorem is a separate input: \(C[R]\) consists of ten isolated \(K_5\) components avoiding \(S\), plus an 11-point gadget \(U_C\), with no color-\(C\) edges between these pieces. Since \(|S|=3\), all of \(S\) lies in \(U_C\), so \(|U_C\setminus S|=8\). Every labelled witness \(\{\lambda\}\cup Q_{ij}\) is a C-colored \(K_5\), where \(Q_{ij}\subseteq H\setminus S\) and \(\lambda\in B\cup\{p\}\), so the whole witness avoids \(S\) and lies either in one isolated component or wholly in \(U_C\).
+
+**Lemma 1.1 (six-component transfer).** At most one selected witness for a fixed color can lie in \(U_C\). Otherwise two disjoint four-sets \(Q_{ij},Q_{ik}\subseteq U_C\setminus S\) would occupy all eight vertices of \(U_C\setminus S\), while the shell label \(\lambda\) of the first witness is an additional vertex of \(U_C\setminus S\) outside both four-sets (labels are outside \(H\)). This would require at least nine vertices in \(U_C\setminus S\), a contradiction. Therefore at least six of the seven selected witness \(K_5\)'s are distinct isolated components. Since at least six witnesses are B-labelled, at least five of those B-labelled witnesses are isolated components. **No claim that all seven witnesses are isolated components is made without a stronger label-transfer lemma.**
 
 Let \(c=7\) for E407 Q32 and \(c=8\) for E408 Q33. Select seven witnesses from each of the \(c\) exact-129 colors and let
 \[
@@ -244,13 +246,9 @@ component labels are size-five blockers in every outer block. Each such componen
 This is a cross-terminal consequence of the exact-129 factor theorem and seven-block incidence system, independent of whether the target core has 284 or 285 edges. It does not by itself contradict the K145 coloring: a monochromatic K12 is permitted by the target statement, so the remaining task is to turn the packing into a capacity conflict with the labelled four-point witnesses or another color's structure.
 
 
-## 10. Selected-witness extension threshold — corrected label-transfer floor
+## 10. Selected-witness extension threshold — S-avoidance strengthens transfer
 
-Let \(\mathcal W_C\) be the subset of selected witness \(K_5\)'s that the transfer argument in Section 1 proves are among the ten isolated components. We know only
-\[
-|\mathcal W_C|\ge5,
-\]
-not seven. Let \(\mathcal K_C^*\) be the components represented by exact size-five blocker rows in all seven outer blocks. Section 9 gives
+Let \(\mathcal W_C\) be the subset of selected witness \(K_5\)'s proved in Lemma 1.1 to be among the ten isolated components. Then \(|\mathcal W_C|\ge6\), not merely five. Let \(\mathcal K_C^*\) be the components represented by exact size-five blocker rows in all seven outer blocks. Section 9 gives
 \[
 |\mathcal K_C^*|\ge P_C-45.
 \]
@@ -258,12 +256,10 @@ Since there are ten isolated components,
 \[
 |\mathcal W_C\cap\mathcal K_C^*|
 \ge \max(0,|\mathcal W_C|+|\mathcal K_C^*|-10)
-\ge \max(0,P_C-50).
+\ge \max(0,P_C-49).
 \]
 
-Thus, under the current proved transfer floor, \(P_C\ge51\) guarantees at least one selected witness component extends by exact blocker rows from all seven outer blocks to a monochromatic \(K_{12}\). At \(P_C=50\), this lower bound is zero. The earlier \(P_C\ge49\) threshold would require a separate theorem transferring seven selected witnesses to seven distinct isolated components; that stronger transfer is **not** assumed here.
-
-This is the labelled version of the K12 packing bound with the transfer gap exposed. It does not turn a monochromatic \(K_{12}\) into an EG617 contradiction; the remaining task is to couple component-extended cliques to the global shell/core incidence ledger.
+Thus \(P_C\ge50\) guarantees at least one selected witness component extends by exact blocker rows from all seven outer blocks to a monochromatic \(K_{12}\); \(P_C=51\) guarantees at least two, and \(P_C=55\) guarantees at least six. At \(P_C=49\), this intersection bound is zero. A monochromatic \(K_{12}\) is allowed by the target statement, so this is a labelled packing constraint, not a terminal contradiction.
 
 ## 11. Labelled double-star capacity for component-extended \(K_{12}\)'s
 
