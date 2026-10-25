@@ -17,20 +17,39 @@ d_H(d,W)=5-t_d+\epsilon_d,\qquad \epsilon_d\le1.
 \]
 The W-side excess is three. Suppose \(H[W]\) consists of two clique components \(C_4^{(1)},C_4^{(2)}\cong K_4\) and two \(K_5\) components, plus one edge \(xy\) between two distinct components. This is the \((4,4,5,5)\)+one-cross-edge profile.
 
-## 2. D-component assignments and exact external incidence
+## 2. Saturation and the exceptional D-vertex case
 
-Because \(\alpha(H)\le4\), every \(d\in D\) is complete to at least one W-component; otherwise one non-neighbour from each of the four pairwise anticomplete components, together with \(d\), forms an independent 5-set. A D-vertex has W-degree at most \(5+\epsilon_d\le6\), while two components contain at least \(4+4=8\) vertices, so its assigned component is unique.
+A D-vertex has
+\[
+d_H(d,W)=5+\epsilon_d-t_d\le6,
+\]
+because \(\epsilon_d\le\epsilon_U=1\). If it is not complete to any W-clique component, an independent transversal can be blocked only by choosing the two endpoints of the unique W-cross-edge. To block every transversal, its non-neighbour sets in the two endpoint components must be exactly those endpoints, so it must be adjacent to all other vertices in those two components. This requires at least \(3+3=6\) W-neighbours, and equality is possible only when the cross-edge joins the two \(K_4\) components. Thus any exceptional D-vertex must have
+\[
+\epsilon_d=1,\qquad t_d=0,\qquad d_H(d,W)=6,
+\]
+with W-neighbourhood consisting of the three non-endpoint vertices in each \(K_4\) and no vertices of either \(K_5\). There can be at most one such vertex because \(\epsilon_U=1\).
 
-Let \(q_5\) be the number of D-vertices assigned to a \(K_5\). If assigned to a \(K_4\), then \(d_H(d,W)\ge4\), so \(t_d\le1+\epsilon_d\); if assigned to a \(K_5\), then \(t_d\le\epsilon_d\). Thus
+We first rule out this exceptional case. The other seven D-vertices have zero excess and must be complete to a W-component. Each has \(t_d\le1\); since the seven cross-edges of \(H[U]\) have total cross-degree seven, all seven have \(t_d=1\), and each is assigned to a \(K_4\) component. One \(K_4\), call it \(C\), receives \(k\ge4\) of these D-vertices. The exceptional vertex is adjacent to the three non-endpoint vertices of \(C\), so each non-endpoint vertex of \(C\) has at least \(k+1\) D-neighbours; the cross-edge endpoint has at least \(k\).
+
+Here \(t_d\le1\) for all \(d\). The reverse-saturation argument in Section 3 shows that any W-vertex not complete to a U-part would have at least 13 U-neighbours, but a \(K_4\)-vertex has U-degree at most 12. Thus every vertex \(w\in C\) is complete to a U-part. Since no vertex of \(C\) is complete to \(D\) (there are only \(k+1<8\) D-neighbours), it is complete to a small U-part. A non-endpoint \(w\in C\) therefore satisfies
+\[
+9+\epsilon_w=d_H(w,U)\ge7+(k+1),
+\]
+and the cross-edge endpoint satisfies
+\[
+8+\epsilon_w=d_H(w,U)\ge7+k.
+\]
+In both cases \(\epsilon_w\ge k-1\ge3\). All four vertices of \(C\) would consume at least 12 W-excess units, contradicting the total W-excess three. The exceptional case is impossible.
+
+Consequently every D-vertex is complete to a unique W-component. Let \(q_5\) be the number assigned to a \(K_5\). A D-vertex assigned to a \(K_4\) has \(t_d\le1+\epsilon_d\); one assigned to a \(K_5\) has \(t_d\le\epsilon_d\). Hence
 \[
 7=\sum_D t_d\le (8-q_5)+\sum_D\epsilon_d\le8-q_5+1,
 \]
-so \(q_5\le2\). At least six D-vertices are therefore assigned to the two \(K_4\) components, and some \(K_4\) component \(C\) receives \(k\ge3\) assignments.
+so \(q_5\le2\). At least six D-vertices are assigned to the two \(K_4\) components, and some \(K_4\) receives \(k\ge3\) assignments.
 
-Let \(R\) count all D-to-W edges whose W endpoint lies outside the component assigned to that D vertex. A D vertex assigned to a \(K_4\) contributes \(1-t_d+\epsilon_d\), and one assigned to a \(K_5\) contributes \(\epsilon_d-t_d\). Hence
+Let \(R\) count all D-to-W edges whose W endpoint lies outside the component assigned to that D vertex. A D-vertex assigned to a \(K_4\) contributes \(1+\epsilon_d-t_d\), and one assigned to a \(K_5\) contributes \(\epsilon_d-t_d\). Therefore
 \[
 \boxed{R=1-q_5+\sum_{d\in D}\epsilon_d\le2.} \tag{1}
-\]
 
 ## 3. The heavily assigned \(K_4\) forces excess beyond the budget
 
