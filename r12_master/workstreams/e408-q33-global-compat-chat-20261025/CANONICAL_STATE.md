@@ -56,7 +56,15 @@ SEVEN_BLOCK_INCIDENCE_LEDGER.md now contains Theorem 10.1. For an exact-129 colo
 
 Corollary 10.2: if \(r_i(C)+r_j(C)\le6\), the same ten component labels force a C-colored matching of size ten between \(B_i\) and \(B_j\). Since \(R_C=62-P_C\), \(P_C\ge36\) guarantees at least one such block pair. This improves the earlier \(r_i\le3\) theorem without extending it past its proved range; \(r_i=6\) remains outside Theorem 10.1 because split-component boundary cases may occur.
 
-This is a verified conditional structure theorem, not a global contradiction: the aggregate \(\sum_{C:s_C=0}P_C\ge69\) still does not force a single exact color to have \(P_C\ge36\).
+This is a verified conditional structure theorem, not a global contradiction: the aggregate \(\sum_{C:s_C=0}P_C\ge69\) still does not force a single exact color to have \(P_C\ge36\). The exceptional boundary \(r_i(C)=6\), where a full-component row can split into two labels or one component can be absent from the full-row list, is now classified separately in Theorem 11.1 below.
+
+## Result 3: exact six-duplicate boundary
+
+Theorem 11.1 in SEVEN_BLOCK_INCIDENCE_LEDGER.md classifies \(r_i(C)=6\) completely by the number of rows without a full \(K_5\) component and the number of repeated full components. There are exactly one or two no-component rows. The one-row case is rigid: one \(K_5\) is represented twice, all ten labels occur, and the gadget incidence pattern is a pair-union six-set intersecting the exceptional row's six-set in one vertex. The two-row case has either no repeated full component (ten distinct single-component rows) or one repeated component with the precise \(m=10\) split-label / \(m=11\) double-row alternatives.
+
+Corollary 11.2: if one block has \(r_i(C)=6\) and another has \(r_j(C)=1\), at least eight component labels force a \(C\)-colored matching across those blocks; the lower bound is ten in the rigid one-row case and the no-repeated-full-component case, nine in the \(m=10\) split-label case, and at least eight in the \(m=11\) double-row case.
+
+This closes the local \(r_i=6\) classification gap but is not a global contradiction. Forced edges may still be baseline block-pair edges and are not charged to \(P_C\) without an independent duplicate-incidence argument.
 
 ## Seven-block global ledger
 
