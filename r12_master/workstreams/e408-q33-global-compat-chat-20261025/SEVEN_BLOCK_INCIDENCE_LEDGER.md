@@ -47,7 +47,7 @@ At least eight colors have \(s_C=0\), i.e. exact-129 restrictions to R. For ever
 \[
 R_C\ge7,\qquad P_C\le55. \tag{3}
 \]
-The later boundary theorem (Section 15; full proof in P49_BOUNDARY_EXCLUSION.md) strengthens this to \(R_C\ge14,\ P_C\le48\). Earlier ledger calculations retain their original displayed baseline bound so their local derivations remain auditable.
+The boundary theorems in Sections 15–16 (full proofs in P49_BOUNDARY_EXCLUSION.md and P48_BOUNDARY_EXCLUSION.md) strengthen this to \(R_C\ge15,\ P_C\le47\). Earlier ledger calculations retain their original displayed baseline bound so their local derivations remain auditable.
 The three nonexact colors have \(\sum s_C=3\) and \(\sum P_C\le183\). Therefore
 \[
 \sum_{C:s_C=0}P_C\ge252-183=69. \tag{4}
@@ -470,3 +470,23 @@ Under the retained seven-block equality contract and exact-129 factor theorem,
 The proof is recorded in P49_BOUNDARY_EXCLUSION.md. It exhausts all positive seven-tuples with \(R_C=13\), using Theorems 10.1, 11.1 and 12.1, the isolated-\(K_{12}\) budget cap (Lemma 13.2), and the finite 11-vertex gadget alignment certificate. The exact budget profiles \((5,2,2,1^4)\), \((4,3,2,1^4)\), \((7,1^6)\), \((6,2,1^5)\), \((5,3,1^5)\), and \((4,4,1^5)\) are all excluded, as are profiles with every pair-sum at most six.
 
 The finite verifier checks 2,156 alignment cases over the four exact gadget normal forms, with zero failures. This strengthens the colorwise duplicate-budget interface but does not close the aggregate eleven-color ledger, the 56-witness global compatibility, E408 Q33, or EG617(r=12).
+
+
+## 16. Exclusion of the \(P_C=48\) boundary
+
+Under the retained exact-129 factor theorem and seven-block equality contract,
+\[
+\boxed{P_C\le47,\qquad R_C\ge15.}
+\]
+The proof is recorded in P48_BOUNDARY_EXCLUSION.md. It assumes \(R_C=14\) and exhausts the positive seven-tuples:
+\[
+\begin{aligned}
+&r_i\le5\ \text{for all }i;\\
+&(6,3,1^5),\ (6,2,2,1^4),\ (7,2,1^5),\ (8,1^6).
+\end{aligned}
+\]
+For the all-low case, a missing component edge either incurs at least five component-excess incidences or requires at least six gadget incidences; the resulting omitted-pair types are covered by the finite pair/pair and triple alignment certificates. The high-budget profiles are excluded using Theorem 11.1 and full-component occurrence counts.
+
+The expanded fixed-gadget verifier checks 467,696 alignment cases across the four exact 11-vertex normal forms, with zero failures. The \(53+53\) pair/pair exception is excluded by the \(R_C=14\) missing-edge budget; the verifier does not assert the false broader statement that every high \(K_4\) aligns with every low \(53\) pair.
+
+**Scope:** \(P_C\le47\) is a colorwise conditional result. It does not close the aggregate eleven-color ledger, the 56-witness support geometry, E408 Q33, or EG617(r=12).
