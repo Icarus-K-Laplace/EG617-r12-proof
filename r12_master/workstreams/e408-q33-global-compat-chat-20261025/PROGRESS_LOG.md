@@ -107,3 +107,45 @@
 - For \(P_C\ge51\), \(R_C\le11\), so every block-pair budget sum is at most six. Corollary 10.2 forces all ten component matchings across all 21 block pairs, yielding ten C-colored \(K_{12}\)'s. Any extra C-neighbor outside a designated \(K_5\) contradicts isolation; with no extras, the clique-budget cap gives \(P_C\le42\).
 - For \(P_C=50\), the \(r_i=6\) vector was already excluded by Theorem 13.3. The only other positive budget vectors with a pair sum above six are \((5,2,1^5)\) and \((4,3,1^5)\). If the one exceptional same-label edge is present, the \(K_{12}\) argument applies. If absent, pairwise blocker compatibility forces the two rows to cover a second full \(K_5\), which exhausts their five extra incidences and forces both overlap parameters to equal one. The resulting gadget-based \(K_{12}\) has an external C-edge, contradiction.
 - Independent audit checked the positive-partition enumeration for \(R_C=12\), the exceptional pair-sum cases, and the exact incidence equality \(a_i=a_j=1\). The universal cap is a proved colorwise constraint, not a full E408 or \(K_{145}\) closure.
+
+
+## 2026-10-25 — \(P_C=49\) equality layer excluded; exact-129 cap improved to 48
+
+### Main result
+
+Proved under the retained seven-block equality and exact-129 factor contracts:
+\[
+\boxed{P_C\le48,\qquad R_C\ge14}
+\]
+for every exact-129 color \(C\). This excludes the \(R_C=13\) equality layer that remained after Theorem 14.1.
+
+### Finite gadget alignment
+
+- Derived/used the exact 11-vertex gadget normal form for \(s=1,2,3,4\).
+- Added GADGET_ALIGNMENT_VERIFIER.js and GADGET_ALIGNMENT_CERTIFICATE.md.
+- Deterministic in-session enumeration covered all subsets of the four 11-vertex graphs, all \(K_4/K_5\) cliques, all disjoint \(K_5/K_5\) pairs, all disjoint \(K_5/K_4\) pairs, and all high omitted cliques of size four or five.
+- Alignment counts: 380 high-\(K_5\) checks + 1,776 high-\(K_4\) checks = 2,156 checks, zero failures. Expected clique/pair counts are asserted by the committed verifier.
+
+### Proof structure
+
+- \(R_C=13\) integer profiles were exhausted by maximum pair-sum: \(\le6\), \(7\), or \(8\).
+- Pair-sum-seven profiles \((5,2,2,1^4)\) and \((4,3,2,1^4)\) reduce to two \(a=1\) blocks if a label edge is missing; gadget alignment gives a \(K_{12}\) with an external C-edge.
+- Pair-sum-eight profiles \((5,3,1^5)\) and \((4,4,1^5)\) were split correctly into the second-component and no-second-component branches. In the latter, the six-vertex gadget coverage equality forces \(a_i=a_j=1\).
+- Profile \((6,2,1^5)\): the \(r_i=6\) Case A/B alternatives are excluded by a gadget-only row; Case C is closed using the 17-incidence ceiling and the \(6+1\), \(6+2\) blocker cases.
+- Profile \((7,1^6)\): full-component occurrence counts and gadget-incidence budgets reduce every branch to gadget alignment or ten disjoint \(K_{12}\)'s.
+
+### Audit corrections made before recording the theorem
+
+- The first draft incorrectly assumed every missing edge at pair-sum eight forces a second full component. This is not true: the remaining gadget may be a \(K_5\). The proof was corrected to handle this equality branch.
+- The first draft of the \(6+1\) Case C argument incorrectly continued with a second-component charge after the one-full-component contract made that branch impossible. It was corrected to an explicit contradiction.
+- The \(r_i=7\) branch was expanded to distinguish double-component rows from one-component rows and to include size-four omitted cliques; it is no longer justified by assuming a full representative exists for every component.
+
+### Commits
+
+- Corrected \(6+1\) Case C branch: 333cc2d6cbd48b01dde395ad8b1135b6c10a3d26
+- Tightened \(r_i=6\) terminal proof: 132b7195f5c563149844bc8b0e4808f7029c1aa4
+- P49 theorem and extended gadget alignment proof: 787427120154b300f5d9c7f137c5cb366cfa434a
+- Canonical state update: c603fc32955bec4facfa1b734380bb947812d923
+- Dependency map update: a73b899d6e15fca7427cdaef7f2f64eb5f0ed4f4
+
+**Scope:** the \(P_C\le48\) result is a colorwise conditional theorem. E408 Q33, both four-partite and non-four-partite 56-witness terminals, and EG617(r=12) remain OPEN / NOT_CERTIFIED.
