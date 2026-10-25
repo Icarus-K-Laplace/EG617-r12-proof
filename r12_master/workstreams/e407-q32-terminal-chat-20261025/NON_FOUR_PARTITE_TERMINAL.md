@@ -56,3 +56,5 @@ The next nontrivial step is an adjacency-sensitive theorem that links:
 - the at-most-two cross edges between the near-Turán clique parts of \(H[W]\).
 
 A bare count of edges or witness incidences does not establish incompatibility.
+
+**Update (2026-10-25):** At \(\delta=14,\epsilon_U=0\), the cover-capacity proof in DELTA14_EPS0_K3K4K5K6_COVER_CAPACITY.md excludes the \((3,4,5,6)\) profile with zero W-cross-edges. DELTA14_EPS0_K4_PROFILE_EXCLUSIONS.md excludes \((4,4,5,5)\) with two cross edges and \((4,4,4,6)\) with one cross edge. Thus only \((3,5,5,5)\) with one cross edge remains in this \(\epsilon_U=0\) four-partite row. The \(\epsilon_U=1,2\) rows and the \(\delta=14\) non-four-partite branch remain OPEN.
