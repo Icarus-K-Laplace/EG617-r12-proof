@@ -202,3 +202,17 @@ The same file records the stronger high-budget cases:
 - \(P_C=49\): at least four disjoint K12s, with stronger bounds when the row profile is more regular.
 
 The verifier now exhausts all positive \(r\)-profiles with \(r_i\le5\) and \(R_C=11,12,13\), confirming the maximum number of block pairs with sum at least seven is 0, 1, and 2, respectively. This is exact finite arithmetic supporting the branch split; the clique-packing theorem is conditional on the exact-129 factor/blocker contract.
+
+
+## 2026-10-25 latest sibling synchronization
+
+Refreshed all six sibling branches again before finalizing this round:
+
+- E407 Q32 terminal: f4b0e246e8f8f2dade3763c4c9dbd2bfffe18b0e. Latest update excludes the \(\delta=15\) non-four-partite branch and two \(\delta=15\) four-partite W-profiles; the remaining \(\delta=15\) four-partite \(K_3\cup3K_5\) / \(D\cup K_3=K_{11}\) profile is still open. E407 overall remains OPEN.
+- E408 Q33 global compatibility: a6bbb918c3484bedd1a4eafb410901288cdff085. Latest update finalizes the \(r_i=6\) row classification and high-\(P_C\) clique-packing branches; the Q33 terminal remains OPEN.
+- E408 Q32 excess-six: a0ba6db26c7e8b00a4217dcbcbf298895dff93ce. This is the separate 285-edge core and is not closed by the 284-edge witness-capacity results.
+- Witness-packing: f5d3daa07403877ede9885e1bd5c2f46b16d81da.
+- Zero-excess witness: 07d19abfd6c1c749c7360526e4a04a3eb865fb2e.
+- Ultimate closure: 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40.
+
+Created TERMINATION_CLOSURE.md with the conditional theorem ledger, the scalar-relaxation obstruction, the minimal missing bridge, dependencies, and verification scope. All reads of sibling branches were read-only.
