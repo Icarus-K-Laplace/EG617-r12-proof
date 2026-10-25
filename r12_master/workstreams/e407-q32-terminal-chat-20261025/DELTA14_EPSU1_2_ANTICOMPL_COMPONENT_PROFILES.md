@@ -31,11 +31,19 @@ Let \(m\) be the smallest W-component size. Since each \(d\in D\) is complete to
 d_H(d,W)=5+\epsilon_d-t_d\ge m,\qquad
 t_d\le5+\epsilon_d-m\le5+\epsilon_U-m.
 \]
-If \(|D'|=1\), then \(d_H(w,U)\ge14-t_d\ge9+m-\epsilon_U\). The cases \(|D'|\ge2\) give a stronger lower bound by counting the distinct small non-neighbour sets. Therefore
+If \(|D'|=1\), then \(d_H(w,U)\ge14-t_d\ge9+m-\epsilon_U\). If \(|D'|\ge2\), distinct vertices of \(D'\) force distinct small non-neighbour sets. For \(m=3\), put \(t_{\max}=2+\epsilon_U\le4\); the cases \(|D'|=2,3\) give respectively
+\[
+d_H(w,U)\ge16-2\epsilon_U,\qquad d_H(w,U)\ge20-3\epsilon_U,
+\]
+both stronger than \(12-\epsilon_U\). For \(m=4\), put \(t_{\max}=1+\epsilon_U\le3\); the corresponding bounds are
+\[
+d_H(w,U)\ge18-2\epsilon_U,\qquad d_H(w,U)\ge23-3\epsilon_U,
+\]
+both stronger than \(13-\epsilon_U\). Therefore
 \[
 \boxed{w\text{ not complete to any U-part}\Longrightarrow
 d_H(w,U)\ge9+m-\epsilon_U.} \tag{1}
-\]
+]
 For \(m=3\), the threshold is \(12-\epsilon_U\); for \(m=4\), it is \(13-\epsilon_U\).
 
 For each W-component \(C_s\cong K_s\), define \(S_s=\{u\in U:u\text{ is adjacent to all of }C_s\}\). Because the W-components are anticomplete,
@@ -50,10 +58,10 @@ For \(T\cong K_3\), write \(E_T=\sum_{w\in T}\epsilon_w\). Its vertices have U-d
 7+\left\lfloor\frac{9+E_T}{3}\right\rfloor,\qquad
 8+\left\lfloor\frac{6+E_T}{3}\right\rfloor.
 \]
-If a vertex is not part-saturated, (1) bounds its excess from below. A zero/low-excess companion then bounds \(|S_T|\). For both \(\epsilon_U=1\) and \(2\), these cases give
+If a vertex is not part-saturated, (1) gives \(\epsilon_w\ge2-\epsilon_U\). For \(\epsilon_U=1\), the possible totals \(E_T=1,2,3\) give a companion of U-degree at most \(10,10,11\), respectively; for \(\epsilon_U=2\), the totals \(E_T=0,1,2\) give the same bounds \(10,10,11\). Each is dominated by \(9+E_T+\mathbf1_{\{E_T=0\}}\). Thus, for both \(\epsilon_U=1\) and \(2\),
 \[
 \boxed{|S_T|\le9+E_T+\mathbf1_{\{E_T=0\}}.} \tag{3}
-\]
+]
 
 ## 3. \(H[W]=K_3\cup K_5^3\), for \(\epsilon_U=1\) or \(2\)
 
@@ -84,7 +92,7 @@ Here \(E_W=3\) and \(m=4\), so (1) gives the reverse-saturation threshold \(d_H(
 |S_6|\le\lfloor E_6/2\rfloor\le1.
 \]
 
-Each \(K_4\)-component satisfies \(|S_4|\le9\). If one vertex is not part-saturated, (1) forces its excess to be at least three; the other three vertices then have excess zero and U-degree nine, giving the bound. Otherwise label all four vertices. Their total extra-edge load is at most \(8+E_4\le11\). If all labels are one small part, the common set has at most \(7+\lfloor11/4\rfloor=9\) vertices; all labels D would create a forbidden \(K_{12}\). If the labels are not all equal, a label multiplicity of three allows at most eight vertices in its part plus at most one outside (the outside vertices cost at least three load units each); multiplicity at most two allows at most \(\lfloor11/2\rfloor=5\). Hence each of the three K4 common-neighbour sets has size at most nine.
+Each \(K_4\)-component satisfies \(|S_4|\le9\). If one vertex is not part-saturated, (1) forces its excess to be at least three; the other three vertices then have excess zero and U-degree nine, giving the bound. Otherwise label all four vertices. Their total extra-edge load is at most \(8+E_4\le11\). If all labels are one small part, the common set has at most \(7+\lfloor11/4\rfloor=9\) vertices; all labels D would create a forbidden \(K_{12}\). If the labels are not all equal and one part receives three labels, let \(x\) be the number of common neighbours in that part and \(y\) the number outside it. Then \(x+3y\le11\) and \(x\le8\), so \(x+y\le9\). If every part receives at most two labels, each common neighbour costs at least two load units, giving at most \(\lfloor11/2\rfloor=5\). Hence each of the three K4 common-neighbour sets has size at most nine.
 
 Consequently
 \[
