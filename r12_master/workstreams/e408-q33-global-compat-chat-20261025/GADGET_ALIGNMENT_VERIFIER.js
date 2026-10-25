@@ -194,7 +194,7 @@ for (let s = 1; s <= 4; s++) {
   for (const E of bySize[5]) {
     for (const pair of [...p53, ...p44]) {
       highK5Low53or44++;
-      if (!findD(universal[s], D => disjoint(D, E) && pairHasMemberDisjoint(D, pair, 4))) {
+      if (!findD(universal[s], D => disjoint(D, E) && pairHasMemberDisjoint(D, pair, 3))) {
         failures++;
       }
     }
