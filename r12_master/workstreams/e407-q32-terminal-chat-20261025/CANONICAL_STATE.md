@@ -316,3 +316,10 @@ The corrected incidence/independent-set argument now excludes all three (epsilon
 The kernel classification file was also audited: the first draft of its balance step omitted the cases (X=A) and (Y=B). The proof now handles these boundary cases by the exact edge equation and verifies the unique ((7,7)) split. The arithmetic verifier was expanded to enumerate all bipartition sizes.
 
 **Current status:** the (delta=14), non-four-partite, (K_5)-saturated terminal is conditionally excluded under the retained alpha-critical reduction and its external Didin-preprint dependency. This does not close the remaining (delta=13) W-cross-edge profiles, (deltale12), the five shell templates as a global compatibility problem, or the (K_{145})-to-T61 bridge. E407 Q32 and EG617((r=12)) remain OPEN / NOT_CERTIFIED overall.
+
+
+## Round 30 — close the same-pair disjoint K4–K5 two-cross-edge placement
+
+Added DELTA13_EPS1_TWO_CROSS_EDGE_K4K5_DISJOINT_CLOSED.md and its arithmetic verifier. In this placement, Type-II blockers are impossible because the two W-cross-edges are disjoint. Every unsaturated U-vertex must therefore be Type I across a K4–K5 edge, forcing at least (3+4=7) W-neighbours. The degree ledger then forces (epsilon_u=1,t_u=0), so at most one such U-exception exists. But the component-capacity theorem gives at least five exceptions whenever a W-cross-edge meets a K4. Contradiction.
+
+The placement frontier is reduced from five same-pair cases to four: K4–K4 matching, K4–K4 star, K4–K5 star centred in the K4, and K4–K5 star centred in the K5. The final case remains especially delicate because degree-six Type-II exceptions may occur. The overall (delta=13,epsilon_U=1) two-cross-edge profile, E407 Q32, and EG617((r=12)) remain OPEN / NOT_CERTIFIED.
