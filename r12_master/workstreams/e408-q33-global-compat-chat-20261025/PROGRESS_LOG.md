@@ -67,3 +67,5 @@
 - Proved Corollary 11.2: when another block has \(r_j(C)=1\), at least eight component labels force C-colored edges across the two blocks. The subcase bounds are 10 / 10 / 9 / at least 8 as recorded in the theorem.
 - Independent audit checked the incidence equations \(r_i=d_K+d_U=6\), the cap \(n\le2\) from \(6n\le11+d_U\le17\), the exclusion \(n=0\), and every branch in the occurrence count \(m\in\{10,11\}\). Cross-block forced edges are explicitly not charged to \(P_C\).
 - This is a conditional local classification only. E408 Q33 remains OPEN / NOT_CERTIFIED; no global UNSAT or original \(K_{145}\) proof is claimed.
+
+- Equality-case refinement: in the \(n=1\) branch, the complements of the repeated-pair gadget six-set and the no-component-row gadget six-set are disjoint five-cliques in \(C[U_C]\). They partition the gadget together with the unique vertex shared by the two six-sets. This is a sharper canonical description of the exceptional row.
