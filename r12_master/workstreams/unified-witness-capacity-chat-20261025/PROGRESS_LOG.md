@@ -170,3 +170,11 @@
 - Ran the committed checker locally: PASS for all 159,244 checks (380 A/B and 158,864 C checks). No floating-point arithmetic or external library is used.
 - This closes the \(P_C=49,r_i=6\) corner conditionally on the retained reduction/gadget/row contracts. It does not close EG617.
 - Using sibling Q33's \(P_C\le49\) theorem, the \(P_C=49\) profiles now reduce to the open \(r=7\) profile \((7,1^6)\) and four all-\(r\le5\) high-pair profiles: \((5,3,1^5)\), \((4,4,1^5)\), \((5,2,2,1^4)\), and \((4,3,2,1^4)\). Five all-\(r\le5\) profiles with every pair sum \(\le6\) are excluded by ten isolated K12s and the \(P_C\le42\) cap.
+
+
+## 2026-10-25 — corrected external-star logic and strengthened P49/r=6 finite check
+
+- Audited the current E408 Q33 P49 boundary proof. Its Lemma 2.1 incorrectly infers that a monochromatic \(K_{12}\) has no external edge of its own color. The exact star count proves only \(d_C(z,K_{12})\le1\); one external \(C\)-edge is allowed. Sibling conclusions relying solely on one external \(C\)-edge, including \(P_C\le49\) and \(P_C\le48\), are not certified as written.
+- Rewrote the local \(P_C=49,r_i=6\) argument to use a double-\(C\)-edge contradiction. Added the safe-row incidence split for Cases A/B/C and restricted the verifier to the exact Case-C complement profiles from the row theorem.
+- Replayed the finite predicates: 2,132 Case-A/B configurations and 412,768 exact-profile Case-C configurations passed. The checker tests both high-row choices for the risky \((5,5)\) and \((5,4)\) profiles; other profiles have at most three total partial component incidences and admit either safe high row.
+- Scope remains conditional: this excludes only the \(P_C=49,r_i=6\) corner under the retained exact-129/gadget/row contracts. It cannot be combined with the sibling \(P_C\le49\) cap until that cap is independently repaired. The original \(K_{145}\) theorem remains OPEN / NOT_CERTIFIED.
