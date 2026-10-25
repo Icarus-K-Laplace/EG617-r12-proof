@@ -28,11 +28,11 @@ Here \(|U|=29\), \(e(H[U])=98\), and \(e(L)=308\). The Turán number is \(t_4(29
 
 ### Gap B — \(\delta\le13\)
 
-The current sibling transversal/excess contract gives
+The retained transversal/excess contract gives
 \[
 3\le\delta,\qquad \epsilon_U+2\delta\ge9,\qquad \delta+\epsilon_U\le16.
 \]
-New Round 23 closes the \(\delta=13\), four-partite-U, no-cross-edge-W profiles for \(\epsilon_U=1,2,3\), with common-neighbour cover bounds 27, 28, 28, and 23. The remaining cases include \(\delta=13,\epsilon_U=0\), \(\delta=13\) W-cross-edge profiles, non-four-partite U-complements, and \(\delta\le12\). The argument is specific to the stated no-cross profiles; it does not silently extend to other structures.
+At \(\delta=13\), the four-partite-U, no-cross-edge-W profiles for \(\epsilon_U=1,2,3\) are excluded. At \(\epsilon_U=1\), the \(K_3\dot\cup3K_5\)-plus-one-edge profile is excluded, and the \(3K_4\dot\cup K_6\)-plus-one-edge profile is excluded when its edge joins \(K_4\) to \(K_6\). Still open in this four-partite-U row are the \(3K_4\dot\cup K_6\) profile with the edge between two \(K_4\)'s, the \(2K_4\dot\cup2K_5\)-plus-two-edge profile at \(\epsilon_U=1\), and the \(2K_4\dot\cup2K_5\)-plus-one-edge profile at \(\epsilon_U=2\). Also open are \(\epsilon_U=0\), non-four-partite U-complements, and \(\delta\le12\). The excluded profiles are conditional on the retained 49-witness/core contract; they do not close the whole \(\delta=13\) row.
 
 ### Gap C — five common-core shell templates A–E
 
@@ -125,3 +125,10 @@ Round 24 also excludes the \(\delta=13,\epsilon_U=1\) profile \(K_3\dot\cup3K_5\
 DELTA13_EPS1_K3K5K5K5_ONE_CROSS_EDGE.md excludes \(H[W]=K_3\dot\cup3K_5\) plus one edge for \(\delta=13,\epsilon_U=1\), under the four-partite-U contract. The exact transversal argument permits at most one nonsaturated U-vertex; the common-neighbour capacity sum is at most 26, while at least 28 U-vertices must be covered.
 
 The immediate next target is the remaining \(\epsilon_U=1\) profiles with W-cross-edges: \(3K_4\dot\cup K_6\) plus one edge and \(2K_4\dot\cup2K_5\) plus two edges.
+
+
+## Round 25 update — delta-13 K4-K6 cross-edge
+
+DELTA13_EPS1_3K4_K6_K4K6_EDGE.md excludes the \(\epsilon_U=1\), \(3K_4\dot\cup K_6\) W-profile when the unique W-cross-edge joins a \(K_4\) to the \(K_6\). All U-vertices are W-saturated, and common-neighbour capacities are at most \(9+9+9+1=28<29\).
+
+The next local target is the same profile with its cross-edge between two K4 components.
