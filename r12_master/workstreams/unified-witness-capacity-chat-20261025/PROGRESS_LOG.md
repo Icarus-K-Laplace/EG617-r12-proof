@@ -76,3 +76,12 @@
 - Since \(r_i+r_j-2\le8\), at most one of ten same-component diagonals can be missing for any pair with \(r_i,r_j\le5\). This gives at least nine same-label component edges; when \(r_i+r_j\le6\), all ten remain forced. At the sum-seven boundary, a missing diagonal consumes exactly five extra incidences and must cover a second K5.
 - Added arithmetic verifier checks for all 25 row-budget pairs and the sum-seven boundary. Scope: exact arithmetic check plus a conditional analytic lemma, not a graph-realization certificate.
 - Current obstruction: this near-matching theorem does not bound how many extra cross-label edges can occur in the 21 block pairs, nor does it force the missing diagonal patterns to contradict the witness labels. Terminal status remains OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 — missing component diagonal charged to duplicate budget
+
+- Strengthened the near-matching result to \(m_{ij}(C)\le d_{ij}(C)\) for every exact-129 color and every pair of outer blocks with \(r_i,r_j\le5\).
+- Proof audit: if one same-component diagonal were missing and \(d_{ij}=0\), the 12 cross-block C edges would form a perfect matching. The unmatched component rows must be paired with exceptional rows, leaving an independent triple consisting of one exceptional row on one side and both exceptional rows on the other. The missing diagonal consumes at least five of the combined extra-incidence budget \(r_i+r_j-2\le8\); at most three extra incidences remain, too few to cover a full K5 component. The triple plus one vertex from each of the ten components yields a C-independent 13-set.
+- This closes the prior local gap where component rows could have been paired to exceptional rows. Every missing same-component label alignment now consumes at least one duplicate unit \(d_{ij}(C)\); summing gives \(\sum m_{ij}(C)\le P_C\) over low-budget block pairs.
+- Independent Python replay passed over all 25 integer pairs \(r_i,r_j\in[1,5]\), including the four sum-seven boundary pairs.
+- Remaining gap: the duplicate budget \(P_C\) can still be large enough to pay for all possible mismatches; no terminal has been eliminated by this result alone.
