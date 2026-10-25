@@ -150,3 +150,24 @@ Theorem 14.1 in SEVEN_BLOCK_INCIDENCE_LEDGER.md proves \(P_C\le49\) for every ex
 For \(P_C\ge51\), every block-pair budget sum is at most six, so all ten labels produce \(K_{12}\)'s. For \(P_C=50\), the only positive budget vectors with a pair sum greater than six are \((5,2,1^5)\) and \((4,3,1^5)\), besides the already-excluded \((6,1^6)\). In either exceptional vector, a missing same-label edge between the high-budget blocks forces the two row neighborhoods to cover a second full \(K_5\); equality in the incidence budget then forces both gadget overlap parameters to equal one, yielding the external-edge contradiction from a gadget-based \(K_{12}\). Thus every \(P_C\ge50\) is excluded.
 
 The result is colorwise and conditional on the retained exact-129 factor and seven-block contracts. It does not close the aggregate color ledger or the original \(K_{145}\) theorem.
+
+
+## 14. Exclusion of the \(P_C=49\) boundary
+
+P49_BOUNDARY_EXCLUSION.md proves \(P_C\ne49\), hence \(P_C\le48\) and \(R_C\ge14\), conditional on the retained exact-129 factor theorem and seven-block equality contract.
+
+Dependencies:
+- Theorem 10.1 / Corollary 10.2: the exact row normal form for \(r_i\le5\) and forced component edges when \(r_i+r_j\le6\).
+- Theorem 11.1: exhaustive \(r_i=6\) row classification, including the Case A/B/C split.
+- Theorem 12.1: the four exact 11-vertex gadget normal forms and their \(K_5\) lists.
+- Lemmas 13.1–13.2: monochromatic \(K_{12}\) isolation and \(P_C\le21(12-m)\) for \(m\) disjoint block-transversal \(K_{12}\)'s.
+- GADGET_ALIGNMENT_VERIFIER.js / GADGET_ALIGNMENT_CERTIFICATE.md: finite alignment property for high omitted cliques of size four or five and low omitted pairs of type \((5,5)\) or \((5,4)\).
+
+The exact integer profiles when \(R_C=13\) are classified by largest pair-sum: all pair sums at most six; pair-sum seven \((5,2,2,1^4)\), \((4,3,2,1^4)\); pair-sum eight \((7,1^6)\), \((6,2,1^5)\), \((5,3,1^5)\), \((4,4,1^5)\). Each profile is excluded in the theorem file. The only new computation is fixed-size and exhaustive on four 11-vertex graphs: 2,156 alignment checks, zero failures, with exact expected clique and pair counts asserted in source.
+
+Proof audit notes:
+- For pair-sum eight, blocker compatibility does **not** always force a second full component: the leftover gadget can be a \(K_5\). The proof now handles both branches; in the no-second-component branch, at least six gadget vertices must be covered, forcing the equality overlap profile \(a_i=a_j=1\) in the \(r_i,r_j\le5\) case.
+- For the \(r_i=6\) Case C branch, the \(6+1\) no-second-component option is impossible by the \(17\)-incidence ceiling; the proof does not incorrectly charge it as a second-component case.
+- The \(r_i=7\) profile is handled by counting full-component occurrences, component excess, and gadget incidences; cases with a gadget-only row having a size-four or size-five omitted clique use the extended alignment verifier.
+
+This theorem is a colorwise bound only. It does not close the aggregate eleven-color ledger, either 56-witness support geometry, E408 Q33, or EG617(r=12).
