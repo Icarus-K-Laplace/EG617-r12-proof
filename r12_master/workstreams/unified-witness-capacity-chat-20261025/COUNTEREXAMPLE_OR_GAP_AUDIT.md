@@ -182,3 +182,10 @@ At \(t_C=0\), the induced graph \(C[O]\) is a disjoint union of ten triangles an
 When an exact-129 color has \(t_C=0\) and Type-A W-intersection, the 11-point gadget has \(U[O]=K_4\cup K_4\), \(U[W]=K_2\cup K_1\), and 16 cross edges. The independence-number and clique-number constraints force the two adjacent W-gadget vertices to be complete to opposite K4s; the isolated W-gadget vertex is complete to one K4 and misses \(a\in\{0,1,2,3\}\) vertices of the other, while its adjacent endpoint covers exactly those missed vertices. The gadget degree multiset is \(5^{10},8\) or \(5^9,6,7\).
 
 Consequently, in this specific equality case no gadget vertex has C-degree four. This can be used in vertexwise degree budgets: each Type-A \(t_C=0\) gadget membership costs at least one unit above the exact-color degree floor four. It remains a local constraint; current aggregate excess budgets can accommodate it, so no terminal closure follows.
+
+
+## 15. Repeated-color ownership in low-slack blocks
+
+Under top-cell A and \(r_i(C)=1\), the exact row normal form gives \(e_C(B_i,W)\in\{23,24\}\): component rows contribute 20 W-incidences in Type A or 19 in Type B, and the two exceptional gadget rows contribute the complementary 3/4 or 4/5. Each \(w\in W\) must see all eleven non-target colors among its 12 edges to \(B_i\), so one non-target color is repeated and the target color is absent on that star. Therefore the only repeated-C incidence in block i is in W exactly when \(e_C(B_i,W)=24\); otherwise it lies in O.
+
+This is an ownership refinement, not a global contradiction. Across blocks, the row normal form still allows the unique duplicates to split between W and O. A terminal proof must combine these locations with the target degree vector and the cross-edge defect sum \(\sum_C t_C=K_W\) (E408) or \(K_W+1\) (E407).
