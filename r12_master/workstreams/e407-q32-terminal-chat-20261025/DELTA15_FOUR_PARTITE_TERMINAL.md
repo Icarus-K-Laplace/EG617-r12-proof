@@ -22,6 +22,8 @@ The core ledger gives
 e(H[U])=97,\quad e_H(U,W)=154+\epsilon_U,\quad
 e(H[W])=33-\epsilon_U,\quad \epsilon_U\in\{0,1\}.
 \]
+
+For each \(d\in D\), the independence-number condition forces \(d\) to be complete to a whole \(W\)-part. Since the smallest allowed \(W\)-part has size three and \(d_H(d,W)=5+\epsilon_d-t_d\), this gives \(t_d\le2\). In every profile with minimum part size four, \(t_d\le1\) except that the unique excess-one \(D\)-vertex may have \(t_d=2\).
 Here \(\epsilon_U=\sum_{u\in U}(d_H(u)-12)\). The \(W\)-side clique-part profiles from NON_FOUR_PARTITE_TERMINAL.md are:
 - \(\epsilon_U=0\): \(K_3\cup K_5^3\), \(K_4^3\cup K_6\), or \(K_4\cup K_4\cup K_5\cup K_5\) plus one cross edge;
 - \(\epsilon_U=1\): \(K_4\cup K_4\cup K_5\cup K_5\).
