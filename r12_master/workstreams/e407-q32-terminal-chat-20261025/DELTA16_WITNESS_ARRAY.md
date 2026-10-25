@@ -65,4 +65,4 @@ The next useful compatibility test is to combine:
 - the shell-template-specific hub-hit requirements for each color class;
 - the \(W\)-side \((5,0)\) labelled kernel in `FOUR_PARTITE_TERMINAL.md`.
 
-No claim is made that the Latin-square/transversal incidence system is unrealizable. E407 Q32 remains OPEN / NOT_CERTIFIED.
+No claim is made that the Latin-square/transversal incidence system is unrealizable in isolation. Its compatibility with the complete E407 core is moot at \\(\delta=16\\), because the W-side endpoint argument already excludes that core. E407 Q32 remains OPEN / NOT_CERTIFIED for other \\(\delta\\)-values.
