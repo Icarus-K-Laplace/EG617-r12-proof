@@ -32,7 +32,7 @@ The retained transversal/excess contract gives
 \[
 3\le\delta,\qquad \epsilon_U+2\delta\ge9,\qquad \delta+\epsilon_U\le16.
 \]
-At \(\delta=13\), the four-partite-U, no-cross-edge-W profiles for \(\epsilon_U=1,2,3\) are excluded. At \(\epsilon_U=1\), the \(K_3\dot\cup3K_5\)-plus-one-edge profile is excluded, and the \(3K_4\dot\cup K_6\)-plus-one-edge profile is excluded when its edge joins \(K_4\) to \(K_6\). Still open in this four-partite-U row are the \(3K_4\dot\cup K_6\) profile with the edge between two \(K_4\)'s, the \(2K_4\dot\cup2K_5\)-plus-two-edge profile at \(\epsilon_U=1\), and the \(2K_4\dot\cup2K_5\)-plus-one-edge profile at \(\epsilon_U=2\). Also open are \(\epsilon_U=0\), non-four-partite U-complements, and \(\delta\le12\). The excluded profiles are conditional on the retained 49-witness/core contract; they do not close the whole \(\delta=13\) row.
+At \(\delta=13\), the four-partite-U, no-cross-edge-W profiles for \(\epsilon_U=1,2,3\) are excluded. At \(\epsilon_U=1\), both one-cross-edge placements of \(3K_4\dot\cup K_6\) and the \(K_3\dot\cup3K_5\)-plus-one-edge profile are also excluded. Still open in this four-partite-U row are \(2K_4\dot\cup2K_5\) plus two edges at \(\epsilon_U=1\), and \(2K_4\dot\cup2K_5\) plus one edge at \(\epsilon_U=2\). Also open are \(\epsilon_U=0\), non-four-partite U-complements, and \(\delta\le12\). The excluded profiles are conditional on the retained 49-witness/core contract; they do not close the whole \(\delta=13\) row.
 
 ### Gap C — five common-core shell templates A–E
 
@@ -132,3 +132,10 @@ The immediate next target is the remaining \(\epsilon_U=1\) profiles with W-cros
 DELTA13_EPS1_3K4_K6_K4K6_EDGE.md excludes the \(\epsilon_U=1\), \(3K_4\dot\cup K_6\) W-profile when the unique W-cross-edge joins a \(K_4\) to the \(K_6\). All U-vertices are W-saturated, and common-neighbour capacities are at most \(9+9+9+1=28<29\).
 
 The next local target is the same profile with its cross-edge between two K4 components.
+
+
+## Round 26 update — both \(3K_4\dot\cup K_6\) edge placements
+
+The K4–K4 placement is now excluded as well. If the only possible degree-seven unsaturated U-vertex exists, all but one U-vertex must be covered by the four common-neighbour sets. Equality in the total capacity forces all three K4 capacities to be nine and their labels to be small U-parts. The exceptional vertex's own part cannot be a label; by pigeonhole two K4 components share one of the other two small parts, so their common-neighbour sets overlap in at least seven vertices. Their union cannot cover 28 vertices.
+
+Thus both placements of the unique W-cross-edge in the \(\delta=13,\epsilon_U=1\), \(3K_4\dot\cup K_6\) profile are closed.
