@@ -119,3 +119,10 @@ The new file DELTA14_SATURATED_ALPHA_CRITICAL_REDUCTION.md introduces one explic
 - This statement is **not independently reproved or audited** in this workstream; any conclusion using it remains conditional until the theorem is independently checked or accepted as a trusted external result.
 
 With that dependency, the \(\delta=14\) \(K_5\)-saturated non-four-partite branch reduces to \(K_7\dot\cup K_7\dot\cup D\), where \(D\) is a connected \(\alpha\)-critical graph with independence number two and 56 edges. The complement of \(D\) must be triangle-free, non-bipartite, triangle-saturated, have 49 edges, and admit the two orthogonal near-perfect matching decompositions forced by the witness family. This remains an open terminal, not a proof of EG617.
+
+
+## Round 18 local-model update
+
+DELTA14_SATURATED_LOCAL_MODEL.md and its standard-library verifier give an explicit local realization of the 29-point saturated non-four-partite boundary. No new external theorem is used in that construction. The verifier checks \(e(H_U)=98\), \(e(L)=308\), \(K_5\)-freeness and \(K_5\)-saturation of \(L\), the 49-cell bijection to \(E(J)\), and the seven classes of seven pairwise-disjoint witnesses.
+
+This refutes any proposed contradiction based solely on the 29-point saturated graph and its 49-witness packing. It does **not** provide the 18-vertex \(W\), full 47-core, or shell-row extension. The Didin preprint dependency in DELTA14_SATURATED_ALPHA_CRITICAL_REDUCTION.md remains explicit and unaudited; the global terminal remains open.
