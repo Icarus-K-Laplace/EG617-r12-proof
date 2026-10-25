@@ -445,6 +445,51 @@ def check_duplicate_budget_k12_packing_bound() -> None:
         assert R - 5 <= 6
 
 
+def check_cell_a_cross_edge_defect_identity() -> None:
+    # Turan floor for 38 vertices with alpha <= 12: two K4 parts and
+    # ten K3 parts in the equality graph.
+    p12_38 = 2 * comb(4, 2) + 10 * comb(3, 2)
+    assert p12_38 == 42
+    assert 2 * 4 + 10 * 3 == 38
+
+    # Exact-129 factorization intersected with a near-perfect matching on W:
+    # either ten component pairs + one gadget edge, or nine + two.
+    profiles = [
+        {"component_pairs": 10, "component_singletons": 0,
+         "gadget_W": 3, "gadget_edges_W": 1,
+         "component_O_edges": 30, "gadget_WO_min": 10},
+        {"component_pairs": 9, "component_singletons": 1,
+         "gadget_W": 4, "gadget_edges_W": 2,
+         "component_O_edges": 33, "gadget_WO_min": 12},
+    ]
+    for p in profiles:
+        assert p["component_pairs"] + p["component_singletons"] == 10
+        assert p["component_pairs"] + p["gadget_edges_W"] == 11
+        assert p["gadget_W"] in (3, 4)
+        gadget_O_upper = 29 - p["gadget_edges_W"] - p["gadget_WO_min"]
+        assert p["component_O_edges"] + gadget_O_upper == 48
+        assert 42 <= p["component_O_edges"] + gadget_O_upper <= 48
+    # At t_C=0, the equality partition of O has ten triangles and two K4s.
+    assert 10 * comb(3, 2) + 2 * comb(4, 2) == 42
+    assert 10 * 3 + 2 * 4 == 38
+
+    # Global cross-edge defect identity for E=407 or 408.
+    for E in (407, 408):
+        S = 411 - E
+        Xi = 2 * E - 13 * 61
+        for K_W in range(Xi + 1):
+            target_cross = 13 * 23 + K_W - 2 * 132
+            assert target_cross == 35 + K_W
+            non_target_cross = 23 * 38 - target_cross
+            sum_t = K_W + S - 3
+            assert 11 * 76 + S - sum_t == non_target_cross
+            assert sum_t == K_W + 411 - E - 3
+        if E == 408:
+            assert S == 3 and Xi == 23
+        else:
+            assert S == 4 and Xi == 21
+
+
 def main() -> None:
     check_zero_excess_endpoint_tables()
     check_edge_ledgers()
@@ -459,6 +504,7 @@ def main() -> None:
     check_missing_diagonal_duplicate_charge()
     check_scalar_budget_relaxation()
     check_duplicate_budget_k12_packing_bound()
+    check_cell_a_cross_edge_defect_identity()
     print("R12_UNIFIED_WITNESS_CAPACITY_ARITHMETIC_OK")
     print("Partite branch: exact Q33 incidence profile and labelled row caps verified.")
     print("Pair-certificate multiplicity: max 45 unlabelled / 9 label-anchored pairs.")
@@ -469,6 +515,7 @@ def main() -> None:
     print("Missing-diagonal duplicate-charge boundary arithmetic verified.")
     print("Aggregate scalar relaxation verified; it is not a graph-level counterexample.")
     print("Duplicate-budget K12 packing and labelled-witness extension bounds verified.")
+    print("Cell-A exact-color intersection profiles and global cross-edge defect identity verified.")
     print("Scope: exact integer/degree ledgers only; no graph-realization certificate.")
 
 
