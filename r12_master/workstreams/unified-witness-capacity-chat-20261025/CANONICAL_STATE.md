@@ -300,3 +300,12 @@ The local replay of the committed checker passed 159,244 exact set-combinatorics
 (4,3,2,1,1,1,1).
 \]
 The \(r=7\) profile remains a separate open branch; the four high-pair profiles with all \(r_i\le5\) also remain open. Do not infer \(r_i\le5\) globally from the \(r_i=6\) theorem alone.
+
+
+## 2026-10-25 proof audit — external edge versus double-star; P49/r=6 verifier strengthened
+
+**Important correction to prior notes:** the sibling E408 Q33 Lemma 2.1 claims that a monochromatic \(K_{12}\) has no external edge of its own color. That inference is invalid. The twelve edges from an outside vertex must contain all eleven other colors, so the correct conclusion is only \(d_C(z,K_{12})\le1\). A single external \(C\)-edge is allowed. Therefore sibling conclusions whose sole contradiction is one external \(C\)-edge—including the current \(P_C\le49\) and \(P_C\le48\) boundary proofs—must be treated as **NOT CERTIFIED until repaired**. Do not use those caps as dependencies in this workstream.
+
+The local \(P_C=49,r_i(C)=6\) result in Section 12 of OUTER_EXCEPTIONAL_ROW_COUPLING.md has been rewritten to use the valid **double-star** condition \(d_C(z,K_{12})\ge2\), not the false isolation claim. Its finite checker now uses the exact Case-C complement-size profiles and distinguishes high-row profiles where both candidate high rows must be checked from profiles where either row is incidence-safe. The component-incidence argument is explicit: the selected high gadget-only row has at most two partial component incidences in the risky profiles and at most three otherwise; the selected \(r=2\) row has at most one. Hence no pair of selected rows covers a full isolated \(K_5\), which is needed for the pairwise blocker step.
+
+The in-session replay of the revised finite predicates passed 2,132 Case-A/B configurations and 412,768 exact-profile Case-C configurations, 414,900 total. This is a conditional local theorem under the exact-129 factor, gadget normal form, and row contracts. It **does not** prove \(P_C\le49\), does not close the aggregate eleven-color ledger, and does not solve EG617(r=12).
