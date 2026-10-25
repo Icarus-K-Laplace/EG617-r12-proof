@@ -165,3 +165,37 @@ Therefore the whole \(\delta=15\), \(L\) non-four-partite branch is **EXCLUDED**
 - \(\delta=15\), \(L\) four-partite: OPEN.
 - \(\delta=14\) and lower: OPEN.
 - E407 Q32 overall: OPEN / NOT_CERTIFIED; no complete \(K_{145}\) proof is claimed.
+
+
+## 2026-10-25 — Round 6: \(\delta=16\) four-partite branch excluded
+
+### New terminal contradiction
+
+The \(\delta=16\) support-boundary case is now excluded under the retained E407 core/witness contract.
+
+The reduction forces:
+- \(L=\overline{H[U]}\) four-partite with parts \(7,7,7,8\);
+- \(H[U]\) has 91 within-part edges and five cross edges, which form a matching;
+- \(\epsilon_U=0\), \(H[W]=K_5\cup K_5\cup K_4\cup K_4\);
+- each of the five \(D\)-endpoints has exactly one \(K_4\) as its \(W\)-neighbourhood.
+
+The \((4,1)\) and \((3,2)\) endpoint splits contradict the total four-unit excess budget. For the remaining \((5,0)\) split, all five endpoints share one \(K_4=C_0\). Every \(w\in C_0\) is adjacent to the five endpoint vertices. If \(w\) were not complete to the 8-part \(D\), reverse saturation forces it to be complete to a 7-part, giving at least \(7+5=12\) \(U\)-neighbours and hence \(\epsilon_w\ge3\). At most one \(w\in C_0\) can be such an exception. But then at least two non-endpoint vertices of \(D\) would have only three neighbours in \(C_0\) and two outside; neither set of neighbours contains a whole \(W\)-component (all components have size at least four), contradicting \(\alpha(H)\le4\). Hence all four vertices of \(C_0\) are complete to \(D\), yielding a \(K_8\cup K_4\) joined completely across, i.e. a forbidden \(K_{12}\) in \(H\).
+
+This closes the last endpoint split. The proof is in FOUR_PARTITE_TERMINAL.md; the arithmetic consistency checks are in verify_e407_delta16_kernel.py.
+
+### Independent audit of the \(\delta=15\) non-four-partite exclusion
+
+The previous round's \(x,y\) degree contradiction was rechecked. Under the Kang–Pikhurko equality classification, the two unbalanced base profiles fail the 49-block edge-capacity inequalities. In the balanced \((7,7,7,7)\) profile,
+\[
+d_H(x,W)=a-1+\epsilon_x,\qquad d_H(y,W)=6-a+\epsilon_y,\qquad \epsilon_x+\epsilon_y\le\epsilon_U\le1.
+\]
+The \(W\)-side Brouwer bound forces the stated four-clique-part profiles. Independence-number saturation requires each of \(x,y\) to be complete to a whole \(W\)-part; for the one-cross-edge profile the same follows for vertices with at most five \(W\)-neighbours. Each allowed profile then forces incompatible lower and upper bounds on \(a\). The exclusion remains conditional on the retained core/witness contract and the cited Kang–Pikhurko equality classification.
+
+### Updated frontier
+
+- \(\delta=16\), four-partite: **EXCLUDED**.
+- \(\delta=15\), non-four-partite: **EXCLUDED** under the retained contract.
+- \(\delta=15\), four-partite: OPEN.
+- \(\delta\le14\): OPEN (both four-partite and non-four-partite cases where allowed).
+- E407 Q32 overall: **OPEN / NOT_CERTIFIED**.
+- E408 Q32/Q33 and the original \(K_{145}\)-to-T61 bridge: untouched.
