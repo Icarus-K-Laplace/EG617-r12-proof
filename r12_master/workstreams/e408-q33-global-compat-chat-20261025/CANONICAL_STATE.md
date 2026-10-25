@@ -126,19 +126,28 @@ The common-star finite verifier was independently reimplemented and replayed in-
 
 For \(P_C=49\), \(R_C=13\), there are eleven positive seven-part profiles. The extended DP checks the nine profiles with \(\max r_i\le5\) across four gadget normal forms (36 checks, 5,021,134 transitions, maximum 3,329 states). It fails to find a common star only for \((4,4,1^5)\) in forms \(b=1,4\) and \((4,3,2,1^4)\) in forms \(b=2,3\).
 
-Five profiles with all pairwise budget sums at most six are now excluded by the common-star plus double-star argument:
+Seven of the eleven profiles are now excluded:
 \[
-(2^6,1),\ (3,2^4,1^2),\ (3^2,2^2,1^3),\ (3^3,1^4),\ (4,2^3,1^3).
+(2^6,1),\ (3,2^4,1^2),\ (3^2,2^2,1^3),\ (3^3,1^4),\
+(4,2^3,1^3),\ (5,2^2,1^4),\ (5,3,1^5).
 \]
-The remaining six \(P_C=49\) profiles are
+The first five use the common-star plus double-star argument when all pairwise budget sums are at most six. The last two use the incidence-sensitive verifier, which carries the partial component incidence \(p\le r-a\): profile \((5,2^2,1^4)\) uses the mode \(p_5\le3,p_2\le1,p_1=0\); profile \((5,3,1^5)\) uses one of three modes \((p_5,p_3)\in(\le2,\le2),(\le3,\le1),(\le4,0)\). Their combined finite checks cover all four gadget forms with 503,748 and 1,417,758 transitions respectively, with no empty admissible star state.
+
+The four remaining \(P_C=49\) profiles are
 \[
-(4,3,2,1^4),\ (4,4,1^5),\ (5,2^2,1^4),\ (5,3,1^5),\ (6,2,1^5),\ (7,1^6).
+(4,3,2,1^4),\quad (4,4,1^5),\quad (6,2,1^5),\quad (7,1^6).
 \]
-This is a partial profile closure only. The archived P49 boundary proof remains NOT CERTIFIED, \(P_C\le48\) is not established, and E408 Q33 / EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.
+The first two require a pairwise-intersection alignment not dependent on a common point; the last two require corrected high-budget row analysis. The archived P49 boundary proof remains NOT CERTIFIED as a whole, and \(P_C\le48\) is not established. E408 Q33 and EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.
+
 
 ## Latest isolated commits
 
 - P49 common-star finite screen: 84a59a5bcab57a8536c8d3a45af481f46427c6e3
+- Incidence-sensitive P49 verifier: 54a26037460bdb15ae35cf027b8f141ea2179a3e
+- Incidence-sensitive P49 theorem note: c884358a548ec679a5e9e46a0471161bd472ea5e
+- Updated first-stage P49 screen: 511fe9bd1cfed4ea292004165876a0c05b2c4231
+- Updated P49 progress log: e6b64c4ed043f15332301afe30e78e3b73bf99b5
+- Updated proof dependency map: 7114eb15da34effbc9653e4dc3c649dbad368b75
 - P49 Case I repaired; Cases II–V explicitly retained as NOT CERTIFIED: 8662900d1d9cff04a9a4872e38786f2f897ed79d
 - P49 audit-status progress update: afc14599de7f713c5bd7f0f418f3a2c9bb53af16
 - P49 profile analysis: 44f40e49a6ca84893c2cd26ef31b9dfd9c6b0875
