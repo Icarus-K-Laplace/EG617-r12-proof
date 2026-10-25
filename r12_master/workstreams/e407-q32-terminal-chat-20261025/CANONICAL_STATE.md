@@ -143,7 +143,7 @@ The verifier enumerates all integer values of \(a,\epsilon_x,\epsilon_y,I_x,I_y\
 **Status:** PROVED_CONDITIONAL strict reduction for the augmentable-edge subcase. Still OPEN: eliminate the two residual terminals above, or prove that \(L\) must have an augmentable nonedge; separately handle the case where \(L\) is \(K_5\)-saturated. The \(\delta\le13\) branch and the five shell templates remain open; E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
 
 
-- The \(\delta=14\) non-four-partite augmentable-edge branch is **excluded**. For the explicit C5-blow-up local candidate only, DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md excludes \(\epsilon_U=0\) and reduces \(\epsilon_U=1,2\) to two exact W-extension terminals. The general saturated branch remains OPEN because the local reduction does not force every admissible J to be this blow-up.
+- The \(\delta=14\) non-four-partite augmentable-edge branch is **excluded**. For the explicit C5-blow-up local candidate only, DELTA14_SATURATED_TRANSVERSAL_REDUCTION.md excludes \(\epsilon_U=0\) and reduces \(\epsilon_U=1,2\) to two exact W-extension terminals. This was the pre-Round-22 frontier; it is superseded by DELTA14_SATURATED_KERNEL_CLASSIFICATION.md, which conditionally forces every admissible J to this blow-up and excludes its full-core extension.
 
 Added DELTA14_NONPARTITE_AUGMENTABLE_TERMINAL_CLOSURE.md and verify_delta14_augmentable_terminal.py.
 
@@ -166,7 +166,7 @@ The component split is forced to \(K_a\dot\cup K_b\dot\cup C\) with \(\alpha(C)=
 \[
 (a,b,|C|,e(C),e(\overline C))=(7,7,15,56,49).
 \]
-All 49 witnesses exhaust both \(A\times B\) and \(E(\overline C)\). Hence \(\overline C\) must be a triangle-free, non-bipartite, triangle-saturated graph on 15 vertices with 49 edges whose edge set admits two orthogonal decompositions into seven near-perfect matchings. This is a strict reduction, not an exclusion.
+All 49 witnesses exhaust both \(A\times B\) and \(E(\overline C)\). Hence \(\overline C\) must be a triangle-free, non-bipartite, triangle-saturated graph on 15 vertices with 49 edges whose edge set admits two orthogonal decompositions into seven near-perfect matchings. At Round 17 this was only a strict reduction; it is superseded by Round 22's general kernel classification and conditional exclusion.
 
 External theorem status is explicit: Didin's 2026 preprint was listed as under review; its proof has not been independently audited in this workstream. The arithmetic verifier checks the integer enumeration only. The remaining saturated kernel, \(\delta\le13\), all five shell templates, and the \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
 
