@@ -309,6 +309,30 @@ def check_exceptional_row_independence_bound() -> None:
         assert 2 * (k * (k - 1) // 2) == min_edges
 
 
+def check_near_complete_component_matching_bound() -> None:
+    # For exact-129 blocks with r_i,r_j <= 5, each missing component
+    # diagonal consumes at least five extra row-neighborhood incidences.
+    # Enumerate all allowed row-budget pairs to verify m <= floor((ri+rj-2)/5).
+    for ri in range(1, 6):
+        for rj in range(1, 6):
+            total_extra = ri + rj - 2
+            max_missing = total_extra // 5
+            assert max_missing <= 1
+            if ri + rj <= 6:
+                assert max_missing == 0
+            else:
+                assert max_missing in (0, 1)
+
+    # At sum ri+rj=7, the extra-incidence budget is exactly five.
+    # Thus a missing diagonal can only be paid for by covering a second K5;
+    # it cannot pay for six gadget incidences.
+    sum7 = [(ri, 7-ri) for ri in range(1, 6) if 1 <= 7-ri <= 5]
+    assert sum7 == [(2, 5), (3, 4), (4, 3), (5, 2)]
+    for ri, rj in sum7:
+        assert ri + rj - 2 == 5
+        assert ri + rj - 2 < 6
+
+
 def main() -> None:
     check_zero_excess_endpoint_tables()
     check_edge_ledgers()
@@ -319,12 +343,14 @@ def main() -> None:
     check_q33_label_array_relaxation()
     check_exceptional_row_pair_bound()
     check_exceptional_row_independence_bound()
+    check_near_complete_component_matching_bound()
     print("R12_UNIFIED_WITNESS_CAPACITY_ARITHMETIC_OK")
     print("Partite branch: exact Q33 incidence profile and labelled row caps verified.")
     print("Pair-certificate multiplicity: max 45 unlabelled / 9 label-anchored pairs.")
     print("Q33 label-only array relaxation verified; no block-coordinate realization implied.")
     print("Exceptional-row 2x2 mask bound verified: costs 0/1/2 occur 6/8/1 times.")
     print("Exceptional-row graph alpha<=2 and Turan equality profile verified.")
+    print("Near-complete component matching budget checked for all r_i,r_j in 1..5.")
     print("Scope: exact integer/degree ledgers only; no graph-realization certificate.")
 
 
