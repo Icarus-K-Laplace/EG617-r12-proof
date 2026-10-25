@@ -100,7 +100,7 @@
 - Proved a general exact-129 packing bound. For block i, if \(n_i(C)\) rows have C-neighborhood size five in R, the exact blocker theorem gives distinct K5 component labels and \(n_i(C)\ge11-r_i(C)\). Thus at least \(17-R_C=P_C-45\) component labels occur as exact size-five blockers in all seven blocks.
 - Every common component label extends to a C-monochromatic K12: its K5 component plus one exact size-five blocker row from each outer block. If two representatives were nonadjacent, the nine other K5 components, an independent pair in the gadget, and the two rows would form an independent13-set.
 - Concluded \(\nu_{12}(C)\ge\max(0,P_C-45)\). Combined with the near-matching theorem, \(P_C\ge51\) yields ten disjoint K12s; the \(P_C=50\) and \(P_C=49\) branches have the explicit bounds recorded in the canonical theorem.
-- Added exhaustive integer-profile checks for \(R_C=11,12,13\) with all \(r_i\le5\): the maximum number of block pairs with \(r_i+r_j\ge7\) is 0, 1, 2. Independent arithmetic replay is pending the next verifier pass.
+- Added exhaustive integer-profile checks for \(R_C=11,12,13\) with all \(r_i\le5\): the maximum number of block pairs with \(r_i+r_j\ge7\) is 0, 1, 2. Independent Python arithmetic replay passed (see final audit below).
 - This is a structural branch certificate, not a contradiction: the coloring hypothesis allows monochromatic K12 cliques. The unresolved issue remains forcing the aggregate duplicate budget into a branch whose K12 packing or witness geometry is impossible.
 
 
