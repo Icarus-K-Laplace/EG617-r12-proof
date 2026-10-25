@@ -36,7 +36,7 @@ These are the latest heads observed in the repository at the time of this update
 | \(\delta=16\) four-partite extreme | EXCLUDED by endpoint-split analysis and forbidden \(K_{12}\) |
 | \(\delta=15\) four-partite | EXCLUDED by W-profile saturation and forbidden \(K_{12}\) |
 | \(\delta=15\) non-four-partite | EXCLUDED under KP equality + core-to-\(W\) degree contradiction |
-| \(\delta=14\) four-partite | \(\epsilon_U=0\): all four W-profiles excluded; \(\epsilon_U=1\): no-cross-edge \(K_3\cup K_5^3\) excluded; other \(\epsilon_U=1\) profiles and \(\epsilon_U=2\) open |
+| \(\delta=14\) four-partite | \(\epsilon_U=0\): all four W-profiles excluded; \(\epsilon_U=1\): no-cross-edge \(K_3\cup K_5^3\) and \(K_4^3\cup K_6\) excluded; \((4,4,5,5)\)+one-cross-edge, \(\epsilon_U=2\) open |
 | \(\delta\le14\) non-four-partite | OPEN |
 | E407 Q32 overall | OPEN / NOT_CERTIFIED |
 | EG617(r=12) | OPEN / NOT_CERTIFIED |
@@ -80,3 +80,11 @@ The local arithmetic verifier checks exact ledgers and the finite excess inequal
 - The proof splits by whether \(T=K_3\) is complete to \(D\). If not, degree excess forces \(h=|N_D(T)|=4\), all four excess units into \(T\), and exact U-neighbourhoods \(D_0\cup A_i\); the common-neighbour cover is at most 25. If \(T\) is complete to \(D\), the \(X\)-exception set plus component cover capacity is at most 28 after the equality-case correction.
 - Arithmetic replay: verify_delta14_k3_k5_cross_edge.py checked all 35 excess allocations; corrected maximum cover bound is 28.
 - Result: every four-partite \(W\)-profile at \(\delta=14,\epsilon_U=0\) is excluded under the retained core/witness contract. The \(\epsilon_U=1,2\), non-four-partite \(\delta=14\), and all \(\delta\le13\) cases remain open. E407 Q32 and EG617 remain OPEN / NOT_CERTIFIED.
+
+
+## New Round 12 result — exclude \(\delta=14,\epsilon_U=1\), no-cross-edge \(K_4^3\cup K_6\)
+
+- Added DELTA14_EPS1_K4K4K4K6_NO_CROSS_EDGE.md. Every D-vertex is assigned to exactly one W-component; a D-vertex assigned to \(K_6\) must have \(\epsilon_d=1,t_d=0\). The exact external-incidence identity is \(R=1-2q+\sum_{d\in D}\epsilon_d\), giving \(R\le2\) if no D-vertex is assigned to \(K_6\), and \(R=0\) otherwise.
+- If a \(K_4\) component receives \(k\ge3\) D-assignments, its external-incidence budget limits how many vertices can be complete to all of D. The remaining vertices must be complete to small U-parts, forcing total W-excess greater than 3. Hence every \(K_4\) receives at most two D-assignments, impossible for seven or eight D-vertices distributed across three \(K_4\)'s.
+- Added verify_delta14_eps1_k4k4k4k6.py; arithmetic replay passed. A verifier bookkeeping error was caught and fixed before replay.
+- The \(\epsilon_U=1\) no-cross-edge \(K_3\cup K_5^3\) and \(K_4^3\cup K_6\) profiles are now excluded. The \((4,4,5,5)\)+one-cross-edge profile remains open, as does \(\epsilon_U=2\), non-four-partite \(\delta=14\), and \(\delta\le13\). E407 Q32 remains OPEN / NOT_CERTIFIED.
