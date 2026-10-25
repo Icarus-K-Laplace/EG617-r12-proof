@@ -469,6 +469,19 @@ def check_cell_a_cross_edge_defect_identity() -> None:
         gadget_O_upper = 29 - p["gadget_edges_W"] - p["gadget_WO_min"]
         assert p["component_O_edges"] + gadget_O_upper == 48
         assert 42 <= p["component_O_edges"] + gadget_O_upper <= 48
+    # For r_i(C)=1, the ten exact component rows and two gadget
+    # complement rows yield 23 or 24 W-incidences in either intersection type.
+    low_slack_profiles = [
+        (20, 3), (20, 4),  # Type A
+        (19, 4), (19, 5),  # Type B
+    ]
+    for component_W, exceptional_W in low_slack_profiles:
+        total_W = component_W + exceptional_W
+        assert total_W in (23, 24)
+        repeated_in_W = total_W - 23
+        assert repeated_in_W in (0, 1)
+        assert total_W == 23 + repeated_in_W
+
     # In Type A with t_C=0, U has 16 W-O edges and its degree
     # multiset is 5^9,(5+a),(8-a), for a=0,1,2,3.
     for a in range(4):
@@ -526,7 +539,7 @@ def main() -> None:
     print("Missing-diagonal duplicate-charge boundary arithmetic verified.")
     print("Aggregate scalar relaxation verified; it is not a graph-level counterexample.")
     print("Duplicate-budget K12 packing and labelled-witness extension bounds verified.")
-    print("Cell-A exact-color intersection profiles, Type-A zero-defect gadget, and global cross-edge defect identity verified.")
+    print("Cell-A intersection profiles, Type-A zero-defect gadget, low-slack duplicate ownership, and cross-edge defect identity verified.")
     print("Scope: exact integer/degree ledgers only; no graph-realization certificate.")
 
 
