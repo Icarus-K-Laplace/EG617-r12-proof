@@ -78,3 +78,10 @@ Therefore E408 has \(\sum t_C=K_W\), and E407 has \(\sum t_C=K_W+1\).
 For exact-129 colors, the K5-factor/gadget intersection with W is forced to profile \(2^{10}\) or \(2^9,1\), and \(0\le t_C\le6\). If \(t_C=0\), equality in Turan forces \(C[O]\) to be ten disjoint triangles and two disjoint K4s. Thus a possible closure route is now precise: prove that the eleven edge-disjoint near-Turan partitions of O cannot coexist with the target graph's degree, shell and witness constraints, or force a positive defect distribution inconsistent with the exact sum above.
 
 This is a new conditional structural theorem, not a terminal contradiction. The T61 reduction and top-cell-A contract remain dependencies; E408 Cell B is already excluded separately by the sibling theorem.
+
+
+## 8. Zero-defect Type-A gadget degree profile
+
+If an exact-129 color has \(t_C=0\) and Type-A W-intersection, then \(U[O]=K_4\cup K_4\), \(U[W]=K_2\cup K_1\), and the 16 cross edges are rigid up to the parameter \(a\in\{0,1,2,3\}\). The gadget degree multiset is \(5^{10},8\) or \(5^9,6,7\), so every gadget vertex has degree at least five. In particular, a Type-A zero-defect gadget contributes at least one unit of vertex degree above the generic exact-color floor four for each of its eleven gadget vertices.
+
+The four-value degree-profile arithmetic was independently checked. This local rigidity can be combined with the vertexwise degree equation, but the present aggregate budget has enough slack to accommodate it; no contradiction is claimed.
