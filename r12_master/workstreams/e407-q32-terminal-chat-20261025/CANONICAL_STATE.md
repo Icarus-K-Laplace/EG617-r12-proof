@@ -73,3 +73,10 @@ The local arithmetic verifier checks exact ledgers and the finite excess inequal
 - The four common-neighbour sets therefore cover all 29 U vertices. Component/excess accounting gives \(\sum |S_s|\le26+\mathbf1_{\{E_T=0\}}\le27\), contradiction.
 - Arithmetic replay: verify_delta14_k5_cross_edge_capacity.py; 35 excess allocations checked, maximum bound 27.
 - The only \(\delta=14,\epsilon_U=0\) four-partite W-profile remaining is \(K_3\cup K_5^3\) with the cross-edge between \(K_3\) and a \(K_5\). This placement remains OPEN. Other \(\epsilon_U\), non-four-partite, and \(\delta\le13\) branches remain open; E407 Q32 and EG617 remain OPEN / NOT_CERTIFIED.
+
+
+## New Round 11 result — complete \(\delta=14,\epsilon_U=0\) four-partite W-row closure
+- Added DELTA14_EPS0_K3K5X1_K3K5_EDGE.md, excluding the final \(K_3\cup K_5^3\) profile with the cross-edge joining \(K_3\) to a \(K_5\).
+- The proof splits by whether \(T=K_3\) is complete to \(D\). If not, degree excess forces \(h=|N_D(T)|=4\), all four excess units into \(T\), and exact U-neighbourhoods \(D_0\cup A_i\); the common-neighbour cover is at most 25. If \(T\) is complete to \(D\), the \(X\)-exception set plus component cover capacity is at most 28 after the equality-case correction.
+- Arithmetic replay: verify_delta14_k3_k5_cross_edge.py checked all 35 excess allocations; corrected maximum cover bound is 28.
+- Result: every four-partite \(W\)-profile at \(\delta=14,\epsilon_U=0\) is excluded under the retained core/witness contract. The \(\epsilon_U=1,2\), non-four-partite \(\delta=14\), and all \(\delta\le13\) cases remain open. E407 Q32 and EG617 remain OPEN / NOT_CERTIFIED.
