@@ -217,3 +217,14 @@ The component intersection bound in Section 9 remains \(|\mathcal K_C^*|\ge P_C-
 |\mathcal W_C\cap\mathcal K_C^*|\ge\max(0,P_C-50).
 \]
 Thus the current labelled extension theorem forces a selected witness component into a K12 only for \(P_C\ge51\). Any claimed \(P_C\ge49\) or \(P_C=50\) threshold requires a separate proof that seven selected witnesses transfer to seven distinct isolated components. That label-transfer obligation remains OPEN.
+
+
+## 18. S-avoidance closes part of the label-transfer gap
+
+The earlier generic estimate that at most two selected witnesses can lie in the 11-point gadget is not sharp because the selected witnesses all avoid the three-point set \(S\). The ten isolated K5 components avoid \(S\), so \(S\subseteq U_C\), leaving only eight non-S gadget vertices. Two selected gadget witnesses would have disjoint four-point parts occupying all eight vertices, but their shell label is an additional vertex outside \(H\), also in \(U_C\setminus S\). Contradiction.
+
+Therefore at most one selected witness can lie in the gadget; at least six of the seven selected witness K5s are isolated components, including at least five of the six B-labelled witnesses. The intersection with the at-least-\(P_C-45\) all-block blocker components is at least
+\[
+\max(0,6+(P_C-45)-10)=\max(0,P_C-49).
+\]
+So \(P_C\ge50\) guarantees at least one selected witness component extends to a monochromatic K12, and \(P_C=51\) guarantees at least two. This does not contradict the target statement. The original \(K_{145}\) theorem and the global eleven-color ledger remain OPEN / NOT_CERTIFIED.
