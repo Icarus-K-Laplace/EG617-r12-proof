@@ -55,7 +55,7 @@ def enumerate_profiles():
                 profiles.append(
                     (n7, high_qs, tuple(sorted(b_tuple)), a, eps_t, m, A)
                 )
-    return sorted(profiles, key=lambda p: (p[0], p[1], p[2], p[3]))
+    return sorted(set(profiles), key=lambda p: (p[0], p[1], p[2], p[3]))
 
 
 def partitions_of_m_into_three(m, cap=4):
