@@ -196,3 +196,12 @@
 - With at least \(P_C-45\) components represented by exact size-five blocker rows in all seven outer blocks, inclusion-exclusion over the ten isolated components gives at least \(\max(0,P_C-49)\) selected witness components also represented in every outer block.
 - Consequence: \(P_C\ge50\) forces at least one selected witness component to extend to a monochromatic K12; \(P_C=51\) forces at least two. This is not itself a contradiction. Do not infer that an external vertex having one C-edge into a monochromatic K12 is impossible; only \(d_C(z,K_{12})\le1\) is certified.
 - Updated LABELLED_WITNESS_CAPACITY_THEOREM.md and canonical state. EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-25 — exact factorization supplies ten component-backed shell witnesses
+
+- New theorem: every isolated K5 component of an exact-129 color avoids S and must contain at least one vertex outside H, because \(\alpha(H)\le4\). Every such outside-H vertex lies in \(B\cup\{p\}\), and any two vertices of \(B\cup\{p\}\) are target-adjacent (B is a target clique and p is adjacent to all of B). A C-colored K5 component can therefore contain at most one outside-H vertex; it contains exactly one.
+- Thus all ten isolated components are shell witnesses \(\{\lambda_\ell\}\cup Q_\ell\) with \(Q_\ell\subseteq H\), and their ten distinct labels include at least nine B labels. This is stronger than the six-component floor for a particular seven-witness minimum-support family.
+- Let \(U_{\rm comp}\) be the union of all ten component four-sets per exact color. It has \(|U_{\rm comp}|\ge40\). For \(m=10\), support size 40 is impossible: 100 edge-disjoint K4s require 600 edges in the complement core, while the 284-edge degree ledger and Turán lower bound \(e(H[W])\ge3\) give at most 581. Hence \(m=10\Rightarrow |U_{\rm comp}|\ge41\).
+- At \(m=10, |U_{\rm comp}|=41\), every exact color omits exactly one support point, and the 100 component K4s account for 600 of at most 610 complement edges. The resulting near-decomposition / partial-transversal-design problem is now explicit.
+- This is a separate high-support route. It does not silently replace the seven-witness \(v=29/31\) support used by the current terminal analysis. \(m=8,9\) full-component support and the \(m=10,v\ge41\) terminal remain open.
