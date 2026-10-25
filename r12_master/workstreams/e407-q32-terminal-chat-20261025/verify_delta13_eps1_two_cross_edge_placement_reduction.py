@@ -53,4 +53,4 @@ print("DELTA13_EPS1_TWO_CROSS_EDGE_PLACEMENT_REDUCTION_ARITHMETIC_OK")
 for name, (incidence, claimed) in expected.items():
     print(name, "incidence=", incidence, "max_capacity=", claimed)
 print("Closed: different component-pair placements and both K5-K5 placements.")
-print("Open: K4-K4 matching/star; K4-K5 disjoint/star at either endpoint side.")
+print("The formerly open same-pair placements are closed in DELTA13_EPS1_TWO_CROSS_EDGE_TERMINAL_CLOSURE.md.")
