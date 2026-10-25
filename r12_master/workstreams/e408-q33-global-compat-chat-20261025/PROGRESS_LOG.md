@@ -239,3 +239,17 @@ This correction supersedes the two incorrect profile strings in the preceding lo
 - Corrected active incidence ledger: 1a41ecfc88e25207d0f52e52d43e4a48a76b4dc6
 - Corrected high-profile theorem: d55d0e43a1b17fd9ef2b5dd7971560f1dcc4025d
 - Updated proof dependency map: 94f0edd87b05f28d271bfc611fbf882ecb8f8cb0
+
+
+## 2026-10-25 continuation — independent replay and \(P_C=49\) boundary screen
+
+- Independently reimplemented the common-star gadget DP in the in-session Python runtime. Reproduced all four gadget K5 counts (4,3,3,4), all budget-pair counts \((3,31,148,438,940)\) or \((2,22,112,352,794)\), all 72 profile/form checks for total budget at most 12, exactly 2,405,684 DP transitions, and maximum 2,625 reachable intersection states. No empty common-star intersection occurred. This independently confirms the arithmetic reported by the committed verifier; it does not verify the upstream row/gadget theorems.
+- Extended the same DP to the \(R_C=13\) boundary \(P_C=49\), restricted to seven positive budgets with maximum at most five. There are nine profiles. Across four gadget normal forms, 36 checks and 5,021,134 transitions found exactly two profile families without a common-star certificate: \((4,4,1^5)\) for gadget forms \(b=1,4\), and \((4,3,2,1^4)\) for \(b=2,3\).
+- For five \(R_C=13\) profiles whose every pair satisfies \(r_i+r_j\le6\), the common-star lemma and \(p_i\le r_i-1\) force all selected rows pairwise C-adjacent. The seven complements then give a \(K_{12}\); the six-point omission count forces one outside vertex to have at least two C-edges into it, contradicting the valid star-capacity bound \(d_C(z,K_{12})\le1\).
+- The five closed profiles are \((2^6,1)\), \((3,2^4,1^2)\), \((3^2,2^2,1^3)\), \((3^3,1^4)\), and \((4,2^3,1^3)\).
+- The six remaining \(P_C=49\) profiles are \((4,3,2,1^4)\), \((4,4,1^5)\), \((5,2^2,1^4)\), \((5,3,1^5)\), \((6,2,1^5)\), and \((7,1^6)\). These split into two missing-common-star cases, two incidence-sensitive high-pair-sum cases, and two high-budget row cases.
+- Added R12_P49_COMMON_STAR_SCREEN.md and verify_p49_common_star_screen.py. The overall P49_BOUNDARY_EXCLUSION.md remains NOT CERTIFIED; no \(P_C\le48\) claim is made. E408 Q33 and EG617(\(r=12\)) remain OPEN / NOT_CERTIFIED.
+
+### Commits
+- P49 common-star finite screen: 84a59a5bcab57a8536c8d3a45af481f46427c6e3
+- P49 profile analysis: 44f40e49a6ca84893c2cd26ef31b9dfd9c6b0875
