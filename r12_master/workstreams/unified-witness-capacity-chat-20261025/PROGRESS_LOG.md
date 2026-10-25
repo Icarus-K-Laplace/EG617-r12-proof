@@ -85,3 +85,11 @@
 - This closes the prior local gap where component rows could have been paired to exceptional rows. Every missing same-component label alignment now consumes at least one duplicate unit \(d_{ij}(C)\); summing gives \(\sum m_{ij}(C)\le P_C\) over low-budget block pairs.
 - Independent Python replay passed over all 25 integer pairs \(r_i,r_j\in[1,5]\), including the four sum-seven boundary pairs.
 - Remaining gap: the duplicate budget \(P_C\) can still be large enough to pay for all possible mismatches; no terminal has been eliminated by this result alone.
+
+
+## 2026-10-25 — scalar budget relaxation identifies the next gap
+
+- Constructed an explicit integer relaxation satisfying all aggregate seven-block budget identities: each color has \(P_C+R_C+s_C=62\), total \((\sum P,\sum R,\sum s)=(252,427,3)\), every block has \(\sum_C r_i(C)=61\), and every block pair has \(\sum_C d_{ij}(C)=12\).
+- In the relaxation, all eight exact colors have \(P_C=9,R_C=53,s_C=0\) and every block row parameter \(r_i(C)\) is 7 or 8. The three nonexact colors absorb \(P=(59,60,61)\), \(R=(2,1,0)\), and \(s=(1,1,1)\).
+- Verified an explicit 8-by-7 row-parameter matrix and an 11-by-21 duplicate matrix; all sums match exactly and all \(d_{ij}(C)\) are within [0,12].
+- This is not a graph realization. It proves only that aggregate budgets cannot force an exact color to \(P_C\ge36\) or trigger the component-matching theorem. The missing step is a structural inequality linking nonexact-color residual graphs / witness labels to outer-block duplicate assignments.
