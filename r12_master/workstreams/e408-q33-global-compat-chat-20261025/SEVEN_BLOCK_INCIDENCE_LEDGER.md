@@ -396,7 +396,7 @@ d_C(z,K_{12})\le1,
 \]
 not \(d_C(z,K_{12})=0\). A single external \(C\)-edge is allowed.
 
-Consequently, any branch whose only contradiction is “a monochromatic \(K_{12}\) has one external \(C\)-edge” is invalid. This affects the former claims \(P_C\le49\), \(P_C\le48\), and the former \(P_C=50,\ r_i(C)=6\) exclusion. The detailed drafts are preserved in \`ARCHIVE_UNCERTIFIED_OUTER_CAPS_20261025.md\`, \`P49_BOUNDARY_EXCLUSION.md\`, and \`P48_BOUNDARY_EXCLUSION.md\`; they must not be cited as proved results until every such step is repaired, for example by forcing at least two external \(C\)-edges from the same outside vertex or by an independent valid contradiction.
+Consequently, any branch whose only contradiction is “a monochromatic \(K_{12}\) has one external \(C\)-edge” is invalid. The **former proofs** of \(P_C\le49\), \(P_C\le48\), and the former \(P_C=50,\ r_i(C)=6\) exclusion are withdrawn. The local \(P_C=50,\ r_i(C)=6\) corner is now independently repaired by Section 14, and the universal conditional cap \(P_C\le49\) is re-established by the common-star theorem in Section 16. The stronger cap \(P_C\le48\), which would exclude \(P_C=49\), remains **NOT CERTIFIED**. The detailed historical drafts are preserved in \`ARCHIVE_UNCERTIFIED_OUTER_CAPS_20261025.md\`, \`P49_BOUNDARY_EXCLUSION.md\`, and \`P48_BOUNDARY_EXCLUSION.md\`; do not cite those drafts as dependencies.
 
 Sections 1–12 remain the current conditional outer-row and gadget-normal-form results, subject to their own contracts. The inner-core theorem \`R12_E408_Q33_S0_12_EXCLUSION.md\` is separate: its \(K_{12}\) contradictions are cliques inside \(H\) and use \(\omega(H)\le11\), not the withdrawn outer isolation claim.
 
@@ -410,7 +410,7 @@ The crucial correction is the **double-star** condition. The verifier produces a
 
 A read-only sibling result also excludes the local corner \(P_C=49,\ r_i=6\) by the same double-star principle: workstream/r12-unified-witness-capacity-20261025, OUTER_EXCEPTIONAL_ROW_COUPLING.md §12, verifier blob 23cd4ef874faadbd5931c5e3553a1a55415c7a79. That result is local only.
 
-**Scope firewall:** these two local \(r_i=6\) corners do not establish the universal \(P_C\le49\) cap. The \(P_C=50\) profiles \((5,2,1^5)\) and \((4,3,1^5)\), the other \(P_C=49\) profiles, the claimed \(P_C=48\) boundary, and the aggregate eleven-color ledger remain open. The earlier single-edge proofs remain archived and uncertified.
+**Scope firewall:** the local \(r_i=6\) theorem alone does not establish a universal cap. Section 15 separately closes the \(P_C=50\) profiles \((5,2,1^5)\) and \((4,3,1^5)\); Section 16 closes the four remaining \(P_C=50\) profiles and all \(P_C\ge51\) profiles, giving the conditional colorwise cap \(P_C\le49\). The stronger \(P_C\le48\) boundary, all \(P_C=49\) profiles, and the aggregate eleven-color ledger remain open. The earlier single-edge proofs remain archived and uncertified.
 
 
 ## 15. Repaired double-star exclusions for \(P_C=50\) profiles \((5,2,1^5)\) and \((4,3,1^5)\)
@@ -423,7 +423,26 @@ The committed verifier verify_p50_remaining_high_profiles.py passed 1,656,848 ba
 
 Combining Sections 14–15, the profiles \((6,1^6)\), \((5,2,1^5)\), and \((4,3,1^5)\) are excluded at \(P_C=50\). The only remaining \(P_C=50\) profiles have \(\max_i r_i\le4\):
 \[
-(4,2,2,2,1^3),\quad (3,3,2,1^4),\quad
-(3,2,2,2,2,1^2),\quad (2^5,1^2).
+(4,2,2,1^4),\quad (3,3,2,1^4),\quad
+(3,2,2,2,1^3),\quad (2^5,1^2).
 \]
-These force ten component-labelled \(K_{12}\)'s but are not yet contradicted by a valid star-capacity argument. The universal \(P_C\le49\) cap remains **NOT CERTIFIED**.
+The profile list above has been arithmetically corrected: each listed tuple sums to 12. These four low profiles are excluded by the common-star theorem in Section 16; the conditional colorwise cap \(P_C\le49\) is now established. The stronger \(P_C\le48\) cap remains **NOT CERTIFIED**.
+
+
+## 16. Conditional colorwise cap \(P_C\le49\) via common-star gadget certificate
+
+The new theorem R12_HIGH_P_COLOR_CAP_COMMON_STAR.md and verifier verify_high_p_common_star.py close the four remaining \(P_C=50\) profiles and all profiles with \(P_C\ge51\), without using the invalid isolation inference.
+
+The finite common-star property is: for every seven-block profile with \(1\le r_i\le5\), \(\sum_i r_i\le12\), and every choice of allowed disjoint row-complement pairs, there are a gadget \(K_5\) \(D\) and a vertex \(w\notin D\) such that each block has a complement \(G_i\) containing \(w\) and disjoint from \(D\). The exact checker covers 18 sorted budget profiles and four gadget normal forms, 72 profile/form cases and 2,405,684 DP transitions, with no empty common-candidate intersection.
+
+When \(p_i+p_j\le4\) for every pair of selected no-component rows, the common point \(w\) forces pairwise \(C\)-adjacency by the pairwise-blocker lemma. Together with \(D\), the seven rows form a \(C\)-colored \(K_{12}\). Since each of the seven complements is a proper subset of the six-point set \(U_C\setminus D\), the seven omission sets have total size at least seven, so some outside gadget vertex is omitted by at least two selected row complements. It is therefore \(C\)-adjacent to two vertices of the \(K_{12}\), contradicting the valid star-capacity bound \(d_C(z,K_{12})\le1\).
+
+For \(P_C\ge51\), \(\sum r_i\le11\), so \(r_i+r_j\le6\) and \(p_i+p_j\le4\) for all pairs. For \(P_C=50\) with \(\max r_i\le4\), the four correct profiles are \((4,2,2,1^4)\), \((3,3,2,1^4)\), \((3,2,2,2,1^3)\), and \((2^5,1^2)\); their pairwise budgets likewise satisfy \(r_i+r_j\le6\). The remaining three \(P_C=50\) profiles are already excluded by the independent double-star theorems in Sections 14–15.
+
+Thus, under the retained exact-129 factor, seven-block equality, row-profile, gadget-normal-form, and pairwise-blocker contracts,
+\[
+\boxed{P_C\le49\quad\text{for every exact-129 color }C.}
+\]
+This does not exclude \(P_C=49\), does not establish \(P_C\le48\), and does not close the aggregate eleven-color ledger or EG617(\(r=12\)).
+
+Verifier commit: c413b1065e9926d00ad1319f2e8d8a815e4850b5. Theorem commit: 04b5ec6f9a1e118faee2216208e1f13361fb8d43.
