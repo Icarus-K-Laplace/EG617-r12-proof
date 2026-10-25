@@ -42,8 +42,4 @@ The checker is verify_p49_r6_r2_double_star.py. It enumerates:
 
 This is exact gadget/incidence verification, conditional on the upstream row classifications and universal-\(D\) contract.
 
-**Conclusion:** the \(P_C=49\) profile \((6,2,1^5)\) is excluded under the stated contracts. Combined with R12_P49_LOW_BUDGET_PROFILES_EXCLUSION.md, the only remaining \(P_C=49\) profile is
-\[
-\boxed{(7,1^6).}
-\]
-The full \(P_C=49\) boundary and EG617(\(r=12\)) remain **OPEN / NOT_CERTIFIED** until the \(r=7\) profile is closed.
+**Conclusion:** the \(P_C=49\) profile \((6,2,1^5)\) is excluded under the stated contracts. Combined with R12_P49_LOW_BUDGET_PROFILES_EXCLUSION.md, the remaining unresolved cases are the all-component-edges-present branches of \((4,4,1^5)\) and \((4,3,2,1^4)\), plus the profile \((7,1^6)\). The full \(P_C=49\) boundary and EG617(\(r=12\)) remain **OPEN / NOT_CERTIFIED**.
