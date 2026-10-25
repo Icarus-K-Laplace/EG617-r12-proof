@@ -48,7 +48,7 @@ The entire \(\delta=15\) four-partite branch is now EXCLUDED by DELTA15_FOUR_PAR
 
 
 ## 3A. Delta-14 cover-capacity result
-The proof DELTA14_EPS0_K3K4K5K6_COVER_CAPACITY.md excludes the \(\delta=14,\epsilon_U=0\) W-profile \(K_3\dot\cup K_4\dot\cup K_5\dot\cup K_6\). Together with DELTA14_EPS0_K4_PROFILE_EXCLUSIONS.md, this removes three of the four \(\epsilon_U=0\) W profiles. The only surviving profile in that row is \(K_3\cup K_5^3\) with one W-cross-edge. This remains a common-core structural result; it does not close any of templates A–E.
+The proofs DELTA14_EPS0_K4_PROFILE_EXCLUSIONS.md, DELTA14_EPS0_K3K4K5K6_COVER_CAPACITY.md, and DELTA14_EPS0_K3K5K5K5_CROSS_EDGE_CLOSURE.md now exclude all four W profiles in the \(\delta=14,\epsilon_U=0\), four-partite row. The last profile \(K_3\cup K_5^3\) with one W-cross-edge is excluded by a common-neighbour capacity bound of 27, below \(|U|=29\). This remains a common-core structural result; it does not close any of templates A–E.
 
 ## 4. Template-by-template status
 
@@ -65,7 +65,7 @@ The proof DELTA14_EPS0_K3K4K5K6_COVER_CAPACITY.md excludes the \(\delta=14,\epsi
 
 - No one of the five templates is closed by this theorem.
 - The \(\delta=15\) non-four-partite case is **excluded**: the Kang–Pikhurko equality reduction and incompatible (x,y) degrees into (W) rule out all three base profiles.
-- At \(\delta=14,\epsilon_U=0\), three four-partite W profiles are now excluded; the \(K_3\cup K_5^3\) plus one-cross-edge profile remains. The \(\epsilon_U=1,2\) and non-four-partite branches remain open. The \(\delta=15\) four-partite branch is excluded.
+- At \(\delta=14,\epsilon_U=0\), all four four-partite W profiles are excluded. The \(\epsilon_U=1,2\) and non-four-partite branches remain open. The \(\delta=15\) four-partite branch is excluded.
 - The \(\delta\le14\) non-four-partite cases remain open.
 - No proof is claimed that the residual incidence design can or cannot be realized.
 - E408 Q32/Q33 and the original \(K_{145}\)-to-T61 bridge are outside this line's closure claim.
