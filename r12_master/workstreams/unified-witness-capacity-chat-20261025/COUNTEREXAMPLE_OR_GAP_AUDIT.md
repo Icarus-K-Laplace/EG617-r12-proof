@@ -286,3 +286,15 @@ For \(e_W=2\), \(\alpha(H[W])\le4\) forces two disjoint edges and an independent
 For \(e_W=3\), \(c_O\le4\) forces \(\alpha(H[W])\le3\), hence \(H[W]=3K_2\). At least four omitted points have zero W-degree. Every residual edge \(uv\in R[O]\) with \(c_u=0\) must have \(c_v\ge2\) and \(N_H(v)\cap W\) contain a whole matching edge; otherwise an independent transversal of the three W-edges extends \(\{u,v\}\) to a forbidden independent five-set. Therefore at most two omitted points have W-degree at least two. The exact budget also gives \(e_R[O]\ge5+c_O+\epsilon_N\).
 
 **Remaining single blocker:** reconcile the high-multiplicity residual degrees \(r_o=3t_o-2+c_o-\epsilon_o\) with this \(3K_2\) incidence kernel and the bound \(r_N=4-c_O-\epsilon_O-2\epsilon_N\). The cases \(k=9,10\), the separate minimum-support boundary, the aggregate color ledger, and the K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## 20. Unique support-41 \(k=8,e_W=3\) terminal
+
+Lemma 14.7 eliminates the \((2,2,1^6)\) profile and reduces \((3,1^7)\) to the unique terminal
+\[
+c_x=2,\quad c_Y=0,\quad \epsilon_Y=\epsilon_N=0,\quad
+R=\text{a star at }x\text{ with leaves }Y\text{ and }2-\epsilon_x\text{ vertices of }N.
+\]
+Here \(H[W]=3K_2\), \(\epsilon_x\in\{0,1,2\}\), \(H[Y]=K_7\), and each \(y\in Y\) has six neighbors in the 33-point \(N\).
+
+The residual-degree proof is exact: \(r_x=e_R=9-\epsilon_x\); each of seven singleton omitted points has \(r_y=1\); the remaining \(r_N=2-\epsilon_x\) residual edges are all incident to x. The arithmetic verifier passes the \(c_o\in\{0,1\}\) exclusion for all high-multiplicity points and the double-point degree sum. The final star terminal itself remains OPEN; no graph-level contradiction or original EG617 proof is claimed.
