@@ -464,3 +464,28 @@ This is a universal boundary inequality: it applies whether L is four-partite or
 \delta\ge3.
 \]
 It still does not eliminate \(\delta=3,\ldots,16\) or close E407 Q32.
+
+
+## 15. E408 Q33 universal boundary strengthened to S0 >= 14
+
+The new file R12_E408_Q33_S0_13_EXCLUSION.md independently excludes the remaining equality profile S0=13 in the 31-point / 56-witness minimum-support branch. Combined with the audited universal S0>=12 theorem from the witness-packing sibling, this gives
+\[
+\boxed{S_0=\epsilon_U+2\delta\ge14,\qquad \delta+\epsilon_U\le17.}
+\]
+No four-partiteness assumption is used. The proof keeps the exact-129 labels through the 56 pairwise-linear witness sets and uses:
+- the unique seven-point transversal T and its eight triple partitions of R=U\T;
+- at most three distinct R-only 8-transversals, with any three necessarily partitioning R;
+- a multiplicity cap of four for each R-only neighborhood;
+- a finite 60-case enumeration of W-neighborhood degrees and T-incidences;
+- forced K12 contradictions from the clique structure of any three-part partition.
+
+The arithmetic/profile verifier verify_e408_s0_13_profiles.py independently reproduces all 60 labelled parameter cases and the bucket counts m=10:6, m=9:24, m=8:22, m=7:8. Its checks are arithmetic only, not a graph-realization certificate.
+
+Sibling refresh, read-only:
+- E408 Q33 global compatibility head: 0cb2ff3968f005c9cb255958df7c02b220678701; its universal S0=12 exclusion is in R12_E408_Q33_S0_12_EXCLUSION.md.
+- Emergency sprint head: f4c3b06891d29238d4f9cca2588f442004b6dc97; four-partite E408 Q33 has the stronger conditional S0>=22 theorem.
+- E407 Q32 terminal head: 79c1086efca893fad8933210a92a432457232410; several delta=14..16 subcases are closed, but delta<=13 and the five shell templates remain open.
+- E408 Q32 excess-six head: a0ba6db26c7e8b00a4217dcbcbf298895dff93ce; the 285-edge core has support v>=44, with a strict but unresolved v=44 terminal.
+- Unified witness-capacity head: 9935e0d2343fc08d9e65d51ff495cfb260d6de95; omission-capacity and label-transfer gaps remain.
+
+Status firewall: E408 Q33 S0>=14 applies only to the minimum-support v=31 / 56-witness boundary. The four-partite subcase is stronger (S0>=22). Larger supports, E407 Q32, E408 Q32, and the T61-to-K145 bridge remain OPEN / NOT_CERTIFIED.
