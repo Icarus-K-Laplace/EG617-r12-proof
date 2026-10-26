@@ -231,3 +231,10 @@ The remaining no-transversal all-q=8 system has an exact omission-set descriptio
 The arithmetic verifier passed 30 integer inequality states and the pairs (epsilon_U,delta)=(0,7),(2,6),(4,5). This is a structural reduction only; S0=14 remains OPEN.
 
 Full EG617(r=12) remains OPEN / NOT_CERTIFIED. No sibling branch was modified.
+
+
+## Round 8 — independent-four-set rigidity (2026-10-26)
+
+Added the exact condition that every independent four-set in W dominates all of U. In the S0=14 all-q=8 terminal, \(e(H[W])\in\{32,33,34\}\), so Caro–Wei gives \(\alpha(H[W])\ge4\); since \(\alpha(H)\le4\), there are independent four-sets. Each such set has four U-neighborhoods of size eight covering all 31 U-vertices, with total incidence 32. Therefore exactly one pair shares a single U-neighbor, and all other pairs have disjoint U-neighborhoods.
+
+The arithmetic checks pass, including the three possible \((\epsilon_U,\delta)\) pairs and the Caro–Wei margins. This narrows but does not close the all-q=8/no-transversal terminal. EG617(r=12) remains OPEN / NOT_CERTIFIED.
