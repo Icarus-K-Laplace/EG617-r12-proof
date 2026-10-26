@@ -218,3 +218,16 @@ The S0=13 exclusion was audited before retaining its conditional status. The the
 The arithmetic enumeration was replicated in-session: 60 labelled parameter cases, with m=10:6, m=9:24, m=8:22, m=7:8; all arithmetic assertions passed. This is not a graph-realization certificate. Under the stated core/exact-129 contracts, the inherited universal S0>=12 lower bound, and the separate universal S0=12 exclusion, the repaired conditional result is \(S_0\ge14\), hence \(\delta\ge5\), for the minimum-support E408 Q33 boundary only.
 
 Full EG617(r=12) remains OPEN / NOT_CERTIFIED. No sibling branch was modified.
+
+
+## Round 7 — S0=14 equality terminal narrowed (2026-10-26)
+
+Created R12_E408_Q33_S0_14_NO_SEVEN_TRANSVERSAL.md and its arithmetic verifier. Under the retained core/exact-129/transversal contracts, S0=14 cannot have any seven-point transversal T: a realized q=7 witness forces a T, then the T-complete clique and T-incidence sum force at least 6-(k+a) high b=7 vertices, which join that clique to exceed omega(H)<=11. If T exists without a q=7 witness, the multiplicity cap and T-type clique force a K12. Therefore all q_w=8 and no seven-point transversal exists.
+
+The remaining no-transversal all-q=8 system has an exact omission-set description. For each color c, X_c is its three omitted U-vertices, each W-neighborhood meets X_c in at most one point, sum_u rho_u=24 for rho_u=8-c_u, and
+\[
+\tau_w=\sum_{u\in N_U(w)}\rho_u,\qquad d_H(u,W)=6-3\rho_u+j_u+\epsilon_u.
+\]
+The arithmetic verifier passed 30 integer inequality states and the pairs (epsilon_U,delta)=(0,7),(2,6),(4,5). This is a structural reduction only; S0=14 remains OPEN.
+
+Full EG617(r=12) remains OPEN / NOT_CERTIFIED. No sibling branch was modified.
