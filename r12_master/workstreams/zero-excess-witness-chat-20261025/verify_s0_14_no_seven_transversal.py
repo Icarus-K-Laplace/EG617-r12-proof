@@ -42,6 +42,13 @@ def main():
     assert 7 + 4 == 11
     assert 8 + 4 == 12
 
+    # Independent-four-set rigidity: e(W) in {32,33,34}, so Caro-Wei
+    # forces alpha(H[W]) >= 4; every independent 4-set covers U with 32
+    # incidences over 31 vertices, leaving exactly one repeated incidence.
+    assert {34 - eps_u // 2 for eps_u in (0, 2, 4)} == {32, 33, 34}
+    assert all(256 / (2 * e_w + 16) > 3 for e_w in (32, 33, 34))
+    assert 4 * 8 - 31 == 1
+
     # All-q=8 terminal: total omission count and degree ledger.
     assert 8 * 31 - 56 * 4 == 24
     for eps_u, delta in feasible:
@@ -49,7 +56,7 @@ def main():
         assert 6 * 31 - 3 * 24 + 2 * delta + eps_u == 128
 
     print("E408_Q33_S0_14_NO_SEVEN_TRANSVERSAL_ARITHMETIC_OK")
-    print("30 integer inequality states, three excess/delta pairs, and omission/degree identities checked.")
+    print("30 integer inequality states, three excess/delta pairs, omission/degree identities, and independent-four-set rigidity checked.")
     print("Scope: arithmetic checks only; analytic clique/independence arguments remain in the theorem note.")
 
 
