@@ -150,7 +150,7 @@ Read-only sibling heads checked:
 - unified witness capacity: 9935e0d2343fc08d9e65d51ff495cfb260d6de95
 - emergency sprint: f4c3b06891d29238d4f9cca2588f442004b6dc97
 
-Added R12_E408_Q33_S0_13_EXCLUSION.md and verify_e408_s0_13_profiles.py. The intended result is to exclude S0=13 in the 31-point / 56-witness minimum-support E408 Q33 boundary, conditional on the registered 47-core / 284-edge / alpha<=4 / omega<=11 contract, exact-129 factor, and prior universal S0>=12 theorem. The finite profile enumerator has 60 labelled cases, bucketed m=10:6, m=9:24, m=8:22, m=7:8.
+Added R12_E408_Q33_S0_13_EXCLUSION.md and verify_e408_s0_13_profiles.py. The intended result is to exclude S0=13 in the 31-point / 56-witness minimum-support E408 Q33 boundary, conditional on the registered 47-core / 284-edge / alpha<=4 / omega<=11 contract, exact-129 factor, inherited universal S0>=12 lower bound, and the separate universal S0=12 exclusion. The finite profile enumerator has 60 labelled cases, bucketed m=10:6, m=9:24, m=8:22, m=7:8.
 
 ## Round 6 — independent proof audit and corrections (2026-10-26)
 
@@ -160,7 +160,7 @@ Before retaining the S0=13 exclusion, an independent audit found and repaired th
 2. **High-neighborhood incidence bound:** the correct pair-counting conclusion is \(|Y\cap S_i|\le q_y-7\), where \(Y=N_H(y)\cap R\) hits the \(7-b_y\) partitions missed by y. The previous displayed \(1+b_y\) bound was invalid. The q=10,b=1 case is now handled together with q=10,b=2 by the independent-five/W-degree contradiction.
 3. **Two realized neighborhoods:** the previous special-incidence argument for m=8,7 was not valid. It is replaced by the multiplicity cap \(m_i\le4\): one realized set is impossible, and two realized sets have multiplicities (4,4) or (4,3), so a multiplicity-four clique contradiction follows using the complement transversal.
 
-The unsupported claim \(\delta+\epsilon_U\le17\) has been removed. The retained conditional conclusion is
+The universal S0=13 exclusion does not derive an upper bound on \(\delta+\epsilon_U\); the existing \(\delta+\epsilon_U\le17\) bound applies only in the separately proved four-partite subcase. The retained conditional conclusion is
 \[
 \boxed{S_0=\epsilon_U+2\delta\ge14,\qquad \delta\ge5.}
 \]
