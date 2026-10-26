@@ -359,3 +359,14 @@ Added Lemma 14.4 to M10_SUPPORT41_OMISSION_FLOOR.md and the arithmetic-only veri
 The arithmetic verifier checked all 25 nonnegative integer allocations of the four excess units: 24 give a cover bound below 33, and the sole equality allocation is contradicted by \(15>11\). This verifier is arithmetic-only; the set-cover classification and graph contradiction are proved analytically in Lemma 14.4.
 
 **Scope:** this closes only the full-component support-41 terminal \(k=8,e_W=4\), conditional on the exact-129 component factorization and the 284-edge core contract. Remaining in this route: \(k=8,e_W\in\{2,3\}\) and \(k\in\{9,10\}\); also the separate seven-witness support boundary, \(m=8,9\) full-component supports, aggregate eleven-color ledger, and \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED. The 285-edge E408 Q32 contract is distinct and receives no automatic transfer.
+
+
+## 2026-10-26 — support-41 \(k=8\) endpoint compression
+
+Added Lemma 14.5 and Lemma 14.6 to M10_SUPPORT41_OMISSION_FLOOR.md, plus verify_m10_support41_endpoint_budget.py.
+
+- **\(e_W=2\) is impossible:** since \(\alpha(H[W])\le4\), the two edges in \(W\) must be disjoint, so \(\alpha(H[W])=4\). Every one of the eight omitted points must then have at least one \(H\)-neighbor in \(W\), forcing \(c_O\ge8\); the exact ledger gives \(c_O=6-\epsilon_O-2\epsilon_N-r_N\le6\).
+- **\(e_W=3\) reduces to \(H[W]=3K_2\):** the exact ledger gives \(c_O\le4\). If \(\alpha(H[W])\ge4\), all eight omitted points need positive W-degree, impossible. The only six-vertex, three-edge graph with independence number at most three is a matching of three edges.
+- In the remaining \(e_W=3\) kernel, at least four omitted points have zero W-degree, at most two omitted points can have W-degree at least two, and any residual \(R[O]\)-edge incident to a zero-W-degree point must meet a vertex whose W-neighborhood contains an entire matching edge. Also \(e_R[O]\ge5+c_O+\epsilon_N\).
+
+The endpoint arithmetic verifier passed all 32 feasible integer rows for \(e_W=2\) and all 22 feasible rows for \(e_W=3\). **Current support-41 \(k=8\) frontier:** only \(e_W=3\) remains, in the stated \(3K_2\) incidence kernel. The high-multiplicity residual-degree contradiction in that kernel is the next single blocker. \(k=9,10\) and all other R12/global obligations remain open.
