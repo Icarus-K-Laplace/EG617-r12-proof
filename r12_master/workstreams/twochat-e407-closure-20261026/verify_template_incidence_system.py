@@ -58,14 +58,13 @@ def main():
     # to both b and s would yield an independent six-set.
     assert 4 + 2 == 6
 
-    # In templates A/C, h=n3>=6, and c_S=3h+n1<=2h+10<4h.
-    # Each non-hub-complete component witness needs at least h distinct B rows.
-    # Six disjoint witnesses therefore include at least three hub-complete ones.
+    # In A/C, the row arithmetic gives c_S <= 2h+10 < 4h for h>=6.
+    # This scalar inequality alone does not bound non-hub-complete witnesses:
+    # a component quadruple is anticomplete only to its own B label, not to
+    # every B row missed by a hub. The attempted stronger implication was withdrawn.
     for h in range(6, 11):
         c_s_upper = 2 * h + 10
         assert c_s_upper < 4 * h
-        noncomplete_witnesses_max = 3
-        assert 6 - noncomplete_witnesses_max == 3
 
     print("E407_FIVE_TEMPLATE_LABELLED_INCIDENCE_ARITHMETIC_OK")
     for template in "ABCDE":
@@ -75,7 +74,6 @@ def main():
             f"hub-hit incidences>= {results[template][2]}, "
             f"total shell-row hits>= {results[template][3]}"
         )
-    print("A/C component result: at least 3 of 6 no-S witnesses/color are hub-complete.")
     print("Scope: arithmetic only; no graph-realization or template-exclusion certificate.")
 
 
