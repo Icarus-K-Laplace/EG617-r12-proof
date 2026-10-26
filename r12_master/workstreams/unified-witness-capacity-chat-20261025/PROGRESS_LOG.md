@@ -245,3 +245,12 @@ Rechecked Lemma 14.3 against possible residual edges from omitted points into N.
 - Thus \(N\) is covered by \(X_w\cup X_{BB}\cup X_{AAA}\cup X_7\), with exact upper bounds \(11+\epsilon_w\), \(\lfloor(22+\epsilon_B)/2\rfloor\), \(1\), and \(6\). All excess allocations contradict \(|N|=33\), except the sole boundary \(\epsilon_x=0,\epsilon_w=4,\epsilon_A=\epsilon_B=0\); there equality forces \(X_w\) to have 15 vertices, all adjacent to \(x\), while \(x\) has only 11 neighbors in \(N\).
 - Added verify_m10_support41_star_terminal.py. Local standard-library replay passed all 25 integer allocations and identified exactly one boundary allocation, which the \(15>11\) degree contradiction closes.
 - Status update: every support-41 \(k=8,e_W=4\) terminal is now excluded (Lemma 14.3 handled \((2,2,1^6)\); Lemma 14.4 handles \((3,1^7)\)). The \(k=8,e_W=2,3\) and \(k=9,10\) cases remain open. No original EG617 closure is claimed.
+
+
+## 2026-10-26 — close \(e_W=2\); reduce \(e_W=3\) to \(3K_2\)
+
+- Lemma 14.5: with \(e_W=2\), \(\alpha(H[W])\le4\) forces the two W-edges to be disjoint, so W has an independent four-set. Every one of the eight omitted points must have positive W-degree, but the exact cross-edge budget gives \(c_O\le6\). Contradiction.
+- Lemma 14.6: with \(e_W=3\), \(c_O\le4\), so W cannot have an independent four-set; otherwise all eight omitted points need positive W-degree. The only three-edge graph on six vertices with independence number at most three is \(3K_2\).
+- In this matching kernel, at least four omitted points have zero W-degree. An \(R[O]\)-edge from a zero-W-degree point must go to a point whose W-neighborhood contains a full matching edge; therefore at most two omitted points can support such edges. The exact residual budget gives \(e_R[O]\ge5+c_O+\epsilon_N\).
+- Added verify_m10_support41_endpoint_budget.py. Local arithmetic replay PASS: 32 feasible budget rows for \(e_W=2\), 22 for \(e_W=3\).
+- The full-component support-41 \(k=8\) branch is now narrowed to \(e_W=3\), \(H[W]=3K_2\). The residual-degree contradiction remains open; no global R12 closure is claimed.
