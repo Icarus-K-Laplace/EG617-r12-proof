@@ -219,3 +219,10 @@
 ## 2026-10-26 — support-41 k=8 follow-up
 
 The k=8 omission patterns are (3,1^7) and (2,2,1^6). Both exclude the e_W=5 subcase. For pattern (3,1^7) at e_W=4, the exact subset inequality leaves a rigid terminal with one special omitted point, exactly one edge from it into W, and every residual complement edge incident to it. The induced graph on W is K3 disjoint union K2 disjoint union K1. This terminal remains OPEN, as do the other k=8 cases with e_W<=4 and k=9,10.
+
+
+## 2026-10-26 — close k=8, e_W=4, pattern (2,2,1^6)
+
+The omitted-point residual graph must cover every residual edge with the at-most-two omitted points that have H-neighbors in W. The two double-omitted points are forced to be these centers; the six single-omitted points have residual degree one. Their exact degree sum cannot match the two centers' required residual degrees, so the branch is impossible.
+
+Updated the support-41 theorem frontier: at k=8, e_W=5 is excluded; e_W=4 leaves only the (3,1^7) rigid star terminal; e_W=2,3 remain open. The full support-41 omission counts k=9,10 remain open too.
