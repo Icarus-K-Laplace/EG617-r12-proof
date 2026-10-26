@@ -75,7 +75,7 @@ Crucial firewall: the exact-129 no-S component witnesses are kept as separately 
 
 ## Round 3 proved refinements
 
-- **A/C component packing:** among the six B-labelled no-S component quadruples in each exact-129 color, at least three are hub-complete in templates A/C. Proof: if h=n3≥6 full B rows, each non-hub-complete quadruple must hit at least h distinct B rows; the six quadruples are disjoint, while the total B-to-core incidence is \(c_S=3h+n_1\le2h+10<4h\). Thus at most three of the six can be non-hub-complete. This gives at least 21 hub-complete component witnesses across the seven exact-129 colors. These are component witnesses, not automatically members of the 49-block support family.
+- **A/C component packing claim — WITHDRAWN in Round 5.** The cross-label implication was not justified; see PROOF_DEPENDENCY_AUDIT.md. The certified bound remains the high-k label-intersection floor from Theorem 4.2.
 - **Support omission–degree identity:** for \(r_u\) color classes omitting \(u\in U\) and \(x_u\) extra support-complement edges incident to u,
   \[
   \sum_U r_u=7,\quad \sum_U x_u=2\delta,\quad
