@@ -139,7 +139,9 @@ So \(e_W\in\{2,3\}\).
 
 If \(e_W=3\), (5) forces \(c_A=0\), \(\epsilon_{U\setminus A}=0\), and \(e_R[A]=3\). Thus \(A\) is an independent triple in \(H\), with no \(H\)-edges to \(W\). The graph \(H[W]\) has only three edges and therefore contains an independent pair; adjoining that pair to \(A\) contradicts \(\alpha(H)\le4\).
 
-Suppose \(e_W=2\). If \(e_R[A]=2\), (5) forces \(c_A=0\). The two edges of \(R[A]\) give an independent pair in \(H[A]\), and \(W\) has an independent triple; because \(c_A=0\), their union is an independent five-set. If instead \(e_R[A]=3\), then (5) gives \(c_A\le1\), while \(A\) is an independent triple in \(H\). Let \(Z\subseteq W\) consist of vertices having no \(H\)-neighbor in \(A\). The set \(Z\) must be a clique in \(H[W]\), or an independent pair in \(Z\) together with \(A\) would be an independent five-set. Since \(e_W=2\), every clique in \(H[W]\) has size at most two, so at least four vertices of \(W\) have an \(H\)-neighbor in \(A\). This requires \(c_A\ge4\), contradicting \(c_A\le1\).
+Suppose \(e_W=2\). If \(e_R[A]=2\), use the sharper bound \(\sum_{x\in A}r_x\le e_R+2\). It gives \(c_A+\epsilon_{U\setminus A}\le0\), hence \(c_A=0\). The two edges of \(R[A]\) give an independent pair in \(H[A]\), and \(W\) has an independent triple; since \(c_A=0\), their union is an independent five-set.
+
+If instead \(e_R[A]=3\), then (5) gives \(c_A\le1\), while \(A\) is an independent triple in \(H\). Let \(Z\subseteq W\) consist of vertices having no \(H\)-neighbor in \(A\). The set \(Z\) must be a clique in \(H[W]\), or an independent pair in \(Z\) together with \(A\) would be an independent five-set. Since \(e_W=2\), every clique in \(H[W]\) has size at most two, so at least four vertices of \(W\) have an \(H\)-neighbor in \(A\). This requires \(c_A\ge4\), contradicting \(c_A\le1\).
 
 All cases with \(k=7\) are impossible. Hence \(k\ge8\). \(\square\)
 
