@@ -537,3 +537,14 @@ The S0=14 terminal note now proves that for any independent four-set \(A\subset 
 Every witness block not containing u contributes one distinct P×Q pair. In each color omitting u there are seven such blocks; in each other color there are six, because the block containing u contributes a star pair \(\{u,v\}\). Thus the 56 blocks contribute \(7\rho_u+6(8-\rho_u)=48+\rho_u\) distinct pairs from a set of 49. Hence \(\rho_u\in\{0,1\}\). If rho=0 exactly one P×Q pair is absent from the witness family; if rho=1 every P×Q pair appears exactly once, so P and Q are anticomplete in H.
 
 The updated verifier checks these pair-count cases. This excludes any independent-four-set duplicated vertex with rho>=2, but does not yet eliminate the all-q=8 terminal.
+
+
+## 20. Pair-graph deficit identities in the S0=14 independent-four-set case
+
+For the duplicated vertex u in an independent four-set, the cross-pair graph \(B\subseteq K_{7,7}\) between \(P=S_1\setminus\{u\}\) and \(Q=S_2\setminus\{u\}\) is \(K_{7,7}\) when \(\rho_u=1\), and \(K_{7,7}\) minus one edge when \(\rho_u=0\).
+
+For each \(p\in P\cup Q\), define \(s_p=1\) if \(\{u,p\}\) occurs in a witness block, else zero. Then \(\deg_B(p)=8-\rho_p-s_p\). Hence:
+- \(\rho_u=1\): \(\rho_p+s_p=1\) for all 14 vertices. Each is either omitted once or is the unique star partner once, but not both.
+- \(\rho_u=0\): \(\rho_p+s_p=1\) except at the two endpoints of the unique missing cross pair, where it equals 2. Thus all other 12 vertices have \(\rho_p\le1\), and the two endpoints have \(\rho_p\le2\).
+
+These identities are added to the theorem note and arithmetic verifier. They are additional terminal constraints, not a contradiction.
