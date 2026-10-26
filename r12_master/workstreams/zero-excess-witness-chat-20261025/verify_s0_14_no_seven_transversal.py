@@ -49,6 +49,20 @@ def main():
     assert all(256 / (2 * e_w + 16) > 3 for e_w in (32, 33, 34))
     assert 4 * 8 - 31 == 1
 
+    # Cross-pair rigidity: for a duplicated U-vertex u in an independent
+    # four-set, each color omitting u contributes 7 distinct P x Q pairs;
+    # each other color contributes 6. There are only 49 possible pairs.
+    pair_counts = {rho: 7 * rho + 6 * (8 - rho) for rho in range(9)}
+    assert pair_counts == {rho: 48 + rho for rho in range(9)}
+    assert pair_counts[0] == 48 and 49 - pair_counts[0] == 1
+    assert pair_counts[1] == 49 and 49 - pair_counts[1] == 0
+    assert all(pair_counts[rho] > 49 for rho in range(2, 9))
+    # The two non-duplicated rows hit every witness block exactly once.
+    assert 8 * 7 == 56
+    # Their tau values are 8, and the duplicated pair has tau-sum 8+rho_u.
+    assert 8 + 8 + 8 == 24
+    assert 8 + 1 <= 16  # duplicated-pair tau sum is at most 9, not 16
+
     # All-q=8 terminal: total omission count and degree ledger.
     assert 8 * 31 - 56 * 4 == 24
     for eps_u, delta in feasible:
@@ -56,7 +70,7 @@ def main():
         assert 6 * 31 - 3 * 24 + 2 * delta + eps_u == 128
 
     print("E408_Q33_S0_14_NO_SEVEN_TRANSVERSAL_ARITHMETIC_OK")
-    print("30 integer inequality states, three excess/delta pairs, omission/degree identities, and independent-four-set rigidity checked.")
+    print("30 integer inequality states, three excess/delta pairs, omission/degree identities, independent-four-set rigidity, and rho<=1 cross-pair counts checked.")
     print("Scope: arithmetic checks only; analytic clique/independence arguments remain in the theorem note.")
 
 
