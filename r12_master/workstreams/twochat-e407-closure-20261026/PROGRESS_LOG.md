@@ -67,3 +67,8 @@ Added DELTA13_EPS2_K4K4K5K5_ONE_CROSS_EDGE.md. Under the four-partite support co
 The arithmetic replay passed in Python: the edge ledger is 99+33+152=284, and every listed K4-load case requires more than the two available W-excess units. The verifier is arithmetic-only; analytic transversal steps still need independent proof review.
 
 The four-partite delta=13, epsilon_U=2 row is now closed under the registered W-profile classification. Four-partite epsilon_U=0, non-four-partite delta=13, all delta<=12 cases, all five global shell templates, and the original K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## Round 5 correction
+
+The Round 3 claim of three hub-complete component witnesses per color is withdrawn. Its proof used an anticompleteness condition for other B-rows that is not in the frozen contract. The retained A/C floor is at least two hub-complete witnesses per color from the k=3 label count. The verifier no longer asserts the stronger bound. See PROOF_DEPENDENCY_AUDIT.md.
