@@ -468,7 +468,7 @@ It still does not eliminate \(\delta=3,\ldots,16\) or close E407 Q32.
 
 ## 15. E408 Q33 minimum-support boundary: S0 >= 14 after proof audit
 
-The file R12_E408_Q33_S0_13_EXCLUSION.md now excludes the equality profile S0=13 in the 31-point / 56-witness minimum-support branch, conditional on the registered 47-core / 284-edge / alpha<=4 / omega<=11 contract, the exact-129 factor, and the prior universal S0>=12 theorem. The repaired argument establishes
+The file R12_E408_Q33_S0_13_EXCLUSION.md now excludes the equality profile S0=13 in the 31-point / 56-witness minimum-support branch, conditional on the registered 47-core / 284-edge / alpha<=4 / omega<=11 contract, the exact-129 factor, the inherited universal S0>=12 lower bound, and the separate universal S0=12 exclusion. The repaired argument establishes
 \[
 \boxed{S_0=\epsilon_U+2\delta\ge14,\qquad \delta\ge5.}
 \]
