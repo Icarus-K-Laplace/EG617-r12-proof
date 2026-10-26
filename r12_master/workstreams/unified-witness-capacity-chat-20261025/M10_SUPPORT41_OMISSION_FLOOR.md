@@ -196,3 +196,18 @@ H[W]\cong K_3\cup K_2\cup K_1.
 \]
 
 This is a rigid conditional terminal, **not yet a contradiction**. The \(k=8\) cases with \(e_W\in\{2,3,4\}\), including the other multiplicity pattern at \(e_W=4\), remain open.
+
+
+### Lemma 14.3: the \((2,2,1^6), e_W=4\) branch is impossible
+
+Let \(A=\{a,b\}\) be the two double-omitted points and \(Y=O\setminus A\) the six single-omitted points. We have \(c_O\le2\), and
+\[
+e_R[O]\ge r_O-e_R=6+c_O+\epsilon_N\ge6.
+\]
+Any \(R\)-edge inside \(O\) must meet \(T=\{x\in O:c_x>0\}\), because otherwise its endpoints are nonadjacent in \(H\), have no \(H\)-neighbors in \(W\), and together with an independent triple of \(W\) form an independent five-set. Since \(c_O\le2\), \(|T|\le2\).
+
+A double-omitted point \(a\notin T\) has \(r_a=4-\epsilon_a\ge2\), since \(\epsilon_U\le2\). Its \(R\)-neighbors all lie in \(T\). This rules out \(|T|\le1\), and if \(|T|=2\) with exactly one double-omitted point outside \(T\), that point must be adjacent in \(R\) to both vertices of \(T\), forcing \(\epsilon_a=2\). But then \(\epsilon_O\ge2\), while \(c_O=2\) would imply \(c_O=2-r_N-2\epsilon_N-\epsilon_O\le0\), contradiction. Thus \(T=A\).
+
+It follows that \(c_a=c_b=1\), \(c_O=2\), and the identity for \(c_O\) forces \(\epsilon_O=\epsilon_N=r_N=0\). Hence \(r_a=r_b=5\), while each \(y\in Y\) has \(r_y=1\). Every \(R\)-edge in \(O\) meets \(A\), and the six degree-one vertices of \(Y\) each use one edge to \(A\). Therefore the degree sum of \(A\) in \(R\) is either \(6\) or \(8\), depending on whether \(ab\in R\). But \(r_a+r_b=10\), contradiction.
+
+Consequently, among the \(k=8,e_W=4\) states, only the \((3,1^7)\) rigid star terminal of Lemma 14.2 remains.
