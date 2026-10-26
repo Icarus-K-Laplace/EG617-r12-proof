@@ -61,15 +61,15 @@ where h is the number of high-k B rows in the shell template.
 
 Proof: at least six distinct B labels occur in the no-S component family, so at most four B labels are missing from it. Intersecting this six-or-more-label set with the h high-k labels gives at least \(h+6-10=h-4\) high-k components. The template-specific floors give:
 
-| Template | h floor | High-k no-S witnesses per exact-129 color | Required S-row hits per such witness |
+| Template | High-k no-S witnesses per color | (k=3) no-S witnesses per color | S-row hit incidences per color |
 |---|---:|---:|---:|
-| A | 6 (including \(k=3\)) | 2 | 3 |
-| B | 8 | 4 | at least 2 |
-| C | 6 (including \(k=3\)) | 2 | 3 |
-| D | 7 | 3 | at least 2 |
-| E | 5 | 1 | at least 2 |
+| A | at least 2 | at least 2 | at least 6 |
+| B | at least 4 | not needed | at least 8 |
+| C | at least 2 | at least 2 | at least 6 |
+| D | at least 3 | not needed | at least 6 |
+| E | at least 1 | not needed | at least 2 |
 
-There are at least seven exact-129 colors in E407. Thus the global labelled witness counts are at least 14, 28, 14, 21, and 7 for A–E, respectively. These witnesses are disjoint within a color; across different colors their Q sets intersect in at most one vertex, since otherwise a shared edge would receive two colors. If the same B label occurs in two colors, the two Q sets are disjoint because the two corresponding \(K_5\)'s already share b and cannot share another vertex.
+There are at least seven exact-129 colors in E407. Thus the global labelled witness counts are at least 14, 28, 14, 21, and 7 for A–E, respectively, and aggregate S-row hit incidences are at least 42, 56, 42, 42, and 14. In A/C, the k=3-specific floor guarantees at least two hub-complete witnesses per color; any additional high-k witnesses need only be charged two S-row hits each. These witnesses are disjoint within a color; across different colors their Q sets intersect in at most one vertex, since otherwise a shared edge would receive two colors. If the same B label occurs in two colors, the two Q sets are disjoint because the two corresponding \(K_5\)'s already share b and cannot share another vertex.
 
 Each Q also hits at least three shell rows in total by Lemma 3.1. Therefore the minimum total shell-row hit incidences among these selected witnesses are 42, 84, 42, 63, and 21 for templates A–E, respectively.
 
