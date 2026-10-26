@@ -229,15 +229,21 @@ If \(\rho_u=0\), then \(B=K_{7,7}-e_*\) for a unique missing pair \(e_*=\{p_*,q_
 In particular, every non-endpoint of \(e_*\) has \(\rho_p\le1\), and each endpoint has \(\rho_p\le2\). These identities sharpen the color-omission/star-partner accounting without yet contradicting either case.
 
 
+### Pair-extension lemma for zero-excess W-vertices
+
+Let \(Z=\{w\in W:\epsilon_w=0\}\). If \(w,w'\in Z\) are nonadjacent in \(H[W]\), then they extend to an independent four-set in W. Indeed, their common nonneighbors in W, excluding \(w,w'\), number at least
+\[
+16-2-4-4=6.
+\]
+If this common-nonneighbor set were a clique, at least six W-vertices would each have degree at least five in \(H[W]\), requiring \(\epsilon_W\ge6\), contrary to \(\epsilon_W\le4\). Hence it contains a nonadjacent pair \(x,y\), and \(\{w,w',x,y\}\) is independent.
+
+Consequently any two nonadjacent zero-excess W-vertices have at most one common U-neighbor: two common U-neighbors would each have multiplicity at least two in the four-set, contradicting the exact 32-incidence / 31-vertex cover count. If they have a common U-neighbor \(u\), then \(u\) is the unique duplicated vertex, and the cross-pair theorem forces \(\rho_u\le1\).
+
 ### Degree cap for vertices omitted in at least two colors
 
 Let \(Z=\{w\in W:\epsilon_w=0\}\). Since \(\epsilon_W\le4\), at least 12 vertices lie in Z, and every \(w\in Z\) has degree exactly four in \(H[W]\).
 
-If \(\rho_u\ge2\), then \(N_H(u)\cap Z\) is a clique in \(H[W]\). Otherwise choose nonadjacent \(w,w'\in N_H(u)\cap Z\). Their common nonneighbors in W, excluding w,w', form a set of size at least
-\[
-16-2-4-4=6.
-\]
-This set cannot be a clique: a clique of size at least six would force at least six units of W-excess, contradicting \(\epsilon_W\le4\). Hence it contains a nonadjacent pair \(x,y\), and \(\{w,w',x,y\}\) is an independent four-set. The vertex u would then have at least two incidences in that four-set; by the already-proved incidence count, it is the unique duplicated vertex, forcing \(\rho_u\le1\), a contradiction.
+If \(\rho_u\ge2\), then \(N_H(u)\cap Z\) is a clique in \(H[W]\): otherwise a nonadjacent pair \(w,w'\) in this set extends by the pair-extension lemma to an independent four-set, in which u is the unique duplicated vertex. The cross-pair theorem would force \(\rho_u\le1\), contradiction.
 
 A clique in Z has size at most five, because its vertices have degree four in \(H[W]\). There are at most four W-vertices outside Z. Therefore every \(u\) with \(\rho_u\ge2\) satisfies
 \[
