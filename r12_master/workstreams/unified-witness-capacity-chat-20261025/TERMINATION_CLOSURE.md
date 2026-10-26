@@ -150,3 +150,10 @@ At k=8, the omission patterns are (3,1^7) and (2,2,1^6). The e_W=5 case is impos
 ## 13. k=8, e_W=4 refinement
 
 The (2,2,1^6) omission pattern is now excluded at e_W=4. The residual complement edges on O must all touch one of the at most two points with H-edges to W; degree sums force those points to be the two double-omitted points, and their required degrees contradict the six single-omitted points. Thus only the (3,1^7) rigid star terminal remains at k=8, e_W=4. The k=8, e_W=2,3 branches and k=9,10 remain OPEN / NOT_CERTIFIED.
+
+
+## 11. Support-41 \(k=8,e_W=4\) star terminal excluded
+
+Lemma 14.4 in M10_SUPPORT41_OMISSION_FLOOR.md closes the \((3,1^7)\) star terminal left by the \(k=8\) reduction. Together with Lemma 14.3, no \(k=8,e_W=4\) support-41 state survives. The argument uses the independent-set cover of \(N\) by \(X_w,X_{BB},X_{AAA},X_7\), the exact degree-excess allocation, and the \(15>11\) contradiction in the sole equality case. Its arithmetic-only verifier passed all 25 allocations.
+
+The active full-component support-41 frontier is now \(k=8,e_W\in\{2,3\}\) or \(k\in\{9,10\}\). This is a conditional subcase closure only; the other support sizes and the original EG617 theorem remain OPEN / NOT_CERTIFIED.
