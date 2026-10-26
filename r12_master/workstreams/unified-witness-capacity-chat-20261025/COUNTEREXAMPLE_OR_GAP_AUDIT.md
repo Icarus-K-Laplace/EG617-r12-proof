@@ -266,3 +266,12 @@ For k=8, the subset inequalities leave multiplicity patterns (3,1^7) and (2,2,1^
 At support 41, the k=8, e_W=4 pattern (2,2,1^6) is excluded by Lemma 14.3 of M10_SUPPORT41_OMISSION_FLOOR.md. The residual-edge incidence and degree sums force the two double-omitted points to be the only points with edges into W, but the resulting degree requirements are incompatible with the six single-omitted points.
 
 Thus e_W=4 leaves only the (3,1^7) rigid star terminal. The unresolved k=8 branches have e_W=2 or 3; k=9,10 remain open.
+
+
+## 18. Support-41 \(k=8,e_W=4\) terminal closed
+
+Lemma 14.4 in M10_SUPPORT41_OMISSION_FLOOR.md eliminates the last rigid star terminal at \(k=8,e_W=4\). It uses only the full ten-component support contract, \(e(H)=284\), \(\delta(H)\ge12\), \(\alpha(H)\le4\), the four-unit excess ledger, and the already derived exact star terminal. It does not use a single-external-edge claim for monochromatic \(K_{12}\).
+
+The proof forces \(H[Y]\cong K_7\), where \(Y\) is the set of seven singleton-omitted points. The 33-point complement \(N\) is covered by four classes: vertices adjacent to the isolated W-vertex \(w\), vertices adjacent to both endpoints of the W-edge \(B\), the unique possible degree-three W-neighborhood \(A\), and vertices adjacent to all seven \(Y\)-vertices. Their cardinalities sum to at most 31 or 32 for all excess allocations except \((\epsilon_x,\epsilon_w,\epsilon_A,\epsilon_B)=(0,4,0,0)\). In that exceptional case equality would require 15 vertices adjacent to \(w\) all to be adjacent to \(x\), but \(x\) has only 11 neighbors in \(N\). The arithmetic verifier checks all 25 excess allocations.
+
+This closes only the support-41, \(k=8,e_W=4\) corner. The remaining support-41 omission states are \(k=8,e_W=2,3\) and \(k=9,10\). The separate \(v=29/31\) minimum-support terminal, \(m=8,9\) full-component support routes, aggregate eleven-color ledger, and \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
