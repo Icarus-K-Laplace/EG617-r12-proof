@@ -560,3 +560,10 @@ The exact case budgets \(j_u+\epsilon_u\le\delta+\epsilon_U\in\{7,8,9\}\) sharpe
 - \((4,5)\): \(\rho=2,3,4,5\) give \(d_W\le9,6,3,0\); \(\rho\ge6\) impossible. The \(\rho=5\) equality forces \(\epsilon_u=4\) and \(j_u=5=\delta\), so all U-excess and all leftover L-edges are incident to u.
 
 These are necessary terminal constraints; the all-q=8 case remains OPEN.
+
+
+## 22. Zero-excess W-pair extension
+
+The S0=14 terminal note isolates a useful pair-extension lemma. Any nonadjacent pair \(w,w'\in W\) with \(\epsilon_w=\epsilon_{w'}=0\) extends to an independent four-set in W: their common nonneighbors have size at least six, and cannot be a clique because that would require at least six units of W-excess while \(\epsilon_W\le4\).
+
+Consequently such a pair has at most one common U-neighbor. If its common U-neighbor is u, then u is the unique duplicated U-vertex in the extending four-set and hence \(\rho_u\le1\). Equivalently, for every u with \(\rho_u\ge2\), its zero-excess W-neighbors form a clique, giving \(d_H(u,W)\le9\). The new verifier checks the exact six-vertex margin.
