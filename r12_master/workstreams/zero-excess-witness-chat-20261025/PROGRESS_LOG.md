@@ -238,3 +238,8 @@ Full EG617(r=12) remains OPEN / NOT_CERTIFIED. No sibling branch was modified.
 Added the exact condition that every independent four-set in W dominates all of U. In the S0=14 all-q=8 terminal, \(e(H[W])\in\{32,33,34\}\), so Caro–Wei gives \(\alpha(H[W])\ge4\); since \(\alpha(H)\le4\), there are independent four-sets. Each such set has four U-neighborhoods of size eight covering all 31 U-vertices, with total incidence 32. Therefore exactly one pair shares a single U-neighbor, and all other pairs have disjoint U-neighborhoods.
 
 The arithmetic checks pass, including the three possible \((\epsilon_U,\delta)\) pairs and the Caro–Wei margins. This narrows but does not close the all-q=8/no-transversal terminal. EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+## Round 9 — multi-cover lemma (2026-10-26)
+
+For every independent W-set A of size r<=4, each witness block Q must contain at least r vertices adjacent to at least one member of A. Otherwise Q has at least 5-r vertices anticomplete to A, giving an independent five-set. This yields 2-, 3-, and 4-fold cover constraints for independent pairs, triples, and quadruples, respectively. Added to the S0=14 all-q=8 terminal note; no closure claim.
