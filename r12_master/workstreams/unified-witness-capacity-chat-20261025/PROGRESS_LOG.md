@@ -231,3 +231,8 @@ Updated the support-41 theorem frontier: at k=8, e_W=5 is excluded; e_W=4 leaves
 ## 2026-10-26 — verifier extended through k=8
 
 Updated verify_m10_support41_omission_floor.py to check the exact k=8 multiplicity patterns and all integer budget rows. Local replay passed: pattern lists for k=5,6,7,8; budget rows 1,4,9,14 respectively; k=6 and k=7 degree-sum branches; and the k=8 e_W=5 budget branch. The verifier is arithmetic-only and does not replace the analytical graph arguments.
+
+
+## 2026-10-26 — final proof audit of k=8, e_W=4
+
+Rechecked Lemma 14.3 against possible residual edges from omitted points into N. The proof now explicitly bounds r_N when the cross-neighborhood support T has size one, then forces T to be exactly the two double-omitted points. The support multiplicity t_x is defined on all of U, with t_x=0 off O, so the degree identity also covers non-omitted points. The arithmetic verifier passes for all k=5,6,7,8 pattern and budget branches. The only surviving k=8, e_W=4 case remains the explicitly open (3,1^7) rigid star terminal.
