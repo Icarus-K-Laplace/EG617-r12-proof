@@ -166,3 +166,10 @@ The \(e_W=2\) endpoint is impossible by \(c_O\ge8\) versus \(c_O\le6\). The \(e_
 In this matching kernel, \(c_O\le4\), so at least four omitted points have zero W-degree and at most two have W-degree at least two. Any residual edge from a zero-W-degree omitted point must meet a high-incidence point whose W-neighborhood contains one complete matching edge. The residual-edge lower bound is \(e_R[O]\ge5+c_O+\epsilon_N\). A contradiction from the high-multiplicity points' required residual degrees remains OPEN.
 
 The support-41 \(k=9,10\) terminals and all other R12/global proof obligations remain OPEN / NOT_CERTIFIED.
+
+
+## 13. Unique residual support-41 \(k=8\) terminal
+
+The \(e_W=3\) matching-kernel analysis is now complete up to one star terminal. The \((2,2,1^6)\) omission profile is impossible; the \((3,1^7)\) profile forces \(c_x=2\), \(c_Y=0\), \(\epsilon_Y=\epsilon_N=0\), and \(R\) to be a star at \(x\) with seven Y-leaves and \(2-\epsilon_x\) additional N-leaves. The induced graph on \(Y\) is \(K_7\), and each \(y\in Y\) has exactly six neighbors in N.
+
+The remaining support-41 \(k=8\) blocker is to eliminate this final star terminal under \(H[W]=3K_2\). The \(k=9,10\) support-41 cases and all other R12 obligations remain OPEN / NOT_CERTIFIED.
