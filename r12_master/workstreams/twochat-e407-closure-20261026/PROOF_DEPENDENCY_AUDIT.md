@@ -53,3 +53,10 @@ The local \(\delta=16,15,14\) and several \(\delta=13\) W-profile closures are c
 The stronger A/C component-capacity argument is withdrawn. Its key step treated each component quadruple as if it were anticomplete to every B-row missing to a missed hub; the contract guarantees anticompleteness only to that quadruple's own B label. The six-set contradiction therefore cannot be applied to arbitrary other B-rows.
 
 The retained A/C bound is the high-k label-intersection floor: at least h-4 of the six component witnesses have a k=3 label, so at least two are hub-complete per color when h>=6. The support omission-degree identity and the delta=13 epsilon_U=2 profile proof do not use the withdrawn step. The five-template global compatibility problem remains open.
+
+
+## Round 6 resolution — row-transversal dependency repairs the A/C bound
+
+The Round 5 audit correctly identified that the direct independent-six explanation alone does not force a component quadruple to hit arbitrary other B-rows. However, the registered row-transversal theorem supplies exactly this implication under its stated contract: if Q is an independent 4-set in H minus D_s, t_s<=12, and sb is a missing shell edge, then Q intersects D_b. This theorem uses the retained R(3,35) exclusion.
+
+For templates A/C every hub row has t_s<=12, so the stronger capacity proof is valid when explicitly routed through the row-transversal theorem. The corrected Theorem 4.3 therefore reinstates the conditional floor max(3,h-4) hub-complete component witnesses per exact-129 color. The direct source proof route is incomplete, but the repaired route is now explicit; this result remains conditional on the row-transversal/R(3,35) dependency.
