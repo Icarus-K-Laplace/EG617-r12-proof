@@ -49,3 +49,6 @@ The minimum next result is either:
 2. prove that the support-block incidence system, shell-row constraints, component witnesses, exact color ownership, and four-unit excess budget are jointly infeasible without assuming such identity.
 
 This is a strict reduction, not E407 Q32 closure. The original K145-to-T61 bridge remains open.
+
+
+Round 5 correction: the claimed three-per-color hub-complete bound is withdrawn. Only the high-k label-intersection floor is certified; see PROOF_DEPENDENCY_AUDIT.md.
