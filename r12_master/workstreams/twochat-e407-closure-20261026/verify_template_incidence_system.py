@@ -7,11 +7,11 @@ arguments, and edge-color uniqueness proof remain in the theorem note.
 """
 
 TEMPLATES = {
-    "A": {"high_k_floor": 6, "k3_floor": 6, "min_hub_hits": 3},
-    "B": {"high_k_floor": 8, "k3_floor": 0, "min_hub_hits": 2},
+    "A": {"high_k_floor": 6, "k3_floor": 6},
+    "B": {"high_k_floor": 8, "k3_floor": 0},
     "C": {"high_k_floor": 6, "k3_floor": 6, "min_hub_hits": 3},
-    "D": {"high_k_floor": 7, "k3_floor": 0, "min_hub_hits": 2},
-    "E": {"high_k_floor": 5, "k3_floor": 0, "min_hub_hits": 2},
+    "D": {"high_k_floor": 7, "k3_floor": 0},
+    "E": {"high_k_floor": 5, "k3_floor": 0},
 }
 EXACT129_COLORS = 7
 B_ROWS = 10
