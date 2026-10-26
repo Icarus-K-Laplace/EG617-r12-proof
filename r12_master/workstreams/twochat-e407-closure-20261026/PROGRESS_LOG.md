@@ -28,3 +28,18 @@ The exact-129 factorization, the five-template screen, Brouwer/Kang–Pikhurko c
 
 ### Next attack
 Join the 49 support-block labels to the high-k no-S component labels and shell row sets \(D_a\), without assuming these witness families coincide. Seek a contradiction common to multiple templates or a minimal surviving incidence contract. Independently audit any candidate inequality against the exact \(D_a\) row supports before using it.
+
+
+## 2026-10-26 — Round 2: verifier replay and arithmetic correction
+
+The low-delta table was independently recomputed from the exact inequalities. There are **56**, not 57, feasible \((\delta,\epsilon_U)\) pairs. The repository verifier was corrected to assert 56; each pair satisfies
+\[
+e(H[U])+e(H[W])+e_H(U,W)=284.
+\]
+The independent Python replay checked all 56 pairs, all three edge formulas, and the lower bound \(e(H[W])\ge32\).
+
+The five-template incidence verifier's arithmetic assertions were independently replayed as well. It confirms per-color high-k no-S witness floors \(2,4,2,3,1\), total witness floors \(14,28,14,21,7\), aggregate S-row hit floors \(42,56,42,42,14\), and total shell-row hit floors \(42,84,42,63,21\). For A/C the hub-hit calculation is corrected to charge at least two hits to every high-k witness and one additional hit to each of the at least two guaranteed k=3 witnesses; this avoids overcharging any additional k=2 rows.
+
+Transparency: the arithmetic assertions were independently executed in the Python reasoning environment; the GitHub-hosted scripts themselves were not launched from a repository shell in this session. They remain standard-library runnable audit scripts, not graph-realization certificates.
+
+No terminal was closed by this arithmetic replay. The global labelled-incidence join, the surviving low-delta contracts, and the original K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
