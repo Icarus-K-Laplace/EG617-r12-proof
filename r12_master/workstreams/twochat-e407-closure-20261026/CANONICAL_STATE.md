@@ -90,7 +90,7 @@ Crucial firewall: the exact-129 no-S component witnesses are kept as separately 
 - \(\delta=16\): excluded under the four-partite boundary reduction and inherited core contract.
 - \(\delta=15\): four-partite and non-four-partite branches excluded under their registered extremal contracts.
 - \(\delta=14\): four-partite branch excluded; non-four-partite saturated branch is conditional on the Didin-dependent alpha-critical reduction.
-- \(\delta=13\): four-partite \(\epsilon_U=1\) row is excluded; four-partite \(\epsilon_U=2\) retains the \((4,4,5,5)\)-plus-one-cross-edge W-profile; \(\epsilon_U=0\), non-four-partite cases, and \(\delta\le12\) remain open.
+- \(\delta=13\): four-partite \(\epsilon_U=1\) is excluded; four-partite \(\epsilon_U=2\) no-cross and \((4,4,5,5)\)-plus-one-cross-edge W-profiles are now excluded under the registered profile contract. Four-partite \(\epsilon_U=0\), non-four-partite cases, and \(\delta\le12\) remain open.
 - Five shell templates A–E: all remain OPEN as global same-core completion questions.
 - Original \(K_{145}\)-to-T61 bridge: OPEN / NOT_CERTIFIED.
 - Root main still lists E407/E408 and abstract backend E333–E340 as independent obligations; sibling documents contain a conditional alternative treatment of the \(R(4,49)\) branch, so the root proof DAG is not promoted here.
