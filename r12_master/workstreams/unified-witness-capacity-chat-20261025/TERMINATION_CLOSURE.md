@@ -145,3 +145,8 @@ The analytical proof is in M10_SUPPORT41_OMISSION_FLOOR.md; the integer verifier
 ## 12. Further support-41 reduction
 
 At k=8, the omission patterns are (3,1^7) and (2,2,1^6). The e_W=5 case is impossible. In the (3,1^7), e_W=4 branch, the exact inequalities force a rigid terminal with one triple-omitted point, one H-edge from it into W, no other omitted-point edges into W, all residual complement edges incident to that point, and H[W] = K3 disjoint union K2 disjoint union K1. The terminal remains OPEN. The other k=8 cases with e_W<=4 and k=9,10 are still open.
+
+
+## 13. k=8, e_W=4 refinement
+
+The (2,2,1^6) omission pattern is now excluded at e_W=4. The residual complement edges on O must all touch one of the at most two points with H-edges to W; degree sums force those points to be the two double-omitted points, and their required degrees contradict the six single-omitted points. Thus only the (3,1^7) rigid star terminal remains at k=8, e_W=4. The k=8, e_W=2,3 branches and k=9,10 remain OPEN / NOT_CERTIFIED.
