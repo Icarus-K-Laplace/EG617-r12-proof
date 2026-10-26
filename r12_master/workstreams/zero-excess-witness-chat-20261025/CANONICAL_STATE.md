@@ -215,3 +215,10 @@ This rigidity is added to the S0=14 terminal note and arithmetic verifier. The v
 Added the general condition that every independent \(r\)-set \(A\subset W\), \(r\le4\), has its U-neighborhood union intersect every witness block \(Q\) in at least \(r\) vertices. This follows directly from \(\alpha(H)\le4\): otherwise \(Q\) supplies \(5-r\) vertices nonadjacent to A. In the all-q=8 terminal, this specializes to every independent W-pair/triple/quad inducing a 2-/3-/4-fold cover of every Q.
 
 The condition is added to the S0=14 terminal note. It does not yet close the no-transversal all-q=8 case.
+
+
+## Round 10 — S0=14 cross-pair rigidity (2026-10-26)
+
+A new analytic lemma is proved in R12_E408_Q33_S0_14_NO_SEVEN_TRANSVERSAL.md: for any independent four-set A in W, its unique duplicated U-vertex u has omission multiplicity \(\rho_u\le1\). The proof partitions U into the two overlapping 8-neighborhoods (intersection {u}) and the other two disjoint 8-neighborhoods. The latter hit every witness block exactly once. The 56 witness blocks contribute \(48+\rho_u\) distinct pairs across the two 7-point exclusive parts, but only 49 such pairs exist. Therefore rho_u is 0 or 1; rho=0 leaves exactly one pair absent, while rho=1 uses all pairs and the two exclusive parts are anticomplete in H.
+
+The arithmetic verifier now checks all nine formal counts rho=0..8 and confirms only rho=0,1 fit the 49-pair capacity. This is a proof-level structural restriction, not a closure of S0=14. The all-q=8/no-seven-transversal terminal remains OPEN; EG617(r=12) remains OPEN / NOT_CERTIFIED.
