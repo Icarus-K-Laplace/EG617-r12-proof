@@ -142,6 +142,28 @@ Here \(\sum_u j_u=2\delta\), \(\epsilon_U\in\{0,2,4\}\), and \(\delta\in\{7,6,5\
 
 Equations (6)–(7), together with the pairwise-disjoint W-neighborhood condition for each omission triple \(X_c\), are the reduced finite target. They do not yet imply a contradiction; no unproved claim about the existence or nonexistence of this all-q=8 system is made.
 
+### Independent-four-set rigidity in W
+
+For the all-\(q=8\) terminal, each \(w\in W\) has \(d_H(w,W)=4+\epsilon_w\). Since \(\epsilon_W=4-\epsilon_U\),
+\[
+e(H[W])=\frac{64+\epsilon_W}{2}=34-\frac{\epsilon_U}{2}\in\{32,33,34\}.
+\]
+Caro–Wei gives
+\[
+\alpha(H[W])\ge \frac{16^2}{2e(H[W])+16}
+\ge \frac{256}{84}>3.
+\]
+Thus \(\alpha(H[W])=4\), and an independent four-set \(A\subset W\) exists.
+
+For every such \(A\), each \(u\in U\) must have a neighbor in \(A\); otherwise \(A\cup\{u\}\) would be an independent five-set. Hence
+\[
+\bigcup_{w\in A}(N_H(w)\cap U)=U.
+\]
+The four U-neighborhoods each have size eight, so their total incidence count is 32 while their union has size 31. Therefore exactly one U-vertex belongs to exactly two of these four neighborhoods, and every other U-vertex belongs to exactly one. Equivalently, among the six pairs of vertices in any independent four-set \(A\subset W\), exactly one pair has a common U-neighbor, that intersection is a singleton, and the other five pairs have disjoint U-neighborhoods.
+
+This rigidity is an additional necessary condition for the remaining terminal; it is not yet a contradiction.
+
+
 ## Scope and next terminal
 
 The theorem does not yet rule out \(S_0=14\). It reduces that equality case to:
