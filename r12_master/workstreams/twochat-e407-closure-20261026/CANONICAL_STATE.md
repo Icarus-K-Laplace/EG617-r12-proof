@@ -73,7 +73,7 @@ There are at least seven exact-129 colors. The selected component witnesses are 
 
 Crucial firewall: the exact-129 no-S component witnesses are kept as separately labelled objects unless a proof identifies them with the selected 49 support blocks. No equality of witness sets is assumed.
 
-## Round 3 proved refinements
+## Round 3 refinements and Round 5 audit correction
 
 - **A/C component packing claim — WITHDRAWN in Round 5.** The cross-label implication was not justified; see PROOF_DEPENDENCY_AUDIT.md. The certified bound remains the high-k label-intersection floor from Theorem 4.2.
 - **Support omission–degree identity:** for \(r_u\) color classes omitting \(u\in U\) and \(x_u\) extra support-complement edges incident to u,
