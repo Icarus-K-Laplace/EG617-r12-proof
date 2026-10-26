@@ -316,3 +316,48 @@ e_R=9-\epsilon_U,\qquad
 e_R[O]\ge5+c_O+\epsilon_N.
 \]
 The kernel is not yet excluded. The remaining blocker is to show that the high-multiplicity omitted points cannot meet their required \(R\)-degrees through the at-most-two high-incidence points plus the bounded \(R\)-incidence into \(N\). \(\square\)
+
+
+### Lemma 14.7: the \(e_W=3\) multiplicity patterns reduce to one star terminal
+
+Assume the matching kernel of Lemma 14.6. For any \(uv\in E(R[O])\), the sets \(S_u\cup S_v\) must contain both endpoints of at least one of the three matching edges of \(H[W]\); otherwise an independent transversal of the matching avoids both neighborhoods and extends \(\{u,v\}\) to an independent five-set. Consequently:
+- if \(c_u=0\), every \(R[O]\)-neighbor of \(u\) has \(c_v\ge2\);
+- if \(c_u=1\), every \(R[O]\)-neighbor of \(u\) has \(c_v\ge1\).
+
+The exact budget identity is
+\[
+c_O+r_N=4-\epsilon_O-2\epsilon_N\le4-\epsilon_o
+\qquad(o\in O).
+\tag{14.7}
+\]
+
+If \(t_o=2\) and \(c_o=0\), then \(r_o=4-\epsilon_o\). If \(c_O=0\), no edge of \(R[O]\) is possible, contradicting \(e_R[O]\ge5+c_O+\epsilon_N\ge5\). If \(c_O>0\), the first bullet bounds
+\[
+r_o\le\left\lfloor\frac{c_O}{2}\right\rfloor+r_N
+=c_O+r_N-\left\lceil\frac{c_O}{2}\right\rceil
+\le3-\epsilon_o,
+\]
+again a contradiction. If \(t_o=2,c_o=1\), the second bullet gives
+\[
+r_o\le c_O-1+r_N\le3-\epsilon_o,
+\]
+whereas the exact degree identity gives \(r_o=5-\epsilon_o\), impossible. Thus every multiplicity-two omitted point has \(c_o\ge2\).
+
+For the profile \((2,2,1^6)\), both double-omitted points therefore have \(c_o\ge2\). Since \(c_O\le4\), they have \(c_o=2\) each and every singleton-omitted point has \(c_y=0\). The budget identity forces \(\epsilon_O=\epsilon_N=r_N=0\), so \(e_R=9\) and \(e_R[O]\ge9\); hence all residual edges lie in \(O\). Each of the six zero-\(c\) singleton points has \(r_y=1\) and must send its unique residual edge to one of the two double points. Those six edges contribute six to the degree sum of the double points, and the edge between the two double points contributes at most two more. But their required residual degree sum is \(r_a+r_b=6+6=12\), contradiction. Thus \((2,2,1^6)\) is impossible when \(e_W=3\).
+
+For the profile \((3,1^7)\), let \(x\) be the triple-omitted point. The preceding argument excludes \(c_x=0\) by the same degree-cap calculation; if \(c_x=1\), then
+\[
+r_x=8-\epsilon_x\le c_O-1+r_N\le3-\epsilon_x,
+\]
+impossible. Hence \(c_x\ge2\). Since \(r_x=7+c_x-\epsilon_x\le e_R=9-\epsilon_x-\epsilon_Y-\epsilon_N\), we get
+\[
+c_x+\epsilon_Y+\epsilon_N\le2.
+\]
+Therefore \(c_x=2\), \(\epsilon_Y=\epsilon_N=0\), and \(r_x=e_R\); every residual edge is incident to \(x\). The budget identity and \(c_O=c_x=2\) give \(r_N=2-\epsilon_x\), so \(\epsilon_x\in\{0,1,2\}\). Every singleton point \(y\in Y\) has \(r_y=1+c_y\), but its residual degree is at most one because all residual edges are incident to \(x\). Hence \(c_y=0\) and \(r_y=1\) for all seven \(y\). The only surviving \(k=8,e_W=3\) profile is therefore the rigid star terminal
+\[
+c_x=2,\quad c_Y=0,\quad \epsilon_Y=\epsilon_N=0,\quad
+R\text{ is a star at }x\text{ with leaves }Y
+\text{ and }2-\epsilon_x\text{ additional leaves in }N.
+\]
+
+This is a reduction, not yet a contradiction. The remaining blocker is to exclude this final \((3,1^7)\) star terminal under \(H[W]=3K_2\). \(\square\`
