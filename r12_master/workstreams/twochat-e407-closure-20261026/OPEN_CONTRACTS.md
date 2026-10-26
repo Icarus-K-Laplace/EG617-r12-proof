@@ -38,3 +38,6 @@ The non-four-partite \(\delta=14\) saturated branch is excluded only conditional
 ## C6. Parent bridge and root theorem
 
 The 47-core contract is a T61-derived local contract. The original \(K_{145}\)-to-T61 implication, including the recurrence archive, lower-order seed dependencies, and conversion to the seven genuine unanchored blocks, is not certified end-to-end here. Root main also still lists E408 and E333–E340 as obligations. Neither E407 closure alone nor the local core contract proves EG617(r=12).
+
+
+Round 4 update: the four-partite delta=13, epsilon_U=2 profile with W equal to K4+K4+K5+K5 and one cross-edge is now excluded under the registered profile contract. The non-four-partite delta=13 cases and every delta<=12 case remain open.
