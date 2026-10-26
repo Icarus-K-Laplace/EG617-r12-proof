@@ -243,3 +243,8 @@ The arithmetic checks pass, including the three possible \((\epsilon_U,\delta)\)
 ## Round 9 — multi-cover lemma (2026-10-26)
 
 For every independent W-set A of size r<=4, each witness block Q must contain at least r vertices adjacent to at least one member of A. Otherwise Q has at least 5-r vertices anticomplete to A, giving an independent five-set. This yields 2-, 3-, and 4-fold cover constraints for independent pairs, triples, and quadruples, respectively. Added to the S0=14 all-q=8 terminal note; no closure claim.
+
+
+## Round 10 — rho<=1 for duplicated vertices (2026-10-26)
+
+For every independent four-set A⊂W, exactly one U-vertex u is repeated in its four U-neighborhoods. The other two W-neighborhoods hit every witness block exactly once. With P,Q the two seven-point exclusive parts of the overlapping neighborhoods, witness blocks contribute \(48+\rho_u\) distinct P×Q pairs; there are only 49 possible pairs. Therefore \(\rho_u\le1\). If rho=1 all 49 cross pairs occur; if rho=0 exactly one is absent. Added this theorem to the terminal note, verifier, kernel, and canonical state. S0=14 remains OPEN.
