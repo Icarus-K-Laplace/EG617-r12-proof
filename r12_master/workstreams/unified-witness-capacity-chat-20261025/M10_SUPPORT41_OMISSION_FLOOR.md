@@ -195,7 +195,7 @@ Finally, each \(y\ne x\) is nonadjacent to \(x\) in \(H\) and has no \(H\)-neigh
 H[W]\cong K_3\cup K_2\cup K_1.
 \]
 
-This is a rigid conditional terminal, **not yet a contradiction**. The \(k=8\) cases with \(e_W\in\{2,3,4\}\), including the other multiplicity pattern at \(e_W=4\), remain open.
+This is a rigid conditional terminal, **not yet a contradiction**. The remaining \(k=8\) cases with \(e_W\in\{2,3\}\) remain open. At \(e_W=4\), Lemma 14.3 excludes the \((2,2,1^6)\) pattern, leaving only the rigid \((3,1^7)\) terminal.
 
 
 ### Lemma 14.3: the \((2,2,1^6), e_W=4\) branch is impossible
