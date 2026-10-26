@@ -153,7 +153,7 @@ All cases with \(k=7\) are impossible. Hence \(k\ge8\). \(\square\)
 ## What this does and does not close
 
 - **Closed conditionally:** the support-41 exact-component terminal cannot have only \(5,6,\) or \(7\) distinct omitted points among the ten exact colors.
-- **Surviving omission patterns:** \(k=8,9,10\). Their multiplicity patterns still need separate analysis.
+- At this stage the surviving omission counts are \(k=8,9,10\). The endpoint lemmas below eliminate \(k=8,e_W=2,4\) and reduce \(k=8,e_W=3\) to a \(3K_2\) incidence kernel; \(k=9,10\) remain open.
 - **Not proved:** \(|U_{\rm comp}|=41\) is impossible; the full exact-color ledger; E407/E408 terminal closure; the \(K_{145}\)-to-T61 bridge; or EG617(r=12).
 - **Dependency firewall:** the result requires the exact-129 factor theorem and the 284-edge core contract. It does not use a claim that a monochromatic \(K_{12}\) has no single external edge of its own color.
 
@@ -202,7 +202,7 @@ Finally, each \(y\ne x\) is nonadjacent to \(x\) in \(H\) and has no \(H\)-neigh
 H[W]\cong K_3\cup K_2\cup K_1.
 \]
 
-This is a rigid conditional terminal, **not yet a contradiction**. The remaining \(k=8\) cases with \(e_W\in\{2,3\}\) remain open. At \(e_W=4\), Lemma 14.3 excludes the \((2,2,1^6)\) pattern, leaving only the rigid \((3,1^7)\) terminal.
+This is a rigid conditional terminal at this point in the reduction. Lemma 14.4 below excludes it; Lemmas 14.5–14.6 handle the remaining \(e_W=2,3\) endpoints.
 
 
 ### Lemma 14.3: the \((2,2,1^6), e_W=4\) branch is impossible
@@ -283,7 +283,7 @@ For \(\epsilon_w=0,1,2,3\), the final bound is \(31,31,32,32\), respectively, so
 \]
 As these four sets cover 33 vertices and their cardinalities sum to 33, they are pairwise disjoint. In particular, \(|X_{AAA}|=1\) means the unique degree-three vertex has \(S_{n_0}=A\), so no vertex of \(X_w\) has degree three into \(W\). Every \(n\in X_w\) therefore has \(h_n<7\) and \(S_n\) has size two, containing \(w\) but not all of \(A\) or all of \(B\). The first bullet above therefore forces \(xn\in E(H)\) for every \(n\in X_w\). This would give \(x\) at least 15 neighbors in \(N\), contradicting \(|N_H(x)\cap N|=11\).
 
-Thus the rigid \((3,1^7),e_W=4\) terminal is impossible. Together with Lemma 14.3, **all \(k=8,e_W=4\) terminals are now excluded**. The cases \(k=8,e_W\in\{2,3\}\) and \(k\in\{9,10\}\) remain open. \(\square\)
+Thus the rigid \((3,1^7),e_W=4\) terminal is impossible. Together with Lemma 14.3, **all \(k=8,e_W=4\) terminals are excluded**. Lemma 14.5 excludes \(e_W=2\); Lemma 14.6 reduces \(e_W=3\) to the \(3K_2\) incidence kernel. Hence only \(k=8,e_W=3\) remains at \(k=8\), while \(k\in\{9,10\}\) remain open. \(\square\)
 
 
 ### Lemma 14.5: \(e_W=2\) is impossible at support 41, \(k=8\)
