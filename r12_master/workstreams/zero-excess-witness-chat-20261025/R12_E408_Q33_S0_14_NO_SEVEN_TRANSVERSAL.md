@@ -164,6 +164,13 @@ The four U-neighborhoods each have size eight, so their total incidence count is
 This rigidity is an additional necessary condition for the remaining terminal; it is not yet a contradiction.
 
 
+More generally, for any independent set \(A\subset W\) of size \(r\le4\), every witness block \(Q\in\mathcal Q\) satisfies
+\[
+\left|Q\cap\bigcup_{w\in A}N_H(w)\right|\ge r.
+\]
+Otherwise at least \(5-r\) vertices of the independent block Q would be nonadjacent to every vertex of A, giving an independent five-set. Thus independent pairs, triples, and quadruples of W induce respectively 2-, 3-, and 4-fold covers of every witness block.
+
+
 ## Scope and next terminal
 
 The theorem does not yet rule out \(S_0=14\). It reduces that equality case to:
