@@ -208,3 +208,10 @@ e(H[W])=34-\epsilon_U/2\in\{32,33,34\}.
 Caro–Wei yields \(\alpha(H[W])\ge256/(2e(H[W])+16)>3\), while \(\alpha(H)\le4\), so \(\alpha(H[W])=4\). Every independent four-set \(A\subset W\) must dominate U; otherwise \(A\cup\{u\}\) is independent of size five. Four U-neighborhoods have total size 32 and union size 31, so exactly one pair in each independent four-set shares a single U-neighbor; the other five pairs have disjoint U-neighborhoods.
 
 This rigidity is added to the S0=14 terminal note and arithmetic verifier. The verifier's in-session replica passes the 30 integer states, the three (epsilon_U,delta) cases, the omission/degree identities, and the independent-four-set inequalities. The terminal remains OPEN; no contradiction is claimed.
+
+
+## Round 9 — independent-set multi-cover constraint (2026-10-26)
+
+Added the general condition that every independent \(r\)-set \(A\subset W\), \(r\le4\), has its U-neighborhood union intersect every witness block \(Q\) in at least \(r\) vertices. This follows directly from \(\alpha(H)\le4\): otherwise \(Q\) supplies \(5-r\) vertices nonadjacent to A. In the all-q=8 terminal, this specializes to every independent W-pair/triple/quad inducing a 2-/3-/4-fold cover of every Q.
+
+The condition is added to the S0=14 terminal note. It does not yet close the no-transversal all-q=8 case.
