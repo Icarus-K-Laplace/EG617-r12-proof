@@ -141,30 +141,37 @@ Updated proof assets:
 Status firewall: E408 Q33 non-four-partite boundary remains OPEN; E407 Q32, E408 Q32 (285-edge core), other support sizes, and the original K145 bridge remain OPEN / NOT_CERTIFIED. No full EG617(r=12) proof is claimed.
 
 
-## Round 5 — live sibling refresh and universal E408 Q33 S0>=14 result (2026-10-26)
+## Round 5 — E408 Q33 S0=13 exclusion and sibling refresh (2026-10-26)
 
-Current sibling heads read-only checked:
+Read-only sibling heads checked:
 - E407 Q32 terminal: 79c1086efca893fad8933210a92a432457232410
 - E408 Q33 global compatibility: 0cb2ff3968f005c9cb255958df7c02b220678701
 - E408 Q32 excess-six: a0ba6db26c7e8b00a4217dcbcbf298895dff93ce
 - unified witness capacity: 9935e0d2343fc08d9e65d51ff495cfb260d6de95
 - emergency sprint: f4c3b06891d29238d4f9cca2588f442004b6dc97
-- this branch before the round: f3935770d0c2b4e41d164d734d6fd0f9de3e56a8
 
-### New result
+Added R12_E408_Q33_S0_13_EXCLUSION.md and verify_e408_s0_13_profiles.py. The intended result is to exclude S0=13 in the 31-point / 56-witness minimum-support E408 Q33 boundary, conditional on the registered 47-core / 284-edge / alpha<=4 / omega<=11 contract, exact-129 factor, and prior universal S0>=12 theorem. The finite profile enumerator has 60 labelled cases, bucketed m=10:6, m=9:24, m=8:22, m=7:8.
 
-Added R12_E408_Q33_S0_13_EXCLUSION.md and verify_e408_s0_13_profiles.py. Under the registered 47-core / 284-edge / alpha<=4 / omega<=11 contract and the 31-point, 56-witness exact-129 boundary, the theorem excludes S0=13 without assuming L is four-partite. Combining with the separately audited universal S0>=12 theorem gives
+## Round 6 — independent proof audit and corrections (2026-10-26)
+
+Before retaining the S0=13 exclusion, an independent audit found and repaired three issues in the written argument:
+
+1. **Transversal complement:** a complement transversal is a mathematical object and need not itself occur as a W-neighborhood. The proof now explicitly distinguishes those claims and proves that clique consequences still apply to a partition by three mathematical transversals, with the missing W-group allowed to be empty.
+2. **High-neighborhood incidence bound:** the correct pair-counting conclusion is \(|Y\cap S_i|\le q_y-7\), where \(Y=N_H(y)\cap R\) hits the \(7-b_y\) partitions missed by y. The previous displayed \(1+b_y\) bound was invalid. The q=10,b=1 case is now handled together with q=10,b=2 by the independent-five/W-degree contradiction.
+3. **Two realized neighborhoods:** the previous special-incidence argument for m=8,7 was not valid. It is replaced by the multiplicity cap \(m_i\le4\): one realized set is impossible, and two realized sets have multiplicities (4,4) or (4,3), so a multiplicity-four clique contradiction follows using the complement transversal.
+
+The unsupported claim \(\delta+\epsilon_U\le17\) has been removed. The retained conditional conclusion is
 \[
-\boxed{S_0=\epsilon_U+2\delta\ge14,\qquad \delta+\epsilon_U\le17.}
+\boxed{S_0=\epsilon_U+2\delta\ge14,\qquad \delta\ge5.}
 \]
-The finite profile verifier enumerates 60 labelled degree/T-incidence parameter cases and checks the m=10/9/8/7 buckets. Arithmetic checks do not certify graph realization.
+The arithmetic/profile checks were replicated in-session and pass (60 cases; buckets 6/24/22/8). This is an arithmetic audit, not a graph-realization certificate. The analytic proof is now repaired under its stated contracts; the independent prior S0>=12 theorem remains an inherited conditional input.
 
-### Cross-branch status
+### Current frontier
 
-- E408 Q33, minimum support v=31: universal S0>=14; four-partite branch has S0>=22. The non-four-partite branch for S0>=14 and larger support sizes remain open.
-- E407 Q32, minimum support v=29: this line's universal bound is S=epsilon_U+2delta>=9 (hence delta>=3); the sibling terminal line has conditionally closed multiple delta=14..16 subcases but still has delta<=13 and shell-template compatibility gaps.
-- E408 Q32 remains a separate 285-edge / excess-six core. Its support reduction v>=44 leaves the v=44 labelled triple terminal open.
-- The unified labelled-witness route still has an unresolved label-transfer/component-realization gap.
+- E408 Q33 minimum support v=31: conditionally \(S_0\ge14\) without four-partiteness; the four-partite subcase has the stronger conditional \(S_0\ge22\). Profiles with \(S_0\ge14\) and larger support sizes remain open.
+- E407 Q32 minimum support v=29: this line's bound is \(S=\epsilon_U+2\delta\ge9\), hence \(\delta\ge3\). Sibling work has closed some delta=14..16 subcases, but delta<=13 and shell-template compatibility remain open.
+- E408 Q32 remains the separate 285-edge / excess-six core. Support reduction v>=44 leaves the v=44 terminal open.
+- The unified labelled-witness route still has a label-transfer/component-realization gap.
 - The original T61-to-K145 bridge and complete EG617(r=12) theorem remain OPEN / NOT_CERTIFIED.
 
 No sibling branch was modified.
