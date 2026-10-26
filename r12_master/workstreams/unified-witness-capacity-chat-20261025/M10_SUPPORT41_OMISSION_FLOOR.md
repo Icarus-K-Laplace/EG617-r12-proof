@@ -274,6 +274,6 @@ For \(\epsilon_w=0,1,2,3\), the final bound is \(31,31,32,32\), respectively, so
 \[
 |X_w|=15,\quad |X_{BB}|=11,\quad |X_{AAA}|=1,\quad |X_7|=6.
 \]
-As these four sets cover 33 vertices and their cardinalities sum to 33, they are pairwise disjoint. In particular, every \(n\in X_w\) has \(h_n<7\), and \(S_n\) has size two and contains \(w\) but not all of \(A\) or all of \(B\). The first bullet above therefore forces \(xn\in E(H)\) for every \(n\in X_w\). This would give \(x\) at least 15 neighbors in \(N\), contradicting \(|N_H(x)\cap N|=11\).
+As these four sets cover 33 vertices and their cardinalities sum to 33, they are pairwise disjoint. In particular, \(|X_{AAA}|=1\) means the unique degree-three vertex has \(S_{n_0}=A\), so no vertex of \(X_w\) has degree three into \(W\). Every \(n\in X_w\) therefore has \(h_n<7\) and \(S_n\) has size two, containing \(w\) but not all of \(A\) or all of \(B\). The first bullet above therefore forces \(xn\in E(H)\) for every \(n\in X_w\). This would give \(x\) at least 15 neighbors in \(N\), contradicting \(|N_H(x)\cap N|=11\).
 
 Thus the rigid \((3,1^7),e_W=4\) terminal is impossible. Together with Lemma 14.3, **all \(k=8,e_W=4\) terminals are now excluded**. The cases \(k=8,e_W\in\{2,3\}\) and \(k\in\{9,10\}\) remain open. \(\square\`
