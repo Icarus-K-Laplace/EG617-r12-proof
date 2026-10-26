@@ -101,7 +101,7 @@ For any distinct R-only set S occurring \(m_S\) times,
 \]
 so \(m_S\le4\). Distinct R-only transversals are disjoint, hence there are at most three of them and \(m\le12\). Therefore \(a=16-m\ge4\).
 
-But T and the a T-type vertices form a clique (Step 1), so \(7+a\le11\), hence \(a\le4\). Consequently \(a=4\) and \(m=12\). The 12 R-only neighborhoods must consist of exactly three distinct transversals, each with multiplicity four; they partition R. The clique consequence of the three-part transversal lemma then gives a \(K_{12}\), contradiction.
+But T and the a T-type vertices form a clique (Step 1), so \(7+a\le11\), hence \(a\le4\). Consequently \(a=4\) and \(m=12\). The 12 R-only neighborhoods must consist of exactly three distinct transversals, each with multiplicity four; they partition R. By the three-part clique lemma in R12_E408_Q33_S0_13_EXCLUSION.md, each S_i and its group G_i are cliques and complete to one another. Thus S_i∪G_i is a \(K_{12}\), contradiction.
 
 No seven-point transversal exists. Since every W-vertex has \(q_w\ge7\), k=0 and \(\sum_Wq_w=128\) imply all 16 vertices have \(q_w=8\). This proves the theorem. \(\square\)
 
