@@ -205,3 +205,12 @@
 - Let \(U_{\rm comp}\) be the union of all ten component four-sets per exact color. It has \(|U_{\rm comp}|\ge40\). For \(m=10\), support size 40 is impossible: 100 edge-disjoint K4s require 600 edges in the complement core, while the 284-edge degree ledger and Turán lower bound \(e(H[W])\ge3\) give at most 581. Hence \(m=10\Rightarrow |U_{\rm comp}|\ge41\).
 - At \(m=10, |U_{\rm comp}|=41\), every exact color omits exactly one support point, and the 100 component K4s account for 600 of at most 610 complement edges. The resulting near-decomposition / partial-transversal-design problem is now explicit.
 - This is a separate high-support route. It does not silently replace the seven-witness \(v=29/31\) support used by the current terminal analysis. \(m=8,9\) full-component support and the \(m=10,v\ge41\) terminal remain open.
+
+
+## 2026-10-26 — large reduction of the \(m=10, |U_{\rm comp}|=41\) terminal
+
+- Derived exact identities \(c=e_H(U,W)=76-\epsilon_U-2e_W\) and \(e_R=12-\epsilon_U-e_W\), where \(R\) is the complement-edge residue after the 100 edge-disjoint component \(K_4\)'s.
+- For any omitted-point subset \(S\), proved \(3t(S)\le10+2|S|+\binom{|S|}{2}-c_S-\epsilon_{U\setminus S}\). This constrains all omission multiplicities without assuming each point is omitted at most twice.
+- The surviving multiplicity patterns at \(k=5,6,7\) were enumerated arithmetically and then closed by separate analytical contradictions. In particular, the \(k=7\) cases with a multiplicity 4 or a \((3,2)\) pair are handled by equality in the subset inequality; the all-\(2/1\) case is handled by the three-point residual-degree bound.
+- Added M10_SUPPORT41_OMISSION_FLOOR.md and verify_m10_support41_omission_floor.py. Local arithmetic replay PASS: exact patterns are \(k=5:(2^5)\), \(k=6:(1^2,2^4)\), and \(k=7:(1^6,4),(1^5,2,3),(1^4,2^3)\); all integer budget branches match the proof.
+- New conditional theorem: \(k\ge8\). Remaining support-41 omission cases are \(k=8,9,10\). This does not close the \(v=41\) near-decomposition or the original EG617 theorem.
