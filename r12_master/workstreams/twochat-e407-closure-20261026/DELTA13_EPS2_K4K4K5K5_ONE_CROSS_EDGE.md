@@ -12,7 +12,7 @@ There is no E407 Q32 core H satisfying all of the following:
 \]
 where \(\epsilon_v=d_H(v)-12\ge0\), with a 29/18 support split \(U\dot\cup W\), \(\delta=13\), \(\epsilon_U=2\), and
 \[
-e(H[U])=99,\quad e(H[W])=33,\quad e_H(U,W)=151.
+e(H[U])=99,\quad e(H[W])=33,\quad e_H(U,W)=152.
 \]
 Assume \(L=\overline{H[U]}\) is four-partite with parts \(P_1,P_2,P_3,D\) of sizes \(7,7,7,8\), and \(H[W]\) consists of clique parts \(C_1,C_2\cong K_4\), \(C_3,C_4\cong K_5\), with exactly one edge between two distinct parts.
 
