@@ -38,7 +38,7 @@ Templates A–E impose the exact row-size and B-row-type constraints listed in F
 
 Each exact-129 color has ten disjoint K5 components and an 11-point exceptional gadget under the registered extremal theorem contract. At least six components per color have form \(\{b\}\cup R\), where b is in B and R is an independent 4-set in H anticomplete to b. These R sets are disjoint within a color and pairwise linear across colors; sets with the same B label in different colors are disjoint.
 
-The component family yields high-k witness floors 2, 4, 2, 3, 1 for templates A–E. For A/C, only the valid high-k label-intersection floor is certified; no stronger component-capacity bound is used.
+The component family yields high-k witness floors 2, 4, 2, 3, 1 for templates A–E. For A/C, the registered row-transversal theorem supports the conditional floor max(3,h-4) hub-complete component witnesses per exact-129 color.
 
 ## Unresolved bridge
 
@@ -52,3 +52,6 @@ This is a strict reduction, not E407 Q32 closure. The original K145-to-T61 bridg
 
 
 Round 5 correction: the claimed three-per-color hub-complete bound is withdrawn. Only the high-k label-intersection floor is certified; see PROOF_DEPENDENCY_AUDIT.md.
+
+
+Round 6 correction: the direct six-set justification was incomplete, but the stronger A/C bound is reinstated using the row-transversal theorem under the retained R(3,35) exclusion and t_s<=12. See Theorem 4.3 in FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md. The Round 5 withdrawal is superseded by this corrected proof route.
