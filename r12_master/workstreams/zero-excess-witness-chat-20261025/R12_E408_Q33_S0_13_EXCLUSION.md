@@ -161,7 +161,7 @@ The three multiplicities sum to seven. A multiplicity four gives a \(K_{12}\). O
 
 Both subcases contradict \(\omega(H)\le11\).
 
-Every profile under \(S_0=13\) is impossible. Combining with the already-audited universal \(S_0\ge12\) theorem yields
+Every profile under \(S_0=13\) is impossible. Combining this with the separate universal exclusion of \(S_0=12\) (which builds on the inherited \(S_0\ge12\) lower-bound theorem) yields
 \[
 \boxed{S_0=\epsilon_U+2\delta\ge14.}
 \]
@@ -169,4 +169,4 @@ Since \(\epsilon_U\le4\), this also gives \(\delta\ge5\) in the minimum-support 
 
 ## 5. Scope firewall
 
-This is a conditional exclusion of the \(S_0=13\) minimum-support E408 Q33 boundary. It uses the registered \(\omega(H)\le11\) core contract, the eight-color/56-witness exact-129 factor, pairwise linearity, and the previously proved \(S_0\ge12\) result. It does not exclude \(S_0\ge14\), larger witness-support sizes, E407 Q32, E408 Q32's separate 285-edge/excess-six core, or the original \(K_{145}\)-to-T61 bridge. EG617(\(r=12\)) remains **OPEN / NOT_CERTIFIED**.
+This is a conditional exclusion of the \(S_0=13\) minimum-support E408 Q33 boundary. It uses the registered \(\omega(H)\le11\) core contract, the eight-color/56-witness exact-129 factor, pairwise linearity, the inherited \(S_0\ge12\) lower bound, and the separate universal \(S_0=12\) exclusion. It does not further exclude profiles with \(S_0\ge14\), larger witness-support sizes, E407 Q32, E408 Q32's separate 285-edge/excess-six core, or the original \(K_{145}\)-to-T61 bridge. EG617(\(r=12\)) remains **OPEN / NOT_CERTIFIED**.
