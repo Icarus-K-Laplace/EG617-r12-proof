@@ -348,3 +348,14 @@ The only k=8 omission patterns are (3,1^7) and (2,2,1^6). The e(H[W])=5 subcase 
 Added Lemma 14.3 in M10_SUPPORT41_OMISSION_FLOOR.md. In the (2,2,1^6) multiplicity pattern, every residual edge within the omitted-point set must touch a point with an H-edge into W. There are at most two such points, but the degree ledger forces at least six residual edges there. The two double-omitted points must be those two centers, and the exact degree sequence then contradicts the six single-omitted points. Thus this pattern is impossible at e_W=4.
 
 The only surviving e_W=4 support-41 k=8 terminal is the (3,1^7) rigid star configuration with H[W] = K3 union K2 union K1. The k=8 cases with e_W=2 or 3, and k=9,10, remain open.
+
+
+## 2026-10-26 — support-41 \(k=8,e_W=4\) terminal fully excluded
+
+Added Lemma 14.4 to M10_SUPPORT41_OMISSION_FLOOR.md and the arithmetic-only verifier verify_m10_support41_star_terminal.py.
+
+**New conditional theorem:** the remaining \(k=8,e_W=4\) rigid star terminal \((3,1^7)\) is impossible. Combined with Lemma 14.3, all support-41, \(k=8,e_W=4\) states are now excluded. The proof first forces \(H[Y]\cong K_7\), where \(Y\) is the seven singleton-omitted points. Every \(y\in Y\) then has exactly six \(H\)-neighbors in \(N=U\setminus O\). Independent five-set avoidance gives a four-set cover of the 33-point \(N\) by \(X_w,X_{BB},X_{AAA},X_7\), with sizes bounded by \(11+\epsilon_w\), \(\lfloor(22+\epsilon_B)/2\rfloor\), \(1\), and \(6\). The only integer excess allocation not immediately giving a total below 33 is \(\epsilon_x=0,\epsilon_w=4,\epsilon_A=\epsilon_B=0\); equality forces 15 vertices in \(X_w\) but \(x\) has only 11 neighbors in \(N\), contradiction.
+
+The arithmetic verifier checked all 25 nonnegative integer allocations of the four excess units: 24 give a cover bound below 33, and the sole equality allocation is contradicted by \(15>11\). This verifier is arithmetic-only; the set-cover classification and graph contradiction are proved analytically in Lemma 14.4.
+
+**Scope:** this closes only the full-component support-41 terminal \(k=8,e_W=4\), conditional on the exact-129 component factorization and the 284-edge core contract. Remaining in this route: \(k=8,e_W\in\{2,3\}\) and \(k\in\{9,10\}\); also the separate seven-witness support boundary, \(m=8,9\) full-component supports, aggregate eleven-color ledger, and \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED. The 285-edge E408 Q32 contract is distinct and receives no automatic transfer.
