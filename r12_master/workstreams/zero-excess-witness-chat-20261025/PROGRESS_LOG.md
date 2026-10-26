@@ -276,3 +276,8 @@ No sibling branch was modified; these results remain scoped to their contracts. 
 ## Round 14 — zero-excess pair extension (2026-10-26)
 
 Proved that any nonadjacent pair of zero-excess W vertices extends to an independent four-set. The common nonneighbor set has size at least six; it cannot be a clique because six vertices of degree at least five in H[W] would consume at least six W-excess units, but \(\epsilon_W\le4\). Therefore a nonadjacent pair exists to complete the four-set. It follows that any such W pair has at most one common U-neighbor, and a shared U-neighbor must have \(\rho\le1\). Added the lemma to the theorem note, verifier, kernel, and canonical state; no closure claim.
+
+
+## Round 15 — self-contained three-part clique lemma (2026-10-26)
+
+Removed the S0=14 proof's dependency on a cross-file citation for the final K12 contradiction. The note now proves directly that three disjoint R-only transversals partitioning R are each cliques, their corresponding W-neighborhood groups are cliques, and the two sets are complete to one another. A multiplicity-four group therefore creates K12. The terminal remains OPEN.
