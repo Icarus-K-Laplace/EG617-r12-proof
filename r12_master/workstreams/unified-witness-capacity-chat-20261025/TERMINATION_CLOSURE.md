@@ -157,3 +157,12 @@ The (2,2,1^6) omission pattern is now excluded at e_W=4. The residual complement
 Lemma 14.4 in M10_SUPPORT41_OMISSION_FLOOR.md closes the \((3,1^7)\) star terminal left by the \(k=8\) reduction. Together with Lemma 14.3, no \(k=8,e_W=4\) support-41 state survives. The argument uses the independent-set cover of \(N\) by \(X_w,X_{BB},X_{AAA},X_7\), the exact degree-excess allocation, and the \(15>11\) contradiction in the sole equality case. Its arithmetic-only verifier passed all 25 allocations.
 
 The active full-component support-41 frontier is now \(k=8,e_W\in\{2,3\}\) or \(k\in\{9,10\}\). This is a conditional subcase closure only; the other support sizes and the original EG617 theorem remain OPEN / NOT_CERTIFIED.
+
+
+## 12. Support-41 \(k=8\) endpoint status after Lemmas 14.5–14.6
+
+The \(e_W=2\) endpoint is impossible by \(c_O\ge8\) versus \(c_O\le6\). The \(e_W=4\) endpoint is fully excluded by Lemmas 14.3–14.4, and \(e_W=5\) was excluded earlier. The only remaining \(k=8\) endpoint is \(e_W=3\), where \(H[W]=3K_2\).
+
+In this matching kernel, \(c_O\le4\), so at least four omitted points have zero W-degree and at most two have W-degree at least two. Any residual edge from a zero-W-degree omitted point must meet a high-incidence point whose W-neighborhood contains one complete matching edge. The residual-edge lower bound is \(e_R[O]\ge5+c_O+\epsilon_N\). A contradiction from the high-multiplicity points' required residual degrees remains OPEN.
+
+The support-41 \(k=9,10\) terminals and all other R12/global proof obligations remain OPEN / NOT_CERTIFIED.
