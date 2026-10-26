@@ -275,3 +275,14 @@ Lemma 14.4 in M10_SUPPORT41_OMISSION_FLOOR.md eliminates the last rigid star ter
 The proof forces \(H[Y]\cong K_7\), where \(Y\) is the set of seven singleton-omitted points. The 33-point complement \(N\) is covered by four classes: vertices adjacent to the isolated W-vertex \(w\), vertices adjacent to both endpoints of the W-edge \(B\), the unique possible degree-three W-neighborhood \(A\), and vertices adjacent to all seven \(Y\)-vertices. Their cardinalities sum to at most 31 or 32 for all excess allocations except \((\epsilon_x,\epsilon_w,\epsilon_A,\epsilon_B)=(0,4,0,0)\). In that exceptional case equality would require 15 vertices adjacent to \(w\) all to be adjacent to \(x\), but \(x\) has only 11 neighbors in \(N\). The arithmetic verifier checks all 25 excess allocations.
 
 This closes only the support-41, \(k=8,e_W=4\) corner. The remaining support-41 omission states are \(k=8,e_W=2,3\) and \(k=9,10\). The separate \(v=29/31\) minimum-support terminal, \(m=8,9\) full-component support routes, aggregate eleven-color ledger, and \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## 19. Support-41 \(k=8\) endpoint audit
+
+The support-41 full-component route now excludes \(e_W=2\) and \(e_W=4\) for \(k=8\); \(e_W=5\) was already excluded by Lemma 14.1. Thus only \(e_W=3\) remains at \(k=8\).
+
+For \(e_W=2\), \(\alpha(H[W])\le4\) forces two disjoint edges and an independent four-set in W. Each of the eight omitted points must have positive W-degree, so \(c_O\ge8\), contradicting the exact bound \(c_O\le6\).
+
+For \(e_W=3\), \(c_O\le4\) forces \(\alpha(H[W])\le3\), hence \(H[W]=3K_2\). At least four omitted points have zero W-degree. Every residual edge \(uv\in R[O]\) with \(c_u=0\) must have \(c_v\ge2\) and \(N_H(v)\cap W\) contain a whole matching edge; otherwise an independent transversal of the three W-edges extends \(\{u,v\}\) to a forbidden independent five-set. Therefore at most two omitted points have W-degree at least two. The exact budget also gives \(e_R[O]\ge5+c_O+\epsilon_N\).
+
+**Remaining single blocker:** reconcile the high-multiplicity residual degrees \(r_o=3t_o-2+c_o-\epsilon_o\) with this \(3K_2\) incidence kernel and the bound \(r_N=4-c_O-\epsilon_O-2\epsilon_N\). The cases \(k=9,10\), the separate minimum-support boundary, the aggregate color ledger, and the K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
