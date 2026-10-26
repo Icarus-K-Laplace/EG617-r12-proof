@@ -1,8 +1,8 @@
 # E408 Q33 minimum-support boundary: exclude \(S_0=13\)
 
 Date: 2026-10-26  
-Status: **PROVED_CONDITIONAL** under the registered E408 Q33 core, exact-129, and minimum-support contracts.  
-Conclusion: combined with the audited \(S_0\ge12\) theorem, this proves
+Status: **PROVED_CONDITIONAL** under the registered E408 Q33 core, exact-129, and minimum-support contracts, and conditional on the inherited universal \(S_0\ge12\) lower bound plus the separate universal \(S_0=12\) exclusion.  
+Conclusion: combined with those two prior results, this proves
 \[
 \boxed{S_0=\epsilon_U+2\delta\ge14}
 \]
