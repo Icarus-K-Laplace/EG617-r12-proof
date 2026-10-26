@@ -58,3 +58,12 @@ For templates A/C, let h be the number of full B rows, h>=6. A non-hub-complete 
 LABEL_JOIN_SYSTEM.md now lists the support-block variables, shell-row variables, component witnesses, exact constraints, and the unresolved mapping between the two witness families.
 
 The arithmetic replay passed in the Python reasoning environment. The GitHub-hosted scripts themselves were not launched from a repository shell. No E407 terminal is closed; all five global templates, surviving low-delta cases, and the original K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## Round 4 — 2026-10-26
+
+Added DELTA13_EPS2_K4K4K5K5_ONE_CROSS_EDGE.md. Under the four-partite support contract, the remaining delta=13, epsilon_U=2 W-profile with four clique parts of sizes 4,4,5,5 and one cross-edge is excluded. The proof separates assigned and unassigned D vertices, derives an external-edge budget of at most two in the assigned case, and shows the required K4 loads exceed the available W-excess. The exceptional unassigned case is separately excluded.
+
+The arithmetic replay passed in Python: the edge ledger is 99+33+152=284, and every listed K4-load case requires more than the two available W-excess units. The verifier is arithmetic-only; analytic transversal steps still need independent proof review.
+
+The four-partite delta=13, epsilon_U=2 row is now closed under the registered W-profile classification. Four-partite epsilon_U=0, non-four-partite delta=13, all delta<=12 cases, all five global shell templates, and the original K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
