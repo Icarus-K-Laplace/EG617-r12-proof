@@ -73,23 +73,9 @@ There are at least seven exact-129 colors in E407. Thus the global labelled witn
 
 Each Q also hits at least three shell rows in total by Lemma 3.1. Therefore the minimum total shell-row hit incidences among these selected witnesses are 42, 84, 42, 63, and 21 for templates A–E, respectively.
 
-**Theorem 4.3 (three hub-complete component witnesses in A/C).** In templates A and C, every exact-129 color has at least three hub-complete witnesses among its six B-labelled no-S component witnesses.
+**WITHDRAWN IN ROUND 5: the proposed stronger A/C hub-complete bound is not certified. See PROOF_DEPENDENCY_AUDIT.md.**
 
-**Proof.** Let \(h=n_3\ge6\) be the number of B rows with \(k_b=3\), and let \(\mathcal R_C\) be the six disjoint component quadruples \(\{Q_1,\ldots,Q_6\}\) guaranteed by Lemma 4.1. Each hub \(s\in S\) is missing to at least these h full rows. If \(Q_i\) is not hub-complete, choose a hub s it misses. It must hit \(D_b=N_H(b)\) for every \(b\) missing to s, so
-\[
-|W_B(Q_i)|\ge h,\qquad W_B(Q)=\{b\in B:Q\cap D_b\ne\varnothing\}.
-\]
-Because the six Qs are disjoint and \(|D_b|=k_b\),
-\[
-\sum_{i=1}^6|W_B(Q_i)|
-\le\sum_{b\in B}|D_b|
-=\sum_{b\in B}k_b
-=3h+n_1
-\le3h+(10-h)=2h+10<4h.
-\]
-If x of the six witnesses were not hub-complete, then \(xh\le2h+10<4h\), so \(x\le3\). At least three of the six witnesses are therefore hub-complete. \(\square\)
-
-This strengthens the older one-per-color capacity bound without identifying these six component witnesses with the 49 support blocks. Across seven exact-129 colors, it gives at least 21 labelled hub-complete component witnesses for A/C. It remains a necessary-structure theorem, not a template exclusion.
+The only retained bound is the valid high-k label-intersection floor from Theorem 4.2.
 
 ## 5. New support omission–degree identity
 
