@@ -164,7 +164,7 @@ The universal S0=13 exclusion does not derive an upper bound on \(\delta+\epsilo
 \[
 \boxed{S_0=\epsilon_U+2\delta\ge14,\qquad \delta\ge5.}
 \]
-The arithmetic/profile checks were replicated in-session and pass (60 cases; buckets 6/24/22/8). This is an arithmetic audit, not a graph-realization certificate. The analytic proof is now repaired under its stated contracts; the independent prior S0>=12 theorem remains an inherited conditional input.
+The arithmetic/profile checks were replicated in-session and pass (60 cases; buckets 6/24/22/8). This is an arithmetic audit, not a graph-realization certificate. The analytic proof is now repaired under its stated contracts; both the inherited S0>=12 lower bound and the separate universal S0=12 exclusion are conditional inputs.
 
 ### Current frontier
 
