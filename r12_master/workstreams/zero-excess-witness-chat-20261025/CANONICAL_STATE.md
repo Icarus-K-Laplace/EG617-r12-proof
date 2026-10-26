@@ -229,3 +229,15 @@ The arithmetic verifier now checks all nine formal counts rho=0..8 and confirms 
 The cross-pair rigidity now includes a vertexwise identity. In the \(\rho_u=1\) branch, the graph of witness pairs between P and Q is \(K_{7,7}\), and each \(p\in P\cup Q\) satisfies \(\rho_p+s_p=1\), where \(s_p\) records whether \(\{u,p\}\) is a witness pair. Thus every vertex is either omitted once or serves as the unique star partner once. In the \(\rho_u=0\) branch, the pair graph is \(K_{7,7}\) minus one edge; the two endpoints satisfy \(\rho_p+s_p=2\), and the other 12 vertices satisfy \(\rho_p+s_p=1\).
 
 Updated the S0=14 theorem note, verifier, kernel and progress log. The equality terminal remains OPEN / NOT_CERTIFIED.
+
+
+## Round 12 — high-omission degree cap (2026-10-26)
+
+In the S0=14 all-q=8 terminal, a vertex u with \(\rho_u\ge2\) has at most five zero-excess W-neighbors. If two such neighbors were nonadjacent, their common nonneighbors would include an independent pair, producing a W-independent four-set in which u is the duplicated U-vertex; the cross-pair theorem then forces \(\rho_u\le1\), contradiction. Since at most four W-vertices have positive excess, \(d_H(u,W)\le9\).
+
+Combining this with \(j_u+\epsilon_u\le\delta+\epsilon_U\in\{7,8,9\}\) yields:
+- (0,7): rho 2/3/4 have W-degree at most 7/4/1; rho>=5 impossible.
+- (2,6): rho 2/3/4 have W-degree at most 8/5/2; rho>=5 impossible.
+- (4,5): rho 2/3/4/5 have W-degree at most 9/6/3/0; rho>=6 impossible. If rho=5, epsilon_u=4 and j_u=5, so all U-excess and all leftover L-edges are incident to u.
+
+The verifier now includes these integer caps. This is a stronger necessary condition, not a closure of S0=14.
