@@ -228,6 +228,23 @@ If \(\rho_u=0\), then \(B=K_{7,7}-e_*\) for a unique missing pair \(e_*=\{p_*,q_
 \]
 In particular, every non-endpoint of \(e_*\) has \(\rho_p\le1\), and each endpoint has \(\rho_p\le2\). These identities sharpen the color-omission/star-partner accounting without yet contradicting either case.
 
+
+### Degree cap for vertices omitted in at least two colors
+
+Let \(Z=\{w\in W:\epsilon_w=0\}\). Since \(\epsilon_W\le4\), at least 12 vertices lie in Z, and every \(w\in Z\) has degree exactly four in \(H[W]\).
+
+If \(\rho_u\ge2\), then \(N_H(u)\cap Z\) is a clique in \(H[W]\). Otherwise choose nonadjacent \(w,w'\in N_H(u)\cap Z\). Their common nonneighbors in W, excluding w,w', form a set of size at least
+\[
+16-2-4-4=6.
+\]
+This set cannot be a clique: a clique of size at least six would force at least six units of W-excess, contradicting \(\epsilon_W\le4\). Hence it contains a nonadjacent pair \(x,y\), and \(\{w,w',x,y\}\) is an independent four-set. The vertex u would then have at least two incidences in that four-set; by the already-proved incidence count, it is the unique duplicated vertex, forcing \(\rho_u\le1\), a contradiction.
+
+A clique in Z has size at most five, because its vertices have degree four in \(H[W]\). There are at most four W-vertices outside Z. Therefore every \(u\) with \(\rho_u\ge2\) satisfies
+\[
+\boxed{d_H(u,W)\le9.}
+\]
+Combining with \(d_H(u,W)=6-3\rho_u+j_u+\epsilon_u\), the remaining high-omission vertices obey \(j_u+\epsilon_u\le3\rho_u+3\). In particular, \(\rho_u=2\) forces \(j_u+\epsilon_u\le9\). This is a further necessary condition, not a closure.
+
 ## Scope and next terminal
 
 The theorem does not yet rule out \(S_0=14\). It reduces that equality case to:
