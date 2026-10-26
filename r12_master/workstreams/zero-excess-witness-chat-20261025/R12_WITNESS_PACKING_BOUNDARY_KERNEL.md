@@ -508,3 +508,14 @@ Thus the S0=14 equality case has no 7-point transversal and all q_w=8. For each 
 d_H(u,W)=6-3\rho_u+j_u+\epsilon_u.
 \]
 The all-q=8/no-transversal system is still OPEN; this is a structural reduction, not a proof that S0=14 is impossible. The arithmetic verifier passed 30 integer inequality states and the three possible pairs (epsilon_U,delta)=(0,7),(2,6),(4,5).
+
+
+## 17. Independent-four-set rigidity for the S0=14 all-q=8 terminal
+
+The S0=14 no-transversal note now adds a stronger necessary condition. In the all-q=8 case,
+\[
+e(H[W])=34-\epsilon_U/2\in\{32,33,34\}.
+\]
+Caro–Wei gives \(\alpha(H[W])\ge256/(2e(H[W])+16)>3\), so \(\alpha(H[W])=4\). Every independent four-set \(A\subset W\) must dominate all 31 vertices of U; otherwise a missed u plus A is an independent five-set. Since the four U-neighborhoods have total size 32 and union U of size 31, every independent four-set has exactly one repeated U-incidence: exactly one pair of W vertices shares one U-neighbor, and the other five pairs have disjoint U-neighborhoods.
+
+The updated arithmetic verifier passes the independent-four-set inequalities as well as the earlier 30 integer states. The no-transversal all-q=8 terminal remains OPEN; this is a necessary-structure result, not a contradiction.
