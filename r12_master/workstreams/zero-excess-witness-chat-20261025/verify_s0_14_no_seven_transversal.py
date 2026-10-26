@@ -61,7 +61,19 @@ def main():
     assert 8 * 7 == 56
     # Their tau values are 8, and the duplicated pair has tau-sum 8+rho_u.
     assert 8 + 8 + 8 == 24
-    assert 8 + 1 <= 16  # duplicated-pair tau sum is at most 9, not 16
+    assert all(8 + rho <= 9 for rho in (0, 1))  # duplicated-pair tau sum <= 9
+
+    # Vertexwise deficit identities for P x Q pair graph B.
+    # rho_u=1: B=K7,7, all degrees 7, so rho_p+s_p=1 at every vertex.
+    assert 7 * 7 == 49
+    assert all(8 - 1 == 7 for _ in range(14))
+    assert 14 * 1 == 7 + 7  # total omissions in P,Q equal total star partners
+    # rho_u=0: B=K7,7 minus one edge, with 12 degree-7 vertices and
+    # two degree-6 endpoints; their deficits are twelve 1s and two 2s.
+    assert 49 - 1 == 48
+    deficits = [1] * 12 + [2, 2]
+    assert sum(deficits) == 16
+    assert deficits.count(2) == 2 and deficits.count(1) == 12
 
     # All-q=8 terminal: total omission count and degree ledger.
     assert 8 * 31 - 56 * 4 == 24
@@ -70,7 +82,7 @@ def main():
         assert 6 * 31 - 3 * 24 + 2 * delta + eps_u == 128
 
     print("E408_Q33_S0_14_NO_SEVEN_TRANSVERSAL_ARITHMETIC_OK")
-    print("30 integer inequality states, three excess/delta pairs, omission/degree identities, independent-four-set rigidity, and rho<=1 cross-pair counts checked.")
+    print("30 integer inequality states, three excess/delta pairs, omission/degree identities, independent-four-set rigidity, rho<=1 cross-pair counts, and vertexwise pair-deficit identities checked.")
     print("Scope: arithmetic checks only; analytic clique/independence arguments remain in the theorem note.")
 
 
