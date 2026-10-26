@@ -241,3 +241,17 @@ Combining this with \(j_u+\epsilon_u\le\delta+\epsilon_U\in\{7,8,9\}\) yields:
 - (4,5): rho 2/3/4/5 have W-degree at most 9/6/3/0; rho>=6 impossible. If rho=5, epsilon_u=4 and j_u=5, so all U-excess and all leftover L-edges are incident to u.
 
 The verifier now includes these integer caps. This is a stronger necessary condition, not a closure of S0=14.
+
+
+## Round 13 — live sibling refresh (2026-10-26)
+
+Read-only heads and latest relevant scope were refreshed; no sibling branch was modified.
+
+- workstream/r12-e407-q32-terminal-20261025, head 79c1086efca893fad8933210a92a432457232410: the full four-partite-L, delta=13, epsilon_U=1, H[W]=2K4 union 2K5 plus two-cross-edge profile is conditionally excluded. The epsilon_U=2 one-cross-edge profile, epsilon_U=0 row, non-four-partite L, lower delta, and K145 bridge remain open.
+- workstream/r12-e408-q33-global-compat-20261025, head 0cb2ff3968f005c9cb255958df7c02b220678701: the P_C=49 screen excludes seven of eleven incidence profiles; four remain: (4,3,2,1^4), (4,4,1^5), (6,2,1^5), (7,1^6). This is not a full E408 Q33 closure.
+- workstream/r12-unified-witness-capacity-20261025, head 13f5f51dc6a76e2397073b92c097edfd8db23b5f: for the separate ten-component / support-41 route, the number of distinct omitted points is at least eight; omission counts 8, 9, 10 remain open.
+- workstream/r12-e408-q32-excess6-20261025, head a0ba6db26c7e8b00a4217dcbcbf298895dff93ce: the low-support triple-pair theorem reduces E408 Q32 support to v>=44; its v=44 finite terminal remains open.
+- workstream/r12-witness-packing-chat-20261025, head f5d3daa07403877ede9885e1bd5c2f46b16d81da: it retains the universal minimum-support E408 Q33 S0>=12 exclusion and the E407 epsilon_U+2delta>=9 bound; no full terminal is closed.
+- workstream/r12-emergency-sprint-20261024, head f4c3b06891d29238d4f9cca2588f442004b6dc97: its four-partite E408 Q33 boundary is conditionally S0>=12; this is narrower than the separate universal branch above.
+
+These sibling advances are tracked as separate conditional workstreams and are not substituted for the current 31-point / 56-witness S0=14 analysis. EG617(r=12) remains OPEN / NOT_CERTIFIED.
