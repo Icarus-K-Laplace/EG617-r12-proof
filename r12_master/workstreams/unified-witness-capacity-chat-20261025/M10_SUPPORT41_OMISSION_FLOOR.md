@@ -186,9 +186,16 @@ Let \(x\) be the triple-omitted point. The singleton subset inequality gives
 \[
 c_x+\epsilon_{U\setminus\{x\}}\le1.
 \]
-If \(c_x=0\), then \(r_x=7-\epsilon_x\ge5\), while \(r_N\le2\) and \(c_O\le2\). Thus \(x\) has at least three \(R\)-neighbors in \(O\), one of which has no \(H\)-edge to \(W\); that pair and an independent triple in \(W\) contradict \(\alpha(H)\le4\). Hence \(c_x=1\) and \(\epsilon_{U\setminus\{x\}}=0\).
+For this pattern, the exact cross-edge ledger is
+\[
+c_O=2-\epsilon_x-\epsilon_Y-2\epsilon_N-r_N,
+\tag{14.2}
+\]
+where \(\epsilon_Y=\sum_{y\in Y}\epsilon_y\), \(\epsilon_N=\sum_{n\in N}\epsilon_n\), and \(r_N=\sum_{n\in N}r_n\). Indeed \(c=68-\epsilon_U\), while \(c_N=66+r_N+\epsilon_N\). In particular \(c_O\le2\).
 
-Applying the exact bound (3a) to each pair \(\{x,y\}\), with \(t_x+t_y=4\), \(e_W=4\), \(c_x=1\), and \(\epsilon_{U\setminus\{x,y\}}=0\), forces \(c_y=0\). Then \(r_x=e_R=8-\epsilon_x\), so every residual edge is incident to \(x\); \(x\) is \(R\)-adjacent to all seven other omitted points, and possibly one point of \(N\). The identity for \(c_O\) gives \(\epsilon_x\in\{0,1\}\).
+If \(c_x=0\), the singleton inequality gives \(\epsilon_Y+\epsilon_N\le1\), and (14.2), with \(c_O\ge0\), gives \(\epsilon_x\le2\) and \(r_N\le2\). Thus \(r_x=7-\epsilon_x\ge5\), and at least three \(R\)-neighbors of \(x\) lie in \(Y\). At most two points of \(Y\) have a positive \(H\)-degree into \(W\), since \(c_O\le2\); therefore one of those \(R\)-neighbors \(y\) has \(c_y=0\). The pair \(x,y\), together with an independent triple in \(W\), contradicts \(\alpha(H)\le4\). Hence \(c_x=1\) and \(\epsilon_{U\setminus\{x\}}=0\).
+
+Applying the exact bound (3a) to each pair \(\{x,y\}\), with \(t_x+t_y=4\), \(e_W=4\), \(c_x=1\), and \(\epsilon_{U\setminus\{x,y\}}=0\), forces \(c_y=0\). Now \(c_O=1\), \(\epsilon_Y=\epsilon_N=0\), and (14.2) gives \(\epsilon_x+r_N=1\). Thus \(\epsilon_x\in\{0,1\}\) and \(r_N=1-\epsilon_x\). It follows that \(e_R=8-\epsilon_x=r_x\), so every residual edge is incident to \(x\); \(x\) is \(R\)-adjacent to all seven other omitted points, and possibly one point of \(N\`.
 
 Finally, each \(y\ne x\) is nonadjacent to \(x\) in \(H\) and has no \(H\)-neighbor in \(W\). Therefore every independent triple in \(W\) must contain the unique \(H\)-neighbor \(w\) of \(x\) in \(W\). It follows that \(w\) is isolated in \(H[W]\), and \(H[W\setminus\{w\}]\) has five vertices, four edges, and independence number at most two. The equality case of Mantel's theorem identifies it as \(K_3\cup K_2\). Hence
 \[
