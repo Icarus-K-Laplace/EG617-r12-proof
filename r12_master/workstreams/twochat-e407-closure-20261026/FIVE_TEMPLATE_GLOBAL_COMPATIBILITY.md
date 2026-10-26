@@ -73,9 +73,7 @@ There are at least seven exact-129 colors in E407. Thus the global labelled witn
 
 Each Q also hits at least three shell rows in total by Lemma 3.1. Therefore the minimum total shell-row hit incidences among these selected witnesses are 42, 84, 42, 63, and 21 for templates A–E, respectively.
 
-**WITHDRAWN IN ROUND 5: the proposed stronger A/C hub-complete bound is not certified. See PROOF_DEPENDENCY_AUDIT.md.**
-
-The only retained bound is the valid high-k label-intersection floor from Theorem 4.2.
+**Round 6 correction: the A/C hub-complete bound is reinstated conditionally via the registered row-transversal theorem.** See the corrected proof below.
 
 ## 5. New support omission–degree identity
 
