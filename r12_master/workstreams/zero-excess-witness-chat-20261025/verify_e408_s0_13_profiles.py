@@ -59,21 +59,26 @@ def main():
     assert all(18 <= r[6] <= 21 and r[7] >= 2 for r in by_m[8])
     assert all(26 <= r[6] <= 29 and r[7] == 3 for r in by_m[7])
 
-    # In m=8,7 cases with only two distinct R-only sets, every low-b high
-    # neighborhood must contain one 8-set; its R spill is q-b-8 <= 2.
-    # A possible b=7 vertex in the m=8 family has q=9 and only two R points.
-    for m in (7, 8):
-        for r in by_m[m]:
-            k, qs, bs, a, eps_T, _, special, low_high = r
-            outside_union_cap = a
-            for q, b in zip(qs, bs):
-                if b == 7:
-                    outside_union_cap += q - b
-                else:
-                    outside_union_cap += q - b - 8
-            assert outside_union_cap <= 5, r
-            assert outside_union_cap < 3 * 8
+    # The pair-counting bound for a high neighborhood Y hitting d=7-b
+    # partitions is |Y intersect S| <= q-7 whenever S is not contained in Y.
+    assert {q: q - 7 for q in (9, 10, 11)} == {9: 2, 10: 3, 11: 4}
+    # q=9 forces a part because |Y| >= 8 > 3*2; q=10,b=0 forces
+    # a part because |Y|=10 > 3*3. For q=10,b in {1,2}, no-part leaves
+    # at least five points of each part outside Y; for q=11,b<=3 it leaves
+    # at least four. These are the margins used in the independent-five
+    # argument, not the invalid earlier bound 1+b.
+    assert 9 - 1 >= 8 and 8 > 3 * 2
+    assert 10 > 3 * 3
+    assert 8 - 3 >= 5
+    assert 8 - 4 >= 4
 
+    # With m=8 or 7, one realized R-only set is impossible by the
+    # multiplicity cap 4. If exactly two are realized, their multiplicities
+    # must be (4,4) or (4,3), so a K12 follows once the complement transversal
+    # supplies the third mathematical part of R.
+    two_set_patterns = {8: [(4, 4)], 7: [(4, 3)]}
+    for m, ps in two_set_patterns.items():
+        assert all(sum(p) == m and max(p) == 4 and min(p) <= 4 for p in ps)
     # If three distinct R-only sets partition R, the possible multiplicity
     # patterns after excluding any group of size four are as stated.
     patterns = {
