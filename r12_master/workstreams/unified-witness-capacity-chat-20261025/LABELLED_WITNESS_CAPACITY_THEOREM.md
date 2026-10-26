@@ -356,3 +356,8 @@ For every subset \(S\) of omitted points, the exact degree-sum bound yields
 This leaves only three multiplicity patterns at \(k=7\); each is excluded analytically by the small outside set \(W\), the residual-edge count, and \(\alpha(H)\le4\). The same budget argument excludes \(k=5,6\).
 
 **Scope:** this is a conditional reduction of the \(m=10,\ |U_{\rm comp}|=41\) near-decomposition terminal. The remaining omission counts are \(k=8,9,10\); no contradiction for those cases is claimed. It does not close the seven-witness minimum-support boundary or the original EG617 theorem.
+
+
+## 14. Support-41 k=8 residual budget
+
+The follow-up in M10_SUPPORT41_OMISSION_FLOOR.md excludes e(H[W])=5 for both k=8 multiplicity patterns. The remaining (3,1^7), e(H[W])=4 branch collapses to a rigid conditional terminal with H[W] isomorphic to K3 disjoint union K2 disjoint union K1. This terminal is not closed; all other k=8 cases with e(H[W])<=4 and k=9,10 remain open.
