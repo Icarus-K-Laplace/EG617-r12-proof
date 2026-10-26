@@ -73,7 +73,60 @@ There are at least seven exact-129 colors in E407. Thus the global labelled witn
 
 Each Q also hits at least three shell rows in total by Lemma 3.1. Therefore the minimum total shell-row hit incidences among these selected witnesses are 42, 84, 42, 63, and 21 for templates A–E, respectively.
 
-## 5. What the theorem does not imply
+## 5. New support omission–degree identity
+
+This identity uses only the frozen 49-block contract and the exact core ledger; it does **not** identify the 49 support blocks with the separate no-S \(K_5\)-component witnesses.
+
+Let \(\mathcal Q_c=\{Q_{c,1},\ldots,Q_{c,7}\}\) be the seven support blocks in exact-129 color class c. They are pairwise disjoint, each has size four, and \(U=\bigcup_{c,j}Q_{c,j}\) has size 29. Therefore each color class omits exactly one point of U. For \(u\in U\), define
+\[
+r_u=|\{c:u\notin\bigcup_{j=1}^7Q_{c,j}\}|.
+\]
+Then
+\[
+\sum_{u\in U}r_u=7,\qquad m_u:=|\{Q\in\mathcal Q:u\in Q\}|=7-r_u.
+\]
+
+Write \(L=\overline{H[U]}\). The 49 blocks contribute 294 distinct edges to L. Let \(x_u\) be the number of additional L-neighbours of u not paired with u inside any selected block. Then \(x_u\ge0\), \(\sum_{u\in U}x_u=2\delta\), and the exact pointwise identity is
+\[
+d_L(u)=3m_u+x_u=21-3r_u+x_u.
+\]
+Since \(d_L(u)=28-d_{H[U]}(u)=16-\epsilon_u+d_W(u)\), where \(d_W(u)=d_H(u,W)\), we obtain:
+
+**Theorem 5.1 (support omission–degree identity).**
+\[
+\boxed{d_W(u)=5+\epsilon_u-3r_u+x_u}
+\]
+for every \(u\in U\), with
+\[
+r_u,x_u,\epsilon_u\in\mathbb Z_{\ge0},\quad
+\sum_U r_u=7,\quad \sum_U x_u=2\delta,\quad
+\sum_U\epsilon_u=\epsilon_U.
+\]
+
+Consequences:
+- At least 22 points of U have \(r_u=0\), and each such point has \(d_W(u)\ge5\).
+- If \(r_u=2\), nonnegative W-degree forces \(\epsilon_u+x_u\ge1\); if \(r_u=3\), it forces \(\epsilon_u+x_u\ge4\); in general \(\epsilon_u+x_u\ge3r_u-5\).
+- The sum identity recovers the exact cross-edge ledger:
+  \[
+  \sum_Ud_W(u)=145+\epsilon_U-21+2\delta
+  =124+\epsilon_U+2\delta.
+  \]
+
+**Corollary 5.2 (four-clique W saturation budget).** Suppose, additionally, \(H[W]\) is a disjoint union of four cliques and every \(u\in U\) must be complete to at least one of those components (as follows from \(\alpha(H)\le4\)). If every component has size at least \(c_{\min}\), then \(d_W(u)\ge c_{\min}\) and
+\[
+\epsilon_u+x_u\ge3r_u+c_{\min}-5.
+\]
+Let \(k=|\{u:r_u>0\}|\le7\). Summing only over these k omitted points gives
+\[
+2\delta+\epsilon_U\ge21+(c_{\min}-5)k.
+\]
+In particular, if all four W components have size at least four, then
+\[
+\boxed{2\delta+\epsilon_U\ge14}.
+\]
+This is a necessary arithmetic screen, not a terminal exclusion by itself. It does not apply when W has cross-edges unless the required whole-component saturation is separately proved.
+
+## 6. What the theorem does not imply
 
 The labelled packing bounds do not alone contradict the 47-vertex core, its four units of degree excess, or the 49-block support design. In particular:
 - The selected \(\mathcal R_C\) sets are not automatically identified with every member of \(\mathcal Q_U\).
