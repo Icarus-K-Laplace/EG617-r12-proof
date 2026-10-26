@@ -26,11 +26,14 @@ def main():
         selected = h + MIN_B_LABELLED_NO_S - B_ROWS
         assert selected == h - 4
         assert selected > 0
-        assert row["k3_floor"] <= h
+        k3_selected = max(0, row["k3_floor"] + MIN_B_LABELLED_NO_S - B_ROWS)
+        assert k3_selected <= selected
         per_color_shell_hits = selected * 3
         all_color_witnesses = selected * EXACT129_COLORS
         all_color_shell_hits = per_color_shell_hits * EXACT129_COLORS
-        hub_hits_per_color = selected * row["min_hub_hits"]
+        # Every high-k witness hits at least two S rows; each guaranteed k=3
+        # witness contributes one additional hit.
+        hub_hits_per_color = selected * 2 + k3_selected
         assert all_color_witnesses == selected * 7
         assert all_color_shell_hits == all_color_witnesses * 3
         results[template] = (
