@@ -75,6 +75,16 @@ Each Q also hits at least three shell rows in total by Lemma 3.1. Therefore the 
 
 **Round 6 correction: the A/C hub-complete bound is reinstated conditionally via the registered row-transversal theorem.** See the corrected proof below.
 
+**Theorem 4.3 (A/C hub-complete component packing).** In templates A and C, let h=n3>=6 be the number of full B rows. Among the six B-labelled no-S component quadruples in each exact-129 color, at least max(3,h-4) are hub-complete.
+
+**Proof.** If Q is not hub-complete, choose a hub s that Q misses. Since t_s<=12, the registered row-transversal theorem applies: every independent 4-set in H\D_s meets D_b for each missing shell edge sb. Hence Q hits all h full B rows and requires at least h distinct B-H incidences. The six component quadruples are disjoint within a color, while
+\[
+c_S=\sum_{b\in B}k_b=3h+n_1\le2h+10<4h.
+\]
+Thus at most three witnesses can be non-hub-complete. Also, a witness whose own B label has k_b=3 is hub-complete by Lemma 3.2. Therefore a non-hub-complete witness must use one of the 10-h low-k labels, so there are at most 10-h such witnesses. Combining the bounds gives at least \(6-\min(3,10-h)=\max(3,h-4)\) hub-complete witnesses. \(\square\)
+
+**Dependency.** The row-transversal step uses Theorem 3.1 of R12_ROW_TRANSVERSAL_AND_Q33_PACKING.md and the retained R(3,35) exclusion, with t_s<=12. The direct independent-six argument alone does not justify hitting other B rows; the row-transversal theorem supplies that missing implication.
+
 ## 5. New support omission–degree identity
 
 This identity uses only the frozen 49-block contract and the exact core ledger; it does **not** identify the 49 support blocks with the separate no-S \(K_5\)-component witnesses.
