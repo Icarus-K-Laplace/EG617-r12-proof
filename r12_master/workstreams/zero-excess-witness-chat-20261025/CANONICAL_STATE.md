@@ -175,3 +175,25 @@ The arithmetic/profile checks were replicated in-session and pass (60 cases; buc
 - The original T61-to-K145 bridge and complete EG617(r=12) theorem remain OPEN / NOT_CERTIFIED.
 
 No sibling branch was modified.
+
+
+## Round 7 — S0=14 terminal reduced (2026-10-26)
+
+Added R12_E408_Q33_S0_14_NO_SEVEN_TRANSVERSAL.md and verify_s0_14_no_seven_transversal.py.
+
+Conditional result under the minimum-support E408 Q33 core/exact-129 contracts:
+\[
+S_0=14\Longrightarrow
+\text{no seven-point transversal in U and }q_w=8\text{ for all }w\in W.
+\]
+The proof first eliminates any realized q=7 witness using a clique/degree-count contradiction. It then shows a seven-point transversal cannot exist even if no W vertex realizes it: the T-type clique and the R-only multiplicity cap force three multiplicity-four groups, hence a K12.
+
+The remaining S0=14 terminal is now specifically:
+- all 16 W vertices have U-degree eight;
+- the 56 witness blocks have no seven-point transversal;
+- each color's omitted triple X_c has size three, and every W-neighborhood meets each X_c in at most one point;
+- with rho_u=8-c_u, sum rho_u=24, tau_w=sum_{u in N_U(w)}rho_u, and d_H(u,W)=6-3rho_u+j_u+epsilon_u.
+
+The new arithmetic verifier passed 30 integer inequality states and the three excess/leftover-edge pairs (epsilon_U,delta)=(0,7),(2,6),(4,5). These checks do not certify a graph realization or close the remaining terminal.
+
+Current frontier: E408 Q33 has the conditional minimum-support lower bound S0>=14; the equality case S0=14 is reduced but OPEN. Larger S0, larger support sizes, E407 Q32, E408 Q32, and the original T61-to-K145 bridge remain OPEN / NOT_CERTIFIED.
