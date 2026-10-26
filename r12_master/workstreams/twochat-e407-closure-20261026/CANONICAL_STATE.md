@@ -63,9 +63,9 @@ Under the exact-129 component contract, every exact-129 color has at least six B
 
 | Template | High-k rows forced | High-k B-labelled no-S components per exact-129 color |
 |---|---:|---:|
-| A | at least 6, including at least 6 k=3 rows | at least 2, each hitting all three S rows |
+| A | at least 6, including at least 6 k=3 rows | at least 2 high-k witnesses and at least 2 k=3 witnesses; the latter hit all three S rows |
 | B | at least 8 | at least 4, each hitting at least two S rows |
-| C | at least 6, including at least 6 k=3 rows | at least 2, each hitting all three S rows |
+| C | at least 6, including at least 6 k=3 rows | at least 2 high-k witnesses and at least 2 k=3 witnesses; the latter hit all three S rows |
 | D | at least 7 | at least 3, each hitting at least two S rows |
 | E | at least 5 | at least 1, each hitting at least two S rows |
 
