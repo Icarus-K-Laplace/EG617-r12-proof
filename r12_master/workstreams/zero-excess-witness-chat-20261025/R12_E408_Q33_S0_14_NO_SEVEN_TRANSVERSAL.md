@@ -171,6 +171,40 @@ More generally, for any independent set \(A\subset W\) of size \(r\le4\), every 
 Otherwise at least \(5-r\) vertices of the independent block Q would be nonadjacent to every vertex of A, giving an independent five-set. Thus independent pairs, triples, and quadruples of W induce respectively 2-, 3-, and 4-fold covers of every witness block.
 
 
+### Cross-pair rigidity for every independent four-set
+
+Let \(A=\{w_1,w_2,w_3,w_4\}\subset W\) be independent, and let \(S_i=N_H(w_i)\cap U\). The 32 incidences from the four 8-neighborhoods cover all 31 vertices of U, so exactly one vertex \(u\in U\) is repeated, and it is repeated exactly twice. Relabel so \(u\in S_1\cap S_2\). Then
+\[
+S_1\cap S_2=\{u\},\qquad
+S_i\cap S_j=\varnothing\ \text{for every other pair } \{i,j\}.
+\]
+Put \(P=S_1\setminus\{u\}\) and \(Q=S_2\setminus\{u\}\); both have size seven. The sets \(P,Q,S_3,S_4,\{u\}\) partition U.
+
+Every witness block \(B\in\mathcal Q\) must be hit by each \(w_i\)'s union: otherwise \(A\) together with an uncovered point of B would be an independent five-set. More precisely, every point of B has at least one neighbor in A. If \(u\notin B\), all four points have exactly one neighbor in A, so B contains one point from each of \(P,Q,S_3,S_4\). If \(u\in B\), then u has two neighbors in A and the other three points have one each; one of \(w_1,w_2\) is double on B, while the other is singleton at u, and B contains one point from \(S_3\) and one from \(S_4\). Thus every witness block contains exactly one point from each of \(S_3,S_4\). In particular \(S_3,S_4\) each hit every witness block exactly once, so
+\[
+\tau_{w_3}=\tau_{w_4}=8.
+\]
+
+For a color c with \(u\in X_c\), none of its seven blocks contains u, and each contributes a distinct pair in \(P\times Q\). For a color c with \(u\notin X_c\), exactly one block contains u and contributes the pair \(\{u,v\}\); its other six blocks each contribute a pair in \(P\times Q\). Since u lies in exactly \(\rho_u\) omission triples, the total number of \(P\times Q\) pairs contributed by all 56 witness blocks is
+\[
+7\rho_u+6(8-\rho_u)=48+\rho_u.
+\]
+No pair can occur in two witness blocks, because then those blocks would intersect in two vertices. There are only \(7\cdot7=49\) pairs in \(P\times Q\). Consequently
+\[
+\boxed{\rho_u\le1.}
+\]
+This holds for the unique duplicated U-vertex in every independent four-set \(A\subset W\).
+
+The two cases are rigid:
+- If \(\rho_u=0\), exactly 48 of the 49 pairs in \(P\times Q\) occur in witness blocks, leaving exactly one pair absent from the witness family. Thus H has at most one edge between P and Q.
+- If \(\rho_u=1\), all 49 pairs occur exactly once. Hence P and Q are anticomplete in H.
+
+Also, summing \(\tau_w=\sum_{x\in S_w}\rho_x\) over \(A\) gives
+\[
+\tau_{w_1}+\tau_{w_2}=8+\rho_u.
+\]
+Thus the duplicated pair cannot both have \(\tau=8\); every independent four-set contains at least the two \(\tau=8\) vertices \(w_3,w_4\), and its duplicated vertex must have \(\rho_u\in\{0,1\}\).
+
 ## Scope and next terminal
 
 The theorem does not yet rule out \(S_0=14\). It reduces that equality case to:
