@@ -359,5 +359,6 @@ c_x=2,\quad c_Y=0,\quad \epsilon_Y=\epsilon_N=0,\quad
 R\text{ is a star at }x\text{ with leaves }Y
 \text{ and }2-\epsilon_x\text{ additional leaves in }N.
 \]
+Moreover \(H[Y]\cong K_7\): if \(y,z\in Y\) were nonadjacent in \(H\), then \(y,z\) together with an independent transversal of the three matching edges in \(W\) would be an independent five-set. Since each \(y\in Y\) has degree 12, no H-neighbors at \(x\) or \(W\), and six neighbors in \(Y\), it has exactly six neighbors in \(N\).
 
 This is a reduction, not yet a contradiction. The remaining blocker is to exclude this final \((3,1^7)\) star terminal under \(H[W]=3K_2\). \(\square\)
