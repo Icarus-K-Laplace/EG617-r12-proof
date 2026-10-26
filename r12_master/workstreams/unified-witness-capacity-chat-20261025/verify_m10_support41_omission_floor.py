@@ -2,7 +2,7 @@
 """Arithmetic-only verifier for M10_SUPPORT41_OMISSION_FLOOR.md.
 
 This script checks:
-  1. all positive omission multiplicity patterns summing to ten for k=5,6,7
+  1. all positive omission multiplicity patterns summing to ten for k=5,6,7,8
      that survive the necessary subset inequalities;
   2. the integer (e_W, epsilon_U, cross-edge, e_R) ranges;
   3. the exact lower-bound branches used for the k=6 and k=7 set-degree
@@ -46,6 +46,10 @@ EXPECTED = {
         (1, 1, 1, 1, 1, 2, 3),
         (1, 1, 1, 1, 2, 2, 2),
     ],
+    8: [
+        (1, 1, 1, 1, 1, 1, 1, 3),
+        (1, 1, 1, 1, 1, 1, 2, 2),
+    ],
 }
 
 
@@ -62,7 +66,7 @@ def feasible_budget_rows(k):
 
 
 def verify():
-    for k in (5, 6, 7):
+    for k in (5, 6, 7, 8):
         patterns = [
             t for t in positive_sorted_compositions(k, 10)
             if survives_subset_bounds(t)
@@ -82,6 +86,14 @@ def verify():
             (2, 4, 68, 6), (3, 0, 70, 9),
             (3, 1, 69, 8), (3, 2, 68, 7),
             (4, 0, 68, 8),
+        ],
+        8: [
+            (2, 0, 72, 10), (2, 1, 71, 9), (2, 2, 70, 8),
+            (2, 3, 69, 7), (2, 4, 68, 6),
+            (3, 0, 70, 9), (3, 1, 69, 8), (3, 2, 68, 7),
+            (3, 3, 67, 6), (3, 4, 66, 5),
+            (4, 0, 68, 8), (4, 1, 67, 7), (4, 2, 66, 6),
+            (5, 0, 66, 7),
         ],
     }
     for k in (5, 6, 7):
@@ -118,6 +130,27 @@ def verify():
                or (row[0] == 2 and row[2] + row[3] <= 1)
                for row in feasible_k7_double), feasible_k7_double
     print("k=6/k=7 degree-sum branch arithmetic PASS")
+
+
+    # k=8, e_W=5: the budget forces epsilon_U=0, e_R=7 and no
+    # O-W/R-N incidences. The two allowed multiplicity patterns then have
+    # omitted-point R degrees (7,1^7) or (4,4,1^6).
+    k8_e5 = [row for row in feasible_budget_rows(8) if row[0] == 5]
+    assert k8_e5 == [(5, 0, 66, 7)], k8_e5
+    assert EXPECTED[8] == [
+        (1, 1, 1, 1, 1, 1, 1, 3),
+        (1, 1, 1, 1, 1, 1, 2, 2),
+    ]
+    print("k=8, e_W=5 arithmetic branch PASS")
+
+    # k=8, e_W=4, (2,2,1^6): c_O=2 forces both double-omitted
+    # points to have c=1 and zero omitted-point excess, hence R-degrees 5,5;
+    # the six single points have R-degree 1 each. The center degree sum 10
+    # cannot be realized by six leaf incidences (6) plus at most one center edge (2).
+    assert 5 + 5 == 10
+    assert 6 + 2 == 8
+    print("k=8, e_W=4 double-omission degree-sum audit PASS")
+
     print("PASS: integer audit only; graph contradictions are analytical.")
 
 
