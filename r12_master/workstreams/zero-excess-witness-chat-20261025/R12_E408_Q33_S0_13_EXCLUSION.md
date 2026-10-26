@@ -46,19 +46,19 @@ For each \(t\in T\), its eight witness triples partition \(R\) into eight triple
 
 ## 2. R-only transversal geometry
 
-### Lemma 2.1 — distinct R-only eight-transversals meet in at most one point
+### Lemma 2.1 — distinct R-only eight-transversals are disjoint; two force a third transversal
 
-Let \(S,S'\subset R\) be distinct eight-point transversals and \(s=|S\cap S'|\). In each of the seven partitions indexed by \(t\in T\), the \(8-s\) points of \(S\setminus S'\) pair in their triples with \(8-s\) distinct points of \(S'\setminus S\). The resulting ordered pairs cannot repeat across partitions, since a repeated pair would make two witness sets share two points. Hence
+Let \(S,S'\subset R\) be distinct eight-point transversals and \(s=|S\cap S'|\). Pair-counting across the seven partitions first gives
 \[
 7(8-s)\le(8-s)^2,
 \]
-so \(s\le1\).
+so \(s\le1\). If \(s=1\), let \(p\) be the common point. In each of the seven partitions indexed by \(t\in T\), the witness triple containing \(p\) must have its other two points outside \(S\cup S'\), because both transversals already meet that triple at \(p\). These seven witness triples are pairwise disjoint outside \(p\), by linearity, and so require 14 distinct points outside \(S\cup S'\). But \(R\setminus(S\cup S')\) has only \(24-15=9\) points. Contradiction. Therefore distinct R-only eight-transversals are disjoint.
 
-### Lemma 2.2 — three distinct R-only transversals partition \(R\)
+If \(S,S'\) are disjoint, \(R_0=R\setminus(S\cup S')\) has size eight. Every witness triple in every T-partition contains one point of \(S\) and one point of \(S'\), so its third point lies in \(R_0\). Thus \(R_0\) is itself a third R-only eight-transversal. This is a mathematical transversal; it need not be realized as a W-neighborhood.
 
-There are at most three distinct R-only eight-transversals: four such sets would have union size at least \(4\cdot8-\binom42=26>24\). If there are three, their union has size at least \(24-3=21\), so at most three points of \(R\) are uncovered.
+### Lemma 2.2 — at most three distinct R-only transversals, and any three partition R
 
-Suppose two of the three sets intersect at \(p\). Every one of the seven witness blocks containing \(p\) must also contain an uncovered point: if \(p\) belongs to exactly two sets, the block's remaining R-points must hit the third set and then lie outside the union; if \(p\) belongs to all three, both remaining R-points lie outside the union. Pairwise linearity permits at most one witness block for each pair \(p r\), so seven blocks containing \(p\) require at least seven uncovered points, contradicting the bound of three. Therefore the three sets are pairwise disjoint and partition \(R\).
+Distinct R-only eight-transversals are disjoint by Lemma 2.1. Four such sets would contain 32 points of \(R\), impossible because \(|R|=24\). Hence there are at most three distinct sets. If there are three, they are disjoint eight-sets and therefore partition \(R\).
 
 ### Lemma 2.3 — multiplicity cap and clique consequences
 
@@ -79,29 +79,38 @@ For an R-only set \(S\) occurring \(m_S\) times,
 \]
 Thus every distinct R-only eight-set has multiplicity at most four. Also, if \(r\) is uncovered by all R-only neighborhoods, then \(s_r=0\) forces \(a_r=3+g_r\ge3\).
 
-Suppose now the R-only neighborhoods comprise three distinct sets \(S_1,S_2,S_3\). By Lemma 2.2 they partition \(R\). Write \(G_i\subset W\) for the vertices whose U-neighborhood is exactly \(S_i\), and \(m_i=|G_i|\).
+Whenever \(S_1,S_2,S_3\) are three R-only eight-transversals partitioning \(R\), let \(G_i\subseteq W\) be the set of vertices whose U-neighborhood is exactly \(S_i\), and let \(m_i=|G_i|\). The sets \(G_i\) may be empty: this matters when two realized neighborhoods force a third mathematical transversal that is not itself realized in W.
 
-Every vertex of \(S_i\) has at most one H-neighbor in each other \(S_j\): for each \(t\in T\), the witness containing \(t\) and the given vertex supplies a distinct nonneighbor in \(S_j\). It follows from \(\alpha(H)\le4\) and \(T\) anticomplete to \(R\) that each \(S_i\) is a clique. Each \(G_i\) is also a clique, since two nonadjacent vertices in \(G_i\), together with a nonadjacent pair from the other two parts and a point of \(T\), would be an independent five-set. By definition, \(G_i\) is complete to \(S_i\). Therefore
+For each \(u\in S_i\) and each other part \(S_j\), the seven witness blocks indexed by \(t\in T\) and containing \(u\) supply seven distinct nonneighbors of \(u\) in \(S_j\). Thus every vertex of \(S_i\) has at most one H-neighbor in each other part. This cross-part degree bound and \(\alpha(H)\le4\) imply that each \(S_i\) is a clique: if \(u,v\in S_i\) were nonadjacent, choose \(a\in S_j\) nonadjacent to both, then \(b\in S_k\) nonadjacent to \(u,v,a\), and finally any \(t\in T\); the five vertices would be independent.
+
+Each \(G_i\) is also a clique. If \(w,w'\in G_i\) were nonadjacent, choose a nonadjacent pair \(a\in S_j,b\in S_k\) using the cross-part degree bound, and any \(t\in T\). Because \(N_H(w)\cap U=N_H(w')\cap U=S_i\) and \(T\) is anticomplete to \(R\), these five vertices would be independent. By definition \(G_i\) is complete to \(S_i\). Consequently
 \[
 m_i\ge4\quad\Longrightarrow\quad S_i\cup G_i\cong K_{8+m_i}\supseteq K_{12}, \tag{2}
 \]
 contrary to \(\omega(H)\le11\).
 
-### Lemma 2.4 — a high neighborhood must contain a part, or exceeds its W-degree
+### Lemma 2.4 — high neighborhoods contain a part, or force an impossible W-degree
 
-Let \(y\in W\) have \(q_y\in\{9,10,11\}\) and \(b_y=|N_H(y)\cap T|<7\). If \(N_H(y)\cap R\) does not contain a particular \(S_i\), pair-counting against the \(7-b_y\) partitions it hits gives
+Let \(y\in W\) have \(q_y\in\{9,10,11\}\), put \(b_y=|N_H(y)\cap T|<7\), and \(Y=N_H(y)\cap R\), so \(|Y|=q_y-b_y\). For every \(t\in T\setminus N_H(y)\), the set \(Y\) must hit every witness triple in the partition indexed by \(t\); otherwise that independent Q-block together with \(y\) is an independent five-set.
+
+If \(S_i\) is an R-only eight-transversal not contained in \(Y\), put \(s=|S_i\cap Y|<8\). In each of the \(d=7-b_y\) partitions hit by \(Y\), every point \(x\in S_i\setminus Y\) lies in a triple whose other two points are outside \(S_i\), and at least one of them belongs to \(Y\). Choose one such point \(z\in Y\setminus S_i\) and record the pair \((x,z)\). Within each partition these are \(8-s\) distinct pairs; the same pair cannot recur in another partition by linearity. Hence
 \[
-|N_H(y)\cap S_i|\le1+b_y. \tag{3}
+d(8-s)\le(8-s)(|Y|-s),
 \]
-Indeed, the pairs between \(N_H(y)\cap R\setminus S_i\) and \(S_i\setminus N_H(y)\) are distinct across the \(7-b_y\) partitions.
+and therefore
+\[
+|Y\cap S_i|=s\le |Y|-d=(q_y-b_y)-(7-b_y)=q_y-7. \tag{3}
+\]
 
-For \(q_y=9\), \(b_y\in\{0,1\}\), so (3) bounds each intersection by two; the neighborhood has at least eight R-points and therefore must contain one of the three parts. For \(q_y=10\), \(b_y\in\{0,1\}\) similarly forces a part. If \(q_y=10,b_y=2\) and no part is contained, each other part has at least five vertices outside \(N_H(y)\). If \(y\) missed a vertex of any \(G_i\), choose a nonadjacent pair from the other two parts outside \(N_H(y)\), and a point of \(T\setminus N_H(y)\); this gives an independent five-set. Thus \(y\) would be adjacent to every vertex in \(G_1\cup G_2\cup G_3\), forcing \(d_H(y,W)\ge m\). In the cases below \(m\ge7\), whereas \(d_H(y,W)=12+\epsilon_y-10\le6\), impossible. So a part is contained.
+For \(q_y=9\), the bound (3) is two. If no part \(S_i\) were contained in \(Y\), the three parts would cover at most six points of \(Y\), whereas \(|Y|=9-b_y\ge8\). Thus \(Y\) contains a part.
 
-For \(q_y=11,b_y\le3\), if no part is contained, every part has at least four vertices outside \(N_H(y)\). The same independent-five argument forces \(y\) adjacent to all \(G_i\), hence \(d_H(y,W)\ge m\ge9\), but \(d_H(y,W)=1+\epsilon_y\le5\). Therefore \(N_H(y)\cap R\) contains a part.
+For \(q_y=10,b_y=0\), (3) bounds each intersection by three; if no part were contained, the three parts would cover at most nine points, less than \(|Y|=10\). Thus \(Y\) contains a part.
 
-Finally, if \(y\) contains \(S_i\) and \(b_y<7\), then \(y\) is adjacent to every vertex of \(G_i\). Otherwise choose a nonadjacent pair from the other two parts outside \(N_H(y)\) (each loses at most three points to \(y\)), and a point of \(T\setminus N_H(y)\); together with \(y\) and the missed \(G_i\)-vertex this is an independent five-set.
+For \(q_y=10,b_y\in\{1,2\}\), or \(q_y=11,b_y\le3\), suppose no part is contained. Then (3) leaves at least five points of each part outside \(Y\) in the q=10 case, and at least four in the q=11 case. If \(y\) missed any vertex \(w\in G_i\), choose a nonadjacent pair from the other two parts outside \(Y\), using the cross-part degree bound, and choose \(t\in T\setminus N_H(y)\). The set \(\{y,w,a,b,t\}\) would be an independent five-set. Therefore \(y\) would have to be adjacent to every vertex in \(G_1\cup G_2\cup G_3\), forcing \(d_H(y,W)\ge m\). For q=10, \(d_H(y,W)=2+\epsilon_y\le6<m\) in the profiles where this case occurs; for q=11, \(d_H(y,W)=1+\epsilon_y\le5<m\). Contradiction. So \(Y\) contains a part in every feasible high-degree case.
 
-If two high vertices \(y,z\) with \(b_y,b_z<7\) both contain the same \(S_i\), then they are adjacent. Each has at most three R-neighbors outside \(S_i\), so each of the other two parts has at least two vertices outside both neighborhoods. Choose a nonadjacent pair from those two sets; also choose \(t\in T\setminus(N_H(y)\cup N_H(z))\), which exists because \(b_y+b_z\le6\). If \(y,z\) were nonadjacent these five vertices would be independent. Hence they are adjacent. Combined with the previous paragraph, two such vertices sharing a part of multiplicity two form a \(K_{12}\) with that part and its \(G_i\).
+If \(Y\) contains \(S_i\), then \(y\) is adjacent to every vertex of \(G_i\). Otherwise, since \(|Y\setminus S_i|=q_y-b_y-8\le3\), each of the other two parts has at least five vertices outside \(Y\). Choose a nonadjacent pair from those parts and a point \(t\in T\setminus N_H(y)\); together with \(y\) and the missed \(G_i\)-vertex they form an independent five-set.
+
+If two high vertices \(y,z\) with \(b_y,b_z<7\) both contain the same \(S_i\), then they are adjacent. Each has at most three R-neighbors outside \(S_i\), so each of the other two parts has at least two vertices outside both neighborhoods. Choose a nonadjacent pair from those two sets. Also choose \(t\in T\setminus(N_H(y)\cup N_H(z))\), which exists because the allowed low-b values satisfy \(b_y+b_z\le6\). If \(y,z\) were nonadjacent these five vertices would be independent. Hence they are adjacent. Together with (2), two such vertices sharing a part of multiplicity two form a \(K_{12}\) with that part and its \(G_i\).
 
 ## 3. Exhaustive degree profiles when \(S_0=13\)
 
@@ -131,13 +140,13 @@ There are at least three distinct R-only sets, since each has multiplicity at mo
 
 Again there must be exactly three distinct sets partitioning \(R\). If any multiplicity is at least four, (2) is contradicted. Otherwise all three multiplicities are three. The table guarantees a high vertex with \(b<7\); Lemma 2.4 forces its neighborhood to contain one part, and the same lemma makes it complete to the corresponding \(G_i\). That part and \(G_i\) already form a \(K_{11}\), so adding the high vertex gives a \(K_{12}\).
 
-### Cases \(m=8\) and \(m=7\): first force three distinct sets
+### Cases \(m=8\) and \(m=7\): force three realized neighborhoods
 
-Suppose there were only two distinct R-only sets \(S_1,S_2\). Their union misses at least eight points of \(R\). Every uncovered point requires at least three special incidences, so the uncovered points require at least 24 special incidences in total.
+There are at most three distinct R-only eight-neighborhoods by Lemma 2.2. There cannot be only one, because its multiplicity would be \(m\in\{7,8\}\), contradicting the multiplicity cap \(m_i\le4\).
 
-But every high vertex with \(b<7\) must contain one of \(S_1,S_2\): otherwise (3) bounds its intersection with each by at most three, while its R-neighborhood has at least eight points. Thus each such high vertex contributes at most \(q-b-8\le2\) special incidences outside \(S_1\cup S_2\). In the \(m=8\) profiles, the T-type neighborhoods contribute at most three incidences, the low-\(b\) high vertices contribute at most two more (or at most three in the \(q=9,9,9\) family), and a possible \(b=7,q=9\) vertex contributes at most two. The total is at most five. In the \(m=7\) profile, the two T-type neighborhoods and three low-\(b\) high vertices likewise contribute at most \(2+3=5\). This is below 24, contradiction.
+Suppose there were exactly two distinct realized neighborhoods \(S_1,S_2\). They are disjoint by Lemma 2.1, and their complement \(S_3=R\setminus(S_1\cup S_2)\) is a third mathematical R-only transversal. Thus \(S_1,S_2,S_3\) partition \(R\), and the clique consequences in Lemma 2.3 apply even if \(G_3=\varnothing\). Since the two multiplicities sum to \(m\) and each is at most four, for \(m=8\) they must be \((4,4)\), while for \(m=7\) they must be \((4,3)\). In either case a multiplicity-four group gives a \(K_{12}\) by (2), contradiction.
 
-Therefore the \(m=8,7\) cases also have three distinct R-only sets, which partition \(R\) by Lemma 2.2.
+Therefore both \(m=8\) and \(m=7\) have exactly three distinct realized R-only neighborhoods, which partition \(R\) by Lemma 2.2.
 
 ### Case \(m=8\)
 
@@ -154,9 +163,9 @@ Both subcases contradict \(\omega(H)\le11\).
 
 Every profile under \(S_0=13\) is impossible. Combining with the already-audited universal \(S_0\ge12\) theorem yields
 \[
-\boxed{S_0\ge14,\qquad \delta+\epsilon_U\le17.}
+\boxed{S_0=\epsilon_U+2\delta\ge14.}
 \]
-Since \(\epsilon_U\le4\), this also gives \(\delta\ge5\) in the minimum-support Q33 boundary.
+Since \(\epsilon_U\le4\), this also gives \(\delta\ge5\) in the minimum-support Q33 boundary. No upper bound on \(\delta+\epsilon_U\) follows from this exclusion alone.
 
 ## 5. Scope firewall
 
