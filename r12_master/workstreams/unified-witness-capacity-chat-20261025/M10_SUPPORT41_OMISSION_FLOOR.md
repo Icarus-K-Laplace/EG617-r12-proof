@@ -62,7 +62,12 @@ For any \(S\subseteq O\), set \(s=|S|\), \(t(S)=\sum_{x\in S}t_x\), \(c_S=\sum_{
 =3t(S)-2s+c_S-\epsilon_S
 \le e_R+\binom{s}{2}.
 \]
-Using (1) and \(e_W\ge2\),
+Using (1), the exact form is
+\[
+3t(S)\le 12+2s+\binom{s}{2}-e_W-c_S-\epsilon_{U\setminus S}.
+\tag{3a}
+\]
+Since \(e_W\ge2\), this implies
 \[
 \boxed{3t(S)\le 10+2s+\binom{s}{2}-c_S-\epsilon_{U\setminus S}.}\tag{3}
 \]
@@ -183,7 +188,7 @@ c_x+\epsilon_{U\setminus\{x\}}\le1.
 \]
 If \(c_x=0\), then \(r_x=7-\epsilon_x\ge5\), while \(r_N\le2\) and \(c_O\le2\). Thus \(x\) has at least three \(R\)-neighbors in \(O\), one of which has no \(H\)-edge to \(W\); that pair and an independent triple in \(W\) contradict \(\alpha(H)\le4\). Hence \(c_x=1\) and \(\epsilon_{U\setminus\{x\}}=0\).
 
-Applying (3) to each pair \(\{x,y\}\), \(y\in O\setminus\{x\}\), forces \(c_y=0\). Then \(r_x=e_R=8-\epsilon_x\), so every residual edge is incident to \(x\); \(x\) is \(R\)-adjacent to all seven other omitted points, and possibly one point of \(N\). The identity for \(c_O\) gives \(\epsilon_x\in\{0,1\}\).
+Applying the exact bound (3a) to each pair \(\{x,y\}\), with \(t_x+t_y=4\), \(e_W=4\), \(c_x=1\), and \(\epsilon_{U\setminus\{x,y\}}=0\), forces \(c_y=0\). Then \(r_x=e_R=8-\epsilon_x\), so every residual edge is incident to \(x\); \(x\) is \(R\)-adjacent to all seven other omitted points, and possibly one point of \(N\). The identity for \(c_O\) gives \(\epsilon_x\in\{0,1\}\).
 
 Finally, each \(y\ne x\) is nonadjacent to \(x\) in \(H\) and has no \(H\)-neighbor in \(W\). Therefore every independent triple in \(W\) must contain the unique \(H\)-neighbor \(w\) of \(x\) in \(W\). It follows that \(w\) is isolated in \(H[W]\), and \(H[W\setminus\{w\}]\) has five vertices, four edges, and independence number at most two. The equality case of Mantel's theorem identifies it as \(K_3\cup K_2\). Hence
 \[
