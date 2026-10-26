@@ -103,3 +103,10 @@ See FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md, LOW_DELTA_TERMINAL_TABLE.md, PROOF_DE
 - Exact integer feasibility: **56** \((\delta,\epsilon_U)\) profiles, independently replayed; the verifier's prior count 57 was corrected.
 - Template incidence arithmetic: independently replayed the h-4 high-k component floor and all A–E totals. A/C have at least two k=3 no-S witnesses per exact-129 color; aggregate S-row hit floors are \(42,56,42,42,14\), while total shell-row hit floors are \(42,84,42,63,21\).
 - Verification scope is arithmetic only. No graph realization, template exclusion, or original theorem closure is certified by these scripts.
+
+
+## Round 4 terminal update
+
+The four-partite delta=13, epsilon_U=2 profile with W equal to K4+K4+K5+K5 plus one W-cross-edge is now excluded under the registered W-profile contract. See DELTA13_EPS2_K4K4K5K5_ONE_CROSS_EDGE.md. The arithmetic replay is in verify_delta13_eps2_one_cross_edge.py.
+
+This closes that one W-profile only. The support-block/component-witness map remains open, and no global template or original EG617 proof is certified.
