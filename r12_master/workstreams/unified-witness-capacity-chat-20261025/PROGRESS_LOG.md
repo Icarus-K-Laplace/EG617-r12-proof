@@ -214,3 +214,8 @@
 - The surviving multiplicity patterns at \(k=5,6,7\) were enumerated arithmetically and then closed by separate analytical contradictions. In particular, the \(k=7\) cases with a multiplicity 4 or a \((3,2)\) pair are handled by equality in the subset inequality; the all-\(2/1\) case is handled by the three-point residual-degree bound.
 - Added M10_SUPPORT41_OMISSION_FLOOR.md and verify_m10_support41_omission_floor.py. Local arithmetic replay PASS: exact patterns are \(k=5:(2^5)\), \(k=6:(1^2,2^4)\), and \(k=7:(1^6,4),(1^5,2,3),(1^4,2^3)\); all integer budget branches match the proof.
 - New conditional theorem: \(k\ge8\). Remaining support-41 omission cases are \(k=8,9,10\). This does not close the \(v=41\) near-decomposition or the original EG617 theorem.
+
+
+## 2026-10-26 — support-41 k=8 follow-up
+
+The k=8 omission patterns are (3,1^7) and (2,2,1^6). Both exclude the e_W=5 subcase. For pattern (3,1^7) at e_W=4, the exact subset inequality leaves a rigid terminal with one special omitted point, exactly one edge from it into W, and every residual complement edge incident to it. The induced graph on W is K3 disjoint union K2 disjoint union K1. This terminal remains OPEN, as do the other k=8 cases with e_W<=4 and k=9,10.
