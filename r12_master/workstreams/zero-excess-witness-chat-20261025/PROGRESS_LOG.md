@@ -248,3 +248,8 @@ For every independent W-set A of size r<=4, each witness block Q must contain at
 ## Round 10 — rho<=1 for duplicated vertices (2026-10-26)
 
 For every independent four-set A⊂W, exactly one U-vertex u is repeated in its four U-neighborhoods. The other two W-neighborhoods hit every witness block exactly once. With P,Q the two seven-point exclusive parts of the overlapping neighborhoods, witness blocks contribute \(48+\rho_u\) distinct P×Q pairs; there are only 49 possible pairs. Therefore \(\rho_u\le1\). If rho=1 all 49 cross pairs occur; if rho=0 exactly one is absent. Added this theorem to the terminal note, verifier, kernel, and canonical state. S0=14 remains OPEN.
+
+
+## Round 11 — vertexwise pair-graph deficits (2026-10-26)
+
+In the S0=14 independent-four-set structure, the \(P\times Q\) witness-pair graph is \(K_{7,7}\) for rho_u=1 and \(K_{7,7}\) minus one edge for rho_u=0. Defining s_p as the indicator that {u,p} occurs in a witness block gives \(\deg_B(p)=8-\rho_p-s_p\). Thus rho_p+s_p=1 everywhere in the rho_u=1 case; in the rho_u=0 case it is 2 at the missing-edge endpoints and 1 elsewhere. The verifier checks these integer profiles. No terminal closure is claimed.
