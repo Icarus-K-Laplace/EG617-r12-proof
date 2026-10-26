@@ -528,3 +528,12 @@ The S0=14 terminal note now records the general consequence of \(\alpha(H)\le4\)
 \left|Q\cap\bigcup_{w\in A}N_H(w)\right|\ge r.
 \]
 Otherwise at least \(5-r\) vertices of Q would be nonadjacent to all of A, producing an independent five-set. Thus independent W-pairs/triples/quads induce 2-/3-/4-fold covers of every Q. This is another necessary condition on the open all-q=8/no-transversal terminal.
+
+
+## 19. S0=14 independent-four-set cross-pair rigidity
+
+The S0=14 terminal note now proves that for any independent four-set \(A\subset W\), its unique duplicated U-vertex \(u\) satisfies \(\rho_u\le1\). Relabel the two W-neighborhoods sharing u as \(S_1,S_2\), set \(P=S_1\setminus\{u\}\), \(Q=S_2\setminus\{u\}\), and let the other two neighborhoods be \(S_3,S_4\). Then \(|P|=|Q|=7\); \(S_3,S_4\) are disjoint and hit every witness block exactly once, so \(\tau_{w_3}=\tau_{w_4}=8\).
+
+Every witness block not containing u contributes one distinct P×Q pair. In each color omitting u there are seven such blocks; in each other color there are six, because the block containing u contributes a star pair \(\{u,v\}\). Thus the 56 blocks contribute \(7\rho_u+6(8-\rho_u)=48+\rho_u\) distinct pairs from a set of 49. Hence \(\rho_u\in\{0,1\}\). If rho=0 exactly one P×Q pair is absent from the witness family; if rho=1 every P×Q pair appears exactly once, so P and Q are anticomplete in H.
+
+The updated verifier checks these pair-count cases. This excludes any independent-four-set duplicated vertex with rho>=2, but does not yet eliminate the all-q=8 terminal.
