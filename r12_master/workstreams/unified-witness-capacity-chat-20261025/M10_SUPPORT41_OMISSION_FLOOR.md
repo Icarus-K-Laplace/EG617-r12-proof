@@ -353,11 +353,11 @@ impossible. Hence \(c_x\ge2\). Since \(r_x=7+c_x-\epsilon_x\le e_R=9-\epsilon_x-
 \[
 c_x+\epsilon_Y+\epsilon_N\le2.
 \]
-Therefore \(c_x=2\), \(\epsilon_Y=\epsilon_N=0\), and \(r_x=e_R\); every residual edge is incident to \(x\). The budget identity and \(c_O=c_x=2\) give \(r_N=2-\epsilon_x\), so \(\epsilon_x\in\{0,1,2\}\). Every singleton point \(y\in Y\) has \(r_y=1+c_y\), but its residual degree is at most one because all residual edges are incident to \(x\). Hence \(c_y=0\) and \(r_y=1\) for all seven \(y\). The only surviving \(k=8,e_W=3\) profile is therefore the rigid star terminal
+Therefore \(c_x=2\), \(\epsilon_Y=\epsilon_N=0\), and \(r_x=e_R\); every residual edge is incident to \(x\). Every singleton point \(y\in Y\) has \(r_y=1+c_y\), but its residual degree is at most one because all residual edges are incident to \(x\). Hence \(c_y=0\) and \(r_y=1\) for all seven \(y\). Thus \(c_O=c_x=2\), and the budget identity gives \(r_N=2-\epsilon_x\), so \(\epsilon_x\in\{0,1,2\}\). The only surviving \(k=8,e_W=3\) profile is therefore the rigid star terminal
 \[
 c_x=2,\quad c_Y=0,\quad \epsilon_Y=\epsilon_N=0,\quad
 R\text{ is a star at }x\text{ with leaves }Y
 \text{ and }2-\epsilon_x\text{ additional leaves in }N.
 \]
 
-This is a reduction, not yet a contradiction. The remaining blocker is to exclude this final \((3,1^7)\) star terminal under \(H[W]=3K_2\). \(\square\`
+This is a reduction, not yet a contradiction. The remaining blocker is to exclude this final \((3,1^7)\) star terminal under \(H[W]=3K_2\). \(\square\)
