@@ -72,3 +72,8 @@ The four-partite delta=13, epsilon_U=2 row is now closed under the registered W-
 ## Round 5 correction
 
 The Round 3 claim of three hub-complete component witnesses per color is withdrawn. Its proof used an anticompleteness condition for other B-rows that is not in the frozen contract. The retained A/C floor is at least two hub-complete witnesses per color from the k=3 label count. The verifier no longer asserts the stronger bound. See PROOF_DEPENDENCY_AUDIT.md.
+
+
+## Round 6 — A/C component bound reinstated through row-transversal theorem
+
+The Round 5 audit found the direct independent-six justification incomplete. Re-reading the registered row-transversal theorem resolves the gap under its explicit contract: for any missing shell edge s-b, every independent 4-set in H minus D_s meets D_b when t_s<=12, using the retained R(3,35) exclusion. Since all A/C hub rows satisfy t_s<=12, a non-hub-complete component witness must hit every full B row. The c_S budget then limits non-hub-complete witnesses to at most three; the witness's own label further limits them to 10-h. The valid conditional floor is max(3,h-4) hub-complete witnesses per color. The corrected proof and arithmetic verifier are in FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md and verify_template_incidence_system.py.
