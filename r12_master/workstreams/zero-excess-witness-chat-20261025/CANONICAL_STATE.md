@@ -222,3 +222,10 @@ The condition is added to the S0=14 terminal note. It does not yet close the no-
 A new analytic lemma is proved in R12_E408_Q33_S0_14_NO_SEVEN_TRANSVERSAL.md: for any independent four-set A in W, its unique duplicated U-vertex u has omission multiplicity \(\rho_u\le1\). The proof partitions U into the two overlapping 8-neighborhoods (intersection {u}) and the other two disjoint 8-neighborhoods. The latter hit every witness block exactly once. The 56 witness blocks contribute \(48+\rho_u\) distinct pairs across the two 7-point exclusive parts, but only 49 such pairs exist. Therefore rho_u is 0 or 1; rho=0 leaves exactly one pair absent, while rho=1 uses all pairs and the two exclusive parts are anticomplete in H.
 
 The arithmetic verifier now checks all nine formal counts rho=0..8 and confirms only rho=0,1 fit the 49-pair capacity. This is a proof-level structural restriction, not a closure of S0=14. The all-q=8/no-seven-transversal terminal remains OPEN; EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+## Round 11 — pair-graph deficits sharpened (2026-10-26)
+
+The cross-pair rigidity now includes a vertexwise identity. In the \(\rho_u=1\) branch, the graph of witness pairs between P and Q is \(K_{7,7}\), and each \(p\in P\cup Q\) satisfies \(\rho_p+s_p=1\), where \(s_p\) records whether \(\{u,p\}\) is a witness pair. Thus every vertex is either omitted once or serves as the unique star partner once. In the \(\rho_u=0\) branch, the pair graph is \(K_{7,7}\) minus one edge; the two endpoints satisfy \(\rho_p+s_p=2\), and the other 12 vertices satisfy \(\rho_p+s_p=1\).
+
+Updated the S0=14 theorem note, verifier, kernel and progress log. The equality terminal remains OPEN / NOT_CERTIFIED.
