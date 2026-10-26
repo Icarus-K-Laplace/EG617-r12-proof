@@ -4,7 +4,7 @@
 This script checks:
   1. all positive omission multiplicity patterns summing to ten for k=5,6,7,8
      that survive the necessary subset inequalities;
-  2. the integer (e_W, epsilon_U, cross-edge, e_R) ranges;
+  2. the integer (e_W, epsilon_U, cross-edge, e_R) ranges for k=5,6,7,8;
   3. the exact lower-bound branches used for the k=6 and k=7 set-degree
      arguments.
 
@@ -96,7 +96,7 @@ def verify():
             (5, 0, 66, 7),
         ],
     }
-    for k in (5, 6, 7):
+    for k in (5, 6, 7, 8):
         rows = feasible_budget_rows(k)
         assert rows == expected_budgets[k], (k, rows)
         print(f"k={k}: integer budget rows PASS ({len(rows)} cases)")
