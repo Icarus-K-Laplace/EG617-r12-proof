@@ -13,7 +13,7 @@ Need one explicit incidence object containing simultaneously:
 - the ten \(K_5\) components and exceptional gadget for every exact-129 color, including the pivot/S/B labels;
 - edge uniqueness, row-hit constraints, common-neighbour sets, W-component labels, and the four-unit degree-excess distribution.
 
-Current proven output: FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md gives the per-color high-k component floor 2,4,2,3,1 for A–E and the corresponding shell-hit minima. Missing implication: this labelled system must either be shown inconsistent for every surviving template or be explicitly realized and then tested against the remaining parent constraints.
+Current proven output: FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md gives the per-color high-k component floor 2,4,2,3,1 for A–E. In A/C, a stronger incidence-capacity theorem gives at least three hub-complete no-S component witnesses per exact-129 color. The support omission-degree identity is also proved. LABEL_JOIN_SYSTEM.md records the variable families and equations. Missing implication: the support blocks, shell rows, component labels, and same H must be joined into either a certified contradiction or an explicit legal realization.
 
 ## C2. Witness identity / overlap contract
 
