@@ -51,7 +51,7 @@ Thus a B-labelled no-S \(K_5\) component \(\{b\}\cup Q\) with \(k_b\ge2\) gives 
 
 **Lemma 4.1 (six B-labelled no-S components).** In every exact-129 color C, the registered factorization has ten pairwise disjoint \(K_5\) components and an 11-vertex exceptional gadget with independence number two. Since \(|S|=3\), at most three \(K_5\) components contain an S vertex, leaving at least seven components avoiding S. At most one of those can contain pivot p without B. Any remaining no-S component with neither B nor p would be a five-vertex independent set in H, contrary to \(\alpha(H)\le4\). Therefore at least six components have the form \(\{b\}\cup Q\) with \(b\in B\), \(|Q|=4\), Q independent in H and anticomplete to b.
 
-Because B is a target clique, a single non-target-color \(K_5\) component contains at most one B vertex. Hence each exact-129 color supplies at least six distinct B labels. At least four of the ten B labels are therefore outside this no-S component family.
+Because B is a target clique, a single non-target-color \(K_5\) component contains at most one B vertex. Hence each exact-129 color supplies at least six distinct B labels. At most four of the ten B labels can therefore be outside this no-S component family.
 
 **Theorem 4.2 (template-uniform high-k labelled packing).** Under the shared contract and exact-129 factorization, the number of B-labelled no-S component witnesses with \(k_b\ge2\) in each exact-129 color is at least
 \[
