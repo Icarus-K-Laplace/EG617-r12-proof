@@ -38,7 +38,7 @@ Templates A–E impose the exact row-size and B-row-type constraints listed in F
 
 Each exact-129 color has ten disjoint K5 components and an 11-point exceptional gadget under the registered extremal theorem contract. At least six components per color have form \(\{b\}\cup R\), where b is in B and R is an independent 4-set in H anticomplete to b. These R sets are disjoint within a color and pairwise linear across colors; sets with the same B label in different colors are disjoint.
 
-The component family yields high-k witness floors 2, 4, 2, 3, 1 for templates A–E. For A/C, an incidence-capacity argument strengthens this to at least three hub-complete component witnesses per exact-129 color.
+The component family yields high-k witness floors 2, 4, 2, 3, 1 for templates A–E. For A/C, only the valid high-k label-intersection floor is certified; no stronger component-capacity bound is used.
 
 ## Unresolved bridge
 
