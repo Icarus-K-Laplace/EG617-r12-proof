@@ -548,3 +548,15 @@ For each \(p\in P\cup Q\), define \(s_p=1\) if \(\{u,p\}\) occurs in a witness b
 - \(\rho_u=0\): \(\rho_p+s_p=1\) except at the two endpoints of the unique missing cross pair, where it equals 2. Thus all other 12 vertices have \(\rho_p\le1\), and the two endpoints have \(\rho_p\le2\).
 
 These identities are added to the theorem note and arithmetic verifier. They are additional terminal constraints, not a contradiction.
+
+
+## 21. Degree cap for high-omission vertices
+
+In the S0=14 all-q=8 terminal, any \(u\) with \(\rho_u\ge2\) has at most five zero-excess W-neighbors: otherwise two zero-excess neighbors would be nonadjacent, extend to an independent four-set, and force the duplicated vertex u to have \(\rho_u\le1\). There are at most four positive-excess W vertices, so \(d_H(u,W)\le9\).
+
+The exact case budgets \(j_u+\epsilon_u\le\delta+\epsilon_U\in\{7,8,9\}\) sharpen this:
+- \((\epsilon_U,\delta)=(0,7)\): \(\rho=2,3,4\) give \(d_W\le7,4,1\); \(\rho\ge5\) impossible.
+- \((2,6)\): \(\rho=2,3,4\) give \(d_W\le8,5,2\); \(\rho\ge5\) impossible.
+- \((4,5)\): \(\rho=2,3,4,5\) give \(d_W\le9,6,3,0\); \(\rho\ge6\) impossible. The \(\rho=5\) equality forces \(\epsilon_u=4\) and \(j_u=5=\delta\), so all U-excess and all leftover L-edges are incident to u.
+
+These are necessary terminal constraints; the all-q=8 case remains OPEN.
