@@ -341,3 +341,10 @@ The standard-library verifier passed all multiplicity-pattern and integer-budget
 ## 2026-10-26 — support-41 k=8 refinement
 
 The only k=8 omission patterns are (3,1^7) and (2,2,1^6). The e(H[W])=5 subcase is excluded for both. In the (3,1^7), e(H[W])=4 subcase, the exact subset inequality forces a rigid terminal: one triple-omitted point x has exactly one H-edge to W; the other seven omitted points have none; all residual complement edges are incident to x; and H[W] is K3 union K2 union K1. This terminal is not yet contradicted. Remaining k=8 cases with e_W<=4 and k=9,10 remain open.
+
+
+## 2026-10-26 — close the second k=8, e_W=4 pattern
+
+Added Lemma 14.3 in M10_SUPPORT41_OMISSION_FLOOR.md. In the (2,2,1^6) multiplicity pattern, every residual edge within the omitted-point set must touch a point with an H-edge into W. There are at most two such points, but the degree ledger forces at least six residual edges there. The two double-omitted points must be those two centers, and the exact degree sequence then contradicts the six single-omitted points. Thus this pattern is impossible at e_W=4.
+
+The only surviving e_W=4 support-41 k=8 terminal is the (3,1^7) rigid star configuration with H[W] = K3 union K2 union K1. The k=8 cases with e_W=2 or 3, and k=9,10, remain open.
