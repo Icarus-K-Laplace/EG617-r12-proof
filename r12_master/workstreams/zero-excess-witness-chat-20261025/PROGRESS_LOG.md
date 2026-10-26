@@ -271,3 +271,8 @@ Read-only refresh of sibling branches:
 - Emergency head f4c3b06891d29238d4f9cca2588f442004b6dc97: four-partite E408 Q33 S0>=12 only.
 
 No sibling branch was modified; these results remain scoped to their contracts. Current-line S0=14 terminal remains OPEN.
+
+
+## Round 14 — zero-excess pair extension (2026-10-26)
+
+Proved that any nonadjacent pair of zero-excess W vertices extends to an independent four-set. The common nonneighbor set has size at least six; it cannot be a clique because six vertices of degree at least five in H[W] would consume at least six W-excess units, but \(\epsilon_W\le4\). Therefore a nonadjacent pair exists to complete the four-set. It follows that any such W pair has at most one common U-neighbor, and a shared U-neighbor must have \(\rho\le1\). Added the lemma to the theorem note, verifier, kernel, and canonical state; no closure claim.
