@@ -105,10 +105,48 @@ But T and the a T-type vertices form a clique (Step 1), so \(7+a\le11\), hence \
 
 No seven-point transversal exists. Since every W-vertex has \(q_w\ge7\), k=0 and \(\sum_Wq_w=128\) imply all 16 vertices have \(q_w=8\). This proves the theorem. \(\square\)
 
+## Exact structure of the remaining all-q=8 terminal
+
+For each color \(c\in\{1,\ldots,8\}\), let
+\[
+X_c=U\setminus\bigcup_{Q\in\mathcal Q_c}Q,\qquad |X_c|=3,
+\]
+the three U-vertices omitted by that color's seven disjoint witness blocks. Every remaining W-vertex \(w\) has \(q_w=8\) and hits all seven blocks of every color. Therefore
+\[
+|N_H(w)\cap X_c|\le1\quad\text{for every }w,c.
+\]
+If the intersection has size one, w hits each of the seven blocks exactly once. If it has size zero, all eight U-neighbors lie in the block union, so exactly one block is hit twice and the other six are hit once.
+
+Let \(c_u\) be the number of colors whose selected witness blocks contain \(u\), and set \(\rho_u=8-c_u\). Then
+\[
+\sum_{u\in U}c_u=56\cdot4=224,\qquad
+\sum_{u\in U}\rho_u=8\cdot31-224=24.
+\]
+The number \(\rho_u\) is exactly the number of omission triples \(X_c\) containing u. For each w define
+\[
+\tau_w=\bigl|\{c:N_H(w)\cap X_c\ne\varnothing\}\bigr|.
+\]
+Because each \(N_H(w)\) meets each \(X_c\) in at most one point,
+\[
+\boxed{\tau_w=\sum_{u\in N_H(w)\cap U}\rho_u.} \tag{6}
+\]
+In particular, if \(u,v\in X_c\) for any color c, then \(N_H(u)\cap W\) and \(N_H(v)\cap W\) are disjoint.
+
+Let \(J\) be the graph of the \(\delta\) leftover edges of \(L\) not covered by the 56 witness \(K_4\)'s, and \(j_u=d_J(u)\). Since each witness block containing u contributes three distinct incident edges of L,
+\[
+d_L(u)=3c_u+j_u,\qquad
+d_H(u,W)=12+\epsilon_u-d_H(u,U)
+=6-3\rho_u+j_u+\epsilon_u. \tag{7}
+\]
+Here \(\sum_u j_u=2\delta\), \(\epsilon_U\in\{0,2,4\}\), and \(\delta\in\{7,6,5\}\), respectively.
+
+Equations (6)–(7), together with the pairwise-disjoint W-neighborhood condition for each omission triple \(X_c\), are the reduced finite target. They do not yet imply a contradiction; no unproved claim about the existence or nonexistence of this all-q=8 system is made.
+
 ## Scope and next terminal
 
-The result does not yet rule out \(S_0=14\). It reduces that equality case to:
+The theorem does not yet rule out \(S_0=14\). It reduces that equality case to:
 - all 16 W-neighborhoods have U-degree exactly eight;
-- the 56 witness blocks have no seven-point transversal in U.
+- the 56 witness blocks have no seven-point transversal in U;
+- the 8 omission triples \(X_c\) each have size three, every W-neighborhood meets each in at most one point, and equations (6)–(7) hold.
 
 The next proof target is this no-transversal all-\(q=8\) system. E408 Q33 at larger \(S_0\), larger witness supports, E407 Q32, E408 Q32, and the original \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
