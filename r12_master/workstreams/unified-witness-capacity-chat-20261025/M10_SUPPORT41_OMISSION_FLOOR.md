@@ -151,3 +151,43 @@ All cases with \(k=7\) are impossible. Hence \(k\ge8\). \(\square\)
 - **Surviving omission patterns:** \(k=8,9,10\). Their multiplicity patterns still need separate analysis.
 - **Not proved:** \(|U_{\rm comp}|=41\) is impossible; the full exact-color ledger; E407/E408 terminal closure; the \(K_{145}\)-to-T61 bridge; or EG617(r=12).
 - **Dependency firewall:** the result requires the exact-129 factor theorem and the 284-edge core contract. It does not use a claim that a monochromatic \(K_{12}\) has no single external edge of its own color.
+
+
+## Further reduction of the \(k=8\) boundary
+
+At \(k=8\), inequality (3) leaves only the multiplicity patterns
+\[
+(3,1^7)\quad\text{or}\quad(2,2,1^6).
+\]
+Let \(N=U\setminus O\), so \(|N|=33\). Then
+\[
+c=76-\epsilon_U-2e_W,\qquad
+c_N=66+r_N+\epsilon_N,\qquad
+c_O=10-2e_W-r_N-2\epsilon_N-\epsilon_O.
+\]
+
+### Lemma 14.1: \(e_W=5\) is impossible
+
+If \(e_W=5\), the cross-edge floor \(c\ge66\) forces \(\epsilon_U=0\), \(c=66\), \(c_O=0\), and \(r_N=0\). Thus \(e_R=7\), and all \(R\)-edges lie inside \(O\).
+
+- For pattern \((3,1^7)\), the triple-omitted point has \(R\)-degree 7, so it is \(R\)-adjacent to all seven other omitted points.
+- For pattern \((2,2,1^6)\), the two double-omitted points each have \(R\)-degree 4, and the six other omitted points each have \(R\)-degree 1. The two degree-four points must be adjacent in \(R\): otherwise they would require eight incidences to six degree-one vertices.
+
+Either case supplies an \(R\)-edge \(xy\) inside \(O\), hence an independent pair in \(H\), with no \(H\)-edges from \(O\) to \(W\). Since a six-vertex graph with five edges has an independent triple, \(x,y\) plus that triple form an independent five-set. Contradiction. Therefore \(e_W\le4\).
+
+### Lemma 14.2: the \((3,1^7), e_W=4\) branch is a rigid star terminal
+
+Let \(x\) be the triple-omitted point. The singleton subset inequality gives
+\[
+c_x+\epsilon_{U\setminus\{x\}}\le1.
+\]
+If \(c_x=0\), then \(r_x=7-\epsilon_x\ge5\), while \(r_N\le2\) and \(c_O\le2\). Thus \(x\) has at least three \(R\)-neighbors in \(O\), one of which has no \(H\)-edge to \(W\); that pair and an independent triple in \(W\) contradict \(\alpha(H)\le4\). Hence \(c_x=1\) and \(\epsilon_{U\setminus\{x\}}=0\).
+
+Applying (3) to each pair \(\{x,y\}\), \(y\in O\setminus\{x\}\), forces \(c_y=0\). Then \(r_x=e_R=8-\epsilon_x\), so every residual edge is incident to \(x\); \(x\) is \(R\)-adjacent to all seven other omitted points, and possibly one point of \(N\). The identity for \(c_O\) gives \(\epsilon_x\in\{0,1\}\).
+
+Finally, each \(y\ne x\) is nonadjacent to \(x\) in \(H\) and has no \(H\)-neighbor in \(W\). Therefore every independent triple in \(W\) must contain the unique \(H\)-neighbor \(w\) of \(x\) in \(W\). It follows that \(w\) is isolated in \(H[W]\), and \(H[W\setminus\{w\}]\) has five vertices, four edges, and independence number at most two. The equality case of Mantel's theorem identifies it as \(K_3\cup K_2\). Hence
+\[
+H[W]\cong K_3\cup K_2\cup K_1.
+\]
+
+This is a rigid conditional terminal, **not yet a contradiction**. The \(k=8\) cases with \(e_W\in\{2,3,4\}\), including the other multiplicity pattern at \(e_W=4\), remain open.
