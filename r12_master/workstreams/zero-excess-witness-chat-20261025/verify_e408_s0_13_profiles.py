@@ -127,7 +127,7 @@ def main():
     assert 8 + 3 == 11      # K8 + a size-3 group, then one high vertex makes K12
 
     print("E408_Q33_S0_13_PROFILE_AUDIT_OK")
-    print("60 labelled degree/T-incidence cases checked; profile buckets: m=10:6, m=9:24, m=8:22, m=7:8.")
+    print("60 labelled degree/T-incidence cases and 16 exact profile-family signatures checked; buckets: m=10:6, m=9:24, m=8:22, m=7:8.")
     print("Scope: arithmetic/profile checks only; analytic graph arguments remain in the theorem note.")
 
 
