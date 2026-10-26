@@ -255,3 +255,8 @@ Read-only heads and latest relevant scope were refreshed; no sibling branch was 
 - workstream/r12-emergency-sprint-20261024, head f4c3b06891d29238d4f9cca2588f442004b6dc97: its four-partite E408 Q33 boundary is conditionally S0>=12; this is narrower than the separate universal branch above.
 
 These sibling advances are tracked as separate conditional workstreams and are not substituted for the current 31-point / 56-witness S0=14 analysis. EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+## Round 14 — zero-excess pair-extension lemma (2026-10-26)
+
+Any nonadjacent pair of zero-excess W-vertices extends to an independent four-set: its common nonneighbors number at least six, and a six-clique would require at least six W-excess units, exceeding \(\epsilon_W\le4\). Therefore the pair has at most one common U-neighbor, and if it has one, that U-vertex must satisfy \(\rho\le1\) by the cross-pair theorem. This independently explains why \(N_W(u)\cap Z\) must be a clique for \(\rho_u\ge2\), yielding \(d_H(u,W)\le9\). The verifier checks the six-vertex/excess margin. The all-q=8 terminal remains OPEN.
