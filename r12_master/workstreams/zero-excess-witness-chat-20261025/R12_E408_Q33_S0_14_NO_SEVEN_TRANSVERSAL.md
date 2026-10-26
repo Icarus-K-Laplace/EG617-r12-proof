@@ -101,7 +101,7 @@ For any distinct R-only set S occurring \(m_S\) times,
 \]
 so \(m_S\le4\). Distinct R-only transversals are disjoint, hence there are at most three of them and \(m\le12\). Therefore \(a=16-m\ge4\).
 
-But T and the a T-type vertices form a clique (Step 1), so \(7+a\le11\), hence \(a\le4\). Consequently \(a=4\) and \(m=12\). The 12 R-only neighborhoods must consist of exactly three distinct transversals, each with multiplicity four; they partition R. By the three-part clique lemma in R12_E408_Q33_S0_13_EXCLUSION.md, each S_i and its group G_i are cliques and complete to one another. Thus S_i∪G_i is a \(K_{12}\), contradiction.
+But T and the a T-type vertices form a clique (Step 1), so \(7+a\le11\), hence \(a\le4\). Consequently \(a=4\) and \(m=12\). The 12 R-only neighborhoods must consist of exactly three distinct transversals, each with multiplicity four; they partition R. By the standalone three-part clique lemma below, each S_i and its group G_i are cliques and complete to one another. Thus S_i∪G_i is a \(K_{12}\), contradiction.
 
 No seven-point transversal exists. Since every W-vertex has \(q_w\ge7\), k=0 and \(\sum_Wq_w=128\) imply all 16 vertices have \(q_w=8\). This proves the theorem. \(\square\)
 
@@ -170,6 +170,22 @@ More generally, for any independent set \(A\subset W\) of size \(r\le4\), every 
 \]
 Otherwise at least \(5-r\) vertices of the independent block Q would be nonadjacent to every vertex of A, giving an independent five-set. Thus independent pairs, triples, and quadruples of W induce respectively 2-, 3-, and 4-fold covers of every witness block.
 
+
+### Three-part clique lemma for R-only transversals
+
+Suppose \(S_1,S_2,S_3\) are three disjoint R-only eight-transversals partitioning \(R\). Let
+\[
+G_i=\{w\in W:N_H(w)\cap U=S_i\},\qquad m_i=|G_i|.
+\]
+For any \(u\in S_i\) and any \(j\ne i\), the seven witness triples in the seven T-partitions containing u each contain exactly one vertex from \(S_j\). These seven vertices are distinct by pairwise linearity. Hence u has at most one H-neighbor in each other part \(S_j\).
+
+Each \(S_i\) is a clique: if \(u,v\in S_i\) were nonadjacent, choose \(a\in S_j\) nonadjacent to both (each excludes at most one vertex of \(S_j\)), then choose \(b\in S_k\) nonadjacent to \(u,v,a\) (these three vertices exclude at most three points of \(S_k\)). Any \(t\in T\) is anticomplete to R, so \(\{u,v,a,b,t\}\) would be an independent five-set.
+
+Each \(G_i\) is also a clique. If nonadjacent \(w,w'\in G_i\) existed, choose \(a\in S_j,b\in S_k\) nonadjacent to one another using the cross-part degree bound, and any \(t\in T\). Since both W vertices have U-neighborhood exactly \(S_i\), they are anticomplete to \(a,b,t\); then \(\{w,w',a,b,t\}\) is an independent five-set. By definition, \(G_i\) is complete to \(S_i\). Therefore
+\[
+m_i\ge4\quad\Longrightarrow\quad S_i\cup G_i\text{ is a clique of size }8+m_i\ge12,
+\]
+contrary to \(\omega(H)\le11\).
 
 ### Cross-pair rigidity for every independent four-set
 
