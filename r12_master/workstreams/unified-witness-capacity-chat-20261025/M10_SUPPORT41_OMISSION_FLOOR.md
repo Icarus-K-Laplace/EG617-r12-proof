@@ -283,4 +283,36 @@ For \(\epsilon_w=0,1,2,3\), the final bound is \(31,31,32,32\), respectively, so
 \]
 As these four sets cover 33 vertices and their cardinalities sum to 33, they are pairwise disjoint. In particular, \(|X_{AAA}|=1\) means the unique degree-three vertex has \(S_{n_0}=A\), so no vertex of \(X_w\) has degree three into \(W\). Every \(n\in X_w\) therefore has \(h_n<7\) and \(S_n\) has size two, containing \(w\) but not all of \(A\) or all of \(B\). The first bullet above therefore forces \(xn\in E(H)\) for every \(n\in X_w\). This would give \(x\) at least 15 neighbors in \(N\), contradicting \(|N_H(x)\cap N|=11\).
 
-Thus the rigid \((3,1^7),e_W=4\) terminal is impossible. Together with Lemma 14.3, **all \(k=8,e_W=4\) terminals are now excluded**. The cases \(k=8,e_W\in\{2,3\}\) and \(k\in\{9,10\}\) remain open. \(\square\`
+Thus the rigid \((3,1^7),e_W=4\) terminal is impossible. Together with Lemma 14.3, **all \(k=8,e_W=4\) terminals are now excluded**. The cases \(k=8,e_W\in\{2,3\}\) and \(k\in\{9,10\}\) remain open. \(\square\)
+
+
+### Lemma 14.5: \(e_W=2\) is impossible at support 41, \(k=8\)
+
+Suppose \(e(H[W])=2\). Since \(\alpha(H[W])\le4\), the two edges of \(H[W]\) must be disjoint; otherwise \(H[W]\) contains a \(P_3\) and three isolated vertices, giving an independent five-set. Thus \(\alpha(H[W])=4\).
+
+For every \(o\in O\), we must have \(c_o=d_H(o,W)\ge1\); otherwise \(o\) together with an independent four-set in \(W\) is an independent five-set. Hence \(c_O\ge|O|=8\). But the exact cross-edge ledger for \(|N|=33\) gives
+\[
+c_O=10-2e_W-\epsilon_O-2\epsilon_N-r_N
+=6-\epsilon_O-2\epsilon_N-r_N\le6,
+\]
+a contradiction. Therefore \(e_W\ne2\).
+
+### Lemma 14.6: \(e_W=3\) forces a three-edge matching
+
+Suppose \(e_W=3\). The exact cross-edge ledger gives \(c_O\le4\). If \(\alpha(H[W])\ge4\), every \(o\in O\) must have \(c_o\ge1\), or else \(o\) plus an independent four-set in \(W\) is an independent five-set. This would give \(c_O\ge8\), impossible. Thus \(\alpha(H[W])\le3\).
+
+A six-vertex graph with three edges and independence number at most three must be \(3K_2\): any overlap among the three edges leaves at least one component with independence number larger than its matching counterpart, and a direct component check gives \(\alpha\ge4\). Hence
+\[
+H[W]\cong 3K_2.
+\]
+In particular, \(c_O\le4\), so at least four omitted points have \(c_o=0\).
+
+There is also a useful incidence constraint. Let \(uv\in E(R[O])\), so \(u,v\) are nonadjacent in \(H\). If \(c_u=0\), then \(S_u=\varnothing\). The pair \(u,v\) can be extended by an independent transversal of the three matching edges unless \(S_v=N_H(v)\cap W\) contains both endpoints of at least one matching edge. Therefore every \(R[O]\)-edge incident to a zero-\(c\) omitted point must have its other endpoint with \(c_v\ge2\), and that endpoint's \(W\)-neighborhood contains a full matching edge. Since \(c_O\le4\), there are at most two such high-incidence omitted points.
+
+This reduces the remaining \(k=8,e_W=3\) problem to a three-matching incidence kernel with at least four zero-\(c\) omitted points, at most two omitted points of \(W\)-degree at least two, and the exact residual-degree profile
+\[
+r_o=3t_o-2+c_o-\epsilon_o,\qquad
+e_R=9-\epsilon_U,\qquad
+e_R[O]\ge5+c_O+\epsilon_N.
+\]
+The kernel is not yet excluded. The remaining blocker is to show that the high-multiplicity omitted points cannot meet their required \(R\)-degrees through the at-most-two high-incidence points plus the bounded \(R\)-incidence into \(N\). \(\square\`
