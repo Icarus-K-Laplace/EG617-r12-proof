@@ -317,3 +317,22 @@ This does not identify the particular seven witnesses minimizing support with se
 New independent high-support reduction: let \(U_{\rm comp}\) be the union of all ten component four-sets per exact color. Then \(|U_{\rm comp}|\ge40\). If \(m=10\) exact colors and \(|U_{\rm comp}|=40\), the 100 component K4s require 600 distinct edges in \(\overline{H[U_{\rm comp}]}\), while the 284-edge core ledger and \(\alpha(H[W])\le4\) give at most 581. Contradiction. Hence \(m=10\Rightarrow |U_{\rm comp}|\ge41\). At support 41, the 100 K4s leave at most ten additional complement edges; this is the next near-decomposition terminal, not yet closed.
 
 The original seven-per-color support boundary \(v=29/31\), the \(m=8,9\) full-component supports \(v\ge40\), the \(m=10,v\ge41\) terminal, the global eleven-color ledger, and the K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-26 — support-41 omission multiplicity floor proved
+
+Added M10_SUPPORT41_OMISSION_FLOOR.md and the arithmetic-only verifier verify_m10_support41_omission_floor.py.
+
+**Theorem (conditional):** in the 284-edge, 47-vertex core with \(\delta(H)\ge12\), \(\alpha(H)\le4\), and total degree excess four, suppose ten exact colors each partition all but one point of a 41-point support into ten edge-disjoint complement \(K_4\)'s. The ten omitted points cannot have only \(k=5,6,7\) distinct values; hence \(k\ge8\).
+
+The proof derives the exact subset inequality
+\[
+3t(S)\le10+2|S|+\binom{|S|}{2}
+-c_S-\epsilon_{U\setminus S},
+\]
+which leaves the omission multiplicity patterns:
+- \(k=5\): \((2,2,2,2,2)\), excluded because the residual complement edges form \(K_5\) on the omitted points;
+- \(k=6\): \((1,1,2,2,2,2)\), excluded because four double-omitted points are forced to form an independent \(K_4\) with no core edges to \(W\);
+- \(k=7\): \((1^6,4)\), \((1^5,2,3)\), and \((1^4,2^3)\), each excluded by exact degree-sum equalities and the independence cap.
+
+The standard-library verifier passed all multiplicity-pattern and integer-budget checks. It is explicitly arithmetic-only; the graph contradictions are in the analytical proof. The support-41 terminal is reduced to \(k=8,9,10\), still OPEN. This is a full-component support route and does not close the separate seven-witness minimum-support boundary. No sibling branch was modified.
