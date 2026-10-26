@@ -241,3 +241,16 @@ e(\overline{H[U_{\rm comp}]})=584-\epsilon_U-e(H[W])\le581.
 Contradiction. Hence \(m=10\) forces \(|U_{\rm comp}|\ge41\). At support 41, the component K4s leave at most ten additional complement edges. This near-decomposition terminal is open.
 
 This does not close the seven-witness minimum-support boundary: the support-minimizing seven-set family can still use a gadget witness and may have smaller union than \(U_{\rm comp}\). The \(m=8,9\) full-component supports and \(m=10,v\ge41\) terminal remain open.
+
+
+## 21. Support-41 omission multiplicity reduction
+
+The full-component support route now has a proved conditional reduction. If \(|U_{\rm comp}|=41\), ten exact colors each partition \(U_{\rm comp}\) minus one point into ten edge-disjoint \(K_4\)'s. Let \(k\) be the number of distinct omitted points. The exact subset degree-sum inequality
+\[
+3t(S)\le10+2|S|+\binom{|S|}{2}-c_S-\epsilon_{U_{\rm comp}\setminus S}
+\]
+limits the possible multiplicity patterns for \(k=5,6,7\) to three short lists; each pattern is then analytically contradicted using the 284-edge degree ledger and \(\alpha(H)\le4\). Therefore \(k\ge8\).
+
+The full proof is in M10_SUPPORT41_OMISSION_FLOOR.md. The independent standard-library verifier checks only integer patterns and budget ranges; it is not a graph-realization certificate.
+
+**Remaining:** \(k=8,9,10\) at support 41; the \(m=8,9\) full-component supports; the distinct seven-witness minimum-support boundary; and the global eleven-color/core-to-shell bridge. No global contradiction is claimed.
