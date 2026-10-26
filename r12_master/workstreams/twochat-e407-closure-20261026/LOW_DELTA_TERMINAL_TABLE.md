@@ -44,7 +44,7 @@ All entries below retain the E407 Q32 parent/core/witness contract. “Condition
 | 14, non-four-partite \(L_U\), augmentable nonedge | EXCLUDED UNDER KP/BROUWER | Augmentable-edge reduction and common-neighbour closure. |
 | 14, non-four-partite \(L_U\), \(K_5\)-saturated | PROVED_CONDITIONAL | Depends on alpha-critical reduction and Didin 2026 preprint component-count theorem, not independently audited here. |
 | 13, four-partite \(L_U\), \(\epsilon_U=1\) | EXCLUDED | No-cross profiles and all three W-cross-edge profiles are closed by DELTA13 files, including Round 31. |
-| 13, four-partite \(L_U\), \(\epsilon_U=2\) | OPEN | No-cross profiles excluded; \((4,4,5,5)\) plus one W-cross-edge remains. |
+| 13, four-partite \(L_U\), \(\epsilon_U=2\) | EXCLUDED under stated profile contract | No-cross profiles and the one-cross-edge profile are excluded in Round 4. |
 | 13, four-partite \(L_U\), \(\epsilon_U=3\) | EXCLUDED | Exact W edge count 32 forces \(2K_4\cup2K_5\) with no cross-edge, excluded by the no-cross theorem. |
 | 13, four-partite \(L_U\), \(\epsilon_U=0\) | OPEN | W edge count 35; no exhaustive W-profile closure in the current files. |
 | 13, non-four-partite \(L_U\) | OPEN | \(e(L_U)=307\) does not force four-partiteness; no complete non-four-partite classification is closed. |
