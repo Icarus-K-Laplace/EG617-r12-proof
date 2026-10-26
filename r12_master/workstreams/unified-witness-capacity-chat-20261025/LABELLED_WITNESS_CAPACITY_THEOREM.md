@@ -361,3 +361,8 @@ This leaves only three multiplicity patterns at \(k=7\); each is excluded analyt
 ## 14. Support-41 k=8 residual budget
 
 The follow-up in M10_SUPPORT41_OMISSION_FLOOR.md excludes e(H[W])=5 for both k=8 multiplicity patterns. The remaining (3,1^7), e(H[W])=4 branch collapses to a rigid conditional terminal with H[W] isomorphic to K3 disjoint union K2 disjoint union K1. This terminal is not closed; all other k=8 cases with e(H[W])<=4 and k=9,10 remain open.
+
+
+## 15. Refined support-41 k=8 frontier
+
+The full proof file M10_SUPPORT41_OMISSION_FLOOR.md now also excludes the (2,2,1^6) pattern when e(H[W])=4. The only remaining e(H[W])=4 state at k=8 is the (3,1^7) rigid star terminal; k=8 with e(H[W])=2 or 3 and k=9,10 remain open.
