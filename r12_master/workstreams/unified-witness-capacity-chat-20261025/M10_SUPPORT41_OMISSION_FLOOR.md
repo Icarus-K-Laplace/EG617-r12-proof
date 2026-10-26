@@ -206,8 +206,7 @@ e_R[O]\ge r_O-e_R=6+c_O+\epsilon_N\ge6.
 \]
 Any \(R\)-edge inside \(O\) must meet \(T=\{x\in O:c_x>0\}\), because otherwise its endpoints are nonadjacent in \(H\), have no \(H\)-neighbors in \(W\), and together with an independent triple of \(W\) form an independent five-set. Since \(c_O\le2\), \(|T|\le2\).
 
-The set T is nonempty because e_R[O] is at least 6 and every R-edge inside O must meet T. If |T|=1, then c_O is at least 1, so r_N + 2 epsilon_N + epsilon_O is at most 1. Thus r_N<=1 and epsilon_O<=1. Any double-omitted point a outside T then has r_a=4-epsilon_a>=3, but it can have at most one R-neighbor in O and at most r_N<=1 R-neighbors in N, giving r_a<=2, contradiction. Therefore |T|=2.
-
+The set T is nonempty because e_R[O] is at least 6 and every R-edge inside O must meet T. If |T|=1, then c_O is at least 1, so r_N + 2 epsilon_N + epsilon_O is at most 1. Thus r_N<=1 and epsilon_O<=1. Any double-omitted point a outside T then has r_a=4-epsilon_a>=3, but it can have at most one R-neighbor in O and at most r_N<=1 R-neighbors in N, giving r_a<=2, contradiction. Therefore |T|=2. With |T|=2, c_O=2 and the identity for c_O forces r_N=epsilon_N=epsilon_O=0. If T contained only one of the two double-omitted points, the other would have r=4 but could have R-neighbors only among the two points of T, impossible. Hence T consists of both double-omitted points.
 
 It follows that \(c_a=c_b=1\), \(c_O=2\), and the identity for \(c_O\) forces \(\epsilon_O=\epsilon_N=r_N=0\). Hence \(r_a=r_b=5\), while each \(y\in Y\) has \(r_y=1\). Every \(R\)-edge in \(O\) meets \(A\), and the six degree-one vertices of \(Y\) each use one edge to \(A\). Therefore the degree sum of \(A\) in \(R\) is either \(6\) or \(8\), depending on whether \(ab\in R\). But \(r_a+r_b=10\), contradiction.
 
