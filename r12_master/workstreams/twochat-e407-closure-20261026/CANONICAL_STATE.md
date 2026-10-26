@@ -84,3 +84,10 @@ Crucial firewall: the exact-129 no-S component witnesses are kept as separately 
 - Root main still lists E407/E408 and abstract backend E333–E340 as independent obligations; sibling documents contain a conditional alternative treatment of the \(R(4,49)\) branch, so the root proof DAG is not promoted here.
 
 See FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md, LOW_DELTA_TERMINAL_TABLE.md, PROOF_DEPENDENCY_AUDIT.md, and OPEN_CONTRACTS.md.
+
+
+## Round 2 audit update (2026-10-26)
+
+- Exact integer feasibility: **56** \((\delta,\epsilon_U)\) profiles, independently replayed; the verifier's prior count 57 was corrected.
+- Template incidence arithmetic: independently replayed the h-4 high-k component floor and all A–E totals. A/C have at least two k=3 no-S witnesses per exact-129 color; aggregate S-row hit floors are \(42,56,42,42,14\), while total shell-row hit floors are \(42,84,42,63,21\).
+- Verification scope is arithmetic only. No graph realization, template exclusion, or original theorem closure is certified by these scripts.
