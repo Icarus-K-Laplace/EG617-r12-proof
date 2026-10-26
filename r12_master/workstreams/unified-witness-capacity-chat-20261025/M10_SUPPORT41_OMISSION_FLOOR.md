@@ -211,3 +211,69 @@ The set T is nonempty because e_R[O] is at least 6 and every R-edge inside O mus
 It follows that \(c_a=c_b=1\), \(c_O=2\), and the identity for \(c_O\) forces \(\epsilon_O=\epsilon_N=r_N=0\). Hence \(r_a=r_b=5\), while each \(y\in Y\) has \(r_y=1\). Every \(R\)-edge in \(O\) meets \(A\), and the six degree-one vertices of \(Y\) each use one edge to \(A\). Therefore the degree sum of \(A\) in \(R\) is either \(6\) or \(8\), depending on whether \(ab\in R\). But \(r_a+r_b=10\), contradiction.
 
 Consequently, among the \(k=8,e_W=4\) states, only the \((3,1^7)\) rigid star terminal of Lemma 14.2 remains.
+
+
+### Lemma 14.4: the remaining \((3,1^7), e_W=4\) star terminal is impossible
+
+Continue under Lemma 14.2. Write \(O=\{x\}\cup Y\), where \(|Y|=7\) and \(t_x=3\), \(t_y=1\) for \(y\in Y\). Write \(W=A\dot\cup B\dot\cup\{w\}\), with \(H[A]\cong K_3\), \(H[B]\cong K_2\), and \(w\) isolated in \(H[W]\). Let \(N=U\setminus O\), so \(|N|=33\). All vertices of \(U\setminus\{x\}\) have zero excess; \(\epsilon_x\in\{0,1\}\), and
+\[
+\epsilon_W=4-\epsilon_x.
+\]
+The residual complement graph \(R\) is a star centered at \(x\): its seven edges \(xy\), \(y\in Y\), are always present, and there is one additional edge \(xn_0\), \(n_0\in N\), exactly when \(\epsilon_x=0\).
+
+First, \(H[Y]\cong K_7\). Indeed, \(x\) is nonadjacent in \(H\) to every \(y\in Y\), and both \(x\) and \(Y\) are anticomplete to \(W\setminus\{w\}\). If distinct \(y,z\in Y\) were nonadjacent in \(H\), then \(x,y,z\), one vertex of \(A\), and one vertex of \(B\) would be an independent five-set. Hence every pair in \(Y\) is an \(H\)-edge. Each \(y\in Y\) has degree 12, six neighbors in \(Y\), and no neighbors in \(\{x\}\cup W\); therefore
+\[
+|N_H(y)\cap N|=6\quad(y\in Y).
+\]
+Also,
+\[
+|N_H(x)\cap N|=d_H(x)-d_H(x,W)-d_H(x,Y)=11+\epsilon_x.
+\]
+
+For \(n\in N\), let \(S_n=N_H(n)\cap W\) and \(h_n=|N_H(n)\cap Y|\). The exact degree identity \(d_H(n,W)=2+r_n\), together with the star description of \(R\), says:
+- if \(\epsilon_x=1\), every \(S_n\) has size 2;
+- if \(\epsilon_x=0\), every \(S_n\) has size 2 except one \(S_{n_0}\) of size 3.
+
+The independent-set condition forces a covering classification. For each \(a\in A,b\in B\), both \(\{x,y,a,b\}\) and \(\{y,w,a,b\}\) are independent four-sets for every \(y\in Y\). If \(h_n<7\), choose \(y\in Y\) nonadjacent to \(n\).
+- If \(xn\notin E(H)\), then \(S_n\) must meet every pair \(\{a,b\}\), \(a\in A,b\in B\); equivalently \(A\subseteq S_n\) or \(B\subseteq S_n\).
+- If \(xn\in E(H)\), then \(S_n\) must meet every triple \(\{w,a,b\}\); equivalently \(w\in S_n\), or \(A\subseteq S_n\), or \(B\subseteq S_n\).
+
+Consequently every \(n\in N\) belongs to at least one of the following four sets:
+\[
+\begin{aligned}
+X_w&=\{n:w\in S_n\},\\
+X_{BB}&=\{n:B\subseteq S_n\},\\
+X_{AAA}&=\{n:S_n=A\},\\
+X_7&=\{n:h_n=7\}.
+\end{aligned}
+\tag{14.4}
+\]
+The set \(X_{AAA}\) has size at most one, since only \(n_0\) can have three neighbors in \(W\). The exact degree counts give
+\[
+|X_w|=11+\epsilon_w,\qquad
+|X_{BB}|\le\left\lfloor\frac{22+\epsilon_B}{2}\right\rfloor,\qquad
+|X_7|\le6.
+\tag{14.5}
+\]
+Here \(\epsilon_w,\epsilon_B\) are the degree-excess sums on the isolated vertex and the \(K_2\), respectively; the last bound follows because each \(y\in Y\) has only six neighbors in \(N\).
+
+If \(\epsilon_x=1\), then \(\epsilon_W=3\) and \(X_{AAA}=\varnothing\). Since \(\epsilon_B\le3-\epsilon_w\), (14.4)–(14.5) imply
+\[
+33\le |X_w|+|X_{BB}|+|X_7|
+\le17+\epsilon_w+\left\lfloor\frac{25-\epsilon_w}{2}\right\rfloor
+\le31,
+\]
+a contradiction.
+
+If \(\epsilon_x=0\), then \(\epsilon_W=4\) and
+\[
+33\le |X_w|+|X_{BB}|+|X_{AAA}|+|X_7|
+\le18+\epsilon_w+\left\lfloor\frac{26-\epsilon_w}{2}\right\rfloor.
+\]
+For \(\epsilon_w=0,1,2,3\), the final bound is \(31,31,32,32\), respectively, so necessarily \(\epsilon_w=4\). Then \(\epsilon_A=\epsilon_B=0\), and equality must hold in every set-size bound:
+\[
+|X_w|=15,\quad |X_{BB}|=11,\quad |X_{AAA}|=1,\quad |X_7|=6.
+\]
+As these four sets cover 33 vertices and their cardinalities sum to 33, they are pairwise disjoint. In particular, every \(n\in X_w\) has \(h_n<7\), and \(S_n\) has size two and contains \(w\) but not all of \(A\) or all of \(B\). The first bullet above therefore forces \(xn\in E(H)\) for every \(n\in X_w\). This would give \(x\) at least 15 neighbors in \(N\), contradicting \(|N_H(x)\cap N|=11\).
+
+Thus the rigid \((3,1^7),e_W=4\) terminal is impossible. Together with Lemma 14.3, **all \(k=8,e_W=4\) terminals are now excluded**. The cases \(k=8,e_W\in\{2,3\}\) and \(k\in\{9,10\}\) remain open. \(\square\`
