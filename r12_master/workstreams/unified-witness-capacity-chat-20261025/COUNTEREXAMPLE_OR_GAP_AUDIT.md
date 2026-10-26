@@ -254,3 +254,8 @@ limits the possible multiplicity patterns for \(k=5,6,7\) to three short lists; 
 The full proof is in M10_SUPPORT41_OMISSION_FLOOR.md. The independent standard-library verifier checks only integer patterns and budget ranges; it is not a graph-realization certificate.
 
 **Remaining:** \(k=8,9,10\) at support 41; the \(m=8,9\) full-component supports; the distinct seven-witness minimum-support boundary; and the global eleven-color/core-to-shell bridge. No global contradiction is claimed.
+
+
+## 22. Support-41 k=8 frontier
+
+For k=8, the subset inequalities leave multiplicity patterns (3,1^7) and (2,2,1^6). The e_W=5 subcase is excluded for both. In the (3,1^7), e_W=4 branch, the triple-omitted point has exactly one edge into W; all other omitted points have no W edges; all residual complement edges are incident to the triple-omitted point; and H[W] is K3 disjoint union K2 disjoint union K1. This is a rigid conditional terminal, not yet a contradiction. Remaining are other k=8 cases with e_W<=4 and k=9,10.
