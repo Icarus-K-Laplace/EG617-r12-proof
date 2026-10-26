@@ -59,6 +59,29 @@ def main():
     assert all(18 <= r[6] <= 21 and r[7] >= 2 for r in by_m[8])
     assert all(26 <= r[6] <= 29 and r[7] == 3 for r in by_m[7])
 
+    # Check the exact (m, k, high-degree multiset, a) family signatures
+    # represented by the theorem table, not only the bucket counts.
+    actual_families = {(r[5], r[0], tuple(r[1]), r[3]) for r in rows}
+    expected_families = {
+        (10, 1, (), 5),
+        (10, 2, (9,), 3),
+        (10, 3, (9, 9), 1),
+        (10, 3, (10,), 2),
+        (10, 4, (9, 10), 0),
+        (10, 4, (11,), 1),
+        (9, 2, (9,), 4),
+        (9, 3, (9, 9), 2),
+        (9, 3, (10,), 3),
+        (9, 4, (9, 9, 9), 0),
+        (9, 4, (9, 10), 1),
+        (9, 4, (11,), 2),
+        (8, 3, (9, 9), 3),
+        (8, 4, (9, 9, 9), 1),
+        (8, 4, (9, 10), 2),
+        (7, 4, (9, 9, 9), 2),
+    }
+    assert actual_families == expected_families
+
     # The pair-counting bound for a high neighborhood Y hitting d=7-b
     # partitions is |Y intersect S| <= q-7 whenever S is not contained in Y.
     assert {q: q - 7 for q in (9, 10, 11)} == {9: 2, 10: 3, 11: 4}
