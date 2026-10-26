@@ -190,7 +190,7 @@ Current sibling heads read-only checked:
 
 Added R12_E408_Q33_S0_13_EXCLUSION.md and verify_e408_s0_13_profiles.py. Under the registered 47-core / 284-edge / alpha<=4 / omega<=11 contract and the 31-point, 56-witness exact-129 boundary, the theorem excludes S0=13 without assuming L is four-partite. Combining with the separately audited universal S0>=12 theorem gives
 \[
-\boxed{S_0=\epsilon_U+2\delta\ge14,\qquad \delta+\epsilon_U\le17.}
+\boxed{S_0=\epsilon_U+2\delta\ge14,\qquad \delta\ge5.}
 \]
 The finite profile verifier enumerates 60 labelled degree/T-incidence parameter cases and checks the m=10/9/8/7 buckets. Arithmetic checks do not certify graph realization.
 
@@ -203,3 +203,18 @@ The finite profile verifier enumerates 60 labelled degree/T-incidence parameter 
 - The original T61-to-K145 bridge and complete EG617(r=12) theorem remain OPEN / NOT_CERTIFIED.
 
 No sibling branch was modified.
+
+
+## Round 6 — proof audit corrections (2026-10-26)
+
+The S0=13 exclusion was audited before retaining its conditional status. The theorem note and arithmetic verifier were repaired as follows:
+
+- Proved distinct R-only eight-transversals are disjoint; two disjoint ones have a third complement transversal, while explicitly not assuming that complement is a realized W-neighborhood.
+- Generalized the clique argument to any three mathematical transversals partitioning R, allowing the W-group for one part to be empty.
+- Replaced the invalid high-neighborhood intersection bound \(1+b_y\) with the correct pair-counting bound \(|Y\cap S_i|\le q_y-7\), where \(Y=N_H(y)\cap R\). The q=10,b=1 case is covered by the same independent-five/W-degree contradiction as q=10,b=2.
+- Removed the invalid special-incidence argument for the m=8,7 two-neighborhood cases. The multiplicity cap \(m_i\le4\) forces a multiplicity-four group if only one or two neighborhoods are realized; the complement transversal supplies the required partition for the clique contradiction.
+- Removed the unsupported upper-bound claim \(\delta+\epsilon_U\le17\).
+
+The arithmetic enumeration was replicated in-session: 60 labelled parameter cases, with m=10:6, m=9:24, m=8:22, m=7:8; all arithmetic assertions passed. This is not a graph-realization certificate. Under the stated core/exact-129 contracts and inherited universal S0>=12 theorem, the repaired conditional result is \(S_0\ge14\), hence \(\delta\ge5\), for the minimum-support E408 Q33 boundary only.
+
+Full EG617(r=12) remains OPEN / NOT_CERTIFIED. No sibling branch was modified.
