@@ -567,3 +567,8 @@ These are necessary terminal constraints; the all-q=8 case remains OPEN.
 The S0=14 terminal note isolates a useful pair-extension lemma. Any nonadjacent pair \(w,w'\in W\) with \(\epsilon_w=\epsilon_{w'}=0\) extends to an independent four-set in W: their common nonneighbors have size at least six, and cannot be a clique because that would require at least six units of W-excess while \(\epsilon_W\le4\).
 
 Consequently such a pair has at most one common U-neighbor. If its common U-neighbor is u, then u is the unique duplicated U-vertex in the extending four-set and hence \(\rho_u\le1\). Equivalently, for every u with \(\rho_u\ge2\), its zero-excess W-neighbors form a clique, giving \(d_H(u,W)\le9\). The new verifier checks the exact six-vertex margin.
+
+
+## 23. Standalone three-part clique lemma
+
+The S0=14 proof now includes the three-part R-only-transversal clique lemma in-line rather than relying on a cross-file citation. If \(S_1,S_2,S_3\) partition R into R-only eight-transversals, each vertex in one part has at most one H-neighbor in each other part, because the seven T-partitions give seven distinct nonneighbors there. The independence-number bound then forces each \(S_i\) to be a clique, and also each group \(G_i=\{w:N_H(w)\cap U=S_i\}\) to be a clique. Since \(G_i\) is complete to \(S_i\), any \(m_i\ge4\) gives a K12. This makes the S0=14 no-seven-transversal proof self-contained at its final contradiction step.
