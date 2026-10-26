@@ -47,7 +47,7 @@ The 100 edge-disjoint \(K_4\)'s use 600 distinct complement edges. Let \(R\) be 
 \boxed{e_R=12-\epsilon_U-e_W.}\tag{1}
 \]
 
-For \(x\in O\), let \(t_x=|\{i:o_i=x\}|\), so \(t_x\ge1\) and \(\sum_{x\in O}t_x=10\). Let \(r_x=d_R(x)\) and \(c_x=d_H(x,W)\). The \(10-t_x\) blocks containing \(x\) contribute \(3(10-t_x)\) distinct complement neighbors, hence
+For every \(x\in U\), let \(t_x=|\{i:o_i=x\}|\), setting \(t_x=0\) for \(x\notin O\). Thus \(t_x\ge1\) on \(O\) and \(\sum_{x\in O}t_x=10\). Let \(r_x=d_R(x)\) and \(c_x=d_H(x,W)\). The \(10-t_x\) blocks containing \(x\) contribute \(3(10-t_x)\) distinct complement neighbors, hence
 \[
 d_{H[U]}(x)=10+3t_x-r_x.
 \]
