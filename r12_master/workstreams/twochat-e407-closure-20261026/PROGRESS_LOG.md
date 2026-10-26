@@ -43,3 +43,18 @@ The five-template incidence verifier's arithmetic assertions were independently 
 Transparency: the arithmetic assertions were independently executed in the Python reasoning environment; the GitHub-hosted scripts themselves were not launched from a repository shell in this session. They remain standard-library runnable audit scripts, not graph-realization certificates.
 
 No terminal was closed by this arithmetic replay. The global labelled-incidence join, the surviving low-delta contracts, and the original K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-26 — Round 3: support omission identity and A/C component capacity
+
+The 49 support blocks form seven disjoint 4-set blocks in each of seven color classes. Each class therefore uses 28 of the 29 points and omits exactly one point. If r_u counts how often u is omitted, and x_u counts extra support-complement edges incident to u beyond the 294 block pairs, then sum(r_u)=7, sum(x_u)=2*delta, and the exact pointwise identity is:
+
+    d_H(u,W) = 5 + epsilon_u - 3*r_u + x_u.
+
+The identity follows by counting the 3 block-pairs at u in every class containing u, then adding the extra complement edges. At least 22 points have r_u=0 and therefore at least five neighbours in W. The independent arithmetic replay checked all 15 omission partitions and all 56 feasible (delta, epsilon_U) profiles.
+
+For templates A/C, let h be the number of full B rows, h>=6. A non-hub-complete B-labelled no-S component witness must hit at least h distinct B rows. The six component witnesses in a color are disjoint, while total B-to-core incidence is c_S=3h+n_1<=2h+10<4h. Therefore at most three of the six witnesses are non-hub-complete: each exact-129 color has at least three hub-complete component witnesses, at least 21 across seven colors. This is a component-witness result and does not identify those witnesses with the 49 support blocks.
+
+LABEL_JOIN_SYSTEM.md now lists the support-block variables, shell-row variables, component witnesses, exact constraints, and the unresolved mapping between the two witness families.
+
+The arithmetic replay passed in the Python reasoning environment. The GitHub-hosted scripts themselves were not launched from a repository shell. No E407 terminal is closed; all five global templates, surviving low-delta cases, and the original K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
