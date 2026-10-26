@@ -42,7 +42,7 @@ Let \(k=|\{w\in W:q_w=7\}|\). Every such \(w\) has \(N_H(w)\cap U=T\). These \(k
 1\le k\le4. \tag{1}
 \]
 
-For each \(t\in T\), its eight witness triples partition \(R\) into eight triples. A \(q=8\) neighborhood is either \(T\cup\{r\}\) for one \(r\in R\), or an eight-point set contained in \(R\) meeting every one of these partitions (an **R-only transversal**). More generally, if \(q_w>8\) and \(b_w=|N_H(w)\cap T|<7\), then \(b_w\le q_w-8\) and \(N_H(w)\cap R\) is a transversal of the \(7-b_w\) partitions indexed by \(T\setminus N_H(w)\).
+For each \(t\in T\), its eight witness triples partition \(R\) into eight triples. A \(q=8\) neighborhood is either \(T\cup\{r\}\) for one \(r\in R\), or an eight-point set contained in \(R\) meeting every one of these partitions (an **R-only transversal**). More generally, if \(q_w>8\) and \(b_w=|N_H(w)\cap T|<7\), then \(b_w\le q_w-8\) and \(N_H(w)\cap R\) hits every triple in each of the \(7-b_w\) partitions indexed by \(T\setminus N_H(w)\). If it has exactly eight R-points, this is an R-only eight-transversal; for larger neighborhoods it is only a hitting set and may hit some triples more than once.
 
 ## 2. R-only transversal geometry
 
