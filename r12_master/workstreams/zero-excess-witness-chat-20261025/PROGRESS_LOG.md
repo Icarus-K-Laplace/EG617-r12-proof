@@ -258,3 +258,16 @@ In the S0=14 independent-four-set structure, the \(P\times Q\) witness-pair grap
 ## Round 12 — high-omission degree cap (2026-10-26)
 
 Proved that any \(u\) with \(\rho_u\ge2\) has at most five zero-excess W-neighbors, hence \(d_H(u,W)\le9\). Otherwise two zero-excess neighbors could be extended to an independent four-set and force \(\rho_u\le1\). The boundary-specific degree budgets sharpen the possible \((\rho_u,d_W(u))\) pairs; notably \(\rho_u=5\) is possible only when \((\epsilon_U,\delta)=(4,5)\), with \(d_W(u)=0\), all four units of U-excess at u, and all five leftover L-edges incident to u. Added to theorem note and arithmetic verifier; terminal remains OPEN.
+
+
+## Round 13 — live sibling refresh (2026-10-26)
+
+Read-only refresh of sibling branches:
+- E407 Q32 head 79c1086efca893fad8933210a92a432457232410: conditionally excludes the full four-partite delta=13, epsilon_U=1, two-cross-edge 2K4 union 2K5 W-profile, but does not close E407 Q32.
+- E408 Q33 global compatibility head 0cb2ff3968f005c9cb255958df7c02b220678701: seven of eleven P_C=49 incidence profiles excluded, four open.
+- Unified witness capacity head 13f5f51dc6a76e2397073b92c097edfd8db23b5f: support-41 omission count at least eight; cases 8/9/10 remain open.
+- E408 Q32 excess-six head a0ba6db26c7e8b00a4217dcbcbf298895dff93ce: support v>=44, with v=44 terminal open.
+- Witness packing head f5d3daa07403877ede9885e1bd5c2f46b16d81da: universal E408 Q33 minimum-support S0>=12 and E407 epsilon_U+2delta>=9; neither line closes the full theorem.
+- Emergency head f4c3b06891d29238d4f9cca2588f442004b6dc97: four-partite E408 Q33 S0>=12 only.
+
+No sibling branch was modified; these results remain scoped to their contracts. Current-line S0=14 terminal remains OPEN.
