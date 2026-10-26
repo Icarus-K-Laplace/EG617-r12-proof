@@ -197,3 +197,14 @@ The remaining S0=14 terminal is now specifically:
 The new arithmetic verifier passed 30 integer inequality states and the three excess/leftover-edge pairs (epsilon_U,delta)=(0,7),(2,6),(4,5). These checks do not certify a graph realization or close the remaining terminal.
 
 Current frontier: E408 Q33 has the conditional minimum-support lower bound S0>=14; the equality case S0=14 is reduced but OPEN. Larger S0, larger support sizes, E407 Q32, E408 Q32, and the original T61-to-K145 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## Round 8 — independent-four-set rigidity added (2026-10-26)
+
+The all-q=8/no-transversal S0=14 terminal now has another exact necessary condition. Its W-induced graph has
+\[
+e(H[W])=34-\epsilon_U/2\in\{32,33,34\}.
+\]
+Caro–Wei yields \(\alpha(H[W])\ge256/(2e(H[W])+16)>3\), while \(\alpha(H)\le4\), so \(\alpha(H[W])=4\). Every independent four-set \(A\subset W\) must dominate U; otherwise \(A\cup\{u\}\) is independent of size five. Four U-neighborhoods have total size 32 and union size 31, so exactly one pair in each independent four-set shares a single U-neighbor; the other five pairs have disjoint U-neighborhoods.
+
+This rigidity is added to the S0=14 terminal note and arithmetic verifier. The verifier's in-session replica passes the 30 integer states, the three (epsilon_U,delta) cases, the omission/degree identities, and the independent-four-set inequalities. The terminal remains OPEN; no contradiction is claimed.
