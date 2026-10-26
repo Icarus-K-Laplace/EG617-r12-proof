@@ -174,3 +174,32 @@ Updated proof assets:
 - Latest commits: boundary proof df41618effb2ce5e025f20258ecffd357af2f258; E407 audit correction 49afd66a18850049c80e4b48c073582a9ecf3473; verifier cleanup 3dbc0349a678e1f8b668e940967699f3b3de527a.
 
 Status firewall: E408 Q33 non-four-partite boundary remains OPEN; E407 Q32, E408 Q32 (285-edge core), other support sizes, and the original K145 bridge remain OPEN / NOT_CERTIFIED. No full EG617(r=12) proof is claimed.
+
+
+## Round 5 — live sibling refresh and universal E408 Q33 S0>=14 result (2026-10-26)
+
+Current sibling heads read-only checked:
+- E407 Q32 terminal: 79c1086efca893fad8933210a92a432457232410
+- E408 Q33 global compatibility: 0cb2ff3968f005c9cb255958df7c02b220678701
+- E408 Q32 excess-six: a0ba6db26c7e8b00a4217dcbcbf298895dff93ce
+- unified witness capacity: 9935e0d2343fc08d9e65d51ff495cfb260d6de95
+- emergency sprint: f4c3b06891d29238d4f9cca2588f442004b6dc97
+- this branch before the round: f3935770d0c2b4e41d164d734d6fd0f9de3e56a8
+
+### New result
+
+Added R12_E408_Q33_S0_13_EXCLUSION.md and verify_e408_s0_13_profiles.py. Under the registered 47-core / 284-edge / alpha<=4 / omega<=11 contract and the 31-point, 56-witness exact-129 boundary, the theorem excludes S0=13 without assuming L is four-partite. Combining with the separately audited universal S0>=12 theorem gives
+\[
+\boxed{S_0=\epsilon_U+2\delta\ge14,\qquad \delta+\epsilon_U\le17.}
+\]
+The finite profile verifier enumerates 60 labelled degree/T-incidence parameter cases and checks the m=10/9/8/7 buckets. Arithmetic checks do not certify graph realization.
+
+### Cross-branch status
+
+- E408 Q33, minimum support v=31: universal S0>=14; four-partite branch has S0>=22. The non-four-partite branch for S0>=14 and larger support sizes remain open.
+- E407 Q32, minimum support v=29: this line's universal bound is S=epsilon_U+2delta>=9 (hence delta>=3); the sibling terminal line has conditionally closed multiple delta=14..16 subcases but still has delta<=13 and shell-template compatibility gaps.
+- E408 Q32 remains a separate 285-edge / excess-six core. Its support reduction v>=44 leaves the v=44 labelled triple terminal open.
+- The unified labelled-witness route still has an unresolved label-transfer/component-realization gap.
+- The original T61-to-K145 bridge and complete EG617(r=12) theorem remain OPEN / NOT_CERTIFIED.
+
+No sibling branch was modified.
