@@ -75,7 +75,7 @@ Crucial firewall: the exact-129 no-S component witnesses are kept as separately 
 
 ## Round 3 refinements and Round 5 audit correction
 
-- **A/C component packing claim — WITHDRAWN in Round 5.** The cross-label implication was not justified; see PROOF_DEPENDENCY_AUDIT.md. The certified bound remains the high-k label-intersection floor from Theorem 4.2.
+- **A/C component packing:** conditional on the registered row-transversal theorem and R(3,35) exclusion, at least max(3,h-4) of the six no-S component witnesses are hub-complete per exact-129 color. The direct six-set argument was incomplete; the corrected proof is in Theorem 4.3.
 - **Support omission–degree identity:** for \(r_u\) color classes omitting \(u\in U\) and \(x_u\) extra support-complement edges incident to u,
   \[
   \sum_U r_u=7,\quad \sum_U x_u=2\delta,\quad
