@@ -75,6 +75,25 @@ def main():
     assert sum(deficits) == 16
     assert deficits.count(2) == 2 and deficits.count(1) == 12
 
+    # High-omission degree table. For S0=14, g_u=j_u+epsilon_u
+    # is at most delta+epsilon_U = 7,8,9 in the three boundary cases.
+    degree_caps = {
+        (0, 7): {2: 7, 3: 4, 4: 1},
+        (2, 6): {2: 8, 3: 5, 4: 2},
+        (4, 5): {2: 9, 3: 6, 4: 3, 5: 0},
+    }
+    for (eps_u, delta), caps in degree_caps.items():
+        gmax = eps_u + delta
+        for rho, cap in caps.items():
+            assert 6 - 3 * rho + gmax == cap
+    assert 6 - 3 * 5 + 7 < 0
+    assert 6 - 3 * 5 + 8 < 0
+    assert 6 - 3 * 6 + 9 < 0
+    # rho=5 is possible only at (epsilon_U,delta)=(4,5), with
+    # epsilon_u=4 and j_u=5, so d_H(u,W)=0.
+    assert 6 - 3 * 5 + 9 == 0
+    assert 4 + 5 == 9
+
     # All-q=8 terminal: total omission count and degree ledger.
     assert 8 * 31 - 56 * 4 == 24
     for eps_u, delta in feasible:
@@ -82,7 +101,7 @@ def main():
         assert 6 * 31 - 3 * 24 + 2 * delta + eps_u == 128
 
     print("E408_Q33_S0_14_NO_SEVEN_TRANSVERSAL_ARITHMETIC_OK")
-    print("30 integer inequality states, three excess/delta pairs, omission/degree identities, independent-four-set rigidity, rho<=1 cross-pair counts, and vertexwise pair-deficit identities checked.")
+    print("30 integer inequality states, three excess/delta pairs, omission/degree identities, independent-four-set rigidity, rho<=1 cross-pair counts, vertexwise pair-deficit identities, and high-rho degree caps checked.")
     print("Scope: arithmetic checks only; analytic clique/independence arguments remain in the theorem note.")
 
 
