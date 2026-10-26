@@ -254,3 +254,12 @@ Rechecked Lemma 14.3 against possible residual edges from omitted points into N.
 - In this matching kernel, at least four omitted points have zero W-degree. An \(R[O]\)-edge from a zero-W-degree point must go to a point whose W-neighborhood contains a full matching edge; therefore at most two omitted points can support such edges. The exact residual budget gives \(e_R[O]\ge5+c_O+\epsilon_N\).
 - Added verify_m10_support41_endpoint_budget.py. Local arithmetic replay PASS: 32 feasible budget rows for \(e_W=2\), 22 for \(e_W=3\).
 - The full-component support-41 \(k=8\) branch is now narrowed to \(e_W=3\), \(H[W]=3K_2\). The residual-degree contradiction remains open; no global R12 closure is claimed.
+
+
+## 2026-10-26 — reduce \(k=8,e_W=3\) to one rigid star terminal
+
+- Lemma 14.7 uses the fact that any \(R[O]\)-edge must have endpoint W-neighborhoods whose union contains a complete edge of \(3K_2\). Therefore a zero-W-degree endpoint can only meet a vertex of W-degree at least two, and a one-W-degree endpoint can only meet another positive-W-degree point.
+- Any omitted point of multiplicity two cannot have \(c_o=0\) or \(1\). The profile \((2,2,1^6)\) is impossible: both double points are forced to have \(c=2\), all six single points have \(c=0\), and their six residual edges plus a possible double-point edge provide at most 8 of the required residual degree sum 12.
+- For \((3,1^7)\), the triple point is forced to have \(c_x=2\); exact budget equality gives \(\epsilon_Y=\epsilon_N=0\), \(r_x=e_R\), and hence every residual edge is incident to \(x\). Each singleton point then has \(c_y=0\), leaving the unique star profile with \(2-\epsilon_x\) additional N-leaves.
+- This profile also forces \(H[Y]=K_7\), because any nonedge inside Y plus an independent transversal of the three W-edges would be an independent five-set. Each \(y\in Y\) therefore has exactly six neighbors in N.
+- Added verify_m10_support41_matching_kernel.py. Local arithmetic replay PASS. The final star terminal remains open and is the next blocker.
