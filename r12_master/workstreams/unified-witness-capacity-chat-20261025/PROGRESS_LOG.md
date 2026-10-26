@@ -236,3 +236,12 @@ Updated verify_m10_support41_omission_floor.py to check the exact k=8 multiplici
 ## 2026-10-26 — final proof audit of k=8, e_W=4
 
 Rechecked Lemma 14.3 against possible residual edges from omitted points into N. The proof now explicitly bounds r_N when the cross-neighborhood support T has size one, then forces T to be exactly the two double-omitted points. The support multiplicity t_x is defined on all of U, with t_x=0 off O, so the degree identity also covers non-omitted points. The arithmetic verifier passes for all k=5,6,7,8 pattern and budget branches. The only surviving k=8, e_W=4 case remains the explicitly open (3,1^7) rigid star terminal.
+
+
+## 2026-10-26 — close the final \(k=8,e_W=4\) support-41 terminal
+
+- Added Lemma 14.4 to M10_SUPPORT41_OMISSION_FLOOR.md. The surviving \((3,1^7)\) star case forces \(H[Y]=K_7\), then every \(y\in Y\) has exactly six neighbors in the 33-point set \(N=U\setminus O\).
+- For every \(n\in N\) not adjacent to all of \(Y\), independent-five-set avoidance forces its \(W\)-neighborhood to contain \(w\), both vertices of \(B\), or (only for the unique degree-three exception) all of \(A\). If \(n\) is nonadjacent to \(x\), the stronger requirement is that it contain all of \(A\) or both of \(B\).
+- Thus \(N\) is covered by \(X_w\cup X_{BB}\cup X_{AAA}\cup X_7\), with exact upper bounds \(11+\epsilon_w\), \(\lfloor(22+\epsilon_B)/2\rfloor\), \(1\), and \(6\). All excess allocations contradict \(|N|=33\), except the sole boundary \(\epsilon_x=0,\epsilon_w=4,\epsilon_A=\epsilon_B=0\); there equality forces \(X_w\) to have 15 vertices, all adjacent to \(x\), while \(x\) has only 11 neighbors in \(N\).
+- Added verify_m10_support41_star_terminal.py. Local standard-library replay passed all 25 integer allocations and identified exactly one boundary allocation, which the \(15>11\) degree contradiction closes.
+- Status update: every support-41 \(k=8,e_W=4\) terminal is now excluded (Lemma 14.3 handled \((2,2,1^6)\); Lemma 14.4 handles \((3,1^7)\)). The \(k=8,e_W=2,3\) and \(k=9,10\) cases remain open. No original EG617 closure is claimed.
