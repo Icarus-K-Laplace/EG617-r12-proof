@@ -140,3 +140,8 @@ The full-component support is distinct from the seven-witness minimum-support un
 Under the exact-129 factor theorem and the 284-edge core contract, the support-41 full-component terminal now satisfies \(k\ge8\), where \(k\) is the number of distinct omitted points among ten exact colors. The proof excludes \(k=5\) by forcing a residual \(K_5\), \(k=6\) by forcing an independent \(K_4\) with no \(W\)-edges, and all three possible \(k=7\) multiplicity patterns by exact residual-degree equalities.
 
 The analytical proof is in M10_SUPPORT41_OMISSION_FLOOR.md; the integer verifier is verify_m10_support41_omission_floor.py. The surviving omission counts are \(k=8,9,10\). The support-41 near-decomposition, seven-witness minimum-support terminal, aggregate eleven-color ledger, T61-to-\(K_{145}\) bridge, and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+## 12. Further support-41 reduction
+
+At k=8, the omission patterns are (3,1^7) and (2,2,1^6). The e_W=5 case is impossible. In the (3,1^7), e_W=4 branch, the exact inequalities force a rigid terminal with one triple-omitted point, one H-edge from it into W, no other omitted-point edges into W, all residual complement edges incident to that point, and H[W] = K3 disjoint union K2 disjoint union K1. The terminal remains OPEN. The other k=8 cases with e_W<=4 and k=9,10 are still open.
