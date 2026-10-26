@@ -491,3 +491,20 @@ Sibling refresh, read-only:
 - Unified witness-capacity head: 9935e0d2343fc08d9e65d51ff495cfb260d6de95; omission-capacity and label-transfer gaps remain.
 
 Status firewall: the S0>=14 result applies only to the minimum-support v=31 / 56-witness E408 Q33 boundary. The four-partite subcase is stronger (S0>=22). Larger supports, E407 Q32, E408 Q32, and the T61-to-K145 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## 16. E408 Q33 S0=14 reduced to the no-transversal all-q=8 terminal
+
+Added R12_E408_Q33_S0_14_NO_SEVEN_TRANSVERSAL.md and verify_s0_14_no_seven_transversal.py. Under the minimum-support Q33 contract and S0=14, the proof excludes every seven-point transversal T, even if no W-vertex realizes it, and proves all 16 W-vertices have q_w=8.
+
+Core mechanism:
+- If k W-vertices have q=7, the T clique together with the q=7 group and a T-type q=8 group forces k+a<=4.
+- The exact cross-degree sum gives sum(q_y-8)=k over high vertices. The T-incidence identity forces at least 6-(k+a) high vertices with b_y=7.
+- The T-complete high vertices join the same clique: their R-neighborhood unions have size at most k+2<=6, leaving a witness triple untouched. This would yield a clique of size at least 13, contradiction.
+- If k=0 but a seven-point transversal exists, the R-only multiplicity cap is four, at most three disjoint transversals occur, and the T-type clique cap gives a=4 and three multiplicity-four R-only groups, again a K12 contradiction.
+
+Thus the S0=14 equality case has no 7-point transversal and all q_w=8. For each color c, its omitted triple X_c has size three and every W-neighborhood meets X_c in at most one point. Defining rho_u=8-c_u gives sum rho_u=24, the exact identity tau_w=sum_{u in N_U(w)} rho_u, and
+\[
+d_H(u,W)=6-3\rho_u+j_u+\epsilon_u.
+\]
+The all-q=8/no-transversal system is still OPEN; this is a structural reduction, not a proof that S0=14 is impossible. The arithmetic verifier passed 30 integer inequality states and the three possible pairs (epsilon_U,delta)=(0,7),(2,6),(4,5).
