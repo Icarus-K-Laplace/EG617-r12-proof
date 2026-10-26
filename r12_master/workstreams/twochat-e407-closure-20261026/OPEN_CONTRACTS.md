@@ -13,7 +13,7 @@ Need one explicit incidence object containing simultaneously:
 - the ten \(K_5\) components and exceptional gadget for every exact-129 color, including the pivot/S/B labels;
 - edge uniqueness, row-hit constraints, common-neighbour sets, W-component labels, and the four-unit degree-excess distribution.
 
-Current proven output: FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md gives the per-color high-k component floor 2,4,2,3,1 for A–E. A proposed stronger A/C incidence-capacity theorem was withdrawn in Round 5; only the high-k label-intersection floor is certified. The support omission-degree identity is also proved. LABEL_JOIN_SYSTEM.md records the variable families and equations. Missing implication: the support blocks, shell rows, component labels, and same H must be joined into either a certified contradiction or an explicit legal realization.
+Current proven output: FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md gives the per-color high-k component floor 2,4,2,3,1 for A–E. The conditional A/C bound max(3,h-4) is now proved via the registered row-transversal theorem under the R(3,35) contract; the direct independent-six proof route was corrected. The support omission-degree identity is also proved. LABEL_JOIN_SYSTEM.md records the variable families and equations. Missing implication: the support blocks, shell rows, component labels, and same H must be joined into either a certified contradiction or an explicit legal realization.
 
 ## C2. Witness identity / overlap contract
 
