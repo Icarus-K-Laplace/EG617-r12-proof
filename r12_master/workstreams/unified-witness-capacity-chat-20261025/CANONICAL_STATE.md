@@ -336,3 +336,8 @@ which leaves the omission multiplicity patterns:
 - \(k=7\): \((1^6,4)\), \((1^5,2,3)\), and \((1^4,2^3)\), each excluded by exact degree-sum equalities and the independence cap.
 
 The standard-library verifier passed all multiplicity-pattern and integer-budget checks. It is explicitly arithmetic-only; the graph contradictions are in the analytical proof. The support-41 terminal is reduced to \(k=8,9,10\), still OPEN. This is a full-component support route and does not close the separate seven-witness minimum-support boundary. No sibling branch was modified.
+
+
+## 2026-10-26 — support-41 k=8 refinement
+
+The only k=8 omission patterns are (3,1^7) and (2,2,1^6). The e(H[W])=5 subcase is excluded for both. In the (3,1^7), e(H[W])=4 subcase, the exact subset inequality forces a rigid terminal: one triple-omitted point x has exactly one H-edge to W; the other seven omitted points have none; all residual complement edges are incident to x; and H[W] is K3 union K2 union K1. This terminal is not yet contradicted. Remaining k=8 cases with e_W<=4 and k=9,10 remain open.
