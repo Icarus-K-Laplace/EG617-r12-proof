@@ -213,7 +213,7 @@ The S0=13 exclusion was audited before retaining its conditional status. The the
 - Generalized the clique argument to any three mathematical transversals partitioning R, allowing the W-group for one part to be empty.
 - Replaced the invalid high-neighborhood intersection bound \(1+b_y\) with the correct pair-counting bound \(|Y\cap S_i|\le q_y-7\), where \(Y=N_H(y)\cap R\). The q=10,b=1 case is covered by the same independent-five/W-degree contradiction as q=10,b=2.
 - Removed the invalid special-incidence argument for the m=8,7 two-neighborhood cases. The multiplicity cap \(m_i\le4\) forces a multiplicity-four group if only one or two neighborhoods are realized; the complement transversal supplies the required partition for the clique contradiction.
-- Removed the unsupported upper-bound claim \(\delta+\epsilon_U\le17\).
+- Removed the unsupported claim that the universal S0=13 exclusion itself implies \(\delta+\epsilon_U\le17\); that upper bound remains only in the separately proved four-partite subcase.
 
 The arithmetic enumeration was replicated in-session: 60 labelled parameter cases, with m=10:6, m=9:24, m=8:22, m=7:8; all arithmetic assertions passed. This is not a graph-realization certificate. Under the stated core/exact-129 contracts and inherited universal S0>=12 theorem, the repaired conditional result is \(S_0\ge14\), hence \(\delta\ge5\), for the minimum-support E408 Q33 boundary only.
 
