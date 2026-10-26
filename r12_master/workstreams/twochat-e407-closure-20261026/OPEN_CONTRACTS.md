@@ -27,7 +27,7 @@ The five A–E templates cover the 554 finite-screen survivors under the V12 low
 
 The exact integer table is in LOW_DELTA_TERMINAL_TABLE.md. Open core cases include:
 - \(\delta=13,\epsilon_U=0\), including four-partite and non-four-partite \(L_U\);
-- \(\delta=13,\epsilon_U=2\), four-partite \(L_U\), \(H[W]=(4,4,5,5)\) plus one W-cross-edge;
+- See Round 4 proof note; this previously listed four-partite W-profile is no longer open.
 - \(\delta=13\) non-four-partite \(L_U\) for all feasible \(\epsilon_U\);
 - every \(\delta\le12\) case. No reduction for \(\delta=13\) may be extrapolated to \(\delta\le12\).
 
