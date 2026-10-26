@@ -205,6 +205,29 @@ Also, summing \(\tau_w=\sum_{x\in S_w}\rho_x\) over \(A\) gives
 \]
 Thus the duplicated pair cannot both have \(\tau=8\); every independent four-set contains at least the two \(\tau=8\) vertices \(w_3,w_4\), and its duplicated vertex must have \(\rho_u\in\{0,1\}\).
 
+
+There is also a vertex-by-vertex deficit identity. For \(p\in P\cup Q\), let \(s_p=1\) if the pair \(\{u,p\}\) occurs in a witness block, and \(s_p=0\) otherwise. Pairwise linearity makes \(s_p\in\{0,1\}\). In each color, a point \(p\) fails to contribute to a \(P\times Q\) pair exactly when either it is omitted by that color or it is the non-u partner in the block containing u. Hence
+\[
+\deg_B(p)=8-\rho_p-s_p,
+\]
+where \(B\) is the graph of used pairs in \(P\times Q\).
+
+If \(\rho_u=1\), then \(B=K_{7,7}\), so
+\[
+\rho_p+s_p=1\quad\forall p\in P\cup Q.
+\]
+Thus each of the 14 vertices in \(P\cup Q\) is either omitted exactly once and never a star partner, or is a star partner exactly once and never omitted.
+
+If \(\rho_u=0\), then \(B=K_{7,7}-e_*\) for a unique missing pair \(e_*=\{p_*,q_*\}\). Consequently
+\[
+\rho_p+s_p=
+\begin{cases}
+2,&p\in e_*,\\
+1,&p\notin e_*.
+\end{cases}
+\]
+In particular, every non-endpoint of \(e_*\) has \(\rho_p\le1\), and each endpoint has \(\rho_p\le2\). These identities sharpen the color-omission/star-partner accounting without yet contradicting either case.
+
 ## Scope and next terminal
 
 The theorem does not yet rule out \(S_0=14\). It reduces that equality case to:
