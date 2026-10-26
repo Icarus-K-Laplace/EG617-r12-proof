@@ -25,7 +25,7 @@ The five A–E templates cover the 554 finite-screen survivors under the V12 low
 
 ## C4. Low-\(\delta\) terminal
 
-The exact integer table is in LOW_DELTA_TERMINAL_TABLE.md. Open core cases include:
+The exact integer table is in LOW_DELTA_TERMINAL_TABLE.md. Frontier notes:
 - \(\delta=13,\epsilon_U=0\), including four-partite and non-four-partite \(L_U\);
 - See Round 4 proof note; this previously listed four-partite W-profile is no longer open.
 - \(\delta=13\) non-four-partite \(L_U\) for all feasible \(\epsilon_U\);
