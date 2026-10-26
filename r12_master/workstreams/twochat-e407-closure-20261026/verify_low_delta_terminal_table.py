@@ -34,7 +34,7 @@ def main():
         for delta in range(3, 17)
     }
     assert actual_eps == expected_eps
-    assert len(feasible) == sum(map(len, expected_eps.values())) == 57
+    assert len(feasible) == sum(map(len, expected_eps.values())) == 56
 
     # Check every table row against the exact cross-edge formula and the
     # fixed total edge count. These assertions are not graph-realization checks.
