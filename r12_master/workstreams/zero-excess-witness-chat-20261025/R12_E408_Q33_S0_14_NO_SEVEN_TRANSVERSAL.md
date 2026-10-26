@@ -243,7 +243,17 @@ A clique in Z has size at most five, because its vertices have degree four in \(
 \[
 \boxed{d_H(u,W)\le9.}
 \]
-Combining with \(d_H(u,W)=6-3\rho_u+j_u+\epsilon_u\), the remaining high-omission vertices obey \(j_u+\epsilon_u\le3\rho_u+3\). In particular, \(\rho_u=2\) forces \(j_u+\epsilon_u\le9\). This is a further necessary condition, not a closure.
+Combining with \(d_H(u,W)=6-3\rho_u+j_u+\epsilon_u\), the remaining high-omission vertices obey \(j_u+\epsilon_u\le3\rho_u+3\). The exact boundary cases also give \(j_u+\epsilon_u\le\delta+\epsilon_U\in\{7,8,9\}\), yielding the sharper degree table
+\[
+\begin{array}{c|ccc}
+ &(\epsilon_U,\delta)=(0,7)&(2,6)&(4,5)\\ \hline
+\rho_u=2&d_H(u,W)\le7&\le8&\le9\\
+\rho_u=3&\le4&\le5&\le6\\
+\rho_u=4&\le1&\le2&\le3\\
+\rho_u=5&\text{impossible}&\text{impossible}&d_H(u,W)=0
+\end{array}
+\]
+No \(\rho_u\ge6\) is possible because \(j_u+\epsilon_u\le9\). In the sole \(\rho_u=5\) case, equality forces \(\epsilon_u=4\), \(j_u=5=\delta\), so all four units of U-excess and all five leftover L-edges are incident to u. This is a further necessary condition, not a closure.
 
 ## Scope and next terminal
 
