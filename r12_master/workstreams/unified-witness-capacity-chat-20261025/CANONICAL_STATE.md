@@ -370,3 +370,18 @@ Added Lemma 14.5 and Lemma 14.6 to M10_SUPPORT41_OMISSION_FLOOR.md, plus verify_
 - In the remaining \(e_W=3\) kernel, at least four omitted points have zero W-degree, at most two omitted points can have W-degree at least two, and any residual \(R[O]\)-edge incident to a zero-W-degree point must meet a vertex whose W-neighborhood contains an entire matching edge. Also \(e_R[O]\ge5+c_O+\epsilon_N\).
 
 The endpoint arithmetic verifier passed all 32 feasible integer rows for \(e_W=2\) and all 22 feasible rows for \(e_W=3\). **Current support-41 \(k=8\) frontier:** only \(e_W=3\) remains, in the stated \(3K_2\) incidence kernel. The high-multiplicity residual-degree contradiction in that kernel is the next single blocker. \(k=9,10\) and all other R12/global obligations remain open.
+
+
+## 2026-10-26 — \(e_W=3\) matching-kernel reduction completed
+
+Added Lemma 14.7 to M10_SUPPORT41_OMISSION_FLOOR.md and verify_m10_support41_matching_kernel.py.
+
+**New conditional theorem:** under the support-41 exact-component contract, the \(k=8,e_W=3\) endpoint has only one surviving omission profile:
+\[
+(3,1^7),\quad c_x=2,\quad c_Y=0,\quad \epsilon_Y=\epsilon_N=0.
+\]
+Its residual complement graph \(R\) is a star centered at the triple-omitted point \(x\), with all seven singleton-omitted points as leaves and exactly \(2-\epsilon_x\) additional leaves in \(N=U\setminus O\), where \(\epsilon_x\in\{0,1,2\}\). Also \(H[Y]\cong K_7\), and every \(y\in Y\) has exactly six neighbors in \(N\).
+
+The proof uses the \(3K_2\) transversal constraint: for every \(uv\in R[O]\), \(S_u\cup S_v\) must contain a full matching edge. Thus omitted points of multiplicity at least two cannot have \(c_o=0\) or \(1\). For profile \((2,2,1^6)\), both double points must have \(c=2\), forcing six singleton leaves of residual degree one but double-point residual-degree sum twelve; the six leaf edges and possible edge between the double points account for at most eight. That profile is impossible. In \((3,1^7)\), the triple point must have \(c_x=2\); the exact degree budget forces all residual edges to be incident to it, then all singleton points have \(c_y=0\).
+
+The arithmetic verifier passed all high-multiplicity \(c=0/1\) bounds and the residual degree check \(12>8\). The remaining blocker is now a single rigid star terminal with \(H[W]=3K_2\), \(H[Y]=K_7\), and six \(N\)-neighbors per \(y\in Y\). It remains OPEN; this is not an EG617 closure. \(k=9,10\), the minimum-support boundaries, the aggregate color ledger, and the K145-to-T61 bridge remain open.
