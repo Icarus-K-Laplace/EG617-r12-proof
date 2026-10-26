@@ -333,3 +333,26 @@ e(\overline{H[U_{\rm comp}]})=612-\epsilon_U-e(H[W])\le610.
 Thus the 100 component \(K_4\)'s account for 600 pairwise distinct complement edges, leaving at most ten additional edges in \(\overline{H[U_{\rm comp}]}\). This is a sharp new terminal contract, not yet a contradiction. It may be attacked as a near-decomposition / partial transversal-design problem coupled to the 47-core degree ledger.
 
 **Scope firewall.** The theorem closes the existence side of the component-label transfer gap: all ten factor components really are shell witnesses. It does *not* imply that the particular seven witnesses chosen to minimize support are all component-backed, nor does it close their \(v=29/31\) boundary. The full-component support \(U_{\rm comp}\) has its own \(v\ge40\) regime, which remains to be analyzed for \(m=8,9\) and for \(m=10,v\ge41\).
+
+
+## 13. Support-41 omission multiplicity theorem
+
+**Theorem 13.1 (ten exact components cannot omit only five, six, or seven support points).** Under the 284-edge core contract, if the union \(U_{\rm comp}\) of all ten exact-component four-sets from each of ten exact colors has size \(41\), then the ten colors' unique omitted points have at least eight distinct values.
+
+The full proof is in M10_SUPPORT41_OMISSION_FLOOR.md; verify_m10_support41_omission_floor.py independently checks the integer partition and budget branches. The key identities are
+\[
+e_H(U,W)=76-\epsilon_U-2e(H[W]),\qquad
+e_R=12-\epsilon_U-e(H[W]),
+\]
+and, for each support point \(x\),
+\[
+r_x=3t_x-2+d_H(x,W)-\epsilon_x.
+\]
+For every subset \(S\) of omitted points, the exact degree-sum bound yields
+\[
+3t(S)\le 10+2|S|+\binom{|S|}{2}
+-d_H(S,W)-\epsilon_{U\setminus S}.
+\]
+This leaves only three multiplicity patterns at \(k=7\); each is excluded analytically by the small outside set \(W\), the residual-edge count, and \(\alpha(H)\le4\). The same budget argument excludes \(k=5,6\).
+
+**Scope:** this is a conditional reduction of the \(m=10,\ |U_{\rm comp}|=41\) near-decomposition terminal. The remaining omission counts are \(k=8,9,10\); no contradiction for those cases is claimed. It does not close the seven-witness minimum-support boundary or the original EG617 theorem.
