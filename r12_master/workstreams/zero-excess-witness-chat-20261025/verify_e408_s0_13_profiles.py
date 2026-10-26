@@ -77,15 +77,18 @@ def main():
     # If three distinct R-only sets partition R, the possible multiplicity
     # patterns after excluding any group of size four are as stated.
     patterns = {
-        10: [(4, 3, 3), (4, 4, 2)],
-        9: [(3, 3, 3)],
-        8: [(3, 3, 2)],
-        7: [(3, 3, 1), (3, 2, 2)],
+        10: [(4, 4, 2), (4, 3, 3)],
+        9: [(4, 4, 1), (4, 3, 2), (3, 3, 3)],
+        8: [(4, 3, 1), (4, 2, 2), (3, 3, 2)],
+        7: [(4, 2, 1), (3, 3, 1), (3, 2, 2)],
     }
     for m, ps in patterns.items():
         assert all(sum(p) == m and max(p) <= 4 for p in ps)
+        assert all(tuple(sorted(p, reverse=True)) == p for p in ps)
     assert all(max(p) == 4 for p in patterns[10])
-    assert all(max(p) == 4 for p in patterns[9] if max(p) == 4)  # vacuous audit guard
+    assert [p for p in patterns[9] if max(p) <= 3] == [(3, 3, 3)]
+    assert [p for p in patterns[8] if max(p) <= 3] == [(3, 3, 2)]
+    assert [p for p in patterns[7] if max(p) <= 3] == [(3, 3, 1), (3, 2, 2)]
 
     # The high-neighborhood degree caps used in Lemma 2.4.
     assert 12 + 4 - 10 == 6
