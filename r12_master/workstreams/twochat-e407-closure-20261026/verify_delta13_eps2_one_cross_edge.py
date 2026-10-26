@@ -15,7 +15,7 @@ E_CROSS = 124 + EPS_U + 2 * DELTA
 
 assert TOTAL_EXCESS == 4
 assert EPS_W == 2
-assert (E_U, E_W, E_CROSS) == (99, 33, 151)
+assert (E_U, E_W, E_CROSS) == (99, 33, 152)
 assert E_U + E_W + E_CROSS == 284
 
 # A single W-cross-edge between parts of sizes 4,4,5,5 has the following
