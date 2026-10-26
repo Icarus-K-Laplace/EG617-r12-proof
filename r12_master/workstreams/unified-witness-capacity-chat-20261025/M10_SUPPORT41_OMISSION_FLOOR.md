@@ -301,7 +301,7 @@ a contradiction. Therefore \(e_W\ne2\).
 
 Suppose \(e_W=3\). The exact cross-edge ledger gives \(c_O\le4\). If \(\alpha(H[W])\ge4\), every \(o\in O\) must have \(c_o\ge1\), or else \(o\) plus an independent four-set in \(W\) is an independent five-set. This would give \(c_O\ge8\), impossible. Thus \(\alpha(H[W])\le3\).
 
-A six-vertex graph with three edges and independence number at most three must be \(3K_2\): any overlap among the three edges leaves at least one component with independence number larger than its matching counterpart, and a direct component check gives \(\alpha\ge4\). Hence
+Among six-vertex graphs with three edges, the nonmatching component types are \(K_3+3K_1\), \(P_4+2K_1\), \(K_{1,3}+2K_1\), and \(P_3+K_2+K_1\); each has independence number at least four. Thus
 \[
 H[W]\cong 3K_2.
 \]
@@ -315,4 +315,4 @@ r_o=3t_o-2+c_o-\epsilon_o,\qquad
 e_R=9-\epsilon_U,\qquad
 e_R[O]\ge5+c_O+\epsilon_N.
 \]
-The kernel is not yet excluded. The remaining blocker is to show that the high-multiplicity omitted points cannot meet their required \(R\)-degrees through the at-most-two high-incidence points plus the bounded \(R\)-incidence into \(N\). \(\square\`
+The kernel is not yet excluded. The remaining blocker is to show that the high-multiplicity omitted points cannot meet their required \(R\)-degrees through the at-most-two high-incidence points plus the bounded \(R\)-incidence into \(N\). \(\square\)
