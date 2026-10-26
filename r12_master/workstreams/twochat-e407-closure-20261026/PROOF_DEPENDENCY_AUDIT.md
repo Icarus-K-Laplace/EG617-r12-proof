@@ -46,3 +46,10 @@ There is a status mismatch between the root main-branch proof DAG (which retains
 ## 3. Audit conclusion
 
 The local \(\delta=16,15,14\) and several \(\delta=13\) W-profile closures are conditional core-level results. Round 4 additionally excludes the four-partite \(\delta=13,\epsilon_U=2\), \((4,4,5,5)\)+one-W-cross-edge profile under its explicit W-profile contract. These are not a complete E407 Q32 proof. The five shell templates remain unclosed because no proof yet joins the exact shell rows, 49 support blocks, exact-129 component labels, and the same 284-edge H into either an impossible incidence system or a verified graph realization. The original \(K_{145}\)-to-T61 bridge remains OPEN / NOT_CERTIFIED.
+
+
+## Round 5 audit correction
+
+The stronger A/C component-capacity argument is withdrawn. Its key step treated each component quadruple as if it were anticomplete to every B-row missing to a missed hub; the contract guarantees anticompleteness only to that quadruple's own B label. The six-set contradiction therefore cannot be applied to arbitrary other B-rows.
+
+The retained A/C bound is the high-k label-intersection floor: at least h-4 of the six component witnesses have a k=3 label, so at least two are hub-complete per color when h>=6. The support omission-degree identity and the delta=13 epsilon_U=2 profile proof do not use the withdrawn step. The five-template global compatibility problem remains open.
