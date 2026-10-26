@@ -253,3 +253,8 @@ For every independent four-set A⊂W, exactly one U-vertex u is repeated in its 
 ## Round 11 — vertexwise pair-graph deficits (2026-10-26)
 
 In the S0=14 independent-four-set structure, the \(P\times Q\) witness-pair graph is \(K_{7,7}\) for rho_u=1 and \(K_{7,7}\) minus one edge for rho_u=0. Defining s_p as the indicator that {u,p} occurs in a witness block gives \(\deg_B(p)=8-\rho_p-s_p\). Thus rho_p+s_p=1 everywhere in the rho_u=1 case; in the rho_u=0 case it is 2 at the missing-edge endpoints and 1 elsewhere. The verifier checks these integer profiles. No terminal closure is claimed.
+
+
+## Round 12 — high-omission degree cap (2026-10-26)
+
+Proved that any \(u\) with \(\rho_u\ge2\) has at most five zero-excess W-neighbors, hence \(d_H(u,W)\le9\). Otherwise two zero-excess neighbors could be extended to an independent four-set and force \(\rho_u\le1\). The boundary-specific degree budgets sharpen the possible \((\rho_u,d_W(u))\) pairs; notably \(\rho_u=5\) is possible only when \((\epsilon_U,\delta)=(4,5)\), with \(d_W(u)=0\), all four units of U-excess at u, and all five leftover L-edges incident to u. Added to theorem note and arithmetic verifier; terminal remains OPEN.
