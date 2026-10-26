@@ -133,3 +133,10 @@ Every isolated K5 component of an exact-129 color avoids S. It must contain a ve
 For the union \(U_{\rm comp}\) of all ten component four-sets per exact color, \(|U_{\rm comp}|\ge40\). If there are \(m=10\) exact colors, \(|U_{\rm comp}|=40\) is impossible: the 100 component K4s require 600 distinct complement edges, but the core degree ledger and Turán bound on the seven-point complement \(W\) give at most 581. Hence \(m=10\Rightarrow |U_{\rm comp}|\ge41\). At \(v=41\), the 100 component K4s use 600 of at most 610 complement edges, leaving a near-decomposition problem.
 
 The full-component support is distinct from the seven-witness minimum-support union; it does not close the latter's \(v=29/31\) terminal. \(m=8,9\) and \(m=10,v\ge41\) remain OPEN / NOT_CERTIFIED.
+
+
+## 11. Support-41 omission floor
+
+Under the exact-129 factor theorem and the 284-edge core contract, the support-41 full-component terminal now satisfies \(k\ge8\), where \(k\) is the number of distinct omitted points among ten exact colors. The proof excludes \(k=5\) by forcing a residual \(K_5\), \(k=6\) by forcing an independent \(K_4\) with no \(W\)-edges, and all three possible \(k=7\) multiplicity patterns by exact residual-degree equalities.
+
+The analytical proof is in M10_SUPPORT41_OMISSION_FLOOR.md; the integer verifier is verify_m10_support41_omission_floor.py. The surviving omission counts are \(k=8,9,10\). The support-41 near-decomposition, seven-witness minimum-support terminal, aggregate eleven-color ledger, T61-to-\(K_{145}\) bridge, and EG617(r=12) remain OPEN / NOT_CERTIFIED.
