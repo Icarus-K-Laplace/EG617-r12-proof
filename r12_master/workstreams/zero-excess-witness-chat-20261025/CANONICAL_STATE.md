@@ -260,3 +260,8 @@ These sibling advances are tracked as separate conditional workstreams and are n
 ## Round 14 — zero-excess pair-extension lemma (2026-10-26)
 
 Any nonadjacent pair of zero-excess W-vertices extends to an independent four-set: its common nonneighbors number at least six, and a six-clique would require at least six W-excess units, exceeding \(\epsilon_W\le4\). Therefore the pair has at most one common U-neighbor, and if it has one, that U-vertex must satisfy \(\rho\le1\) by the cross-pair theorem. This independently explains why \(N_W(u)\cap Z\) must be a clique for \(\rho_u\ge2\), yielding \(d_H(u,W)\le9\). The verifier checks the six-vertex/excess margin. The all-q=8 terminal remains OPEN.
+
+
+## Round 15 — three-part clique lemma made self-contained (2026-10-26)
+
+The S0=14 proof now contains its own three-part R-only-transversal clique lemma instead of citing the S0=13 theorem file for the final contradiction. Seven T-partitions force cross-part nonneighbor bounds; these plus \(\alpha(H)\le4\) make each transversal part and its corresponding W-neighborhood group a clique. Multiplicity four then directly yields K12. No change in scope: S0=14 remains reduced but OPEN.
