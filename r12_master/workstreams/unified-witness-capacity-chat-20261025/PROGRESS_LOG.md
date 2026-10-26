@@ -226,3 +226,8 @@ The k=8 omission patterns are (3,1^7) and (2,2,1^6). Both exclude the e_W=5 subc
 The omitted-point residual graph must cover every residual edge with the at-most-two omitted points that have H-neighbors in W. The two double-omitted points are forced to be these centers; the six single-omitted points have residual degree one. Their exact degree sum cannot match the two centers' required residual degrees, so the branch is impossible.
 
 Updated the support-41 theorem frontier: at k=8, e_W=5 is excluded; e_W=4 leaves only the (3,1^7) rigid star terminal; e_W=2,3 remain open. The full support-41 omission counts k=9,10 remain open too.
+
+
+## 2026-10-26 — verifier extended through k=8
+
+Updated verify_m10_support41_omission_floor.py to check the exact k=8 multiplicity patterns and all integer budget rows. Local replay passed: pattern lists for k=5,6,7,8; budget rows 1,4,9,14 respectively; k=6 and k=7 degree-sum branches; and the k=8 e_W=5 budget branch. The verifier is arithmetic-only and does not replace the analytical graph arguments.
