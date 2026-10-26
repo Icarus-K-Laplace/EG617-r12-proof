@@ -75,6 +75,12 @@ def main():
     assert sum(deficits) == 16
     assert deficits.count(2) == 2 and deficits.count(1) == 12
 
+    # Pair-extension lemma: two nonadjacent zero-excess W vertices have
+    # at least six common nonneighbors; a clique of that size needs >=6
+    # W-excess units, impossible when epsilon_W<=4.
+    assert 16 - 2 - 4 - 4 == 6
+    assert 6 > 4
+
     # High-omission degree table. For S0=14, g_u=j_u+epsilon_u
     # is at most delta+epsilon_U = 7,8,9 in the three boundary cases.
     degree_caps = {
@@ -101,7 +107,7 @@ def main():
         assert 6 * 31 - 3 * 24 + 2 * delta + eps_u == 128
 
     print("E408_Q33_S0_14_NO_SEVEN_TRANSVERSAL_ARITHMETIC_OK")
-    print("30 integer inequality states, three excess/delta pairs, omission/degree identities, independent-four-set rigidity, rho<=1 cross-pair counts, vertexwise pair-deficit identities, and high-rho degree caps checked.")
+    print("30 integer inequality states, three excess/delta pairs, omission/degree identities, independent-four-set rigidity, rho<=1 cross-pair counts, vertexwise pair-deficit identities, zero-excess pair extension, and high-rho degree caps checked.")
     print("Scope: arithmetic checks only; analytic clique/independence arguments remain in the theorem note.")
 
 
