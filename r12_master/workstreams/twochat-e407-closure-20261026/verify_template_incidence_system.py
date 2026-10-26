@@ -58,14 +58,15 @@ def main():
     # to both b and s would yield an independent six-set.
     assert 4 + 2 == 6
 
-    # In A/C, the row arithmetic gives c_S <= 2h+10 < 4h for h>=6.
-    # This scalar inequality alone does not bound non-hub-complete witnesses:
-    # a component quadruple is anticomplete only to its own B label, not to
-    # every B row missed by a hub. The attempted stronger implication was withdrawn.
+    # Conditional on the registered row-transversal theorem, a non-hub-
+    # complete witness hits all h full B rows. The incidence budget gives at
+    # most three such witnesses; its own label also forces every full-label
+    # witness to be hub-complete, so the floor is max(3,h-4).
     for h in range(6, 11):
         c_s_upper = 2 * h + 10
         assert c_s_upper < 4 * h
-
+        hub_complete_floor = 6 - min(3, 10 - h)
+        assert hub_complete_floor == max(3, h - 4)
     print("E407_FIVE_TEMPLATE_LABELLED_INCIDENCE_ARITHMETIC_OK")
     for template in "ABCDE":
         print(
@@ -74,6 +75,7 @@ def main():
             f"hub-hit incidences>= {results[template][2]}, "
             f"total shell-row hits>= {results[template][3]}"
         )
+    print("A/C hub-complete floor (conditional on row-transversal theorem):", {h: max(3, h - 4) for h in range(6, 11)})
     print("Scope: arithmetic only; no graph-realization or template-exclusion certificate.")
 
 
