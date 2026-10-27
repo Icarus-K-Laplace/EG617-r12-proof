@@ -77,3 +77,22 @@ The Round 3 claim of three hub-complete component witnesses per color is withdra
 ## Round 6 — A/C component bound reinstated through row-transversal theorem
 
 The Round 5 audit found the direct independent-six justification incomplete. Re-reading the registered row-transversal theorem resolves the gap under its explicit contract: for any missing shell edge s-b, every independent 4-set in H minus D_s meets D_b when t_s<=12, using the retained R(3,35) exclusion. Since all A/C hub rows satisfy t_s<=12, a non-hub-complete component witness must hit every full B row. The c_S budget then limits non-hub-complete witnesses to at most three; the witness's own label further limits them to 10-h. The valid conditional floor is max(3,h-4) hub-complete witnesses per color. The corrected proof and arithmetic verifier are in FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md and verify_template_incidence_system.py.
+
+
+## Round 7 — 2026-10-27: W-side support-block transversal capacity
+
+**Theorem added:** every \(w\in W\) hits all 49 support blocks, so \(d_U(w)\ge7\). With \(y_w=d_U(w)-7\),
+\[
+\sum_W y_w=\epsilon_U+2\delta-2\ge7.
+\]
+For every independent 4-set \(I\subset W\), \(\sum_{w\in I}y_w\ge1\), so the zero-slack vertices induce a graph with independence number at most three. For every nonedge \(ww'\) in H[W],
+\[
+|N_H(w,U)\cap N_H(w',U)|\le y_w+y_{w'}.
+\]
+These are exact incidence consequences of the 49-block contract and \(\alpha(H)\le4\).
+
+**Slack-one branch:** if an independent W-quadruple has total y-slack one, its four U-neighborhoods partition U into sizes 7,7,7,8. Each support block meets each part once. The three 7-parts are pairwise anticomplete K7s. If \(\epsilon_U+2\delta<16\), the 8-part is a clique or has at most one missing edge. The proof is recorded in SUPPORT_BLOCK_W_TRANSVERSAL_CAPACITY.md.
+
+**Frontier correction:** for the minimum-slack profiles (3,3) and (4,1), total y-slack is seven, implying at least eleven zero-slack W vertices. This does not imply exactly seven positive-slack vertices or that each positive slack equals one. The verifier and note preserve this distinction.
+
+No E407 template, low-\(\delta\) terminal, or original K145-to-T61 bridge is closed by this result. Next attack: determine whether the low-slack W graph must contain a slack-one independent quadruple, or prove the complementary domination/capacity branch impossible; then feed the resulting W-neighborhood classes into the shell row systems and the four-unit core excess ledger.
