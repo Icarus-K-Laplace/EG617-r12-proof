@@ -1,9 +1,9 @@
-# E407 Q32 — four-color U-edge reserve closure
+# E407 Q32 — U-edge reserve closure
 
 Updated: 2026-10-27
 Status: **PROVED_CONDITIONAL E407-Q32 CONTRADICTION** under the frozen V12 29-point/49-block support contract and its proved selected-component color identity.
 
-This supersedes `E407_EXTRA_EXACT_U_RESERVE_CLOSURE.md` as the shortest E407 terminal contradiction. It does not require an eighth exact color.
+This supersedes `E407_EXTRA_EXACT_U_RESERVE_CLOSURE.md` and the earlier four-color aggregate version. The contradiction already follows from **one** unselected non-target color.
 
 ## 1. Frozen V12 support object
 
@@ -35,7 +35,7 @@ Thus
 
 ## 2. The selected 49 blocks own 294 distinct non-target edges
 
-The recent theorem `SUPPORT_BLOCK_ANCHOR_IDENTITY.md` on the active E407 sibling proves that every selected support block Q is not merely an abstract target-independent four-set: it is exactly the H-four-set of a selected isolated monochromatic K5 component of its assigned exact-129 color.
+`SUPPORT_BLOCK_ANCHOR_IDENTITY.md` on the active E407 sibling proves that every selected support block Q is exactly the H-four-set of a selected isolated monochromatic K5 component of its assigned exact-129 color.
 
 Therefore all six pairs inside Q have that assigned non-target color.
 
@@ -53,19 +53,21 @@ Call this selected edge set S. Then
 |S|=294.\tag{3}
 \]
 
-## 3. Four non-target colors remain outside the selected seven
-
-Relative to the target color, the balanced coloring has eleven non-target colors in total. The support system selects seven distinct exact-129 color classes. Therefore there are exactly four other non-target colors
+By (1), after the selected support edges only
 
 \[
-D_1,D_2,D_3,D_4
+e(L_U)-|S|=\delta\le16\tag{4}
 \]
 
-which are not among the selected seven.
+non-target U-pairs remain available to every color outside the selected seven.
 
-No hypothesis on whether these four colors are exact is needed.
+## 3. One unselected non-target color already exceeds the reserve
 
-For every non-target color D in the original balanced K145 coloring,
+Relative to the target color, the balanced coloring has eleven non-target colors in total. The support system uses only seven distinct selected exact-129 color classes. Therefore at least one non-target color D is not among the selected seven (in fact there are four).
+
+No hypothesis on whether D is exact is needed.
+
+For every non-target color in the original balanced K145 coloring,
 
 \[
 \alpha(D)\le12,
@@ -77,39 +79,44 @@ because every 13-set must contain an edge of every color. Hence
 \alpha(D[U])\le12.
 \]
 
-By Turan's theorem, a graph on 29 vertices with independence number at most12 has at least
+By Turan's theorem, a graph on29 vertices with independence number at most12 has at least
 
 \[
-p_{12}(29)=5\binom32+7\binom22=15+7=22
+p_{12}(29)
+=5\binom32+7\binom22
+=15+7
+=22
 \]
 
-edges. Thus for each i,
+edges. Thus
 
 \[
-\boxed{e_{D_i}(U)\ge22.}\tag{4}
+\boxed{e_D(U)\ge22.}\tag{5}
 \]
 
-Since the coloring assigns a unique color to every pair, the four sets of D_i-edges are pairwise disjoint. They are also disjoint from S because S uses only the seven selected colors.
-
-Therefore L_U contains at least
+Every D-edge in U lies in L_U. Since D is not one of the seven selected colors, unique edge ownership makes all these D-edges disjoint from S. Equations (3) and (5) therefore force
 
 \[
-|S|+\sum_{i=1}^4 e_{D_i}(U)
-\ge294+4\cdot22
-=382
+e(L_U)\ge294+22=316.
 \]
 
-distinct edges.
-
-But (2) gives e(L_U)<=310. Hence
+But (2) gives
 
 \[
-382\le e(L_U)\le310,
+e(L_U)\le310.
 \]
 
-impossible.
+Hence
 
-Equivalently, after the selected 294 edges only at most16 U-pairs remain, while the four unselected colors jointly require at least88.
+\[
+\boxed{316>310},
+\]
+
+a contradiction with gap six.
+
+Equivalently, the residual U-edge reserve after the 49 labelled support blocks is at most16, while **one** unselected non-target color needs at least22.
+
+For reference, using all four unselected colors would give the stronger aggregate requirement `294+4*22=382`, but that extra counting is unnecessary.
 
 ## 4. Conclusion
 
@@ -138,9 +145,10 @@ Load-bearing inputs:
 3. pairwise block linearity/disjointness;
 4. `SUPPORT_BLOCK_ANCHOR_IDENTITY.md`, specifically that every selected block is the four-core part of a monochromatic selected-color K5;
 5. the exact ledger e(L_U)=294+delta with delta<=16;
-6. the balanced-coloring consequence alpha(D)<=12 for every non-target color;
-7. Turan's theorem;
-8. unique edge ownership.
+6. existence of at least one non-target color outside the selected seven (automatic since there are eleven non-target colors);
+7. the balanced-coloring consequence alpha(D)<=12 for every non-target color;
+8. Turan's theorem;
+9. unique edge ownership.
 
 Not used:
 
@@ -153,4 +161,4 @@ Not used:
 - any E408 285-edge identity;
 - any Q33 support-31 identity.
 
-Therefore this is a substantially shorter and dependency-lighter E407 closure than the previous routes.
+Therefore this is the shortest dependency-light E407 closure currently known in this project.
