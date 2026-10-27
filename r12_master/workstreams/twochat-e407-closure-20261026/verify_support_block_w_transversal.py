@@ -51,6 +51,22 @@ def main():
     # m_u<=7 implies union size >=14. Therefore intersection <= y+y'.
     assert 2 * 49 <= 7 * 14
 
+    # Minimum-slack profile (delta, eps_U)=(3,3): eps_W=1 cannot support y=7.
+    assert 5 + (4 - 3) - 7 < 0
+    # Profile (4,1): if one W vertex carries y=7, eps_W=3, eps_w>=2,
+    # so E0<=1 on the other 17 zero-slack vertices. Their classes are 6,6,5.
+    for e0 in (0, 1):
+        eps_plus = 3 - e0
+        d_plus = 5 + eps_plus - 7
+        assert d_plus == 1 - e0
+        external_zero_incidences = 5 + e0
+        cross_class_edges = (external_zero_incidences - d_plus) // 2
+        assert cross_class_edges == 2 + e0
+        assert cross_class_edges + d_plus == 3
+        # The size-five clique has five vertices of internal degree four,
+        # each requiring at least one external edge.
+        assert cross_class_edges + d_plus < 5
+
     print("E407_SUPPORT_BLOCK_W_TRANSVERSAL_ARITHMETIC_OK")
     print(f"feasible (delta, epsilon_U) profiles: {len(profiles)}")
     print(f"minimum-slack profiles: {minimum_slack}")
