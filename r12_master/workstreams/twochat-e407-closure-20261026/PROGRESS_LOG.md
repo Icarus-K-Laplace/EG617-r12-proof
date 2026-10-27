@@ -114,3 +114,12 @@ Proved that any two distinct 7-point transversals of the 49-block system are dis
 There are at most four such neighborhoods because U has 29 points. If there are four, their 28 points leave one point with omission count \(r=7\), which by \(d_W=5+\epsilon_u-3r_u+x_u\) requires \(\epsilon_U+2\delta\ge16\). Therefore for \(\epsilon_U+2\delta<16\), at most three distinct zero-slack neighborhood classes occur. The minimum-slack profiles (3,3) and (4,1) lie in this region.
 
 This narrows the W-side low-slack structure to at most three clique classes among at least eleven zero-slack W vertices. It does not yet eliminate the cases where every independent W-quadruple has total slack at least two.
+
+
+## Round 10 — 2026-10-27: independent replay and proof-scope check
+
+Independent Python replay passed for all 56 feasible \((\delta,\epsilon_U)\) profiles, all three exact edge formulas, \(e(H[W])\le43\), the Turán threshold \(45\), the two minimum-slack profiles \((3,3),(4,1)\), and the total W-side slack \(Y=\epsilon_U+2\delta-2\ge7\).
+
+A scope correction was made in SUPPORT_BLOCK_W_TRANSVERSAL_CAPACITY.md: if no slack-one independent W-quadruple exists, the immediate consequence is only that every independent triple in \(W_0\) is met by each vertex with \(y_w=1\). It does not impose that condition on vertices with \(y_w\ge2\). This distinction is now explicit.
+
+No shell template or low-delta terminal is closed by arithmetic replay. The active mathematical frontier is the W-side low-slack structure, the exact-129/support-block label join, and the non-four-partite \(\delta=13\) plus all \(\delta\le12\) branches.
