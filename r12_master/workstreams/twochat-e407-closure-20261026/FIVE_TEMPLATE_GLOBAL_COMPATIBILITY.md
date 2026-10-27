@@ -1,119 +1,117 @@
 # E407 Q32 — five-template global compatibility
 
 Date: 2026-10-27  
-Status: **OPEN / NOT_CERTIFIED. Current file is the canonical same-core compatibility snapshot.**
+Status: **OPEN / NOT_CERTIFIED. Current same-core compatibility snapshot.**
 
-## 1. Shared object
+## 1. Shared object and template shell data
 
-For each of the five alternative V12 shell templates A–E, a legal completion must use the same type of 47-vertex core H and the same exact E407 Q32 support contract:
+Every legal A–E completion must use a 47-vertex core H with e(H)=284, alpha(H)<=4, omega(H)<=11, total internal excess four, a 29-point support U and 18-point W, and the same 49-block exact support contract.
 
-- |H|=47, e(H)=284, alpha(H)<=4, omega(H)<=11, delta(H)>=12;
-- total H degree excess four;
-- U subset H, |U|=29, W=H\U, |W|=18;
-- 49 independent support blocks Q, seven per exact-129 color, disjoint within color and pairwise linear across colors;
-- exact support ledger recorded in CANONICAL_STATE.md.
+The five templates are alternative shell states, not simultaneous shell graphs. Write A=S dot-union B, |S|=3, |B|=10, B a target K10, M=bar(F[A]), D_a=N_F(a) cap H, and k_b=|N_M(b) cap S|=|D_b| for b in B.
 
-The templates are **alternative shell states**, not simultaneous shell graphs.
+| Template | S-row sizes | beta=e(M[S]) | full-row floor n3 |
+|---|---|---:|---:|
+| A | (12,10,10) | 0 | >=6 |
+| B | (11,11,10) | 0 | >=2 |
+| C | (12,11,10) | 1 | >=6 |
+| D | (11,11,11) | 1 | >=1 |
+| E | (12,11,11) | 2 | either >=1, or exactly ten ends-pair rows |
 
-Write A=S disjoint-union B with |S|=3, |B|=10, B a target clique, M=bar(F[A]), D_a=N_F(a) cap H, t_a=|D_a|, and k_b=|N_M(b) cap S|.
+## 2. Actual selected exact-color support blocks
 
-## 2. Audited V12 shell rows
-
-| Template | S-row sizes | M[S] | retained high-k floor |
-|---|---|---|---:|
-| A | (12,10,10) | empty | at least 6 B rows with k=3 |
-| B | (11,11,10) | empty | at least 8 B rows with k>=2 |
-| C | (12,11,10) | one edge | at least 6 B rows with k=3 |
-| D | (11,11,11) | one edge | at least 7 B rows of the two allowed pair-types or k=3 |
-| E | (12,11,11) | P3 | at least 5 B rows with k>=2 |
-
-The exact V12 inequalities, not this abbreviated table, remain the source of template exhaustiveness.
-
-## 3. Selected support components are now genuinely labelled
-
-For every exact-129 color c, the seven support blocks are the four-core-vertex parts of seven selected isolated color-c K5 components. Their seven anchors are distinct vertices of {p} union A.
-
-Let b_c be the number of selected B anchors. The new exact factor argument gives
+Every support block Q is the four-core-vertex part of a selected exact-color isolated K5, with a genuine anchor in {p} union S union B. For every exact color c:
 
 \[
-\boxed{b_c\in\{5,6,7\}.}
+b_c=\#\{\text{selected B anchors}\}\in\{5,6,7\},
 \]
+with at most one selected S anchor. Across all seven exact colors at least35 selected blocks are B-anchored.
 
-If b_c=5, the selected anchors are p, one S label, and five B labels. Hence every exact color has at most one selected S anchor.
+Deleting the seven selected K5s leaves exactly 3K5+G11 in that color.
 
-Across all seven exact colors:
+## 3. Selected hub-complete forcing across all templates
 
-- at least 35 selected blocks are B-anchored;
-- at most 7 are S-anchored.
+### Fixed-full-row theorem
 
-This supersedes the old live lower bound b_c>=3. The old b=3 and b=4 residual branches are empty.
-
-## 4. Template consequences on the actual selected 49 blocks
-
-If h is the number of B labels with k_b>=2, a selected B-anchor set of size at least five meets the high-k set in at least h-5 labels. Therefore:
-
-| Template | selected high-k blocks per exact color | seven-color floor |
-|---|---:|---:|
-| A | >=1 k=3 | >=7 |
-| B | >=3 k>=2 | >=21 |
-| C | >=1 k=3 | >=7 |
-| D | >=2 high-k | >=14 |
-| E | no positive floor from cardinality alone | 0 |
-
-A/C selected k=3 blocks are hub-complete by the missing-hub lemma. B/D selected high-k blocks meet at least two S rows. These are constraints on the **actual selected support-block family**, not merely on auxiliary no-S component witnesses.
-
-The older exact-129 component-packing theorem remains useful separately: each exact color has at least six B-labelled no-S K5 components, and the A/C conditional hub-complete component floor uses the registered row-transversal theorem and R(3,35) exclusion. The two families are not conflated beyond identities that have actually been proved.
-
-## 5. Per-color shell-edge localization
-
-For every exact color c,
+If f is a full B row, any selected B-anchored block Q which misses a hub must meet D_f. Because |D_f|=3 and same-color selected blocks are disjoint, at most three selected B-blocks per exact color fail to be hub-complete. Hence
 \[
-\boxed{e_c(M[A\setminus A_c^{sel}])\ge2.}
+N_{hub,c}^{sel}\ge b_c-3\ge2.
+\]
+Thus every full-row branch has at least14 actual selected hub-complete B-blocks globally.
+
+For E with no full row, the row equations force all ten B rows to be the P3 ends-pair type. Every selected B-block then hits both endpoint rows, yielding at least35 actual selected endpoint-complete blocks globally.
+
+### Full-row linearity capacity
+
+Let h be the number of full B rows and N_bad the global number of selected B-blocks that are not hub-complete. For u in U let d(u) count full rows whose target-core neighbourhood contains u. Pairwise support linearity and pointwise anchor injectivity give
+\[
+N_{bad}\le C(h):=\min\{21,\lfloor9+60/h\rfloor\}.
+\]
+Therefore
+\[
+N_{hub}^{sel}\ge B_{sel}-C(h),\qquad B_{sel}=\sum_c b_c\ge35.
+\]
+In particular:
+
+| h | hub-complete selected floor |
+|---:|---:|
+| 1-5 | 14 |
+| 6 | 16 |
+| 7 | 18 |
+| 8 | 19 |
+| 9-10 | 20 |
+
+Thus A and C now have the certified global floor
+\[
+\boxed{N_{hub}^{sel}\ge16}.
 \]
 
-Reason: after deleting the seven selected K5 components, the exact color factor is 3K5+G11 on the 26 residual vertices. Every unselected K5 must contain an outside-core label, and the residual factor/alpha-two gadget forces at least two color-c shell edges in all three pivot-location cases.
+## 4. Exact shell cross-load and selected S anchors
 
-The seven exact colors therefore use at least 14 distinct shell missing edges, but the key information is the per-color induced-subgraph list condition, not the scalar 14.
+For exact color c let q_c=|E_c(S,B)|. Every exact color has q_c>=1. If it contains a selected S anchor, q_c>=2. If sigma is the total number of selected S-anchor occurrences, then
+\[
+\sum_c q_c\ge7+\sigma.
+\]
+Together with the earlier exact shell-edge theorem,
+\[
+\boxed{|E_{exact}(S,B)|\ge\max\{14-\beta,\,7+\sigma\}.}
+\]
+This is a per-color residual-factor result, not merely a scalar shell edge count.
 
-## 6. Shell-only route audited and rejected
+## 5. Target-excess and color-premium join
 
-The anchor cardinality plus the two-edge list constraint is insufficient by itself. For any M with at least 14 edges, choose 14 distinct edges, pair them into seven colors, and for each pair select p plus six B labels avoiding the pair's B endpoints. This gives a legal coarse shell-label relaxation of type b_c=6,p-selected.
+The current same-state ledger additionally gives:
 
-Since every V12 template has e(M)>=22, no template can be closed from these shell-only constraints alone.
+- every B vertex has target degree exactly13;
+- if c=e_M(S,B), then core full-target excess is c+beta-11;
+- at least 54-c-beta H vertices have d_H=12 and full target degree13, hence exactly one target shell neighbour;
+- every B vertex has exactly seven units of non-target color degree premium above the `129^7,130^4` minimum baselines;
+- selected B-anchor cells in their exact color are zero-premium cells;
+- a two-B exceptional G11 costs at least one B-premium unit;
+- selected B-anchor point incidences total at least140, so at least eight U points lie in at least five selected B-anchored blocks with distinct B labels.
 
-This is not a graph realization. It proves that the next contradiction must use the same U/H and row structure.
+These constraints have not yet been converted into a contradiction.
 
-## 7. Same-core row/support constraints still available
+## 6. Template status after current forcing
 
-For every selected block Q anchored at a shell vertex a:
-
-- Q cap D_a is empty;
-- if ab is a missing shell edge and the row-transversal theorem's hypotheses hold, Q cap D_b is nonempty;
-- same-anchor selected blocks in different exact colors are disjoint;
-- every W vertex hits every one of the 49 support blocks;
-- every independent W-four-set has positive total W-side slack;
-- the support omission-degree identity is
-  d_H(u,W)=5+epsilon_u-3r_u+x_u,
-  with sum r_u=7 and sum x_u=2delta.
-
-These constraints, together with the b_c>=5 theorem, are the live labelled incidence system.
-
-## 8. Current template status
-
-| Template | Status | Minimum unresolved compatibility |
+| Template | Status | strongest current selected-support obligation |
 |---|---|---|
-| A | OPEN | >=7 actual selected k=3 B-blocks plus exact row/transversal/core compatibility |
-| B | OPEN | >=21 actual selected high-k B-blocks plus exact row/transversal/core compatibility |
-| C | OPEN | >=7 actual selected k=3 B-blocks plus M[S] edge and same-core compatibility |
-| D | OPEN | >=14 actual selected high-k B-blocks plus allowed pair-type compatibility |
-| E | OPEN | anchor cardinality alone gives no high-k selected floor; must use exact P3 row system and factor/core join |
+| A | OPEN | h>=6; >=16 actual selected hub-complete B-blocks |
+| B | OPEN | h>=2; >=14 actual selected hub-complete B-blocks; earlier >=21 selected k>=2 block occurrences |
+| C | OPEN | h>=6; >=16 actual selected hub-complete B-blocks; beta=1 |
+| D | OPEN | h>=1; >=14 actual selected hub-complete B-blocks; beta=1 |
+| E, h>=1 | OPEN | >=14 selected hub-complete blocks; beta=2 |
+| E, h=0 | OPEN | exactly ten ends-pair rows; >=35 selected blocks hit both P3 endpoints |
 
-No template has been shown realizable either.
+No template has been shown realizable.
 
-## 9. Exact next theorem
+## 7. Why shell-only methods remain insufficient
 
-> **Five-template same-core labelled support-row incompatibility:** no A–E shell row system can coexist with seven exact-color selected-component classes on one U/H satisfying b_c in {5,6,7}, at most one selected S anchor per color, support-block disjointness/linearity, row-transversal conditions, the residual 3K5+G11 factor, and the four-unit core excess ledger.
+`SHELL_LIST_RELAXATION_AUDIT.md` gives a coarse shell-label relaxation for every missing graph with at least14 edges. The new theorems escape that audit because they use actual selected blocks on U, pairwise linearity, pointwise anchor injectivity, and the exact residual factor.
 
-This is the unique global compatibility blocker after the shell-only route audit.
+The remaining contradiction must use these common-core resources, especially support multiplicities / omission degrees, U/W degrees, target-excess concentration, or exact residual factor ownership.
 
-Primary proof files: `SUPPORT_BLOCK_ANCHOR_IDENTITY.md`, `SELECTED_COMPONENT_RESIDUAL_PARTITION.md`, `SELECTED_B_ANCHOR_FLOOR.md`, `SHELL_COLOR_EDGE_LOAD.md`, `SHELL_LIST_RELAXATION_AUDIT.md`, `SUPPORT_BLOCK_W_TRANSVERSAL_CAPACITY.md`, and `LABEL_JOIN_SYSTEM.md`.
+## 8. Primary theorem target
+
+> No A–E shell row system can coexist with seven exact-color selected-component classes on one legal 29-point support / 284-edge core satisfying the strengthened hub-complete, cross-load, anchor, U/W, residual-factor, and four-excess constraints.
+
+Primary new files: `SELECTED_SUPPORT_HUB_COMPLETENESS.md`, `FULL_ROW_LINEARITY_CAPACITY.md`, `S_ANCHOR_CROSS_LOAD_REFINEMENT.md`, plus the previously registered selected-anchor / residual-factor / target-excess ledgers.

@@ -3,133 +3,123 @@
 Date: 2026-10-27  
 Branch: `workstream/r12-twochat-e407-closure-20261026`
 
-Historical detailed Rounds 1–12 are preserved in commit `3b336b34b8540da89f4dac6589d056ac48bcfe10` and its ancestors. This file records the current canonical progress and the new Rounds 13–15 without claiming terminal closure.
+Historical Rounds 1–15 are preserved in prior commits. This current log records the newest mathematically substantive advances. E407 Q32 remains OPEN / NOT_CERTIFIED.
 
-## Historical state through Round 12
+## Round 16 — actual selected hub-complete support blocks
 
-The workstream had already:
+Commit: `49d86aee7a4c89400fffd94b5616845281257d13`
 
-- rebuilt the exact low-delta frontier and corrected the feasible profile count to 56;
-- proved the support omission-degree identity;
-- repaired the A/C component-witness capacity proof through the registered row-transversal theorem;
-- excluded the registered delta=13, epsilon_U=2 one-cross-edge (4,4,5,5) W profile;
-- proved the W-side support-block transversal and common-neighbour inequalities;
-- proved alpha(H[W])=4 universally;
-- classified zero-slack U-neighborhood classes in the low-slack region;
-- excluded single-vertex concentration of the seven minimum-slack units;
-- reduced the slack-one minimum profiles to an exact (7,7,7,8) U-kernel;
-- proved SUPPORT_BLOCK_ANCHOR_IDENTITY.md, identifying each of the 49 selected blocks with the H-four-set of a selected exact-color K5 component;
-- proved SELECTED_COMPONENT_RESIDUAL_PARTITION.md, giving the exact per-color residual `3K5 + G11` after deletion of the seven selected components.
+Added:
+- `SELECTED_SUPPORT_HUB_COMPLETENESS.md`
+- `S_ANCHOR_CROSS_LOAD_REFINEMENT.md`
+- `verify_selected_support_global_forcing.py`
 
-E407 Q32 remained OPEN.
+Results:
+1. If a V12 template contains a full B row f (k_f=3), every selected B-anchored block that is not hub-complete must meet D_f. Since |D_f|=3 and same-color selected blocks are disjoint, each exact color has at least b_c-3>=2 actual selected hub-complete support blocks.
+2. A/B/C/D always have a full row. E either has one or its row constraints force n0=n1=n3=0,n2=10, i.e. all ten B rows are P3 ends-pair rows.
+3. Hence A/B/C/D and E-full have at least14 actual selected hub-complete B-blocks globally. E-no-full has at least35 actual selected B-blocks hitting both P3 endpoint rows.
+4. If sigma is the number of selected S-anchor occurrences, every exact color owns at least one exact-colored S-B shell edge and an S-anchored exact color owns at least two. Therefore
+   |E_exact(S,B)| >= max(14-beta, 7+sigma).
 
-## Round 13 — selected B-anchor floor five
+These theorems finally move the old auxiliary-component witness forcing onto the actual 49 selected support blocks.
 
-**Commit:** `f2f991695a23b30c26a90070d7c2d1ab25b9d4f8`
+## Round 17 — common-core full-row linearity capacity
 
-Added `SELECTED_B_ANCHOR_FLOOR.md` and `verify_selected_b_anchor_floor.py`.
+Commit: `5e6d6d311860a412dccab1a5b0a7b2d513d28f1b`
 
-For one exact-129 color c, partition the ten B vertices among:
+Added:
+- `FULL_ROW_LINEARITY_CAPACITY.md`
+- `verify_full_row_linearity_capacity.py`
 
-- selected K5 components: b_c vertices;
-- three unselected K5 components: u_c vertices;
-- exceptional G11: g_c vertices.
+Let h be the number of full B rows and N_bad the global number of selected B-blocks that are not hub-complete. For u in U let d(u) count full rows whose D_b contain u. Then sum d(u)<=3h.
 
-Because B is a target K10, each color-c K5 contains at most one B vertex, so u_c<=3. Since B cap G11 is independent in color c and alpha(G11)=2, g_c<=2. Hence
-
+Pointwise anchor injectivity gives z(u)<=min(7,10-d(u)) for the number of bad blocks through u. Every bad block must hit all h full rows. Pairwise block linearity gives the quadratic capacity inequality
 \[
-b_c+u_c+g_c=10\Longrightarrow b_c\ge5.
+N_{bad}h^2\le D^2+\sum_u(\min(7,10-d(u))-1)d(u)^2.
+\]
+Using `(min(7,10-d)-1)d^2 <=20d` and D<=3h yields
+\[
+N_{bad}\le\min\{21,\lfloor9+60/h\rfloor\}.
+\]
+Thus A/C, with h>=6, now force at least16 actual selected hub-complete support blocks, rising to18,19,20 for h=7,8,9.
+
+This is a genuine same-core theorem using shell rows, actual selected blocks, support linearity, and anchor injectivity simultaneously.
+
+## Round 18 — delta=13 epsilon_U=0 reduced to five KP W-kernels
+
+Commit: `ffc2b514fe66ce5cfa6a3f9202cc857454e9fd45`
+
+Added:
+- `DELTA13_EPS0_KP_KERNEL_REDUCTION.md`
+- `verify_delta13_eps0_kp_kernel.py`
+
+At delta=13, epsilon_U=0, L_U four-partite:
+- U has parts 7,7,7,8 and exactly eight D-to-small H[U] cross edges;
+- e(H[W])=35;
+- J=bar(H[W]) is K5-free on18 vertices with118 edges;
+- J cannot be four-partite because no positive four-part size sequence summing18 has target clique-edge total35;
+- 118 is exactly the Brouwer non-four-partite bound, so the registered Kang-Pikhurko equality theorem applies.
+
+The equality part-size conditions leave only base sequences
+\[
+(3,4,5,5),\qquad(4,4,4,5),
+\]
+and the proper subset parameter leaves exactly five target W-kernels:
+\[
+(3,4,5,5;a=1,2),\quad(4,4,4,5;a=1,2,3).
 \]
 
-With seven selected components, b_c<=7, so
+This was a strict finite reduction, not yet closure.
+
+## Round 19 — close delta=13 epsilon_U=0 four-partite-U
+
+Commit: `fa73d6b2e81c7c501c03bb5cfa5244ca0c0ff9a5`
+
+Added:
+- `DELTA13_EPS0_KP_KERNEL_CLOSURE.md`
+- `verify_delta13_eps0_kp_closure.py`
+
+New analytic mechanism:
+1. Every U vertex has at least one W neighbour because alpha(H[W])=4 and alpha(H)<=4.
+2. Therefore each D point has at most four H[U] cross-neighbours.
+3. If a W vertex is not complete to any U part, independent-5 avoidance forces its U-degree at least10.
+4. Every low W vertex with U-degree<=9 therefore has a unique U-part label.
+5. Two low vertices with the same label must be adjacent in H: otherwise their common U-neighbourhood has size at least7 while the registered nonadjacent-pair inequality gives at most4.
+6. The four label classes are H-cliques. With U-part sizes 7,7,7,8 and omega(H)<=11, their capacities are 4,4,4,3. Hence at least three of the 18 W vertices must be high.
+7. A high vertex of W-degree d costs at least d-2 units of W excess. The total excess is only four.
+8. For each of the five KP kernels this permits only a tiny high-set list. Direct analytic colouring arguments on the KP base parts show the remaining low graph cannot fit into capacities 4,4,4,3. An independent finite verifier enumerates all high sets of cost<=4 and confirms no capacitated 4-colouring.
+
+Conclusion:
 \[
-\boxed{b_c\in\{5,6,7\}.}
+\boxed{\delta=13,\epsilon_U=0,\ L_U\text{ four-partite is excluded}.}
 \]
+Combined with the previously registered epsilon_U=1,2,3 closures, the entire delta=13 four-partite-U branch is now excluded.
 
-The live b_c=3 and b_c=4 residual branches are therefore empty.
+## Current frontier after Round 19
 
-If b_c=5, then (u_c,g_c)=(3,2). The pivot p must be selected: p cannot share an unselected K5 with B because p-B is target-colored, and p cannot lie in G11 with the two B vertices because that creates a color-c independent triple in a gadget of independence number two. Thus
-\[
-A_c^{sel}=\{p,s_c\}\cup B_c,\quad |B_c|=5.
-\]
-Consequently every exact color has at most one selected S-anchor.
+Global:
+- A–E five-template same-core compatibility: OPEN.
+- A/C now have >=16 actual selected hub-complete blocks; B/D/E-full >=14; E-no-full >=35 endpoint-complete selected blocks.
+- exact S-B cross-load >=max(14-beta,7+sigma).
 
-Across seven exact colors:
-
-- at least 35 selected support-block occurrences are B-anchored;
-- at most seven are S-anchored.
-
-Combining b_c>=5 with V12 high-k row floors gives actual selected-block floors:
-
-- A: >=7 selected k=3 B-blocks globally;
-- B: >=21 selected k>=2 B-blocks;
-- C: >=7 selected k=3 B-blocks;
-- D: >=14 selected high-k B-blocks;
-- E: no positive floor from this cardinality intersection alone.
-
-The verifier checks only finite arithmetic, not graph realization or the external exact-129 factor theorem.
-
-## Round 14 — two residual shell edges per exact color
-
-**Commit:** `d9478df06e1952e89f3a799dbed8ada41e441454`
-
-Added `SHELL_COLOR_EDGE_LOAD.md` and `verify_shell_color_edge_load.py`.
-
-For an exact color c, selected anchors lie in isolated selected K5 components, so any shell edge of color c has both endpoints among unselected shell labels.
-
-The 26-vertex residual is three unselected K5 components plus G11. Every unselected K5 must contain an outside-core label, otherwise it would be a target-independent K5 inside H, contradicting alpha(H)<=4.
-
-A three-case analysis by pivot location proves that, regardless of whether p is selected, lies in an unselected K5, or lies in G11,
-\[
-\boxed{e_c(M[A\setminus A_c^{sel}])\ge2.}
-\]
-
-The seven exact colors therefore use at least fourteen distinct shell missing edges. The important output is the per-color induced-subgraph list constraint, not the scalar fourteen.
-
-The verifier independently checks the minimum edge count in all integer distribution cases.
-
-## Round 15 — shell-only Hall/SDR route certified insufficient
-
-**Commit:** `12ff5bfe8c631b7514f534bf0fbdfc1b0424aa92`
-
-Added `SHELL_LIST_RELAXATION_AUDIT.md` and `verify_shell_list_relaxation.py`.
-
-For any shell missing graph M with at least fourteen edges, choose fourteen distinct edges and pair them into seven colors. For each color, the two chosen edges use at most four B endpoints, so at least six of the ten B labels avoid both edges. Select those six B labels plus p as the abstract selected-anchor set.
-
-Thus the coarse shell-label constraints
-
-- b_c>=5;
-- at most one selected S anchor;
-- two unselected shell edges per exact color;
-- shell edge uniqueness
-
-are simultaneously feasible for every M with e(M)>=14. Since every V12 template has e(M)>=22, no shell-only Hall/list argument can close E407.
-
-This is **not** a graph realization. It is a route audit proving that the next theorem must use the same U/H row/component geometry.
-
-## Current mathematical gain
-
-The global join has moved from a loose “selected support blocks versus auxiliary component witnesses” problem to a genuinely labelled selected-component system:
-
-1. every selected block has an exact-color K5 anchor;
-2. at least five of the seven anchors per exact color lie in B;
-3. at most one lies in S;
-4. every exact color still has three unselected K5 components plus G11 on the exact residual 26 vertices;
-5. every exact color must own at least two shell edges completely outside its selected anchor set;
-6. the shell-only relaxation is known to be insufficient.
-
-## Current open contracts
-
-- Five templates A–E: all OPEN against the common 284-edge core/support system.
-- delta=13 four-partite epsilon_U=0: OPEN.
+Local core:
+- delta=16: closed.
+- delta=15: closed under registered contracts.
+- delta=14 four-partite: closed; saturated non-four-partite remains conditional on Didin.
+- delta=13 four-partite: **fully closed**.
 - delta=13 non-four-partite: OPEN.
 - delta<=12: OPEN.
-- delta=14 saturated branch: only PROVED_CONDITIONAL because of the unaudited Didin dependency.
-- Minimum-slack complementary no-slack-one branch: OPEN.
-- Original K145/T61/V12 dependency chain and full EG617 theorem: NOT_CERTIFIED.
 
-## Highest-priority next theorem
+Minimum-slack:
+- slack-one branch reduced to exact kernel;
+- no-slack-one branch OPEN.
 
-Prove a same-core labelled support-row incompatibility for A–E using the actual selected B-anchor blocks, exact D_a row supports, same-anchor block disjointness, support linearity, residual 3K5+G11 structure, W-side transversal constraints, and the four-unit core excess.
+Root:
+- E407 Q32 OPEN / NOT_CERTIFIED.
+- EG617(r=12) OPEN / NOT_CERTIFIED.
 
-No local profile or arithmetic verifier is treated as E407 closure.
+## Highest-priority next attacks
+
+1. Use the strengthened actual selected hub-complete family together with support multiplicities, target-excess concentration, and B colour-premium to close A–E globally.
+2. Independently attack delta=13 non-four-partite L_U at e(L_U)=307; no four-partite result is extrapolated.
+3. Replace or independently discharge the delta=14 Didin-dependent saturated branch before any unconditional E407 claim.
