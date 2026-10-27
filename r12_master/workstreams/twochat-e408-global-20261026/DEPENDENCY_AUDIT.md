@@ -4,89 +4,73 @@ Updated: 2026-10-27
 
 ## 1. Source branch heads checked
 
-The following source branches were inspected at these exact heads. They remain read-only in this workstream.
-
 | Source | HEAD | Role |
 |---|---|---|
-| workstream/r12-e408-q33-global-compat-20261025 | 0cb2ff3968f005c9cb255958df7c02b220678701 | Q33 seven-block incidence ledger, P49 screens, gadget row contracts |
+| workstream/r12-e408-q33-global-compat-20261025 | 0cb2ff3968f005c9cb255958df7c02b220678701 | Q33 seven-block ledger and 31-point/56-witness terminal |
 | workstream/r12-e408-q32-excess6-20261025 | a0ba6db26c7e8b00a4217dcbcbf298895dff93ce | Q32 285-edge capacity and support-44 terminal |
-| workstream/r12-unified-witness-capacity-20261025 | faa8183c150dd78b000d0957fa8a63cebd52e146 | labelled witness-capacity theorem, support-41 terminal |
-| workstream/r12-witness-packing-chat-20261025 | f5d3daa07403877ede9885e1bd5c2f46b16d81da | witness packing constraints |
+| workstream/r12-unified-witness-capacity-20261025 | faa8183c150dd78b000d0957fa8a63cebd52e146 | labelled witness capacity |
+| workstream/r12-witness-packing-chat-20261025 | f5d3daa07403877ede9885e1bd5c2f46b16d81da | witness packing |
 | workstream/r12-zero-excess-witness-20261025 | c8c4833c7830370a703d228ee23e3b88484d6baa | zero-excess witness constraints |
 | workstream/r12-ultimate-closure-20261024 | 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40 | root proof DAG and retained contracts |
 
-## 2. Q33 profile \((6,2,1^5)\)
+Sibling workstreams remain read-only.
 
-Source theorem:
-r12_master/workstreams/e408-q33-global-compat-chat-20261025/R12_P49_R6_R2_DOUBLE_STAR_EXCLUSION.md
+## 2. Local Q33 profile results retained
 
-Source verifier:
-r12_master/workstreams/e408-q33-global-compat-chat-20261025/verify_p49_r6_r2_double_star.py
+- \((6,2,1^5)\): PROVED_CONDITIONAL excluded by the sibling double-star theorem; finite replay 571,394 configurations, zero failures.
+- \((7,1^6)\): PROVED_CONDITIONAL excluded in this branch; exact gadget verifier 27,380 high-pair checks plus 48 low-pair/D checks, zero failures.
+- \((4,4,1^5)\), \((4,3,2,1^4)\): still locally OPEN in all-component-edge-present branches.
 
-Audit:
-- Reimplemented and reran the finite gadget/incidence predicates in an independent Python runtime.
-- Exact results: 452 Case-A checks, 570,942 Case-B/C checks, total 571,394, zero failures.
-- The proof constructs a C-colored K12 and a vertex with at least two C-edges into it.
-- The conclusion is PROVED_CONDITIONAL on the registered row classifications, exact-129 factor theorem, gadget normal forms, and universal-D alignment contract.
+These last two are no longer proof blockers for Q33 because the full-color U-edge capacity contradiction bypasses them.
 
-This is not based on the older one-external-edge inference.
+## 3. Historical inference firewall
 
-## 3. Q33 profile \((7,1^6)\)
+The statement that a monochromatic \(K_{12}\) has no external edge of its own color is false. The correct theorem is \(d_C(z,K_{12})\le1\). None of the new global Q33 closure steps use the false stronger claim.
 
-New files in this branch:
-- Q33_P49_R7_DOUBLE_STAR_EXCLUSION.md
-- verify_q33_p49_r7_double_star.py
+## 4. Q33 exact-color count theorem
 
-Audit:
-- The exact gadget normal forms were reconstructed from the source branch.
-- The universal-D property for every disjoint low-block K5/K5 pair was checked.
-- The high-pair alignment property was exhaustively checked for every pair of clique sets \(E,F\) with \(|E\cup F|\ge4\).
-- Results: 48 low-pair/\(D\) tests and 27,380 high-pair tests, zero failures.
-- The graph proof treats \(n=0\), \(n=1\), and \(n\ge2\) no-component-row cases separately; no branch is left implicit.
-- The contradiction uses two external C-edges into the same C-colored K12.
+`Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md` proves, under the registered Q33 minimum-support contract,
+\[
+m\ne10.
+\]
+The same proof's preliminary W-capacity gives \(h\le4\), later sharpened to \(h\le3\). The proof is Q33-only and does not import Q32.
 
-Status: PROVED_CONDITIONAL under the named exact-129, row-budget, row-blocker, and gadget contracts.
+## 5. New load-bearing Q33 closure theorem
 
-## 4. Historical inference audit
+`Q33_NONEXACT_U_RESERVE_CLOSURE.md` proves:
 
-The old Q33 file R12_P49_BOUNDARY_EXCLUSION.md contains historical Case-I/V material. It is not used as a current proof source for the remaining all-component-edge-present branches.
+1. every non-target color on the 31-point support satisfies \(e_C(U)\ge p_{12}(31)=26\);
+2. the \(56-h\) selected component witnesses own \(336-6h\) distinct exact-color edges of \(L=\overline{H[U]}\);
+3. hence all nonexact colors combined have at most \(\delta+6h\) U-edge slots;
+4. therefore \(26(11-m)\le\delta+6h\);
+5. after \(m=10\) is excluded and with \(\delta\le17,h\le4\), the remaining \(m=8,9\) cases require 78 or 52 slots versus at most 41.
 
-The inference that one external C-edge into a C-colored K12 is impossible is false; the correct capacity is at most one such edge per outside vertex. The separate R6/R2 double-star theorem and the new R7 theorem do not rely on that inference.
+Status: **PROVED_CONDITIONAL** for the registered 31-point/56-witness Q33 terminal.
 
-The statement “ten disjoint C-colored K12s imply \(P_C\le42\)” has not been established by the star-capacity lemma alone and is not used here. Any future proof using that bound must supply an independent, valid argument.
+Arithmetic verifier: `verify_q33_nonexact_u_reserve.py`.
 
-## 5. Q32 support theorem
+No sharing/double-counting issue exists: each graph edge has one color; selected component K4 edges are already exact-colored and unavailable to nonexact colors; gadget-witness edges are all left available in the generous upper bound.
 
-Source:
-r12_master/workstreams/e408-q32-excess6-chat-20261025/CORE285_CAPACITY_THEOREM.md
+## 6. Q33 promotion scope
 
-Source terminal:
-r12_master/workstreams/e408-q32-excess6-chat-20261025/LOW_SUPPORT_TRIPLE_PAIR_CAPACITY.md
+The source Q33 canonical state identifies the remaining terminal as the 31-point/56-witness boundary, split into four-partite and non-four-partite L branches. The new theorem does not distinguish those branches and contradicts both simultaneously.
 
-The source proves the 285-edge support floor \(|U|\ge44\) and the pair-uniqueness terminal at \(|U|=44\). It remains conditional on the E408 Q32 outer embedding and exact-129 Type-I classification. The \(v=44\) terminal is still OPEN. No 284-edge result is imported.
+Therefore this branch may promote the **registered Q33 terminal** from OPEN to PROVED_CONDITIONAL impossible.
 
-## 6. Remaining proof dependencies
+It must not promote the original EG617(r=12) theorem unless the upstream K145-to-T61/Q33 reduction and all sibling Q32/backend branches are also closed.
 
-- Exact-129 Type-I factorization and exceptional-gadget classification: retained external extremal input; not reproved in this branch.
-- Seven-block equality ledger and \(P_C+R_C+s_C=62\): retained outer-embedding contract; must ultimately be derived from the original K145 hypothesis.
-- The two remaining Q33 P49 all-component-edge-present branches: OPEN.
-- Q33 global labelled-witness/core-capacity contradiction: OPEN.
-- Q32 \(v=44\) triple-pair terminal: OPEN.
-- Original K145-to-T61 reduction and the full EG617(r=12) theorem: OPEN / NOT_CERTIFIED.
+## 7. Q32 remains independent and OPEN
 
+Source: `CORE285_CAPACITY_THEOREM.md` and `LOW_SUPPORT_TRIPLE_PAIR_CAPACITY.md` on `workstream/r12-e408-q32-excess6-20261025`.
 
-## 7. Q33 exact-color count capacity theorem
+The Q32 contract is 47 vertices, 285 edges, total degree excess six, q=32. The retained theorem proves \(|U|\ge44\). At \(|U|=44\), the three-point complement and pair-uniqueness normal form remain OPEN.
 
-New theorem: Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md. Arithmetic verifier: verify_q33_exact_color_count_capacity.py. The h=4 endpoint has a separate exhaustive verifier: verify_q33_h4_orthogonal_array.py.
+No 284-edge Q33 edge-count identity or U=31 argument may be imported.
 
-Independent replay of the finite dynamic program gives:
-- 20 variables \(k_i\in\{0,1,2,3,4\}\), cost budget 33: maximum incidence sum 46;
-- 10 variables, cost budget 17: maximum incidence sum 23;
-- 10 variables with required incidence sum 24: minimum pair-cost 18;
-- the pointwise bound \(k\le3/2+\binom{k}{2}/2\) holds for all five possible values.
+## 8. Remaining blockers after this update
 
-The graph-level conditional proof first derives \(h\le4\) from the 16-point complement \(W\), then excludes equality \(h=4\) by the OA(4,4,2,2) obstruction, so the final bound is \(h\le3\). It charges overlaps between unselected component K4s and selected gadget witnesses at no more than four edges per gadget witness. It excludes \(m=10\), and shows \(m=9\Rightarrow h\ge1\). This uses the 284-edge Q33 contract only; no 285-edge result is imported.
-
-Status: PROVED_CONDITIONAL for the named contracts. If (m=9), (delta\ge14,10,11) for (h=1,2,3). The h=4 endpoint would force (H[W]=4K_4) and an edge-partition of (K_{4,4,4,4}) into four (K_4)'s and 24 triangles; this induces impossible OA(4,4,2,2), so h<=3. Q33 global compatibility remains OPEN.
-
-The R7 double-star theorem's pigeonhole sentence was also clarified: the selected vertex belongs to at least two row-neighbor sets (V'\setminus E_i), so it is adjacent to at least two rows of the constructed (K_{12}). This is a wording audit correction, not a change in the theorem.
+- Q33 registered terminal: **PROVED_CONDITIONAL impossible**.
+- Q32 285-edge \(v=44\) terminal: **OPEN**.
+- Q32 \(v=45,46,47\) if reached: **OPEN unless covered by sibling theorem**.
+- Original K145-to-T61/front-end bridge and other backend branches: retain their sibling statuses; not promoted here.
+- EG617(r=12): **OPEN / NOT_CERTIFIED**.
