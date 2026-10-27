@@ -57,3 +57,22 @@ All entries below retain the E407 Q32 parent/core/witness contract. “Condition
 The \(\delta\)-classification above concerns the 29-point support graph \(L_U=\overline{H[U]}\). The five templates A–E concern the *different* 13-vertex shell missing graph \(M=\overline{F[A]}\). Do not conflate these two complement graphs or infer that closing a W clique profile closes a shell template.
 
 Likewise, excluding a local \(H[W]\) profile under the four-partite \(L_U\) assumption does not exclude a non-four-partite \(L_U\) realization unless a separate theorem forces four-partiteness at that \(\delta\).
+
+
+## 4. Universal W-side independence number
+
+The feasible integer constraints imply \(\delta+\epsilon_U\ge5\): for \(\delta=3\), \(\epsilon_U\ge3\); for \(\delta=4\), \(\epsilon_U\ge1\); and for \(\delta\ge5\) the bound is immediate. Hence
+\[
+e(H[W])=48-\epsilon_U-\delta\le43.
+\]
+If \(\alpha(H[W])\le3\), then \(\overline{H[W]}\) is \(K_4\)-free. Turán's theorem gives
+\[
+e(\overline{H[W]})\le t_3(18)=108,
+\]
+so \(e(H[W])\ge153-108=45\), contradiction. Therefore
+\[
+\boxed{\alpha(H[W])=4}
+\]
+for every feasible E407 Q32 profile.
+
+Combining this with SUPPORT_BLOCK_W_TRANSVERSAL_CAPACITY.md, an independent 4-set \(I\subset W\) exists and necessarily has total W-side slack \(\sum_{w\in I}y_w\ge1\). This is a universal structural fact; it does not determine whether a slack-one independent quadruple exists.
