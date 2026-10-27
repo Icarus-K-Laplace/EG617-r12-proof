@@ -147,3 +147,24 @@ The labelled packing bounds do not alone contradict the 47-vertex core, its four
 - The original K145-to-T61 bridge and the V12 lower-order seed contracts remain separate.
 
 The next required theorem is a **label-join incompatibility**: connect the per-color component labels b, the 49 support-block labels on U, the exact \(D_a\) shell rows, and the four-unit core degree ledger in a single incidence object. The current frontier is now explicitly reduced to that join plus the low-\(\delta\) case table.
+
+
+## 7. Cross-template W-side transversal theorem
+
+The separate note SUPPORT_BLOCK_W_TRANSVERSAL_CAPACITY.md now supplies a common constraint for all five shell templates, using only the 49 support blocks and the core independence bound.
+
+Every \(w\in W\) must hit every support block, hence \(d_U(w)\ge7\). Defining \(y_w=d_U(w)-7\),
+\[
+\sum_{w\in W}y_w=\epsilon_U+2\delta-2\ge7.
+\]
+Every independent 4-set \(I\subset W\) has \(\sum_{w\in I}y_w\ge1\), and every nonedge \(ww'\in E(\overline{H[W]})\) obeys
+\[
+|N_H(w,U)\cap N_H(w',U)|\le y_w+y_{w'}.
+\]
+Thus the positive-slack W vertices hit every independent 4-set of W, and nonadjacent W vertices have a bounded common U-neighborhood. This links the exact core edge ledger to the W-side independence structure without assuming any identity between support blocks and exact-129 component witnesses.
+
+If an independent W-quadruple has total slack one, it forces a \(7,7,7,8\) partition of U with one point from each part in every support block. The three 7-parts are pairwise anticomplete K7s. If \(\epsilon_U+2\delta<16\), the 8-part is a clique or has at most one missing edge. This is a conditional structural branch, not a contradiction.
+
+The two minimum-slack profiles are \((\delta,\epsilon_U)=(3,3),(4,1)\). They have total W-side slack seven and therefore at least eleven zero-slack W vertices. The seven slack units need not belong to seven distinct vertices; no such distribution is assumed.
+
+Current implication: every surviving shell template must be compatible both with its row-transversal system and with this W-side common-neighborhood capacity. The exact-129 component join and the low-\(\delta\) analytic terminals remain OPEN.
