@@ -1,7 +1,7 @@
 # E408 Q32 — independent 285-edge terminal
 
 Updated: 2026-10-27  
-Status: **OPEN overall; every nonfull support v=44,45,46 is PROVED_CONDITIONAL impossible. Sole surviving support size: v=47.**
+Status: **PROVED_CONDITIONAL impossible under the registered E408/Q32 residual contract.**
 
 ## 1. Frozen Q32 contract
 
@@ -9,112 +9,85 @@ Status: **OPEN overall; every nonfull support v=44,45,46 is PROVED_CONDITIONAL i
 |V(H)|=47,\quad e(H)=285,\quad \alpha(H)\le4,\quad\delta(H)\ge12,
 \quad\sum_{x\in H}(d_H(x)-12)=6.
 \]
-The shell parameter is \(q=32\), equivalently \(e(M)+G_A=32\). Under the registered seven-block equality and exact-129 Type-I factorization, \(m\in\{8,9,10\}\) non-target colors are exact-129.
+The shell parameter is \(q=32\), equivalently \(e(M)+G_A=32\). The outer equality system gives eleven non-target colors with
+\[
+e_C(R)=129+s_C,\qquad s_C\ge0,\qquad\sum_Cs_C=3,
+\]
+so the number m of exact-129 colors is in \(\{8,9,10\}\).
 
 No Q33 284-edge identity is imported.
 
-## 2. Retained support floor
+## 2. Earlier support reductions remain valid but are no longer load-bearing
 
-The read-only Q32 sibling workstream proves
+The read-only Q32 sibling workstream proves \(|U|\ge44\) for the union U of exact-color single-outside K5 core witnesses. This branch then proved:
+
+- global exceptional-vertex injectivity;
+- v=44 impossible;
+- the uniform nonfull-support theorem \(U=H\), excluding v=44,45,46 at once.
+
+These results remain valid audits. However, the stronger theorem `Q32_EXACT_COLOR_COUNT_COLLAPSE.md` now contradicts the E408 Q32 residual before any support-size case split is needed.
+
+## 3. Load-bearing exact-color-count contradiction
+
+`Q32_EXACT_COLOR_COUNT_COLLAPSE.md` proves all three possible values of m impossible.
+
+### 3.1 Low-degree structure
+
+Using the full-color pointwise degree floors and the Brouwer--Kang--Pikhurko second-Turan theorem:
+
+1. A 131-edge non-target color has minimum degree at least three.
+2. In a 130-edge non-target color, every degree-three vertex lies in an isolated K4 component.
+3. A 130-edge non-target color has at most one such isolated K4, hence at most four degree-three vertices. Two isolated K4s would leave a 53-vertex, 118-edge graph with alpha<=10 and omega<=5, while the Brouwer lower bound is 119.
+4. In a 132-edge non-target color, every degree-two vertex lies in an isolated K3 component. Four such triangles would leave a 49-vertex, 120-edge graph with alpha<=8, below the elementary Turan floor p_8(49)=126. Thus there are at most nine degree-two vertices.
+
+### 3.2 m=10
+
+There is one nonexact color, with 132 edges. At each of the ten distinct exact exceptional vertices, target degree >=13, own exact degree 9, and the other nine exact degrees >=4 force the nonexact degree to be exactly two. This gives at least ten degree-two vertices, but the 132-edge lemma permits at most nine. Contradiction.
+
+### 3.3 m=9
+
+The two nonexact colors have 130 and 131 edges. At each of the nine distinct exact exceptional vertices their degree sum is at most six. Both have minimum degree at least three, so both equal three. The 130-edge color would therefore have at least nine degree-three vertices, but it can have at most four. Contradiction.
+
+### 3.4 m=8
+
+The three nonexact colors all have 130 edges. At each of the eight distinct exact exceptional vertices their three degrees sum to at most ten. Since each is at least three, at least two colors have degree exactly three there. Hence the eight exceptional vertices demand at least 16 degree-three incidences across the three 130-edge colors. Each color has at most four, so the total capacity is at most 12. Contradiction.
+
+Therefore
 \[
-|U|\ge44
+\boxed{m\notin\{8,9,10\}},
 \]
-for the union U of all exact-color single-outside K5 core K4 witnesses. The exact 285-edge capacity ledger is
+contradicting the outer equality system. Hence
 \[
-6N\le\binom v2-p_4(47-v)-12v+285-E_U.
-\]
-
-This scalar inequality is not itself the terminal closure.
-
-## 3. Global exceptional-vertex injectivity
-
-`Q32_GLOBAL_EXCEPTIONAL_INJECTIVITY.md` proves that no residual vertex can be the Kang--Pikhurko Type-I exceptional vertex for two distinct exact-129 colors.
-
-For any residual vertex v, exact colors contribute degree at least \(4m+5n_v\), where \(n_v\) is its exceptional multiplicity. A deletion-Turan argument forces the combined nonexact degree floor
-\[
-B_8=6,\qquad B_9=3,\qquad B_{10}=1.
-\]
-Together with target degree at least 13 and total degree 60, this gives \(n_v\le1\) for all \(m=8,9,10\).
-
-This injectivity closes v=44 directly when combined with the sibling triple-pair theorem, but a stronger theorem below eliminates all three nonfull supports at once.
-
-## 4. Uniform nonfull-support exclusion
-
-`Q32_NONFULL_SUPPORT_SHELL_CAPACITY.md` proves:
-\[
-\boxed{U=H.}
-\]
-Equivalently, no support size \(v=44,45,46\) is realizable.
-
-### Proof interface
-
-Fix \(w\in H\setminus U\). For every exact-129 color C, the Type-I factorization and shell-support classification are exhaustive. Since w is not contained in any selected single-outside K5 core witness, exactly one of the following holds:
-
-1. \(w=x_C\), the exceptional degree-nine vertex of color C; or
-2. w lies in the core part of the unique multi-outside K5 of color C.
-
-By global exceptional injectivity, case 1 can occur for at most one exact color.
-
-For every other exact color, w lies in a multi-outside K5. In the registered Q32 Type-I classification the additional outside-H vertices of that K5 are shell vertices in A; pivot p cannot co-occur with a shell vertex in a non-target K5 because all p--A edges have the target color. Therefore w has at least two distinct C-neighbors in the 13-point shell A.
-
-Edges of two distinct non-target colors cannot coincide. Thus the shell-neighbor sets contributed by different exact colors are disjoint, and w would require at least
-\[
-2(m-1)\ge 14
-\]
-distinct neighbors in A. But \(|A|=13\). Contradiction.
-
-Hence \(H\setminus U=\varnothing\), proving U=H.
-
-This argument uses only the 285-edge Q32 Type-I/shell contract plus exceptional injectivity; no Q33 284-edge statement is imported.
-
-## 5. Consequence: unique surviving terminal is full support v=47
-
-The entire Q32 support frontier is now
-\[
-\boxed{|U|=47,\qquad W=\varnothing.}
+\boxed{\text{E408 Q32 is impossible under the registered contract}.}
 \]
 
-The former separate v=44 proof `Q32_V44_EXCEPTIONAL_DEGREE_CLOSURE.md` remains valid but is subsumed by the stronger nonfull-support theorem. The v=45 reduction is also superseded as a frontier description.
+## 4. Verification
 
-At full support,
-\[
-e(\overline H)=\binom{47}{2}-285=796.
-\]
-If exact colors are classified into shell-support types A/B/C with counts a,b,c, where A/C supply eleven single-outside K5 witnesses and B supplies ten, then
-\[
-a+b+c=m,
-\]
-and the selected component-witness count is
-\[
-N=11m-b.
-\]
-Their edge-disjoint K4s consume
-\[
-6N=66m-6b
-\]
-non-target core edges. The exact omitted-point incidence total across H is
-\[
-3a+7b+3c=3m+4b.
-\]
-These identities are the starting ledger for the remaining v=47 attack; they are not yet a contradiction.
+Proof: `Q32_EXACT_COLOR_COUNT_COLLAPSE.md`.  
+Arithmetic regression: `verify_q32_exact_color_count_collapse.py`.
 
-## 6. Current full-support attack
+The verifier checks all Turan numbers and local degree-budget arithmetic used in the proof. It is not a substitute for the analytic Brouwer theorem.
 
-The remaining proof must combine at least one genuinely global structural input with the full-support ledger. The present high-leverage interfaces are:
+## 5. Dependency firewall
 
-1. the exact 37-edge surplus over the eleven-color Turan floor on H:
-   \[
-   796-11p_{12}(47)=796-11\cdot69=37;
-   \]
-2. Type-I shell patterns: type B costs at least two extra H-edges above 69, type C at least three, while type A is at the 69-edge floor;
-3. shell missing-edge budget \(e(M)+G_A=32\), including at least two shell missing edges per non-target color and at least three for each type-C exact color;
-4. seven-block blocker coupling and good-component labels from the Q32 sibling workstream;
-5. the exact per-vertex omission / leftover-complement degree identities induced by the full witness packing.
+Load-bearing inputs:
 
-A scalar table satisfying these inequalities is not a graph realization and is not promoted to closure.
+- E408 residual excess ledger \(\sum s_C=3\);
+- exact-129 Type-I degree structure;
+- `Q32_GLOBAL_EXCEPTIONAL_INJECTIVITY.md`;
+- the independent full-color pointwise degree floors;
+- alpha(C)<=12 and omega(C)<=5 for non-target residual colors;
+- Brouwer / Kang--Pikhurko non-r-partite Turan theorem;
+- target minimum degree 13 and the 12-color degree partition at every residual vertex.
 
-## 7. Scope firewall
+Not used:
 
-Source Q32 branch: `workstream/r12-e408-q32-excess6-20261025` at `a0ba6db26c7e8b00a4217dcbcbf298895dff93ce`.
+- Q33's 284-edge core;
+- the support-41 theorem;
+- a specific M[B]=empty shell split;
+- speculative SAT/ILP output;
+- the older v=47 edge-surplus heuristic.
 
-The Q33 31-point/56-witness closure and the unified 284-edge support-41 theorem are not used. EG617(r=12) remains **OPEN / NOT_CERTIFIED** until the v=47 Q32 terminal and the other upstream/backend branches are closed.
+## 6. Global scope
+
+This file closes the **registered E408 Q32 terminal**, not the original K145 theorem. The Q33 terminal is separately conditionally excluded by `Q33_NONEXACT_U_RESERVE_CLOSURE.md`. Upstream reduction and other E407/backend obligations retain their sibling statuses. EG617(r=12) remains **OPEN / NOT_CERTIFIED**.
