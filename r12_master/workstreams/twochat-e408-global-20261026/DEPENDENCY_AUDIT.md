@@ -5,7 +5,7 @@ Status: **root chain closed conditionally; finite coverage computation-certified
 
 ## 1. Separation of proof classes
 
-This audit uses three distinct proof classes and does not conflate them.
+This audit uses four distinct proof classes and does not conflate them.
 
 ### Analytic `PROVED` / `PROVED_CONDITIONAL`
 Ordinary mathematical derivations under explicit hypotheses.
@@ -16,7 +16,10 @@ Exact finite enumeration / recurrence / state-coverage claims checked by determi
 ### External theorem input
 Published/extant extremal or Ramsey statements imported with their exact hypotheses. They are not re-proved merely because a local script passes.
 
-The root promotion is therefore labelled `PROVED_CONDITIONAL + COMPUTATION_CERTIFIED`, not bare `PROVED`.
+### Source-freeze pending
+A theorem/interface may be mathematically registered in the project but still lack a branch-local frozen source statement/hash in the final root receipt. This is a proof-engineering obligation and must not be silently treated as formal verification.
+
+The current root promotion therefore remains `PROVED_CONDITIONAL + COMPUTATION_CERTIFIED`, not bare `PROVED`.
 
 ## 2. Front-end root dependency
 
@@ -40,6 +43,8 @@ The finite Line-A recurrence is computation-certified:
 The historical receipt's `bridge_status=OPEN` reflected the then-unresolved T61 terminal; it is not evidence of a failed recurrence.
 
 The contextual R(4,49) alternative is excluded by the current full-color theorem relative to its named Brouwer/extremal input.
+
+The old `front_end/ASSUMPTION_LEDGER.md` still lists T61/MAIN and several superseded bridge candidates as OPEN. This branch-local root proof does not consume the OPEN K7/K8/S31MAP/S31NEXT/S27MAP/S30MAP/S30REM rows.
 
 ## 3. T61 structural split
 
@@ -84,7 +89,7 @@ The audited V9 chain reduces maximum charge to Q in {31,32}, relative to retaine
 
 ## 6. E407 Q31 dependency
 
-The original V10/V11 archives were independently materialized from the project Library, hash-checked before execution, and replayed.
+The original V10/V11 archives were independently materialized, hash-checked before execution, and replayed.
 
 ### V10
 - archive SHA256 `e83e2907d541b38304746e855af52b5e21b6500a35cb0fdb676a4f6a7601303a`;
@@ -140,7 +145,7 @@ The active E407 sibling is read-only to this workstream. Its later analytic file
 
 The root closure is conditional on this registered factor/support interface. It does not pretend the selected-block label theorem is a pure consequence of the 284-edge graph alone.
 
-## 9. E407 Q32 decisive capacity contradiction
+## 9. E407 Q32 decisive one-color capacity contradiction
 
 Let `L_U=overline(H[U])`.
 
@@ -152,7 +157,7 @@ The 49 selected blocks contribute exactly
 
 distinct selected-color edges in L_U.
 
-There are eleven non-target colors total and only seven selected colors, leaving four other colors. For each such color D,
+There are eleven non-target colors total and only seven selected colors. Choose one unselected non-target color D. Then
 
 \[
 \alpha(D[U])\le12,
@@ -163,10 +168,10 @@ so Turan gives
 e_D(U)\ge p_{12}(29)=22.
 \]
 
-By unique edge ownership these four colors require 88 additional edges, disjoint from the selected294. Hence
+By unique edge ownership these D-edges are disjoint from the selected294. Hence
 
 \[
-e(L_U)\ge382.
+e(L_U)\ge294+22=316.
 \]
 
 But the frozen support ledger gives
@@ -175,13 +180,16 @@ But the frozen support ledger gives
 e(L_U)=294+\delta\le310.
 \]
 
-Contradiction.
+Contradiction, with exact gap six.
 
-This route does not use:
+The independent arithmetic replay recomputes `p_12(29)=22`, `selected_edges=294`, `available_total=310`, `one_color_required=316`, and the six-edge gap. The older four-color aggregate `382>310` remains a regression check but is no longer load-bearing.
+
+This shortest route does not use:
 
 - Didin's delta=14 result;
 - five-template row-by-row casework;
 - the auxiliary E407 seven-exact-color theorem;
+- exceptional-vertex degree arguments;
 - E408 Q32/Q33 identities;
 - support-41.
 
@@ -213,4 +221,4 @@ Current theorem label:
 \boxed{\text{EG617 fixed }r=12:\ \text{PROVED_CONDITIONAL + COMPUTATION_CERTIFIED}.}
 \]
 
-The remaining obligations are certification/presentation obligations: independent package replay from clean environments, frozen external theorem statements, cross-workstream merge review, and ideally formalization. They are not currently identified as additional graph cases.
+The remaining obligations are certification/presentation obligations unless a source-freeze audit discovers a hidden premise: clean-environment package replay, frozen external theorem statements, exact source freeze for the Type-I factor/support interface, cross-workstream merge review, and ideally formalization. They are not currently identified as additional graph cases.
