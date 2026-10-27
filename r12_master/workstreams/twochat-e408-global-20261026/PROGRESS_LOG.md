@@ -58,3 +58,13 @@
 - Q33 global witness/core/outer-incidence contradiction: OPEN.
 - Q32 285-edge support floor \(|U|\ge44\) retained; \(v=44\) triple-pair terminal OPEN.
 - Original EG617(r=12): OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-27 — sharpened m=9 residual contract and audit repair
+
+- Derived the lower pair-cost 18 needed for one unselected exact color's ten component sets to cover at least 24 points of the 31-point support. Hence \(\delta\ge18-4h\): \(\delta\ge14,10,6,5\) for \(h=1,2,3,4\).
+- Proved the \(h=4\) endpoint is rigid: \(\overline{H[W]}=K_{4,4,4,4}\), with the selected component witnesses' W-parts giving an edge decomposition into four \(K_4\)'s and 24 triangles. This is a minimum residual contract, not a contradiction.
+- Independently replayed arithmetic DP: minimum cost for 10 values \(k_i\in\{0,\ldots,4\}\) with sum at least 24 is 18; the previous maxima 46 and 23 remain verified.
+- Refined proof commit: 1edb9efe781aa722c0ae2813f3efcca3d906273f. Refined verifier commit: 448fc7e717273d4f4cc8b9671897c2de37d2a490.
+- Audited and corrected the R7 proof's pigeonhole wording so it correctly identifies a vertex adjacent to two selected rows, rather than saying it is “omitted” by them. Commit: f0743b0c5c65d883f9e533b2c5cd83c9987c3b77.
+
