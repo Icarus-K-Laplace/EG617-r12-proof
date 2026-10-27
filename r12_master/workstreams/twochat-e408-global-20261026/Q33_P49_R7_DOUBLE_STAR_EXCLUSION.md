@@ -106,7 +106,7 @@ No selected row pair can jointly cover a full isolated \(K_5\): the high row has
 
 The gadget clique \(D\) is \(C\)-adjacent to all seven selected rows, so they form a \(C\)-colored \(K_{12}\), say \(Q\).
 
-Each selected omitted set is a proper subset of \(V'\), since it is a gadget clique of size at most five. Thus the seven nonempty omission sets \(V'\setminus E,V'\setminus G_1,\ldots,V'\setminus G_6\) have total size at least seven. By pigeonhole, some \(z\in V'\) is omitted by at least two selected row complements. Then \(z\) is \(C\)-adjacent to at least two vertices of \(Q\), contradicting star capacity.
+Each selected omitted set is a proper subset of \(V'\), since it is a gadget clique of size at most five. Thus the seven nonempty omission sets \(V'\setminus E,V'\setminus G_1,\ldots,V'\setminus G_6\) have total size at least seven. By pigeonhole, some \(z\in V'\) belongs to at least two sets \(V'\setminus E,V'\setminus G_1,\ldots,V'\setminus G_6\). Thus \(z\) is not omitted by those two row complements and is \(C\)-adjacent to at least two selected rows of \(Q\), contradicting star capacity.
 
 ### Case C: \(n=1\)
 
