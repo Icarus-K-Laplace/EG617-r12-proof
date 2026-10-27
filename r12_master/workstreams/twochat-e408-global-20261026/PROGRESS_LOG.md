@@ -91,3 +91,13 @@
 - Q32 285-edge \(v=44\) triple-pair terminal remains OPEN.
 - Original EG617(r=12): OPEN / NOT_CERTIFIED.
 
+
+
+## 2026-10-27 — joint U/W capacity refinement for m=9
+
+- Added the complementary pair-cost \(c_W=\sum_\ell \binom{4-k_\ell}{2}\), bounded by the unused edge capacity of \(\overline{H[W]}\). This couples the 31-point support budget and the 16-point complement, rather than using the U-cost alone.
+- Proved the m=9, h=3 case has \(\delta\ge11\), strengthening the previous \(\delta\ge6\). If \(\delta=11\), then \(\epsilon_U=4\) and the ninth color's ten components have exactly four \(k=2\) and six \(k=3\) sets; their four W-edges exhaust the remaining W-edge capacity.
+- For h=2, \(\delta\ge10\); equality forces six \(k=2\) and four \(k=3\) sets, and \(\epsilon_U\ge1\). If \(\epsilon_U=1\), the W-edge capacity is exactly saturated.
+- Independent finite enumeration over all 1001 count profiles of ten \(k_i\in\{0,1,2,3,4\}\) verified: cost \(\le18\), sum \(\ge24\) forces profile \((2^6,3^4)\); the h=3, \(\delta\le10\) joint U/W budgets have no profile; h=3, \(\delta=11\) forces \((2^4,3^6)\).
+- Updated proof commit: 3d05879da362a9ce68c4836bc484d7e78b872d36. Updated arithmetic verifier: 2625ad01209eb3744edae2739b78af78325dfac9.
+
