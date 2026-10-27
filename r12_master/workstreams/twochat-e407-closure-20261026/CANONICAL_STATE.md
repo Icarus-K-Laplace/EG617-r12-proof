@@ -136,7 +136,7 @@ The 56-profile integer verifier passed independently. This is a structural conse
 
 ## Round 9 — zero-slack neighborhood classes (2026-10-27)
 
-Added a transversal-disjointness lemma: two distinct 7-point transversals of the 49-block system are disjoint. Thus there are at most four distinct zero-slack U-neighborhoods; four would cover 28 points and force the remaining point to have \(r_u=7\), which requires \(\epsilon_U+2\delta\ge16\). Therefore in the low-slack region \(\epsilon_U+2\delta<16\), at most three zero-slack neighborhood classes exist. In particular, this holds for the two minimum-slack profiles \((3,3)\) and \((4,1)\).
+Added a transversal-disjointness lemma: two distinct 7-point transversals of the 49-block system are disjoint. Thus there are at most four distinct zero-slack U-neighborhoods; four would cover 28 points and force the remaining point to have \(r_u=7\), which requires \(\epsilon_U+2\delta\ge16\). Therefore in the low-slack region \(\epsilon_U+2\delta<16\), at most three distinct zero-slack neighborhood classes exist. In particular, this holds for the two minimum-slack profiles \((3,3)\) and \((4,1)\).
 
 
 ## Round 10 — independent arithmetic replay (2026-10-27)
@@ -147,3 +147,29 @@ Replayed the exact 56 feasible \((\delta,\epsilon_U)\) profiles, the three edge-
 ## Round 11 — minimum-slack concentration excluded (2026-10-27)
 
 For the two profiles \((\delta,\epsilon_U)=(3,3),(4,1)\), the seven units of W-side slack cannot all sit on one vertex. The \((3,3)\) case would require a W vertex of negative W-degree. In the \((4,1)\) case, one \(y=7\) vertex leaves 17 zero-slack vertices in at most three clique classes of sizes \(6,6,5\); the five-vertex class needs at least five external edges, while the degree ledger allows at most three. Therefore both profiles have at least two positive-slack W vertices and at least eleven zero-slack W vertices. This does not force a slack-one independent quadruple.
+
+## Round 12 — minimum-slack exact-core reduction (2026-10-27)
+
+Added `MINIMUM_SLACK_EXACT_CORE.md` and `verify_minimum_slack_exact_core.py`.
+
+Conditional on an independent W-four-set of total slack one, the support side becomes **exactly four-partite**:
+
+\[
+U=T_1\dot\cup T_2\dot\cup T_3\dot\cup R,
+\qquad |T_i|=7,\ |R|=8,
+\]
+
+where every support block has one point in each part, each T-part is a target K7, the T-parts are pairwise target-anticomplete, and in fact R is forced to be a target K8. All \(\delta\) extra complement edges then lie among the 21 missing T-R partner pairs.
+
+The W vertices complete to each T-part form cliques \(C_i\) of size at most four. Hence \(|C|=|C_1\cup C_2\cup C_3|\le12\). Zero-omission R-points dominate the residual set \(N=W\setminus C\), yielding the capacity inequality
+
+\[
+q|N|\le5q+\epsilon_U.
+\]
+
+This collapses the two minimum profiles sharply:
+
+- **(delta,epsilon_U)=(4,1):** the only omission pattern is \((1^7,0)\). Moreover \(|C_1|=|C_2|=|C_3|=4\), \(|N|=6\), the unique zero-omission R-point carries the unique U-excess unit, and its W-neighbourhood is exactly N. Thus three exact target K11s \(T_i\cup C_i\) are forced.
+- **(delta,epsilon_U)=(3,3):** only \((2,1^5,0^2)\) and \((1^7,0)\) survive. In the first case all three C_i have size four and the two zero-omission R-points consume at least two U-excess units. In the second case C has size 11 or 12, hence class sizes \((4,4,3)\) or \((4,4,4)\).
+
+The complementary branch, where every independent W-four-set has total slack at least two, remains OPEN. No shell template or original K145 bridge is closed by this theorem.
