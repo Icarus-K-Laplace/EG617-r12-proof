@@ -30,7 +30,7 @@ The older Q33 canonical summary and R12_P49_INCIDENCE_SENSITIVE_SCREEN.md still 
 
 ## Global exact-color count constraint (new 2026-10-27)
 
-The independent Q33 cross-layer capacity theorem now excludes \(m=10\), where \(m\) is the number of exact-129 colors. Hence \(m\in\{8,9\}\). If \(m=9\), at least one of the 56 selected witnesses is a gadget witness; in every case the gadget-witness count \(h\le4\). See Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md and verify_q33_exact_color_count_capacity.py. This result does not change the local status of the two remaining \(P_C=49\) profiles: \((4,4,1^5)\) and \((4,3,2,1^4)\) remain open in their all-component-edge-present branches.
+The independent Q33 cross-layer capacity theorem now excludes \(m=10\), where \(m\) is the number of exact-129 colors. Hence \(m\in\{8,9\}\). If \(m=9\), at least one of the 56 selected witnesses is a gadget witness; in every case the gadget-witness count \(h\le3\). See Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md and verify_q33_exact_color_count_capacity.py. The h=4 endpoint is separately excluded by the OA(4,4,2,2) obstruction, verified in verify_q33_h4_orthogonal_array.py. If m=9, the remaining h=1,2,3 cases force delta>=14,10,6 respectively. This result does not change the local status of the two remaining \(P_C=49\) profiles: \((4,4,1^5)\) and \((4,3,2,1^4)\) remain open in their all-component-edge-present branches.
 
 ## Why the two remaining branches are hard
 
