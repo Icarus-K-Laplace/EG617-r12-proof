@@ -1,69 +1,38 @@
-# EG617 fixed r=12 — root promotion receipt
+# EG617 fixed r=12 — root promotion receipt after fail-close
 
 Updated: 2026-10-27
-Receipt class: **branch-local source-freeze / theorem-promotion audit**
-Current theorem status: **PROVED_CONDITIONAL + COMPUTATION_CERTIFIED**
-Unqualified `PROVED`: **NOT YET PROMOTED**
+Receipt class: **branch-local source-freeze / fail-closed promotion audit**
+Current theorem status: **OPEN / NOT_CERTIFIED**
+Unique currently identified live graph terminal: **E408 / h13 / Qmax=32 / e(H)=285 / excess6**
 
-This receipt freezes the shortest currently known root chain and separates mathematical closure from publication/formalization obligations. It does not overwrite historical OPEN ledgers in sibling or front-end branches.
+## 1. Promotion withdrawal
 
-## 1. Root statement under audit
+The earlier branch-local receipt promoted `EG617(r=12)` to `PROVED_CONDITIONAL + COMPUTATION_CERTIFIED`. That promotion is withdrawn.
 
-Assume a balanced 12-edge-coloring of `K_145` were a counterexample to EG617 at `r=12`. The audited root chain reduces it to the contextual `R(4,49)` branch or T61; the former is impossible, and every T61 branch is now excluded under the named analytic/external/certificate interfaces.
+Primary-source verification of the Kang--Pikhurko Type-I equality construction refuted a load-bearing premise used by the former E408 whole-layer closure: there is no color-degree9 exceptional vertex. See `KP_DEGREE9_RETRACTION_AND_E408_Q32_REOPEN.md`.
 
-Branch snapshot immediately before this receipt:
+Fail-closed rule therefore reopens E408-Q32 and blocks the root theorem.
 
-`6e359743fe35bcc7c745764d1a6f12b691eb7a2a`
+## 2. Front-end gate — still valid
 
-## 2. Front-end gate
-
-### F7 bridge
-
-Source:
-
-- path: `front_end/FRONTEND_BRIDGE_THEOREM.md`
-- blob SHA: `52b2f4af102ceba1671dc7d0e7ed36a512458e77`
-
-Proved interface:
+`front_end/FRONTEND_BRIDGE_THEOREM.md`, blob `52b2f4af102ceba1671dc7d0e7ed36a512458e77`:
 
 `balanced K145 counterexample -> contextual R(4,49) OR embedded T61`.
 
-Finite Line-A receipt:
+Line-A computation certificate:
 
-- package SHA256: `8f34097f195f53a6aac2999a655d3dc6a4ebc7c74f5764aedea65a79235a98ac`
-- recurrence nodes: 1,752
-- stopping comparisons: 144
-- manifest files checked: 73
-- errors: 0
-- independent replay: PASS
-- unique no-R(4,49) stop: `(d,j,a,n)=(11,6,5,61)`, `397<=E<=408`.
+- package SHA256 `8f34097f195f53a6aac2999a655d3dc6a4ebc7c74f5764aedea65a79235a98ac`;
+- 1,752 recurrence nodes;
+- 144 stopping comparisons;
+- 73 manifest files, 0 errors;
+- unique no-R449 stop `(11,6,5,61)`, `397<=E<=408`;
+- independent replay PASS.
 
-Historical `F8/T61=OPEN` inside this source is a then-current terminal status, not a premise used by the present closure.
+Contextual R449 remains excluded by `front_end/CONTEXTUAL_R449_FULL_COLOR_IMPOSSIBILITY.md`, blob `dd072ce9ef703b56e9184f2ede992988fce9f86e`, relative to its named extremal input.
 
-### Contextual R(4,49) exclusion
+## 3. T61 low layers — still valid
 
-Source:
-
-- path: `front_end/CONTEXTUAL_R449_FULL_COLOR_IMPOSSIBILITY.md`
-- blob SHA: `dd072ce9ef703b56e9184f2ede992988fce9f86e`
-- status in source: `PROVED_RELATIVE_TO_BROUWER SECOND-TURAN + F5`.
-
-This leaves T61 as the only root terminal.
-
-## 3. Historical assumption-ledger firewall
-
-Source:
-
-- path: `front_end/ASSUMPTION_LEDGER.md`
-- blob SHA: `eb1c0911291faa96bf74009017072fb6b6010466`.
-
-The ledger predates the new branch-local root closure and still records `T61=OPEN` and `MAIN=OPEN`. It also contains OPEN candidate bridges `K7`, `K8`, `S31MAP`, `S31NEXT`, `S27MAP`, `S30MAP`, `S30REM`.
-
-**None of those OPEN candidate bridges is load-bearing in the shortest root chain recorded here.** They must not be imported merely because the root is now closed by another route.
-
-## 4. T61 low layers
-
-The branch-local root audit imports the registered closures:
+Registered closures remain in force for:
 
 - h12;
 - h13 E397--E400;
@@ -71,162 +40,127 @@ The branch-local root audit imports the registered closures:
 - E405;
 - E406.
 
-Promotion class: analytic registered closures under their explicit source contracts. A publication-grade bundle must still freeze each individual source theorem/blob and any external theorem statement it consumes.
+The source-freeze of every individual low-layer theorem remains a publication-audit task, but no new defect was found in these layers during the KP audit.
 
-## 5. E408 whole-layer gate
+## 4. E407 — still closed
 
-Source:
+### Q31
+V10/V11 independent replay and analytic capacity remain unaffected.
 
-- path: `r12_master/workstreams/twochat-e408-global-20261026/E408_WHOLE_LAYER_EXACT_COUNT_CLOSURE.md`
-- blob SHA: `1da5220f5c587f4a3a392cf06f68cca5042dc4e3`
-- status: `PROVED_CONDITIONAL E408 ENERGY-LAYER CONTRADICTION`.
+- V10 archive SHA256 `e83e2907d541b38304746e855af52b5e21b6500a35cb0fdb676a4f6a7601303a`;
+- V11 archive SHA256 `27ecec92d43a27fb132c60aa7b374131a860547c236d8ed3d83d3cf0eab9f0a4`;
+- V11 certificate SHA256 `0baffc39ee481b27af53fda36a8fe40b8cd8c527103b5126060857c4eaacd09b`.
 
-Shortest interface does not use Q32/Q33, seven outer blocks, or a 284/285-edge core.
+### Q32
+V12 coverage remains computation-certified:
 
-Load-bearing analytic inputs include the exact-129 Type-I equality structure, pointwise residual degree floors, and the registered Brouwer/Kang--Pikhurko/Turan extremal bounds.
-
-Promotion gate: **PASS_CONDITIONAL**.
-
-## 6. E407 low-charge gate
-
-For a degree-13 pivot,
-
-`407 = 91 + q + e(H)` with `e(H)>=284`, hence `q<=32`.
-
-The audited V9 chain leaves maximum charge `Q in {31,32}` under its registered seed interface.
-
-Small Ramsey/core seeds consumed by that chain are marked `PROVED` in the frozen front-end assumption ledger; V9 finite tables remain computation-certified.
-
-Promotion gate: **PASS_CONDITIONAL + COMPUTATION_CERTIFIED**.
-
-## 7. E407 Q31 gate
-
-Source:
-
-- path: `r12_master/workstreams/twochat-e408-global-20261026/V10_V11_Q31_INDEPENDENT_REPLAY_AUDIT.md`
-- blob SHA: `8a1e7b5cbac408b531037e6ad0dfb54f9683543d`.
-
-Frozen package hashes:
-
-- V10 archive SHA256: `e83e2907d541b38304746e855af52b5e21b6500a35cb0fdb676a4f6a7601303a`
-- V11 archive SHA256: `27ecec92d43a27fb132c60aa7b374131a860547c236d8ed3d83d3cf0eab9f0a4`
-- V11 certificate SHA256: `0baffc39ee481b27af53fda36a8fe40b8cd8c527103b5126060857c4eaacd09b`.
-
-Fresh manifests passed. Exact replay recovered V10 labelled-cut/local-neighbourhood/row-budget coverage and V11 `684 -> 349 -> 259 = 252+7` terminal-state coverage. Analytic common-K10 support capacity excludes both terminal families.
-
-Promotion gate: **PASS_CONDITIONAL + COMPUTATION_CERTIFIED**.
-
-## 8. E407 Q32 finite-coverage gate
-
-Frozen V12 package:
-
-- archive SHA256: `0c3c69a7baf94a816eff29f3a079b97ac7750d0e8b8fd2773330469c4b8c5e36`
-- certificate SHA256: `cab4e67bc501fe51c06f8fc008443b870aebf8794528af1a3045e83be7d6db30`.
-
-Independent replay recovered:
-
-- 8,677 kernel weight vectors;
+- archive SHA256 `0c3c69a7baf94a816eff29f3a079b97ac7750d0e8b8fd2773330469c4b8c5e36`;
+- certificate SHA256 `cab4e67bc501fe51c06f8fc008443b870aebf8794528af1a3045e83be7d6db30`;
+- 8,677 kernel weights;
 - 17,957 count states;
-- 1,984 labelled necessary shells;
-- 90 d3/rho1 exclusions;
-- 1,192 near-K12 exclusions;
-- 148 K9 pair-row refinements;
-- 554 finite-screen survivors;
-- all 554 mapped to five V12 rho=0 d3 shell templates.
+- 1,984 necessary shells;
+- 554 survivors, all mapped to five templates.
 
-The finite certificate does not itself claim those 554 states impossible.
+Read-only sibling freeze:
 
-Promotion gate to five templates: **COMPUTATION_CERTIFIED**.
+- branch head observed `b36538e27dce89dfcba2aa2bfdfc29d6611a96ec`;
+- `FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md` blob `8b95bbf59e7a9232eff6cc27c9f50177533e5e21`;
+- `SUPPORT_BLOCK_ANCHOR_IDENTITY.md` blob `50447a9931b9b51a21a979dc61d834389abd4e3a`;
+- `PROOF_DEPENDENCY_AUDIT.md` blob `4b6c8ef85dce38003591c1aa712b7f9b637a68cb`.
 
-## 9. E407 Q32 common-support gate — read-only sibling freeze
+The shortest terminal contradiction remains:
 
-Frozen sibling branch:
+`49*C(4,2)=294` selected complement edges on U,
+`e(overline(H[U]))<=310`,
+and one unselected non-target color contributes at least `p_12(29)=22`, so
 
-`workstream/r12-twochat-e407-closure-20261026`
+`294+22=316>310`.
 
-Observed source head:
+This does not use the false degree9 premise.
 
-`b36538e27dce89dfcba2aa2bfdfc29d6611a96ec`
+## 5. Kang--Pikhurko exact-129 source gate — factorization PASS, degree9 FAIL
 
-Load-bearing sibling blobs:
+The primary-source audit confirms:
 
-1. `FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md`
-   - blob SHA: `8b95bbf59e7a9232eff6cc27c9f50177533e5e21`
-   - establishes the same `|U|=29`, 49-block support contract for legal completions of every one of the five V12 templates.
+- complement equality at `(n,r)=(61,12)`;
+- optimal sequences exactly `(5^12)`, `(4,5^10,6)`, `(4,4,5^8,6,6)`;
+- clique cap leaves only `(5^12)`;
+- hence exact color factorization `10 isolated K5 + G11`.
 
-2. `SUPPORT_BLOCK_ANCHOR_IDENTITY.md`
-   - blob SHA: `50447a9931b9b51a21a979dc61d834389abd4e3a`
-   - proves every selected support block is the four-core part of a selected monochromatic exact-color K5, under the registered exact-129 factor/minimum-support identity.
+It refutes:
 
-3. `PROOF_DEPENDENCY_AUDIT.md`
-   - blob SHA: `4b6c8ef85dce38003591c1aa712b7f9b637a68cb`
-   - records the distinction between pure graph, labelled exact-129, external-input, and original-problem bridge dependencies.
+- any universal degree9 exceptional vertex.
 
-This workstream does not rewrite those sibling files.
+Correct variable degrees are `(4+a,9-a)` for `a in {1,2,3,4}`.
 
-Promotion gate: **PASS_CONDITIONAL**, with exact-129 factor/support source provenance still requiring final publication-grade freeze.
+Source audit: `KANG_PIKHURKO_EXACT129_SOURCE_AUDIT.md`.
+Companion arithmetic/sequence verifier: `verify_kp_exact129_instance.py`.
+Retraction: `KP_DEGREE9_RETRACTION_AND_E408_Q32_REOPEN.md`.
 
-## 10. E407 Q32 terminal contradiction — one-color reserve
+## 6. E408 charge gates after correction
 
-Source:
+### Q31 — PASS_CONDITIONAL + COMPUTATION_CERTIFIED
+The V11 route remains valid under its named inputs.
 
-- path: `r12_master/workstreams/twochat-e408-global-20261026/E407_FOUR_COLOR_U_RESERVE_CLOSURE.md`
-- blob SHA: `b3a6a81e76cc524847a3a922c5b8b2a70029627b`.
+### Q33 — PASS_CONDITIONAL
+The load-bearing Q33 route does not use degree9:
 
-Independent arithmetic verifier:
+- `Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md`: component witness packing excludes m=10;
+- `Q33_NONEXACT_U_RESERVE_CLOSURE.md`: m=8/9 are excluded by nonexact-color U reserve.
 
-- path: `r12_master/workstreams/twochat-e408-global-20261026/verify_e407_four_color_u_reserve.py`
-- blob SHA: `b397a57515db2112eaa9ce53405e59f8bad407e9`.
+### Q32 — OPEN / FAIL-CLOSED
+Retracted Q32 closure files:
 
-Despite the historical filename, the current theorem needs only **one** unselected non-target color.
+- `Q32_GLOBAL_EXCEPTIONAL_INJECTIVITY.md`;
+- `Q32_EXACT_COLOR_COUNT_COLLAPSE.md`;
+- the injectivity-dependent closure in `Q32_NONFULL_SUPPORT_SHELL_CAPACITY.md`;
+- `E408_WHOLE_LAYER_EXACT_COUNT_CLOSURE.md` as a whole-layer theorem.
 
-Exact arithmetic:
+These files remain historical artifacts only.
 
-- selected block edges: `49*C(4,2)=294`;
-- complement cap: `294+delta <= 294+16 = 310`;
-- non-target colors total: 11;
-- selected colors: 7;
-- therefore at least one unselected non-target color exists;
-- Turan independence floor on 29 vertices: `p_12(29)=22`;
-- required complement edges: `294+22=316`;
-- contradiction gap: `316-310=6`.
+## 7. E408-Q32 surviving theorem interface
 
-The verifier recomputes `p_12(29)` from the balanced-partition formula rather than hard-coding 22. It also retains the older four-color `382>310` calculation as a regression check.
+Read-only source branch:
 
-Promotion gate: **PASS_CONDITIONAL ANALYTIC**, arithmetic independently replayable.
+`workstream/r12-e408-q32-excess6-20261025`
 
-## 11. Root composition
+Key source:
 
-Once the gates above are accepted with their named interfaces, every branch of the root dichotomy is empty:
+`CORE285_CAPACITY_THEOREM.md`, blob `3555748eefa810049bbd5fa6796462ea83a7002a`.
 
-- contextual R(4,49): impossible;
-- T61 h12: impossible;
-- T61 h13 E397--E406: impossible;
-- E408: impossible;
-- E407 Q31: impossible;
-- E407 Q32: impossible.
+Valid necessary structure:
 
-Therefore there is no remaining graph-theoretic terminal in the audited fixed-r=12 chain.
+- 47-core H with285 edges, alpha<=4, min degree>=12;
+- total core excess6;
+- exact-color count m in `{8,9,10}`;
+- each exact color yields at least ten pairwise-disjoint independent core4 witnesses;
+- cross-color witness system is pairwise linear;
+- total support v satisfies `v>=44` after the low-support triple-pair refinement;
+- exact capacity
+  `6N <= C(v,2)-p_4(47-v)-12v+285-E_U`.
 
-Current promotion:
+No closure at `v=44..47` is yet certified.
 
-`EG617(r=12) = PROVED_CONDITIONAL + COMPUTATION_CERTIFIED`.
+## 8. Current root composition
 
-## 12. Why unqualified promotion is blocked
+Closed relative to named inputs:
 
-The current blockers are **not known graph cases**. They are certification/source obligations:
+- contextual R449;
+- T61 h12;
+- h13 E397--E406;
+- E407 Q31/Q32;
+- E408 Q31/Q33.
 
-1. freeze the exact source theorem and bibliographic statement for the exact-129 Type-I equality/factor theorem consumed by E408 and by the E407 selected-support identity;
-2. freeze exact statements/parameter checks for every external Brouwer/Kang--Pikhurko/Andrasfai--Erdos--Sos-type theorem actually used by the shortest root chain;
-3. freeze every low-layer E397--E406 theorem blob consumed by the root composition;
-4. rerun all load-bearing finite packages in an independently reproduced clean environment and record verifier/source hashes;
-5. line-audit V9/V12 analytic-screen assumptions against the exact finite domains;
-6. reconcile stale historical `T61=OPEN` / `MAIN=OPEN` ledgers through a new canonical promotion layer rather than rewriting history.
+Open:
 
-If these gates pass without exposing a hidden premise, the natural next label is **COMPUTER-ASSISTED PROOF / publication audit passed**, not “new graph case solved.”
+- E408 Q32.
 
-## 13. Fail-closed rule
+Therefore
 
-Any source theorem whose exact statement/provenance cannot be frozen, any finite package whose clean replay does not reproduce the recorded certificate, or any mismatch between V12's 554-state coverage and the five-template common-support interface reopens the corresponding gate automatically.
+`EG617(r=12) = OPEN / NOT_CERTIFIED`.
 
-No current receipt entry is permitted to convert a missing source audit into an unconditional theorem claim.
+## 9. Promotion condition
+
+Root promotion is permitted only after a valid theorem excludes E408-Q32 without using exceptional degree9 or an illicit excess-four transfer.
+
+Any new source mismatch automatically reopens the affected gate.
