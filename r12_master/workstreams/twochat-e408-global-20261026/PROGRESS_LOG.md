@@ -1,103 +1,66 @@
 # Progress log — E408 global incidence / witness capacity
 
-## 2026-10-26 — isolated branch and intake audit
+## 2026-10-26 — intake and local Q33 repairs
 
-- Created dedicated branch workstream/r12-twochat-e408-global-20261026 from main HEAD 3f42fcce5761ca2372140618adda56f95fcbe253.
-- Checked actual HEADs of Q33, Q32, unified witness-capacity, witness packing, zero-excess witness, and ultimate-closure workstreams. All sibling branches remain read-only.
-- Reconciled the stale Q33 profile ledger: the source Q33 branch already has a separate double-star theorem excluding (6,2,1^5), although its canonical summary still lists four profiles as open.
-- Independently replayed the (6,2,1^5) gadget verifier: 452 Case-A checks plus 570,942 Case-B/C checks, total 571,394, zero failures.
+- Created isolated branch `workstream/r12-twochat-e408-global-20261026`.
+- Audited Q33/Q32/unified witness-capacity sibling heads; siblings are read-only.
+- Independently replayed the Q33 \((6,2,1^5)\) verifier: 571,394 cases, zero failures.
+- Proved \((7,1^6)\) conditionally by a repaired double-star argument and exact gadget verifier.
+- Reconciled the P49 frontier: locally open branches were \((4,4,1^5)\) and \((4,3,2,1^4)\) with all component-representative edges present.
 
-## 2026-10-26 — new Q33 (7,1^6) closure
+## 2026-10-27 — exact-color count and W-capacity advances
 
-- Added verify_q33_p49_r7_double_star.py and independently executed its finite predicates in a separate Python runtime.
-- Four gadget normal forms: K5 counts 4,3,3,4; universal-D sizes 2,3,3,2.
-- Checked 48 low-pair/D tests and 27,380 high-pair alignment tests, zero failures.
-- Proved the graph-level row split n=0, n=1, n>=2. The n>=2 branch uses the exact gadget alignment and seven-row double-star. The n=1 branch either gives the same double-star or forces a repeated full component, which yields five external C-edges into a constructed C-colored K12.
-- Added Q33_P49_R7_DOUBLE_STAR_EXCLUSION.md. Status: PROVED_CONDITIONAL under the exact-129 factor, row-budget, row-blocker, and gadget-normal-form contracts.
+- Proved \(m=10\) exact-129 colors impossible in the Q33 31-point/56-witness terminal.
+- Derived preliminary \(h\le4\) for selected gadget witnesses; excluded \(h=4\) by an OA(4,4,2,2) obstruction, giving \(h\le3\).
+- Added joint U/W pair-cost bounds for the ninth exact color.
+- Derived a nonexact-color W reserve: every non-target color has at least four W-edges; equality is a four-edge matching.
+- This sharpened the remaining exact-color branches and exposed the common 96-edge endpoint kernel `2 K4 + 24 K3 + 3 M4`.
+- Constructed and independently verified an explicit realization of that abstract kernel. This was an important adversarial audit: the kernel alone is feasible and cannot be used as a contradiction without additional contextual structure.
 
-## 2026-10-26 — Q33 frontier reconciliation and global ledger
+Commits:
+- exact-color capacity theorem: `50e4f7c2299f1cb21a410779a27fdd9fd7795438`
+- OA endpoint closure: `99d85042c32a87a27d56c321c025ec55a3f978f5`
+- nonexact W reserve theorem: `6b63f3491f49e222221f410279e96c61975f7083`
+- W reserve verifier: `6beddb6bee7f3a8486b54f3b92474b0de563950a`
+- endpoint-kernel feasibility verifier: `699b18dc0982aed83f30288ccffb81f87d9bd060`
 
-- Updated Q33_P49_REMAINING_PROFILES.md: only the all-component-edge-present branches of (4,4,1^5) and (4,3,2,1^4) remain open on the P_C=49 screen.
-- Added CONTRACT_FIREWALL.md, DEPENDENCY_AUDIT.md, Q33_SEVEN_BLOCK_GLOBAL_CONTRADICTION.md, and Q32_CORE285_TERMINAL.md.
-- Audited the historical inference that ten disjoint C-colored K12s imply P_C<=42. This bound is not established by star capacity alone and is not used in this branch.
-- Exact accounting for an all-component-edge-present exact-129 color: ten K12s account for 660 of 870 C-edges; the residual edge ledger is 29 internal gadget edges, 90 outer-to-R edges outside own components, and 91 outer-block edges outside the ten diagonal matchings. The counts are consistent and do not alone imply a contradiction.
+## 2026-10-27 — decisive Q33 global closure
+
+A stronger cross-layer count closes the registered Q33 minimum-support terminal.
+
+1. Every non-target color restricted to the 31-point set U has independence number at most 12, hence at least
+   \[
+   p_{12}(31)=26
+   \]
+   U-edges.
+2. Of the 56 selected witnesses, \(56-h\) are exact-color component witnesses, occupying exactly
+   \[
+   6(56-h)=336-6h
+   \]
+   distinct edges of \(L=\overline{H[U]}\).
+3. Since \(e(L)=336+\delta\), all nonexact colors combined have at most \(\delta+6h\) available U-edge slots.
+4. Therefore
+   \[
+   26(11-m)\le\delta+6h.
+   \]
+5. The previous theorem excludes \(m=10\). For \(m=8,9\), using only \(\delta\le17\) and preliminary \(h\le4\), the right side is at most 41, while the required left side is 78 or 52.
+
+Contradiction. Thus the registered 31-point/56-witness Q33 terminal is impossible.
+
+This bypasses the two locally unresolved P49 all-component-edge-present profiles; a colorwise proof of \(P_C\le48\) is no longer needed for Q33 closure.
+
+New commits:
+- Q33 nonexact-U reserve closure: `5328f7ac5302836f96f4a24cefdbef748dc9c9ed`
+- arithmetic verifier: `f4a133898f5527db5fa385b477cfc120021f52dc`
+- canonical promotion: `932a3b7e2cfce5b846d3ada0399e24106d85e5ef`
+- global contradiction rewrite: `b539b9aadfeb434dc7c840f69987e447a01c9967`
+- P49 status update: `da2748d271b382206082ac463b8d7e86bdd277b9`
+- dependency audit update: `be2b5b3b361dd627f1922740179c34d9a673e463`
 
 ## Current state
 
-- Q33 P_C=49: profiles (6,2,1^5) and (7,1^6) excluded conditionally; two all-component-edge-present profiles remain OPEN.
-- Q33 global witness/core/outer-incidence contradiction: OPEN.
-- Q32 285-edge support floor |U|>=44 is a retained theorem; v=44 triple-pair terminal remains OPEN.
-- Original EG617(r=12): OPEN / NOT_CERTIFIED.
-
-## Commit trail
-
-- 6e896507bee2d91701b173b52678788f3dfcc826 — exact gadget verifier for (7,1^6).
-- d462fe568577e4ab9204ef155da18111000312f0 — (7,1^6) double-star theorem.
-- d5285026a56a15ad2a78e7625248d39c87d03b84 — Q33 profile reconciliation.
-- 0db5ca4bcdcff339165f6e6bbfc3151ed86038fa — canonical state.
-- 67966feb11ce76c970e6e1377f59cf0e1b353554 — contract firewall.
-- 67feab906085980e9f2d3e3aadc808540e43cda5 — dependency audit.
-- 309b4194219e79600604b18b43da8a42d166edea — Q33 global ledger.
-- 880a753684fa50f321ed3eb24e358cff64aa2ea1 — Q32 terminal.
-
-
-## 2026-10-27 — Q33 exact-color count exclusion
-
-- Derived a cross-layer capacity theorem using the 31-point support \(U\), its 16-point complement \(W\), the 56 selected witnesses, and the full ten-component witness family for each exact-129 color.
-- Proved \(h\le4\), where \(h\) counts selected gadget witnesses, from \(e(\overline{H[W]})\le96\) and the unselected component K4s' edge-disjoint W-pairs.
-- Excluded \(m=10\): the two exact colors outside the selected eight require at least 48 total incidences in \(U\), but their 20 component four-sets have pair-cost at most \(\delta+4h\le33\), allowing at most 46 incidences. The four-edge overlap cap per selected gadget witness follows from the triangle-free complement of its color graph on four vertices.
-- Corollary: if \(m=9\), at least one selected witness must be a gadget witness; always \(h\le4\).
-- Independent arithmetic replay: 20 variables/budget 33 -> max 46; 10 variables/budget 17 -> max 23; pointwise capacity inequality passes for \(k=0,\ldots,4\).
-- New proof commit: 50e4f7c2299f1cb21a410779a27fdd9fd7795438. New verifier commit: 62462f04e76b33aa921249caa38d604fd6e6f95c.
-
-## Current state after this advance
-
-- Q33 exact-129 color count: \(m\in\{8,9\}\); \(m=10\) excluded conditionally.
-- Selected gadget witnesses: \(h\le4\); if \(m=9\), \(h\ge1\).
-- Q33 \(P_C=49\): \((6,2,1^5)\), \((7,1^6)\) conditionally excluded; \((4,4,1^5)\) and \((4,3,2,1^4)\) remain open in all-component-edge-present branches.
-- Q33 global witness/core/outer-incidence contradiction: OPEN.
-- Q32 285-edge support floor \(|U|\ge44\) retained; \(v=44\) triple-pair terminal OPEN.
-- Original EG617(r=12): OPEN / NOT_CERTIFIED.
-
-
-## 2026-10-27 — sharpened m=9 residual contract and audit repair
-
-- Derived the lower pair-cost 18 needed for one unselected exact color's ten component sets to cover at least 24 points of the 31-point support. Hence \(\delta\ge18-4h\): \(\delta\ge14,10,6,5\) for \(h=1,2,3,4\).
-- Proved the \(h=4\) endpoint is rigid: \(\overline{H[W]}=K_{4,4,4,4}\), with the selected component witnesses' W-parts giving an edge decomposition into four \(K_4\)'s and 24 triangles. This is a minimum residual contract, not a contradiction.
-- Independently replayed arithmetic DP: minimum cost for 10 values \(k_i\in\{0,\ldots,4\}\) with sum at least 24 is 18; the previous maxima 46 and 23 remain verified.
-- Refined proof commit: 1edb9efe781aa722c0ae2813f3efcca3d906273f. Refined verifier commit: 448fc7e717273d4f4cc8b9671897c2de37d2a490.
-- Audited and corrected the R7 proof's pigeonhole wording so it correctly identifies a vertex adjacent to two selected rows, rather than saying it is “omitted” by them. Commit: f0743b0c5c65d883f9e533b2c5cd83c9987c3b77.
-
-
-
-## 2026-10-27 — close the h=4 equality endpoint
-
-- The h=4 lower bound saturates \(e(\overline{H[W]})\le96\), forcing \(H[W]=4K_4\) and \(\overline{H[W]}=K_{4,4,4,4}\).
-- Equality forces the selected component witnesses' W-parts to edge-partition this complete four-partite graph into four \(K_4\)'s and 24 triangles.
-- Vertex degree parity gives each vertex an even number of appearances among the four \(K_4\)'s. Each part therefore has two vertices of K4-incidence 2 and two of incidence 0; incidence 4 is impossible because it forces incidence 1 in other parts.
-- The four K4s would yield four pairwise-orthogonal balanced binary columns, i.e. OA(4,4,2,2). Exhaustive verification over the six balanced binary columns finds maximum pairwise-orthogonal family size 3, contradiction.
-- Result: \(h\le3\) globally. If \(m=9\), then \(h\in\{1,2,3\}\) and \(\delta\ge14,10,6\) respectively.
-- Proof commit: 99d85042c32a87a27d56c321c025ec55a3f978f5. Independent OA verifier commit: 91050534c8c59106b119474b7e3a45f37c6d6f51.
-
-
-
-## Latest canonical frontier — 2026-10-27
-
-- Q33 exact-129 color count: \(m\in\{8,9\}\); \(m=10\) is PROVED_CONDITIONAL impossible.
-- Selected gadget-witness count: \(h\le3\); if \(m=9\), \(h\in\{1,2,3\}\) and \(\delta\ge14,10,6\) respectively.
-- \(h=4\) is closed by an orthogonal-array obstruction, not left as an open terminal.
-- Q33 \(P_C=49\): two profiles conditionally excluded; the all-component-edge-present branches of \((4,4,1^5)\) and \((4,3,2,1^4)\) remain OPEN.
-- Q33 global core/witness/outer incidence contradiction remains OPEN.
-- Q32 285-edge \(v=44\) triple-pair terminal remains OPEN.
-- Original EG617(r=12): OPEN / NOT_CERTIFIED.
-
-
-
-## 2026-10-27 — joint U/W capacity refinement for m=9
-
-- Added the complementary pair-cost \(c_W=\sum_\ell \binom{4-k_\ell}{2}\), bounded by the unused edge capacity of \(\overline{H[W]}\). This couples the 31-point support budget and the 16-point complement, rather than using the U-cost alone.
-- Proved the m=9, h=3 case has \(\delta\ge11\), strengthening the previous \(\delta\ge6\). If \(\delta=11\), then \(\epsilon_U=4\) and the ninth color's ten components have exactly four \(k=2\) and six \(k=3\) sets; their four W-edges exhaust the remaining W-edge capacity.
-- For h=2, \(\delta\ge10\); equality forces six \(k=2\) and four \(k=3\) sets, and \(\epsilon_U\ge1\). If \(\epsilon_U=1\), the W-edge capacity is exactly saturated.
-- Independent finite enumeration over all 1001 count profiles of ten \(k_i\in\{0,1,2,3,4\}\) verified: cost \(\le18\), sum \(\ge24\) forces profile \((2^6,3^4)\); the h=3, \(\delta\le10\) joint U/W budgets have no profile; h=3, \(\delta=11\) forces \((2^4,3^6)\).
-- Updated proof commit: 3d05879da362a9ce68c4836bc484d7e78b872d36. Updated arithmetic verifier: 2625ad01209eb3744edae2739b78af78325dfac9.
-
+- E408 Q33 registered minimum-support terminal: **PROVED_CONDITIONAL impossible**.
+- Local P49 \((4,4,1^5)\), \((4,3,2,1^4)\): still locally OPEN but globally bypassed.
+- E408 Q32 285-edge support floor \(|U|\ge44\): retained theorem.
+- E408 Q32 \(|U|=44\) triple-pair terminal: **OPEN** and now the next primary target.
+- EG617(r=12): **OPEN / NOT_CERTIFIED**. No claim of a complete proof is made.
