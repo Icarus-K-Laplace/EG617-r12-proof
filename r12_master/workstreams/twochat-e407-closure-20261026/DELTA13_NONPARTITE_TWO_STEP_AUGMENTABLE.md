@@ -72,8 +72,7 @@ so J=bar(H[W]) is K5-free on18 vertices with
 e(J)=118+\epsilon_U\ge118.
 \]
 
-Suppose d_H(u,W)<=2 and put Z=N_H(u) cap W.
-If |Z|<=1, then J[W\Z] has at least 118-17=101 edges on17 vertices, strictly more than t_3(17)=96. Hence H[W\Z] contains an independent4-set, which together with u contradicts alpha(H)<=4.
+Suppose d_H(u,W)<=2 and put Z=N_H(u) cap W. If |Z|<=1, then J[W\Z] has at least 118-17=101 edges on17 vertices, strictly more than t_3(17)=96. Hence H[W\Z] contains an independent4-set, which together with u contradicts alpha(H)<=4.
 
 If |Z|=2, J[W\Z] has at least
 \[
@@ -188,9 +187,12 @@ Such an endpoint z has original
 \[
 d_H(z,W)=5+\epsilon_z-I_z.
 \]
-For epsilon_U=1 all U-excess already lies on x or y, so every such endpoint has d_H(z,W)<=4. In either surviving epsilon_U=1 W-profile it is therefore forced to be complete to the K3 component. Hence the common neighbourhood in U of that K3 contains x,y and at least one additional endpoint z.
 
-This recovers a key ingredient of the delta=14 one-edge terminal, but now with two added leave edges. No terminal contradiction is claimed here because the W-profile (3,4,5,6) and the second added edge change the common-neighbour capacity bookkeeping.
+For epsilon_U=1 all U-excess already lies on x or y, so such an endpoint has d_H(z,W)<=4. In the `(3,5,5,5)+one-cross-edge` terminal, an unsaturated vertex needs at least six W-neighbours and every component other than the K3 has size five, so z is forced to be complete to the K3 component. Hence that terminal has at least a third K3-common U vertex in addition to x,y.
+
+**Correction / boundary note.** In the no-cross `K3 dotcup K4 dotcup K5 dotcup K6` terminal, d_H(z,W)=4 does **not** force z onto the K3: z may instead be complete to the K4 component. Only when I_z=2 (so d_H(z,W)=3) is the K3 forced. No stronger assertion is used below.
+
+Thus the earlier one-edge K3-common-neighbour mechanism transfers automatically only to the `(3,5,5,5)+one-cross-edge` terminal, not to the `(3,4,5,6)` terminal without an additional argument.
 
 ## 6. Strict branch conclusion
 
@@ -198,8 +200,8 @@ The entire two-step augmentable delta=13 non-four-partite branch has been reduce
 
 | epsilon_U | surviving W profile | forced exceptional structure |
 |---:|---|---|
-| 1 | K3+K4+K5+K6, no cross | x,y complete K3; a=3 or4; e1,e2 avoid x,y |
-| 1 | (3,5,5,5)+one cross | x,y complete K3; a=3 or4; e1,e2 avoid x,y |
+| 1 | K3+K4+K5+K6, no cross | x,y complete K3; a=3 or4; e1,e2 avoid x,y; added-edge P1/P2 endpoints have W-degree <=4 and may saturate K3 or K4 |
+| 1 | (3,5,5,5)+one cross | x,y complete K3; a=3 or4; e1,e2 avoid x,y; a P1/P2 endpoint is also K3-complete |
 | 2 | K3+3K5, no cross | x,y complete K3; degree sum 6 or7 |
 | 3 | 2K4+2K5, no cross | d_W(x)=d_W(y)=4; all U-excess on x,y; e1,e2 avoid x,y |
 
