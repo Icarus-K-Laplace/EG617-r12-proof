@@ -74,3 +74,10 @@ The proof obligations are checked directly:
 - The slack-one \(7,7,7,8\) partition and the three K7 parts follow from exact equality and pairwise linearity.
 
 The independent verifier checks only integer arithmetic, not existence of the support design or graph realization. The five shell templates, all unresolved low-\(\delta\) branches, the Didin-dependent \(\delta=14\) branch, and the original K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## Round 10 — arithmetic replay and scope correction
+
+The low-delta integer verifier and W-side arithmetic were independently replayed in Python: 56 feasible profiles, \(e(H[W])\le43\), \(\alpha(H[W])=4\), and \(Y=\epsilon_U+2\delta-2\ge7\). This is arithmetic/inequality verification only, not a graph realization.
+
+The no-slack-one alternative is now stated narrowly: every independent triple in \(W_0\) must be met by each \(y=1\) vertex. No such constraint is inferred for \(y\ge2\). The exact-129 component family and the 49 support-block family remain distinct labelled systems pending a proved identity/overlap theorem.
