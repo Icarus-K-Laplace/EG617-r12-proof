@@ -79,3 +79,15 @@
 - Result: \(h\le3\) globally. If \(m=9\), then \(h\in\{1,2,3\}\) and \(\delta\ge14,10,6\) respectively.
 - Proof commit: 99d85042c32a87a27d56c321c025ec55a3f978f5. Independent OA verifier commit: 91050534c8c59106b119474b7e3a45f37c6d6f51.
 
+
+
+## Latest canonical frontier — 2026-10-27
+
+- Q33 exact-129 color count: \(m\in\{8,9\}\); \(m=10\) is PROVED_CONDITIONAL impossible.
+- Selected gadget-witness count: \(h\le3\); if \(m=9\), \(h\in\{1,2,3\}\) and \(\delta\ge14,10,6\) respectively.
+- \(h=4\) is closed by an orthogonal-array obstruction, not left as an open terminal.
+- Q33 \(P_C=49\): two profiles conditionally excluded; the all-component-edge-present branches of \((4,4,1^5)\) and \((4,3,2,1^4)\) remain OPEN.
+- Q33 global core/witness/outer incidence contradiction remains OPEN.
+- Q32 285-edge \(v=44\) triple-pair terminal remains OPEN.
+- Original EG617(r=12): OPEN / NOT_CERTIFIED.
+
