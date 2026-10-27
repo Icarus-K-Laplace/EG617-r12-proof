@@ -25,6 +25,23 @@ def max_k_sum(n: int, cost_budget: int) -> int:
     return max(dp)
 
 
+def min_cost_for_sum(n: int, target_sum: int) -> int:
+    """Minimize sum C(k_i,2), k_i in {0,1,2,3,4}, with sum(k_i)>=target."""
+    inf = 10**9
+    dp = [inf] * (target_sum + 1)
+    dp[0] = 0
+    for _ in range(n):
+        nxt = [inf] * (target_sum + 1)
+        for value, cost in enumerate(dp):
+            if cost == inf:
+                continue
+            for k in range(5):
+                new_value = min(target_sum, value + k)
+                nxt[new_value] = min(nxt[new_value], cost + comb(k, 2))
+        dp = nxt
+    return dp[target_sum]
+
+
 def main() -> None:
     # Check the pointwise inequality k <= 3/2 + C(k,2)/2
     # without floating point: 2k <= 3 + C(k,2).
@@ -50,12 +67,20 @@ def main() -> None:
     assert m9_h0_capacity == 23
     assert m9_h0_capacity < 24
 
+    # A ten-set family with total U-incidence >=24 needs pair-cost >=18.
+    m9_min_cost = min_cost_for_sum(10, 24)
+    assert m9_min_cost == 18
+    delta_floors = {1: 18 - 4 * 1, 2: 18 - 4 * 2, 3: 18 - 4 * 3, 4: max(5, 18 - 4 * 4)}
+    assert delta_floors == {1: 14, 2: 10, 3: 6, 4: 5}
+
     print("PASS: Q33 exact-color component-witness capacity")
     print("pointwise inequality k <= 3/2 + C(k,2)/2: k=0..4 PASS")
     print("e(complement H[W]) <= 96 -> gadget-witness count h <= 4")
     print(f"m=10: 20 sets, pair-cost <= {m10_budget}, max U-incidence = {m10_capacity} < 48")
     print(f"m=9,h=0: 10 sets, pair-cost <= 17, max U-incidence = {m9_h0_capacity} < 24")
-    print("Conclusion: m=10 impossible; m=9 requires h>=1.")
+    print(f"m=9: 10 sets with U-incidence >=24 require pair-cost >= {m9_min_cost}")
+    print(f"m=9, h=1..4: delta floors = {delta_floors}")
+    print("Conclusion: m=10 impossible; m=9 requires 1<=h<=4.")
     print("Scope: arithmetic verifier only; upstream graph contracts remain conditional.")
 
 
