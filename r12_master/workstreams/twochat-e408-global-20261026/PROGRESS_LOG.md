@@ -39,3 +39,22 @@
 - 67feab906085980e9f2d3e3aadc808540e43cda5 — dependency audit.
 - 309b4194219e79600604b18b43da8a42d166edea — Q33 global ledger.
 - 880a753684fa50f321ed3eb24e358cff64aa2ea1 — Q32 terminal.
+
+
+## 2026-10-27 — Q33 exact-color count exclusion
+
+- Derived a cross-layer capacity theorem using the 31-point support \(U\), its 16-point complement \(W\), the 56 selected witnesses, and the full ten-component witness family for each exact-129 color.
+- Proved \(h\le4\), where \(h\) counts selected gadget witnesses, from \(e(\overline{H[W]})\le96\) and the unselected component K4s' edge-disjoint W-pairs.
+- Excluded \(m=10\): the two exact colors outside the selected eight require at least 48 total incidences in \(U\), but their 20 component four-sets have pair-cost at most \(\delta+4h\le33\), allowing at most 46 incidences. The four-edge overlap cap per selected gadget witness follows from the triangle-free complement of its color graph on four vertices.
+- Corollary: if \(m=9\), at least one selected witness must be a gadget witness; always \(h\le4\).
+- Independent arithmetic replay: 20 variables/budget 33 -> max 46; 10 variables/budget 17 -> max 23; pointwise capacity inequality passes for \(k=0,\ldots,4\).
+- New proof commit: 50e4f7c2299f1cb21a410779a27fdd9fd7795438. New verifier commit: 62462f04e76b33aa921249caa38d604fd6e6f95c.
+
+## Current state after this advance
+
+- Q33 exact-129 color count: \(m\in\{8,9\}\); \(m=10\) excluded conditionally.
+- Selected gadget witnesses: \(h\le4\); if \(m=9\), \(h\ge1\).
+- Q33 \(P_C=49\): \((6,2,1^5)\), \((7,1^6)\) conditionally excluded; \((4,4,1^5)\) and \((4,3,2,1^4)\) remain open in all-component-edge-present branches.
+- Q33 global witness/core/outer-incidence contradiction: OPEN.
+- Q32 285-edge support floor \(|U|\ge44\) retained; \(v=44\) triple-pair terminal OPEN.
+- Original EG617(r=12): OPEN / NOT_CERTIFIED.
