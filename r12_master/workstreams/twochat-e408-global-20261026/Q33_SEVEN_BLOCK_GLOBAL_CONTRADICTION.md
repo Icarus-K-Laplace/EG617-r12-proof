@@ -20,6 +20,13 @@ If m=10, the two exact colors outside the selected eight supply 20 component fou
 
 The standalone arithmetic verifier verify_q33_exact_color_count_capacity.py passes. This narrows the global search to m=8,9 but does not close either branch.
 
+### Refined \(m=9\) terminal
+
+The same pointwise capacity inequality shows that ten component four-sets with total \(U\)-incidence at least 24 need pair-cost at least 18. Thus \(m=9\) forces \(\delta\ge18-4h\), so \(\delta\ge14,10,6,5\) for \(h=1,2,3,4\), respectively.
+
+If \(h=4\), equality holds in \(e(\overline{H[W]})\ge72+6h\le96\): \(H[W]\) is four disjoint \(K_4\)'s and \(\overline{H[W]}=K_{4,4,4,4}\). The 4 component \(K_4\)'s and 24 component triangles from the selected eight colors partition all 96 edges of this complete four-partite graph. If \(m=9\), the ninth color's component four-sets can contain at most one \(W\)-vertex each, and hence \(\delta\ge14\). This terminal is rigid but not yet contradictory.
+
+
 ## P_C=49 frontier
 
 For an exact-129 color, P_C=49 means R_C=13 and the seven block budgets r_i(C) sum to 13.
