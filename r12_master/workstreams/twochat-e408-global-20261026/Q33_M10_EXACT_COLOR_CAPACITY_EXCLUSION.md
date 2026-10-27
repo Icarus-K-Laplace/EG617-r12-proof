@@ -131,24 +131,50 @@ Together with (4),
 \[
 \delta\ge18-4h.
 \]
-Since the retained Q33 boundary also gives \(\delta\ge5\), the remaining possibilities satisfy:
+Since \(h=4\) is excluded in Section 7 below, the remaining \(m=9\) possibilities satisfy:
 
 | \(h\) | lower bound on \(\delta\) |
 |---:|---:|
 | 1 | 14 |
 | 2 | 10 |
 | 3 | 6 |
-| 4 | 5 |
 
-There is an additional rigid endpoint when \(h=4\). Then the lower bound \(e(\overline{H[W]})\ge72+6h\) equals its upper bound 96. Hence
+## 7. The endpoint \(h=4\) is impossible: an orthogonal-array obstruction
+
+Suppose \(h=4\). Section 2 gives
 \[
-e(\overline{H[W]})=96,\quad e(H[W])=24,\quad \delta+\epsilon_U=17.
+e(\overline{H[W]})\ge72+6h=96,
 \]
-Equality in the 16-vertex Turán bound forces \(H[W]\) to be the disjoint union of four \(K_4\)'s, so \(\overline{H[W]}=K_{4,4,4,4}\). All selected-color contributions must be tight: each of the \(8-h=4\) non-gadget-witness colors has three unselected component witnesses with exactly three \(W\)-vertices each; each of the four gadget-witness colors has one unselected component witness wholly in \(W\) and three with exactly three \(W\)-vertices. These 4 \(K_4\)'s and 24 triangles partition every edge of \(K_{4,4,4,4}\).
+while (1) gives the reverse inequality. Hence equality holds:
+\[
+e(\overline{H[W]})=96,\quad e(H[W])=24,\quad
+\delta+\epsilon_U=17.
+\]
+Equality in the 16-vertex Turán bound forces \(H[W]\) to be the disjoint union of four \(K_4\)'s, so \(\overline{H[W]}=K_{4,4,4,4}\).
 
-This is an exact residual incidence contract, not yet a contradiction. In particular, the \(m=9,h=4\) case additionally forces every component four-set of the ninth color to have at most one vertex in \(W\), because all edges of \(\overline{H[W]}\) are already owned by the selected colors. It follows that its ten values satisfy \(k_\ell\ge3\), so their total pair-cost is at least 30 and \(\delta\ge14\).
+All selected-color contributions to \(\overline{H[W]}\) must be tight. The four selected colors with a gadget witness each contribute one unselected component \(K_4\) wholly in \(W\) and three component triangles in \(W\). The other four selected colors each contribute three component triangles in \(W\). Thus four \(K_4\)'s and 24 triangles, all edge-disjoint, partition every edge of \(K_{4,4,4,4}\).
 
-## 7. Proof scope and dependencies
+Let \(q_w\) be the number of these four \(K_4\)'s containing \(w\in W\), and \(t_w\) the number of the 24 triangles containing it. Since \(K_{4,4,4,4}\) has degree 12 at every vertex and the decomposition is edge-disjoint,
+\[
+3q_w+2t_w=12,
+\]
+so \(q_w\) is even. In each of the four parts, the four \(K_4\)'s contribute exactly four vertex incidences, hence the four \(q_w\)-values in that part sum to four. If some vertex had \(q_w=4\), all four \(K_4\)'s would contain it; edge-disjointness would force them to use four distinct vertices in each other part, giving those vertices \(q=1\), contradiction. Therefore every part has exactly two vertices with \(q=2\) and two with \(q=0\).
+
+Restrict each part to its two \(q=2\) vertices and encode the four \(K_4\)'s as four binary rows, one coordinate per part. Every column is balanced (each of its two vertices occurs twice). For any two parts, edge-disjointness forces the four \(K_4\)'s to use all four possible pairs of selected vertices exactly once. Thus the four columns would form an orthogonal array \(OA(4,4,2,2)\).
+
+No such array exists. After ordering the rows so the first two columns are the four binary pairs \((x,y)\in\{0,1\}^2\), a balanced third column orthogonal to both must be \(x\oplus y\) or its complement. The fourth column must likewise be one of these two, so it equals or complements the third and cannot be orthogonal to it. Contradiction.
+
+Therefore
+\[
+\boxed{h\le3.}
+\]
+Combining with Section 5, the final capacity frontier is
+\[
+\boxed{m\in\{8,9\},\quad h\le3,\quad m=9\Rightarrow1\le h\le3.}
+\]
+The \(m=9\) branch consequently has \(\delta\ge14,10,6\) for \(h=1,2,3\), respectively. This closes the \(h=4\) terminal but does not close the remaining \(m=8,9\) branches.
+
+## 8. Proof scope and dependencies
 
 This is a Q33-only theorem. It uses the 284-edge core, the 31-point/56-witness support, the exact-129 component factorization, and the shell-label fact that each component contributes a four-point core witness while each gadget contributes seven core vertices. It does not use the Q32 285-edge/excess-six contract.
 
