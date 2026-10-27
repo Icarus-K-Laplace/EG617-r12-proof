@@ -55,3 +55,22 @@ Round 5 correction: the claimed three-per-color hub-complete bound is withdrawn.
 
 
 Round 6 correction: the direct six-set justification was incomplete, but the stronger A/C bound is reinstated using the row-transversal theorem under the retained R(3,35) exclusion and t_s<=12. See Theorem 4.3 in FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md. The Round 5 withdrawal is superseded by this corrected proof route.
+
+
+## Round 7 — W-side support-block transversal capacity
+
+The new theorem in SUPPORT_BLOCK_W_TRANSVERSAL_CAPACITY.md adds the following consequences without identifying the 49 support blocks with the separate exact-129 K5-component quadruples.
+
+1. Every \(w\in W\) is adjacent to at least one point of every support block, so \(d_H(w,U)\ge7\).
+2. With \(y_w=d_H(w,U)-7\), the exact slack is
+   \[
+   \sum_{w\in W}y_w=\epsilon_U+2\delta-2\ge7.
+   \]
+3. Every independent 4-set \(I\subset W\) has \(\sum_{w\in I}y_w\ge1\); hence the zero-slack set \(W_0=\{w:y_w=0\}\) has \(\alpha(H[W_0])\le3\).
+4. For nonadjacent \(w,w'\in W\), the block incidence count forces
+   \[
+   |N_H(w,U)\cap N_H(w',U)|\le y_w+y_{w'}.
+   \]
+5. If an independent W-quadruple has total slack one, its four U-neighborhoods partition U into sizes \(7,7,7,8\); every support block meets all four parts exactly once. The three 7-parts are pairwise anticomplete K7s. If \(\epsilon_U+2\delta<16\), the 8-part induces a clique or a clique with at most one missing edge.
+
+The minimum-slack profiles are exactly \((\delta,\epsilon_U)=(3,3),(4,1)\), with total W-side slack seven. In either profile there are at least eleven zero-slack W vertices, but **not necessarily exactly eleven**: positive \(y_w\) values may exceed one. No graph terminal is closed by this result.
