@@ -1,132 +1,135 @@
 # Progress log — E407 Q32 two-chat closure workstream
 
-## 2026-10-26 — Round 1: rebuild actual frontier and unify the labelled high-k witness floor
+Date: 2026-10-27  
+Branch: `workstream/r12-twochat-e407-closure-20261026`
 
-### Repository isolation
-Created branch workstream/r12-twochat-e407-closure-20261026 from main (3f42fcce5761ca2372140618adda56f95fcbe253). All writes in this workstream are restricted to r12_master/workstreams/twochat-e407-closure-20261026/. Source branches are read-only.
+Historical detailed Rounds 1–12 are preserved in commit `3b336b34b8540da89f4dac6589d056ac48bcfe10` and its ancestors. This file records the current canonical progress and the new Rounds 13–15 without claiming terminal closure.
 
-### Source audit
-Read the actual latest heads:
-- E407 terminal 79c1086efca893fad8933210a92a432457232410;
-- unified witness capacity faa8183c150dd78b000d0957fa8a63cebd52e146;
-- emergency sprint f4c3b06891d29238d4f9cca2588f442004b6dc97;
-- ultimate closure 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40;
-- main 3f42fcce5761ca2372140618adda56f95fcbe253.
+## Historical state through Round 12
 
-Re-read E407 canonical/progress state, FIVE_TEMPLATE_COMPATIBILITY.md, all registered DELTA13/14/15/16 notes, the Round 31 two-cross-edge terminal proof, root canonical state/proof DAG, and the sibling exact-129 packing / row-transversal / witness-capacity records.
+The workstream had already:
 
-### New theorem (conditional necessary structure)
-Every exact-129 color has at least six B-labelled no-S K5 components \(\{b\}\cup Q\). The V12 row-type floors force at least 6/8/6/7/5 high-k B rows in templates A/B/C/D/E. Since at most four B labels are outside the six-or-more B-labelled no-S components, each exact-129 color has at least 2/4/2/3/1 high-k no-S witnesses, respectively. A/C have at least two k=3 no-S witnesses per color, each hitting all three S rows; any additional high-k witnesses are charged only two hub hits each. In B/D/E, each selected high-k witness hits at least two S rows. The aggregate S-row hit floors per color are 6/8/6/6/2 for A/B/C/D/E. Every selected Q hits at least three shell rows total; cross-color Q intersections are at most one, and same-B-label Q sets across colors are disjoint.
+- rebuilt the exact low-delta frontier and corrected the feasible profile count to 56;
+- proved the support omission-degree identity;
+- repaired the A/C component-witness capacity proof through the registered row-transversal theorem;
+- excluded the registered delta=13, epsilon_U=2 one-cross-edge (4,4,5,5) W profile;
+- proved the W-side support-block transversal and common-neighbour inequalities;
+- proved alpha(H[W])=4 universally;
+- classified zero-slack U-neighborhood classes in the low-slack region;
+- excluded single-vertex concentration of the seven minimum-slack units;
+- reduced the slack-one minimum profiles to an exact (7,7,7,8) U-kernel;
+- proved SUPPORT_BLOCK_ANCHOR_IDENTITY.md, identifying each of the 49 selected blocks with the H-four-set of a selected exact-color K5 component;
+- proved SELECTED_COMPONENT_RESIDUAL_PARTITION.md, giving the exact per-color residual `3K5 + G11` after deletion of the seven selected components.
 
-Across at least seven exact-129 colors, this gives per-template floors of 14/28/14/21/7 labelled high-k witness sets and at least 42/84/42/63/21 total shell-row-hit incidences. The proof is written in FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md. It is a strict incidence reduction, not a contradiction and not a template closure.
+E407 Q32 remained OPEN.
 
-### Exact low-delta frontier
-The integer ledger was rebuilt from \(\delta+\epsilon_U\le16\), \(\epsilon_U+2\delta\ge9\), \(0\le\epsilon_U\le4\), and \(\delta\ge3\). The full feasible table is in LOW_DELTA_TERMINAL_TABLE.md. The main unresolved low-delta rows are \(\delta=13,\epsilon_U=0\), \(\delta=13,\epsilon_U=2\) with the one-cross-edge (4,4,5,5) W profile under four-partite \(L_U\), all non-four-partite \(\delta=13\) cases, and every \(\delta\le12\) case.
+## Round 13 — selected B-anchor floor five
 
-### Proof dependency audit
-The exact-129 factorization, the five-template screen, Brouwer/Kang–Pikhurko classifications, and the Didin-dependent saturated branch are recorded separately from pure graph facts. The root main proof DAG and sibling conditional R(4,49) treatment are not silently reconciled; E407 and the original bridge remain OPEN / NOT_CERTIFIED.
+**Commit:** `f2f991695a23b30c26a90070d7c2d1ab25b9d4f8`
 
-### Next attack
-Join the 49 support-block labels to the high-k no-S component labels and shell row sets \(D_a\), without assuming these witness families coincide. Seek a contradiction common to multiple templates or a minimal surviving incidence contract. Independently audit any candidate inequality against the exact \(D_a\) row supports before using it.
+Added `SELECTED_B_ANCHOR_FLOOR.md` and `verify_selected_b_anchor_floor.py`.
 
+For one exact-129 color c, partition the ten B vertices among:
 
-## 2026-10-26 — Round 2: verifier replay and arithmetic correction
+- selected K5 components: b_c vertices;
+- three unselected K5 components: u_c vertices;
+- exceptional G11: g_c vertices.
 
-The low-delta table was independently recomputed from the exact inequalities. There are **56**, not 57, feasible \((\delta,\epsilon_U)\) pairs. The repository verifier was corrected to assert 56; each pair satisfies
+Because B is a target K10, each color-c K5 contains at most one B vertex, so u_c<=3. Since B cap G11 is independent in color c and alpha(G11)=2, g_c<=2. Hence
+
 \[
-e(H[U])+e(H[W])+e_H(U,W)=284.
+b_c+u_c+g_c=10\Longrightarrow b_c\ge5.
 \]
-The independent Python replay checked all 56 pairs, all three edge formulas, and the lower bound \(e(H[W])\ge32\).
 
-The five-template incidence verifier's arithmetic assertions were independently replayed as well. It confirms per-color high-k no-S witness floors \(2,4,2,3,1\), total witness floors \(14,28,14,21,7\), aggregate S-row hit floors \(42,56,42,42,14\), and total shell-row hit floors \(42,84,42,63,21\). For A/C the hub-hit calculation is corrected to charge at least two hits to every high-k witness and one additional hit to each of the at least two guaranteed k=3 witnesses; this avoids overcharging any additional k=2 rows.
-
-Transparency: the arithmetic assertions were independently executed in the Python reasoning environment; the GitHub-hosted scripts themselves were not launched from a repository shell in this session. They remain standard-library runnable audit scripts, not graph-realization certificates.
-
-No terminal was closed by this arithmetic replay. The global labelled-incidence join, the surviving low-delta contracts, and the original K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
-
-
-## 2026-10-26 — Round 3: support omission identity and A/C component capacity
-
-The 49 support blocks form seven disjoint 4-set blocks in each of seven color classes. Each class therefore uses 28 of the 29 points and omits exactly one point. If r_u counts how often u is omitted, and x_u counts extra support-complement edges incident to u beyond the 294 block pairs, then sum(r_u)=7, sum(x_u)=2*delta, and the exact pointwise identity is:
-
-    d_H(u,W) = 5 + epsilon_u - 3*r_u + x_u.
-
-The identity follows by counting the 3 block-pairs at u in every class containing u, then adding the extra complement edges. At least 22 points have r_u=0 and therefore at least five neighbours in W. The independent arithmetic replay checked all 15 omission partitions and all 56 feasible (delta, epsilon_U) profiles.
-
-For templates A/C, let h be the number of full B rows, h>=6. A non-hub-complete B-labelled no-S component witness must hit at least h distinct B rows. The six component witnesses in a color are disjoint, while total B-to-core incidence is c_S=3h+n_1<=2h+10<4h. Therefore at most three of the six witnesses are non-hub-complete: each exact-129 color has at least three hub-complete component witnesses, at least 21 across seven colors. This is a component-witness result and does not identify those witnesses with the 49 support blocks.
-
-LABEL_JOIN_SYSTEM.md now lists the support-block variables, shell-row variables, component witnesses, exact constraints, and the unresolved mapping between the two witness families.
-
-The arithmetic replay passed in the Python reasoning environment. The GitHub-hosted scripts themselves were not launched from a repository shell. No E407 terminal is closed; all five global templates, surviving low-delta cases, and the original K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
-
-
-## Round 4 — 2026-10-26
-
-Added DELTA13_EPS2_K4K4K5K5_ONE_CROSS_EDGE.md. Under the four-partite support contract, the remaining delta=13, epsilon_U=2 W-profile with four clique parts of sizes 4,4,5,5 and one cross-edge is excluded. The proof separates assigned and unassigned D vertices, derives an external-edge budget of at most two in the assigned case, and shows the required K4 loads exceed the available W-excess. The exceptional unassigned case is separately excluded.
-
-The arithmetic replay passed in Python: the edge ledger is 99+33+152=284, and every listed K4-load case requires more than the two available W-excess units. The verifier is arithmetic-only; analytic transversal steps still need independent proof review.
-
-The four-partite delta=13, epsilon_U=2 row is now closed under the registered W-profile classification. Four-partite epsilon_U=0, non-four-partite delta=13, all delta<=12 cases, all five global shell templates, and the original K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
-
-
-## Round 5 correction
-
-The Round 3 claim of three hub-complete component witnesses per color is withdrawn. Its proof used an anticompleteness condition for other B-rows that is not in the frozen contract. The retained A/C floor is at least two hub-complete witnesses per color from the k=3 label count. The verifier no longer asserts the stronger bound. See PROOF_DEPENDENCY_AUDIT.md.
-
-
-## Round 6 — A/C component bound reinstated through row-transversal theorem
-
-The Round 5 audit found the direct independent-six justification incomplete. Re-reading the registered row-transversal theorem resolves the gap under its explicit contract: for any missing shell edge s-b, every independent 4-set in H minus D_s meets D_b when t_s<=12, using the retained R(3,35) exclusion. Since all A/C hub rows satisfy t_s<=12, a non-hub-complete component witness must hit every full B row. The c_S budget then limits non-hub-complete witnesses to at most three; the witness's own label further limits them to 10-h. The valid conditional floor is max(3,h-4) hub-complete witnesses per color. The corrected proof and arithmetic verifier are in FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md and verify_template_incidence_system.py.
-
-
-## Round 7 — 2026-10-27: W-side support-block transversal capacity
-
-**Theorem added:** every \(w\in W\) hits all 49 support blocks, so \(d_U(w)\ge7\). With \(y_w=d_U(w)-7\),
+With seven selected components, b_c<=7, so
 \[
-\sum_W y_w=\epsilon_U+2\delta-2\ge7.
+\boxed{b_c\in\{5,6,7\}.}
 \]
-For every independent 4-set \(I\subset W\), \(\sum_{w\in I}y_w\ge1\), so the zero-slack vertices induce a graph with independence number at most three. For every nonedge \(ww'\) in H[W],
+
+The live b_c=3 and b_c=4 residual branches are therefore empty.
+
+If b_c=5, then (u_c,g_c)=(3,2). The pivot p must be selected: p cannot share an unselected K5 with B because p-B is target-colored, and p cannot lie in G11 with the two B vertices because that creates a color-c independent triple in a gadget of independence number two. Thus
 \[
-|N_H(w,U)\cap N_H(w',U)|\le y_w+y_{w'}.
+A_c^{sel}=\{p,s_c\}\cup B_c,\quad |B_c|=5.
 \]
-These are exact incidence consequences of the 49-block contract and \(\alpha(H)\le4\).
+Consequently every exact color has at most one selected S-anchor.
 
-**Slack-one branch:** if an independent W-quadruple has total y-slack one, its four U-neighborhoods partition U into sizes 7,7,7,8. Each support block meets each part once. The three 7-parts are pairwise anticomplete K7s. If \(\epsilon_U+2\delta<16\), the 8-part is a clique or has at most one missing edge. The proof is recorded in SUPPORT_BLOCK_W_TRANSVERSAL_CAPACITY.md.
+Across seven exact colors:
 
-**Frontier correction:** for the minimum-slack profiles (3,3) and (4,1), total y-slack is seven, implying at least eleven zero-slack W vertices. This does not imply exactly seven positive-slack vertices or that each positive slack equals one. The verifier and note preserve this distinction.
+- at least 35 selected support-block occurrences are B-anchored;
+- at most seven are S-anchored.
 
-No E407 template, low-\(\delta\) terminal, or original K145-to-T61 bridge is closed by this result. Next attack: determine whether the low-slack W graph must contain a slack-one independent quadruple, or prove the complementary domination/capacity branch impossible; then feed the resulting W-neighborhood classes into the shell row systems and the four-unit core excess ledger.
+Combining b_c>=5 with V12 high-k row floors gives actual selected-block floors:
 
+- A: >=7 selected k=3 B-blocks globally;
+- B: >=21 selected k>=2 B-blocks;
+- C: >=7 selected k=3 B-blocks;
+- D: >=14 selected high-k B-blocks;
+- E: no positive floor from this cardinality intersection alone.
 
-## Round 8 — 2026-10-27: universal W independence number and verifier replay
+The verifier checks only finite arithmetic, not graph realization or the external exact-129 factor theorem.
 
-The exact integer frontier implies \(\delta+\epsilon_U\ge5\), so \(e(H[W])=48-\delta-\epsilon_U\le43\). If \(\alpha(H[W])\le3\), then \(\overline{H[W]}\) is K4-free, and Turán gives \(e(H[W])\ge {18\choose2}-t_3(18)=153-108=45\). Contradiction. Hence \(\alpha(H[W])=4\) for every feasible E407 Q32 profile.
+## Round 14 — two residual shell edges per exact color
 
-Combined with the W-side transversal theorem, an independent 4-set in W must exist and every such set has total y-slack at least one. The low-delta verifier was extended to check \(\delta+\epsilon_U\ge5\), \(e(H[W])\le43\), the Turán threshold 45, and all 56 exact ledger profiles. Independent replay passed in Python.
+**Commit:** `d9478df06e1952e89f3a799dbed8ada41e441454`
 
-Remaining fork for the minimum-slack profiles (3,3) and (4,1): either exhibit/force an independent W-quadruple of total y-slack one, giving the rigid \(7,7,7,8\) U-design; or exclude the branch in which every independent W-quadruple has total slack at least two. The exact 49-block/component identity, all five shell templates, the remaining low-\(\delta\) cases, and the original K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+Added `SHELL_COLOR_EDGE_LOAD.md` and `verify_shell_color_edge_load.py`.
 
+For an exact color c, selected anchors lie in isolated selected K5 components, so any shell edge of color c has both endpoints among unselected shell labels.
 
-## Round 9 — 2026-10-27: zero-slack transversal classes
+The 26-vertex residual is three unselected K5 components plus G11. Every unselected K5 must contain an outside-core label, otherwise it would be a target-independent K5 inside H, contradicting alpha(H)<=4.
 
-Proved that any two distinct 7-point transversals of the 49-block system are disjoint: if they intersect but differ, the seven blocks through a point in one but not the other must meet the second transversal in seven distinct points, including a common point, forcing one block to contain two points of the first transversal. Hence distinct zero-slack U-neighborhoods are disjoint.
+A three-case analysis by pivot location proves that, regardless of whether p is selected, lies in an unselected K5, or lies in G11,
+\[
+\boxed{e_c(M[A\setminus A_c^{sel}])\ge2.}
+\]
 
-There are at most four such neighborhoods because U has 29 points. If there are four, their 28 points leave one point with omission count \(r=7\), which by \(d_W=5+\epsilon_u-3r_u+x_u\) requires \(\epsilon_U+2\delta\ge16\). Therefore for \(\epsilon_U+2\delta<16\), at most three distinct zero-slack neighborhood classes occur. The minimum-slack profiles (3,3) and (4,1) lie in this region.
+The seven exact colors therefore use at least fourteen distinct shell missing edges. The important output is the per-color induced-subgraph list constraint, not the scalar fourteen.
 
-This narrows the W-side low-slack structure to at most three clique classes among at least eleven zero-slack W vertices. It does not yet eliminate the cases where every independent W-quadruple has total slack at least two.
+The verifier independently checks the minimum edge count in all integer distribution cases.
 
+## Round 15 — shell-only Hall/SDR route certified insufficient
 
-## Round 10 — 2026-10-27: independent replay and proof-scope check
+**Commit:** `12ff5bfe8c631b7514f534bf0fbdfc1b0424aa92`
 
-Independent Python replay passed for all 56 feasible \((\delta,\epsilon_U)\) profiles, all three exact edge formulas, \(e(H[W])\le43\), the Turán threshold \(45\), the two minimum-slack profiles \((3,3),(4,1)\), and the total W-side slack \(Y=\epsilon_U+2\delta-2\ge7\).
+Added `SHELL_LIST_RELAXATION_AUDIT.md` and `verify_shell_list_relaxation.py`.
 
-A scope correction was made in SUPPORT_BLOCK_W_TRANSVERSAL_CAPACITY.md: if no slack-one independent W-quadruple exists, the immediate consequence is only that every independent triple in \(W_0\) is met by each vertex with \(y_w=1\). It does not impose that condition on vertices with \(y_w\ge2\). This distinction is now explicit.
+For any shell missing graph M with at least fourteen edges, choose fourteen distinct edges and pair them into seven colors. For each color, the two chosen edges use at most four B endpoints, so at least six of the ten B labels avoid both edges. Select those six B labels plus p as the abstract selected-anchor set.
 
-No shell template or low-delta terminal is closed by arithmetic replay. The active mathematical frontier is the W-side low-slack structure, the exact-129/support-block label join, and the non-four-partite \(\delta=13\) plus all \(\delta\le12\) branches.
+Thus the coarse shell-label constraints
 
+- b_c>=5;
+- at most one selected S anchor;
+- two unselected shell edges per exact color;
+- shell edge uniqueness
 
-## Round 11 — 2026-10-27: minimum W-side slack cannot be concentrated on one vertex
+are simultaneously feasible for every M with e(M)>=14. Since every V12 template has e(M)>=22, no shell-only Hall/list argument can close E407.
 
-For \((\delta,\epsilon_U)=(3,3)\), \(\epsilon_W=1\), so a single \(y=7\) vertex would have \(d_W=5+\epsilon_w-7<0\). For \((4,1)\), \(\epsilon_W=3\). If one vertex had \(y=7\), it would have \(\epsilon_w\ge2\), leaving 17 zero-slack vertices with total excess \(E_0\le1\). The at-most-three zero-neighborhood classes have sizes \(6,6,5\); the size-five clique requires at least five external W-edges, while the exact degree ledger leaves at most three. Contradiction.
+This is **not** a graph realization. It is a route audit proving that the next theorem must use the same U/H row/component geometry.
 
-Thus both minimum-slack profiles have at least two positive-slack vertices. The independent verifier's arithmetic assertions passed. This does not exclude the branch where every independent W-quadruple has total slack at least two.
+## Current mathematical gain
+
+The global join has moved from a loose “selected support blocks versus auxiliary component witnesses” problem to a genuinely labelled selected-component system:
+
+1. every selected block has an exact-color K5 anchor;
+2. at least five of the seven anchors per exact color lie in B;
+3. at most one lies in S;
+4. every exact color still has three unselected K5 components plus G11 on the exact residual 26 vertices;
+5. every exact color must own at least two shell edges completely outside its selected anchor set;
+6. the shell-only relaxation is known to be insufficient.
+
+## Current open contracts
+
+- Five templates A–E: all OPEN against the common 284-edge core/support system.
+- delta=13 four-partite epsilon_U=0: OPEN.
+- delta=13 non-four-partite: OPEN.
+- delta<=12: OPEN.
+- delta=14 saturated branch: only PROVED_CONDITIONAL because of the unaudited Didin dependency.
+- Minimum-slack complementary no-slack-one branch: OPEN.
+- Original K145/T61/V12 dependency chain and full EG617 theorem: NOT_CERTIFIED.
+
+## Highest-priority next theorem
+
+Prove a same-core labelled support-row incompatibility for A–E using the actual selected B-anchor blocks, exact D_a row supports, same-anchor block disjointness, support linearity, residual 3K5+G11 structure, W-side transversal constraints, and the four-unit core excess.
+
+No local profile or arithmetic verifier is treated as E407 closure.

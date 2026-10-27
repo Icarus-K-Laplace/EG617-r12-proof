@@ -1,74 +1,77 @@
-# E407 Q32 — open contracts and minimum missing implications
+# E407 Q32 — open contracts
 
-Date: 2026-10-26  
-Status: **OPEN / NOT_CERTIFIED.**
+Date: 2026-10-27  
+Status: **OPEN / NOT_CERTIFIED. This file lists the minimum remaining obligations after the latest selected-anchor and shell-edge theorems.**
 
-## C1. Same-core labelled-incidence join — primary blocker
+## C1. Five-template same-core labelled support-row incompatibility — primary blocker
 
-Need one explicit incidence object containing simultaneously:
-- the 47-vertex target core H and its 284 edges, minimum degree 12, alpha at most 4, inherited clique bound 11, and four-unit degree excess;
-- the support U of size 29 and W=H\U of size 18;
-- the 49 selected independent 4-sets on U, with seven blocks per exact-129 color, omitted point per class, and pairwise linearity;
-- the five alternative shell-template row systems \(D_a=N_F(a)\cap H\), with the correct row sizes and M[S] pattern;
-- the ten \(K_5\) components and exceptional gadget for every exact-129 color, including the pivot/S/B labels;
-- edge uniqueness, row-hit constraints, common-neighbour sets, W-component labels, and the four-unit degree-excess distribution.
+For each V12 template A–E, show that no single E407 core/support object can satisfy simultaneously:
 
-Current proven output: FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md gives the per-color high-k component floor 2,4,2,3,1 for A–E. The conditional A/C bound max(3,h-4) is now proved via the registered row-transversal theorem under the R(3,35) contract; the direct independent-six proof route was corrected. The support omission-degree identity is also proved. LABEL_JOIN_SYSTEM.md records the variable families and equations. Missing implication: the support blocks, shell rows, component labels, and same H must be joined into either a certified contradiction or an explicit legal realization.
+- |H|=47, e(H)=284, alpha(H)<=4, omega(H)<=11, delta(H)>=12, total core excess four;
+- U of size29, W of size18, and the exact U/W edge ledger;
+- 49 selected support blocks, seven per each of seven exact-129 colors, disjoint within color and pairwise linear;
+- each support block being the H-four-set of a selected exact-color K5 component;
+- selected anchor counts b_c in {5,6,7};
+- at most one selected S-anchor per exact color;
+- the exact template row sets D_a and missing-edge row-transversal constraints;
+- the residual exact-color factor 3K5+G11 after deleting the selected seven K5 components;
+- edge-color uniqueness and the four-unit H degree-excess distribution.
 
-## C2. Witness identity / overlap contract
+This is the unique highest-leverage global E407-Q32 contract.
 
-Do not assume the 49 support blocks \(\mathcal Q_U\) are identical to every high-k no-S component quadruple \(\mathcal R_C\). For each exact-129 color, record which of its ten \(K_5\) components supplies each selected support block, which shell label (S, B, pivot, or no shell label) the component carries, and how its four core vertices meet U/W. The support system cannot be closed by counting an unlabelled union alone.
+## C2. Shell-only closure is certified insufficient
 
-## C3. V12 template screen dependency
+Do not attempt to close C1 from only:
 
-The five A–E templates cover the 554 finite-screen survivors under the V12 lower-order seed and analytic-screen contract. The independent replay certifies finite coverage of the supplied state model, not the analytic elimination rules or existence/impossibility of a common-core completion. A proof of the retained lower-order seeds and each screen hypothesis remains part of the parent dependency chain.
+- b_c>=5;
+- at most one selected S anchor;
+- at least two unselected shell edges per exact color;
+- shell edge uniqueness.
 
-## C4. Low-\(\delta\) terminal
+`SHELL_LIST_RELAXATION_AUDIT.md` constructs a coarse label relaxation for any shell missing graph with at least fourteen edges. All five V12 templates pass this relaxation. A valid terminal proof must use U/H/row/component structure.
 
-The exact integer table is in LOW_DELTA_TERMINAL_TABLE.md. Frontier notes:
-- \(\delta=13,\epsilon_U=0\), including four-partite and non-four-partite \(L_U\);
-- See Round 4 proof note; this previously listed four-partite W-profile is no longer open.
-- \(\delta=13\) non-four-partite \(L_U\) for all feasible \(\epsilon_U\);
-- every \(\delta\le12\) case. No reduction for \(\delta=13\) may be extrapolated to \(\delta\le12\).
+## C3. Actual selected high-k blocks
 
-## C5. Conditional \(\delta=14\) saturated dependency
+The selected 49-block system, not merely auxiliary component witnesses, satisfies:
 
-The non-four-partite \(\delta=14\) saturated branch is excluded only conditional on the alpha-critical reduction and the Didin 2026 preprint component-count theorem. Until that theorem is independently audited under its exact hypotheses, retain PROVED_CONDITIONAL.
+- A: at least 7 selected k=3 B-anchored blocks globally;
+- B: at least 21 selected k>=2 B-anchored blocks;
+- C: at least 7 selected k=3 B-anchored blocks;
+- D: at least 14 selected high-k B-anchored blocks;
+- E: no positive high-k floor follows from anchor-cardinality intersection alone.
 
-## C6. Parent bridge and root theorem
+A/C blocks above are hub-complete; B/D blocks hit at least two S rows. The remaining problem is capacity/compatibility inside the same support/core incidence object.
 
-The 47-core contract is a T61-derived local contract. The original \(K_{145}\)-to-T61 implication, including the recurrence archive, lower-order seed dependencies, and conversion to the seven genuine unanchored blocks, is not certified end-to-end here. Root main also still lists E408 and E333–E340 as obligations. Neither E407 closure alone nor the local core contract proves EG617(r=12).
+## C4. Low-delta terminal
 
+Still open independently of C1:
 
-Round 4 update: the four-partite delta=13, epsilon_U=2 profile with W equal to K4+K4+K5+K5 and one cross-edge is now excluded under the registered profile contract. The non-four-partite delta=13 cases and every delta<=12 case remain open.
+- delta=13, four-partite epsilon_U=0;
+- delta=13, non-four-partite for all feasible epsilon_U not otherwise excluded;
+- every delta<=12 case.
 
+The registered delta=13 classifications may not be extrapolated to delta<=12.
 
-## C7. W-side support-block transversal join
+## C5. Minimum-slack fork
 
-Every \(w\in W\) has \(d_U(w)\ge7\), and \(Y=\sum_W(d_U(w)-7)=\epsilon_U+2\delta-2\ge7\). Every independent W-quadruple has total Y-slack at least one; every nonadjacent W-pair has U-neighborhood intersection at most the sum of its individual slacks.
+At (delta,epsilon_U)=(3,3) or (4,1), if a slack-one independent W-four-set exists, `MINIMUM_SLACK_EXACT_CORE.md` gives a finite exact four-partite U kernel. Otherwise every independent W-four-set has slack at least two. Neither branch is globally excluded.
 
-For the minimum-slack profiles \((3,3)\) and \((4,1)\), Y=7 and at least eleven W vertices have zero slack. The remaining issue is to exploit the zero-slack neighborhood classes and the degree caps \(d_W(w)=5+\epsilon_w-y_w\). Do not assume the seven units of Y are spread across seven vertices.
+The new selected-anchor theorem applies to both branches and should be incorporated into any finite kernel analysis.
 
-If an independent W-quadruple has total slack one, a \(7,7,7,8\) support transversal design is forced, including three pairwise anticomplete K7 parts and the R-side omission restrictions in SUPPORT_BLOCK_W_TRANSVERSAL_CAPACITY.md. The open alternative is that every independent triple in \(W_0\) is met by every \(y=1\) vertex, so no slack-one quadruple exists. Neither branch has yet been excluded.
+## C6. Delta=14 conditional dependency
 
+The non-four-partite K5-saturated delta=14 branch remains conditional on the Didin 2026 preprint theorem used by the alpha-critical reduction. A terminal E407 proof cannot call this branch unconditional without independently discharging that dependency or replacing it.
 
-## C8. Low-slack zero-neighborhood class structure
+## C7. V12 exhaustiveness dependency
 
-When \(\epsilon_U+2\delta<16\), the zero-slack W vertices have at most three distinct U-neighborhoods; vertices with the same neighborhood form a clique, and distinct neighborhoods are disjoint 7-point transversals. For the minimum-slack profiles (3,3) and (4,1), there are at least eleven zero-slack vertices but at most three neighborhood classes. The remaining problem is to combine these class sizes, the exact W degree sequence \(d_W(w)=5+\epsilon_w-y_w\), and \(\alpha(H[W])=4\). No contradiction has yet been derived for the branch in which all independent W-quadruples have total slack at least two.
+The five templates cover the finite-screen survivors only under the retained V12 analytic/lower-order contracts. Finite replay alone does not certify every analytic screen theorem. This dependency remains in the parent chain.
 
+## C8. Original K145 bridge
 
-## C9. Minimum-slack multiplicity
+Even a complete E407-Q32 closure is only one local T61 obligation. The original K145-to-T61/legal-residual proof chain, E408, and root backend obligations must be assessed separately before claiming EG617(r=12).
 
-For the two profiles \((3,3)\) and \((4,1)\), total W-side slack is seven, but it cannot be concentrated on a single vertex. At least two vertices have positive slack and at least eleven have zero slack. The remaining possible distributions of the seven units, together with the at-most-three zero-neighborhood clique classes, must be reconciled with \(\alpha(H[W])=4\). A slack-one independent W-quadruple is still not guaranteed.
+## Current minimal theorem statement sought
 
-## C10. Minimum-slack exact-core branch
+> **E407 Q32 Same-Core Labelled Compatibility Theorem.** Under the frozen E407 Q32 parent contract and retained V12 screen hypotheses, none of shell templates A–E admits seven exact-129 selected-component classes on a common 29-point support U and 284-edge core H satisfying the selected-anchor, row-transversal, residual-factor, edge-uniqueness, and four-excess constraints.
 
-`MINIMUM_SLACK_EXACT_CORE.md` closes the structural classification of the **slack-one independent-four-set branch** for \(\epsilon_U+2\delta=9\).
-
-If such a quadruple exists, then \(L_U=\overline{H[U]}\) is exactly four-partite with parts \((7,7,7,8)\), the size-eight part is a target K8, and all extra complement edges lie among the 21 missing T-R partner pairs. The three seven-parts are target K7s and pairwise target-anticomplete.
-
-For \((\delta,\epsilon_U)=(4,1)\), only omission pattern \((1^7,0)\) survives; there are three exact target K11s \(T_i\cup C_i\), the residual set N has size six, and the unique zero-omission R-point has exactly N as its W-neighborhood.
-
-For \((3,3)\), only \((2,1^5,0^2)\) and \((1^7,0)\) remain. The first forces three K11s and |N|=6; the second has class sizes \((4,4,4)\) or \((4,4,3)\).
-
-The remaining minimum-slack blocker is therefore precise: either exclude these finite exact-core kernels by shell-template compatibility, or prove that every independent W-four-set has total slack at least two and then close that complementary domination branch. No claim is made that either task is already solved.
+Proving this theorem would close the five-template global compatibility obstruction, but the conditional delta=14 dependency and parent/root proof chain would still require an audit before a full EG617 claim.
