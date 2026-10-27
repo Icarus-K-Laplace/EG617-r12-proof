@@ -41,3 +41,12 @@ The 47-core contract is a T61-derived local contract. The original \(K_{145}\)-t
 
 
 Round 4 update: the four-partite delta=13, epsilon_U=2 profile with W equal to K4+K4+K5+K5 and one cross-edge is now excluded under the registered profile contract. The non-four-partite delta=13 cases and every delta<=12 case remain open.
+
+
+## C7. W-side support-block transversal join
+
+Every \(w\in W\) has \(d_U(w)\ge7\), and \(Y=\sum_W(d_U(w)-7)=\epsilon_U+2\delta-2\ge7\). Every independent W-quadruple has total Y-slack at least one; every nonadjacent W-pair has U-neighborhood intersection at most the sum of its individual slacks.
+
+For the minimum-slack profiles \((3,3)\) and \((4,1)\), Y=7 and at least eleven W vertices have zero slack. The remaining issue is to exploit the zero-slack neighborhood classes and the degree caps \(d_W(w)=5+\epsilon_w-y_w\). Do not assume the seven units of Y are spread across seven vertices.
+
+If an independent W-quadruple has total slack one, a \(7,7,7,8\) support transversal design is forced, including three pairwise anticomplete K7 parts and the R-side omission restrictions in SUPPORT_BLOCK_W_TRANSVERSAL_CAPACITY.md. The open alternative is that every independent triple in \(W_0\) is met by every \(y=1\) vertex, so no slack-one quadruple exists. Neither branch has yet been excluded.
