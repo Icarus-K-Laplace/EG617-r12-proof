@@ -36,6 +36,12 @@ def main():
     assert actual_eps == expected_eps
     assert len(feasible) == sum(map(len, expected_eps.values())) == 56
 
+    # Every feasible profile has delta+epsilon_U >= 5, hence e(H[W]) <= 43.
+    # If alpha(H[W]) <= 3, Turan gives e(H[W]) >= C(18,2)-t_3(18)=45.
+    assert min(delta + eps for delta, eps, *_ in feasible) == 5
+    assert max(48 - eps - delta for delta, eps, *_ in feasible) == 43
+    assert 18 * 17 // 2 - (6 * 6 + 6 * 6 + 6 * 6) == 45
+
     # Check every table row against the exact cross-edge formula and the
     # fixed total edge count. These assertions are not graph-realization checks.
     for delta, eps_u, e_u, e_w, e_cross in feasible:
