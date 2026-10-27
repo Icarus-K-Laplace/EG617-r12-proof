@@ -105,3 +105,12 @@ The exact integer frontier implies \(\delta+\epsilon_U\ge5\), so \(e(H[W])=48-\d
 Combined with the W-side transversal theorem, an independent 4-set in W must exist and every such set has total y-slack at least one. The low-delta verifier was extended to check \(\delta+\epsilon_U\ge5\), \(e(H[W])\le43\), the Turán threshold 45, and all 56 exact ledger profiles. Independent replay passed in Python.
 
 Remaining fork for the minimum-slack profiles (3,3) and (4,1): either exhibit/force an independent W-quadruple of total y-slack one, giving the rigid \(7,7,7,8\) U-design; or exclude the branch in which every independent W-quadruple has total slack at least two. The exact 49-block/component identity, all five shell templates, the remaining low-\(\delta\) cases, and the original K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## Round 9 — 2026-10-27: zero-slack transversal classes
+
+Proved that any two distinct 7-point transversals of the 49-block system are disjoint: if they intersect but differ, the seven blocks through a point in one but not the other must meet the second transversal in seven distinct points, including a common point, forcing one block to contain two points of the first transversal. Hence distinct zero-slack U-neighborhoods are disjoint.
+
+There are at most four such neighborhoods because U has 29 points. If there are four, their 28 points leave one point with omission count \(r=7\), which by \(d_W=5+\epsilon_u-3r_u+x_u\) requires \(\epsilon_U+2\delta\ge16\). Therefore for \(\epsilon_U+2\delta<16\), at most three distinct zero-slack neighborhood classes occur. The minimum-slack profiles (3,3) and (4,1) lie in this region.
+
+This narrows the W-side low-slack structure to at most three clique classes among at least eleven zero-slack W vertices. It does not yet eliminate the cases where every independent W-quadruple has total slack at least two.
