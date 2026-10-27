@@ -37,6 +37,11 @@ and
 
 Let \(W_0=\{w:y_w=0\}\) and \(W_+=W\setminus W_0\). Since \(\sum_W y_w\ge7\), at most \(\sum_W y_w\) vertices lie in \(W_+\), and every independent 4-set in H[W] contains at least one vertex of \(W_+\), as shown next.
 
+**Transversal-disjointness lemma.** Any two distinct 7-point transversals of \(\mathcal Q\) are disjoint. If transversals T and T' intersect but differ, choose \(t\in T\setminus T'\). The seven blocks containing t meet T' in seven distinct points (otherwise a pair \(\{t,v\}\) would repeat), so one such block contains a point \(u\in T\cap T'\). That block then contains both t and u from T, contradicting that T is a transversal.
+
+Consequently there are at most four distinct zero-slack neighborhoods. If there are four, they are disjoint 7-sets covering 28 points, and the one remaining point has \(r_u=7\). The omission-degree identity then forces \(\epsilon_U+2\delta\ge16\). Therefore, whenever \(\epsilon_U+2\delta<16\), there are at most three distinct zero-slack U-neighborhoods.
+
+
 ## 3. Theorem B — positive-slack vertices cover every independent 4-set in W
 
 **Theorem B.** For every independent 4-set \(I\subset W\),
