@@ -116,3 +116,26 @@ It adds a common W-side contract:
 For the two minimum-slack profiles \((\delta,\epsilon_U)=(3,3)\) and \((4,1)\), the total W-side slack is exactly seven. Therefore at most seven W vertices have positive slack, at least eleven have \(y=0\), and \(H[W_0]\) has independence number at most three. **Do not infer that there are exactly seven positive-slack vertices or that each positive slack equals one**; a single vertex may carry more than one unit. Every independent W-quadruple contains a positive-slack vertex. If an independent quadruple with total slack one exists, the \(7,7,7,8\) structure above is forced; otherwise, for every independent triple in \(W_0\), every vertex w with y_w=1 must be adjacent to at least one member of that triple. This condition is vacuous if no vertex has y_w=1; it does not constrain vertices with y_w>=2.
 
 The global shell join, the non-four-partite low-\(\delta\) branches, and the original \(K_{145}\)-to-T61 bridge remain OPEN / NOT_CERTIFIED.
+
+
+## 7. Minimum-slack profiles cannot concentrate all seven units on one W vertex
+
+For \((\delta,\epsilon_U)=(3,3)\), the W-side slack is \(Y=7\) and the W-excess is \(\epsilon_W=4-\epsilon_U=1\). A single vertex with \(y_w=7\) would have
+\[
+d_H(w,W)=5+\epsilon_w-y_w\le5+1-7<0,
+\]
+impossible.
+
+For \((\delta,\epsilon_U)=(4,1)\), \(Y=7\) and \(\epsilon_W=3\). Suppose one vertex w carries all seven units. Then \(\epsilon_w\ge2\) from \(d_H(w,W)=5+\epsilon_w-7\ge0\), so the other 17 vertices have total excess \(E_0\le1\) and zero slack. The zero-slack neighborhoods form at most three clique classes, and each class has size at most six: a size-seven clique would force at least one excess unit on each of seven vertices, contradicting \(\epsilon_W=3\). Thus the 17 zero-slack vertices have class sizes \(6,6,5\).
+
+Each zero-slack vertex has W-degree \(5+\epsilon_v\). The \(6,6,5\) class partition contributes 40 internal edges and leaves exactly \(5+E_0\) external degree incidences from the zero-slack vertices. The exceptional vertex has W-degree \(\epsilon_w-2=1-E_0\), so there are exactly \(1-E_0\) edges from it to the zero-slack vertices. Therefore the number of edges between distinct zero-slack classes is
+\[
+\frac{(5+E_0)-(1-E_0)}2=2+E_0,
+\]
+and the total number of external edges from the size-five class is at most
+\[
+(2+E_0)+(1-E_0)=3.
+\]
+But each of its five vertices has internal degree four and total W-degree at least five, requiring at least five external edges incident to that class. Contradiction.
+
+Hence neither minimum-slack profile can have a single positive-slack W vertex. In both profiles, at least two W vertices have positive slack and at least eleven have zero slack. This still does not force a slack-one independent W-quadruple.
