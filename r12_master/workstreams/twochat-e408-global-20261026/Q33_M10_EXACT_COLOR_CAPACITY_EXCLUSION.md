@@ -121,23 +121,35 @@ Combining with (2), the full conditional result is:
 \]
 
 
-## 6. Quantitative frontier for the remaining \(m=9\) branch
+## 6. Joint \(U/W\) pair-cost constraints for the remaining \(m=9\) branch
 
-For the one exact color outside the selected eight, (3) requires \(\sum_{\ell=1}^{10} k_\ell\ge24\). Inequality (5) then gives the sharper lower bound
+For the one exact color outside the selected eight, let \(k_\ell=|Q_{D,\ell}\cap U|\). In addition to
 \[
-\sum_{\ell=1}^{10}\binom{k_\ell}{2}\ge18.
+\sum_{\ell=1}^{10} k_\ell\ge24,\qquad
+c_U:=\sum_{\ell=1}^{10}\binom{k_\ell}{2}\le\delta+4h,
 \]
-Together with (4),
+the \(W\)-parts of these ten component four-sets are edge-disjoint from the selected colors' component witnesses. Since the latter contribute at least \(72+6h\) edges to \(\overline{H[W]}\),
 \[
-\delta\ge18-4h.
+c_W:=\sum_{\ell=1}^{10}\binom{4-k_\ell}{2}
+\le e(\overline{H[W]})-(72+6h)
+\le7+\delta+\epsilon_U-6h. \tag{6}
 \]
-Since \(h=4\) is excluded in Section 7 below, the remaining \(m=9\) possibilities satisfy:
+
+The pointwise capacity inequality (5) gives \(c_U\ge18\) whenever \(\sum k_\ell\ge24\). Therefore \(\delta\ge18-4h\). For \(h=3\), a stronger bound holds: if \(\delta\le10\), then \(c_U\le22\) and, since \(\epsilon_U\le4\), (6) gives \(c_W\le3\). But ten values \(k_\ell\in\{0,\ldots,4\}\) with \(\sum k_\ell\ge24\) and \(c_W\le3\) necessarily have \(c_U\ge24\): \(c_W\le3\) forbids \(k=0\), allows at most one \(k=1\), and otherwise allows at most three \(k=2\), forcing at least seven \(k\ge3\). Contradiction. Hence \(\delta\ge11\) when \(h=3\).
+
+The final bounds are:
 
 | \(h\) | lower bound on \(\delta\) |
 |---:|---:|
 | 1 | 14 |
 | 2 | 10 |
-| 3 | 6 |
+| 3 | 11 |
+
+There are also exact endpoint patterns:
+- If \(h=1,\delta=14\), or \(h=2,\delta=10\), then \(c_U\le18\) and \(\sum k_\ell\ge24\) force exactly six \(k_\ell=2\) and four \(k_\ell=3\). If \(h=2,\delta=10\), equation (6) further forces \(\epsilon_U\ge1\); if \(\epsilon_U=1\), the selected witnesses and the six \(W\)-edges from the ninth color exhaust \(\overline{H[W]}\).
+- If \(h=3,\delta=11\), then \(\epsilon_U=4\), and the ten values consist of four \(k_\ell=2\) and six \(k_\ell=3\). The four \(W\)-edges from the \(k=2\) sets, together with the selected-color component witnesses, exhaust \(\overline{H[W]}\).
+
+These are exact residual incidence contracts, not yet contradictions.
 
 ## 7. The endpoint \(h=4\) is impossible: an orthogonal-array obstruction
 
