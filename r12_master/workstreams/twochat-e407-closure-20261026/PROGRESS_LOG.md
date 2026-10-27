@@ -123,3 +123,10 @@ Independent Python replay passed for all 56 feasible \((\delta,\epsilon_U)\) pro
 A scope correction was made in SUPPORT_BLOCK_W_TRANSVERSAL_CAPACITY.md: if no slack-one independent W-quadruple exists, the immediate consequence is only that every independent triple in \(W_0\) is met by each vertex with \(y_w=1\). It does not impose that condition on vertices with \(y_w\ge2\). This distinction is now explicit.
 
 No shell template or low-delta terminal is closed by arithmetic replay. The active mathematical frontier is the W-side low-slack structure, the exact-129/support-block label join, and the non-four-partite \(\delta=13\) plus all \(\delta\le12\) branches.
+
+
+## Round 11 — 2026-10-27: minimum W-side slack cannot be concentrated on one vertex
+
+For \((\delta,\epsilon_U)=(3,3)\), \(\epsilon_W=1\), so a single \(y=7\) vertex would have \(d_W=5+\epsilon_w-7<0\). For \((4,1)\), \(\epsilon_W=3\). If one vertex had \(y=7\), it would have \(\epsilon_w\ge2\), leaving 17 zero-slack vertices with total excess \(E_0\le1\). The at-most-three zero-neighborhood classes have sizes \(6,6,5\); the size-five clique requires at least five external W-edges, while the exact degree ledger leaves at most three. Contradiction.
+
+Thus both minimum-slack profiles have at least two positive-slack vertices. The independent verifier's arithmetic assertions passed. This does not exclude the branch where every independent W-quadruple has total slack at least two.
