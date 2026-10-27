@@ -60,3 +60,15 @@ When \(\epsilon_U+2\delta<16\), the zero-slack W vertices have at most three dis
 ## C9. Minimum-slack multiplicity
 
 For the two profiles \((3,3)\) and \((4,1)\), total W-side slack is seven, but it cannot be concentrated on a single vertex. At least two vertices have positive slack and at least eleven have zero slack. The remaining possible distributions of the seven units, together with the at-most-three zero-neighborhood clique classes, must be reconciled with \(\alpha(H[W])=4\). A slack-one independent W-quadruple is still not guaranteed.
+
+## C10. Minimum-slack exact-core branch
+
+`MINIMUM_SLACK_EXACT_CORE.md` closes the structural classification of the **slack-one independent-four-set branch** for \(\epsilon_U+2\delta=9\).
+
+If such a quadruple exists, then \(L_U=\overline{H[U]}\) is exactly four-partite with parts \((7,7,7,8)\), the size-eight part is a target K8, and all extra complement edges lie among the 21 missing T-R partner pairs. The three seven-parts are target K7s and pairwise target-anticomplete.
+
+For \((\delta,\epsilon_U)=(4,1)\), only omission pattern \((1^7,0)\) survives; there are three exact target K11s \(T_i\cup C_i\), the residual set N has size six, and the unique zero-omission R-point has exactly N as its W-neighborhood.
+
+For \((3,3)\), only \((2,1^5,0^2)\) and \((1^7,0)\) remain. The first forces three K11s and |N|=6; the second has class sizes \((4,4,4)\) or \((4,4,3)\).
+
+The remaining minimum-slack blocker is therefore precise: either exclude these finite exact-core kernels by shell-template compatibility, or prove that every independent W-four-set has total slack at least two and then close that complementary domination branch. No claim is made that either task is already solved.
