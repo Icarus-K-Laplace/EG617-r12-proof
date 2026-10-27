@@ -77,7 +77,7 @@ The source proves the 285-edge support floor \(|U|\ge44\) and the pair-uniquenes
 
 ## 7. Q33 exact-color count capacity theorem
 
-New theorem: Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md. New arithmetic verifier: verify_q33_exact_color_count_capacity.py.
+New theorem: Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md. Arithmetic verifier: verify_q33_exact_color_count_capacity.py. The h=4 endpoint has a separate exhaustive verifier: verify_q33_h4_orthogonal_array.py.
 
 Independent replay of the finite dynamic program gives:
 - 20 variables \(k_i\in\{0,1,2,3,4\}\), cost budget 33: maximum incidence sum 46;
@@ -87,6 +87,6 @@ Independent replay of the finite dynamic program gives:
 
 The graph-level conditional proof first derives \(h\le4\) from the 16-point complement \(W\), then charges overlaps between unselected component K4s and selected gadget witnesses at no more than four edges per gadget witness. It excludes \(m=10\), and shows \(m=9\Rightarrow h\ge1\). This uses the 284-edge Q33 contract only; no 285-edge result is imported.
 
-Status: PROVED_CONDITIONAL for the named contracts. If (m=9), (delta\ge18-4h); if (h=4), (H[W]=4K_4) and the selected component witnesses edge-partition (K_{4,4,4,4}). These are exact residual constraints, not a closure. Q33 global compatibility remains OPEN.
+Status: PROVED_CONDITIONAL for the named contracts. If (m=9), (delta\ge14,10,6) for (h=1,2,3). The h=4 endpoint would force (H[W]=4K_4) and an edge-partition of (K_{4,4,4,4}) into four (K_4)'s and 24 triangles; this induces impossible OA(4,4,2,2), so h<=3. Q33 global compatibility remains OPEN.
 
 The R7 double-star theorem's pigeonhole sentence was also clarified: the selected vertex belongs to at least two row-neighbor sets (V'\setminus E_i), so it is adjacent to at least two rows of the constructed (K_{12}). This is a wording audit correction, not a change in the theorem.
