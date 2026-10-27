@@ -110,3 +110,18 @@ See FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md, LOW_DELTA_TERMINAL_TABLE.md, PROOF_DE
 The four-partite delta=13, epsilon_U=2 profile with W equal to K4+K4+K5+K5 plus one W-cross-edge is now excluded under the registered W-profile contract. See DELTA13_EPS2_K4K4K5K5_ONE_CROSS_EDGE.md. The arithmetic replay is in verify_delta13_eps2_one_cross_edge.py.
 
 This closes that one W-profile only. The support-block/component-witness map remains open, and no global template or original EG617 proof is certified.
+
+
+## Round 7 — new common W-side contract (2026-10-27)
+
+Added SUPPORT_BLOCK_W_TRANSVERSAL_CAPACITY.md and its arithmetic verifier. Every W vertex must hit all 49 independent support blocks, so \(d_H(w,U)\ge7\). The exact W-side degree slack is
+\[
+Y:=\sum_{w\in W}(d_H(w,U)-7)=\epsilon_U+2\delta-2\ge7.
+\]
+Every independent 4-set in W contains at least one positive-slack vertex, and every nonedge \(ww'\) in H[W] satisfies
+\[
+|N_H(w,U)\cap N_H(w',U)|\le y_w+y_{w'}.
+\]
+A slack-one independent W-quadruple forces a \(7,7,7,8\) partition of U whose every support block has one point in each part; the three 7-parts are pairwise anticomplete cliques. This is a necessary-structure theorem only, not a terminal closure.
+
+For the two minimum-slack profiles \((\delta,\epsilon_U)=(3,3),(4,1)\), \(Y=7\), so at least 11 W vertices have zero slack. It is not valid to infer exactly 11 zero-slack vertices or seven vertices with slack one; the integer slack can concentrate on fewer vertices.
