@@ -55,3 +55,8 @@ If an independent W-quadruple has total slack one, a \(7,7,7,8\) support transve
 ## C8. Low-slack zero-neighborhood class structure
 
 When \(\epsilon_U+2\delta<16\), the zero-slack W vertices have at most three distinct U-neighborhoods; vertices with the same neighborhood form a clique, and distinct neighborhoods are disjoint 7-point transversals. For the minimum-slack profiles (3,3) and (4,1), there are at least eleven zero-slack vertices but at most three neighborhood classes. The remaining problem is to combine these class sizes, the exact W degree sequence \(d_W(w)=5+\epsilon_w-y_w\), and \(\alpha(H[W])=4\). No contradiction has yet been derived for the branch in which all independent W-quadruples have total slack at least two.
+
+
+## C9. Minimum-slack multiplicity
+
+For the two profiles \((3,3)\) and \((4,1)\), total W-side slack is seven, but it cannot be concentrated on a single vertex. At least two vertices have positive slack and at least eleven have zero slack. The remaining possible distributions of the seven units, together with the at-most-three zero-neighborhood clique classes, must be reconciled with \(\alpha(H[W])=4\). A slack-one independent W-quadruple is still not guaranteed.
