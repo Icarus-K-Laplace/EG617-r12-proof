@@ -1,7 +1,7 @@
-# E408 Q32 — exact-color count collapses to m=8
+# E408 Q32 — all exact-color counts are impossible
 
 Updated: 2026-10-27  
-Status: **PROVED_CONDITIONAL** under the registered E408/T61 residual contract and the cited Brouwer--Kang--Pikhurko second-Turan theorem.
+Status: **PROVED_CONDITIONAL Q32 CONTRADICTION** under the registered E408/T61 residual contract, exact-129 Type-I classification, exceptional injectivity, full-color pointwise degree floors, and the cited Brouwer--Kang--Pikhurko second-Turan theorem.
 
 ## 1. Frozen residual contract
 
@@ -11,9 +11,12 @@ Let F be the 61-vertex E408 target residual. For the eleven non-target colors C,
 e_C(R)=129+s_C,\qquad s_C\ge0,\qquad \sum_C s_C=3.
 \]
 
-An exact color has s=0. Therefore the number m of exact-129 colors lies in \(\{8,9,10\}\).
+An exact color has s=0. Hence the number m of exact-129 colors lies in
+\[
+\boxed{m\in\{8,9,10\}}.
+\]
 
-For every exact color, the Type-I equality graph has one exceptional vertex of color-degree nine; all other residual vertices have color-degree at least four. `Q32_GLOBAL_EXCEPTIONAL_INJECTIVITY.md` proves that a residual vertex cannot be the exceptional vertex for two different exact colors. Hence the m exact colors have m distinct exceptional vertices.
+For every exact color, the Type-I equality graph has one exceptional vertex of color-degree nine and all other residual vertices have color-degree at least four. `Q32_GLOBAL_EXCEPTIONAL_INJECTIVITY.md` proves that a residual vertex cannot be exceptional for two different exact colors, so the m exact colors have m distinct exceptional vertices.
 
 We use the independently proved full-color pointwise floors:
 
@@ -21,117 +24,109 @@ We use the independently proved full-color pointwise floors:
 - s=1: minimum color degree at least 3;
 - s>=2 in the E408 frontier: minimum color degree at least 2.
 
-We also use the following form of Brouwer's theorem. If G has n vertices, independence number at most r, clique number at most five, and n>5r, then the complement is K_{r+1}-free and non-r-partite, so
+We also use the complement form of Brouwer's theorem. If a graph G has n vertices, alpha(G)<=r, omega(G)<=5, and n>5r, then \(\overline G\) is K_{r+1}-free and non-r-partite, so
 
 \[
 e(G)\ge p_r(n)+\left\lfloor\frac nr\right\rfloor-1.
 \]
 
-This is the complement form of the Brouwer / Kang--Pikhurko non-r-partite Turan bound.
+This is precisely the Brouwer / Kang--Pikhurko non-r-partite Turan bound applied to the complement.
 
 ## 2. Low-degree lemmas for nonexact colors
 
-### Lemma 2.1 — an s=2 color has no degree-two vertex
+### Lemma 2.1 — a 131-edge color has minimum degree at least three
 
-Let D have e(D)=131, alpha(D)<=12, omega(D)<=5. Suppose d_D(v)=2. Let N be the 58 non-neighbours of v, excluding v. Since v is anticomplete to N, alpha(D[N])<=11; also omega(D[N])<=5. Because 58>55,
+Let D have e(D)=131, alpha(D)<=12, omega(D)<=5. Suppose d_D(v)=2. Let N be the 58 non-neighbours of v, excluding v. Since v is anticomplete to N, alpha(D[N])<=11 and omega(D[N])<=5. Since 58>55,
 
 \[
 e(D[N])\ge p_{11}(58)+\lfloor58/11\rfloor-1=125+5-1=129.
 \]
 
-The two edges at v already use the remaining two edges of D. Thus no edge can join the two neighbours of v to each other or to N. Both neighbours would have degree one, contradicting the registered s>=2 minimum-degree floor two. Hence
+The two edges incident to v already use the remaining two edges of D. Therefore no further edge can touch either neighbour of v, so both would have degree one, contradicting the registered s>=2 degree floor two. Hence
 
 \[
-\boxed{\delta(D)\ge3\quad\text{when }e(D)=131.}
+\boxed{\delta(D)\ge3\quad\text{for }e(D)=131.}
 \]
 
-### Lemma 2.2 — degree-three vertices of an s=1 color form isolated K4 components
+### Lemma 2.2 — degree-three vertices of a 130-edge color form isolated K4 components
 
-Let D have e(D)=130, alpha(D)<=12, omega(D)<=5, and let d_D(v)=3. Let N be the 57 non-neighbours of v and S=N_D(v), |S|=3. Again alpha(D[N])<=11 and omega(D[N])<=5. Since 57>55,
+Let D have e(D)=130, alpha(D)<=12, omega(D)<=5, and d_D(v)=3. Let N be the 57 non-neighbours of v and S=N_D(v), |S|=3. Then alpha(D[N])<=11 and omega(D[N])<=5, so
 
 \[
 e(D[N])\ge p_{11}(57)+\lfloor57/11\rfloor-1=120+5-1=124.
 \]
 
-After the 124 edges in N and the three edges from v to S, at most three edges remain. Every point of S has degree at least three, so after its edge to v the three vertices of S need at least six further degree incidences. Three remaining edges can supply at most six incidences, with equality only when all three edges lie inside S. Therefore S is a triangle, there are no S--N edges, and
+After the 124 edges in N and the three v--S edges, at most three edges remain. Every point of S has degree at least three, so after its edge to v the three vertices of S require at least six further degree incidences. Three edges can supply at most six incidences, with equality only when all three are internal to S. Thus S is a triangle, there are no S--N edges, and
 
 \[
 D[\{v\}\cup S]=K_4
 \]
 
-is an isolated component. Every vertex of that K4 has degree exactly three.
+is an isolated component. All four of its vertices have degree exactly three.
 
-Thus all degree-three vertices of a 130-edge color are partitioned into isolated K4 components.
+Therefore all degree-three vertices of a 130-edge color are partitioned into isolated K4 components.
 
-### Lemma 2.3 — an s=1 color has at most eight degree-three vertices
+### Lemma 2.3 — a 130-edge color has at most four degree-three vertices
 
-If D had at least nine degree-three vertices, Lemma 2.2 would give at least three isolated K4 components. Delete any three of them. The remaining graph D' has
+Two isolated K4 components are already impossible. If D contained two, delete their eight vertices. The remaining graph D' has
 
 \[
-|V(D')|=49,\qquad e(D')=130-3\cdot6=112.
+|V(D')|=53,\qquad e(D')=130-2\cdot6=118.
 \]
 
-Every independent set of D' can be enlarged by one vertex from each deleted K4, hence alpha(D')<=9. Also omega(D')<=5. Since 49>45,
+Every independent set of D' can be enlarged by one vertex from each deleted K4, so alpha(D')<=10. Also omega(D')<=5. Since 53>50,
 
 \[
-e(D')\ge p_9(49)+\lfloor49/9\rfloor-1=110+5-1=114,
+e(D')\ge p_{10}(53)+\lfloor53/10\rfloor-1
+=115+5-1=119,
 \]
 
-contradicting e(D')=112. Therefore
+contradicting e(D')=118. Hence D has at most one isolated K4. By Lemma 2.2,
 
 \[
-\boxed{\#\{v:d_D(v)=3\}\le8\quad\text{for every }130\text{-edge non-target color}.}
+\boxed{\#\{v:d_D(v)=3\}\le4\quad\text{for every }130\text{-edge non-target color}.}
 \]
 
 ### Lemma 2.4 — degree-two vertices of a 132-edge color lie in isolated triangles
 
-Let D have e(D)=132 and let d_D(v)=2. The same 58-point non-neighbourhood argument gives e(D[N])>=129. Beyond N and the two v-edges there is room for at most one further edge. Both neighbours of v have degree at least two, so that one edge must join them. No edge joins them to N. Hence v and its two neighbours form an isolated K3, and all three have degree two.
+Let D have e(D)=132 and d_D(v)=2. The same 58-point non-neighbourhood argument gives e(D[N])>=129. Beyond N and the two v-edges there is room for at most one additional edge. Both neighbours of v have degree at least two, so that edge must join them; no edge joins them to N. Thus v and its two neighbours form an isolated K3 and all three have degree two.
 
-Consequently all degree-two vertices of D occur in disjoint isolated K3 components.
+Therefore all degree-two vertices occur in disjoint isolated triangles.
 
-Four such components are impossible: deleting four isolated triangles leaves a 49-vertex graph with
-
-\[
-e=132-4\cdot3=120,
-\]
-
-and independence number at most 8. But Turan's elementary lower bound gives
+Four such components are impossible: deleting four isolated K3s leaves 49 vertices, 120 edges, and independence number at most eight, whereas the elementary Turan lower bound gives
 
 \[
 p_8(49)=126>120.
 \]
 
-Therefore a 132-edge non-target color has at most nine degree-two vertices.
+Hence a 132-edge non-target color has at most nine degree-two vertices.
 
 ## 3. Exclude m=10
 
 If m=10, the unique nonexact color D has s=3 and e(D)=132.
 
-Let x be an exceptional vertex of one exact color. At x:
+At an exact exceptional vertex x:
 
 - its own exact color contributes degree 9;
 - the other nine exact colors contribute at least 4 each;
 - the target color contributes at least 13.
 
-Since the complete-graph degree is 60,
+Thus
 
 \[
 d_D(x)\le60-13-9-9\cdot4=2.
 \]
 
-The s>=2 pointwise floor gives d_D(x)>=2, so every exact exceptional vertex has D-degree exactly two. Exceptional injectivity gives ten distinct such vertices.
+The s>=2 pointwise floor gives equality d_D(x)=2. Exceptional injectivity provides ten distinct exact exceptional vertices, so D has at least ten degree-two vertices. Lemma 2.4 says degree-two vertices occur in isolated triangles, hence their number is a multiple of three; at least ten forces at least twelve, i.e. four isolated triangles. Lemma 2.4 excludes four. Contradiction.
 
-By Lemma 2.4, degree-two vertices occur in isolated K3 components, hence their number is a multiple of three. Ten distinct degree-two vertices force at least twelve, i.e. at least four isolated triangles. Lemma 2.4 excludes four. Contradiction.
-
-Thus
-
+Therefore
 \[
 \boxed{m\ne10.}
 \]
 
 ## 4. Exclude m=9
 
-If m=9, the two nonexact colors have positive excesses 1 and 2. Call them D_1 and D_2, with 130 and 131 edges respectively.
+If m=9, the two nonexact colors have positive excesses 1 and 2. Call them D_1 and D_2, with 130 and 131 edges.
 
 At an exact exceptional vertex x,
 
@@ -140,39 +135,75 @@ d_{D_1}(x)+d_{D_2}(x)
 \le60-13-9-8\cdot4=6.
 \]
 
-Lemma 2.1 gives d_{D_2}(x)>=3, while the s=1 pointwise theorem gives d_{D_1}(x)>=3. Hence both are exactly three at every exact exceptional vertex.
+Lemma 2.1 gives d_{D_2}(x)>=3, and the s=1 pointwise theorem gives d_{D_1}(x)>=3. Therefore both equal three at every exact exceptional vertex.
 
-The nine exact exceptional vertices are distinct, so D_1 has at least nine degree-three vertices. Lemma 2.3 says a 130-edge non-target color has at most eight. Contradiction.
+The nine exact exceptional vertices are distinct, so D_1 has at least nine degree-three vertices. Lemma 2.3 permits at most four. Contradiction.
 
-Thus
-
+Therefore
 \[
 \boxed{m\ne9.}
 \]
 
-## 5. Conclusion: exactly eight exact colors
+## 5. Exclude m=8
 
-The Q32 outer equality system already gives m in {8,9,10}. Sections 3 and 4 eliminate 9 and 10. Therefore
+If m=8, the three nonexact colors must all have s=1 and hence exactly 130 residual edges. Call them D_1,D_2,D_3.
 
-\[
-\boxed{m=8.}
-\]
-
-The remaining three non-target colors all have s=1 and exactly 130 residual edges.
-
-This conclusion is independent of the Q33 284-edge core. It applies to the Q32 residual before the full-support v=47 reduction and therefore may be combined with `Q32_NONFULL_SUPPORT_SHELL_CAPACITY.md`. In particular the sole surviving Q32 support terminal is now:
-
-\[
-\boxed{|U|=47,\quad m=8,\quad(s_1,s_2,s_3)=(1,1,1).}
-\]
-
-## 6. Immediate m=8 low-degree consequence
-
-Let X be the eight distinct exact exceptional vertices. At x in X, the exact colors contribute at least
+At any exact exceptional vertex x, the eight exact colors contribute at least
 
 \[
 9+7\cdot4=37
 \]
-non-target degree and the target color contributes at least 13. Hence the three 130-edge nonexact colors have degree sum at most ten at x. Each has minimum degree three, so at least two of the three have degree exactly three at every x.
+non-target degree and the target contributes at least 13. Therefore
 
-By Lemma 2.2 those degree-three incidences come from isolated K4 components of the three nonexact colors, and by Lemma 2.3 each nonexact color has at most two such K4 components. This is the next finite structural kernel; no contradiction is claimed here.
+\[
+d_{D_1}(x)+d_{D_2}(x)+d_{D_3}(x)\le10.
+\]
+
+Each D_i has minimum degree at least three. If fewer than two of the three degrees were exactly three, their sum would be at least
+\[
+3+4+4=11,
+\]
+a contradiction. Hence **at least two of D_1,D_2,D_3 have degree exactly three at every exact exceptional vertex**.
+
+Exceptional injectivity gives eight distinct exceptional vertices. Thus the three 130-edge colors together must supply at least
+\[
+2\cdot8=16
+\]
+degree-three incidences on those vertices.
+
+But Lemma 2.3 gives at most four degree-three vertices per 130-edge color, hence at most
+\[
+3\cdot4=12
+\]
+such incidences in total. Contradiction.
+
+Therefore
+\[
+\boxed{m\ne8.}
+\]
+
+## 6. Q32 contradiction
+
+The outer equality system forces m in {8,9,10}. Sections 3--5 exclude all three possibilities. Therefore the registered E408 Q32 residual contract has no realization:
+
+\[
+\boxed{\text{E408 Q32 is PROVED_CONDITIONAL impossible}.}
+\]
+
+This argument is stronger than the earlier support analysis: it does **not** require the v>=44 theorem, the v=47 full-support reduction, the 285-edge witness-capacity inequality, or any Q33 284-edge statement. Those remain valid audits but are no longer load-bearing for Q32 closure.
+
+## 7. Dependency firewall
+
+Load-bearing inputs are only:
+
+1. the E408 residual equality ledger \(\sum s_C=3\);
+2. exact-129 Type-I degree structure: one degree-nine exceptional vertex, all ordinary residual vertices degree at least four;
+3. `Q32_GLOBAL_EXCEPTIONAL_INJECTIVITY.md`;
+4. the independently proved pointwise degree floors for s=1 and s>=2 colors;
+5. alpha(C)<=12 and omega(C)<=5 for every non-target residual color;
+6. Brouwer / Kang--Pikhurko non-r-partite Turan bound in the complement form used above;
+7. target minimum degree thirteen and the fact that all twelve colors partition the 60 edges at every residual vertex.
+
+No Q33 284-edge identity, support-41 theorem, shell split M[B]=empty, or speculative graph enumeration is used.
+
+EG617(r=12) itself remains OPEN / NOT_CERTIFIED until the upstream reduction and all other registered terminal/backend obligations are reconciled.
