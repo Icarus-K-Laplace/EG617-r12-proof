@@ -17,7 +17,7 @@ Current promotion:
 
 There is currently **no OPEN graph-theoretic T61/E407/E408 terminal** in this branch-local composition.
 
-The qualifier is deliberate. The proof stack still consumes exact finite certificates, named external extremal/Ramsey theorems, the exact-129 Type-I factor theorem, and later selected-support identities. It is not yet a Lean/Coq-style end-to-end formal proof and should not be advertised as an unqualified `PROVED` theorem until those dependencies are accepted/reviewed at the desired standard.
+The qualifier is deliberate. The proof stack still consumes exact finite certificates, named external extremal/Ramsey theorems, the exact-129 Type-I factor theorem, and later selected-support identities. It is not yet an end-to-end formally verified proof. The next promotion target is a publication-grade computer-assisted-proof receipt with every load-bearing theorem statement and source hash frozen.
 
 ## Root chain
 
@@ -55,7 +55,7 @@ The original V10/V11 packages were independently materialized and replayed.
 
 The analytic common-K10 support-capacity theorem excludes both families. Hence E407 maximum Q31 is closed relative to the named core/extremal inputs.
 
-### E407 Q32
+### E407 Q32 — shortest terminal contradiction
 
 The original V12 package was independently replayed.
 
@@ -68,7 +68,7 @@ The original V12 package was independently replayed.
 - all 554 map to the five V12 shell templates;
 - certificate SHA256: `cab4e67bc501fe51c06f8fc008443b870aebf8794528af1a3045e83be7d6db30`.
 
-The later E407 workstream proves that every one of the five templates uses the same 29-point support U and 49 selected four-set blocks in seven selected exact colors, and that every selected block is genuinely the H-four-set of a monochromatic selected-color K5.
+The later E407 workstream proves that every one of the five templates uses the same 29-point support U and 49 selected four-set blocks in seven distinct selected exact colors, and that every selected block is genuinely the H-four-set of a monochromatic selected-color K5.
 
 For `L_U = overline(H[U])`:
 
@@ -88,21 +88,27 @@ The 49 selected blocks already own
 49\binom42=294
 \]
 
-distinct edges of L_U. Four non-target colors remain outside the selected seven. Each must have at least
+distinct edges of `L_U`. Since there are eleven non-target colors and only seven selected colors, choose any non-target color `D` outside the selected seven. The balanced-coloring condition gives
 
 \[
-p_{12}(29)=22
+\alpha(D[U])\le12.
 \]
 
-edges on U. Hence unique edge ownership requires
+Turan therefore forces
 
 \[
-e(L_U)\ge294+4\cdot22=382,
+e_D(U)\ge p_{12}(29)=22.
 \]
 
-contradicting 310.
+Unique edge ownership makes these 22 edges disjoint from the selected 294, hence
 
-Thus all 554 V12 survivors and all five templates are closed simultaneously.
+\[
+e(L_U)\ge294+22=316,
+\]
+
+contradicting `e(L_U)<=310` with a six-edge gap.
+
+Thus **one unselected non-target color already closes all 554 V12 survivors and all five templates simultaneously**. The older four-color aggregate `294+4*22=382` remains a valid stronger regression check but is not load-bearing.
 
 ## E408 simplification
 
@@ -125,7 +131,7 @@ Receipt:
 - unique no-R(4,49) stop `(d,j,a,n)=(11,6,5,61)` with edge interval 397..408;
 - independent replay PASS.
 
-The historical receipt says `bridge_status=OPEN` because T61 was still open at the time. The present root composition closes that formerly surviving branch; the old receipt itself is not rewritten.
+The historical receipt and `front_end/ASSUMPTION_LEDGER.md` still contain `T61=OPEN` / `MAIN=OPEN` because they predate this branch-local closure. They are retained as historical source state and are not the canonical status of this workstream. The root composition does not consume the old OPEN K7/K8/S31MAP/S30MAP implications.
 
 ## Contract firewall
 
@@ -133,6 +139,7 @@ The historical receipt says `bridge_status=OPEN` because T61 was still open at t
 - The support-41 theorem remains a separate contract and is not needed by the root closure.
 - The E407 Q32 contradiction uses the 284-edge V12 support contract, not E408 data.
 - The decisive E407 contradiction does not use the Didin-dependent delta=14 subcase.
+- The decisive E407 contradiction does not require the auxiliary `E407_SEVEN_EXACT_COLOR_EXCLUSION.md`.
 - No floating-point optimization or heuristic solver output is load-bearing in the stated root chain.
 
 ## Current source provenance
@@ -149,16 +156,17 @@ Sibling files that still say `OPEN / NOT_CERTIFIED` are historical states predat
 
 - `E408_WHOLE_LAYER_EXACT_COUNT_CLOSURE.md`
 - `V10_V11_Q31_INDEPENDENT_REPLAY_AUDIT.md`
-- `E407_FOUR_COLOR_U_RESERVE_CLOSURE.md`
-- `verify_e407_four_color_u_reserve.py`
-- `R12_ROOT_CLOSURE_PROMOTION_AUDIT.md`
+- `E407_FOUR_COLOR_U_RESERVE_CLOSURE.md` — despite historical filename, current theorem uses one unselected color;
+- `verify_e407_four_color_u_reserve.py` — independently recomputes the one-color six-edge gap and four-color regression;
+- `R12_ROOT_CLOSURE_PROMOTION_AUDIT.md`.
 
 ## Remaining work
 
-No new graph terminal is currently identified. Remaining work is proof engineering and adversarial review:
+No new graph terminal is currently identified. Remaining work is certification and adversarial proof review:
 
-1. independent clean-environment replay of every load-bearing finite certificate;
-2. freeze exact source hashes and theorem statements for external inputs;
+1. freeze exact source hashes and theorem statements for every load-bearing analytic/external input, especially the exact-129 Type-I factor/support interface;
+2. independently replay every load-bearing finite certificate from a clean environment;
 3. audit V9/V12 analytic screens line-by-line against their finite domains;
-4. merge the branch-local closure into a canonical root proof without erasing historical OPEN states;
-5. ideally formalize the short root composition and the new U-edge reserve contradiction.
+4. reconcile the historical front-end OPEN ledger with this branch-local root receipt without erasing history;
+5. merge the branch-local closure into a canonical root proof only after the dependency freeze passes;
+6. ideally formalize the short root composition and the one-color U-edge reserve contradiction.
