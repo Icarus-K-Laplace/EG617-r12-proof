@@ -14,9 +14,9 @@ The retained blocker theorem gives M_C >= 15+P_C. Summing yields sum_exact P_C >
 
 **Status: PROVED_CONDITIONAL** under the Q33 284-edge / 31-point / 56-witness contract and the exact-129 factor theorem.
 
-Let h be the number of the 56 selected witnesses that are gadget witnesses. For the eight selected exact colors, the unselected component four-sets contribute at least \(72+6h\) distinct edges to \(\overline{H[W]}\). Since \(e(\overline{H[W]})=79+\delta+\epsilon_U\le96\), \(h\le4\).
+Let h be the number of the 56 selected witnesses that are gadget witnesses. For the eight selected exact colors, the unselected component four-sets contribute at least \(72+6h\) distinct edges to \(\overline{H[W]}\). Since \(e(\overline{H[W]})=79+\delta+\epsilon_U\le96\), \(h\le3\).
 
-If m=10, the two exact colors outside the selected eight supply 20 component four-sets. Their total U-incidence is at least \(2(31-7)=48\). Their pair-cost \(\sum\binom{k}{2}\) is at most \(\delta+4h\le33\): at most four edges per selected gadget witness can overlap, because the complement of its color graph is triangle-free on four vertices. The exact integer inequality \(k\le3/2+\binom{k}{2}/2\) then bounds their total U-incidence by 46, contradiction. Thus m is not 10. If m=9, h=0 similarly gives a capacity of at most 23 against a required 24, so h is at least one.
+If m=10, the two exact colors outside the selected eight supply 20 component four-sets. Their total U-incidence is at least \(2(31-7)=48\). Their pair-cost \(\sum\binom{k}{2}\) is at most \(\delta+4h\le33\): at most four edges per selected gadget witness can overlap, because the complement of its color graph is triangle-free on four vertices. The exact integer inequality \(k\le3/2+\binom{k}{2}/2\) then bounds their total U-incidence by 46, contradiction. Thus m is not 10. If m=9, h=0 similarly gives a capacity of at most 23 against a required 24, so h is at least one. The h=4 equality endpoint is then excluded by the OA(4,4,2,2) obstruction in Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md, so the final bound is h<=3.
 
 The standalone arithmetic verifier verify_q33_exact_color_count_capacity.py passes. This narrows the global search to m=8,9 but does not close either branch.
 
