@@ -82,8 +82,11 @@ New theorem: Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md. New arithmetic verifier:
 Independent replay of the finite dynamic program gives:
 - 20 variables \(k_i\in\{0,1,2,3,4\}\), cost budget 33: maximum incidence sum 46;
 - 10 variables, cost budget 17: maximum incidence sum 23;
+- 10 variables with required incidence sum 24: minimum pair-cost 18;
 - the pointwise bound \(k\le3/2+\binom{k}{2}/2\) holds for all five possible values.
 
 The graph-level conditional proof first derives \(h\le4\) from the 16-point complement \(W\), then charges overlaps between unselected component K4s and selected gadget witnesses at no more than four edges per gadget witness. It excludes \(m=10\), and shows \(m=9\Rightarrow h\ge1\). This uses the 284-edge Q33 contract only; no 285-edge result is imported.
 
-Status: PROVED_CONDITIONAL for the named contracts. Q33 global compatibility remains OPEN.
+Status: PROVED_CONDITIONAL for the named contracts. If (m=9), (delta\ge18-4h); if (h=4), (H[W]=4K_4) and the selected component witnesses edge-partition (K_{4,4,4,4}). These are exact residual constraints, not a closure. Q33 global compatibility remains OPEN.
+
+The R7 double-star theorem's pigeonhole sentence was also clarified: the selected vertex belongs to at least two row-neighbor sets (V'\setminus E_i), so it is adjacent to at least two rows of the constructed (K_{12}). This is a wording audit correction, not a change in the theorem.
