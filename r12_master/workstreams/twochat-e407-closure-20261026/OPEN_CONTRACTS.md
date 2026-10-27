@@ -50,3 +50,8 @@ Every \(w\in W\) has \(d_U(w)\ge7\), and \(Y=\sum_W(d_U(w)-7)=\epsilon_U+2\delta
 For the minimum-slack profiles \((3,3)\) and \((4,1)\), Y=7 and at least eleven W vertices have zero slack. The remaining issue is to exploit the zero-slack neighborhood classes and the degree caps \(d_W(w)=5+\epsilon_w-y_w\). Do not assume the seven units of Y are spread across seven vertices.
 
 If an independent W-quadruple has total slack one, a \(7,7,7,8\) support transversal design is forced, including three pairwise anticomplete K7 parts and the R-side omission restrictions in SUPPORT_BLOCK_W_TRANSVERSAL_CAPACITY.md. The open alternative is that every independent triple in \(W_0\) is met by every \(y=1\) vertex, so no slack-one quadruple exists. Neither branch has yet been excluded.
+
+
+## C8. Low-slack zero-neighborhood class structure
+
+When \(\epsilon_U+2\delta<16\), the zero-slack W vertices have at most three distinct U-neighborhoods; vertices with the same neighborhood form a clique, and distinct neighborhoods are disjoint 7-point transversals. For the minimum-slack profiles (3,3) and (4,1), there are at least eleven zero-slack vertices but at most three neighborhood classes. The remaining problem is to combine these class sizes, the exact W degree sequence \(d_W(w)=5+\epsilon_w-y_w\), and \(\alpha(H[W])=4\). No contradiction has yet been derived for the branch in which all independent W-quadruples have total slack at least two.
