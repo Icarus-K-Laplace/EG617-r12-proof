@@ -132,3 +132,8 @@ For the two minimum-slack profiles \((\delta,\epsilon_U)=(3,3),(4,1)\), \(Y=7\),
 The exact feasible budget has \(\delta+\epsilon_U\ge5\), hence \(e(H[W])\le43\). If \(\alpha(H[W])\le3\), Turán gives \(e(H[W])\ge45\) because \(\overline{H[W]}\) is \(K_4\)-free on 18 vertices. Therefore every feasible E407 profile satisfies \(\alpha(H[W])=4\). This guarantees at least one independent W-quadruple; by the W-side transversal theorem, every such quadruple has total slack at least one.
 
 The 56-profile integer verifier passed independently. This is a structural consequence, not a terminal exclusion.
+
+
+## Round 9 — zero-slack neighborhood classes (2026-10-27)
+
+Added a transversal-disjointness lemma: two distinct 7-point transversals of the 49-block system are disjoint. Thus there are at most four distinct zero-slack U-neighborhoods; four would cover 28 points and force the remaining point to have \(r_u=7\), which requires \(\epsilon_U+2\delta\ge16\). Therefore in the low-slack region \(\epsilon_U+2\delta<16\), at most three zero-slack neighborhood classes exist. In particular, this holds for the two minimum-slack profiles \((3,3)\) and \((4,1)\).
