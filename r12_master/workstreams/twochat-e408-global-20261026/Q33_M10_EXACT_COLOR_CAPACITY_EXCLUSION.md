@@ -184,7 +184,7 @@ Combining with Section 5, the final capacity frontier is
 \[
 \boxed{m\in\{8,9\},\quad h\le3,\quad m=9\Rightarrow1\le h\le3.}
 \]
-The \(m=9\) branch consequently has \(\delta\ge14,10,6\) for \(h=1,2,3\), respectively. This closes the \(h=4\) terminal but does not close the remaining \(m=8,9\) branches.
+The \(m=9\) branch consequently has \(\delta\ge14,10,11\) for \(h=1,2,3\), respectively. This closes the \(h=4\) terminal but does not close the remaining \(m=8,9\) branches.
 
 ## 8. Proof scope and dependencies
 
