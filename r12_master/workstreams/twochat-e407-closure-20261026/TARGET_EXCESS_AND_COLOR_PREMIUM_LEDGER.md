@@ -106,10 +106,8 @@ d_F(s)=13+t_s-q_s.
 Summing over S, and noting `sum_S q_s=c+2beta`, gives the exact S-shell excess
 
 \[
-\boxed{\sum_{s\in S}(d_F(s)-13)=32-c-\beta.}\tag{3.4]
+\boxed{\sum_{s\in S}(d_F(s)-13)=32-c-\beta.}\tag{3.4}
 \]
-
-(The closing bracket in (3.4) is typographical; the formula is the displayed equality.)
 
 The total target excess in E407 is
 
@@ -280,7 +278,9 @@ Across the seven exact colors there are at least35 selected B-anchor blocks. Eac
 By pointwise anchor injectivity, a fixed `u in U` can lie in blocks with at most seven distinct B anchors. Let `q_B(u)` be the number of selected support blocks containing u whose anchor is in B. Then
 
 \[
-\sum_{u\in U}q_B(u)\ge140,\qquad q_B(u)\le7.
+\sum_{u\in U}q_B(u)\ge140,
+\qquad
+q_B(u)\le7.
 \]
 
 If at most seven U points had `q_B(u)>=5`, the total would be at most
