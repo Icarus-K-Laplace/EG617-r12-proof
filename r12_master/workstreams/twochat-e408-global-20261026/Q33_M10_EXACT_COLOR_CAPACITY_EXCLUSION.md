@@ -117,7 +117,7 @@ so the integer sum is at most 23, contradiction. Thus \(m=9\Rightarrow h\ge1\).
 
 Combining with (2), the full conditional result is:
 \[
-\boxed{m\in\{8,9\},\qquad h\le4,\qquad m=9\Rightarrow1\le h\le4.}
+\boxed{m\in\{8,9\},\qquad h\le3,\qquad m=9\Rightarrow1\le h\le3.}
 \]
 
 
