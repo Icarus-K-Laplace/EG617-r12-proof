@@ -96,3 +96,12 @@ These are exact incidence consequences of the 49-block contract and \(\alpha(H)\
 **Frontier correction:** for the minimum-slack profiles (3,3) and (4,1), total y-slack is seven, implying at least eleven zero-slack W vertices. This does not imply exactly seven positive-slack vertices or that each positive slack equals one. The verifier and note preserve this distinction.
 
 No E407 template, low-\(\delta\) terminal, or original K145-to-T61 bridge is closed by this result. Next attack: determine whether the low-slack W graph must contain a slack-one independent quadruple, or prove the complementary domination/capacity branch impossible; then feed the resulting W-neighborhood classes into the shell row systems and the four-unit core excess ledger.
+
+
+## Round 8 — 2026-10-27: universal W independence number and verifier replay
+
+The exact integer frontier implies \(\delta+\epsilon_U\ge5\), so \(e(H[W])=48-\delta-\epsilon_U\le43\). If \(\alpha(H[W])\le3\), then \(\overline{H[W]}\) is K4-free, and Turán gives \(e(H[W])\ge {18\choose2}-t_3(18)=153-108=45\). Contradiction. Hence \(\alpha(H[W])=4\) for every feasible E407 Q32 profile.
+
+Combined with the W-side transversal theorem, an independent 4-set in W must exist and every such set has total y-slack at least one. The low-delta verifier was extended to check \(\delta+\epsilon_U\ge5\), \(e(H[W])\le43\), the Turán threshold 45, and all 56 exact ledger profiles. Independent replay passed in Python.
+
+Remaining fork for the minimum-slack profiles (3,3) and (4,1): either exhibit/force an independent W-quadruple of total y-slack one, giving the rigid \(7,7,7,8\) U-design; or exclude the branch in which every independent W-quadruple has total slack at least two. The exact 49-block/component identity, all five shell templates, the remaining low-\(\delta\) cases, and the original K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
