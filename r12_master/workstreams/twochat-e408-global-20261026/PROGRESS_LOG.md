@@ -68,3 +68,14 @@
 - Refined proof commit: 1edb9efe781aa722c0ae2813f3efcca3d906273f. Refined verifier commit: 448fc7e717273d4f4cc8b9671897c2de37d2a490.
 - Audited and corrected the R7 proof's pigeonhole wording so it correctly identifies a vertex adjacent to two selected rows, rather than saying it is “omitted” by them. Commit: f0743b0c5c65d883f9e533b2c5cd83c9987c3b77.
 
+
+
+## 2026-10-27 — close the h=4 equality endpoint
+
+- The h=4 lower bound saturates \(e(\overline{H[W]})\le96\), forcing \(H[W]=4K_4\) and \(\overline{H[W]}=K_{4,4,4,4}\).
+- Equality forces the selected component witnesses' W-parts to edge-partition this complete four-partite graph into four \(K_4\)'s and 24 triangles.
+- Vertex degree parity gives each vertex an even number of appearances among the four \(K_4\)'s. Each part therefore has two vertices of K4-incidence 2 and two of incidence 0; incidence 4 is impossible because it forces incidence 1 in other parts.
+- The four K4s would yield four pairwise-orthogonal balanced binary columns, i.e. OA(4,4,2,2). Exhaustive verification over the six balanced binary columns finds maximum pairwise-orthogonal family size 3, contradiction.
+- Result: \(h\le3\) globally. If \(m=9\), then \(h\in\{1,2,3\}\) and \(\delta\ge14,10,6\) respectively.
+- Proof commit: 99d85042c32a87a27d56c321c025ec55a3f978f5. Independent OA verifier commit: 91050534c8c59106b119474b7e3a45f37c6d6f51.
+
