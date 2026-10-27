@@ -22,10 +22,13 @@ The standalone arithmetic verifier verify_q33_exact_color_count_capacity.py pass
 
 ### Refined \(m=9\) terminal
 
-The same pointwise capacity inequality shows that ten component four-sets with total \(U\)-incidence at least 24 need pair-cost at least 18. Thus \(m=9\) forces \(\delta\ge18-4h\), so \(\delta\ge14,10,11,5\) for \(h=1,2,3,4\), respectively.
+For the ninth color, the component four-sets have both \(U\)-pair cost \(c_U=\sum\binom{k_\ell}{2}\le\delta+4h\) and \(W\)-pair cost \(c_W=\sum\binom{4-k_\ell}{2}\le7+\delta+\epsilon_U-6h\). The required \(U\)-incidence is at least 24.
 
-If \(h=4\), equality holds in \(e(\overline{H[W]})\ge72+6h\le96\): \(H[W]\) is four disjoint \(K_4\)'s and \(\overline{H[W]}=K_{4,4,4,4}\). The 4 component \(K_4\)'s and 24 component triangles from the selected eight colors partition all 96 edges of this complete four-partite graph. If \(m=9\), the ninth color's component four-sets can contain at most one \(W\)-vertex each, and hence \(\delta\ge14\). This terminal is rigid but not yet contradictory.
+- \(h=1\): \(\delta\ge14\). If \(\delta=14\), the \(k\)-profile is \(2^6,3^4\).
+- \(h=2\): \(\delta\ge10\). If \(\delta=10\), then \(\epsilon_U\ge1\), and the \(k\)-profile is \(2^6,3^4\); at \(\epsilon_U=1\), the W-edge capacity is exactly saturated.
+- \(h=3\): \(\delta\ge11\). If \(\delta=11\), then \(\epsilon_U=4\) and the \(k\)-profile is \(2^4,3^6\); the four W-edges from the \(k=2\) sets exactly exhaust the remaining W-edge capacity.
 
+The \(h=4\) endpoint is excluded. It would force \(H[W]=4K_4\) and \(\overline{H[W]}=K_{4,4,4,4}\), with the selected component witnesses edge-partitioning this graph into four \(K_4\)'s and 24 triangles. This induces an impossible \(OA(4,4,2,2)\). Therefore \(h\le3\) globally. The listed \(m=9\) endpoints are residual incidence contracts, not contradictions.
 
 ## P_C=49 frontier
 
