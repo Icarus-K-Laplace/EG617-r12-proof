@@ -137,3 +137,8 @@ The 56-profile integer verifier passed independently. This is a structural conse
 ## Round 9 — zero-slack neighborhood classes (2026-10-27)
 
 Added a transversal-disjointness lemma: two distinct 7-point transversals of the 49-block system are disjoint. Thus there are at most four distinct zero-slack U-neighborhoods; four would cover 28 points and force the remaining point to have \(r_u=7\), which requires \(\epsilon_U+2\delta\ge16\). Therefore in the low-slack region \(\epsilon_U+2\delta<16\), at most three zero-slack neighborhood classes exist. In particular, this holds for the two minimum-slack profiles \((3,3)\) and \((4,1)\).
+
+
+## Round 10 — independent arithmetic replay (2026-10-27)
+
+Replayed the exact 56 feasible \((\delta,\epsilon_U)\) profiles, the three edge-ledger formulas, the minimum \(\epsilon_U+2\delta=9\), the minimum \(\delta+\epsilon_U=5\), the universal \(e(H[W])\le43\) bound, and the W-side slack identity \(Y=\epsilon_U+2\delta-2\ge7\). All assertions passed. The arithmetic verifier does not establish graph realizability or close any terminal.
