@@ -96,6 +96,8 @@ The sibling Q32 workstream proves the strict support floor \(|U|\ge44\) under it
 - Capacity arithmetic verifier: 62462f04e76b33aa921249caa38d604fd6e6f95c
 - Refined (m=9) terminal proof: 1edb9efe781aa722c0ae2813f3efcca3d906273f
 - Refined capacity verifier: 448fc7e717273d4f4cc8b9671897c2de37d2a490
+- Exclude (h=4) by OA obstruction: 99d85042c32a87a27d56c321c025ec55a3f978f5
+- OA obstruction verifier: 91050534c8c59106b119474b7e3a45f37c6d6f51
 - R7 pigeonhole wording audit correction: f0743b0c5c65d883f9e533b2c5cd83c9987c3b77
 
 The latest branch HEAD may advance as additional files are committed. See PROGRESS_LOG.md for the chronological record.
