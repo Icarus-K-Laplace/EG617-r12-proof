@@ -34,9 +34,11 @@ def main():
     for delta, eps_u in minimum_slack:
         y_total = eps_u + 2 * delta - 2
         assert y_total == 7
-        # Sum y=7 implies at most seven positive y values, not exactly seven.
-        assert 18 - y_total == 11
-        assert 18 - y_total <= 18  # lower bound on zero-slack vertices
+        # Positive y values are positive integers, so their count is at most
+        # y_total. This gives a lower bound on the number of zero-slack vertices.
+        positive_count_max = min(18, y_total)
+        zero_count_min = 18 - positive_count_max
+        assert zero_count_min >= 11
 
     # In a y=0 neighborhood, seven points must account for all 49 blocks:
     # each point occurs in at most seven blocks and every block is hit.
