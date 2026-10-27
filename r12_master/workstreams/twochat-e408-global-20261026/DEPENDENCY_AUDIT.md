@@ -1,117 +1,216 @@
-# Dependency audit — E408 global incidence sprint
+# Dependency audit — fixed r=12 root closure
 
 Updated: 2026-10-27
+Status: **root chain closed conditionally; finite coverage computation-certified; no OPEN graph terminal identified.**
 
-## 1. Source branch heads checked
+## 1. Separation of proof classes
 
-| Source | HEAD checked | Role |
-|---|---|---|
-| workstream/r12-e408-q33-global-compat-20261025 | 0cb2ff3968f005c9cb255958df7c02b220678701 | Q33 seven-block ledger and 31-point/56-witness terminal |
-| workstream/r12-e408-q32-excess6-20261025 | a0ba6db26c7e8b00a4217dcbcbf298895dff93ce | Q32 285-edge / Type-I / shell-support source |
-| workstream/r12-unified-witness-capacity-20261025 | faa8183c150dd78b000d0957fa8a63cebd52e146 | labelled witness-capacity audit only |
-| workstream/r12-witness-packing-chat-20261025 | f5d3daa07403877ede9885e1bd5c2f46b16d81da | witness-packing sibling |
-| workstream/r12-zero-excess-witness-20261025 | c8c4833c7830370a703d228ee23e3b88484d6baa | zero-excess sibling |
-| workstream/r12-ultimate-closure-20261024 | 1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40 | root proof DAG / retained contracts |
+This audit uses three distinct proof classes and does not conflate them.
 
-Sibling workstreams remain read-only.
+### Analytic `PROVED` / `PROVED_CONDITIONAL`
+Ordinary mathematical derivations under explicit hypotheses.
 
-## 2. Q33 local profile ledger
+### `COMPUTATION_CERTIFIED`
+Exact finite enumeration / recurrence / state-coverage claims checked by deterministic integer verifiers. A verifier does not by itself certify graph nonexistence unless an analytic theorem maps the finite states to a contradiction.
 
-- (6,2,1^5): PROVED_CONDITIONAL excluded.
-- (7,1^6): PROVED_CONDITIONAL excluded.
-- (4,4,1^5), (4,3,2,1^4): locally OPEN in the all-component-edge-present branch.
+### External theorem input
+Published/extant extremal or Ramsey statements imported with their exact hypotheses. They are not re-proved merely because a local script passes.
 
-These last two are bypassed by the global Q33 terminal contradiction; no colorwise P_C<=48 theorem is claimed.
+The root promotion is therefore labelled `PROVED_CONDITIONAL + COMPUTATION_CERTIFIED`, not bare `PROVED`.
 
-## 3. Historical inference firewall
+## 2. Front-end root dependency
 
-The statement that a monochromatic K12 has no external edge of its own color is false; the correct bound is at most one such edge from an outside vertex. None of the load-bearing Q33/Q32 closures below uses the false statement.
-
-## 4. Q33 dependency chain
-
-`Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md` proves m!=10 and h<=4 under the registered 31-point/56-witness Q33 terminal.
-
-`Q33_NONEXACT_U_RESERVE_CLOSURE.md` proves:
-
-1. every non-target color on U has at least p_12(31)=26 edges;
-2. 56-h selected component witnesses own 336-6h distinct exact-color U-edges;
-3. all nonexact colors together have at most delta+6h U-edge slots;
-4. therefore 26(11-m)<=delta+6h;
-5. with delta<=17,h<=4 and m in {8,9}, the available maximum41 is below the required52 or78.
-
-Status: **PROVED_CONDITIONAL impossible** for the registered Q33 minimum-support terminal.
-
-No sharing/double-counting gap was found: component witness K4 edges are uniquely exact-colored; gadget witness edges are deliberately left free in the generous capacity upper bound.
-
-## 5. Q32 dependency chain — support audit
-
-The Q32 source contract is 47 core vertices, 285 target edges, total core excess six, q=32. The sibling proves |U|>=44.
-
-This branch proves `Q32_GLOBAL_EXCEPTIONAL_INJECTIVITY.md`: exact Type-I exceptional vertices are globally distinct.
-
-`Q32_NONFULL_SUPPORT_SHELL_CAPACITY.md` then excludes every nonfull support v=44,45,46 by showing any w outside U would require at least 2(m-1)>=14 distinct shell neighbors in a 13-point shell. This theorem is valid, but the final Q32 closure no longer depends on support size.
-
-## 6. Q32 dependency chain — decisive exact-color-count theorem
-
-Load-bearing theorem: `Q32_EXACT_COLOR_COUNT_COLLAPSE.md`.
-
-### 6.1 External extremal input
-
-For a graph G with alpha(G)<=r, omega(G)<=5 and n>5r, the complement is K_{r+1}-free and non-r-partite. Brouwer/Kang--Pikhurko therefore gives
+`FRONTEND_BRIDGE_THEOREM.md` proves the dichotomy
 
 \[
-e(G)\ge p_r(n)+\lfloor n/r\rfloor-1.
+\text{balanced K145 counterexample}
+\Rightarrow
+\text{contextual }R(4,49)\text{ or embedded T61}.
 \]
 
-The proof uses this at (n,r)=(58,11),(57,11),(53,10). It also uses the elementary Turan floor p_8(49)=126.
+The finite Line-A recurrence is computation-certified:
 
-### 6.2 Internal pointwise inputs
+- package SHA256 `8f34097f195f53a6aac2999a655d3dc6a4ebc7c74f5764aedea65a79235a98ac`;
+- 1,752 recurrence nodes;
+- 144 outer comparisons;
+- 73 manifest files checked with zero errors;
+- independent replay PASS;
+- unique no-R(4,49) stop `(11,6,5,61)`, edge interval397..408.
 
-The independently proved full-color degree theorem gives:
+The historical receipt's `bridge_status=OPEN` reflected the then-unresolved T61 terminal; it is not evidence of a failed recurrence.
 
-- exact129: degree >=4, with Type-I exceptional degree9;
-- 130-edge (s=1): degree >=3;
-- 131/132-edge (s>=2): degree >=2.
+The contextual R(4,49) alternative is excluded by the current full-color theorem relative to its named Brouwer/extremal input.
 
-The Q32 injectivity theorem makes exact exceptional vertices distinct.
+## 3. T61 structural split
 
-### 6.3 Derived low-degree structure
+- h12 is excluded by `T61_H12_CLOSURE.md`.
+- h13 E397--E400 are excluded by `T61_H13_LOW_LAYER.md`.
+- E401--E404 are excluded by the canonical closure.
+- E405 is excluded.
+- E406 is excluded.
 
-- 131-edge colors actually have minimum degree >=3.
-- Degree-3 vertices of a 130-edge color form isolated K4 components.
-- Two isolated K4s in a 130-edge color are impossible: deleting them leaves 53 vertices and118 edges, below the Brouwer lower bound119 for alpha<=10,omega<=5. Hence at most four degree-3 vertices exist.
-- Degree-2 vertices of a 132-edge color form isolated K3 components; four triangles would leave49 vertices,120 edges with alpha<=8, below p_8(49)=126. Hence at most nine degree-2 vertices exist.
+Thus only E407/E408 remain before the new workstream results.
 
-### 6.4 Exact-color-count collapse
+## 4. E408 whole-layer dependency
 
-Outer equality forces m in {8,9,10}.
+The shortest E408 proof is now `E408_WHOLE_LAYER_EXACT_COUNT_CLOSURE.md`.
 
-- m=10: ten distinct exact exceptions force ten degree-2 vertices in the sole132-edge color; capacity is at most9. Contradiction.
-- m=9: nine exceptions force nine degree-3 vertices in the130-edge color; capacity is at most4. Contradiction.
-- m=8: each of eight exceptions requires at least two degree-3 incidences among three130-edge colors, demand16; total capacity is at most3*4=12. Contradiction.
+It does not depend on q, a 284/285-edge core, support size, or seven outer blocks.
 
-Thus all possible m are excluded and the registered E408 Q32 terminal is **PROVED_CONDITIONAL impossible**.
+Load-bearing inputs:
 
-Arithmetic regression: `verify_q32_exact_color_count_collapse.py`.
+1. genuine 61-point h13 T61 residual with E=408;
+2. each non-target residual color has alpha<=12 and omega<=5;
+3. the 129-edge lower bound and exact-129 Type-I equality structure;
+4. registered pointwise degree floors for 130/131/132-edge colors;
+5. Brouwer/Kang--Pikhurko second-Turan inequalities on the induced 58-,57-,53-point subgraphs;
+6. Turan's p8(49) floor;
+7. unique edge ownership and total residual vertex degree60.
 
-## 7. Contract firewalls
+The residual edge partition gives sum s_C=3 and exact count m in {8,9,10}. The low-degree capacity lemmas exclude all three values. Therefore E408 is conditionally impossible as an entire energy layer.
 
-Q33 closure does not use:
-- Q32's 285-edge core;
-- support-41;
-- the false K12 external-isolation claim.
+The earlier Q32/Q33 terminal closures remain valid independent audits but are no longer load-bearing in the shortest root chain.
 
-Q32 closure does not use:
-- Q33's 284-edge core or U=31 identities;
-- support-41;
-- an M[B]=empty shell split;
-- any SAT/ILP nonexistence claim.
+## 5. E407 low-charge reduction
 
-The unified support-41 theorem remains separate and non-load-bearing.
+For a degree-13 E407 pivot,
 
-## 8. Promotion scope
+\[
+407=91+q+e(H),\qquad e(H)\ge284,
+\]
+so q<=32.
 
-- Registered E408 Q33 terminal: **PROVED_CONDITIONAL impossible**.
-- Registered E408 Q32 terminal: **PROVED_CONDITIONAL impossible**.
-- Under the current registered E408 reduction ledger, this branch has no remaining E408 terminal.
-- The original EG617(r=12) theorem is **OPEN / NOT_CERTIFIED** because E407, the K145-to-T61/front-end bridge, and other sibling backend obligations are outside this workstream and retain their own statuses.
+The audited V9 chain reduces maximum charge to Q in {31,32}, relative to retained seeds. The current front-end assumption ledger marks the small Ramsey/core seed statements consumed by V9 as `PROVED`. V9's finite tables remain computation-certified.
+
+## 6. E407 Q31 dependency
+
+The original V10/V11 archives were independently materialized from the project Library, hash-checked before execution, and replayed.
+
+### V10
+- archive SHA256 `e83e2907d541b38304746e855af52b5e21b6500a35cb0fdb676a4f6a7601303a`;
+- fresh manifest: all PASS;
+- replay: 12 labelled cuts,16 local-neighbourhood cases,14 row-budget cases,1 shell witness;
+- analytic result: Q31 regular d3/d10 incidence branches excluded.
+
+The package contains the V8 flat-boundary exchange proof it consumes. It is not merely a source-status pointer.
+
+### V11
+- archive SHA256 `27ecec92d43a27fb132c60aa7b374131a860547c236d8ed3d83d3cf0eab9f0a4`;
+- fresh manifest: all PASS;
+- 684 kernel weights;
+- 349 outside-count states;
+- 259 labelled necessary shells;
+- Family A=252, Family B=7;
+- certificate SHA256 `0baffc39ee481b27af53fda36a8fe40b8cd8c527103b5126060857c4eaacd09b`.
+
+The finite package proves coverage, not nonexistence. Analytically, `NINE_D2_SUPPORT_CAPACITY.md` excludes both families via common-K10 pair-row capacity, support union at least17, and a zero-capacity matching whose complement yields an independent set at least7>5.
+
+Therefore E407 maximum Q31 is `PROVED_CONDITIONAL` with finite coverage `COMPUTATION_CERTIFIED`.
+
+## 7. E407 Q32 finite coverage
+
+Original V12 archive:
+
+- SHA256 `0c3c69a7baf94a816eff29f3a079b97ac7750d0e8b8fd2773330469c4b8c5e36`;
+- fresh package manifest: all PASS;
+- 8,677 kernel weights;
+- 17,957 count states;
+- 1,984 labelled necessary shells;
+- 90 d3/rho1 exclusions;
+- 1,192 near-K12 exclusions;
+- 148 K9 pair-row refinements;
+- 554 finite-screen survivors;
+- all 554 map to the five V12 rho=0 d3 shell templates;
+- certificate SHA256 `cab4e67bc501fe51c06f8fc008443b870aebf8794528af1a3045e83be7d6db30`.
+
+The V12 package alone does not exclude the 554 survivors.
+
+## 8. E407 Q32 analytic completion interface
+
+The active E407 sibling is read-only to this workstream. Its later analytic files establish the shared completion contract for the five V12 templates:
+
+- same 47-point,284-edge core H;
+- same support U with |U|=29;
+- 49 selected independent 4-set blocks;
+- seven blocks in each of seven distinct selected exact-129 colors;
+- disjointness within color and pairwise linearity across colors;
+- `e(overline(H[U]))=294+delta` with `delta<=16`.
+
+`SUPPORT_BLOCK_ANCHOR_IDENTITY.md` proves under the registered exact-129 factor/minimum-support interface that every selected block is genuinely the four-core part of a monochromatic selected-color K5. This is the critical label bridge.
+
+The root closure is conditional on this registered factor/support interface. It does not pretend the selected-block label theorem is a pure consequence of the 284-edge graph alone.
+
+## 9. E407 Q32 decisive capacity contradiction
+
+Let `L_U=overline(H[U])`.
+
+The 49 selected blocks contribute exactly
+
+\[
+49\binom42=294
+\]
+
+distinct selected-color edges in L_U.
+
+There are eleven non-target colors total and only seven selected colors, leaving four other colors. For each such color D,
+
+\[
+\alpha(D[U])\le12,
+\]
+so Turan gives
+
+\[
+e_D(U)\ge p_{12}(29)=22.
+\]
+
+By unique edge ownership these four colors require 88 additional edges, disjoint from the selected294. Hence
+
+\[
+e(L_U)\ge382.
+\]
+
+But the frozen support ledger gives
+
+\[
+e(L_U)=294+\delta\le310.
+\]
+
+Contradiction.
+
+This route does not use:
+
+- Didin's delta=14 result;
+- five-template row-by-row casework;
+- the auxiliary E407 seven-exact-color theorem;
+- E408 Q32/Q33 identities;
+- support-41.
+
+## 10. Contract firewalls retained
+
+- Q33 284-edge and Q32 285-edge ledgers remain separate.
+- E407 uses its own 284-edge V12 support contract.
+- Support-31, support-41, support-44/47 are not interchanged.
+- The historical false claim “a monochromatic K12 has no same-color external edge” is not used; the valid bound is at most one.
+- No scalar feasible table is treated as a graph realization.
+- No absence-of-candidates search is promoted without an exhaustive finite certificate and analytic mapping theorem.
+
+## 11. Root promotion status
+
+Under the named dependencies:
+
+- contextual R(4,49): closed;
+- T61 h12: closed;
+- h13 E397--E406: closed;
+- E408: closed;
+- E407 Q31: closed;
+- E407 Q32: closed.
+
+Therefore no graph terminal remains in the audited root chain.
+
+Current theorem label:
+
+\[
+\boxed{\text{EG617 fixed }r=12:\ \text{PROVED_CONDITIONAL + COMPUTATION_CERTIFIED}.}
+\]
+
+The remaining obligations are certification/presentation obligations: independent package replay from clean environments, frozen external theorem statements, cross-workstream merge review, and ideally formalization. They are not currently identified as additional graph cases.
