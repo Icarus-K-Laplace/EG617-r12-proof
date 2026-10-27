@@ -1,6 +1,6 @@
 # Q33 exact-129 P_C=49 profile ledger
 
-Updated: 2026-10-26  
+Updated: 2026-10-27  
 Status: **two profiles excluded conditionally; two all-component-edge-present branches remain OPEN.**
 
 ## Contract
@@ -26,6 +26,11 @@ At \(P_C=49\), \(\sum_i r_i(C)=R_C=13\). The sorted positive integer profiles of
 | \((4,3,2,1^4)\) | **OPEN** | The missing-component-edge branch is excluded by the retained incidence-sensitive screen. The all-component-representative-edges-present branch is not excluded. |
 
 The older Q33 canonical summary and R12_P49_INCIDENCE_SENSITIVE_SCREEN.md still list all four profiles as open. Those summaries predate the separate \((6,2,1^5)\) double-star theorem and this line's \((7,1^6)\) theorem; they must not be used as the current profile ledger.
+
+
+## Global exact-color count constraint (new 2026-10-27)
+
+The independent Q33 cross-layer capacity theorem now excludes \(m=10\), where \(m\) is the number of exact-129 colors. Hence \(m\in\{8,9\}\). If \(m=9\), at least one of the 56 selected witnesses is a gadget witness; in every case the gadget-witness count \(h\le4\). See Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md and verify_q33_exact_color_count_capacity.py. This result does not change the local status of the two remaining \(P_C=49\) profiles: \((4,4,1^5)\) and \((4,3,2,1^4)\) remain open in their all-component-edge-present branches.
 
 ## Why the two remaining branches are hard
 
