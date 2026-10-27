@@ -22,7 +22,7 @@ The standalone arithmetic verifier verify_q33_exact_color_count_capacity.py pass
 
 ### Refined \(m=9\) terminal
 
-The same pointwise capacity inequality shows that ten component four-sets with total \(U\)-incidence at least 24 need pair-cost at least 18. Thus \(m=9\) forces \(\delta\ge18-4h\), so \(\delta\ge14,10,6,5\) for \(h=1,2,3,4\), respectively.
+The same pointwise capacity inequality shows that ten component four-sets with total \(U\)-incidence at least 24 need pair-cost at least 18. Thus \(m=9\) forces \(\delta\ge18-4h\), so \(\delta\ge14,10,11,5\) for \(h=1,2,3,4\), respectively.
 
 If \(h=4\), equality holds in \(e(\overline{H[W]})\ge72+6h\le96\): \(H[W]\) is four disjoint \(K_4\)'s and \(\overline{H[W]}=K_{4,4,4,4}\). The 4 component \(K_4\)'s and 24 component triangles from the selected eight colors partition all 96 edges of this complete four-partite graph. If \(m=9\), the ninth color's component four-sets can contain at most one \(W\)-vertex each, and hence \(\delta\ge14\). This terminal is rigid but not yet contradictory.
 
