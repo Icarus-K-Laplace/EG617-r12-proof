@@ -125,3 +125,10 @@ Every independent 4-set in W contains at least one positive-slack vertex, and ev
 A slack-one independent W-quadruple forces a \(7,7,7,8\) partition of U whose every support block has one point in each part; the three 7-parts are pairwise anticomplete cliques. This is a necessary-structure theorem only, not a terminal closure.
 
 For the two minimum-slack profiles \((\delta,\epsilon_U)=(3,3),(4,1)\), \(Y=7\), so at least 11 W vertices have zero slack. It is not valid to infer exactly 11 zero-slack vertices or seven vertices with slack one; the integer slack can concentrate on fewer vertices.
+
+
+## Round 8 — universal \(\alpha(H[W])=4\) (2026-10-27)
+
+The exact feasible budget has \(\delta+\epsilon_U\ge5\), hence \(e(H[W])\le43\). If \(\alpha(H[W])\le3\), Turán gives \(e(H[W])\ge45\) because \(\overline{H[W]}\) is \(K_4\)-free on 18 vertices. Therefore every feasible E407 profile satisfies \(\alpha(H[W])=4\). This guarantees at least one independent W-quadruple; by the W-side transversal theorem, every such quadruple has total slack at least one.
+
+The 56-profile integer verifier passed independently. This is a structural consequence, not a terminal exclusion.
