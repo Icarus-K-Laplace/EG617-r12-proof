@@ -1,6 +1,6 @@
 # E408 global incidence / witness-capacity — canonical state
 
-Updated: 2026-10-26  
+Updated: 2026-10-27  
 Repository: Icarus-K-Laplace/EG617-r12-proof  
 Dedicated branch: workstream/r12-twochat-e408-global-20261026  
 Allowed write scope: r12_master/workstreams/twochat-e408-global-20261026/
@@ -67,7 +67,12 @@ M_C\ge15+P_C,\qquad
 \sum_{s_C=0}P_C\ge62m-427,\qquad
 \sum_{s_C=0}M_C\ge77m-427,
 \]
-where \(m\in\{8,9,10\}\) is the number of exact-129 colors. These are necessary conditions, not a contradiction.
+where \(m\in\{8,9\}\) is now the certified remaining range for the number of exact-129 colors. The previous (m=10) branch is excluded by Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md, using the 31-point/56-witness support and all ten component four-sets per exact color. If (m=9), at least one selected witness must be a gadget witness; in all cases the gadget-witness count (h\le4). The remaining (m=8,9) branches are still OPEN.
+
+
+### New cross-layer capacity theorem (2026-10-27)
+
+**PROVED_CONDITIONAL:** \(m=10\) is impossible under the Q33 284-edge contract. The proof separates the 56 selected witnesses from the full ten-component witness family, bounds the number \(h\) of selected gadget witnesses by \(h\le4\) using \(e(\overline{H[W]})\le96\), then shows the 20 component four-sets from the two unselected exact colors would need at least 48 incidences in \(U\), while their pair-cost budget \(\sum\binom{k}{2}\le\delta+4h\le33\) allows at most 46. The arithmetic verifier independently checks the finite capacity optimization. This does not close \(m=8\) or \(m=9\), and does not close Q33.
 
 The next target is to combine:
 - the all-component-edge-present branch for the two remaining P49 profiles;
@@ -87,5 +92,7 @@ The sibling Q32 workstream proves the strict support floor \(|U|\ge44\) under it
 - New R7 gadget verifier: 6e896507bee2d91701b173b52678788f3dfcc826
 - R7 double-star theorem: d462fe568577e4ab9204ef155da18111000312f0
 - Profile reconciliation: d5285026a56a15ad2a78e7625248d39c87d03b84
+- Q33 m=10 exact-color capacity exclusion: 50e4f7c2299f1cb21a410779a27fdd9fd7795438
+- Capacity arithmetic verifier: 62462f04e76b33aa921249caa38d604fd6e6f95c
 
 The latest branch HEAD may advance as additional files are committed. See PROGRESS_LOG.md for the chronological record.
