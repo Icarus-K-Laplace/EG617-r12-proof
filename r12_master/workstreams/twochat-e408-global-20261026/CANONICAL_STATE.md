@@ -72,7 +72,7 @@ where \(m\in\{8,9\}\) is now the certified remaining range for the number of exa
 
 ### New cross-layer capacity theorem (2026-10-27)
 
-**PROVED_CONDITIONAL:** \(m=10\) is impossible under the Q33 284-edge contract. The proof separates the 56 selected witnesses from the full ten-component witness family, first bounds the number \(h\) of selected gadget witnesses by \(h\le3\), then excludes the equality case \(h=4\) by an orthogonal-array obstruction. Thus \(h\le3\) globally. The two unselected exact colors in the \(m=10\) branch would need at least 48 incidences in \(U\), while their pair-cost budget \(\sum\binom{k}{2}\le\delta+4h\le33\) allows at most 46. If \(m=9\), at least one selected witness is a gadget witness and \(\delta\ge14,10,6\) for \(h=1,2,3\), respectively. This does not close \(m=8\) or \(m=9\), and does not close Q33.
+**PROVED_CONDITIONAL:** \(m=10\) is impossible under the Q33 284-edge contract. The proof separates the 56 selected witnesses from the full ten-component witness family, first bounds the selected gadget-witness count by \(h\le4\), then excludes \(h=4\) by an orthogonal-array obstruction. Thus \(h\le3\) globally. The two unselected exact colors in the \(m=10\) branch would need at least 48 incidences in \(U\), while their pair-cost budget \(\sum\binom{k}{2}\le\delta+4h\le33\) allows at most 46. If \(m=9\), at least one selected witness is a gadget witness; the joint \(U/W\) pair-cost audit further forces \(\delta\ge14,10,11\) for \(h=1,2,3\), respectively. If \(h=3,\delta=11\), then \(\epsilon_U=4\) and the ninth color's ten components have four \(k=2\) sets and six \(k=3\) sets. These are exact residual contracts, not a closure. This does not close \(m=8\) or \(m=9\), and does not close Q33.
 
 The next target is to combine:
 - the all-component-edge-present branch for the two remaining P49 profiles;
@@ -98,6 +98,8 @@ The sibling Q32 workstream proves the strict support floor \(|U|\ge44\) under it
 - Refined capacity verifier: 448fc7e717273d4f4cc8b9671897c2de37d2a490
 - Exclude (h=4) by OA obstruction: 99d85042c32a87a27d56c321c025ec55a3f978f5
 - OA obstruction verifier: 91050534c8c59106b119474b7e3a45f37c6d6f51
+- Joint U/W capacity proof: 904e6709fdea0a4f0db8eaa3ed64bcda1756f49b
+- Joint U/W capacity verifier: 2625ad01209eb3744edae2739b78af78325dfac9
 - R7 pigeonhole wording audit correction: f0743b0c5c65d883f9e533b2c5cd83c9987c3b77
 
 The latest branch HEAD may advance as additional files are committed. See PROGRESS_LOG.md for the chronological record.
