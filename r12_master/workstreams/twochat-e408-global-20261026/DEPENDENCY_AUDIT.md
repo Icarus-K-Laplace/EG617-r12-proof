@@ -85,7 +85,7 @@ Independent replay of the finite dynamic program gives:
 - 10 variables with required incidence sum 24: minimum pair-cost 18;
 - the pointwise bound \(k\le3/2+\binom{k}{2}/2\) holds for all five possible values.
 
-The graph-level conditional proof first derives \(h\le4\) from the 16-point complement \(W\), then charges overlaps between unselected component K4s and selected gadget witnesses at no more than four edges per gadget witness. It excludes \(m=10\), and shows \(m=9\Rightarrow h\ge1\). This uses the 284-edge Q33 contract only; no 285-edge result is imported.
+The graph-level conditional proof first derives \(h\le4\) from the 16-point complement \(W\), then excludes equality \(h=4\) by the OA(4,4,2,2) obstruction, so the final bound is \(h\le3\). It charges overlaps between unselected component K4s and selected gadget witnesses at no more than four edges per gadget witness. It excludes \(m=10\), and shows \(m=9\Rightarrow h\ge1\). This uses the 284-edge Q33 contract only; no 285-edge result is imported.
 
 Status: PROVED_CONDITIONAL for the named contracts. If (m=9), (delta\ge14,10,6) for (h=1,2,3). The h=4 endpoint would force (H[W]=4K_4) and an edge-partition of (K_{4,4,4,4}) into four (K_4)'s and 24 triangles; this induces impossible OA(4,4,2,2), so h<=3. Q33 global compatibility remains OPEN.
 
