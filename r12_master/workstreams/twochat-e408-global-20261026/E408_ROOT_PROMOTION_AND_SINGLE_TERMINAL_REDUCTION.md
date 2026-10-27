@@ -67,17 +67,23 @@ Because the minimum degree is exactly 13, degree-13 pivots exist. Let
 Q=\max\{q_p:d_R(p)=13\}.
 \]
 
-Then the exhaustive charge partition is
+The audited V9 package, relative to its retained lower-order seed contract, has already compressed the E408 frontier to
 
 \[
-Q\le31,\qquad Q=32,\qquad Q=33.
+Q\in\{31,32,33\}.
 \]
 
-No other E408 h13 charge branch exists.
+In particular, the low-charge maximum branches below 31 are not being attributed to V11 here: they are removed by the earlier V6--V9 chain, whose current canonical audit is `T61_H13_V9_CANONICAL_AUDIT.md`.
 
-## 5. E408 branch Q<=31
+Thus the remaining exhaustive E408 charge partition is
 
-The retained V11 analytic package reports, under its explicit lower-order seed contract, that E408 with maximum charge Q<=31 is excluded. Its finite kernel certificate has also been independently replayed in `R12_V11_V12_REPLAY.md`:
+\[
+Q=31,\qquad Q=32,\qquad Q=33.
+\]
+
+## 5. E408 branch Q=31
+
+The retained V11 analytic package reports, under its explicit lower-order seed contract, that E408 with maximum charge Q=31 is excluded. Its finite kernel certificate has also been independently replayed in `R12_V11_V12_REPLAY.md`:
 
 - 684 kernel weight assignments;
 - 349 outside-count states;
@@ -86,7 +92,7 @@ The retained V11 analytic package reports, under its explicit lower-order seed c
 - completed parent graphs claimed: 0;
 - certificate SHA256 `0baffc39ee481b27af53fda36a8fe40b8cd8c527103b5126060857c4eaacd09b`.
 
-The finite replay certifies the supplied state coverage; the analytic screen rules and retained lower-order seeds retain their named hypotheses. Accordingly this branch is imported as **PROVED_CONDITIONAL / COMPUTATION_CERTIFIED interface**, not as an unconditional theorem reconstructed here.
+The finite replay certifies the supplied state coverage; the analytic screen rules and retained lower-order seeds retain their named hypotheses. Accordingly Q=31 is imported as a **PROVED_CONDITIONAL / COMPUTATION_CERTIFIED interface**, not as an unconditional theorem reconstructed here.
 
 ## 6. E408 equality automatically supplies the seven-block global contract
 
@@ -176,17 +182,16 @@ No Q32 285-edge identity is used.
 
 ## 9. E408 energy-layer exhaustion theorem
 
-Sections 4--8 form an exhaustive partition of every E408 h13 T61 residual:
+The front-end package chain gives the following exhaustive sequence:
 
-\[
-Q\le31\quad\text{or}\quad Q=32\quad\text{or}\quad Q=33.
-\]
-
-The first branch is excluded by the retained V11 package relative to its named assumptions; the second by the Q32 exact-color-count contradiction; the third by the Q33 nonexact-U reserve contradiction.
+1. V6--V9 remove the lower-charge maximum branches and leave E408 only Q in {31,32,33};
+2. V11 excludes Q=31 relative to its named assumptions;
+3. the present Q32 theorem excludes Q=32;
+4. the present Q33 theorem excludes Q=33.
 
 Therefore:
 
-> **Theorem E408-EXHAUST.** Under the explicit front-end T61 contract, the retained V11 lower-order/analytic inputs, the E408 seven-block equality theorem, the exact-129 Kang--Pikhurko Type-I classification, and the extremal theorems cited in the Q32/Q33 proofs, no E408 T61 parent exists.
+> **Theorem E408-EXHAUST.** Under the explicit front-end T61 contract, the retained V6--V11 lower-order/analytic inputs, the E408 seven-block equality theorem, the exact-129 Kang--Pikhurko Type-I classification, and the extremal theorems cited in the Q32/Q33 proofs, no E408 T61 parent exists.
 
 Status: **PROVED_CONDITIONAL**.
 
@@ -216,7 +221,7 @@ so
 \[
 q_p\le32.
 \]
-Let Q be the maximum charge over degree-13 pivots. The retained V11 package excludes E407 with Q<=31 under its named assumptions. Hence any surviving counterexample must satisfy
+Let Q be the maximum charge over degree-13 pivots. The audited V9 chain leaves only Q in {31,32} for E407, and V11 then excludes maximum Q=31 under its named assumptions. Hence any surviving counterexample must satisfy
 
 \[
 \boxed{E=407,\quad h=13,\quad Q=32.}
@@ -249,7 +254,7 @@ This file does **not** prove EG617(r=12). The live obstruction is E407 Q32. In p
 
 - the 554 V12 states are not claimed unrealizable;
 - the five template families are not all excluded against the same 284-edge core;
-- V11/V12 analytic screening rules retain their lower-order assumptions even though the finite certificates replay;
+- V6--V12 analytic screening rules retain their lower-order assumptions even though the finite certificates replay;
 - external Brouwer/Kang--Pikhurko inputs retain their stated hypotheses;
 - no sibling E407 status is silently promoted.
 
@@ -257,7 +262,7 @@ A complete r=12 proof now requires closing the E407 Q32 five-template/common-cor
 
 ## 12. Source heads frozen for this composition
 
-- front-end / V11/V12 audit source: `workstream/r12-emergency-sprint-chat-20261025` at `5258c5fe17af3bf17eb7a2bfb08315c9be9116cd`;
+- front-end / V9--V12 audit source: `workstream/r12-emergency-sprint-chat-20261025` at `5258c5fe17af3bf17eb7a2bfb08315c9be9116cd`;
 - E408 Q33 source: `workstream/r12-e408-q33-global-compat-20261025` at `0cb2ff3968f005c9cb255958df7c02b220678701`;
 - E408 Q32 source: `workstream/r12-e408-q32-excess6-20261025` at `a0ba6db26c7e8b00a4217dcbcbf298895dff93ce`;
 - active E407 sibling observed at `workstream/r12-twochat-e407-closure-20261026` commit `2e2e6d15df12c61f7fd15e27e74afd2887ddeb41`.
