@@ -1,8 +1,8 @@
 # Kang–Pikhurko exact-129 source audit
 
 Updated: 2026-10-27
-Status: **SOURCE VERIFIED / PARAMETER MAP VERIFIED**
-Purpose: discharge the provenance uncertainty behind the retained exact-129 Type-I factor theorem used by the E407/E408 root chain.
+Status: **SOURCE VERIFIED / PARAMETER MAP VERIFIED / DEGREE-SEQUENCE CORRECTED**
+Purpose: freeze the published exact-129 equality classification and prevent overstrengthening it.
 
 ## 1. Primary source
 
@@ -14,146 +14,139 @@ Primary PDF:
 
 Relevant source statements:
 
-- **Theorem 1:** for `n >= r+3`, `r>=2`, and `r <= (n-1)/2`,
-  `p_r(n)=t_r(n)-floor(n/r)+1`, and the extremal graphs are characterized by Theorem 4 and Lemma 5.
-- **Theorem 4:** `p_r(n)` is the maximum of the explicit construction `G(n_1,...,n_r)` over the allowed integer sequences, and **all** extremal graphs arise from that construction.
-- **Lemma 5:** in the regime `r <= (n-1)/2`, the optimal nondecreasing sequences `n_1,...,n_r`, summing to `n-1`, are exactly those satisfying
-  `n_1>=2`,
-  `n_2<=n_1+1`,
-  `n_r<=n_1+2`,
-  `n_r<=n_3+1`.
+- Theorem 1: in the applicable range, `p_r(n)=t_r(n)-floor(n/r)+1`;
+- Theorem 4: all extremal graphs arise from the explicit `G(n_1,...,n_r)` construction;
+- Lemma 5: characterizes the optimal part-size sequences.
 
-The construction starts from a complete r-partite graph on parts `N_i`, adds one new vertex `x`, modifies only the two smallest nontrivial parts `N_s,N_t`, and otherwise keeps the complete cross-part structure. Its exact definition is in Section 2 immediately before equation (4).
+The construction starts from a complete r-partite graph, chooses two special parts `N_s,N_t`, chooses `y in N_t` and a **nonempty proper** subset `A subset N_s`, adds `x`, connects `x` to `A union {y}` and the ordinary parts, and deletes the edges between `y` and `A`.
 
-## 2. Translate an exact-129 color to the KP problem
+## 2. Exact-129 complement translation
 
-Let `C` be one non-target color restricted to a genuine 61-point T61 residual `R` and assume
+Let C be one non-target color restricted to a genuine 61-point T61 residual and assume
 
-- `e(C[R])=129`;
-- `alpha(C[R])<=12`;
-- `omega(C[R])<=5`.
+- `e(C)=129`;
+- `alpha(C)<=12`;
+- `omega(C)<=5`.
 
-Put
+Let `G=complement(C)`. Then
 
-`G = complement(C[R])`.
+`e(G)=C(61,2)-129=1830-129=1701`,
 
-Then
+and `omega(G)=alpha(C)<=12`, so G is K13-free.
 
-`e(G)=C(61,2)-129 = 1830-129 = 1701`.
+G is not 12-partite: otherwise the twelve parts would become twelve cliques in C, each of size at most5, covering at most60 vertices.
 
-Also
-
-`omega(G)=alpha(C[R])<=12`,
-
-so `G` is `K_13`-free.
-
-It is not 12-partite. Indeed, if it were 12-partite, then the twelve color classes would be cliques of `C[R]`. Since `omega(C[R])<=5`, they could cover at most `12*5=60` vertices, not61. Thus
-
-`G in mathcal G_{61,12}`
-
-in Kang–Pikhurko's notation.
+Thus G belongs to the Kang--Pikhurko non-12-partite K13-free class.
 
 ## 3. Equality arithmetic
 
-For `T_12(61)`, the balanced 12 parts have sizes
+The balanced Turan graph T12(61) has part sizes `6,5^11`, so
 
-`6,5,5,5,5,5,5,5,5,5,5,5`.
+`t_12(61)=1830-[C(6,2)+11*C(5,2)]=1830-125=1705`.
 
-Hence the number of missing within-part pairs is
+Since `12<=(61-1)/2`, Theorem 1 gives
 
-`C(6,2)+11*C(5,2)=15+110=125`,
+`p_12(61)=1705-floor(61/12)+1=1701`.
 
-so
+Therefore G is an equality graph.
 
-`t_12(61)=C(61,2)-125=1830-125=1705`.
+## 4. Equality part-size sequences
 
-Here
-
-`12 <= (61-1)/2 = 30`,
-
-and Kang–Pikhurko Theorem 1 gives
-
-`p_12(61)=1705-floor(61/12)+1=1705-5+1=1701`.
-
-Therefore `G` is not merely admissible: it is an **equality graph** for the Kang–Pikhurko theorem.
-
-## 4. Enumerate the equality part-size sequences
-
-Apply Lemma 5 with 12 nondecreasing positive integers summing to60. The four optimality inequalities leave exactly three sequences:
+Applying Lemma 5 to twelve nondecreasing positive integers summing60 gives exactly
 
 1. `(5^12)`;
 2. `(4,5^10,6)`;
 3. `(4,4,5^8,6,6)`.
 
-The companion verifier `verify_kp_exact129_instance.py` enumerates the integer sequences independently and reproduces exactly these three.
+`verify_kp_exact129_instance.py` independently enumerates the integer sequences and reproduces exactly these three.
 
-These are precisely the three historical project labels Type I, Type II, Type III.
+Types II and III contain a part of size6, hence C contains K6, contradicting `omega(C)<=5`. Therefore only `(5^12)` survives.
 
-## 5. Eliminate Types II and III using the contextual clique cap
+## 5. Valid Type-I factorization
 
-Each construction part `N_i` is independent in the KP graph `G`, hence a clique of size `n_i` in the original color graph `C[R]`.
+Let the two special 5-parts be `N_s,N_t`, and let x be the added vertex.
 
-Both Type II and Type III contain a part of size6. Therefore they contain a `K_6` in `C[R]`, contradicting
+For each of the other ten 5-parts:
 
-`omega(C[R])<=5`.
+- the part is independent in G, hence a K5 in C;
+- G is complete from it to every other old part;
+- x is adjacent in G to all of it.
 
-Thus only Type I survives:
+Hence those ten parts are **isolated K5 components in C**.
 
-`(n_1,...,n_12)=(5,5,...,5)`.
+All remaining nontrivial color edges lie on
 
-## 6. Recover the exact Type-I color factor
+`N_s union N_t union {x}`,
 
-In the KP construction, choose the two special 5-parts `N_s,N_t` and the added vertex `x`.
+an 11-vertex gadget. Thus the source-verified factorization is
 
-For each of the other ten 5-parts `N_i`:
+`C = 10 isolated K5 dot-union G_11`.
 
-- `G[N_i]` has no edges, so `C[N_i]=K_5`;
-- `G` is complete from `N_i` to every other old part;
-- `x` is adjacent in `G` to all of `N_i`.
+The gadget contains the two special 5-cliques and x, and has independence number at most2.
 
-Therefore in `C[R]`, each such `N_i` is an **isolated K_5 component**.
+This factorization is a valid published-theorem instance and remains usable in E407/E408 component-witness arguments.
 
-All nontrivial interactions outside these ten components are contained in
+## 6. Correct Type-I degree sequence
 
-`U = N_s union N_t union {x}`,
+This is the critical correction found by primary-source audit.
 
-which has size11.
+Put `a=|A|`. Because A is nonempty and proper in a 5-part,
 
-Hence every exact-129 non-target color in the genuine T61 context has exactly
+`a in {1,2,3,4}`.
 
-`10 K_5 dot-union U_11`,
+Take the complement of the published construction back to C.
 
-where the ten `K_5` are isolated components and `U_11` is the KP exceptional gadget.
+- The 50 vertices in the ten isolated K5s have degree4.
+- Every vertex of `N_s` has degree5 in the 11-vertex gadget:
+  - vertices of A have four internal N_s neighbors plus y;
+  - vertices of `N_s\A` have four internal neighbors plus x.
+- Each of the four vertices of `N_t\{y}` has four internal neighbors plus x, hence degree5.
+- `deg_C(y)=4+a`.
+- `deg_C(x)=9-a`.
 
-The gadget has
+Therefore the variable degree pairs are exactly
 
-- clique number exactly5, because each special part is a K5 in `C`;
-- independence number exactly2.
+- a=1: `(5,8)`;
+- a=2: `(6,7)`;
+- a=3: `(7,6)`;
+- a=4: `(8,5)`.
 
-For the latter, each independent set can contain at most one vertex from each special K5; adding `x` cannot create an independent triple because the KP construction connects `x` in the complement to all but the designated proper-subset/one-vertex pattern, while the remaining cross-pair is exactly the deleted-edge pattern. Direct inspection of the construction gives maximum two.
+There is **no degree9 vertex**.
 
-This is exactly the retained project factor theorem used in the E408 exact-count argument and the E407 selected-component/support bridge.
+Degree-sum check:
 
-## 7. Promotion consequence
+- a=1 or4: `50*4 + 10*5 + 8 = 258`;
+- a=2 or3: `50*4 + 9*5 + 6 + 7 = 258`.
 
-The statement
+Both equal `2*129` as required.
 
-> every 61-point exact-129 non-target color with `alpha<=12` and `omega<=5` is Type I, hence `10 isolated K5 + 11-point exceptional gadget`
+## 7. Retraction consequence
 
-is **not an OPEN project assumption**.
+The factor theorem is source-verified, but the following stronger project inference is false:
 
-It is a direct parameter instance of the published Kang–Pikhurko equality classification, plus the elementary complement translation and the contextual clique cap.
+> every exact-129 Type-I color has a distinguished vertex of color-degree9.
 
-Accordingly, the exact-129 factor theorem's **source provenance gate is discharged**.
+Accordingly, any theorem whose contradiction requires degree9 exceptional-vertex injectivity must be re-audited or retracted. The branch-local retraction is recorded in
 
-This does not by itself promote the whole fixed-r=12 proof to unqualified `PROVED`: other external theorem instances and the computation-certified V9/V10/V11/V12/front-end packages still require their own final source/replay freeze.
+`KP_DEGREE9_RETRACTION_AND_E408_Q32_REOPEN.md`.
 
-## 8. Audit firewall
+Affected E408-Q32 closure routes include:
 
-This audit does not claim:
+- `Q32_GLOBAL_EXCEPTIONAL_INJECTIVITY.md`;
+- `Q32_EXACT_COLOR_COUNT_COLLAPSE.md`;
+- `Q32_NONFULL_SUPPORT_SHELL_CAPACITY.md` at the injectivity step;
+- `E408_WHOLE_LAYER_EXACT_COUNT_CLOSURE.md`.
 
-- that every other external theorem used by the root chain has been frozen;
-- that the finite recurrence/state certificates have been formally verified;
-- that the proof is machine-checked end-to-end.
+## 8. Promotion consequence
 
-It only closes the previously explicit uncertainty about the exact-129 Type-I equality/factor theorem.
+The exact-129 **factorization provenance gate passes**:
+
+> exact-129 + alpha<=12 + omega<=5 on 61 vertices implies `10 isolated K5 + G11`.
+
+The exact-129 **degree9 gate fails**.
+
+This distinction is now canonical. Source verification must not be used to resurrect degree9 or exceptional-vertex injectivity.
+
+## 9. Firewall
+
+This audit claims neither an end-to-end formal proof nor closure of E408-Q32. It only fixes the exact published equality interface and its correct degree sequence.
