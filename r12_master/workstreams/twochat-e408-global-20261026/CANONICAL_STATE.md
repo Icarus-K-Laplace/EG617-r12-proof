@@ -72,7 +72,7 @@ where \(m\in\{8,9\}\) is now the certified remaining range for the number of exa
 
 ### New cross-layer capacity theorem (2026-10-27)
 
-**PROVED_CONDITIONAL:** \(m=10\) is impossible under the Q33 284-edge contract. The proof separates the 56 selected witnesses from the full ten-component witness family, first bounds the number \(h\) of selected gadget witnesses by \(h\le4\), then excludes the equality case \(h=4\) by an orthogonal-array obstruction. Thus \(h\le3\) globally. The two unselected exact colors in the \(m=10\) branch would need at least 48 incidences in \(U\), while their pair-cost budget \(\sum\binom{k}{2}\le\delta+4h\le33\) allows at most 46. If \(m=9\), at least one selected witness is a gadget witness and \(\delta\ge14,10,6\) for \(h=1,2,3\), respectively. This does not close \(m=8\) or \(m=9\), and does not close Q33.
+**PROVED_CONDITIONAL:** \(m=10\) is impossible under the Q33 284-edge contract. The proof separates the 56 selected witnesses from the full ten-component witness family, first bounds the number \(h\) of selected gadget witnesses by \(h\le3\), then excludes the equality case \(h=4\) by an orthogonal-array obstruction. Thus \(h\le3\) globally. The two unselected exact colors in the \(m=10\) branch would need at least 48 incidences in \(U\), while their pair-cost budget \(\sum\binom{k}{2}\le\delta+4h\le33\) allows at most 46. If \(m=9\), at least one selected witness is a gadget witness and \(\delta\ge14,10,6\) for \(h=1,2,3\), respectively. This does not close \(m=8\) or \(m=9\), and does not close Q33.
 
 The next target is to combine:
 - the all-component-edge-present branch for the two remaining P49 profiles;
