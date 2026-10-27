@@ -8,130 +8,141 @@ Write scope: `r12_master/workstreams/twochat-e407-closure-20261026/`
 
 **E407 Q32: OPEN / NOT_CERTIFIED. EG617(r=12): OPEN / NOT_CERTIFIED.**
 
-Historical detail is preserved in prior commits. This file records the current frontier after the selected-anchor, shell-load, full-row-capacity, and delta=13 epsilon_U=0 closure rounds.
+The delta=13 frontier has materially contracted: every four-partite-U branch is excluded, and the entire non-four-partite branch admitting two successive K5-safe augmentations is now excluded. The only delta=13 non-four-partite survivors are the two K5-saturated forks described below.
 
 ## Frozen core/support contract
 
 \[
-|H|=47,\ e(H)=284,\ \alpha(H)\le4,\ \omega(H)\le11,\ \delta(H)\ge12,
-\qquad \sum_{x\in H}(d_H(x)-12)=4.
+|H|=47,\quad e(H)=284,\quad \alpha(H)\le4,\quad \omega(H)\le11,\quad \delta(H)\ge12,
 \]
-There is U subset H with |U|=29 and W=H\U with |W|=18. There are 49 independent support blocks, seven in each of seven exact-129 colors, disjoint within color and pairwise linear.
+\[
+\sum_{x\in H}(d_H(x)-12)=4.
+\]
+There is `U subset H`, `|U|=29`, and `W=H\U`, `|W|=18`. There are 49 independent support blocks, seven in each of seven exact-129 colours, disjoint within a colour and pairwise linear.
 
-With
+Put
 \[
-L_U=\overline{H[U]},\quad \delta=e(L_U)-294,\quad
-\epsilon_U=\sum_{u\in U}(d_H(u)-12),
+L_U=\overline{H[U]},\qquad \delta=e(L_U)-294,
+\qquad \epsilon_U=\sum_{u\in U}(d_H(u)-12).
 \]
-we have
+Then
 \[
-e(H[U])=112-\delta,\quad e_H(U,W)=124+\epsilon_U+2\delta,\quad
-e(H[W])=48-\epsilon_U-\delta,
+e(H[U])=112-\delta,\qquad e_H(U,W)=124+\epsilon_U+2\delta,
+\qquad e(H[W])=48-\epsilon_U-\delta,
 \]
+with
 \[
 3\le\delta\le16,\quad 0\le\epsilon_U\le4,\quad
-\delta+\epsilon_U\le16,\quad \epsilon_U+2\delta\ge9,
+\delta+\epsilon_U\le16,\quad \epsilon_U+2\delta\ge9.
 \]
-and every feasible profile has alpha(H[W])=4.
+Every feasible profile has `alpha(H[W])=4`.
 
 ## Exact selected-component structure
 
-Every support block Q is the H-four-set of a selected isolated exact-color K5 component Q union {a(Q)}, with anchor a(Q) in {p} union A. Anchors are distinct within a color and pointwise injective through U.
-
-For exact color c, let b_c be the number of selected B anchors. Then
+Every one of the 49 support blocks `Q` is the H-four-set of a selected isolated exact-colour `K5`, `Q union {a(Q)}`, with anchor in `{p} union A`. For every exact colour `c`, the number `b_c` of selected B anchors satisfies
 \[
 \boxed{b_c\in\{5,6,7\}}.
 \]
-At most one selected S anchor occurs per exact color, and at least 35 of the 49 selected block occurrences are B-anchored. Deleting the seven selected K5s leaves exactly `3K5 + G11` in that exact color.
+At most one selected S anchor occurs per exact colour, at least 35 of the 49 selected blocks are B-anchored, and deleting the seven selected K5s leaves exactly `3K5 + G11` in that colour.
 
-## Five-template global forcing now registered
+## Five-template global forcing
 
 ### Actual selected hub-complete blocks
 
-If the shell template has a full B row f (k_f=3), every selected B-anchored block that is not hub-complete must meet D_f. Since |D_f|=3 and same-color selected blocks are disjoint, each exact color has at least b_c-3>=2 actual selected hub-complete blocks.
+If the shell template contains a full B row `f` (`k_f=3`), every selected B-anchored support block that is not hub-complete must meet `D_f`. Since `|D_f|=3` and same-colour selected blocks are disjoint, every exact colour has at least
+\[
+b_c-3\ge2
+\]
+actual selected hub-complete support blocks.
 
-Templates A/B/C/D always have a full row; E either has a full row or else its row equations force all ten B rows to be the P3 ends-pair type. Therefore:
-
-- A/B/C/D and E with n3>=1: at least 14 actual selected hub-complete blocks globally;
-- E with n3=0: at least 35 actual selected B-blocks hit both P3 endpoint rows.
+Thus A/B/C/D, and E whenever `n3>=1`, have at least 14 actual selected hub-complete blocks globally. In the E no-full-row branch the row equations force all ten B rows to be the P3 ends-pair type, and at least 35 actual selected B blocks hit both endpoint rows.
 
 ### Full-row linearity capacity
 
-If h is the number of full B rows and N_bad is the global number of selected B-blocks that are not hub-complete, pairwise support linearity plus pointwise anchor injectivity gives
+If `h` is the number of full B rows and `N_bad` the global number of selected B blocks that are not hub-complete, support linearity plus pointwise anchor injectivity gives
 \[
-\boxed{N_{bad}\le C(h):=\min\{21,\lfloor9+60/h\rfloor\}.}
+\boxed{N_{bad}\le C(h):=\min\{21,\lfloor 9+60/h\rfloor\}.}
 \]
-Hence
+Since `B_sel=sum_c b_c>=35`,
 \[
-N_{hub}^{sel}\ge B_{sel}-C(h),\qquad B_{sel}=\sum_c b_c\ge35.
+N_{hub}^{sel}\ge B_{sel}-C(h).
 \]
-In particular A and C have h>=6, so
+In particular A and C have `h>=6`, hence
 \[
-\boxed{N_{hub}^{sel}\ge16\quad\text{in A and C}.}
+\boxed{N_{hub}^{sel}\ge16.}
 \]
-For h=7,8,9,10 the corresponding floors are 18,19,20,20.
 
 ### Exact shell cross-load with S anchors
 
-Let sigma be the number of selected S-anchor occurrences among the seven exact colors and beta=e(M[S]). Every exact color owns at least one exact-colored S-B shell edge; a color with a selected S anchor owns at least two. Thus
+Let `sigma` be the number of selected S-anchor occurrences and `beta=e(M[S])`. Every exact colour owns at least one exact-coloured S-B shell edge, and a colour with a selected S anchor owns at least two. Hence
 \[
 \boxed{|E_{exact}(S,B)|\ge\max\{14-\beta,\ 7+\sigma\}.}
 \]
-The first term is the previously registered exact shell-edge bound, the second is the new residual-factor refinement.
 
 Primary files: `SELECTED_SUPPORT_HUB_COMPLETENESS.md`, `FULL_ROW_LINEARITY_CAPACITY.md`, `S_ANCHOR_CROSS_LOAD_REFINEMENT.md`.
 
-## Low-delta frontier — new closure
+## Delta=13 four-partite U: CLOSED
 
-The delta=13, epsilon_U=0, four-partite-U branch is now excluded under the registered Brouwer/Kang-Pikhurko equality theorem.
+All `epsilon_U=0,1,2,3` four-partite-U branches are excluded. The last `epsilon_U=0` case was reduced, using the registered Brouwer/Kang-Pikhurko equality theorem, to five 18-vertex W kernels and eliminated by W-to-U saturation-label capacity.
 
-Reduction:
-- e(H[W])=35, so J=bar(H[W]) is K5-free on18 vertices with 118 edges;
-- J cannot be four-partite because no four positive clique sizes summing18 have total target clique-edge count35;
-- 118 is exactly the non-four-partite Brouwer bound, so KP equality leaves only five W kernels:
-  (3,4,5,5;a=1,2) and (4,4,4,5;a=1,2,3).
+Files: `DELTA13_EPS0_KP_KERNEL_REDUCTION.md`, `DELTA13_EPS0_KP_KERNEL_CLOSURE.md`.
 
-Closure:
-- epsilon_U=0 implies every U vertex has a W neighbour, so every D-to-small H[U] cross-degree is <=4;
-- any W vertex not complete to a U part must have d_H(w,U)>=10;
-- low W vertices (U-degree<=9) therefore carry one of four U-part labels;
-- equal labels force a target W-edge by the registered nonadjacent-pair common-neighbour inequality;
-- omega(H)<=11 gives label capacities 4,4,4,3, so at least three W vertices must be high;
-- the four-unit W excess budget permits only a short list of high sets in each KP kernel, and every remaining low graph needs at least five labels or strands the exceptional x vertex.
+## Delta=13 non-four-partite: augmentation trichotomy
+
+Here
+\[
+e(L_U)=307.
+\]
+The augmentation split is now exact:
+
+1. **two K5-safe augmentations exist** — CLOSED;
+2. **exactly one K5-safe augmentation exists, and the resulting 308-edge graph is K5-saturated** — OPEN;
+3. **the original 307-edge graph is already K5-saturated** — OPEN.
+
+### Two-step branch: CLOSED
+
+Adding two K5-safe nonedges gives a 309-edge non-four-partite K5-free graph, so the registered Kang-Pikhurko equality structure applies. The earlier reduction left four W terminals.
+
+`DELTA13_TWO_STEP_EPS1_EPS2_CLOSURE.md` excludes:
+
+- `epsilon_U=1`, `K3 + K4 + K5 + K6`;
+- `epsilon_U=1`, `(3,5,5,5)` with one W-cross edge;
+- `epsilon_U=2`, `K3 + 3K5`.
+
+The common mechanism is that the KP exceptional pair `x,y` remains a target nonedge, while their forced small W-neighbourhoods leave one common nonneighbour in each of three mutually anticomplete W components, producing an independent five-set.
+
+`DELTA13_TWO_STEP_EPS3_CLOSURE.md` excludes the final `epsilon_U=3`, `2K4 + 2K5` terminal. The proof first forces `x,y` to saturate the two different K4 components. Every vertex of the KP parts `P3 union P4` must then saturate one of the two K5 components. Each of `P3,P4` must use both K5 labels to avoid a target K12, while `P3-P4` is target-anticomplete; two vertices in different parts sharing a K5 label then have enough common W nonneighbours to create an independent five-set.
 
 Therefore
 \[
-\boxed{\delta=13,\ L_U\text{ four-partite is completely excluded for }\epsilon_U=0,1,2,3.}
+\boxed{\delta=13,\ L_U\text{ non-four-partite and two-step K5-safe augmentable }\Longrightarrow\bot.}
 \]
-Files: `DELTA13_EPS0_KP_KERNEL_REDUCTION.md`, `DELTA13_EPS0_KP_KERNEL_CLOSURE.md` and their finite replay scripts.
+
+Latest closure commits:
+
+- `03db399f1c767783de898e1b5cf8c1c53baa7e28` — epsilon_U=1,2 terminals excluded;
+- `857196fac63f83dbecbf7c70980cf47a8253a254` — final epsilon_U=3 terminal excluded.
 
 ## Current low-delta status
 
-- delta=16: excluded.
-- delta=15: four-partite and registered non-four-partite branches excluded.
-- delta=14: four-partite excluded; saturated non-four-partite branch remains conditional on the unaudited Didin dependency.
-- delta=13: **all four-partite epsilon_U=0,1,2,3 branches excluded**; non-four-partite remains OPEN.
-- delta<=12: OPEN.
+- `delta=16`: excluded.
+- `delta=15`: registered four-partite and non-four-partite branches excluded.
+- `delta=14`: four-partite excluded; saturated non-four-partite branch remains **PROVED_CONDITIONAL** on the unaudited Didin dependency.
+- `delta=13`: all four-partite branches excluded; non-four-partite two-step-augmentable branch excluded; only the **307-edge saturated** and **one-step-to-308 saturated** forks remain.
+- `delta<=12`: OPEN.
 
-## Contract classes / firewall
+## Contract firewall
 
-1. Pure graph: core/U/W ledgers, alpha/omega bounds, support linearity consequences.
-2. Labelled exact-129: selected K5 anchors, b_c in {5,6,7}, residual `3K5+G11`, exact shell colour ownership.
-3. Published external extremal input: Brouwer/Kang-Pikhurko where explicitly cited, including the new delta=13 epsilon_U=0 equality reduction.
-4. Conditional external input: the delta=14 saturated branch still depends on the unaudited Didin 2026 preprint theorem.
-5. Parent bridge: V12 template exhaustiveness and the original K145-to-T61 chain remain separate dependencies.
+1. Pure graph: core/U/W ledgers, alpha/omega bounds, support linearity and W-transversal consequences.
+2. Labelled exact-129: selected K5 anchors, `b_c in {5,6,7}`, residual `3K5+G11`, exact shell-colour ownership.
+3. Published external extremal input: Brouwer/Kang-Pikhurko only where explicitly registered.
+4. Conditional external input: the delta=14 saturated branch still depends on the unaudited Didin 2026 preprint theorem; it is not promoted to unconditional.
+5. Parent bridge: V12 exhaustiveness and the original K145-to-T61 chain remain separate dependencies.
 
-## Current unique highest-leverage blocker
+## Highest-leverage next targets
 
-> Prove that none of V12 templates A–E can realize the strengthened selected-support system on one legal 284-edge core, using the actual hub-complete selected blocks, full-row linearity capacity, exact S-B colour load, U/W support multiplicities, residual `3K5+G11`, and four-unit core excess.
+1. **Delta=13 saturated fork theorem:** exclude a 29-vertex, non-four-partite, K5-free K5-saturated graph with 307 edges, or the 308-edge saturated graph reached by one K5-safe augmentation, while respecting the 49-block support packing and four-unit H excess. Prefer a direct proof independent of Didin.
+2. **Five-template same-core incompatibility:** combine the actual selected hub-complete blocks, exact S-B colour load, U/W support multiplicities, residual `3K5+G11`, and four-unit core excess to exclude templates A–E.
+3. `delta<=12` remains an independent later frontier.
 
-Independently, the remaining low-delta core frontier is delta=13 non-four-partite and delta<=12.
-
-## Latest substantive commits
-
-- `49d86aee7a4c89400fffd94b5616845281257d13` — actual selected hub-complete support blocks + S-anchor cross-load theorem.
-- `5e6d6d311860a412dccab1a5b0a7b2d513d28f1b` — full-row linearity capacity; A/C hub-complete floor raised to16.
-- `ffc2b514fe66ce5cfa6a3f9202cc857454e9fd45` — delta=13 epsilon_U=0 reduced to five KP W-kernels.
-- `fa73d6b2e81c7c501c03bb5cfa5244ca0c0ff9a5` — all five kernels excluded; delta=13 four-partite branch fully closed.
-
-No E407-Q32 or EG617 closure is claimed.
+No E407-Q32 or EG617(r=12) closure is claimed.
