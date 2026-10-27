@@ -60,3 +60,17 @@ The retained A/C bound is the high-k label-intersection floor: at least h-4 of t
 The Round 5 audit correctly identified that the direct independent-six explanation alone does not force a component quadruple to hit arbitrary other B-rows. However, the registered row-transversal theorem supplies exactly this implication under its stated contract: if Q is an independent 4-set in H minus D_s, t_s<=12, and sb is a missing shell edge, then Q intersects D_b. This theorem uses the retained R(3,35) exclusion.
 
 For templates A/C every hub row has t_s<=12, so the stronger capacity proof is valid when explicitly routed through the row-transversal theorem. The corrected Theorem 4.3 therefore reinstates the conditional floor max(3,h-4) hub-complete component witnesses per exact-129 color. The direct source proof route is incomplete, but the repaired route is now explicit; this result remains conditional on the row-transversal/R(3,35) dependency.
+
+
+## Round 7 — W-side block-transversal audit
+
+The support-block transversal theorem uses only the frozen 49 independent 4-sets, seven disjoint blocks per color class, pairwise linearity, \(\alpha(H)\le4\), and the exact cross-edge ledger. It is independent of the exact-129 K5-component family and does not identify the two witness systems.
+
+The proof obligations are checked directly:
+- If a W vertex misses a support block, that block plus the W vertex is an independent 5-set.
+- A point of U lies in at most seven blocks, giving \(d_U(w)\ge7\).
+- An independent 4-set in W must dominate every U point, giving total U-degree at least 29.
+- If two W vertices are nonadjacent, every support block must meet their combined U-neighborhood in at least two points; counting at most seven block incidences per U point gives the common-neighborhood bound.
+- The slack-one \(7,7,7,8\) partition and the three K7 parts follow from exact equality and pairwise linearity.
+
+The independent verifier checks only integer arithmetic, not existence of the support design or graph realization. The five shell templates, all unresolved low-\(\delta\) branches, the Didin-dependent \(\delta=14\) branch, and the original K145-to-T61 bridge remain OPEN / NOT_CERTIFIED.
