@@ -120,7 +120,35 @@ Combining with (2), the full conditional result is:
 \boxed{m\in\{8,9\},\qquad h\le4,\qquad m=9\Rightarrow1\le h\le4.}
 \]
 
-## 6. Proof scope and dependencies
+
+## 6. Quantitative frontier for the remaining \(m=9\) branch
+
+For the one exact color outside the selected eight, (3) requires \(\sum_{\ell=1}^{10} k_\ell\ge24\). Inequality (5) then gives the sharper lower bound
+\[
+\sum_{\ell=1}^{10}\binom{k_\ell}{2}\ge18.
+\]
+Together with (4),
+\[
+\delta\ge18-4h.
+\]
+Since the retained Q33 boundary also gives \(\delta\ge5\), the remaining possibilities satisfy:
+
+| \(h\) | lower bound on \(\delta\) |
+|---:|---:|
+| 1 | 14 |
+| 2 | 10 |
+| 3 | 6 |
+| 4 | 5 |
+
+There is an additional rigid endpoint when \(h=4\). Then the lower bound \(e(\overline{H[W]})\ge72+6h\) equals its upper bound 96. Hence
+\[
+e(\overline{H[W]})=96,\quad e(H[W])=24,\quad \delta+\epsilon_U=17.
+\]
+Equality in the 16-vertex Turán bound forces \(H[W]\) to be the disjoint union of four \(K_4\)'s, so \(\overline{H[W]}=K_{4,4,4,4}\). All selected-color contributions must be tight: each of the \(8-h=4\) non-gadget-witness colors has three unselected component witnesses with exactly three \(W\)-vertices each; each of the four gadget-witness colors has one unselected component witness wholly in \(W\) and three with exactly three \(W\)-vertices. These 4 \(K_4\)'s and 24 triangles partition every edge of \(K_{4,4,4,4}\).
+
+This is an exact residual incidence contract, not yet a contradiction. In particular, the \(m=9,h=4\) case additionally forces every component four-set of the ninth color to have at most one vertex in \(W\), because all edges of \(\overline{H[W]}\) are already owned by the selected colors. It follows that its ten values satisfy \(k_\ell\ge3\), so their total pair-cost is at least 30 and \(\delta\ge14\).
+
+## 7. Proof scope and dependencies
 
 This is a Q33-only theorem. It uses the 284-edge core, the 31-point/56-witness support, the exact-129 component factorization, and the shell-label fact that each component contributes a four-point core witness while each gadget contributes seven core vertices. It does not use the Q32 285-edge/excess-six contract.
 
