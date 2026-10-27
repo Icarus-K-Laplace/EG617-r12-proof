@@ -142,3 +142,8 @@ Added a transversal-disjointness lemma: two distinct 7-point transversals of the
 ## Round 10 — independent arithmetic replay (2026-10-27)
 
 Replayed the exact 56 feasible \((\delta,\epsilon_U)\) profiles, the three edge-ledger formulas, the minimum \(\epsilon_U+2\delta=9\), the minimum \(\delta+\epsilon_U=5\), the universal \(e(H[W])\le43\) bound, and the W-side slack identity \(Y=\epsilon_U+2\delta-2\ge7\). All assertions passed. The arithmetic verifier does not establish graph realizability or close any terminal.
+
+
+## Round 11 — minimum-slack concentration excluded (2026-10-27)
+
+For the two profiles \((\delta,\epsilon_U)=(3,3),(4,1)\), the seven units of W-side slack cannot all sit on one vertex. The \((3,3)\) case would require a W vertex of negative W-degree. In the \((4,1)\) case, one \(y=7\) vertex leaves 17 zero-slack vertices in at most three clique classes of sizes \(6,6,5\); the five-vertex class needs at least five external edges, while the degree ledger allows at most three. Therefore both profiles have at least two positive-slack W vertices and at least eleven zero-slack W vertices. This does not force a slack-one independent quadruple.
