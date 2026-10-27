@@ -1,6 +1,6 @@
 # Dependency audit — E408 global incidence sprint
 
-Updated: 2026-10-26
+Updated: 2026-10-27
 
 ## 1. Source branch heads checked
 
@@ -73,3 +73,17 @@ The source proves the 285-edge support floor \(|U|\ge44\) and the pair-uniquenes
 - Q33 global labelled-witness/core-capacity contradiction: OPEN.
 - Q32 \(v=44\) triple-pair terminal: OPEN.
 - Original K145-to-T61 reduction and the full EG617(r=12) theorem: OPEN / NOT_CERTIFIED.
+
+
+## 7. Q33 exact-color count capacity theorem
+
+New theorem: Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md. New arithmetic verifier: verify_q33_exact_color_count_capacity.py.
+
+Independent replay of the finite dynamic program gives:
+- 20 variables \(k_i\in\{0,1,2,3,4\}\), cost budget 33: maximum incidence sum 46;
+- 10 variables, cost budget 17: maximum incidence sum 23;
+- the pointwise bound \(k\le3/2+\binom{k}{2}/2\) holds for all five possible values.
+
+The graph-level conditional proof first derives \(h\le4\) from the 16-point complement \(W\), then charges overlaps between unselected component K4s and selected gadget witnesses at no more than four edges per gadget witness. It excludes \(m=10\), and shows \(m=9\Rightarrow h\ge1\). This uses the 284-edge Q33 contract only; no 285-edge result is imported.
+
+Status: PROVED_CONDITIONAL for the named contracts. Q33 global compatibility remains OPEN.
