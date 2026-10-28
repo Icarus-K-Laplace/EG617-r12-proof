@@ -288,3 +288,33 @@ The source-correct support layers `|U|=44,45` are closed. `|U|=46,47` remain ope
 File: `V44_M8_NO_PAIR_SHORTCUT.md`
 
 The new no-pair theorem also shortens the existing v44 m=8 proof. The established normal form gives `|L(w)|>=2` for each of the three W-points, where L(w) is a subset of the same three 130-edge colors. Any two such sets intersect, creating two core-only degree-four vertices in one 130-edge color, which the new theorem forbids. The longer 700-edge U-pool proof is retained as an independent cross-check.
+
+
+### 21. Direct no-core-only-degree-four closure for v44,m=8
+
+New proof file:
+- `V44_M8_DIRECT_NO_CORE_ONLY_CLOSURE.md`
+
+New arithmetic regression:
+- `verify_v44_direct_closure.py`
+
+This round independently audited the existing v44 target against the stronger source-correct theorem `Q32_130_NO_CORE_ONLY_DEG4.md`. The m=8 normal form already forces at least two 130-edge colors to be degree four and core-only at every W-point:
+- n_w=2: exact shell ownership fills all thirteen w--A edges and p-w; the (4,4)/(4,3) parameter profiles leave at least two nonexact colors at degree4;
+- n_w=3: the three a=4 special incidences exhaust all slack; all nonexact colors have degree4 and at most one can use an O-edge.
+
+The direct no-core-only theorem forbids even one such vertex, so m=8 closes without the previous W-pair rigidity, 700-edge U-pool saturation, or final Turan-equality chain. The older proof remains as an independent cross-check.
+
+The m=9 row remains closed by the simpler zero-shell contradiction: six non-special exact colors consume at least12 of13 w--A edges, forcing at least two special zero-shell colors, while at most one can own p-w.
+
+Arithmetic regression was run in Python:
+`V44_DIRECT_CLOSURE_ARITHMETIC_OK`.
+
+Commits:
+- direct proof: `93a7ee2e1d7cd976ada7a4580f000e8538bdd208`;
+- verifier: `b36c2370a166a964988a46ebcc3cef11708284ca`;
+- verifier repeated-profile fix: `d08fd1a919e4a49eed6b5d493295cfbefb23e9ce`;
+- canonical state: `8f55348f8cd75fa03975d1e8f100ef8b8392764a`;
+- replay audit: `a590e83478f800a4a01554ee302d42a8e9eb2934`;
+- dependency audit: `a6a53f6769e8aa92386836627a1284e55c32fe09`.
+
+Scope remains local: `|U|=44,m=8,9` closed; m=10 inherited closed. Full-support `|U|=47` remains open, so EG617(r=12) remains OPEN / NOT_CERTIFIED.
