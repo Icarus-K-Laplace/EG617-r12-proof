@@ -209,6 +209,14 @@ Hence
 
 > **E408-Q32 / `|U|=44` is CLOSED without using Case-I or Case-II shell dichotomy.**
 
+## Source-correct v45 closure (2026-10-28)
+
+`V45_SOURCE_CORRECT_CLOSURE.md` closes the full `|U|=45` support layer for `m=8,9,10`. It combines the corrected multiplicity bound, pointwise degree floors `L_8=12,L_9=7,L_10=2`, the zero-shell/pivot-edge obstruction, and the new 130-edge no-pair theorem.
+
+The no-pair theorem `Q32_130_NO_TWO_CORE_ONLY_DEG4.md` proves that a 130-edge color cannot contain two distinct vertices in H, each of degree four with all four color-neighbors in H. The proof uses the (56,11) second-Turan equality and the local K4-e cross-edge structure, without exceptional-vertex injectivity.
+
+The finite profile/shell arithmetic regression returned `V45_SOURCE_CORRECT_PROFILE_ARITHMETIC_OK`. This verifies the finite arithmetic only; the graph lemma and its extremal inputs remain analytic dependencies.
+
 ## Current Q32 frontier after this workstream
 
 The source-correct support layers `|U|=44` and `|U|=45` are both closed for all `m in {8,9,10}`.
