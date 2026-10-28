@@ -87,3 +87,13 @@ For every proposed Q32 lemma:
 - if a source statement cannot be matched exactly, mark the dependent result OPEN rather than interpolating it.
 
 Root promotion stays disabled until this firewall is satisfied by every Q32 closure row.
+
+## 8. Support-exhaustiveness audit gate (added 2026-10-28)
+
+Local U-reserve arithmetic must be kept separate from the theorem that all parent completions enter the U-contract.
+
+- **E407 Q32:** `E407_FOUR_COLOR_U_RESERVE_CLOSURE.md` validly excludes the frozen V12 `|U|=29`, 49-block contract by `294 + p_12(29)=316 > 310`. Its parent-level use remains conditional on V12 survivor exhaustiveness and the selected-component identity. The dedicated E407 branch still has a stale OPEN canonical/proof-audit snapshot; reconcile that branch state before treating the root gate as unconditional.
+- **E408 Q33:** `Q33_NONEXACT_U_RESERVE_CLOSURE.md` validly excludes the frozen `|U|=31`, 56-witness contract by `26(11-m) <= delta+6h <= 41`, while m=8,9 require 78 or52. The inspected witness-packing source gives a support lower bound, not equality by itself. The root receipt asserts an upstream exhaustive reduction, but its exact source path was not identified in this pass. Until that source is linked and checked, Q33 parent-level exhaustion remains conditional.
+- **E408 Q32:** the new pivot-neighborhood packing theorem is valid as a structural reduction. Its scalar slack system has feasible states and is not an UNSAT certificate.
+
+Accordingly, the root DAG must preserve the exact conditional premises above and must not turn a support-boundary contradiction into a whole-parent closure without an exhaustive bridge.
