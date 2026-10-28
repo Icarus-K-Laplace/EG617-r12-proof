@@ -1,4 +1,4 @@
-# EG617 r=12 — E408 Q32 v=44 final canonical state
+# EG617 r=12 — E408 Q32 low-support canonical state (v=44,45)
 
 Updated: 2026-10-28
 Repository: `Icarus-K-Laplace/EG617-r12-proof`
@@ -8,13 +8,13 @@ Source base: `workstream/r12-twochat-e408-global-20261026` at `937a905ed26e54ec1
 
 ## Headline
 
-> **The complete E408-Q32 support layer `|U|=44` is CLOSED for `m=8,9,10`.**
+> **The complete E408-Q32 support layers `|U|=44` and `|U|=45` are CLOSED for `m=8,9,10`.**
 
-The m=8 and m=9 proofs do not use Case-II's assumption `alpha(M)<=9`; they are stronger support-level exclusions. Together with the inherited corrected multiplicity exclusion of m=10, no source-correct Q32 realization with `|U|=44` remains.
+The v=44 proof closes m=8 and m=9 without the Case-I/Case-II shell dichotomy; m=10 is excluded by corrected multiplicity. The new source-correct v=45 proof closes all three m-cases without exceptional-vertex injectivity.
 
-The final m=8 local contradiction has been independently hardened in `V44_M8_FINAL_LOCAL_HARDENING.md`; the two formerly compressed steps are now explicit and the finite pieces are included in the regression verifier.
+The final v=44 m=8 local contradiction is hardened in `V44_M8_FINAL_LOCAL_HARDENING.md`. The new degree-four obstruction is recorded in `Q32_130_NO_TWO_CORE_ONLY_DEG4.md`, and the v=45 reduction is in `V45_SOURCE_CORRECT_CLOSURE.md`.
 
-This does **not** certify EG617(r=12). E408-Q32 still has higher-support terminals `|U|=45,46,47`.
+This does **not** certify EG617(r=12). The higher-support terminals `|U|=46,47` remain open and require separate source-correct audits.
 
 ## Frozen Q32 contract used
 
@@ -191,6 +191,14 @@ Therefore
 
 > **`|U|=44,m=8` is impossible.**
 
+## New source-correct v=45 closure
+
+The note `V45_SOURCE_CORRECT_CLOSURE.md` proves that `|U|=45` is impossible for `m=8,9,10` without exceptional-vertex injectivity. It uses the corrected multiplicity lower bound, pointwise degree budgets, the zero-shell/pivot-edge lemma, and the new 130-edge no-pair theorem.
+
+The valid nonexact pointwise floor sums are `L_8=12`, `L_9=7`, and `L_10=2`. The old global summary value `L_9=6` is stale: a 130-edge color has minimum degree four and a 131-edge color has minimum degree three.
+
+The finite arithmetic regression `verify_v45_source_correct_profiles.py` returned `V45_SOURCE_CORRECT_PROFILE_ARITHMETIC_OK`. This verifies only the finite parameter/profile and shell-count arithmetic, not the graph lemmas or external extremal inputs.
+
 ## Full v=44 verdict
 
 - m=10: inherited impossible from corrected multiplicity;
@@ -203,24 +211,11 @@ Hence
 
 ## Current Q32 frontier after this workstream
 
-The v=44 support layer is gone entirely.
+The source-correct support layers `|U|=44` and `|U|=45` are both closed for all `m in {8,9,10}`.
 
-Inherited live structure outside this workstream:
+The remaining higher-support terminals `|U|=46,47` are **not** closed by this workstream. Do not import `Q32_NONFULL_SUPPORT_SHELL_CAPACITY.md` as a closure of `|U|=46`: that older proof uses exceptional-vertex injectivity, which was retracted with the false universal degree-nine premise. Any claimed v=46/v=47 closure must be audited from source-correct premises in its own workstream.
 
-- Case I v=45: closed;
-- Case I v=46,m=10: closed;
-- Case I v=46,m=9: closed;
-- Case I v=46,m=8: closed by the 130-edge minimum-degree-four theorem;
-- Case I v=47: open;
-- Case II v=45,46,47: open.
-
-Therefore the smallest-support OPEN Q32 layer is
-
-> **Case II / `|U|=45`**
-
-(with its m-subcases requiring a fresh audit before any further promotion).
-
-EG617(r=12) remains OPEN / NOT_CERTIFIED until all remaining E408-Q32 higher-support branches are closed.
+EG617(r=12) remains OPEN / NOT_CERTIFIED.
 
 ## Verification status
 
