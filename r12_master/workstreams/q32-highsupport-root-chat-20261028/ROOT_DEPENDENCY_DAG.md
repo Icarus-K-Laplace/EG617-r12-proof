@@ -305,3 +305,8 @@ The residual-track theorem is strengthened: the unique track complete to r defin
 ### 8.5 3+7 z=4 empty-fiber escape
 
 The exact source-correct lemma `V47_Z4_EMPTY_FIBER_ESCAPE_CLASSIFICATION.md` excludes the all-aligned singleton-track cell for fiber profile (3,2,2,0). A remaining local completion must contain a switch whose duplicated label is empty, or a double-track block involving the empty fiber. The Q32 full-support graph terminal remains OPEN; no root promotion.
+
+
+### 8.6 Double-track alpha blocker
+
+The 3+7 double-track branch is further restricted by `alpha(H[R])<=3), because a double-track vertex has no R-neighbors. The exact residual-type list leaves six types at z=2,3,4 and none at z=0,1. This remains a local reduction; the root stays OPEN / NOT_CERTIFIED.
