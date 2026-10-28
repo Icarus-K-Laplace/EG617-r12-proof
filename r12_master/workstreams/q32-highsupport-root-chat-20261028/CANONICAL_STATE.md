@@ -23,7 +23,7 @@ This workstream does not modify the sibling branch `workstream/r12-q32-caseII-v4
 - witness union `U` has `|U|>=44`;
 - for `W=H\U`, corrected multiplicity `n_w>=m-6`;
 - latest nonexact pointwise floors:
-  `L8=12`, `L9=7`, `L10=2`.
+  `L8=12`, `L9=7`, `L10=3`.
 
 ## Case I
 
@@ -161,3 +161,7 @@ Added `V45_M9_130_COLOR_DEGREE4_LOCAL_STRUCTURE.md`. For a 130-edge nonexact col
 ## New v47 residual incidence-cover lemma
 
 Added `V47_RESIDUAL_INCIDENCE_COVER.md`: for every independent k-set S in R, k<=4, and every pivot block Q_i, the union of H-neighborhoods from S into Q_i has size at least k. If a block has zero cross-edge slack (every r has exactly one neighbor in Q_i), its neighbor map partitions R into at most four cliques. For m=10, z<=5 forces an independent triple in R, activating the triple-cover constraint; z=6,7 remains a separate high-z cell. No v47 closure is claimed.
+
+## 132-edge minimum-degree upgrade (2026-10-28)
+
+`Q32_132_MINDEG3.md` proves `delta(D)>=3` for the unique132-edge nonexact color by excluding degrees0,1,2 with the (60,59,58)-point second-Turan bounds and the Kang–Pikhurko equality classification at (58,11). Therefore `L_10=3) and the pointwise surplus budget becomes `r_10=4), improving the full-support gadget quota to `q_z<=4). This strengthens the existing non-full-support m=10 contradictions but does not itself close full support v47.
