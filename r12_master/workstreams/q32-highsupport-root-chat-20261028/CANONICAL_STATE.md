@@ -156,7 +156,7 @@ Together with the pointwise budgets `n_w<=r_m=(3,4,5)`, this closes m=10 for eve
 
 ## New local 130-color degree-four audit (2026-10-28)
 
-Added `V45_M9_130_COLOR_DEGREE4_LOCAL_STRUCTURE.md`. For a 130-edge nonexact color D and a vertex v of degree4, the 56-point non-neighborhood has at least119 D-edges by the source-checked KP second-Turan bound at (56,11). The neighborhood S has either 5 edges with exactly2 S-to-N edges, or 6 edges with 0 or1 S-to-N edges. This local classification does not force the v45 W-pair edge; the earlier unsupported pair-rigidity inference is withdrawn. The arithmetic verifier returned `130_COLOR_DEG4_LEDGER_OK`.
+Added `V45_M9_130_COLOR_DEGREE4_LOCAL_STRUCTURE.md`. For a 130-edge nonexact color D and a vertex v of degree4, the 56-point non-neighborhood has at least119 D-edges by the source-checked KP second-Turan bound at (56,11). The neighborhood S has either 5 edges with exactly2 S-to-N edges, or 6 edges with 0 or1 S-to-N edges. This local classification does not force the v45 W-pair edge; the earlier unsupported pair-rigidity inference is withdrawn. The same file now also proves the stronger no-core-only degree-four theorem: if all four neighbors lie in H, the local K4-e equality pattern makes a neighbor itself have a triangle-plus-isolate neighborhood, contradicting the same KP lower bound. Thus v45,m9 can be closed by the core-only obstruction, independently of the unresolved W-pair edge. The arithmetic verifier returned `130_COLOR_DEG4_LEDGER_OK`.
 
 ## New v47 residual incidence-cover lemma
 
@@ -171,3 +171,11 @@ Added `V47_RESIDUAL_INCIDENCE_COVER.md`: for every independent k-set S in R, k<=
 From `V47_RESIDUAL_INCIDENCE_COVER.md`, if `chi(bar(H[R]))>=5`, the residual is forced to `H[R]=C5 dot-union 2K1`, and the scalar ledger forces `(x,y,z)=(20,10,2)` with one extra Q-R incidence in each of the ten blocks. Both isolated residual vertices need at least two such incidences, but Lemma 7.1 proves no block's extra-incidence vertex can be either isolated vertex: the C5 nonedge-pair labels force its two-neighbor set to contain three distinct Q_i labels. Contradiction.
 
 Therefore the remaining v=47,m=10 branch has `chi(bar(H[R]))<=4`, equivalently R admits a partition into at most four cliques. The full m=10 branch remains OPEN.
+
+## New m=10 light-block graph reduction (2026-10-28)
+
+Added `V47_LIGHT_BLOCK_GRAPH_DISCONNECTED_REDUCTION.md`. On the ten pivot blocks, define L by `e_H(Q_i,Q_j)=4`. With block excesses `s_i=t_i+y_i-5`, one has `s_i>=0` and `sum s_i=2x+y-50<=6`. If L is disconnected, it has exactly two components, of sizes 1+9, 2+8, 3+7, 4+6, or 5+5.
+
+The 2+8 and 3+7 cases saturate all six Q-excess units, force `s_R=0`, and force every cross pair to have exactly five H-edges. The 2+8 case has `x_T=8+z, y=8-2z, z<=4`; the 3+7 case has `x_T=3+z, y=8-2z, z<=4`. In both, every block in the large component has weighted internal-heavy degree at most3 or2, respectively, and degree at least4 in its light graph.
+
+For 4+6, `y+2z<=10`, `z<=5`, and at most two units remain for internal-heavy weight, cross-pair multiplicity beyond one, and shell-incidence slack on the four-block component. For 5+5, `x>=25, y+z<=7, z>=1`, with at most three weighted extra units beyond the mandatory cross-pair baseline. This is a finite structural split, not an UNSAT certificate.
