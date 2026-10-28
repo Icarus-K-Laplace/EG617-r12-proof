@@ -110,6 +110,23 @@ There is a further fiber-size restriction. If r in F_h and s in F_j were nonadja
 `n_h+n_j<=3`
 whenever both fibers are nonempty; if one is empty the inequality is automatic. Thus a 3+7 double-track vertex can only use a pair of tracks whose fiber sizes sum to at most three.
 
+### Double-track residual edge floor
+
+Because the fibers F_h are cliques, H[R] already contains `sum_h binom(n_h,2)` edges. A double-track vertex has no R-neighbor, so the two track fibers F_h,F_j must also be completely joined; hence
+`e(H[R]) >= sum_h binom(n_h,2) + n_h*n_j`,
+where `e(H[R])=3+z`.
+
+For the four possible sorted fiber-size partitions, this gives the following lower frontier:
+
+| Fiber sizes | Allowed double-track size pair | Minimum e(H[R]) | Required z |
+|---|---|---:|---:|
+| (3,3,1,0) | (3,0) or (1,0) | 6 | z>=3 |
+| (3,2,2,0) | (3,0) or (2,0) | 5 | z>=2 |
+| (3,2,1,1) | (2,1) or (1,1) | 6 or 5 | z>=3 or z>=2 |
+| (2,2,2,1) | (2,1) | 5 | z>=2 |
+
+Therefore **the 3+7 cell has no double-track vertices at all when z<=1**. For z>=2, the table narrows which label-size pairs can host a double-track vertex. This is a necessary condition only; no global closure is inferred.
+
 ### Block-level ledger
 
 Each outer block D has exactly one extra edge to each of A,B,C, hence
