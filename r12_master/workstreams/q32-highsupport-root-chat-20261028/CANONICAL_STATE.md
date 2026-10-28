@@ -315,3 +315,14 @@ Any nontrivial cut in a seven-vertex graph of minimum degree four has at least f
 Therefore the three small blocks each have a fixed matching permutation to the outer tracks, independent of the outer block. The global type is either all three permutations equal, or exactly one differs from the other two by a fixed transposition. In the transposition regime, every outer block's three extra-edge endpoints share a moved label s_D with n_{s_D}<=1; both moved labels must have fiber size at most one. This restricts that regime to residual profiles `(3,3,1,0)` or `(3,2,1,1)`.
 
 The cut verifier checks all 63 distinct nontrivial cuts by size and returns `V47_37_MATCHING_CUT_BOUND_OK`. This is a global matching normal form, not closure of the 3+7 cell.
+
+
+## New z=0,1 small/outer track alignment theorem (2026-10-28)
+
+Added `V47_Z01_TRACK_ALIGNMENT.md`. In the 3+7 m=10 cell, z=0,1 have `alpha(H[R])=4), hence no double-track vertices. Let F_s be the common small-triangle map fibers and G_g the unique complete outer-K7-track fibers. For every outer block D, the exact mismatch inequality is
+`y_D >= sum_{q in D}|F_{s(q)} \\ G_{g(q)}|`,
+because q is adjacent to both F_{s(q)} and G_{g(q)}, while `sum_{q in D}d_R(q)=7+y_D`.
+
+For z=0, e(R)=3 forces H[R]=3K2 dot-union K1, whose partition into four clique fibers is unique, so F=G. For z=1, all four F and G fibers are nonempty. If their unlabelled partitions differed, every outer block (aligned or switch) would incur mismatch at least one, forcing `y>=7`; but y=6. Thus F=G. Once the partitions coincide, a synchronized switch is impossible: the q receiving two small-side extra edges is adjacent to both disjoint nonempty fibers F_s and F_j, so d_R(q)>=2, while its two extra Q-Q incidences force d_R(q)<=1. Therefore every outer block is aligned for z=0,1.
+
+This eliminates all switch/double-track escape mechanisms in the two lowest residual-excess cells. It does not close the aligned z=0 or z=1 graph completions. Root remains OPEN / NOT_CERTIFIED.
