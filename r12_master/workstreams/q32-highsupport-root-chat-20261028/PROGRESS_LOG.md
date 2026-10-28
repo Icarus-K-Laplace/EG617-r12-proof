@@ -314,3 +314,14 @@ Added `V47_Z4_EMPTY_FIBER_ESCAPE_CLASSIFICATION.md`. In the 3+7,z=4 fiber patter
 ### Double-track alpha(R) obstruction and residual-type pruning
 
 A 3+7 double-track outer vertex has `d_R=0), so any independent 4-set in R plus that vertex would be an independent 5-set in H. Hence double tracks require `alpha(R)<=3). Among the 18 registered residual path/cycle types, only `C3+P2+P2` at z=2; `2C3+K1`, `C3+P4`, `C5+P2` at z=3; and `C7`, `C3+C4` at z=4 have alpha3. All z=0,1 cells and all other residual types forbid double tracks. Added `V47_DOUBLE_TRACK_ALPHA_BLOCKER.md` and `verify_v47_double_track_alpha_pruning.py`; replayed arithmetic returned `V47_DOUBLE_TRACK_ALPHA_PRUNING_OK`.
+
+
+### New 3+7 global small-to-outer matching rigidity
+
+Added `V47_37_SMALL_OUTER_MATCHING_RIGIDITY.md` and `verify_v47_37_matching_cut_bound.py`.
+
+The key observation: if the unique perfect-matching permutation from a small block A to outer block D changes at label s across a light outer edge DE, the 4,5,5 switch theorem forces the extra edges in A-D and A-E to both touch A_s. Hence every vertex on the cut of the outer-block partition by p_D(s) is counted in e_A(s). But a seven-vertex graph with minimum degree four has at least five cut endpoints for every nontrivial cut, whereas e_A(s)<=4 whenever n_s>=1. So p_D(s) is constant for all nonempty residual labels; three nonempty labels force the fourth, making the matching permutation independent of D. Repeating for B,C gives a globally fixed small-to-outer matching type.
+
+The type is either fully aligned or a single fixed transposition. In the transposition case every outer block uses one of the two moved labels as its synchronized extra endpoint, and both moved labels must have residual fiber size at most one. Thus the switch regime is limited to `(3,3,1,0)` and `(3,2,1,1)`.
+
+Exact cut-size regression: 63 distinct nontrivial cuts; output `V47_37_MATCHING_CUT_BOUND_OK`. This tightens the global normal form but does not close 3+7.
