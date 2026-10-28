@@ -65,3 +65,19 @@ until a separate pair-coupling theorem is proved.
 ## 5. Proof boundary
 
 This is a local consequence of the registered 130-edge contract, the already-audited `delta(D)>=4` theorem, and the source-checked Kang–Pikhurko extremal bound at (56,11). It does not prove any Q32 terminal closed.
+
+
+## 5. Strengthening when all four neighbors lie in the target core
+
+Assume additionally that S is contained in H and alpha(H)<=4. Then S cannot induce K4: if it did, {v} union S would be a D-colored K5 wholly inside H, hence a target-independent 5-set. So only Case A from Section 3 can occur:
+`e(D[S])=5,` `e_D(S,N)=2,` `e(D[N])=119`,
+and D[S]=K4-e.
+
+Let a,b be the two endpoints of the missing edge and c,d the two central vertices. The degree ledger forces exactly one S-N edge at each of a,b and none at c,d. Thus a has D-neighborhood {v,c,d,z} for one z in N. The vertices v,c,d form a triangle; z is nonadjacent to v by definition of N and to c,d because c,d have no neighbors in N. Hence D[N_D(a)] is a triangle plus an isolated vertex and has only 3 edges.
+
+But a itself has degree four, so applying the already-proved Section 2 to a requires `e(D[N_D(a)])>=5`, contradiction.
+
+Therefore:
+> **No vertex v in H can have d_D(v)=4 with all four D-neighbors in H.**
+
+This is stronger than any W-pair implication. In the v=45,m=9 normal form, it closes the branch as soon as one W-point is forced to be degree four/core-only in the 130-edge color. The unresolved value `e_H(W) in {0,1}` remains correct, but is no longer load-bearing for that closure.
