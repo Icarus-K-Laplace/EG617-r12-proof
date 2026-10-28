@@ -106,6 +106,10 @@ Then q has both common-track neighbors in each of A,B,C. It must be incident wit
 ]
 Thus q has no R-neighbor and no extra Q-Q incidence outside the three edges to the small component.
 
+There is a further fiber-size restriction. If r in F_h and s in F_j were nonadjacent for h != j, choose the two labels a,b outside {h,j}; then q,r,s,A_a,B_b would be an independent 5-set. Hence every cross-pair between F_h and F_j must be an H-edge. Since Delta(H[R])<=2, this forces
+`n_h+n_j<=3`
+whenever both fibers are nonempty; if one is empty the inequality is automatic. Thus a 3+7 double-track vertex can only use a pair of tracks whose fiber sizes sum to at most three.
+
 ### Block-level ledger
 
 Each outer block D has exactly one extra edge to each of A,B,C, hence
