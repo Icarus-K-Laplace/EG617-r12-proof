@@ -310,3 +310,10 @@ The exact source-correct lemma `V47_Z4_EMPTY_FIBER_ESCAPE_CLASSIFICATION.md` exc
 ### 8.6 Double-track alpha blocker
 
 The 3+7 double-track branch is further restricted by `alpha(H[R])<=3), because a double-track vertex has no R-neighbors. The exact residual-type list leaves six types at z=2,3,4 and none at z=0,1. This remains a local reduction; the root stays OPEN / NOT_CERTIFIED.
+
+
+### 14b. Global small-to-outer matching permutations
+
+Added `V47_37_SMALL_OUTER_MATCHING_RIGIDITY.md`. For any fixed small block A, the matching permutation p_D from A to outer block D cannot vary over D: a change across a light edge forces both endpoints of that edge to be charged to the same extra-edge endpoint label A_s. The cut-endpoint lemma for a seven-vertex minimum-degree-four graph requires at least five charged outer blocks, while e_A(s)<=4 for every nonempty residual fiber. Three nonempty fiber labels therefore have constant matching images, forcing the fourth coordinate too. The same holds for B and C.
+
+Hence all small-to-outer matching maps are globally fixed, and their relative type is either aligned or a single fixed transposition. The transposition type is restricted to profiles `(3,3,1,0)` and `(3,2,1,1)`. This is a structural reduction only; the 3+7 cell remains open.
