@@ -81,7 +81,7 @@ Except for at most one color owning (w_1w_2), an exact color with (x_C\notin W) 
 
 - m=8: **CLOSED**;
 - m=10: **CLOSED**;
-- m=9: **OPEN**, with (n_{w_i}=4), all special parameters (a=4), no target shell edges at either W-point, exact shell usage (10+3=13), at least10 total exact-color gap units in the eight disjoint special colors, (e_H(W)=0), and (e(\overline{H[U]})=731).
+- m=9: **OPEN**, with (n_{w_i}=4), all special parameters (a=4), no target shell edges at either W-point, exact shell usage (10+3=13), at least8 total exact-color gap units in the eight disjoint special colors, (e_H(W)=0), and (e(\overline{H[U]})=731).
 
 The next step must combine this rigid two-point shell profile with the M-edge pool, exact Type-I placement types, and the full eleven-color edge partition.
 
