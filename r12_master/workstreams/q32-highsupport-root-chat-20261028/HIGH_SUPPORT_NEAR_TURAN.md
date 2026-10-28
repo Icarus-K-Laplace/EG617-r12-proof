@@ -82,7 +82,7 @@ The upper bound is source-correct and uses only the Type-I factorization plus th
 
 A strict per-color improvement `e_C(H)>=70` is false at the level of the valid source interface.
 
-For example choose KP parameter `a=1`, put `x` in the shell, put `y=p`, let `Ns` contain exactly one shell point, let one ordinary isolated K5 contain two shell points, and let each of the other nine ordinary isolated K5s contain one shell point. The twelve K5 outside-counts are `(2,1^11)`, all thirteen shell points plus p and x are accounted for, p shares no non-target K5 with a shell point, and every gadget edge has an outside endpoint. Hence
+A source-correct placement can be made as follows. Choose KP parameter `a=1`; put the exceptional point `x` in the shell `A`; put `y` in `A`; put the unique vertex of `A0` in `A`; put `p` as the unique outside point of an ordinary isolated K5; put one further ordinary isolated K5 through two shell points; and distribute the remaining shell points one per remaining K5 so that the twelve K5 outside-counts are `(2,1^11)`. Arrange `x,y,A0` in their prescribed special positions. Then no non-target K5 contains both `p` and a shell point, every gadget edge has an outside endpoint, and no forbidden non-target `p--A` edge is created. Hence
 
 > `e_C(H)=69`.
 
