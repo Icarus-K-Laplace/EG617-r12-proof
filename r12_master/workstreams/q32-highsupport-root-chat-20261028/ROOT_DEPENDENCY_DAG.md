@@ -281,3 +281,12 @@ This yields four aligned K7 tracks on the 28 outer-block vertices and at most se
 ### 8.3 Current high-support continuation — m=10 disconnected cells
 
 The latest branch-local additions are `V47_TWO_BLOCK_TRANSVERSAL_BLOCKER.md` (2+8) and the strengthened double-track part of `V47_ZERO_SLACK_MAP_ALIGNMENT_AND_TRANSVERSAL_BLOCKER.md` (3+7). They impose exact fiber-neighborhood and endpoint-load restrictions but do not eliminate the disconnected cells. The only live graph terminal remains E408/Q32 full-support v=47, with m=8,9,10 OPEN. No root promotion is permitted.
+
+
+## 14. m=10 3+7 residual-track domination
+
+Added `V47_37_RESIDUAL_TRACK_TRANSVERSAL.md`.
+
+After global alignment, the seven outer blocks form four K7 tracks with at most seven cross-track edges and cross-track maximum degree two. For any residual vertex r, `d_R(r)+b_r=2), so at least 19 of the 28 outer vertices are nonneighbors of r. If r missed at least one vertex on every track, the four nonneighbor part sizes would sum to at least19. A strict union-bound theorem, exhaustively checked over all 64 part-size profiles and all relaxed six-variable edge-count allocations, guarantees an independent transversal avoiding r. That would give an independent 5-set, so r must be complete to one entire K7 track.
+
+The verifier returns `V47_37_RESIDUAL_TRACK_TRANSVERSAL_OK` with minimum count margin63. This is a conditional structural consequence of the 3+7 cell; it does not close that cell or promote the root theorem.
