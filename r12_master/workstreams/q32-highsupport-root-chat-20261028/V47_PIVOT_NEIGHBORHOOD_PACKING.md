@@ -167,3 +167,23 @@ No step here uses:
 - an E407 U-reserve theorem.
 
 EG617((r=12)) remains **OPEN / NOT_CERTIFIED**.
+
+## 8. Triangle consistency for the pivot-block matching system
+
+Let Q_i, Q_j, Q_k be three pivot blocks. Suppose the H-edge graphs between Q_i,Q_j and Q_i,Q_k each have exactly four edges. By Lemma 3.1, each is a perfect matching.
+
+### Lemma 8.1
+
+The H-edge graph between Q_j,Q_k must contain the composed matching: for each u in Q_i, if v in Q_j and w in Q_k are the unique H-neighbors of u in those two blocks, then vw is an H-edge.
+
+**Proof.** If vw were not an H-edge, then the three vertices Q_i minus {u}, together with v and w, would form an independent five-set. The three vertices in Q_i minus {u} have no H-edges to v or w because the two incident block-pairs are perfect matchings; and v,w are nonadjacent by assumption. This contradicts alpha(H)<=4.
+
+Therefore any triangle of block-pairs all having exactly four edges has matching maps that align into four disjoint H-triangles, one for each matched triple. If the third pair has more than four edges, it must still contain the composed matching; its extra edges are additional cross-track edges.
+
+Let L be the graph on the m block labels whose edges are pairs with exactly four H-edges. Every pair outside L consumes at least one of the x extra Q-Q edges, so
+
+`|E(L)| >= binom(m,2) - x`.
+
+Using the bounds above, L has at least 5, 11, or 17 edges for m=8,9,10, respectively. This is not enough by itself to force a triangle, but it gives an exact consistency constraint for any later finite search: every light two-edge wedge fixes the matching that must be present on its closing pair.
+
+This lemma is purely graph-theoretic and uses only the pivot packing and alpha(H)<=4; it does not invoke any retracted KP statement.
