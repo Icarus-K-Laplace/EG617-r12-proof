@@ -221,19 +221,23 @@ No root promotion follows: the m=9 core-gap lower bound does not exhaust the glo
 
 ## 10. General zero-shell special-incidence bound
 
-For any `w in W`, let `n_w = #{C : x_C=w}`.
+For any `w in W`, let `n_w = #{C : x_C=w}`, and let `t_w` be the number of target-colored edges from w to the 13-point shell A.
 
-**Lemma 10.1.** At most one special exact color at w can have zero shell-A degree. If (N_C(w)\cap A=\varnothing), the source-correct Type-I gadget contains the C-colored K5 ({x_C\}\cup(N_t\setminus\{y\})). Since (alpha(H)\le4), one of its four vertices other than w lies outside H. Under the zero-shell hypothesis it cannot lie in A, so it is p; hence pw has color C. Edge pw has a unique color.
+**Lemma 10.1.** At most one special exact color at w can have zero shell-A degree. If `N_C(w) intersect A = empty`, the source-correct Type-I gadget contains the C-colored K5 `{x_C} union (N_t minus {y})`. Since `alpha(H)<=4`, one of its four vertices other than w lies outside H. Under the zero-shell hypothesis it cannot lie in A, so it is p; hence edge `pw` has color C. The edge `pw` has a unique color.
 
-Every non-special exact color at w consumes at least two distinct `w--A` edges. Thus the `m-n_w` non-special exact colors use at least `2(m-n_w)` of the thirteen shell edges. At least `n_w-1` special exact colors must have positive shell degree, so
+Every non-special exact color at w consumes at least two distinct `w--A` edges. Thus the `m-n_w` non-special exact colors use at least `2(m-n_w)` shell edges. At least `n_w-1` special exact colors must have positive shell degree. Reserving target-colored shell edges gives
 
-`n_w-1 <= 13-2(m-n_w)`,
+`n_w-1 <= 13-t_w-2(m-n_w)`,
+
 hence
-`n_w >= 2m-14`.
 
-Combining this with the pointwise budgets `n_w<=r_m`, `r_8=3`, `r_9=4`, `r_10=5`, gives:
-- m=8: n_w>=2, and every special incidence costs at least2 surplus units, contradicting budget3 (the existing closure);
+`n_w >= 2m-14+t_w`.
+
+Combining with the pointwise budgets `n_w<=r_m`, `r_8=3`, `r_9=4`, `r_10=5`, gives:
+- m=8: n_w>=2; every special incidence costs at least2 surplus units, contradicting budget3 (the existing closure);
 - m=9: n_w=4 and all four special parameters are a=4; the refined inequality forces t_w=0, hence epsilon=1;
 - m=10: n_w>=6>5, contradiction.
+
+For m=9, t_w=0 plus the thirteen-edge shell count further forces each of the five non-special exact colors to use exactly two shell edges, three special exact colors to use one each, and the remaining special exact color to own pw. Both nonexact colors have no shell-A neighbors at w. The target degree is13 and d_H(w)=13, so epsilon=1.
 
 This proof uses the source-correct Type-I factorization and shell edge uniqueness only; it does not use the retracted degree-nine claim or exceptional-vertex injectivity.
