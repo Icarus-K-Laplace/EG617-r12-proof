@@ -313,3 +313,24 @@ It does not mechanically verify E1--E3, the source Type-I construction, or the a
 > **PASS_WITH_EXPLICIT_EXTERNAL_THEOREMS / HARDENED.**
 
 The v=44 closure is source-correct relative to the registered Q32 contract and the stated external extremal theorems. The independent hardening audit found no retracted dependency and resolved the two compressed implications in the final local `K5-e` contradiction.
+
+## 10. Source-correct v45 closure
+
+Files: `V45_SOURCE_CORRECT_CLOSURE.md`, `Q32_130_NO_TWO_CORE_ONLY_DEG4.md`, and `verify_v45_source_correct_profiles.py`.
+
+The v45 proof uses corrected multiplicity `n_w>=m-6`, the source degree `9-a=4+(5-a)`, the valid nonexact floors `L_8=12,L_9=7,L_10=2`, the zero-shell/pivot-edge lemma, and the 13-edge shell capacity. It does not use exceptional-vertex injectivity.
+
+The m=9 floor is seven: the 130-edge color has minimum degree four and the 131-edge color minimum degree three. Any older `L_9=6` summary is stale; the v44 m=9 closure itself does not depend on that value.
+
+The new 130-edge theorem says no two distinct vertices in H can both have degree four in the same 130-edge color with all four neighbors in H. The proof combines the (56,11) second-Turan equality, the local K4-e cross-edge placement, and the degree-four neighborhood lower bound.
+
+Using this theorem:
+- m=10 is excluded by shell capacity and the unique owner of pw;
+- m=9 forces both W-points to be core-only degree four in the same 130-edge color;
+- m=8 forces each W-point to have at least two such colors, so the two color subsets intersect.
+
+Therefore `|U|=45` is CLOSED for m=8,9,10. The arithmetic regression returned `V45_SOURCE_CORRECT_PROFILE_ARITHMETIC_OK`; it does not mechanically verify the analytic lemma or external extremal inputs.
+
+## 11. Remaining scope
+
+The source-correct low-support layers `|U|=44,45` are closed. Higher supports `|U|=46,47` remain open in this workstream. Do not import the old `Q32_NONFULL_SUPPORT_SHELL_CAPACITY.md` proof as a v46 closure because it uses the retracted exceptional-vertex injectivity premise.
