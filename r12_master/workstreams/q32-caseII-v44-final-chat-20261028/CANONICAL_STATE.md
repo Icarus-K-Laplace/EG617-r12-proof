@@ -264,3 +264,11 @@ The proof uses no retracted degree-nine exceptional point, no exceptional-vertex
 The direct analytic lemma `Q32_130_NO_CORE_ONLY_DEG4.md` rules out even one such vertex. Thus v44,m=8 is closed without W-pair rigidity, the 700-edge U-pool saturation, or the final Turan-equality argument. The older full proof remains a separate cross-check.
 
 Finite arithmetic regression `verify_v44_direct_closure.py` was run in a clean Python execution and returned `V44_DIRECT_CLOSURE_ARITHMETIC_OK`. It checks parameter profiles, shell counts, the (56,11) extremal arithmetic, and the local integer budget only; it does not prove the analytic graph lemma or external theorem.
+
+
+## Explicit local 130-edge degree chain
+
+The minimum-degree dependency chain for the direct m=8 closure is now fully written down:
+`Q32_130_MINDEG3.md` => `Q32_130_MINDEG4_AND_CASEI_M8_CLOSURE.md` (base workstream) => `Q32_130_NO_CORE_ONLY_DEG4.md` => `V44_M8_DIRECT_NO_CORE_ONLY_CLOSURE.md`.
+
+The 130-edge degree-three exclusion uses the Kang–Pikhurko floors 139,134,129 on non-neighborhoods of sizes 60,59,58. The degree-four exclusion uses Theorems 1 and 4 at (57,11). The core-only degree-four obstruction uses Theorem 1 at (56,11). The finite verifier now checks the arithmetic at all these parameter values.
