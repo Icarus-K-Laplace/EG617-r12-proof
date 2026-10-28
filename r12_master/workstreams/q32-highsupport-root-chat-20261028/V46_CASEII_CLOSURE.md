@@ -1,7 +1,7 @@
 # E408 Q32 — v=46 Case-II source-correct closure work
 
 Date: 2026-10-28
-Status: **m=8 CLOSED; m=9,10 reduced to quantified core-gap rows and OPEN.**
+Status: **m=8 CLOSED; m=10 CLOSED by the general zero-shell bound; m=9 forced to n_w=4 and all a=4, with a quantified core-gap row still OPEN.**
 
 Let `W={w}` be the unique point of `H\U`. Case I at v=46 is already completely closed by the latest 130/131 minimum-degree theorems. This file addresses only the remaining Case-II branch.
 
@@ -41,55 +41,19 @@ Therefore
 
 Together with the already proved Case-I exclusion, v=46,m=8 is completely eliminated.
 
-## 3. m=9 normal form
+## 3. m=9 normal form after the zero-shell bound
 
-Now `n_w>=3` while the special surplus budget is4. Therefore
+The pointwise budget initially gives (n_w\in\{3,4\}). Section 10 proves the stronger source-correct inequality (n_w\ge2m-14=4), so (n_w=4) exactly. All four special incidences must use their minimum surplus1, hence every special Type-I parameter is (a=4).
 
-> `n_w in {3,4}`.
+Thus the (n_w=3) rows ((4,4,4)) and ((4,4,3)) are excluded. The five non-special exact colors consume at least ten of the thirteen shell edges at w. At most three remain for the four special colors, so at least one special color is zero-shell; the zero-shell lemma permits at most one, hence this count is tight rather than contradictory. The remaining n=4 row still forces at least four global near-Turan gap units into the four special colors (Section 7.3).
 
-If `n_w=4`, then all four special parameters are `a=4`.
+## 4. m=10 closure
 
-If `n_w=3`, the sorted parameter profile is exactly one of
+The pointwise budget initially gives (n_w\in\{4,5\}). Section 10 proves (n_w\ge2m-14=6), a contradiction. Hence
 
-> `(4,4,4)`, `(4,4,3)`.
+> **Case II / v=46 / m=10 is CLOSED.**
 
-Let `k=m-n_w` be the number of non-special exact colors at w. Then
-
-- if `n_w=3`, `k=6`;
-- if `n_w=4`, `k=5`.
-
-Each of these k colors places w in a multi-outside K5 and therefore owns at least two distinct shell-A edges from w. Edge-color uniqueness makes the selected shell neighbours disjoint across the k colors. Thus they use at least `2k` of the thirteen A-edges at w.
-
-If the special-x surplus equals4 (the profile `(4,4,3)` or the four-special profile), all pointwise degree slack is exhausted. Then
-
-- target degree at w is exactly13;
-- the 130-edge nonexact color has degree exactly4 at w;
-- the 131-edge nonexact color has degree exactly3 at w;
-- every non-special exact color has degree exactly4 at w, hence w lies in one of that color's ten isolated K5 components.
-
-For `n_w=3`, this gives six isolated multi-outside K5s through w using at least twelve shell neighbours.
-
-## 4. m=10 normal form
-
-Here `n_w>=4` and the special surplus budget is5. Therefore
-
-> `n_w in {4,5}`.
-
-If `n_w=5`, all five parameters are4.
-
-If `n_w=4`, the sorted profile is exactly one of
-
-> `(4,4,4,4)`, `(4,4,4,3)`.
-
-Again put `k=10-n_w`, so `k=6` or5. The k non-special colors consume at least `2k` distinct shell neighbours at w.
-
-Whenever the special surplus totals5 (five a=4 colors, or the four-special `(4,4,4,3)` profile), all pointwise slack is exhausted. Consequently
-
-- target degree at w is exactly13;
-- the unique 132-edge color has degree exactly2 at w;
-- every non-special exact color has degree exactly4 at w and hence places w in an isolated multi-outside K5.
-
-The source-correct 132-edge low-degree lemma then places w in an isolated triangle of that nonexact color whenever degree2 is attained.
+The remaining m=10 core-gap rows in the historical Section 8 are superseded by this stronger contradiction and are not load-bearing.
 
 ## 5. Matching consequence valid in Case II
 
@@ -147,7 +111,9 @@ Hence the total non-target A-edge capacity at w is
 
 with `epsilon<=5-Q`.
 
-### 7.1 n=3, profile (4,4,4)
+Sections 10's zero-shell bound excludes n=3 entirely. Only n=4 with all four special parameters a=4 remains; its shell inequality forces at least four global core-gap units into these four special colors.
+
+### 7.1 Historical n=3 row (superseded)
 
 Here the special surplus is3, so `Q in {3,4}`, while the six non-special exact colors already consume12 A-edges.
 
@@ -160,7 +126,7 @@ Therefore
 
 > **n=3, (4,4,4): the three special colors spend at least four core-gap units.**
 
-### 7.2 n=3, profile (4,4,3)
+### 7.2 Historical n=3 row (superseded)
 
 The special surplus is4, so `Q=4` and `epsilon<=1`. The shell-A capacity inequality gives
 
@@ -182,7 +148,9 @@ Therefore
 
 Thus every surviving v=46,m=9 Case-II row forces at least four of the global 37 near-Turan gap units into the exact colors special at the unique W-point; the `(4,4,3)` row forces at least five.
 
-## 8. Quantified core-gap spending for m=10
+## 8. Historical m=10 core-gap rows (superseded by Section 10)
+
+The following inequalities were derived for the n=4/n=5 normal forms before applying the general zero-shell bound. They are mathematically necessary for those profiles, but those profiles are now eliminated, so they are no longer load-bearing.
 
 Now write Q for surplus above
 
@@ -245,7 +213,27 @@ Thus every surviving v=46,m=10 Case-II row forces at least six core-gap units in
 ## 9. Remaining v=46 status
 
 - m=8: CLOSED in both Case I and Case II;
-- m=9: Case I CLOSED, Case II OPEN but now spends >=4 special core-gap units (>=5 in the 443 row);
-- m=10: Case I CLOSED, Case II OPEN but now spends >=6 special core-gap units (>=7 in the 4443 row).
+- m=9: Case I CLOSED; Case II OPEN only in the n=4, all-a4 row, spending at least four special core-gap units;
+- m=10: CLOSED in both Case I and Case II.
 
-These are source-correct necessary conditions. They do not yet exhaust the global 37-unit gap ledger, so no root promotion follows.
+No root promotion follows: the m=9 core-gap lower bound does not exhaust the global 37-unit gap ledger.
+
+
+## 10. General zero-shell special-incidence bound
+
+For any (w\in W), let (n_w=\#\{C:x_C=w\}).
+
+**Lemma 10.1.** At most one special exact color at w can have zero shell-A degree. If (N_C(w)\cap A=\varnothing), the source-correct Type-I gadget contains the C-colored K5 ({x_C\}\cup(N_t\setminus\{y\})). Since (alpha(H)\le4), one of its four vertices other than w lies outside H. Under the zero-shell hypothesis it cannot lie in A, so it is p; hence pw has color C. Edge pw has a unique color.
+
+Every non-special exact color at w consumes at least two distinct w--A edges. Thus the (m-n_w) non-special exact colors use at least (2(m-n_w)) of the thirteen shell edges. At least (n_w-1) special exact colors must have positive shell degree, so
+
+`n_w-1 <= 13-2(m-n_w)`,
+hence
+`n_w >= 2m-14`.
+
+Combining this with the pointwise budgets (n_w\le r_m), (r_8=3,r_9=4,r_{10}=5), gives:
+- m=8: n_w>=2, and every special incidence costs at least2 surplus units, contradicting budget3 (the existing closure);
+- m=9: n_w=4 and all four special parameters are a=4;
+- m=10: n_w>=6>5, contradiction.
+
+This proof uses the source-correct Type-I factorization and shell edge uniqueness only; it does not use the retracted degree-nine claim or exceptional-vertex injectivity.
