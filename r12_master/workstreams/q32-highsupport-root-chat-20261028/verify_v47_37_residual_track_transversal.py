@@ -84,9 +84,18 @@ assert minimum_margin == 63
 assert minimum_profile == (7, 7, 4, 1)
 assert minimum_pair[0] == 196 and minimum_pair[1] == 133
 
+# Three-part lemma used to prove same-track residual fibers are cliques.
+three_part_profiles = list(combinations_with_replacement(range(3, 8), 3))
+assert len(three_part_profiles) == 35
+for a, b, c in three_part_profiles:
+    # Each of at most seven cross-track edges blocks at most max(a,b,c)
+    # transversals, while abc >= 9*max(a,b,c).
+    assert a * b * c > 7 * max(a, b, c), (a, b, c)
+
 print("sorted part profiles checked:", len(profiles))
 print("minimum transversal-count margin:", minimum_margin)
 print("worst profile:", minimum_profile)
 print("worst profile total / forbidden upper bound:", minimum_pair[0], minimum_pair[1])
+print("three-part profiles checked:", len(three_part_profiles))
 print("V47_37_RESIDUAL_TRACK_TRANSVERSAL_OK")
 print("Scope: relaxed finite integer bound only; not global Q32 UNSAT.")
