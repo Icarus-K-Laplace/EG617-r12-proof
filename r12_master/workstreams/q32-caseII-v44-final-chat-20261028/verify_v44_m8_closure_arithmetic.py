@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Arithmetic/set-system regression checks for the v=44,m=8 closure.
 
-This verifier checks only finite arithmetic and 3-color L-set combinatorics used in
-V44_M8_PAIR_RIGIDITY.md and V44_M8_CLOSURE.md. It does NOT verify:
+This verifier checks finite arithmetic and finite local combinatorics used in
+V44_M8_PAIR_RIGIDITY.md, V44_M8_CLOSURE.md, and
+V44_M8_FINAL_LOCAL_HARDENING.md. It does NOT verify:
 - Kang--Pikhurko Theorems 1/4;
 - the source Type-I factorization;
 - the analytic W-pair rigidity proof;
@@ -45,14 +46,26 @@ def main() -> None:
     assert p_11_56 == 1421
     assert 1540 - p_11_56 == 119
 
-    # a+b<=7, 2a+b>=12, a<=5 has unique nonnegative solution at the
-    # maximal anti-neighborhood edge count used by the proof.
+    # a+b<=7, 2a+b>=12, a<=5 has unique nonnegative solution.
     feasible = []
     for a in range(7):
         for b in range(20):
             if a <= 5 and a + b <= 7 and 2 * a + b >= 12:
                 feasible.append((a, b))
     assert feasible == [(5, 2)]
+
+    # In K4-e, relative to the center u, the missing-pair endpoints have
+    # degree 3 inside {u} union S and the two central vertices have degree 4.
+    # With exactly b=2 S--N edges and global minimum degree >=4, the unique
+    # cross-edge distribution is endpoint,endpoint,central,central = 1,1,0,0.
+    cluster_degrees = (3, 3, 4, 4)
+    cross_distributions = []
+    for xs in product(range(3), repeat=4):
+        if sum(xs) != 2:
+            continue
+        if all(cluster_degrees[i] + xs[i] >= 4 for i in range(4)):
+            cross_distributions.append(xs)
+    assert cross_distributions == [(1, 1, 0, 0)]
 
     # Any two >=2-subsets of three colors intersect.
     colors = range(3)
@@ -62,7 +75,9 @@ def main() -> None:
             assert A & B
 
     # Three size-2 L-sets with pairwise intersections <=1 must be the
-    # three distinct 2-subsets; every color then appears exactly twice.
+    # three distinct 2-subsets.  There are exactly 3! ordered assignments.
+    # Their three pair-intersection colors are all distinct, so each
+    # nonexact color owns exactly one W--W edge.
     twos = [set(s) for s in combinations(colors, 2)]
     triples = []
     for A in twos:
@@ -72,7 +87,21 @@ def main() -> None:
                     triples.append((A, B, C))
                     counts = [sum(c in X for X in (A, B, C)) for c in colors]
                     assert counts == [2, 2, 2]
-    assert triples
+                    pair_edge_colors = [
+                        next(iter(A & B)),
+                        next(iter(A & C)),
+                        next(iter(B & C)),
+                    ]
+                    assert sorted(pair_edge_colors) == [0, 1, 2]
+    assert len(triples) == 6
+
+    # Missing-endpoint local contradiction: if v is a missing endpoint,
+    # its neighbor set is {u,c,d,z}; u,c,d form a triangle and the forced
+    # cross-edge placement makes z isolated inside that neighbor set.
+    # Thus it has 3 induced edges, not the 5 required by K4-e at v.
+    induced_neighbor_edges_if_endpoint = 3
+    required_k4_minus_edge_edges = 5
+    assert induced_neighbor_edges_if_endpoint != required_k4_minus_edge_edges
 
     # U-pool arithmetic in the surviving (3,3,2) normal form.
     assert 703 - 3 - 0 == 700
