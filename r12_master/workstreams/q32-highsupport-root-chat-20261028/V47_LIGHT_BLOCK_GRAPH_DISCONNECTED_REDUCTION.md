@@ -162,3 +162,20 @@ In the 2+8 cell, the two small blocks' residual-neighbor maps coincide after ali
 For 3+7, each outer vertex q has a nonempty common track among its neighbor labels in A,B,C. A singleton common track h forces q to be adjacent to the entire residual fiber F_h and caps its small-component extra-edge count at `3-|F_h|`. A two-track intersection means q owns all three extra edges to the small component and has no residual neighbor or other extra Q-Q incidence. Every outer block's three extra edges obey `sum_q k(q)=3`.
 
 The normalized exact verifier checked 1,728 aligned plus 36 switch configurations and returned `V47_ZERO_SLACK_TRANSVERSAL_LOCAL_OK`. This is a new local incidence restriction, not a closure of the 2+8 or 3+7 graph cell.
+
+
+## 10. Two-light matching composition in the 2+8 / 3+7 outer component
+
+New local theorem: `V47_TWO_LIGHT_MATCHING_COMPOSITION.md`.
+
+If A-C and B-C are light pairs (each exactly a perfect matching) and e_H(A,B)<=7, then the composed matching between A and B must be present in H[A,B]. Otherwise a missing composed edge forces its row to contain all three off-diagonal edges; the edge cap and alpha(H)<=4 then force a second independent 5-set. The proof is analytic and uses no external extremal theorem.
+
+The exhaustive local verifier checked all 25,636 A-B bipartite graphs with 4..7 edges. The only graphs with alpha(A union B union C)<=4 are precisely those containing all four composed matching edges; counts by edge total are 1,12,66,220 for 4,5,6,7 edges. It returned `V47_TWO_LIGHT_MATCHING_COMPOSITION_EXHAUSTIVE_OK`.
+
+In the 2+8 and 3+7 cells, every outer-block pair has at most seven H-edges because its internal heavy weight is at most three. The outer light graph on eight vertices has minimum degree at least four. Every nonadjacent block pair therefore has at least two common light neighbors, and each length-two light path forces its composed matching into the endpoint pair graph.
+
+- A 5-edge endpoint pair has a unique perfect matching, so all common-neighbor paths must induce the same matching.
+- A 6- or 7-edge pair has at most two perfect matchings, since two distinct nonidentity matchings beyond a fixed matching require at least four off-matching edges but only three are available.
+- Thus any path-matching disagreement is charged to a pair with at least six edges; there are at most six such pairs because each consumes at least two units of the total outer heavy weight x_T<=12.
+
+This is a matching-holonomy constraint to combine with the zero-slack residual-neighbor maps and the 18 residual path/cycle types. It does not close the 2+8 or 3+7 cell and is not a global UNSAT certificate.
