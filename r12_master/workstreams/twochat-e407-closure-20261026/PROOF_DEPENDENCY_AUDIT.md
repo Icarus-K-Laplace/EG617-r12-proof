@@ -1,6 +1,6 @@
 # E407 Q32 — proof dependency audit
 
-Date: 2026-10-27  
+Date: 2026-10-28  
 Status: **Current dependency ledger. E407 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.**
 
 ## A. Pure graph contract
@@ -11,84 +11,77 @@ Frozen local data:
 - |U|=29, |W|=18;
 - exact U/W edge ledgers and alpha(H[W])=4.
 
-Pure consequences used in the newest work include the six-set contradiction, every U point having a W neighbour in the delta=13 eps=0 four-partite branch, and clique-size capacity once a U-part label is proved.
+Pure consequences used throughout include the independent-five/six contradictions, W-transversal constraints, and the nonadjacent-pair rule:
+
+> if x,y are H-nonadjacent, their common W-nonneighbours contain no independent triple.
+
+This rule is a direct consequence of alpha(H)<=4 and needs no external theorem.
 
 ## B. Labelled exact-129 support contract
 
 The minimum-support E407 boundary supplies 49 independent 4-set blocks on U, seven per exact-129 color. They are disjoint within a color and pairwise linear.
 
-Under the frozen exact-129 selected-component identity, every selected block is the H-four-set of an isolated exact-color K5 and has a genuine anchor in {p} union A. Pointwise anchor labels are injective through a support point.
-
-Conditional on the registered exact-129 factor theorem:
+Under the selected-component identity every selected block is the H-four-set of an isolated exact-color K5 and has a genuine anchor in {p} union A. Conditional on the registered exact-129 factor theorem:
 - b_c in {5,6,7};
 - at most one selected S anchor per color;
 - residual factor after the selected seven components is 3K5+G11 with alpha(G11)=2;
-- every exact color owns the shell-cross load recorded in the compatibility file.
+- exact shell-color ownership obeys the registered cross-load inequalities.
 
-These are not pure consequences of the target core alone.
+These are labelled/external-factor consequences, not pure 47-core graph facts.
 
-## C. New five-template theorems and their dependencies
+## C. Five-template global theorems
 
-`SELECTED_SUPPORT_HUB_COMPLETENESS.md` uses:
-- selected B-anchor floor b_c>=5;
-- same-color selected-block disjointness;
-- the V12 full-row / E ends-pair row equations;
-- the direct alpha(F)<=5 six-set contradiction.
-It does not use Didin or any delta terminal classification.
+`SELECTED_SUPPORT_HUB_COMPLETENESS.md`, `FULL_ROW_LINEARITY_CAPACITY.md`, and `S_ANCHOR_CROSS_LOAD_REFINEMENT.md` use the selected-component identity, V12 row equations, support linearity/anchor injectivity, alpha(F)<=5, and exact-color factor placement as explicitly stated in those files.
 
-`FULL_ROW_LINEARITY_CAPACITY.md` additionally uses:
-- pairwise linearity of the 49 selected blocks;
-- pointwise B-anchor injectivity;
-- full-row core degree |D_b|=3.
-It yields the global non-hub capacity C(h)=min(21,floor(9+60/h)).
+They do not use the Didin-dependent low-delta saturated classification.
 
-`S_ANCHOR_CROSS_LOAD_REFINEMENT.md` uses:
-- selected-anchor classification;
-- residual 3K5+G11 factor and alpha(G11)=2;
-- B being target-complete and p-shell target edges;
-- beta=e(M[S])<=2.
-No Didin-dependent input is used.
+## D. Registered Brouwer / Kang–Pikhurko inputs
 
-## D. Brouwer / Kang-Pikhurko dependency in the new delta=13 eps=0 closure
+The delta=13 epsilon_U=0 four-partite closure and the delta=12 augmentation frontier invoke the registered published non-r-partite Turan extremal/equality results of Kang–Pikhurko and related Brouwer bounds under their recorded hypotheses.
 
-`DELTA13_EPS0_KP_KERNEL_REDUCTION.md` uses the published non-r-partite Turan equality theorem of Kang and Pikhurko (2005), including its exact equality construction / optimizing part-size conditions.
+The finite verifiers check only the resulting arithmetic/model enumerations; they do not re-prove these external extremal theorems.
 
-At delta=13, epsilon_U=0:
-- J=bar(H[W]) is K5-free on18 vertices with118 edges;
-- a four-partite J is ruled out by direct integer arithmetic;
-- 118 equals t_4(18)-floor(18/4)+1, so J is a KP equality graph;
-- the equality construction leaves exactly two base part sequences (3,4,5,5) and (4,4,4,5), hence five values after the proper nonempty subset parameter a.
+## E. Didin 2026 conditional dependency
 
-`DELTA13_EPS0_KP_KERNEL_CLOSURE.md` then excludes the five kernels by internal graph/support arguments. The external theorem is not re-proved by the finite verifier. This branch is therefore labelled **EXCLUDED UNDER REGISTERED KP CONTRACT**, not “self-contained from first principles.”
+The alpha-critical saturated-kernel component-count reduction used in the delta=14 saturated branch and in selected saturated depth-0/depth-1 reductions remains unaudited. Every conclusion relying on it stays `PROVED_CONDITIONAL`.
 
-The source theorem is M. Kang and O. Pikhurko, *Maximum K_{r+1}-free graphs which are not r-partite*, Matematychni Studii 24 (2005), 12–20, DOI 10.30970/ms.24.1.12-20.
+Nothing in the newest depth-2 epsilon_U=2 terminal closure removes this dependency from those separate branches.
 
-## E. Delta=14 Didin dependency
+## F. New delta=12 depth-2 epsilon_U=2 closure
 
-The delta=14 non-four-partite K5-saturated branch remains only PROVED_CONDITIONAL. Its alpha-critical reduction invokes the theorem recorded from Maksim Didin's 2026 preprint concerning component counts in spanning alpha-critical subgraphs. This workstream has not independently proved that external result. Nothing in the newest delta=13 proof removes this dependency.
+`DELTA12_DEPTH2_EPS2_TERMINAL_CLOSURE.md` depends on:
 
-## F. Lower-order row-transversal dependencies
+1. `DELTA12_AUGMENTATION_FRONTIER.md` and the registered 308-edge saturated-kernel classification, which identify the depth-2 C5-blowup kernel;
+2. `DELTA12_DEPTH2_EPS2_TERMINAL_REDUCTION.md`, which proves the unique W-terminal:
+   - H[W]=K3 dotcup K4 dotcup K5 dotcup K6;
+   - N_W(d0)=K4;
+   - N_W(c1)=N_W(c2)=K3;
+   - all epsilon_U=2 excess lies on d0;
+3. pure graph alpha(H)<=4 / omega(H)<=11 and degree accounting.
 
-The registered row-transversal theorem uses retained lower-order exclusions under its stated hypotheses. New direct full-row hub-completeness arguments use only the six-set contradiction and do not require the stronger row-transversal theorem unless explicitly stated.
+The terminal closure itself does **not** use Didin. Its final finite binary-label verifier checks only the three restored-endpoint patterns after the analytic forcing; it does not certify the 308-edge classification or the previous terminal reduction.
 
-Do not silently substitute arbitrary independent four-set witnesses for exact-color selected components.
+Status of this subbranch:
 
-## G. V12 screen / parent bridge
+`delta=12 + non-four-partite + depth2 + epsilon_U=2 -> contradiction`, **PROVED_CONDITIONAL** on the registered 308-edge saturated-kernel classification.
 
-The supplied V12 finite certificate has been replayed in sibling work and certifies finite state coverage under its analytic screen contracts. It does not independently prove the screen theorems or the original K145-to-T61 reduction.
+## G. Lower-order row-transversal dependencies
 
-Thus A–E are treated as exhaustive only relative to the retained V12 chain.
+The stronger row-transversal theorem retains its lower-order exclusions under the stated hypotheses. Direct six-set/full-row arguments do not silently invoke it. Arbitrary independent four-set witnesses must not be promoted to exact-color K5 components without the selected-component identity.
 
-## H. Original EG617 bridge
+## H. V12 screen / original bridge
 
-Closing E407 Q32 would not alone prove EG617(r=12). E408, backend/root obligations, and the original K145 reduction remain separate.
+The V12 finite replay certifies finite survivor enumeration under its analytic screen contracts. It does not independently prove every analytic screen theorem or the original K145-to-T61/legal-residual reduction.
+
+Closing E407 Q32 would still not prove EG617(r=12): E408 and backend/root obligations remain separate.
 
 ## I. Current dependency-safe frontier
 
 Local E407 work still needs:
-1. the five-template same-core labelled incompatibility;
-2. delta=13 non-four-partite L_U;
-3. delta<=12;
-4. replacement/audit of the conditional delta=14 saturated Didin dependency.
+1. five-template same-core labelled incompatibility;
+2. delta=12 depth2 epsilon_U in {0,1,3,4};
+3. delta=12 depth3 and four-partite-U;
+4. all delta<=11;
+5. independent audit/replacement of Didin-dependent saturated branches.
 
-The delta=13 four-partite-U branch is now fully excluded for epsilon_U=0,1,2,3 under its stated contracts.
+Delta=13 is conditionally closed under the complete registered ledger; delta=12 depth2 epsilon_U=2 is newly closed under the registered 308-edge kernel classification.
