@@ -1,110 +1,157 @@
 # Contract firewall: Q33 versus Q32
 
-Updated: 2026-10-27
+Updated: 2026-10-28
+
+## Headline firewall status
+
+- E408 Q33: **PROVED_CONDITIONAL impossible** under its registered 284-edge/support-31 inputs.
+- E408 Q32: **OPEN** under the independent 285-edge/excess-six contract.
+- Any historical Q32 closure using a universal exact-color degree-nine exceptional vertex is **RETRACTED**.
+
+The two core contracts must never be mixed.
 
 ## Q33: 284-edge core
 
 All Q33 support-31 statements assume:
-- |V(H)|=47, e(H)=284, alpha(H)<=4, delta(H)>=12;
-- total degree excess sum_H(d_H-12)=4;
+
+- `|V(H)|=47`, `e(H)=284`, `alpha(H)<=4`, `delta(H)>=12`;
+- total degree excess `sum_H(d_H-12)=4`;
 - the registered 61-point target residual and seven-block equality ledger;
-- exact-129 Type-I/component factorization under its named external extremal input;
+- the valid exact-129 Type-I/component factorization under its named external extremal input;
 - the registered 31-point/56-witness terminal when the U-edge reserve theorem is invoked.
 
-The local P_C=49 profile files use additional row/gadget contracts. The global theorem `Q33_NONEXACT_U_RESERVE_CLOSURE.md` does not need a colorwise P_C<=48 result and bypasses the two remaining local P_C=49 all-component-edge-present profiles.
+The local `P_C=49` profile files use additional row/gadget contracts. Two local all-component-edge-present profiles remain open as local classification problems, but they are globally bypassed by `Q33_NONEXACT_U_RESERVE_CLOSURE.md`.
 
 The Q33 closure uses no 285-edge Q32 capacity identity.
 
-## Q32: 285-edge core / E408 residual
+## Q32: 285-edge core / excess six
 
-All Q32-labelled support statements assume:
-- |V(H)|=47, e(H)=285, alpha(H)<=4, delta(H)>=12;
-- total degree excess sum_H(d_H-12)=6;
-- q=32, equivalently e(M)+G_A=32, when shell/support statements are invoked;
-- the registered E408 Q32 seven-block/exact-129 Type-I contract.
+All live Q32 statements assume:
 
-The support floor |U|>=44, nonfull-support closure U=H, and v=44/45 reductions are Q32-only and are not transferred to Q33.
+- `|V(H)|=47`, `e(H)=285`, `alpha(H)<=4`, `delta(H)>=12`;
+- total degree excess `sum_H(d_H-12)=6`;
+- `q=32`, equivalently `e(M)+G_A=32`, when shell statements are used;
+- the registered E408 seven-block outer ledger;
+- the source-correct exact-129 Type-I factorization.
 
-### Stronger Q32 terminal theorem has a smaller load-bearing contract
+### Correct Kang--Pikhurko interface
 
-`Q32_EXACT_COLOR_COUNT_COLLAPSE.md` closes the registered Q32 residual without using the 285-edge support-size split. Its load-bearing inputs are:
+For an exact-129 color C on the 61-point residual:
 
-1. the E408 residual color ledger
-   e_C(R)=129+s_C, s_C>=0, sum_C s_C=3;
-2. exact-129 Type-I degree structure: one degree-nine exceptional vertex, every ordinary residual vertex degree at least four;
-3. `Q32_GLOBAL_EXCEPTIONAL_INJECTIVITY.md`;
-4. full-color pointwise floors: s=1 gives degree at least3; s>=2 gives degree at least2;
-5. alpha(C)<=12 and omega(C)<=5 for non-target residual colors;
-6. the Brouwer/Kang--Pikhurko non-r-partite Turan bound in complement form;
-7. target residual minimum degree13 and the 12-color partition of the 60 incident edges at every residual vertex.
+- `C = 10 isolated K5 dot-union G11`;
+- `G11` contains two further disjoint K5s and the added special vertex x;
+- excluding x, the other60 vertices are partitioned into twelve C-colored K5s;
+- for source parameter `a in {1,2,3,4}`, the two variable gadget degrees are `(4+a,9-a)`, i.e. `(5,8),(6,7),(7,6),(8,5)`.
 
-It does **not** use:
-- any Q33 284-edge formula;
-- support-41;
-- an M[B]=empty shell split;
-- the Q32 capacity inequality;
-- SAT/ILP nonexistence.
+There is **no universal degree-nine exceptional vertex**.
 
-Therefore the Q32 contradiction is logically independent of the Q33 U-edge reserve contradiction.
+Therefore the following historical Q32 routes are not load-bearing:
+
+- `Q32_GLOBAL_EXCEPTIONAL_INJECTIVITY.md`;
+- `Q32_EXACT_COLOR_COUNT_COLLAPSE.md`;
+- every downstream conclusion whose only bridge is that injectivity/degree-nine premise.
+
+## Live Q32 witness/support interface
+
+The source-correct Q32 theorem stack currently supplies:
+
+1. at least ten disjoint independent core-four witnesses per exact color;
+2. pairwise linearity across colors;
+3. global support `|U|>=44`;
+4. corrected nonfull-support multiplicity `n_w>=m-6` for `w in W=H\U`;
+5. Case-I matching strengthening `n_w>=m-3`, hence Case I has `|U|>=46`;
+6. Case-I v=46 pointwise degree rigidity;
+7. the source-correct v=44,m=9 shell-edge floors;
+8. `Q32_U_COLOR_RESERVE.md`, coupling exact witness K4s and nonexact Turan floors inside the same `bar(H[U])` edge pool.
+
+No item in this list is a complete Q32 contradiction.
+
+## Q32 U-edge reserve firewall
+
+For any non-target color D on U,
+
+`alpha(D[U])<=12`.
+
+Because `alpha(H)<=4`, any non-target K5 inside H would be a target-independent five-set, hence
+
+`omega(D[U])<=4`.
+
+For an exact color containing ten disjoint witness K4s, the sharpened floors are:
+
+- v=44: `e_D(U)>=62` rather than ordinary60;
+- v=45: `e_D(U)>=64` rather than ordinary63;
+- v=46: at least66;
+- v=47: at least69.
+
+If an exact color supplies eleven witness K4s, it uses at least66 U-edges.
+
+At v=44, with h exact colors supplying at least eleven witnesses,
+
+`e(bar(H[U])) >= 660+2m+4h`.
+
+At v=45,
+
+`e(bar(H[U])) >= 693+m+2h`.
+
+These are necessary reserve inequalities only; they are not UNSAT certificates.
 
 ## Outer incidence notation
 
 For each non-target color C:
-\[
-e_C(R)=129+s_C,\quad s_C\ge0,\quad \sum_Cs_C=3.
-\]
-The registered duplicate identity is
-\[
-P_C+R_C+s_C=62.
-\]
-For an exact-129 color, s_C=0, so P_C+R_C=62. P_C is the block-block duplicate budget and R_C the block-to-residual duplicate budget. Baseline color edges are not added to P_C.
 
-The seven entries r_i(C) are block-to-residual budgets summing to R_C; they are not the 21 block-pair duplicate incidences.
+`e_C(R)=129+s_C`, `s_C>=0`, `sum_C s_C=3`.
+
+The registered duplicate identity is
+
+`P_C+R_C+s_C=62`.
+
+For an exact-129 color, `s_C=0`, so `P_C+R_C=62`.
+
+- `P_C` is the block-block duplicate budget;
+- `R_C` is the block-to-residual duplicate budget;
+- baseline color edges are not added to `P_C`;
+- the seven entries `r_i(C)` sum to `R_C` and are not the 21 block-pair duplicate incidences.
 
 ## Witness distinctions
 
 Keep separate:
-1. the 56 labelled independent four-set witnesses on the Q33 support-31 terminal;
-2. the Q33 component versus gadget witness distinction used in U-edge reserve counting;
-3. the Q32 ten-or-eleven core witnesses per exact color in the 285-edge support theorem;
-4. the unified support-41 284-edge/ten-color witness family;
-5. the size-five blocker occurrences M_C in the outer seven-block ledger.
 
-A theorem for one family cannot be transferred to another without a proved map. The final Q32 exact-color-count contradiction does not require any witness-family transfer.
+1. the 56 labelled independent four-set witnesses on the Q33 support-31 terminal;
+2. Q33 component versus gadget witnesses used in its U-edge reserve closure;
+3. Q32 ten-or-eleven core witnesses per exact color in the 285-edge theorem;
+4. the unified support-41 284-edge/ten-color witness family;
+5. size-five blocker occurrences `M_C` in the outer seven-block ledger.
+
+A theorem for one family cannot be transferred to another without an explicit map.
 
 ## Star-capacity rule
 
-For a C-colored K12 Q and an outside vertex z, the valid consequence is
-\[
-d_C(z,Q)\le1.
-\]
-One external C-edge is permitted. A contradiction requires at least two C-edges from the same outside vertex into the same Q. The withdrawn stronger external-isolation claim is not used by either final E408 closure.
+For a C-colored target K12 block Q and an outside vertex z, the valid consequence is
+
+`d_C(z,Q)<=1`.
+
+One external C-edge is permitted. A contradiction requires at least two C-edges from the same outside vertex into the same target K12. The withdrawn stronger external-isolation claim is not used.
 
 ## External extremal theorem firewall
 
-The Brouwer/Kang--Pikhurko input is used only after checking:
-- the complement is K_{r+1}-free because the original graph has alpha<=r;
-- it is non-r-partite because r-partiteness would create an independent set of size at least ceil(n/r)>5 in the complement, i.e. a clique of size at least6 in the original graph;
-- the parameter range n>=2r+1 is satisfied in the uses (58,11), (57,11), and (53,10).
+Whenever Brouwer/Kang--Pikhurko second-Turan is used, verify:
 
-Under those conditions the complement bound is
-\[
-e(\bar G)\le t_r(n)-\lfloor n/r\rfloor+1,
-\]
-equivalently
-\[
-e(G)\ge p_r(n)+\lfloor n/r\rfloor-1.
-\]
+- the complement is `K_{r+1}`-free from the relevant independence bound;
+- non-r-partiteness is actually proved when that branch is invoked;
+- the parameter range of the cited theorem is satisfied.
+
+For the new v=44 exact-color U-reserve proof, the non-12-partite branch uses the registered second-Turan bound, while the 12-partite branch is proved directly by part-size/cross-edge counting.
 
 ## Promotion rule
 
-- PROVED: all hypotheses are stated and the proof is analytic.
-- PROVED_CONDITIONAL: complete derivation under named retained inputs.
-- COMPUTATION_CERTIFIED: exact verifier coverage/output only.
-- OPEN: no complete exclusion.
-- RETRACTED: a discovered invalid inference.
+- `PROVED`: all hypotheses stated and proof analytic.
+- `PROVED_CONDITIONAL`: complete derivation under named retained inputs.
+- `COMPUTATION_CERTIFIED`: exact verifier coverage/output only.
+- `OPEN`: no complete exclusion.
+- `RETRACTED`: invalid inference discovered by audit.
 
 Current promotion:
-- registered E408 Q33 terminal: PROVED_CONDITIONAL impossible;
-- registered E408 Q32 terminal: PROVED_CONDITIONAL impossible;
-- original EG617(r=12): OPEN / NOT_CERTIFIED, because E407 and upstream/backend bridge obligations remain outside this workstream.
+
+- registered E408 Q33 terminal: `PROVED_CONDITIONAL impossible`;
+- registered E408 Q32 terminal: `OPEN`;
+- EG617(r=12): `OPEN / NOT_CERTIFIED` until Q32 and every upstream dependency in the chosen final DAG are closed/audited.
