@@ -1,7 +1,7 @@
 # E408 Q32 — v=45 source-correct two-point multiplicity
 
 Date: 2026-10-28
-Status: **m=8 CLOSED; m=9,10 reduced to disjoint two-point core-gap rows.**
+Status: **m=8 CLOSED; m=10 CLOSED by the general zero-shell bound; m=9 forced to n_w=4 and a=4 at both W-points, still OPEN.**
 
 This replaces every use of the retracted exceptional-vertex injectivity in the old `Q32_V45_TWOPOINT_REDUCTION.md`.
 
@@ -74,35 +74,13 @@ The proof actually excludes any non-full-support m=8 realization; this workstrea
 
 ## 4. m=9 normal form
 
-Here `n_w>=3` and the special surplus budget is4. Hence
-
-> `n_w in {3,4}`.
-
-If `n_w=4`, all four incidences must have surplus1, hence
-
-> parameter multiset `(a_C)=(4,4,4,4)`.
-
-If `n_w=3`, the only possibilities are
-
-> `(4,4,4)` or `(4,4,3)`.
-
-Thus each of the two W-points has one of these source-correct parameter profiles. No exceptional injectivity is needed.
+Before the shell argument, the pointwise budget gives `n_w in {3,4}`. The source-correct zero-shell lemma below improves this to `n_w=4`. Consequently all four special incidences have surplus exactly1, so the parameter multiset is `(a_C)=(4,4,4,4)` at each W-point. No exceptional injectivity is needed.
 
 Moreover, when the special surplus reaches4, all remaining pointwise slack is exhausted: the target degree is exactly13, the 130- and 131-edge colors have degrees exactly4 and3, and every non-special exact color has degree exactly4 at that W-point, hence lies there in an isolated K5 rather than the 11-point gadget.
 
 ## 5. m=10 normal form
 
-Here `n_w>=4` and the budget is5. Hence
-
-> `n_w in {4,5}`.
-
-If `n_w=5`, all parameters are4.
-
-If `n_w=4`, the parameter multiset is one of
-
-> `(4,4,4,4)` or `(4,4,4,3)`.
-
-Again, the profile with total special surplus5 exhausts all pointwise slack: target degree13, the 132-edge color at its degree-two floor, and every non-special exact color degree4 at w.
+Before the shell argument, the pointwise budget gives `n_w in {4,5}`. The source-correct zero-shell lemma instead forces `n_w>=6`, contradicting the budget `n_w<=5`. Therefore **m=10 is impossible for every non-full-support Q32 realization**, including v=45.
 
 ## 6. Two-point multi-outside placement without injectivity
 
@@ -177,3 +155,27 @@ Each occurrence of the `(4,4,4,3)` profile raises this by one, so the aggregate 
 - m=10: OPEN, but exact colors spend at least12 gap units (13/14 in the enhanced rows).
 
 The next load-bearing step must combine these gap floors with the limited shell M-edge pool, exact Type-I placement types, and the global eleven-color edge partition. No exceptional-injectivity statement is used.
+
+## 6. General zero-shell special-incidence bound
+
+### Lemma 6.1 — at most one zero-shell special exact color
+
+Fix `w in W`. If an exact color C has `x_C=w` and no C-colored edge from w to A, then `pw` has color C. Indeed, the source-correct Type-I gadget contains the C-colored K5 `{x_C} union (N_t\\{y})`; because `alpha(H)<=4`, one of the four vertices in `N_t\\{y}` lies outside H. None can be in A under the zero-shell hypothesis, so one is p. The edge `pw` has a unique color, so at most one special exact color at w has zero shell degree.
+
+### Lemma 6.2 — universal lower bound on special multiplicity
+
+Let `n_w` be the number of exact colors with `x_C=w`. The other `m-n_w` exact colors each consume at least two distinct w--A edges, disjoint across colors. Hence at most `13-2(m-n_w)` shell edges remain for the special exact colors. Since all but at most one of those `n_w` colors must use at least one shell edge,
+
+`n_w-1 <= 13-2(m-n_w)`,
+
+so
+
+`n_w >= 2m-14`.
+
+Combining with the pointwise budgets `n_w<=r_m` gives:
+
+- m=8: `n_w>=2`; since every special incidence costs at least2 surplus units, this is the existing m=8 contradiction against budget3;
+- m=9: `n_w>=4` and `n_w<=4`, so every W-point has exactly four special colors and all four have `a=4`;
+- m=10: `n_w>=6` but `n_w<=5`, contradiction.
+
+Thus m=10 is excluded whenever W is nonempty, not merely for v=45. The argument uses the corrected Type-I gadget and edge uniqueness only; it does not use the retracted degree-nine claim or exceptional injectivity.
