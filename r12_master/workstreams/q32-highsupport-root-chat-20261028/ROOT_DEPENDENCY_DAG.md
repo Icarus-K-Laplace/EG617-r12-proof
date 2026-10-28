@@ -244,3 +244,14 @@ This tightens the disconnected m=10 cells but does not eliminate them. It is a s
 The same theorem file now records the exact small-block endpoint load. For each small block label h, `e_i(h)>=3-n_h), and the excess above these floors sums to exactly 3 units in 2+8 and 2 units in 3+7. The only fiber-size partitions are `(3,3,1,0)`, `(3,2,2,0)`, `(3,2,1,1)`, `(2,2,2,1)`.
 
 In 3+7, every switch block sends all three extra endpoints to the same small-block label s; its duplicated common track has `n_s<=1). If `n_s=1), the singleton residual vertex spends one extra-incidence unit per such switch, so there are at most `2-d_R(r_s)` switches of that label. This is an exact cross-link between local matching switches, the endpoint floors, and residual degree. It does not yet close the 2+8/3+7 cells.
+
+
+## 11. Full-support m=10 matching-holonomy refinement
+
+New local theorem: `V47_TWO_LIGHT_MATCHING_COMPOSITION.md`.
+
+For three independent 4-sets with two light matching pairs and a third pair of at most seven edges, the third pair must contain the composed matching. The exact local verifier covers all 25,636 bipartite edge sets with 4..7 edges and returns `V47_TWO_LIGHT_MATCHING_COMPOSITION_EXHAUSTIVE_OK`.
+
+In the m=10 disconnected 2+8 and 3+7 cells, this forces every length-two light-path composition in the outer 8-block component into the endpoint pair graph. A 5-edge pair forces a unique composition; a 6-/7-edge pair can support at most two perfect matchings. At most six endpoint pairs can have 6 or 7 edges under the weighted budget `x_T<=12`.
+
+This is a conditional local reduction only. It does not close either component-size cell or the full-support m=10 branch; root status remains EG617(r=12) OPEN / NOT_CERTIFIED.
