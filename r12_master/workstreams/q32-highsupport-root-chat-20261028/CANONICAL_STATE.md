@@ -284,3 +284,10 @@ The same file now proves that the complete outer track assigned to each residual
 Thus the track assignment partitions R into four clique fibers of size at most three. The only sorted profiles are `(3,3,1,0)`, `(3,2,2,0)`, `(3,2,1,1)`, and `(2,2,2,1)`, matching the four possible profiles of the common small-block map. The verifier now checks all 35 sorted three-part profiles in addition to the 64 four-part profiles and retains `V47_37_RESIDUAL_TRACK_TRANSVERSAL_OK`.
 
 The two clique partitions have not yet been proved identical; the 3+7 cell remains OPEN.
+
+
+## 3+7 switch duplicate-fiber budget and z=4 escape classification
+
+For a synchronized transposition switch, the common-track intersections have one singleton label s duplicated and one label missing. Both vertices with intersection {s} hit all of F_s, so the outer block's residual-incidence slack obeys `n_s<=y_D). Hence in 3+7, where `y_D<=2), a switch cannot duplicate a size-three fiber; when z=4, `y_D=0) and the duplicated fiber must be empty.
+
+Added `V47_Z4_EMPTY_FIBER_ESCAPE_CLASSIFICATION.md`. In the 3+7,z=4 cell with fiber sizes (3,2,2,0), the all-aligned/singleton-track configuration is impossible: the empty-label endpoint floor gives at least nine small-to-outer endpoints, none of which can land at the empty-track vertex in an aligned block. Since there are only seven units of total outer-heavy weight, the empty-track vertices cannot fill their 21 units of degree surplus. Therefore every completion of this cell must contain at least one switch or double-track block involving the empty label. This is still a necessary local reduction, not a closure.
