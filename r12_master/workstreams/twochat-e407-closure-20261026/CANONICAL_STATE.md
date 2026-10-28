@@ -1,6 +1,6 @@
 # Canonical state — E407 Q32 terminal-closure sprint
 
-Date: 2026-10-27  
+Date: 2026-10-28  
 Branch: `workstream/r12-twochat-e407-closure-20261026`  
 Write scope: `r12_master/workstreams/twochat-e407-closure-20261026/`
 
@@ -8,7 +8,9 @@ Write scope: `r12_master/workstreams/twochat-e407-closure-20261026/`
 
 **E407 Q32: OPEN / NOT_CERTIFIED. EG617(r=12): OPEN / NOT_CERTIFIED.**
 
-The full `delta=13` layer is now **PROVED_CONDITIONAL / CLOSED under the registered external-theorem ledger**. The saturated subproofs inherit the unaudited Didin 2026 dependency from the old alpha-critical saturated-kernel classification. The remaining low-delta frontier is `delta<=12`; independently, the five V12 shell templates still require a global same-core labelled compatibility contradiction.
+The full `delta=13` layer is **PROVED_CONDITIONAL / CLOSED under the registered external-theorem ledger**. The saturated subproofs inherit the unaudited Didin 2026 dependency from the old alpha-critical saturated-kernel classification.
+
+At `delta=12`, the non-four-partite augmentation-depth-2 branch with `epsilon_U=2` is now **PROVED_CONDITIONAL / CLOSED** under the registered 308-edge saturated-kernel classification. The remaining low-delta frontier is still substantial: delta=12 four-partite U; delta=12 non-four-partite depth-2 with epsilon_U in {0,1,3,4}; depth-3; and delta<=11. Independently, the five V12 shell templates still require a global same-core labelled compatibility contradiction.
 
 ## Frozen core/support contract
 
@@ -73,56 +75,46 @@ Two safe augmentations reach the 309-edge Kang-Pikhurko equality graph. The resu
 - epsilon_U=2: `K3+3K5`;
 - epsilon_U=3: `2K4+2K5`.
 
-Files:
-- `DELTA13_TWO_STEP_EPS1_EPS2_CLOSURE.md` — `03db399f1c767783de898e1b5cf8c1c53baa7e28`;
-- `DELTA13_TWO_STEP_EPS3_CLOSURE.md` — `857196fac63f83dbecbf7c70980cf47a8253a254`.
+## C. Non-four-partite saturated / one-step saturated: PROVED_CONDITIONAL / CLOSED
 
-## C. Non-four-partite already 307-edge K5-saturated: PROVED_CONDITIONAL / CLOSED
+These branches use the registered saturated-kernel machinery; the direct 307-edge alpha-critical route retains the unaudited Didin 2026 component-count theorem. Status remains conditional.
 
-Let `G=H[U]=bar(L_U)`, so `e(G)=99` and `alpha(G)=4`. K5-saturation makes G alpha-critical. Under the registered Didin component-count theorem, G has three components `K_a dotcup K_b dotcup C`, with `alpha(C)=2`. The 49 support K4s force
-\[
-ab\ge49,\qquad e(\bar C)\ge49,
-\]
-and Brouwer gives
-\[
-e(C)\ge\lfloor c^2/4\rfloor-1.
-\]
-Together with `a+b+c=29` and `e(C)=99-C(a,2)-C(b,2)`, the exact integer survivor set is empty. Replacing 99 by 98 recovers the old unique `(7,7,15,56,49)` boundary kernel.
-
-Files:
-- `DELTA13_SATURATED_307_CONDITIONAL_CLOSURE.md` — `b1e3bfd678f0e88e6d83cd9b8fe8a32004377fda`;
-- `verify_delta13_saturated_307.py` — `7193031b999dda1aecce3c9e2da182418fbb6a5c`.
-
-## D. Exactly one safe augmentation to a 308-edge K5-saturated graph: PROVED_CONDITIONAL / CLOSED
-
-Put `L'=L_U+e`, `G'=bar(L')`. The registered saturated-kernel classification gives
-\[
-G'=K_7^A\dot\cup K_7^B\dot\cup\overline J,
-\]
-where J is the 15-vertex saturated C5 blow-up with part sizes `(5,5,2,1,2)` and degree sequence `7^10,6^4,4^1`.
-
-The 49 support K4s exhaust all 49 A-B edges and all 49 J-edges. They use 196 of 210 A/B-J cross edges, leaving exactly 14 uncovered. Hence the unique safe augmentation edge must be one of those 14; its J endpoint is one of the four degree-6 vertices `C union E` or the unique degree-4 point `d0`, never an X/Y vertex.
-
-The full 47-core extension is then excluded for every `epsilon_U=0,1,2,3` using the exact U-W degrees, Brouwer-forced W four-clique profiles for epsilon>=1, and the rule that a nonadjacent core pair cannot have an independent triple among its common W nonneighbours. The epsilon=3 endpoint cases close by saturation capacity, `omega(H)<=11`, and the total four-unit core excess.
-
-Files:
-- `DELTA13_ONE_STEP_SATURATED_REDUCTION.md` — `1e9d69885f4c70034560ed55a98be45bfba7b726`;
-- `DELTA13_ONE_STEP_SATURATED_EXTENSION_CLOSURE.md` — `f43f07d53639b7047e5834de8c2c75796ec30d15`;
-- `verify_delta13_one_step_saturated.py` — `9d22c22ff81ae2559df2ea7d6d76e84e94e89489`.
-
-Therefore
+Thus
 \[
 \boxed{\delta=13\Longrightarrow\bot}
 \]
-**under the complete registered dependency ledger.** The saturated subproofs remain conditional on the unaudited Didin theorem.
+under the complete registered dependency ledger.
+
+# Delta=12 non-four-partite augmentation frontier
+
+At delta=12, `e(L_U)=306`. Greedy K5-safe augmentation has depth k in {0,1,2,3}.
+
+- depth 0: PROVED_CONDITIONAL / EXCLUDED under the registered Didin+Brouwer ledger;
+- depth 1: PROVED_CONDITIONAL / EXCLUDED under the same registered ledger;
+- depth 2: classified 308-edge C5-blowup kernel; epsilon_U=2 is now CLOSED, epsilon_U in {0,1,3,4} remain OPEN;
+- depth 3: 309-edge Kang-Pikhurko equality terminal remains OPEN.
+
+## New closure — depth 2, epsilon_U=2
+
+`DELTA12_DEPTH2_EPS2_TERMINAL_REDUCTION.md` had reduced this branch to a unique W-terminal:
+
+- `H[W]=K3 dotcup K4 dotcup K5 dotcup K6`;
+- `N_W(d0)=K4`;
+- two distinct restored J-endpoints c1,c2 have `N_W(c1)=N_W(c2)=K3`;
+- all U-excess two lies on d0.
+
+`DELTA12_DEPTH2_EPS2_TERMINAL_CLOSURE.md` now eliminates it. Every vertex in the two K7 components, except possibly one common restored-edge endpoint, is forced by the nonadjacent-pair rule to be complete to exactly one of W's K5 or K6. Cross-K7 nonadjacency forces opposite K5/K6 labels on the two sides. The resulting K7+K5/K6 or K6+K6 clique has size at least 12, contradicting `omega(H)<=11`. The shared-endpoint boundary is included.
+
+This terminal closure does not use Didin. It is conditional on the registered 308-edge saturated-kernel classification and the preceding terminal reduction.
 
 # Current low-delta status
 
-- `delta=16`: excluded.
-- `delta=15`: excluded under registered contracts.
-- `delta=14`: four-partite excluded; saturated non-four-partite branch remains **PROVED_CONDITIONAL** on Didin.
-- `delta=13`: **PROVED_CONDITIONAL / CLOSED**.
-- `delta<=12`: **OPEN**.
+- delta=16: excluded.
+- delta=15: excluded under registered contracts.
+- delta=14: four-partite excluded; saturated non-four-partite branch remains PROVED_CONDITIONAL on Didin.
+- delta=13: PROVED_CONDITIONAL / CLOSED.
+- delta=12: PARTIAL. Non-four-partite depth2 epsilon_U=2 CLOSED; other depth2 epsilons, depth3, and four-partite-U remain OPEN.
+- delta<=11: OPEN.
 
 # Contract firewall
 
@@ -134,8 +126,9 @@ Therefore
 
 # Highest-leverage next targets
 
-1. **Low-delta descent:** attack `delta=12` first, reusing the W-transversal / common-nonneighbour machinery and splitting by the number of K5-safe augmentations needed to reach a saturated/equality boundary.
-2. **Five-template same-core incompatibility:** combine the actual hub-complete selected blocks, exact S-B colour load, U/W support multiplicities, residual `3K5+G11`, and four-unit core excess.
-3. **Dependency cleanup:** independently audit or replace the Didin component-count theorem so the delta=13 and delta=14 saturated closures can be promoted from conditional to unconditional.
+1. Continue delta=12 depth-2 with `epsilon_U=3,4` first, where W is already four-clique structured and the pair-rule method may extend.
+2. Eliminate delta=12 depth-3 equality terminals and the delta=12 four-partite-U branch.
+3. Prove the five-template same-core labelled incompatibility using the actual hub-complete selected blocks and exact colour loads.
+4. Independently audit or replace the Didin dependency before any unconditional E407 claim.
 
 No E407-Q32 or EG617(r=12) closure is claimed.
