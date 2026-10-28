@@ -203,3 +203,12 @@ For a five-cycle, either a light chord splits it into a triangle and four-cycle,
 The light graph is connected, so all light matchings globally align after relabeling. Any heavy pair has at least three common light neighbors; matching composition therefore forces the aligned matching into every heavy pair as well. Hence the 28 outer vertices contain four aligned K7 tracks, with at most `x_T=3+z<=7` additional cross-track edges.
 
 The exact weighted-graph regression enumerated 22,054 heavy graphs with weighted degree at most two and total weight at most seven, checking 5,803,387 light cycles. It returned `V47_37_LIGHT_GRAPH_CYCLE_DECOMPOSITION_OK`. This tightens the 3+7 normal form but does not close that cell.
+
+
+## 13. Residual-track domination in the 3+7 cell
+
+The new theorem `V47_37_RESIDUAL_TRACK_TRANSVERSAL.md` strengthens the globally aligned K7 normal form. Every residual vertex r must be adjacent to all seven vertices of one outer track; otherwise its nonneighbor sets in all four tracks have sizes summing to at least19, and the exact four-part union bound produces an independent transversal, contradicting `alpha(H)<=4`.
+
+The assigned track is unique, and two residual vertices assigned to the same track must be adjacent: the other three tracks each retain at least three vertices nonadjacent to both, and the three-part union bound again produces an independent transversal. Hence the track assignment partitions R into four clique fibers, with sorted sizes one of `(3,3,1,0)`, `(3,2,2,0)`, `(3,2,1,1)`, `(2,2,2,1)`.
+
+The exact integer verifier checks all 64 four-part profiles and 35 three-part profiles, with worst four-part margin63, and returns `V47_37_RESIDUAL_TRACK_TRANSVERSAL_OK`. This matches the four possible fiber-size profiles of the small-block residual map but does not yet prove that the two partitions align. The 3+7 cell remains OPEN.
