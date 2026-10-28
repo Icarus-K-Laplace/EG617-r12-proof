@@ -29,7 +29,7 @@ The two parts P3,P4 are target K7s and are target-anticomplete to each other.
 
 We repeatedly use the pure pair rule: if u,v are H-nonadjacent, their common W-nonneighbours contain no independent triple. In q=0 four-clique profiles this means N_W(u) union N_W(v) contains two full W-components. In the q=1 (4,4,5,5) profile the same conclusion holds whenever the union has size at most ten, by the one-defect lemma.
 
-We also use the single-vertex component rule. In a q=0 union of four cliques, every U vertex must be complete to one W-component; otherwise one nonneighbor from each component together with the U vertex gives an independent five-set. In the q=1 profile, if a U vertex is complete to no base component, avoiding an independent four-set among its W-nonneighbours forces the unique cross-edge endpoints to be the sole nonneighbours in both incident base components, costing at least (4-1)+(4-1)=6 W-neighbours. Thus any q=1 U vertex of W-degree at most five must also contain a whole base component.
+We also use the single-vertex component rule. In a q=0 union of four cliques, every U vertex must be complete to one W-component; otherwise one nonneighbor from each component together with the U vertex gives an independent five-set. In the q=1 profile, if a U vertex is complete to no base component, avoiding an independent four-set among its W-nonneighbours forces the unique cross-edge endpoints to be the sole nonneighbours in both incident base components, costing at least six W-neighbours. Thus any q=1 U vertex of W-degree at most five must also contain a whole base component.
 
 ## 2. xy not restored: profile K3 + K5 + K5 + K5
 
@@ -42,7 +42,7 @@ N_W(x)=K_3,
 
 Take z in P3 union P4. The pair x,z must cover two components, so z is complete to one of the three K5 components. The pair y,z shows that the K5 cannot be K5^A alone; equivalently z must be complete to one of the two remaining K5s K5^B,K5^C. Since d_W(z)<=6, this label is unique.
 
-If u in P3 and v in P4 have the same K5 label, each has at most one W-neighbour outside that K5. Their union therefore contains that K5 plus at most two further vertices, too few to contain any second W-component (the smallest has size three). But u,v are H-nonadjacent, contradicting the pair rule.
+If u in P3 and v in P4 have the same K5 label, each has at most one W-neighbour outside that K5. Their union therefore contains that K5 plus at most two further vertices, too few to contain any second W-component. But u,v are H-nonadjacent, contradicting the pair rule.
 
 Hence every cross P3-P4 pair has opposite binary labels. This forces each P3 and P4 to be monochromatic in the binary label and the two parts to have opposite labels. A target K7 together with its target-complete K5 gives K12, contradicting omega(H)<=11.
 
@@ -58,29 +58,111 @@ N_W(x)=K_4^A,
 \]
 up to swapping.
 
-For z in P3 union P4, the two pairs x,z and y,z force z to be complete to a component usable as the second covered component for both pairs. Therefore z is complete to either K4^C or K6. Call these labels C and D. The label is unique because 4+6>6.
+For z in P3 union P4, the two pairs x,z and y,z force z to be complete to a component usable as the second covered component for both pairs. Therefore z is complete to either K4^C or K6^D. Call these labels C and D. The label is unique because 4+6>6.
 
-A cross P3-P4 pair with label D is impossible immediately: both vertices are complete to the same K6 and have no room for a second full component.
+A cross P3-P4 pair with label D is impossible: both vertices are complete to the same K6 and have no room for a second full component. If one entire P-part had label D, its target K7 together with K6^D would give K13. Thus both P3 and P4 contain C-labelled vertices.
 
-Suppose a cross pair u,v both has label C. Each has at most two neighbours outside K4^C. To satisfy the pair rule, both must have W-degree exactly six and their four outside incidences must partition one of K4^A,K4^B into two complementary 2-sets.
+For a cross pair u,v both labelled C, each has at most two neighbours outside K4^C. The pair rule forces both degrees to be exactly six and their four outside incidences to partition one of K4^A,K4^B into two complementary 2-sets. Repeating this across all cross C-pairs shows that all C-labelled vertices on each side use one fixed outside 2-set and the two sides use complementary 2-sets in the same exceptional K4.
 
-Fix u. All same-label-C vertices v on the opposite side must therefore have the same complementary 2-set, lying in the same one of K4^A,K4^B. In particular if both sides contain C-labelled vertices, every C-labelled vertex on each side has W-degree six and no restored incidence.
+Any D-labelled vertex can occur on at most one side. If D occurs on one side, the other side is all C; a D vertex together with the other six vertices of its own target K7 part and K6^D gives a K13. Hence D does not occur at all. Therefore every vertex of P3 and P4 is C-labelled. Relabel A,B if necessary so there is a fixed E subset K4^A with |E|=2 such that
+\[
+N_W(z)=K_4^C\cup E \quad(z\in P_3),
+\]
+\[
+N_W(z)=K_4^C\cup(K_4^A\setminus E) \quad(z\in P_4).
+\tag{3.2}
+\]
+All these vertices have W-degree six and therefore no restored incidence.
 
-Now D cannot appear on both sides, while a side consisting entirely of D would be a target K7 complete to K6, giving K13. Hence both sides contain C. Since all cross pairs between C-vertices are legal only with the complementary-two-set pattern, each side's C vertices use one fixed outside 2-set and the opposite side uses its complement.
+### 3.1 Unpack the registered 309-edge equality model
 
-If either side has all seven vertices labelled C, its K7 is target-complete to K4^C, giving a K11, which is allowed; however every vertex on the opposite side is H-nonadjacent to all seven and cannot be D-only. Thus it also has a C vertex v. The fixed C neighborhoods of that side and v on the other side make their outside 2-sets complementary in, say, K4^A. Choose any C-vertex u on the first side. The pair u,v covers exactly K4^C and K4^A.
+The balanced equality model on U is the following exact labelled graph L3. The four base parts P1,...,P4 have size seven. There is y in P2, a nonempty proper A0 subset P1, and the exceptional x. Starting from the complete four-partite graph on P1,...,P4, the A0-y edges are deleted and x is joined in L3 to
+\[
+P_3\cup P_4\cup A_0\cup\{y\}.
+\]
+Equivalently in H0=bar(L3):
+- every Pi is a target K7;
+- x is target-adjacent exactly to P1\A0 and P2\{y} among the base vertices;
+- y is target-adjacent to A0 and to the other six vertices of P2;
+- P1 is target-anticomplete to P2\{y}.
 
-Take a D-labelled vertex w on either side if one exists. Crossing w with a C vertex on the opposite side, the union contains K6 plus K4^C, so it is legal; but crossing w with any D vertex is impossible. Hence all D labels, if present, lie on only one side. The opposite side is all C and forms K11 with K4^C. Each D vertex on the first side is also target-adjacent to all six vertices of K6, and to the other six vertices of its P-part. Thus it lies in a K13 with its own P-part and K6, contradiction. Therefore no D vertex exists.
+This description gives the already-registered exceptional degree formulas
+\[
+d_W(x)=|A_0|-1+\epsilon_x-I_x,
+\qquad
+d_W(y)=6-|A_0|+\epsilon_y-I_y.
+\]
 
-Both P3 and P4 are all C. Then P3 union K4^C is K11 and P4 union K4^C is another K11 sharing K4^C. For any u in P3,v in P4 their extra two-sets must be complementary in a fixed K4, so all vertices of P3 have the same two outside W-neighbours and all vertices of P4 the complementary two. Let a be one of the two outside neighbours used by P3. Then a is target-adjacent to all seven vertices of P3 and to all four vertices of K4^C (same W component is a clique only if a lies in K4^C, which it does not), so this last step does not by itself create K12.
+In the present nonrestored survivor all three restored edges avoid x,y,P3,P4. Since L3 has no edges inside a base part, every restored edge therefore lies between P1 and P2\{y}. In particular every t in
+\[
+R:=P_1\cup(P_2\setminus\{y\})
+\]
+has epsilon_t=0 and H0-degree seven in U. Hence
+\[
+\boxed{d_W(t)=5-I_t\le5.}
+\tag{3.3}
+\]
 
-Therefore the all-C complementary-two-set configuration remains a genuine terminal subcase and is **not excluded by the preceding argument**.
+### 3.2 Every R-vertex gets a binary A/B W-label
 
-Accordingly Section 3 records a strict reduction, not a contradiction. The epsilon_U=3 closure cannot be claimed from Sections 2-3 alone.
+Fix t in R. It is H-nonadjacent to every vertex of P3 and P4, because those cross pairs are L3-edges and no restored edge meets P3 or P4.
+
+Pair t with a P3 vertex. By (3.2), the P3 vertex already covers K4^C and E subset K4^A. To cover two whole W-components, N_W(t) must contain one of:
+- K4^A\E together with E, i.e. all K4^A;
+- all K4^B;
+- all K6^D.
+
+Pairing t with P4 gives the analogous requirement with E and K4^A\E interchanged. Hence satisfying both sides forces N_W(t) to contain all of K4^A, all of K4^B, or all of K6^D. The last option is impossible by d_W(t)<=5. Thus every t in R has a unique binary label A or B according as it is complete to K4^A or K4^B.
+
+### 3.3 P1 is forced to use both labels
+
+Keep N_W(x)=K4^A and N_W(y)=K4^B.
+
+If t in A0 had label A, then xt is an H-nonedge and
+\[
+|N_W(x)\cup N_W(t)|\le4+5-4=5,
+\]
+so the pair cannot cover two W-components. Contradiction. Therefore every t in A0 has label B.
+
+If t in P1\A0 had label B, then yt is an H-nonedge and the same argument with y gives a contradiction. Therefore every t in P1\A0 has label A.
+
+Since A0 is nonempty and proper,
+\[
+\boxed{P_1\text{ uses both binary labels A and B}.}
+\tag{3.4}
+\]
+
+### 3.4 Three restored edges cannot absorb the same-label cross pairs
+
+Write
+\[
+a=|\{u\in P_1:u\text{ has label A}\}|,
+\qquad
+b=|\{v\in P_2\setminus\{y\}:v\text{ has label A}\}|.
+\]
+By (3.4), 1<=a<=6.
+
+A same-label pair u in P1, v in P2\{y} must be a restored target edge. Otherwise u,v are H-nonadjacent and their W-neighborhood union consists of their common K4 label plus at most two extra vertices, too small to cover a second W-component. Thus every same-label cross pair consumes one of the three restored edges.
+
+The number of same-label cross pairs is
+\[
+S(a,b)=ab+(7-a)(6-b).
+\]
+For fixed mixed a:
+- if a<=3, S is minimized at b=6 and S>=6a>=6;
+- if a>=4, S is minimized at b=0 and S>=6(7-a)>=6.
+
+Hence
+\[
+\boxed{S(a,b)\ge6,}
+\]
+while only three restored edges exist. Contradiction.
+
+Therefore the final all-C complementary-two-set survivor is impossible.
 
 ## 4. xy not restored: q=1 profile (4,4,5,5)+one cross edge
 
-The exceptional union has size eight and must cover two base components; hence it is exactly the two K4 base parts. Since each exceptional degree is at most five and a non-component-saturating q=1 vertex needs at least six W-neighbours, x and y individually saturate the two K4s. Thus both have degree four.
+The exceptional union has size eight and is exactly the two K4 base parts. Since each exceptional degree is at most five and a non-component-saturating q=1 vertex needs at least six W-neighbours, x and y individually saturate the two K4s.
 
 For z in P3 union P4, the pairs x,z and y,z have union size at most ten, so the one-defect escape is unavailable. Each pair must cover two base components. Therefore z must be complete to one of the two K5 parts. With degree at most six the label is unique.
 
@@ -92,38 +174,35 @@ Thus the q=1 profile is impossible.
 
 Now d_W(x)=d_W(y)=3.
 
-### Profiles with minimum component size four
-
 For K4+K4+K4+K6, component exhaustion requires every U vertex to contain a full component, impossible at W-degree three.
 
-For the q=1 (4,4,5,5) profile, a degree-three vertex neither contains a full component nor can realize the defect escape, whose minimum cost is six. Hence this profile is also impossible.
+For the q=1 (4,4,5,5) profile, a degree-three vertex neither contains a full component nor can realize the defect escape, whose minimum cost is six. Hence this profile is impossible.
 
-### Profile K3+K5+K5+K5
+For K3+K5+K5+K5, both x and y must be complete to the unique K3. For any z in P3 union P4, the pair x,z forces z to be complete to one of the three K5s. Since d_W(z)<=6, z has a unique K5 label.
 
-Both x and y must be complete to the unique K3:
-\[
-N_W(x)=N_W(y)=K_3.
-\]
-For any z in P3 union P4, the pair x,z forces z to be complete to one of the three K5s. Since d_W(z)<=6, z has a unique K5 label.
-
-A same-label cross pair has at most two further W-neighbours outside its common K5, so cannot cover a second component. Hence the sets of K5 labels used on P3 and P4 are disjoint.
-
-No P-part may use only one label, because a target K7 complete to one K5 is K12. Thus each of P3 and P4 uses at least two labels. Two disjoint subsets of a three-label set cannot both have size at least two. Contradiction.
+A same-label cross pair cannot cover a second component. Hence the sets of K5 labels used on P3 and P4 are disjoint. No P-part may use only one label, because a target K7 complete to one K5 is K12. Thus each part uses at least two labels, impossible for two disjoint subsets of a three-label set.
 
 Therefore the restored-xy branch is impossible.
 
-## 6. Audited conclusion
+## 6. Conclusion
 
-Sections 2,4,5 are terminal contradictions. Section 3 leaves one explicit survivor:
-
-> epsilon_U=3, xy not restored, W=K4+K4+K4+K6, all P3 and P4 vertices are complete to the same third K4, with degree six and fixed complementary two-subsets of one of the exceptional K4s across the two P-parts.
-
-Thus the correct status is:
+All epsilon_U=3 depth-3 profiles are impossible. Therefore
 \[
-\boxed{\epsilon_U=3\text{ depth3 is reduced to one all-C complementary-two-set terminal.}}
+\boxed{
+\delta=12,\ \text{non-four-partite depth3},\ \epsilon_U=3
+\Longrightarrow\bot.
+}
 \]
-It is **not yet closed**. This file deliberately records the failed attempted closure rather than promoting the survivor away.
+
+The only remaining depth-3 epsilon is epsilon_U=4. The separate delta=12 four-partite-U branch and all delta<=11 remain open. E407 Q32 remains OPEN / NOT_CERTIFIED.
 
 ## 7. Dependency scope
 
-The reductions use the registered 309-edge equality model, exact W profiles, low-W-degree lemma, pure alpha/omega pair arguments, and for q=1 the proved one-defect pair lemma. Didin is not used in these terminal arguments. E407 Q32 and EG617(r=12) remain OPEN.
+The proof uses:
+1. the registered balanced 309-edge Kang–Pikhurko equality model, including its exact labelled P1/P2/P3/P4,x,y,A0 construction;
+2. the exact epsilon_U=3 W-profile list;
+3. the low-W-degree lemma;
+4. the proved q=1 one-defect pair rule;
+5. pure alpha(H)<=4 and omega(H)<=11 pair/component reasoning.
+
+The terminal arguments do not use Didin. The external equality model remains an explicit conditional dependency.
