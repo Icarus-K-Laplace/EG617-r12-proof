@@ -139,13 +139,12 @@ Valid source-correct interface currently retained:
 - corrected non-full-support multiplicity `n_w>=m-6`;
 - latest nonexact pointwise floors `L8=12`, `L9=7`, `L10=2`;
 - Case I closed for v=44,45 and all v=46 rows;
-- this workstream additionally closes Case-II v=45,m=8 and v=46,m=8.
+- this workstream closes Case-II v=45,46 for m=8,9,10 using weighted surplus, zero-shell multiplicity, and the direct 130-edge no-core-only degree-four theorem;
+- sibling branch `workstream/r12-q32-caseII-v44-final-20261028` closes v=44 for m=8,9,10.
 
 Still open in this workstream at this snapshot:
 
-- v=47 all m;
-- Case-II v=45,m=9;
-- Case-II v=46,m=9.
+- full support v=47, m=8,9,10.
 
 The universal zero-shell bound now closes m=10 for every non-full-support branch. The sibling branch `workstream/r12-q32-caseII-v44-final-20261028` closes the full v=44 support layer for m=8,9,10; final merge/root consolidation remains pending.
 
@@ -204,6 +203,21 @@ For any nonempty W-point w, the source-correct Type-I K5 shows that a special ex
 
 `n_w-1 <= 13-t_w-2(m-n_w)`, hence `n_w >= 2m-14+t_w`.
 
-The pointwise special-surplus budgets are `n_w<=r_m`, with `r_8=3`, `r_9=4`, `r_10=5`. Thus m=10 is impossible whenever W is nonempty; m=9 forces `n_w=4`, all special parameters `a=4`, and `t_w=0` at every W-point; m=8 remains closed by its two-unit special-incidence cost against budget3. For m=9, the shell count saturates exactly: five non-special exact colors use 10 A-edges, three special colors use one each, and one special color uses zero and owns pw. Both nonexact colors have no A-shell neighbors; the target degree is13, so each W-point has core excess1. In v=45, the two special-color sets are disjoint, but no audited theorem forces the W-W edge to be non-target. Keep `e_H(W) in {0,1}` and `e(bar(H[U]))=731-e_H(W)`.
+The pointwise special-surplus budgets are `n_w<=r_m`, with `r_8=3`, `r_9=4`, `r_10=5`. Thus m=10 is impossible whenever W is nonempty; m=9 forces `n_w=4`, all special parameters `a=4`, and `t_w=0` at every W-point; m=8 remains closed by its two-unit special-incidence cost against budget3. For m=9, the shell count saturates exactly: five non-special exact colors use 10 A-edges, three special colors use one each, and one special color uses zero and owns pw. Both nonexact colors have no A-shell neighbors; the target degree is13, so each W-point has core excess1. This makes the 130-edge color degree four at w with all neighbors in H. The direct theorem `Q32_130_NO_CORE_ONLY_DEG4.md` rules out even one such vertex, closing both v=45,m=9 and v=46,m=9. Do not use the older unsupported W-pair/e_H(W)=0 inference; the direct contradiction is independent of it.
 
-This upgrades the higher-support frontier: m=10 is closed for v=45 and v=46 as well as v=44. It does not touch full support v=47, where W is empty.
+Thus, together with the weighted m=8 closure and zero-shell m=10 closure, every non-full-support row v=45,46 is closed. The sibling branch closes v=44. Full support v=47, where W is empty, is the sole live Q32 support terminal.
+
+### 8.5 Direct no-core-only degree-four theorem closes v45/v46 m=9
+
+The local source-correct file `Q32_130_NO_CORE_ONLY_DEG4.md` proves:
+> For a 130-edge non-target color D with alpha(D)<=12, omega(D)<=5 and delta(D)>=4, no core vertex u in H can have d_D(u)=4 with all four D-neighbors in H.
+
+The proof uses Kang–Pikhurko Theorem 1 at (56,11) to show every degree-four vertex has at least five edges induced by its neighborhood. If u is core-only degree four, the 130-edge budget and alpha(H)<=4 force D[N_D(u)]=K4-e with the two cross edges attached to the missing-edge endpoints. An endpoint then has a four-neighbor graph consisting of a triangle plus an isolated vertex, contradiction.
+
+The v45 and v46 m=9 shell normal forms each force a 130-edge color vertex of degree four at W, with no A-neighbor and no pw edge (the unique zero-shell special exact color owns pw). Thus both rows are closed directly. This theorem supersedes the earlier unsupported v45 W-pair rigidity inference and does not use exceptional-vertex injectivity.
+
+The source-safe Q32 frontier after this addition is:
+- v44,m=8,9,10: closed by the sibling branch;
+- v45,m=8,9,10: closed;
+- v46,m=8,9,10: closed;
+- v47,m=8,9,10: open.
