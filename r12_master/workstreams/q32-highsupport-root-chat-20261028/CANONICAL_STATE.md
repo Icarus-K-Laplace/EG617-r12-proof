@@ -40,17 +40,25 @@ Hence Case I now has only v=47.
 
 ### v=45
 - m=8: **CLOSED** by source-correct weighted special-incidence capacity;
-- m=9: **OPEN** only in the rigid row `n_w=4` at both W-points, all special parameters `a=4`. The refined shell count forces target shell degree0 and core excess1 at both points; each point uses exactly 10+3=13 shell-A edges; `e_H(W)=0`; the eight distinct special exact colors spend at least8 gap units;
+- m=9: **CLOSED** by `Q32_130_NO_CORE_ONLY_DEG4.md`. The rigid shell count forces a core-only degree-four vertex in the 130-edge color at each W-point, which the direct local theorem forbids;
 - m=10: **CLOSED** by the universal zero-shell multiplicity bound.
 
 ### v=46
 - m=8: **CLOSED** by the same three-unit surplus contradiction;
-- m=9: **OPEN** only in the rigid row `n_w=4`, all special parameters `a=4`. The target shell degree is0 and core excess is1; the five non-special exact colors use ten shell-A edges, three special colors use one each, and the zero-shell special color owns pw; at least4 gap units are spent;
+- m=9: **CLOSED** by `Q32_130_NO_CORE_ONLY_DEG4.md`. The rigid shell count forces a core-only degree-four vertex in the 130-edge color at the unique W-point, which the direct local theorem forbids;
 - m=10: **CLOSED** by the universal zero-shell multiplicity bound.
 
 ### v=47
 Full support `U=H`, so W is empty. All m remain OPEN; the non-full-support zero-shell theorem does not apply.
  
+## New direct closure of v45/v46 m=9 (2026-10-28)
+
+`Q32_130_NO_CORE_ONLY_DEG4.md` proves that a 130-edge color cannot have even one core vertex of degree four with all four color-neighbors in H. The v45 and v46 m=9 zero-shell normal forms each force exactly such a vertex: the 130-edge color has degree four at W, no A-neighbor, and cannot own pw because the unique zero-shell special exact color owns pw.
+
+Therefore Case-II v45,m=9 and v46,m=9 are now CLOSED. Together with the existing m=8/m=10 closures and the sibling v44 closure, **all non-full-support rows v=44,45,46 are closed for m=8,9,10**. Only full support v=47 remains in Q32.
+
+This direct contradiction supersedes the older v45 pair-rigidity/e_H(W)=0 route. The new closure does not rely on that previously retracted inference.
+
 ## v=47 proved reductions
 
 For an exact color C let
@@ -117,9 +125,8 @@ The old root promotion based on Q32 degree-nine/injectivity is withdrawn.
 
 ## Immediate mathematical frontier
 
-1. v=47 multicolor near-Turan packing: combine the exact 37-unit gap ledger, exact Type-I placement normal forms, shell-edge ownership, and pointwise degree/excess-six constraints.
-2. Case-II v=45,m=9: combine the rigid two-point shell profile, the unresolved binary `e_H(W) in {0,1}`, the U-complement pool `e(bar(H[U]))=731-e_H(W)`, and exact Type-I placement counts.
-3. Case-II v=46,m=9: combine the rigid one-point shell profile, the 13-edge shell pool, and the local 130/131-color neighborhood structures.
+1. Full-support v=47 for m=8,9,10: combine the exact 37-unit gap ledger, exact Type-I placement normal forms, pivot-neighborhood K4 packing, shell-edge ownership, and pointwise degree/excess-six constraints.
+2. Root dependency reconciliation: keep E407 Q32 conditional on V12 exhaustiveness and E408 Q33 conditional on the 31-point/56-witness support-lifting contract until exact upstream source links are reconciled.
 
 No root promotion before all of these plus sibling v44 are closed and replayed.
 
