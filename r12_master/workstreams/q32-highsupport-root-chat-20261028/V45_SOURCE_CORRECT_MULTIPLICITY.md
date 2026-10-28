@@ -55,13 +55,10 @@ The pointwise degree ledger also gives full residual degrees 4 and 3 for the 130
 
 ## 5. Gap consequences and W-edge ownership
 
-For a special exact color with (a=4), full residual degree at w is5. The deletion-Turán inequality
-`d_C^H(w) <= 3+g_C`, where `g_C=e_C(H)-69`, implies:
-- a special color with one shell edge has (d_C^H(w)=4), hence (g_C\ge1);
-- the zero-shell special color has (d_C^H(w)=5), hence (g_C\ge2).
+For a special exact color with `a=4`, full residual degree at w is5. Each of the three positive-shell special colors has exactly one A-neighbor and does not own pw; the unique zero-shell special color owns pw. Thus **every one of the four special colors has exactly one neighbor in O={p} union A**, and hence `d_C^H(w)=4`. The deletion-Turán inequality `d_C^H(w)<=3+g_C`, where `g_C=e_C(H)-69`, gives `g_C>=1` for each of the four colors.
 
-So each W-point forces at least five gap units into its four special exact colors. The special-color sets at (w_1,w_2) are disjoint, because each exact color has only one special point. Therefore
-`sum_{C exact} g_C >= 10`.
+So each W-point forces at least four gap units into its four special exact colors. The special-color sets at `w_1,w_2` are disjoint, because each exact color has only one special point. Therefore
+`sum_{C exact} g_C >= 8`.
 This is a genuine global two-point bound, not two charges to the same exact colors.
 
 At both W-points the 130-edge color has degree4 and all its neighbors in H. The source-correct 130-color W-pair rigidity lemma therefore forces (w_1w_2) to have that 130-edge color. In particular,
