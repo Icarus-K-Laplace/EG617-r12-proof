@@ -281,3 +281,10 @@ Verifier scope is arithmetic only. The analytic graph theorem and external extre
 ### Updated support frontier
 
 The source-correct support layers `|U|=44,45` are closed. `|U|=46,47` remain open in this workstream. The old global `Q32_NONFULL_SUPPORT_SHELL_CAPACITY.md` must not be used to close v=46 because its proof depends on the retracted exceptional-vertex injectivity assertion.
+
+
+### 20. Alternate v44 m=8 closure
+
+File: `V44_M8_NO_PAIR_SHORTCUT.md`
+
+The new no-pair theorem also shortens the existing v44 m=8 proof. The established normal form gives `|L(w)|>=2` for each of the three W-points, where L(w) is a subset of the same three 130-edge colors. Any two such sets intersect, creating two core-only degree-four vertices in one 130-edge color, which the new theorem forbids. The longer 700-edge U-pool proof is retained as an independent cross-check.
