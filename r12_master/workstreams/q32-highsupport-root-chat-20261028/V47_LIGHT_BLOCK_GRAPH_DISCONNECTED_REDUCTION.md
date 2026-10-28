@@ -179,3 +179,14 @@ In the 2+8 and 3+7 cells, every outer-block pair has at most seven H-edges becau
 - Thus any path-matching disagreement is charged to a pair with at least six edges; there are at most six such pairs because each consumes at least two units of the total outer heavy weight x_T<=12.
 
 This is a matching-holonomy constraint to combine with the zero-slack residual-neighbor maps and the 18 residual path/cycle types. It does not close the 2+8 or 3+7 cell and is not a global UNSAT certificate.
+
+
+## 11. Four-light-cycle holonomy refinement
+
+New theorem: `V47_LIGHT_CYCLE_HOLONOMY.md`; exact verifier: `verify_v47_light_cycle_holonomy.py`.
+
+For any four outer blocks whose four cycle pairs are light, the two diagonal pairs contain both path-composed perfect matchings by the two-light composition theorem. Since each diagonal has at most seven edges, the cycle holonomy cannot be a 4-cycle or double transposition (their matching union has eight edges). A 3-cycle forces both diagonals to have exactly seven edges, but the normalized 16-vertex graph then contains an explicit independent 5-set. Therefore every such cycle has identity or transposition holonomy only.
+
+If holonomy is a transposition, both diagonals have at least six edges. The verifier checked all 726 normalized transposition/diagonal-extra configurations and all eight forced 3-cycle configurations; it returned `V47_LIGHT_CYCLE_HOLONOMY_EXHAUSTIVE_OK`.
+
+In the 3+7 cell, a pair with six edges uses its full internal-heavy allowance of two at both endpoints, so those endpoints have no other internal-heavy pair. Hence any nontrivial light-cycle holonomy is supported on two disjoint high-weight diagonal pairs. This refines the previous “at most six pairs with six/seven edges” statement, but does not close the disconnected cell.
