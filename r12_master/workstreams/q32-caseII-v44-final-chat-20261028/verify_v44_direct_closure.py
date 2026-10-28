@@ -49,6 +49,23 @@ assert (8 - 3) * 2 + (3 - 1) == 12
 # At most one of the 14 w--O edges can be nonexact.
 assert 14 - 13 == 1
 
+# The first step of the 130-edge degree theorem: exclude degrees 0,1,2.
+# Balanced 11-partition arithmetic for anti-neighborhood sizes 58,59,60.
+expected_low_degree = {
+    58: (1653, 1528, 1524, 129),
+    59: (1711, 1581, 1577, 134),
+    60: (1770, 1635, 1631, 139),
+}
+for n, (choose_n, t_n, p_n, floor_n) in expected_low_degree.items():
+    q, rem = divmod(n, 11)
+    parts = [q + 1] * rem + [q] * (11 - rem)
+    t_calc = choose2(n) - sum(choose2(part) for part in parts)
+    p_calc = t_calc - n // 11 + 1
+    assert (choose2(n), t_calc, p_calc, choose2(n) - p_calc) == (choose_n, t_n, p_n, floor_n)
+assert expected_low_degree[60][3] > 130
+assert expected_low_degree[59][3] > 130
+assert expected_low_degree[58][3] + 2 > 130
+
 # (56,11) Kang--Pikhurko arithmetic for a degree-four vertex in a 130-edge color.
 def choose2(n):
     return n * (n - 1) // 2
