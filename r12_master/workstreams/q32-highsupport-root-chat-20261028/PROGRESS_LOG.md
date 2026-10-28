@@ -133,3 +133,27 @@ Exact shell ownership at each m=9 W-point is now rigid: the five non-special exa
 For v=45,m=9, both W-points have degree4 in the 130-edge color, with all those neighbors in H. Audit found no source-correct theorem forcing the W-W edge to have that color: the isolated-K4 equality result is for degree-three vertices, not degree four. Retracted the unsupported pair-rigidity claim. The valid ledger is `E_W=2`, `E_U=4`, `e_H(W) in {0,1}`, and `e(bar(H[U]))=731-e_H(W)` (730 or731).
 
 Updated the V45/V46 source-correct files, the zero-shell arithmetic verifier (rerun: `ZERO_SHELL_MULTIPLICITY_ARITHMETIC_OK`), the canonical state, and root dependency DAG.
+
+### Direct 130-edge no-core-only degree-four theorem and v45/v46 m=9 closure
+
+Files:
+- `Q32_130_NO_CORE_ONLY_DEG4.md`
+- `V45_V46_M9_CLOSURE.md`
+
+The new theorem proves that no vertex in H can have degree four in a 130-edge non-target color while all four color-neighbors lie in H. The proof:
+1. For any degree-four vertex, the (56,11) Kang–Pikhurko bound gives at least119 edges on its 56-point non-neighborhood.
+2. The 130-edge budget and minimum degree four force at least five edges inside its four-neighbor set.
+3. For a core-only degree-four vertex, alpha(H)<=4 forces the neighborhood to be K4-e; the two S–N edges attach one to each missing-edge endpoint.
+4. An endpoint's own four-neighbor set then induces a triangle plus an isolated vertex (three edges), contradicting Step 2.
+
+This is a direct analytic theorem and does not use exceptional-vertex injectivity or the retracted degree-nine claim.
+
+The v45,m=9 and v46,m=9 source-correct shell profiles each force the 130-edge color to have degree four at a W-point, no A-neighbor, and no pw edge because the unique zero-shell special exact color owns pw. Thus the direct theorem closes both rows, bypassing the earlier unsupported W-pair/e_H(W)=0 inference.
+
+Updated frontier:
+- v44,m=8,9,10: closed by the sibling branch (read-only import);
+- v45,m=8,9,10: closed;
+- v46,m=8,9,10: closed;
+- v47,m=8,9,10: **OPEN**.
+
+The root dependency DAG now records v47 as the sole remaining Q32 support terminal. EG617(r=12) remains OPEN / NOT_CERTIFIED because v47 and the upstream dependency-reconciliation gates remain open.
