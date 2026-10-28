@@ -84,7 +84,7 @@ For any two nonadjacent vertices i,j of L[T], their neighborhoods are subsets of
 
 Consequences:
 1. If e_H(T_i,T_j)=5, its unique perfect matching must equal the composed matching along every common light neighbor. Thus all length-two light paths between that pair must induce the same matching.
-2. If e_H(T_i,T_j)=6 or 7, every path-composed matching must be contained in that pair graph. Such a graph has at most two perfect matchings: after fixing one matching, there are at most three extra edges, while two distinct nonidentity matchings relative to it require at least four distinct off-matching edges. Thus the common-neighbor path compositions take at most two values.
+2. If e_H(T_i,T_j)=6 or 7, every path-composed matching must be contained in that pair graph. Such a graph has at most two perfect matchings. After fixing one perfect matching as the identity, any other perfect matching is a nonidentity permutation and uses at least two off-matching edges. Two distinct nonidentity permutations cannot have an off-matching-edge union of size at most three: a transposition uses two opposite edges and any different permutation can share at most one of them; two permutations moving at least three labels would need at least four distinct off-matching edges unless they were identical. But only two or three extra edges are available. Thus the common-neighbor path compositions take at most two values.
 3. Every nontrivial path-matching disagreement is therefore charged to a pair with at least six H-edges. Since sum_{i<j in T} k_ij=x_T<=12, there are at most six such pairs.
 
 This gives a concrete matching-holonomy ledger for the next finite reduction. It does not yet eliminate either disconnected cell or close Q32.
