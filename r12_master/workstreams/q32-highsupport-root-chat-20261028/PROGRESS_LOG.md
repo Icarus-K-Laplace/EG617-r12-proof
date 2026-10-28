@@ -112,3 +112,15 @@ Updated `ROOT_DEPENDENCY_DAG.md`, `RETRACTION_FIREWALL.md`, and `CANONICAL_STATE
 Added Lemma 8.1 to `V47_PIVOT_NEIGHBORHOOD_PACKING.md`: if two block-pairs incident to Q_i each have exactly four H-edges, their perfect matchings force the composed matching on the closing pair Q_j,Q_k. Otherwise Q_i minus one vertex together with the two unmatched endpoints would be an independent 5-set.
 
 Thus every all-light triangle in the block-label graph aligns into four disjoint H-triangles; a heavy closing pair must still contain the composed matching. Since x is the number of extra Q-Q edges, the light-pair graph has at least 5,11,17 edges for m=8,9,10. These counts do not force a triangle by themselves, so the lemma is recorded as a finite compatibility constraint, not a contradiction.
+### Universal zero-shell multiplicity theorem — new closure (2026-10-28)
+
+Derived and committed the source-correct inequality `n_w >= 2m-14` for every nonempty W-point. Proof: each non-special exact color consumes at least two distinct w--A edges; at most one special exact color can have zero shell degree because any such color must own the unique edge pw.
+
+Combined with pointwise special-surplus budgets `n_w<=r_m`, `r=(3,4,5)`:
+- m=8: still closed by `n_w>=2` and each special incidence costing at least2 against budget3;
+- m=9: sharpened from `n_w in {3,4}` to `n_w=4`, and all four special parameters are a=4 at each W-point;
+- m=10: `n_w>=6` contradicts `n_w<=5`, so every non-full-support m=10 branch is CLOSED.
+
+Consequences: v=45 m=10 and v=46 Case-II m=10 are now closed; the v=45 m=9 branch spends at least8 global exact-color gap units across the two disjoint special sets, and v=46 m=9 spends at least4. Full support v=47 remains unaffected because W is empty.
+
+Updated `V45_SOURCE_CORRECT_MULTIPLICITY.md`, `V46_CASEII_CLOSURE.md`, `CANONICAL_STATE.md`, and `ROOT_DEPENDENCY_DAG.md`. No retracted KP degree-nine or exceptional-injectivity claim was used.
