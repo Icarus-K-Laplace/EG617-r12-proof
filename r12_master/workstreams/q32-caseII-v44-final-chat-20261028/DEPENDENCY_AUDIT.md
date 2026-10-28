@@ -1,4 +1,4 @@
-# E408 Q32 v=44 final — dependency audit
+# E408 Q32 low-support closure — dependency audit
 
 Date: 2026-10-28
 Status: **PASS_WITH_EXPLICIT_EXTERNAL_THEOREMS / HARDENED**
@@ -8,7 +8,7 @@ Branch: `workstream/r12-q32-caseII-v44-final-20261028`
 
 This workstream proves
 
-> **E408-Q32 with `|U|=44` is impossible for `m=8,9,10`.**
+> **E408-Q32 with `|U|=44` and `|U|=45` is impossible for `m=8,9,10`.**
 
 The new proofs close m=8 and m=9 without using the Case-I / Case-II shell dichotomy. The m=10 exclusion is inherited from corrected multiplicity.
 
