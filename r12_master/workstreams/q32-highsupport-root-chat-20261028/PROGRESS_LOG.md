@@ -165,3 +165,10 @@ Audited the 130-edge color at each v45,m9 W-point. The source-correct local lemm
 ### v47 independent-set incidence-cover lemma
 
 For every independent S subset R with |S|=k<=4 and every pivot block Q_i, proved that the union of N_H(r) intersect Q_i over r in S has size at least k; otherwise S plus 5-k vertices of the independent block is an independent 5-set. If y_i=0, every r has a unique neighbor in Q_i, and the independent-pair case forces each fiber to be a clique in H[R], so R is partitioned into at most four cliques. For m=10, the scalar ledger gives 8<=y+2z<=14 and z<=7. When z<=5, e(H[R])<=8, so Mantel implies alpha(H[R])>=3 and the independent-triple cover condition applies to every block. z=6,7 is kept as a separate high-z cell. Added `V47_RESIDUAL_INCIDENCE_COVER.md`.
+### v47,m10 high-chromatic residual cell closed
+
+Used the independent-set incidence-cover lemma to close the `chi(bar(H[R]))>=5` subcase. A 5-critical complement on seven vertices forces `H[R]=C5 dot-union 2K1`, hence z=2. No block can have zero y_i, so y>=10; the degree ledger gives y+2z<=14, hence y=10 and x=20. Thus each of ten blocks has exactly one extra Q-R incidence, and every Q-vertex has degree12.
+
+Both isolated R vertices have d_R=0 and therefore each needs at least two extra incidences across blocks. Lemma 7.1 shows no block's extra-incidence vertex can be an isolated R vertex: if it were u, the other isolate v and all C5 vertices have unique Q_i neighbors; independent-pair constraints force the five C5 vertices to 3-color the C5 nonedge graph, using all three labels; each independent four-set {u,v,a,b} then forces N(u) in Q_i to contain the omitted third label for every pair of labels, impossible with only two neighbors. Same for v. Contradiction.
+
+Therefore `chi(bar(H[R]))<=4` in the remaining v47,m10 cell. This closes only the high-chromatic residual subcase; the 4-colorable residual cell and v47 m=8,9 remain OPEN.
