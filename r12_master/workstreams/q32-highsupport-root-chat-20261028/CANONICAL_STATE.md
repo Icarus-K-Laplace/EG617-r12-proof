@@ -199,3 +199,14 @@ No full-support row is closed by this result. v47,m=8,9 remain open; v47,m=10 re
 The zero-slack alignment file now also records `e_i(h)), the number of outer extra-edge endpoints at label h in a small block. In either 2+8 or 3+7, `d_H(q_h)=9+e_i(h)+n_h), so `e_i(h)>=3-n_h). The exact endpoint slack is `sum_h(e_i(h)-(3-n_h))=3) for 2+8 and 2 for 3+7. The only possible sorted fiber-size partitions are `(3,3,1,0)`, `(3,2,2,0)`, `(3,2,1,1)`, and `(2,2,2,1)`.
 
 In a 3+7 switch block, all three extra endpoints have the same small-block label s; the duplicated common track is s and has `n_s<=1). If `n_s=1), that residual vertex gets one extra Q-R incidence in every such switch block, so the number of switches using s is at most `2-d_R(r_s)). These are further necessary constraints, not a global closure.
+
+
+## New two-light matching composition theorem (2026-10-28)
+
+Added `V47_TWO_LIGHT_MATCHING_COMPOSITION.md` and `verify_two_light_matching_composition.py`.
+
+For three independent 4-sets A,B,C with alpha<=4, if A-C and B-C each consist of exactly four matching edges and e(A,B)<=7, then the composed A-B matching must be contained in H[A,B]. The analytic proof uses a missing-diagonal contradiction and the seven-edge cap. Exact enumeration checked all 25,636 possible A-B edge sets of sizes 4..7; the alpha<=4 counts are 1,12,66,220, exactly all edge sets containing the composed matching. The verifier returned `V47_TWO_LIGHT_MATCHING_COMPOSITION_EXHAUSTIVE_OK`.
+
+In the m=10 disconnected 2+8 and 3+7 cells, every outer pair has at most seven edges and the outer light graph has minimum degree four on eight vertices. Thus each length-two light path forces its composed matching into the endpoint pair. Five-edge pairs force all such path compositions to agree; six-/seven-edge pairs support at most two perfect matchings. Any path-matching disagreement is charged to a pair with at least six edges, and there are at most six such pairs under `x_T<=12`.
+
+This is a new matching-holonomy restriction to combine with the zero-slack residual-neighbor map and the residual path/cycle types. It does not close the 2+8 or 3+7 cells. Full-support v47,m=8,9,10 remains open; EG617(r=12) remains OPEN / NOT_CERTIFIED.
