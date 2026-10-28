@@ -237,3 +237,10 @@ For each outer vertex q in the 3+7 cell, the local 4,5,5 switch theorem plus the
 The exact normalized verifier `verify_v47_three_small_block_transversal.py` checks 1,728 aligned and 36 switch configurations, covering 7,056 vertex records, and returns `V47_ZERO_SLACK_TRANSVERSAL_LOCAL_OK`.
 
 This tightens the disconnected m=10 cells but does not eliminate them. It is a structural reduction, not an UNSAT certificate. Full-support v47 remains open, so the root status remains EG617(r=12) OPEN / NOT_CERTIFIED.
+
+
+### 10.1 Endpoint-load ledger and switch-count cap
+
+The same theorem file now records the exact small-block endpoint load. For each small block label h, `e_i(h)>=3-n_h), and the excess above these floors sums to exactly 3 units in 2+8 and 2 units in 3+7. The only fiber-size partitions are `(3,3,1,0)`, `(3,2,2,0)`, `(3,2,1,1)`, `(2,2,2,1)`.
+
+In 3+7, every switch block sends all three extra endpoints to the same small-block label s; its duplicated common track has `n_s<=1). If `n_s=1), the singleton residual vertex spends one extra-incidence unit per such switch, so there are at most `2-d_R(r_s)` switches of that label. This is an exact cross-link between local matching switches, the endpoint floors, and residual degree. It does not yet close the 2+8/3+7 cells.
