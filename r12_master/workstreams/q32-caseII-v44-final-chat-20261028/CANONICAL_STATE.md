@@ -217,6 +217,12 @@ The no-pair theorem `Q32_130_NO_TWO_CORE_ONLY_DEG4.md` proves that a 130-edge co
 
 The finite profile/shell arithmetic regression returned `V45_SOURCE_CORRECT_PROFILE_ARITHMETIC_OK`. This verifies the finite arithmetic only; the graph lemma and its extremal inputs remain analytic dependencies.
 
+## Source-correct v46 closure (2026-10-28)
+
+`V46_SOURCE_CORRECT_CLOSURE.md` closes `|U|=46` for m=8,9,10. m=10 is excluded by the zero-shell count; m=9 forces a core-only degree-four vertex in the 130-edge color; m=8 forces at least two such vertices. All are incompatible with `Q32_130_NO_CORE_ONLY_DEG4.md`.
+
+That lemma strengthens the earlier no-pair statement: under the registered 130-edge full-color bounds, no vertex in H can have degree four with all four color-neighbors in H. Its proof uses the (56,11) second-Turan bound and the local K4-e equality/cross-edge pattern.
+
 ## Current Q32 frontier after this workstream
 
 The source-correct support layers `|U|=44` and `|U|=45` are both closed for all `m in {8,9,10}`.
