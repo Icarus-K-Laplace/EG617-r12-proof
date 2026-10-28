@@ -210,3 +210,8 @@ For three independent 4-sets A,B,C with alpha<=4, if A-C and B-C each consist of
 In the m=10 disconnected 2+8 and 3+7 cells, every outer pair has at most seven edges and the outer light graph has minimum degree four on eight vertices. Thus each length-two light path forces its composed matching into the endpoint pair. Five-edge pairs force all such path compositions to agree; six-/seven-edge pairs support at most two perfect matchings. Any path-matching disagreement is charged to a pair with at least six edges, and there are at most six such pairs under `x_T<=12`.
 
 This is a new matching-holonomy restriction to combine with the zero-slack residual-neighbor map and the residual path/cycle types. It does not close the 2+8 or 3+7 cells. Full-support v47,m=8,9,10 remains open; EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+### Matching-holonomy scope correction (2026-10-28)
+
+The correct light-graph degree bounds are: 2+8 has eight outer blocks and minimum light degree at least 3; 3+7 has seven outer blocks and minimum light degree at least 4. Therefore the statement that every nonadjacent pair has a common light neighbor applies only to 3+7. In 2+8, the matching-composition theorem is used only on length-two light paths that actually exist. The local theorem and its finite verification remain valid; only this application scope is corrected.
