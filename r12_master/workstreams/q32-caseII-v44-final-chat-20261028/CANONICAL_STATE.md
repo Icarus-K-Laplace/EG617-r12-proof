@@ -12,7 +12,7 @@ Source base: `workstream/r12-twochat-e408-global-20261026` at `937a905ed26e54ec1
 
 The v=44, v=45, and v=46 proofs close all three m-cases without exceptional-vertex injectivity. The new no-core-only degree-four lemma is the key local obstruction for the v=45 and v=46 layers.
 
-The final v=44 m=8 local contradiction is hardened in `V44_M8_FINAL_LOCAL_HARDENING.md`. A shorter alternate v=44 m=8 proof using the no-pair theorem is in `V44_M8_NO_PAIR_SHORTCUT.md`. The new degree-four obstruction is recorded in `Q32_130_NO_TWO_CORE_ONLY_DEG4.md`, and the v=45 reduction is in `V45_SOURCE_CORRECT_CLOSURE.md`.
+The shortest v=44 m=8 proof is now `V44_M8_DIRECT_NO_CORE_ONLY_CLOSURE.md`: the pointwise normal form forces at least two core-only degree-four incidences in 130-edge colors, contradicted by `Q32_130_NO_CORE_ONLY_DEG4.md`. The earlier W-pair / 700-edge U-pool proof in `V44_M8_CLOSURE.md` and the no-pair shortcut remain independent cross-checks. The final local hardening is retained in `V44_M8_FINAL_LOCAL_HARDENING.md`; the v=45 reduction is in `V45_SOURCE_CORRECT_CLOSURE.md`.
 
 This does **not** certify EG617(r=12). Full support `|U|=47` remains open.
 
@@ -203,7 +203,7 @@ The finite arithmetic regression `verify_v45_source_correct_profiles.py` returne
 
 - m=10: inherited impossible from corrected multiplicity;
 - m=9: impossible by zero-shell special-edge obstruction;
-- m=8: impossible by W-pair rigidity and U-pool saturation, with the final local step independently hardened.
+- m=8: impossible directly from the pointwise `|L(w)|>=2` normal form and `Q32_130_NO_CORE_ONLY_DEG4.md`; the longer W-pair/U-pool proof is an independent cross-check.
 
 Hence
 
@@ -256,3 +256,11 @@ It does not mechanically verify Kang--Pikhurko, the source Type-I construction, 
 > **PASS_WITH_EXPLICIT_EXTERNAL_THEOREMS / HARDENED.**
 
 The proof uses no retracted degree-nine exceptional point, no exceptional-vertex injectivity, no stale exact-count collapse, no Q33/E407 284-edge identity, no Case-I three-point cover, and no SAT/ILP UNSAT claim.
+
+## Direct v44 m=8 closure added (2026-10-28)
+
+`V44_M8_DIRECT_NO_CORE_ONLY_CLOSURE.md` replaces the W-pair/U-pool argument as the shortest proof route. For each w in W, corrected multiplicity gives n_w=2 or3. If n_w=2, exact shell ownership leaves no nonexact O-neighbor and the (4,4)/(4,3) parameter profile forces at least two 130-edge colors to be degree4 and core-only. If n_w=3, all special parameters are4, all three nonexact colors have degree4, and shell ownership leaves at most one nonexact O-edge, again forcing at least two core-only degree-four colors.
+
+The direct analytic lemma `Q32_130_NO_CORE_ONLY_DEG4.md` rules out even one such vertex. Thus v44,m=8 is closed without W-pair rigidity, the 700-edge U-pool saturation, or the final Turan-equality argument. The older full proof remains a separate cross-check.
+
+Finite arithmetic regression `verify_v44_direct_closure.py` was run in a clean Python execution and returned `V44_DIRECT_CLOSURE_ARITHMETIC_OK`. It checks parameter profiles, shell counts, the (56,11) extremal arithmetic, and the local integer budget only; it does not prove the analytic graph lemma or external theorem.
