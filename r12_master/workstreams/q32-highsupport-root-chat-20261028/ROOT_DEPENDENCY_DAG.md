@@ -317,3 +317,8 @@ The 3+7 double-track branch is further restricted by `alpha(H[R])<=3), because a
 Added `V47_37_SMALL_OUTER_MATCHING_RIGIDITY.md`. For any fixed small block A, the matching permutation p_D from A to outer block D cannot vary over D: a change across a light edge forces both endpoints of that edge to be charged to the same extra-edge endpoint label A_s. The cut-endpoint lemma for a seven-vertex minimum-degree-four graph requires at least five charged outer blocks, while e_A(s)<=4 for every nonempty residual fiber. Three nonempty fiber labels therefore have constant matching images, forcing the fourth coordinate too. The same holds for B and C.
 
 Hence all small-to-outer matching maps are globally fixed, and their relative type is either aligned or a single fixed transposition. The transposition type is restricted to profiles `(3,3,1,0)` and `(3,2,1,1)`. This is a structural reduction only; the 3+7 cell remains open.
+
+
+### 8.7 New m=10, 3+7 low-z alignment
+
+`V47_Z01_TRACK_ALIGNMENT.md` proves that z=0,1 have no double-track vertices, that the common small-triangle clique partition and the outer-track clique partition coincide, and that every outer block is aligned (no synchronized switch). This is a strict reduction only: the fully aligned z=0 and z=1 completions remain open. It does not alter the root promotion gate.
