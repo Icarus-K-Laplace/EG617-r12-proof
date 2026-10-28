@@ -199,3 +199,10 @@ Added `verify_v47_three_small_block_transversal.py`. Exact normalized enumeratio
 - singleton-track: 7,044; double-track: 12.
 
 The exact verifier returned `V47_ZERO_SLACK_TRANSVERSAL_LOCAL_OK`. It checks the finite local label/transversal theorem only. It does not solve the global Q32 graph or close the disconnected component cells.
+
+
+### Endpoint-load refinement for the 2+8 and 3+7 cells
+
+The small-block part of `V47_ZERO_SLACK_MAP_ALIGNMENT_AND_TRANSVERSAL_BLOCKER.md` now has an exact endpoint ledger. If `e_i(h)) counts extra Q-Q endpoints at small-block label h and `n_h=|F_h|), then `d_H(q_h)=9+e_i(h)+n_h), hence `e_i(h)>=3-n_h). Summing gives only three slack units per small block in 2+8 and two in 3+7. The four possible sorted fiber profiles are `(3,3,1,0)`, `(3,2,2,0)`, `(3,2,1,1)`, and `(2,2,2,1)`.
+
+For 3+7, a switch block uses the same extra-edge endpoint label s in all three small blocks; its common track s is duplicated and must have fiber size at most one. If that fiber is a singleton r, each such switch gives r an extra Q-R incidence, so at most `2-d_R(r)` such switch blocks can occur. This creates an exact coupling between the 4,5,5 switch patterns and the residual degree ledger. Still a necessary-condition reduction, not an UNSAT proof.
