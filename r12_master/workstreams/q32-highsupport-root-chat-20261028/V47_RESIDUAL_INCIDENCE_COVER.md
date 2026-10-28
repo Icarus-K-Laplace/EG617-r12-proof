@@ -83,3 +83,20 @@ For each such pair a,b, the four vertices {u,v,a,b} are independent. The indepen
 Since both isolated vertices require at least two extra incidences, but neither can be the extra-incidence vertex of any block, the high-chromatic cell is impossible.
 
 **Consequence.** For m=10 full support, `chi(J_R)<=4`; equivalently, R can be partitioned into at most four cliques. The remaining m=10 work is the 4-colorable residual cell, where the per-block clique partitions must be coupled to the 20-unit Q-Q slack and the full eleven-color edge partition. This closes only the high-chromatic residual subcase, not all v=47,m=10.
+## 8. General chromatic cap from incidence slack
+
+For each block i, let B_i={r in R : a_{ri}>=2}. Then |B_i|<=y_i. On R minus B_i, every r has a unique neighbor in Q_i; the independent-pair cover lemma forces the fibers of this map to be cliques in H[R], hence independent sets in J_R. Therefore J_R minus B_i is 4-colorable and
+
+`chi(J_R) <= 4 + |B_i| <= 4 + y_i`.
+
+Summing over blocks yields the general bound
+
+`y >= m(chi(J_R)-4)` whenever chi(J_R)>4.
+
+Apply the scalar upper bounds y+2z<=D_m+6, with D_8=18, D_9=13, D_10=8:
+
+- m=10: chi(J_R)>=6 would force y>=20>14. The chi=5 case is excluded in Section 7. Hence chi(J_R)<=4.
+- m=9: chi(J_R)>=6 forces y>=18; then y+2z<=19 gives z=0 and y=18 or19, but z=0 means J_R has exactly t_4(11)=45 edges and is the balanced Turan graph, so chi(J_R)=4. Hence chi(J_R)<=5.
+- m=8: chi(J_R)>=7 forces y>=24; then y+2z<=24 gives z=0, and J_R has exactly t_4(15)=84 edges, again the balanced Turan graph. Hence chi(J_R)<=6.
+
+This leaves a finite chromatic frontier for full support: m=10 is reduced to chi(J_R)<=4; m=9 to chi<=5; m=8 to chi<=6. These are residual-graph constraints, not closures of the remaining Q32 color branches.
