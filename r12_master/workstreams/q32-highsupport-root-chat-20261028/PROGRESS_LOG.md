@@ -259,3 +259,14 @@ The exact verifier enumerated 22,054 weighted heavy graphs and checked 5,803,387
 `V47_37_LIGHT_GRAPH_CYCLE_DECOMPOSITION_OK`.
 
 This is a genuine structural advance, not a global contradiction. It leaves m=10's 3+7 cell open, as well as m=10's other cells and full-support m=8,9.
+
+
+### 2+8 two-block transversal blocker; 3+7 double-track fiber cap
+
+Added `V47_TWO_BLOCK_TRANSVERSAL_BLOCKER.md` with a source-correct proof for the 2+8 cell. For an outer vertex q with singleton common track h, if q missed some r in F_h, its at least four R-nonneighbors and Delta(H[R])<=2 yield an independent pair r,s in distinct fibers; the two remaining labels can be chosen distinctly outside S_A(q),S_B(q), creating an independent 5-set. Thus q must hit all of F_h and `k(q)<=3-n_h).
+
+For a double track {h,j}, q consumes both extra A/B edges and has at most one R-neighbor. Every cross-fiber nonedge between F_h,F_j must meet that unique neighbor. Corrected the exact case split: with zero R-neighbors, or one neighbor outside both fibers, or one neighbor in a fiber of size at least two, the degree cap gives `n_h+n_j<=3). The only exceptional pattern is `{n_h,n_j}={1,3}) with the unique R-neighbor being the singleton-fiber vertex. This exception is explicit and must not be omitted.
+
+Each outer block has `sum k(q)=2); each small block's endpoint loads satisfy `e_i(h)=3-n_h+u_i(h)), `sum u_i=3), hence `e_i(h)<=6-n_h). Synchronized switch blocks with endpoint label h are therefore at most `6-n_h).
+
+Strengthened the 3+7 file: a double-track vertex has d_R=0, so every cross-pair between its two track fibers must be an H-edge, forcing `n_h+n_j<=3). This is not yet a global contradiction; the 2+8 and 3+7 cells remain OPEN.
