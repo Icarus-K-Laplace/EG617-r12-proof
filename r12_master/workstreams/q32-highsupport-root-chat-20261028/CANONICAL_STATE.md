@@ -331,3 +331,8 @@ This eliminates all switch/double-track escape mechanisms in the two lowest resi
 ## z=4 empty-fiber arithmetic replay restored (2026-10-28)
 
 The referenced `verify_v47_z4_empty_fiber_escape.py` was absent at the start of this audit. Added the missing arithmetic-only replay script and executed the same 1,000 slack-profile check in-session. Result: `V47_Z4_EMPTY_FIBER_ESCAPE_ARITHMETIC_OK`; it verifies `E_0>=9), at most 12 nonzero-label endpoints, 21 required empty-track extra incidences, and the contradiction `9> x_T=7). The script explicitly does not certify the graph-theoretic premise or global Q32 UNSAT.
+
+
+### z=1 triple-fiber subcase closed by balanced-coloring K13 (2026-10-28)
+
+The z=0,1 alignment theorem plus the `(3,2,1,1)` fiber profile would create a fully aligned track with `10+3=13) vertices forming a target-color K13. This contradicts the original balanced-coloring premise that every 13-set contains every color (equivalently, each non-target color has alpha at most12). Thus z=1, profile (3,2,1,1), is CLOSED. Remaining low-z cells are z=0 profile (2,2,2,1) and z=1 profile (2,2,2,1) with one cross-fiber residual edge. More generally, any aligned 3+7 completion with a size-three residual fiber is impossible; this does not close z=2,3,4 where alignment is not established.
