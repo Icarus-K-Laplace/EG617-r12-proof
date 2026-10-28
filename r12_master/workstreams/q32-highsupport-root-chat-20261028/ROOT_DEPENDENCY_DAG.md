@@ -255,3 +255,8 @@ For three independent 4-sets with two light matching pairs and a third pair of a
 In the m=10 disconnected 2+8 and 3+7 cells, this forces every length-two light-path composition in the outer 8-block component into the endpoint pair graph. A 5-edge pair forces a unique composition; a 6-/7-edge pair can support at most two perfect matchings. At most six endpoint pairs can have 6 or 7 edges under the weighted budget `x_T<=12`.
 
 This is a conditional local reduction only. It does not close either component-size cell or the full-support m=10 branch; root status remains EG617(r=12) OPEN / NOT_CERTIFIED.
+
+
+### Matching-holonomy scope correction (2026-10-28)
+
+The correct light-graph degree bounds are: 2+8 has eight outer blocks and minimum light degree at least 3; 3+7 has seven outer blocks and minimum light degree at least 4. Therefore the statement that every nonadjacent pair has a common light neighbor applies only to 3+7. In 2+8, the matching-composition theorem is used only on length-two light paths that actually exist. The local theorem and its finite verification remain valid; only this application scope is corrected.
