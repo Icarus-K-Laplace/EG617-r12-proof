@@ -63,3 +63,15 @@ Thus every outer block is in the aligned singleton normal form for z=0 and z=1, 
 This removes all switch and double-track escape mechanisms in the two lowest residual-excess cells of the 3+7 branch. It does **not** eliminate the fully aligned z=0 or z=1 completions. Those cells still require coupling the exact endpoint-load matrix, the weighted outer-heavy graph, and the all-color reserve / Type-I gadget constraints.
 
 No retracted degree-nine claim or exceptional-vertex injectivity is used. Full-support E408/Q32 and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
+
+
+## 7. Balanced-coloring exclusion of the z=1 (3,2,1,1) profile
+
+After Sections 4–5, the z=1 profile `(3,2,1,1)` is fully aligned and has `F_s=G_s) up to relabeling. The ten pivot vertices in track s form a K10: every pair of pivot blocks contains the aligned matching edge, including the small triangle, the outer light/heavy pairs, and all aligned small-to-outer pairs. Every residual vertex in F_s is adjacent to all ten track vertices by the small-map and outer-track definitions, and F_s itself is a clique. Hence the target-color graph contains a clique
+`K_{10+n_s}=K_{13}`.
+
+This contradicts the frozen balanced-coloring premise: every 13-set must contain every color, so no non-target color may be absent on all pairs of a 13-set. Equivalently each non-target color has independence number at most 12.
+
+Therefore the z=1 profile `(3,2,1,1)` is **CLOSED**. The only remaining z=1 residual-fiber profile is `(2,2,2,1)`, with one extra cross-fiber edge in H[R]. The z=0 profile is also `(2,2,2,1)`, with no cross-fiber edge.
+
+More generally, in any branch where the small and outer fiber partitions are aligned and some fiber has size three, the same K13 contradiction applies. This corollary does not by itself close z=2,3,4 cells where alignment has not been proved.
