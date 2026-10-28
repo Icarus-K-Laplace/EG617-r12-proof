@@ -58,3 +58,17 @@ The low-z cell therefore has a genuine triple-incidence constraint in addition t
 ## 5. Firewall
 
 The lemma uses only the 47-core contract, the independent pivot blocks, and (alpha(H)\le4). It does not invoke any retracted Kang–Pikhurko degree-nine claim or any Q33 284-edge identity. Full-support v=47 remains OPEN / NOT_CERTIFIED.
+
+## 6. m=10 high-chromatic residual cell
+
+Let (J_R=\overline{H[R]}). Since (omega(J_R)=alpha(H[R])\le4), if (chi(J_R)\ge5), then (chi(J_R)=5) and (J_R) is 5-critical on all seven vertices.
+
+Justification: a 5-chromatic K5-free graph on at most six vertices cannot exist. A 5-critical graph on seven vertices has minimum degree at least4. Therefore (Delta(H[R])\le2). Since (chi(J_R)) equals the clique-cover number of (H[R]), the only seven-vertex graph of maximum degree2 with clique-cover number at least5 is (C_5\dot\cup2K_1). Hence
+
+`H[R] = C_5 \dot\cup 2K_1,quad e(H[R])=5,quad z=2.`
+
+Now every block must have positive cross-edge slack: if (y_i=0), its unique-neighbor map partitions R into at most four cliques, equivalently 4-colors (J_R), contradiction. Thus (y\ge m=10). The degree ledger gives (y+2z\le14), so (y\le10). Therefore (y=10), and the exact edge identity gives (x=20).
+
+Since (2x+y=50), all 40 Q-vertices have degree exactly12. Since (y+2z-8=6), all six units of core excess lie in R. Each block has exactly one extra Q-R incidence. The two isolated R vertices each need at least two extra incidences across the ten blocks; the remaining incidence excess is exactly six.
+
+This is a rigid necessary cell, not a contradiction. The next check must couple the five independent 4-sets of (C_5\dot\cup2K_1) across the ten blocks, including the fact that for each independent 4-set S in R, every Q_i has exactly one vertex nonadjacent to all of S, and those ten selected vertices form a clique.
