@@ -184,3 +184,8 @@ This is the next exact integer ledger to combine with the outer-vertex cap `k(q)
 The new global theorem `V47_37_OUTER_LIGHT_HOLONOMY.md` gives four aligned K7 tracks on the outer blocks. The further theorem `V47_37_RESIDUAL_TRACK_TRANSVERSAL.md` proves that every r in R must be adjacent to all seven vertices of at least one track. Otherwise its nonneighbor sets in the four tracks have positive sizes summing to at least19, and the exact transversal bound finds an independent transversal avoiding r, creating an independent 5-set.
 
 This imposes a track assignment on every residual vertex. It has not yet been shown that the assigned outer track equals the common small-block residual-neighbor label f(r), and no contradiction is claimed.
+
+
+### Switch-block duplicate-fiber budget
+
+In a synchronized transposition switch, all four common-track intersections are singletons, one label s occurs twice, and the transposed label is absent. The two distinct vertices with common track s each meet every r in F_s by Lemma 3.1. Hence each such r has at least two neighbors in that outer block, and `n_s <= y_D`. For the 3+7 cell, `y_D<=2`, so a switch cannot duplicate a fiber of size three. If `y_D=0`, the duplicated label must be empty. This local budget is stronger than the sum-of-degrees orientation inequality and must be enforced in any global completion search.
