@@ -325,3 +325,14 @@ The key observation: if the unique perfect-matching permutation from a small blo
 The type is either fully aligned or a single fixed transposition. In the transposition case every outer block uses one of the two moved labels as its synchronized extra endpoint, and both moved labels must have residual fiber size at most one. Thus the switch regime is limited to `(3,3,1,0)` and `(3,2,1,1)`.
 
 Exact cut-size regression: 63 distinct nontrivial cuts; output `V47_37_MATCHING_CUT_BOUND_OK`. This tightens the global normal form but does not close 3+7.
+
+
+### z=0,1 track-partition alignment and switch elimination
+
+Added `V47_Z01_TRACK_ALIGNMENT.md`. The per-block mismatch identity is `y_D >= eta_D := sum_q |F_{s(q)} minus G_{g(q)}|). It follows by lower-bounding each q's residual degree by the union of its small-map fiber and its complete outer-track fiber; summing the four q vertices gives at least `7+eta_D), while the exact residual incidence count is `7+y_D).
+
+- z=0: e(R)=3 forces three disjoint K2 fibers plus a singleton, and this clique partition is unique, so the small and outer partitions agree.
+- z=1: e(R)=4 forces all four fibers on both sides nonempty. If the partitions differed, every outer block would have eta_D>=1 (including switch normal form), so y>=7, contradicting y=6. Hence the partitions agree.
+- With F=G and all fibers nonempty, a switch is impossible: its two-extra-edge endpoint q_j must meet both F_s and F_j, giving d_R(q_j)>=2 while e_Q(q_j)>=2 forces d_R(q_j)<=1.
+
+Therefore z=0,1 reduce to all-aligned singleton outer blocks. The aligned completions remain OPEN; no global Q32 closure is claimed.
