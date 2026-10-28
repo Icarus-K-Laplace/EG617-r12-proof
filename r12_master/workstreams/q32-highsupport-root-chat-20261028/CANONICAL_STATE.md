@@ -291,3 +291,14 @@ The two clique partitions have not yet been proved identical; the 3+7 cell remai
 For a synchronized transposition switch, the common-track intersections have one singleton label s duplicated and one label missing. Both vertices with intersection {s} hit all of F_s, so the outer block's residual-incidence slack obeys `n_s<=y_D). Hence in 3+7, where `y_D<=2), a switch cannot duplicate a size-three fiber; when z=4, `y_D=0) and the duplicated fiber must be empty.
 
 Added `V47_Z4_EMPTY_FIBER_ESCAPE_CLASSIFICATION.md`. In the 3+7,z=4 cell with fiber sizes (3,2,2,0), the all-aligned/singleton-track configuration is impossible: the empty-label endpoint floor gives at least nine small-to-outer endpoints, none of which can land at the empty-track vertex in an aligned block. Since there are only seven units of total outer-heavy weight, the empty-track vertices cannot fill their 21 units of degree surplus. Therefore every completion of this cell must contain at least one switch or double-track block involving the empty label. This is still a necessary local reduction, not a closure.
+
+
+## Double-track alpha(R) blocker (3+7, m=10)
+
+Added `V47_DOUBLE_TRACK_ALPHA_BLOCKER.md` and `verify_v47_double_track_alpha_pruning.py`. Any 3+7 double-track vertex has no R-neighbors, so it immediately forces `alpha(H[R])<=3). The registered 18 residual path/cycle types then prune double-track configurations to:
+- z=2: only `C3 dot-union 2P2`;
+- z=3: only `2C3 dot-union K1`, `C3 dot-union P4`, `C5 dot-union P2`;
+- z=4: only `C7`, `C3 dot-union C4`;
+- z=0,1: no double tracks.
+
+The residual-type alpha arithmetic was executed and returned `V47_DOUBLE_TRACK_ALPHA_PRUNING_OK`. Combined with the double-track fiber-size cap and switch duplicate-fiber budget, this further narrows 3+7; it does not close the terminal.
