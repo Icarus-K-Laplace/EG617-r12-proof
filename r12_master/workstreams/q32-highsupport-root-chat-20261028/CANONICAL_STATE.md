@@ -302,3 +302,16 @@ Added `V47_DOUBLE_TRACK_ALPHA_BLOCKER.md` and `verify_v47_double_track_alpha_pru
 - z=0,1: no double tracks.
 
 The residual-type alpha arithmetic was executed and returned `V47_DOUBLE_TRACK_ALPHA_PRUNING_OK`. Combined with the double-track fiber-size cap and switch duplicate-fiber budget, this further narrows 3+7; it does not close the terminal.
+
+
+## New 3+7 small-to-outer matching rigidity (2026-10-28)
+
+Added `V47_37_SMALL_OUTER_MATCHING_RIGIDITY.md` and `verify_v47_37_matching_cut_bound.py`.
+
+For each small block A,B,C and each outer block D, the 5-edge pair has a unique perfect-matching permutation to the globally aligned outer tracks. Across a light outer edge DE, the 4,5,5 switch theorem says that if this permutation changes at label s, both endpoint blocks D,E must place their A-D/A-E extra edge at the same small vertex A_s. Thus all vertices on the cut of the partition by matching-image p_D(s) are charged to e_A(s).
+
+Any nontrivial cut in a seven-vertex graph of minimum degree four has at least five crossing-edge endpoints. For every nonempty residual fiber, the small-block degree ledger gives e_A(s)<=5-n_s<=4, so p_D(s) is constant across all seven outer blocks. Since at most one fiber is empty, three permutation coordinates are constant and the fourth is forced. The same proof applies to B and C.
+
+Therefore the three small blocks each have a fixed matching permutation to the outer tracks, independent of the outer block. The global type is either all three permutations equal, or exactly one differs from the other two by a fixed transposition. In the transposition regime, every outer block's three extra-edge endpoints share a moved label s_D with n_{s_D}<=1; both moved labels must have fiber size at most one. This restricts that regime to residual profiles `(3,3,1,0)` or `(3,2,1,1)`.
+
+The cut verifier checks all 63 distinct nontrivial cuts by size and returns `V47_37_MATCHING_CUT_BOUND_OK`. This is a global matching normal form, not closure of the 3+7 cell.
