@@ -1,7 +1,7 @@
 # E408 Q32 v=44 final — dependency audit
 
 Date: 2026-10-28
-Status: **PASS_WITH_EXPLICIT_EXTERNAL_THEOREMS**
+Status: **PASS_WITH_EXPLICIT_EXTERNAL_THEOREMS / HARDENED**
 Branch: `workstream/r12-q32-caseII-v44-final-20261028`
 
 ## 1. Result audited
@@ -29,6 +29,8 @@ Only files under
 `r12_master/workstreams/q32-caseII-v44-final-chat-20261028/`
 
 were created or modified by this workstream.
+
+A direct compare from the base commit through hardened head `e98b13e9df82ae47f7134098111b2a388a2655d2` found every changed path inside this directory and no sibling-workstream modification.
 
 ## 3. Source-correct imported internal results
 
@@ -74,11 +76,11 @@ Used facts:
 
 Important scope firewall:
 
-The new overlapping K5
+The overlapping K5
 
 `{x_C} union (N_t\{y})`
 
-is **not** silently inserted into the registered U witness family. It is used only for the zero-shell edge obstruction.
+is **not** inserted into the registered U witness family. It is used only for the zero-shell edge obstruction.
 
 ### 3.4 130-edge minimum degree four
 
@@ -107,7 +109,7 @@ Used facts:
 - ordinary 44-vertex non-target floor `p_12(44)=60`;
 - exact v=44 core identity
 
-`e(bar(H[U]))=703-E_U-e_H(W)`.
+`e(bar(H[U]))=703-E_U-e(H[W])`.
 
 The older exact-color floor62 is not the final m=8 contradiction; the final `(3,3,2)` branch proves the stronger Type-I-specific floor65.
 
@@ -176,7 +178,8 @@ Files:
 At a degree-four/core-only W-point for a 130-edge color D:
 
 - its four-neighbor set induces `K4-e`;
-- its 56-point anti-neighborhood has exactly119 D-edges.
+- its 56-point anti-neighborhood has exactly119 D-edges;
+- if the missing-edge endpoints in `K4-e` are r,s and the central vertices are c,d, the equality `e_D(S,N)=2` plus `delta(D)>=4` forces exactly one S--N edge from r and one from s and none from c,d.
 
 For two degree-four/core-only W-points u,v in the same D:
 
@@ -200,6 +203,21 @@ The partition closures depend on:
 
 No SAT/ILP nonexistence result is used.
 
+### 4.6 Final local hardening of `(3,3,2)`
+
+File:
+
+`V44_M8_FINAL_LOCAL_HARDENING.md`.
+
+This note makes two formerly compressed implications explicit:
+
+1. three size-two L-sets with pairwise intersections at most one are the three distinct two-subsets of the nonexact-color set, so the three W--W edges receive three distinct nonexact colors and each nonexact color owns exactly one W--W edge;
+2. if v were a missing endpoint of the local `K4-e` at u, the forced S--N distribution from Section4.4 would make `D[N_D(v)]` a triangle plus an isolated vertex (3 edges), contradicting the same local equality at v, which requires `K4-e` (5 edges).
+
+Thus v is central; the third W-point is not in `N_D(u)`; the remaining three vertices of `N_D(u)` lie in U; and the local adjacency pattern contradicts the saturated `D[U]=8K4 dot-union 4K3` structure.
+
+No new external theorem is introduced by the hardening note.
+
 ## 5. External theorem ledger
 
 ### E1. Kang--Pikhurko Theorem 1
@@ -217,11 +235,13 @@ Uses in this workstream:
 
 so the corresponding color graph has at least119 edges.
 
+The primary paper was rechecked directly during the hardening audit. Its stated range is `n>=r+3`; for `r<=(n-1)/2` it gives `p_r(n)=t_r(n)-floor(n/r)+1`. The pair-rigidity use satisfies `56>=14` and `11<=27.5`.
+
 ### E2. Kang--Pikhurko Theorem 4
 
 Used at `(56,11)` after equality `e(D[N])=119`.
 
-The eleven old parts cover55 vertices. Since the complementary color graph has clique number at most5, every old part has size exactly5. Hence the color graph is
+The primary paper states that every extremal graph is described by the explicit construction. The eleven old parts cover55 vertices. Since the complementary color graph has clique number at most5, every old part has size exactly5. Hence the color graph is
 
 `9 isolated K5 dot-union G11`,
 
@@ -268,7 +288,7 @@ File:
 
 `verify_v44_m8_closure_arithmetic.py`.
 
-Executed in-session; result:
+Re-executed after hardening; result:
 
 `V44_M8_CLOSURE_ARITHMETIC_OK`.
 
@@ -277,16 +297,19 @@ It checks:
 - the m=8 multiplicity enumeration;
 - `t_11(56)=1425`, `p_11(56)=1421`, and color-edge value119;
 - uniqueness of `(a,b)=(5,2)` from the local integer inequalities;
-- three-color L-set intersections;
+- the forced S--N cross-edge distribution `(1,1,0,0)` in the local `K4-e`;
+- three-color L-set intersections and all six ordered legal L-set assignments;
+- that each nonexact color then owns exactly one W--W edge;
+- the finite missing-endpoint neighbor count (3 edges versus 5 for `K4-e`);
 - `E_U=3 => e(bar(H[U]))=700`;
 - exact floor `60+2+3=65`;
 - `8*65+3*60=700`;
 - the 44-vertex balanced-partition arithmetic `8*4+4*3=44`, internal edge count60.
 
-It does not mechanically verify E1--E3 or the analytic graph implications.
+It does not mechanically verify E1--E3, the source Type-I construction, or the analytic graph implications.
 
 ## 9. Audit verdict
 
-> **PASS_WITH_EXPLICIT_EXTERNAL_THEOREMS.**
+> **PASS_WITH_EXPLICIT_EXTERNAL_THEOREMS / HARDENED.**
 
-The v=44 closure is source-correct relative to the registered Q32 contract and the stated external extremal theorems. No retracted dependency was used.
+The v=44 closure is source-correct relative to the registered Q32 contract and the stated external extremal theorems. The independent hardening audit found no retracted dependency and resolved the two compressed implications in the final local `K5-e` contradiction.
