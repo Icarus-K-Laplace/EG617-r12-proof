@@ -326,3 +326,8 @@ because q is adjacent to both F_{s(q)} and G_{g(q)}, while `sum_{q in D}d_R(q)=7
 For z=0, e(R)=3 forces H[R]=3K2 dot-union K1, whose partition into four clique fibers is unique, so F=G. For z=1, all four F and G fibers are nonempty. If their unlabelled partitions differed, every outer block (aligned or switch) would incur mismatch at least one, forcing `y>=7`; but y=6. Thus F=G. Once the partitions coincide, a synchronized switch is impossible: the q receiving two small-side extra edges is adjacent to both disjoint nonempty fibers F_s and F_j, so d_R(q)>=2, while its two extra Q-Q incidences force d_R(q)<=1. Therefore every outer block is aligned for z=0,1.
 
 This eliminates all switch/double-track escape mechanisms in the two lowest residual-excess cells. It does not close the aligned z=0 or z=1 graph completions. Root remains OPEN / NOT_CERTIFIED.
+
+
+## z=4 empty-fiber arithmetic replay restored (2026-10-28)
+
+The referenced `verify_v47_z4_empty_fiber_escape.py` was absent at the start of this audit. Added the missing arithmetic-only replay script and executed the same 1,000 slack-profile check in-session. Result: `V47_Z4_EMPTY_FIBER_ESCAPE_ARITHMETIC_OK`; it verifies `E_0>=9), at most 12 nonzero-label endpoints, 21 required empty-track extra incidences, and the contradiction `9> x_T=7). The script explicitly does not certify the graph-theoretic premise or global Q32 UNSAT.
