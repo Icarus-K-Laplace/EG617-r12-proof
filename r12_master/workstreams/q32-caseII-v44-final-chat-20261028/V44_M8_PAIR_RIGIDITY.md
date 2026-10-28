@@ -72,6 +72,25 @@ Thus `D[S]=K4-e` and the complement `J=bar(D[N])` has exactly
 
 edges.
 
+### 2.1 Cross-edge placement inside the local K4-e
+
+Let `r,s` be the two endpoints of the unique missing edge of `D[S]=K4-e`, and let `c,d` be the two central vertices.
+
+Inside `{u} union S`:
+
+- each of `r,s` has D-degree three: it sees u and the two central vertices;
+- each of `c,d` already has D-degree four: it sees u and all three other vertices of S.
+
+Since `delta(D)>=4`, each of `r,s` needs at least one D-edge from S to N. But the equality above gives exactly
+
+`e_D(S,N)=b=2`.
+
+Therefore the two available S--N edges are forced, one incident with r and one incident with s. In particular
+
+> **the two central vertices c,d have no D-neighbor in N, and hence have global D-degree exactly four.**
+
+This cross-edge placement is part of the local equality package and will be used explicitly in the final `(3,3,2)` contradiction.
+
 ## 3. Equality classification of D[N]
 
 The graph J is an equality graph in the Kang--Pikhurko non-11-partite K12-free problem. By Kang--Pikhurko Theorem 4 it comes from the explicit extremal construction.
@@ -132,6 +151,8 @@ External theorem used:
 
 - Kang--Pikhurko Theorem 1 at `(56,11)` for the exact edge value 119 in the anti-neighborhood;
 - Kang--Pikhurko Theorem 4 at `(56,11)` for the equality classification.
+
+The primary source conditions are satisfied: `56>=11+3` and `11<=(56-1)/2`. Theorem 1 gives `p_11(56)=t_11(56)-floor(56/11)+1`, and Theorem 4 characterizes every equality graph by the explicit construction.
 
 Also imported: the already proved 130-edge minimum-degree-four theorem.
 
