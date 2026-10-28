@@ -97,3 +97,14 @@ Local U-reserve arithmetic must be kept separate from the theorem that all paren
 - **E408 Q32:** the new pivot-neighborhood packing theorem is valid as a structural reduction. Its scalar slack system has feasible states and is not an UNSAT certificate.
 
 Accordingly, the root DAG must preserve the exact conditional premises above and must not turn a support-boundary contradiction into a whole-parent closure without an exhaustive bridge.
+
+## 9. New v47 high-support local lemmas — firewall check (2026-10-28)
+
+The 2+8 two-block transversal blocker and the 3+7 double-track fiber cap use only:
+- the source-correct 4,5,5 matching-switch classification;
+- the already-proved zero-slack map alignment;
+- `alpha(H)<=4`, `Delta(H[R])<=2`;
+- the pointwise degree ledger `e_Q(q)+d_R(q)=3);
+- the endpoint-load identity for small blocks.
+
+They do not invoke the retracted universal KP degree-nine statement, exceptional-point injectivity, the E407 excess-four identity, or the Q33 284-edge identity. The singleton/triangle exception in the 2+8 double-track case is explicitly preserved. Root status remains OPEN / NOT_CERTIFIED.
