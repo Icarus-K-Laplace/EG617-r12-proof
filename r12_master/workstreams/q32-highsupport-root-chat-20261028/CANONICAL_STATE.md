@@ -226,3 +226,17 @@ For a four-cycle of light pivot-block pairs, the two diagonals contain both path
 Exact local regression: 726 transposition/diagonal-extra configurations checked, 8 forced 3-cycle configurations rejected, result `V47_LIGHT_CYCLE_HOLONOMY_EXHAUSTIVE_OK`.
 
 For the 3+7 disconnected cell, every six-edge outer pair consumes the full internal-heavy budget of two at each endpoint, so its endpoints have no other internal-heavy incidences. Nontrivial four-cycle holonomy is therefore supported only on two disjoint high-weight diagonal pairs. This is a local structural restriction, not a Q32 closure.
+
+
+## New 3+7 global light-holonomy rigidity (2026-10-28)
+
+Added `V47_37_OUTER_LIGHT_HOLONOMY.md` and `verify_v47_37_light_graph_cycles.py`.
+
+In the m=10 disconnected 3+7 cell, the outer light graph has seven vertices, minimum degree four, weighted heavy degree at most two, and total heavy weight `x_T=3+z<=7`. Using triangle matching consistency, the four-light-cycle theorem, and the heavy-degree cap, every light cycle has identity holonomy:
+- a transposition four-cycle would saturate both diagonals and leave a common light hub, forcing identity;
+- a chordless five-cycle likewise has a common light hub;
+- every six-/seven-cycle has a chord and reduces inductively.
+
+Therefore all outer light-edge matchings globally align. Every heavy pair has at least three common light neighbors, so the two-light composition theorem forces the same matching into that pair too. The 28 outer-block vertices consequently contain four aligned K7 tracks, with at most seven additional cross-track edges.
+
+The exact weighted graph verifier checked 22,054 heavy graphs and 5,803,387 light cycles, returning `V47_37_LIGHT_GRAPH_CYCLE_DECOMPOSITION_OK`. This is a stronger normal form for the 3+7 subcase, not a contradiction. Full-support m=10 remains OPEN; m=8 and m=9 remain OPEN; EG617(r=12) remains OPEN / NOT_CERTIFIED.
