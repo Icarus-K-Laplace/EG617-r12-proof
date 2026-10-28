@@ -29,21 +29,21 @@ Then q,r,s,A_{a'},B_{b'} are pairwise nonadjacent: r,s are nonadjacent by choice
 
 ## 3. Double-track blocker
 
-**Lemma 3.1.** If `I(q)={h,j}`, then q is incident with both extra A-D and B-D edges, so `k(q)=2` and `d_R(q)<=1`. Further, if both fibers are nonempty, then `n_h+n_j<=3`.
+**Lemma 3.1.** If `I(q)={h,j}`, then q is incident with both extra A-D and B-D edges, so `k(q)=2` and `d_R(q)<=1`. If `d_R(q)=0`, then `n_h+n_j<=3`. If `d_R(q)=1`, with unique R-neighbor r0, then either `n_h+n_j<=3`, or (up to swapping h,j) `n_h=1,n_j=3` and `r0` is the unique vertex of `F_h`.
 
 **Proof.** Since q is adjacent to two labels in each of A and B, it must receive the extra edge in each five-edge pair, so k(q)=2. Thus e_Q(q)>=2 and d_R(q)<=1.
 
 If r in F_h and s in F_j are nonadjacent and both miss q, choose the two remaining labels a,b outside {h,j}. The vertices q,r,s,A_a,B_b are an independent 5-set, because q is adjacent in A and B only to labels h,j, and A_a,B_b are distinct labels across the A-B matching. Hence every nonedge between F_h and F_j must be covered by N_R(q), a set of size at most one.
 
-If N_R(q) is empty, all cross-pairs between F_h and F_j are edges. If its unique vertex lies in F_h, every cross-pair not involving that vertex must be an edge; similarly if it lies in F_j. If the unique neighbor lies outside both fibers, all cross-pairs must be edges. In every case, when both fibers are nonempty, some vertex has at least `n_h+n_j-1` neighbors in H[R]. Since `Delta(H[R])<=2`, this gives `n_h+n_j<=3`. QED.
+If N_R(q) is empty, all cross-pairs between F_h and F_j are edges, so `n_h+n_j<=3`. If its unique vertex lies outside both fibers, the same conclusion holds. If it lies in F_h, every cross-pair not involving that vertex must be an edge. When `n_h>=2`, any other vertex of F_h then has degree at least `n_h+n_j-1`, forcing `n_h+n_j<=3`. When `n_h=1`, the singleton fiber vertex can cover all cross-fiber nonedges, and the only extra possibility not ruled out by the degree cap is `n_j=3` with r0 that singleton. The case where r0 lies in F_j is symmetric. Thus the stated exception is necessary; it cannot be silently discarded. QED.
 
-If one fiber is empty, the same numerical inequality is automatic because every nonempty fiber has size at most three.
+If one fiber is empty, the numerical bound `n_h+n_j<=3` is automatic because every nonempty fiber has size at most three.
 
 ## 4. Block and endpoint-load consequences
 
 Each outer block has exactly two extra edges to A,B, so `sum_{q in D} k(q)=2`. Thus:
 - if a double-track vertex occurs, it consumes both extra A/B edges in that block; all other vertices of D have k=0;
-- its two track-fiber sizes sum to at most three;
+- its two track-fiber sizes sum to at most three, except for the explicitly retained singleton/triangle case where its unique R-neighbor is the singleton-fiber vertex;
 - every singleton-track vertex of label h has k(q)<=3-n_h.
 
 For each small block A or B, let e_i(h) count its extra-edge endpoints at label h. The eight outer blocks contribute eight such endpoints, while the minimum-degree floor gives `e_i(h)>=3-n_h`. Therefore
