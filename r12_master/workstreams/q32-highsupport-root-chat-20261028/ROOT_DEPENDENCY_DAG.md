@@ -295,3 +295,8 @@ The verifier returns `V47_37_RESIDUAL_TRACK_TRANSVERSAL_OK` with minimum count m
 ### 8.4 3+7 double-track refinement
 
 The 3+7 local blocker now adds the exact residual edge floor for any double-track vertex. In particular, the z=0,1 residual cells have only singleton-track vertices. The arithmetic verifier is replayed and passes. This is a local branch reduction only; full-support v47,m=10 remains OPEN and the root theorem stays OPEN / NOT_CERTIFIED.
+
+
+### 14a. 3+7 track fibers are cliques
+
+The residual-track theorem is strengthened: the unique track complete to r defines a fiber, and two nonadjacent residual vertices cannot share a fiber. Each of the other three tracks would provide at least three vertices nonadjacent to both; with at most seven cross-track edges, the three-part union bound guarantees an independent transversal. Hence the track assignment partitions R into at most four cliques, with size profile one of `(3,3,1,0)`, `(3,2,2,0)`, `(3,2,1,1)`, `(2,2,2,1)`. This matches the possible small-block map fiber profiles but does not yet prove the two partitions coincide.
