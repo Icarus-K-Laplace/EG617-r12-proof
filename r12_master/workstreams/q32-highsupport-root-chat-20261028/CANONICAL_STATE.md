@@ -240,3 +240,14 @@ In the m=10 disconnected 3+7 cell, the outer light graph has seven vertices, min
 Therefore all outer light-edge matchings globally align. Every heavy pair has at least three common light neighbors, so the two-light composition theorem forces the same matching into that pair too. The 28 outer-block vertices consequently contain four aligned K7 tracks, with at most seven additional cross-track edges.
 
 The exact weighted graph verifier checked 22,054 heavy graphs and 5,803,387 light cycles, returning `V47_37_LIGHT_GRAPH_CYCLE_DECOMPOSITION_OK`. This is a stronger normal form for the 3+7 subcase, not a contradiction. Full-support m=10 remains OPEN; m=8 and m=9 remain OPEN; EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+## New 2+8 outer-vertex blocker and corrected double-track exception (2026-10-28)
+
+Added `V47_TWO_BLOCK_TRANSVERSAL_BLOCKER.md`. In the disconnected m=10 2+8 cell, for each outer vertex q the two five-edge pair-neighborhoods into the small blocks A,B have nonempty common-track intersection I(q).
+
+- If I(q)={h}, then q must be adjacent to every residual vertex in the fiber F_h. Hence `d_R(q)>=n_h` and `k(q)<=3-n_h).
+- If I(q)={h,j}, q uses both extra A/B edges, so `k(q)=2` and `d_R(q)<=1). The correct sharp consequence is: if `d_R(q)=0), then `n_h+n_j<=3); if `d_R(q)=1), the same bound holds except for the explicit case `{n_h,n_j}={1,3}) where the unique R-neighbor is the singleton-fiber vertex. This exception is retained rather than overclaimed away.
+- Each outer block has `sum_q k(q)=2); each small block has endpoint loads `e_i(h)=3-n_h+u_i(h)), `sum_h u_i(h)=3), so `e_i(h)<=6-n_h). Synchronized switch blocks with extra endpoint label h are bounded in number by `6-n_h).
+
+Also strengthened the 3+7 double-track blocker in `V47_ZERO_SLACK_MAP_ALIGNMENT_AND_TRANSVERSAL_BLOCKER.md`: its vertex has no R-neighbors, so the two track fibers must be completely joined in H[R], forcing `n_h+n_j<=3). These are local structural constraints only. Full-support v47,m=8,9,10 remains OPEN / NOT_CERTIFIED.
