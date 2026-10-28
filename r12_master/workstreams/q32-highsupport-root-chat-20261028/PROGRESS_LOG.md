@@ -157,3 +157,11 @@ Updated frontier:
 - v47,m=8,9,10: **OPEN**.
 
 The root dependency DAG now records v47 as the sole remaining Q32 support terminal. EG617(r=12) remains OPEN / NOT_CERTIFIED because v47 and the upstream dependency-reconciliation gates remain open.
+
+### 130-edge degree-four local audit and correction
+
+Audited the 130-edge color at each v45,m9 W-point. The source-correct local lemma is: if d_D(v)=4, the 56-point non-neighborhood has at least119 edges by KP at (56,11); writing S=N_D(v), a=e_D(S), b=e_D(S,N), the exact ledger gives a+b<=7 and 2a+b>=12. Thus only (a,b,e(D[N]))=(5,2,119),(6,0,120),(6,1,119) are possible. This yields a K4-minus-edge neighborhood with two outgoing edges, or a K4 neighborhood with at most one outgoing edge. It does not imply degree-four vertices are adjacent. Committed the local lemma and `verify_130_color_degree4_local.py`; the arithmetic check returned `130_COLOR_DEG4_LEDGER_OK`.
+
+### v47 independent-set incidence-cover lemma
+
+For every independent S subset R with |S|=k<=4 and every pivot block Q_i, proved that the union of N_H(r) intersect Q_i over r in S has size at least k; otherwise S plus 5-k vertices of the independent block is an independent 5-set. If y_i=0, every r has a unique neighbor in Q_i, and the independent-pair case forces each fiber to be a clique in H[R], so R is partitioned into at most four cliques. For m=10, the scalar ledger gives 8<=y+2z<=14 and z<=7. When z<=5, e(H[R])<=8, so Mantel implies alpha(H[R])>=3 and the independent-triple cover condition applies to every block. z=6,7 is kept as a separate high-z cell. Added `V47_RESIDUAL_INCIDENCE_COVER.md`.
