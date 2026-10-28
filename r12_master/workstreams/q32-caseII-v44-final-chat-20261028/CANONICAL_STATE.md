@@ -225,9 +225,9 @@ That lemma strengthens the earlier no-pair statement: under the registered 130-e
 
 ## Current Q32 frontier after this workstream
 
-The source-correct support layers `|U|=44` and `|U|=45` are both closed for all `m in {8,9,10}`.
+The source-correct support layers `|U|=44,45,46` are closed for all `m in {8,9,10}`.
 
-The remaining higher-support terminals `|U|=46,47` are **not** closed by this workstream. Do not import `Q32_NONFULL_SUPPORT_SHELL_CAPACITY.md` as a closure of `|U|=46`: that older proof uses exceptional-vertex injectivity, which was retracted with the false universal degree-nine premise. Any claimed v=46/v=47 closure must be audited from source-correct premises in its own workstream.
+Full support `|U|=47` is the sole remaining Q32 support terminal in this workstream. Do not import `Q32_NONFULL_SUPPORT_SHELL_CAPACITY.md` as a closure of `|U|=46`: that older proof uses exceptional-vertex injectivity, which was retracted with the false universal degree-nine premise. The v=45 and v=46 closures here are independent source-correct proofs.
 
 EG617(r=12) remains OPEN / NOT_CERTIFIED.
 
