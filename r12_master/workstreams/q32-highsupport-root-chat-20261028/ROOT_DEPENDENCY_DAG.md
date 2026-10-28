@@ -21,10 +21,10 @@ balanced K145 counterexample
                  +--> E397--E406 ------------------------ X
                  +--> E407
                  |      +--> Q31 ------------------------ X
-                 |      `--> Q32 ------------------------ X (conditional + replay-backed)
+                 |      `--> Q32 ------------------------ CONDITIONAL (29-point reserve contract; V12/parent bridge must remain explicit)
                  `--> E408
                         +--> Q31 ------------------------- X (conditional + replay-backed)
-                        +--> Q33 ------------------------- X (conditional global U-reserve)
+                        +--> Q33 ------------------------- CONDITIONAL (31-point/56-witness contract; support exhaustiveness must be source-linked)
                         `--> Q32 ------------------------- OPEN
 ```
 
@@ -155,3 +155,45 @@ Root promotion is forbidden until **all** source-correct E408-Q32 rows are elimi
 Even after Q32 closes, promotion requires a final replay/source-freeze pass over every retained root dependency. Until then:
 
 > **EG617(r=12) = OPEN / NOT_CERTIFIED.**
+
+
+## 8. Independent audit addendum — support contracts and branch reconciliation
+
+This addendum controls any broader wording above if the statements conflict.
+
+### 8.1 E407 Q32 U-reserve
+
+The exact file `E407_FOUR_COLOR_U_RESERVE_CLOSURE.md` is present on the global workstream branch and proves the local contradiction under its frozen contract:
+- `|U|=29`;
+- 49 selected K4 support blocks, seven in each of seven exact colors;
+- `e(\overline{H[U]})=294+delta<=310);
+- one unselected non-target color needs at least `p_12(29)=22) U-edges;
+- hence `294+22=316>310).
+
+The arithmetic is valid and does not use the retracted degree-nine claim. Its **scope** is the frozen 29-point/49-block V12 terminal contract. The V12 replay receipt reports 8,677 kernel weights, 17,957 count states, 1,984 necessary shells, and 554 survivors mapped to five templates; the raw archive was not re-executed by this workstream in this turn.
+
+There is a branch-state discrepancy: the dedicated E407 closure branch's `CANONICAL_STATE.md` and `PROOF_DEPENDENCY_AUDIT.md` still say the five-template same-core problem is OPEN. The global workstream's U-reserve theorem bypasses template-by-template compatibility **if** the frozen V12 terminal contract is exhaustive. Until that premise and the branch promotion are reconciled, record E407 Q32 as **PROVED_CONDITIONAL on the frozen V12 contract**, not as an unconditional root closure.
+
+### 8.2 E408 Q33 support-contract exhaustiveness
+
+`Q33_NONEXACT_U_RESERVE_CLOSURE.md` proves a valid contradiction on the registered `|U|=31), 56-witness contract:
+`26(11-m)<=delta+6h<=41), while m=8 or9 requires at least78 or52.
+
+However, the theorem's own scope firewall conditions promotion on an upstream proof that every Q33 completion enters this contract. The inspected witness-packing theorem gives a **lower bound** on support size (`|U|>=31), and the Q33 local theorem takes `|U|=31` as a frozen input. The separate exhaustive support-lifting theorem was not located among the inspected source files in this pass. The root DAG's earlier statement that upstream exhaustiveness is explicit therefore remains an unresolved citation/dependency question here.
+
+Until the exact support-lifting source and its parameter coverage are linked and checked, record Q33 as **PROVED_CONDITIONAL on the 31-point terminal contract**, with full Q33 exhaustion **NOT INDEPENDENTLY RE-CERTIFIED** in this workstream.
+
+### 8.3 Current v=47 Q32 addition
+
+`V47_PIVOT_NEIGHBORHOOD_PACKING.md` proves m vertex-disjoint independent K4s selected from exact-color pivot neighborhoods. The common edge baseline is 253; the 285-edge core leaves 32 slack units. The arithmetic verifier `verify_v47_pivot_packing.py` returned `V47_PIVOT_PACKING_ARITHMETIC_OK`, with 79, 61, and 44 feasible scalar slack states for m=8,9,10. This is a graph-structure reduction, not an UNSAT certificate.
+
+### 8.4 Final root gate
+
+- E408 Q32 remains the live graph terminal in the audited shortest chain.
+- The source-correct Q32 support-44 result is in a sibling branch and has not been merged into this workstream.
+- E407 Q32 and E408 Q33 reserve contradictions remain conditional on their named support contracts and parent exhaustiveness.
+- No root promotion is allowed while any of those contract/exhaustiveness dependencies is unresolved.
+
+[
+\boxed{\text{EG617}(r=12)=\text{OPEN / NOT\_CERTIFIED}.}
+]
