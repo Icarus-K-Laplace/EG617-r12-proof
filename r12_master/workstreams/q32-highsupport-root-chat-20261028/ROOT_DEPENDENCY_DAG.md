@@ -252,7 +252,7 @@ New local theorem: `V47_TWO_LIGHT_MATCHING_COMPOSITION.md`.
 
 For three independent 4-sets with two light matching pairs and a third pair of at most seven edges, the third pair must contain the composed matching. The exact local verifier covers all 25,636 bipartite edge sets with 4..7 edges and returns `V47_TWO_LIGHT_MATCHING_COMPOSITION_EXHAUSTIVE_OK`.
 
-In the m=10 disconnected 2+8 and 3+7 cells, this forces every length-two light-path composition in the outer 8-block component into the endpoint pair graph. A 5-edge pair forces a unique composition; a 6-/7-edge pair can support at most two perfect matchings. At most six endpoint pairs can have 6 or 7 edges under the weighted budget `x_T<=12`.
+In the m=10 disconnected 2+8 and 3+7 cells, this forces every actual length-two light-path composition in the outer component (8 blocks for 2+8; 7 for 3+7) into the endpoint pair graph. The outer light graph has minimum degree at least 3 in 2+8 and at least 4 in 3+7; the all-nonadjacent-pairs common-neighbor conclusion is used only for 3+7. A 5-edge pair forces a unique composition; a 6-/7-edge pair can support at most two perfect matchings. At most six endpoint pairs can have 6 or 7 edges in 2+8 under x_T<=12, and at most three in 3+7 under x_T<=7.
 
 This is a conditional local reduction only. It does not close either component-size cell or the full-support m=10 branch; root status remains EG617(r=12) OPEN / NOT_CERTIFIED.
 
