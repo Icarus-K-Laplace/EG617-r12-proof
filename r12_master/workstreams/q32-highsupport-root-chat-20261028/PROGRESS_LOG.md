@@ -221,7 +221,7 @@ The exact verifier enumerated all 25,636 A-B graphs with 4..7 edges and all 792 
 - e=7: 220;
 - `V47_TWO_LIGHT_MATCHING_COMPOSITION_EXHAUSTIVE_OK`.
 
-Application to the disconnected m=10 2+8 / 3+7 cells: every outer pair has at most7 edges; the outer light graph has minimum degree4. Every nonadjacent pair has at least two common light neighbors, so every length-two light path forces its composed matching into the endpoint pair. A five-edge pair has a unique matching, while a six-/seven-edge pair has at most two perfect matchings. Therefore any matching-holonomy disagreement must be charged to one of at most six pairs with e>=6 (since each consumes at least two units of x_T<=12).
+Application to the disconnected m=10 cells: every outer pair has at most 7 edges, so each actual length-two light path forces the composed matching into its endpoint pair. The 2+8 outer light graph has 8 vertices and minimum degree at least 3; the 3+7 outer light graph has 7 vertices and minimum degree at least 4. Thus every nonadjacent pair has common light neighbors only in the 3+7 cell. Five-edge pairs have a unique matching; six-/seven-edge pairs have at most two. Matching disagreements charge to at most six pairs with e>=6 in 2+8 (x_T<=12), or at most three in 3+7 (x_T<=7).
 
 This narrows the matching system but does not close either disconnected cell. Full support remains OPEN / NOT_CERTIFIED.
 
