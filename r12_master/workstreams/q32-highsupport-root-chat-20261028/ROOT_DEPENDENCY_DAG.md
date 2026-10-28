@@ -260,3 +260,10 @@ This is a conditional local reduction only. It does not close either component-s
 ### Matching-holonomy scope correction (2026-10-28)
 
 The correct light-graph degree bounds are: 2+8 has eight outer blocks and minimum light degree at least 3; 3+7 has seven outer blocks and minimum light degree at least 4. Therefore the statement that every nonadjacent pair has a common light neighbor applies only to 3+7. In 2+8, the matching-composition theorem is used only on length-two light paths that actually exist. The local theorem and its finite verification remain valid; only this application scope is corrected.
+
+
+## 12. Four-light-cycle holonomy restriction
+
+Added `V47_LIGHT_CYCLE_HOLONOMY.md`. The two-light composition theorem forces both diagonals of a light 4-cycle to contain the two path matchings. The seven-edge cap rules out derangements; a 3-cycle is ruled out by an explicit independent 5-set. Thus only identity or transposition holonomy survives, and transposition holonomy requires both diagonals to be 6/7-edge pairs.
+
+The normalized exact verifier checked 726 transposition cases and all eight 3-cycle cases, returning `V47_LIGHT_CYCLE_HOLONOMY_EXHAUSTIVE_OK`. This is a local reduction only. The m=10 disconnected cells and all full-support Q32 rows remain OPEN.
