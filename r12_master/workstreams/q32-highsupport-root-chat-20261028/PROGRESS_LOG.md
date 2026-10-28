@@ -341,3 +341,8 @@ Therefore z=0,1 reduce to all-aligned singleton outer blocks. The aligned comple
 ### Restore missing z=4 arithmetic replay
 
 The z=4 empty-fiber classification referenced a verifier that was absent from the branch directory. Added `verify_v47_z4_empty_fiber_escape.py`. The 1,000 possible three-block slack-vector profiles were checked in-session: `min E_0=9), `max(21-E_0)=12), so the seven q_0 vertices require 21 extra incidences, at least 9 of which would have to come from outer-heavy edges, exceeding `x_T=7). Result `V47_Z4_EMPTY_FIBER_ESCAPE_ARITHMETIC_OK`. Scope remains arithmetic-only.
+
+
+### Close z=1 profile (3,2,1,1) via forbidden K13
+
+After the z=1 small/outer partition alignment and switch elimination, the profile (3,2,1,1) makes the 10 pivot vertices of the size-three track plus its three residual vertices a target-color K13. This is forbidden because every 13-set in the balanced coloring must contain every color. Hence this profile is CLOSED. Only the z=0 and z=1 profiles (2,2,2,1) remain in the low-z 3+7 branch; z=1 has one extra residual cross edge, z=0 has none.
