@@ -63,7 +63,7 @@ The lemma uses only the 47-core contract, the independent pivot blocks, and (alp
 
 Let (J_R=\overline{H[R]}). Since (omega(J_R)=alpha(H[R])\le4), if (chi(J_R)\ge5), then (chi(J_R)=5) and (J_R) is 5-critical on all seven vertices.
 
-Justification: a 5-chromatic K5-free graph on at most six vertices cannot exist. A 5-critical graph on seven vertices has minimum degree at least4. Therefore (Delta(H[R])\le2). Since (chi(J_R)) equals the clique-cover number of (H[R]), the only seven-vertex graph of maximum degree2 with clique-cover number at least5 is (C_5\dot\cup2K_1). Hence
+Justification: a 5-chromatic K5-free graph on at most six vertices cannot exist. A 5-critical graph on seven vertices has minimum degree at least4. Therefore (Delta(H[R])\le2). Since (chi(J_R)) equals the clique-cover number of (H[R]), enumerate the path/cycle components of a seven-vertex graph of maximum degree2 subject also to (alpha(H[R])<=4). The only graph with clique-cover number at least5 is (C_5 dot-union 2K_1); the other degree-2-component possibility with clique-cover number5, (C_3 dot-union 4K_1), is excluded because its independence number is5. Hence
 
 `H[R] = C_5 \dot\cup 2K_1,quad e(H[R])=5,quad z=2.`
 
