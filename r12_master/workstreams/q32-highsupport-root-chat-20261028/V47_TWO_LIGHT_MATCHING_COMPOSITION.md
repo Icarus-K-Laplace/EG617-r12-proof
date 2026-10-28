@@ -75,17 +75,21 @@ This is a local finite verifier, not a solver for the 47-vertex Q32 graph.
 ## 4. Consequence for the m=10 disconnected 2+8 / 3+7 cells
 
 In either cell, every outer block T_i has weighted internal-heavy degree at most three:
-- 2+8: t_i^T+y_i=3;
-- 3+7: t_i^T+y_i=2.
+- 2+8: t_i^T+y_i=3, so t_i^T<=3;
+- 3+7: t_i^T+y_i=2, so t_i^T<=2.
 
-Therefore every pair of outer blocks has e_H(T_i,T_j)=4+k_ij<=7. The outer light graph L[T] has minimum degree at least four on eight vertices.
+Therefore every pair of outer blocks has e_H(T_i,T_j)=4+k_ij<=7, so the local composition theorem applies to every actual length-two light path in L[T]. The degree bounds differ by cell:
+- 2+8: L[T] has eight vertices and minimum degree at least 3;
+- 3+7: L[T] has seven vertices and minimum degree at least 4.
 
-For any two nonadjacent vertices i,j of L[T], their neighborhoods are subsets of the other six vertices and each has size at least four, so they have at least two common light neighbors. For each common light neighbor k, the theorem forces the composition of the two light matching maps along i-k-j to be a perfect matching contained in H[T_i,T_j].
+In the 3+7 cell, any nonadjacent i,j have at least three common light neighbors, because both neighborhoods lie in the other five vertices and each has size at least four. In the 2+8 cell, minimum degree three does not guarantee a common light neighbor for every nonadjacent pair; use the theorem only along length-two light paths that actually exist.
+
+For each such path i-k-j, the theorem forces the composition of the two light matching maps along i-k-j to be a perfect matching contained in H[T_i,T_j].
 
 Consequences:
-1. If e_H(T_i,T_j)=5, its unique perfect matching must equal the composed matching along every common light neighbor. Thus all length-two light paths between that pair must induce the same matching.
-2. If e_H(T_i,T_j)=6 or 7, every path-composed matching must be contained in that pair graph. Such a graph has at most two perfect matchings. After fixing one perfect matching as the identity, any other perfect matching is a nonidentity permutation and uses at least two off-matching edges. Two distinct nonidentity permutations cannot have an off-matching-edge union of size at most three: a transposition uses two opposite edges and any different permutation can share at most one of them; two permutations moving at least three labels would need at least four distinct off-matching edges unless they were identical. But only two or three extra edges are available. Thus the common-neighbor path compositions take at most two values.
-3. Every nontrivial path-matching disagreement is therefore charged to a pair with at least six H-edges. Since sum_{i<j in T} k_ij=x_T<=12, there are at most six such pairs.
+1. If e_H(T_i,T_j)=5, its unique perfect matching must equal the composed matching along every length-two light path between i and j. Thus all such paths induce the same matching.
+2. If e_H(T_i,T_j)=6 or 7, every path-composed matching must be contained in that pair graph. A graph with 6 or 7 edges on the 4-by-4 pair can contain at most two perfect matchings: after fixing one as identity, a second matching uses at least two off-matching edges, and two distinct alternatives would require at least four off-matching edges. Thus path compositions take at most two values.
+3. Every nontrivial path-matching disagreement is charged to a pair with at least six H-edges. Since sum_{i<j in T} k_ij=x_T<=12, there are at most six such pairs in 2+8; in 3+7, x_T<=7 gives at most three.
 
 This gives a concrete matching-holonomy ledger for the next finite reduction. It does not yet eliminate either disconnected cell or close Q32.
 
