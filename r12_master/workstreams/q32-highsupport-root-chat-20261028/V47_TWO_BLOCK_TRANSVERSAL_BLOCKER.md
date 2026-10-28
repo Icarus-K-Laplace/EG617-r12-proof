@@ -55,3 +55,12 @@ In a synchronized switch block, the two extra edges share one endpoint label s o
 ## 5. Scope
 
 This is a source-correct local refinement for the 2+8 cell. It uses only the true 4,5,5 matching-switch lemma, the aligned zero-slack maps, `alpha(H)<=4`, `Delta(H[R])<=2`, and the pointwise degree ledger. It does not invoke retracted KP degree-nine or exceptional-injectivity claims. The 2+8 cell remains OPEN.
+
+
+## 6. Switch-block duplicate-fiber budget
+
+In the transposition-switch normal form, the four common-track intersections are singletons, with one label s duplicated and the transposed label absent. The two distinct outer vertices q,q' with `I(q)=I(q')={s}` are each adjacent to every vertex of F_s by Lemma 2.1. Therefore each r in F_s has at least two neighbors in D. Since `y_D=sum_{r in R}(a_{rD}-1)` is exactly the number of R-D incidences beyond one per residual vertex,
+
+`n_s <= y_D`.
+
+This is stronger than the aggregate bound obtained by summing `d_R(q)>=n_{I(q)}`. In particular, a switch block with `y_D=0` must duplicate an empty fiber; if `n_s>0`, the block needs at least `n_s` units of residual-incidence slack.
