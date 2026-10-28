@@ -1,133 +1,187 @@
 # Dependency audit — fixed r=12 after KP source correction
 
-Updated: 2026-10-27
+Updated: 2026-10-28  
 Status: **EG617(r=12) OPEN / NOT_CERTIFIED. Unique currently identified live graph terminal: E408-Q32.**
 
-## 1. Audit correction
+## 1. Source correction and retraction boundary
 
-Primary-source verification of the Kang--Pikhurko `(61,12)` equality construction confirms the exact-129 Type-I factorization but refutes the project claim that its exceptional gadget contains a color-degree9 vertex.
+Primary-source verification of Kang--Pikhurko `(61,12)` confirms the exact-129 Type-I factorization but refutes the former project claim of a universal color-degree9 exceptional vertex.
 
-See `KP_DEGREE9_RETRACTION_AND_E408_Q32_REOPEN.md`.
+The source-correct degree pairs are
 
-Consequently the former E408 whole-layer exact-color-count closure and all Q32 arguments depending on exceptional-degree9 injectivity are retracted as closure theorems.
+`(4+a,9-a)`, `a in {1,2,3,4}`,
 
-## 2. Valid KP interface
+namely `(5,8),(6,7),(7,6),(8,5)`.
 
-For every exact-129 non-target color C on the 61-point residual:
-
-- `C = 10 isolated K5 dot-union G11`;
-- `G11` contains two further 5-cliques and the added vertex x;
-- the exact published Type-I construction is the unique Kang--Pikhurko equality type compatible with `omega(C)<=5`.
-
-If `a=|A| in {1,2,3,4}` is the proper-subset parameter in the published construction, the two variable color degrees are
-
-`4+a` and `9-a`,
-
-so the possible pairs are `(5,8),(6,7),(7,6),(8,5)`. No degree9 vertex exists.
-
-Source audit: `KANG_PIKHURKO_EXACT129_SOURCE_AUDIT.md` plus its companion verifier.
-
-## 3. Root/front-end boundary
-
-The finite Line-A recurrence remains computation-certified:
-
-- package SHA256 `8f34097f195f53a6aac2999a655d3dc6a4ebc7c74f5764aedea65a79235a98ac`;
-- 1,752 recurrence nodes;
-- 144 outer comparisons;
-- 73 manifest files checked with zero errors;
-- unique no-R(4,49) stop `(11,6,5,61)`, energy interval397..408;
-- independent replay PASS.
-
-The contextual R(4,49) alternative remains closed relative to its named external/extremal inputs. Historical OPEN bridge candidates in `front_end/ASSUMPTION_LEDGER.md` are not imported into the current shortest chain.
-
-## 4. T61 branches still closed
-
-Relative to their registered contracts:
-
-- h12 closed;
-- h13 E397--E400 closed;
-- E401--E404 closed;
-- E405 closed;
-- E406 closed.
-
-This leaves E407 and E408.
-
-## 5. E407 remains closed
-
-### Q31
-V10/V11 replay + analytic common-K10 capacity remain unaffected by the KP degree correction.
-
-Frozen hashes:
-
-- V10 archive `e83e2907d541b38304746e855af52b5e21b6500a35cb0fdb676a4f6a7601303a`;
-- V11 archive `27ecec92d43a27fb132c60aa7b374131a860547c236d8ed3d83d3cf0eab9f0a4`;
-- V11 certificate `0baffc39ee481b27af53fda36a8fe40b8cd8c527103b5126060857c4eaacd09b`.
-
-### Q32
-V12 replay leaves554 states in five templates. The later common-support interface gives `|U|=29`, 49 selected independent 4-blocks, and `e(overline(H[U]))<=310`.
-
-The 49 blocks own294 distinct selected-color edges. Since only seven selected colors are used among eleven non-target colors, one unselected color D exists. `alpha(D[U])<=12` gives `e_D(U)>=p_12(29)=22`, so
-
-`e(overline(H[U]))>=294+22=316>310`.
-
-This route uses only the valid exact-129 factor/support identity and does not use exceptional degree9. Hence E407-Q32 remains closed.
-
-## 6. E408 charge partition after correction
-
-The earlier V9/V11 reduction leaves maximum charge in `{31,32,33}` after lower-charge elimination.
-
-### Q31
-Remains closed by the independently replayed V11 route under its named inputs.
-
-### Q33
-Remains closed. Its load-bearing route is:
-
-1. `Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md`: excludes m=10 through isolated-K5/component witness packing; no exceptional-degree9 premise.
-2. `Q33_NONEXACT_U_RESERVE_CLOSURE.md`: with m in {8,9}, uses `delta<=17`, `h<=4`, and the nonexact-color U-edge reserve inequality to contradict capacity.
-
-### Q32
-**REOPENED.**
-
-The following prior Q32 closure routes are invalid as written because they consume degree9 injectivity:
+Therefore any Q32 theorem whose contradiction requires degree9 exceptional-vertex injectivity is retracted. In particular the following are not load-bearing closure nodes:
 
 - `Q32_GLOBAL_EXCEPTIONAL_INJECTIVITY.md`;
-- `Q32_EXACT_COLOR_COUNT_COLLAPSE.md`;
-- `Q32_NONFULL_SUPPORT_SHELL_CAPACITY.md` at its injectivity step;
-- the Q32 part of the former E408 whole-layer exact-count closure.
+- `Q32_EXACT_COLOR_COUNT_COLLAPSE.md` as a whole;
+- the injectivity step of `Q32_NONFULL_SUPPORT_SHELL_CAPACITY.md`;
+- the Q32 part of the historical E408 whole-layer closure/root promotion.
 
-## 7. Surviving E408-Q32 285-edge interface
+The source-verified factorization `10 isolated K5 dot-union G11` remains valid and is used only through explicitly audited consequences.
 
-Read-only source branch:
+## 2. Root/front-end boundary
 
-`workstream/r12-e408-q32-excess6-20261025`
+The Line-A recurrence remains computation-certified at 1,752 nodes and 144 outer comparisons under its registered inputs. The contextual `R(4,49)` alternative remains closed under its named extremal inputs.
 
-Key source:
+Relative to their registered contracts, the following T61 branches remain closed:
 
-`r12_master/workstreams/e408-q32-excess6-chat-20261025/CORE285_CAPACITY_THEOREM.md`
+- h12;
+- h13 E397--E406;
+- E407 Q31/Q32;
+- E408 Q31.
 
-Surviving necessary structure:
+Thus the live E408 charges are Q32/Q33 before the color-incidence arguments below.
 
-- `|H|=47`, `e(H)=285`, `alpha(H)<=4`, `delta(H)>=12`;
-- total degree excess6;
+## 3. E407 firewall
+
+E407-Q32 is closed by the 29-point U-edge reserve route: 49 selected independent four-blocks own294 distinct non-target U-edges, while an unselected color requires at least `p_12(29)=22` more. This exceeds the registered complement capacity310.
+
+This route does not use the retracted degree9 premise.
+
+## 4. Q33 — local P_C=49 profile status
+
+This is the independent 284-edge / excess-four contract.
+
+At `P_C=49`, the four profiles singled out for the emergency sprint now have status:
+
+- `(6,2,1^5)`: **PROVED_CONDITIONAL excluded** by the audited double-star theorem;
+- `(7,1^6)`: **PROVED_CONDITIONAL excluded** by `Q33_P49_R7_DOUBLE_STAR_EXCLUSION.md`;
+- `(4,4,1^5)`: **OPEN locally** only in the branch where all ten relevant component-representative edges are present;
+- `(4,3,2,1^4)`: **OPEN locally** only in the analogous all-component-edge-present branch.
+
+The two remaining local branches are genuine: the current double-star/blocker arguments are triggered by a missing component-representative edge. When all ten are present, the valid monochromatic-K12 star rule gives only
+
+`d_C(z,K12)<=1`,
+
+so a single external same-color edge is legal. The historical stronger isolation claim was false. Consequently **`P_C<=48` is not proved** and must not be used.
+
+## 5. Q33 — global closure bypass
+
+The local P49 gap is not load-bearing for the registered Q33 terminal.
+
+The valid global route is:
+
+1. `Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md` excludes `m=10` without degree9;
+2. in the 31-point/56-witness terminal, let `h` be the number of selected gadget witnesses;
+3. selected exact-color component witnesses occupy `336-6h` edges of `L=bar(H[U])`, whose total size is `336+delta`;
+4. every nonexact color needs at least `p_12(31)=26` U-edges;
+5. hence
+
+   `26(11-m)<=delta+6h`.
+
+With `m in {8,9}`, `delta<=17`, and `h<=4`, the right side is at most41 while the left side is78 or52.
+
+Therefore the registered Q33 284-edge terminal is **PROVED_CONDITIONAL impossible** by `Q33_NONEXACT_U_RESERVE_CLOSURE.md`, independently of the two open local P49 profiles.
+
+No Q33 identity is imported into Q32.
+
+## 6. Frozen Q32 285-edge contract
+
+For E408-Q32:
+
+- `|H|=47`, `e(H)=285`;
+- `alpha(H)<=4`, `delta(H)>=12`;
+- `sum_H(d_H-12)=6`;
+- `q=32`, `22<=e(M)<=32`, `e(M)+G_A=32`;
 - exact-color count `m in {8,9,10}`;
-- every exact color supplies at least ten disjoint independent core4 witnesses;
-- witness families across colors are pairwise linear;
-- if N is total witnesses and `U` their union, `v=|U|`, then
+- every exact-129 color supplies at least ten disjoint independent core-four witnesses;
+- different exact-color witness families are pairwise linear;
+- their support U satisfies `|U|>=44`.
 
-  `6N <= e(overline(H[U]))`
+The corrected non-full-support theorem gives, for `w in W=H\U`,
 
-  and
+`n_w>=m-6`,
 
-  `6N <= C(v,2)-p_4(47-v)-12v+285-E_U`;
+and hence `|W|(m-6)<=m`.
 
-- low-support triple-pair capacity strengthens to `v>=44`;
-- at v=44, additional exact normal form constraints are available but no contradiction is currently certified.
+## 7. New Q32 all-color U-reserve theorem
 
-None of these statements needs the false degree9 premise.
+`Q32_U_COLOR_RESERVE.md` is a new valid dependency.
 
-## 8. Correct current root status
+For any exact color on U containing ten disjoint witness K4s:
 
-Closed:
+| v=|U| | ordinary `p_12(v)` | exact-color floor |
+|---:|---:|---:|
+|44|60|**62**|
+|45|63|**64**|
+|46|66|66|
+|47|69|69|
+
+At v=44, the 60-edge Turan equality layer has only eight disjoint K4s. The 61-edge layer is excluded by a non-12-partite Brouwer branch or, if the complement is 12-partite, by direct part-size/cross-edge counting. At v=45, equality has only nine disjoint K4s.
+
+If `h` exact colors supply at least eleven witnesses, then
+
+- v=44: `e(bar(H[U]))>=660+2m+4h`;
+- v=45: `e(bar(H[U]))>=693+m+2h`.
+
+These are necessary reserve inequalities, not complete contradictions.
+
+## 8. New 131-edge minimum-degree theorem
+
+`Q32_131_MINDEG3_V46_M9_CLOSURE.md` proves:
+
+> any 61-point non-target color C with `e(C)=131`, `alpha(C)<=12`, `omega(C)<=5` satisfies `delta(C)>=3`.
+
+A hypothetical degree-two vertex has a 58-point non-neighborhood with `alpha<=11`, `omega<=5`; Brouwer forces at least129 internal edges. With the two incident edges all131 edges are exhausted, forcing its neighbors to have degree one. A second non-neighborhood bound at order59 gives at least135 total edges from a degree-one vertex, contradiction.
+
+Thus the correct m=9 nonexact pointwise floor is
+
+`L_9=3+3=6`.
+
+This theorem uses no exact-129 gadget degree statement.
+
+## 9. Case-I Q32 consequence
+
+Case I means M has an independent10-set B and every M-edge meets `S=A\B`, `|S|=3`.
+
+The source-correct matching theorem gives
+
+`nu(M)>=m-n_w`,
+
+while `nu(M)<=3`, hence
+
+`n_w>=m-3`.
+
+Current Case-I frontier:
+
+- v=44: **CLOSED**;
+- v=45: **CLOSED**;
+- v=46,m=10: **CLOSED**;
+- v=46,m=9: **CLOSED** by the new 131-edge degree theorem, since at the unique W-point
+  `13+(4*9+6)+(3+3)=61>60`;
+- v=46,m=8: **OPEN**, with `n_w in {5,6}`;
+- v=47: **OPEN**.
+
+## 10. Case-II Q32 frontier
+
+Case II means `alpha(M)<=9`.
+
+- v=44,m=10: **CLOSED**;
+- v=44,m=9: **OPEN** rigid three-W-point terminal;
+- v=44,m=8: **OPEN**;
+- v=45,46,47: **OPEN**.
+
+For v=44,m=9, source-correct shell-edge accounting gives:
+
+- all-double t=0: `e(M)>=25`, `G_A<=7`;
+- one-triple t=1: `e(M)>=28`, `G_A<=4`, and at least two core-excess units lie on W.
+
+The new 131-edge floor leaves only two pointwise degree-slack units at each W-point above the baseline58. If its three special exact colors have KP parameters `a_1,a_2,a_3`, then
+
+`sum(4-a_i)<=2`,
+
+so the only sorted parameter triples are
+
+`(4,4,4)`, `(4,4,3)`, `(4,4,2)`, `(4,3,3)`.
+
+This is a reduction, not a contradiction.
+
+## 11. Current root status
+
+Closed under named contracts:
 
 - contextual R449;
 - h12;
@@ -143,18 +197,11 @@ Therefore
 
 `EG617(r=12) = OPEN / NOT_CERTIFIED`.
 
-## 9. Highest-leverage next theorem
+## 12. Next load-bearing targets
 
-> **E408-Q32 285-edge global compatibility theorem.** No 47-vertex core with 285 edges and total excess six can support the exact-color witness system forced by `m in {8,9,10}`, the correct Kang--Pikhurko Type-I factors, the shell-support classification, and all nonexact-color U-edge requirements.
+1. Case-II `v=44,m=9`: combine the three-W KP parameter profiles, shell-edge floor, U-edge reserve, and seven-block blocker labels.
+2. Case-II `v=44,m=8`: derive the corresponding special-multiplicity/multi-outside normal forms.
+3. Case-I `v=46,m=8`: exploit `n_w in {5,6}` plus the three 130-edge equality/stability structures.
+4. `v=47`: use all-color near-Turan/equality structure on the full core.
 
-Immediate strategy:
-
-1. classify `v=44,45,46,47` rather than revisiting already excluded `v<44`;
-2. quantify when an exact color must supply 11 rather than 10 witnesses;
-3. add the `11-m` nonexact-color Turan edge floors on U to the complement capacity;
-4. exploit the correct gadget variable-degree pairs only through valid degree budgets;
-5. keep Q32 excess-six identities isolated from Q33/E407 excess-four identities.
-
-## 10. Promotion rule
-
-No branch-local root promotion is allowed until Q32 is closed from valid premises. Any newly discovered source mismatch fail-closes the affected theorem immediately.
+No branch-local root promotion is allowed until all Q32 terminals are eliminated from valid premises.
