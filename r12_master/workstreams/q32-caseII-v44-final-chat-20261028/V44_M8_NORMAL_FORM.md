@@ -1,149 +1,87 @@
 # E408 Q32 Case-II — v=44,m=8 normal form
 
 Date: 2026-10-28
-Status: **PROVED_CONDITIONAL reduction; m=8 remains OPEN after this file.**
+Status: **PROVED_CONDITIONAL normal form; m=8 is now CLOSED by `V44_M8_PAIR_RIGIDITY.md` + `V44_M8_CLOSURE.md`.**
 
-## 1. Frozen inputs
+## Frozen inputs
 
-Work under the registered E408-Q32 contract with `|U|=44`, hence `W=H\U` has three vertices, and `m=8` exact-129 colors.
+Work under the registered E408-Q32 contract with `|U|=44`, `W=H\U`, `|W|=3`, and `m=8` exact-129 colors.
 
-We use:
+Inputs used here:
 
-- target residual minimum degree at least 13;
-- each exact color has pointwise degree at least 4;
-- the three nonexact colors each have 130 edges and, by `Q32_130_MINDEG4_AND_CASEI_M8_CLOSURE.md`, minimum degree at least 4;
-- for `w in W`, corrected multiplicity gives `n_w>=m-6=2`;
-- each exact color has one source-correct Type-I special point `x_C`;
-- for a special incidence `x_C=w`, the excess over exact baseline degree 4 is `5-a_C`, with `a_C in {1,2,3,4}`;
-- the zero-shell lemma from `V44_M9_PARAMETER_SYSTEM.md`: if `x_C=w in H` and w has no C-neighbor in A, then edge `pw` has color C. Hence at a fixed w at most one special exact color can have zero shell degree;
-- for every exact color with `x_C!=w`, corrected multiplicity places w in a multi-outside K5, so w has at least two distinct shell neighbors in that color.
+- target residual minimum degree at least13;
+- exact colors have pointwise degree at least4;
+- all three nonexact colors have130 edges and minimum degree at least4;
+- corrected multiplicity `n_w>=m-6=2` for `w in W`;
+- source-correct Type-I special excess `5-a_C`, `a_C in {1,2,3,4}`;
+- zero-shell special-edge obstruction: if `x_C=w in H` and w has no C-neighbor in A, then pw has color C, so at most one special exact color at a fixed w can have zero shell degree;
+- every exact color non-special at w gives at least two shell neighbors at w.
 
 No degree-9 exceptional point, exceptional injectivity, Case-I shell cover, Q33 identity, or E407 identity is used.
 
-## 2. Pointwise slack is only three
+## Pointwise slack and multiplicity partitions
 
-At every residual vertex z,
+At every residual point,
 
-`60 = sum over all 12 color-degrees at z`.
+`target 13 + eight exact 8*4 + three nonexact 3*4 =57`,
 
-The floor contribution is
+so only three pointwise slack units remain.
 
-- target: at least 13;
-- eight exact colors: at least `8*4=32`;
-- three nonexact 130-edge colors: at least `3*4=12`.
+Each special exact incidence contributes at least one slack unit. Hence for every `w in W`,
 
-Thus the total floor is 57, leaving at most three units of pointwise slack.
+`2<=n_w<=3`.
 
-If z is special for exact colors `C_1,...,C_n`, their special excess alone is
+Since there are only eight exact special labels in total,
 
-`E_z=sum_i(5-a_i)`.
+`sum_W n_w<=8`.
 
-Each summand is at least one, so `n<=E_z<=3`.
-
-For `w in W`, corrected multiplicity also gives `n_w>=2`; hence
-
-> `n_w in {2,3}` for every W-point.
-
-Since each of the eight exact colors has only one special point,
-
-`sum_{w in W} n_w <=8`.
-
-Therefore, up to permutation of the three W-points, the only multiplicity partitions are
+Up to permutation, the only multiplicity partitions are
 
 > `(2,2,2)`, `(3,2,2)`, `(3,3,2)`.
 
-The partition `(3,3,3)` is impossible because it would require nine special labels from only eight exact colors.
+## n=3 normal form
 
-## 3. Source-parameter normal form
+If `n_w=3`, all slack is consumed by the three special incidences. Therefore
 
-### 3.1 A W-point with n=3
+- special parameters are exactly `(4,4,4)`;
+- target degree is exactly13;
+- every non-special exact color has degree4;
+- all three nonexact colors have degree4;
+- with `epsilon_w=d_H(w)-12` and `r_A(w)=d_F(w,A)`, one has
 
-Three special incidences already contribute at least three slack units. Since only three total slack units exist, equality holds throughout.
+`epsilon_w+r_A(w)=1`.
 
-Thus all three source parameters are
+Five non-special exact colors own at least ten shell edges. At most one of the three special colors can have zero shell degree, so at least two special colors own shell edges. Thus exact colors own at least twelve shell edges.
 
-> `(a_1,a_2,a_3)=(4,4,4)`.
+## n=2 normal form
 
-Moreover at this point:
+If `n_w=2`, the special parameter pair is only
 
-- target degree is exactly 13;
-- every non-special exact color has degree exactly 4;
-- every nonexact color has degree exactly 4.
+> `(4,4)` or `(4,3)`.
 
-Writing `epsilon_w=d_H(w)-12` and `r_A(w)=d_F(w,A)`, target degree 13 gives
+The six non-special exact colors own at least twelve shell edges. At most one special color can have zero shell degree, so at least one special color owns a shell edge. Equality is therefore forced on all thirteen shell edges:
 
-> `epsilon_w+r_A(w)=1`.
+1. every non-special exact color owns exactly two shell edges;
+2. exactly one special exact color owns exactly one shell edge;
+3. the other special exact color owns zero shell edges and therefore owns pw;
+4. target and nonexact colors own no w--A edge;
+5. `r_A(w)=0` and `epsilon_w>=1`.
 
-Hence `(epsilon_w,r_A(w))` is either `(1,0)` or `(0,1)`.
+For profile `(4,3)`, all slack is already consumed, so `epsilon_w=1` and all three nonexact colors have degree4. For `(4,4)`, exactly one slack unit remains outside the special exact colors.
 
-### 3.2 A W-point with n=2
+A non-special exact color cannot be triple-outside at an n=2 point: three shell edges from that color plus at least two from each of the other five non-special exact colors would consume all thirteen shell edges before either special color, forcing two zero-shell special colors.
 
-The two special excesses must total at most three. Up to order the only legal parameter pairs are
+## Closure interface
 
-> `(4,4)` with special excess 2, or `(4,3)` with special excess 3.
+The normal form above is not itself the final contradiction. The closure proceeds through two further theorems:
 
-No `(4,2)` or `(3,3)` profile is possible because either would already contribute four slack units.
+1. `V44_M8_PAIR_RIGIDITY.md`: if a 130-edge nonexact color D is degree4 and core-only at two W-points, then their W--W edge must have color D.
+2. `V44_M8_CLOSURE.md`: every W-point has at least two such nonexact colors. Therefore all three W--W edges are nonexact. This immediately kills `(2,2,2)` and `(3,2,2)` because an exact color special outside W must own a W--W edge. The remaining `(3,3,2)` branch collapses to all exact colors having `a=4`, all exact colors double type, `E_U=3`, `e_H(W)=0`, and `e(bar(H[U]))=700`. Each exact color then uses at least65 U-edges, so the three nonexact colors are forced to the 60-edge Turan equality structure `8K4 dot-union 4K3`, incompatible with their local `K5-e` W-pair rigidity cluster.
 
-## 4. Shell ownership at an n=2 W-point
+Hence
 
-Fix `w in W` with `n_w=2`. There are six non-special exact colors. Each uses at least two shell edges incident with w, and edge-color uniqueness makes these shell-neighbor sets disjoint. Thus the six non-special exact colors own at least twelve of the thirteen shell edges from w to A.
+> **Case II / |U|=44 / m=8 is impossible.**
 
-There are two special exact colors at w. By the zero-shell lemma, at most one of them can have zero shell degree, because every zero-shell special color would have to own the same edge `pw`. Therefore at least one special exact color must own a shell edge.
+## Verification scope
 
-Consequently at least `12+1=13` shell edges are exact-colored. Since only thirteen exist, equality is forced:
-
-1. every one of the six non-special exact colors owns exactly two shell edges at w;
-2. exactly one of the two special exact colors owns exactly one shell edge at w;
-3. the other special exact color has zero shell degree and therefore owns `pw`;
-4. no target or nonexact color owns any edge from w to A.
-
-Thus
-
-> `r_A(w)=0`.
-
-Since target degree is at least 13 and `d_F(w)=d_H(w)+r_A(w)` for w in H,
-
-> `epsilon_w>=1`.
-
-If the parameter pair is `(4,3)`, all three pointwise slack units are already consumed by the special exact colors. Hence target degree is exactly13 and therefore
-
-> `(4,3) => epsilon_w=1`.
-
-If the parameter pair is `(4,4)`, one slack unit remains outside the two special exact colors. Since `r_A(w)=0`, this gives
-
-> `(4,4) => epsilon_w in {1,2}`.
-
-## 5. Consequence for triple-outside colors
-
-At an n=2 W-point w, a non-special exact color cannot place w in a triple-outside K5: that color would use three shell edges at w, while the other five non-special exact colors use at least two each, consuming all thirteen shell edges before either of the two special colors is considered. Both special colors would then have zero shell degree, contradicting the zero-shell lemma.
-
-Therefore:
-
-> at every n=2 W-point, every non-special exact color places w in a double-outside K5, never a triple-outside K5.
-
-In particular, if an exact color has its special point in H and is of the m=9-style triple type (one triple-outside K5), then its special point must equal every n=2 W-point at which it would otherwise be non-special. Hence:
-
-- under multiplicity `(2,2,2)`, no H-special triple-type exact color exists;
-- under `(3,2,2)`, no H-special triple-type exact color exists;
-- under `(3,3,2)`, any H-special triple-type exact color must be special at the unique n=2 W-point.
-
-This statement does not classify colors whose special point lies outside H; those require a separate outside-special ledger and are not silently identified with the H-special double/triple dichotomy.
-
-## 6. n=3 shell consequence
-
-At an n=3 W-point there are five non-special exact colors, so they consume at least ten shell edges. At most one of the three special exact colors can have zero shell degree, hence at least two special exact colors own shell edges. Therefore at least twelve of the thirteen shell edges incident with w are exact-colored.
-
-Together with `epsilon_w+r_A(w)=1`, this leaves only the two possibilities already recorded:
-
-- `epsilon_w=1,r_A(w)=0`, or
-- `epsilon_w=0,r_A(w)=1`.
-
-## 7. Verified finite arithmetic scope
-
-The multiplicity enumeration uses only
-
-`n_w in {2,3}` and `sum_W n_w<=8`,
-
-and yields exactly the three sorted partitions `(2,2,2),(3,2,2),(3,3,2)`.
-
-No SAT/ILP nonexistence claim is made here. This file is a rigorous local normal form, not a closure of m=8.
+`verify_v44_m8_closure_arithmetic.py` checks the finite multiplicity enumeration, the `(56,11)` arithmetic, the unique `(a,b)=(5,2)` local count, the three-color L-set combinatorics, and the final 700-edge saturation arithmetic. It does not verify the external extremal theorems or analytic graph lemmas.
