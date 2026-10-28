@@ -6,7 +6,7 @@ m=9 shell-ownership saturation. It does not verify the graph-theoretic
 zero-shell lemma or any upstream terminal contract.
 """
 
-BUDGET = {8: 3, 9: 4, 10: 5}
+BUDGET = {8: 3, 9: 4, 10: 4}
 MIN_SPECIAL_SURPLUS = {8: 2, 9: 1, 10: 1}
 
 for m in (8, 9, 10):
