@@ -327,3 +327,8 @@ Hence all small-to-outer matching maps are globally fixed, and their relative ty
 ### 8.8 Replay-gap repair: z=4 empty-fiber arithmetic
 
 The previously referenced `verify_v47_z4_empty_fiber_escape.py` was not present in the audited branch directory. It has now been added. The arithmetic was executed in-session over all 1,000 slack-vector profiles and confirms the bound `T_0>=9>x_T=7). This repairs the missing arithmetic artifact only; the analytic premise remains conditional on the registered z=4, (3,2,2,0), all-aligned singleton contract. It does not promote Q32.
+
+
+### 8.9 Balanced-coloring K13 closure inside z=1
+
+Within the already-aligned z=1, (3,2,1,1) cell, a size-three fiber plus its ten aligned pivot-track vertices forms a target-color K13. This contradicts the balanced-coloring condition that every 13-set contains all colors. Thus this residual profile is closed; z=1, (2,2,2,1), and z=0, (2,2,2,1), remain open. No root promotion.
