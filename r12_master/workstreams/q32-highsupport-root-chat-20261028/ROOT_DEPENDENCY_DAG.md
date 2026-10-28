@@ -197,3 +197,13 @@ Until the exact support-lifting source and its parameter coverage are linked and
 [
 \boxed{\text{EG617}(r=12)=\text{OPEN / NOT\_CERTIFIED}.}
 ]
+
+## 9. New universal zero-shell multiplicity bound
+
+For any nonempty W-point w, the source-correct Type-I K5 shows that a special exact color with zero shell-A degree must own pw; at most one special exact color at w can therefore have zero shell degree. The m-n_w non-special exact colors each use at least two distinct w--A edges, so
+
+`n_w-1 <= 13-2(m-n_w)`, hence `n_w >= 2m-14`.
+
+The pointwise special-surplus budgets are `n_w<=r_m`, with `r_8=3`, `r_9=4`, `r_10=5`. Thus m=10 is impossible whenever W is nonempty; m=9 forces n_w=4 and all special parameters a=4 at every W-point; m=8 remains closed by its two-unit special-incidence cost against budget3.
+
+This upgrades the higher-support frontier: m=10 is closed for v=45 and v=46 as well as v=44. It does not touch full support v=47, where W is empty.
