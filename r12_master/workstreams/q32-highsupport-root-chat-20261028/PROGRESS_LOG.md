@@ -182,3 +182,20 @@ The 2+8 split forces `s_Q=6,s_R=0,y+2z=8); its two-block component is a light ed
 The 4+6 split has `y+2z<=10,z<=5` and at most two units for internal heavy pairs/cross multiplicity/shell incidence in the four-block component. The 5+5 split has `x>=25,y+z<=7,z>=1`, and at most three weighted extra units beyond the 25 mandatory cross-pair units.
 
 Added `verify_v47_m10_residual_path_cycle_types.py`; an independent in-session enumeration verified exactly 18 possible 7-vertex path/cycle types under `Delta(H[R])<=2, alpha(H[R])<=4, clique_cover(H[R])<=4, e(R)=3+z`, for z=0,...,4. Scope is residual graph-type enumeration only, not the full Q32 contradiction.
+
+
+### v47 m=10: zero-slack map alignment and three-block transversal blocker
+
+Added `V47_ZERO_SLACK_MAP_ALIGNMENT_AND_TRANSVERSAL_BLOCKER.md`.
+
+**Zero-slack map alignment.** For two small blocks A,B with a light perfect matching and y_A=y_B=0, every r in R has unique labels f_A(r),f_B(r). For each independent pair r,s, alpha(H)<=4 forces `{f_A(r),f_A(s)}={f_B(r),f_B(s)}`; otherwise two A-vertices, r,s, and a B-vertex form an independent 5-set. Since |R|=7 and Delta(H[R])<=2, every r has two nonneighbors s,t that are themselves nonadjacent, which forces f_A(r)=f_B(r). Therefore the two maps coincide in the 2+8 cell, and all three maps coincide in the 3+7 light-triangle cell after matching consistency.
+
+**Outer-block transversal obstruction in 3+7.** For each outer vertex q, the three label-neighborhood sets in the small blocks have a nonempty common intersection. If it is singleton {h}, there exists an independent transversal of the three labels other than h avoiding q. Thus q must be adjacent to every r in F_h; using d(q)=12 yields `k(q)<=3-|F_h|`. If the intersection has size two, q must own all three small-component extra edges and has no R-neighbor or other extra Q-Q incidence. The per-outer-block exact budget is `sum_q k(q)=3`.
+
+Added `verify_v47_three_small_block_transversal.py`. Exact normalized enumeration:
+- aligned matching maps: 1,728 configurations;
+- synchronized transposition-switch configurations: 36;
+- vertex records checked: 7,056;
+- singleton-track: 7,044; double-track: 12.
+
+The exact verifier returned `V47_ZERO_SLACK_TRANSVERSAL_LOCAL_OK`. It checks the finite local label/transversal theorem only. It does not solve the global Q32 graph or close the disconnected component cells.
