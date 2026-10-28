@@ -151,3 +151,14 @@ Thus there are at most three total heavy-edge multiplicity units beyond the 25 m
 The most rigid disconnected cases are 2+8 and 3+7: they spend the entire Q-excess budget, force (s_R=0), force all cross pairs to have exactly five edges, and reduce (H[R]) to a seven-vertex maximum-degree-two graph. The next step is to couple those path/cycle residual types to the unique-matching and independent-set-cover constraints across the pivot blocks.
 
 This reduction does not close any full-support Q32 branch. The scalar slack relaxation remains feasible and is not treated as an UNSAT certificate.
+
+
+## 9. New zero-slack map alignment and outer-vertex transversal cap
+
+The detailed theorem is in `V47_ZERO_SLACK_MAP_ALIGNMENT_AND_TRANSVERSAL_BLOCKER.md`.
+
+In the 2+8 cell, the two small blocks' residual-neighbor maps coincide after aligning their light matching. In the 3+7 cell, the three small-block maps coincide. This follows from the unordered-pair label identity forced by alpha(H)<=4 and the fact that every residual vertex has two nonneighbors that are themselves nonadjacent under Delta(H[R])<=2.
+
+For 3+7, each outer vertex q has a nonempty common track among its neighbor labels in A,B,C. A singleton common track h forces q to be adjacent to the entire residual fiber F_h and caps its small-component extra-edge count at `3-|F_h|`. A two-track intersection means q owns all three extra edges to the small component and has no residual neighbor or other extra Q-Q incidence. Every outer block's three extra edges obey `sum_q k(q)=3`.
+
+The normalized exact verifier checked 1,728 aligned plus 36 switch configurations and returned `V47_ZERO_SLACK_TRANSVERSAL_LOCAL_OK`. This is a new local incidence restriction, not a closure of the 2+8 or 3+7 graph cell.
