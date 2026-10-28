@@ -288,3 +288,8 @@ A strict union bound proves such a four-part graph always has an independent tra
 Therefore each residual vertex is adjacent to every vertex of at least one outer K7 track, giving a K8 with that residual vertex. Since b_r<=2, at least five outer blocks have the track vertex as the unique r-neighbor; if d_R(r)=2, all seven do.
 
 This is a new necessary structural condition. It does not yet close 3+7; m=10's other component cells and full-support m=8,9 remain open.
+
+
+### 3+7 double-track fiber/edge floor
+
+A double-track vertex in the 3+7 cell has no R-neighbors. The two fibers indexed by its common tracks must therefore be completely joined, so `e(R)>=sum binom(n_h,2)+n_h*n_j`. Applying this to the only four possible fiber-size partitions yields the exact thresholds: (3,3,1,0) permits (3,0)/(1,0) only at z>=3; (3,2,2,0) permits (3,0)/(2,0) only at z>=2; (3,2,1,1) permits (2,1) at z>=3 or (1,1) at z>=2; (2,2,2,1) permits (2,1) at z>=2. Therefore z=0,1 has no double-track vertex. Added and executed `verify_v47_3plus7_double_track_edge_floor.py`; result `V47_3PLUS7_DOUBLE_TRACK_EDGE_FLOOR_OK`. No global contradiction is claimed.
