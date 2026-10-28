@@ -11,12 +11,12 @@ Assume `|U|=45`, so (W=H\setminus U=\{w_1,w_2\}). For (w\in W), define
 `n_w = #{ exact colors C : x_C=w }`.
 
 The corrected multi-outside theorem gives (n_w\ge m-6). The current nonexact pointwise floors are
-`L_8=12, L_9=7, L_10=2`.
+`L_8=12, L_9=7, L_10=3` (the 132-edge color has minimum degree at least three by `Q32_132_MINDEG3.md`).
 
 For a source-correct exact Type-I color with parameter (a\in\{1,2,3,4\}), the special point has degree (d_C(x_C)=9-a=4+(5-a)). Reserving target degree13 and the exact/nonexact floors gives special-surplus budgets:
 - m=8: (r_8=3);
 - m=9: (r_9=4);
-- m=10: (r_{10}=5).
+- m=10: (r_{10}=4).
 
 Thus `sum_{C:x_C=w}(5-a_C) <= r_m`, and in particular (n_w\le r_m).
 
@@ -35,7 +35,7 @@ This is stronger than the shell-only bound because it reserves target-colored sh
 
 For m=8, the three-unit pointwise budget forces every exact Type-I parameter to (a\in\{2,3\}), so each special incidence costs at least two surplus units. Since (n_w\ge m-6=2), at least four units are needed against budget3. Thus m=8 is impossible whenever W is nonempty.
 
-For m=10, (2.1) gives (n_w\ge6+t_w\ge6), while the pointwise budget gives (n_w\le5). Thus m=10 is impossible whenever W is nonempty, including v=45 and v=46.
+For m=10, (2.1) gives (n_w\ge6+t_w\ge6), while the updated pointwise budget gives (n_w\le4). Thus m=10 is impossible whenever W is nonempty, including v=45 and v=46.
 
 ## 4. m=9 rigid shell-ownership normal form
 
