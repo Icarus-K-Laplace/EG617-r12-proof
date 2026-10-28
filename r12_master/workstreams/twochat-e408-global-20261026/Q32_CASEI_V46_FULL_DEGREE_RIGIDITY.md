@@ -1,128 +1,94 @@
-# E408 Q32 — Case-I v=46 full-degree rigidity
+# E408 Q32 — Case-I v=46 degree rigidity after the 131-edge correction
 
-Date: 2026-10-28  
-Status: **PROVED_CONDITIONAL** under the registered Q32, Type-I, full-color minimum-degree, and Case-I shell contracts.
+Updated: 2026-10-28  
+Status: **PROVED_CONDITIONAL reductions; m=9 branch CLOSED.**
 
 ## 1. Contract
 
-Assume Case I of the Q32 shell split and |U|=46. Then W=H\U={w}. By `Q32_CASEI_LOW_SUPPORT_MATCHING_EXCLUSION.md`, if n=n_w is the number of exact colors whose Type-I special vertex is w, then
+Assume Case I of the registered Q32 shell split and `|U|=46`, so `W=H\U={w}`. Let `n=n_w` be the number of exact-129 colors whose Type-I special vertex is w.
 
-\[
-\boxed{n\ge m-3},\qquad m\in\{8,9,10\}.
-\]
+`Q32_CASEI_LOW_SUPPORT_MATCHING_EXCLUSION.md` gives
+
+`n>=m-3`, `m in {8,9,10}`.
 
 For an exact color:
 
-- if w is its Type-I special vertex, the source-verified degree is 9-a with a in {1,2,3,4}, hence at least 5;
-- otherwise w belongs to a color K5, hence has color-degree at least 4.
+- if w is special, the source-correct Type-I degree is `9-a`, `a in {1,2,3,4}`, hence at least5;
+- otherwise w lies in an ordinary color K5 and has color degree at least4.
 
-The target residual degree is at least 13.
+The target residual degree is at least13.
 
-The nonexact-color edge-count distributions and registered minimum degrees are:
+The correct nonexact pointwise floors are now:
 
-- m=8: three 130-edge colors, minimum degrees 3,3,3;
-- m=9: one 130-edge and one 131-edge color, minimum degrees 3,2;
-- m=10: one 132-edge color, minimum degree 2.
+- m=8: three 130-edge colors, `L_8=3+3+3=9`;
+- m=9: one130-edge plus one131-edge color, **`L_9=3+3=6`**;
+- m=10: one132-edge color, `L_10=2`.
 
-These follow from 1422 total non-target residual edges and the full-color degree theorem.
+The m=9 correction is proved in `Q32_131_MINDEG3_V46_M9_CLOSURE.md`.
 
-## 2. Degree inequality at the unique uncovered point
+Thus at w
 
-At w the exact colors contribute at least
+`13+(4m+n)+L_m <=60`.                                    (1)
 
-\[
-5n+4(m-n)=4m+n.
-\]
+## 2. m=10 is impossible
 
-Let L_m be the sum of the nonexact minimum-degree floors:
+Case I gives `n>=7`. Equation (1) gives
 
-\[
-L_8=9,\quad L_9=5,\quad L_{10}=2.
-\]
+`13+40+7+2=62>60`.
 
-Since all twelve color-degrees at w sum to 60,
+Hence m=10 is empty.
 
-\[
-\boxed{13+(4m+n)+L_m\le60.}\tag{2.1}
-\]
+## 3. m=9 is now impossible, not a surviving equality terminal
 
-## 3. Exclude m=10
+Case I gives `n>=6`. With the corrected `L_9=6`, equation (1) gives
 
-For m=10, Case I gives n>=7. Equation (2.1) yields
+`13+36+6+6=61>60`.
 
-\[
-13+40+7+2=62>60,
-\]
+Therefore
 
-contradiction.
+> **Case I / v=46 / m=9 is CLOSED.**
 
-Hence
+The older branch-local statement that m=9 survives with `n=6` and a `(130-degree3,131-degree2)` equality profile is superseded and must not be used. Its only error was the obsolete 131-edge degree-two floor; the shell-matching deductions derived after that equality are no longer load-bearing.
 
-\[
-\boxed{\text{Case I},\ v=46\Longrightarrow m\ne10.}
-\]
+## 4. Remaining m=8 branch
 
-## 4. Rigidity for m=9
+For m=8, equation (1) is
 
-For m=9, Case I gives n>=6. Equation (2.1) gives
+`13+32+n+9<=60`,
 
-\[
-13+36+n+5\le60,
-\]
+so `n<=6`. Case I gives `n>=5`. Hence
 
-so n<=6. Therefore
+> **`n in {5,6}`.**
 
-\[
-\boxed{n=6.}
-\]
+### n=6
 
-Moreover equality holds in every lower bound used in (2.1). Thus at w:
+Equality holds in every pointwise floor in (1):
 
-- target degree is exactly 13;
-- the six exact colors with x_C=w give degree exactly 5;
-- the other three exact colors give degree exactly 4;
-- the 130-edge nonexact color gives degree exactly 3;
-- the 131-edge nonexact color gives degree exactly 2.
+- target degree at w is exactly13;
+- the six special exact colors have degree exactly5, hence their source parameter is `a=4`;
+- the two non-special exact colors have degree exactly4;
+- each of the three 130-edge colors has degree exactly3.
 
-For each of the six special exact colors, deg_C(x_C)=5 forces the Kang–Pikhurko parameter a=4.
+By the valid 130-edge equality theorem, w lies in an isolated color-K4 component in each of those three 130-edge colors. The three 3-neighbor sets are pairwise disjoint because an edge has a unique color.
 
-### Shell matching refinement
+Thus the n=6 terminal carries three pairwise-disjoint nonexact color triples through w, in addition to the exact-color constraints.
 
-The three non-special exact colors produce three pairwise vertex-disjoint M-edges at w. Since M[B]=empty and S=A\B has size three, a matching of size three must use all three vertices of S, one per edge.
+### n=5
 
-No one of the three K5s containing w can be triple-shell. A shell triangle in Case I contains at least two vertices of S; the other two non-special colors would each require at least one further S-vertex, contradicting the disjointness of their shell neighbor sets at w.
+The lower bounds sum to59, so exactly one unit of total pointwise slack remains.
 
-Therefore all three are double-shell K5s. Their shell pairs are
+There are three non-special exact colors. Their multi-outside K5s yield three pairwise-disjoint M-edges. Because every M-edge meets `S=A\B`, `|S|=3`, the three edges form a perfect matching from S to three distinct vertices of B. As in the original argument, none can be triple-shell; hence they are double-shell K5s with shell pairs
 
-\[
-\boxed{\{s_1,b_1\},\{s_2,b_2\},\{s_3,b_3\}},
-\]
+`{s_1,b_1},{s_2,b_2},{s_3,b_3}`
 
-where S={s_1,s_2,s_3} and b_1,b_2,b_3 are distinct vertices of B. In particular the three non-special exact colors use exactly six shell neighbors at w.
+for distinct `b_i in B`.
 
-This is a rigid surviving terminal, not yet a contradiction.
+Among the three 130-edge colors, at least two have degree exactly3 at w (only one global slack unit exists). Therefore w lies in at least two isolated nonexact color-K4 components, giving at least two pairwise-disjoint 3-neighbor triples in those colors.
 
-## 5. The m=8 residue
+## 5. Current Case-I v=46 frontier
 
-For m=8, (2.1) gives n<=6 while Case I gives n>=5. Hence
+- m=10: CLOSED;
+- m=9: CLOSED by the corrected 131-edge minimum-degree theorem;
+- m=8: OPEN with the two exact terminals `n=6` and `n=5` above.
 
-\[
-\boxed{n\in\{5,6\}.}
-\]
-
-- If n=6, equality holds in all degree floors: target degree13, all six special exact degrees5, the two non-special exact degrees4, and all three 130-edge colors degree3.
-- If n=5, the total degree budget has exactly one unit of slack above those minima.
-- In the n=5 subcase there are three non-special exact colors, so the same matching-size-three argument forces their K5s at w to be double-shell with shell pairs forming a perfect S-to-three-distinct-B matching.
-
-## 6. Current Case-I frontier
-
-Combining the Case-I matching theorem and this degree theorem:
-
-- v=44: impossible;
-- v=45: impossible;
-- v=46,m=10: impossible;
-- v=46,m=9: rigid equality terminal described above;
-- v=46,m=8: n=5 or6 with the stated equality/slack structure;
-- v=47: still open.
-
-No 284-edge statement and no retracted degree-9 premise is used.
+This file uses only the 285-edge Q32 contract, source-correct Type-I degrees, valid nonexact minimum-degree/equality facts, and the Case-I shell matching theorem. No 284-edge/Q33 identity or retracted degree9 exceptional-vertex claim is used.
