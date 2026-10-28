@@ -221,3 +221,19 @@ The source-safe Q32 frontier after this addition is:
 - v45,m=8,9,10: closed;
 - v46,m=8,9,10: closed;
 - v47,m=8,9,10: open.
+
+
+## 10. Zero-slack map alignment / transversal-capacity refinement
+
+New proof asset: `V47_ZERO_SLACK_MAP_ALIGNMENT_AND_TRANSVERSAL_BLOCKER.md`.
+
+For the m=10 disconnected light-block cases 2+8 and 3+7, the small-component blocks have zero Q-R incidence slack. Their unique-neighbor maps on R therefore coincide after matching alignment. In the 3+7 light triangle, all three maps agree.
+
+For each outer vertex q in the 3+7 cell, the local 4,5,5 switch theorem plus the independent-transversal argument yields:
+- singleton common track h: q is adjacent to every residual vertex in fiber F_h, so `k(q)<=3-|F_h|`;
+- double common tracks: q uses all three extra edges to the small component and has no R-neighbor or other extra Q-Q incidence;
+- per outer block, `sum_q k(q)=3`.
+
+The exact normalized verifier `verify_v47_three_small_block_transversal.py` checks 1,728 aligned and 36 switch configurations, covering 7,056 vertex records, and returns `V47_ZERO_SLACK_TRANSVERSAL_LOCAL_OK`.
+
+This tightens the disconnected m=10 cells but does not eliminate them. It is a structural reduction, not an UNSAT certificate. Full-support v47 remains open, so the root status remains EG617(r=12) OPEN / NOT_CERTIFIED.
