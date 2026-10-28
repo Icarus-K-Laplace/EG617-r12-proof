@@ -322,3 +322,8 @@ Hence all small-to-outer matching maps are globally fixed, and their relative ty
 ### 8.7 New m=10, 3+7 low-z alignment
 
 `V47_Z01_TRACK_ALIGNMENT.md` proves that z=0,1 have no double-track vertices, that the common small-triangle clique partition and the outer-track clique partition coincide, and that every outer block is aligned (no synchronized switch). This is a strict reduction only: the fully aligned z=0 and z=1 completions remain open. It does not alter the root promotion gate.
+
+
+### 8.8 Replay-gap repair: z=4 empty-fiber arithmetic
+
+The previously referenced `verify_v47_z4_empty_fiber_escape.py` was not present in the audited branch directory. It has now been added. The arithmetic was executed in-session over all 1,000 slack-vector profiles and confirms the bound `T_0>=9>x_T=7). This repairs the missing arithmetic artifact only; the analytic premise remains conditional on the registered z=4, (3,2,2,0), all-aligned singleton contract. It does not promote Q32.
