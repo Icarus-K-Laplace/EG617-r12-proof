@@ -8,15 +8,7 @@ Write scope: `r12_master/workstreams/twochat-e407-closure-20261026/`
 
 **E407 Q32: OPEN / NOT_CERTIFIED. EG617(r=12): OPEN / NOT_CERTIFIED.**
 
-The full `delta=13` layer is **PROVED_CONDITIONAL / CLOSED** under the registered external-theorem ledger. The saturated subproofs retain the unaudited Didin 2026 dependency.
-
-The `delta=12` non-four-partite depth-2 frontier has now been materially compressed:
-
-- `epsilon_U=2`: **PROVED_CONDITIONAL / CLOSED**;
-- `epsilon_U=3`: both q=0 profiles are **PROVED_CONDITIONAL / CLOSED**; only the q=1 `(4,4,5,5)` W-profile remains;
-- `epsilon_U=4`: the endpoint/excess ledger has exactly seven aggregate profiles, three equality-slack profiles are excluded, leaving exactly four aggregate profiles;
-- `epsilon_U=0,1`: still OPEN;
-- depth 3 and the delta=12 four-partite-U branch remain OPEN.
+The current workstream has now conditionally closed the entire **delta=12 non-four-partite augmentation depth 0–3** frontier under the registered extremal-kernel inputs. The delta=12 four-partite-U branch remains open for epsilon_U=0,1,2,3; epsilon_U=4 is closed by a new omission/excess theorem. All delta<=11 cases remain open. The five V12 shell templates A–E remain globally OPEN against the common 284-edge core/support system.
 
 ## Frozen core/support contract
 
@@ -45,6 +37,14 @@ with
 \]
 Every feasible profile has `alpha(H[W])=4`.
 
+## Contract classes / firewall
+
+1. **Pure graph:** core/U/W ledgers, alpha/omega constraints, support linearity, W-transversal rules, common-nonneighbour pair rules.
+2. **Labelled exact-129:** selected K5 anchors, exact colour ownership, residual `3K5+G11`, selected-anchor multiplicities.
+3. **Registered extremal inputs:** Brouwer and Kang–Pikhurko only where explicitly invoked.
+4. **Conditional external input:** Didin 2026 remains unaudited; every branch using it remains `PROVED_CONDITIONAL`.
+5. **Parent bridge:** V12 five-template exhaustiveness and the original K145-to-T61/legal-residual chain remain separate dependencies.
+
 ## Exact selected-component / five-template interface
 
 Every support block `Q` is the H-four-set of a selected isolated exact-colour K5 `Q union {a(Q)}`, with anchor in `{p} union A`. For each exact colour c,
@@ -60,111 +60,83 @@ With `sigma` selected S-anchor occurrences and `beta=e(M[S])`, exact-colour shel
 |E_{exact}(S,B)|\ge\max\{14-\beta,\ 7+\sigma\}.
 \]
 
-The five-template same-core labelled compatibility theorem remains OPEN.
+**The five-template same-core labelled compatibility theorem remains OPEN.** No template A–E has been globally excluded by the labelled-support join.
 
-# Delta=13 layer
+# Low-delta status
+
+## delta=16
+
+Excluded.
+
+## delta=15
+
+Excluded under the registered contracts.
+
+## delta=14
+
+Four-partite branch excluded. The non-four-partite K5-saturated branch remains only `PROVED_CONDITIONAL` because its alpha-critical reduction invokes the unaudited Didin 2026 component theorem.
+
+## delta=13
 
 \[
 \boxed{\delta=13\Longrightarrow\bot}
 \]
-under the complete registered dependency ledger. Four-partite epsilon_U=0,1,2,3 and the non-four-partite augmentation/saturated branches are all discharged. Saturated reductions invoking the Didin component-count theorem remain `PROVED_CONDITIONAL`, not unconditional.
+under the complete registered dependency ledger. Four-partite epsilon_U=0,1,2,3 and non-four-partite augmentation/saturated branches are discharged. Saturated subproofs that invoke Didin remain conditional, not unconditional.
 
-# Delta=12 non-four-partite augmentation frontier
+## delta=12 non-four-partite — CLOSED under registered augmentation kernels
 
 At delta=12, `e(L_U)=306`. Greedy K5-safe augmentation has depth `k in {0,1,2,3}`.
 
-- depth0: conditionally excluded under the registered saturated Didin/Brouwer ledger;
-- depth1: conditionally excluded under the registered saturated ledger;
-- depth2: classified 308-edge C5-blowup kernel; active subfrontier described below;
-- depth3: 309-edge Kang-Pikhurko equality terminal remains OPEN.
+- **depth0:** conditionally excluded under the registered saturated Didin/Brouwer ledger;
+- **depth1:** conditionally excluded under the registered saturated ledger;
+- **depth2:** all `epsilon_U=0,1,2,3,4` are `PROVED_CONDITIONAL / CLOSED` under the registered 308-edge C5-blowup kernel classification;
+- **depth3:** all `epsilon_U=0,1,2,3,4` are `PROVED_CONDITIONAL / CLOSED` under the registered balanced 309-edge Kang–Pikhurko equality model.
 
-## Depth2, epsilon_U=2 — CLOSED
+The latest depth3 terminal proofs are:
+- `DELTA12_DEPTH3_EPS0_CLOSURE.md`;
+- `DELTA12_DEPTH3_EPS1_EPS2_CLOSURE.md`;
+- `DELTA12_DEPTH3_EPS3_EPS4_PAIR_REDUCTION.md`;
+- `DELTA12_DEPTH3_EPS3_CLOSURE.md`;
+- `DELTA12_DEPTH3_EPS4_CLOSURE.md`.
 
-`DELTA12_DEPTH2_EPS2_TERMINAL_REDUCTION.md` forced
+For epsilon_U=3, the last `(K4,K4,K4,K6)` complementary-two-set survivor is killed by unpacking the exact P1/P2 equality-model adjacencies: P1 is forced to use both W labels, yielding at least six same-label P1–P2' pairs while only three restored edges exist.
+
+For epsilon_U=4, restored xy is impossible by the W-component floor; every nonrestored exceptional-component placement is eliminated by binary component labels plus restored-edge incidence capacity. The hard AC branch ends with either a mixed P1 same-label count at least six or six restored endpoint incidences forcing at least nine A-A cross pairs against only three restored edges.
+
+Thus the full **delta=12 non-four-partite branch is closed conditionally on its registered external kernel classifications.**
+
+## delta=12 four-partite-U
+
+`DELTA12_FOURPARTITE_SUPPORT_KERNEL.md` forces
 \[
-H[W]=K_3\dot\cup K_4\dot\cup K_5\dot\cup K_6,
+U=T_1\dot\cup T_2\dot\cup T_3\dot\cup R,
+\qquad (|T_1|,|T_2|,|T_3|,|R|)=(7,7,7,8),
 \]
-with `N_W(d0)=K4`, two restored J-endpoints with common `K3` neighbourhood, and all excess on d0.
+with three seven-edge leave graphs and omission weights `(r_r)_{r in R}` summing to seven.
 
-`DELTA12_DEPTH2_EPS2_TERMINAL_CLOSURE.md` forces every non-exceptional point of the two K7 components to be complete to K5 or K6. Cross-K7 nonadjacency forces opposite labels; clique number at most11 then yields K12/K13 in every restored-endpoint pattern.
+The epsilon_U=4 branch is now **PROVED / CLOSED** by `DELTA12_FOURPARTITE_EPS4_CLOSURE.md`: every R point with omission weight at most two must consume at least one core-excess unit; at least six of the eight R points have omission at most two, forcing epsilon_R>=6>4.
 
-Status: **PROVED_CONDITIONAL / CLOSED** on the registered 308-edge saturated-kernel classification. Didin is not used in this terminal closure.
+Current four-partite-U status:
+- `epsilon_U=4`: **CLOSED**;
+- `epsilon_U=0,1,2,3`: **OPEN**.
 
-## Depth2, epsilon_U=3 — q=0 CLOSED
+## delta<=11
 
-The two q=0 W profiles were
-\[
-K_3\dot\cup3K_5,
-\qquad 3K_4\dot\cup K_6.
-\]
-`DELTA12_DEPTH2_EPS3_Q0_CLOSURE.md` first proves, in either profile,
-\[
-t_0=0,\qquad \epsilon_{d0}=3,
-\]
-so all three excess units lie on d0, the two restored J-endpoints are distinct C/E points of W-degree three, and all A/B vertices have W-degree at most six.
+All cases remain OPEN. The delta=12 classifications may not be extrapolated downward without a new reduction.
 
-For `K3+3K5`, the d0-endpoint pairs force `N_W(d0)` to be one whole K5 and both endpoint neighbourhoods to be the K3. The two K7 components then acquire opposite binary K5 labels and produce K12.
+# Current exact open contracts
 
-For `3K4+K6`, the same exact degree-eight pair structure forces a fixed pair of K4s. Any A/B vertex satisfying both d0 and endpoint pair rules must be complete to the third K4 plus one common mandatory point; a cross-K7 pair then has at most three vertices outside that K4 and cannot cover a second W-component.
-
-Thus both q=0 profiles are impossible. The only remaining epsilon_U=3 profile is `(4,4,5,5)` with one W-cross edge (`q=1`).
-
-## Depth2, epsilon_U=4 — four aggregate profiles remain
-
-Here
-\[
-H[W]=K_4\dot\cup K_4\dot\cup K_5\dot\cup K_5.
-\]
-Let `t0` count restored edges incident with d0, `epsilon0=epsilon(d0)`, `E_C` total excess on the four C/E points, and `E_rest=4-epsilon0-E_C`.
-
-`DELTA12_DEPTH2_EPS4_ENDPOINT_SLACK_REDUCTION.md` proves
-\[
-4\epsilon_0+E_C\ge10+3t_0
-\]
-and enumerates exactly seven aggregate profiles. Three pair-cover equality profiles
-\[
-(0,2,2,0),\quad(1,3,1,0),\quad(2,4,0,0)
-\]
-for `(t0,epsilon0,E_C,E_rest)` are excluded by a complementary-K4 / binary-K5 argument.
-
-Exactly four aggregate profiles remain:
-\[
-\boxed{
-(0,3,0,1),\ (0,3,1,0),\ (0,4,0,0),\ (1,4,0,0).
-}
-\]
-These are necessary aggregate profiles, not asserted graph realizations.
-
-# Current low-delta status
-
-- delta=16: excluded.
-- delta=15: excluded under registered contracts.
-- delta=14: four-partite excluded; saturated non-four-partite remains conditional on Didin.
-- delta=13: PROVED_CONDITIONAL / CLOSED.
-- delta=12: PARTIAL:
-  - non-four-partite depth0/1 conditionally excluded;
-  - depth2 eps2 closed;
-  - depth2 eps3 only q=1 remains;
-  - depth2 eps4 reduced to four aggregate profiles;
-  - depth2 eps0/1 open;
-  - depth3 open;
-  - four-partite-U open.
-- delta<=11: OPEN.
-
-# Contract firewall
-
-1. **Pure graph:** core/U/W ledgers, alpha/omega constraints, support linearity, W-transversal rules, common-nonneighbour pair rule.
-2. **Labelled exact-129:** selected K5 anchors, `b_c in {5,6,7}`, residual `3K5+G11`, shell-colour ownership.
-3. **Registered extremal inputs:** Brouwer and Kang-Pikhurko only where explicitly invoked.
-4. **Conditional external input:** Didin 2026 remains unaudited. Every result depending on it remains `PROVED_CONDITIONAL`.
-5. **Parent bridge:** V12 exhaustiveness and the original K145-to-T61/legal-residual chain remain separate dependencies.
+1. **Five-template same-core labelled compatibility A–E:** OPEN.
+2. **delta=12 four-partite-U epsilon_U=0,1,2,3:** OPEN.
+3. **delta<=11:** OPEN.
+4. **delta=14 Didin-dependent saturated branch:** closed only conditionally until the external theorem is audited/replaced.
+5. **V12 / original K145 bridge:** remains a parent dependency; even a complete E407 core closure is not itself the full EG617(r=12) theorem.
 
 # Highest-leverage next targets
 
-1. eliminate the epsilon_U=3 q=1 `(4,4,5,5)` depth2 terminal using a one-defect version of the component-cover pair rule;
-2. close the four remaining epsilon_U=4 aggregate profiles;
-3. then attack depth2 epsilon_U=0,1, depth3, and delta=12 four-partite-U;
-4. independently continue the five-template same-core labelled incompatibility theorem;
-5. replace/audit Didin before any unconditional E407 claim.
+1. extend the four-partite omission/excess argument from epsilon_U=4 to epsilon_U=3,2,1,0;
+2. use the actual selected hub-complete blocks and full-row linearity capacity to attack the five shell templates on the same support design;
+3. build a new delta<=11 reduction rather than extrapolating the delta=12 augmentation classification;
+4. separately replace/audit the Didin dependency before any unconditional E407 claim.
 
 No E407-Q32 or EG617(r=12) closure is claimed.
