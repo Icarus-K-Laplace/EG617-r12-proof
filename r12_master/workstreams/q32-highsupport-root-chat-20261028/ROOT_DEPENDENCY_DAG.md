@@ -123,7 +123,7 @@ The raw V12 archive is not re-executed in this chat; this audit verifies the rep
 
 For `m=9` two nonexact colors need `52>41`; for `m=8` three need `78>41`. Therefore the registered Q33 minimum-support terminal is impossible.
 
-The upstream E408 reduction explicitly records that every surviving Q33 completion enters this 31-point/56-witness minimum-support terminal. The Q33 contradiction does not use the Q32 285-edge identity or the false degree-nine claim.
+The root receipt asserts that the upstream E408 reduction enters this 31-point/56-witness terminal, but the exact exhaustive support-lifting theorem was not identified in the source paths inspected during this pass. Until that theorem and its coverage of every Q33 completion are linked, treat this premise as an explicit unresolved dependency. The Q33 contradiction itself does not use the Q32 285-edge identity or the false degree-nine claim.
 
 ## 6. E408 Q32 — only live graph gate
 
