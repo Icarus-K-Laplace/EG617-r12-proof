@@ -45,11 +45,11 @@ Together with the already proved Case-I exclusion, v=46,m=8 is completely elimin
 
 The pointwise budget initially gives `n_w in {3,4}`. Section 10 proves the stronger source-correct inequality `n_w >= 2m-14 = 4`, so `n_w=4` exactly. All four special incidences must use their minimum surplus1, hence every special Type-I parameter has `a=4`.
 
-Thus the `n_w=3` rows `(4,4,4)` and `(4,4,3)` are excluded. The five non-special exact colors consume at least ten of the thirteen shell edges at w. At most three remain for the four special colors, so at least one special color is zero-shell; the zero-shell lemma permits at most one, hence this count is tight rather than contradictory. The remaining `n_w=4` row still forces at least four global near-Turan gap units into the four special colors (Section 7.3).
+Thus the `n_w=3` rows `(4,4,4)` and `(4,4,3)` are excluded. The five non-special exact colors consume at least ten of the thirteen shell-A edges at w. At least three of the four special colors must use a shell-A edge. Therefore the target color cannot use any w--A edge: if it used one, only twelve non-target shell-A edges would remain for a demand of at least thirteen. Thus the target shell degree is zero and the core excess at w is exactly one. Equality is forced: each non-special exact color uses exactly two shell-A edges; three special colors use one each; one special color uses zero and owns pw; and both nonexact colors use no shell-A edge. All four special colors have exactly one neighbor in O and therefore core degree four; each spends at least one gap unit.
 
 ## 4. m=10 closure
 
-The pointwise budget initially gives (n_w\in\{4,5\}). Section 10 proves (n_w\ge2m-14=6), a contradiction. Hence
+The pointwise budget initially gives `n_w in {4,5}`. Section 10 proves `n_w >= 2m-14+t_w >= 6`, a contradiction. Hence
 
 > **Case II / v=46 / m=10 is CLOSED.**
 
@@ -146,7 +146,7 @@ Therefore
 
 > **n=4: the four special colors spend at least four core-gap units.**
 
-Thus the only surviving v=46,m=9 Case-II row forces at least four of the global 37 near-Turan gap units into the exact colors special at the unique W-point. The old n=3 / `(4,4,3)` five-unit bound is retained only as historical bookkeeping.
+Thus the only surviving v=46,m=9 Case-II row has `epsilon=1`, target shell degree zero, exact shell-A usage `10+3=13`, both nonexact colors shell-A-free, and at least four of the global 37 near-Turan gap units forced into the four special exact colors. The zero-shell special color owns pw, so its H-degree is4 (not5); all four special colors have H-degree4. The old n=3 rows are superseded.
 
 ## 8. Historical m=10 core-gap rows (superseded by Section 10)
 
@@ -233,7 +233,7 @@ hence
 
 Combining this with the pointwise budgets `n_w<=r_m`, `r_8=3`, `r_9=4`, `r_10=5`, gives:
 - m=8: n_w>=2, and every special incidence costs at least2 surplus units, contradicting budget3 (the existing closure);
-- m=9: n_w=4 and all four special parameters are a=4;
+- m=9: n_w=4 and all four special parameters are a=4; the refined inequality forces t_w=0, hence epsilon=1;
 - m=10: n_w>=6>5, contradiction.
 
 This proof uses the source-correct Type-I factorization and shell edge uniqueness only; it does not use the retracted degree-nine claim or exceptional-vertex injectivity.
