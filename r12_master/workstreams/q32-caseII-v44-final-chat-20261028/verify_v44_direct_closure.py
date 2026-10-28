@@ -7,7 +7,7 @@ It does NOT prove the source Type-I theorem, corrected multiplicity, the
 Kang--Pikhurko extremal bound, or the analytic no-core-only-degree-four lemma.
 """
 
-from itertools import combinations
+from itertools import combinations_with_replacement
 
 # The registered residual is 61-vertex, so each point has degree 60.
 assert 13 + 8 * 4 + 3 * 4 == 57
@@ -18,7 +18,7 @@ assert 60 - 57 == 3
 profiles = {}
 for n in (2, 3):
     valid = []
-    for A in combinations(range(1, 5), n):
+    for A in combinations_with_replacement(range(1, 5), n):
         if sum(5 - a for a in A) <= 3:
             valid.append(A)
     profiles[n] = valid
