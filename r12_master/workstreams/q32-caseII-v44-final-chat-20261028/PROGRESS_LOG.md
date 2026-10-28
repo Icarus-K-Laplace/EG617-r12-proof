@@ -318,3 +318,19 @@ Commits:
 - dependency audit: `a6a53f6769e8aa92386836627a1284e55c32fe09`.
 
 Scope remains local: `|U|=44,m=8,9` closed; m=10 inherited closed. Full-support `|U|=47` remains open, so EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+### 22. Make the 130-edge minimum-degree chain self-contained
+
+Added `Q32_130_MINDEG3.md` to explicitly prove the previously referenced degree-three floor. For a hypothesized degree d=0,1,2, the non-neighborhood has size 60,59,58. Kang–Pikhurko Theorem 1 yields floors 139,134,129; in the d=2 case, adding the two edges incident with x already gives at least131 edges, contradicting e(D)=130.
+
+The resulting dependency chain is explicit:
+1. `Q32_130_MINDEG3.md`: KP Theorem 1 at n=60,59,58;
+2. `Q32_130_MINDEG4_AND_CASEI_M8_CLOSURE.md` (base workstream): KP Theorems 1 and4 at n=57;
+3. `Q32_130_NO_CORE_ONLY_DEG4.md`: KP Theorem 1 at n=56 and the local K4-e edge budget;
+4. `V44_M8_DIRECT_NO_CORE_ONLY_CLOSURE.md`: pointwise normal form forces at least two prohibited incidences at every W-point.
+
+Extended `verify_v44_direct_closure.py` to check all extremal arithmetic values for n=58,59,60,56. Executed the exact verifier contents in a clean local Python run:
+`V44_DIRECT_CLOSURE_ARITHMETIC_OK`.
+
+This removes an implicit proof dependency from the m=8 shortcut. No global theorem promotion: the v=44 layer is closed, but full-support Q32 / v=47 remains open.
