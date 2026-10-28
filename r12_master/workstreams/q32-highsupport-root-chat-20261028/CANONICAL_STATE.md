@@ -262,3 +262,16 @@ The preceding global holonomy theorem gives four aligned K7 tracks on the 28 out
 A strict union bound proves an independent transversal exists for any four such parts with at most seven cross-part edges and maximum degree two. The exact integer verifier checks all 64 sorted part-size profiles and all relaxed edge-count allocations under total-edge and part-degree caps. The worst profile is `(7,7,4,1)`: 196 transversals, at most133 forbidden, margin63. It returned `V47_37_RESIDUAL_TRACK_TRANSVERSAL_OK`.
 
 Therefore every residual vertex is adjacent to all seven vertices of at least one outer K7 track, extending that track to a K8. At least five of the seven outer-block neighbors lie in that same track as unique neighbors; if `d_R(r)=2`, all seven do. This is a stronger necessary condition, not a contradiction. Full-support m=10 remains OPEN, as do m=8 and m=9.
+
+
+## 3+7 double-track residual edge floor (2026-10-28)
+
+Strengthened `V47_ZERO_SLACK_MAP_ALIGNMENT_AND_TRANSVERSAL_BLOCKER.md`. In 3+7, a double-track outer vertex has `d_R=0), so its two track fibers must be completely joined in H[R]. Therefore
+`e(H[R]) >= sum_h binom(n_h,2) + n_h*n_j`,
+and since `e(H[R])=3+z), the four fiber-size patterns give:
+- (3,3,1,0): allowed track-size pair (3,0) or (1,0), requiring z>=3;
+- (3,2,2,0): (3,0) or (2,0), requiring z>=2;
+- (3,2,1,1): (2,1) requires z>=3; (1,1) requires z>=2;
+- (2,2,2,1): (2,1), requiring z>=2.
+
+Hence **z<=1 rules out all double-track vertices** in the 3+7 cell. Added `verify_v47_3plus7_double_track_edge_floor.py`; executed arithmetic regression returned `V47_3PLUS7_DOUBLE_TRACK_EDGE_FLOOR_OK`. This is a necessary local condition only; 3+7 remains OPEN.
