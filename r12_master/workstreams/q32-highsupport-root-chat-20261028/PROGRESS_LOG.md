@@ -206,3 +206,21 @@ The exact verifier returned `V47_ZERO_SLACK_TRANSVERSAL_LOCAL_OK`. It checks the
 The small-block part of `V47_ZERO_SLACK_MAP_ALIGNMENT_AND_TRANSVERSAL_BLOCKER.md` now has an exact endpoint ledger. If `e_i(h)) counts extra Q-Q endpoints at small-block label h and `n_h=|F_h|), then `d_H(q_h)=9+e_i(h)+n_h), hence `e_i(h)>=3-n_h). Summing gives only three slack units per small block in 2+8 and two in 3+7. The four possible sorted fiber profiles are `(3,3,1,0)`, `(3,2,2,0)`, `(3,2,1,1)`, and `(2,2,2,1)`.
 
 For 3+7, a switch block uses the same extra-edge endpoint label s in all three small blocks; its common track s is duplicated and must have fiber size at most one. If that fiber is a singleton r, each such switch gives r an extra Q-R incidence, so at most `2-d_R(r)` such switch blocks can occur. This creates an exact coupling between the 4,5,5 switch patterns and the residual degree ledger. Still a necessary-condition reduction, not an UNSAT proof.
+
+
+### New m=10 two-light matching composition theorem
+
+Added `V47_TWO_LIGHT_MATCHING_COMPOSITION.md` and its exhaustive verifier `verify_two_light_matching_composition.py`.
+
+The theorem: if A-C and B-C are light perfect matchings, e(A,B)<=7, and alpha(A union B union C)<=4, then A-B must contain the composed matching. If a composed edge A_iB_i is missing, alpha<=4 forces all three off-diagonal edges in row i; the edge cap then forces the other diagonal edges and yields a second independent 5-set. The proof is analytic and uses no external extremal theorem.
+
+The exact verifier enumerated all 25,636 A-B graphs with 4..7 edges and all 792 five-vertex subsets per graph. It returned:
+- e=4: 1 alpha<=4 graph;
+- e=5: 12;
+- e=6: 66;
+- e=7: 220;
+- `V47_TWO_LIGHT_MATCHING_COMPOSITION_EXHAUSTIVE_OK`.
+
+Application to the disconnected m=10 2+8 / 3+7 cells: every outer pair has at most7 edges; the outer light graph has minimum degree4. Every nonadjacent pair has at least two common light neighbors, so every length-two light path forces its composed matching into the endpoint pair. A five-edge pair has a unique matching, while a six-/seven-edge pair has at most two perfect matchings. Therefore any matching-holonomy disagreement must be charged to one of at most six pairs with e>=6 (since each consumes at least two units of x_T<=12).
+
+This narrows the matching system but does not close either disconnected cell. Full support remains OPEN / NOT_CERTIFIED.
