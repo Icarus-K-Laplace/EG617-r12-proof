@@ -309,3 +309,8 @@ The exact verifier now checks the 64 four-part profiles and 35 three-part profil
 A switch block duplicates one singleton common-track label s. Both vertices with common track s meet all of F_s, so the block must spend at least `n_s` residual-incidence slack: `n_s<=y_D). In 3+7 this rules out duplicate size-three fibers; at z=4, where every y_D=0, any switch must duplicate an empty fiber.
 
 Added `V47_Z4_EMPTY_FIBER_ESCAPE_CLASSIFICATION.md`. In the 3+7,z=4 fiber pattern (3,2,2,0), an all-aligned singleton-track completion is impossible. The empty-label source contributes at least 9 extra endpoints over the three small blocks, and none can land at the empty-track vertex in an aligned block. That leaves at most 12 small endpoints to fill the 21 surplus units of the seven empty-track vertices, so the outer-heavy incidence at track0 must be at least9. But total outer-heavy weight is x_T=7 and every extra edge is off the base matching, so track0 can receive at most7. Therefore any surviving completion must contain a switch duplicating the empty label or an aligned double-track pair involving empty label (only (3,0) or (2,0) are allowed). Still OPEN.
+
+
+### Double-track alpha(R) obstruction and residual-type pruning
+
+A 3+7 double-track outer vertex has `d_R=0), so any independent 4-set in R plus that vertex would be an independent 5-set in H. Hence double tracks require `alpha(R)<=3). Among the 18 registered residual path/cycle types, only `C3+P2+P2` at z=2; `2C3+K1`, `C3+P4`, `C5+P2` at z=3; and `C7`, `C3+C4` at z=4 have alpha3. All z=0,1 cells and all other residual types forbid double tracks. Added `V47_DOUBLE_TRACK_ALPHA_BLOCKER.md` and `verify_v47_double_track_alpha_pruning.py`; replayed arithmetic returned `V47_DOUBLE_TRACK_ALPHA_PRUNING_OK`.
