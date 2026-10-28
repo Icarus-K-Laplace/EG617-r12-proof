@@ -12,7 +12,7 @@ Source base: `workstream/r12-twochat-e408-global-20261026` at `937a905ed26e54ec1
 
 The v=44 proof closes m=8 and m=9 without the Case-I/Case-II shell dichotomy; m=10 is excluded by corrected multiplicity. The new source-correct v=45 proof closes all three m-cases without exceptional-vertex injectivity.
 
-The final v=44 m=8 local contradiction is hardened in `V44_M8_FINAL_LOCAL_HARDENING.md`. The new degree-four obstruction is recorded in `Q32_130_NO_TWO_CORE_ONLY_DEG4.md`, and the v=45 reduction is in `V45_SOURCE_CORRECT_CLOSURE.md`.
+The final v=44 m=8 local contradiction is hardened in `V44_M8_FINAL_LOCAL_HARDENING.md`. A shorter alternate v=44 m=8 proof using the no-pair theorem is in `V44_M8_NO_PAIR_SHORTCUT.md`. The new degree-four obstruction is recorded in `Q32_130_NO_TWO_CORE_ONLY_DEG4.md`, and the v=45 reduction is in `V45_SOURCE_CORRECT_CLOSURE.md`.
 
 This does **not** certify EG617(r=12). The higher-support terminals `|U|=46,47` remain open and require separate source-correct audits.
 
