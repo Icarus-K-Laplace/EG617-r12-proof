@@ -39,21 +39,18 @@ Hence Case I now has only v=47.
 ## Case II in this workstream
 
 ### v=45
-
 - m=8: **CLOSED** by source-correct weighted special-incidence capacity;
-- m=9: OPEN, with each W-point special profile `n in {3,4}` and high-a parameter normal form;
-- m=10: OPEN, with each W-point `n in {4,5}` and high-a normal form.
+- m=9: **OPEN** only in the rigid row `n_w=4` at both W-points, all special parameters `a=4`. The refined shell count forces target shell degree0 and core excess1 at both points; each point uses exactly 10+3=13 shell-A edges; `e_H(W)=0`; the eight distinct special exact colors spend at least8 gap units;
+- m=10: **CLOSED** by the universal zero-shell multiplicity bound.
 
 ### v=46
-
 - m=8: **CLOSED** by the same three-unit surplus contradiction;
-- m=9: OPEN, `n in {3,4}`;
-- m=10: OPEN, `n in {4,5}`.
+- m=9: **OPEN** only in the rigid row `n_w=4`, all special parameters `a=4`. The target shell degree is0 and core excess is1; the five non-special exact colors use ten shell-A edges, three special colors use one each, and the zero-shell special color owns pw; at least4 gap units are spent;
+- m=10: **CLOSED** by the universal zero-shell multiplicity bound.
 
 ### v=47
-
-Full support `U=H`, all m remain OPEN.
-
+Full support `U=H`, so W is empty. All m remain OPEN; the non-full-support zero-shell theorem does not apply.
+ 
 ## v=47 proved reductions
 
 For an exact color C let
@@ -121,8 +118,8 @@ The old root promotion based on Q32 degree-nine/injectivity is withdrawn.
 ## Immediate mathematical frontier
 
 1. v=47 multicolor near-Turan packing: combine the exact 37-unit gap ledger, exact Type-I placement normal forms, shell-edge ownership, and pointwise degree/excess-six constraints.
-2. Case-II v=45,m=9,10: combine the two W-point high-a profiles with limited multi-outside K5 resources and shell-edge ownership.
-3. Case-II v=46,m=9,10: combine the one W-point high-a profiles with the 13 shell-edge pool and core excess.
+2. Case-II v=45,m=9: combine the rigid two-point shell profile, `e_H(W)=0`, the 731-edge U-complement pool, and exact Type-I placement counts.
+3. Case-II v=46,m=9: combine the rigid one-point shell profile, the 13-edge shell pool, and the local 130/131-color neighborhood structures.
 
 No root promotion before all of these plus sibling v44 are closed and replayed.
 
@@ -144,6 +141,8 @@ No root promotion before all of these plus sibling v44 are closed and replayed.
 The root DAG now distinguishes local U-reserve contradictions from parent-level exhaustiveness. E407 Q32 remains conditional on the frozen V12 29-point contract; Q33 remains conditional on the 31-point/56-witness support contract until the exact upstream exhaustive support-lifting theorem is linked. Neither caveat changes the headline: EG617(r=12) remains OPEN / NOT_CERTIFIED.
 ## Zero-shell multiplicity upgrade (2026-10-28)
 
-For any nonempty W, the source-correct zero-shell lemma says at most one exact color special at w can have zero shell-A degree, because each such color must own the unique edge pw. Non-special exact colors use at least two of the thirteen w--A edges each. Therefore `n_w>=2m-14`.
+For any nonempty W, the source-correct zero-shell lemma says at most one exact color special at w can have zero shell-A degree, because each such color must own the unique edge pw. Non-special exact colors use at least two of the thirteen w--A edges each. Let `t_w` be the number of target-colored edges from w to A. Reserving them explicitly gives `n_w>=2m-14+t_w`.
 
-Together with the pointwise budgets `n_w<=r_m=(3,4,5)`, this closes m=10 for every non-full-support Q32 branch and sharpens m=9 to `n_w=4`, all `a=4`. The detailed proof is recorded in `V45_SOURCE_CORRECT_MULTIPLICITY.md` and `V46_CASEII_CLOSURE.md`.
+Together with the pointwise budgets `n_w<=r_m=(3,4,5)`, this closes m=10 for every non-full-support Q32 branch and sharpens m=9 to `n_w=4`, all `a=4`. The refined bound forces `t_w=0`, so each m=9 W-point has core excess1; shell ownership is exactly ten edges from the five non-special exact colors plus three from the special exact colors. The detailed proof is recorded in `V45_SOURCE_CORRECT_MULTIPLICITY.md` and `V46_CASEII_CLOSURE.md`.
+
+`verify_zero_shell_multiplicity.py` returned `ZERO_SHELL_MULTIPLICITY_ARITHMETIC_OK`; it checks the multiplicity budgets and m=9 shell saturation only, not the graph lemma.
