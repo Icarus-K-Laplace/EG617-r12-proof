@@ -49,7 +49,7 @@ The following deductions were re-derived from source-correct Type-I structure an
 1. corrected non-full-support multiplicity
    `n_w>=m-6`;
 2. latest nonexact degree floors
-   `L8=12`, `L9=7`, `L10=2`;
+   `L8=12`, `L9=7`, `L10=3`;
 3. m=8 exact parameters satisfy `a in {2,3}` from the exact three-unit pointwise surplus ledger;
 4. in m=8 all variable points `{x_C,y_C}` are pairwise distinct;
 5. Case-II v=45,m=8 and v=46,m=8 are closed by weighted special-incidence capacity, not by historical injectivity;
