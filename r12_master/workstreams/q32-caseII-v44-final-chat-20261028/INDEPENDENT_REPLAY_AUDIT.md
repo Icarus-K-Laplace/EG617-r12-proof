@@ -47,3 +47,19 @@ I independently checked the proof reduction in `V44_M8_DIRECT_NO_CORE_ONLY_CLOSU
 Finite arithmetic file `verify_v44_direct_closure.py` was executed in Python and returned `V44_DIRECT_CLOSURE_ARITHMETIC_OK`. This is an arithmetic replay only. The no-core-only lemma remains an analytic dependency based on the registered minimum-degree-four theorem and Kang–Pikhurko Theorem 1 at (56,11).
 
 The m=9 zero-shell proof remains unchanged and independently closes that row. Thus the requested v=44 m=9 and m=8 priorities are both closed under the frozen Q32 contract. The overall E408-Q32 terminal remains open at full support v=47.
+
+
+## Addendum: explicit 130-edge minimum-degree chain and exact script run
+
+The proof dependency was hardened by adding `Q32_130_MINDEG3.md`, which proves `delta(D)>=3` directly from Kang–Pikhurko Theorem 1. For degree d=0,1,2 the non-neighborhood sizes are 60,59,58, with color-edge floors 139,134,129. The first two exceed130 directly; the last plus the two edges incident with the hypothesized degree-two vertex gives131>130.
+
+This makes the analytic dependency chain explicit:
+- degree>=3: KP Theorem1 at n=60,59,58;
+- degree>=4: KP Theorems1 and4 at n=57;
+- no core-only degree-four vertex: KP Theorem1 at n=56 plus the local K4-e budget.
+
+I ran the exact contents of `verify_v44_direct_closure.py` in a clean local Python execution after extending it with the 58/59/60-point checks. Output:
+
+`V44_DIRECT_CLOSURE_ARITHMETIC_OK`.
+
+The verifier is only an arithmetic regression. It does not verify the hypotheses of the Kang–Pikhurko theorem, the source Type-I classification, or the analytic graph lemmas. Under those explicit conditional dependencies, both requested rows v=44,m=9 and v=44,m=8 are closed.
