@@ -233,3 +233,51 @@ The smallest remaining Q32 support is `|U|=45`. Inherited Case I v=45 is closed,
 > **Case II / |U|=45**.
 
 Higher-support Q32 terminals at v=46,47 also remain outside this workstream.
+
+### 17. Source-correct v45 pointwise normal form
+
+Files:
+- `V45_SOURCE_CORRECT_CLOSURE.md`
+- `verify_v45_source_correct_profiles.py`
+
+Advance:
+- corrected nonexact pointwise floors to `L_8=12`, `L_9=7`, `L_10=2`; the inherited `L_9=6` summary is stale because the 130-edge color has minimum degree four and the 131-edge color minimum degree three;
+- combined `9-a=4+(5-a)` with corrected multiplicity `n_w>=m-6` to obtain `n_w in {2,3}`, `{3,4}`, `{4,5}` for m=8,9,10;
+- used the zero-shell/pivot-edge obstruction and thirteen-edge shell capacity to exclude m=10 and reduce m=9 to `n_w=4` at both W-points, with every exact color double type;
+- proved the m=9 normal form forces the 130-edge and 131-edge colors to be core-only at both W-points;
+- reduced m=8 to at least two core-only degree-four 130-color incidences at each W-point.
+
+### 18. New 130-edge no-pair theorem
+
+File: `Q32_130_NO_TWO_CORE_ONLY_DEG4.md`
+
+Advance:
+- proved every degree-four vertex in a 130-edge color has at least five edges induced by its four-neighbor set;
+- hardened the local `K4-e` equality/cross-edge structure at any core-only degree-four vertex;
+- combined the nonadjacent and adjacent cases to prove that no two distinct core-only degree-four vertices can coexist in one 130-edge color.
+
+This is an analytic consequence of the registered minimum-degree-four theorem and Kang–Pikhurko Theorems 1 and 4 at (56,11); no injectivity premise is used.
+
+### 19. Full v45 support closure
+
+Commit: `8febaee09b07788c01ec22bac2ecbfce51dc1935`
+
+File: `V45_SOURCE_CORRECT_CLOSURE.md`
+
+Result:
+
+> **`|U|=45` is CLOSED for m=8,9,10 under source-correct premises.**
+
+- m=10: both allowed multiplicities `n_w=4,5` force at least two zero-shell special colors, contradicting unique ownership of `pw`;
+- m=9: shell capacity forces `n_w=4` at both W-points, all exact colors double type, and the same 130-color core-only degree-four pair contradiction;
+- m=8: each W-point has at least two core-only degree-four 130 colors; two subsets of size at least two in the three-color set intersect, contradicting the no-pair theorem.
+
+The finite profile/shell arithmetic was replayed in Python with output:
+
+`V45_SOURCE_CORRECT_PROFILE_ARITHMETIC_OK`.
+
+Verifier scope is arithmetic only. The analytic graph theorem and external extremal inputs remain explicit dependencies.
+
+### Updated support frontier
+
+The source-correct support layers `|U|=44,45` are closed. `|U|=46,47` remain open in this workstream. The old global `Q32_NONFULL_SUPPORT_SHELL_CAPACITY.md` must not be used to close v=46 because its proof depends on the retracted exceptional-vertex injectivity assertion.
