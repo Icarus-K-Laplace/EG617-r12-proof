@@ -137,7 +137,7 @@ Valid source-correct interface currently retained:
 - cross-color witness family pairwise linear;
 - witness union `|U|>=44`;
 - corrected non-full-support multiplicity `n_w>=m-6`;
-- latest nonexact pointwise floors `L8=12`, `L9=7`, `L10=2`;
+- latest nonexact pointwise floors `L8=12`, `L9=7`, `L10=3`;
 - Case I closed for v=44,45 and all v=46 rows;
 - this workstream closes Case-II v=45,46 for m=8,9,10 using weighted surplus, zero-shell multiplicity, and the direct 130-edge no-core-only degree-four theorem;
 - sibling branch `workstream/r12-q32-caseII-v44-final-20261028` closes v=44 for m=8,9,10.
@@ -203,7 +203,7 @@ For any nonempty W-point w, the source-correct Type-I K5 shows that a special ex
 
 `n_w-1 <= 13-t_w-2(m-n_w)`, hence `n_w >= 2m-14+t_w`.
 
-The pointwise special-surplus budgets are `n_w<=r_m`, with `r_8=3`, `r_9=4`, `r_10=5`. Thus m=10 is impossible whenever W is nonempty; m=9 forces `n_w=4`, all special parameters `a=4`, and `t_w=0` at every W-point; m=8 remains closed by its two-unit special-incidence cost against budget3. For m=9, the shell count saturates exactly: five non-special exact colors use 10 A-edges, three special colors use one each, and one special color uses zero and owns pw. Both nonexact colors have no A-shell neighbors; the target degree is13, so each W-point has core excess1. This makes the 130-edge color degree four at w with all neighbors in H. The direct theorem `Q32_130_NO_CORE_ONLY_DEG4.md` rules out even one such vertex, closing both v=45,m=9 and v=46,m=9. Do not use the older unsupported W-pair/e_H(W)=0 inference; the direct contradiction is independent of it.
+The pointwise special-surplus budgets are `n_w<=r_m`, with `r_8=3`, `r_9=4`, `r_10=4`. Thus m=10 is impossible whenever W is nonempty; m=9 forces `n_w=4`, all special parameters `a=4`, and `t_w=0` at every W-point; m=8 remains closed by its two-unit special-incidence cost against budget3. For m=9, the shell count saturates exactly: five non-special exact colors use 10 A-edges, three special colors use one each, and one special color uses zero and owns pw. Both nonexact colors have no A-shell neighbors; the target degree is13, so each W-point has core excess1. This makes the 130-edge color degree four at w with all neighbors in H. The direct theorem `Q32_130_NO_CORE_ONLY_DEG4.md` rules out even one such vertex, closing both v=45,m=9 and v=46,m=9. Do not use the older unsupported W-pair/e_H(W)=0 inference; the direct contradiction is independent of it.
 
 Thus, together with the weighted m=8 closure and zero-shell m=10 closure, every non-full-support row v=45,46 is closed. The sibling branch closes v=44. Full support v=47, where W is empty, is the sole live Q32 support terminal.
 
