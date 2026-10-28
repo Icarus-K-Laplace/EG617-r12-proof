@@ -127,3 +127,32 @@ New exact restrictions for the 3+7 cell:
 These constraints are ready to combine with the 18 residual path/cycle types in `verify_v47_m10_residual_path_cycle_types.py`, the six-unit degree ledger, and the internal heavy-edge graph on the seven outer blocks. They do **not** yet eliminate the 2+8 or 3+7 cells and are not a graph UNSAT certificate.
 
 No retracted degree-nine claim, exceptional-vertex injectivity, Q33 identity, or E407 identity is used. EG617(r=12) remains **OPEN / NOT_CERTIFIED**.
+
+
+## 6. Exact endpoint-load ledger on the small component
+
+For a small block Q_i and label h, let e_i(h) be the number of extra edges from Q_i to outer blocks whose endpoint in Q_i has label h. In the 2+8 cell, there are eight outer blocks and one extra edge per Q_i--D pair, so `sum_h e_i(h)=8). In the 3+7 cell, `sum_h e_i(h)=7`.
+
+Because the small block has nine other pivot blocks, each q_h has one base neighbor in each of them. Its R-neighborhood is exactly F_h. Therefore in either cell
+[
+d_H(q_h)=9+e_i(h)+n_h.
+]
+The minimum-degree contract gives
+[
+e_i(h)ge 3-n_h.
+]
+Writing `u_i(h)=e_i(h)-(3-n_h)`, we obtain the exact per-small-block slack totals
+[
+oxed{sum_h u_i(h)=
+egin{cases}
+3,&2+8,\
+2,&3+7.
+end{cases}}
+]
+Indeed, `sum_h n_h=7`, and the endpoint totals are eight or seven, respectively.
+
+Thus in the 3+7 cell every small block has only two endpoint-load units beyond the mandatory profile `(3-n_h)_{h=1}^4`; in the 2+8 cell it has only three. The fiber-size partitions compatible with seven vertices and four clique fibers are
+[
+(3,3,1,0), (3,2,2,0), (3,2,1,1), (2,2,2,1).
+]
+This is the next exact integer ledger to combine with the outer-vertex cap `k(q)<=3-n_h`. In a 3+7 synchronized switch block, the three extra-edge endpoints all have the same small-block label s; the duplicated common track is s and necessarily has `n_s<=1`. If `n_s=1`, the unique vertex of F_s has two neighbors in that outer block, spending one of its `b_r=2-d_R(r)` extra-incidence units, so the number of switch blocks using s is at most `2-d_R(r)`.
