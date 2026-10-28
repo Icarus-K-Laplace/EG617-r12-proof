@@ -1,7 +1,7 @@
 # E408 Q32 — v=46 Case-II source-correct closure work
 
 Date: 2026-10-28
-Status: **m=8 CLOSED; m=10 CLOSED by the general zero-shell bound; m=9 forced to n_w=4 and all a=4, with a quantified core-gap row still OPEN.**
+Status: **m=8 CLOSED; m=9 CLOSED by the direct no-core-only degree-four theorem; m=10 CLOSED by the general zero-shell bound.**
 
 Let `W={w}` be the unique point of `H\U`. Case I at v=46 is already completely closed by the latest 130/131 minimum-degree theorems. This file addresses only the remaining Case-II branch.
 
@@ -241,3 +241,10 @@ Combining with the pointwise budgets `n_w<=r_m`, `r_8=3`, `r_9=4`, `r_10=5`, giv
 For m=9, t_w=0 plus the thirteen-edge shell count further forces each of the five non-special exact colors to use exactly two shell edges, three special exact colors to use one each, and the remaining special exact color to own pw. Both nonexact colors have no shell-A neighbors at w. The target degree is13 and d_H(w)=13, so epsilon=1.
 
 This proof uses the source-correct Type-I factorization and shell edge uniqueness only; it does not use the retracted degree-nine claim or exceptional-vertex injectivity.
+
+
+## 11. Superseding m=9 closure
+
+The rigid m=9 normal form in Section 7 already forces the 130-edge nonexact color D to have degree four at w and no neighbor in A. The unique zero-shell special exact color owns pw, so D does not own pw either. Hence all four D-neighbors of w lie in H.
+
+The later source-correct theorem `Q32_130_NO_CORE_ONLY_DEG4.md` rules out even one core-only degree-four vertex in a 130-edge color. Therefore the v=46, m=9 row is **CLOSED**. The quantified core-gap row above is a valid conditional description of a hypothetical row, but the row itself is impossible; it is no longer a live frontier.
