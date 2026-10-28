@@ -177,3 +177,10 @@ Thus in the 3+7 cell every small block has only two endpoint-load units beyond t
 (3,3,1,0), (3,2,2,0), (3,2,1,1), (2,2,2,1).
 ]
 This is the next exact integer ledger to combine with the outer-vertex cap `k(q)<=3-n_h`. In a 3+7 synchronized switch block, the three extra-edge endpoints all have the same small-block label s; the duplicated common track is s and necessarily has `n_s<=1`. If `n_s=1`, the unique vertex of F_s has two neighbors in that outer block, spending one of its `b_r=2-d_R(r)` extra-incidence units, so the number of switch blocks using s is at most `2-d_R(r)`.
+
+
+## 7. Residual-track domination imported from global outer holonomy
+
+The new global theorem `V47_37_OUTER_LIGHT_HOLONOMY.md` gives four aligned K7 tracks on the outer blocks. The further theorem `V47_37_RESIDUAL_TRACK_TRANSVERSAL.md` proves that every r in R must be adjacent to all seven vertices of at least one track. Otherwise its nonneighbor sets in the four tracks have positive sizes summing to at least19, and the exact transversal bound finds an independent transversal avoiding r, creating an independent 5-set.
+
+This imposes a track assignment on every residual vertex. It has not yet been shown that the assigned outer track equals the common small-block residual-neighbor label f(r), and no contradiction is claimed.
