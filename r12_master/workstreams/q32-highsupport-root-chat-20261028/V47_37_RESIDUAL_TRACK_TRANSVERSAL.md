@@ -83,3 +83,23 @@ This verifies the finite integer inequality used in the proof. It does not enume
 This strengthens the 3+7 normal form: not only are the outer blocks four globally aligned K7 tracks, but every residual vertex must be complete to at least one whole track. The next step is to couple these track assignments with the common residual-neighbor map of the three small blocks, the 4,5,5 switch types, and the residual degree sequence.
 
 The theorem does not yet rule out the 3+7 cell. Other m=10 cells and full-support m=8,9 remain open. EG617(r=12) remains **OPEN / NOT_CERTIFIED**.
+
+
+## 6. Track assignment is a clique partition of R
+
+The complete track in Section 3 is unique: a residual vertex has at most nine neighbors among the outer 28 vertices, so it cannot be adjacent to two disjoint K7 tracks. Let g(r) be its unique track label.
+
+### Lemma 6.1 — vertices assigned to one track are adjacent
+
+Suppose r,s are distinct residual vertices with g(r)=g(s)=h, but rs is a nonedge. Both are adjacent to all seven vertices of T_h. Outside T_h, each has at most two neighbors among the other three tracks, because its total outer-neighborhood has size at most nine. Therefore, in each of the other three tracks, at least
+`7-2-2=3`
+vertices are nonadjacent to both r and s.
+
+We use a three-part transversal bound. If three parts have sizes a,b,c in {3,...,7}, there are abc transversals. Each of at most seven cross-track edges forbids at most max(a,b,c) transversals, while
+`abc >= 9 max(a,b,c) > 7 max(a,b,c)`.
+Thus at least one transversal avoids every cross-track edge. Choose such a vertex from each of the three tracks other than T_h, all nonadjacent to r,s. Together with r,s they form an independent 5-set, contradiction.
+
+Hence every fiber `g^{-1}(h)` is a clique in H[R]. Since `Delta(H[R])<=2`, each fiber has size at most three. The seven residual vertices are partitioned into four clique fibers, whose sorted size profile is one of
+`(3,3,1,0), (3,2,2,0), (3,2,1,1), (2,2,2,1)`.
+
+These are the same four possible size profiles already obtained for the common small-block map f. The proof does **not** yet show `g=f` up to relabeling; that alignment is the next target.
