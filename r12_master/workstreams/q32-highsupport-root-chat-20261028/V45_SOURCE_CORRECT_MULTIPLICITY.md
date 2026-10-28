@@ -1,181 +1,103 @@
 # E408 Q32 — v=45 source-correct two-point multiplicity
 
-Date: 2026-10-28
-Status: **m=8 CLOSED; m=10 CLOSED by the general zero-shell bound; m=9 forced to n_w=4 and a=4 at both W-points, still OPEN.**
+Date: 2026-10-28  
+Status: **m=8 CLOSED; m=10 CLOSED; m=9 forced to n_w=4 and a=4 at both W-points, with a quantified gap row still OPEN.**
 
 This replaces every use of the retracted exceptional-vertex injectivity in the old `Q32_V45_TWOPOINT_REDUCTION.md`.
 
-## 1. Contract
+## 1. Contract and pointwise budgets
 
-Assume `|U|=45` and put
+Assume `|U|=45`, so (W=H\setminus U=\{w_1,w_2\}). For (w\in W), define
+`n_w = #{ exact colors C : x_C=w }`.
 
-`W={w_1,w_2}`.
-
-For `w in W`, let
-
-`n_w = # { exact colors C : x_C=w }`.
-
-The corrected multi-outside theorem gives
-
-`n_w>=m-6`.
-
-Use the latest nonexact pointwise floors
-
+The corrected multi-outside theorem gives (n_w\ge m-6). The current nonexact pointwise floors are
 `L_8=12, L_9=7, L_10=2`.
 
-For an exact Type-I color with source parameter `a`, the special point x has degree
+For a source-correct exact Type-I color with parameter (a\in\{1,2,3,4\}), the special point has degree (d_C(x_C)=9-a=4+(5-a)). Reserving target degree13 and the exact/nonexact floors gives special-surplus budgets:
+- m=8: (r_8=3);
+- m=9: (r_9=4);
+- m=10: (r_{10}=5).
 
-`d_C(x)=9-a=4+(5-a)`.
-
-## 2. Full pointwise surplus budgets
-
-At every residual point z, after reserving target degree13, exact baseline degree4 in each exact color, and the nonexact floors, the total remaining degree budget is
-
-- m=8: `60-(13+32+12)=3`;
-- m=9: `60-(13+36+7)=4`;
-- m=10: `60-(13+40+2)=5`.
-
-Hence at a W-point the total special-x surplus satisfies
-
+Thus
 `sum_{C:x_C=w}(5-a_C) <= r_m`,
+so in particular (n_w\le r_m).
 
-where
+## 2. Source-correct zero-shell lemma
 
-`r_8=3, r_9=4, r_10=5`.
+Fix (w\in W). If an exact color (C) has (x_C=w) and no C-colored edge from (w) to shell (A), then (pw) has color C.
 
-This bound needs no injectivity assumption.
+Indeed, the source-correct Type-I gadget contains the C-colored K5 `{x_C} union (N_t minus {y})`. Since `alpha(H)<=4`, at least one of the four vertices in (N_t\setminus\{y\}) lies outside H. Under the zero-shell hypothesis it cannot lie in A, so it must be p. Hence (pw) is C-colored. Since (pw) has a unique color, at most one special exact color at a fixed (w) can have zero shell-A degree.
 
-## 3. m=8 is impossible whenever W is nonempty
+This uses the correct Type-I factorization only; it uses no degree-nine assertion and no exceptional-vertex injectivity.
 
-For m=8, the same three-unit budget applies at every residual point to **all** exact gadget degrees. In a Type-I color the variable surpluses are
+## 3. Universal shell-multiplicity inequality
 
-- y: `a`;
-- x: `5-a`.
+Let (n_w) exact colors have special point (w). The other (m-n_w) exact colors are non-special at (w). Each such color places (w) in a multi-outside K5 and therefore uses at least two distinct (wA) edges. These edge sets are disjoint across colors.
 
-If `a=1`, x alone has surplus4, impossible. If `a=4`, y alone has surplus4, impossible. Therefore every exact color has
-
-> `a in {2,3}`.
-
-In particular every special-x incidence costs at least
-
-`5-a >=2`.
-
-But the corrected non-full-support theorem gives at each `w in W`
-
-`n_w>=m-6=2`.
-
-Two special incidences would cost at least4 surplus units at w, while only3 are available. Contradiction.
-
-Therefore
-
-> **Case II / v=45 / m=8 is CLOSED.**
-
-The proof actually excludes any non-full-support m=8 realization; this workstream only records the v=45/v=46 consequences assigned to it and does not reopen the sibling v=44 analysis.
-
-## 4. m=9 normal form
-
-Before the shell argument, the pointwise budget gives `n_w in {3,4}`. The source-correct zero-shell lemma below improves this to `n_w=4`. Consequently all four special incidences have surplus exactly1, so the parameter multiset is `(a_C)=(4,4,4,4)` at each W-point. No exceptional injectivity is needed.
-
-Moreover, when the special surplus reaches4, all remaining pointwise slack is exhausted: the target degree is exactly13, the 130- and 131-edge colors have degrees exactly4 and3, and every non-special exact color has degree exactly4 at that W-point, hence lies there in an isolated K5 rather than the 11-point gadget.
-
-## 5. m=10 normal form
-
-Before the shell argument, the pointwise budget gives `n_w in {4,5}`. The source-correct zero-shell lemma instead forces `n_w>=6`, contradicting the budget `n_w<=5`. Therefore **m=10 is impossible for every non-full-support Q32 realization**, including v=45.
-
-## 6. Two-point multi-outside placement without injectivity
-
-For any exact color with `x_C` different from a fixed W-point w, w belongs to a multi-outside K5 and therefore uses at least two distinct shell neighbours of color C.
-
-If an exact color has `x_C` outside W, then both w_1 and w_2 are non-special. Relative to H the exact Type-I placement has only the following multi-outside resources:
-
-- `x in O`: one double-outside K5;
-- `x in H`, two-double: two double-outside K5s;
-- `x in H`, triple: one triple-outside K5.
-
-Therefore, except for at most one color owning the edge `w_1w_2`, an exact color with `x_C outside W` must use the two-double type and place w_1,w_2 in its two different multi-outside K5s. This recovers the useful split-two-point conclusion of the old reduction **without** using exceptional injectivity.
-
-## 7. Deletion-Turan shell inequality at either W-point
-
-The following argument applies separately to `w_1` and `w_2` and does not depend on `|W|=1`.
-
-For every non-target color C, deleting a fixed `w in H` leaves 46 vertices with independence number at most12. Therefore
-
-`e_C(H-w)>=p_12(46)=66`.
-
-Writing `e_C(H)=69+g_C` gives
-
-> `d_C^H(w)<=3+g_C`.
-
-For a special exact color with `x_C=w` and source parameter a_C, its residual degree is `9-a_C`, hence
-
-`d_C(w,O)>=max(0,6-a_C-g_C)`.
-
-Among all special colors at the same w, at most one can own the single edge wp. Consequently
-
-> **`sum_{C:x_C=w} d_C(w,A) >= sum_{C:x_C=w} max(0,6-a_C-g_C)-1`.**
-
-Every non-special exact color at w uses at least two distinct A-neighbours through its multi-outside K5. This is exactly the local input used in the v=46 gap calculation, so the same pointwise gap bounds apply here.
-
-## 8. m=9: two disjoint special sets spend at least eight gap units
-
-At each fixed `w_i`, the local alternatives are:
-
-- n=3, `(4,4,4)`: special gap sum at least4;
-- n=3, `(4,4,3)`: special gap sum at least5;
-- n=4, `(4,4,4,4)`: special gap sum at least4.
-
-The special-color sets at `w_1` and `w_2` are disjoint, because an exact Type-I color has only one special vertex x_C.
-
-Therefore
-
-> **`sum_{C exact} g_C >=8` in every surviving v=45,m=9 Case-II row.**
-
-If either W-point has the `(4,4,3)` profile, the lower bound improves to9; if both do, to10.
-
-This is a genuine global two-point consequence, not two copies charged to the same exact colors.
-
-## 9. m=10: two disjoint special sets spend at least twelve gap units
-
-At each fixed `w_i`, the local alternatives are:
-
-- n=4, `(4,4,4,4)`: special gap sum at least6;
-- n=4, `(4,4,4,3)`: special gap sum at least7;
-- n=5, all a=4: special gap sum at least6.
-
-Again the two special-color sets are disjoint. Hence
-
-> **`sum_{C exact} g_C >=12` in every surviving v=45,m=10 Case-II row.**
-
-Each occurrence of the `(4,4,4,3)` profile raises this by one, so the aggregate floor is13 or14 if one or both W-points have that profile.
-
-## 10. Remaining v=45 frontier
-
-- m=8: CLOSED;
-- m=9: OPEN, but exact colors spend at least8 of the 37 global near-Turan gap units (9/10 in the enhanced rows);
-- m=10: OPEN, but exact colors spend at least12 gap units (13/14 in the enhanced rows).
-
-The next load-bearing step must combine these gap floors with the limited shell M-edge pool, exact Type-I placement types, and the global eleven-color edge partition. No exceptional-injectivity statement is used.
-
-## 6. General zero-shell special-incidence bound
-
-### Lemma 6.1 — at most one zero-shell special exact color
-
-Fix `w in W`. If an exact color C has `x_C=w` and no C-colored edge from w to A, then `pw` has color C. Indeed, the source-correct Type-I gadget contains the C-colored K5 `{x_C} union (N_t\\{y})`; because `alpha(H)<=4`, one of the four vertices in `N_t\\{y}` lies outside H. None can be in A under the zero-shell hypothesis, so one is p. The edge `pw` has a unique color, so at most one special exact color at w has zero shell degree.
-
-### Lemma 6.2 — universal lower bound on special multiplicity
-
-Let `n_w` be the number of exact colors with `x_C=w`. The other `m-n_w` exact colors each consume at least two distinct w--A edges, disjoint across colors. Hence at most `13-2(m-n_w)` shell edges remain for the special exact colors. Since all but at most one of those `n_w` colors must use at least one shell edge,
-
+Consequently at most (13-2(m-n_w)) shell edges remain for the special colors. All but at most one of the (n_w) special colors must have positive shell degree, so
 `n_w-1 <= 13-2(m-n_w)`,
-
-so
-
+and hence
 `n_w >= 2m-14`.
 
-Combining with the pointwise budgets `n_w<=r_m` gives:
+Combining this with the pointwise budgets gives:
+- m=8: (n_w\ge2); but each special incidence costs at least two surplus units because every exact parameter has (a\in\{2,3\}), exceeding budget3. Thus m=8 is impossible whenever W is nonempty.
+- m=9: (n_w\ge4) and (n_w\le4), so (n_w=4) at each W-point. All four special incidences have surplus1, forcing (a=4) for every special color at that point.
+- m=10: (n_w\ge6) but (n_w\le5), contradiction. Thus m=10 is impossible for every non-full-support realization, including v=45 and v=46.
 
-- m=8: `n_w>=2`; since every special incidence costs at least2 surplus units, this is the existing m=8 contradiction against budget3;
-- m=9: `n_w>=4` and `n_w<=4`, so every W-point has exactly four special colors and all four have `a=4`;
-- m=10: `n_w>=6` but `n_w<=5`, contradiction.
+## 4. The surviving m=9 two-point normal form
 
-Thus m=10 is excluded whenever W is nonempty, not merely for v=45. The argument uses the corrected Type-I gadget and edge uniqueness only; it does not use the retracted degree-nine claim or exceptional injectivity.
+At each (w_i\in W):
+- exactly four exact colors have (x_C=w_i);
+- all four have Type-I parameter (a=4);
+- the five non-special exact colors use at least ten of the thirteen shell edges incident with (w_i);
+- at least one of the four special colors has zero shell degree, and at most one can have zero shell degree. This is tight, not itself a contradiction.
+
+The two sets of four special colors at (w_1,w_2) are disjoint, because an exact color has only one special vertex. Hence exactly eight of the nine exact colors have their special point in W; one exact color has its special point outside W.
+
+Whenever the four special incidences exhaust their budget, the pointwise ledger also forces target degree13, the 130-edge color degree4, the 131-edge color degree3, and degree4 for every non-special exact color at that W-point.
+
+## 5. Two-point multi-outside placement without injectivity
+
+For any exact color with (x_C\) different from a fixed W-point (w), (w) lies in a multi-outside K5 and has at least two distinct shell neighbors of that color.
+
+If (x_C\notin W), both (w_1,w_2) are non-special. Relative to H, the source-correct Type-I placement has:
+- (x_C\in O): one double-outside K5;
+- (x_C\in H), two-double type: two double-outside K5s;
+- (x_C\in H), triple type: one triple-outside K5.
+
+Except for at most one color owning the edge (w_1w_2), an exact color with (x_C\notin W) must use the two-double type and place (w_1,w_2) in its two different multi-outside K5s. This recovers the useful split-two-point conclusion without exceptional injectivity.
+
+## 6. Deletion-Turán shell inequality at either W-point
+
+Deleting any (w\in H) leaves a 46-vertex graph with independence number at most12, so for each non-target color C,
+`e_C(H-w)>=p_12(46)=66`.
+Writing (e_C(H)=69+g_C) gives
+`d_C^H(w)<=3+g_C`.
+
+For a special exact color with (x_C=w), its residual degree is (9-a_C), hence
+`d_C(w,O)>=max(0,6-a_C-g_C)`.
+Only one color can own (wp). Therefore
+`sum_{C:x_C=w} d_C(w,A) >= sum_{C:x_C=w} max(0,6-a_C-g_C)-1`.
+
+For the surviving m=9 normal form, (a_C=4) for four special colors, so
+`sum_special d_C(w,A) >= sum_special max(0,2-g_C)-1`.
+
+The five non-special exact colors consume at least ten shell edges. At most three remain for the four special colors. Combining the inequalities gives
+`sum_special max(0,2-g_C) <= 4`,
+and thus
+`sum_{C:x_C=w} g_C >= 4`.
+If the target-core excess at w is zero, the sharper bound is at least5.
+
+Since the two W-points have disjoint special-color sets, every surviving v=45,m=9 row satisfies
+`sum_{C exact} g_C >= 8`,
+improving to9 or10 if one or both W-points have zero target-core excess.
+
+## 7. Remaining v=45 frontier
+
+- m=8: **CLOSED**;
+- m=10: **CLOSED** by the universal zero-shell bound;
+- m=9: **OPEN**, with four special colors at each W-point, all (a=4), and at least eight of the 37 global near-Turán gap units forced into the eight distinct special exact colors.
+
+The remaining m=9 gap floor does not exhaust the global 37-unit ledger. The next step must combine it with the M-edge pool, exact Type-I placement types, and the full eleven-color edge partition.
+
+No exceptional-injectivity statement is used.
