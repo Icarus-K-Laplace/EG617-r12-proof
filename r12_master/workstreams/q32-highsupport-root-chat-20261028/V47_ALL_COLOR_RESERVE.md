@@ -153,3 +153,19 @@ This is a source-correct replacement for the kind of injectivity that the retrac
 The results above materially reduce v=47 but do not yet eliminate it. In particular, exact 69-edge realizations exist at the local source interface, so no root promotion is permitted.
 
 Next load-bearing target: combine the 37-unit gap identity, the exact `g_C--mu_C` tradeoff, the m=8 weighted gadget packing (or the m=9/10 analogues), and edge uniqueness in the common H/M pools.
+
+## 8. New pivot-neighborhood packing reduction
+
+`V47_PIVOT_NEIGHBORHOOD_PACKING.md` proves that every exact color has a pivot-neighborhood K4, and these K4s are vertex-disjoint across exact colors. Let their union be Q and let R=H\\Q. The three forced edge reserves give a uniform 253-edge baseline for every m in {8,9,10}; the exact 285-edge contract leaves 32 units of slack.
+
+Writing x,y,z for the slack in e(Q), e(Q,R), e(R), respectively, the verified integer ledger is
+
+- x+y+z=32;
+- 2x+y>=5m;
+- y+2z>=D_m, where D_8=18, D_9=13, D_10=8;
+- the two degree-excess slacks sum exactly to 6;
+- x>=8,13,18 for m=8,9,10, respectively.
+
+`verify_v47_pivot_packing.py` was executed locally and returned `V47_PIVOT_PACKING_ARITHMETIC_OK`. It finds 79, 61, and 44 scalar slack states for m=8,9,10. This explicitly confirms that the scalar relaxation is feasible; it is not a graph realization and not an UNSAT certificate.
+
+This is the current strongest common-core reduction added in this workstream. The remaining task is to combine the pivot blocks with exact-color 69/70 placement normal forms and pointwise/shell constraints.
