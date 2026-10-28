@@ -157,13 +157,66 @@ Advance:
 - explicitly firewalled degree-nine / injectivity / Q33 / E407 / Case-I-cover routes;
 - flagged stale upstream `L_8=9` summary bookkeeping as superseded by the proved 130-edge min-degree-four theorem (`L_8=12`).
 
+### 13. pair-rigidity local equality hardening
+
+Commit: `c18e964052b2df20aca24816f9f570af808b5410`
+
+File: `V44_M8_PAIR_RIGIDITY.md`
+
+Advance:
+
+- expanded `(a,b)=(5,2)` into the forced S--N edge placement;
+- proved the two missing-pair endpoints receive exactly one cross edge each;
+- proved the two central vertices receive no cross edge and therefore have global D-degree exactly four.
+
+This removes an implicit inference used by the final local contradiction.
+
+### 14. final K5-e hardening
+
+Commit: `22728f19dbfb7d261b71caf7a033c44fb9983922`
+
+File: `V44_M8_FINAL_LOCAL_HARDENING.md`
+
+Advance:
+
+- proved the three size-two L-sets are exactly the three distinct two-subsets of the nonexact-color set;
+- therefore each nonexact color owns exactly one W--W edge, excluding the third W-point from the relevant neighbor set;
+- gave a fully explicit missing-endpoint contradiction using the forced `(1,1,0,0)` S--N cross-edge distribution;
+- concluded the other three vertices of the local K4-e lie in U before invoking `D[U]=8K4 dot-union 4K3`.
+
+### 15. verifier expansion
+
+Commit: `e98b13e9df82ae47f7134098111b2a388a2655d2`
+
+File: `verify_v44_m8_closure_arithmetic.py`
+
+Advance:
+
+- added the unique S--N cross-edge distribution check `(1,1,0,0)`;
+- enumerated all six ordered legal L-set assignments and verified each nonexact color owns exactly one W--W edge;
+- added the finite missing-endpoint neighbor-count regression (`3` induced edges versus `5` for `K4-e`).
+
+Re-executed successfully with output:
+
+`V44_M8_CLOSURE_ARITHMETIC_OK`.
+
+### 16. branch-scope audit
+
+Compared base `937a905ed26e54ec10e9bdade1d9b655da8f6176` to hardened head `e98b13e9df82ae47f7134098111b2a388a2655d2`.
+
+Result:
+
+- branch is 16 commits ahead and 0 behind;
+- every changed path is under `r12_master/workstreams/q32-caseII-v44-final-chat-20261028/`;
+- no sibling workstream was modified.
+
 ## Final mathematical status of this sprint
 
 `|U|=44,m=10`: inherited CLOSED.
 
 `|U|=44,m=9`: CLOSED in this workstream.
 
-`|U|=44,m=8`: CLOSED in this workstream.
+`|U|=44,m=8`: CLOSED in this workstream, with the final local K5-e step independently hardened.
 
 Therefore
 
