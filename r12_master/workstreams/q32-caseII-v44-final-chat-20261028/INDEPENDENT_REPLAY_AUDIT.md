@@ -32,3 +32,18 @@ I independently replayed the finite assertions in `verify_v44_m8_closure_arithme
 ## Next-frontier firewall
 
 The next smallest live support is Case-II `|U|=45`. The inherited `Q32_V45_TWOPOINT_REDUCTION.md` uses the old global exceptional-vertex injectivity assertion; it must not be imported after the degree-nine premise was retracted. Any v=45 continuation needs a fresh isolated workstream and a corrected reduction.
+
+
+## Addendum: shortest direct m=8 closure (2026-10-28)
+
+I independently checked the proof reduction in `V44_M8_DIRECT_NO_CORE_ONLY_CLOSURE.md`.
+
+- At each w in W, the degree baseline is 13+8*4+3*4=57 out of total degree60, leaving three slack units.
+- Corrected multiplicity gives n_w in {2,3}; the allowed sorted special parameter profiles are (3,4)/(4,4) for n_w=2 and (4,4,4) for n_w=3.
+- For n_w=2, six non-special exact colors occupy at least twelve of thirteen w--A edges. The zero-shell lemma forces the final shell edge to one special exact color and forces p-w to the other special color. Hence no nonexact color has an O-neighbor. At least two of the three nonexact colors have degree exactly four.
+- For n_w=3, all three special parameters are4 and exhaust the slack. All nonexact colors have degree four. Exact colors own at least twelve w--A edges; if a zero-shell special color exists it also owns p-w, and otherwise all thirteen shell edges are exact-owned. In either case at most one nonexact edge is incident with w and O, so at least two nonexact colors are core-only degree four.
+- The source-correct theorem `Q32_130_NO_CORE_ONLY_DEG4.md` rules out each such incidence individually. Therefore the m=8 branch is impossible without using W-pair rigidity, the 700-edge U-pool, or the final Turan-equality step.
+
+Finite arithmetic file `verify_v44_direct_closure.py` was executed in Python and returned `V44_DIRECT_CLOSURE_ARITHMETIC_OK`. This is an arithmetic replay only. The no-core-only lemma remains an analytic dependency based on the registered minimum-degree-four theorem and Kang–Pikhurko Theorem 1 at (56,11).
+
+The m=9 zero-shell proof remains unchanged and independently closes that row. Thus the requested v=44 m=9 and m=8 priorities are both closed under the frozen Q32 contract. The overall E408-Q32 terminal remains open at full support v=47.
