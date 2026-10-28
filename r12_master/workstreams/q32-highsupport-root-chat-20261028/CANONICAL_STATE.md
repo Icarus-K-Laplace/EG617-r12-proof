@@ -179,3 +179,16 @@ Added `V47_LIGHT_BLOCK_GRAPH_DISCONNECTED_REDUCTION.md`. On the ten pivot blocks
 The 2+8 and 3+7 cases saturate all six Q-excess units, force `s_R=0`, and force every cross pair to have exactly five H-edges. The 2+8 case has `x_T=8+z, y=8-2z, z<=4`; the 3+7 case has `x_T=3+z, y=8-2z, z<=4`. In both, every block in the large component has weighted internal-heavy degree at most3 or2, respectively, and degree at least4 in its light graph.
 
 For 4+6, `y+2z<=10`, `z<=5`, and at most two units remain for internal-heavy weight, cross-pair multiplicity beyond one, and shell-incidence slack on the four-block component. For 5+5, `x>=25, y+z<=7, z>=1`, with at most three weighted extra units beyond the mandatory cross-pair baseline. This is a finite structural split, not an UNSAT certificate.
+
+
+## New zero-slack map alignment and transversal blocker (2026-10-28)
+
+Added `V47_ZERO_SLACK_MAP_ALIGNMENT_AND_TRANSVERSAL_BLOCKER.md` and `verify_v47_three_small_block_transversal.py`.
+
+For the disconnected m=10 light-block components 2+8 and 3+7, every small-component block has y_i=0. The new zero-slack alignment lemma proves that if A,B are small light blocks, then after aligning their perfect matching, the unique residual-neighbor maps coincide: f_A(r)=f_B(r) for every r in R. The proof uses alpha(H)<=4 to force equality of the unordered label pairs for every independent pair r,s in R, then Delta(H[R])<=2 to find two suitably nonadjacent witnesses for each r. In the 3+7 light triangle, triangle matching consistency aligns all three maps, so every residual vertex has a matched neighbor pair/triple across the small component.
+
+For each outer block D in the 3+7 cell, the 4,5,5 switch classification gives every q in D a common neighbor track across A,B,C. If the common track intersection is a singleton {h}, a Hall argument gives an independent transversal on the other three labels, forcing q adjacent to the entire residual fiber F_h; hence k(q)<=3-|F_h|, where k(q) counts q's incidences among the three extra edges from D to A,B,C. If the intersection has size two, q consumes all three extra edges, has no R-neighbor, and has no other extra Q-Q incidence. Per block, sum_q k(q)=3.
+
+The normalized local verifier checked 1,728 aligned configurations plus 36 synchronized-switch configurations, or 7,056 vertex records. It returned `V47_ZERO_SLACK_TRANSVERSAL_LOCAL_OK` (7,044 singleton-track records, 12 double-track records). This verifies the local label/transversal classification only, not global Q32 infeasibility.
+
+No full-support row is closed by this result. v47,m=8,9 remain open; v47,m=10 remains open in the chi(complement residual)<=4 cell. EG617(r=12) remains OPEN / NOT_CERTIFIED.
