@@ -270,3 +270,21 @@ For a double track {h,j}, q consumes both extra A/B edges and has at most one R-
 Each outer block has `sum k(q)=2); each small block's endpoint loads satisfy `e_i(h)=3-n_h+u_i(h)), `sum u_i=3), hence `e_i(h)<=6-n_h). Synchronized switch blocks with endpoint label h are therefore at most `6-n_h).
 
 Strengthened the 3+7 file: a double-track vertex has d_R=0, so every cross-pair between its two track fibers must be an H-edge, forcing `n_h+n_j<=3). This is not yet a global contradiction; the 2+8 and 3+7 cells remain OPEN.
+
+
+### New m=10 3+7 residual-track domination theorem
+
+Added `V47_37_RESIDUAL_TRACK_TRANSVERSAL.md` and `verify_v47_37_residual_track_transversal.py`.
+
+Combining the four globally aligned outer K7 tracks with the residual degree ledger gives each r in R at most nine neighbors among the 28 outer vertices, hence at least19 nonneighbors. The cross-track graph has at most seven edges and maximum degree two. If r missed at least one vertex in each of the four tracks, the four part sizes would be in `[1,7]` with sum at least19.
+
+A strict union bound proves such a four-part graph always has an independent transversal. The verifier enumerates all 64 sorted profiles and the full relaxed six-pair edge-count allocation space under total-edge and per-part degree caps. Exact result:
+- worst profile: `(7,7,4,1)`;
+- total transversals:196;
+- maximum forbidden-transversal upper bound:133;
+- strict margin:63;
+- output `V47_37_RESIDUAL_TRACK_TRANSVERSAL_OK`.
+
+Therefore each residual vertex is adjacent to every vertex of at least one outer K7 track, giving a K8 with that residual vertex. Since b_r<=2, at least five outer blocks have the track vertex as the unique r-neighbor; if d_R(r)=2, all seven do.
+
+This is a new necessary structural condition. It does not yet close 3+7; m=10's other component cells and full-support m=8,9 remain open.
