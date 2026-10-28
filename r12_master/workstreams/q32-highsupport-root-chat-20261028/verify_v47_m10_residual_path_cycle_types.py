@@ -17,7 +17,7 @@ def component_metrics(kind, n):
     if kind == "P":
         return n - 1, (n + 1) // 2, (n + 1) // 2
     if kind == "C":
-        return n, n // 2, (n + 1) // 2
+        return n, n // 2, (1 if n == 3 else (n + 1) // 2)
     raise ValueError(kind)
 
 types = [("K", 1)]
@@ -30,7 +30,7 @@ found = defaultdict(list)
 def rec(start, vertices, edges, alpha, cover, chosen):
     if vertices == 7:
         if 3 <= edges <= 7 and alpha <= 4 and cover <= 4:
-            sig = tuple(chosen)
+            sig = tuple(sorted(chosen))
             found[edges].append(sig)
         return
     if vertices > 7:
