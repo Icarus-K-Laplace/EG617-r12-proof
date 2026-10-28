@@ -1,7 +1,7 @@
 # E408 Q32 — v=45 source-correct two-point multiplicity
 
 Date: 2026-10-28
-Status: **m=8 CLOSED; m=9,10 reduced.**
+Status: **m=8 CLOSED; m=9,10 reduced to disjoint two-point core-gap rows.**
 
 This replaces every use of the retracted exceptional-vertex injectivity in the old `Q32_V45_TWOPOINT_REDUCTION.md`.
 
@@ -86,7 +86,7 @@ If `n_w=3`, the only possibilities are
 
 > `(4,4,4)` or `(4,4,3)`.
 
-Thus each of the two W-points has one of these two source-correct parameter profiles. No exceptional injectivity is needed.
+Thus each of the two W-points has one of these source-correct parameter profiles. No exceptional injectivity is needed.
 
 Moreover, when the special surplus reaches4, all remaining pointwise slack is exhausted: the target degree is exactly13, the 130- and 131-edge colors have degrees exactly4 and3, and every non-special exact color has degree exactly4 at that W-point, hence lies there in an isolated K5 rather than the 11-point gadget.
 
@@ -116,10 +116,64 @@ If an exact color has `x_C` outside W, then both w_1 and w_2 are non-special. Re
 
 Therefore, except for at most one color owning the edge `w_1w_2`, an exact color with `x_C outside W` must use the two-double type and place w_1,w_2 in its two different multi-outside K5s. This recovers the useful split-two-point conclusion of the old reduction **without** using exceptional injectivity.
 
-## 7. Remaining v=45 frontier
+## 7. Deletion-Turan shell inequality at either W-point
+
+The following argument applies separately to `w_1` and `w_2` and does not depend on `|W|=1`.
+
+For every non-target color C, deleting a fixed `w in H` leaves 46 vertices with independence number at most12. Therefore
+
+`e_C(H-w)>=p_12(46)=66`.
+
+Writing `e_C(H)=69+g_C` gives
+
+> `d_C^H(w)<=3+g_C`.
+
+For a special exact color with `x_C=w` and source parameter a_C, its residual degree is `9-a_C`, hence
+
+`d_C(w,O)>=max(0,6-a_C-g_C)`.
+
+Among all special colors at the same w, at most one can own the single edge wp. Consequently
+
+> **`sum_{C:x_C=w} d_C(w,A) >= sum_{C:x_C=w} max(0,6-a_C-g_C)-1`.**
+
+Every non-special exact color at w uses at least two distinct A-neighbours through its multi-outside K5. This is exactly the local input used in the v=46 gap calculation, so the same pointwise gap bounds apply here.
+
+## 8. m=9: two disjoint special sets spend at least eight gap units
+
+At each fixed `w_i`, the local alternatives are:
+
+- n=3, `(4,4,4)`: special gap sum at least4;
+- n=3, `(4,4,3)`: special gap sum at least5;
+- n=4, `(4,4,4,4)`: special gap sum at least4.
+
+The special-color sets at `w_1` and `w_2` are disjoint, because an exact Type-I color has only one special vertex x_C.
+
+Therefore
+
+> **`sum_{C exact} g_C >=8` in every surviving v=45,m=9 Case-II row.**
+
+If either W-point has the `(4,4,3)` profile, the lower bound improves to9; if both do, to10.
+
+This is a genuine global two-point consequence, not two copies charged to the same exact colors.
+
+## 9. m=10: two disjoint special sets spend at least twelve gap units
+
+At each fixed `w_i`, the local alternatives are:
+
+- n=4, `(4,4,4,4)`: special gap sum at least6;
+- n=4, `(4,4,4,3)`: special gap sum at least7;
+- n=5, all a=4: special gap sum at least6.
+
+Again the two special-color sets are disjoint. Hence
+
+> **`sum_{C exact} g_C >=12` in every surviving v=45,m=10 Case-II row.**
+
+Each occurrence of the `(4,4,4,3)` profile raises this by one, so the aggregate floor is13 or14 if one or both W-points have that profile.
+
+## 10. Remaining v=45 frontier
 
 - m=8: CLOSED;
-- m=9: OPEN under the `n_w in {3,4}` / high-a profiles above;
-- m=10: OPEN under the `n_w in {4,5}` / high-a profiles above.
+- m=9: OPEN, but exact colors spend at least8 of the 37 global near-Turan gap units (9/10 in the enhanced rows);
+- m=10: OPEN, but exact colors spend at least12 gap units (13/14 in the enhanced rows).
 
-The next step is to combine these profiles with the 13 shell-edge ownership ledger and the seven-block duplicate system.
+The next load-bearing step must combine these gap floors with the limited shell M-edge pool, exact Type-I placement types, and the global eleven-color edge partition. No exceptional-injectivity statement is used.
