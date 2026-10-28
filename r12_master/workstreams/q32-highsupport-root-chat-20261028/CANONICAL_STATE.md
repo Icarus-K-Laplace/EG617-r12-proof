@@ -215,3 +215,14 @@ This is a new matching-holonomy restriction to combine with the zero-slack resid
 ### Matching-holonomy scope correction (2026-10-28)
 
 The correct light-graph degree bounds are: 2+8 has eight outer blocks and minimum light degree at least 3; 3+7 has seven outer blocks and minimum light degree at least 4. Therefore the statement that every nonadjacent pair has a common light neighbor applies only to 3+7. In 2+8, the matching-composition theorem is used only on length-two light paths that actually exist. The local theorem and its finite verification remain valid; only this application scope is corrected.
+
+
+## New four-light-cycle holonomy theorem (2026-10-28)
+
+Added `V47_LIGHT_CYCLE_HOLONOMY.md` and `verify_v47_light_cycle_holonomy.py`.
+
+For a four-cycle of light pivot-block pairs, the two diagonals contain both path-composed matchings by the two-light composition theorem. With at most seven edges per diagonal, holonomy cannot be a derangement (would require eight edges); a 3-cycle gives a forced normalized 16-vertex graph with an independent 5-set. Thus only identity or transposition holonomy is possible. A transposition requires both diagonals to have at least six edges.
+
+Exact local regression: 726 transposition/diagonal-extra configurations checked, 8 forced 3-cycle configurations rejected, result `V47_LIGHT_CYCLE_HOLONOMY_EXHAUSTIVE_OK`.
+
+For the 3+7 disconnected cell, every six-edge outer pair consumes the full internal-heavy budget of two at each endpoint, so its endpoints have no other internal-heavy incidences. Nontrivial four-cycle holonomy is therefore supported only on two disjoint high-weight diagonal pairs. This is a local structural restriction, not a Q32 closure.
