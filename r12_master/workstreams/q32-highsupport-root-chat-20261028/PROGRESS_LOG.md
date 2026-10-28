@@ -172,3 +172,13 @@ Used the independent-set incidence-cover lemma to close the `chi(bar(H[R]))>=5` 
 Both isolated R vertices have d_R=0 and therefore each needs at least two extra incidences across blocks. Lemma 7.1 shows no block's extra-incidence vertex can be an isolated R vertex: if it were u, the other isolate v and all C5 vertices have unique Q_i neighbors; independent-pair constraints force the five C5 vertices to 3-color the C5 nonedge graph, using all three labels; each independent four-set {u,v,a,b} then forces N(u) in Q_i to contain the omitted third label for every pair of labels, impossible with only two neighbors. Same for v. Contradiction.
 
 Therefore `chi(bar(H[R]))<=4` in the remaining v47,m10 cell. This closes only the high-chromatic residual subcase; the 4-colorable residual cell and v47 m=8,9 remain OPEN.
+
+### v47,m10 light-block graph disconnected reduction
+
+Added `V47_LIGHT_BLOCK_GRAPH_DISCONNECTED_REDUCTION.md`. Let L connect block labels whose Q-pair has exactly four H-edges. For each block, `s_i=t_i+y_i-5=sum_{q in Q_i}(d_H(q)-12)>=0`; `sum s_i=2x+y-50<=6`. A component of size k<=5 forces `s_Q>=k(5-k)+Y_S`. Hence L cannot have three or more components, and the only disconnected component-size splits are 1+9, 2+8, 3+7, 4+6, 5+5.
+
+The 2+8 split forces `s_Q=6,s_R=0,y+2z=8); its two-block component is a light edge, all 16 cross pairs have exactly five edges, and `x_T=8+z,y=8-2z,z<=4`. The 3+7 split similarly forces a light triangle, all 21 cross pairs have exactly five edges, and `x_T=3+z,y=8-2z,z<=4`. In both cases `d_R(r)+b_r=2` pointwise, so `Delta(H[R])<=2`.
+
+The 4+6 split has `y+2z<=10,z<=5` and at most two units for internal heavy pairs/cross multiplicity/shell incidence in the four-block component. The 5+5 split has `x>=25,y+z<=7,z>=1`, and at most three weighted extra units beyond the 25 mandatory cross-pair units.
+
+Added `verify_v47_m10_residual_path_cycle_types.py`; an independent in-session enumeration verified exactly 18 possible 7-vertex path/cycle types under `Delta(H[R])<=2, alpha(H[R])<=4, clique_cover(H[R])<=4, e(R)=3+z`, for z=0,...,4. Scope is residual graph-type enumeration only, not the full Q32 contradiction.
