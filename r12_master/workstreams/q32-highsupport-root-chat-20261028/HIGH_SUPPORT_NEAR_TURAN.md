@@ -136,8 +136,55 @@ For `e_C(H)=70`:
 
 Thus the 69/70 layers are not merely scalar edge counts: they have a finite placement normal form tied to the true KP gadget.
 
-## 6. Consequence for the next attack
+## 6. Source parameter forces core gap when x lies in H
+
+Assume now `x in H`. Let
+
+`b_s=|Ns cap O|`, `b_t=|Nt cap O|`.
+
+Both are positive because every one of the twelve K5 factors meets O.
+
+Let `G_H` be the number of the nine non-clique gadget edges with both endpoints in H.
+
+If `y in O`, then the y--A0 edges contribute no H-H edge, while among the x--(Ns\A0) and x--(Nt\{y}) edges at most `b_s-a` and `b_t-1` respectively can leave H. Hence
+
+`G_H >= (5-a)-(b_s-a) + 4-(b_t-1) = 10-a-b_s-b_t`.
+
+If `y in H`, the y--A0 family contributes at least `a-(b_s-1)` H-H edges, the x--(Ns\A0) family at least `(5-a)-(b_s-a)`, and the x--(Nt\{y}) family at least `4-b_t`; the sum is `9-b_s-b_t`, which is at least `10-a-b_s-b_t` because `a>=1`.
+
+Thus uniformly
+
+> **`G_H >= 10-a-b_s-b_t`.**
+
+### 6.1 Two-double placement
+
+The total outside multiplicity of the two special K5s satisfies `b_s+b_t<=4`. The twelve K5 interiors contribute 66 H-edges. Hence
+
+`e_C(H)>=66+(6-a)=72-a`,
+
+so
+
+> **two-double: `g_C>=max(0,3-a)`.**
+
+### 6.2 Triple placement
+
+Again `b_s+b_t<=4`, while the clique interiors contribute67 H-edges. Therefore
+
+`e_C(H)>=67+(6-a)=73-a`,
+
+and
+
+> **triple: `g_C>=4-a`.**
+
+These are source-correct parameter-to-gap bounds. They use neither degree-nine nor exceptional-point injectivity.
+
+In particular, low source parameter cannot coexist with a zero-gap exact color when x lies in H:
+
+- two-double a=1 forces `g>=2`, a=2 forces `g>=1`;
+- triple a=1,2,3 force `g>=3,2,1` respectively.
+
+## 7. Consequence for the next attack
 
 The missing v=47 contradiction, if true, must be multicolor. The single-color strict-reserve route is blocked by the explicit 69-edge source-correct placement above.
 
-The correct next object is the simultaneous packing of the eleven color layers in the common 796-edge pool `bar H`, with exact colors constrained by the placement normal forms above and all colors constrained by edge uniqueness.
+The correct next object is the simultaneous packing of the eleven color layers in the common 796-edge pool `bar H`, with exact colors constrained by the placement normal forms and parameter-to-gap bounds above and all colors constrained by edge uniqueness.
