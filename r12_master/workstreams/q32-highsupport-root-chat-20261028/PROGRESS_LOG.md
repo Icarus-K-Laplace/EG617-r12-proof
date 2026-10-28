@@ -107,3 +107,8 @@ Audit conclusions:
 - The old root promotion remains withdrawn because of the KP degree-nine retraction. Root state remains OPEN / NOT_CERTIFIED.
 
 Updated `ROOT_DEPENDENCY_DAG.md`, `RETRACTION_FIREWALL.md`, and `CANONICAL_STATE.md` to keep these contract boundaries explicit.
+### Pivot-block triangle consistency (same sprint)
+
+Added Lemma 8.1 to `V47_PIVOT_NEIGHBORHOOD_PACKING.md`: if two block-pairs incident to Q_i each have exactly four H-edges, their perfect matchings force the composed matching on the closing pair Q_j,Q_k. Otherwise Q_i minus one vertex together with the two unmatched endpoints would be an independent 5-set.
+
+Thus every all-light triangle in the block-label graph aligns into four disjoint H-triangles; a heavy closing pair must still contain the composed matching. Since x is the number of extra Q-Q edges, the light-pair graph has at least 5,11,17 edges for m=8,9,10. These counts do not force a triangle by themselves, so the lemma is recorded as a finite compatibility constraint, not a contradiction.
