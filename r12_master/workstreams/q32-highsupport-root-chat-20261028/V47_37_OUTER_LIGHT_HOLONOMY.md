@@ -61,7 +61,7 @@ The companion verifier enumerates all weighted heavy graphs on seven labels with
 - every six- or seven-cycle has a light chord;
 - the saturation condition for any weight-two diagonal pair of a four-cycle.
 
-The exact enumeration covers 22,054 weighted heavy graphs and checks 6,250,387 light cycles across lengths 3 through 7. The verifier returns `V47_37_LIGHT_GRAPH_CYCLE_DECOMPOSITION_OK`.
+The exact enumeration covers 22,054 weighted heavy graphs and checks 5,803,387 light cycles across lengths 3 through 7. The verifier returns `V47_37_LIGHT_GRAPH_CYCLE_DECOMPOSITION_OK`.
 
 This regression checks the finite heavy-graph combinatorics used in the cycle-decomposition proof. The matching-holonomy steps are proved analytically in Sections 2–4 and rely on the registered two-light composition theorem.
 
