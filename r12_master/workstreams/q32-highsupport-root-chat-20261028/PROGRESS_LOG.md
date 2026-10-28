@@ -302,3 +302,10 @@ Extended `V47_37_RESIDUAL_TRACK_TRANSVERSAL.md`: the complete track assigned to 
 Thus the track assignment partitions R into clique fibers of size at most three, with profiles `(3,3,1,0)`, `(3,2,2,0)`, `(3,2,1,1)`, or `(2,2,2,1)`. These match the possible profiles for the small-block map, but alignment of the two partitions remains open.
 
 The exact verifier now checks the 64 four-part profiles and 35 three-part profiles. Output: `V47_37_RESIDUAL_TRACK_TRANSVERSAL_OK`.
+
+
+### Switch duplicate-fiber budget and z=4 empty-fiber escape theorem
+
+A switch block duplicates one singleton common-track label s. Both vertices with common track s meet all of F_s, so the block must spend at least `n_s` residual-incidence slack: `n_s<=y_D). In 3+7 this rules out duplicate size-three fibers; at z=4, where every y_D=0, any switch must duplicate an empty fiber.
+
+Added `V47_Z4_EMPTY_FIBER_ESCAPE_CLASSIFICATION.md`. In the 3+7,z=4 fiber pattern (3,2,2,0), an all-aligned singleton-track completion is impossible. The empty-label source contributes at least 9 extra endpoints over the three small blocks, and none can land at the empty-track vertex in an aligned block. That leaves at most 12 small endpoints to fill the 21 surplus units of the seven empty-track vertices, so the outer-heavy incidence at track0 must be at least9. But total outer-heavy weight is x_T=7 and every extra edge is off the base matching, so track0 can receive at most7. Therefore any surviving completion must contain a switch duplicating the empty label or an aligned double-track pair involving empty label (only (3,0) or (2,0) are allowed). Still OPEN.
