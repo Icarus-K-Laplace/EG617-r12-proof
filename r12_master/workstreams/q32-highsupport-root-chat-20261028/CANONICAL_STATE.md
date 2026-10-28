@@ -118,7 +118,7 @@ The old root promotion based on Q32 degree-nine/injectivity is withdrawn.
 ## Immediate mathematical frontier
 
 1. v=47 multicolor near-Turan packing: combine the exact 37-unit gap ledger, exact Type-I placement normal forms, shell-edge ownership, and pointwise degree/excess-six constraints.
-2. Case-II v=45,m=9: combine the rigid two-point shell profile, `e_H(W)=0`, the 731-edge U-complement pool, and exact Type-I placement counts.
+2. Case-II v=45,m=9: combine the rigid two-point shell profile, the unresolved binary `e_H(W) in {0,1}`, the U-complement pool `e(bar(H[U]))=731-e_H(W)`, and exact Type-I placement counts.
 3. Case-II v=46,m=9: combine the rigid one-point shell profile, the 13-edge shell pool, and the local 130/131-color neighborhood structures.
 
 No root promotion before all of these plus sibling v44 are closed and replayed.
