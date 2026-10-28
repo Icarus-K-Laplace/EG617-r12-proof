@@ -190,3 +190,16 @@ For any four outer blocks whose four cycle pairs are light, the two diagonal pai
 If holonomy is a transposition, both diagonals have at least six edges. The verifier checked all 726 normalized transposition/diagonal-extra configurations and all eight forced 3-cycle configurations; it returned `V47_LIGHT_CYCLE_HOLONOMY_EXHAUSTIVE_OK`.
 
 In the 3+7 cell, a pair with six edges uses its full internal-heavy allowance of two at both endpoints, so those endpoints have no other internal-heavy pair. Hence any nontrivial light-cycle holonomy is supported on two disjoint high-weight diagonal pairs. This refines the previous “at most six pairs with six/seven edges” statement, but does not close the disconnected cell.
+
+
+## 12. Global light-holonomy rigidity in the 3+7 cell
+
+Added `V47_37_OUTER_LIGHT_HOLONOMY.md` and `verify_v47_37_light_graph_cycles.py`.
+
+In the 3+7 cell, every outer block has weighted internal-heavy degree at most two, so the outer light graph has minimum degree four on seven vertices and each outer pair has at most six H-edges. Triangle consistency is immediate from the two-light matching theorem. A four-light-cycle can have only identity/transposition holonomy; a transposition would force both diagonals to have weight two, saturating the four cycle vertices' heavy budgets. Any outside block is then light to all four, and the four light triangles through it force identity, a contradiction.
+
+For a five-cycle, either a light chord splits it into a triangle and four-cycle, or its five heavy chords saturate every cycle vertex and an outside block is a common light hub. Cycles of length six or seven must have a light chord because a chordless cycle would give a vertex at least three heavy neighbors. Induction shows every cycle of the outer light graph has identity holonomy.
+
+The light graph is connected, so all light matchings globally align after relabeling. Any heavy pair has at least three common light neighbors; matching composition therefore forces the aligned matching into every heavy pair as well. Hence the 28 outer vertices contain four aligned K7 tracks, with at most `x_T=3+z<=7` additional cross-track edges.
+
+The exact weighted-graph regression enumerated 22,054 heavy graphs with weighted degree at most two and total weight at most seven, checking 5,803,387 light cycles. It returned `V47_37_LIGHT_GRAPH_CYCLE_DECOMPOSITION_OK`. This tightens the 3+7 normal form but does not close that cell.
