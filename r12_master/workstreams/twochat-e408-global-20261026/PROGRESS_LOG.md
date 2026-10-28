@@ -13,156 +13,153 @@
 - Excluded m=10 exact-129 colors in the Q33 31-point/56-witness terminal.
 - Established h<=4 selected gadget witnesses.
 - Proved
-  \[
-  26(11-m)\le\delta+6h\le41.
-  \]
+  `26(11-m)<=delta+6h<=41`.
 - Remaining m=9 and m=8 require52 and78 U-edges respectively. Contradiction.
 - Registered Q33 terminal closed without proving the two remaining local P49 profiles individually.
 
 Key commit: `5328f7ac5302836f96f4a24cefdbef748dc9c9ed`.
 
-## 2026-10-27 — Q32 support and exact-count closure
+## 2026-10-27 — historical Q32 closure later retracted
 
-- Preserved the independent 285-edge Q32 ledger.
-- Proved all nonfull support sizes v=44,45,46 impossible by shell-neighbour capacity.
-- Derived the stronger residual exact-color-count contradiction:
-  - 130-edge color: degree-three vertices form at most one isolated K4, hence <=4 such vertices;
-  - 131-edge color: minimum degree>=3;
-  - 132-edge color: at most9 degree-two vertices.
-- Excluded m=10,9,8 exact colors respectively.
-- Registered E408 Q32 terminal closed.
+A former branch state claimed an exact-color-count closure of Q32 and then promoted E408/the fixed-r root. That route used a supposed universal color-degree9 exceptional vertex in the Kang--Pikhurko exact-129 Type-I cell.
 
-Key commits:
-- `7148b910f0597e7082eebde21cec8a87d0b2b79a` — all-m exact-count closure;
-- `d38f8614f3dc5b886f1473e27436cf2c426de80c` — arithmetic verifier.
+**2026-10-28 primary-source correction:** the source gadget has variable degrees `(4+a,9-a)`, `a=1,2,3,4`, so no degree9 vertex exists. Accordingly:
 
-## 2026-10-27 — E408 whole-layer promotion
+- the former Q32 exact-color-count closure is RETRACTED;
+- the whole-layer E408 promotion based on it is RETRACTED;
+- the corresponding fixed-r root promotion is RETRACTED;
+- Q33 and E407 closures that do not use degree9 remain available under their named inputs.
 
-Audit of the exact-count proof showed that q=32, the 285-edge core, support size, and seven outer blocks are not load-bearing. The proof uses only the genuine 61-point h13 E408 residual color ledger and extremal degree structure.
+Historical commits remain in the repository for audit but are not load-bearing.
 
-Therefore the same argument excludes every E408 residual directly, independent of maximum charge.
+## 2026-10-27 — E407 Q31/Q32 audit remains valid
 
-File: `E408_WHOLE_LAYER_EXACT_COUNT_CLOSURE.md`.
-Commit: `86ceae4670de8ad77285cc1dffc6529ba17c65cf`.
+### Q31
+Original V10/V11 packages were independently replayed; the common-K10 support theorem excludes the finite families under the registered inputs.
 
-## 2026-10-27 — root promotion audit begins
+### Q32
+The registered terminal has U of size29 and49 selected independent four-blocks in seven exact colors. The blocks own294 distinct non-target U-edges. At least one unselected non-target color D remains and needs
 
-- Re-audited `FRONTEND_BRIDGE_THEOREM.md` and the Line-A receipt.
-- Confirmed F7 is a genuine dichotomy: contextual R(4,49) or embedded T61.
-- Confirmed the historical `bridge_status=OPEN` was caused by the still-open T61 branch, not a failure of the 1,752-node recurrence.
-- Verified h12 and E397--E406 canonical closures.
-- Reduced remaining E407 h13 frontier to maximum Q31/Q32 via the V9 chain.
+`e_D(U)>=p_12(29)=22`.
 
-## 2026-10-27 — independent V10/V11 original-package replay
+But `e(bar(H[U]))<=310`, so `294+22=316>310`. This short closure is independent of the retracted degree9 premise.
 
-Materialized the original Library archives rather than relying on sibling summaries.
+## 2026-10-28 — Q32 reopened with source-correct 285-edge contract
 
-### V10
-- ZIP SHA256: `e83e2907d541b38304746e855af52b5e21b6500a35cb0fdb676a4f6a7601303a`;
-- fresh SHA256 manifest: all PASS;
-- verifier replay:12 labelled cuts,16 local-neighbourhood cases,14 row-budget cases,1 shell witness;
-- package includes the complete V8 flat-boundary exchange proof consumed by V10.
+Frozen live contract:
 
-### V11
-- ZIP SHA256: `27ecec92d43a27fb132c60aa7b374131a860547c236d8ed3d83d3cf0eab9f0a4`;
-- fresh SHA256 manifest: all PASS;
-- 684 kernel weights;
-- 349 outside-count states;
-- 259 necessary labelled shells;
-- 252 Family A +7 Family B;
-- certificate SHA256 `0baffc39ee481b27af53fda36a8fe40b8cd8c527103b5126060857c4eaacd09b`.
+- `|H|=47`, `e(H)=285`, `alpha(H)<=4`, `delta(H)>=12`;
+- total core degree excess6;
+- `q=32`, `22<=e(M)<=32`, `e(M)+G_A=32`;
+- exact-color count `m in {8,9,10}`;
+- at least ten disjoint core-four witnesses per exact color;
+- pairwise linearity across colors;
+- witness support `|U|>=44`.
 
-The common-K10 support-capacity analytic theorem excludes both families. E407 maximum Q31 is therefore `PROVED_CONDITIONAL + COMPUTATION_CERTIFIED` under the named core/extremal inputs.
+Corrected non-full-support multiplicity gives `n_w>=m-6`. In Case I, matching capacity strengthens this to `n_w>=m-3` and closes v=44,45.
 
-Audit file commit: `40aecea054a7a2d725be35ddd13572f148ee6c0a`.
+## 2026-10-28 — source-correct v=44,m=9 shell floor
 
-## 2026-10-27 — E407 Q32 decisive crosscut
+For W of size3 and m=9, all nine special exact vertices lie in W, three labels per W-point, and at most one exact color is triple-outside.
 
-The active E407 sibling had already established a common V12 completion object for all five shell templates:
+Using the actual Type-I gadget:
 
-- H:47 vertices,284 edges;
-- U:29 vertices;
-- 49 selected independent four-set blocks;
-- seven selected exact colors, seven blocks per color;
-- pairwise block linearity;
-- `e(overline(H[U]))=294+delta`, `delta<=16`.
+- t=0 all-double gives `e(M)>=25`, `G_A<=7`;
+- t=1 gives `e(M)>=28`, `G_A<=4`, plus at least two core-excess units on W.
 
-Its `SUPPORT_BLOCK_ANCHOR_IDENTITY.md` proves that each selected block is genuinely the core four-set of a monochromatic selected-color K5.
+Commit at intake HEAD: `271024a8db3cd41817cdad6ec2c8b92815be2dc9`.
 
-Therefore the 49 selected blocks own exactly
+## 2026-10-28 — new all-color U-reserve theorem
 
-\[
-49\cdot6=294
-\]
+Added `Q32_U_COLOR_RESERVE.md`.
 
-distinct non-target U-edges.
+For an exact color on U containing ten disjoint witness K4s, with `alpha<=12`, `omega<=4`:
 
-Four non-target colors remain outside the selected seven. Every one satisfies alpha(D[U])<=12, so by Turan
+- v=44: `e_C(U)>=62`, stronger than ordinary `p_12(44)=60`;
+- v=45: `e_C(U)>=64`, stronger than ordinary63;
+- v=46: at least66;
+- v=47: at least69.
 
-\[
-e_D(U)\ge p_{12}(29)=22.
-\]
+At v=44 the 61-edge layer is excluded by splitting the complement into non-12-partite (Brouwer) and 12-partite cases; in the latter, part-size/cross-edge counting shows at most nine disjoint K4s. At v=45, Turan equality contains only nine K4s.
 
-Thus the four colors require at least88 additional U-edges, while the entire complement graph on U has at most
+If h exact colors provide at least eleven witnesses:
 
-\[
-294+16=310
-\]
+- v=44: `e(bar(H[U]))>=660+2m+4h`;
+- v=45: `e(bar(H[U]))>=693+m+2h`.
 
-edges. Any completion would require
+This is a true multicolor reserve coupling, not an UNSAT certificate.
 
-\[
-294+88=382>310.
-\]
+Commit: `cbfa7eebcbb4300b441a8e827e50a033cd598d3f`.
 
-Contradiction with72-edge gap.
+## 2026-10-28 — stale Q32 closure and firewall repaired
 
-This closes all five V12 templates simultaneously and bypasses the low-delta/Didin/template-row casework.
+- `Q32_CORE285_TERMINAL.md` was rewritten from the stale degree9-based CLOSED claim to the current OPEN source-correct 285-edge terminal.
+- `CONTRACT_FIREWALL.md` was corrected so the valid KP degree pairs and Q32/Q33 separation are explicit.
 
-Files/commits:
-- `E407_FOUR_COLOR_U_RESERVE_CLOSURE.md` — `2461dd9b6eca7357210c0231b61817e5b8047f25`;
-- `verify_e407_four_color_u_reserve.py` — `60fce3678e6318d7e00f6fc34457461d70381957`.
+Commits:
+- `56d7ea9979b35c002a294aafb5bcf88d397d59be`;
+- `4dfbaa35a0f4ce9668ba959b9c97b126df309df7`.
 
-## 2026-10-27 — independent V12 replay
+## 2026-10-28 — 131-edge minimum degree three
 
-Original `T61_H13_V12.zip`:
+Added `Q32_131_MINDEG3_V46_M9_CLOSURE.md`.
 
-- SHA256 `0c3c69a7baf94a816eff29f3a079b97ac7750d0e8b8fd2773330469c4b8c5e36`;
-- fresh manifest: all PASS;
-- 8,677 kernel weights;
--17,957 count states;
--1,984 necessary shells;
--554 finite-screen survivors;
--all 554 mapped to the five V12 templates;
--certificate SHA256 `cab4e67bc501fe51c06f8fc008443b870aebf8794528af1a3045e83be7d6db30`.
+For a 61-point non-target color C with
 
-The finite V12 package did not itself close the 554 survivors; the later common-support label bridge plus the new 382>310 contradiction does.
+`e(C)=131`, `alpha(C)<=12`, `omega(C)<=5`,
 
-## 2026-10-27 — root closure composition
+proved
 
-`R12_ROOT_CLOSURE_PROMOTION_AUDIT.md` composes:
+`delta(C)>=3`.
 
-1. Line-A contextual R(4,49)/T61 dichotomy;
-2. contextual R(4,49) impossibility;
-3. h12 closure;
-4. E397--E406 closures;
-5. whole-layer E408 contradiction;
-6. E407 maximum-Q31 V10/V11 exclusion;
-7. E407 maximum-Q32 V12 exhaustiveness + four-color U-reserve contradiction.
+If a degree-two vertex existed, its 58-point non-neighborhood would have `alpha<=11`, `omega<=5`; Brouwer forces at least129 internal edges. Together with the two incident edges this exhausts all131 edges and forces both neighbors to have degree one. A second non-neighborhood argument at order59 gives at least135 total edges from a degree-one vertex, contradiction.
 
-No T61 graph terminal remains.
+Therefore the correct m=9 nonexact pointwise floor is
 
-Root audit commit: `69610a7bba2eed0aa03fae37d248e1bfea11b85f`.
+`L_9=3+3=6`,
 
-Canonical promotion commit: `f23dc18aa6d07e4114d1fe2f5926e1f8d67e1387`.
-Dependency audit promotion commit: `bd9377ba9dc3cf3c6f8fdb52b4d0c508241c8495`.
+not5.
+
+### Consequence: Case I / v=46 / m=9 CLOSED
+
+At the unique W-point, Case I gives `n_w>=6`. Hence the target contributes at least13, the nine exact colors at least `36+6=42`, and the 130/131 pair at least6, for a total at least61>60.
+
+Thus this formerly live rigid equality terminal is empty.
+
+Commit: `cfda84c31c5155676b9cd352f314e90075be6f84`.
+
+## 2026-10-28 — canonical frontier synchronized
+
+`CANONICAL_STATE.md` now records:
+
+### Case I
+- v=44 closed;
+- v=45 closed;
+- v=46,m=10 closed;
+- v=46,m=9 **closed** by the new 131-edge theorem;
+- v=46,m=8 open (`n_w=5 or6`);
+- v=47 open.
+
+### Case II
+- v=44,m=10 closed;
+- v=44,m=9 open, but with three special labels per W-point and t=0/1 shell floors;
+- v=44,m=8 open;
+- v=45,46,47 open.
+
+For m=9, every W-point now has only two total degree-slack units over the baseline `13+39+6=58`. If its three special Type-I source parameters are `a_1,a_2,a_3`, then
+
+`sum(4-a_i)<=2`, hence `a_1+a_2+a_3>=10`.
+
+The only sorted parameter triples are
+
+`(4,4,4)`, `(4,4,3)`, `(4,4,2)`, `(4,3,3)`.
+
+Canonical commit: `b2d06bb90e532556ba203f559d85d8fcfb257fd4`.
 
 ## Current status
 
-\[
-\boxed{\text{EG617 fixed }r=12:\ \textbf{PROVED_CONDITIONAL + COMPUTATION_CERTIFIED}}
-\]
+`E408 Q33`: closed under its registered 284-edge global reserve contract.
 
-No OPEN graph-theoretic terminal is currently identified in the audited chain.
+`E408 Q32`: **OPEN**, but the Case-I frontier has been reduced to `v=46,m=8` and `v=47`; the main low-support Case-II frontier is `v=44,m=9` / `m=8` plus larger supports.
 
-The remaining work is certification and proof engineering, not a known missing case: clean-environment certificate replays, external theorem statement freezing, adversarial review of analytic screen interfaces, canonical merge, and preferably formalization.
+`EG617(r=12)`: **OPEN / NOT_CERTIFIED** until the source-correct Q32 terminal and every dependency in the final chosen DAG are closed/audited.
