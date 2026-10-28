@@ -336,3 +336,8 @@ Added `V47_Z01_TRACK_ALIGNMENT.md`. The per-block mismatch identity is `y_D >= e
 - With F=G and all fibers nonempty, a switch is impossible: its two-extra-edge endpoint q_j must meet both F_s and F_j, giving d_R(q_j)>=2 while e_Q(q_j)>=2 forces d_R(q_j)<=1.
 
 Therefore z=0,1 reduce to all-aligned singleton outer blocks. The aligned completions remain OPEN; no global Q32 closure is claimed.
+
+
+### Restore missing z=4 arithmetic replay
+
+The z=4 empty-fiber classification referenced a verifier that was absent from the branch directory. Added `verify_v47_z4_empty_fiber_escape.py`. The 1,000 possible three-block slack-vector profiles were checked in-session: `min E_0=9), `max(21-E_0)=12), so the seven q_0 vertices require 21 extra incidences, at least 9 of which would have to come from outer-heavy edges, exceeding `x_T=7). Result `V47_Z4_EMPTY_FIBER_ESCAPE_ARITHMETIC_OK`. Scope remains arithmetic-only.
