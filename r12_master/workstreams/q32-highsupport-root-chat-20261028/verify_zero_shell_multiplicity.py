@@ -1,35 +1,42 @@
 #!/usr/bin/env python3
-"""Arithmetic-only verifier for the source-correct zero-shell multiplicity bound.
+"""Arithmetic-only verifier for the source-correct zero-shell bound.
 
-This checks the algebraic implications of
-    n_w >= 2*m - 14
-and the pointwise special-surplus budgets r_8=3, r_9=4, r_10=5.
-It does not verify the graph-theoretic zero-shell lemma itself.
+Checks n_w >= 2*m - 14 + t_w, pointwise special-surplus budgets, and the
+m=9 shell-ownership saturation. It does not verify the graph-theoretic
+zero-shell lemma or any upstream terminal contract.
 """
 
 BUDGET = {8: 3, 9: 4, 10: 5}
 MIN_SPECIAL_SURPLUS = {8: 2, 9: 1, 10: 1}
 
 for m in (8, 9, 10):
-    lower = 2 * m - 14
-    upper = BUDGET[m]
-    assert lower == {8: 2, 9: 4, 10: 6}[m]
-    assert lower <= upper if m == 9 else True
+    for t_w in (0, 1):
+        lower = 2 * m - 14 + t_w
+        upper = BUDGET[m]
+        if m == 8:
+            assert lower >= 2
+            assert lower * MIN_SPECIAL_SURPLUS[m] > upper
+        elif m == 9:
+            assert lower <= upper if t_w == 0 else lower > upper
+        else:
+            assert lower > upper
+    print(
+        f"m={m}: base multiplicity lower bound={2*m-14}, "
+        f"pointwise budget={BUDGET[m]}"
+    )
 
-    if m == 8:
-        # Every exact Type-I parameter is a in {2,3}, so each special
-        # incidence costs at least 2 against a total budget of 3.
-        assert lower >= 2
-        assert lower * MIN_SPECIAL_SURPLUS[m] > upper
-        print("m=8: n_w>=2; special cost >=4 > budget 3 -> CLOSED")
-    elif m == 9:
-        assert lower == upper == 4
-        # Four positive integer surpluses fit budget 4 only if all equal 1.
-        assert 4 * MIN_SPECIAL_SURPLUS[m] == upper
-        print("m=9: n_w=4; four special surpluses all equal 1 -> a=4")
-    else:
-        assert lower > upper
-        print("m=10: n_w>=6 > budget 5 -> CLOSED for every nonempty W")
-
+# In m=9, n_w=4 is forced. If t_w=1, the five non-special exact colors
+# need 10 shell-A edges, three special colors need at least 3, and the
+# target needs 1: total 14 > the 13 shell-A edges. Thus t_w=0.
+m, n_w = 9, 4
+assert n_w - 1 == 3
+non_special_shell_min = 2 * (m - n_w)
+special_shell_min = n_w - 1
+assert non_special_shell_min == 10
+assert special_shell_min == 3
+assert non_special_shell_min + special_shell_min == 13
+assert non_special_shell_min + special_shell_min + 1 > 13
+print("m=9: target shell degree=0; shell ownership is exactly 10 + 3 = 13")
+print("m=9: five non-special exact colors use 2 shell edges each; special shell degrees are (0,1,1,1)")
 print("ZERO_SHELL_MULTIPLICITY_ARITHMETIC_OK")
 print("Scope: arithmetic only; graph lemma and upstream contracts remain proof dependencies.")
