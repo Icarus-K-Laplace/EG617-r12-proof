@@ -61,10 +61,13 @@ So each W-point forces at least four gap units into its four special exact color
 `sum_{C exact} g_C >= 8`.
 This is a genuine global two-point bound, not two charges to the same exact colors.
 
-At both W-points the 130-edge color has degree4 and all its neighbors in H. The source-correct 130-color W-pair rigidity lemma therefore forces (w_1w_2) to have that 130-edge color. In particular,
-`e_H(W)=0`.
-Since each W-point carries one core-excess unit, (E_W=2) and (E_U=4). The exact core identity gives
-`e(bar(H[U])) = 735 - E_U - e_H(W) = 731`.
+At both W-points the 130-edge color has degree4 and all its neighbors lie in H. This is **not** enough to force the W-pair edge to have that color: the audited 130-edge theorem proves the minimum-degree-four floor, while the isolated-K4 equality statement concerns degree-three vertices. No source-correct degree-four W-pair rigidity theorem was found in the inspected files. Therefore keep
+`e_H(W) in {0,1}`
+as an unresolved binary variable.
+
+Since each W-point carries one core-excess unit, `E_W=2` and `E_U=4`. The exact core identity is
+`e(bar(H[U])) = 735 - E_U - e_H(W) = 731 - e_H(W)`,
+so the two possibilities are 731 (if the W-pair is absent) or 730 (if it is present).
 
 These are necessary conditions, not yet a contradiction against the 285-edge core.
 
