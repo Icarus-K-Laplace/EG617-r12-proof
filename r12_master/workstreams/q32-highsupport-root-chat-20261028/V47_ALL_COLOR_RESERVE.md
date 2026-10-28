@@ -111,7 +111,7 @@ For an exact Type-I color, a residual vertex has degree exactly four iff it lies
 
 Let `q_z` be the number of exact colors for which a residual point z lies in the 11-point gadget. The latest nonexact pointwise floors are
 
-`L_8=12, L_9=7, L_10=2`.
+`L_8=12, L_9=7, L_10=3` (see `Q32_132_MINDEG3.md`).
 
 At every residual point z,
 
@@ -119,11 +119,11 @@ At every residual point z,
 
 Therefore
 
-> **`q_z<=3` for m=8; `q_z<=4` for m=9; `q_z<=5` for m=10.**
+> **`q_z<=3` for m=8; `q_z<=4` for m=9; `q_z<=4` for m=10.**
 
 This counts every gadget membership, not merely the KP special point x.
 
-Equivalently, every residual point lies in an isolated K5 component of at least five exact colors, for all three values m=8,9,10.
+Equivalently, every residual point lies in an isolated K5 component of at least five exact colors; for m=9 and the updated m=10 floor, it lies in an isolated K5 component of at least six exact colors.
 
 ## 6. Strong m=8 weighted-surplus ledger
 
@@ -169,3 +169,7 @@ Writing x,y,z for the slack in e(Q), e(Q,R), e(R), respectively, the verified in
 `verify_v47_pivot_packing.py` was executed locally and returned `V47_PIVOT_PACKING_ARITHMETIC_OK`. It finds 79, 61, and 44 scalar slack states for m=8,9,10. This explicitly confirms that the scalar relaxation is feasible; it is not a graph realization and not an UNSAT certificate.
 
 This is the current strongest common-core reduction added in this workstream. The remaining task is to combine the pivot blocks with exact-color 69/70 placement normal forms and pointwise/shell constraints.
+
+## 9. Updated m=10 gadget quota
+
+The new theorem `Q32_132_MINDEG3.md` proves that the unique132-edge nonexact color has minimum degree at least3. Thus `L_10=3), and the pointwise gadget quota sharpens to `q_z<=4) at every residual point, so each point lies in an isolated K5 component of at least six of the ten exact colors. The 37-unit gap identity and the full-support v47 frontier are unchanged.
