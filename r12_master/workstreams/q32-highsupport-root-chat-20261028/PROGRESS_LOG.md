@@ -224,3 +224,8 @@ The exact verifier enumerated all 25,636 A-B graphs with 4..7 edges and all 792 
 Application to the disconnected m=10 2+8 / 3+7 cells: every outer pair has at most7 edges; the outer light graph has minimum degree4. Every nonadjacent pair has at least two common light neighbors, so every length-two light path forces its composed matching into the endpoint pair. A five-edge pair has a unique matching, while a six-/seven-edge pair has at most two perfect matchings. Therefore any matching-holonomy disagreement must be charged to one of at most six pairs with e>=6 (since each consumes at least two units of x_T<=12).
 
 This narrows the matching system but does not close either disconnected cell. Full support remains OPEN / NOT_CERTIFIED.
+
+
+### Matching-holonomy scope correction (2026-10-28)
+
+The correct light-graph degree bounds are: 2+8 has eight outer blocks and minimum light degree at least 3; 3+7 has seven outer blocks and minimum light degree at least 4. Therefore the statement that every nonadjacent pair has a common light neighbor applies only to 3+7. In 2+8, the matching-composition theorem is used only on length-two light paths that actually exist. The local theorem and its finite verification remain valid; only this application scope is corrected.
