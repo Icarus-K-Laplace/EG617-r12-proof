@@ -10,7 +10,7 @@ Write scope: `r12_master/workstreams/q32-highsupport-root-chat-20261028/`
 
 Unique currently identified live root graph gate: **E408 / h13 / Qmax=32 / e(H)=285 / excess6**.
 
-This workstream does not touch sibling-owned `Case II / v=44 / m=8,9`.
+This workstream does not modify the sibling branch `workstream/r12-q32-caseII-v44-final-20261028`. Its latest canonical/dependency audit closes the full `|U|=44` support layer for m=8,9,10; this is a read-only import pending final root consolidation.
 
 ## Live Q32 contract
 
@@ -111,9 +111,9 @@ Current source-safe chain:
 - h12: closed;
 - E397--E406: closed;
 - E407 Q31: replay-backed conditional closure;
-- E407 Q32: V12 coverage replay-backed, then closed by the later 29-point U-reserve theorem;
+- E407 Q32: the 29-point U-reserve contradiction is valid under the frozen V12 support contract; parent-level use remains conditional on V12 exhaustiveness and branch-state reconciliation;
 - E408 Q31: replay-backed conditional closure;
-- E408 Q33: conditional global 31-point nonexact-U-reserve closure;
+- E408 Q33: the 31-point/56-witness nonexact-U-reserve contradiction is valid under that contract; exhaustive support-lifting source was not located in this pass;
 - E408 Q32: OPEN.
 
 The old root promotion based on Q32 degree-nine/injectivity is withdrawn.
@@ -125,3 +125,20 @@ The old root promotion based on Q32 degree-nine/injectivity is withdrawn.
 3. Case-II v=46,m=9,10: combine the one W-point high-a profiles with the 13 shell-edge pool and core excess.
 
 No root promotion before all of these plus sibling v44 are closed and replayed.
+
+## New pivot-neighborhood packing result (2026-10-28)
+
+`V47_PIVOT_NEIGHBORHOOD_PACKING.md` proves that each exact color has a pivot-neighborhood K4, and these m K4s are vertex-disjoint across exact colors. With Q their union and R=H\\Q:
+
+- e_H(Q) >= 4*C(m,2);
+- e_H(Q,R) >= m|R|;
+- e_H(R) >= p_4(|R|);
+- the three floors sum to 253 for m=8,9,10;
+- if x,y,z are the respective edge slacks, x+y+z=32;
+- the six-unit core-excess ledger gives 2x+y>=5m, y+2z>=D_m with D=(18,13,8), and x>=8,13,18 for m=8,9,10.
+
+`verify_v47_pivot_packing.py` returned `V47_PIVOT_PACKING_ARITHMETIC_OK` and found 79,61,44 feasible scalar slack states. Thus this is a structural reduction, not a scalar UNSAT certificate.
+
+## Root-audit caveat
+
+The root DAG now distinguishes local U-reserve contradictions from parent-level exhaustiveness. E407 Q32 remains conditional on the frozen V12 29-point contract; Q33 remains conditional on the 31-point/56-witness support contract until the exact upstream exhaustive support-lifting theorem is linked. Neither caveat changes the headline: EG617(r=12) remains OPEN / NOT_CERTIFIED.
