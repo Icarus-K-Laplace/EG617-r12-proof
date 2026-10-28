@@ -251,3 +251,14 @@ Added `V47_TWO_BLOCK_TRANSVERSAL_BLOCKER.md`. In the disconnected m=10 2+8 cell,
 - Each outer block has `sum_q k(q)=2); each small block has endpoint loads `e_i(h)=3-n_h+u_i(h)), `sum_h u_i(h)=3), so `e_i(h)<=6-n_h). Synchronized switch blocks with extra endpoint label h are bounded in number by `6-n_h).
 
 Also strengthened the 3+7 double-track blocker in `V47_ZERO_SLACK_MAP_ALIGNMENT_AND_TRANSVERSAL_BLOCKER.md`: its vertex has no R-neighbors, so the two track fibers must be completely joined in H[R], forcing `n_h+n_j<=3). These are local structural constraints only. Full-support v47,m=8,9,10 remains OPEN / NOT_CERTIFIED.
+
+
+## New 3+7 residual-track transversal theorem (2026-10-28)
+
+Added `V47_37_RESIDUAL_TRACK_TRANSVERSAL.md` and `verify_v47_37_residual_track_transversal.py`.
+
+The preceding global holonomy theorem gives four aligned K7 tracks on the 28 outer vertices, with at most seven cross-track edges and maximum cross-track degree at most two. For each residual vertex r, `d_R(r)+b_r=2), so it has at most nine neighbors among the 28 outer vertices and at least 19 nonneighbors. If every track had a nonneighbor, the four nonneighbor-part sizes would be in `{1,...,7}` and sum to at least19.
+
+A strict union bound proves an independent transversal exists for any four such parts with at most seven cross-part edges and maximum degree two. The exact integer verifier checks all 64 sorted part-size profiles and all relaxed edge-count allocations under total-edge and part-degree caps. The worst profile is `(7,7,4,1)`: 196 transversals, at most133 forbidden, margin63. It returned `V47_37_RESIDUAL_TRACK_TRANSVERSAL_OK`.
+
+Therefore every residual vertex is adjacent to all seven vertices of at least one outer K7 track, extending that track to a K8. At least five of the seven outer-block neighbors lie in that same track as unique neighbors; if `d_R(r)=2`, all seven do. This is a stronger necessary condition, not a contradiction. Full-support m=10 remains OPEN, as do m=8 and m=9.
