@@ -361,3 +361,21 @@ The older proof in `V44_M8_CLOSURE.md` remains an independent conditional cross-
 `verify_v44_direct_closure.py` returned `V44_DIRECT_CLOSURE_ARITHMETIC_OK`. It checks finite shell arithmetic, allowed special-parameter profiles, and the local integer edge budget. It does not verify the analytic no-core-only lemma, the source Type-I theorem, corrected multiplicity, or the published Kang–Pikhurko theorem.
 
 No root-level theorem promotion follows: full-support Q32 / `|U|=47` remains open, so EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+## 10. Explicit 130-edge minimum-degree chain (2026-10-28)
+
+New file: `Q32_130_MINDEG3.md`.
+
+This fills the previously referenced but nonlocal `s=1 pointwise theorem` dependency in the 130-edge local chain.
+
+For a 130-edge color D with `alpha(D)<=12`, `omega(D)<=5`, a hypothesized degree d in {0,1,2} has a non-neighborhood N of size 60,59,58. Kang–Pikhurko Theorem 1 at these sizes gives induced-N edge floors 139,134,129 respectively. These already exceed130 for d=0,1, and the d=2 case gives at least129 edges in N plus the two edges incident with x, hence at least131 edges. Therefore `delta(D)>=3).
+
+The local dependency chain is now explicit and source-linked:
+
+1. `Q32_130_MINDEG3.md`: Theorem 1 at (60,11), (59,11), (58,11).
+2. `Q32_130_MINDEG4_AND_CASEI_M8_CLOSURE.md` in the named base workstream: Theorems 1 and 4 at (57,11), using the isolated-K4 equality forced by a hypothetical degree-three vertex.
+3. `Q32_130_NO_CORE_ONLY_DEG4.md`: Theorem 1 at (56,11) plus the local `K4-e` budget.
+4. `V44_M8_DIRECT_NO_CORE_ONLY_CLOSURE.md`: pointwise shell normal form forces at least two prohibited incidences at every W-point.
+
+The arithmetic regression was extended to cover the 58/59/60-point floors and re-executed successfully. This does not mechanize the analytic arguments or replace checking the cited primary Kang–Pikhurko theorem.
