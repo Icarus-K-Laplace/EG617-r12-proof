@@ -300,3 +300,8 @@ The 3+7 local blocker now adds the exact residual edge floor for any double-trac
 ### 14a. 3+7 track fibers are cliques
 
 The residual-track theorem is strengthened: the unique track complete to r defines a fiber, and two nonadjacent residual vertices cannot share a fiber. Each of the other three tracks would provide at least three vertices nonadjacent to both; with at most seven cross-track edges, the three-part union bound guarantees an independent transversal. Hence the track assignment partitions R into at most four cliques, with size profile one of `(3,3,1,0)`, `(3,2,2,0)`, `(3,2,1,1)`, `(2,2,2,1)`. This matches the possible small-block map fiber profiles but does not yet prove the two partitions coincide.
+
+
+### 8.5 3+7 z=4 empty-fiber escape
+
+The exact source-correct lemma `V47_Z4_EMPTY_FIBER_ESCAPE_CLASSIFICATION.md` excludes the all-aligned singleton-track cell for fiber profile (3,2,2,0). A remaining local completion must contain a switch whose duplicated label is empty, or a double-track block involving the empty fiber. The Q32 full-support graph terminal remains OPEN; no root promotion.
