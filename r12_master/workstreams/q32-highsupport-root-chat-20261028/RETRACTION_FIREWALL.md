@@ -108,3 +108,15 @@ The 2+8 two-block transversal blocker and the 3+7 double-track fiber cap use onl
 - the endpoint-load identity for small blocks.
 
 They do not invoke the retracted universal KP degree-nine statement, exceptional-point injectivity, the E407 excess-four identity, or the Q33 284-edge identity. The singleton/triangle exception in the 2+8 double-track case is explicitly preserved. Root status remains OPEN / NOT_CERTIFIED.
+
+
+## 10. z=0,1 track-alignment proof firewall (2026-10-28)
+
+The new `V47_Z01_TRACK_ALIGNMENT.md` uses only:
+- the registered `alpha(H[R])=4) residual-type fact for z=0,1;
+- the zero-slack small-triangle map fibers;
+- globally aligned outer K7 tracks and their clique fibers;
+- the exact residual incidence ledger `sum_{q in D} d_R(q)=7+y_D);
+- the source-correct 4,5,5 switch normal form and pointwise degree identity.
+
+The mismatch inequality is local and source-correct. The switch contradiction is applied only after proving all four fibers on both partitions are nonempty and equal as unlabelled partitions. No retracted KP degree-nine claim, exceptional-point injectivity, E407 excess-four identity, or Q33 284-edge identity is used. Root status remains OPEN / NOT_CERTIFIED.
