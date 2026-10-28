@@ -267,3 +267,12 @@ The correct light-graph degree bounds are: 2+8 has eight outer blocks and minimu
 Added `V47_LIGHT_CYCLE_HOLONOMY.md`. The two-light composition theorem forces both diagonals of a light 4-cycle to contain the two path matchings. The seven-edge cap rules out derangements; a 3-cycle is ruled out by an explicit independent 5-set. Thus only identity or transposition holonomy survives, and transposition holonomy requires both diagonals to be 6/7-edge pairs.
 
 The normalized exact verifier checked 726 transposition cases and all eight 3-cycle cases, returning `V47_LIGHT_CYCLE_HOLONOMY_EXHAUSTIVE_OK`. This is a local reduction only. The m=10 disconnected cells and all full-support Q32 rows remain OPEN.
+
+
+## 13. m=10 disconnected 3+7: globally aligned outer tracks
+
+New proof: `V47_37_OUTER_LIGHT_HOLONOMY.md`.
+
+Under the 3+7 cell contract, the outer light graph has seven vertices, minimum degree four, weighted heavy degree at most two, and total heavy weight at most seven. Triangle consistency and the four-light-cycle theorem force identity holonomy on every cycle: chordless five-cycles have a common light hub, and six-/seven-cycles must have chords. Thus light-edge matchings globally align. Since any heavy pair has at least three common light neighbors, the same matching is contained in every pair graph.
+
+This yields four aligned K7 tracks on the 28 outer-block vertices and at most seven additional cross-track edges. The finite weighted-graph verifier covers 22,054 outer heavy graphs and 5,803,387 light cycles. This is a local structural reduction only; it does not close the m=10 3+7 cell or any full-support Q32 row.
