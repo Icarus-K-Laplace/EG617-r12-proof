@@ -290,3 +290,8 @@ Added `V47_37_RESIDUAL_TRACK_TRANSVERSAL.md`.
 After global alignment, the seven outer blocks form four K7 tracks with at most seven cross-track edges and cross-track maximum degree two. For any residual vertex r, `d_R(r)+b_r=2), so at least 19 of the 28 outer vertices are nonneighbors of r. If r missed at least one vertex on every track, the four nonneighbor part sizes would sum to at least19. A strict union-bound theorem, exhaustively checked over all 64 part-size profiles and all relaxed six-variable edge-count allocations, guarantees an independent transversal avoiding r. That would give an independent 5-set, so r must be complete to one entire K7 track.
 
 The verifier returns `V47_37_RESIDUAL_TRACK_TRANSVERSAL_OK` with minimum count margin63. This is a conditional structural consequence of the 3+7 cell; it does not close that cell or promote the root theorem.
+
+
+### 8.4 3+7 double-track refinement
+
+The 3+7 local blocker now adds the exact residual edge floor for any double-track vertex. In particular, the z=0,1 residual cells have only singleton-track vertices. The arithmetic verifier is replayed and passes. This is a local branch reduction only; full-support v47,m=10 remains OPEN and the root theorem stays OPEN / NOT_CERTIFIED.
