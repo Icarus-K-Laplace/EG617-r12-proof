@@ -241,3 +241,21 @@ The exact local verifier checked 726 transposition cases (six transpositions tim
 `V47_LIGHT_CYCLE_HOLONOMY_EXHAUSTIVE_OK`.
 
 Application: in 3+7, a six-edge pair has weight k=2 and uses the full internal-heavy budget at both endpoints, so no other heavy pair can touch either endpoint. Any nontrivial four-cycle holonomy is supported on two disjoint high-weight diagonals. This tightens the matching-holonomy ledger but does not close the m=10 2+8/3+7 cells.
+
+
+### New m=10 3+7 global light-holonomy theorem
+
+Added `V47_37_OUTER_LIGHT_HOLONOMY.md` and `verify_v47_37_light_graph_cycles.py`.
+
+In the 3+7 cell, the outer light graph L has seven vertices, minimum degree four, weighted heavy degree at most two per vertex, and total heavy weight `x_T=3+z<=7`. The new proof upgrades local cycle constraints to global matching alignment:
+- triangles have identity holonomy by two-light composition;
+- a transposition four-cycle would force both diagonals to weight two, saturating all four vertices and creating an outside common light hub, which forces identity;
+- a chordless five-cycle similarly has an outside common light hub;
+- every six-/seven-cycle has a light chord and reduces to shorter cycles.
+
+All cycles therefore have identity holonomy. Since L is connected, its light-edge matchings can be globally relabeled as identity. Every heavy pair has at least three common light neighbors, so matching composition forces the same aligned matching into every heavy pair. The 28 outer vertices contain four aligned K7 tracks; all other Q-Q edges within T are cross-track edges, with total at most seven.
+
+The exact verifier enumerated 22,054 weighted heavy graphs and checked 5,803,387 light cycles. Output:
+`V47_37_LIGHT_GRAPH_CYCLE_DECOMPOSITION_OK`.
+
+This is a genuine structural advance, not a global contradiction. It leaves m=10's 3+7 cell open, as well as m=10's other cells and full-support m=8,9.
