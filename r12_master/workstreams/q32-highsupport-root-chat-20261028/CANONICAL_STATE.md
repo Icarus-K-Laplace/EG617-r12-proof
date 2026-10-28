@@ -275,3 +275,12 @@ and since `e(H[R])=3+z), the four fiber-size patterns give:
 - (2,2,2,1): (2,1), requiring z>=2.
 
 Hence **z<=1 rules out all double-track vertices** in the 3+7 cell. Added `verify_v47_3plus7_double_track_edge_floor.py`; executed arithmetic regression returned `V47_3PLUS7_DOUBLE_TRACK_EDGE_FLOOR_OK`. This is a necessary local condition only; 3+7 remains OPEN.
+
+
+### Further 3+7 residual partition rigidity
+
+The same file now proves that the complete outer track assigned to each residual vertex is unique and that any two residual vertices assigned to the same track must be adjacent. If two such vertices were nonadjacent, each of the other three tracks would contain at least three vertices nonadjacent to both; a three-part union bound (at most seven cross-track edges, each blocking at most the largest part size, while the transversal count is at least nine times that size) yields an independent transversal. Adding the two residual vertices would create an independent 5-set.
+
+Thus the track assignment partitions R into four clique fibers of size at most three. The only sorted profiles are `(3,3,1,0)`, `(3,2,2,0)`, `(3,2,1,1)`, and `(2,2,2,1)`, matching the four possible profiles of the common small-block map. The verifier now checks all 35 sorted three-part profiles in addition to the 64 four-part profiles and retains `V47_37_RESIDUAL_TRACK_TRANSVERSAL_OK`.
+
+The two clique partitions have not yet been proved identical; the 3+7 cell remains OPEN.
