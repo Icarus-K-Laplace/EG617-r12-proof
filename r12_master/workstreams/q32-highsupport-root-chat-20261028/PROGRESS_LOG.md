@@ -82,3 +82,28 @@ This workstream's remaining high-support frontier:
 - Case-II v=46,m=9,10.
 
 Sibling workstream retains sole ownership of Case-II v=44,m=8,9.
+
+### New pivot-neighborhood packing theorem (this turn)
+
+Added `V47_PIVOT_NEIGHBORHOOD_PACKING.md`.
+
+Proof spine:
+- every exact color C has a C-colored K4 `Q_C` contained in `N_C(p) cap H`, using the source-correct Type-I factorization;
+- the sets `Q_C` are pairwise vertex-disjoint because the color-neighborhoods of p partition H;
+- `alpha(H)<=4` and Konig imply at least four H-edges between each pair of Q-blocks;
+- every point of R=H\\Q has at least one H-neighbor in each Q-block;
+- Turan gives `e(H[R])>=p_4(|R|)`.
+
+For m=8,9,10, the three floors sum to253. Defining edge slacks x,y,z gives `x+y+z=32`, `2x+y>=5m`, `y+2z>=D_m` with D=(18,13,8), and `x>=8,13,18` respectively. Added `verify_v47_pivot_packing.py`; local execution returned `V47_PIVOT_PACKING_ARITHMETIC_OK` with 79,61,44 scalar slack states. This confirms the scalar relaxation is feasible and must not be advertised as UNSAT.
+
+### Independent root-dependency audit
+
+Read the branch-local `ROOT_PROMOTION_RECEIPT.md`, the current E407 V12 reserve file, the dedicated E407 proof dependency audit, the V10/V11 independent replay audit, the Q33 capacity/reserve files, and the current Q32 core terminal.
+
+Audit conclusions:
+- The E407 four-color U-reserve arithmetic is valid under the frozen V12 `|U|=29`, 49-block contract (`294+22>310`). Parent-level closure remains conditional on V12 exhaustiveness and branch-state reconciliation; the dedicated E407 canonical still carries a stale OPEN same-core snapshot.
+- The Q33 31-point nonexact-U-reserve arithmetic is valid under its contract (`m=9`: 52>41; `m=8`: 78>41). The closure file itself makes parent promotion conditional on the upstream reduction exhausting all Q33 completions through that contract. The precise exhaustive support-lifting theorem path was not identified in this pass, so the root DAG now records this as an unresolved dependency rather than silently assuming equality from a support lower bound.
+- V9 replay is recorded relative to retained seeds; the newer V10/V11 replay audit supersedes the older V11 pending note and reports package-hash/replay success under retained analytic/lower-order inputs; V12 replay is source-reported by the root receipt and was not re-executed in this turn.
+- The old root promotion remains withdrawn because of the KP degree-nine retraction. Root state remains OPEN / NOT_CERTIFIED.
+
+Updated `ROOT_DEPENDENCY_DAG.md`, `RETRACTION_FIREWALL.md`, and `CANONICAL_STATE.md` to keep these contract boundaries explicit.
