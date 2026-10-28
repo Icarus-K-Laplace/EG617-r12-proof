@@ -13,7 +13,7 @@ The corrected multi-outside theorem gives
 
 The latest nonexact floors are
 
-`L_8=12, L_9=7, L_10=2`.
+`L_8=12, L_9=7, L_10=3` (see `Q32_132_MINDEG3.md`).
 
 After reserving target degree13 and exact baseline degree4, the pointwise surplus budgets are
 
@@ -49,7 +49,7 @@ Thus the `n_w=3` rows `(4,4,4)` and `(4,4,3)` are excluded. The five non-special
 
 ## 4. m=10 closure
 
-The pointwise budget initially gives `n_w in {4,5}`. Section 10 proves `n_w >= 2m-14+t_w >= 6`, a contradiction. Hence
+The updated pointwise budget gives `n_w<=4`. Section 10 proves `n_w >= 2m-14+t_w >= 6`, a contradiction. Hence
 
 > **Case II / v=46 / m=10 is CLOSED.**
 
@@ -233,7 +233,7 @@ hence
 
 `n_w >= 2m-14+t_w`.
 
-Combining with the pointwise budgets `n_w<=r_m`, `r_8=3`, `r_9=4`, `r_10=5`, gives:
+Combining with the pointwise budgets `n_w<=r_m`, `r_8=3`, `r_9=4`, `r_10=4`, gives:
 - m=8: n_w>=2; every special incidence costs at least2 surplus units, contradicting budget3 (the existing closure);
 - m=9: n_w=4 and all four special parameters are a=4; the refined inequality forces t_w=0, hence epsilon=1;
 - m=10: n_w>=6>5, contradiction.
@@ -248,3 +248,8 @@ This proof uses the source-correct Type-I factorization and shell edge uniquenes
 The rigid m=9 normal form in Section 7 already forces the 130-edge nonexact color D to have degree four at w and no neighbor in A. The unique zero-shell special exact color owns pw, so D does not own pw either. Hence all four D-neighbors of w lie in H.
 
 The later source-correct theorem `Q32_130_NO_CORE_ONLY_DEG4.md` rules out even one core-only degree-four vertex in a 130-edge color. Therefore the v=46, m=9 row is **CLOSED**. The quantified core-gap row above is a valid conditional description of a hypothetical row, but the row itself is impossible; it is no longer a live frontier.
+
+
+## 12. Updated m=10 budget
+
+The 132-edge minimum-degree theorem `Q32_132_MINDEG3.md` upgrades the m=10 nonexact floor from2 to3. Accordingly the pointwise surplus budget is now `r_10=4`, not5. This only strengthens the existing zero-shell contradiction `n_w>=6>4`; no m=10 closure depends on the older weaker value.
