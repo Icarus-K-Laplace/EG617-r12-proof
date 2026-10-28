@@ -229,3 +229,15 @@ This narrows the matching system but does not close either disconnected cell. Fu
 ### Matching-holonomy scope correction (2026-10-28)
 
 The correct light-graph degree bounds are: 2+8 has eight outer blocks and minimum light degree at least 3; 3+7 has seven outer blocks and minimum light degree at least 4. Therefore the statement that every nonadjacent pair has a common light neighbor applies only to 3+7. In 2+8, the matching-composition theorem is used only on length-two light paths that actually exist. The local theorem and its finite verification remain valid; only this application scope is corrected.
+
+
+### Four-light-cycle holonomy theorem for m=10 disconnected cells
+
+Added `V47_LIGHT_CYCLE_HOLONOMY.md` and `verify_v47_light_cycle_holonomy.py`.
+
+In a four-cycle of light matching pairs, the two diagonals must contain both length-two path matchings. If the holonomy moves four labels, each diagonal would need eight edges, over the cap seven. If it moves three labels, each diagonal is forced to exactly seven edges and the normalized graph contains the independent 5-set `{A_0,A_3,B_2,C_1,D_0}`. Therefore holonomy is identity or a transposition. A transposition requires both diagonal pairs to have at least six edges.
+
+The exact local verifier checked 726 transposition cases (six transpositions times 11 choices for each diagonal) and rejected all eight 3-cycle cases:
+`V47_LIGHT_CYCLE_HOLONOMY_EXHAUSTIVE_OK`.
+
+Application: in 3+7, a six-edge pair has weight k=2 and uses the full internal-heavy budget at both endpoints, so no other heavy pair can touch either endpoint. Any nontrivial four-cycle holonomy is supported on two disjoint high-weight diagonals. This tightens the matching-holonomy ledger but does not close the m=10 2+8/3+7 cells.
