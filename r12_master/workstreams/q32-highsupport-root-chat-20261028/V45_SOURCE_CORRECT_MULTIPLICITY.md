@@ -1,7 +1,7 @@
 # E408 Q32 — v=45 source-correct two-point multiplicity
 
 Date: 2026-10-28  
-Status: **m=8 CLOSED; m=10 CLOSED; m=9 forced to a rigid shell-ownership profile, still OPEN.**
+Status: **m=8 CLOSED; m=9 CLOSED by the direct no-core-only degree-four theorem; m=10 CLOSED.**
 
 This replaces every use of the retracted exceptional-vertex injectivity in the old `Q32_V45_TWOPOINT_REDUCTION.md`.
 
@@ -80,12 +80,12 @@ For any exact color with (x_C\notin W), both (w_1,w_2) are non-special and each 
 
 Except for at most one color owning (w_1w_2), an exact color with (x_C\notin W) must use the two-double type and place the two W-points in its two different multi-outside K5s. This recovers the useful split-two-point conclusion without exceptional injectivity.
 
-## 7. Remaining v=45 frontier
+## 7. Final v=45 frontier
 
-- m=8: **CLOSED**;
-- m=10: **CLOSED**;
-- m=9: **OPEN**, with (n_{w_i}=4), all special parameters (a=4), no target shell edges at either W-point, exact shell usage (10+3=13), at least8 total exact-color gap units in the eight disjoint special colors, (e_H(W)=0), and (e(\overline{H[U]})=731).
+- m=8: **CLOSED** by weighted special-incidence capacity;
+- m=9: **CLOSED** by `Q32_130_NO_CORE_ONLY_DEG4.md`;
+- m=10: **CLOSED** by the universal zero-shell multiplicity bound.
 
-The next step must combine this rigid two-point shell profile with the M-edge pool, exact Type-I placement types, and the full eleven-color edge partition.
+The only remaining Q32 support terminal is full support v=47.
 
 No retracted degree-nine assertion or exceptional-injectivity statement is used.
