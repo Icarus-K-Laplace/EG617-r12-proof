@@ -334,3 +334,30 @@ Therefore `|U|=45` is CLOSED for m=8,9,10. The arithmetic regression returned `V
 ## 11. Remaining scope
 
 The source-correct low-support layers `|U|=44,45` are closed. Higher supports `|U|=46,47` remain open in this workstream. Do not import the old `Q32_NONFULL_SUPPORT_SHELL_CAPACITY.md` proof as a v46 closure because it uses the retracted exceptional-vertex injectivity premise.
+
+
+## 9. Direct v44 m=8 closure route (2026-10-28)
+
+New files:
+- `V44_M8_DIRECT_NO_CORE_ONLY_CLOSURE.md`;
+- `verify_v44_direct_closure.py`.
+
+The shortest m=8 route no longer needs the W-pair-rigidity / U-pool-saturation chain.
+
+### Exact dependency chain
+
+1. Frozen Q32 pointwise contract: residual degree60; target degree at least13; exact-color degree at least4; each of the three m=8 nonexact colors has130 edges and minimum degree at least4.
+2. Corrected multiplicity: `n_w>=2).
+3. Source Type-I surplus `5-a` and the zero-shell special-edge obstruction.
+4. Thirteen-edge w--A shell capacity, yielding `|L(w)|>=2) at each w in W, where L(w) consists of 130-edge colors D with `d_D(w)=4) and `N_D(w) subset H`.
+5. `Q32_130_NO_CORE_ONLY_DEG4.md`: no such core-only degree-four vertex can exist.
+
+The final contradiction is therefore direct. It uses Kang–Pikhurko Theorem 1 at (56,11) and the already registered 130-edge minimum-degree-four theorem. It does not use Kang–Pikhurko Theorem 4, W-pair rigidity, exceptional-vertex injectivity, or the 700-edge U-pool saturation.
+
+The older proof in `V44_M8_CLOSURE.md` remains an independent conditional cross-check, not a necessary dependency of the direct route.
+
+### Verifier boundary
+
+`verify_v44_direct_closure.py` returned `V44_DIRECT_CLOSURE_ARITHMETIC_OK`. It checks finite shell arithmetic, allowed special-parameter profiles, and the local integer edge budget. It does not verify the analytic no-core-only lemma, the source Type-I theorem, corrected multiplicity, or the published Kang–Pikhurko theorem.
+
+No root-level theorem promotion follows: full-support Q32 / `|U|=47` remains open, so EG617(r=12) remains OPEN / NOT_CERTIFIED.
