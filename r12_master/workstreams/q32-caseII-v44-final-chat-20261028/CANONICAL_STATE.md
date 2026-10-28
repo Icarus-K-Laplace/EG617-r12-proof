@@ -10,7 +10,9 @@ Source base: `workstream/r12-twochat-e408-global-20261026` at `937a905ed26e54ec1
 
 > **The complete E408-Q32 support layer `|U|=44` is CLOSED for `m=8,9,10`.**
 
-The new m=8 and m=9 proofs do not use Case-II's assumption `alpha(M)<=9`; they are stronger support-level exclusions. Together with the inherited corrected multiplicity exclusion of m=10, no source-correct Q32 realization with `|U|=44` remains.
+The m=8 and m=9 proofs do not use Case-II's assumption `alpha(M)<=9`; they are stronger support-level exclusions. Together with the inherited corrected multiplicity exclusion of m=10, no source-correct Q32 realization with `|U|=44` remains.
+
+The final m=8 local contradiction has been independently hardened in `V44_M8_FINAL_LOCAL_HARDENING.md`; the two formerly compressed steps are now explicit and the finite pieces are included in the regression verifier.
 
 This does **not** certify EG617(r=12). E408-Q32 still has higher-support terminals `|U|=45,46,47`.
 
@@ -43,7 +45,7 @@ The registered factor-witness support is U; here `|U|=44`, so `W=H\U` has three 
 
 `e(bar(H[U]))=703-E_U-e_H(W)`.
 
-## New theorem A — zero-shell special-edge obstruction
+## Theorem A — zero-shell special-edge obstruction
 
 For an exact color C with `x_C=w in H`, the source gadget contains the C-colored K5
 
@@ -95,7 +97,7 @@ At n=3:
 - exact colors own at least thirteen of the fourteen w--O edges;
 - therefore at least two 130-edge colors are core-only.
 
-## New theorem B — 130-color W-pair rigidity
+## Theorem B — 130-color W-pair rigidity
 
 Let D be a 130-edge color and let u,v be W-points with
 
@@ -105,7 +107,7 @@ and all their D-neighbors in H.
 
 Then uv must have color D.
 
-Proof outline:
+Proof spine:
 
 1. At u, put `S=N_D(u)` and let N be the 56 D-nonneighbors.
 2. Kang--Pikhurko Theorem1 at `(56,11)` gives `e(D[N])>=119`.
@@ -113,12 +115,15 @@ Proof outline:
 
 `D[S]=K4-e`, `e_D(S,N)=2`, `e(D[N])=119`.
 
-4. Equality triggers Kang--Pikhurko Theorem4. Since the eleven old parts cover55 vertices and `omega(D[N])<=5`, all have size5. Thus
+4. The two S--N edges are forced one each onto the two missing-pair endpoints of `K4-e`; the two central vertices have no S--N edge and have global D-degree exactly4.
+5. Equality triggers Kang--Pikhurko Theorem4. Since the eleven old parts cover55 vertices and `omega(D[N])<=5`, all have size5. Thus
 
 `D[N]=9 isolated K5 dot-union G11`,
 
 and every degree-four vertex of D[N] lies in an isolated K5.
-5. If uv were not a D-edge, v would lie in N and retain degree4 there, so its four D-neighbors would form a K4. Together with v they would give a D-colored K5 wholly in H, contradicting `alpha(H)<=4`.
+6. If uv were not a D-edge, v would lie in N and retain degree4 there, so its four D-neighbors would form a K4. Together with v they would give a D-colored K5 wholly in H, contradicting `alpha(H)<=4`.
+
+The primary Kang--Pikhurko paper was directly rechecked: Theorem1 applies at `(56,11)` and Theorem4 indeed characterizes all extremal graphs by the explicit construction.
 
 ## m=8 universal W-edge consequence
 
@@ -172,11 +177,13 @@ Hence every nonexact color has exactly60 U-edges, so ordinary Turan equality giv
 
 `D[U]=8K4 dot-union 4K3`.
 
-But the three two-element L-sets are the three distinct pairs of nonexact colors, so every nonexact color is core-only degree4 at exactly two W-points. Their pair-rigidity cluster is a `K5-e` whose three U vertices include c,a,b with
+The hardened final local argument is:
 
-`ca,cb in E(D)`, `ab notin E(D)`.
-
-That is impossible in a disjoint union of clique components.
+- the three size-two L-sets are the three distinct two-subsets of the three nonexact colors;
+- hence each nonexact color D owns exactly one W--W edge uv, and the third W-point is not in `N_D(u)`;
+- in the local `D[S]=K4-e`, v cannot be a missing endpoint: the forced `(1,1,0,0)` S--N cross-edge distribution would make `D[N_D(v)]` a triangle plus an isolated vertex, contradicting the required local `K4-e` at v;
+- so v is central, and the other three vertices `c,a,b` of S lie in U with `ca,cb in E(D)` and `ab notin E(D)`;
+- this is impossible in the disjoint union of clique components `8K4 dot-union 4K3`.
 
 Thus `(3,3,2)` is impossible.
 
@@ -188,7 +195,7 @@ Therefore
 
 - m=10: inherited impossible from corrected multiplicity;
 - m=9: impossible by zero-shell special-edge obstruction;
-- m=8: impossible by W-pair rigidity and U-pool saturation.
+- m=8: impossible by W-pair rigidity and U-pool saturation, with the final local step independently hardened.
 
 Hence
 
@@ -217,16 +224,26 @@ EG617(r=12) remains OPEN / NOT_CERTIFIED until all remaining E408-Q32 higher-sup
 
 ## Verification status
 
-`verify_v44_m8_closure_arithmetic.py` was executed successfully in the research session and returned
+`verify_v44_m8_closure_arithmetic.py` was re-executed after hardening and returned
 
 `V44_M8_CLOSURE_ARITHMETIC_OK`.
 
-It verifies only:
+It verifies:
 
 - the finite m=8 multiplicity enumeration;
 - the `(56,11)` extremal arithmetic;
 - the unique local count `(a,b)=(5,2)`;
-- the three-color L-set combinatorics;
+- the forced S--N distribution `(1,1,0,0)`;
+- all six ordered legal three-color L-set assignments and the fact each nonexact color owns exactly one W--W edge;
+- the missing-endpoint finite neighbor-edge count (3 rather than 5);
 - the final 700-edge saturation arithmetic.
 
 It does not mechanically verify Kang--Pikhurko, the source Type-I construction, Turan equality, or the analytic graph-theoretic implications.
+
+## Dependency status
+
+`DEPENDENCY_AUDIT.md` verdict:
+
+> **PASS_WITH_EXPLICIT_EXTERNAL_THEOREMS / HARDENED.**
+
+The proof uses no retracted degree-nine exceptional point, no exceptional-vertex injectivity, no stale exact-count collapse, no Q33/E407 284-edge identity, no Case-I three-point cover, and no SAT/ILP UNSAT claim.
