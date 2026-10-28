@@ -144,9 +144,10 @@ Valid source-correct interface currently retained:
 Still open in this workstream at this snapshot:
 
 - v=47 all m;
-- Case-II v=45,m=9,10;
-- Case-II v=46,m=9,10;
-- sibling-owned v=44,m=8,9.
+- Case-II v=45,m=9;
+- Case-II v=46,m=9.
+
+The universal zero-shell bound now closes m=10 for every non-full-support branch. The sibling branch `workstream/r12-q32-caseII-v44-final-20261028` closes the full v=44 support layer for m=8,9,10; final merge/root consolidation remains pending.
 
 ## 7. Promotion rule
 
@@ -176,10 +177,9 @@ There is a branch-state discrepancy: the dedicated E407 closure branch's `CANONI
 
 ### 8.2 E408 Q33 support-contract exhaustiveness
 
-`Q33_NONEXACT_U_RESERVE_CLOSURE.md` proves a valid contradiction on the registered `|U|=31), 56-witness contract:
-`26(11-m)<=delta+6h<=41), while m=8 or9 requires at least78 or52.
+`Q33_NONEXACT_U_RESERVE_CLOSURE.md` proves a valid contradiction on the registered `|U|=31`, 56-witness contract: `26(11-m) <= delta+6h <= 41`, while m=8 or9 requires at least78 or52.
 
-However, the theorem's own scope firewall conditions promotion on an upstream proof that every Q33 completion enters this contract. The inspected witness-packing theorem gives a **lower bound** on support size (`|U|>=31), and the Q33 local theorem takes `|U|=31` as a frozen input. The separate exhaustive support-lifting theorem was not located among the inspected source files in this pass. The root DAG's earlier statement that upstream exhaustiveness is explicit therefore remains an unresolved citation/dependency question here.
+However, the theorem's own scope firewall conditions promotion on an upstream proof that every Q33 completion enters this contract. The inspected witness-packing theorem gives a **lower bound** on support size (`|U|>=31`), and the Q33 local theorem takes `|U|=31` as a frozen input. The separate exhaustive support-lifting theorem was not located among the inspected source files in this pass. The root DAG's earlier statement that upstream exhaustiveness is explicit therefore remains an unresolved citation/dependency question here.
 
 Until the exact support-lifting source and its parameter coverage are linked and checked, record Q33 as **PROVED_CONDITIONAL on the 31-point terminal contract**, with full Q33 exhaustion **NOT INDEPENDENTLY RE-CERTIFIED** in this workstream.
 
@@ -200,10 +200,10 @@ Until the exact support-lifting source and its parameter coverage are linked and
 
 ## 9. New universal zero-shell multiplicity bound
 
-For any nonempty W-point w, the source-correct Type-I K5 shows that a special exact color with zero shell-A degree must own pw; at most one special exact color at w can therefore have zero shell degree. The m-n_w non-special exact colors each use at least two distinct w--A edges, so
+For any nonempty W-point w, the source-correct Type-I K5 shows that a special exact color with zero shell-A degree must own pw; at most one special exact color at w can therefore have zero shell degree. The m-n_w non-special exact colors each use at least two distinct w--A edges. If t_w is the number of target-colored edges from w to A, the exact inequality is
 
-`n_w-1 <= 13-2(m-n_w)`, hence `n_w >= 2m-14`.
+`n_w-1 <= 13-t_w-2(m-n_w)`, hence `n_w >= 2m-14+t_w`.
 
-The pointwise special-surplus budgets are `n_w<=r_m`, with `r_8=3`, `r_9=4`, `r_10=5`. Thus m=10 is impossible whenever W is nonempty; m=9 forces n_w=4 and all special parameters a=4 at every W-point; m=8 remains closed by its two-unit special-incidence cost against budget3.
+The pointwise special-surplus budgets are `n_w<=r_m`, with `r_8=3`, `r_9=4`, `r_10=5`. Thus m=10 is impossible whenever W is nonempty; m=9 forces `n_w=4`, all special parameters `a=4`, and `t_w=0` at every W-point; m=8 remains closed by its two-unit special-incidence cost against budget3. For m=9, the shell count saturates exactly: five non-special exact colors use 10 A-edges, three special colors use one each, and one special color uses zero and owns pw. Both nonexact colors have no A-shell neighbors; the target degree is13, so each W-point has core excess1. In v=45, the two special-color sets are disjoint and the 130-color pair-rigidity lemma forces the W-W edge to be non-target.
 
 This upgrades the higher-support frontier: m=10 is closed for v=45 and v=46 as well as v=44. It does not touch full support v=47, where W is empty.
