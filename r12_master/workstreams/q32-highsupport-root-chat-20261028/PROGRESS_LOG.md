@@ -130,6 +130,6 @@ Strengthened the universal inequality by explicitly reserving target-colored she
 
 Exact shell ownership at each m=9 W-point is now rigid: the five non-special exact colors use exactly two A-edges each (10 total), three of four special exact colors use one A-edge each, and the remaining special color uses no A-edge and owns pw. The target color and both nonexact colors have no A-shell edge at w. Accounting for p correctly, every special exact color has exactly one outside neighbor and H-degree4; hence each spends `g_C>=1`, not `g_C>=2`. This correction preserves the rigorous total gap floor of 8 across the two disjoint W-point special sets.
 
-For v=45,m=9, the 130-edge color is degree4/core-only at both W-points. The source-correct 130-color pair-rigidity lemma forces the W-W edge to have that nonexact color, so `e_H(W)=0`, `E_W=2`, `E_U=4`, and `e(bar(H[U]))=731`. This is a stronger necessary profile but not yet a contradiction.
+For v=45,m=9, both W-points have degree4 in the 130-edge color, with all those neighbors in H. Audit found no source-correct theorem forcing the W-W edge to have that color: the isolated-K4 equality result is for degree-three vertices, not degree four. Retracted the unsupported pair-rigidity claim. The valid ledger is `E_W=2`, `E_U=4`, `e_H(W) in {0,1}`, and `e(bar(H[U]))=731-e_H(W)` (730 or731).
 
 Updated the V45/V46 source-correct files, the zero-shell arithmetic verifier (rerun: `ZERO_SHELL_MULTIPLICITY_ARITHMETIC_OK`), the canonical state, and root dependency DAG.
