@@ -124,3 +124,12 @@ Combined with pointwise special-surplus budgets `n_w<=r_m`, `r=(3,4,5)`:
 Consequences: v=45 m=10 and v=46 Case-II m=10 are now closed; the v=45 m=9 branch spends at least8 global exact-color gap units across the two disjoint special sets, and v=46 m=9 spends at least4. Full support v=47 remains unaffected because W is empty.
 
 Updated `V45_SOURCE_CORRECT_MULTIPLICITY.md`, `V46_CASEII_CLOSURE.md`, `CANONICAL_STATE.md`, and `ROOT_DEPENDENCY_DAG.md`. No retracted KP degree-nine or exceptional-injectivity claim was used.
+### Target-shell correction and m=9 shell saturation
+
+Strengthened the universal inequality by explicitly reserving target-colored shell edges. If `t_w` is the target degree from w into A, then `n_w >= 2m-14+t_w` (not merely `2m-14`). For m=9 the pointwise budget forces `n_w=4`; therefore `t_w=0` and the core excess at each W-point is exactly1.
+
+Exact shell ownership at each m=9 W-point is now rigid: the five non-special exact colors use exactly two A-edges each (10 total), three of four special exact colors use one A-edge each, and the remaining special color uses no A-edge and owns pw. The target color and both nonexact colors have no A-shell edge at w. Accounting for p correctly, every special exact color has exactly one outside neighbor and H-degree4; hence each spends `g_C>=1`, not `g_C>=2`. This correction preserves the rigorous total gap floor of 8 across the two disjoint W-point special sets.
+
+For v=45,m=9, the 130-edge color is degree4/core-only at both W-points. The source-correct 130-color pair-rigidity lemma forces the W-W edge to have that nonexact color, so `e_H(W)=0`, `E_W=2`, `E_U=4`, and `e(bar(H[U]))=731`. This is a stronger necessary profile but not yet a contradiction.
+
+Updated the V45/V46 source-correct files, the zero-shell arithmetic verifier (rerun: `ZERO_SHELL_MULTIPLICITY_ARITHMETIC_OK`), the canonical state, and root dependency DAG.
