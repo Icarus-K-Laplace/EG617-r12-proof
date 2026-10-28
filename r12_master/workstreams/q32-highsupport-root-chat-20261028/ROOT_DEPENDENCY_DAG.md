@@ -276,3 +276,8 @@ New proof: `V47_37_OUTER_LIGHT_HOLONOMY.md`.
 Under the 3+7 cell contract, the outer light graph has seven vertices, minimum degree four, weighted heavy degree at most two, and total heavy weight at most seven. Triangle consistency and the four-light-cycle theorem force identity holonomy on every cycle: chordless five-cycles have a common light hub, and six-/seven-cycles must have chords. Thus light-edge matchings globally align. Since any heavy pair has at least three common light neighbors, the same matching is contained in every pair graph.
 
 This yields four aligned K7 tracks on the 28 outer-block vertices and at most seven additional cross-track edges. The finite weighted-graph verifier covers 22,054 outer heavy graphs and 5,803,387 light cycles. This is a local structural reduction only; it does not close the m=10 3+7 cell or any full-support Q32 row.
+
+
+### 8.3 Current high-support continuation — m=10 disconnected cells
+
+The latest branch-local additions are `V47_TWO_BLOCK_TRANSVERSAL_BLOCKER.md` (2+8) and the strengthened double-track part of `V47_ZERO_SLACK_MAP_ALIGNMENT_AND_TRANSVERSAL_BLOCKER.md` (3+7). They impose exact fiber-neighborhood and endpoint-load restrictions but do not eliminate the disconnected cells. The only live graph terminal remains E408/Q32 full-support v=47, with m=8,9,10 OPEN. No root promotion is permitted.
