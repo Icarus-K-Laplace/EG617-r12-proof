@@ -49,7 +49,7 @@ For an exact Type-I color C, every T0 vertex with \(d_C(v,H)=4\) must lie in its
 
 Indeed, a T0 vertex in an isolated single-outside K5 has exactly three C-neighbors in H. An isolated double-outside K5 cannot contain a T0 vertex, since it would give that vertex H-degree two, contradicting the degree floor three. An isolated triple-outside K5 has only one H-neighbor per H vertex and is likewise impossible at T0. Thus a degree-four T0 vertex must be in \(G_{11}(C)\).
 
-Each of the two special K5s inside \(G_{11}(C)\) contains at most one T0 vertex, because its C-edges cannot lie inside the target clique T0. The special point \(x_C\) contributes at most one more T0 vertex. If \(x_C\in T_0\), it cannot be the triple placement (the eleven single-outside factors would require eleven other T0 vertices); and in the two-double placement the two special K5s cannot both be single-outside, by the source-correct \(b_s+b_t=2\) exclusion. Consequently
+Each of the two special K5s inside \(G_{11}(C)\) contains at most one T0 vertex, because its C-edges cannot lie inside the target clique T0. The special point \(x_C\) contributes at most one more T0 vertex. If \(x_C\in T_0\), it cannot be the triple placement (the eleven single-outside factors would require eleven other T0 vertices). In the two-double placement, the ten single-outside factors already use all ten T0 vertices other than \(x_C\), so neither double-outside factor can contain T0. Thus any special K5 that contains a T0 vertex must be single-outside; both special K5s cannot be single-outside, by the source-correct \(b_s+b_t=2\) exclusion. Consequently
 
 \[
 \boxed{t_C\le |G_{11}(C)\cap T_0|\le 2}
