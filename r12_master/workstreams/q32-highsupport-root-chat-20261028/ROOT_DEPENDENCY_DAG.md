@@ -351,3 +351,8 @@ The cross-track theorem also gives pairwise color-repeat conservation: for each 
 
 
 The aligned z=0,1 cross-track ledger further gives `e_H(T_i,T_j)<=9-E_0-E_k<=9` for each pair of K12 tracks, where k is the third K12 label. Thus each such pair has at least three unmatched vertices on both sides, and the color-repeat counts on that pair have total deficit at least `3+E_0+E_k). This is a necessary restriction only.
+
+
+### 8.12 Source correction: Type-I special K5 accounting
+
+The prior entry asserting that the triple-outside Type-I placement is eliminated in the aligned z=0,1 cell is **superseded**. The Type-I profile has twelve K5 factors, comprising ten isolated components and two special K5 cliques inside G11. A triple-outside K5 is ruled out only if it is isolated. If triple placement occurs, it must be one of the two special K5s; the other special K5 is single-outside, forcing `b_s+b_t=4` and G11 composition (7 H,4 O). The source-correct gap ledger is `G_H=g_C`, `3+g_C`, `2+g_C` for x-in-O, two-double, and triple placements respectively. This correction removes the claimed closure; Q32 remains OPEN.
