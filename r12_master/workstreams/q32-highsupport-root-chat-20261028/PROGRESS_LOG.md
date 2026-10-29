@@ -713,3 +713,8 @@ Proved an aligned m=10,z=0,1 gap-saturation lemma: alpha(D)<=12 forces at least 
 ### 2026-10-29 — Outside-component bijection theorem
 
 Used alpha(D)<=12 to sharpen the exact gap-saturation equality cases. Every H-vertex must meet every maximum independent 12-set in O. In the 2K2 case this forces each edge component to have a common neighbor in every large track, with the two edge components assigned to distinct track vertices; the nine isolated A-vertices and p fill the remaining ten track vertices. In the K3 case all three triangle vertices share one large-track neighbor and the ten isolates and p fill the remaining eleven. The same hitting argument forces the non-Z components to biject with T0. Hence each D[A] edge has twin endpoints into H and the exact outside-degree multiplicities are fixed. Added these constraints to the aligned CSP and independent verifier, plus an arithmetic regression script. The branch is still OPEN / NOT_CERTIFIED; no solver UNSAT result was claimed.
+
+
+### 2026-10-29 — Analytic K6 closure of aligned z=0,1
+
+Added V47_Z01_K6_CONTRADICTION.md. For any O-component C, the corresponding vertices in any two tracks must be D-adjacent: otherwise choosing one representative from each of the other 11 O-components and adding the two track vertices gives a D-independent 13-set. Hence each non-Z component gives a D-K4 across T0,T1,T2,T3. The non-Z K2 in the 2K2 case, or the Z triangle in the K3 case, then expands this to a D-K6, contradicting omega(D)<=5. The aligned m=10, z=0,1, (2,2,2,1) cell is CLOSED. This is an analytic proof, not a solver UNSAT report; other full-support cells remain open.

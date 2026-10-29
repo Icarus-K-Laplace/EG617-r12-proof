@@ -70,3 +70,8 @@ This gives a strong necessary condition for the exact vertex-labelled CSP: in th
 ## 4. Scope
 
 This theorem is a structural reduction, not a contradiction. It does not eliminate either outside pattern, the aligned m=10,z=0,1 cell, or Q32 as a whole. The full-support Q32 terminal and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
+
+
+## 5. K6 contradiction corollary
+
+The component-bijection theorem now has a decisive corollary, proved in V47_Z01_K6_CONTRADICTION.md. For any component C and two tracks to which it maps, the corresponding track vertices must be D-adjacent: otherwise one representative from each of the other 11 components of D[O], together with those two vertices, is an independent 13-set. Thus every non-Z component gives a D-K4 across T0,T1,T2,T3. In the 2K2 pattern, the non-Z edge component plus this K4 gives a D-K6; in the K3 pattern, the Z triangle plus its three large-track neighbors gives a D-K6. Since omega(D)<=5, both patterns are impossible. The aligned m=10,z=0,1,(2,2,2,1) cell is therefore CLOSED under the registered contract.

@@ -143,3 +143,8 @@ Added V47_Z01_NONEXACT_GAP_SATURATION.md. In the aligned m=10 z=0,1 cell, the 13
 ## Outside-component bijection theorem
 
 The aligned model now includes V47_Z01_OUTSIDE_COMPONENT_BIJECTION.md: the independent-set hitting argument forces every component of D[O] to map as a whole to a unique vertex in each large track, and every component except the zero-T0-neighbor component maps bijectively to T0. The model encodes identical D-neighborhoods in H for endpoints of every D[A] edge and the exact outside-D degree multisets on all four tracks. The independent verifier checks these conditions. This remains a necessary structural reduction, not an UNSAT result.
+
+
+## K6 closure of the aligned z=0,1 cell
+
+Added V47_Z01_K6_CONTRADICTION.md. The component-bijection theorem forces corresponding track vertices to be D-adjacent, or else they combine with 11 representatives from the other O-components to form an independent 13-set. The 2K2 and K3 equality patterns each then create a D-colored K6, contradicting omega(D)<=5. This analytically closes only the aligned m=10, z=0,1, (2,2,2,1) cell; no whole-Q32 closure or solver UNSAT status is claimed.

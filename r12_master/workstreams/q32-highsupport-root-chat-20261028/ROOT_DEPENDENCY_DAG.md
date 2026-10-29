@@ -592,3 +592,8 @@ A new conditional theorem forces g_D=7 and g_C=3 for every exact color in the al
 ### New Q32 structural reduction: outside-component bijection
 
 The aligned m=10,z=0,1 cell now carries a conditional component-bijection theorem from alpha(D)<=12. The D[A] components map bijectively to each large track, while the zero-T0-neighbor component is omitted and the remaining components map bijectively to T0. This yields twin D-neighborhoods for endpoints of every D[A] edge and exact O-degree multisets. CSP and verifier encode the consequences; neither aligned cell is closed.
+
+
+### E408-Q32 analytic closure: aligned m=10, z=0,1
+
+The gap-saturation equality patterns plus the outside-component bijection force a D-K6 in both cases (D[A]=2K2 or K3). This closes the aligned z=0,1, (2,2,2,1) cell under the registered contract. It does not close other m=10 cells or full-support m=8,9; the unique root graph terminal remains OPEN.

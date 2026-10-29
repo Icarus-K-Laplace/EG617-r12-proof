@@ -331,6 +331,25 @@ def build_model(m, aligned_z01=False):
             d_a == 3,
             iff_count(t0_o_degree[v] == 1 for v in tracks[0]) == 11))
 
+        # A pair of track vertices assigned to the same D[O]-component must
+        # itself be a D-edge: otherwise 11 representatives from the other
+        # components plus those two vertices form a D-independent 13-set.
+        for o in O:
+            for i in range(1, 4):
+                for j in range(i + 1, 4):
+                    for u in tracks[i]:
+                        for v in tracks[j]:
+                            solver.add(z3.Implies(
+                                z3.And(col[edge(o, u)] == 11,
+                                       col[edge(o, v)] == 11),
+                                col[edge(u, v)] == 11))
+                for u in tracks[0]:
+                    for v in tracks[i]:
+                        solver.add(z3.Implies(
+                            z3.And(col[edge(o, u)] == 11,
+                                   col[edge(o, v)] == 11),
+                            col[edge(u, v)] == 11))
+
         z_cross = iff_count(
             z3.And(residual[u], residual[v], col[edge(u, v)] == 0)
             for i in range(4) for j in range(i + 1, 4)

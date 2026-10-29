@@ -386,6 +386,29 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
         if t0_degrees != expected_t0:
             fail(f"T0 outside-D degree multiset {t0_degrees} differs from {expected_t0}")
 
+        # Independent replay: corresponding vertices of any shared O-component
+        # must be joined in D across every track pair.
+        for o in O:
+            large_neighbors = {}
+            for i in range(1, 4):
+                ns = [v for v in tracks[i] if colors[edge(o, v)] == 11]
+                if len(ns) != 1:
+                    fail(f"outside vertex {o} has {len(ns)} D-neighbors in T{i}, expected one")
+                else:
+                    large_neighbors[i] = ns[0]
+            for i in range(1, 4):
+                for j in range(i + 1, 4):
+                    if i in large_neighbors and j in large_neighbors:
+                        if colors[edge(large_neighbors[i], large_neighbors[j])] != 11:
+                            fail(f"the D-neighbors of outside vertex {o} in T{i},T{j} are not D-adjacent")
+            t0_neighbors = [v for v in tracks[0] if colors[edge(o, v)] == 11]
+            if len(t0_neighbors) > 1:
+                fail(f"outside vertex {o} has multiple D-neighbors in T0")
+            if t0_neighbors:
+                for i in range(1, 4):
+                    if i in large_neighbors and colors[edge(t0_neighbors[0], large_neighbors[i])] != 11:
+                        fail(f"the D-neighbors of outside vertex {o} in T0,T{i} are not D-adjacent")
+
         z_cross = sum(colors[edge(u, v)] == 0 for i in range(4) for j in range(i+1,4)
                       for u in residual & tracks[i] for v in residual & tracks[j])
         if z_cross not in (0, 1):

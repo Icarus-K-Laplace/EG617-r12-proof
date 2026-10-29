@@ -685,3 +685,8 @@ In the aligned z=0,1,(2,2,2,1) cell, the 132-edge nonexact color D has at least 
 ## 2026-10-29 — aligned outside-component bijection
 
 New theorem V47_Z01_OUTSIDE_COMPONENT_BIJECTION.md: in the aligned m=10, z=0,1 cell, alpha(D)<=12 forces the 2K2/K3 components of D[A] to have identical D-neighborhoods into H. Each D[O] component maps to one vertex in each large track, with a bijection; all components except the zero-T0-neighbor component map bijectively to T0. The O-degree multisets on T1,T2,T3 are either 1^10,2^2 or 1^11,3; on T0 they are either 1^10,2 or 1^11. The exact CSP and independent verifier now encode/check these consequences. This is a structural reduction only; the aligned cell remains OPEN.
+
+
+## 2026-10-29 — aligned m=10 z=0,1 cell closed by K6 contradiction
+
+The outside-component bijection forces corresponding vertices across tracks to be D-adjacent: otherwise 11 representatives from the other D[O] components plus the two track vertices form an independent 13-set. In the 2K2 equality pattern, the non-Z edge component and its four track vertices form a D-colored K6. In the K3 pattern, the Z triangle and its three large-track neighbors form a D-colored K6. Both contradict omega(D)<=5. Thus the aligned full-support m=10, z in {0,1}, residual profile (2,2,2,1) cell is CLOSED under the registered contract. Other m=10 cells and full-support m=8,9 remain OPEN; E408/Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
