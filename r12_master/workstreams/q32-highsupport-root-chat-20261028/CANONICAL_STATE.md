@@ -476,3 +476,15 @@ In class D, the unique independent 4-set consists of the T0 residual singleton a
 ## Conditional seven-vertex residual graph catalog (2026-10-29)
 
 Added `V47_Z01_EXACT_COLOR_RESIDUAL_GRAPH_CATALOG.md` and its verifier for the conditional subcase where all ten isolated K5 components are single-outside. Its seven-vertex relaxation has profile (2,2,2,1), edge count 9+g_C, alpha at most 2, and counts 8,72,384,1,148 at gaps 0,1,2,3. The catalog is not universal: the source-correct isolated-double placement has an eight-vertex G11 residual, corrected in `V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md`. The 7-vertex holonomy table is conditional too; the global g=0,1 orientation remains justified separately by the near-Turan classification.
+
+## Residual-placement audit correction — isolated-double branch (2026-10-29)
+
+A source audit found that the seven-vertex residual graph catalog and the 64-class holonomy-cost table were overstated as universal. The Type-I outside-count profile alone does not force all ten isolated K5 components to be single-outside. HIGH_SUPPORT_NEAR_TURAN.md, Section 3, contains a source-correct placement with the unique double-outside K5 among the isolated components.
+
+Correct split:
+- **All isolated components single-outside:** ten isolated transversal K4s leave a seven-vertex G11 residual with profile (2,2,2,1), e=9+g_C. The existing 7-vertex graph catalog and 64-baseline holonomy theorem apply only here.
+- **One isolated component double-outside:** the isolated H-subgraph is 9K4 disjoint union K3, with 57 edges. The remaining G11 H-vertices have profile (2,2,2,2), and their induced graph has 8 vertices and 12+g_C edges. The new V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md records the exact accounting and the two-K4 low-gap subcases.
+
+The arithmetic replay for the two-K4 local relaxation gives 8, 96, 528, and 1760 labeled base-plus-extra graphs for g=0,1,2,3. These are counts of a pairwise-matching relaxation, not source-realizable gadget completions. The exceptional isolated-double placement with x_C in H and y in H has g_C=3 and requires separate source-geometry handling.
+
+The global g_C=0,1 alignment conclusion remains supported independently by the 69/70 near-Turan classification recorded in V47_Z01_CANONICAL_RESIDUAL_ONE_FACTORIZATION.md. The T0 pointwise saturation and its identity g_C>=t_C do not depend on the seven-vertex assumption. No root status changes: E408/Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
