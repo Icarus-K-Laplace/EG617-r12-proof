@@ -501,7 +501,7 @@ In the Class-B source mode with x_C in T0 and both special factors double-outsid
 
 ### 14n. Class-B (g,t)=(2,0) star-center degree filter
 
-In the x-in-H, two-double, all-isolated-single-outside source mode, the y-in-H, a=2 row has g_C=2,t_C=0 and two large-pair surplus edges forming a star at y. These are the two P edges incident to y on its two cross-track pairs, so y has no H neighbor in any other large track. Since its own track contributes 11 H neighbors and delta(H)>=12, y must have an H edge to T0. Include this as a necessary incidence filter for any exact packing. It does not imply UNSAT by itself.
+In the Class-B source mode with x_C in T0 and both special factors double-outside, the y-in-H, a=2 row has g_C=2,t_C=0 and two large-pair surplus edges forming a star at y. These are the two P edges incident to y on its two cross-track pairs, so y has no H neighbor in any other large track. Under the aligned zero-slack ledger, this residual vertex has total cross-track H-degree exactly one, so y must have exactly one H edge to T0. Include this as a necessary incidence filter; it does not imply UNSAT by itself.
 
 
 ### 14o. Strengthened residual six-set injectivity across all source modes
