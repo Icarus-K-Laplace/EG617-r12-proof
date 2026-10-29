@@ -507,3 +507,8 @@ In the x-in-H, two-double, all-isolated-single-outside source mode, the y-in-H, 
 ### 14o. Strengthened residual six-set injectivity across all source modes
 
 The residual-signature theorem was strengthened in V47_Z01_RESIDUAL_SIGNATURE_INJECTIVITY.md. If two exact colors share all six residual vertices, their three K2,2 matching restrictions must be complementary, so one has six-cycle parity. Every source mode with such a six-cycle has at least one large-pair repeat: the single-outside holonomy table gives g_C>=2; isolated-double two-K4 modes cannot flip a pair matching because all extras form a star; the exceptional isolated-double mode has g_C=3,t_C=1. Pair-projection injectivity then rules out the shared residual pair. Thus residual six-sets are injective across all exact colors and all source modes. This does not rule out sharing only one or two pair projections, and does not close Q32.
+
+
+### 14p. Partial residual-projection multiplicity
+
+For a fixed residual pair key (A,B) on tracks i,j, if P_ij intersects the K2,2 block A×B, exactly one of the two internal perfect matchings remains available to a color, so cross-color edge-disjointness forces the key to be unique. If the key is duplicated, the block must be P-free and exactly two colors use the two complementary matchings. Two colors cannot share two pair projections, because that would imply identical full residual signatures, excluded by the all-mode injectivity lemma. This is a necessary block-level constraint for the exact CSP; it does not close Q32.
