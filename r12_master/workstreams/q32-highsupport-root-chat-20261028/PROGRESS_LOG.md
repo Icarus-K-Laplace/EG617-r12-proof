@@ -580,7 +580,7 @@ From the exhaustive 19-case source audit, the Class-B row with x_C in T0, both s
 
 ### Class-B g=2,t=0 star-center incidence — 2026-10-29
 
-From the exhaustive 19-case source audit, the x-in-H two-double Class-B row y in H, a=2 has g_C=2,t_C=0 and its two large-pair surplus edges form a star centered at y, with one edge to each of the other two large tracks. Those are the two P_ij edges incident to y, so y has no H-neighbor in the other large tracks. Because y already has 11 neighbors in its K12 track and delta(H)>=12, it must be incident to at least one H edge from T0. This is a necessary source/degree incidence constraint for the CSP, not a contradiction.
+From the exhaustive 19-case source audit, the Class-B row with x_C in T0, both special factors double-outside, y in H and a=2 has g_C=2,t_C=0. Its two large-pair surplus edges form a star centered at y, one into each other large track; these are y's unique P_ij edges on those pairs, so y has no H-neighbor in the other large tracks. Since y is a residual vertex with total cross-track H-degree exactly one under the aligned zero-slack ledger, it must have exactly one H edge to T0. This is a necessary source/degree incidence constraint for the CSP, not a contradiction.
 
 
 ### Residual six-set injectivity upgraded to all source modes — 2026-10-29
