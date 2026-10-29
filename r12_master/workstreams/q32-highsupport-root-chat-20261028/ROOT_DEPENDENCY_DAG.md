@@ -371,3 +371,8 @@ In the fully aligned z=0,1 cell, the corrected Type-I component analysis caps ev
 ### 8.15 Nonexact-color shell-floor tightening
 
 For the aligned low-z cell, the unique nonexact color D has `g_D in [7,19]`, `e_D(H) in [76,88]`, and `mu_D in [2,14]). The lower shell bound `mu_D>=2) follows because p is D-nonadjacent to A and alpha(D)<=12, forcing alpha(D[A])<=11 on 13 vertices. Thus the ten exact colors contribute 18–30 gap units, with at least six positive-gap exact colors. This is a necessary aggregate budget only.
+
+
+### 8.16 Type-I factor occupancy across target parts
+
+The twelve Type-I K5 factors partition the 60 vertices other than x_C. Matching their H vertices to the part sizes (12,12,12,11) forces the double/triple occupancy vectors recorded in Section 8 of `V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM.md`. In particular, x_C-in-K12 two-double placement requires a special double K5 containing X_0, and triple placement forces x_C outside X_0 with the triple H pair in the other two K12 parts. Arithmetic replay passes; this is a necessary reduction only.
