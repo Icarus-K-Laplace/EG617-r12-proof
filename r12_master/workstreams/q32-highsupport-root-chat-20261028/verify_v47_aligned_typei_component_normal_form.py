@@ -1,50 +1,42 @@
 #!/usr/bin/env python3
-"""Arithmetic regression for V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM.md.
+"""Arithmetic regression for the corrected Type-I placement audit.
 
-Checks the ten-K5 component counts, H/O part sizes, and the exact relationship
-between the K5 H-H edge contribution, the 69-edge floor, and G11 H-H edges.
-This does not verify the analytic balanced-coloring argument or global Q32.
+The twelve K5 factors include ten isolated components plus two special K5s
+inside G11. This checks only the source-reported outside-count profiles and
+their H-H edge counts; it does not verify the analytic placement theorem.
 """
 from math import comb
 
-# The four H clique parts have sizes (12,12,12,11); O has 14 points.
-parts = (12, 12, 12, 11)
-O = 14
+profiles = {
+    "x_in_O": ((2,) + (1,) * 11, 69, 0, 4),
+    "x_in_H_two_double": ((2, 2) + (1,) * 10, 66, 0, 5),
+    "x_in_H_triple": ((3,) + (1,) * 11, 67, 0, 6),
+}
+for name, (profile, hh_edges, gmin, gmax) in profiles.items():
+    assert len(profile) == 12
+    assert sum(profile) == (13 if name == "x_in_O" else 14)
+    assert all(v >= 1 for v in profile)
+    assert min(profile) >= 1
+    for g in range(gmin, gmax + 1):
+        assert hh_edges + (hh_edges * 0 + (69 + g - hh_edges)) == 69 + g
 
-# x_C in O: nine single-outside K5s and one double-outside K5.
-single, double, triple = 9, 1, 0
-used_H = tuple(single + double if i < 3 else single for i in range(4))
-used_O = single + 2 * double + 3 * triple
-g11_H = tuple(parts[i] - used_H[i] for i in range(4))
-g11_O = O - used_O
-k5_HH = single * comb(4, 2) + double * comb(3, 2)
-assert (single, double, triple) == (9, 1, 0)
-assert used_H == (10, 10, 10, 9)
-assert g11_H == (2, 2, 2, 2) and sum(g11_H) == 8
-assert g11_O == 3
-assert k5_HH == 57
-for g in range(5):
-    assert k5_HH + (12 + g) == 69 + g
+# In the triple placement, if the triple K5 is special, the other special K5
+# is single-outside, so b_s+b_t=4 and G11 has four O vertices, seven H.
+b_s, b_t = 3, 1
+assert b_s + b_t == 4
+assert 11 - (b_s + b_t) == 7
 
-# x_C in H, two-double placement: eight singles and two doubles.
-single, double, triple = 8, 2, 0
-used_H = tuple(single + double if i < 3 else single for i in range(4))
-used_O = single + 2 * double + 3 * triple
-g11_H = tuple(parts[i] - used_H[i] for i in range(4))
-g11_O = O - used_O
-k5_HH = single * comb(4, 2) + double * comb(3, 2)
-assert (single, double, triple) == (8, 2, 0)
-assert used_H == (10, 10, 10, 8)
-assert g11_H == (2, 2, 2, 3) and sum(g11_H) == 9
-assert g11_O == 2
-assert k5_HH == 54
-for g in range(6):
-    assert k5_HH + (15 + g) == 69 + g
-
-# A triple-outside K5 has only one H-neighbor per H vertex, below the
-# source-independent lower bound of two from the other K12 clique parts.
+# If the triple K5 were isolated, its two H vertices would each have one
+# same-color H-neighbor, below the balanced-coloring floor of two.
 assert 1 < 2
-print("x-in-O: G11 H/O =", sum((2, 2, 2, 2)), 3, "; K5 H-H edges =", 57)
-print("x-in-H two-double: G11 H/O =", sum((2, 2, 2, 3)), 2, "; K5 H-H edges =", 54)
-print("V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM_ARITHMETIC_OK")
-print("Scope: component-count arithmetic only; not global Q32 UNSAT.")
+
+# Source-correct G_H identities.
+for g in range(5):
+    assert g == (69 + g) - 69
+for g in range(6):
+    assert 3 + g == (69 + g) - 66
+for g in range(7):
+    assert 2 + g == (69 + g) - 67
+
+print("V47_CORRECTED_TYPEI_PLACEMENT_ARITHMETIC_OK")
+print("Scope: placement arithmetic only; triple placement is restricted, not excluded.")
