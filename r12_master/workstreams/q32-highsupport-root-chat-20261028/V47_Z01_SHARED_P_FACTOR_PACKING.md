@@ -160,11 +160,15 @@ and
 y_{C,ij,A,B,0}+y_{C,ij,A,B,1}=x_{C,ij,A,B}.
 \]
 
-For each key \((A,B)\), color edge-disjointness is enforced orientation-wise:
+For each key \((A,B)\), orientation occupancy is at most one color:
 \[
 \sum_C y_{C,ij,A,B,o}\le1\quad(o=0,1).
 \]
-For every \(e\in F_o(A,B)\), enforce \(y_{C,ij,A,B,o}+p_{ij,e}\le1\) for all \(C\). Because \(P_{ij}\) is itself a matching, its intersection with a \(K_{2,2}\) block is empty or a subset of exactly one orientation. These inequalities therefore implement the P-free duplicate-key theorem exactly: a P-hit block leaves at most one orientation available and hence at most one color; a P-free block can host at most two colors, one per orientation.
+This key-local constraint is necessary but not sufficient, because different \(K_{2,2}\) blocks can overlap in one or more edges. Therefore also impose **edge-level cross-key disjointness** for every actual edge \(e\in T_i\times T_j\):
+\[
+\sum_{\substack{C,A,B,o:\\e\in F_o(A,B)}}y_{C,ij,A,B,o}\le1.
+\]
+For every \(e\in F_o(A,B)\), enforce \(y_{C,ij,A,B,o}+p_{ij,e}\le1\) for all \(C\). Because \(P_{ij}\) is itself a matching, its intersection with a \(K_{2,2}\) block is empty or a subset of exactly one orientation. The P-disjointness inequalities therefore implement the P-free duplicate-key theorem locally: a P-hit block leaves at most one orientation available and hence at most one color; a P-free block can host at most two colors, one per orientation. The edge-level inequality is separately required to prevent two different residual pair keys from claiming the same actual matching edge.
 
 The full model must additionally impose that each \(P_{ij}\) is a perfect matching, that \(H_{ij}\subseteq P_{ij}\), and that every \(P_{ij}\setminus H_{ij}\) edge has exactly one repeat-color owner with both endpoints in that owner's residual sets. This projection encoding handles the local block constraints but does not replace the source-mode, alpha, T0 incidence, or global degree constraints.
 
