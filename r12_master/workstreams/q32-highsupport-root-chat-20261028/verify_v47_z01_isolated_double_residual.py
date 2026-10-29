@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""Finite replay for V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md.
+"""Independent arithmetic replay for the isolated-double residual branch.
 
-Enumerates the two-transversal-K4 local relaxation for the eight-vertex
-isolated-double branch. It does not enumerate source gadget placements or
-prove global Q32 infeasibility.
+Checks the 8-vertex two-transversal-K4 relaxation, including the pointwise
+T0 degree cap (each T0 vertex may receive at most one extra edge). The
+source gadget star restriction is stronger still; this is not a full Q32
+completion solver. The companion verifier with the same capped model is
+verify_v47_z01_isolated_double_residual_graphs.py.
 """
 from itertools import product, combinations
-from math import comb
+from collections import Counter
 
 N = 8
 part = (0, 0, 1, 1, 2, 2, 3, 3)
@@ -26,8 +28,7 @@ def clique_edges(vertices):
 
 bases = []
 for choice in product((0, 1), repeat=4):
-    # Quotient by swapping the two K4s.
-    if choice[0] != 0:
+    if choice[0] != 0:  # quotient by swapping the two K4s
         continue
     first = [2 * i + choice[i] for i in range(4)]
     second = [2 * i + (1 - choice[i]) for i in range(4)]
@@ -38,36 +39,44 @@ for choice in product((0, 1), repeat=4):
     bases.append((base, extra_indices))
 
 assert len(bases) == 8
+t0_vertices = [v for v in range(N) if part[v] == 3]
+assert len(t0_vertices) == 2
+graphs_by_gap = Counter()
+
 for gap in range(4):
     graphs = set()
     for base, extra_indices in bases:
         for chosen in combinations(extra_indices, gap):
+            # Pointwise saturation: each T0 vertex has base degree 3 and
+            # therefore may be incident to at most one extra edge.
+            if any(sum(v in edges[i] for i in chosen) > 1 for v in t0_vertices):
+                continue
             graph = base
             for i in chosen:
                 graph |= 1 << i
             assert graph.bit_count() == 12 + gap
             graphs.add(graph)
-    assert len(graphs) == 8 * comb(12, gap)
-    # No second two-K4 base is possible with at most three cross-base edges:
-    # a distinct transversal K4 needs at least three such edges and its
-    # complementary K4 needs another three.
+    assert len(graphs) == {0: 8, 1: 96, 2: 480, 3: 1312}[gap]
+    # A second two-K4 base needs at least six cross-base edges, impossible
+    # with at most three extras.
     for graph in graphs:
         containing_bases = sum((graph & base) == base for base, _ in bases)
         assert containing_bases == 1
+    graphs_by_gap[gap] = len(graphs)
 
 # Isolated-double edge accounting: 9 K4s + K3 contribute 57 H-edges.
 assert 9 * 6 + 3 == 57
 for gap in range(4):
     assert 57 + (12 + gap) == 69 + gap
 
-# In the exceptional x in H, y in H placement, the source ledger gives
-# b_s+b_t=3, g=3, and six H-H gadget edges over K4+K3 interiors (9 edges).
+# Exceptional x in H, y in H placement: b_s+b_t=3, g=3, six gadget H-H
+# edges supplement the K4+K3 interiors (9 edges) in G11.
 assert 6 - 3 == 3
 assert 9 + 6 == 15
 assert 57 + 15 == 72
 
 print("two-K4 bases:", len(bases))
-print("relaxed graph counts:", {g: 8 * comb(12, g) for g in range(4)})
+print("T0-capped relaxed graph counts:", dict(sorted(graphs_by_gap.items())))
 print("isolated-double edge accounting: checked")
-print("V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT_OK")
-print("Scope: source-derived residual accounting and local relaxation only; not global Q32 UNSAT.")
+print("V47_Z01_ISOLATED_DOUBLE_RESIDUAL_T0_CAP_OK")
+print("Scope: T0-capped necessary relaxation only; not global Q32 UNSAT.")
