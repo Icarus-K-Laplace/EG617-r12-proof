@@ -99,3 +99,16 @@ and `s_{C,0i}` counts the unmatched T_0 vertices whose repeated color is C. Ther
 No symmetric repeat-count statement is claimed for the T_i side, because T_0 union {v} has only 12 vertices for v in T_i.
 
 These pairwise repeat labels are the color-level constraints to add to any exact completion search. They are stronger than the aggregate 37-unit identity: the same color surplus must be realized by matching repeat labels on both sides of each K12--K12 pair.
+
+
+### Corollary 6.1 — each large-track pair has at most nine H-edges
+
+Write `e_{ij}=e_H(T_i,T_j)). For the remaining large label k, the degree identity gives
+`e_{ij}=y_k-2-E_0-E_k`.
+Since `y_k<=11`,
+`\boxed{e_{ij}<=9-E_0-E_k<=9.}`
+Thus each K12--K12 pair has at least three unmatched vertices on each side. More precisely, its deficit satisfies
+`12-e_{ij}>=3+E_0+E_k`,
+so the color-repeat conservation in Section 6 forces at least that many repeated-color vertices on each side of the pair.
+
+This does not close the aggregate system, but it rules out any large-track pair with 10, 11, or 12 H-edges in the aligned z=0,1 cells.
