@@ -560,3 +560,10 @@ The stronger conditional statement also holds if the six-cycle color is single-o
 ## Owner-only P0 overlap audit correction (2026-10-29)
 
 The previous claim of 20 direct P_0i/K4-baseline overlaps was false and is withdrawn. In the explicit source Class-A construction, the K4 baseline uses w-s_i,w-s_j,w-s_k, while the candidate P_0i edges use w-y_i,w-y_j,w-y_k with y_j,y_k in the separate K3. A direct endpoint replay gives zero overlaps. Two actual failures remain: the candidate's T0-T3 H endpoint profile has 8 edges but only 5 distinct T3 endpoints, with three T3 vertices each receiving two H edges from T0, violating the aligned zero-slack degree-one cross-track contract; and the owner-only construction has 9 residual-signature collision pairs / 36 duplicate baseline-edge claims. No complete common-P packing is certified.
+
+
+## E0=0 endpoint support caps (2026-10-29)
+
+Using the aligned zero-slack degree ledger and the corrected omitted-vertex identity, the H endpoint sets on T0-T1 and T0-T3 are exact sets: the six/seven exact nonrepeat omissions plus D's omission are respectively seven/eight distinct vertices, exactly the H endpoints. On T0-T2, the seven exact nonrepeat omissions plus D's omission are either eight distinct vertices or have exactly one doubled vertex, and doubling is possible only when the unique D-repeat endpoint is also an H endpoint.
+
+Under the all-Class-A forced allocation, exact T0-repeat endpoints are distinct within each track. Hence the E0=0 scalar profile satisfies d_P01(v)≤2, d_P02(v)≤3, d_P03(v)≤2; the T2 cap 3 requires exact-repeat, H and D-repeat edges all to share the endpoint. These are additional necessary endpoint constraints; the full vertex-labelled common-P packing and root contradiction remain OPEN / NOT_CERTIFIED.
