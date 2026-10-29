@@ -88,7 +88,7 @@ In the aligned cell, the ten exact colors satisfy 0<=g_C<=3, while the unique no
 
 If g_D>=18, the exact-color gap sum is at most 19, so at least one of the ten exact colors has g_C<=1. The preceding rigid 69/70 orientation then applies to at least one exact color.
 
-The unresolved alternative is g_D<=17. If that branch also has no exact color with gap 0 or 1, then all ten exact colors have g_C in {2,3}; if k of them have gap 3, the exact budget is g_D=17-k, with 0<=k<=10. This is a finite split for the remaining multicolor argument, not a contradiction.
+The unresolved alternative is g_D<=17. If that branch also has no exact color with gap 0 or 1, then all ten exact colors have g_C in {2,3}; if k of them have gap 3, the exact budget is g_D=17-k, with 0<=k<=10. The global T0 theorem t_C<=1 then forces at least 10+k exact-color surplus edges on the three K12--K12 pairs, leaving the nonexact color at most 16+E0-k such surplus edges. This is a finite budget cut for the remaining multicolor argument, not a contradiction.
 
 ## 5. Scope
 
