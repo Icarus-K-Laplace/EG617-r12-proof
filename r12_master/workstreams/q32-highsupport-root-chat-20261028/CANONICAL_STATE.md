@@ -562,11 +562,13 @@ This rules out repeated residual six-sets globally, but not distinct signatures 
 The previous claim of 20 direct P_0i/K4-baseline overlaps was false and is withdrawn. In the explicit source Class-A construction, the K4 baseline uses w-s_i,w-s_j,w-s_k, while the candidate P_0i edges use w-y_i,w-y_j,w-y_k with y_j,y_k in the separate K3. A direct endpoint replay gives zero overlaps. Two actual failures remain: the candidate's T0-T3 H endpoint profile has 8 edges on 5 vertices, giving endpoint excess sum_v max(h_3(v)-1,0)=3>E_3=2; and the owner-only construction has 9 residual-signature collision pairs / 36 duplicate baseline-edge claims. The first is a track-excess-budget violation, not a claim that every T3 vertex has degree one. No complete common-P packing is certified.
 
 
-## E0=0 endpoint support caps (2026-10-29)
+## E0=0 endpoint multiplicity constraints — corrected (2026-10-29)
 
-Using the aligned zero-slack degree ledger and the corrected omitted-vertex identity, the H endpoint sets on T0-T1 and T0-T3 are exact sets: the six/seven exact nonrepeat omissions plus D's omission are respectively seven/eight distinct vertices, exactly the H endpoints. On T0-T2, the seven exact nonrepeat omissions plus D's omission are either eight distinct vertices or have exactly one doubled vertex, and doubling is possible only when the unique D-repeat endpoint is also an H endpoint.
+The H endpoint multiset on T0-T_i is not necessarily a set. In the aligned zero-slack contract, h_i(v)≤1 for each of the nine non-small vertices, while the three small-block vertices may have multiplicity above one with total excess sum_v max(h_i(v)-1,0)≤E_i=2. In the E0=0 scalar row, the allowed H endpoint profile counts are 3,528 / 3,528 / 3,897 for T1/T2/T3.
 
-Under the all-Class-A forced allocation, exact T0-repeat endpoints are distinct within each track. Hence the E0=0 scalar profile satisfies d_P01(v)≤2, d_P02(v)≤3, d_P03(v)≤2; the T2 cap 3 requires exact-repeat, H and D-repeat edges all to share the endpoint. These are additional necessary endpoint constraints; the full vertex-labelled common-P packing and root contradiction remain OPEN / NOT_CERTIFIED.
+If D has no T0 repeat on a pair (T1,T3), its omitted vertex must be an H endpoint and n_i=h_i-δ_D. If D has the T0 repeat on T0-T2, the omitted vertex is the endpoint of that repeat, so δ_D=r_D and n_i=h_i. The earlier claim that all omissions were injective, the binary-profile counts 5,544 / 70,488 / 3,960, and the P0 endpoint-degree caps (2,3,2) are withdrawn.
+
+Under the all-Class-A allocation, exact T0-repeat endpoints are distinct within each track (a_i(v)≤1), but may overlap H endpoints. With h_i(v)≤3 and the D-repeat vector (0,1,0), the conservative endpoint-only bounds are max degree of P0i at most (4,5,4) for T1/T2/T3. These are necessary local constraints only; the full vertex-labelled common-P packing remains OPEN / NOT_CERTIFIED.
 
 ## Class-B zero-T0-surplus star-center incidence (2026-10-29)
 
