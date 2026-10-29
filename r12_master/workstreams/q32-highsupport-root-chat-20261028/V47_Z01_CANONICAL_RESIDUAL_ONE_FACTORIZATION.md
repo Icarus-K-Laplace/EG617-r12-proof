@@ -3,6 +3,8 @@
 Date: 2026-10-29  
 Status: **PROVED_CONDITIONAL exact structural theorem.** No Q32 closure claimed.
 
+> **Residual-scope audit (2026-10-29):** the pairwise Hall/1-factorization statements in Sections 2–3 are unaffected. The global (g_C=0,1) orientation in Section 4 follows from the 69/70 near-Turán classification and remains global. However, the four-class 7-vertex holonomy-cost table in V47_Z01_RESIDUAL_HOLONOMY_COST.md applies only when all ten isolated K5 components are single-outside; an isolated-double placement has an 8-vertex gadget residual, documented in V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md.
+
 > **Audit correction:** the residual factor P is not intrinsically canonical. At a vertex where a color repeats twice, the two same-colored edges are not individually distinguished as “the” repeated edge. The valid theorem is that, after choosing one perfect matching for each non-target color, their complement is a residual perfect matching. Different choices may give different residual factors.
 
 ## 1. Contract
