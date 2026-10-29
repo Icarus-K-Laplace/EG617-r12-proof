@@ -452,3 +452,11 @@ New consequence: for every exact color, nontrivial six-cycle holonomy requires g
 The residual holonomy verifier now checks the exact repair shapes. In class C, every minimum two-edge repair includes a mandatory edge joining the common pair of two independent triples, plus one of three edges in the disjoint large-track triple. In class D, the unique independent 4-set is T0 plus a transversal triple V; T0 is attached in the baseline to the complementary triple U. Each of the nine minimum repairs uses one edge inside U, one T0-to-V edge, and the edge joining the other two vertices of V.
 
 Added `V47_Z01_EXACT_COLOR_RESIDUAL_GRAPH_CATALOG.md` and its verifier for the all-isolated-single-outside subcase only. The seven-vertex catalog counts the necessary relaxation at gaps 0,1,2,3 as 8,72,384,1,148. The source-correct isolated-double branch is now separated in `V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md`; therefore neither the 7-vertex counts nor the 64-baseline holonomy classes may be applied to every exact color without first checking its placement.
+
+### Residual-placement audit correction — 2026-10-29
+
+A source-correct 69-edge placement in HIGH_SUPPORT_NEAR_TURAN.md, Section 3, places the unique double-outside K5 in an isolated component. This contradicts the earlier unqualified assertion that every exact color's ten isolated K5s yield ten H-K4s. The 7-vertex residual graph catalog and 64-baseline holonomy table are therefore conditional on all ten isolated components being single-outside.
+
+Added V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md and verify_v47_z01_isolated_double_residual.py. If one isolated component is double-outside, the ten isolated H-components are 9K4 plus K3 (57 edges), the G11 H-residual has profile (2,2,2,2), and its edge count is 12+g_C. In the low-gap source placements, that residual contains two disjoint transversal K4s; the pairwise-matching relaxation has 8,96,528,1760 labeled graphs for gaps 0,1,2,3. The x_C-in-H, y-in-H exceptional subcase has g_C=3 and is kept separate.
+
+Updated the residual catalog, holonomy theorem, their verifiers' scope notes, canonical state, dependency DAG, and retraction firewall. The global g=0,1 orientation still follows from the separate near-Turan theorem. Root remains OPEN / NOT_CERTIFIED.
