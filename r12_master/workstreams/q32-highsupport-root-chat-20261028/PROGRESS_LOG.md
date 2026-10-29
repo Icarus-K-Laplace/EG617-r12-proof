@@ -471,3 +471,9 @@ A further pointwise cap was missing from the first enumerator versions. In the s
 ### Isolated-double residual enumeration tightened by T0 saturation (2026-10-29)
 
 Updated `V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md` and added `verify_v47_z01_isolated_double_residual_graphs.py`. For the two-K4 residual subcases, each T0 residual vertex has baseline C-degree three, so balanced-coloring saturation allows at most one extra C-edge at each. Counting subsets of the 12 cross-K4 edges under these two caps gives 1,12,60,164 per base for gaps 0,1,2,3, and 8,96,480,1312 across eight unordered bases. This corrects the previous uncapped counts 8,96,528,1760. The source star restriction further implies g_C<=1 if its center is in T0. Independent Python enumeration reproduced the counts; no global Q32 closure is claimed.
+
+### Audit correction: isolated-double exceptional branch (2026-10-29)
+
+A proposed closure of the entire `x_C in H, y in H` isolated-double branch was retracted. The cross-track ledger gives each large-track vertex one H-neighbor total outside its own track, not one H-neighbor into every other track. The argument relying on a per-pair degree-one condition was invalid.
+
+The sound conclusion is limited to the T0-centered subcase: if `x_C,y in T0`, each already has three C-neighbors in H, so pointwise saturation allows at most one extra C-edge per center; the three required gadget edges cannot fit into total capacity two. This subcase is CLOSED; the large-track-centered exceptional subcase remains OPEN.
