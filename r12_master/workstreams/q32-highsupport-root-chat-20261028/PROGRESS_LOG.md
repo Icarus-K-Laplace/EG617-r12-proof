@@ -496,3 +496,8 @@ Sharpened the aggregate budget by conditioning on the nonexact gap: `L_exact>=27
 ### Large-pair surplus budget in the unresolved g_D<=17 branch — 2026-10-29
 
 Combining the global exact-color T0 cap t_C<=1 with the existing gap split gives a new exact budget cut. If no exact color has gap 0 or 1, the ten exact gaps are 2 or 3. If k colors have gap 3, then g_D=17-k and the exact colors must contribute at least 10+k surplus edges across the three K12--K12 pairs. Since the total large-pair surplus is 26+E0, the nonexact color is limited to at most 16+E0-k such edges. This forces at least one large-pair repeat edge from every exact color, and at least two from each gap-three exact color. It narrows the next packing search but is not a contradiction.
+
+
+### Clarify the shell-edge lower-bound theorem label — 2026-10-29
+
+Audited the upper bound on the unique nonexact color D in V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM.md. The conclusion e_D(A)>=2 is correct, but the previous label p_11(13)=2 was a notation collision: p_r(n) denotes the Kang–Pikhurko second-Turán maximum in the external theorem, and its stated range does not include n=13. Replaced it with the direct independence argument (at most one edge in A would leave an independent 12-set, which together with p is a D-independent 13-set) and, equivalently, the ordinary Turán complement calculation C(13,2)-t_11(13)=78-76=2. No numeric bound or root status changes.
