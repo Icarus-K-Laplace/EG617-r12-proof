@@ -670,3 +670,11 @@ The verifier now returns immediately on a malformed K5 factor list instead of co
 ### K6-separation import and reporting fix (2026-10-29)
 
 The solver now imports the verifier's complement-dual find_clique routine explicitly, and iteration logs call the combined independent-set/K6 cuts “validity cuts” rather than “alpha cuts.” The independent-set and clique routines were cross-checked against brute force on all 5,405 simple-graph/target-size instances with n<=5; each routine agreed in every case.
+
+
+### 2026-10-29 — Canonical global edge-count vector reconciled
+
+- Cross-checked the root branch's Q32_130_MINDEG4_AND_CASEI_M8_CLOSURE.md and corrected the model from e_0=398+m / fixed 132-edge color to e_0=408 for all m.
+- Correct nonexact vectors: m=8 has three 130-edge colors; m=9 has 130- and 131-edge colors; m=10 has one 132-edge color. All three vectors sum to 1830.
+- Centralized the vector in expected_color_counts(m), imported by the solver and used by the independent verifier; added exact vector and edge-total self-tests.
+- No SAT/UNSAT claim is made. The previous CSP drafts were never solved and must not be treated as proof evidence.

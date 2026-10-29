@@ -31,6 +31,21 @@ def pairs(vertices):
     return itertools.combinations(vertices, 2)
 
 
+def expected_color_counts(m):
+    """Registered global edge-count vector for the 61-point E408 residual."""
+    if m not in (8, 9, 10):
+        raise ValueError("m must be 8, 9, or 10")
+    counts = {0: 408}
+    counts.update({c: 129 for c in range(1, m + 1)})
+    if m == 8:
+        counts.update({9: 130, 10: 130, 11: 130})
+    elif m == 9:
+        counts.update({10: 130, 11: 131})
+    else:
+        counts[11] = 132
+    return counts
+
+
 def find_independent_set(adj_masks, vertices, target_size):
     """Return an independent set of target_size, or None after exact search.
 
@@ -149,9 +164,7 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
         return ["m must be 8, 9, or 10"]
     exact_colors = list(range(1, m + 1))
     nonexact_colors = list(range(m + 1, 12))
-    expected_counts = {0: 398 + m, 11: 132}
-    expected_counts.update({c: 129 for c in exact_colors})
-    expected_counts.update({c: 130 for c in range(m + 1, 11)})
+    expected_counts = expected_color_counts(m)
 
     raw_edges = data.get("edge_colors", [])
     colors = {}
@@ -490,6 +503,18 @@ def self_test():
     }
     malformed_errors = verify_candidate(malformed, check_alpha=False)
     assert any("must provide 12 disjoint 5-sets" in item for item in malformed_errors)
+
+    # Exact registered global color-count vectors all partition K_61.
+    expected8 = {0: 408, **{c: 129 for c in range(1, 9)},
+                 9: 130, 10: 130, 11: 130}
+    expected9 = {0: 408, **{c: 129 for c in range(1, 10)},
+                 10: 130, 11: 131}
+    expected10 = {0: 408, **{c: 129 for c in range(1, 11)}, 11: 132}
+    assert expected_color_counts(8) == expected8
+    assert expected_color_counts(9) == expected9
+    assert expected_color_counts(10) == expected10
+    assert all(sum(expected_color_counts(m).values()) == N * (N - 1) // 2
+               for m in (8, 9, 10))
 
     # Clique search is the exact complement-dual of independent-set search.
     assert find_clique(complete_adj, range(5), 5) is not None

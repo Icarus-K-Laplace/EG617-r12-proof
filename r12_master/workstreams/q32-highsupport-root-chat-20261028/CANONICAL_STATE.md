@@ -657,3 +657,8 @@ Added the missing omega(G_C)<=5 premise to the exact full-support CSP through la
 ### K6-separation import and reporting fix (2026-10-29)
 
 The solver now imports the verifier's complement-dual find_clique routine explicitly, and iteration logs call the combined independent-set/K6 cuts “validity cuts” rather than “alpha cuts.” The independent-set and clique routines were cross-checked against brute force on all 5,405 simple-graph/target-size instances with n<=5; each routine agreed in every case.
+
+
+## Root count-vector reconciliation (2026-10-29)
+
+Corrected the full-support CSP and independent verifier to the canonical E408 color counts: target color 408 edges for every m; exact colors 129 each; nonexact colors are (130,130,130) for m=8, (130,131) for m=9, and (132) for m=10. The previous vector e_0=398+m with a fixed 132-edge color was inconsistent with the root branch, although its totals happened to sum to 1830. This correction is upstream of all solver conclusions.

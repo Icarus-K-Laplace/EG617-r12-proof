@@ -562,3 +562,8 @@ The CSP model-construction blocker at symbolic y lookup was repaired by finite-l
 ### Full coloring premise audit (2026-10-29)
 
 The exact labelled CSP now includes omega(G_C)<=5 for all twelve colors via lazy monochromatic-K6 cuts; the independent verifier checks the same premise. This is a required contract dependency for the nonexact-color degree-floor theorems. No SAT/UNSAT result or root promotion is claimed.
+
+
+### Canonical edge-count vector reconciliation (2026-10-29)
+
+The exact CSP and independent verifier now use the root-branch count vector: e_0=408 for all m; exact colors 129 each; nonexact colors 130/130/130 (m=8), 130/131 (m=9), or 132 (m=10). The former e_0=398+m/fixed-132 vector is withdrawn. No full solver run has occurred.

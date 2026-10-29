@@ -39,7 +39,7 @@ The full-support check is also source-corrected: each h in H must occur in at le
 
 ## Global constraints
 
-1. Every edge has exactly one color and the registered per-color edge counts are imposed: e_0=398+m, e_C=129 for exact colors, e_C=130 for colors m+1,...,10, and e_11=132.
+1. Every edge has exactly one color and the registered global edge-count vector is imposed: e_0=408 for all m; exact colors have 129 edges each; for m=8 the three remaining colors have 130 each; for m=9 the remaining colors have 130 and 131; for m=10 the unique remaining color has 132. The vector sums to 1830 in every case.
 2. All 13 edges pA have color 0.
 3. The target core satisfies e(H)=285, delta(H)>=12, and sum over h in H of (d_H(h)-12)=6.
 4. The eleven non-target colors satisfy the exact 37-unit identity sum_C(e_C(H)-69)=37; each has at least 69 core edges and each exact color has at most 75.
@@ -116,3 +116,13 @@ The first CSP draft enforced the independence-number side of the registered colo
 ### K6-separation import and reporting fix (2026-10-29)
 
 The solver now imports the verifier's complement-dual find_clique routine explicitly, and iteration logs call the combined independent-set/K6 cuts “validity cuts” rather than “alpha cuts.” The independent-set and clique routines were cross-checked against brute force on all 5,405 simple-graph/target-size instances with n<=5; each routine agreed in every case.
+
+
+## Global color-count vector corrected against the root branch (2026-10-29)
+
+The earlier CSP draft used e_0=398+m and a fixed 132-edge color for all m. That vector summed to 1830 but did not match the registered E408 count collapse. The root branch specifies e_0=408 for every m, with nonexact counts:
+- m=8: 3 colors of 130;
+- m=9: one color of 130 and one of 131;
+- m=10: one color of 132.
+
+The verifier now owns a single expected_color_counts(m) helper, imported by the solver, and self-tests each vector and its 1830-edge total. No solver result was generated under the earlier vector; all prior model claims were explicitly formulation-only.

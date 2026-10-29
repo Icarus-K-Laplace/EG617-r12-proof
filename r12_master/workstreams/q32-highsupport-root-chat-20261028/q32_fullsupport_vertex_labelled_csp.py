@@ -24,7 +24,7 @@ except ImportError:
 
 from verify_q32_fullsupport_candidate import (
     ALL_COLORS, H, N, O, PIVOT, A, TRACKS, edge, pairs,
-    find_independent_set, find_clique, verify_candidate,
+    expected_color_counts, find_independent_set, find_clique, verify_candidate,
 )
 
 
@@ -122,11 +122,8 @@ def build_model(m, aligned_z01=False):
             solver.add((col[edge(u, v)] == c) == source_edge(u, v))
         solver.add(iff_count(col[e] == c for e in col) == 129)
 
-    # Exact edge counts on K_61. The target count follows by subtraction.
-    expected_total = {0: 398 + m, 11: 132}
-    expected_total.update({c: 129 for c in exact})
-    expected_total.update({c: 130 for c in range(m + 1, 11)})
-    for c, total in expected_total.items():
+    # Exact registered edge-count vector for K_61.
+    for c, total in expected_color_counts(m).items():
         solver.add(iff_count(col[e] == c for e in col) == total)
 
     # The 13 pivot-shell edges are target-colored.
