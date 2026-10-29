@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Independent arithmetic replay for the isolated-double residual branch.
 
-Checks the 8-vertex two-transversal-K4 relaxation, including the pointwise
-T0 degree cap (each T0 vertex may receive at most one extra edge). The
+Checks the 8-vertex two-transversal-K4 relaxation, including the global
+T0 cap t_C<=1 (at most one T0-incident extra edge across both T0 vertices). The
 source gadget star restriction is stronger still; this is not a full Q32
 completion solver. The companion verifier with the same capped model is
 verify_v47_z01_isolated_double_residual_graphs.py.
