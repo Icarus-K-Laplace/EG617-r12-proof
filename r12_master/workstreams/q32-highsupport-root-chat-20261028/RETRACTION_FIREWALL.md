@@ -156,3 +156,14 @@ The refined range `7<=g_D<=19` depends on the 132-edge nonexact color D, the bal
 ## 16. Type-I factor-occupancy ledger (2026-10-29)
 
 The occupancy vectors use the source statement that the twelve K5 factors partition the 60 vertices other than x_C. Single-outside K5 H vertices form a transversal of the four target cliques; other K5-factor H vertices are independent and occupy distinct parts. The vector equations are count consequences, not an UNSAT certificate, and the two special K5s must remain distinguished from the ten isolated components.
+
+
+## 12. T0 pointwise saturation firewall (2026-10-29)
+
+The new T0 degree ledger uses only:
+- the aligned target clique partition \(K_{12},K_{12},K_{12},K_{11}\);
+- the balanced-coloring condition that every 13-set contains every non-target color;
+- the exact H degree/cross-track degree ledger;
+- the corrected Type-I factorization into ten isolated K5 components plus G11.
+
+It distinguishes special K5s in G11 from isolated components and does not assume exceptional-point injectivity, a universal degree-nine point, or any Q33/E407 identity. The result is a pointwise capacity theorem only, not an UNSAT certificate. EG617(r=12) remains OPEN / NOT_CERTIFIED.
