@@ -131,3 +131,8 @@ The remaining bridge is to impose pair-projection injectivity, all cross-color m
 - Non-full-support rows \(v=45,46\), \(m=8,9,10\), are closed in this workstream under the source-correct multiplicity theorem, current nonexact degree floors, and the no-core-only degree-four lemma. The \(v=44,m=8,9\) branch belongs to the sibling workstream.
 - For full support \(v=47\), the \(z=0,1\) small/outer partitions are aligned, the \(z=1\) \((3,2,1,1)\) profile is closed by a K13 contradiction, and the remaining \(z=0\) and \(z=1\) \((2,2,2,1)\) cells remain open.
 - The common-factor CSP above is the next exact bridge from local Type-I shapes to a global contradiction. Until its vertex-labelled edge-packing constraints are solved or a source-realizable completion is exhibited, E408/Q32 remains **OPEN / NOT_CERTIFIED**.
+
+
+### 4.3 Additional direct P_0i/baseline-overlap failure
+
+A stricter audit of `verify_v47_z01_vertex_labelled_common_p_witness.py` finds a fatal flaw even before its residual-signature collisions: for each exact color C, the proposed P_0j and P_0k edges at its residual T0 vertex x_C are exactly the K4 baseline edges x_Cs_j and x_Cs_k of that same color. But P_0i is the complement of the eleven selected color matchings, so it cannot contain any such baseline edge. There are exactly 20 such overlaps across the ten colors. The script now asserts this count and labels itself a retraction audit; it no longer claims a feasible common-P witness. The already documented 9 residual-signature collision pairs and 36 duplicate baseline-edge claims are an additional, independent failure. The owner-only construction therefore supplies no feasible endpoint packing, and must not be used as evidence of Q32 feasibility.
