@@ -467,7 +467,7 @@ The Class-B-specific law remains: in the seven-vertex Class-B mode, \(x_C\in T_0
 
 `V47_Z01_TWO_DOUBLE_SOURCE_PATTERN_AUDIT.md` and its verifier classify the all-isolated-single-outside, both-special-factors-double-outside, x-in-T0 local mode. The replay passes 19 labeled cases and confirms the Class-B (g,t)=(2,1) complement relation only in that source mode; the unordered pair assertion was corrected before replay.
 
-The prior `verify_v47_z01_vertex_labelled_common_p_witness.py` construction is now explicitly RETRACTED. In addition to the documented 9 residual-signature collision pairs / 36 duplicate baseline-edge claims, it has 20 direct overlaps where P_0i contains the same exact color's K4 baseline edge on a non-repeat track. Since P_0i is the complement of all selected color matchings, those overlaps violate the model contract. The file now verifies these conflicts rather than certifying a feasible witness. Q32 remains OPEN / NOT_CERTIFIED.
+The prior `verify_v47_z01_vertex_labelled_common_p_witness.py` construction remains an owner-only relaxation and is not a feasible common-P packing because 9 residual-signature collision pairs / 36 duplicate baseline-edge claims force different colors to reuse the same baseline matching edges. Correction: the additional claim of 20 direct P_0i/K4-baseline overlaps was false. The source construction uses w-y_j in P_0j but w-s_j in the K4 baseline; these are distinct vertices/edges. The verifier now asserts zero such overlaps. Q32 remains OPEN / NOT_CERTIFIED.
 
 ### 14l. T0--Ti omitted-vertex conservation — corrected endpoint degrees
 
