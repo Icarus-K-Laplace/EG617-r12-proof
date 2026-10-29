@@ -348,3 +348,16 @@ The within-track edge count is 253, so the 32 remaining H-edges are cross-track 
 - `E_0` is the sum of small-block degree-excess units on the singleton-fiber label and lies in `{0,1,2,3}`.
 
 Thus 7–10 H edges lie among the three large tracks and 22–25 join the K11 track to a K12 track. The six track-pair deficits sum exactly to 37. The verifier enumerated all 729 small-block excess triples and found 28,107 feasible necessary aggregate track-count states; output `V47_Z01_CROSS_TRACK_ARITHMETIC_OK`. This is a sharper structural normal form, not a closure of z=0 or z=1.
+
+
+## Aligned low-z Type-I component normal form (2026-10-29)
+
+Added `V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM.md` and arithmetic replay `verify_v47_aligned_typei_component_normal_form.py`. In the surviving aligned z=0,1 profile (2,2,2,1), H partitions into three target K12 cliques and one target K11 clique. Balanced coloring implies every non-target color C has `d_C(v,H)>=2` at every H vertex and `d_C(v,H)>=3` on the K11 part.
+
+The registered triple-outside K5 placement gives its two H vertices only one C-neighbor in H, so it is impossible in this cell. A double-outside K5 must use one H vertex from each of the three K12 parts and none from K11; every single-outside K5 uses one H vertex from each of the four parts. Therefore exact colors have only two remaining Type-I placement types: x_C in O with one double/nine single K5s, or x_C in H with two doubles/eight singles.
+
+The gadget H-H edge count is tied exactly to the near-Turan gap:
+- x_C in O: `e_C(H intersect G11)=12+g_C`, with `0<=g_C<=4`;
+- x_C in H, two-double: `e_C(H intersect G11)=15+g_C`, with `0<=g_C<=5`.
+
+The arithmetic verifier was executed and returned `V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM_ARITHMETIC_OK`. This eliminates only the triple-placement row and sharpens the color-gap decomposition; the aligned z=0,1 cells remain OPEN.
