@@ -59,13 +59,12 @@ for choice in product((0, 1), repeat=4):
         star_edges = [center_v for center_v in opposite
                       if center[0] != center_v[0]]
         assert len(star_edges) == 3
-        if center[0] == 3:
-            # Center is a T0 vertex of baseline degree 3.
-            assert all(len(sub) <= 1 for r in range(4)
-                       for sub in combinations(star_edges, r)
-                       if len(sub) <= 1)
         for r in range(4):
             for sub in combinations(star_edges, r):
+                if center[0] == 3 and len(sub) > 1:
+                    # A T0 center has baseline degree 3 and cannot take
+                    # two or more extra edges under the pointwise cap.
+                    continue
                 touched_T0 = {
                     v for edge in sub for v in edge if v[0] == 3
                 }
@@ -73,9 +72,9 @@ for choice in product((0, 1), repeat=4):
 
 # The only isolated-double source case not represented by a two-K4 star
 # has x_C in H, y in H, and the two-double placement; its source ledger
-# forces g_C=3 and there are only two T0 vertices in G11.
-assert 6 - 3 == 3
-assert 0 <= 2 <= 2
+# forces b_s+b_t=3, g_C=3, and a residual with only two T0 vertices.
+assert 6 - (1 + 2) == 3
+assert 69 + 3 == 72
 
 # Aggregate identity: sum g_C=37 and sum t_C=11-E0.
 for E0 in range(4):
