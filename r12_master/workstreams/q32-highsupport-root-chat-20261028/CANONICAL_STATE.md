@@ -449,3 +449,18 @@ Writing \(t_C\) for the number of T0 vertices where color C has H-degree 4 gives
 Moreover, the T0-pair surplus identity gives \(t_C=\sum_{i=1}^3(e_C(T_0,T_i)-11)\), while every K12-pair has at least 12 C-edges. Hence \(g_C=e_C(H)-69\ge t_C\), and for exact colors \(t_C\le\min(2,g_C)\). Summing gives \(\sum_C(g_C-t_C)=26+E_0\), the exact surplus on the three K12--K12 pairs.
 
 This is an exact vertexwise saturation/capacity constraint for future packing or SAT/ILP work, not a contradiction. The nonexact color may own some of the repeated-color T0 vertices; the aligned cells and root remain OPEN / NOT_CERTIFIED.
+
+
+## New exact residual holonomy-cost theorem (2026-10-29)
+
+Added `V47_Z01_RESIDUAL_HOLONOMY_COST.md` and `verify_v47_z01_residual_holonomy_cost.py`.
+
+For each exact color C, the ten isolated transversal K4s in its Type-I factorization leave a seven-vertex residual set of profile (2,2,2,1). Its nine-edge baseline consists of two matching edges between each pair of large residual parts and one edge from the T0 singleton to each large part. The remaining `g_C<=3` C-edges are extra edges, constrained to be a matching within each track pair.
+
+There are exactly 64 possible baselines. Exhaustive enumeration classifies them into four types:
+- A: large-part matchings form two triangles and T0 attaches to one triangle; 8 baselines, alpha=2, minimum gap 0.
+- B: large-part matchings form two triangles but T0 attachments are mixed; 24 baselines, alpha=3, minimum gap 1.
+- C: large-part matchings form a six-cycle with alpha 3; 24 baselines, minimum gap 2.
+- D: six-cycle with alpha 4; 8 baselines, minimum gap 3.
+
+The exact verifier checked every admissible extra-edge set of size at most three. Thus a nonaligned large-part matching composition costs at least two repeat edges; the most obstructive six-cycle/T0 pattern costs all three. In particular, any exact color with `g_C<=1` must have aligned large-part matching composition. The local enumeration returned `V47_Z01_RESIDUAL_HOLONOMY_COST_OK`; it does not close the global z=0,1 cell.
