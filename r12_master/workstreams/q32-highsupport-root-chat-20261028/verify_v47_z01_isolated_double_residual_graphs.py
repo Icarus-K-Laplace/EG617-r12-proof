@@ -54,14 +54,14 @@ for choice in product((0, 1), repeat=4):
                 for track, side in edge:
                     if track == 3:
                         t0_degree_increment[side] += 1
-            if any(d > 1 for d in t0_degree_increment):
+            if sum(t0_degree_increment) > 1:
                 continue
             # Any added cross-K4 edges preserve the two base K4s, so alpha <= 2.
             counts[g] += 1
 
 assert bases == 16  # 8 unordered bases, each represented by two complementary bit vectors.
-assert counts == Counter({0: 8, 1: 96, 2: 480, 3: 1312})
+assert counts == Counter({0: 8, 1: 96, 2: 408, 3: 880})
 print("unordered two-K4 bases:", 8)
 print("graphs by surplus:", dict(sorted(counts.items())))
 print("V47_Z01_ISOLATED_DOUBLE_RESIDUAL_GRAPHS_OK")
-print("Scope: T0-capped necessary relaxation only; not global Q32 UNSAT.")
+print("Scope: globally T0-capped necessary relaxation only; not global Q32 UNSAT.")
