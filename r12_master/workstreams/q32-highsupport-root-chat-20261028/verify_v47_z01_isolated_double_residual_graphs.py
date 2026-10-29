@@ -33,6 +33,7 @@ def base_edges(choice):
             cross.add(tuple(sorted(((i, choice[i]), (j, 1-choice[j])))))
             cross.add(tuple(sorted(((i, 1-choice[i]), (j, choice[j])))))
     assert len(base) == 12 and len(cross) == 12 and base.isdisjoint(cross)
+    assert sum(any(track == 3 for track, side in edge) for edge in cross) == 6
     return base, cross
 
 counts = Counter()
