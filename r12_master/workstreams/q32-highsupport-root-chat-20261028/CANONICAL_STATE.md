@@ -578,3 +578,8 @@ The exact x-in-H two-double source audit gives a further local filter. In the Cl
 ## Class-B zero-T0-surplus star-center incidence (2026-10-29)
 
 The exact x-in-H two-double source audit gives a further local filter. In the Class-B row y in H, a=2, g_C=2, t_C=0, the two surplus edges form a star ys_j, ys_k, one into each of the other two large tracks. Both are the unique P-edges incident to y on those two pair types, so y has no H-neighbor in any other large track. Since its own track is a K12 and delta(H)>=12, y must have at least one H-neighbor in T0. Added this source-incidence condition to the common-P packing model. It filters Class-B star centers but does not close the full-support cell.
+
+
+## Partial pair-projection packing (2026-10-29)
+
+Added V47_Z01_PARTIAL_PROJECTION_PACKING.md and verify_v47_z01_partial_projection_packing.py. For any fixed residual pair key (A,B) on tracks i,j, the block A×B is K2,2 with two internal perfect matchings. If common P_ij contains any edge of the block, one internal matching is forbidden and only the other can be used; edge-disjointness makes the key unique. Thus a duplicated pair projection is possible only if the entire four-edge block is P-free. In that case exactly two colors may share the key, using complementary matchings and covering all four block edges. No two colors can share two pair projections, since that forces identical full residual six-sets, already excluded by the all-mode injectivity theorem. The verifier checks all seven possible matching intersections of P_ij with a K2,2 block. This is a necessary CSP constraint, not a Q32 closure.
