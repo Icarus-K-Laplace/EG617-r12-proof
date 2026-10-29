@@ -58,7 +58,16 @@ These are exact local counts, not asymptotic estimates. They verify that:
 \]
 Moreover, if the large-part matchings have nontrivial six-cycle holonomy, then g_C>=2; if the baseline has alpha four, then g_C=3.
 
-## 4. Global consequence and remaining frontier
+## 4. Shape of the minimum repairs in the two nonaligned classes
+
+The verifier also checks the independent-set geometry of the minimum repairs.
+
+- **Class C (six-cycle, baseline alpha 3):** every baseline has exactly three independent triples. Two share a common pair of large-track vertices; the third is disjoint and consists of one vertex from each large track. Each of the three minimum two-edge repairs contains the edge joining the common pair, plus one of the three possible edges among the disjoint triple. Thus there is a **mandatory repeated-color edge** for every minimum-cost nonaligned class-C baseline.
+- **Class D (six-cycle, baseline alpha 4):** every baseline has a unique independent 4-set consisting of T0's singleton and a transversal triple V of large-track vertices. The three T0 edges in the baseline attach to the complementary transversal triple U. Every minimum three-edge repair consists of one edge among U, an edge from T0 to one vertex w of V, and the edge joining the other two vertices of V. There are exactly 3×3=9 such repairs per baseline.
+
+These repair patterns are stronger than the minimum-cost table alone. They identify which repeated-color edges are forced when a color uses the nonaligned residual holonomy class.
+
+## 5. Global consequence and remaining frontier
 
 For the ten exact colors, each g_C lies in {0,1,2,3}; the total exact-color gap is 37-g_D. This local theorem sharpens the gap interpretation:
 - any exact color with gap 0 or 1 has aligned large-track matching composition;
