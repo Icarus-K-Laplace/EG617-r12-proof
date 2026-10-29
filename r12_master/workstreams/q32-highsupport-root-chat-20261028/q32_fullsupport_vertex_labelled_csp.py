@@ -244,10 +244,8 @@ def build_model(m, aligned_z01=False):
     solver.add((2 * x_slack + y_slack - 5 * m) +
                (y_slack + 2 * z_slack - degree_gap) == 6)
 
-    # Do not add the derived all-color reserve quota as a hard constraint here.
-    # The exact global edge-color model and lazy alpha cuts are sufficient and
-    # avoid silently importing a pointwise-degree premise whose full derivation
-    # is not part of this solver's trusted core.
+    # Source-safe residual quota constraints are imposed above; the stronger
+    # target-degree-13 quota remains conditional, as documented in the reserve audit.
 
     matchings, pvars = {}, {}
     tracks = [set(t) for t in TRACKS]
@@ -259,6 +257,35 @@ def build_model(m, aligned_z01=False):
         for i, track in enumerate(tracks):
             expected_r = (1, 2, 2, 2)[i]
             solver.add(iff_count(residual[v] for v in track) == expected_r)
+
+        # Exact nonexact-gap saturation for the aligned z=0,1 cell:
+        # every exact color has 72 core edges (g_C=3), while color 11 has
+        # 76 (g_D=7). The proof is in V47_Z01_NONEXACT_GAP_SATURATION.md.
+        for c in exact:
+            solver.add(core_edges[c] == 72)
+        solver.add(core_edges[11] == 76)
+
+        # Equality in the outside-H edge lower bound forces exactly one
+        # color-11 edge from each o in O to each large K12 track T1,T2,T3.
+        for o in O:
+            for i in range(1, 4):
+                solver.add(iff_count(col[edge(o, v)] == 11 for v in tracks[i]) == 1)
+
+        # Let Z={o in O : o has no color-11 neighbor in T0}. Equality forces
+        # Z subset A with |Z|=2 or 3, Z a clique, and every o outside Z has
+        # exactly one color-11 neighbor in T0.
+        d_a = iff_count(col[edge(u, v)] == 11 for u, v in pairs(A))
+        d_t0 = {o: iff_count(col[edge(o, v)] == 11 for v in tracks[0]) for o in O}
+        solver.add(z3.Or(d_a == 2, d_a == 3))
+        for o in O:
+            solver.add(d_t0[o] <= 1)
+        solver.add(d_t0[PIVOT] == 1)
+        solver.add(isum(d_t0[o] for o in O) + d_a == 14)
+        for a, b in pairs(A):
+            solver.add(z3.Implies(
+                z3.And(d_t0[a] == 0, d_t0[b] == 0),
+                col[edge(a, b)] == 11))
+
         z_cross = iff_count(
             z3.And(residual[u], residual[v], col[edge(u, v)] == 0)
             for i in range(4) for j in range(i + 1, 4)

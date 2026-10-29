@@ -675,3 +675,8 @@ The m=8 weighted-surplus restrictions a_C in {2,3} and pairwise distinctness of 
 ### Main specification synced with safe reserve implementation (2026-10-29)
 
 Updated the global-constraints section to reflect the implemented unconditional q_z<=(4,5,5) caps and conditional stronger caps. The earlier wording that no reserve quota was encoded is obsolete.
+
+
+## New aligned m=10 nonexact-gap saturation (2026-10-29)
+
+In the aligned z=0,1,(2,2,2,1) cell, the 132-edge nonexact color D has at least 56 edges outside H: 42 forced edges from O to the three K12 target tracks, plus at least 14 from O-T0 and D[A]. Hence g_D<=7. Since every exact Type-I color has g_C<=3 in this aligned cell and the exact all-color identity is sum g_C=37, equality forces g_D=7 and all ten exact colors to have g_C=3. The equality pattern on D[A] and O-T0 has only two cases: 2K2 with two zero-T0-neighbor vertices, or K3 with three. The aligned cell remains OPEN.

@@ -703,3 +703,8 @@ Replaced the stale unconditional q_z<=4 statement for m=10 and the older “rese
 ### Main specification synced with safe reserve implementation (2026-10-29)
 
 Updated the global-constraints section to reflect the implemented unconditional q_z<=(4,5,5) caps and conditional stronger caps. The earlier wording that no reserve quota was encoded is obsolete.
+
+
+### 2026-10-29 — Exact nonexact-gap saturation theorem added
+
+Proved an aligned m=10,z=0,1 gap-saturation lemma: alpha(D)<=12 forces at least 42 color-D edges from the 14 outside vertices to the three K12 tracks. The set Z of outside vertices with no D-neighbor in T0 must be a clique; D[A] needs at least two edges because p is nonadjacent to all of A. Counting O-T0 edges then forces another 14 edges. Thus e_D(K61 outside H)>=56, g_D<=7. Since every exact color has aligned-cell cap g_C<=3 and sum g_C=37, the exact gaps are all 3 and g_D=7. Equality leaves only D[A]=2K2 or K3 with the corresponding T0-neighbor omissions. Added independent checks to the aligned CSP and verifier; full solver execution remains unavailable here, and no SAT/UNSAT result is claimed.

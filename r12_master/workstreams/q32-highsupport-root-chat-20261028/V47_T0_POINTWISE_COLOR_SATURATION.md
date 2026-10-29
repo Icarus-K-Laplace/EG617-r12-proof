@@ -154,3 +154,12 @@ surplus edges across the three \(K_{12}\)-to-\(K_{12}\) track pairs. The total s
 \boxed{g_D-t_D\le16+E_0-k.}
 \]
 This is an exact budget cut for the remaining multicolor packing problem. It does not contradict any current feasible aggregate state, but it forces at least one large-pair repeat edge from every exact color in the unresolved branch, and at least two from each gap-three exact color.
+
+
+## 7. Exact nonexact-gap saturation in the aligned z=0,1 cell (2026-10-29)
+
+The earlier Section 6 bound g_D<=19 is superseded in the aligned m=10,z=0,1,(2,2,2,1) cell by V47_Z01_NONEXACT_GAP_SATURATION.md. The proof uses the 42 forced D-edges from O into the three large target tracks, plus a further 14 edges from O-T0 and D[A]. This yields g_D<=7; since each of the ten exact colors has g_C<=3 and sum g_C=37, equality is forced:
+\[
+g_D=7,\qquad g_C=3\ \text{for all ten exact colors}.
+\]
+Equality also forces exactly one D-edge from each o in O to each large track and one of two D[A] patterns: 2K2 with two A-vertices missing D-neighbors in T0, or K3 with three such vertices. This is a strict reduction, not a closure of the aligned cell.

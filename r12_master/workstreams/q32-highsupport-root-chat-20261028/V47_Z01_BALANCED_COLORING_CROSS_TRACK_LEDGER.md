@@ -168,3 +168,8 @@ In particular, the repeated-color edges on the three large-pair tracks form one 
 Every edge of \(S_{ij}\) is assigned to exactly one repeated non-target color. For an exact Type-I color \(C\), any edge assigned to \(C\) must have both endpoints in its residual gadget set, because the ten isolated K5 components have no C-edges to the gadget. In single-outside mode this is the (2,2,2,1) residual; in isolated-double mode it is the separate (2,2,2,2) residual. The ten-color aggregate witness in verify_v47_z01_aggregate_budget_witness.py satisfies the scalar counts but does not enforce these actual endpoint labels; it therefore is not a global completion.
 
 This common max-degree-two edge-packing is the next constraint for the exact vertex-labelled CSP in V47_Z01_SHARED_P_FACTOR_PACKING.md. It is a stronger structural formulation, not a contradiction by itself.
+
+
+## 8. Exact saturation of the 132-edge nonexact color in the aligned low-z cell
+
+The new source-correct theorem V47_Z01_NONEXACT_GAP_SATURATION.md strengthens the aligned m=10,z=0,1 ledger. The outside-H lower bound 42+14=56, combined with the 132-edge total and e_D(H)=69+g_D, forces g_D=7. The 37-unit identity and the source-correct cap g_C<=3 then force g_C=3 for every exact color. The equality pattern on D[A] and O-T0 has only two cases: 2K2 with two zero-T0-neighbor vertices, or K3 with three. No Q32 closure is claimed.

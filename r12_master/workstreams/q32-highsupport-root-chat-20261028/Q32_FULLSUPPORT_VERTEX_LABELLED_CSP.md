@@ -48,6 +48,8 @@ The full-support check is also source-corrected: each h in H must occur in at le
 
 The solver encodes the unconditional all-color gadget quota q_z<=(4,5,5), derived from d_0(z)>=d_H(z)>=12 and the registered nonexact degree floors L_m=(12,7,3). The stronger quota q_z<=(3,4,4) is imposed only conditionally when the model's actual full target degree d_0(z) is at least 13. A universal d_0(z)>=13 lemma is not assumed; the reserve audit records it as an open dependency.
 
+For the aligned m=10, z=0,1 cell, the model additionally enforces the exact nonexact-gap saturation theorem: e_C(H)=72 for every exact color, e_D(H)=76 for the unique 132-edge color D, exactly one D-edge from every outside vertex to each large K12 track, and the equality pattern on D[A] and D(O,T0). The independent verifier checks these constraints independently.
+
 ## Aligned m=10, z=0,1 common-P submodel
 
 With --aligned-z01, the model additionally fixes T_0 as a target K_11 and T_1,T_2,T_3 as target K_12 tracks, with residual counts (1,2,2,2) and z<=1 target edges between residual vertices in distinct tracks. It explicitly labels the six pair factors P_ij and the eleven selected color matchings M_C,ij on each pair:
@@ -131,3 +133,8 @@ The verifier now owns a single expected_color_counts(m) helper, imported by the 
 ## Safe gadget-reserve strengthening
 
 The solver encodes the nonexact degree floors from the canonical count vector (130-edge colors have minimum degree 4; 131/132-edge colors have minimum degree 3), and uses only the unconditional gadget quota q_z<=(4,5,5). This follows from d_0(z)>=d_H(z)>=12 and the 4m+q_z exact-color contribution. The stronger q_z<=(3,4,4) is encoded only as the implication d_0(z)>=13 => q_z<=(3,4,4); no universal 13-degree premise is assumed.
+
+
+## Exact aligned-cell saturation theorem
+
+Added V47_Z01_NONEXACT_GAP_SATURATION.md. In the aligned m=10 z=0,1 cell, the 132-edge nonexact color has at least 56 edges outside H; this forces g_D=7 and all ten exact gaps g_C=3. The model enforces the equality pattern and the verifier independently checks it. The theorem does not close the aligned cell.

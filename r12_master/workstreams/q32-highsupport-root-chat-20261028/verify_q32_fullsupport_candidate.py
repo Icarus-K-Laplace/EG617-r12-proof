@@ -315,6 +315,32 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
                 fail(f"aligned track T{i} is not a target-color clique")
         if [sum(v in residual for v in t) for t in tracks] != [1, 2, 2, 2]:
             fail("aligned pivot residual profile is not (1,2,2,2) on T0,T1,T2,T3")
+
+        # Independent replay of the exact nonexact-gap saturation theorem.
+        for c in exact_colors:
+            if core_counts[c] != 72:
+                fail(f"aligned color {c} has {core_counts[c]} H-edges, expected 72")
+        if core_counts[11] != 76:
+            fail(f"aligned nonexact color 11 has {core_counts[11]} H-edges, expected 76")
+        for o in O:
+            for i in range(1, 4):
+                count = sum(colors[edge(o, v)] == 11 for v in tracks[i])
+                if count != 1:
+                    fail(f"outside vertex {o} has {count} color-11 edges into T{i}, expected 1")
+        d_a = sum(colors[edge(u, v)] == 11 for u, v in pairs(A))
+        d_t0 = {o: sum(colors[edge(o, v)] == 11 for v in tracks[0]) for o in O}
+        if d_a not in (2, 3):
+            fail(f"aligned D[A] has {d_a} edges, expected 2 or 3")
+        if any(d_t0[o] > 1 for o in O):
+            fail("an outside vertex has more than one color-11 edge into T0")
+        if d_t0[PIVOT] != 1:
+            fail(f"pivot p has {d_t0[PIVOT]} color-11 edges into T0, expected 1")
+        if sum(d_t0.values()) + d_a != 14:
+            fail("color-11 outside/T0 saturation identity sum d_D(o,T0)+e_D(A)=14 fails")
+        for a, b in pairs(A):
+            if d_t0[a] == 0 and d_t0[b] == 0 and colors[edge(a, b)] != 11:
+                fail(f"two A vertices with no color-11 T0-neighbor are not adjacent in D: {(a,b)}")
+
         z_cross = sum(colors[edge(u, v)] == 0 for i in range(4) for j in range(i+1,4)
                       for u in residual & tracks[i] for v in residual & tracks[j])
         if z_cross not in (0, 1):

@@ -582,3 +582,8 @@ Updated the canonical state and source reserve notes: the q_z<=3/4/4 quota is co
 ### m=8 weighted-surplus scope audit (2026-10-29)
 
 Marked the m=8 full-support parameter restriction and the claimed pairwise distinctness of all x_C,y_C as conditional on d_F(z)>=13 at each relevant variable point. The degree identity itself is valid, but the capacity-three deduction needs that pointwise target-degree floor; delta(H)>=12 alone only gives capacity four.
+
+
+### Aligned m=10 nonexact-gap saturation (2026-10-29)
+
+A new conditional theorem forces g_D=7 and g_C=3 for every exact color in the aligned z=0,1,(2,2,2,1) cell. It also forces one D-edge per outside vertex into each large track and the two equality patterns on D[A]/O-T0. The aligned CSP and independent verifier now encode/recheck these consequences. This is a structural reduction, not a Q32 closure.
