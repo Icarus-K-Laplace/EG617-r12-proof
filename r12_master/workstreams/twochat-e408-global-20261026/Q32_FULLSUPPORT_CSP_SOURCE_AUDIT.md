@@ -161,6 +161,6 @@ Added verify_q32_fullsupport_count_vector_contract.py. It verifies for all m=8,9
 - total edge count is C(61,2)=1830;
 - the old 398+m target formula fails for m=8,9.
 
-Executed locally with python -S -B /mnt/data/verify_q32_fullsupport_count_vector_contract.py; exit code 0. Source SHA256: f7aa8d32a15bd0be89feb87680d833e1f72691765d584c704fb11c2d881aafa0.
+Executed locally with python -S -B /mnt/data/verify_q32_fullsupport_count_vector_contract.py; exit code 0. Source SHA256: a8ca2b64593ad808edd57acea710840a76ce04734288bb42d3dbcc1153b8fb27.
 
 This regression certifies count-vector arithmetic only. It does not execute Z3, validate the complete CSP semantics, certify a graph realization, or prove UNSAT. Z3 was unavailable in the current runtime. The high-support sibling remains read-only; no sibling file was changed.
