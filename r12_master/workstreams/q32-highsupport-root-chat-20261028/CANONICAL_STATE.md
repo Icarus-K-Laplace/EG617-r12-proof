@@ -434,3 +434,18 @@ Therefore:
 Writing \(t_C\) for the number of T0 vertices where color C has H-degree 4 gives \(\sum_C t_C=11-E_0\). For every exact Type-I color, all such degree-four T0 vertices must lie in G11(C), because an isolated single-outside K5 gives degree 3, while an isolated double/triple factor at T0 would violate the degree floor. The source-correct factor occupancy gives \(|G11(C)\cap T_0|\le2\), hence \(t_C\le2\) for each exact color.
 
 This is an exact vertexwise saturation/capacity constraint for future packing or SAT/ILP work, not a contradiction. The nonexact color may own some of the repeated-color T0 vertices; the aligned cells and root remain OPEN / NOT_CERTIFIED.
+
+
+## T0 pointwise color-degree saturation (2026-10-29)
+
+Added **V47_T0_POINTWISE_COLOR_SATURATION.md** and its arithmetic replay. In the aligned z=0,1 profile, each vertex v of the K11 track T0 has exactly \(34-\epsilon_v\) non-target-colored H-edges to the other three tracks, with \(\epsilon_v\in\{0,1\}\). Each of the eleven non-target colors must occur at least once from v into each K12 track, so every color has T0 H-degree at least 3.
+
+Therefore:
+- if \(\epsilon_v=1\), all eleven non-target colors have H-degree exactly 3 at v;
+- if \(\epsilon_v=0\), exactly one color has H-degree 4 and the other ten have degree 3.
+
+Writing \(t_C\) for the number of T0 vertices where color C has H-degree 4 gives \(\sum_C t_C=11-E_0\). For every exact Type-I color, all such degree-four T0 vertices must lie in G11(C), because an isolated single-outside K5 gives degree 3, while an isolated double/triple factor at T0 would violate the degree floor. The source-correct factor occupancy gives \(|G11(C)\cap T_0|\le2\), hence \(t_C\le2\) for each exact color.
+
+Moreover, the T0-pair surplus identity gives \(t_C=\sum_{i=1}^3(e_C(T_0,T_i)-11)\), while every K12-pair has at least 12 C-edges. Hence \(g_C=e_C(H)-69\ge t_C\), and for exact colors \(t_C\le\min(2,g_C)\). Summing gives \(\sum_C(g_C-t_C)=26+E_0\), the exact surplus on the three K12--K12 pairs.
+
+This is an exact vertexwise saturation/capacity constraint for future packing or SAT/ILP work, not a contradiction. The nonexact color may own some of the repeated-color T0 vertices; the aligned cells and root remain OPEN / NOT_CERTIFIED.
