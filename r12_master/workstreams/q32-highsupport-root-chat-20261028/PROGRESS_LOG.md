@@ -559,3 +559,8 @@ where h_i(v) is the actual number of H edges from v∈T_i to T0 and r_i^D(v) is 
 Audit correction: the prior note treated h_i(v) as at most one and inferred injectivity of exact nonrepeat omissions. This is invalid because the balanced-coloring lemma only bounds H neighbors at each T0 vertex, not at each T_i vertex. The injectivity claim is withdrawn; the isolated-double mode remains outside the cancellation lemma.
 
 Added verify_v47_z01_t0_omission_conservation.py. Its independent endpoint-profile replay passes for E0=0 scalar counts y=(7,7,8), exact T0 repeats=(4,3,3), D repeats=(0,1,0), enumerating 148,512 / 2,015,520 / 381,888 profiles for T1/T2/T3. It exhibits endpoint-only relaxations with six or seven exact nonrepeat colors omitting the same vertex, so the conservation identity alone does not force injectivity. This is a scope correction and a better-defined CSP constraint, not a Q32 closure.
+
+
+### Forced Class-A repeat allocation — 2026-10-29
+
+Enumerated the exact source allocation equations for the E0=0 scalar row under the all-Class-A source contract. With large-pair exact repeat totals (7,0,3) and T0 repeat totals (4,3,3), the unique solution is x12=4, x21=3, x32=3, all other xij=0. This forces the 7 P12 exact-repeat edges and 3 P23 exact-repeat edges to be vertex-disjoint within their respective perfect matchings. The corresponding T0-repeat endpoints are distinct within each track. Added verifier verify_v47_z01_class_a_repeat_allocation.py. This is a necessary local restriction, not a root contradiction.
