@@ -96,3 +96,8 @@ A source-level audit found two real implementation issues before any full solver
 2. The candidate verifier incorrectly forced all ten isolated K5 factors to contain exactly one outside vertex. This contradicts the generic source-correct model, which permits the excess outside points to occur in isolated factors (including isolated-double modes, and triple placements in the x-in-H profile where otherwise allowed). The verifier now checks the full aggregate outside-count profile and the per-factor caps without that overconstraint.
 
 These are formulation/verifier repairs, not a mathematical closure. The full model has not been executed because the current chat runtime lacks Z3 and cannot directly fetch the committed source into the local shell; no SAT/UNSAT result is claimed.
+
+
+### Source-profile regression tests
+
+The independent candidate verifier has explicit source-profile regression tests for isolated-double and isolated-triple occupancy patterns in the generic model, while retaining the aggregate outside-count and per-factor-cap checks. These tests protect against accidentally constraining the generic source mode to the aligned subcase.

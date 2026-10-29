@@ -642,3 +642,8 @@ Integrated the pivot-neighborhood theorem into the exact solver as explicit nece
 - Removed the verifier's invalid requirement that every isolated factor have exactly one outside vertex. The generic Q32 source model permits excess outside points in isolated factors; source correctness is instead checked by the aggregate outside-count total, nonempty outside occupancy, and the source-mode maximum for each factor.
 - Replayed the independent-set branch-and-bound routine from the committed verifier source against brute force on all 5,405 graph/target-size instances with n<=5; all cases passed. This is a small-algorithm regression only, not execution of the committed full verifier or 61-vertex CSP.
 - Full Z3 model build and solver execution remain untested in this runtime; no SAT/UNSAT result is claimed.
+
+
+### 2026-10-29 — Source-mode verifier regression added
+
+Factored the aggregate 12-factor outside occupancy check into a helper and added positive regression cases for x-in-O isolated-double, x-in-H two-double, and x-in-H triple profiles, plus invalid-profile checks. The independent-set routine's 5,405-case small-graph comparison was executed in the analysis runtime; full script and CSP execution remain pending.

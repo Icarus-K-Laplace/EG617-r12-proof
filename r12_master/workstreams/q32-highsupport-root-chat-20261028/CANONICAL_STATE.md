@@ -626,3 +626,14 @@ The full CSP now explicitly includes the source-correct pivot K4 packing frontie
 ## Implementation audit — symbolic y lookup and isolated-factor source modes (2026-10-29)
 
 Fixed a solver-construction blocker: symbolic y membership in N_t is now encoded as a finite disjunction rather than a Python dictionary lookup. Fixed a verifier overconstraint that required all isolated K5 factors to be single-outside; the generic source contract permits excess outside points in isolated factors, while the aggregate outside profile and per-factor caps remain enforced. These repairs improve source coverage but do not close full support.
+
+
+## Source-profile regression coverage (2026-10-29)
+
+Factored the generic outside-occupancy check into a reusable verifier helper and added explicit regression cases for:
+- x in O with an isolated-double profile;
+- x in H with two double factors;
+- x in H with one triple factor;
+- invalid missing-outside and over-cap profiles.
+
+This prevents the generic verifier from silently reintroducing the single-outside restriction on isolated factors.

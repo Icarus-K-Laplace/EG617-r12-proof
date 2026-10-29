@@ -104,6 +104,26 @@ def source_edges(source):
     return result
 
 
+def source_outside_profile_errors(x, components):
+    """Check only the source-correct outside occupancy of the 12 K5 factors.
+
+    Isolated factors may contain excess outside vertices in the generic Q32
+    source model. The source contract is the aggregate count plus per-factor
+    lower/upper bounds, not a blanket single-outside rule on factors 0..9.
+    """
+    counts = [sum(int(vertex) in O for vertex in block) for block in components]
+    errors = []
+    if any(count < 1 for count in counts):
+        errors.append("every K5 factor must meet O")
+    expected = 13 if int(x) in O else 14
+    if sum(counts) != expected:
+        errors.append(f"K5 outside counts sum to {sum(counts)}, expected {expected}")
+    cap = 2 if int(x) in O else 3
+    if any(count > cap for count in counts):
+        errors.append(f"a K5 factor exceeds the source outside-count cap {cap}")
+    return errors
+
+
 def verify_candidate(data, check_alpha=True):
     errors = []
     def fail(message):
@@ -173,19 +193,8 @@ def verify_candidate(data, check_alpha=True):
             fail(f"color {c}: y is not in special K5 Nt")
         if not a0 <= comps[10] or not (1 <= len(a0) <= 4):
             fail(f"color {c}: A0 must be a nonempty proper subset of Ns")
-        # Generic source mode permits excess O-points in any factor, including
-        # isolated-double/triple placements. The aggregate profile and per-factor
-        # caps below are the source-correct checks; aligned-only restrictions are
-        # applied only by the optional aligned_z01 contract.
-        outside_counts = [sum(v in O for v in block) for block in comps]
-        if any(b < 1 for b in outside_counts):
-            fail(f"color {c}: every K5 factor must meet O")
-        expected_outside = 13 if x in O else 14
-        if sum(outside_counts) != expected_outside:
-            fail(f"color {c}: K5 outside counts sum to {sum(outside_counts)}, expected {expected_outside}")
-        max_outside = 2 if x in O else 3
-        if any(b > max_outside for b in outside_counts):
-            fail(f"color {c}: a K5 factor exceeds the source outside-count cap {max_outside}")
+        for issue in source_outside_profile_errors(x, comps):
+            fail(f"color {c}: {issue}")
         comp_of[c] = {}
         for k, block in enumerate(comps):
             for v in block:
@@ -442,6 +451,18 @@ def self_test():
         path_adj[v] |= 1 << u
     found = find_independent_set(path_adj, range(4), 2)
     assert found is not None and all(not (path_adj[u] & (1 << v)) for u, v in pairs(found))
+
+    # The generic Type-I outside profile accepts excess O-points in isolated factors.
+    # x in O: one double plus eleven singles (13 outside points total).
+    assert source_outside_profile_errors(47, [[47,48,0,1,2]] + [[49+i, 10+i, 20+i, 30+i, 40+i] for i in range(11)]) == []
+    # x in H: two doubles plus ten singles, or one triple plus eleven singles.
+    assert source_outside_profile_errors(0, [[47,48,1,2,3], [49,50,4,5,6]] +
+                                         [[51+i, 10+i, 20+i, 30+i, 40+i] for i in range(10)]) == []
+    assert source_outside_profile_errors(0, [[47,48,49,1,2]] +
+                                         [[50+i, 10+i, 20+i, 30+i, 40+i] for i in range(11)]) == []
+    assert source_outside_profile_errors(47, [[48+i, 10+i, 20+i, 30+i, 40+i] for i in range(12)])
+    assert source_outside_profile_errors(0, [[47,48,49,50,1]] +
+                                         [[51+i, 10+i, 20+i, 30+i, 40+i] for i in range(11)])
 
     # Exhaustively compare the exact branch-and-bound search with brute force
     # on every simple graph with at most five vertices and every target size.
