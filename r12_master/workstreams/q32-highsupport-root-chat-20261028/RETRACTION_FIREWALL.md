@@ -208,3 +208,8 @@ The pair-projection injectivity lemma in V47_Z01_SHARED_P_FACTOR_PACKING.md is v
 The single-outside residual six-set injectivity lemma is conditional on the audited holonomy-cost theorem, global t_C<=1, and pair-projection injectivity. Two single-outside colors cannot share all six residual vertices: complementary matchings on all three K2,2 blocks toggle triangle/six-cycle parity, and the six-cycle color must own a large-pair repeat edge, which makes its residual pair unique. This does not prove uniqueness for two isolated-double colors or solve the global common-P CSP.
 
 Correction: the claimed 20 direct P_0i/K4-baseline overlaps in the owner-only witness were false. The candidate P edges w-y_j,w-y_k use K3-side vertices, distinct from the K4 baseline edges w-s_j,w-s_k. The verifier now asserts zero direct overlaps. Retain the independent invalidity certificate: 9 residual-signature collision pairs / 36 duplicate baseline-edge claims. No complete common-P packing or Q32 closure is certified.
+
+
+## 17. Class-B star-center degree filter (2026-10-29)
+
+For the source mode x_C in T0, both special factors double-outside, y in H, a=2, the local Class-B pattern has g_C=2,t_C=0 and two repeat edges forming a star at y across the two other large tracks. Since each P_ij is a matching, these are y's two large-pair P edges and neither is H. Thus y has zero H-neighbors outside its own track; the degree floor forces at least one H-neighbor in T0. This is a valid necessary filter only for that source mode, not a global contradiction.
