@@ -341,3 +341,6 @@ The z=4 empty-fiber classification referenced a verifier that was absent from th
 ### Close z=1 profile (3,2,1,1) via forbidden K13
 
 After the z=1 small/outer partition alignment and switch elimination, the profile (3,2,1,1) makes the 10 pivot vertices of the size-three track plus its three residual vertices a target-color K13. This is forbidden because every 13-set in the balanced coloring must contain every color. Hence this profile is CLOSED. Only the z=0 and z=1 profiles (2,2,2,1) remain in the low-z 3+7 branch; z=1 has one extra residual cross edge, z=0 has none.
+
+
+The counterexample was made reproducible in `verify_v47_37_switch_endpoint_counterexample.py`: exact enumeration of all 4096 subsets gives `alpha=4) and 63 maximum independent sets, output `V47_37_SWITCH_ENDPOINT_COUNTEREXAMPLE_REPRODUCED`. The global matching-rigidity claim remains retracted.
