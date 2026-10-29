@@ -80,14 +80,18 @@ sum_gap = 37
 exact_colors = 10
 exact_gap_cap = 3
 g_nonexact_min = sum_gap - exact_colors * exact_gap_cap
-g_nonexact_max = 21  # 132 total edges and at least 42 H-O edges
+g_nonexact_max = 19  # 132 edges, >=42 H-O edges, and >=2 O-O edges
 assert g_nonexact_min == 7
 assert 7 <= g_nonexact_min <= g_nonexact_max
+mu_nonexact_min = 2  # alpha(D[A]) <= 11 on 13 shell vertices
+assert mu_nonexact_min == 2
 assert 69 + g_nonexact_min == 76
-assert 69 + g_nonexact_max == 90
+assert 69 + g_nonexact_max == 88
+assert 132 - (69 + g_nonexact_min) - 42 == 14
+assert 132 - (69 + g_nonexact_max) - 42 == 2
 assert 21 - g_nonexact_min == 14  # upper bound on nonexact O-O edges
-assert (sum_gap - g_nonexact_max) == 16
-assert (16 + exact_gap_cap - 1) // exact_gap_cap == 6
+assert (sum_gap - g_nonexact_max) == 18
+assert (18 + exact_gap_cap - 1) // exact_gap_cap == 6
 
 print("Aligned-cell exact gap cap and nonexact budget: checked")
 print("Type-I K5 profiles and H-edge accounting: 3 cases checked")
