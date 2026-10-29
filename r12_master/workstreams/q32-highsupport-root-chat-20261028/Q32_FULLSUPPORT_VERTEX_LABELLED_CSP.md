@@ -101,3 +101,8 @@ These are formulation/verifier repairs, not a mathematical closure. The full mod
 ### Source-profile regression tests
 
 The independent candidate verifier has explicit source-profile regression tests for isolated-double and isolated-triple occupancy patterns in the generic model, while retaining the aggregate outside-count and per-factor-cap checks. These tests protect against accidentally constraining the generic source mode to the aligned subcase.
+
+
+### Independent verifier malformed-input guard (2026-10-29)
+
+The verifier now returns immediately on a malformed K5 factor list instead of continuing into pivot-packing checks that require a populated component map. A self-test constructs a malformed source witness and checks for a normal validation error rather than an exception. This hardens the independent checker against corrupted candidate files; it does not change the mathematical model.

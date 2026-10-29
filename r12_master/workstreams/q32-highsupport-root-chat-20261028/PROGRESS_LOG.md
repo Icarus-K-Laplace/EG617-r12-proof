@@ -652,3 +652,8 @@ Factored the aggregate 12-factor outside occupancy check into a helper and added
 ### Source-profile test fixture correction (2026-10-29)
 
 Corrected two helper-test fixtures so they obey the independent requirement that the special point x is not part of any K5 factor. This is a test-fixture correction only; the positive/negative outside-count cases are unchanged.
+
+
+### Independent verifier malformed-input guard (2026-10-29)
+
+The verifier now returns immediately on a malformed K5 factor list instead of continuing into pivot-packing checks that require a populated component map. A self-test constructs a malformed source witness and checks for a normal validation error rather than an exception. This hardens the independent checker against corrupted candidate files; it does not change the mathematical model.

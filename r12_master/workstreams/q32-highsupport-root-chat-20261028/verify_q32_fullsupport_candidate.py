@@ -180,7 +180,7 @@ def verify_candidate(data, check_alpha=True):
         a0 = set(map(int, s["A0"]))
         if len(comps) != 12 or any(len(block) != 5 for block in comps):
             fail(f"color {c}: must provide 12 disjoint 5-sets")
-            continue
+            return errors
         if any(not block <= set(range(N)) for block in comps):
             fail(f"color {c}: component has an invalid vertex")
         if x in set().union(*comps):
@@ -451,6 +451,20 @@ def self_test():
         path_adj[v] |= 1 << u
     found = find_independent_set(path_adj, range(4), 2)
     assert found is not None and all(not (path_adj[u] & (1 << v)) for u, v in pairs(found))
+
+    # Malformed source witnesses must be rejected cleanly, not crash later
+    # when the pivot-packing checker reads a missing comp_of entry.
+    malformed = {
+        "format": "EG617-Q32-FULLSUPPORT-v1",
+        "m": 8,
+        "edge_colors": [[u, v, 0] for u, v in pairs(range(N))],
+        "source": [
+            {"color": c, "x": 0, "y": 1, "A0": [], "components": []}
+            for c in range(1, 9)
+        ],
+    }
+    malformed_errors = verify_candidate(malformed, check_alpha=False)
+    assert any("must provide 12 disjoint 5-sets" in item for item in malformed_errors)
 
     # The generic Type-I outside profile accepts excess O-points in isolated factors.
     # x in O: one double plus eleven singles (13 outside points total).
