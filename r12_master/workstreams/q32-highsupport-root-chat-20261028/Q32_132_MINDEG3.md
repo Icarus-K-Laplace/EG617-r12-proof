@@ -43,6 +43,6 @@ For m=10, the unique nonexact color has132 edges. The correct nonexact pointwise
 
 > **L_10=3**, not2.
 
-Together with L_8=12 and L_9=7, the pointwise special-surplus budgets become r_8=3, r_9=4, r_10=4. In every non-full-support branch, the source-correct zero-shell inequality gives n_w>=2m-14+t_w, so m=10 still has n_w>=6>4. Full support v=47 also gains the stronger gadget-membership bound q_z<=4 at every residual point.
+Together with L_8=12 and L_9=7, the pointwise special-surplus budgets become r_8=3, r_9=4, r_10=4. In every non-full-support branch, the source-correct zero-shell inequality gives n_w>=2m-14+t_w, so m=10 still has n_w>=6>4. For full support v=47, the stronger gadget-membership bound q_z<=4 is conditional on a separate pointwise target-degree floor d_0(z)>=13; the unconditional consequence of d_0(z)>=d_H(z)>=12 is q_z<=5 for m=10.
 
 No exceptional-vertex injectivity or universal degree-nine claim is used.

@@ -113,17 +113,17 @@ Let `q_z` be the number of exact colors for which a residual point z lies in the
 
 `L_8=12, L_9=7, L_10=3` (see `Q32_132_MINDEG3.md`).
 
-At every residual point z,
+At every residual point z, the source-degree count is
 
-`60 >= 13 + 4m + q_z + L_m`.
+`60 >= d_0(z) + 4m + q_z + L_m`,
 
-Therefore
+where `d_0(z)` is the full target-color degree. The registered core contract gives `d_0(z)>=d_H(z)>=12`, so the unconditional, source-safe bounds are
 
-> **`q_z<=3` for m=8; `q_z<=4` for m=9; `q_z<=4` for m=10.**
+> **`q_z<=4` for m=8; `q_z<=5` for m=9; `q_z<=5` for m=10.**
 
-This counts every gadget membership, not merely the KP special point x.
+The formerly stated stronger caps `(3,4,4)` require the additional pointwise premise `d_0(z)>=13` for every residual z. The current contract explicitly gives only `d_H(z)>=12`; no separate proof of a target-colored neighbor in O for every residual point is supplied here. Therefore `(3,4,4)` and the stronger isolated-component counts are conditional, not a theorem available to the root proof. If a particular branch proves `d_0(z)>=13`, the stronger cap applies.
 
-Equivalently, every residual point lies in an isolated K5 component of at least five exact colors; for m=9 and the updated m=10 floor, it lies in an isolated K5 component of at least six exact colors.
+This counts every gadget membership, not merely the KP special point x. Under the unconditional bounds, each residual point belongs to an isolated K5 component of at least 4 exact colors for m=8 and m=9, and at least 5 for m=10.
 
 ## 6. Strong m=8 weighted-surplus ledger
 
@@ -172,4 +172,4 @@ This is the current strongest common-core reduction added in this workstream. Th
 
 ## 9. Updated m=10 gadget quota
 
-The new theorem `Q32_132_MINDEG3.md` proves that the unique132-edge nonexact color has minimum degree at least3. Thus `L_10=3), and the pointwise gadget quota sharpens to `q_z<=4) at every residual point, so each point lies in an isolated K5 component of at least six of the ten exact colors. The 37-unit gap identity and the full-support v47 frontier are unchanged.
+The new theorem `Q32_132_MINDEG3.md` proves that the unique132-edge nonexact color has minimum degree at least3. Thus `L_10=3` and the pointwise special-surplus budget is `r_10=4`. The stronger full-support gadget quota `q_z<=4` is conditional on a separate `d_0(z)>=13` lemma; the unconditional quota from `d_H(z)>=12` is `q_z<=5`. The 37-unit gap identity and the full-support v47 frontier are unchanged.

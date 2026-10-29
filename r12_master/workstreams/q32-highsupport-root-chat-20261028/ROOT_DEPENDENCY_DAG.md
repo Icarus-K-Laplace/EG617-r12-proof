@@ -572,3 +572,8 @@ The exact CSP and independent verifier now use the root-branch count vector: e_0
 ### Target-degree reserve dependency (2026-10-29)
 
 The universal q_z<=(3,4,4) statement is conditional on d_0(z)>=13, not established by delta(H)>=12 alone. The exact CSP enforces the unconditional q_z<=(4,5,5) and conditionally applies the stronger quota only where the model's actual target degree is at least 13. The nonexact degree floors are linked to the canonical 130/131/132 color counts.
+
+
+### Reserve quota dependency correction (2026-10-29)
+
+Updated the canonical state and source reserve notes: the q_z<=3/4/4 quota is conditional on a target-color degree floor d_0(z)>=13, which is not established by the displayed delta(H)>=12 contract alone. The unconditional full-support quota is q_z<=(4,5,5). This is separate from the non-full-support zero-shell multiplicity budgets r_m=(3,4,4), which are based on a different incidence ledger.
