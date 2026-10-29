@@ -69,6 +69,7 @@ while unseen:
 assert len(components) == 6 and all(len(c) == 6 for c in components)
 assert all(tuple(sum(u in tracks[i] for u in c) for i in range(3)) == (2, 2, 2)
            for c in components)
+component_of = {u: idx for idx, comp in enumerate(components) for u in comp}
 
 # The ten exact colors use the source Class-A pattern:
 # 4 colors: T0T1 repeat + T1T2 repeat;
@@ -221,7 +222,8 @@ assert 10 * 2 + 17 == 37
 for color_id, meta in exact_meta.items():
     pair, e, i, c = meta["pair"], meta["edge"], meta["repeat_track"], meta["cycle"]
     assert labels[(pair, e)] == ("EXACT", color_id)
-    assert all(u in components[c] for u in e)
+    assert all(component_of[u] == component_of[e[0]] for u in e)
+    assert component_of[e[0]] == component_of[v(meta["repeat_track"], c, 0)]
     assert len([edge for edge in S0[i] if edge[0] == T0[color_id]]) == 1
 
 print("P_ij perfect matchings:", {str(p): len(P[p]) for p in pairs})
