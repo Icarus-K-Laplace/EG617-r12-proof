@@ -637,3 +637,8 @@ Factored the generic outside-occupancy check into a reusable verifier helper and
 - invalid missing-outside and over-cap profiles.
 
 This prevents the generic verifier from silently reintroducing the single-outside restriction on isolated factors.
+
+
+### Source-profile test fixture correction (2026-10-29)
+
+Corrected two helper-test fixtures so they obey the independent requirement that the special point x is not part of any K5 factor. This is a test-fixture correction only; the positive/negative outside-count cases are unchanged.

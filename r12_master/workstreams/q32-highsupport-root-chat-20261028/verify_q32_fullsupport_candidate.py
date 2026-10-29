@@ -454,13 +454,13 @@ def self_test():
 
     # The generic Type-I outside profile accepts excess O-points in isolated factors.
     # x in O: one double plus eleven singles (13 outside points total).
-    assert source_outside_profile_errors(47, [[47,48,0,1,2]] + [[49+i, 10+i, 20+i, 30+i, 40+i] for i in range(11)]) == []
+    assert source_outside_profile_errors(47, [[48,49,0,1,2]] + [[50+i, 3+4*i, 4+4*i, 5+4*i, 6+4*i] for i in range(11)]) == []
     # x in H: two doubles plus ten singles, or one triple plus eleven singles.
     assert source_outside_profile_errors(0, [[47,48,1,2,3], [49,50,4,5,6]] +
                                          [[51+i, 10+i, 20+i, 30+i, 40+i] for i in range(10)]) == []
     assert source_outside_profile_errors(0, [[47,48,49,1,2]] +
                                          [[50+i, 10+i, 20+i, 30+i, 40+i] for i in range(11)]) == []
-    assert source_outside_profile_errors(47, [[48+i, 10+i, 20+i, 30+i, 40+i] for i in range(12)])
+    assert source_outside_profile_errors(47, [[48+i, i, 12+i, 24+i, 35+i] for i in range(12)])
     assert source_outside_profile_errors(0, [[47,48,49,50,1]] +
                                          [[51+i, 10+i, 20+i, 30+i, 40+i] for i in range(11)])
 

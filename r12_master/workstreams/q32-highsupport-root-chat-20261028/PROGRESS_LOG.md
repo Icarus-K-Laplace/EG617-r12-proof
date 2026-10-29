@@ -647,3 +647,8 @@ Integrated the pivot-neighborhood theorem into the exact solver as explicit nece
 ### 2026-10-29 — Source-mode verifier regression added
 
 Factored the aggregate 12-factor outside occupancy check into a helper and added positive regression cases for x-in-O isolated-double, x-in-H two-double, and x-in-H triple profiles, plus invalid-profile checks. The independent-set routine's 5,405-case small-graph comparison was executed in the analysis runtime; full script and CSP execution remain pending.
+
+
+### Source-profile test fixture correction (2026-10-29)
+
+Corrected two helper-test fixtures so they obey the independent requirement that the special point x is not part of any K5 factor. This is a test-fixture correction only; the positive/negative outside-count cases are unchanged.
