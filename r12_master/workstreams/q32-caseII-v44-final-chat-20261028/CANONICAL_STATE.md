@@ -272,3 +272,10 @@ The minimum-degree dependency chain for the direct m=8 closure is now fully writ
 `Q32_130_MINDEG3.md` => `Q32_130_MINDEG4_AND_CASEI_M8_CLOSURE.md` (base workstream) => `Q32_130_NO_CORE_ONLY_DEG4.md` => `V44_M8_DIRECT_NO_CORE_ONLY_CLOSURE.md`.
 
 The 130-edge degree-three exclusion uses the Kang–Pikhurko floors 139,134,129 on non-neighborhoods of sizes 60,59,58. The degree-four exclusion uses Theorems 1 and 4 at (57,11). The core-only degree-four obstruction uses Theorem 1 at (56,11). The finite verifier now checks the arithmetic at all these parameter values.
+
+
+## Fresh verifier audit — 2026-10-29
+
+verify_v44_direct_closure.py had a runtime ordering bug in the checked-in blob: choose2() was referenced before definition in the low-degree extremal arithmetic loop. Fixed in commit 2a49ccc537c45c711016468e5b5c7230c209657d. The corrected arithmetic replay returns V44_DIRECT_CLOSURE_ARITHMETIC_OK; the m=8 arithmetic/set-system replay returns V44_M8_CLOSURE_ARITHMETIC_OK.
+
+This is a verifier repair, not a new graph-theoretic theorem. The v=44 m=9 and m=8 closures remain conditional on the explicitly listed Type-I, corrected-multiplicity, 130-edge degree, no-core-only-degree-four, and Kang–Pikhurko inputs. Full-support |U|=47 remains OPEN / NOT_CERTIFIED.
