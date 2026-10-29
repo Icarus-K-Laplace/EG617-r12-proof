@@ -383,3 +383,8 @@ Correct K5-interior H-edge counts over all twelve factors are:
 - x_C in H, triple (3,1^11): 67.
 
 Writing G_H for the nine additional non-K5 gadget edges with both endpoints in H gives `G_H=g_C`, `3+g_C`, or `2+g_C`, respectively. The corrected verifier returned `V47_CORRECTED_TYPEI_PLACEMENT_ARITHMETIC_OK`. No triple-placement closure is claimed; full-support Q32 remains OPEN.
+
+
+### Valid refinement after the Type-I correction: triple placement geometry and exact gap
+
+The corrected `V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM.md` now further proves that any surviving triple placement in the aligned low-z cell has a fixed local geometry. The triple special K5 has three O and two H vertices; the other special K5 is single-outside. The distinguished `y` must be in H, otherwise `x union (N_t minus {y})` would be a C-colored K5 wholly in H. The four H vertices of N_t occupy one each of X_0,X_1,X_2,X_3, and x lies in the same K12 part as y. The two H vertices of N_s lie in the other two K12 parts. This forces `b_s+b_t=4), G11=(7 H,4 O), `G_H=5), and `g_C=3). The corrected arithmetic replay passed. Triple placement remains OPEN, but is now constrained to this exact local configuration and consumes three units of the global gap budget.
