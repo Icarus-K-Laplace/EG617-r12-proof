@@ -383,3 +383,10 @@ The twelve Type-I K5 factors partition the 60 vertices other than x_C. Matching 
 See `V47_Z01_CANONICAL_RESIDUAL_ONE_FACTORIZATION.md`. **Correction:** the residual perfect matching P is not intrinsically canonical. Choose one Hall perfect matching for each non-target color on a K12--K12 pair; the eleven edge-disjoint matchings leave a perfect matching P. It contains all H-edges and all unselected color edges. Its color-C edge count is `e_C(T_i,T_j)-12`, and it contains at least three H-edges and three repeated-color edges by the nine-edge cap. For a K11--K12 pair, each color has a matching saturating T0; the residual set has one edge per T0 vertex but is not asserted to be a matching on the larger side.
 
 The same file derives the 69/70 low-gap orientation using the registered near-Turan normal form. This is a structural refinement only; no Q32 closure is claimed.
+
+
+### 8.12 T0 pointwise color-degree saturation
+
+**V47_T0_POINTWISE_COLOR_SATURATION.md** adds an exact vertexwise ledger to the aligned z=0,1 cells. At each T0 vertex v, the eleven non-target colors have H-degrees all equal to 3 if epsilon_v=1; if epsilon_v=0, exactly one color has degree 4 and ten have degree 3. Thus \(\sum_C t_C=11-E_0\).
+
+For each exact Type-I color C, a degree-four T0 vertex must lie in G11(C), and the corrected factor occupancy gives at most two T0 vertices in G11(C), so \(t_C\le2\). This is a source-correct capacity restriction for future simultaneous color packing. It does not close the aligned cells; root status remains OPEN / NOT_CERTIFIED.
