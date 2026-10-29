@@ -517,3 +517,7 @@ The updated `verify_v47_z01_residual_holonomy_cost.py` now checks the full split
 Added Section 6 to `V47_T0_POINTWISE_COLOR_SATURATION.md`. Define `L_exact=sum_{C exact}(g_C-t_C)`, the surplus on the three K12--K12 pairs carried by the ten exact colors. The global identity gives `L_exact=26+E0-(g_D-t_D)`. Using `g_D<=19` and `t_D>=max(0,1-E0)` yields `L_exact>=8,8,9,10` for `E0=0,1,2,3`, respectively. Hence exact colors must carry at least eight large-pair surplus edges in every aligned cell; E0=2,3 strengthen this to nine and ten. This is a necessary global budget constraint, not a contradiction.
 
 The aggregate budget is sharpened by conditioning on g_D: since `sum_exact g_C=37-g_D` and `sum_exact t_C<=10`, `L_exact>=27-g_D`. Combined with the E0-based bound, `L_exact>=max(27-g_D,8,7+E0)`. In particular, g_D=7 forces at least 20 exact-color large-pair surplus edges, while g_D=19 gives lower bounds 8,8,9,10 for E0=0,1,2,3.
+
+## Shell-bound notation audit — 2026-10-29
+
+The nonexact-color shell lower bound e_D(A)>=2 remains valid. Its proof is now stated directly from alpha(D)<=12 and the fact that p has no D-edges to A; the equivalent ordinary Turán calculation is 78-t_11(13)=2. The previous label p_11(13) was misleading because p_r(n) is reserved for the Kang–Pikhurko second-Turán extremal quantity, whose theorem is not being applied at n=13. This correction changes no numerical result and does not close the aligned z=0,1 cell.
