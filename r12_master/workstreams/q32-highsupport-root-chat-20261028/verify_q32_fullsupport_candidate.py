@@ -173,9 +173,10 @@ def verify_candidate(data, check_alpha=True):
             fail(f"color {c}: y is not in special K5 Nt")
         if not a0 <= comps[10] or not (1 <= len(a0) <= 4):
             fail(f"color {c}: A0 must be a nonempty proper subset of Ns")
-        for k, block in enumerate(comps[:10]):
-            if sum(v in O for v in block) != 1:
-                fail(f"color {c}: isolated K5 component {k} must have exactly one O vertex")
+        # Generic source mode permits excess O-points in any factor, including
+        # isolated-double/triple placements. The aggregate profile and per-factor
+        # caps below are the source-correct checks; aligned-only restrictions are
+        # applied only by the optional aligned_z01 contract.
         outside_counts = [sum(v in O for v in block) for block in comps]
         if any(b < 1 for b in outside_counts):
             fail(f"color {c}: every K5 factor must meet O")

@@ -552,3 +552,8 @@ Dependency firewall:
 ### CSP strengthening — pivot K4 packing frontier (2026-10-29)
 
 Added explicit necessary constraints from the registered pivot-neighborhood packing theorem: pairwise K4-block edge floors, residual-to-block incidence, exact 32-unit slack identity, the m-dependent degree inequalities, and the six-unit excess split. These constraints are derived from the original core contract and alpha(H)<=4. Status remains FORMULATION_ONLY; no solver result is claimed.
+
+
+### Implementation audit update (2026-10-29)
+
+The CSP model-construction blocker at symbolic y lookup was repaired by finite-label disjunction. The candidate verifier's isolated-factor single-outside restriction was removed to align it with the generic source-mode contract. This node remains FORMULATION_ONLY until Python syntax/model-build tests and actual solver runs are recorded.

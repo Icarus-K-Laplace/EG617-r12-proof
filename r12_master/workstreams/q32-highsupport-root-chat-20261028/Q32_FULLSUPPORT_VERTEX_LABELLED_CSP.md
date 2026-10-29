@@ -86,3 +86,13 @@ The generic model also encodes the exact K4-packing slack frontier. Let Q be the
 
 The model enforces x,y,z>=0, x+y+z=32, 2x+y>=5m, y+2z>=D_m for D_8=18, D_9=13, D_10=8, and the exact excess split
 (2x+y-5m)+(y+2z-D_m)=6. It also explicitly enforces at least four H-edges between every pair of pivot K4 blocks and at least one H-neighbor from every residual vertex into every pivot block. These are necessary consequences of alpha(H)<=4 and the six-unit degree-excess contract; they strengthen the search but are not sufficient for closure.
+
+
+## Execution-blocker and source-mode audit (2026-10-29)
+
+A source-level audit found two real implementation issues before any full solver run:
+
+1. The CSP attempted symbolic indexing of a Python dictionary with a Z3 integer. That is not a valid symbolic array lookup and would raise a Python KeyError during model construction. It is now encoded as a finite disjunction over vertex labels, enforcing that the selected y vertex has component label 11.
+2. The candidate verifier incorrectly forced all ten isolated K5 factors to contain exactly one outside vertex. This contradicts the generic source-correct model, which permits the excess outside points to occur in isolated factors (including isolated-double modes, and triple placements in the x-in-H profile where otherwise allowed). The verifier now checks the full aggregate outside-count profile and the per-factor caps without that overconstraint.
+
+These are formulation/verifier repairs, not a mathematical closure. The full model has not been executed because the current chat runtime lacks Z3 and cannot directly fetch the committed source into the local shell; no SAT/UNSAT result is claimed.

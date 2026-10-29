@@ -80,7 +80,7 @@ def build_model(m, aligned_z01=False):
             solver.add(z3.Implies(cv != 10, z3.Not(a0var[c][v])))
         for k in range(12):
             solver.add(iff_count(comp[c][v] == k for v in range(N)) == 5)
-        solver.add(comp[c][yvar[c]] == 11)
+        solver.add(z3.Or([z3.And(yvar[c] == v, comp[c][v] == 11) for v in range(N)]))
         solver.add(iff_count(a0var[c][v] for v in range(N)) >= 1)
         solver.add(iff_count(a0var[c][v] for v in range(N)) <= 4)
 

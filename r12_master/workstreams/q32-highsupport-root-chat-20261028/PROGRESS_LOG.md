@@ -634,3 +634,11 @@ A direct regression review caught an order-sensitive assertion in the verifier's
 ### 2026-10-29 — Pivot-packing inequalities integrated into the CSP
 
 Integrated the pivot-neighborhood theorem into the exact solver as explicit necessary constraints: each pair of pivot K4 blocks has at least four target edges; every residual point meets each block; the slack variables satisfy x+y+z=32, 2x+y>=5m, y+2z>=D_m with D=(18,13,8), and the two degree-excess slacks sum to six. This does not turn the scalar frontier into a certificate; the full vertex-labelled source model remains load-bearing.
+
+
+### 2026-10-29 — Two exact-model implementation defects repaired
+
+- Replaced invalid symbolic Python dictionary indexing with an explicit finite disjunction over labels v, enforcing y_C in F_C,11 while remaining valid Z3 syntax.
+- Removed the verifier's invalid requirement that every isolated factor have exactly one outside vertex. The generic Q32 source model permits excess outside points in isolated factors; source correctness is instead checked by the aggregate outside-count total, nonempty outside occupancy, and the source-mode maximum for each factor.
+- Replayed the independent-set branch-and-bound routine from the committed verifier source against brute force on all 5,405 graph/target-size instances with n<=5; all cases passed. This is a small-algorithm regression only, not execution of the committed full verifier or 61-vertex CSP.
+- Full Z3 model build and solver execution remain untested in this runtime; no SAT/UNSAT result is claimed.

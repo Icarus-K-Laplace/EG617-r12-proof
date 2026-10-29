@@ -621,3 +621,8 @@ The independent-set smoke test no longer assumes a particular vertex ordering. I
 ### Pivot-packing slack constraints added (2026-10-29)
 
 The full CSP now explicitly includes the source-correct pivot K4 packing frontier: per-pair block edge floors, residual-to-each-block neighbor constraints, the x+y+z=32 slack identity, the degree inequalities 2x+y>=5m and y+2z>=D_m, and the exact six-unit excess split. These constraints are consequences of the core contract and alpha(H)<=4, not a substitute for the full labelled graph.
+
+
+## Implementation audit — symbolic y lookup and isolated-factor source modes (2026-10-29)
+
+Fixed a solver-construction blocker: symbolic y membership in N_t is now encoded as a finite disjunction rather than a Python dictionary lookup. Fixed a verifier overconstraint that required all isolated K5 factors to be single-outside; the generic source contract permits excess outside points in isolated factors, while the aggregate outside profile and per-factor caps remain enforced. These repairs improve source coverage but do not close full support.
