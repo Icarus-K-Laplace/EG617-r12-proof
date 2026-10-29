@@ -411,12 +411,10 @@ The corrected Type-I file now uses the fact that twelve K5 factors partition all
 These are source-correct counting identities; the updated verifier passed. They leave the aligned cell OPEN.
 
 
-### Canonical residual 1-factorization across the K12 tracks (2026-10-29)
+### Residual 1-factorization across the K12 tracks — audit correction (2026-10-29)
 
-Added `V47_Z01_CANONICAL_RESIDUAL_ONE_FACTORIZATION.md`.
+Added `V47_Z01_CANONICAL_RESIDUAL_ONE_FACTORIZATION.md`. The first draft incorrectly called the residual factor canonical and described a repeated-color edge as uniquely determined. A vertex with a repeated color has two edges of that color, so the distinguished edge depends on the selected baseline matching.
 
-For each K12--K12 pair, every vertex with an H edge has all 11 non-target colors exactly once among its other edges; every vertex without an H edge repeats exactly one color. The union P of H edges and repeated-color edges is a perfect matching, and each non-target color's remaining edges form another perfect matching. Hence K12xK12 is decomposed into 12 disjoint perfect matchings (P plus one factor per non-target color). The residual P contains all H edges and, by the nine-edge cap, at least three repeated-color edges as well as at least three H edges.
+The corrected proof chooses one perfect matching for each non-target color by Hall. These eleven matchings are edge-disjoint and leave a perfect matching P. P contains all H edges and all color edges not selected in their color's baseline matching. Hence each K12xK12 pair has a valid 1-factorization, but P may depend on the choices. The color-C edges in P number `e_C(T_i,T_j)-12`; each P has at least three H-edges and three repeat-color edges because `e_H(T_i,T_j)<=9`.
 
-For each K11--K12 pair, the analogous residual set has one edge at every T0 vertex, but it is not assumed to be a matching on the larger side. Hall's condition proves each non-target color separately has a matching saturating T0.
-
-This is stronger than the aggregate repeat-count ledger and is an exact constraint for any graph-completion model; it does not yet close z=0,1.
+For each K11--K12 pair, every color has a matching saturating T0; the residual set has one edge per T0 vertex but is not asserted to be a matching on the larger side. The file also records the aligned 69/70 low-gap orientation. These are exact structural constraints, not a Q32 closure.
