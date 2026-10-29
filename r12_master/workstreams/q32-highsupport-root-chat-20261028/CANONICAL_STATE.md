@@ -471,3 +471,8 @@ The exact verifier checked every admissible extra-edge set of size at most three
 The updated verifier checks two sharper local patterns. In class C, each baseline has exactly three independent triples: two share a pair of large-track vertices and the third is a disjoint transversal triple. Every minimum two-edge repair contains the shared-pair edge plus one of the three edges within the disjoint triple, so the shared-pair edge is mandatory.
 
 In class D, the unique independent 4-set consists of the T0 residual singleton and a transversal triple V. The baseline T0 edges attach to the complementary triple U. Every minimum three-edge repair consists of one edge within U, one edge from T0 to a vertex w in V, and the edge between the other two vertices of V. The updated verifier checks these edge-level patterns in addition to the aggregate repair counts.
+
+
+## Exact seven-vertex residual graph catalog (2026-10-29)
+
+Added `V47_Z01_EXACT_COLOR_RESIDUAL_GRAPH_CATALOG.md` and `verify_v47_z01_exact_color_residual_graphs.py`. Each exact color's ten isolated K5 components leave a seven-vertex residual graph with track profile (2,2,2,1), edge count 9+g_C, alpha exactly 2, degree at least 2 at each large-track residual vertex and at least 3 at the T0 singleton. Exhaustive enumeration of the 18 possible cross-part edges gives 8,72,384,1,148 admissible labeled graphs for g_C=0,1,2,3. Every g=0 or g=1 graph contains a transversal K4 plus an all-large K3 base; at gaps 2 and 3, 96 and 480 graphs respectively do not. This is a necessary local relaxation, while the holonomy-cost theorem adds the exact baseline-matching constraints.
