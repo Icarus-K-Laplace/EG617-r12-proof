@@ -455,7 +455,7 @@ This is an exact vertexwise saturation/capacity constraint for future packing or
 
 Added `V47_Z01_RESIDUAL_HOLONOMY_COST.md` and `verify_v47_z01_residual_holonomy_cost.py`.
 
-For each exact color C, the ten isolated transversal K4s in its Type-I factorization leave a seven-vertex residual set of profile (2,2,2,1). Its nine-edge baseline consists of two matching edges between each pair of large residual parts and one edge from the T0 singleton to each large part. The remaining `g_C<=3` C-edges are extra edges, constrained to be a matching within each track pair.
+In the subcase where all ten isolated Type-I K5 components are single-outside, they leave ten transversal K4s and a seven-vertex residual of profile (2,2,2,1), with a nine-edge baseline and at most three matching-constrained extra edges. This is not universal: the registered source-correct isolated-double placement leaves nine isolated K4s plus an isolated K3 and an eight-vertex G11 residual of profile (2,2,2,2), with 12+g_C edges. See V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md.
 
 There are exactly 64 possible baselines. Exhaustive enumeration classifies them into four types:
 - A: large-part matchings form two triangles and T0 attaches to one triangle; 8 baselines, alpha=2, minimum gap 0.
@@ -473,6 +473,6 @@ The updated verifier checks two sharper local patterns. In class C, each baselin
 In class D, the unique independent 4-set consists of the T0 residual singleton and a transversal triple V. The baseline T0 edges attach to the complementary triple U. Every minimum three-edge repair consists of one edge within U, one edge from T0 to a vertex w in V, and the edge between the other two vertices of V. The updated verifier checks these edge-level patterns in addition to the aggregate repair counts.
 
 
-## Exact seven-vertex residual graph catalog (2026-10-29)
+## Conditional seven-vertex residual graph catalog (2026-10-29)
 
-Added `V47_Z01_EXACT_COLOR_RESIDUAL_GRAPH_CATALOG.md` and `verify_v47_z01_exact_color_residual_graphs.py`. Each exact color's ten isolated K5 components leave a seven-vertex residual graph with track profile (2,2,2,1), edge count 9+g_C, alpha exactly 2, degree at least 2 at each large-track residual vertex and at least 3 at the T0 singleton. Exhaustive enumeration of the 18 possible cross-part edges gives 8,72,384,1,148 admissible labeled graphs for g_C=0,1,2,3. Every g=0 or g=1 graph contains a transversal K4 plus an all-large K3 base; at gaps 2 and 3, 96 and 480 graphs respectively do not. This is a necessary local relaxation, while the holonomy-cost theorem adds the exact baseline-matching constraints.
+Added `V47_Z01_EXACT_COLOR_RESIDUAL_GRAPH_CATALOG.md` and its verifier for the conditional subcase where all ten isolated K5 components are single-outside. Its seven-vertex relaxation has profile (2,2,2,1), edge count 9+g_C, alpha at most 2, and counts 8,72,384,1,148 at gaps 0,1,2,3. The catalog is not universal: the source-correct isolated-double placement has an eight-vertex G11 residual, corrected in `V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md`. The 7-vertex holonomy table is conditional too; the global g=0,1 orientation remains justified separately by the near-Turan classification.
