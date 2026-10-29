@@ -410,3 +410,16 @@ Added Section 8 to `V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM.md`. The twelve K5 f
 - x_C in H, triple: x_C cannot lie in X_0; the triple factor's two H vertices lie in the other two K12 parts.
 
 The exact occupancy arithmetic verifier passed. This sharpens the allowed placement geometry but does not close the remaining color types.
+
+
+## New canonical residual 1-factorization across K12 tracks (2026-10-29)
+
+Added `V47_Z01_CANONICAL_RESIDUAL_ONE_FACTORIZATION.md`.
+
+The balanced 13-set premise gives an exact vertex-level classification on any K12--K12 pair: a vertex with an H-neighbor has each of the eleven non-target colors exactly once; a vertex without an H-neighbor has exactly one repeated non-target color. The union P of all H-edges and all repeated-color edges is therefore a **canonical perfect matching**. Removing P leaves, for each non-target color C, exactly one incident C-edge at every vertex, so each `M_C=E_C(T_i,T_j)\\setminus P` is also a perfect matching. Thus each K12xK12 pair is partitioned into twelve edge-disjoint perfect matchings, one residual factor P and eleven color-specific factors M_C.
+
+All H-edges on the pair lie in P; its remaining edges are exactly the repeated-color edges. Since `e_H(T_i,T_j)<=9`, every P has at least three H-edges and at least three repeated-color edges.
+
+For a K11--K12 pair, the analogous residual edge set has exactly one edge at each T0 vertex but is **not asserted to be a matching on the K12 side**. Separately, every non-target color graph satisfies Hall's condition on the T0 side and therefore has a matching saturating T0.
+
+This turns the three K12-pair color ledgers into exact 1-factorizations, but it does not yet couple the three factors strongly enough to close z=0,1. E408/Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
