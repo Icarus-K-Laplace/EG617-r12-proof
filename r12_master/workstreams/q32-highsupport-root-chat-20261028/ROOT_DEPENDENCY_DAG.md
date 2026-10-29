@@ -366,3 +366,8 @@ The corrected Type-I audit now pins any triple placement in the aligned low-z ce
 ### 8.14 Aligned low-z exact-gap budget
 
 In the fully aligned z=0,1 cell, the corrected Type-I component analysis caps every exact-color gap at three. Hence the unique nonexact color must have `g_D>=7). Its 132-edge total and the balanced-coloring lower bound of at least42 H-O edges imply `g_D<=21). Therefore `e_D(H) in [76,90]`, `mu_D<=21-g_D<=14`, and at least six exact colors have positive gap. This is a new global necessary condition for the low-z branch; it is not a closure and does not alter the root status.
+
+
+### 8.15 Nonexact-color shell-floor tightening
+
+For the aligned low-z cell, the unique nonexact color D has `g_D in [7,19]`, `e_D(H) in [76,88]`, and `mu_D in [2,14]). The lower shell bound `mu_D>=2) follows because p is D-nonadjacent to A and alpha(D)<=12, forcing alpha(D[A])<=11 on 13 vertices. Thus the ten exact colors contribute 18–30 gap units, with at least six positive-gap exact colors. This is a necessary aggregate budget only.
