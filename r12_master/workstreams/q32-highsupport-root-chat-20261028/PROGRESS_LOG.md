@@ -357,3 +357,12 @@ Within-track edges contribute 253 of the 285 H-edges; cross-track H edges total 
 - K12-to-K12 edge total = 10-E_0.
 
 The six track-pair deficits sum to 37, matching the global reserve budget. Exact arithmetic checked 729 small-block excess triples and 28,107 necessary aggregate track-count states; output `V47_Z01_CROSS_TRACK_ARITHMETIC_OK`. The aggregate relaxation remains feasible and is not a closure.
+
+
+### Aligned low-z Type-I component normal form — 2026-10-29
+
+Added `V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM.md` and `verify_v47_aligned_typei_component_normal_form.py`.
+
+The aligned z=0,1 residual profile (2,2,2,1) gives three target K12 parts and one K11 part. Every non-target color appears on edges from any vertex to each external K12 part, so its H-degree is at least two on K12 parts and at least three on K11. A triple-outside K5 has only one H-neighbor per H vertex, contradicting that floor. Double-outside K5s must have one H vertex in each K12 part and none in K11; single-outside K5s are transversals of all four parts.
+
+This leaves x_C in O with one double/nine single components, or x_C in H with two doubles/eight singles. Exact gadget H-H edge counts become `12+g_C` and `15+g_C`, respectively. Arithmetic replay passed. This is a genuine Type-I placement reduction, not closure of z=0 or z=1.
