@@ -469,6 +469,12 @@ The Class-B-specific law remains: in the seven-vertex Class-B mode, \(x_C\in T_0
 
 The prior `verify_v47_z01_vertex_labelled_common_p_witness.py` construction is now explicitly RETRACTED. In addition to the documented 9 residual-signature collision pairs / 36 duplicate baseline-edge claims, it has 20 direct overlaps where P_0i contains the same exact color's K4 baseline edge on a non-repeat track. Since P_0i is the complement of all selected color matchings, those overlaps violate the model contract. The file now verifies these conflicts rather than certifying a feasible witness. Q32 remains OPEN / NOT_CERTIFIED.
 
-### 14l. T0--Ti omitted-vertex conservation
+### 14l. T0--Ti omitted-vertex conservation — corrected endpoint degrees
 
-For every selected color matching M_C,0i saturating T0 and missing z_i(C) in T_i, the common complement satisfies `d_P0i(v)=#{C:z_i(C)=v}`. This follows by subtracting the 11 selected matching degrees from the 11 total T0-neighbor edges at v. In the single-T0-residual seven-vertex Type-I mode, an exact C-owned T0 repeat x_C-v forces z_i(C)=v; cancellation yields `# exact nonrepeat omissions at v + 1[z_i(D)=v] = h_i(v)+r_i^D(v)`. This constrains the endpoint incidence of T0 H/repeat edges and rules out treating P0 endpoints as arbitrary. Do not apply the cancellation to the eight-vertex isolated-double mode without proving the source incidence separately. This is a necessary model constraint, not a Q32 closure.
+For every selected matching M_C,0i saturating T0 and missing z_i(C) in T_i, the common complement satisfies d_P0i(v)=#{C:z_i(C)=v}. In the single-T0-residual seven-vertex Type-I mode only, an exact color's own T0 repeat edge x_C-v forces z_i(C)=v. Cancelling those repeat owners gives
+n_i(v)+1[z_i(D)=v]=h_i(v)+r_i^D(v),
+where n_i(v) counts exact colors without a T0 repeat on this pair that omit v, h_i(v) is the H degree from v∈T_i to T0, and r_i^D(v) counts D-repeat edges ending at v.
+
+The previous bound h_i(v)≤1 was incorrect: the established asymmetric lemma bounds H-neighbors per T0 vertex into T_i, not H degree at a T_i vertex. Thus the earlier injectivity conclusion is withdrawn. The equation gives a multiset endpoint conservation law, but it permits concentrated multiplicities in the endpoint-only relaxation. The eight-vertex isolated-double branch remains separately scoped and has no source-repeat cancellation certified yet.
+
+The exact profile verifier checks the E0=0 scalar row (y,s_exact,d_D)=((7,7,8),(4,3,3),(0,1,0)) over 12 endpoint vertices per track, with 148,512 / 2,015,520 / 381,888 valid endpoint profiles. It finds concentrated local profiles with six or seven exact nonrepeat omissions at one vertex; these do not constitute full colorings, but refute any injectivity claim based on the multiset identity and current degree ledger alone. Q32 remains OPEN / NOT_CERTIFIED.
