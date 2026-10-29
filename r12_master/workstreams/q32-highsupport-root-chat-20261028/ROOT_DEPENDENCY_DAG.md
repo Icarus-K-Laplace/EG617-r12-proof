@@ -492,7 +492,7 @@ The former claim of 20 direct P_0i/K4-baseline overlaps in the owner-only witnes
 
 The H endpoint multiset on T0-T_i is not necessarily a set. Each of the nine non-small vertices in T_i has h_i(v)≤1; multiplicity above one is confined to the three small-block vertices and has total excess sum_v max(h_i(v)-1,0)≤E_i=2. For the scalar row, the endpoint-only replay gives 3,528 / 3,528 / 3,897 allowed H profiles for T1/T2/T3.
 
-When D has no repeat on a pair, z_i(D) must be an H endpoint and n_i=h_i-delta_D. When D repeats on T0-T2, z_2(D) is exactly its repeat endpoint and n_2=h_2. Under the all-Class-A allocation, exact T0-repeat endpoints are distinct among themselves but can coincide with H endpoints; the conservative P0i endpoint-degree caps are (4,5,4), not (2,3,2). These constraints do not close Q32.
+When D has no repeat on a pair, z_i(D) must be an H endpoint and n_i=h_i-delta_D. When D repeats on T0-T2, no D-specific source lemma identifies z_2(D) with its repeat endpoint; keep delta_D and r_D independent under n_i+delta_D=h_i+r_D. Under the all-Class-A allocation, exact T0-repeat endpoints are distinct among themselves but can coincide with H endpoints; the conservative P0i endpoint-degree caps are (4,5,4), not (2,3,2). These constraints do not close Q32.
 
 ### 14n. Class-B \((g,t)=(2,0)\) center must meet \(T_0\) in H
 
