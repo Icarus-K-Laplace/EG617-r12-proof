@@ -460,3 +460,10 @@ A source-correct 69-edge placement in HIGH_SUPPORT_NEAR_TURAN.md, Section 3, pla
 Added V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md and verify_v47_z01_isolated_double_residual.py. If one isolated component is double-outside, the ten isolated H-components are 9K4 plus K3 (57 edges), the G11 H-residual has profile (2,2,2,2), and its edge count is 12+g_C. In the low-gap source placements, that residual contains two disjoint transversal K4s; the pairwise-matching relaxation has 8,96,528,1760 labeled graphs for gaps 0,1,2,3. The x_C-in-H, y-in-H exceptional subcase has g_C=3 and is kept separate.
 
 Updated the residual catalog, holonomy theorem, their verifiers' scope notes, canonical state, dependency DAG, and retraction firewall. The global g=0,1 orientation still follows from the separate near-Turan theorem. Root remains OPEN / NOT_CERTIFIED.
+
+
+### Residual-enumerator audit correction: T0 degree cap and placement scope (2026-10-29)
+
+The seven-vertex catalog and holonomy-cost theorem are conditional on all ten isolated Type-I K5 components being single-outside. The separate source-correct isolated-double placement leaves nine isolated H-K4s plus one isolated H-K3 and an eight-vertex residual (2,2,2,2); that branch is not covered by the seven-vertex enumerators.
+
+A further pointwise cap was missing from the first enumerator versions. In the seven-vertex subcase, the T0 residual singleton has three baseline C-edges, and every T0 vertex has C-degree exactly 3 or 4 by balanced-coloring saturation. Therefore at most one extra C-edge can touch T0 across all three T0--Ti pairs. Both verifiers now enforce this. Independent re-enumeration confirms corrected seven-vertex graph counts 8,72,360,1000 for gaps 0–3, with K4+K3-base counts 8,72,264,520 and non-base counts 0,0,96,480. Corrected holonomy repair counts: A=(8,72,264,520), B=(24,216,696), C=(72,720), D=72 at their respective allowed gaps. The minimum costs 0/1/2/3 and the class-C/D mandatory-edge repair patterns are unchanged. This is a conditional local correction, not Q32 closure; the isolated-double branch remains open.
