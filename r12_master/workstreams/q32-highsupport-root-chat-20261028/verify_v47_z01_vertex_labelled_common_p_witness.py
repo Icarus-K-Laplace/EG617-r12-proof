@@ -10,7 +10,7 @@ Class-A K4+K3 residual gadget with (g_C,t_C)=(2,1).
 This is intentionally NOT a full coloring certificate: it does not construct
 the eleven simultaneous color matchings M_C,ij on the remaining 30 vertices
 or verify that each complete M_C triangle factor has ten isolated K4s.
-The construction is invalid for a separate reason: it assigns multiple colors to the same residual six-set, forcing duplicate baseline matching edges. An earlier claimed P_0i/K4-baseline overlap was a false audit: the candidate P edge uses a K3-side endpoint y_j, while the K4 baseline uses s_j. The script now checks zero such direct overlaps and retains the genuine cross-color collision audit.
+The construction is invalid for two independent reasons: (1) it assigns multiple colors to the same residual six-set, forcing duplicate baseline matching edges; (2) three T3 vertices receive two H edges from T0, violating the aligned zero-slack H cross-track degree-one contract. An earlier claimed P_0i/K4-baseline overlap was a false audit: the candidate P edge uses a K3-side endpoint y_j, while the K4 baseline uses s_j. The script checks zero such direct overlaps.
 """
 from itertools import combinations
 from collections import Counter, defaultdict
@@ -304,4 +304,4 @@ print("Overfull H endpoints by large track:", h_endpoint_overfull)
 print("Residual-signature collision pairs:", residual_signature_collision_pairs)
 print("Duplicate baseline-edge claims:", duplicate_baseline_edge_claims)
 print("INVALID_OWNER_ONLY_CONSTRUCTION_AUDIT_OK")
-print("Scope: the P0 overlap check passes, but residual-signature collisions still invalidate the owner-only relaxation; no feasible common-P packing is claimed.")
+print("Scope: the P0 overlap check passes; T3 H endpoint degree and residual-signature collisions invalidate the owner-only relaxation; no feasible common-P packing is claimed.")
