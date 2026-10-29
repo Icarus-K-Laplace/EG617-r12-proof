@@ -24,7 +24,7 @@ except ImportError:
 
 from verify_q32_fullsupport_candidate import (
     ALL_COLORS, H, N, O, PIVOT, A, TRACKS, edge, pairs,
-    find_independent_set, verify_candidate,
+    find_independent_set, find_clique, verify_candidate,
 )
 
 
@@ -504,7 +504,7 @@ def main():
             print("Q32_FULLSUPPORT_SAT_CANDIDATE_VERIFIED")
             print(path)
             return 0
-        print(f"iteration={iteration}; alpha_cuts_added={cuts}")
+        print(f"iteration={iteration}; validity_cuts_added={cuts}")
     print(f"ITERATION_LIMIT_REACHED: {args.max_iterations}; no closure claim")
     (out_dir / "final_model.smt2").write_text(solver.to_smt2(), encoding="utf-8")
     return 3

@@ -652,3 +652,8 @@ The verifier now returns immediately on a malformed K5 factor list instead of co
 ## Full coloring contract strengthened (2026-10-29)
 
 Added the missing omega(G_C)<=5 premise to the exact full-support CSP through lazy K6 cuts and to the independent verifier through a complement-dual exact clique search. This is necessary because the 130/132-edge minimum-degree lemmas use omega(D)<=5. The model now searches the full registered coloring contract rather than only its independence constraints.
+
+
+### K6-separation import and reporting fix (2026-10-29)
+
+The solver now imports the verifier's complement-dual find_clique routine explicitly, and iteration logs call the combined independent-set/K6 cuts “validity cuts” rather than “alpha cuts.” The independent-set and clique routines were cross-checked against brute force on all 5,405 simple-graph/target-size instances with n<=5; each routine agreed in every case.

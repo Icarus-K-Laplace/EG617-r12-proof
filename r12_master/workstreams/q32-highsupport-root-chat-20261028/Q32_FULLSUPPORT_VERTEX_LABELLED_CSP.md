@@ -111,3 +111,8 @@ The verifier now returns immediately on a malformed K5 factor list instead of co
 ## Balanced-coloring contract audit — monochromatic K6 exclusion (2026-10-29)
 
 The first CSP draft enforced the independence-number side of the registered coloring premise but omitted the clique-number side, even though the conditional nonexact-color degree theorems require omega(D)<=5. That omission made the model a relaxation and allowed the candidate verifier to accept a coloring with a monochromatic K6. The model now lazily separates every monochromatic K6 by a valid non-color edge clause, and the independent verifier checks omega(G_C)<=5 for every color. The local pre-alpha candidate pass skips both global alpha and omega checks; final acceptance performs both. The verifier self-test now cross-checks clique search as well as independent-set search on all 5,405 graph/target-size cases for n<=5.
+
+
+### K6-separation import and reporting fix (2026-10-29)
+
+The solver now imports the verifier's complement-dual find_clique routine explicitly, and iteration logs call the combined independent-set/K6 cuts “validity cuts” rather than “alpha cuts.” The independent-set and clique routines were cross-checked against brute force on all 5,405 simple-graph/target-size instances with n<=5; each routine agreed in every case.

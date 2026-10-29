@@ -665,3 +665,8 @@ The verifier now returns immediately on a malformed K5 factor list instead of co
 - Added exact lazy clique cuts: any monochromatic K6 in color C forces at least one of its 15 edges to take another color.
 - Added independent verifier checks for omega(G_C)<=5 for every color and expanded the exhaustive small-graph regression to cover clique search as well as independent-set search.
 - This closes a model-specification gap, not Q32. Actual committed-file execution and full Z3 solving remain pending.
+
+
+### K6-separation import and reporting fix (2026-10-29)
+
+The solver now imports the verifier's complement-dual find_clique routine explicitly, and iteration logs call the combined independent-set/K6 cuts “validity cuts” rather than “alpha cuts.” The independent-set and clique routines were cross-checked against brute force on all 5,405 simple-graph/target-size instances with n<=5; each routine agreed in every case.
