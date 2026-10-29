@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Vertex-labelled common-P relaxation witness for the aligned E408/Q32 cell.
+"""RETRACTION AUDIT: invalid common-P witness for the aligned E408/Q32 cell.
 
 This constructs all three shared large-pair complementary matchings P_ij as
 six labelled 6-cycles, assigns every P_ij edge exactly one of H / exact-repeat /
@@ -10,8 +10,7 @@ Class-A K4+K3 residual gadget with (g_C,t_C)=(2,1).
 This is intentionally NOT a full coloring certificate: it does not construct
 the eleven simultaneous color matchings M_C,ij on the remaining 30 vertices
 or verify that each complete M_C triangle factor has ten isolated K4s.
-It proves that common-P endpoint packing and the source-local Class-A modes,
-by themselves, remain feasible.
+That claim was invalid: the construction puts P_0i edges on the same color's K4 baseline edges. The script now verifies the overlap and reports the retraction.
 """
 from itertools import combinations
 from collections import Counter, defaultdict
@@ -155,6 +154,7 @@ P0 = {i: [] for i in range(3)}
 H0 = {i: [] for i in range(3)}
 S0 = {i: [] for i in range(3)}
 local_graph_checks = 0
+local_base_t0_edges = {}
 
 for color_id in range(10):
     meta = exact_meta[color_id]
@@ -179,6 +179,7 @@ for color_id in range(10):
     k4 = (w0, s_i, s_j, s_k)
     k3 = (y_i, y_j, y_k)
     base_edges = list(combinations(k4, 2)) + list(combinations(k3, 2))
+    local_base_t0_edges[color_id] = {edge_key(e) for e in base_edges if w0 in e}
     extras = [(w0, y_i), (y_i, s_j)]
     assert independence_number(tuple(range(7)), [
         (0, 1)  # placeholder not used below
@@ -219,6 +220,18 @@ assert tuple(len(S0[i]) for i in range(3)) == (4, 4, 3)
 assert tuple(len(H0[i]) for i in range(3)) == (7, 7, 8)
 assert all(len(P0[i]) == 11 for i in range(3))
 assert all(len({e[0] for e in P0[i]}) == 11 for i in range(3))
+
+# Audit the defining disjointness: P_0i must avoid every selected baseline
+# matching edge. The previous witness placed the same color's K4 baseline
+# edge in P_0i on each of the two non-repeat tracks.
+p0_baseline_conflicts = []
+for color_id in range(10):
+    w0 = T0[color_id]
+    for track in range(3):
+        p_edge = next(edge_key(e) for e in P0[track] if e[0] == w0)
+        if p_edge in local_base_t0_edges[color_id]:
+            p0_baseline_conflicts.append((color_id, track, p_edge))
+assert len(p0_baseline_conflicts) == 20
 
 # Label all large-pair P edges as H, exact-repeat, or D-repeat.
 H_counts = {(0, 1): 4, (0, 2): 3, (1, 2): 3}
