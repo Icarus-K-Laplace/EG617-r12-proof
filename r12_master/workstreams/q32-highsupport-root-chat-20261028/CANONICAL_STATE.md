@@ -361,3 +361,6 @@ The gadget H-H edge count is tied exactly to the near-Turan gap:
 - x_C in H, two-double: `e_C(H intersect G11)=15+g_C`, with `0<=g_C<=5`.
 
 The arithmetic verifier was executed and returned `V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM_ARITHMETIC_OK`. This eliminates only the triple-placement row and sharpens the color-gap decomposition; the aligned z=0,1 cells remain OPEN.
+
+
+The cross-track ledger now also has a color-repeat conservation lemma. On each K12--K12 pair, every unmatched vertex repeats exactly one non-target color among its 12 cross edges; for every color C, the surplus `e_C(T_i,T_j)-12` equals the number of repeat-C vertices on either side, so the repeat-color counts must match across both sides. On a K11--K12 pair, the analogous surplus over 11 counts repeated colors among unmatched vertices on the K11 side only. This is a color-level constraint for any future exact completion search, not a closure.
