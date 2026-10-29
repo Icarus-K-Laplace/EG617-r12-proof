@@ -478,3 +478,9 @@ The generic 13-set lemma is asymmetric, but the aligned 3+7 zero-slack degree le
 ### 14m. Forced Class-A repeat allocation in the E0=0 scalar row
 
 Under the all-Class-A contract, exact repeat totals l12,l13,l23=(7,0,3) and T0-repeat totals s1,s2,s3=(4,3,3) force the unique allocation x12=4,x13=0,x21=3,x23=0,x31=0,x32=3. The exact verifier confirms there are no other nonnegative solutions. Since P12 and P23 are perfect matchings, their 7 and 3 exact-repeat edges are pairwise vertex-disjoint. This adds distinct-endpoint constraints to the single-T0-residual common-P CSP. It does not extend to mixed source modes and does not close Q32.
+
+### 14m. Residual six-set injectivity in the single-outside mode
+
+If two exact colors shared the same six residual vertices, their matching restrictions on each of the three K2,2 blocks must be complementary to remain edge-disjoint. Complementing all three pairwise matchings toggles the triangle/six-cycle parity, so one color is nonaligned. If the six-cycle color is single-outside, the residual holonomy table forces g_C>=2; global t_C<=1 then forces a large-pair repeat edge, and pair-projection injectivity forbids the other color from sharing its residual pair. Thus no two single-outside exact colors share a residual six-set; moreover, a six-cycle single-outside signature is unique against every other source mode. This is recorded in V47_Z01_RESIDUAL_SIGNATURE_INJECTIVITY.md with an 8-case parity verifier. It is not a full common-P packing theorem.
+
+The former claim of 20 direct P_0i/K4-baseline overlaps in the owner-only witness was also retracted: w-y_j is not the K4 baseline edge w-s_j. A direct endpoint replay gives zero such overlaps. The witness remains invalid because of residual-signature collision pairs / duplicate baseline-edge claims.
