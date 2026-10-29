@@ -478,3 +478,8 @@ where n_i(v) counts exact colors without a T0 repeat on this pair that omit v, h
 The previous bound h_i(v)≤1 was incorrect: the established asymmetric lemma bounds H-neighbors per T0 vertex into T_i, not H degree at a T_i vertex. Thus the earlier injectivity conclusion is withdrawn. The equation gives a multiset endpoint conservation law, but it permits concentrated multiplicities in the endpoint-only relaxation. The eight-vertex isolated-double branch remains separately scoped and has no source-repeat cancellation certified yet.
 
 The exact profile verifier checks the E0=0 scalar row (y,s_exact,d_D)=((7,7,8),(4,3,3),(0,1,0)) over 12 endpoint vertices per track, with 148,512 / 2,015,520 / 381,888 valid endpoint profiles. It finds concentrated local profiles with six or seven exact nonrepeat omissions at one vertex; these do not constitute full colorings, but refute any injectivity claim based on the multiset identity and current degree ledger alone. Q32 remains OPEN / NOT_CERTIFIED.
+
+
+### 14m. Forced Class-A repeat allocation in the E0=0 scalar row
+
+Under the all-Class-A contract, exact repeat totals l12,l13,l23=(7,0,3) and T0-repeat totals s1,s2,s3=(4,3,3) force the unique allocation x12=4,x13=0,x21=3,x23=0,x31=0,x32=3. The exact verifier confirms there are no other nonnegative solutions. Since P12 and P23 are perfect matchings, their 7 and 3 exact-repeat edges are pairwise vertex-disjoint. This adds distinct-endpoint constraints to the single-T0-residual common-P CSP. It does not extend to mixed source modes and does not close Q32.
