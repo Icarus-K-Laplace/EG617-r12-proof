@@ -137,3 +137,20 @@ There is also a sharper bound conditional on the nonexact gap. Since \(\sum_{C\t
 \boxed{L_{\mathrm{exact}}\ge\max\{27-g_D,\ 8,\ 7+E_0\}.}
 \]
 Thus if \(g_D=7\), exact colors must carry at least 20 large-pair surplus edges; if \(g_D=19\), the bound is 8, 8, 9, or 10 according as \(E_0=0,1,2,3\). This is a global necessary condition to combine with the residual holonomy tables, not a contradiction by itself.
+
+
+## 6. Budget cut for the unresolved \(g_D\le17\) branch
+
+Assume no exact color has gap 0 or 1. Then the ten exact colors all have \(g_C\in\{2,3\}\). Let \(k\) be the number with \(g_C=3\); their total gap is \(20+k\), so the unique nonexact color has
+\[
+g_D=17-k,\qquad 0\le k\le10.
+\]
+Since every exact color has \(t_C\le1\), the ten exact colors must contribute at least
+\[
+\boxed{\sum_{C\ \mathrm{exact}}(g_C-t_C)\ge(20+k)-10=10+k}
+\]
+surplus edges across the three \(K_{12}\)-to-\(K_{12}\) track pairs. The total surplus available on those three pairs is exactly \(26+E_0\). Hence the nonexact color's large-pair surplus obeys
+\[
+\boxed{g_D-t_D\le16+E_0-k.}
+\]
+This is an exact budget cut for the remaining multicolor packing problem. It does not contradict any current feasible aggregate state, but it forces at least one large-pair repeat edge from every exact color in the unresolved branch, and at least two from each gap-three exact color.
