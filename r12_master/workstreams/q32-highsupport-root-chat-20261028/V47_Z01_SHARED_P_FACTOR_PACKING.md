@@ -136,6 +136,38 @@ When a key is duplicated, exactly two colors use it and they must use the two co
 
 The seven-case local verifier verify_v47_z01_partial_projection_packing.py checks every possible matching intersection of P_ij with a K2,2 block. This is a necessary CSP constraint only; it does not prove global feasibility or infeasibility.
 
+### 4.3.2 Exact binary encoding for projection blocks
+
+For a solver implementation, use the following variables independently on each pair \(ij\):
+
+- \(r_{C,i,A}\in\{0,1\}\): color \(C\) chooses residual 2-set \(A\subseteq T_i\);
+- \(x_{C,ij,A,B}\in\{0,1\}\): its pair projection is \((A,B)\);
+- \(y_{C,ij,A,B,o}\in\{0,1\}\), \(o\in\{0,1\}\): it uses one of the two internal \(K_{2,2}\) matching orientations \(F_o(A,B)\);
+- \(p_{ij,e}\in\{0,1\}\): edge \(e\) belongs to the common complement matching \(P_{ij}\).
+
+The consistency equations are
+\[
+\sum_{A\in {T_i\choose2}}r_{C,i,A}=1,\qquad
+\sum_{A,B}x_{C,ij,A,B}=1,
+\]
+\[
+x_{C,ij,A,B}\le r_{C,i,A},\quad
+x_{C,ij,A,B}\le r_{C,j,B},\quad
+x_{C,ij,A,B}\ge r_{C,i,A}+r_{C,j,B}-1,
+\]
+and
+\[
+y_{C,ij,A,B,0}+y_{C,ij,A,B,1}=x_{C,ij,A,B}.
+\]
+
+For each key \((A,B)\), color edge-disjointness is enforced orientation-wise:
+\[
+\sum_C y_{C,ij,A,B,o}\le1\quad(o=0,1).
+\]
+For every \(e\in F_o(A,B)\), enforce \(y_{C,ij,A,B,o}+p_{ij,e}\le1\) for all \(C\). Because \(P_{ij}\) is itself a matching, its intersection with a \(K_{2,2}\) block is empty or a subset of exactly one orientation. These inequalities therefore implement the P-free duplicate-key theorem exactly: a P-hit block leaves at most one orientation available and hence at most one color; a P-free block can host at most two colors, one per orientation.
+
+The full model must additionally impose that each \(P_{ij}\) is a perfect matching, that \(H_{ij}\subseteq P_{ij}\), and that every \(P_{ij}\setminus H_{ij}\) edge has exactly one repeat-color owner with both endpoints in that owner's residual sets. This projection encoding handles the local block constraints but does not replace the source-mode, alpha, T0 incidence, or global degree constraints.
+
 ### 4.4 T0--Ti omitted-vertex conservation — small-block excess budget
 
 For each non-target color \(C\) and track \(T_i\), its selected matching \(M_{C,0i}\) saturates all eleven T0 vertices and misses exactly one vertex \(z_i(C)\in T_i\). The eleven selected matchings and their complement \(P_{0i}\) partition \(K_{11,12}=T_0\times T_i\), so
