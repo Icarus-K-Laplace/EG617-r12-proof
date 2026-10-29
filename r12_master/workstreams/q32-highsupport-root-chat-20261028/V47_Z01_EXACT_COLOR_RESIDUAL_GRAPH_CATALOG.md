@@ -37,7 +37,7 @@ so \alpha(J_C)<=2. It is exactly two because each track pair of residual vertice
 
 The balanced-coloring degree floor also gives
 - each of the six vertices in T1,T2,T3 has degree at least two in J_C (one C-neighbor in each of the other two K12 tracks);
-- the singleton vertex in T0 has degree at least three in J_C (one C-neighbor in each K12 track).
+- the singleton vertex in T0 has degree at least three and, by pointwise saturation, at most four in J_C (one baseline C-neighbor in each K12 track).
 
 No edge of J_C can lie within one of its four track parts.
 
