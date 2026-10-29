@@ -535,17 +535,17 @@ Added `V47_Z01_TWO_DOUBLE_SOURCE_PATTERN_AUDIT.md` and `verify_v47_z01_two_doubl
 
 Correction to the prior audit: the claimed 20 direct P_0i/K4-baseline overlaps were false. In the source Class-A construction, the K4 baseline uses w-s_i,w-s_j,w-s_k, whereas the candidate P_0i edges use w-y_i,w-y_j,w-y_k, with y_j,y_k in the separate K3. A direct endpoint replay gives zero such overlaps; the verifier asserts zero. Two genuine independent failures remain. First, the candidate H endpoints on T0-T3 have support size 5 for 8 H edges, with three T3 vertices each receiving two H edges from T0; this violates the frozen aligned zero-slack requirement that each large-track vertex has total H cross-track degree exactly one. Second, the owner-only construction has 9 residual-signature collision pairs / 36 duplicate baseline-edge claims. No valid common-P packing or Q32 closure is established.
 
-## T0--Ti omitted-vertex conservation — degree-source correction (2026-10-29)
+## T0--Ti omitted-vertex conservation — small-block excess audit (2026-10-29)
 
-The universal identity is exact: for each non-target color C, its selected matching M_C,0i saturates T0 and misses one vertex z_i(C) in T_i; the 11 selected matchings and P_0i partition K11,12, so d_P0i(v)=#{C:z_i(C)=v}. This does not require P_0i to be a matching on T_i.
-
-In the single-T0-residual seven-vertex Type-I mode, an exact color's own T0 repeat edge ending at v forces z_i(C)=v. After cancelling exact-repeat owners, the valid pointwise equation is
+For each non-target color C, its selected matching M_C,0i saturates T0 and misses one vertex z_i(C) in T_i. Since the 11 selected matchings and P_0i partition K11,12, d_P0i(v)=#{C:z_i(C)=v}. In the single-T0-residual seven-vertex Type-I mode, an exact color's own T0 repeat edge ending at v forces its omitted vertex to be v. Cancelling those repeat owners gives
 n_i(v)+1[z_i(D)=v]=h_i(v)+r_i^D(v),
-where n_i(v) counts exact colors without a repeat on T0-T_i whose omitted vertex is v, h_i(v) is the number of H edges from v∈T_i to T0, and r_i^D(v) is the D-repeat endpoint multiplicity.
+where h_i(v) is the H degree from v∈T_i to T0 and r_i^D(v) is D-repeat endpoint multiplicity.
 
-**Degree-source correction:** the generic 13-set lemma alone does not bound h_i(v) on the T_i side. However, the frozen aligned 3+7 zero-slack degree ledger independently gives every T_i vertex (i=1,2,3) total H cross-track degree exactly one. Therefore h_i(v)≤1 is valid in this specific contract. With that contract, if r_i^D(v)=0 then n_i(v)+1[z_i(D)=v]≤1, so exact nonrepeat omissions are injective away from D-repeat endpoints. At a D-repeat endpoint n_i(v)≤1+r_i^D(v), and multiplicity two is possible only when that vertex also receives an H edge.
+**Degree correction:** the aligned degree ledger does not say every T_i vertex has total cross-track H degree exactly one. The nine non-small vertices in T_i do; the three small-block vertices A_i,B_i,C_i have cross-track degrees 1+epsilon and total excess E_i=2 in the current scalar row. Therefore h_i(v)≤1 at non-small vertices and sum_v max(h_i(v)-1,0)≤E_i=2. Repeated H endpoints can occur at small-block vertices, so the earlier binary-profile assumption and blanket injectivity claim are withdrawn.
 
-Added verify_v47_z01_t0_omission_conservation.py. Its endpoint-profile replay uses binary H endpoint degrees as required by the zero-slack ledger and verifies 5,544 / 70,488 / 3,960 profiles for T1/T2/T3 in the E0=0 scalar row y=(7,7,8), exact repeats=(4,3,3), D repeats=(0,1,0). The maximum exact nonrepeat omission multiplicities are 1,2,1; the value 2 is possible only at the T2 D-repeat endpoint when it also has an H edge. This is a necessary local constraint, not a full common-P completion. The cancellation remains unproved for the eight-vertex isolated-double branch; Q32 remains OPEN / NOT_CERTIFIED.
+The D omitted vertex is also source-linked to D's repeat edge: if D repeats on T0-T_i, its omitted vertex is exactly that edge's T_i endpoint, hence delta_D=r_D and n_i(v)=h_i(v). If D has no repeat on this pair, its omitted vertex must be an H endpoint and n_i(v)=h_i(v)-delta_D(v).
+
+Updated verify_v47_z01_t0_omission_conservation.py to enumerate endpoint profiles with overage allowed only at the three small-block vertices and total overage at most E_i=2. For y=(7,7,8), exact repeats=(4,3,3), D repeats=(0,1,0), E=(2,2,2), the exact endpoint-only replay gives 3,528 / 3,528 / 3,897 allowed H profiles and 20,610 / 42,336 / 25,758 D-omission assignments for T1/T2/T3. Maximum exact nonrepeat omission multiplicity is 3 on each track. This is still only a necessary endpoint relaxation, not a full common-P completion. The eight-vertex isolated-double mode is outside the exact-repeat cancellation lemma. Q32 remains OPEN / NOT_CERTIFIED.
 
 ## Forced Class-A repeat allocation in the E0=0 scalar row (2026-10-29)
 
@@ -559,7 +559,7 @@ This rules out repeated residual six-sets globally, but not distinct signatures 
 
 ## Owner-only P0 overlap audit correction (2026-10-29)
 
-The previous claim of 20 direct P_0i/K4-baseline overlaps was false and is withdrawn. In the explicit source Class-A construction, the K4 baseline uses w-s_i,w-s_j,w-s_k, while the candidate P_0i edges use w-y_i,w-y_j,w-y_k with y_j,y_k in the separate K3. A direct endpoint replay gives zero overlaps. Two actual failures remain: the candidate's T0-T3 H endpoint profile has 8 edges but only 5 distinct T3 endpoints, with three T3 vertices each receiving two H edges from T0, violating the aligned zero-slack degree-one cross-track contract; and the owner-only construction has 9 residual-signature collision pairs / 36 duplicate baseline-edge claims. No complete common-P packing is certified.
+The previous claim of 20 direct P_0i/K4-baseline overlaps was false and is withdrawn. In the explicit source Class-A construction, the K4 baseline uses w-s_i,w-s_j,w-s_k, while the candidate P_0i edges use w-y_i,w-y_j,w-y_k with y_j,y_k in the separate K3. A direct endpoint replay gives zero overlaps. Two actual failures remain: the candidate's T0-T3 H endpoint profile has 8 edges on 5 vertices, giving endpoint excess sum_v max(h_3(v)-1,0)=3>E_3=2; and the owner-only construction has 9 residual-signature collision pairs / 36 duplicate baseline-edge claims. The first is a track-excess-budget violation, not a claim that every T3 vertex has degree one. No complete common-P packing is certified.
 
 
 ## E0=0 endpoint support caps (2026-10-29)
