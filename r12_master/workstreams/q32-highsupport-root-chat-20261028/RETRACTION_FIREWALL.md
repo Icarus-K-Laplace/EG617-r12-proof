@@ -167,3 +167,14 @@ The new T0 degree ledger uses only:
 - the corrected Type-I factorization into ten isolated K5 components plus G11.
 
 It distinguishes special K5s in G11 from isolated components and does not assume exceptional-point injectivity, a universal degree-nine point, or any Q33/E407 identity. The result is a pointwise capacity theorem only, not an UNSAT certificate. EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+## 12. T0 pointwise saturation firewall (2026-10-29)
+
+The new T0 degree ledger uses only:
+- the aligned target clique partition \(K_{12},K_{12},K_{12},K_{11}\);
+- the balanced-coloring condition that every 13-set contains every non-target color;
+- the exact H degree/cross-track degree ledger;
+- the corrected Type-I factorization into ten isolated K5 components plus G11.
+
+It distinguishes special K5s in G11 from isolated components and does not assume exceptional-point injectivity, a universal degree-nine point, or any Q33/E407 identity. The result is a pointwise capacity theorem only, not an UNSAT certificate. EG617(r=12) remains OPEN / NOT_CERTIFIED.
