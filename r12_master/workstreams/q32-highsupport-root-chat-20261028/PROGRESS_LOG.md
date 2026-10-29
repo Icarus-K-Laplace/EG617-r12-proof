@@ -477,3 +477,9 @@ Updated `V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md` and added `verify_v47_z01_is
 A proposed closure of the entire `x_C in H, y in H` isolated-double branch was retracted. The cross-track ledger gives each large-track vertex one H-neighbor total outside its own track, not one H-neighbor into every other track. The argument relying on a per-pair degree-one condition was invalid.
 
 The sound conclusion is limited to the T0-centered subcase: if `x_C,y in T0`, each already has three C-neighbors in H, so pointwise saturation allows at most one extra C-edge per center; the three required gadget edges cannot fit into total capacity two. This subcase is CLOSED; the large-track-centered exceptional subcase remains OPEN.
+
+### Placement-sensitive T0 repeat-owner bound — 2026-10-29
+
+The T0 saturation identity gives the global cap t_C<=2 for each exact color. A further case split now shows t_C<=1 in both (i) the all-isolated-single seven-vertex branch and (ii) the isolated-double two-K4 branches: x_C in O, or x_C in H with y in O. In the latter branches, all surplus H-H gadget edges form a star centered at y or x_C and can touch at most one of the two T0 residual vertices; if the center itself lies in T0, its degree cap forces g_C<=1.
+
+The only isolated-double placement where t_C=2 remains possible is x_C in H, y in H, two-double, with b_s+b_t=3 and g_C=3. This is the special K4 + special K3 + x_C residual and must remain a separate finite case. Updated V47_T0_POINTWISE_COLOR_SATURATION.md and its verifier. The one-extra-edge cap summed over all three T0--Ti pairs is still specific to the seven-vertex branch; in the eight-vertex two-K4 branch the cap is per T0 vertex. No contradiction or Q32 closure is claimed.
