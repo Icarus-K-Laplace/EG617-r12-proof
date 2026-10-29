@@ -10,7 +10,7 @@ Class-A K4+K3 residual gadget with (g_C,t_C)=(2,1).
 This is intentionally NOT a full coloring certificate: it does not construct
 the eleven simultaneous color matchings M_C,ij on the remaining 30 vertices
 or verify that each complete M_C triangle factor has ten isolated K4s.
-That claim was invalid: the construction puts P_0i edges on the same color's K4 baseline edges. The script now verifies the overlap and reports the retraction.
+The construction is invalid for a separate reason: it assigns multiple colors to the same residual six-set, forcing duplicate baseline matching edges. An earlier claimed P_0i/K4-baseline overlap was a false audit: the candidate P edge uses a K3-side endpoint y_j, while the K4 baseline uses s_j. The script now checks zero such direct overlaps and retains the genuine cross-color collision audit.
 """
 from itertools import combinations
 from collections import Counter, defaultdict
@@ -222,8 +222,9 @@ assert all(len(P0[i]) == 11 for i in range(3))
 assert all(len({e[0] for e in P0[i]}) == 11 for i in range(3))
 
 # Audit the defining disjointness: P_0i must avoid every selected baseline
-# matching edge. The previous witness placed the same color's K4 baseline
-# edge in P_0i on each of the two non-repeat tracks.
+# matching edge. For each source Class-A gadget, the selected K4 baseline
+# edge is w0-s_j, while the candidate complement edge on a non-repeat track
+# is w0-y_j with y_j in the K3; these endpoints are distinct.
 p0_baseline_conflicts = []
 for color_id in range(10):
     w0 = T0[color_id]
@@ -231,7 +232,7 @@ for color_id in range(10):
         p_edge = next(edge_key(e) for e in P0[track] if e[0] == w0)
         if p_edge in local_base_t0_edges[color_id]:
             p0_baseline_conflicts.append((color_id, track, p_edge))
-assert len(p0_baseline_conflicts) == 20
+assert len(p0_baseline_conflicts) == 0
 
 # Label all large-pair P edges as H, exact-repeat, or D-repeat.
 H_counts = {(0, 1): 4, (0, 2): 3, (1, 2): 3}
@@ -282,8 +283,8 @@ print("T0 repeat counts:", tuple(len(S0[i]) for i in range(3)))
 print("Large-pair H counts:", tuple(H_counts[p] for p in pairs))
 print("Large-pair exact-repeat counts:", tuple(S_exact_counts[p] for p in pairs))
 print("Large-pair D-repeat counts:", D_large)
-print("P0 edges overlapping own source K4 baseline:", len(p0_baseline_conflicts))
+print("P0 edges overlapping own source K4 baseline (must be zero):", len(p0_baseline_conflicts))
 print("Residual-signature collision pairs:", residual_signature_collision_pairs)
 print("Duplicate baseline-edge claims:", duplicate_baseline_edge_claims)
 print("INVALID_OWNER_ONLY_CONSTRUCTION_AUDIT_OK")
-print("Scope: verifies why the attempted owner-only witness is invalid; no feasible common-P packing is claimed.")
+print("Scope: the P0 overlap check passes, but residual-signature collisions still invalidate the owner-only relaxation; no feasible common-P packing is claimed.")
