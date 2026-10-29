@@ -334,3 +334,17 @@ The z=0,1 alignment theorem plus the `(3,2,1,1)` fiber profile would create a fu
 
 
 The retraction is backed by `verify_v47_37_switch_endpoint_counterexample.py`, which reconstructs the normalized 12-vertex switch witness and exhaustively checks its independence number: `alpha=4), 63 maximum independent sets, output `V47_37_SWITCH_ENDPOINT_COUNTEREXAMPLE_REPRODUCED`. This verifies the counterexample to the old inference, not any global Q32 conclusion.
+
+
+## New balanced-coloring cross-track ledger for aligned z=0,1 (2026-10-29)
+
+Added `V47_Z01_BALANCED_COLORING_CROSS_TRACK_LEDGER.md` and `verify_v47_z01_cross_track_ledger.py`.
+
+After the independent z=0,1 alignment theorem, the target-color graph H is partitioned into cliques of sizes 12,12,12,11. The 13-set balanced-coloring premise implies that between any two K12 tracks, H-edges form a matching: for each outside vertex, its 12 edges into the K12 track must contain all eleven non-target colors, leaving at most one H-edge. For a K11--K12 pair, the same argument bounds the H-degree by one on the K11 side; no symmetric matching claim is made.
+
+The within-track edge count is 253, so the 32 remaining H-edges are cross-track edges. The exact degree ledger gives:
+- total H edges between the K11 track and the three K12 tracks: `22+E_0`;
+- total H edges among the three K12 tracks: `10-E_0`;
+- `E_0` is the sum of small-block degree-excess units on the singleton-fiber label and lies in `{0,1,2,3}`.
+
+Thus 7–10 H edges lie among the three large tracks and 22–25 join the K11 track to a K12 track. The six track-pair deficits sum exactly to 37. The verifier enumerated all 729 small-block excess triples and found 28,107 feasible necessary aggregate track-count states; output `V47_Z01_CROSS_TRACK_ARITHMETIC_OK`. This is a sharper structural normal form, not a closure of z=0 or z=1.
