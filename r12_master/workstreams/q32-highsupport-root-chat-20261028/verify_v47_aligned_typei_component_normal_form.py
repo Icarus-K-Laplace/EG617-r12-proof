@@ -93,6 +93,29 @@ assert 21 - g_nonexact_min == 14  # upper bound on nonexact O-O edges
 assert (sum_gap - g_nonexact_max) == 18
 assert (18 + exact_gap_cap - 1) // exact_gap_cap == 6
 
+
+# Exact occupancy of the twelve K5 factors across H target parts (12,12,12,11).
+parts = (12, 12, 12, 11)
+single_xO = tuple(11 for _ in range(4))
+double_xO = (1, 1, 1, 0)
+assert tuple(a + b for a, b in zip(single_xO, double_xO)) == parts
+
+single_two_double = tuple(10 for _ in range(4))
+double_x0 = (2, 2, 2, 0)
+need_x0 = (12, 12, 12, 10)
+assert tuple(a + b for a, b in zip(single_two_double, double_x0)) == need_x0
+
+double_x1 = (1, 2, 2, 1)
+need_x1 = (11, 12, 12, 11)
+assert tuple(a + b for a, b in zip(single_two_double, double_x1)) == need_x1
+
+single_triple = tuple(11 for _ in range(4))
+need_triple_x0 = (12, 12, 12, 10)
+assert single_triple[3] > need_triple_x0[3]  # x_C cannot lie in X_0
+triple_x1 = (0, 1, 1, 0)
+assert tuple(a + b for a, b in zip(single_triple, triple_x1)) == need_x1
+
+print("K5-factor occupancy across four target parts: checked")
 print("Aligned-cell exact gap cap and nonexact budget: checked")
 print("Type-I K5 profiles and H-edge accounting: 3 cases checked")
 print("Triple placement: special-K5-only necessary condition checked")
