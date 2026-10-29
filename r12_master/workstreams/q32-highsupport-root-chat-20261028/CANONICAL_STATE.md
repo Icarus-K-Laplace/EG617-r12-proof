@@ -545,3 +545,8 @@ n_i(v)+1[z_i(D)=v]=h_i(v)+r_i^D(v).
 **Correction to the prior entry:** h_i(v) is not known to be at most one. The balanced-coloring lemma bounds H degree on the T0 side only; it does not bound H degree at a vertex of T_i. Therefore the earlier claim that exact nonrepeat omissions are injective away from D-repeat endpoints is withdrawn. The omitted-vertex equation alone allows concentrated endpoint multiplicities and does not close any source mode. It is not applied to the eight-vertex isolated-double branch.
 
 Added verify_v47_z01_t0_omission_conservation.py and independently replayed its exact endpoint-profile enumeration for the E0=0 scalar row y=(7,7,8), exact repeats=(4,3,3), D repeats=(0,1,0). It checks 148,512, 2,015,520 and 381,888 profiles on T1,T2,T3. The relaxation admits local profiles with six or seven exact nonrepeat omissions at one vertex, explicitly demonstrating that a degree-one inference cannot follow from the present ledger. This is not a full common-P completion. Q32 remains OPEN / NOT_CERTIFIED.
+
+
+## Forced Class-A repeat allocation in the E0=0 scalar row (2026-10-29)
+
+Added verify_v47_z01_class_a_repeat_allocation.py. Conditional on all ten exact colors being Class A, the scalar counts exact large-pair repeats (7,0,3) and T0 repeats (4,3,3) force a unique allocation: four colors repeat on T0-T1 and T1-T2; three on T0-T2 and T1-T2; three on T0-T3 and T2-T3. The verifier enumerates all nonnegative allocations and finds exactly one. Since P12 and P23 are perfect matchings, their seven and three exact-repeat edges are pairwise vertex-disjoint within each pair, forcing the corresponding track endpoints to be distinct. This is a local CSP constraint only; mixed Class-A/Class-B and isolated-double modes are not covered.
