@@ -469,11 +469,13 @@ The Class-B-specific law remains: in the seven-vertex Class-B mode, \(x_C\in T_0
 
 The prior verify_v47_z01_vertex_labelled_common_p_witness.py construction remains an owner-only relaxation, not a feasible common-P packing. The claimed 20 direct P_0i/K4-baseline overlaps were false: w-y_j and w-s_j are distinct K3-side and K4-side edges, and the verifier asserts zero such overlaps. Two actual failures remain: (1) the candidate has H endpoint support (7,7,5) for H counts (7,7,8), so three T3 vertices receive two T0 H edges each, violating the aligned zero-slack degree-one cross-track contract; (2) 9 residual-signature collision pairs / 36 duplicate baseline-edge claims force colors to reuse the same baseline matching edges. Q32 remains OPEN / NOT_CERTIFIED.
 
-### 14l. T0--Ti omitted-vertex conservation — degree source corrected
+### 14l. T0--Ti omitted-vertex conservation — small-block excess budget
 
-For each selected matching M_C,0i saturating T0 and missing z_i(C) in T_i, the complement satisfies d_P0i(v)=#{C:z_i(C)=v}. In the single-T0-residual seven-vertex Type-I mode, exact repeat owners cancel to give n_i(v)+1[z_i(D)=v]=h_i(v)+r_i^D(v), where n_i counts exact colors without a T0 repeat on this pair, h_i(v) is the H degree from v∈T_i to T0, and r_i^D(v) is D-repeat endpoint multiplicity.
+For each selected matching M_C,0i saturating T0 and missing z_i(C) in T_i, the complement satisfies d_P0i(v)=#{C:z_i(C)=v}. In the single-T0-residual seven-vertex Type-I mode, exact repeat owners cancel to give n_i(v)+1[z_i(D)=v]=h_i(v)+r_i^D(v).
 
-The generic 13-set lemma is asymmetric, but the aligned 3+7 zero-slack degree ledger separately gives every large-track vertex total H cross-track degree one. Thus h_i(v)≤1 is valid under the frozen aligned contract. It follows that away from D-repeat endpoints, exact nonrepeat omissions are injective; at a D-repeat endpoint, multiplicity at most 1+r_i^D(v) is allowed. The exact endpoint-profile verifier checks 5,544 / 70,488 / 3,960 profiles for the E0=0 scalar row, with maximum multiplicities 1,2,1. Do not export this degree cap beyond the zero-slack contract or apply the source-repeat cancellation to the eight-vertex isolated-double mode without a separate proof. This is not a Q32 closure.
+The degree ledger must be read with its small-block exception: the nine non-small vertices in T_i have total cross-track H-degree one, while the three small-block vertices A_i,B_i,C_i have cross-track degrees 1+epsilon and total excess E_i=2 in the current scalar row. Therefore h_i(v)≤1 on non-small vertices and sum_v max(h_i(v)-1,0)≤E_i=2. The H endpoint multiset is not necessarily a set; the earlier binary-profile and blanket-injectivity claims are withdrawn.
+
+If D has no T0 repeat on this pair, its omitted vertex must be an H endpoint and n_i=h_i-delta_D. If D has a T0 repeat, the D omitted vertex is exactly the endpoint of its repeat edge, so delta_D=r_D and n_i=h_i. The exact verifier checks 3,528 / 3,528 / 3,897 allowed H profiles and 20,610 / 42,336 / 25,758 compatible D-omission assignments for the E0=0 scalar row. Maximum exact nonrepeat omission multiplicity is 3 on each track. The eight-vertex isolated-double mode is not covered by this cancellation. No Q32 closure follows.
 
 ### 14m. Forced Class-A repeat allocation in the E0=0 scalar row
 
@@ -486,9 +488,11 @@ If two exact colors shared the same six residual vertices, their matching restri
 The former claim of 20 direct P_0i/K4-baseline overlaps in the owner-only witness was also retracted: w-y_j is not the K4 baseline edge w-s_j. A direct endpoint replay gives zero such overlaps. The witness remains invalid because of residual-signature collision pairs / duplicate baseline-edge claims.
 
 
-### 14n. E0=0 endpoint support caps
+### 14o. E0=0 endpoint multiplicity constraints — corrected
 
-From the omitted-vertex identity plus the aligned zero-slack degree ledger, the T0-T1 and T0-T3 H endpoints are sets matching the nonrepeat exact omissions plus D's omission, with all such omitted vertices distinct. On T0-T2, the analogous multiset is either fully distinct or has exactly one doubled endpoint, only when the D-repeat edge endpoint overlaps an H endpoint. Under the all-Class-A allocation, exact T0-repeat endpoints are distinct within tracks, giving P0i endpoint-degree caps (2,3,2) on T1,T2,T3. The T2 cap 3 requires an exact repeat, H and D-repeat edge to coincide at one endpoint. These constraints tighten the local CSP but do not close it.
+The H endpoint multiset on T0-T_i is not necessarily a set. Each of the nine non-small vertices in T_i has h_i(v)≤1; multiplicity above one is confined to the three small-block vertices and has total excess sum_v max(h_i(v)-1,0)≤E_i=2. For the scalar row, the endpoint-only replay gives 3,528 / 3,528 / 3,897 allowed H profiles for T1/T2/T3.
+
+When D has no repeat on a pair, z_i(D) must be an H endpoint and n_i=h_i-delta_D. When D repeats on T0-T2, z_2(D) is exactly its repeat endpoint and n_2=h_2. Under the all-Class-A allocation, exact T0-repeat endpoints are distinct among themselves but can coincide with H endpoints; the conservative P0i endpoint-degree caps are (4,5,4), not (2,3,2). These constraints do not close Q32.
 
 ### 14n. Class-B \((g,t)=(2,0)\) center must meet \(T_0\) in H
 
