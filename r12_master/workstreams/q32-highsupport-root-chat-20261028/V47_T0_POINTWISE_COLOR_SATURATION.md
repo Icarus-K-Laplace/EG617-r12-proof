@@ -132,4 +132,8 @@ Using \(g_D\le19\) and \(t_D\ge\max(0,1-E_0)\) yields the following necessary lo
 | 2 | 28 | 0 | 19 | 9 |
 | 3 | 29 | 0 | 19 | 10 |
 
-Thus, regardless of the \(E_0\) case, the ten exact colors must collectively carry at least eight surplus edges on the three large-track pairs; \(E_0=2,3\) strengthen this to nine and ten. This is a global necessary condition to combine with the residual holonomy tables, not a contradiction by itself.
+There is also a sharper bound conditional on the nonexact gap. Since \(\sum_{C\text{ exact}}g_C=37-g_D\) and \(\sum_{C\text{ exact}}t_C\le10\), one has \(L_{\mathrm{exact}}\ge27-g_D\). Combining both arguments gives
+\[
+\boxed{L_{\mathrm{exact}}\ge\max\{27-g_D,\ 8,\ 7+E_0\}.}
+\]
+Thus if \(g_D=7\), exact colors must carry at least 20 large-pair surplus edges; if \(g_D=19\), the bound is 8, 8, 9, or 10 according as \(E_0=0,1,2,3\). This is a global necessary condition to combine with the residual holonomy tables, not a contradiction by itself.
