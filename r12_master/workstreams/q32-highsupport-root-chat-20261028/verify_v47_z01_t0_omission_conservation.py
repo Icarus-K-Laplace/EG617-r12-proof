@@ -60,6 +60,8 @@ def audit_track(name, y_h, s_exact, d_repeat, excess_budget=2, vertices=12):
 
     for h in profiles:
         if d_repeat == 0:
+        # D has no repeat on this pair. Its omitted vertex must be an H endpoint.
+        for h in profiles:
             for z_d in range(vertices):
                 if h[z_d] == 0:
                     continue
@@ -71,18 +73,25 @@ def audit_track(name, y_h, s_exact, d_repeat, excess_budget=2, vertices=12):
                              for v in range(vertices)) == h
                 valid_assignments += 1
                 max_n = max(max_n, max(n))
-        else:
-            # D's repeat endpoint is its omitted vertex; delta_D=r_D.
+    else:
+        # D has one repeat edge, but no theorem currently forces its omitted
+        # vertex to be the repeat endpoint. Enumerate both independently,
+        # requiring only the exact multiset identity n+delta=h+r.
+        for h in profiles:
             for d_endpoint in range(vertices):
                 r_d = tuple(1 if v == d_endpoint else 0 for v in range(vertices))
-                delta_d = r_d
-                n = h
-                assert sum(n) == n_exact_nonrepeat
-                assert tuple(n[v] + delta_d[v] for v in range(vertices)) == tuple(
-                    h[v] + r_d[v] for v in range(vertices)
-                )
-                valid_assignments += 1
-                max_n = max(max_n, max(n))
+                cap = tuple(h[v] + r_d[v] for v in range(vertices))
+                for z_d in range(vertices):
+                    if cap[z_d] == 0:
+                        continue
+                    n = tuple(cap[v] - (1 if v == z_d else 0)
+                              for v in range(vertices))
+                    assert all(value >= 0 for value in n)
+                    assert sum(n) == n_exact_nonrepeat
+                    assert tuple(n[v] + (1 if v == z_d else 0)
+                                 for v in range(vertices)) == cap
+                    valid_assignments += 1
+                    max_n = max(max_n, max(n))
 
     # Exact local degree-state enumeration: epsilon is distributed among the
     # three small-block vertices; l_i(v)=1+epsilon_i(v)-h_i(v).
@@ -130,8 +139,8 @@ def main():
         audit_track("T3", 8, 3, 0),
     ]
     assert [row["allowed_H_endpoint_profiles"] for row in rows] == [3528, 3528, 3897]
-    assert [row["valid_D_omission_assignments"] for row in rows] == [20610, 42336, 25758]
-    assert [row["max_exact_nonrepeat_omission_multiplicity"] for row in rows] == [3, 3, 3]
+    assert [row["valid_D_omission_assignments"] for row in rows] == [20610, 269046, 25758]
+    assert [row["max_exact_nonrepeat_omission_multiplicity"] for row in rows] == [3, 4, 3]
     assert [row["local_degree_states"] for row in rows] == [9270, 9270, 8649]
     expected_y7 = {
         str((0, 1, 1)): 2646, str((1, 0, 1)): 2646,
