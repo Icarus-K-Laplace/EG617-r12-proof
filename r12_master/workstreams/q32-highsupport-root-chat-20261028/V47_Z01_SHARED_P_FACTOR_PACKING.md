@@ -193,6 +193,23 @@ h_i(v)\le1\ \text{for non-small }v,\qquad
 \]
 High multiplicity is possible only at the three small-block vertices, and the total endpoint excess over one is at most two. It is not valid to require all \(h_i(v)\in\{0,1\}\).
 
+Define the large-track H degree
+\[
+\ell_i(v)=d_H(v,T_j)+d_H(v,T_k),\quad \{i,j,k\}=\{1,2,3\},
+\]
+and
+\[
+u_i=\sum_v\max(h_i(v)-1,0),\quad
+k_i=\sum_v\max(\ell_i(v)-1,0),\quad
+\omega_i=|\{v:h_i(v)>0,\ell_i(v)>0\}|.
+\]
+The per-vertex degree equation \(h_i(v)+\ell_i(v)=1+\epsilon_i(v)\) gives the exact decomposition
+\[
+\boxed{E_i=u_i+k_i+\omega_i=2.}
+\]
+Here \(k_i\) is the number of vertices shared by the endpoint sets of the two large-pair H matchings incident to \(T_i\), while \(\omega_i\) counts vertices with both a T0-H edge and a large-pair H edge. Thus repeated T0 endpoints, overlap between the two large-pair H matchings, and T0/large-H endpoint overlap all spend the same two-unit excess budget. The only possible integer splits are \((u_i,k_i,\omega_i)\in\{(2,0,0),(0,2,0),(0,0,2),(1,1,0),(1,0,1),(0,1,1)\}\).
+
+
 There is also a useful source-sensitive relation for D:
 - If D has **no** T0 repeat on \(T_0T_i\), then \(r_i^D\equiv0\), its omitted vertex must be an H endpoint, and \(n_i(v)=h_i(v)-\delta_i^D(v)\).
 - If D **does** have a T0 repeat on \(T_0T_i\), its omitted vertex is exactly the endpoint of that D-repeat edge, so \(\delta_i^D(v)=r_i^D(v)\) pointwise and \(n_i(v)=h_i(v)\).
@@ -212,7 +229,7 @@ For \(y=(7,7,8)\), exact T0 repeats \(s=(4,3,3)\), D repeats \(d=(0,1,0)\), and 
 - compatible D-omission assignments: \(20{,}610,\ 42{,}336,\ 25{,}758\);
 - maximum exact nonrepeat omission multiplicity: \(3\) on each track, possible only at a small-block vertex under the excess budget.
 
-These counts impose only the necessary endpoint-excess contract. They do not yet couple the endpoint profiles to the source-labelled residual triangles, pairwise H matching edges, or the full common-P CSP.
+The verifier also enumerates the exact local states ε_i(A_i)+ε_i(B_i)+ε_i(C_i)=2 with ℓ_i(v)=1+ε_i(v)-h_i(v) constrained to 0,1,2. It finds 9,270 / 9,270 / 8,649 local degree states for T1/T2/T3 and checks E_i=u_i+k_i+ω_i in every state. The decomposition-state counts are: for T1/T2, (u,k,ω)=(0,1,1): 2,646; (1,0,1): 2,646; (1,1,0): 1,512; (2,0,0): 1,350; (0,0,2): 756; (0,2,0): 360. For T3 they are (1,0,1): 2,898; (2,0,0): 2,016; (0,1,1): 1,710; (1,1,0): 1,260; (0,0,2): 630; (0,2,0): 135. These counts impose only the necessary local degree/excess contract; they do not yet couple the endpoint profiles to source-labelled residual triangles, pairwise H matching edges, or the full common-P CSP.
 
 ### 4.5.1 Correct P0 endpoint-degree caps in the E0=0 row
 
