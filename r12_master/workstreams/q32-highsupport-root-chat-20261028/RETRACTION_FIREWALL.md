@@ -146,3 +146,8 @@ The new triple-placement refinement is conditional on the aligned low-z clique p
 ## 14. Exact-gap cap scope (2026-10-29)
 
 The `g_C<=3) theorem applies only after the aligned low-z 3+7 normal form and source-correct Type-I component placement are established. The nonexact-color interval `7<=g_D<=21` also uses the registered 37-unit total gap, the 132-edge nonexact color, and the 13-set balanced-coloring condition for each O vertex and each K12 part. It does not imply graph nonexistence; do not promote the aligned cell or root theorem.
+
+
+## 15. Nonexact-color shell floor (2026-10-29)
+
+The refined range `7<=g_D<=19` depends on the 132-edge nonexact color D, the balanced-coloring bound `alpha(D)<=12), and p being D-nonadjacent to the shell A. It is not a generic consequence of the 37-gap identity alone. The resulting `e_D(H) in [76,88]` remains a necessary range, not a contradiction.
