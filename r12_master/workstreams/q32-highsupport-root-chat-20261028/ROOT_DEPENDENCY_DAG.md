@@ -399,15 +399,15 @@ For each exact Type-I color C, a degree-four T0 vertex must lie in G11(C), and t
 For each exact Type-I color C, a degree-four T0 vertex must lie in G11(C), and the corrected factor occupancy gives at most two T0 vertices in G11(C), so \(t_C\le2\). The T0-pair surplus identity also gives \(t_C\le g_C\), hence \(t_C\le\min(2,g_C)\). The residual K12-pair surplus is \(26+E_0\). This is a source-correct capacity restriction for future simultaneous color packing. It does not close the aligned cells; root status remains OPEN / NOT_CERTIFIED.
 
 
-### 14e. Exact residual holonomy-cost theorem for each exact color
+### 14e. Conditional seven-vertex residual holonomy-cost theorem
 
-Added `V47_Z01_RESIDUAL_HOLONOMY_COST.md`. After the ten isolated transversal K4s of a Type-I exact color, the remaining seven vertices have profile (2,2,2,1), with a nine-edge baseline determined by three perfect matchings on the large residual pairs and three T0 attachments. There are 64 baselines. Exhaustive repair enumeration gives minimum surplus costs 0,1,2,3 for: aligned triangles plus aligned T0 attachment; aligned triangles plus mixed T0 attachment; nonaligned six-cycle with alpha 3; nonaligned six-cycle with alpha 4, respectively. Therefore a nonaligned exact-color baseline requires at least two repeat edges, and the alpha-four case requires three. This is an exact local theorem; no global closure is claimed.
+Added `V47_Z01_RESIDUAL_HOLONOMY_COST.md` for the subcase where all ten isolated K5 components are single-outside. There the seven-vertex residual has profile (2,2,2,1), a nine-edge baseline, and 64 matching-compatible baseline classes. The minimum costs 0,1,2,3 correspond to aligned/aligned, aligned/mixed, six-cycle-alpha-3, and six-cycle-alpha-4 classes. This local table is conditional and must not be used for isolated-double placements, which have a separate eight-vertex residual audit.
 
 
 ### Minimum-repair edge patterns for classes C and D
 
 The holonomy verifier checks the exact minimum repairs. Class C has three independent triples: two share a pair of large-track vertices, and the third is a disjoint transversal triple. Each minimum two-edge repair includes the shared-pair edge and one edge within the disjoint triple. Class D has a unique independent 4-set T0 plus a transversal triple V; the baseline T0 edges attach to the complementary triple U. Each minimum three-edge repair consists of one edge within U, one T0-to-V edge, and the edge between the other two vertices of V. These are local constraints only.
 
-### 14f. Exact seven-vertex residual graph catalog
+### 14f. Conditional seven-vertex residual graph catalog
 
-Added `V47_Z01_EXACT_COLOR_RESIDUAL_GRAPH_CATALOG.md` and its verifier. The ten isolated K5 components of each exact color leave a seven-vertex residual graph with part sizes (2,2,2,1), e=9+g_C, alpha=2, and degree floors 2 on the large-track vertices and 3 at T0. Exhaustive enumeration of the necessary 18-edge relaxation gives 8,72,384,1,148 labeled graphs for gaps 0,1,2,3. The 69/70 layers are rigid K4+K3; larger gaps admit additional local shapes. This is a local catalog, not a global closure.
+Added `V47_Z01_EXACT_COLOR_RESIDUAL_GRAPH_CATALOG.md` and its verifier for the all-isolated-single-outside subcase only. The 7-vertex necessary relaxation has profile (2,2,2,1), e=9+g_C, alpha at most 2, and counts 8,72,384,1,148 at gaps 0,1,2,3. The source-correct isolated-double branch instead has an 8-vertex G11 residual; see `V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md`. Neither catalog closes the aligned cells.
