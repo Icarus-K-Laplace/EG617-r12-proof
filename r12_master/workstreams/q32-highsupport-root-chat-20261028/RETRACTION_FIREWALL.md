@@ -228,3 +228,8 @@ For any residual pair key A×B on a large-track pair, a nonempty intersection wi
 ## 20. Projection-block binary encoding scope (2026-10-29)
 
 The new binary encoding in V47_Z01_SHARED_P_FACTOR_PACKING.md, Section 4.3.2, exactly models residual pair-set choices and K2,2 matching orientation conflicts with P_ij. It does not yet encode the complete global Type-I factorization, source modes, alpha constraints, or T0/degree ledger. Do not report it as a solved CSP or UNSAT certificate.
+
+
+## 21. Projection encoding cross-key conflict caveat (2026-10-29)
+
+A pair-key-local constraint is not enough: two different residual K2,2 blocks may overlap in an actual edge. The solver-ready encoding now includes an edge-level occupancy inequality across all colors and all pair keys containing each edge. Any implementation omitting that inequality is only a relaxation and cannot certify feasibility or infeasibility.
