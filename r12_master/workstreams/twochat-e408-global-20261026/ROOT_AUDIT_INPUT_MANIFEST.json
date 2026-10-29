@@ -197,6 +197,10 @@
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/PROGRESS_LOG.md",
       "blob_sha": "348556b5e28f481cd4f9a410cbdcf6b2d270b8b8"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/R12_ROOT_CLOSURE_PROMOTION_AUDIT.md",
+      "blob_sha": "9b4563dac9bae6c7fff5621f14b86c68c6e713dd"
     }
   ],
   "root_status": "OPEN / NOT_CERTIFIED",
@@ -205,5 +209,11 @@
     "61f3263de5c99d37f58cd1ab7ad65a05888534f0",
     "6ed8b6e0352ca5aeb713e86676504bb236561db8"
   ],
-  "manifest_parent_commit": "6ed8b6e0352ca5aeb713e86676504bb236561db8"
+  "manifest_parent_commit": "b03f2484624f1a13d92dcb5204bd13940b662521",
+  "audit_commits_before_final_manifest_commit": [
+    "549960e37217c243e8abd6b7629301e9f918e6c6",
+    "61f3263de5c99d37f58cd1ab7ad65a05888534f0",
+    "6ed8b6e0352ca5aeb713e86676504bb236561db8",
+    "b03f2484624f1a13d92dcb5204bd13940b662521"
+  ]
 }
