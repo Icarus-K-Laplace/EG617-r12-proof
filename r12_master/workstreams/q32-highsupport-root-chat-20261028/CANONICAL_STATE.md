@@ -164,7 +164,7 @@ Added `V47_RESIDUAL_INCIDENCE_COVER.md`: for every independent k-set S in R, k<=
 
 ## 132-edge minimum-degree upgrade (2026-10-28)
 
-`Q32_132_MINDEG3.md` proves `delta(D)>=3` for the unique132-edge nonexact color by excluding degrees0,1,2 with the (60,59,58)-point second-Turan bounds and the Kang–Pikhurko equality classification at (58,11). Therefore `L_10=3) and the pointwise surplus budget becomes `r_10=4), improving the full-support gadget quota to `q_z<=4). This strengthens the existing non-full-support m=10 contradictions but does not itself close full support v47.
+`Q32_132_MINDEG3.md` proves `delta(D)>=3` for the unique 132-edge nonexact color by excluding degrees 0,1,2 with the (60,59,58)-point second-Turan bounds and the Kang–Pikhurko equality classification at (58,11). Therefore `L_10=3` and the non-full-support pointwise special-surplus budget is `r_10=4`. The full-support gadget quota `q_z<=4` is conditional on `d_0(z)>=13`; the unconditional bound from `d_H(z)>=12` is `q_z<=5`. This does not close full support v47.
 
 ### v=47, m=10 high-chromatic residual subcase CLOSED
 
@@ -608,7 +608,7 @@ Two draft overconstraints were corrected before committing:
 1. Do not force all four surplus O-vertices into G_11: isolated factors can carry double-outside placements, producing the valid 8-vertex gadget-residual mode.
 2. Full support means coverage by any single-outside K5 factor, including N_s or N_t when appropriate; it is not limited to the ten isolated factors.
 
-The reserve quota q_z<=3/4 is not hard-coded in the trusted solver core until the target-degree term in the reserve inequality is independently derived. The solver instead enforces the original global edge-color and independence constraints directly.
+The stronger reserve quota q_z<=(3,4,4) is not assumed unconditionally because its universal d_0(z)>=13 premise is not established. The solver enforces the unconditional q_z<=(4,5,5) bound, and applies the stronger quota only where the model's actual target degree is at least 13. It also enforces alpha(H)<=4, alpha(G_C)<=12, and omega(G_C)<=5 through lazy separation.
 
 **Status:** FORMULATION ADDED; execution and proof replay pending. No solver outcome is claimed. E408/Q32 remains **OPEN / NOT_CERTIFIED**.
 

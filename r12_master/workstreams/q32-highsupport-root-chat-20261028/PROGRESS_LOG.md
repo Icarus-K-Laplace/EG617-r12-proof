@@ -693,3 +693,8 @@ Updated the canonical state and source reserve notes: the q_z<=3/4/4 quota is co
 ### m=8 weighted-surplus scope audit (2026-10-29)
 
 Marked the m=8 full-support parameter restriction and the claimed pairwise distinctness of all x_C,y_C as conditional on d_F(z)>=13 at each relevant variable point. The degree identity itself is valid, but the capacity-three deduction needs that pointwise target-degree floor; delta(H)>=12 alone only gives capacity four.
+
+
+### Canonical-state wording reconciled (2026-10-29)
+
+Replaced the stale unconditional q_z<=4 statement for m=10 and the older “reserve not hard-coded” summary with the current split: unconditional q_z<=(4,5,5), stronger q_z<=(3,4,4) only under actual target degree d_0(z)>=13. The non-full-support r_m=(3,4,4) budget remains distinct.
