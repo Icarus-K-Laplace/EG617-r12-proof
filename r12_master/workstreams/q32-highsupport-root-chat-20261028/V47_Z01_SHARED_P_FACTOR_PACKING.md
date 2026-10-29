@@ -210,11 +210,9 @@ The per-vertex degree equation \(h_i(v)+\ell_i(v)=1+\epsilon_i(v)\) gives the ex
 Here \(k_i\) is the number of vertices shared by the endpoint sets of the two large-pair H matchings incident to \(T_i\), while \(\omega_i\) counts vertices with both a T0-H edge and a large-pair H edge. Thus repeated T0 endpoints, overlap between the two large-pair H matchings, and T0/large-H endpoint overlap all spend the same two-unit excess budget. The only possible integer splits are \((u_i,k_i,\omega_i)\in\{(2,0,0),(0,2,0),(0,0,2),(1,1,0),(1,0,1),(0,1,1)\}\).
 
 
-There is also a useful source-sensitive relation for D:
+The source-sensitive relation for D is more limited:
 - If D has **no** T0 repeat on \(T_0T_i\), then \(r_i^D\equiv0\), its omitted vertex must be an H endpoint, and \(n_i(v)=h_i(v)-\delta_i^D(v)\).
-- If D **does** have a T0 repeat on \(T_0T_i\), its omitted vertex is exactly the endpoint of that D-repeat edge, so \(\delta_i^D(v)=r_i^D(v)\) pointwise and \(n_i(v)=h_i(v)\).
-
-The latter equality was missing from the earlier endpoint relaxation; the D omitted vertex and D-repeat endpoint cannot be chosen independently.
+- If D **does** have a T0 repeat on \(T_0T_i\), the current source audit does not prove that D's omitted vertex equals the repeat-edge endpoint. Keep \(\delta_i^D\) and \(r_i^D\) independent, subject only to \(n_i(v)+\delta_i^D(v)=h_i(v)+r_i^D(v)\) and nonnegativity. The earlier identification \(\delta_i^D=r_i^D\) is withdrawn; it would require a separate D-specific source lemma.
 
 ### 4.5 Exact endpoint-profile replay for the E0=0 scalar row
 
@@ -226,8 +224,8 @@ The corrected verifier verify_v47_z01_t0_omission_conservation.py enumerates \(h
 
 For \(y=(7,7,8)\), exact T0 repeats \(s=(4,3,3)\), D repeats \(d=(0,1,0)\), and \(E=(2,2,2)\), the exact endpoint-only replay gives:
 - allowed H endpoint profiles: \(3{,}528,\ 3{,}528,\ 3{,}897\) for \(T_1,T_2,T_3\);
-- compatible D-omission assignments: \(20{,}610,\ 42{,}336,\ 25{,}758\);
-- maximum exact nonrepeat omission multiplicity: \(3\) on each track, possible only at a small-block vertex under the excess budget.
+- compatible D-omission assignments: \(20{,}610,\ 269{,}046,\ 25{,}758\);
+- maximum exact nonrepeat omission multiplicity: \(3,4,3\) on (T_1,T_2,T_3); the multiplicity four on (T_2) is possible in the relaxation when a repeated H endpoint and D-repeat endpoint coincide and D omits another supported vertex.
 
 The verifier also enumerates the exact local states ε_i(A_i)+ε_i(B_i)+ε_i(C_i)=2 with ℓ_i(v)=1+ε_i(v)-h_i(v) constrained to 0,1,2. It finds 9,270 / 9,270 / 8,649 local degree states for T1/T2/T3 and checks E_i=u_i+k_i+ω_i in every state. The decomposition-state counts are: for T1/T2, (u,k,ω)=(0,1,1): 2,646; (1,0,1): 2,646; (1,1,0): 1,512; (2,0,0): 1,350; (0,0,2): 756; (0,2,0): 360. For T3 they are (1,0,1): 2,898; (2,0,0): 2,016; (0,1,1): 1,710; (1,1,0): 1,260; (0,0,2): 630; (0,2,0): 135. These counts impose only the necessary local degree/excess contract; they do not yet couple the endpoint profiles to source-labelled residual triangles, pairwise H matching edges, or the full common-P CSP.
 
