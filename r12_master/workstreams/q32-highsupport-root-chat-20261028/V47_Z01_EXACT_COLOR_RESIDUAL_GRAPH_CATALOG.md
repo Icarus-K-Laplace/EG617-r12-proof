@@ -1,7 +1,9 @@
-# E408 Q32 — exact-color seven-vertex residual graph catalog
+# E408 Q32 — conditional exact-color seven-vertex residual graph catalog
 
 Date: 2026-10-29  
-Status: **PROVED_CONDITIONAL local reduction plus exhaustive 7-vertex catalog.** No Q32 closure claimed.
+Status: **PROVED_CONDITIONAL local reduction plus exhaustive 7-vertex catalog, only when all ten isolated K5s are single-outside.** No Q32 closure claimed.
+
+> **Scope correction (2026-10-29):** this catalog is not universal over all Type-I placements. HIGH_SUPPORT_NEAR_TURAN.md, Section 3, gives a source-correct placement with the unique double-outside factor in an isolated component. That branch has nine isolated H-K4s plus an isolated H-K3 and an eight-vertex gadget residual with profile (2,2,2,2), not this seven-vertex profile. See V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md.
 
 ## 1. Why every exact color leaves a seven-vertex graph
 
@@ -9,7 +11,7 @@ The source-correct Type-I factorization is
 \[
 C=10K_5\;\dot\cup\;G_{11}.
 \]
-Each of the ten isolated K5 components meets O in exactly one vertex, so its other four vertices form an isolated C-colored K4 in H. Every such K4 is transversal across the target tracks T0,T1,T2,T3, because each track is a target-color clique and hence C-independent.
+In the placement subcase considered in this file, each of the ten isolated K5 components meets O in exactly one vertex, so its other four vertices form an isolated C-colored K4 in H. This single-outside condition is an additional placement assumption, not a consequence of the outside-count profile alone. Every such K4 is transversal across the target tracks T0,T1,T2,T3, because each track is a target-color clique and hence C-independent.
 
 The ten isolated K4s use 10 vertices from each track. The remaining seven H vertices, denoted R_C, therefore have track profile
 \[
@@ -64,11 +66,11 @@ For g_C=2 or 3, the necessary graph constraints alone no longer force a K4+K3 ba
 
 ## 3. How this feeds the multicolor attack
 
-For each exact color C, the ten isolated transversal K4s cover 10 vertices in every target track. Its remaining 7 vertices support J_C, whose edges are the only C-edges in H not already accounted for by those ten isolated components.
+For each exact color C in this placement subcase, the ten isolated transversal K4s cover 10 vertices in every target track. Its remaining 7 vertices support J_C, whose edges are the only C-edges in H not already accounted for by those ten isolated components.
 
 The three large-track pairwise color matchings and the T0--Ti matchings from `V47_Z01_CANONICAL_RESIDUAL_ONE_FACTORIZATION.md` must be compatible with these residual seven-vertex graphs. The catalog isolates the exact local frontier:
 - gaps 0 and 1 have rigid K4+K3 structure;
 - gaps 2 and 3 have a finite set of additional local shapes;
 - each exact color has gap at most 3, and the nonexact color has gap at least 7.
 
-The next global step is to couple these per-color residual shapes through edge uniqueness across the common track pairs. The local catalog does not close z=0,1. E408/Q32 and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
+The next step within this subcase is to couple these per-color residual shapes through edge uniqueness across the common track pairs. The isolated-double branch must be handled separately before this catalog can be used globally. The local catalog does not close z=0,1. E408/Q32 and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
