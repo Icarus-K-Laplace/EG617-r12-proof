@@ -58,8 +58,7 @@ def audit_track(name, y_h, s_exact, d_repeat, excess_budget=2, vertices=12):
     valid_assignments = 0
     max_n = 0
 
-    for h in profiles:
-        if d_repeat == 0:
+    if d_repeat == 0:
         # D has no repeat on this pair. Its omitted vertex must be an H endpoint.
         for h in profiles:
             for z_d in range(vertices):
