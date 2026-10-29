@@ -485,7 +485,7 @@ Correct split:
 - **All isolated components single-outside:** ten isolated transversal K4s leave a seven-vertex G11 residual with profile (2,2,2,1), e=9+g_C. The existing 7-vertex graph catalog and 64-baseline holonomy theorem apply only here.
 - **One isolated component double-outside:** the isolated H-subgraph is 9K4 disjoint union K3, with 57 edges. The remaining G11 H-vertices have profile (2,2,2,2), and their induced graph has 8 vertices and 12+g_C edges. The new V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md records the exact accounting and the two-K4 low-gap subcases.
 
-The initial uncapped two-K4 relaxation gave 8,96,528,1760, but those counts were superseded by the T0-capped audit: the correct necessary-relaxation counts are 8,96,480,1312. These are not source-realizable completion counts. The exceptional isolated-double placement with x_C in H and y in H has g_C=3 and requires separate source-geometry handling.
+The initial uncapped two-K4 relaxation gave 8,96,528,1760; the per-T0-vertex cap then gave 8,96,480,1312. Both are superseded by the global exact-color bound t_C<=1, which allows at most one T0-incident extra edge in total and gives the stronger necessary-relaxation counts 8,96,408,880. These are not source-realizable completion counts. The exceptional isolated-double placement with x_C in H and y in H has g_C=3 and is now shown to have t_C=1.
 
 The global g_C=0,1 alignment conclusion remains supported independently by the 69/70 near-Turan classification recorded in V47_Z01_CANONICAL_RESIDUAL_ONE_FACTORIZATION.md. The T0 pointwise saturation and its identity g_C>=t_C do not depend on the seven-vertex assumption. No root status changes: E408/Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
 
