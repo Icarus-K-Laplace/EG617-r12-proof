@@ -461,3 +461,10 @@ A valid pair-projection injectivity lemma is recorded in V47_Z01_SHARED_P_FACTOR
 The purported counterexample to the Class-B complement law used the wrong baseline. For \(x_C\in O\), \(N_s\) single-outside and \(N_t\) double-outside, the actual source baseline is the K4 H-part of \(N_s\) plus the K3 H-part of \(N_t\), which is Class A. The edges \(yw\) and \(ys_j\) are the two extras; \(ws_i\) is already a K4 baseline edge. Hence Class A legitimately permits a T0 repeat on \(T_0T_i\) and a large-pair repeat on \(T_iT_j\), sharing track \(i\).
 
 The Class-B-specific law remains: in the seven-vertex Class-B mode, \(x_C\in T_0\), both special K5s are double-outside, \(y\in H\), and for \(g_C=2,t_C=1\) the T0 repeat is on \(T_0T_k\) while the large-pair repeat is on \(T_iT_j\), with \(\{i,j,k\}=\{1,2,3\}\). The aggregate witness uses Class-A source patterns (exact surplus \((7,0,3;4,3,3)\), D surplus \((1,9,6;0,1,0)\), \(g_D=17\)); it remains only scalar/locally realizable feasibility, not a vertex-labelled common-P completion.
+
+
+### 14k. Source-mode local verifier and retraction of the purported owner-only P witness
+
+`V47_Z01_TWO_DOUBLE_SOURCE_PATTERN_AUDIT.md` and its verifier classify the all-isolated-single-outside, both-special-factors-double-outside, x-in-T0 local mode. The replay passes 19 labeled cases and confirms the Class-B (g,t)=(2,1) complement relation only in that source mode; the unordered pair assertion was corrected before replay.
+
+The prior `verify_v47_z01_vertex_labelled_common_p_witness.py` construction is now explicitly RETRACTED. In addition to the documented 9 residual-signature collision pairs / 36 duplicate baseline-edge claims, it has 20 direct overlaps where P_0i contains the same exact color's K4 baseline edge on a non-repeat track. Since P_0i is the complement of all selected color matchings, those overlaps violate the model contract. The file now verifies these conflicts rather than certifying a feasible witness. Q32 remains OPEN / NOT_CERTIFIED.
