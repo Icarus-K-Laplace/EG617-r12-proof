@@ -341,6 +341,51 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
             if d_t0[a] == 0 and d_t0[b] == 0 and colors[edge(a, b)] != 11:
                 fail(f"two A vertices with no color-11 T0-neighbor are not adjacent in D: {(a,b)}")
 
+        # Independent replay of the outside-component bijection theorem.
+        d_a_degrees = {
+            a: sum(colors[edge(a, b)] == 11 for b in A if b != a)
+            for a in A
+        }
+        z_vertices = {a for a in A if d_t0[a] == 0}
+        if d_a == 2:
+            if any(deg > 1 for deg in d_a_degrees.values()):
+                fail("the two D[A] edges are not disjoint")
+            if len(z_vertices) != 2 or not all(
+                colors[edge(a, b)] == 11 for a, b in pairs(sorted(z_vertices))
+            ):
+                fail("the 2K2 case does not have a zero-T0-neighbor edge component")
+        elif d_a == 3:
+            if len(z_vertices) != 3 or sum(
+                colors[edge(a, b)] == 11 for a, b in pairs(A)
+            ) != 3:
+                fail("the K3 case does not have exactly three zero-T0-neighbor vertices")
+            if any(colors[edge(a, b)] != 11
+                   for a, b in pairs(sorted(z_vertices))):
+                fail("the three zero-T0-neighbor vertices do not form a D-triangle")
+
+        for a, b in pairs(A):
+            if colors[edge(a, b)] == 11:
+                for h in H:
+                    if (colors[edge(a, h)] == 11) != (colors[edge(b, h)] == 11):
+                        fail(f"D[A] edge {(a,b)} endpoints do not have identical D-neighborhoods in H at {h}")
+
+        for i in range(1, 4):
+            degrees = sorted(
+                sum(colors[edge(o, v)] == 11 for o in O)
+                for v in tracks[i]
+            )
+            expected = ([1] * 10 + [2] * 2) if d_a == 2 else ([1] * 11 + [3])
+            if degrees != expected:
+                fail(f"T{i} outside-D degree multiset {degrees} differs from {expected}")
+
+        t0_degrees = sorted(
+            sum(colors[edge(o, v)] == 11 for o in O)
+            for v in tracks[0]
+        )
+        expected_t0 = ([1] * 10 + [2]) if d_a == 2 else ([1] * 11)
+        if t0_degrees != expected_t0:
+            fail(f"T0 outside-D degree multiset {t0_degrees} differs from {expected_t0}")
+
         z_cross = sum(colors[edge(u, v)] == 0 for i in range(4) for j in range(i+1,4)
                       for u in residual & tracks[i] for v in residual & tracks[j])
         if z_cross not in (0, 1):

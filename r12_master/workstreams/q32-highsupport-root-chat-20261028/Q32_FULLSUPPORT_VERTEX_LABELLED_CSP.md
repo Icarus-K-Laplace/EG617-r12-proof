@@ -138,3 +138,8 @@ The solver encodes the nonexact degree floors from the canonical count vector (1
 ## Exact aligned-cell saturation theorem
 
 Added V47_Z01_NONEXACT_GAP_SATURATION.md. In the aligned m=10 z=0,1 cell, the 132-edge nonexact color has at least 56 edges outside H; this forces g_D=7 and all ten exact gaps g_C=3. The model enforces the equality pattern and the verifier independently checks it. The theorem does not close the aligned cell.
+
+
+## Outside-component bijection theorem
+
+The aligned model now includes V47_Z01_OUTSIDE_COMPONENT_BIJECTION.md: the independent-set hitting argument forces every component of D[O] to map as a whole to a unique vertex in each large track, and every component except the zero-T0-neighbor component maps bijectively to T0. The model encodes identical D-neighborhoods in H for endpoints of every D[A] edge and the exact outside-D degree multisets on all four tracks. The independent verifier checks these conditions. This remains a necessary structural reduction, not an UNSAT result.

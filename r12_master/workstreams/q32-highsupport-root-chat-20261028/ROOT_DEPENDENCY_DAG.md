@@ -587,3 +587,8 @@ Marked the m=8 full-support parameter restriction and the claimed pairwise disti
 ### Aligned m=10 nonexact-gap saturation (2026-10-29)
 
 A new conditional theorem forces g_D=7 and g_C=3 for every exact color in the aligned z=0,1,(2,2,2,1) cell. It also forces one D-edge per outside vertex into each large track and the two equality patterns on D[A]/O-T0. The aligned CSP and independent verifier now encode/recheck these consequences. This is a structural reduction, not a Q32 closure.
+
+
+### New Q32 structural reduction: outside-component bijection
+
+The aligned m=10,z=0,1 cell now carries a conditional component-bijection theorem from alpha(D)<=12. The D[A] components map bijectively to each large track, while the zero-T0-neighbor component is omitted and the remaining components map bijectively to T0. This yields twin D-neighborhoods for endpoints of every D[A] edge and exact O-degree multisets. CSP and verifier encode the consequences; neither aligned cell is closed.

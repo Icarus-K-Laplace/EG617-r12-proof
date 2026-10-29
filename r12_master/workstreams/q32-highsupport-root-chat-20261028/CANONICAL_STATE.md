@@ -680,3 +680,8 @@ Updated the global-constraints section to reflect the implemented unconditional 
 ## New aligned m=10 nonexact-gap saturation (2026-10-29)
 
 In the aligned z=0,1,(2,2,2,1) cell, the 132-edge nonexact color D has at least 56 edges outside H: 42 forced edges from O to the three K12 target tracks, plus at least 14 from O-T0 and D[A]. Hence g_D<=7. Since every exact Type-I color has g_C<=3 in this aligned cell and the exact all-color identity is sum g_C=37, equality forces g_D=7 and all ten exact colors to have g_C=3. The equality pattern on D[A] and O-T0 has only two cases: 2K2 with two zero-T0-neighbor vertices, or K3 with three. The aligned cell remains OPEN.
+
+
+## 2026-10-29 — aligned outside-component bijection
+
+New theorem V47_Z01_OUTSIDE_COMPONENT_BIJECTION.md: in the aligned m=10, z=0,1 cell, alpha(D)<=12 forces the 2K2/K3 components of D[A] to have identical D-neighborhoods into H. Each D[O] component maps to one vertex in each large track, with a bijection; all components except the zero-T0-neighbor component map bijectively to T0. The O-degree multisets on T1,T2,T3 are either 1^10,2^2 or 1^11,3; on T0 they are either 1^10,2 or 1^11. The exact CSP and independent verifier now encode/check these consequences. This is a structural reduction only; the aligned cell remains OPEN.

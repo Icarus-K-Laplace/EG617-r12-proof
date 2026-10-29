@@ -286,6 +286,51 @@ def build_model(m, aligned_z01=False):
                 z3.And(d_t0[a] == 0, d_t0[b] == 0),
                 col[edge(a, b)] == 11))
 
+        # The independent-set hitting argument in
+        # V47_Z01_OUTSIDE_COMPONENT_BIJECTION.md forces every D[A] component
+        # to have identical D-neighborhoods in H, and fixes the O-degree
+        # multiplicities seen from each target track.
+        for a, b in pairs(A):
+            is_d_edge = col[edge(a, b)] == 11
+            for h in H:
+                solver.add(z3.Implies(
+                    is_d_edge,
+                    (col[edge(a, h)] == 11) == (col[edge(b, h)] == 11)))
+
+        for a in A:
+            solver.add(z3.Implies(
+                d_a == 2,
+                iff_count(col[edge(a, b)] == 11 for b in A if b != a) <= 1))
+
+        for i in range(1, 4):
+            o_degree = {
+                v: iff_count(col[edge(o, v)] == 11 for o in O)
+                for v in tracks[i]
+            }
+            solver.add(z3.Implies(
+                d_a == 2,
+                z3.And(
+                    iff_count(o_degree[v] == 1 for v in tracks[i]) == 10,
+                    iff_count(o_degree[v] == 2 for v in tracks[i]) == 2)))
+            solver.add(z3.Implies(
+                d_a == 3,
+                z3.And(
+                    iff_count(o_degree[v] == 1 for v in tracks[i]) == 11,
+                    iff_count(o_degree[v] == 3 for v in tracks[i]) == 1)))
+
+        t0_o_degree = {
+            v: iff_count(col[edge(o, v)] == 11 for o in O)
+            for v in tracks[0]
+        }
+        solver.add(z3.Implies(
+            d_a == 2,
+            z3.And(
+                iff_count(t0_o_degree[v] == 1 for v in tracks[0]) == 10,
+                iff_count(t0_o_degree[v] == 2 for v in tracks[0]) == 1)))
+        solver.add(z3.Implies(
+            d_a == 3,
+            iff_count(t0_o_degree[v] == 1 for v in tracks[0]) == 11))
+
         z_cross = iff_count(
             z3.And(residual[u], residual[v], col[edge(u, v)] == 0)
             for i in range(4) for j in range(i + 1, 4)

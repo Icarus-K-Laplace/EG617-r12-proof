@@ -708,3 +708,8 @@ Updated the global-constraints section to reflect the implemented unconditional 
 ### 2026-10-29 — Exact nonexact-gap saturation theorem added
 
 Proved an aligned m=10,z=0,1 gap-saturation lemma: alpha(D)<=12 forces at least 42 color-D edges from the 14 outside vertices to the three K12 tracks. The set Z of outside vertices with no D-neighbor in T0 must be a clique; D[A] needs at least two edges because p is nonadjacent to all of A. Counting O-T0 edges then forces another 14 edges. Thus e_D(K61 outside H)>=56, g_D<=7. Since every exact color has aligned-cell cap g_C<=3 and sum g_C=37, the exact gaps are all 3 and g_D=7. Equality leaves only D[A]=2K2 or K3 with the corresponding T0-neighbor omissions. Added independent checks to the aligned CSP and verifier; full solver execution remains unavailable here, and no SAT/UNSAT result is claimed.
+
+
+### 2026-10-29 — Outside-component bijection theorem
+
+Used alpha(D)<=12 to sharpen the exact gap-saturation equality cases. Every H-vertex must meet every maximum independent 12-set in O. In the 2K2 case this forces each edge component to have a common neighbor in every large track, with the two edge components assigned to distinct track vertices; the nine isolated A-vertices and p fill the remaining ten track vertices. In the K3 case all three triangle vertices share one large-track neighbor and the ten isolates and p fill the remaining eleven. The same hitting argument forces the non-Z components to biject with T0. Hence each D[A] edge has twin endpoints into H and the exact outside-degree multiplicities are fixed. Added these constraints to the aligned CSP and independent verifier, plus an arithmetic regression script. The branch is still OPEN / NOT_CERTIFIED; no solver UNSAT result was claimed.
