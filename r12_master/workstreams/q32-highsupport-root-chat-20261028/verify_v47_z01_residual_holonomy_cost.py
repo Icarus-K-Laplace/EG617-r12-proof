@@ -45,6 +45,20 @@ def alpha(mask):
             best = size
     return best
 
+def independent_sets(mask, size):
+    adj = [0] * N
+    for (u, v), bit in edge_bit.items():
+        if mask & bit:
+            adj[u] |= 1 << v
+            adj[v] |= 1 << u
+    out = []
+    for subset in range(1 << N):
+        if subset.bit_count() != size:
+            continue
+        if all(not ((subset >> v) & 1 and (adj[v] & subset)) for v in range(N)):
+            out.append(frozenset(v for v in range(N) if (subset >> v) & 1))
+    return out
+
 def big_part_alpha(base_edges):
     mask = mask_of([e for e in base_edges if e[0] < 6 and e[1] < 6])
     adj = [0] * 6
@@ -113,6 +127,73 @@ for switches in product((0, 1), repeat=3):
         baselines += 1
         baseline_counts[cls] += 1
         available = [e for e in edges if not (base_mask & edge_bit[e])]
+
+        # Refine the minimum-repair geometry for the two nonaligned classes.
+        if cls == "C":
+            indep3 = independent_sets(base_mask, 3)
+            assert len(indep3) == 3
+            shared = None
+            for a, b in combinations(indep3, 2):
+                inter = a & b
+                if len(inter) == 2:
+                    shared = inter
+                    break
+            assert shared is not None
+            assert all(part[v] < 3 for v in shared)
+            disjoint = next(s for s in indep3 if s.isdisjoint(shared))
+            assert len(disjoint) == 3
+            assert {part[v] for v in disjoint} == {0, 1, 2}
+            repairs = []
+            for extra in combinations(available, 2):
+                if extra_is_pairwise_matching(extra) and alpha(base_mask | mask_of(extra)) <= 2:
+                    repairs.append(frozenset(tuple(sorted(e)) for e in extra))
+            mandatory = tuple(sorted(shared))
+            assert len(repairs) == 3
+            assert all(mandatory in repair for repair in repairs)
+            second_edges = {
+                next(e for e in repair if e != mandatory)
+                for repair in repairs
+            }
+            expected_second = {
+                tuple(sorted((u, v)))
+                for u, v in combinations(disjoint, 2)
+            }
+            assert second_edges == expected_second
+
+        if cls == "D":
+            indep4 = independent_sets(base_mask, 4)
+            assert len(indep4) == 1
+            V = set(indep4[0]) - {6}
+            U = set(range(6)) - V
+            assert len(V) == len(U) == 3
+            assert {part[v] for v in V} == {0, 1, 2}
+            assert {part[v] for v in U} == {0, 1, 2}
+            t0_neighbors = {
+                v for v in range(6)
+                if base_mask & edge_bit[tuple(sorted((6, v)))]
+            }
+            assert t0_neighbors == U
+            indep3 = set(independent_sets(base_mask, 3))
+            expected_indep3 = {frozenset(U), frozenset(V)}
+            expected_indep3.update(
+                frozenset({6, *pair})
+                for pair in combinations(V, 2)
+            )
+            assert indep3 == expected_indep3
+            repairs = set()
+            for extra in combinations(available, 3):
+                if extra_is_pairwise_matching(extra) and alpha(base_mask | mask_of(extra)) <= 2:
+                    repairs.add(frozenset(tuple(sorted(e)) for e in extra))
+            expected_repairs = set()
+            for w in V:
+                t0_edge = tuple(sorted((6, w)))
+                other_v = tuple(sorted(V - {w}))
+                for e_u in combinations(U, 2):
+                    expected_repairs.add(frozenset({
+                        t0_edge, other_v, tuple(sorted(e_u))
+                    }))
+            assert len(repairs) == 9
+            assert repairs == expected_repairs
 
         for gap in range(4):
             for extra in combinations(available, gap):
