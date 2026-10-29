@@ -20,7 +20,7 @@ These nine residual edges form a graph B_C. The g_C remaining C-edges form an ex
 \[
 J_C=B_C\cup E_C^+,\qquad |B_C|=9,\qquad |E_C^+|=g_C.
 \]
-On each large-part pair, E_C^+ is a matching, because it is a subset of the residual perfect matching P_ij. On each T0--Ti pair, there is at most one extra edge, because the residual T0 vertex has only one P0i edge.
+On each large-part pair, E_C^+ is a matching, because it is a subset of the residual perfect matching P_ij. On a T0--Ti pair, an extra C-edge can only use the singleton residual vertex of T0. Pointwise saturation says every T0 vertex has C-degree 3 or 4, so the singleton can support **at most one extra C-edge across all three T0--Ti pairs combined**. The verifier now enforces this cross-pair cap; the earlier counts that allowed two or three T0 extras were too permissive.
 
 Thus every exact color induces one of only 64 possible nine-edge baselines B_C: two choices for each of the three large-part perfect matchings and two choices for each of the three T0 attachments.
 
@@ -39,7 +39,7 @@ The counts sum to all 64 baselines.
 
 ## 3. Exact minimum surplus needed to restore alpha <= 2
 
-The companion verifier enumerates every admissible extra-edge set of size 0,1,2,3 from the nine edges not in B_C, rejects extra edges that are not a matching within their track pair, and checks alpha(B_C union E_C^+)<=2.
+The companion verifier enumerates every extra-edge set of size 0,1,2,3 from the nine edges not in B_C, requiring a matching within each large-track pair and at most one T0-incident extra edge in total, then checks alpha(B_C union E_C^+)<=2.
 
 | Baseline class | Minimum g_C | Number of minimum repairs across all baselines | Consequence |
 |---|---:|---:|---|
@@ -49,12 +49,12 @@ The companion verifier enumerates every admissible extra-edge set of size 0,1,2,
 | D | 3 | 72 | The alpha-four six-cycle pattern requires all three surplus units |
 
 The complete admissible repair counts by surplus are:
-- A: g=0: 8; g=1: 72; g=2: 288; g=3: 672.
-- B: g=1: 24; g=2: 288; g=3: 1,152.
+- A: g=0: 8; g=1: 72; g=2: 264; g=3: 520.
+- B: g=1: 24; g=2: 216; g=3: 696.
 - C: g=2: 72; g=3: 720.
 - D: g=3: 72.
 
-These are exact local counts, not asymptotic estimates. They verify that:
+These are exact local counts after imposing the T0 pointwise degree cap, not asymptotic estimates. The minimum costs and the minimum-repair counts are unchanged; the full A/B repair counts are lower than in the first, uncapped enumeration. They verify that:
 \[
 \boxed{g_C\le1\Longrightarrow\text{the three large-part baseline matchings are aligned}.}
 \]
