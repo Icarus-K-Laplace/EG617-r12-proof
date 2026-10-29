@@ -163,3 +163,14 @@ Canonical commit: `b2d06bb90e532556ba203f559d85d8fcfb257fd4`.
 `E408 Q32`: **OPEN**, but the Case-I frontier has been reduced to `v=46,m=8` and `v=47`; the main low-support Case-II frontier is `v=44,m=9` / `m=8` plus larger supports.
 
 `EG617(r=12)`: **OPEN / NOT_CERTIFIED** until the source-correct Q32 terminal and every dependency in the final chosen DAG are closed/audited.
+
+
+## 2026-10-29 — root-promotion fail-closed audit
+
+- Re-read actual target branch HEAD 937a905ed26e54ec10e9bdade1d9b655da8f6176 and the current root/dependency files.
+- Searched all 30 repository branch trees for the V12 archive, matching manifest, verifier, and V12-named certificate artifacts. None were found. The only V12-named file was consolidation/V12_V8_SOURCE_REPORTED_AUDIT.md, which explicitly states SOURCE_REPORTED / INDEPENDENT_REPLAY_PENDING. GitHub releases count is 0; commits for exact path T61_H13_V12.zip count is 0.
+- Re-read the latest dedicated E407 sibling at 0192807d1f3b2193aa65c25b9f671b36821aaded. FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md, OPEN_CONTRACTS.md, and PROOF_DEPENDENCY_AUDIT.md remain OPEN / NOT_CERTIFIED. The local 29-point/49-block arithmetic is sound, but promotion to all E407 parents remains OPEN.
+- Re-read the Q33 nonexact-U reserve and support theorem. The former is conditional on the exact 31-point/56-witness contract; the latter proves lower support, not equality at 31. Larger-support parent coverage remains OPEN.
+- Independently executed verify_q33_high_support_u_reserve.py in a clean standard-library process with command python -S -B /mnt/data/verify_q33_high_support_u_reserve.py; exit code 0, no stderr, SHA256 9a47974a1e5ac461caa5313e6551b73765a1954102e83ff59ffd540d8851ee66. It certifies arithmetic only, not graph realization or parent coverage.
+- Added ROOT_DEPENDENCY_DAG.md, ROOT_AUDIT_INPUT_MANIFEST.json, ROOT_AUDIT_REPLAY_LOG.md, Q33_HIGH_SUPPORT_U_RESERVE_AUDIT.md, and verify_q33_high_support_u_reserve.py. Updated this workstream's canonical state, dependency audit, root receipt, and historical root-audit supersession notice. No sibling workstream was modified.
+- Root status remains OPEN / NOT_CERTIFIED. No promotable receipt is issued.

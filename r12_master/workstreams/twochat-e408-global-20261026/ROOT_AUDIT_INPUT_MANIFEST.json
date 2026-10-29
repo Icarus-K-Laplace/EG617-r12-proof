@@ -1,0 +1,153 @@
+{
+  "audit_date": "2026-10-29",
+  "repository": "Icarus-K-Laplace/EG617-r12-proof",
+  "branch": "workstream/r12-twochat-e408-global-20261026",
+  "target_head_before_audit": "937a905ed26e54ec10e9bdade1d9b655da8f6176",
+  "target_tree_before_audit": "f0875b716df36b1273fa1f6faf0eebaa7f865200",
+  "write_scope": "r12_master/workstreams/twochat-e408-global-20261026/",
+  "overall_status": "OPEN / NOT_CERTIFIED",
+  "root_receipt_promotable": false,
+  "repository_search": {
+    "branch_count": 30,
+    "archive_filename_searched": "T61_H13_V12.zip",
+    "archive_found": false,
+    "v12_manifest_found": false,
+    "v12_verifier_found": false,
+    "only_v12_named_path": "consolidation/V12_V8_SOURCE_REPORTED_AUDIT.md",
+    "only_v12_named_path_blob": "d6868acc40bf69fbbff092d466b60efd95a3afcd",
+    "source_report_status": "SOURCE_REPORTED / INDEPENDENT_REPLAY_PENDING",
+    "releases_count": 0,
+    "exact_archive_path_commits_count": 0
+  },
+  "v12_artifact_audit": {
+    "reported_archive_sha256": "0c3c69a7baf94a816eff29f3a079b97ac7750d0e8b8fd2773330469c4b8c5e36",
+    "reported_certificate_sha256": "cab4e67bc501fe51c06f8fc008443b870aebf8794528af1a3045e83be7d6db30",
+    "reported_counts": {
+      "kernel_weight_vectors": 8677,
+      "count_states": 17957,
+      "necessary_shells": 1984,
+      "survivors": 554
+    },
+    "certification_status": "OPEN; source bytes and verifier unavailable"
+  },
+  "arithmetic_verifier": {
+    "path": "r12_master/workstreams/twochat-e408-global-20261026/verify_q33_high_support_u_reserve.py",
+    "sha256": "9a47974a1e5ac461caa5313e6551b73765a1954102e83ff59ffd540d8851ee66",
+    "clean_process_command": "python -S -B r12_master/workstreams/twochat-e408-global-20261026/verify_q33_high_support_u_reserve.py",
+    "exit_code": 0,
+    "stderr_empty": true,
+    "scope": "Turan/reserve arithmetic and W-side selected-gadget count only; not graph realization or parent coverage"
+  },
+  "source_blobs": [
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/CANONICAL_STATE.md",
+      "blob_sha": "20a82e5eeaf5995919e85aac61c7d457b3ccfbf7",
+      "status": "updated in this audit"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/DEPENDENCY_AUDIT.md",
+      "blob_sha": "d722b630972824a2fc0478d9450a6ac8806d0e30",
+      "status": "updated in this audit"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/ROOT_PROMOTION_RECEIPT.md",
+      "blob_sha": "88564c414a4b753b3cdfa4f26cf4ad5ca094a962",
+      "status": "updated in this audit"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/R12_ROOT_CLOSURE_PROMOTION_AUDIT.md",
+      "blob_sha": "a9161266c7e7123d2a54a548f7c212f8dfa2af0b",
+      "status": "supersession notice and current status inserted"
+    },
+    {
+      "path": "front_end/FRONTEND_BRIDGE_THEOREM.md",
+      "blob_sha": "52b2f4af102ceba1671dc7d0e7ed36a512458e77",
+      "status": "read-only"
+    },
+    {
+      "path": "front_end/ASSUMPTION_LEDGER.md",
+      "blob_sha": "eb1c0911291faa96bf74009017072fb6b6010466",
+      "status": "read-only"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/Q32_CORE285_TERMINAL.md",
+      "blob_sha": "86ba7a755fdc6e2e575e2f967ccc8b860a795c1b",
+      "status": "read-only; OPEN"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/KANG_PIKHURKO_EXACT129_SOURCE_AUDIT.md",
+      "blob_sha": "b1f870023990561c563a969f6f180eb3ebc6f9af",
+      "status": "read-only; exact-129 factorization conditional"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/KP_DEGREE9_RETRACTION_AND_E408_Q32_REOPEN.md",
+      "blob_sha": "b46ef8454201ab62afc4831cdca51372b9b8ce48",
+      "status": "read-only; degree-nine inference RETRACTED"
+    },
+    {
+      "path": "consolidation/V12_V8_SOURCE_REPORTED_AUDIT.md",
+      "blob_sha": "d6868acc40bf69fbbff092d466b60efd95a3afcd",
+      "status": "read-only; independent replay pending"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/E407_FOUR_COLOR_U_RESERVE_CLOSURE.md",
+      "blob_sha": "b3a6a81e76cc524847a3a922c5b8b2a70029627b",
+      "status": "read-only; local contract only"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/Q33_NONEXACT_U_RESERVE_CLOSURE.md",
+      "blob_sha": "0dd507f77720f2481bbe79b66be695ffce5e6e8c",
+      "status": "read-only; 31-point local contract only"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md",
+      "blob_sha": "4802a9a867a248c8fb5b9e6541d7a0e87d74198f",
+      "status": "read-only; 31-point local contract only"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/Q33_CROSS_COLOR_GADGET_INTERSECTION.md",
+      "blob_sha": "cb9f0bb0512151f9ff67f4d5438abf382ebdbc7f",
+      "status": "read-only; support objects distinguished"
+    },
+    {
+      "path": "r12_master/workstreams/zero-excess-witness-chat-20261025/R12_ZERO_EXCESS_WITNESS_THEOREM.md",
+      "branch": "workstream/r12-e408-q33-global-compat-20261025",
+      "blob_sha": "557936d1396424b7034654621b39d1f9e65141aa",
+      "status": "read-only; lower support bound only"
+    },
+    {
+      "path": "r12_master/workstreams/ultimate-closure-chat-20261024/R12_WITNESS_CAPACITY_CROSSCUT.md",
+      "branch": "workstream/r12-e408-q33-global-compat-20261025",
+      "blob_sha": "0f9e693724dafcc5b8b0961795ea3f0840695b38",
+      "status": "read-only; minimum-support boundary"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e407-closure-20261026/FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md",
+      "branch": "workstream/r12-twochat-e407-closure-20261026",
+      "blob_sha": "ec9308c8dbc1ce1da0d284a27d45d75f26c3f0c5",
+      "status": "OPEN / NOT_CERTIFIED"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e407-closure-20261026/OPEN_CONTRACTS.md",
+      "branch": "workstream/r12-twochat-e407-closure-20261026",
+      "blob_sha": "eaa6383fa8f24fc6f5100d47d428165d8be28401",
+      "status": "OPEN / NOT_CERTIFIED"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e407-closure-20261026/PROOF_DEPENDENCY_AUDIT.md",
+      "branch": "workstream/r12-twochat-e407-closure-20261026",
+      "blob_sha": "ae67acea14dabbba2de9d7a1a1a0e066355612a3",
+      "status": "OPEN / NOT_CERTIFIED"
+    }
+  ],
+  "open_dependencies": [
+    "E408 Q32 285-edge / excess-six graph terminal",
+    "V12 archive/manifest/verifier replay and parent-to-29-point/49-block coverage for E407 Q32",
+    "Q33 support promotion from v=31 to all legal support sizes v=32..47"
+  ],
+  "retracted": [
+    "Universal degree-nine exceptional vertex in Kang-Pikhurko Type-I gadget",
+    "Exceptional-vertex injectivity inferred from that false degree-nine premise",
+    "E408 whole-layer exact-color-count closure relying on that premise"
+  ]
+}

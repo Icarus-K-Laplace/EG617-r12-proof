@@ -1,6 +1,6 @@
 # EG617 fixed r=12 — root promotion receipt after fail-close
 
-Updated: 2026-10-27
+Updated: 2026-10-29
 Receipt class: **branch-local source-freeze / fail-closed promotion audit**
 Current theorem status: **OPEN / NOT_CERTIFIED**
 Unique currently identified live graph terminal: **E408 / h13 / Qmax=32 / e(H)=285 / excess6**
@@ -42,7 +42,7 @@ Registered closures remain in force for:
 
 The source-freeze of every individual low-layer theorem remains a publication-audit task, but no new defect was found in these layers during the KP audit.
 
-## 4. E407 — still closed
+## 4. E407 — Q31 closed; Q32 parent coverage OPEN
 
 ### Q31
 V10/V11 independent replay and analytic capacity remain unaffected.
@@ -52,7 +52,7 @@ V10/V11 independent replay and analytic capacity remain unaffected.
 - V11 certificate SHA256 `0baffc39ee481b27af53fda36a8fe40b8cd8c527103b5126060857c4eaacd09b`.
 
 ### Q32
-V12 coverage remains computation-certified:
+V12 coverage is OPEN / INDEPENDENT REPLAY PENDING. The following archive hashes/counts are historical source reports only; no archive, manifest, or verifier is present in the audited repository branch trees:
 
 - archive SHA256 `0c3c69a7baf94a816eff29f3a079b97ac7750d0e8b8fd2773330469c4b8c5e36`;
 - certificate SHA256 `cab4e67bc501fe51c06f8fc008443b870aebf8794528af1a3045e83be7d6db30`;
@@ -102,11 +102,14 @@ Retraction: `KP_DEGREE9_RETRACTION_AND_E408_Q32_REOPEN.md`.
 ### Q31 — PASS_CONDITIONAL + COMPUTATION_CERTIFIED
 The V11 route remains valid under its named inputs.
 
-### Q33 — PASS_CONDITIONAL
-The load-bearing Q33 route does not use degree9:
+### Q33 — exact 31-point terminal PROVED_CONDITIONAL; parent support promotion OPEN
+The local load-bearing Q33 route does not use degree9, but it assumes the exact 31-point / 56-witness support contract:
 
-- `Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md`: component witness packing excludes m=10;
-- `Q33_NONEXACT_U_RESERVE_CLOSURE.md`: m=8/9 are excluded by nonexact-color U reserve.
+- Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md: component witness packing excludes m=10 under that contract;
+- Q33_NONEXACT_U_RESERVE_CLOSURE.md: the local reserve excludes m=8/9 under that contract;
+- for v=32, the independent scalar reserve excludes m=8 only; v>=33 remains open under that reserve.
+
+The support theorem gives |U|>=31, not |U|=31, so global Q33 parent closure is OPEN.
 
 ### Q32 — OPEN / FAIL-CLOSED
 Retracted Q32 closure files:
@@ -143,17 +146,21 @@ No closure at `v=44..47` is yet certified.
 
 ## 8. Current root composition
 
-Closed relative to named inputs:
+Closed relative to named inputs or exact local contracts:
 
 - contextual R449;
 - T61 h12;
 - h13 E397--E406;
-- E407 Q31/Q32;
-- E408 Q31/Q33.
+- E407 Q31;
+- E408 Q31;
+- E407 Q32 local 29-point reserve theorem only (parent coverage OPEN);
+- E408 Q33 local 31-point reserve theorem only (support promotion OPEN).
 
 Open:
 
-- E408 Q32.
+- E408 Q32;
+- E407 Q32 V12 replay/exhaustiveness and parent coverage;
+- E408 Q33 support sizes v>31.
 
 Therefore
 
@@ -164,3 +171,14 @@ Therefore
 Root promotion is permitted only after a valid theorem excludes E408-Q32 without using exceptional degree9 or an illicit excess-four transfer.
 
 Any new source mismatch automatically reopens the affected gate.
+
+
+## 10. Independent root audit update — 2026-10-29
+
+No promotable root receipt is issued. This is a fail-closed status record, not a theorem certificate.
+
+- V12 archive/certificate hashes and the reported 8,677 / 17,957 / 1,984 / 554 counts are not independently replayed here. The archive, manifest, and verifier were not found in any of the 30 branch trees; the source report says INDEPENDENT_REPLAY_PENDING.
+- The E407 local reserve is valid only under the 29-point/49-block contract. V12 exhaustiveness and parent-to-contract coverage remain OPEN.
+- The Q33 local reserve is valid only for the exact 31-point/56-witness contract. Higher support remains OPEN except that the scalar reserve excludes m=8 at v=32.
+- E408 Q32 remains OPEN under the 285-edge/excess-six contract. The degree-nine exceptional-vertex premise remains RETRACTED.
+- Current authoritative artifacts are ROOT_DEPENDENCY_DAG.md, ROOT_AUDIT_INPUT_MANIFEST.json, ROOT_AUDIT_REPLAY_LOG.md, Q33_HIGH_SUPPORT_U_RESERVE_AUDIT.md, and verify_q33_high_support_u_reserve.py.

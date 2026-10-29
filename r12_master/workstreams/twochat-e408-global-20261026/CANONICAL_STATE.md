@@ -1,6 +1,6 @@
 # EG617 fixed r=12 — canonical state of this workstream
 
-Updated: 2026-10-28  
+Updated: 2026-10-29  
 Repository: `Icarus-K-Laplace/EG617-r12-proof`  
 Branch: `workstream/r12-twochat-e408-global-20261026`  
 Write scope: `r12_master/workstreams/twochat-e408-global-20261026/`
@@ -13,6 +13,8 @@ The uniquely identified live graph terminal in the current audited shortest chai
 
 `E408 / h13 / Qmax=32 / e(H)=285 / core excess6`.
 
+**Independent root-promotion audit (2026-10-29):** the root also has two separately OPEN promotion gates: E407 Q32 V12 parent coverage and E408 Q33 support promotion beyond the exact 31-point contract. The root receipt is not promotable.
+
 The former E408-Q32 exact-color-count closure is **RETRACTED** because it used a false universal degree-nine exceptional vertex. The source-correct Kang--Pikhurko Type-I factorization remains valid.
 
 ## Root branches closed relative to named inputs
@@ -21,9 +23,9 @@ The former E408-Q32 exact-color-count closure is **RETRACTED** because it used a
 - T61 h12: closed;
 - h13 E397--E406: closed;
 - E407 Q31: closed through the registered V10/V11 route;
-- E407 Q32: closed by the unselected-color U-edge reserve contradiction;
+- E407 Q32: the 29-point/49-block reserve contradiction is **PROVED_CONDITIONAL locally**; parent coverage for every legal E407 Q32 survivor is **OPEN** pending V12 source/replay and template-to-contract coverage;
 - E408 Q31: closed under the V11 route;
-- E408 Q33: closed by the 31-point component-capacity / nonexact-U-reserve contradiction.
+- E408 Q33: the 31-point/56-witness reserve contradiction is **PROVED_CONDITIONAL locally**; parent support promotion for |U|>31 is **OPEN**.
 
 No statement above promotes the full theorem while Q32 remains open.
 
@@ -31,7 +33,7 @@ No statement above promotes the full theorem while Q32 remains open.
 
 The requested four old `P_C=49` profiles no longer form the load-bearing frontier. Two were locally excluded; two all-component-edge-present profiles remain locally open, but the entire registered Q33 terminal is globally bypassed by `Q33_NONEXACT_U_RESERVE_CLOSURE.md`.
 
-Thus Q33 is **PROVED_CONDITIONAL impossible** under its 284-edge/support-31 contract. No Q32 statement is imported into that proof.
+Thus only the registered 284-edge, |U|=31, 56-witness Q33 terminal is **PROVED_CONDITIONAL impossible**. The upstream support bound |U|>=31 does not prove equality, so no global Q33 closure is claimed for |U|>31. No Q32 statement is imported into that local proof.
 
 ## Source-correct exact-129 interface
 
@@ -203,3 +205,12 @@ No 284-edge/excess-four statement is imported into these reductions.
 ## Status policy
 
 No root promotion is allowed until E408-Q32 is closed from valid premises. Any source mismatch fail-closes the affected theorem immediately.
+
+
+## Independent root audit addendum — 2026-10-29
+
+- V12 is OPEN for this root certification: the reported archive and certificate hashes/counts have not been independently replayed from available source artifacts. The repository's 30 branch trees were searched; none contains T61_H13_V12.zip, a matching V12 manifest, or a V12 verifier. The only V12-named file found is consolidation/V12_V8_SOURCE_REPORTED_AUDIT.md, which explicitly says INDEPENDENT_REPLAY_PENDING. The releases endpoint has zero releases and the exact archive path has zero commit-history matches.
+- E407 Q32: 49*C(4,2)=294 and p12(29)=22, so 316>310 is valid under the exact 29-point/49-block support contract. The local arithmetic is not the missing step; V12 finite coverage and analytic parent-to-contract coverage remain OPEN.
+- E408 Q33: the exact 31-point/56-witness reserve is valid conditionally. For supports v=32..47, the independent scalar reserve audit excludes only m=8 at v=32; it does not exclude m=9 or m=10 there, nor m=8,9,10 for v>=33. This is a necessary-capacity check, not a graph-realization counterexample.
+- E408 Q32 remains OPEN / NOT_CERTIFIED under the source-correct 285-edge/excess-six contract. No degree-nine or exceptional-injectivity premise is restored.
+- Current root status: OPEN / NOT_CERTIFIED. No promotable receipt is issued.

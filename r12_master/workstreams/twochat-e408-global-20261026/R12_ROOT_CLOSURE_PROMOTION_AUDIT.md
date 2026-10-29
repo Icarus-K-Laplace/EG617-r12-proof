@@ -1,11 +1,13 @@
 # EG617 fixed r=12 — root closure promotion audit
 
-Updated: 2026-10-27
-Status: **PROVED_CONDITIONAL + COMPUTATION_CERTIFIED ROOT CLOSURE** under the explicitly named front-end finite certificate, V9--V12 finite certificates, registered exact-129 factor theorem, and cited external extremal/Ramsey inputs.
+Updated: 2026-10-29 (supersession notice)
+Status: **SUPERSEDED / RETRACTED IN PART; current root status OPEN / NOT_CERTIFIED.**
 
-Headline:
+**WARNING — historical audit only. Do not use this file as the current root proof.** The E408 whole-layer closure depends on the retracted degree-nine exceptional-vertex premise. The claimed V12 independent replay is not reproducible from repository inputs: the source report says INDEPENDENT_REPLAY_PENDING and the original archive/manifest/verifier were not found in any of the 30 branch trees. E407 Q32 parent coverage remains OPEN, Q33 support promotion beyond |U|=31 remains OPEN, and E408 Q32 remains OPEN.
 
-> **No OPEN graph-theoretic T61/E407/E408 terminal remains in the audited fixed-r=12 chain.**
+Historical headline (superseded):
+
+> ~~No OPEN graph-theoretic T61/E407/E408 terminal remains in the audited fixed-r=12 chain.~~
 >
 > The project should not label this `PROVED` without qualification until the named machine-certified and external-theorem dependencies are accepted at the desired publication/formalization standard.
 
@@ -335,39 +337,21 @@ Thus
 
 This terminal proof does not use the Didin-dependent low-delta branch, template-by-template row casework, or an additional exact color.
 
-## 11. T61 is empty under the audited chain
+## 11. Historical terminal-composition claim — superseded 2026-10-29
 
-Every T61 branch has now been exhausted:
+The prior claim that every T61 branch had been exhausted is withdrawn. E407 Q32 parent coverage is OPEN pending V12 source/replay and the parent-to-29-point/49-block contract proof. E408 Q33 is closed only on its exact 31-point/56-witness contract; the support theorem does not force equality and the higher-support cases are not closed by the audited scalar reserve. E408 Q32 remains OPEN under the 285-edge/excess-six contract.
 
-1. h12 — impossible;
-2. h13, E397--E406 — impossible;
-3. h13, E408 — impossible by the whole-layer exact-count theorem;
-4. h13, E407, Q=31 — impossible by independently audited V10/V11;
-5. h13, E407, Q=32 — impossible by V12 exhaustiveness plus the four-color U-reserve contradiction.
+## 12. Current root status
 
-Therefore the embedded T61 obstruction from F7 cannot occur under the named dependencies.
+The front-end dichotomy still reduces the original hypothetical K145 counterexample to the contextual R(4,49) branch or a T61 residual, under the registered assumptions. The contextual R(4,49) branch and the listed lower T61 layers retain their named conditional statuses. However, the remaining dependencies above have not been closed.
 
-## 12. Return to the original K145 coloring
-
-F7 gave the exhaustive dichotomy:
+Accordingly:
 
 \[
-\text{original counterexample}
-\Longrightarrow
-R(4,49)\text{ branch or T61 branch}.
+\boxed{\text{EG617 fixed }r=12:\ \textbf{OPEN / NOT\_CERTIFIED}.}
 \]
 
-The contextual R(4,49) branch is impossible, and Section 11 eliminates T61.
-
-Hence no branch remains.
-
-Accordingly the current root status is:
-
-\[
-\boxed{\text{EG617 fixed }r=12:\ \textbf{PROVED_CONDITIONAL + COMPUTATION_CERTIFIED}.}
-\]
-
-There is no remaining OPEN graph terminal in the audited chain.
+No root promotion is authorized.
 
 ## 13. Why the qualifier remains
 
@@ -383,7 +367,7 @@ The relevant finite packages have independent exact replays; no floating-point o
 
 For publication-grade promotion to an unqualified theorem, the remaining work is proof engineering/review rather than discovery of a missing graph case: consolidate the named external theorem statements, freeze all source hashes, independently rerun every finite certificate from clean environments, and ideally formalize the short root composition and the new capacity contradictions.
 
-## 14. Superseded OPEN statuses
+## 14. Historical status notes (superseded)
 
 Several sibling files still say `OPEN / NOT_CERTIFIED`. Those statuses were correct when written and should not be silently edited in place. They predate one or more of:
 
@@ -393,3 +377,14 @@ Several sibling files still say `OPEN / NOT_CERTIFIED`. Those statuses were corr
 - the E407 four-color U-reserve contradiction.
 
 This audit does not rewrite sibling history. It provides the new branch-local promotion layer that composes those later assets.
+
+
+## 15. Independent root-promotion audit — 2026-10-29
+
+This addendum is authoritative over the historical claims above.
+
+- E407 Q32 local arithmetic: 294+22=316>310, conditional on the 29-point/49-block contract. The V12 archive SHA256 reported historically is 0c3c69a7baf94a816eff29f3a079b97ac7750d0e8b8fd2773330469c4b8c5e36 and certificate SHA256 is cab4e67bc501fe51c06f8fc008443b870aebf8794528af1a3045e83be7d6db30; these remain unverified source reports.
+- Repository search: all 30 branch trees checked; no T61_H13_V12.zip, matching manifest, or verifier; only consolidation/V12_V8_SOURCE_REPORTED_AUDIT.md appears as V12-named source, and it records INDEPENDENT_REPLAY_PENDING. Releases count 0; exact archive path commit-history count 0.
+- Q33: exact 31-point / 56-witness reserve is PROVED_CONDITIONAL. The support lower bound |U|>=31 is not an equality theorem. The independent scalar reserve audit excludes m=8,9 at v=31 and m=8 at v=32; all listed remaining higher-support cases remain OPEN under that reserve.
+- E408 Q32: OPEN / NOT_CERTIFIED. Degree-nine exceptional-vertex and exceptional-injectivity claims remain RETRACTED.
+- Current root: OPEN / NOT_CERTIFIED. No promotable root receipt is issued.

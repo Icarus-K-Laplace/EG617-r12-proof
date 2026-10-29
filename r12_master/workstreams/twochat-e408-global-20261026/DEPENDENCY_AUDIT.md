@@ -1,7 +1,7 @@
 # Dependency audit — fixed r=12 after KP source correction
 
-Updated: 2026-10-28  
-Status: **EG617(r=12) OPEN / NOT_CERTIFIED. Unique currently identified live graph terminal: E408-Q32.**
+Updated: 2026-10-29  
+Status: **EG617(r=12) OPEN / NOT_CERTIFIED. Live graph terminal: E408-Q32. Additional root-promotion gates: E407-Q32 V12 parent coverage OPEN; E408-Q33 support promotion OPEN.**
 
 ## 1. Source correction and retraction boundary
 
@@ -35,11 +35,11 @@ Relative to their registered contracts, the following T61 branches remain closed
 
 Thus the live E408 charges are Q32/Q33 before the color-incidence arguments below.
 
-## 3. E407 firewall
+## 3. E407 firewall — local contradiction versus parent coverage
 
-E407-Q32 is closed by the 29-point U-edge reserve route: 49 selected independent four-blocks own294 distinct non-target U-edges, while an unselected color requires at least `p_12(29)=22` more. This exceeds the registered complement capacity310.
+The local reserve arithmetic is valid under the frozen contract: 49 selected independent four-blocks own 294 distinct complement edges; one unselected non-target color needs at least p_12(29)=22; and the registered ledger gives e(L_U)<=310. Thus 294+22=316>310. This route does not use the retracted degree-nine premise.
 
-This route does not use the retracted degree9 premise.
+However, the V12 source report remains SOURCE_REPORTED / INDEPENDENT_REPLAY_PENDING. The reported archive, manifest, and verifier are absent from all 30 searched branch trees and from GitHub releases; the exact archive path has no commit history. The dedicated E407 sibling still labels the five-template/global compatibility and parent bridge OPEN / NOT_CERTIFIED. Therefore the local 29-point reserve is PROVED_CONDITIONAL, while V12 finite coverage and promotion to every legal E407 Q32 parent remain OPEN.
 
 ## 4. Q33 — local P_C=49 profile status
 
@@ -74,7 +74,7 @@ The valid global route is:
 
 With `m in {8,9}`, `delta<=17`, and `h<=4`, the right side is at most41 while the left side is78 or52.
 
-Therefore the registered Q33 284-edge terminal is **PROVED_CONDITIONAL impossible** by `Q33_NONEXACT_U_RESERVE_CLOSURE.md`, independently of the two open local P49 profiles.
+Therefore only the registered 284-edge, exact 31-point / 56-witness Q33 terminal is PROVED_CONDITIONAL impossible by Q33_NONEXACT_U_RESERVE_CLOSURE.md, independently of the two open local P49 profiles. The upstream support theorem establishes a lower bound |U|>=31, not equality. No complete support-promotion theorem for v=32,...,47 was located. The high-support scalar audit excludes m=8 at v=32 only; it does not close m=9,10 at v=32 or m=8,9,10 at v>=33. Global E408 Q33 parent closure remains OPEN.
 
 No Q33 identity is imported into Q32.
 
@@ -181,17 +181,21 @@ This is a reduction, not a contradiction.
 
 ## 11. Current root status
 
-Closed under named contracts:
+Closed relative to named inputs or exact local contracts:
 
 - contextual R449;
 - h12;
 - h13 E397--E406;
-- E407 Q31/Q32;
-- E408 Q31/Q33.
+- E407 Q31;
+- E408 Q31;
+- E407 Q32 local 29-point reserve theorem only (parent coverage OPEN);
+- E408 Q33 local 31-point reserve theorem only (support promotion OPEN).
 
 Open:
 
-- **E408 Q32 only.**
+- E408 Q32, 285-edge / excess-six graph terminal;
+- E407 Q32 V12 source/replay/exhaustiveness and parent-to-contract coverage;
+- E408 Q33 support promotion for v=|U|>31.
 
 Therefore
 
@@ -205,3 +209,26 @@ Therefore
 4. `v=47`: use all-color near-Turan/equality structure on the full core.
 
 No branch-local root promotion is allowed until all Q32 terminals are eliminated from valid premises.
+
+
+## 13. Independent root-promotion audit — 2026-10-29
+
+### E407 Q32 / V12 artifact gate
+
+The V12 figures remain historical source reports: archive SHA256 0c3c69a7baf94a816eff29f3a079b97ac7750d0e8b8fd2773330469c4b8c5e36; certificate SHA256 cab4e67bc501fe51c06f8fc008443b870aebf8794528af1a3045e83be7d6db30; 8,677 kernel weights; 17,957 count states; 1,984 necessary shells; 554 reported survivors. No corresponding T61_H13_V12.zip, manifest, or verifier was found in the 30 repository branch trees. The only V12-named file is consolidation/V12_V8_SOURCE_REPORTED_AUDIT.md, which explicitly records SOURCE_REPORTED / INDEPENDENT_REPLAY_PENDING. GitHub releases: 0; commits for exact path T61_H13_V12.zip: 0. Therefore these counts are not marked COMPUTATION_CERTIFIED in this audit.
+
+The local reserve identity is still valid under its contract:
+49*C(4,2)=294, p12(29)=22, 294+22=316>310.
+The missing edge is the independently auditable proof that every legal E407 Q32 parent survives the complete V12 screen and satisfies the 29-point/49-block contract.
+
+### E408 Q33 support gate
+
+Q33_NONEXACT_U_RESERVE_CLOSURE.md is explicit that its theorem is conditional on the 284-edge / 31-point / 56-witness minimum-support contract. The upstream zero-excess witness theorem proves existence/lower bounds, including |U|>=31, but does not force |U|=31. The independent arithmetic replay covers v=31,...,47 as a necessary scalar inequality. It excludes m=8,9 at v=31 (with the separate m=10 theorem valid on that same contract) and m=8 at v=32; remaining higher-support cases are OPEN.
+
+### Retraction firewall
+
+The Kang--Pikhurko exact-129 factorization remains PROVED_CONDITIONAL under its cited source hypotheses. The universal degree-nine exceptional-vertex claim and exceptional-injectivity deductions remain RETRACTED. No excess-four identity is transferred into E408 Q32's 285-edge/excess-six terminal.
+
+### Root decision
+
+Root status remains OPEN / NOT_CERTIFIED. The root receipt is a fail-closed status record, not a theorem certificate.
