@@ -18,15 +18,17 @@ The degree ledger then gives
 \]
 where \(r_{ij}=12-e_{ij}\) and \(q_i=11-y_i\).
 
-A source-placement audit adds a complement law for the class-B, \(g_C=2,t_C=1\) pattern: an extra edge on \(T_0T_i\) must be paired with the large-pair extra on the complementary pair \(T_jT_k\), where \(\{i,j,k\}=\{1,2,3\}\). The corrected aggregate witness respects this law. Choose four patterns on \((T_2T_3,T_0T_1)\), four on \((T_1T_3,T_0T_2)\), and two on \((T_1T_2,T_0T_3)\). Their aggregate surplus is
+The original aggregate witness is only a scalar relaxation. A source-explicit local construction shows that class B with \(g_C=2,t_C=1\) can have the T0 repeat and large-pair repeat **sharing** a large-track index: take \(x_C\in O\), let \(N_s\) be single-outside with H-part \(\{w,s_1,s_2,s_3\}\), let \(N_t\) be double-outside with H-triangle \(\{y,t_j,t_k\}\), choose \(w\in T_0\), \(y\in T_i\), \(s_j\in T_j\) with \(i\ne j\), and set \(A_0=\{w,s_j\}\). The two H-H gadget edges are \(yw\) and \(ys_j\); the residual baseline can use \(yw,ws_j,ws_k\) as its T0 attachments, leaving \(ws_i\) and \(ys_j\) as the two extras. This gives a valid class-B local graph with extra-pair pattern \((T_iT_j,T_0T_i)\). Hence the attempted universal complement law is withdrawn.
+
+A corrected source-compatible aggregate witness chooses four patterns on \((T_1T_2,T_0T_1)\), three on \((T_1T_2,T_0T_2)\), and three on \((T_2T_3,T_0T_3)\). Its exact-color surplus is
 \[
-(2,4,4;4,4,2).
+(7,0,3;4,3,3),
 \]
-The remaining aggregate capacities are
+and the remaining aggregate capacities are
 \[
-(6,5,5;0,0,1),
+(1,9,6;0,1,0),
 \]
-giving \(g_D=17\). Thus even after imposing this source-derived pair-location constraint, all scalar pair capacities, exact-color gap bounds, and the total 37-unit identity can hold simultaneously. The witness still omits the actual endpoint labels in the common residual factors and is not a Q32 coloring.
+giving \(g_D=17\). This respects an explicit source-realizable local mode and all scalar capacities, but still omits the actual endpoint labels in the common residual factors and is not a Q32 coloring.
 
 **This is not a Q32 coloring or an actual vertex-level completion.** It deliberately omits the shared endpoint labels of the common residual factors. It proves only that the aggregate budget inequalities and per-color pattern counts cannot by themselves close the branch.
 
@@ -79,19 +81,17 @@ Do not silently apply the seven-vertex theorem to a color in isolated-double mod
 
 
 
-### 3.1. Source complement law for class B with \((g_C,t_C)=(2,1)\)
+### 3.1. Explicit source-compatible class-B pattern with \((g_C,t_C)=(2,1)\)
 
-Assume the all-isolated-single-outside mode and a class-B baseline. The T0 attachments split across the two large-track triangles. If \(x_C\in O\), or if the source placement is triple-outside, the residual T0 singleton belongs to the single-outside special \(K_5\), so all three baseline T0 attachments meet the same large-track triangle; that is class A, not B. Thus class B forces \(x_C\in T_0\) and the two-double placement, with both special \(K_5\) factors double-outside.
+The pair location is not governed by a universal complement law. One source-correct mode is:
+- \(x_C\in O\), with ten isolated single-outside K5s;
+- \(N_s\) single-outside, with H-part \(\{w,s_1,s_2,s_3\}\), where \(w\in T_0\) and \(s_i\in T_i\);
+- \(N_t\) double-outside, with H-triangle \(\{y,t_j,t_k\}\), where \(y\in T_i\), \(i\ne j\), and \(k\) is the third large-track index;
+- \(A_0=\{w,s_j\}\).
 
-Let \(y\in N_t\). If \(y\in O\), the three H-vertices of \(N_t\setminus\{y\}\) already give \(x_C\) three H-neighbors, and \(t_C=1\) allows only one further H-neighbor; the source H-edge count then gives \(g_C=1\), not 2. Hence \(y\in H\). Write \(i\) for the large track containing \(y\), and \(j\) for the large track containing the unique H-vertex of \(A_0\). Since both special factors are double-outside, \(N_s\cap H\) and \(N_t\cap H\) are triangles, one vertex in each of \(T_1,T_2,T_3\).
+Then the only H-H gadget edges are \(yw\) and \(ys_j\), so \(g_C=2\). The T0 vertex \(w\) has its three internal K4 edges plus \(yw\), so \(t_C=1\). In the selected residual baseline, use \(yw,ws_j,ws_k\) as the T0 attachments. The two extras are \(ws_i\) and \(ys_j\), on \(T_0T_i\) and \(T_iT_j\), respectively. The baseline large-pair matchings remain the two triangle matchings, while the T0 attachments split across them, so this is class B. The resulting residual graph has \(\alpha=2\).
 
-The T0 point \(x_C\) is adjacent to the two H-vertices of \(N_t\setminus\{y\}\) and to the H-vertices of \(N_s\setminus A_0\). The condition \(t_C=1\) means \(d_C(x_C,H)=4\), so \(A_0\) contains exactly one H-vertex. If \(i=j\), neither of these two source neighborhoods contains a vertex in \(T_i\), violating the balanced-coloring requirement that every non-target color meet every large track from \(x_C\). Thus \(i\ne j\). The remaining large track \(T_k\) is the unique track in which \(x_C\) has two C-neighbors, so the T0 repeat edge lies on \(T_0T_k\). The only extra H-H gadget edge is \(y\)--the H-vertex of \(A_0\), which lies on \(T_iT_j\), the complementary large-track pair.
-
-Therefore the source-correct pair-location law is
-\[
-\boxed{T_0T_k\text{ repeat}\ \Longrightarrow\ T_iT_j\text{ repeat},\quad \{i,j,k\}=\{1,2,3\}.}
-\]
-The companion aggregate verifier now uses only these three complementary location patterns. This is a necessary source-incidence constraint, not a global completion theorem.
+This explicit local construction proves that a class-B \((g,t)=(2,1)\) pattern can have the T0 repeat and large-pair repeat sharing a track index. Any global model must retain the source placement mode and actual endpoint labels; it may not impose a universal complementary-pair law.
 
 ## 4. Finite exact model to build
 
