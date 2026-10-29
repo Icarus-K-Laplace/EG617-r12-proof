@@ -80,3 +80,52 @@ Finally, the five extra gadget edges with both endpoints in H are forced in coun
 e_C(H)=67+5=72,qquad \boxed{g_C=3}.
 ]
 So triple placement is not eliminated, but in this aligned cell it is confined to a specific special-gadget geometry and spends exactly three units of the 37-unit color-gap budget.
+
+
+## 6. All aligned exact colors have gap at most three
+
+The previous local normal form can be pushed one step further.
+
+### x_C in O
+
+All extra gadget edges incident with x_C leave H. Hence `g_C` counts only the H-H edges among `y--A_0`, so `g_C=|A_0 intersect H|` if y is in H and `g_C=0` if y is in O. Every H vertex in N_s lies in a distinct target part; if y is in H, A_0 cannot contain the N_s H vertex in y's part. Thus
+[
+oxed{g_C\le 3.}
+]
+
+### x_C in H, two-double placement
+
+If y is in H, every H vertex of N_s contributes exactly one H-H gadget edge, and the H vertices of N_t other than y contribute `4-b_t` edges. Therefore
+[
+G_H=(5-b_s)+(4-b_t)=9-(b_s+b_t),quad
+g_C=G_H-3=6-(b_s+b_t).
+]
+
+The case `b_s+b_t=2` (both special K5s single-outside) is impossible:
+- if y is in O, x_C plus the four H vertices of N_t would be a C-colored K5 wholly in H;
+- if y is in H, x_C and y must lie in the same target part, but N_s has an H vertex in every target part, and its unique extra edge to either x_C or y would then lie inside a target clique.
+
+Hence `b_s+b_t>=3`, and `g_C<=3`.
+
+If y is in O, N_t must be double-outside, since otherwise x_C plus the four H vertices of N_t would again form a C-colored K5 in H. Thus b_t=2. The nine-edge gadget count gives
+`G_H=|N_s\\setminus A_0 intersect H|+3`.
+At most three H vertices of N_s can lie outside x_C's target part, so `G_H<=6` and `g_C=G_H-3<=3).
+
+### x_C in H, triple placement
+
+Section 5 gives `g_C=3`.
+
+Consequently, **every exact color in the aligned z=0,1 cell satisfies `0<=g_C<=3`**.
+
+## 7. Forced gap in the unique nonexact color
+
+The registered total gap identity is `sum_{C non-target} g_C=37`. There are ten exact colors, each with gap at most three, so the unique nonexact color D must satisfy
+[
+oxed{7\le g_D\le21},qquad
+oxed{76\le e_D(H)=69+g_D\le90}.
+]
+
+For the upper bound, every O vertex lies outside each K12 clique. Applying the balanced-coloring condition to each 13-set X_i union {v} shows that D has at least one D-edge from v to each of X_1,X_2,X_3. Thus `e_D(H,O)>=14*3=42`. Since `e(D)=132`,
+`69+g_D+42<=132`, so `g_D<=21`. Also `mu_D<=21-g_D<=14`, where `mu_D=e_D(O)`.
+
+It follows that the ten exact colors contribute between 16 and 30 units of the 37-unit gap, so at least six exact colors have positive gap. This is a global budget reduction, not a contradiction; the remaining nonexact-color interval and aligned cells stay OPEN.
