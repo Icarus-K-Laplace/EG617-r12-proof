@@ -561,3 +561,9 @@ Updated verify_v47_z01_t0_omission_conservation.py to enumerate binary H endpoin
 ### Forced Class-A repeat allocation — 2026-10-29
 
 Enumerated the exact source allocation equations for the E0=0 scalar row under the all-Class-A source contract. With large-pair exact repeat totals (7,0,3) and T0 repeat totals (4,3,3), the unique solution is x12=4, x21=3, x32=3, all other xij=0. This forces the 7 P12 exact-repeat edges and 3 P23 exact-repeat edges to be vertex-disjoint within their respective perfect matchings. The corresponding T0-repeat endpoints are distinct within each track. Added verifier verify_v47_z01_class_a_repeat_allocation.py. This is a necessary local restriction, not a root contradiction.
+
+### Residual six-set injectivity and P0 audit correction — 2026-10-29
+
+Proved a conditional residual-signature injectivity lemma for the single-outside mode. If two colors shared the same six residual vertices, edge-disjointness would force opposite perfect matchings on all three K2,2 blocks; complementing all three toggles parity, so one color has a six-cycle. The local holonomy theorem gives that color g_C>=2, and t_C<=1 forces a large-pair repeat edge. Pair-projection injectivity then forbids the second color from sharing the residual pair. A six-cycle single-outside color's residual signature is therefore unique even against colors in other source modes. Added V47_Z01_RESIDUAL_SIGNATURE_INJECTIVITY.md and an 8-case parity verifier.
+
+Corrected the separate owner-only witness audit: the previously reported 20 P_0i/K4-baseline overlaps do not occur. The source baseline edges are w-s_i,w-s_j,w-s_k; candidate complement edges are w-y_i,w-y_j,w-y_k, with y_j,y_k in the separate K3. The exact endpoint replay gives zero overlaps. The owner-only witness is still invalid due to 9 residual-signature collision pairs / 36 duplicate baseline-edge claims. No global Q32 closure is claimed.
