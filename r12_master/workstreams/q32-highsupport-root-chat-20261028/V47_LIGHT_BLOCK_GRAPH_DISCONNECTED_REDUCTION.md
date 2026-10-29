@@ -214,6 +214,8 @@ The assigned track is unique, and two residual vertices assigned to the same tra
 The exact integer verifier checks all 64 four-part profiles and 35 three-part profiles, with worst four-part margin63, and returns `V47_37_RESIDUAL_TRACK_TRANSVERSAL_OK`. This matches the four possible fiber-size profiles of the small-block residual map but does not yet prove that the two partitions align. The 3+7 cell remains OPEN.
 
 
-## 12. Global matching maps from the small triangle to the outer seven blocks
+## 12. RETRACTED: global matching maps from the small triangle to outer blocks
 
-See `V47_37_SMALL_OUTER_MATCHING_RIGIDITY.md`. The 4,5,5 switch theorem and the seven-vertex cut-endpoint bound force each small block's matching permutation to the outer tracks to be constant over all seven outer blocks. The three small-block permutations are either all equal or differ by one fixed transposition. The transposition regime can occur only when the two moved residual fibers both have size at most one. This is a further global normal form, not a closure.
+The former claim that the 4,5,5 switch theorem and cut-endpoint bound force each small-to-outer matching permutation to be constant is **RETRACTED**. The switch theorem's two extra edges hit two distinct moved small-side labels, so the old single-label cut charge is invalid. See `V47_37_SMALL_OUTER_MATCHING_RIGIDITY_RETRACTION.md`.
+
+The local switch theorem, outer-light holonomy theorem, residual-track transversal theorem, and separate z=0,1 partition-alignment argument remain distinct proof assets. This branch remains OPEN / NOT_CERTIFIED.
