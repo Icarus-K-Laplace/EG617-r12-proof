@@ -514,3 +514,10 @@ Added a self-contained aggregate witness verifier. It confirms all nine class-B 
 For a source-realizable single-outside class-B residual with g_C=2 and t_C=1, the special point x_C must lie in T0 and both special K5 factors are double-outside. The y-in-H placement forces A0 to contain exactly one H vertex; if y lies in T_i and that H vertex lies in T_j, then i≠j, the T0 repeat is on T0-T_k, and the large-pair repeat is on T_i-T_j, where {i,j,k}={1,2,3}. Thus the two repeat pairs are complementary.
 
 Updated the shared-P packing note and aggregate verifier to impose this source-derived location law. The revised aggregate witness remains feasible: exact surplus (2,4,4;4,4,2), D surplus (6,5,5;0,0,1), g_D=17. This rules out only the previous pair-location assignment as source-compatible; it does not close the shared-endpoint packing problem.
+
+
+### Retraction and replacement of the proposed class-B pair law — 2026-10-29
+
+The previously logged universal complement law was too strong and is withdrawn. A source-correct counterexample exists with x_C outside H, N_s single-outside, N_t double-outside, and A_0={w,s_j}, where w is the T0 vertex and y lies in T_i: the two H-H gadget edges yw and ys_j yield g_C=2,t_C=1, and the valid class-B baseline can leave extras ws_i on T0-T_i and ys_j on T_i-T_j. These pair types share track i, so no universal complementary-pair rule holds.
+
+The packing note and verifier now use an explicit source-compatible local mode and a corrected aggregate witness: exact surplus (7,0,3;4,3,3), D surplus (1,9,6;0,1,0), g_D=17. The verifier passed the independent Python replay with SOURCE_LOCAL_AGGREGATE_BUDGET_WITNESS_OK. This still omits common-P endpoint labels and does not close Q32.
