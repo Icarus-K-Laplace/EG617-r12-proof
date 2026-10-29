@@ -412,14 +412,12 @@ Added Section 8 to `V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM.md`. The twelve K5 f
 The exact occupancy arithmetic verifier passed. This sharpens the allowed placement geometry but does not close the remaining color types.
 
 
-## New canonical residual 1-factorization across K12 tracks (2026-10-29)
+## Residual 1-factorization across K12 tracks (audit-corrected 2026-10-29)
 
-Added `V47_Z01_CANONICAL_RESIDUAL_ONE_FACTORIZATION.md`.
+Added `V47_Z01_CANONICAL_RESIDUAL_ONE_FACTORIZATION.md`. Its title is historical: **the residual factor is choice-dependent, not canonical**. A repeated color occurs on two edges at a vertex, so no single edge is intrinsically distinguished as “the repeated edge.” The proof now chooses one perfect matching for each non-target color via Hall; their edge-disjoint union has degree 11 at every vertex, and its complement is a perfect matching P. Every H-edge lies in P, and every unselected non-target edge lies in P. Thus each K12xK12 pair has a 1-factorization into P and eleven color-specific perfect matchings. Different choices may yield different P.
 
-The balanced 13-set premise gives an exact vertex-level classification on any K12--K12 pair: a vertex with an H-neighbor has each of the eleven non-target colors exactly once; a vertex without an H-neighbor has exactly one repeated non-target color. The union P of all H-edges and all repeated-color edges is therefore a **canonical perfect matching**. Removing P leaves, for each non-target color C, exactly one incident C-edge at every vertex, so each `M_C=E_C(T_i,T_j)\\setminus P` is also a perfect matching. Thus each K12xK12 pair is partitioned into twelve edge-disjoint perfect matchings, one residual factor P and eleven color-specific factors M_C.
+The number of C-colored edges in P is the surplus `e_C(T_i,T_j)-12`; these edges pair the repeat-C vertices on the two sides. Since `e_H(T_i,T_j)<=9`, P contains at least three H-edges and at least three non-target repeat edges.
 
-All H-edges on the pair lie in P; its remaining edges are exactly the repeated-color edges. Since `e_H(T_i,T_j)<=9`, every P has at least three H-edges and at least three repeated-color edges.
+For a K11--K12 pair, Hall gives a matching saturating T0 for each non-target color. Choosing those matchings leaves a residual set with one edge per T0 vertex, but no matching claim on the larger side. The corrected low-gap corollary in the same file uses the registered 69/70 near-Turan forms to align the base matchings when `g_C<=1`.
 
-For a K11--K12 pair, the analogous residual edge set has exactly one edge at each T0 vertex but is **not asserted to be a matching on the K12 side**. Separately, every non-target color graph satisfies Hall's condition on the T0 side and therefore has a matching saturating T0.
-
-This turns the three K12-pair color ledgers into exact 1-factorizations, but it does not yet couple the three factors strongly enough to close z=0,1. E408/Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+This is a structural reduction only; it does not close z=0,1. E408/Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
