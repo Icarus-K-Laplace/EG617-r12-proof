@@ -193,9 +193,9 @@ for color_id in range(10):
     local_graph_checks += 1
 
     # P0_i is the repeat edge from this T0 vertex to y_i. On the other two
-    # tracks, its complement edges are H edges to the K4-side vertices.
+    # tracks, its complement edges are H edges to the K3-side vertices.
     for track in range(3):
-        endpoint = y_i if track == i else (s_j if track == j else s_k)
+        endpoint = y_i if track == i else (y_j if track == j else y_k)
         e0 = (w0, endpoint)
         P0[track].append(e0)
         if track == i:
