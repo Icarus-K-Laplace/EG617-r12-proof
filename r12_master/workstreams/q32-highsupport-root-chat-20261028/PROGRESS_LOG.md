@@ -418,3 +418,12 @@ Added `V47_Z01_CANONICAL_RESIDUAL_ONE_FACTORIZATION.md`. The first draft incorre
 The corrected proof chooses one perfect matching for each non-target color by Hall. These eleven matchings are edge-disjoint and leave a perfect matching P. P contains all H edges and all color edges not selected in their color's baseline matching. Hence each K12xK12 pair has a valid 1-factorization, but P may depend on the choices. The color-C edges in P number `e_C(T_i,T_j)-12`; each P has at least three H-edges and three repeat-color edges because `e_H(T_i,T_j)<=9`.
 
 For each K11--K12 pair, every color has a matching saturating T0; the residual set has one edge per T0 vertex but is not asserted to be a matching on the larger side. The file also records the aligned 69/70 low-gap orientation. These are exact structural constraints, not a Q32 closure.
+
+
+### T0 pointwise color-degree saturation — 2026-10-29
+
+Added **V47_T0_POINTWISE_COLOR_SATURATION.md** and **verify_v47_t0_pointwise_color_saturation.py**.
+
+For each vertex v in the K11 track T0, the exact non-target H-degree sum is \(34-\epsilon_v\), while each of the eleven non-target colors must contribute at least one edge to each of the three K12 tracks. Hence a vertex with epsilon=1 has color degrees exactly 3 across all eleven colors; a vertex with epsilon=0 has exactly one color degree 4 and ten color degrees 3. Summing yields \(\sum_C t_C=11-E_0\).
+
+For an exact Type-I color, any degree-four T0 vertex must lie in its 11-vertex gadget G11(C); isolated single factors contribute degree 3, and isolated double/triple factors at T0 are forbidden by the degree floor. The corrected factor occupancy bounds \(|G11(C)\cap T_0|\le2\), hence \(t_C\le2\) per exact color. The arithmetic replay passed (**V47_T0_POINTWISE_COLOR_SATURATION_ARITHMETIC_OK**). This is a local capacity constraint, not Q32 closure.
