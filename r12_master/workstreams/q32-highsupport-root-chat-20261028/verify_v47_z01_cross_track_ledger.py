@@ -65,6 +65,15 @@ for triple in product(VECTORS, repeat=3):
             if sum(x) != total_big_big:
                 continue
 
+            # Pairwise big-track caps implied by y_i<=11:
+            # e_23 = y_1 - 2 - E0 - E_1, and cyclically.
+            assert x23 == y1 - 2 - E0 - E[1]
+            assert x13 == y2 - 2 - E0 - E[2]
+            assert x12 == y3 - 2 - E0 - E[3]
+            assert x12 <= 9 - E0 - E[3]
+            assert x13 <= 9 - E0 - E[2]
+            assert x23 <= 9 - E0 - E[1]
+
             aggregate_states += 1
             states_by_E0[E0] += 1
 
