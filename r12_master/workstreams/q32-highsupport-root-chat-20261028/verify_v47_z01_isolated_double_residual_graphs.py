@@ -3,12 +3,9 @@
 
 The eight residual vertices have parts (2,2,2,2) and are partitioned into
 two transversal K4s. Their 12 possible cross-K4 edges are the only possible
-extra edges in this relaxation. Each T0 residual vertex has baseline C-degree 3. The global exact-color
-bound t_C<=1 permits at most one T0-incident extra edge in total across both
-T0 vertices. Enumerate all bases and extra sets of size 0..3 subject to that cap.
+extra edges in this relaxation. Each T0 residual vertex has baseline C-degree 3, so pointwise saturation permits at most one extra at each. In these two-K4 source subcases, however, all extras form a star centered at y or x_C. A star center lies in one target track and has at most one cross-K4 edge to T0 in total: a center in T0 has no T0--T0 edge, while a center in a large track sees only the opposite K4's single T0 vertex. Therefore every source-realizable extra set has at most one T0-incident edge in total. Enumerate arbitrary extra sets subject to this source-derived cap.
 
-This counts a necessary relaxation, not source-realizable gadget completions.
-The special x/y star geometry in the source is stricter still.
+This is still a necessary relaxation, not a source-realizable completion count: it allows arbitrary non-T0 extra sets, not just the source star.
 """
 from itertools import combinations, product
 from collections import Counter
@@ -63,4 +60,4 @@ assert counts == Counter({0: 8, 1: 96, 2: 408, 3: 880})
 print("unordered two-K4 bases:", 8)
 print("graphs by surplus:", dict(sorted(counts.items())))
 print("V47_Z01_ISOLATED_DOUBLE_RESIDUAL_GRAPHS_OK")
-print("Scope: globally T0-capped necessary relaxation only; not global Q32 UNSAT.")
+print("Scope: source-star-informed necessary relaxation only; not global Q32 UNSAT.")
