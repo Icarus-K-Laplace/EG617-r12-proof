@@ -501,3 +501,10 @@ Combining the global exact-color T0 cap t_C<=1 with the existing gap split gives
 ### Clarify the shell-edge lower-bound theorem label — 2026-10-29
 
 Audited the upper bound on the unique nonexact color D in V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM.md. The conclusion e_D(A)>=2 is correct, but the previous label p_11(13)=2 was a notation collision: p_r(n) denotes the Kang–Pikhurko second-Turán maximum in the external theorem, and its stated range does not include n=13. Replaced it with the direct independence argument (at most one edge in A would leave an independent 12-set, which together with p is a D-independent 13-set) and, equivalently, the ordinary Turán complement calculation C(13,2)-t_11(13)=78-76=2. No numeric bound or root status changes.
+
+
+### Common P-factor packing and scalar-relaxation witness (2026-10-29)
+
+Derived and documented the common large-track repeated-color graph S: each pair complement P_ij is a perfect matching containing H_ij, so S_ij=P_ij\\H_ij and `d_S(v)=2-d_H^large(v)<=2`; total |S|=26+E0. Exact-color-owned S edges must have both endpoints in that color's residual gadget set. This is the vertexwise edge-packing constraint absent from the scalar ledger.
+
+Added a self-contained aggregate witness verifier. It confirms all nine class-B local vectors (one large-pair surplus plus one T0-pair surplus) occur among 192 locally admissible repaired graphs. At E0=0, E=(2,2,2), e_H=(4,3,3), the capacities are r=(8,9,9), q=(4,4,3); ten exact colors can each spend g=2 with one T0 surplus, leaving g_D=17 in the scalar relaxation. This does not realize the shared P endpoint labels and is not a Q32 coloring. The next task is to impose actual vertex labels and shared-factor compatibility; isolated-double colors must use the separate 8-vertex source model.
