@@ -344,3 +344,16 @@ After the z=1 small/outer partition alignment and switch elimination, the profil
 
 
 The counterexample was made reproducible in `verify_v47_37_switch_endpoint_counterexample.py`: exact enumeration of all 4096 subsets gives `alpha=4) and 63 maximum independent sets, output `V47_37_SWITCH_ENDPOINT_COUNTEREXAMPLE_REPRODUCED`. The global matching-rigidity claim remains retracted.
+
+
+### Balanced-coloring cross-track ledger for aligned z=0,1 (2026-10-29)
+
+Added `V47_Z01_BALANCED_COLORING_CROSS_TRACK_LEDGER.md` and `verify_v47_z01_cross_track_ledger.py`.
+
+In the remaining aligned z=0,1 profile (2,2,2,1), the target-color tracks are K12,K12,K12,K11. For any outside vertex and a K12 track, the 13-set formed by the track plus that vertex must contain all eleven non-target colors among twelve cross edges; hence at most one edge can be H-colored. Therefore H[T_i,T_j] is a matching for each pair of K12 tracks. For a K11--K12 pair, only the K11-side degree-one bound is asserted.
+
+Within-track edges contribute 253 of the 285 H-edges; cross-track H edges total 32. If E_0 is the aggregate small-block degree excess on the singleton-fiber label, then E_0 is 0,1,2,3 and the exact track degree sums force:
+- K11-to-K12 edge total = 22+E_0;
+- K12-to-K12 edge total = 10-E_0.
+
+The six track-pair deficits sum to 37, matching the global reserve budget. Exact arithmetic checked 729 small-block excess triples and 28,107 necessary aggregate track-count states; output `V47_Z01_CROSS_TRACK_ARITHMETIC_OK`. The aggregate relaxation remains feasible and is not a closure.
