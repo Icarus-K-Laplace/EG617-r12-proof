@@ -126,6 +126,30 @@ If another exact color C' had the same two residual subsets on tracks i,j, its M
 This is a valid cross-color constraint without assuming that a color's six residual vertices form a component of the common P graph. It is necessary but not by itself a contradiction.
 
 The remaining bridge is to impose pair-projection injectivity, all cross-color matching edge-disjointness, and the complete triangle-factor / Type-I incidence constraints simultaneously. The owner-only witness is not a full source-realizable Q32 coloring.
+### 4.4 T0--Ti omitted-vertex conservation
+
+For each non-target color \(C\) and track \(T_i\), let \(M_{C,0i}\) be its selected matching in \(K_{11,12}=T_0\times T_i\). It saturates all eleven T0 vertices and therefore misses exactly one vertex \(z_i(C)\in T_i\). The eleven selected matchings are edge-disjoint and \(P_{0i}\) is their complement. Since every \(v\in T_i\) has exactly eleven incident edges to T0,
+\[
+\boxed{d_{P_{0i}}(v)=|\{C:z_i(C)=v\}|.}
+\]
+This is a multiset identity: the multiplicity of \(v\) among the eleven colors' omitted vertices is exactly its endpoint multiplicity in \(P_{0i}\). It does not assume \(P_{0i}\) is a matching on \(T_i\).
+
+Let \(h_i(v)\in\{0,1\}\) be the number of target-H edges from \(v\) to T0; the upper bound is Lemma 2.2. Let \(r_i^D(v)\) count D-colored repeat edges of \(P_{0i}\) incident to \(v\), and let \(\delta_i^D(v)=1\) if \(z_i(D)=v\), otherwise 0.
+
+In the **single-T0-residual seven-vertex Type-I mode only**, if an exact color C owns a T0 repeat edge \(x_Cv\in P_{0i}\), the source component structure forces \(z_i(C)=v\): the residual endpoint \(v\) has no other C-edge to a T0 vertex, while \(M_{C,0i}\) must use the baseline edge from \(x_C\) to the other residual vertex. Hence the exact-color repeat owners cancel from the multiset identity, leaving
+\[
+\boxed{
+|\{C\text{ exact}:z_i(C)=v,\ t_C\ne i\}|+\delta_i^D(v)
+=h_i(v)+r_i^D(v).
+}
+\]
+Consequences:
+- away from D-repeat endpoints, at most one exact color with \(t_C\ne i\) can omit a given \(v\), because \(h_i(v)\le1\);
+- at a D-repeat endpoint, at most \(1+r_i^D(v)\) such exact colors can omit \(v\);
+- every T0 H-edge endpoint must occur in the omitted-vertex multiset; a proposed T0 complement edge to a color's K4-side baseline vertex is invalid unless it is independently shown to be an omitted vertex for another color.
+
+**Scope firewall:** the cancellation step is not asserted for the eight-vertex isolated-double mode, where two T0 residual vertices may interact with the same large-track residual vertex. There only the universal multiset identity is currently certified. This distinction is mandatory in the full Q32 model.
+
 ## 5. Current proof frontier and audit gate
 
 - Non-full-support rows \(v=45,46\), \(m=8,9,10\), are closed in this workstream under the source-correct multiplicity theorem, current nonexact degree floors, and the no-core-only degree-four lemma. The \(v=44,m=8,9\) branch belongs to the sibling workstream.
