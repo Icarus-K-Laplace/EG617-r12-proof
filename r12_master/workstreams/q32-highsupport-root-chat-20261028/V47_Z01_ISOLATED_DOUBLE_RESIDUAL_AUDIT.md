@@ -50,7 +50,7 @@ If \(y\in H\), then \(N_t\) is single-outside and \(N_s\) is double-outside. Her
 \[
 g_C=6-(b_s+b_t)=3.
 \]
-The H-part of \(N_s\) is a \(K_3\), the H-part of \(N_t\) is a \(K_4\), and the gadget supplies six H-H edges: three from \(x_C\) to \(N_t\setminus\{y\}\), plus one edge from \(x_C\) or \(y\) to each of the three H-vertices of \(N_s\). This \(g_C=3\) source geometry is closed by the balanced-coloring contradiction in Section 3.3.
+The H-part of \(N_s\) is a \(K_3\), the H-part of \(N_t\) is a \(K_4\), and the gadget supplies six H-H edges: three from \(x_C\) to \(N_t\setminus\{y\}\), plus one edge from \(x_C\) or \(y\) to each of the three H-vertices of \(N_s\). The T0-centered subcase is excluded in Section 3.3; the large-track-centered subcase remains open.
 
 ### 3.3 T0-centered subcase is impossible
 
@@ -66,7 +66,7 @@ Thus the exceptional branch cannot have \(x_C,y\in T_0\). If their common track 
 
 For the two-\(K_4\) subcases above, each \(K_4\) is transversal across \(T_1,T_2,T_3,T_0\). There are eight labeled unordered two-\(K_4\) bases (choose which of the two vertices in each track belongs to the first \(K_4\), modulo swapping the two \(K_4\)s). Between the two \(K_4\)s there are 12 allowed cross-part edges; the four same-track pairs are forbidden because each track is a target-color clique.
 
-The global pointwise theorem gives \(t_C\le1\), so at most one T0-incident extra edge may be selected across both T0 residual vertices. Among the 12 allowed cross-part edges, six are T0-incident and six join large-track vertices. Choosing \(g_C\) extras with at most one from the T0-incident group gives per-base counts
+The pointwise theorem alone allows one extra edge at each T0 residual vertex, hence up to two T0-incident extras. In these two-K4 source subcases, however, all extra edges form a star centered at y or x_C. A star center lies in one target track, so among the 12 cross-K4 edges it has at most one edge to the opposite K4's T0 vertex (and a center in T0 has no T0--T0 cross edge). Thus source star geometry, not the global pointwise theorem, imposes at most one T0-incident extra edge in total. Among the 12 allowed cross-part edges, six are T0-incident and six join large-track vertices. Choosing \(g_C\) extras with at most one from the T0-incident group gives per-base counts
 \[
 1,\ 12,\ 51,\ 110
 \]
