@@ -60,7 +60,7 @@ for graph in range(total_masks_checked):
         continue
 
     degree = [(graph & incident[v]).bit_count() for v in range(N)]
-    if degree[6] < 3 or any(degree[v] < 2 for v in range(6)):
+    if not 3 <= degree[6] <= 4 or any(degree[v] < 2 for v in range(6)):
         continue
 
     # alpha <= 2 iff every 3-set contains at least one graph edge.
@@ -72,13 +72,13 @@ for graph in range(total_masks_checked):
     has_base = any((graph & base) == base for base in base_masks)
     base_by_gap[(gap, has_base)] += 1
 
-assert graphs_by_gap == Counter({0: 8, 1: 72, 2: 384, 3: 1148})
+assert graphs_by_gap == Counter({0: 8, 1: 72, 2: 360, 3: 1000})
 assert base_by_gap == Counter({
     (0, True): 8,
     (1, True): 72,
-    (2, True): 288,
+    (2, True): 264,
     (2, False): 96,
-    (3, True): 668,
+    (3, True): 520,
     (3, False): 480,
 })
 
