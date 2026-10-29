@@ -436,3 +436,8 @@ Section 3.3 of `V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md` excludes only the sub
 ### 14i. Placement-sensitive T0 repeat-owner cap
 
 V47_T0_POINTWISE_COLOR_SATURATION.md now proves the sharper case split \(t_C\le1\) for (a) the seven-vertex all-isolated-single branch and (b) the isolated-double two-K4 branches, where all extra H-H gadget edges form a star centered at \(y\) or \(x_C\). The only remaining placement in which \(t_C=2\) is possible is the isolated-double, two-double case \(x_C\in H,y\in H\), for which \(b_s+b_t=3\) and \(g_C=3\). The total cap of one surplus edge across all three T0--Ti pairs remains specific to the seven-vertex branch; in the two-K4 branch the cap is per T0 vertex. The updated arithmetic/source-interface verifier checks the star-cap combinatorics. This is a placement restriction, not a contradiction.
+
+
+### 14j. Holonomy-class surplus-location constraints
+
+The capped holonomy verifier now checks the exact distribution of surplus edges between the three T0--Ti pairs and the three K12--K12 pairs. At minimum cost, class B (g_C=1) requires its only surplus on a T0--Ti pair; class C (g_C=2) has both surplus edges on large-track pairs; class D (g_C=3) has one T0 surplus and two large-track surpluses. Full counts by class, gap, and split are in `V47_Z01_RESIDUAL_HOLONOMY_COST.md`. These are conditional single-outside constraints.
