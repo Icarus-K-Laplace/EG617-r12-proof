@@ -52,3 +52,21 @@ print("nonempty P-block intersection -> exactly one matching remains")
 print("empty P-block intersection -> exactly two complementary matchings remain")
 print("V47_Z01_PARTIAL_PROJECTION_PACKING_OK")
 print("Scope: local block lemma only; no global Q32 UNSAT claim.")
+
+# Cross-key overlap regression: two distinct 2x2 blocks can select P-disjoint
+# matchings that still reuse the same actual edge. Key-local occupancy alone
+# would miss this; the edge-level occupancy inequality must reject it.
+A1, B1 = {0, 1}, {3, 4}
+A2, B2 = {0, 2}, {3, 5}
+K1_F0 = frozenset({(0, 3), (1, 4)})
+K2_F0 = frozenset({(0, 3), (2, 5)})
+P_global = frozenset({(0, 5), (1, 3), (2, 4)})
+assert is_matching(K1_F0)
+assert is_matching(K2_F0)
+assert is_matching(P_global)
+assert not (K1_F0 & P_global)
+assert not (K2_F0 & P_global)
+assert K1_F0 != K2_F0
+assert K1_F0 & K2_F0 == {(0, 3)}
+print("cross-key overlap regression: caught shared edge (0, 3)")
+print("Key-local constraints alone are insufficient; edge-level occupancy is required.")
