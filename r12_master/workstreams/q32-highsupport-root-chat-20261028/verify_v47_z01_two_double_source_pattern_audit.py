@@ -70,7 +70,7 @@ for q in range(3):
     full = base + extra
     assert len(base) == 9 and len(extra) == 2
     assert alpha(emask(base)) == 3 and alpha(emask(full)) == 2
-    assert all(track_pair(e) in {(q, i) for i in range(3) if i != q} for e in extra)
+    assert all(track_pair(e) in {tuple(sorted((q, i))) for i in range(3) if i != q} for e in extra)
     assert all(t[q] in e for e in extra)  # source star centered at y
     assert len({track_pair(e) for e in extra}) == 2
     checked["yH_a2"] += 1
