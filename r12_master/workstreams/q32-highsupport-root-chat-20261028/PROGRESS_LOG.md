@@ -369,3 +369,8 @@ This leaves x_C in O with one double/nine single components, or x_C in H with tw
 
 
 Further refinement in `V47_Z01_BALANCED_COLORING_CROSS_TRACK_LEDGER.md`: on each K12--K12 pair, an H-matched vertex has exactly one edge of each non-target color into the opposite track; an unmatched vertex has 12 non-target edges, with exactly one color repeated. For every color C, `e_C(T_i,T_j)-12` equals the repeat-C count on either side, so the repeat-color counts must agree. On each K11--K12 pair, the analogous surplus over 11 counts repeats on the K11 side only. This records pairwise color-level constraints beyond the aggregate 37-unit gap.
+
+
+Tightened the aligned z=0,1 cross-track ledger: for each pair of large tracks T_i,T_j, with k the remaining large label,
+`e_H(T_i,T_j)=y_k-2-E_0-E_k<=9-E_0-E_k<=9`.
+Thus every K12--K12 pair has at least three unmatched vertices on each side. The arithmetic verifier now asserts the exact identities and pairwise caps in all 28,107 aggregate states.
