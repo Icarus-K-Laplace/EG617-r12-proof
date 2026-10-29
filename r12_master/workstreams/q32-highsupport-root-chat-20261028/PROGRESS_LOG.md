@@ -572,3 +572,7 @@ Corrected the separate owner-only witness audit: the previously reported 20 P_0i
 ### E0=0 endpoint support caps — 2026-10-29
 
 Combined the omitted-vertex multiset identity with the aligned zero-slack H degree ledger and the forced all-Class-A repeat allocation. On T0-T1 and T0-T3, the nonrepeat exact omissions plus D's omitted vertex are all distinct and coincide with the H endpoint sets. On T0-T2, they are all distinct unless the unique D-repeat endpoint also receives an H edge, in which case exactly one endpoint can have multiplicity two. Because exact repeat owners are distinct within each track, the P0 endpoint-degree caps are (2,3,2) for T1,T2,T3; degree three on T2 requires exact-repeat, H and D-repeat incidence at the same vertex. Recorded in V47_Z01_SHARED_P_FACTOR_PACKING.md; still a necessary relaxation, not a Q32 closure.
+
+### Class-B g=2,t=0 star-center incidence — 2026-10-29
+
+From the exhaustive 19-case source audit, the x-in-H two-double Class-B row y∈H,a=2 has g_C=2,t_C=0 and its two large-pair surplus edges form a star centered at y, with one edge to each of the other two large tracks. Those are the two P_ij edges incident to y, so y has no H-neighbor in the other large tracks. Because y already has 11 neighbors in its K12 track and δ(H)≥12, it must be incident to at least one H edge from T0. This is a necessary source/degree incidence constraint for the CSP, not a contradiction.
