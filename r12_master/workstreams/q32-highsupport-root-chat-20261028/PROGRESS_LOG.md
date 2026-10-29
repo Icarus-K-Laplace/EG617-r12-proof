@@ -688,3 +688,8 @@ The full-support model now enforces per-color nonexact minimum-degree floors fro
 ### Reserve quota dependency correction (2026-10-29)
 
 Updated the canonical state and source reserve notes: the q_z<=3/4/4 quota is conditional on a target-color degree floor d_0(z)>=13, which is not established by the displayed delta(H)>=12 contract alone. The unconditional full-support quota is q_z<=(4,5,5). This is separate from the non-full-support zero-shell multiplicity budgets r_m=(3,4,4), which are based on a different incidence ledger.
+
+
+### m=8 weighted-surplus scope audit (2026-10-29)
+
+Marked the m=8 full-support parameter restriction and the claimed pairwise distinctness of all x_C,y_C as conditional on d_F(z)>=13 at each relevant variable point. The degree identity itself is valid, but the capacity-three deduction needs that pointwise target-degree floor; delta(H)>=12 alone only gives capacity four.

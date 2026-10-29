@@ -667,3 +667,6 @@ Corrected the full-support CSP and independent verifier to the canonical E408 co
 ## Target-degree reserve audit (2026-10-29)
 
 The all-color reserve note's stronger q_z<=(3,4,4) quota requires d_0(z)>=13 at every residual point, which is not supplied by the registered delta(H)>=12 contract alone. The CSP now enforces only the unconditional q_z<=(4,5,5), using the canonical nonexact floors L=(12,7,3), and retains the stronger quota only conditionally when the actual full target degree of that residual vertex is at least 13. The 130/131/132 edge-count vector is the root-correct one.
+
+
+The m=8 weighted-surplus restrictions a_C in {2,3} and pairwise distinctness of all x_C,y_C are also conditional in full support: their capacity-three proof requires d_F(z)>=13 at each variable vertex. The unconditional core floor is d_H(z)>=12. The non-full-support W-point arguments may still obtain d_F(w)>=13 by their separate shell-saturation lemma; do not transfer that W-specific conclusion to full support without proof.

@@ -125,28 +125,21 @@ The formerly stated stronger caps `(3,4,4)` require the additional pointwise pre
 
 This counts every gadget membership, not merely the KP special point x. Under the unconditional bounds, each residual point belongs to an isolated K5 component of at least 4 exact colors for m=8 and m=9, and at least 5 for m=10.
 
-## 6. Strong m=8 weighted-surplus ledger
+## 6. m=8 weighted-surplus ledger — conditional target-degree step
 
-When `m=8`, all three nonexact colors have 130 edges and the new theorem gives degree at least four in each. Hence at every residual point z,
+When `m=8`, all three nonexact colors have 130 edges and minimum degree at least four. For every vertex z, the degree identity is
 
 > **`(d_F(z)-13) + sum_{11 non-target C}(d_C(z)-4) = 3`.**
 
-For an exact Type-I color with source parameter a, the variable gadget surpluses over degree four are
+The identity is exact because the 12 color degrees sum to 60. The non-target surplus terms are nonnegative in this branch. However, the capacity-three conclusion requires `d_F(z)>=13`. The registered core contract only guarantees `d_F(z)>=d_H(z)>=12`; the additional target-colored neighbor is not established for every full-support residual point in this workstream.
 
-- at y: `a`;
-- at x: `5-a`.
+Therefore the following older deductions are **conditional on a separate pointwise target-degree floor**:
 
-The pointwise capacity three therefore forbids `a=1` (x would use surplus4) and forbids `a=4` (y would use surplus4). Thus:
+- excluding `a=1` and `a=4` at every exact-color variable point;
+- asserting globally that every exact parameter `a in {2,3}`;
+- concluding that all sixteen `{x_C,y_C}` vertices are pairwise distinct.
 
-> **for every exact color in the m=8 branch, `a in {2,3}`.**
-
-The two variable vertices then carry surplus weights `{3,2}`. Since any two variable occurrences would have total weight at least four, no residual point can be a variable vertex for two exact colors. Consequently the sixteen vertices
-
-`{x_C,y_C : C exact}`
-
-are pairwise distinct in the m=8 branch.
-
-This is a source-correct replacement for the kind of injectivity that the retracted degree-nine route attempted to obtain, but it is specific to m=8 and follows from the new 130-edge minimum-degree-four theorem.
+For any particular variable vertex z where `d_F(z)>=13` is proved, the capacity-three argument remains valid locally. Without that premise, the unconditional capacity is four, and the above universal m=8 restrictions cannot be used in the full-support root proof.
 
 ## 7. Status
 
@@ -173,3 +166,8 @@ This is the current strongest common-core reduction added in this workstream. Th
 ## 9. Updated m=10 gadget quota
 
 The new theorem `Q32_132_MINDEG3.md` proves that the unique132-edge nonexact color has minimum degree at least3. Thus `L_10=3` and the pointwise special-surplus budget is `r_10=4`. The stronger full-support gadget quota `q_z<=4` is conditional on a separate `d_0(z)>=13` lemma; the unconditional quota from `d_H(z)>=12` is `q_z<=5`. The 37-unit gap identity and the full-support v47 frontier are unchanged.
+
+
+### m=8 weighted-surplus scope audit (2026-10-29)
+
+Marked the m=8 full-support parameter restriction and the claimed pairwise distinctness of all x_C,y_C as conditional on d_F(z)>=13 at each relevant variable point. The degree identity itself is valid, but the capacity-three deduction needs that pointwise target-degree floor; delta(H)>=12 alone only gives capacity four.
