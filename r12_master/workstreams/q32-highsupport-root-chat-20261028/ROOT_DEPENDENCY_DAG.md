@@ -435,7 +435,7 @@ Section 3.3 of `V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md` excludes only the sub
 
 ### 14i. Placement-sensitive T0 repeat-owner cap
 
-V47_T0_POINTWISE_COLOR_SATURATION.md now proves the sharper case split \(t_C\le1\) for (a) the seven-vertex all-isolated-single branch and (b) the isolated-double two-K4 branches, where all extra H-H gadget edges form a star centered at \(y\) or \(x_C\). The only remaining placement in which \(t_C=2\) is possible is the isolated-double, two-double case \(x_C\in H,y\in H\), for which \(b_s+b_t=3\) and \(g_C=3\). The total cap of one surplus edge across all three T0--Ti pairs remains specific to the seven-vertex branch; in the two-K4 branch the cap is per T0 vertex. The updated arithmetic/source-interface verifier checks the star-cap combinatorics. This is a placement restriction, not a contradiction.
+V47_T0_POINTWISE_COLOR_SATURATION.md now proves the global exact-color bound \(t_C\le1\). The all-isolated-single and isolated-double two-K4 branches follow from residual support and star-edge geometry. In the exceptional isolated-double two-double case \(x_C\in H,y\in H\), the pointwise cap rules out either x_C or y alone in T0, and rules out both in T0 because their degrees would be \(3+(3-k)\) and \(3+k\) for \(k=|A_0\cap H|\). Thus the two T0 vertices lie in the special K3 and K4, with degrees 3 and 4 respectively; here \(g_C=3\) but \(t_C=1\). Consequently the one-extra-edge cap across all three T0--Ti pairs is global for exact colors. The updated arithmetic/source-interface verifier checks the case-split arithmetic. This is a placement restriction, not a contradiction.
 
 
 ### 14j. Holonomy-class surplus-location constraints
