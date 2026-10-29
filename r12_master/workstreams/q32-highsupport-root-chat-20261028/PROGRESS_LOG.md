@@ -386,3 +386,10 @@ The valid balanced-coloring floor shows that an isolated triple-outside K5 is im
 ### Triple-special geometry and exact gap — 2026-10-29
 
 Within the corrected source accounting, the aligned triple-placement case is sharpened further. The triple K5 must be special; its companion special K5 is single-outside. The distinguished y must be H, or x together with the four H vertices of N_t\{y} forms a forbidden C-colored K5 in H. The four H vertices of N_t then occupy all four clique parts; x must be in y's K12 part. The two H vertices of the triple N_s occupy the other two K12 parts. Counting the nine extra gadget edges gives exactly five H-H edges, so `e_C(H)=67+5=72) and `g_C=3). Arithmetic replay returned `V47_CORRECTED_TYPEI_PLACEMENT_ARITHMETIC_OK`. This is a strict local normal form, not exclusion of the triple placement.
+
+
+### All exact-color gaps capped at 3; nonexact color forced to 76–90 H-edges
+
+The corrected aligned-cell analysis now gives `g_C<=3) for every exact color. In the x_C-in-O case only y--A_0 edges can be H-H; in the two-double x_C-in-H case the both-special-single subcase is impossible, while all surviving subcases have `g_C<=3); triple placement has exact `g_C=3).
+
+With ten exact colors and total gap 37, the unique nonexact color has `7<=g_D<=21), so `76<=e_D(H)<=90). The upper bound uses the 14 O vertices: each must have at least one D edge into each of the three K12 cliques, giving at least42 H-O D-edges; the 132-edge total then yields `g_D<=21). Thus at least six exact colors have positive gap. The updated arithmetic replay passed. The remaining nonexact interval is still feasible on these counts alone.
