@@ -591,3 +591,8 @@ Strengthened the conditional theorem in V47_Z01_RESIDUAL_SIGNATURE_INJECTIVITY.m
 ### Partial pair-projection packing — 2026-10-29
 
 Proved a block-level multiplicity constraint for residual pair projections. On a fixed K2,2 residual block A×B, the two possible color matching restrictions are the two perfect matchings. Any edge of common P_ij inside that block forbids one of them, so the pair key can be used by at most one exact color. Therefore duplicated projections require the entire block to be P-free; then exactly two colors can use it, one per complementary matching. Any two colors share at most one pair projection, because sharing two would give the same full residual signature, prohibited by the all-mode signature-injectivity theorem. Added a seven-case local verifier. No global common-P feasibility or Q32 closure is claimed.
+
+
+### Solver-ready projection-block encoding — 2026-10-29
+
+Formalized binary variables for residual 2-set choices r, pair projections x, internal K2,2 orientation choices y, and common complement edges p. The linearization x=r_i∧r_j and y_0+y_1=x links local choices; sum_C y_{C,k,o}≤1 enforces cross-color edge-disjointness, and y_{C,k,o}+p_e≤1 forbids any orientation hit by P. This directly implements the P-free duplicate projection theorem. It is a local exact encoding, not a complete CSP implementation or global UNSAT proof.
