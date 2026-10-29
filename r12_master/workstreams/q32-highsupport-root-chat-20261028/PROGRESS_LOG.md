@@ -427,3 +427,12 @@ Added **V47_T0_POINTWISE_COLOR_SATURATION.md** and **verify_v47_t0_pointwise_col
 For each vertex v in the K11 track T0, the exact non-target H-degree sum is \(34-\epsilon_v\), while each of the eleven non-target colors must contribute at least one edge to each of the three K12 tracks. Hence a vertex with epsilon=1 has color degrees exactly 3 across all eleven colors; a vertex with epsilon=0 has exactly one color degree 4 and ten color degrees 3. Summing yields \(\sum_C t_C=11-E_0\).
 
 For an exact Type-I color, any degree-four T0 vertex must lie in its 11-vertex gadget G11(C); isolated single factors contribute degree 3, and isolated double/triple factors at T0 are forbidden by the degree floor. The corrected factor occupancy bounds \(|G11(C)\cap T_0|\le2\), hence \(t_C\le2\) per exact color. The arithmetic replay passed (**V47_T0_POINTWISE_COLOR_SATURATION_ARITHMETIC_OK**). This is a local capacity constraint, not Q32 closure.
+
+
+### T0 pointwise color-degree saturation — 2026-10-29
+
+Added **V47_T0_POINTWISE_COLOR_SATURATION.md** and **verify_v47_t0_pointwise_color_saturation.py**.
+
+For each vertex v in the K11 track T0, the exact non-target H-degree sum is \(34-\epsilon_v\), while each of the eleven non-target colors must contribute at least one edge to each of the three K12 tracks. Hence a vertex with epsilon=1 has color degrees exactly 3 across all eleven colors; a vertex with epsilon=0 has exactly one color degree 4 and ten color degrees 3. Summing yields \(\sum_C t_C=11-E_0\).
+
+For an exact Type-I color, any degree-four T0 vertex must lie in its 11-vertex gadget G11(C); isolated single factors contribute degree 3, and isolated double/triple factors at T0 are forbidden by the degree floor. The corrected factor occupancy bounds \(|G11(C)\cap T_0|\le2\), hence \(t_C\le2\) per exact color. In addition, \(t_C\) is exactly the sum of the three T0--K12 pair surpluses, so \(t_C\le g_C\); therefore \(t_C\le\min(2,g_C)\) for exact colors. The aggregate big-pair surplus is exactly \(26+E_0\). The arithmetic replay passed (**V47_T0_POINTWISE_COLOR_SATURATION_ARITHMETIC_OK**). This is a local capacity constraint, not Q32 closure.
