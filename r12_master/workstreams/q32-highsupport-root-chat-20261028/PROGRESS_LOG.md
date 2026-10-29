@@ -548,7 +548,7 @@ Proved the pair-projection injectivity lemma: if exact color C owns a large repe
 
 Added `V47_Z01_TWO_DOUBLE_SOURCE_PATTERN_AUDIT.md` and its exact verifier. After fixing an unordered track-pair assertion, the independent replay passed 19 labeled cases: counts `{yO_a3:1, yO_a2:3, yH_a2:3, yH_a1:12}`. This certifies the local source incidence only for the subcase with all ten isolated K5s single-outside, both special K5 factors double-outside, and x in T0; it is not a global Q32 result.
 
-A further audit found that the prior owner-only common-P construction has 20 direct P_0i / own-K4-baseline overlaps (two for each of ten exact colors). Those edges cannot lie in P_0i, which is defined as the complement of all selected color matchings. The witness script is now a retraction audit, not a success certificate. The separate residual-signature audit still finds 9 colliding color pairs and 36 duplicate baseline-edge claims. Both failures are recorded; the Q32 root remains OPEN / NOT_CERTIFIED.
+Audit correction: the claimed 20 direct P_0i / own-K4-baseline overlaps were false; the candidate P edges use K3-side y vertices while the K4 baseline uses distinct s vertices. The verifier now asserts zero such overlaps. The owner-only construction is still invalid for two independent reasons: its T0-T3 H endpoint multiplicities are (8 edges, 5 distinct endpoints), with three T3 vertices receiving two H edges each, contrary to the aligned zero-slack cross-track degree-one contract; and it has 9 residual-signature collision pairs / 36 duplicate baseline-edge claims. The witness script remains a retraction audit, not a success certificate. Q32 remains OPEN / NOT_CERTIFIED.
 
 ### T0--Ti omitted-vertex conservation — degree-source correction (2026-10-29)
 
