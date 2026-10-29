@@ -345,3 +345,6 @@ The exact degree ledger forces `22+E_0` H edges incident to the K11 track and `1
 `V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM.md` eliminates the triple-outside Type-I K5 placement in the fully aligned m=10, 3+7, z=0,1 profile (2,2,2,1). The reason is the balanced-coloring degree floor `d_C(v,H)>=2` on each of the three K12 parts and `>=3` on the K11 part, while a triple-outside K5 gives its H vertices only one same-color H-neighbor.
 
 The surviving exact-color types are x_C in O (one double/nine single K5s) and x_C in H two-double (two double/eight single K5s). Their G11 H-H edge counts are `12+g_C` and `15+g_C`. This reduces the local color-placement state space but does not close either low-z cell; the root gate remains OPEN.
+
+
+The cross-track theorem also gives pairwise color-repeat conservation: for each K12--K12 pair and each non-target color C, the surplus `e_C(T_i,T_j)-12` equals the number of unmatched vertices on either side that repeat C. The two sides must have identical repeat-color counts. For a K11--K12 pair, the surplus over 11 is the repeated-color count among unmatched K11-side vertices. This is an additional finite color-assignment constraint; no closure is inferred.
