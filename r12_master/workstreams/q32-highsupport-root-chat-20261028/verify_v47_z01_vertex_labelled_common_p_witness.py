@@ -98,6 +98,19 @@ for mode, pair, repeat_track, e, color_id in exact_specs:
     }
 assert len(exact_owner) == 10
 
+# This endpoint-only relaxation reuses some residual 6-cycles. That is
+# deliberate and exposes the missing edge-disjoint-baseline constraint:
+# every color assigned to the same cycle would need the same six base edges
+# on its two residual triangles, which cannot be shared by distinct colors.
+cycle_owner_counts = Counter(meta["cycle"] for meta in exact_meta.values())
+residual_signature_collision_pairs = sum(n * (n - 1) // 2
+                                         for n in cycle_owner_counts.values())
+duplicate_baseline_edge_claims = sum(max(0, n - 1) * 6
+                                     for n in cycle_owner_counts.values())
+assert sorted(cycle_owner_counts.values()) == [1, 3, 3, 3]
+assert residual_signature_collision_pairs == 9
+assert duplicate_baseline_edge_claims == 36
+
 # Build source-local K4+K3+two-extra graphs. For each exact edge, the endpoint
 # in repeat_track is the K3-side y_i; the other endpoint is a K4-side s_j.
 def independence_number(vertices, edges):
@@ -229,10 +242,13 @@ for color_id, meta in exact_meta.items():
 print("P_ij perfect matchings:", {str(p): len(P[p]) for p in pairs})
 print("P large-track component sizes:", sorted(len(c) for c in components))
 print("Class-A local gadgets checked (alpha=2, g=2, t=1):", local_graph_checks)
+print("residual 6-cycle owner counts:", dict(sorted(cycle_owner_counts.items())))
+print("residual-signature collision pairs:", residual_signature_collision_pairs)
+print("duplicate base-edge claims exposed by this relaxation:", duplicate_baseline_edge_claims)
 print("T0 H-edge counts:", tuple(len(H0[i]) for i in range(3)))
 print("T0 repeat counts:", tuple(len(S0[i]) for i in range(3)))
 print("Large-pair H counts:", tuple(H_counts[p] for p in pairs))
 print("Large-pair exact-repeat counts:", tuple(S_exact_counts[p] for p in pairs))
 print("Large-pair D-repeat counts:", D_large)
 print("EXACT_CLASS_A_VERTEX_LABELLED_COMMON_P_RELAXATION_WITNESS_OK")
-print("Scope: shared-P and source-local endpoint relaxation only; not the full 11-color triangle-factorization or a Q32 coloring.")
+print("Scope: endpoint-owner relaxation only. It deliberately fails cross-color baseline edge-disjointness on reused residual signatures, and is not the full 11-color triangle-factorization or a Q32 coloring.")
