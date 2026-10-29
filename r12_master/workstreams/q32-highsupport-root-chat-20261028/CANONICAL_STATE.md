@@ -364,3 +364,8 @@ The arithmetic verifier was executed and returned `V47_ALIGNED_TYPEI_COMPONENT_N
 
 
 The cross-track ledger now also has a color-repeat conservation lemma. On each K12--K12 pair, every unmatched vertex repeats exactly one non-target color among its 12 cross edges; for every color C, the surplus `e_C(T_i,T_j)-12` equals the number of repeat-C vertices on either side, so the repeat-color counts must match across both sides. On a K11--K12 pair, the analogous surplus over 11 counts repeated colors among unmatched vertices on the K11 side only. This is a color-level constraint for any future exact completion search, not a closure.
+
+
+A further exact consequence is now recorded: each pair of the three K12 tracks has at most nine H-edges. For distinct large labels i,j,k,
+`e_H(T_i,T_j)=y_k-2-E_0-E_k<=9-E_0-E_k`,
+because `y_k<=11). Hence each K12--K12 pair has at least three unmatched vertices on each side, with a sharper deficit lower bound `12-e_H(T_i,T_j)>=3+E_0+E_k). The aggregate verifier now asserts these identities in every retained state.
