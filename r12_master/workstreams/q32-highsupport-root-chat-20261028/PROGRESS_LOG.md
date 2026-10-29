@@ -381,3 +381,8 @@ Thus every K12--K12 pair has at least three unmatched vertices on each side. The
 A source audit found that the previous local write-up incorrectly counted the two special K5 cliques N_s,N_t inside G11 as if they were isolated components. The true placement profile covers twelve K5 factors: ten isolated K5s plus the two special K5s within G11. Therefore the previous conclusion “triple placement impossible” was too strong and is withdrawn.
 
 The valid balanced-coloring floor shows that an isolated triple-outside K5 is impossible. Thus, if triple placement occurs, its triple K5 must be one of N_s,N_t; the other special K5 is single-outside, forcing `b_s+b_t=4` and G11's composition to be four O vertices and seven H vertices. The corrected exact H-edge accounting is: K5 interiors 69/66/67 in x-in-O/two-double/triple cases, with extra H-H gadget edges `G_H=g_C`, `3+g_C`, `2+g_C` respectively. The corrected arithmetic replay passed. This is a necessary restriction, not a triple-placement closure.
+
+
+### Triple-special geometry and exact gap — 2026-10-29
+
+Within the corrected source accounting, the aligned triple-placement case is sharpened further. The triple K5 must be special; its companion special K5 is single-outside. The distinguished y must be H, or x together with the four H vertices of N_t\{y} forms a forbidden C-colored K5 in H. The four H vertices of N_t then occupy all four clique parts; x must be in y's K12 part. The two H vertices of the triple N_s occupy the other two K12 parts. Counting the nine extra gadget edges gives exactly five H-H edges, so `e_C(H)=67+5=72) and `g_C=3). Arithmetic replay returned `V47_CORRECTED_TYPEI_PLACEMENT_ARITHMETIC_OK`. This is a strict local normal form, not exclusion of the triple placement.
