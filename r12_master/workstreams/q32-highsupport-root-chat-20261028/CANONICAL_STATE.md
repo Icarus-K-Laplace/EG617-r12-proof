@@ -572,7 +572,7 @@ Under the all-Class-A allocation, exact T0-repeat endpoints are distinct within 
 
 ## Class-B zero-T0-surplus star-center incidence (2026-10-29)
 
-The exact x-in-H two-double source audit gives a further local filter. In the Class-B row \(y\in H,a=2\), \(g_C=2,t_C=0\), the two surplus edges form a star \(ys_j,ys_k\), one into each of the other two large tracks. Both are the unique \(P\)-edges incident to \(y\) on those two pair types, so \(y\) has no H-neighbor in any other large track. Since its own track is a \(K_{12}\) and \(\delta(H)\ge12\), \(y\) must have at least one H-neighbor in \(T_0\). Added this source-incidence condition to the common-P packing model. It filters Class-B star centers but does not close the full-support cell.
+In the Class-B source mode with x_C in T0 and both special factors double-outside, the y-in-H, a=2 row has g_C=2,t_C=0 and two surplus edges forming a star y-s_j,y-s_k into the other two large tracks. These are y's unique P edges on those pairs, so y has no H-neighbor in the other large tracks. Under the aligned zero-slack ledger, y is a residual vertex with total cross-track H-degree exactly one; therefore it must have exactly one H-neighbor in T0. This is a necessary source-incidence filter, not a contradiction.
 
 
 ## Class-B zero-T0-surplus star-center incidence (2026-10-29)
