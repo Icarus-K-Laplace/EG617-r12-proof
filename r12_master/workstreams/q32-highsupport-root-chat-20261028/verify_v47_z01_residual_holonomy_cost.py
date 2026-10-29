@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exhaustive residual holonomy-cost verifier for exact colors.
+"""Exhaustive residual holonomy-cost verifier for the seven-vertex subcase.
 
 The seven residual vertices are 0,1 / 2,3 / 4,5 in T1,T2,T3 and 6 in T0.
 A baseline has two disjoint matching edges between each pair of large parts
@@ -7,8 +7,10 @@ and one T0 edge into each large part: 64 baselines total. Extra C-edges must
 form a matching within each track pair, have size at most 3, and make the
 seven-vertex graph have independence number at most 2.
 
-This is the exact local model induced by the ten isolated transversal K4s
-and the residual one-factorizations. It is not a full Q32 completion solver.
+This is the exact local model only when all ten isolated Type-I K5s are
+single-outside and hence induce ten transversal K4s in H. The isolated-double
+branch has an eight-vertex residual and is audited separately. This is not a
+full Q32 completion solver.
 """
 from itertools import combinations, product
 from collections import Counter, defaultdict
