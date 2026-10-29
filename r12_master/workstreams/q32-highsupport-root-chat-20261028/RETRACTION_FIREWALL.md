@@ -223,3 +223,8 @@ The current theorem in V47_Z01_RESIDUAL_SIGNATURE_INJECTIVITY.md is stronger tha
 ## 19. Partial pair-projection multiplicity constraint (2026-10-29)
 
 For any residual pair key A×B on a large-track pair, a nonempty intersection with P_ij leaves only one of the two K2,2 perfect matchings available; hence the key cannot be shared by two exact colors. A duplicated key must be entirely P-free, and then exactly two colors use the complementary internal matchings. Sharing two pair projections would force equal full residual signatures, prohibited by the current all-mode signature-injectivity lemma. This constraint is local and necessary only; do not infer global common-P infeasibility from it.
+
+
+## 20. Projection-block binary encoding scope (2026-10-29)
+
+The new binary encoding in V47_Z01_SHARED_P_FACTOR_PACKING.md, Section 4.3.2, exactly models residual pair-set choices and K2,2 matching orientation conflicts with P_ij. It does not yet encode the complete global Type-I factorization, source modes, alpha constraints, or T0/degree ledger. Do not report it as a solved CSP or UNSAT certificate.
