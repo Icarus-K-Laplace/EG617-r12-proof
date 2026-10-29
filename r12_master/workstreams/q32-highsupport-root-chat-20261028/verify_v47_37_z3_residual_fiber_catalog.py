@@ -144,6 +144,47 @@ def check_double_track_floor():
         assert got == expected[profile], (profile, got, expected[profile])
     return expected
 
+def weighted_component_metrics(kind, n):
+    if kind == "K":
+        return 1, 0, [0]
+    if kind == "D":
+        return 2, 2, [2, 2]
+    if kind == "P":
+        return n, n-1, [1, 1] + [2]*(n-2)
+    if kind == "C":
+        return n, n, [2]*n
+    raise ValueError(kind)
+
+WEIGHTED_TYPES = [("K", 1), ("D", 2)] + [
+    ("P", n) for n in range(2, 8)
+] + [("C", n) for n in range(3, 8)]
+WEIGHTED_TYPES.sort(key=lambda t: (
+    t[1], {"K": 0, "D": 1, "P": 2, "C": 3}[t[0]]
+))
+
+def enumerate_outer_heavy_types():
+    found = set()
+    def rec(start, vertices, weight, degrees, chosen):
+        if vertices == 7:
+            ds = sorted(degrees)
+            if weight == 6 and ds in (
+                [0, 2, 2, 2, 2, 2, 2],
+                [1, 1, 2, 2, 2, 2, 2],
+            ):
+                found.add(tuple(sorted(chosen)))
+            return
+        if vertices > 7 or weight > 6:
+            return
+        for i in range(start, len(WEIGHTED_TYPES)):
+            kind, n = WEIGHTED_TYPES[i]
+            nv, ew, deg = weighted_component_metrics(kind, n)
+            if vertices + nv > 7 or weight + ew > 6:
+                continue
+            rec(i, vertices+nv, weight+ew, degrees+deg,
+                chosen+[f"{kind}{n}"])
+    rec(0, 0, 0, [], [])
+    return found
+
 def main():
     types = enumerate_component_types()
     assert types == set(EXPECTED), (types, set(EXPECTED))
@@ -183,8 +224,30 @@ def main():
         assert got == expected_double.get(signature, set()), (
             signature, got, expected_double.get(signature, set()))
     print("double-track-capable residual types: 2")
+
+    weighted = enumerate_outer_heavy_types()
+    expected_weighted = {
+        ("C3", "C3", "K1"),
+        ("C6", "K1"),
+        ("C4", "D2", "K1"),
+        ("D2", "D2", "D2", "K1"),
+        ("C3", "D2", "P2"),
+        ("C3", "P4"),
+        ("C4", "P3"),
+        ("C5", "P2"),
+        ("D2", "D2", "P3"),
+        ("D2", "P5"),
+        ("P7",),
+    }
+    assert weighted == expected_weighted, (weighted, expected_weighted)
+    one_isolate = {sig for sig in weighted if "K1" in sig}
+    two_endpoints = weighted - one_isolate
+    assert len(one_isolate) == 4 and len(two_endpoints) == 7
+    print("outer weighted-heavy graph types:", len(weighted))
+    print("  y=(2):", sorted(one_isolate))
+    print("  y=(1,1):", sorted(two_endpoints))
     print("V47_37_Z3_RESIDUAL_FIBER_CATALOG_OK")
-    print("Scope: local residual/fiber enumeration only; no Q32 closure.")
+    print("Scope: local residual/fiber and outer-heavy graph enumeration only; no Q32 closure.")
 
 if __name__ == "__main__":
     main()

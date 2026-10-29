@@ -194,3 +194,8 @@ In a synchronized transposition switch, all four common-track intersections are 
 ### z=3 exact double-track residual filter
 
 In the 3+7, z=3 cell, the global outer-track partition and the small-block residual partition are both clique partitions with profile in (3,3,1,0), (3,2,2,0), (3,2,1,1), (2,2,2,1). The exact compatibility catalog is V47_37_Z3_RESIDUAL_FIBER_CATALOG.md. A double-track vertex has no R-neighbors, so its global track fiber must be empty. Thus the global profile is (3,3,1,0) or (3,2,2,0), forcing H[R]=2C3+K1 or C3+P4. The small-map fiber pair for the double-track vertex must also have size sum at most three and be completely joined. This does not identify the two partitions or close the cell.
+
+
+### z=3 weighted outer-heavy graph
+
+The same z=3 catalog classifies the outer heavy graph exactly: if the residual-incidence excess \(y=2\) is concentrated in one block, that block is isolated and the other six block labels form cycles/doubled-edge components; if it is split \(1+1\), the two exceptional blocks are the endpoints of the unique path component. A switch duplicating a nonempty fiber can occur only at these exceptional blocks and costs at least the fiber size. No closure is claimed.

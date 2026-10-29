@@ -78,3 +78,34 @@ This table is a compatibility filter only. It does not assert that the listed do
 For a switch block whose common-track labels duplicate a fiber \(F_h\), the two singleton-track vertices both meet every point of \(F_h\). Hence the block's residual incidence excess is at least \(n_h\). Since \(\sum_i y_i=2\), a switch cannot duplicate a size-three fiber; a size-two duplicated fiber can occur in at most one block, and size-one duplicates consume the total budget at unit cost.
 
 The immediate remaining task is to couple this exact residual/fiber catalog to the seven blockwise source-label patterns, the at-most-two units of residual incidence excess, and the outer heavy-pair graph of total weight six. The catalog narrows the z=3 case but is **not** a contradiction or a Q32 closure.
+
+
+## 6. Exact outer weighted-heavy graph catalog
+
+Let \(W\) be the weighted graph on the seven outer block labels, with edge weight \(k_{ij}=e_H(Q_i,Q_j)-4\) on a heavy pair and no edge on a light pair. In the 3+7 cell,
+\[
+t_i^T+y_i=2,\quad \sum_i y_i=2,\quad
+\sum_{ij}k_{ij}=x_T=6.
+\]
+Thus the weighted degree of block \(i\) in \(W\) is \(2-y_i\). Since each weight is 1 or 2, every component of \(W\) is a unit-edge path, a unit-edge cycle, or a doubled edge \(D_2\) (two vertices joined by weight 2).
+
+There are exactly two degree-ledger cases:
+
+**Case A: one block has \(y_i=2\).** That block is isolated in \(W\); the other six vertices have weighted degree 2. The only component types are
+\[
+C_6+K_1,\quad 2C_3+K_1,\quad C_4+D_2+K_1,\quad 3D_2+K_1.
+\]
+
+**Case B: two blocks have \(y_i=1\).** Those are the two degree-one vertices of \(W\), hence the endpoints of its unique path component. The seven possibilities are
+\[
+P_7,\quad P_5+D_2,\quad P_4+C_3,\quad P_3+C_4,\quad
+P_3+2D_2,\quad P_2+C_5,\quad P_2+C_3+D_2.
+\]
+The verifier enumerates these weighted component multisets directly from seven vertices, total weight six, and the exact weighted-degree sequence.
+
+**Switch-budget consequence.** A switch duplicating a nonempty small-map fiber \(F_h\) costs at least \(n_h\) units of \(y_i\). Therefore:
+- in Case B, a nonempty duplicated fiber must have size 1 and the switch can occur only at one of the two path endpoints;
+- in Case A, a nonempty duplicated fiber has size at most 2 and the switch can occur only at the isolated block.
+Switches duplicating an empty fiber have zero residual-incidence cost and are not excluded by this statement.
+
+This weighted outer-graph catalog has not yet been coupled to the residual graph by the full incidence matrix. It is a further finite reduction, not a contradiction or Q32 closure.

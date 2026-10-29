@@ -695,3 +695,8 @@ The outside-component bijection forces corresponding vertices across tracks to b
 ## 2026-10-29 — exact z=3 residual/fiber catalog
 
 For the m=10 disconnected 3+7 cell at z=3, added V47_37_Z3_RESIDUAL_FIBER_CATALOG.md and its pure-Python verifier. The six residual graph types are enumerated exactly; each is paired with all compatible four-clique fiber profiles and labelled-partition counts. A double-track vertex forces the global outer-track profile to have an empty fiber, narrowing its residual type to 2C3+K1 or C3+P4; the small-map double-track pair is separately restricted by the complete-join floor. The z=3 cell remains OPEN; this is not a Q32 closure.
+
+
+### 2026-10-29 — z=3 outer weighted-heavy graph catalog
+
+Extended the exact z=3 verifier to enumerate the weighted heavy graph on seven outer blocks. It finds 11 component multisets: four for the \(y_i\) profile \(2+0+\cdots+0\), and seven for \(1+1+0+\cdots+0\). The two \(y_i=1\) blocks are the endpoints of the unique path component. This couples the switch-block budget to the outer graph's degree pattern; the z=3 cell remains OPEN.

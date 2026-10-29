@@ -602,3 +602,8 @@ The gap-saturation equality patterns plus the outside-component bijection force 
 ### z=3 residual/fiber frontier
 
 V47_37_Z3_RESIDUAL_FIBER_CATALOG.md supplies an exact finite local catalog for the m=10, 3+7, z=3 cell. If a double-track vertex exists, the global outer-track profile must have an empty fiber, leaving only 2C3+K1 and C3+P4 as residual types. The small-map fiber/pair choices are separately restricted. This is a branch-local dependency/filter, not a root contradiction.
+
+
+### z=3 outer weighted-heavy graph
+
+The residual/fiber catalog is now paired with an exact outer weighted-heavy graph catalog. The latter has four possibilities when one block has y_i=2, and seven when two blocks have y_i=1; the two latter blocks are the endpoints of the unique path component. Nonempty-fiber switch blocks must lie among those exceptional blocks. This remains a branch-local finite reduction.

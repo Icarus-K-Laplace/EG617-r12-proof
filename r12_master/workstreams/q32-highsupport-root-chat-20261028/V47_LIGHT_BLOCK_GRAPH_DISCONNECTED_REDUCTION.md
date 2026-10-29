@@ -231,3 +231,8 @@ Within the 3+7 split, the aligned z=0 and z=1 profile (2,2,2,1) cells are now CL
 The detailed local theorem is V47_37_Z3_RESIDUAL_FIBER_CATALOG.md; its pure-Python regression is verify_v47_37_z3_residual_fiber_catalog.py.
 
 For z=3, the residual graph has six edges and total residual degree deficit two. Exact component enumeration gives six types: C6+K1, 2C3+K1, P7, C3+P4, C4+P3, C5+P2. The exact clique-partition table couples each type to the only possible fiber profiles for both the small-block map and the outer-track assignment. In particular, a double-track vertex has no R-neighbors, so its global track must be empty; this restricts the global profile to (3,3,1,0) or (3,2,2,0), and therefore restricts the residual graph to 2C3+K1 or C3+P4. The verifier checks all component multisets and all 4^7 labelled fiber assignments. This is a structural filter, not a z=3 closure.
+
+
+## 16. Exact z=3 outer heavy graph
+
+The weighted heavy graph on the seven outer blocks has total weight six and weighted degrees \(2-y_i\). Since \(\sum y_i=2\), it has either one isolated block and six degree-two vertices, or two degree-one vertices and five degree-two vertices. Exact component enumeration yields four possibilities in the first case and seven in the second; see Section 6 of V47_37_Z3_RESIDUAL_FIBER_CATALOG.md and the companion verifier. In the two-endpoint case, the blocks with \(y_i=1\) are the endpoints of the unique path component. This restricts where a switch duplicating a nonempty residual fiber can occur, but does not close z=3.

@@ -723,3 +723,8 @@ Added V47_Z01_K6_CONTRADICTION.md. For any O-component C, the corresponding vert
 ### 2026-10-29 — z=3 exact residual/fiber catalog
 
 Added V47_37_Z3_RESIDUAL_FIBER_CATALOG.md and verify_v47_37_z3_residual_fiber_catalog.py. The verifier enumerates all eligible path/cycle component multisets on seven residual vertices and all 4^7 labelled clique-fiber assignments for the four allowed profiles. It recovers exactly six residual graph types and their compatible fiber profiles. The new analytic filter is that a double-track vertex has no R-neighbors, so the global track fiber containing it must be empty; this forces global profile (3,3,1,0) or (3,2,2,0), and residual type 2C3+K1 or C3+P4. Exact double-track small-fiber pair sizes are also enumerated. Tests passed in the local Python analysis runtime; no full Q32 solver run or closure is claimed.
+
+
+### 2026-10-29 — z=3 outer heavy graph classification
+
+Extended verify_v47_37_z3_residual_fiber_catalog.py with a pure-Python weighted component enumeration. The outer heavy graph has exactly 11 possible component multisets under total weight six and weighted-degree sequence (0,2,2,2,2,2,2) or (1,1,2,2,2,2,2). The two degree-one blocks are the endpoints of the unique path. This gives an exact placement restriction for switches duplicating nonempty fibers. All local checks passed in the analysis runtime; no global Q32 closure is claimed.
