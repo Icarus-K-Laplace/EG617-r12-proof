@@ -18,15 +18,15 @@ The degree ledger then gives
 \]
 where \(r_{ij}=12-e_{ij}\) and \(q_i=11-y_i\).
 
-Each of ten exact colors can take a locally admissible single-outside class-B pattern with \(g_C=2\), one large-pair surplus edge, and one T0-pair surplus edge. Choose four patterns on \((T_1T_2,T_0T_1)\), three on \((T_1T_3,T_0T_2)\), and three on \((T_2T_3,T_0T_3)\). Their aggregate surplus is
+A source-placement audit adds a complement law for the class-B, \(g_C=2,t_C=1\) pattern: an extra edge on \(T_0T_i\) must be paired with the large-pair extra on the complementary pair \(T_jT_k\), where \(\{i,j,k\}=\{1,2,3\}\). The corrected aggregate witness respects this law. Choose four patterns on \((T_2T_3,T_0T_1)\), four on \((T_1T_3,T_0T_2)\), and two on \((T_1T_2,T_0T_3)\). Their aggregate surplus is
 \[
-(4,3,3;4,3,3).
+(2,4,4;4,4,2).
 \]
-The nonexact color can then absorb the remaining aggregate capacities
+The remaining aggregate capacities are
 \[
-(4,6,6;0,1,0),
+(6,5,5;0,0,1),
 \]
-giving \(g_D=17\). Thus all scalar pair capacities, exact-color gap bounds, and the total 37-unit identity can hold simultaneously.
+giving \(g_D=17\). Thus even after imposing this source-derived pair-location constraint, all scalar pair capacities, exact-color gap bounds, and the total 37-unit identity can hold simultaneously. The witness still omits the actual endpoint labels in the common residual factors and is not a Q32 coloring.
 
 **This is not a Q32 coloring or an actual vertex-level completion.** It deliberately omits the shared endpoint labels of the common residual factors. It proves only that the aggregate budget inequalities and per-color pattern counts cannot by themselves close the branch.
 
@@ -76,6 +76,22 @@ For each exact color \(C\), introduce a mode bit:
 - **isolated-double mode:** nine isolated K4s and one isolated K3 lie outside the gadget; the residual gadget has profile \((2,2,2,2)\), a two-transversal-K4 baseline of 12 edges, and \(e(J_C)=12+g_C\). Use the separate eight-vertex audit. Its present enumerator is only a necessary relaxation; the source star/incidence restrictions still have to be imposed.
 
 Do not silently apply the seven-vertex theorem to a color in isolated-double mode.
+
+
+
+### 3.1. Source complement law for class B with \((g_C,t_C)=(2,1)\)
+
+Assume the all-isolated-single-outside mode and a class-B baseline. The T0 attachments split across the two large-track triangles. If \(x_C\in O\), or if the source placement is triple-outside, the residual T0 singleton belongs to the single-outside special \(K_5\), so all three baseline T0 attachments meet the same large-track triangle; that is class A, not B. Thus class B forces \(x_C\in T_0\) and the two-double placement, with both special \(K_5\) factors double-outside.
+
+Let \(y\in N_t\). If \(y\in O\), the three H-vertices of \(N_t\setminus\{y\}\) already give \(x_C\) three H-neighbors, and \(t_C=1\) allows only one further H-neighbor; the source H-edge count then gives \(g_C=1\), not 2. Hence \(y\in H\). Write \(i\) for the large track containing \(y\), and \(j\) for the large track containing the unique H-vertex of \(A_0\). Since both special factors are double-outside, \(N_s\cap H\) and \(N_t\cap H\) are triangles, one vertex in each of \(T_1,T_2,T_3\).
+
+The T0 point \(x_C\) is adjacent to the two H-vertices of \(N_t\setminus\{y\}\) and to the H-vertices of \(N_s\setminus A_0\). The condition \(t_C=1\) means \(d_C(x_C,H)=4\), so \(A_0\) contains exactly one H-vertex. If \(i=j\), neither of these two source neighborhoods contains a vertex in \(T_i\), violating the balanced-coloring requirement that every non-target color meet every large track from \(x_C\). Thus \(i\ne j\). The remaining large track \(T_k\) is the unique track in which \(x_C\) has two C-neighbors, so the T0 repeat edge lies on \(T_0T_k\). The only extra H-H gadget edge is \(y\)--the H-vertex of \(A_0\), which lies on \(T_iT_j\), the complementary large-track pair.
+
+Therefore the source-correct pair-location law is
+\[
+\boxed{T_0T_k\text{ repeat}\ \Longrightarrow\ T_iT_j\text{ repeat},\quad \{i,j,k\}=\{1,2,3\}.}
+\]
+The companion aggregate verifier now uses only these three complementary location patterns. This is a necessary source-incidence constraint, not a global completion theorem.
 
 ## 4. Finite exact model to build
 
