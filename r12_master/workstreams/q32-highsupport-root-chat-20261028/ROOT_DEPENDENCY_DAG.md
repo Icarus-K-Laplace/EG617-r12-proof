@@ -331,3 +331,10 @@ The previously referenced `verify_v47_z4_empty_fiber_escape.py` was not present 
 ### 8.9 Balanced-coloring K13 closure inside z=1
 
 Within the already-aligned z=1, (3,2,1,1) cell, a size-three fiber plus its ten aligned pivot-track vertices forms a target-color K13. This contradicts the balanced-coloring condition that every 13-set contains all colors. Thus this residual profile is closed; z=1, (2,2,2,1), and z=0, (2,2,2,1), remain open. No root promotion.
+
+
+### 14c. Balanced-coloring cross-track ledger for aligned z=0,1
+
+Added `V47_Z01_BALANCED_COLORING_CROSS_TRACK_LEDGER.md`. The aligned target-color tracks have sizes 12,12,12,11. Every pair of K12 tracks has H-edges forming a matching, because a K12 plus any outside vertex is a 13-set that must contain all eleven non-target colors. For the K11--K12 pairs, the same bound is only asserted on the K11 side.
+
+The exact degree ledger forces `22+E_0` H edges incident to the K11 track and `10-E_0` among the three K12 tracks, where `E_0 in {0,1,2,3}`. The arithmetic verifier checked 729 excess triples and 28,107 necessary aggregate states. This does not close either aligned low-z cell.
