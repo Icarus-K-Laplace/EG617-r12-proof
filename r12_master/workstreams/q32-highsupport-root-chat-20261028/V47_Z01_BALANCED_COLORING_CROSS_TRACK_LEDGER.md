@@ -112,3 +112,27 @@ Thus each K12--K12 pair has at least three unmatched vertices on each side. More
 so the color-repeat conservation in Section 6 forces at least that many repeated-color vertices on each side of the pair.
 
 This does not close the aggregate system, but it rules out any large-track pair with 10, 11, or 12 H-edges in the aligned z=0,1 cells.
+
+
+## 7. Common residual factor across all three large-track pairs
+
+For each pair \(T_i,T_j\), choose the Hall matchings \(M_{C,ij}\) simultaneously for the eleven non-target colors, and let \(P_{ij}\) be their complementary perfect matching. The choice of \(P_{ij}\) is not canonical, but **once the choices are fixed, the same \(P_{ij}\) is shared by all colors**. Every H-edge lies in \(P_{ij}\). Define the repeated-color set
+\[
+S_{ij}=P_{ij}\setminus E_H(T_i,T_j).
+\]
+Then
+\[
+|S_{ij}|=12-e_H(T_i,T_j)=r_{ij},
+\qquad
+\sum_{1\le i<j\le3}|S_{ij}|=26+E_0.
+\]
+
+Each \(P_{ij}\) is a perfect matching. Consequently the union \(S=S_{12}\cup S_{13}\cup S_{23}\) on the 36 vertices of \(T_1\cup T_2\cup T_3\) satisfies the exact vertexwise identity
+\[
+\boxed{d_S(v)=2-d_{H[T_1\cup T_2\cup T_3]}(v)\le2.}
+\]
+In particular, the repeated-color edges on the three large-pair tracks form one common graph of maximum degree two, not three independent capacity lists.
+
+Every edge of \(S_{ij}\) is assigned to exactly one repeated non-target color. For an exact Type-I color \(C\), any edge assigned to \(C\) must have both endpoints in its residual gadget set, because the ten isolated K5 components have no C-edges to the gadget. In single-outside mode this is the (2,2,2,1) residual; in isolated-double mode it is the separate (2,2,2,2) residual. The ten-color aggregate witness in verify_v47_z01_aggregate_budget_witness.py satisfies the scalar counts but does not enforce these actual endpoint labels; it therefore is not a global completion.
+
+This common max-degree-two edge-packing is the next constraint for the exact vertex-labelled CSP in V47_Z01_SHARED_P_FACTOR_PACKING.md. It is a stronger structural formulation, not a contradiction by itself.
