@@ -331,3 +331,6 @@ The referenced `verify_v47_z4_empty_fiber_escape.py` was absent at the start of 
 ### z=1 triple-fiber subcase closed by balanced-coloring K13 (2026-10-28)
 
 The z=0,1 alignment theorem plus the `(3,2,1,1)` fiber profile would create a fully aligned track with `10+3=13) vertices forming a target-color K13. This contradicts the original balanced-coloring premise that every 13-set contains every color (equivalently, each non-target color has alpha at most12). Thus z=1, profile (3,2,1,1), is CLOSED. Remaining low-z cells are z=0 profile (2,2,2,1) and z=1 profile (2,2,2,1) with one cross-fiber residual edge. More generally, any aligned 3+7 completion with a size-three residual fiber is impossible; this does not close z=2,3,4 where alignment is not established.
+
+
+The retraction is backed by `verify_v47_37_switch_endpoint_counterexample.py`, which reconstructs the normalized 12-vertex switch witness and exhaustively checks its independence number: `alpha=4), 63 maximum independent sets, output `V47_37_SWITCH_ENDPOINT_COUNTEREXAMPLE_REPRODUCED`. This verifies the counterexample to the old inference, not any global Q32 conclusion.
