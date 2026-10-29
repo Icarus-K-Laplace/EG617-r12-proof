@@ -445,3 +445,5 @@ The capped holonomy verifier now checks the exact distribution of surplus edges 
 ### 14k. Aggregate exact-color large-pair surplus lower bound
 
 Section 6 of `V47_T0_POINTWISE_COLOR_SATURATION.md` derives `L_exact=26+E0-(g_D-t_D)` for the total exact-color surplus on the three K12--K12 pairs. Since `g_D<=19` and `t_D>=max(0,1-E0)`, the lower bounds for `E0=0,1,2,3` are respectively 8,8,9,10. This gives a global necessary budget to combine with local holonomy surplus-location constraints; it does not close Q32.
+
+The large-pair budget also has the conditional form `L_exact>=27-g_D`, because the ten exact colors contribute at most 10 T0 surpluses. Combined with the E0 bound, `L_exact>=max(27-g_D,8,7+E0)`. This is most restrictive when g_D is small (e.g. g_D=7 forces L_exact>=20).
