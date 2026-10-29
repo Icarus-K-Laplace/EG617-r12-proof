@@ -356,3 +356,8 @@ The aligned z=0,1 cross-track ledger further gives `e_H(T_i,T_j)<=9-E_0-E_k<=9` 
 ### 8.12 Source correction: Type-I special K5 accounting
 
 The prior entry asserting that the triple-outside Type-I placement is eliminated in the aligned z=0,1 cell is **superseded**. The Type-I profile has twelve K5 factors, comprising ten isolated components and two special K5 cliques inside G11. A triple-outside K5 is ruled out only if it is isolated. If triple placement occurs, it must be one of the two special K5s; the other special K5 is single-outside, forcing `b_s+b_t=4` and G11 composition (7 H,4 O). The source-correct gap ledger is `G_H=g_C`, `3+g_C`, `2+g_C` for x-in-O, two-double, and triple placements respectively. This correction removes the claimed closure; Q32 remains OPEN.
+
+
+### 8.13 Aligned triple-special local normal form
+
+The corrected Type-I audit now pins any triple placement in the aligned low-z cell to: `b_s+b_t=4), G11 with seven H and four O vertices, y in H, x and y in the same K12 part, the two H vertices of the triple special K5 in the other two K12 parts, and `g_C=3). The source arithmetic replay passes. This does not close the triple row or either low-z cell; root remains OPEN / NOT_CERTIFIED.
