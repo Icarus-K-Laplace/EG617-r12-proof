@@ -23,7 +23,7 @@ The balanced-coloring contract says every 13-set contains every color. Equivalen
 
 **Lemma 2.2.** For each size-12 track T_i, every vertex v in T_0 has at most one H-neighbor in T_i.
 
-The same 13-set argument applies to T_i union {v}; no symmetric degree-one claim is made for vertices on the size-12 side of the T_0--T_i pair. This asymmetry matters and must not be silently strengthened to a matching.
+The same 13-set argument does not give a symmetric degree-one claim for vertices on the size-12 side of the T_0--T_i pair. This is the generic lemma only; the additional aligned zero-slack degree contract in Section 3 independently gives the missing bound, so the pair becomes a matching only after that stronger contract is invoked.
 
 ## 3. Exact vertex cross-degree ledger
 
@@ -32,6 +32,8 @@ Every outer pivot vertex and every residual vertex has H-degree exactly 12 in th
 Thus:
 - every outer/residual vertex in T_1,T_2,T_3 has cross-track degree exactly 1;
 - every outer/residual vertex in T_0 has cross-track degree exactly 2.
+
+In particular, under this aligned zero-slack contract, for each (v\in T_i) with (i\in\{1,2,3\}), the H-degree from v to T0 is at most one. Combined with Lemma 2.2, this means H[T0,T_i] is a matching on both sides in this contract. The T_i-side bound comes from the total cross-track degree equation above, not from the generic 13-set lemma.
 
 For a small-block vertex A_h in small block A, let e_A(h) be the number of extra A-to-outer edges incident to it. The degree equation is
 `d_H(A_h)=9+e_A(h)+n_h=12+epsilon_A(h)`,
