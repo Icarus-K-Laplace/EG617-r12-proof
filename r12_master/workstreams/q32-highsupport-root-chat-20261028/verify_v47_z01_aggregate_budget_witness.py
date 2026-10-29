@@ -2,9 +2,9 @@
 """Audit that scalar track-pair budgets alone do not close aligned z=0,1 Q32.
 
 The witness is deliberately an aggregate relaxation, not a graph completion:
-it respects the exact degree-ledger equations and uses ten locally admissible
-single-outside class-B patterns, but it does not identify actual vertices or
-enforce the common-P endpoint packing across colors.
+it respects the exact degree-ledger equations and uses ten copies of explicit
+source-realizable local class-B modes, but it does not identify actual vertices
+or enforce the common-P endpoint packing across colors.
 """
 from itertools import combinations, product
 from collections import Counter
