@@ -104,19 +104,28 @@ For each exact color \(C\):
 The model must preserve choice-dependence of each \(P_{ij}\): different selected Hall matchings can induce different complementary perfect matchings. No fixed residual factor may be assumed canonical.
 
 
-## 4.1 Vertex-labelled common-P relaxation witness
+## 4.1 Vertex-labelled owner-only relaxation witness
 
-verify_v47_z01_vertex_labelled_common_p_witness.py now constructs a fully labelled witness for the **shared-P and local-residual constraints** in the E0=0 scalar state. The 36 large-track vertices are arranged into six disjoint 6-cycles, so each \(P_{ij}\) is a perfect matching and the union \(P_{12}\cup P_{13}\cup P_{23}\) has degree two at every vertex. Each exact color is assigned a distinct T0 vertex and a source Class-A K4+K3 residual gadget with \((g_C,t_C)=(2,1)\), \(\alpha(J_C)=2\), and one large-pair repeat edge on the same track as its T0 repeat.
+verify_v47_z01_vertex_labelled_common_p_witness.py constructs a labelled **owner-only relaxation** in the E0=0 scalar state. The 36 large-track vertices are arranged into six disjoint 6-cycles, so each P_ij is a perfect matching and their union has degree two at every vertex. Ten distinct T0 vertices are assigned to ten individual source Class-A K4+K3 residual gadgets with (g_C,t_C)=(2,1) and alpha(J_C)=2. The H / exact-repeat / D-repeat edge counts are:
+- large-pair H=(4,3,3), exact repeats=(7,0,3), D repeats=(1,9,6);
+- T0 H edges=(7,7,8), T0 repeats=(4,4,3);
+- ten individual exact gaps equal 2, and g_D=17.
 
-The witness reproduces:
-- large-pair H counts \((4,3,3)\), exact-repeat counts \((7,0,3)\), and D-repeat counts \((1,9,6)\);
-- T0 H-edge counts \((7,7,8)\) and repeat counts \((4,4,3)\);
-- ten exact colors with gap 2 and the nonexact color with \(g_D=17\).
+The construction passes these local and aggregate checks, but it is **not a feasible common-P color-matching packing**: it assigns three exact colors to each of three residual 6-cycles and one color to a fourth. Colors sharing the same residual six vertices require the same six complementary baseline edges on those vertices, contradicting cross-color edge-disjointness. The verifier now reports nine colliding color pairs and 36 duplicate baseline-edge claims. This is an intentionally weakened owner-only witness, useful for exposing the missing constraint, not evidence that the full endpoint packing is feasible.
 
-A clean independent replay of the construction returned VERTEX_LABELLED_COMMON_P_RELAXATION_WITNESS_OK; the local source gadgets all have independence number 2. This is a stronger counterexample to closing the branch using only aggregate and common-P endpoint constraints.
+## 4.2 Pair-projection injectivity lemma
 
-**Scope boundary:** the witness does not construct the eleven simultaneous matchings \(M_{C,ij}\) on all 36 vertices, nor prove that each color's complete union of matchings is a triangle factor with ten isolated K4 components. Those simultaneous triangle-factorization and Type-I incidence constraints are the next missing bridge. The witness is not a full source-realizable Q32 coloring.
+Let C be an exact color with a large-pair repeat edge e in S_ij. By the source contract, both endpoints of e lie in R_i(C) and R_j(C), so P_ij contains at least one edge inside the 2-by-2 bipartite block R_i(C) x R_j(C). There are exactly two perfect matchings on this block, and they partition its four edges. Therefore at most one of those perfect matchings is disjoint from P_ij. The restriction of M_C,ij to this block is consequently uniquely determined by the residual pair (R_i(C),R_j(C)) and P_ij.
 
+If another exact color C' had the same two residual subsets on tracks i,j, its M_C',ij restriction would have to be the same matching, violating edge-disjointness. Hence:
+
+\[
+\boxed{\text{If C owns an }S_{ij}\text{ edge, then its residual pair }(R_i(C),R_j(C))\text{ is unique among exact colors.}}
+\]
+
+This is a valid cross-color constraint without assuming that a color's six residual vertices form a component of the common P graph. It is necessary but not by itself a contradiction.
+
+The remaining bridge is to impose pair-projection injectivity, all cross-color matching edge-disjointness, and the complete triangle-factor / Type-I incidence constraints simultaneously. The owner-only witness is not a full source-realizable Q32 coloring.
 ## 5. Current proof frontier and audit gate
 
 - Non-full-support rows \(v=45,46\), \(m=8,9,10\), are closed in this workstream under the source-correct multiplicity theorem, current nonexact degree floors, and the no-core-only degree-four lemma. The \(v=44,m=8,9\) branch belongs to the sibling workstream.
