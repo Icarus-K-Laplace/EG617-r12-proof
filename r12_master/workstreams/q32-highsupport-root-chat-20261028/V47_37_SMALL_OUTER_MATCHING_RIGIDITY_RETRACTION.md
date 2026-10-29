@@ -16,3 +16,8 @@ The seven-vertex minimum-degree-four cut-endpoint lemma remains correct, but its
 The small-block degree ledger remains valid: `epsilon_s=e_A(s)+n_s-3>=0`, `sum epsilon_s=2`, `e_A(s)=3-n_s+epsilon_s`, and `sum e_A(s)=7`. The 4,5,5 local switch theorem and verifier remain valid. The independent z=0,1 track-partition alignment theorem is not withdrawn by this audit; its separate proof must stand on its own.
 
 No global Q32 closure is claimed. EG617(r=12) remains **OPEN / NOT_CERTIFIED**.
+
+
+## 6. Executable counterexample replay
+
+Added `verify_v47_37_switch_endpoint_counterexample.py`. It reconstructs the 12-vertex local switch graph and checks all 4096 vertex subsets, obtaining exact independence number 4 and 63 maximum independent sets. Output: `V47_37_SWITCH_ENDPOINT_COUNTEREXAMPLE_REPRODUCED`.
