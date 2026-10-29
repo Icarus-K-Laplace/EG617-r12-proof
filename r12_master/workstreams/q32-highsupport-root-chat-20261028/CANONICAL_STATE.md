@@ -388,3 +388,10 @@ Writing G_H for the nine additional non-K5 gadget edges with both endpoints in H
 ### Valid refinement after the Type-I correction: triple placement geometry and exact gap
 
 The corrected `V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM.md` now further proves that any surviving triple placement in the aligned low-z cell has a fixed local geometry. The triple special K5 has three O and two H vertices; the other special K5 is single-outside. The distinguished `y` must be in H, otherwise `x union (N_t minus {y})` would be a C-colored K5 wholly in H. The four H vertices of N_t occupy one each of X_0,X_1,X_2,X_3, and x lies in the same K12 part as y. The two H vertices of N_s lie in the other two K12 parts. This forces `b_s+b_t=4), G11=(7 H,4 O), `G_H=5), and `g_C=3). The corrected arithmetic replay passed. Triple placement remains OPEN, but is now constrained to this exact local configuration and consumes three units of the global gap budget.
+
+
+### New aligned-cell gap-cap theorem and nonexact-color budget (2026-10-29)
+
+Section 6–7 of the corrected `V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM.md` proves that every exact color in the aligned z=0,1 cell has `g_C<=3`, stronger than the source-level caps 4/5/6. For x_C in O, only y--A_0 edges can contribute H-H gadget edges, and at most three N_s H vertices can be placed in A_0 away from y's target part. For x_C in H two-double, the b_s+b_t=2 case is impossible; y in H gives `g_C=6-(b_s+b_t)<=3), while y in O forces N_t double and gives `g_C<=3). Triple placement has `g_C=3).
+
+Since the total gap is 37 over eleven non-target colors, the unique nonexact color D must have `g_D>=7`, hence `e_D(H)>=76`. Conversely each of the 14 O vertices has at least one D edge into each of the three K12 parts, so `e_D(H,O)>=42); with `e(D)=132`, this yields `g_D<=21`, `e_D(H)<=90`, and `mu_D<=21-g_D<=14`. Therefore exact colors contribute 16–30 units of the gap and at least six exact colors have positive gap. Arithmetic replay passed; the interval is a necessary budget, not a contradiction.
