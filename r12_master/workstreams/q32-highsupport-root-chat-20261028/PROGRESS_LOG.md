@@ -480,9 +480,7 @@ The sound conclusion is limited to the T0-centered subcase: if `x_C,y in T0`, ea
 
 ### Placement-sensitive T0 repeat-owner bound — 2026-10-29
 
-The T0 saturation identity gives the global cap t_C<=2 for each exact color. A further case split now shows t_C<=1 in both (i) the all-isolated-single seven-vertex branch and (ii) the isolated-double two-K4 branches: x_C in O, or x_C in H with y in O. In the latter branches, all surplus H-H gadget edges form a star centered at y or x_C and can touch at most one of the two T0 residual vertices; if the center itself lies in T0, its degree cap forces g_C<=1.
-
-The only isolated-double placement where t_C=2 remains possible is x_C in H, y in H, two-double, with b_s+b_t=3 and g_C=3. This is the special K4 + special K3 + x_C residual and must remain a separate finite case. Updated V47_T0_POINTWISE_COLOR_SATURATION.md and its verifier. The one-extra-edge cap summed over all three T0--Ti pairs is still specific to the seven-vertex branch; in the eight-vertex two-K4 branch the cap is per T0 vertex. No contradiction or Q32 closure is claimed.
+The T0 saturation identity plus the full Type-I placement split now proves t_C<=1 for every exact color. This holds in the all-isolated-single seven-vertex branch and the isolated-double two-K4 branches, where the gadget extras form a star centered at y or x_C. It also holds in the exceptional isolated-double two-double placement x_C in H, y in H: if exactly one of x_C,y lies in T0, an x_C--(N_t minus {y}) edge would lie inside a target clique; if both lie in T0, their degrees would be 3+(3-k) and 3+k for k=|A0 intersect H|, impossible to keep both at most four. Hence x_C,y lie in large tracks, the T0 vertex in the special K3 has degree 3, and the T0 vertex in the special K4 has degree 4. This exceptional case has b_s+b_t=3 and g_C=3, but t_C=1, not 2. The total one-extra-edge cap across all three T0--Ti pairs is therefore global for exact colors. The verifier now checks the case-split arithmetic; no contradiction or Q32 closure is claimed.
 
 
 ### Exact surplus-location split by residual holonomy class (2026-10-29)
