@@ -52,6 +52,16 @@ g_C=6-(b_s+b_t)=3.
 \]
 The H-part of \(N_s\) is a \(K_3\), the H-part of \(N_t\) is a \(K_4\), and the gadget supplies six H-H edges: three from \(x_C\) to \(N_t\setminus\{y\}\), plus one edge from \(x_C\) or \(y\) to each of the three H-vertices of \(N_s\). This \(g_C=3\) source geometry must be handled separately; it is not covered by the two-\(K_4\) baseline count alone.
 
+### 3.3 T0 exclusion in the exceptional \(x_C\in H,y\in H\) branch
+
+In the exceptional \(x_C\in H,y\in H\) branch of Section 3.2, \(x_C\) and \(y\) lie in the same target track: \(x_C\) is C-adjacent to all three H-vertices of \(N_t\setminus\{y\}\), and those three vertices occupy the other three target tracks.
+
+They cannot lie in \(T_0\). If both were in \(T_0\), then \(d_C(x_C,H)\ge3\) from the three edges to \(N_t\setminus\{y\}\), and \(d_C(y,H)\ge3\) from the three edges within the H-part of \(N_t\). The three additional gadget edges from \(x_C\) or \(y\) to the three H-vertices of \(N_s\) must each be assigned to one of these two centers. Pointwise saturation caps each T0 color-degree at four, so each center can receive at most one of those extra edges. Their combined capacity is two, but three edges must be assigned: contradiction.
+
+Therefore \(x_C,y\in T_k\) for some large track \(T_k\), not \(T_0\). The H-part of \(N_t\) contributes one T0 vertex, and the residual profile is \((2,2,2,2)\), so the H-part \(K_3\) of \(N_s\) must contain the second T0 vertex. That T0 vertex has two C-neighbors within \(N_s\) and needs its unique gadget edge to \(x_C\) or \(y\) to attain the required C-degree at least three.
+
+This closes only the T0 placement of the exceptional subcase; it does not eliminate the \(x_C\in H,y\in H\) branch itself.
+
 ## 4. Exact count of the two-\(K_4\) local relaxation with T0 degree cap
 
 For the two-\(K_4\) subcases above, each \(K_4\) is transversal across \(T_1,T_2,T_3,T_0\). There are eight labeled unordered two-\(K_4\) bases (choose which of the two vertices in each track belongs to the first \(K_4\), modulo swapping the two \(K_4\)s). Between the two \(K_4\)s there are 12 allowed cross-part edges; the four same-track pairs are forbidden because each track is a target-color clique.
