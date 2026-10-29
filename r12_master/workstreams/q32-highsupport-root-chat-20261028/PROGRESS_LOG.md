@@ -447,3 +447,6 @@ Each exact color's ten isolated K5 components yield ten transversal K4s in H, le
 Exhaustive enumeration classified 8 baselines as aligned K4+K3 (alpha2), 24 as aligned-large-pair but T0-misaligned (alpha3), 24 as six-cycle holonomy with alpha3, and 8 as six-cycle holonomy with alpha4. The minimum extra-edge costs to reach alpha<=2 are respectively 0,1,2,3. Repair counts at minimum cost are 8,24,72,72. Full repair counts were also checked for gaps 0..3. The equivalent Python enumeration returned `V47_Z01_RESIDUAL_HOLONOMY_COST_OK`.
 
 New consequence: for every exact color, nontrivial six-cycle holonomy requires g_C>=2; the worst six-cycle attachment requires g_C=3. Hence g_C<=1 forces aligned large-part matching composition. This remains a local result, not a full Q32 contradiction.
+
+
+The residual holonomy verifier now checks the exact repair shapes. In class C, every minimum two-edge repair includes a mandatory edge joining the common pair of two independent triples, plus one of three edges in the disjoint large-track triple. In class D, the unique independent 4-set is T0 plus a transversal triple V; T0 is attached in the baseline to the complementary triple U. Each of the nine minimum repairs uses one edge inside U, one T0-to-V edge, and the edge joining the other two vertices of V.
