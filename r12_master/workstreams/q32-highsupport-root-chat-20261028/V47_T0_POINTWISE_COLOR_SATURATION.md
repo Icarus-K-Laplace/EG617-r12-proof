@@ -59,6 +59,22 @@ for every exact color C.
 
 This is a per-color capacity bound on who can own the degree-four T0 vertices. It is not, by itself, a contradiction: the nonexact color may own some or all of the \(11-E_0\) vertices.
 
+
+There is also an exact surplus identity. Since each color C has at least one edge from every T0 vertex into each of the three K12 tracks, a degree-three T0 vertex contributes one edge to each T0--K12 pair, while a degree-four vertex contributes one extra edge on exactly one such pair. Hence
+\[
+\sum_{i=1}^3 \bigl(e_C(T_0,T_i)-11\bigr)=t_C.
+\]
+For each K12--K12 pair, Hall's theorem gives \(e_C(T_i,T_j)\ge12\). Therefore
+\[
+\boxed{g_C=e_C(H)-69
+=t_C+\sum_{1\le i<j\le3}\bigl(e_C(T_i,T_j)-12\bigr)\ge t_C.}
+\]
+Combining the source Type-I capacity with this identity gives \(t_C\le\min(2,g_C)\) for every exact color. Summing over all eleven colors also recovers
+\[
+\sum_C(g_C-t_C)=37-(11-E_0)=26+E_0,
+\]
+the total surplus on the three K12--K12 pairs.
+
 ## 4. Finite aggregate consequences
 
 Write \(t_D\) for the number of degree-four T0 vertices owned by the unique nonexact color D. Then
