@@ -550,6 +550,12 @@ Added `V47_Z01_TWO_DOUBLE_SOURCE_PATTERN_AUDIT.md` and its exact verifier. After
 
 A further audit found that the prior owner-only common-P construction has 20 direct P_0i / own-K4-baseline overlaps (two for each of ten exact colors). Those edges cannot lie in P_0i, which is defined as the complement of all selected color matchings. The witness script is now a retraction audit, not a success certificate. The separate residual-signature audit still finds 9 colliding color pairs and 36 duplicate baseline-edge claims. Both failures are recorded; the Q32 root remains OPEN / NOT_CERTIFIED.
 
-### T0--Ti omitted-vertex conservation — 2026-10-29
+### T0--Ti omitted-vertex conservation — corrected degree-side audit (2026-10-29)
 
-Derived the exact identity `d_P0i(v)=#{C:z_i(C)=v}`, where z_i(C) is the unique T_i vertex missed by the selected color matching M_C,0i. It follows directly because 11 color matchings partition K11,12 with P0i and each selected matching saturates T0. In the single-T0-residual seven-vertex Type-I mode, each exact C-owned T0 repeat endpoint is its omitted vertex; canceling those owners gives `# exact nonrepeat omissions + 1[D omits v] = h_i(v)+r_D(v)`. Therefore nonrepeat exact omissions at a track vertex are at most one except at D-repeat endpoints. The cancellation is explicitly not claimed for the eight-vertex isolated-double mode. This sharpens the endpoint-labelled CSP but does not close Q32.
+The universal omitted-vertex identity remains valid: d_P0i(v)=#{C:z_i(C)=v}. In the seven-vertex single-T0-residual Type-I mode, an exact color's own T0 repeat edge ending at v forces its omitted vertex to be v. After cancellation, the valid pointwise relation is
+n_i(v)+1[z_i(D)=v]=h_i(v)+r_i^D(v),
+where h_i(v) is the actual number of H edges from v∈T_i to T0 and r_i^D(v) is the D-repeat endpoint multiplicity.
+
+Audit correction: the prior note treated h_i(v) as at most one and inferred injectivity of exact nonrepeat omissions. This is invalid because the balanced-coloring lemma only bounds H neighbors at each T0 vertex, not at each T_i vertex. The injectivity claim is withdrawn; the isolated-double mode remains outside the cancellation lemma.
+
+Added verify_v47_z01_t0_omission_conservation.py. Its independent endpoint-profile replay passes for E0=0 scalar counts y=(7,7,8), exact T0 repeats=(4,3,3), D repeats=(0,1,0), enumerating 148,512 / 2,015,520 / 381,888 profiles for T1/T2/T3. It exhibits endpoint-only relaxations with six or seven exact nonrepeat colors omitting the same vertex, so the conservation identity alone does not force injectivity. This is a scope correction and a better-defined CSP constraint, not a Q32 closure.
