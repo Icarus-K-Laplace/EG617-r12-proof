@@ -393,3 +393,8 @@ Within the corrected source accounting, the aligned triple-placement case is sha
 The corrected aligned-cell analysis now gives `g_C<=3) for every exact color. In the x_C-in-O case only y--A_0 edges can be H-H; in the two-double x_C-in-H case the both-special-single subcase is impossible, while all surviving subcases have `g_C<=3); triple placement has exact `g_C=3).
 
 With ten exact colors and total gap 37, the unique nonexact color has `7<=g_D<=21), so `76<=e_D(H)<=90). The upper bound uses the 14 O vertices: each must have at least one D edge into each of the three K12 cliques, giving at least42 H-O D-edges; the 132-edge total then yields `g_D<=21). Thus at least six exact colors have positive gap. The updated arithmetic replay passed. The remaining nonexact interval is still feasible on these counts alone.
+
+
+### Nonexact color: sharpened to g_D in [7,19], e_D(H) in [76,88]
+
+Added the shell-independent-set argument for the unique 132-edge color D. Since p has no D-edge to the 13-point shell A and alpha(D)<=12, alpha(D[A])<=11; therefore D[A] has at least p_11(13)=2 edges. Combined with e_D(H,O)>=42 and e(D)=132, this improves the previous necessary range to `7<=g_D<=19`, `76<=e_D(H)<=88`, `2<=mu_D<=14). The ten exact colors must contribute at least18 of the 37 gap units, so at least six have positive gap. Arithmetic replay passed; no contradiction yet.
