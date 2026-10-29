@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exhaustive 7-vertex catalog for aligned exact-color residual graphs.
+"""Exhaustive 7-vertex catalog for the conditional aligned exact-color residual subcase.
 
 Vertices 0,1 / 2,3 / 4,5 are the residual pairs in T1,T2,T3;
 vertex 6 is the singleton residual vertex in T0. Edges within a track
@@ -8,8 +8,10 @@ alpha <= 2, degree >=2 at the six large-track vertices, and degree >=3
 at the T0 vertex. Also test whether each graph contains a transversal
 K4 plus a K3 on the three large tracks.
 
-This is a necessary local relaxation only; it does not encode the full
-Type-I gadget incidence constraints or certify global Q32 infeasibility.
+This catalog applies only when all ten isolated Type-I K5 components are
+single-outside. A source-correct isolated-double placement has an 8-vertex
+residual and is audited separately. This is a necessary local relaxation only;
+it does not certify global Q32 infeasibility.
 """
 from itertools import combinations, product
 from collections import Counter
