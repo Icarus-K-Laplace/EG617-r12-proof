@@ -593,3 +593,8 @@ Added a solver-ready binary encoding to V47_Z01_SHARED_P_FACTOR_PACKING.md, Sect
 ### Projection encoding edge-conflict audit (2026-10-29)
 
 A follow-up audit caught an incompleteness in the first solver-ready encoding: key-local orientation occupancy alone does not prevent two different residual pair blocks from overlapping in an actual edge. Section 4.3.2 of V47_Z01_SHARED_P_FACTOR_PACKING.md now adds the required edge-level constraint, for every actual edge e in T_i×T_j, summing all selected orientations across every color and every pair key containing e to at most one. Keep both constraints: key-local occupancy handles duplicate projections; edge-level occupancy handles overlapping but nonidentical blocks. The encoding is still a local projection layer, not a complete CSP or Q32 closure.
+
+
+### Cross-key edge-overlap regression (2026-10-29)
+
+Extended verify_v47_z01_partial_projection_packing.py with a concrete 3×3 toy regression: two distinct residual K2,2 blocks can each choose a matching orientation disjoint from the same global P perfect matching, yet those chosen orientations share an actual edge. The example passes all key-local checks but violates cross-color edge-disjointness, confirming that the newly added edge-level occupancy inequality is essential. The toy replay passed independently; it is a model-audit check, not a Q32 graph witness.
