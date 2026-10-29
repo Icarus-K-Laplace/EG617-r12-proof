@@ -52,15 +52,21 @@ g_C=6-(b_s+b_t)=3.
 \]
 The H-part of \(N_s\) is a \(K_3\), the H-part of \(N_t\) is a \(K_4\), and the gadget supplies six H-H edges: three from \(x_C\) to \(N_t\setminus\{y\}\), plus one edge from \(x_C\) or \(y\) to each of the three H-vertices of \(N_s\). This \(g_C=3\) source geometry must be handled separately; it is not covered by the two-\(K_4\) baseline count alone.
 
-## 4. Exact count of the two-\(K_4\) local relaxation
+## 4. Exact count of the two-\(K_4\) local relaxation with T0 degree cap
 
-For the two-\(K_4\) subcases above, each \(K_4\) is transversal across \(T_1,T_2,T_3,T_0\). There are eight labeled two-\(K_4\) bases (choose which of the two vertices in each track belongs to the first \(K_4\), modulo swapping the two \(K_4\)s). Between the two \(K_4\)s there are 12 allowed cross-part edges; the four same-track pairs are forbidden because each track is a target-color clique.
+For the two-\(K_4\) subcases above, each \(K_4\) is transversal across \(T_1,T_2,T_3,T_0\). There are eight labeled unordered two-\(K_4\) bases (choose which of the two vertices in each track belongs to the first \(K_4\), modulo swapping the two \(K_4\)s). Between the two \(K_4\)s there are 12 allowed cross-part edges; the four same-track pairs are forbidden because each track is a target-color clique.
 
-The source-derived extra-edge set is more restricted (a star centered at \(y\) or \(x_C\)), but the broader pairwise-matching relaxation allows any \(g_C\)-subset of those 12 edges. Each resulting graph has \(\alpha\le2\) and respects the pairwise matching restriction. For \(g_C=0,1,2,3\), the exact number of labeled graphs in this relaxation is
+Each T0 residual vertex has baseline C-degree three. Pointwise balanced-coloring saturation caps its C-degree at four, so at most one extra edge may be incident to each of the two T0 residual vertices. The companion verifier enumerates all subsets of the 12 cross-K4 edges of size \(g_C\le3\) subject to this cap. The six edges not incident to T0 are unrestricted; each of the two T0 vertices has three possible cross-K4 edges, from which at most one may be chosen.
+
+The exact counts in this T0-capped relaxation are
 \[
-8\binom{12}{g_C}=8,\ 96,\ 528,\ 1760.
+8,\quad 96,\quad 480,\quad 1312
 \]
-For \(g_C\le3\), the two-\(K_4\) base is unique, so these counts do not double-count graphs. They are counts of a necessary relaxation, **not** counts of source-realizable gadget completions.
+for \(g_C=0,1,2,3\), respectively. For each base, the numbers of allowed extra sets are \(1,12,60,164\). For \(g_C\le3\), the disjoint two-\(K_4\) base is unique, so these counts do not double-count graphs.
+
+The source-derived extra-edge set is stricter still: in the \(x_C\in O\) case, extras form a star centered at \(y\); in the \(x_C\in H,y\in O\) case, extras form a star centered at \(x_C\). If that star center lies in T0, the pointwise cap forces \(g_C\le1\). If the center lies in a large track, up to three star edges may survive, subject to the detailed source incidence restrictions.
+
+These are counts of a necessary relaxation, **not** counts of source-realizable gadget completions. The companion verifier is verify_v47_z01_isolated_double_residual_graphs.py.
 
 ## 5. Correct scope of the seven-vertex holonomy theorem
 
