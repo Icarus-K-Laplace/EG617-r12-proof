@@ -151,3 +151,8 @@ The `g_C<=3) theorem applies only after the aligned low-z 3+7 normal form and so
 ## 15. Nonexact-color shell floor (2026-10-29)
 
 The refined range `7<=g_D<=19` depends on the 132-edge nonexact color D, the balanced-coloring bound `alpha(D)<=12), and p being D-nonadjacent to the shell A. It is not a generic consequence of the 37-gap identity alone. The resulting `e_D(H) in [76,88]` remains a necessary range, not a contradiction.
+
+
+## 16. Type-I factor-occupancy ledger (2026-10-29)
+
+The occupancy vectors use the source statement that the twelve K5 factors partition the 60 vertices other than x_C. Single-outside K5 H vertices form a transversal of the four target cliques; other K5-factor H vertices are independent and occupy distinct parts. The vector equations are count consequences, not an UNSAT certificate, and the two special K5s must remain distinguished from the ten isolated components.
