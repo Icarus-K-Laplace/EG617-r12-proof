@@ -1,109 +1,121 @@
 #!/usr/bin/env python3
-"""Exact T0--Ti omitted-vertex audit under the aligned zero-slack degree ledger.
+"""Exact T0--Ti omitted-vertex audit with the small-block excess budget.
 
-Scope: E0=0 scalar profile (H counts 7,7,8; exact-repeat counts 4,3,3;
-D-repeat counts 0,1,0). Each Ti vertex has total H cross-track degree exactly
-one in the frozen aligned 3+7 zero-slack cell, so its H degree into T0 is
-binary. This binary bound comes from the global degree ledger, not from the
-asymmetric 13-set lemma alone.
+Scope: E0=0 scalar row y=(7,7,8), exact T0-repeat counts s=(4,3,3),
+D-repeat counts d=(0,1,0), and E_i=(2,2,2).
 
-The enumeration is still only an endpoint-multiplicity relaxation. It does
-not impose cross-track triangle-factorization or certify Q32 UNSAT.
+In each T_i, the three small-block vertices are indexed 0,1,2 and the other
+nine vertices are non-small. Non-small vertices have cross-track H degree 1;
+small-block vertices have degree 1+epsilon, with total epsilon E_i=2.
+Consequently h_i(v)=d_H(v,T0) is <=1 at non-small vertices and
+sum_v max(h_i(v)-1,0) <= E_i. This is NOT a binary H-endpoint condition.
+
+For D with a repeat edge on T0--Ti, its omitted vertex is exactly that
+repeat edge's Ti endpoint, so delta_D(v)=r_D(v) and the identity reduces to
+n_i(v)=h_i(v). If D has no repeat on this pair, its omitted vertex must be
+an H endpoint and n_i(v)=h_i(v)-delta_D(v).
+
+The enumeration is an endpoint-multiplicity relaxation only. It does not
+impose the source-labelled residual triangles, cross-track matching edges,
+or the full common-P CSP.
 """
-from itertools import combinations
+from collections import Counter
 
 
-def binary_profiles(total, vertices=12):
-    """Binary vectors of length vertices with exactly total ones."""
-    for support in combinations(range(vertices), total):
-        row = [0] * vertices
-        for v in support:
-            row[v] = 1
-        yield tuple(row)
-
-
-def compositions(total, bins):
-    """Weak compositions of total into bins labeled nonnegative parts."""
+def weak_compositions(total, bins):
     if bins == 1:
         yield (total,)
         return
     for first in range(total + 1):
-        for tail in compositions(total - first, bins - 1):
+        for tail in weak_compositions(total - first, bins - 1):
             yield (first,) + tail
 
 
-def audit_track(name, y_h, s_exact, d_repeat, exact_colors=10, vertices=12):
-    # The ten exact colors contribute one omitted vertex each. s_exact exact
-    # colors have their own T0 repeat on this pair, so 10-s_exact omitted
-    # vertices remain after canceling those repeat owners. D contributes one.
-    n_exact_nonrepeat = exact_colors - s_exact
+def allowed_h_profiles(total_h, excess_budget, vertices=12, small_vertices=(0, 1, 2)):
+    small_vertices = set(small_vertices)
+    for h in weak_compositions(total_h, vertices):
+        if any(h[v] > 1 for v in range(vertices) if v not in small_vertices):
+            continue
+        excess = sum(max(value - 1, 0) for value in h)
+        if excess > excess_budget:
+            continue
+        yield h
+
+
+def audit_track(name, y_h, s_exact, d_repeat, excess_budget=2, vertices=12):
+    n_exact_nonrepeat = 10 - s_exact
     assert y_h + s_exact + d_repeat == 11
-    assert y_h + d_repeat - 1 == n_exact_nonrepeat
+    assert y_h - (1 if d_repeat == 0 else 0) == n_exact_nonrepeat
 
-    h_profiles = list(binary_profiles(y_h, vertices))
-    r_profiles = list(compositions(d_repeat, vertices))
-    valid = 0
-    max_n_at_vertex = 0
-    max_support = 0
+    profiles = list(allowed_h_profiles(y_h, excess_budget, vertices))
+    by_support = Counter(sum(value > 0 for value in h) for h in profiles)
+    valid_assignments = 0
+    max_h = max(max(h) for h in profiles)
+    max_n = 0
+    max_overage = max(sum(max(value - 1, 0) for value in h) for h in profiles)
 
-    for h in h_profiles:
-        assert all(q in (0, 1) for q in h)
+    for h in profiles:
         assert sum(h) == y_h
-        for r in r_profiles:
-            assert sum(r) == d_repeat
-            cap = tuple(h[v] + r[v] for v in range(vertices))
+        assert all(h[v] <= 1 for v in range(3, vertices))
+        assert sum(max(value - 1, 0) for value in h) <= excess_budget
+
+        if d_repeat == 0:
+            # D has no repeat on this pair. Its omitted vertex must be an H
+            # endpoint; subtract that one occurrence from the H endpoint multiset.
             for z_d in range(vertices):
-                # The D-omitted vertex must be an H endpoint or a D-repeat
-                # endpoint, otherwise n = h+r-delta would be negative.
-                if cap[z_d] == 0:
+                if h[z_d] == 0:
                     continue
-                n = tuple(cap[v] - (1 if v == z_d else 0)
+                n = tuple(h[v] - (1 if v == z_d else 0)
                           for v in range(vertices))
-                assert all(q >= 0 for q in n)
+                assert all(value >= 0 for value in n)
                 assert sum(n) == n_exact_nonrepeat
                 assert tuple(n[v] + (1 if v == z_d else 0)
-                             for v in range(vertices)) == cap
-                # Correct pointwise consequence: away from D-repeat
-                # endpoints, at most one exact nonrepeat color omits v.
-                for v in range(vertices):
-                    if r[v] == 0:
-                        assert n[v] <= 1
-                    else:
-                        assert n[v] <= 1 + r[v]
-                valid += 1
-                max_n_at_vertex = max(max_n_at_vertex, max(n))
-                max_support = max(max_support, sum(q > 0 for q in cap))
+                             for v in range(vertices)) == h
+                valid_assignments += 1
+                max_n = max(max_n, max(n))
+        else:
+            # Here D has exactly one repeat edge in P_0i. Its endpoint is the
+            # unique omitted vertex of D on this pair; delta_D=r_D exactly.
+            for d_endpoint in range(vertices):
+                r_d = tuple(1 if v == d_endpoint else 0 for v in range(vertices))
+                delta_d = r_d
+                n = h
+                assert sum(n) == n_exact_nonrepeat
+                assert tuple(n[v] + delta_d[v] for v in range(vertices)) == tuple(
+                    h[v] + r_d[v] for v in range(vertices)
+                )
+                valid_assignments += 1
+                max_n = max(max_n, max(n))
 
     return {
         "track": name,
-        "counts": {
-            "H_edges": y_h,
-            "exact_T0_repeat_edges": s_exact,
-            "D_repeat_edges": d_repeat,
-            "exact_colors_without_repeat_on_this_pair": n_exact_nonrepeat,
-        },
-        "binary_H_endpoint_profiles": len(h_profiles),
-        "D_repeat_endpoint_profiles": len(r_profiles),
-        "valid_endpoint_profiles": valid,
-        "max_exact_nonrepeat_omissions_at_one_vertex": max_n_at_vertex,
-        "max_endpoint_support": max_support,
-        "injectivity_away_from_D_repeat_endpoints": True,
+        "H_T0_edges": y_h,
+        "exact_T0_repeat_edges": s_exact,
+        "D_T0_repeat_edges": d_repeat,
+        "E_i_excess_budget": excess_budget,
+        "allowed_H_endpoint_profiles": len(profiles),
+        "profile_count_by_H_endpoint_support": dict(sorted(by_support.items())),
+        "valid_D_omission_assignments": valid_assignments,
+        "max_H_endpoint_multiplicity": max_h,
+        "max_exact_nonrepeat_omission_multiplicity": max_n,
+        "max_H_endpoint_excess": max_overage,
     }
 
 
 def main():
-    # E0=0 scalar row in the all-Class-A owner-only relaxation.
     rows = [
         audit_track("T1", 7, 4, 0),
         audit_track("T2", 7, 3, 1),
         audit_track("T3", 8, 3, 0),
     ]
-    expected_counts = [5544, 70488, 3960]
-    assert [row["valid_endpoint_profiles"] for row in rows] == expected_counts
-    assert [row["max_exact_nonrepeat_omissions_at_one_vertex"] for row in rows] == [1, 2, 1]
+    assert [row["allowed_H_endpoint_profiles"] for row in rows] == [3528, 3528, 3897]
+    assert [row["valid_D_omission_assignments"] for row in rows] == [20610, 42336, 25758]
+    assert [row["max_H_endpoint_multiplicity"] for row in rows] == [3, 3, 3]
+    assert [row["max_exact_nonrepeat_omission_multiplicity"] for row in rows] == [3, 3, 3]
+    assert all(row["max_H_endpoint_excess"] == 2 for row in rows)
     for row in rows:
         print(row)
-    print("T0_TI_OMISSION_MULTISETS_ALIGNED_ZERO_SLACK_AUDIT_OK")
+    print("T0_TI_OMISSION_EXCESS_BUDGET_AUDIT_OK")
     print("Scope: endpoint-multiplicity relaxation only; not full common-P feasibility or Q32 UNSAT.")
 
 
