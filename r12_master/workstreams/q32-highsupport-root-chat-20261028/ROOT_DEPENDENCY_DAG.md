@@ -489,3 +489,7 @@ The former claim of 20 direct P_0i/K4-baseline overlaps in the owner-only witnes
 ### 14n. E0=0 endpoint support caps
 
 From the omitted-vertex identity plus the aligned zero-slack degree ledger, the T0-T1 and T0-T3 H endpoints are sets matching the nonrepeat exact omissions plus D's omission, with all such omitted vertices distinct. On T0-T2, the analogous multiset is either fully distinct or has exactly one doubled endpoint, only when the D-repeat edge endpoint overlaps an H endpoint. Under the all-Class-A allocation, exact T0-repeat endpoints are distinct within tracks, giving P0i endpoint-degree caps (2,3,2) on T1,T2,T3. The T2 cap 3 requires an exact repeat, H and D-repeat edge to coincide at one endpoint. These constraints tighten the local CSP but do not close it.
+
+### 14n. Class-B \((g,t)=(2,0)\) center must meet \(T_0\) in H
+
+In the x-in-H, two-double, all-isolated-single-outside source mode, the y-in-H, a=2 row has two large-pair surplus edges forming a star at y and no T0 repeat. The two star edges are the unique P edges at y on its two cross-track pairs, so y has no H neighbor in any other large track. Since its own track contributes 11 H neighbors and \(\delta(H)\ge12\), y must have an H edge to T0. Include this as a necessary incidence filter for any exact packing. It does not imply UNSAT by itself.
