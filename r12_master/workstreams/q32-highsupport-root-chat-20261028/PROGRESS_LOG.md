@@ -436,3 +436,14 @@ Added **V47_T0_POINTWISE_COLOR_SATURATION.md** and **verify_v47_t0_pointwise_col
 For each vertex v in the K11 track T0, the exact non-target H-degree sum is \(34-\epsilon_v\), while each of the eleven non-target colors must contribute at least one edge to each of the three K12 tracks. Hence a vertex with epsilon=1 has color degrees exactly 3 across all eleven colors; a vertex with epsilon=0 has exactly one color degree 4 and ten color degrees 3. Summing yields \(\sum_C t_C=11-E_0\).
 
 For an exact Type-I color, any degree-four T0 vertex must lie in its 11-vertex gadget G11(C); isolated single factors contribute degree 3, and isolated double/triple factors at T0 are forbidden by the degree floor. The corrected factor occupancy bounds \(|G11(C)\cap T_0|\le2\), hence \(t_C\le2\) per exact color. In addition, \(t_C\) is exactly the sum of the three T0--K12 pair surpluses, so \(t_C\le g_C\); therefore \(t_C\le\min(2,g_C)\) for exact colors. The aggregate big-pair surplus is exactly \(26+E_0\). The arithmetic replay passed (**V47_T0_POINTWISE_COLOR_SATURATION_ARITHMETIC_OK**). This is a local capacity constraint, not Q32 closure.
+
+
+### Exact residual holonomy-cost theorem (2026-10-29)
+
+Added `V47_Z01_RESIDUAL_HOLONOMY_COST.md` and `verify_v47_z01_residual_holonomy_cost.py`.
+
+Each exact color's ten isolated K5 components yield ten transversal K4s in H, leaving seven residual vertices with track profile (2,2,2,1). The baseline on these seven vertices has nine edges: a perfect matching on each pair of large residual parts (six edges total), plus one T0 edge into each large part (three edges). There are 64 baselines and at most three extra edges, with extras constrained to be a matching within each track pair.
+
+Exhaustive enumeration classified 8 baselines as aligned K4+K3 (alpha2), 24 as aligned-large-pair but T0-misaligned (alpha3), 24 as six-cycle holonomy with alpha3, and 8 as six-cycle holonomy with alpha4. The minimum extra-edge costs to reach alpha<=2 are respectively 0,1,2,3. Repair counts at minimum cost are 8,24,72,72. Full repair counts were also checked for gaps 0..3. The equivalent Python enumeration returned `V47_Z01_RESIDUAL_HOLONOMY_COST_OK`.
+
+New consequence: for every exact color, nontrivial six-cycle holonomy requires g_C>=2; the worst six-cycle attachment requires g_C=3. Hence g_C<=1 forces aligned large-part matching composition. This remains a local result, not a full Q32 contradiction.
