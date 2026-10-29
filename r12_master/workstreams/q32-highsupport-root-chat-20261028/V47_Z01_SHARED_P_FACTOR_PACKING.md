@@ -126,45 +126,47 @@ If another exact color C' had the same two residual subsets on tracks i,j, its M
 This is a valid cross-color constraint without assuming that a color's six residual vertices form a component of the common P graph. It is necessary but not by itself a contradiction.
 
 The remaining bridge is to impose pair-projection injectivity, all cross-color matching edge-disjointness, and the complete triangle-factor / Type-I incidence constraints simultaneously. The owner-only witness is not a full source-realizable Q32 coloring.
-### 4.4 T0--Ti omitted-vertex conservation — corrected endpoint degrees
+### 4.4 T0--Ti omitted-vertex conservation — correct degree source
 
-For each non-target color \(C\) and track \(T_i\), let \(M_{C,0i}\) be its selected matching in \(K_{11,12}=T_0\times T_i\). It saturates all eleven T0 vertices and misses exactly one vertex \(z_i(C)\in T_i\). The eleven selected matchings and their complement \(P_{0i}\) partition \(K_{11,12}\), so for every \(v\in T_i\),
+For each non-target color \(C\) and track \(T_i\), let \(M_{C,0i}\) be its selected matching in \(K_{11,12}=T_0\times T_i\). It saturates all eleven T0 vertices and misses exactly one vertex \(z_i(C)\in T_i\). The eleven selected matchings and their complement \(P_{0i}\) partition \(K_{11,12}\), so
 \[
-\boxed{d_{P_{0i}}(v)=|\{C:z_i(C)=v\}|.}
+\boxed{d_{P_{0i}}(v)=|\{C:z_i(C)=v\}|}
 \]
-This is a multiset identity. It does not assume \(P_{0i}\) is a matching on \(T_i\).
+for every \(v\in T_i\). This is a multiset identity; \(P_{0i}\) need not be a matching on \(T_i\).
 
-**Degree-side correction.** Define \(h_i(v)\) as the number of H-edges from \(v\in T_i\) to \(T_0\), and \(r_i^D(v)\) as the number of D-repeat edges in \(P_{0i}\) incident to \(v\). The known asymmetric lemma bounds the number of H-neighbors in \(T_i\) of each *T0 vertex* by one; it does **not** bound \(h_i(v)\) by one for \(v\in T_i\). Any proof that uses \(h_i(v)\in\{0,1\}\) here is invalid unless it separately proves the missing opposite-side bound.
+Let \(h_i(v)\) be the number of H-edges from \(v\in T_i\) to \(T_0\), and \(r_i^D(v)\) the number of D-repeat edges in \(P_{0i}\) ending at \(v\). The generic 13-set lemma only gives a one-sided restriction on the T0 vertices. However, **in the current aligned 3+7 zero-slack contract**, the separate global degree ledger in V47_Z01_BALANCED_COLORING_CROSS_TRACK_LEDGER.md gives every vertex of \(T_1,T_2,T_3\) total H cross-track degree exactly one. Therefore
+\[
+h_i(v)\in\{0,1\}\qquad(i=1,2,3)
+\]
+is valid in this frozen contract, but must not be exported to a broader branch without the degree-ledger hypotheses.
 
-Let \(\delta_i^D(v)=1\) if \(z_i(D)=v\), and 0 otherwise. In the **single-T0-residual seven-vertex Type-I mode only**, an exact color C's T0 repeat edge \(x_Cv\in P_{0i}\) forces \(z_i(C)=v\): the selected matching uses the baseline edge from \(x_C\) to the other residual vertex, and \(v\) has no other C-edge to T0. Let \(a_i(v)\) count these exact repeat edges ending at \(v\), and let
+Let \(\delta_i^D(v)=1\) if \(z_i(D)=v\), and 0 otherwise. In the **single-T0-residual seven-vertex Type-I mode only**, an exact color C's T0 repeat edge \(x_Cv\in P_{0i}\) forces \(z_i(C)=v\). Let \(a_i(v)\) count these exact repeat edges ending at \(v\), and let
 \[
 n_i(v)=|\{C\text{ exact}: C\text{ has no T0 repeat on }T_0T_i,\ z_i(C)=v\}|.
 \]
-Cancelling the \(a_i(v)\) exact-repeat owners from the universal identity yields the correct pointwise constraint
+Cancelling the \(a_i(v)\) exact-repeat owners from the universal identity yields
 \[
 \boxed{n_i(v)+\delta_i^D(v)=h_i(v)+r_i^D(v).}
 \]
 Equivalently, the multiset of omitted vertices for exact colors without a repeat on this pair, together with D's omitted vertex, equals the multiset of H endpoints and D-repeat endpoints on \(P_{0i}\).
 
-Valid consequences:
-- If \(h_i(v)=r_i^D(v)=0\), then \(n_i(v)=\delta_i^D(v)=0\).
+Under the aligned zero-slack degree ledger, the equation gives:
+- If \(r_i^D(v)=0\), then \(n_i(v)+\delta_i^D(v)=h_i(v)\le1\). Thus at most one exact nonrepeat color omits any vertex away from D-repeat endpoints; if D omits that vertex, no exact nonrepeat color does.
+- At a D-repeat endpoint, \(n_i(v)\le1+r_i^D(v)\); multiplicity two is possible only when the D-repeat endpoint is also an H endpoint.
+- Every Ti endpoint of an H edge must occur in the omitted-vertex multiset.
 - D's omitted vertex must be incident to at least one H edge or D-repeat edge on this pair.
-- Every Ti endpoint of an H edge in \(T_0\times T_i\) must occur in the omitted-vertex multiset.
-- The multiplicity \(n_i(v)\) is controlled by the actual H endpoint degree \(h_i(v)\), not by a universal bound of one.
-
-The previous claims that nonrepeat exact omissions are injective away from D-repeat endpoints, or that H endpoints must be distinct on the Ti side, are **withdrawn**: they incorrectly used \(h_i(v)\le1\). This conservation law alone does not close any source mode.
 
 **Scope firewall:** the exact-repeat cancellation above is only asserted for the single-T0-residual seven-vertex Type-I mode. It is not asserted for the eight-vertex isolated-double mode, where the source incidence must be re-established separately.
 
 ### 4.5 Exact endpoint-profile replay for the E0=0 scalar row
 
-The companion script verify_v47_z01_t0_omission_conservation.py exhaustively enumerates weak compositions of the H and D-repeat endpoint degrees over the 12 vertices of each large track, then every possible D-omitted vertex. It checks the corrected pointwise identity for the scalar row
+The companion verifier verify_v47_z01_t0_omission_conservation.py exhaustively enumerates binary H endpoint profiles (using the zero-slack cross-track degree bound) and all D-repeat endpoint multiplicities over the 12 vertices of each large track, then every possible D-omitted vertex. It checks the corrected pointwise identity for
 \[
 y=(7,7,8),\quad s^{\rm exact}=(4,3,3),\quad d^D=(0,1,0),
 \]
-where \(y_i+s_i^{\rm exact}+d_i^D=11\) on each pair. The replay counts 148,512, 2,015,520 and 381,888 valid endpoint profiles for \(T_1,T_2,T_3\), respectively.
+where \(y_i+s_i^{\rm exact}+d_i^D=11\) on each pair. The replay counts 5,544, 70,488 and 3,960 valid endpoint profiles for \(T_1,T_2,T_3\), respectively. Maximum exact nonrepeat omission multiplicities are \(1,2,1\), with the multiplicity-two possibility confined to the \(T_2\) D-repeat endpoint when it also has an H edge.
 
-The audit deliberately finds concentrated endpoint profiles with six or seven exact nonrepeat colors omitting the same Ti vertex. These are only endpoint-multiplicity relaxations, not full colorings, but they prove that the omitted-vertex identity plus the currently known asymmetric H-degree bound does **not** imply injectivity. Cross-track triangle-factorization, source residual incidence and edge-disjointness remain necessary.
+This is still only an endpoint-multiplicity relaxation, not a full common-P completion. The remaining work is to couple these endpoint profiles to the source-labelled residual triangles, all cross-color edge-disjointness, and the pairwise perfect matchings \(P_{ij}\).
 
 ### 4.6 Forced Class-A allocation in the E0=0 scalar row
 
