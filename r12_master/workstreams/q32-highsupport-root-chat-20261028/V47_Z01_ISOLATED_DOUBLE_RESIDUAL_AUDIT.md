@@ -52,15 +52,17 @@ g_C=6-(b_s+b_t)=3.
 \]
 The H-part of \(N_s\) is a \(K_3\), the H-part of \(N_t\) is a \(K_4\), and the gadget supplies six H-H edges: three from \(x_C\) to \(N_t\setminus\{y\}\), plus one edge from \(x_C\) or \(y\) to each of the three H-vertices of \(N_s\). This \(g_C=3\) source geometry must be handled separately; it is not covered by the two-\(K_4\) baseline count alone.
 
-### 3.3 T0 exclusion in the exceptional \(x_C\in H,y\in H\) branch
+### 3.3 Balanced-coloring contradiction closes the exceptional \(x_C\in H,y\in H\) branch
 
-In the exceptional \(x_C\in H,y\in H\) branch of Section 3.2, \(x_C\) and \(y\) lie in the same target track: \(x_C\) is C-adjacent to all three H-vertices of \(N_t\setminus\{y\}\), and those three vertices occupy the other three target tracks.
+In the exceptional \(x_C\in H,y\in H\) branch of Section 3.2, \(N_t\) is single-outside and its four H-vertices form a transversal \(K_4\). The three H-vertices of \(N_t\setminus\{y\}\) occupy the three target tracks other than the track containing \(y\). The gadget makes \(x_C\) C-adjacent to all three, so \(x_C\) must lie in the same target track as \(y\); otherwise one of these C-edges would lie inside a target-color clique. Write this common track as \(T_k\).
 
-They cannot lie in \(T_0\). If both were in \(T_0\), then \(d_C(x_C,H)\ge3\) from the three edges to \(N_t\setminus\{y\}\), and \(d_C(y,H)\ge3\) from the three edges within the H-part of \(N_t\). The three additional gadget edges from \(x_C\) or \(y\) to the three H-vertices of \(N_s\) must each be assigned to one of these two centers. Pointwise saturation caps each T0 color-degree at four, so each center can receive at most one of those extra edges. Their combined capacity is two, but three edges must be assigned: contradiction.
+The H-part of \(N_s\) is a C-colored \(K_3\), so its three vertices occupy three distinct target tracks. Each of those vertices has a C-colored gadget edge from either \(x_C\) or \(y\). Neither \(x_C\) nor \(y\) can send such an edge to a vertex in \(T_k\), since that would be a C-edge inside \(T_k\). Therefore the three H-vertices of \(N_s\) occupy exactly the three tracks other than \(T_k\).
 
-Therefore \(x_C,y\in T_k\) for some large track \(T_k\), not \(T_0\). The H-part of \(N_t\) contributes one T0 vertex, and the residual profile is \((2,2,2,2)\), so the H-part \(K_3\) of \(N_s\) must contain the second T0 vertex. That T0 vertex has two C-neighbors within \(N_s\) and needs its unique gadget edge to \(x_C\) or \(y\) to attain the required C-degree at least three.
+**Case 1: \(T_k=T_0\).** Both \(x_C\) and \(y\) lie in \(T_0\). Each already has three C-neighbors in H among the H-part of \(N_t\): for \(x_C\), these are the three gadget neighbors in \(N_t\setminus\{y\}\); for \(y\), these are the three internal neighbors in \(N_t\). Pointwise saturation caps each T0 color-degree at four, so each center can receive at most one additional C-edge. But the three H-vertices of \(N_s\), which lie one each in \(T_1,T_2,T_3\), require three distinct gadget edges from \(x_C\) or \(y\). These three edges cannot be assigned to two centers with capacity one each. Contradiction.
 
-This closes only the T0 placement of the exceptional subcase; it does not eliminate the \(x_C\in H,y\in H\) branch itself.
+**Case 2: \(T_k=T_i\) for some \(i\in\{1,2,3\}\).** Let \(T_j,T_\ell\) be the other two large tracks. The H-parts of both \(N_t\) and \(N_s\) contain one vertex in each of \(T_j,T_\ell\). Both \(x_C\) and \(y\) already have a C-edge into \(T_j\) and a C-edge into \(T_\ell\), namely their edges to the corresponding vertices of \(N_t\). But every vertex of a large track has exactly one H-neighbor into each other large track. Thus for \(u\in\{x_C,y\}\), the 13-set \(T_j\cup\{u\}\) has exactly one H-colored edge from \(u\) to \(T_j\); the other eleven edges must contain each non-target color exactly once. In particular, \(u\) cannot have a second C-edge into \(T_j\), and similarly cannot have a second C-edge into \(T_\ell\). Yet the H-vertices of \(N_s\) in \(T_j\) and \(T_\ell\) each require a C-colored gadget edge from \(x_C\) or \(y\). Contradiction.
+
+Both cases are impossible. Therefore the source-correct isolated-double placement with \(x_C\in H,y\in H\) is **CLOSED** in the aligned z=0,1 cell. The other isolated-double two-K4 subcases in Sections 3.1 and 3.2 with \(y\in O\) remain open subject to the T0 cap and source star constraints.
 
 ## 4. Exact count of the two-\(K_4\) local relaxation with T0 degree cap
 
