@@ -521,3 +521,10 @@ The aggregate budget is sharpened by conditioning on g_D: since `sum_exact g_C=3
 ## Shell-bound notation audit — 2026-10-29
 
 The nonexact-color shell lower bound e_D(A)>=2 remains valid. Its proof is now stated directly from alpha(D)<=12 and the fact that p has no D-edges to A; the equivalent ordinary Turán calculation is 78-t_11(13)=2. The previous label p_11(13) was misleading because p_r(n) is reserved for the Kang–Pikhurko second-Turán extremal quantity, whose theorem is not being applied at n=13. This correction changes no numerical result and does not close the aligned z=0,1 cell.
+
+
+## Shared residual-factor packing audit (2026-10-29)
+
+Added `V47_Z01_SHARED_P_FACTOR_PACKING.md` and `verify_v47_z01_aggregate_budget_witness.py`. An independently replayed aggregate witness shows that the scalar degree ledger and per-color pattern counts alone are feasible: E0=0, (E1,E2,E3)=(2,2,2), large-pair H-edge counts (4,3,3), T0-pair H-edge counts (7,7,8), large-pair repeat capacities (8,9,9), and T0 repeat capacities (4,4,3). Ten exact colors can each use a locally admissible class-B pattern with g_C=2 and one T0 surplus, giving exact gap sum 20; the nonexact color fills residual aggregate capacities with g_D=17. This is explicitly an aggregate relaxation, not an actual Q32 coloring.
+
+The new proved global constraint is the common residual factor: for each large pair, Hall's eleven color matchings have a complementary perfect matching P_ij containing all H edges. The repeated-color edges S_ij=P_ij\\H_ij form one common graph S on the 36 large-track vertices with d_S(v)=2-d_H^large(v)<=2 and |S|=26+E0. Each S edge has a unique repeated-color owner; if the owner is exact Type-I, both endpoints must lie in that color's residual gadget set. The next required bridge is vertex-labelled edge packing across these shared P factors, with single-outside and isolated-double modes kept separate. Full-support v=47 z=0 and z=1 profile (2,2,2,1) remain OPEN / NOT_CERTIFIED.
