@@ -596,3 +596,8 @@ Proved a block-level multiplicity constraint for residual pair projections. On a
 ### Solver-ready projection-block encoding — 2026-10-29
 
 Formalized binary variables for residual 2-set choices r, pair projections x, internal K2,2 orientation choices y, and common complement edges p. The linearization x=r_i∧r_j and y_0+y_1=x links local choices; sum_C y_{C,k,o}≤1 enforces cross-color edge-disjointness, and y_{C,k,o}+p_e≤1 forbids any orientation hit by P. This directly implements the P-free duplicate projection theorem. It is a local exact encoding, not a complete CSP implementation or global UNSAT proof.
+
+
+### Projection encoding audit — cross-key edge conflicts (2026-10-29)
+
+Audited the new binary projection encoding and found that per-key orientation occupancy alone was insufficient: distinct K2,2 residual blocks can overlap in an actual edge. Added the necessary edge-level inequality summing all selected orientations across all colors and all pair keys containing each edge to at most one. The encoding now separates (i) key-local P-free duplicate constraints, (ii) edge-level cross-key disjointness, and (iii) P-edge exclusion. Still not a complete CSP implementation or UNSAT certificate.
