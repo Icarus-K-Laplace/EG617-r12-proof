@@ -517,3 +517,8 @@ For a fixed residual pair key (A,B) on tracks i,j, if P_ij intersects the K2,2 b
 ### 14q. Exact local encoding for residual pair projections
 
 V47_Z01_SHARED_P_FACTOR_PACKING.md, Section 4.3.2, now specifies binary variables for per-color residual 2-sets, pair projection keys, K2,2 orientation choices, and P_ij edges. Linking constraints select exactly one residual 2-set per track; orientation occupancy is at most one color; any P edge forbids its internal matching orientation. This encodes the P-free duplicate projection lemma exactly. The complete model still needs source-mode, alpha, repeat-owner, T0, and global degree constraints; no Q32 closure follows.
+
+
+### 14r. Cross-key matching-edge disjointness
+
+The projection binary encoding requires more than one-color-per-key/orientation: distinct residual K2,2 blocks may overlap in actual edges. For every edge e of T_i×T_j, sum the selected orientation variables over all colors and all pair keys whose orientation contains e, and constrain that sum to at most one. Keep this alongside the P-edge exclusion and P-free duplicate-key constraints. Omitting it yields an incomplete relaxation, not a valid common-P CSP.
