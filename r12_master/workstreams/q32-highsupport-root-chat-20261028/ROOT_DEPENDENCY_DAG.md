@@ -1,6 +1,6 @@
 # EG617(r=12) — independent root dependency DAG
 
-Date: 2026-10-28
+Date: 2026-10-29
 Audit status: **FAIL-CLOSED / OPEN / NOT_CERTIFIED**
 
 This is an independent branch-local audit. It does not promote the theorem while E408-Q32 remains open.
