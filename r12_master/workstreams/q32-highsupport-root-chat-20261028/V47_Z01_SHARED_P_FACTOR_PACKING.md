@@ -128,60 +128,61 @@ If another exact color C' had the same two residual subsets on tracks i,j, its M
 This is a valid cross-color constraint without assuming that a color's six residual vertices form a component of the common P graph. It is necessary but not by itself a contradiction.
 
 The residual six-set injectivity theorem in V47_Z01_RESIDUAL_SIGNATURE_INJECTIVITY.md now applies across all source modes: if two exact colors share all six residual vertices, their pairwise residual matchings are complementary and one has six-cycle holonomy. The source-mode audit shows every possible six-cycle color has a large-pair repeat (single-outside g_C>=2; isolated-double two-K4 modes cannot flip a pair matching with star extras; the exceptional isolated-double mode has g_C=3,t_C=1). Pair-projection injectivity then forbids the other color from sharing the residual pair on that repeat pair. The remaining bridge is to impose pair-projection injectivity, global residual-signature injectivity, all cross-color matching edge-disjointness, and complete triangle-factor / Type-I incidence constraints simultaneously. The owner-only witness is not a full source-realizable Q32 coloring.
-### 4.4 T0--Ti omitted-vertex conservation — correct degree source
+### 4.4 T0--Ti omitted-vertex conservation — small-block excess budget
 
-For each non-target color \(C\) and track \(T_i\), let \(M_{C,0i}\) be its selected matching in \(K_{11,12}=T_0\times T_i\). It saturates all eleven T0 vertices and misses exactly one vertex \(z_i(C)\in T_i\). The eleven selected matchings and their complement \(P_{0i}\) partition \(K_{11,12}\), so
+For each non-target color \(C\) and track \(T_i\), its selected matching \(M_{C,0i}\) saturates all eleven T0 vertices and misses exactly one vertex \(z_i(C)\in T_i\). The eleven selected matchings and their complement \(P_{0i}\) partition \(K_{11,12}=T_0\times T_i\), so
 \[
-\boxed{d_{P_{0i}}(v)=|\{C:z_i(C)=v\}|}
+\boxed{d_{P_{0i}}(v)=|\{C:z_i(C)=v\}|.}
 \]
-for every \(v\in T_i\). This is a multiset identity; \(P_{0i}\) need not be a matching on \(T_i\).
+This is a multiset identity; \(P_{0i}\) need not be a matching on \(T_i\).
 
-Let \(h_i(v)\) be the number of H-edges from \(v\in T_i\) to \(T_0\), and \(r_i^D(v)\) the number of D-repeat edges in \(P_{0i}\) ending at \(v\). The generic 13-set lemma only gives a one-sided restriction on the T0 vertices. However, **in the current aligned 3+7 zero-slack contract**, the separate global degree ledger in V47_Z01_BALANCED_COLORING_CROSS_TRACK_LEDGER.md gives every vertex of \(T_1,T_2,T_3\) total H cross-track degree exactly one. Therefore
+Let \(h_i(v)=d_H(v,T_0)\), \(r_i^D(v)\) be the number of D-repeat edges in \(P_{0i}\) ending at \(v\), and \(\delta_i^D(v)=1[z_i(D)=v]\). In the **single-T0-residual seven-vertex Type-I mode only**, an exact color's own T0 repeat edge ending at \(v\) forces its omitted vertex to be \(v\). Cancelling those exact-repeat owners gives
 \[
-h_i(v)\in\{0,1\}\qquad(i=1,2,3)
+\boxed{n_i(v)+\delta_i^D(v)=h_i(v)+r_i^D(v),}
 \]
-is valid in this frozen contract, but must not be exported to a broader branch without the degree-ledger hypotheses.
+where \(n_i(v)\) counts exact colors without a T0 repeat on this pair whose omitted vertex is \(v\).
 
-Let \(\delta_i^D(v)=1\) if \(z_i(D)=v\), and 0 otherwise. In the **single-T0-residual seven-vertex Type-I mode only**, an exact color C's T0 repeat edge \(x_Cv\in P_{0i}\) forces \(z_i(C)=v\). Let \(a_i(v)\) count these exact repeat edges ending at \(v\), and let
+**Correct degree source.** The generic 13-set lemma only bounds H-neighbors per T0 vertex into \(T_i\); it does not make \(H[T_0,T_i]\) a matching on the T_i side. In the aligned zero-slack contract, each non-small vertex of \(T_i\) has total cross-track H-degree one, while the three small-block vertices \(A_i,B_i,C_i\) have cross-track degrees \(1+\epsilon_A(i),1+\epsilon_B(i),1+\epsilon_C(i)\), with total excess \(E_i=2\) in the current scalar row. Therefore the correct endpoint restrictions are
 \[
-n_i(v)=|\{C\text{ exact}: C\text{ has no T0 repeat on }T_0T_i,\ z_i(C)=v\}|.
+h_i(v)\le1\ \text{for non-small }v,\qquad
+\boxed{\sum_{v\in T_i}\max(h_i(v)-1,0)\le E_i=2.}
 \]
-Cancelling the \(a_i(v)\) exact-repeat owners from the universal identity yields
-\[
-\boxed{n_i(v)+\delta_i^D(v)=h_i(v)+r_i^D(v).}
-\]
-Equivalently, the multiset of omitted vertices for exact colors without a repeat on this pair, together with D's omitted vertex, equals the multiset of H endpoints and D-repeat endpoints on \(P_{0i}\).
+High multiplicity is possible only at the three small-block vertices, and the total endpoint excess over one is at most two. It is not valid to require all \(h_i(v)\in\{0,1\}\).
 
-Under the aligned zero-slack degree ledger, the equation gives:
-- If \(r_i^D(v)=0\), then \(n_i(v)+\delta_i^D(v)=h_i(v)\le1\). Thus at most one exact nonrepeat color omits any vertex away from D-repeat endpoints; if D omits that vertex, no exact nonrepeat color does.
-- At a D-repeat endpoint, \(n_i(v)\le1+r_i^D(v)\); multiplicity two is possible only when the D-repeat endpoint is also an H endpoint.
-- Every Ti endpoint of an H edge must occur in the omitted-vertex multiset.
-- D's omitted vertex must be incident to at least one H edge or D-repeat edge on this pair.
+There is also a useful source-sensitive relation for D:
+- If D has **no** T0 repeat on \(T_0T_i\), then \(r_i^D\equiv0\), its omitted vertex must be an H endpoint, and \(n_i(v)=h_i(v)-\delta_i^D(v)\).
+- If D **does** have a T0 repeat on \(T_0T_i\), its omitted vertex is exactly the endpoint of that D-repeat edge, so \(\delta_i^D(v)=r_i^D(v)\) pointwise and \(n_i(v)=h_i(v)\).
 
-**Scope firewall:** the exact-repeat cancellation above is only asserted for the single-T0-residual seven-vertex Type-I mode. It is not asserted for the eight-vertex isolated-double mode, where the source incidence must be re-established separately.
+The latter equality was missing from the earlier endpoint relaxation; the D omitted vertex and D-repeat endpoint cannot be chosen independently.
 
 ### 4.5 Exact endpoint-profile replay for the E0=0 scalar row
 
-The companion verifier verify_v47_z01_t0_omission_conservation.py exhaustively enumerates binary H endpoint profiles (using the zero-slack cross-track degree bound) and all D-repeat endpoint multiplicities over the 12 vertices of each large track, then every possible D-omitted vertex. It checks the corrected pointwise identity for
-\[
-y=(7,7,8),\quad s^{\rm exact}=(4,3,3),\quad d^D=(0,1,0),
-\]
-where \(y_i+s_i^{\rm exact}+d_i^D=11\) on each pair. The replay counts 5,544, 70,488 and 3,960 valid endpoint profiles for \(T_1,T_2,T_3\), respectively. Maximum exact nonrepeat omission multiplicities are \(1,2,1\), with the multiplicity-two possibility confined to the \(T_2\) D-repeat endpoint when it also has an H edge.
+The corrected verifier verify_v47_z01_t0_omission_conservation.py enumerates \(h_i\)-profiles on 12 vertices with:
+1. \(\sum_v h_i(v)=y_i\);
+2. \(h_i(v)\le1\) at all nine non-small vertices;
+3. \(\sum_v\max(h_i(v)-1,0)\le E_i=2\);
+4. D's omitted vertex constrained as in Section 4.4.
 
-This is still only an endpoint-multiplicity relaxation, not a full common-P completion. The remaining work is to couple these endpoint profiles to the source-labelled residual triangles, all cross-color edge-disjointness, and the pairwise perfect matchings \(P_{ij}\).
+For \(y=(7,7,8)\), exact T0 repeats \(s=(4,3,3)\), D repeats \(d=(0,1,0)\), and \(E=(2,2,2)\), the exact endpoint-only replay gives:
+- allowed H endpoint profiles: \(3{,}528,\ 3{,}528,\ 3{,}897\) for \(T_1,T_2,T_3\);
+- compatible D-omission assignments: \(20{,}610,\ 42{,}336,\ 25{,}758\);
+- maximum exact nonrepeat omission multiplicity: \(3\) on each track, possible only at a small-block vertex under the excess budget.
 
-### 4.5.1 Endpoint support and degree caps in the E0=0 row
+These counts impose only the necessary endpoint-excess contract. They do not yet couple the endpoint profiles to the source-labelled residual triangles, pairwise H matching edges, or the full common-P CSP.
 
-Because the aligned zero-slack ledger makes each \(H[T_0,T_i]\) a matching on both sides, its endpoint multiset is a set. Combining this with \(n_i(v)+\delta_i^D(v)=h_i(v)+r_i^D(v)\) gives:
-- On \(T_1\), the six exact nonrepeat omissions and D's omission are seven distinct vertices, exactly the seven H endpoints.
-- On \(T_3\), the seven exact nonrepeat omissions and D's omission are eight distinct vertices, exactly the eight H endpoints.
-- On \(T_2\), the seven exact nonrepeat omissions plus D's omission are either eight distinct vertices (if the D-repeat endpoint is outside the H endpoint set) or have exactly one doubled vertex (if the D-repeat endpoint is also an H endpoint).
+### 4.5.1 Correct P0 endpoint-degree caps in the E0=0 row
 
-Under the all-Class-A allocation of Section 4.6, the exact T0-repeat endpoints are also distinct within each track, because all owners on a given track use the same large-pair matching. If \(a_i(v)\) counts exact T0-repeat edges ending at v, then \(a_i(v)\le1\), and
+Under the all-Class-A forced allocation in Section 4.6, exact T0-repeat endpoints are distinct within each track, so \(a_i(v)\le1\). They may nevertheless coincide with H endpoints at the T_i side. The correct degree identity is
 \[
 d_{P_{0i}}(v)=a_i(v)+h_i(v)+r_i^D(v).
 \]
-Consequently the E0=0 scalar row has endpoint-degree caps \(d_{P_{01}}(v)\le2\), \(d_{P_{03}}(v)\le2\), and \(d_{P_{02}}(v)\le3\). The cap 3 on \(T_2\) can occur only if an exact repeat, an H edge, and the unique D-repeat edge all end at the same vertex. These are necessary constraints for the vertex-labelled CSP, not a contradiction.
+Since \(h_i(v)\le3\) follows from the \(E_i=2\) excess budget, the endpoint-only upper bounds are
+\[
+\boxed{\max_v d_{P_{01}}(v)\le4,\quad
+\max_v d_{P_{02}}(v)\le5,\quad
+\max_v d_{P_{03}}(v)\le4.}
+\]
+The \(T_2\) bound allows one D-repeat edge; the bounds are deliberately conservative and do not encode all source-incidence restrictions. The earlier caps \((2,3,2)\) and the claim that the H endpoint multisets on all tracks are sets are withdrawn.
 
 ### 4.6 Forced Class-A allocation in the E0=0 scalar row
 
