@@ -550,16 +550,13 @@ Added `V47_Z01_TWO_DOUBLE_SOURCE_PATTERN_AUDIT.md` and its exact verifier. After
 
 A further audit found that the prior owner-only common-P construction has 20 direct P_0i / own-K4-baseline overlaps (two for each of ten exact colors). Those edges cannot lie in P_0i, which is defined as the complement of all selected color matchings. The witness script is now a retraction audit, not a success certificate. The separate residual-signature audit still finds 9 colliding color pairs and 36 duplicate baseline-edge claims. Both failures are recorded; the Q32 root remains OPEN / NOT_CERTIFIED.
 
-### T0--Ti omitted-vertex conservation — corrected degree-side audit (2026-10-29)
+### T0--Ti omitted-vertex conservation — degree-source correction (2026-10-29)
 
-The universal omitted-vertex identity remains valid: d_P0i(v)=#{C:z_i(C)=v}. In the seven-vertex single-T0-residual Type-I mode, an exact color's own T0 repeat edge ending at v forces its omitted vertex to be v. After cancellation, the valid pointwise relation is
-n_i(v)+1[z_i(D)=v]=h_i(v)+r_i^D(v),
-where h_i(v) is the actual number of H edges from v∈T_i to T0 and r_i^D(v) is the D-repeat endpoint multiplicity.
+The universal identity d_P0i(v)=#{C:z_i(C)=v} remains exact. In the single-T0-residual seven-vertex Type-I mode, cancelling each exact color's own T0 repeat owner gives n_i(v)+1[z_i(D)=v]=h_i(v)+r_i^D(v).
 
-Audit correction: the prior note treated h_i(v) as at most one and inferred injectivity of exact nonrepeat omissions. This is invalid because the balanced-coloring lemma only bounds H neighbors at each T0 vertex, not at each T_i vertex. The injectivity claim is withdrawn; the isolated-double mode remains outside the cancellation lemma.
+The generic 13-set lemma does not bound H degree at a T_i vertex. However, the frozen aligned 3+7 zero-slack degree ledger gives each T_i vertex total H cross-track degree exactly one, so h_i(v)≤1 is valid under this contract. Accordingly, exact nonrepeat omissions are injective away from D-repeat endpoints; at a D-repeat endpoint multiplicity up to 1+r_i^D(v) is allowed. The earlier blanket withdrawal of this consequence was too broad; the unsupported step was its attribution to the asymmetric lemma alone.
 
-Added verify_v47_z01_t0_omission_conservation.py. Its independent endpoint-profile replay passes for E0=0 scalar counts y=(7,7,8), exact T0 repeats=(4,3,3), D repeats=(0,1,0), enumerating 148,512 / 2,015,520 / 381,888 profiles for T1/T2/T3. It exhibits endpoint-only relaxations with six or seven exact nonrepeat colors omitting the same vertex, so the conservation identity alone does not force injectivity. This is a scope correction and a better-defined CSP constraint, not a Q32 closure.
-
+Updated verify_v47_z01_t0_omission_conservation.py to enumerate binary H endpoint profiles and reran independently: 5,544 / 70,488 / 3,960 profiles for T1/T2/T3, with maximum omission multiplicities 1,2,1. The two-omission case occurs only on T2 at the D-repeat endpoint if it also has an H edge. The source-repeat cancellation is still not asserted for the isolated-double eight-vertex mode, and this does not close Q32.
 
 ### Forced Class-A repeat allocation — 2026-10-29
 
