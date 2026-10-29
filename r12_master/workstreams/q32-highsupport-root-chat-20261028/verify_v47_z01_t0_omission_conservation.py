@@ -1,23 +1,29 @@
 #!/usr/bin/env python3
-"""Exact T0--Ti omitted-vertex audit with the small-block excess budget.
+"""Exact T0--Ti omission audit plus local cross-track excess decomposition.
 
 Scope: E0=0 scalar row y=(7,7,8), exact T0-repeat counts s=(4,3,3),
 D-repeat counts d=(0,1,0), and E_i=(2,2,2).
 
-In each T_i, the three small-block vertices are indexed 0,1,2 and the other
-nine vertices are non-small. Non-small vertices have cross-track H degree 1;
-small-block vertices have degree 1+epsilon, with total epsilon E_i=2.
-Consequently h_i(v)=d_H(v,T0) is <=1 at non-small vertices and
-sum_v max(h_i(v)-1,0) <= E_i. This is NOT a binary H-endpoint condition.
+Each T_i has three small-block vertices (indices 0,1,2) and nine non-small
+vertices. If h_i(v)=d_H(v,T0) and l_i(v)=d_H(v,T_j union T_k), then
+h_i(v)+l_i(v)=1+epsilon_i(v), where epsilon is zero off the three small
+vertices and sums to E_i=2. Since each large-pair H graph is a matching,
+0<=l_i(v)<=2.
 
-For D with a repeat edge on T0--Ti, its omitted vertex is exactly that
-repeat edge's Ti endpoint, so delta_D(v)=r_D(v) and the identity reduces to
-n_i(v)=h_i(v). If D has no repeat on this pair, its omitted vertex must be
-an H endpoint and n_i(v)=h_i(v)-delta_D(v).
+Define:
+  u_i = sum_v max(h_i(v)-1,0)       (T0 endpoint multiplicity excess),
+  k_i = sum_v max(l_i(v)-1,0)       (overlap of the two large-pair H endpoint sets),
+  omega_i = #{v: h_i(v)>0 and l_i(v)>0} (T0/large-H endpoint overlap).
+Pointwise degree conservation gives the exact identity E_i=u_i+k_i+omega_i.
 
-The enumeration is an endpoint-multiplicity relaxation only. It does not
-impose the source-labelled residual triangles, cross-track matching edges,
-or the full common-P CSP.
+The omitted-vertex identity is n_i+delta_D=h_i+r_D. If D repeats on T0--Ti,
+its omitted vertex is exactly that repeat endpoint, so delta_D=r_D and n_i=h_i.
+If D has no repeat on this pair, z_i(D) must be an H endpoint and
+n_i=h_i-delta_D.
+
+This is an endpoint/local-degree relaxation only; it does not impose the
+source-labelled residual triangles, actual pairwise matching edges, or full
+common-P feasibility.
 """
 from collections import Counter
 
@@ -50,18 +56,10 @@ def audit_track(name, y_h, s_exact, d_repeat, excess_budget=2, vertices=12):
     profiles = list(allowed_h_profiles(y_h, excess_budget, vertices))
     by_support = Counter(sum(value > 0 for value in h) for h in profiles)
     valid_assignments = 0
-    max_h = max(max(h) for h in profiles)
     max_n = 0
-    max_overage = max(sum(max(value - 1, 0) for value in h) for h in profiles)
 
     for h in profiles:
-        assert sum(h) == y_h
-        assert all(h[v] <= 1 for v in range(3, vertices))
-        assert sum(max(value - 1, 0) for value in h) <= excess_budget
-
         if d_repeat == 0:
-            # D has no repeat on this pair. Its omitted vertex must be an H
-            # endpoint; subtract that one occurrence from the H endpoint multiset.
             for z_d in range(vertices):
                 if h[z_d] == 0:
                     continue
@@ -74,8 +72,7 @@ def audit_track(name, y_h, s_exact, d_repeat, excess_budget=2, vertices=12):
                 valid_assignments += 1
                 max_n = max(max_n, max(n))
         else:
-            # Here D has exactly one repeat edge in P_0i. Its endpoint is the
-            # unique omitted vertex of D on this pair; delta_D=r_D exactly.
+            # D's repeat endpoint is its omitted vertex; delta_D=r_D.
             for d_endpoint in range(vertices):
                 r_d = tuple(1 if v == d_endpoint else 0 for v in range(vertices))
                 delta_d = r_d
@@ -87,6 +84,28 @@ def audit_track(name, y_h, s_exact, d_repeat, excess_budget=2, vertices=12):
                 valid_assignments += 1
                 max_n = max(max_n, max(n))
 
+    # Exact local degree-state enumeration: epsilon is distributed among the
+    # three small-block vertices; l_i(v)=1+epsilon_i(v)-h_i(v).
+    state_count = 0
+    decomposition_counts = Counter()
+    for h in profiles:
+        for eps_small in weak_compositions(excess_budget, 3):
+            eps = [0] * vertices
+            for j, v in enumerate((0, 1, 2)):
+                eps[v] = eps_small[j]
+            large_degree = tuple(1 + eps[v] - h[v] for v in range(vertices))
+            if any(value < 0 or value > 2 for value in large_degree):
+                continue
+            assert sum(large_degree) == 12 + excess_budget - y_h
+            u = sum(max(value - 1, 0) for value in h)
+            k = sum(max(value - 1, 0) for value in large_degree)
+            omega = sum(h[v] > 0 and large_degree[v] > 0 for v in range(vertices))
+            assert u + k + omega == excess_budget
+            assert all(h[v] + large_degree[v] == 1 + eps[v]
+                       for v in range(vertices))
+            decomposition_counts[(u, k, omega)] += 1
+            state_count += 1
+
     return {
         "track": name,
         "H_T0_edges": y_h,
@@ -96,9 +115,11 @@ def audit_track(name, y_h, s_exact, d_repeat, excess_budget=2, vertices=12):
         "allowed_H_endpoint_profiles": len(profiles),
         "profile_count_by_H_endpoint_support": dict(sorted(by_support.items())),
         "valid_D_omission_assignments": valid_assignments,
-        "max_H_endpoint_multiplicity": max_h,
         "max_exact_nonrepeat_omission_multiplicity": max_n,
-        "max_H_endpoint_excess": max_overage,
+        "local_degree_states": state_count,
+        "local_excess_decomposition_counts": {
+            str(key): value for key, value in sorted(decomposition_counts.items())
+        },
     }
 
 
@@ -110,13 +131,14 @@ def main():
     ]
     assert [row["allowed_H_endpoint_profiles"] for row in rows] == [3528, 3528, 3897]
     assert [row["valid_D_omission_assignments"] for row in rows] == [20610, 42336, 25758]
-    assert [row["max_H_endpoint_multiplicity"] for row in rows] == [3, 3, 3]
     assert [row["max_exact_nonrepeat_omission_multiplicity"] for row in rows] == [3, 3, 3]
-    assert all(row["max_H_endpoint_excess"] == 2 for row in rows)
+    assert [row["local_degree_states"] for row in rows] == [9270, 9270, 8649]
+    assert all(sum(map(int, row["local_excess_decomposition_counts"].values())) ==
+               row["local_degree_states"] for row in rows)
     for row in rows:
         print(row)
-    print("T0_TI_OMISSION_EXCESS_BUDGET_AUDIT_OK")
-    print("Scope: endpoint-multiplicity relaxation only; not full common-P feasibility or Q32 UNSAT.")
+    print("T0_TI_OMISSION_AND_EXCESS_DECOMPOSITION_AUDIT_OK")
+    print("Scope: endpoint/local-degree relaxation only; not full common-P feasibility or Q32 UNSAT.")
 
 
 if __name__ == "__main__":
