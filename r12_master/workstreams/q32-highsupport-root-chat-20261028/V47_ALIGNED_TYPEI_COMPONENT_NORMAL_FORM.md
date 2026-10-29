@@ -1,83 +1,60 @@
-# E408 Q32 — Type-I color components under the aligned 3+7 low-z normal form
+# E408 Q32 — corrected Type-I placement audit in the aligned low-z 3+7 cell
 
 Date: 2026-10-29  
-Status: **PROVED_CONDITIONAL structural theorem.** This narrows the exact-color placement types in the aligned z=0,1 cell; it does not close that cell.
+Status: **PROVED_CONDITIONAL restrictions only; triple placement is NOT excluded in general.**
 
-## 1. Frozen graph contract
+> **Correction to the previous revision:** the twelve K5 factors in the KP placement profile comprise ten isolated K5 components plus the two special K5 cliques inside G11. It is incorrect to treat all twelve as isolated components or to fix G11's H/O counts from the placement profile alone. This version replaces those claims.
 
-Assume the m=10, disconnected 3+7 branch with z in {0,1}, after the registered track-alignment theorem and the K13 exclusion. The only remaining residual profile is
-`(2,2,2,1)`, and the small-map fibers agree with the outer-track fibers.
+## 1. Balanced-coloring degree floor
 
-For each of the three size-two fibers F_h, let X_h=T_h union F_h, where T_h is its aligned ten-vertex pivot track. Then X_1,X_2,X_3 are target-color K12 cliques. The singleton fiber together with its ten-vertex track is a target-color K11 clique X_0. These four cliques partition H.
+Assume the aligned z=0,1 profile (2,2,2,1), so H is partitioned into three target-color K12 cliques X_1,X_2,X_3 and one target-color K11 clique X_0.
 
-Consequently, for every non-target color C:
-- if v is in one of X_1,X_2,X_3, then C has at least one edge from v to each of the other two K12 cliques, so d_C(v,H)>=2;
-- if v is in X_0, then C has at least one edge from v to each of the three K12 cliques, so d_C(v,H)>=3.
+For every non-target color C:
+- if v lies in a K12 part X_i, then C has at least one edge from v to each of the other two K12 parts, because X_j union {v} is a 13-set containing the target color internally and must contain every non-target color. Thus d_C(v,H)>=2;
+- if v lies in X_0, the same argument applies to all three K12 parts, so d_C(v,H)>=3.
 
-This uses only the frozen balanced-coloring premise: every 13-set contains all twelve colors.
+## 2. What this does prove about the twelve K5 factors
 
-## 2. Triple-outside Type-I placement is impossible
+The exact Type-I color has twelve K5 factors: ten are isolated components, while the other two are the special cliques N_s,N_t inside G11. Each K5 factor has at least one O vertex, since a K5 entirely in H would be an independent five-set in the target graph H.
 
-For an exact Type-I color C, its graph on H union O is the registered disjoint union of ten K5 components and an 11-vertex gadget G11. Distinct components have no C-edges between them.
+Every single-outside K5 (one O vertex, four H vertices) has its four H vertices in four distinct target clique parts, hence exactly one from each of X_0,X_1,X_2,X_3.
 
-In the registered triple placement, one K5 has three vertices in O and only two vertices in H. Each of those two H vertices has exactly one C-neighbor in H: the other H vertex of that K5. This contradicts the pointwise lower bound d_C(v,H)>=2 for every v in H from Section 1.
+For a double-outside K5 (two O vertices, three H vertices), if it is one of the ten isolated components, each H vertex has C-degree exactly two in H. Therefore its three H vertices must lie one each in X_1,X_2,X_3 and none in X_0. **This conclusion is not asserted for a special K5 inside G11**, because the nine additional gadget edges may increase its H-vertex color degrees.
 
-Therefore:
+For a triple-outside K5 (three O vertices, two H vertices), if it is an isolated component, each H vertex has C-degree exactly one in H, contradicting the degree floor in Section 1. Therefore:
 
-> **No exact color can use the triple-outside K5 placement in the aligned low-z 3+7 cell.**
+> **If the registered triple placement occurs, its unique triple-outside K5 must be one of the two special cliques N_s,N_t inside G11.**
 
-A double-outside K5 has three H vertices and two O vertices. Each of its H vertices has exactly two C-neighbors in H, so none can lie in X_0, where d_C(v,H)>=3. Since H vertices in the same X_h are target-adjacent and hence cannot be joined by C-edges, the three H vertices of every double-outside K5 must be one vertex from each of X_1,X_2,X_3.
+In the triple placement the other special K5 has one O vertex. Thus, writing b_s=|N_s intersect O| and b_t=|N_t intersect O|,
 
-Every single-outside K5 has four H vertices. They form an independent four-set in the target graph H. Because H is partitioned into the four target cliques X_0,X_1,X_2,X_3, the K5 contains exactly one H vertex from each of these four parts.
+`b_s+b_t=3+1=4`.
 
-Thus the only surviving exact-color placements are:
-1. x_C in O, with one double-outside K5 and nine single-outside K5s;
-2. x_C in H, with two double-outside K5s and eight single-outside K5s.
+Since x_C is in H for the triple placement, G11 has four O vertices and seven H vertices. This is a necessary condition, **not** a contradiction.
 
-## 3. Exact gadget part sizes and edge accounting
+## 3. Source-correct placement/gap ledger
 
-The component counts force the H/O composition of G11.
+Let `g_C=e_C(H)-69`. The registered KP placement audit gives:
 
-### Case A: x_C in O
+| Placement | Twelve K5-factor profile | K5 interiors' H-H edges | Source-correct gap range |
+|---|---|---:|---:|
+| x_C in O | (2,1^11) | 69 | 0<=g_C<=4 |
+| x_C in H, two-double | (2,2,1^10) | 66 | 0<=g_C<=5 |
+| x_C in H, triple | (3,1^11) | 67 | 0<=g_C<=6 |
 
-The nine single-outside K5s use nine H vertices from each X_h and one O vertex each. The unique double-outside K5 uses one H vertex from each of X_1,X_2,X_3 and two O vertices, and none from X_0.
+Let G_H be the number of the nine additional, non-K5 gadget edges whose two endpoints both lie in H. These are the only C-edges in H not already counted inside the twelve K5 factors.
 
-Hence G11 contains:
-- two H vertices from each of X_1,X_2,X_3;
-- two H vertices from X_0;
-- three O vertices.
+- x_C in O: all gadget edges incident with x_C leave H, so `G_H=g_C`.
+- x_C in H, two-double: `66+G_H=69+g_C`, hence `G_H=3+g_C`.
+- x_C in H, triple: `67+G_H=69+g_C`, hence `G_H=2+g_C`.
 
-Its H-H edge contribution from the ten K5 components is
-`9 binom(4,2)+binom(3,2)=57`.
-If `g_C=e_C(H)-69`, then
-`e_C(H intersect G11)=12+g_C`.
-The registered source-correct cap `g_C<=4` gives
-`12 <= e_C(H intersect G11) <= 16`.
+The source-correct special-gadget audit further gives `G_H>=10-a-b_s-b_t` when x_C is in H, where a is the KP parameter. Consequently:
+- two-double: `g_C>=max(0,3-a)`;
+- triple: `g_C>=4-a`.
 
-The lower bound 12 also follows pairwise from the color-cover condition: at least two G11 edges are needed between each pair of K12 parts, and at least two between X_0 and each K12 part.
+For triple placement, the necessary special-clique condition b_s+b_t=4 therefore combines with `G_H>=6-a`. This can be used in a later multicolor packing argument, but it does not by itself exclude the placement.
 
-### Case B: x_C in H, two-double placement
+## 4. Corrected boundary
 
-The eight single-outside K5s use eight H vertices from every X_h. The two double-outside K5s each use one H vertex from each of X_1,X_2,X_3 and none from X_0.
+The prior revision's fixed claims `G11 has 2/3 O vertices`, `e_C(H intersect G11)=12+g_C` for x_C in O, `15+g_C` for two-double, and “triple placement is impossible” are withdrawn. They incorrectly counted the two special K5 cliques as isolated components.
 
-Hence G11 contains:
-- two H vertices from each of X_1,X_2,X_3;
-- three H vertices from X_0;
-- two O vertices.
-
-The ten K5 components contribute
-`8 binom(4,2)+2 binom(3,2)=54`
-H-H edges. Therefore
-`e_C(H intersect G11)=15+g_C`.
-The registered source-correct cap `g_C<=5` gives
-`15 <= e_C(H intersect G11) <= 20`.
-
-The lower bound 15 follows because the G11 H-edges must include at least two edges between each pair of K12 parts (six total) and at least three edges from X_0's three remaining vertices to each K12 part (nine total).
-
-## 4. Consequence and boundary
-
-For every exact color in this aligned low-z cell, the 11-point gadget's H-H edge count is now tied exactly to its near-Turan gap:
-- x_C in O: `h_C=12+g_C`, with `g_C<=4`;
-- x_C in H, two-double: `h_C=15+g_C`, with `g_C<=5`.
-
-This eliminates the triple-placement row and gives a part-by-part interpretation of the remaining color gap. The two remaining placement types are not individually contradictory, and this theorem does not close z=0 or z=1. No retracted degree-nine premise is used; full-support Q32 and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
+The valid remaining direction is to couple the corrected `(b_s,b_t,a,G_H,g_C)` constraints with the six track-pair color-repeat ledger and the global `sum_C g_C=37` budget. Full-support Q32 and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
