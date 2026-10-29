@@ -90,8 +90,12 @@ The exact colors can collectively own at most 20 such vertices, so this capacity
 No retracted degree-nine assertion or exceptional-point injectivity is used. The aligned z=0,1 cells, full-support Q32, and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
 
 
-## 5. Sharper cap in the seven-vertex single-outside subcase
+## 5. Placement-sensitive sharpening: when can \(t_C=2\)?
 
-The global bound above remains t_C<=2 because a source-correct isolated-double placement can leave an eight-vertex gadget residual with two T0 vertices; see `V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md`.
+The global bound remains \(t_C\le2\), since the isolated-double branch can leave two T0 vertices in \(G_{11}\). The placement audit sharpens it further:
 
-In the **conditional** subcase where all ten isolated K5 components are single-outside, their ten transversal H-K4s use ten of the eleven T0 vertices. Only one T0 vertex remains in the gadget/residual set. Hence an exact color in this subcase has t_C<=1. Equivalently, in the seven-vertex residual graph its T0 singleton has three baseline C-edges, one into each large track; pointwise saturation caps its C-degree at four, so at most one extra C-edge can be present across all three T0--Ti pairs combined. The updated seven-vertex verifiers enforce this cap. Do not apply this stronger bound to the isolated-double branch.
+- **All ten isolated K5s single-outside:** their ten transversal H-K4s use ten of the eleven T0 vertices, so only one T0 vertex remains in the gadget. Hence \(t_C\le1\). Equivalently, the seven-vertex residual singleton has three baseline C-edges, and pointwise saturation caps its C-degree at four, so at most one extra edge may occur across all three T0--Ti pairs combined.
+- **Isolated-double, two-K4 subcases:** this covers \(x_C\in O\) with the double factor isolated, and \(x_C\in H\), two-double with one isolated double and \(y\in O\). The eight-vertex residual consists of two disjoint transversal K4s plus a star of extra edges centered at \(y\) or \(x_C\), with the other endpoints in one special K4. Only one of the two T0 residual vertices can be incident to that star: if the center is in T0, it is the only T0 endpoint that can receive an extra; if the center is in a large track, only the T0 vertex in the opposite special K4 can receive one. Thus \(t_C\le1\) in these subcases too. If the star center lies in T0, the pointwise cap further forces \(g_C\le1\).
+- **Exceptional isolated-double placement:** \(x_C\in H\), two-double, \(y\in H\). Here \(b_s+b_t=3\), \(g_C=3\), and the residual is the special K4 plus special K3 and \(x_C\), with six gadget H-H edges. Both T0 vertices can potentially have degree four, so only the global bound \(t_C\le2\) is asserted.
+
+Consequently, **\(t_C=2\) can occur only in the exceptional isolated-double \(x_C\in H,y\in H\) branch, and then \(g_C=3\)**. The global identity \(\sum_C t_C=11-E_0\) and the surplus identity \(g_C=t_C+\sum_{i<j}(e_C(T_i,T_j)-12)\) remain unchanged. This is a placement-sensitive restriction, not a contradiction.
