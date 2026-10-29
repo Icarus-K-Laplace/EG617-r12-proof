@@ -9,7 +9,7 @@ Use the aligned low-z profile (2,2,2,1): the target graph H is partitioned into 
 \(T_1,T_2,T_3\cong K_{12}\) and \(T_0\cong K_{11}\).
 Let \(\mathcal C\) be the eleven non-target colors. The balanced-coloring premise says every 13-set contains every non-target color.
 
-The existing cross-track ledger gives:
+By Section 3 of `V47_Z01_BALANCED_COLORING_CROSS_TRACK_LEDGER.md`, the seven outer vertices and singleton residual vertex in T0 have epsilon=0, while each of the three small-block vertices has epsilon in {0,1}; thus E0 is in {0,1,2,3}. The existing cross-track ledger gives:
 - every \(v\in T_0\) has target degree within H equal to \(12+\epsilon_v\);
 - \(\epsilon_v\in\{0,1\}\), and the sum over \(T_0\) is \(E_0\in\{0,1,2,3\}\);
 - every \(v\in T_0\) has exactly \(2+\epsilon_v\) H-neighbors outside T0.
