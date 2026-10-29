@@ -110,6 +110,25 @@ duplicate_baseline_edge_claims = sum(max(0, n - 1) * 6
 assert sorted(cycle_owner_counts.values()) == [1, 3, 3, 3]
 assert residual_signature_collision_pairs == 9
 assert duplicate_baseline_edge_claims == 36
+for cycle, nowners in cycle_owner_counts.items():
+    owners = [cid for cid, meta in exact_meta.items() if meta["cycle"] == cycle]
+    required = {
+        edge_key((v(i, cycle, 0), v(j, cycle, 0)))
+        for i, j in pairs
+    } | {
+        edge_key((v(i, cycle, 1), v(j, cycle, 1)))
+        for i, j in pairs
+    }
+    assert len(required) == 6
+    if nowners > 1:
+        # Every color on this same residual 6-set requires the same six
+        # complementary baseline edges, contradicting edge-disjoint colors.
+        assert len(owners) == nowners
+        assert all(required == {
+            edge_key((v(i, cycle, 0), v(j, cycle, 0))) for i, j in pairs
+        } | {
+            edge_key((v(i, cycle, 1), v(j, cycle, 1))) for i, j in pairs
+        } for _ in owners)
 
 # Build source-local K4+K3+two-extra graphs. For each exact edge, the endpoint
 # in repeat_track is the K3-side y_i; the other endpoint is a K4-side s_j.
@@ -250,5 +269,5 @@ print("T0 repeat counts:", tuple(len(S0[i]) for i in range(3)))
 print("Large-pair H counts:", tuple(H_counts[p] for p in pairs))
 print("Large-pair exact-repeat counts:", tuple(S_exact_counts[p] for p in pairs))
 print("Large-pair D-repeat counts:", D_large)
-print("EXACT_CLASS_A_VERTEX_LABELLED_COMMON_P_RELAXATION_WITNESS_OK")
-print("Scope: endpoint-owner relaxation only. It deliberately fails cross-color baseline edge-disjointness on reused residual signatures, and is not the full 11-color triangle-factorization or a Q32 coloring.")
+print("OWNER_ONLY_RELAXATION_WITNESS_OK_BASELINE_COLLISIONS_EXPOSED")
+print("Scope: endpoint-owner relaxation only; the repeated residual signatures make it infeasible under cross-color baseline edge-disjointness.")
