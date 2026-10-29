@@ -369,3 +369,17 @@ The cross-track ledger now also has a color-repeat conservation lemma. On each K
 A further exact consequence is now recorded: each pair of the three K12 tracks has at most nine H-edges. For distinct large labels i,j,k,
 `e_H(T_i,T_j)=y_k-2-E_0-E_k<=9-E_0-E_k`,
 because `y_k<=11). Hence each K12--K12 pair has at least three unmatched vertices on each side, with a sharper deficit lower bound `12-e_H(T_i,T_j)>=3+E_0+E_k). The aggregate verifier now asserts these identities in every retained state.
+
+
+## Type-I accounting correction — special K5s belong to G11 (2026-10-29)
+
+**Correction / supersession:** the immediately preceding `V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM.md` revision incorrectly treated all twelve K5 factors as if they were ten isolated components plus two additional independent pieces. The actual Type-I factorization has twelve K5 factors: ten isolated K5 components plus the two special K5 cliques `N_s,N_t` inside the 11-point gadget G11. The previous claim that triple placement is impossible, and its fixed G11 H/O counts, are withdrawn.
+
+The file and verifier have been corrected. The balanced-coloring degree floor remains valid: every non-target color has H-degree at least two at every vertex of a K12 track, and at least three at every vertex of the K11 track. Therefore a triple-outside K5 cannot be one of the ten isolated K5 components. In the registered triple placement it must be one of the special K5s; the other special K5 is single-outside, so `b_s+b_t=4` and G11 has four O vertices and seven H vertices. This is a necessary condition only.
+
+Correct K5-interior H-edge counts over all twelve factors are:
+- x_C in O, profile (2,1^11): 69;
+- x_C in H, two-double (2,2,1^10): 66;
+- x_C in H, triple (3,1^11): 67.
+
+Writing G_H for the nine additional non-K5 gadget edges with both endpoints in H gives `G_H=g_C`, `3+g_C`, or `2+g_C`, respectively. The corrected verifier returned `V47_CORRECTED_TYPEI_PLACEMENT_ARITHMETIC_OK`. No triple-placement closure is claimed; full-support Q32 remains OPEN.
