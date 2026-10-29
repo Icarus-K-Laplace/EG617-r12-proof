@@ -213,3 +213,8 @@ Correction: the claimed 20 direct P_0i/K4-baseline overlaps in the owner-only wi
 ## 17. Class-B star-center degree filter (2026-10-29)
 
 For the source mode x_C in T0, both special factors double-outside, y in H, a=2, the local Class-B pattern has g_C=2,t_C=0 and two repeat edges forming a star at y across the two other large tracks. Since each P_ij is a matching, these are y's two large-pair P edges and neither is H. Thus y has zero H-neighbors outside its own track; the degree floor forces at least one H-neighbor in T0. This is a valid necessary filter only for that source mode, not a global contradiction.
+
+
+## 18. Residual six-set injectivity scope upgrade (2026-10-29)
+
+The current theorem in V47_Z01_RESIDUAL_SIGNATURE_INJECTIVITY.md is stronger than the initial single-outside statement: it rules out two exact colors sharing all six residual vertices across all source modes. Complementary pairwise matchings force one six-cycle. Single-outside six-cycles have g_C>=2; isolated-double two-K4 modes cannot realize a six-cycle with star extras; the exceptional isolated-double mode has g_C=3,t_C=1. Thus any six-cycle color owns a large-pair repeat and pair-projection injectivity excludes the second color. This still does not establish injectivity of partial pair projections or full common-P feasibility.
