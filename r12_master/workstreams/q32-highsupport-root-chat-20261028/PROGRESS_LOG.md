@@ -409,3 +409,14 @@ The corrected Type-I file now uses the fact that twelve K5 factors partition all
 - x_C in H triple: x_C cannot be in X_0, and the triple H pair lies in the other two K12 parts.
 
 These are source-correct counting identities; the updated verifier passed. They leave the aligned cell OPEN.
+
+
+### Canonical residual 1-factorization across the K12 tracks (2026-10-29)
+
+Added `V47_Z01_CANONICAL_RESIDUAL_ONE_FACTORIZATION.md`.
+
+For each K12--K12 pair, every vertex with an H edge has all 11 non-target colors exactly once among its other edges; every vertex without an H edge repeats exactly one color. The union P of H edges and repeated-color edges is a perfect matching, and each non-target color's remaining edges form another perfect matching. Hence K12xK12 is decomposed into 12 disjoint perfect matchings (P plus one factor per non-target color). The residual P contains all H edges and, by the nine-edge cap, at least three repeated-color edges as well as at least three H edges.
+
+For each K11--K12 pair, the analogous residual set has one edge at every T0 vertex, but it is not assumed to be a matching on the larger side. Hall's condition proves each non-target color separately has a matching saturating T0.
+
+This is stronger than the aggregate repeat-count ledger and is an exact constraint for any graph-completion model; it does not yet close z=0,1.
