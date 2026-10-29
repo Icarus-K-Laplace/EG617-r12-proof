@@ -88,6 +88,11 @@ def baseline(matching_switches, t0_choices):
     return out
 
 def extra_is_pairwise_matching(extra):
+    # T0's residual singleton already has three baseline C-edges into the
+    # large tracks. Pointwise saturation allows C-degree only 3 or 4 at T0,
+    # so at most one extra C-edge may touch vertex 6.
+    if sum(6 in e for e in extra) > 1:
+        return False
     for i in range(4):
         for j in range(i + 1, 4):
             pair = [e for e in extra if {part[e[0]], part[e[1]]} == {i, j}]
@@ -213,8 +218,8 @@ assert baseline_counts == Counter({"A": 8, "B": 24, "C": 24, "D": 8})
 assert minimum_gap == {"A": 0, "B": 1, "C": 2, "D": 3}
 assert minimum_repairs == Counter({"A": 8, "B": 24, "C": 72, "D": 72})
 assert repair_counts == Counter({
-    ("A", 0): 8, ("A", 1): 72, ("A", 2): 288, ("A", 3): 672,
-    ("B", 1): 24, ("B", 2): 288, ("B", 3): 1152,
+    ("A", 0): 8, ("A", 1): 72, ("A", 2): 264, ("A", 3): 520,
+    ("B", 1): 24, ("B", 2): 216, ("B", 3): 696,
     ("C", 2): 72, ("C", 3): 720,
     ("D", 3): 72,
 })
