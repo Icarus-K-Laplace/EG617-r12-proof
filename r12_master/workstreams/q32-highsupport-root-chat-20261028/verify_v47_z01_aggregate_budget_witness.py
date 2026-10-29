@@ -7,6 +7,7 @@ single-outside class-B patterns, but it does not identify actual vertices or
 enforce the common-P endpoint packing across colors.
 """
 from itertools import combinations, product
+from collections import Counter
 
 N = 7
 part = (0, 0, 1, 1, 2, 2, 3)  # T1,T2,T3 each size 2; T0 singleton
@@ -79,6 +80,7 @@ def admissible_extra(extra):
 large_pairs = ((0, 1), (0, 2), (1, 2))
 t0_pairs = ((0, 3), (1, 3), (2, 3))
 support = set()
+support_counts = Counter()
 local_graphs = 0
 for switches in product((0, 1), repeat=3):
     for t0_choices in product((0, 1), repeat=3):
@@ -98,6 +100,7 @@ for switches in product((0, 1), repeat=3):
                         for pair in large_pairs + t0_pairs)
             if sum(vec[:3]) == 1 and sum(vec[3:]) == 1:
                 support.add(vec)
+                support_counts[vec] += 1
                 local_graphs += 1
 
 expected_support = {
@@ -116,6 +119,7 @@ source_constructed_patterns = {
     (0, 0, 1, 0, 0, 1),  # T2T3 plus T0T3
 }
 assert source_constructed_patterns <= support
+assert all(support_counts[p] == 16 for p in source_constructed_patterns)
 
 # A scalar degree-ledger profile.
 E0 = 0
@@ -169,7 +173,8 @@ print("large-pair H edges (12,13,23):", eH)
 print("T0-pair H edges (01,02,03):", y)
 print("large-pair repeat capacities:", r)
 print("T0-pair repeat capacities:", q)
-print("source-compatible complementary exact-color surplus:", exact_by_pair)
+print("source-compatible local exact-color surplus:", exact_by_pair)
+print("source-compatible local pattern counts:", {p: support_counts[p] for p in sorted(source_constructed_patterns)})
 print("nonexact-color residual aggregate surplus:", D_by_pair)
 print("exact total gap=20; nonexact gap=17; total=37")
 print("AGGREGATE_BUDGET_WITNESS_OK")
