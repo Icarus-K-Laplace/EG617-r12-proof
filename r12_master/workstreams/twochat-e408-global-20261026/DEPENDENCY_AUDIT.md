@@ -30,7 +30,8 @@ Relative to their registered contracts, the following T61 branches remain closed
 
 - h12;
 - h13 E397--E406;
-- E407 Q31/Q32;
+- E407 Q31;
+- E407 Q32 local 29-point reserve only (parent mapping OPEN);
 - E408 Q31.
 
 Thus the live E408 charges are Q32/Q33 before the color-incidence arguments below.
@@ -39,7 +40,7 @@ Thus the live E408 charges are Q32/Q33 before the color-incidence arguments belo
 
 The local reserve arithmetic is valid under the frozen contract: 49 selected independent four-blocks own 294 distinct complement edges; one unselected non-target color needs at least p_12(29)=22; and the registered ledger gives e(L_U)<=310. Thus 294+22=316>310. This route does not use the retracted degree-nine premise.
 
-However, the V12 source report remains SOURCE_REPORTED / INDEPENDENT_REPLAY_PENDING. The reported archive, manifest, and verifier are absent from all 30 searched branch trees and from GitHub releases; the exact archive path has no commit history. The dedicated E407 sibling still labels the five-template/global compatibility and parent bridge OPEN / NOT_CERTIFIED. Therefore the local 29-point reserve is PROVED_CONDITIONAL, while V12 finite coverage and promotion to every legal E407 Q32 parent remain OPEN.
+However, the V12 source report remains SOURCE_REPORTED / INDEPENDENT_REPLAY_PENDING. The reported archive, manifest, and verifier are absent from all 30 searched branch trees and from GitHub releases; the exact archive path has no commit history. The template-local 29-point/49-block support and selected-component anchor identity are recorded as PROVED_CONDITIONAL under the registered minimum-support and exact-129 inputs in FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md and SUPPORT_BLOCK_ANCHOR_IDENTITY.md. What remains OPEN is the composite edge from every legal parent through the complete V12 finite screen to one of templates A-E; the absent archive prevents independent replay of the reported survivor-to-template mapping. The broader same-core compatibility workstream remains OPEN but is not needed for the local reserve contradiction if that parent mapping is established.
 
 ## 4. Q33 — local P_C=49 profile status
 
@@ -58,7 +59,7 @@ The two remaining local branches are genuine: the current double-star/blocker ar
 
 so a single external same-color edge is legal. The historical stronger isolation claim was false. Consequently **`P_C<=48` is not proved** and must not be used.
 
-## 5. Q33 — global closure bypass
+## 5. Q33 — exact 31-point local closure bypass; parent support promotion OPEN
 
 The local P49 gap is not load-bearing for the registered Q33 terminal.
 

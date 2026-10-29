@@ -174,3 +174,9 @@ Canonical commit: `b2d06bb90e532556ba203f559d85d8fcfb257fd4`.
 - Independently executed verify_q33_high_support_u_reserve.py in a clean standard-library process with command python -S -B /mnt/data/verify_q33_high_support_u_reserve.py; exit code 0, no stderr, SHA256 9a47974a1e5ac461caa5313e6551b73765a1954102e83ff59ffd540d8851ee66. It certifies arithmetic only, not graph realization or parent coverage.
 - Added ROOT_DEPENDENCY_DAG.md, ROOT_AUDIT_INPUT_MANIFEST.json, ROOT_AUDIT_REPLAY_LOG.md, Q33_HIGH_SUPPORT_U_RESERVE_AUDIT.md, and verify_q33_high_support_u_reserve.py. Updated this workstream's canonical state, dependency audit, root receipt, and historical root-audit supersession notice. No sibling workstream was modified.
 - Root status remains OPEN / NOT_CERTIFIED. No promotable receipt is issued.
+
+
+## 2026-10-29 — dependency-edge precision correction
+
+- Distinguished the conditional template-local 29-point/49-block support/anchor interface from the missing V12 finite-survivor-to-template mapping. The former is recorded in the E407 sibling under the registered minimum-support and exact-129 assumptions; the latter remains OPEN because the V12 archive, manifest, and verifier are unavailable.
+- Updated the dependency DAG and root-facing summaries to avoid conflating the two edges. Root status remains OPEN / NOT_CERTIFIED.

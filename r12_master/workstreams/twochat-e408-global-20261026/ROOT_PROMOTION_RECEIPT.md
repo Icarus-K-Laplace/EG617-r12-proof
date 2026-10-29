@@ -178,7 +178,7 @@ Any new source mismatch automatically reopens the affected gate.
 No promotable root receipt is issued. This is a fail-closed status record, not a theorem certificate.
 
 - V12 archive/certificate hashes and the reported 8,677 / 17,957 / 1,984 / 554 counts are not independently replayed here. The archive, manifest, and verifier were not found in any of the 30 branch trees; the source report says INDEPENDENT_REPLAY_PENDING.
-- The E407 local reserve is valid only under the 29-point/49-block contract. V12 exhaustiveness and parent-to-contract coverage remain OPEN.
+- The E407 local reserve is valid only under the 29-point/49-block contract. The template-local support/anchor interface is PROVED_CONDITIONAL under the registered minimum-support/exact-129 inputs; V12 finite exhaustiveness and mapping every legal survivor to templates A-E remain OPEN.
 - The Q33 local reserve is valid only for the exact 31-point/56-witness contract. Higher support remains OPEN except that the scalar reserve excludes m=8 at v=32.
 - E408 Q32 remains OPEN under the 285-edge/excess-six contract. The degree-nine exceptional-vertex premise remains RETRACTED.
 - Current authoritative artifacts are ROOT_DEPENDENCY_DAG.md, ROOT_AUDIT_INPUT_MANIFEST.json, ROOT_AUDIT_REPLAY_LOG.md, Q33_HIGH_SUPPORT_U_RESERVE_AUDIT.md, and verify_q33_high_support_u_reserve.py.

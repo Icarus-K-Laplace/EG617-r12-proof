@@ -23,7 +23,7 @@ The former E408-Q32 exact-color-count closure is **RETRACTED** because it used a
 - T61 h12: closed;
 - h13 E397--E406: closed;
 - E407 Q31: closed through the registered V10/V11 route;
-- E407 Q32: the 29-point/49-block reserve contradiction is **PROVED_CONDITIONAL locally**; parent coverage for every legal E407 Q32 survivor is **OPEN** pending V12 source/replay and template-to-contract coverage;
+- E407 Q32: the 29-point/49-block reserve contradiction is **PROVED_CONDITIONAL locally**; the template-local support/anchor contract is **PROVED_CONDITIONAL** under the registered minimum-support and exact-129 assumptions, but mapping every legal parent/survivor into the five templates is **OPEN** pending V12 source/replay;
 - E408 Q31: closed under the V11 route;
 - E408 Q33: the 31-point/56-witness reserve contradiction is **PROVED_CONDITIONAL locally**; parent support promotion for |U|>31 is **OPEN**.
 
@@ -31,7 +31,7 @@ No statement above promotes the full theorem while Q32 remains open.
 
 ## Q33 status
 
-The requested four old `P_C=49` profiles no longer form the load-bearing frontier. Two were locally excluded; two all-component-edge-present profiles remain locally open, but the entire registered Q33 terminal is globally bypassed by `Q33_NONEXACT_U_RESERVE_CLOSURE.md`.
+The requested four old `P_C=49` profiles no longer form the load-bearing frontier. Two were locally excluded; two all-component-edge-present profiles remain locally open, but the exact 31-point/56-witness Q33 terminal is locally bypassed by `Q33_NONEXACT_U_RESERVE_CLOSURE.md`.
 
 Thus only the registered 284-edge, |U|=31, 56-witness Q33 terminal is **PROVED_CONDITIONAL impossible**. The upstream support bound |U|>=31 does not prove equality, so no global Q33 closure is claimed for |U|>31. No Q32 statement is imported into that local proof.
 
