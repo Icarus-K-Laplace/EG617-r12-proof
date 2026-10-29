@@ -231,8 +231,9 @@
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/verify_q32_fullsupport_count_vector_contract.py",
-      "blob_sha": "f7aa8d32a15bd0be89feb87680d833e1f72691765d",
-      "status": "local exact arithmetic regression passed; not a CSP solver"
+      "blob_sha": "64c589692038b43e2900c9829815277a25b2ee32",
+      "status": "Git blob hash and SHA256 recorded; local standard-library arithmetic replay passed; not a CSP solver",
+      "sha256": "a8ca2b64593ad808edd57acea710840a76ce04734288bb42d3dbcc1153b8fb27"
     }
   ],
   "open_dependencies": [
@@ -248,7 +249,8 @@
   "audit_commits": [
     "549960e37217c243e8abd6b7629301e9f918e6c6",
     "61f3263de5c99d37f58cd1ab7ad65a05888534f0",
-    "bb8b1e696ecf199f337d8d0db69d00132191f80f"
+    "bb8b1e696ecf199f337d8d0db69d00132191f80f",
+    "be173984f7f31141805794a027bd675e7b10072e"
   ],
   "sibling_heads": {
     "e407_q32": "0192807d1f3b2193aa65c25b9f671b36821aaded",
@@ -287,27 +289,33 @@
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/CANONICAL_STATE.md",
-      "sha": "eafcada480b475cd2342ea6eb92ce91bea4c9af2"
+      "sha": "eafcada480b475cd2342ea6eb92ce91bea4c9af2",
+      "blob_sha": "eafcada480b475cd2342ea6eb92ce91bea4c9af2"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/PROGRESS_LOG.md",
-      "sha": "43e1d5d8ac66f55a9da63281921e7995161466e0"
+      "sha": "43e1d5d8ac66f55a9da63281921e7995161466e0",
+      "blob_sha": "43e1d5d8ac66f55a9da63281921e7995161466e0"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/ROOT_DEPENDENCY_DAG.md",
-      "sha": "b80cc6242d70a4fe772870234ad2b970b78f2c1f"
+      "sha": "b80cc6242d70a4fe772870234ad2b970b78f2c1f",
+      "blob_sha": "b80cc6242d70a4fe772870234ad2b970b78f2c1f"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/Q32_FULLSUPPORT_CSP_SOURCE_AUDIT.md",
-      "sha": "cee63d28b195abb2d165ce8f37185a3485033cbb"
+      "sha": "cee63d28b195abb2d165ce8f37185a3485033cbb",
+      "blob_sha": "cee63d28b195abb2d165ce8f37185a3485033cbb"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/Q32_CORE285_TERMINAL.md",
-      "sha": "c50a88387e24f5a0d163b877a82d2b64525a422e"
+      "sha": "c50a88387e24f5a0d163b877a82d2b64525a422e",
+      "blob_sha": "c50a88387e24f5a0d163b877a82d2b64525a422e"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/verify_q32_fullsupport_count_vector_contract.py",
-      "sha": "64c589692038b43e2900c9829815277a25b2ee32"
+      "sha": "64c589692038b43e2900c9829815277a25b2ee32",
+      "blob_sha": "64c589692038b43e2900c9829815277a25b2ee32"
     }
   ],
   "root_status": "OPEN / NOT_CERTIFIED",
@@ -316,7 +324,7 @@
     "61f3263de5c99d37f58cd1ab7ad65a05888534f0",
     "6ed8b6e0352ca5aeb713e86676504bb236561db8"
   ],
-  "manifest_parent_commit": "bb8b1e696ecf199f337d8d0db69d00132191f80f",
+  "manifest_parent_commit": "be173984f7f31141805794a027bd675e7b10072e",
   "audit_commits_before_final_manifest_commit": [
     "549960e37217c243e8abd6b7629301e9f918e6c6",
     "61f3263de5c99d37f58cd1ab7ad65a05888534f0",
