@@ -50,7 +50,7 @@ If \(y\in H\), then \(N_t\) is single-outside and \(N_s\) is double-outside. Her
 \[
 g_C=6-(b_s+b_t)=3.
 \]
-The H-part of \(N_s\) is a \(K_3\), the H-part of \(N_t\) is a \(K_4\), and the gadget supplies six H-H edges: three from \(x_C\) to \(N_t\setminus\{y\}\), plus one edge from \(x_C\) or \(y\) to each of the three H-vertices of \(N_s\). This \(g_C=3\) source geometry must be handled separately; it is not covered by the two-\(K_4\) baseline count alone.
+The H-part of \(N_s\) is a \(K_3\), the H-part of \(N_t\) is a \(K_4\), and the gadget supplies six H-H edges: three from \(x_C\) to \(N_t\setminus\{y\}\), plus one edge from \(x_C\) or \(y\) to each of the three H-vertices of \(N_s\). This \(g_C=3\) source geometry is closed by the balanced-coloring contradiction in Section 3.3.
 
 ### 3.3 Balanced-coloring contradiction closes the exceptional \(x_C\in H,y\in H\) branch
 
