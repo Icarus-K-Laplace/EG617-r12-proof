@@ -89,7 +89,7 @@ Do not silently apply the seven-vertex theorem to a color in isolated-double mod
 
 The previous counterexample was a valid Class-A source graph, not a Class-B graph. The correct model must preserve both rules separately: **Class A permits shared-track placement; Class B forces complementary-track placement** when \(g_C=2,t_C=1\). Neither local rule solves the common endpoint-label packing.
 
-**Additional Class-B center constraint at \((g_C,t_C)=(2,0)\).** In the source audit row \(x_C\in T_0\), both special factors double-outside, \(y\in H\), and \(a=2\), the two surplus edges are \(ys_j,ys_k\): a star centered at \(y\), with one edge into each of the other two large tracks. Both edges lie in the corresponding residual factors \(P_{ij}\) and \(P_{ik}\). Since each \(P_{ij}\) is a matching, these are the two large-pair \(P\)-edges incident to \(y\); neither can be an H-edge. Hence \(d_{H[T_1\cup T_2\cup T_3]}(y)=0\). The global minimum-degree condition \(\delta(H)\ge12\), together with the \(K_{12}\) track clique containing \(y\), then forces \(y\) to have at least one H-neighbor in \(T_0\). Thus every Class-B \(g_C=2,t_C=0\) star center must be an endpoint of a \(T_0\)-to-large-track H-edge. This is a necessary CSP incidence constraint, not a contradiction.
+Under the aligned zero-slack ledger, this residual vertex y has total H cross-track degree exactly one. Since it has no H-neighbor in the other large tracks, it must have exactly one H-neighbor in T0. Thus every Class-B (g_C,t_C)=(2,0) star center is incident to exactly one T0-to-large-track H-edge. This is a necessary CSP incidence constraint, not a contradiction.
 
 ## 4. Finite exact model to build
 
