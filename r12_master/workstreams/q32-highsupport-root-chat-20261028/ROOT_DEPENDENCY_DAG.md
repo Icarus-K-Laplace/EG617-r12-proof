@@ -348,3 +348,6 @@ The surviving exact-color types are x_C in O (one double/nine single K5s) and x_
 
 
 The cross-track theorem also gives pairwise color-repeat conservation: for each K12--K12 pair and each non-target color C, the surplus `e_C(T_i,T_j)-12` equals the number of unmatched vertices on either side that repeat C. The two sides must have identical repeat-color counts. For a K11--K12 pair, the surplus over 11 is the repeated-color count among unmatched K11-side vertices. This is an additional finite color-assignment constraint; no closure is inferred.
+
+
+The aligned z=0,1 cross-track ledger further gives `e_H(T_i,T_j)<=9-E_0-E_k<=9` for each pair of K12 tracks, where k is the third K12 label. Thus each such pair has at least three unmatched vertices on both sides, and the color-repeat counts on that pair have total deficit at least `3+E_0+E_k). This is a necessary restriction only.
