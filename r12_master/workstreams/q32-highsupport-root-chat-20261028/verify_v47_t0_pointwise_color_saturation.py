@@ -10,15 +10,12 @@ from itertools import product
 # For each T0 vertex, epsilon is 0 or 1 and eleven color degrees are >=3.
 for epsilon in (0, 1):
     total = 34 - epsilon
-    base = 11 * 3
-    excess = total - base
+    excess = total - 11 * 3
     assert excess == 1 - epsilon
     if epsilon == 1:
-        assert excess == 0
         degrees = [3] * 11
         assert sum(degrees) == total
     else:
-        assert excess == 1
         degrees = [4] + [3] * 10
         assert sum(degrees) == total
         assert sum(d == 4 for d in degrees) == 1
@@ -29,18 +26,22 @@ for epsilon in (0, 1):
 for E0 in range(4):
     repeat_vertices = 11 - E0
     assert 8 <= repeat_vertices <= 11
-    assert repeat_vertices == 11 - E0
 
-# Source Type-I occupancy: each special K5 contributes at most one T0
-# vertex. If x_C is in T0, the triple placement is impossible and both
-# special K5s cannot be single-outside in the two-double case.
-for x_in_T0 in (False, True):
-    for special_T0_counts in product((0, 1), repeat=2):
-        if x_in_T0 and sum(special_T0_counts) == 2:
-            # Both special K5s single-outside gives b_s+b_t=2, excluded.
-            continue
-        count = sum(special_T0_counts) + int(x_in_T0)
-        assert count <= 2
+# If x_C lies in T0, it is not triple placement. In the two-double
+# profile, the ten single-outside factors already occupy all ten other
+# T0 vertices, so neither double-outside factor can contain T0. Hence a
+# special K5 contributes a T0 vertex only if it is single-outside. Both
+# special K5s cannot be single-outside because b_s+b_t=2 is source-excluded.
+for special_T0_counts in product((0, 1), repeat=2):
+    if sum(special_T0_counts) == 2:
+        continue
+    assert sum(special_T0_counts) <= 1
+    assert 1 + sum(special_T0_counts) <= 2
+
+# If x_C is not in T0, each of the two special K5s contributes at most
+# one T0 vertex, so G11(C) contains at most two T0 vertices.
+for special_T0_counts in product((0, 1), repeat=2):
+    assert sum(special_T0_counts) <= 2
 
 print("T0 degree-sum alternatives checked for epsilon=0,1")
 print("E0 repeat-owner counts checked for E0=0,1,2,3")
