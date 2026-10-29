@@ -500,7 +500,7 @@ The placement-sensitive case split now proves the global exact-color bound t_C<=
 
 ## Isolated-double residual branch: T0-capped two-K4 enumeration (2026-10-29)
 
-Extended `V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md` and added `verify_v47_z01_isolated_double_residual_graphs.py`. In the isolated-double placements with a two-transversal-K4 residual base, each of the two T0 residual vertices has baseline C-degree three; pointwise saturation allows at most one extra C-edge at each. The 12 possible cross-K4 edges therefore yield exactly 1,12,60,164 allowed extra sets per base at gaps 0,1,2,3, respectively. With eight unordered two-K4 bases, the corrected necessary-relaxation counts are 8,96,480,1312. These replace the earlier uncapped binomial counts 8,96,528,1760. Source gadget star restrictions are stricter; if the star center x_C or y is in T0, then g_C<=1. This still does not close the isolated-double branch.
+Extended `V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md` and its verifier. In the isolated-double placements with a two-transversal-K4 residual base, the global exact-color bound t_C<=1 allows at most one T0-incident extra edge in total. Of the 12 possible cross-K4 edges, six are T0-incident and six join large-track vertices, giving 1,12,51,110 allowed extra sets per base at gaps 0,1,2,3. Across eight unordered bases, the corrected necessary-relaxation counts are 8,96,408,880. These supersede both the per-T0-vertex-cap counts 8,96,480,1312 and the uncapped counts 8,96,528,1760. Source gadget star restrictions are stricter; if the star center x_C or y is in T0, then g_C<=1. This still does not close the isolated-double branch.
 
 ## Isolated-double exceptional branch: audit correction (2026-10-29)
 
