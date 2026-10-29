@@ -698,3 +698,8 @@ Marked the m=8 full-support parameter restriction and the claimed pairwise disti
 ### Canonical-state wording reconciled (2026-10-29)
 
 Replaced the stale unconditional q_z<=4 statement for m=10 and the older “reserve not hard-coded” summary with the current split: unconditional q_z<=(4,5,5), stronger q_z<=(3,4,4) only under actual target degree d_0(z)>=13. The non-full-support r_m=(3,4,4) budget remains distinct.
+
+
+### Main specification synced with safe reserve implementation (2026-10-29)
+
+Updated the global-constraints section to reflect the implemented unconditional q_z<=(4,5,5) caps and conditional stronger caps. The earlier wording that no reserve quota was encoded is obsolete.

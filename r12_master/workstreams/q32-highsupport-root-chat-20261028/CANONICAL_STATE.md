@@ -670,3 +670,8 @@ The all-color reserve note's stronger q_z<=(3,4,4) quota requires d_0(z)>=13 at 
 
 
 The m=8 weighted-surplus restrictions a_C in {2,3} and pairwise distinctness of all x_C,y_C are also conditional in full support: their capacity-three proof requires d_F(z)>=13 at each variable vertex. The unconditional core floor is d_H(z)>=12. The non-full-support W-point arguments may still obtain d_F(w)>=13 by their separate shell-saturation lemma; do not transfer that W-specific conclusion to full support without proof.
+
+
+### Main specification synced with safe reserve implementation (2026-10-29)
+
+Updated the global-constraints section to reflect the implemented unconditional q_z<=(4,5,5) caps and conditional stronger caps. The earlier wording that no reserve quota was encoded is obsolete.

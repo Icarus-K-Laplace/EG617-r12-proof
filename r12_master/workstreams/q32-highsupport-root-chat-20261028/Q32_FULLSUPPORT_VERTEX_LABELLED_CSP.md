@@ -46,7 +46,7 @@ The full-support check is also source-corrected: each h in H must occur in at le
 5. Full support: every vertex of H belongs to some source K5 factor with exactly one O-vertex, giving a core K4 witness.
 6. The registered 61-point coloring contract is encoded by alpha(H)<=4, alpha(G_C)<=12, and omega(G_C)<=5 for all twelve colors. These are exponential set constraints, so the solver uses lazy separation: an independent 5-set in H or independent 13-set in a color graph adds the valid clause that at least one pair in the set has the corresponding color; a monochromatic K6 adds the valid clause that at least one pair in it has a different color. Every accepted SAT candidate is checked again by the independent verifier.
 
-The all-color pointwise reserve quota is not hard-coded as a premise. The current reserve note's 13+4m+q_z+L_m count is not independently re-derived inside this solver's trusted core; using the complete coloring constraints is safer than silently importing an unverified strengthening. This does not retract the reserve note; it marks that dependency for independent proof audit.
+The solver encodes the unconditional all-color gadget quota q_z<=(4,5,5), derived from d_0(z)>=d_H(z)>=12 and the registered nonexact degree floors L_m=(12,7,3). The stronger quota q_z<=(3,4,4) is imposed only conditionally when the model's actual full target degree d_0(z) is at least 13. A universal d_0(z)>=13 lemma is not assumed; the reserve audit records it as an open dependency.
 
 ## Aligned m=10, z=0,1 common-P submodel
 
