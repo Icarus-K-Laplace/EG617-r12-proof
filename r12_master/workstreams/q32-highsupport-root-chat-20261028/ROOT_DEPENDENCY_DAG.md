@@ -361,3 +361,8 @@ The prior entry asserting that the triple-outside Type-I placement is eliminated
 ### 8.13 Aligned triple-special local normal form
 
 The corrected Type-I audit now pins any triple placement in the aligned low-z cell to: `b_s+b_t=4), G11 with seven H and four O vertices, y in H, x and y in the same K12 part, the two H vertices of the triple special K5 in the other two K12 parts, and `g_C=3). The source arithmetic replay passes. This does not close the triple row or either low-z cell; root remains OPEN / NOT_CERTIFIED.
+
+
+### 8.14 Aligned low-z exact-gap budget
+
+In the fully aligned z=0,1 cell, the corrected Type-I component analysis caps every exact-color gap at three. Hence the unique nonexact color must have `g_D>=7). Its 132-edge total and the balanced-coloring lower bound of at least42 H-O edges imply `g_D<=21). Therefore `e_D(H) in [76,90]`, `mu_D<=21-g_D<=14`, and at least six exact colors have positive gap. This is a new global necessary condition for the low-z branch; it is not a closure and does not alter the root status.
