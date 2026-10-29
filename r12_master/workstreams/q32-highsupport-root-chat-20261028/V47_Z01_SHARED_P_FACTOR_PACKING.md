@@ -52,6 +52,22 @@ The decisive constraint missing from the aggregate witness is therefore not mere
 \]
 but the **same actual edge set \(S_{ij}\)** must be partitioned among colors, with no endpoint conflicts and with each color's selected residual vertices containing all of its assigned edges.
 
+## 2.1 Triangle-label signature for aligned single-outside colors
+
+For a single-outside exact color whose large-track residual baseline is in class A or B, the three matchings \(M_{C,12},M_{C,13},M_{C,23}\) form twelve disjoint transversal triangles on the 36 large-track vertices: ten triangles belong to isolated K4 components, and the two residual triangles are the gadget's large-track baseline. Label these triangles by \(\tau_C\in\{1,\ldots,12\}\).
+
+For each pair \(i<j\), the matching \(M_{C,ij}\) joins equal triangle labels. Since \(P_{ij}\) is edge-disjoint from \(M_{C,ij}\), every edge of \(P_{ij}\) joins **different** \(\tau_C\)-labels. If a non-H edge \(e\in S_{ij}\) is owned by color \(C\), both endpoints must be residual, so their labels must be exactly the two residual labels \(\{a_C,b_C\}\). Consequently every large-pair surplus edge owned by this color connects the same unordered label pair \(\{a_C,b_C\}\), even when the edges lie on different track pairs.
+
+Equivalently, for each pair \(ij\), write \(P_{ij}\) in the triangle-label coordinates of \(M_C\) as a derangement permutation \(\pi_{C,ij}\) of the 12 labels. A surplus edge of C on that pair is possible only when
+\[
+\pi_{C,ij}(a_C)=b_C\quad\text{or}\quad \pi_{C,ij}(b_C)=a_C.
+\]
+Thus the complete set of large-pair surplus edges owned by an aligned exact color must lie on the at-most-six directed arcs between the same two residual triangle labels across the three pair types. This is stricter than checking only \(|E_C^+|\le3\).
+
+If \(t_C=1\), the T0 surplus edge's large-track endpoint must also have triangle label \(a_C\) or \(b_C\). The T0 baseline edge from the same residual T0 vertex uses the other residual vertex in that track, so the baseline/extra pair at that track realizes both labels \(a_C,b_C\). This is the vertex-label condition to impose when matching T0 repeat edges to large-pair surplus edges.
+
+This triangle-label signature applies only to aligned class-A/B single-outside colors. Class-C/D six-cycle holonomy and isolated-double colors must retain their separate residual models.
+
 ## 3. Color modes must remain separate
 
 For each exact color \(C\), introduce a mode bit:
