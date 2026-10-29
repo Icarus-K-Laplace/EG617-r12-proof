@@ -400,3 +400,13 @@ Since the total gap is 37 over eleven non-target colors, the unique nonexact col
 ### Further nonexact-color shell-floor tightening (2026-10-29)
 
 The final section of `V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM.md` now strengthens the nonexact gap range. Besides `e_D(H,O)>=42`, the nonexact color D must have `mu_D=e_D(A)>=2): the pivot p has no D-edges to A, so if D[A] had an independent 12-set, adding p would produce a D-independent 13-set. Thus `alpha(D[A])<=11), requiring at least `p_11(13)=2` edges on the 13-point shell. Consequently `7<=g_D<=19`, `76<=e_D(H)<=88`, and `2<=mu_D<=14). The exact colors contribute 18–30 gap units, so at least six exact colors have positive gap. The arithmetic verifier passed.
+
+
+### Exact K5-factor occupancy ledger (2026-10-29)
+
+Added Section 8 to `V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM.md`. The twelve K5 factors partition all 60 vertices other than x_C, so their H-vertex counts can be matched exactly to the four target clique sizes (12,12,12,11):
+- x_C in O: eleven single factors plus one double force the double factor to use one H vertex from each K12 part and none from X_0;
+- x_C in H, two-double: if x_C lies in X_0, both double factors use all three K12 parts; if x_C lies in a K12 part, one double factor uses X_0 plus the other two K12 parts, and the other uses all three K12 parts. The double factor containing X_0 must be special, not isolated;
+- x_C in H, triple: x_C cannot lie in X_0; the triple factor's two H vertices lie in the other two K12 parts.
+
+The exact occupancy arithmetic verifier passed. This sharpens the allowed placement geometry but does not close the remaining color types.
