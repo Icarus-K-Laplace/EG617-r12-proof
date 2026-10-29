@@ -128,6 +128,14 @@ If another exact color C' had the same two residual subsets on tracks i,j, its M
 This is a valid cross-color constraint without assuming that a color's six residual vertices form a component of the common P graph. It is necessary but not by itself a contradiction.
 
 The residual six-set injectivity theorem in V47_Z01_RESIDUAL_SIGNATURE_INJECTIVITY.md now applies across all source modes: if two exact colors share all six residual vertices, their pairwise residual matchings are complementary and one has six-cycle holonomy. The source-mode audit shows every possible six-cycle color has a large-pair repeat (single-outside g_C>=2; isolated-double two-K4 modes cannot flip a pair matching with star extras; the exceptional isolated-double mode has g_C=3,t_C=1). Pair-projection injectivity then forbids the other color from sharing the residual pair on that repeat pair. The remaining bridge is to impose pair-projection injectivity, global residual-signature injectivity, all cross-color matching edge-disjointness, and complete triangle-factor / Type-I incidence constraints simultaneously. The owner-only witness is not a full source-realizable Q32 coloring.
+### 4.3.1 Partial pair-projection multiplicity constraint
+
+The separate lemma in V47_Z01_PARTIAL_PROJECTION_PACKING.md gives a block-level constraint stronger than full-signature injectivity. For any residual pair key \((A,B)\), the four-edge block \(A\times B\subseteq T_i\times T_j\) has two internal perfect matchings. If the common complement \(P_{ij}\) contains even one edge of that block, only one of the two internal perfect matchings can be used by any color with that residual pair key; cross-color edge-disjointness therefore makes the key unique. Thus **a duplicated pair projection is possible only when the entire block is P-free**.
+
+When a key is duplicated, exactly two colors use it and they must use the two complementary internal matchings, covering all four block edges. A third color cannot use the key. Also, two colors cannot share two pair projections, because that would force their full six-vertex residual signatures to coincide, excluded by V47_Z01_RESIDUAL_SIGNATURE_INJECTIVITY.md. Therefore any pair of colors shares at most one pair projection.
+
+The seven-case local verifier verify_v47_z01_partial_projection_packing.py checks every possible matching intersection of P_ij with a K2,2 block. This is a necessary CSP constraint only; it does not prove global feasibility or infeasibility.
+
 ### 4.4 T0--Ti omitted-vertex conservation — small-block excess budget
 
 For each non-target color \(C\) and track \(T_i\), its selected matching \(M_{C,0i}\) saturates all eleven T0 vertices and misses exactly one vertex \(z_i(C)\in T_i\). The eleven selected matchings and their complement \(P_{0i}\) partition \(K_{11,12}=T_0\times T_i\), so
