@@ -374,3 +374,10 @@ Further refinement in `V47_Z01_BALANCED_COLORING_CROSS_TRACK_LEDGER.md`: on each
 Tightened the aligned z=0,1 cross-track ledger: for each pair of large tracks T_i,T_j, with k the remaining large label,
 `e_H(T_i,T_j)=y_k-2-E_0-E_k<=9-E_0-E_k<=9`.
 Thus every K12--K12 pair has at least three unmatched vertices on each side. The arithmetic verifier now asserts the exact identities and pairwise caps in all 28,107 aggregate states.
+
+
+### Audit correction: Type-I K5 factor count and triple-placement status (2026-10-29)
+
+A source audit found that the previous local write-up incorrectly counted the two special K5 cliques N_s,N_t inside G11 as if they were isolated components. The true placement profile covers twelve K5 factors: ten isolated K5s plus the two special K5s within G11. Therefore the previous conclusion “triple placement impossible” was too strong and is withdrawn.
+
+The valid balanced-coloring floor shows that an isolated triple-outside K5 is impossible. Thus, if triple placement occurs, its triple K5 must be one of N_s,N_t; the other special K5 is single-outside, forcing `b_s+b_t=4` and G11's composition to be four O vertices and seven H vertices. The corrected exact H-edge accounting is: K5 interiors 69/66/67 in x-in-O/two-double/triple cases, with extra H-H gadget edges `G_H=g_C`, `3+g_C`, `2+g_C` respectively. The corrected arithmetic replay passed. This is a necessary restriction, not a triple-placement closure.
