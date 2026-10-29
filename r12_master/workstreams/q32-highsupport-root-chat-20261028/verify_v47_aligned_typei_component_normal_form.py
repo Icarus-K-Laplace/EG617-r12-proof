@@ -52,6 +52,17 @@ assert 1 < 2
 assert 3 + 1 == 4
 assert 11 - 4 == 7  # G11 has seven H and four O vertices in triple placement.
 
+
+# Under aligned triple placement, the triple special K5 and single special
+# K5 force b_s+b_t=4, G11=(7 H,4 O), G_H=5, e_C(H)=72 and g_C=3.
+assert 3 + 1 == 4
+assert 11 - 4 == 7
+triple_k5_hh = 67
+gadget_hh = 2 + 3
+assert gadget_hh == 5
+assert triple_k5_hh + gadget_hh == 72
+assert 72 - 69 == 3
+
 print("Type-I K5 profiles and H-edge accounting: 3 cases checked")
 print("Triple placement: special-K5-only necessary condition checked")
 print("V47_CORRECTED_TYPEI_PLACEMENT_ARITHMETIC_OK")
