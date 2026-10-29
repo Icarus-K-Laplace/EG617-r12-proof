@@ -60,7 +60,7 @@ This local lemma **does not** force w_1w_2 to have color D: the Case-A and Case-
 
 ## 5. Proof boundary of the local neighborhood lemma
 
-Sections 2–3 are a local consequence of the registered 130-edge contract, the already-audited `delta(D)>=4` theorem, and the source-checked Kang–Pikhurro extremal bound at (56,11). By themselves they do not close a Q32 terminal. The stronger core-only exclusion is the separate argument in Section 6.
+Sections 2–3 are a local consequence of the registered 130-edge contract, the already-audited `delta(D)>=4` theorem, and the source-checked Kang–Pikhurko extremal bound at (56,11). By themselves they do not close a Q32 terminal. The stronger core-only exclusion is the separate argument in Section 6.
 
 
 ## 6. Strengthening when all four neighbors lie in the target core
