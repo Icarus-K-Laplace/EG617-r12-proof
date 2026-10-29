@@ -334,3 +334,10 @@ Extended `verify_v44_direct_closure.py` to check all extremal arithmetic values 
 `V44_DIRECT_CLOSURE_ARITHMETIC_OK`.
 
 This removes an implicit proof dependency from the m=8 shortcut. No global theorem promotion: the v=44 layer is closed, but full-support Q32 / v=47 remains open.
+
+
+### Fresh verifier reproducibility repair — 2026-10-29
+
+A clean replay exposed a checked-in runtime bug in verify_v44_direct_closure.py: choose2() was first called in the 58/59/60-point extremal-arithmetic loop before being defined, causing NameError. Moved the definition above its first use (fix commit 2a49ccc537c45c711016468e5b5c7230c209657d). The corrected arithmetic program then passed locally with V44_DIRECT_CLOSURE_ARITHMETIC_OK; the independent m=8 arithmetic/set-system replay passed with V44_M8_CLOSURE_ARITHMETIC_OK.
+
+This repairs reproducibility only. It does not prove the analytic dependencies or change the local theorem status. The m=9 zero-shell contradiction and the m=8 direct no-core-only-degree-four contradiction were separately re-audited; both remain valid under the frozen source-correct Q32 contract. Full-support Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
