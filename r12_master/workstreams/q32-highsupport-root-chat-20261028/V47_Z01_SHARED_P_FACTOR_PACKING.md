@@ -126,29 +126,45 @@ If another exact color C' had the same two residual subsets on tracks i,j, its M
 This is a valid cross-color constraint without assuming that a color's six residual vertices form a component of the common P graph. It is necessary but not by itself a contradiction.
 
 The remaining bridge is to impose pair-projection injectivity, all cross-color matching edge-disjointness, and the complete triangle-factor / Type-I incidence constraints simultaneously. The owner-only witness is not a full source-realizable Q32 coloring.
-### 4.4 T0--Ti omitted-vertex conservation
+### 4.4 T0--Ti omitted-vertex conservation — corrected endpoint degrees
 
-For each non-target color \(C\) and track \(T_i\), let \(M_{C,0i}\) be its selected matching in \(K_{11,12}=T_0\times T_i\). It saturates all eleven T0 vertices and therefore misses exactly one vertex \(z_i(C)\in T_i\). The eleven selected matchings are edge-disjoint and \(P_{0i}\) is their complement. Since every \(v\in T_i\) has exactly eleven incident edges to T0,
+For each non-target color \(C\) and track \(T_i\), let \(M_{C,0i}\) be its selected matching in \(K_{11,12}=T_0\times T_i\). It saturates all eleven T0 vertices and misses exactly one vertex \(z_i(C)\in T_i\). The eleven selected matchings and their complement \(P_{0i}\) partition \(K_{11,12}\), so for every \(v\in T_i\),
 \[
 \boxed{d_{P_{0i}}(v)=|\{C:z_i(C)=v\}|.}
 \]
-This is a multiset identity: the multiplicity of \(v\) among the eleven colors' omitted vertices is exactly its endpoint multiplicity in \(P_{0i}\). It does not assume \(P_{0i}\) is a matching on \(T_i\).
+This is a multiset identity. It does not assume \(P_{0i}\) is a matching on \(T_i\).
 
-Let \(h_i(v)\in\{0,1\}\) be the number of target-H edges from \(v\) to T0; the upper bound is Lemma 2.2. Let \(r_i^D(v)\) count D-colored repeat edges of \(P_{0i}\) incident to \(v\), and let \(\delta_i^D(v)=1\) if \(z_i(D)=v\), otherwise 0.
+**Degree-side correction.** Define \(h_i(v)\) as the number of H-edges from \(v\in T_i\) to \(T_0\), and \(r_i^D(v)\) as the number of D-repeat edges in \(P_{0i}\) incident to \(v\). The known asymmetric lemma bounds the number of H-neighbors in \(T_i\) of each *T0 vertex* by one; it does **not** bound \(h_i(v)\) by one for \(v\in T_i\). Any proof that uses \(h_i(v)\in\{0,1\}\) here is invalid unless it separately proves the missing opposite-side bound.
 
-In the **single-T0-residual seven-vertex Type-I mode only**, if an exact color C owns a T0 repeat edge \(x_Cv\in P_{0i}\), the source component structure forces \(z_i(C)=v\): the residual endpoint \(v\) has no other C-edge to a T0 vertex, while \(M_{C,0i}\) must use the baseline edge from \(x_C\) to the other residual vertex. Hence the exact-color repeat owners cancel from the multiset identity, leaving
+Let \(\delta_i^D(v)=1\) if \(z_i(D)=v\), and 0 otherwise. In the **single-T0-residual seven-vertex Type-I mode only**, an exact color C's T0 repeat edge \(x_Cv\in P_{0i}\) forces \(z_i(C)=v\): the selected matching uses the baseline edge from \(x_C\) to the other residual vertex, and \(v\) has no other C-edge to T0. Let \(a_i(v)\) count these exact repeat edges ending at \(v\), and let
 \[
-\boxed{
-|\{C\text{ exact}:z_i(C)=v,\ t_C\ne i\}|+\delta_i^D(v)
-=h_i(v)+r_i^D(v).
-}
+n_i(v)=|\{C\text{ exact}: C\text{ has no T0 repeat on }T_0T_i,\ z_i(C)=v\}|.
 \]
-Consequences:
-- away from D-repeat endpoints, at most one exact color with \(t_C\ne i\) can omit a given \(v\), because \(h_i(v)\le1\);
-- at a D-repeat endpoint, at most \(1+r_i^D(v)\) such exact colors can omit \(v\);
-- every T0 H-edge endpoint must occur in the omitted-vertex multiset; a proposed T0 complement edge to a color's K4-side baseline vertex is invalid unless it is independently shown to be an omitted vertex for another color.
+Cancelling the \(a_i(v)\) exact-repeat owners from the universal identity yields the correct pointwise constraint
+\[
+\boxed{n_i(v)+\delta_i^D(v)=h_i(v)+r_i^D(v).}
+\]
+Equivalently, the multiset of omitted vertices for exact colors without a repeat on this pair, together with D's omitted vertex, equals the multiset of H endpoints and D-repeat endpoints on \(P_{0i}\).
 
-**Scope firewall:** the cancellation step is not asserted for the eight-vertex isolated-double mode, where two T0 residual vertices may interact with the same large-track residual vertex. There only the universal multiset identity is currently certified. This distinction is mandatory in the full Q32 model.
+Valid consequences:
+- If \(h_i(v)=r_i^D(v)=0\), then \(n_i(v)=\delta_i^D(v)=0\).
+- D's omitted vertex must be incident to at least one H edge or D-repeat edge on this pair.
+- Every Ti endpoint of an H edge in \(T_0\times T_i\) must occur in the omitted-vertex multiset.
+- The multiplicity \(n_i(v)\) is controlled by the actual H endpoint degree \(h_i(v)\), not by a universal bound of one.
+
+The previous claims that nonrepeat exact omissions are injective away from D-repeat endpoints, or that H endpoints must be distinct on the Ti side, are **withdrawn**: they incorrectly used \(h_i(v)\le1\). This conservation law alone does not close any source mode.
+
+**Scope firewall:** the exact-repeat cancellation above is only asserted for the single-T0-residual seven-vertex Type-I mode. It is not asserted for the eight-vertex isolated-double mode, where the source incidence must be re-established separately.
+
+### 4.5 Exact endpoint-profile replay for the E0=0 scalar row
+
+The companion script verify_v47_z01_t0_omission_conservation.py exhaustively enumerates weak compositions of the H and D-repeat endpoint degrees over the 12 vertices of each large track, then every possible D-omitted vertex. It checks the corrected pointwise identity for the scalar row
+\[
+y=(7,7,8),\quad s^{\rm exact}=(4,3,3),\quad d^D=(0,1,0),
+\]
+where \(y_i+s_i^{\rm exact}+d_i^D=11\) on each pair. The replay counts 148,512, 2,015,520 and 381,888 valid endpoint profiles for \(T_1,T_2,T_3\), respectively.
+
+The audit deliberately finds concentrated endpoint profiles with six or seven exact nonrepeat colors omitting the same Ti vertex. These are only endpoint-multiplicity relaxations, not full colorings, but they prove that the omitted-vertex identity plus the currently known asymmetric H-degree bound does **not** imply injectivity. Cross-track triangle-factorization, source residual incidence and edge-disjointness remain necessary.
 
 ## 5. Current proof frontier and audit gate
 
