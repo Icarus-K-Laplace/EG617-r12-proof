@@ -4,8 +4,8 @@
 Vertices 0,1 / 2,3 / 4,5 are the residual pairs in T1,T2,T3;
 vertex 6 is the singleton residual vertex in T0. Edges within a track
 part are forbidden. Enumerate all 2^18 cross-part graphs with 9..12 edges,
-alpha <= 2, degree >=2 at the six large-track vertices, and degree >=3
-at the T0 vertex. Also test whether each graph contains a transversal
+alpha <= 2, degree >=2 at the six large-track vertices, and T0 degree 3 or 4
+(pointwise balanced-coloring cap). Also test whether each graph contains a transversal
 K4 plus a K3 on the three large tracks.
 
 This catalog applies only when all ten isolated Type-I K5 components are
@@ -87,4 +87,4 @@ print("all masks checked:", total_masks_checked)
 print("graphs by gap:", dict(sorted(graphs_by_gap.items())))
 print("K4+K3 base counts:", dict(sorted(base_by_gap.items())))
 print("V47_Z01_EXACT_COLOR_RESIDUAL_GRAPH_CATALOG_OK")
-print("Scope: necessary 7-vertex relaxation only; not global Q32 UNSAT.")
+print("Scope: single-outside Type-I placement only; necessary relaxation, not global Q32 UNSAT.")
