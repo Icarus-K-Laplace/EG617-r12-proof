@@ -473,6 +473,24 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
             if clique is not None:
                 fail(f"color {c} has a monochromatic K6: {clique}")
 
+    if check_alpha and check_omega:
+        # Recheck registered nonexact minimum-degree consequences and safe quota.
+        for c in nonexact_colors:
+            floor = 4 if expected_counts[c] == 130 else 3
+            degrees = [sum(colors[edge(v, u)] == c for u in range(N) if u != v)
+                       for v in range(N)]
+            if min(degrees) < floor:
+                fail(f"nonexact color {c} has minimum degree {min(degrees)}, expected >= {floor}")
+        safe_q_cap = {8: 4, 9: 5, 10: 5}[m]
+        conditional_q_cap = {8: 3, 9: 4, 10: 4}[m]
+        for z in residual:
+            q_z = sum(bool(gadget[c, z]) for c in exact_colors)
+            if q_z > safe_q_cap:
+                fail(f"residual vertex {z} has gadget multiplicity {q_z}, safe cap {safe_q_cap}")
+            target_degree = sum(colors[edge(z, u)] == 0 for u in range(N) if u != z)
+            if target_degree >= 13 and q_z > conditional_q_cap:
+                fail(f"residual vertex {z} has gadget multiplicity {q_z} despite target degree {target_degree}")
+
     return errors
 
 

@@ -678,3 +678,8 @@ The solver now imports the verifier's complement-dual find_clique routine explic
 - Correct nonexact vectors: m=8 has three 130-edge colors; m=9 has 130- and 131-edge colors; m=10 has one 132-edge color. All three vectors sum to 1830.
 - Centralized the vector in expected_color_counts(m), imported by the solver and used by the independent verifier; added exact vector and edge-total self-tests.
 - No SAT/UNSAT claim is made. The previous CSP drafts were never solved and must not be treated as proof evidence.
+
+
+### 2026-10-29 — Reserve quota made source-safe
+
+The full-support model now enforces per-color nonexact minimum-degree floors from the canonical edge vector and the unconditional gadget quota q_z<=(4,5,5), derived from d_0(z)>=d_H(z)>=12. The stronger q_z<=(3,4,4) is used only under the explicit local condition d_0(z)>=13. Updated reserve notes will mark the universal 13-degree step as a dependency gap, rather than importing it silently. This does not retract the separate non-full-support zero-shell closures, whose target-degree saturation is branch-specific.

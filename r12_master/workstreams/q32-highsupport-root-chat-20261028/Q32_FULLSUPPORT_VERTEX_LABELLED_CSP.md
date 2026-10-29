@@ -126,3 +126,8 @@ The earlier CSP draft used e_0=398+m and a fixed 132-edge color for all m. That 
 - m=10: one color of 132.
 
 The verifier now owns a single expected_color_counts(m) helper, imported by the solver, and self-tests each vector and its 1830-edge total. No solver result was generated under the earlier vector; all prior model claims were explicitly formulation-only.
+
+
+## Safe gadget-reserve strengthening
+
+The solver encodes the nonexact degree floors from the canonical count vector (130-edge colors have minimum degree 4; 131/132-edge colors have minimum degree 3), and uses only the unconditional gadget quota q_z<=(4,5,5). This follows from d_0(z)>=d_H(z)>=12 and the 4m+q_z exact-color contribution. The stronger q_z<=(3,4,4) is encoded only as the implication d_0(z)>=13 => q_z<=(3,4,4); no universal 13-degree premise is assumed.

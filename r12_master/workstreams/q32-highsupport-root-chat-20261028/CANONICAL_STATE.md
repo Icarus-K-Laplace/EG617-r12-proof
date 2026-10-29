@@ -662,3 +662,8 @@ The solver now imports the verifier's complement-dual find_clique routine explic
 ## Root count-vector reconciliation (2026-10-29)
 
 Corrected the full-support CSP and independent verifier to the canonical E408 color counts: target color 408 edges for every m; exact colors 129 each; nonexact colors are (130,130,130) for m=8, (130,131) for m=9, and (132) for m=10. The previous vector e_0=398+m with a fixed 132-edge color was inconsistent with the root branch, although its totals happened to sum to 1830. This correction is upstream of all solver conclusions.
+
+
+## Target-degree reserve audit (2026-10-29)
+
+The all-color reserve note's stronger q_z<=(3,4,4) quota requires d_0(z)>=13 at every residual point, which is not supplied by the registered delta(H)>=12 contract alone. The CSP now enforces only the unconditional q_z<=(4,5,5), using the canonical nonexact floors L=(12,7,3), and retains the stronger quota only conditionally when the actual full target degree of that residual vertex is at least 13. The 130/131/132 edge-count vector is the root-correct one.

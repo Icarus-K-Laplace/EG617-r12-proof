@@ -177,6 +177,29 @@ def build_model(m, aligned_z01=False):
         solver.add(residual[v] == z3.Not(z3.Or([qblock[c][v] for c in exact])))
     solver.add(iff_count(residual[v] for v in H) == 47 - 4 * m)
 
+    # Nonexact degree floors from the registered 130/131/132-edge theorems.
+    # omega<=5 and alpha<=12 are enforced by lazy cuts; these floors are valid
+    # consequences of those premises and strengthen the intermediate model.
+    color_counts = expected_color_counts(m)
+    for c in nonexact:
+        floor = 4 if color_counts[c] == 130 else 3
+        for v in range(N):
+            solver.add(iff_count(col[edge(v, u)] == c for u in range(N) if u != v) >= floor)
+
+    # Safe all-color gadget reserve. For residual z, target degree d_0(z)>=
+    # d_H(z)>=12; each exact color contributes >=4 plus one for gadget membership,
+    # and the nonexact floors sum to L_m=(12,7,3). This yields q_z<=(4,5,5).
+    # The stronger (3,4,4) cap is only conditional on d_0(z)>=13.
+    safe_q_cap = {8: 4, 9: 5, 10: 5}[m]
+    conditional_q_cap = {8: 3, 9: 4, 10: 4}[m]
+    for v in H:
+        q_count = iff_count(gadget[c][v] for c in exact)
+        solver.add(z3.Implies(residual[v], q_count <= safe_q_cap))
+        target_degree = iff_count(col[edge(v, u)] == 0 for u in range(N) if u != v)
+        solver.add(z3.Implies(
+            z3.And(residual[v], target_degree >= 13),
+            q_count <= conditional_q_cap))
+
     # Explicit pivot-neighborhood packing constraints. These are necessary
     # consequences of alpha(H)<=4 and the disjoint independent K4 blocks Q_C.
     # They strengthen the search without replacing the full labelled model.
