@@ -3,7 +3,7 @@
 
 The eight residual vertices have parts (2,2,2,2) and are partitioned into
 two transversal K4s. Their 12 possible cross-K4 edges are the only possible
-extra edges in this relaxation. Each T0 residual vertex has baseline C-degree 3, so pointwise saturation permits at most one extra at each. In these two-K4 source subcases, however, all extras form a star centered at y or x_C. A star center lies in one target track and has at most one cross-K4 edge to T0 in total: a center in T0 has no T0--T0 edge, while a center in a large track sees only the opposite K4's single T0 vertex. Therefore every source-realizable extra set has at most one T0-incident edge in total. Enumerate arbitrary extra sets subject to this source-derived cap.
+extra edges in this relaxation. Each T0 residual vertex has baseline C-degree 3, and the global exact-color theorem gives t_C<=1, so at most one extra edge may be T0-incident in total. The source star geometry in these two-K4 subcases independently implies the same cap: a center in T0 has no T0--T0 edge, while a center in a large track sees only the opposite K4's single T0 vertex. Enumerate arbitrary extra sets subject to this cap.
 
 This is still a necessary relaxation, not a source-realizable completion count: it allows arbitrary non-T0 extra sets, not just the source star.
 """
