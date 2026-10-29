@@ -141,3 +141,8 @@ The earlier section 11 claim that triple placement was eliminated is withdrawn. 
 ## 13. Triple-special refinement firewall (2026-10-29)
 
 The new triple-placement refinement is conditional on the aligned low-z clique partition and source Type-I gadget. It uses the 13-set balanced-coloring degree floor, the fact that the two special K5s lie inside G11, and the exact nine-gadget-edge incidence pattern. It proves a necessary geometry and `g_C=3), not a contradiction. No statement that triple placement is eliminated is authorized.
+
+
+## 14. Exact-gap cap scope (2026-10-29)
+
+The `g_C<=3) theorem applies only after the aligned low-z 3+7 normal form and source-correct Type-I component placement are established. The nonexact-color interval `7<=g_D<=21` also uses the registered 37-unit total gap, the 132-edge nonexact color, and the 13-set balanced-coloring condition for each O vertex and each K12 part. It does not imply graph nonexistence; do not promote the aligned cell or root theorem.
