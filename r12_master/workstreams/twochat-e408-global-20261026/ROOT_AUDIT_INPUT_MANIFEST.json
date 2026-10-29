@@ -177,8 +177,8 @@
     },
     {
       "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/CANONICAL_STATE.md",
-      "blob_sha": "4a465ce7be3315842d2537f2a80691ca598c540e",
-      "status": "latest read-only sibling source; full-support CSP still not executed",
+      "blob_sha": "ab1148611d5a71d9e38c481a92bc49da474afcd4",
+      "status": "latest read-only sibling canonical at HEAD c6500b24",
       "branch": "workstream/r12-q32-highsupport-root-20261028"
     },
     {
@@ -214,26 +214,32 @@
     {
       "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/Q32_FULLSUPPORT_VERTEX_LABELLED_CSP.md",
       "branch": "workstream/r12-q32-highsupport-root-20261028",
-      "blob_sha": "94ce66ee7dcdf4dae6e7af0b9d8141c734eaca4c",
-      "status": "latest read-only spec; E408 count vector mismatch for m=8,9 documented"
+      "blob_sha": "4f73ca96eb43512e94c72f05266462ba949eead4",
+      "status": "latest spec; solver remains not solved and count vector defect remains"
     },
     {
       "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/q32_fullsupport_vertex_labelled_csp.py",
       "branch": "workstream/r12-q32-highsupport-root-20261028",
-      "blob_sha": "22d74be03e7f4e3ce5f48ad8e02f8f9d17c3e663",
-      "status": "latest read-only model at sibling HEAD 384b314; target count 398+m remains wrong for m=8,9"
+      "blob_sha": "03e4d2ce98ab399ffafa53af016efd3c434150bc",
+      "status": "latest model at HEAD c6500b24; K6 separator wired; target count 398+m still wrong for m=8,9"
     },
     {
       "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/verify_q32_fullsupport_candidate.py",
       "branch": "workstream/r12-q32-highsupport-root-20261028",
-      "blob_sha": "629be29be020de79bc27b46a338c4966dc53823d",
-      "status": "latest read-only verifier at sibling HEAD 384b314; source outside profile fixed, target count 398+m remains wrong for m=8,9"
+      "blob_sha": "5708b7541b44cfc46bd82cf3d50b1e350472617b",
+      "status": "latest verifier at HEAD c6500b24; source profile and malformed witnesses hardened; target count 398+m still wrong for m=8,9"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/verify_q32_fullsupport_count_vector_contract.py",
       "blob_sha": "64c589692038b43e2900c9829815277a25b2ee32",
       "status": "Git blob hash and SHA256 recorded; local standard-library arithmetic replay passed; not a CSP solver",
       "sha256": "a8ca2b64593ad808edd57acea710840a76ce04734288bb42d3dbcc1153b8fb27"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/PROGRESS_LOG.md",
+      "branch": "workstream/r12-q32-highsupport-root-20261028",
+      "blob_sha": "94e3127e3788bc05dc72d6fd080f78e9ad065a4a",
+      "status": "latest read-only sibling progress log at HEAD c6500b24"
     }
   ],
   "open_dependencies": [
@@ -251,13 +257,14 @@
     "61f3263de5c99d37f58cd1ab7ad65a05888534f0",
     "bb8b1e696ecf199f337d8d0db69d00132191f80f",
     "be173984f7f31141805794a027bd675e7b10072e",
-    "80e733a4ccd213ed220e71cac13fc099c8dee29d"
+    "80e733a4ccd213ed220e71cac13fc099c8dee29d",
+    "7823ed12480b064cee31db6eb1b5d200bf3dc069"
   ],
   "sibling_heads": {
     "e407_q32": "0192807d1f3b2193aa65c25b9f671b36821aaded",
     "e408_q33_witness_support": "0cb2ff3968f005c9cb255958df7c02b220678701",
     "unified_witness_capacity": "faa8183c150dd78b000d0957fa8a63cebd52e146",
-    "q32_highsupport": "384b31478668ebccde32f13a9ae391bbff494c86"
+    "q32_highsupport": "c6500b24dc78cd4c56cd90219080003aeb8e3cb5"
   },
   "output_blobs": [
     {
@@ -289,34 +296,29 @@
       "blob_sha": "f265e8e16e474ed42c305b8f279ab8f61c25d679"
     },
     {
-      "path": "r12_master/workstreams/twochat-e408-global-20261026/CANONICAL_STATE.md",
-      "sha": "eafcada480b475cd2342ea6eb92ce91bea4c9af2",
-      "blob_sha": "eafcada480b475cd2342ea6eb92ce91bea4c9af2"
-    },
-    {
-      "path": "r12_master/workstreams/twochat-e408-global-20261026/PROGRESS_LOG.md",
-      "sha": "43e1d5d8ac66f55a9da63281921e7995161466e0",
-      "blob_sha": "43e1d5d8ac66f55a9da63281921e7995161466e0"
-    },
-    {
-      "path": "r12_master/workstreams/twochat-e408-global-20261026/ROOT_DEPENDENCY_DAG.md",
-      "sha": "b80cc6242d70a4fe772870234ad2b970b78f2c1f",
-      "blob_sha": "b80cc6242d70a4fe772870234ad2b970b78f2c1f"
-    },
-    {
-      "path": "r12_master/workstreams/twochat-e408-global-20261026/Q32_FULLSUPPORT_CSP_SOURCE_AUDIT.md",
-      "sha": "cee63d28b195abb2d165ce8f37185a3485033cbb",
-      "blob_sha": "9e94b923ea0d86fc7f9281072739e08dddbd4644"
-    },
-    {
-      "path": "r12_master/workstreams/twochat-e408-global-20261026/Q32_CORE285_TERMINAL.md",
-      "sha": "c50a88387e24f5a0d163b877a82d2b64525a422e",
-      "blob_sha": "1d5e8f6c9531d29761c6de00a0d79710c54b415d"
-    },
-    {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/verify_q32_fullsupport_count_vector_contract.py",
       "sha": "64c589692038b43e2900c9829815277a25b2ee32",
       "blob_sha": "64c589692038b43e2900c9829815277a25b2ee32"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/CANONICAL_STATE.md",
+      "sha": "cc46df9624f83d06c77ea52fbe933437152ff6b3"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/PROGRESS_LOG.md",
+      "sha": "ecc69657e6770e5c2a12edaf20afb833a2f2bffa"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/ROOT_DEPENDENCY_DAG.md",
+      "sha": "bf3e0a25d6fa20caf30f18ccb36bbb3645b93907"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/Q32_FULLSUPPORT_CSP_SOURCE_AUDIT.md",
+      "sha": "970dec95b5065cab9b6dd431d537a18332fcf8f1"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/Q32_CORE285_TERMINAL.md",
+      "sha": "ce6492d77c932b1cb76f32670226d02f5bfa4b0a"
     }
   ],
   "root_status": "OPEN / NOT_CERTIFIED",
@@ -325,7 +327,7 @@
     "61f3263de5c99d37f58cd1ab7ad65a05888534f0",
     "6ed8b6e0352ca5aeb713e86676504bb236561db8"
   ],
-  "manifest_parent_commit": "80e733a4ccd213ed220e71cac13fc099c8dee29d",
+  "manifest_parent_commit": "7823ed12480b064cee31db6eb1b5d200bf3dc069",
   "audit_commits_before_final_manifest_commit": [
     "549960e37217c243e8abd6b7629301e9f918e6c6",
     "61f3263de5c99d37f58cd1ab7ad65a05888534f0",

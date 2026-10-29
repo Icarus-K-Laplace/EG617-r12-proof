@@ -160,7 +160,7 @@ No solver result is imported. The full-support v=47 frontier remains OPEN; the C
 
 ## 11. Latest CSP audit refresh — superseded 2026-10-29
 
-The former note pinned sibling HEAD 92c9086c8b6ac554ed74b48a5d608aa546bcb977 and listed two defects. The latest high-support sibling is now HEAD 384b31478668ebccde32f13a9ae391bbff494c86. Its candidate verifier's source-mode check has been corrected, but the target-count formula 398+m remains wrong for m=8,9 in both model and verifier.
+The former note pinned sibling HEAD 92c9086c8b6ac554ed74b48a5d608aa546bcb977 and listed two defects. The latest high-support sibling is now HEAD c6500b24dc78cd4c56cd90219080003aeb8e3cb5. Its candidate verifier's source-mode check has been corrected, but the target-count formula 398+m remains wrong for m=8,9 in both model and verifier.
 
 ## 12. Current full-support CSP status — 2026-10-29
 

@@ -4,7 +4,7 @@ Date: 2026-10-29
 Auditing branch: workstream/r12-twochat-e408-global-20261026  
 Read-only source branch: workstream/r12-q32-highsupport-root-20261028  
 Audited sibling HEAD (historical): 92c9086c8b6ac554ed74b48a5d608aa546bcb977  
-Latest sibling HEAD rechecked: 384b31478668ebccde32f13a9ae391bbff494c86  
+Latest sibling HEAD rechecked: c6500b24dc78cd4c56cd90219080003aeb8e3cb5  
 Status: **ONE FORMULATION DEFECT REMAINS; no solver result exists to certify or retract.**
 
 **Supersession note (2026-10-29):** the old Section 3 / Section 5 source-mode verifier defect has been fixed in the latest sibling revision. The remaining load-bearing defect is the target/non-target edge-count vector for m=8,9.
@@ -118,7 +118,7 @@ The verifier blob remains fc6c8a5e2b2e8decd236f0d7336699c23f75be1f and retains b
 The pivot-packing strengthening does not repair either source-contract defect. No full solve has been run.
 
 
-## 6. Latest sibling recheck — 2026-10-29, HEAD 384b31478668ebccde32f13a9ae391bbff494c86
+## 6. Latest sibling recheck — 2026-10-29, HEAD c6500b24dc78cd4c56cd90219080003aeb8e3cb5
 
 ### Defect B is fixed at the source-check level
 
@@ -164,3 +164,21 @@ Added verify_q32_fullsupport_count_vector_contract.py. It verifies for all m=8,9
 Executed locally with python -S -B /mnt/data/verify_q32_fullsupport_count_vector_contract.py; exit code 0. Source SHA256: a8ca2b64593ad808edd57acea710840a76ce04734288bb42d3dbcc1153b8fb27.
 
 This regression certifies count-vector arithmetic only. It does not execute Z3, validate the complete CSP semantics, certify a graph realization, or prove UNSAT. Z3 was unavailable in the current runtime. The high-support sibling remains read-only; no sibling file was changed.
+
+
+## 7. Latest sibling refresh — 2026-10-29, HEAD c6500b24dc78cd4c56cd90219080003aeb8e3cb5
+
+The high-support branch advanced beyond the prior audited HEAD. Current source hashes are:
+- model: 03e4d2ce98ab399ffafa53af016efd3c434150bc;
+- independent verifier: 5708b7541b44cfc46bd82cf3d50b1e350472617b;
+- CSP specification: 4f73ca96eb43512e94c72f05266462ba949eead4;
+- canonical state: ab1148611d5a71d9e38c481a92bc49da474afcd4;
+- progress log: 94e3127e3788bc05dc72d6fd080f78e9ad065a4a.
+
+The new revisions harden candidate witness validation and wire the monochromatic-K6 separator into the solver. Inspection still finds the count vector:
+~~~python
+expected_total = {0: 398 + m, 11: 132}
+expected_total.update({c: 129 for c in exact})
+expected_total.update({c: 130 for c in range(m + 1, 11)})
+~~~
+and the independent verifier has the analogous expected_counts logic. Hence m=8,9 still use the wrong target edge count. The count-vector regression from this root workstream passes, but it does not execute the solver. No SAT/UNSAT result or root promotion is claimed.

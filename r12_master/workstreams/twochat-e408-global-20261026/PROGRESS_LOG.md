@@ -224,3 +224,12 @@ The high-support sibling advanced to HEAD 92c9086c8b6ac554ed74b48a5d608aa546bcb9
 - Defect A persists in both model and independent candidate verifier: expected target count remains 398+m and color 11 remains fixed at 132. This is incompatible with E408 for m=8,9.
 - Added verify_q32_fullsupport_count_vector_contract.py and ran it in a clean standard-library process. All three corrected vectors pass: m=8 has 8×129 plus 3×130 and target 408; m=9 has 9×129, 130, 131 and target 408; m=10 has 10×129 plus 132 and target 408. Each sums to C(61,2)=1830.
 - No Z3 solve was performed in this runtime (z3-solver is not installed); no SAT/UNSAT claim is made. Q32 full support and the fixed-r root remain OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-29 — latest full-support CSP recheck at sibling HEAD c6500b24
+
+- The high-support sibling advanced beyond 384b314 to c6500b24dc78cd4c56cd90219080003aeb8e3cb5, with intervening commits hardening malformed candidate witnesses and wiring the monochromatic-K6 separator into the model.
+- The latest model and independent verifier still encode target count 398+m, with color 11 fixed at 132. The count-vector defect therefore remains for m=8,9.
+- Current source blobs: model 03e4d2ce98ab399ffafa53af016efd3c434150bc; verifier 5708b7541b44cfc46bd82cf3d50b1e350472617b; CSP specification 4f73ca96eb43512e94c72f05266462ba949eead4.
+- The verifier's source-outside-profile check remains corrected. The K6 separator and malformed-witness checks are useful model hardening, but no full Z3 solve or independently replayed UNSAT proof has been reported.
+- The standalone count-vector regression remains PASS for the correct vectors only. Root status remains OPEN / NOT_CERTIFIED.
