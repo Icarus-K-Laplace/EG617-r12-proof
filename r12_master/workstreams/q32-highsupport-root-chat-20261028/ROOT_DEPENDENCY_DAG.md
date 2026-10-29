@@ -410,7 +410,7 @@ The holonomy verifier checks the exact minimum repairs. Class C has three indepe
 
 ### 14f. Conditional seven-vertex residual graph catalog
 
-Added `V47_Z01_EXACT_COLOR_RESIDUAL_GRAPH_CATALOG.md` and its verifier for the all-isolated-single-outside subcase only. The 7-vertex necessary relaxation has profile (2,2,2,1), e=9+g_C, alpha at most 2, and counts 8,72,384,1,148 at gaps 0,1,2,3. The source-correct isolated-double branch instead has an 8-vertex G11 residual; see `V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md`. Neither catalog closes the aligned cells.
+Added `V47_Z01_EXACT_COLOR_RESIDUAL_GRAPH_CATALOG.md` and its verifier for the all-isolated-single-outside subcase only. The 7-vertex necessary relaxation has profile (2,2,2,1), e=9+g_C, alpha at most 2, and corrected counts 8,72,360,1,000 at gaps 0,1,2,3. The source-correct isolated-double branch instead has an 8-vertex G11 residual; see `V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md`. Neither catalog closes the aligned cells.
 
 ### 14g. Isolated-double residual branch and catalog scope correction
 
