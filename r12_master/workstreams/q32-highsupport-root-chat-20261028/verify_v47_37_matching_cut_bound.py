@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Exact small regression for the cut-endpoint lemma in
-V47_37_SMALL_OUTER_MATCHING_RIGIDITY.md.
+"""Exact small regression for the standalone seven-vertex cut-endpoint lemma.
 
 For a graph on seven vertices with minimum degree at least four, any
 nontrivial cut has at least five vertices incident to crossing edges.
-The proof depends only on the cut-side sizes, so enumerate all 126
-nontrivial subsets and verify the corresponding degree lower bounds.
+The proof depends only on cut-side sizes, so enumerate the 63 distinct cuts
+(identifying each side with its complement) and verify the degree bounds.
+This script does NOT verify the retracted small-to-outer matching argument.
 """
 from itertools import combinations
 
