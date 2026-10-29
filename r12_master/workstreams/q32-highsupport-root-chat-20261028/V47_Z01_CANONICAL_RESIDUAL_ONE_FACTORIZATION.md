@@ -64,3 +64,30 @@ For the three K12--K12 pairs, any admissible exact completion must simultaneousl
 Thus the cross-track completion is not an arbitrary collection of pairwise color counts. It is three coupled 1-factorizations, whose residual factors contain the target-color matchings and whose factor labels are constrained by the exact Type-I color structures.
 
 This theorem is a structural reduction, not a graph-level contradiction. It does not close the aligned z=0 or z=1 cell. Full-support E408/Q32 and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
+
+
+## 6. Low-gap color orientation forced by the four tracks
+
+The canonical 1-factorization gives a clean interpretation of the already-registered 69/70-edge near-Turan normal form.
+
+Let g_C=e_C(H)-69.
+
+### g_C=0
+
+The source-checked Turán equality case gives C[H] = 11 disjoint K4s plus one K3. Every track is independent in C, so each K4 component contains at most one vertex from each track. Since there are exactly four tracks, each K4 contains one vertex from every track. These eleven K4s use all eleven vertices of T0 and eleven vertices in each K12 track. The remaining three vertices must therefore be one each from T1,T2,T3, so the K3 component lies entirely in the three K12 tracks.
+
+Thus the three large-track baseline matchings M_C compose into a triangle factor, while the T0--Ti matchings join the eleven K4 components.
+
+### g_C=1
+
+The registered 70-edge near-Turan normal form is the same 69-edge base plus exactly one extra cross-part C-edge. The extra edge is one of the canonical residual P edges; removing it leaves the 69-edge base of eleven K4s plus one K3. The same track-capacity argument forces all eleven K4s to be transversal and the K3 to lie in T1,T2,T3. Hence the baseline matching factors again compose into that triangle factor; the one extra C-edge is separate from the base factorization.
+
+This conclusion uses the registered 69/70 near-Turan classification. It is not claimed for g_C>=2.
+
+### Consequence for the nonexact-color gap split
+
+In the aligned cell the ten exact colors satisfy 0<=g_C<=3, while the unique nonexact color D satisfies 7<=g_D<=19, and the exact-color gap sum is 37-g_D.
+
+If g_D>=18, then the exact-color gap sum is at most 19. Since there are ten exact colors, at least one must have g_C<=1, so the preceding rigid 69/70 orientation applies to at least one exact color.
+
+The unresolved alternative is g_D<=17. If that branch also has no exact color with gap 0 or 1, then all ten exact colors have g_C in {2,3}; writing k for the number with gap 3 gives the exact budget g_D=17-k, with 0<=k<=10. This is a finite split for the remaining multicolor argument, not a contradiction.
