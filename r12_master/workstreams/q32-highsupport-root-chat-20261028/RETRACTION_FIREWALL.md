@@ -189,6 +189,8 @@ The registered source-correct isolated-double placement yields nine isolated H-K
 The global low-gap orientation may be cited only through the independent 69/70 near-Turan classification or the explicit case split in V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md. The placement-sensitive T0 count is now t_C<=1 for every exact color, including the isolated-double x_C in H, y in H two-double branch (g_C=3): its two T0 vertices lie in the special K3 and K4 and have degrees 3 and 4, respectively. Therefore the cap of one extra edge across all three T0--Ti pairs is global for exact colors. No Q32 or EG617 root closure is certified.
 
 
-## 14. Aggregate-witness source-location correction (2026-10-29)
+## 14. Retraction of universal class-B pair law (2026-10-29)
 
-The original aggregate witness paired large and T0 repeat counts on the same index pair. That is a valid scalar-only relaxation but is not source-compatible for the class-B single-outside pattern with g_C=2,t_C=1. The source geometry forces complementary pair locations. The corrected witness in V47_Z01_SHARED_P_FACTOR_PACKING.md and verify_v47_z01_aggregate_budget_witness.py uses exact surplus (2,4,4;4,4,2) and D surplus (6,5,5;0,0,1). Do not cite the former assignment as a source-realizable pattern. Neither aggregate witness assigns actual common-P endpoints, so neither is a Q32 completion or contradiction.
+The proposed universal complement law for class-B g_C=2,t_C=1 was false and is withdrawn. A source-correct x_C-in-O mode with N_s single-outside, N_t double-outside, and A_0={w,s_j} realizes extras ws_i on T0-T_i and ys_j on T_i-T_j, which share a large-track index. Do not impose a universal complement relation.
+
+The current source-explicit aggregate witness in V47_Z01_SHARED_P_FACTOR_PACKING.md and verify_v47_z01_aggregate_budget_witness.py uses exact surplus (7,0,3;4,3,3) and D surplus (1,9,6;0,1,0), with g_D=17. It checks scalar capacities and the exhibited local source mode but does not assign common-P endpoints. It is not a Q32 completion or contradiction.
