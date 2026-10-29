@@ -134,3 +134,17 @@ Using `e(D)=132` and `e_D(H)=69+g_D`,
 `69+g_D+42+2<=132`, hence `g_D<=19`. The upper bound on shell edges follows from `mu_D<=132-(69+g_D)-42=21-g_D<=14`.
 
 It follows that the ten exact colors contribute between 18 and 30 units of the 37-unit gap, so at least six exact colors have positive gap. This is a global budget reduction, not a contradiction; the remaining nonexact-color interval and aligned cells stay OPEN.
+
+
+## 8. Exact K5-factor occupancy across the four target parts
+
+The twelve K5 factors partition all 60 vertices other than x_C. This gives another source-correct count that does not treat the special K5s as isolated components.
+
+Let the four target clique sizes be `(12,12,12,11)). Every single-outside K5 contributes one H vertex to each part. The H vertices of any K5 factor are independent in the target graph, so they occupy distinct parts.
+
+- **x_C in O, profile (2,1^11):** the eleven single factors contribute `(11,11,11,11)`; the double factor must contribute `(1,1,1,0)`. Thus its three H vertices are exactly one from each K12 part, with none from X_0.
+- **x_C in H, two-double, x_C in X_0:** the ten single factors contribute `(10,10,10,10)`; the two double factors together contribute `(2,2,2,0)). Each double factor therefore uses the three K12 parts.
+- **x_C in H, two-double, x_C in X_k for k in {1,2,3}:** after removing x_C, the required part counts are `(11,12,12,11)) up to permutation. The two double factors together contribute `(1,2,2,1)). Hence one double factor uses X_0 and the other two K12 parts not containing x_C; the other double factor uses all three K12 parts. The double factor containing X_0 cannot be an isolated component, because its H vertices would have same-color H-degree two, below the X_0 floor three. It must be one of the special K5s in G11.
+- **x_C in H, triple profile (3,1^11):** x_C cannot lie in X_0, because the eleven single factors would already require eleven H vertices in X_0 after x_C is removed, but only ten remain. If x_C lies in X_k, the triple factor contributes `(0,1,1,0)) up to permutation: its two H vertices lie in the other two K12 parts, not X_0. This agrees with the special-triple geometry in Section 5.
+
+These occupancy equations are exact because the K5 factors partition H union O minus x_C. They further constrain which double factors may be special, but do not by themselves eliminate either low-z cell.
