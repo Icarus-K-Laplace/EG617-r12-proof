@@ -550,3 +550,13 @@ Added verify_v47_z01_t0_omission_conservation.py. Its endpoint-profile replay us
 ## Forced Class-A repeat allocation in the E0=0 scalar row (2026-10-29)
 
 Added verify_v47_z01_class_a_repeat_allocation.py. Conditional on all ten exact colors being Class A, the scalar counts exact large-pair repeats (7,0,3) and T0 repeats (4,3,3) force a unique allocation: four colors repeat on T0-T1 and T1-T2; three on T0-T2 and T1-T2; three on T0-T3 and T2-T3. The verifier enumerates all nonnegative allocations and finds exactly one. Since P12 and P23 are perfect matchings, their seven and three exact-repeat edges are pairwise vertex-disjoint within each pair, forcing the corresponding track endpoints to be distinct. This is a local CSP constraint only; mixed Class-A/Class-B and isolated-double modes are not covered.
+
+## Residual six-set injectivity — single-outside mode (2026-10-29)
+
+Added V47_Z01_RESIDUAL_SIGNATURE_INJECTIVITY.md and its finite parity replay. If two exact colors in the all-ten-isolated-single-outside mode shared the same six residual vertices across T1,T2,T3, their selected matching restrictions on each of the three K2,2 residual blocks would have to be complementary to remain edge-disjoint. Complementing all three pairwise matching orientations toggles parity, so one residual graph is two triangles and the other is a six-cycle. The six-cycle color has g_C>=2 by the audited holonomy-cost theorem; with global t_C<=1 it must own a large-pair repeat edge. Pair-projection injectivity then forbids any other exact color from sharing that residual pair, contradiction.
+
+The stronger conditional statement also holds if the six-cycle color is single-outside and the other color is in any source mode. This rules out repeated residual six-sets of single-outside colors and explains the residual-signature collisions in the owner-only witness. It does not establish injectivity for two isolated-double colors or close the full common-P packing. The parity verifier checks all eight orientation triples; Q32 remains OPEN / NOT_CERTIFIED.
+
+## Owner-only P0 overlap audit correction (2026-10-29)
+
+The previous claim of 20 direct P_0i/K4-baseline overlaps was false and is withdrawn. In the explicit source Class-A construction, the K4 baseline uses w-s_i,w-s_j,w-s_k, while the candidate P_0i edges use w-y_i,w-y_j,w-y_k with y_j,y_k in the separate K3. A direct endpoint replay gives zero overlaps. The owner-only construction remains invalid for its independent 9 residual-signature collision pairs / 36 duplicate baseline-edge claims; no complete common-P packing is certified.
