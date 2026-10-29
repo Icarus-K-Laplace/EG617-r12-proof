@@ -511,3 +511,7 @@ The valid local lemma is narrower: if `x_C,y` lie in `T0`, each already has thre
 ## Exact surplus-location constraints by holonomy class (2026-10-29)
 
 The updated `verify_v47_z01_residual_holonomy_cost.py` now checks the full split of every valid repair into T0--Ti surplus edges and large-track-pair surplus edges. In the seven-vertex single-outside subcase: class B at its minimum g_C=1 must use its only surplus edge on a T0--Ti pair; class C at its minimum g_C=2 uses both surplus edges on large-track pairs and has no T0 surplus; class D at g_C=3 uses exactly one T0 surplus and two large-track surpluses. Full split counts are recorded in `V47_Z01_RESIDUAL_HOLONOMY_COST.md`; they sum to the corrected capped totals. These are conditional local constraints, not a global contradiction.
+
+## Aggregate lower bound on exact-color large-pair surplus (2026-10-29)
+
+Added Section 6 to `V47_T0_POINTWISE_COLOR_SATURATION.md`. Define `L_exact=sum_{C exact}(g_C-t_C)`, the surplus on the three K12--K12 pairs carried by the ten exact colors. The global identity gives `L_exact=26+E0-(g_D-t_D)`. Using `g_D<=19` and `t_D>=max(0,1-E0)` yields `L_exact>=8,8,9,10` for `E0=0,1,2,3`, respectively. Hence exact colors must carry at least eight large-pair surplus edges in every aligned cell; E0=2,3 strengthen this to nine and ten. This is a necessary global budget constraint, not a contradiction.
