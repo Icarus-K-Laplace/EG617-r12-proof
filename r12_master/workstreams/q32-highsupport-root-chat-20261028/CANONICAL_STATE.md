@@ -598,3 +598,16 @@ A follow-up audit caught an incompleteness in the first solver-ready encoding: k
 ### Cross-key edge-overlap regression (2026-10-29)
 
 Extended verify_v47_z01_partial_projection_packing.py with a concrete 3×3 toy regression: two distinct residual K2,2 blocks can each choose a matching orientation disjoint from the same global P perfect matching, yet those chosen orientations share an actual edge. The example passes all key-local checks but violates cross-color edge-disjointness, confirming that the newly added edge-level occupancy inequality is essential. The toy replay passed independently; it is a model-audit check, not a Q32 graph witness.
+
+
+## Full-support vertex-labelled CSP audit (2026-10-29)
+
+Added a source-labelled exact CSP and independent candidate verifier. The generic model covers all source placements for m=8,9,10; the aligned m=10,z=0,1 mode adds the six common-P factors, selected matchings, pair-projection packing, and residual-signature injectivity.
+
+Two draft overconstraints were corrected before committing:
+1. Do not force all four surplus O-vertices into G_11: isolated factors can carry double-outside placements, producing the valid 8-vertex gadget-residual mode.
+2. Full support means coverage by any single-outside K5 factor, including N_s or N_t when appropriate; it is not limited to the ten isolated factors.
+
+The reserve quota q_z<=3/4 is not hard-coded in the trusted solver core until the target-degree term in the reserve inequality is independently derived. The solver instead enforces the original global edge-color and independence constraints directly.
+
+**Status:** FORMULATION ADDED; execution and proof replay pending. No solver outcome is claimed. E408/Q32 remains **OPEN / NOT_CERTIFIED**.

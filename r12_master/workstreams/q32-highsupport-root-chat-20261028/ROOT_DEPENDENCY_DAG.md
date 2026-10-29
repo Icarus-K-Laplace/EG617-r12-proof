@@ -527,3 +527,23 @@ The projection binary encoding requires more than one-color-per-key/orientation:
 ### 14s. Cross-key projection overlap regression
 
 A concrete toy matching on a 3×3 bipartite set shows two distinct residual K2,2 blocks can each choose a P-disjoint matching orientation while reusing the same actual edge. Therefore key-local occupancy plus P-disjointness is insufficient; the edge-level occupancy constraint across all keys is mandatory. This is a verifier/model audit, not a global graph contradiction.
+
+
+## Node CSP-V47-FULLSUPPORT — exact labelled model added (2026-10-29)
+
+**Status:** FORMULATION_ONLY / NOT_EXECUTED. Depends on the registered source-correct Type-I factorization, the 285-edge core contract, and the balanced-coloring premise.
+
+Artifacts:
+- Q32_FULLSUPPORT_VERTEX_LABELLED_CSP.md
+- q32_fullsupport_vertex_labelled_csp.py
+- verify_q32_fullsupport_candidate.py
+
+The generic CSP labels all 1,830 edges of K_61, all twelve colors, and every exact-color Type-I source factor. It covers m=8,9,10 and the full source outside-count profiles; the aligned m=10,z=0,1 submodel additionally encodes common-P matchings and projection packing.
+
+Dependency firewall:
+- The model does not use the retracted degree-nine exceptional-vertex premise or exceptional-vertex injectivity.
+- It does not use the scalar aggregate-budget witness as a global realization.
+- It does not hard-code the all-color reserve q_z cap while the 13-degree term in that reserve inequality is not independently derived in this solver's trusted core.
+- A SAT result is accepted only after independent full-graph verification; an UNSAT result requires the final SMT-LIB and independently replayed proof artifact.
+
+**Open obligation:** run and independently audit the model for m=8,9,10, then isolate any smallest residual cell or provide a verified full source-realizable coloring. This node does not close Q32.

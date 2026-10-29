@@ -606,3 +606,21 @@ Audited the new binary projection encoding and found that per-key orientation oc
 ### Cross-key overlap regression — 2026-10-29
 
 Added a concrete toy case to the projection verifier showing two different residual K2,2 blocks can each choose P-disjoint internal matchings yet share an actual edge. The local key constraints alone miss this; the global per-edge occupancy inequality catches it. The finite replay passed independently. This confirms the encoding must retain both block-local and edge-global constraints.
+
+
+## 2026-10-29 — Full-support vertex-labelled CSP and source-mode audit
+
+Added Q32_FULLSUPPORT_VERTEX_LABELLED_CSP.md, q32_fullsupport_vertex_labelled_csp.py, and verify_q32_fullsupport_candidate.py in this workstream only.
+
+### Material audit corrections
+- Removed a draft-only overconstraint that forced all four outside vertices of the 11-point gadget into the two special K5s. Source-normal-form excess can sit in isolated factors, including the isolated-double / 8-vertex gadget-residual mode.
+- Corrected full-support coverage: a core vertex may be covered by any single-outside K5 factor, including a special factor; restricting witnesses to the ten isolated factors was too strong.
+- Removed the unverified pointwise q_z reserve cap from the trusted solver core. The exact source model, exact global color counts, and lazy full alpha constraints remain authoritative. The reserve note's target-degree term should be independently derived before it is used as a hard UNSAT strengthening.
+- The candidate verifier reconstructs each exact color's full 129-edge source graph from vertex labels and then checks the whole 61-vertex edge coloring, core degree/excess, shell, gap budget, full support, and balanced-coloring independence constraints.
+
+### Exact model coverage
+- Generic model: m=8,9,10, all source placements with x_C in O or H, all permitted outside-count profiles, all 61 vertices, all 1,830 edge colors, full per-color edge counts, and lazy valid cuts for alpha(H)<=4 and alpha(G_C)<=12.
+- Aligned submodel: m=10,z=0,1, six labelled common-P factors, eleven selected matchings per track pair, asymmetric K_11 x K_12 saturation, t_C<=1, pair-projection packing, and residual-signature injectivity. It allows both 7- and 8-vertex gadget-residual source modes.
+
+### Current status
+This is an exact formulation and verifier scaffold, not a closure. Syntax checks, verifier self-test, model build, and solver execution are pending at the time of this log entry. No SAT/UNSAT claim is made; E408/Q32 full support remains OPEN / NOT_CERTIFIED.
