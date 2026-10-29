@@ -427,7 +427,7 @@ Within the seven-vertex branch, the residual T0 singleton has three baseline C-e
 
 ### 14h. T0-capped isolated-double two-K4 residual enumeration
 
-`V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md` now incorporates the pointwise T0 degree cap in the two-K4 residual subcases. Each of the two T0 vertices has baseline C-degree three and can support at most one extra C-edge. Of the 12 cross-K4 edges, six avoid T0 and each T0 vertex has three candidate edges, at most one selectable. The exact per-base counts for gaps 0,1,2,3 are 1,12,60,164, yielding 8,96,480,1312 across eight unordered bases. This supersedes the earlier uncapped counts 8,96,528,1760. If the source-derived extra-edge star is centered at a T0 vertex, g_C<=1. These remain necessary local counts, not a full Q32 certificate.
+`V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md` now incorporates the global exact-color bound t_C<=1 in the two-K4 residual subcases. At most one of the 12 cross-K4 extra edges may be T0-incident in total; six edges are T0-incident and six join large tracks. The exact per-base counts for gaps 0,1,2,3 are 1,12,51,110, yielding 8,96,408,880 across eight unordered bases. This supersedes the per-T0-vertex-cap counts 8,96,480,1312 and the uncapped counts 8,96,528,1760. If the source-derived extra-edge star is centered at a T0 vertex, g_C<=1. These remain necessary local counts, not a full Q32 certificate.
 
 ### 14i. Narrow exclusion in isolated-double exceptional geometry
 
