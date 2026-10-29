@@ -73,3 +73,29 @@ The companion verifier enumerates every allowed small-block excess vector:
 There are nine vectors per small block and 729 ordered triples for A,B,C. It verifies for every triple that `E_0<=3`, `x=10-E_0`, `y=22+E_0`, and `x+y=32). This is an arithmetic consistency check, not a search over all graph completions.
 
 No external theorem is used beyond the frozen balanced-coloring premise that every 13-set contains every color. The result does not eliminate the aligned z=0 or z=1 completions; full-support Q32 and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
+
+
+## 6. Color-repeat conservation on each track pair
+
+The same 13-set argument gives a color-by-color refinement.
+
+### Two K12 tracks
+
+Fix distinct i,j in {1,2,3}, and let `e_{ij}=e_H(T_i,T_j)). Since H[T_i,T_j] is a matching, exactly `r_{ij}=12-e_{ij}` vertices on each side are unmatched by an H edge into the opposite track.
+
+For every unmatched vertex v, its twelve edges into the opposite K12 track are all non-target-colored. Since all eleven non-target colors must appear, exactly one color appears twice and the other ten appear once. For a vertex matched by an H edge, the remaining eleven edges must contain each non-target color exactly once.
+
+For each non-target color C, define
+`s_{C,ij}=e_C(T_i,T_j)-12`.
+Then
+`s_{C,ij}>=0`, `sum_C s_{C,ij}=r_{ij}), and **s_{C,ij} is exactly the number of unmatched vertices on either side whose repeated color is C**. In particular, the repeat-color counts on the two sides must agree color by color.
+
+### One K11 and one K12 track
+
+Fix i in {1,2,3}, and let `y_i=e_H(T_0,T_i)`. There are `11-y_i` unmatched vertices in T_0, since each T_0 vertex has at most one H edge into T_i. Each unmatched T_0 vertex repeats exactly one non-target color among its twelve edges into T_i. Thus, for each C,
+`s_{C,0i}=e_C(T_0,T_i)-11>=0`,
+and `s_{C,0i}` counts the unmatched T_0 vertices whose repeated color is C. Therefore
+`sum_C s_{C,0i}=11-y_i`.
+No symmetric repeat-count statement is claimed for the T_i side, because T_0 union {v} has only 12 vertices for v in T_i.
+
+These pairwise repeat labels are the color-level constraints to add to any exact completion search. They are stronger than the aggregate 37-unit identity: the same color surplus must be realized by matching repeat labels on both sides of each K12--K12 pair.
