@@ -379,3 +379,15 @@ The local dependency chain is now explicit and source-linked:
 4. `V44_M8_DIRECT_NO_CORE_ONLY_CLOSURE.md`: pointwise shell normal form forces at least two prohibited incidences at every W-point.
 
 The arithmetic regression was extended to cover the 58/59/60-point floors and re-executed successfully. This does not mechanize the analytic arguments or replace checking the cited primary Kang–Pikhurko theorem.
+
+
+## 12. Fresh independent replay audit (2026-10-29)
+
+The target proofs were rechecked against their exact contracts.
+
+- m=9: the zero-shell lemma is valid because {x_C} union (N_t\\{y}) is a C-colored K5, cannot lie entirely in H when alpha(H)<=4, and any outside-H vertex in that K5 must be p when N_C(w) cap A is empty. Thus pw has color C. Six non-special exact colors consume at least twelve distinct w--A edges, leaving at least two of the three special exact colors zero-shell, contradicting unique edge color.
+- m=8: the direct normal form uses the valid pointwise budget 13+8*4+3*4=57<=60, the corrected multiplicity n_w>=2, and special excess 5-a>=1, hence n_w in {2,3}. Both cases force |L(w)|>=2; the analytic no-core-only-degree-four lemma then gives the contradiction.
+- Analytic local lemma: for any degree-four vertex of a 130-edge color, the (56,11) Kang–Pikhurko lower bound gives e(D[N])>=119; the edge ledger implies e(D[S])>=5. For a core-only vertex, S subset H and alpha(H)<=4 exclude K4, forcing K4-e; the exact two cross edges attach to the two missing-edge endpoints. Such an endpoint has a degree-four neighborhood with only three induced edges, contradicting the universal e(D[N_D(x)])>=5 lemma. The dependency on delta(D)>=4 is separately discharged by the registered 130-edge minimum-degree proof using Kang–Pikhurko at (57,11), which in turn relies on the registered delta(D)>=3 lemma.
+- Verifier repair: a fresh run found choose2() was used before definition in verify_v44_direct_closure.py. This has been fixed in commit 2a49ccc537c45c711016468e5b5c7230c209657d. The corrected arithmetic replay returned V44_DIRECT_CLOSURE_ARITHMETIC_OK; the m=8 set-system replay returned V44_M8_CLOSURE_ARITHMETIC_OK.
+
+Status remains PASS_WITH_EXPLICIT_EXTERNAL_THEOREMS / HARDENED for the v=44 support closure only. These finite scripts do not prove the analytic lemmas, the published theorem, or the global EG617 target.
