@@ -402,3 +402,8 @@ For each exact Type-I color C, a degree-four T0 vertex must lie in G11(C), and t
 ### 14e. Exact residual holonomy-cost theorem for each exact color
 
 Added `V47_Z01_RESIDUAL_HOLONOMY_COST.md`. After the ten isolated transversal K4s of a Type-I exact color, the remaining seven vertices have profile (2,2,2,1), with a nine-edge baseline determined by three perfect matchings on the large residual pairs and three T0 attachments. There are 64 baselines. Exhaustive repair enumeration gives minimum surplus costs 0,1,2,3 for: aligned triangles plus aligned T0 attachment; aligned triangles plus mixed T0 attachment; nonaligned six-cycle with alpha 3; nonaligned six-cycle with alpha 4, respectively. Therefore a nonaligned exact-color baseline requires at least two repeat edges, and the alpha-four case requires three. This is an exact local theorem; no global closure is claimed.
+
+
+### Minimum-repair edge patterns for classes C and D
+
+The holonomy verifier checks the exact minimum repairs. Class C has three independent triples: two share a pair of large-track vertices, and the third is a disjoint transversal triple. Each minimum two-edge repair includes the shared-pair edge and one edge within the disjoint triple. Class D has a unique independent 4-set T0 plus a transversal triple V; the baseline T0 edges attach to the complementary triple U. Each minimum three-edge repair consists of one edge within U, one T0-to-V edge, and the edge between the other two vertices of V. These are local constraints only.
