@@ -114,9 +114,9 @@ def main():
         bs=components(14,{e for e in E if set(e)<=O})
         assert len(bs)==12
         proof_checks.append(dict(mode=kind,blocker_check=blockers(bs),graph=s))
-        (ROOT/(kind+"_without_clique_cap.json")).write_text(json.dumps(d,indent=2)+"\n")
+        (ROOT/(kind+"_without_clique_cap.json")).write_text(json.dumps(d,indent=2)+"\n", encoding="utf-8", newline="\n")
     d,s=sharp_source_example()
-    (ROOT/"sharp_typeI_single_color.json").write_text(json.dumps(d,indent=2)+"\n")
+    (ROOT/"sharp_typeI_single_color.json").write_text(json.dumps(d,indent=2)+"\n", encoding="utf-8", newline="\n")
     # Source parameters checked independently for all four legal a values.
     for a in range(1,5):
         E=source_graph(a)

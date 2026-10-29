@@ -39,6 +39,6 @@ survivors=[r for r in rows if not r["excluded_by_nonempty_fiber_theorem"]]
 assert {r["type"] for r in survivors}=={"P2+P2+C3","C3+P4","P1+C3+C3","C3+C4"}
 out=dict(status="PASS",scope="component-type enumeration only; conditional graph exclusions use the analytic theorem",
          total_types=len(rows),excluded_types=14,remaining_types=survivors,all_types=rows)
-(ROOT/"residual_types.json").write_text(json.dumps(out,indent=2)+"\n")
+(ROOT/"residual_types.json").write_text(json.dumps(out,indent=2)+"\n", encoding="utf-8", newline="\n")
 print(json.dumps(out,indent=2))
 

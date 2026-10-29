@@ -10,10 +10,10 @@ for name in ("verify_outside_reserve.py","verify_residual_types.py"):
     logs += ["COMMAND: "+json.dumps(command),"EXIT: "+str(r.returncode),
              r.stdout,r.stderr]
     if r.returncode: raise RuntimeError(name+" failed")
-(root/"verification_log.txt").write_text("\n".join(logs)+"\n",encoding="utf-8")
+(root/"verification_log.txt").write_text("\n".join(logs)+"\n",encoding="utf-8",newline="\n")
 hashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest()
         for p in sorted(root.iterdir()) if p.is_file() and p.name!="SHA256.json"}
 (root/"SHA256.json").write_text(json.dumps(
-    dict(algorithm="SHA256",files=hashes),indent=2)+"\n",encoding="utf-8")
+    dict(algorithm="SHA256",files=hashes),indent=2)+"\n",encoding="utf-8",newline="\n")
 print("REPLAYS_PASS; verification_log.txt and SHA256.json written")
 
