@@ -58,3 +58,25 @@ For triple placement, the necessary special-clique condition b_s+b_t=4 therefore
 The prior revision's fixed claims `G11 has 2/3 O vertices`, `e_C(H intersect G11)=12+g_C` for x_C in O, `15+g_C` for two-double, and “triple placement is impossible” are withdrawn. They incorrectly counted the two special K5 cliques as isolated components.
 
 The valid remaining direction is to couple the corrected `(b_s,b_t,a,G_H,g_C)` constraints with the six track-pair color-repeat ledger and the global `sum_C g_C=37` budget. Full-support Q32 and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
+
+
+## 5. Sharpened triple-special geometry in the aligned cell
+
+If the triple placement survives, its special K5 must be N_s and the other special K5 N_t is single-outside, so N_s has three O vertices and two H vertices while N_t has one O vertex and four H vertices.
+
+Let y be the distinguished point in N_t. It must lie in H: if y were in O, then x together with the four H vertices N_t minus {y} would form a C-colored K5 wholly inside H, contradicting alpha(H)<=4. Thus N_t minus {y} contains three H vertices and one O vertex.
+
+The four H vertices of N_t form a C-colored K4, hence an independent four-set in H. They must occupy one vertex from each of X_0,X_1,X_2,X_3. Since x is C-adjacent to every vertex of N_t minus {y}, x must lie in the same target part as y; otherwise one of those C-edges would lie inside a target clique.
+
+The two H vertices u,v of the triple special clique N_s are C-adjacent. Neither can lie in X_0: each has only its partner in N_s and one gadget neighbor (x or y) as C-neighbors in H, giving degree at most two, below the X_0 floor of three. Neither can lie in the part containing x,y, because its unique gadget edge to x or y would then be a C-edge inside a target clique. Therefore u,v lie in the other two K12 parts, one in each.
+
+This fixes the part geometry:
+- x,y lie in one K12 part X_k;
+- the two H vertices of N_s lie in the other two K12 parts;
+- the four H vertices of N_t occupy one vertex in each of X_0,X_1,X_2,X_3.
+
+Finally, the five extra gadget edges with both endpoints in H are forced in count: the two N_s H vertices each receive one H-neighbor through either y--A_0 or x--(N_s\\A_0), and x has C-edges to the three H vertices in N_t\\{y}. Thus `G_H=2+3=5`, and
+[
+e_C(H)=67+5=72,qquad \boxed{g_C=3}.
+]
+So triple placement is not eliminated, but in this aligned cell it is confined to a specific special-gadget geometry and spends exactly three units of the 37-unit color-gap budget.
