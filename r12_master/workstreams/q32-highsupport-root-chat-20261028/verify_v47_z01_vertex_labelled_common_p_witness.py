@@ -10,7 +10,7 @@ Class-A K4+K3 residual gadget with (g_C,t_C)=(2,1).
 This is intentionally NOT a full coloring certificate: it does not construct
 the eleven simultaneous color matchings M_C,ij on the remaining 30 vertices
 or verify that each complete M_C triangle factor has ten isolated K4s.
-The construction is invalid for two independent reasons: (1) it assigns multiple colors to the same residual six-set, forcing duplicate baseline matching edges; (2) three T3 vertices receive two H edges from T0, violating the aligned zero-slack H cross-track degree-one contract. An earlier claimed P_0i/K4-baseline overlap was a false audit: the candidate P edge uses a K3-side endpoint y_j, while the K4 baseline uses s_j. The script checks zero such direct overlaps.
+The construction is invalid for two independent reasons: (1) it assigns multiple colors to the same residual six-set, forcing duplicate baseline matching edges; (2) its T0--T3 H endpoint profile has 8 edges on 5 vertices, so sum_v max(h_3(v)-1,0)=3>E_3=2. This is the correct excess-budget violation: small-block vertices may exceed cross-track degree one, but the total excess in T3 is only E3=2. An earlier claimed P_0i/K4-baseline overlap was false: the candidate P edge uses a K3-side endpoint y_j, while the K4 baseline uses s_j.
 """
 from itertools import combinations
 from collections import Counter, defaultdict
@@ -219,17 +219,22 @@ assert len(t0_owner) == 11
 assert tuple(len(S0[i]) for i in range(3)) == (4, 4, 3)
 assert tuple(len(H0[i]) for i in range(3)) == (7, 7, 8)
 
-# Under the frozen aligned 3+7 zero-slack contract, every large-track
-# vertex has total H cross-track degree exactly one. Therefore its T0-H
-# endpoint degree is at most one. The candidate violates this on T3.
+# Non-small vertices have total H cross-track degree one. Small-block
+# vertices may carry epsilon excess, but the total excess in track i is E_i=2.
+# Thus sum_v max(h_i(v)-1,0) <= E_i is necessary. The candidate violates it on T3.
 h_endpoint_degree = {i: Counter(e[1] for e in H0[i]) for i in range(3)}
 h_endpoint_support = tuple(len(h_endpoint_degree[i]) for i in range(3))
 h_endpoint_max = tuple(max(h_endpoint_degree[i].values()) for i in range(3))
 h_endpoint_overfull = tuple(sum(d > 1 for d in h_endpoint_degree[i].values())
                             for i in range(3))
+h_endpoint_excess = tuple(sum(max(d - 1, 0) for d in h_endpoint_degree[i].values())
+                          for i in range(3))
+E_track = (2, 2, 2)
 assert h_endpoint_support == (7, 7, 5)
 assert h_endpoint_max == (1, 1, 2)
 assert h_endpoint_overfull == (0, 0, 3)
+assert h_endpoint_excess == (0, 0, 3)
+assert h_endpoint_excess[2] > E_track[2]
 assert all(len(P0[i]) == 11 for i in range(3))
 assert all(len({e[0] for e in P0[i]}) == 11 for i in range(3))
 
@@ -302,4 +307,4 @@ print("Overfull H endpoints by large track (violates aligned zero-slack contract
 print("Residual-signature collision pairs:", residual_signature_collision_pairs)
 print("Duplicate baseline-edge claims:", duplicate_baseline_edge_claims)
 print("INVALID_OWNER_ONLY_CONSTRUCTION_AUDIT_OK")
-print("Scope: P0/K4 direct overlap count is zero; the T3 H endpoint profile violates the aligned zero-slack degree contract, and residual-signature collisions independently invalidate this owner-only relaxation.")
+print("Scope: P0/K4 direct overlap count is zero; the candidate violates E3=2 by endpoint excess 3 and also has residual-signature collisions; no feasible common-P packing is claimed.")
