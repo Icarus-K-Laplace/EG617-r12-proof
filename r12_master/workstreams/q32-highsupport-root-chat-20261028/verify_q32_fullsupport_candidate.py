@@ -88,6 +88,19 @@ def find_independent_set(adj_masks, vertices, target_size):
     return expand(allowed, [])
 
 
+def find_clique(adj_masks, vertices, target_size):
+    """Return a clique of target_size, or None after exact search."""
+    vertices = tuple(vertices)
+    allowed = 0
+    for v in vertices:
+        allowed |= 1 << v
+    complement_adj = list(adj_masks)
+    for v in vertices:
+        complement_adj[v] = allowed & ~(adj_masks[v] | (1 << v))
+    # Independent sets in the complement are cliques in the original graph.
+    return find_independent_set(complement_adj, vertices, target_size)
+
+
 def source_edges(source):
     """Reconstruct the exact Type-I color graph from its labelled witness."""
     x = source["x"]
@@ -124,7 +137,7 @@ def source_outside_profile_errors(x, components):
     return errors
 
 
-def verify_candidate(data, check_alpha=True):
+def verify_candidate(data, check_alpha=True, check_omega=True):
     errors = []
     def fail(message):
         errors.append(message)
@@ -435,6 +448,18 @@ def verify_candidate(data, check_alpha=True):
             if independent is not None:
                 fail(f"color {c} has an independent 13-set: {independent}")
 
+    if check_omega:
+        # The 61-point residual contract also excludes monochromatic K6s.
+        for c in ALL_COLORS:
+            adj = [0] * N
+            for (u, v), color in colors.items():
+                if color == c:
+                    adj[u] |= 1 << v
+                    adj[v] |= 1 << u
+            clique = find_clique(adj, range(N), 6)
+            if clique is not None:
+                fail(f"color {c} has a monochromatic K6: {clique}")
+
     return errors
 
 
@@ -465,6 +490,10 @@ def self_test():
     }
     malformed_errors = verify_candidate(malformed, check_alpha=False)
     assert any("must provide 12 disjoint 5-sets" in item for item in malformed_errors)
+
+    # Clique search is the exact complement-dual of independent-set search.
+    assert find_clique(complete_adj, range(5), 5) is not None
+    assert find_clique(empty_adj, range(5), 2) is None
 
     # The generic Type-I outside profile accepts excess O-points in isolated factors.
     # x in O: one double plus eleven singles (13 outside points total).
@@ -502,9 +531,20 @@ def self_test():
                     assert len(found) == k
                     assert all(not (adj[u] & (1 << v))
                                for u, v in pairs(found))
+                found_clique = find_clique(adj, range(n), k)
+                expected_clique = None
+                for candidate in itertools.combinations(range(n), k):
+                    if all(adj[u] & (1 << v) for u, v in pairs(candidate)):
+                        expected_clique = candidate
+                        break
+                assert (found_clique is None) == (expected_clique is None), (
+                    "clique", n, mask, k, found_clique, expected_clique)
+                if found_clique is not None:
+                    assert len(found_clique) == k
+                    assert all(adj[u] & (1 << v) for u, v in pairs(found_clique))
                 checked += 1
     assert checked == 5405
-    print("Q32_CANDIDATE_VERIFIER_SELF_TEST_OK; independent-set cases=5405")
+    print("Q32_CANDIDATE_VERIFIER_SELF_TEST_OK; independent-set and clique cases=5405 each")
 
 
 def main():

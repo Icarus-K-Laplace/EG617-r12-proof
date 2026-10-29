@@ -435,13 +435,19 @@ def add_alpha_cuts(vs, model):
         solver.add(z3.Or([col[edge(u, v)] == 0
                           for u, v in pairs(independent)]))
         cuts += 1
-    # Every color in the balanced coloring must have alpha at most twelve.
+    # Every color in the balanced coloring must have alpha at most twelve
+    # and clique number at most five. Add exact valid cuts for both violations.
     for c in range(12):
         adj = model_adj(model, col, c)
         independent = find_independent_set(adj, range(N), 13)
         if independent is not None:
             solver.add(z3.Or([col[edge(u, v)] == c
                               for u, v in pairs(independent)]))
+            cuts += 1
+        clique = find_clique(adj, range(N), 6)
+        if clique is not None:
+            solver.add(z3.Or([col[edge(u, v)] != c
+                              for u, v in pairs(clique)]))
             cuts += 1
     return cuts
 
@@ -478,7 +484,7 @@ def main():
             return 3
         model = solver.model()
         candidate = extract_candidate(vs, model)
-        local_errors = verify_candidate(candidate, check_alpha=False)
+        local_errors = verify_candidate(candidate, check_alpha=False, check_omega=False)
         if local_errors:
             (out_dir / "model_candidate_invalid.json").write_text(
                 json.dumps(candidate, indent=2), encoding="utf-8")
@@ -487,7 +493,7 @@ def main():
             return 4
         cuts = add_alpha_cuts(vs, model)
         if cuts == 0:
-            errors = verify_candidate(candidate, check_alpha=True)
+            errors = verify_candidate(candidate, check_alpha=True, check_omega=True)
             if errors:
                 print("INDEPENDENT_VERIFIER_DISAGREEMENT")
                 print("\n".join(errors[:50]))

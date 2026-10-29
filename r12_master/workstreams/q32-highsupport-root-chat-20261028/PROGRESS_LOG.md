@@ -657,3 +657,11 @@ Corrected two helper-test fixtures so they obey the independent requirement that
 ### Independent verifier malformed-input guard (2026-10-29)
 
 The verifier now returns immediately on a malformed K5 factor list instead of continuing into pivot-packing checks that require a populated component map. A self-test constructs a malformed source witness and checks for a normal validation error rather than an exception. This hardens the independent checker against corrupted candidate files; it does not change the mathematical model.
+
+
+### 2026-10-29 — Added monochromatic-K6 exclusion to model and verifier
+
+- Audit found that the CSP/verifier enforced alpha(H)<=4 and alpha(G_C)<=12 but omitted the registered omega(G_C)<=5 constraint, despite the conditional 130/132-edge minimum-degree theorems depending on it.
+- Added exact lazy clique cuts: any monochromatic K6 in color C forces at least one of its 15 edges to take another color.
+- Added independent verifier checks for omega(G_C)<=5 for every color and expanded the exhaustive small-graph regression to cover clique search as well as independent-set search.
+- This closes a model-specification gap, not Q32. Actual committed-file execution and full Z3 solving remain pending.

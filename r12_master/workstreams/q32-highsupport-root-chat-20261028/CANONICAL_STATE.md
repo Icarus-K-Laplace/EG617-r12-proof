@@ -647,3 +647,8 @@ Corrected two helper-test fixtures so they obey the independent requirement that
 ### Independent verifier malformed-input guard (2026-10-29)
 
 The verifier now returns immediately on a malformed K5 factor list instead of continuing into pivot-packing checks that require a populated component map. A self-test constructs a malformed source witness and checks for a normal validation error rather than an exception. This hardens the independent checker against corrupted candidate files; it does not change the mathematical model.
+
+
+## Full coloring contract strengthened (2026-10-29)
+
+Added the missing omega(G_C)<=5 premise to the exact full-support CSP through lazy K6 cuts and to the independent verifier through a complement-dual exact clique search. This is necessary because the 130/132-edge minimum-degree lemmas use omega(D)<=5. The model now searches the full registered coloring contract rather than only its independence constraints.

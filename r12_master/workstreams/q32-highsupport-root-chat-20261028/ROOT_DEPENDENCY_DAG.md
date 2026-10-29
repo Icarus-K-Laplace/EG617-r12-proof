@@ -557,3 +557,8 @@ Added explicit necessary constraints from the registered pivot-neighborhood pack
 ### Implementation audit update (2026-10-29)
 
 The CSP model-construction blocker at symbolic y lookup was repaired by finite-label disjunction. The candidate verifier's isolated-factor single-outside restriction was removed to align it with the generic source-mode contract. This node remains FORMULATION_ONLY until Python syntax/model-build tests and actual solver runs are recorded.
+
+
+### Full coloring premise audit (2026-10-29)
+
+The exact labelled CSP now includes omega(G_C)<=5 for all twelve colors via lazy monochromatic-K6 cuts; the independent verifier checks the same premise. This is a required contract dependency for the nonexact-color degree-floor theorems. No SAT/UNSAT result or root promotion is claimed.

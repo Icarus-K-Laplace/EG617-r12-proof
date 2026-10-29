@@ -44,7 +44,7 @@ The full-support check is also source-corrected: each h in H must occur in at le
 3. The target core satisfies e(H)=285, delta(H)>=12, and sum over h in H of (d_H(h)-12)=6.
 4. The eleven non-target colors satisfy the exact 37-unit identity sum_C(e_C(H)-69)=37; each has at least 69 core edges and each exact color has at most 75.
 5. Full support: every vertex of H belongs to some source K5 factor with exactly one O-vertex, giving a core K4 witness.
-6. The original balanced-coloring premise is encoded exactly by alpha(H)<=4 and alpha(G_C)<=12 for all twelve colors. Since these are exponential set constraints, the solver uses lazy separation: any found independent 5-set in H, or independent 13-set in a color graph, adds the valid clause that at least one pair in that set has the corresponding color. Every accepted SAT candidate is checked again by the independent verifier.
+6. The registered 61-point coloring contract is encoded by alpha(H)<=4, alpha(G_C)<=12, and omega(G_C)<=5 for all twelve colors. These are exponential set constraints, so the solver uses lazy separation: an independent 5-set in H or independent 13-set in a color graph adds the valid clause that at least one pair in the set has the corresponding color; a monochromatic K6 adds the valid clause that at least one pair in it has a different color. Every accepted SAT candidate is checked again by the independent verifier.
 
 The all-color pointwise reserve quota is not hard-coded as a premise. The current reserve note's 13+4m+q_z+L_m count is not independently re-derived inside this solver's trusted core; using the complete coloring constraints is safer than silently importing an unverified strengthening. This does not retract the reserve note; it marks that dependency for independent proof audit.
 
@@ -106,3 +106,8 @@ The independent candidate verifier has explicit source-profile regression tests 
 ### Independent verifier malformed-input guard (2026-10-29)
 
 The verifier now returns immediately on a malformed K5 factor list instead of continuing into pivot-packing checks that require a populated component map. A self-test constructs a malformed source witness and checks for a normal validation error rather than an exception. This hardens the independent checker against corrupted candidate files; it does not change the mathematical model.
+
+
+## Balanced-coloring contract audit — monochromatic K6 exclusion (2026-10-29)
+
+The first CSP draft enforced the independence-number side of the registered coloring premise but omitted the clique-number side, even though the conditional nonexact-color degree theorems require omega(D)<=5. That omission made the model a relaxation and allowed the candidate verifier to accept a coloring with a monochromatic K6. The model now lazily separates every monochromatic K6 by a valid non-color edge clause, and the independent verifier checks omega(G_C)<=5 for every color. The local pre-alpha candidate pass skips both global alpha and omega checks; final acceptance performs both. The verifier self-test now cross-checks clique search as well as independent-set search on all 5,405 graph/target-size cases for n<=5.
