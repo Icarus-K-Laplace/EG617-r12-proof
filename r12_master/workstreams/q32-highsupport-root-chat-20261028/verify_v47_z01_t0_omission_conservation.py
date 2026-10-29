@@ -133,6 +133,19 @@ def main():
     assert [row["valid_D_omission_assignments"] for row in rows] == [20610, 42336, 25758]
     assert [row["max_exact_nonrepeat_omission_multiplicity"] for row in rows] == [3, 3, 3]
     assert [row["local_degree_states"] for row in rows] == [9270, 9270, 8649]
+    expected_y7 = {
+        str((0, 1, 1)): 2646, str((1, 0, 1)): 2646,
+        str((1, 1, 0)): 1512, str((2, 0, 0)): 1350,
+        str((0, 0, 2)): 756, str((0, 2, 0)): 360,
+    }
+    expected_y8 = {
+        str((1, 0, 1)): 2898, str((2, 0, 0)): 2016,
+        str((0, 1, 1)): 1710, str((1, 1, 0)): 1260,
+        str((0, 0, 2)): 630, str((0, 2, 0)): 135,
+    }
+    assert rows[0]["local_excess_decomposition_counts"] == expected_y7
+    assert rows[1]["local_excess_decomposition_counts"] == expected_y7
+    assert rows[2]["local_excess_decomposition_counts"] == expected_y8
     assert all(sum(map(int, row["local_excess_decomposition_counts"].values())) ==
                row["local_degree_states"] for row in rows)
     for row in rows:
