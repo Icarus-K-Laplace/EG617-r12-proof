@@ -219,3 +219,8 @@ The exact integer verifier checks all 64 four-part profiles and 35 three-part pr
 The former claim that the 4,5,5 switch theorem and cut-endpoint bound force each small-to-outer matching permutation to be constant is **RETRACTED**. The switch theorem's two extra edges hit two distinct moved small-side labels, so the old single-label cut charge is invalid. See `V47_37_SMALL_OUTER_MATCHING_RIGIDITY_RETRACTION.md`.
 
 The local switch theorem, outer-light holonomy theorem, residual-track transversal theorem, and separate z=0,1 partition-alignment argument remain distinct proof assets. This branch remains OPEN / NOT_CERTIFIED.
+
+
+## 14. Status update after aligned z=0,1 K6 closure
+
+Within the 3+7 split, the aligned z=0 and z=1 profile (2,2,2,1) cells are now CLOSED by V47_Z01_K6_CONTRADICTION.md; the z=1 (3,2,1,1) profile was already excluded by K13, and the z=2 high-chromatic residual cell is closed in V47_RESIDUAL_INCIDENCE_COVER.md. The remaining highlighted local frontier is z=3 and the z=4 empty-fiber switch/double-track escape class, plus the separate 2+8 and other component-size splits. This update does not close the full-support m=10 branch.

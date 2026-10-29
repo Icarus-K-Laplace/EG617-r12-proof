@@ -53,3 +53,8 @@ Finally, if two colors shared two pair projections, then their residual two-sets
 - Pair-projection multiplicity must be modelled as a block-level constraint, not merely as a penalty for duplicate full six-sets.
 
 The lemma does not prohibit two colors from sharing one P-free pair key, and it does not establish that a global assignment exists or is impossible. The full-support \(v=47\), \(z=0,1\), \((2,2,2,1)\) cells remain **OPEN / NOT_CERTIFIED**.
+
+
+## 4. Scope update — aligned z=0,1 cell closed
+
+The full-support m=10 z=0,1, (2,2,2,1) cells referenced in the original status are now CLOSED by V47_Z01_K6_CONTRADICTION.md. The partial-projection packing lemma remains a valid conditional combinatorial constraint, but it is not needed to close those aligned cells and does not close the remaining full-support branches.

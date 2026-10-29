@@ -106,3 +106,8 @@ This theorem closes no graph branch by itself. It sharply reduces the aligned m=
 ## 6. Outside-component bijection (2026-10-29)
 
 The equality patterns in Section 4 can be sharpened using alpha(D)<=12: every vertex of H must meet every maximum independent 12-set of O. This forces each component of D[O] to map as a whole to one vertex in each large track, bijectively, and all components except Z to map bijectively to T0. See V47_Z01_OUTSIDE_COMPONENT_BIJECTION.md. In particular, every D[A] edge has twin endpoints with identical D-neighborhoods in H. The exact O-degree multisets are (1^10,2^2) on each large track and (1^10,2) on T0 in the 2K2 case; in the K3 case they are (1^11,3) on each large track and (1^11) on T0.
+
+
+## 7. Status supersession — aligned z=0,1 cell
+
+The earlier statement in Section 5 that the theorem alone does not close the aligned cell remains true for the gap-saturation lemma in isolation. Its equality cases are now eliminated by the follow-on theorem V47_Z01_K6_CONTRADICTION.md: the outside-component bijection plus alpha(D)<=12 forces corresponding track vertices to be D-adjacent, and either D[A]=2K2 or D[A]=K3 then creates a D-K6. The aligned m=10, z=0,1, (2,2,2,1) cell is CLOSED under the registered contract. Other full-support cells remain open.

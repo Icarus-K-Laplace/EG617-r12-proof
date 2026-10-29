@@ -93,3 +93,8 @@ The unresolved alternative is g_D<=17. If that branch also has no exact color wi
 ## 5. Scope
 
 The 1-factorization is an exact structural constraint on every K12--K12 track pair. The K11--K12 statement is intentionally asymmetric. The results do not yet couple the three large-track factors strongly enough to eliminate the aligned z=0 or z=1 cell. Full-support E408/Q32 and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
+
+
+## 6. Status update — gap split resolved in aligned z=0,1
+
+The Section 4 interval alternative is superseded for the aligned m=10 z=0,1, (2,2,2,1) cell by the exact gap-saturation theorem and V47_Z01_K6_CONTRADICTION.md. In that cell, g_D=7 and every exact g_C=3, and both outside patterns are impossible by a forced D-K6. This does not assert that the same gap cap or closure applies to nonaligned z=2,3,4 cells or other light-component splits.

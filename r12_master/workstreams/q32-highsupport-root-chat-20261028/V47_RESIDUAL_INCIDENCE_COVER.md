@@ -100,3 +100,7 @@ Apply the scalar upper bounds y+2z<=D_m+6, with D_8=18, D_9=13, D_10=8:
 - m=8: chi(J_R)>=7 forces y>=24; then y+2z<=24 gives z=0, and J_R has exactly t_4(15)=84 edges, again the balanced Turan graph. Hence chi(J_R)<=6.
 
 This leaves a finite chromatic frontier for full support: m=10 is reduced to chi(J_R)<=4; m=9 to chi<=5; m=8 to chi<=6. These are residual-graph constraints, not closures of the remaining Q32 color branches.
+
+## 9. Scope update after the aligned-cell K6 theorem
+
+For the m=10 disconnected 3+7 split, the high-chromatic residual cell z=2 was already closed in Section 7. The aligned z=0,1 residual profile (2,2,2,1) is now also CLOSED by V47_Z01_K6_CONTRADICTION.md, and the aligned z=1 profile (3,2,1,1) was previously closed by a K13 contradiction. This narrows the 3+7 frontier but does not eliminate z=3 or the z=4 empty-fiber switch/double-track escapes, nor the other light-component splits. The global m=10 and Q32 branches remain open.
