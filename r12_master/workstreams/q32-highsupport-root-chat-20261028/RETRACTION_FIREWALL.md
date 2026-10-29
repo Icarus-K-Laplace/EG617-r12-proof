@@ -189,8 +189,8 @@ The registered source-correct isolated-double placement yields nine isolated H-K
 The global low-gap orientation may be cited only through the independent 69/70 near-Turan classification or the explicit case split in V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md. The placement-sensitive T0 count is now t_C<=1 for every exact color, including the isolated-double x_C in H, y in H two-double branch (g_C=3): its two T0 vertices lie in the special K3 and K4 and have degrees 3 and 4, respectively. Therefore the cap of one extra edge across all three T0--Ti pairs is global for exact colors. No Q32 or EG617 root closure is certified.
 
 
-## 14. Retraction of universal class-B pair law (2026-10-29)
+## 14. Correction to the prior Class-B-law retraction (2026-10-29)
 
-The proposed universal complement law for class-B g_C=2,t_C=1 was false and is withdrawn. A source-correct x_C-in-O mode with N_s single-outside, N_t double-outside, and A_0={w,s_j} realizes extras ws_i on T0-T_i and ys_j on T_i-T_j, which share a large-track index. Do not impose a universal complement relation.
+The prior retraction is itself withdrawn. The alleged counterexample used the wrong nine-edge baseline: in the source mode \(x_C\in O\), \(N_s\) single-outside and \(N_t\) double-outside, the true baseline is \(K_4(\{w,s_i,s_j,s_k\})\cup K_3(\{y,t_j,t_k\})\). Thus \(ws_i\) is a baseline K4 edge and \(yw\) is an extra; the local graph is Class A, not Class B. Class A permits the shared-track pair pattern.
 
-The current source-explicit aggregate witness in V47_Z01_SHARED_P_FACTOR_PACKING.md and verify_v47_z01_aggregate_budget_witness.py uses exact surplus (7,0,3;4,3,3) and D surplus (1,9,6;0,1,0), with g_D=17. It checks scalar capacities and the exhibited local source mode but does not assign common-P endpoints. It is not a Q32 completion or contradiction.
+Do not impose one pair-location law across all modes. Preserve both constraints: Class A source mode can have T0 and large-pair repeats sharing a track; the seven-vertex Class-B mode with \(g_C=2,t_C=1\) has complementary track pairs. The source-Class-A aggregate witness uses exact surplus \((7,0,3;4,3,3)\), D surplus \((1,9,6;0,1,0)\), and \(g_D=17\). It does not assign actual common-P endpoint labels and is neither a Q32 completion nor a contradiction.
