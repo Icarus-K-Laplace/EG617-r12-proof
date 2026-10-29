@@ -192,7 +192,7 @@ For \(v=47\), the exact multicolor near-Turán ledger is \(\sum_C g_C=37\), wher
 
 Highest-priority target is therefore the full-support \(v=47\) case: \(m=8,9\), and the remaining low-chromatic-residual \(m=10\) branch. The old degree-nine exceptional-vertex claim and injectivity-dependent closure are excluded by the retraction firewall.
 
-**CSP trust warning (2026-10-29):** the latest high-support sibling added a vertex-labelled CSP, but its current formulation is not yet a valid E408 model for all m. It uses target edge count \(398+m\) with a fixed 132-edge non-target color, producing 406/407 target edges for m=8/9 rather than the required 408. Its candidate verifier also forces each of factors 0–9 to have exactly one O-vertex, although the source-correct placement contract permits excess outside vertices in isolated factors. No full solver run or closure claim has been made; do not rely on this CSP until both issues are corrected.
+**CSP trust warning (refreshed 2026-10-29, sibling HEAD 384b31478668ebccde32f13a9ae391bbff494c86):** the candidate verifier's source-mode overrestriction has been corrected. It now checks the source-correct aggregate outside profile (all 12 factors meet O, total 13 when x is outside H or 14 when x is in H, with per-factor caps 2/3) and includes source-profile regression fixtures. However, the model and independent candidate verifier still use target count 398+m and hard-code a 132-edge non-target color. That vector is wrong for m=8,9 (406/407 target edges instead of 408). The count-vector defect remains load-bearing; no solver run or closure claim is imported. A standalone exact count-vector regression now passes, but it validates arithmetic only.
 
 ## Status policy
 

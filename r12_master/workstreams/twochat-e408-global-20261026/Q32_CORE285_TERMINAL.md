@@ -158,6 +158,13 @@ The read-only audit in Q32_FULLSUPPORT_CSP_SOURCE_AUDIT.md found two defects in 
 No solver result is imported. The full-support v=47 frontier remains OPEN; the CSP must be repaired and independently checked before use.
 
 
-## 11. Latest CSP audit refresh — 2026-10-29
+## 11. Latest CSP audit refresh — superseded 2026-10-29
+
+The former note pinned sibling HEAD 92c9086c8b6ac554ed74b48a5d608aa546bcb977 and listed two defects. The latest high-support sibling is now HEAD 384b31478668ebccde32f13a9ae391bbff494c86. Its candidate verifier's source-mode check has been corrected, but the target-count formula 398+m remains wrong for m=8,9 in both model and verifier.
+
+## 12. Current full-support CSP status — 2026-10-29
+
+The source-mode overrestriction is fixed at the checker level; the E408 count-vector defect remains. verify_q32_fullsupport_count_vector_contract.py independently confirms the correct count vectors and total 1830 edges for m=8,9,10. This arithmetic regression is not a CSP solve. Full support v=47 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+ — 2026-10-29
 
 The high-support sibling's latest HEAD is 92c9086c8b6ac554ed74b48a5d608aa546bcb977. It integrated pivot K4 packing constraints, but the full-support CSP still has the two source-contract defects recorded in Q32_FULLSUPPORT_CSP_SOURCE_AUDIT.md. Treat the CSP as FORMULATION_ONLY / NOT_EXECUTED until the edge-count vector and independent verifier's outside-count checks are corrected.

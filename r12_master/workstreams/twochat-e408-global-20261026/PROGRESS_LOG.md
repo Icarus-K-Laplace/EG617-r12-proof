@@ -215,3 +215,12 @@ Canonical commit: `b2d06bb90e532556ba203f559d85d8fcfb257fd4`.
 ## 2026-10-29 — follow-up audit of latest sibling CSP revision
 
 The high-support sibling advanced to HEAD 92c9086c8b6ac554ed74b48a5d608aa546bcb977 and integrated pivot K4 packing into the CSP. I re-read the updated model and confirmed the E408 count-vector mismatch remains in expected_total, while the candidate verifier still uses the old expected_counts and forces comps[0:10] to have exactly one O-vertex. The root audit now pins this latest source version. No solver result is imported.
+
+
+## 2026-10-29 — refreshed full-support CSP source audit at sibling HEAD 384b314
+
+- Re-fetched the live high-support sibling branch and confirmed its actual HEAD is 384b31478668ebccde32f13a9ae391bbff494c86, newer than the prior root audit's pinned 92c9086c8b6ac554ed74b48a5d608aa546bcb977.
+- The latest candidate verifier now uses source_outside_profile_errors and source-profile regression fixtures; the old blanket requirement that factors 0..9 each have exactly one O vertex is no longer present. Defect B is closed at the source-check level.
+- Defect A persists in both model and independent candidate verifier: expected target count remains 398+m and color 11 remains fixed at 132. This is incompatible with E408 for m=8,9.
+- Added verify_q32_fullsupport_count_vector_contract.py and ran it in a clean standard-library process. All three corrected vectors pass: m=8 has 8×129 plus 3×130 and target 408; m=9 has 9×129, 130, 131 and target 408; m=10 has 10×129 plus 132 and target 408. Each sums to C(61,2)=1830.
+- No Z3 solve was performed in this runtime (z3-solver is not installed); no SAT/UNSAT claim is made. Q32 full support and the fixed-r root remain OPEN / NOT_CERTIFIED.

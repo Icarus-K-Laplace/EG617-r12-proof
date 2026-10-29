@@ -3,7 +3,7 @@
 Updated: 2026-10-29  
 Repository: Icarus-K-Laplace/EG617-r12-proof  
 Branch: workstream/r12-twochat-e408-global-20261026  
-Audited HEAD before this audit commit: 937a905ed26e54ec10e9bdade1d9b655da8f6176  
+Audited HEAD before this audit commit: bb8b1e696ecf199f337d8d0db69d00132191f80f  
 Status: **OPEN / NOT_CERTIFIED — FAIL-CLOSED**  
 Promotable root receipt: **NOT ISSUED**
 
@@ -58,8 +58,8 @@ flowchart TD
 | E407-32-TEMPLATE-CONTRACT | A legal completion of any one V12 template has the 29-point/49-block support object and selected-component anchor identity | PROVED_CONDITIONAL | FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md and SUPPORT_BLOCK_ANCHOR_IDENTITY.md in sibling branch workstream/r12-twochat-e407-closure-20261026. This interface depends on the retained V12 analytic/minimum-support chain and exact-129 factor theorem; it does not certify the finite survivor mapping. |
 | E407-32-V12-PROMOTION | Every legal E407 Q32 parent is covered by the complete V12 finite screen and maps to a template A-E | OPEN | Archive, manifest, and verifier are absent; V12_V8_SOURCE_REPORTED_AUDIT.md says INDEPENDENT_REPLAY_PENDING. The reported 554 survivor-to-template mapping has not been independently replayed. The sibling's broader compatibility workstream remains OPEN / NOT_CERTIFIED. |
 | E408-31 | E408 Q31 closure | PROVED_CONDITIONAL + COMPUTATION_CERTIFIED under V11 inputs | V10_V11_Q31_INDEPENDENT_REPLAY_AUDIT.md; retain its named analytic and external assumptions. |
-| E408-32-NONFULL | E408 Q32 supports v=44,45,46 are impossible for every m in {8,9,10} | PROVED_CONDITIONAL (read-only sibling import) | Low-support branch workstream/r12-q32-caseII-v44-final-20261028 at 9afd7c1a59056052974f9dc78933010d10e88bba and high-support branch workstream/r12-q32-highsupport-root-20261028 at 92c9086c8b6ac554ed74b48a5d608aa546bcb977. See Q32_NONFULL_SUPPORT_SIBLING_IMPORT_AUDIT.md for the proof-to-row map. This root branch did not independently re-prove every analytic lemma. |
-| E408-32-FULL | E408 Q32 full support v=47 | OPEN | V47_ALL_COLOR_RESERVE.md and V47_PIVOT_NEIGHBORHOOD_PACKING.md. m=8,9 remain open; for m=10 the chi(complement residual)>=5 subcase is closed, but chi<=4 remains open. The newly added full-support CSP is FORMULATION_ONLY and not trusted for m=8,9 until its target edge counts and verifier source-mode checks are corrected. Scalar relaxations remain feasible. No Q33 excess-four identity is imported. |
+| E408-32-NONFULL | E408 Q32 supports v=44,45,46 are impossible for every m in {8,9,10} | PROVED_CONDITIONAL (read-only sibling import) | Low-support branch workstream/r12-q32-caseII-v44-final-20261028 at 9afd7c1a59056052974f9dc78933010d10e88bba and high-support branch workstream/r12-q32-highsupport-root-20261028 at 384b31478668ebccde32f13a9ae391bbff494c86. See Q32_NONFULL_SUPPORT_SIBLING_IMPORT_AUDIT.md for the proof-to-row map. This root branch did not independently re-prove every analytic lemma. |
+| E408-32-FULL | E408 Q32 full support v=47 | OPEN | Latest high-support sibling HEAD 384b31478668ebccde32f13a9ae391bbff494c86 has corrected the candidate verifier's source-outside-profile check, but both model and verifier still encode target count 398+m with color 11 fixed at 132. This is wrong for m=8,9. The standalone count-vector regression confirms the corrected bookkeeping only; no Z3 solve or graph-level UNSAT certificate exists. m=8,9 remain open; for m=10, the chi(complement residual)>=5 subcase is closed, while chi<=4 remains open. No Q33 excess-four identity is imported. |
 | E408-33-SUPPORT | Eight selected exact-129 colors supply 56 selected component/gadget witnesses with support v>=31 | PROVED_CONDITIONAL | R12_ZERO_EXCESS_WITNESS_THEOREM.md and the retained exact-129 factor theorem. The lower bound v>=31 does not imply v=31. |
 | E408-33-LOCAL | Under exactly v=31 and the registered 284-edge/56-witness ledger, nonexact-color reserve excludes m=8,9 and the separate component-capacity theorem excludes m=10 | PROVED_CONDITIONAL | Q33_NONEXACT_U_RESERVE_CLOSURE.md and Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md. Uses p12(31)=26, delta<=17, h<=4; no degree-nine assumption. |
 | E408-33-PROMOTION | Every Q33 parent has a selected 56-witness union of exactly 31 points, or all larger supports are excluded | OPEN | No equality/support-promotion theorem found. Independent necessary-capacity replay excludes m=8,9 at v=31 and m=8 at v=32 only; m=9,10 at v=32 and m=8,9,10 for v>=33 remain open under this scalar reserve. |
@@ -91,3 +91,8 @@ The old single E408-32 row is split into a conditional non-full-support closure 
 ## 15. Full-support CSP audit gate — 2026-10-29
 
 The high-support sibling's vertex-labelled CSP is not a proof artifact until its E408 count vector is corrected for m=8,9 and its independent verifier accepts every source-permitted outside-count placement. No solver output is imported at this stage.
+
+
+## 16. Latest full-support CSP source audit — 2026-10-29
+
+The latest read-only sibling is workstream/r12-q32-highsupport-root-20261028 at 384b31478668ebccde32f13a9ae391bbff494c86. Its independent candidate verifier now accepts the registered source-correct outside-count modes and has regression fixtures. The E408 count-vector mismatch remains in both model and verifier. See Q32_FULLSUPPORT_CSP_SOURCE_AUDIT.md and verify_q32_fullsupport_count_vector_contract.py. No solver output is imported.

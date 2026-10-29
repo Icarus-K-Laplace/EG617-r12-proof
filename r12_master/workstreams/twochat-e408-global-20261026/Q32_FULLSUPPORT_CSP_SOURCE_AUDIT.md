@@ -3,8 +3,11 @@
 Date: 2026-10-29  
 Auditing branch: workstream/r12-twochat-e408-global-20261026  
 Read-only source branch: workstream/r12-q32-highsupport-root-20261028  
-Audited sibling HEAD: 92c9086c8b6ac554ed74b48a5d608aa546bcb977  
-Status: **FORMULATION DEFECTS FOUND; no solver result exists to certify or retract.**
+Audited sibling HEAD (historical): 92c9086c8b6ac554ed74b48a5d608aa546bcb977  
+Latest sibling HEAD rechecked: 384b31478668ebccde32f13a9ae391bbff494c86  
+Status: **ONE FORMULATION DEFECT REMAINS; no solver result exists to certify or retract.**
+
+**Supersession note (2026-10-29):** the old Section 3 / Section 5 source-mode verifier defect has been fixed in the latest sibling revision. The remaining load-bearing defect is the target/non-target edge-count vector for m=8,9.
 
 ## 1. Fixed E408 edge-count contract
 
@@ -61,7 +64,7 @@ Keep \(e_0=408\) for all \(m\in\{8,9,10\}\) and encode the non-target counts acc
 
 Update the model and the independent verifier independently, then add a regression asserting the full count vector and total 1830 edges for each m.
 
-## 3. Defect B — candidate verifier overrestricts Type-I outside placements
+## 3. Historical defect B — superseded by latest sibling revision
 
 The CSP specification and model allow the twelve Type-I K5 factors to carry the outside incidences permitted by the source-correct normal form:
 - \(x_C\in O\): profile \((2,1^{11})\);
@@ -99,7 +102,7 @@ Root status remains:
 \]
 
 
-## 5. Latest model revision checked — 2026-10-29
+## 5. Historical model revision checked at HEAD 92c9086 — superseded
 
 After the pivot-packing integration commit, the model still contains:
 
@@ -113,3 +116,51 @@ The verifier blob remains fc6c8a5e2b2e8decd236f0d7336699c23f75be1f and retains b
 - verifier blob fc6c8a5e2b2e8decd236f0d7336699c23f75be1f.
 
 The pivot-packing strengthening does not repair either source-contract defect. No full solve has been run.
+
+
+## 6. Latest sibling recheck — 2026-10-29, HEAD 384b31478668ebccde32f13a9ae391bbff494c86
+
+### Defect B is fixed at the source-check level
+
+The current verify_q32_fullsupport_candidate.py has source_outside_profile_errors(x, components). It checks that all twelve K5 factors meet O, that the aggregate outside count is 13 when x is outside H and 14 when x is in H, and that the per-factor cap is 2 or 3 respectively. With twelve factors, those bounds force the allowed source profiles (2,1^11), (2,2,1^10), or (3,1^11) without requiring the excess outside vertices to lie only in the special factors. The latest revision also adds self-test fixtures for the source modes. The former comps[:10] exactly-one-O rejection is absent. This closes the old verifier overrestriction, not the graph problem.
+
+### Defect A remains in both current source files
+
+The latest model blob is 22d74be03e7f4e3ce5f48ad8e02f8f9d17c3e663; the latest independent verifier blob is 629be29be020de79bc27b46a338c4966dc53823d. Both still encode target count 398+m and color 11 at 132. For m=8,9, that is not the fixed E408 target count 408.
+
+The exact required vector is:
+
+| m | Target color 0 | Exact colors | Remaining non-target colors | Sum |
+|---:|---:|---|---|---:|
+| 8 | 408 | colors 1–8: 129 each | colors 9,10,11: 130 each | 1830 |
+| 9 | 408 | colors 1–9: 129 each | color 10: 130; color 11: 131 | 1830 |
+| 10 | 408 | colors 1–10: 129 each | color 11: 132 | 1830 |
+
+The model and verifier must be changed independently to this exact vector. A suitable model-side construction is:
+
+~~~python
+expected_total = {0: 408}
+expected_total.update({c: 129 for c in exact})
+if m == 8:
+    expected_total.update({9: 130, 10: 130, 11: 130})
+elif m == 9:
+    expected_total.update({10: 130, 11: 131})
+else:
+    expected_total[11] = 132
+~~~
+
+The independent verifier should implement its own explicit vector table, not import or call the model's function.
+
+### Exact arithmetic regression
+
+Added verify_q32_fullsupport_count_vector_contract.py. It verifies for all m=8,9,10:
+- all twelve color counts are present;
+- target count is exactly 408;
+- non-target total is 1422;
+- non-target excess over 129 sums to 3;
+- total edge count is C(61,2)=1830;
+- the old 398+m target formula fails for m=8,9.
+
+Executed locally with python -S -B /mnt/data/verify_q32_fullsupport_count_vector_contract.py; exit code 0. Source SHA256: f7aa8d32a15bd0be89feb87680d833e1f72691765d584c704fb11c2d881aafa0.
+
+This regression certifies count-vector arithmetic only. It does not execute Z3, validate the complete CSP semantics, certify a graph realization, or prove UNSAT. Z3 was unavailable in the current runtime. The high-support sibling remains read-only; no sibling file was changed.
