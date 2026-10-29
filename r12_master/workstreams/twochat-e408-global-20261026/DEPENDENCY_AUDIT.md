@@ -244,3 +244,13 @@ Read-only reconciliation of sibling branch heads:
 Their current canonical states close \(v=44,45,46\) for all \(m\in\{8,9,10\}\) under the source-correct 285-edge contract. The remaining Q32 support is \(v=47\). Within \(v=47,m=10\), the \(\chi(\overline{H[R]})\ge5\) subcase is closed, while \(\chi(\overline{H[R]})\le4\) remains open; \(m=8,9\) remain open.
 
 This is a conditional proof import, not a claim of independent replay of all sibling analytic arguments. The high-support branch's retracted global matching-map rigidity claim and all degree-nine exceptional-vertex arguments remain excluded. Root status remains OPEN / NOT_CERTIFIED.
+
+
+## 15. Full-support CSP source-contract audit — 2026-10-29
+
+Read-only audit of the latest high-support sibling HEAD \`5f1cccb917f0d13c27f9e3fc2dfa77418dc1abff\` found two formulation defects in its not-yet-executed CSP:
+
+1. **Wrong E408 edge-count family for m=8,9.** The model and verifier both impose \`e_0=398+m\`, with exact colors at 129, colors \(m+1,\ldots,10\) at 130, and color 11 at 132. For m=8, this gives target count 406 and non-target total 1424; for m=9, target count 407 and non-target total 1423. The fixed E408 contract instead has target count 408, non-target total 1422, and excess sum \(\sum_C s_C=3\): m=8 has three 130-edge colors; m=9 has 130- and 131-edge colors; m=10 has one 132-edge color. The present count parameterization matches E408 only at m=10.
+2. **Verifier rejects valid Type-I placements.** \`verify_q32_fullsupport_candidate.py\` requires every factor in \`components[:10]\` to contain exactly one O-vertex. The source-correct placement theorem and the CSP specification itself permit an excess outside vertex to lie in an isolated factor, including the isolated-double mode. Thus the independent verifier is stricter than the registered source contract and is not yet a complete verifier for the model's allowed source modes.
+
+The CSP has not been executed for a full solve according to the sibling's current progress log. Therefore this is a preventive model audit, not a retraction of a solver result. Any future SAT/UNSAT result must be generated after fixing the count family and verifier mismatch, then replayed with the exact final model and independent verifier. Root status remains OPEN / NOT_CERTIFIED.

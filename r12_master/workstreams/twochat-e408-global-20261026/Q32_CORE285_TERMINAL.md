@@ -147,3 +147,12 @@ E408 Q33 remains locally closed only under its separate exact 31-point / 56-witn
 ## 9. Sibling integration note — 2026-10-29
 
 This file supersedes its earlier non-full-support frontier list. The earlier listed \(v=44,45,46\) rows are no longer live terminals after the conditional closures recorded by the low-support and high-support sibling branches. Q32 remains OPEN solely because full support \(v=47\) is not closed.
+
+
+## 10. Full-support CSP source-contract audit — 2026-10-29
+
+The read-only audit in Q32_FULLSUPPORT_CSP_SOURCE_AUDIT.md found two defects in the not-yet-executed sibling CSP:
+1. Its edge-count vector e_0=398+m, with the final non-target color fixed at 132 and other nonexact colors fixed at 130, represents target counts 406/407/408 for m=8/9/10. The E408 contract requires target count 408 for all three m cases and excess sum three.
+2. The candidate verifier forces each of factors 0–9 to have exactly one O-vertex, despite the source-correct outside-count profile permitting excess outside incidences in isolated factors.
+
+No solver result is imported. The full-support v=47 frontier remains OPEN; the CSP must be repaired and independently checked before use.

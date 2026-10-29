@@ -201,3 +201,12 @@ Canonical commit: `b2d06bb90e532556ba203f559d85d8fcfb257fd4`.
 - Refined the full-support frontier: \(v=47,m=8,9\) remain open; \(m=10\) has its \(\chi(\overline{H[R]})\ge5\) residual subcase closed, while \(\chi(\overline{H[R]})\le4\) remains open.
 - Updated the canonical state, Q32 terminal, dependency audit, DAG, and root receipt. Sibling branches were read-only and unchanged.
 - No root promotion: EG617(r=12) remains OPEN / NOT_CERTIFIED; E407 V12 parent coverage and Q33 support promotion are also OPEN.
+
+
+## 2026-10-29 — full-support CSP contract audit
+
+- Read the latest high-support sibling at HEAD 5f1cccb917f0d13c27f9e3fc2dfa77418dc1abff, including Q32_FULLSUPPORT_VERTEX_LABELLED_CSP.md, q32_fullsupport_vertex_labelled_csp.py, and verify_q32_fullsupport_candidate.py.
+- Found an E408 count-vector mismatch: the code fixes e_0=398+m, colors 1..m at 129, colors m+1..10 at 130, and color 11 at 132. This gives target count 406 for m=8 and 407 for m=9, whereas E408 requires 408 and sum s_C=3 for all m. Correct E408 vectors are m=8: three 130-edge colors; m=9: one 130-edge and one 131-edge color; m=10: one 132-edge color.
+- Found the independent verifier forces every factor 0–9 to have exactly one O-vertex, contradicting the source-correct outside-count normal form that allows surplus outside incidences in isolated factors.
+- Recorded both defects in Q32_FULLSUPPORT_CSP_SOURCE_AUDIT.md. No solver run or UNSAT result was claimed by the sibling; no sibling file was changed.
+- Full-support Q32 remains OPEN / NOT_CERTIFIED; E407 V12 parent coverage and Q33 support promotion also remain OPEN.

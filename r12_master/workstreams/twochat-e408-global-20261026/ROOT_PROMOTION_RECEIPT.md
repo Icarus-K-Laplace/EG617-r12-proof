@@ -193,3 +193,12 @@ Read-only sibling heads audited:
 Under their registered source-correct assumptions, \(v=44,45,46\) are closed for all \(m=8,9,10\). The only Q32 support size left is \(v=47\); its \(m=8,9\) branches and the \(\chi(\overline{H[R]})\le4\) subcase of \(m=10\) remain open. This import does not use the retracted degree-nine claim, and does not upgrade the root status.
 
 The root remains **OPEN / NOT_CERTIFIED** because the Q32 full-support terminal, E407 Q32 V12 parent coverage, and E408 Q33 support promotion remain unresolved.
+
+
+## 12. Full-support CSP audit warning — 2026-10-29
+
+The latest read-only high-support branch added a vertex-labelled CSP, but it is explicitly FORMULATION_ONLY / NOT_EXECUTED. Independent source audit found two issues that must be repaired before it is used:
+- for m=8,9 the model's \`e_0=398+m\` and fixed 132-edge color do not encode E408's target count 408 and \(\sum_C s_C=3\);
+- the independent verifier forces factors 0–9 each to have exactly one O-vertex, excluding valid source-correct isolated-double placements.
+
+No SAT/UNSAT claim is imported. The root remains OPEN / NOT_CERTIFIED.

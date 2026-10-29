@@ -11,7 +11,7 @@ Status: **Q32 support 44–46 CLOSED CONDITIONALLY; support 47 OPEN. Root theore
 The current root workstream imported the following sibling states without modifying either sibling:
 
 - Low-support branch \`workstream/r12-q32-caseII-v44-final-20261028\`, HEAD \`9afd7c1a59056052974f9dc78933010d10e88bba\`.
-- High-support branch \`workstream/r12-q32-highsupport-root-20261028\`, HEAD \`07c69f6b4b748124ea0cf72eb1dc39bc57df6a29\`.
+- High-support branch \`workstream/r12-q32-highsupport-root-20261028\`, HEAD \`5f1cccb917f0d13c27f9e3fc2dfa77418dc1abff\`.
 
 The low-support canonical state says all \`|U|=44,45,46\` rows for \`m=8,9,10\` are closed under the registered 285-edge Q32 contract. The high-support canonical state independently records the same closure and then isolates \`|U|=47\` as the only remaining support size.
 
@@ -57,14 +57,14 @@ The current read-only high-support branch reports:
 - \(m=10\): the subcase \(\chi(\overline{H[R]})\ge5\) is closed by the residual-incidence / light-block analysis. The remaining \(\chi(\overline{H[R]})\le4\) subcase is **OPEN**.
 
 Relevant source blobs:
-- High-support canonical: \`71ceb6063ab5b104352d95ce14fa59b2c64ea91a\`.
+- High-support canonical at the latest read-only head: a93c934ac128c27e8e518966735c231a62dfdcf3 (branch HEAD 5f1cccb917f0d13c27f9e3fc2dfa77418dc1abff).
 - \`V47_ALL_COLOR_RESERVE.md\`: \`c71156c4e08c08146be792796600c5fbfc708cf0\`.
 - \`V47_PIVOT_NEIGHBORHOOD_PACKING.md\`: \`10fb644df30419304482dffed89a577be8fc1710\`.
 - \`V47_RESIDUAL_INCIDENCE_COVER.md\`: \`8af079fefdc525b26d5be837f638b58f968babc4\`.
 - \`V47_LIGHT_BLOCK_GRAPH_DISCONNECTED_REDUCTION.md\`: \`eea5a4cdb80e9111da6861e4eff8b2029d12cf9e\`.
 - \`V47_37_RESIDUAL_TRACK_TRANSVERSAL.md\`: \`f02f55cf21d80784b089b25f84c99e76991ef688\`.
 
-The high-support workstream explicitly retracts its former global matching-map rigidity claim; this root import does not use that retracted lemma. Local verifiers certify their stated finite arithmetic/label checks only, not the global graph nonexistence.
+The high-support workstream explicitly retracts its former global matching-map rigidity claim; this root import does not use that retracted lemma. Its new full-support CSP remains FORMULATION_ONLY / NOT_EXECUTED and has two source-contract defects recorded in Q32_FULLSUPPORT_CSP_SOURCE_AUDIT.md; no solver output is imported. Local verifiers certify their stated finite arithmetic/label checks only, not the global graph nonexistence.
 
 ## 4. Root decision
 
@@ -75,3 +75,13 @@ The Q32 dependency has been narrowed from all support sizes \(44\le v\le47\) to 
 \]
 
 No root promotion is authorized. The independent E407 V12 parent-coverage gate and E408 Q33 support-promotion gate also remain OPEN.
+
+
+## 5. Full-support CSP is not yet trusted — 2026-10-29
+
+Latest high-support branch HEAD: 5f1cccb917f0d13c27f9e3fc2dfa77418dc1abff (canonical blob a93c934ac128c27e8e518966735c231a62dfdcf3). New CSP source blobs:
+- Q32_FULLSUPPORT_VERTEX_LABELLED_CSP.md: 6bc7ebec290fd204111fdf7877ab63319184449b.
+- q32_fullsupport_vertex_labelled_csp.py: 7602fda163700c4e482edc1fac963faa484b46bd.
+- verify_q32_fullsupport_candidate.py: fc6c8a5e2b2e8decd236f0d7336699c23f75be1f.
+
+The independent audit found the target-edge count mismatch for m=8,9 and the verifier's overrestriction on the first ten factor outside counts. The sibling progress log explicitly states the CSP is not executed. These are preventive formulation findings; no SAT/UNSAT result is retracted because none is claimed.

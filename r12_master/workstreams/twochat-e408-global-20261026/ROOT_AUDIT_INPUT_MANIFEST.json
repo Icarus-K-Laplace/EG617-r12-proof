@@ -177,7 +177,7 @@
     },
     {
       "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/CANONICAL_STATE.md",
-      "blob_sha": "71ceb6063ab5b104352d95ce14fa59b2c64ea91a",
+      "blob_sha": "a93c934ac128c27e8e518966735c231a62dfdcf3",
       "status": "read-only sibling source; v47 frontier",
       "branch": "workstream/r12-q32-highsupport-root-20261028"
     },
@@ -210,10 +210,28 @@
       "blob_sha": "c71156c4e08c08146be792796600c5fbfc708cf0",
       "status": "v47 37-unit gap ledger",
       "branch": "workstream/r12-q32-highsupport-root-20261028"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/Q32_FULLSUPPORT_VERTEX_LABELLED_CSP.md",
+      "branch": "workstream/r12-q32-highsupport-root-20261028",
+      "blob_sha": "6bc7ebec290fd204111fdf7877ab63319184449b",
+      "status": "read-only source; formulation only; count-vector mismatch for m=8,9 documented"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/q32_fullsupport_vertex_labelled_csp.py",
+      "branch": "workstream/r12-q32-highsupport-root-20261028",
+      "blob_sha": "7602fda163700c4e482edc1fac963faa484b46bd",
+      "status": "read-only source; target count 398+m incompatible with E408 for m=8,9"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/verify_q32_fullsupport_candidate.py",
+      "branch": "workstream/r12-q32-highsupport-root-20261028",
+      "blob_sha": "fc6c8a5e2b2e8decd236f0d7336699c23f75be1f",
+      "status": "read-only source; verifier imposes invalid exactly-one-O condition on components 0..9"
     }
   ],
   "open_dependencies": [
-    "E408 Q32 full-support v=47: m=8, m=9, and m=10 with chi(complement residual)<=4",
+    "E408 Q32 full-support v=47: m=8, m=9, and m=10 with chi(complement residual)<=4; full-support CSP must be repaired before any solver result is used",
     "V12 artifact/replay and complete finite-survivor-to-template mapping for E407 Q32",
     "Q33 support promotion from v=31 to all legal support sizes v=32..47"
   ],
@@ -234,19 +252,19 @@
   "output_blobs": [
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/CANONICAL_STATE.md",
-      "blob_sha": "a780f70e05138576d816f4d6d4c752bd7859508b"
+      "blob_sha": "14d46ea67459174bcfdff11aa1ca307e72f6dbcc"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/DEPENDENCY_AUDIT.md",
-      "blob_sha": "a735e00d0532ff4d10a660a1f2242732166a507d"
+      "blob_sha": "6520addce695466b3b830b523b7f5ed57f61fee5"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/ROOT_PROMOTION_RECEIPT.md",
-      "blob_sha": "ccea3601681ec73fafd866bf6e41536abf04d9db"
+      "blob_sha": "ded53196c39e465d6872a3dda2f13a554d6f2a4f"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/ROOT_DEPENDENCY_DAG.md",
-      "blob_sha": "3a758e85d93957421ff49bf63d919aa8806ec724"
+      "blob_sha": "178c09d40c4e0cec42cffb6feae4e6ba53f08f7a"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/ROOT_AUDIT_REPLAY_LOG.md",
@@ -262,7 +280,7 @@
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/PROGRESS_LOG.md",
-      "blob_sha": "d2b1cda144521aa5da576ee2c3bd8ab6eaddc580"
+      "blob_sha": "574aee83b8ee1ccdf3125e00e5c36fbebc39b347"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/R12_ROOT_CLOSURE_PROMOTION_AUDIT.md",
@@ -270,11 +288,15 @@
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/Q32_CORE285_TERMINAL.md",
-      "blob_sha": "2b0039f404d12744d9d8ebc1d9d39ef269455df8"
+      "blob_sha": "e9150df9591f4e4ee30fe4cffff9d8bff37a6f88"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/Q32_NONFULL_SUPPORT_SIBLING_IMPORT_AUDIT.md",
-      "blob_sha": "b56d48bb8c8623b86b34be265fd1afee5a77513e"
+      "blob_sha": "ef3a9827bd726767704d1747d1946537e0da4f0b"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/Q32_FULLSUPPORT_CSP_SOURCE_AUDIT.md",
+      "blob_sha": "553a6369087626a03b8a5371979a998cdefff9e8"
     }
   ],
   "root_status": "OPEN / NOT_CERTIFIED",
@@ -283,7 +305,7 @@
     "61f3263de5c99d37f58cd1ab7ad65a05888534f0",
     "6ed8b6e0352ca5aeb713e86676504bb236561db8"
   ],
-  "manifest_parent_commit": "97623b1cd21052fa0e9af3db298f74f483992c1c",
+  "manifest_parent_commit": "c858f994251e5e124b3f99215e4eae9394c3cf1c",
   "audit_commits_before_final_manifest_commit": [
     "549960e37217c243e8abd6b7629301e9f918e6c6",
     "61f3263de5c99d37f58cd1ab7ad65a05888534f0",
@@ -291,7 +313,8 @@
     "b03f2484624f1a13d92dcb5204bd13940b662521",
     "ced39d0f3eeb768e5d74fef6af848cbaf0fcffa7",
     "fc8c08de48f1978c8da3aeff28b8990caf1faa55",
-    "97623b1cd21052fa0e9af3db298f74f483992c1c"
+    "97623b1cd21052fa0e9af3db298f74f483992c1c",
+    "c858f994251e5e124b3f99215e4eae9394c3cf1c"
   ],
   "sibling_imports": [
     {
@@ -303,9 +326,9 @@
     },
     {
       "branch": "workstream/r12-q32-highsupport-root-20261028",
-      "head": "07c69f6b4b748124ea0cf72eb1dc39bc57df6a29",
-      "status": "read-only; v=44,45,46 closed; v=47 remains open with m=10 high-chromatic subcase closed",
-      "canonical_blob": "71ceb6063ab5b104352d95ce14fa59b2c64ea91a",
+      "head": "5f1cccb917f0d13c27f9e3fc2dfa77418dc1abff",
+      "status": "read-only; v=44,45,46 closed; v=47 open; full-support CSP formulation-only and source-contract audit defects found",
+      "canonical_blob": "a93c934ac128c27e8e518966735c231a62dfdcf3",
       "m9_closure_blob": "8f1e7b65f5857e9d982ebca1bdfe181d49fda5f0",
       "v46_caseII_blob": "f1e39bfcd6e335e45a6beab81535d725d605cef9",
       "residual_incidence_blob": "8af079fefdc525b26d5be837f638b58f968babc4",
