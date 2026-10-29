@@ -71,7 +71,7 @@ For each K12--K12 pair, Hall's theorem gives \(e_C(T_i,T_j)\ge12\). Therefore
 \boxed{g_C=e_C(H)-69
 =t_C+\sum_{1\le i<j\le3}\bigl(e_C(T_i,T_j)-12\bigr)\ge t_C.}
 \]
-Combining the source Type-I capacity with this identity gives \(t_C\le\min(2,g_C)\) for every exact color. Summing over all eleven colors also recovers
+Combining the coarse source Type-I capacity with this identity gives \(t_C\le\min(2,g_C)\) for every exact color; Section 5 sharpens the global placement-aware bound to \(t_C\le1\). Summing over all eleven colors also recovers
 \[
 \sum_C(g_C-t_C)=37-(11-E_0)=26+E_0,
 \]
@@ -82,20 +82,32 @@ the total surplus on the three K12--K12 pairs.
 Write \(t_D\) for the number of degree-four T0 vertices owned by the unique nonexact color D. Then
 
 \[
-t_D+\sum_{C\text{ exact}}t_C=11-E_0,\qquad 0\le t_C\le2.
+t_D+\sum_{C\text{ exact}}t_C=11-E_0,\qquad 0\le t_C\le1.
 \]
 
-The exact colors can collectively own at most 20 such vertices, so this capacity alone does not close any E0 case. The pointwise saturation is instead a hard local constraint for any future Type-I packing or SAT/ILP model: each T0 vertex is either **all eleven color-degrees equal 3**, or **one color-degree 4 and ten color-degrees 3**. No relaxed model may assign two repeat colors to the same T0 vertex or degree 5+ to any color there.
+The ten exact colors can collectively own at most 10 such vertices. Thus if E0=0, the nonexact color D must own at least one of the 11 repeated-color T0 vertices; for E0>=1 this count alone gives no contradiction. The pointwise saturation is instead a hard local constraint for any future Type-I packing or SAT/ILP model: each T0 vertex is either **all eleven color-degrees equal 3**, or **one color-degree 4 and ten color-degrees 3**. No relaxed model may assign two repeat colors to the same T0 vertex or degree 5+ to any color there.
 
 No retracted degree-nine assertion or exceptional-point injectivity is used. The aligned z=0,1 cells, full-support Q32, and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
 
 
-## 5. Placement-sensitive sharpening: when can \(t_C=2\)?
+## 5. Global placement-sensitive bound: \(t_C\le1\)
 
-The global bound remains \(t_C\le2\), since the isolated-double branch can leave two T0 vertices in \(G_{11}\). The placement audit sharpens it further:
+The placement split sharpens the coarse bound in Section 3 to
+\[
+\boxed{t_C\le1\quad\text{for every exact Type-I color }C.}
+\]
+The proof separates the source-correct cases.
 
-- **All ten isolated K5s single-outside:** their ten transversal H-K4s use ten of the eleven T0 vertices, so only one T0 vertex remains in the gadget. Hence \(t_C\le1\). Equivalently, the seven-vertex residual singleton has three baseline C-edges, and pointwise saturation caps its C-degree at four, so at most one extra edge may occur across all three T0--Ti pairs combined.
-- **Isolated-double, two-K4 subcases:** this covers \(x_C\in O\) with the double factor isolated, and \(x_C\in H\), two-double with one isolated double and \(y\in O\). The eight-vertex residual consists of two disjoint transversal K4s plus a star of extra edges centered at \(y\) or \(x_C\), with the other endpoints in one special K4. Only one of the two T0 residual vertices can be incident to that star: if the center is in T0, it is the only T0 endpoint that can receive an extra; if the center is in a large track, only the T0 vertex in the opposite special K4 can receive one. Thus \(t_C\le1\) in these subcases too. If the star center lies in T0, the pointwise cap further forces \(g_C\le1\).
-- **Exceptional isolated-double placement:** \(x_C\in H\), two-double, \(y\in H\). Here \(b_s+b_t=3\), \(g_C=3\), and the residual is the special K4 plus special K3 and \(x_C\), with six gadget H-H edges. Both T0 vertices can potentially have degree four, so only the global bound \(t_C\le2\) is asserted.
+- **All ten isolated K5s single-outside.** Their ten transversal H-K4s use ten of the eleven T0 vertices, so only one T0 vertex remains in \(G_{11}\). Hence \(t_C\le1\). Equivalently, the seven-vertex residual singleton has three baseline C-edges, and pointwise saturation caps its C-degree at four, so at most one extra edge may occur across all three T0--Ti pairs combined.
+- **Isolated-double, two-K4 subcases.** This covers \(x_C\in O\) with the double factor isolated, and \(x_C\in H\), two-double with one isolated double and \(y\in O\). The eight-vertex residual consists of two disjoint transversal K4s plus a star of extra edges centered at \(y\) or \(x_C\), with the other endpoints in one special K4. Only one of the two T0 residual vertices can be incident to that star: if the center is in T0, it is the only T0 endpoint that can receive an extra; if the center is in a large track, only the T0 vertex in the opposite special K4 can receive one. Thus \(t_C\le1\). If the star center lies in T0, the pointwise cap further forces \(g_C\le1\).
+- **Exceptional isolated-double placement.** Here \(x_C\in H\), two-double, and \(y\in H\). The special double-outside clique \(N_s\) has an H-part \(K_3\), the special single-outside clique \(N_t\) has an H-part \(K_4\), and \(b_s+b_t=3\), so \(g_C=3\). The gadget contributes three edges from \(x_C\) to \(N_t\setminus\{y\}\), plus exactly one edge from \(x_C\) or \(y\) to each of the three H-vertices of \(N_s\).
 
-Consequently, **\(t_C=2\) can occur only in the exceptional isolated-double \(x_C\in H,y\in H\) branch, and then \(g_C=3\)**. The global identity \(\sum_C t_C=11-E_0\) and the surplus identity \(g_C=t_C+\sum_{i<j}(e_C(T_i,T_j)-12)\) remain unchanged. This is a placement-sensitive restriction, not a contradiction.
+  Neither \(x_C\) nor \(y\) can be in T0 alone: if \(x_C\in T_0\) but \(y\notin T_0\), the edge from \(x_C\) to the T0-vertex of \(N_t\) lies inside the target clique; if \(y\in T_0\) but \(x_C\notin T_0\), the edge from \(x_C\) to the \(N_t\)-vertex in \(x_C\)'s large track is forbidden. They cannot both lie in T0 either. If \(k=|A_0\cap N_s\cap H|\), then their H-degrees would be \(3+(3-k)\) and \(3+k\); both must be at most four, which would require \(k\ge2\) and \(k\le1\) simultaneously. Hence \(x_C,y\) both lie in large tracks.
+
+  Since the residual track profile is (2,2,2,2), one T0 vertex lies in the \(N_s\) H-triangle and the other in the \(N_t\) H-\(K_4\). The former has exactly two C-neighbors inside the triangle and one gadget neighbor, so degree three. The latter has three C-neighbors inside the \(K_4\) and the extra edge from \(x_C\), so degree four. Thus this exceptional branch also has \(t_C=1\), not 2.
+
+Consequently, every exact color has at most one degree-four T0 vertex, and the exact surplus identity strengthens to
+\[
+\boxed{\sum_{i=1}^3(e_C(T_0,T_i)-11)=t_C\le1.}
+\]
+Combining with \(g_C=t_C+\sum_{i<j}(e_C(T_i,T_j)-12)\) gives at least \(g_C-1\) surplus edges on the three large-track pairs. The global identity \(\sum_C t_C=11-E_0\) then implies \(t_D\ge\max(0,1-E_0)\) for the unique nonexact color D. This is a stronger source-correct constraint, not a contradiction.
