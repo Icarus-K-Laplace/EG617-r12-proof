@@ -56,7 +56,7 @@ for choice in product((0, 1), repeat=4):
     B = {(i, 1 - choice[i]) for i in range(4)}
     for center in A | B:
         opposite = B if center in A else A
-        star_edges = [center_v for center_v in opposite
+        star_edges = [(center, center_v) for center_v in opposite
                       if center[0] != center_v[0]]
         assert len(star_edges) == 3
         for r in range(4):
