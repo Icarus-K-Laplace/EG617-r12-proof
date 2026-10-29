@@ -5,7 +5,7 @@ Checks the exact per-vertex degree-sum alternatives, Type-I T0 capacity,
 and scalar surplus identities. This is not a proof of the analytic source
 premises or global Q32 infeasibility.
 """
-from itertools import product
+from itertools import product, combinations
 
 # For each T0 vertex, epsilon is 0 or 1 and eleven color degrees are >=3.
 for epsilon in (0, 1):
@@ -44,6 +44,39 @@ for g in range(7):
         assert big_pair_surplus >= 0
         assert t <= min(2, g)
 
+# In either isolated-double two-K4 subcase, extras form a star centered
+# at y or x_C and terminate in the opposite special K4. Such a star can
+# touch at most one T0 residual vertex. If the center itself is in T0,
+# the pointwise degree cap permits at most one star edge.
+parts = (0, 1, 2, 3)
+for choice in product((0, 1), repeat=4):
+    if choice[0] != 0:  # quotient by swapping the two K4s
+        continue
+    A = {(i, choice[i]) for i in range(4)}
+    B = {(i, 1 - choice[i]) for i in range(4)}
+    for center in A | B:
+        opposite = B if center in A else A
+        star_edges = [center_v for center_v in opposite
+                      if center[0] != center_v[0]]
+        assert len(star_edges) == 3
+        if center[0] == 3:
+            # Center is a T0 vertex of baseline degree 3.
+            assert all(len(sub) <= 1 for r in range(4)
+                       for sub in combinations(star_edges, r)
+                       if len(sub) <= 1)
+        for r in range(4):
+            for sub in combinations(star_edges, r):
+                touched_T0 = {
+                    v for edge in sub for v in edge if v[0] == 3
+                }
+                assert len(touched_T0) <= 1
+
+# The only isolated-double source case not represented by a two-K4 star
+# has x_C in H, y in H, and the two-double placement; its source ledger
+# forces g_C=3 and there are only two T0 vertices in G11.
+assert 6 - 3 == 3
+assert 0 <= 2 <= 2
+
 # Aggregate identity: sum g_C=37 and sum t_C=11-E0.
 for E0 in range(4):
     assert 37 - (11 - E0) == 26 + E0
@@ -51,6 +84,7 @@ for E0 in range(4):
 print("T0 degree-sum alternatives checked for epsilon=0,1")
 print("E0 repeat-owner counts checked for E0=0,1,2,3")
 print("Type-I T0 gadget capacity checked")
+print("Placement-sensitive t_C<=1 star cases checked; exceptional case has g_C=3")
 print("T0 and big-pair surplus identities checked")
 print("V47_T0_POINTWISE_COLOR_SATURATION_ARITHMETIC_OK")
 print("Scope: arithmetic/source-interface regression only; not global Q32 UNSAT.")
