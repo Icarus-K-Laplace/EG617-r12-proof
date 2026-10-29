@@ -107,6 +107,15 @@ expected_support = {
 assert support == expected_support
 assert local_graphs == 192
 
+# Source complement law for class-B (g,t0)=(2,1): T0Ti repeat pairs
+# with the complementary large pair TjTk.
+source_support = {
+    (0, 0, 1, 1, 0, 0),  # T2T3 plus T0T1
+    (0, 1, 0, 0, 1, 0),  # T1T3 plus T0T2
+    (1, 0, 0, 0, 0, 1),  # T1T2 plus T0T3
+}
+assert source_support <= support
+
 # A scalar degree-ledger profile.
 E0 = 0
 E = (2, 2, 2)
@@ -133,21 +142,21 @@ assert sum(q) + sum(r) == 37
 # Ten exact colors, each gap 2 and T0 surplus 1:
 # four use (T1T2,T0T1), three use (T1T3,T0T2), three use (T2T3,T0T3).
 patterns = (
-    [(1, 0, 0, 1, 0, 0)] * 4
-    + [(0, 1, 0, 0, 1, 0)] * 3
-    + [(0, 0, 1, 0, 0, 1)] * 3
+    [(0, 0, 1, 1, 0, 0)] * 4
+    + [(0, 1, 0, 0, 1, 0)] * 4
+    + [(1, 0, 0, 0, 0, 1)] * 2
 )
 assert len(patterns) == 10
-assert all(p in support for p in patterns)
+assert all(p in source_support for p in patterns)
 exact_by_pair = tuple(sum(p[i] for p in patterns) for i in range(6))
-assert exact_by_pair == (4, 3, 3, 4, 3, 3)
+assert exact_by_pair == (2, 4, 4, 4, 4, 2)
 assert sum(sum(p) for p in patterns) == 20
 caps = r + q
 assert all(exact_by_pair[i] <= caps[i] for i in range(6))
 
 # The residual nonexact-color budget fills the remaining aggregate capacities.
 D_by_pair = tuple(caps[i] - exact_by_pair[i] for i in range(6))
-assert D_by_pair == (4, 6, 6, 0, 1, 0)
+assert D_by_pair == (6, 5, 5, 0, 0, 1)
 g_D = sum(D_by_pair)
 assert g_D == 17 and 7 <= g_D <= 19
 assert 37 - sum(sum(p) for p in patterns) == g_D
@@ -159,8 +168,8 @@ print("large-pair H edges (12,13,23):", eH)
 print("T0-pair H edges (01,02,03):", y)
 print("large-pair repeat capacities:", r)
 print("T0-pair repeat capacities:", q)
-print("ten exact-color aggregate surplus:", exact_by_pair)
+print("source-compatible complementary exact-color surplus:", exact_by_pair)
 print("nonexact-color residual aggregate surplus:", D_by_pair)
 print("exact total gap=20; nonexact gap=17; total=37")
 print("AGGREGATE_BUDGET_WITNESS_OK")
-print("Scope: scalar/per-color pattern relaxation only; not a realizable Q32 coloring.")
+print("Scope: source pair-location law plus scalar/per-color relaxation only; not a vertex-labelled Q32 coloring.")
