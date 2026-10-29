@@ -63,3 +63,16 @@ I ran the exact contents of `verify_v44_direct_closure.py` in a clean local Pyth
 `V44_DIRECT_CLOSURE_ARITHMETIC_OK`.
 
 The verifier is only an arithmetic regression. It does not verify the hypotheses of the Kang–Pikhurko theorem, the source Type-I classification, or the analytic graph lemmas. Under those explicit conditional dependencies, both requested rows v=44,m=9 and v=44,m=8 are closed.
+
+
+## Fresh reproducibility audit — 2026-10-29
+
+A fresh replay found a real defect in the then-checked-in verify_v44_direct_closure.py: the 58/59/60-point loop called choose2() before its function definition, so the script raised NameError before reaching the assertions. The earlier log statement that this exact current blob ran successfully was therefore not reproducible and must not be relied on as evidence for that blob.
+
+Fixed the verifier by moving choose2() above its first use (commit recorded in the branch history). Replayed the corrected arithmetic program in a clean local Python execution; it returned V44_DIRECT_CLOSURE_ARITHMETIC_OK. The independent verify_v44_m8_closure_arithmetic.py replay also returned V44_M8_CLOSURE_ARITHMETIC_OK.
+
+The fix is strictly a verifier-execution repair; it changes no mathematical proof claim. The audit separately rechecked the analytic dependency chain:
+- m=9: six non-special exact colors each consume at least two of the 13 shell edges; hence at least two of the three special exact colors have zero shell degree, but each such color forces the unique edge pw to carry its color.
+- m=8: the pointwise budget gives n_w in {2,3}; both normal-form branches force at least two 130-edge colors to be degree-four with all four neighbors in H; the analytic Q32_130_NO_CORE_ONLY_DEG4.md forbids even one such incidence.
+
+Verifier boundary remains explicit: both Python programs check finite arithmetic/set-system consequences only. The Type-I factorization, corrected multiplicity, 130-edge minimum-degree theorem, the no-core-only-degree-four lemma, and the cited Kang–Pikhurko extremal theorem remain analytic dependencies. Under those stated dependencies, the v=44 m=9 and m=8 closures remain valid; no global Q32 or EG617(r=12) closure is claimed.
