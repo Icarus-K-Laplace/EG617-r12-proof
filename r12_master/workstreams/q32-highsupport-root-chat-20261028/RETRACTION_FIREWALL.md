@@ -131,3 +131,8 @@ The new `V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM.md` uses only:
 - the source-correct placement and gap caps.
 
 It does not use the retracted universal degree-nine assertion, exceptional-point injectivity, E407/Q33 identities, or any claim that the aggregate track-count relaxation is infeasible. It eliminates the triple-outside Type-I placement only within the aligned z=0,1 cell. EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+## 12. Type-I special-K5 correction (2026-10-29)
+
+The earlier section 11 claim that triple placement was eliminated is withdrawn. It incorrectly conflated the twelve K5 factors with the ten isolated K5 components. The source-correct Type-I structure has two special K5 cliques inside G11. The balanced-coloring argument only excludes an isolated triple-outside K5; a triple special K5 may have additional incident gadget edges and remains open subject to `b_s+b_t=4`. All canonical status documents must preserve this distinction. No root promotion follows.
