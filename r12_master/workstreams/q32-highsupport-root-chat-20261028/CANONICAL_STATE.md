@@ -488,3 +488,12 @@ Correct split:
 The arithmetic replay for the two-K4 local relaxation gives 8, 96, 528, and 1760 labeled base-plus-extra graphs for g=0,1,2,3. These are counts of a pairwise-matching relaxation, not source-realizable gadget completions. The exceptional isolated-double placement with x_C in H and y in H has g_C=3 and requires separate source-geometry handling.
 
 The global g_C=0,1 alignment conclusion remains supported independently by the 69/70 near-Turan classification recorded in V47_Z01_CANONICAL_RESIDUAL_ONE_FACTORIZATION.md. The T0 pointwise saturation and its identity g_C>=t_C do not depend on the seven-vertex assumption. No root status changes: E408/Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+## Audit correction: conditional seven-vertex residual model (2026-10-29)
+
+The seven-vertex catalog and holonomy-cost theorem apply **only when all ten isolated Type-I K5 components are single-outside**. `V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md` establishes a separate source-correct branch: one isolated component is double-outside, giving nine isolated H-K4s plus one isolated H-K3 and an eight-vertex gadget residual of profile (2,2,2,2). Do not apply the seven-vertex counts to that branch.
+
+Within the seven-vertex subcase, the T0 singleton has three baseline C-edges, one into each large track. Pointwise balanced-coloring saturation limits its total C-degree to 3 or 4, so at most one surplus C-edge may touch T0 across all three T0--Ti pairs combined. Both local enumerators now enforce this cap. The corrected exact seven-vertex catalog counts are 8, 72, 360, 1,000 graphs at gaps 0,1,2,3, with K4+K3-base counts 8,72,264,520 and non-base counts 0,0,96,480. The corrected holonomy repair counts are A: (8,72,264,520) for gaps 0–3; B: (gap1,2,3)=(24,216,696); C: (gap2,3)=(72,720); D: (gap3)=72. Minimum repair costs A/B/C/D remain 0/1/2/3 and minimum-repair counts remain 8/24/72/72. An independent reimplementation of both enumerations reproduced these corrected counts and the class-C/D mandatory-edge patterns.
+
+The global pointwise theorem remains t_C<=2 for exact colors because the isolated-double branch can have two T0 vertices in its eight-vertex residual. The sharper t_C<=1 and the total one-T0-surplus cap are conditional on the seven-vertex single-outside subcase only. The isolated-double branch remains OPEN and must be coupled separately; Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
