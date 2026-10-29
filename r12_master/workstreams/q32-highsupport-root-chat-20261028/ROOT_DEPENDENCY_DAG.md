@@ -378,8 +378,8 @@ For the aligned low-z cell, the unique nonexact color D has `g_D in [7,19]`, `e_
 The twelve Type-I K5 factors partition the 60 vertices other than x_C. Matching their H vertices to the part sizes (12,12,12,11) forces the double/triple occupancy vectors recorded in Section 8 of `V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM.md`. In particular, x_C-in-K12 two-double placement requires a special double K5 containing X_0, and triple placement forces x_C outside X_0 with the triple H pair in the other two K12 parts. Arithmetic replay passes; this is a necessary reduction only.
 
 
-### 14d. Canonical residual 1-factorization in aligned z=0,1
+### 14d. Residual 1-factorization in aligned z=0,1 (audit-corrected)
 
-Added `V47_Z01_CANONICAL_RESIDUAL_ONE_FACTORIZATION.md`. For each K12--K12 pair, define P as all target-color H edges plus all repeated-color edges. The 13-set color count implies P is a perfect matching, and removing it leaves eleven perfect matchings, one for each non-target color. Thus each complete bipartite pair has an exact 1-factorization into the residual P and the eleven baseline color factors. Since each pair has at most nine H edges, P contains at least three H edges and at least three repeated-color edges.
+See `V47_Z01_CANONICAL_RESIDUAL_ONE_FACTORIZATION.md`. **Correction:** the residual perfect matching P is not intrinsically canonical. Choose one Hall perfect matching for each non-target color on a K12--K12 pair; the eleven edge-disjoint matchings leave a perfect matching P. It contains all H-edges and all unselected color edges. Its color-C edge count is `e_C(T_i,T_j)-12`, and it contains at least three H-edges and three repeated-color edges by the nine-edge cap. For a K11--K12 pair, each color has a matching saturating T0; the residual set has one edge per T0 vertex but is not asserted to be a matching on the larger side.
 
-For a K11--K12 pair, the residual set has one edge at each T0 vertex, but no symmetric matching claim is made; each non-target color separately has a matching saturating T0 by Hall. This is a structural refinement only; no Q32 closure is claimed.
+The same file derives the 69/70 low-gap orientation using the registered near-Turan normal form. This is a structural refinement only; no Q32 closure is claimed.
