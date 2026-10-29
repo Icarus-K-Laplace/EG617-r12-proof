@@ -18,7 +18,7 @@ The degree ledger then gives
 \]
 where \(r_{ij}=12-e_{ij}\) and \(q_i=11-y_i\).
 
-The original aggregate witness is only a scalar relaxation. A source-explicit local construction shows that class B with \(g_C=2,t_C=1\) can have the T0 repeat and large-pair repeat **sharing** a large-track index: take \(x_C\in O\), let \(N_s\) be single-outside with H-part \(\{w,s_1,s_2,s_3\}\), let \(N_t\) be double-outside with H-triangle \(\{y,t_j,t_k\}\), choose \(w\in T_0\), \(y\in T_i\), \(s_j\in T_j\) with \(i\ne j\), and set \(A_0=\{w,s_j\}\). The two H-H gadget edges are \(yw\) and \(ys_j\); the residual baseline can use \(yw,ws_j,ws_k\) as its T0 attachments, leaving \(ws_i\) and \(ys_j\) as the two extras. This gives a valid class-B local graph with extra-pair pattern \((T_iT_j,T_0T_i)\). Hence the attempted universal complement law is withdrawn.
+The scalar witness can be realized by a source-correct **Class-A** local mode, but not by the Class-B argument previously claimed. Take \(x_C\in O\), with all ten isolated K5s single-outside; let the special \(N_s\) be single-outside with H-part \(\{w,s_i,s_j,s_k\}\), \(w\in T_0\), and let \(N_t\) be double-outside with H-triangle \(\{y,t_j,t_k\}\), \(y\in T_i\), where \(i,j,k\) are distinct. Set \(A_0=\{w,s_j\}\). The actual nine-edge baseline is the K4 on \(\{w,s_i,s_j,s_k\}\) plus the K3 on \(\{y,t_j,t_k\}\); all three baseline T0 attachments go to the K4 triangle, so this is Class A. The two additional H-edges are \(yw\) and \(ys_j\), giving \(g_C=2,t_C=1\), with the T0 repeat on \(T_0T_i\) and the large-pair repeat on \(T_iT_j\). The seven-vertex residual graph has \(\alpha=2\). Thus shared-track placement is source-realizable in Class A. The earlier attempted counterexample incorrectly used \(yw\) as a baseline attachment and \(ws_i\) as an extra; in the actual source baseline \(ws_i\) is a K4 edge and \(yw\) is extra. It therefore does not refute the Class-B-specific complement law.
 
 A corrected source-compatible aggregate witness chooses four patterns on \((T_1T_2,T_0T_1)\), three on \((T_1T_2,T_0T_2)\), and three on \((T_2T_3,T_0T_3)\). Its exact-color surplus is
 \[
@@ -81,17 +81,13 @@ Do not silently apply the seven-vertex theorem to a color in isolated-double mod
 
 
 
-### 3.1. Explicit source-compatible class-B pattern with \((g_C,t_C)=(2,1)\)
+### 3.1. Mode-sensitive pair-location laws at \((g_C,t_C)=(2,1)\)
 
-The pair location is not governed by a universal complement law. One source-correct mode is:
-- \(x_C\in O\), with ten isolated single-outside K5s;
-- \(N_s\) single-outside, with H-part \(\{w,s_1,s_2,s_3\}\), where \(w\in T_0\) and \(s_i\in T_i\);
-- \(N_t\) double-outside, with H-triangle \(\{y,t_j,t_k\}\), where \(y\in T_i\), \(i\ne j\), and \(k\) is the third large-track index;
-- \(A_0=\{w,s_j\}\).
+**Class A source mode (shared track).** In the \(x_C\in O\), \(N_s\)-single, \(N_t\)-double placement described above, the true baseline is \(K_4(\{w,s_i,s_j,s_k\})\cup K_3(\{y,t_j,t_k\})\), not an arbitrary alternative matching baseline. The two extras are \(yw\) and \(ys_j\). Therefore the T0 repeat is on \(T_0T_i\), the large-pair repeat on \(T_iT_j\), and the two pairs share track \(i\).
 
-Then the only H-H gadget edges are \(yw\) and \(ys_j\), so \(g_C=2\). The T0 vertex \(w\) has its three internal K4 edges plus \(yw\), so \(t_C=1\). In the selected residual baseline, use \(yw,ws_j,ws_k\) as the T0 attachments. The two extras are \(ws_i\) and \(ys_j\), on \(T_0T_i\) and \(T_iT_j\), respectively. The baseline large-pair matchings remain the two triangle matchings, while the T0 attachments split across them, so this is class B. The resulting residual graph has \(\alpha=2\).
+**Class B source mode (complementary tracks).** For the seven-vertex Class-B baseline, the source placement forces \(x_C\in T_0\) and both special K5s double-outside; the \(x_C\in O\) and triple-special placements put all three baseline T0 attachments on the same large-track triangle and are Class A. In the double-double mode, if \(y\in O\), \(x_C\) together with the H-part of \(N_t\) forms a transversal K4 and again gives Class A. Thus Class B at \(g_C=2,t_C=1\) has \(y\in H\). Write \(i\) for the track of \(y\), \(j\) for the track of the unique H vertex in \(A_0\), and \(k\) for the remaining track. Pointwise saturation gives exactly one H vertex in \(A_0\), and balanced coloring forces \(i\ne j\). The source gadget then gives the unique T0 repeat on \(T_0T_k\) and the large-pair repeat \(yA_0\) on \(T_iT_j\). Hence these pairs are complementary.
 
-This explicit local construction proves that a class-B \((g,t)=(2,1)\) pattern can have the T0 repeat and large-pair repeat sharing a track index. Any global model must retain the source placement mode and actual endpoint labels; it may not impose a universal complementary-pair law.
+The previous counterexample was a valid Class-A source graph, not a Class-B graph. The correct model must preserve both rules separately: **Class A permits shared-track placement; Class B forces complementary-track placement.** Neither local rule solves the common endpoint-label packing.
 
 ## 4. Finite exact model to build
 
