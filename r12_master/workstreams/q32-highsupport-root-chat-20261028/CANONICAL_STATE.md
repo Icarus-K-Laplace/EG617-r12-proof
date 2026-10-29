@@ -535,17 +535,17 @@ Added `V47_Z01_TWO_DOUBLE_SOURCE_PATTERN_AUDIT.md` and `verify_v47_z01_two_doubl
 
 Correction to the prior audit: the claimed 20 direct P_0i/K4-baseline overlaps were false. In the source Class-A construction, the K4 baseline uses w-s_i,w-s_j,w-s_k, whereas the candidate P_0i edges use w-y_i,w-y_j,w-y_k, with y_j,y_k in the separate K3. A direct endpoint replay gives zero such overlaps; the verifier now asserts zero. The owner-only construction remains invalid for the independent cross-color residual-signature collision: 9 color pairs claim identical residual six-sets and 36 duplicate baseline-edge claims. No valid common-P packing or Q32 closure is established.
 
-## T0--Ti omitted-vertex conservation — corrected audit (2026-10-29)
+## T0--Ti omitted-vertex conservation — degree-source correction (2026-10-29)
 
 The universal identity is exact: for each non-target color C, its selected matching M_C,0i saturates T0 and misses one vertex z_i(C) in T_i; the 11 selected matchings and P_0i partition K11,12, so d_P0i(v)=#{C:z_i(C)=v}. This does not require P_0i to be a matching on T_i.
 
-The source-mode cancellation is valid only for the single-T0-residual seven-vertex Type-I branch. If an exact color's own T0 repeat edge on T0T_i ends at v, then z_i(C)=v. Let n_i(v) count exact colors with no repeat on this pair whose omitted vertex is v, let h_i(v) be the number of H edges from v in T_i to T0, and let r_i^D(v) count D-repeat edges ending at v. The correct equation is
-n_i(v)+1[z_i(D)=v]=h_i(v)+r_i^D(v).
+In the single-T0-residual seven-vertex Type-I mode, an exact color's own T0 repeat edge ending at v forces z_i(C)=v. After cancelling exact-repeat owners, the valid pointwise equation is
+n_i(v)+1[z_i(D)=v]=h_i(v)+r_i^D(v),
+where n_i(v) counts exact colors without a repeat on T0-T_i whose omitted vertex is v, h_i(v) is the number of H edges from v∈T_i to T0, and r_i^D(v) is the D-repeat endpoint multiplicity.
 
-**Correction to the prior entry:** h_i(v) is not known to be at most one. The balanced-coloring lemma bounds H degree on the T0 side only; it does not bound H degree at a vertex of T_i. Therefore the earlier claim that exact nonrepeat omissions are injective away from D-repeat endpoints is withdrawn. The omitted-vertex equation alone allows concentrated endpoint multiplicities and does not close any source mode. It is not applied to the eight-vertex isolated-double branch.
+**Degree-source correction:** the generic 13-set lemma alone does not bound h_i(v) on the T_i side. However, the frozen aligned 3+7 zero-slack degree ledger independently gives every T_i vertex (i=1,2,3) total H cross-track degree exactly one. Therefore h_i(v)≤1 is valid in this specific contract. With that contract, if r_i^D(v)=0 then n_i(v)+1[z_i(D)=v]≤1, so exact nonrepeat omissions are injective away from D-repeat endpoints. At a D-repeat endpoint n_i(v)≤1+r_i^D(v), and multiplicity two is possible only when that vertex also receives an H edge.
 
-Added verify_v47_z01_t0_omission_conservation.py and independently replayed its exact endpoint-profile enumeration for the E0=0 scalar row y=(7,7,8), exact repeats=(4,3,3), D repeats=(0,1,0). It checks 148,512, 2,015,520 and 381,888 profiles on T1,T2,T3. The relaxation admits local profiles with six or seven exact nonrepeat omissions at one vertex, explicitly demonstrating that a degree-one inference cannot follow from the present ledger. This is not a full common-P completion. Q32 remains OPEN / NOT_CERTIFIED.
-
+Added verify_v47_z01_t0_omission_conservation.py. Its endpoint-profile replay uses binary H endpoint degrees as required by the zero-slack ledger and verifies 5,544 / 70,488 / 3,960 profiles for T1/T2/T3 in the E0=0 scalar row y=(7,7,8), exact repeats=(4,3,3), D repeats=(0,1,0). The maximum exact nonrepeat omission multiplicities are 1,2,1; the value 2 is possible only at the T2 D-repeat endpoint when it also has an H edge. This is a necessary local constraint, not a full common-P completion. The cancellation remains unproved for the eight-vertex isolated-double branch; Q32 remains OPEN / NOT_CERTIFIED.
 
 ## Forced Class-A repeat allocation in the E0=0 scalar row (2026-10-29)
 
