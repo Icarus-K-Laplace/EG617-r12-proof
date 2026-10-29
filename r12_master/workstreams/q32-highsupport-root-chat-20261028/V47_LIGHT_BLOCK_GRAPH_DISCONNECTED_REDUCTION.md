@@ -224,3 +224,10 @@ The local switch theorem, outer-light holonomy theorem, residual-track transvers
 ## 14. Status update after aligned z=0,1 K6 closure
 
 Within the 3+7 split, the aligned z=0 and z=1 profile (2,2,2,1) cells are now CLOSED by V47_Z01_K6_CONTRADICTION.md; the z=1 (3,2,1,1) profile was already excluded by K13, and the z=2 high-chromatic residual cell is closed in V47_RESIDUAL_INCIDENCE_COVER.md. The remaining highlighted local frontier is z=3 and the z=4 empty-fiber switch/double-track escape class, plus the separate 2+8 and other component-size splits. This update does not close the full-support m=10 branch.
+
+
+## 15. Exact z=3 residual/fiber catalog
+
+The detailed local theorem is V47_37_Z3_RESIDUAL_FIBER_CATALOG.md; its pure-Python regression is verify_v47_37_z3_residual_fiber_catalog.py.
+
+For z=3, the residual graph has six edges and total residual degree deficit two. Exact component enumeration gives six types: C6+K1, 2C3+K1, P7, C3+P4, C4+P3, C5+P2. The exact clique-partition table couples each type to the only possible fiber profiles for both the small-block map and the outer-track assignment. In particular, a double-track vertex has no R-neighbors, so its global track must be empty; this restricts the global profile to (3,3,1,0) or (3,2,2,0), and therefore restricts the residual graph to 2C3+K1 or C3+P4. The verifier checks all component multisets and all 4^7 labelled fiber assignments. This is a structural filter, not a z=3 closure.

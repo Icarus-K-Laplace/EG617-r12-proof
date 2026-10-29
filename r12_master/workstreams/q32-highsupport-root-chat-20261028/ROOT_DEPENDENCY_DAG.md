@@ -597,3 +597,8 @@ The aligned m=10,z=0,1 cell now carries a conditional component-bijection theore
 ### E408-Q32 analytic closure: aligned m=10, z=0,1
 
 The gap-saturation equality patterns plus the outside-component bijection force a D-K6 in both cases (D[A]=2K2 or K3). This closes the aligned z=0,1, (2,2,2,1) cell under the registered contract. It does not close other m=10 cells or full-support m=8,9; the unique root graph terminal remains OPEN.
+
+
+### z=3 residual/fiber frontier
+
+V47_37_Z3_RESIDUAL_FIBER_CATALOG.md supplies an exact finite local catalog for the m=10, 3+7, z=3 cell. If a double-track vertex exists, the global outer-track profile must have an empty fiber, leaving only 2C3+K1 and C3+P4 as residual types. The small-map fiber/pair choices are separately restricted. This is a branch-local dependency/filter, not a root contradiction.

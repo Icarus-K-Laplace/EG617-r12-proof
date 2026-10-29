@@ -189,3 +189,8 @@ This imposes a track assignment on every residual vertex. It has not yet been sh
 ### Switch-block duplicate-fiber budget
 
 In a synchronized transposition switch, all four common-track intersections are singletons, one label s occurs twice, and the transposed label is absent. The two distinct vertices with common track s each meet every r in F_s by Lemma 3.1. Hence each such r has at least two neighbors in that outer block, and `n_s <= y_D`. For the 3+7 cell, `y_D<=2`, so a switch cannot duplicate a fiber of size three. If `y_D=0`, the duplicated label must be empty. This local budget is stronger than the sum-of-degrees orientation inequality and must be enforced in any global completion search.
+
+
+### z=3 exact double-track residual filter
+
+In the 3+7, z=3 cell, the global outer-track partition and the small-block residual partition are both clique partitions with profile in (3,3,1,0), (3,2,2,0), (3,2,1,1), (2,2,2,1). The exact compatibility catalog is V47_37_Z3_RESIDUAL_FIBER_CATALOG.md. A double-track vertex has no R-neighbors, so its global track fiber must be empty. Thus the global profile is (3,3,1,0) or (3,2,2,0), forcing H[R]=2C3+K1 or C3+P4. The small-map fiber pair for the double-track vertex must also have size sum at most three and be completely joined. This does not identify the two partitions or close the cell.

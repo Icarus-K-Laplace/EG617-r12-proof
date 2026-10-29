@@ -718,3 +718,8 @@ Used alpha(D)<=12 to sharpen the exact gap-saturation equality cases. Every H-ve
 ### 2026-10-29 — Analytic K6 closure of aligned z=0,1
 
 Added V47_Z01_K6_CONTRADICTION.md. For any O-component C, the corresponding vertices in any two tracks must be D-adjacent: otherwise choosing one representative from each of the other 11 O-components and adding the two track vertices gives a D-independent 13-set. Hence each non-Z component gives a D-K4 across T0,T1,T2,T3. The non-Z K2 in the 2K2 case, or the Z triangle in the K3 case, then expands this to a D-K6, contradicting omega(D)<=5. The aligned m=10, z=0,1, (2,2,2,1) cell is CLOSED. This is an analytic proof, not a solver UNSAT report; other full-support cells remain open.
+
+
+### 2026-10-29 — z=3 exact residual/fiber catalog
+
+Added V47_37_Z3_RESIDUAL_FIBER_CATALOG.md and verify_v47_37_z3_residual_fiber_catalog.py. The verifier enumerates all eligible path/cycle component multisets on seven residual vertices and all 4^7 labelled clique-fiber assignments for the four allowed profiles. It recovers exactly six residual graph types and their compatible fiber profiles. The new analytic filter is that a double-track vertex has no R-neighbors, so the global track fiber containing it must be empty; this forces global profile (3,3,1,0) or (3,2,2,0), and residual type 2C3+K1 or C3+P4. Exact double-track small-fiber pair sizes are also enumerated. Tests passed in the local Python analysis runtime; no full Q32 solver run or closure is claimed.
