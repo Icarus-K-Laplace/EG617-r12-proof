@@ -136,3 +136,8 @@ It does not use the retracted universal degree-nine assertion, exceptional-point
 ## 12. Type-I special-K5 correction (2026-10-29)
 
 The earlier section 11 claim that triple placement was eliminated is withdrawn. It incorrectly conflated the twelve K5 factors with the ten isolated K5 components. The source-correct Type-I structure has two special K5 cliques inside G11. The balanced-coloring argument only excludes an isolated triple-outside K5; a triple special K5 may have additional incident gadget edges and remains open subject to `b_s+b_t=4`. All canonical status documents must preserve this distinction. No root promotion follows.
+
+
+## 13. Triple-special refinement firewall (2026-10-29)
+
+The new triple-placement refinement is conditional on the aligned low-z clique partition and source Type-I gadget. It uses the 13-set balanced-coloring degree floor, the fact that the two special K5s lie inside G11, and the exact nine-gadget-edge incidence pattern. It proves a necessary geometry and `g_C=3), not a contradiction. No statement that triple placement is eliminated is authorized.
