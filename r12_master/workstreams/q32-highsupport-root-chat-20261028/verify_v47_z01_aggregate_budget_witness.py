@@ -2,9 +2,9 @@
 """Audit that scalar track-pair budgets alone do not close aligned z=0,1 Q32.
 
 The witness is deliberately an aggregate relaxation, not a graph completion:
-it respects the exact degree-ledger equations and uses ten copies of explicit
-source-realizable local class-B modes, but it does not identify actual vertices
-or enforce the common-P endpoint packing across colors.
+it respects the exact degree-ledger equations and uses ten copies of an explicit
+source-realizable local class-A mode, but it does not identify shared global
+vertices or enforce the common-P endpoint packing across colors.
 """
 from itertools import combinations, product
 from collections import Counter
@@ -75,8 +75,9 @@ def admissible_extra(extra):
                     used.update((u, v))
     return True
 
-# Verify all nine one-large-pair/one-T0-pair vectors occur in a class-B
-# baseline repaired by exactly two edges while keeping alpha <= 2.
+# Abstract catalog audit: all nine one-large-pair/one-T0-pair vectors occur
+# in some class-B baseline repaired by exactly two edges while alpha <= 2.
+# This catalog fact is not itself a source-placement classification.
 large_pairs = ((0, 1), (0, 2), (1, 2))
 t0_pairs = ((0, 3), (1, 3), (2, 3))
 support = set()
@@ -110,14 +111,37 @@ expected_support = {
 assert support == expected_support
 assert local_graphs == 192
 
-# These three class-B vectors have explicit source-local realizations
-# documented in V47_Z01_SHARED_P_FACTOR_PACKING.md. This does not enforce
-# the global shared-endpoint constraints.
-source_constructed_patterns = {
-    (1, 0, 0, 1, 0, 0),  # T1T2 plus T0T1
-    (1, 0, 0, 0, 1, 0),  # T1T2 plus T0T2
-    (0, 0, 1, 0, 0, 1),  # T2T3 plus T0T3
-}
+# Verify the actual source K4+K3 baseline in the x_C-outside,
+# N_s-single/N_t-double mode. Its three T0 attachments all meet the K4
+# triangle, so it is Class A. The two source gadget extras are w-y and y-s_j.
+source_constructed_patterns = set()
+source_mode_graphs = 0
+big = ((0, 1), (2, 3), (4, 5))
+for i in range(3):
+    for j in range(3):
+        if i == j:
+            continue
+        k = next(t for t in range(3) if t not in (i, j))
+        w = 6
+        s_i, s_j, s_k = big[i][1], big[j][1], big[k][1]
+        y, t_j, t_k = big[i][0], big[j][0], big[k][0]
+        k4_edges = list(combinations((w, s_i, s_j, s_k), 2))
+        k3_edges = list(combinations((y, t_j, t_k), 2))
+        base = k4_edges + k3_edges
+        extras = [(w, y), (y, s_j)]
+        assert class_of(base) == "A"
+        assert alpha(mask_of(base + extras)) == 2
+        assert sum(w in e for e in base) == 3
+        assert sum(w in e for e in base + extras) == 4
+        lp = tuple(sorted((i, j)))
+        li = large_pairs.index(lp)
+        vec = tuple(1 if z == li else 0 for z in range(3)) + tuple(
+            1 if z == i else 0 for z in range(3)
+        )
+        source_constructed_patterns.add(vec)
+        source_mode_graphs += 1
+assert source_mode_graphs == 6
+assert len(source_constructed_patterns) == 6
 assert source_constructed_patterns <= support
 assert all(support_counts[p] == 16 for p in source_constructed_patterns)
 
@@ -166,16 +190,17 @@ g_D = sum(D_by_pair)
 assert g_D == 17 and 7 <= g_D <= 19
 assert 37 - sum(sum(p) for p in patterns) == g_D
 
-print("class-B local support patterns:", len(support))
-print("class-B local repaired graphs with (g,t0)=(2,1):", local_graphs)
+print("abstract class-B catalog support patterns:", len(support))
+print("abstract class-B repaired graphs with (g,t0)=(2,1):", local_graphs)
+print("explicit source class-A modes verified:", source_mode_graphs)
 print("E0,E1,E2,E3:", (E0, *E))
 print("large-pair H edges (12,13,23):", eH)
 print("T0-pair H edges (01,02,03):", y)
 print("large-pair repeat capacities:", r)
 print("T0-pair repeat capacities:", q)
-print("source-compatible local exact-color surplus:", exact_by_pair)
-print("source-compatible local pattern counts:", {p: support_counts[p] for p in sorted(source_constructed_patterns)})
+print("source class-A local exact-color surplus:", exact_by_pair)
+print("source class-A pattern counts in abstract catalog:", {p: support_counts[p] for p in sorted(source_constructed_patterns)})
 print("nonexact-color residual aggregate surplus:", D_by_pair)
 print("exact total gap=20; nonexact gap=17; total=37")
-print("AGGREGATE_BUDGET_WITNESS_OK")
-print("Scope: explicit source-local modes plus scalar relaxation only; not a vertex-labelled Q32 coloring.")
+print("SOURCE_CLASS_A_AGGREGATE_BUDGET_WITNESS_OK")
+print("Scope: source-realizable local Class-A modes plus scalar relaxation only; not a vertex-labelled Q32 coloring.")
