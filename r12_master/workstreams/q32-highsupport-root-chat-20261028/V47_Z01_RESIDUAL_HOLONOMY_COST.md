@@ -1,11 +1,13 @@
-# E408 Q32 — exact residual holonomy cost for each exact color
+# E408 Q32 — conditional residual holonomy cost for exact colors
 
 Date: 2026-10-29  
-Status: **PROVED_CONDITIONAL finite local theorem with exhaustive verifier.** No Q32 closure claimed.
+Status: **PROVED_CONDITIONAL finite local theorem with exhaustive verifier, restricted to placements where all ten isolated K5s are single-outside.** No Q32 closure claimed.
+
+> **Scope correction (2026-10-29):** this seven-vertex baseline is not universal. The registered source-correct isolated-double placement leaves an eight-vertex gadget residual, audited in V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md. The classes and minimum-cost table below apply only to the seven-vertex subcase.
 
 ## 1. The nine-edge baseline on the seven residual vertices
 
-Fix an exact non-target color C. Its source-correct Type-I factorization contains ten isolated K5 components. Their H-parts are ten isolated transversal K4s, using ten vertices from each target track. The remaining set R_C has profile (2,2,2,1), and the induced graph J_C=C[R_C] has
+Fix an exact non-target color C and assume all ten isolated K5 components are single-outside. Their H-parts are ten isolated transversal K4s, using ten vertices from each target track. The remaining set R_C has profile (2,2,2,1), and the induced graph J_C=C[R_C] has
 \[
 e(J_C)=9+g_C,\qquad 0\le g_C\le3,\qquad \alpha(J_C)\le2.
 \]
@@ -69,9 +71,9 @@ These repair patterns are stronger than the minimum-cost table alone. They ident
 
 ## 5. Global consequence and remaining frontier
 
-For the ten exact colors, each g_C lies in {0,1,2,3}; the total exact-color gap is 37-g_D. This local theorem sharpens the gap interpretation:
-- any exact color with gap 0 or 1 has aligned large-track matching composition;
-- a nonaligned exact color must spend at least two of its three allowed surplus units;
+For an exact color in this seven-vertex placement subcase, g_C lies in {0,1,2,3}; the global total exact-color gap remains 37-g_D. This conditional theorem sharpens the gap interpretation:
+- within this seven-vertex subcase, any exact color with gap 0 or 1 has aligned large-track matching composition;
+- within this subcase, a nonaligned exact color must spend at least two of its three allowed surplus units;
 - the most obstructive local holonomy pattern spends all three.
 
-This does not by itself rule out the global branch in which all ten exact colors have gaps 2 or 3. It gives a finite, auditable holonomy-cost ledger to combine with the common pairwise 1-factorizations. E408/Q32 and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
+This does not by itself rule out the global branch in which all ten exact colors have gaps 2 or 3. Moreover, the isolated-double placement must be handled separately; the table cannot be applied to a color unless all ten isolated components are single-outside. It gives a finite, auditable holonomy-cost ledger for that subcase to combine with the common pairwise 1-factorizations. E408/Q32 and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
