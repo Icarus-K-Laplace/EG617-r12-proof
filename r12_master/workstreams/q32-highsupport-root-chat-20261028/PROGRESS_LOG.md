@@ -601,3 +601,8 @@ Formalized binary variables for residual 2-set choices r, pair projections x, in
 ### Projection encoding audit — cross-key edge conflicts (2026-10-29)
 
 Audited the new binary projection encoding and found that per-key orientation occupancy alone was insufficient: distinct K2,2 residual blocks can overlap in an actual edge. Added the necessary edge-level inequality summing all selected orientations across all colors and all pair keys containing each edge to at most one. The encoding now separates (i) key-local P-free duplicate constraints, (ii) edge-level cross-key disjointness, and (iii) P-edge exclusion. Still not a complete CSP implementation or UNSAT certificate.
+
+
+### Cross-key overlap regression — 2026-10-29
+
+Added a concrete toy case to the projection verifier showing two different residual K2,2 blocks can each choose P-disjoint internal matchings yet share an actual edge. The local key constraints alone miss this; the global per-edge occupancy inequality catches it. The finite replay passed independently. This confirms the encoding must retain both block-local and edge-global constraints.
