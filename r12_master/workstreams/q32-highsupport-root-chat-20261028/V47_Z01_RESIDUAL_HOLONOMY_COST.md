@@ -54,6 +54,33 @@ The complete admissible repair counts by surplus are:
 - C: g=2: 72; g=3: 720.
 - D: g=3: 72.
 
+The verifier also partitions every valid repair by how many surplus edges lie on T0--Ti pairs versus the three large-track pairs:
+
+| Class | \(g_C\) | T0-pair extras | Large-pair extras | Count |
+|---|---:|---:|---:|---:|
+| A | 0 | 0 | 0 | 8 |
+| A | 1 | 0 | 1 | 48 |
+| A | 1 | 1 | 0 | 24 |
+| A | 2 | 0 | 2 | 120 |
+| A | 2 | 1 | 1 | 144 |
+| A | 3 | 0 | 3 | 160 |
+| A | 3 | 1 | 2 | 360 |
+| B | 1 | 1 | 0 | 24 |
+| B | 2 | 0 | 2 | 24 |
+| B | 2 | 1 | 1 | 192 |
+| B | 3 | 0 | 3 | 96 |
+| B | 3 | 1 | 2 | 600 |
+| C | 2 | 0 | 2 | 72 |
+| C | 3 | 0 | 3 | 216 |
+| C | 3 | 1 | 2 | 504 |
+| D | 3 | 1 | 2 | 72 |
+
+This gives two useful forced placement statements:
+- **Class B at minimum cost \(g_C=1\)** must spend its only surplus edge on a T0--Ti pair.
+- **Class C at minimum cost \(g_C=2\)** spends both surplus edges on large-track pairs and has no T0 surplus; **class D at \(g_C=3\)** has exactly one T0 surplus and two large-track surpluses.
+
+These constraints are stricter than the scalar minimum-cost table and can be imposed directly in a future multicolor edge-packing model.
+
 These are exact local counts after imposing the T0 pointwise degree cap, not asymptotic estimates. The minimum costs and the minimum-repair counts are unchanged; the full A/B repair counts are lower than in the first, uncapped enumeration. They verify that:
 \[
 \boxed{g_C\le1\Longrightarrow\text{the three large-part baseline matchings are aligned}.}
