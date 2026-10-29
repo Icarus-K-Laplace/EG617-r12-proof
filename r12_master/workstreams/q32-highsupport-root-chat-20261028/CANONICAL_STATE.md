@@ -464,3 +464,10 @@ There are exactly 64 possible baselines. Exhaustive enumeration classifies them 
 - D: six-cycle with alpha 4; 8 baselines, minimum gap 3.
 
 The exact verifier checked every admissible extra-edge set of size at most three. Thus a nonaligned large-part matching composition costs at least two repeat edges; the most obstructive six-cycle/T0 pattern costs all three. In particular, any exact color with `g_C<=1` must have aligned large-part matching composition. The local enumeration returned `V47_Z01_RESIDUAL_HOLONOMY_COST_OK`; it does not close the global z=0,1 cell.
+
+
+## Residual holonomy repair shapes (2026-10-29)
+
+The updated verifier checks two sharper local patterns. In class C, each baseline has exactly three independent triples: two share a pair of large-track vertices and the third is a disjoint transversal triple. Every minimum two-edge repair contains the shared-pair edge plus one of the three edges within the disjoint triple, so the shared-pair edge is mandatory.
+
+In class D, the unique independent 4-set consists of the T0 residual singleton and a transversal triple V. The baseline T0 edges attach to the complementary triple U. Every minimum three-edge repair consists of one edge within U, one edge from T0 to a vertex w in V, and the edge between the other two vertices of V. The updated verifier checks these edge-level patterns in addition to the aggregate repair counts.
