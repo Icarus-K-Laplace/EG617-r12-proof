@@ -581,3 +581,8 @@ From the exhaustive 19-case source audit, the x-in-H two-double Class-B row y∈
 ### Class-B g=2,t=0 star-center incidence — 2026-10-29
 
 From the exhaustive 19-case source audit, the x-in-H two-double Class-B row y in H, a=2 has g_C=2,t_C=0 and its two large-pair surplus edges form a star centered at y, with one edge to each of the other two large tracks. Those are the two P_ij edges incident to y, so y has no H-neighbor in the other large tracks. Because y already has 11 neighbors in its K12 track and delta(H)>=12, it must be incident to at least one H edge from T0. This is a necessary source/degree incidence constraint for the CSP, not a contradiction.
+
+
+### Residual six-set injectivity upgraded to all source modes — 2026-10-29
+
+Strengthened the conditional theorem in V47_Z01_RESIDUAL_SIGNATURE_INJECTIVITY.md. The proof now covers isolated-double modes as well as single-outside: if two exact colors shared the same six residual vertices, their three pairwise K2,2 matchings would be complementary and one would induce a six-cycle. In single-outside mode that costs g_C>=2; in isolated-double two-K4 subcases, star extras cannot supply both disjoint cross edges needed to flip a pair matching; in the exceptional isolated-double branch, g_C=3,t_C=1. Therefore any possible six-cycle color has at least one large-pair repeat, and pair-projection injectivity rules out the shared residual pair. The 8-case parity replay passed. This proves global residual-six-set injectivity but not partial pair-projection injectivity or full common-P feasibility.
