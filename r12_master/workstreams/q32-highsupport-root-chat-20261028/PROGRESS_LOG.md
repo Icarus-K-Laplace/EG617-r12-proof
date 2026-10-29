@@ -624,3 +624,8 @@ Added Q32_FULLSUPPORT_VERTEX_LABELLED_CSP.md, q32_fullsupport_vertex_labelled_cs
 
 ### Current status
 This is an exact formulation and verifier scaffold, not a closure. Syntax checks, verifier self-test, model build, and solver execution are pending at the time of this log entry. No SAT/UNSAT claim is made; E408/Q32 full support remains OPEN / NOT_CERTIFIED.
+
+
+### 2026-10-29 — Independent-set verifier regression strengthened
+
+A direct regression review caught an order-sensitive assertion in the verifier's smoke test: the exact search returns a valid independent set in reverse branch order, so comparing it to one prescribed list was wrong. The assertion now compares sets, and the self-test exhaustively cross-checks the exact independent-set routine against brute force on every simple graph of order at most five and every target size: 5,405 cases. The corresponding small-graph exhaustive replay passed in-session. This tests the search routine; it is not a run of the full 61-vertex CSP.

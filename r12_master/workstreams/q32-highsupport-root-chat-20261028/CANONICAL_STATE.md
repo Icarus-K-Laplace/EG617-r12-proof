@@ -611,3 +611,8 @@ Two draft overconstraints were corrected before committing:
 The reserve quota q_z<=3/4 is not hard-coded in the trusted solver core until the target-degree term in the reserve inequality is independently derived. The solver instead enforces the original global edge-color and independence constraints directly.
 
 **Status:** FORMULATION ADDED; execution and proof replay pending. No solver outcome is claimed. E408/Q32 remains **OPEN / NOT_CERTIFIED**.
+
+
+### Verifier test correction (2026-10-29)
+
+The independent-set smoke test no longer assumes a particular vertex ordering. It now includes exhaustive comparison against brute force for all 5,405 graph/target-size cases with n<=5. This is a unit-test strengthening only; full CSP execution remains pending.

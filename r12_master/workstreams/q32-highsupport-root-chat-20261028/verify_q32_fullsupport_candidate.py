@@ -429,19 +429,46 @@ def verify_candidate(data, check_alpha=True):
 
 
 def self_test():
-    # Empty graph has independent sets; complete graph has none of size two.
+    # Empty graph has a full independent set; do not assume the search order.
     empty_adj = [0] * 5
-    assert find_independent_set(empty_adj, range(5), 5) == list(range(5))
+    assert set(find_independent_set(empty_adj, range(5), 5)) == set(range(5))
     complete_adj = [(sum(1 << j for j in range(5) if j != i)) for i in range(5)]
     assert find_independent_set(complete_adj, range(5), 2) is None
-    # A path on four vertices has an independent set {0,2}.
+    # A path on four vertices has an independent set of size two.
     path_adj = [0] * 4
     for u, v in ((0,1),(1,2),(2,3)):
         path_adj[u] |= 1 << v
         path_adj[v] |= 1 << u
     found = find_independent_set(path_adj, range(4), 2)
     assert found is not None and all(not (path_adj[u] & (1 << v)) for u, v in pairs(found))
-    print("Q32_CANDIDATE_VERIFIER_SELF_TEST_OK")
+
+    # Exhaustively compare the exact branch-and-bound search with brute force
+    # on every simple graph with at most five vertices and every target size.
+    checked = 0
+    for n in range(1, 6):
+        edge_list = list(pairs(range(n)))
+        for mask in range(1 << len(edge_list)):
+            adj = [0] * n
+            for i, (u, v) in enumerate(edge_list):
+                if mask & (1 << i):
+                    adj[u] |= 1 << v
+                    adj[v] |= 1 << u
+            for k in range(1, n + 1):
+                found = find_independent_set(adj, range(n), k)
+                expected = None
+                for candidate in itertools.combinations(range(n), k):
+                    if all(not (adj[u] & (1 << v))
+                           for u, v in pairs(candidate)):
+                        expected = candidate
+                        break
+                assert (found is None) == (expected is None), (n, mask, k, found, expected)
+                if found is not None:
+                    assert len(found) == k
+                    assert all(not (adj[u] & (1 << v))
+                               for u, v in pairs(found))
+                checked += 1
+    assert checked == 5405
+    print("Q32_CANDIDATE_VERIFIER_SELF_TEST_OK; independent-set cases=5405")
 
 
 def main():
