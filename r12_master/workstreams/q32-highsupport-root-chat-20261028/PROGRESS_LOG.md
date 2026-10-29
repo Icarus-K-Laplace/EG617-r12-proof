@@ -398,3 +398,14 @@ With ten exact colors and total gap 37, the unique nonexact color has `7<=g_D<=2
 ### Nonexact color: sharpened to g_D in [7,19], e_D(H) in [76,88]
 
 Added the shell-independent-set argument for the unique 132-edge color D. Since p has no D-edge to the 13-point shell A and alpha(D)<=12, alpha(D[A])<=11; therefore D[A] has at least p_11(13)=2 edges. Combined with e_D(H,O)>=42 and e(D)=132, this improves the previous necessary range to `7<=g_D<=19`, `76<=e_D(H)<=88`, `2<=mu_D<=14). The ten exact colors must contribute at least18 of the 37 gap units, so at least six have positive gap. Arithmetic replay passed; no contradiction yet.
+
+
+### Exact factor-occupancy equations across (12,12,12,11) parts
+
+The corrected Type-I file now uses the fact that twelve K5 factors partition all vertices other than x_C. Counting H vertices in each target part gives exact occupancy vectors:
+- x_C in O: double factor = (1,1,1,0);
+- x_C in H two-double with x_C in X_0: the two doubles total (2,2,2,0);
+- x_C in H two-double with x_C in a K12: the two doubles total (1,2,2,1), forcing the X_0-containing double to be special;
+- x_C in H triple: x_C cannot be in X_0, and the triple H pair lies in the other two K12 parts.
+
+These are source-correct counting identities; the updated verifier passed. They leave the aligned cell OPEN.
