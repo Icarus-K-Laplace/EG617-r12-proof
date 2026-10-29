@@ -338,3 +338,10 @@ Within the already-aligned z=1, (3,2,1,1) cell, a size-three fiber plus its ten 
 Added `V47_Z01_BALANCED_COLORING_CROSS_TRACK_LEDGER.md`. The aligned target-color tracks have sizes 12,12,12,11. Every pair of K12 tracks has H-edges forming a matching, because a K12 plus any outside vertex is a 13-set that must contain all eleven non-target colors. For the K11--K12 pairs, the same bound is only asserted on the K11 side.
 
 The exact degree ledger forces `22+E_0` H edges incident to the K11 track and `10-E_0` among the three K12 tracks, where `E_0 in {0,1,2,3}`. The arithmetic verifier checked 729 excess triples and 28,107 necessary aggregate states. This does not close either aligned low-z cell.
+
+
+### 8.11 Aligned low-z Type-I placement reduction
+
+`V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM.md` eliminates the triple-outside Type-I K5 placement in the fully aligned m=10, 3+7, z=0,1 profile (2,2,2,1). The reason is the balanced-coloring degree floor `d_C(v,H)>=2` on each of the three K12 parts and `>=3` on the K11 part, while a triple-outside K5 gives its H vertices only one same-color H-neighbor.
+
+The surviving exact-color types are x_C in O (one double/nine single K5s) and x_C in H two-double (two double/eight single K5s). Their G11 H-H edge counts are `12+g_C` and `15+g_C`. This reduces the local color-placement state space but does not close either low-z cell; the root gate remains OPEN.
