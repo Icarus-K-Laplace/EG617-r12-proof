@@ -522,3 +522,8 @@ V47_Z01_SHARED_P_FACTOR_PACKING.md, Section 4.3.2, now specifies binary variable
 ### 14r. Cross-key matching-edge disjointness
 
 The projection binary encoding requires more than one-color-per-key/orientation: distinct residual K2,2 blocks may overlap in actual edges. For every edge e of T_i×T_j, sum the selected orientation variables over all colors and all pair keys whose orientation contains e, and constrain that sum to at most one. Keep this alongside the P-edge exclusion and P-free duplicate-key constraints. Omitting it yields an incomplete relaxation, not a valid common-P CSP.
+
+
+### 14s. Cross-key projection overlap regression
+
+A concrete toy matching on a 3×3 bipartite set shows two distinct residual K2,2 blocks can each choose a P-disjoint matching orientation while reusing the same actual edge. Therefore key-local occupancy plus P-disjointness is insufficient; the edge-level occupancy constraint across all keys is mandatory. This is a verifier/model audit, not a global graph contradiction.
