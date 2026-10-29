@@ -233,3 +233,8 @@ The new binary encoding in V47_Z01_SHARED_P_FACTOR_PACKING.md, Section 4.3.2, ex
 ## 21. Projection encoding cross-key conflict caveat (2026-10-29)
 
 A pair-key-local constraint is not enough: two different residual K2,2 blocks may overlap in an actual edge. The solver-ready encoding now includes an edge-level occupancy inequality across all colors and all pair keys containing each edge. Any implementation omitting that inequality is only a relaxation and cannot certify feasibility or infeasibility.
+
+
+### Cross-key projection overlap regression (2026-10-29)
+
+The projection verifier now includes a toy counterexample to any implementation using only per-key constraints: two distinct K2,2 blocks can each choose a P-disjoint matching orientation but still share an edge. The edge-level occupancy constraint is therefore mandatory. This is a modeling safeguard, not a graph-level contradiction.
