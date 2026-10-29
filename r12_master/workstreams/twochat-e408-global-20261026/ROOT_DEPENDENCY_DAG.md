@@ -31,8 +31,10 @@ flowchart TD
   V12 --> CONTRACT29[29-point / 49-block parent contract<br/>OPEN at parent coverage]
   CONTRACT29 --> RES29[Local reserve 294+22>310<br/>PROVED_CONDITIONAL]
   E408 --> Q31b[E408 Q31 / V11<br/>COMPUTATION_CERTIFIED + CONDITIONAL]
-  E408 --> Q32[E408 Q32: e(H)=285, excess=6<br/>OPEN]
+  E408 --> Q32NF[Q32 v=44,45,46; all m=8,9,10<br/>PROVED_CONDITIONAL via sibling imports]
+  E408 --> Q32FS[Q32 full support v=47<br/>OPEN: m=8,9 and part of m=10]
   E408 --> Q33[E408 Q33: e(H)=284, excess=4]
+  Q32FS --> ROOT
   Q33 --> MIN31[56-witness support v>=31]
   MIN31 --> LOCAL31[Exact v=31 reserve<br/>PROVED_CONDITIONAL]
   MIN31 --> PROMOTE[Support promotion v>31<br/>OPEN]
@@ -57,7 +59,8 @@ flowchart TD
 | E407-32-TEMPLATE-CONTRACT | A legal completion of any one V12 template has the 29-point/49-block support object and selected-component anchor identity | PROVED_CONDITIONAL | FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md and SUPPORT_BLOCK_ANCHOR_IDENTITY.md in sibling branch workstream/r12-twochat-e407-closure-20261026. This interface depends on the retained V12 analytic/minimum-support chain and exact-129 factor theorem; it does not certify the finite survivor mapping. |
 | E407-32-V12-PROMOTION | Every legal E407 Q32 parent is covered by the complete V12 finite screen and maps to a template A-E | OPEN | Archive, manifest, and verifier are absent; V12_V8_SOURCE_REPORTED_AUDIT.md says INDEPENDENT_REPLAY_PENDING. The reported 554 survivor-to-template mapping has not been independently replayed. The sibling's broader compatibility workstream remains OPEN / NOT_CERTIFIED. |
 | E408-31 | E408 Q31 closure | PROVED_CONDITIONAL + COMPUTATION_CERTIFIED under V11 inputs | V10_V11_Q31_INDEPENDENT_REPLAY_AUDIT.md; retain its named analytic and external assumptions. |
-| E408-32 | E408 Q32 47-core with e(H)=285, alpha(H)<=4, delta(H)>=12 and total excess 6 is impossible | OPEN | Q32_CORE285_TERMINAL.md. The valid live terminal has m in {8,9,10}, support v=44..47, and the stated shell/capacity obligations. No excess-four Q33 identity is imported. |
+| E408-32-NONFULL | E408 Q32 supports v=44,45,46 are impossible for every m in {8,9,10} | PROVED_CONDITIONAL (read-only sibling import) | Low-support branch workstream/r12-q32-caseII-v44-final-20261028 at 9afd7c1a59056052974f9dc78933010d10e88bba and high-support branch workstream/r12-q32-highsupport-root-20261028 at 07c69f6b4b748124ea0cf72eb1dc39bc57df6a29. See Q32_NONFULL_SUPPORT_SIBLING_IMPORT_AUDIT.md for the proof-to-row map. This root branch did not independently re-prove every analytic lemma. |
+| E408-32-FULL | E408 Q32 full support v=47 | OPEN | V47_ALL_COLOR_RESERVE.md and V47_PIVOT_NEIGHBORHOOD_PACKING.md. m=8,9 remain open; for m=10 the chi(complement residual)>=5 subcase is closed, but chi<=4 remains open. Scalar relaxations remain feasible. No Q33 excess-four identity is imported. |
 | E408-33-SUPPORT | Eight selected exact-129 colors supply 56 selected component/gadget witnesses with support v>=31 | PROVED_CONDITIONAL | R12_ZERO_EXCESS_WITNESS_THEOREM.md and the retained exact-129 factor theorem. The lower bound v>=31 does not imply v=31. |
 | E408-33-LOCAL | Under exactly v=31 and the registered 284-edge/56-witness ledger, nonexact-color reserve excludes m=8,9 and the separate component-capacity theorem excludes m=10 | PROVED_CONDITIONAL | Q33_NONEXACT_U_RESERVE_CLOSURE.md and Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md. Uses p12(31)=26, delta<=17, h<=4; no degree-nine assumption. |
 | E408-33-PROMOTION | Every Q33 parent has a selected 56-witness union of exactly 31 points, or all larger supports are excluded | OPEN | No equality/support-promotion theorem found. Independent necessary-capacity replay excludes m=8,9 at v=31 and m=8 at v=32 only; m=9,10 at v=32 and m=8,9,10 for v>=33 remain open under this scalar reserve. |
@@ -79,3 +82,8 @@ A root receipt cannot be promoted until all of these gates close:
 3. E408 Q33 universal 31-point support selection theorem or complete proof excluding all remaining v=32..47 cases.
 
 The exact-129 factor theorem may be used under its source hypotheses. Degree-nine exceptional-vertex claims may not be used. A successful local reserve inequality cannot replace a missing parent-coverage edge.
+
+
+## 14. Q32 support-layer integration — 2026-10-29
+
+The old single E408-32 row is split into a conditional non-full-support closure and the remaining full-support gate. This is status reconciliation, not a new root theorem. Sibling sources remain read-only; the current root workstream does not claim independent proof-assistant verification of the imported analytic lemmas.

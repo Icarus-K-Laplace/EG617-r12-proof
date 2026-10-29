@@ -144,10 +144,76 @@
       "blob_sha": "50447a9931b9b51a21a979dc61d834389abd4e3a",
       "status": "PROVED_CONDITIONAL support-block/anchor interface; parent screen mapping remains open",
       "branch": "workstream/r12-twochat-e407-closure-20261026"
+    },
+    {
+      "path": "r12_master/workstreams/q32-caseII-v44-final-chat-20261028/CANONICAL_STATE.md",
+      "blob_sha": "98eac1c7bba8f7e9dd921104b96ffd03dccc5335",
+      "status": "read-only sibling source; conditional non-full-support closures",
+      "branch": "workstream/r12-q32-caseII-v44-final-20261028"
+    },
+    {
+      "path": "r12_master/workstreams/q32-caseII-v44-final-chat-20261028/V44_M8_DIRECT_NO_CORE_ONLY_CLOSURE.md",
+      "blob_sha": "08ecefa2c9839d4e2864864ae64e91abb7a3f242",
+      "status": "v44 m8 local closure",
+      "branch": "workstream/r12-q32-caseII-v44-final-20261028"
+    },
+    {
+      "path": "r12_master/workstreams/q32-caseII-v44-final-chat-20261028/V44_M9_ALL_DOUBLE_CLOSURE.md",
+      "blob_sha": "fedc53b9ed62ce43df905b13e82ab1e3107945a5",
+      "status": "v44 m9 all-double closure",
+      "branch": "workstream/r12-q32-caseII-v44-final-20261028"
+    },
+    {
+      "path": "r12_master/workstreams/q32-caseII-v44-final-chat-20261028/V44_M9_TRIPLE_CLOSURE.md",
+      "blob_sha": "cb666be2aea47b65719f025ab2f2066915e34374",
+      "status": "v44 m9 triple closure",
+      "branch": "workstream/r12-q32-caseII-v44-final-20261028"
+    },
+    {
+      "path": "r12_master/workstreams/q32-caseII-v44-final-chat-20261028/V45_SOURCE_CORRECT_CLOSURE.md",
+      "blob_sha": "c17acc7171e55246fa67226421c17ced5b8556f7",
+      "status": "v45 support-layer closure",
+      "branch": "workstream/r12-q32-caseII-v44-final-20261028"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/CANONICAL_STATE.md",
+      "blob_sha": "71ceb6063ab5b104352d95ce14fa59b2c64ea91a",
+      "status": "read-only sibling source; v47 frontier",
+      "branch": "workstream/r12-q32-highsupport-root-20261028"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V45_V46_M9_CLOSURE.md",
+      "blob_sha": "8f1e7b65f5857e9d982ebca1bdfe181d49fda5f0",
+      "status": "v45/v46 m9 closure",
+      "branch": "workstream/r12-q32-highsupport-root-20261028"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V46_CASEII_CLOSURE.md",
+      "blob_sha": "f1e39bfcd6e335e45a6beab81535d725d605cef9",
+      "status": "v46 case-II closure",
+      "branch": "workstream/r12-q32-highsupport-root-20261028"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_RESIDUAL_INCIDENCE_COVER.md",
+      "blob_sha": "8af079fefdc525b26d5be837f638b58f968babc4",
+      "status": "v47 residual incidence reduction",
+      "branch": "workstream/r12-q32-highsupport-root-20261028"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_LIGHT_BLOCK_GRAPH_DISCONNECTED_REDUCTION.md",
+      "blob_sha": "eea5a4cdb80e9111da6861e4eff8b2029d12cf9e",
+      "status": "v47 m10 residual reduction",
+      "branch": "workstream/r12-q32-highsupport-root-20261028"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_ALL_COLOR_RESERVE.md",
+      "blob_sha": "c71156c4e08c08146be792796600c5fbfc708cf0",
+      "status": "v47 37-unit gap ledger",
+      "branch": "workstream/r12-q32-highsupport-root-20261028"
     }
   ],
   "open_dependencies": [
-    "E408 Q32 285-edge / excess-six graph terminal",
+    "E408 Q32 full-support v=47: m=8, m=9, and m=10 with chi(complement residual)<=4",
     "V12 artifact/replay and complete finite-survivor-to-template mapping for E407 Q32",
     "Q33 support promotion from v=31 to all legal support sizes v=32..47"
   ],
@@ -168,19 +234,19 @@
   "output_blobs": [
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/CANONICAL_STATE.md",
-      "blob_sha": "eeecbfbafe4ed5283ac05e2b630160665fecfaeb"
+      "blob_sha": "a780f70e05138576d816f4d6d4c752bd7859508b"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/DEPENDENCY_AUDIT.md",
-      "blob_sha": "bec40c1d8e0a4a9151f19c83e2314fce4eb383a4"
+      "blob_sha": "a735e00d0532ff4d10a660a1f2242732166a507d"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/ROOT_PROMOTION_RECEIPT.md",
-      "blob_sha": "7cfe7a61881fc0fa164af62d71b520c6bad7457a"
+      "blob_sha": "ccea3601681ec73fafd866bf6e41536abf04d9db"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/ROOT_DEPENDENCY_DAG.md",
-      "blob_sha": "86f4332cd42c1092b8ad0f69994b23ae00a95917"
+      "blob_sha": "3eb3686270443af1efe05d412854d219274aeebc"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/ROOT_AUDIT_REPLAY_LOG.md",
@@ -196,11 +262,19 @@
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/PROGRESS_LOG.md",
-      "blob_sha": "f9f4706c83d25632b27581bf4ee322eab8f70043"
+      "blob_sha": "d2b1cda144521aa5da576ee2c3bd8ab6eaddc580"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/R12_ROOT_CLOSURE_PROMOTION_AUDIT.md",
-      "blob_sha": "9b4563dac9bae6c7fff5621f14b86c68c6e713dd"
+      "blob_sha": "a391d46a2065572a4a577d9a786a0ef6c58871cd"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/Q32_CORE285_TERMINAL.md",
+      "blob_sha": "2b0039f404d12744d9d8ebc1d9d39ef269455df8"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/Q32_NONFULL_SUPPORT_SIBLING_IMPORT_AUDIT.md",
+      "blob_sha": "b56d48bb8c8623b86b34be265fd1afee5a77513e"
     }
   ],
   "root_status": "OPEN / NOT_CERTIFIED",
@@ -209,12 +283,32 @@
     "61f3263de5c99d37f58cd1ab7ad65a05888534f0",
     "6ed8b6e0352ca5aeb713e86676504bb236561db8"
   ],
-  "manifest_parent_commit": "ced39d0f3eeb768e5d74fef6af848cbaf0fcffa7",
+  "manifest_parent_commit": "fc8c08de48f1978c8da3aeff28b8990caf1faa55",
   "audit_commits_before_final_manifest_commit": [
     "549960e37217c243e8abd6b7629301e9f918e6c6",
     "61f3263de5c99d37f58cd1ab7ad65a05888534f0",
     "6ed8b6e0352ca5aeb713e86676504bb236561db8",
     "b03f2484624f1a13d92dcb5204bd13940b662521",
-    "ced39d0f3eeb768e5d74fef6af848cbaf0fcffa7"
+    "ced39d0f3eeb768e5d74fef6af848cbaf0fcffa7",
+    "fc8c08de48f1978c8da3aeff28b8990caf1faa55"
+  ],
+  "sibling_imports": [
+    {
+      "branch": "workstream/r12-q32-caseII-v44-final-20261028",
+      "head": "9afd7c1a59056052974f9dc78933010d10e88bba",
+      "status": "read-only; all v=44,45,46 rows m=8,9,10 closed conditionally",
+      "canonical_blob": "98eac1c7bba8f7e9dd921104b96ffd03dccc5335",
+      "dependency_audit_blob": "2adcded87ae5918eac73d29b9b443e2664887313"
+    },
+    {
+      "branch": "workstream/r12-q32-highsupport-root-20261028",
+      "head": "07c69f6b4b748124ea0cf72eb1dc39bc57df6a29",
+      "status": "read-only; v=44,45,46 closed; v=47 remains open with m=10 high-chromatic subcase closed",
+      "canonical_blob": "71ceb6063ab5b104352d95ce14fa59b2c64ea91a",
+      "m9_closure_blob": "8f1e7b65f5857e9d982ebca1bdfe181d49fda5f0",
+      "v46_caseII_blob": "f1e39bfcd6e335e45a6beab81535d725d605cef9",
+      "residual_incidence_blob": "8af079fefdc525b26d5be837f638b58f968babc4",
+      "light_block_reduction_blob": "eea5a4cdb80e9111da6861e4eff8b2029d12cf9e"
+    }
   ]
 }

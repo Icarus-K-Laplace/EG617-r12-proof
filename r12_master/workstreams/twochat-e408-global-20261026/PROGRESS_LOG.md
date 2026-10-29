@@ -192,3 +192,12 @@ Canonical commit: `b2d06bb90e532556ba203f559d85d8fcfb257fd4`.
 ## 2026-10-29 — replay command provenance correction
 
 - Clarified that the clean-process verifier run executed against the local runtime copy at /mnt/data/verify_q33_high_support_u_reserve.py. The committed GitHub file was created from the same source text and has the recorded SHA256; no claim is made that a repository checkout was available locally.
+
+
+## 2026-10-29 — source-correct Q32 support-layer reconciliation
+
+- Read-only audited the latest low-support sibling at \`9afd7c1a59056052974f9dc78933010d10e88bba\` and high-support sibling at \`07c69f6b4b748124ea0cf72eb1dc39bc57df6a29\`.
+- Imported the conditional closures of all non-full support rows \(v=44,45,46\) for \(m=8,9,10\), with proof references and blob IDs recorded in Q32_NONFULL_SUPPORT_SIBLING_IMPORT_AUDIT.md.
+- Refined the full-support frontier: \(v=47,m=8,9\) remain open; \(m=10\) has its \(\chi(\overline{H[R]})\ge5\) residual subcase closed, while \(\chi(\overline{H[R]})\le4\) remains open.
+- Updated the canonical state, Q32 terminal, dependency audit, DAG, and root receipt. Sibling branches were read-only and unchanged.
+- No root promotion: EG617(r=12) remains OPEN / NOT_CERTIFIED; E407 V12 parent coverage and Q33 support promotion are also OPEN.

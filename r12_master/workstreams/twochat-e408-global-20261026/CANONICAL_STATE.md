@@ -175,32 +175,22 @@ Thus each W-point has special-parameter profile among
 
 up to order. This is a strict source-correct reduction, not yet a contradiction.
 
-## Current exact Q32 frontier
+## Current exact Q32 frontier — sibling-import audit 2026-10-29
 
-### Case I — shell target contains K10
+The low-support and high-support sibling canonical states now close all non-full supports \(v=|U|=44,45,46\) for \(m=8,9,10\), conditional on their registered Type-I and extremal-theorem inputs. This root workstream has read and reconciled the source documents; it has not independently re-proved every imported analytic lemma. See \`Q32_NONFULL_SUPPORT_SIBLING_IMPORT_AUDIT.md\`.
 
-- v=44: CLOSED;
-- v=45: CLOSED;
-- v=46,m=10: CLOSED;
-- **v=46,m=9: CLOSED** by the 131-edge min-degree theorem;
-- v=46,m=8: OPEN, with `n_w in {5,6}`;
-- v=47: OPEN.
+| \(v=|U|\) | \(m=8\) | \(m=9\) | \(m=10\) |
+|---:|---|---|---|
+| 44 | CLOSED | CLOSED | CLOSED |
+| 45 | CLOSED | CLOSED | CLOSED |
+| 46 | CLOSED | CLOSED | CLOSED |
+| 47 | OPEN | OPEN | OPEN overall; \(\chi(\overline{H[R]})\ge5\) subcase CLOSED, \(\chi(\overline{H[R]})\le4\) remains OPEN |
 
-### Case II — no shell target K10
+### Full-support structural ledger
 
-- v=44,m=10: CLOSED;
-- v=44,m=9: OPEN rigid three-W-point terminal, with t=0 or1 and the parameter profiles above;
-- v=44,m=8: OPEN;
-- v=45,46,47: OPEN.
+For \(v=47\), the exact multicolor near-Turán ledger is \(\sum_C g_C=37\), where \(g_C=e_C(H)-69\). The pivot-neighborhood reduction gives \(m\) disjoint independent \(K_4\) blocks and a 253-edge baseline against \(e(H)=285\), leaving 32 units of slack. The scalar relaxation has feasible states and cannot by itself close Q32.
 
-No 284-edge/excess-four statement is imported into these reductions.
-
-## Highest-leverage next targets
-
-1. Case-II v=44,m=9: combine the three-W source-parameter profiles, shell-edge floor, U-reserve, and seven-block blocker labels.
-2. Case-II v=44,m=8: classify special multiplicities and multi-outside placements under the same corrected Type-I source.
-3. Case-I v=46,m=8: exploit `n_w=5 or6`, the three 130-edge low-degree structures, and the S-to-B shell matching in the n=5 subcase.
-4. v=47: use all-color near-Turan equality structure on the full core.
+Highest-priority target is therefore the full-support \(v=47\) case: \(m=8,9\), and the remaining low-chromatic-residual \(m=10\) branch. The old degree-nine exceptional-vertex claim and injectivity-dependent closure are excluded by the retraction firewall.
 
 ## Status policy
 

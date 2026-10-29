@@ -397,3 +397,8 @@ Sections 8–10 above must be read as two different statements:
 2. the assertion that the complete V12 finite screen exhausts every legal E407 Q32 parent and maps every survivor to A-E is OPEN because the original archive, manifest, and verifier are unavailable.
 
 The local reserve contradiction cannot certify its own parent coverage. The root status remains OPEN / NOT_CERTIFIED.
+
+
+## 17. Q32 support-layer reconciliation — 2026-10-29
+
+Read-only sibling integration narrows E408 Q32 to full support \(v=47\): all \(v=44,45,46\), \(m=8,9,10\) rows are recorded as PROVED_CONDITIONAL in the current low/high-support sibling canonical states. The \(v=47,m=10,\chi(\overline{H[R]})\ge5\) subcase is also closed conditionally; \(m=8,9\) and the remaining \(m=10,\chi(\overline{H[R]})\le4\) cell remain OPEN. This historical audit file remains superseded and is not a root proof.

@@ -142,7 +142,7 @@ Valid necessary structure:
 - exact capacity
   `6N <= C(v,2)-p_4(47-v)-12v+285-E_U`.
 
-No closure at `v=44..47` is yet certified.
+Sibling integration update (2026-10-29): the low-support and high-support branches now record all (v=44,45,46), (m=8,9,10) rows as **PROVED_CONDITIONAL closed** under the source-correct Q32 contract. The only remaining support size is (v=47). For (v=47,m=10), the (chi(overline{H[R]})ge5) subcase is closed; the (chi(overline{H[R]})le4) subcase remains OPEN. Full-support (m=8,9) remain OPEN.
 
 ## 8. Current root composition
 
@@ -182,3 +182,14 @@ No promotable root receipt is issued. This is a fail-closed status record, not a
 - The Q33 local reserve is valid only for the exact 31-point/56-witness contract. Higher support remains OPEN except that the scalar reserve excludes m=8 at v=32.
 - E408 Q32 remains OPEN under the 285-edge/excess-six contract. The degree-nine exceptional-vertex premise remains RETRACTED.
 - Current authoritative artifacts are ROOT_DEPENDENCY_DAG.md, ROOT_AUDIT_INPUT_MANIFEST.json, ROOT_AUDIT_REPLAY_LOG.md, Q33_HIGH_SUPPORT_U_RESERVE_AUDIT.md, and verify_q33_high_support_u_reserve.py.
+
+
+## 11. Q32 sibling import — 2026-10-29
+
+Read-only sibling heads audited:
+- \`workstream/r12-q32-caseII-v44-final-20261028\`: \`9afd7c1a59056052974f9dc78933010d10e88bba\`.
+- \`workstream/r12-q32-highsupport-root-20261028\`: \`07c69f6b4b748124ea0cf72eb1dc39bc57df6a29\`.
+
+Under their registered source-correct assumptions, \(v=44,45,46\) are closed for all \(m=8,9,10\). The only Q32 support size left is \(v=47\); its \(m=8,9\) branches and the \(\chi(\overline{H[R]})\le4\) subcase of \(m=10\) remain open. This import does not use the retracted degree-nine claim, and does not upgrade the root status.
+
+The root remains **OPEN / NOT_CERTIFIED** because the Q32 full-support terminal, E407 Q32 V12 parent coverage, and E408 Q33 support promotion remain unresolved.

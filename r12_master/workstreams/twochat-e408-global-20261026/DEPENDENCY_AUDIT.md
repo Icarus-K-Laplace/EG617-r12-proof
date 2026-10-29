@@ -233,3 +233,14 @@ The Kang--Pikhurko exact-129 factorization remains PROVED_CONDITIONAL under its 
 ### Root decision
 
 Root status remains OPEN / NOT_CERTIFIED. The root receipt is a fail-closed status record, not a theorem certificate.
+
+
+## 14. Q32 support-layer import update — 2026-10-29
+
+Read-only reconciliation of sibling branch heads:
+- \`workstream/r12-q32-caseII-v44-final-20261028\` at \`9afd7c1a59056052974f9dc78933010d10e88bba\`;
+- \`workstream/r12-q32-highsupport-root-20261028\` at \`07c69f6b4b748124ea0cf72eb1dc39bc57df6a29\`.
+
+Their current canonical states close \(v=44,45,46\) for all \(m\in\{8,9,10\}\) under the source-correct 285-edge contract. The remaining Q32 support is \(v=47\). Within \(v=47,m=10\), the \(\chi(\overline{H[R]})\ge5\) subcase is closed, while \(\chi(\overline{H[R]})\le4\) remains open; \(m=8,9\) remain open.
+
+This is a conditional proof import, not a claim of independent replay of all sibling analytic arguments. The high-support branch's retracted global matching-map rigidity claim and all degree-nine exceptional-vertex arguments remain excluded. Root status remains OPEN / NOT_CERTIFIED.

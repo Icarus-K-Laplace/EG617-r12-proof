@@ -53,37 +53,25 @@ and
 
 At `|U|=44` this already excludes `m=10`; for `m=9`, all nine special vertices lie in W, exactly three at each W-point, and at most one exact color is triple-outside.
 
-## 4. Shell split and currently closed subcases
+## 4. Current support frontier after sibling reconciliation
 
-The Q32 shell classification has two branches.
+The source-correct sibling proofs now close the entire non-full-support layer:
 
-### Case I
+- \(v=44\): \(m=8,9,10\) closed;
+- \(v=45\): \(m=8,9,10\) closed;
+- \(v=46\): \(m=8,9,10\) closed.
 
-M has an independent 10-set B. Writing S=A\B, `|S|=3`, every M-edge meets S. The source-correct matching theorem yields
+The low-support branch is \`workstream/r12-q32-caseII-v44-final-20261028\` at HEAD \`9afd7c1a59056052974f9dc78933010d10e88bba\`; the high-support branch is \`workstream/r12-q32-highsupport-root-20261028\` at HEAD \`07c69f6b4b748124ea0cf72eb1dc39bc57df6a29\`. The root-facing import and exact proof references are recorded in \`Q32_NONFULL_SUPPORT_SIBLING_IMPORT_AUDIT.md\`.
 
-`nu(M)>=m-n_w`,
+This import remains conditional on the registered source-correct Type-I factorization and named extremal inputs. It does not use the retracted degree-nine premise or the injectivity-dependent \`Q32_NONFULL_SUPPORT_SHELL_CAPACITY.md\`.
 
-while `nu(M)<=3`, hence `n_w>=m-3`.
+### Full support \(v=47\)
 
-Consequences already proved in this workstream:
+- \(m=8\): OPEN.
+- \(m=9\): OPEN.
+- \(m=10\): OPEN overall; the high-chromatic residual subcase \(\chi(\overline{H[R]})\ge5\) is closed by the high-support branch, while the \(\chi(\overline{H[R]})\le4\) cell remains open.
 
-- v=44: impossible;
-- v=45: impossible;
-- v=46,m=10: impossible;
-- v=46,m=9: OPEN rigid equality terminal;
-- v=46,m=8: OPEN with `n_w in {5,6}`;
-- v=47: OPEN.
-
-For v=46,m=9 the exact pointwise degree equality forces six special exact colors of degree5 (KP parameter a=4), three non-special exact colors of degree4, nonexact degrees3 and2, target degree13, and an S-to-distinct-B matching from the three non-special double-shell K5s.
-
-### Case II
-
-`alpha(M)<=9`. Current state:
-
-- v=44,m=10: impossible;
-- v=44,m=9: OPEN rigid three-W-point terminal;
-- v=44,m=8: OPEN;
-- v=45,46,47: OPEN.
+No 284-edge/excess-four Q33 identity is imported.
 
 ## 5. New all-color U-reserve theorem
 
@@ -153,4 +141,9 @@ No finite integer table satisfying only the scalar inequalities is treated as a 
 
 ## 8. Global scope
 
-E408 Q33 remains closed by its separate 284-edge nonexact-U-reserve route. E408 Q32 is **OPEN** after the source correction. Therefore this workstream does not certify EG617(r=12).
+E408 Q33 remains locally closed only under its separate exact 31-point / 56-witness contract; global support promotion remains OPEN. E408 Q32 is **OPEN** after the source correction, with all non-full supports v=44,45,46 conditionally closed by read-only sibling imports and full support v=47 still open. Therefore this workstream does not certify EG617(r=12).
+
+
+## 9. Sibling integration note — 2026-10-29
+
+This file supersedes its earlier non-full-support frontier list. The earlier listed \(v=44,45,46\) rows are no longer live terminals after the conditional closures recorded by the low-support and high-support sibling branches. Q32 remains OPEN solely because full support \(v=47\) is not closed.
