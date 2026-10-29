@@ -571,7 +571,7 @@ Corrected the separate owner-only witness audit: the previously reported 20 P_0i
 
 ### E0=0 endpoint multiplicity constraints — corrected (2026-10-29)
 
-The H endpoint multiset is not necessarily a set. At non-small vertices h_i(v)≤1; repeated endpoints are confined to the three small-block vertices and total excess sum_v max(h_i(v)-1,0)≤E_i=2. If D has no T0 repeat, z_i(D) must be an H endpoint and n_i=h_i-delta_D; if D repeats, its omitted vertex equals its repeat endpoint and n_i=h_i. Under the all-Class-A allocation, exact T0-repeat endpoints are distinct among themselves but may coincide with H endpoints, so the conservative P0 endpoint-degree caps are (4,5,4), not (2,3,2). The exact endpoint-only counts are recorded in the packing note; this is not a Q32 closure.
+The H endpoint multiset is not necessarily a set. At non-small vertices h_i(v)≤1; repeated endpoints are confined to the three small-block vertices and total excess sum_v max(h_i(v)-1,0)≤E_i=2. If D has no T0 repeat, z_i(D) must be an H endpoint and n_i=h_i-delta_D; if D repeats, no D-specific source lemma identifies its omitted vertex with the repeat endpoint, so keep delta_D and r_D independent under n_i+delta_D=h_i+r_D. Under the all-Class-A allocation, exact T0-repeat endpoints are distinct among themselves but may coincide with H endpoints, so the conservative P0 endpoint-degree caps are (4,5,4), not (2,3,2). The exact endpoint-only counts are recorded in the packing note; this is not a Q32 closure.
 
 ### Class-B g=2,t=0 star-center incidence — 2026-10-29
 
