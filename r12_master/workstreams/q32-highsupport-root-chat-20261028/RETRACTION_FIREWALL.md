@@ -194,3 +194,8 @@ The global low-gap orientation may be cited only through the independent 69/70 n
 The prior retraction is itself withdrawn. The alleged counterexample used the wrong nine-edge baseline: in the source mode \(x_C\in O\), \(N_s\) single-outside and \(N_t\) double-outside, the true baseline is \(K_4(\{w,s_i,s_j,s_k\})\cup K_3(\{y,t_j,t_k\})\). Thus \(ws_i\) is a baseline K4 edge and \(yw\) is an extra; the local graph is Class A, not Class B. Class A permits the shared-track pair pattern.
 
 Do not impose one pair-location law across all modes. Preserve both constraints: Class A source mode can have T0 and large-pair repeats sharing a track; the seven-vertex Class-B mode with \(g_C=2,t_C=1\) has complementary track pairs. The source-Class-A aggregate witness uses exact surplus \((7,0,3;4,3,3)\), D surplus \((1,9,6;0,1,0)\), and \(g_D=17\). It does not assign actual common-P endpoint labels and is neither a Q32 completion nor a contradiction.
+
+
+## 15. Vertex-labelled common-P witness scope firewall (2026-10-29)
+
+The file verify_v47_z01_vertex_labelled_common_p_witness.py is a feasible **relaxation witness**, not a source-realizable full coloring. It proves only that the shared P_ij perfect matchings, pairwise H/exact/D edge counts, T0 pointwise repeat-owner pattern, and ten individual Class-A K4+K3 residual gadgets can coexist in one labelled assignment. It does not construct the eleven global matchings M_C,ij on K12,12 minus P_ij, nor verify that each color's three matchings form a 12-triangle factor with ten isolated K4 components. Never report this witness as a Q32 completion, a counterexample to EG617, or evidence that the full simultaneous factorization exists. The global triangle-factorization/Type-I incidence layer remains OPEN.
