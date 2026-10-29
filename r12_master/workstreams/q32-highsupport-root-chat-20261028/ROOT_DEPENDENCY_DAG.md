@@ -396,7 +396,7 @@ For each exact Type-I color C, a degree-four T0 vertex must lie in G11(C). The i
 
 **V47_T0_POINTWISE_COLOR_SATURATION.md** adds an exact vertexwise ledger to the aligned z=0,1 cells. At each T0 vertex v, the eleven non-target colors have H-degrees all equal to 3 if epsilon_v=1; if epsilon_v=0, exactly one color has degree 4 and ten have degree 3. Thus \(\sum_C t_C=11-E_0\).
 
-For each exact Type-I color C, a degree-four T0 vertex must lie in G11(C), and the corrected factor occupancy gives at most two T0 vertices in G11(C), so \(t_C\le2\). The T0-pair surplus identity also gives \(t_C\le g_C\), hence \(t_C\le\min(2,g_C)\). The residual K12-pair surplus is \(26+E_0\). This is a source-correct capacity restriction for future simultaneous color packing. It does not close the aligned cells; root status remains OPEN / NOT_CERTIFIED.
+For each exact Type-I color C, a degree-four T0 vertex must lie in G11(C). The placement-sensitive case split gives t_C<=1 globally, and the T0-pair surplus identity gives t_C<=g_C; hence t_C<=min(1,g_C). The residual K12-pair surplus is 26+E0. This is a source-correct capacity restriction for future simultaneous color packing. It does not close the aligned cells; root status remains OPEN / NOT_CERTIFIED.
 
 
 ### 14e. Conditional seven-vertex residual holonomy-cost theorem
