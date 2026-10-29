@@ -421,3 +421,16 @@ The number of C-colored edges in P is the surplus `e_C(T_i,T_j)-12`; these edges
 For a K11--K12 pair, Hall gives a matching saturating T0 for each non-target color. Choosing those matchings leaves a residual set with one edge per T0 vertex, but no matching claim on the larger side. The corrected low-gap corollary in the same file uses the registered 69/70 near-Turan forms to align the base matchings when `g_C<=1`.
 
 This is a structural reduction only; it does not close z=0,1. E408/Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+## T0 pointwise color-degree saturation (2026-10-29)
+
+Added **V47_T0_POINTWISE_COLOR_SATURATION.md** and its arithmetic replay. In the aligned z=0,1 profile, each vertex v of the K11 track T0 has exactly \(34-\epsilon_v\) non-target-colored H-edges to the other three tracks, with \(\epsilon_v\in\{0,1\}\). Each of the eleven non-target colors must occur at least once from v into each K12 track, so every color has T0 H-degree at least 3.
+
+Therefore:
+- if \(\epsilon_v=1\), all eleven non-target colors have H-degree exactly 3 at v;
+- if \(\epsilon_v=0\), exactly one color has H-degree 4 and the other ten have degree 3.
+
+Writing \(t_C\) for the number of T0 vertices where color C has H-degree 4 gives \(\sum_C t_C=11-E_0\). For every exact Type-I color, all such degree-four T0 vertices must lie in G11(C), because an isolated single-outside K5 gives degree 3, while an isolated double/triple factor at T0 would violate the degree floor. The source-correct factor occupancy gives \(|G11(C)\cap T_0|\le2\), hence \(t_C\le2\) for each exact color.
+
+This is an exact vertexwise saturation/capacity constraint for future packing or SAT/ILP work, not a contradiction. The nonexact color may own some of the repeated-color T0 vertices; the aligned cells and root remain OPEN / NOT_CERTIFIED.
