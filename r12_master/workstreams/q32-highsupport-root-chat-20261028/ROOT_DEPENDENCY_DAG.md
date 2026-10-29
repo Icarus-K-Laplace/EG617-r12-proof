@@ -512,3 +512,8 @@ The residual-signature theorem was strengthened in V47_Z01_RESIDUAL_SIGNATURE_IN
 ### 14p. Partial residual-projection multiplicity
 
 For a fixed residual pair key (A,B) on tracks i,j, if P_ij intersects the K2,2 block A×B, exactly one of the two internal perfect matchings remains available to a color, so cross-color edge-disjointness forces the key to be unique. If the key is duplicated, the block must be P-free and exactly two colors use the two complementary matchings. Two colors cannot share two pair projections, because that would imply identical full residual signatures, excluded by the all-mode injectivity lemma. This is a necessary block-level constraint for the exact CSP; it does not close Q32.
+
+
+### 14q. Exact local encoding for residual pair projections
+
+V47_Z01_SHARED_P_FACTOR_PACKING.md, Section 4.3.2, now specifies binary variables for per-color residual 2-sets, pair projection keys, K2,2 orientation choices, and P_ij edges. Linking constraints select exactly one residual 2-set per track; orientation occupancy is at most one color; any P edge forbids its internal matching orientation. This encodes the P-free duplicate projection lemma exactly. The complete model still needs source-mode, alpha, repeat-owner, T0, and global degree constraints; no Q32 closure follows.
