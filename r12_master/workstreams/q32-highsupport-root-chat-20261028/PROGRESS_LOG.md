@@ -486,3 +486,7 @@ The T0 saturation identity plus the full Type-I placement split now proves t_C<=
 ### Exact surplus-location split by residual holonomy class (2026-10-29)
 
 Extended the capped holonomy verifier to count valid repairs by `(class, g_C, T0-pair surplus, large-pair surplus)`. This yields additional forced placements: class B at minimum gap 1 must use a T0-pair edge; class C at minimum gap 2 has no T0 surplus and places both edges on large-track pairs; class D at gap 3 has one T0 surplus and two large-pair surpluses. The full table is in `V47_Z01_RESIDUAL_HOLONOMY_COST.md`; independent enumeration reproduced the split counts. These are local constraints only.
+
+### Aggregate exact-color large-pair surplus budget (2026-10-29)
+
+Derived and recorded in `V47_T0_POINTWISE_COLOR_SATURATION.md` the identity `L_exact=26+E0-(g_D-t_D)` for exact-color surplus on large-track pairs. The global bounds `g_D<=19` and `t_D>=max(0,1-E0)` imply `L_exact>=8,8,9,10` for `E0=0,1,2,3`. This is a small but exact cross-track budget constraint that can be combined with the per-color residual surplus splits; no global contradiction follows yet.
