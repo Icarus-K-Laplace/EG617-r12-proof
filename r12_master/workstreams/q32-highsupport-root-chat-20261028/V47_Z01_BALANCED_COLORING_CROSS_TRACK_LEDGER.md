@@ -40,6 +40,31 @@ h_i(v)\le1\quad\text{for every non-small }v\in T_i,\qquad
 \]
 Thus a repeated T_0-H endpoint can occur only at a small-block vertex, and its total multiplicity excess is bounded by E_i. This is the correct T_i-side restriction; H[T_0,T_i] need not be a matching on all of T_i.
 
+There is an exact decomposition of this same excess budget. Put
+\[
+\ell_i(v)=d_H(v,T_j)+d_H(v,T_k),\quad
+u_i=\sum_v\max(h_i(v)-1,0),\quad
+k_i=\sum_v\max(\ell_i(v)-1,0),
+\]
+and let \(\omega_i=|\{v:h_i(v)>0,\ \ell_i(v)>0\}|\). Since \(h_i(v)+\ell_i(v)=1+\epsilon_i(v)\ge1\), the pointwise identity
+\[
+h_i(v)+\ell_i(v)-1
+=\max(h_i(v)-1,0)+\max(\ell_i(v)-1,0)
++\mathbf 1_{\{h_i(v)>0,\ell_i(v)>0\}}
+\]
+sums to the exact constraint
+\[
+\boxed{E_i=u_i+k_i+\omega_i.}
+\]
+Here \(k_i\) is exactly the number of vertices shared by the endpoint sets of the two large-pair H matchings incident to \(T_i\), and \(\omega_i\) counts vertices simultaneously incident to a T0-H edge and a large-pair H edge. Both kinds of overlap, as well as repeated T0 endpoints, can occur only at small-block vertices and consume the same \(E_i\) budget.
+
+For \(E_i=2\), the only possible budget splits are
+\[
+(u_i,k_i,\omega_i)\in\{(2,0,0),(0,2,0),(0,0,2),(1,1,0),(1,0,1),(0,1,1)\}.
+\]
+This is an exact local constraint to enforce jointly with the common P matchings, not merely three separate upper bounds.
+
+
 For a small-block vertex A_h in small block A, let e_A(h) be the number of extra A-to-outer edges incident to it. The degree equation is
 `d_H(A_h)=9+e_A(h)+n_h=12+epsilon_A(h)`,
 so
