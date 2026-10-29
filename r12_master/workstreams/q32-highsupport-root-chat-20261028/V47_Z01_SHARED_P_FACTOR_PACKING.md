@@ -125,7 +125,7 @@ If another exact color C' had the same two residual subsets on tracks i,j, its M
 
 This is a valid cross-color constraint without assuming that a color's six residual vertices form a component of the common P graph. It is necessary but not by itself a contradiction.
 
-The remaining bridge is to impose pair-projection injectivity, all cross-color matching edge-disjointness, and the complete triangle-factor / Type-I incidence constraints simultaneously. The owner-only witness is not a full source-realizable Q32 coloring.
+The residual six-set injectivity theorem in V47_Z01_RESIDUAL_SIGNATURE_INJECTIVITY.md strengthens this: two single-outside exact colors cannot share all six residual vertices, because their pairwise residual matchings would be complementary and one would have six-cycle holonomy, forcing a large-pair repeat and triggering pair-projection injectivity. Any six-cycle single-outside signature is unique even against other source modes. The remaining bridge is to impose pair-projection injectivity, this residual-signature constraint, all cross-color matching edge-disjointness, and the complete triangle-factor / Type-I incidence constraints simultaneously. The owner-only witness is not a full source-realizable Q32 coloring.
 ### 4.4 T0--Ti omitted-vertex conservation — correct degree source
 
 For each non-target color \(C\) and track \(T_i\), let \(M_{C,0i}\) be its selected matching in \(K_{11,12}=T_0\times T_i\). It saturates all eleven T0 vertices and misses exactly one vertex \(z_i(C)\in T_i\). The eleven selected matchings and their complement \(P_{0i}\) partition \(K_{11,12}\), so
