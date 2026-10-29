@@ -588,3 +588,8 @@ Added V47_Z01_PARTIAL_PROJECTION_PACKING.md and verify_v47_z01_partial_projectio
 ## Exact projection-block CSP encoding (2026-10-29)
 
 Added a solver-ready binary encoding to V47_Z01_SHARED_P_FACTOR_PACKING.md, Section 4.3.2. Variables choose each color's residual 2-set per track, its pair projection, one of the two K2,2 matching orientations, and the common P_ij edges. Linking constraints enforce one residual set per track and a consistent pair projection; orientation-wise occupancy is at most one color; any P_ij edge forbids the matching orientation containing it. Because P_ij is a matching, each residual block is either P-free (allowing at most two colors, one per orientation) or P-hit (allowing at most one). This exactly encodes the partial projection lemma locally, while source-mode, alpha, repeat ownership, T0, and global degree constraints remain necessary. No Q32 closure claimed.
+
+
+### Projection encoding edge-conflict audit (2026-10-29)
+
+A follow-up audit caught an incompleteness in the first solver-ready encoding: key-local orientation occupancy alone does not prevent two different residual pair blocks from overlapping in an actual edge. Section 4.3.2 of V47_Z01_SHARED_P_FACTOR_PACKING.md now adds the required edge-level constraint, for every actual edge e in T_i×T_j, summing all selected orientations across every color and every pair key containing e to at most one. Keep both constraints: key-local occupancy handles duplicate projections; edge-level occupancy handles overlapping but nonidentical blocks. The encoding is still a local projection layer, not a complete CSP or Q32 closure.
