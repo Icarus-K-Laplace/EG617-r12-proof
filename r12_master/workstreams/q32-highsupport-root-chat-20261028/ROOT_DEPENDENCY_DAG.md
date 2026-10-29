@@ -389,7 +389,7 @@ The same file derives the 69/70 low-gap orientation using the registered near-Tu
 
 **V47_T0_POINTWISE_COLOR_SATURATION.md** adds an exact vertexwise ledger to the aligned z=0,1 cells. At each T0 vertex v, the eleven non-target colors have H-degrees all equal to 3 if epsilon_v=1; if epsilon_v=0, exactly one color has degree 4 and ten have degree 3. Thus \(\sum_C t_C=11-E_0\).
 
-For each exact Type-I color C, a degree-four T0 vertex must lie in G11(C), and the corrected factor occupancy gives at most two T0 vertices in G11(C), so \(t_C\le2\). This is a source-correct capacity restriction for future simultaneous color packing. It does not close the aligned cells; root status remains OPEN / NOT_CERTIFIED.
+For each exact Type-I color C, a degree-four T0 vertex must lie in G11(C). The initial occupancy count gives the coarse bound t_C<=2, but the later placement-sensitive case split proves the global bound t_C<=1 for every exact color. This is a source-correct capacity restriction for future simultaneous color packing. It does not close the aligned cells; root status remains OPEN / NOT_CERTIFIED.
 
 
 ### 8.12 T0 pointwise color-degree saturation
