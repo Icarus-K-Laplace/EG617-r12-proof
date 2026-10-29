@@ -120,12 +120,17 @@ Consequently, **every exact color in the aligned z=0,1 cell satisfies `0<=g_C<=3
 ## 7. Forced gap in the unique nonexact color
 
 The registered total gap identity is `sum_{C non-target} g_C=37`. There are ten exact colors, each with gap at most three, so the unique nonexact color D must satisfy
-[
-oxed{7\le g_D\le21},qquad
-oxed{76\le e_D(H)=69+g_D\le90}.
-]
+\[
+\boxed{7\le g_D\le19},\qquad
+\boxed{76\le e_D(H)=69+g_D\le88},\qquad
+\boxed{2\le\mu_D\le14}.
+\]
 
-For the upper bound, every O vertex lies outside each K12 clique. Applying the balanced-coloring condition to each 13-set X_i union {v} shows that D has at least one D-edge from v to each of X_1,X_2,X_3. Thus `e_D(H,O)>=14*3=42`. Since `e(D)=132`,
-`69+g_D+42<=132`, so `g_D<=21`. Also `mu_D<=21-g_D<=14`, where `mu_D=e_D(O)`.
+For the H-O lower bound, every O vertex lies outside each K12 clique. Applying the balanced-coloring condition to each 13-set X_i union {v} shows that D has at least one D-edge from v to each of X_1,X_2,X_3. Thus `e_D(H,O)>=14*3=42`.
 
-It follows that the ten exact colors contribute between 16 and 30 units of the 37-unit gap, so at least six exact colors have positive gap. This is a global budget reduction, not a contradiction; the remaining nonexact-color interval and aligned cells stay OPEN.
+There is also a shell lower bound `mu_D>=2`. The pivot p has no D-edges to A, since p-A edges are target-colored. If D[A] had an independent 12-set, adjoining p would give a D-independent 13-set, contradicting balanced coloring. Therefore `alpha(D[A])<=11`; on 13 vertices this requires at least `p_11(13)=2` edges, so `mu_D=e_D(A)>=2`.
+
+Using `e(D)=132` and `e_D(H)=69+g_D`,
+`69+g_D+42+2<=132`, hence `g_D<=19`. The upper bound on shell edges follows from `mu_D<=132-(69+g_D)-42=21-g_D<=14`.
+
+It follows that the ten exact colors contribute between 18 and 30 units of the 37-unit gap, so at least six exact colors have positive gap. This is a global budget reduction, not a contradiction; the remaining nonexact-color interval and aligned cells stay OPEN.
