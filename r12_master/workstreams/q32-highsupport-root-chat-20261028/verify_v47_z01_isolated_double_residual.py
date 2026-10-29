@@ -49,14 +49,14 @@ for gap in range(4):
         for chosen in combinations(extra_indices, gap):
             # Pointwise saturation: each T0 vertex has base degree 3 and
             # therefore may be incident to at most one extra edge.
-            if any(sum(v in edges[i] for i in chosen) > 1 for v in t0_vertices):
+            if sum(any(v in edges[i] for v in t0_vertices) for i in chosen) > 1:
                 continue
             graph = base
             for i in chosen:
                 graph |= 1 << i
             assert graph.bit_count() == 12 + gap
             graphs.add(graph)
-    assert len(graphs) == {0: 8, 1: 96, 2: 480, 3: 1312}[gap]
+    assert len(graphs) == {0: 8, 1: 96, 2: 408, 3: 880}[gap]
     # A second two-K4 base needs at least six cross-base edges, impossible
     # with at most three extras.
     for graph in graphs:
@@ -76,7 +76,7 @@ assert 9 + 6 == 15
 assert 57 + 15 == 72
 
 print("two-K4 bases:", len(bases))
-print("T0-capped relaxed graph counts:", dict(sorted(graphs_by_gap.items())))
+print("globally T0-capped relaxed graph counts:", dict(sorted(graphs_by_gap.items())))
 print("isolated-double edge accounting: checked")
-print("V47_Z01_ISOLATED_DOUBLE_RESIDUAL_T0_CAP_OK")
-print("Scope: T0-capped necessary relaxation only; not global Q32 UNSAT.")
+print("V47_Z01_ISOLATED_DOUBLE_RESIDUAL_GLOBAL_T0_CAP_OK")
+print("Scope: globally T0-capped necessary relaxation only; not global Q32 UNSAT.")
