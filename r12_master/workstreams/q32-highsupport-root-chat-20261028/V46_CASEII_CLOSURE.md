@@ -19,7 +19,7 @@ After reserving target degree13 and exact baseline degree4, the pointwise surplu
 
 - m=8: 3;
 - m=9: 4;
-- m=10: 5.
+- m=10: 4 (the 132-edge minimum-degree-three theorem supersedes the earlier floor-two budget).
 
 For a special incidence `x_C=w`, the exact-color surplus above degree4 is `5-a_C`.
 
@@ -210,13 +210,11 @@ hence
 
 These were necessary bounds for the former m=10 profiles. Section 10 eliminates all those profiles, so no v=46,m=10 Case-II row survives.
 
-## 9. Remaining v=46 status
+## 9. Superseded intermediate status and current v=46 verdict
 
-- m=8: CLOSED in both Case I and Case II;
-- m=9: Case I CLOSED; Case II OPEN only in the n=4, all-a4 row, spending at least four special core-gap units;
-- m=10: CLOSED in both Case I and Case II.
+At the time Sections 7–8 were written, the m=9 Case-II row was described as an open n=4, all-a4 row with at least four special core-gap units. That is an intermediate conditional normal form, not the current status. Section 11 combines it with Q32_130_NO_CORE_ONLY_DEG4.md and closes the row: the 130-edge color would have a core-only degree-four vertex, which is impossible.
 
-No root promotion follows: the m=9 core-gap lower bound does not exhaust the global 37-unit gap ledger.
+Current status: m=8 CLOSED in both cases; m=9 CLOSED in both cases by Section 11; m=10 CLOSED in both cases by Section 10. No root promotion follows from these non-full-support closures alone.
 
 
 ## 10. General zero-shell special-incidence bound
