@@ -168,6 +168,19 @@ where \(y_i+s_i^{\rm exact}+d_i^D=11\) on each pair. The replay counts 5,544, 70
 
 This is still only an endpoint-multiplicity relaxation, not a full common-P completion. The remaining work is to couple these endpoint profiles to the source-labelled residual triangles, all cross-color edge-disjointness, and the pairwise perfect matchings \(P_{ij}\).
 
+### 4.5.1 Endpoint support and degree caps in the E0=0 row
+
+Because the aligned zero-slack ledger makes each \(H[T_0,T_i]\) a matching on both sides, its endpoint multiset is a set. Combining this with \(n_i(v)+\delta_i^D(v)=h_i(v)+r_i^D(v)\) gives:
+- On \(T_1\), the six exact nonrepeat omissions and D's omission are seven distinct vertices, exactly the seven H endpoints.
+- On \(T_3\), the seven exact nonrepeat omissions and D's omission are eight distinct vertices, exactly the eight H endpoints.
+- On \(T_2\), the seven exact nonrepeat omissions plus D's omission are either eight distinct vertices (if the D-repeat endpoint is outside the H endpoint set) or have exactly one doubled vertex (if the D-repeat endpoint is also an H endpoint).
+
+Under the all-Class-A allocation of Section 4.6, the exact T0-repeat endpoints are also distinct within each track, because all owners on a given track use the same large-pair matching. If \(a_i(v)\) counts exact T0-repeat edges ending at v, then \(a_i(v)\le1\), and
+\[
+d_{P_{0i}}(v)=a_i(v)+h_i(v)+r_i^D(v).
+\]
+Consequently the E0=0 scalar row has endpoint-degree caps \(d_{P_{01}}(v)\le2\), \(d_{P_{03}}(v)\le2\), and \(d_{P_{02}}(v)\le3\). The cap 3 on \(T_2\) can occur only if an exact repeat, an H edge, and the unique D-repeat edge all end at the same vertex. These are necessary constraints for the vertex-labelled CSP, not a contradiction.
+
 ### 4.6 Forced Class-A allocation in the E0=0 scalar row
 
 For the scalar profile used by the former owner-only construction, the exact large-pair repeat counts are \(l_{12},l_{13},l_{23}=(7,0,3)\), while the exact T0-repeat counts by track are \(s_1,s_2,s_3=(4,3,3)\). If all ten exact colors are in the **Class-A shared-track mode**, let \(x_{ij}\) count colors whose T0 repeat lies on \(T_0T_i\) and whose large-pair repeat lies on \(T_iT_j\). Then
