@@ -469,16 +469,11 @@ The Class-B-specific law remains: in the seven-vertex Class-B mode, \(x_C\in T_0
 
 The prior `verify_v47_z01_vertex_labelled_common_p_witness.py` construction remains an owner-only relaxation and is not a feasible common-P packing because 9 residual-signature collision pairs / 36 duplicate baseline-edge claims force different colors to reuse the same baseline matching edges. Correction: the additional claim of 20 direct P_0i/K4-baseline overlaps was false. The source construction uses w-y_j in P_0j but w-s_j in the K4 baseline; these are distinct vertices/edges. The verifier now asserts zero such overlaps. Q32 remains OPEN / NOT_CERTIFIED.
 
-### 14l. T0--Ti omitted-vertex conservation — corrected endpoint degrees
+### 14l. T0--Ti omitted-vertex conservation — degree source corrected
 
-For every selected matching M_C,0i saturating T0 and missing z_i(C) in T_i, the common complement satisfies d_P0i(v)=#{C:z_i(C)=v}. In the single-T0-residual seven-vertex Type-I mode only, an exact color's own T0 repeat edge x_C-v forces z_i(C)=v. Cancelling those repeat owners gives
-n_i(v)+1[z_i(D)=v]=h_i(v)+r_i^D(v),
-where n_i(v) counts exact colors without a T0 repeat on this pair that omit v, h_i(v) is the H degree from v∈T_i to T0, and r_i^D(v) counts D-repeat edges ending at v.
+For each selected matching M_C,0i saturating T0 and missing z_i(C) in T_i, the complement satisfies d_P0i(v)=#{C:z_i(C)=v}. In the single-T0-residual seven-vertex Type-I mode, exact repeat owners cancel to give n_i(v)+1[z_i(D)=v]=h_i(v)+r_i^D(v), where n_i counts exact colors without a T0 repeat on this pair, h_i(v) is the H degree from v∈T_i to T0, and r_i^D(v) is D-repeat endpoint multiplicity.
 
-The previous bound h_i(v)≤1 was incorrect: the established asymmetric lemma bounds H-neighbors per T0 vertex into T_i, not H degree at a T_i vertex. Thus the earlier injectivity conclusion is withdrawn. The equation gives a multiset endpoint conservation law, but it permits concentrated multiplicities in the endpoint-only relaxation. The eight-vertex isolated-double branch remains separately scoped and has no source-repeat cancellation certified yet.
-
-The exact profile verifier checks the E0=0 scalar row (y,s_exact,d_D)=((7,7,8),(4,3,3),(0,1,0)) over 12 endpoint vertices per track, with 148,512 / 2,015,520 / 381,888 valid endpoint profiles. It finds concentrated local profiles with six or seven exact nonrepeat omissions at one vertex; these do not constitute full colorings, but refute any injectivity claim based on the multiset identity and current degree ledger alone. Q32 remains OPEN / NOT_CERTIFIED.
-
+The generic 13-set lemma is asymmetric, but the aligned 3+7 zero-slack degree ledger separately gives every large-track vertex total H cross-track degree one. Thus h_i(v)≤1 is valid under the frozen aligned contract. It follows that away from D-repeat endpoints, exact nonrepeat omissions are injective; at a D-repeat endpoint, multiplicity at most 1+r_i^D(v) is allowed. The exact endpoint-profile verifier checks 5,544 / 70,488 / 3,960 profiles for the E0=0 scalar row, with maximum multiplicities 1,2,1. Do not export this degree cap beyond the zero-slack contract or apply the source-repeat cancellation to the eight-vertex isolated-double mode without a separate proof. This is not a Q32 closure.
 
 ### 14m. Forced Class-A repeat allocation in the E0=0 scalar row
 
