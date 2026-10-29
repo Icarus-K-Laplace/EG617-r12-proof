@@ -521,3 +521,10 @@ Updated the shared-P packing note and aggregate verifier to impose this source-d
 The previously logged universal complement law was too strong and is withdrawn. A source-correct counterexample exists with x_C outside H, N_s single-outside, N_t double-outside, and A_0={w,s_j}, where w is the T0 vertex and y lies in T_i: the two H-H gadget edges yw and ys_j yield g_C=2,t_C=1, and the valid class-B baseline can leave extras ws_i on T0-T_i and ys_j on T_i-T_j. These pair types share track i, so no universal complementary-pair rule holds.
 
 The packing note and verifier now use an explicit source-compatible local mode and a corrected aggregate witness: exact surplus (7,0,3;4,3,3), D surplus (1,9,6;0,1,0), g_D=17. The verifier passed the independent Python replay with SOURCE_LOCAL_AGGREGATE_BUDGET_WITNESS_OK. This still omits common-P endpoint labels and does not close Q32.
+
+
+### Audit correction: the purported Class-B counterexample is actually Class A — 2026-10-29
+
+A fresh source-baseline audit found that the prior retraction of the Class-B complement law was based on misclassifying the local graph. In the \(x_C\in O\), \(N_s\)-single, \(N_t\)-double mode, the true nine-edge baseline is the K4 H-part of \(N_s\) plus the K3 H-part of \(N_t\). Its three T0 attachments all go to the K4 triangle (Class A). The gadget edges \(yw\) and \(ys_j\) are the two extras; \(ws_i\) is already a K4 edge. The graph has \(\alpha=2\), \(g_C=2,t_C=1\), and the shared-track pattern is genuinely source-realizable in Class A.
+
+The Class-B-specific complementary-pair law remains valid under its own source contract: \(x_C\in T_0\), both special factors double-outside, \(y\in H\); then the T0 repeat is on \(T_0T_k\) and the large-pair repeat on complementary \(T_iT_j\). Updated the packing note and verifier to distinguish these modes. A clean local replay checked all six Class-A source patterns, each with \(\alpha=2\), and rechecked the aggregate witness: exact surplus (7,0,3;4,3,3), D surplus (1,9,6;0,1,0), \(g_D=17\). The common endpoint-labelled packing remains OPEN.
