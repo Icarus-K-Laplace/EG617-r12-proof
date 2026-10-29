@@ -7,9 +7,9 @@ Status: **PROVED_CONDITIONAL exact structural theorem.** No Q32 closure claimed.
 
 ## 1. Contract
 
-Use the aligned z=0,1 cell from \`V47_Z01_TRACK_ALIGNMENT.md\`. The target-color graph H is partitioned into target cliques
-\`T_1,T_2,T_3\\cong K_{12}\` and \`T_0\\cong K_{11}\`.
-Let \`\\mathcal C\` be the eleven non-target colors. Every 13-vertex set contains every color, so each C in \`\\mathcal C\` has independence number at most 12.
+Use the aligned z=0,1 cell from `V47_Z01_TRACK_ALIGNMENT.md`. The target-color graph H is partitioned into target cliques
+`T_1,T_2,T_3\cong K_{12}` and `T_0\cong K_{11}`.
+Let `\mathcal C` be the eleven non-target colors. Every 13-vertex set contains every color, so each C in `\mathcal C` has independence number at most 12.
 
 The cross-track ledger proves that H-edges between two K12 tracks form a matching, and that each vertex of T0 has at most one H-neighbor in any K12 track.
 
@@ -18,10 +18,10 @@ The cross-track ledger proves that H-edges between two K12 tracks form a matchin
 ### Two K12 tracks
 
 Let X,Y be two K12 tracks and fix a non-target color C. Both X and Y are independent sets in the C-colored graph. For any nonempty S subset Y with |S|=k, if its C-neighborhood in X had size at most k-1, then at least
-\`12-(k-1)=13-k\`
+`12-(k-1)=13-k`
 vertices of X would have no C-edge to S. Selecting 13-k of them together with S would give a C-independent 13-set, contradiction. Hence
 \[
-|N_C(S)\\cap X|\\ge |S|\\quad\\text{for every }S\\subseteq Y.
+|N_C(S)\cap X|\ge |S|\quad\text{for every }S\subseteq Y.
 \]
 Hall's theorem gives a perfect matching M_C between X and Y in color C.
 
@@ -29,18 +29,18 @@ Choose one such matching M_C for each of the eleven non-target colors. Since dis
 
 Every H-edge lies in P, because none can belong to a non-target-color matching M_C. Every C-colored edge not selected into M_C also lies in P. Thus
 \[
-\\boxed{K_{12,12}=P\\;\\dot\\cup\\;\\bigdotcup_{C\\in\\mathcal C}M_C.}
+\boxed{K_{12,12}=P\;\dot\cup\;\bigdotcup_{C\in\mathcal C}M_C.}
 \]
 This is a 1-factorization into twelve edge-disjoint perfect matchings. P depends on the chosen M_C matchings; no uniqueness is asserted.
 
 For a fixed choice, write
 \[
-s_{C,ij}=|P_{ij}\\cap E_C(T_i,T_j)|.
+s_{C,ij}=|P_{ij}\cap E_C(T_i,T_j)|.
 \]
 Then
 \[
-e_C(T_i,T_j)=12+s_{C,ij},\\qquad
-\\sum_C s_{C,ij}=12-e_H(T_i,T_j).
+e_C(T_i,T_j)=12+s_{C,ij},\qquad
+\sum_C s_{C,ij}=12-e_H(T_i,T_j).
 \]
 Every C-edge in P is a repeated-color edge relative to the selected baseline matching M_C. Conversely every vertex that repeats C has its second C-edge in P. The set of C-colored edges in P is a matching because P is a matching, and it pairs the repeated-C vertices on the two sides.
 
@@ -49,21 +49,21 @@ The previous degree ledger gives e_H(T_i,T_j)<=9, so every such residual factor 
 ## 3. The asymmetric K11--K12 pair
 
 Fix T0 and a K12 track Ti. For every non-target color C, its bipartite graph between T0 and Ti satisfies Hall's condition on the T0 side. If S subset T0 has size k>=1 and its C-neighborhood in Ti has size at most k-1, then at least
-\`12-(k-1)=13-k\`
+`12-(k-1)=13-k`
 vertices of Ti avoid S. Selecting 13-k of them with S gives a C-independent 13-set, contradiction. Thus each C has a matching saturating T0.
 
 Choose one such matching M_C for each non-target color. They are edge-disjoint and use eleven edges at every T0 vertex. Their complement P0i has exactly one edge incident to every T0 vertex, hence 11 edges, but it need not be a matching on the Ti side. All H-edges and all unselected C-edges lie in P0i. No symmetric degree-one or matching claim is made for the larger side.
 
-For a fixed choice, if \`s_{C,0i}=|P_{0i}\\cap E_C(T_0,T_i)|\`, then
+For a fixed choice, if `s_{C,0i}=|P_{0i}\cap E_C(T_0,T_i)|`, then
 \[
-e_C(T_0,T_i)=11+s_{C,0i},\\qquad
-\\sum_C s_{C,0i}=11-e_H(T_0,T_i).
+e_C(T_0,T_i)=11+s_{C,0i},\qquad
+\sum_C s_{C,0i}=11-e_H(T_0,T_i).
 \]
 This is the precise asymmetric counterpart of the K12--K12 factorization.
 
 ## 4. Low-gap color orientation forced by the four tracks
 
-Let \`g_C=e_C(H)-69\`.
+Let `g_C=e_C(H)-69`.
 
 ### g_C=0
 
@@ -82,7 +82,7 @@ The low-gap orientation conclusion uses the registered 69/70 near-Turan classifi
 ### Consequence for the nonexact-color gap split
 
 In the aligned cell, the ten exact colors satisfy 0<=g_C<=3, while the unique nonexact color D satisfies 7<=g_D<=19, and
-\`\\sum_{C\\text{ exact}}g_C=37-g_D\`.
+`\sum_{C\text{ exact}}g_C=37-g_D`.
 
 If g_D>=18, the exact-color gap sum is at most 19, so at least one of the ten exact colors has g_C<=1. The preceding rigid 69/70 orientation then applies to at least one exact color.
 
