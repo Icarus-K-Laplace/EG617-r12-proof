@@ -16,10 +16,10 @@ Define:
   omega_i = #{v: h_i(v)>0 and l_i(v)>0} (T0/large-H endpoint overlap).
 Pointwise degree conservation gives the exact identity E_i=u_i+k_i+omega_i.
 
-The omitted-vertex identity is n_i+delta_D=h_i+r_D. If D repeats on T0--Ti,
-its omitted vertex is exactly that repeat endpoint, so delta_D=r_D and n_i=h_i.
-If D has no repeat on this pair, z_i(D) must be an H endpoint and
-n_i=h_i-delta_D.
+The omitted-vertex identity is n_i+delta_D=h_i+r_D. No D-specific source lemma currently identifies D's
+omitted vertex with its repeat-edge endpoint, so keep delta_D and r_D
+independent when D has a repeat. If D has no repeat on this pair, z_i(D)
+must be an H endpoint and n_i=h_i-delta_D.
 
 This is an endpoint/local-degree relaxation only; it does not impose the
 source-labelled residual triangles, actual pairwise matching edges, or full
