@@ -3,10 +3,9 @@
 
 The eight residual vertices have parts (2,2,2,2) and are partitioned into
 two transversal K4s. Their 12 possible cross-K4 edges are the only possible
-extra edges in this relaxation. Each T0 residual vertex has baseline C-degree
-3; pointwise balanced-coloring saturation caps it at 4, so at most one extra
-edge may be incident to each of the two T0 vertices. Enumerate all bases and
-all extra sets of size 0..3 subject to that cap.
+extra edges in this relaxation. Each T0 residual vertex has baseline C-degree 3. The global exact-color
+bound t_C<=1 permits at most one T0-incident extra edge in total across both
+T0 vertices. Enumerate all bases and extra sets of size 0..3 subject to that cap.
 
 This counts a necessary relaxation, not source-realizable gadget completions.
 The special x/y star geometry in the source is stricter still.
