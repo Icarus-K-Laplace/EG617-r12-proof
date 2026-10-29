@@ -62,6 +62,8 @@ If \(T_k=T_0\), both \(x_C,y\in T_0\). Each already has three C-neighbors in H a
 
 Thus the exceptional branch cannot have \(x_C,y\in T_0\). If their common track is one of \(T_1,T_2,T_3\), the per-vertex cross-track degree is only one **in total**, not one into each other track. The balanced-coloring argument therefore does not yet exclude that case; it remains OPEN and must not be treated as closed.
 
+Although this large-track-centered graph branch remains open, the placement-sensitive T0 repeat-owner count is determined: the residual profile (2,2,2,2) puts one T0 vertex in the special N_t H-K4 and the other in the special N_s H-K3. The former has three internal C-neighbors plus the x_C gadget edge, so degree four; the latter has two triangle neighbors plus its unique gadget edge, so degree three. Hence t_C=1 in this exceptional branch. This is the global bound proved in V47_T0_POINTWISE_COLOR_SATURATION.md; it does not close the graph branch.
+
 ## 4. Exact count of the two-\(K_4\) local relaxation with the global T0 cap
 
 For the two-\(K_4\) subcases above, each \(K_4\) is transversal across \(T_1,T_2,T_3,T_0\). There are eight labeled unordered two-\(K_4\) bases (choose which of the two vertices in each track belongs to the first \(K_4\), modulo swapping the two \(K_4\)s). Between the two \(K_4\)s there are 12 allowed cross-part edges; the four same-track pairs are forbidden because each track is a target-color clique.
