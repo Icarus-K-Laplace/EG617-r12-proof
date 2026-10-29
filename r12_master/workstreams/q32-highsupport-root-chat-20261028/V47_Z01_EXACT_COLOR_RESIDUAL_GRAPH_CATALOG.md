@@ -7,29 +7,29 @@ Status: **PROVED_CONDITIONAL local reduction plus exhaustive 7-vertex catalog.**
 
 The source-correct Type-I factorization is
 \[
-C=10K_5\\;\\dot\\cup\\;G_{11}.
+C=10K_5\;\dot\cup\;G_{11}.
 \]
 Each of the ten isolated K5 components meets O in exactly one vertex, so its other four vertices form an isolated C-colored K4 in H. Every such K4 is transversal across the target tracks T0,T1,T2,T3, because each track is a target-color clique and hence C-independent.
 
 The ten isolated K4s use 10 vertices from each track. The remaining seven H vertices, denoted R_C, therefore have track profile
 \[
-(|R_C\\cap T_1|,|R_C\\cap T_2|,|R_C\\cap T_3|,|R_C\\cap T_0|)
+(|R_C\cap T_1|,|R_C\cap T_2|,|R_C\cap T_3|,|R_C\cap T_0|)
 =(2,2,2,1).
 \]
 There are no C-edges from R_C to the ten isolated K4s, since those K5s are isolated components of the full color graph.
 
 Let J_C=C[R_C]. The ten isolated K4s contribute 60 edges to C[H], while
 \[
-e_C(H)=69+g_C,\qquad 0\\le g_C\\le3.
+e_C(H)=69+g_C,\qquad 0\le g_C\le3.
 \]
 Consequently
 \[
-\\boxed{|V(J_C)|=7,\\quad e(J_C)=9+g_C,\\quad 0\\le g_C\\le3.}
+\boxed{|V(J_C)|=7,\quad e(J_C)=9+g_C,\quad 0\le g_C\le3.}
 \]
 
 Since \alpha(C)<=12 and the ten isolated K4s are separate components,
 \[
-10+\\alpha(J_C)=\\alpha(C[H])\\le12,
+10+\alpha(J_C)=\alpha(C[H])\le12,
 \]
 so \alpha(J_C)<=2. It is exactly two because each track pair of residual vertices is independent.
 
@@ -66,7 +66,7 @@ For g_C=2 or 3, the necessary graph constraints alone no longer force a K4+K3 ba
 
 For each exact color C, the ten isolated transversal K4s cover 10 vertices in every target track. Its remaining 7 vertices support J_C, whose edges are the only C-edges in H not already accounted for by those ten isolated components.
 
-The three large-track pairwise color matchings and the T0--Ti matchings from \`V47_Z01_CANONICAL_RESIDUAL_ONE_FACTORIZATION.md\` must be compatible with these residual seven-vertex graphs. The catalog isolates the exact local frontier:
+The three large-track pairwise color matchings and the T0--Ti matchings from `V47_Z01_CANONICAL_RESIDUAL_ONE_FACTORIZATION.md` must be compatible with these residual seven-vertex graphs. The catalog isolates the exact local frontier:
 - gaps 0 and 1 have rigid K4+K3 structure;
 - gaps 2 and 3 have a finite set of additional local shapes;
 - each exact color has gap at most 3, and the nonexact color has gap at least 7.
