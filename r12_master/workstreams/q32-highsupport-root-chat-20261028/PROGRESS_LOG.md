@@ -586,3 +586,8 @@ From the exhaustive 19-case source audit, the x-in-H two-double Class-B row y in
 ### Residual six-set injectivity upgraded to all source modes — 2026-10-29
 
 Strengthened the conditional theorem in V47_Z01_RESIDUAL_SIGNATURE_INJECTIVITY.md. The proof now covers isolated-double modes as well as single-outside: if two exact colors shared the same six residual vertices, their three pairwise K2,2 matchings would be complementary and one would induce a six-cycle. In single-outside mode that costs g_C>=2; in isolated-double two-K4 subcases, star extras cannot supply both disjoint cross edges needed to flip a pair matching; in the exceptional isolated-double branch, g_C=3,t_C=1. Therefore any possible six-cycle color has at least one large-pair repeat, and pair-projection injectivity rules out the shared residual pair. The 8-case parity replay passed. This proves global residual-six-set injectivity but not partial pair-projection injectivity or full common-P feasibility.
+
+
+### Partial pair-projection packing — 2026-10-29
+
+Proved a block-level multiplicity constraint for residual pair projections. On a fixed K2,2 residual block A×B, the two possible color matching restrictions are the two perfect matchings. Any edge of common P_ij inside that block forbids one of them, so the pair key can be used by at most one exact color. Therefore duplicated projections require the entire block to be P-free; then exactly two colors can use it, one per complementary matching. Any two colors share at most one pair projection, because sharing two would give the same full residual signature, prohibited by the all-mode signature-injectivity theorem. Added a seven-case local verifier. No global common-P feasibility or Q32 closure is claimed.
