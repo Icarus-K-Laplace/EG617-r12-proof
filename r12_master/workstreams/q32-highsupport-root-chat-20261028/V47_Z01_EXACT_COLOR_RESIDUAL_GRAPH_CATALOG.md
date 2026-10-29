@@ -47,7 +47,7 @@ There are exactly 18 possible edges between parts of sizes (2,2,2,1). The compan
 1. e(J_C) is 9, 10, 11, or 12;
 2. alpha(J_C)<=2;
 3. the six big-part vertices have degree at least two;
-4. the T0 singleton has degree at least three.
+4. the T0 singleton has degree exactly three or four, using pointwise balanced-coloring saturation.
 
 It also tests whether the graph contains a disjoint K4+K3 base with the K4 transversal across all four parts and the K3 on T1,T2,T3.
 
@@ -57,8 +57,8 @@ Exact counts:
 |---:|---:|---:|---:|---:|
 | 0 | 9 | 8 | 8 | 0 |
 | 1 | 10 | 72 | 72 | 0 |
-| 2 | 11 | 384 | 288 | 96 |
-| 3 | 12 | 1,148 | 668 | 480 |
+| 2 | 11 | 360 | 264 | 96 |
+| 3 | 12 | 1,000 | 520 | 480 |
 
 For g_C=0, the eight graphs are exactly the eight choices of a transversal K4; the remaining vertices form the K3. For g_C=1, every admissible graph is one such K4+K3 base plus one extra cross-part edge. This independently reproduces the 69/70 near-Turan rigidity in the seven-vertex residual.
 
@@ -73,4 +73,4 @@ The three large-track pairwise color matchings and the T0--Ti matchings from `V4
 - gaps 2 and 3 have a finite set of additional local shapes;
 - each exact color has gap at most 3, and the nonexact color has gap at least 7.
 
-The next step within this subcase is to couple these per-color residual shapes through edge uniqueness across the common track pairs. The isolated-double branch must be handled separately before this catalog can be used globally. The local catalog does not close z=0,1. E408/Q32 and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
+The pointwise T0 cap is essential: the residual singleton has baseline C-degree three, so at most one of the three T0--Ti surplus edges may be present. The next step within this subcase is to couple these per-color residual shapes through edge uniqueness across the common track pairs. The isolated-double branch must be handled separately before this catalog can be used globally. The local catalog does not close z=0,1. E408/Q32 and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
