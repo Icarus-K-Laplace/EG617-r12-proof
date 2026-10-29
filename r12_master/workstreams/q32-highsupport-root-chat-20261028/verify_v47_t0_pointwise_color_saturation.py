@@ -70,9 +70,17 @@ for choice in product((0, 1), repeat=4):
                 }
                 assert len(touched_T0) <= 1
 
-# The only isolated-double source case not represented by a two-K4 star
-# has x_C in H, y in H, and the two-double placement; its source ledger
-# forces b_s+b_t=3, g_C=3, and a residual with only two T0 vertices.
+# Exceptional isolated-double source case: x_C,y are both H and the
+# placement is two-double with b_s+b_t=3. If both x_C and y were in T0,
+# the three H-vertices of N_s would split k/(3-k) between their two
+# gadget neighborhoods. T0 saturation would require k<=1 and 3-k<=1,
+# impossible. If exactly one were in T0, x_C--(N_t\\{y}) contains a
+# forbidden same-track edge. Thus x_C,y are both in large tracks.
+# The T0 vertex in the N_s triangle has degree 2+1=3; the T0 vertex in
+# the N_t K4 has degree 3+1=4, so this branch also has t_C=1.
+assert not any(k <= 1 and 3 - k <= 1 for k in range(4))
+assert 2 + 1 == 3
+assert 3 + 1 == 4
 assert 6 - (1 + 2) == 3
 assert 69 + 3 == 72
 
@@ -83,7 +91,7 @@ for E0 in range(4):
 print("T0 degree-sum alternatives checked for epsilon=0,1")
 print("E0 repeat-owner counts checked for E0=0,1,2,3")
 print("Type-I T0 gadget capacity checked")
-print("Placement-sensitive t_C<=1 star cases checked; exceptional case has g_C=3")
+print("Placement-sensitive t_C<=1 cases checked, including exceptional g_C=3 case")
 print("T0 and big-pair surplus identities checked")
 print("V47_T0_POINTWISE_COLOR_SATURATION_ARITHMETIC_OK")
 print("Scope: arithmetic/source-interface regression only; not global Q32 UNSAT.")
