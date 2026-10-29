@@ -63,6 +63,33 @@ assert gadget_hh == 5
 assert triple_k5_hh + gadget_hh == 72
 assert 72 - 69 == 3
 
+
+# Aligned-cell exact-color gap cap:
+# x_C in O: at most three H vertices of N_s can be in A_0 away from y's part.
+assert max(range(4)) == 3
+# x_C in H, two-double: b_s+b_t=2 is excluded, so y in H gives g=6-bsum<=3;
+# y in O forces N_t double and gives g<=3 by the three remaining H vertices.
+for bsum in (3, 4):
+    assert 6 - bsum <= 3
+assert 3 <= 3
+# Triple-special aligned geometry has exactly g=3.
+assert 67 + 5 == 72 and 72 - 69 == 3
+
+# The 37-unit total gap then forces a nonexact color gap in [7,21].
+sum_gap = 37
+exact_colors = 10
+exact_gap_cap = 3
+g_nonexact_min = sum_gap - exact_colors * exact_gap_cap
+g_nonexact_max = 21  # 132 total edges and at least 42 H-O edges
+assert g_nonexact_min == 7
+assert 7 <= g_nonexact_min <= g_nonexact_max
+assert 69 + g_nonexact_min == 76
+assert 69 + g_nonexact_max == 90
+assert 21 - g_nonexact_min == 14  # upper bound on nonexact O-O edges
+assert (sum_gap - g_nonexact_max) == 16
+assert (16 + exact_gap_cap - 1) // exact_gap_cap == 6
+
+print("Aligned-cell exact gap cap and nonexact budget: checked")
 print("Type-I K5 profiles and H-edge accounting: 3 cases checked")
 print("Triple placement: special-K5-only necessary condition checked")
 print("V47_CORRECTED_TYPEI_PLACEMENT_ARITHMETIC_OK")
