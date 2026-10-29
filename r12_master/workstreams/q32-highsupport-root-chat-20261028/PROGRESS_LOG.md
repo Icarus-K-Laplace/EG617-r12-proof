@@ -542,3 +542,10 @@ This is a vertex-labelled witness for the common-P and source-local residual rel
 The six-cycle labelled witness was re-audited against the cross-color matching requirement. It is only an owner-only relaxation: cycle-owner multiplicities are (3,3,3,1), yielding 9 pairs of colors with identical residual six-sets and 36 duplicate claims on the same six baseline edges. Therefore it is not a feasible common-P color-matching packing; its value is to expose the exact missing constraint.
 
 Proved the pair-projection injectivity lemma: if exact color C owns a large repeat edge in S_ij, P_ij has an edge inside R_i(C) x R_j(C). Since the two perfect matchings on this K2,2 block partition all four edges, at most one perfect matching on the block is disjoint from P_ij. Thus M_C,ij is forced on this block; any other exact color with the same residual subsets on tracks i,j would have the same M_C,ij edges, contradicting color edge-disjointness. The next solver must enforce this pair-projection injectivity and full cross-color matching disjointness. No global Q32 claim changes.
+
+
+### Source-mode local audit and common-P construction retraction — 2026-10-29
+
+Added `V47_Z01_TWO_DOUBLE_SOURCE_PATTERN_AUDIT.md` and its exact verifier. After fixing an unordered track-pair assertion, the independent replay passed 19 labeled cases: counts `{yO_a3:1, yO_a2:3, yH_a2:3, yH_a1:12}`. This certifies the local source incidence only for the subcase with all ten isolated K5s single-outside, both special K5 factors double-outside, and x in T0; it is not a global Q32 result.
+
+A further audit found that the prior owner-only common-P construction has 20 direct P_0i / own-K4-baseline overlaps (two for each of ten exact colors). Those edges cannot lie in P_0i, which is defined as the complement of all selected color matchings. The witness script is now a retraction audit, not a success certificate. The separate residual-signature audit still finds 9 colliding color pairs and 36 duplicate baseline-edge claims. Both failures are recorded; the Q32 root remains OPEN / NOT_CERTIFIED.
