@@ -3,6 +3,8 @@
 Date: 2026-10-29  
 Status: **PROVED_CONDITIONAL exact degree ledger.** This adds a vertexwise constraint to the aligned z=0,1 cell; no Q32 closure is claimed.
 
+> **Scope note (2026-10-29):** this degree-saturation theorem and the identity (g_C\ge t_C) do not assume all ten isolated K5 components are single-outside. The seven-vertex residual catalog is conditional; the isolated-double alternative is documented separately.
+
 ## 1. Contract
 
 Use the aligned low-z profile (2,2,2,1): the target graph H is partitioned into target cliques
