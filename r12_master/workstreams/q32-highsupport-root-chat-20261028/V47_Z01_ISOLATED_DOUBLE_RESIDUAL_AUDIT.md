@@ -62,22 +62,23 @@ If \(T_k=T_0\), both \(x_C,y\in T_0\). Each already has three C-neighbors in H a
 
 Thus the exceptional branch cannot have \(x_C,y\in T_0\). If their common track is one of \(T_1,T_2,T_3\), the per-vertex cross-track degree is only one **in total**, not one into each other track. The balanced-coloring argument therefore does not yet exclude that case; it remains OPEN and must not be treated as closed.
 
-## 4. Exact count of the two-\(K_4\) local relaxation with T0 degree cap
+## 4. Exact count of the two-\(K_4\) local relaxation with the global T0 cap
 
 For the two-\(K_4\) subcases above, each \(K_4\) is transversal across \(T_1,T_2,T_3,T_0\). There are eight labeled unordered two-\(K_4\) bases (choose which of the two vertices in each track belongs to the first \(K_4\), modulo swapping the two \(K_4\)s). Between the two \(K_4\)s there are 12 allowed cross-part edges; the four same-track pairs are forbidden because each track is a target-color clique.
 
-Each T0 residual vertex has baseline C-degree three. Pointwise balanced-coloring saturation caps its C-degree at four, so at most one extra edge may be incident to each of the two T0 residual vertices. The companion verifier enumerates all subsets of the 12 cross-K4 edges of size \(g_C\le3\) subject to this cap. The six edges not incident to T0 are unrestricted; each of the two T0 vertices has three possible cross-K4 edges, from which at most one may be chosen.
-
-The exact counts in this T0-capped relaxation are
+The global pointwise theorem gives \(t_C\le1\), so at most one T0-incident extra edge may be selected across both T0 residual vertices. Among the 12 allowed cross-part edges, six are T0-incident and six join large-track vertices. Choosing \(g_C\) extras with at most one from the T0-incident group gives per-base counts
 \[
-8,\quad 96,\quad 480,\quad 1312
+1,\ 12,\ 51,\ 110
 \]
-for \(g_C=0,1,2,3\), respectively. For each base, the numbers of allowed extra sets are \(1,12,60,164\). For \(g_C\le3\), the disjoint two-\(K_4\) base is unique, so these counts do not double-count graphs.
+for \(g_C=0,1,2,3\), respectively. Across eight unordered bases, the exact counts are
+\[
+\boxed{8,\ 96,\ 408,\ 880}.
+\]
+These supersede the weaker per-T0-vertex-cap counts \(8,96,480,1312\) and the earlier uncapped counts \(8,96,528,1760\). For \(g_C\le3\), the disjoint two-\(K_4\) base is unique, so the counts do not double-count graphs.
 
 The source-derived extra-edge set is stricter still: in the \(x_C\in O\) case, extras form a star centered at \(y\); in the \(x_C\in H,y\in O\) case, extras form a star centered at \(x_C\). If that star center lies in T0, the pointwise cap forces \(g_C\le1\). If the center lies in a large track, up to three star edges may survive, subject to the detailed source incidence restrictions.
 
 These are counts of a necessary relaxation, **not** counts of source-realizable gadget completions. The companion verifier is verify_v47_z01_isolated_double_residual_graphs.py.
-
 ## 5. Correct scope of the seven-vertex holonomy theorem
 
 The seven-vertex catalog and its four holonomy classes apply only when all ten isolated components are single-outside. In the isolated-double branch, the eight-vertex accounting above replaces it.
