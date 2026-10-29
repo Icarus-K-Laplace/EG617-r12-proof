@@ -108,6 +108,7 @@ def extra_is_pairwise_matching(extra):
 
 baseline_counts = Counter()
 repair_counts = Counter()
+t0_split_counts = Counter()
 minimum_gap = {}
 minimum_repairs = Counter()
 baselines = 0
@@ -209,6 +210,8 @@ for switches in product((0, 1), repeat=3):
                 if alpha(base_mask | mask_of(extra)) > 2:
                     continue
                 repair_counts[(cls, gap)] += 1
+                t0_extra_count = sum(6 in e for e in extra)
+                t0_split_counts[(cls, gap, t0_extra_count, gap - t0_extra_count)] += 1
                 old = minimum_gap.get(cls, 4)
                 if gap < old:
                     minimum_gap[cls] = gap
@@ -225,11 +228,24 @@ assert repair_counts == Counter({
     ("C", 2): 72, ("C", 3): 720,
     ("D", 3): 72,
 })
+assert t0_split_counts == Counter({
+    ("A", 0, 0, 0): 8,
+    ("A", 1, 0, 1): 48, ("A", 1, 1, 0): 24,
+    ("A", 2, 0, 2): 120, ("A", 2, 1, 1): 144,
+    ("A", 3, 0, 3): 160, ("A", 3, 1, 2): 360,
+    ("B", 1, 1, 0): 24,
+    ("B", 2, 0, 2): 24, ("B", 2, 1, 1): 192,
+    ("B", 3, 0, 3): 96, ("B", 3, 1, 2): 600,
+    ("C", 2, 0, 2): 72,
+    ("C", 3, 0, 3): 216, ("C", 3, 1, 2): 504,
+    ("D", 3, 1, 2): 72,
+})
 
 print("baselines:", baselines)
 print("baseline classes:", dict(sorted(baseline_counts.items())))
 print("minimum gap by class:", dict(sorted(minimum_gap.items())))
 print("minimum-size repairs:", dict(sorted(minimum_repairs.items())))
 print("all repair counts:", dict(sorted(repair_counts.items())))
+print("T0/large-track surplus split:", dict(sorted(t0_split_counts.items())))
 print("V47_Z01_RESIDUAL_HOLONOMY_COST_OK")
 print("Scope: exact local residual model only; not global Q32 UNSAT.")
