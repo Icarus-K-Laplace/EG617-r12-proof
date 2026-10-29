@@ -411,3 +411,9 @@ The holonomy verifier checks the exact minimum repairs. Class C has three indepe
 ### 14f. Conditional seven-vertex residual graph catalog
 
 Added `V47_Z01_EXACT_COLOR_RESIDUAL_GRAPH_CATALOG.md` and its verifier for the all-isolated-single-outside subcase only. The 7-vertex necessary relaxation has profile (2,2,2,1), e=9+g_C, alpha at most 2, and counts 8,72,384,1,148 at gaps 0,1,2,3. The source-correct isolated-double branch instead has an 8-vertex G11 residual; see `V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md`. Neither catalog closes the aligned cells.
+
+### 14g. Isolated-double residual branch and catalog scope correction
+
+The seven-vertex residual catalog and 64-class holonomy theorem are conditional on all ten isolated Type-I K5 components being single-outside. The source-correct 69-edge placement registered in HIGH_SUPPORT_NEAR_TURAN.md, Section 3, has one double-outside isolated component, so its residual accounting is different: the isolated H-subgraph is 9K4 plus K3 (57 edges), while G11 contributes an 8-vertex residual of profile (2,2,2,2) with 12+g_C edges.
+
+This correction is documented in V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md and checked by verify_v47_z01_isolated_double_residual.py. In the low-gap isolated-double subcases, the residual contains two disjoint transversal K4s; the exceptional x_C in H, y in H placement has g_C=3. The global g=0,1 alignment result is still supplied by the independent 69/70 near-Turan classification, not by applying the 7-vertex holonomy table to every color. No dependency to a Q32 UNSAT certificate is created.
