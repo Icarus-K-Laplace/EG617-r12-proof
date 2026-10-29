@@ -470,7 +470,7 @@ A further pointwise cap was missing from the first enumerator versions. In the s
 
 ### Isolated-double residual enumeration tightened by T0 saturation (2026-10-29)
 
-Updated `V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md` and added `verify_v47_z01_isolated_double_residual_graphs.py`. For the two-K4 residual subcases, each T0 residual vertex has baseline C-degree three, so balanced-coloring saturation allows at most one extra C-edge at each. Counting subsets of the 12 cross-K4 edges under these two caps gives 1,12,60,164 per base for gaps 0,1,2,3, and 8,96,480,1312 across eight unordered bases. This corrects the previous uncapped counts 8,96,528,1760. The source star restriction further implies g_C<=1 if its center is in T0. Independent Python enumeration reproduced the counts; no global Q32 closure is claimed.
+Updated `V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md` and its graph verifier. The global t_C<=1 theorem permits at most one T0-incident extra edge across the two-K4 residual, not one per T0 vertex. Of the 12 cross-K4 edges, six are T0-incident and six join large tracks; the per-base counts are 1,12,51,110, giving 8,96,408,880 across eight unordered bases. This supersedes both the previous per-T0-vertex-cap counts 8,96,480,1312 and the uncapped counts 8,96,528,1760. The source star restriction further implies g_C<=1 if its center is in T0. Independent Python enumeration reproduced the counts; no global Q32 closure is claimed.
 
 ### Audit correction: isolated-double exceptional branch (2026-10-29)
 
