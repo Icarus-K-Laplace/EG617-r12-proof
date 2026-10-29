@@ -576,3 +576,8 @@ Combined the omitted-vertex multiset identity with the aligned zero-slack H degr
 ### Class-B g=2,t=0 star-center incidence — 2026-10-29
 
 From the exhaustive 19-case source audit, the x-in-H two-double Class-B row y∈H,a=2 has g_C=2,t_C=0 and its two large-pair surplus edges form a star centered at y, with one edge to each of the other two large tracks. Those are the two P_ij edges incident to y, so y has no H-neighbor in the other large tracks. Because y already has 11 neighbors in its K12 track and δ(H)≥12, it must be incident to at least one H edge from T0. This is a necessary source/degree incidence constraint for the CSP, not a contradiction.
+
+
+### Class-B g=2,t=0 star-center incidence — 2026-10-29
+
+From the exhaustive 19-case source audit, the x-in-H two-double Class-B row y in H, a=2 has g_C=2,t_C=0 and its two large-pair surplus edges form a star centered at y, with one edge to each of the other two large tracks. Those are the two P_ij edges incident to y, so y has no H-neighbor in the other large tracks. Because y already has 11 neighbors in its K12 track and delta(H)>=12, it must be incident to at least one H edge from T0. This is a necessary source/degree incidence constraint for the CSP, not a contradiction.
