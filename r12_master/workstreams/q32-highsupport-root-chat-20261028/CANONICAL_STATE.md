@@ -431,7 +431,7 @@ Therefore:
 - if \(\epsilon_v=1\), all eleven non-target colors have H-degree exactly 3 at v;
 - if \(\epsilon_v=0\), exactly one color has H-degree 4 and the other ten have degree 3.
 
-Writing \(t_C\) for the number of T0 vertices where color C has H-degree 4 gives \(\sum_C t_C=11-E_0\). For every exact Type-I color, all such degree-four T0 vertices must lie in G11(C), because an isolated single-outside K5 gives degree 3, while an isolated double/triple factor at T0 would violate the degree floor. The source-correct factor occupancy gives \(|G11(C)\cap T_0|\le2\), hence \(t_C\le2\) for each exact color.
+Writing \(t_C\) for the number of T0 vertices where color C has H-degree 4 gives \(\sum_C t_C=11-E_0\). For every exact Type-I color, all such degree-four T0 vertices must lie in G11(C), because an isolated single-outside K5 gives degree 3, while an isolated double/triple factor at T0 would violate the degree floor. The source-correct factor occupancy first gives the coarse bound \(t_C\le2\); the later placement-sensitive case split in Section 5 of V47_T0_POINTWISE_COLOR_SATURATION.md sharpens this to the global exact-color bound \(t_C\le1\).
 
 This is an exact vertexwise saturation/capacity constraint for future packing or SAT/ILP work, not a contradiction. The nonexact color may own some of the repeated-color T0 vertices; the aligned cells and root remain OPEN / NOT_CERTIFIED.
 
