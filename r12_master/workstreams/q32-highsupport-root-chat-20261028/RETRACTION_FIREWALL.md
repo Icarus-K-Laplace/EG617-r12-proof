@@ -120,3 +120,14 @@ The new `V47_Z01_TRACK_ALIGNMENT.md` uses only:
 - the source-correct 4,5,5 switch normal form and pointwise degree identity.
 
 The mismatch inequality is local and source-correct. The switch contradiction is applied only after proving all four fibers on both partitions are nonempty and equal as unlabelled partitions. No retracted KP degree-nine claim, exceptional-point injectivity, E407 excess-four identity, or Q33 284-edge identity is used. Root status remains OPEN / NOT_CERTIFIED.
+
+
+## 11. Aligned low-z Type-I placement firewall (2026-10-29)
+
+The new `V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM.md` uses only:
+- the proved aligned partition into three target K12 cliques and one K11 clique;
+- the balanced-coloring condition that every 13-set contains all twelve colors;
+- the registered `10K5 dot-union G11` Type-I component decomposition;
+- the source-correct placement and gap caps.
+
+It does not use the retracted universal degree-nine assertion, exceptional-point injectivity, E407/Q33 identities, or any claim that the aggregate track-count relaxation is infeasible. It eliminates the triple-outside Type-I placement only within the aligned z=0,1 cell. EG617(r=12) remains OPEN / NOT_CERTIFIED.
