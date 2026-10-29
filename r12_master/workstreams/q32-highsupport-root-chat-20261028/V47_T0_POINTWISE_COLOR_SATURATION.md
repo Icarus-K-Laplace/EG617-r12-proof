@@ -88,3 +88,10 @@ t_D+\sum_{C\text{ exact}}t_C=11-E_0,\qquad 0\le t_C\le2.
 The exact colors can collectively own at most 20 such vertices, so this capacity alone does not close any E0 case. The pointwise saturation is instead a hard local constraint for any future Type-I packing or SAT/ILP model: each T0 vertex is either **all eleven color-degrees equal 3**, or **one color-degree 4 and ten color-degrees 3**. No relaxed model may assign two repeat colors to the same T0 vertex or degree 5+ to any color there.
 
 No retracted degree-nine assertion or exceptional-point injectivity is used. The aligned z=0,1 cells, full-support Q32, and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
+
+
+## 5. Sharper cap in the seven-vertex single-outside subcase
+
+The global bound above remains t_C<=2 because a source-correct isolated-double placement can leave an eight-vertex gadget residual with two T0 vertices; see `V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md`.
+
+In the **conditional** subcase where all ten isolated K5 components are single-outside, their ten transversal H-K4s use ten of the eleven T0 vertices. Only one T0 vertex remains in the gadget/residual set. Hence an exact color in this subcase has t_C<=1. Equivalently, in the seven-vertex residual graph its T0 singleton has three baseline C-edges, one into each large track; pointwise saturation caps its C-degree at four, so at most one extra C-edge can be present across all three T0--Ti pairs combined. The updated seven-vertex verifiers enforce this cap. Do not apply this stronger bound to the isolated-double branch.
