@@ -201,3 +201,10 @@ Do not impose one pair-location law across all modes. Preserve both constraints:
 The file verify_v47_z01_vertex_labelled_common_p_witness.py is **not** a feasible common-P color-matching packing. It verifies P_ij perfect-matching counts, pairwise H/exact/D edge counts, T0 repeat-owner counts, and ten individually valid Class-A K4+K3 gadgets, but reuses three residual 6-cycles for three colors each. Those colors require identical baseline matching edges, exposing nine colliding color pairs and 36 duplicate baseline-edge claims. The former claim of 20 direct P_0i/K4-baseline overlaps was false: the P edges w-y_j and K4 baseline edges w-s_j are distinct. The verifier now asserts zero direct overlaps. Treat the construction only as a diagnostic owner-only relaxation.
 
 The pair-projection injectivity lemma in V47_Z01_SHARED_P_FACTOR_PACKING.md is valid: if an exact color owns an S_ij edge, no other exact color can use the same pair of residual subsets on tracks i,j. Any next solver must enforce this and full cross-color matching edge-disjointness before claiming feasibility. No Q32 completion or EG617 root closure is certified.
+
+
+## 16. Residual signature and owner-only overlap audit (2026-10-29)
+
+The single-outside residual six-set injectivity lemma is conditional on the audited holonomy-cost theorem, global t_C<=1, and pair-projection injectivity. Two single-outside colors cannot share all six residual vertices: complementary matchings on all three K2,2 blocks toggle triangle/six-cycle parity, and the six-cycle color must own a large-pair repeat edge, which makes its residual pair unique. This does not prove uniqueness for two isolated-double colors or solve the global common-P CSP.
+
+Correction: the claimed 20 direct P_0i/K4-baseline overlaps in the owner-only witness were false. The candidate P edges w-y_j,w-y_k use K3-side vertices, distinct from the K4 baseline edges w-s_j,w-s_k. The verifier now asserts zero direct overlaps. Retain the independent invalidity certificate: 9 residual-signature collision pairs / 36 duplicate baseline-edge claims. No complete common-P packing or Q32 closure is certified.
