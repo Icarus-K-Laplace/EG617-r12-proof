@@ -501,3 +501,9 @@ The global pointwise theorem remains t_C<=2 for exact colors because the isolate
 ## Isolated-double residual branch: T0-capped two-K4 enumeration (2026-10-29)
 
 Extended `V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md` and added `verify_v47_z01_isolated_double_residual_graphs.py`. In the isolated-double placements with a two-transversal-K4 residual base, each of the two T0 residual vertices has baseline C-degree three; pointwise saturation allows at most one extra C-edge at each. The 12 possible cross-K4 edges therefore yield exactly 1,12,60,164 allowed extra sets per base at gaps 0,1,2,3, respectively. With eight unordered two-K4 bases, the corrected necessary-relaxation counts are 8,96,480,1312. These replace the earlier uncapped binomial counts 8,96,528,1760. Source gadget star restrictions are stricter; if the star center x_C or y is in T0, then g_C<=1. This still does not close the isolated-double branch.
+
+## Isolated-double exceptional branch: audit correction (2026-10-29)
+
+The attempted full closure of the `x_C in H, y in H` isolated-double branch was retracted after re-reading the cross-track ledger. For a vertex in a large track, the H cross-track degree is **one in total across all other tracks**, not one into each other large track. Therefore the proposed contradiction for a large-track center was invalid.
+
+The valid local lemma is narrower: if `x_C,y` lie in `T0`, each already has three C-neighbors in H from the special K5 geometry and can receive at most one further C-edge by T0 pointwise saturation. The three required gadget edges to the H-part of `N_s` cannot be assigned to two centers, so the T0-centered subcase is CLOSED. The case `x_C,y in T_i` for a large track remains OPEN. See Section 3.3 of `V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md`; no Q32 closure is claimed.
