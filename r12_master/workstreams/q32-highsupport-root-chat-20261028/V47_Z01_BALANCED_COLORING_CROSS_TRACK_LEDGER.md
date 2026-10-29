@@ -23,17 +23,22 @@ The balanced-coloring contract says every 13-set contains every color. Equivalen
 
 **Lemma 2.2.** For each size-12 track T_i, every vertex v in T_0 has at most one H-neighbor in T_i.
 
-The same 13-set argument does not give a symmetric degree-one claim for vertices on the size-12 side of the T_0--T_i pair. This is the generic lemma only; the additional aligned zero-slack degree contract in Section 3 independently gives the missing bound, so the pair becomes a matching only after that stronger contract is invoked.
+The same 13-set argument does not give a symmetric degree-one claim for vertices on the size-12 side of the T_0--T_i pair. In the aligned zero-slack contract, each non-small vertex of T_i has total cross-track H-degree one, so its T_0-H degree is at most one. The three small-block vertices A_i,B_i,C_i may have epsilon excess; their T_0-H endpoint multiplicities are controlled by that excess budget. Therefore H[T_0,T_i] is not necessarily a matching on the T_i side.
 
 ## 3. Exact vertex cross-degree ledger
 
-Every outer pivot vertex and every residual vertex has H-degree exactly 12 in the 3+7 zero-slack cell. A track T_h has 10 pivot vertices and n_h residual vertices, so its size is 10+n_h and every non-small vertex q in that track has cross-track degree
+Every outer (non-small) pivot vertex and every residual vertex has H-degree exactly 12 in the 3+7 zero-slack cell. A track T_h has 10 pivot vertices and n_h residual vertices, so its size is 10+n_h and every non-small vertex q in that track has cross-track degree
 `12-((10+n_h)-1)=3-n_h`.
-Thus:
-- every outer/residual vertex in T_1,T_2,T_3 has cross-track degree exactly 1;
-- every outer/residual vertex in T_0 has cross-track degree exactly 2.
+Thus every non-small vertex in T_1,T_2,T_3 has cross-track degree exactly 1, and every non-small vertex in T_0 has cross-track degree exactly 2.
 
-In particular, under this aligned zero-slack contract, for each (v\in T_i) with (i\in\{1,2,3\}), the H-degree from v to T0 is at most one. Combined with Lemma 2.2, this means H[T0,T_i] is a matching on both sides in this contract. The T_i-side bound comes from the total cross-track degree equation above, not from the generic 13-set lemma.
+The three small-block vertices A_i,B_i,C_i in track T_i have degrees 12+epsilon_A(i), 12+epsilon_B(i), 12+epsilon_C(i), hence cross-track degrees 1+epsilon_A(i), 1+epsilon_B(i), 1+epsilon_C(i). Their total excess is E_i=epsilon_A(i)+epsilon_B(i)+epsilon_C(i), so the sum of cross-track degrees over T_i is 12+E_i. Likewise the three small-block vertices in T_0 contribute total cross-degree 6+E_0, while its seven outer vertices and one residual vertex contribute 16, giving 22+E_0.
+
+For h_i(v)=d_H(v,T_0), the endpoint multiplicities satisfy
+\[
+h_i(v)\le1\quad\text{for every non-small }v\in T_i,\qquad
+\sum_{v\in T_i}\max(h_i(v)-1,0)\le E_i.
+\]
+Thus a repeated T_0-H endpoint can occur only at a small-block vertex, and its total multiplicity excess is bounded by E_i. This is the correct T_i-side restriction; H[T_0,T_i] need not be a matching on all of T_i.
 
 For a small-block vertex A_h in small block A, let e_A(h) be the number of extra A-to-outer edges incident to it. The degree equation is
 `d_H(A_h)=9+e_A(h)+n_h=12+epsilon_A(h)`,
