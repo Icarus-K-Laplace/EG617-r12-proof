@@ -44,4 +44,9 @@ The actual parent also requires alpha(F)<=5 on all61 vertices, not just alpha(H)
 
 ## Root firewall
 
+Final read-only refresh to high-support541653af1a28187d9b05ddcbcb118c5460fe3f1c: the sibling added outside-component bijection and the same aligned-cell K6 closure. These changes were inspected in full. They agree with the corresponding equality-case proof here but do not establish the uniform57-edge theorem or the broader nonempty-fiber exclusion. They also leave the all-colors K6 CSP cut unchanged. Low-support/root heads did not change.
+
+The broader14-type exclusion additionally imports the local4,5,5 switch classification, singleton/double-track blocker, outerK7 holonomy, residual clique fibers, and exact outer degree/endpoint ledgers. The new proof explicitly distinguishes common small labels from outer labels. It excludes only cells with both fiber partitions nonempty; empty-label double-track escapes remain possible at the local level. The low-support canonical/dependency audit was read at its named HEAD without rerunning low-support casework. The latest global audit continues to mark E407 parent coverage and Q33 support promotion OPEN.
+
 E407 Q32 reserve contradictions remain conditional on V12/parent coverage. E408 Q33 minimum-support contradiction does not prove all supports enter that boundary. Existing local orientation/parity/arithmetic checks do not certify the full graph. Neither new theorem closes all Q32 rows; EG617(r=12) remains OPEN / NOT_CERTIFIED.
+

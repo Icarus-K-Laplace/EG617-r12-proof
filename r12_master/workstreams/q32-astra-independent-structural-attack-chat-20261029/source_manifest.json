@@ -1,0 +1,195 @@
+{
+  "repository": "Icarus-K-Laplace/EG617-r12-proof",
+  "base_commit": "433a5b39a98325f00e99650b0270d79f7753a47d",
+  "base_tree": "2c1e2a0f01ebd3dae37afa6a197a91521956fe39",
+  "tree_truncated": false,
+  "source_inventory": [
+    {
+      "path": "front_end/FRONTEND_BRIDGE_THEOREM.md",
+      "git_blob_sha": "52b2f4af102ceba1671dc7d0e7ed36a512458e77"
+    },
+    {
+      "path": "front_end/T61_H13_FULL_COLOR_DEGREE_AND_ANTINEIGHBORHOOD.md",
+      "git_blob_sha": "e38d0954a819a4b5f13895362600df08ac7388b0"
+    },
+    {
+      "path": "front_end/T61_NEW_LEMMAS.md",
+      "git_blob_sha": "9868aca0864d0e4a903bb96dd00d2304f9c81749"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/CANONICAL_STATE.md",
+      "git_blob_sha": "705ca514932463d26251182dee6ee18b6d9740b3"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/HIGH_SUPPORT_NEAR_TURAN.md",
+      "git_blob_sha": "5dc6e156939b73e909b707a6cb41e540c3d8d657"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/PROGRESS_LOG.md",
+      "git_blob_sha": "568eab26a91c69eb137df815b4932a9f957a2964"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/Q32_130_NO_CORE_ONLY_DEG4.md",
+      "git_blob_sha": "f7dbe22f2af6627c7471068683a3cc839339c1a6"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/Q32_132_MINDEG3.md",
+      "git_blob_sha": "b6a0e798912ad114bc2469af128cfb619dea9b5e"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/Q32_FULLSUPPORT_VERTEX_LABELLED_CSP.md",
+      "git_blob_sha": "5d624e10d6ffb4d50b1c1266d2dca15c7de74435"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/RETRACTION_FIREWALL.md",
+      "git_blob_sha": "88902b75c9175c662690dc9717684a62e05198be"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/ROOT_DEPENDENCY_DAG.md",
+      "git_blob_sha": "437097da1d017272f740a8d9e679e206b8aae18f"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V45_M9_130_COLOR_DEGREE4_LOCAL_STRUCTURE.md",
+      "git_blob_sha": "0cb5718e319325add77e459217d1d91a6d634afe"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V45_SOURCE_CORRECT_MULTIPLICITY.md",
+      "git_blob_sha": "e25b525076712eb3c43b32eb7b10dee65eb329e5"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V45_V46_M9_CLOSURE.md",
+      "git_blob_sha": "8f1e7b65f5857e9d982ebca1bdfe181d49fda5f0"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V46_CASEII_CLOSURE.md",
+      "git_blob_sha": "f1e39bfcd6e335e45a6beab81535d725d605cef9"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_37_OUTER_LIGHT_HOLONOMY.md",
+      "git_blob_sha": "e8ec69f4d50e0124a48e050f5322231d9d7e88b0"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_37_RESIDUAL_TRACK_TRANSVERSAL.md",
+      "git_blob_sha": "f02f55cf21d80784b089b25f84c99e76991ef688"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_37_SMALL_OUTER_MATCHING_RIGIDITY.md",
+      "git_blob_sha": "5e6ec85382021971a297d7bcb8e1a7ec58cd3f61"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_37_SMALL_OUTER_MATCHING_RIGIDITY_RETRACTION.md",
+      "git_blob_sha": "4c8003b86b99a1d7ec5345a264471d6217ff3e1f"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_ALIGNED_TYPEI_COMPONENT_NORMAL_FORM.md",
+      "git_blob_sha": "2e36e057e934b86d5f5e2baa25f65bac7b3bfcf5"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_ALL_COLOR_RESERVE.md",
+      "git_blob_sha": "83a247c61133c0350e4e3cd1991498219c9598b0"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_DOUBLE_TRACK_ALPHA_BLOCKER.md",
+      "git_blob_sha": "d8e3e1ed7f5f443d73d21e388482adae8b38b018"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_LIGHT_BLOCK_GRAPH_DISCONNECTED_REDUCTION.md",
+      "git_blob_sha": "eea5a4cdb80e9111da6861e4eff8b2029d12cf9e"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_LIGHT_CYCLE_HOLONOMY.md",
+      "git_blob_sha": "906582b26b5ec4abfdec5303c688c050e48f2b75"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_PIVOT_NEIGHBORHOOD_PACKING.md",
+      "git_blob_sha": "10fb644df30419304482dffed89a577be8fc1710"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_RESIDUAL_INCIDENCE_COVER.md",
+      "git_blob_sha": "8af079fefdc525b26d5be837f638b58f968babc4"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_T0_POINTWISE_COLOR_SATURATION.md",
+      "git_blob_sha": "fdf1e9b00381bdbfd38011185d7170f4577c4bd2"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_THREE_BLOCK_SWITCH_LEMMA.md",
+      "git_blob_sha": "5c2decfca14cd8fca834415af9f159240b4237b1"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_TWO_BLOCK_TRANSVERSAL_BLOCKER.md",
+      "git_blob_sha": "b9660c6bd54c42f789eaac6f8274543fdf1551ed"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_TWO_LIGHT_MATCHING_COMPOSITION.md",
+      "git_blob_sha": "a1cff87818214a0f60872da132a559b4f778e36d"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_Z01_BALANCED_COLORING_CROSS_TRACK_LEDGER.md",
+      "git_blob_sha": "f4996b2af69697b3de1735f2d66a1172e8b40403"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_Z01_CANONICAL_RESIDUAL_ONE_FACTORIZATION.md",
+      "git_blob_sha": "acd85eb11c163b6a7efb4be4ac01cef63c526fd7"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_Z01_EXACT_COLOR_RESIDUAL_GRAPH_CATALOG.md",
+      "git_blob_sha": "50603482f006917d4ea711c2851ae5acb01c3872"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md",
+      "git_blob_sha": "699f478fe7f295dffa6ba5f2bef2a8063919eab6"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_Z01_NONEXACT_GAP_SATURATION.md",
+      "git_blob_sha": "5b94956ad69f309b35718150d552650578813922"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_Z01_PARTIAL_PROJECTION_PACKING.md",
+      "git_blob_sha": "4ddb1f2ff2c0f502bda7f378e11dfd6dc47d9fd7"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_Z01_RESIDUAL_HOLONOMY_COST.md",
+      "git_blob_sha": "c24c00e1d7381240de963069920e496abf45b582"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_Z01_RESIDUAL_SIGNATURE_INJECTIVITY.md",
+      "git_blob_sha": "3c785d03056f0de23acad04f79c9d18c3a25244d"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_Z01_SHARED_P_FACTOR_PACKING.md",
+      "git_blob_sha": "6bb47dafff0822a6f6c58745a9eabfe9f50284c0"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_Z01_TRACK_ALIGNMENT.md",
+      "git_blob_sha": "05ead55b1f3ce227c3415fcfa639234cdc470161"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_Z01_TWO_DOUBLE_SOURCE_PATTERN_AUDIT.md",
+      "git_blob_sha": "4984ae121f1edf09b68a2fc3c18e2bef352c0d7e"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_Z4_EMPTY_FIBER_ESCAPE_CLASSIFICATION.md",
+      "git_blob_sha": "9e0defc983e2a41d786999b4cd03116402f3d406"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_ZERO_SLACK_MAP_ALIGNMENT_AND_TRANSVERSAL_BLOCKER.md",
+      "git_blob_sha": "7de1298845ee9dd69bf116c68eb1aa652489a45d"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/q32_fullsupport_vertex_labelled_csp.py",
+      "git_blob_sha": "9940d8e0a0cee3f2d464157330a0558fdbc3605e"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/verify_q32_fullsupport_candidate.py",
+      "git_blob_sha": "78254528c93b1792d9ce5ee62613e7a1017e8349"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/KANG_PIKHURKO_EXACT129_SOURCE_AUDIT.md",
+      "git_blob_sha": "b1f870023990561c563a969f6f180eb3ebc6f9af"
+    }
+  ],
+  "primary_paper": "https://opikhurko.warwick.ac.uk/E/KangPikhurko05ms.pdf",
+  "scope": "Inventory of immutable source blobs; inclusion does not assert every proof was independently replayed."
+}
+

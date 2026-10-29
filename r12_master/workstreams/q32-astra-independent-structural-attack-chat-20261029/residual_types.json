@@ -1,0 +1,186 @@
+{
+  "status": "PASS",
+  "scope": "component-type enumeration only; conditional graph exclusions use the analytic theorem",
+  "total_types": 18,
+  "excluded_types": 14,
+  "remaining_types": [
+    {
+      "type": "P1+C3+C3",
+      "edges": 6,
+      "z": 3,
+      "alpha": 3,
+      "clique_cover": 3,
+      "excluded_by_nonempty_fiber_theorem": false
+    },
+    {
+      "type": "P2+P2+C3",
+      "edges": 5,
+      "z": 2,
+      "alpha": 3,
+      "clique_cover": 3,
+      "excluded_by_nonempty_fiber_theorem": false
+    },
+    {
+      "type": "C3+C4",
+      "edges": 7,
+      "z": 4,
+      "alpha": 3,
+      "clique_cover": 3,
+      "excluded_by_nonempty_fiber_theorem": false
+    },
+    {
+      "type": "C3+P4",
+      "edges": 6,
+      "z": 3,
+      "alpha": 3,
+      "clique_cover": 3,
+      "excluded_by_nonempty_fiber_theorem": false
+    }
+  ],
+  "all_types": [
+    {
+      "type": "P1+P1+P2+C3",
+      "edges": 4,
+      "z": 1,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P1+P2+P2+P2",
+      "edges": 3,
+      "z": 0,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P1+P2+C4",
+      "edges": 5,
+      "z": 2,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P1+P2+P4",
+      "edges": 4,
+      "z": 1,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P1+C3+C3",
+      "edges": 6,
+      "z": 3,
+      "alpha": 3,
+      "clique_cover": 3,
+      "excluded_by_nonempty_fiber_theorem": false
+    },
+    {
+      "type": "P1+C3+P3",
+      "edges": 5,
+      "z": 2,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P1+C6",
+      "edges": 6,
+      "z": 3,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P1+P6",
+      "edges": 5,
+      "z": 2,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P2+P2+C3",
+      "edges": 5,
+      "z": 2,
+      "alpha": 3,
+      "clique_cover": 3,
+      "excluded_by_nonempty_fiber_theorem": false
+    },
+    {
+      "type": "P2+P2+P3",
+      "edges": 4,
+      "z": 1,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P2+C5",
+      "edges": 6,
+      "z": 3,
+      "alpha": 3,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P2+P5",
+      "edges": 5,
+      "z": 2,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "C3+C4",
+      "edges": 7,
+      "z": 4,
+      "alpha": 3,
+      "clique_cover": 3,
+      "excluded_by_nonempty_fiber_theorem": false
+    },
+    {
+      "type": "C3+P4",
+      "edges": 6,
+      "z": 3,
+      "alpha": 3,
+      "clique_cover": 3,
+      "excluded_by_nonempty_fiber_theorem": false
+    },
+    {
+      "type": "P3+C4",
+      "edges": 6,
+      "z": 3,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P3+P4",
+      "edges": 5,
+      "z": 2,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "C7",
+      "edges": 7,
+      "z": 4,
+      "alpha": 3,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P7",
+      "edges": 6,
+      "z": 3,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    }
+  ]
+}

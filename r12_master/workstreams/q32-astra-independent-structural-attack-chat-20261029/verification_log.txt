@@ -1,0 +1,279 @@
+Python 3.12.14
+No external solver; no full Q32 SAT/UNSAT claim.
+COMMAND: ["C:\\Users\\lenovo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe", "-B", "C:\\Users\\lenovo\\OneDrive\\\u6587\u6863\\ChatGPT\\research\\r12_master\\workstreams\\q32-astra-independent-structural-attack-chat-20261029\\verify_outside_reserve.py"]
+EXIT: 0
+{
+  "status": "PASS",
+  "python": "3.12.14",
+  "scope": "finite boundary/blocker replay and explicit single-color graphs; no global Q32 SAT/UNSAT",
+  "equality_cases": [
+    {
+      "mode": "two_edges",
+      "blocker_check": [
+        4,
+        16384
+      ],
+      "graph": {
+        "edges": 125,
+        "outside": 56,
+        "alpha": 12,
+        "omega": 6,
+        "component_orders": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "mode": "triangle",
+      "blocker_check": [
+        3,
+        16384
+      ],
+      "graph": {
+        "edges": 125,
+        "outside": 56,
+        "alpha": 12,
+        "omega": 6,
+        "component_orders": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          6
+        ]
+      }
+    }
+  ],
+  "sharp_typeI": {
+    "edges": 129,
+    "outside": 57,
+    "alpha": 12,
+    "omega": 5,
+    "component_orders": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      11
+    ]
+  },
+  "source_parameter": 1,
+  "outside_capacity": 626,
+  "necessary_non_target_edges": 627
+}
+
+
+COMMAND: ["C:\\Users\\lenovo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe", "-B", "C:\\Users\\lenovo\\OneDrive\\\u6587\u6863\\ChatGPT\\research\\r12_master\\workstreams\\q32-astra-independent-structural-attack-chat-20261029\\verify_residual_types.py"]
+EXIT: 0
+{
+  "status": "PASS",
+  "scope": "component-type enumeration only; conditional graph exclusions use the analytic theorem",
+  "total_types": 18,
+  "excluded_types": 14,
+  "remaining_types": [
+    {
+      "type": "P1+C3+C3",
+      "edges": 6,
+      "z": 3,
+      "alpha": 3,
+      "clique_cover": 3,
+      "excluded_by_nonempty_fiber_theorem": false
+    },
+    {
+      "type": "P2+P2+C3",
+      "edges": 5,
+      "z": 2,
+      "alpha": 3,
+      "clique_cover": 3,
+      "excluded_by_nonempty_fiber_theorem": false
+    },
+    {
+      "type": "C3+C4",
+      "edges": 7,
+      "z": 4,
+      "alpha": 3,
+      "clique_cover": 3,
+      "excluded_by_nonempty_fiber_theorem": false
+    },
+    {
+      "type": "C3+P4",
+      "edges": 6,
+      "z": 3,
+      "alpha": 3,
+      "clique_cover": 3,
+      "excluded_by_nonempty_fiber_theorem": false
+    }
+  ],
+  "all_types": [
+    {
+      "type": "P1+P1+P2+C3",
+      "edges": 4,
+      "z": 1,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P1+P2+P2+P2",
+      "edges": 3,
+      "z": 0,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P1+P2+C4",
+      "edges": 5,
+      "z": 2,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P1+P2+P4",
+      "edges": 4,
+      "z": 1,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P1+C3+C3",
+      "edges": 6,
+      "z": 3,
+      "alpha": 3,
+      "clique_cover": 3,
+      "excluded_by_nonempty_fiber_theorem": false
+    },
+    {
+      "type": "P1+C3+P3",
+      "edges": 5,
+      "z": 2,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P1+C6",
+      "edges": 6,
+      "z": 3,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P1+P6",
+      "edges": 5,
+      "z": 2,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P2+P2+C3",
+      "edges": 5,
+      "z": 2,
+      "alpha": 3,
+      "clique_cover": 3,
+      "excluded_by_nonempty_fiber_theorem": false
+    },
+    {
+      "type": "P2+P2+P3",
+      "edges": 4,
+      "z": 1,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P2+C5",
+      "edges": 6,
+      "z": 3,
+      "alpha": 3,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P2+P5",
+      "edges": 5,
+      "z": 2,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "C3+C4",
+      "edges": 7,
+      "z": 4,
+      "alpha": 3,
+      "clique_cover": 3,
+      "excluded_by_nonempty_fiber_theorem": false
+    },
+    {
+      "type": "C3+P4",
+      "edges": 6,
+      "z": 3,
+      "alpha": 3,
+      "clique_cover": 3,
+      "excluded_by_nonempty_fiber_theorem": false
+    },
+    {
+      "type": "P3+C4",
+      "edges": 6,
+      "z": 3,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P3+P4",
+      "edges": 5,
+      "z": 2,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "C7",
+      "edges": 7,
+      "z": 4,
+      "alpha": 3,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    },
+    {
+      "type": "P7",
+      "edges": 6,
+      "z": 3,
+      "alpha": 4,
+      "clique_cover": 4,
+      "excluded_by_nonempty_fiber_theorem": true
+    }
+  ]
+}
+
+

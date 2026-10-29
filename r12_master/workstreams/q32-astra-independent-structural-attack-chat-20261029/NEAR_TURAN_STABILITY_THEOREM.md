@@ -94,3 +94,4 @@ each would have size at most11, covering at most44 vertices.
 Equivalently chi(complement(H))>=5.
 
 Theorem B is still useful as an independent obstruction for the relaxed four-track contract that omitted omega(F)<=11. It must not be confused with an exclusion of every full-support graph.
+
