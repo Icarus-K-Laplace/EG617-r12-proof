@@ -103,6 +103,20 @@ For each exact color \(C\):
 
 The model must preserve choice-dependence of each \(P_{ij}\): different selected Hall matchings can induce different complementary perfect matchings. No fixed residual factor may be assumed canonical.
 
+
+## 4.1 Vertex-labelled common-P relaxation witness
+
+verify_v47_z01_vertex_labelled_common_p_witness.py now constructs a fully labelled witness for the **shared-P and local-residual constraints** in the E0=0 scalar state. The 36 large-track vertices are arranged into six disjoint 6-cycles, so each \(P_{ij}\) is a perfect matching and the union \(P_{12}\cup P_{13}\cup P_{23}\) has degree two at every vertex. Each exact color is assigned a distinct T0 vertex and a source Class-A K4+K3 residual gadget with \((g_C,t_C)=(2,1)\), \(\alpha(J_C)=2\), and one large-pair repeat edge on the same track as its T0 repeat.
+
+The witness reproduces:
+- large-pair H counts \((4,3,3)\), exact-repeat counts \((7,0,3)\), and D-repeat counts \((1,9,6)\);
+- T0 H-edge counts \((7,7,8)\) and repeat counts \((4,4,3)\);
+- ten exact colors with gap 2 and the nonexact color with \(g_D=17\).
+
+A clean independent replay of the construction returned VERTEX_LABELLED_COMMON_P_RELAXATION_WITNESS_OK; the local source gadgets all have independence number 2. This is a stronger counterexample to closing the branch using only aggregate and common-P endpoint constraints.
+
+**Scope boundary:** the witness does not construct the eleven simultaneous matchings \(M_{C,ij}\) on all 36 vertices, nor prove that each color's complete union of matchings is a triangle factor with ten isolated K4 components. Those simultaneous triangle-factorization and Type-I incidence constraints are the next missing bridge. The witness is not a full source-realizable Q32 coloring.
+
 ## 5. Current proof frontier and audit gate
 
 - Non-full-support rows \(v=45,46\), \(m=8,9,10\), are closed in this workstream under the source-correct multiplicity theorem, current nonexact degree floors, and the no-core-only degree-four lemma. The \(v=44,m=8,9\) branch belongs to the sibling workstream.
