@@ -20,9 +20,9 @@ Result: **PASS for the local arithmetic only**. This does not verify V12 finite 
 
 The exact source committed as verify_q33_high_support_u_reserve.py was executed in a clean standard-library process:
 
-    python -S -B r12_master/workstreams/twochat-e408-global-20261026/verify_q33_high_support_u_reserve.py
+    python -S -B /mnt/data/verify_q33_high_support_u_reserve.py
 
-Local replay path during authoring: /mnt/data/verify_q33_high_support_u_reserve.py  
+The committed verifier file was created from the same source text; SHA256 is identical. The execution was performed against the local runtime copy, not by claiming an execution inside a Git checkout.  
 Exit code: 0  
 Standard error: empty  
 Source SHA256: 9a47974a1e5ac461caa5313e6551b73765a1954102e83ff59ffd540d8851ee66

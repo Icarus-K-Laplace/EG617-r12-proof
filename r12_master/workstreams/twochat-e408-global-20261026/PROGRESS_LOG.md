@@ -187,3 +187,8 @@ Canonical commit: `b2d06bb90e532556ba203f559d85d8fcfb257fd4`.
 - Rewrote Sections 8–10 of the historical root-promotion audit to distinguish the conditional template-local support contract from the unverified finite V12 survivor mapping.
 - Corrected ROOT_AUDIT_INPUT_MANIFEST.json so it distinguishes pre-audit source blobs from committed output blobs, records the audit commits, and includes the selected-support anchor-identity source.
 - No mathematical closure status changed: V12 parent mapping OPEN, Q33 high-support promotion OPEN, Q32 OPEN, root OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-29 — replay command provenance correction
+
+- Clarified that the clean-process verifier run executed against the local runtime copy at /mnt/data/verify_q33_high_support_u_reserve.py. The committed GitHub file was created from the same source text and has the recorded SHA256; no claim is made that a repository checkout was available locally.
