@@ -547,3 +547,8 @@ Dependency firewall:
 - A SAT result is accepted only after independent full-graph verification; an UNSAT result requires the final SMT-LIB and independently replayed proof artifact.
 
 **Open obligation:** run and independently audit the model for m=8,9,10, then isolate any smallest residual cell or provide a verified full source-realizable coloring. This node does not close Q32.
+
+
+### CSP strengthening — pivot K4 packing frontier (2026-10-29)
+
+Added explicit necessary constraints from the registered pivot-neighborhood packing theorem: pairwise K4-block edge floors, residual-to-block incidence, exact 32-unit slack identity, the m-dependent degree inequalities, and the six-unit excess split. These constraints are derived from the original core contract and alpha(H)<=4. Status remains FORMULATION_ONLY; no solver result is claimed.

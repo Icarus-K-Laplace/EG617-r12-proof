@@ -629,3 +629,8 @@ This is an exact formulation and verifier scaffold, not a closure. Syntax checks
 ### 2026-10-29 — Independent-set verifier regression strengthened
 
 A direct regression review caught an order-sensitive assertion in the verifier's smoke test: the exact search returns a valid independent set in reverse branch order, so comparing it to one prescribed list was wrong. The assertion now compares sets, and the self-test exhaustively cross-checks the exact independent-set routine against brute force on every simple graph of order at most five and every target size: 5,405 cases. The corresponding small-graph exhaustive replay passed in-session. This tests the search routine; it is not a run of the full 61-vertex CSP.
+
+
+### 2026-10-29 — Pivot-packing inequalities integrated into the CSP
+
+Integrated the pivot-neighborhood theorem into the exact solver as explicit necessary constraints: each pair of pivot K4 blocks has at least four target edges; every residual point meets each block; the slack variables satisfy x+y+z=32, 2x+y>=5m, y+2z>=D_m with D=(18,13,8), and the two degree-excess slacks sum to six. This does not turn the scalar frontier into a certificate; the full vertex-labelled source model remains load-bearing.

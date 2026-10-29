@@ -74,3 +74,15 @@ For a real run, use separate output directories for m=8,9,10, retain the final S
 - timeout/unknown leaves the relevant branch OPEN.
 
 No full solver run or UNSAT proof is claimed by this commit. E408/Q32 remains **OPEN / NOT_CERTIFIED**.
+
+
+## Explicit pivot-packing strengthening
+
+The generic model also encodes the exact K4-packing slack frontier. Let Q be the union of the m disjoint pivot blocks and R=H\\Q, n=47-4m. Define
+
+- x = e_H(Q)-4 binom(m,2),
+- y = e_H(Q,R)-mn,
+- z = e_H(R)-p_4(n), with p_4(15)=21, p_4(11)=10, p_4(7)=3.
+
+The model enforces x,y,z>=0, x+y+z=32, 2x+y>=5m, y+2z>=D_m for D_8=18, D_9=13, D_10=8, and the exact excess split
+(2x+y-5m)+(y+2z-D_m)=6. It also explicitly enforces at least four H-edges between every pair of pivot K4 blocks and at least one H-neighbor from every residual vertex into every pivot block. These are necessary consequences of alpha(H)<=4 and the six-unit degree-excess contract; they strengthen the search but are not sufficient for closure.

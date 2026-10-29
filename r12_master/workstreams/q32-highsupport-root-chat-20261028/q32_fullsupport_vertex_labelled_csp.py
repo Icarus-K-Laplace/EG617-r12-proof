@@ -180,6 +180,50 @@ def build_model(m, aligned_z01=False):
         solver.add(residual[v] == z3.Not(z3.Or([qblock[c][v] for c in exact])))
     solver.add(iff_count(residual[v] for v in H) == 47 - 4 * m)
 
+    # Explicit pivot-neighborhood packing constraints. These are necessary
+    # consequences of alpha(H)<=4 and the disjoint independent K4 blocks Q_C.
+    # They strengthen the search without replacing the full labelled model.
+    q_member = {v: z3.Or([qblock[c][v] for c in exact]) for v in H}
+    n_residual = 47 - 4 * m
+    p4_floor = {8: 21, 9: 10, 10: 3}[m]
+    degree_gap = {8: 18, 9: 13, 10: 8}[m]
+
+    # Every pair of disjoint independent K4 blocks has at least four H-edges.
+    for c1, c2 in itertools.combinations(exact, 2):
+        between = []
+        for u, v in pairs(H):
+            opposite_blocks = z3.Or(
+                z3.And(qblock[c1][u], qblock[c2][v]),
+                z3.And(qblock[c1][v], qblock[c2][u]))
+            between.append(z3.And(opposite_blocks, col[edge(u, v)] == 0))
+        solver.add(iff_count(between) >= 4)
+
+    # Every residual point has a target-color neighbor in each pivot K4.
+    for v in H:
+        for c in exact:
+            neighbors_in_block = iff_count(
+                z3.And(qblock[c][u], col[edge(v, u)] == 0)
+                for u in H if u != v)
+            solver.add(z3.Implies(residual[v], neighbors_in_block >= 1))
+
+    e_q = iff_count(z3.And(q_member[u], q_member[v], col[edge(u, v)] == 0)
+                    for u, v in pairs(H))
+    e_qr = iff_count(z3.And(
+        z3.Or(z3.And(q_member[u], residual[v]),
+              z3.And(residual[u], q_member[v])),
+        col[edge(u, v)] == 0) for u, v in pairs(H))
+    e_r = iff_count(z3.And(residual[u], residual[v], col[edge(u, v)] == 0)
+                    for u, v in pairs(H))
+    x_slack = e_q - 4 * (m * (m - 1) // 2)
+    y_slack = e_qr - m * n_residual
+    z_slack = e_r - p4_floor
+    solver.add(x_slack >= 0, y_slack >= 0, z_slack >= 0)
+    solver.add(x_slack + y_slack + z_slack == 32)
+    solver.add(2 * x_slack + y_slack >= 5 * m)
+    solver.add(y_slack + 2 * z_slack >= degree_gap)
+    solver.add((2 * x_slack + y_slack - 5 * m) +
+               (y_slack + 2 * z_slack - degree_gap) == 6)
+
     # Do not add the derived all-color reserve quota as a hard constraint here.
     # The exact global edge-color model and lazy alpha cuts are sufficient and
     # avoid silently importing a pointwise-degree premise whose full derivation

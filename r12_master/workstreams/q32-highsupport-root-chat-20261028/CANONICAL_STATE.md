@@ -616,3 +616,8 @@ The reserve quota q_z<=3/4 is not hard-coded in the trusted solver core until th
 ### Verifier test correction (2026-10-29)
 
 The independent-set smoke test no longer assumes a particular vertex ordering. It now includes exhaustive comparison against brute force for all 5,405 graph/target-size cases with n<=5. This is a unit-test strengthening only; full CSP execution remains pending.
+
+
+### Pivot-packing slack constraints added (2026-10-29)
+
+The full CSP now explicitly includes the source-correct pivot K4 packing frontier: per-pair block edge floors, residual-to-each-block neighbor constraints, the x+y+z=32 slack identity, the degree inequalities 2x+y>=5m and y+2z>=D_m, and the exact six-unit excess split. These constraints are consequences of the core contract and alpha(H)<=4, not a substitute for the full labelled graph.
