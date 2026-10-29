@@ -447,3 +447,9 @@ The capped holonomy verifier now checks the exact distribution of surplus edges 
 Section 6 of `V47_T0_POINTWISE_COLOR_SATURATION.md` derives `L_exact=26+E0-(g_D-t_D)` for the total exact-color surplus on the three K12--K12 pairs. Since `g_D<=19` and `t_D>=max(0,1-E0)`, the lower bounds for `E0=0,1,2,3` are respectively 8,8,9,10. This gives a global necessary budget to combine with local holonomy surplus-location constraints; it does not close Q32.
 
 The large-pair budget also has the conditional form `L_exact>=27-g_D`, because the ten exact colors contribute at most 10 T0 surpluses. Combined with the E0 bound, `L_exact>=max(27-g_D,8,7+E0)`. This is most restrictive when g_D is small (e.g. g_D=7 forces L_exact>=20).
+
+### 14l. Shared residual-factor packing and aggregate feasibility witness
+
+`V47_Z01_BALANCED_COLORING_CROSS_TRACK_LEDGER.md`, Section 7, records the common factor theorem: after choosing Hall matchings, each large-pair complement P_ij is a perfect matching containing all H edges. The repeated-color graph S=P\\H over the three large-pair factors has `d_S(v)=2-d_H^large(v)<=2` and `|S|=26+E0`. Each edge has a unique repeat-color owner; exact-color-owned edges must have endpoints in the owner's Type-I residual set.
+
+`verify_v47_z01_aggregate_budget_witness.py` independently verifies that scalar capacities and local pattern counts admit a relaxed witness (E0=0, E_i=2, e_H=(4,3,3), ten exact gaps of 2, g_D=17). This is not a graph completion; it establishes that aggregate budget inequalities cannot close the branch. The next dependency is the vertex-labelled packing of exact-color residual sets into the common S graph, while preserving the separate single-outside and isolated-double source modes. Q32 remains OPEN / NOT_CERTIFIED.
