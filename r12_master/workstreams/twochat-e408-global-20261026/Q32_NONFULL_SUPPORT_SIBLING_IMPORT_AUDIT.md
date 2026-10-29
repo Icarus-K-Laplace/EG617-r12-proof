@@ -11,7 +11,7 @@ Status: **Q32 support 44–46 CLOSED CONDITIONALLY; support 47 OPEN. Root theore
 The current root workstream imported the following sibling states without modifying either sibling:
 
 - Low-support branch \`workstream/r12-q32-caseII-v44-final-20261028\`, HEAD \`9afd7c1a59056052974f9dc78933010d10e88bba\`.
-- High-support branch \`workstream/r12-q32-highsupport-root-20261028\`, HEAD \`5f1cccb917f0d13c27f9e3fc2dfa77418dc1abff\`.
+- High-support branch \`workstream/r12-q32-highsupport-root-20261028\`, HEAD \`92c9086c8b6ac554ed74b48a5d608aa546bcb977\`.
 
 The low-support canonical state says all \`|U|=44,45,46\` rows for \`m=8,9,10\` are closed under the registered 285-edge Q32 contract. The high-support canonical state independently records the same closure and then isolates \`|U|=47\` as the only remaining support size.
 
@@ -57,7 +57,7 @@ The current read-only high-support branch reports:
 - \(m=10\): the subcase \(\chi(\overline{H[R]})\ge5\) is closed by the residual-incidence / light-block analysis. The remaining \(\chi(\overline{H[R]})\le4\) subcase is **OPEN**.
 
 Relevant source blobs:
-- High-support canonical at the latest read-only head: a93c934ac128c27e8e518966735c231a62dfdcf3 (branch HEAD 5f1cccb917f0d13c27f9e3fc2dfa77418dc1abff).
+- High-support canonical at the latest read-only head: 4a465ce7be3315842d2537f2a80691ca598c540e (branch HEAD 92c9086c8b6ac554ed74b48a5d608aa546bcb977).
 - \`V47_ALL_COLOR_RESERVE.md\`: \`c71156c4e08c08146be792796600c5fbfc708cf0\`.
 - \`V47_PIVOT_NEIGHBORHOOD_PACKING.md\`: \`10fb644df30419304482dffed89a577be8fc1710\`.
 - \`V47_RESIDUAL_INCIDENCE_COVER.md\`: \`8af079fefdc525b26d5be837f638b58f968babc4\`.
@@ -79,9 +79,14 @@ No root promotion is authorized. The independent E407 V12 parent-coverage gate a
 
 ## 5. Full-support CSP is not yet trusted — 2026-10-29
 
-Latest high-support branch HEAD: 5f1cccb917f0d13c27f9e3fc2dfa77418dc1abff (canonical blob a93c934ac128c27e8e518966735c231a62dfdcf3). New CSP source blobs:
+Latest high-support branch HEAD: 92c9086c8b6ac554ed74b48a5d608aa546bcb977 (canonical blob 4a465ce7be3315842d2537f2a80691ca598c540e). New CSP source blobs:
 - Q32_FULLSUPPORT_VERTEX_LABELLED_CSP.md: 6bc7ebec290fd204111fdf7877ab63319184449b.
 - q32_fullsupport_vertex_labelled_csp.py: 7602fda163700c4e482edc1fac963faa484b46bd.
 - verify_q32_fullsupport_candidate.py: fc6c8a5e2b2e8decd236f0d7336699c23f75be1f.
 
 The independent audit found the target-edge count mismatch for m=8,9 and the verifier's overrestriction on the first ten factor outside counts. The sibling progress log explicitly states the CSP is not executed. These are preventive formulation findings; no SAT/UNSAT result is retracted because none is claimed.
+
+
+## 6. Latest high-support source refresh — 2026-10-29
+
+The high-support branch advanced to HEAD 92c9086c8b6ac554ed74b48a5d608aa546bcb977 (commit: “Integrate pivot K4 packing frontier into Q32 CSP”). Its canonical state now has blob 4a465ce7be3315842d2537f2a80691ca598c540e. The pivot-packing inequalities are now integrated into the solver model, but the fixed-E408 count vector remains wrong for m=8,9 and the verifier still forces factors 0–9 to have exactly one O-vertex. The CSP is still FORMULATION_ONLY / NOT_EXECUTED; no solver result is imported.

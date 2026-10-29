@@ -3,7 +3,7 @@
 Date: 2026-10-29  
 Auditing branch: workstream/r12-twochat-e408-global-20261026  
 Read-only source branch: workstream/r12-q32-highsupport-root-20261028  
-Audited sibling HEAD: 5f1cccb917f0d13c27f9e3fc2dfa77418dc1abff  
+Audited sibling HEAD: 92c9086c8b6ac554ed74b48a5d608aa546bcb977  
 Status: **FORMULATION DEFECTS FOUND; no solver result exists to certify or retract.**
 
 ## 1. Fixed E408 edge-count contract
@@ -97,3 +97,19 @@ Root status remains:
 \[
 \boxed{\text{EG617}(r=12):\ \text{OPEN / NOT\_CERTIFIED}.}
 \]
+
+
+## 5. Latest model revision checked — 2026-10-29
+
+After the pivot-packing integration commit, the model still contains:
+
+    expected_total = {0: 398 + m, 11: 132}
+    expected_total.update({c: 129 for c in exact})
+    expected_total.update({c: 130 for c in range(m + 1, 11)})
+
+The verifier blob remains fc6c8a5e2b2e8decd236f0d7336699c23f75be1f and retains both the same target-count formula and the comps[:10] exactly-one-O condition. The latest model/spec/verifier source IDs are:
+- spec blob 94ce66ee7dcdf4dae6e7af0b9d8141c734eaca4c;
+- model blob f8ea9ce29c91876af6b4d51ccfd1a599b1ae1d72;
+- verifier blob fc6c8a5e2b2e8decd236f0d7336699c23f75be1f.
+
+The pivot-packing strengthening does not repair either source-contract defect. No full solve has been run.

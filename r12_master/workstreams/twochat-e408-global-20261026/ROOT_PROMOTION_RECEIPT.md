@@ -188,7 +188,7 @@ No promotable root receipt is issued. This is a fail-closed status record, not a
 
 Read-only sibling heads audited:
 - \`workstream/r12-q32-caseII-v44-final-20261028\`: \`9afd7c1a59056052974f9dc78933010d10e88bba\`.
-- \`workstream/r12-q32-highsupport-root-20261028\`: \`07c69f6b4b748124ea0cf72eb1dc39bc57df6a29\`.
+- \`workstream/r12-q32-highsupport-root-20261028\`: \`92c9086c8b6ac554ed74b48a5d608aa546bcb977\`.
 
 Under their registered source-correct assumptions, \(v=44,45,46\) are closed for all \(m=8,9,10\). The only Q32 support size left is \(v=47\); its \(m=8,9\) branches and the \(\chi(\overline{H[R]})\le4\) subcase of \(m=10\) remain open. This import does not use the retracted degree-nine claim, and does not upgrade the root status.
 

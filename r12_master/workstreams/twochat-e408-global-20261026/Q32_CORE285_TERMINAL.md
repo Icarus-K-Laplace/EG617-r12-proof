@@ -61,7 +61,7 @@ The source-correct sibling proofs now close the entire non-full-support layer:
 - \(v=45\): \(m=8,9,10\) closed;
 - \(v=46\): \(m=8,9,10\) closed.
 
-The low-support branch is \`workstream/r12-q32-caseII-v44-final-20261028\` at HEAD \`9afd7c1a59056052974f9dc78933010d10e88bba\`; the high-support branch is \`workstream/r12-q32-highsupport-root-20261028\` at HEAD \`07c69f6b4b748124ea0cf72eb1dc39bc57df6a29\`. The root-facing import and exact proof references are recorded in \`Q32_NONFULL_SUPPORT_SIBLING_IMPORT_AUDIT.md\`.
+The low-support branch is \`workstream/r12-q32-caseII-v44-final-20261028\` at HEAD \`9afd7c1a59056052974f9dc78933010d10e88bba\`; the high-support branch is \`workstream/r12-q32-highsupport-root-20261028\` at HEAD \`92c9086c8b6ac554ed74b48a5d608aa546bcb977\`. The root-facing import and exact proof references are recorded in \`Q32_NONFULL_SUPPORT_SIBLING_IMPORT_AUDIT.md\`.
 
 This import remains conditional on the registered source-correct Type-I factorization and named extremal inputs. It does not use the retracted degree-nine premise or the injectivity-dependent \`Q32_NONFULL_SUPPORT_SHELL_CAPACITY.md\`.
 
@@ -156,3 +156,8 @@ The read-only audit in Q32_FULLSUPPORT_CSP_SOURCE_AUDIT.md found two defects in 
 2. The candidate verifier forces each of factors 0–9 to have exactly one O-vertex, despite the source-correct outside-count profile permitting excess outside incidences in isolated factors.
 
 No solver result is imported. The full-support v=47 frontier remains OPEN; the CSP must be repaired and independently checked before use.
+
+
+## 11. Latest CSP audit refresh — 2026-10-29
+
+The high-support sibling's latest HEAD is 92c9086c8b6ac554ed74b48a5d608aa546bcb977. It integrated pivot K4 packing constraints, but the full-support CSP still has the two source-contract defects recorded in Q32_FULLSUPPORT_CSP_SOURCE_AUDIT.md. Treat the CSP as FORMULATION_ONLY / NOT_EXECUTED until the edge-count vector and independent verifier's outside-count checks are corrected.
