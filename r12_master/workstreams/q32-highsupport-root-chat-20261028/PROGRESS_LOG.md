@@ -492,3 +492,7 @@ Extended the capped holonomy verifier to count valid repairs by `(class, g_C, T0
 Derived and recorded in `V47_T0_POINTWISE_COLOR_SATURATION.md` the identity `L_exact=26+E0-(g_D-t_D)` for exact-color surplus on large-track pairs. The global bounds `g_D<=19` and `t_D>=max(0,1-E0)` imply `L_exact>=8,8,9,10` for `E0=0,1,2,3`. This is a small but exact cross-track budget constraint that can be combined with the per-color residual surplus splits; no global contradiction follows yet.
 
 Sharpened the aggregate budget by conditioning on the nonexact gap: `L_exact>=27-g_D`, since exact-color gaps sum to `37-g_D` and exact colors own at most ten T0 surplus vertices. Combined with the E0-only bound, `L_exact>=max(27-g_D,8,7+E0)`. Thus g_D=7 forces at least 20 large-pair surplus edges on exact colors; g_D=19 leaves the E0-specific bounds 8,8,9,10.
+
+### Large-pair surplus budget in the unresolved g_D<=17 branch — 2026-10-29
+
+Combining the global exact-color T0 cap t_C<=1 with the existing gap split gives a new exact budget cut. If no exact color has gap 0 or 1, the ten exact gaps are 2 or 3. If k colors have gap 3, then g_D=17-k and the exact colors must contribute at least 10+k surplus edges across the three K12--K12 pairs. Since the total large-pair surplus is 26+E0, the nonexact color is limited to at most 16+E0-k such edges. This forces at least one large-pair repeat edge from every exact color, and at least two from each gap-three exact color. It narrows the next packing search but is not a contradiction.
