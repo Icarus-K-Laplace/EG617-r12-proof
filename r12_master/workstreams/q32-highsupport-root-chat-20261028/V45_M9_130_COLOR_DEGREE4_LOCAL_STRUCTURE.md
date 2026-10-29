@@ -56,18 +56,14 @@ No other local pattern is compatible with the 130-edge budget and delta(D)>=4.
 
 At each W-point w_i, the 130-edge nonexact color has degree4 and all four neighbors lie in H. The local lemma says its four-neighbor set is either K4 or K4 minus one edge, with at most one or two edges, respectively, leaving that set for N_D(w_i).
 
-It **does not** force w_1w_2 to have this color. In particular, the Case-A and Case-B structures are both compatible with w_1,w_2 being nonadjacent in D. Therefore retain
-`e_H(W) in {0,1}`
-and
-`e(bar(H[U]))=731-e_H(W) in {730,731}`
-until a separate pair-coupling theorem is proved.
+This local lemma **does not** force w_1w_2 to have color D: the Case-A and Case-B neighborhood structures are both compatible with w_1,w_2 being nonadjacent in D. Thus the local lemma alone leaves `e_H(W) in {0,1}` and `e(bar(H[U])) in {730,731}` undetermined. However, that binary variable is no longer load-bearing: Section 6 below gives a direct contradiction at either W-point without deciding the W-pair edge.
 
-## 5. Proof boundary
+## 5. Proof boundary of the local neighborhood lemma
 
-This is a local consequence of the registered 130-edge contract, the already-audited `delta(D)>=4` theorem, and the source-checked Kang–Pikhurko extremal bound at (56,11). It does not prove any Q32 terminal closed.
+Sections 2–3 are a local consequence of the registered 130-edge contract, the already-audited `delta(D)>=4` theorem, and the source-checked Kang–Pikhurro extremal bound at (56,11). By themselves they do not close a Q32 terminal. The stronger core-only exclusion is the separate argument in Section 6.
 
 
-## 5. Strengthening when all four neighbors lie in the target core
+## 6. Strengthening when all four neighbors lie in the target core
 
 Assume additionally that S is contained in H and alpha(H)<=4. Then S cannot induce K4: if it did, {v} union S would be a D-colored K5 wholly inside H, hence a target-independent 5-set. So only Case A from Section 3 can occur:
 `e(D[S])=5,` `e_D(S,N)=2,` `e(D[N])=119`,
