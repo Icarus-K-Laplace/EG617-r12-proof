@@ -7,7 +7,7 @@ Status: **PROVED_CONDITIONAL finite local theorem with exhaustive verifier.** No
 
 Fix an exact non-target color C. Its source-correct Type-I factorization contains ten isolated K5 components. Their H-parts are ten isolated transversal K4s, using ten vertices from each target track. The remaining set R_C has profile (2,2,2,1), and the induced graph J_C=C[R_C] has
 \[
-e(J_C)=9+g_C,\qquad 0\\le g_C\\le3,\qquad \\alpha(J_C)\\le2.
+e(J_C)=9+g_C,\qquad 0\le g_C\le3,\qquad \alpha(J_C)\le2.
 \]
 
 Choose the color-C baseline matching on each track pair from the residual 1-factorizations. The ten isolated K4s contribute ten edges on every track pair. The baseline matching therefore leaves:
@@ -16,7 +16,7 @@ Choose the color-C baseline matching on each track pair from the residual 1-fact
 
 These nine residual edges form a graph B_C. The g_C remaining C-edges form an extra set E_C^+ with
 \[
-J_C=B_C\\cup E_C^+,\\qquad |B_C|=9,\\qquad |E_C^+|=g_C.
+J_C=B_C\cup E_C^+,\qquad |B_C|=9,\qquad |E_C^+|=g_C.
 \]
 On each large-part pair, E_C^+ is a matching, because it is a subset of the residual perfect matching P_ij. On each T0--Ti pair, there is at most one extra edge, because the residual T0 vertex has only one P0i edge.
 
@@ -54,7 +54,7 @@ The complete admissible repair counts by surplus are:
 
 These are exact local counts, not asymptotic estimates. They verify that:
 \[
-\\boxed{g_C\\le1\\Longrightarrow\\text{the three large-part baseline matchings are aligned}.}
+\boxed{g_C\le1\Longrightarrow\text{the three large-part baseline matchings are aligned}.}
 \]
 Moreover, if the large-part matchings have nontrivial six-cycle holonomy, then g_C>=2; if the baseline has alpha four, then g_C=3.
 
