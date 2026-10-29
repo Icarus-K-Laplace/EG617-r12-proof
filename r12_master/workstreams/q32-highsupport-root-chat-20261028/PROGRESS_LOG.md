@@ -483,3 +483,8 @@ The sound conclusion is limited to the T0-centered subcase: if `x_C,y in T0`, ea
 The T0 saturation identity gives the global cap t_C<=2 for each exact color. A further case split now shows t_C<=1 in both (i) the all-isolated-single seven-vertex branch and (ii) the isolated-double two-K4 branches: x_C in O, or x_C in H with y in O. In the latter branches, all surplus H-H gadget edges form a star centered at y or x_C and can touch at most one of the two T0 residual vertices; if the center itself lies in T0, its degree cap forces g_C<=1.
 
 The only isolated-double placement where t_C=2 remains possible is x_C in H, y in H, two-double, with b_s+b_t=3 and g_C=3. This is the special K4 + special K3 + x_C residual and must remain a separate finite case. Updated V47_T0_POINTWISE_COLOR_SATURATION.md and its verifier. The one-extra-edge cap summed over all three T0--Ti pairs is still specific to the seven-vertex branch; in the eight-vertex two-K4 branch the cap is per T0 vertex. No contradiction or Q32 closure is claimed.
+
+
+### Exact surplus-location split by residual holonomy class (2026-10-29)
+
+Extended the capped holonomy verifier to count valid repairs by `(class, g_C, T0-pair surplus, large-pair surplus)`. This yields additional forced placements: class B at minimum gap 1 must use a T0-pair edge; class C at minimum gap 2 has no T0 surplus and places both edges on large-track pairs; class D at gap 3 has one T0 surplus and two large-pair surpluses. The full table is in `V47_Z01_RESIDUAL_HOLONOMY_COST.md`; independent enumeration reproduced the split counts. These are local constraints only.
