@@ -178,3 +178,12 @@ The new T0 degree ledger uses only:
 - the corrected Type-I factorization into ten isolated K5 components plus G11.
 
 It distinguishes special K5s in G11 from isolated components and does not assume exceptional-point injectivity, a universal degree-nine point, or any Q33/E407 identity. The result is a pointwise capacity theorem only, not an UNSAT certificate. EG617(r=12) remains OPEN / NOT_CERTIFIED.
+
+
+## 13. Isolated-double residual firewall (2026-10-29)
+
+Do not apply the seven-vertex residual catalog or its 64-baseline holonomy classes to an exact color until its placement has been checked to have all ten isolated K5 components single-outside. The outside-count profiles (2,1^11), (2,2,1^10), and (3,1^11) do not by themselves guarantee that condition.
+
+The registered source-correct isolated-double placement yields nine isolated H-K4s plus one isolated H-K3, and an eight-vertex G11 H-residual with profile (2,2,2,2), e=12+g_C. The two-K4 local relaxation is not a full gadget completion. The exceptional x_C in H, y in H isolated-double subcase has g_C=3 and must remain separate.
+
+The global low-gap orientation may be cited only through the independent 69/70 near-Turan classification or the explicit case split in V47_Z01_ISOLATED_DOUBLE_RESIDUAL_AUDIT.md. The T0 pointwise saturation theorem remains valid because it uses the pointwise degree floor and G11 occupancy, not the universal seven-vertex assumption. No Q32 or EG617 root closure is certified.
