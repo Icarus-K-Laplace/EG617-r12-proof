@@ -407,3 +407,7 @@ Added `V47_Z01_RESIDUAL_HOLONOMY_COST.md`. After the ten isolated transversal K4
 ### Minimum-repair edge patterns for classes C and D
 
 The holonomy verifier checks the exact minimum repairs. Class C has three independent triples: two share a pair of large-track vertices, and the third is a disjoint transversal triple. Each minimum two-edge repair includes the shared-pair edge and one edge within the disjoint triple. Class D has a unique independent 4-set T0 plus a transversal triple V; the baseline T0 edges attach to the complementary triple U. Each minimum three-edge repair consists of one edge within U, one T0-to-V edge, and the edge between the other two vertices of V. These are local constraints only.
+
+### 14f. Exact seven-vertex residual graph catalog
+
+Added `V47_Z01_EXACT_COLOR_RESIDUAL_GRAPH_CATALOG.md` and its verifier. The ten isolated K5 components of each exact color leave a seven-vertex residual graph with part sizes (2,2,2,1), e=9+g_C, alpha=2, and degree floors 2 on the large-track vertices and 3 at T0. Exhaustive enumeration of the necessary 18-edge relaxation gives 8,72,384,1,148 labeled graphs for gaps 0,1,2,3. The 69/70 layers are rigid K4+K3; larger gaps admit additional local shapes. This is a local catalog, not a global closure.
