@@ -166,6 +166,22 @@ where \(y_i+s_i^{\rm exact}+d_i^D=11\) on each pair. The replay counts 148,512, 
 
 The audit deliberately finds concentrated endpoint profiles with six or seven exact nonrepeat colors omitting the same Ti vertex. These are only endpoint-multiplicity relaxations, not full colorings, but they prove that the omitted-vertex identity plus the currently known asymmetric H-degree bound does **not** imply injectivity. Cross-track triangle-factorization, source residual incidence and edge-disjointness remain necessary.
 
+### 4.6 Forced Class-A allocation in the E0=0 scalar row
+
+For the scalar profile used by the former owner-only construction, the exact large-pair repeat counts are \(l_{12},l_{13},l_{23}=(7,0,3)\), while the exact T0-repeat counts by track are \(s_1,s_2,s_3=(4,3,3)\). If all ten exact colors are in the **Class-A shared-track mode**, let \(x_{ij}\) count colors whose T0 repeat lies on \(T_0T_i\) and whose large-pair repeat lies on \(T_iT_j\). Then
+\[
+\sum_{j\ne i}x_{ij}=s_i,\qquad x_{ij}+x_{ji}=l_{ij}.
+\]
+The exact integer verifier verify_v47_z01_class_a_repeat_allocation.py enumerates these constraints and finds the unique solution
+\[
+x_{12}=4,\ x_{13}=0,\ x_{21}=3,\ x_{23}=0,\ x_{31}=0,\ x_{32}=3.
+\]
+Thus four colors repeat on \(T_0T_1\) and \(T_1T_2\); three repeat on \(T_0T_2\) and \(T_1T_2\); three repeat on \(T_0T_3\) and \(T_2T_3\).
+
+Because each \(P_{ij}\) is a perfect matching, its exact-repeat edges are pairwise vertex-disjoint. Hence the seven exact-repeat edges in \(P_{12}\) use seven distinct endpoints on each of \(T_1,T_2\); the three exact-repeat edges in \(P_{23}\) use three distinct endpoints on each of \(T_2,T_3\). In particular, the four T0-repeat endpoints on \(T_1\), the three T0-repeat endpoints on \(T_2\), and the three T0-repeat endpoints on \(T_3\) are individually distinct within their respective tracks in this scalar Class-A allocation. The \(P_{12}\) and \(P_{23}\) endpoint sets on \(T_2\) may overlap because they belong to different pair matchings.
+
+**Scope:** this allocation is conditional on all ten exact colors being Class A. It does not apply to mixed Class-A/Class-B assignments or the isolated-double eight-vertex branch. It tightens the vertex-labelled CSP but is not a contradiction.
+
 ## 5. Current proof frontier and audit gate
 
 - Non-full-support rows \(v=45,46\), \(m=8,9,10\), are closed in this workstream under the source-correct multiplicity theorem, current nonexact degree floors, and the no-core-only degree-four lemma. The \(v=44,m=8,9\) branch belongs to the sibling workstream.
