@@ -42,22 +42,22 @@
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/CANONICAL_STATE.md",
       "blob_sha": "20a82e5eeaf5995919e85aac61c7d457b3ccfbf7",
-      "status": "updated in this audit"
+      "status": "pre-audit input blob at target_head_before_audit; updated outputs are listed in output_blobs"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/DEPENDENCY_AUDIT.md",
       "blob_sha": "d722b630972824a2fc0478d9450a6ac8806d0e30",
-      "status": "updated in this audit"
+      "status": "pre-audit input blob at target_head_before_audit; updated outputs are listed in output_blobs"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/ROOT_PROMOTION_RECEIPT.md",
       "blob_sha": "88564c414a4b753b3cdfa4f26cf4ad5ca094a962",
-      "status": "updated in this audit"
+      "status": "pre-audit input blob at target_head_before_audit; updated outputs are listed in output_blobs"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/R12_ROOT_CLOSURE_PROMOTION_AUDIT.md",
       "blob_sha": "a9161266c7e7123d2a54a548f7c212f8dfa2af0b",
-      "status": "supersession notice and current status inserted"
+      "status": "pre-audit input blob at target_head_before_audit; updated outputs are listed in output_blobs"
     },
     {
       "path": "front_end/FRONTEND_BRIDGE_THEOREM.md",
@@ -138,16 +138,66 @@
       "branch": "workstream/r12-twochat-e407-closure-20261026",
       "blob_sha": "ae67acea14dabbba2de9d7a1a1a0e066355612a3",
       "status": "OPEN / NOT_CERTIFIED"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e407-closure-20261026/SUPPORT_BLOCK_ANCHOR_IDENTITY.md",
+      "blob_sha": "50447a9931b9b51a21a979dc61d834389abd4e3a",
+      "status": "PROVED_CONDITIONAL support-block/anchor interface; parent screen mapping remains open",
+      "branch": "workstream/r12-twochat-e407-closure-20261026"
     }
   ],
   "open_dependencies": [
     "E408 Q32 285-edge / excess-six graph terminal",
-    "V12 archive/manifest/verifier replay and parent-to-29-point/49-block coverage for E407 Q32",
+    "V12 artifact/replay and complete finite-survivor-to-template mapping for E407 Q32",
     "Q33 support promotion from v=31 to all legal support sizes v=32..47"
   ],
   "retracted": [
     "Universal degree-nine exceptional vertex in Kang-Pikhurko Type-I gadget",
     "Exceptional-vertex injectivity inferred from that false degree-nine premise",
     "E408 whole-layer exact-color-count closure relying on that premise"
-  ]
+  ],
+  "audit_commits": [
+    "549960e37217c243e8abd6b7629301e9f918e6c6",
+    "61f3263de5c99d37f58cd1ab7ad65a05888534f0"
+  ],
+  "sibling_heads": {
+    "e407_q32": "0192807d1f3b2193aa65c25b9f671b36821aaded",
+    "e408_q33_witness_support": "0cb2ff3968f005c9cb255958df7c02b220678701",
+    "unified_witness_capacity": "faa8183c150dd78b000d0957fa8a63cebd52e146"
+  },
+  "output_blobs": [
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/CANONICAL_STATE.md",
+      "blob_sha": "eeecbfbafe4ed5283ac05e2b630160665fecfaeb"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/DEPENDENCY_AUDIT.md",
+      "blob_sha": "bec40c1d8e0a4a9151f19c83e2314fce4eb383a4"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/ROOT_PROMOTION_RECEIPT.md",
+      "blob_sha": "7cfe7a61881fc0fa164af62d71b520c6bad7457a"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/ROOT_DEPENDENCY_DAG.md",
+      "blob_sha": "86f4332cd42c1092b8ad0f69994b23ae00a95917"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/ROOT_AUDIT_REPLAY_LOG.md",
+      "blob_sha": "00b19bf24fe095315f0a834288c99786086a774a"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/Q33_HIGH_SUPPORT_U_RESERVE_AUDIT.md",
+      "blob_sha": "c62dd2ada346f034cfc24aaf3e7b2cd7c5b5d4ea"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/verify_q33_high_support_u_reserve.py",
+      "blob_sha": "52c46e3575227ca4eee13ece0213d039991f5f7d"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/PROGRESS_LOG.md",
+      "blob_sha": "da10c2decab39642fc7947794a0a214fbfeba8ba"
+    }
+  ],
+  "root_status": "OPEN / NOT_CERTIFIED"
 }

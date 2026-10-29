@@ -180,3 +180,10 @@ Canonical commit: `b2d06bb90e532556ba203f559d85d8fcfb257fd4`.
 
 - Distinguished the conditional template-local 29-point/49-block support/anchor interface from the missing V12 finite-survivor-to-template mapping. The former is recorded in the E407 sibling under the registered minimum-support and exact-129 assumptions; the latter remains OPEN because the V12 archive, manifest, and verifier are unavailable.
 - Updated the dependency DAG and root-facing summaries to avoid conflating the two edges. Root status remains OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-29 — audit artifact integrity and historical V12 claim correction
+
+- Rewrote Sections 8–10 of the historical root-promotion audit to distinguish the conditional template-local support contract from the unverified finite V12 survivor mapping.
+- Corrected ROOT_AUDIT_INPUT_MANIFEST.json so it distinguishes pre-audit source blobs from committed output blobs, records the audit commits, and includes the selected-support anchor-identity source.
+- No mathematical closure status changed: V12 parent mapping OPEN, Q33 high-support promotion OPEN, Q32 OPEN, root OPEN / NOT_CERTIFIED.

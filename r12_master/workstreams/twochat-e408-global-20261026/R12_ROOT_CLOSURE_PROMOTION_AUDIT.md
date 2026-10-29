@@ -219,17 +219,17 @@ relative to the named V6/V8/core/extremal inputs.
 
 Status: **PROVED_CONDITIONAL + COMPUTATION_CERTIFIED**.
 
-## 8. E407 maximum Q=32 finite exhaustiveness
+## 8. Historical V12 finite-replay claim — not reproduced; superseded
 
-The original V12 archive was independently materialized and replayed.
+Historical claim (superseded): an earlier version asserted that the original V12 archive was independently materialized and replayed. The current audit cannot reproduce that claim because the archive, manifest, and verifier are absent from all 30 branch trees; the current source report explicitly says INDEPENDENT_REPLAY_PENDING. The figures below are retained as reported source metadata only.
 
 Archive SHA256:
 
 `0c3c69a7baf94a816eff29f3a079b97ac7750d0e8b8fd2773330469c4b8c5e36`
 
-Fresh manifest check before execution: all entries PASS.
+Historical replay-log claim (unverified in the current audit): “Fresh manifest check before execution: all entries PASS.” This is not accepted as a current certification result.
 
-Independent verifier reproduces:
+The historical report claimed that an independent verifier reproduced:
 
 - 8,677 kernel weight vectors;
 - 17,957 count states;
@@ -243,7 +243,7 @@ Independent verifier reproduces:
 
 The V12 certificate itself does not claim those 554 states impossible.
 
-## 9. Uniform common support contract for all five V12 templates
+## 9. Template-local common support contract — conditional interface, not finite-screen certification
 
 The later E407 workstream proves that every legal completion of any of the five V12 shell templates must be completed against the same frozen support object:
 
@@ -281,7 +281,7 @@ Because the 49 blocks are pairwise linear/disjoint at pair level, they own exact
 
 distinct edges of L_U.
 
-## 10. E407 Q32 four-color U-reserve contradiction
+## 10. E407 Q32 local reserve contradiction under the contract; V12 parent mapping remains OPEN
 
 There are eleven non-target colors total. The frozen V12 support system uses seven distinct selected colors. Therefore four other non-target colors remain.
 
@@ -327,7 +327,7 @@ Hence
 
 a contradiction with a gap of72 edges.
 
-Therefore all five V12 templates — and hence all 554 V12 finite-screen survivors under the retained V12 analytic contracts — are impossible.
+Therefore any legal completion already shown to satisfy one of the five template contracts is contradicted by this reserve. This does not independently certify that every legal parent is covered by the V12 finite screen and mapped to a template; that composite parent-coverage edge remains OPEN until V12 source/manifest/verifier replay and the analytic screen assumptions are audited.
 
 Thus
 
@@ -353,7 +353,7 @@ Accordingly:
 
 No root promotion is authorized.
 
-## 13. Why the qualifier remains
+## 13. Historical qualifier rationale (superseded by the 2026-10-29 fail-closed audit)
 
 This root promotion is intentionally not labelled bare `PROVED` because the proof stack still includes:
 
@@ -388,3 +388,12 @@ This addendum is authoritative over the historical claims above.
 - Q33: exact 31-point / 56-witness reserve is PROVED_CONDITIONAL. The support lower bound |U|>=31 is not an equality theorem. The independent scalar reserve audit excludes m=8,9 at v=31 and m=8 at v=32; all listed remaining higher-support cases remain OPEN under that reserve.
 - E408 Q32: OPEN / NOT_CERTIFIED. Degree-nine exceptional-vertex and exceptional-injectivity claims remain RETRACTED.
 - Current root: OPEN / NOT_CERTIFIED. No promotable root receipt is issued.
+
+
+## 16. Explicit boundary of the historical V12 sections
+
+Sections 8–10 above must be read as two different statements:
+1. the template-local 29-point/49-block support and anchor interface is PROVED_CONDITIONAL under the registered minimum-support and exact-129 assumptions;
+2. the assertion that the complete V12 finite screen exhausts every legal E407 Q32 parent and maps every survivor to A-E is OPEN because the original archive, manifest, and verifier are unavailable.
+
+The local reserve contradiction cannot certify its own parent coverage. The root status remains OPEN / NOT_CERTIFIED.
