@@ -496,7 +496,7 @@ When D has no repeat on a pair, z_i(D) must be an H endpoint and n_i=h_i-delta_D
 
 ### 14n. Class-B \((g,t)=(2,0)\) center must meet \(T_0\) in H
 
-In the x-in-H, two-double, all-isolated-single-outside source mode, the y-in-H, a=2 row has two large-pair surplus edges forming a star at y and no T0 repeat. The two star edges are the unique P edges at y on its two cross-track pairs, so y has no H neighbor in any other large track. Since its own track contributes 11 H neighbors and \(\delta(H)\ge12\), y must have an H edge to T0. Include this as a necessary incidence filter for any exact packing. It does not imply UNSAT by itself.
+In the Class-B source mode with x_C in T0 and both special factors double-outside, the y-in-H, a=2 row has two large-pair surplus edges forming a star at y and no T0 repeat. The two star edges are the unique P edges at y on its two cross-track pairs, so y has no H neighbor in any other large track. Under the aligned zero-slack ledger, this residual vertex has total cross-track H-degree exactly one, so y must have exactly one H edge to T0. Include this as a necessary incidence filter; it does not imply UNSAT by itself.
 
 
 ### 14n. Class-B (g,t)=(2,0) star-center degree filter
