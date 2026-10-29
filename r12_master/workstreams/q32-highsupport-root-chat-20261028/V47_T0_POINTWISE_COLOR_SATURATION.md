@@ -111,3 +111,25 @@ Consequently, every exact color has at most one degree-four T0 vertex, and the e
 \boxed{\sum_{i=1}^3(e_C(T_0,T_i)-11)=t_C\le1.}
 \]
 Combining with \(g_C=t_C+\sum_{i<j}(e_C(T_i,T_j)-12)\) gives at least \(g_C-1\) surplus edges on the three large-track pairs. The global identity \(\sum_C t_C=11-E_0\) then implies \(t_D\ge\max(0,1-E_0)\) for the unique nonexact color D. This is a stronger source-correct constraint, not a contradiction.
+
+
+## 6. Aggregate lower bound on exact-color large-pair surplus
+
+Let
+\[
+L_{\mathrm{exact}}=\sum_{C\text{ exact}}\left(g_C-t_C\right)
+\]
+be the total surplus assigned to exact colors on the three K12--K12 pairs. The global identities give
+\[
+L_{\mathrm{exact}}=26+E_0-(g_D-t_D).
+\]
+Using \(g_D\le19\) and \(t_D\ge\max(0,1-E_0)\) yields the following necessary lower bounds:
+
+| \(E_0\) | Total large-pair surplus \(26+E_0\) | Lower bound on \(t_D\) | Upper bound on D's large-pair surplus | Lower bound on \(L_{\mathrm{exact}}\) |
+|---:|---:|---:|---:|---:|
+| 0 | 26 | 1 | 18 | 8 |
+| 1 | 27 | 0 | 19 | 8 |
+| 2 | 28 | 0 | 19 | 9 |
+| 3 | 29 | 0 | 19 | 10 |
+
+Thus, regardless of the \(E_0\) case, the ten exact colors must collectively carry at least eight surplus edges on the three large-track pairs; \(E_0=2,3\) strengthen this to nine and ten. This is a global necessary condition to combine with the residual holonomy tables, not a contradiction by itself.
