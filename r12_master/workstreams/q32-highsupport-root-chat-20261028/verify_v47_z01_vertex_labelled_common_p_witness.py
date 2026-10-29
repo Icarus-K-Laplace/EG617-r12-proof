@@ -219,19 +219,17 @@ assert len(t0_owner) == 11
 assert tuple(len(S0[i]) for i in range(3)) == (4, 4, 3)
 assert tuple(len(H0[i]) for i in range(3)) == (7, 7, 8)
 
-# The aligned 3+7 zero-slack degree ledger requires each large-track vertex
-# to have total H cross-track degree exactly one. Count the T0--Ti H endpoint
-# multiplicities in this candidate: three vertices of T3 receive two H edges
-# from T0, which violates the frozen degree contract. This is independent of
-# the residual-signature collision audit below.
+# Record T_i-side H endpoint multiplicities, but do not treat degree >1
+# as a violation: the established asymmetric lemma bounds H-neighbors per
+# T0 vertex into each Ti, not the number of T0 H-neighbors at a Ti vertex.
 h_endpoint_degree = {i: Counter(e[1] for e in H0[i]) for i in range(3)}
 h_endpoint_support = tuple(len(h_endpoint_degree[i]) for i in range(3))
 h_endpoint_max = tuple(max(h_endpoint_degree[i].values()) for i in range(3))
-h_endpoint_overfull = tuple(sum(d > 1 for d in h_endpoint_degree[i].values())
-                            for i in range(3))
+h_endpoint_degree_gt1 = tuple(sum(d > 1 for d in h_endpoint_degree[i].values())
+                              for i in range(3))
 assert h_endpoint_support == (7, 7, 5)
 assert h_endpoint_max == (1, 1, 2)
-assert h_endpoint_overfull == (0, 0, 3)
+assert h_endpoint_degree_gt1 == (0, 0, 3)
 assert all(len(P0[i]) == 11 for i in range(3))
 assert all(len({e[0] for e in P0[i]}) == 11 for i in range(3))
 
@@ -300,8 +298,8 @@ print("Large-pair D-repeat counts:", D_large)
 print("P0 edges overlapping own source K4 baseline (must be zero):", len(p0_baseline_conflicts))
 print("H endpoint support by large track:", h_endpoint_support)
 print("H maximum endpoint degree by large track:", h_endpoint_max)
-print("Overfull H endpoints by large track:", h_endpoint_overfull)
+print("T_i H endpoint multiplicities >1 (descriptive only, not a violation):", h_endpoint_degree_gt1)
 print("Residual-signature collision pairs:", residual_signature_collision_pairs)
 print("Duplicate baseline-edge claims:", duplicate_baseline_edge_claims)
 print("INVALID_OWNER_ONLY_CONSTRUCTION_AUDIT_OK")
-print("Scope: the P0 overlap check passes; T3 H endpoint degree and residual-signature collisions invalidate the owner-only relaxation; no feasible common-P packing is claimed.")
+print("Scope: P0/K4 direct overlap count is zero; T_i-side H endpoint multiplicity >1 is allowed by the current contract; residual-signature collisions still invalidate this owner-only relaxation.")
