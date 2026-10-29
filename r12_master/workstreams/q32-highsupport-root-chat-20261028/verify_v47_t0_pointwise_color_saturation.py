@@ -37,12 +37,13 @@ for special_T0_counts in product((0, 1), repeat=2):
 for special_T0_counts in product((0, 1), repeat=2):
     assert sum(special_T0_counts) <= 2
 
-# Per exact color, t_C is both the T0-pair surplus and is bounded by g_C.
+# Per exact Type-I color, t_C is both the T0-pair surplus and obeys
+# the placement-sensitive global cap t_C<=1, as well as t_C<=g_C.
 for g in range(7):
-    for t in range(min(2, g) + 1):
+    for t in range(min(1, g) + 1):
         big_pair_surplus = g - t
         assert big_pair_surplus >= 0
-        assert t <= min(2, g)
+        assert t <= min(1, g)
 
 # In either isolated-double two-K4 subcase, extras form a star centered
 # at y or x_C and terminate in the opposite special K4. Such a star can
@@ -87,6 +88,7 @@ assert 69 + 3 == 72
 # Aggregate identity: sum g_C=37 and sum t_C=11-E0.
 for E0 in range(4):
     assert 37 - (11 - E0) == 26 + E0
+    assert max(0, 1 - E0) == max(0, 11 - E0 - 10)
 
 print("T0 degree-sum alternatives checked for epsilon=0,1")
 print("E0 repeat-owner counts checked for E0=0,1,2,3")
