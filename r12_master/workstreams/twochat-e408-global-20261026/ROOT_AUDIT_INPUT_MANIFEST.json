@@ -246,7 +246,7 @@
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/ROOT_DEPENDENCY_DAG.md",
-      "blob_sha": "3eb3686270443af1efe05d412854d219274aeebc"
+      "blob_sha": "3a758e85d93957421ff49bf63d919aa8806ec724"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/ROOT_AUDIT_REPLAY_LOG.md",
@@ -283,14 +283,15 @@
     "61f3263de5c99d37f58cd1ab7ad65a05888534f0",
     "6ed8b6e0352ca5aeb713e86676504bb236561db8"
   ],
-  "manifest_parent_commit": "fc8c08de48f1978c8da3aeff28b8990caf1faa55",
+  "manifest_parent_commit": "97623b1cd21052fa0e9af3db298f74f483992c1c",
   "audit_commits_before_final_manifest_commit": [
     "549960e37217c243e8abd6b7629301e9f918e6c6",
     "61f3263de5c99d37f58cd1ab7ad65a05888534f0",
     "6ed8b6e0352ca5aeb713e86676504bb236561db8",
     "b03f2484624f1a13d92dcb5204bd13940b662521",
     "ced39d0f3eeb768e5d74fef6af848cbaf0fcffa7",
-    "fc8c08de48f1978c8da3aeff28b8990caf1faa55"
+    "fc8c08de48f1978c8da3aeff28b8990caf1faa55",
+    "97623b1cd21052fa0e9af3db298f74f483992c1c"
   ],
   "sibling_imports": [
     {

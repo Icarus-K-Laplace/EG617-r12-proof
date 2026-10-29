@@ -34,12 +34,11 @@ flowchart TD
   E408 --> Q32NF[Q32 v=44,45,46; all m=8,9,10<br/>PROVED_CONDITIONAL via sibling imports]
   E408 --> Q32FS[Q32 full support v=47<br/>OPEN: m=8,9 and part of m=10]
   E408 --> Q33[E408 Q33: e(H)=284, excess=4]
-  Q32FS --> ROOT
   Q33 --> MIN31[56-witness support v>=31]
   MIN31 --> LOCAL31[Exact v=31 reserve<br/>PROVED_CONDITIONAL]
   MIN31 --> PROMOTE[Support promotion v>31<br/>OPEN]
   PROMOTE --> HIGH[High-support scalar reserve<br/>only m=8 at v=32 excluded]
-  Q32 --> ROOT[EG617(r=12) root theorem<br/>OPEN / NOT_CERTIFIED]
+  Q32FS --> ROOT[EG617(r=12) root theorem<br/>OPEN / NOT_CERTIFIED]
   RES29 --> ROOT
   LOCAL31 --> ROOT
   HIGH --> ROOT
