@@ -541,7 +541,14 @@ def main():
     parser.add_argument("--m", type=int, choices=(8, 9), required=True)
     parser.add_argument("--max-iterations", type=int, default=10000)
     parser.add_argument("--out-dir", default="q32_fullsupport_m89_run")
+    parser.add_argument(
+        "--legacy-smt", action="store_true",
+        help="run the archival SMT search despite the analytic Type-I partition obstruction")
     args = parser.parse_args()
+    if not args.legacy_smt:
+        print("Q32_FULLSUPPORT_M8_M9_ANALYTICALLY_EXCLUDED")
+        print("See V47_TYPEI_PARTITION_OBSTRUCTION.md; no SMT run or UNSAT certificate is needed.")
+        return 0
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     manifest_path = out_dir / "run_manifest.json"
