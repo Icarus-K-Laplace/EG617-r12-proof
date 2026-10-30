@@ -53,3 +53,9 @@ This argument is independent of:
 This receipt closes only the E408 Qmax=33 charge layer. It does not close E408 Q31 or Q32, E407 Q32, or the original EG617(r=12) problem.
 
 Global root remains **OPEN / NOT_CERTIFIED**. This workstream does not modify ROOT_DEPENDENCY_DAG.md, ROOT_PROMOTION_RECEIPT.md, or any global canonical file.
+
+## 5. Byte-level source and root reconciliation
+
+CLEAN_ROOM_REPLAY_20261030.md records actual archive SHA256 recomputation, both original 127-row Fraction verifier executions, the source audit verifier, and the source-complete arithmetic replay. Q33_PARENT_SOURCE_MAP.md records the exact source-to-parent implication and the root import boundary.
+
+At final audit, read-only global root HEAD remained b0459807acd4b7e386148056ddf77d7998918893 and sibling Q33 support-promotion HEAD remained ca088347124f4ea7706a63129d7ed63d4e4090d7. The root DAG still lists E408-33-PROMOTION as OPEN; this workstream supplies a bypass theorem but has not edited the global DAG. Main was restored to its pre-incident commit 278639de8572ffab12fe859d36f776fbb88fc4f0.
