@@ -25,14 +25,14 @@ It does not work on v=44,45,46 or m=10.
 
 ## Verified advances
 
-1. **PROVED_CONDITIONAL** — the existing full-support source-labelled CSP has the correct twelve-factor Type-I source mode, including all legal placements of the double/triple outside factor(s); it does not force the surplus factor(s) into a special factor or force the ten isolated factors to be single-outside.
-2. **PROVED_CONDITIONAL** — every exact color supplies at least ten disjoint single-outside K4 witnesses. Cross-color pairwise linearity follows from unique edge ownership and is also checked by the copied independent verifier.
+1. **PROVED_CONDITIONAL — augmented Type-I submodel only.** The source-labelled CSP encodes the twelve-factor Type-I mode and its allowed double/triple outside placements. This is not a source-complete encoding of EG617; see items 21–22 and the audit correction.
+2. **PROVED_CONDITIONAL — source-complete ten-witness interface.** Every exact-129 color supplies at least ten pairwise-disjoint core K4 witnesses by the universal partition theorem. They need not be single-outside or pivot-adjacent; cross-color pairwise linearity follows from unique edge ownership.
 3. **PROVED_CONDITIONAL** — every pair of disjoint pivot K4 blocks has a target-color perfect matching.
 4. **PROVED_CONDITIONAL** — light-pair matching composition: two unique perfect matchings through a common pivot block force the composed matching in the third pair.
 5. **PROVED_CONDITIONAL** — exact per-pivot-block six-unit degree ledger: `X_i+Y_i=5+epsilon_i`.
 6. **COMPUTATION_CERTIFIED** — the K4,4 minimum-edge table `mu_4(t)` was exhaustively checked over all 65,536 bipartite edge sets; 2,304 local composition cases were replayed.
 7. The m=8 and m=9 scalar pivot-slack frontiers were independently enumerated: 79 and 61 states respectively; the corrected z ranges are 0..12 and 0..9.
-8. **PROVED_CONDITIONAL** — exact source-core accounting (e_C(H)=B_C+G_C^H) and parameter-dependent gap bounds for x in O / two-double / triple placements.
+8. **PROVED_CONDITIONAL — Type-I source submodel only.** Exact source-core accounting (e_C(H)=B_C+G_C^H) and placement-dependent gap bounds for x in O / two-double / triple placements. The source-complete bound 69<=e_C(H)<=75 is separately proved in item 22.
 9. **PROVED_CONDITIONAL structural result, no closure.** Every non-target color in the 69/70 layer has an 11K4+K3 near-Turán partition under the registered second-Turán input. This does not exclude the layer: the tight-part consequence is a K7 in H, and omega(H)<=11 allows it. The old CSP removed these variables only in its augmented K6-free submodel.
 10. **WITHDRAWN / repaired** — the first unconditional lazy matching-composition cuts were overconstraints; they have been replaced by source- and pivot-selection-guarded implications.
 11. **PROVED_CONDITIONAL — historical intermediate result.** Simultaneous 69/70 partitions are pairwise orthogonal. The earlier solver/verifier revisions encoded this condition; the current terminal no longer needs it.
