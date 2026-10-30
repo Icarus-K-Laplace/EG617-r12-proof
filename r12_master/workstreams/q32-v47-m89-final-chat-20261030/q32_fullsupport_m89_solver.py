@@ -2,9 +2,9 @@
 """Build and solve the exact source-labelled K_61 Q32 CSP for m=8,9 only.
 
 The model preserves every source-correct Type-I outside placement and the
-canonical E408 color vector. It adds existential perfect matchings between
-pivot K4 blocks, exact per-block degree-ledger identities, and lazy matching-
-composition / multi-projection cuts. It deliberately does not import the
+canonical E408 color vector. Pairwise pivot perfect-matching existence is
+forced by exact alpha(H) separation and independently verified. It adds exact
+per-block degree-ledger identities and lazy matching-composition cuts. It deliberately does not import the
 m=10-only aligned 3+7 common-P track normal form.
 
 Requires z3-solver. Alpha and clique constraints are separated exactly by
@@ -248,10 +248,11 @@ def build_model(m):
     # Source-safe residual quota constraints are imposed above; the stronger
     # target-degree-13 quota remains conditional, as documented in the reserve audit.
 
-    # Global pivot-block perfect matchings.
-    # For every pair of disjoint independent pivot K4s, alpha(H)<=4 implies
-    # a perfect matching of target edges between them (Kőnig).
-    pair_count, pair_match = {}, {}
+    # Pairwise pivot matching existence is forced by alpha(H)<=4:
+    # each Q_i,Q_j pair is bipartite with alpha<=4, so Kőnig gives a
+    # perfect matching. We do not add redundant per-edge matching-choice
+    # Booleans; exact alpha separation and the independent verifier check it.
+    pair_count = {}
     for c1, c2 in itertools.combinations(exact, 2):
         key = (c1, c2)
         pair_count[key] = iff_count(
@@ -261,33 +262,6 @@ def build_model(m):
                 col[edge(u, v)] == 0)
             for u, v in pairs(H))
         solver.add(pair_count[key] >= 4)
-
-        pair_match[key] = {}
-        for u, v in pairs(H):
-            e = edge(u, v)
-            between = z3.Or(
-                z3.And(qblock[c1][u], qblock[c2][v]),
-                z3.And(qblock[c1][v], qblock[c2][u]))
-            chosen = z3.Bool(f"pivot_match_{c1}_{c2}_{u}_{v}")
-            pair_match[key][e] = chosen
-            solver.add(z3.Implies(chosen, z3.And(between, col[e] == 0)))
-
-        # A selected perfect matching saturates exactly the eight block vertices.
-        for u in H:
-            incident = [pair_match[key][edge(u, v)] for v in H if v != u]
-            solver.add(iff_count(incident) ==
-                       z3.If(z3.Or(qblock[c1][u], qblock[c2][u]), 1, 0))
-
-        # If the pair has exactly four H-edges, its matching is unique and
-        # equals the entire H-edge graph between the two pivot blocks.
-        for u, v in pairs(H):
-            e = edge(u, v)
-            between_h = z3.And(
-                z3.Or(z3.And(qblock[c1][u], qblock[c2][v]),
-                      z3.And(qblock[c1][v], qblock[c2][u])),
-                col[e] == 0)
-            solver.add(z3.Implies(pair_count[key] == 4,
-                                  pair_match[key][e] == between_h))
 
     # Explicit per-block six-unit degree ledger.
     # X_i = sum of excess H-edges from Q_i to other pivot blocks;
@@ -327,7 +301,7 @@ def build_model(m):
         "xvar": xvar, "yvar": yvar, "a0var": a0var,
         "gadget": gadget, "component_outside": component_outside,
         "qblock": qblock, "residual": residual,
-        "pair_count": pair_count, "pair_match": pair_match,
+        "pair_count": pair_count,
     }
     return variables
 
