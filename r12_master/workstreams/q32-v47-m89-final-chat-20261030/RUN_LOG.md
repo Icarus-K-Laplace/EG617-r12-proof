@@ -62,3 +62,6 @@ A separate Hall argument proves a 253-edge target matching skeleton for any low-
 ## Static syntax check for source-localization patch
 
 The newly inserted solver and verifier blocks were separately reconstructed from the committed source and parsed with Python's AST parser. Both snippets passed. This is only a syntax check of the inserted blocks; the complete files were not executed or fully imported. The runtime still lacks z3-solver, so no m=8/9 solver execution, SAT/UNSAT result, or proof log is available.
+
+
+The 32-edge residual decomposition was sharpened. If q of the 36 baseline-degree-11 vertices receive positive excess and t is the number of isolated K2 components, then the residual has exactly 36-q leaves, a core of 11+q vertices, and exactly q+t-4 edges inside that core. In particular q+t>=4 and the core has at most17 vertices. The degree-sum derivation is recorded in MATH_PROOF.md §9.6; it is analytic only and is not yet a solver cut.
