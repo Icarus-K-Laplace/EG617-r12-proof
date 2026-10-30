@@ -1,13 +1,15 @@
 # Mathematical results — Q32 full-support m=8,9
 
+> **AUDIT STATUS: NOT A VALID EG617 CLOSURE.** This file's source-labelled exact-color model assumes every exact-129 color is Type I and its final obstruction additionally assumes omega(H)<=5. The actual balanced-coloring problem supplies only alpha(C),omega(C)<=12 and the Q32 core has omega(H)<=11. Both extra clique restrictions are absent. The previous m=8/9 analytic-closure claim and the e_C(H)>=71 global floor are withdrawn. See AUDIT_RETRACTION_BALANCED_PREMISES.md. The pivot arithmetic and Hall lemmas below remain conditional local results, not a complete Q32 model.
+
 ## 1. Frozen contract
 
-Assume the source-correct Q32 interface:
+Assume the registered Q32 core interface:
 
 `|H|=47`, `e(H)=285`, `alpha(H)<=4`, `delta(H)>=12`, and
 `sum_{v in H}(d_H(v)-12)=6`.
 
-There are `m=8` or `m=9` exact non-target colors. For each exact color C, the Type-I source factorization gives twelve disjoint K5 factors partitioning all 60 vertices other than its special point x_C. Each factor meets the 14-point outside set O. The pivot is p=47 and A={48,...,60}; all pA edges have the target color.
+The source-labelled construction below is restricted to the **augmented Type-I subcase** in which each exact color is separately known to have twelve disjoint K5 factors partitioning all 60 vertices other than x_C. This Type-I coverage is not established for every exact color under balancedness, which only gives alpha(C),omega(C)<=12. The pivot is p=47 and A={48,...,60}; all pA edges have the target color.
 
 For every exact color C, the pivot construction gives a four-set Q_C contained in H and adjacent to p in color C:
 - if p != x_C, Q_C is the other four vertices in the unique Type-I K5 factor containing p;
@@ -366,7 +368,7 @@ Therefore no exact-129 Type-I non-target color can occur on a valid Q32 core:
 \text{one of three forbidden H-partitions}\ \Longrightarrow\ \bot.}
 \]
 
-Since m=8 and m=9 both require exact-129 colors, **both full-support Q32 branches are analytically excluded**. This proof uses only the registered Type-I factorization and the frozen H-core contract. It does not use the 37-unit edge-gap ledger, near-Turan second-extremal theorem, pivot-pair composition, or m-specific reserve inequalities.
+This conclusion is conditional on the Type-I factorization for every exact color and the additional omega(H)<=5 cap. Neither dependency follows from the actual EG617 balanced-coloring/Q32 contract. Therefore this section does **not** exclude m=8 or m=9; both full-support branches remain OPEN. It does not use the 37-unit edge-gap ledger, near-Turan second-extremal theorem, pivot-pair composition, or m-specific reserve inequalities.
 
 The independent candidate verifier now reconstructs the induced partition from each exact color's twelve source K5 factors, selects Hall matchings by augmenting paths, computes F, finds a tight 4-part, and returns an explicit independent 5-set or a clique of size at least six. Its self-test exercises all three partition shapes.
 
