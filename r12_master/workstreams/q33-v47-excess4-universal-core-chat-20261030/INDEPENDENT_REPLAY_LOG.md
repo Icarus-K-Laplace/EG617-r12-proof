@@ -102,3 +102,10 @@ One SOURCE_ASSET_MANIFEST.md create operation initially omitted the explicit bra
 See CLEAN_ROOM_REPLAY_20261030.md for the byte-derived archive/source hashes and exact commands. Both original certificate verifiers were executed from the extracted archive in this turn and returned EXACT_CERTIFICATE_VERIFIED (127 rows each). The source arithmetic supplement returned EXACT_ARITHMETIC_SUPPLEMENT_VERIFIED; the Q33 source-complete arithmetic replay returned PASS_EXACT_ARITHMETIC_REPLAY. This is not merely an imported prior-session run report.
 
 The source-complete run checked D(13),D(14),D(23),D(24),D(25),D(37), triangle-free bounds 122/145/73, the degree10/11 floors 289/287, support configurations 9/40/48, the P/D matrix classes, charge minima 6/6/4/5, and the optional exact Fraction replay of all127 rows.
+
+
+## 11. Strict-floor composition
+
+The analytic/private-clique source CORE_FLOOR_284_PROOF.md proves e>=284 for all R(4,47). Its 127-row rational averaging certificate was rerun exactly. The source-complete minimum-degree theorem gives delta>=12 when e<=286. Therefore equality e=284 is subject to delta>=12 and is excluded by the universal 284-edge theorem. This proves e>=285 for all R(4,47).
+
+The parent pivot identity then gives q_p<=32 for every E408/h13 degree-13 pivot. This is an analytic theorem composition, not a solver output.
