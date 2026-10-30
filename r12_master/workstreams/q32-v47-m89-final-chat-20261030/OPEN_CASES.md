@@ -70,3 +70,10 @@ Any low-layer partition admits a 253-edge target subgraph M built from pairwise 
 
 
 The 32-edge residual has a sharper exact form. Let q be the number of the 36 M-degree-11 vertices receiving positive degree excess, and t the number of isolated K2 components of F. Then q≤6, q+t≥4, the non-leaf core has 11+q≤17 vertices, and its induced edge count is exactly q+t-4. The remaining 36-q vertices are leaves, with 2t of them paired into the isolated K2 components. This leaf-core identity is now in MATH_PROOF.md §9.6.
+
+
+## Closed: all 69/70 near-Turán color layers
+
+The tight-part matching argument proves that any 11K4+K3 partition of H forces an independent 5-set or a K7. Hence, using the registered near-Turán theorem, every non-target color satisfies \(e_C(H)\ge71\). The exact 37-unit ledger is now \(\sum_c(e_C(H)-71)=15\).
+
+The solver has removed the conditional near-Turán partition variables and asserts the 71-edge lower bound. The independent verifier reconstructs the partition when needed and replays the matching/tight-part dichotomy. The remaining research target is the 71+ layer, not the already-excluded 69/70 layer.
