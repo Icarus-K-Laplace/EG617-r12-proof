@@ -65,3 +65,12 @@ The newly inserted solver and verifier blocks were separately reconstructed from
 
 
 The 32-edge residual decomposition was sharpened. If q of the 36 baseline-degree-11 vertices receive positive excess and t is the number of isolated K2 components, then the residual has exactly 36-q leaves, a core of 11+q vertices, and exactly q+t-4 edges inside that core. In particular q+t>=4 and the core has at most17 vertices. The degree-sum derivation is recorded in MATH_PROOF.md §9.6; it is analytic only and is not yet a solver cut.
+
+
+## Tight-part K7 theorem and 71-edge floor
+
+Proved that any 11K4+K3 partition of H forces alpha(H)>=5 or omega(H)>=7. The Hall matching skeleton has 253 edges and leaves 32 residual edges. The part-degree ledger yields at least five tight 4-parts; one tight part has three F-leaves. Their unique F-neighbors can dirty at most three of the ten other 4-parts, leaving seven clean parts. Each clean part contributes a fourth vertex nonadjacent to the three leaves. Any two such fourth vertices must be adjacent under alpha(H)<=4, producing K7.
+
+Consequently the registered 69/70 near-Turán layer is impossible for every non-target color, so \(e_C(H)\ge71\) for all eleven colors and the 37-unit ledger has only 15 units of slack above this floor.
+
+The solver now asserts core_edges[c]>=71 and removes the dead conditional near-Turán partition variables. The verifier independently replays the Hall matching/tight-part witness and checks the 71-edge floor when both alpha and clique premises are enabled. This does not claim m=8/9 closure; 71+ remains open.
