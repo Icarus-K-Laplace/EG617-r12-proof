@@ -1,19 +1,22 @@
 #!/usr/bin/env python3
-"""Build and solve the exact labelled K_61 Q32 CSP with Z3.
+"""Build and solve the exact source-labelled K_61 Q32 CSP for m=8,9 only.
 
-Requires z3-solver. The generic model covers m=8,9,10 and all Type-I source
-placements. --aligned-z01 adds the explicit six-pair common-P / matching model
-for the m=10 aligned residual profile (1,2,2,2), z in {0,1}.
+The model preserves every source-correct Type-I outside placement and the
+canonical E408 color vector. It adds existential perfect matchings between
+pivot K4 blocks, exact per-block degree-ledger identities, and lazy matching-
+composition / multi-projection cuts. It deliberately does not import the
+m=10-only aligned 3+7 common-P track normal form.
 
-Alpha constraints are added by exact lazy separation: every proposed model is
-searched for an independent 5-set in H and an independent 13-set in each color.
-A violating set adds the valid clause that at least one of its pairs has that
-color. SAT is accepted only after the independent candidate verifier passes.
+Requires z3-solver. Alpha and clique constraints are separated exactly by
+searching every proposed model for an independent 5-set in H, an independent
+13-set in each color, and a monochromatic K6. SAT is accepted only after the
+independent candidate verifier passes.
 """
 from __future__ import annotations
 import argparse
 import itertools
 import json
+import platform
 import sys
 from pathlib import Path
 
@@ -41,7 +44,7 @@ def build_model(m):
     if z3 is None:
         raise RuntimeError("z3-solver is not installed; install z3-solver before solving")
     if m not in (8, 9):
-        raise ValueError("m must be 8, 9, or 10")
+        raise ValueError("this isolated workstream handles only m=8,9")
 
     solver = z3.Solver()
     try:
@@ -488,29 +491,63 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--m", type=int, choices=(8, 9), required=True)
     parser.add_argument("--max-iterations", type=int, default=10000)
-    parser.add_argument("--out-dir", default="q32_fullsupport_run")
+    parser.add_argument("--out-dir", default="q32_fullsupport_m89_run")
     args = parser.parse_args()
-    if z3 is None:
-        print("Z3_SOLVER_UNAVAILABLE: install z3-solver; no SAT/UNSAT claim made")
-        return 2
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
+    manifest_path = out_dir / "run_manifest.json"
+    log_path = out_dir / "run.log"
+
+    def log(message):
+        with log_path.open("a", encoding="utf-8") as stream:
+            stream.write(message + "\n")
+
+    manifest = {
+        "workstream": "q32-v47-m89-final-chat-20261030",
+        "m": args.m,
+        "max_iterations": args.max_iterations,
+        "python_version": platform.python_version(),
+        "z3_version": z3.get_version_string() if z3 is not None else None,
+        "color_counts": expected_color_counts(args.m),
+        "model_file": "q32_fullsupport_m89_solver.py",
+        "candidate_verifier": "verify_q32_fullsupport_candidate.py",
+        "status": "INITIALIZED",
+    }
+    manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+    if z3 is None:
+        manifest["status"] = "NOT_RUN_Z3_SOLVER_UNAVAILABLE"
+        manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+        log("Z3_SOLVER_UNAVAILABLE: install z3-solver; no SAT/UNSAT claim made")
+        print("Z3_SOLVER_UNAVAILABLE: install z3-solver; no SAT/UNSAT claim made")
+        return 2
+
     vs = build_model(args.m)
     solver = vs["solver"]
     for iteration in range(1, args.max_iterations + 1):
         status = solver.check()
+        log(f"iteration={iteration}; solver_status={status}")
         if status == z3.unsat:
             (out_dir / "final_model.smt2").write_text(solver.to_smt2(), encoding="utf-8")
             try:
                 (out_dir / "unsat_proof.txt").write_text(str(solver.proof()), encoding="utf-8")
-                proof_status = "PROOF_EXPORTED"
+                proof_status = "Z3_PROOF_EXPORTED_REQUIRES_INDEPENDENT_REPLAY"
             except Exception as exc:
                 proof_status = f"PROOF_EXPORT_FAILED: {exc}"
-            print(f"Q32_FULLSUPPORT_M89_UNSAT_AFTER_{iteration-1}_VALIDITY_CUTS")
+            manifest["status"] = "UNSAT_CANDIDATE_REQUIRES_INDEPENDENT_REPLAY"
+            manifest["iterations"] = iteration
+            manifest["proof_status"] = proof_status
+            manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+            log(f"UNSAT_CANDIDATE; {proof_status}")
+            print(f"Q32_FULLSUPPORT_M{args.m}_UNSAT_CANDIDATE_AFTER_{iteration-1}_VALIDITY_CUTS")
             print(proof_status)
             return 1
         if status != z3.sat:
             (out_dir / "final_model.smt2").write_text(solver.to_smt2(), encoding="utf-8")
+            manifest["status"] = "UNKNOWN"
+            manifest["iterations"] = iteration
+            manifest["reason_unknown"] = solver.reason_unknown()
+            manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+            log(f"UNKNOWN: {solver.reason_unknown()}")
             print(f"Q32_SOLVER_UNKNOWN: {solver.reason_unknown()}")
             return 3
         model = solver.model()
@@ -519,26 +556,44 @@ def main():
         if local_errors:
             (out_dir / "model_candidate_invalid.json").write_text(
                 json.dumps(candidate, indent=2), encoding="utf-8")
-            print("MODEL_ENCODING_AUDIT_FAILURE")
-            print("\n".join(local_errors[:50]))
+            manifest["status"] = "MODEL_ENCODING_AUDIT_FAILURE"
+            manifest["iterations"] = iteration
+            manifest["errors"] = local_errors[:50]
+            manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+            log("MODEL_ENCODING_AUDIT_FAILURE")
             return 4
         cuts = add_alpha_cuts(vs, model)
         cuts += add_pivot_matching_composition_cuts(vs, model)
         if cuts == 0:
             errors = verify_candidate(candidate, check_alpha=True, check_omega=True)
             if errors:
+                manifest["status"] = "INDEPENDENT_VERIFIER_DISAGREEMENT"
+                manifest["iterations"] = iteration
+                manifest["errors"] = errors[:50]
+                manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+                log("INDEPENDENT_VERIFIER_DISAGREEMENT")
                 print("INDEPENDENT_VERIFIER_DISAGREEMENT")
                 print("\n".join(errors[:50]))
                 return 5
-            path = out_dir / f"q32_fullsupport_m{args.m}.json"
-            path.write_text(json.dumps(candidate, indent=2), encoding="utf-8")
+            candidate_path = out_dir / f"q32_fullsupport_m{args.m}.json"
+            candidate_path.write_text(json.dumps(candidate, indent=2), encoding="utf-8")
             (out_dir / "final_model.smt2").write_text(solver.to_smt2(), encoding="utf-8")
+            manifest["status"] = "SAT_CANDIDATE_VERIFIED_NOT_A_CLOSURE"
+            manifest["iterations"] = iteration
+            manifest["candidate_file"] = candidate_path.name
+            manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+            log(f"SAT_CANDIDATE_VERIFIED: {candidate_path.name}")
             print("Q32_FULLSUPPORT_SAT_CANDIDATE_VERIFIED")
-            print(path)
+            print(candidate_path)
             return 0
+        log(f"iteration={iteration}; validity_cuts_added={cuts}")
         print(f"iteration={iteration}; validity_cuts_added={cuts}")
-    print(f"ITERATION_LIMIT_REACHED: {args.max_iterations}; no closure claim")
+    manifest["status"] = "ITERATION_LIMIT_REACHED"
+    manifest["iterations"] = args.max_iterations
+    manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     (out_dir / "final_model.smt2").write_text(solver.to_smt2(), encoding="utf-8")
+    log(f"ITERATION_LIMIT_REACHED: {args.max_iterations}; no closure claim")
+    print(f"ITERATION_LIMIT_REACHED: {args.max_iterations}; no closure claim")
     return 3
 
 
