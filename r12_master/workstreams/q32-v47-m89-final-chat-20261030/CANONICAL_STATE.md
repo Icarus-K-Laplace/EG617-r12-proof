@@ -13,6 +13,7 @@ It does not work on v=44,45,46 or m=10.
 - Repository: `Icarus-K-Laplace/EG617-r12-proof`
 - Branch: `workstream/r12-q32-v47-m89-final-20261030`
 - Branch base: high-support branch commit `1de8a37556ba98ccbb8651f39a5192629453f0f1`
+- Audited workstream HEAD at report time: `c0a2ce1ca2c4890e9374efd590aad8ba878e26de`
 - Sole write directory: `r12_master/workstreams/q32-v47-m89-final-chat-20261030/`
 - The sibling branches and their directories were not modified.
 
