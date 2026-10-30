@@ -45,3 +45,18 @@
 - Minimum-degree source theorem: **PROVED**.
 - E408/Qmax=33 parent contradiction: **PROVED_CONDITIONAL**.
 - Full EG617(r=12): **OPEN / NOT_CERTIFIED**.
+
+## 2026-10-30 — direct certificate retention
+
+- Copied the full 127-row COMPLETION_CERTIFICATE.csv into the isolated workstream.
+- Added standalone verify_completion.py using exact Fraction arithmetic.
+- Added VERIFIED_COMPLETION.json with the 32+95 row split and exact maxima.
+- Added SOURCE_ASSET_MANIFEST.md with source archive hashes and internal source paths.
+- Extended Q33_SOURCE_COMPLETE_REPLAY.py with the explicit 25-set contradiction arithmetic.
+
+## 2026-10-30 — write-scope correction
+
+- One manifest-create call initially omitted the explicit branch argument and landed on main.
+- Detected immediately and deleted the manifest from main in the next commit.
+- Verified the current main tree contains no manifest at the accidental path.
+- No global canonical or sibling workstream file was touched. All subsequent writes explicitly pass the isolated branch.
