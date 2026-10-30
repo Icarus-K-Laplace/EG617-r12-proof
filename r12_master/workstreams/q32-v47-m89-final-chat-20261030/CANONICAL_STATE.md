@@ -1,6 +1,6 @@
 # Q32 full-support m=8,9 — canonical state
 
-**Status: ANALYTICALLY EXCLUDED (PROVED_CONDITIONAL).** Both full-support m=8 and m=9 Q32 branches are impossible under the registered Type-I factorization and frozen H-core contract. No SMT UNSAT result is claimed.
+**Status: OPEN / NOT_CERTIFIED.** The previous analytic closure relied on unavailable omega(H)<=5, omega(C)<=5 and universal Type-I source assumptions; it is retracted in AUDIT_RETRACTION_BALANCED_PREMISES.md.
 
 ## Scope lock
 
@@ -59,8 +59,10 @@ The full SMT model was not executed; no solver UNSAT result, proof log, or UNSAT
 
 16. **PROVED** — any 11K4+K3 partition of H with \(e(H)=285\), \(\delta(H)\ge12\), \(\alpha(H)\le4\), and \(\omega(H)\le5\) forces an independent 5-set or a K7. Therefore all eleven non-target colors satisfy \(e_C(H)\ge71\), and the 37-unit gap ledger becomes \(\sum_c(e_C(H)-71)=15\). This is independent of m=8/9 and Type-I special-factor placement.
 
-17. **PROVED_CONDITIONAL — Q32 m=8,9 analytic exclusion.** Every exact-129 Type-I color induces one of three H-independent-part partitions: \(11K_4+K_3\), \(10K_4+2K_3+K_1\), or \(11K_4+K_2+K_1\). A unified Hall-matching/tight-part lemma excludes all three: it forces an independent 5-set or a K6 in H. Since m=8 and m=9 require exact Type-I colors, both full-support v47 branches are analytically impossible, conditional on the published Kang–Pikhurko equality classification, the balanced-coloring alpha<=12 premise, global monochromatic-K6 exclusion, and the frozen H-core contract. No full SMT run is claimed or needed. Parent root promotion remains a separate dependency-audit task.
+17. **RETRACTED AS EG617 CLOSURE — Q32 m=8,9 Type-I partition route.** Every exact-129 Type-I color induces one of three H-independent-part partitions: \(11K_4+K_3\), \(10K_4+2K_3+K_1\), or \(11K_4+K_2+K_1\). A unified Hall-matching/tight-part lemma excludes all three: it forces an independent 5-set or a K6 in H. Since m=8 and m=9 require exact Type-I colors, both full-support v47 branches are analytically impossible, conditional on the published Kang–Pikhurko equality classification, the balanced-coloring alpha<=12 premise, global monochromatic-K6 exclusion, and the frozen H-core contract. No full SMT run is claimed or needed. Parent root promotion remains a separate dependency-audit task.
 
 18. **VERIFIER IMPLEMENTED / SYNTHETIC LOGIC REPLAYED** — the independent verifier reconstructs each exact color's H-interior partition, builds the 250/253-edge Hall matching skeleton, and returns an independent 5-set or a clique of size at least six. A standalone Python replay of the helper on the committed synthetic 285-edge fixture returned clique witnesses of sizes 7, 6, and 7 for the three partition shapes. The committed full verifier self-test includes these cases; the full verifier file itself was not executed in this environment.
 
 19. **PARENT-LEVEL COROLLARY — all Q32 supports and m values.** The Type-I partition obstruction uses neither the selected-witness union U nor its support size v nor m beyond m>=1. The parent E408/Q32 outer ledger has m in {8,9,10}; if the same frozen H-core and global coloring premises are explicitly carried for every support row, the theorem excludes all v=44,45,46,47 and all m=8,9,10. This is a promotion implication recorded in ROOT_PROMOTION_NOTE.md; the parent/root branch was not modified here.
+
+20. **CRITICAL AUDIT — missing clique/source hypotheses.** EG617 balancedness gives alpha(C),omega(C)<=12, and the Q32 47-core has omega(H)<=11. The previous Type-I source partition closure assumed omega(C)<=5 and omega(H)<=5, neither of which is available. The exact-129 source may also be 12-partite; C0=5K6+3K5+4K4 is a 61-vertex, 129-edge local example with alpha=12, omega=6 and 12-partite complement. See AUDIT_RETRACTION_BALANCED_PREMISES.md. Q32 m=8,9 is OPEN / NOT_CERTIFIED.
