@@ -28,7 +28,25 @@ The latest root global branch HEAD is `b0459807acd4b7e386148056ddf77d7998918893`
 | `q32-highsupport-root-chat-20261028/V47_Z01_SHARED_P_FACTOR_PACKING.md` | `f622f8870a6e533433d3c377041ac64cb2436483` |
 | `q32-highsupport-root-chat-20261028/HIGH_SUPPORT_NEAR_TURAN.md` | `5dc6e156939b73e909b707a6cb41e540c3d8d657` |
 | `twochat-e408-global-20261026/Q32_CORE285_TERMINAL.md` | `42f3644191bc5e3fe99ae6bbc6e25a8c7b6dd6f4` |
+| `twochat-e408-global-20261026/ROOT_DEPENDENCY_DAG.md` | `09b4d5505d8b80839f2868aca1d427263158eab7` |
+| `twochat-e408-global-20261026/CANONICAL_STATE.md` | `21bb902d9972557d1d3ece5208a74ac33b1b378d` |
+| `twochat-e408-global-20261026/DEPENDENCY_AUDIT.md` | `725b6839c954a09ea46bee84e5ad4d2212c41a23` |
+| `twochat-e408-global-20261026/Q32_131_MINDEG3_V46_M9_CLOSURE.md` | `c88aa8730669ca319bf9c82f53648c79d481747e` |
+| `twochat-e408-global-20261026/Q32_U_COLOR_RESERVE.md` | `bb7ed1c7e11db73f9456e4ee3892715294182beb` |
+| `q32-caseII-v44-final-chat-20261028/Q32_130_MINDEG3.md` | `6ab6a3fb890f31cf8b18171a240ce548957a629a` |
 | `q32-caseII-v44-final-chat-20261028/CANONICAL_STATE.md` | `98eac1c7bba8f7e9dd921104b96ffd03dccc5335` |
 | `q32-caseII-v44-final-chat-20261028/DEPENDENCY_AUDIT.md` | `2adcded87ae5918eac73d29b9b443e2664887313` |
 
 All blob SHAs in this table were fetched from the stated branch refs during this workstream's audit.
+
+
+## Local workstream artifact blobs at audit checkpoint
+
+| Local artifact | Blob SHA |
+|---|---|
+| `q32_fullsupport_m89_solver.py` | `50cdc94d43c72bb05e8c81ff45bad150f02b19c1` |
+| `verify_q32_fullsupport_candidate.py` | `7016293a1c640dd55e176992a2ab09cbee253d33` |
+| `verify_m89_pivot_matching.py` | `59a2c4031785303a0efe37090e37118b2d35dcf0` |
+| `V47_NEAR_TURAN_SOURCE_NORMAL_FORM.md` | `1dffa3e5eae1211790c9e609d9682fb2e5510357` |
+
+The 130-edge minimum-degree-four theorem is cited by the read-only Case-II canonical/dependency audit and is the basis for the m=9 floor sum 4+3=7. Its complete proof artifact was not located among the inspected files in this branch snapshot; this workstream therefore treats that result as an imported dependency, not as an independently re-proved theorem. The directly inspected 130-edge degree-three proof and 131-edge degree-three proof are weaker/parallel source records and do not replace the 130-edge degree-four dependency.
