@@ -99,3 +99,17 @@ The previous Type-I partition replay was conditional on a source factorization n
 The tight-part helper remains a valid conditional implication but returns K6/K7 witnesses that are allowed in EG617. The previous verifier's default omega check, Type-I universal source assumption, and 71-edge floor are not valid for the original problem. The verifier was changed so omega checking is opt-in via --check-omega and its result is explicitly labelled Type-I-restricted. The solver is now labelled as an augmented Type-I/K6-free diagnostic and defaults to OPEN.
 
 No full verifier execution or SMT run was performed. No m=8/9 closure or parent promotion is claimed.
+
+
+## 2026-10-30 continued research — source-complete exact-129 repair
+
+A stronger result was proved after the K6-free retraction:
+
+1. **Universal H-partition:** every exact-129 color induces one of 11K4+K3, 10K4+2K3+K1, 11K4+K2+K1. The proof handles both a 12-partite complement and all three non-12-partite Kang–Pikhurko equality profiles; it does not assume Type I or omega(C)<=5.
+2. **Core-edge bounds:** every exact color has 69<=e_C(H)<=75. The 12-partite branch has at most four cross-partition C-edges; the nonpartite branch is handled by the exact gadget formula for x/y placements.
+3. **Witness interface:** every exact color supplies at least ten disjoint core K4 witnesses, pairwise linear across colors. This is a source-complete replacement for the ten-witness input used in Q32_U_COLOR_RESERVE.md.
+4. **Boundary:** the Hall/tight-part lemma still only forces omega(H)>=6; this is allowed by omega(H)<=11. The new theorem does not close m=8/9. It does not provide a special point or a fixed-pivot K4 in the 12-partite complement branch, so the current pivot CSP remains restricted and incomplete.
+
+The Kang–Pikhurko source card was checked against the published statement: Theorem 1 gives p_12(61)=1701; the equality construction has twelve parts plus special x; Theorem 4 gives all extremizers and Lemma 5 gives the three part-size profiles. The original Problem 617 statement confirms the balanced counterexample condition is every 13-set containing all 12 colors, not K6-freeness.
+
+No full SMT run or full verifier execution was performed. No Q32 closure or root promotion is claimed.
