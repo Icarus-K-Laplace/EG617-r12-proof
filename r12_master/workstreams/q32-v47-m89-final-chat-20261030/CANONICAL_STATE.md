@@ -36,6 +36,10 @@ It does not work on v=44,45,46 or m=10.
 9. **PROVED_CONDITIONAL** — every non-target color with 69 or 70 H-edges has an 11K4+K3 near-Turan partition; for exact colors every single-outside source witness K4 occupies a size-four part. The CSP and independent verifier now encode/check this structure.
 10. **WITHDRAWN / repaired** — the first unconditional lazy matching-composition cuts were overconstraints; they have been replaced by source- and pivot-selection-guarded implications.
 11. **PROVED_CONDITIONAL** — simultaneous 69/70 partitions of distinct non-target colors are pairwise orthogonal; the solver and independent verifier now encode/check this condition.
+12. **PROVED_CONDITIONAL** — every double-outside source factor's H-interior K3 lies in one near-Turan part; the solver and independent verifier encode/check this.
+13. **PROVED_CONDITIONAL** — for an exact 69/70 color with x in H, Nt must be the overfull factor (outside occupancy 2 in two-double, 3 in triple), y is outside H, the Nt H-interior shares x's part, and |(Ns\\A0)∩H|≤1; the exact core count is 69 plus that Ns residual. For x outside, the unique double K3 is aligned and the core excess is 1_{y∈H}|A0∩H|.
+14. **PROVED_CONDITIONAL** — any 69/70 partition yields an existential 253-edge target matching skeleton; its 32-edge residual has degree 1+s_v on 36 vertices and 2+s_v on 11, with at least 30 leaves. This is an analytic theorem, not yet encoded by matching-choice variables.
+
 
 ## Scope firewall
 
