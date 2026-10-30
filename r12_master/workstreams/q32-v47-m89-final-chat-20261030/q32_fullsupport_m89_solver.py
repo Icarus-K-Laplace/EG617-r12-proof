@@ -252,7 +252,10 @@ def build_model(m):
     for c1, c2 in itertools.combinations(exact, 2):
         key = (c1, c2)
         pair_count[key] = iff_count(
-            z3.And(qblock[c1][u], qblock[c2][v], col[edge(u, v)] == 0)
+            z3.And(
+                z3.Or(z3.And(qblock[c1][u], qblock[c2][v]),
+                      z3.And(qblock[c1][v], qblock[c2][u])),
+                col[edge(u, v)] == 0)
             for u, v in pairs(H))
         solver.add(pair_count[key] >= 4)
 
