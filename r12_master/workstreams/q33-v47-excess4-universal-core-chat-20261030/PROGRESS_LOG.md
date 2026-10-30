@@ -75,3 +75,12 @@
 
 
 - As a boundary-only check, reran V11's finite kernel verifier: 684 assignments, 349 outside-count states, 259 labelled shells, 252 Family-A and 7 Family-B survivors; zero actual completed graphs claimed. The Q33 proof does not import V11's analytic completion or minimum-degree claims.
+
+
+## 2026-10-30 — strict 285-edge floor and uniform E408 bound
+
+- Combined the retained 284-edge floor (including its exact 127-row certificate), the source-complete minimum-degree gate, and the universal 284-edge contradiction.
+- Proved R(4,47) has e>=285; equality e=284 is impossible.
+- For every degree-13 pivot in E408/h13, the induced 47-core lies in R(4,47), so e(H_p)>=285.
+- Exact pivot identity 408=91+q_p+e(H_p) now yields q_p<=32 for every pivot, hence Q_max<=32.
+- This closes the whole E408/Q_max=33 layer without the 56-witness support-promotion route. E408/Q_max=32 remains OPEN and was not studied here.
