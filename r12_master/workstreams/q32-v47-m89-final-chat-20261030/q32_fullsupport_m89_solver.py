@@ -365,6 +365,75 @@ def model_adj(model, col, color):
     return adj
 
 
+
+def add_pivot_matching_composition_cuts(vs, model):
+    """Add the exact light-pair matching-composition consequences of alpha(H)<=4.
+
+    If e_H(Q_a,Q_b)=e_H(Q_a,Q_c)=4, both bipartite graphs are unique
+    perfect matchings. For each u in Q_a, if v,w are its matched vertices,
+    then vw must be an H-edge; otherwise Q_a\\{u} union {v,w} is an
+    independent 5-set. This is a lazy, source-safe strengthening.
+    """
+    solver, col = vs["solver"], vs["col"]
+    exact = vs["exact"]
+    qblock = vs["qblock"]
+    pair_count = vs["pair_count"]
+    blocks = {
+        c: [v for v in H if z3.is_true(model.eval(qblock[c][v]))]
+        for c in exact
+    }
+    if any(len(blocks[c]) != 4 for c in exact):
+        return 0
+
+    light_maps = {}
+    for c1, c2 in itertools.combinations(exact, 2):
+        key = (c1, c2)
+        if model.eval(pair_count[key]).as_long() != 4:
+            continue
+        mapping = {}
+        for u in blocks[c1]:
+            neighbors = [
+                v for v in blocks[c2]
+                if model.eval(col[edge(u, v)]).as_long() == 0
+            ]
+            if len(neighbors) != 1:
+                mapping = {}
+                break
+            mapping[u] = neighbors[0]
+        if len(mapping) == 4 and len(set(mapping.values())) == 4:
+            light_maps[key] = mapping
+
+    def map_vertex(c_from, c_to, u):
+        key = (min(c_from, c_to), max(c_from, c_to))
+        mapping = light_maps[key]
+        if c_from < c_to:
+            return mapping.get(u)
+        inverse = {v: a for a, v in mapping.items()}
+        return inverse.get(u)
+
+    cuts = 0
+    seen = set()
+    for anchor in exact:
+        others = [c for c in exact if c != anchor]
+        for c2, c3 in itertools.combinations(others, 2):
+            key2 = (min(anchor, c2), max(anchor, c2))
+            key3 = (min(anchor, c3), max(anchor, c3))
+            if key2 not in light_maps or key3 not in light_maps:
+                continue
+            for u in blocks[anchor]:
+                v = map_vertex(anchor, c2, u)
+                w = map_vertex(anchor, c3, u)
+                if v is None or w is None:
+                    continue
+                e = edge(v, w)
+                if e in seen:
+                    continue
+                seen.add(e)
+                if model.eval(col[e]).as_long() != 0:
+                    solver.add(col[e] == 0)
+                    cuts += 1
+    return cuts
+
 def add_alpha_cuts(vs, model):
     solver, col = vs["solver"], vs["col"]
     cuts = 0
@@ -414,7 +483,7 @@ def main():
                 proof_status = "PROOF_EXPORTED"
             except Exception as exc:
                 proof_status = f"PROOF_EXPORT_FAILED: {exc}"
-            print(f"Q32_FULLSUPPORT_UNSAT_AFTER_{iteration-1}_ALPHA_CUTS")
+            print(f"Q32_FULLSUPPORT_M89_UNSAT_AFTER_{iteration-1}_VALIDITY_CUTS")
             print(proof_status)
             return 1
         if status != z3.sat:
@@ -431,6 +500,7 @@ def main():
             print("\n".join(local_errors[:50]))
             return 4
         cuts = add_alpha_cuts(vs, model)
+        cuts += add_pivot_matching_composition_cuts(vs, model)
         if cuts == 0:
             errors = verify_candidate(candidate, check_alpha=True, check_omega=True)
             if errors:
