@@ -56,3 +56,16 @@ This note proposes closure of the E408/Q32 graph terminal only. It does not clos
 - The Type-I source factorization is not available for every exact-129 color from the balanced-coloring hypotheses alone.
 - The local m=8/9 Q32 terminal remains OPEN / NOT_CERTIFIED.
 - The parent root branch was not modified and remains OPEN / NOT_CERTIFIED.
+
+
+## New valid partial import (not a closure promotion)
+
+The previous full Type-I/K6-free closure remains withdrawn. However, V47_EXACT129_UNIVERSAL_PARTITION.md and V47_EXACT129_CORE_EDGE_BOUNDS.md now prove a source-complete replacement for the parent's **ten-witness / core-edge interface**:
+
+- every exact-129 color induces one of the three independent-part partitions of H, covering both the 12-partite complement case and all three non-12-partite Kang–Pikhurko equality profiles;
+- hence every exact color has at least ten disjoint monochromatic core K4 witnesses, pairwise linear across colors;
+- every exact color satisfies 69<=e_C(H)<=75, so its gap above 69 is at most six.
+
+This is sufficient for the ten-K4 input in Q32_U_COLOR_RESERVE.md. It does **not** supply the special-point multiplicity n_w>=m-6 or a fixed-pivot K4 Q_C in the 12-partite complement case. Any parent use of those stronger facts must remain a separate dependency and must not be inferred from this import.
+
+Suggested parent edit: replace the Type-I/twelve-K5 sentence in Q32_CORE285_TERMINAL.md §3 with the wording in Q32_SOURCE_COMPLETE_WITNESS_IMPORT.md §6. The root branch remains read-only in this workstream; no parent file was changed.
