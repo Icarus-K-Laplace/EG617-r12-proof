@@ -31,6 +31,8 @@ The remaining obstacle is global compatibility of the full family of 10/11 singl
 
 The m=8/9 pivot-level scalar relaxation has not been eliminated. The new matching-composition cuts only apply when two incident pivot pairs are light; they do not yet force a global contradiction.
 
+Moreover, the abstract pivot matching layer alone can be made globally consistent by choosing a common labeling of the four vertices across all pivot blocks. In that balanced case every light-edge composition agrees, so the local composition theorem need not create any additional heavy-pair cost. The unresolved obstruction must therefore couple these pivot labels to the full Type-I source factors, the residual assignments, and the 130/131-edge color graphs; the pivot matching layer by itself is not a closure theorem.
+
 ## Shortest next attack
 
 1. Run `q32_fullsupport_m89_solver.py --m 8` and `--m 9` with a recorded Z3 version, preserving the generated manifest, SMT2, and logs.
