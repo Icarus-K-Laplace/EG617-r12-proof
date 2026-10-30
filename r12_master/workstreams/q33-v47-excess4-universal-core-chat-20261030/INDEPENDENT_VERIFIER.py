@@ -6,7 +6,7 @@ This program certifies only:
   * the exhaustive support-multiset degree patterns for |Z|=3,4,5;
   * the two 2x2 mixed-support matrix classes;
   * the finite integer minima used in the analytic inequalities;
-  * the Kang-Pikhurko n=25,r=2 numerical substitution.
+  * the elementary shortest-odd-cycle/Mantel 25-point common-neighbour bound.
 
 It does NOT search for graphs, and no failed search is used as a proof.
 The graph-theoretic proof is in the accompanying Markdown assets.
@@ -192,12 +192,16 @@ def verify():
     assert minima["P mixed pair"][0] == 4
     assert minima["D mixed pair"][0] == 5
 
-    # Kang-Pikhurko Theorem 1 at n=25,r=2.
-    t2_25 = 13 * 12
-    p2_25 = t2_25 - (25 // 2) + 1
-    assert t2_25 == 156
-    assert p2_25 == 145
-    assert comb(25, 2) - p2_25 == 155
+    # Elementary shortest-odd-cycle/Mantel bound on a triangle-free 25-set.
+    bounds_25 = []
+    for k in range(2, 13):
+        outside = 24 - 2*k
+        bounds_25.append(2*k + 1 + k*outside + (outside*outside)//4)
+    assert bounds_25 == [145, 142, 137, 130, 121, 110, 97, 82, 65, 46, 25]
+    assert max(bounds_25) == 145
+    assert comb(25, 2) - max(bounds_25) == 155
+    assert (25*12 + 4)//2 == 152
+    assert 155 > 152
 
     print("PASS: Q33 284-edge finite arithmetic/support verifier")
     print("Turan lower bounds:", expected)
@@ -205,7 +209,7 @@ def verify():
     print("Support degree patterns:", degree_patterns)
     print("Mixed matrix classes:", sorted(matrix_classes))
     print("Integer minima:", minima)
-    print("KP(25,2): t2=156, p2=145, H[W] floor=155")
+    print("elementary 25-set bound: e(L)<=145, e(H[W])>=155>152")
 
 
 if __name__ == "__main__":
