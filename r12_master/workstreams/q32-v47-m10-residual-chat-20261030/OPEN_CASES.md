@@ -45,3 +45,11 @@ Astra's theorem applies only after the 3+7 five-property contract is proved. It 
 ## 4+6 closed subcase
 
 PROVED_CONDITIONAL: the entire 4+6 K4-e, Z=4 cell is impossible for all residual fiber profiles and all six-column matching/extra-edge patterns. See M10_K4E_Z4_GLOBAL_GRID_CLOSURE.md and verify_m10_k4e_z4_grid_reduction.py. The older two-aligned pattern-10 result is a strict subcase. K4 and K4-e Z=1,2,3 remain OPEN.
+
+## 4+6 tightened residual frontier — 2026-10-30
+
+The K4 small-component branch now has the exact necessary residual filter B_min<=10-2z: 79 graph types / 121,782 labelled residual graphs / 9,600 clique-fiber maps over z=0,...,5. Its six-vertex outer weighted-heavy graph has x_T<=4, a total nonbaseline budget delta+Y_S+sum(s_j)<=2, and 7,434 labelled aggregate degree-ledger states across only 14 weighted-graph isomorphism types.
+
+For K4-e with Z=1,2,3, the residual filter is B_min<=8-2Z, leaving 15 graph types / 11,662 labelled residual graphs / 1,176 clique-fiber maps. The Z=4 slice remains closed by the global grid theorem.
+
+These filters do not yet impose all cross-cell matching endpoints, the full F/G residual compatibility, or source-color edge ownership. Both branches remain OPEN.

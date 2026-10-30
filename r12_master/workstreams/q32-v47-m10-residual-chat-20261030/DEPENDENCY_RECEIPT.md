@@ -116,3 +116,14 @@ The global theorem file was clarified after its initial publication to spell out
 
 
 Proof simplification receipt: the A/B switch contradiction in Section 7.2 was reduced to two 4,5,5 consequences and the outer cap c_j(k')<=1. The corrected 5,5,5 theorem remains load-bearing only for rowwise identity/transposition compatibility; its six-case endpoint replay is an additional regression.
+
+## 8. Tight 4+6 residual/outer-ledger reduction
+
+New artifacts:
+- M10_4PLUS6_TIGHT_RESIDUAL_FILTER.md
+- M10_4PLUS6_TIGHT_RESIDUAL_FILTER.csv
+- verify_m10_4plus6_tight_reductions.py
+
+The K4 small-side bound is B_min<=10-2z, with 79 residual isomorphism types and 121,782 labelled graphs. The K4-e Z=1,2,3 bound is B_min<=8-2Z, with 15 types and 11,662 labelled graphs. For the K4 outer ledger, the exact integer normal form is t_j^T+delta_j+y_j=1+s_j, delta+Y_S+sum(s_j)<=2, Y_T=6+sum(s_j)-2x_T-delta, and z=2+x_T-Y_S-sum(s_j). The finite relaxation has 7,434 labelled states and 14 weighted-graph isomorphism types.
+
+These are necessary-condition results only. No cross-grid closure or Q32/root promotion is claimed.

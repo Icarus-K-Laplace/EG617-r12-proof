@@ -112,3 +112,12 @@ Reproduced counts:
 - Corrected 5,5,5 endpoint branch: all six off-diagonal AB extras with A-endpoint outside {0,1} force the unique BE extra edge (0,0), after checking all 792 five-subsets for every candidate.
 
 This certifies the local finite replay only. The global 4-by-6 contradiction remains the analytic proof in M10_K4E_Z4_GLOBAL_GRID_CLOSURE.md; no full-grid SAT or 47-vertex Q32 solver was run.
+
+## 11. Tight 4+6 residual and outer-ledger replay
+
+The new standard-library verifier verify_m10_4plus6_tight_reductions.py checks the filtered representatives against the original complete residual catalog:
+- K4 small side: z=0,...,5, 79 isomorphism types, orbit-stabilizer sum 121,782 labelled graphs, 9,600 clique-fiber maps, 32 connected types.
+- K4-e small side z=1,2,3: 15 types, orbit-stabilizer sum 11,662 labelled graphs, 1,176 clique-fiber maps, one connected type.
+- For each retained graph it recomputes B_min, alpha(R)<=4, clique-cover number at most four, and every labelled map R->[4] with clique fibers.
+
+The same verifier enumerates the six-vertex outer weighted-ledger relaxation: 7,434 labelled states; by z the counts are 28, 469, 2,272, 3,540, 1,110, 15; 1,036 labelled weighted outer graphs and 14 isomorphism types. It verifies the pointwise outer degree equations and all scalar identities. This does not certify cross-grid matching compatibility or full Q32 infeasibility.

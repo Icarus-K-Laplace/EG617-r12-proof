@@ -19,7 +19,7 @@ where X_S is the weighted heavy-pair sum internal to S, delta_ST is the cross-pa
 
 The K4-e subcase is even more rigid at the scalar level: X_S=1 forces delta_ST=Y_S=0. All 24 cross pairs have exactly five edges. Since s_Q=6, s_T=0; every j in T satisfies t_j^T+y_j=1. Consequently the internal heavy graph on T is a matching, X_T=Z-1, Y=8-2Z, and 1<=Z<=4. Thus L[T] is K6 minus a matching of size Z-1.
 
-The remaining problem is the 4-by-6 cross matching/extra-edge grid. Each cross pair has a unique five-edge matching plus one extra edge. The local 4,5,5 switch lemma constrains every cell pair along a light edge of S or T, but the joint grid has not yet been classified. OPEN.
+The K4-e, Z=4 slice of this grid is now closed by M10_K4E_Z4_GLOBAL_GRID_CLOSURE.md. The K4-e cases Z=1,2,3 and the separate K4 small-component branch remain open; the latter now has a tightened residual and outer-ledger normal form in M10_4PLUS6_TIGHT_RESIDUAL_FILTER.md.
 
 ## 2. Four-block cores inside each 5-block component
 
@@ -42,9 +42,15 @@ Apply this independently to both five-block components. The 25 cross pairs are a
 
 ## 3. Scope
 
-These lemmas do not eliminate 4+6 or 5+5. They replace arbitrary internal light graphs by aligned four-block cores and isolate the remaining cross-grid problem. They use only the registered component ledger, the exact 4-edge matching property, and the two-light matching-composition theorem.
+These lemmas reduce the 4+6 and 5+5 cells to aligned four-block cores. The K4-e, Z=4 slice is now closed; the remaining 4+6 cases and the 5+5 cross-core grid remain open. They use only the registered component ledger, the exact 4-edge matching property, and the two-light matching-composition theorem.
 
 
 ## 5. K4-e, Z=4 global terminal
 
 The entire K4-e, Z=4 branch is excluded by M10_K4E_Z4_GLOBAL_GRID_CLOSURE.md. The proof covers both possible 2-regular residual graphs, all small/outer residual clique-fiber profiles, and every six-column cross matching/extra-edge grid. It uses the exact pointwise outer degree cap and the corrected local switch theorems. The remaining 4+6 cases are K4 on the small side and K4-e with Z=1,2,3. This does not close full-support m=10.
+
+## 6. Tight 4+6 frontier after the K4-e, Z=4 closure
+
+The remaining 4+6 branches have sharper residual budgets. If the small component is K4, then 4+delta_ST+Y_S<=s_Q<=6, so delta_ST+Y_S<=2, s_R<=2, and B_min(R)<=10-2z. The six-block outer degree equations reduce to x_T<=4 and delta_ST+Y_S+sum(s_j)<=2; see M10_4PLUS6_TIGHT_RESIDUAL_FILTER.md.
+
+If the small component is K4-e, the Z=1,2,3 residual budget is B_min(R)<=8-2Z; the Z=4 case is already closed. The exact filtered catalogs and the outer-ledger replay are in the same new note and verifier.

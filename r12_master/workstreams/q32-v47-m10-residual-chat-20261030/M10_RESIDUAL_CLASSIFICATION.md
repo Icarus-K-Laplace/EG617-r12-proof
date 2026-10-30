@@ -116,3 +116,11 @@ This is a necessary-condition catalog, not a full 47-vertex Q32 enumeration. It 
 - the target clique cap on the entire 47-core after all blocks are attached.
 
 The 3+7 branch has its own stronger source-derived contract and is conditionally excluded by the Astra theorem. The 371-type catalog does not close any of the other light-component profiles.
+
+## 7. Component-specific residual budget refinements
+
+The generic B_min<=14-2z catalog can be sharpened inside 4+6:
+- K4 small side: B_min<=10-2z, z=0,...,5, leaving 79 types / 121,782 labelled graphs / 9,600 fiber maps.
+- K4-e small side: B_min<=8-2z; after the already-closed z=4 slice, z=1,2,3 leaves 15 types / 11,662 labelled graphs / 1,176 fiber maps.
+
+The filtered graph6 representatives and exact fiber-profile counts are recorded in M10_4PLUS6_TIGHT_RESIDUAL_FILTER.csv. These remain necessary residual relaxations, not complete 47-core configurations.

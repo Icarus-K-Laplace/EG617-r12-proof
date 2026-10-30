@@ -55,3 +55,13 @@ No full-model SAT/UNSAT certificate is claimed. No root EG617(r=12) closure is c
 M10_K4E_Z4_GLOBAL_GRID_CLOSURE.md excludes the entire K4-e, Z=4 slice for every residual fiber profile and every six-column matching/extra-edge grid. The standard-library replay verify_m10_k4e_z4_grid_reduction.py checks the complete pair/triple necessary residual-map catalog on C7 and C3+C4, all 930 outer-light cut shapes, and the corrected 5,5,5 endpoint branch used in the final grid contradiction.
 
 The remaining 4+6 frontier is the K4 small-component branch and K4-e with Z=1,2,3. Full-support m=10 Q32 remains OPEN / NOT_CERTIFIED.
+
+## 13. Tight 4+6 residual and outer-ledger reductions
+
+Added M10_4PLUS6_TIGHT_RESIDUAL_FILTER.md, M10_4PLUS6_TIGHT_RESIDUAL_FILTER.csv, and verify_m10_4plus6_tight_reductions.py.
+
+- K4 small-component branch: the component ledger sharpens the residual incidence budget to B_min(R)<=10-2z, leaving 79 residual graph types, 121,782 labelled graphs, and 9,600 clique-fiber maps for z=0,...,5.
+- K4-e small-component branches Z=1,2,3: B_min(R)<=8-2Z, leaving 15 types, 11,662 labelled graphs, and 1,176 clique-fiber maps.
+- K4 outer weighted-heavy ledger: x_T<=4, delta+Y_S+sum(s_j)<=2, and z=2+x_T-Y_S-sum(s_j). Exact block-level enumeration gives 7,434 labelled aggregate states and 14 weighted-graph isomorphism types.
+
+These are necessary-condition reductions only. The K4 small-side cross grid, K4-e Z=1,2,3 compatibility, full-support m=10, and the EG617 root remain OPEN / NOT_CERTIFIED.
