@@ -57,3 +57,8 @@ The solver implications were inserted inside the per-exact-color near-Turan loop
 The independent verifier adds the corresponding source-part checks under check_alpha, so the provisional source-only pass is not strengthened by alpha-dependent conclusions.
 
 A separate Hall argument proves a 253-edge target matching skeleton for any low-layer partition. The 32-edge residual has 36 baseline degree-1 vertices and 11 baseline degree-2 vertices, with only six total excess units; at least 30 residual vertices are leaves. This skeleton is not yet encoded with explicit matching-choice variables.
+
+
+## Static syntax check for source-localization patch
+
+The newly inserted solver and verifier blocks were separately reconstructed from the committed source and parsed with Python's AST parser. Both snippets passed. This is only a syntax check of the inserted blocks; the complete files were not executed or fully imported. The runtime still lacks z3-solver, so no m=8/9 solver execution, SAT/UNSAT result, or proof log is available.
