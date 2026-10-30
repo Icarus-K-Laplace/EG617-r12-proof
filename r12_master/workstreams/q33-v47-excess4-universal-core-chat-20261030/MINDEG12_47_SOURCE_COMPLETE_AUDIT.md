@@ -285,3 +285,15 @@ The following hashes identify the exact retained source assets inspected:
 | Q33_SOURCE_COMPLETE_REPLAY.py | to be recorded in INDEPENDENT_REPLAY_LOG.md |
 
 The archive sources are retained as the named uploaded assets; this workstream retains the hashes, exact file paths, replay scripts, and replay outputs.
+
+## 9. Actual clean-room replay on 2026-10-30
+
+The original FRONTEND_LINE_A_V1.zip was extracted from the current conversation upload. Its SHA256 and the three companion archive hashes were recomputed and matched the source manifest. The exact 127-row certificate and both retained original verifiers were then executed from the extracted archive.
+
+Observed:
+- both original Fraction verifiers: EXACT_CERTIFICATE_VERIFIED, 127 rows;
+- exact maxima: 773/1089 and 39/44;
+- original S31 arithmetic supplement verifier: EXACT_ARITHMETIC_SUPPLEMENT_VERIFIED, with 15 d3 parameter rows, 25 d3 defect rows and 4 d10 coupling rows; it explicitly reports the original K145 bridge OPEN;
+- Q33_SOURCE_COMPLETE_REPLAY.py: PASS_EXACT_ARITHMETIC_REPLAY, including D(13), D(14), D(23), D(24), D(25), D(37), shortest-cycle bounds 122/145/73, R(3,35) charge maximum6, degree-10 floor289, degree-11 floor287, support counts9/40/48, mixed matrices P/D, charge minima6/6/4/5, and optional exact replay of all127 rational rows.
+
+The 127-row certificate is a finite proof of the weighted-transversal inequality in the separate total-excess<=2 private-clique lemma. It is not a premise in the minimum-degree theorem of Sections1–5. The minimum-degree theorem is analytic and uses the full R(2,24), R(3,35), R(3,36), R(3,37) chain. The finite replay verifies arithmetic and certificate coverage; it does not replace the 121/122-edge analytic type classification.
