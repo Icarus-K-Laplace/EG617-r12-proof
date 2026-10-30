@@ -47,7 +47,7 @@ H[R]\cong C_7\quad\text{or}\quad C_3\dot\cup C_4.
 
 Every pair of pivot blocks has either four or five edges and therefore a unique perfect matching. The light graph on S is K4-e; the outer light graph is K6-M, the complete tripartite graph with three parts of size two. In both graphs every pair of block labels has a common light neighbor.
 
-The two-light matching-composition theorem says that if X-Z and Y-Z are light matching pairs, then the composed matching is present in X-Y. Since every block pair has a unique perfect matching, this composition identifies that matching. Applying this through common light neighbors aligns all matching systems within S and, independently, within T. Relabel the four vertices of every small block and every outer block so that all internal base matchings are identity.
+The two-light matching-composition theorem says that if X-Z and Y-Z are light matching pairs, then the composed matching is present in X-Y. On every light triangle, all three pairs have exactly four edges, so the composed matching must equal the unique matching on the third side. The triangle boundaries generate the cycle space of each light graph: K4-e is the union of triangles ACD and BCD, while K6-M is the octahedral graph whose eight face triangles span its cycle space. Thus path products are independent of the chosen path, and all matching systems align within S and, independently, within T. Relabel the four vertices of every small block and every outer block so that all internal base matchings are identity.
 
 For each block Q_i, the zero-slack condition gives a unique-neighbor map f_i:R->[4]. Its fibers are cliques in H[R]: if two nonadjacent residual vertices shared a block neighbor, the other three vertices of that independent block together with the residual pair would be an independent five-set.
 
@@ -169,7 +169,7 @@ Let S be the switched columns in a row and s=|S|. The outer light graph is K6-M.
 - for s=1, one aligned column (the heavy-matched partner) is isolated and the other five columns form a connected component;
 - for s=5, one switched column (the heavy-matched partner) is isolated and the other five columns form a connected component.
 
-On every light edge crossing this cut, the 4,5,5 switch theorem forces the extra-edge target labels at the two columns to agree. If the switched cell has extra edge (z,z'), the aligned cell has extra edge (k,z'). Thus on the connected component the row sources are z in switched cells and k in aligned cells. For s=5, the isolated switched cell also has source z by the cell classification. For s=1, only the isolated aligned cell is unconstrained by the cut.
+On every light edge crossing this cut, the 4,5,5 switch theorem forces the extra-edge target labels at the two columns to agree. More explicitly, if p_j=P tau_k and p_l=P, applying the theorem to the light pair E_j,E_l with common block Q_i gives e_{Q_iE_j}=(z,z') and e_{Q_iE_l}=(k,z'). Thus on the connected component the row sources are z in switched cells and k in aligned cells. For s=5, the isolated switched cell also has source z by the cell classification. For s=1, only the isolated aligned cell is unconstrained by the cut.
 
 ### 7.1 The rows C,D cannot switch
 
