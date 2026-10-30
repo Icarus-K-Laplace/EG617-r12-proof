@@ -117,3 +117,10 @@ These implications are conditional on the exact color being in the 69/70 layer. 
 ## 11. Matching-skeleton consequence (not yet encoded)
 
 For any 69/70 partition, \(\alpha(H)\le4\) and Hall's theorem give a target-color perfect matching between every pair of size-four parts and a matching saturating the size-three part in each 4-by-3 pair. Selecting these yields a 253-edge subgraph M of H. Its complement F has 32 edges, with 36 vertices of M-degree 11 and 11 vertices of M-degree 10; at least 30 vertices have degree one in F. This is a proved existential structure, not yet represented by matching-choice variables.
+
+
+## 12. Global 71-edge core floor
+
+The tight-part theorem excludes every 69/70 near-Turán partition: the 253-edge Hall matching skeleton leaves a 32-edge residual, at least five 4-parts are tight, and any tight part has three F-leaves. At least seven other 4-parts are clean, and their fourth vertices form either an independent-5 witness with the leaves or a K7. Thus no valid H can have a 69/70 partition.
+
+The model now imposes \(e_C(H)\ge71\) for all eleven non-target colors. The former near-Turán partition variables and conditional source-alignment cuts are removed; the remaining exact-color source accounting and the 37-unit gap ledger are unchanged.
