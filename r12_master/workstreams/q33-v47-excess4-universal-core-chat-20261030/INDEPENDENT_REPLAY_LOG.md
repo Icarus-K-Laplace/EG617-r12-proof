@@ -95,3 +95,10 @@ The local source archive remains retained in the uploaded file library. The bran
 ## 9. Default-branch write incident and correction
 
 One SOURCE_ASSET_MANIFEST.md create operation initially omitted the explicit branch argument and therefore wrote to the repository default branch. The mistake was detected immediately. The manifest was deleted, then the main ref was force-restored with an expected-head lease to its exact pre-incident parent 278639de8572ffab12fe859d36f776fbb88fc4f0. Thus main's tree and branch history are restored to the observed pre-write state. No global canonical file or sibling workstream file was changed. All subsequent writes explicitly specify the isolated branch. This incident is recorded for audit transparency.
+
+
+## 10. Clean-room execution actually performed in this turn
+
+See CLEAN_ROOM_REPLAY_20261030.md for the byte-derived archive/source hashes and exact commands. Both original certificate verifiers were executed from the extracted archive in this turn and returned EXACT_CERTIFICATE_VERIFIED (127 rows each). The source arithmetic supplement returned EXACT_ARITHMETIC_SUPPLEMENT_VERIFIED; the Q33 source-complete arithmetic replay returned PASS_EXACT_ARITHMETIC_REPLAY. This is not merely an imported prior-session run report.
+
+The source-complete run checked D(13),D(14),D(23),D(24),D(25),D(37), triangle-free bounds 122/145/73, the degree10/11 floors 289/287, support configurations 9/40/48, the P/D matrix classes, charge minima 6/6/4/5, and the optional exact Fraction replay of all127 rows.
