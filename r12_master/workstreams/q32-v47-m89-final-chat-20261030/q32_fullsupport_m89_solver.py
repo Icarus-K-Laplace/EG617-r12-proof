@@ -370,12 +370,12 @@ def model_adj(model, col, color):
 
 
 def add_pivot_matching_composition_cuts(vs, model):
-    """Add the exact light-pair matching-composition consequences of alpha(H)<=4.
+    """Add exact light-pair composition and multi-projection packing cuts.
 
-    If e_H(Q_a,Q_b)=e_H(Q_a,Q_c)=4, both bipartite graphs are unique
-    perfect matchings. For each u in Q_a, if v,w are its matched vertices,
-    then vw must be an H-edge; otherwise Q_a\\{u} union {v,w} is an
-    independent 5-set. This is a lazy, source-safe strengthening.
+    If e_H(Q_a,Q_b)=e_H(Q_a,Q_c)=4, the two graphs are unique perfect
+    matchings. Their composition is a perfect matching contained in
+    H[Q_b,Q_c]. Distinct compositions must all be contained there, so the
+    K4,4 edge-count lower bound mu_4(t) applies.
     """
     solver, col = vs["solver"], vs["col"]
     exact = vs["exact"]
@@ -414,24 +414,44 @@ def add_pivot_matching_composition_cuts(vs, model):
         inverse = {v: a for a, v in mapping.items()}
         return inverse.get(u)
 
+    # Exact finite K4,4 lookup: min edges needed to contain t distinct
+    # perfect matchings, for t=1,...,24. Independently replayed by
+    # verify_m89_pivot_matching.py over all 2^16 bipartite edge sets.
+    mu4 = (0, 4, 6, 8, 8, 10, 10, 12, 12, 12, 13, 13, 14,
+           14, 14, 15, 15, 15, 15, 16, 16, 16, 16, 16, 16)
+
     cuts = 0
-    seen = set()
-    for anchor in exact:
-        others = [c for c in exact if c != anchor]
-        for c2, c3 in itertools.combinations(others, 2):
+    for c2, c3 in itertools.combinations(exact, 2):
+        compositions = {}
+        for anchor in exact:
+            if anchor == c2 or anchor == c3:
+                continue
             key2 = (min(anchor, c2), max(anchor, c2))
             key3 = (min(anchor, c3), max(anchor, c3))
             if key2 not in light_maps or key3 not in light_maps:
                 continue
-            for u in blocks[anchor]:
-                v = map_vertex(anchor, c2, u)
-                w = map_vertex(anchor, c3, u)
-                if v is None or w is None:
-                    continue
-                e = edge(v, w)
-                if e in seen:
-                    continue
-                seen.add(e)
+            mapping = {}
+            for u in blocks[c2]:
+                middle = map_vertex(c2, anchor, u)
+                v = map_vertex(anchor, c3, middle) if middle is not None else None
+                if v is None:
+                    mapping = {}
+                    break
+                mapping[u] = v
+            if len(mapping) == 4 and len(set(mapping.values())) == 4:
+                signature = tuple((u, mapping[u]) for u in sorted(blocks[c2]))
+                compositions[signature] = mapping
+
+        t = len(compositions)
+        if t == 0:
+            continue
+        pair_key = (c2, c3)
+        if model.eval(pair_count[pair_key]).as_long() < mu4[t]:
+            solver.add(pair_count[pair_key] >= mu4[t])
+            cuts += 1
+        for mapping in compositions.values():
+            for u, v in mapping.items():
+                e = edge(u, v)
                 if model.eval(col[e]).as_long() != 0:
                     solver.add(col[e] == 0)
                     cuts += 1
