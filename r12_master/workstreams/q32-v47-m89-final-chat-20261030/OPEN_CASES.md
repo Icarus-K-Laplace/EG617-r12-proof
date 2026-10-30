@@ -95,9 +95,9 @@ The Type-I obstruction cannot be promoted to any support row: its required omega
 
 ## Current load-bearing gaps
 
-1. Classify exact-129 colors under only alpha(C),omega(C)<=12, including the 12-partite complement case and all non-12-partite Kang–Pikhurko equality profiles.
-2. Replace the unavailable omega(H)<=5 contradiction by a consequence valid under omega(H)<=11.
-3. Rebuild the m=8/9 model so it includes every source mode permitted by balancedness; the current solver/verifier are Type-I and K6-free restricted.
+1. **Completed structural gate:** V47_EXACT129_UNIVERSAL_PARTITION.md proves that every exact-129 color, including the 12-partite complement and all three non-12-partite Kang–Pikhurko profiles, induces one of the three H-partition shapes.
+2. **Live mathematical gate:** the Hall/tight-part theorem now gives omega(H)>=6 for every exact-129 color. Find a contradiction or stronger structure using the actual omega(H)<=11 cap, e(H)=285, delta(H)>=12, and total excess six.
+3. **Model gate:** if a full graph-coloring CSP is still used, include all source modes; the current solver/verifier remain Type-I and K6-free restricted diagnostics.
 
 
 ## Critical audit correction (2026-10-30)
@@ -107,3 +107,7 @@ The actual EG617 counterexample hypothesis is balancedness: every 13-set contain
 The exact-129 Type-I factorization requires the non-12-partite complement gate and the clique cap used to eliminate size-six equality profiles. These do not follow from balancedness. The local graph C0=5K6 dot-union 3K5 dot-union 4K4 has 61 vertices, 129 edges, alpha=12, omega=6 and a 12-partite complement, demonstrating the missing gate at the one-color level.
 
 Thus the current verifier/solver are restricted Type-I/K6-free diagnostics, not full EG617 encodings. The previous m=8/9 closure and all-support parent promotion are retracted. See AUDIT_RETRACTION_BALANCED_PREMISES.md.
+
+## New source-complete theorem
+
+The exact-129 source classification is no longer an open blocker at the partition level. The 12-partite complement case gives 11K4+K3 directly; the non-12-partite case gives one of the three partitions via all Kang–Pikhurko equality profiles. The remaining obstruction is not source coverage but the fact that the resulting K6/K7 in H is allowed by omega(H)<=11.
