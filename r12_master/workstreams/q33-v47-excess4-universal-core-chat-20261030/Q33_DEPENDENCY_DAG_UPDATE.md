@@ -39,3 +39,9 @@ flowchart TD
 - Full EG617(r=12) remains OPEN / NOT_CERTIFIED.
 
 No global dependency DAG, canonical state, or sibling branch was modified.
+
+## 2026-10-30 clean-room import refinement
+
+The source gate and exact parent chain were independently re-executed and source-mapped in CLEAN_ROOM_REPLAY_20261030.md and Q33_PARENT_SOURCE_MAP.md. This strengthens the proposed E408/Qmax=33 node: it is not a support-size argument and does not need the 56-witness support-promotion node. Once the h13 T61 parent is fixed, any q_p=33 pivot yields the forbidden 47/284 core.
+
+The read-only root DAG at b0459807acd4b7e386148056ddf77d7998918893 still lists E408-33-PROMOTION as OPEN. The correct integration is to replace that node's support-promotion dependency by this direct universal-core contradiction, retaining the parent bridge's conditional status. No global DAG was modified here.
