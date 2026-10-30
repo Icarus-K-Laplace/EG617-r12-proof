@@ -405,88 +405,89 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
     residual = set(H) - union_q
     if len(residual) != 47 - 4 * m:
         fail(f"pivot residual has size {len(residual)}, expected {47-4*m}")
-    # Independent replay of the m=8,9 pivot-pair matching system.
-    pair_edge_counts = {}
-    light_maps = {}
-    for c1, c2 in itertools.combinations(exact_colors, 2):
-        q1, q2 = sorted(qsets.get(c1, set())), sorted(qsets.get(c2, set()))
-        if len(q1) != 4 or len(q2) != 4 or set(q1) & set(q2):
-            continue
-        cross = [(u, v) for u in q1 for v in q2
-                 if u != v and colors[edge(u, v)] == 0]
-        pair_edge_counts[(c1, c2)] = len(cross)
-        if len(cross) < 4:
-            fail(f"pivot blocks {c1},{c2} have only {len(cross)} target edges (<4)")
-        perfect = []
-        for perm in itertools.permutations(q2):
-            if all(colors[edge(q1[i], perm[i])] == 0 for i in range(4)):
-                perfect.append(dict(zip(q1, perm)))
-        if not perfect:
-            fail(f"pivot blocks {c1},{c2} have no target perfect matching")
-        if len(cross) == 4:
-            if len(perfect) != 1:
-                fail(f"light pivot pair {c1},{c2} does not have a unique perfect matching")
-            elif perfect:
-                light_maps[(c1, c2)] = perfect[0]
-
-    def pivot_map(c_from, c_to, u):
-        key = (min(c_from, c_to), max(c_from, c_to))
-        mapping = light_maps[key]
-        if c_from < c_to:
-            return mapping.get(u)
-        return {v: a for a, v in mapping.items()}.get(u)
-
-    mu4 = (0, 4, 6, 8, 8, 10, 10, 12, 12, 12, 13, 13, 14,
-           14, 14, 15, 15, 15, 15, 16, 16, 16, 16, 16, 16)
-    for c2, c3 in itertools.combinations(exact_colors, 2):
-        compositions = {}
-        for anchor in exact_colors:
-            if anchor in (c2, c3):
+    if check_alpha:
+        # Independent replay of the m=8,9 pivot-pair matching system.
+        pair_edge_counts = {}
+        light_maps = {}
+        for c1, c2 in itertools.combinations(exact_colors, 2):
+            q1, q2 = sorted(qsets.get(c1, set())), sorted(qsets.get(c2, set()))
+            if len(q1) != 4 or len(q2) != 4 or set(q1) & set(q2):
                 continue
-            k2 = (min(anchor, c2), max(anchor, c2))
-            k3 = (min(anchor, c3), max(anchor, c3))
-            if k2 not in light_maps or k3 not in light_maps:
+            cross = [(u, v) for u in q1 for v in q2
+                     if u != v and colors[edge(u, v)] == 0]
+            pair_edge_counts[(c1, c2)] = len(cross)
+            if len(cross) < 4:
+                fail(f"pivot blocks {c1},{c2} have only {len(cross)} target edges (<4)")
+            perfect = []
+            for perm in itertools.permutations(q2):
+                if all(colors[edge(q1[i], perm[i])] == 0 for i in range(4)):
+                    perfect.append(dict(zip(q1, perm)))
+            if not perfect:
+                fail(f"pivot blocks {c1},{c2} have no target perfect matching")
+            if len(cross) == 4:
+                if len(perfect) != 1:
+                    fail(f"light pivot pair {c1},{c2} does not have a unique perfect matching")
+                elif perfect:
+                    light_maps[(c1, c2)] = perfect[0]
+
+        def pivot_map(c_from, c_to, u):
+            key = (min(c_from, c_to), max(c_from, c_to))
+            mapping = light_maps[key]
+            if c_from < c_to:
+                return mapping.get(u)
+            return {v: a for a, v in mapping.items()}.get(u)
+
+        mu4 = (0, 4, 6, 8, 8, 10, 10, 12, 12, 12, 13, 13, 14,
+               14, 14, 15, 15, 15, 15, 16, 16, 16, 16, 16, 16)
+        for c2, c3 in itertools.combinations(exact_colors, 2):
+            compositions = {}
+            for anchor in exact_colors:
+                if anchor in (c2, c3):
+                    continue
+                k2 = (min(anchor, c2), max(anchor, c2))
+                k3 = (min(anchor, c3), max(anchor, c3))
+                if k2 not in light_maps or k3 not in light_maps:
+                    continue
+                mapping = {}
+                for u in sorted(qsets[c2]):
+                    middle = pivot_map(c2, anchor, u)
+                    v = pivot_map(anchor, c3, middle) if middle is not None else None
+                    if v is None:
+                        mapping = {}
+                        break
+                    mapping[u] = v
+                if len(mapping) == 4 and len(set(mapping.values())) == 4:
+                    signature = tuple((u, mapping[u]) for u in sorted(mapping))
+                    compositions[signature] = mapping
+            t = len(compositions)
+            if t:
+                pair_edges = pair_edge_counts.get((c2, c3), 0)
+                if pair_edges < mu4[t]:
+                    fail(f"pivot pair {c2},{c3} has {pair_edges} H-edges but {t} forced matchings require >= {mu4[t]}")
+                for mapping in compositions.values():
+                    for u, v in mapping.items():
+                        if colors[edge(u, v)] != 0:
+                            fail(f"pivot matching composition forces H-edge {(u,v)} for blocks {c2},{c3}")
+
+        # Exact six-unit degree ledger on each pivot block:
+        # X_i + Y_i = 5 + epsilon_i.
+        n_residual = len(residual)
+        for c in exact_colors:
+            q = qsets.get(c, set())
+            if len(q) != 4:
                 continue
-            mapping = {}
-            for u in sorted(qsets[c2]):
-                middle = pivot_map(c2, anchor, u)
-                v = pivot_map(anchor, c3, middle) if middle is not None else None
-                if v is None:
-                    mapping = {}
-                    break
-                mapping[u] = v
-            if len(mapping) == 4 and len(set(mapping.values())) == 4:
-                signature = tuple((u, mapping[u]) for u in sorted(mapping))
-                compositions[signature] = mapping
-        t = len(compositions)
-        if t:
-            pair_edges = pair_edge_counts.get((c2, c3), 0)
-            if pair_edges < mu4[t]:
-                fail(f"pivot pair {c2},{c3} has {pair_edges} H-edges but {t} forced matchings require >= {mu4[t]}")
-            for mapping in compositions.values():
-                for u, v in mapping.items():
-                    if colors[edge(u, v)] != 0:
-                        fail(f"pivot matching composition forces H-edge {(u,v)} for blocks {c2},{c3}")
+            x_i = sum(pair_edge_counts.get((min(c, d), max(c, d)), 0) - 4
+                      for d in exact_colors if d != c)
+            y_i = sum(colors[edge(u, v)] == 0
+                      for u in q for v in residual) - n_residual
+            eps_i = sum(h_degree[v] - 12 for v in q)
+            if y_i < 0 or x_i + y_i != 5 + eps_i:
+                fail(f"pivot block {c} degree ledger fails: X={x_i}, Y={y_i}, epsilon={eps_i}")
 
-    # Exact six-unit degree ledger on each pivot block:
-    # X_i + Y_i = 5 + epsilon_i.
-    n_residual = len(residual)
-    for c in exact_colors:
-        q = qsets.get(c, set())
-        if len(q) != 4:
-            continue
-        x_i = sum(pair_edge_counts.get((min(c, d), max(c, d)), 0) - 4
-                  for d in exact_colors if d != c)
-        y_i = sum(colors[edge(u, v)] == 0
-                  for u in q for v in residual) - n_residual
-        eps_i = sum(h_degree[v] - 12 for v in q)
-        if y_i < 0 or x_i + y_i != 5 + eps_i:
-            fail(f"pivot block {c} degree ledger fails: X={x_i}, Y={y_i}, epsilon={eps_i}")
-
-    for r in residual:
-        q_degree = sum(colors[edge(r, q)] == 0 for q in union_q)
-        if q_degree < m:
-            fail(f"residual vertex {r} has only {q_degree} H-neighbors in pivot blocks, expected >= {m}")
+        for r in residual:
+            q_degree = sum(colors[edge(r, q)] == 0 for q in union_q)
+            if q_degree < m:
+                fail(f"residual vertex {r} has only {q_degree} H-neighbors in pivot blocks, expected >= {m}")
 
     # The complete coloring/alpha checks below are the authority. Derived pointwise
     # reserve quotas are deliberately not hard-coded here, so this verifier cannot
