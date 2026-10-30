@@ -60,3 +60,15 @@
 - Detected immediately, deleted the manifest, then force-restored main with an expected-head lease to its exact pre-incident parent 278639de8572ffab12fe859d36f776fbb88fc4f0.
 - Main's tree and branch history are therefore restored to the observed pre-write state.
 - No global canonical or sibling workstream file was touched. All subsequent writes explicitly pass the isolated branch.
+
+
+## 2026-10-30 — clean-room archive replay and parent source map
+
+- Extracted the four conversation-uploaded archives and recomputed all archive SHA256 values; all matched.
+- Recomputed six internal FRONTEND_LINE_A source hashes, including the previously omitted SEED_MIN_DEGREE_EXCERPT hash.
+- Ran both original 127-row exact Fraction verifiers: both returned EXACT_CERTIFICATE_VERIFIED, 127 rows; maxima 773/1089 and39/44.
+- Ran original verify_audit.py: EXACT_ARITHMETIC_SUPPLEMENT_VERIFIED; d3 parameter rows15, d3 defect rows25, d10 coupling rows4; its recorded original K145 bridge status remains OPEN.
+- Ran Q33_SOURCE_COMPLETE_REPLAY.py against the original archive CSV: PASS_EXACT_ARITHMETIC_REPLAY, including all listed density caps, shortest-cycle bounds, degree10/11 floors, support shapes, matrix classes and charge minima.
+- Added CLEAN_ROOM_REPLAY_20261030.md and Q33_PARENT_SOURCE_MAP.md.
+- Rechecked parent source FRONTEND_BRIDGE_THEOREM.md and E408_Q33_CORE_ALMOST_REGULAR_NORMAL_FORM.md on the read-only global root HEAD b0459807acd4b7e386148056ddf77d7998918893. Confirmed the h13/E408 parent gives F: |V|61, e408, delta13, alpha<=5, omega<=11, inherited D-caps.
+- The Q33 core contradiction is a direct bypass of the 56-witness support-promotion route. The global root DAG remains unmodified and must be reconciled by its maintainer.
