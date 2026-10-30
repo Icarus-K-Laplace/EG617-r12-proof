@@ -45,3 +45,15 @@ Promote the V12 computation row from `OPEN: source/replay missing` to `COMPUTATI
 Promote the E407 Q32 local contradiction to `PROVED_CONDITIONAL under C0 + MS-29`.
 
 Do **not** mark E407 unconditional `PROVED`, and do **not** issue an EG617(r=12) root receipt.
+
+
+## 2026-10-30 support-size crosscut addendum
+
+A new, independently arithmetic-checked reserve theorem is recorded in V12_GENERAL_SUPPORT_RESERVE.md.
+
+- For U_7, the union of the 49 blocks from seven selected exact-129 colors, the prior support lower bound is v >= 29. Using all four unselected non-target colors excludes v=29 through 33.
+- At v=34, the lower and upper edge bounds both equal 422; equality forces epsilon_U7=0, H[W]=K4 disjoint union 3K3, and the four unselected color graphs to be 10K3 disjoint union 2K2. This terminal remains OPEN.
+- For v >= 35, the scalar reserve is not strong enough.
+- Under the separate conditional exact-color count m in {8,9,10}, the union over all exact colors has size at least35 (m=8,9) or36 (m=10). This is U_m, not U_7.
+
+Thus the original |U|=29 bridge is still not proved for every A–E completion. The E407 Q32 parent result remains PROVED_CONDITIONAL, not unconditional PROVED.
