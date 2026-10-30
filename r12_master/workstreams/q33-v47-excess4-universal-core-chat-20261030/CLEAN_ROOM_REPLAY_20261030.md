@@ -87,3 +87,14 @@ The R(3,35) 121/122-edge neighbourhood classification is an analytic argument re
 - Universal 47/284 nonexistence: PROVED by its analytic proof.
 - E408/Qmax=33 parent contradiction: PROVED_CONDITIONAL under the exact T61 h13 parent contract.
 - Original K145 bridge and global EG617(r=12): OPEN / NOT_CERTIFIED.
+
+
+## 6. V11 finite-kernel boundary check (not a theorem dependency)
+
+For completeness, the T61_H13_V11.zip finite verifier was also executed:
+~~~bash
+python3 T61_H13_V11/verify_kernel_certificate.py
+~~~
+It returned COMPUTATION_CERTIFIED with 684 kernel-weight assignments, 349 outside-count states, 259 labelled necessary shells, 252 Family-A and 7 Family-B survivors, and zero actual completed graphs claimed. Certificate SHA256: 0baffc39ee481b27af53fda36a8fe40b8cd8c527103b5126060857c4eaacd09b.
+
+This only replays the finite kernel-coverage computation. The completion exclusions are separate analytic proofs. No V11 conclusion is used in either the minimum-degree theorem or the Q33 284-core contradiction.
