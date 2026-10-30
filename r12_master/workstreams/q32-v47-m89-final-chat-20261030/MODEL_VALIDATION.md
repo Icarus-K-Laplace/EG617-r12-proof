@@ -131,3 +131,13 @@ The previous Type-I partition replay was conditional on a source factorization n
 The tight-part helper remains a valid conditional implication but returns K6/K7 witnesses that are allowed in EG617. The previous verifier's default omega check, Type-I universal source assumption, and 71-edge floor are not valid for the original problem. The verifier was changed so omega checking is opt-in via --check-omega and its result is explicitly labelled Type-I-restricted. The solver is now labelled as an augmented Type-I/K6-free diagnostic and defaults to OPEN.
 
 No full verifier execution or SMT run was performed. No m=8/9 closure or parent promotion is claimed.
+
+
+## Source-complete exact-color theorem validation
+
+The new source theorem handles two branches: 12-partite complement directly, and non-12-partite complement by Kang–Pikhurko Theorem 1, Theorem 4, and Lemma 5. The three extremal part-size sequences were checked arithmetically:
+- (5^12): internal part edges 120; gadget cross edges 9;
+- (4,5^10,6): internal part edges 121; gadget cross edges 8;
+- (4,4,5^8,6,6): internal part edges 122; gadget cross edges 7.
+
+Each gives total C-edge count129. The outside-incidence deficit argument yields the three H-partition shapes. The separate core-edge theorem computes gadget edges in H by x/y placement and establishes 69<=e_C(H)<=75. These are analytic calculations; no full candidate/verifier or SMT run is claimed.
