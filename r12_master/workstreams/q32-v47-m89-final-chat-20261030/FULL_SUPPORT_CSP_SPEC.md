@@ -78,7 +78,7 @@ where X_C is the excess target-edge count to other pivot blocks, Y_C is the exce
 The aligned m=10 six-common-P factorization, its pair-projection normal form, and its residual-signature injectivity are not added. Those constraints depend on the aligned 3+7 track normal form and have not been proved for the m=8/9 full-support terminal. The global edge-color variables and source-edge equivalences already enforce actual edge ownership; a stronger track-specific encoding would be unsafe without a separate reduction theorem.
 
 
-## 9. Exact source-core accounting and conditional near-Turan partition
+## 9. Exact source-core accounting and conditional near-Turan partitions
 
 For each exact color C, the solver computes
 \[
@@ -95,6 +95,6 @@ It also adds the source-parameter gap bounds:
 - \(x_C\in H\), two-double: \(72-a_C\le e_C(H)\le74\);
 - \(x_C\in H\), triple: \(73-a_C\le e_C(H)\le75\).
 
-If \(e_C(H)\le70\), a partition variable assigns H to eleven 4-parts and one 3-part. Every pair inside a part is forced to color C, exactly \(e_C(H)-69\in\{0,1\}\) C-edges may cross parts, and all single-outside source K4s are required to lie in one 4-part. This is the source-correct 69/70 near-Turan normal form proved in \`V47_NEAR_TURAN_SOURCE_NORMAL_FORM.md\`.
+For every non-target color C, if \(e_C(H)\le70\), a partition variable assigns H to eleven 4-parts and one 3-part. Every pair inside a part is forced to color C, exactly \(e_C(H)-69\in\{0,1\}\) C-edges may cross parts. For exact colors, all single-outside source K4s are additionally required to lie in one 4-part. This is the 69/70 near-Turan normal form documented in V47_NEAR_TURAN_SOURCE_NORMAL_FORM.md.
 
-The partition variables are conditional on the exact core edge count. They do not force every exact color into the 69/70 layer.
+The partition variables are conditional on each non-target color's core edge count. They do not force any color into the 69/70 layer.
