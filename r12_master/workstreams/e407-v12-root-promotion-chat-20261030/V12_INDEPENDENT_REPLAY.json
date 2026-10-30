@@ -1,0 +1,37 @@
+{
+  "archive_sha256": "0c3c69a7baf94a816eff29f3a079b97ac7750d0e8b8fd2773330469c4b8c5e36",
+  "certificate_sha256": "cab4e67bc501fe51c06f8fc008443b870aebf8794528af1a3045e83be7d6db30",
+  "weights": 8677,
+  "count_states": 17957,
+  "necessary_shells": 1984,
+  "screen_rule_counts": {
+    "OPEN": 554,
+    "D3_RHO1": 90,
+    "NEAR_K12_CAPACITY": 1192,
+    "K9_PAIR_ROWS": 148
+  },
+  "screen_mismatches": 0,
+  "full_template_candidate_counts": {
+    "A": 237,
+    "B": 342,
+    "E": 1190,
+    "D": 1009,
+    "C": 184
+  },
+  "templates_per_open_survivor": {
+    "1": 554
+  },
+  "template_row_failures": 0,
+  "kernel_totals": [
+    {"kernel_total":"I3","weights":3861,"count_states":135,"survivors":135},
+    {"kernel_total":"T3","weights":2145,"count_states":14370,"survivors":84},
+    {"kernel_total":"K4","weights":1071,"count_states":2202,"survivors":1062},
+    {"kernel_total":"W8","weights":216,"count_states":222,"survivors":130},
+    {"kernel_total":"W7_overlap","weights":294,"count_states":167,"survivors":28},
+    {"kernel_total":"W7_separate","weights":322,"count_states":364,"survivors":328},
+    {"kernel_total":"W6_pair","weights":342,"count_states":67,"survivors":37},
+    {"kernel_total":"W6_same","weights":100,"count_states":164,"survivors":0},
+    {"kernel_total":"W6_different","weights":326,"count_states":266,"survivors":180}
+  ],
+  "completed_parent_graphs": 0
+}
