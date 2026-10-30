@@ -574,8 +574,7 @@ def main():
             print(" - " + item)
         return 1
     print("Q32_FULLSUPPORT_CANDIDATE_VERIFIED")
-    print(f"m={data['m']}; aligned_z01={bool(data.get('aligned_z01'))}; "
-          f"vertices={N}; edges={N*(N-1)//2}")
+    print(f"m={data['m']}; vertices={N}; edges={N*(N-1)//2}")
     return 0
 
 
