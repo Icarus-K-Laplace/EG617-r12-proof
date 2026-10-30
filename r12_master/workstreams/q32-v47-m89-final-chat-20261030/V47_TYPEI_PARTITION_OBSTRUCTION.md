@@ -139,3 +139,18 @@ The exact-129 translation is:
 Thus only \((5^{12})\) survives. Complementing the published construction gives ten isolated K5 components in C and two additional special K5 cliques \(N_s,N_t\) inside the 11-vertex gadget \(G_{11}\), together with the special point x. These twelve disjoint K5s partition exactly \(V(K_{61})\setminus\{x\}\). This is the precise source interface used in Sections 1–3.
 
 No degree-nine exceptional vertex is assumed. The published gadget parameter has \(|A|\in\{1,2,3,4\}\), and its variable degrees are \((4+a,9-a)\); the present obstruction uses only the twelve K5 factors and their partition property.
+
+
+## 6. Parent-level corollary: support- and m-independent
+
+The contradiction uses only the 47-vertex H-core, the 61-point exact-color source theorem, and the fact that at least one exact-129 color exists. It does **not** use the selected-witness union U, its support size v, the pivot blocks, or the value of m beyond \(m\ge1\).
+
+The parent E408/Q32 outer ledger records \(m\in\{8,9,10\}\). Thus, if the root imports the same frozen H-core and global coloring premises for every support row, the theorem excludes **all** E408/Q32 support cases \(v=44,45,46,47\) and all \(m=8,9,10\), not merely the isolated full-support m=8/9 branch.
+
+This is a parent-promotion implication, not an edit to or independent closure claim for sibling workstreams. The root audit must explicitly carry:
+- \(\alpha(H)\le4\), \(e(H)=285\), and \(\delta(H)\ge12\) from the Q32 core terminal;
+- \(\omega(H)\le5\) and \(\omega(C)\le5\) from the global no-monochromatic-K6 premise;
+- \(\alpha(C)\le12\) from the balanced-coloring property that every 13-set contains every color;
+- at least one exact-129 non-target color, from \(m\in\{8,9,10\}\).
+
+Once these parent edges are recorded, no separate support-promotion theorem for Q32 is needed. E407 Q32/V12, E408 Q33 support promotion, and the remaining front-end dependencies are unaffected.
