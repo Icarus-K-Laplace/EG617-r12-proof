@@ -98,3 +98,22 @@ The final theorem depends on the registered Type-I exact-129 factorization in th
 | `RUN_LOG.md` | `2b02eb56ec8532e9345764b0c179ab50778926d3` | 91 lines |
 
 The independent verifier now reconstructs the source partition for each exact color and replays Hall matchings/tight-part obstruction using augmenting paths. Its synthetic self-test covers all three occupancy shapes. The solver is explicitly archival by default; legacy SMT execution requires the opt-in `--legacy-smt` flag.
+
+
+## Final post-reconciliation blob checkpoint
+
+| Artifact | Current blob SHA | Lines |
+|---|---|---:|
+| `V47_TYPEI_PARTITION_OBSTRUCTION.md` | `4ff2d881748a917d25902dba5e21d41ef9ba9ef5` | 122 |
+| `q32_fullsupport_m89_solver.py` | `1dae5a9acb1f20d6719c6a389fab3e7145560d50` | 658 |
+| `verify_q32_fullsupport_candidate.py` | `1313fe8d559a214f7b187dd7438942c48be931dc` | 1060 |
+| `MATH_PROOF.md` | `b2435e5303f8b427f4c83e0fba344813083ef405` | 374 |
+| `CANONICAL_STATE.md` | `1896b5c5d40d0acc0c3ab90d8b694915e7e75f60` | 65 |
+| `OPEN_CASES.md` | `469180f7369a389c8c86bf4a4d640e958e68fab0` | 91 |
+| `FULL_SUPPORT_CSP_SPEC.md` | `a531d2de85775d1bbcd7d7e82091c250750bed6d` | 127 |
+| `MODEL_VALIDATION.md` | `0b3baaef9c1f2e7b59256b73e16aef40a5547fff` | 123 |
+| `RUN_LOG.md` | `2b02eb56ec8532e9345764b0c179ab50778926d3` | 91 |
+
+The canonical and open-case documents now state the analytic exclusion rather than the superseded OPEN/71+ search status. The CSP specification marks its low-layer variables as historical, and the solver's default CLI exits with the analytic-closure notice; legacy SMT execution requires an explicit opt-in.
+
+A standalone Python replay of the same matching/tight-part helper logic was run on the synthetic 285-edge, minimum-degree-12 fixture already embedded in the verifier self-test. The three partition shapes returned clique witnesses of sizes 7, 6, and 7 respectively. The committed full verifier script itself was not executed in this environment; its self-test remains available for execution by a local runner. This is not a solver SAT/UNSAT result.
