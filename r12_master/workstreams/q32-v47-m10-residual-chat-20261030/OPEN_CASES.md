@@ -40,3 +40,8 @@ These are the next load-bearing interfaces.
 ## D. Promotion and root status
 
 Astra's theorem applies only after the 3+7 five-property contract is proved. It does not eliminate any other L profile. The Q32 full-support m=10 terminal is OPEN / NOT_CERTIFIED, and the EG617(r=12) root theorem is not closed.
+
+
+## 4+6 closed subcase
+
+PROVED: the exact Z=4 two-aligned-column pattern-10 configuration with p_A=P on two columns, p_A=P tau on four columns, p_B=p_C=p_D=P, and small residual fiber profile (3,2,2,0) is impossible. See M10_Z4_TWO_ALIGNED_PATTERN10_EXCLUSION.md. This does not close patterns with three or more aligned columns, other singleton/2+2 column partitions, or other residual profiles.
