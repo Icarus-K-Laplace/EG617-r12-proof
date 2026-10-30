@@ -243,5 +243,81 @@ verify_z3_two_triangles.py considers all42336 aligned/switch matching representa
 
 The replay admits564 raw local configurations:534 for the equal empty partitions and30 for unequal empty/nonempty statuses. Every unequal-status configuration has the forced full-triangle common label used in Section5.1. In the equal-partition case it checks every opposite-diversion pair for light incompatibility and every remaining candidate against both fixed special forms. These are local necessary-condition checks, not full Q32 SAT assignments or a full-model UNSAT proof certificate. The analytic proof above supplies the global contradiction under the named normal-form premises.
 
-The remaining registered3+7 residual types are now only C3+2P2,z2 and C3+P4,z3, with at least one empty class. For C3+P4 the two additional incidences belong to the two path endpoints; for C3+2P2 four incidences belong to the four edge endpoints. Those positive budgets remain to be analyzed. Other m10 light-component splits and m8,m9 remain outside this theorem.
+After Section5 the remaining registered3+7 residual types are C3+2P2,z2 and C3+P4,z3, with at least one empty class. Section6 below excludes both. Other m10 light-component splits and m8,m9 remain outside these theorems.
+
+## 6. Uniform exclusion of the last two residual types
+
+Date: 2026-10-30. **Theorem:** in the same registered3+7 normal form, neither R=C3+2P2 nor R=C3+P4 is possible under alpha(H)<=4, delta(H)>=12, and omega(H)<=11.
+
+Write R=T disjoint-union L, where T is a triangle and L is either2P2 or P4. The four vertices of L have a unique perfect matching M={B2,B3}. Every empty-fiber partition is therefore exactly
+
+    {empty,T,B2,B3}.                                      (6.1)
+
+No vertex of T has an additional outer neighbor, since its residual degree is2. Each endpoint of L has budget1, and every interior path vertex has budget0. We allow all of these additional incidences; their total is4 for2P2 and2 forP4.
+
+Two local facts will be used repeatedly. First, a common singleton label s forces the entire F_s into the outer vertex's residual neighborhood. Second, a switch's duplicated label s has a vertex with k=2, so d_R+k<=3 forces |F_s|<=1. In particular when F has profile (0,3,2,2), every switch duplicates the empty label0. A doubleton at a vertex with nonempty G class is impossible.
+
+### 6.1 Unequal empty/nonempty statuses
+
+Both-nonempty statuses are already excluded by Section2. Suppose exactly one partition has an empty class.
+
+**F empty, G nonempty.** If G splits T, no outer vertex can have common label T: its residual neighborhood cannot contain all of T, since the triangle vertices have no additional incidences. G has no empty column, so there are no doubletons. An aligned singleton permutation would contain the forbidden T label, hence every block must be a switch omitting T and duplicating0. All three extras in every block then have small label0. The size-two F classes receive zero extras, contrary to their small-vertex degree requirement E_s>=3.
+
+If instead G contains T as a full class, consider its triangle column. It has residual degree3 and k=0, so its common label is either T or0. If it were0 in an aligned block, the singleton permutation would put label T at another column, impossible since only the triangle column can contain T. If it were0 in a switch, that column would be one of the two duplicated-label vertices and have k>=1, also impossible. Thus every triangle-column vertex has common label T. Together with the small T-triangle and residual T these seven vertices form K13. This covers every nonempty G partition, including the middle-edge-plus-two-endpoints partition of P4.
+
+**F nonempty, G empty.** If F contains T as a full class, every vertex of the G triangle track has common label T: it has residual degree3 and no room for any F class outside T, while F has no empty class. Again this gives K13.
+
+Otherwise F splits T into a pair and singleton. Its other two classes must be B2,B3, since they cover L by two cliques and the perfect matching is unique. At the outer column of B_i, the common label must be the F class B_i. A triangle class cannot occur there because triangle vertices have no additional incidences; the other size-two class would demand at least four residual neighbors, exceeding the degree cap3. Hence both B2 and B3 already occur as common labels.
+
+At G's empty column a singleton common label cannot be a triangle class, for the same zero-budget reason. It cannot be B2 or B3 either: that would duplicate a size-two common label, which is impossible in an aligned singleton permutation and impossible in a switch by |F_s|<=1. Thus the empty column is a doubleton. Its two F classes must have clique union; the only such pair is the pair and singleton splitting T. Consequently all three extras in every outer block have their small endpoint in a triangle label. Both B_i labels receive zero extras, contradicting E_(B_i)>=3.
+
+### 6.2 Equal empty partitions: a robust special-block lemma
+
+We are left with F=G, labeled as in (6.1), with0 empty and1 corresponding to T. The small degree bounds are
+
+    E0>=9, E2>=3, E3>=3.                                 (6.2)
+
+The outer triangle-column vertex in each block has residual degree3 and k=0, with common label either1 or0. Call a block special when this label is0. If there are a special blocks, the other7-a triangle-column vertices, the small label1 triangle, and T form a clique of size13-a. Thus a>=2.
+
+**Special form.** Every special block has all three base matchings tau=(0 1), fixing2,3, and all three extras (small0,outer0), even though residual-incidence slack is allowed.
+
+Proof. A switch must duplicate0 and transpose0 with another label, so its base matchings disagree on the image of0. That cannot give common base label0 at the triangle column. The block is therefore aligned. At either B_i column a singleton common label can only be i or0: T has zero additional budget, and the other size-two fiber would require four residual neighbors. Label0 is already the base label at the triangle column, so these two columns have labels2,3. The empty column has base label1, which cannot be a singleton there because the triangle vertices have no additional incidence. It must be a doubleton with second label0; T has no complete join to either B_i. This requires exactly the three stated extras. QED.
+
+**Light-neighbor form.** Any block light-adjacent to a special block is either special, or has all three base matchings identity and all three extras (small1,outer0).
+
+Proof. For each small block the4,5,5 classification permits the special tau base at the neighbor, or the identity base with the specified extra. At the neighbor's triangle column k=0, so its three base labels coincide. Hence the three choices are all tau or all identity. The all-tau case is special and the preceding proof applies; the all-identity case gives the stated extras. This argument does not assume y_D=0. QED.
+
+### 6.3 Degree contradiction with arbitrary allowed residual slack
+
+Call blocks of neither of these two forms other, and let b be their number. All extras at labels2,3 must occur in other blocks. By (6.2) at least six such extras are needed; each block supplies only three, so b>=2.
+
+Every special-other pair is heavy by the light-neighbor lemma. The exact ledger t_D+y_D=2 gives each outer block at most two heavy neighbors, even with positive residual slack. Since a,b>=2, it forces a=b=2. The two other blocks' six extras are all consumed by the labels2,3 lower bounds. The remaining three blocks have the identity form with all extras at label1. Thus only the two special blocks contribute to E0, giving E0=6<9. Contradiction.
+
+This proof excludes both residual types without assuming the path/edge endpoints have no extra neighbors. It relies only on zero extra budget at the residual triangle, the exact degree cap3, and the stated heavy and small endpoint budgets.
+
+### 6.4 Independent finite replay
+
+verify_triangle_matching_cells.py enumerates all42336 local matching representations for each residual graph. For every ordered partition pair with at least one empty class, each degree-one residual vertex is allowed either no additional neighbor in the selected block or one additional neighbor in any of its three other columns. The total in a block is at most2 by t_D+y_D=2; every degree-two residual vertex has no additional neighbor. All allowed choices are included before the neighborhood and independent5-set checks.
+
+For C3+2P2 there are six unordered partitions, eleven ordered empty-class cases, and13347 admitted local configurations. For C3+P4 there are seven unordered partitions, thirteen ordered empty-class cases, and4024 admitted configurations. Every admitted configuration satisfies the asserted case reduction and special/light-neighbor classification. The replay checks the same terminal integer contradiction E0=6<9. triangle_matching_verification.json records all case counts and one local representative per nonempty case; the executable verifier regenerates the entire local search, not merely those representatives.
+
+This remains supplementary local verification. No accepted local configuration is presented as a full graph or coloring, and no full-model solver certificate is asserted.
+
+## 7. Complete exclusion theorem for the registered3+7 normal form
+
+**Explicit graph-theoretic statement.** No simple graph H has all of the following properties:
+
+1. V(H) consists of three independent4-sets S1,S2,S3, seven independent4-sets D1,...,D7, and a residual7-set R.
+2. Small-small pairs are identity perfect matchings after common labeling. Every outer-outer pair contains the four identity-matching edges, with any further edges off that matching. Every small-outer pair is a perfect matching plus exactly one additional edge.
+3. R has maximum degree at most2 and between3 and7 edges. It has two labeled partitions into four clique fibers F_s and G_g, allowing empty classes.
+4. A residual vertex in F_s has exactly the three small neighbors of label s. A vertex in G_g meets all seven vertices of outer track g. Its number of further outer neighbors is exactly2-d_(H[R])(r).
+5. Every outer vertex has degree12, every small vertex has degree at least12, alpha(H)<=4, and omega(H)<=11.
+
+**Proof.** Property2 and alpha(H)<=4 give the local4,5,5 aligned/switch classification. The three-small-block transversal blocker gives the singleton/doubleton consequences used above. Properties4-5 give all residual, small endpoint and outer heavy-incidence ledgers. Set z=e(H[R])-3. Then0<=z<=4 and the total additional residual incidence is8-2z.
+
+The residual graph has alpha<=4 and clique-cover number<=4. The exhaustive elementary path/cycle classification in verify_residual_types.py gives eighteen possible types. Fourteen require four nonempty clique fibers, so both F and G are nonempty and Section2 excludes them. The four other types are C3+2P2, C3+P4, 2C3+K1, and C3+C4. Sections4-6 exclude each of these, including every empty-fiber status. Hence no H satisfies properties1-5. QED.
+
+This is a structural nonexistence theorem for an explicit graph contract. Its application to the genuine Q32 candidate is PROVED_CONDITIONAL on the source reduction placing that candidate in this registered normal form. The theorem itself does not need eleven source-colored graphs, a published near-Turan theorem, a generic CSP run, or the retracted matching-rigidity claims. It must not be promoted to all m=10 or all full-support Q32 without proving the remaining cases enter this normal form or excluding them separately.
+
+**Current frontier:** all18 residual types in this normal form are excluded. Other m10 light-component structures, m8,m9, and the separate root parent/support-exhaustiveness gates remain OPEN / NOT_CERTIFIED.
 

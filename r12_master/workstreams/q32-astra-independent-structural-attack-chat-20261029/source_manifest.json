@@ -198,6 +198,8 @@
       "4cf1935ba2fc791ecde5e677e38bbe531b9cd376",
       "1de8a37556ba98ccbb8651f39a5192629453f0f1"
     ],
-    "new_result": "Analytic z4 C3+C4 empty-fiber exclusion; source normal form remains the immutable base."
+    "new_result": "Analytic z4 C3+C4 empty-fiber exclusion; source normal form remains the immutable base.",
+    "continued_result": "Complete exclusion of all18 residual types of the registered3+7 graph normal form; no full Q32 closure.",
+    "two_triangle_commit": "d1f05a51c5f7c09e3c3e0a50db07fecdc0321739"
   }
 }

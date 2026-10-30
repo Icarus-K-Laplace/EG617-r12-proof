@@ -4,7 +4,7 @@ from pathlib import Path
 root=Path(__file__).resolve().parent
 logs=["Python "+platform.python_version(),
       "No external solver; no full Q32 SAT/UNSAT claim."]
-for name in ("verify_outside_reserve.py","verify_residual_types.py","verify_z4_empty_fibers.py","verify_z3_two_triangles.py"):
+for name in ("verify_outside_reserve.py","verify_residual_types.py","verify_z4_empty_fibers.py","verify_z3_two_triangles.py","verify_triangle_matching_cells.py"):
     command=[sys.executable,"-B",str(root/name)]
     r=subprocess.run(command,capture_output=True,text=True,encoding="utf-8")
     logs += ["COMMAND: "+json.dumps(command),"EXIT: "+str(r.returncode),

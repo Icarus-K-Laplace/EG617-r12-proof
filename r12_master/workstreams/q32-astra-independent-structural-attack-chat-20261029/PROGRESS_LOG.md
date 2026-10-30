@@ -59,3 +59,13 @@ Independent replay:42336 matching representations,13 partition pairs,564 admitte
 
 Sixteen of18 residual types are now excluded. Smallest remaining family reached here: C3+2P2,z2 and C3+P4,z3 with at least one empty fiber. Other full-support branches and the EG617 root remain OPEN / NOT_CERTIFIED.
 
+The two-triangle theorem was immediately committed as d1f05a51c5f7c09e3c3e0a50db07fecdc0321739 and fast-forwarded on the dedicated branch after verifying the diff stayed inside this directory.
+
+## Same continuation: complete the3+7 normal-form exclusion
+
+Found a uniform proof for C3+2P2,z2 and C3+P4,z3. The unique matching on the four nontriangle vertices fixes the empty partition. All unequal empty/nonempty statuses force a K13 or violate small endpoint loads. With equal empty partitions, the residual triangle alone forces the special block's exact local form, even with positive endpoint slack. Its light neighbors have only the special or identity-extra-at-label1 form. The heavy-degree and endpoint budgets give a=b=2 and E0=6<9.
+
+Independent verification allowed every endpoint's additional incidence, subject only to its budget and y_D<=2:42336 matching patterns;11 ordered partition cases/13347 accepted local graphs for C3+2P2;13 cases/4024 accepted local graphs for C3+P4. Every accepted graph and all special light-neighbor assertions passed. Section7 states the complete graph contract and combines the18-case classification with the analytic exclusions.
+
+Current result: all18 residual types of the registered m10 disconnected3+7 normal form are excluded. This closes that entire conditional contract, rather than only shrinking its empty-fiber frontier. Other m10 structures, m8,m9, and the root parent/support gates remain OPEN / NOT_CERTIFIED. No A/B files were modified, no generic CSP output was imported, and no subagents were used.
+

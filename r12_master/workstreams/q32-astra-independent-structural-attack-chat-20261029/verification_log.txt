@@ -350,3 +350,34 @@ PASS no remaining normal block is light-compatible with both special standards
 PASS 13 partition cases; 564 raw accepted configurations; 534 equal-partition configurations
 
 
+COMMAND: ["C:\\Users\\lenovo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe", "-B", "C:\\Users\\lenovo\\OneDrive\\\u6587\u6863\\ChatGPT\\research\\r12_master\\workstreams\\q32-astra-independent-structural-attack-chat-20261029\\verify_triangle_matching_cells.py"]
+EXIT: 0
+C3+2P2 F ((), (0, 1, 2), (3, 4), (5, 6)) G ((), (0, 1, 2), (3, 4), (5, 6)) accepted 4560
+C3+2P2 F ((), (0, 1, 2), (3, 4), (5, 6)) G ((0,), (1, 2), (3, 4), (5, 6)) accepted 27
+C3+2P2 F ((), (0, 1, 2), (3, 4), (5, 6)) G ((0, 1), (2,), (3, 4), (5, 6)) accepted 27
+C3+2P2 F ((), (0, 1, 2), (3, 4), (5, 6)) G ((0, 1, 2), (3,), (4,), (5, 6)) accepted 2190
+C3+2P2 F ((), (0, 1, 2), (3, 4), (5, 6)) G ((0, 1, 2), (3, 4), (5,), (6,)) accepted 2190
+C3+2P2 F ((), (0, 1, 2), (3, 4), (5, 6)) G ((0, 2), (1,), (3, 4), (5, 6)) accepted 27
+C3+2P2 F ((0,), (1, 2), (3, 4), (5, 6)) G ((), (0, 1, 2), (3, 4), (5, 6)) accepted 18
+C3+2P2 F ((0, 1), (2,), (3, 4), (5, 6)) G ((), (0, 1, 2), (3, 4), (5, 6)) accepted 18
+C3+2P2 F ((0, 1, 2), (3,), (4,), (5, 6)) G ((), (0, 1, 2), (3, 4), (5, 6)) accepted 2136
+C3+2P2 F ((0, 1, 2), (3, 4), (5,), (6,)) G ((), (0, 1, 2), (3, 4), (5, 6)) accepted 2136
+C3+2P2 F ((0, 2), (1,), (3, 4), (5, 6)) G ((), (0, 1, 2), (3, 4), (5, 6)) accepted 18
+PASS C3+2P2 local assertions; 13347 accepted; 9 special diversions; 18 special light neighbors
+C3+P4 F ((), (0, 1, 2), (3, 4), (5, 6)) G ((), (0, 1, 2), (3, 4), (5, 6)) accepted 1608
+C3+P4 F ((), (0, 1, 2), (3, 4), (5, 6)) G ((0,), (1, 2), (3, 4), (5, 6)) accepted 12
+C3+P4 F ((), (0, 1, 2), (3, 4), (5, 6)) G ((0, 1), (2,), (3, 4), (5, 6)) accepted 12
+C3+P4 F ((), (0, 1, 2), (3, 4), (5, 6)) G ((0, 1, 2), (3,), (4,), (5, 6)) accepted 600
+C3+P4 F ((), (0, 1, 2), (3, 4), (5, 6)) G ((0, 1, 2), (3,), (4, 5), (6,)) accepted 0
+C3+P4 F ((), (0, 1, 2), (3, 4), (5, 6)) G ((0, 1, 2), (3, 4), (5,), (6,)) accepted 600
+C3+P4 F ((), (0, 1, 2), (3, 4), (5, 6)) G ((0, 2), (1,), (3, 4), (5, 6)) accepted 12
+C3+P4 F ((0,), (1, 2), (3, 4), (5, 6)) G ((), (0, 1, 2), (3, 4), (5, 6)) accepted 8
+C3+P4 F ((0, 1), (2,), (3, 4), (5, 6)) G ((), (0, 1, 2), (3, 4), (5, 6)) accepted 8
+C3+P4 F ((0, 1, 2), (3,), (4,), (5, 6)) G ((), (0, 1, 2), (3, 4), (5, 6)) accepted 578
+C3+P4 F ((0, 1, 2), (3,), (4, 5), (6,)) G ((), (0, 1, 2), (3, 4), (5, 6)) accepted 0
+C3+P4 F ((0, 1, 2), (3, 4), (5,), (6,)) G ((), (0, 1, 2), (3, 4), (5, 6)) accepted 578
+C3+P4 F ((0, 2), (1,), (3, 4), (5, 6)) G ((), (0, 1, 2), (3, 4), (5, 6)) accepted 8
+PASS C3+P4 local assertions; 4024 accepted; 4 special diversions; 8 special light neighbors
+PASS terminal contradiction E0=6<9 for both cells
+
+
