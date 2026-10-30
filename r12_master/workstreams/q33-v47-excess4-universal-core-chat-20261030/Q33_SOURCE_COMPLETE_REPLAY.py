@@ -119,6 +119,9 @@ def verify():
     assert max(b25) == 145
     assert max(b18) == 73
     assert b25 == [145, 142, 137, 130, 121, 110, 97, 82, 65, 46, 25]
+    assert comb(25, 2) - max(b25) == 155
+    assert (25 * 12 + 4) // 2 == 152
+    assert 155 > 152
 
     max_122_cost = 0
     for a in range(1, 11):
