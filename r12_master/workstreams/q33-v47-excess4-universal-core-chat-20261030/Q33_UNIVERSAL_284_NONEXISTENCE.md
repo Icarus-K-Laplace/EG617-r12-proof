@@ -1,6 +1,6 @@
 # Universal nonexistence theorem for the 47-point / 284-edge Q33 core
 
-Status: **PROVED** under the five explicit core hypotheses and inherited density caps.
+Status: **PROVED** under the five explicit graph hypotheses; the inherited density caps are not needed by this universal core theorem.
 
 ## Theorem
 
@@ -34,11 +34,11 @@ It follows that 3<=|Z|<=5 and the only clique-size/support patterns are:
 - |Z|=4: (10,11,11,11), support sizes (3,2,2,2);
 - |Z|=5: (9,11,11,11) or (10,10,11,11), all support sizes two.
 
-The source-complete common-neighbour lemma proves, using R(2,24)=empty and no external theorem,
+The elementary 25-set lemma in COMMON_NEIGHBOR_CAPACITY.md proves, using only alpha(H)<=4, omega(H)<=11 and total excess four, that every nonedge uv satisfies
 \[
-|N(u)\cap N(v)|\le2+\epsilon(u)+\epsilon(v)
+|N(u)\cap N(v)|\le3+\epsilon(u)+\epsilon(v).
 \]
-for every nonedge uv. Consequently at most one external vertex is complete to any K10.
+Consequently at most one external vertex is complete to any K10. The stronger 2+epsilon(u)+epsilon(v) bound is available only when the inherited density caps are invoked; it is not used in this universal five-hypothesis theorem.
 
 If z has support exactly two distinguished vertices whose private cliques are both K11, let A,B be its non-neighbours in those cliques, with a=|A|, b=|B|. Then a,b>=1 and A×B is complete bipartite, since a missing cross-edge gives an independent five-set with z and the other two points of I. The disjoint excess charge is at least
 \[
