@@ -268,6 +268,26 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
     # Full support: every core vertex lies in a K5 factor with exactly one O vertex,
     # so its four H vertices form a source-correct core K4 witness. The factor may
     # be one of the two special K5s inside G11; do not restrict to indices 0..9.
+    witnesses_by_color = {}
+    for c in exact_colors:
+        witnesses = []
+        for k, block in enumerate(sources[c]["components"]):
+            block_set = set(map(int, block))
+            if sum(u in O for u in block_set) == 1:
+                witness = block_set & set(H)
+                if len(witness) != 4:
+                    fail(f"color {c}, factor {k}: single-outside factor does not leave a core K4")
+                else:
+                    witnesses.append(witness)
+        if len(witnesses) < 10:
+            fail(f"color {c} supplies only {len(witnesses)} single-outside K4 witnesses (<10)")
+        witnesses_by_color[c] = witnesses
+    for c1, c2 in itertools.combinations(exact_colors, 2):
+        for i, w1 in enumerate(witnesses_by_color[c1]):
+            for j, w2 in enumerate(witnesses_by_color[c2]):
+                if len(w1 & w2) > 1:
+                    fail(f"cross-color witness blocks {c1}:{i} and {c2}:{j} intersect in >=2 vertices")
+
     for v in H:
         covered = False
         for c in exact_colors:
