@@ -364,6 +364,42 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
                         if len(witness) != 4 or len({part_of[v] for v in witness}) != 1:
                             fail(f"exact color {c}: source witness {i} is not one complete near-Turan 4-part")
 
+                if c in exact_colors:
+                    src = sources[c]
+                    x, y = int(src["x"]), int(src["y"])
+                    a0 = set(map(int, src["A0"]))
+                    comps = [set(map(int, block)) for block in src["components"]]
+                    outside_counts = [len(block & set(O)) for block in comps]
+
+                    # Every double-outside factor leaves a C-triangle, which
+                    # cannot cross parts when there is at most one cross-part C edge.
+                    for k, block in enumerate(comps):
+                        if outside_counts[k] == 2:
+                            triangle = block & set(H)
+                            if len(triangle) != 3 or len({part_of[v] for v in triangle}) != 1:
+                                fail(f"exact color {c}: double factor {k} K3 is not one near-Turan part")
+
+                    if x in O:
+                        double_factors = [k for k, b in enumerate(outside_counts) if b == 2]
+                        if len(double_factors) != 1:
+                            fail(f"exact color {c}: x outside but has {len(double_factors)} double factors")
+                        y_a0_core = len(a0 & set(H)) if y in H else 0
+                        if y_a0_core > 1 or core_counts[c] != 69 + y_a0_core:
+                            fail(f"exact color {c}: x-outside low-layer core count is not 69+yA0_H")
+                    else:
+                        triple_profile = 3 in outside_counts
+                        required_nt_outside = 3 if triple_profile else 2
+                        nt_h = comps[11] & set(H)
+                        if outside_counts[11] != required_nt_outside:
+                            fail(f"exact color {c}: low-layer x-in-H profile requires Nt outside count {required_nt_outside}")
+                        if y not in O:
+                            fail(f"exact color {c}: low-layer x-in-H profile requires y outside H")
+                        if len(nt_h) != (2 if triple_profile else 3) or
+                           len({part_of[x]} | {part_of[v] for v in nt_h}) != 1:
+                            fail(f"exact color {c}: x and Nt H-interior are not one near-Turan part")
+                        ns_cross = len((comps[10] & set(H)) - a0)
+                        if ns_cross > 1 or core_counts[c] != 69 + ns_cross:
+                            fail(f"exact color {c}: low-layer special Ns cross-edge count is {ns_cross}, core edges={core_counts[c]}")
         # Pairwise orthogonality: two low-layer color partitions cannot place
         # the same pair of H-vertices in one part, or their edge would have two
         # distinct colors.
