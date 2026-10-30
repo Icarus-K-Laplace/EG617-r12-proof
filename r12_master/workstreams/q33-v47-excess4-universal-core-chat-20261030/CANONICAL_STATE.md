@@ -30,6 +30,8 @@ A genuine E408 h13 T61 parent with Qmax=33 has a degree-13 pivot with q=33, henc
 
 ## Certified components
 
+- Actual clean-room replay on 2026-10-30: all four archive hashes and six internal source hashes checked; both original 127-row verifiers and the S31/Q33 arithmetic replayers passed. See CLEAN_ROOM_REPLAY_20261030.md.
+
 - Independent degree-12 four-set: PROVED.
 - Four private cliques and exact Z support identity: PROVED.
 - Universal common-neighbour bound c<=3+epsilon(u)+epsilon(v): PROVED.
@@ -38,7 +40,7 @@ A genuine E408 h13 T61 parent with Qmax=33 has a degree-13 pivot with q=33, henc
 - All |Z|=3,4,5 support templates, including P and D mixed matrices: PROVED.
 - Degree<=9 / degree10 / degree11 minimum-degree exclusions: PROVED.
 - R(3,35) lower-order seed: PROVED under the explicit hereditary-cap class.
-- 127-row rational certificate: COMPUTATION_CERTIFIED; exact Fraction replay passed in both retained copies.
+- 127-row rational certificate: COMPUTATION_CERTIFIED; exact Fraction replay passed in both retained copies. It certifies the excess<=2 weighted-transversal lemma, not the minimum-degree theorem.
 - Independent source-complete arithmetic replay: PASS_EXACT_ARITHMETIC_REPLAY.
 
 ## Corrections made during audit
