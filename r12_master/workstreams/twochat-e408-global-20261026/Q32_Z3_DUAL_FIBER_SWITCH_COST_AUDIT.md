@@ -132,3 +132,10 @@ No retracted degree-nine claim, exceptional-vertex injectivity, Q33 identity, or
 ## 6. Supersession — pointwise partner-fiber blocker
 
 The five-switch/two-aligned-endpoint normal form above is an intermediate necessary form, not the current open target. The new Q32_Z3_SWITCH_PARTNER_DEGREE_BLOCKER.md proves that the q-vertex receiving two extra small-component edges also sees the transposed partner fiber F_j. Its pointwise degree cap forces n_s+n_j<=1, excluding every nontrivial F/G mismatch mode. The no-double-track branch therefore reduces to aligned F=G profile (2,2,2,1). The double-track and aligned-2221 branches remain open.
+
+
+## 7. Correction — valid residual-degree mismatch closure
+
+The previous Section 6's proposed inference that q adjacent to A_j,B_j must be adjacent to every residual r in F_j is invalid: sharing neighbors does not imply adjacency. The resulting n_s+n_j<=1 mismatch inequality is withdrawn.
+
+The valid replacement is Q32_Z3_MISMATCH_RESIDUAL_DEGREE_CLOSURE.md. It uses the five-switch/two-aligned-endpoint normal form and equality in the incidence-slack inequality to determine exact residual neighborhoods in all seven outer blocks. The 2+1 split forces a K3-fiber vertex to have d_R=0; the 1+1 split forces either d_R=0 in a K2 or an isolated K2 component in C3+P4. Therefore F!=G is impossible. The no-double-track z=3 branch reduces to aligned F=G profile (2,2,2,1). The double-track and aligned-2221 branches remain open.

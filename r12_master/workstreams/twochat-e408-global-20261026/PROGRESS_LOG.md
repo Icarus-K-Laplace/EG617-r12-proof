@@ -264,3 +264,12 @@ The high-support sibling advanced to HEAD 92c9086c8b6ac554ed74b48a5d608aa546bcb9
 - If F=G, a switch can only transpose an empty fiber with a singleton fiber; among the registered profiles this occurs only in (3,3,1,0), where a size-three fiber is fixed by the transposition and produces a forbidden K13. Profiles (3,2,2,0) and (3,2,1,1) have no allowed switch and also produce K13.
 - Result: the no-double-track m=10, 3+7, z=3 branch is reduced to F=G with profile (2,2,2,1), and every outer block aligned. This is a substantial reduction, not a full z=3 or Q32 closure. Double-track and aligned-2221 branches remain open.
 - Added Q32_Z3_SWITCH_PARTNER_DEGREE_BLOCKER.md and its 12-case normalized switch verifier. The existing five-switch endpoint-saturation result is retained as an intermediate audit, now superseded by this stronger pointwise contradiction for F/G mismatch.
+
+
+## 2026-10-30 — correction and valid residual-degree closure of z=3 mismatch
+
+The prior argument that q is adjacent to every residual r in F_j because both share neighbors A_j,B_j was invalid. Shared neighbors do not imply adjacency. The mismatched-case pointwise inequality n_s+n_j<=1 and its direct contradiction are withdrawn. The normalized 4,5,5 label pattern remains valid; it does not establish q-r adjacency.
+
+The correct replacement is Q32_Z3_MISMATCH_RESIDUAL_DEGREE_CLOSURE.md. It combines the valid five-zero-switch/two-aligned-endpoint normal form with equality in y_D>=eta_D and d_R(r)+b_r=2. A 2+1 split forces d_R=0 for a K3-fiber vertex; a 1+1 split either forces d_R=0 in a K2 or an isolated K2 component in C3+P4. Thus F!=G is impossible. For F=G only, the established singleton-track plus outer-track argument gives n_s+n_j<=1; K13 then leaves only aligned profile (2,2,2,1).
+
+The old partner-degree file is marked RETRACTED; its companion script is retained only as a local label-pattern check. Double-track and aligned-2221 branches remain OPEN / NOT_CERTIFIED.
