@@ -72,3 +72,6 @@
 - Added CLEAN_ROOM_REPLAY_20261030.md and Q33_PARENT_SOURCE_MAP.md.
 - Rechecked parent source FRONTEND_BRIDGE_THEOREM.md and E408_Q33_CORE_ALMOST_REGULAR_NORMAL_FORM.md on the read-only global root HEAD b0459807acd4b7e386148056ddf77d7998918893. Confirmed the h13/E408 parent gives F: |V|61, e408, delta13, alpha<=5, omega<=11, inherited D-caps.
 - The Q33 core contradiction is a direct bypass of the 56-witness support-promotion route. The global root DAG remains unmodified and must be reconciled by its maintainer.
+
+
+- As a boundary-only check, reran V11's finite kernel verifier: 684 assignments, 349 outside-count states, 259 labelled shells, 252 Family-A and 7 Family-B survivors; zero actual completed graphs claimed. The Q33 proof does not import V11's analytic completion or minimum-degree claims.
