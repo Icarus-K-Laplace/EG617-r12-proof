@@ -1,0 +1,17 @@
+{
+  "status": "EXACT_CERTIFICATE_VERIFIED",
+  "rows": 127,
+  "scope": "Weighted union-bound lemma for four cliques of sizes 11^4 or 10,11^3; total degree excess <=2; a degree-12 vertex incomplete to each clique.",
+  "table": [
+    {
+      "s": [11, 11, 11, 11],
+      "rows": 32,
+      "maximum": "773/1089"
+    },
+    {
+      "s": [10, 11, 11, 11],
+      "rows": 95,
+      "maximum": "39/44"
+    }
+  ]
+}
