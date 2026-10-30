@@ -36,3 +36,15 @@ Results:
 - m=10: v=34..40 excluded; first aggregate survivor v=41.
 
 The final DP-state counts are aggregate pair-cost states, not labelled graph configurations. A survivor does not certify graph existence. This certificate is only for the necessary aggregate profile screen; Q33 remains OPEN.
+
+
+## 2026-10-30 gadget-shell and W-boundary checks
+
+The verifier now imposes the source-derived bound 9<=sum(c_i)<=12: at least one of the seven remaining shell vertices must lie in the 11-vertex gadget, because the three unselected K5 components can contain at most three B and three S vertices, and p cannot share a non-target K5 with A.
+
+The verifier additionally checks the first-survivor W equalities:
+- m=8,v=39: minimum per-color W cost3, W budget24, all final states have W-cost24;
+- m=9,v=40: minimum per-color W cost2, W budget18, all final states have W-cost18;
+- m=10,v=41: minimum per-color W cost1, W budget13, aggregate W slack at most3.
+
+For m=8 and m=9, Turán equality forces H[W]=4K2 and H[W]=3K2 union K1, respectively; each exact-color W edge set is a matching. See Q33_W_BOUNDARY_EQUALITY.md. These are structural reductions, not contradictions.

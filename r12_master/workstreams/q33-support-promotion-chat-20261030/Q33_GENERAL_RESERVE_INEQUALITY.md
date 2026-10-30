@@ -32,3 +32,15 @@ B_W=t_4(w)-(11-m)p_{12}(w).
 There is no gadget-witness overlap term. The three unselected components per color have variable core sizes c_i in [0,4], total 8<=sum c_i<=12, and U-incidences k_i in [0,c_i]. Their component pair costs plus the gadget-core p_2 costs are encoded by the component-only verifier.
 
 The resulting finite screen excludes m=8,v=31..38, m=9,v=32..39, and m=10,v=34..40. The first aggregate survivors are v=39,40,41, respectively. The full proof and all rows are in Q33_COMPONENT_ONLY_SUPPORT_SCREEN.md and Q33_ALL_SUPPORT_SIZES.md. This remains a necessary-profile filter; it does not close the remaining labelled graph cases.
+
+
+## 2026-10-30 correction — nonempty gadget shell
+
+The three unselected K5 components can contain at most three B vertices in total and at most the three S vertices. The pivot p cannot share a non-target K5 with any point of A=S union B. After the seven selected components use seven shell vertices, seven shell vertices remain; at most six can lie in the three unselected components. At least one shell vertex therefore lies in the 11-vertex gadget.
+
+Consequently the gadget has at most ten core vertices, so for the three unselected component core sizes:
+\[
+g_C=19-\sum_i c_i,\quad 7\le g_C\le10,\quad
+\boxed{9\le\sum_i c_i\le12}.
+\]
+The component-only verifier now imposes this source-derived lower bound. The aggregate support exclusions do not change, but the per-color option sets shrink.

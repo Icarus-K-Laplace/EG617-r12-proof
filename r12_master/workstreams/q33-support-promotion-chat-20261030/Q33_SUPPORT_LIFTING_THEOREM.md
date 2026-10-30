@@ -106,3 +106,10 @@ This model repairs the stronger fixed-four-core assumption. It is still a relaxa
 The seven-witness source lemma supplies seven isolated-K5 component four-sets in every exact-129 color. For the support set in this theorem, choose those seven in each of the m exact colors. This fixes h=0 by construction and removes the need for a selected gadget witness. See Q33_COMPONENT_ONLY_SUPPORT_SCREEN.md for the full derivation and the stronger finite screen.
 
 The resulting exclusions are m=8:v=31..38, m=9:v=32..39, and m=10:v=34..40. First aggregate survivors are m=8:v=39, m=9:v=40, and m=10:v=41. These are not graph realizations; all remaining support sizes through47 remain OPEN at the labelled-structure level.
+
+
+## 9. Nonempty gadget-shell refinement
+
+After selecting seven K5 components avoiding S, seven shell vertices remain. The three unselected K5 components can contain at most three B vertices and the three S vertices; p cannot share a non-target K5 with any point of A. Hence they contain at most six of the remaining shell vertices, forcing at least one shell vertex into the 11-vertex gadget. The gadget core has size at most10, so the three unselected component core sizes satisfy 9<=sum c_i<=12. The verifier and complete support table use this strengthened source-correct profile.
+
+The first-survivor W equality structure is recorded in Q33_W_BOUNDARY_EQUALITY.md.
