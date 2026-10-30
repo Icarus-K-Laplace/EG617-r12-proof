@@ -31,16 +31,14 @@ def pairs(vertices):
 
 def expected_color_counts(m):
     """Registered global edge-count vector for the 61-point E408 residual."""
-    if m not in (8, 9, 10):
-        raise ValueError("m must be 8, 9, or 10")
+    if m not in (8, 9):
+        raise ValueError("this isolated verifier accepts only m=8,9")
     counts = {0: 408}
     counts.update({c: 129 for c in range(1, m + 1)})
     if m == 8:
         counts.update({9: 130, 10: 130, 11: 130})
     elif m == 9:
         counts.update({10: 130, 11: 131})
-    else:
-        counts[11] = 132
     return counts
 
 
@@ -446,8 +444,8 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
                        for v in range(N)]
             if min(degrees) < floor:
                 fail(f"nonexact color {c} has minimum degree {min(degrees)}, expected >= {floor}")
-        safe_q_cap = {8: 4, 9: 5, 10: 5}[m]
-        conditional_q_cap = {8: 3, 9: 4, 10: 4}[m]
+        safe_q_cap = {8: 4, 9: 5}[m]
+        conditional_q_cap = {8: 3, 9: 4}[m]
         for z in residual:
             q_z = sum(bool(gadget[c, z]) for c in exact_colors)
             if q_z > safe_q_cap:
