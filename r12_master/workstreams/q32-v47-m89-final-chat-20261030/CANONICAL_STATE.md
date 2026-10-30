@@ -56,3 +56,5 @@ The latest root branch HEAD is `b0459807acd4b7e386148056ddf77d7998918893`. Its g
 No `UNSAT_CERTIFICATE.md` is issued. A future UNSAT result must include the SMT input, solver version, proof log, independent replay, and a second implementation.
 
 15. **PROVED_CONDITIONAL** — for the 32-edge residual F of any selected 253-edge matching skeleton, if q of the 36 M-degree-11 vertices carry positive excess and t is the number of isolated K2 components, then F has 36-q leaves, a core of 11+q≤17 vertices, and exactly q+t-4 core edges; q+t≥4.
+
+16. **PROVED** — any 11K4+K3 partition of H with \(e(H)=285\), \(\delta(H)\ge12\), \(\alpha(H)\le4\), and \(\omega(H)\le5\) forces an independent 5-set or a K7. Therefore all eleven non-target colors satisfy \(e_C(H)\ge71\), and the 37-unit gap ledger becomes \(\sum_c(e_C(H)-71)=15\). This is independent of m=8/9 and Type-I special-factor placement.
