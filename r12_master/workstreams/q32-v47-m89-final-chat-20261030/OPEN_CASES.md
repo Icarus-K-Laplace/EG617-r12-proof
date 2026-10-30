@@ -111,3 +111,10 @@ Thus the current verifier/solver are restricted Type-I/K6-free diagnostics, not 
 ## New source-complete theorem
 
 The exact-129 source classification is no longer an open blocker at the partition level. The 12-partite complement case gives 11K4+K3 directly; the non-12-partite case gives one of the three partitions via all Kang–Pikhurko equality profiles. The remaining obstruction is not source coverage but the fact that the resulting K6/K7 in H is allowed by omega(H)<=11.
+
+
+## Source-complete witness interface repaired
+
+V47_EXACT129_UNIVERSAL_PARTITION.md and V47_EXACT129_CORE_EDGE_BOUNDS.md now prove that every exact-129 color supplies at least ten disjoint core K4 witnesses and satisfies 69<=e_C(H)<=75, including the 12-partite complement and all three non-12-partite Kang–Pikhurko profiles. This is enough to justify the ten-witness input of Q32_U_COLOR_RESERVE.md.
+
+It does not supply a canonical special point x or a fixed-pivot K4 Q_C for the 12-partite branch. The full-support CSP still hard-codes Type-I K5 factors and K6-free cuts, so it is not a complete encoding of EG617. The live gap is to exploit the source-complete partition/witness system under omega(H)<=11 and to replace the Type-I-only pivot interface.
