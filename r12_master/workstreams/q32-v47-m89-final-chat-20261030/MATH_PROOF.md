@@ -179,9 +179,9 @@ The source-correct placement cases sharpen it:
 
 **Status: PROVED_CONDITIONAL** on the source-correct Type-I factorization and the registered gadget-edge placement lemma in \`HIGH_SUPPORT_NEAR_TURAN.md\`.
 
-### 9.1 Near-Turan partition when \(e_C(H)\in\{69,70\}\)
+### 9.1 Near-Turan partition for every non-target color in the 69/70 layer
 
-For \(D=C[H]\), \(\alpha(D)\le12\), hence \(\bar D\) is K13-free. Also \(\omega(D)\le4\), because a C-colored K5 inside H would be an independent 5-set in the target graph H.
+For any non-target color C, put \(D=C[H]\). Since \(\alpha(C)\le12\), we have \(\alpha(D)\le12\), hence \(\bar D\) is K13-free. Also \(\omega(D)\le4\), because a C-colored K5 inside H would be an independent 5-set in the target graph H.
 
 - If \(e(D)=69\), then \(e(\bar D)=\binom{47}{2}-69=1012=t_{12}(47)\), so Turán equality gives a complete 12-partite complement.
 - If \(e(D)=70\), then \(e(\bar D)=1011\). The registered second-Turán bound says a non-12-partite K13-free graph on 47 vertices has at most \(1010\) edges. Hence \(\bar D\) is again 12-partite.
@@ -192,9 +192,9 @@ Every part is a D-clique and has size at most four. Since the parts cover 47 ver
 \]
 The 12 parts contribute exactly \(11\binom42+\binom32=69\) D-edges. There are zero cross-part D-edges in the 69-layer and exactly one in the 70-layer. A D-colored K4 crossing two parts needs at least three cross-part edges (the cheapest split is 3+1), so every D-colored K4 lies wholly in a size-four part.
 
-Therefore every source single-outside witness K4 occupies an entire size-four part. With ten witnesses, the remaining seven vertices split into one further K4 part and one K3 part; with eleven witnesses, the remaining three vertices are the K3 part.
+Thus every non-target color in the 69/70 layer has an \(11K_4+K_3\) partition. For exact colors, every source single-outside witness K4 occupies one of the size-four parts. With ten witnesses, the remaining seven vertices split into one further K4 part and one K3 part; with eleven witnesses, the remaining three vertices are the K3 part.
 
-**Status: PROVED_CONDITIONAL** on the registered second-Turán input. The solver now encodes this partition conditionally whenever an exact color has 69 or 70 H-edges; the independent verifier reconstructs the partition from the source witnesses.
+**Status: PROVED_CONDITIONAL** on the registered second-Turán input. The solver encodes this partition conditionally for every non-target color with 69 or 70 H-edges. For exact colors it additionally forces each source witness K4 into a size-four part; the independent verifier reconstructs the partition from the color graph and checks witness alignment.
 
 ### 9.2 What this does not prove
 
