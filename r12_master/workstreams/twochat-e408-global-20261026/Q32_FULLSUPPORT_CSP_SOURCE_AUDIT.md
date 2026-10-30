@@ -210,3 +210,12 @@ The latest root-side result is recorded in Q32_Z3_SWITCH_PARTNER_DEGREE_BLOCKER.
 All three nontrivial F/G mismatch profiles from the exact partition-pair enumeration have n_s+n_j equal to 2 or 3, so they are impossible. If F=G, a switch is possible only between an empty fiber and a singleton fiber. The only registered profile with such a pair is (3,3,1,0), but a size-three fiber remains fixed and yields a monochromatic K13. Profiles (3,2,2,0) and (3,2,1,1) are also excluded by K13. Hence the no-double-track m=10, 3+7, z=3 branch reduces to aligned F=G profile (2,2,2,1), with every outer block aligned.
 
 This is not a global Q32 closure. The double-track branch and the aligned-2221 terminal remain open. The full CSP still has no execution/proof-replay result in this runtime.
+
+
+## 10. 2026-10-30 — correction of the z=3 switch-partner inference
+
+The previous root commit's inference that q is adjacent to every residual r in F_j because both share neighbors A_j,B_j was invalid. Shared neighbors do not imply adjacency. The mismatched-case pointwise inequality n_s+n_j<=1 and its direct contradiction are withdrawn. The normalized 4,5,5 label pattern remains valid, but it does not prove the claimed residual adjacency.
+
+The valid replacement is Q32_Z3_MISMATCH_RESIDUAL_DEGREE_CLOSURE.md. It uses the five-zero-switch/two-aligned-endpoint normal form, equality in y_D>=eta_D, and the residual degree identity. It eliminates 2+1 splits by a K3 degree contradiction and 1+1 splits by either a K2 degree contradiction or an impossible isolated K2 component in C3+P4. For F=G, the existing aligned-case switch blocker is valid and K13 leaves only profile (2,2,2,1).
+
+The earlier Q32_Z3_SWITCH_PARTNER_DEGREE_BLOCKER.md is explicitly retracted. No global Q32 closure is claimed.

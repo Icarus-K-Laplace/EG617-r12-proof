@@ -179,3 +179,10 @@ For the m=10, 3+7, z=3 branch with no double-track outer vertex, the root-side e
 The five-switch/two-aligned-endpoint normal form from Section 13 is superseded as a live mismatch target by the stronger pointwise switch-partner blocker. In a synchronized 4,5,5 switch, the q-vertex receiving two extra small-component edges also sees the transposed partner fiber F_j. Its pointwise degree cap forces n_s+n_j<=1. This excludes all three nontrivial F/G mismatch profiles from the exact partition-pair catalog.
 
 If F=G, a switch is possible only between an empty fiber and a singleton fiber. The only registered profile with such a pair is (3,3,1,0), but a size-three fiber remains fixed and yields a monochromatic K13. Profiles (3,2,2,0) and (3,2,1,1) are also excluded by K13. Therefore the no-double-track m=10, 3+7, z=3 branch reduces to fully aligned F=G profile (2,2,2,1). The double-track branch and aligned-2221 terminal remain OPEN / NOT_CERTIFIED.
+
+
+## 15. 2026-10-30 — correction to z=3 switch-partner argument
+
+The prior Section 14 conclusion was based on an invalid inference: q adjacent to A_j and B_j, and r adjacent to A_j and B_j, does not imply q adjacent to r. The mismatched-case pointwise bound n_s+n_j<=1 and its direct contradiction are withdrawn.
+
+The corrected proof is in Q32_Z3_MISMATCH_RESIDUAL_DEGREE_CLOSURE.md. It validly combines the five-switch/two-aligned-endpoint normal form with equality in the per-block incidence bound and d_R(r)+b_r=2. It eliminates the 2+1 and 1+1 split cases and reduces the no-double-track z=3 branch to aligned F=G profile (2,2,2,1). The separate double-track branch and aligned-2221 terminal remain OPEN / NOT_CERTIFIED.

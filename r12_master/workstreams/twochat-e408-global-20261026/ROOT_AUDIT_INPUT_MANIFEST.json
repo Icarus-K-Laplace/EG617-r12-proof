@@ -2,8 +2,8 @@
   "audit_date": "2026-10-30",
   "repository": "Icarus-K-Laplace/EG617-r12-proof",
   "branch": "workstream/r12-twochat-e408-global-20261026",
-  "target_head_before_audit": "3ca716f44845e2c4f4f871843ab490ab9347a75a",
-  "target_tree_before_audit": "250fe58b67674ccfbf7e93c487a8d10ad377e629",
+  "target_head_before_audit": "3f55078424dec4dbff0441157983609f279277fb",
+  "target_tree_before_audit": "29b771b89c53738d7c054dad5b4c4ee34b887f73",
   "write_scope": "r12_master/workstreams/twochat-e408-global-20261026/",
   "overall_status": "OPEN / NOT_CERTIFIED — fail-closed; Q32 full support remains open",
   "root_receipt_promotable": false,
@@ -292,7 +292,7 @@
     }
   ],
   "open_dependencies": [
-    "E408 Q32 full-support v=47: m=8, m=9, m=10 aligned (2,2,2,1) terminal and separate double-track/other light-block branches. The no-double-track m=10, 3+7, z=3 branch is reduced to aligned F=G profile (2,2,2,1), but this terminal is not closed.",
+    "E408 Q32 full-support v=47: m=8, m=9, m=10 aligned (2,2,2,1) terminal and separate double-track/other light-block branches. The no-double-track m=10, 3+7, z=3 mismatch is eliminated by residual endpoint degrees, but the aligned (2,2,2,1) terminal is not closed.",
     "V12 artifact/replay and complete finite-survivor-to-template mapping for E407 Q32",
     "Q33 support promotion from v=31 to all legal support sizes v=32..47"
   ],
@@ -309,7 +309,8 @@
     "80e733a4ccd213ed220e71cac13fc099c8dee29d",
     "7823ed12480b064cee31db6eb1b5d200bf3dc069",
     "6e61d995a257bc854c3df2fb47d9da7bc6c6e160",
-    "3ca716f44845e2c4f4f871843ab490ab9347a75a"
+    "3ca716f44845e2c4f4f871843ab490ab9347a75a",
+    "3f55078424dec4dbff0441157983609f279277fb"
   ],
   "sibling_heads": {
     "e407_q32": "0192807d1f3b2193aa65c25b9f671b36821aaded",
@@ -381,13 +382,23 @@
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/Q32_Z3_SWITCH_PARTNER_DEGREE_BLOCKER.md",
-      "blob_sha": "0a18e61a21116ad2c95e8604995e0f7735a95116",
-      "status": "new local theorem; eliminates all nontrivial F/G mismatch and reduces no-double-track z3 to aligned profile 2221"
+      "blob_sha": "74d79637cb54562144bc068f7700fe93a2a7b55b",
+      "status": "RETRACTED: invalid inference from shared neighbors to adjacency; do not use as proof."
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/verify_q32_z3_switch_partner_degree_blocker.py",
-      "blob_sha": "8ced10048f6a3dddb64a62b1a5cf69110b942b9d",
-      "status": "12 normalized switch orientations checked; profile size-sum consequences checked"
+      "blob_sha": "8bd682573904f25699a06703813cc7e026224cf3",
+      "status": "LOCAL LABEL-PATTERN CHECK ONLY; no residual adjacency conclusion."
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/Q32_Z3_MISMATCH_RESIDUAL_DEGREE_CLOSURE.md",
+      "blob_sha": "039f0509f448eef757cf963da50e79320eb50e47",
+      "status": "corrected proof: five-switch/two-endpoint equality plus residual degree contradiction; no-double-track z3 reduces to aligned profile 2221"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/verify_q32_z3_mismatch_endpoint_degree_blocker.py",
+      "blob_sha": "54ce6e946868ce4b9776bd4f8342ed4a1a87f788",
+      "status": "local endpoint-choice arithmetic verifier; no global solver"
     }
   ],
   "root_status": "OPEN / NOT_CERTIFIED",
@@ -396,7 +407,7 @@
     "61f3263de5c99d37f58cd1ab7ad65a05888534f0",
     "6ed8b6e0352ca5aeb713e86676504bb236561db8"
   ],
-  "manifest_parent_commit": "3ca716f44845e2c4f4f871843ab490ab9347a75a",
+  "manifest_parent_commit": "3f55078424dec4dbff0441157983609f279277fb",
   "audit_commits_before_final_manifest_commit": [
     "549960e37217c243e8abd6b7629301e9f918e6c6",
     "61f3263de5c99d37f58cd1ab7ad65a05888534f0",
@@ -419,7 +430,7 @@
     {
       "branch": "workstream/r12-q32-highsupport-root-20261028",
       "head": "1de8a37556ba98ccbb8651f39a5192629453f0f1",
-      "status": "read-only; v=44,45,46 closed conditionally; v=47 remains open. Canonical count/source contracts fixed. m=10 no-double-track 3+7,z=3 now forces F=G profile (2,2,2,1), all outer blocks aligned; double-track and aligned-2221 terminal remain open. Full CSP execution/proof replay pending.",
+      "status": "read-only; v=44,45,46 closed conditionally; v=47 remains open. Canonical count/source contracts fixed. m=10 no-double-track 3+7,z=3 mismatch eliminated by residual endpoint-degree argument; branch reduces to aligned F=G profile (2,2,2,1), all outer blocks aligned. Double-track and aligned-2221 terminal remain open. Full CSP execution/proof replay pending.",
       "canonical_blob": "afa72318cb0626a0e5fa2ca526eba4bd5984f506",
       "m9_closure_blob": "8f1e7b65f5857e9d982ebca1bdfe181d49fda5f0",
       "v46_caseII_blob": "f1e39bfcd6e335e45a6beab81535d725d605cef9",
