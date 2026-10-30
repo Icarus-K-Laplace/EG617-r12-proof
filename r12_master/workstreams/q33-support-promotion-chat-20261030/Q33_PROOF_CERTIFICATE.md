@@ -1,19 +1,28 @@
 # Q33 support-screen proof certificate
 
-Status: **COMPUTATION_CERTIFIED** for the arithmetic screen only.
+Status: **COMPUTATION_CERTIFIED** for exact integer/profile screening only.
 
-Run with Python 3 standard library:
+Run:
 \`\`\`bash
 python3 Q33_INDEPENDENT_VERIFIER.py
 \`\`\`
 
-The verifier exhausts all k_i in {0,1,2,3,4} for the three- and four-component minima f0/f1, every h=0,...,m, and every support size from its lower bound through47.
+The verifier checks all allowed support sizes and all h values. It exhausts each color's 3- or 4-component U-incidence profile in {0,1,2,3,4}, applies the U and W reserve budgets, and independently checks that the component-pair charge condition gives exactly the same feasible h states as a grouped-profile dynamic program.
 
-First implementation:
-- m=8: v=31,32 excluded; first survivor v=33,h=5.
-- m=9: v=32,33 excluded; first survivor v=34,h=4,5,6.
-- m=10: v=34 excluded; first survivor v=35,h=2,...,8.
+The analytic charge is:
+\[
+\binom{4-k}{2}+2\binom{k}{2}\ge3\quad(k=0,\ldots,4).
+\]
+Summing over 3m+h unselected component K4s yields
+\[
+3(3m+h)\le B_W+2B_U.
+\]
 
-A separate dynamic-programming implementation of f0/f1, independent of the Cartesian-product enumeration, reproduced all47 (m,v) cells and the same survivor sets. Result: **PASS**.
+Verified result:
+- m=8: v=31,32,33 excluded; first survivor v=34,h=4,5,6,7.
+- m=9: v=32,33,34 excluded; first survivor v=35,h=3,...,9.
+- m=10: v=34,35 excluded; first survivor v=36,h=3,...,10.
 
-This certificate checks arithmetic only. It does not verify the parent graph hypotheses, produce a graph realization, or certify full Q33 UNSAT.
+The grouped-profile DP and the three scalar inequalities agree on all47 (m,v) cells.
+
+Scope: no graph realization is asserted; no complete Q33 UNSAT certificate is claimed.

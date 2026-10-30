@@ -41,3 +41,7 @@ If any parent hypothesis is not certified for a proposed Q33 completion, the rel
 - No solver UNSAT output.
 
 This workstream does not modify the global root receipt or global root status.
+
+
+## 2026-10-30 update — component-pair charge
+No new upstream source was introduced. The new lemma charges the already registered unselected isolated component K4s by their U- and W-internal pair counts. It uses the same 284-edge core, seven-witness, exact-129 component, gadget-independence, and unique-edge-ownership assumptions listed above. The pointwise inequality is elementary and exact for k=0,...,4. Global root status remains OPEN.
