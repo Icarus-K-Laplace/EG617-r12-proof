@@ -339,7 +339,7 @@ def build_model(m):
         "xvar": xvar, "yvar": yvar, "a0var": a0var,
         "gadget": gadget, "component_outside": component_outside,
         "qblock": qblock, "residual": residual,
-        "pair_count": pair_count, "near_turan_part": near_turan_part, "source_core_count": source_core_count,
+        "pair_count": pair_count, "source_core_count": source_core_count,
     }
     return variables
 
