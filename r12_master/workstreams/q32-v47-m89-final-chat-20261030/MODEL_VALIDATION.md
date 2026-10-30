@@ -99,3 +99,10 @@ The full verifier now checks the exact low-layer source geometry after alpha pre
 - x-outside cases check the unique double K3 and the exact y--A0 core contribution.
 
 The solver has matching implications. These constraints are necessary consequences of the one-cross-edge near-Turan structure and the source edge ownership, not imported m=10 alignment assumptions.
+
+
+## Tight-part low-layer exclusion validation
+
+The verifier includes an independent augmenting-path implementation of every Hall matching between the reconstructed 11K4+K3 parts. It forms M (253 edges), F (32 edges), finds a tight part with F-degree profile 1,1,1,2, identifies at least seven clean 4-parts, and returns either an explicit independent 5-set or a K7. The full alpha and clique checks independently validate the corresponding contradiction.
+
+When both alpha and omega validation are enabled, every non-target color is also checked against the derived floor \(e_C(H)\ge71\). The solver uses this floor and no longer allocates dead 69/70 partition variables.
