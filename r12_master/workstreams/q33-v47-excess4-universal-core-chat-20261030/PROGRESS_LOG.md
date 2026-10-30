@@ -34,6 +34,13 @@
 - Exhaustively checks the finite integer minima in the pair, h=4, P, and D inequalities.
 - Verifier scope is arithmetic/support-shape only; it is not a graph search or proof of graph existence/nonexistence by failed search.
 
+## 2026-10-30 — counterexample-first audit
+
+- The five possible positive-excess partitions of four are all covered by q=1,2,3,4 in the four-set argument.
+- Every support multiset compatible with the exact incidence surplus was enumerated before attempting any realization: 9 configurations for h=3, 40 for h=4, and 48 for h=5.
+- Every possible support family is blocked by a pair-excess, K10-completion-capacity, or mixed-matrix excess inequality. Thus no candidate adjacency pattern survives to an actual graph realization.
+- No random-search failure is used. No adjacency list is claimed or saved because the analytic reduction excludes every legal support template.
+
 ## Current status
 
 - Universal theorem under the five core hypotheses: **PROVED**.
