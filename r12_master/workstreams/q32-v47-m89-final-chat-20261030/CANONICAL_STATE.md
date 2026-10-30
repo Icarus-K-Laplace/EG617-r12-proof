@@ -33,7 +33,7 @@ It does not work on v=44,45,46 or m=10.
 6. **COMPUTATION_CERTIFIED** — the K4,4 minimum-edge table `mu_4(t)` was exhaustively checked over all 65,536 bipartite edge sets; 2,304 local composition cases were replayed.
 7. The m=8 and m=9 scalar pivot-slack frontiers were independently enumerated: 79 and 61 states respectively; the corrected z ranges are 0..12 and 0..9.
 8. **PROVED_CONDITIONAL** — exact source-core accounting (e_C(H)=B_C+G_C^H) and parameter-dependent gap bounds for x in O / two-double / triple placements.
-9. **PROVED_CONDITIONAL** — every exact color with 69 or 70 H-edges has an 11K4+K3 near-Turan partition; every single-outside source witness K4 occupies a size-four part. The CSP and independent verifier now encode/check this structure.
+9. **PROVED_CONDITIONAL** — every non-target color with 69 or 70 H-edges has an 11K4+K3 near-Turan partition; for exact colors every single-outside source witness K4 occupies a size-four part. The CSP and independent verifier now encode/check this structure.
 10. **WITHDRAWN / repaired** — the first unconditional lazy matching-composition cuts were overconstraints; they have been replaced by source- and pivot-selection-guarded implications.
 
 ## Scope firewall
