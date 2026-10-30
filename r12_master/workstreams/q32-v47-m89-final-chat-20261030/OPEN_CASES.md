@@ -2,9 +2,9 @@
 
 ## Current status
 
-**NO OPEN MATHEMATICAL CASE REMAINS IN THIS ISOLATED m=8/9 FULL-SUPPORT TERMINAL.** The exact-129 Type-I factorization forces one of three independent-part partitions of H; a unified Hall/tight-part theorem excludes all three. See V47_TYPEI_PARTITION_OBSTRUCTION.md. The solver was not run and no SMT UNSAT certificate is claimed.
+**OPEN / NOT_CERTIFIED.** The previous closure is retracted: it assumed omega(H)<=5 and omega(C)<=5, while EG617 only supplies omega(H)<=11 and omega(C)<=12. It also assumed every exact-129 color is Type I. See AUDIT_RETRACTION_BALANCED_PREMISES.md.
 
-The scalar frontiers, pivot matching search, and 69/70 layer material below are historical intermediate work, superseded by the final analytic Type-I obstruction at the end of this file. The only remaining action in this branch is dependency promotion/audit by the parent root workstream.
+The scalar frontiers and pivot matching search remain conditional intermediate work. The 69/70 exclusion and Type-I analytic closure are not valid under the actual EG617 hypotheses. The remaining task is a source-complete Q32 attack under alpha(C),omega(C)<=12 and omega(H)<=11.
 
 ## Historical scalar relaxation (superseded)
 
@@ -90,6 +90,12 @@ A unified Hall/tight-part lemma excludes all three partitions under the frozen H
 No full SMT run or UNSAT proof log is claimed or needed. The next work is dependency promotion: independently audit the imported Type-I factorization and H-core contract against the parent E408/Q32 theorem, then update the root dependency DAG/receipt through the appropriate parent workstream. This isolated branch does not claim that E408 as a whole, Q33, E407, or the original Erdős r=12 theorem is closed.
 
 
-## Parent-level scope discovered
+## Parent-level scope audit — previous promotion withdrawn
 
-The final Type-I obstruction does not use U, support size v, pivot blocks, or m beyond the existence of one exact-129 color. The parent E408/Q32 ledger has m in {8,9,10}. Therefore, if the root confirms that every Q32 support row inherits the same H-core and global coloring premises, the same proof excludes all v=44,45,46,47 and all m=8,9,10. See ROOT_PROMOTION_NOTE.md. This is not yet merged into the parent root DAG; no sibling branch was edited.
+The Type-I obstruction cannot be promoted to any support row: its required omega(H)<=5 and omega(C)<=5 hypotheses are absent, and universal Type-I source coverage is unproved. The former all-support/m-independent closure claim is withdrawn. The parent root branch remains unchanged.
+
+## Current load-bearing gaps
+
+1. Classify exact-129 colors under only alpha(C),omega(C)<=12, including the 12-partite complement case and all non-12-partite Kang–Pikhurko equality profiles.
+2. Replace the unavailable omega(H)<=5 contradiction by a consequence valid under omega(H)<=11.
+3. Rebuild the m=8/9 model so it includes every source mode permitted by balancedness; the current solver/verifier are Type-I and K6-free restricted.
