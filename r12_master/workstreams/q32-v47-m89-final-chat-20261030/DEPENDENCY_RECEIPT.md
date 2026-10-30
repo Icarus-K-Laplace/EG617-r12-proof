@@ -66,6 +66,7 @@ The latest all-color orthogonality checkpoint also updates the local solver/veri
 | `verify_q32_fullsupport_candidate.py` | `ad47039f4c5f85880308e532a7599ef675abd4f8` |
 | `V47_SOURCE_NEAR_TURAN_SPECIAL_GADGET_LOCALIZATION.md` | `4a93e1d79cbf3142763192cfcf2a400ef07088a6` |
 | `MATH_PROOF.md` | `0773208932c98be0b21333cedc5e1d784b5f9430` |
-| `CANONICAL_STATE.md` | `f390ce40c19f908d978fb862bb5089387a2675a3` |
+| `RUN_LOG.md` | `879b6dc4e8ffa671fb46ceaf542cf12d9fd0749e` |
+| `CANONICAL_STATE.md` | `b46349e789b6f21b23a6161d12e0dc494a079640` |
 
 The new source-localization constraints are conditional on the 69/70 layer and alpha(H)<=4 / alpha(C)<=12. The solver and verifier blobs above include them. The 253-edge matching-skeleton theorem is analytic and is not yet encoded with explicit matching-choice variables. No full CSP run or SAT/UNSAT result exists.
