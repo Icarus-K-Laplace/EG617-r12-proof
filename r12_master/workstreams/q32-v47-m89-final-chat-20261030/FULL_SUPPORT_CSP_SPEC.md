@@ -55,10 +55,11 @@ These sum-and-cap constraints imply the only legal outside profiles:
 For every pair C<D:
 - count all target edges between Q_C and Q_D, with both endpoint orientations included;
 - require at least four;
-- introduce an existential selected perfect matching supported on target edges and saturating the eight pivot-block vertices;
-- if the pair has exactly four target edges, identify the selected matching with the entire pair graph.
+- exact alpha(H)<=4 separation is the authority that guarantees a perfect matching: the induced graph on Q_C union Q_D is bipartite with alpha<=4, so Kőnig gives a matching of size four;
+- the independent candidate verifier explicitly recomputes and checks a perfect matching for every pair;
+- if the pair has exactly four target edges, that matching is unique and equals the entire pair graph.
 
-The selected matching is an auxiliary witness to Kőnig's theorem, not an assumption that the pair graph always has exactly four edges.
+No redundant per-edge matching-choice Booleans are introduced. The matching is reconstructed from a model/candidate when needed.
 
 ## 6. Matching-composition and multi-projection cuts (new)
 
