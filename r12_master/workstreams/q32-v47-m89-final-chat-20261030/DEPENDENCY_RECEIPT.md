@@ -117,3 +117,35 @@ The independent verifier now reconstructs the source partition for each exact co
 The canonical and open-case documents now state the analytic exclusion rather than the superseded OPEN/71+ search status. The CSP specification marks its low-layer variables as historical, and the solver's default CLI exits with the analytic-closure notice; legacy SMT execution requires an explicit opt-in.
 
 A standalone Python replay of the same matching/tight-part helper logic was run on the synthetic 285-edge, minimum-degree-12 fixture already embedded in the verifier self-test. The three partition shapes returned clique witnesses of sizes 7, 6, and 7 respectively. The committed full verifier script itself was not executed in this environment; its self-test remains available for execution by a local runner. This is not a solver SAT/UNSAT result.
+
+
+## Final parent-dependency audit — source and m-independent consequence
+
+Read-only parent/source refs:
+- local isolated branch HEAD: `2940b2bb2679961c53bfef68693345c4e0ede501`;
+- root E408/Q32 branch HEAD: `b0459807acd4b7e386148056ddf77d7998918893`;
+- high-support source-interface branch HEAD: `1de8a37556ba98ccbb8651f39a5192629453f0f1`;
+- root Kang–Pikhurko source audit blob: `b1f870023990561c563a969f6f180eb3ebc6f9af`;
+- root Q32 core terminal blob: `42f3644191bc5e3fe99ae6bbc6e25a8c7b6dd6f4`;
+- root all-color U-reserve premise blob: `bb7ed1c7e11db73f9456e4ee3892715294182beb`;
+- front-end balanced-coloring bridge blob: `52b2f4af102ceba1671dc7d0e7ed36a512458e77`;
+- root dependency DAG blob: `09b4d5505d8b80839f2868aca1d427263158eab7`.
+
+The primary Kang–Pikhurko PDF was opened and checked directly. Its Theorem 1 gives (p_{12}(61)=1701) from (t_{12}(61)=1705); Theorem 4 and Lemma 5 classify equality, and the two size-six profiles are excluded by the global (omega(C)le5) premise. The front-end bridge explicitly states that every 13-set contains every color, giving (alpha(C)le12). The global no-monochromatic-K6 premise gives both (omega(C)le5) and (omega(H)le5). The Q32 core terminal supplies (|H|=47,e(H)=285,alpha(H)le4,delta(H)ge12).
+
+The theorem does not use support size or m beyond the existence of an exact-129 color. Since the parent outer ledger has (min{8,9,10}), the conditional implication is all-support/all-m Q32 exclusion, subject to the root explicitly carrying the global (omega(H)le5) premise. The root branch was not modified. See ROOT_PROMOTION_NOTE.md for the exact import request and scope firewall.
+
+| Local artifact | Current blob SHA | Lines |
+|---|---|---:|
+| `V47_TYPEI_PARTITION_OBSTRUCTION.md` | `d33a48cd91c4a4586ff7b1d49cbb96cccea4cd1d` | 157 |
+| `ROOT_PROMOTION_NOTE.md` | `66f0afedc3ba714c69f51ac488d75d9f22e39117` | 46 |
+| `q32_fullsupport_m89_solver.py` | `1dae5a9acb1f20d6719c6a389fab3e7145560d50` | 658 |
+| `verify_q32_fullsupport_candidate.py` | `1313fe8d559a214f7b187dd7438942c48be931dc` | 1060 |
+| `MATH_PROOF.md` | `b34374a3d64b55b178574c423313e7c29d882427` | 374 |
+| `CANONICAL_STATE.md` | `88a8c691fca1ea2ce6089255835b2c36a6f8d3ac` | 65 |
+| `OPEN_CASES.md` | `e277ce5fb691f4370b6ed58482e24d1da1cb1451` | 91 |
+| `FULL_SUPPORT_CSP_SPEC.md` | `a531d2de85775d1bbcd7d7e82091c250750bed6d` | 127 |
+| `MODEL_VALIDATION.md` | `0b3baaef9c1f2e7b59256b73e16aef40a5547fff` | 123 |
+| `RUN_LOG.md` | `2b02eb56ec8532e9345764b0c179ab50778926d3` | 91 |
+
+No full verifier execution, SMT run, SAT/UNSAT result, or UNSAT proof log is claimed. The committed verifier includes replay/self-test code; a standalone transcription of the matching/tight-part helper was executed on the synthetic fixture and returned clique sizes 7, 6, and 7 for the three shapes.
