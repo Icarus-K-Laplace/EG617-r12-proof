@@ -82,7 +82,7 @@ The former 1,872-count 5,5,5 classifier and 20,788-state one-column catalog are 
 
 ## 8. Corrected 4+6 K4-e local classification
 
-The corrected exact 5,5,5 theorem and one-column enumeration are recorded in M10_555_TRIANGLE_AND_CROSS_GRID_SWITCH_LEMMA.md. The 41,472 normalized 5,5,5 inputs yield 2,124 valid configurations (1,728 identity and 66 per transposition). The corrected one-column catalog has 20,842 states (20,772 AB-aligned, 70 AB-switched). For every fixed row and every fixed column of the 4-by-6 matching matrix, the matching values take at most two distinct permutations. This does not imply a two-permutation global grid. The six-column compatibility, degree equations, and residual-fiber coupling remain OPEN.
+The corrected exact 5,5,5 theorem and one-column enumeration are recorded in M10_555_TRIANGLE_AND_CROSS_GRID_SWITCH_LEMMA.md. The 41,472 normalized 5,5,5 inputs yield 2,124 valid configurations (1,728 identity and 66 per transposition). The corrected one-column catalog has 20,842 states (20,772 AB-aligned, 70 AB-switched). For every fixed row and every fixed column of the 4-by-6 matching matrix, the matching values take at most two distinct permutations. This does not imply a two-permutation global grid. The six-column compatibility, degree equations, and residual-fiber coupling for K4-e, Z=4 are closed by Section 10. The K4 small-component branch and K4-e with Z=1,2,3 remain OPEN.
 
 
 ## 9. Z=4 two-aligned-column pattern-10 exclusion

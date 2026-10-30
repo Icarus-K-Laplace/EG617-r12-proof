@@ -1,7 +1,7 @@
 # M10 5,5,5 triangle classification (corrected) and K4-e cross-grid constraints
 
 Date: 2026-10-30  
-Status: COMPUTATION_CERTIFIED local theorem; six-column grid and full Q32 remain OPEN.
+Status: COMPUTATION_CERTIFIED local theorem; the K4-e, Z=4 six-column slice is closed by Section 8, while other 4+6 slices and full Q32 remain OPEN.
 
 ## 1. Exact 5,5,5 triangle classification
 
@@ -79,7 +79,7 @@ Therefore every row and every column of the 4-by-6 matching matrix uses at most 
 
 The next problem is to couple the corrected 20,842 one-column states; all twelve outer light-pair 4,5,5 constraints; the three outer heavy-pair corrected 5,5,5 constraints with their actual extra-edge endpoints; exact per-vertex degree equations; the two residual clique-fiber partitions and their relative placement; and global alpha(H)<=4 and omega(H)<=11.
 
-The exact Z=4 two-aligned-column pattern-10 terminal with F=(3,2,2,0) is separately excluded in M10_Z4_TWO_ALIGNED_PATTERN10_EXCLUSION.md. Other six-column patterns remain OPEN. No Z=4 closure, no full-support m=10 closure, and no Q32/root closure is claimed.
+The exact Z=4 two-aligned-column pattern-10 terminal was the initial subcase. Its scope is now subsumed by M10_K4E_Z4_GLOBAL_GRID_CLOSURE.md, which closes the entire K4-e, Z=4 slice. The K4 small-component branch and K4-e with Z=1,2,3 remain OPEN; full-support m=10 Q32 and the root remain OPEN.
 
 
 ## 8. Global use in the 4+6 K4-e, Z=4 terminal

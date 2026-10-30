@@ -103,3 +103,6 @@ Still OPEN: the K4 small-component branch; K4-e with Z=1,2,3; other component si
 ### Verification boundary
 
 The verifier checks the pair/triple necessary local cell catalog, the 930 outer-light cut shapes, and the normalized corrected-5,5,5 endpoint branch used in the proof. It is not a full 4-by-6 SAT solver and not a 47-vertex Q32 SAT/UNSAT certificate. The global grid contradiction is analytic in the theorem file.
+
+
+Clarification update: the theorem text's matching-holonomy and row-switch endpoint derivations were made explicit in commit b2920dad7f5f8b7f3d61d43af8ac80edf2517664. Current workstream head after this correction is recorded by the branch ref; full-support m=10 Q32 remains OPEN / NOT_CERTIFIED.
