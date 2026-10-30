@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
-"""Independent checker for EG617 r=12 full-support Q32 candidate JSON.
+"""Checker for a RESTRICTED Type-I full-support Q32 candidate JSON.
 
-The checker does not trust the SMT solver, component labels, or source-mode
-classification. It reconstructs every exact-color edge set from the Type-I
-witness data, then checks the full K_61 edge coloring and the Q32 contracts.
+This format hard-codes twelve Type-I K5 factors for every exact-129 color.
+That source mode is not known to cover every exact color in a balanced EG617
+coloring. The default checks alpha(C)<=12 and the registered core arithmetic,
+but does NOT impose a monochromatic-K6 prohibition. Optional --check-omega
+tests the strictly stronger K6-free augmented problem and is not an EG617
+premise. See AUDIT_RETRACTION_BALANCED_PREMISES.md.
+
+A PASS certifies only the encoded Type-I candidate and the selected checks;
+it is not a complete verifier for all Q32 source modes.
 """
 from __future__ import annotations
 import argparse
@@ -401,7 +407,7 @@ def type_i_partition_obstruction_witness(h_edges, parts):
     return ("proof-input-error", "no tight 4-part produced the obstruction")
 
 
-def verify_candidate(data, check_alpha=True, check_omega=True):
+def verify_candidate(data, check_alpha=True, check_omega=False):
     errors = []
     def fail(message):
         errors.append(message)
@@ -502,10 +508,9 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
     if any(colors[edge(PIVOT, a)] != 0 for a in A):
         fail("all 13 pivot-shell edges pA must have target color 0")
 
-    # Every exact-129 Type-I color induces one of the three forbidden
-    # independent-part partitions of H. Replay the Hall/tight-part obstruction
-    # directly from its twelve source K5 factors; this is stronger than the
-    # former conditional 69/70 near-Turan check.
+    # OPTIONAL AUGMENTED CHECK ONLY: with check_omega=True, the Type-I
+    # partition lemma plus alpha(H)<=4 forces a K6/K7 in H. This is a failure
+    # only in the extra K6-free problem; EG617 permits such cliques.
     if check_alpha and check_omega and len(h_edges) == 285 and min(h_degree.values()) >= 12:
         for c in exact_colors:
             src = sources[c]
@@ -518,7 +523,11 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
             if obstruction[0] == "independent5":
                 fail(f"color {c}: Type-I partition forces independent 5-set {obstruction[1]}")
             elif obstruction[0] == "clique":
-                fail(f"color {c}: Type-I partition forces target clique of size {len(obstruction[1])}: {obstruction[1]}")
+                # A K6/K7 is allowed by the actual EG617 omega(H)<=11 contract.
+                # With check_omega=True this restricted verifier is testing the
+                # separate augmented K6-free variant, so only then fail.
+                if check_omega:
+                    fail(f"augmented K6-free check: Type-I partition forces target clique of size {len(obstruction[1])}: {obstruction[1]}")
             else:
                 fail(f"color {c}: Type-I partition obstruction replay failed: {obstruction}")
 
@@ -1037,6 +1046,8 @@ def main():
     parser.add_argument("candidate", nargs="?")
     parser.add_argument("--self-test", action="store_true")
     parser.add_argument("--skip-alpha", action="store_true")
+    parser.add_argument("--check-omega", action="store_true",
+                        help="also impose the EXTRA monochromatic-K6-free condition (not part of EG617)")
     args = parser.parse_args()
     if args.self_test:
         self_test()
@@ -1044,13 +1055,17 @@ def main():
     if not args.candidate:
         parser.error("candidate JSON path is required unless --self-test is used")
     data = json.loads(Path(args.candidate).read_text(encoding="utf-8"))
-    errors = verify_candidate(data, check_alpha=not args.skip_alpha)
+    errors = verify_candidate(data, check_alpha=not args.skip_alpha,
+                              check_omega=args.check_omega)
     if errors:
         print("Q32_CANDIDATE_INVALID")
         for item in errors:
             print(" - " + item)
         return 1
-    print("Q32_FULLSUPPORT_CANDIDATE_VERIFIED")
+    label = ("Q32_AUGMENTED_TYPEI_K6FREE_CANDIDATE_VERIFIED"
+             if args.check_omega else "Q32_TYPEI_RESTRICTED_CANDIDATE_VERIFIED")
+    print(label)
+    print("Scope: Type-I source mode only; not a complete EG617 source verifier.")
     print(f"m={data['m']}; vertices={N}; edges={N*(N-1)//2}")
     return 0
 
