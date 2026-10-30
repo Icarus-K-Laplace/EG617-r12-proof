@@ -36,3 +36,12 @@ New exclusions:
 - m=10: v=34..40.
 
 First aggregate profile survivors: (m,v)=(8,39),(9,40),(10,41). The verifier and exact row table are updated. These survivors are only aggregate cost-pair states; no graph-level SAT witness or Q33 closure is claimed.
+
+
+## 2026-10-30 — gadget-shell and W-boundary refinement
+
+Added the shell-capacity lemma: after selecting seven components avoiding S, seven shell vertices remain; the three unselected K5 components can contain at most three B and three S vertices, and p cannot share a non-target K5 with A. Thus at least one remaining shell vertex lies in the gadget. The gadget core has size at most10, forcing 9<=sum(c_i)<=12.
+
+Updated the exact verifier and profile tables. Option sets shrink, while support exclusions remain m8:v31..38, m9:v32..39, m10:v34..40. First aggregate survivors remain v39,40,41.
+
+Added a W-boundary equality theorem. At m8,v39, each exact color has minimum W-cost3 and total W budget24, forcing H[W]=4K2 and eight exact-color 3-edge matchings. At m9,v40, minimum W-cost2 and budget18 force H[W]=3K2 union K1 and nine 2-edge matchings. At m10,v41, minimum total is10 against budget13, leaving at most3 slack. These matching decompositions are not contradictions by themselves.

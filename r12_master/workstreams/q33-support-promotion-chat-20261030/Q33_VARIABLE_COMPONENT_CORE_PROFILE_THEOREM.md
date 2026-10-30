@@ -104,3 +104,12 @@ This model repairs the stronger fixed-four-core assumption. It is still a relaxa
 ## 8. Source-correct component-only selection
 
 Choose the seven guaranteed isolated-K5 component witnesses per exact-129 color. Then h=0 for this support set, and the U-budget has no gadget-overlap correction. The stronger component-only finite screen excludes m=8:v=31..38, m=9:v=32..39, and m=10:v=34..40. Full details are in Q33_COMPONENT_ONLY_SUPPORT_SCREEN.md; aggregate survivors begin at v=39,40,41, respectively. The Q33 graph-level terminal remains OPEN.
+
+
+## 9. Gadget-shell nonempty refinement
+
+After the seven selected components avoid S, seven shell vertices remain. The three unselected K5 components can contain at most three B vertices and the three S vertices, and p cannot share a non-target K5 with A. Therefore at least one remaining shell vertex lies in the 11-vertex gadget, forcing gadget core size at most10 and 9<=sum(c_i)<=12.
+
+## 10. First-survivor W equality
+
+At (m,v)=(8,39) and (9,40), the minimum per-color W costs exactly exhaust the W Turán budgets. Thus H[W]=4K2 and 3K2 union K1, respectively, and each exact-color W edge set is a matching of size3 or2. At (10,41) the aggregate W slack is at most3. See Q33_W_BOUNDARY_EQUALITY.md. These are structural reductions, not Q33 closure.
