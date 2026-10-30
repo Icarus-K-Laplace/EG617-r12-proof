@@ -1,0 +1,8 @@
+Execution receipt: 2026-10-30
+Command: C:\Users\lenovo\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe INDEPENDENT_VERIFIER.py
+Exit code: 0
+Observed wall time: 4.2553928 seconds
+
+PASS {"status": "PASS finite checks supporting analytic Q32 core nonexistence", "python": "3.12.14", "low_degree_independent4_bounds": [348, 344, 340, 335, 329, 323], "common_antineighborhood_25_bounds": [155, 153], "pair_K11_integer_cases": 100, "star_integer_cases": 90, "final_obstructions": {"mixed_pair_cases": 90, "mixed_pair_minimum": 4, "diamond_pair_cases": 90, "diamond_pair_minimum": 5, "diamond_local_accounting_cases": 8400, "diamond_allowed_completion_masks": [0, 1, 2, 4, 5, 6, 8, 9, 10], "double_template_required_excess": 8, "diamond_template_required_excess": 10, "available_excess": 6}}
+SUPPORT_ORBITS {3: 2, 4: 3, 5: 5} INTERMEDIATE 2 SURVIVING 0
+SEARCH_RECHECK [{"template": "double", "edges": 285, "minimum_degree": 12, "independent5_count": 3256, "independent5_witness": [0, 13, 20, 32, 45], "clique12_count": 0, "clique12_witness": null, "full_core_contract_pass": false}, {"template": "diamond", "edges": 285, "minimum_degree": 12, "independent5_count": 1901, "independent5_witness": [0, 15, 20, 33, 46], "clique12_count": 2, "clique12_witness": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 42, 43], "full_core_contract_pass": false}]

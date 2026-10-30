@@ -1,0 +1,177 @@
+{
+  "repository": "Icarus-K-Laplace/EG617-r12-proof",
+  "date": "2026-10-30",
+  "branch": "workstream/r12-astra-q32-v47-universal-attack-20261030",
+  "base_commit": "b0459807acd4b7e386148056ddf77d7998918893",
+  "base_tree": "1fb3e3f65d4d85ab19d49ac36e18c246fb406087",
+  "initial_and_refreshed_heads": [
+    {
+      "branch": "main",
+      "sha": "278639de8572ffab12fe859d36f776fbb88fc4f0",
+      "tree": "5e60981fb96890ab7fbba541ae0c261f9119b79f",
+      "date": "2026-10-29T04:41:02Z",
+      "message": "Revert accidental default-branch write; keep research isolated to workstream branch"
+    },
+    {
+      "branch": "workstream/r12-twochat-e408-global-20261026",
+      "sha": "b0459807acd4b7e386148056ddf77d7998918893",
+      "tree": "1fb3e3f65d4d85ab19d49ac36e18c246fb406087",
+      "date": "2026-10-30T02:50:57Z",
+      "message": "Record retraction and corrected z3 residual-degree proof in root manifest"
+    },
+    {
+      "branch": "workstream/r12-astra-q32-v47-universal-attack-20261030",
+      "error": "NOT_FOUND"
+    },
+    {
+      "branch": "workstream/r12-q32-v47-m89-final-20261030",
+      "sha": "f78ac022d70647e9c87580bbc595c2306cfda26c",
+      "tree": "214e9d78b53b0204ade2250bce870333cafb938a",
+      "date": "2026-10-30T07:19:59Z",
+      "message": "Record final source-complete partition, core-edge, and ten-witness checkpoint"
+    },
+    {
+      "branch": "workstream/r12-q32-v47-m10-residual-final-20261030",
+      "sha": "43f22404cbcc15b13fb8a12d003e60e9fef9bde7",
+      "tree": "6179e742b2262f580121b355cfc8fd707dd195b9",
+      "date": "2026-10-30T06:11:14Z",
+      "message": "Record exact closed Z4 two-aligned M10 subcase"
+    },
+    {
+      "branch": "workstream/r12-q33-support-promotion-20261030",
+      "sha": "ca088347124f4ea7706a63129d7ed63d4e4090d7",
+      "tree": "788ec3e814afa7f971b46b85675dc1c2217ffd7e",
+      "date": "2026-10-30T06:42:29Z",
+      "message": "Add KP gadget core and common-point degree refinements"
+    },
+    {
+      "branch": "workstream/r12-e407-v12-root-promotion-20261030",
+      "sha": "0b48d1f768e3d3c1d3137e0c3ec12f1ff618bb91",
+      "tree": "f776e8942e5733ed52a9190f77df10138ded36b7",
+      "date": "2026-10-30T05:38:12Z",
+      "message": "Record V12 source provenance and support dependencies"
+    }
+  ],
+  "primary_source": {
+    "title": "Maximum Kr+1-free graphs which are not r-partite",
+    "authors": [
+      "M. Kang",
+      "O. Pikhurko"
+    ],
+    "year": 2005,
+    "url": "https://opikhurko.warwick.ac.uk/E/KangPikhurko05ms.pdf",
+    "used_statements": [
+      "Theorem 1",
+      "Theorem 4"
+    ],
+    "pdf_binary_hash": "not downloaded; no binary hash claimed"
+  },
+  "read_source_blobs": [
+    {
+      "branch": "workstream/r12-twochat-e408-global-20261026",
+      "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+      "path": "front_end/FRONTEND_BRIDGE_THEOREM.md",
+      "git_blob_sha": "52b2f4af102ceba1671dc7d0e7ed36a512458e77"
+    },
+    {
+      "branch": "workstream/r12-twochat-e408-global-20261026",
+      "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+      "path": "front_end/T61_H13_FULL_COLOR_DEGREE_AND_ANTINEIGHBORHOOD.md",
+      "git_blob_sha": "e38d0954a819a4b5f13895362600df08ac7388b0"
+    },
+    {
+      "branch": "workstream/r12-twochat-e408-global-20261026",
+      "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/CANONICAL_STATE.md",
+      "git_blob_sha": "21bb902d9972557d1d3ece5208a74ac33b1b378d"
+    },
+    {
+      "branch": "workstream/r12-twochat-e408-global-20261026",
+      "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/KANG_PIKHURKO_EXACT129_SOURCE_AUDIT.md",
+      "git_blob_sha": "b1f870023990561c563a969f6f180eb3ebc6f9af"
+    },
+    {
+      "branch": "workstream/r12-q32-v47-m89-final-20261030",
+      "commit": "f78ac022d70647e9c87580bbc595c2306cfda26c",
+      "path": "r12_master/workstreams/q32-v47-m89-final-chat-20261030/CANONICAL_STATE.md",
+      "git_blob_sha": "d0733ea0fbf5f2f52137bc0c1a780e25509e65a2"
+    },
+    {
+      "branch": "workstream/r12-q32-v47-m89-final-20261030",
+      "commit": "f78ac022d70647e9c87580bbc595c2306cfda26c",
+      "path": "r12_master/workstreams/q32-v47-m89-final-chat-20261030/OPEN_CASES.md",
+      "git_blob_sha": "121012ecf3f7e42a2b1a394a8b971b980ad682f0"
+    },
+    {
+      "branch": "workstream/r12-q32-v47-m89-final-20261030",
+      "commit": "f78ac022d70647e9c87580bbc595c2306cfda26c",
+      "path": "r12_master/workstreams/q32-v47-m89-final-chat-20261030/V47_EXACT129_UNIVERSAL_PARTITION.md",
+      "git_blob_sha": "2e6043bb2b04cd59ba43268276f6dd27cfe265c9"
+    },
+    {
+      "branch": "workstream/r12-q32-v47-m89-final-20261030",
+      "commit": "f78ac022d70647e9c87580bbc595c2306cfda26c",
+      "path": "r12_master/workstreams/q32-v47-m89-final-chat-20261030/V47_TYPEI_PARTITION_OBSTRUCTION.md",
+      "git_blob_sha": "b7e9982b6074eb47fc52df672e84a8e2c4bd95f2"
+    },
+    {
+      "branch": "workstream/r12-q32-v47-m10-residual-final-20261030",
+      "commit": "43f22404cbcc15b13fb8a12d003e60e9fef9bde7",
+      "path": "r12_master/workstreams/q32-v47-m10-residual-chat-20261030/CANONICAL_STATE.md",
+      "git_blob_sha": "c18ae60df778fe16d2a243372e756f829b5c8fda"
+    },
+    {
+      "branch": "workstream/r12-q32-v47-m10-residual-final-20261030",
+      "commit": "43f22404cbcc15b13fb8a12d003e60e9fef9bde7",
+      "path": "r12_master/workstreams/q32-v47-m10-residual-chat-20261030/OPEN_CASES.md",
+      "git_blob_sha": "cac2b057fcc21712bb934bc3ecd06d92f976fece"
+    },
+    {
+      "branch": "workstream/r12-q33-support-promotion-20261030",
+      "commit": "ca088347124f4ea7706a63129d7ed63d4e4090d7",
+      "path": "r12_master/workstreams/q33-support-promotion-chat-20261030/CANONICAL_STATE.md",
+      "git_blob_sha": "80d030dd242357d57ba8aa437a79428d59832c6e"
+    },
+    {
+      "branch": "workstream/r12-q33-support-promotion-20261030",
+      "commit": "ca088347124f4ea7706a63129d7ed63d4e4090d7",
+      "path": "r12_master/workstreams/q33-support-promotion-chat-20261030/OPEN_CASES.md",
+      "git_blob_sha": "743b21003601050d878e713759ac4d5fbda475d1"
+    },
+    {
+      "branch": "workstream/r12-e407-v12-root-promotion-20261030",
+      "commit": "0b48d1f768e3d3c1d3137e0c3ec12f1ff618bb91",
+      "path": "r12_master/workstreams/e407-v12-root-promotion-chat-20261030/CANONICAL_STATE.md",
+      "git_blob_sha": "6a7fbe7a231a2c70d71956ae27c0c40ed05fa8d9"
+    },
+    {
+      "branch": "workstream/r12-e407-v12-root-promotion-20261030",
+      "commit": "0b48d1f768e3d3c1d3137e0c3ec12f1ff618bb91",
+      "path": "r12_master/workstreams/e407-v12-root-promotion-chat-20261030/OPEN_CASES.md",
+      "git_blob_sha": "6f4db475126fde544351bca9052257f2e653c4d8"
+    }
+  ],
+  "scope": "Frozen read-only provenance; sibling statuses are not proof premises. Universal nonexistence U6 uses only CORE, ordinary Turan and Kang-Pikhurko Theorem1 at n=25,r=2.",
+  "final_readonly_refresh": {
+    "branch": "workstream/r12-q32-v47-m10-residual-final-20261030",
+    "sha": "db515bab1a203ccae131c3953ffe2a8ecef539a6",
+    "tree": "55f4880718c7fa3a74dbdf90fb1294a9095565df",
+    "date": "2026-10-30T08:13:43Z",
+    "audit": "Read compare from initial B head, including canonical state, open cases and dependency receipt; no theorem imported.",
+    "read_changed_files": [
+      {
+        "path": "r12_master/workstreams/q32-v47-m10-residual-chat-20261030/CANONICAL_STATE.md",
+        "git_blob_sha": "16b7ae86d8d4b001a3918c8b9fe26fd36e8ef0c2"
+      },
+      {
+        "path": "r12_master/workstreams/q32-v47-m10-residual-chat-20261030/DEPENDENCY_RECEIPT.md",
+        "git_blob_sha": "942863beb58da2af476d383d95982a06b65137cc"
+      },
+      {
+        "path": "r12_master/workstreams/q32-v47-m10-residual-chat-20261030/OPEN_CASES.md",
+        "git_blob_sha": "3c3e48dd2b0a44947be9e068f474068c00d7e35c"
+      }
+    ]
+  }
+}
