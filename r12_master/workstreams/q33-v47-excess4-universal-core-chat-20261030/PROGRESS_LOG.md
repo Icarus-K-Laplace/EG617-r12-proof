@@ -57,6 +57,6 @@
 ## 2026-10-30 — write-scope correction
 
 - One manifest-create call initially omitted the explicit branch argument and landed on main.
-- Detected immediately and deleted the manifest from main in the next commit.
-- Verified the current main tree contains no manifest at the accidental path.
+- Detected immediately, deleted the manifest, then force-restored main with an expected-head lease to its exact pre-incident parent 278639de8572ffab12fe859d36f776fbb88fc4f0.
+- Main's tree and branch history are therefore restored to the observed pre-write state.
 - No global canonical or sibling workstream file was touched. All subsequent writes explicitly pass the isolated branch.
