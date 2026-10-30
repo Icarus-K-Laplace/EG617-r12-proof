@@ -2,18 +2,18 @@
 
 Date: 2026-10-30
 
-Status: **PROVED** — conditional only on the registered exact-129 Type-I source factorization and the Q32 core contract.
+Status: **PROVED_CONDITIONAL AS A LEMMA; NOT AN EG617 CLOSURE.** The previous promotion is retracted: EG617 supplies neither omega(H)<=5 nor omega(C)<=5, and does not currently imply the Type-I factorization for every exact-129 color. See AUDIT_RETRACTION_BALANCED_PREMISES.md.
 
 ## 1. Core and coloring contract
 
 The target graph H satisfies
 \[
 |V(H)|=47,\quad e(H)=285,\quad \delta(H)\ge12,\quad
-\alpha(H)\le4,\quad \omega(H)\le5.
+\alpha(H)\le4,\quad \omega(H)\le11.
 \]
-Here \(\alpha(H)\le4\), \(e(H)=285\), and \(\delta(H)\ge12\) are the frozen Q32 core premises. The bound \(\omega(H)\le5\) is inherited from the original global coloring hypothesis that no color contains a monochromatic K6.
+The frozen Q32 core supplies \(\alpha(H)\le4\), \(e(H)=285\), and \(\delta(H)\ge12\). The actual EG617 balanced-coloring hypothesis only implies \(\omega(H)\le12\) on the 61-point color graph; the registered residual class \(R(4,49)\) supplies \(\omega(H)\le11\) for this 47-core. Neither gives \(\omega(H)\le5\).
 
-For every non-target color C in the 61-point residual, the registered coloring contract gives \(\alpha(C)\le12\), and the global no-monochromatic-K6 premise gives \(\omega(C)\le5\). The exact colors under consideration have \(e(C)=129\). These are precisely the hypotheses used in the Kang--Pikhurko exact-129 complement translation below; no degree-nine or exceptional-vertex injectivity assumption is used.
+For every color C in the 61-point residual, balancedness gives \(\alpha(C)\le12\) and \(\omega(C)\le12\), not \(\omega(C)\le5\). The Kang--Pikhurko Type-I factorization additionally requires the complement to be non-12-partite and uses the clique cap to eliminate the size-six equality profiles. Neither gate has been proved for every exact color in the registered Q32 contract. Thus the following argument is conditional on a separately certified Type-I source factorization; it is not currently available for every exact-129 color.
 
 For an exact-129 non-target color C, the source-verified Type-I factorization supplies a point x and twelve disjoint monochromatic K5 factors
 \[
@@ -106,22 +106,20 @@ This proves the lemma.
 
 ## 3. Exact-color contradiction
 
-The Type-I source factorization forces one of the three partition shapes in Section 1. The lemma excludes each shape. Thus:
+The Type-I source factorization forces one of the three partition shapes in Section 1. The lemma shows that each such partition forces \(\omega(H)\ge6\), once \(\alpha(H)\le4\) is used. It contradicts only the additional hypothesis \(\omega(H)\le5\). The actual Q32 parent permits \(\omega(H)\le11\), so this is **not** a contradiction under the registered EG617 contract.
 
-\[
-\boxed{\text{No exact-129 Type-I non-target color can exist on a valid Q32 core.}}
-\]
+Moreover, the parent has not proved that every exact-129 color is Type I. The balanced-coloring assumptions give only \(\alpha(C),\omega(C)\le12\); the exact-129 complement may be 12-partite, or may lie in a non-Type-I equality profile. Therefore no conclusion that all exact-129 colors are excluded follows.
 
-The full-support Q32 branches m=8 and m=9 each require at least eight exact-129 Type-I colors. Hence both branches are analytically impossible.
+The former statements that m=8 and m=9 are analytically closed are withdrawn. Both full-support Q32 branches remain **OPEN / NOT_CERTIFIED**.
 
 This argument is stronger than the preceding \(e_C(H)\ge71\) result: it does not use the 69/70 near-Turán classification, the 37-unit edge-gap ledger, pivot matching composition, or any m-specific reserve bound.
 
 ## 4. Scope firewall and remaining global status
 
-- **Closed by this lemma:** the E408/Q32 full-support v=47 branches m=8 and m=9, conditional on the registered Type-I factorization and the stated core contract.
-- **Not claimed:** closure of other Q32 support cases, the E408/Q33 terminal, the E407 terminal, the front-end bridge, or the complete original Erdős r=12 theorem.
-- The CSP solver is now archival for these two branches; a full SMT SAT/UNSAT run is not needed to establish this analytic contradiction.
-- The independent verifier implements an augmenting-path replay of the Hall matching skeleton and returns an explicit independent 5-set or a clique of size at least six for each induced source partition.
+- **Valid conditional result:** each of the three stated partition shapes forces an independent 5-set or a clique of size at least six in H.
+- **Not established:** that the extra clique cap omega(H)<=5 holds in EG617; that every exact-129 color is Type I; or that all exact colors induce one of the three partitions.
+- **Correct project status:** E408/Q32 full-support v=47, m=8 and m=9 remain OPEN / NOT_CERTIFIED.
+- The verifier's clique witness is not a failure under EG617: K6 and K7 are permitted by the actual omega(H)<=11 residual contract.
 
 
 ## 5. Primary-source provenance of the Type-I factorization
@@ -143,14 +141,13 @@ No degree-nine exceptional vertex is assumed. The published gadget parameter has
 
 ## 6. Parent-level corollary: support- and m-independent
 
-The contradiction uses only the 47-vertex H-core, the 61-point exact-color source theorem, and the fact that at least one exact-129 color exists. It does **not** use the selected-witness union U, its support size v, the pivot blocks, or the value of m beyond \(m\ge1\).
+The earlier support- and m-independent parent promotion claim is **RETRACTED**. It used the unavailable hypotheses omega(H)<=5 and omega(C)<=5 and an unproved Type-I source gate. The actual parent contract permits omega(H)<=11 and omega(C)<=12. Consequently this lemma presently closes no Q32 support row and supplies no parent-promotion edge. E407 Q32/V12, E408 Q33 support promotion, and the original EG617 theorem remain unaffected.
 
-The parent E408/Q32 outer ledger records \(m\in\{8,9,10\}\). Thus, if the root imports the same frozen H-core and global coloring premises for every support row, the theorem excludes **all** E408/Q32 support cases \(v=44,45,46,47\) and all \(m=8,9,10\), not merely the isolated full-support m=8/9 branch.
 
-This is a parent-promotion implication, not an edit to or independent closure claim for sibling workstreams. The root audit must explicitly carry:
-- \(\alpha(H)\le4\), \(e(H)=285\), and \(\delta(H)\ge12\) from the Q32 core terminal;
-- \(\omega(H)\le5\) and \(\omega(C)\le5\) from the global no-monochromatic-K6 premise;
-- \(\alpha(C)\le12\) from the balanced-coloring property that every 13-set contains every color;
-- at least one exact-129 non-target color, from \(m\in\{8,9,10\}\).
+## 7. Critical audit correction — actual EG617 hypotheses
 
-Once these parent edges are recorded, no separate support-promotion theorem for Q32 is needed. E407 Q32/V12, E408 Q33 support promotion, and the remaining front-end dependencies are unaffected.
+The current EG617 problem is the balanced-coloring problem: every 13-set must contain all twelve colors. This implies \(\alpha(C)\le12\) and \(\omega(C)\le12\) for each color graph C; it does not prohibit monochromatic K6. On the 47-point Q32 core, the registered R(4,49) contract gives \(\omega(H)\le11\), not five.
+
+The exact-129 source audit's Type-I conclusion used \(\omega(C)\le5\) to prove that \(\overline C\) is non-12-partite and to eliminate the two Kang–Pikhurko equality profiles containing a size-six part. Without that hypothesis, the complement may be 12-partite. For example, \(C_0=5K_6\dot\cup3K_5\dot\cup4K_4\) has 61 vertices, 129 edges, \(\alpha(C_0)=12\), and \(\omega(C_0)=6\), and its complement is 12-partite. This is a local one-color model, not a claimed full coloring.
+
+The tight-part lemma remains a valid conditional theorem, but its conclusion under \(\alpha(H)\le4\) is only \(\omega(H)\ge6\), which is allowed by the actual \(\omega(H)\le11\) cap. It therefore cannot exclude the three partitions in EG617. The previous m=8/9 and all-support Q32 closure claims are withdrawn; see AUDIT_RETRACTION_BALANCED_PREMISES.md.
