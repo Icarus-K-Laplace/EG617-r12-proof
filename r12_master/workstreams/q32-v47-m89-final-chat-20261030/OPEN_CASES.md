@@ -67,3 +67,6 @@ The x-outside profile has its unique double K3 in the size-three part and core e
 ## New matching-skeleton target
 
 Any low-layer partition admits a 253-edge target subgraph M built from pairwise Hall matchings between parts. The 32-edge residual F has degree \(1+s_v\) on 36 vertices and \(2+s_v\) on 11 vertices, where \(\sum s_v=6\); hence F has at least 30 leaves. The key unresolved question is whether this sparse residual can coexist with the K6-free target graph and the cross-color source constraints. The matching skeleton is currently a theorem, not an explicit CSP matching-choice encoding.
+
+
+The 32-edge residual has a sharper exact form. Let q be the number of the 36 M-degree-11 vertices receiving positive degree excess, and t the number of isolated K2 components of F. Then q≤6, q+t≥4, the non-leaf core has 11+q≤17 vertices, and its induced edge count is exactly q+t-4. The remaining 36-q vertices are leaves, with 2t of them paired into the isolated K2 components. This leaf-core identity is now in MATH_PROOF.md §9.6.
