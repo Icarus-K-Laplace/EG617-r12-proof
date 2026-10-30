@@ -198,4 +198,4 @@ Therefore every source single-outside witness K4 occupies an entire size-four pa
 
 ### 9.2 What this does not prove
 
-The low-layer partition theorem is a necessary structural reduction, not a contradiction. The m=8/9 solver still has not been executed to SAT/UNSAT. The full-support terminal remains **OPEN**.
+The low-layer partition theorem is a necessary structural reduction for all eleven non-target colors, not a contradiction. The m=8/9 solver still has not been executed to SAT/UNSAT. The full-support terminal remains **OPEN**.
