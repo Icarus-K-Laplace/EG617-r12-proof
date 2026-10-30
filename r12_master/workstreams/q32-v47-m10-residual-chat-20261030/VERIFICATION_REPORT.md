@@ -1,60 +1,74 @@
 # M10 residual relaxation — verification report
 
 Date: 2026-10-30  
-Verifier: verify_m10_residual_catalog.py  
-Dependencies: Python standard library only; no SAT/SMT solver.
+Status: Independent replay PASS for the residual catalog; full Q32 remains NOT_CERTIFIED.
 
-## 1. Executed check
+## 1. Independent labelled replay
 
-The verifier was executed successfully against M10_RESIDUAL_GRAPH_CATALOG.csv. It:
-- decodes each graph6 representative;
-- checks its edge count and Z value;
-- recomputes alpha(R), clique-cover number, and B_min(R);
-- enumerates all 4^7 ordered maps R->[4] and checks that every fiber is a clique;
-- computes automorphism counts and canonical codes over all 7! vertex permutations;
-- checks that the 371 representatives are pairwise non-isomorphic;
-- independently enumerates every labelled seven-vertex graph with 3 through 10 edges;
-- checks that the orbit-stabilizer sum equals the labelled survivor count.
+An independent Python implementation enumerated every labelled seven-vertex graph with 3 through 10 edges and applied:
+1. alpha(R)<=4;
+2. the globally proved clique-cover cap from M10_RESIDUAL_CLASSIFICATION.md, Section 2;
+3. B_min(R)<=14-2Z.
 
-The replay completed without assertion failure.
-
-## 2. Exact counts
+The replay completed with no assertion failures. Exact counts:
 
 | Stage | Count |
 |---|---:|
 | All labelled graphs with 3..10 edges | 1,048,344 |
 | alpha(R)<=4 | 1,014,289 |
 | alpha(R)<=4 and clique-cover(R)<=4 | 1,014,037 |
-| Further rejected by B_min<=14-2Z | 216,965 |
+| Further rejected by B_min budget | 216,965 |
 | Final labelled residual graphs | 797,072 |
-| Non-isomorphic graph6 representatives | 371 |
+
+The clique-cover filter removes exactly 252 labelled graphs, all isomorphic to C5 dot-union 2K1 (graph6 canonical representative FLo??, automorphism group order 20, orbit size 252). These are excluded analytically by the ten-block incidence argument, not by B_min.
+
+## 2. Independent graph6/fiber replay
+
+All 371 rows of M10_RESIDUAL_GRAPH_CATALOG.csv were decoded and checked independently:
+- correct edge count e(R)=3+Z;
+- exact B_min value;
+- alpha(R)<=4;
+- clique-cover-number(R)<=4;
+- residual-incidence budget;
+- all four-clique-fiber assignments by direct enumeration of 4^7 maps;
+- pairwise non-isomorphism by canonicalizing all 7! vertex permutations;
+- orbit-stabilizer sum equals 797,072.
+
+No bad rows or duplicate isomorphism classes were found.
+
+| Check | Result |
+|---|---:|
+| Non-isomorphic representatives | 371 |
 | Orbit-stabilizer sum | 797,072 |
-| Ordered four-fiber maps on representatives | 93,120 |
-| Ordered pairs (F,G) on representatives | 34,794,144 |
+| Ordered four-clique-fiber maps | 93,120 |
+| Ordered (F,G) map pairs before compatibility | 34,794,144 |
+| Connected representatives | 260 |
+| Disconnected representatives | 111 |
 
-Per-Z counts and component profiles are in M10_RESIDUAL_CLASSIFICATION.md. The CSV contains all 371 graph6 representatives and the exact B_min and fiber-map count for each one.
+Per-Z type and fiber counts are recorded in M10_RESIDUAL_CLASSIFICATION.md.
 
-## 3. Reproduction
+## 3. Reproduction artifact
 
-From this directory:
+verify_m10_residual_catalog.py is committed as a standard-library-only independent verifier. It checks the compact graph6 catalog and can emit all fiber maps or all labelled graph masks.
 
-    python verify_m10_residual_catalog.py
-    python verify_m10_residual_catalog.py --dump-fibers fibers.jsonl
-    python verify_m10_residual_catalog.py --dump-labelled-graphs labelled_graphs.csv
+The counts above were independently replayed in the analysis runtime using a separate implementation. The committed script was not executed on a GitHub-hosted shell in this session; do not describe that as a remote CI run.
 
-The first command performs the complete replay. The second writes all 93,120 ordered fiber maps on canonical representatives. The third writes all 797,072 labelled feasible residual graph masks. These generated dumps are intentionally not checked in because they are reproducible from the compact catalog and verifier.
+## 4. Source occupancy replay
 
-## 4. Independent-source status
+verify_m10_source_occupancy.py independently enumerates the 90 labelled aggregate factor-occupancy choices:
+- 12 choices for x_C in O;
+- 66 choices for x_C in H, two-double;
+- 12 choices for x_C in H, triple.
 
-The Astra branch's verification_log.txt records PASS for its residual path/cycle catalog and local structural replays. Those branch-local programs were read but not rerun in this Python execution. The full vertex-labelled Q32 CSP in the high-support branch is explicitly formulation-only; no full m=10 SAT/UNSAT run or independently replayed proof certificate is registered.
+It checks G_11 H-vertex counts, K5-interior H-edge counts, and source parameter-to-gap lower bounds. This is aggregate source arithmetic, not an endpoint-labelled source CSP.
 
 ## 5. Scope
 
-This verifier certifies only the stated seven-vertex necessary-condition relaxation and its clique-fiber assignment counts. It does not certify:
+Neither replay certifies:
 - any ten-block weighted-heavy graph;
-- any source K5 endpoint placement;
+- any source gadget endpoint placement;
 - any global 47-vertex H realization;
 - any cross-color edge-disjointness or complete 12-coloring;
 - any root Q32 contradiction.
 
-Accordingly, the m=10 Q32 root terminal remains OPEN / NOT_CERTIFIED.
+Accordingly, full-support m=10 Q32 remains OPEN / NOT_CERTIFIED.

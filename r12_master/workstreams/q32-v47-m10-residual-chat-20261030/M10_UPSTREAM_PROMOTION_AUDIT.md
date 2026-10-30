@@ -1,5 +1,6 @@
 # Upstream promotion audit: original Q32 to Astra 3+7 normal form
 
+Date: 2026-10-30  
 Status: PROVED_CONDITIONAL for the 3+7 component split; NOT a universal m=10 promotion.
 
 ## 1. Exact Astra theorem contract
@@ -19,9 +20,9 @@ The graph theorem itself does not assume the eleven source-colored graphs or a s
 Assume the ten-block light graph L is disconnected and its two component sizes are 3+7.
 
 - The component reduction forces the three-block component to be a light triangle, with zero residual-incidence slack on each of its three blocks.
-- Every small-to-outer pair is cross-component heavy with exactly one extra unit, hence exactly five edges. The small-small pairs have exactly four edges and are perfect matchings. Alpha(H)<=4 and the 4,5,5 switch theorem give the aligned/synchronized-switch local structure.
+- Every small-to-outer pair is cross-component heavy with exactly one extra unit, hence exactly five edges. The small-small pairs have exactly four edges and are perfect matchings. The 4,5,5 switch theorem and the small-component constraints give the aligned/synchronized-switch local structure.
 - On the seven-block component, the ledger gives internal weighted-heavy degree at most two, total internal heavy weight 3+Z<=7, and light minimum degree at least four.
-- V47_37_OUTER_LIGHT_HOLONOMY.md proves all light-cycle holonomies are trivial. The light graph is connected, so relabelling the four vertices in each outer block makes every light matching the identity. Every heavy pair has a common light neighbor; the two-light matching-composition theorem then forces the same identity matching in every heavy pair. Thus the 28 outer vertices contain four aligned K7 tracks.
+- The outer light-holonomy theorem aligns all four matching tracks across the seven outer blocks. The light graph is connected, so relabelling the four vertices in each outer block makes every light matching the identity. Every heavy pair has a common light neighbor; the two-light matching-composition theorem then forces the same identity matching in every heavy pair. Thus the 28 outer vertices contain four aligned K7 tracks.
 - The three zero-slack small blocks give unique-neighbor maps from R into each small block. The zero-slack map-alignment theorem makes the three maps agree. The independent-set incidence cover lemma makes each fiber a clique, yielding F_s and exactly three small neighbors per residual vertex.
 - The four K7 tracks give the outer map G_g. Since the residual degree equation is d_R(r)+b_r=2 and all small-block residual incidences are already exactly one, the remaining b_r=2-d_R(r) incidences are precisely additional outer incidences.
 - For an outer block D, its internal heavy degree t_D and residual slack y_D satisfy t_D+y_D=2. Its four base outer-track neighbors, residual neighbors, and the three small-extra incidences give d_H(q)=12. The small blocks inherit d_H(q)>=12 from the 47-core contract. The parent maximality gate gives omega(H)<=11; alpha(H)<=4 is part of the Q32 core contract.
@@ -30,15 +31,9 @@ Therefore all five Astra properties follow once, and only once in this argument,
 
 ## 3. The missing universal implication
 
-The original Q32 source contract does not imply that L has component sizes 3+7. The proved disconnected reduction allows exactly:
+The original Q32 source contract does not imply that L has component sizes 3+7. The proved disconnected reduction allows exactly 1+9, 2+8, 3+7, 4+6, 5+5. It also leaves L connected.
 
-    1+9, 2+8, 3+7, 4+6, 5+5.
-
-It also leaves L connected. No theorem in the audited source set eliminates 1+9, 2+8, 4+6, 5+5, or connected L. Hence the implication
-
-    original Q32 candidate => Astra five properties
-
-is NOT proved without a separate case split. The valid implication is
+No theorem in the audited source set eliminates 1+9, 2+8, 4+6, 5+5, or connected L. Hence original Q32 candidate => Astra five properties is NOT proved without a separate case split. The valid implication is:
 
     original Q32 candidate + (L has 3+7 components)
        => Astra five properties
@@ -54,4 +49,17 @@ Key structural commits: d1f05a51c5f7c09e3c3e0a50db07fecdc0321739 and 99f60126fdd
 
 The branch's residual catalog records 18 path/cycle types: 14 are excluded by the nonempty-fiber theorem; the remaining four are handled by the empty-fiber analyses. The recorded verifier log reports the 3,456 normalized 4,5,5 inputs with 156 accepted patterns, 42,336 three-small matching representations, the two-triangle replay, the C3+2P2 and C3+P4 replays, and the z=4 empty-fiber replay. These are local finite replays; they are not a full Q32 SAT/UNSAT proof.
 
-The source manifest identifies the high-support source base and refreshes against high-support head 1de8a37556ba98ccbb8651f39a5192629453f0f1. The Astra branch is a sibling branch, not merged into this workstream. This workstream references its immutable commit and does not modify it.
+## 5. Source-occupancy promotion firewall
+
+The exact Type-I source audit gives three aggregate profiles:
+- x_C in O: (2,1^11);
+- x_C in H, two-double: (2,2,1^10);
+- x_C in H, triple: (3,1^11).
+
+The 90-row labelled factor-occupancy catalog in M10_SOURCE_OCCUPANCY_90.csv is source-complete at this aggregate level. It includes a double-outside isolated K5, two isolated double-outside K5s, an isolated triple-outside K5, and the distinct N_s/N_t special-factor placements.
+
+The isolated-triple occupancy is not excluded by the generic source factorization. It can be excluded only after importing a target-part pointwise degree floor in a specific aligned cell. Therefore the Astra five-property promotion must be justified from the 3+7 graph contracts, not by silently discarding source occupancy modes.
+
+## 6. Conclusion
+
+Astra is a valid conditional structural contradiction for the 3+7 split. It is not an upstream theorem that all original Q32 candidates satisfy the 3+7 contract. The 1+9, 2+8, 4+6, 5+5, connected-light-graph, and endpoint-labelled Type-I source-placement branches remain OPEN. No root Q32 closure is claimed.

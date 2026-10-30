@@ -1,70 +1,133 @@
-# M10 source-correct Type-I profile catalog
+# M10 source-correct Type-I aggregate occupancy catalog
 
-Status: PROVED at the aggregate outside-count level; endpoint-labelled source completions remain OPEN.
+Date: 2026-10-30  
+Status: SOURCE-COMPLETE at aggregate factor-occupancy level; endpoint-labelled source completions remain OPEN.
 
 ## 1. Source contract
 
-For each exact-129 non-target color C, the audited Kang–Pikhurko equality graph has twelve disjoint color-K5 factors:
-- ten isolated K5 components;
-- two special K5 factors N_s and N_t inside the 11-vertex gadget G_11;
-- one distinguished gadget point x_C.
+For an exact-129 non-target color C on the 61-point source, the source-verified Kang–Pikhurko equality graph gives
 
-The source gadget also has y in N_t and a nonempty proper subset A_0 of N_s. Put a=|A_0|, so a is one of 1,2,3,4. Its source cross-edge families are y-A_0, x_C to N_s minus A_0, and x_C to N_t minus {y}.
+    C = I_1 dot-union ... dot-union I_10 dot-union G_11,
 
-Every one of the twelve K5 factors meets O. If b_i is the number of its vertices in O, then b_i>=1. The source equality classification gives:
-- x_C in O: sum b_i=13 and the multiset is (2,1^11);
-- x_C in H: sum b_i=14 and the multiset is either (2,2,1^10) or (3,1^11).
+where I_1,...,I_10 are the ten isolated K5 components and G_11 contains the two special K5 factors N_s,N_t and the distinguished point x_C. The gadget has the nine non-K5 edges
 
-There are no other aggregate outside-count profiles.
+    y--A_0,   x_C--(N_s minus A_0),   x_C--(N_t minus {y}),
 
-## 2. Exhaustive occupancy families
+with y in N_t and A_0 a nonempty proper subset of N_s. Write a=|A_0| in {1,2,3,4}.
 
-Let k be the number of double-outside factors among the ten isolated factors. For the two-double mode, the remaining 2-k double factors lie among N_s,N_t. For the triple mode, the triple factor must be special: an isolated triple-outside K5 would leave an H-vertex with only one same-color H-neighbor, violating the source degree floor.
+The twelve K5 factors are I_1,...,I_10,N_s,N_t. Every factor meets O: otherwise its five vertices would be an independent five-set in the target graph H.
 
-| Family | x_C | Aggregate profile | Isolated doubles | Special occupancy | G_11 residual H vertices | Aligned four-track residual profile |
-|---|---|---|---:|---|---:|---|
-| O-I | O | (2,1^11) | 1 | N_s,N_t single | 8 | (2,2,2,2) |
-| O-S | O | (2,1^11) | 0 | one of N_s,N_t double | 7 | (2,2,2,1) |
-| H-SS | H, two-double | (2,2,1^10) | 0 | both N_s,N_t double | 7 | (2,2,2,1) |
-| H-IS | H, two-double | (2,2,1^10) | 1 | one special double, one special single | 8 | (2,2,2,2) |
-| H-II | H, two-double | (2,2,1^10) | 2 | N_s,N_t single | 9 | (2,2,2,3) |
-| H-T | H, triple | (3,1^11) | 0 | one special triple, the other special single | 7 | (2,2,2,1) |
+Let b_F=|F intersect O| for each factor F. Thus b_F>=1.
 
-The last column is only asserted when the aligned target partition T_0,T_1,T_2,T_3 exists: a single-outside K5 contributes a transversal H-K4; a double-outside K5 contributes a transversal H-K3 and cannot use T_0; a triple-outside factor is special. The nine-vertex H-II profile follows by counting eight transversal K4s, two transversal K3s, and the remaining G_11 vertices in the aligned four-track cell. It is not a general partition claim outside that cell.
+## 2. Exact aggregate outside-count theorem
 
-N_s and N_t are labelled separately. The source gadget is asymmetric, so swapping their occupancy is not silently identified. The table lists occupancy families, not a claim that every endpoint-labelled realization in each family is feasible.
+If x_C lies in O, the twelve K5 factors contain the other thirteen O-points:
 
-## 3. Special-factor outside totals
+    sum_F b_F=13.
 
-The aggregate outside count in the two special factors is:
+Consequently the unique aggregate profile is (2,1^11).
 
-| Family | b_s+b_t |
-|---|---:|
-| O-I | 2 |
-| O-S | 3 |
-| H-SS | 4 |
-| H-IS | 3 |
-| H-II | 2 |
-| H-T | 4 |
+If x_C lies in H, the twelve factors contain all fourteen O-points:
 
-This table is useful because the source lower bounds on gadget H-edges depend on a, b_s+b_t, and the location of y. For x_C in H, the source audit gives the two-double and triple gap bounds g_C<=5 and g_C<=6, respectively; for x_C in O, g_C<=4. These are upper bounds, not a closure.
+    sum_F b_F=14.
 
-## 4. What is already audited and what is not
+There are exactly two aggregate profiles: (2,2,1^10) (two-double) and (3,1^11) (triple). There are no other aggregate outside-count profiles. These equations do not say that all isolated K5 factors are single-outside.
 
-- O-I: the aligned isolated-double audit proves the eight-vertex residual accounting, its two-K4 base, and the T_0-centered exclusion. Its large-track-centered exceptional subcase remains OPEN.
-- H-IS: the aligned audit covers the one-isolated/one-special double placement. Its exceptional y-in-H large-track-centered branch remains OPEN.
-- H-SS: the aligned two-special-double source-pattern audit gives its four-row (y,a) table. This is conditional on the aligned four-track contract.
-- H-II: the two-isolated-double, nine-vertex G_11 residual mode is present in the source-count space but has no dedicated endpoint-labelled residual audit. OPEN.
-- O-S: the two possible special positions N_s and N_t must be kept distinct until the gadget edge families and target-part restrictions are checked.
-- H-T: the triple must be special; the aligned normal form places it in N_s. The generic source placement and the N_s/N_t-labelled endpoint cases must not be conflated.
+## 3. Complete labelled factor-occupancy enumeration
 
-The complete vertex-labelled source model in Q32_FULLSUPPORT_VERTEX_LABELLED_CSP.md explicitly allows surplus outside vertices to lie in isolated factors. It is a formulation, not a solved m=10 UNSAT certificate.
+Keep the ten isolated factors labelled and keep N_s,N_t distinct. The aggregate occupancy choices are exactly 90:
 
-## 5. Source completeness boundary
+| x_C location | Profile | Isolated-factor occupancy | Special-factor occupancy | Number |
+|---|---|---|---|---:|
+| O | one double | one of I_1,...,I_10 is double | N_s,N_t single | 10 |
+| O | one double | all isolated factors single | N_s double or N_t double | 2 |
+| H | two-double | all isolated factors single | both N_s,N_t double | 1 |
+| H | two-double | one isolated double | N_s double, N_t single | 10 |
+| H | two-double | one isolated double | N_s single, N_t double | 10 |
+| H | two-double | two distinct isolated doubles | N_s,N_t single | 45 |
+| H | triple | one isolated triple | N_s,N_t single | 10 |
+| H | triple | all isolated factors single | N_s triple, N_t single | 1 |
+| H | triple | all isolated factors single | N_s single, N_t triple | 1 |
+| Total | | | | 90 |
 
-The six rows above exhaust the aggregate K5 outside-count distributions:
-- x_C in O: one double factor, which is isolated or special;
-- x_C in H, two-double: zero, one, or two isolated double factors;
-- x_C in H, triple: the triple factor is special.
+The companion verifier enumerates these 90 labelled factor assignments directly and checks the totals and all derived arithmetic. M10_SOURCE_OCCUPANCY_90.csv is the row-level catalog.
 
-This is source-complete as an occupancy catalog. It is not yet a complete classification of all labelled choices of x_C,y,A_0,N_s,N_t, target-track placements, gadget edges, and cross-color edge ownership. Those are retained as explicit open dimensions rather than suppressed by an all-isolated-single assumption.
+### Crucial correction
+
+The isolated-triple row is not excluded by the aggregate Type-I source theorem. The claim that an isolated triple-outside K5 always violates a universal same-color degree floor is unsupported in the general full-support Q32 contract. A degree floor of two or three is available in certain already-aligned target-part cells, but it cannot be imported into arbitrary m=10 source placements.
+
+Therefore H-TI (one isolated triple) is an OPEN source mode and must remain in the complete catalog.
+
+## 4. Derived G_11 H-vertex and K5-interior counts
+
+Let b_s,b_t be the outside counts of N_s,N_t. Since G_11 has eleven vertices, including x_C,
+
+    |G_11 intersect H| = 11 - b_s - b_t - 1_{x_C in O}.
+
+The twelve K5 interiors contribute the following number of H-H edges:
+- x_C in O, profile (2,1^11): 3+11*6=69;
+- x_C in H, two-double profile: 2*3+10*6=66;
+- x_C in H, triple profile: 1+11*6=67.
+
+| Mode | b_s+b_t | G_11 H vertices | K5-interior H edges |
+|---|---:|---:|---:|
+| O-I: isolated double | 2 | 8 | 69 |
+| O-N_s: N_s double | 3 | 7 | 69 |
+| O-N_t: N_t double | 3 | 7 | 69 |
+| H-SS: both specials double | 4 | 7 | 66 |
+| H-I/N_s: isolated + N_s double | 3 | 8 | 66 |
+| H-I/N_t: isolated + N_t double | 3 | 8 | 66 |
+| H-II: two isolated doubles | 2 | 9 | 66 |
+| H-TI: isolated triple | 2 | 9 | 67 |
+| H-T/N_s: N_s triple | 4 | 7 | 67 |
+| H-T/N_t: N_t triple | 4 | 7 | 67 |
+
+If g_C=e_C(H)-69 and G_H is the number of non-K5 gadget edges with both endpoints in H, then exactly
+
+    G_H = g_C                 when x_C in O,
+    G_H = 3+g_C               in the two-double case,
+    G_H = 2+g_C               in the triple case.
+
+The source-correct global upper bounds are g_C<=4 for x_C in O, g_C<=5 for x_C in H two-double, and g_C<=6 for x_C in H triple.
+
+## 5. Parameter-to-gap lower bounds
+
+The source audit gives, for x_C in H,
+
+    G_H >= 10 - a - b_s - b_t.
+
+Substituting the exact K5-interior contribution gives:
+
+| Mode | Lower bound on g_C |
+|---|---|
+| H-SS (b_s+b_t=4) | max(0,3-a) |
+| H-I/N_s or H-I/N_t (sum=3) | max(0,4-a) |
+| H-II (sum=2) | max(0,5-a) |
+| H-TI (sum=2) | max(0,6-a) |
+| H-T/N_s or H-T/N_t (sum=4) | max(0,4-a) |
+
+These bounds are source-derived and retain the labelled special factors. In particular the isolated-triple mode is not a free extra mode: it pays g_C>=6-a, so for a=1,2,3,4 it needs at least 5,4,3,2 gap units respectively.
+
+For x_C in O, the nine gadget edges incident with x_C leave H, so only y--A_0 can contribute H-H edges; hence 0<=g_C<=4.
+
+## 6. Placement restrictions conditional on the target graph
+
+The aggregate 90-row catalog is not a claim that all 90 modes extend to a full 61-point coloring. The following extra restrictions are valid when the indicated source/target placements occur:
+
+- If x_C is in H and N_t is single-outside, y must lie in H. If y were outside, x_C together with the four H-vertices of N_t minus {y} would form a C-colored K5 inside H.
+- If x_C is in H and N_s is single-outside, A_0 must contain at least one H-vertex; otherwise x_C together with the four H-vertices of N_s minus A_0 would form a C-colored K5 inside H.
+- If x_C is in H, N_s is single-outside, and y lies in H, then A_0 must also contain the unique outside vertex of N_s; otherwise y together with the four H-vertices of N_s would form a C-colored K5 inside H.
+- In the aligned z=0,1 target-part cell, stronger pointwise degree floors give additional restrictions, including the exclusion of an isolated triple there. Those aligned-cell restrictions are not universal source restrictions.
+
+All remaining y/A_0 endpoint placements must be retained until checked against the actual target-part assignment, pointwise color-degree constraints, and global color-edge ownership.
+
+## 7. Source-completeness boundary
+
+This catalog is complete for the aggregate choice of which of the twelve labelled K5 factors receive the two outside points or the three outside points. It is not yet a complete endpoint-labelled enumeration of:
+- the identities of the outside vertices inside each factor;
+- the location of y in N_t;
+- the subset A_0 in N_s;
+- the source gadget edge endpoints after the target-part assignment;
+- compatibility with the ten-block pivot graph and other colors.
+
+No source occupancy row is promoted to a globally feasible Q32 candidate without those checks.
