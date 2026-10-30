@@ -1,131 +1,140 @@
 #!/usr/bin/env python3
-"""Exact arithmetic and grouped-profile replay for Q33 all-support reserves.
+"""Q33 source-correct variable-component-core profile reserve screen.
 
-Verifies necessary constraints only; not a graph realization or full Q33 UNSAT.
+Ten K5 components are retained, but their core sizes c_i are variable in
+{0,1,2,3,4}; the code does NOT assume one shell vertex per component.
+Two independent group-option generators (Cartesian product and recursive
+state DP) are cross-checked before the global h/support screen.
+This is a necessary profile test, not a graph-level UNSAT certificate.
 """
 from itertools import product
 from math import comb
 
-SUPPORT_MIN = {8: 31, 9: 32, 10: 34}
+SUPPORT_MIN = {8:31, 9:32, 10:34}
+CORE_SPLITS = [(c,k) for c in range(5) for k in range(c+1)]
 
 
-def p_k(n, k):
-    if n <= k:
+def p_k(n,k):
+    if n<=k:
         return 0
-    q, r = divmod(n, k)
-    return (k-r)*comb(q, 2) + r*comb(q+1, 2)
+    q,r=divmod(n,k)
+    return (k-r)*comb(q,2)+r*comb(q+1,2)
 
 
-def t_k(n, k):
-    return comb(n, 2) - p_k(n, k)
+def t_k(n,k):
+    return comb(n,2)-p_k(n,k)
 
 
-def min_w_cost(num, cap):
-    best = None
-    profiles = []
-    for ks in product(range(5), repeat=num):
-        if sum(ks) <= cap:
-            cost = sum(comb(4-x, 2) for x in ks)
-            if best is None or cost < best:
-                best, profiles = cost, [ks]
-            elif cost == best:
-                profiles.append(ks)
-    assert best is not None
-    return best, profiles
+def l_u_max(v):
+    w=47-v
+    if w==0:
+        return comb(47,2)-284
+    return comb(v,2)-280+12*w-p_k(w,4)
 
 
-def l_u_upper(v):
-    w = 47-v
-    if w == 0:
-        return comb(47, 2)-284
-    return comb(v, 2)-280+12*w-p_k(w, 4)
+def options_product(num,v,gadget):
+    out=set()
+    for comps in product(CORE_SPLITS,repeat=num):
+        csum=sum(c for c,k in comps)
+        ksum=sum(k for c,k in comps)
+        if gadget:
+            if not 12<=csum<=16:
+                continue
+            g=23-csum
+            s_u=v-24-ksum
+            if not 4<=s_u<=g:
+                continue
+            gadget_u=max(0,p_k(s_u,2)-6)
+        else:
+            if not 8<=csum<=12:
+                continue
+            g=19-csum
+            s_u=v-28-ksum
+            if not 0<=s_u<=g:
+                continue
+            gadget_u=p_k(s_u,2)
+        r_w=g-s_u
+        comp_u=sum(comb(k,2) for c,k in comps)
+        comp_w=sum(comb(c-k,2) for c,k in comps)
+        out.add((comp_u+gadget_u,comp_w+p_k(r_w,2)))
+    return out
 
 
-def group_options(num, cap):
-    return {
-        (sum(comb(x, 2) for x in ks),
-         sum(comb(4-x, 2) for x in ks))
-        for ks in product(range(5), repeat=num)
-        if sum(ks) <= cap
-    }
+def options_recursive(num,v,gadget):
+    # Independent recursion over components; state=(core sum,U sum,U-pairs,W-pairs).
+    states={(0,0,0,0)}
+    for _ in range(num):
+        nxt=set()
+        for csum,ksum,uc,wc in states:
+            for c,k in CORE_SPLITS:
+                nxt.add((csum+c,ksum+k,uc+comb(k,2),wc+comb(c-k,2)))
+        states=nxt
+    out=set()
+    for csum,ksum,uc,wc in states:
+        if gadget:
+            if not 12<=csum<=16:
+                continue
+            g=23-csum
+            s_u=v-24-ksum
+            if not 4<=s_u<=g:
+                continue
+            gadget_u=max(0,p_k(s_u,2)-6)
+        else:
+            if not 8<=csum<=12:
+                continue
+            g=19-csum
+            s_u=v-28-ksum
+            if not 0<=s_u<=g:
+                continue
+            gadget_u=p_k(s_u,2)
+        out.add((uc+gadget_u,wc+p_k(g-s_u,2)))
+    return out
 
 
-def grouped_profile_dp(m, v, h, bu, bw):
-    cap = v-28
-    opts3, opts4 = group_options(3, cap), group_options(4, cap)
-    states = {(0, 0)}
-    for num in [3]*(m-h)+[4]*h:
-        opts = opts3 if num == 3 else opts4
-        states = {
-            (u0+u1, w0+w1)
-            for u0, w0 in states
-            for u1, w1 in opts
-            if u0+u1 <= bu and w0+w1 <= bw
-        }
+def feasible(m,v,h,opts3,opts4):
+    n,w=11-m,47-v
+    bu=l_u_max(v)-42*m-n*p_k(v,12)+4*h
+    bw=t_k(w,4)-n*p_k(w,12)
+    if bu<0 or bw<0:
+        return False
+    states={(0,0)}
+    for opts in [opts3]*(m-h)+[opts4]*h:
+        states={(u+a,ww+b) for u,ww in states for a,b in opts
+                if u+a<=bu and ww+b<=bw}
         if not states:
             return False
     return bool(states)
 
 
-def row(m, v):
-    n, w = 11-m, 47-v
-    rho = 4
-    f0, prof0 = min_w_cost(3, v-28)
-    f1, prof1 = min_w_cost(4, v-28)
-    bw = t_k(w, 4)-n*p_k(w, 12)
-    w_h, u_h, charge_h = [], [], []
-    for h in range(m+1):
-        bu = l_u_upper(v)-42*m-n*p_k(v, 12)+4*h
-        if (m-h)*f0+h*f1+n*p_k(w, 12) <= t_k(w, 4):
-            w_h.append(h)
-        if bu >= 0:
-            u_h.append(h)
-        if bu >= 0 and 3*(3*m+h) <= bw+2*bu:
-            charge_h.append(h)
-    joint = sorted(set(w_h)&set(u_h)&set(charge_h))
-
-    dp_h = []
-    for h in range(m+1):
-        bu = l_u_upper(v)-42*m-n*p_k(v, 12)+4*h
-        if grouped_profile_dp(m, v, h, bu, bw):
-            dp_h.append(h)
-    assert joint == dp_h, (m, v, joint, dp_h)
-
-    return {"m":m,"v":v,"w":w,"f0":f0,"f1":f1,
-            "W_h":w_h,"U_h":u_h,"charge_h":charge_h,
-            "joint":joint,"profiles0":prof0,"profiles1":prof1}
-
-
 def main():
-    assert p_k(31,12)==26 and p_k(32,12)==28
-    assert p_k(33,12)==30 and p_k(34,12)==32
-    assert t_k(31,4)==360 and t_k(33,4)==408
+    all_rows={}
+    for v in range(31,48):
+        assert options_product(3,v,False)==options_recursive(3,v,False)
+        assert options_product(4,v,True)==options_recursive(4,v,True)
 
-    rows={}
     for m,v0 in SUPPORT_MIN.items():
-        rows[m]=[row(m,v) for v in range(v0,48)]
+        rows=[]
+        for v in range(v0,48):
+            o3=options_recursive(3,v,False)
+            o4=options_recursive(4,v,True)
+            hs=[h for h in range(m+1) if feasible(m,v,h,o3,o4)]
+            rows.append((v,hs))
+        all_rows[m]=rows
 
-    assert rows[8][0]["joint"]==[]
-    assert rows[8][1]["joint"]==[]
-    assert rows[8][2]["joint"]==[]
-    assert rows[8][3]["joint"]==[7]
-    assert rows[9][0]["joint"]==[]
-    assert rows[9][1]["joint"]==[]
-    assert rows[9][2]["joint"]==[]
-    assert rows[9][3]["joint"]==list(range(5,10))
-    assert rows[10][0]["joint"]==[]
-    assert rows[10][1]["joint"]==[]
-    assert rows[10][2]["joint"]==list(range(3,11))
+    assert dict(all_rows[8]) if False else True
+    assert all_rows[8][:4]==[(31,[]),(32,[]),(33,[]),(34,[])]
+    assert all_rows[8][4]==(35,[6,7,8])
+    assert all_rows[9][:3]==[(32,[]),(33,[]),(34,[])]
+    assert all_rows[9][3]==(35,[9])
+    assert all_rows[10][:4]==[(34,[]),(35,[]),(36,[]),(37,[])]
+    assert all_rows[10][4]==(38,[10])
 
-    print("m v w f0 f1 H_W H_U H_charge joint")
-    for m, rr in rows.items():
-        for r in rr:
-            print(m,r["v"],r["w"],r["f0"],r["f1"],
-                  r["W_h"],r["U_h"],r["charge_h"],r["joint"])
-    print("EXCLUDED: m=8 v=31,32,33; m=9 v=32,33,34; m=10 v=34,35")
-    print("FIRST SURVIVORS: (8,34,h=7); (9,35,h=5..9); (10,36,h=3..10)")
-    print("LIMITATION: necessary scalar/profile constraints only; Q33 remains OPEN.")
+    print("Q33 VARIABLE-CORE PROFILE SCREEN: PASS")
+    for m,rows in all_rows.items():
+        print("m=",m,rows)
+    print("All 47 (m,v) cells checked; product and recursive group options agree.")
+    print("Scope: necessary profile relaxation only; Q33 remains OPEN.")
 
 
-if __name__ == "__main__":
+if __name__=="__main__":
     main()

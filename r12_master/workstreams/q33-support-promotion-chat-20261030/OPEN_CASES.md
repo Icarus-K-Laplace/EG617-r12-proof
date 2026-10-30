@@ -2,35 +2,25 @@
 
 Status: **OPEN / NOT_CERTIFIED**.
 
-## Excluded by sharp U reserve + W reserve + component-pair charge
-- m=8: v=31,32,33;
+## Excluded by source-correct variable-core profile screen
+- m=8: v=31,32,33,34;
 - m=9: v=32,33,34;
-- m=10: v=34,35.
+- m=10: v=34,35,36,37.
 
-## First remaining scalar/profile-feasible cells
-- m=8, v=34, h=7;
-- m=9, v=35, h in {5,6,7,8,9};
-- m=10, v=36, h in {3,4,5,6,7,8,9,10}.
+## First profile-feasible cells
+- m=8, v=35, h in {6,7,8};
+- m=9, v=35, h=9;
+- m=10, v=38, h=10.
 
-All larger support sizes through47 also remain feasible in this necessary screen.
+Every larger support size through47 remains feasible in this necessary relaxation.
 
 ## Next structural attack
+The tightest cells now have highly constrained selected gadget counts:
+- m=8,v=35: six, seven, or eight selected gadget witnesses;
+- m=9,v=35: all nine selected exact colors must use a gadget witness;
+- m=10,v=38: all ten selected exact colors must use a gadget witness.
 
-### m=8,v=34,h=7
-Here w=13, B_W=60, B_U=18. There are31 unselected component K4s. The charge has only three units of slack:
-\[
-3(31)=93,\qquad B_W+2B_U=96.
-\]
-Seek equality/stability consequences for the 31 component U/W pair profiles, together with the full core degree ledger.
+Next encode the actual labelled K5 component core subsets, gadget-core subsets, pairwise linear witness intersections, and vertex degree/excess ledger. The profile DP does not yet impose these vertex labels.
 
-### m=9,v=35,h=5,...,9
-Here w=12, B_W=54 and B_U=1+4h. Use the ninth exact color's ten component sets, pairwise gadget-intersection bound, and four units of core excess.
-
-### m=10,v=36,h=3,...,10
-Here w=11, B_W=55 and B_U=16+4h. Use all ten exact-color component systems and the single nonexact color.
-
-## Missing structural theorem
-
-A source-correct theorem must couple labelled component K4s, gadget witnesses, U/W incidence, core degree excess, and edge ownership. Current scalar/profile inequalities do not eliminate these cells.
-
-Do not set |U|=31 without proof, promote a feasible h to a graph witness, or change global root status.
+## Explicit limitation
+The source-verified exact-129 factor theorem gives ten isolated K5s plus an 11-vertex gadget, but does not by itself make every K5 have exactly one shell vertex. The variable-core model allows component core sizes c_i=0,...,4. Do not use the older fixed c_i=4 profile screen as a universal parent reduction.

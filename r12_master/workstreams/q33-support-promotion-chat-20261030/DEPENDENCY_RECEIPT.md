@@ -50,3 +50,22 @@ No new upstream source was introduced. The new lemma charges the already registe
 ## 2026-10-30 correction — aggregate gadget overlap cap 4
 
 The selected gadget witness Q is a four-set inside G_C, and the retained exact-129 gadget contract gives alpha(C[G_C])<=2. Hence alpha(C[Q])<=2 and e_C(Q)>=2. Because the six Q-pairs have unique colors, all colors other than C combined can occupy at most four pairs. This source fact is recorded in Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md Section 3 and Q33_CROSS_COLOR_GADGET_INTERSECTION.md Section 1/2. The current U-reserve coefficient is therefore 4 uniformly for m=8,9,10, superseding the coarser allowance in the first support-screen commit.
+
+
+## 2026-10-30 variable-core source correction
+
+The fixed c_i=4 profile is not treated as source-universal. The current screen uses only:
+- exact-129 factor: ten isolated K5s plus an 11-vertex gadget;
+- each K5 has at least one shell vertex, since five core vertices would be an independent 5-set in H; hence c_i<=4;
+- gadget core size g=47-sum c_i lies in [7,11];
+- seven-witness interface: either seven component K4s, or six component K4s plus one gadget four-set;
+- alpha(C[G_C])<=2.
+
+Primary source files read:
+- \`KANG_PIKHURKO_EXACT129_SOURCE_AUDIT.md\`, Section 5;
+- \`Q33_CROSS_COLOR_GADGET_INTERSECTION.md\`, Sections 1,4,5;
+- \`R12_WITNESS_PACKING_BOUNDARY_KERNEL.md\`, Sections 2 and 7.2;
+- \`R12_ZERO_EXCESS_WITNESS_THEOREM.md\`, Section 4;
+- \`Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md\`, Section 3 for the gadget independence/capacity fact.
+
+The stronger all-ten-components-have-four-core-vertices premise appears in the M10 local note under a retained shell-label theorem, but is not separately registered in the audited global root DAG. It is not used by the current variable-core model.

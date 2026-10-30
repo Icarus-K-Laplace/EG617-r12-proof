@@ -1,105 +1,101 @@
-# Q33 support-lifting theorem: all-color U/W/component-charge reduction
+# Q33 variable-component-core profile theorem
 
-Date: 2026-10-30  
-Status: **PROVED_CONDITIONAL** for the necessary inequalities under the registered Q33 source contract; **COMPUTATION_CERTIFIED** for the finite integer screen; global Q33 promotion remains **OPEN**.
+Status: **PROVED_CONDITIONAL** for the reserve inequalities under the registered exact-129 factor and seven-witness interface; **COMPUTATION_CERTIFIED** for the finite profile screen. Global Q33 remains OPEN.
 
-## 1. Frozen parent contract
+## 1. Exact-color factor and component core sizes
 
-Let H be the E408 Q33 core:
+For each exact-129 color C, the source-verified factorization has ten isolated C-colored K5 components and an 11-vertex gadget G_C^full. Let c_i in {0,1,2,3,4} be the number of H-core vertices in component i. The upper bound c_i<=4 follows because five core vertices in one C-colored K5 would be an independent 5-set in H, contradicting alpha(H)<=4.
+
+Let g_C be the number of core vertices in the exceptional gadget. Since the ten components and gadget partition the 47-point core,
 \[
-|V(H)|=47,\quad e(H)=284,\quad \alpha(H)\le4,\quad \delta(H)\ge12,\quad
-\sum_{x\in H}(d_H(x)-12)=4.
+g_C=47-\sum_{i=1}^{10}c_i.
 \]
-There are m in {8,9,10} exact-129 non-target colors and n=11-m nonexact non-target colors.
+The ten components contain at most40 core vertices, so g_C>=7; the gadget has only11 vertices, so g_C<=11. Thus 36<=sum c_i<=40.
 
-For each exact-129 color C, select seven labelled independent four-sets Q_{C,1},...,Q_{C,7} in H. Within a color they are pairwise disjoint; across colors they intersect in at most one vertex. At most one selected witness per color is a gadget witness. Let h be the total number of selected gadget witnesses, so 0<=h<=m.
+This explicitly allows components with multiple shell vertices and core size below four.
 
-Put U=union Q_{C,j}, v=|U|, W=H\\U, w=47-v. The 7m selected blocks occupy 42m distinct edges of L_U=overline(H[U]).
+## 2. Selected witnesses and residual component groups
 
-Support floors:
-- m=8: v>=31, from the retained E408 Q33 56-block support theorem;
-- m=9: v>=32, since 378>t_4(31)=360;
-- m=10: v>=34, since 420>t_4(33)=408.
+The registered seven-witness interface selects seven disjoint four-sets per exact color. Within one color they are disjoint; across colors they are linear.
 
-## 2. Turan functions
-
-Let p_k(n) be the minimum number of edges in an n-vertex graph with independence number at most k, and t_k(n)=C(n,2)-p_k(n). Thus t_4(n) is the maximum number of edges in a K5-free graph.
-
-## 3. U-side reserve with the sharp gadget overlap
-
-Write epsilon_W=sum_{x in W}(d_H(x)-12)<=4 and e_W=e(H[W]). Degree-sum on W gives
+Let h be the number of selected gadget witnesses among the m selected exact colors.
+- A color with no selected gadget witness has seven selected component K4s. The remaining three K5 components have core sizes c_1,c_2,c_3 with
 \[
-e_H(U,W)=12w+\epsilon_W-2e_W.
+8\le c_1+c_2+c_3\le12.
 \]
-Thus
+- A color with one selected gadget witness has six selected component K4s and one four-set Q_C inside its gadget core. The remaining four K5 components have core sizes c_1,...,c_4 with
 \[
-e(H[U])=284-12w-\epsilon_W+e_W.
-\]
-Since e_W>=p_4(w), for w>0:
-\[
-e(L_U)\le C(v,2)-280+12w-p_4(w)=:L_{\max}(v).
-\]
-For w=0, use e(L_U)=C(47,2)-284=797.
-
-Each nonexact color D needs p_12(v) U-edges. The 7m selected witness blocks occupy42m distinct U-pairs; 42m-6h are component-witness edges owned by exact colors.
-
-For each selected gadget witness Q inside the exceptional gadget of its exact color C, alpha(C[Q])<=2. Thus C[Q] has at least two edges. Since Q has six pairs and edge ownership is unique, all colors other than C together can use at most four edges in Q. In particular, all nonexact colors together can overlap the h selected gadget witnesses in at most4h edges.
-
-All remaining nonexact U-edges must lie outside the 42m selected witness pairs, where at most L_max(v)-42m slots remain. Therefore
-\[
-\boxed{n p_{12}(v)\le L_{\max}(v)-42m+4h.}\tag{U}
+12\le\sum c_i\le16.
 \]
 
-## 4. W-side reserve
+These ranges follow from g_C in [7,11]. They do not assume the remaining components are four-core sets.
 
-A selected color without a gadget witness leaves three unselected isolated component four-sets; a selected color with one gadget witness leaves four. The seven selected disjoint witnesses cover28 points of U, so the total U-incidence among the unselected components of that color is at most v-28.
+For each remaining component let k_i be the number of its core vertices in U. Then 0<=k_i<=c_i.
 
-Define
+## 3. Gadget-core split
+
+Put v=|U|, w=47-v. The selected seven witnesses cover28 distinct U vertices.
+
+For a no-gadget selected color, if K=sum k_i over its three unselected components, then
 \[
-f_0(v)=\min_{\substack{k_i\in\{0,\ldots,4\},\,i=1,2,3\\\sum k_i\le v-28}}\sum_{i=1}^3 C(4-k_i,2),
+s_U=|G_C\cap U|=v-28-K,\qquad
+r_W=|G_C\cap W|=g_C-s_U.
 \]
+For a gadget-selected color, the selected six component witnesses cover24 U vertices and Q_C contributes four U vertices inside G_C. For K=sum k_i over its four unselected components,
 \[
-f_1(v)=\min_{\substack{k_i\in\{0,\ldots,4\},\,i=1,\ldots,4\\\sum k_i\le v-28}}\sum_{i=1}^4 C(4-k_i,2).
+s_U=v-24-K,\qquad r_W=g_C-s_U.
 \]
-Their W-pairs are distinct component-owned edges, disjoint from nonexact-color W-edges. Since L_W is K5-free,
+The feasible profile requires 0<=s_U<=g_C in the first case and 4<=s_U<=g_C in the second.
+
+Since alpha(C[G_C])<=2, the exact color C has at least p_2(s_U) edges inside G_C∩U and p_2(r_W) edges inside G_C∩W. If a gadget witness Q_C was selected, at most six of the U-side gadget edges can lie inside the already-counted six pairs of Q_C; therefore the additional U reserve cost is max(0,p_2(s_U)-6). With no selected gadget witness, the U-side gadget cost is p_2(s_U).
+
+## 4. Group costs
+
+For one color group with remaining component core sizes c_i and U-splits k_i, define
 \[
-\boxed{(m-h)f_0(v)+hf_1(v)+n p_{12}(w)\le t_4(w).}\tag{W}
+X_U^{comp}=\sum_i\binom{k_i}{2},\qquad
+X_W^{comp}=\sum_i\binom{c_i-k_i}{2}.
 \]
+Add the gadget-core costs:
+- no gadget: \(X_U=X_U^{comp}+p_2(s_U)\), \(X_W=X_W^{comp}+p_2(r_W)\);
+- gadget selected: \(X_U=X_U^{comp}+\max(0,p_2(s_U)-6)\), \(X_W=X_W^{comp}+p_2(r_W)\).
 
-## 5. Component-pair charge
+All counted edges are non-H edges. Unique color ownership makes component/gadget edges of distinct colors disjoint; within a color the gadget is disjoint from its ten K5 components.
 
-For each unselected component four-set Q, let k=|Q intersect U|. Its U-pair and W-pair costs satisfy
+## 5. Global reserve budgets
+
+Let n=11-m. The sharp gadget-witness overlap bound is four per selected gadget witness: alpha(C[Q_C])<=2 forces at least two of its six pairs to be C-colored, leaving at most four pairs for all other colors combined.
+
+The U-side budget is
 \[
-\binom{4-k}{2}+2\binom{k}{2}\ge3
-\qquad(k=0,1,2,3,4).
+\boxed{B_U=L_{\max}(v)-42m-np_{12}(v)+4h.}
 \]
-There are exactly \(3(m-h)+4h=3m+h\) such unselected component four-sets. If X_U and X_W are their total U- and W-internal pair costs, then
+The W-side budget is
 \[
-X_W+2X_U\ge3(3m+h).
+\boxed{B_W=t_4(w)-np_{12}(w).}
 \]
-The reserve ledgers give
-\[
-X_U\le B_U:=L_{\max}(v)-42m-np_{12}(v)+4h,
-\]
-\[
-X_W\le B_W:=t_4(w)-np_{12}(w).
-\]
-Consequently every parent must also satisfy
-\[
-\boxed{3(3m+h)\le B_W+2B_U.}\tag{C}
-\]
+A necessary profile completion exists only if the m-h no-gadget group costs and h gadget group costs can be chosen so that their total U-cost is at most B_U and total W-cost at most B_W.
 
-## 6. Exact support-size screen
+## 6. Exact finite profile screen
 
-For each m,v, enumerate h=0,...,m and impose (U), (W), and (C). The exact table is in Q33_ALL_SUPPORT_SIZES.md; the committed verifier also checks the grouped per-color component-profile dynamic program.
+The verifier exhausts every:
+- unselected component count (3 or4);
+- core size c_i in {0,1,2,3,4};
+- U-incidence k_i in {0,...,c_i};
+- component-core sum in [8,12] or [12,16];
+- gadget U/W split;
+- h in {0,...,m};
+- support size v from its registered lower bound through47.
 
-New excluded cells:
-- m=8: v=31,32,33 excluded; first scalar/profile-feasible cell v=34,h=7;
-- m=9: v=32,33,34 excluded; first scalar/profile-feasible cell v=35,h in {5,6,7,8,9};
-- m=10: v=34,35 excluded; first scalar/profile-feasible cell v=36,h in {3,...,10}.
+A product enumerator and a separate recursive state enumerator independently produce identical per-color option sets and identical global feasible h sets on all47 (m,v) cells.
 
-## 7. Scope firewall
+Results:
+- m=8: v=31,32,33,34 excluded; first profile-feasible v=35,h=6,7,8.
+- m=9: v=32,33,34 excluded; first profile-feasible v=35,h=9.
+- m=10: v=34,35,36,37 excluded; first profile-feasible v=38,h=10.
 
-These are necessary inequalities, not sufficient conditions. A nonempty h-set is not a graph realization. All larger support sizes through47 remain open.
+A feasible profile is only a necessary scalar/profile survivor, not a graph realization.
 
-The excluded cells are **PROVED_CONDITIONAL** under the source contract; the arithmetic/profile screen is **COMPUTATION_CERTIFIED**. Global E408 Q33 support promotion and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
+## 7. Scope
+
+This model repairs the stronger fixed-four-core assumption. It is still a relaxation: it does not encode the actual vertex labels, pairwise intersections, cross-color edge ownership at the pair level, or the full degree sequence. Q33 and the root theorem remain OPEN.
