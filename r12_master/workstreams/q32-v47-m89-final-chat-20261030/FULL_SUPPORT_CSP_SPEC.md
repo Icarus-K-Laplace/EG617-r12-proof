@@ -1,5 +1,7 @@
 # Full-support CSP specification — m=8,9
 
+> **Current status (2026-10-30): ANALYTICALLY EXCLUDED.** The source Type-I factorization itself induces one of three forbidden independent-part partitions of H. See V47_TYPEI_PARTITION_OBSTRUCTION.md. Sections 9–12 below retain the historical development path; their conditional low-layer CSP constraints have been superseded and are not the current closure argument. The full SMT model was not run.
+
 ## 1. Domain and variables
 
 The solver is a complete labelled edge-coloring model on V={0,...,60}, with H={0,...,46}, pivot p=47, A={48,...,60}, and O={47,...,60}.
@@ -95,32 +97,30 @@ It also adds the source-parameter gap bounds:
 - \(x_C\in H\), two-double: \(72-a_C\le e_C(H)\le74\);
 - \(x_C\in H\), triple: \(73-a_C\le e_C(H)\le75\).
 
-For every non-target color C, if \(e_C(H)\le70\), a partition variable assigns H to eleven 4-parts and one 3-part. Every pair inside a part is forced to color C, exactly \(e_C(H)-69\in\{0,1\}\) C-edges may cross parts. For exact colors, all single-outside source K4s are additionally required to lie in one 4-part. This is the 69/70 near-Turan normal form documented in V47_NEAR_TURAN_SOURCE_NORMAL_FORM.md.
-
-The partition variables are conditional on each non-target color's core edge count. They do not force any color into the 69/70 layer.
-
-
-For every pair of non-target colors that are both in the 69/70 layer, the two 12-partitions are constrained to be orthogonal: no pair of H-vertices may lie in the same part in both partitions. This follows from unique edge ownership and is independently replayed by the verifier.
+Historical 69/70 near-Turán partition variables were present in an earlier solver revision. They were removed after the tight-part theorem proved that the entire 69/70 layer is impossible for every non-target color. The current solver therefore does not allocate these partition variables or the corresponding orthogonality constraints. See Section 13 for the stronger final analytic exclusion.
 
 
 ## 10. Low-layer source-triangle and special-gadget alignment
 
-For every exact color C in the 69/70 layer, the model now enforces:
-- every double-outside factor's three H vertices lie in one near-Turan part;
-- if x is in H with two-double profile, Nt has outside occupancy 2, y is outside H, and the entire Nt H-interior shares x's part;
-- if x is in H with triple profile, Nt has outside occupancy 3, y is outside H, and the entire Nt H-interior shares x's part;
-- in either x-in-H case, at most one vertex of \((N_s\setminus A_0)\cap H\) remains, and the exact core identity reduces to \(e_C(H)=69+|(N_s\setminus A_0)\cap H|\);
-- if x is outside H, the unique double factor's K3 lies in one part and \(e_C(H)=69+1_{y\in H}|A_0\cap H|\).
-
-These implications are conditional on the exact color being in the 69/70 layer. They do not constrain colors with 71+ H-edges.
+These source-triangle and special-gadget alignment cuts were conditional on an exact color being in the 69/70 layer. They were removed together with the near-Turán partition variables after that entire layer was excluded. The source-core equality and parameter bounds above remain historical model facts, but neither is needed for the final analytic contradiction.
 
 ## 11. Matching-skeleton consequence (not yet encoded)
 
-For any 69/70 partition, \(\alpha(H)\le4\) and Hall's theorem give a target-color perfect matching between every pair of size-four parts and a matching saturating the size-three part in each 4-by-3 pair. Selecting these yields a 253-edge subgraph M of H. Its complement F has 32 edges, with 36 vertices of M-degree 11 and 11 vertices of M-degree 10; at least 30 vertices have degree one in F. This is a proved existential structure, not yet represented by matching-choice variables.
+The earlier 69/70-only matching skeleton is superseded by the unified Type-I partition obstruction in Section 13. The current independent verifier now constructs matching skeletons for all three Type-I source profiles (253, 250, and 253 edges) and replays the resulting tight-part contradiction.
 
 
 ## 12. Global 71-edge core floor
 
-The tight-part theorem excludes every 69/70 near-Turán partition: the 253-edge Hall matching skeleton leaves a 32-edge residual, at least five 4-parts are tight, and any tight part has three F-leaves. At least seven other 4-parts are clean, and their fourth vertices form either an independent-5 witness with the leaves or a K7. Thus no valid H can have a 69/70 partition.
+This was the previous intermediate strengthening. The final result is stronger: every exact-129 Type-I color is impossible, irrespective of its H-edge count. See Section 13.
 
-The model now imposes \(e_C(H)\ge71\) for all eleven non-target colors. The former near-Turán partition variables and conditional source-alignment cuts are removed; the remaining exact-color source accounting and the 37-unit gap ledger are unchanged.
+
+## 13. Final analytic Type-I partition obstruction
+
+The twelve Type-I K5 factors each meet O. Their outside occupancies force exactly one of:
+- \(11K_4+K_3\) if x lies in O;
+- \(10K_4+2K_3+K_1\) if x lies in H with two double-outside factors;
+- \(11K_4+K_2+K_1\) if x lies in H with one triple-outside factor.
+
+The unified Hall/tight-part lemma in V47_TYPEI_PARTITION_OBSTRUCTION.md excludes all three shapes under the H-core contract. For a partition with r independent 4-parts, the matching skeleton has 250 or 253 edges; the residual degree ledger yields at least r-6 tight 4-parts. In a tight part, the three lowest-residual-degree vertices have total residual degree at most three, leaving at least six clean 4-parts. Their fourth vertices force either an independent 5-set or a K6.
+
+Therefore no exact-129 Type-I color exists on a valid Q32 core. Since both m=8 and m=9 require such colors, both full-support branches are analytically excluded. The independent verifier replays the Hall matching/tight-part argument from the source factors. The SMT model is archival; no solver SAT/UNSAT result is claimed or needed.
