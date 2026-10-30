@@ -44,8 +44,8 @@ All blob SHAs in this table were fetched from the stated branch refs during this
 
 | Local artifact | Blob SHA |
 |---|---|
-| `q32_fullsupport_m89_solver.py` | `11e1d252c84a2bb2fff2e0613a7bd66b519271f1` |
-| `verify_q32_fullsupport_candidate.py` | `a741ed60628fcf2f810a72c38b2582f4ea5a92f6` |
+| `q32_fullsupport_m89_solver.py` | `272ed95ea147514c5cbacd7e2783721e8e55e736` |
+| `verify_q32_fullsupport_candidate.py` | `cfd2321b8b191458680dfcb31b01f06274f34ae4` |
 | `verify_m89_pivot_matching.py` | `59a2c4031785303a0efe37090e37118b2d35dcf0` |
 | `V47_NEAR_TURAN_SOURCE_NORMAL_FORM.md` | `8e4f611ded8e0eeedfff445c270311ad204d054c` |
 
@@ -53,3 +53,5 @@ The 130-edge minimum-degree-four theorem is cited by the read-only Case-II canon
 
 
 The 69/70 near-Turan partition CSP and independent verifier were subsequently extended from exact colors to all eleven non-target colors. This is valid because alpha(C[H])<=12 and omega(C[H])<=4 hold for every non-target color; the exact-source witness alignment check remains restricted to exact colors.
+
+The latest all-color orthogonality checkpoint also updates the local solver/verifier blobs above; the pivot matching verifier blob remains unchanged.
