@@ -44,3 +44,21 @@ The V12 embedded replay receipt and the independent replay both report `complete
 - The front-end reduction from the original balanced coloring of K145 to the T61 alternatives remains a separate root dependency.
 
 Therefore the global EG617(r=12) status remains **OPEN / NOT_CERTIFIED**.
+
+
+## 7. Generalized support-size reserve — new result
+
+Let U_7 be the union of the 49 selected four-sets from seven exact-129 colors, and let v=|U_7|. The witness-packing theorem supplies only v >= 29, not v = 29. The new four-color reserve theorem uses all four non-selected non-target colors and proves:
+
+- v=29,30,31,32,33: impossible;
+- v=34: the scalar inequalities are equalities and force the rigid terminal below;
+- v >= 35: the present scalar reserve does not exclude the case.
+
+At v=34, equality forces epsilon_U7=0, H[W]=K4 disjoint union 3K3, e(H[U_7])=139, e_H(U_7,W)=130, and the four unselected color graphs on U_7 each attain p12(34)=32, hence are 10K3 disjoint union 2K2. Each selected color has exactly its 42 selected-block edges inside U_7. This equality case is not yet contradicted.
+
+The separate full exact-color union U_m must not be identified with U_7. Under the conditional m in {8,9,10} theorem, the support floors and reserve inequalities give:
+- m=8: |U_m| >= 35;
+- m=9: |U_m| >= 35;
+- m=10: |U_m| >= 36.
+
+These bounds do not prove |U_7|=29, nor do they eliminate the v=34 or v >= 35 cases for U_7. The next structural targets are the v=34 equality configuration and the larger-support cases.
