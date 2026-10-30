@@ -1,34 +1,53 @@
-# Independent Q33 284-edge theorem — dependency audit (updated 2026-10-30)
+# Q33 284-edge theorem — dependency audit (source-complete update)
 
-| Item | Required input | Status | Notes |
+Date: 2026-10-30
+
+| ID | Statement | Status | Exact dependency boundary |
 |---|---|---|---|
-| D1 | 47 vertices, 284 edges, delta>=12, alpha<=4, omega<=11 | **PROVED** as the explicit universal core theorem contract | No density caps are needed by the 284-edge theorem itself. |
-| D2 | Total degree excess equals four | **PROVED** | 2*284-47*12=4. |
-| D3 | Independent four-set among degree-12 vertices | **PROVED** | At least 43 regular vertices; greedy alpha bound ceil(43/13)=4. Original Turan table also replayed. |
-| D4 | Four private cliques and Z support range 3..5 | **PROVED** | Exact incidence surplus five. |
-| D5 | R(2,24) empty | **PROVED** under hereditary caps | D(24)=144, 12-regularity, complement shortest-odd-cycle contradiction. Used by the minimum-degree source theorem; optional strengthening only. |
-| D6 | Universal common-neighbour bound and K10 completion capacity | **PROVED** without density caps | No 25-set with alpha<=2 follows from shortest odd cycle plus Mantel and the total excess four; c<=3+epsilon(u)+epsilon(v). |
-| D7 | K11-K11 pair spends at least six excess units | **PROVED** | Exact integer minimum six at (2,2). |
-| D8 | All h=3,4,5 support templates excluded | **PROVED** | Includes P/D mixed-support matrices and pointwise D incidence accounting. |
-| D9 | Support multiset, matrix classes and integer minima replay | **PROVED** | Separate standard-library replay passes; it checks arithmetic only. |
-| D10 | 127-row rational certificate for the separate 284-edge floor lemma | **PROVED** | Original Fraction verifier passes 127 rows; not a dependency of the 284-edge nonexistence theorem itself. |
-| D11 | V11 retained minimum-degree declaration | **OPEN; NOT A DEPENDENCY** | The Q33 application obtains delta(H)>=12 from the hereditary-cap minimum-degree theorem. |
-| D12 | Full EG617(r=12) theorem | **OPEN** | Other root branches remain unresolved. |
+| D1 | No 47-vertex graph with e=284, delta>=12, alpha<=4, omega<=11 | **PROVED** | Universal analytic proof in Q33_UNIVERSAL_284_NONEXISTENCE.md; no density cap required |
+| D2 | Total degree excess is four | **PROVED** | Handshake: 2*284-47*12=4 |
+| D3 | Independent four-set of degree-12 vertices exists | **PROVED** | At least43 regular vertices; greedy degree-12 independent-set bound |
+| D4 | Four private cliques and exact Z support incidence | **PROVED** | alpha<=4, omega<=11, four-set degrees exactly12 |
+| D5 | K11-K11 2-support costs at least six excess | **PROVED** | Independent-five blocker and disjoint vertex charge |
+| D6 | All h=3,4,5 support templates excluded | **PROVED** | h=4 pointwise K10 charge; h=5 P/D mixed matrices and pointwise no-double-count proof |
+| D7 | Universal common-neighbour bound c<=3+epsilon(u)+epsilon(v) | **PROVED** | Shortest odd cycle plus Mantel on a 25-set; five graph hypotheses only |
+| D8 | At most one external vertex completes a K10 | **PROVED** | K12 if adjacent; otherwise at least10 common neighbours contradict D7 and total excess4 |
+| D9 | Minimum-degree source gate J in R(4,47), e<=286 => delta>=12 | **PROVED** | Inherited D-caps plus R(2,24), R(3,35), R(3,36), R(3,37) seed chain |
+| D10 | R(3,35) seed delta>=12 and e>=210 | **PROVED** | Full 121/122 neighbourhood classification and D(14),D(23) contradiction |
+| D11 | R(3,36) delta>=13/e>=234; R(3,37) empty | **PROVED** | Induced-subgraph transport from D10 and R(2,24) |
+| D12 | Degree10 in R(4,47) forces e>=289 | **PROVED** | Exact ten-neighbour degree-sum; does not assume N(v) is a clique |
+| D13 | Degree11 in R(4,47) forces e>=287 | **PROVED** | 35-core floor210, missing shell edge, common row union>=12, shell charge>=11 |
+| D14 | Every R(4,47) graph has e>=284 | **PROVED** | D9 plus the private-clique lemma for total excess<=2 |
+| D15 | 127-row rational certificate | **COMPUTATION_CERTIFIED** | Exact Fraction replay: 32+95 rows; maxima 773/1089 and39/44 |
+| D16 | E408 / Qmax=33 parent contradiction | **PROVED_CONDITIONAL** | E408 h13 parent contract, exact q=33 pivot, inherited density caps; no V11 dependency |
+| D17 | V11 retained minimum-degree declaration | **OPEN / NOT USED** | Its broader analytic package remains separate and is not a premise here |
+| D18 | Full EG617(r=12) theorem | **OPEN** | E407/Q32 and other root dependencies remain live |
 
 ## External theorem audit
 
-The old COMMON_NEIGHBOR_CAPACITY.md invoked Kang–Pikhurko Theorem 1 at n=25,r=2. That input is unnecessary. The replacement proof bounds every non-bipartite triangle-free 25-vertex graph by 145 edges using a shortest odd cycle and Mantel's inequality. Mantel is proved in the source document by the standard edge-degree/Cauchy argument. This retains the universal five-hypothesis scope and removes the external theorem.
+No Kang–Pikhurko theorem is used in D1–D16. The previous common-neighbour argument's 2+epsilon bound was cap-dependent; it is not used by the universal core theorem. The source-complete replacement proves the weaker but sufficient 3+epsilon bound using only alpha<=4, omega<=11 and total excess4.
 
-The independent-four-set lemma has an elementary greedy proof ceil(43/13)=4; the former Turan table is retained as an arithmetic cross-check. The R(3,35) seed uses the shortest-odd-cycle bound and Mantel, with Mantel's proof included in the seed audit. No non-elementary extremal theorem is load-bearing in the Q33 284-core proof.
+Mantel's inequality is proved by the edge-degree/Cauchy argument in the source audit. No unproved Ramsey number is used. The 121/122 triangle-free neighbourhood classification is reproduced in MINDEG12_47_SOURCE_COMPLETE_AUDIT.md with its exact five-cycle type cases.
+
+## Exact finite replay
+
+- Q33_SOURCE_COMPLETE_REPLAY.py checks density-cap arithmetic, shortest-cycle bounds, the 121/122 extension costs, degree10/11 inequalities, support-multiset counts, matrix classes, and the exact minima 6,6,4,5.
+- With --certificate it checks all127 rational rows using Fraction arithmetic.
+- The original verify_completion.py was run from both identical retained archive paths. Both reported EXACT_CERTIFICATE_VERIFIED, rows=127.
+- The independent Q33 finite support verifier checks only arithmetic/support-shape facts. It does not replace the analytic proof.
 
 ## Explicit non-dependencies
 
-- Q32's 285-edge/excess-six theorem;
-- V11's retained Q31/Q32/Q33 minimum-degree declaration;
-- any selected 31-point / 56-witness reserve;
-- any SAT/UNSAT solver result or random-search failure;
-- the E334/H35 high-layer V8 package;
-- the BACKEND49 49-point theorem;
-- Kang–Pikhurko after the elementary 25-set replacement.
+- Q32's 285-edge/excess-six core theorem;
+- V11's retained minimum-degree declaration or its kernel-completion claims;
+- a universal Type-I assumption;
+- a K6-free or omega(H)<=5 condition;
+- a degree-nine exceptional-vertex premise;
+- any SAT/ILP UNSAT output or random-search failure;
+- BACKEND49_FIRST_PRINCIPLES_AUDIT_V1;
+- HIGH_LAYER_BACKEND_V8;
+- Kang–Pikhurko after the elementary common-neighbour replacement.
 
-The FRONTEND_LINE_A V1 archive is used as a source container for the explicit hereditary-cap seed and the separate 127-row core-floor certificate. The lower-degree theorem is independently proved in MINDEG12_47_SOURCE_COMPLETE_AUDIT.md.
+## Parent promotion boundary
+
+The Q33 local contradiction closes the E408 Qmax=33 charge layer under the exact h13 T61 parent contract. It does not close E408 Q31 or Q32, does not close E407 Q32, and does not prove EG617(r=12) globally.
