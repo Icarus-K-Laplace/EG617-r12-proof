@@ -45,3 +45,6 @@ Status: OPEN. Full-support m=10 Q32 is not closed.
 The disconnected component-size catalog is complete. The 4+6 and 5+5 cells have aligned four-block core reductions. The 3+7 branch is conditionally closed. The 1+9, 2+8, 4+6, 5+5 and connected-light-graph branches remain open. The endpoint-labelled Type-I source placements, including H-TI isolated-triple, remain open.
 
 No full-model SAT/UNSAT certificate is claimed. No root EG617(r=12) closure is claimed.
+
+
+11. Z=4 two-aligned-column pattern-10 terminal: PROVED IMPOSSIBLE for the exact case p_A=P on two columns, p_A=P tau on four columns, p_B=p_C=p_D=P, with small residual fiber profile (3,2,2,0). The proof and cut/degree verifier are M10_Z4_TWO_ALIGNED_PATTERN10_EXCLUSION.md and verify_m10_z4_two_aligned_cut.py. This does not close other 4+6 patterns.

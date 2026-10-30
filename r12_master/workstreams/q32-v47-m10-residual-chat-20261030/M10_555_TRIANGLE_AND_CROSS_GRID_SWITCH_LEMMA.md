@@ -79,4 +79,4 @@ Therefore every row and every column of the 4-by-6 matching matrix uses at most 
 
 The next problem is to couple the corrected 20,842 one-column states; all twelve outer light-pair 4,5,5 constraints; the three outer heavy-pair corrected 5,5,5 constraints with their actual extra-edge endpoints; exact per-vertex degree equations; the two residual clique-fiber partitions and their relative placement; and global alpha(H)<=4 and omega(H)<=11.
 
-No six-column grid contradiction is established. No Z=4 closure, no full-support m=10 closure, and no Q32/root closure is claimed.
+The exact Z=4 two-aligned-column pattern-10 terminal with F=(3,2,2,0) is separately excluded in M10_Z4_TWO_ALIGNED_PATTERN10_EXCLUSION.md. Other six-column patterns remain OPEN. No Z=4 closure, no full-support m=10 closure, and no Q32/root closure is claimed.

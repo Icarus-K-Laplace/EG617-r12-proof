@@ -83,3 +83,8 @@ The former 1,872-count 5,5,5 classifier and 20,788-state one-column catalog are 
 ## 8. Corrected 4+6 K4-e local classification
 
 The corrected exact 5,5,5 theorem and one-column enumeration are recorded in M10_555_TRIANGLE_AND_CROSS_GRID_SWITCH_LEMMA.md. The 41,472 normalized 5,5,5 inputs yield 2,124 valid configurations (1,728 identity and 66 per transposition). The corrected one-column catalog has 20,842 states (20,772 AB-aligned, 70 AB-switched). For every fixed row and every fixed column of the 4-by-6 matching matrix, the matching values take at most two distinct permutations. This does not imply a two-permutation global grid. The six-column compatibility, degree equations, and residual-fiber coupling remain OPEN.
+
+
+## 9. Z=4 two-aligned-column pattern-10 exclusion
+
+The exact two-aligned-column pattern with p_A=P on two columns, p_A=P tau on four columns, and p_B=p_C=p_D=P is PROVED IMPOSSIBLE when the small residual fiber profile is (3,2,2,0). See M10_Z4_TWO_ALIGNED_PATTERN10_EXCLUSION.md. The proof uses connectedness of the K2,4 cut after deleting the outer heavy matching, the exact A-row degree lower bounds, the corrected non-special 5,5,5 branch, and the outer target-degree vector. This excludes only that exact pattern, not all two-aligned-column configurations.

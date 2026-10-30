@@ -80,3 +80,8 @@ Neither replay certifies:
 - any root Q32 contradiction.
 
 Accordingly, full-support m=10 Q32 remains OPEN / NOT_CERTIFIED.
+
+
+## 8. Z=4 two-aligned pattern-10 exclusion
+
+The analytic proof in M10_Z4_TWO_ALIGNED_PATTERN10_EXCLUSION.md excludes the exact pattern with two aligned columns and four A-only switched columns for F=(3,2,2,0). The accompanying verifier checks all 15 perfect matchings on six columns against all 15 choices of the aligned pair (225 cut instances), verifies cut connectedness and the existence of a heavy pair wholly inside the four nonaligned columns, and checks the outer degree-vector implication for all labelled (3,2,2,0) profiles. This is a local structural closure only; other two-aligned patterns, all remaining 4+6 cases, and full m=10 remain OPEN.

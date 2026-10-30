@@ -71,3 +71,10 @@ The former 1,872-count 5,5,5 classification and 20,788-state one-column catalog 
 - verify_m10_555_column_states.py
 
 Exact replay: 41,472 5,5,5 inputs, 2,124 valid (1,728 identity; 66 per transposition); corrected one-column catalog 20,842 (20,772 aligned, 70 switched). Six-column compatibility remains OPEN.
+
+
+## Z=4 two-aligned pattern-10 closure (commit pending)
+- M10_Z4_TWO_ALIGNED_PATTERN10_EXCLUSION.md
+- verify_m10_z4_two_aligned_cut.py
+
+The proof excludes only the exact two-aligned/four-A-only-switched matching pattern under F=(3,2,2,0). It does not promote the entire 4+6 cell.
