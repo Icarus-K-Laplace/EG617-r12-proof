@@ -6,8 +6,8 @@ Date: 2026-10-30
 
 The recovered V12 archive proves finite coverage of the five A--E terminal templates. It does **not** derive a common 29-point set U containing the 49 selected four-set blocks. The global root DAG records this template-to-support interface as `PROVED_CONDITIONAL` under a retained minimum-support chain; however:
 
-- `FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md` on the dedicated E407 branch is still marked `OPEN / NOT_CERTIFIED`;
-- `SUPPORT_BLOCK_ANCHOR_IDENTITY.md` starts from the retained minimum-support boundary and exact-129 factor theorem;
+- `SUPPORT_BLOCK_ANCHOR_IDENTITY.md` is `PROVED_CONDITIONAL` on the frozen minimum-support boundary and exact-129 factor theorem;
+- `FIVE_TEMPLATE_GLOBAL_COMPATIBILITY.md` is marked `OPEN / NOT_CERTIFIED` because the same-core incompatibility theorem remains open; this is not a proof that the support interface itself fails;
 - the V12 ZIP's C7/C8 sections do not state or prove `|U|=29`.
 
 The selected-component argument does give seven one-outside-anchor K5 components per exact-129 color: each K5 meets the 14-point outside set because `alpha(H)<=4`; p cannot share a non-target K5 with shell vertices; B is a target K10; and any multi-outside K5 must use one of the three S vertices. Since the ten K5 components are disjoint, at most three can be multi-outside, leaving at least seven with exactly one outside vertex. Across colors, pairwise linearity follows from unique edge ownership.
