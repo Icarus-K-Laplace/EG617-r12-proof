@@ -63,9 +63,9 @@ max(69,73-a) <= e_C(H) <= 75.
 
 These bounds are **PROVED_CONDITIONAL** on the source-correct Type-I factorization and its registered gadget-placement count. They use no degree-nine exceptional-vertex claim.
 
-## 4. 69/70 near-Turan partition theorem
+## 4. 69/70 near-Turan partition theorem for every non-target color
 
-Let D=C[H]. Since alpha(C)<=12, its complement J=bar D is K13-free. Since alpha(H)<=4, omega(D)<=4: a C-colored K5 inside H would be a target-independent 5-set.
+Let C be any non-target color and D=C[H]. Since alpha(C)<=12, alpha(D)<=12 and its complement J=bar D is K13-free. Since alpha(H)<=4, omega(D)<=4: a C-colored K5 inside H would be a target-independent 5-set.
 
 We have C(47,2)=1081 and t_12(47)=1012.
 
@@ -78,22 +78,20 @@ The internal D-edges in these parts total 11*C(4,2)+C(3,2)=69. Consequently the 
 
 A D-colored K4 crossing two parts needs at least three cross-part edges (the cheapest split is 3+1). Since there is at most one, every D-colored K4 lies wholly inside one size-four part.
 
-It follows that:
-- with eleven source single-outside witness K4s, they occupy all eleven size-four parts and the remaining three vertices are the size-three part;
-- with ten source witness K4s, they occupy ten size-four parts, and the remaining seven vertices split into the remaining K4 part and the K3 part.
+Thus every non-target color in the 69/70 layer has an 11K4+K3 partition. For exact colors, every source single-outside witness K4 occupies one of the size-four parts. With eleven witnesses they occupy all eleven size-four parts; with ten witnesses they occupy ten, and the remaining seven vertices split into the remaining K4 part and the K3 part.
 
 **Status: PROVED_CONDITIONAL** on the registered second-Turán theorem and the Q32 source contract.
 
 ## 5. CSP and verifier implementation
 
-The isolated solver now:
-1. encodes the exact source-core identity e_C(H)=B_C+G_C^H;
-2. encodes the x-in-O / two-double / triple source gap bounds;
-3. introduces conditional part labels only when e_C(H)<=70;
+The isolated solver:
+1. encodes the exact source-core identity e_C(H)=B_C+G_C^H for exact colors;
+2. encodes the x-in-O / two-double / triple source gap bounds for exact colors;
+3. introduces conditional part labels for every non-target color whenever e_C(H)<=70;
 4. requires eleven parts of size four and one of size three;
 5. forces all within-part pairs to have color C and allows exactly e_C(H)-69 cross-part C-edges;
-6. places every single-outside source K4 wholly inside one size-four part.
+6. for exact colors, places every single-outside source K4 wholly inside one size-four part.
 
-The independent verifier reconstructs the partition from the 10 or 11 source witness blocks. For ten witnesses it searches the remaining seven vertices for a C-K4 plus a C-K3; for eleven it checks the remaining three vertices form a C-K3. It then verifies the cross-part C-edge count.
+The independent verifier reconstructs the partition from the color graph: in the 69-layer it takes connected components; in the 70-layer it deletes the unique cross-part edge and takes connected components. It verifies part sizes and cross-edge count for all non-target colors, then checks source-witness alignment for exact colors.
 
-These are necessary conditions only. Colors with 71--75 H-edges remain outside this partition normal form, and the complete m=8/9 full-support CSP remains **OPEN**.
+These are necessary conditions only. Colors with 71+ H-edges remain outside this partition normal form, and the complete m=8/9 full-support CSP remains **OPEN**.
