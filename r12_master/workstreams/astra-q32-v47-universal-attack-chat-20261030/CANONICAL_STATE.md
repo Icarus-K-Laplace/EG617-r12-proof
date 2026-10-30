@@ -1,45 +1,49 @@
-# Independent universal Q32 attack - canonical state
+# Independent universal Q32 attack — canonical state
 
-Date: 2026-10-30.
-Branch: workstream/r12-astra-q32-v47-universal-attack-20261030.
+Date: 2026-10-30.  
+Branch: workstream/r12-astra-q32-v47-universal-attack-20261030.  
 Exclusive write directory: r12_master/workstreams/astra-q32-v47-universal-attack-chat-20261030/.
-Base: global workstream b0459807acd4b7e386148056ddf77d7998918893.
 
-## Headline theorem - PROVED
+## Headline theorem U6 — PROVED CONDITIONAL ON THE CORE CONTRACT
 
-There is no simple graph H with
+There is no simple graph H satisfying all five conditions:
 
-    |H|=47, e(H)=285, delta(H)>=12, alpha(H)<=4, omega(H)<=11.
+    |V(H)|=47, e(H)=285, delta(H)>=12, alpha(H)<=4, omega(H)<=11.
 
-Hence genuine full-support E408/Q32 configurations with this core contract do not exist, uniformly for m=8,9,10. The proof is analytic and uses ordinary Turan and the published second-Turan theorem. No sibling theorem, source placement, exact-color partition or random-search failure is a proof premise. This does not close Q33, E407 or EG617(r=12) as a whole.
+The proof is analytic. It uses ordinary Turan and Kang–Pikhurko Theorem 1 at n=25,r=2. The total degree excess is forced to be six. The proof reduces every candidate to two support templates:
 
-## Mechanism
+- P: 12,13,13,24,24, requiring at least 8 excess units;
+- D: 12,13,14,23,24, requiring at least 10 excess units.
 
-The global excess sum(d(v)-12) is six. An independent degree12 four-set gives private cliques and at most five shared-neighbor points. A 25-point common-antineighborhood bound forbids two exterior vertices both complete to a K10. Rotation and degree accounting reduce all cores to cliques K10,K10,K11,K11 and five pair-supported points, with only two intermediate support multisets:
+Both contradict the available six. The detailed independent proof audit is Q32_UNIVERSAL_THEOREM_INDEPENDENT_AUDIT.md.
 
-- D: 12,13,14,23,24;
-- P: 12,13,13,24,24.
+## Parent application — NOT CERTIFIED
 
-Both are now excluded. In P, two disjoint mixed-clique blockers require at least 4+4=8 excess units. In D, simultaneous incidence accounting requires at least 5+5=10. Both exceed six. Complete K10 attachments are explicitly retained and bounded, never assumed absent.
+The genuine T61/Q32 parent directly supplies four of the five core conditions:
 
-Full proof: UNIVERSAL_Q32_THEOREM.md, steps1-8, conclusion U6.
+- |H|=47;
+- e(H)=285;
+- alpha(H)<=4;
+- omega(H)<=11.
 
-## Verification and adverse search
+The remaining condition delta(H)>=12 is inherited through E406_CORE_MINDEG_288.md and the lower-order R(3,35) minimum-degree seed. INTEGRATED1_CORE211_AUDIT.md explicitly records that the seed's 23-neighbourhood / cap-two exclusion still lacks a standalone proof/certificate or exact bibliographic dependency in the audited source set. Therefore the parent implication is not yet independently certified.
 
-INDEPENDENT_VERIFIER.py independently checks the support orbits, all finite integer inequalities, the D local accounting inequality including zero missing sets, source parameters and all 90 aggregate source occupancies. It also directly recounts every independent5 and K12 in the two retained failed search graphs. The latest execution receipt is verification_log.txt; exact results are verification_results.json. The script checks finite proof ingredients and diagnostics; the logical graph proof is in the theorem document.
+Do not report Q32 as closed until Q32_PARENT_CONTRACT_MAPPING.md's minimum-degree dependency is recovered and audited. The frozen Q32 contract is not itself a proof of its own parent coverage.
 
-The two executed 30,000-proposal searches predate the final obstructions. Neither produced a valid core. Their failure is not a nonexistence argument; no solver or unrun background computation is claimed.
+## Mechanism and verification
 
-## Read-only source audit
+The mechanism is independent of m, witness support U, source-color placements and exceptional-point locations. The 25-point common-antineighborhood contradiction gives the universal common-neighbor bound; private-clique rotation and pointwise excess accounting leave P and D only.
 
-- Global: b0459807acd4b7e386148056ddf77d7998918893; default main separately recorded at 278639de8572ffab12fe859d36f776fbb88fc4f0.
-- A: f78ac022d70647e9c87580bbc595c2306cfda26c; old K6-free closure retracted.
-- B: initial 43f22404cbcc15b13fb8a12d003e60e9fef9bde7; final audit refreshed to db515bab1a203ccae131c3953ffe2a8ecef539a6. Its K4-e/Z4 slice is reported closed; its remaining full-support frontier remains open in that branch. No B theorem is imported.
-- C: ca088347124f4ea7706a63129d7ed63d4e4090d7; Q33 promotion open.
-- D: 0b48d1f768e3d3c1d3137e0c3ec12f1ff618bb91; parent support bridge remains conditional.
+Independent JavaScript replay confirmed:
+- support orbit counts 2,3,5 for h=3,4,5;
+- P mixed-pair minimum 4 over 90 legal cases;
+- D mixed-pair minimum 5 over 90 legal cases;
+- direct recount of both retained failed-search graphs.
 
-The actual T61 parent supplies target alpha(F)<=5, hence non-target omega(C)<=5. The target core uses only omega(H)<=11. No sibling, previous Astra directory, root state or default branch is modified.
+The committed Python verifier receipt remains in verification_log.txt and verification_results.json. Failed search is diagnostic only; no solver UNSAT or exhaustive 47-vertex graph enumeration is claimed.
 
-## Promotion boundary
+## Scope and firewall
 
-U6 is ready for independent mathematical review and import wherever all five CORE hypotheses have been established. Source profiles and exceptional positions impose no further case split because their common core projection is already impossible. Root integration and global EG617 closure are outside this write scope and are not claimed.
+If the parent minimum-degree input is certified, U6 excludes every Q32 support row |U|=44,45,46,47 and every m=8,9,10 at once. Until then, these remain conditional at parent level. Sibling low-support closures remain their own conditional results; no sibling theorem is imported into U6.
+
+Q33 (284 edges, excess four), E407, E408 Q31, and the original EG617(r=12) root are outside U6. No global root or sibling file has been modified.
