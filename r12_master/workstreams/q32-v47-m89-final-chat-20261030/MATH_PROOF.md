@@ -141,3 +141,61 @@ Exact integer enumeration gives 79 feasible scalar triples for m=8 and 61 for m=
 - **WITHDRAWN:** `delta(H[R]) >= 12-m` unconditionally. A residual vertex can have more than m target neighbors in Q; the extra cross edges trade against its internal R-degree. Only the summed inequality `y+2z>=D_m` is currently justified without fixing the cross-degree distribution.
 - **WITHDRAWN:** `d_H(q,R) >= 13-m` unconditionally for q in Q. A pivot-block vertex can have extra target neighbors in other pivot blocks; those extra internal-Q edges trade against its R-degree.
 - **WITHDRAWN as an m=8/9 constraint:** the six common-P factors and residual-signature injectivity from the aligned m=10 3+7 cell. No m=8/9 four-track reduction has been proved in the inspected dependencies.
+
+
+## 9. Exact source-core accounting and the 69/70 near-Turan normal form
+
+For an exact color C, let \(b_i=|K_i\cap O|\) for its twelve Type-I K5 factors and let \(a=|A_0|\). The source profile gives \(b_i\in\{1,2,3\}\). The K5 interiors contribute exactly
+\[
+B_C=\sum_{i=1}^{12}\binom{5-b_i}{2}
+\]
+edges inside H. The only other C-edges are the nine Type-I gadget edges. Their H-H contribution is exactly
+\[
+G_C^H=
+{\bf1}_{x_C\in H}\bigl(|(N_s\setminus A_0)\cap H|+
+|(N_t\setminus\{y_C\})\cap H|\bigr)
++{\bf1}_{y_C\in H}|A_0\cap H|.
+\]
+Thus
+\[
+\boxed{e_C(H)=B_C+G_C^H.}
+\]
+The isolated solver encodes this equality directly, independently of the aggregate 69--75 cap.
+
+The source-correct placement cases sharpen it:
+
+- If \(x_C\in O\), the outside profile is \((2,1^{11})\), so \(B_C=69\). All gadget edges incident with \(x_C\) leave H; only \(y_C-A_0\) can contribute H-H edges. Therefore
+  \[
+  69\le e_C(H)\le69+a\le73.
+  \]
+- If \(x_C\in H\) and the profile is two-double \((2,2,1^{10})\), then \(B_C=66\). The registered Type-I gadget count gives \(G_C^H\ge6-a\), while at least one gadget edge leaves H, so
+  \[
+  \max(69,72-a)\le e_C(H)\le74.
+  \]
+- If \(x_C\in H\) and the profile is triple \((3,1^{11})\), then \(B_C=67\), and the same gadget count gives
+  \[
+  \max(69,73-a)\le e_C(H)\le75.
+  \]
+
+**Status: PROVED_CONDITIONAL** on the source-correct Type-I factorization and the registered gadget-edge placement lemma in \`HIGH_SUPPORT_NEAR_TURAN.md\`.
+
+### 9.1 Near-Turan partition when \(e_C(H)\in\{69,70\}\)
+
+For \(D=C[H]\), \(\alpha(D)\le12\), hence \(\bar D\) is K13-free. Also \(\omega(D)\le4\), because a C-colored K5 inside H would be an independent 5-set in the target graph H.
+
+- If \(e(D)=69\), then \(e(\bar D)=\binom{47}{2}-69=1012=t_{12}(47)\), so Turán equality gives a complete 12-partite complement.
+- If \(e(D)=70\), then \(e(\bar D)=1011\). The registered second-Turán bound says a non-12-partite K13-free graph on 47 vertices has at most \(1010\) edges. Hence \(\bar D\) is again 12-partite.
+
+Every part is a D-clique and has size at most four. Since the parts cover 47 vertices, their sizes are exactly
+\[
+4^{11},3.
+\]
+The 12 parts contribute exactly \(11\binom42+\binom32=69\) D-edges. There are zero cross-part D-edges in the 69-layer and exactly one in the 70-layer. A D-colored K4 crossing two parts needs at least three cross-part edges (the cheapest split is 3+1), so every D-colored K4 lies wholly in a size-four part.
+
+Therefore every source single-outside witness K4 occupies an entire size-four part. With ten witnesses, the remaining seven vertices split into one further K4 part and one K3 part; with eleven witnesses, the remaining three vertices are the K3 part.
+
+**Status: PROVED_CONDITIONAL** on the registered second-Turán input. The solver now encodes this partition conditionally whenever an exact color has 69 or 70 H-edges; the independent verifier reconstructs the partition from the source witnesses.
+
+### 9.2 What this does not prove
+
+The low-layer partition theorem is a necessary structural reduction, not a contradiction. The m=8/9 solver still has not been executed to SAT/UNSAT. The full-support terminal remains **OPEN**.
