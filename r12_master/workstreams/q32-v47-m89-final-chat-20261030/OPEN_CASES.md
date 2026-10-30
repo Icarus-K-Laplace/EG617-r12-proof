@@ -47,3 +47,8 @@ The read-only root branch currently has an internal summary conflict: its canoni
 4. If the solver is slow, first inspect the distributions `x_ij`, `y_i`, and `epsilon_i` from candidate models; derive stronger cuts only from proved pointwise consequences. Prioritize pairs with multiple forced composed matchings and the 130/131 nonexact color residual structures.
 
 No claim is made that these next steps are already complete.
+
+
+## Low-layer partition-code obstruction
+
+If k non-target colors are in the 69/70 layer, their 11K4+K3 partitions are pairwise orthogonal. Equivalently, the 47 vertices form a 12-ary code of length k with pairwise agreement at most one. The exact agreement count gives 69k<=C(47,2)=1081, hence k<=15. This is not restrictive for k<=11, so it does not close m=8/9. The remaining attack must use the Type-I source labels, the 71+ core-edge colors, and the target-degree/excess ledger together with the partition code.
