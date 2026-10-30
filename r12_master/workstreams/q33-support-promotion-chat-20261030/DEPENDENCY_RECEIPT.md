@@ -45,3 +45,8 @@ This workstream does not modify the global root receipt or global root status.
 
 ## 2026-10-30 update — component-pair charge
 No new upstream source was introduced. The new lemma charges the already registered unselected isolated component K4s by their U- and W-internal pair counts. It uses the same 284-edge core, seven-witness, exact-129 component, gadget-independence, and unique-edge-ownership assumptions listed above. The pointwise inequality is elementary and exact for k=0,...,4. Global root status remains OPEN.
+
+
+## 2026-10-30 correction — aggregate gadget overlap cap 4
+
+The selected gadget witness Q is a four-set inside G_C, and the retained exact-129 gadget contract gives alpha(C[G_C])<=2. Hence alpha(C[Q])<=2 and e_C(Q)>=2. Because the six Q-pairs have unique colors, all colors other than C combined can occupy at most four pairs. This source fact is recorded in Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md Section 3 and Q33_CROSS_COLOR_GADGET_INTERSECTION.md Section 1/2. The current U-reserve coefficient is therefore 4 uniformly for m=8,9,10, superseding the coarser allowance in the first support-screen commit.

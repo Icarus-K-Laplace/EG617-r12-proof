@@ -1,31 +1,19 @@
 # Q33 support-promotion progress log
 
-## 2026-10-30 — component-pair charge closes the first survivors
+## 2026-10-30 — sharp gadget-overlap correction
 
-Starting from commit d79ef2eee7787331f308c1d2651f9d46e81f5f03, added a new analytic charge over every unselected component K4.
+Auditing Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md Section 3 and Q33_CROSS_COLOR_GADGET_INTERSECTION.md revealed that the aggregate nonexact overlap on one selected gadget witness is at most four, not six: alpha(C[Q])<=2 forces at least two of the six pairs to be colored C itself.
 
-For k=|Q intersect U|:
-\[
-C(4-k,2)+2C(k,2)\ge3.
-\]
-There are 3m+h unselected component four-sets. Their U-pair and W-pair costs are bounded by the two reserve budgets B_U and B_W. Therefore:
-\[
-3(3m+h)\le B_W+2B_U.
-\]
+Replaced the coarse coefficient min(6,4(11-m)) by the sharp uniform coefficient4 for m=8,9,10.
 
-This eliminates the first scalar survivors from the previous commit:
-- m=8,v=33,h=5;
-- m=9,v=34,h=4,5,6;
-- m=10,v=35,h=2,...,8.
+With the component-pair charge, the all-support screen now excludes:
+- m=8: v=31,32,33;
+- m=9: v=32,33,34;
+- m=10: v=34,35.
 
-New first survivors:
-- m=8,v=34,h=4,...,7;
-- m=9,v=35,h=3,...,9;
+First survivors:
+- m=8,v=34,h=7;
+- m=9,v=35,h=5,...,9;
 - m=10,v=36,h=3,...,10.
 
-Verification:
-- exact all-support arithmetic: PASS;
-- grouped-profile DP over every per-color 3/4-component k-profile: PASS;
-- scalar charge classification equals grouped-profile DP on all47 (m,v) cells.
-
-Scope: conditional necessary constraints only. Larger-support graph cases remain OPEN; global root status unchanged.
+The verifier was updated and cross-checked against a grouped-profile DP on all47 (m,v) cells. Global root status remains OPEN.

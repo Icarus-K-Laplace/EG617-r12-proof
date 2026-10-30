@@ -25,7 +25,7 @@ Support floors:
 
 Let p_k(n) be the minimum number of edges in an n-vertex graph with independence number at most k, and t_k(n)=C(n,2)-p_k(n). Thus t_4(n) is the maximum number of edges in a K5-free graph.
 
-## 3. U-side reserve
+## 3. U-side reserve with the sharp gadget overlap
 
 Write epsilon_W=sum_{x in W}(d_H(x)-12)<=4 and e_W=e(H[W]). Degree-sum on W gives
 \[
@@ -41,9 +41,13 @@ e(L_U)\le C(v,2)-280+12w-p_4(w)=:L_{\max}(v).
 \]
 For w=0, use e(L_U)=C(47,2)-284=797.
 
-Each of the n nonexact colors needs p_12(v) U-edges. The selected witness blocks occupy42m distinct U-pairs; 42m-6h are component-witness edges owned by exact colors. For each selected gadget witness Q, alpha(C[Q])<=2 for its exact color C, so overline(C[Q]) is triangle-free. Each other color has at most four edges in Q, and all nonexact colors together have at most min(6,4n)=rho_m edges there. Hence
+Each nonexact color D needs p_12(v) U-edges. The 7m selected witness blocks occupy42m distinct U-pairs; 42m-6h are component-witness edges owned by exact colors.
+
+For each selected gadget witness Q inside the exceptional gadget of its exact color C, alpha(C[Q])<=2. Thus C[Q] has at least two edges. Since Q has six pairs and edge ownership is unique, all colors other than C together can use at most four edges in Q. In particular, all nonexact colors together can overlap the h selected gadget witnesses in at most4h edges.
+
+All remaining nonexact U-edges must lie outside the 42m selected witness pairs, where at most L_max(v)-42m slots remain. Therefore
 \[
-\boxed{n p_{12}(v)\le L_{\max}(v)-42m+\rho_mh.}\tag{U}
+\boxed{n p_{12}(v)\le L_{\max}(v)-42m+4h.}\tag{U}
 \]
 
 ## 4. W-side reserve
@@ -69,13 +73,13 @@ For each unselected component four-set Q, let k=|Q intersect U|. Its U-pair and 
 \binom{4-k}{2}+2\binom{k}{2}\ge3
 \qquad(k=0,1,2,3,4).
 \]
-There are exactly \(3(m-h)+4h=3m+h\) such unselected component four-sets. Let X_U and X_W be the total U- and W-internal pair costs over them. Then
+There are exactly \(3(m-h)+4h=3m+h\) such unselected component four-sets. If X_U and X_W are their total U- and W-internal pair costs, then
 \[
 X_W+2X_U\ge3(3m+h).
 \]
-The two reserve ledgers give
+The reserve ledgers give
 \[
-X_U\le B_U:=L_{\max}(v)-42m-np_{12}(v)+\rho_mh,
+X_U\le B_U:=L_{\max}(v)-42m-np_{12}(v)+4h,
 \]
 \[
 X_W\le B_W:=t_4(w)-np_{12}(w).
@@ -85,19 +89,17 @@ Consequently every parent must also satisfy
 \boxed{3(3m+h)\le B_W+2B_U.}\tag{C}
 \]
 
-This is the new coupling inequality. It charges every unselected component K4 simultaneously to both sides of the U/W cut.
-
 ## 6. Exact support-size screen
 
-For each m,v, enumerate h=0,...,m and impose (U), (W), and (C). The exact table is in Q33_ALL_SUPPORT_SIZES.md; the committed verifier independently replays the finite arithmetic and a grouped-profile dynamic program.
+For each m,v, enumerate h=0,...,m and impose (U), (W), and (C). The exact table is in Q33_ALL_SUPPORT_SIZES.md; the committed verifier also checks the grouped per-color component-profile dynamic program.
 
 New excluded cells:
-- m=8: v=31,32,33 excluded; first scalar-feasible cell v=34,h in {4,5,6,7};
-- m=9: v=32,33,34 excluded; first scalar-feasible cell v=35,h in {3,...,9};
-- m=10: v=34,35 excluded; first scalar-feasible cell v=36,h in {3,...,10}.
+- m=8: v=31,32,33 excluded; first scalar/profile-feasible cell v=34,h=7;
+- m=9: v=32,33,34 excluded; first scalar/profile-feasible cell v=35,h in {5,6,7,8,9};
+- m=10: v=34,35 excluded; first scalar/profile-feasible cell v=36,h in {3,...,10}.
 
 ## 7. Scope firewall
 
-The inequalities are necessary, not sufficient. A nonempty h-set is not a graph realization. All larger support sizes through47 remain open.
+These are necessary inequalities, not sufficient conditions. A nonempty h-set is not a graph realization. All larger support sizes through47 remain open.
 
 The excluded cells are **PROVED_CONDITIONAL** under the source contract; the arithmetic/profile screen is **COMPUTATION_CERTIFIED**. Global E408 Q33 support promotion and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.

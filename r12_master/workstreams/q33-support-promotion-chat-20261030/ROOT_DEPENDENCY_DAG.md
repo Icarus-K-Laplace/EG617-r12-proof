@@ -4,7 +4,8 @@
 flowchart TD
   P[Original E408 Q33 parent] --> WIT[Seven witnesses per exact-129 color]
   WIT --> SUP[Support floors m=8:31, m=9:32, m=10:34]
-  WIT --> U[U-side reserve]
+  WIT --> GAD[alpha(C[Q])<=2 gives aggregate overlap cap 4]
+  GAD --> U[Sharp U-side reserve]
   WIT --> W[W-side reserve]
   WIT --> CH[Component-pair charge]
   SUP --> CELLS[Exact all-v,m,h arithmetic/profile screen]
@@ -19,7 +20,7 @@ flowchart TD
 
 Gate statuses:
 - Seven-witness interface: **PROVED_CONDITIONAL** under exact-129 factor and shell-label contracts.
-- U/W reserve and component-pair charge: **PROVED_CONDITIONAL**.
+- Gadget overlap cap4, U/W reserves, component-pair charge: **PROVED_CONDITIONAL**.
 - Exact arithmetic/grouped-profile screen: **COMPUTATION_CERTIFIED**.
 - Remaining graph-level completion: **OPEN**.
 - Root promotion: **OPEN / NOT_CERTIFIED**.
