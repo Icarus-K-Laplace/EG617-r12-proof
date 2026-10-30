@@ -47,3 +47,15 @@ Independent local replay passed:3456 normalized4,5,5 triples,42336 local matchin
 
 New excluded contract: C3+C4 at z4, including all empty-fiber configurations, in the named3+7 cell. With the previous14-type theorem,15 of18 types are excluded. Remaining types: C3+2P2,z2; C3+P4,z3;2C3+P1,z3, each with at least one empty class. Other m10 splits and m8,m9 remain OPEN; the EG617 root remains NOT_CERTIFIED.
 
+The z4 theorem and replay were committed as4f092e6e19529c1651ab9c3c3b7cb79db9b7fabd; the dedicated ref and all19 local/remote blobs were verified.
+
+## Next continuation: close2C3+P1,z3
+
+High-support HEAD remained1de8a37556ba98ccbb8651f39a5192629453f0f1; own HEAD began at4f092e6e19529c1651ab9c3c3b7cb79db9b7fabd. Re-read the source zero-slack map, transversal blocker, residual-degree and endpoint ledgers. Only the isolated residual vertex can spend the two additional incidences in2C3+P1.
+
+Proved Section5 of COLORED_PACKING_OBSTRUCTION.md. Unequal empty/nonempty statuses force a K13. With two empty partitions, each residual triangle forces at least two diversion blocks. Opposite diversion classes are completely heavy-adjacent. The budget forces exactly two blocks of each class and zero slack there; the remaining three blocks would simultaneously need all extras at small label1 and all extras at small label2. Contradiction.
+
+Independent replay:42336 matching representations,13 partition pairs,564 admitted23-vertex local graphs, all opposite-diversion light-pair tests and both special-neighbor tests passed. Counts and local assignments are saved. The proof is analytic and conditional on the registered normal form and genuine parent clique cap; no full-model UNSAT claim. This is distinct from A's z3 catalogs and does not alter A or B files.
+
+Sixteen of18 residual types are now excluded. Smallest remaining family reached here: C3+2P2,z2 and C3+P4,z3 with at least one empty fiber. Other full-support branches and the EG617 root remain OPEN / NOT_CERTIFIED.
+

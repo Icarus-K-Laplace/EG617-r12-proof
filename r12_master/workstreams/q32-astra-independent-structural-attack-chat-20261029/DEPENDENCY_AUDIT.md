@@ -56,7 +56,9 @@ The light-neighbor lemma is applied only adjacent to the explicitly forced speci
 
 The parent full-degree bound delta(F)>=13 is not needed for the z4 theorem. It would permit the stronger (3,4,4) gadget quota only after its full-parent applicability is restored; the relaxed core alone still supports only (4,5,5). We do not silently strengthen that relaxed contract or edit sibling code.
 
-The z4 proof closes the actual empty-class escape in C3+C4 within the registered normal form, not just a necessary scalar test. Its transfer to full Q32 is conditional on the upstream reduction proving that a candidate enters this normal form. The remaining three empty-fiber types have positive residual-incidence slack and are still open. No full-model SAT/UNSAT certificate or full-colored counterexample is supplied.
+The z4 proof closes the actual empty-class escape in C3+C4 within the registered normal form, not just a necessary scalar test. Its transfer to full Q32 is conditional on the upstream reduction proving that a candidate enters this normal form.
+
+The new Section5 theorem closes2C3+P1,z3. It allows the isolated residual vertex's two additional incidences; it does not assume zero slack for all outer blocks. Zero slack is deduced only for four diversion blocks after their opposite-diversion pairs consume the heavy budget. It uses exact residual budgets, the4,5,5 classification, outer K7 tracks, the ledger t_D+y_D=2, and omega(H)<=11. No new external extremal theorem or sibling CSP output is imported. A fresh source-head check found high-support still at1de8a37556ba98ccbb8651f39a5192629453f0f1. The two remaining empty-fiber types have additional incidences on distinct residual endpoints and remain open. No full-model SAT/UNSAT certificate or full-colored counterexample is supplied.
 
 E407 Q32 reserve contradictions remain conditional on V12/parent coverage. E408 Q33 minimum-support contradiction does not prove all supports enter that boundary. Existing local orientation/parity/arithmetic checks do not certify the full graph. These theorems do not close all Q32 rows; EG617(r=12) remains OPEN / NOT_CERTIFIED.
 

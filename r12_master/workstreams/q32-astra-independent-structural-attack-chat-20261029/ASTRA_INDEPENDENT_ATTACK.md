@@ -31,7 +31,9 @@ The current generic sibling CSP incorrectly applies the non-target clique cap5 t
 
 ## What is still needed
 
-For the3+7 branch: exclude C3+2P2 (z2), C3+P4 (z3), and2C3+P1 (z3), with at least one empty fiber, or construct a true global completion. The z4 proof uses exact residual neighborhoods (zero additional residual incidences); the z3 cases have two additional incidences and z2 has four. Those incidences can break the exact light-neighbor conclusion and must be tracked explicitly. The z4 theorem is not automatically a proof for those cells.
+New Section5 of COLORED_PACKING_OBSTRUCTION.md excludes2C3+P1,z3. Its two additional incidences are both owned by the isolated residual vertex. The two full residual triangles force two disjoint diversion classes of at least two blocks each; opposite diversions cannot be light-adjacent. The heavy-degree bound forces exactly two of each and zero residual slack at those four blocks. Each remaining block must then realize two contradictory extra-endpoint labels. This is a complete analytic conditional exclusion, extending the count to16 of18 types.
+
+For the3+7 branch: exclude C3+2P2 (z2) and C3+P4 (z3), with at least one empty fiber, or construct a true global completion. These cases have four or two additional incidences spread over distinct residual endpoints. They have only one full residual triangle, so the two-diversion-class proof does not transfer automatically.
 
 For the full terminal: m8,m9 and the other m10 light-component possibilities still need structural exclusions. No theorem has been proved that every full-support core admits the excluded four-clique partition. Such a claim would be a new substantive theorem, not a consequence of the scalar37-gap budget.
 

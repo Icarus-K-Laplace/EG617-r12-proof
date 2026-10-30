@@ -43,7 +43,7 @@ The target core alpha<=4 check does not replace full-parent alpha<=5 on61 vertic
 ## Smallest unresolved cell reached here
 
 Within the registered3+7 reduction, only:
-C3+2P2 (z2), C3+P4 (z3), 2C3+P1 (z3),
+C3+2P2 (z2), C3+P4 (z3),
 with an empty fiber in at least one of the two residual maps, remain after the new theorem.
 
 This is a reduced open family, not a proof of minimality among all possible formulations. No claim that current abstract constraints alone are feasible or insufficient in the strong success-criterion-E sense is made.
@@ -59,4 +59,10 @@ verify_z4_empty_fibers.py independently checks the local assertions used by the 
 -The terminal integer conditions force two special and two other blocks, hence E0=6<9.
 
 The complete summary table is z4_local_profiles.json; each row includes an actual local matching/extra representative. It is a necessary-condition table, not a full coloring assignment. All omitted full-model conditions, the symmetry justification, and the exact scope of the local replay are described in the theorem file. The hand proof, not a claim of a full-model UNSAT certificate, establishes the conditional cell exclusion. The previous exploratory program was replaced in place by this asserted verifier; no duplicate version is retained.
+
+## New two-triangle z3 replay
+
+verify_z3_two_triangles.py enumerates all42336 matching representations and13 ordered partition pairs with at least one empty class. The isolated residual vertex may have zero, one, or two additional neighbors in the selected outer block; triangle vertices have zero additional-incidence budget. There are564 accepted local representations, including534 in the equal-empty case and30 across unequal statuses. Every accepted23-vertex graph is directly checked for independent5-sets. Every opposite-diversion pair is tested against the actual light-pair graph, and every normal candidate is tested against both special blocks. All assertions pass.
+
+z3_two_triangles_verification.json records the input description, case counts, and equal-partition local assignments. These are not global colored assignments. The proof in COLORED_PACKING_OBSTRUCTION.md Section5 supplies the global incompatibility through the parent clique cap and heavy-incidence ledger. This closes2C3+P1,z3 conditionally, leaving the two types listed above.
 

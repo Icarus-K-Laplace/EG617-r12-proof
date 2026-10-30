@@ -171,5 +171,77 @@ verify_z4_empty_fibers.py checks the local ingredients by direct independent-set
 
 Completeness of this local replay: labels of the fixed residual graph may be named0,...,6 without loss; all its four-clique partitions are enumerated. Sorting each unordered partition removes only independent small/outer label permutations. Those label choices are restored by all24 base permutations. The4,5,5 classification supplies exactly the aligned and synchronized-switch possibilities, including every minority small block and both transposition orientations. The graph construction includes all edges of the selected23-vertex induced local graph. It deliberately omits the other six outer blocks, the14 outside vertices, and the eleven other colors. Thus acceptance is only a necessary local condition, never a global realization certificate. The analytic degree/clique argument above supplies the global contradiction within the stated normal form.
 
-The remaining3+7 residual types are now C3+2P2 (z=2), C3+P4 (z=3), and2C3+P1 (z=3), with at least one empty fiber. Fifteen of the eighteen registered types are excluded. Full Q32 and the original EG617 problem remain OPEN / NOT_CERTIFIED.
+After Section4 the remaining3+7 residual types are C3+2P2 (z=2), C3+P4 (z=3), and2C3+P1 (z=3), with at least one empty fiber. Section5 below further excludes2C3+P1. Full Q32 and the original EG617 problem remain OPEN / NOT_CERTIFIED.
+
+## 5. New theorem: the z=3 two-triangle cell is impossible
+
+Date: 2026-10-30. Status: PROVED_CONDITIONAL on the same registered3+7 normal form and genuine parent clique cap. No full-color solver is used.
+
+**Theorem.** There is no graph in that normal form with R=2C3+K1, z=3, alpha(H)<=4, and omega(H)<=11. This includes every empty/nonempty status of the two residual fiber partitions. Combined with Sections2 and4, sixteen of the eighteen residual types are excluded.
+
+Write R=T1 disjoint-union T2 disjoint-union {r}, with T1,T2 triangles. The residual equation b_v=2-d_R(v) gives b_v=0 on both triangles and b_r=2. Therefore only r can have any additional outer neighbor beyond its full G-track. Small-block residual neighborhoods remain exactly their F-fibers. For an outer block D let y_D count additional residual incidences and t_D count outer-to-outer extra-edge incidences. The source ledger gives
+
+    t_D+y_D=2,   sum_D y_D=2.                              (5.1)
+
+Every vertex in a G-track occupied by a full residual triangle has residual degree3. The exact outer-vertex degree equation then gives k=0 and no additional residual or outer-extra incidence at that vertex. Its common small label is thus the same base-matching label in all three small blocks.
+
+### 5.1 All unequal empty-class statuses force K13
+
+There is exactly one unordered three-class clique partition of R: T1,T2,{r}. Thus an empty-fiber partition is this partition plus an empty class. Each four-nonempty partition splits one of the triangles into a pair and singleton, leaving the other triangle and {r} intact. There are six such partitions.
+
+If both F and G have four nonempty classes, Section2 applies.
+
+Suppose F has four nonempty classes and G has an empty class. Let T be the triangle left unsplit by F; it is also a full G class. Every outer vertex in its G-track has residual degree3 and hence a singleton common label. Because no triangle vertex has an additional neighbor, the only nonempty F class contained in its residual neighborhood T is F_s=T itself. Thus all seven vertices in that track meet the three small vertices of label s. These vertices and T form a K13.
+
+Suppose F has an empty class and G has four nonempty classes. Let T1 be the triangle split by G and T2 the unsplit triangle. No outer vertex can have F-label T1 as its singleton common label: it would need all three vertices of T1, but no G class contains T1 and none of those three vertices has an additional neighbor. Since all G classes are nonempty, a doubleton is impossible. Thus each outer block is a switch, and its omitted common label must be T1. The T2 label consequently occurs, and the only outer vertex that can carry it is the vertex in the full T2 G-track. Again that entire K7 track meets the same small triangle, giving K13 with T2.
+
+Hence only the case where both partitions have an empty class remains. They necessarily coincide. Label them
+
+    F0=G0=empty, F1=G1=T1, F2=G2=T2, F3=G3={r}.            (5.2)
+
+### 5.2 Two diversion classes
+
+For i=1,2, the vertex in column i of any outer block has residual degree3 and k=0. Its singleton common label can only be i or0. Let A_i be the set of outer blocks whose column-i common label is0, and let a_i=|A_i|.
+
+The two sets A1,A2 are disjoint: their triangle columns have no small-extra incidences, so their common labels are base-matching labels; a bijection cannot assign small label0 to both columns.
+
+In the other 7-a_i blocks, column i meets all three small vertices of label i. Together with T_i these vertices form a clique of size13-a_i. The parent cap11 therefore forces
+
+    a_1>=2,   a_2>=2.                                    (5.3)
+
+**Opposite-diversion lemma.** Every pair D in A1, E in A2 is heavy.
+
+Proof. In each small-block-to-D base matching, the inverse labels at outer columns1,2 are respectively0,2. In each small-block-to-E matching they are respectively1,0. These two permutations are neither equal nor related by one transposition: the change at column1 would require swapping small labels0 and1, which cannot also change label2 at column2 into0. If D-E were light, its matching would be the global outer identity, and the4,5,5 classification on S_j,D,E would allow only equal matchings or a single-transposition difference. Contradiction. QED.
+
+Every block in A1 thus has at least a_2 heavy outer neighbors, and conversely. Each heavy neighbor costs at least one incidence in (5.1), where t_D<=2. From (5.3),
+
+    a_1=a_2=2, and y_D=0 for all D in A1 union A2.         (5.4)
+
+All four blocks have used their entire heavy-incidence budget on the opposite diversion class. Each of the remaining three outer blocks must therefore be light-adjacent to all four.
+
+### 5.3 Exact special forms at the four zero-slack blocks
+
+For D in A_i, y_D=0 makes every residual neighborhood exactly its G class. A switch would duplicate an F class, which under zero slack must be the empty class0. Its transposition would then involve0, making the three base matchings disagree on the image of0. This is incompatible with the column-i common base label0. Thus D is aligned.
+
+Its other triangle column has its own label. Its singleton column must have label3: the other possible contained F class is empty, and label0 is already used at column i. Therefore all three base matchings are tau_i=(0 i). At column0 the base label is i, whose nonempty F-fiber cannot be a singleton common label there. The only possible doubleton is {i,0}, since a triangle has no complete join to {r} or the other triangle. Hence
+
+    S_i: all three bases tau_i; all three extras (small0, outer0).  (5.5)
+
+### 5.4 The remaining three blocks are impossible
+
+Fix any remaining block E. It lies in neither diversion class, so at each triangle column i its common base label is i. It is light-adjacent to an S_i block for both i=1 and i=2.
+
+Apply the4,5,5 classification to the triple consisting of a small block S_j, a fixed outer block D_i of form (5.5), and E. Relative to (5.5), a light neighbor has either the same tau_i base, or the identity base with extra (small i,outer0). The first option would put base label0 at column i of E, contrary to that column's common base label i. Thus every small-block-to-E matching is identity and every one of its three extras is (small i,outer0).
+
+For i=1 these extras must all have small label1; for i=2 they must all have small label2. An extra edge cannot have both small labels. Contradiction. This completes the proof.
+
+This argument permits both additional incidences of r throughout. It does not assume the z4 zero-slack condition globally: zero slack at the four diversion blocks is deduced in (5.4). It does not require choosing a particular weighted-heavy-graph isomorphism type.
+
+### 5.5 Independent finite replay and remaining interface
+
+verify_z3_two_triangles.py considers all42336 aligned/switch matching representations, all13 ordered partition pairs with at least one empty class, and all ways the isolated residual vertex can have zero, one, or two additional neighbors in the selected outer block. The six triangle vertices have no such choice because their budgets are zero. Each admitted23-vertex local graph is checked directly for independent5-sets and the outer-vertex degree cap. Sorting partitions removes only label names, restored by the complete permutation loop. The local assignments and counts are in z3_two_triangles_verification.json.
+
+The replay admits564 raw local configurations:534 for the equal empty partitions and30 for unequal empty/nonempty statuses. Every unequal-status configuration has the forced full-triangle common label used in Section5.1. In the equal-partition case it checks every opposite-diversion pair for light incompatibility and every remaining candidate against both fixed special forms. These are local necessary-condition checks, not full Q32 SAT assignments or a full-model UNSAT proof certificate. The analytic proof above supplies the global contradiction under the named normal-form premises.
+
+The remaining registered3+7 residual types are now only C3+2P2,z2 and C3+P4,z3, with at least one empty class. For C3+P4 the two additional incidences belong to the two path endpoints; for C3+2P2 four incidences belong to the four edge endpoints. Those positive budgets remain to be analyzed. Other m10 light-component splits and m8,m9 remain outside this theorem.
 
