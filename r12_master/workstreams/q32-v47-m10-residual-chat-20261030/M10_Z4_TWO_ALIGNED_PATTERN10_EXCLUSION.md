@@ -151,3 +151,8 @@ This proof uses:
 - the perfect-matching structure of the Z=4 outer heavy graph.
 
 It does not exclude other two-aligned patterns, mixtures of singleton/2+2 column partitions, other residual profiles, or any other 4+6 branch. Full-support m=10 Q32 remains OPEN / NOT_CERTIFIED.
+
+
+## 7. Superseded scope note — 2026-10-30
+
+This exact two-aligned/four-A-only-switch proof remains a valid subcase result, but it is strictly subsumed by M10_K4E_Z4_GLOBAL_GRID_CLOSURE.md. The newer theorem excludes the entire K4-e, Z=4 cell across every residual fiber profile and every six-column grid. Do not treat this file as the current boundary of the proved 4+6 result.

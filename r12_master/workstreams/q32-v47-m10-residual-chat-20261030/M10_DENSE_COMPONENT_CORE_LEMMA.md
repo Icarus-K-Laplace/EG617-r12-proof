@@ -43,3 +43,8 @@ Apply this independently to both five-block components. The 25 cross pairs are a
 ## 3. Scope
 
 These lemmas do not eliminate 4+6 or 5+5. They replace arbitrary internal light graphs by aligned four-block cores and isolate the remaining cross-grid problem. They use only the registered component ledger, the exact 4-edge matching property, and the two-light matching-composition theorem.
+
+
+## 5. K4-e, Z=4 global terminal
+
+The entire K4-e, Z=4 branch is excluded by M10_K4E_Z4_GLOBAL_GRID_CLOSURE.md. The proof covers both possible 2-regular residual graphs, all small/outer residual clique-fiber profiles, and every six-column cross matching/extra-edge grid. It uses the exact pointwise outer degree cap and the corrected local switch theorems. The remaining 4+6 cases are K4 on the small side and K4-e with Z=1,2,3. This does not close full-support m=10.

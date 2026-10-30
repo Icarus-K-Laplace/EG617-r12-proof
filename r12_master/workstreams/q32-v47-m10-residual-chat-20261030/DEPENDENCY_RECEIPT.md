@@ -78,3 +78,28 @@ Exact replay: 41,472 5,5,5 inputs, 2,124 valid (1,728 identity; 66 per transposi
 - verify_m10_z4_two_aligned_cut.py
 
 The proof excludes only the exact two-aligned/four-A-only-switched matching pattern under F=(3,2,2,0). It does not promote the entire 4+6 cell.
+
+
+## 6. General 4+6 K4-e, Z=4 global closure — 2026-10-30
+
+New theorem: M10_K4E_Z4_GLOBAL_GRID_CLOSURE.md  
+Independent local verifier: verify_m10_k4e_z4_grid_reduction.py  
+Commit: 5b96f62a59eda62471ee35aa7c1fa1bf40965a55
+
+### Imported mathematical inputs
+
+1. The exact 4+6 scalar ledger, K4-e small-side reduction, outer heavy matching, and pointwise degree equations are in M10_DENSE_COMPONENT_CORE_LEMMA.md.
+2. The two-light matching-composition theorem is imported read-only from high-support branch workstream/r12-q32-highsupport-root-20261028, file V47_TWO_LIGHT_MATCHING_COMPOSITION.md, blob a1cff87818214a0f60872da132a559b4f778e36d.
+3. The zero-slack residual-map alignment lemma is also recorded read-only in that high-support branch, file V47_ZERO_SLACK_MAP_ALIGNMENT_AND_TRANSVERSAL_BLOCKER.md, blob 483c0e699cd91769994f58abb64fb66c30af9d7b.
+4. The corrected 4,5,5 switch theorem and corrected 5,5,5 classifier are in M10_555_TRIANGLE_AND_CROSS_GRID_SWITCH_LEMMA.md. The former fixed-transposition 5,5,5 classifier remains retracted and is not used.
+5. The parent clique cap omega(H)<=11 is an inherited input, not a consequence of the 285-edge core alone: the 61-point T61 residual has omega<=11 in the root promotion audit, and H is its induced 47-vertex core. The proof uses this only for the final K12 contradictions.
+
+### Exact scope
+
+Closed: the entire disconnected 4+6, K4-e, Z=4 slice, across both residual graphs C7 and C3 dot-union C4, all residual clique-fiber maps, and all six-column cross matching/extra-edge grids.
+
+Still OPEN: the K4 small-component branch; K4-e with Z=1,2,3; other component sizes; connected L; full-support m=10 Q32 overall; EG617(r=12).
+
+### Verification boundary
+
+The verifier checks the pair/triple necessary local cell catalog, the 930 outer-light cut shapes, and the normalized corrected-5,5,5 endpoint branch used in the proof. It is not a full 4-by-6 SAT solver and not a 47-vertex Q32 SAT/UNSAT certificate. The global grid contradiction is analytic in the theorem file.

@@ -63,3 +63,12 @@ The isolated-triple occupancy is not excluded by the generic source factorizatio
 ## 6. Conclusion
 
 Astra is a valid conditional structural contradiction for the 3+7 split. It is not an upstream theorem that all original Q32 candidates satisfy the 3+7 contract. The 1+9, 2+8, 4+6, 5+5, connected-light-graph, and endpoint-labelled Type-I source-placement branches remain OPEN. No root Q32 closure is claimed.
+
+
+## 7. Parent clique-cap provenance for the 4+6 K4-e, Z=4 proof
+
+The K12 contradictions in M10_K4E_Z4_GLOBAL_GRID_CLOSURE.md use omega(H)<=11. This is an inherited parent condition, not a consequence of |H|=47, e(H)=285, alpha(H)<=4, and delta(H)>=12 alone.
+
+The registered T61 residual has omega<=11 in the root promotion audit (workstream/r12-twochat-e408-global-20261026, R12_ROOT_CLOSURE_PROMOTION_AUDIT.md, Section 2). The Q32 core H is an induced 47-vertex subset of that 61-point residual. Therefore omega(H)<=omega(T61)<=11. This dependency is stated explicitly in the new theorem and is used only to rule out a K12 after all ten pivot matching tracks align.
+
+No Q32 parent closure or EG617 root promotion is inferred.

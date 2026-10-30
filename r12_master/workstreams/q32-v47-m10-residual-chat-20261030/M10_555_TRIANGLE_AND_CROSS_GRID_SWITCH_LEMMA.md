@@ -80,3 +80,10 @@ Therefore every row and every column of the 4-by-6 matching matrix uses at most 
 The next problem is to couple the corrected 20,842 one-column states; all twelve outer light-pair 4,5,5 constraints; the three outer heavy-pair corrected 5,5,5 constraints with their actual extra-edge endpoints; exact per-vertex degree equations; the two residual clique-fiber partitions and their relative placement; and global alpha(H)<=4 and omega(H)<=11.
 
 The exact Z=4 two-aligned-column pattern-10 terminal with F=(3,2,2,0) is separately excluded in M10_Z4_TWO_ALIGNED_PATTERN10_EXCLUSION.md. Other six-column patterns remain OPEN. No Z=4 closure, no full-support m=10 closure, and no Q32/root closure is claimed.
+
+
+## 8. Global use in the 4+6 K4-e, Z=4 terminal
+
+M10_K4E_Z4_GLOBAL_GRID_CLOSURE.md uses the corrected 5,5,5 classifier only in the following audited branch: after the A-row degree equations force the A-endpoint a of the AB extra edge outside the transposition support {z,k}, and A-E_j is the switched cell with normalized extra edge (z,k), the classifier forces B-E_j extra edge (z,z) when B-E_j is aligned. If B-E_j is switched by the same transposition, its cellwise empty-label edge is (z,z') instead. A different transposition in B-E_j would give a forbidden 3-cycle relative matching.
+
+Together with the 4,5,5 consequences on AC and AD, either alternative puts at least two cross-extra endpoints at the outer size-2 label k', exceeding its exact cap c_j(k')<=1. The branch is independently checked by the six-case normalized replay in verify_m10_k4e_z4_grid_reduction.py. No retracted fixed-transposition predicate is used.
