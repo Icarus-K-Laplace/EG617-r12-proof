@@ -199,3 +199,28 @@ Thus every non-target color in the 69/70 layer has an \(11K_4+K_3\) partition. F
 ### 9.2 What this does not prove
 
 The low-layer partition theorem is a necessary structural reduction for all eleven non-target colors, not a contradiction. The m=8/9 solver still has not been executed to SAT/UNSAT. The full-support terminal remains **OPEN**.
+
+
+### 9.3 Orthogonality of simultaneous low-layer color partitions
+
+If two distinct non-target colors C,D both lie in the 69/70 layer, let P_C,P_D be their 11K4+K3 partitions. Any part of P_C is a C-clique and any part of P_D is a D-clique. Their intersection has size at most one: two common vertices would make their shared edge both C- and D-colored.
+
+Thus the two partitions are orthogonal. For k non-target colors in the low layer, label each vertex by its part index in each partition. Any two distinct vertices agree in at most one coordinate, so these 47 label-vectors form a 12-ary code of length k and minimum Hamming distance at least k-1.
+
+Each coordinate contributes exactly
+\[
+11\binom42+\binom32=69
+\]
+agreeing vertex-pairs. Since no pair agrees in two coordinates,
+\[
+69k\le\binom{47}{2}=1081,
+\]
+so \(k\le15\). This bound does not exclude k=8 or9 (or even all eleven non-target colors); the partition code by itself is therefore not a closure theorem.
+
+The solver now encodes pairwise orthogonality explicitly:
+\[
+P_C(u)=P_C(v)\ \Longrightarrow\ P_D(u)\ne P_D(v)
+\]
+whenever both colors are in the 69/70 layer. The independent verifier checks the same condition on reconstructed partitions.
+
+**Status: PROVED_CONDITIONAL** for the orthogonality statement; the explicit CSP cuts are necessary consequences of unique edge ownership.
