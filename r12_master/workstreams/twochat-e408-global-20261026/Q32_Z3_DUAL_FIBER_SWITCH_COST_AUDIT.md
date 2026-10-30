@@ -127,3 +127,8 @@ Conclusion: every no-double-track completion with F!=G has exactly five zero-cos
 This theorem does not rule out the five-switch/two-endpoint normal form. It does not address the separate double-track branch, the F=G aligned branch, m=10's other light-block components, or full-support m=8,9. The next target is to combine the repeated same-transposition switch pattern with the light-edge matching holonomy and the exact endpoint-label allocation at the two path endpoints.
 
 No retracted degree-nine claim, exceptional-vertex injectivity, Q33 identity, or E407 identity is used. The full-support Q32 terminal and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+## 6. Supersession — pointwise partner-fiber blocker
+
+The five-switch/two-aligned-endpoint normal form above is an intermediate necessary form, not the current open target. The new Q32_Z3_SWITCH_PARTNER_DEGREE_BLOCKER.md proves that the q-vertex receiving two extra small-component edges also sees the transposed partner fiber F_j. Its pointwise degree cap forces n_s+n_j<=1, excluding every nontrivial F/G mismatch mode. The no-double-track branch therefore reduces to aligned F=G profile (2,2,2,1). The double-track and aligned-2221 branches remain open.

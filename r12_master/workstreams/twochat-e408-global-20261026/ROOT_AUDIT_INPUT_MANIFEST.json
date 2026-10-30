@@ -2,8 +2,8 @@
   "audit_date": "2026-10-30",
   "repository": "Icarus-K-Laplace/EG617-r12-proof",
   "branch": "workstream/r12-twochat-e408-global-20261026",
-  "target_head_before_audit": "6e61d995a257bc854c3df2fb47d9da7bc6c6e160",
-  "target_tree_before_audit": "67966b3ed0f4301b8b14d43870230fa4e14d131c",
+  "target_head_before_audit": "3ca716f44845e2c4f4f871843ab490ab9347a75a",
+  "target_tree_before_audit": "250fe58b67674ccfbf7e93c487a8d10ad377e629",
   "write_scope": "r12_master/workstreams/twochat-e408-global-20261026/",
   "overall_status": "OPEN / NOT_CERTIFIED — fail-closed; Q32 full support remains open",
   "root_receipt_promotable": false,
@@ -271,10 +271,28 @@
       "branch": "workstream/r12-q32-highsupport-root-20261028",
       "blob_sha": "d8e3e1ed7f5f443d73d21e388482adae8b38b018",
       "status": "separate double-track residual-type blocker; not covered by no-double-track theorem"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_THREE_BLOCK_SWITCH_LEMMA.md",
+      "branch": "workstream/r12-q32-highsupport-root-20261028",
+      "blob_sha": "5c2decfca14cd8fca834415af9f159240b4237b1",
+      "status": "exact local 4,5,5 switch theorem; normalized transposition form gives partner-label incidences"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/verify_three_block_switch_lemma.py",
+      "branch": "workstream/r12-q32-highsupport-root-20261028",
+      "blob_sha": "94238ce746782e130dba3b8170c00a918c3b462c",
+      "status": "exhaustive local verifier: 3456 configurations, 156 valid; identity and transposition switch forms only"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/verify_v47_37_switch_endpoint_counterexample.py",
+      "branch": "workstream/r12-q32-highsupport-root-20261028",
+      "blob_sha": "fd3ff7e031dfc7822f1784bb51d73421a0708ce6",
+      "status": "reproduces local switch endpoint labels; confirms extra endpoints differ on outer side"
     }
   ],
   "open_dependencies": [
-    "E408 Q32 full-support v=47: m=8, m=9, and remaining m=10 cells. The latest full-support CSP source contract is reconciled, but solver execution/proof replay and graph-level closure remain pending.",
+    "E408 Q32 full-support v=47: m=8, m=9, m=10 aligned (2,2,2,1) terminal and separate double-track/other light-block branches. The no-double-track m=10, 3+7, z=3 branch is reduced to aligned F=G profile (2,2,2,1), but this terminal is not closed.",
     "V12 artifact/replay and complete finite-survivor-to-template mapping for E407 Q32",
     "Q33 support promotion from v=31 to all legal support sizes v=32..47"
   ],
@@ -290,7 +308,8 @@
     "be173984f7f31141805794a027bd675e7b10072e",
     "80e733a4ccd213ed220e71cac13fc099c8dee29d",
     "7823ed12480b064cee31db6eb1b5d200bf3dc069",
-    "6e61d995a257bc854c3df2fb47d9da7bc6c6e160"
+    "6e61d995a257bc854c3df2fb47d9da7bc6c6e160",
+    "3ca716f44845e2c4f4f871843ab490ab9347a75a"
   ],
   "sibling_heads": {
     "e407_q32": "0192807d1f3b2193aa65c25b9f671b36821aaded",
@@ -333,32 +352,42 @@
       "blob_sha": "64c589692038b43e2900c9829815277a25b2ee32"
     },
     {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/verify_q32_z3_dual_fiber_switch_cost.py",
+      "sha": "cbc3a4f0451254041bb46986b120b0986c7701a1"
+    },
+    {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/CANONICAL_STATE.md",
-      "sha": "c7932ea8c6ecab4af67093f2a269a44f551ca9aa"
+      "sha": "28e66d9bda332517b9e128dba6337d4c31aa3b00"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/PROGRESS_LOG.md",
-      "sha": "8fcdc75974a6958ebea22c06d6003613c21c74fb"
+      "sha": "462a4919ffc247e9af165c37a7cb5a6346ee2b41"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/ROOT_DEPENDENCY_DAG.md",
-      "sha": "bb2039b4c9ef98e2a050603fa227dc51dd1a6179"
+      "sha": "eee6f38d884f57aff734f43b6edc00177279bf49"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/Q32_FULLSUPPORT_CSP_SOURCE_AUDIT.md",
-      "sha": "d3134b091b2714b441a1d5938d6cbcd08f52c889"
+      "sha": "6bcce3cdfde1159fc5fb0b2cbd4feea9763cb6b0"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/Q32_CORE285_TERMINAL.md",
-      "sha": "ffe3b8337011ff5bb8eda212430bde6467335129"
+      "sha": "d328b6398f146c5eb79a1ce3b7186641a25ab89e"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/Q32_Z3_DUAL_FIBER_SWITCH_COST_AUDIT.md",
-      "sha": "3f2363fc8ec84649508e37192af171855dd7b034"
+      "sha": "fc26eedcdd8b5a97de75a0f8a2a336715d0d571b"
     },
     {
-      "path": "r12_master/workstreams/twochat-e408-global-20261026/verify_q32_z3_dual_fiber_switch_cost.py",
-      "sha": "cbc3a4f0451254041bb46986b120b0986c7701a1"
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/Q32_Z3_SWITCH_PARTNER_DEGREE_BLOCKER.md",
+      "blob_sha": "0a18e61a21116ad2c95e8604995e0f7735a95116",
+      "status": "new local theorem; eliminates all nontrivial F/G mismatch and reduces no-double-track z3 to aligned profile 2221"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/verify_q32_z3_switch_partner_degree_blocker.py",
+      "blob_sha": "8ced10048f6a3dddb64a62b1a5cf69110b942b9d",
+      "status": "12 normalized switch orientations checked; profile size-sum consequences checked"
     }
   ],
   "root_status": "OPEN / NOT_CERTIFIED",
@@ -367,7 +396,7 @@
     "61f3263de5c99d37f58cd1ab7ad65a05888534f0",
     "6ed8b6e0352ca5aeb713e86676504bb236561db8"
   ],
-  "manifest_parent_commit": "6e61d995a257bc854c3df2fb47d9da7bc6c6e160",
+  "manifest_parent_commit": "3ca716f44845e2c4f4f871843ab490ab9347a75a",
   "audit_commits_before_final_manifest_commit": [
     "549960e37217c243e8abd6b7629301e9f918e6c6",
     "61f3263de5c99d37f58cd1ab7ad65a05888534f0",
@@ -390,7 +419,7 @@
     {
       "branch": "workstream/r12-q32-highsupport-root-20261028",
       "head": "1de8a37556ba98ccbb8651f39a5192629453f0f1",
-      "status": "read-only; v=44,45,46 closed conditionally; v=47 remains open. Canonical color-count/source-mode contracts fixed; m=10 aligned z=0,1 profile 2221 cell closed; z=3 no-double-track mismatch reduced to five empty-fiber switches plus two aligned path endpoints; full CSP execution/proof replay pending.",
+      "status": "read-only; v=44,45,46 closed conditionally; v=47 remains open. Canonical count/source contracts fixed. m=10 no-double-track 3+7,z=3 now forces F=G profile (2,2,2,1), all outer blocks aligned; double-track and aligned-2221 terminal remain open. Full CSP execution/proof replay pending.",
       "canonical_blob": "afa72318cb0626a0e5fa2ca526eba4bd5984f506",
       "m9_closure_blob": "8f1e7b65f5857e9d982ebca1bdfe181d49fda5f0",
       "v46_caseII_blob": "f1e39bfcd6e335e45a6beab81535d725d605cef9",

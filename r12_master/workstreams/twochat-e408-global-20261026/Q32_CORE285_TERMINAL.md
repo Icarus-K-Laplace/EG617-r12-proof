@@ -172,3 +172,10 @@ The source-mode overrestriction and E408 count-vector mismatch are both fixed in
 The previous count-vector warning is historical and superseded by the high-support sibling at HEAD 1de8a37556ba98ccbb8651f39a5192629453f0f1; the model and independent verifier now use target count 408 for all m. Execution and proof replay remain pending.
 
 For the m=10, 3+7, z=3 branch with no double-track outer vertex, the root-side exact dual-fiber audit proves that a nontrivial mismatch between the small residual partition F and outer-track partition G can occur only in three split-fiber profiles. The endpoint-load ledger then forces exactly five zero-cost switches duplicating the same empty F fiber, and two aligned blocks with y_i=1 at the endpoints of the unique outer-heavy path. See Q32_Z3_DUAL_FIBER_SWITCH_COST_AUDIT.md. The z=3 terminal remains OPEN; no global Q32 closure is claimed.
+
+
+## 14. 2026-10-30 — z=3 no-double-track branch reduced to aligned profile 2221
+
+The five-switch/two-aligned-endpoint normal form from Section 13 is superseded as a live mismatch target by the stronger pointwise switch-partner blocker. In a synchronized 4,5,5 switch, the q-vertex receiving two extra small-component edges also sees the transposed partner fiber F_j. Its pointwise degree cap forces n_s+n_j<=1. This excludes all three nontrivial F/G mismatch profiles from the exact partition-pair catalog.
+
+If F=G, a switch is possible only between an empty fiber and a singleton fiber. The only registered profile with such a pair is (3,3,1,0), but a size-three fiber remains fixed and yields a monochromatic K13. Profiles (3,2,2,0) and (3,2,1,1) are also excluded by K13. Therefore the no-double-track m=10, 3+7, z=3 branch reduces to fully aligned F=G profile (2,2,2,1). The double-track branch and aligned-2221 terminal remain OPEN / NOT_CERTIFIED.

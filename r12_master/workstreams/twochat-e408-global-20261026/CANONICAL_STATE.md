@@ -210,11 +210,10 @@ No root promotion is allowed until E408-Q32 is closed from valid premises. Any s
 - Current root status: OPEN / NOT_CERTIFIED. No promotable receipt is issued.
 
 
-## 2026-10-30 — z=3 dual-fiber switch-cost and endpoint-saturation reduction
+## 2026-10-30 — z=3 no-double-track alignment reduction
 
-In the full-support m=10 disconnected 3+7 cell with z=3 and no double-track outer vertex, let F be the small-triangle residual clique partition and G the four outer-K7-track partition. The new exact enumeration of all six registered residual graph types and 91,584 ordered labelled partition pairs shows that a nontrivial F/G mismatch is possible only in three profiles:
-- 2C3+K1: F=(3,3,1,0), G=(3,2,1,1), splitting one size-three F fiber as 2+1;
-- C3+P4: F=(3,2,2,0), G=(3,2,1,1), splitting one size-two F fiber as 1+1;
-- C3+P4: F=(3,2,2,0), G=(2,2,2,1), splitting one size-three F fiber as 2+1.
+The exact dual-fiber partition-pair enumeration first narrowed every nontrivial F/G mismatch to three empty-fiber split profiles. A stronger pointwise switch-partner degree blocker now rules out all three: in a synchronized 4,5,5 switch with transposition partner j, the outer vertex receiving two extra small-component edges has k(q)=2 and is adjacent to every residual vertex in F_j. The degree identity e_Q(q)+d_R(q)=3 therefore forces |F_s|+|F_j|<=1. Every nontrivial mismatch mode has |F_s|+|F_j|>=2, contradiction.
 
-The per-block inequality y_D>=eta_D and the exact endpoint-load budget force precisely five zero-cost switches, all duplicating the same empty F fiber and omitting the same split fiber. The other two blocks are aligned, have y_D=1, and are the endpoints of the unique path in the outer weighted-heavy graph. Their aligned assignments leave a singleton piece of the split fiber unmatched. This is not a contradiction; it is the next finite incidence-normal-form target. Double-track cases remain a separate branch.
+Consequently, in the m=10, 3+7, z=3 cell with no double-track vertex, the small residual partition F equals the outer-track partition G. The same pointwise blocker permits a switch only between an empty fiber and a singleton fiber; the only registered profile allowing that is (3,3,1,0), where a size-three fiber remains fixed and yields a forbidden monochromatic K13. Profiles (3,2,2,0) and (3,2,1,1) likewise have a size-three fiber and no permitted switch. Thus the no-double-track z=3 branch reduces to the fully aligned profile (2,2,2,1), with every outer block aligned.
+
+The double-track z=3 branch, the aligned (2,2,2,1) terminal itself, the other m=10 light-block cells, and full-support m=8,9 remain OPEN / NOT_CERTIFIED. See Q32_Z3_SWITCH_PARTNER_DEGREE_BLOCKER.md and verify_q32_z3_switch_partner_degree_blocker.py.

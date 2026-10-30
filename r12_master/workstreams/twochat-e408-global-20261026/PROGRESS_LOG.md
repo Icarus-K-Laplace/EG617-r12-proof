@@ -253,3 +253,14 @@ The high-support sibling advanced to HEAD 92c9086c8b6ac554ed74b48a5d608aa546bcb9
 - Each zero-cost switch duplicates the unique empty small-map fiber s and omits the unique split fiber j. Five such switches saturate e_i(s)<=5 in each small block, consuming both endpoint-load slack units. Therefore the two positive blocks cannot be switches; they are aligned and have y_D=eta_D=1.
 - The outer weighted-heavy graph has weighted degree 2-y_D, so the two aligned blocks are exactly the endpoints of its unique path component. The five other blocks are degree-two switch blocks.
 - The mismatch branch is narrowed to a five-switch/two-aligned-endpoint normal form, not closed. Double-track cases, the aligned F=G branch, the other m=10 cells, and full-support m=8,9 remain OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-30 — pointwise switch-partner blocker closes z=3 no-double-track mismatch
+
+- Revisited the five-switch/two-aligned-endpoint normal form using the exact normalized 4,5,5 switch, rather than only the common-label incidence lower bound.
+- In the synchronized 3+7 switch, normalize the three small-to-outer base matchings as A-D=id, B-D=id, C-D=(s j), with extra edges A_sD_j, B_sD_j, C_sD_s. The outer vertex q=D_j has k(q)=2 extra small-component incidences, common label s, and label j in both A and B.
+- Every r in F_j is adjacent to A_j and B_j, so q is adjacent to all of F_j; it is also adjacent to all of F_s. Hence d_R(q)>=n_s+n_j. But e_Q(q)>=k(q)=2 and e_Q(q)+d_R(q)=3, so d_R(q)<=1. Therefore every synchronized switch must satisfy n_s+n_j<=1.
+- The three nontrivial zero-cost F/G mismatch profiles from the 91,584-pair enumeration have partner fiber sizes 3, 2, and 3 respectively, with duplicated fiber empty. All violate the pointwise bound. Thus F!=G is impossible in the no-double-track z=3 branch.
+- If F=G, a switch can only transpose an empty fiber with a singleton fiber; among the registered profiles this occurs only in (3,3,1,0), where a size-three fiber is fixed by the transposition and produces a forbidden K13. Profiles (3,2,2,0) and (3,2,1,1) have no allowed switch and also produce K13.
+- Result: the no-double-track m=10, 3+7, z=3 branch is reduced to F=G with profile (2,2,2,1), and every outer block aligned. This is a substantial reduction, not a full z=3 or Q32 closure. Double-track and aligned-2221 branches remain open.
+- Added Q32_Z3_SWITCH_PARTNER_DEGREE_BLOCKER.md and its 12-case normalized switch verifier. The existing five-switch endpoint-saturation result is retained as an intermediate audit, now superseded by this stronger pointwise contradiction for F/G mismatch.

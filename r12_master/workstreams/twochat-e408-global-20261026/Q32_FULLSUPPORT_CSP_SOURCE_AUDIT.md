@@ -201,3 +201,12 @@ The model imports expected_color_counts(m) from the independent verifier and con
 The verifier's source-outside-profile checks and malformed-input guard are present. The model includes lazy independent-set and clique (monochromatic-K6) separation. The branch specification still says FORMULATION ADDED / execution and proof replay pending. The current runtime has no z3, ortools, or pysat; no full solver run, SAT/UNSAT result, or candidate witness is imported.
 
 The earlier sections of this audit document remain as a historical record of defects found in older sibling revisions. They are superseded by this Section 8 and must not be read as a description of the current sibling HEAD.
+
+
+## 9. 2026-10-30 — z=3 no-double-track partner-fiber blocker
+
+The latest root-side result is recorded in Q32_Z3_SWITCH_PARTNER_DEGREE_BLOCKER.md. It uses the exact 4,5,5 switch normal form from the read-only sibling's V47_THREE_BLOCK_SWITCH_LEMMA.md (blob 5c2decfca14cd8fca834415af9f159240b4237b1) and the zero-slack common small-map alignment. In a synchronized switch with transposition (s j), the vertex q_j receiving two extra small-component edges has k(q_j)=2 and is adjacent to every point of F_j as well as F_s. Therefore d_R(q_j)>=n_s+n_j, while e_Q(q_j)>=2 and e_Q(q_j)+d_R(q_j)=3 force d_R(q_j)<=1. Thus n_s+n_j<=1.
+
+All three nontrivial F/G mismatch profiles from the exact partition-pair enumeration have n_s+n_j equal to 2 or 3, so they are impossible. If F=G, a switch is possible only between an empty fiber and a singleton fiber. The only registered profile with such a pair is (3,3,1,0), but a size-three fiber remains fixed and yields a monochromatic K13. Profiles (3,2,2,0) and (3,2,1,1) are also excluded by K13. Hence the no-double-track m=10, 3+7, z=3 branch reduces to aligned F=G profile (2,2,2,1), with every outer block aligned.
+
+This is not a global Q32 closure. The double-track branch and the aligned-2221 terminal remain open. The full CSP still has no execution/proof-replay result in this runtime.
