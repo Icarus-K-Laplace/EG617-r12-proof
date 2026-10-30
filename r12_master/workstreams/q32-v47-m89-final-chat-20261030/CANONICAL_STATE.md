@@ -33,12 +33,12 @@ It does not work on v=44,45,46 or m=10.
 6. **COMPUTATION_CERTIFIED** — the K4,4 minimum-edge table `mu_4(t)` was exhaustively checked over all 65,536 bipartite edge sets; 2,304 local composition cases were replayed.
 7. The m=8 and m=9 scalar pivot-slack frontiers were independently enumerated: 79 and 61 states respectively; the corrected z ranges are 0..12 and 0..9.
 8. **PROVED_CONDITIONAL** — exact source-core accounting (e_C(H)=B_C+G_C^H) and parameter-dependent gap bounds for x in O / two-double / triple placements.
-9. **PROVED_CONDITIONAL** — every non-target color with 69 or 70 H-edges has an 11K4+K3 near-Turan partition; for exact colors every single-outside source witness K4 occupies a size-four part. The CSP and independent verifier now encode/check this structure.
+9. **PROVED_CONDITIONAL — historical intermediate result, superseded by item 17.** Every non-target color in the 69/70 layer has an 11K4+K3 near-Turán partition. The old CSP encoded this conditional structure; those variables have been removed from the current solver after the stronger Type-I partition obstruction.
 10. **WITHDRAWN / repaired** — the first unconditional lazy matching-composition cuts were overconstraints; they have been replaced by source- and pivot-selection-guarded implications.
-11. **PROVED_CONDITIONAL** — simultaneous 69/70 partitions of distinct non-target colors are pairwise orthogonal; the solver and independent verifier now encode/check this condition.
+11. **PROVED_CONDITIONAL — historical intermediate result.** Simultaneous 69/70 partitions are pairwise orthogonal. The earlier solver/verifier revisions encoded this condition; the current terminal no longer needs it.
 12. **PROVED_CONDITIONAL** — every double-outside source factor's H-interior K3 lies in one near-Turan part; the solver and independent verifier encode/check this.
-13. **PROVED_CONDITIONAL** — for an exact 69/70 color with x in H, Nt must be the overfull factor (outside occupancy 2 in two-double, 3 in triple), y is outside H, the Nt H-interior shares x's part, and |(Ns\\A0)∩H|≤1; the exact core count is 69 plus that Ns residual. For x outside, the unique double K3 is aligned and the core excess is 1_{y∈H}|A0∩H|.
-14. **PROVED_CONDITIONAL** — any 69/70 partition yields an existential 253-edge target matching skeleton; its 32-edge residual has degree 1+s_v on 36 vertices and 2+s_v on 11, with at least 30 leaves. This is an analytic theorem, not yet encoded by matching-choice variables.
+13. **PROVED_CONDITIONAL — historical low-layer source localization.** The exact 69/70 source placement constraints remain valid as an intermediate result but are not used by the final Type-I obstruction.
+14. **PROVED_CONDITIONAL — historical 69/70 matching skeleton.** The 253-edge/32-edge residual decomposition is superseded by the unified 250/253-edge Type-I partition skeleton in item 17 and V47_TYPEI_PARTITION_OBSTRUCTION.md.
 
 
 ## Scope firewall
