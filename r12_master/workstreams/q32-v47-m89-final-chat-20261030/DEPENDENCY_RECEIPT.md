@@ -149,3 +149,14 @@ The theorem does not use support size or m beyond the existence of an exact-129 
 | `RUN_LOG.md` | `2b02eb56ec8532e9345764b0c179ab50778926d3` | 91 |
 
 No full verifier execution, SMT run, SAT/UNSAT result, or UNSAT proof log is claimed. The committed verifier includes replay/self-test code; a standalone transcription of the matching/tight-part helper was executed on the synthetic fixture and returned clique sizes 7, 6, and 7 for the three shapes.
+
+
+## Final canonical/open-case refresh
+
+Current isolated branch HEAD: \`186742e147b2cd1a7c464c07185fa75bc8045a7e\`.
+
+The final parent-level corollary is now reflected in:
+- CANONICAL_STATE.md blob \`24a966615c9903dfebb579da6a615a2bf24bbe50\`;
+- OPEN_CASES.md blob \`88d5f346a6b3dacfe6f729b42f2d2d30b288c6b8\`.
+
+The local theorem and ROOT_PROMOTION_NOTE remain unchanged at the blob SHAs in the preceding checkpoint. The parent branch remains read-only at HEAD \`b0459807acd4b7e386148056ddf77d7998918893\`; no root or sibling promotion commit has been made.
