@@ -101,3 +101,19 @@ The partition variables are conditional on each non-target color's core edge cou
 
 
 For every pair of non-target colors that are both in the 69/70 layer, the two 12-partitions are constrained to be orthogonal: no pair of H-vertices may lie in the same part in both partitions. This follows from unique edge ownership and is independently replayed by the verifier.
+
+
+## 10. Low-layer source-triangle and special-gadget alignment
+
+For every exact color C in the 69/70 layer, the model now enforces:
+- every double-outside factor's three H vertices lie in one near-Turan part;
+- if x is in H with two-double profile, Nt has outside occupancy 2, y is outside H, and the entire Nt H-interior shares x's part;
+- if x is in H with triple profile, Nt has outside occupancy 3, y is outside H, and the entire Nt H-interior shares x's part;
+- in either x-in-H case, at most one vertex of \((N_s\setminus A_0)\cap H\) remains, and the exact core identity reduces to \(e_C(H)=69+|(N_s\setminus A_0)\cap H|\);
+- if x is outside H, the unique double factor's K3 lies in one part and \(e_C(H)=69+1_{y\in H}|A_0\cap H|\).
+
+These implications are conditional on the exact color being in the 69/70 layer. They do not constrain colors with 71+ H-edges.
+
+## 11. Matching-skeleton consequence (not yet encoded)
+
+For any 69/70 partition, \(\alpha(H)\le4\) and Hall's theorem give a target-color perfect matching between every pair of size-four parts and a matching saturating the size-three part in each 4-by-3 pair. Selecting these yields a 253-edge subgraph M of H. Its complement F has 32 edges, with 36 vertices of M-degree 11 and 11 vertices of M-degree 10; at least 30 vertices have degree one in F. This is a proved existential structure, not yet represented by matching-choice variables.
