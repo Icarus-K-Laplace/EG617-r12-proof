@@ -22,3 +22,17 @@ First profile survivors:
 - m=10,v=38,h=10.
 
 Product and recursive per-color option generators agree. The verifier covers all47 (m,v) cells. No graph-level completion is claimed.
+
+
+## 2026-10-30 — canonical h=0 component-only support screen
+
+Re-read the source witness-packing files. They supply seven isolated-K5 component four-sets per exact-129 color: at least six B-labelled components, plus the possible pivot-containing component whose other four vertices lie in H because pivot p is target-adjacent to B. Therefore choose these seven component witnesses in every exact color; h=0 is a construction, not a no-gadget assumption.
+
+Replaced the broad all-h screen as the canonical support test with the component-only U/W reserve DP. Two independent per-color generators (Cartesian product and recursive state DP) agree for every v=31..47. All 47 (m,v) cells were checked.
+
+New exclusions:
+- m=8: v=31..38;
+- m=9: v=32..39;
+- m=10: v=34..40.
+
+First aggregate profile survivors: (m,v)=(8,39),(9,40),(10,41). The verifier and exact row table are updated. These survivors are only aggregate cost-pair states; no graph-level SAT witness or Q33 closure is claimed.

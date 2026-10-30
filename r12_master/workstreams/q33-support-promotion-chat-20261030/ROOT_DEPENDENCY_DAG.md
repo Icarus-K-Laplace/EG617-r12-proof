@@ -23,3 +23,8 @@ Statuses:
 - Exact finite profile screen: **COMPUTATION_CERTIFIED**.
 - Full labelled graph completion: **OPEN**.
 - Root promotion: **OPEN / NOT_CERTIFIED**.
+
+
+## 2026-10-30 component-only support branch
+
+The canonical support branch now uses seven guaranteed isolated-K5 component K4s per exact-129 color, hence h=0. The selected 42m component edges are charged exactly once. The remaining three components per color have variable core sizes, and the gadget core contributes p_2 U/W costs. The resulting U/W reserve DP excludes the support ranges listed in OPEN_CASES.md; the remaining v>=39,40,41 ranges (for m=8,9,10) still require a labelled incidence argument. No root promotion is made.

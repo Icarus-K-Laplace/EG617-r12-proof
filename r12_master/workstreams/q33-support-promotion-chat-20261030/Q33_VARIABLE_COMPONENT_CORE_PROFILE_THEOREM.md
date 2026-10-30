@@ -99,3 +99,8 @@ A feasible profile is only a necessary scalar/profile survivor, not a graph real
 ## 7. Scope
 
 This model repairs the stronger fixed-four-core assumption. It is still a relaxation: it does not encode the actual vertex labels, pairwise intersections, cross-color edge ownership at the pair level, or the full degree sequence. Q33 and the root theorem remain OPEN.
+
+
+## 8. Source-correct component-only selection
+
+Choose the seven guaranteed isolated-K5 component witnesses per exact-129 color. Then h=0 for this support set, and the U-budget has no gadget-overlap correction. The stronger component-only finite screen excludes m=8:v=31..38, m=9:v=32..39, and m=10:v=34..40. Full details are in Q33_COMPONENT_ONLY_SUPPORT_SCREEN.md; aggregate survivors begin at v=39,40,41, respectively. The Q33 graph-level terminal remains OPEN.
