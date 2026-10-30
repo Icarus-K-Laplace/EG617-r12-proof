@@ -74,3 +74,27 @@ The new source-localization constraints are conditional on the 69/70 layer and a
 | `OPEN_CASES.md` | `9a5835555ad233192bc6fea6cfd1bfd651f97f15` |
 
 The latest mathematical append is MATH_PROOF.md §9.6, giving the exact leaf-core identity (e(F[W])=q+t-4). The matching skeleton remains analytic only; the solver was not executed.
+
+
+## 2026-10-30 final Type-I partition obstruction checkpoint
+
+Parent dependencies rechecked read-only:
+- high-support source interface branch HEAD: `1de8a37556ba98ccbb8651f39a5192629453f0f1`;
+- global E408/Q32 root branch HEAD: `b0459807acd4b7e386148056ddf77d7998918893`;
+- sibling v44 Case-II branch HEAD: `9afd7c1a59056052974f9dc78933010d10e88bba`.
+
+The final theorem depends on the registered Type-I exact-129 factorization in the high-support source interface and the Q32 H-core contract in the global root terminal. It does not modify or overwrite any sibling branch. The proof establishes that every exact color induces one of three forbidden independent-part partitions of H, so m=8 and m=9 full-support Q32 are analytically impossible. This is a conditional analytic proof promotion candidate; no full SMT execution, SAT result, UNSAT result, or solver proof log is claimed.
+
+| Local artifact | Blob SHA | Size |
+|---|---|---|
+| `V47_TYPEI_PARTITION_OBSTRUCTION.md` | `4ff2d881748a917d25902dba5e21d41ef9ba9ef5` | 122 lines |
+| `q32_fullsupport_m89_solver.py` | `1dae5a9acb1f20d6719c6a389fab3e7145560d50` | 658 lines |
+| `verify_q32_fullsupport_candidate.py` | `1313fe8d559a214f7b187dd7438942c48be931dc` | 1060 lines |
+| `MATH_PROOF.md` | `b2435e5303f8b427f4c83e0fba344813083ef405` | 374 lines |
+| `CANONICAL_STATE.md` | `851bae8ac181d10599d18ade4fdf4d6d93d2d3e7` | 63 lines |
+| `OPEN_CASES.md` | `1e638e246900296d80932a016bc7221160a9e58a` | 92 lines |
+| `FULL_SUPPORT_CSP_SPEC.md` | `a531d2de85775d1bbcd7d7e82091c250750bed6d` | 127 lines |
+| `MODEL_VALIDATION.md` | `0b3baaef9c1f2e7b59256b73e16aef40a5547fff` | 123 lines |
+| `RUN_LOG.md` | `2b02eb56ec8532e9345764b0c179ab50778926d3` | 91 lines |
+
+The independent verifier now reconstructs the source partition for each exact color and replays Hall matchings/tight-part obstruction using augmenting paths. Its synthetic self-test covers all three occupancy shapes. The solver is explicitly archival by default; legacy SMT execution requires the opt-in `--legacy-smt` flag.
