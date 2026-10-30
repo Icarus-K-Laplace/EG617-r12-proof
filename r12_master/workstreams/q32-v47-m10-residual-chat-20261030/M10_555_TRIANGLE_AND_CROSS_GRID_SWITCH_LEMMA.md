@@ -64,7 +64,7 @@ Normalize e_AB=(A_0,B_1) and use the global target-label gauge p_C=id for one co
 - the 5,5,5 A-B-D theorem;
 - the five 4,5,5 constraints from the light pairs in S;
 
-gives exactly 20,788 one-column local states. Of these, 20,772 have p_A=p_B and 16 have p_A!=p_B. The 16 switch states are all forced by the fixed A-B extra edge and the adjacent 4,5,5 constraints. The companion verifier reproduces this count.
+gives exactly 20,788 one-column local states. Of these, 20,772 have p_A=p_B and 16 have p_A!=p_B. The 16 switch states are all forced by the fixed A-B extra edge and the adjacent 4,5,5 constraints. The companion verifier also checks all 8,704 possible independent-five candidates in the five-block union (one per block, or 2+1+1+1 across four blocks); it finds none. The omitted distributions on at most three blocks are already excluded by the pair and triangle theorems. Thus every one-column state has alpha at most four on A union B union C union D union {D_j}.
 
 This is a per-column count only. It does not impose the row-wise column-direction constraints between distinct D_j, the residual degree equations, the residual fiber maps, or the Type-I source placements.
 

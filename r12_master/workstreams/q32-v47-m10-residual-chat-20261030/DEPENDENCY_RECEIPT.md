@@ -50,3 +50,13 @@ Astra independent branch:
 - The case-II v44/v45/v46 results concern lower support and do not close |U|=47.
 
 No sibling branch or sibling directory was modified by this workstream.
+
+
+## Additional m10 artifacts (commit b344eac03cf94fd7772180b689d54dc693054061)
+- M10_555_TRIANGLE_AND_CROSS_GRID_SWITCH_LEMMA.md
+- verify_m10_555_triangle.py
+- verify_m10_555_column_states.py
+- M10_SOURCE_OCCUPANCY_90.csv
+- verify_m10_source_occupancy.py
+
+The local 5,5,5 triangle verifier covers 41,472 normalized configurations. The one-column 4+6 verifier covers 20,788 switch-compatible states and 8,704 independent-five candidates per state. Neither covers the six-column cross grid or full Q32.

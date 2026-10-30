@@ -108,7 +108,7 @@ Substituting the exact K5-interior contribution gives:
 
 These bounds are source-derived and retain the labelled special factors. In particular the isolated-triple mode is not a free extra mode: it pays g_C>=6-a, so for a=1,2,3,4 it needs at least 5,4,3,2 gap units respectively.
 
-For x_C in O, the nine gadget edges incident with x_C leave H, so only y--A_0 can contribute H-H edges; hence 0<=g_C<=4.
+For x_C in O, all gadget edges incident with x_C leave H, so only y--A_0 can contribute H-H edges; hence 0<=g_C<=4.
 
 ## 6. Placement restrictions conditional on the target graph
 
