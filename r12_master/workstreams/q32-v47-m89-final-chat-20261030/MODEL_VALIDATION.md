@@ -61,3 +61,10 @@ The solver now encodes the exact identity \(e_C(H)=B_C+G_C^H\), the source-param
 ### Nonexact m=9 floor reconciliation
 
 The model uses the source-correct pointwise floors 4 for a 130-edge color and 3 for a 131-edge color, hence \(L_9=7\). The root global canonical/dependency summaries still contain an older \(L_9=6\) line; the read-only Case-II canonical/dependency audit explicitly marks 6 as stale and records \(4+3=7\). No root-side file was modified.
+
+
+## 69/70 theorem scope expansion
+
+The conditional near-Turan partition is now encoded for **all eleven non-target colors**, not only exact colors. This is valid because every non-target color C has alpha(C[H])<=12 and omega(C[H])<=4. The independent verifier reconstructs the 11K4+K3 partition from C[H] itself: take connected components in the 69-layer, or delete the unique cross-part edge and take components in the 70-layer. For exact colors it additionally checks that each source single-outside witness K4 is one of the size-four parts.
+
+This expansion adds necessary conditions only; no color is forced into the 69/70 layer.
