@@ -88,3 +88,8 @@ The former remaining 71+ source-placement attack is superseded. Any exact-129 Ty
 A unified Hall/tight-part lemma excludes all three partitions under the frozen H-core contract. Therefore no exact-129 Type-I color can exist. Since m=8 and m=9 both require at least one such color, both full-support Q32 branches are **ANALYTICALLY CLOSED / IMPOSSIBLE** conditional on the published Kang–Pikhurko exact-129 classification, the balanced-coloring alpha<=12 premise, global monochromatic-K6 exclusion, and the H-core contract.
 
 No full SMT run or UNSAT proof log is claimed or needed. The next work is dependency promotion: independently audit the imported Type-I factorization and H-core contract against the parent E408/Q32 theorem, then update the root dependency DAG/receipt through the appropriate parent workstream. This isolated branch does not claim that E408 as a whole, Q33, E407, or the original Erdős r=12 theorem is closed.
+
+
+## Parent-level scope discovered
+
+The final Type-I obstruction does not use U, support size v, pivot blocks, or m beyond the existence of one exact-129 color. The parent E408/Q32 ledger has m in {8,9,10}. Therefore, if the root confirms that every Q32 support row inherits the same H-core and global coloring premises, the same proof excludes all v=44,45,46,47 and all m=8,9,10. See ROOT_PROMOTION_NOTE.md. This is not yet merged into the parent root DAG; no sibling branch was edited.
