@@ -17,7 +17,7 @@
 
 ## New m=8/9 strengthening
 
-1. Existential perfect matching variables for every pivot-block pair.
+1. Pairwise perfect-matching existence is forced by exact alpha(H) separation and independently recomputed by the candidate verifier; no redundant matching-choice variables are added.
 2. Pointwise neighbor constraints for each pivot vertex against every other pivot block.
 3. Exact per-block degree ledger `X_i+Y_i=5+epsilon_i`.
 4. Lazy light-pair matching-composition cuts.
