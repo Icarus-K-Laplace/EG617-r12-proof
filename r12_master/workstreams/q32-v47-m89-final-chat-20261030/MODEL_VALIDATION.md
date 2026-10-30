@@ -88,3 +88,14 @@ Repaired: the verifier now guards all alpha-dependent checks behind check_alpha,
 The two-double source lower bound is checked as 72-a in the source-only pass and strengthened to max(69,72-a) only after alpha(C)<=12 is verified. The source-derived upper bounds remain checked unconditionally. Nonexact degree floors and safe/conditional reserve caps remain guarded by both alpha and omega checks.
 
 This prevents an invalid provisional candidate from being mistaken for a defect in the source encoding.
+
+
+## Source-triangle and special-gadget alignment audit
+
+The full verifier now checks the exact low-layer source geometry after alpha premises are enabled:
+- each double-outside factor's H-triangle is contained in one near-Turan part;
+- x-in-H two-double/triple cases force the Nt occupancy to 2/3 respectively, y outside H, and the Nt H-interior into x's part;
+- the Ns residual x-neighbor count is at most one and equals the core excess above 69;
+- x-outside cases check the unique double K3 and the exact y--A0 core contribution.
+
+The solver has matching implications. These constraints are necessary consequences of the one-cross-edge near-Turan structure and the source edge ownership, not imported m=10 alignment assumptions.
