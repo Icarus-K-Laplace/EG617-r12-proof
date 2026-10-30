@@ -48,5 +48,15 @@ Final read-only refresh to high-support541653af1a28187d9b05ddcbcb118c5460fe3f1c:
 
 The broader14-type exclusion additionally imports the local4,5,5 switch classification, singleton/double-track blocker, outerK7 holonomy, residual clique fibers, and exact outer degree/endpoint ledgers. The new proof explicitly distinguishes common small labels from outer labels. It excludes only cells with both fiber partitions nonempty; empty-label double-track escapes remain possible at the local level. The low-support canonical/dependency audit was read at its named HEAD without rerunning low-support casework. The latest global audit continues to mark E407 parent coverage and Q33 support promotion OPEN.
 
-E407 Q32 reserve contradictions remain conditional on V12/parent coverage. E408 Q33 minimum-support contradiction does not prove all supports enter that boundary. Existing local orientation/parity/arithmetic checks do not certify the full graph. Neither new theorem closes all Q32 rows; EG617(r=12) remains OPEN / NOT_CERTIFIED.
+## 2026-10-30 source refresh and z4 dependency boundary
+
+Read the full541653af..1de8a375 comparison:4cf1935ba2fc791ecde5e677e38bbe531b9cd376 adds the six z3 residual types;1de8a37556ba98ccbb8651f39a5192629453f0f1 adds the weighted-heavy-graph catalog. These are necessary structural catalogs, not closures. Our new z4 theorem imports neither catalog. It needs the same local3+7 normal form already named above, exact zero-slack residual neighborhoods at z4, delta(H)>=12, alpha(H)<=4, and the genuine parent omega(H)<=11.
+
+The light-neighbor lemma is applied only adjacent to the explicitly forced special form; it does NOT reinstate the retracted general matching-rigidity assertion. The4,5,5 switch has its two extra endpoints in different small labels when viewed across a light outer pair. The new proof keeps those labels explicit and independently rechecks all normalized triples.
+
+The parent full-degree bound delta(F)>=13 is not needed for the z4 theorem. It would permit the stronger (3,4,4) gadget quota only after its full-parent applicability is restored; the relaxed core alone still supports only (4,5,5). We do not silently strengthen that relaxed contract or edit sibling code.
+
+The z4 proof closes the actual empty-class escape in C3+C4 within the registered normal form, not just a necessary scalar test. Its transfer to full Q32 is conditional on the upstream reduction proving that a candidate enters this normal form. The remaining three empty-fiber types have positive residual-incidence slack and are still open. No full-model SAT/UNSAT certificate or full-colored counterexample is supplied.
+
+E407 Q32 reserve contradictions remain conditional on V12/parent coverage. E408 Q33 minimum-support contradiction does not prove all supports enter that boundary. Existing local orientation/parity/arithmetic checks do not certify the full graph. These theorems do not close all Q32 rows; EG617(r=12) remains OPEN / NOT_CERTIFIED.
 

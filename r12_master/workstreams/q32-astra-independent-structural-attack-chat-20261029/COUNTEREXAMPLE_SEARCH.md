@@ -43,8 +43,20 @@ The target core alpha<=4 check does not replace full-parent alpha<=5 on61 vertic
 ## Smallest unresolved cell reached here
 
 Within the registered3+7 reduction, only:
-C3+2P2 (z2), C3+P4 (z3), 2C3+P1 (z3), C3+C4 (z4),
+C3+2P2 (z2), C3+P4 (z3), 2C3+P1 (z3),
 with an empty fiber in at least one of the two residual maps, remain after the new theorem.
 
 This is a reduced open family, not a proof of minimality among all possible formulations. No claim that current abstract constraints alone are feasible or insufficient in the strong success-criterion-E sense is made.
+
+## New z4 replay, 2026-10-30
+
+verify_z4_empty_fibers.py independently checks the local assertions used by the analytic proof in COLORED_PACKING_OBSTRUCTION.md Section4. Python3.12.14, standard library, no randomization or external solver:
+-3456 normalized4,5,5 triple inputs; precisely156 have no independent5-set.
+-42336 aligned/switch local representations, with every base permutation, extra edge, minority small block, and switch orientation.
+-12 unordered residual clique partitions, including two with an empty class; all44 ordered pairs with at least one empty class.
+-782 raw admitted23-vertex local representations, yielding158 distinct summaries; every admitted raw representation is checked before deduplication.
+-Only four raw representations across the two equal-partition cases are light-compatible with the fixed special block: the special and normal forms in each case.
+-The terminal integer conditions force two special and two other blocks, hence E0=6<9.
+
+The complete summary table is z4_local_profiles.json; each row includes an actual local matching/extra representative. It is a necessary-condition table, not a full coloring assignment. All omitted full-model conditions, the symmetry justification, and the exact scope of the local replay are described in the theorem file. The hand proof, not a claim of a full-model UNSAT certificate, establishes the conditional cell exclusion. The previous exploratory program was replaced in place by this asserted verifier; no duplicate version is retained.
 

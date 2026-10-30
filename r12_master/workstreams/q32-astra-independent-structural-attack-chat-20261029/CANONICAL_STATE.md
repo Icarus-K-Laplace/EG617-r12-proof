@@ -1,11 +1,11 @@
 # Canonical state — independent structural attack
 
-Date: 2026-10-29
+Date: 2026-10-30
 Branch: workstream/r12-astra-independent-structural-attack-20261029
 Base: 433a5b39a98325f00e99650b0270d79f7753a47d
 Write scope: this directory only.
 
-Final source refresh: high-support541653af1a28187d9b05ddcbcb118c5460fe3f1c independently closes the same aligned z0/1 cells. The broader14-type exclusion and uniform sharp57-edge theorem here are additional results; no priority claim is made for the shared K6 argument. Proof source base remains433a5b39.
+Latest source refresh: high-support1de8a37556ba98ccbb8651f39a5192629453f0f1 adds z3 residual and weighted-heavy-graph catalogs, without closing those cells. The preceding541653af independently closes the same aligned z0/1 cells. Our broader nonempty-fiber theorem, sharp57-edge theorem, and new z4 empty-fiber closure are separate contributions; no priority claim is made for the shared K6 argument. Proof source base remains433a5b39.
 
 ## Proved in this workstream
 
@@ -21,7 +21,7 @@ The current sibling specification imposes omega(G_C)<=5 for all twelve colors. T
 
 ## Still open
 
-The stronger theorem in COLORED_PACKING_OBSTRUCTION.md excludes the3+7 cell whenever both residual fiber partitions have four nonempty classes. Of18 registered residual types,14 are excluded. The four remaining types are C3+2P2 (z2), C3+P4 (z3), 2C3+P1 (z3), and C3+C4 (z4), each requiring an empty fiber in at least one map. This is conditional on the named local3+7 normal form and the genuine parent clique cap. Both independent finite verification scripts passed.
+COLORED_PACKING_OBSTRUCTION.md excludes the3+7 cell whenever both residual fiber partitions have four nonempty classes. Its new Section4 also excludes C3+C4 at z4, including every empty-fiber possibility, by a special-block/light-neighbor argument ending in E0=6<9. Of18 registered residual types,15 are now excluded. The three remaining types are C3+2P2 (z2), C3+P4 (z3), and2C3+P1 (z3), each requiring an empty fiber in at least one map. These are conditional on the named local3+7 normal form and genuine parent clique cap. All three independent finite verification scripts pass; no full Q32 solver claim is made.
 
 Full-support Q32 with m=8,9 and remaining m=10 cells lacking the excluded four-clique partition. No all-m classification or complete labeled graph certificate has been obtained. Root remains OPEN / NOT_CERTIFIED. E407 and Q33 parent/support-exhaustiveness gates remain separate.
 

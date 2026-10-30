@@ -37,3 +37,13 @@ Before the second commit, the high-support branch advanced to541653af1a28187d9b0
 
 OPEN / NOT_CERTIFIED. No claim of full Q32 closure, genuine multicolor counterexample, full-model UNSAT, or success criterion E.
 
+## 2026-10-30: analytic closure of the z4 empty-fiber escape
+
+Read the high-support541653af..1de8a375 comparison in full; the new results are z3 residual and heavy-graph catalogs, with no new closure. Low-support and global-root heads remained unchanged at the refresh. Dedicated own branch began at3394c7170851a620ac865f73953f21ecfa99393b.
+
+Proved COLORED_PACKING_OBSTRUCTION.md Section4: every C3+C4,z4 cell in the registered m10 disconnected3+7 normal form is impossible under the genuine parent clique cap. Unequal empty/nonempty map statuses violate small-label degree demands; different empty partitions violate local blockers. For equal (0,3,2,2) partitions, avoiding a K12 forces at least two special outer blocks. Their light neighbors have only two exact forms. All blocks supplying labels2,3 must be heavy-adjacent to every special block. The two-incidence heavy budget forces exactly two of each type, leaving E0=6<9.
+
+Independent local replay passed:3456 normalized4,5,5 triples,42336 local matching representations,44 ordered empty-class partition cases,782 raw accepted local representations,158 distinct summaries, and the complete special-block light-neighbor check. No solver or time-limit inference was used. All seven requested Markdown files remain in the original directory; the existing theorem/status files were updated, with one new verifier and its local summary data. Full replay log and SHA256 manifest accompany the commit.
+
+New excluded contract: C3+C4 at z4, including all empty-fiber configurations, in the named3+7 cell. With the previous14-type theorem,15 of18 types are excluded. Remaining types: C3+2P2,z2; C3+P4,z3;2C3+P1,z3, each with at least one empty class. Other m10 splits and m8,m9 remain OPEN; the EG617 root remains NOT_CERTIFIED.
+

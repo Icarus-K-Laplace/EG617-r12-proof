@@ -190,6 +190,14 @@
     }
   ],
   "primary_paper": "https://opikhurko.warwick.ac.uk/E/KangPikhurko05ms.pdf",
-  "scope": "Inventory of immutable source blobs; inclusion does not assert every proof was independently replayed."
+  "scope": "Inventory of immutable source blobs; inclusion does not assert every proof was independently replayed.",
+  "refresh_2026_10_30": {
+    "high_support_head": "1de8a37556ba98ccbb8651f39a5192629453f0f1",
+    "comparison_from": "541653af1a28187d9b05ddcbcb118c5460fe3f1c",
+    "commits_read_in_full": [
+      "4cf1935ba2fc791ecde5e677e38bbe531b9cd376",
+      "1de8a37556ba98ccbb8651f39a5192629453f0f1"
+    ],
+    "new_result": "Analytic z4 C3+C4 empty-fiber exclusion; source normal form remains the immutable base."
+  }
 }
-

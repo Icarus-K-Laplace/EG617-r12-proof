@@ -1,21 +1,23 @@
 {
   "algorithm": "SHA256",
   "files": {
-    "ASTRA_INDEPENDENT_ATTACK.md": "a6672dcca4fb20a2e109a233f6f0c3bc27189dd47e583a048c1f6c676a9f69f1",
-    "CANONICAL_STATE.md": "5533ec5b5aaa2dd71271d095e2fb700e90dbdb8689a43e9418873c9500aaf2ff",
-    "COLORED_PACKING_OBSTRUCTION.md": "874847d7aee0e427f90cdd44ac5974eda212424d5711700df5cfd561b585348d",
-    "COUNTEREXAMPLE_SEARCH.md": "64a7f2f00d60947c9fac9672b32d3e78a3b22a08dda75471a31ddc8e0f65d130",
-    "DEPENDENCY_AUDIT.md": "ca565869081e3ce4c7b8d2c4b7ef8420687d4425e5757975609c7a1c6d4cfa4c",
+    "ASTRA_INDEPENDENT_ATTACK.md": "51d990ea0f398c4ee2fcab3faf7752dd74d6b1019d73adbe2e789a086faa5c39",
+    "CANONICAL_STATE.md": "b23eed38f7bbbad98f84cebd9c492f086d0e84101452e8840ad5d6f859b06261",
+    "COLORED_PACKING_OBSTRUCTION.md": "03b8b4ea2bcb4e1060f0794c393f06877e5c0318a280181564a469c765810e91",
+    "COUNTEREXAMPLE_SEARCH.md": "e04192805ecfba0bb28d0a55aa301be28bc41a71abb8cf9aa28f9d4fc5d33391",
+    "DEPENDENCY_AUDIT.md": "73959034a39f6ca2c7da6ef4e11542f0341df1bdb5ccbda55df9f4fa0869bf9d",
     "NEAR_TURAN_STABILITY_THEOREM.md": "64d3591213d639523db65bc7b4cc4283db23dc3602962304e2c2571ec290a957",
-    "PROGRESS_LOG.md": "2a09317c08feab09b61bddb77815b6522c822aab30a1499e0b7f7b73e0ce5da8",
+    "PROGRESS_LOG.md": "b84beda052adf0204550317fdbbcb667110dcc412213500f0bc695cc5d09ee22",
     "residual_types.json": "751a23983323e6c547cc3c1dc58b45f55bfba053287e45196f766ff1860cc957",
-    "run_verification.py": "17fd5a36c061dc6126f7568fdd9ff419e8d9a5c5f1040ac4f6349610225d6cc5",
+    "run_verification.py": "ac21e49a07fd12be66459eb164fef042da98330b0a45fa505aba7b3b1904fb16",
     "sharp_typeI_single_color.json": "05330440eb819943e69073ae9fe6e94529f78753943b2874249e4fcd031f5b39",
-    "source_manifest.json": "170d8886f6a795c358901797ec3df3fae58250a226e9f5c38bfa4c3cd58767c3",
+    "source_manifest.json": "a4910138f998ae0402eb8e3d2ff500eb1226e623c63d65ca7fe1a2749c70c243",
     "triangle_without_clique_cap.json": "fa45d6e78ea8c771bb8770de7c4261ecf8e3234bd1d1f626441ebc68c3be649e",
     "two_edges_without_clique_cap.json": "be06dac64c10fc928e8222b3f310c2b00ebb2e56072d72950dd34a29aafb84d4",
-    "verification_log.txt": "a01fce4432456bfab22e9d23c11d1c44e1695d05ca160b1ee992857496452b74",
+    "verification_log.txt": "a34d67fccf5a2f6bc60f2eba802e2946ca6136d5b3b71d8c995b17048ecca1dc",
     "verify_outside_reserve.py": "e6b6fe55fc6415ed20bd3c845b860f76b89df27248019d93e22bdf628cdab470",
-    "verify_residual_types.py": "3c5078c5f81138fcda184eeb949594ac0dc6a23ee270d2e3d07916494a37d80c"
+    "verify_residual_types.py": "3c5078c5f81138fcda184eeb949594ac0dc6a23ee270d2e3d07916494a37d80c",
+    "verify_z4_empty_fibers.py": "8af3e1e9f39f1690fa079aa390db16c162599ddfbc7752134db44f881cd05696",
+    "z4_local_profiles.json": "23e0cf02f6890b4f9f580c1de1f14fb264dd24c05da84d392d49f79d950670cd"
   }
 }

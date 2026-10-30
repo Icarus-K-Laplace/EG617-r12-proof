@@ -1,6 +1,6 @@
 # Independent structural attack — results
 
-Date: 2026-10-29
+Date: 2026-10-30
 Overall status: Q32 OPEN; new conditional exclusions proved.
 
 ## Route A — near-extremal structure
@@ -19,7 +19,7 @@ The result applies whenever the target core partitions as12+12+12+11, for every 
 
 The genuine parent has alpha(F)<=5 and omega(F)<=11. The clique cap was dropped in the relaxed high-support contract. It immediately forbids target K12 tracks.
 
-A stronger new lemma in COLORED_PACKING_OBSTRUCTION.md proves that in the3+7 cell, four nonempty fibers in both residual maps force a target K12 or K13. Independent enumeration shows that this excludes14 of the18 registered seven-point path/cycle types. Four triangle-containing types with an empty-fiber escape remain.
+A stronger lemma in COLORED_PACKING_OBSTRUCTION.md proves that in the3+7 cell, four nonempty fibers in both residual maps force a target K12 or K13. This excludes14 of18 registered seven-point path/cycle types. New Section4 excludes C3+C4, z4, even when either map has an empty fiber, raising the count to15. The parent clique cap forces at least two special blocks; their light-neighbor classification and the two-heavy-neighbor budget force E0=6, contradicting E0>=9. This is a complete analytic conditional exclusion of the cell.
 
 This proof does not assume that the switch normal form's labels already coincide with the outer track labels. It explicitly checks that ambiguity via degree/extra-edge budgets.
 
@@ -31,9 +31,9 @@ The current generic sibling CSP incorrectly applies the non-target clique cap5 t
 
 ## What is still needed
 
-For the3+7 branch: exclude the four remaining residual types with at least one empty fiber, or construct a true global completion. This requires coupling the empty-label switch/double configurations with actual endpoint labels and source colors. The symmetric four-nonempty-fiber proof does not apply there.
+For the3+7 branch: exclude C3+2P2 (z2), C3+P4 (z3), and2C3+P1 (z3), with at least one empty fiber, or construct a true global completion. The z4 proof uses exact residual neighborhoods (zero additional residual incidences); the z3 cases have two additional incidences and z2 has four. Those incidences can break the exact light-neighbor conclusion and must be tracked explicitly. The z4 theorem is not automatically a proof for those cells.
 
 For the full terminal: m8,m9 and the other m10 light-component possibilities still need structural exclusions. No theorem has been proved that every full-support core admits the excluded four-clique partition. Such a claim would be a new substantive theorem, not a consequence of the scalar37-gap budget.
 
-Difference from existing lines: this work uses shell-component blockers, the parent target clique cap, and analytic outside-edge packing. It does not duplicate A's projection CSP or B's low-support casework. No subagents were used.
+Difference from existing lines: this work uses shell-component blockers, the parent target clique cap, analytic outside-edge packing, and the new special-block/light-neighbor exclusion. A's latest1de8a375 gives z3 catalogs, while this proves the z4 contradiction without selecting a heavy-graph isomorphism type or running the projection CSP. B's low-support casework is unchanged. No subagents were used.
 
