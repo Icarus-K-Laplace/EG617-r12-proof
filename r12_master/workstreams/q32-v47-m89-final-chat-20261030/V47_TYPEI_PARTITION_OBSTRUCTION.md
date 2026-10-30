@@ -119,3 +119,20 @@ This argument is stronger than the preceding \(e_C(H)\ge71\) result: it does not
 - **Not claimed:** closure of other Q32 support cases, the E408/Q33 terminal, the E407 terminal, the front-end bridge, or the complete original Erdős r=12 theorem.
 - The CSP solver is now archival for these two branches; a full SMT SAT/UNSAT run is not needed to establish this analytic contradiction.
 - The independent verifier implements an augmenting-path replay of the Hall matching skeleton and returns an explicit independent 5-set or a clique of size at least six for each induced source partition.
+
+
+## 5. Primary-source provenance of the Type-I factorization
+
+The imported exact-129 factorization is independently recorded in the parent root workstream's KANG_PIKHURKO_EXACT129_SOURCE_AUDIT.md and follows the published source:
+
+M. Kang and O. Pikhurko, “Maximum \(K_{r+1}\)-free graphs which are not \(r\)-partite,” *Matematychni Studii* 24 (2005), 12–20. Primary PDF: https://opikhurko.warwick.ac.uk/E/KangPikhurko05ms.pdf.
+
+The exact-129 translation is:
+- C has 129 edges, \(\alpha(C)\le12\), and \(\omega(C)\le5\);
+- its complement G has 1701 edges, is K13-free, and is not 12-partite (otherwise C would be a union of twelve cliques of size at most five and cover at most 60 vertices);
+- \(t_{12}(61)=1705\), so Theorem 1 gives \(p_{12}(61)=1705-\lfloor61/12\rfloor+1=1701\);
+- Theorem 4 and Lemma 5 classify the equality graphs. The three optimal part-size sequences are \((5^{12})\), \((4,5^{10},6)\), and \((4,4,5^8,6,6)\). The latter two contain a part of size six and would give a K6 in C, forbidden by \(\omega(C)\le5\).
+
+Thus only \((5^{12})\) survives. Complementing the published construction gives ten isolated K5 components in C and two additional special K5 cliques \(N_s,N_t\) inside the 11-vertex gadget \(G_{11}\), together with the special point x. These twelve disjoint K5s partition exactly \(V(K_{61})\setminus\{x\}\). This is the precise source interface used in Sections 1–3.
+
+No degree-nine exceptional vertex is assumed. The published gadget parameter has \(|A|\in\{1,2,3,4\}\), and its variable degrees are \((4+a,9-a)\); the present obstruction uses only the twelve K5 factors and their partition property.
