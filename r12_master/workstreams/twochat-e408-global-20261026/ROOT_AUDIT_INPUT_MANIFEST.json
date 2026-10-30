@@ -1,11 +1,11 @@
 {
-  "audit_date": "2026-10-29",
+  "audit_date": "2026-10-30",
   "repository": "Icarus-K-Laplace/EG617-r12-proof",
   "branch": "workstream/r12-twochat-e408-global-20261026",
-  "target_head_before_audit": "937a905ed26e54ec10e9bdade1d9b655da8f6176",
-  "target_tree_before_audit": "f0875b716df36b1273fa1f6faf0eebaa7f865200",
+  "target_head_before_audit": "6e61d995a257bc854c3df2fb47d9da7bc6c6e160",
+  "target_tree_before_audit": "67966b3ed0f4301b8b14d43870230fa4e14d131c",
   "write_scope": "r12_master/workstreams/twochat-e408-global-20261026/",
-  "overall_status": "OPEN / NOT_CERTIFIED",
+  "overall_status": "OPEN / NOT_CERTIFIED — fail-closed; Q32 full support remains open",
   "root_receipt_promotable": false,
   "repository_search": {
     "branch_count": 30,
@@ -39,11 +39,6 @@
     "scope": "Turan/reserve arithmetic and W-side selected-gadget count only; not graph realization or parent coverage"
   },
   "source_blobs": [
-    {
-      "path": "r12_master/workstreams/twochat-e408-global-20261026/CANONICAL_STATE.md",
-      "blob_sha": "20a82e5eeaf5995919e85aac61c7d457b3ccfbf7",
-      "status": "pre-audit input blob at target_head_before_audit; updated outputs are listed in output_blobs"
-    },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/DEPENDENCY_AUDIT.md",
       "blob_sha": "d722b630972824a2fc0478d9450a6ac8806d0e30",
@@ -177,8 +172,8 @@
     },
     {
       "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/CANONICAL_STATE.md",
-      "blob_sha": "ab1148611d5a71d9e38c481a92bc49da474afcd4",
-      "status": "latest read-only sibling canonical at HEAD c6500b24",
+      "blob_sha": "afa72318cb0626a0e5fa2ca526eba4bd5984f506",
+      "status": "latest read-only sibling canonical at HEAD 1de8a375",
       "branch": "workstream/r12-q32-highsupport-root-20261028"
     },
     {
@@ -214,20 +209,20 @@
     {
       "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/Q32_FULLSUPPORT_VERTEX_LABELLED_CSP.md",
       "branch": "workstream/r12-q32-highsupport-root-20261028",
-      "blob_sha": "4f73ca96eb43512e94c72f05266462ba949eead4",
-      "status": "latest spec; solver remains not solved and count vector defect remains"
+      "blob_sha": "25714d9f9af244aa1af7eb4392cdea5e82b8220c",
+      "status": "latest full-support CSP spec; canonical count vector fixed; execution and proof replay pending"
     },
     {
       "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/q32_fullsupport_vertex_labelled_csp.py",
       "branch": "workstream/r12-q32-highsupport-root-20261028",
-      "blob_sha": "03e4d2ce98ab399ffafa53af016efd3c434150bc",
-      "status": "latest model at HEAD c6500b24; K6 separator wired; target count 398+m still wrong for m=8,9"
+      "blob_sha": "aba51326e4585594e7d87bc2bb0ff6b2a3d7730d",
+      "status": "latest model imports expected_color_counts; K6 separator present; no full solver run imported"
     },
     {
       "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/verify_q32_fullsupport_candidate.py",
       "branch": "workstream/r12-q32-highsupport-root-20261028",
-      "blob_sha": "5708b7541b44cfc46bd82cf3d50b1e350472617b",
-      "status": "latest verifier at HEAD c6500b24; source profile and malformed witnesses hardened; target count 398+m still wrong for m=8,9"
+      "blob_sha": "bc29a5fe2b4031ccf6aa3e9eb262ca7318c40343",
+      "status": "latest independent verifier has canonical count vector, source-profile checks, malformed-input guard and exact clique/independent-set routines"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/verify_q32_fullsupport_count_vector_contract.py",
@@ -238,12 +233,48 @@
     {
       "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/PROGRESS_LOG.md",
       "branch": "workstream/r12-q32-highsupport-root-20261028",
-      "blob_sha": "94e3127e3788bc05dc72d6fd080f78e9ad065a4a",
-      "status": "latest read-only sibling progress log at HEAD c6500b24"
+      "blob_sha": "5aba23b4fb828bdef5d2a6fc7896b7be18469ae0",
+      "status": "latest read-only sibling progress log at HEAD 1de8a375"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_37_Z3_RESIDUAL_FIBER_CATALOG.md",
+      "branch": "workstream/r12-q32-highsupport-root-20261028",
+      "blob_sha": "2280e54bc8ac03183c92c3c667d48dc655656c03",
+      "status": "latest z=3 residual/fiber and weighted outer-heavy graph catalog"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/verify_v47_37_z3_residual_fiber_catalog.py",
+      "branch": "workstream/r12-q32-highsupport-root-20261028",
+      "blob_sha": "c3097c7b622d2a504c621c1466b88268f32bba18",
+      "status": "latest pure-Python z=3 residual/fiber/weighted-heavy enumeration verifier"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_Z01_TRACK_ALIGNMENT.md",
+      "branch": "workstream/r12-q32-highsupport-root-20261028",
+      "blob_sha": "05ead55b1f3ce227c3415fcfa639234cdc470161",
+      "status": "z=0,1 track alignment and eta inequality; source for per-block incidence mismatch bound"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_ZERO_SLACK_MAP_ALIGNMENT_AND_TRANSVERSAL_BLOCKER.md",
+      "branch": "workstream/r12-q32-highsupport-root-20261028",
+      "blob_sha": "483c0e699cd91769994f58abb64fb66c30af9d7b",
+      "status": "small-block endpoint-load ledger and synchronized switch endpoint-label fact"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_37_OUTER_LIGHT_HOLONOMY.md",
+      "branch": "workstream/r12-q32-highsupport-root-20261028",
+      "blob_sha": "e8ec69f4d50e0124a48e050f5322231d9d7e88b0",
+      "status": "global 3+7 light-holonomy; weighted degree 2-y_i and K7 track alignment"
+    },
+    {
+      "path": "r12_master/workstreams/q32-highsupport-root-chat-20261028/V47_DOUBLE_TRACK_ALPHA_BLOCKER.md",
+      "branch": "workstream/r12-q32-highsupport-root-20261028",
+      "blob_sha": "d8e3e1ed7f5f443d73d21e388482adae8b38b018",
+      "status": "separate double-track residual-type blocker; not covered by no-double-track theorem"
     }
   ],
   "open_dependencies": [
-    "E408 Q32 full-support v=47: m=8, m=9, and m=10 with chi(complement residual)<=4; full-support CSP must be repaired before any solver result is used",
+    "E408 Q32 full-support v=47: m=8, m=9, and remaining m=10 cells. The latest full-support CSP source contract is reconciled, but solver execution/proof replay and graph-level closure remain pending.",
     "V12 artifact/replay and complete finite-survivor-to-template mapping for E407 Q32",
     "Q33 support promotion from v=31 to all legal support sizes v=32..47"
   ],
@@ -258,13 +289,14 @@
     "bb8b1e696ecf199f337d8d0db69d00132191f80f",
     "be173984f7f31141805794a027bd675e7b10072e",
     "80e733a4ccd213ed220e71cac13fc099c8dee29d",
-    "7823ed12480b064cee31db6eb1b5d200bf3dc069"
+    "7823ed12480b064cee31db6eb1b5d200bf3dc069",
+    "6e61d995a257bc854c3df2fb47d9da7bc6c6e160"
   ],
   "sibling_heads": {
     "e407_q32": "0192807d1f3b2193aa65c25b9f671b36821aaded",
     "e408_q33_witness_support": "0cb2ff3968f005c9cb255958df7c02b220678701",
     "unified_witness_capacity": "faa8183c150dd78b000d0957fa8a63cebd52e146",
-    "q32_highsupport": "c6500b24dc78cd4c56cd90219080003aeb8e3cb5"
+    "q32_highsupport": "1de8a37556ba98ccbb8651f39a5192629453f0f1"
   },
   "output_blobs": [
     {
@@ -302,23 +334,31 @@
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/CANONICAL_STATE.md",
-      "sha": "cc46df9624f83d06c77ea52fbe933437152ff6b3"
+      "sha": "c7932ea8c6ecab4af67093f2a269a44f551ca9aa"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/PROGRESS_LOG.md",
-      "sha": "ecc69657e6770e5c2a12edaf20afb833a2f2bffa"
+      "sha": "8fcdc75974a6958ebea22c06d6003613c21c74fb"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/ROOT_DEPENDENCY_DAG.md",
-      "sha": "bf3e0a25d6fa20caf30f18ccb36bbb3645b93907"
+      "sha": "bb2039b4c9ef98e2a050603fa227dc51dd1a6179"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/Q32_FULLSUPPORT_CSP_SOURCE_AUDIT.md",
-      "sha": "970dec95b5065cab9b6dd431d537a18332fcf8f1"
+      "sha": "d3134b091b2714b441a1d5938d6cbcd08f52c889"
     },
     {
       "path": "r12_master/workstreams/twochat-e408-global-20261026/Q32_CORE285_TERMINAL.md",
-      "sha": "ce6492d77c932b1cb76f32670226d02f5bfa4b0a"
+      "sha": "ffe3b8337011ff5bb8eda212430bde6467335129"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/Q32_Z3_DUAL_FIBER_SWITCH_COST_AUDIT.md",
+      "sha": "3f2363fc8ec84649508e37192af171855dd7b034"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/verify_q32_z3_dual_fiber_switch_cost.py",
+      "sha": "cbc3a4f0451254041bb46986b120b0986c7701a1"
     }
   ],
   "root_status": "OPEN / NOT_CERTIFIED",
@@ -327,7 +367,7 @@
     "61f3263de5c99d37f58cd1ab7ad65a05888534f0",
     "6ed8b6e0352ca5aeb713e86676504bb236561db8"
   ],
-  "manifest_parent_commit": "7823ed12480b064cee31db6eb1b5d200bf3dc069",
+  "manifest_parent_commit": "6e61d995a257bc854c3df2fb47d9da7bc6c6e160",
   "audit_commits_before_final_manifest_commit": [
     "549960e37217c243e8abd6b7629301e9f918e6c6",
     "61f3263de5c99d37f58cd1ab7ad65a05888534f0",
@@ -349,13 +389,17 @@
     },
     {
       "branch": "workstream/r12-q32-highsupport-root-20261028",
-      "head": "92c9086c8b6ac554ed74b48a5d608aa546bcb977",
-      "status": "read-only; v=44,45,46 closed; v=47 open; pivot-packing integrated into CSP but count-vector and verifier defects remain",
-      "canonical_blob": "4a465ce7be3315842d2537f2a80691ca598c540e",
+      "head": "1de8a37556ba98ccbb8651f39a5192629453f0f1",
+      "status": "read-only; v=44,45,46 closed conditionally; v=47 remains open. Canonical color-count/source-mode contracts fixed; m=10 aligned z=0,1 profile 2221 cell closed; z=3 no-double-track mismatch reduced to five empty-fiber switches plus two aligned path endpoints; full CSP execution/proof replay pending.",
+      "canonical_blob": "afa72318cb0626a0e5fa2ca526eba4bd5984f506",
       "m9_closure_blob": "8f1e7b65f5857e9d982ebca1bdfe181d49fda5f0",
       "v46_caseII_blob": "f1e39bfcd6e335e45a6beab81535d725d605cef9",
       "residual_incidence_blob": "8af079fefdc525b26d5be837f638b58f968babc4",
-      "light_block_reduction_blob": "eea5a4cdb80e9111da6861e4eff8b2029d12cf9e"
+      "light_block_reduction_blob": "eea5a4cdb80e9111da6861e4eff8b2029d12cf9e",
+      "progress_blob": "5aba23b4fb828bdef5d2a6fc7896b7be18469ae0",
+      "full_support_spec_blob": "25714d9f9af244aa1af7eb4392cdea5e82b8220c",
+      "model_blob": "aba51326e4585594e7d87bc2bb0ff6b2a3d7730d",
+      "verifier_blob": "bc29a5fe2b4031ccf6aa3e9eb262ca7318c40343"
     }
   ]
 }

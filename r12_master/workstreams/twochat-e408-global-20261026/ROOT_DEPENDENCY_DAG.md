@@ -1,9 +1,9 @@
 # EG617 fixed r=12 — root dependency DAG (independent fail-closed audit)
 
-Updated: 2026-10-29  
+Updated: 2026-10-30  
 Repository: Icarus-K-Laplace/EG617-r12-proof  
 Branch: workstream/r12-twochat-e408-global-20261026  
-Audited HEAD before this audit commit: bb8b1e696ecf199f337d8d0db69d00132191f80f  
+Audited HEAD before this audit commit: 6e61d995a257bc854c3df2fb47d9da7bc6c6e160  
 Status: **OPEN / NOT_CERTIFIED — FAIL-CLOSED**  
 Promotable root receipt: **NOT ISSUED**
 
@@ -59,7 +59,7 @@ flowchart TD
 | E407-32-V12-PROMOTION | Every legal E407 Q32 parent is covered by the complete V12 finite screen and maps to a template A-E | OPEN | Archive, manifest, and verifier are absent; V12_V8_SOURCE_REPORTED_AUDIT.md says INDEPENDENT_REPLAY_PENDING. The reported 554 survivor-to-template mapping has not been independently replayed. The sibling's broader compatibility workstream remains OPEN / NOT_CERTIFIED. |
 | E408-31 | E408 Q31 closure | PROVED_CONDITIONAL + COMPUTATION_CERTIFIED under V11 inputs | V10_V11_Q31_INDEPENDENT_REPLAY_AUDIT.md; retain its named analytic and external assumptions. |
 | E408-32-NONFULL | E408 Q32 supports v=44,45,46 are impossible for every m in {8,9,10} | PROVED_CONDITIONAL (read-only sibling import) | Low-support branch workstream/r12-q32-caseII-v44-final-20261028 at 9afd7c1a59056052974f9dc78933010d10e88bba and high-support branch workstream/r12-q32-highsupport-root-20261028 at c6500b24dc78cd4c56cd90219080003aeb8e3cb5. See Q32_NONFULL_SUPPORT_SIBLING_IMPORT_AUDIT.md for the proof-to-row map. This root branch did not independently re-prove every analytic lemma. |
-| E408-32-FULL | E408 Q32 full support v=47 | OPEN | Latest high-support sibling HEAD c6500b24dc78cd4c56cd90219080003aeb8e3cb5 has corrected source-outside-profile validation, malformed-witness checks, and a wired monochromatic-K6 separator. However, model and verifier still encode target count 398+m with color 11 fixed at 132, wrong for m=8,9. The exact count-vector regression validates bookkeeping only; no full Z3 solve or graph-level UNSAT certificate exists. m=8,9 remain open; for m=10, chi(complement residual)>=5 is closed but chi<=4 remains open. No Q33 excess-four identity is imported. |
+| E408-32-FULL | E408 Q32 full support v=47 | OPEN | Latest high-support sibling HEAD 1de8a37556ba98ccbb8651f39a5192629453f0f1 has corrected source-mode and global count-vector contracts (target 408 for all m), malformed-witness checks, and the monochromatic-K6 separator. The full CSP remains formulation-only / execution and proof replay pending; no SAT/UNSAT result is imported. In m=10, the aligned z=0,1 profile (2,2,2,1) cell is closed analytically, z=1 profile (3,2,1,1) is closed by the balanced-coloring K13 premise, and z=3 no-double-track F/G mismatch is reduced to exactly five same-type empty-fiber switches plus two aligned path endpoints. Double-track, F=G, other 3+7 cells, 2+8/connected light-block cases, and full-support m=8,9 remain open. See Q32_Z3_DUAL_FIBER_SWITCH_COST_AUDIT.md. |
 | E408-33-SUPPORT | Eight selected exact-129 colors supply 56 selected component/gadget witnesses with support v>=31 | PROVED_CONDITIONAL | R12_ZERO_EXCESS_WITNESS_THEOREM.md and the retained exact-129 factor theorem. The lower bound v>=31 does not imply v=31. |
 | E408-33-LOCAL | Under exactly v=31 and the registered 284-edge/56-witness ledger, nonexact-color reserve excludes m=8,9 and the separate component-capacity theorem excludes m=10 | PROVED_CONDITIONAL | Q33_NONEXACT_U_RESERVE_CLOSURE.md and Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md. Uses p12(31)=26, delta<=17, h<=4; no degree-nine assumption. |
 | E408-33-PROMOTION | Every Q33 parent has a selected 56-witness union of exactly 31 points, or all larger supports are excluded | OPEN | No equality/support-promotion theorem found. Independent necessary-capacity replay excludes m=8,9 at v=31 and m=8 at v=32 only; m=9,10 at v=32 and m=8,9,10 for v>=33 remain open under this scalar reserve. |
@@ -101,3 +101,10 @@ The latest read-only sibling is workstream/r12-q32-highsupport-root-20261028 at 
 ## 17. Latest full-support CSP source audit — 2026-10-29
 
 The read-only high-support sibling is now at c6500b24dc78cd4c56cd90219080003aeb8e3cb5. The source-mode checker is corrected and the model now wires in a monochromatic-K6 separator. The E408 count-vector mismatch remains in both model and independent verifier for m=8,9. No solver output is imported.
+
+
+## 18. 2026-10-30 — latest full-support source reconciliation and z=3 switch-cost reduction
+
+The high-support sibling was re-read at HEAD 1de8a37556ba98ccbb8651f39a5192629453f0f1. The previous root note about 398+m is historical: the current model/verifier share the correct canonical expected_color_counts(m) contract. No solver execution is imported.
+
+For the no-double-track m=10, 3+7, z=3 cell, the root-side exact partition-pair enumeration and endpoint-load proof force either F=G or a rigid mismatch normal form: five zero-cost synchronized switches duplicating one empty F fiber and omitting one split fiber, plus two aligned blocks with y_i=1 at the endpoints of the unique outer-heavy path. This is a local conditional reduction, not a terminal contradiction. The global root status remains OPEN / NOT_CERTIFIED.

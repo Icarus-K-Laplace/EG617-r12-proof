@@ -233,3 +233,23 @@ The high-support sibling advanced to HEAD 92c9086c8b6ac554ed74b48a5d608aa546bcb9
 - Current source blobs: model 03e4d2ce98ab399ffafa53af016efd3c434150bc; verifier 5708b7541b44cfc46bd82cf3d50b1e350472617b; CSP specification 4f73ca96eb43512e94c72f05266462ba949eead4.
 - The verifier's source-outside-profile check remains corrected. The K6 separator and malformed-witness checks are useful model hardening, but no full Z3 solve or independently replayed UNSAT proof has been reported.
 - The standalone count-vector regression remains PASS for the correct vectors only. Root status remains OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-30 — latest sibling refresh and z=3 dual-fiber switch-cost theorem
+
+### Current source state
+
+- Re-fetched high-support sibling branch workstream/r12-q32-highsupport-root-20261028 at HEAD 1de8a37556ba98ccbb8651f39a5192629453f0f1.
+- The old count-vector mismatch reported by this root branch is superseded. The current model imports expected_color_counts(m) from the independent verifier; both encode target count 408 for every m, with nonexact excess vectors (130,130,130), (130,131), and (132) for m=8,9,10 respectively.
+- The source-mode outside-profile correction, malformed-witness guard, and complement-dual K6 separator are present in the latest source.
+- The full-support CSP remains FORMULATION ADDED / execution and proof replay pending. This runtime has no z3, ortools, or pysat; no full CSP solve or SAT/UNSAT claim is made.
+
+### Exact z=3 partition-pair enumeration
+
+- Added Q32_Z3_DUAL_FIBER_SWITCH_COST_AUDIT.md and verify_q32_z3_dual_fiber_switch_cost.py under this root workstream only.
+- Enumerated every four-labelled clique partition F and G of each of the six registered seven-vertex residual graph types, and all 13 local common-label multisets (one aligned pattern plus 12 synchronized-switch patterns).
+- Replayed 91,584 ordered labelled partition pairs. The exact minimum incidence-mismatch cost is zero for 23,040 pairs; 16,704 of these have F=G as unlabelled partitions. The only 6,336 zero-cost mismatches are the three profile cases recorded in the audit.
+- Analytically, for every no-double-track outer block D, y_D >= eta_D. A positive eta costs at least one unit, so sum_D y_D=2 leaves at most two positive-eta blocks. The endpoint-load cap allows at most five zero-cost switches; hence exactly five zero-cost switches and two positive blocks.
+- Each zero-cost switch duplicates the unique empty small-map fiber s and omits the unique split fiber j. Five such switches saturate e_i(s)<=5 in each small block, consuming both endpoint-load slack units. Therefore the two positive blocks cannot be switches; they are aligned and have y_D=eta_D=1.
+- The outer weighted-heavy graph has weighted degree 2-y_D, so the two aligned blocks are exactly the endpoints of its unique path component. The five other blocks are degree-two switch blocks.
+- The mismatch branch is narrowed to a five-switch/two-aligned-endpoint normal form, not closed. Double-track cases, the aligned F=G branch, the other m=10 cells, and full-support m=8,9 remain OPEN / NOT_CERTIFIED.

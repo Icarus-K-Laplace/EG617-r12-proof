@@ -1,6 +1,6 @@
 # EG617 fixed r=12 — canonical state of this workstream
 
-Updated: 2026-10-29  
+Updated: 2026-10-30  
 Repository: `Icarus-K-Laplace/EG617-r12-proof`  
 Branch: `workstream/r12-twochat-e408-global-20261026`  
 Write scope: `r12_master/workstreams/twochat-e408-global-20261026/`
@@ -192,7 +192,9 @@ For \(v=47\), the exact multicolor near-Turán ledger is \(\sum_C g_C=37\), wher
 
 Highest-priority target is therefore the full-support \(v=47\) case: \(m=8,9\), and the remaining low-chromatic-residual \(m=10\) branch. The old degree-nine exceptional-vertex claim and injectivity-dependent closure are excluded by the retraction firewall.
 
-**CSP trust warning (refreshed 2026-10-29, sibling HEAD c6500b24dc78cd4c56cd90219080003aeb8e3cb5):** the candidate verifier's source-mode overrestriction has been corrected. It now checks the source-correct aggregate outside profile (all 12 factors meet O, total 13 when x is outside H or 14 when x is in H, with per-factor caps 2/3) and includes source-profile regression fixtures. However, the model and independent candidate verifier still use target count 398+m and hard-code a 132-edge non-target color. That vector is wrong for m=8,9 (406/407 target edges instead of 408). The count-vector defect remains load-bearing; no solver run or closure claim is imported. A standalone exact count-vector regression now passes, but it validates arithmetic only.
+**CSP status refresh (2026-10-30, read-only sibling HEAD 1de8a37556ba98ccbb8651f39a5192629453f0f1):** both previously reported source-contract defects are now corrected in the sibling model/verifier. The solver imports the canonical expected_color_counts(m) helper: target color 0 has 408 edges for every m; the exact colors have 129 each; the nonexact vectors are (130,130,130) for m=8, (130,131) for m=9, and (132) for m=10. The source-outside-profile verifier also accepts the registered aggregate profiles. The monochromatic-K6 separator and malformed-witness checks are wired in. However, the sibling CSP specification still records execution/proof replay as pending; Z3 is unavailable in this runtime, and no SAT/UNSAT result is imported.
+
+**New z=3 no-double-track reduction:** in the m=10, 3+7 cell, an exact enumeration of 91,584 ordered pairs of labelled small/outer clique partitions shows that any nontrivial F/G mismatch must be one of three empty-fiber split modes. Combining the per-block incidence-slack inequality with the small-block endpoint-load budget forces exactly five zero-cost synchronized switches duplicating the same empty fiber, and exactly two aligned blocks with y_i=1 at the endpoints of the unique outer-heavy path. See Q32_Z3_DUAL_FIBER_SWITCH_COST_AUDIT.md and its verifier. This is a conditional local reduction only; z=3, full-support Q32, and EG617(r=12) remain OPEN / NOT_CERTIFIED.
 
 ## Status policy
 
@@ -206,3 +208,13 @@ No root promotion is allowed until E408-Q32 is closed from valid premises. Any s
 - E408 Q33: the exact 31-point/56-witness reserve is valid conditionally. For supports v=32..47, the independent scalar reserve audit excludes only m=8 at v=32; it does not exclude m=9 or m=10 there, nor m=8,9,10 for v>=33. This is a necessary-capacity check, not a graph-realization counterexample.
 - E408 Q32 remains OPEN / NOT_CERTIFIED under the source-correct 285-edge/excess-six contract. No degree-nine or exceptional-injectivity premise is restored.
 - Current root status: OPEN / NOT_CERTIFIED. No promotable receipt is issued.
+
+
+## 2026-10-30 — z=3 dual-fiber switch-cost and endpoint-saturation reduction
+
+In the full-support m=10 disconnected 3+7 cell with z=3 and no double-track outer vertex, let F be the small-triangle residual clique partition and G the four outer-K7-track partition. The new exact enumeration of all six registered residual graph types and 91,584 ordered labelled partition pairs shows that a nontrivial F/G mismatch is possible only in three profiles:
+- 2C3+K1: F=(3,3,1,0), G=(3,2,1,1), splitting one size-three F fiber as 2+1;
+- C3+P4: F=(3,2,2,0), G=(3,2,1,1), splitting one size-two F fiber as 1+1;
+- C3+P4: F=(3,2,2,0), G=(2,2,2,1), splitting one size-three F fiber as 2+1.
+
+The per-block inequality y_D>=eta_D and the exact endpoint-load budget force precisely five zero-cost switches, all duplicating the same empty F fiber and omitting the same split fiber. The other two blocks are aligned, have y_D=1, and are the endpoints of the unique path in the outer weighted-heavy graph. Their aligned assignments leave a singleton piece of the split fiber unmatched. This is not a contradiction; it is the next finite incidence-normal-form target. Double-track cases remain a separate branch.

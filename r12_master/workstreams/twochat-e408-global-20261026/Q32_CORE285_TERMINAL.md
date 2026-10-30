@@ -1,6 +1,6 @@
 # E408 Q32 — independent 285-edge terminal
 
-Updated: 2026-10-28  
+Updated: 2026-10-30  
 Status: **OPEN / NOT_CERTIFIED.**
 
 ## 1. Retraction notice
@@ -164,4 +164,11 @@ The former note pinned sibling HEAD 92c9086c8b6ac554ed74b48a5d608aa546bcb977 and
 
 ## 12. Current full-support CSP status — 2026-10-29
 
-The source-mode overrestriction is fixed at the checker level; the E408 count-vector defect remains. verify_q32_fullsupport_count_vector_contract.py independently confirms the correct count vectors and total 1830 edges for m=8,9,10. This arithmetic regression is not a CSP solve. Full support v=47 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+The source-mode overrestriction and E408 count-vector mismatch are both fixed in the latest sibling HEAD 1de8a37556ba98ccbb8651f39a5192629453f0f1. The model imports the independent verifier's canonical expected_color_counts helper. The full CSP remains formulation-only; no solver execution or SAT/UNSAT result is imported. Full support v=47 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+
+## 13. 2026-10-30 supersession and z=3 no-double-track reduction
+
+The previous count-vector warning is historical and superseded by the high-support sibling at HEAD 1de8a37556ba98ccbb8651f39a5192629453f0f1; the model and independent verifier now use target count 408 for all m. Execution and proof replay remain pending.
+
+For the m=10, 3+7, z=3 branch with no double-track outer vertex, the root-side exact dual-fiber audit proves that a nontrivial mismatch between the small residual partition F and outer-track partition G can occur only in three split-fiber profiles. The endpoint-load ledger then forces exactly five zero-cost switches duplicating the same empty F fiber, and two aligned blocks with y_i=1 at the endpoints of the unique outer-heavy path. See Q32_Z3_DUAL_FIBER_SWITCH_COST_AUDIT.md. The z=3 terminal remains OPEN; no global Q32 closure is claimed.

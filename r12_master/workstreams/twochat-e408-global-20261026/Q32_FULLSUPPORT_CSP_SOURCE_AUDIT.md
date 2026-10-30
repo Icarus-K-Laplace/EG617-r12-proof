@@ -1,13 +1,13 @@
 # E408 Q32 full-support CSP — source-contract audit
 
-Date: 2026-10-29  
+Date: 2026-10-30  
 Auditing branch: workstream/r12-twochat-e408-global-20261026  
 Read-only source branch: workstream/r12-q32-highsupport-root-20261028  
 Audited sibling HEAD (historical): 92c9086c8b6ac554ed74b48a5d608aa546bcb977  
-Latest sibling HEAD rechecked: c6500b24dc78cd4c56cd90219080003aeb8e3cb5  
-Status: **ONE FORMULATION DEFECT REMAINS; no solver result exists to certify or retract.**
+Latest sibling HEAD rechecked: 1de8a37556ba98ccbb8651f39a5192629453f0f1  
+Status: **SOURCE CONTRACT RECONCILED; EXECUTION / PROOF REPLAY OPEN.**
 
-**Supersession note (2026-10-29):** the old Section 3 / Section 5 source-mode verifier defect has been fixed in the latest sibling revision. The remaining load-bearing defect is the target/non-target edge-count vector for m=8,9.
+**Supersession note (2026-10-30):** both earlier source-contract defects are now fixed in the latest sibling source. The model and independent verifier use the canonical count vector and source-correct outside profiles. The remaining blocker is not a known count-vector defect; it is execution of the full CSP, proof/candidate replay, and the remaining analytic graph cases.
 
 ## 1. Fixed E408 edge-count contract
 
@@ -182,3 +182,22 @@ expected_total.update({c: 129 for c in exact})
 expected_total.update({c: 130 for c in range(m + 1, 11)})
 ~~~
 and the independent verifier has the analogous expected_counts logic. Hence m=8,9 still use the wrong target edge count. The count-vector regression from this root workstream passes, but it does not execute the solver. No SAT/UNSAT result or root promotion is claimed.
+
+
+## 8. Latest sibling recheck — 2026-10-30, HEAD 1de8a37556ba98ccbb8651f39a5192629453f0f1
+
+The current read-only sibling files were re-fetched at the above HEAD:
+- model q32_fullsupport_vertex_labelled_csp.py, blob aba51326e4585594e7d87bc2bb0ff6b2a3d7730d;
+- independent verifier verify_q32_fullsupport_candidate.py, blob bc29a5fe2b4031ccf6aa3e9eb262ca7318c40343;
+- CSP specification, blob 25714d9f9af244aa1af7eb4392cdea5e82b8220c;
+- canonical state, blob afa72318cb0626a0e5fa2ca526eba4bd5984f506;
+- progress log, blob 5aba23b4fb828bdef5d2a6fc7896b7be18469ae0.
+
+The model imports expected_color_counts(m) from the independent verifier and constrains each color to that vector. The verifier defines:
+- m=8: target 408, eight exact colors at 129, three nonexact colors at 130;
+- m=9: target 408, nine exact colors at 129, nonexact colors at 130 and 131;
+- m=10: target 408, ten exact colors at 129, one nonexact color at 132.
+
+The verifier's source-outside-profile checks and malformed-input guard are present. The model includes lazy independent-set and clique (monochromatic-K6) separation. The branch specification still says FORMULATION ADDED / execution and proof replay pending. The current runtime has no z3, ortools, or pysat; no full solver run, SAT/UNSAT result, or candidate witness is imported.
+
+The earlier sections of this audit document remain as a historical record of defects found in older sibling revisions. They are superseded by this Section 8 and must not be read as a description of the current sibling HEAD.
