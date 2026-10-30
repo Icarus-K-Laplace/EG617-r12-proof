@@ -273,6 +273,36 @@ def build_model(m):
         for v in range(N):
             solver.add(iff_count(col[edge(v, u)] == c for u in range(N) if u != v) >= floor)
 
+    # Exact pivot-p degree-excess ledger. The 13 pA edges are target-colored;
+    # all 47 pH edges are distributed among target, exact, and nonexact colors.
+    # Each exact Type-I color contributes at least four p-edges, and each
+    # nonexact color contributes its registered pointwise degree floor.
+    p_degree = {
+        c: iff_count(col[edge(PIVOT, v)] == c for v in range(N) if v != PIVOT)
+        for c in range(12)
+    }
+    p_floor = {
+        c: (4 if color_counts[c] == 130 else 3)
+        for c in nonexact
+    }
+    p_slack_limit = {8: 3, 9: 4}[m]
+    p_excess = (
+        p_degree[0] - 13
+        + isum(p_degree[c] - 4 for c in exact)
+        + isum(p_degree[c] - p_floor[c] for c in nonexact)
+    )
+    solver.add(p_degree[0] >= 13)
+    for c in exact:
+        solver.add(p_degree[c] >= 4)
+        # p has degree exactly four in C iff it lies in an isolated K5
+        # factor. If p=x or p lies in Ns/Nt, the source gadget adds >=1
+        # further p-edge; pA target ownership forces that edge into H.
+        p_isolated_factor = z3.And(xvar[c] != PIVOT, comp[c][PIVOT] < 10)
+        solver.add((p_degree[c] == 4) == p_isolated_factor)
+    solver.add(p_excess == p_slack_limit)
+    solver.add(iff_count(p_degree[c] >= 5 for c in exact) <= p_slack_limit)
+    solver.add(iff_count(p_degree[c] == 4 for c in exact) >= m - p_slack_limit)
+
     # Safe all-color gadget reserve. For residual z, target degree d_0(z)>=
     # d_H(z)>=12; each exact color contributes >=4 plus one for gadget membership,
     # and the nonexact floors sum to L_m=(12,7,3). This yields q_z<=(4,5,5).
@@ -383,7 +413,7 @@ def build_model(m):
 
     variables = {
         "m": m, "solver": solver, "col": col, "exact": exact,
-        "nonexact": nonexact, "source": source, "comp": comp,
+        "nonexact": nonexact, "source": source, "comp": comp, "p_degree": p_degree, "p_excess": p_excess,
         "xvar": xvar, "yvar": yvar, "a0var": a0var,
         "gadget": gadget, "component_outside": component_outside,
         "qblock": qblock, "residual": residual,
