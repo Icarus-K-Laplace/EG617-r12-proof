@@ -148,6 +148,107 @@ def source_outside_profile_errors(x, components):
     return errors
 
 
+def saturating_bipartite_matching(left, right, adj_masks):
+    """Find a matching saturating the smaller side of a bipartite graph."""
+    left, right = list(left), list(right)
+    if len(left) > len(right):
+        left, right = right, left
+    matched_right = {}
+
+    def augment(u, seen):
+        for v in right:
+            if not ((adj_masks[u] >> v) & 1) or v in seen:
+                continue
+            seen.add(v)
+            if v not in matched_right or augment(matched_right[v], seen):
+                matched_right[v] = u
+                return True
+        return False
+
+    for u in left:
+        if not augment(u, set()):
+            return None
+    return {edge(u, v) for v, u in matched_right.items()}
+
+
+def low_layer_obstruction_witness(h_edges, parts):
+    """Replay the tight-part dichotomy: an independent 5-set or a K7."""
+    h_edge_set = set(h_edges)
+    h_adj = [0] * N
+    for u, v in h_edge_set:
+        h_adj[u] |= 1 << v
+        h_adj[v] |= 1 << u
+
+    four_parts = [set(part) for part in parts if len(part) == 4]
+    three_parts = [set(part) for part in parts if len(part) == 3]
+    if len(four_parts) != 11 or len(three_parts) != 1:
+        return ("proof-input-error", "partition is not 11K4+K3")
+    all_parts = four_parts + three_parts
+
+    matching_edges = set()
+    for i, j in itertools.combinations(range(12), 2):
+        matching = saturating_bipartite_matching(
+            all_parts[i], all_parts[j], h_adj)
+        if matching is None or len(matching) != min(len(all_parts[i]), len(all_parts[j])):
+            return ("hall-failure", (i, j))
+        matching_edges.update(matching)
+    if len(matching_edges) != 253:
+        return ("proof-input-error", f"matching skeleton has {len(matching_edges)} edges, not 253")
+
+    residual_edges = h_edge_set - matching_edges
+    residual_degree = Counter()
+    for u, v in residual_edges:
+        residual_degree[u] += 1
+        residual_degree[v] += 1
+
+    tight_parts = [
+        part for part in four_parts
+        if sum(residual_degree[v] for v in part) == 5
+    ]
+    if len(tight_parts) < 5:
+        return ("proof-input-error", f"only {len(tight_parts)} tight 4-parts")
+
+    for part in tight_parts:
+        leaves = [v for v in part if residual_degree[v] == 1]
+        if len(leaves) != 3 or sorted(residual_degree[v] for v in part) != [1, 1, 1, 2]:
+            return ("proof-input-error", "tight part does not have F-degree profile 1,1,1,2")
+
+        clean_parts = []
+        for other in four_parts:
+            if other == part:
+                continue
+            if any(edge(u, v) in residual_edges for u in leaves for v in other):
+                continue
+            clean_parts.append(other)
+        if len(clean_parts) < 7:
+            return ("proof-input-error", f"tight part has only {len(clean_parts)} clean 4-parts")
+
+        witnesses = []
+        for other in clean_parts[:7]:
+            partners = []
+            for u in leaves:
+                matched = [v for v in other if edge(u, v) in matching_edges]
+                if len(matched) != 1:
+                    return ("proof-input-error", "leaf has no unique matching partner in clean part")
+                partners.append(matched[0])
+            if len(set(partners)) != 3:
+                return ("proof-input-error", "three leaves do not have distinct matching partners")
+            remaining = [v for v in other if v not in set(partners)]
+            if len(remaining) != 1:
+                return ("proof-input-error", "clean part has no unique fourth vertex")
+            w = remaining[0]
+            if any(edge(u, w) in h_edge_set for u in leaves):
+                return ("proof-input-error", "fourth vertex is adjacent to a tight-part leaf")
+            witnesses.append(w)
+
+        for w1, w2 in itertools.combinations(witnesses, 2):
+            if edge(w1, w2) not in h_edge_set:
+                return ("independent5", tuple(leaves) + (w1, w2))
+        return ("clique7", tuple(witnesses))
+
+    return ("proof-input-error", "no tight part produced the seven-clean-part dichotomy")
+
+
 def verify_candidate(data, check_alpha=True, check_omega=True):
     errors = []
     def fail(message):
