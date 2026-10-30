@@ -326,9 +326,10 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
     light_maps = {}
     for c1, c2 in itertools.combinations(exact_colors, 2):
         q1, q2 = sorted(qsets.get(c1, set())), sorted(qsets.get(c2, set()))
-        if len(q1) != 4 or len(q2) != 4:
+        if len(q1) != 4 or len(q2) != 4 or set(q1) & set(q2):
             continue
-        cross = [(u, v) for u in q1 for v in q2 if colors[edge(u, v)] == 0]
+        cross = [(u, v) for u in q1 for v in q2
+                 if u != v and colors[edge(u, v)] == 0]
         pair_edge_counts[(c1, c2)] = len(cross)
         if len(cross) < 4:
             fail(f"pivot blocks {c1},{c2} have only {len(cross)} target edges (<4)")
