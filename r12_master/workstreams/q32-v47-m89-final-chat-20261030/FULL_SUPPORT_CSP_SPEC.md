@@ -1,6 +1,6 @@
 # Full-support CSP specification — m=8,9
 
-> **Current status (2026-10-30): ANALYTICALLY EXCLUDED.** The source Type-I factorization itself induces one of three forbidden independent-part partitions of H. See V47_TYPEI_PARTITION_OBSTRUCTION.md. Sections 9–12 below retain the historical development path; their conditional low-layer CSP constraints have been superseded and are not the current closure argument. The full SMT model was not run.
+> **Current status (2026-10-30): OPEN / NOT_CERTIFIED.** The previous analytic exclusion is retracted. It assumes omega(H)<=5, omega(C)<=5 and universal Type-I source factors; EG617 supplies only omega(H)<=11 and omega(C)<=12. The current CSP is an augmented Type-I / K6-free submodel, not a complete encoding of EG617. See AUDIT_RETRACTION_BALANCED_PREMISES.md. No full SMT run was performed.
 
 ## 1. Domain and variables
 
@@ -124,3 +124,12 @@ The twelve Type-I K5 factors each meet O. Their outside occupancies force exactl
 The unified Hall/tight-part lemma in V47_TYPEI_PARTITION_OBSTRUCTION.md excludes all three shapes under the H-core contract. For a partition with r independent 4-parts, the matching skeleton has 250 or 253 edges; the residual degree ledger yields at least r-6 tight 4-parts. In a tight part, the three lowest-residual-degree vertices have total residual degree at most three, leaving at least six clean 4-parts. Their fourth vertices force either an independent 5-set or a K6.
 
 Therefore no exact-129 Type-I color exists on a valid Q32 core. Since both m=8 and m=9 require such colors, both full-support branches are analytically excluded. The independent verifier replays the Hall matching/tight-part argument from the source factors. The SMT model is archival; no solver SAT/UNSAT result is claimed or needed.
+
+
+## 14. Audit correction: source modes and clique caps
+
+The balanced-coloring condition yields alpha(C)<=12 and omega(C)<=12 for each color graph on the 61-point residual. It does not forbid K6. The 47-point Q32 target core lies in R(4,49), so omega(H)<=11, not five.
+
+The exact-129 Type-I factorization in this specification is conditional on the Kang–Pikhurko non-12-partite equality gate and exclusion of the two size-six profiles. The local 12-partite graph C0=5K6 dot-union 3K5 dot-union 4K4 has 61 vertices, 129 edges, alpha=12, omega=6 and a 12-partite complement, showing why the gate is not automatic.
+
+The tight-part lemma only forces a K6/K7 in H after alpha(H)<=4 is used. This is allowed by omega(H)<=11. Therefore the e_C(H)>=71 floor, K6 lazy cuts, and universal Type-I source factors are not valid constraints for the original EG617 CSP. This file describes only a restricted diagnostic submodel until those missing cases are included.
