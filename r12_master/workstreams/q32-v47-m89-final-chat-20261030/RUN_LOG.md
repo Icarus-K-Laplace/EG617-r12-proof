@@ -23,7 +23,7 @@ Additional independent local check: the 2,304 local matching-composition obstruc
 
 A guarded-cut audit found and repaired an earlier overconstraint: composition edges and multi-projection capacities are now implications guarded by the same selected pivot blocks and both incident pairs remaining exactly four-edge pairs.
 
-The source-core exact accounting and conditional 69/70 near-Turan partition constraints were added. The independent verifier now reconstructs the 11K4+K3 partition from source witness blocks for every low-layer candidate. These additions were statically inspected; the full solver and full candidate verifier have not been run.
+The source-core exact accounting and conditional 69/70 near-Turan partition constraints were added. The partition constraints now apply to all eleven non-target colors. The independent verifier reconstructs the 11K4+K3 partition from the color graph for every low-layer candidate, then checks source-witness alignment for exact colors. These additions were statically inspected; the full solver and full candidate verifier have not been run.
 
 ## Full solver
 
