@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
-"""Build and solve the exact source-labelled K_61 Q32 CSP for m=8,9 only.
+"""ARCHIVAL exact source-labelled K_61 Q32 CSP for m=8,9.
 
-The model preserves every source-correct Type-I outside placement and the
-canonical E408 color vector. Pairwise pivot perfect-matching existence is
-forced by exact alpha(H) separation and independently verified. It adds exact
-per-block degree-ledger identities and lazy matching-composition cuts. It deliberately does not import the
-m=10-only aligned 3+7 common-P track normal form.
+The full-support m=8/9 terminal is now analytically excluded by
+V47_TYPEI_PARTITION_OBSTRUCTION.md: every exact-129 Type-I color induces one
+of three forbidden independent-part partitions of H. The solver is retained
+for audit/history only; no SMT run or solver UNSAT certificate is needed for
+the current closure argument.
+
+The historical model preserves every source-correct Type-I outside placement,
+the canonical E408 color vector, pivot matching constraints, and degree ledgers.
+It deliberately does not import the m=10-only aligned 3+7 common-P track normal
+form. If this legacy script is run, its output must not be presented as the
+basis of the analytic closure.
 
 Requires z3-solver. Alpha and clique constraints are separated exactly by
 searching every proposed model for an independent 5-set in H, an independent
