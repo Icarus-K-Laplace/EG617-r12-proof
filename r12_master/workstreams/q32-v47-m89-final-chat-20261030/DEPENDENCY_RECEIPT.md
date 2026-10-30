@@ -44,9 +44,12 @@ All blob SHAs in this table were fetched from the stated branch refs during this
 
 | Local artifact | Blob SHA |
 |---|---|
-| `q32_fullsupport_m89_solver.py` | `50cdc94d43c72bb05e8c81ff45bad150f02b19c1` |
-| `verify_q32_fullsupport_candidate.py` | `7016293a1c640dd55e176992a2ab09cbee253d33` |
+| `q32_fullsupport_m89_solver.py` | `11e1d252c84a2bb2fff2e0613a7bd66b519271f1` |
+| `verify_q32_fullsupport_candidate.py` | `a741ed60628fcf2f810a72c38b2582f4ea5a92f6` |
 | `verify_m89_pivot_matching.py` | `59a2c4031785303a0efe37090e37118b2d35dcf0` |
-| `V47_NEAR_TURAN_SOURCE_NORMAL_FORM.md` | `1dffa3e5eae1211790c9e609d9682fb2e5510357` |
+| `V47_NEAR_TURAN_SOURCE_NORMAL_FORM.md` | `8e4f611ded8e0eeedfff445c270311ad204d054c` |
 
 The 130-edge minimum-degree-four theorem is cited by the read-only Case-II canonical/dependency audit and is the basis for the m=9 floor sum 4+3=7. Its complete proof artifact was not located among the inspected files in this branch snapshot; this workstream therefore treats that result as an imported dependency, not as an independently re-proved theorem. The directly inspected 130-edge degree-three proof and 131-edge degree-three proof are weaker/parallel source records and do not replace the 130-edge degree-four dependency.
+
+
+The 69/70 near-Turan partition CSP and independent verifier were subsequently extended from exact colors to all eleven non-target colors. This is valid because alpha(C[H])<=12 and omega(C[H])<=4 hold for every non-target color; the exact-source witness alignment check remains restricted to exact colors.
