@@ -55,3 +55,12 @@ The computation certifies the finite necessary-shell enumeration and the screen/
 - Independent verifier SHA-256: `ac22350dca49f6ba5eb77f9c2cf5169bc226198a996c3a1b4c3699607ae7c26b`.
 - Independent replay result SHA-256: `041dbef12b2e8738cb1cbb19c21e5587bcbfa562d527d9dd0d08f4dd773a90d6`.
 - Survivor range-map SHA-256: `cab69a57a929e8b9280f9c70a41e75a3317321e064298d436b372fa3ed8fed50`.
+
+
+## Source archival update
+
+The independent replay source is now committed in the same isolated workstream as EG617_V12_independent_replay.py. Its SHA-256 is ac22350dca49f6ba5eb77f9c2cf5169bc226198a996c3a1b4c3699607ae7c26b; it uses only the Python standard library and imports none of the package generator, package verifier, or package screen.
+
+The canonical V12 Library archive and both duplicate copies have the same SHA-256. The V11 archive source lineage was also rechecked: 22/22 V11 internal hashes pass, and all five V12 files marked CONDITIONAL match the corresponding V11 source files byte-for-byte.
+
+For clean reproduction, first extract V12 to a pristine directory and run sha256sum -c SHA256SUMS.txt; then copy the extraction and execute verify_q32_certificate.py, because the original verifier rewrites the embedded replay JSON in its working directory.
