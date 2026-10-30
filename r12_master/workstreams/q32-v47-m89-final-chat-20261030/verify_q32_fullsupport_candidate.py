@@ -362,6 +362,11 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
     if sum(core_counts.get(c, 0) - 69 for c in range(1, 12)) != 37:
         fail("sum_C (e_C(H)-69) is not 37")
 
+    if check_alpha and check_omega:
+        for c in range(1, 12):
+            if core_counts[c] < 71:
+                fail(f"non-target color {c} has {core_counts[c]} H-edges (<71; tight-part exclusion)")
+
     # Full support: every core vertex lies in a K5 factor with exactly one O vertex,
     # so its four H vertices form a source-correct core K4 witness. The factor may
     # be one of the two special K5s inside G11; do not restrict to indices 0..9.
@@ -449,6 +454,14 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
                 if parts is None:
                     fail(f"color {c}: 69/70 layer has no 11K4+K3 near-Turan partition")
                     continue
+                if check_omega:
+                    witness = low_layer_obstruction_witness(h_edges, parts)
+                    if witness[0] == "independent5":
+                        fail(f"color {c}: tight-part lemma gives independent 5-set {witness[1]}")
+                    elif witness[0] == "clique7":
+                        fail(f"color {c}: tight-part lemma gives K7 {witness[1]}")
+                    else:
+                        fail(f"color {c}: tight-part verifier could not replay theorem: {witness}")
                 part_of = {}
                 for i, block in enumerate(parts):
                     for v in block:
