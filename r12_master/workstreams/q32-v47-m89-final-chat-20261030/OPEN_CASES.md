@@ -2,8 +2,6 @@
 
 ## Current status
 
-<status> </status>
-
 **NO OPEN MATHEMATICAL CASE REMAINS IN THIS ISOLATED m=8/9 FULL-SUPPORT TERMINAL.** The exact-129 Type-I factorization forces one of three independent-part partitions of H; a unified Hall/tight-part theorem excludes all three. See V47_TYPEI_PARTITION_OBSTRUCTION.md. The solver was not run and no SMT UNSAT certificate is claimed.
 
 The scalar frontiers, pivot matching search, and 69/70 layer material below are historical intermediate work, superseded by the final analytic Type-I obstruction at the end of this file. The only remaining action in this branch is dependency promotion/audit by the parent root workstream.
