@@ -41,11 +41,12 @@ Moreover, the abstract pivot matching layer alone can be made globally consisten
 
 The read-only root branch currently has an internal summary conflict: its canonical/dependency summaries still state (L_9=6), while the read-only Case-II canonical/dependency audit says the older value 6 is stale and the correct floor is (4+3=7) (130-edge min degree 4; 131-edge min degree 3). The m=9 solver uses 7. This workstream does not edit root files.
 
-## Current next action — parent dependency promotion
+## Current next action — rebuild under actual EG617 hypotheses
 
-1. Audit the imported exact-129 Type-I factorization against its primary source and the sibling high-support source interface.
-2. Audit that the parent Q32 terminal legally supplies all five H-core premises: order 47, 285 edges, minimum degree 12, alpha at most four, and clique number at most five.
-3. Promote the theorem and verifier receipt into the parent root dependency DAG only after those dependencies are confirmed. Do not modify sibling workstreams from this branch.
+1. Do not assume omega(C)<=5 or omega(H)<=5. The actual balanced-coloring bounds are omega(C)<=12 and, for the Q32 core in R(4,49), omega(H)<=11.
+2. Classify exact-129 colors including the complement 12-partite case and both size-six Kang–Pikhurko equality profiles.
+3. Replace the K6/K7 contradiction by an obstruction valid when omega(H)<=11.
+4. Rebuild the solver/verifier to include all source modes; the current candidate format is Type-I-only and the optional --check-omega mode is an augmented problem. Do not promote anything to the root branch from this workstream.
 
 
 ## Historical low-layer partition-code obstruction (superseded)
@@ -71,16 +72,14 @@ Any low-layer partition admits a 253-edge target subgraph M built from pairwise 
 The 32-edge residual has a sharper exact form. Let q be the number of the 36 M-degree-11 vertices receiving positive degree excess, and t the number of isolated K2 components of F. Then q≤6, q+t≥4, the non-leaf core has 11+q≤17 vertices, and its induced edge count is exactly q+t-4. The remaining 36-q vertices are leaves, with 2t of them paired into the isolated K2 components. This leaf-core identity is now in MATH_PROOF.md §9.6.
 
 
-## Historical intermediate result: 69/70 layer exclusion
+## Withdrawn result: 69/70 layer exclusion under an extra K6-free assumption
 
-The tight-part matching argument proves that any 11K4+K3 partition of H forces an independent 5-set or a K7. Hence, using the registered near-Turán theorem, every non-target color satisfies \(e_C(H)\ge71\). The exact 37-unit ledger is now \(\sum_c(e_C(H)-71)=15\).
-
-The solver has removed the conditional near-Turán partition variables and asserts the 71-edge lower bound. The independent verifier reconstructs the partition when needed and replays the matching/tight-part dichotomy. The remaining research target is the 71+ layer, not the already-excluded 69/70 layer.
+The tight-part matching argument proves that any 11K4+K3 partition of H forces an independent 5-set or a K7. The 69/70 near-Turán theorem does supply such a partition, but the resulting K7 is allowed under the actual omega(H)<=11 contract. Therefore the claimed universal e_C(H)>=71 floor and the 37-unit ledger above 71 are withdrawn for EG617. The solver's 71-edge cut belongs only to the augmented K6-free submodel.
 
 
 ## Final analytic terminal — exact Type-I source obstruction
 
-The former remaining 71+ source-placement attack is superseded. Any exact-129 Type-I color induces one of:
+The former 71+ source-placement attack was incorrectly marked superseded. **Conditionally**, if an exact-129 color is Type I, it induces one of:
 - \(11K_4+K_3\) if x lies in O;
 - \(10K_4+2K_3+K_1\) if x lies in H with two double-outside factors;
 - \(11K_4+K_2+K_1\) if x lies in H with one triple-outside factor.
@@ -99,3 +98,12 @@ The Type-I obstruction cannot be promoted to any support row: its required omega
 1. Classify exact-129 colors under only alpha(C),omega(C)<=12, including the 12-partite complement case and all non-12-partite Kang–Pikhurko equality profiles.
 2. Replace the unavailable omega(H)<=5 contradiction by a consequence valid under omega(H)<=11.
 3. Rebuild the m=8/9 model so it includes every source mode permitted by balancedness; the current solver/verifier are Type-I and K6-free restricted.
+
+
+## Critical audit correction (2026-10-30)
+
+The actual EG617 counterexample hypothesis is balancedness: every 13-set contains all twelve colors. Therefore each color C satisfies alpha(C)<=12 and omega(C)<=12; monochromatic K6 is allowed. The Q32 core is in R(4,49), so omega(H)<=11. No global K6-free premise exists.
+
+The exact-129 Type-I factorization requires the non-12-partite complement gate and the clique cap used to eliminate size-six equality profiles. These do not follow from balancedness. The local graph C0=5K6 dot-union 3K5 dot-union 4K4 has 61 vertices, 129 edges, alpha=12, omega=6 and a 12-partite complement, demonstrating the missing gate at the one-color level.
+
+Thus the current verifier/solver are restricted Type-I/K6-free diagnostics, not full EG617 encodings. The previous m=8/9 closure and all-support parent promotion are retracted. See AUDIT_RETRACTION_BALANCED_PREMISES.md.
