@@ -45,3 +45,22 @@ No global dependency DAG, canonical state, or sibling branch was modified.
 The source gate and exact parent chain were independently re-executed and source-mapped in CLEAN_ROOM_REPLAY_20261030.md and Q33_PARENT_SOURCE_MAP.md. This strengthens the proposed E408/Qmax=33 node: it is not a support-size argument and does not need the 56-witness support-promotion node. Once the h13 T61 parent is fixed, any q_p=33 pivot yields the forbidden 47/284 core.
 
 The read-only root DAG at b0459807acd4b7e386148056ddf77d7998918893 still lists E408-33-PROMOTION as OPEN. The correct integration is to replace that node's support-promotion dependency by this direct universal-core contradiction, retaining the parent bridge's conditional status. No global DAG was modified here.
+
+
+## Stronger root-import node: strict 285-edge floor
+
+The three local results compose to a stronger reusable theorem:
+\[
+R(4,47)\ni J\Longrightarrow e(J)\ge285.
+\]
+The 284-edge floor is supplied by the audited private-clique proof and exact 127-row certificate; e=284 then forces delta>=12 by the source-complete minimum-degree gate and is excluded by the universal 284-edge theorem.
+
+For every E408/h13 degree-13 pivot, H_p is an induced member of R(4,47), so e(H_p)>=285. The exact identity 408=91+q_p+e(H_p) yields q_p<=32 for every pivot, hence Q_max<=32.
+
+Suggested root reconciliation:
+- replace the E408-33-SUPPORT / E408-33-PROMOTION dependency path by the strict 285-edge floor;
+- mark the E408 Q_max=33 layer CLOSED under the same conditional h13 T61 parent contract;
+- keep E408 Q_max=32 OPEN as the next distinct terminal;
+- do not change E407 Q32 or the original K145 bridge status.
+
+This is a proposed import only. The global root branch remains read-only in this workstream.
