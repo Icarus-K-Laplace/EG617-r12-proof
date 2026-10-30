@@ -135,3 +135,15 @@ The independent Python analysis-runtime enumeration checked all six residual gra
 All category assertions passed: full/full aligned, full/full nonaligned, F-empty/G-full, F-full/G-empty, and same-partition both-empty states have the exact counts in M10_K4E_Z3_MATCHED_COLUMN_CATALOG.md. The category properties were also checked: the two F-empty/G-full matching choices differ by a transposition containing the small empty label; the both-empty switches are exactly the three transpositions involving that empty label.
 
 The committed replay script verify_m10_k4e_z3_matched_column.py is the reproduction artifact. The current session executed the same enumeration in the analysis Python runtime; it did not run the committed file as a standalone process or CI job. This remains a necessary pair/triple cell catalog, not a full grid certificate.
+
+## 13. Z=3 unmatched-column degree-only prefilter
+
+The exceptional residual vertices were checked directly from the six residual graph6 types and the equality b_r=2-d_R(r). For each possible exceptional vertex, all clique-fiber maps on the other six residual vertices and all six unordered choices of its two outer neighbors were enumerated; the pointwise cap r_U(t)<=3 leaves:
+- 2C3+K1: 1,884 of 2,520;
+- C4+P3: 1,152 of 1,152 per endpoint;
+- C3+P4: 1,080 of 1,296 per endpoint;
+- P7: 1,008 of 1,008 per endpoint;
+- C6+K1: 1,584 of 1,584;
+- C5+P2: 720 of 720 per endpoint.
+
+This is a degree-only prefilter; the full two-block independent-five constraints and the four-row matching/extra-edge coupling have not yet been exhausted. Do not treat these counts as feasible unmatched-column cells.

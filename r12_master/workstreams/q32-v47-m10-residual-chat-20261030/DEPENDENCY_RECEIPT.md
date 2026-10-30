@@ -138,3 +138,9 @@ Imported inputs: the component-specific residual graph filter from M10_4PLUS6_TI
 The four matched outer blocks form a C4 in the light graph and have zero residual slack, so their residual maps align. The six residual types were exhaustively enumerated over all clique-fiber maps and all 24 cross-cell matchings, subject only to independent-pair/triple necessary conditions. The matched-column outer degree cap removes full/full nonaligned and F-full/G-empty categories.
 
 The two unmatched outer blocks each retain one residual-incidence excess. Their joint coupling is not yet solved; no Z=3 closure or Q32/root promotion is claimed.
+
+## 10. Z=3 unmatched-column deficit interface
+
+From s_R=0, each residual vertex satisfies d_R(r)+b_r=2. The two unmatched outer blocks each have y_j=1, so their exceptional double-neighbor vertices are forced by the residual degree deficits: the isolated vertex twice for 2C3+K1/C6+K1, or the two degree-one path endpoints once each for the other residual types.
+
+For an unmatched block U, with exceptional vertex e and neighbor labels a,b, all other residual vertices have a unique-neighbor map g. Pointwise degree saturation gives c_U(t)=3-r_U(t). For each r nonadjacent to e, the pairwise independent-five constraint is a small bipartite-cover condition between the two unused small-block vertices and [4]\\({a,b,g(r)}). The degree-only map counts are in Section 7 of M10_K4E_Z3_MATCHED_COLUMN_CATALOG.md. Full unmatched-column coupling remains OPEN.

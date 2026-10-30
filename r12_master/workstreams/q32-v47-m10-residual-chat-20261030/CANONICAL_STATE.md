@@ -73,3 +73,9 @@ Added M10_K4E_Z3_MATCHED_COLUMN_CATALOG.md and verify_m10_k4e_z3_matched_column.
 The four zero-slack outer blocks induce a connected C4 light graph, so their residual maps align to one common G; the small K4-e side has one common F. The exact pair/triple catalog over the six residual graph types has 70,848 / 29,952 / 67,392 / 31,104 / 13,824 / 40,320 pair/triple cell states, respectively. The matched-column degree cap eliminates full/full nonaligned and F-full/G-empty cells. Only full/full aligned remains for four residual types; the two empty-map regimes occur only for 2C3+K1 and C3+P4.
 
 This is a local matched-column reduction only. The two y_j=1 unmatched outer blocks and the full six-column grid remain OPEN.
+
+## 15. K4-e, Z=3 unmatched-block interface
+
+For each of the two unmatched outer blocks, y_j=1 creates exactly one double-neighbor residual vertex. Since s_R=0, that exceptional vertex must be a residual vertex of degree 0 or 1: the isolated vertex in 2C3+K1 or C6+K1 (used in both unmatched blocks), or one of the two degree-one path endpoints in the other four residual types (one endpoint per unmatched block).
+
+Each unmatched block satisfies the exact pointwise degree equation c_j(t)=3-r_j(t). The independent-pair constraint for the exceptional vertex and each of its nonneighbors gives a further small-block/outer-block matching condition. A degree-only enumeration leaves 1,884/2,520, 1,152/1,152, 1,080/1,296, 1,008/1,008, 1,584/1,584, and 720/720 assignments per exceptional vertex for the six residual types in order. The full exceptional-incidence CSP remains OPEN.

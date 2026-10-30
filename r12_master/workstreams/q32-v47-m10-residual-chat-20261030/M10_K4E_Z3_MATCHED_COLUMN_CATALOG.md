@@ -70,3 +70,45 @@ If F and G are both empty with the same partition, there is one aligned matching
 ## 6. Scope firewall
 
 This result identifies the common residual maps on the four small blocks and four zero-slack outer blocks, enumerates all necessary matched-column cell regimes, and removes two regimes by exact outer degree caps. It does not yet couple the two y_j=1 unmatched outer blocks, the six-column matching matrix, all residual incidences, or the source-color edge ownership. Therefore K4-e, Z=3 remains OPEN; full-support m=10 Q32 and EG617(r=12) remain OPEN / NOT_CERTIFIED.
+
+## 7. Exact unmatched-block residual-incidence interface
+
+Because the K4-e, Z=3 branch has s_R=0, every residual vertex satisfies
+\[
+d_R(r)+b_r=2,\qquad b_r:=\sum_i(|N(r)\cap Q_i|-1).
+\]
+Thus b_r=2-d_R(r). The six residual types determine the exceptional vertices of the two unmatched outer blocks:
+- 2C3 union K1 and C6 union K1: the isolated vertex has b_r=2, so it is the double-neighbor vertex in both unmatched blocks;
+- C4 union P3, C3 union P4, P7, and C5 union P2: the two degree-one path endpoints each have b_r=1, so one endpoint is exceptional in each unmatched block.
+
+For one unmatched block U, y_U=1 means there is exactly one exceptional residual vertex e with two distinct neighbors a,b in U; every other r has a unique neighbor g(r) in U. Let
+\[
+r_U(t)=|\{r\ne e:g(r)=t\}|+\mathbf1_{\{t=a\}}+\mathbf1_{\{t=b\}}.
+\]
+The block has no internal heavy pair, all nine base matching incidences, four cross-extra edges, and eight residual incidences. Its degree sum is exactly 48, so every vertex has degree 12 and
+\[
+\boxed{c_U(t)=3-r_U(t)\ge0.}
+\tag{7.1}
+\]
+
+Now fix any small block Q_i and any residual vertex r nonadjacent to e in R. Since the small-side residual map has zero slack, e and r have distinct neighbors in Q_i; the two other vertices of Q_i are available. In U the vertices available to both e and r are
+\[
+V_{e,r}=[4]\setminus(\{a,b\}\cup\{g(r)\}).
+\]
+The two available Q_i vertices together with e,r and a vertex of V_{e,r} would form an independent five-set unless the cross-pair graph blocks it. In particular:
+- if |V_{e,r}|=1, its unique vertex must be adjacent to at least one of the two available Q_i vertices;
+- if |V_{e,r}|=2, the induced bipartite graph between the two available Q_i vertices and V_{e,r} must contain a perfect matching;
+- if V_{e,r} is empty, this pair gives no further constraint.
+
+A degree-only prefilter enumerating every clique-fiber map g on R minus e and every unordered pair {a,b}, retaining only r_U(t)<=3, gives the following counts (per exceptional vertex):
+
+| H[R] | Exceptional vertex type | g maps | (g,{a,b}) choices | Pass r_U(t)<=3 |
+|---|---|---:|---:|---:|
+| 2C3 union K1 | isolated vertex | 420 | 2,520 | 1,884 |
+| C4 union P3 | either P3 endpoint | 192 | 1,152 | 1,152 |
+| C3 union P4 | either P4 endpoint | 216 | 1,296 | 1,080 |
+| P7 | either endpoint | 168 | 1,008 | 1,008 |
+| C6 union K1 | isolated vertex | 264 | 1,584 | 1,584 |
+| C5 union P2 | either P2 endpoint | 120 | 720 | 720 |
+
+This is only the degree-only prefilter. It does not yet impose all pair/triple constraints jointly across the four small rows, the matching/extra-edge compatibility between those rows, or the coupling between the two unmatched blocks. The two unmatched columns are now expressed as a finite exceptional-vertex incidence CSP.

@@ -59,3 +59,9 @@ These filters do not yet impose all cross-cell matching endpoints, the full F/G 
 The residual graph frontier is six types. The four zero-slack outer blocks share a common residual map G, and the small K4-e side shares F. Exact pair/triple enumeration removes full/full nonaligned and F-full/G-empty matched-column regimes by the outer pointwise degree cap. Four residual types now force full/full aligned cells; only 2C3+K1 and C3+P4 retain empty-map alternatives.
 
 Still OPEN: coupling the two unmatched outer blocks (each with y_j=1), the complete 4x6 matching/extra-edge matrix, residual incidences, and source-color edge ownership.
+
+### Z=3 unmatched outer blocks — exact residual-deficit assignment
+
+The two unmatched outer blocks each have y_j=1 and therefore one residual vertex with two neighbors in that block. Since s_R=0, these exceptional vertices are forced by R: both are the isolated vertex for 2C3+K1 or C6+K1; otherwise they are the two degree-one path endpoints, one per unmatched block.
+
+For each unmatched block, the exact pointwise degree equation is c_j(t)=3-r_j(t). The pair {exceptional vertex, any nonneighbor} also imposes a two-block independent-five constraint against each small block. A degree-only prefilter is recorded in Section 7 of M10_K4E_Z3_MATCHED_COLUMN_CATALOG.md; the full pair/triple and 4-row matching coupling is still OPEN.
