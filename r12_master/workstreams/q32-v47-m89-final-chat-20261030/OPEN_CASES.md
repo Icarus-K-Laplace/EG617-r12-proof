@@ -52,3 +52,18 @@ No claim is made that these next steps are already complete.
 ## Low-layer partition-code obstruction
 
 If k non-target colors are in the 69/70 layer, their 11K4+K3 partitions are pairwise orthogonal. Equivalently, the 47 vertices form a 12-ary code of length k with pairwise agreement at most one. The exact agreement count gives 69k<=C(47,2)=1081, hence k<=15. This is not restrictive for k<=11, so it does not close m=8/9. The remaining attack must use the Type-I source labels, the 71+ core-edge colors, and the target-degree/excess ledger together with the partition code.
+
+
+## New low-layer source-placement closure
+
+For exact colors in the 69/70 layer, the K3/K2 alignment now removes all x-in-H placements except those with the overfull source factor in Nt and y outside H:
+- two-double: Nt has outside occupancy 2;
+- triple: Nt has outside occupancy 3;
+- the Nt H-interior is in x's part;
+- at most one H vertex of Ns\A0 remains, and it is exactly the core excess above 69.
+
+The x-outside profile has its unique double K3 in the size-three part and core excess exactly \(1_{y\in H}|A_0\cap H|\). The solver and verifier encode/replay these necessary conditions. They do not force a color into the 69/70 layer.
+
+## New matching-skeleton target
+
+Any low-layer partition admits a 253-edge target subgraph M built from pairwise Hall matchings between parts. The 32-edge residual F has degree \(1+s_v\) on 36 vertices and \(2+s_v\) on 11 vertices, where \(\sum s_v=6\); hence F has at least 30 leaves. The key unresolved question is whether this sparse residual can coexist with the K6-free target graph and the cross-color source constraints. The matching skeleton is currently a theorem, not an explicit CSP matching-choice encoding.
