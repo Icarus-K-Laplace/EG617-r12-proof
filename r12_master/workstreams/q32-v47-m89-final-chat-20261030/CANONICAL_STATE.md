@@ -13,7 +13,7 @@ It does not work on v=44,45,46 or m=10.
 - Repository: `Icarus-K-Laplace/EG617-r12-proof`
 - Branch: `workstream/r12-q32-v47-m89-final-20261030`
 - Branch base: high-support branch commit `1de8a37556ba98ccbb8651f39a5192629453f0f1`
-- Pre-receipt audit HEAD (before this canonical-state receipt update): `c0a2ce1ca2c4890e9374efd590aad8ba878e26de`
+- Audited branch HEAD at this checkpoint: `ecede382bf52cc9449fee1659398d21267b889c0` (subsequent receipt commits update this line)
 - Sole write directory: `r12_master/workstreams/q32-v47-m89-final-chat-20261030/`
 - The sibling branches and their directories were not modified.
 
@@ -35,6 +35,7 @@ It does not work on v=44,45,46 or m=10.
 8. **PROVED_CONDITIONAL** — exact source-core accounting (e_C(H)=B_C+G_C^H) and parameter-dependent gap bounds for x in O / two-double / triple placements.
 9. **PROVED_CONDITIONAL** — every non-target color with 69 or 70 H-edges has an 11K4+K3 near-Turan partition; for exact colors every single-outside source witness K4 occupies a size-four part. The CSP and independent verifier now encode/check this structure.
 10. **WITHDRAWN / repaired** — the first unconditional lazy matching-composition cuts were overconstraints; they have been replaced by source- and pivot-selection-guarded implications.
+11. **PROVED_CONDITIONAL** — simultaneous 69/70 partitions of distinct non-target colors are pairwise orthogonal; the solver and independent verifier now encode/check this condition.
 
 ## Scope firewall
 
