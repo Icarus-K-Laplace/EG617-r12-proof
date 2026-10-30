@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
 """Source-correct Q33 component-only support/reserve verifier.
 
-For each exact-129 color, choose seven guaranteed isolated-K5 component
-witnesses. Thus every selected witness is a component K4 and h=0. The
-remaining three K5 components have variable core sizes c_i in {0,...,4}.
-
-This verifies a necessary aggregate U/W profile relaxation only. It does
-not encode labelled vertices, cross-color pair intersections, or the full
-degree ledger, and is not a graph-level Q33 UNSAT certificate.
+Choose seven guaranteed isolated-K5 component witnesses per exact-129 color,
+so h=0. A shell-capacity lemma forces the three unselected component core
+sizes to sum to 9..12. This verifies a necessary aggregate U/W profile
+relaxation, not a graph-level Q33 UNSAT certificate.
 """
 from itertools import product
 from math import comb
@@ -17,7 +14,6 @@ CORE_SPLITS = [(c, k) for c in range(5) for k in range(c + 1)]
 
 
 def p_k(n, k):
-    """Minimum edges in an n-vertex graph with independence number <= k."""
     if n <= k:
         return 0
     q, r = divmod(n, k)
@@ -25,12 +21,10 @@ def p_k(n, k):
 
 
 def t_k(n, k):
-    """Turán maximum for a K_(k+1)-free graph."""
     return comb(n, 2) - p_k(n, k)
 
 
 def l_u_max(v):
-    """Upper bound on e(complement(H[U])) from the 284-edge core ledger."""
     w = 47 - v
     if w == 0:
         return comb(47, 2) - 284
@@ -38,12 +32,11 @@ def l_u_max(v):
 
 
 def options_product(v):
-    """Cartesian-product enumeration of one exact color's 3 residual K5s."""
     out = set()
     for comps in product(CORE_SPLITS, repeat=3):
         csum = sum(c for c, _ in comps)
         ksum = sum(k for _, k in comps)
-        if not 8 <= csum <= 12:
+        if not 9 <= csum <= 12:
             continue
         gadget_core = 19 - csum
         gadget_u = v - 28 - ksum
@@ -58,8 +51,7 @@ def options_product(v):
 
 
 def options_recursive(v):
-    """Independent recursive state enumeration of the same per-color options."""
-    states = {(0, 0, 0, 0)}  # (sum c_i, sum k_i, U-pairs, W-pairs)
+    states = {(0, 0, 0, 0)}
     for _ in range(3):
         nxt = set()
         for csum, ksum, u_cost, w_cost in states:
@@ -68,10 +60,9 @@ def options_recursive(v):
                          u_cost+comb(k, 2),
                          w_cost+comb(c-k, 2)))
         states = nxt
-
     out = set()
     for csum, ksum, comp_u, comp_w in states:
-        if not 8 <= csum <= 12:
+        if not 9 <= csum <= 12:
             continue
         gadget_core = 19 - csum
         gadget_u = v - 28 - ksum
@@ -83,15 +74,36 @@ def options_recursive(v):
     return out
 
 
-def global_screen(m, v, one_color_options):
-    """Combine m exact-color costs under the U and W reserve budgets."""
+def min_w_shapes(v):
+    rows = []
+    min_cost = None
+    for comps in product(CORE_SPLITS, repeat=3):
+        csum = sum(c for c, _ in comps)
+        ksum = sum(k for _, k in comps)
+        if not 9 <= csum <= 12:
+            continue
+        gadget_core = 19 - csum
+        gadget_u = v - 28 - ksum
+        if not 0 <= gadget_u <= gadget_core:
+            continue
+        gadget_w = gadget_core - gadget_u
+        comp_w = sum(comb(c-k, 2) for c, k in comps)
+        cost = comp_w + p_k(gadget_w, 2)
+        if min_cost is None or cost < min_cost:
+            min_cost, rows = cost, []
+        if cost == min_cost:
+            component_w_sizes = tuple(c-k for c, k in comps)
+            rows.append((component_w_sizes, gadget_w))
+    return min_cost, rows
+
+
+def global_states(m, v, one_color_options):
     n = 11 - m
     w = 47 - v
     budget_u = l_u_max(v) - 42*m - n*p_k(v, 12)
     budget_w = t_k(w, 4) - n*p_k(w, 12)
     if budget_u < 0 or budget_w < 0:
-        return budget_u, budget_w, 0, False
-
+        return budget_u, budget_w, set()
     states = {(0, 0)}
     for _ in range(m):
         states = {
@@ -102,7 +114,7 @@ def global_screen(m, v, one_color_options):
         }
         if not states:
             break
-    return budget_u, budget_w, len(states), bool(states)
+    return budget_u, budget_w, states
 
 
 def main():
@@ -114,13 +126,6 @@ def main():
         options_by_v[v] = a
 
     all_rows = {}
-    for m, v_min in SUPPORT_MIN.items():
-        rows = []
-        for v in range(v_min, 48):
-            bu, bw, nstates, feasible = global_screen(m, v, options_by_v[v])
-            rows.append((v, bu, bw, len(options_by_v[v]), nstates, feasible))
-        all_rows[m] = rows
-
     expected_excluded = {
         8: list(range(31, 39)),
         9: list(range(32, 40)),
@@ -131,20 +136,47 @@ def main():
         9: list(range(40, 48)),
         10: list(range(41, 48)),
     }
-    for m, rows in all_rows.items():
+    for m, v_min in SUPPORT_MIN.items():
+        rows = []
+        for v in range(v_min, 48):
+            bu, bw, states = global_states(m, v, options_by_v[v])
+            rows.append((v, bu, bw, len(options_by_v[v]), len(states), bool(states)))
+        all_rows[m] = rows
         excluded = [v for v, _, _, _, _, ok in rows if not ok]
         survivors = [v for v, _, _, _, _, ok in rows if ok]
         assert excluded == expected_excluded[m], (m, excluded)
         assert survivors == expected_survivors[m], (m, survivors)
 
+    # Exact W-boundary equalities at the first profile-feasible support sizes.
+    for m, v, expected_min_w, expected_budget_w in [
+        (8, 39, 3, 24),
+        (9, 40, 2, 18),
+        (10, 41, 1, 13),
+    ]:
+        min_w, shapes = min_w_shapes(v)
+        assert min_w == expected_min_w, (m, v, min_w)
+        assert all(max(parts) <= 2 for parts, _ in shapes)
+        max_gadget_w = max(gw for _, gw in shapes)
+        assert max_gadget_w <= (4 if m in (8, 9) else 3)
+        bu, bw, states = global_states(m, v, options_by_v[v])
+        assert bw == expected_budget_w
+        if m in (8, 9):
+            assert m*min_w == bw
+            assert {z for _, z in states} == {bw}
+        else:
+            assert m*min_w == 10 and bw-m*min_w == 3
+            assert {z for _, z in states} == {10, 11, 12, 13}
+
     print("Q33 COMPONENT-ONLY VARIABLE-CORE SCREEN: PASS")
-    print("Per-color Cartesian product and recursive generators agree for v=31..47.")
+    print("Cartesian-product and recursive per-color generators agree for v=31..47.")
     for m, rows in all_rows.items():
         print(f"m={m}")
-        for v, bu, bw, option_count, state_count, feasible in rows:
-            print(f"  v={v}: BU={bu}, BW={bw}, options={option_count}, "
-                  f"aggregate_states={state_count}, "
+        for v, bu, bw, nopt, nstates, feasible in rows:
+            print(f"  v={v}: BU={bu}, BW={bw}, options={nopt}, "
+                  f"aggregate_states={nstates}, "
                   f"{'PROFILE_FEASIBLE' if feasible else 'EXCLUDED'}")
+    print("W-boundary checks: m8/v39 -> 8 matchings of 3 edges; "
+          "m9/v40 -> 9 matchings of 2 edges; m10/v41 -> W-slack 3.")
     print("All 47 registered (m,v) cells checked.")
     print("Scope: necessary aggregate profile screen only; no graph realization; "
           "Q33 remains OPEN.")

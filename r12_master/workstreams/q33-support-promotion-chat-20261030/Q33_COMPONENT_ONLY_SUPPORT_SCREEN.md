@@ -49,9 +49,9 @@ Let \(g_C\) be the number of core vertices in the 11-vertex gadget. The selected
 \[
 g_C=47-28-\sum_{i=1}^3c_i=19-\sum_i c_i.
 \]
-Since \(7\le g_C\le11\),
+Since \(7\le g_C\le10\),
 \[
-\boxed{8\le\sum_i c_i\le12.}
+\boxed{9\le\sum_i c_i\le12.}
 \]
 
 Let \(k_i\in\{0,\ldots,c_i\}\) be the number of core vertices of the \(i\)-th unselected component lying in \(U\). Put \(K=\sum_i k_i\). The gadget core splits as
@@ -135,3 +135,26 @@ Every larger \(v\) through 47 has at least one aggregate cost-pair survivor in t
 This strengthens the earlier all-h variable-core screen by fixing a source-guaranteed choice of seven component witnesses per exact color. It uses no gadget witness and no +4h overlap allowance. It still omits actual vertex labels, cross-color witness intersections beyond linearity, detailed edge ownership, and the full degree/excess incidence matrix. Thus it is a stronger necessary-condition filter, not a full Q33 UNSAT certificate.
 
 Status: reserve inequalities **PROVED_CONDITIONAL** under the registered Q33 parent contract; finite profile screen **COMPUTATION_CERTIFIED**; remaining graph-level cases and root promotion **OPEN / NOT_CERTIFIED**.
+
+
+## 8. Nonempty gadget-shell correction and first-survivor W equality
+
+The three unselected K5 components can contain at most three B-vertices in total, since B is a target clique and each non-target K5 contains at most one B. They can contain at most the three S-vertices. The pivot p cannot share a non-target K5 with any vertex of A=S union B, because p is target-adjacent to all of A. Thus the three unselected components can contain at most six shell vertices altogether. After the seven selected components have used seven of the fourteen shell vertices, seven shell vertices remain; at least one of them must lie in the 11-vertex gadget.
+
+Consequently the gadget has at most ten core vertices. Since
+\[
+g_C=47-28-\sum_i c_i=19-\sum_i c_i,
+\]
+the correct source profile is
+\[
+7\le g_C\le10,\qquad \boxed{9\le\sum_i c_i\le12}.
+\]
+The verifier now imposes this stronger lower bound.
+
+At the first aggregate survivor for m=8, v=39, the per-color minimum W-cost is 3 and the total W budget is 24=8·3. Therefore every exact color attains its minimum W-cost and the W reserve is saturated. Turán equality gives \(\overline{H[W]}=K_{2,2,2,2}\), equivalently \(H[W]=4K_2\). The exact-color W-edge set for each color is a matching of size 3.
+
+At m=9, v=40, the per-color minimum W-cost is 2 and the total W budget is 18=9·2. Hence \(\overline{H[W]}=K_{2,2,2,1}\), equivalently \(H[W]=3K_2\dot\cup K_1\), and each exact-color W-edge set is a matching of size 2.
+
+For these matching conclusions, the finite profile enumeration shows that every per-color minimum-W profile has each of the three component W-parts of size at most 2 and gadget W-part of size at most 4. Global equality forces the gadget graph to attain \(p_2(r)\); for r<=4 its extremal form is a matching (or empty). These are exact structural consequences, not contradictions.
+
+At m=10, v=41, the per-color minimum W-cost is 1 while the W budget is 13, leaving at most three units of aggregate W slack. No Turán equality or matching conclusion is asserted there.
