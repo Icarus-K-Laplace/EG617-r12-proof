@@ -6,12 +6,14 @@
 |---|---|---|
 | `workstream/r12-q32-highsupport-root-20261028` | `1de8a37556ba98ccbb8651f39a5192629453f0f1` | Mathematical base and source-labelled full-support model |
 | `workstream/r12-q32-caseII-v44-final-20261028` | `9afd7c1a59056052974f9dc78933010d10e88bba` | Sibling v44 closure/dependency boundary only; not reworked |
-| `workstream/r12-twochat-e408-global-20261026` | `b0459807fcbf940fcdfe8007ddc1b1901ac3157e` | Q32 core 285 terminal and root promotion interface |
+| `workstream/r12-twochat-e408-global-20261026` | `b0459807acd4b7e386148056ddf77d7998918893` | latest root DAG, core 285 terminal, and root promotion interface |
 | `main` | `278639de8572ffab12fe859d36f776fbb88fc4f0` | Staleness comparison only |
 
 The new branch `workstream/r12-q32-v47-m89-final-20261030` was created from the high-support HEAD, not from the stale main branch.
 
 ## Source files and inspected blob SHAs
+
+The latest root global branch HEAD is `b0459807acd4b7e386148056ddf77d7998918893` (replaces the older root SHA in the first receipt). The read-only root canonical/dependency summaries still contain `L_9=6`; the Case-II canonical/dependency audit explicitly supersedes it with `L_9=7` from the 130-edge degree-four and 131-edge degree-three theorems. The isolated model uses 7.
 
 | File | Blob SHA |
 |---|---|
