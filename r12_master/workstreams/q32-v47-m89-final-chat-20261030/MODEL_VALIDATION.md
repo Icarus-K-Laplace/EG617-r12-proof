@@ -73,3 +73,18 @@ This expansion adds necessary conditions only; no color is forced into the 69/70
 ## Pairwise orthogonality of low-layer partitions
 
 When two non-target colors both have 69 or 70 H-edges inside H, their reconstructed 11K4+K3 partitions have intersections of size at most one in every pair of parts. The solver now states this explicitly for every pair of H-vertices and low-layer color pair; the independent verifier replays the same no-common-2-set condition. This is implied by unique edge ownership but is exposed as a direct global cut.
+
+
+## Staged verifier audit
+
+The candidate verifier has two phases in the solver loop: a source/model-integrity pass with alpha/omega checks disabled, followed by a full mathematical replay after lazy cuts stop. A further audit identified that several consequences of alpha(H)<=4 had initially been checked during the source-only phase. This could misclassify a provisional alpha-invalid model as a model-encoding failure.
+
+Repaired: the verifier now guards all alpha-dependent checks behind check_alpha, including:
+- Turan's e_C(H)>=69 floor;
+- the pivot-pair perfect-matching and matching-composition replay;
+- the residual-to-pivot neighbor lower bound and nonnegative reserve slack;
+- the 69/70 near-Turan partition reconstruction and pairwise orthogonality.
+
+The two-double source lower bound is checked as 72-a in the source-only pass and strengthened to max(69,72-a) only after alpha(C)<=12 is verified. The source-derived upper bounds remain checked unconditionally. Nonexact degree floors and safe/conditional reserve caps remain guarded by both alpha and omega checks.
+
+This prevents an invalid provisional candidate from being mistaken for a defect in the source encoding.
