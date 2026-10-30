@@ -1,74 +1,67 @@
-# Common-neighbor capacity
+# Common-neighbour capacity — source-complete version
 
-Status: **PROVED_CONDITIONAL** on Kang-Pikhurko Theorem 1, whose primary PDF was checked.
+Date: 2026-10-30  
+Status: **PROVED** under the five Q33 core hypotheses and all inherited density caps.
 
-Assume the five core hypotheses and write epsilon(v)=d(v)-12, so sum epsilon=4.
+Let H have 47 vertices, e(H)=284, delta(H)>=12, alpha(H)<=4, omega(H)<=11, and
+\[
+e(H[U])\le D(|U|),\qquad
+D(n)=\binom n2-11p_{12}(n)
+\]
+for every U subset V(H), where p_12(n) is the balanced complete 12-partite edge count.
 
-## 1. No 25-set has independence number at most two
+The earlier draft used Kang–Pikhurko at n=25 to show that no 25-set has alpha at most two. That input is unnecessary. The stronger internal seed R(2,24)=empty is already proved from D(24)=144 in MINDEG12_47_SOURCE_COMPLETE_AUDIT.md. We use it here, eliminating the external extremal-theorem dependency.
 
-Suppose W is any 25-vertex subset with alpha(H[W])<=2.
+## 1. R(2,24) is empty
 
-Then the complement J=overline{H[W]} is triangle-free. It is also non-bipartite: if J were bipartite with parts X,Y, then H[W] would contain the two cliques X and Y. Since omega(H)<=11, both parts would have size at most 11, forcing |W|<=22.
+Suppose W is a 24-set with alpha(H[W])<=2. For every w in W, its non-neighbours in H[W] form a clique: two nonadjacent non-neighbours together with w would be an independent triple. Since omega(H)<=11, each vertex has at least 12 neighbours in H[W]. Thus
+\[
+e(H[W])\ge \frac{24\cdot12}{2}=144.
+\]
+But D(24)=144, so equality holds and H[W] is 12-regular.
 
-Kang-Pikhurko, Theorem 1, states that for n>=r+3 and 2<=r<=(n-1)/2, the maximum number of edges in a K_{r+1}-free graph on n vertices which is not r-partite is
+Its complement L is therefore 11-regular and triangle-free. It is non-bipartite: a bipartition of 24 vertices has a side of size at least 12, which would be an independent set in L and hence a clique of size at least 12 in H[W].
 
-p_r(n)=t_r(n)-floor(n/r)+1.
+Let C be a shortest odd cycle of L, of length 2k+1, k>=2. It is chordless. Every vertex outside C has at most k neighbours on C, since any k+1 vertices of an odd cycle contain an adjacent pair and would form a triangle with that outside vertex. Summing degrees on C gives
+\[
+11(2k+1)\le 2(2k+1)+k(23-2k),
+\]
+equivalently
+\[
+2k^2-5k+9\le0.
+\]
+The discriminant is 25-72<0, a contradiction. Hence R(2,24) is empty.
 
-At n=25,r=2 the hypotheses hold. The balanced complete bipartite graph has
+## 2. Common-neighbour bound
 
-t_2(25)=13*12=156,
-
-so every non-bipartite triangle-free 25-vertex graph has at most
-
-p_2(25)=156-12+1=145
-
-edges.
-
-Therefore
-
-e(H[W]) >= binom(25,2)-145 = 155.
-
-But
-
-sum_{w in W} d_H(w)
-=300+sum_{w in W}epsilon(w)
-<=300+4=304,
-
-and hence e(H[W])<=152. Contradiction.
-
-Thus no 25-set W can have alpha(H[W])<=2.
-
-Primary source:
-M. Kang and O. Pikhurko, “Maximum K_{r+1}-free graphs which are not r-partite”, Matematychni Studii 24 (2005), 12–20, Theorem 1.
-https://opikhurko.warwick.ac.uk/E/KangPikhurko05ms.pdf
-
-## 2. Common-neighbor bound
-
-Let uv be a nonedge and c=|N(u) intersect N(v)|. The common antineighborhood
-
-R=V(H) minus ({u,v} union N(u) union N(v))
-
+Let uv be a nonedge of H, let c=|N(u) intersect N(v)|, and write
+\[
+\epsilon(x)=d_H(x)-12,\qquad \sum_x\epsilon(x)=568-564=4.
+\]
+The common antineighbourhood
+\[
+R=V(H)\setminus(\{u,v\}\cup N(u)\cup N(v))
+\]
 has size
-
+\[
 |R|=45-d(u)-d(v)+c
-=21+c-epsilon(u)-epsilon(v).
+=21+c-\epsilon(u)-\epsilon(v).
+\]
+An independent triple in H[R], together with u and v, would be an independent five-set. Thus alpha(H[R])<=2. If |R|>=24, any 24-subset would contradict R(2,24)=empty. Therefore |R|<=23 and
+\[
+\boxed{|N(u)\cap N(v)|\le 2+\epsilon(u)+\epsilon(v).}
+\]
 
-Since u,v are nonadjacent to every point of R and to each other, an independent triple in H[R] would extend with u,v to an independent five-set. Hence alpha(H[R])<=2.
-
-By the previous section, |R|<=24. Consequently
-
-**|N(u) intersect N(v)| <= 3+epsilon(u)+epsilon(v).**
+This improves the former 3+epsilon(u)+epsilon(v) estimate.
 
 ## 3. K10 completion capacity
 
-Let K be a clique of order 10. At most one external vertex can be complete to K.
+Let K be a 10-clique. At most one external vertex can be complete to K.
 
-If two external vertices x,y are both complete to K and xy is an edge, K union {x,y} is a K12, contrary to omega(H)<=11.
-
-If xy is a nonedge, they have at least ten common neighbors. The common-neighbor bound gives at most
-
-3+epsilon(x)+epsilon(y)<=7,
-
+If two external vertices x,y are both complete to K and xy is an edge, K union {x,y} is a K12, contrary to omega(H)<=11. If xy is a nonedge, they have at least ten common neighbours, whereas the preceding bound gives
+\[
+|N(x)\cap N(y)|\le2+\epsilon(x)+\epsilon(y)\le6,
+\]
 because the total excess is four. Contradiction.
 
-This proves the K10 capacity statement, including the complete-to-K10 exception.
+Thus the K10 completion-capacity lemma is proved without Kang–Pikhurko.
