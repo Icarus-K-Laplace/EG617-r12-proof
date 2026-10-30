@@ -39,3 +39,10 @@ The full CSP was not run. No solver version, SAT/UNSAT output, proof log, or ful
 The conditional 69/70 partition variables and independent reconstruction now apply to all eleven non-target colors. Whenever two colors are both in the 69/70 layer, their 12-partitions are pairwise orthogonal: no two H-vertices may share a part in both partitions. This is encoded explicitly in the solver and replayed by the independent verifier.
 
 The partition-code consequence was checked analytically: k simultaneous low-layer partitions give 47 codewords over 12 symbols with pairwise agreement at most one, and the exact agreement count yields 69k<=1081 (k<=15). This does not exclude k<=11, so it is recorded as a structural constraint, not a closure.
+
+
+## Staged-verifier overconstraint repair
+
+The independent verifier's source-only pass is called with alpha/omega checks disabled so the solver can add lazy validity cuts to provisional models. A final audit found that the pivot matching, residual-neighbor, near-Turan, and Turan-floor checks depend on alpha hypotheses and therefore must not run in that first pass. All such checks are now guarded by check_alpha; the 130/131 degree floors and reserve caps remain guarded by both check_alpha and check_omega. Source-only checks continue to validate exact edge ownership, Type-I factors, canonical counts, target-core degrees, full support, witness linearity, and source-derived gap bounds.
+
+No SAT/UNSAT computation has been run.
