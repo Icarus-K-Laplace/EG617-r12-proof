@@ -77,3 +77,15 @@ The 32-edge residual has a sharper exact form. Let q be the number of the 36 M-d
 The tight-part matching argument proves that any 11K4+K3 partition of H forces an independent 5-set or a K7. Hence, using the registered near-Turán theorem, every non-target color satisfies \(e_C(H)\ge71\). The exact 37-unit ledger is now \(\sum_c(e_C(H)-71)=15\).
 
 The solver has removed the conditional near-Turán partition variables and asserts the 71-edge lower bound. The independent verifier reconstructs the partition when needed and replays the matching/tight-part dichotomy. The remaining research target is the 71+ layer, not the already-excluded 69/70 layer.
+
+
+## Final analytic terminal — exact Type-I source obstruction
+
+The former remaining 71+ source-placement attack is superseded. Any exact-129 Type-I color induces one of:
+- \(11K_4+K_3\) if x lies in O;
+- \(10K_4+2K_3+K_1\) if x lies in H with two double-outside factors;
+- \(11K_4+K_2+K_1\) if x lies in H with one triple-outside factor.
+
+A unified Hall/tight-part lemma excludes all three partitions under the frozen H-core contract. Therefore no exact-129 Type-I color can exist. Since m=8 and m=9 both require at least one such color, both full-support Q32 branches are **ANALYTICALLY CLOSED / IMPOSSIBLE** conditional on the registered Type-I factorization and H-core contract.
+
+No full SMT run or UNSAT proof log is claimed or needed. The next work is dependency promotion: independently audit the imported Type-I factorization and H-core contract against the parent E408/Q32 theorem, then update the root dependency DAG/receipt through the appropriate parent workstream. This isolated branch does not claim that E408 as a whole, Q33, E407, or the original Erdős r=12 theorem is closed.
