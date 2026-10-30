@@ -45,7 +45,7 @@ For the four-block component S and six-block component T,
 
     2 X_S + delta_ST + Y_S <= 2.
 
-Thus S has at most one unit of internal heavy-pair weight, and its light graph is K4 or K4 minus one edge. The 24 cross pairs are heavy; their total multiplicity beyond the mandatory one per pair is at most two. The K4/K4-e component is now reduced to four aligned K4 tracks by the dense-component core lemma. In the K4-e subcase, all 24 cross pairs are exactly five edges, the six-block internal heavy graph is a matching, and X_T=Z-1. The 4-by-6 cross matching/extra-edge grid remains OPEN.
+Thus S has at most one unit of internal heavy-pair weight, and its light graph is K4 or K4 minus one edge. The 24 cross pairs are heavy; their total multiplicity beyond the mandatory one per pair is at most two. The K4/K4-e component is now reduced to four aligned K4 tracks by the dense-component core lemma. In the K4-e subcase, all 24 cross pairs are exactly five edges, the six-block internal heavy graph is a matching, and X_T=Z-1. The entire K4-e, Z=4 slice of the 4-by-6 cross matching/extra-edge grid is now CLOSED for every residual profile; see M10_K4E_Z4_GLOBAL_GRID_CLOSURE.md. The K4 small-component branch and K4-e with Z=1,2,3 remain OPEN.
 
 ### 5+5
 
@@ -88,3 +88,10 @@ The corrected exact 5,5,5 theorem and one-column enumeration are recorded in M10
 ## 9. Z=4 two-aligned-column pattern-10 exclusion
 
 The exact two-aligned-column pattern with p_A=P on two columns, p_A=P tau on four columns, and p_B=p_C=p_D=P is PROVED IMPOSSIBLE when the small residual fiber profile is (3,2,2,0). See M10_Z4_TWO_ALIGNED_PATTERN10_EXCLUSION.md. The proof uses connectedness of the K2,4 cut after deleting the outer heavy matching, the exact A-row degree lower bounds, the corrected non-special 5,5,5 branch, and the outer target-degree vector. This excludes only that exact pattern, not all two-aligned-column configurations.
+
+
+## 10. General 4+6 K4-e, Z=4 global closure
+
+M10_K4E_Z4_GLOBAL_GRID_CLOSURE.md proves the whole K4-e, Z=4 slice impossible. It saturates Y=0, forces R=C7 or C3 dot-union C4, aligns the internal matching systems and the two residual maps, and exhausts every pair/triple-compatible residual-map cell. The full/empty map cases are eliminated by exact degree caps. The common-empty-fiber grid is eliminated by the K6-minus-matching cut lemma, the corrected 5,5,5 endpoint branch, and the outer degree cap at a size-2 fiber label, followed by a K12 contradiction.
+
+The verifier checks 168 C7 maps / 12,096 compatible map pairs / 56,448 pair-triple cell states; 288 C3+C4 maps / 29,952 compatible map pairs / 120,960 pair-triple cell states; all 930 outer-light cut shapes; and the six normalized corrected-5,5,5 endpoint cases. It is a finite local replay plus an analytic global proof, not a full Q32 solver.

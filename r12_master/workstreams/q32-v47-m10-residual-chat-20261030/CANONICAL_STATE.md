@@ -27,7 +27,7 @@ The Type-I exact-color source is the published-source factorization 10 isolated 
 5. The source-correct isolated-double audit identifies an eight-vertex residual branch; its exceptional large-track-centered subcase remains open.
 6. The source-correct Type-I occupancy catalog has 90 labelled aggregate factor assignments. It includes isolated-double, special-double, two-isolated-double, isolated-triple, and special-triple modes.
 7. New dense-component lemma: the 4+6 side contains four aligned K4 tracks (with a sharper K4-e reduction); each side of a 5+5 split contains an aligned four-block K4/K4-e core. Their cross matching grids remain open.
-8. RETRACTED: the former 5,5,5 classifier (1,872 valid) and 20,788-state one-column catalog were incorrect. Corrected exact replay gives 2,124 valid 5,5,5 configurations and 20,842 one-column states (70 switched). The six-column grid remains OPEN.
+8. RETRACTED: the former 5,5,5 classifier (1,872 valid) and 20,788-state one-column catalog were incorrect. Corrected exact replay gives 2,124 valid 5,5,5 configurations and 20,842 one-column states (70 switched). The full six-column grid is closed for the K4-e, Z=4 slice; the other 4+6 cases remain OPEN.
 9. The low-support Q32 layers |U|=44,45,46 are closed on the case-II branch. This does not close full support |U|=47.
 
 ## New verified residual catalog
@@ -42,9 +42,16 @@ Their 371 isomorphism representatives, 93,120 ordered four-clique-fiber maps and
 
 Status: OPEN. Full-support m=10 Q32 is not closed.
 
-The disconnected component-size catalog is complete. The 4+6 and 5+5 cells have aligned four-block core reductions. The 3+7 branch is conditionally closed. The 1+9, 2+8, 4+6, 5+5 and connected-light-graph branches remain open. The endpoint-labelled Type-I source placements, including H-TI isolated-triple, remain open.
+The disconnected component-size catalog is complete. The 4+6 K4-e, Z=4 slice is closed. The K4 small-component branch and K4-e with Z=1,2,3 remain open. The 1+9, 2+8, 5+5 and connected-light-graph branches remain open. The endpoint-labelled Type-I source placements, including H-TI isolated-triple, remain open.
 
 No full-model SAT/UNSAT certificate is claimed. No root EG617(r=12) closure is claimed.
 
 
-11. Z=4 two-aligned-column pattern-10 terminal: PROVED IMPOSSIBLE for the exact case p_A=P on two columns, p_A=P tau on four columns, p_B=p_C=p_D=P, with small residual fiber profile (3,2,2,0). The proof and cut/degree verifier are M10_Z4_TWO_ALIGNED_PATTERN10_EXCLUSION.md and verify_m10_z4_two_aligned_cut.py. This does not close other 4+6 patterns.
+11. Z=4 two-aligned-column pattern-10 terminal: PROVED IMPOSSIBLE for the exact case p_A=P on two columns, p_A=P tau on four columns, p_B=p_C=p_D=P, with small residual fiber profile (3,2,2,0). The proof and cut/degree verifier are M10_Z4_TWO_ALIGNED_PATTERN10_EXCLUSION.md and verify_m10_z4_two_aligned_cut.py. The two-aligned pattern is subsumed by the general K4-e, Z=4 closure in M10_K4E_Z4_GLOBAL_GRID_CLOSURE.md.
+
+
+## 12. General 4+6 K4-e, Z=4 closure
+
+M10_K4E_Z4_GLOBAL_GRID_CLOSURE.md excludes the entire K4-e, Z=4 slice for every residual fiber profile and every six-column matching/extra-edge grid. The standard-library replay verify_m10_k4e_z4_grid_reduction.py checks the complete pair/triple necessary residual-map catalog on C7 and C3+C4, all 930 outer-light cut shapes, and the corrected 5,5,5 endpoint branch used in the final grid contradiction.
+
+The remaining 4+6 frontier is the K4 small-component branch and K4-e with Z=1,2,3. Full-support m=10 Q32 remains OPEN / NOT_CERTIFIED.
