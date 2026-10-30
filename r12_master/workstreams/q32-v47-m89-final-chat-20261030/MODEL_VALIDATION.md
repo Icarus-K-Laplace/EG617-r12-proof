@@ -106,3 +106,17 @@ The solver has matching implications. These constraints are necessary consequenc
 The verifier includes an independent augmenting-path implementation of every Hall matching between the reconstructed 11K4+K3 parts. It forms M (253 edges), F (32 edges), finds a tight part with F-degree profile 1,1,1,2, identifies at least seven clean 4-parts, and returns either an explicit independent 5-set or a K7. The full alpha and clique checks independently validate the corresponding contradiction.
 
 When both alpha and omega validation are enabled, every non-target color is also checked against the derived floor \(e_C(H)\ge71\). The solver uses this floor and no longer allocates dead 69/70 partition variables.
+
+
+## Type-I source partition obstruction replay
+
+The verifier reconstructs, for every exact color, the H-interiors of all twelve source K5 factors and appends the singleton {x_C} when x_C lies in H. The resulting sizes must be one of 11K4+K3, 10K4+2K3+K1, or 11K4+K2+K1.
+
+The type_i_partition_obstruction_witness helper independently:
+1. checks that the parts are independent and partition H;
+2. finds each 4-by-4 perfect matching and each 4-by-(2 or 3) matching saturating the smaller part using augmenting paths, or returns a Hall-deficiency independent 5-set;
+3. selects one edge from each 4-part to a singleton when present, or returns the resulting independent 5-set;
+4. checks the exact matching-edge count (253/250), residual degree sum, and existence of at least r-6 tight 4-parts;
+5. selects the three lowest-F-degree vertices in a tight part, finds at least six clean 4-parts, and returns either an independent 5-set or a clique of size at least six.
+
+The self-test runs this replay on all three partition shapes using a synthetic 285-edge graph with minimum degree 12. The full candidate verifier invokes the replay for every exact color when the H-core edge and minimum-degree contract is met. This is a proof-replay check, not an SMT result.
