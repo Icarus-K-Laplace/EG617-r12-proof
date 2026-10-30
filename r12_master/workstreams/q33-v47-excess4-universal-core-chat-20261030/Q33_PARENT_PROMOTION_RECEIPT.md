@@ -59,3 +59,23 @@ Global root remains **OPEN / NOT_CERTIFIED**. This workstream does not modify RO
 CLEAN_ROOM_REPLAY_20261030.md records actual archive SHA256 recomputation, both original 127-row Fraction verifier executions, the source audit verifier, and the source-complete arithmetic replay. Q33_PARENT_SOURCE_MAP.md records the exact source-to-parent implication and the root import boundary.
 
 At final audit, read-only global root HEAD remained b0459807acd4b7e386148056ddf77d7998918893 and sibling Q33 support-promotion HEAD remained ca088347124f4ea7706a63129d7ed63d4e4090d7. The root DAG still lists E408-33-PROMOTION as OPEN; this workstream supplies a bypass theorem but has not edited the global DAG. Main was restored to its pre-incident commit 278639de8572ffab12fe859d36f776fbb88fc4f0.
+
+
+## 6. Stronger parent conclusion: strict 285-edge floor
+
+A further theorem now combines the independently audited 284-edge floor with the source-complete minimum-degree gate and the universal 284-edge contradiction:
+\[
+\boxed{J\in R(4,47)\Longrightarrow e(J)\ge285.}
+\]
+See R447_STRICT_285_FLOOR.md.
+
+For every legal degree-13 pivot in the E408/h13 parent, its induced 47-core belongs to R(4,47). Therefore e(H_p)>=285 for every pivot and the exact identity
+\[
+408=91+q_p+e(H_p)
+\]
+gives
+\[
+\boxed{q_p\le32\text{ for every degree-13 pivot},\quad Q_{\max}\le32.}
+\]
+
+Thus the entire E408/Qmax=33 layer is eliminated uniformly, not merely a selected q=33 pivot. This still does not close E408/Qmax=32 or the global theorem.
