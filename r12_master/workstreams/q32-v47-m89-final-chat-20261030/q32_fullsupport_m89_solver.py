@@ -1,22 +1,21 @@
 #!/usr/bin/env python3
-"""ARCHIVAL exact source-labelled K_61 Q32 CSP for m=8,9.
+"""RESTRICTED diagnostic SMT model for Q32 full-support m=8,9.
 
-The full-support m=8/9 terminal is now analytically excluded by
-V47_TYPEI_PARTITION_OBSTRUCTION.md: every exact-129 Type-I color induces one
-of three forbidden independent-part partitions of H. The solver is retained
-for audit/history only; no SMT run or solver UNSAT certificate is needed for
-the current closure argument.
+This is NOT a complete encoding of EG617. It assumes every exact-129 color
+has the Type-I twelve-K5 source factorization and adds a monochromatic-K6-free
+condition for every color. The actual balanced-coloring problem only supplies
+alpha(C), omega(C) <= 12, and the Q32 target core permits omega(H) <= 11.
 
-The historical model preserves every source-correct Type-I outside placement,
-the canonical E408 color vector, pivot matching constraints, and degree ledgers.
-It deliberately does not import the m=10-only aligned 3+7 common-P track normal
-form. If this legacy script is run, its output must not be presented as the
-basis of the analytic closure.
+The imposed e_C(H)>=71 cut and K6 lazy separators are therefore invalid for
+the original EG617 problem. The analytic Type-I partition lemma only forces a
+K6/K7 in H, which is allowed. See AUDIT_RETRACTION_BALANCED_PREMISES.md.
 
-Requires z3-solver. Alpha and clique constraints are separated exactly by
-searching every proposed model for an independent 5-set in H, an independent
-13-set in each color, and a monochromatic K6. SAT is accepted only after the
-independent candidate verifier passes.
+The model is retained solely as an augmented subcase experiment. It has not
+been run to SAT/UNSAT, and no computational result is claimed. A restricted
+subcase UNSAT result would not close the full Q32 terminal.
+
+Requires z3-solver. SAT candidates are checked against the same augmented
+Type-I/K6-free contract; they are not full EG617 candidates.
 """
 from __future__ import annotations
 import argparse
@@ -151,20 +150,19 @@ def build_model(m):
         c: iff_count(col[edge(u, v)] == c for u, v in pairs(H))
         for c in range(1, 12)
     }
-    # Tight-part exclusion theorem: any 69/70 near-Turan partition in H
-    # yields either an independent 5-set or a K7. Since the accepted Q32
-    # candidates satisfy alpha(H)<=4 and omega(H)<=5, every non-target color
-    # must therefore have at least 71 H-edges. This is a valid strengthening
-    # of the lazy alpha/omega search, not an m=10-specific import.
+    # AUGMENTED-SUBCASE ONLY: the tight-part lemma yields an independent
+    # 5-set or a K7 from a 69/70 partition. The original EG617 contract permits
+    # K7 in H (omega(H)<=11), so this floor is NOT valid for the full problem.
+    # It is retained only under the extra omega(H)<=5 diagnostic assumption.
     for c in range(1, 12):
         solver.add(core_edges[c] >= 71)
     for c in exact:
         solver.add(core_edges[c] <= 75)
     solver.add(isum(core_edges[c] - 69 for c in range(1, 12)) == 37)
 
-    # Source-correct exact-129 core-edge accounting. The former conditional
-    # 69/70 near-Turan partition variables are now unnecessary: the tight-part
-    # exclusion theorem above rules out that entire layer for every valid H.
+    # Type-I-only source accounting. The 69/70 partition variables were
+    # removed only in this augmented submodel. They must be restored, together
+    # with non-Type-I source modes, in any complete EG617 encoding.
     # Full support U=H: every core vertex lies in a source K5 factor with
     # exactly one O vertex, including a special factor Ns or Nt when applicable.
     for v in H:
@@ -192,9 +190,9 @@ def build_model(m):
         solver.add(residual[v] == z3.Not(z3.Or([qblock[c][v] for c in exact])))
     solver.add(iff_count(residual[v] for v in H) == 47 - 4 * m)
 
-    # Nonexact degree floors from the registered 130/131/132-edge theorems.
-    # omega<=5 and alpha<=12 are enforced by lazy cuts; these floors are valid
-    # consequences of those premises and strengthen the intermediate model.
+    # Nonexact degree floors imported under the AUGMENTED omega<=5 and
+    # alpha<=12 assumptions. The omega<=5 premise is not supplied by EG617;
+    # these constraints are not valid for the full balanced-coloring problem.
     color_counts = expected_color_counts(m)
     for c in nonexact:
         floor = 4 if color_counts[c] == 130 else 3
@@ -519,8 +517,9 @@ def add_alpha_cuts(vs, model):
         solver.add(z3.Or([col[edge(u, v)] == 0
                           for u, v in pairs(independent)]))
         cuts += 1
-    # Every color in the balanced coloring must have alpha at most twelve
-    # and clique number at most five. Add exact valid cuts for both violations.
+    # alpha<=12 is valid for balanced colorings. The K6 separator below is an
+    # EXTRA omega<=5 assumption, not an EG617 consequence; it only serves the
+    # augmented diagnostic submodel and must not be used in a full proof.
     for c in range(12):
         adj = model_adj(model, col, c)
         independent = find_independent_set(adj, range(N), 13)
@@ -543,11 +542,12 @@ def main():
     parser.add_argument("--out-dir", default="q32_fullsupport_m89_run")
     parser.add_argument(
         "--legacy-smt", action="store_true",
-        help="run the archival SMT search despite the analytic Type-I partition obstruction")
+        help="run the restricted Type-I and monochromatic-K6-free diagnostic SMT model (not full EG617)")
     args = parser.parse_args()
     if not args.legacy_smt:
-        print("Q32_FULLSUPPORT_M8_M9_ANALYTICALLY_EXCLUDED")
-        print("See V47_TYPEI_PARTITION_OBSTRUCTION.md; no SMT run or UNSAT certificate is needed.")
+        print("Q32_FULLSUPPORT_M8_M9_OPEN_UNDER_EG617")
+        print("The retained SMT model is only a Type-I / K6-free augmented subcase; see AUDIT_RETRACTION_BALANCED_PREMISES.md.")
+        print("No full Q32 solver run or UNSAT certificate exists.")
         return 0
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
