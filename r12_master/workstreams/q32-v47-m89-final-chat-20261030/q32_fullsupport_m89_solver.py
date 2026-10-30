@@ -26,7 +26,7 @@ except ImportError:
     z3 = None
 
 from verify_q32_fullsupport_candidate import (
-    ALL_COLORS, H, N, O, PIVOT, A, TRACKS, edge, pairs,
+    ALL_COLORS, H, N, O, PIVOT, A, edge, pairs,
     expected_color_counts, find_independent_set, find_clique, verify_candidate,
 )
 
@@ -320,8 +320,6 @@ def build_model(m):
                 qblock[c2][u],
                 iff_count(z3.And(qblock[c1][v], col[edge(u, v)] == 0)
                           for v in H if v != u) >= 1))
-
-    pair_match = pair_match
 
     variables = {
         "m": m, "solver": solver, "col": col, "exact": exact,
