@@ -24,6 +24,20 @@ The theorem below excludes exactly this proposed terminal pattern:
 
 It does not claim that every possible two-aligned-column grid has this pattern.
 
+## 1a. Z=4 degree saturation (derived, not assumed)
+
+In this K4-e subcase, the ten pivot blocks contribute exactly
+
+    180 base matching edges + 1 small-side heavy edge
+    + 3 outer heavy edges + 24 cross-heavy edges = 208 edges.
+
+Also e(R)=3+Z=7. Since e(H)=285, the residual-to-block edge count is exactly 70, its minimum possible value 10*|R|. Thus Y=0: every residual vertex has exactly one neighbor in each pivot block. For an outer block E_j, the degree sum is therefore
+
+    36 (nine base matchings) + 7 (residual incidences)
+    + 5 (four cross-heavy edges plus its one outer-heavy edge) = 48.
+
+Every vertex has degree at least 12, so all four vertices of every outer block have degree exactly 12. This justifies the exact outer degree equation used in Section 6.
+
 ## 2. The outer light cut is connected
 
 The outer light graph is K6-M, where M is a perfect matching. The bipartite cut between J_0 and J_1 is K_{2,4} with the crossing edges of M deleted.

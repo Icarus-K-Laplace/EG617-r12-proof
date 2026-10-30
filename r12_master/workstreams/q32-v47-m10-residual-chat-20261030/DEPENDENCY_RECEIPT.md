@@ -73,7 +73,7 @@ The former 1,872-count 5,5,5 classification and 20,788-state one-column catalog 
 Exact replay: 41,472 5,5,5 inputs, 2,124 valid (1,728 identity; 66 per transposition); corrected one-column catalog 20,842 (20,772 aligned, 70 switched). Six-column compatibility remains OPEN.
 
 
-## Z=4 two-aligned pattern-10 closure (commit pending)
+## Z=4 two-aligned pattern-10 closure (commit f30ccce5f7faa2c07498709dfbf808a74937f1cd)
 - M10_Z4_TWO_ALIGNED_PATTERN10_EXCLUSION.md
 - verify_m10_z4_two_aligned_cut.py
 
