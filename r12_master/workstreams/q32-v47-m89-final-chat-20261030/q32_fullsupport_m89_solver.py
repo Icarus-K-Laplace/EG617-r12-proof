@@ -191,8 +191,8 @@ def build_model(m):
     # d_H(z)>=12; each exact color contributes >=4 plus one for gadget membership,
     # and the nonexact floors sum to L_m=(12,7,3). This yields q_z<=(4,5,5).
     # The stronger (3,4,4) cap is only conditional on d_0(z)>=13.
-    safe_q_cap = {8: 4, 9: 5, 10: 5}[m]
-    conditional_q_cap = {8: 3, 9: 4, 10: 4}[m]
+    safe_q_cap = {8: 4, 9: 5}[m]
+    conditional_q_cap = {8: 3, 9: 4}[m]
     for v in H:
         q_count = iff_count(gadget[c][v] for c in exact)
         solver.add(z3.Implies(residual[v], q_count <= safe_q_cap))
@@ -206,8 +206,8 @@ def build_model(m):
     # They strengthen the search without replacing the full labelled model.
     q_member = {v: z3.Or([qblock[c][v] for c in exact]) for v in H}
     n_residual = 47 - 4 * m
-    p4_floor = {8: 21, 9: 10, 10: 3}[m]
-    degree_gap = {8: 18, 9: 13, 10: 8}[m]
+    p4_floor = {8: 21, 9: 10}[m]
+    degree_gap = {8: 18, 9: 13}[m]
 
     # Every pair of disjoint independent K4 blocks has at least four H-edges.
     for c1, c2 in itertools.combinations(exact, 2):
