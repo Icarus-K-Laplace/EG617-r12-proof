@@ -1,62 +1,79 @@
-# Q33 all-support-size variable-core profile screen
+# Q33 all support sizes — source-correct component-only screen
 
 Status: **COMPUTATION_CERTIFIED** for the exact finite necessary-profile screen under the registered source contract. It is not a graph realization or a full Q33 UNSAT certificate.
 
-For each row, \(B_U(h)=B_U(0)+4h\). Feasible h is the set surviving the exact per-color variable-core profile DP.
+The canonical support family chooses seven isolated-K5 component witnesses from each of the \(m\) exact-129 colors. Thus \(h=0\) by construction. The earlier all-h table is retained only as a broader diagnostic relaxation; it is not the canonical screen because a source-guaranteed component-only choice is available.
 
-| m | v | w | B_U(0) | B_W | Feasible h in variable-core DP |
+The per-color option count is the number of distinct aggregate \((X_U,X_W)\) pairs. The final DP-state count is the number of aggregate cost pairs surviving after all \(m\) exact colors and both reserve budgets. These are cost states, not graph configurations.
+
+## m=8
+
+| v | B_U | B_W | per-color options | final DP states | result |
 |---:|---:|---:|---:|---:|---|
-| 8 | 31 | 16 | -61 | 84 | ∅ |
-| 8 | 32 | 15 | -45 | 75 | ∅ |
-| 8 | 33 | 14 | -28 | 67 | ∅ |
-| 8 | 34 | 13 | -10 | 60 | ∅ |
-| 8 | 35 | 12 | 9 | 54 | {6,7,8} |
-| 8 | 36 | 11 | 28 | 45 | {6,7,8} |
-| 8 | 37 | 10 | 45 | 37 | {3,4,5,6,7,8} |
-| 8 | 38 | 9 | 63 | 30 | {2,3,4,5,6,7,8} |
-| 8 | 39 | 8 | 82 | 24 | {0,...,8} |
-| 8 | 40 | 7 | 101 | 18 | {0,...,8} |
-| 8 | 41 | 6 | 121 | 13 | {0,...,8} |
-| 8 | 42 | 5 | 142 | 9 | {0,...,8} |
-| 8 | 43 | 4 | 164 | 6 | {0,...,8} |
-| 8 | 44 | 3 | 186 | 3 | {0,...,8} |
-| 8 | 45 | 2 | 209 | 1 | {0,...,8} |
-| 8 | 46 | 1 | 233 | 0 | {0,...,8} |
-| 8 | 47 | 0 | 254 | 0 | {0,...,8} |
-| 9 | 32 | 15 | -59 | 78 | ∅ |
-| 9 | 33 | 14 | -40 | 69 | ∅ |
-| 9 | 34 | 13 | -20 | 61 | ∅ |
-| 9 | 35 | 12 | 1 | 54 | {9} |
-| 9 | 36 | 11 | 22 | 45 | {9} |
-| 9 | 37 | 10 | 42 | 37 | {8,9} |
-| 9 | 38 | 9 | 63 | 30 | {6,7,8,9} |
-| 9 | 39 | 8 | 85 | 24 | {3,4,5,6,7,8,9} |
-| 9 | 40 | 7 | 107 | 18 | {0,...,9} |
-| 9 | 41 | 6 | 130 | 13 | {0,...,9} |
-| 9 | 42 | 5 | 154 | 9 | {0,...,9} |
-| 9 | 43 | 4 | 179 | 6 | {0,...,9} |
-| 9 | 44 | 3 | 204 | 3 | {0,...,9} |
-| 9 | 45 | 2 | 230 | 1 | {0,...,9} |
-| 9 | 46 | 1 | 257 | 0 | {0,...,9} |
-| 9 | 47 | 0 | 281 | 0 | {0,...,9} |
-| 10 | 34 | 13 | -30 | 62 | ∅ |
-| 10 | 35 | 12 | -7 | 54 | ∅ |
-| 10 | 36 | 11 | 16 | 45 | ∅ |
-| 10 | 37 | 10 | 39 | 37 | ∅ |
-| 10 | 38 | 9 | 63 | 30 | {10} |
-| 10 | 39 | 8 | 88 | 24 | {6,7,8,9,10} |
-| 10 | 40 | 7 | 113 | 18 | {2,3,4,5,6,7,8,9,10} |
-| 10 | 41 | 6 | 139 | 13 | {0,...,10} |
-| 10 | 42 | 5 | 166 | 9 | {0,...,10} |
-| 10 | 43 | 4 | 194 | 6 | {0,...,10} |
-| 10 | 44 | 3 | 222 | 3 | {0,...,10} |
-| 10 | 45 | 2 | 251 | 1 | {0,...,10} |
-| 10 | 46 | 1 | 281 | 0 | {0,...,10} |
-| 10 | 47 | 0 | 308 | 0 | {0,...,10} |
+|31|-61|84|35|0|EXCLUDED|
+|32|-45|75|56|0|EXCLUDED|
+|33|-28|67|61|0|EXCLUDED|
+|34|-10|60|75|0|EXCLUDED|
+|35|9|54|85|0|EXCLUDED|
+|36|28|45|84|0|EXCLUDED|
+|37|45|37|78|0|EXCLUDED|
+|38|63|30|78|0|EXCLUDED|
+|39|82|24|84|27|PROFILE_FEASIBLE|
+|40|101|18|85|90|PROFILE_FEASIBLE|
+|41|121|13|75|204|PROFILE_FEASIBLE|
+|42|142|9|61|390|PROFILE_FEASIBLE|
+|43|164|6|56|315|PROFILE_FEASIBLE|
+|44|186|3|35|172|PROFILE_FEASIBLE|
+|45|209|1|21|83|PROFILE_FEASIBLE|
+|46|233|0|10|42|PROFILE_FEASIBLE|
+|47|254|0|8|39|PROFILE_FEASIBLE|
 
-First profile-feasible cells:
-- m=8,v=35,h=6,7,8;
-- m=9,v=35,h=9;
-- m=10,v=38,h=10.
+## m=9
 
-All larger supports through47 remain profile-feasible in this relaxation.
+| v | B_U | B_W | per-color options | final DP states | result |
+|---:|---:|---:|---:|---:|---|
+|32|-59|78|56|0|EXCLUDED|
+|33|-40|69|61|0|EXCLUDED|
+|34|-20|61|75|0|EXCLUDED|
+|35|1|54|85|0|EXCLUDED|
+|36|22|45|84|0|EXCLUDED|
+|37|42|37|78|0|EXCLUDED|
+|38|63|30|78|0|EXCLUDED|
+|39|85|24|84|0|EXCLUDED|
+|40|107|18|85|27|PROFILE_FEASIBLE|
+|41|130|13|75|160|PROFILE_FEASIBLE|
+|42|154|9|61|380|PROFILE_FEASIBLE|
+|43|179|6|56|315|PROFILE_FEASIBLE|
+|44|204|3|35|172|PROFILE_FEASIBLE|
+|45|230|1|21|83|PROFILE_FEASIBLE|
+|46|257|0|10|42|PROFILE_FEASIBLE|
+|47|281|0|8|39|PROFILE_FEASIBLE|
+
+## m=10
+
+| v | B_U | B_W | per-color options | final DP states | result |
+|---:|---:|---:|---:|---:|---|
+|34|-30|62|75|0|EXCLUDED|
+|35|-7|54|85|0|EXCLUDED|
+|36|16|45|84|0|EXCLUDED|
+|37|39|37|78|0|EXCLUDED|
+|38|63|30|78|0|EXCLUDED|
+|39|88|24|84|0|EXCLUDED|
+|40|113|18|85|0|EXCLUDED|
+|41|139|13|75|120|PROFILE_FEASIBLE|
+|42|166|9|61|370|PROFILE_FEASIBLE|
+|43|194|6|56|315|PROFILE_FEASIBLE|
+|44|222|3|35|172|PROFILE_FEASIBLE|
+|45|251|1|21|83|PROFILE_FEASIBLE|
+|46|281|0|10|42|PROFILE_FEASIBLE|
+|47|308|0|8|39|PROFILE_FEASIBLE|
+
+## Exact result
+
+- \(m=8\): excluded \(v=31,\ldots,38\); first aggregate survivor \(v=39\).
+- \(m=9\): excluded \(v=32,\ldots,39\); first aggregate survivor \(v=40\).
+- \(m=10\): excluded \(v=34,\ldots,40\); first aggregate survivor \(v=41\).
+
+The support lower bounds are \(v\ge31,32,34\), respectively. The \(m=8\) lower bound uses the registered near-Turán/linear-block packing lemma at \(v=30\); the \(m=9,10\) lower bounds follow from \(42m>t_4(v)\) at \(v=31,33\).
+
+A PROFILE_FEASIBLE entry means only that this aggregate necessary relaxation has a cost-pair survivor. It does not produce a labelled graph and does not certify that any actual Q33 completion exists.

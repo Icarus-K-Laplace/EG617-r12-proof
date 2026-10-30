@@ -20,3 +20,15 @@ B_U=L_{\max}(v)-42m-(11-m)p_{12}(v)+4h,
 B_W=t_4(47-v)-(11-m)p_{12}(47-v).
 \]
 The finite profile screen enumerates all (c_i,k_i) options and checks whether group costs can fit these budgets.
+
+
+## 2026-10-30 — sharper component-only reserve specialization
+
+For the support set chosen from seven isolated-K5 component witnesses per exact-129 color, all selected witness edges are component-owned and pairwise distinct. Thus h=0, and the correct budgets for this support set are
+\[
+B_U=L_{\max}(v)-42m-(11-m)p_{12}(v),\qquad
+B_W=t_4(w)-(11-m)p_{12}(w).
+\]
+There is no gadget-witness overlap term. The three unselected components per color have variable core sizes c_i in [0,4], total 8<=sum c_i<=12, and U-incidences k_i in [0,c_i]. Their component pair costs plus the gadget-core p_2 costs are encoded by the component-only verifier.
+
+The resulting finite screen excludes m=8,v=31..38, m=9,v=32..39, and m=10,v=34..40. The first aggregate survivors are v=39,40,41, respectively. The full proof and all rows are in Q33_COMPONENT_ONLY_SUPPORT_SCREEN.md and Q33_ALL_SUPPORT_SIZES.md. This remains a necessary-profile filter; it does not close the remaining labelled graph cases.

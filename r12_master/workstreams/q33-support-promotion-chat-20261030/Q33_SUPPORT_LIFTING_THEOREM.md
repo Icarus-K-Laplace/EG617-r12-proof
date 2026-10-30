@@ -99,3 +99,10 @@ A feasible profile is only a necessary scalar/profile survivor, not a graph real
 ## 7. Scope
 
 This model repairs the stronger fixed-four-core assumption. It is still a relaxation: it does not encode the actual vertex labels, pairwise intersections, cross-color edge ownership at the pair level, or the full degree sequence. Q33 and the root theorem remain OPEN.
+
+
+## 8. Source-correct component-only support selection
+
+The seven-witness source lemma supplies seven isolated-K5 component four-sets in every exact-129 color. For the support set in this theorem, choose those seven in each of the m exact colors. This fixes h=0 by construction and removes the need for a selected gadget witness. See Q33_COMPONENT_ONLY_SUPPORT_SCREEN.md for the full derivation and the stronger finite screen.
+
+The resulting exclusions are m=8:v=31..38, m=9:v=32..39, and m=10:v=34..40. First aggregate survivors are m=8:v=39, m=9:v=40, and m=10:v=41. These are not graph realizations; all remaining support sizes through47 remain OPEN at the labelled-structure level.
