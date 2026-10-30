@@ -1,15 +1,24 @@
 # Scope and remaining project work
 
-## This universal Q32 core contract - PROVED impossible
+## Universal Q32 core theorem U6 — PROVED CONDITIONAL
 
-No D or P completion remains under |H|=47, e(H)=285, delta(H)>=12, alpha(H)<=4, omega(H)<=11. The initial 75-edge completion frontier was closed analytically in steps7-8 of UNIVERSAL_Q32_THEOREM.md. The retained completion ledger and failed search graphs document the derivation and checks; they are not open cases.
+The analytic theorem excludes every graph H with |H|=47, e(H)=285, delta(H)>=12, alpha(H)<=4, omega(H)<=11. It reduces all candidates to P and D support templates and forces 8 or 10 excess units, respectively, against the available six.
 
-Every m=8,9,10 exact-color source placement is covered because the theorem does not use any color-specific restriction. Both exceptional-point locations, all four source parameters and all 90 aggregate outside profiles are unrestricted. No full colored enumeration is necessary once its target core cannot exist.
+The theorem is independent of m, source placements and witness support. If the genuine parent supplies all five core hypotheses, it eliminates every Q32 row:
+- |U|=44,45,46,47;
+- m=8,9,10.
 
-## Outside the theorem's scope - OPEN here
+## Parent promotion — OPEN / NOT CERTIFIED
 
-- Parent promotion at interfaces where any of the five CORE hypotheses is missing or only conditional. No weaker parent contract is silently strengthened.
-- Q33, E407/V12 parent support promotion and other EG617 root branches.
-- Integration by the global workstream after independent review. This workstream does not modify global canonical state or siblings.
+Four parent-to-core items are directly mapped: |H|=47, e(H)=285, alpha(H)<=4, omega(H)<=11. The fifth, delta(H)>=12, is inherited through E406_CORE_MINDEG_288.md and CORE211. INTEGRATED1_CORE211_AUDIT.md explicitly records that the lower-order R(3,35) minimum-degree seed still lacks a standalone A4 23-neighbourhood / cap-two proof or exact bibliographic/certificate dependency in the audited source set.
 
-No unexecuted solver, unproved full-color design classification or conjectural dual certificate is used to replace a missing proof step. The analytic result U6 and its exact dependencies are the intended importable asset.
+Do not treat the frozen Q32 contract or a PROVED status label as an independent replay. The next load-bearing task is to recover and audit that A4 dependency, or re-prove the R(3,35) minimum-degree theorem directly.
+
+## Outside U6's scope — OPEN here
+
+- Q33: 284-edge / excess-four core; U6 does not apply.
+- E407 terminals and their V12 parent-support promotion.
+- E408 Q31 and other front-end terminal branches.
+- Full EG617(r=12) root theorem.
+
+No solver UNSAT, exhaustive 47-vertex graph enumeration, or global root promotion is claimed.
