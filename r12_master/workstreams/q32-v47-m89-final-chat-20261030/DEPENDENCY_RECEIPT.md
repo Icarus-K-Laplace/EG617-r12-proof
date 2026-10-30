@@ -171,3 +171,38 @@ The previous Type-I partition replay was conditional on a source factorization n
 The tight-part helper remains a valid conditional implication but returns K6/K7 witnesses that are allowed in EG617. The previous verifier's default omega check, Type-I universal source assumption, and 71-edge floor are not valid for the original problem. The verifier was changed so omega checking is opt-in via --check-omega and its result is explicitly labelled Type-I-restricted. The solver is now labelled as an augmented Type-I/K6-free diagnostic and defaults to OPEN.
 
 No full verifier execution or SMT run was performed. No m=8/9 closure or parent promotion is claimed.
+
+
+## Final 2026-10-30 source-complete checkpoint
+
+Current branch refs:
+- isolated m8/m9 branch HEAD: `5d66426102f09f060174263280416edbc3d10d2a`;
+- parent E408/Q32 root branch HEAD (read-only): `b0459807acd4b7e386148056ddf77d7998918893`;
+- high-support sibling branch HEAD (read-only): `1de8a37556ba98ccbb8651f39a5192629453f0f1`.
+
+New source-complete results:
+1. Every exact-129 color induces one of the three H-independent-part partitions, covering both the 12-partite complement case and all Kang–Pikhurko non-12-partite equality profiles.
+2. Every exact color satisfies 69<=e_C(H)<=75.
+3. Every exact color supplies at least ten disjoint monochromatic core K4 witnesses, pairwise linear across colors. This repairs the ten-witness input to Q32_U_COLOR_RESERVE.md without Type-I-only assumptions.
+4. The current full-support m8/m9 terminal remains OPEN / NOT_CERTIFIED. The tight-part lemma forces only omega(H)>=6, which is permitted by omega(H)<=11. The current pivot CSP lacks a source-complete fixed-pivot K4 interface in the 12-partite complement branch.
+
+The earlier K6-free / universal Type-I closure claim remains withdrawn. The solver and verifier are explicitly labelled restricted Type-I/K6-free diagnostics. No full verifier run, SMT run, SAT/UNSAT result, or Q32 closure is claimed.
+
+| Local artifact | Blob SHA | Lines |
+|---|---|---:|
+| `AUDIT_RETRACTION_BALANCED_PREMISES.md` | `5e3eb4a172f6d85f91186f156f51c24f71948689` | 138 |
+| `V47_EXACT129_UNIVERSAL_PARTITION.md` | `2e6043bb2b04cd59ba43268276f6dd27cfe265c9` | 147 |
+| `V47_EXACT129_CORE_EDGE_BOUNDS.md` | `a2f4c16b57a990ad71427440ada72b0ee7ef22d4` | 135 |
+| `Q32_SOURCE_COMPLETE_WITNESS_IMPORT.md` | `1b2b286142c0b8814718bfcaad23187579325f05` | 73 |
+| `V47_TYPEI_PARTITION_OBSTRUCTION.md` | `b7e9982b6074eb47fc52df672e84a8e2c4bd95f2` | 165 |
+| `ROOT_PROMOTION_NOTE.md` | `0c8f681de68d276c9d6345178254d0d9a58d88ae` | 72 |
+| `CANONICAL_STATE.md` | `d0733ea0fbf5f2f52137bc0c1a780e25509e65a2` | 73 |
+| `OPEN_CASES.md` | `121012ecf3f7e42a2b1a394a8b971b980ad682f0` | 121 |
+| `MATH_PROOF.md` | `d7f4af97028d1adb927a72db4f195242d0d544f5` | 387 |
+| `FULL_SUPPORT_CSP_SPEC.md` | `389c25df62ca42ad295bfe7e61863ce354c9dea7` | 136 |
+| `q32_fullsupport_m89_solver.py` | `bc6681c64894783549130e75b5051a7af98cf042` | 658 |
+| `verify_q32_fullsupport_candidate.py` | `26c8ae8b1db220ad23f7dbcc37fc3eeb292f100a` | 1075 |
+| `MODEL_VALIDATION.md` | `cc4289d60bf4081978ceb8d4a33ebb603b4cfeaf` | 144 |
+| `RUN_LOG.md` | `681fda1edb085f49c08cf3fb5713796978d3e727` | 116 |
+
+No parent or sibling branch was modified.
