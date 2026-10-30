@@ -39,3 +39,25 @@ The dependency-free local verifier for scalar arithmetic, source profiles, the m
 - **WITHDRAWN:** `delta(H[R])>=12-m` without controlling extra Q-R edges.
 - **WITHDRAWN:** `d_H(q,R)>=13-m` without controlling extra Q-Q edges.
 - **WITHDRAWN for m=8/9:** importing the aligned m=10 common-P and residual-signature constraints.
+
+
+## Additional 2026-10-30 audits
+
+### Guarded matching-composition cuts
+
+A code audit found that the first lazy matching-composition implementation added unconditional consequences inferred from one candidate model. That was an overconstraint: a future legal model could make one incident pivot pair heavy or change the selected pivot blocks. **WITHDRAWN:** those unconditional cuts.
+
+The solver now adds only implications guarded by:
+- both incident pivot-pair edge counts remaining exactly four;
+- the same four vertices remaining selected in each of the three pivot blocks;
+- the same four matching edges remaining target-colored.
+
+The multi-projection \(\mu_4(t)\) cut is guarded by the conjunction of the distinct matching-composition conditions. This preserves validity under changes of source placement and pivot blocks.
+
+### Exact source-core and near-Turan strengthening
+
+The solver now encodes the exact identity \(e_C(H)=B_C+G_C^H\), the source-parameter bounds for x in O / two-double / triple profiles, and the conditional 69/70 partition normal form. The independent verifier reconstructs a \(11K_4+K_3\) partition from the source witnesses whenever \(e_C(H)\le70\), and checks its cross-edge count.
+
+### Nonexact m=9 floor reconciliation
+
+The model uses the source-correct pointwise floors 4 for a 130-edge color and 3 for a 131-edge color, hence \(L_9=7\). The root global canonical/dependency summaries still contain an older \(L_9=6\) line; the read-only Case-II canonical/dependency audit explicitly marks 6 as stale and records \(4+3=7\). No root-side file was modified.
