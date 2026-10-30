@@ -4,13 +4,16 @@ Date: 2026-10-30
 
 Status: **PROVED** — conditional only on the registered exact-129 Type-I source factorization and the Q32 core contract.
 
-## 1. Core contract
+## 1. Core and coloring contract
 
 The target graph H satisfies
 \[
 |V(H)|=47,\quad e(H)=285,\quad \delta(H)\ge12,\quad
 \alpha(H)\le4,\quad \omega(H)\le5.
 \]
+Here \(\alpha(H)\le4\), \(e(H)=285\), and \(\delta(H)\ge12\) are the frozen Q32 core premises. The bound \(\omega(H)\le5\) is inherited from the original global coloring hypothesis that no color contains a monochromatic K6.
+
+For every non-target color C in the 61-point residual, the registered coloring contract gives \(\alpha(C)\le12\), and the global no-monochromatic-K6 premise gives \(\omega(C)\le5\). The exact colors under consideration have \(e(C)=129\). These are precisely the hypotheses used in the Kang--Pikhurko exact-129 complement translation below; no degree-nine or exceptional-vertex injectivity assumption is used.
 
 For an exact-129 non-target color C, the source-verified Type-I factorization supplies a point x and twelve disjoint monochromatic K5 factors
 \[
