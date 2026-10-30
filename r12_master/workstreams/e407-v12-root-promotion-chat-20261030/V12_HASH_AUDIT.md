@@ -73,3 +73,10 @@ Date: 2026-10-30
 - The global root branch and dedicated E407 closure branch contain the historical V12 source-report audit but no raw V12 ZIP, certificate, or original verifier at the reported path.
 - GitHub release inventory returned zero releases; exact-path commit history for `T61_H13_V12.zip` returned zero commits.
 - The actual source archive was recovered from ChatGPT Library. This resolves archive availability, not the analytic parent hypotheses.
+
+
+## Re-execution order and duplicate archive audit
+
+The pristine V12 extraction passes all 29 SHA256SUMS entries. Run sha256sum -c before executing verify_q32_certificate.py: the original verifier writes a regenerated INDEPENDENT_Q32_REPLAY.json into its working directory, so a post-execution checksum against the original manifest can report a false mismatch on that mutated working copy. The archive itself remains byte-identical across the three Library copies.
+
+The V11 archive was also recovered and independently checked: all 22 internal SHA entries pass, and the five V12 source copies marked CONDITIONAL match the mapped V11 files byte-for-byte.
