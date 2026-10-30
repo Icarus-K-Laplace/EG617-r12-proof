@@ -1,55 +1,35 @@
-# Q33 support promotion — exact remaining OPEN frontier
+# Q33 support-promotion — exact remaining OPEN frontier
 
-Status: **OPEN / NOT_CERTIFIED**.
+Status: OPEN / NOT_CERTIFIED.
 
-## Excluded by source-correct variable-core profile screen
-- m=8: v=31,32,33,34;
-- m=9: v=32,33,34;
-- m=10: v=34,35,36,37.
+## Aggregate support profile
 
-## First profile-feasible cells
-- m=8, v=35, h in {6,7,8};
-- m=9, v=35, h=9;
-- m=10, v=38, h=10.
+With the KP-refined residual component core interval 10<=sum(c_i)<=12, the necessary U/W screen excludes:
+- m=8: v=31..38;
+- m=9: v=32..39;
+- m=10: v=34..40.
 
-Every larger support size through47 remains feasible in this necessary relaxation.
+The first aggregate survivors remain (8,39), (9,40), and (10,41). All larger v through47 remain feasible in this relaxation. These are aggregate cost-pair survivors, not labelled graph realizations.
+
+## Common-gadget degree restriction
+
+Every KP Type-I gadget vertex has minimum C-degree5. A nonexact color with 130/131/132 edges and alpha<=12 has minimum degree2/1/1. With the residual bound 60-d_F(z)<=47:
+- m=9: a common core gadget vertex would have degree at least48, impossible; W_* is empty.
+- m=10: a common core gadget vertex would have degree at least51, impossible; W_* is empty.
+- m=8: the lower bound is46, so at most two common gadget-core vertices remain, each degree-saturated at46 or47.
+
+Consequently the union of all component-core vertices is all47 core points for m=9,10. For m=8 it has size at least45.
+
+## First-survivor W structures
+
+- m=8,v=39: H[W]=4K2; eight exact-color 3-edge matchings partition K_{2,2,2,2}.
+- m=9,v=40: H[W]=3K2 union K1; nine exact-color 2-edge matchings partition K_{2,2,2,1}.
+- m=10,v=41: six-point W with at most three units of aggregate W slack.
 
 ## Next structural attack
-The tightest cells now have highly constrained selected gadget counts:
-- m=8,v=35: six, seven, or eight selected gadget witnesses;
-- m=9,v=35: all nine selected exact colors must use a gadget witness;
-- m=10,v=38: all ten selected exact colors must use a gadget witness.
 
-Next encode the actual labelled K5 component core subsets, gadget-core subsets, pairwise linear witness intersections, and vertex degree/excess ledger. The profile DP does not yet impose these vertex labels.
+For m=9,10, exploit that every one of the47 core vertices lies in an isolated component of at least one exact-129 color, while for each color the ten component cores and gadget core partition H. Label the two special K5 core subsets and exceptional vertex in every KP gadget, then couple these to pairwise linearity and the core degree/excess ledger.
 
-## Explicit limitation
-The source-verified exact-129 factor theorem gives ten isolated K5s plus an 11-vertex gadget, but does not by itself make every K5 have exactly one shell vertex. The variable-core model allows component core sizes c_i=0,...,4. Do not use the older fixed c_i=4 profile screen as a universal parent reduction.
+For m=8, attack the saturated one/two-point common-gadget exception: exact-color degrees must all be5 and nonexact degrees all2, except for at most one extra degree unit per common point. Combine with the shell target-degree cap of at most2.
 
-
-## 2026-10-30 — updated component-only frontier (supersedes the all-h first-survivor list)
-
-The canonical support family selects seven component K4 witnesses in every exact-129 color, so h=0. The source-correct component-only profile screen now excludes:
-- m=8: v=31,...,38;
-- m=9: v=32,...,39;
-- m=10: v=34,...,40.
-
-The first aggregate profile-feasible cells are:
-- m=8, v=39;
-- m=9, v=40;
-- m=10, v=41.
-
-Every larger support size through47 has at least one aggregate cost-pair survivor. These are necessary-profile survivors only, not labelled graph realizations.
-
-Next attack: impose the actual seven-witness incidence matrix, exact component/gadget vertex partition, cross-color pairwise linearity, the four units of core degree excess, and the seven-block near-Latin duplicate ledger on the remaining support ranges. Q33 remains OPEN / NOT_CERTIFIED.
-
-
-## 2026-10-30 — shell and W-boundary refinements
-
-The variable component core range is now 9<=sum(c_i)<=12, not 8..12, because at least one remaining shell vertex must lie in the exceptional gadget. This reduces the per-color profile option counts but does not change the aggregate support frontier.
-
-The first surviving W structures are:
-- m=8,v=39: H[W]=4K2 and eight exact-color 3-edge matchings partition K_{2,2,2,2};
-- m=9,v=40: H[W]=3K2 union K1 and nine exact-color 2-edge matchings partition K_{2,2,2,1};
-- m=10,v=41: six-point W with at most three units of aggregate reserve slack.
-
-The matching decompositions are not contradictions by themselves. The unresolved task is to couple them to the labelled U-incidence, shell-label, and core degree/excess constraints.
+Q33 remains OPEN.

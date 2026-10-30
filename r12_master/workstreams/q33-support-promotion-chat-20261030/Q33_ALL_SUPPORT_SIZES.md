@@ -1,87 +1,85 @@
-# Q33 all support sizes — source-correct component-only screen
+# Q33 component-only U/W support screen — KP-refined
 
-Status: **COMPUTATION_CERTIFIED** for the exact finite necessary-profile screen under the registered source contract. It is not a graph realization or a full Q33 UNSAT certificate.
+Status: COMPUTATION_CERTIFIED for the finite necessary-profile relaxation, not a graph-level UNSAT certificate.
 
-The canonical support family chooses seven isolated-K5 component witnesses from each exact-129 color. The nonempty gadget-shell lemma forces the three unselected component core sizes to sum to 9..12, so the gadget core size is 7..10. Thus h=0 by construction and the csum=8 profiles are excluded.
+Choose seven guaranteed isolated-K5 component witnesses from each exact-129 color, so h=0. The KP Type-I gadget consists of two special K5s and one exceptional vertex. Each K5 has at most four core vertices by alpha(H)<=4, and the exceptional vertex contributes at most one. Thus the gadget core has size7..9. With seven selected component K4s, the three remaining component core sizes satisfy 10<=sum(c_i)<=12. This supersedes the earlier 9..12 shell-only profile.
 
-Per-color option count is the number of distinct aggregate (X_U,X_W) pairs. Final DP-state count is the number of aggregate cost pairs surviving after all m exact colors and both reserve budgets. These are cost states, not graph configurations.
+Per-color option counts are distinct aggregate (X_U,X_W) pairs. Final DP-state counts are aggregate cost pairs after all exact colors and both reserve budgets, not labelled graph configurations.
 
 ## m=8
 
-| v | B_U | B_W | per-color options | final DP states | result |
+|v|B_U|B_W|options|DP states|result|
 |---:|---:|---:|---:|---:|---|
-|31|-61|84|26|0|EXCLUDED|
-|32|-45|75|41|0|EXCLUDED|
-|33|-28|67|47|0|EXCLUDED|
-|34|-10|60|58|0|EXCLUDED|
-|35|9|54|69|0|EXCLUDED|
-|36|28|45|69|0|EXCLUDED|
-|37|45|37|67|0|EXCLUDED|
-|38|63|30|67|0|EXCLUDED|
-|39|82|24|69|27|PROFILE_FEASIBLE|
-|40|101|18|69|90|PROFILE_FEASIBLE|
-|41|121|13|58|204|PROFILE_FEASIBLE|
-|42|142|9|47|390|PROFILE_FEASIBLE|
-|43|164|6|41|315|PROFILE_FEASIBLE|
-|44|186|3|26|172|PROFILE_FEASIBLE|
-|45|209|1|17|83|PROFILE_FEASIBLE|
-|46|233|0|7|42|PROFILE_FEASIBLE|
-|47|254|0|5|39|PROFILE_FEASIBLE|
+|31|-61|84|18|0|EXCLUDED|
+|32|-45|75|27|0|EXCLUDED|
+|33|-28|67|31|0|EXCLUDED|
+|34|-10|60|39|0|EXCLUDED|
+|35|9|54|48|0|EXCLUDED|
+|36|28|45|50|0|EXCLUDED|
+|37|45|37|50|0|EXCLUDED|
+|38|63|30|50|0|EXCLUDED|
+|39|82|24|50|27|PROFILE_FEASIBLE|
+|40|101|18|48|90|PROFILE_FEASIBLE|
+|41|121|13|39|202|PROFILE_FEASIBLE|
+|42|142|9|31|298|PROFILE_FEASIBLE|
+|43|164|6|27|255|PROFILE_FEASIBLE|
+|44|186|3|18|150|PROFILE_FEASIBLE|
+|45|209|1|10|68|PROFILE_FEASIBLE|
+|46|233|0|4|32|PROFILE_FEASIBLE|
+|47|254|0|3|17|PROFILE_FEASIBLE|
 
 ## m=9
 
-| v | B_U | B_W | per-color options | final DP states | result |
+|v|B_U|B_W|options|DP states|result|
 |---:|---:|---:|---:|---:|---|
-|32|-59|78|41|0|EXCLUDED|
-|33|-40|69|47|0|EXCLUDED|
-|34|-20|61|58|0|EXCLUDED|
-|35|1|54|69|0|EXCLUDED|
-|36|22|45|69|0|EXCLUDED|
-|37|42|37|67|0|EXCLUDED|
-|38|63|30|67|0|EXCLUDED|
-|39|85|24|69|0|EXCLUDED|
-|40|107|18|69|27|PROFILE_FEASIBLE|
-|41|130|13|58|160|PROFILE_FEASIBLE|
-|42|154|9|47|380|PROFILE_FEASIBLE|
-|43|179|6|41|315|PROFILE_FEASIBLE|
-|44|204|3|26|172|PROFILE_FEASIBLE|
-|45|230|1|17|83|PROFILE_FEASIBLE|
-|46|257|0|7|42|PROFILE_FEASIBLE|
-|47|281|0|5|39|PROFILE_FEASIBLE|
+|32|-59|78|27|0|EXCLUDED|
+|33|-40|69|31|0|EXCLUDED|
+|34|-20|61|39|0|EXCLUDED|
+|35|1|54|48|0|EXCLUDED|
+|36|22|45|50|0|EXCLUDED|
+|37|42|37|50|0|EXCLUDED|
+|38|63|30|50|0|EXCLUDED|
+|39|85|24|50|0|EXCLUDED|
+|40|107|18|48|27|PROFILE_FEASIBLE|
+|41|130|13|39|160|PROFILE_FEASIBLE|
+|42|154|9|31|310|PROFILE_FEASIBLE|
+|43|179|6|27|270|PROFILE_FEASIBLE|
+|44|204|3|18|163|PROFILE_FEASIBLE|
+|45|230|1|10|76|PROFILE_FEASIBLE|
+|46|257|0|4|36|PROFILE_FEASIBLE|
+|47|281|0|3|19|PROFILE_FEASIBLE|
 
 ## m=10
 
-| v | B_U | B_W | per-color options | final DP states | result |
+|v|B_U|B_W|options|DP states|result|
 |---:|---:|---:|---:|---:|---|
-|34|-30|62|58|0|EXCLUDED|
-|35|-7|54|69|0|EXCLUDED|
-|36|16|45|69|0|EXCLUDED|
-|37|39|37|67|0|EXCLUDED|
-|38|63|30|67|0|EXCLUDED|
-|39|88|24|69|0|EXCLUDED|
-|40|113|18|69|0|EXCLUDED|
-|41|139|13|58|120|PROFILE_FEASIBLE|
-|42|166|9|47|370|PROFILE_FEASIBLE|
-|43|194|6|41|315|PROFILE_FEASIBLE|
-|44|222|3|26|172|PROFILE_FEASIBLE|
-|45|251|1|17|83|PROFILE_FEASIBLE|
-|46|281|0|7|42|PROFILE_FEASIBLE|
-|47|308|0|5|39|PROFILE_FEASIBLE|
+|34|-30|62|39|0|EXCLUDED|
+|35|-7|54|48|0|EXCLUDED|
+|36|16|45|50|0|EXCLUDED|
+|37|39|37|50|0|EXCLUDED|
+|38|63|30|50|0|EXCLUDED|
+|39|88|24|50|0|EXCLUDED|
+|40|113|18|48|0|EXCLUDED|
+|41|139|13|39|120|PROFILE_FEASIBLE|
+|42|166|9|31|319|PROFILE_FEASIBLE|
+|43|194|6|27|283|PROFILE_FEASIBLE|
+|44|222|3|18|170|PROFILE_FEASIBLE|
+|45|251|1|10|82|PROFILE_FEASIBLE|
+|46|281|0|4|40|PROFILE_FEASIBLE|
+|47|308|0|3|21|PROFILE_FEASIBLE|
 
-## Exact result
+## Exact frontier
 
 - m=8: excluded v=31..38; first aggregate survivor v=39.
 - m=9: excluded v=32..39; first aggregate survivor v=40.
 - m=10: excluded v=34..40; first aggregate survivor v=41.
 
-The support lower bounds are v>=31,32,34, respectively. The m=8 lower bound uses the registered near-Turán/linear-block packing lemma at v=30; the m=9,10 lower bounds follow from 42m>t4(v) at v=31,33.
+The support floors remain v>=31,32,34. The KP refinement reduces per-color option sets but does not change the exclusion frontier.
 
 ## First-survivor W structure
 
-At m=8,v=39, each exact color has minimum W-cost3 and the W budget is24=8*3. Thus all eight exact colors attain the minimum and \(\overline{H[W]}=K_{2,2,2,2}\), so H[W]=4K2. Each exact-color W-edge set is a 3-edge matching.
+At (m,v)=(8,39), minimum per-color W cost is3 and total W budget24, forcing H[W]=4K2; each exact-color W-edge set is a 3-edge matching.
+At (m,v)=(9,40), minimum per-color W cost is2 and total W budget18, forcing H[W]=3K2 union K1; each exact-color W-edge set is a 2-edge matching.
+At (m,v)=(10,41), minimum total W cost is10 against budget13, leaving at most3 units of W slack.
 
-At m=9,v=40, each exact color has minimum W-cost2 and the W budget is18=9*2. Thus \(\overline{H[W]}=K_{2,2,2,1}\), so H[W]=3K2 plus an isolated vertex. Each exact-color W-edge set is a 2-edge matching.
-
-At m=10,v=41, the per-color minimum W-cost is1 and the W budget is13, leaving at most3 units of aggregate W slack.
-
-A PROFILE_FEASIBLE entry means only that this aggregate necessary relaxation has a cost-pair survivor. It does not produce a labelled graph or certify that any actual Q33 completion exists.
+This screen omits labelled incidence, gadget-shell labels, and the full vertex degree/excess ledger. PROFILE_FEASIBLE is not a graph realization. Q33 remains OPEN / NOT_CERTIFIED.
