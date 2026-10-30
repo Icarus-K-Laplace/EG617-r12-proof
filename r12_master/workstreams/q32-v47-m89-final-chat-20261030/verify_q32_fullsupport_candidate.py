@@ -253,7 +253,7 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
     core_counts = {}
     for c in range(1, 12):
         core_counts[c] = sum(colors[edge(u, v)] == c for u, v in pairs(H))
-        if core_counts[c] < 69:
+        if check_alpha and core_counts[c] < 69:
             fail(f"non-target color {c} has only {core_counts[c]} H-edges (<69)")
     for c in exact_colors:
         if core_counts.get(c, 0) > 75:
@@ -298,8 +298,9 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
             if not (max(69, 73 - a) <= e_core <= 75):
                 fail(f"color {c}: triple profile requires max(69,73-a)<=e_C(H)<=75, got {e_core}")
         else:
-            if not (max(69, 72 - a) <= e_core <= 74):
-                fail(f"color {c}: two-double profile requires max(69,72-a)<=e_C(H)<=74, got {e_core}")
+            lower = max(69, 72 - a) if check_alpha else 72 - a
+            if not (lower <= e_core <= 74):
+                fail(f"color {c}: two-double profile requires lower bound {lower} and upper bound 74, got {e_core}")
 
     if check_alpha:
         # The 69/70 near-Turan theorem applies to every non-target color, not
