@@ -301,75 +301,76 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
             if not (max(69, 72 - a) <= e_core <= 74):
                 fail(f"color {c}: two-double profile requires max(69,72-a)<=e_C(H)<=74, got {e_core}")
 
-    # The 69/70 near-Turan theorem applies to every non-target color, not
-    # just exact colors. Recover its partition by deleting the unique cross
-    # edge in the 70-layer, or taking components directly in the 69-layer.
-    def reconstruct_near_turan_partition(c):
-        e_core = core_counts[c]
-        if e_core not in (69, 70):
+    if check_alpha:
+        # The 69/70 near-Turan theorem applies to every non-target color, not
+        # just exact colors. Recover its partition by deleting the unique cross
+        # edge in the 70-layer, or taking components directly in the 69-layer.
+        def reconstruct_near_turan_partition(c):
+            e_core = core_counts[c]
+            if e_core not in (69, 70):
+                return None
+            candidates = [None] if e_core == 69 else [
+                (u, v) for u, v in pairs(H) if colors[edge(u, v)] == c
+            ]
+            for removed in candidates:
+                adj = {v: set() for v in H}
+                for u, v in pairs(H):
+                    if colors[edge(u, v)] == c and (removed is None or (u, v) != removed):
+                        adj[u].add(v)
+                        adj[v].add(u)
+                unseen = set(H)
+                parts = []
+                while unseen:
+                    root = min(unseen)
+                    stack = [root]
+                    unseen.remove(root)
+                    component = {root}
+                    while stack:
+                        w = stack.pop()
+                        for z in adj[w] & unseen:
+                            unseen.remove(z)
+                            component.add(z)
+                            stack.append(z)
+                    parts.append(component)
+                if sorted(map(len, parts)) != [3] + [4] * 11:
+                    continue
+                if any(not all(colors[edge(u, v)] == c
+                               for u, v in pairs(sorted(part))) for part in parts):
+                    continue
+                return parts
             return None
-        candidates = [None] if e_core == 69 else [
-            (u, v) for u, v in pairs(H) if colors[edge(u, v)] == c
-        ]
-        for removed in candidates:
-            adj = {v: set() for v in H}
+
+        near_turan_parts = {}
+        for c in range(1, 12):
+            if core_counts[c] <= 70:
+                parts = reconstruct_near_turan_partition(c)
+                if parts is None:
+                    fail(f"color {c}: 69/70 layer has no 11K4+K3 near-Turan partition")
+                    continue
+                part_of = {}
+                for i, block in enumerate(parts):
+                    for v in block:
+                        part_of[v] = i
+                near_turan_parts[c] = part_of
+                cross_edges = sum(
+                    colors[edge(u, v)] == c and part_of[u] != part_of[v]
+                    for u, v in pairs(H)
+                )
+                if cross_edges != core_counts[c] - 69:
+                    fail(f"color {c}: near-Turan cross-edge count {cross_edges}, expected {core_counts[c]-69}")
+                if c in exact_colors:
+                    for i, witness in enumerate(witnesses_by_color[c]):
+                        if len(witness) != 4 or len({part_of[v] for v in witness}) != 1:
+                            fail(f"exact color {c}: source witness {i} is not one complete near-Turan 4-part")
+
+        # Pairwise orthogonality: two low-layer color partitions cannot place
+        # the same pair of H-vertices in one part, or their edge would have two
+        # distinct colors.
+        for c1, c2 in itertools.combinations(sorted(near_turan_parts), 2):
+            p1, p2 = near_turan_parts[c1], near_turan_parts[c2]
             for u, v in pairs(H):
-                if colors[edge(u, v)] == c and (removed is None or (u, v) != removed):
-                    adj[u].add(v)
-                    adj[v].add(u)
-            unseen = set(H)
-            parts = []
-            while unseen:
-                root = min(unseen)
-                stack = [root]
-                unseen.remove(root)
-                component = {root}
-                while stack:
-                    w = stack.pop()
-                    for z in adj[w] & unseen:
-                        unseen.remove(z)
-                        component.add(z)
-                        stack.append(z)
-                parts.append(component)
-            if sorted(map(len, parts)) != [3] + [4] * 11:
-                continue
-            if any(not all(colors[edge(u, v)] == c
-                           for u, v in pairs(sorted(part))) for part in parts):
-                continue
-            return parts
-        return None
-
-    near_turan_parts = {}
-    for c in range(1, 12):
-        if core_counts[c] <= 70:
-            parts = reconstruct_near_turan_partition(c)
-            if parts is None:
-                fail(f"color {c}: 69/70 layer has no 11K4+K3 near-Turan partition")
-                continue
-            part_of = {}
-            for i, block in enumerate(parts):
-                for v in block:
-                    part_of[v] = i
-            near_turan_parts[c] = part_of
-            cross_edges = sum(
-                colors[edge(u, v)] == c and part_of[u] != part_of[v]
-                for u, v in pairs(H)
-            )
-            if cross_edges != core_counts[c] - 69:
-                fail(f"color {c}: near-Turan cross-edge count {cross_edges}, expected {core_counts[c]-69}")
-            if c in exact_colors:
-                for i, witness in enumerate(witnesses_by_color[c]):
-                    if len(witness) != 4 or len({part_of[v] for v in witness}) != 1:
-                        fail(f"exact color {c}: source witness {i} is not one complete near-Turan 4-part")
-
-    # Pairwise orthogonality: two low-layer color partitions cannot place
-    # the same pair of H-vertices in one part, or their edge would have two
-    # distinct colors.
-    for c1, c2 in itertools.combinations(sorted(near_turan_parts), 2):
-        p1, p2 = near_turan_parts[c1], near_turan_parts[c2]
-        for u, v in pairs(H):
-            if p1[u] == p1[v] and p2[u] == p2[v]:
-                fail(f"near-Turan partitions for colors {c1},{c2} share a 2-set")
+                if p1[u] == p1[v] and p2[u] == p2[v]:
+                    fail(f"near-Turan partitions for colors {c1},{c2} share a 2-set")
 
     for v in H:
         covered = False
