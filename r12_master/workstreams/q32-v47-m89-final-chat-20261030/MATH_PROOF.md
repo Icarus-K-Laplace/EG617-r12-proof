@@ -350,7 +350,7 @@ Every exact-129 Type-I color C has twelve disjoint monochromatic K5 factors \(B_
 - If \(x_C\in O\), then \(\sum b_i=13\) and all \(b_i\ge1\), so the profile is \((2,1^{11})\). The H-interiors of the factors partition H into eleven independent 4-sets and one independent 3-set.
 - If \(x_C\in H\), then \(\sum b_i=14\). The profile is either \((2,2,1^{10})\), giving ten independent 4-sets, two independent 3-sets and the singleton \(\{x_C\}\); or \((3,1^{11})\), giving eleven independent 4-sets, one independent 2-set and \(\{x_C\}\).
 
-Section 10's unified tight-part lemma excludes all three partition shapes. For clarity, its matching skeletons have the following exact ledgers:
+The unified tight-part lemma proved in V47_TYPEI_PARTITION_OBSTRUCTION.md excludes all three partition shapes. For clarity, its matching skeletons have the following exact ledgers:
 
 | Shape | \(e(M)\) | \(e(F)\) | Baseline F-degree sum | Total F-degree sum | Tight 4-parts |
 |---|---:|---:|---:|---:|---:|
