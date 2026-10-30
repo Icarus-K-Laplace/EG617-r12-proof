@@ -74,6 +74,11 @@ def verify(rows):
                     3 if r["profile"]=="triple" and r["chosen_factor_or_pair"]==f else 1)
                    for f in FACTORS)==total_out
         assert r["G11_H_vertices"] == 11-r["Ns_outside"]-r["Nt_outside"]-(r["location_x"]=="O")
+        expected_edges = 69 if r["profile"]=="one-double" else 66 if r["profile"]=="two-double" else 67
+        assert r["K5_interior_H_edges"] == expected_edges
+        expected_isolated = (int(r["chosen_factor_or_pair"].startswith("I")) if r["profile"]!="two-double"
+                             else sum(f in r["chosen_factor_or_pair"].split("+") for f in FACTORS[:10]))
+        assert r["isolated_double_or_triple_count"] == expected_isolated
         assert r["Ns_outside"]>=1 and r["Nt_outside"]>=1
         assert 0<=r["g_min_a1"]<=r["g_max"]
         assert 0<=r["g_min_a2"]<=r["g_max"]

@@ -73,3 +73,8 @@ The local Astra theorem excludes the 3+7 contract only. The eight-vertex isolate
 ## 6. New dense-component core reduction
 
 See M10_DENSE_COMPONENT_CORE_LEMMA.md for the full proof. The 4+6 small component always contains four aligned K4 tracks; its K4-e subcase has exact five-edge cross pairs and a matching as the six-block internal heavy graph. Each side of a 5+5 split contains a four-block aligned K4/K4-e core. These are reductions, not terminal contradictions.
+
+
+## 7. New 4+6 K4-e cross-grid reduction
+
+See M10_555_TRIANGLE_AND_CROSS_GRID_SWITCH_LEMMA.md. The 5,5,5 triangle is exhaustively classified: 41,472 normalized configurations, 1,872 valid; only identity or transposition matching holonomy survives. In the K4-e 4+6 cell this applies to the unique heavy small-side pair and every outer block. With the five 4,5,5 constraints, the one-column state catalog has 20,788 states, of which 16 have a nontrivial A/B switch. The column-to-column compatibility and degree/fiber system remain OPEN.

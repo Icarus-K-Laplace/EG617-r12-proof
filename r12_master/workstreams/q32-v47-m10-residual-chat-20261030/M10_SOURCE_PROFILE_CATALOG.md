@@ -116,7 +116,7 @@ The aggregate 90-row catalog is not a claim that all 90 modes extend to a full 6
 
 - If x_C is in H and N_t is single-outside, y must lie in H. If y were outside, x_C together with the four H-vertices of N_t minus {y} would form a C-colored K5 inside H.
 - If x_C is in H and N_s is single-outside, A_0 must contain at least one H-vertex; otherwise x_C together with the four H-vertices of N_s minus A_0 would form a C-colored K5 inside H.
-- If x_C is in H, N_s is single-outside, and y lies in H, then A_0 must also contain the unique outside vertex of N_s; otherwise y together with the four H-vertices of N_s would form a C-colored K5 inside H.
+- If N_s is single-outside and y lies in H, A_0 cannot be exactly the four H-vertices of N_s (the case a=4 with the outside vertex omitted); otherwise y together with those four H-vertices would form a C-colored K5 inside H.
 - In the aligned z=0,1 target-part cell, stronger pointwise degree floors give additional restrictions, including the exclusion of an isolated triple there. Those aligned-cell restrictions are not universal source restrictions.
 
 All remaining y/A_0 endpoint placements must be retained until checked against the actual target-part assignment, pointwise color-degree constraints, and global color-edge ownership.
