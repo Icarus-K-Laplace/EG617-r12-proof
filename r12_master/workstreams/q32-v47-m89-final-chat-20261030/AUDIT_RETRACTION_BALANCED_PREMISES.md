@@ -104,3 +104,21 @@ A valid continuation must establish, from the full balanced-coloring and outer Q
 3. if using the current Type-I-only verifier, a proof that every exact color in every surviving Q32 row is Type I.
 
 Until these gates close, keep the source profiles general and do not promote the previous analytic closure.
+
+
+## 7. Salvaged source-complete partition theorem
+
+The missing Type-I source gate does **not** destroy the weaker H-partition conclusion. A new theorem, V47_EXACT129_UNIVERSAL_PARTITION.md, handles both cases:
+
+- If the complement of C is 12-partite, its 12 independent parts are C-cliques; their intersections with H are independent in H and, since |H|=47 and alpha(H)<=4, have sizes 4^11,3.
+- If the complement is not 12-partite, Kang–Pikhurko Theorem 1 applies. All three equality profiles (5^12), (4,5^10,6), and (4,4,5^8,6,6) are retained. Their 12 old parts are C-cliques and partition V minus x. Since each H-intersection has size at most four and the total outside-incidence excess is 1 when x is outside O and 2 when x is in H, the induced H-partition is respectively 11K4+K3, 10K4+2K3+K1, or 11K4+K2+K1.
+
+Thus **every** exact-129 color, including the 12-partite complement case and both size-six Kang–Pikhurko profiles, induces one of the three H-partition shapes. This removes the need for a Type-I-only source factorization for the partition argument.
+
+The tight-part lemma then gives a source-complete conclusion:
+\[
+\text{every exact-129 color}\Longrightarrow
+\text{one of the three H-partitions}\Longrightarrow
+\omega(H)\ge6,
+\]
+using alpha(H)<=4 and the frozen core contract. This is a genuine structural result, but it still does not contradict the actual omega(H)<=11 cap. The m=8/9 closure remains OPEN / NOT_CERTIFIED.
