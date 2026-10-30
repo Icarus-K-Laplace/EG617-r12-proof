@@ -946,6 +946,26 @@ def self_test():
             assert all(edge(u, v) in synthetic_edges
                        for u, v in pairs(obstruction[1]))
 
+    # The Type-I obstruction helper is tested on all three exact-source
+    # occupancy shapes, using the same 285-edge / delta>=12 synthetic H.
+    type_i_parts = [set(part) for part in synthetic_parts]
+    type_ii_parts = [set(part) for part in synthetic_parts[1:]]
+    type_ii_parts.extend(({0, 1, 2}, {3}))
+    type_iii_parts = [set(part) for part in synthetic_parts[:-1]]
+    type_iii_parts.extend(({44, 45}, {46}))
+    for partition in (type_i_parts, type_ii_parts, type_iii_parts):
+        obstruction = type_i_partition_obstruction_witness(
+            synthetic_edges, partition)
+        assert obstruction[0] in ("independent5", "clique"), obstruction
+        if obstruction[0] == "independent5":
+            assert len(obstruction[1]) >= 5
+            assert all(edge(u, v) not in synthetic_edges
+                       for u, v in pairs(obstruction[1]))
+        else:
+            assert len(obstruction[1]) >= 6
+            assert all(edge(u, v) in synthetic_edges
+                       for u, v in pairs(obstruction[1]))
+
     # Exact registered global color-count vectors all partition K_61.
     expected8 = {0: 408, **{c: 129 for c in range(1, 9)},
                  9: 130, 10: 130, 11: 130}
