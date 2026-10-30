@@ -75,6 +75,11 @@ The local Astra theorem excludes the 3+7 contract only. The eight-vertex isolate
 See M10_DENSE_COMPONENT_CORE_LEMMA.md for the full proof. The 4+6 small component always contains four aligned K4 tracks; its K4-e subcase has exact five-edge cross pairs and a matching as the six-block internal heavy graph. Each side of a 5+5 split contains a four-block aligned K4/K4-e core. These are reductions, not terminal contradictions.
 
 
-## 7. New 4+6 K4-e cross-grid reduction
+## 7. RETRACTED former 5,5,5 / one-column reduction
 
-See M10_555_TRIANGLE_AND_CROSS_GRID_SWITCH_LEMMA.md. The 5,5,5 triangle is exhaustively classified: 41,472 normalized configurations, 1,872 valid; only identity or transposition matching holonomy survives. In the K4-e 4+6 cell this applies to the unique heavy small-side pair and every outer block. With the five 4,5,5 constraints, the one-column state catalog has 20,788 states, of which 16 have a nontrivial A/B switch. The column-to-column compatibility and degree/fiber system remain OPEN.
+The former 1,872-count 5,5,5 classifier and 20,788-state one-column catalog are incorrect. The exact 5,5,5 replay has 2,124 valid configurations, with 66 for each transposition, and the corrected one-column catalog has 20,842 states. See M10_555_CLASSIFICATION_RETRACTION.md and the corrected M10_555_TRIANGLE_AND_CROSS_GRID_SWITCH_LEMMA.md. No six-column endpoint conclusion from the former fixed-switch rule may be imported.
+
+
+## 8. Corrected 4+6 K4-e local classification
+
+The corrected exact 5,5,5 theorem and one-column enumeration are recorded in M10_555_TRIANGLE_AND_CROSS_GRID_SWITCH_LEMMA.md. The 41,472 normalized 5,5,5 inputs yield 2,124 valid configurations (1,728 identity and 66 per transposition). The corrected one-column catalog has 20,842 states (20,772 AB-aligned, 70 AB-switched). For every fixed row and every fixed column of the 4-by-6 matching matrix, the matching values take at most two distinct permutations. This does not imply a two-permutation global grid. The six-column compatibility, degree equations, and residual-fiber coupling remain OPEN.

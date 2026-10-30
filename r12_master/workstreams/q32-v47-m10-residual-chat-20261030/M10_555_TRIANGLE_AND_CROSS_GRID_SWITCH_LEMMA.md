@@ -1,80 +1,82 @@
-# M10 5,5,5 triangle classification and 4+6 cross-grid switch constraints
+# M10 5,5,5 triangle classification (corrected) and K4-e cross-grid constraints
 
 Date: 2026-10-30  
-Status: COMPUTATION_CERTIFIED local theorem; global 4-by-6 grid remains OPEN.
+Status: COMPUTATION_CERTIFIED local theorem; six-column grid and full Q32 remain OPEN.
 
-## 1. Exact 5,5,5 triangle theorem
+## 1. Exact 5,5,5 triangle classification
 
-Let A,B,D be pairwise disjoint independent 4-sets with exactly five edges between each pair. Each pair graph has a perfect matching and one extra edge. Relabel A,B,D so the A-B and A-D perfect matchings are identity; write sigma in S_4 for the B-D perfect matching. Let e_AB,e_AD,e_BD be the three extra edges, each off its pair's base matching.
+Let A,B,E be pairwise disjoint independent 4-sets. Each pair graph has exactly five edges: a unique perfect matching plus one off-matching edge. Relabel A,B,E so the A-B and A-E base matchings are identity; let the B-E matching be sigma in S4. Denote the extra edges by e_AB,e_AE,e_BE.
 
-**Theorem.** The induced 12-vertex graph has alpha at most four exactly in these cases:
+There are exactly 24*12^3=41,472 normalized inputs. For each input, check all 792 five-subsets of A union B union E.
 
-1. sigma=id: all 12^3=1,728 choices of (e_AB,e_AD,e_BD) are valid.
-2. sigma=tau is a transposition: for some s in the two-point support of tau,
-   
-       e_AB=(s,tau(s)),
-       e_AD=(tau(s),s),
+**Correct theorem.**
+- If sigma=id, all 12^3=1,728 extra-edge triples are valid.
+- If sigma is a transposition, exactly 66 extra-edge triples are valid.
+- If sigma is a 3-cycle, double transposition, or 4-cycle, no extra-edge triple is valid.
 
-   while e_BD is arbitrary among its 12 off-matching edges. This gives 24 valid configurations for each of the six transpositions, 144 total.
-3. For every other sigma (3-cycles, double transpositions, and 4-cycles), no extra-edge choice is valid.
+Thus the exact total is 1,728+6*66=2,124.
 
-The exact normalized input space has 24*12^3=41,472 configurations. The verifier checks every one of the 792 five-subsets of the 12-vertex graph and confirms exactly 1,872 valid configurations: 1,728 identity and 144 transposition. This is an exhaustive finite classification, not a heuristic search.
+The transposition case has the following explicit classification. By simultaneous relabelling, take sigma=(0 1), fixing 2 and 3. Then:
+1. If e_AB=(0,1), either e_AE=(1,0) and e_BE is any of the 12 off-sigma edges, or else e_BE=(0,0).
+2. If e_AB=(1,0), either e_AE=(0,1) and e_BE is any of the 12 off-sigma edges, or else e_BE=(1,1).
+3. If e_AB is any of the other ten off-diagonal edges, the only possibilities are e_AE=(0,1), e_BE=(0,0), or e_AE=(1,0), e_BE=(1,1).
+
+This gives 23+23+20=66 configurations. The exact classifier is checked against the independence test on every one of the 41,472 inputs by verify_m10_555_triangle.py.
+
+### Regression witness for the former incorrect theorem
+
+Take sigma=(0,1,3,2), e_AB=(0,1), e_AE=(2,3), e_BE=(2,2). Every extra edge is off its base matching, and direct checking of all 792 five-subsets gives alpha(A union B union E)<=4. The former 1,872-count theorem incorrectly rejected this configuration because e_AB is outside the support of sigma.
+
+The former statement “24 valid configurations for each transposition” and the former fixed-e_AB switch rule are RETRACTED. The corrected exact count is 66 per transposition.
 
 ## 2. Application to the 4+6 K4-e cell
 
-In the 4+6 component split, suppose the four-block side S is K4-e. Its unique heavy pair A,B has exactly five edges; the other five pairs in S have exactly four. The six-block side T has light graph K6 minus a matching of size Z-1; its heavy pairs are exactly that matching and each has exactly five edges. The component ledger gives zero extra multiplicity on all 24 S-T pairs, so each cross pair has exactly five edges.
+In the 4+6 split, suppose the four-block side S is K4-e. Its unique heavy pair A,B has five edges; the other five pairs in S have four. The six-block side T has light graph K6 minus a matching of size Z-1. In the K4-e subcase, all 24 cross pairs have exactly five edges, and for Z=4 the outer heavy graph is a perfect matching.
 
-The internal perfect matchings on S and T align independently:
-- In S, the two light 2-paths between the endpoints of the unique heavy pair force the same matching into its 5-edge pair. A 5-edge bipartite graph on 4+4 vertices cannot contain two distinct perfect matchings, because the symmetric difference of two distinct perfect matchings has at least six edges.
-- In T, every pair graph (light or heavy) has a unique perfect matching: four edges for a light pair, five for a heavy pair. Every cycle in K6 minus a matching has a light chord, except a 4-cycle whose two diagonals are both missing matching pairs. In the latter case the two length-two paths force the same unique matching into each heavy diagonal. Chord induction makes every cycle holonomy trivial, so all six blocks can be relabelled with the same identity matching. Each missing pair also receives that identity matching from a common light neighbor.
+The internal base matchings on S and T align independently. After relabelling, all small-small and all outer-outer base matchings are identity. The remaining cross data are 24 permutations p_ij and 24 off-matching extra edges e_ij.
 
-Thus all internal S and T base matchings may be taken to be identity. The only remaining matching freedom is the 4-by-6 cross matrix.
+## 3. Exact 4,5,5 switch contract (unchanged)
 
-For each outer block D_j, the triple A,B,D_j is a 5,5,5 triangle. Hence the A-D_j and B-D_j matchings are either equal or differ by a transposition. If they differ, the fixed extra edge e_AB determines the transposition and forces the A-D_j extra edge by the theorem above. In particular, every nontrivial A/B switch across the six columns uses the same transposition and the same orientation, because e_AB is one fixed edge.
+For a light small-side pair Q_i,Q_k and a selected outer block E, the pair Q_iQ_k is a matching and both cross pairs have five edges. Put tau=p_i^{-1}p_k. Either tau=id, or tau is a transposition and for some s in its support
 
-## 3. Exact switch equations on the 4-by-6 grid
+    e_i=(s,p_k(s)),    e_k=(s,p_i(s)).
 
-Write p_ij:[4]->[4] for the base perfect matching from row block Q_i to column block D_j, and write the unique extra edge as e_ij=(a_ij,b_ij), with a_ij a row-label and b_ij a column-label.
+This is the unchanged 4,5,5 theorem. The corrected 5,5,5 theorem above must be used for the heavy AB pair; it is strictly more permissive than the former fixed-switch rule.
 
-There are two orientations of the 4,5,5 switch theorem; they must not be conflated.
+## 4. Corrected one-column state catalog
 
-### Row direction: two small blocks, one outer block
+Normalize the selected outer block's target labels so p_C=id. Enumerate p_A,p_B,p_D in S4 and all four cross extra edges. Impose:
+- the exact corrected 5,5,5 test on A,B,E, with fixed e_AB=(A_0,B_1);
+- the five 4,5,5 constraints from the light small-side pairs AC, AD, BC, BD, CD;
+- alpha<=4 on the five-block induced graph.
 
-If Q_i Q_k is a light pair and the two cross pairs Q_i D_j,Q_k D_j each have five edges, put tau=p_ij^{-1} p_kj. Either tau=id, or tau is a transposition and for some s in its support
+The exact catalog is:
 
-    e_ij=(s,p_kj(s)),
-    e_kj=(s,p_ij(s)).
+| Quantity | Count |
+|---|---:|
+| All one-column states | 20,842 |
+| p_A=p_B | 20,772 |
+| p_A!=p_B | 70 |
+| AB-relative switch (0 1) | 30 |
+| Each of the other five transpositions | 8 |
+| Independent-five candidates checked per state | 8,704 |
 
-Thus the two extra edges have the same endpoint label s on their respective small blocks.
+The former catalog of 20,788 states (16 switched) is superseded. It omitted 54 valid states because it used the incorrect 5,5,5 classifier. A concrete omitted five-block witness is recorded in verify_m10_555_column_states.py; it satisfies all local pair contracts and has no independent five-set in the full 20-vertex induced graph.
 
-### Column direction: one small block, two outer blocks
+The 8,704 candidate family is complete: a pair graph with a perfect matching has no independent 5-set supported on two blocks (the 3+2 and 4+1 distributions are blocked by the matching). Every three-block induced graph is one of the aligned 5,4,4 case, the 4,5,5 switch case, or the corrected 5,5,5 case, all with independence number at most four. Thus any remaining independent five-set uses either 1+1+1+1+1 or 2+1+1+1 across the five blocks.
 
-If D_j D_l is a light pair and Q_i D_j,Q_i D_l each have five edges, put sigma=p_ij p_il^{-1}, a permutation from D_l labels to D_j labels. Either sigma=id, or sigma is a transposition and for some s in its support
+## 5. Row/column matching-value bound
 
-    e_ij=(p_ij^{-1}(sigma(s)),s),
-    e_il=(p_ij^{-1}(s),s).
+In the 4-by-6 cross grid, fix one small row i. For any two outer columns j,l, their pair is either light (four edges) or heavy (five edges); the two row-to-column pairs each have five edges. The 4,5,5 or corrected 5,5,5 theorem therefore implies p_ij and p_il are equal or differ by a transposition.
 
-Here the two extra edges have the same endpoint label s on the two outer blocks. This is the transpose-oriented form of the same 4,5,5 theorem.
+Likewise, in a fixed outer column j, any two small rows have a light or heavy pair, and both cross pairs have five edges. Their matching permutations are equal or differ by a transposition.
 
-At a grid cell, all row-direction switch transpositions incident to that cell must contain its source endpoint label a_ij; all column-direction switch transpositions incident to it must contain its target endpoint label b_ij. These are separate source-side and target-side star constraints. A global single-label propagation across mixed-orientation switch components is not asserted.
+A subset of S4 whose distinct elements are pairwise at transposition distance has size at most two: if p,q,r were three distinct elements, then q^{-1}r=(p^{-1}q)^{-1}(p^{-1}r) would be the product of two distinct transpositions, hence a 3-cycle or double transposition, not a transposition.
 
-## 4. One-column finite state count
+Therefore every row and every column of the 4-by-6 matching matrix uses at most two permutations. This does NOT imply that the entire matrix uses only two global permutations. A 2-by-2 rectangle can use four permutations. Nor does it imply that all row/column switches use the same transposition.
 
-Normalize e_AB=(A_0,B_1) and use the global target-label gauge p_C=id for one column. Enumerating all p_A,p_B,p_D and all off-matching extra edges subject to:
-- the 5,5,5 A-B-D theorem;
-- the five 4,5,5 constraints from the light pairs in S;
+## 6. Remaining load-bearing interface
 
-gives exactly 20,788 one-column local states. Of these, 20,772 have p_A=p_B and 16 have p_A!=p_B. The 16 switch states are all forced by the fixed A-B extra edge and the adjacent 4,5,5 constraints. The companion verifier also checks all 8,704 possible independent-five candidates in the five-block union (one per block, or 2+1+1+1 across four blocks); it finds none. The omitted distributions on at most three blocks are already excluded by the pair and triangle theorems. Thus every one-column state has alpha at most four on A union B union C union D union {D_j}.
+The next problem is to couple the corrected 20,842 one-column states; all twelve outer light-pair 4,5,5 constraints; the three outer heavy-pair corrected 5,5,5 constraints with their actual extra-edge endpoints; exact per-vertex degree equations; the two residual clique-fiber partitions and their relative placement; and global alpha(H)<=4 and omega(H)<=11.
 
-This is a per-column count only. It does not impose the row-wise column-direction constraints between distinct D_j, the residual degree equations, the residual fiber maps, or the Type-I source placements.
-
-## 5. Remaining 4+6 load-bearing interface
-
-The K4-e 4+6 branch is now reduced to:
-- one fixed heavy-pair extra edge e_AB;
-- six column states from the 20,788-state local catalog;
-- all column-pair compatibility constraints on the K6-minus-matching light graph;
-- the exact per-vertex degree equations in each Q_i and D_j;
-- the residual unique-neighbor maps and their clique fibers.
-
-The 4-by-6 grid has not been exhausted. No contradiction or Q32 closure is claimed.
+No six-column grid contradiction is established. No Z=4 closure, no full-support m=10 closure, and no Q32/root closure is claimed.

@@ -62,11 +62,15 @@ verify_m10_source_occupancy.py independently enumerates the 90 labelled aggregat
 
 It checks G_11 H-vertex counts, K5-interior H-edge counts, and source parameter-to-gap lower bounds. This is aggregate source arithmetic, not an endpoint-labelled source CSP.
 
-## 5. New 4+6 K4-e local verification
+## 5. RETRACTED former 4+6 local verification
 
-The normalized 5,5,5 triangle verifier exhausts all 41,472 configurations and confirms exactly 1,872 valid ones: 1,728 with identity matching holonomy and 144 with transposition holonomy. The one-column K4-e verifier enumerates 20,788 switch-compatible states (20,772 A/B-aligned and 16 switched) and checks all 8,704 possible independent-five candidates in the five-block induced graph for every state; no independent five-set is found. The candidate family is complete because pair and three-block local theorems exclude any independent five-set supported on at most three blocks. The exact scripts are verify_m10_555_triangle.py and verify_m10_555_column_states.py. These are local finite certifications, not a six-column grid or full Q32 certificate.
+The former 1,872-count 5,5,5 result and 20,788-state one-column result are invalid. The previous verifier's fixed-transposition predicate rejects valid 5,5,5 inputs. See M10_555_CLASSIFICATION_RETRACTION.md.
 
-## 6. Scope
+## 6. Corrected 4+6 local verification
+
+The corrected verifier exhausts all 41,472 normalized 5,5,5 configurations and confirms 2,124 valid ones: 1,728 identity and 66 for each of six transpositions. It checks all 792 five-subsets for every input and matches the corrected closed-form classifier with zero mismatches. The corrected one-column verifier enumerates 20,842 states (20,772 A/B-aligned, 70 switched) and checks all 8,704 complete independent-five candidates in the five-block induced graph for every state. It includes an explicit state omitted by the former catalog; a separate full 20-vertex five-subset check confirms that witness has alpha<=4. These scripts are local finite certifications, not a six-column grid or full Q32 certificate.
+
+## 7. Scope
 
 Neither replay certifies:
 - any ten-block weighted-heavy graph;

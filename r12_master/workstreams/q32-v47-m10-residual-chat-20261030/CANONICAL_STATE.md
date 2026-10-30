@@ -27,7 +27,7 @@ The Type-I exact-color source is the published-source factorization 10 isolated 
 5. The source-correct isolated-double audit identifies an eight-vertex residual branch; its exceptional large-track-centered subcase remains open.
 6. The source-correct Type-I occupancy catalog has 90 labelled aggregate factor assignments. It includes isolated-double, special-double, two-isolated-double, isolated-triple, and special-triple modes.
 7. New dense-component lemma: the 4+6 side contains four aligned K4 tracks (with a sharper K4-e reduction); each side of a 5+5 split contains an aligned four-block K4/K4-e core. Their cross matching grids remain open.
-8. New K4-e 4+6 local theorem: the 5,5,5 triangle is exactly classified by exhaustive 41,472-case verification. The one-column cross-grid switch catalog has 20,788 states, including 16 switched states. Six-column compatibility remains open.
+8. RETRACTED: the former 5,5,5 classifier (1,872 valid) and 20,788-state one-column catalog were incorrect. Corrected exact replay gives 2,124 valid 5,5,5 configurations and 20,842 one-column states (70 switched). The six-column grid remains OPEN.
 9. The low-support Q32 layers |U|=44,45,46 are closed on the case-II branch. This does not close full support |U|=47.
 
 ## New verified residual catalog
@@ -35,6 +35,8 @@ The Type-I exact-color source is the published-source factorization 10 isolated 
 An independent labelled enumeration covered all 1,048,344 seven-vertex graphs with 3 through 10 edges. The source-correct incidence proof excludes the 252 labelled copies of C5 dot-union 2K1; after alpha, clique-cover and B_min filters, 797,072 labelled residual graphs remain.
 
 Their 371 isomorphism representatives, 93,120 ordered four-clique-fiber maps and 34,794,144 ordered pairs (F,G) are checked in the independent replay report. This is a necessary-condition catalog, not a full 47-vertex Q32 enumeration. It does not enumerate the ten-block weighted-heavy graph, source endpoint placements, all global color edge ownership, or all compatible F/G pairs.
+
+10. Corrected 4+6 local result: each fixed row and fixed column of the 4-by-6 matching matrix uses at most two permutations, but the entire matrix need not use only two. The old fixed-transposition endpoint propagation is not valid.
 
 ## Current status
 
