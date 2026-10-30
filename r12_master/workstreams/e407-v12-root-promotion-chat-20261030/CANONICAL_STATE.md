@@ -44,3 +44,13 @@ The original V12 ZIP remains in Library at `/T61_H13_V12.zip` (file ID `file_000
 ## Next load-bearing task
 
 Prove the MS-29 bridge: every legal A--E completion admits the common 29-point U carrying the 49 pairwise-linear selected support blocks. Reconcile the C0 lower-order seed status. Only after those dependencies close should the global root DAG be updated.
+
+
+## 2026-10-30 follow-up — independent source and generalized support reserve
+
+- Rechecked the canonical Library archive /T61_H13_V12.zip (file ID file_00000000fa1881f4bfbef443ae0fe03d) and both duplicate ZIPs. All three are 190,249 bytes and byte-identical, SHA-256 0c3c69a7baf94a816eff29f3a079b97ac7750d0e8b8fd2773330469c4b8c5e36.
+- Recovered V11 at /T61_H13_V11.zip (file ID file_00000000bd708243a192cac79752b2a3), SHA-256 27ecec92d43a27fb132c60aa7b374131a860547c236d8ed3d83d3cf0eab9f0a4. Its 22/22 internal hashes pass; all five V12 V11-source copies match their V11 originals byte-for-byte.
+- V12 pristine extraction passes 29/29 SHA entries. Run this check before the original verifier: the verifier rewrites INDEPENDENT_Q32_REPLAY.json in its working extraction.
+- The independent replay source is now mirrored in this workstream as EG617_V12_independent_replay.py; source SHA-256 ac22350dca49f6ba5eb77f9c2cf5169bc226198a996c3a1b4c3699607ae7c26b.
+- New V12_GENERAL_SUPPORT_RESERVE.md strengthens the 49-block support audit without assuming MS-29: for the union of the seven selected color classes, support sizes 29–33 are impossible; size 34 is a rigid equality case; sizes at least 35 remain open. For the union over all m exact colors, m=8,9 forces support at least35 and m=10 forces at least36.
+- Promotion remains CONDITIONAL. The exact assertion |U_7|=29 is still not derived from V12 or from the support lower-bound theorem. The generalized reserve does not close the v=34 equality case or v>=35. EG617(r=12) remains OPEN / NOT_CERTIFIED.
