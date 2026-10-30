@@ -30,6 +30,9 @@ A genuine E408 h13 T61 parent with Qmax=33 has a degree-13 pivot with q=33, henc
 
 ## Certified components
 
+- Strict hereditary 47-point floor: R(4,47) graphs satisfy e>=285, by combining the retained 284-edge private-clique floor, the source-complete minimum-degree gate, and the universal 284-edge nonexistence theorem. See R447_STRICT_285_FLOOR.md.
+- E408/h13 parent consequence: every degree-13 pivot has q_p<=32, hence Q_max<=32 under the exact T61 parent contract. This closes Q_max=33 without the 56-witness support-promotion route.
+
 - Actual clean-room replay on 2026-10-30: all four archive hashes and six internal source hashes checked; both original 127-row verifiers and the S31/Q33 arithmetic replayers passed. See CLEAN_ROOM_REPLAY_20261030.md.
 
 - Independent degree-12 four-set: PROVED.
