@@ -78,3 +78,20 @@ Crucially, no V11 result is used in the minimum-degree proof or Q33 parent contr
 - Universal 284-edge core nonexistence: PROVED.
 - E408 / Qmax=33 parent contradiction: PROVED_CONDITIONAL under the explicit h13 E408 parent contract.
 - Full EG617(r=12): OPEN / NOT_CERTIFIED.
+
+## 8. Direct source retention in the isolated branch
+
+The following are now committed inside this workstream:
+- COMPLETION_CERTIFICATE.csv (128 lines including header; 127 exact rows);
+- verify_completion.py (standalone Fraction verifier);
+- VERIFIED_COMPLETION.json (the exact replay output);
+- SOURCE_ASSET_MANIFEST.md (archive and source hashes).
+
+The Q33_SOURCE_COMPLETE_REPLAY.py command is now:
+    python3 Q33_SOURCE_COMPLETE_REPLAY.py --certificate COMPLETION_CERTIFICATE.csv
+
+The local source archive remains retained in the uploaded file library. The branch's own copy of the CSV is confirmed to have 128 lines and the same final row as the retained archive copy.
+
+## 9. Default-branch write incident and correction
+
+One SOURCE_ASSET_MANIFEST.md create operation initially omitted the explicit branch argument and therefore wrote to the repository default branch. The mistake was detected immediately. The file was deleted from main in the next commit; the current main tree contains no file at that path. No global canonical file or sibling workstream file was changed. All subsequent writes explicitly specify the isolated branch. This incident is recorded for audit transparency.
