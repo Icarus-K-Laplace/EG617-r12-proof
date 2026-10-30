@@ -38,3 +38,12 @@ If six component witnesses and one gadget witness are selected, the six componen
 \]
 
 The variable-core profile model below enumerates every remaining component size c_i in {0,1,2,3,4} and every U-split k_i in {0,...,c_i}. It does not assume every remaining component is a four-core K4.
+
+
+## 3. 2026-10-30 — canonical component-only witness selection
+
+The seven-witness packing source supplies seven isolated-K5 component four-sets in every exact-129 color: at least six are B-labelled; if the seventh component contains pivot p, then p is target-adjacent to all B, so its other four vertices lie in H. Thus all seven are component witnesses.
+
+For the support set used in the new screen, choose these seven component witnesses in every exact-129 color. This fixes h=0 by construction. No selected gadget witness is needed, and no gadget-witness overlap allowance is used. The old all-h model remains a broader diagnostic relaxation, but it is not the strongest source-correct screen.
+
+This selection relies on the exact shell partition R={p} dot-union S dot-union B dot-union H, A=S dot-union B=N_F(p), the target-clique property of B, the exact-129 factorization, and alpha(H)<=4. If any proposed parent completion does not satisfy that registered Q33 shell interface, this component-selection lemma is not applied.

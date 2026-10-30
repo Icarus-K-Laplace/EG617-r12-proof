@@ -26,3 +26,17 @@ The product enumerator and independent recursive option generator agree for ever
 - EG617(r=12): **OPEN / NOT_CERTIFIED**.
 
 The earlier fixed c_i=4 screen is retained only as a conditional special case; it is not used for the current source-correct frontier.
+
+
+## 2026-10-30 correction — canonical component-only witness choice
+
+The seven-witness source lemma supplies seven isolated-K5 component four-sets in every exact-129 color (six B-labelled components and, if needed, the pivot component's H-part). We may choose these seven component witnesses for every one of the m exact-129 colors. For this support family h=0 by construction; no gadget-witness existence is assumed.
+
+The component-only variable-core screen is strictly stronger than the previous all-h diagnostic:
+- m=8: v=31,...,38 excluded; first aggregate survivor v=39.
+- m=9: v=32,...,39 excluded; first aggregate survivor v=40.
+- m=10: v=34,...,40 excluded; first aggregate survivor v=41.
+
+The exact component-only verifier is Q33_INDEPENDENT_VERIFIER.py. It compares Cartesian-product and recursive per-color option generation and checks all 47 registered (m,v) cells. The previous gadget-inclusive verifier is archived as Q33_VARIABLE_CORE_ALL_H_VERIFIER.py.
+
+Status remains: reserve theorem PROVED_CONDITIONAL under the registered Q33 parent contract; finite profile screen COMPUTATION_CERTIFIED; graph-level cases and global Q33 OPEN / NOT_CERTIFIED.

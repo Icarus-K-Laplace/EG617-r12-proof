@@ -69,3 +69,29 @@ Primary source files read:
 - \`Q33_M10_EXACT_COLOR_CAPACITY_EXCLUSION.md\`, Section 3 for the gadget independence/capacity fact.
 
 The stronger all-ten-components-have-four-core-vertices premise appears in the M10 local note under a retained shell-label theorem, but is not separately registered in the audited global root DAG. It is not used by the current variable-core model.
+
+
+## 2026-10-30 canonical component-only selection update
+
+Source path checked: branch workstream/r12-e408-q33-global-compat-20261025, commit 0cb2ff3968f005c9cb255958df7c02b220678701, files:
+- r12_master/workstreams/zero-excess-witness-chat-20261025/R12_HIGH_SUPPORT_COLOR_WITNESS.md, Section 2;
+- r12_master/workstreams/zero-excess-witness-chat-20261025/R12_WITNESS_PACKING_BOUNDARY_KERNEL.md, Sections 2–3.
+
+For every exact-129 color, the source gives at least seven K5 components avoiding S. Six yield B-labelled four-point core witnesses. If the seventh contains pivot p, p is target-adjacent to all B, so that component cannot contain B; because it avoids S, its other four vertices lie in H. Hence the seventh also supplies a component K4 witness. The seven selected Q sets are disjoint within color and linear across colors.
+
+For the support family now used in Q33_INDEPENDENT_VERIFIER.py, select those seven component witnesses in each exact color, so h=0. This is a constructive selection, not an assumption that gadget witnesses do not exist. It supersedes the need to model a gadget witness among these selected seven. The 7-witness support floors remain m=8:v>=31, m=9:v>=32, m=10:v>=34 (the last follows from 70*6>t4(33)).
+
+The new U/W reserve screen uses:
+- selected component edge reserve 42m;
+- B_U=L_max(v)-42m-(11-m)p_12(v);
+- B_W=t_4(47-v)-(11-m)p_12(47-v);
+- exactly three unselected K5 components per exact color, with variable core sizes 0..4 and total core size 8..12.
+
+No gadget witness or +4h overlap allowance is used. The previous all-h verifier is archived as Q33_VARIABLE_CORE_ALL_H_VERIFIER.py.
+
+New screen result:
+- m=8 excludes v=31..38; aggregate survivors v=39..47;
+- m=9 excludes v=32..39; aggregate survivors v=40..47;
+- m=10 excludes v=34..40; aggregate survivors v=41..47.
+
+This remains a necessary aggregate profile test, not a graph-level UNSAT certificate. Root status remains OPEN.
