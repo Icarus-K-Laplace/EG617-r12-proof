@@ -359,3 +359,28 @@ This conclusion is conditional on the Type-I factorization for every exact color
 The Type-I source factorization itself is not established for every exact color under balancedness: the exact-129 source audit requires omega(C)<=5 to rule out a 12-partite complement and size-six equality profiles, while EG617 only gives omega(C)<=12. The current verifier format is therefore Type-I-only; its K6/K7 output is a permitted graph under the actual Q32 contract. The full verifier was not executed.
 
 **Status: PROVED_CONDITIONAL** as a partition lemma under the augmented Type-I source and H-core assumptions. It does not close the m=8 or m=9 terminal. The SMT model is an augmented Type-I/K6-free diagnostic, not a complete EG617 encoding.
+
+
+## 11. Source-complete exact-129 partition theorem
+
+The Type-I-only source assumption in Sections 1–2 is not needed for the partition conclusion. The complete argument is in V47_EXACT129_UNIVERSAL_PARTITION.md and uses only:
+- the balanced-coloring consequence alpha(C)<=12;
+- e(C)=129 on the 61-point residual;
+- the frozen target-core alpha(H)<=4;
+- the published Kang–Pikhurko equality classification in the non-12-partite complement case.
+
+If G=bar(C) is 12-partite, its 12 independent parts are C-cliques. Their intersections with H are independent in H and cover 47 vertices with at most four per part, so their sizes are 4^11,3.
+
+If G is not 12-partite, the Kang–Pikhurko equality theorem applies at e(G)=1701=p_12(61). All three equality profiles are retained:
+\[
+(5^{12}),\quad(4,5^{10},6),\quad(4,4,5^8,6,6).
+\]
+Each has twelve old C-clique parts covering all vertices except a special x. For all three profiles, the minimum total outside incidence needed to keep every H-intersection of size at most four is 12. If x lies in O, the actual incidence is 13, leaving one deficit unit and giving 11K4+K3. If x lies in H, the actual incidence is 14, leaving two deficit units and giving either 10K4+2K3+K1 or 11K4+K2+K1.
+
+Therefore every exact-129 color, including the 12-partite complement branch and the two size-six non-12-partite equality profiles, induces one of the three partition shapes. No omega(C)<=5 premise or Type-I-only factorization is required.
+
+Combining this source-complete partition theorem with the Hall/tight-part lemma gives:
+\[
+\boxed{\text{every exact-129 color}\Longrightarrow \omega(H)\ge6.}
+\]
+This is a new universal structural consequence. It does **not** close Q32: the actual residual cap is omega(H)<=11, so K6/K7 is permitted. The remaining problem is to exploit this forced clique structure with the 285-edge/excess-six and cross-color constraints.
