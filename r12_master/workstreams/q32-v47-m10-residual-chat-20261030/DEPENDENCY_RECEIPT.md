@@ -52,7 +52,7 @@ Astra independent branch:
 No sibling branch or sibling directory was modified by this workstream.
 
 
-## Additional m10 artifacts (commit b344eac03cf94fd7772180b689d54dc693054061)
+## Additional m10 artifacts (commit be0dfe8d637bbac2e505e208249974ccb043433d)
 - M10_555_TRIANGLE_AND_CROSS_GRID_SWITCH_LEMMA.md
 - verify_m10_555_triangle.py
 - verify_m10_555_column_states.py

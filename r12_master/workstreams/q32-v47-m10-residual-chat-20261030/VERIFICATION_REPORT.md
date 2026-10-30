@@ -64,7 +64,7 @@ It checks G_11 H-vertex counts, K5-interior H-edge counts, and source parameter-
 
 ## 5. New 4+6 K4-e local verification
 
-The normalized 5,5,5 triangle verifier exhausts all 41,472 configurations and confirms exactly 1,872 valid ones: 1,728 with identity matching holonomy and 144 with transposition holonomy. The one-column K4-e verifier enumerates 20,788 switch-compatible states (20,772 A/B-aligned and 16 switched) and checks all 8,704 possible independent-five candidates in the five-block induced graph for every state; no independent five-set is found. The exact scripts are verify_m10_555_triangle.py and verify_m10_555_column_states.py. These are local finite certifications, not a six-column grid or full Q32 certificate.
+The normalized 5,5,5 triangle verifier exhausts all 41,472 configurations and confirms exactly 1,872 valid ones: 1,728 with identity matching holonomy and 144 with transposition holonomy. The one-column K4-e verifier enumerates 20,788 switch-compatible states (20,772 A/B-aligned and 16 switched) and checks all 8,704 possible independent-five candidates in the five-block induced graph for every state; no independent five-set is found. The candidate family is complete because pair and three-block local theorems exclude any independent five-set supported on at most three blocks. The exact scripts are verify_m10_555_triangle.py and verify_m10_555_column_states.py. These are local finite certifications, not a six-column grid or full Q32 certificate.
 
 ## 6. Scope
 

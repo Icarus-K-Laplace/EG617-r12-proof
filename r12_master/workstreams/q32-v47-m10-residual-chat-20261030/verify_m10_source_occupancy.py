@@ -80,10 +80,16 @@ def verify(rows):
                              else sum(f in r["chosen_factor_or_pair"].split("+") for f in FACTORS[:10]))
         assert r["isolated_double_or_triple_count"] == expected_isolated
         assert r["Ns_outside"]>=1 and r["Nt_outside"]>=1
-        assert 0<=r["g_min_a1"]<=r["g_max"]
-        assert 0<=r["g_min_a2"]<=r["g_max"]
-        assert 0<=r["g_min_a3"]<=r["g_max"]
-        assert 0<=r["g_min_a4"]<=r["g_max"]
+        if r["location_x"]=="O":
+            expected_mins=[0,0,0,0]; expected_max=4
+        elif r["profile"]=="two-double":
+            base=7-r["Ns_outside"]-r["Nt_outside"]
+            expected_mins=[max(0,base-a) for a in (1,2,3,4)]; expected_max=5
+        else:
+            base=8-r["Ns_outside"]-r["Nt_outside"]
+            expected_mins=[max(0,base-a) for a in (1,2,3,4)]; expected_max=6
+        assert [r["g_min_a1"],r["g_min_a2"],r["g_min_a3"],r["g_min_a4"]]==expected_mins
+        assert r["g_max"]==expected_max
     return counts
 
 def main():
