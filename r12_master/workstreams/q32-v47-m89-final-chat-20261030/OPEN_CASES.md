@@ -2,9 +2,13 @@
 
 ## Current status
 
-**OPEN.** The source-correct full 61-point model has been strengthened, but it has not been run to completion. The scalar pivot relaxation is nonempty, so it is not a proof by itself.
+<status> </status>
 
-## Remaining scalar states
+**NO OPEN MATHEMATICAL CASE REMAINS IN THIS ISOLATED m=8/9 FULL-SUPPORT TERMINAL.** The exact-129 Type-I factorization forces one of three independent-part partitions of H; a unified Hall/tight-part theorem excludes all three. See V47_TYPEI_PARTITION_OBSTRUCTION.md. The solver was not run and no SMT UNSAT certificate is claimed.
+
+The scalar frontiers, pivot matching search, and 69/70 layer material below are historical intermediate work, superseded by the final analytic Type-I obstruction at the end of this file. The only remaining action in this branch is dependency promotion/audit by the parent root workstream.
+
+## Historical scalar relaxation (superseded)
 
 The exact scalar constraints are:
 `x+y+z=32`,
@@ -19,7 +23,7 @@ Independent enumeration:
 
 These are scalar relaxations. They do not assert realizability by H or by the complete edge coloring.
 
-## Minimum unresolved mathematical obstacle
+## Historical unresolved obstacle (superseded)
 
 The remaining obstacle is global compatibility of the full family of 10/11 single-outside K4 witnesses per exact color with:
 1. the 47-point target graph H;
@@ -39,22 +43,19 @@ Moreover, the abstract pivot matching layer alone can be made globally consisten
 
 The read-only root branch currently has an internal summary conflict: its canonical/dependency summaries still state (L_9=6), while the read-only Case-II canonical/dependency audit says the older value 6 is stale and the correct floor is (4+3=7) (130-edge min degree 4; 131-edge min degree 3). The m=9 solver uses 7. This workstream does not edit root files.
 
-## Shortest next attack
+## Current next action — parent dependency promotion
 
-1. Run `q32_fullsupport_m89_solver.py --m 8` and `--m 9` with a recorded Z3 version, preserving the generated manifest, SMT2, and logs.
-2. If SAT, independently replay with `verify_q32_fullsupport_candidate.py`; classify it as a genuine source-correct graph or a model bug. Do not call it a counterexample before replay.
-3. If UNSAT, export and independently replay the proof, then rebuild the constraints in a second implementation (e.g. a separately written SAT/CP-SAT encoding) before claiming COMPUTATION_CERTIFIED.
-4. If the solver is slow, first inspect the distributions `x_ij`, `y_i`, and `epsilon_i` from candidate models; derive stronger cuts only from proved pointwise consequences. Prioritize pairs with multiple forced composed matchings and the 130/131 nonexact color residual structures.
-
-No claim is made that these next steps are already complete.
+1. Audit the imported exact-129 Type-I factorization against its primary source and the sibling high-support source interface.
+2. Audit that the parent Q32 terminal legally supplies all five H-core premises: order 47, 285 edges, minimum degree 12, alpha at most four, and clique number at most five.
+3. Promote the theorem and verifier receipt into the parent root dependency DAG only after those dependencies are confirmed. Do not modify sibling workstreams from this branch.
 
 
-## Low-layer partition-code obstruction
+## Historical low-layer partition-code obstruction (superseded)
 
 If k non-target colors are in the 69/70 layer, their 11K4+K3 partitions are pairwise orthogonal. Equivalently, the 47 vertices form a 12-ary code of length k with pairwise agreement at most one. The exact agreement count gives 69k<=C(47,2)=1081, hence k<=15. This is not restrictive for k<=11, so it does not close m=8/9. The remaining attack must use the Type-I source labels, the 71+ core-edge colors, and the target-degree/excess ledger together with the partition code.
 
 
-## New low-layer source-placement closure
+## Historical low-layer source-placement closure (superseded)
 
 For exact colors in the 69/70 layer, the K3/K2 alignment now removes all x-in-H placements except those with the overfull source factor in Nt and y outside H:
 - two-double: Nt has outside occupancy 2;
@@ -64,7 +65,7 @@ For exact colors in the 69/70 layer, the K3/K2 alignment now removes all x-in-H 
 
 The x-outside profile has its unique double K3 in the size-three part and core excess exactly \(1_{y\in H}|A_0\cap H|\). The solver and verifier encode/replay these necessary conditions. They do not force a color into the 69/70 layer.
 
-## New matching-skeleton target
+## Historical 69/70 matching-skeleton analysis (superseded)
 
 Any low-layer partition admits a 253-edge target subgraph M built from pairwise Hall matchings between parts. The 32-edge residual F has degree \(1+s_v\) on 36 vertices and \(2+s_v\) on 11 vertices, where \(\sum s_v=6\); hence F has at least 30 leaves. The key unresolved question is whether this sparse residual can coexist with the K6-free target graph and the cross-color source constraints. The matching skeleton is currently a theorem, not an explicit CSP matching-choice encoding.
 
@@ -72,7 +73,7 @@ Any low-layer partition admits a 253-edge target subgraph M built from pairwise 
 The 32-edge residual has a sharper exact form. Let q be the number of the 36 M-degree-11 vertices receiving positive degree excess, and t the number of isolated K2 components of F. Then q≤6, q+t≥4, the non-leaf core has 11+q≤17 vertices, and its induced edge count is exactly q+t-4. The remaining 36-q vertices are leaves, with 2t of them paired into the isolated K2 components. This leaf-core identity is now in MATH_PROOF.md §9.6.
 
 
-## Closed: all 69/70 near-Turán color layers
+## Historical intermediate result: 69/70 layer exclusion
 
 The tight-part matching argument proves that any 11K4+K3 partition of H forces an independent 5-set or a K7. Hence, using the registered near-Turán theorem, every non-target color satisfies \(e_C(H)\ge71\). The exact 37-unit ledger is now \(\sum_c(e_C(H)-71)=15\).
 
