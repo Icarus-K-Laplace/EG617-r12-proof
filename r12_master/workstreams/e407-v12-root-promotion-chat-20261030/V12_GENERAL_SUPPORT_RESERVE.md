@@ -139,3 +139,12 @@ Important: U_m is the union over all exact colors; it is not U_7. These bounds d
 This result closes support sizes 29–33 for U_7 and gives a rigid v=34 equality terminal. It does not prove that every V12 A–E survivor has |U_7|=29, does not eliminate v=34 or v>=35, and does not prove the same-core compatibility theorem.
 
 The V12 finite replay remains COMPUTATION_CERTIFIED under C0. E407 Q32 remains PROVED_CONDITIONAL under C0 plus the applicable support/factor contracts. No unconditional E407 or EG617(r=12) promotion is issued.
+
+
+## Exact source contracts
+
+The seven-one-outside-anchor K5-component floor used above is the selected-component argument recorded in R12_WITNESS_PACKING_BOUNDARY_KERNEL.md on branch workstream/r12-zero-excess-witness-20261025. The identification of each selected four-set with the H-part of its color-labelled K5 component is recorded in SUPPORT_BLOCK_ANCHOR_IDENTITY.md on the read-only E407 closure branch workstream/r12-twochat-e407-closure-20261026.
+
+The conditional exact-color count m in {8,9,10} used in Section 5 is the separate crosscut E407_SEVEN_EXACT_COLOR_EXCLUSION.md on workstream/r12-twochat-e408-global-20261026. It depends on the registered exact-129 Type-I classification, nonexact pointwise degree floors, and Brouwer–Kang–Pikhurko input. It is not a consequence of the V12 finite enumeration.
+
+These source contracts are retained as conditional inputs. This file does not silently promote them or the MS-29 bridge.
