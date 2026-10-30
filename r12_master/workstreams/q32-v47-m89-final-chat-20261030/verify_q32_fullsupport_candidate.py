@@ -502,6 +502,26 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
     if any(colors[edge(PIVOT, a)] != 0 for a in A):
         fail("all 13 pivot-shell edges pA must have target color 0")
 
+    # Every exact-129 Type-I color induces one of the three forbidden
+    # independent-part partitions of H. Replay the Hall/tight-part obstruction
+    # directly from its twelve source K5 factors; this is stronger than the
+    # former conditional 69/70 near-Turan check.
+    if check_alpha and check_omega and len(h_edges) == 285 and min(h_degree.values()) >= 12:
+        for c in exact_colors:
+            src = sources[c]
+            x = int(src["x"])
+            parts = [set(map(int, block)) & set(H)
+                     for block in src["components"]]
+            if x in H:
+                parts.append({x})
+            obstruction = type_i_partition_obstruction_witness(h_edges, parts)
+            if obstruction[0] == "independent5":
+                fail(f"color {c}: Type-I partition forces independent 5-set {obstruction[1]}")
+            elif obstruction[0] == "clique":
+                fail(f"color {c}: Type-I partition forces target clique of size {len(obstruction[1])}: {obstruction[1]}")
+            else:
+                fail(f"color {c}: Type-I partition obstruction replay failed: {obstruction}")
+
     # Exact 37-unit gap ledger on H.
     core_counts = {}
     for c in range(1, 12):
