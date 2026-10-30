@@ -224,3 +224,61 @@ P_C(u)=P_C(v)\ \Longrightarrow\ P_D(u)\ne P_D(v)
 whenever both colors are in the 69/70 layer. The independent verifier checks the same condition on reconstructed partitions.
 
 **Status: PROVED_CONDITIONAL** for the orthogonality statement; the explicit CSP cuts are necessary consequences of unique edge ownership.
+
+
+### 9.4 Complete source-triangle alignment and special-gadget localization
+
+A double-outside factor leaves a C-triangle in H. In the 69/70 partition, every C-triangle lies in one part because there is at most one cross-part C-edge.
+
+- If x is outside O, the unique double factor's K3 occupies the size-three part after the eleven single-outside K4 witnesses fill all size-four parts. The exact core identity reduces to
+  \[
+  e_C(H)=69+{\bf1}_{y_C\in H}|A_0\cap H|.
+  \]
+  Hence the y--A0 gadget contributes zero or one H-edge in the low layer.
+- If x is in H with two-double profile, the two disjoint K3s occupy the remaining size-four and size-three parts. The size-four part contains x and one K3. Since x's only source C-neighbors in H lie in \(N_s\setminus A_0\) and \(N_t\setminus\{y_C\}\), this K3 must be special. It cannot be the Ns K3: the other special factor Nt would then contribute at least two cross-part x--Nt edges, whether Nt is double or single. Thus it is the Nt K3. Necessarily \(|N_t\cap O|=2\), \(y_C\in O\), and all three H vertices of Nt share the part of x. The remaining x--Ns edges are cross-part, so
+  \[
+  e_C(H)=66+3+|(N_s\setminus A_0)\cap H|
+        =69+|(N_s\setminus A_0)\cap H|,
+  \]
+  with the last term at most one.
+- If x is in H with triple profile, the eleven K4 witnesses fill all size-four parts and the size-three part is x plus the two H vertices of the triple factor. The triple factor cannot be isolated (x has no source edges to it) or Ns (then Nt is single and contributes at least three cross-part x--Nt edges). It must be Nt. Necessarily \(|N_t\cap O|=3\), \(y_C\in O\), and both H vertices of Nt share x's part. Again
+  \[
+  e_C(H)=67+2+|(N_s\setminus A_0)\cap H|
+        =69+|(N_s\setminus A_0)\cap H|,
+  \]
+  with the last term at most one.
+
+Thus, for every exact color in the 69/70 layer with x in H:
+\[
+|N_t\cap O|=2\text{ (two-double) or }3\text{ (triple)},\quad
+y_C\in O,\quad
+|(N_s\setminus A_0)\cap H|\le1,
+\]
+and the entire H-interior of Nt lies in the same part as x.
+
+**Status: PROVED_CONDITIONAL.** The isolated solver now encodes these source-placement implications and the exact \(e_C(H)=69+|(N_s\setminus A_0)\cap H|\) identity. The independent verifier independently checks them in its full alpha-validating pass. For x outside O it checks the unique double K3 alignment and \(e_C(H)=69+1_{y_C\in H}|A_0\cap H|\).
+
+### 9.5 A 253-edge target matching skeleton and 32-edge residual
+
+Fix any non-target color in the 69/70 layer and its 11K4+K3 partition. Every part is independent in H. For any pair of size-four parts A,B, Hall's condition holds in the target bipartite graph H[A,B]: if some S subset A had fewer than |S| neighbors in B, then \(S\cup(B\setminus N(S))\) would be an independent set in H of size at least five. The same argument on the size-three side shows that every 4-by-3 pair has a matching saturating the size-three part.
+
+Choose a perfect matching for each of the 55 pairs of size-four parts and a saturating matching for each of the 11 pairs involving the size-three part. Since each edge joins a unique pair of parts, all choices are edge-disjoint. Their union M has
+\[
+e(M)=55\cdot4+11\cdot3=220+33=253.
+\]
+Exactly 36 vertices have \(d_M=11\), and 11 vertices have \(d_M=10\).
+
+Write \(d_H(v)=12+s_v\), where \(s_v\ge0\) and \(\sum s_v=6\). For F=H\setminus M:
+\[
+e(F)=285-253=32,
+\]
+\[
+d_F(v)=
+\begin{cases}
+1+s_v,&d_M(v)=11,\\
+2+s_v,&d_M(v)=10.
+\end{cases}
+\]
+At most six vertices have \(s_v>0\). Therefore at least 30 of the 36 vertices with \(d_M=11\) are leaves of F.
+
+**Status: PROVED_CONDITIONAL** on the low-layer partition and \(\alpha(H)\le4\). The matchings are existential choices, independently made for each pair of parts. This theorem is not yet encoded with explicit matching-choice variables in the CSP and is not a contradiction by itself.
