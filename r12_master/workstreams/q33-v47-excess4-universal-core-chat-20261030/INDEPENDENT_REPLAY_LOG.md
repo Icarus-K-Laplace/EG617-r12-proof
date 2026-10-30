@@ -41,7 +41,7 @@ No floating-point tolerance is used. The verifier checks exact Fraction inequali
 Script: Q33_SOURCE_COMPLETE_REPLAY.py.
 
 Command:
-python Q33_SOURCE_COMPLETE_REPLAY.py --certificate /path/to/COMPLETION_CERTIFICATE.csv
+python3 Q33_SOURCE_COMPLETE_REPLAY.py --certificate COMPLETION_CERTIFICATE.csv
 
 Observed status: PASS_EXACT_ARITHMETIC_REPLAY.
 
