@@ -1,6 +1,6 @@
 # Q32 full-support m=8,9 — canonical state
 
-**Status: OPEN. No UNSAT result and no closure claim.**
+**Status: ANALYTICALLY EXCLUDED (PROVED_CONDITIONAL).** Both full-support m=8 and m=9 Q32 branches are impossible under the registered Type-I factorization and frozen H-core contract. No SMT UNSAT result is claimed.
 
 ## Scope lock
 
@@ -49,14 +49,16 @@ The six common-P factors, pair-projection normal form, and residual-signature in
 
 The latest root branch HEAD is `b0459807acd4b7e386148056ddf77d7998918893`. Its global canonical/dependency summaries contain an older `L_9=6` line. The read-only Case-II canonical/dependency audit explicitly supersedes that value: the correct m=9 nonexact degree-floor sum is `L_9=4+3=7`. This solver uses 4 for 130-edge and 3 for 131-edge colors. No sibling or root directory was modified.
 
-## Current limitation
+## Current limitation and promotion boundary
 
-**OPEN** — the strengthened full 61-point CSP has not been executed to SAT/UNSAT in this environment. Python's runtime has no `z3-solver` package. The local arithmetic and finite matching checks pass, but they do not certify the full graph-coloring problem.
+The m=8/9 full-support Q32 terminal is no longer open: the Type-I source partition obstruction proves that every exact-129 color would induce one of three impossible H-partitions. The independent verifier now replays the Hall/tight-part dichotomy.
 
-No `UNSAT_CERTIFICATE.md` is issued. A future UNSAT result must include the SMT input, solver version, proof log, independent replay, and a second implementation.
+The full SMT model was not executed; no solver UNSAT result, proof log, or UNSAT_CERTIFICATE is claimed. This is an analytic closure, not a computational closure. Parent promotion still requires the root workstream to audit the imported Type-I factorization and the H-core contract as dependencies. This branch does not close E408 globally, Q33, E407, or the original Erdős r=12 theorem.
 
 15. **PROVED_CONDITIONAL** — for the 32-edge residual F of any selected 253-edge matching skeleton, if q of the 36 M-degree-11 vertices carry positive excess and t is the number of isolated K2 components, then F has 36-q leaves, a core of 11+q≤17 vertices, and exactly q+t-4 core edges; q+t≥4.
 
 16. **PROVED** — any 11K4+K3 partition of H with \(e(H)=285\), \(\delta(H)\ge12\), \(\alpha(H)\le4\), and \(\omega(H)\le5\) forces an independent 5-set or a K7. Therefore all eleven non-target colors satisfy \(e_C(H)\ge71\), and the 37-unit gap ledger becomes \(\sum_c(e_C(H)-71)=15\). This is independent of m=8/9 and Type-I special-factor placement.
 
 17. **PROVED_CONDITIONAL — Q32 m=8,9 analytic exclusion.** Every exact-129 Type-I color induces one of three H-independent-part partitions: \(11K_4+K_3\), \(10K_4+2K_3+K_1\), or \(11K_4+K_2+K_1\). A unified Hall-matching/tight-part lemma excludes all three: it forces an independent 5-set or a K6 in H. Since m=8 and m=9 require exact Type-I colors, both full-support v47 branches are analytically impossible. No full SMT run is claimed or needed. Parent root promotion remains a separate dependency-audit task.
+
+18. **VERIFIER IMPLEMENTED / SYNTHETIC LOGIC REPLAYED** — the independent verifier reconstructs each exact color's H-interior partition, builds the 250/253-edge Hall matching skeleton, and returns an independent 5-set or a clique of size at least six. A standalone Python replay of the helper on the committed synthetic 285-edge fixture returned clique witnesses of sizes 7, 6, and 7 for the three partition shapes. The committed full verifier self-test includes these cases; the full verifier file itself was not executed in this environment.
