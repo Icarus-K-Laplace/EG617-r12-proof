@@ -185,10 +185,11 @@ def build_model(m):
         solver.add(z3.Implies(triple, core_edges[c] >= 73 - a_size))
         solver.add(z3.Implies(triple, core_edges[c] <= 75))
 
-        # If e_C(H)<=70, the complement of C[H] is a 12-partite
-        # K13-free graph by the registered second-Turan bound. Since
-        # omega(C[H])<=4 follows from alpha(H)<=4, the partition sizes are
-        # 4^11,3. The 69 internal clique edges leave 0 or 1 cross edge.
+    # The same 69/70 near-Turan theorem applies to every non-target color,
+    # not only exact colors: alpha(C[H])<=12 and omega(C[H])<=4 hold for all
+    # c=1,...,11. Therefore partition variables are added for every such color
+    # whenever its H-edge count is at most 70.
+    for c in range(1, 12):
         low_layer = core_edges[c] <= 70
         near_turan_part[c] = {
             v: z3.Int(f"near_turan_part_{c}_{v}") for v in H
@@ -213,15 +214,17 @@ def build_model(m):
             for u, v in pairs(H))
         solver.add(z3.Implies(
             low_layer, cross_color_edges == core_edges[c] - 69))
-        # Every single-outside source factor contributes a witness K4, which
-        # must occupy one entire size-four part in the 69/70 near-Turan layer.
-        for k in range(12):
-            for u, v in pairs(H):
-                solver.add(z3.Implies(
-                    z3.And(low_layer,
-                           component_outside[c][k] == 1,
-                           comp[c][u] == k, comp[c][v] == k),
-                    near_turan_part[c][u] == near_turan_part[c][v]))
+
+        # For exact colors, every source single-outside factor contributes
+        # a witness K4 and must occupy one entire size-four part.
+        if c in exact:
+            for k in range(12):
+                for u, v in pairs(H):
+                    solver.add(z3.Implies(
+                        z3.And(low_layer,
+                               component_outside[c][k] == 1,
+                               comp[c][u] == k, comp[c][v] == k),
+                        near_turan_part[c][u] == near_turan_part[c][v]))
 
     # Full support U=H: every core vertex lies in a source K5 factor with
     # exactly one O vertex, including a special factor Ns or Nt when applicable.
