@@ -68,7 +68,7 @@ The former 1,872-count 5,5,5 result and 20,788-state one-column result are inval
 
 ## 6. Corrected 4+6 local verification
 
-The corrected verifier exhausts all 41,472 normalized 5,5,5 configurations and confirms 2,124 valid ones: 1,728 identity and 66 for each of six transpositions. It checks all 792 five-subsets for every input and matches the corrected closed-form classifier with zero mismatches. The corrected one-column verifier enumerates 20,842 states (20,772 A/B-aligned, 70 switched) and checks all 8,704 complete independent-five candidates in the five-block induced graph for every state. It includes an explicit state omitted by the former catalog; a separate full 20-vertex five-subset check confirms that witness has alpha<=4. These scripts are local finite certifications, not a six-column grid or full Q32 certificate.
+An independent analysis-runtime replay exhausts all 41,472 normalized 5,5,5 configurations and confirms 2,124 valid ones: 1,728 identity and 66 for each of six transpositions. It checks all 792 five-subsets for every input and matches the corrected closed-form classifier with zero mismatches. A separate analysis-runtime enumeration gives 20,842 one-column states (20,772 A/B-aligned, 70 switched) and checks all 8,704 complete independent-five candidates in the five-block induced graph for every state. It includes an explicit state omitted by the former catalog; a separate full 20-vertex five-subset check confirms that witness has alpha<=4. The committed standard-library scripts are reproduction artifacts; no GitHub-hosted CI execution is claimed. These are local finite certifications, not a six-column grid or full Q32 certificate.
 
 ## 7. Scope
 

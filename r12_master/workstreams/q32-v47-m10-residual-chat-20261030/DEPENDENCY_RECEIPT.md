@@ -59,7 +59,7 @@ No sibling branch or sibling directory was modified by this workstream.
 - M10_SOURCE_OCCUPANCY_90.csv
 - verify_m10_source_occupancy.py
 
-The local 5,5,5 triangle verifier covers 41,472 normalized configurations. The one-column 4+6 verifier covers 20,788 switch-compatible states and 8,704 independent-five candidates per state. Neither covers the six-column cross grid or full Q32.
+SUPERSEDED: the former 5,5,5/one-column artifacts reported 1,872 and 20,788/16 states. The corrected verifier and count are recorded in the correction section below. Neither version covers the six-column cross grid or full Q32.
 
 
 ## Correction — 5,5,5 theorem and one-column catalog
