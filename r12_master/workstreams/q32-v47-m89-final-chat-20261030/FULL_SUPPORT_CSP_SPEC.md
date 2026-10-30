@@ -98,3 +98,6 @@ It also adds the source-parameter gap bounds:
 For every non-target color C, if \(e_C(H)\le70\), a partition variable assigns H to eleven 4-parts and one 3-part. Every pair inside a part is forced to color C, exactly \(e_C(H)-69\in\{0,1\}\) C-edges may cross parts. For exact colors, all single-outside source K4s are additionally required to lie in one 4-part. This is the 69/70 near-Turan normal form documented in V47_NEAR_TURAN_SOURCE_NORMAL_FORM.md.
 
 The partition variables are conditional on each non-target color's core edge count. They do not force any color into the 69/70 layer.
+
+
+For every pair of non-target colors that are both in the 69/70 layer, the two 12-partitions are constrained to be orthogonal: no pair of H-vertices may lie in the same part in both partitions. This follows from unique edge ownership and is independently replayed by the verifier.
