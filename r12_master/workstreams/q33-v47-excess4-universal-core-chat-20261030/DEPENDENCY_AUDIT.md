@@ -21,7 +21,9 @@ Date: 2026-10-30
 | D15 | 127-row rational certificate | **COMPUTATION_CERTIFIED** | Both original verifiers rerun from extracted archive: 32+95 rows; maxima 773/1089 and39/44; see CLEAN_ROOM_REPLAY_20261030.md |
 | D16 | E408 / Qmax=33 parent contradiction | **PROVED_CONDITIONAL** | E408 h13 parent contract, exact q=33 pivot, inherited density caps; no V11 dependency |
 | D17 | V11 retained minimum-degree declaration | **OPEN / NOT USED** | Its broader analytic package remains separate and is not a premise here |
-| D18 | Full EG617(r=12) theorem | **OPEN** | E407/Q32 and other root dependencies remain live |
+| D18 | Strict 285-edge floor for R(4,47) | **PROVED** | 284-edge private-clique floor + e<=286 minimum-degree gate + universal 284-edge nonexistence; see R447_STRICT_285_FLOOR.md |
+| D19 | E408/h13 every degree-13 pivot has q_p<=32; Q_max<=32 | **PROVED_CONDITIONAL** | Exact E408 pivot identity and induced R(4,47) contract; no V11 or support-promotion dependency |
+| D20 | Full EG617(r=12) theorem | **OPEN** | E408 Q32, E407 Q32 and original front-end parent coverage remain live |
 
 ## External theorem audit
 
@@ -52,4 +54,4 @@ The actual clean-room execution and archive/source SHA256 checks are recorded in
 
 ## Parent promotion boundary
 
-The Q33 local contradiction closes the E408 Qmax=33 charge layer under the exact h13 T61 parent contract. It does not close E408 Q31 or Q32, does not close E407 Q32, and does not prove EG617(r=12) globally.
+The strict 285-edge floor upgrades the E408/h13 pivot bound to Q_max<=32 under the exact T61 parent contract. It does not close E408 Q31 or Q32, does not close E407 Q32, and does not prove EG617(r=12) globally.
