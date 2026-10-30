@@ -249,6 +249,158 @@ def low_layer_obstruction_witness(h_edges, parts):
     return ("proof-input-error", "no tight part produced the seven-clean-part dichotomy")
 
 
+def hall_independent_witness(left, right, adj_masks):
+    """Return the Hall-deficiency independent set of size at least five, if any."""
+    left, right = list(left), list(right)
+    if len(left) > len(right):
+        left, right = right, left
+    for size in range(1, len(left) + 1):
+        for chosen in itertools.combinations(left, size):
+            neighbors = set()
+            for u in chosen:
+                neighbors.update(v for v in right if (adj_masks[u] >> v) & 1)
+            if len(neighbors) < size:
+                return tuple(chosen) + tuple(v for v in right if v not in neighbors)
+    return None
+
+
+def type_i_partition_obstruction_witness(h_edges, parts):
+    """Replay the 11K4+K3 / 10K4+2K3+K1 / 11K4+K2+K1 obstruction.
+
+    Returns an explicit independent 5-set or clique of size at least six.
+    The input partition must consist of independent parts and H must have
+    exactly 285 edges and minimum degree at least 12.
+    """
+    h_edge_set = {edge(u, v) for u, v in h_edges}
+    h_adj = [0] * N
+    degree = [0] * N
+    for u, v in h_edge_set:
+        h_adj[u] |= 1 << v
+        h_adj[v] |= 1 << u
+        degree[u] += 1
+        degree[v] += 1
+    if len(h_edge_set) != 285 or min(degree[v] for v in H) < 12:
+        return ("proof-input-error", "H must have 285 edges and minimum degree at least 12")
+
+    parts = [set(part) for part in parts]
+    if any(not part for part in parts):
+        return ("proof-input-error", "empty partition part")
+    if set().union(*parts) != set(H) or sum(map(len, parts)) != 47:
+        return ("proof-input-error", "parts do not partition H")
+    if any(edge(u, v) in h_edge_set for part in parts for u, v in pairs(sorted(part))):
+        return ("proof-input-error", "a proposed part is not independent in H")
+
+    four_parts = [part for part in parts if len(part) == 4]
+    small_parts = [part for part in parts if len(part) in (2, 3)]
+    singleton_parts = [part for part in parts if len(part) == 1]
+    sizes = sorted(map(len, parts))
+    allowed = (
+        sorted([4] * 11 + [3]),
+        sorted([4] * 10 + [3, 3, 1]),
+        sorted([4] * 11 + [2, 1]),
+    )
+    if sizes not in allowed:
+        return ("proof-input-error", f"unsupported Type-I core partition sizes: {sizes}")
+
+    part_matching = {}
+    matching_edges = set()
+    for i, j in itertools.combinations(range(len(four_parts)), 2):
+        matching = saturating_bipartite_matching(
+            four_parts[i], four_parts[j], h_adj)
+        if matching is None or len(matching) != 4:
+            witness = hall_independent_witness(
+                four_parts[i], four_parts[j], h_adj)
+            if witness is None or len(witness) < 5:
+                return ("proof-input-error", f"Hall failure for 4-parts {i},{j} had no witness")
+            return ("independent5", witness)
+        part_matching[(i, j)] = matching
+        matching_edges.update(matching)
+
+    for four_index, four_part in enumerate(four_parts):
+        for small_part in small_parts:
+            matching = saturating_bipartite_matching(
+                small_part, four_part, h_adj)
+            if matching is None or len(matching) != len(small_part):
+                witness = hall_independent_witness(small_part, four_part, h_adj)
+                if witness is None or len(witness) < 5:
+                    return ("proof-input-error", "small-part Hall failure had no witness")
+                return ("independent5", witness)
+            matching_edges.update(matching)
+
+        for singleton in singleton_parts:
+            x = next(iter(singleton))
+            neighbors = [v for v in four_part if (h_adj[x] >> v) & 1]
+            if not neighbors:
+                return ("independent5", tuple(sorted(four_part | {x})))
+            matching_edges.add(edge(x, neighbors[0]))
+
+    expected_matching_size = (
+        253 if sizes in (allowed[0], allowed[2]) else 250
+    )
+    if len(matching_edges) != expected_matching_size:
+        return ("proof-input-error",
+                f"matching skeleton has {len(matching_edges)} edges, expected {expected_matching_size}")
+
+    residual_edges = h_edge_set - matching_edges
+    residual_degree = Counter()
+    for u, v in residual_edges:
+        residual_degree[u] += 1
+        residual_degree[v] += 1
+    if sum(residual_degree.values()) != 2 * (285 - expected_matching_size):
+        return ("proof-input-error", "residual degree sum does not match edge count")
+
+    tight_parts = [
+        (i, part) for i, part in enumerate(four_parts)
+        if sum(residual_degree[v] for v in part) == 5
+    ]
+    if len(tight_parts) < len(four_parts) - 6:
+        return ("proof-input-error",
+                f"only {len(tight_parts)} tight 4-parts; expected at least {len(four_parts)-6}")
+
+    for p_index, part in tight_parts:
+        chosen = sorted(part, key=lambda v: (residual_degree[v], v))[:3]
+        if sum(residual_degree[v] for v in chosen) > 3:
+            return ("proof-input-error", "three smallest F-degrees sum to more than three")
+
+        clean = []
+        for q_index, other in enumerate(four_parts):
+            if q_index == p_index:
+                continue
+            if any(edge(u, v) in residual_edges for u in chosen for v in other):
+                continue
+            clean.append((q_index, other))
+        if len(clean) < len(four_parts) - 4:
+            return ("proof-input-error",
+                    f"tight part has only {len(clean)} clean 4-parts")
+
+        witnesses = []
+        for q_index, other in clean:
+            key = (min(p_index, q_index), max(p_index, q_index))
+            matching = part_matching[key]
+            partners = []
+            for u in chosen:
+                matched = [v for v in other if edge(u, v) in matching]
+                if len(matched) != 1:
+                    return ("proof-input-error", "selected vertex has no unique matching partner")
+                partners.append(matched[0])
+            if len(set(partners)) != 3:
+                return ("proof-input-error", "selected matching partners are not distinct")
+            remaining = list(other - set(partners))
+            if len(remaining) != 1:
+                return ("proof-input-error", "clean 4-part has no unique fourth vertex")
+            w = remaining[0]
+            if any(edge(u, w) in h_edge_set for u in chosen):
+                return ("proof-input-error", "fourth vertex is adjacent to selected triple")
+            witnesses.append(w)
+
+        for w1, w2 in itertools.combinations(witnesses, 2):
+            if edge(w1, w2) not in h_edge_set:
+                return ("independent5", tuple(chosen) + (w1, w2))
+        return ("clique", tuple(witnesses))
+
+    return ("proof-input-error", "no tight 4-part produced the obstruction")
+
+
 def verify_candidate(data, check_alpha=True, check_omega=True):
     errors = []
     def fail(message):
