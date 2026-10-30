@@ -6,7 +6,7 @@ Date: 2026-10-30
 
 The original package verifier `verify_q32_certificate.py` was executed successfully from a clean copy of the recovered archive. It completed without assertion failure and reported the same per-kernel counts below.
 
-A second verifier, `verify_v12_independent_replay.py`, was written independently. It imports none of `enumerate_q32_kernels.py`, `verify_q32_certificate.py`, or `screen_q32.py`. It uses:
+A second verifier was written and executed independently in the recovery workspace. It imports none of `enumerate_q32_kernels.py`, `verify_q32_certificate.py`, or `screen_q32.py`. Its source is supplied as a separate downloadable companion artifact (SHA-256 below), not mirrored into this GitHub commit. It uses:
 - bit-mask adjacency and a fresh graph representation;
 - bounded-composition enumeration of kernel weights;
 - independent reconstruction of outside extension types;
@@ -14,13 +14,7 @@ A second verifier, `verify_v12_independent_replay.py`, was written independently
 - a fresh 13-vertex shell checker for degree, charge, clique floors, repivot legality and `alpha(M)<=10`;
 - a fresh screen classifier and five-template outside-row audit.
 
-Reproduction command:
-
-```bash
-python -B verify_v12_independent_replay.py --archive T61_H13_V12.zip --output-dir replay_out
-```
-
-The original archive remains in Library at `/T61_H13_V12.zip`; copy it to the working directory before running the command. The script uses only the Python standard library.
+The independent source accepts `--archive T61_H13_V12.zip --output-dir replay_out` and uses only the Python standard library. The original verifier is included inside the recovered ZIP as `T61_H13_V12/verify_q32_certificate.py`; it can be re-executed after extracting the archive. The independent result JSON and lossless survivor-range map are committed in this workstream.
 
 ## Exact counts
 

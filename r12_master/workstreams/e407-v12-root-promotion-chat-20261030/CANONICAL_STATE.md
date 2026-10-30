@@ -31,7 +31,7 @@ The archive itself still stops at five necessary templates and explicitly report
 - `V12_HASH_AUDIT.md`
 - `V12_INDEPENDENT_REPLAY.md`
 - `V12_INDEPENDENT_REPLAY.json`
-- `verify_v12_independent_replay.py`
+- Independent replay source (downloadable companion artifact; SHA-256 recorded in `V12_INDEPENDENT_REPLAY.md`)
 - `V12_SURVIVOR_COVERAGE.md`
 - `V12_SURVIVOR_TEMPLATE_RANGES.json`
 - `E407_PARENT_PROMOTION_THEOREM.md`
