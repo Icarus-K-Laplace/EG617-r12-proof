@@ -21,22 +21,17 @@ This strengthens the retained 284-edge floor by one.
 
 ## 2. Dependency 1: the 284-edge floor
 
-The audited private-clique argument in the retained source CORE_FLOOR_284_PROOF.md establishes
+The retained source CORE_FLOOR_284_PROOF.md supplies the private-clique lemma: no 47-vertex graph with alpha<=4, omega<=11, delta>=12 and total degree excess above12 at most2 exists. Its b=3,4 weighted-transversal part uses the 127-row exact rational certificate; the b=5 case is analytic. Both original Fraction verifiers and the source arithmetic supplement were rerun; see CLEAN_ROOM_REPLAY_20261030.md.
+
+For the current composition, the initial low-degree reduction in that historical file is replaced by the independently proved minimum-degree gate in MINDEG12_47_SOURCE_COMPLETE_AUDIT.md. If J in R(4,47) had e(J)<=283, that gate would give delta(J)>=12. Handshake then gives
+\[
+0\le\sum_v(d_J(v)-12)=2e(J)-564\le2.
+\]
+The private-clique lemma excludes exactly this total-excess range. Hence
 \[
 e(J)\ge284\quad\text{for every }J\in R(4,47).
 \]
-Its lower-order inputs are proved in MINDEG12_47_SOURCE_COMPLETE_AUDIT.md:
-- R(2,24) is empty;
-- delta(R(3,35))>=12, using the complete 121/122-edge triangle-free neighbourhood classification and D(14),D(23);
-- delta(R(3,36))>=13;
-- R(3,37) is empty;
-- degree 10 in R(4,47) forces e>=289;
-- degree 11 forces e>=287;
-- the only remaining e=282,283 cases are excluded by the private-clique lemma.
-
-The b=3,4 weighted-transversal part of that private-clique lemma uses the 127-row exact rational certificate. Both original Fraction verifiers and the source arithmetic supplement were rerun; see CLEAN_ROOM_REPLAY_20261030.md.
-
-Thus e(J)>=284 is a proved input, not an assumed edge floor.
+This derivation does not import the old S31 degree-10/11 assertions; the current source-complete minimum-degree theorem replaces them. Thus e(J)>=284 is proved, not assumed.
 
 ## 3. Dependency 2: equality e=284 is impossible
 
