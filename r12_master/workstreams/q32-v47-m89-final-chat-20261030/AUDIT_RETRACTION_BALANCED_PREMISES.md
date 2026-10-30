@@ -122,3 +122,16 @@ The tight-part lemma then gives a source-complete conclusion:
 \omega(H)\ge6,
 \]
 using alpha(H)<=4 and the frozen core contract. This is a genuine structural result, but it still does not contradict the actual omega(H)<=11 cap. The m=8/9 closure remains OPEN / NOT_CERTIFIED.
+
+
+## 8. Further source-complete repair: ten witnesses and core-edge cap
+
+The universal partition theorem has been strengthened in V47_EXACT129_CORE_EDGE_BOUNDS.md. Across the 12-partite complement case and all three non-12-partite Kang–Pikhurko profiles, every exact-129 color satisfies
+\[
+69\le e_C(H)\le75
+\]
+and supplies at least ten pairwise-disjoint monochromatic K4 witnesses inside H. Distinct-color witness families are pairwise linear.
+
+This repairs the exact ten-witness input used by Q32_U_COLOR_RESERVE.md without the invalid Type-I-only factorization. It also proves the source-complete six-unit cap \(e_C(H)-69\le6\).
+
+It does **not** repair the missing K6-free contradiction, and it does not supply a special point x or a pivot-adjacent four-set in the 12-partite complement case. Therefore the current full-support pivot CSP remains incomplete and m=8/9 remain OPEN.
