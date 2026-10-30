@@ -282,3 +282,29 @@ d_F(v)=
 At most six vertices have \(s_v>0\). Therefore at least 30 of the 36 vertices with \(d_M=11\) are leaves of F.
 
 **Status: PROVED_CONDITIONAL** on the low-layer partition and \(\alpha(H)\le4\). The matchings are existential choices, independently made for each pair of parts. This theorem is not yet encoded with explicit matching-choice variables in the CSP and is not a contradiction by itself.
+
+
+### 9.6 Exact leaf-core decomposition of the 32-edge residual
+
+Let A be the 36 vertices with \(d_M=11\), and B the 11 vertices with \(d_M=10\). Write \(s_v=d_H(v)-12\), with total six. Let
+\[
+q=|\{v\in A:s_v>0\}|\le6,
+\]
+and let t be the number of components of F that are isolated K2s (both endpoints are degree-one vertices in A with s=0).
+
+The degree formulas imply that F has exactly \(L=36-q\) leaves, all in A. The non-leaf core is
+\[
+W=B\cup\{v\in A:s_v>0\},\qquad |W|=11+q.
+\]
+After removing the t isolated K2 components, the remaining \(L-2t\) leaves each attach to W. If \(e_W=e(F[W])\), summing degrees over W gives
+\[
+28+q=(L-2t)+2e_W=(36-q-2t)+2e_W.
+\]
+Therefore
+\[
+\boxed{e_W=q+t-4,\qquad q+t\ge4.}
+\]
+
+So the residual is exactly t isolated K2 components, at least 30 leaves attached to a core of at most 17 vertices, and a core-edge count fixed by q+t-4 (at most t+2). This is an exact decomposition of every chosen matching skeleton, not merely an average-degree estimate.
+
+**Status: PROVED_CONDITIONAL.** It is a further structural description of F, but no contradiction with the K6-free and cross-color constraints has yet been derived.
