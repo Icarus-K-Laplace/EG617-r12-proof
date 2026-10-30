@@ -237,6 +237,54 @@ def build_model(m):
                 z3.Or(near_turan_part[c1][u] != near_turan_part[c1][v],
                       near_turan_part[c2][u] != near_turan_part[c2][v])))
 
+        # Complete source-triangle alignment in every exact-color 69/70 layer.
+        # A source factor with two outside vertices leaves a C-triangle in H;
+        # a triple-outside factor leaves a C-edge in H. The latter must align
+        # with x to make the residual 3-part when x is in H.
+        for k in range(12):
+            for u, v in pairs(H):
+                solver.add(z3.Implies(
+                    z3.And(low_layer, component_outside[c][k] == 2,
+                           comp[c][u] == k, comp[c][v] == k),
+                    near_turan_part[c][u] == near_turan_part[c][v]))
+
+        x_outside_c = z3.Or([xvar[c] == v for v in O])
+        x_in_H = z3.Not(x_outside_c)
+        has_triple = z3.Or([component_outside[c][k] == 3 for k in range(12)])
+        two_double = z3.And(x_in_H, z3.Not(has_triple))
+        triple = z3.And(x_in_H, has_triple)
+        y_outside = z3.Or([yvar[c] == v for v in O])
+        x_part = isum(z3.If(xvar[c] == v, near_turan_part[c][v], 0) for v in H)
+        nt_h = [v for v in H]
+        ns_cross = iff_count(
+            z3.And(comp[c][v] == 10, z3.Not(a0var[c][v])) for v in H)
+
+        # If x is in H, the Nt interior must be the triangle/edge joined to x.
+        # The only other x-gadget block is Ns; its H-neighbors are all cross-part
+        # and at most one can survive the 69/70 cross-edge cap.
+        solver.add(z3.Implies(z3.And(low_layer, two_double),
+                              component_outside[c][11] == 2))
+        solver.add(z3.Implies(z3.And(low_layer, triple),
+                              component_outside[c][11] == 3))
+        solver.add(z3.Implies(z3.And(low_layer, x_in_H), y_outside))
+        solver.add(z3.Implies(z3.And(low_layer, x_in_H), ns_cross <= 1))
+        solver.add(z3.Implies(z3.And(low_layer, x_in_H),
+                              core_edges[c] == 69 + ns_cross))
+        for v in H:
+            solver.add(z3.Implies(
+                z3.And(low_layer, x_in_H, comp[c][v] == 11),
+                near_turan_part[c][v] == x_part))
+
+        # If x is outside, the unique double factor leaves a K3 in one part.
+        x_outside_double_count = iff_count(
+            component_outside[c][k] == 2 for k in range(12))
+        y_a0_core = z3.If(
+            z3.Or([yvar[c] == v for v in H]),
+            iff_count(a0var[c][v] for v in H), 0)
+        solver.add(z3.Implies(z3.And(low_layer, x_outside_c),
+                              x_outside_double_count == 1))
+        solver.add(z3.Implies(z3.And(low_layer, x_outside_c),
+                              core_edges[c] == 69 + y_a0_core))
     # Full support U=H: every core vertex lies in a source K5 factor with
     # exactly one O vertex, including a special factor Ns or Nt when applicable.
     for v in H:
