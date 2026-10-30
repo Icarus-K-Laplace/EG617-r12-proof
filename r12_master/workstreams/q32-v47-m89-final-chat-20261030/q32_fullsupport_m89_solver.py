@@ -226,6 +226,17 @@ def build_model(m):
                                comp[c][u] == k, comp[c][v] == k),
                         near_turan_part[c][u] == near_turan_part[c][v]))
 
+    # Distinct low-layer color partitions are pairwise orthogonal:
+    # if two vertices shared a part in two colors, their edge would be
+    # forced to have two different colors. State this explicitly as a cut.
+    for c1, c2 in itertools.combinations(range(1, 12), 2):
+        both_low = z3.And(core_edges[c1] <= 70, core_edges[c2] <= 70)
+        for u, v in pairs(H):
+            solver.add(z3.Implies(
+                both_low,
+                z3.Or(near_turan_part[c1][u] != near_turan_part[c1][v],
+                      near_turan_part[c2][u] != near_turan_part[c2][v])))
+
     # Full support U=H: every core vertex lies in a source K5 factor with
     # exactly one O vertex, including a special factor Ns or Nt when applicable.
     for v in H:
