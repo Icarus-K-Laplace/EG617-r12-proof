@@ -31,11 +31,18 @@ It does not work on v=44,45,46 or m=10.
 4. **PROVED_CONDITIONAL** — light-pair matching composition: two unique perfect matchings through a common pivot block force the composed matching in the third pair.
 5. **PROVED_CONDITIONAL** — exact per-pivot-block six-unit degree ledger: `X_i+Y_i=5+epsilon_i`.
 6. **COMPUTATION_CERTIFIED** — the K4,4 minimum-edge table `mu_4(t)` was exhaustively checked over all 65,536 bipartite edge sets; 2,304 local composition cases were replayed.
-7. The m=8 and m=9 scalar pivot-slack frontiers were independently enumerated: 79 and 61 states respectively.
+7. The m=8 and m=9 scalar pivot-slack frontiers were independently enumerated: 79 and 61 states respectively; the corrected z ranges are 0..12 and 0..9.
+8. **PROVED_CONDITIONAL** — exact source-core accounting (e_C(H)=B_C+G_C^H) and parameter-dependent gap bounds for x in O / two-double / triple placements.
+9. **PROVED_CONDITIONAL** — every exact color with 69 or 70 H-edges has an 11K4+K3 near-Turan partition; every single-outside source witness K4 occupies a size-four part. The CSP and independent verifier now encode/check this structure.
+10. **WITHDRAWN / repaired** — the first unconditional lazy matching-composition cuts were overconstraints; they have been replaced by source- and pivot-selection-guarded implications.
 
 ## Scope firewall
 
 The six common-P factors, pair-projection normal form, and residual-signature injectivity in the sibling `V47_Z01_*` documents depend on the aligned 3+7 track normal form for a special m=10 cell. They are **not imported** as m=8/9 constraints. The correct m=8/9 analogue added here is the global pivot-pair perfect-matching system with lazy composition and multi-projection cuts.
+
+## Dependency reconciliation
+
+The latest root branch HEAD is `b0459807acd4b7e386148056ddf77d7998918893`. Its global canonical/dependency summaries contain an older `L_9=6` line. The read-only Case-II canonical/dependency audit explicitly supersedes that value: the correct m=9 nonexact degree-floor sum is `L_9=4+3=7`. This solver uses 4 for 130-edge and 3 for 131-edge colors. No sibling or root directory was modified.
 
 ## Current limitation
 
