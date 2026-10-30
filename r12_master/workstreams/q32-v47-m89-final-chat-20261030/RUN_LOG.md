@@ -46,3 +46,14 @@ The partition-code consequence was checked analytically: k simultaneous low-laye
 The independent verifier's source-only pass is called with alpha/omega checks disabled so the solver can add lazy validity cuts to provisional models. A final audit found that the pivot matching, residual-neighbor, near-Turan, and Turan-floor checks depend on alpha hypotheses and therefore must not run in that first pass. All such checks are now guarded by check_alpha; the 130/131 degree floors and reserve caps remain guarded by both check_alpha and check_omega. Source-only checks continue to validate exact edge ownership, Type-I factors, canonical counts, target-core degrees, full support, witness linearity, and source-derived gap bounds.
 
 No SAT/UNSAT computation has been run.
+
+
+## Low-layer source localization and matching skeleton
+
+Added the conditional special-gadget localization theorem. In x-in-H low-layer exact colors, the Nt factor must be the overfull factor (occupancy 2 in two-double, 3 in triple), y must be outside H, the Nt H-interior shares x's near-Turan part, and at most one H vertex of Ns\A0 remains. The core count becomes exactly 69 plus this residual Ns count. For x outside H, the unique double K3 is aligned and the core excess is exactly the y--A0 H-intersection count.
+
+The solver implications were inserted inside the per-exact-color near-Turan loop. An indentation audit caught and repaired an initial placement inside the pairwise-orthogonality loop before this commit; the final code scopes all xvar/comp/a0 constraints to the exact-color loop.
+
+The independent verifier adds the corresponding source-part checks under check_alpha, so the provisional source-only pass is not strengthened by alpha-dependent conclusions.
+
+A separate Hall argument proves a 253-edge target matching skeleton for any low-layer partition. The 32-edge residual has 36 baseline degree-1 vertices and 11 baseline degree-2 vertices, with only six total excess units; at least 30 residual vertices are leaves. This skeleton is not yet encoded with explicit matching-choice variables.
