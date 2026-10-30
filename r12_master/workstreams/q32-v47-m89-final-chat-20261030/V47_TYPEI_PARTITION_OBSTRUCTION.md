@@ -151,3 +151,14 @@ The current EG617 problem is the balanced-coloring problem: every 13-set must co
 The exact-129 source audit's Type-I conclusion used \(\omega(C)\le5\) to prove that \(\overline C\) is non-12-partite and to eliminate the two Kang–Pikhurko equality profiles containing a size-six part. Without that hypothesis, the complement may be 12-partite. For example, \(C_0=5K_6\dot\cup3K_5\dot\cup4K_4\) has 61 vertices, 129 edges, \(\alpha(C_0)=12\), and \(\omega(C_0)=6\), and its complement is 12-partite. This is a local one-color model, not a claimed full coloring.
 
 The tight-part lemma remains a valid conditional theorem, but its conclusion under \(\alpha(H)\le4\) is only \(\omega(H)\ge6\), which is allowed by the actual \(\omega(H)\le11\) cap. It therefore cannot exclude the three partitions in EG617. The previous m=8/9 and all-support Q32 closure claims are withdrawn; see AUDIT_RETRACTION_BALANCED_PREMISES.md.
+
+
+## 8. Source-complete partition input (no Type-I restriction)
+
+The source derivation in Sections 1 and 5 above is retained as the Type-I special case. It is not the correct universal source gate for EG617.
+
+The broader theorem V47_EXACT129_UNIVERSAL_PARTITION.md now proves that **every** exact-129 color under the balanced-coloring premise alpha(C)<=12 induces one of the same three independent-part partitions of H:
+- if the complement is 12-partite, the partition is 11K4+K3;
+- if it is non-12-partite, all three Kang–Pikhurko equality profiles are retained, and the special-point/outside-incidence count gives one of 11K4+K3, 10K4+2K3+K1, 11K4+K2+K1.
+
+Thus the Hall/tight-part lemma is source-complete at the partition level; it does not require omega(C)<=5 or Type-I-only factors. Its conclusion is still only omega(H)>=6, which is allowed by the actual omega(H)<=11 cap. The previous EG617 closure claim remains withdrawn.
