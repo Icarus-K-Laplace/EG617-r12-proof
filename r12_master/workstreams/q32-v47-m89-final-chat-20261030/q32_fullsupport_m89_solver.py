@@ -345,12 +345,13 @@ def model_adj(model, col, color):
 
 
 def add_pivot_matching_composition_cuts(vs, model):
-    """Add exact light-pair composition and multi-projection packing cuts.
+    """Add guarded, source-valid light-pair matching-composition cuts.
 
-    If e_H(Q_a,Q_b)=e_H(Q_a,Q_c)=4, the two graphs are unique perfect
-    matchings. Their composition is a perfect matching contained in
-    H[Q_b,Q_c]. Distinct compositions must all be contained there, so the
-    K4,4 edge-count lower bound mu_4(t) applies.
+    A composition is forced only while the *same* three pivot blocks remain
+    selected and both incident pairs remain exactly four-edge pairs. The
+    guards are essential: an unconditional cut inferred from one model could
+    otherwise exclude a legal solution in which an incident pair becomes
+    heavy or the source-selected pivot blocks change.
     """
     solver, col = vs["solver"], vs["col"]
     exact = vs["exact"]
@@ -389,6 +390,20 @@ def add_pivot_matching_composition_cuts(vs, model):
         inverse = {v: a for a, v in mapping.items()}
         return inverse.get(u)
 
+    def anchor_guard(anchor, c2, c3, map2, map3):
+        terms = [
+            pair_count[(min(anchor, c2), max(anchor, c2))] == 4,
+            pair_count[(min(anchor, c3), max(anchor, c3))] == 4,
+        ]
+        for a in blocks[anchor]:
+            b, c = map2[a], map3[a]
+            terms.extend([
+                qblock[anchor][a], qblock[c2][b], qblock[c3][c],
+                col[edge(a, b)] == 0,
+                col[edge(a, c)] == 0,
+            ])
+        return z3.And(*terms)
+
     # Exact finite K4,4 lookup: min edges needed to contain t distinct
     # perfect matchings, for t=1,...,24. Independently replayed by
     # verify_m89_pivot_matching.py over all 2^16 bipartite edge sets.
@@ -397,6 +412,9 @@ def add_pivot_matching_composition_cuts(vs, model):
 
     cuts = 0
     for c2, c3 in itertools.combinations(exact, 2):
+        # Each distinct composition matching is grouped with every anchor
+        # that currently forces it. Its guard is an OR, so the implication
+        # remains valid if one of several equivalent anchors later changes.
         compositions = {}
         for anchor in exact:
             if anchor == c2 or anchor == c3:
@@ -404,6 +422,10 @@ def add_pivot_matching_composition_cuts(vs, model):
             key2 = (min(anchor, c2), max(anchor, c2))
             key3 = (min(anchor, c3), max(anchor, c3))
             if key2 not in light_maps or key3 not in light_maps:
+                continue
+            map2 = {a: map_vertex(anchor, c2, a) for a in blocks[anchor]}
+            map3 = {a: map_vertex(anchor, c3, a) for a in blocks[anchor]}
+            if any(v is None for v in map2.values()) or any(v is None for v in map3.values()):
                 continue
             mapping = {}
             for u in blocks[c2]:
@@ -413,23 +435,34 @@ def add_pivot_matching_composition_cuts(vs, model):
                     mapping = {}
                     break
                 mapping[u] = v
-            if len(mapping) == 4 and len(set(mapping.values())) == 4:
-                signature = tuple((u, mapping[u]) for u in sorted(blocks[c2]))
-                compositions[signature] = mapping
+            if len(mapping) != 4 or len(set(mapping.values())) != 4:
+                continue
+            signature = tuple((u, mapping[u]) for u in sorted(blocks[c2]))
+            guard = anchor_guard(anchor, c2, c3, map2, map3)
+            compositions.setdefault(signature, {"mapping": mapping, "guards": []})
+            compositions[signature]["guards"].append(guard)
 
-        t = len(compositions)
-        if t == 0:
-            continue
-        pair_key = (c2, c3)
-        if model.eval(pair_count[pair_key]).as_long() < mu4[t]:
-            solver.add(pair_count[pair_key] >= mu4[t])
-            cuts += 1
-        for mapping in compositions.values():
-            for u, v in mapping.items():
+        active_guards = []
+        for item in compositions.values():
+            guard = z3.Or(*item["guards"])
+            if not z3.is_true(model.eval(guard)):
+                continue
+            active_guards.append(guard)
+            for u, v in item["mapping"].items():
                 e = edge(u, v)
                 if model.eval(col[e]).as_long() != 0:
-                    solver.add(col[e] == 0)
+                    solver.add(z3.Implies(guard, col[e] == 0))
                     cuts += 1
+
+        # If all t distinct compositions remain forced, their union must
+        # contain at least mu_4(t) target edges. This implication is guarded
+        # by the conjunction of the corresponding composition conditions.
+        t = len(active_guards)
+        if t and model.eval(pair_count[(c2, c3)]).as_long() < mu4[t]:
+            solver.add(z3.Implies(
+                z3.And(*active_guards),
+                pair_count[(c2, c3)] >= mu4[t]))
+            cuts += 1
     return cuts
 
 def add_alpha_cuts(vs, model):
