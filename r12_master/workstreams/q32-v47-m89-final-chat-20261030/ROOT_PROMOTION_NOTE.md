@@ -1,12 +1,16 @@
-# Parent root promotion note — E408/Q32 Type-I partition obstruction
+# Parent root promotion note — WITHDRAWN
+
+> **DO NOT PROMOTE.** The previous proposed Q32 closure is invalid for EG617 because it assumes omega(H)<=5, omega(C)<=5 and universal Type-I exact-color factors. The actual balanced-coloring hypothesis gives only omega(C)<=12, and the Q32 47-core has omega(H)<=11. See AUDIT_RETRACTION_BALANCED_PREMISES.md. This file is retained as a historical record of the withdrawn proposal.
+
+# Historical proposal — E408/Q32 Type-I partition obstruction
 
 Date: 2026-10-30  
 Origin: isolated workstream/r12-q32-v47-m89-final-20261030  
 Write firewall: this note is only in the isolated m=8/9 workstream; no parent or sibling branch was modified.
 
-## Result
+## Historical result (conditional only)
 
-The theorem V47_TYPEI_PARTITION_OBSTRUCTION.md proves:
+The theorem V47_TYPEI_PARTITION_OBSTRUCTION.md proves only under the extra clique caps and Type-I source factorization:
 
 > A graph H on 47 vertices with e(H)=285, delta(H)>=12, alpha(H)<=4, and omega(H)<=5 cannot be partitioned into any of 11K4+K3, 10K4+2K3+K1, or 11K4+K2+K1.
 
@@ -14,9 +18,9 @@ For every exact-129 non-target color C on the 61-point residual, the published K
 
 Therefore **no exact-129 color can coexist with the Q32 H-core contract**.
 
-## Parent-level consequence
+## Withdrawn parent-level consequence
 
-The parent E408/Q32 ledger has m in {8,9,10} exact-129 colors. The obstruction does not use U, support size v, pivot blocks, or m beyond m>=1. Subject to the same H-core/global-coloring premises for every row, it excludes all Q32 rows:
+The following claimed consequence is withdrawn because the parent does not supply the required clique caps or Type-I source coverage. The parent E408/Q32 ledger has m in {8,9,10} exact-129 colors. The old proposal had claimed it excluded all Q32 rows:
 - v=44,45,46,47;
 - m=8,9,10.
 
@@ -43,3 +47,12 @@ This is stronger than the isolated full-support m=8/9 task. The root workstream 
 ## Scope firewall
 
 This note proposes closure of the E408/Q32 graph terminal only. It does not close E407 Q32/V12, E408 Q33 support promotion, the front-end bridge, or the original EG617(r=12) theorem.
+
+
+## Corrected promotion status
+
+- The tight-part lemma is a valid conditional theorem: the three independent-part shapes force an independent 5-set or a clique of size at least six.
+- Since the actual H core permits omega(H)<=11, the clique conclusion is not contradictory.
+- The Type-I source factorization is not available for every exact-129 color from the balanced-coloring hypotheses alone.
+- The local m=8/9 Q32 terminal remains OPEN / NOT_CERTIFIED.
+- The parent root branch was not modified and remains OPEN / NOT_CERTIFIED.
