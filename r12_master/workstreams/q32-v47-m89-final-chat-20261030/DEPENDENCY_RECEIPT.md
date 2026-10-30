@@ -44,10 +44,11 @@ All blob SHAs in this table were fetched from the stated branch refs during this
 
 | Local artifact | Blob SHA |
 |---|---|
-| `q32_fullsupport_m89_solver.py` | `272ed95ea147514c5cbacd7e2783721e8e55e736` |
-| `verify_q32_fullsupport_candidate.py` | `cfd2321b8b191458680dfcb31b01f06274f34ae4` |
+| `q32_fullsupport_m89_solver.py` | `6170c347dc6b6ff0ab356c742cb3535922448151` |
+| `verify_q32_fullsupport_candidate.py` | `ad47039f4c5f85880308e532a7599ef675abd4f8` |
 | `verify_m89_pivot_matching.py` | `59a2c4031785303a0efe37090e37118b2d35dcf0` |
 | `V47_NEAR_TURAN_SOURCE_NORMAL_FORM.md` | `8e4f611ded8e0eeedfff445c270311ad204d054c` |
+| `V47_SOURCE_NEAR_TURAN_SPECIAL_GADGET_LOCALIZATION.md` | `4a93e1d79cbf3142763192cfcf2a400ef07088a6` |
 
 The 130-edge minimum-degree-four theorem is cited by the read-only Case-II canonical/dependency audit and is the basis for the m=9 floor sum 4+3=7. Its complete proof artifact was not located among the inspected files in this branch snapshot; this workstream therefore treats that result as an imported dependency, not as an independently re-proved theorem. The directly inspected 130-edge degree-three proof and 131-edge degree-three proof are weaker/parallel source records and do not replace the 130-edge degree-four dependency.
 
@@ -55,3 +56,16 @@ The 130-edge minimum-degree-four theorem is cited by the read-only Case-II canon
 The 69/70 near-Turan partition CSP and independent verifier were subsequently extended from exact colors to all eleven non-target colors. This is valid because alpha(C[H])<=12 and omega(C[H])<=4 hold for every non-target color; the exact-source witness alignment check remains restricted to exact colors.
 
 The latest all-color orthogonality checkpoint also updates the local solver/verifier blobs above; the pivot matching verifier blob remains unchanged.
+
+
+## 2026-10-30 low-layer source-localization checkpoint
+
+| Local artifact | Blob SHA |
+|---|---|
+| `q32_fullsupport_m89_solver.py` | `6170c347dc6b6ff0ab356c742cb3535922448151` |
+| `verify_q32_fullsupport_candidate.py` | `ad47039f4c5f85880308e532a7599ef675abd4f8` |
+| `V47_SOURCE_NEAR_TURAN_SPECIAL_GADGET_LOCALIZATION.md` | `4a93e1d79cbf3142763192cfcf2a400ef07088a6` |
+| `MATH_PROOF.md` | `0773208932c98be0b21333cedc5e1d784b5f9430` |
+| `CANONICAL_STATE.md` | `f390ce40c19f908d978fb862bb5089387a2675a3` |
+
+The new source-localization constraints are conditional on the 69/70 layer and alpha(H)<=4 / alpha(C)<=12. The solver and verifier blobs above include them. The 253-edge matching-skeleton theorem is analytic and is not yet encoded with explicit matching-choice variables. No full CSP run or SAT/UNSAT result exists.
