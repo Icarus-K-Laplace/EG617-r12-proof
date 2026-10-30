@@ -160,3 +160,14 @@ The final parent-level corollary is now reflected in:
 - OPEN_CASES.md blob \`88d5f346a6b3dacfe6f729b42f2d2d30b288c6b8\`.
 
 The local theorem and ROOT_PROMOTION_NOTE remain unchanged at the blob SHAs in the preceding checkpoint. The parent branch remains read-only at HEAD \`b0459807acd4b7e386148056ddf77d7998918893\`; no root or sibling promotion commit has been made.
+
+
+## 2026-10-30 critical premise audit — previous closure withdrawn
+
+The actual EG617 counterexample is a balanced coloring: every 13-set contains all 12 colors. Thus each color C has alpha(C)<=12 and omega(C)<=12; K6 is not forbidden. The target 47-core lies in R(4,49), so omega(H)<=11, not five.
+
+The previous Type-I partition replay was conditional on a source factorization not proved for every exact color under these hypotheses. The exact-129 source audit's non-12-partite and size-six exclusions used omega(C)<=5. A 12-partite local example C0=5K6 dot-union 3K5 dot-union 4K4 has n=61, e=129, alpha=12, omega=6, and complement 12-partite.
+
+The tight-part helper remains a valid conditional implication but returns K6/K7 witnesses that are allowed in EG617. The previous verifier's default omega check, Type-I universal source assumption, and 71-edge floor are not valid for the original problem. The verifier was changed so omega checking is opt-in via --check-omega and its result is explicitly labelled Type-I-restricted. The solver is now labelled as an augmented Type-I/K6-free diagnostic and defaults to OPEN.
+
+No full verifier execution or SMT run was performed. No m=8/9 closure or parent promotion is claimed.
