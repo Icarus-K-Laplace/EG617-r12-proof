@@ -54,3 +54,5 @@ The latest root branch HEAD is `b0459807acd4b7e386148056ddf77d7998918893`. Its g
 **OPEN** — the strengthened full 61-point CSP has not been executed to SAT/UNSAT in this environment. Python's runtime has no `z3-solver` package. The local arithmetic and finite matching checks pass, but they do not certify the full graph-coloring problem.
 
 No `UNSAT_CERTIFICATE.md` is issued. A future UNSAT result must include the SMT input, solver version, proof log, independent replay, and a second implementation.
+
+15. **PROVED_CONDITIONAL** — for the 32-edge residual F of any selected 253-edge matching skeleton, if q of the 36 M-degree-11 vertices carry positive excess and t is the number of isolated K2 components, then F has 36-q leaves, a core of 11+q≤17 vertices, and exactly q+t-4 core edges; q+t≥4.
