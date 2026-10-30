@@ -308,3 +308,34 @@ Therefore
 So the residual is exactly t isolated K2 components, at least 30 leaves attached to a core of at most 17 vertices, and a core-edge count fixed by q+t-4 (at most t+2). This is an exact decomposition of every chosen matching skeleton, not merely an average-degree estimate.
 
 **Status: PROVED_CONDITIONAL.** It is a further structural description of F, but no contradiction with the K6-free and cross-color constraints has yet been derived.
+
+
+### 9.7 Exclusion of the entire 69/70 near-Turán layer
+
+Assume H has 47 vertices, 285 edges, minimum degree at least 12, \(\alpha(H)\le4\), and \(\omega(H)\le5\). Suppose H is partitioned into eleven independent 4-sets and one independent 3-set.
+
+For each pair of parts, Hall's theorem gives a perfect matching (or a matching saturating the 3-set). Their union M has
+\[
+e(M)=4\binom{11}{2}+3\cdot11=253.
+\]
+Let F=H\setminus M, so \(e(F)=32\). Each 4-part has three vertices with M-degree 11 and one with M-degree 10, hence its F-degree sum is at least \(3+2=5\). The 3-part has F-degree sum at least 3. Summing over all parts gives
+\[
+\sum_{i=1}^{11}(\rho_i-5)+(\rho_{12}-3)
+=2e(F)-58=6.
+\]
+Therefore at least five 4-parts are tight, with F-degree sum exactly five. In a tight part P the F-degree profile is exactly \((1,1,1,2)\); call its three leaves \(u_1,u_2,u_3\).
+
+Each leaf has only one F-neighbor, so among the ten other 4-parts at most three contain any F-neighbor of these leaves. At least seven 4-parts Q are clean. The perfect matching M[P,Q] sends the three leaves to three distinct vertices of Q. As Q is clean, those are the leaves' only H-neighbors in Q. Its fourth vertex \(w_Q\) is therefore nonadjacent to all three leaves.
+
+For any two clean parts Q,R, if \(w_Qw_R\) is absent then \(\{u_1,u_2,u_3,w_Q,w_R\}\) is an independent 5-set. Since \(\alpha(H)\le4\), all seven selected \(w_Q\) must be pairwise adjacent, yielding a K7. This contradicts \(\omega(H)\le5\).
+
+Thus every 11K4+K3 partition forces \(\alpha(H)\ge5\) or \(\omega(H)\ge7\). The registered 69/70 near-Turán theorem supplies such a partition whenever a non-target color C has \(e_C(H)\le70\), since \(\alpha(C[H])\le12\) and \(\omega(C[H])\le4\). Consequently
+\[
+\boxed{e_C(H)\ge71\quad\text{for every }c=1,\ldots,11.}
+\]
+Combining with the 37-unit gap ledger gives
+\[
+\boxed{\sum_{c=1}^{11}(e_C(H)-71)=15.}
+\]
+
+**Status: PROVED.** This removes the entire 69/70 layer for both m=8 and m=9. It does not close the 71+ source-placement cases.
