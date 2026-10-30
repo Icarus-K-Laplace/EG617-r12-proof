@@ -68,3 +68,8 @@ The model uses the source-correct pointwise floors 4 for a 130-edge color and 3 
 The conditional near-Turan partition is now encoded for **all eleven non-target colors**, not only exact colors. This is valid because every non-target color C has alpha(C[H])<=12 and omega(C[H])<=4. The independent verifier reconstructs the 11K4+K3 partition from C[H] itself: take connected components in the 69-layer, or delete the unique cross-part edge and take components in the 70-layer. For exact colors it additionally checks that each source single-outside witness K4 is one of the size-four parts.
 
 This expansion adds necessary conditions only; no color is forced into the 69/70 layer.
+
+
+## Pairwise orthogonality of low-layer partitions
+
+When two non-target colors both have 69 or 70 H-edges inside H, their reconstructed 11K4+K3 partitions have intersections of size at most one in every pair of parts. The solver now states this explicitly for every pair of H-vertices and low-layer color pair; the independent verifier replays the same no-common-2-set condition. This is implied by unique edge ownership but is exposed as a direct global cut.
