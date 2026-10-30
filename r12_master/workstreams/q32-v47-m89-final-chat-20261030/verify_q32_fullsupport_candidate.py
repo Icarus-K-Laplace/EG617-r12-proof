@@ -19,8 +19,6 @@ O = tuple(range(47, 61))
 PIVOT = 47
 A = tuple(range(48, 61))
 ALL_COLORS = tuple(range(12))
-TRACKS = (tuple(range(0, 11)), tuple(range(11, 23)),
-          tuple(range(23, 35)), tuple(range(35, 47)))
 
 
 def edge(u: int, v: int) -> tuple[int, int]:
