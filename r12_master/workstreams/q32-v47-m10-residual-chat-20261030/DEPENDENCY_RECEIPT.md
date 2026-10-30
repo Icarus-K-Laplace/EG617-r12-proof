@@ -106,3 +106,10 @@ The verifier checks the pair/triple necessary local cell catalog, the 930 outer-
 
 
 Clarification update: the theorem text's matching-holonomy and row-switch endpoint derivations were made explicit in commit b2920dad7f5f8b7f3d61d43af8ac80edf2517664. Current workstream head after this correction is recorded by the branch ref; full-support m=10 Q32 remains OPEN / NOT_CERTIFIED.
+
+
+## 7. Exact verifier execution and final artifact identities
+
+The committed verifier source was fetched and executed independently; all assertions passed. Verifier blob SHA: e9f186db5a66d10b4f8c664fe6b30fe974e50288.
+
+The global theorem file was clarified after its initial publication to spell out triangle-generated matching holonomy and the row-switch endpoint formula. Its current blob is de1c9378d4c477f5ca5c7fd04d4dc96fbaeebfb9. The workstream branch also contains the status-note reconciliation that identifies the K4-e, Z=4 slice as closed while retaining full-support m=10 Q32 as OPEN / NOT_CERTIFIED.

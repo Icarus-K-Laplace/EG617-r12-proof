@@ -96,3 +96,19 @@ The standard-library verifier verify_m10_k4e_z4_grid_reduction.py independently 
 - Corrected 5,5,5 endpoint branch: for sigma=(0 1), e_AE=(0,1), and each of the six off-diagonal e_AB choices whose A-endpoint is outside {0,1}, exhaustive checking of all 792 five-subsets leaves exactly e_BE=(0,0).
 
 The pair/triple catalog is a necessary-condition superset, not a sufficient test for a full cross cell. The global 4-by-6 contradiction is analytic in M10_K4E_Z4_GLOBAL_GRID_CLOSURE.md. No full grid SAT run or full 47-vertex Q32 run is claimed. Full-support m=10 remains OPEN / NOT_CERTIFIED.
+
+
+## 10. Executed committed-source replay receipt — 2026-10-30
+
+The committed verifier source was fetched from the target branch at blob SHA e9f186db5a66d10b4f8c664fe6b30fe974e50288 and executed in an independent Python runtime. All assertions passed.
+
+Exact terminal marker:
+M10_K4E_Z4_GLOBAL_GRID_LOCAL_CATALOG_OK
+
+Reproduced counts:
+- C7: 168 maps; 12,096 compatible ordered map pairs; 56,448 pair/triple-compatible cell states; 4,032 full-aligned and 8,064 full-nonaligned pairs.
+- C3+C4: 288 maps; 29,952 compatible ordered map pairs; 120,960 pair/triple-compatible cell states; category counts 1,152 both-empty/same-partition, 5,760 small-empty/outer-full, 5,760 small-full/outer-empty, 5,760 full-aligned, 11,520 full-nonaligned.
+- Outer cuts: 15 perfect matchings; 750 connected cuts for switch-set sizes 2,3,4; 180 cuts of sizes 1,5 with component sizes 5+1.
+- Corrected 5,5,5 endpoint branch: all six off-diagonal AB extras with A-endpoint outside {0,1} force the unique BE extra edge (0,0), after checking all 792 five-subsets for every candidate.
+
+This certifies the local finite replay only. The global 4-by-6 contradiction remains the analytic proof in M10_K4E_Z4_GLOBAL_GRID_CLOSURE.md; no full-grid SAT or 47-vertex Q32 solver was run.
