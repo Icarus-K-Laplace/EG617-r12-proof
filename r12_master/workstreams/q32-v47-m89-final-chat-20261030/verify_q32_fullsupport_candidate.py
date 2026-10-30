@@ -394,8 +394,8 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
                             fail(f"exact color {c}: low-layer x-in-H profile requires Nt outside count {required_nt_outside}")
                         if y not in O:
                             fail(f"exact color {c}: low-layer x-in-H profile requires y outside H")
-                        if len(nt_h) != (2 if triple_profile else 3) or
-                           len({part_of[x]} | {part_of[v] for v in nt_h}) != 1:
+                        if (len(nt_h) != (2 if triple_profile else 3) or
+                                len({part_of[x]} | {part_of[v] for v in nt_h}) != 1):
                             fail(f"exact color {c}: x and Nt H-interior are not one near-Turan part")
                         ns_cross = len((comps[10] & set(H)) - a0)
                         if ns_cross > 1 or core_counts[c] != 69 + ns_cross:
