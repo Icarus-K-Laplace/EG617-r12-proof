@@ -339,6 +339,7 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
             return parts
         return None
 
+    near_turan_parts = {}
     for c in range(1, 12):
         if core_counts[c] <= 70:
             parts = reconstruct_near_turan_partition(c)
@@ -349,6 +350,7 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
             for i, block in enumerate(parts):
                 for v in block:
                     part_of[v] = i
+            near_turan_parts[c] = part_of
             cross_edges = sum(
                 colors[edge(u, v)] == c and part_of[u] != part_of[v]
                 for u, v in pairs(H)
@@ -359,6 +361,15 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
                 for i, witness in enumerate(witnesses_by_color[c]):
                     if len(witness) != 4 or len({part_of[v] for v in witness}) != 1:
                         fail(f"exact color {c}: source witness {i} is not one complete near-Turan 4-part")
+
+    # Pairwise orthogonality: two low-layer color partitions cannot place
+    # the same pair of H-vertices in one part, or their edge would have two
+    # distinct colors.
+    for c1, c2 in itertools.combinations(sorted(near_turan_parts), 2):
+        p1, p2 = near_turan_parts[c1], near_turan_parts[c2]
+        for u, v in pairs(H):
+            if p1[u] == p1[v] and p2[u] == p2[v]:
+                fail(f"near-Turan partitions for colors {c1},{c2} share a 2-set")
 
     for v in H:
         covered = False
