@@ -74,3 +74,17 @@ Proved that any 11K4+K3 partition of H forces alpha(H)>=5 or omega(H)>=7. The Ha
 Consequently the registered 69/70 near-Turán layer is impossible for every non-target color, so \(e_C(H)\ge71\) for all eleven colors and the 37-unit ledger has only 15 units of slack above this floor.
 
 The solver now asserts core_edges[c]>=71 and removes the dead conditional near-Turán partition variables. The verifier independently replays the Hall matching/tight-part witness and checks the 71-edge floor when both alpha and clique premises are enabled. This does not claim m=8/9 closure; 71+ remains open.
+
+
+## Analytic Type-I partition obstruction closes m=8 and m=9
+
+The source-verified exact-129 Type-I factorization forces one of three partitions of H:
+- x outside O: 11 independent 4-sets plus one independent 3-set;
+- x in H, two-double profile: 10 independent 4-sets, two independent 3-sets, and x;
+- x in H, triple profile: 11 independent 4-sets, one independent 2-set, and x.
+
+For each shape, choose Hall matchings between all 4-parts, saturating matchings from each 4-part to each smaller part, and one edge from each 4-part to a singleton if present. The matching skeleton has respectively 253, 250, or 253 edges. The residual F-degree ledger has total excess exactly six above the partwise lower bounds, so at least r-6 four-parts are tight. In a tight part the three lowest-F-degree vertices have total residual degree at most three, leaving at least six clean four-parts. Their fourth vertices form either an independent-5 witness with the selected triple or a clique of size at least six. Both contradict the H-core premises.
+
+Therefore every exact-129 Type-I color is impossible. m=8 and m=9 both require such colors, so both full-support Q32 branches are analytically excluded. This supersedes the previous 71+ edge-distribution search. The full SMT model was not run and no solver UNSAT certificate is claimed.
+
+The independent verifier now reconstructs each source-induced partition, replays the Hall/tight-part argument with augmenting paths, and checks the explicit witness. Synthetic self-tests cover all three partition shapes.
