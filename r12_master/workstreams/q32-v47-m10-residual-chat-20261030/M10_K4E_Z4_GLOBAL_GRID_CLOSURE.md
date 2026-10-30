@@ -177,31 +177,22 @@ For either C or D, the degree requirements are (4.4). If s=1, the connected comp
 
 ### 7.2 Neither A nor B can switch
 
-Consider row A, and let a be the endpoint in A of the unique extra edge AB. Its degree requirements are (4.5).
-
-If s=1, the connected component contributes one z-source and four k-sources; the isolated aligned cell contributes at most one additional source. If a is not z, the empty label requires c_A(z)>=3, impossible. If a=z, the one free edge cannot both raise c_A(z) to two and supply both size-2 labels u,v. Thus s=1 is impossible.
-
-If s=2, the connected cut gives exactly two z-sources and four k-sources. If a=z, both u,v still require positive incidence but only one source label is k; if a is not z, the empty label requires at least three incidences but has only two. Thus s=2 is impossible.
-
-If s=3,4,5, all row sources lie in {z,k}. To meet both size-2 degree requirements, k must be one of u,v and a must be the other. In particular, a is outside the support {z,k} of tau_k. If s=6, all six sources are z, leaving at least one of u,v uncovered. Therefore any nonempty switch set in row A would have s in {3,4,5}, with k and a the two size-2 labels.
-
-Now fix a switched column j of row A. Then p_Aj=P tau_k and e_Aj=(z,z'). Since C and D are aligned, the 4,5,5 theorem on the light pairs AC and AD gives
+Suppose row A has a switched cell in column j, with p_Aj=P tau_k. By the both-empty cell classification, its extra edge is e_Aj=(z,z'). Rows C,D are already aligned, so p_Cj=p_Dj=P. The small-side pairs AC and AD are light. Applying the 4,5,5 switch theorem to the two triangles A,C,E_j and A,D,E_j gives
 \[
 e_{Cj}=e_{Dj}=(z,P(k))=(z,k').
 \tag{7.1}
 \]
-In particular, both C and D contribute to c_j(k').
+Thus two distinct cross-extra edges in column j end at the outer label k', and c_j(k')>=2.
 
-The corrected 5,5,5 theorem on the heavy triangle A,B,E_j says that p_Bj can only be P or P tau_k: any P tau_l with l!=k would give the forbidden 3-cycle tau_k tau_l.
+But the common residual partition has profile (3,2,2,0), so every occupied outer fiber has size m_{k'} in {2,3}. The exact outer degree equation (4.1) therefore gives
+\[
+c_j(k')=3-m_{k'}-\mathbf 1_{\{k'=\alpha_j\}}\le1,
+\]
+a contradiction. Hence row A has no switches.
 
-- If p_Bj=P tau_k, its cell is switched, so e_Bj=(z,z'). Equation (7.1) then gives c_j(k')>=2.
-- If p_Bj=P, normalize E_j by p_Aj^{-1}. The relative matching is tau_k and e_Aj becomes (z,k) in normalized labels. Since a is outside {z,k}, the AB extra edge is in the “other ten” class of the corrected 5,5,5 classifier. That classifier forces the normalized B-E_j extra edge to be (z,z). Undoing the normalization gives e_Bj=(z,P(k))=(z,k'), so c_j(k')>=3.
+The same argument applies to row B, whose two light small-side neighbors are C,D. Therefore B has no switches either.
 
-But k' has outer residual-fiber size m_{k'}=2. The exact outer degree equation (4.1) gives c_j(k')<=1. Both alternatives are impossible. Hence row A has no switches.
-
-The same argument with A and B interchanged, using the B-endpoint of the AB extra edge, shows that row B has no switches either.
-
-All four small rows are therefore aligned in all six columns. Every one of the ten pivot blocks now shares the same four matching tracks. Choose either size-2 residual fiber. Its two vertices are adjacent to each other and to all ten vertices of the corresponding track, producing a K12 and contradicting omega(H)<=11.
+All four small rows are aligned in all six columns. Every one of the ten pivot blocks now shares the same four matching tracks. Choose either size-2 residual fiber. Its two vertices are adjacent to each other and to all ten vertices of the corresponding track, producing a K12 and contradicting omega(H)<=11.
 
 ## 8. Conclusion and firewall
 
