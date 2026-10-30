@@ -85,3 +85,7 @@ The exact Z=4 two-aligned-column pattern-10 terminal was the initial subcase. It
 ## 8. Global use in the 4+6 K4-e, Z=4 terminal
 
 M10_K4E_Z4_GLOBAL_GRID_CLOSURE.md uses the corrected 5,5,5 theorem to ensure that two outer-column matchings in a fixed row differ only by identity or a transposition; this forces all switches in that row to use one common transposition. The decisive A/B switch exclusion is shorter and does not need the 5,5,5 endpoint classifier: if A switches in column j, the two light triangles A,C,E_j and A,D,E_j force both C-E_j and D-E_j extra edges to end at P(k). This gives c_j(P(k))>=2, contradicting the exact cap c_j(P(k))<=1. The verifier retains the six-case normalized 5,5,5 endpoint test as an additional regression, not as a load-bearing proof step. No retracted fixed-transposition predicate is used.
+
+## 9. K4-e, Z=3 matched-column use
+
+For Z=3, the four endpoints of the two outer heavy pairs have an induced C4 light graph. Their zero-slack residual maps therefore align to a common outer map G. The exact matched-column pair/triple catalog is in M10_K4E_Z3_MATCHED_COLUMN_CATALOG.md. The corrected 5,5,5 theorem is retained for the two heavy outer-pair triangles; the matched-column degree cap removes the full/full nonaligned and F-full/G-empty map regimes. This does not classify either y_j=1 unmatched outer block or close the full grid.

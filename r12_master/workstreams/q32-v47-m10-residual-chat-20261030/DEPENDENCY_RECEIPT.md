@@ -127,3 +127,14 @@ New artifacts:
 The K4 small-side bound is B_min<=10-2z, with 79 residual isomorphism types and 121,782 labelled graphs. The K4-e Z=1,2,3 bound is B_min<=8-2Z, with 15 types and 11,662 labelled graphs. For the K4 outer ledger, the exact integer normal form is t_j^T+delta_j+y_j=1+s_j, delta+Y_S+sum(s_j)<=2, Y_T=6+sum(s_j)-2x_T-delta, and z=2+x_T-Y_S-sum(s_j). The finite relaxation has 7,434 labelled states and 14 weighted-graph isomorphism types.
 
 These are necessary-condition results only. No cross-grid closure or Q32/root promotion is claimed.
+
+## 9. K4-e, Z=3 matched-column map reduction
+
+New theorem note: M10_K4E_Z3_MATCHED_COLUMN_CATALOG.md  
+Replay script: verify_m10_k4e_z3_matched_column.py
+
+Imported inputs: the component-specific residual graph filter from M10_4PLUS6_TIGHT_RESIDUAL_FILTER.csv; the two-light matching-composition theorem and zero-slack map-alignment lemma from the high-support workstream; the corrected 4,5,5 / 5,5,5 switch contracts in M10_555_TRIANGLE_AND_CROSS_GRID_SWITCH_LEMMA.md.
+
+The four matched outer blocks form a C4 in the light graph and have zero residual slack, so their residual maps align. The six residual types were exhaustively enumerated over all clique-fiber maps and all 24 cross-cell matchings, subject only to independent-pair/triple necessary conditions. The matched-column outer degree cap removes full/full nonaligned and F-full/G-empty categories.
+
+The two unmatched outer blocks each retain one residual-incidence excess. Their joint coupling is not yet solved; no Z=3 closure or Q32/root promotion is claimed.

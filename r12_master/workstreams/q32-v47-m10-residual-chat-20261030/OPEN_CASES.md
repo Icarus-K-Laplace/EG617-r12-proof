@@ -53,3 +53,9 @@ The K4 small-component branch now has the exact necessary residual filter B_min<
 For K4-e with Z=1,2,3, the residual filter is B_min<=8-2Z, leaving 15 graph types / 11,662 labelled residual graphs / 1,176 clique-fiber maps. The Z=4 slice remains closed by the global grid theorem.
 
 These filters do not yet impose all cross-cell matching endpoints, the full F/G residual compatibility, or source-color edge ownership. Both branches remain OPEN.
+
+### K4-e, Z=3 matched-column update — 2026-10-30
+
+The residual graph frontier is six types. The four zero-slack outer blocks share a common residual map G, and the small K4-e side shares F. Exact pair/triple enumeration removes full/full nonaligned and F-full/G-empty matched-column regimes by the outer pointwise degree cap. Four residual types now force full/full aligned cells; only 2C3+K1 and C3+P4 retain empty-map alternatives.
+
+Still OPEN: coupling the two unmatched outer blocks (each with y_j=1), the complete 4x6 matching/extra-edge matrix, residual incidences, and source-color edge ownership.

@@ -121,3 +121,17 @@ The new standard-library verifier verify_m10_4plus6_tight_reductions.py checks t
 - For each retained graph it recomputes B_min, alpha(R)<=4, clique-cover number at most four, and every labelled map R->[4] with clique fibers.
 
 The same verifier enumerates the six-vertex outer weighted-ledger relaxation: 7,434 labelled states; by z the counts are 28, 469, 2,272, 3,540, 1,110, 15; 1,036 labelled weighted outer graphs and 14 isomorphism types. It verifies the pointwise outer degree equations and all scalar identities. This does not certify cross-grid matching compatibility or full Q32 infeasibility.
+
+## 12. K4-e, Z=3 matched-column catalog replay
+
+The independent Python analysis-runtime enumeration checked all six residual graph6 representatives:
+- 2C3+K1: 168 maps, 17,856 compatible ordered map pairs, 70,848 pair/triple cell states.
+- C4+P3: 96 maps, 4,608 pairs, 29,952 cell states.
+- C3+P4: 168 maps, 15,552 pairs, 67,392 cell states.
+- P7: 96 maps, 5,760 pairs, 31,104 cell states.
+- C6+K1: 48 maps, 1,152 pairs, 13,824 cell states.
+- C5+P2: 120 maps, 8,640 pairs, 40,320 cell states.
+
+All category assertions passed: full/full aligned, full/full nonaligned, F-empty/G-full, F-full/G-empty, and same-partition both-empty states have the exact counts in M10_K4E_Z3_MATCHED_COLUMN_CATALOG.md. The category properties were also checked: the two F-empty/G-full matching choices differ by a transposition containing the small empty label; the both-empty switches are exactly the three transpositions involving that empty label.
+
+The committed replay script verify_m10_k4e_z3_matched_column.py is the reproduction artifact. The current session executed the same enumeration in the analysis Python runtime; it did not run the committed file as a standalone process or CI job. This remains a necessary pair/triple cell catalog, not a full grid certificate.

@@ -124,3 +124,7 @@ The generic B_min<=14-2z catalog can be sharpened inside 4+6:
 - K4-e small side: B_min<=8-2z; after the already-closed z=4 slice, z=1,2,3 leaves 15 types / 11,662 labelled graphs / 1,176 fiber maps.
 
 The filtered graph6 representatives and exact fiber-profile counts are recorded in M10_4PLUS6_TIGHT_RESIDUAL_FILTER.csv. These remain necessary residual relaxations, not complete 47-core configurations.
+
+## 8. Z=3 K4-e matched-column refinement
+
+For K4-e, Z=3, the tight residual filter leaves six graph types. Their complete necessary pair/triple map-pair catalog is recorded in M10_K4E_Z3_MATCHED_COLUMN_CATALOG.md. The matched-column degree cap removes full/full nonaligned and F-full/G-empty regimes. Only 2C3+K1 and C3+P4 retain empty-map alternatives; the other four residual types force full/full aligned matched-column cells. The two unmatched outer blocks remain the unresolved interface.

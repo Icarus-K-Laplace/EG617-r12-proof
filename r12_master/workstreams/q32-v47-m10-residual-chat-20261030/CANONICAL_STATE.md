@@ -65,3 +65,11 @@ Added M10_4PLUS6_TIGHT_RESIDUAL_FILTER.md, M10_4PLUS6_TIGHT_RESIDUAL_FILTER.csv,
 - K4 outer weighted-heavy ledger: x_T<=4, delta+Y_S+sum(s_j)<=2, and z=2+x_T-Y_S-sum(s_j). Exact block-level enumeration gives 7,434 labelled aggregate states and 14 weighted-graph isomorphism types.
 
 These are necessary-condition reductions only. The K4 small-side cross grid, K4-e Z=1,2,3 compatibility, full-support m=10, and the EG617 root remain OPEN / NOT_CERTIFIED.
+
+## 14. K4-e, Z=3 matched-column residual map catalog
+
+Added M10_K4E_Z3_MATCHED_COLUMN_CATALOG.md and verify_m10_k4e_z3_matched_column.py.
+
+The four zero-slack outer blocks induce a connected C4 light graph, so their residual maps align to one common G; the small K4-e side has one common F. The exact pair/triple catalog over the six residual graph types has 70,848 / 29,952 / 67,392 / 31,104 / 13,824 / 40,320 pair/triple cell states, respectively. The matched-column degree cap eliminates full/full nonaligned and F-full/G-empty cells. Only full/full aligned remains for four residual types; the two empty-map regimes occur only for 2C3+K1 and C3+P4.
+
+This is a local matched-column reduction only. The two y_j=1 unmatched outer blocks and the full six-column grid remain OPEN.
