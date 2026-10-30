@@ -7,8 +7,8 @@ All items below are full-support |U|=47, m=10. The 3+7 normal form is conditiona
 1. CONNECTED-L: L is connected on ten pivot blocks, with at least 17 light edges. No global matching-holonomy theorem has been proved for this case.
 2. DISCONNECTED-1+9: singleton component consumes at least four units of Q excess; Y+2Z<=10, Z<=5, and its residual incidence slack is at most two.
 3. DISCONNECTED-2+8: eight-block outer graph has minimum light degree at least four, weighted internal-heavy degree at most three, X_T=8+Z, Y=8-2Z, Z<=4. The two-block blocker and synchronized-switch theorem are local only.
-4. DISCONNECTED-4+6: four-block component is K4 or K4-e; 24 cross pairs have at most two extra multiplicity units beyond their mandatory heavy unit. Need joint matching and residual-incidence classification.
-5. DISCONNECTED-5+5: 25 cross pairs are heavy; Y+Z<=7, Z>=1, and 2(delta_ST+X_S+X_T)+Y<=6. Need classify the two dense internal light graphs and cross matching system.
+4. DISCONNECTED-4+6: four-block component is K4 or K4-e; 24 cross pairs have at most two extra multiplicity units beyond their mandatory heavy unit. The four-block side is now four aligned K4 tracks; in K4-e, all 24 cross pairs are exactly five edges and the six-block heavy graph is a matching. Need classify the 4-by-6 cross matching/extra-edge grid and residual incidence.
+5. DISCONNECTED-5+5: 25 cross pairs are heavy; Y+Z<=7, Z>=1, and 2(delta_ST+X_S+X_T)+Y<=6. Each side now has an aligned four-block K4/K4-e core; at least 13 of the 16 cross-core pairs are exactly five edges. Need classify the cross-core 4-by-4 matching grid and two fringe attachments.
 
 ## B. Type-I source placements
 

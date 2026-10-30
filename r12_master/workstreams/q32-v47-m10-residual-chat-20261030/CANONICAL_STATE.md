@@ -26,6 +26,7 @@ The Type-I exact-color source is the published-source factorization 10 isolated 
 4. The m=10 high-chromatic residual cell is excluded; the general residual graph is 4-clique-coverable.
 5. The source-correct isolated-double audit identifies an eight-vertex residual branch; its exceptional large-track-centered subcase remains open.
 6. The source-correct Type-I occupancy patterns also admit a two-isolated-double, nine-vertex G_11 residual mode at the aggregate outside-count level. It is not covered by the eight-vertex audit.
+8. New dense-component lemma: the 4+6 side contains four aligned K4 tracks (with a sharper K4-e reduction); each side of a 5+5 split contains an aligned four-block K4/K4-e core. Their cross matching grids remain open.
 7. The low-support Q32 layers |U|=44,45,46 are closed on the case-II branch. This does not close full support |U|=47.
 
 ## New result in this workstream
@@ -46,6 +47,6 @@ This is a necessary-condition catalog, not a full 47-vertex Q32 enumeration. It 
 
 Status: OPEN. Full-support m=10 Q32 is not closed.
 
-The disconnected component-size catalog is complete. The 3+7 branch is conditionally closed. The 1+9, 2+8, 4+6, 5+5 and connected-light-graph branches remain open. The source K5 occupancy catalog is complete at the aggregate outside-count level, but several endpoint-labelled source placements still need integration with the pivot-block graph.
+The disconnected component-size catalog is complete. The 4+6 and 5+5 cells now have aligned four-block core reductions. The 3+7 branch is conditionally closed. The 1+9, 2+8, 4+6, 5+5 and connected-light-graph branches remain open. The source K5 occupancy catalog is complete at the aggregate outside-count level, but several endpoint-labelled source placements still need integration with the pivot-block graph.
 
 No full-model SAT/UNSAT certificate is claimed. No root EG617(r=12) closure is claimed.

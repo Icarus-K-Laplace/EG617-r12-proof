@@ -45,7 +45,7 @@ For the four-block component S and six-block component T,
 
     2 X_S + delta_ST + Y_S <= 2.
 
-Thus S has at most one unit of internal heavy-pair weight, and its light graph is K4 or K4 minus one edge. The 24 cross pairs are heavy; their total multiplicity beyond the mandatory one per pair is at most two. The matching triangle constraints on the K4/K4-e component are not yet combined with the six-block weighted graph. OPEN.
+Thus S has at most one unit of internal heavy-pair weight, and its light graph is K4 or K4 minus one edge. The 24 cross pairs are heavy; their total multiplicity beyond the mandatory one per pair is at most two. The K4/K4-e component is now reduced to four aligned K4 tracks by the dense-component core lemma. In the K4-e subcase, all 24 cross pairs are exactly five edges, the six-block internal heavy graph is a matching, and X_T=Z-1. The 4-by-6 cross matching/extra-edge grid remains OPEN.
 
 ### 5+5
 
@@ -55,7 +55,7 @@ There are 25 heavy cross pairs. The ledger gives
     Z>=1
     2(delta_ST+X_S+X_T)+Y<=6.
 
-Hence at most three weighted heavy units beyond the mandatory cross pairs can be spent on internal heavy pairs or cross multiplicity, and each five-block component has at least seven light pairs. The two dense internal light graphs and the cross 5-edge matching system have not yet been jointly classified. OPEN.
+Hence at most three weighted heavy units beyond the mandatory cross pairs can be spent on internal heavy pairs or cross multiplicity, and each five-block component has at least seven light pairs. Each five-block component now contains an aligned four-block K4/K4-e core; the fifth fringe block has at least one light neighbor in that core. At least 13 of the 16 cross-core pairs are exactly five edges. The cross-core 4-by-4 matching grid and both fringe attachments remain OPEN.
 
 ## 3. Connected light-block graph
 
@@ -68,3 +68,8 @@ The broader necessary-condition catalog is in M10_RESIDUAL_CLASSIFICATION.md and
 ## 5. No over-promotion
 
 The local Astra theorem excludes the 3+7 contract only. The eight-vertex isolated-double audit excludes its T_0-centered subcase but retains a large-track-centered exception. The nine-vertex two-isolated-double source mode has not been endpoint-classified. Therefore no contradiction in this file excludes all m=10 Q32 candidates.
+
+
+## 6. New dense-component core reduction
+
+See M10_DENSE_COMPONENT_CORE_LEMMA.md for the full proof. The 4+6 small component always contains four aligned K4 tracks; its K4-e subcase has exact five-edge cross pairs and a matching as the six-block internal heavy graph. Each side of a 5+5 split contains a four-block aligned K4/K4-e core. These are reductions, not terminal contradictions.
