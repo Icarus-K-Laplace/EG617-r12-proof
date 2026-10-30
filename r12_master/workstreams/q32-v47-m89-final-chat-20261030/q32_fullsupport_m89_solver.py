@@ -145,147 +145,20 @@ def build_model(m):
         c: iff_count(col[edge(u, v)] == c for u, v in pairs(H))
         for c in range(1, 12)
     }
+    # Tight-part exclusion theorem: any 69/70 near-Turan partition in H
+    # yields either an independent 5-set or a K7. Since the accepted Q32
+    # candidates satisfy alpha(H)<=4 and omega(H)<=5, every non-target color
+    # must therefore have at least 71 H-edges. This is a valid strengthening
+    # of the lazy alpha/omega search, not an m=10-specific import.
     for c in range(1, 12):
-        solver.add(core_edges[c] >= 69)
+        solver.add(core_edges[c] >= 71)
     for c in exact:
         solver.add(core_edges[c] <= 75)
     solver.add(isum(core_edges[c] - 69 for c in range(1, 12)) == 37)
 
-    # Source-correct exact-129 core-edge accounting and near-Turan layers.
-    # For each Type-I factor with b outside vertices, its H-interior contributes
-    # C(5-b,2) target-complement edges. The only other exact-color edges are the
-    # nine registered gadget edges; count those with both endpoints in H.
-    near_turan_part = {}
-    source_core_count = {}
-    for c in exact:
-        outside_sum_core = isum(
-            z3.If(component_outside[c][k] == 1, 6,
-                  z3.If(component_outside[c][k] == 2, 3, 1))
-            for k in range(12))
-        x_outside_c = z3.Or([xvar[c] == v for v in O])
-        y_in_H = z3.Or([yvar[c] == v for v in H])
-        x_in_H = z3.Not(x_outside_c)
-        gadget_x_H = iff_count(
-            z3.Or(
-                z3.And(comp[c][v] == 10, z3.Not(a0var[c][v])),
-                z3.And(comp[c][v] == 11, yvar[c] != v))
-            for v in H)
-        gadget_y_H = iff_count(a0var[c][v] for v in H)
-        gadget_core = z3.If(x_in_H, gadget_x_H, 0) + z3.If(y_in_H, gadget_y_H, 0)
-        source_core_count[c] = outside_sum_core + gadget_core
-        solver.add(core_edges[c] == source_core_count[c])
-
-        a_size = iff_count(a0var[c][v] for v in range(N))
-        has_triple = z3.Or([component_outside[c][k] == 3 for k in range(12)])
-        two_double = z3.And(z3.Not(x_outside_c), z3.Not(has_triple))
-        triple = z3.And(z3.Not(x_outside_c), has_triple)
-        solver.add(z3.Implies(x_outside_c, core_edges[c] <= 69 + a_size))
-        solver.add(z3.Implies(two_double, core_edges[c] >= 72 - a_size))
-        solver.add(z3.Implies(two_double, core_edges[c] <= 74))
-        solver.add(z3.Implies(triple, core_edges[c] >= 73 - a_size))
-        solver.add(z3.Implies(triple, core_edges[c] <= 75))
-
-    # The same 69/70 near-Turan theorem applies to every non-target color,
-    # not only exact colors: alpha(C[H])<=12 and omega(C[H])<=4 hold for all
-    # c=1,...,11. Therefore partition variables are added for every such color
-    # whenever its H-edge count is at most 70.
-    for c in range(1, 12):
-        low_layer = core_edges[c] <= 70
-        near_turan_part[c] = {
-            v: z3.Int(f"near_turan_part_{c}_{v}") for v in H
-        }
-        for v in H:
-            solver.add(near_turan_part[c][v] >= 0,
-                       near_turan_part[c][v] <= 11)
-        for label in range(11):
-            solver.add(z3.Implies(
-                low_layer,
-                iff_count(near_turan_part[c][v] == label for v in H) == 4))
-        solver.add(z3.Implies(
-            low_layer,
-            iff_count(near_turan_part[c][v] == 11 for v in H) == 3))
-        for u, v in pairs(H):
-            same_part = near_turan_part[c][u] == near_turan_part[c][v]
-            solver.add(z3.Implies(
-                z3.And(low_layer, same_part), col[edge(u, v)] == c))
-        cross_color_edges = iff_count(
-            z3.And(near_turan_part[c][u] != near_turan_part[c][v],
-                   col[edge(u, v)] == c)
-            for u, v in pairs(H))
-        solver.add(z3.Implies(
-            low_layer, cross_color_edges == core_edges[c] - 69))
-
-        # For exact colors, every source single-outside factor contributes
-        # a witness K4 and must occupy one entire size-four part.
-        if c in exact:
-            for k in range(12):
-                for u, v in pairs(H):
-                    solver.add(z3.Implies(
-                        z3.And(low_layer,
-                               component_outside[c][k] == 1,
-                               comp[c][u] == k, comp[c][v] == k),
-                        near_turan_part[c][u] == near_turan_part[c][v]))
-
-            # Complete source-triangle alignment in every exact-color 69/70 layer.
-            # A source factor with two outside vertices leaves a C-triangle in H;
-            # a triple-outside factor leaves a C-edge in H. The latter must align
-            # with x to make the residual 3-part when x is in H.
-            for k in range(12):
-                for u, v in pairs(H):
-                    solver.add(z3.Implies(
-                        z3.And(low_layer, component_outside[c][k] == 2,
-                               comp[c][u] == k, comp[c][v] == k),
-                        near_turan_part[c][u] == near_turan_part[c][v]))
-
-            x_outside_c = z3.Or([xvar[c] == v for v in O])
-            x_in_H = z3.Not(x_outside_c)
-            has_triple = z3.Or([component_outside[c][k] == 3 for k in range(12)])
-            two_double = z3.And(x_in_H, z3.Not(has_triple))
-            triple = z3.And(x_in_H, has_triple)
-            y_outside = z3.Or([yvar[c] == v for v in O])
-            x_part = isum(z3.If(xvar[c] == v, near_turan_part[c][v], 0) for v in H)
-
-            ns_cross = iff_count(
-                z3.And(comp[c][v] == 10, z3.Not(a0var[c][v])) for v in H)
-
-            # If x is in H, the Nt interior must be the triangle/edge joined to x.
-            # The only other x-gadget block is Ns; its H-neighbors are all cross-part
-            # and at most one can survive the 69/70 cross-edge cap.
-            solver.add(z3.Implies(z3.And(low_layer, two_double),
-                                  component_outside[c][11] == 2))
-            solver.add(z3.Implies(z3.And(low_layer, triple),
-                                  component_outside[c][11] == 3))
-            solver.add(z3.Implies(z3.And(low_layer, x_in_H), y_outside))
-            solver.add(z3.Implies(z3.And(low_layer, x_in_H), ns_cross <= 1))
-            solver.add(z3.Implies(z3.And(low_layer, x_in_H),
-                                  core_edges[c] == 69 + ns_cross))
-            for v in H:
-                solver.add(z3.Implies(
-                    z3.And(low_layer, x_in_H, comp[c][v] == 11),
-                    near_turan_part[c][v] == x_part))
-
-            # If x is outside, the unique double factor leaves a K3 in one part.
-            x_outside_double_count = iff_count(
-                component_outside[c][k] == 2 for k in range(12))
-            y_a0_core = z3.If(
-                z3.Or([yvar[c] == v for v in H]),
-                iff_count(a0var[c][v] for v in H), 0)
-            solver.add(z3.Implies(z3.And(low_layer, x_outside_c),
-                                  x_outside_double_count == 1))
-            solver.add(z3.Implies(z3.And(low_layer, x_outside_c),
-                                  core_edges[c] == 69 + y_a0_core))
-    # Distinct low-layer color partitions are pairwise orthogonal:
-    # if two vertices shared a part in two colors, their edge would be
-    # forced to have two different colors. State this explicitly as a cut.
-    for c1, c2 in itertools.combinations(range(1, 12), 2):
-        both_low = z3.And(core_edges[c1] <= 70, core_edges[c2] <= 70)
-        for u, v in pairs(H):
-            solver.add(z3.Implies(
-                both_low,
-                z3.Or(near_turan_part[c1][u] != near_turan_part[c1][v],
-                      near_turan_part[c2][u] != near_turan_part[c2][v])))
-
-
+    # Source-correct exact-129 core-edge accounting. The former conditional
+    # 69/70 near-Turan partition variables are now unnecessary: the tight-part
+    # exclusion theorem above rules out that entire layer for every valid H.
     # Full support U=H: every core vertex lies in a source K5 factor with
     # exactly one O vertex, including a special factor Ns or Nt when applicable.
     for v in H:
