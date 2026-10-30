@@ -18,7 +18,7 @@ Date: 2026-10-30
 | D12 | Degree10 in R(4,47) forces e>=289 | **PROVED** | Exact ten-neighbour degree-sum; does not assume N(v) is a clique |
 | D13 | Degree11 in R(4,47) forces e>=287 | **PROVED** | 35-core floor210, missing shell edge, common row union>=12, shell charge>=11 |
 | D14 | Every R(4,47) graph has e>=284 | **PROVED** | D9 plus the private-clique lemma for total excess<=2 |
-| D15 | 127-row rational certificate | **COMPUTATION_CERTIFIED** | Exact Fraction replay: 32+95 rows; maxima 773/1089 and39/44 |
+| D15 | 127-row rational certificate | **COMPUTATION_CERTIFIED** | Both original verifiers rerun from extracted archive: 32+95 rows; maxima 773/1089 and39/44; see CLEAN_ROOM_REPLAY_20261030.md |
 | D16 | E408 / Qmax=33 parent contradiction | **PROVED_CONDITIONAL** | E408 h13 parent contract, exact q=33 pivot, inherited density caps; no V11 dependency |
 | D17 | V11 retained minimum-degree declaration | **OPEN / NOT USED** | Its broader analytic package remains separate and is not a premise here |
 | D18 | Full EG617(r=12) theorem | **OPEN** | E407/Q32 and other root dependencies remain live |
@@ -30,6 +30,8 @@ No Kang–Pikhurko theorem is used in D1–D16. The previous common-neighbour ar
 Mantel's inequality is proved by the edge-degree/Cauchy argument in the source audit. No unproved Ramsey number is used. The 121/122 triangle-free neighbourhood classification is reproduced in MINDEG12_47_SOURCE_COMPLETE_AUDIT.md with its exact five-cycle type cases.
 
 ## Exact finite replay
+
+The actual clean-room execution and archive/source SHA256 checks are recorded in CLEAN_ROOM_REPLAY_20261030.md. The 127-row certificate is not a dependency of the minimum-degree implication D9; it belongs to the separate total-excess<=2 core-floor lemma.
 
 - Q33_SOURCE_COMPLETE_REPLAY.py checks density-cap arithmetic, shortest-cycle bounds, the 121/122 extension costs, degree10/11 inequalities, support-multiset counts, matrix classes, and the exact minima 6,6,4,5.
 - With --certificate it checks all127 rational rows using Fraction arithmetic.
