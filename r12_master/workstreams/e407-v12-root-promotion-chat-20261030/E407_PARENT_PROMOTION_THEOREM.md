@@ -94,3 +94,20 @@ contradicting `e(L_U)<=310`. The gap is six. QED.
 This proves the E407 Q32 contradiction **conditional** on the V12 retained analytic inputs and MS-29. The finite replay establishes the exhaustive A--E mapping, not MS-29 itself. The V12 archive does not contain a derivation of `|U|=29`; that property is supplied by the separate global-root template-to-support contract. Until the minimum-support/29-point bridge is independently proved or its exact proof source is attached and audited, the correct status remains `PROVED_CONDITIONAL`, not `PROVED`.
 
 This theorem does not close E408 Q32, E408 Q33, the other T61 energy branches, or the original K145-to-T61 root reduction.
+
+
+## 5. Support-size audit beyond MS-29
+
+The conditional theorem above uses the stronger MS-29 hypothesis |U|=29. A separate support-size argument is now available without assuming that equality. Let U_7 be the union of the 49 blocks from the seven selected exact-129 colors and v=|U_7|. The exact-129 support theorem gives v >= 29. Since the four other non-target colors each require at least p12(v) edges in U_7, the 49 selected blocks plus those four color floors give
+
+    e(complement(H[U_7])) >= 294 + 4 p12(v).
+
+The 47-core edge/degree ledger gives
+
+    e(complement(H[U_7])) <= binom(v,2) - 12v + 284 - p4(47-v).
+
+The comparison excludes v=29,30,31,32,33. At v=34 equality is possible only with the rigid structure recorded in V12_GENERAL_SUPPORT_RESERVE.md; no contradiction is yet known there. The scalar inequality does not exclude v >= 35.
+
+Separately, the full-color crosscut E407_SEVEN_EXACT_COLOR_EXCLUSION.md gives m >= 8 under its own retained Type-I and nonexact-degree hypotheses. If U_m is the union of seven blocks from every exact color, its support is at least35 for m=8,9 and at least36 for m=10. U_m is not the same set as U_7, so this does not promote MS-29.
+
+Promotion decision unchanged: V12 finite coverage is COMPUTATION_CERTIFIED under C0; the 29-point parent bridge remains CONDITIONAL; the E407 Q32 contradiction is not promoted to unconditional PROVED; EG617(r=12) remains OPEN / NOT_CERTIFIED.
