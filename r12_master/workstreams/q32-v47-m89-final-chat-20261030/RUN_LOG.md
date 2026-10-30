@@ -19,6 +19,8 @@ m=9 canonical color vector sum=1830
 
 Result: all local checks passed.
 
+Additional static checks: Python AST parsing passed for the new pivot-matching composition function, the inserted CSP constraints, and the independent verifier additions. This is a syntax check of the edited sections, not an execution of the full solver or verifier.
+
 ## Full solver
 
 ```text
