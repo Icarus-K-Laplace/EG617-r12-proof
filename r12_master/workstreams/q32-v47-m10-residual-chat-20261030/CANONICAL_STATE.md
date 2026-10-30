@@ -44,7 +44,7 @@ This is a necessary-condition catalog, not a full 47-vertex Q32 enumeration. It 
 
 ## Current status
 
-<badge>OPEN</badge> Full-support m=10 Q32 is not closed.
+Status: OPEN. Full-support m=10 Q32 is not closed.
 
 The disconnected component-size catalog is complete. The 3+7 branch is conditionally closed. The 1+9, 2+8, 4+6, 5+5 and connected-light-graph branches remain open. The source K5 occupancy catalog is complete at the aggregate outside-count level, but several endpoint-labelled source placements still need integration with the pivot-block graph.
 

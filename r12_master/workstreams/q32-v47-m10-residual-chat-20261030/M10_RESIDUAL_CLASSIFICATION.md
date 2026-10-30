@@ -4,7 +4,7 @@ Status: PROVED necessary-condition catalog; full Q32 compatibility remains OPEN.
 
 ## 1. Seven-vertex residual slack
 
-Let R=H\\(Q_1 union ... union Q_10), |R|=7. Let X,Y,Z be the pivot slack variables (renamed here to avoid collision with the source special point x_C). The registered ledger is
+Let R be the seven-vertex set outside the union of Q_1,...,Q_10. Let X,Y,Z be the pivot slack variables (renamed here to avoid collision with the source special point x_C). The registered ledger is
 
     X+Y+Z=32
     2X+Y>=50

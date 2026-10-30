@@ -9,7 +9,7 @@ For each exact-129 non-target color C, the audited Kang–Pikhurko equality grap
 - two special K5 factors N_s and N_t inside the 11-vertex gadget G_11;
 - one distinguished gadget point x_C.
 
-The source gadget also has y in N_t and a nonempty proper subset A_0 of N_s. Put a=|A_0|, so a is one of 1,2,3,4. Its source cross-edge families are y-A_0, x_C-(N_s\\A_0), and x_C-(N_t\\{y}).
+The source gadget also has y in N_t and a nonempty proper subset A_0 of N_s. Put a=|A_0|, so a is one of 1,2,3,4. Its source cross-edge families are y-A_0, x_C to N_s minus A_0, and x_C to N_t minus {y}.
 
 Every one of the twelve K5 factors meets O. If b_i is the number of its vertices in O, then b_i>=1. The source equality classification gives:
 - x_C in O: sum b_i=13 and the multiset is (2,1^11);
@@ -21,7 +21,7 @@ There are no other aggregate outside-count profiles.
 
 Let k be the number of double-outside factors among the ten isolated factors. For the two-double mode, the remaining 2-k double factors lie among N_s,N_t. For the triple mode, the triple factor must be special: an isolated triple-outside K5 would leave an H-vertex with only one same-color H-neighbor, violating the source degree floor.
 
-| Family | x_C | Aggregate profile | Isolated doubles | Special occupancy | |H intersect G_11| | Aligned four-track residual profile |
+| Family | x_C | Aggregate profile | Isolated doubles | Special occupancy | G_11 residual H vertices | Aligned four-track residual profile |
 |---|---|---|---:|---|---:|---|
 | O-I | O | (2,1^11) | 1 | N_s,N_t single | 8 | (2,2,2,2) |
 | O-S | O | (2,1^11) | 0 | one of N_s,N_t double | 7 | (2,2,2,1) |

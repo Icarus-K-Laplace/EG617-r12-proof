@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Independent m=10 residual-graph relaxation catalog verifier.
 
-Necessary-condition catalog for R=H\\Q, |R|=7. It checks e(R)=3+z,
+Necessary-condition catalog for the seven-vertex residual R outside the ten pivot blocks. It checks e(R)=3+z,
 0<=z<=7, alpha(R)<=4, clique_cover(R)<=4, and
 B_min(R)=sum_v max(0,2-d_R(v)) <= 14-2z.
 
