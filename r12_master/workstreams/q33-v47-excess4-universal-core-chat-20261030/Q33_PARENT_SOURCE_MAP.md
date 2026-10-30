@@ -92,3 +92,14 @@ This workstream has not edited:
 - any sibling Q32/Q33 workstream.
 
 The global EG617(r=12) theorem remains OPEN / NOT_CERTIFIED because E408 Q32, E407 Q32, the R(4,49) front-end alternative, and their parent-coverage edges remain separate live obligations.
+
+
+## 7. Uniform strengthening from q_p=33 exclusion to Q_max<=32
+
+The private-clique proof CORE_FLOOR_284_PROOF.md establishes e(J)>=284 for every J in R(4,47), with the 127-row certificate exactly replayed. If e(J)=284, the source-complete minimum-degree gate gives delta(J)>=12, and the universal 284-edge theorem excludes it. Hence the stronger strict floor
+\[
+J\in R(4,47)\Longrightarrow e(J)\ge285
+\]
+is PROVED; see R447_STRICT_285_FLOOR.md.
+
+This applies to the induced core of every degree-13 pivot in the E408/h13 parent, not just a pivot selected by Q_max. Thus every q_p<=32 and Q_max<=32. The Q33 support-promotion route is unnecessary for this parent layer. Q32 remains OPEN and is explicitly outside this workstream.
