@@ -95,3 +95,14 @@ New screen result:
 - m=10 excludes v=34..40; aggregate survivors v=41..47.
 
 This remains a necessary aggregate profile test, not a graph-level UNSAT certificate. Root status remains OPEN.
+
+
+## 2026-10-30 gadget-shell nonempty lemma
+
+For each exact color, after choosing seven components avoiding S, seven shell vertices remain. Each of the three unselected K5 components contains at most one B vertex and at most three S vertices; p cannot share a non-target K5 with any point of A. Hence these three components can contain at most six shell vertices. At least one remaining shell vertex lies in the 11-vertex gadget. The gadget has at most ten core vertices, so the three unselected component core sizes satisfy 9<=sum c_i<=12.
+
+This corrects the earlier profile interval 8..12. The component-only verifier and all-support table now use 9..12. The support exclusion ranges remain unchanged.
+
+## 2026-10-30 first-survivor W equality
+
+The component-only profile enumeration gives min W costs 3,2,1 at (m,v)=(8,39),(9,40),(10,41), respectively. The first two exactly saturate Turán W budgets 24 and18, forcing H[W]=4K2 and H[W]=3K2 union K1. Every exact-color W edge set is then a matching of size3 or2. The m=10 case has three units of W slack. Full details are in Q33_W_BOUNDARY_EQUALITY.md.

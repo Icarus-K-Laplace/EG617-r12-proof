@@ -40,3 +40,15 @@ The component-only variable-core screen is strictly stronger than the previous a
 The exact component-only verifier is Q33_INDEPENDENT_VERIFIER.py. It compares Cartesian-product and recursive per-color option generation and checks all 47 registered (m,v) cells. The previous gadget-inclusive verifier is archived as Q33_VARIABLE_CORE_ALL_H_VERIFIER.py.
 
 Status remains: reserve theorem PROVED_CONDITIONAL under the registered Q33 parent contract; finite profile screen COMPUTATION_CERTIFIED; graph-level cases and global Q33 OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-30 refinement — nonempty gadget shell and W equality
+
+The three unselected K5 components can hold at most three B vertices and at most three S vertices; pivot p cannot share a non-target K5 with any vertex of A. Of the seven shell vertices remaining after the selected seven component witnesses, at least one must therefore lie in the 11-vertex gadget. This forces gadget core size 7..10 and residual component core sum 9..12. The component-only verifier now imposes this source-derived condition.
+
+At the first aggregate survivors:
+- m=8,v=39: all eight exact colors have W-cost3; W capacity24 is saturated, H[W]=4K2, and each exact-color W graph is a 3-edge matching.
+- m=9,v=40: all nine exact colors have W-cost2; W capacity18 is saturated, H[W]=3K2 plus an isolated vertex, and each exact-color W graph is a 2-edge matching.
+- m=10,v=41: minimum W-cost10 against capacity13, leaving at most3 units of W slack.
+
+The exact derivation is in Q33_GADGET_SHELL_NONEMPTY_LEMMA.md and Q33_W_BOUNDARY_EQUALITY.md. These reductions do not close the remaining labelled incidence cases.

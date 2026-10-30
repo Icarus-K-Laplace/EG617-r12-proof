@@ -47,3 +47,14 @@ The seven-witness packing source supplies seven isolated-K5 component four-sets 
 For the support set used in the new screen, choose these seven component witnesses in every exact-129 color. This fixes h=0 by construction. No selected gadget witness is needed, and no gadget-witness overlap allowance is used. The old all-h model remains a broader diagnostic relaxation, but it is not the strongest source-correct screen.
 
 This selection relies on the exact shell partition R={p} dot-union S dot-union B dot-union H, A=S dot-union B=N_F(p), the target-clique property of B, the exact-129 factorization, and alpha(H)<=4. If any proposed parent completion does not satisfy that registered Q33 shell interface, this component-selection lemma is not applied.
+
+
+## 4. 2026-10-30 gadget-shell capacity correction
+
+The prior variable-core interval 8<=sum(c_i)<=12 omitted a shell-capacity fact. Once seven components avoiding S are selected, seven shell vertices remain. Each of the three unselected K5 components can contain at most one B vertex, at most the three S vertices in total, and cannot contain p together with any point of A. Hence at most six remaining shell vertices can lie in those three components. At least one shell vertex lies in the gadget, so its core size is at most10 and 9<=sum(c_i)<=12. This is now imposed by the verifier.
+
+This is a source-derived necessary condition, not an assumption that every unselected component has exactly one shell vertex.
+
+## 5. W-boundary equality
+
+At m=8,v=39 and m=9,v=40, the minimum per-color W costs exactly exhaust the Turán W budgets. Turán equality forces H[W]=4K2 or 3K2 union K1, and every exact-color W graph is a matching of size3 or2. At m=10,v=41 the remaining aggregate W slack is3. This gives a smaller labelled W subproblem, not a contradiction.

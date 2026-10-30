@@ -41,3 +41,15 @@ The first aggregate profile-feasible cells are:
 Every larger support size through47 has at least one aggregate cost-pair survivor. These are necessary-profile survivors only, not labelled graph realizations.
 
 Next attack: impose the actual seven-witness incidence matrix, exact component/gadget vertex partition, cross-color pairwise linearity, the four units of core degree excess, and the seven-block near-Latin duplicate ledger on the remaining support ranges. Q33 remains OPEN / NOT_CERTIFIED.
+
+
+## 2026-10-30 — shell and W-boundary refinements
+
+The variable component core range is now 9<=sum(c_i)<=12, not 8..12, because at least one remaining shell vertex must lie in the exceptional gadget. This reduces the per-color profile option counts but does not change the aggregate support frontier.
+
+The first surviving W structures are:
+- m=8,v=39: H[W]=4K2 and eight exact-color 3-edge matchings partition K_{2,2,2,2};
+- m=9,v=40: H[W]=3K2 union K1 and nine exact-color 2-edge matchings partition K_{2,2,2,1};
+- m=10,v=41: six-point W with at most three units of aggregate reserve slack.
+
+The matching decompositions are not contradictions by themselves. The unresolved task is to couple them to the labelled U-incidence, shell-label, and core degree/excess constraints.
