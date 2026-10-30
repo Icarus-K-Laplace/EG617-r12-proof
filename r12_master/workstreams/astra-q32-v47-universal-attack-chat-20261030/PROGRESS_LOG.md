@@ -4,34 +4,45 @@
 
 Read the new user attachment and changed scope: no continuation of A/B/C/D local casework, no modification of old Astra files. Checked default main, the actual global workstream, the requested new branch and four siblings. The requested branch did not exist. Created workstream/r12-astra-q32-v47-universal-attack-20261030 at b0459807acd4b7e386148056ddf77d7998918893. All new files are confined to the requested new directory.
 
-Read the four sibling canonical/open states and the relevant A partition audit, plus the genuine parent bridge and full-color degree document. A advanced during the initial audit to f78ac022d70647e9c87580bbc595c2306cfda26c and now retracts the old K6-free closure. Read the primary Kang-Pikhurko PDF to verify the source theorem and the25-point complement bound.
+Read the four sibling canonical/open states and the genuine parent bridge and full-color degree document. A advanced to f78ac022d70647e9c87580bbc595c2306cfda26c and retracts its old K6-free closure. Read the primary Kang–Pikhurko source for the 25-point complement bound.
 
 ## Mathematical attack and adverse check
 
-Proposed that the excess-six core forces a common small-deletion clique partition. Proved existence of an independent degree12 four-set, then exactly five overlap incidences. The private-neighbor classes are cliques. This initially gives four clique-size profiles with3..5 exceptional points.
+Proved existence of an independent degree-12 four-set, then exactly five overlap incidences. The private-neighbor classes are cliques. Derived the universal nonedge common-neighbor inequality using the 155-versus153 contradiction on 25 vertices. This prohibits two completing vertices on a K10. A pair supported on two K11s spends all six excess units.
 
-Derived the universal nonedge common-neighbor inequality using the155-versus153 contradiction on25 vertices. This prohibits two completing vertices on a K10. A pair supported on two K11s spends all six excess units. These facts, a rotation of the independent four-set, and a star endpoint-capacity inequality exclude all3- and4-exception cases and all but two5-exception support patterns.
-
-Carefully retained empty missing-neighbor sets on K10/K9: completing such a clique individually is legal under omega<=11. Treating those missing sets as nonempty would have produced a false stronger contradiction. The written proof handles them through the common-neighbor bound instead.
-
-The intermediate result was U1: common cliques10,10,11,11 plus five points with D or P support. It applies to all m without any source-color premise. At that intermediate checkpoint, the complete all-color impossibility theorem remained OPEN.
+The support-orbit reduction leaves P and D. The final mixed-pair obstruction gives 8>6 for P and 10>6 for D. Complete K10 attachments are explicitly retained and bounded; empty missing sets are not silently excluded.
 
 ## Executed verification/search
 
-- Enumerated all support multiset orbits:2 with h3,3 with h4,5 with h5; analytic filters leave exactly D and P.
-- Checked100 integer pair-capacity cases and90 nonempty-center star cases.
-- Reconstructed all four legal Type-I source graphs and checked their edge counts, component independence/clique numbers and variable degrees; checked all90 aggregate original-outside profiles.
-- Ran two30,000-proposal searches, with seeds61712 and61713, restricted to six private degree13 vertices and all remaining degrees12. Both failed the full core contract; complete edge lists are retained.
-- Independently recounted forbidden configurations: P has3256 independent5-sets and no K12; D has1901 independent5-sets and two K12s. Explicit failure witnesses are recorded. No search-based UNSAT inference was used.
+- The committed Python verifier reports support orbits 2,3,5; 100 K11 pair cases; 90 star cases; 90 mixed-pair cases; 90 diamond-pair cases; 8,400 D local-accounting cases; all allowed completion masks; and all 90 source occupancy profiles.
+- An independent JavaScript replay in this audit re-enumerated the S4 support orbits and terminal integer inequalities.
+- Direct edge-list replay confirmed the P diagnostic graph has 3,256 independent 5-sets and no K12; the D diagnostic graph has 1,901 independent 5-sets and two K12s. Both fail the full core contract. Search failure is not the proof.
 
-The first substantial deliverable is the universal two-template structural theorem with its source/dependency audit and independent finite checks. No subagents were used. At that checkpoint the final all-m nonexistence objective remained unfinished; the next entry supersedes that status.
+## Parent contract audit — 2026-10-30
 
-## Final obstruction found during adversarial review
+The analytic theorem U6 is internally sound under its five explicit core hypotheses. A read-only mapping to the genuine T61/Q32 parent verifies |H|=47, e(H)=285, alpha(H)<=4 and omega(H)<=11.
 
-Proposed an aggregated degree inequality for D, explicitly retaining vertices that complete a K10. Verified that the five support edges are distinct clique pairs, so their forced cross-edge incidences add without double counting. The integer positive-part inequality survives every empty-set case. At least two mixed points each force five excess units, giving10>6.
+The remaining condition delta(H)>=12 is not independently certified by the current committed source set. E406_CORE_MINDEG_288.md imports CORE211; CORE211 in turn requires the R(3,35) minimum-degree seed. INTEGRATED1_CORE211_AUDIT.md explicitly records that the seed relies on an A4 23-neighbourhood / cap-two exclusion whose proof body or exact bibliographic/certificate dependency is still missing. The ASSUMPTION_LEDGER PROVED label and the partial standalone audit are in conflict.
 
-For P, first explored a more elaborate overlap-count inequality for two same-support points (65,596 finite states, minimum local cost6). This exploration is NOT needed or used in the proof or verifier. It led to the simpler mixed-pair bound: any point missing both a K10 and K11 spends at least four excess units across itself and its two missing sets. Each repeated-support pair has such a point by U3. The two clique pairs are disjoint, giving8>6. This is an analytic argument, not an exhaustive graph search.
+Added:
+- Q32_UNIVERSAL_THEOREM_INDEPENDENT_AUDIT.md;
+- Q32_PARENT_CONTRACT_MAPPING.md;
+- Q32_FULLSUPPORT_SUPERSESSION_MATRIX.md;
+- Q32_AUDIT_REPLAY_LOG.md;
+- Q32_ROOT_PROMOTION_RECEIPT.md.
 
-Added steps7-8 and theorem U6. Rechecked all eight steps, their actual hypotheses, the no-double-counting argument and zero-missing-set exceptions. Extended the independent verifier with both mixed scalar inequalities, 8,400 local D accounting cases, and all allowed completion masks. Updated the canonical state from structural progress to core nonexistence.
+Updated canonical/dependency/source/open-case state to distinguish the conditional graph theorem from parent promotion. No global root, default branch or sibling workstream was modified. The root promotion receipt is NOT ISSUED.
 
-B advanced to db515bab1a203ccae131c3953ffe2a8ecef539a6. Read its canonical/open/dependency changes: its K4-e/Z4 slice is now reported closed, with other full-support forms still open. This is provenance only and does not affect any U6 premise. Final files and execution receipts are confined to this workstream.
+## Read-only branch refresh
+
+Observed heads at the end of this audit:
+- Astra workstream: c5062fcdf5ac83ea9d0d51b9bc34a8f9f3619c0f before this audit's own commits;
+- global parent: b0459807acd4b7e386148056ddf77d7998918893;
+- A m=8/9: f78ac022d70647e9c87580bbc595c2306cfda26c;
+- B m=10: b6bfa0d2c85e22b5d480fbe6d2a5e2727192cd4f;
+- low support: 9afd7c1a59056052974f9dc78933010d10e88bba;
+- high support: 1de8a37556ba98ccbb8651f39a5192629453f0f1;
+- Q33: ca088347124f4ea7706a63129d7ed63d4e4090d7;
+- E407 V12: 0b48d1f768e3d3c1d3137e0c3ec12f1ff618bb91.
+
+No subagent or background-hourly work is claimed.
