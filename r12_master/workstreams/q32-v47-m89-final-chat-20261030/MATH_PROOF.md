@@ -312,36 +312,21 @@ So the residual is exactly t isolated K2 components, at least 30 leaves attached
 **Status: PROVED_CONDITIONAL.** It is a further structural description of F, but no contradiction with the K6-free and cross-color constraints has yet been derived.
 
 
-### 9.7 Exclusion of the entire 69/70 near-Turán layer
+### 9.7 Conditional K7 consequence of the 69/70 partition
 
-Assume H has 47 vertices, 285 edges, minimum degree at least 12, \(\alpha(H)\le4\), and \(\omega(H)\le5\). Suppose H is partitioned into eleven independent 4-sets and one independent 3-set.
+Assume H has 47 vertices, 285 edges, minimum degree at least 12, and \(\alpha(H)\le4\). If H has an \(11K_4+K_3\) partition into independent parts, the Hall matching skeleton and tight-part argument above are valid:
 
-For each pair of parts, Hall's theorem gives a perfect matching (or a matching saturating the 3-set). Their union M has
-\[
-e(M)=4\binom{11}{2}+3\cdot11=253.
-\]
-Let F=H\setminus M, so \(e(F)=32\). Each 4-part has three vertices with M-degree 11 and one with M-degree 10, hence its F-degree sum is at least \(3+2=5\). The 3-part has F-degree sum at least 3. Summing over all parts gives
-\[
-\sum_{i=1}^{11}(\rho_i-5)+(\rho_{12}-3)
-=2e(F)-58=6.
-\]
-Therefore at least five 4-parts are tight, with F-degree sum exactly five. In a tight part P the F-degree profile is exactly \((1,1,1,2)\); call its three leaves \(u_1,u_2,u_3\).
+- \(e(M)=253\), so \(e(F)=32\);
+- at least five 4-parts are tight;
+- a tight part has three vertices with total F-degree at most three;
+- at least seven other 4-parts are clean;
+- the fourth vertices of the clean parts form a K7, or an independent 5-set occurs.
 
-Each leaf has only one F-neighbor, so among the ten other 4-parts at most three contain any F-neighbor of these leaves. At least seven 4-parts Q are clean. The perfect matching M[P,Q] sends the three leaves to three distinct vertices of Q. As Q is clean, those are the leaves' only H-neighbors in Q. Its fourth vertex \(w_Q\) is therefore nonadjacent to all three leaves.
+Since \(\alpha(H)\le4\), the conclusion is \(\omega(H)\ge7\).
 
-For any two clean parts Q,R, if \(w_Qw_R\) is absent then \(\{u_1,u_2,u_3,w_Q,w_R\}\) is an independent 5-set. Since \(\alpha(H)\le4\), all seven selected \(w_Q\) must be pairwise adjacent, yielding a K7. This contradicts \(\omega(H)\le5\).
+This is a contradiction only under the **additional** clique cap \(\omega(H)\le5\). The actual EG617 Q32 core lies in \(R(4,49)\), so its registered clique cap is \(\omega(H)\le11\); K7 is allowed. Thus the 69/70 near-Turán partition theorem remains a valid structural reduction, but it does **not** imply \(e_C(H)\ge71\) for the original problem. The 37-unit ledger cannot be shifted to a 71-edge baseline.
 
-Thus every 11K4+K3 partition forces \(\alpha(H)\ge5\) or \(\omega(H)\ge7\). The registered 69/70 near-Turán theorem supplies such a partition whenever a non-target color C has \(e_C(H)\le70\), since \(\alpha(C[H])\le12\) and \(\omega(C[H])\le4\). Consequently
-\[
-\boxed{e_C(H)\ge71\quad\text{for every }c=1,\ldots,11.}
-\]
-Combining with the 37-unit gap ledger gives
-\[
-\boxed{\sum_{c=1}^{11}(e_C(H)-71)=15.}
-\]
-
-**Status: PROVED.** This removes the entire 69/70 layer for both m=8 and m=9. It does not close the 71+ source-placement cases.
-
+**Status: PROVED_CONDITIONAL structural implication.** The previous universal 71-edge floor and its use as a Q32 solver cut are withdrawn for EG617.
 
 ## 10. Analytic exclusion of every exact Type-I color
 
@@ -352,7 +337,7 @@ Every exact-129 Type-I color C has twelve disjoint monochromatic K5 factors \(B_
 - If \(x_C\in O\), then \(\sum b_i=13\) and all \(b_i\ge1\), so the profile is \((2,1^{11})\). The H-interiors of the factors partition H into eleven independent 4-sets and one independent 3-set.
 - If \(x_C\in H\), then \(\sum b_i=14\). The profile is either \((2,2,1^{10})\), giving ten independent 4-sets, two independent 3-sets and the singleton \(\{x_C\}\); or \((3,1^{11})\), giving eleven independent 4-sets, one independent 2-set and \(\{x_C\}\).
 
-The unified tight-part lemma proved in V47_TYPEI_PARTITION_OBSTRUCTION.md excludes all three partition shapes. For clarity, its matching skeletons have the following exact ledgers:
+The unified tight-part lemma proved in V47_TYPEI_PARTITION_OBSTRUCTION.md shows that each of the three partition shapes forces an independent 5-set or a clique of size at least six. For clarity, its matching skeletons have the following exact ledgers:
 
 | Shape | \(e(M)\) | \(e(F)\) | Baseline F-degree sum | Total F-degree sum | Tight 4-parts |
 |---|---:|---:|---:|---:|---:|
@@ -360,16 +345,17 @@ The unified tight-part lemma proved in V47_TYPEI_PARTITION_OBSTRUCTION.md exclud
 | \(10\cdot4+3+3+1\) | 250 | 35 | 64 | 70 | at least 4 |
 | \(11\cdot4+2+1\) | 253 | 32 | 58 | 64 | at least 5 |
 
-For each tight 4-part P, the three vertices of smallest residual degree have total F-degree at most three. At least \(r-4\ge6\) of the other \(r-1\) four-parts are clean. Their fourth vertices are pairwise adjacent, or else two of them together with the selected triple form an independent 5-set. Thus H contains either an independent 5-set or a K6, contradicting \(\alpha(H)\le4\) and \(\omega(H)\le5\).
+For each tight 4-part P, the three vertices of smallest residual degree have total F-degree at most three. At least \(r-4\ge6\) of the other \(r-1\) four-parts are clean. Their fourth vertices are pairwise adjacent, or else two of them together with the selected triple form an independent 5-set. Thus H contains either an independent 5-set or a clique of size at least six. Under the extra omega(H)<=5 cap this is a contradiction, but the actual Q32 contract permits omega(H)<=11.
 
-Therefore no exact-129 Type-I non-target color can occur on a valid Q32 core:
+Therefore the only valid conditional conclusion is:
 \[
-\boxed{\text{exact-129 Type-I color}\ \Longrightarrow\
-\text{one of three forbidden H-partitions}\ \Longrightarrow\ \bot.}
+\boxed{\text{Type-I exact-129 source}\ \Longrightarrow\
+\omega(H)\ge6\quad\text{(assuming }\alpha(H)\le4\text{).}}
 \]
+This does not contradict the actual omega(H)<=11 cap.
 
 This conclusion is conditional on the Type-I factorization for every exact color and the additional omega(H)<=5 cap. Neither dependency follows from the actual EG617 balanced-coloring/Q32 contract. Therefore this section does **not** exclude m=8 or m=9; both full-support branches remain OPEN. It does not use the 37-unit edge-gap ledger, near-Turan second-extremal theorem, pivot-pair composition, or m-specific reserve inequalities.
 
-The independent candidate verifier now reconstructs the induced partition from each exact color's twelve source K5 factors, selects Hall matchings by augmenting paths, computes F, finds a tight 4-part, and returns an explicit independent 5-set or a clique of size at least six. Its self-test exercises all three partition shapes.
+The Type-I source factorization itself is not established for every exact color under balancedness: the exact-129 source audit requires omega(C)<=5 to rule out a 12-partite complement and size-six equality profiles, while EG617 only gives omega(C)<=12. The current verifier format is therefore Type-I-only; its K6/K7 output is a permitted graph under the actual Q32 contract. The full verifier was not executed.
 
-**Status: PROVED_CONDITIONAL** on the registered Type-I factorization and Q32 core contract. The full SMT model was not run; it is no longer needed for this terminal.
+**Status: PROVED_CONDITIONAL** as a partition lemma under the augmented Type-I source and H-core assumptions. It does not close the m=8 or m=9 terminal. The SMT model is an augmented Type-I/K6-free diagnostic, not a complete EG617 encoding.
