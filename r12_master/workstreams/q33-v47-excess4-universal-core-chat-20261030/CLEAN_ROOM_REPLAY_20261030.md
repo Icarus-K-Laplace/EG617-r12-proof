@@ -41,7 +41,7 @@ The following commands were executed with Python 3 against the extracted archive
 python3 FRONTEND_LINE_A_V1/SOURCES/S31_AUDIT/inputs/five_block_v2/S31_FIVE_BLOCK_TERMINAL_CLOSURE_V2/core_audit/verify_completion.py
 python3 FRONTEND_LINE_A_V1/SOURCES/S31_AUDIT/inputs/terminal_v1/S31_TERMINAL_BLOCK_CLOSURE_V1/INPUTS/verify_completion.py
 python3 FRONTEND_LINE_A_V1/SOURCES/S31_AUDIT/verify_audit.py
-python3 Q33_SOURCE_COMPLETE_REPLAY.py --certificate FRONTEND_LINE_A_V1/SOURCES/S31_AUDIT/inputs/five_block_v2/S31_FIVE_BLOCK_TERMINAL_CLOSURE_V2/core_audit/COMPLETION_CERTIFICATE.csv
+python3 /mnt/data/q33_audit_assets/Q33_SOURCE_COMPLETE_REPLAY.py --certificate FRONTEND_LINE_A_V1/SOURCES/S31_AUDIT/inputs/five_block_v2/S31_FIVE_BLOCK_TERMINAL_CLOSURE_V2/core_audit/COMPLETION_CERTIFICATE.csv
 ~~~
 
 Observed outputs:
@@ -55,7 +55,7 @@ Observed outputs:
    - d10_coupling_rows=4;
    - strict_descent_status=PROVED_FOR_EXPLICIT_PARENT_CLASS;
    - original_K145_bridge=OPEN.
-3. Q33 source-complete replay: PASS_EXACT_ARITHMETIC_REPLAY.
+3. The conversation-uploaded Q33 source-complete replay script at /mnt/data/q33_audit_assets/Q33_SOURCE_COMPLETE_REPLAY.py: PASS_EXACT_ARITHMETIC_REPLAY. A copy of this script is retained in the isolated GitHub workstream as Q33_SOURCE_COMPLETE_REPLAY.py for subsequent replay.
    - Density caps checked: D(13)=67, D(14)=69, D(23)=132, D(24)=144, D(25)=146, D(37)=237.
    - Triangle-free shortest-cycle bounds checked: 23 -> 122, 25 -> 145, 18 -> 73.
    - R(3,35) extension charge maximum: 6.
