@@ -65,8 +65,12 @@ The latest all-color orthogonality checkpoint also updates the local solver/veri
 | `q32_fullsupport_m89_solver.py` | `6170c347dc6b6ff0ab356c742cb3535922448151` |
 | `verify_q32_fullsupport_candidate.py` | `ad47039f4c5f85880308e532a7599ef675abd4f8` |
 | `V47_SOURCE_NEAR_TURAN_SPECIAL_GADGET_LOCALIZATION.md` | `4a93e1d79cbf3142763192cfcf2a400ef07088a6` |
-| `MATH_PROOF.md` | `0773208932c98be0b21333cedc5e1d784b5f9430` |
-| `RUN_LOG.md` | `879b6dc4e8ffa671fb46ceaf542cf12d9fd0749e` |
-| `CANONICAL_STATE.md` | `b46349e789b6f21b23a6161d12e0dc494a079640` |
+| `MATH_PROOF.md` | `e1d0956d096134ccdabaaa72ee92a2e6429f7ec2` |
+| `RUN_LOG.md` | `20f78de0efc93788f3da677db584fd93d46b8b0b` |
+| `CANONICAL_STATE.md` | `ebc8f0ef088afbbb0d55794076e92189f653536a` |
 
 The new source-localization constraints are conditional on the 69/70 layer and alpha(H)<=4 / alpha(C)<=12. The solver and verifier blobs above include them. The 253-edge matching-skeleton theorem is analytic and is not yet encoded with explicit matching-choice variables. No full CSP run or SAT/UNSAT result exists.
+
+| `OPEN_CASES.md` | `9a5835555ad233192bc6fea6cfd1bfd651f97f15` |
+
+The latest mathematical append is MATH_PROOF.md §9.6, giving the exact leaf-core identity (e(F[W])=q+t-4). The matching skeleton remains analytic only; the solver was not executed.
