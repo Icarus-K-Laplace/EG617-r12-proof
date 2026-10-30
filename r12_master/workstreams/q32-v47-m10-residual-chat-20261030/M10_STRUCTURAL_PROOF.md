@@ -92,6 +92,6 @@ The exact two-aligned-column pattern with p_A=P on two columns, p_A=P tau on fou
 
 ## 10. General 4+6 K4-e, Z=4 global closure
 
-M10_K4E_Z4_GLOBAL_GRID_CLOSURE.md proves the whole K4-e, Z=4 slice impossible. It saturates Y=0, forces R=C7 or C3 dot-union C4, aligns the internal matching systems and the two residual maps, and exhausts every pair/triple-compatible residual-map cell. The full/empty map cases are eliminated by exact degree caps. The common-empty-fiber grid is eliminated by the K6-minus-matching cut lemma, the corrected 5,5,5 endpoint branch, and the outer degree cap at a size-2 fiber label, followed by a K12 contradiction.
+M10_K4E_Z4_GLOBAL_GRID_CLOSURE.md proves the whole K4-e, Z=4 slice impossible. It saturates Y=0, forces R=C7 or C3 dot-union C4, aligns the internal matching systems and the two residual maps, and exhausts every pair/triple-compatible residual-map cell. The full/empty map cases are eliminated by exact degree caps. The common-empty-fiber grid is eliminated by the K6-minus-matching cut lemma, the rowwise identity/transposition restriction from the corrected 5,5,5 theorem, two 4,5,5 switch consequences, and the exact outer degree cap, followed by a K12 contradiction.
 
 The verifier checks 168 C7 maps / 12,096 compatible map pairs / 56,448 pair-triple cell states; 288 C3+C4 maps / 29,952 compatible map pairs / 120,960 pair-triple cell states; all 930 outer-light cut shapes; and the six normalized corrected-5,5,5 endpoint cases. It is a finite local replay plus an analytic global proof, not a full Q32 solver.

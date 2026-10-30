@@ -201,6 +201,6 @@ The entire 4+6, K4-e, Z=4 cell is **CLOSED**. The proof covers:
 - every possible pair of small/outer residual clique-fiber maps;
 - every 24-cell cross matching/extra-edge grid satisfying the registered local theorems and degree constraints.
 
-The independent verifier checks the complete pair/triple necessary residual-map catalog and all six-column cut-graph shapes, together with the specific corrected 5,5,5 endpoint branch used in Section 7.2. The global grid contradiction is analytic; no full 4-by-6 SAT solver or 47-vertex Q32 SAT/UNSAT run is claimed.
+The independent verifier checks the complete pair/triple necessary residual-map catalog and all six-column cut-graph shapes, plus a normalized corrected 5,5,5 endpoint regression. The global grid contradiction is analytic: the corrected 5,5,5 theorem restricts rowwise relative matchings to identity/transpositions, while the decisive A/B switch contradiction uses two 4,5,5 switch consequences and the exact outer degree cap. No full 4-by-6 SAT solver or 47-vertex Q32 SAT/UNSAT run is claimed.
 
 The K4 small-component branch and the K4-e, Z=1,2,3 branches remain OPEN. Full-support m=10 Q32 and EG617(r=12) remain **OPEN / NOT_CERTIFIED**.
