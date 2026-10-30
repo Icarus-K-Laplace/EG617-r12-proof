@@ -51,9 +51,7 @@ The latest root branch HEAD is `b0459807acd4b7e386148056ddf77d7998918893`. Its g
 
 ## Current limitation and promotion boundary
 
-The m=8/9 full-support Q32 terminal is no longer open: the Type-I source partition obstruction proves that every exact-129 color would induce one of three impossible H-partitions. The independent verifier now replays the Hall/tight-part dichotomy.
-
-The full SMT model was not executed; no solver UNSAT result, proof log, or UNSAT_CERTIFICATE is claimed. This is an analytic closure, not a computational closure. Parent promotion still requires the root workstream to audit the imported Type-I factorization and the H-core contract as dependencies. This branch does not close E408 globally, Q33, E407, or the original Erdős r=12 theorem.
+The m=8/9 full-support Q32 terminal remains OPEN. The Type-I source partition obstruction forces a K6/K7 only under an unproved source mode; such cliques are permitted by omega(H)<=11. The full verifier is Type-I-only, and the solver adds K6-free constraints not present in EG617. Neither artifact certifies the original Q32 problem. No full SMT run or UNSAT certificate exists.
 
 15. **PROVED_CONDITIONAL** — for the 32-edge residual F of any selected 253-edge matching skeleton, if q of the 36 M-degree-11 vertices carry positive excess and t is the number of isolated K2 components, then F has 36-q leaves, a core of 11+q≤17 vertices, and exactly q+t-4 core edges; q+t≥4.
 
