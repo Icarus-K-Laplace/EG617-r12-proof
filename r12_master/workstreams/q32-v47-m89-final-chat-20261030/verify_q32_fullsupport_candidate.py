@@ -725,6 +725,34 @@ def self_test():
     malformed_errors = verify_candidate(malformed, check_alpha=False)
     assert any("must provide 12 disjoint 5-sets" in item for item in malformed_errors)
 
+    # Synthetic 47-vertex 11K4+K3 instance for the tight-part witness
+    # replay. It has 285 H-edges, minimum degree 12, and degree excess six.
+    synthetic_parts = [set(range(4 * i, 4 * i + 4)) for i in range(11)]
+    synthetic_parts.append(set(range(44, 47)))
+    synthetic_edges = set()
+    for i, j in itertools.combinations(range(11), 2):
+        for a in range(4):
+            synthetic_edges.add(edge(4 * i + a, 4 * j + a))
+    for i in range(11):
+        for a in range(3):
+            synthetic_edges.add(edge(4 * i + a, 44 + a))
+    synthetic_edges.update({
+        (0,11),(1,40),(2,7),(3,17),(3,41),(4,35),(5,22),(6,27),
+        (6,41),(7,36),(8,25),(8,39),(9,23),(9,43),(10,39),(11,37),
+        (12,39),(13,19),(14,43),(15,30),(15,32),(16,26),(18,20),(19,45),
+        (21,44),(23,28),(23,34),(24,35),(27,33),(29,42),(31,38),(31,46),
+    })
+    synthetic_degree = Counter(v for e in synthetic_edges for v in e)
+    assert len(synthetic_edges) == 285
+    assert min(synthetic_degree[v] for v in H) >= 12
+    assert sum(synthetic_degree[v] - 12 for v in H) == 6
+    witness = low_layer_obstruction_witness(synthetic_edges, synthetic_parts)
+    assert witness[0] in ("independent5", "clique7"), witness
+    if witness[0] == "independent5":
+        assert all(edge(u, v) not in synthetic_edges for u, v in pairs(witness[1]))
+    else:
+        assert all(edge(u, v) in synthetic_edges for u, v in pairs(witness[1]))
+
     # Exact registered global color-count vectors all partition K_61.
     expected8 = {0: 408, **{c: 129 for c in range(1, 9)},
                  9: 130, 10: 130, 11: 130}
