@@ -50,21 +50,34 @@ def matching_union_minima():
 
 
 def verify_matching_composition():
-    """Exhaust all 24^2*4 local cases of the light-pair composition lemma.
+    """Exhaustively build the local 12-vertex obstruction for every f,g,u.
 
-    Let A,B,C be independent 4-sets.  If A-B and A-C are perfect matchings
-    f,g, then for u in A, v=f(u), w=g(u), every a in A\\{u} is nonadjacent
-    to both v and w.  If vw were absent, A\\{u} union {v,w} would be an
-    independent 5-set.  Thus vw is forced.
+    A,B,C are independent 4-sets. Put the perfect matching f between A,B
+    and g between A,C. For u in A, delete only the composed edge
+    f(u)g(u) from the complete B-C bipartite graph. Then
+    (A\\{u}) union {f(u),g(u)} is an independent 5-set.
     """
     all_matchings = list(permutations(range(4)))
     checked = 0
     for f in all_matchings:
         for g in all_matchings:
             for u in range(4):
-                v, w = f[u], g[u]
-                assert all(f[a] != v for a in range(4) if a != u)
-                assert all(g[a] != w for a in range(4) if a != u)
+                # Vertex labels: A=0..3, B=4..7, C=8..11.
+                adj = [set() for _ in range(12)]
+                for a in range(4):
+                    b, c = 4 + f[a], 8 + g[a]
+                    adj[a].add(b); adj[b].add(a)
+                    adj[a].add(c); adj[c].add(a)
+                missing_b, missing_c = 4 + f[u], 8 + g[u]
+                for b in range(4, 8):
+                    for c in range(8, 12):
+                        if (b, c) != (missing_b, missing_c):
+                            adj[b].add(c); adj[c].add(b)
+                independent = set(range(4)) - {u}
+                independent |= {missing_b, missing_c}
+                assert len(independent) == 5
+                assert all(v not in adj[w]
+                           for w, v in combinations(sorted(independent), 2))
                 checked += 1
     return checked
 
@@ -127,7 +140,7 @@ def main():
         "status": "LOCAL_CHECKS_PASS_NOT_FULL_CSP",
         "scalar_frontier": scalar,
         "mu4_distinct_matchings": matching_union_minima(),
-        "matching_composition_cases": verify_matching_composition(),
+        "matching_composition_local_obstruction_cases": verify_matching_composition(),
         "source_profiles": verify_source_profiles(),
         "color_vectors": verify_color_vectors(),
     }
