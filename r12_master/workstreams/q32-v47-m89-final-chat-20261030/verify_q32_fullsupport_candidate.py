@@ -284,6 +284,67 @@ def verify_candidate(data, check_alpha=True, check_omega=True):
                 if len(w1 & w2) > 1:
                     fail(f"cross-color witness blocks {c1}:{i} and {c2}:{j} intersect in >=2 vertices")
 
+    # Independent replay of the source-correct 69--75 exact-color core layer.
+    for c in exact_colors:
+        src = sources[c]
+        x, a = int(src["x"]), len(set(map(int, src["A0"])))
+        outside_counts = [len(set(map(int, block)) & set(O))
+                          for block in src["components"]]
+        e_core = core_counts[c]
+        if x in O:
+            if not (69 <= e_core <= 69 + a):
+                fail(f"color {c}: x in O requires 69<=e_C(H)<=69+a={69+a}, got {e_core}")
+        elif 3 in outside_counts:
+            if not (max(69, 73 - a) <= e_core <= 75):
+                fail(f"color {c}: triple profile requires max(69,73-a)<=e_C(H)<=75, got {e_core}")
+        else:
+            if not (max(69, 72 - a) <= e_core <= 74):
+                fail(f"color {c}: two-double profile requires max(69,72-a)<=e_C(H)<=74, got {e_core}")
+
+        # If e_C(H)<=70, Brouwer/Kang--Pikhurko forces a 12-partition
+        # of H into eleven C-cliques of order four and one of order three.
+        # Every source single-outside K4 is one of the size-four parts.
+        if e_core <= 70:
+            witnesses = [set(w) for w in witnesses_by_color[c]]
+            if len(witnesses) not in (10, 11):
+                fail(f"color {c}: low layer has {len(witnesses)} witness K4s, expected 10 or 11")
+                continue
+            used = set().union(*witnesses)
+            remaining = set(H) - used
+
+            def is_color_clique(block):
+                return all(colors[edge(u, v)] == c for u, v in pairs(sorted(block)))
+
+            parts = None
+            if len(witnesses) == 11:
+                if len(remaining) == 3 and is_color_clique(remaining):
+                    parts = witnesses + [remaining]
+            elif len(remaining) == 7:
+                for four in itertools.combinations(sorted(remaining), 4):
+                    four = set(four)
+                    three = remaining - four
+                    if is_color_clique(four) and is_color_clique(three):
+                        parts = witnesses + [four, three]
+                        break
+            if parts is None:
+                fail(f"color {c}: no 11K4+K3 near-Turan partition extending its source witnesses")
+                continue
+            if sorted(map(len, parts)) != [3] + [4] * 11 or set().union(*parts) != set(H):
+                fail(f"color {c}: malformed 11K4+K3 partition")
+                continue
+            part_of = {}
+            for i, block in enumerate(parts):
+                for v in block:
+                    part_of[v] = i
+                if not is_color_clique(block):
+                    fail(f"color {c}: near-Turan part {i} is not a color-C clique")
+            cross_edges = sum(
+                colors[edge(u, v)] == c and part_of[u] != part_of[v]
+                for u, v in pairs(H)
+            )
+            if cross_edges != e_core - 69:
+                fail(f"color {c}: near-Turan cross-edge count {cross_edges}, expected {e_core-69}")
+
     for v in H:
         covered = False
         for c in exact_colors:
