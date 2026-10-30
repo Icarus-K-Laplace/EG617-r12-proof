@@ -55,7 +55,7 @@ For completeness:
 - a=1 gives at least 7;
 - a=2 gives at least 6;
 - a>=3,b=1 gives at least 6;
-- a>=3,b>=2 gives at least 6 (the minimum of the last two terms is 5 at (3,2), where the first term is 4).
+- if a>=3,b>=2, the last two terms have minimum 5, attained only at (a,b)=(3,2), where the first term is 4; at every other pair those last two terms are at least 8. Thus the full expression is at least 6.
 
 Thus no a_i can be positive. All three z_i would have to be complete to K0. This contradicts the theorem that at most one external vertex can be complete to a K10.
 
