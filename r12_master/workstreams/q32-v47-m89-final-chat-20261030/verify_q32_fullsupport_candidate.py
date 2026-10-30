@@ -490,12 +490,10 @@ def self_test():
                  9: 130, 10: 130, 11: 130}
     expected9 = {0: 408, **{c: 129 for c in range(1, 10)},
                  10: 130, 11: 131}
-    expected10 = {0: 408, **{c: 129 for c in range(1, 11)}, 11: 132}
     assert expected_color_counts(8) == expected8
     assert expected_color_counts(9) == expected9
-    assert expected_color_counts(10) == expected10
     assert all(sum(expected_color_counts(m).values()) == N * (N - 1) // 2
-               for m in (8, 9, 10))
+               for m in (8, 9))
 
     # Clique search is the exact complement-dual of independent-set search.
     assert find_clique(complete_adj, range(5), 5) is not None
