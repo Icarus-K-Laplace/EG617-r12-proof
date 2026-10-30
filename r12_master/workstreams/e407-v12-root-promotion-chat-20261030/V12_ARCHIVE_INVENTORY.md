@@ -43,3 +43,10 @@ The archive was recovered from Library; it is not present as a raw file in the i
 | `T61_H13_V12/verify_q32_certificate.py` | 9,773 |
 
 The package contains the certificate, screen, kernel case table, input copies, source manifest, original generator, original verifier, screen program, analytic notes, and SHA256 manifest. See `V12_HASH_AUDIT.md` for per-file hashes and source-copy checks.
+
+
+## Duplicate and V11 provenance recheck
+
+The canonical Library file /T61_H13_V12.zip (file ID file_00000000fa1881f4bfbef443ae0fe03d) and duplicate paths /T61_H13_V12(1).zip (file ID file_00000000fb708211927e41bf90bd1b08) and /T61_H13_V12(2).zip (file ID file_00000000bbe882079e6f1608dd8de985) are all 190,249 bytes, byte-identical, and share the archive SHA-256 above.
+
+The V11 source archive is /T61_H13_V11.zip (file ID file_00000000bd708243a192cac79752b2a3), 62,298 bytes, SHA-256 27ecec92d43a27fb132c60aa7b374131a860547c236d8ed3d83d3cf0eab9f0a4. Its 22/22 SHA256SUMS entries pass. The five V12 files marked CONDITIONAL in INPUT_SOURCE_HASHES.json were each byte-compared with their mapped V11 source files; all five comparisons pass.
