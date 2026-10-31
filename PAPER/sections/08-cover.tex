@@ -8,7 +8,7 @@ Let $F$ be a graph satisfying
 |V(F)|=61,\quad \delta(F)=13,\quad
 \alpha(F)\leq5,\quad\omega(F)\leq11,
 \]
-and all hereditary caps $e(F[U])\leq D(|U|)$. Let $E=e(F)$ be $407$ or $408$. A \emph{regular vertex} means a vertex of degree exactly $13$ in $F$. For a regular pivot $p$, put
+and all hereditary caps $e(F[U])\leq D(|U|)$. Let $E=e(F)\leq408$. A \emph{regular vertex} means a vertex of degree exactly $13$ in $F$. For a regular pivot $p$, put
 \[
 A=N_F(p),\qquad C=F-N_F[p],\qquad M=\overline{F[A]}.
 \]
@@ -23,7 +23,7 @@ Let $Q=\max q_p$, where the maximum is over all regular vertices of the same fix
 \label{thm:COVER}
 Under the preceding contract,
 \[
-E=407\Longrightarrow Q\geq30,\qquad
+Q\geq30,\qquad
 E=408\Longrightarrow Q\geq31.
 \]
 \end{theorem}
@@ -232,7 +232,7 @@ t_a+t_b\geq13.
 
 \subsection{Promotion when Q is at most 29}
 
-Assume $Q\leq29$ and choose a maximizing regular pivot $p$. By \cref{eq:Q29}, we have $Q=q_p=29$. The exact charge identity gives $e(C)=E-91-29\in\{287,288\}$, so $G\leq7$, \cref{eq:core288} and \cref{eq:EDGE13} apply, and $M$ is $K_4$-free. We claim that some regular shell vertex has missing degree between $3$ and $10$.
+Assume $Q\leq29$ and choose a maximizing regular pivot $p$. By \cref{eq:Q29}, we have $Q=q_p=29$. Since $E\leq408$, the exact charge identity gives $e(C)=E-91-29\leq288$, so $G\leq7$, \cref{eq:core288} and \cref{eq:EDGE13} apply, and $M$ is $K_4$-free. We claim that some regular shell vertex has missing degree between $3$ and $10$.
 
 If not, put $X=\{a\in A:t_a\geq11\}$. By \cref{eq:charge-subset}, three such vertices would give $q_p\geq33-3=30$, so $|X|\leq2$. Every regular vertex outside $X$ has missing degree at most two, and \cref{eq:EDGE13} prevents an edge between two such vertices. Thus every edge outside $X$ has a decorated endpoint.
 
@@ -242,7 +242,7 @@ Thus a regular middle-degree vertex $y$ exists. The old core has minimum degree 
 \[
 q_y\geq d(13-d)\geq30.
 \]
-In the $E=407,Q=29$ case the original maximizing pivot has a $287$-edge core; in the $E=408,Q=29$ case it has a $288$-edge core. The promotion contradicts maximality in either case. Hence the $E=407$ conclusion of \cref{thm:COVER} follows. For $E=408$, the same argument reduces the only possible failure of the theorem to $Q=30$.
+The promotion gives a regular pivot of charge at least $30$, contradicting maximality. Thus $Q\geq30$ whenever $E\leq408$. For $E=408$, the only remaining case to exclude is $Q=30$.
 
 \subsection{The complete Q=30 shell classification at E=408}
 
