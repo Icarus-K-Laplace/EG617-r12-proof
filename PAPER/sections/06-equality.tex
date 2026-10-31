@@ -131,7 +131,30 @@ For $h=4$, consider first $\{01,01,023,23\}$. The incidence counts are $(d_0,d_1
 
 For $\{01,012,03,23\}$, the pair $01$ must complete $K_0$, since otherwise its cost four is disjoint from the six-unit $23$ blocker. If $03$ also completes $K_0$, the two completing points cost at least seven, disjoint from the $23$ charge. Otherwise $03$ has positive missing sets; its missing vertices in $K_0$ have an additional neighbor at the completing $01$ point, so \eqref{eq:mixed-diamond} gives a five-unit charge. Shared-leaf accounting on $K_3$ makes this additive to the $23$ blocker, again exceeding eight.
 
-For the star pattern $\{01,02,03,123\}$, \eqref{eq:star-three} is additive at $K_0$ because the three leaf cliques are distinct. At most one pair point can have a positive missing set in $K_0$. If one does, it costs at least six and the other two completing points cost at least seven on disjoint vertices. If none does, all three complete $K_0$ and are pairwise nonadjacent; each pair has combined excess at least seven, so the total excess is at least eleven.
+For the star pattern $\{01,02,03,123\}$, write $x_i$ for the point supported on $\{0,i\}$, and put
+\[
+A_i=K_0\setminus N(x_i),\quad B_i=K_i\setminus N(x_i),\quad
+a_i=|A_i|,\quad b_i=|B_i| \qquad (i=1,2,3).
+\]
+Each $b_i\geq1$, since $K_i$ is a $K_{11}$ and $x_i$ cannot complete it. The blocker property gives every edge between $A_i$ and $B_i$. For $v\in K_0$, let $S(v)=\{i:v\in A_i\}$. It has nine neighbors inside $K_0$, is adjacent to the $3-|S(v)|$ points $x_i$ for which $v\notin A_i$, and is adjacent to every $B_i$ with $i\in S(v)$. The sets $B_i$ lie in distinct leaf cliques. Consequently
+\[
+d(v)\geq9+3-|S(v)|+\sum_{i\in S(v)}b_i
+=12+\sum_{i\in S(v)}(b_i-1).
+\]
+Summing over $K_0$ yields
+\[
+\sum_{v\in K_0}\epsilon(v)\geq\sum_{i=1}^3a_i(b_i-1).
+\]
+Also $d(x_i)\geq21-a_i-b_i$, while every vertex of $B_i$ has at least $10+a_i$ neighbors. These vertex sets are disjoint across the three types of charges, so
+\[
+T\geq\sum_{i=1}^3
+\left[
+\max(0,9-a_i-b_i)+a_i(b_i-1)+b_i\max(0,a_i-2)
+\right].
+\]
+For positive integers $a,b$, the summand is at least six: if $a=1$ it is at least seven; if $a=2$ it is at least six; if $a\geq3,b=1$ it is at least six; and if $a\geq3,b\geq2$, then $a(b-1)\geq a$ and $b(a-2)\geq b$, making the summand at least nine. Thus two or more nonempty $A_i$ would force $T\geq12$, impossible. This proves that at most one pair point can have a positive missing set in $K_0$.
+
+If exactly one $A_i$ is nonempty, its summand costs at least six. The other two points complete $K_0$; they must be nonadjacent, and their ten common neighbors in $K_0$ force their combined excess to be at least seven by \eqref{eq:common-excess-8}. These two point charges are disjoint from the six-unit charge above, so $T\geq13$. If no $A_i$ is nonempty, all three points complete $K_0$ and are pairwise nonadjacent. Each pair has combined excess at least seven; summing the three pair inequalities gives total excess at least eleven. All cases contradict $T=8$.
 
 For $h=5$ with clique sizes $(9,11,11,11)$, the supports are $\{01,01,02,03,23\}$. The $K_{11}$ pair $23$ costs six, leaving at most two units on $K_0,K_1$ and the doubled $01$ points. The small-budget double-pair lemma below forces both $01$ points to complete $K_0$. For $02$ and $03$, shared-leaf accounting on $K_0$ combines their charges with the $23$ blocker. If either $02$ or $03$ has a positive missing set in $K_0$, \eqref{eq:two-mixed-K9} gives at least five additional units beyond the six-unit $23$ blocker, impossible. Thus all four star points complete $K_9$. The $K_{11}$ pair $23$ has already consumed at least six excess units, so the four star points have total excess at most two. If two star points were nonadjacent, their nine common neighbors in $K_9$ would violate \eqref{eq:common-excess-8}, which gives at most $3+2=5$. They are therefore pairwise adjacent and, together with $K_9$, form a $K_{13}$.
 
