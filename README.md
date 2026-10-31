@@ -24,6 +24,7 @@ This proves the fixed $r=12$ case of the Erdős–Gyárfás balanced-coloring co
 4. **Precise theorem status:** [PUBLICATION/PROOF_STATUS.md](PUBLICATION/PROOF_STATUS.md)
 5. **Reproducibility:** [PUBLICATION/REPRODUCIBILITY.md](PUBLICATION/REPRODUCIBILITY.md)
 6. **Public-release checklist:** [PUBLICATION/RELEASE_CHECKLIST.md](PUBLICATION/RELEASE_CHECKLIST.md)
+7. **Preliminary security scan:** [PUBLICATION/PRELIMINARY_SECURITY_SCAN.md](PUBLICATION/PRELIMINARY_SECURITY_SCAN.md)
 7. **Manuscript draft:** [PAPER/main.tex](PAPER/main.tex) and [PAPER/README.md](PAPER/README.md)
 8. **Manuscript source map:** [PAPER/PROOF_SOURCE_MAP.md](PAPER/PROOF_SOURCE_MAP.md)
 
