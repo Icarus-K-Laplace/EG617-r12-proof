@@ -19,7 +19,7 @@ This repository contains the fixed-(r=12) proof package, independent audit, hist
 
 - Integrated proof: branch `workstream/r12-astra-global-root-integration-20261031`, commit `c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2`.
 - Independent certification: branch `workstream/r12-final-certification-chat-20261031`, commit `09a88cc4fe1e2cf1f3a87475d6484f681910b23e`.
-- Certification PR: #1, open draft; not merged.
+- Certification PR: #1, open for human review; not merged.
 - Q30 independent report: branch `workstream/r12-final-two-bottleneck-review-20261031`, commit `a0f922ad09af99575bae581864b673aa4d41f00d`.
 
 The integrated proof directory contains `FINAL_GLOBAL_PROOF.md`, the 25-node proof DAG, theorem ledger, source manifest, frozen theorem files, frontend replay, verifier and checksums. The certification directory contains the final report, 58-row obligation matrix, independent replay program/results, gap register and root-promotion recommendation.
