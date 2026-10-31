@@ -1,6 +1,6 @@
 # Public-release checklist
 
-This repository is currently private. This checklist is a gate before changing visibility or announcing a public release.
+This repository is currently private. This checklist is a gate before changing visibility or announcing a public release. A preliminary default-branch-only search found no matches for four common credential patterns; see [PRELIMINARY_SECURITY_SCAN.md](PRELIMINARY_SECURITY_SCAN.md). A full-history, all-refs scan is still required.
 
 ## Security and privacy
 
@@ -21,6 +21,15 @@ This repository is currently private. This checklist is a gate before changing v
 - [ ] Verify all external theorem citations and bibliographic metadata.
 - [ ] Finalize human author list, affiliations, contributions and corresponding-author details.
 - [ ] Obtain approval from any human contributor whose material is included.
+
+## Completed preparation
+
+- [x] Repository visibility confirmed Private.
+- [x] Main README and canonical status synchronized with the pinned fixed-r12 proof.
+- [x] All 44 branch names and HEADs captured in the workstream index.
+- [x] Documentation/manuscript-preparation PR #2 merged into main.
+- [x] Certification PR #1 opened for human review.
+- [x] Preliminary default-branch credential-pattern search recorded.
 
 ## GitHub release steps
 
