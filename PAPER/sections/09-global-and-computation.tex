@@ -1,0 +1,47 @@
+\section{Completion of the $K_{145}$ proof and computational verification}
+\label{sec:global}
+
+\subsection{The terminal contradiction}
+
+We now combine the frontend reduction with the two terminal theorems.
+
+\begin{theorem}[No balanced twelve-coloring of $K_{145}$]
+\label{thm:global}
+Every edge-coloring of $K_{145}$ with twelve colors has a $13$-vertex set whose induced edges omit at least one color.
+\end{theorem}
+
+\begin{proof}
+Suppose that a balanced twelve-coloring exists. By \cref{sec:frontend}, it produces an induced graph $F$ satisfying the $61$-vertex contract \eqref{eq:T61-contract}, with
+\[
+397\leq E=e(F)\leq408,\qquad \delta(F)\in\{12,13\}.
+\]
+The case $\delta(F)=12$ is excluded by \cref{prop:h12-empty}. The contextual $R(4,49)$ argument excludes minimum degree at most $11$, and the handshake lemma excludes minimum degree at least $14$, as recorded after \cref{prop:h12-empty}. Thus only $\delta(F)=13$ remains.
+
+For every regular pivot $p$, the $47$-vertex core $C_p=F-N_F[p]$ belongs to $\mathcal R(4,47)$. By \cref{cor:floor47}, $e(C_p)\geq287$. The exact charge identity \eqref{eq:charge-energy} gives, for every regular pivot,
+\[
+q_p=E-91-e(C_p)\leq E-378.
+\]
+If $E\leq406$, then $Q\leq28$, contradicting \cref{eq:Q29}. If $E=407$, then $Q\leq29$, contradicting the $E=407$ conclusion of \cref{thm:COVER}. If $E=408$, then $Q\leq30$, contradicting the $E=408$ conclusion of \cref{thm:COVER}. All possible energies are excluded, a contradiction.
+\end{proof}
+
+\subsection{Finite verification and trust boundary}
+
+The proof has an analytic layer and a finite-computational layer. The analytic layer proves the graph-to-state reductions, exact edge and degree identities, the completeness of the recurrence rules, and the exhaustiveness of the support classifications. The finite computations then check bounded integer domains and replay the resulting certificates.
+
+For the frozen integration snapshot, the independent certification package records $58$ obligations: $55$ analytic or external-theorem obligations and three finite-computational obligations. The reported finite checks include:
+\begin{itemize}
+\item three recurrence implementations agreeing on all $1,752$ nodes and all $144$ outer-stop comparisons;
+\item the unique frontend survivor $(d,j,a,n)=(11,6,5,61)$ with lower bound $397$ and budget $408$;
+\item $19,448$ row-multiplicity vectors for each of the $q=27$ and $q=28$ bipartite shell channels, yielding exactly two and eight canonical states;
+\item $81,920$ subset identities checked across the retained shell states;
+\item $312$ repivot-algebra instances, the five charge-$20$ equality families, and the $47$-vertex support-orbit checks.
+\end{itemize}
+
+The finite verification does not search all $61$-vertex graphs. In particular, the final root verifier does not rerun the original $284$-, $285$-, or $286$-edge graph searches, nor does it rerun the full COVER shell enumeration. The completeness of those finite classifications rests on the explicit analytic graph-to-state reductions, inspected loop bounds, and authenticated frozen outputs. The independent replay separately reconstructs the $q=27,28$ state spaces and their subset identities. These distinctions are part of the theorem's reproducibility record.
+
+The integration verifier is ordinary Python and authenticates frozen source bytes, recomputes the contextual recurrence, checks retained arithmetic identities, and records a machine-readable result. The independent certification is an AI-assisted informal mathematical audit; it is not Lean, Coq, or another proof-assistant certificate, and it is not external human peer review. The complete scripts, outputs, dependency DAG, source manifest, and checksums are retained in the repository's frozen proof and certification workstreams.
+
+\subsection{Limitations and further directions}
+
+The theorem is the fixed $r=12$ case only. The general Erd\H{o}s--Gy\'arf\'as conjecture for arbitrary $r$ remains open. The abstract uncolored high-energy $R(4,49)$ problem is also not claimed solved; the proof avoids that problem by using the other eleven color classes to rule out a contextual $49$-vertex residual. A Lean 4/Mathlib formalization and external specialist review remain future work.
+
