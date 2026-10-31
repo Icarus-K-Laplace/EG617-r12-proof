@@ -5,7 +5,9 @@ on:
     branches:
       - workstream/r12-paper-full-manuscript-20261031
     paths:
-      - "PAPER/**"
+      - "PAPER/**/*.tex"
+      - "PAPER/references.bib"
+      - "PAPER/main.tex"
       - ".github/workflows/paper-build.yml"
   workflow_dispatch:
 
