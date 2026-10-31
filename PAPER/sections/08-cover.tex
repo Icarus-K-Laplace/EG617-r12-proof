@@ -264,7 +264,19 @@ with hub weights $10$, hub decorations $10-k$, and all ten low vertices regular.
 
 For $d=10$, the ten inserted weights sum to $30$ and each is at least $3$ by \cref{eq:EDGE13}; hence all are $3$. Every active point on the three-side then has degree $10$ by \cref{eq:EDGE13}. Since $z\geq22$, all three are active, giving the $k=10$ instance of Family I.
 
-Suppose instead that no regular shell vertex has missing degree $3$ through $10$. First $M$ is $K_4$-free. If it contained a $K_4$, equality in the $36-6$ charge bound would force all nine outside points to be independent and regular, and the four hub weights to sum to $36$. Each weight is at most $12$ by the triangle-row inequalities. Since $z\geq22$, an outside vertex $y$ of missing degree two exists. Its two missing neighbors are adjacent in $M$, so \cref{eq:repivot-q} gives $q_y\geq53-t(S)\geq29$. Its new core has at most $288$ edges and minimum degree at least $12$. The two inserted vertices then have degrees at most their old weights, forcing both weights to be at least $12$; the other two vertices of the $K_4$ have total weight at most $12$, contrary to \cref{eq:EDGE13}.
+Suppose instead that no regular shell vertex has missing degree $3$ through $10$. First $M$ is $K_4$-free. If it contained a $K_4$ on a set $S_0$, then its six internal edges and the row-union bound $t(S_0)\geq36$ would already contribute $30$ to the charge. Equality forces $t(S_0)=36$, with all nine outside points independent and regular. For each $a\in S_0$, the other three points form a missing triangle and have row union at least $24$, so $t_a\leq12$.
+
+Since $z\geq22$, there are at least $16$ cross edges from the nine outside points to $S_0$. As $M$ is $K_4$-free, each outside point has at most two such neighbors; hence some outside point $y$ has exactly two, say $N_M(y)=\{a,b\}\subset S_0$. Put $S_0\setminus\{a,b\}=\{c,d\}$ and let $s_u$ count the neighbors of $u\in S_0$ among the nine outside points. The vertices $a,b$ are adjacent in $M$. Since all outside points are independent and regular,
+\[
+\rho=1+s_c+s_d+g_c+g_d.
+\]
+Also $z=6+s_a+s_b+s_c+s_d$ and $z+\sum_{u\in S_0}g_u=30$. The exact repivot identity therefore gives
+\[
+q_y=22+\rho+h_{12}+\kappa+b
+=53-(t_a+t_b)+h_{12}+\kappa+b
+\geq53-(t_a+t_b)\geq29,
+\]
+where $t_u=3+s_u+g_u$ and $t_a,t_b\leq12$. Its new core has at most $288$ edges, hence minimum degree at least $12$. Each inserted vertex has degree at most its old row weight $t_a$ or $t_b$, so both weights must equal $12$. But then $t_c+t_d=36-24=12$, contradicting \cref{eq:EDGE13} for the missing edge $cd$.
 
 Put $X=\{a:t_a\geq11\}$. Then $|X|\leq3$, and all edges outside $X$ have decorated endpoints.
 \begin{itemize}
