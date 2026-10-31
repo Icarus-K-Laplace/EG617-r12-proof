@@ -1,0 +1,170 @@
+\section{The $286$-edge equality obstruction}
+\label{sec:equality}
+
+\begin{theorem}[The $286$-edge boundary]
+\label{thm:E286}
+There is no simple graph $H$ satisfying
+\[
+|V(H)|=47,\quad e(H)=286,\quad
+\delta(H)\geq12,\quad\alpha(H)\leq4,\quad\omega(H)\leq11.
+\]
+\end{theorem}
+
+\begin{proof}
+Put $\epsilon(v)=d_H(v)-12\geq0$. Then
+\[
+T=\sum_v\epsilon(v)=2e(H)-564=8.
+\]
+At most eight vertices have positive excess. If the remaining $47-q$ degree-$12$ vertices had independence number at most $3$, the same incidence count as in \cref{thm:low-edge} would give
+\[
+e(H)\geq\tau_3(47-q)+12q+8-\binom q2>286
+\]
+for every $1\leq q\leq8$ (the minimum of these lower bounds is $310$). Hence there is an independent degree-$12$ four-set $I=\{s_0,s_1,s_2,s_3\}$. The private-neighbor construction from \cref{thm:low-edge} gives four cliques $K_i$ and an exceptional set $Z$ with $3\leq h=|Z|\leq5$, $\sum_i d_i=h+5$, and clique-size patterns
+\[
+11,11,11,11;\quad 10,11,11,11;\quad
+9,11,11,11;\quad 10,10,11,11.
+\]
+The support multisets, up to relabeling, are exactly
+\[
+\begin{array}{c|c|l}
+h&\text{clique sizes}&\text{support multiset}\\ \hline
+3&11,11,11,11&
+\{0123,01,23\},\ \{01,023,123\}\\
+4&10,11,11,11&
+\{01,01,023,23\},\
+\{01,012,03,23\},\
+\{01,02,03,123\}\\
+5&9,11,11,11&
+\{01,01,02,03,23\}\\
+5&10,10,11,11&
+P=\{01,02,02,13,13\},\\
+&&D=\{01,02,03,12,13\},\\
+&&B=\{01,01,02,13,23\},\\
+&&C=\{01,01,01,23,23\}.
+\end{array}
+\]
+There are ten support orbits in total.
+
+\subsection*{Common-neighborhood capacity at total excess eight}
+
+For a nonedge $uv$, write $c(u,v)=|N(u)\cap N(v)|$. The common antineighborhood has size
+\[
+21+c(u,v)-\epsilon(u)-\epsilon(v).
+\]
+A $25$-set with independence number at most $2$ would have at least $155$ target edges, by the $n=25,r=2$ second-Tur\'an bound from Kang--Pikhurko, whereas the degree sum gives at most
+\[
+\frac{25\cdot12+8}{2}=154.
+\]
+Thus no such $25$-set exists, and
+\begin{equation}
+uv\notin E(H)\quad\Longrightarrow\quad
+c(u,v)\leq3+\epsilon(u)+\epsilon(v)\leq11.
+\label{eq:common-excess-8}
+\end{equation}
+The final bound $11$, not the stronger bound $9$ available at total excess six, is the one used here. Two exterior vertices completing the same $K_{10}$ must be nonadjacent (otherwise they create a $K_{12}$), so their combined excess is at least $7$ by \eqref{eq:common-excess-8}. Two nonadjacent vertices completing a $K_9$ similarly require combined excess at least $6$.
+
+\subsection*{Blockers and scalar inequalities}
+
+If $z\in Z$ has support exactly $\{i,j\}$, let
+\[
+A=K_i\setminus N(z),\quad B=K_j\setminus N(z),\quad
+a=|A|,\quad b=|B|.
+\]
+Every $A$--$B$ pair is an edge, since otherwise its endpoints, $z$, and the other two seeds form an independent five-set.
+
+The following scalar inequalities are obtained by charging the support point and the two missing cliques. For positive integers $a,b$:
+\begin{align}
+f_{11}(a,b)&=
+\max(0,10-a-b)+a\max(0,b-2)+b\max(0,a-2)\geq6,\label{eq:f11}\\
+f_{10,11}(a,b)&=
+\max(0,9-a-b)+a\max(0,b-3)+b\max(0,a-2)\geq4,\label{eq:f1011}\\
+f_{9,11}(a,b)&=
+\max(0,8-a-b)+a\max(0,b-4)+b\max(0,a-2)\geq2,\label{eq:f911}\\
+f_{10,10}(a,b)&=
+\max(0,8-a-b)+a\max(0,b-3)+b\max(0,a-3)\geq2.\label{eq:f1010}
+\end{align}
+The last three minima are unique at $(2,3)$, $(2,4)$, and $(3,3)$, respectively, and all excess at equality lies on the support point. These inequalities follow by splitting according to whether each variable is below or above its corresponding threshold.
+
+If $f_{11}(a,b)\leq8$, then $\min(a,b)\leq2$, and if one side has size $2$ the other has size at most $4$. The support point and the smaller-missing-side clique alone carry at least
+\begin{equation}
+\max(0,10-a-b)+a\max(0,b-2)\geq6
+\label{eq:small-side-six}
+\end{equation}
+units of excess (after ordering the sides appropriately). This concentrated charge is useful even when other blockers share vertices.
+
+We also need three simultaneous-incidence bounds. For three star pairs on a $K_{10}$ and three distinct $K_{11}$ leaves,
+\begin{equation}
+\max(0,9-a-b)+a(b-1)+b\max(0,a-2)\geq6.
+\label{eq:star-three}
+\end{equation}
+For two mixed pairs on a $K_9$, when two other points complete that $K_9$,
+\begin{equation}
+\max(0,8-a-b)+a(b-1)+b\max(0,a-2)\geq5.
+\label{eq:two-mixed-K9}
+\end{equation}
+For a mixed $K_{10}$--$K_{11}$ pair with one additional vertex completing its $K_{10}$, or in the corresponding diamond accounting,
+\begin{equation}
+\max(0,9-a-b)+a\max(0,b-2)+b\max(0,a-2)\geq5.
+\label{eq:mixed-diamond}
+\end{equation}
+The inequalities follow by separating the cases $a=1$, $b=1$, and $a,b\geq2$; the equality minima are as recorded in the displayed bounds.
+
+\paragraph{Shared-leaf accounting.}
+If a $K_{11}$ meets two support points whose opposite missing sets lie in different cliques and have sizes $a,b\geq0$, then at a vertex missing one or both points the internal ten neighbors and the two support adjacencies give baseline degree $12$. The forced neighbors in the two opposite cliques are disjoint. The additional excess is therefore at least the corresponding sum of $\max(0,a-2)$ and $\max(0,b-2)$ terms. The elementary inequality
+\[
+\max(0,(a-1)+(b-1))
+\geq\max(0,a-2)+\max(0,b-2)
+\]
+shows that the two charges may be added without counting a vertex's excess twice.
+
+\subsection*{A triple supported on three $K_{11}$s}
+
+Suppose a point $z$ is supported on three $K_{11}$s and the total excess on $z$ and those three cliques is at most $2$. Let the three nonempty missing sets have sizes $a\leq b\leq c\leq10$. Since $d(z)\geq12$, their total size is at least $33-12=21$; allowing for the seed incidence gives the weaker bound $a+b+c\geq19$, which suffices. Hence $b\geq5$ and $b+c\geq13$.
+
+Every vertex in these cliques has at most four neighbors outside its own clique, since its excess is at most two. Choose $x$ in the smallest missing set. After deleting its neighbors from the other two missing sets, both remaining parts are nonempty and their total size is at least $b+c-4\geq9$. They must be complete to each other, since otherwise $x$ and a nonadjacent pair extend with $z$ and the fourth seed to an independent five-set. One remaining part has size at least five, forcing a vertex in the other part to have at least five external neighbors, a contradiction. Thus the local excess on the triple and its three cliques is at least three.
+
+\subsection*{Eliminating the support orbits}
+
+For $h=3$, the support pattern $\{0123,01,23\}$ has two disjoint $K_{11}$ pair blockers and costs at least $12$. In the pattern $\{01,023,123\}$, the pair $01$ costs at least six by \eqref{eq:small-side-six}; the triple on $K_1,K_2,K_3$ costs at least three by the preceding paragraph, on disjoint vertices. Thus $T\geq9>8$.
+
+For $h=4$, consider first $\{01,01,023,23\}$. The $K_{11}$ pair $23$ costs six. If either $01$ point misses both supported cliques, its disjoint mixed blocker costs at least four; otherwise both $01$ points complete $K_0$, and their combined excess is at least seven by \eqref{eq:common-excess-8}. Either way the total exceeds eight.
+
+For $\{01,012,03,23\}$, the pair $01$ must complete $K_0$, since otherwise its cost four is disjoint from the six-unit $23$ blocker. If $03$ also completes $K_0$, the two completing points cost at least seven, disjoint from the $23$ charge. Otherwise $03$ has positive missing sets; its missing vertices in $K_0$ have an additional neighbor at the completing $01$ point, so \eqref{eq:mixed-diamond} gives a five-unit charge. Shared-leaf accounting on $K_3$ makes this additive to the $23$ blocker, again exceeding eight.
+
+For the star pattern $\{01,02,03,123\}$, \eqref{eq:star-three} is additive at $K_0$ because the three leaf cliques are distinct. At most one pair point can have a positive missing set in $K_0$. If one does, it costs at least six and the other two completing points cost at least seven on disjoint vertices. If none does, all three complete $K_0$ and are pairwise nonadjacent; each pair has combined excess at least seven, so the total excess is at least eleven.
+
+For $h=5$ with clique sizes $(9,11,11,11)$, the supports are $\{01,01,02,03,23\}$. The $K_{11}$ pair $23$ costs six, leaving at most two units on $K_0,K_1$ and the doubled $01$ points. The small-budget double-pair lemma below forces both $01$ points to complete $K_0$. For $02$ and $03$, shared-leaf accounting on $K_0$ combines their charges with the $23$ blocker. If either has a positive missing set in $K_0$, \eqref{eq:two-mixed-K9} gives at least five additional units, impossible. Thus all four star points complete $K_9$. Any two must be adjacent by \eqref{eq:common-excess-8}; together with $K_9$ they form a $K_{13}$.
+
+For clique sizes $(10,10,11,11)$, the four support patterns are $P,D,B,C$ from the table. Pattern $P$ is eliminated by choosing a noncompleting point in each doubled mixed pair; the disjoint mixed blockers cost at least $4+4=8$, and equality forces missing-set sizes $(2,3)$ and zero excess on every clique vertex and companion. The companion must complete its $K_{10}$, after which a missing vertex has at least $9+3+1=13$ neighbors, contradiction.
+
+For pattern $D$, at each clique vertex the pointwise shared-incidence inequality above controls all missing sets before summation. If one $K_{10}$ has two completing mixed points, they cost at least seven; the other $K_{10}$ contributes at least five from a noncompleting point or at least seven from two completing points. Otherwise at most one mixed point per $K_{10}$ completes it, leaving at least two noncompleting mixed points and a total charge of at least ten. Thus $D$ is impossible.
+
+For pattern $B=\{01,01,02,13,23\}$, the $K_{11}$ pair $23$ costs six. The doubled $10$--$10$ pair $01$ has local budget at most two, so the small-budget double-pair lemma forces its points to complete opposite $K_{10}$s. The mixed point $02$ either misses $K_0$, in which case the shared-leaf inequality combines its five-unit mixed charge with the six-unit $23$ charge, or it completes $K_0$, in which case it and the $01$ completer cost at least seven, disjoint from the $23$ charge. Both alternatives contradict $T\leq8$.
+
+Pattern $C=\{01,01,01,23,23\}$ contains two points on the same $K_{11}$ pair $23$ and is eliminated by the next lemma.
+
+\paragraph{Small-budget double-pair lemma.}
+Two points supported on the same $K_{11}$--$K_{11}$ or $K_{10}$--$K_{10}$ pair cannot have total excess at most two on the two cliques and the two points. No point can miss both cliques: the corresponding scalar charge would be two at its unique minimum, placing all excess on that point and zero on both cliques and its companion. The companion must then complete at least one clique. A missing vertex in the first point's completed clique has internal neighbors, the forced opposite missing set, and the completing companion, giving degree at least $13$ (for $9/11$ the count is $8+4+1$, and for $10/10$ it is $9+3+1$), a contradiction. Thus in the $9/11$ case both points complete the $K_9$; in the $10/10$ case they complete opposite $K_{10}$s.
+
+It remains to exclude two points on the same $K_{11}$--$K_{11}$ pair. Let their missing sets be $A,B$ and $A',B'$ in the two cliques, with sizes $a,b,a',b'$. Each point has $f_{11}\leq8$, so its missing sets have a side of size at most two; a size-two side forces the opposite size at most four. If the small sides are opposite, \eqref{eq:small-side-six} gives two disjoint six-unit charges. Otherwise relabel so $a,a'\leq2$ and $a\leq a'$.
+
+If $a=a'=2$, the first point and its small-side clique cost at least six, while the second point has excess at least $10-2-b'\geq4$, for total at least ten. If $a=1,a'=2$ and $A,A'$ are disjoint, the vertex in $A$ sees the second support point and all of $B$, so its excess together with the first support point is at least eight; the second support point contributes at least four more. If $a=1,a'=2$ and $A\subseteq A'$, let $x$ be the common vertex and $y$ the other vertex of $A'$. The union $B\cup B'$ forces excess at least seven on $x$ and the first support point; $y$ sees the first support point and $B'$, forcing at least seven on $y$ and the second support point. These four charged vertices are distinct.
+
+If $a=a'=1$ and $A,A'$ are distinct, each missing vertex sees the other support point and its own opposite missing set, giving two disjoint charges of at least eight. If $A=A'=\{x\}$, the two support points cannot be adjacent, since they share ten neighbors in the first clique and would form a $K_{12}$. Let $B_0=|B\cup B'|$. Their common neighborhood has at least $21-B_0$ vertices, so \eqref{eq:common-excess-8} forces
+\[
+\epsilon(z)+\epsilon(z')\geq18-B_0.
+\]
+The vertex $x$ has excess at least $\max(0,B_0-2)$, giving total excess at least $16$. All cases exceed eight.
+
+This eliminates every support orbit and proves \cref{thm:E286}.
+\end{proof}
+
+\begin{corollary}[The $47$-vertex hereditary floor]
+\label{cor:floor47}
+Every $J\in\mathcal R(4,47)$ has at least $287$ edges.
+\end{corollary}
+
+\begin{proof}
+If $e(J)\leq286$, then \cref{lem:gate47} gives $\delta(J)\geq12$. Theorem~\ref{thm:low-edge} excludes $e(J)\leq285$, and \cref{thm:E286} excludes equality at $286$. Hence $e(J)\geq287$.
+\end{proof}
+
