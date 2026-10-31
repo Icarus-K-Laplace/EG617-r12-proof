@@ -1,0 +1,55 @@
+\section{Hereditary caps and graph notation}
+\label{sec:setup}
+
+For integers $k\geq1$ and $n\geq0$, write $n=kq+s$ with $0\leq s<k$ and define
+\[
+\tau_k(n)=k\binom{q}{2}+qs.
+\]
+This is the minimum number of edges in a graph on $n$ vertices with independence number at most $k$, by applying Tur\'an's theorem to the complement. Equivalently, $\binom{n}{2}-\tau_k(n)$ is the Tur\'an number $\ex(n,K_{k+1})$.
+
+Define the target cap
+\[
+D(n)=\binom{n}{2}-11\tau_{12}(n).
+\]
+The values used in the proof are
+\[
+\begin{array}{c|rrrrrrrr}
+n&13&14&23&24&36&37&38&49\\ \hline
+D(n)&67&69&132&144&234&237&241&\text{not used}
+\end{array}
+\]
+(the $49$-vertex contradiction below compares a target lower bound with a different color-class upper bound).
+
+\begin{lemma}[Hereditary color caps]
+\label{lem:caps}
+In a balanced $12$-edge-coloring of $K_{145}$, every color graph $C_i$ satisfies $\alpha(C_i)\leq12$. Consequently, for every vertex set $U$,
+\[
+e(C_i[U])\geq\tau_{12}(|U|).
+\]
+If $G$ is a color graph with the fewest edges, then
+\[
+e(G)\leq870,\qquad
+e(G[U])\leq D(|U|)\quad\text{for every }U\subseteq V(K_{145}),
+\]
+and $\alpha(G)\leq12$, $\omega(G)\leq12$.
+\end{lemma}
+
+\begin{proof}
+An independent set of size $13$ in a color graph would be a $13$-set containing no edge of that color, contrary to balance. Thus $\alpha(C_i)\leq12$. For any $U$, the complement of $C_i[U]$ is $K_{13}$-free, so Tur\'an's theorem gives
+\[
+e(\overline{C_i[U]})\leq \ex(|U|,K_{13})
+=\binom{|U|}{2}-\tau_{12}(|U|).
+\]
+Subtracting from $\binom{|U|}{2}$ gives the lower bound on $e(C_i[U])$. Since $G$ is a least-edge color class, $12e(G)\leq\binom{145}{2}=10440$, so $e(G)\leq870$. On any $U$, the eleven non-target colors contribute at least $11\tau_{12}(|U|)$ edges, leaving at most $D(|U|)$ target edges. Finally, $\alpha(G)\leq12$ was already shown, and a $K_{13}$ in $G$ would be a $13$-set containing no edge of any other color, also impossible.
+\end{proof}
+
+\begin{definition}
+For $a,n\geq0$, let $\mathcal R(a,n)$ be the class of simple graphs $J$ on $n$ vertices such that
+\[
+\alpha(J)\leq a,\qquad \omega(J)\leq11,\qquad
+e(J[U])\leq D(|U|)\quad\text{for every }U\subseteq V(J).
+\]
+The class is hereditary under induced subgraphs.
+\end{definition}
+
+The hereditary condition in $\mathcal R(a,n)$ is essential in the lower-order arguments. In contrast, the abstract $47$-vertex low-edge and equality theorems below use only their five explicitly displayed graph hypotheses and do not assume the caps $D$.
