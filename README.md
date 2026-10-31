@@ -14,7 +14,7 @@ Equivalently, every 12-edge-coloring of $K_{145}$ has a 13-vertex subset whose i
 
 This proves the fixed $r=12$ case of the Erdős–Gyárfás balanced-coloring conjecture.
 
-**Scope:** This repository claims the fixed $r=12$ instance only. It does not claim that the full conjecture for all (r\ge3) is solved.
+**Scope:** This repository claims the fixed $r=12$ instance only. It does not claim that the full conjecture for all $r\ge3$ is solved.
 
 ## Start here
 
@@ -52,7 +52,7 @@ The precise dependency domains and frozen source provenance are recorded in the 
 ## What is not claimed
 
 - The full conjecture for all (r\ge3) is not solved here.
-- The abstract uncolored high-energy (R(4,49)) problem is not claimed solved; it is not a load-bearing dependency of the fixed-$r=12$ proof.
+- The abstract uncolored high-energy $R(4,49)$ problem is not claimed solved; it is not a load-bearing dependency of the fixed-$r=12$ proof.
 - No Lean 4/Mathlib or other proof-assistant formalization is claimed complete.
 - No external human specialist review or journal acceptance is claimed.
 
