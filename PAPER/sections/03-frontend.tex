@@ -1,0 +1,147 @@
+\section{The coloring reduction and the unique sixty-one-vertex residual}
+\label{sec:frontend}
+
+\subsection{The minimum-degree pivot}
+
+Let $G$ be the least-edge color graph from \cref{lem:caps}. If $\delta(G)\geq12$, then the handshake lemma and $e(G)\leq870$ force $G$ to be $12$-regular. Its maximum degree is $12$, and it has no $K_{13}$ component because $\omega(G)\leq12$. Brooks' theorem therefore gives a proper vertex coloring of $G$ with $12$ colors \cite{Brooks1941}. One color class has at least $\lceil145/12\rceil=13$ vertices and is independent, contradicting $\alpha(G)\leq12$. Hence a minimum-degree vertex $v$ has degree
+\[
+d=d_G(v)\in\{0,1,\ldots,11\}.
+\]
+Put $A=N_G(v)$ and $U=V(G)\setminus N_G[v]$, so $|U|=144-d$.
+
+\subsection{Packing target cliques}
+
+Choose an inclusion-maximal family of $j$ pairwise vertex-disjoint copies of $K_{12}$ in $G[U]$. By the cap $D(13)=67$, every vertex outside a target $K_{12}$ has at most one target neighbor in it: otherwise the $13$-set consisting of the clique and that vertex would span at least $66+2=68$ target edges. In particular, between any two packed blocks the target edges form a matching.
+
+There cannot be $12$ packed blocks. Indeed, choose one representative from each block greedily. At the $k$th step, the previously chosen $k-1$ representatives exclude at most $k-1$ vertices of the current $K_{12}$, so a new representative can be chosen nonadjacent to all previous representatives. The twelve representatives, together with $v$, would form an independent $13$-set. Thus $0\leq j\leq11$.
+
+Let $R$ be the induced graph on the vertices of $U$ outside the packed blocks. Maximality gives $\omega(R)\leq11$. Moreover,
+\[
+\alpha(R)\leq11-j.
+\]
+For if $R$ contained an independent set of size $12-j$, each packed block would lose at most $12-j$ vertices to adjacency with this set and would retain at least $j$ vertices. Greedily choose independent representatives from $j$ blocks and add $v$; this again gives an independent $13$-set. This argument includes $j=0$ and $j=11$.
+
+\subsection{The exact edge ledger}
+
+Set
+\[
+\sigma=870-e(G),\qquad
+z=\binom d2-e(G[A]),\qquad
+g=\sum_{a\in A}(d_G(a)-d).
+\]
+Let $x$ be the number of target edges between distinct packed blocks and let $y$ be the number of target edges from packed blocks to $R$. All five quantities are nonnegative. The induced closed neighborhood has
+\[
+e(G[N[v]])=\binom{d+1}{2}-z.
+\]
+Also,
+\[
+\sum_{a\in A}d_G(a)=d^2+g
+=d+2e(G[A])+e_G(A,U),
+\]
+and hence
+\[
+e_G(A,U)=2z+g.
+\]
+Partitioning all edges according to $N[v]$, the packed cliques, and $R$ gives the exact identity
+\begin{equation}
+e(R)=870-\binom{d+1}{2}-66j-(\sigma+z+g+x+y).
+\label{eq:frontend-budget}
+\end{equation}
+In particular, the initial neighborhood $A$ is not assumed to be a clique: its defect $z$ is explicitly charged. The five nonnegative terms in \eqref{eq:frontend-budget} are not interchangeable and none is omitted.
+
+\subsection{The contextual $R(4,49)$ obstruction}
+
+The recurrence below is initially formulated in the contextual class of induced subgraphs of the fixed target graph $G$. We first prove that no induced member of $\mathcal R(4,49)$ can occur in the original full-coloring setting.
+
+\begin{lemma}[No contextual $49$-vertex residual]
+\label{lem:context49}
+There is no $49$-vertex induced target-color subgraph $F$ in the assumed balanced coloring satisfying
+\[
+\alpha(F)\leq4,\quad \omega(F)\leq11,\quad
+e(F[W])\leq D(|W|)\ \text{for every }W\subseteq V(F).
+\]
+\end{lemma}
+
+\begin{proof}
+First $\delta(F)\geq13$. A vertex of degree at most $11$ leaves at least $37$ nonneighbors, which contain an induced member of $\mathcal R(3,37)$, impossible by \cref{lem:lower-ord}. If a vertex $p$ has degree $12$, its $36$-vertex nonneighborhood $H$ belongs to $\mathcal R(3,36)$. The lower-order theorem gives $e(H)\geq234$, while $D(36)=234$, so $e(H)=234$. The $12$-vertex shell cannot be a clique, since together with $p$ it would form a $K_{13}$. Choose a nonedge $ab$ in the shell. The union of the $H$-neighborhoods of $a$ and $b$ has at least $13$ vertices: otherwise at least $24$ vertices of $H$ avoid both, giving a member of $\mathcal R(2,24)$. Therefore $H\cup\{a,b\}$ spans at least $234+13=247>D(38)=241$ target edges, a contradiction. Thus $\delta(F)\geq13$ and $e(F)\geq\lceil49\cdot13/2\rceil=319$.
+
+Now fix one of the other eleven colors, and let $C$ be its graph on the same $49$ vertices. Balance gives $\alpha(C)\leq12$. Also $\omega(C)\leq4$, since a $K_5$ in $C$ would be an independent five-set in the target graph $F$. The complement $\overline C$ is $K_{13}$-free but is not $12$-partite: if it were, its twelve independent parts would be twelve cliques in $C$, each of size at most four, and could cover at most $48$ vertices. Kang--Pikhurko's second-Tur\'an theorem applies with $n=49,r=12$ and gives
+\[
+e(\overline C)\leq t_{12}(49)-\left\lfloor\frac{49}{12}\right\rfloor+1
+=1100-4+1=1097,
+\]
+where $t_{12}(49)=\ex(49,K_{13})=1100$. Hence $e(C)\geq1176-1097=79$. The eleven non-target colors therefore contribute at least $869$ edges on this $49$-set, so $e(F)\leq1176-869=307$, contradicting $e(F)\geq319$.
+\end{proof}
+
+The lemma is deliberately contextual. It does not prove that every abstract uncolored graph in $\mathcal R(4,49)$ is impossible; the eleven non-target color classes are part of the argument.
+
+\subsection{The recurrence and its finite domain}
+
+For an induced subgraph of the fixed target graph $G$ with independence number at most $a$ and clique number at most $11$, let $B(a,n)$ denote a proved lower bound on its number of edges. The base cases are $B(a,0)=0$, the class $a=0$ is empty at positive order, and $a=1$ consists of cliques of order at most $11$. The contextual order cutoffs are $24$ for $a=2$, $37$ for $a=3$, and $49$ for $a=4$. The seed lower bounds are
+\[
+B(2,23)\geq131,\quad B(3,35)\geq210,\quad
+B(3,36)\geq234,\quad B(4,47)\geq284,\quad B(4,48)\geq308.
+\]
+
+For completeness, the recurrence rule is recorded here. In a graph $J$ of order $n$ and $\alpha(J)\leq a$, choose a minimum-degree vertex $p$ of degree $h$, put $A=N_J(p)$ and $C=J-N_J[p]$, and let $M=\overline{J[A]}$. For $x\in A$, set
+\[
+g_x=d_J(x)-h,\quad t_x=|N_C(x)|,\quad z=e(M),\quad
+q=z+\sum_{x\in A}g_x.
+\]
+Then
+\begin{align}
+t_x&=d_M(x)+g_x,\\
+e(J)&=\binom{h+1}{2}+q+e(C),\\
+q&=t(S)-e_M(S)+e_M(A\setminus S)+g(A\setminus S)
+\quad(S\subseteq A).
+\label{eq:recurrence-pivot}
+\end{align}
+Since $\omega(J)\leq11$, $\alpha(M)\leq10$, and the shell and closed-shell caps imply
+\[
+q\geq z\geq
+\max\left\{\tau_{10}(h),\binom{h+1}{2}-D(h+1),
+\binom h2-D(h)\right\}.
+\]
+
+For $h\geq11$, $M$ has an edge. If $M_b$ denotes the certified maximum order of a contextual graph with independence number at most $b$, the union of the two core rows corresponding to an edge has size at least
+\[
+\beta=\max\{0,m-M_{a-2}\},\qquad m=n-h-1.
+\]
+Thus $q\geq\beta-1$ and $e(C)+\beta\leq D(m+2)$. A maximum matching in $M$ has size at least
+\[
+k(h)=\max\left\{\left\lceil\frac{h-10}{2}\right\rceil,
+1+\mathbf 1_{h\geq12}+\mathbf 1_{h\geq13}\right\}.
+\]
+For $t$ matching edges, the $2t$ endpoints have total weight at least $t\beta$, while $\alpha(M)\leq a$ bounds their internal missing edges by $\binom{2t}{2}-\tau_a(2t)$. Consequently
+\[
+q\geq t\beta-\binom{2t}{2}+\tau_a(2t).
+\]
+If $M$ is triangle-free, Mantel's theorem improves this to $q\geq t\beta-t^2$. If $M$ contains a triangle, the three corresponding core rows have union at least
+\[
+\gamma=\max\{0,m-M_{a-3}\},
+\]
+so $q\geq\gamma-3$ and $e(C)+\gamma\leq D(m+3)$. For $a=2$ the triangle alternative is impossible. The recurrence takes the minimum of the surviving triangle-free and triangle-channel lower bounds.
+
+For each viable minimum degree $h$, put
+\[
+L_h=\max\left\{\left\lceil\frac{nh}{2}\right\rceil,
+B(a-1,m)+\binom{h+1}{2}+Q_h\right\},
+\]
+where $Q_h$ is the minimum of the licensed shell-channel floors just described. The node bound is the maximum of $\min_h L_h$, $\tau_a(n)$, any applicable seed, and the deletion-averaging bound
+\[
+\left\lceil\frac{nB(a,n-1)}{n-2}\right\rceil\quad(n>2).
+\]
+The last inequality follows by summing the edge counts over all one-vertex deletions, since each edge is counted exactly $n-2$ times. A node is empty if a predecessor is empty, no minimum-degree row survives, or the resulting lower bound exceeds $D(n)$. Every recursive reference has smaller $a$ or the same $a$ and smaller $n$, so the deduction is finite and acyclic.
+
+Three independent integer implementations agree on all $1,752$ recurrence nodes and all $144$ outer-stop comparisons. The unique surviving stop is
+\[
+(d,j,a,n)=(11,6,5,61),\qquad B(5,61)=397,
+\]
+with edge budget $408$ from \eqref{eq:frontend-budget}. Thus a hypothetical coloring yields a single induced graph $F$ with
+\begin{equation}
+|V(F)|=61,\quad 397\leq E=e(F)\leq408,\quad
+\delta(F)\in\{12,13\},\quad
+\alpha(F)\leq5,\quad\omega(F)\leq11,
+\label{eq:T61-contract}
+\end{equation}
+and every induced subset satisfies the cap $D$.
