@@ -1,0 +1,144 @@
+{
+  "date": "2026-10-31",
+  "repo": "Icarus-K-Laplace/EG617-r12-proof",
+  "scope": "new equality theorem only; prior gates accepted per user",
+  "heads": [
+    {
+      "branch": "workstream/r12-twochat-e408-global-20261026",
+      "sha": "b0459807acd4b7e386148056ddf77d7998918893"
+    },
+    {
+      "branch": "workstream/r12-astra-low-edge-universal-augmentation-20261030",
+      "sha": "783c72090205d4bd1a6eefce1dec09e15f78e319"
+    },
+    {
+      "branch": "workstream/r12-astra-q32-v47-universal-attack-20261030",
+      "sha": "f56cc9eba646e71d63c4b55f468a2340bcdd64c2"
+    },
+    {
+      "branch": "workstream/r12-q33-v47-excess4-universal-core-attack-20261030",
+      "sha": "bdc2046ea08f12455a37fd412fe2e19514118ada"
+    },
+    {
+      "branch": "workstream/r12-e407-v12-root-promotion-20261030",
+      "sha": "0b48d1f768e3d3c1d3137e0c3ec12f1ff618bb91"
+    },
+    {
+      "branch": "workstream/r12-q32-v47-m89-final-20261030",
+      "sha": "f78ac022d70647e9c87580bbc595c2306cfda26c"
+    },
+    {
+      "branch": "workstream/r12-q32-v47-m10-residual-final-20261030",
+      "sha": "b6bfa0d2c85e22b5d480fbe6d2a5e2727192cd4f"
+    },
+    {
+      "branch": "workstream/r12-q33-support-promotion-20261030",
+      "sha": "ca088347124f4ea7706a63129d7ed63d4e4090d7"
+    }
+  ],
+  "sources": [
+    {
+      "path": "front_end/T61_H13_V8_RESULT.md",
+      "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+      "blob": "72a2258eba93ac8f156e082475472729ecd271e3",
+      "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/blob/b0459807acd4b7e386148056ddf77d7998918893/front_end/T61_H13_V8_RESULT.md"
+    },
+    {
+      "path": "front_end/T61_H13_V10_CANONICAL_AUDIT.md",
+      "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+      "blob": "27658c7070ba1aedf566dc897a766ff85b19260a",
+      "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/blob/b0459807acd4b7e386148056ddf77d7998918893/front_end/T61_H13_V10_CANONICAL_AUDIT.md"
+    },
+    {
+      "path": "front_end/T61_H13_V11_SOURCE_AUDIT.md",
+      "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+      "blob": "c7546cc2a5f3541a5ce9fb6199ea41096c225833",
+      "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/blob/b0459807acd4b7e386148056ddf77d7998918893/front_end/T61_H13_V11_SOURCE_AUDIT.md"
+    },
+    {
+      "path": "front_end/T61_H13_LOW_LAYER.md",
+      "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+      "blob": "990f4bc39918e54bab1c9fb983f66853293c1c19",
+      "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/blob/b0459807acd4b7e386148056ddf77d7998918893/front_end/T61_H13_LOW_LAYER.md"
+    },
+    {
+      "path": "front_end/S30_S31.md",
+      "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+      "blob": "ede6e5a8f45f9ff1e0a5a88040f512448de3913b",
+      "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/blob/b0459807acd4b7e386148056ddf77d7998918893/front_end/S30_S31.md"
+    },
+    {
+      "path": "front_end/T61_H13_FULL_COLOR_DEGREE_AND_ANTINEIGHBORHOOD.md",
+      "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+      "blob": "e38d0954a819a4b5f13895362600df08ac7388b0",
+      "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/blob/b0459807acd4b7e386148056ddf77d7998918893/front_end/T61_H13_FULL_COLOR_DEGREE_AND_ANTINEIGHBORHOOD.md"
+    },
+    {
+      "path": "front_end/E407_CELL_B_FULL_CLOSURE.md",
+      "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+      "blob": "f34cc00bfb28188e0c29604e9f8312d034bd84e8",
+      "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/blob/b0459807acd4b7e386148056ddf77d7998918893/front_end/E407_CELL_B_FULL_CLOSURE.md"
+    },
+    {
+      "path": "front_end/E407_CELL_B_INDEPENDENT4_SATURATION.md",
+      "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+      "blob": "ce96b4ef8d53c963500f79cda0987980d8234bc7",
+      "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/blob/b0459807acd4b7e386148056ddf77d7998918893/front_end/E407_CELL_B_INDEPENDENT4_SATURATION.md"
+    },
+    {
+      "path": "front_end/T61_H13_V7_RESULT.md",
+      "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+      "blob": "0a44ad2e698c26115067d0db521a0c559047660f",
+      "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/blob/b0459807acd4b7e386148056ddf77d7998918893/front_end/T61_H13_V7_RESULT.md"
+    },
+    {
+      "path": "front_end/T61_H13_V9_CANONICAL_AUDIT.md",
+      "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+      "blob": "b85dbcb212446445165e00957aa33b363118549a",
+      "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/blob/b0459807acd4b7e386148056ddf77d7998918893/front_end/T61_H13_V9_CANONICAL_AUDIT.md"
+    },
+    {
+      "path": "front_end/T61_H12_CLOSURE.md",
+      "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+      "blob": "14857dc05315150ede99097eb8f6688026c105ce",
+      "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/blob/b0459807acd4b7e386148056ddf77d7998918893/front_end/T61_H12_CLOSURE.md"
+    },
+    {
+      "path": "front_end/FRONTEND_BRIDGE_THEOREM.md",
+      "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+      "blob": "52b2f4af102ceba1671dc7d0e7ed36a512458e77",
+      "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/blob/b0459807acd4b7e386148056ddf77d7998918893/front_end/FRONTEND_BRIDGE_THEOREM.md"
+    },
+    {
+      "path": "r12_master/workstreams/twochat-e408-global-20261026/V10_V11_Q31_INDEPENDENT_REPLAY_AUDIT.md",
+      "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+      "blob": "8a1e7b5cbac408b531037e6ad0dfb54f9683543d",
+      "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/blob/b0459807acd4b7e386148056ddf77d7998918893/r12_master/workstreams/twochat-e408-global-20261026/V10_V11_Q31_INDEPENDENT_REPLAY_AUDIT.md"
+    },
+    {
+      "path": "r12_master/workstreams/e407-v12-root-promotion-chat-20261030/CANONICAL_STATE.md",
+      "commit": "0b48d1f768e3d3c1d3137e0c3ec12f1ff618bb91",
+      "blob": "6a7fbe7a231a2c70d71956ae27c0c40ed05fa8d9",
+      "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/blob/0b48d1f768e3d3c1d3137e0c3ec12f1ff618bb91/r12_master/workstreams/e407-v12-root-promotion-chat-20261030/CANONICAL_STATE.md"
+    },
+    {
+      "path": "r12_master/workstreams/e407-v12-root-promotion-chat-20261030/V12_GENERAL_SUPPORT_RESERVE.md",
+      "commit": "0b48d1f768e3d3c1d3137e0c3ec12f1ff618bb91",
+      "blob": "ac12de25ea56e60f9a80663e9984741920eb300d",
+      "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/blob/0b48d1f768e3d3c1d3137e0c3ec12f1ff618bb91/r12_master/workstreams/e407-v12-root-promotion-chat-20261030/V12_GENERAL_SUPPORT_RESERVE.md"
+    },
+    {
+      "path": "r12_master/workstreams/e407-v12-root-promotion-chat-20261030/V12_SURVIVOR_COVERAGE.md",
+      "commit": "0b48d1f768e3d3c1d3137e0c3ec12f1ff618bb91",
+      "blob": "788ae7fab8690a24931c8711b9804ac686228da4",
+      "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/blob/0b48d1f768e3d3c1d3137e0c3ec12f1ff618bb91/r12_master/workstreams/e407-v12-root-promotion-chat-20261030/V12_SURVIVOR_COVERAGE.md"
+    }
+  ],
+  "dependencies": {
+    "abstract_e286": "Elementary graph arguments and Mantel/Turan; no source-specific retained seeds",
+    "r447_floor287": "User-accepted prior floor286 and generic minimum-degree gate, low-edge commit783c720",
+    "full_color": "Retained Brouwer/Kang-Pikhurko classification and non-target independence contract",
+    "triple_description": "Accepted R(2,24) exclusion and23-point classification",
+    "whole_energy": "Conditional on retained historical COVER; not independently recertified"
+  }
+}
