@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "scope": "finite lemmas and accounting only; prose proof and accepted gates remain explicit",
+  "support_orbits": {
+    "3": 2,
+    "4": 3,
+    "5": 5
+  },
+  "scalars": {
+    "pair_minima": {
+      "11/11": 6,
+      "10/11": 4,
+      "9/11": 2,
+      "10/10": 2
+    },
+    "diamond_subset_checks": 10400
+  },
+  "double_pair": {
+    "ordered_tuples": 139921,
+    "minimum": 14
+  },
+  "arithmetic": {
+    "regular_four_set_bounds": [
+      350,
+      346,
+      342,
+      337,
+      331,
+      325,
+      318,
+      310
+    ],
+    "full_color_caps": {
+      "408": 19,
+      "407": 20
+    },
+    "Type_I_allowed_pairs": [
+      [
+        5,
+        8
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        8,
+        5
+      ]
+    ],
+    "Type_I_note": "listed from audited source, not independently classifying extremal graphs"
+  }
+}
