@@ -39,9 +39,9 @@ def verify_case(case):
     t = case["row_size"]
     assert set(V) == set(adj) == set(g) == set(t)
     assert all(set(adj[u]) <= set(V) - {u} for u in V)
-    assert all(u in adj[v] for v in V for u in adj[v])
+    assert all(v in adj[u] for u in V for v in adj[u])
     E = edges(adj)
-    assert all((u, v) in E == (v, u) in E for u in V for v in V if u != v)
+    assert all((v in adj[u]) == (u in adj[v]) for u in V for v in V if u != v)
     assert len(E) == 2 * r == case["edge_count"]
     assert sum(g.values()) == 2 * (10 - r)
     assert len(E) + sum(g.values()) == 20 == case["total_charge"]
