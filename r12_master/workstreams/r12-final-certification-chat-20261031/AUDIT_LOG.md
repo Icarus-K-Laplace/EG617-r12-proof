@@ -41,3 +41,45 @@ No root promotion is authorized by intermediate computational results.
 
 The exact commits containing this log are available from git history; a commit
 cannot truthfully contain its own future hash.
+
+## Round 2 — complete analytic audit and final adjudication
+
+Round1 was published as4156032a169052444ef8b7e3d8a84448bbee16e7 on the
+independent branch only. The original Global Root and integration HEAD were
+queried again and remain b0459807... and c5f05f58..., respectively. All current
+remote branch heads are retained in REMOTE_BRANCH_HEADS.tsv. The original
+exact285 theorem was additionally read from f56cc9eba646e71d63c4b55f468a2340bcdd64c2
+and its actual blob authenticated. The first Brooks retrieval failure was
+resolved by retrieving the original reprint and publisher record.
+
+Actually audited and independently written in this round: all lower-order
+121/122 cases and minimum-degree transport; both low-edge routes; all ten286
+support orbits and repeated-pair intersections; COVER's complete triangular
+and bipartite reductions, B1 geometry and q30 classification/terminals; the
+generic48-point minimum-degree and310-edge floor; q20 and h12; original
+K145 extraction, every recurrence rule and every exceptional minimum degree.
+
+New finite results: q20 has five equality families in the complete286-vector
+two-hub domain; lower-order replay constructs61 representatives, rejects12 by
+alpha>=12 and checks263 maximal independent sets on49 valid graphs; maximum
+cost6. The type replay has20 compatible pairs,10 exceptional endpoint cases
+and55 singleton extensions. Support canonical sets, not only their counts,
+agree with all ten named orbits. All ten independent computation subtasks pass.
+
+The final analytic matrix has58 obligations:55 PROVED entries and3 finite
+COMPUTATIONALLY_VERIFIED entries with separately proved completeness/rule
+domains. The independently rebuilt58-node DAG and original25-node DAG are
+acyclic; actual hypothesis transport was checked independently of graph syntax.
+
+No true mathematical counterexample, failed inference or outstanding
+load-bearing analytic premise was found. No mathematical alteration of an
+original proof file was necessary. Operational failure and task-scope
+clarification remain visible in the gap register. The full report therefore
+records CERTIFICATION=PASS with explicit informal/computational boundaries.
+
+Highest remaining review complexity: complete q<=28 triangle reduction and
+B1 compatibility; q30 high-weight cases; T8 shared-leaf and repeated-pair
+accounting; contextual recurrence hypothesis transport. These are completed
+in this audit but are priority areas for independent HUMAN review. No human
+review or proof-assistant formalization is claimed. Root promotion remains a
+separate reviewed PR/approval action; no root merge or overwrite occurred.

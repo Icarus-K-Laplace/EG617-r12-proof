@@ -54,6 +54,13 @@ def integrity():
         frozen = git('show',PIN+':'+SOURCE_REL+'/'+entry['destination'])
         assert original == frozen
         assert blob(original) == entry['blob']
+    frozen_paths={p.relative_to(SOURCE).as_posix() for p in (SOURCE/'frozen').rglob('*') if p.is_file()}
+    assert frozen_paths=={entry['destination'] for entry in manifest}
+    extra_commit='f56cc9eba646e71d63c4b55f468a2340bcdd64c2'
+    extra_path='r12_master/workstreams/astra-q32-v47-universal-attack-chat-20261030/UNIVERSAL_Q32_THEOREM.md'
+    extra=git('show',extra_commit+':'+extra_path)
+    extra_sha=git('rev-parse',extra_commit+':'+extra_path).decode().strip()
+    assert blob(extra)==extra_sha
     checked = 0
     for line in (SOURCE/'SHA256SUMS.txt').read_text().splitlines():
         sha, path = line.split(None, 1)
@@ -66,6 +73,7 @@ def integrity():
                 files=files, manifest_entries=len(manifest), checksums=checked,
                 parent_line=parents, changes_from_global_root=changes,
                 checkout_CRLF_conversions=checkout_conversions,
+                supplemental_exact285_source=dict(commit=extra_commit,path=extra_path,blob=extra_sha,sha256=digest(extra)),
                 hash_basis='raw git show bytes; checkout is compared modulo CRLF only')
 
 def pairs(n):
@@ -265,6 +273,16 @@ def support_orbits():
             representatives.add(min(tuple(sorted(mp[m] for m in rows)) for mp in maps))
         answer[h]=dict(raw_count=raw,orbit_count=len(representatives),representatives=sorted(representatives))
     assert [answer[h]['orbit_count'] for h in (3,4,5)]==[2,3,5]
+    named={3:[['0123','01','23'],['01','023','123']],
+           4:[['01','01','023','23'],['01','012','03','23'],['01','02','03','123']],
+           5:[['01','01','02','03','23'],['01','02','02','13','13'],
+              ['01','02','03','12','13'],['01','01','02','13','23'],['01','01','01','23','23']]}
+    for h,classes in named.items():
+        expected=set()
+        for labels in classes:
+            row=[sum(1<<int(i) for i in s) for s in labels]
+            expected.add(min(tuple(sorted(mp[m] for m in row)) for mp in maps))
+        assert expected==set(answer[h]['representatives'])
     return dict(status='COMPUTATIONALLY_VERIFIED',by_h=answer,
                 scope='47-point support orbits (low285/E286); h12 uses a different q20 shell classification')
 
@@ -432,22 +450,27 @@ def lower_order_replay():
                 compatible_type_pairs=allowed,exceptional_endpoint_cases=exceptions,singleton_extensions=extensions)
 
 def dag_check():
-    dag=json.loads((SOURCE/'PROOF_DAG.json').read_text())
-    done=set();active=set();order=[]
-    def visit(v):
-        assert v in dag
-        assert v not in active,('cycle',v)
-        if v in done:return
-        active.add(v)
-        for w in dag[v]:visit(w)
-        active.remove(v);done.add(v);order.append(v)
-    for v in dag:visit(v)
-    return dict(status='COMPUTATIONALLY_VERIFIED',nodes=len(dag),topological_order=order,
+    def check(path):
+        dag=json.loads(path.read_text())
+        done=set();active=set();order=[]
+        def visit(v):
+            assert v in dag
+            assert v not in active,('cycle',v)
+            if v in done:return
+            active.add(v)
+            for w in dag[v]:visit(w)
+            active.remove(v);done.add(v);order.append(v)
+        for v in dag:visit(v)
+        return dict(nodes=len(dag),topological_order=order)
+    results={'source':check(SOURCE/'PROOF_DAG.json')}
+    if (HERE/'CANONICAL_PROOF_DAG.json').exists():
+        results['independent']=check(HERE/'CANONICAL_PROOF_DAG.json')
+    return dict(status='COMPUTATIONALLY_VERIFIED',graphs=results,
                 scope='Syntactic DAG only; mathematical hypothesis transport audited separately')
 
 if __name__=='__main__':
     start=time.time()
-    result=dict(certification='NOT CERTIFIED',python=platform.python_version(),seed=SEED,
+    result=dict(mathematical_certification='See FINAL_CERTIFICATION_REPORT.md; this program does not decide analytic validity.',python=platform.python_version(),seed=SEED,
                 command='python -B INDEPENDENT_REPLAY.py',actual_argv=sys.argv,
                 source_sha256=digest(Path(__file__).read_bytes()),pinned_source=PIN,
                 note='Computation status does not certify analytic obligations.')
@@ -466,4 +489,9 @@ if __name__=='__main__':
             print('FAIL',name,repr(exc),flush=True)
         result['elapsed_seconds']=round(time.time()-start,3)
         (HERE/'INDEPENDENT_REPLAY_RESULTS.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+    failures=[name for name,task in tasks if result[name]['status']!='COMPUTATIONALLY_VERIFIED']
+    result['replay_status']='OPEN' if failures else 'COMPUTATIONALLY_VERIFIED'
+    result['execution_failures']=failures
+    (HERE/'INDEPENDENT_REPLAY_RESULTS.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print('RESULT_SHA256',digest((HERE/'INDEPENDENT_REPLAY_RESULTS.json').read_bytes()),flush=True)
+    sys.exit(bool(failures))

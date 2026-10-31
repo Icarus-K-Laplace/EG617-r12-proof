@@ -23,3 +23,11 @@ public search: web lookups concerned published external theorem statements only.
 This report is a working audit artifact for human verification. All mathematical
 status labels describe the actual derivation/replay completed here, never an
 editorial decision or a proof-assistant kernel verdict.
+
+Workflow attribution (not a mathematical premise): Kassis, T., Agarwal, V.,
+He, Y., Patel, D., & Brueckner, A. M. (2026), *Scientific Agent Skills: A Library
+of Procedural Knowledge for Research Agents*,
+[arXiv:2609.00065](https://doi.org/10.48550/arXiv.2609.00065).
+The current arXiv record was checked on2026-10-31 (last revised2026-09-02).
+The peer-review skill contributed the obligation/gap reporting structure;
+the mathematical derivations and independent replay in this package are new.

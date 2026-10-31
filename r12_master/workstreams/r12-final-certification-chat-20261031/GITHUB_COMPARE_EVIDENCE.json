@@ -1,0 +1,406 @@
+{
+  "repository_full_name": "Icarus-K-Laplace/EG617-r12-proof",
+  "base": "b0459807acd4b7e386148056ddf77d7998918893",
+  "head": "workstream/r12-astra-global-root-integration-20261031",
+  "status": "ahead",
+  "ahead_by": 2,
+  "behind_by": 0,
+  "total_commits": 2,
+  "too_large": null,
+  "base_commit": {
+    "sha": "b0459807acd4b7e386148056ddf77d7998918893",
+    "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/b0459807acd4b7e386148056ddf77d7998918893",
+    "html_url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/commit/b0459807acd4b7e386148056ddf77d7998918893"
+  },
+  "merge_base_commit": {
+    "sha": "b0459807acd4b7e386148056ddf77d7998918893",
+    "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/b0459807acd4b7e386148056ddf77d7998918893",
+    "html_url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/commit/b0459807acd4b7e386148056ddf77d7998918893"
+  },
+  "files": [
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/ALL_ENERGY_LAYERS_COMPLETE_INVENTORY.md",
+      "status": "added",
+      "additions": 29,
+      "deletions": 0,
+      "changes": 29,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/BRANCH_HEAD_SNAPSHOT.json",
+      "status": "added",
+      "additions": 322,
+      "deletions": 0,
+      "changes": 322,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/CANONICAL_STATE.md",
+      "status": "added",
+      "additions": 21,
+      "deletions": 0,
+      "changes": 21,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/COVER_INDEPENDENT_AUDIT.md",
+      "status": "added",
+      "additions": 35,
+      "deletions": 0,
+      "changes": 35,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/E407_H13_FINAL_ROOT_CERTIFICATE.md",
+      "status": "added",
+      "additions": 15,
+      "deletions": 0,
+      "changes": 15,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/E408_H13_FINAL_ROOT_CERTIFICATE.md",
+      "status": "added",
+      "additions": 13,
+      "deletions": 0,
+      "changes": 13,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/FINAL_GLOBAL_PROOF.md",
+      "status": "added",
+      "additions": 39,
+      "deletions": 0,
+      "changes": 39,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/FRONTEND_REPLAY.json",
+      "status": "added",
+      "additions": 10422,
+      "deletions": 0,
+      "changes": 10422,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/GLOBAL_PROOF_DEPENDENCY_DAG.md",
+      "status": "added",
+      "additions": 27,
+      "deletions": 0,
+      "changes": 27,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/GLOBAL_THEOREM_LEDGER.md",
+      "status": "added",
+      "additions": 32,
+      "deletions": 0,
+      "changes": 32,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/H12_AND_EXCEPTIONAL_PARENT_AUDIT.md",
+      "status": "added",
+      "additions": 65,
+      "deletions": 0,
+      "changes": 65,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/INDEPENDENT_VERIFIER.py",
+      "status": "added",
+      "additions": 238,
+      "deletions": 0,
+      "changes": 238,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/K145_TO_T61_FRONTEND_AUDIT.md",
+      "status": "added",
+      "additions": 78,
+      "deletions": 0,
+      "changes": 78,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/LOW_EDGE_AND_286_THEOREM_AUDIT.md",
+      "status": "added",
+      "additions": 50,
+      "deletions": 0,
+      "changes": 50,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/PROGRESS_LOG.md",
+      "status": "added",
+      "additions": 19,
+      "deletions": 0,
+      "changes": 19,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/PROOF_DAG.json",
+      "status": "added",
+      "additions": 92,
+      "deletions": 0,
+      "changes": 92,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/ROOT_PROMOTION_MATRIX.md",
+      "status": "added",
+      "additions": 21,
+      "deletions": 0,
+      "changes": 21,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/ROOT_PROMOTION_RECEIPT.md",
+      "status": "added",
+      "additions": 31,
+      "deletions": 0,
+      "changes": 31,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/SHA256SUMS.txt",
+      "status": "added",
+      "additions": 47,
+      "deletions": 0,
+      "changes": 47,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/SOURCE_MANIFEST.json",
+      "status": "added",
+      "additions": 189,
+      "deletions": 0,
+      "changes": 189,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/UNRESOLVED_OBLIGATIONS.md",
+      "status": "added",
+      "additions": 19,
+      "deletions": 0,
+      "changes": 19,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/VERIFICATION_RESULT.json",
+      "status": "added",
+      "additions": 338,
+      "deletions": 0,
+      "changes": 338,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/cover/COVER_CASE_MATRIX.md",
+      "status": "added",
+      "additions": 51,
+      "deletions": 0,
+      "changes": 51,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/cover/COVER_DEPENDENCY_AUDIT.md",
+      "status": "added",
+      "additions": 56,
+      "deletions": 0,
+      "changes": 56,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/cover/COVER_THEOREM.md",
+      "status": "added",
+      "additions": 287,
+      "deletions": 0,
+      "changes": 287,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/cover/INDEPENDENT_VERIFIER.py",
+      "status": "added",
+      "additions": 220,
+      "deletions": 0,
+      "changes": 220,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/cover/ROOT_PROMOTION_RECEIPT.md",
+      "status": "added",
+      "additions": 28,
+      "deletions": 0,
+      "changes": 28,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/cover/SHA256SUMS.txt",
+      "status": "added",
+      "additions": 11,
+      "deletions": 0,
+      "changes": 11,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/cover/VERIFICATION_RESULT.json",
+      "status": "added",
+      "additions": 593,
+      "deletions": 0,
+      "changes": 593,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/eq286/286_EDGE_EQUALITY_CLASSIFICATION.md",
+      "status": "added",
+      "additions": 157,
+      "deletions": 0,
+      "changes": 157,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/eq286/INDEPENDENT_VERIFIER.py",
+      "status": "added",
+      "additions": 134,
+      "deletions": 0,
+      "changes": 134,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/eq286/SHA256SUMS.txt",
+      "status": "added",
+      "additions": 14,
+      "deletions": 0,
+      "changes": 14,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/eq286/VERIFICATION_RESULT.json",
+      "status": "added",
+      "additions": 57,
+      "deletions": 0,
+      "changes": 57,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/frontend/CONTEXTUAL_R449_FULL_COLOR_IMPOSSIBILITY.md",
+      "status": "added",
+      "additions": 97,
+      "deletions": 0,
+      "changes": 97,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/frontend/RECURRENCE_PROOF.md",
+      "status": "added",
+      "additions": 56,
+      "deletions": 0,
+      "changes": 56,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/frontend/recurrence_a.py",
+      "status": "added",
+      "additions": 64,
+      "deletions": 0,
+      "changes": 64,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/frontend/recurrence_b.py",
+      "status": "added",
+      "additions": 79,
+      "deletions": 0,
+      "changes": 79,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/low/COMMON_NEIGHBORHOOD_CAPACITY.md",
+      "status": "added",
+      "additions": 44,
+      "deletions": 0,
+      "changes": 44,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/low/DIRECT_UNIFORM_PROOF.md",
+      "status": "added",
+      "additions": 94,
+      "deletions": 0,
+      "changes": 94,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/low/INDEPENDENT_VERIFIER.py",
+      "status": "added",
+      "additions": 215,
+      "deletions": 0,
+      "changes": 215,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/low/LOW_EDGE_UNIVERSAL_THEOREM.md",
+      "status": "added",
+      "additions": 41,
+      "deletions": 0,
+      "changes": 41,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/low/MINIMUM_DEGREE_GATE_SELF_CONTAINED.md",
+      "status": "added",
+      "additions": 134,
+      "deletions": 0,
+      "changes": 134,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/low/Q32_285_THEOREM_INDEPENDENT_AUDIT.md",
+      "status": "added",
+      "additions": 37,
+      "deletions": 0,
+      "changes": 37,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/low/Q33_284_THEOREM_DEPENDENCY_AUDIT.md",
+      "status": "added",
+      "additions": 37,
+      "deletions": 0,
+      "changes": 37,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/low/UNIVERSAL_EDGE_AUGMENTATION_LEMMA.md",
+      "status": "added",
+      "additions": 29,
+      "deletions": 0,
+      "changes": 29,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/low/VERIFICATION_RESULTS.json",
+      "status": "added",
+      "additions": 212,
+      "deletions": 0,
+      "changes": 212,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/root/CANONICAL_STATE.md",
+      "status": "added",
+      "additions": 125,
+      "deletions": 0,
+      "changes": 125,
+      "previous_filename": null
+    },
+    {
+      "filename": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/root/PROOF_DAG.md",
+      "status": "added",
+      "additions": 118,
+      "deletions": 0,
+      "changes": 118,
+      "previous_filename": null
+    }
+  ]
+}

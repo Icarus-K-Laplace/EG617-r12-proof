@@ -1,0 +1,1012 @@
+[
+  {
+    "id": "TURAN",
+    "Lemma": "e(J)>=p_a(n) if alpha(J)<=a",
+    "Hypotheses": "Simple finite graph; positive integer a",
+    "dependencies": [],
+    "Independent_derivation": "Published Turan, complement specialization; F1",
+    "Critical_step": "Complement direction",
+    "Counterexample_search": "Checked balanced-part formula against integer sum",
+    "Status": "PROVED",
+    "Used_by": [
+      "CAPS",
+      "ODDCYCLE",
+      "REGULAR4",
+      "MATCH3",
+      "SMALLQ_REDUCTION",
+      "Q20",
+      "RECURRENCE_RULES"
+    ]
+  },
+  {
+    "id": "BROOKS",
+    "Lemma": "Delta<=12 and no K13 component imply chi<=12",
+    "Hypotheses": "Finite simple graph; degree bound12>2",
+    "dependencies": [],
+    "Independent_derivation": "Original Brooks reprint p537; F1",
+    "Critical_step": "Disconnected graphs and clique exception",
+    "Counterexample_search": "Checked every component, no odd-cycle exception at degree12",
+    "Status": "PROVED",
+    "Used_by": [
+      "EXTRACTION"
+    ]
+  },
+  {
+    "id": "AES",
+    "Lemma": "K4-free delta>5n/8 implies 3-partite",
+    "Hypotheses": "Finite simple graph; strict inequality",
+    "dependencies": [],
+    "Independent_derivation": "Original1974 Theorem1.1 with r=4; F2",
+    "Critical_step": "Strict rather than weak inequality",
+    "Counterexample_search": "176>175; equality theorem not used",
+    "Status": "PROVED",
+    "Used_by": [
+      "CORE211"
+    ]
+  },
+  {
+    "id": "SECOND_TURAN",
+    "Lemma": "Non-r-partite K_(r+1)-free graph has at most t_r(n)-floor(n/r)+1 edges",
+    "Hypotheses": "n>=r+3; 2<=r<=(n-1)/2",
+    "dependencies": [],
+    "Independent_derivation": "Original2005 Theorem1 p13; F2",
+    "Critical_step": "Correct range and nonpartiteness",
+    "Counterexample_search": "n49,r12 and n25,r2 satisfy all conditions",
+    "Status": "PROVED",
+    "Used_by": [
+      "CTX49"
+    ]
+  },
+  {
+    "id": "CAPS",
+    "Lemma": "Every induced target subgraph obeys D",
+    "Hypotheses": "Original K145 coloring with all12 colors in every13-set",
+    "dependencies": [
+      "TURAN"
+    ],
+    "Independent_derivation": "F1: sum lower bounds for other11 colors",
+    "Critical_step": "Caps hold on every subset",
+    "Counterexample_search": "No least-color assumption in induced cap derivation",
+    "Status": "PROVED",
+    "Used_by": [
+      "R224",
+      "DEL335",
+      "ORD3637",
+      "PIVOT",
+      "DEL48",
+      "CTX49",
+      "EXTRACTION",
+      "MATCH_ALL"
+    ]
+  },
+  {
+    "id": "ODDCYCLE",
+    "Lemma": "B18<=73, B23<=122, B25<=145",
+    "Hypotheses": "Nonbipartite triangle-free graphs of indicated orders",
+    "dependencies": [
+      "TURAN"
+    ],
+    "Independent_derivation": "L1: shortest odd cycle, at most k attachments per outside vertex, Mantel outside",
+    "Critical_step": "Cycle must be chordless; all k covered",
+    "Counterexample_search": "Enumerated all feasible k; n23,k>=3 max119",
+    "Status": "PROVED",
+    "Used_by": [
+      "R223",
+      "TF23",
+      "NO25"
+    ]
+  },
+  {
+    "id": "R224",
+    "Lemma": "R(2,24) is empty",
+    "Hypotheses": "R includes omega11 and all D-caps",
+    "dependencies": [
+      "CAPS"
+    ],
+    "Independent_derivation": "L1: forced12-regular target; 11-regular complement; quadratic contradiction",
+    "Critical_step": "Complement may have target cross edges",
+    "Counterexample_search": "Discriminant -47; no disjoint-union assumption",
+    "Status": "PROVED",
+    "Used_by": [
+      "DEL335",
+      "ORD3637",
+      "GATE47",
+      "CORE11",
+      "COVER_ROWS",
+      "DEL48",
+      "H12",
+      "CTX49",
+      "RECURRENCE_RULES"
+    ]
+  },
+  {
+    "id": "R223",
+    "Lemma": "Every R(2,23) has >=131 edges",
+    "Hypotheses": "R(2,23)",
+    "dependencies": [
+      "ODDCYCLE"
+    ],
+    "Independent_derivation": "L1: complement cannot be bipartite and has <=122 edges",
+    "Critical_step": "Using omega bound for nonbipartiteness",
+    "Counterexample_search": "253-122=131",
+    "Status": "PROVED",
+    "Used_by": [
+      "GATE288",
+      "RECURRENCE_RULES"
+    ]
+  },
+  {
+    "id": "TF23",
+    "Lemma": "Complete121/122 classification of23-point triangle-free W",
+    "Hypotheses": "alpha(W)<=11; e(W)>=121",
+    "dependencies": [
+      "ODDCYCLE"
+    ],
+    "Independent_derivation": "L1: C5 exterior80+, three bipartite possibilities, endpoint type analysis",
+    "Critical_step": "K9,9 minus one edge exceptional endpoints",
+    "Counterexample_search": "All20 type pairs and10 exceptional endpoint cases rebuilt",
+    "Status": "PROVED",
+    "Used_by": [
+      "COST12"
+    ]
+  },
+  {
+    "id": "COST12",
+    "Lemma": "For each classified W and independent I exists12-set T of cost<=6",
+    "Hypotheses": "TF23 hypotheses; I independent in W",
+    "dependencies": [
+      "TF23"
+    ],
+    "Independent_derivation": "L1: three explicit12-sets; deleted-edge and special blowup cases",
+    "Critical_step": "New independent sets created by deletion",
+    "Counterexample_search": "61 representatives,49 valid,263 maximal independent sets checked",
+    "Status": "PROVED",
+    "Used_by": [
+      "DEL335"
+    ]
+  },
+  {
+    "id": "DEL335",
+    "Lemma": "Every R(3,35) has delta>=12",
+    "Hypotheses": "alpha3,omega11,induced caps",
+    "dependencies": [
+      "R224",
+      "COST12",
+      "CAPS"
+    ],
+    "Independent_derivation": "L2: degree11 gives complement23-neighborhood and14-set with72>69 edges",
+    "Critical_step": "Common-neighbor set independent in complement",
+    "Counterexample_search": "Explicit target cross-edge lower bound12-|T intersect I|",
+    "Status": "PROVED",
+    "Used_by": [
+      "ORD3637",
+      "CORE211",
+      "GATE47",
+      "CORE11"
+    ]
+  },
+  {
+    "id": "ORD3637",
+    "Lemma": "R(3,36) has delta>=13,e>=234; R(3,37) empty",
+    "Hypotheses": "Respective R contracts",
+    "dependencies": [
+      "R224",
+      "DEL335",
+      "CAPS"
+    ],
+    "Independent_derivation": "L2: delete a neighbor at degree12; handshake at37",
+    "Critical_step": "Deletion remains in hereditary R class",
+    "Counterexample_search": "Degree11/12 and all lower degrees included",
+    "Status": "PROVED",
+    "Used_by": [
+      "GATE47",
+      "CORE11",
+      "DEL48",
+      "H12",
+      "CTX49",
+      "RECURRENCE_RULES"
+    ]
+  },
+  {
+    "id": "CORE211",
+    "Lemma": "Every R(3,35) has e>=211",
+    "Hypotheses": "R(3,35)",
+    "dependencies": [
+      "DEL335",
+      "AES"
+    ],
+    "Independent_derivation": "L2: equality210 gives22-regular complement and forbidden independent part12",
+    "Critical_step": "AES applies only at equality",
+    "Counterexample_search": "Strict threshold checked from primary theorem",
+    "Status": "PROVED",
+    "Used_by": [
+      "GATE288",
+      "FLOOR48"
+    ]
+  },
+  {
+    "id": "GATE47",
+    "Lemma": "R(4,47),e<=286 implies delta>=12",
+    "Hypotheses": "Full R contract and edge range",
+    "dependencies": [
+      "ORD3637",
+      "DEL335",
+      "R224"
+    ],
+    "Independent_derivation": "L2: d<=9, d10 and d11 treated separately",
+    "Critical_step": "Do not assume shell clique",
+    "Counterexample_search": "d10 floor289; d11 floor287; all cross edges retained",
+    "Status": "PROVED",
+    "Used_by": [
+      "FLOOR287"
+    ]
+  },
+  {
+    "id": "NO25",
+    "Lemma": "No25-set of alpha<=2 in low-edge47 graph",
+    "Hypotheses": "n47,delta12,omega11,T<=8",
+    "dependencies": [
+      "ODDCYCLE"
+    ],
+    "Independent_derivation": "L3: degree upper154 versus complement-derived lower155",
+    "Critical_step": "Target need not be disjoint union of cliques",
+    "Counterexample_search": "T6 and T8 boundaries separately checked",
+    "Status": "PROVED",
+    "Used_by": [
+      "COMMON"
+    ]
+  },
+  {
+    "id": "COMMON",
+    "Lemma": "c(u,v)<=3+epsilon(u)+epsilon(v) for a nonedge",
+    "Hypotheses": "n47,delta12,alpha4,omega11,T<=8",
+    "dependencies": [
+      "NO25"
+    ],
+    "Independent_derivation": "L3: common antineighborhood size21+c-epsu-epsv",
+    "Critical_step": "Use24, not23, as maximum uncovered size",
+    "Counterexample_search": "At T8 bound11; uniqueness of K10 completion not imported",
+    "Status": "PROVED",
+    "Used_by": [
+      "LOW285",
+      "EXACT285",
+      "AUGMENT",
+      "EQ286"
+    ]
+  },
+  {
+    "id": "REGULAR4",
+    "Lemma": "Independent four-set of degree12 vertices exists",
+    "Hypotheses": "n47,delta12,alpha4,omega11, e<=286",
+    "dependencies": [
+      "TURAN"
+    ],
+    "Independent_derivation": "L4: Turan on regular set plus incident exceptional edges",
+    "Critical_step": "Subtract exceptional internal edges once",
+    "Counterexample_search": "q0 included at T0; all q<=8 bounds checked",
+    "Status": "PROVED",
+    "Used_by": [
+      "SUPPORT_MAP",
+      "BLOCKERS"
+    ]
+  },
+  {
+    "id": "SUPPORT_MAP",
+    "Lemma": "All actual four-seed supports map to enumerated multiset domain",
+    "Hypotheses": "REGULAR4; alpha4;omega11",
+    "dependencies": [
+      "REGULAR4"
+    ],
+    "Independent_derivation": "L4:48 incidences on43 vertices, surplus5; d_i>=2; h3..5",
+    "Critical_step": "Repeated support sets and zero missing sets",
+    "Counterexample_search": "All subsets of size2..4 allowed, multiplicities retained",
+    "Status": "PROVED",
+    "Used_by": [
+      "SUPPORT_ORBITS"
+    ]
+  },
+  {
+    "id": "SUPPORT_ORBITS",
+    "Lemma": "Exactly2,3,5 support orbits at h3,4,5",
+    "Hypotheses": "Finite domain from SUPPORT_MAP",
+    "dependencies": [
+      "SUPPORT_MAP"
+    ],
+    "Independent_derivation": "L4 and support_orbits(): all combinations with replacement and24 permutations",
+    "Critical_step": "Count agreement alone insufficient",
+    "Counterexample_search": "Actual canonical sets equal all ten stated orbits; raw9,40,48",
+    "Status": "COMPUTATIONALLY_VERIFIED",
+    "Used_by": [
+      "LOW285",
+      "EXACT285",
+      "EQ286"
+    ]
+  },
+  {
+    "id": "BLOCKERS",
+    "Lemma": "Two-support point forces complete bipartite missing sets; scalar minima6,4,2,2",
+    "Hypotheses": "Actual independent seeds; support exactly two; positive missing sets for scalar form",
+    "dependencies": [
+      "REGULAR4"
+    ],
+    "Independent_derivation": "L4: independent5 obstruction and disjoint vertex charges",
+    "Critical_step": "Blocker invalid for triple support",
+    "Counterexample_search": "Threshold proof plus full bounded scalar enumeration",
+    "Status": "PROVED",
+    "Used_by": [
+      "SHARED",
+      "LOW285",
+      "EXACT285",
+      "EQ286"
+    ]
+  },
+  {
+    "id": "SHARED",
+    "Lemma": "Shared-leaf and diamond pointwise excess inequalities",
+    "Hypotheses": "Distinct opposite cliques; at most one negative increment, or two incidences",
+    "dependencies": [
+      "BLOCKERS"
+    ],
+    "Independent_derivation": "L4: baseline12; replace support neighbor by forced neighbors before summing",
+    "Critical_step": "Do not sum two full excess charges at same vertex",
+    "Counterexample_search": "All zero-size cases and all bounded increment tuples checked",
+    "Status": "PROVED",
+    "Used_by": [
+      "LOW285",
+      "EXACT285",
+      "EQ286"
+    ]
+  },
+  {
+    "id": "LOW285",
+    "Lemma": "No47 graph with e<=285,delta12,alpha4,omega11",
+    "Hypotheses": "Exactly the five abstract hypotheses; no caps required",
+    "dependencies": [
+      "COMMON",
+      "SUPPORT_ORBITS",
+      "BLOCKERS",
+      "SHARED"
+    ],
+    "Independent_derivation": "L5: all support cases; pair equality trigger; P costs8 and D10",
+    "Critical_step": "T0, complete K9/K10 attachments and support rotation",
+    "Counterexample_search": "Direct analytic route reconstructed without augmentation",
+    "Status": "PROVED",
+    "Used_by": [
+      "FLOOR287"
+    ]
+  },
+  {
+    "id": "EXACT285",
+    "Lemma": "No47 graph with e285,delta12,alpha4,omega11",
+    "Hypotheses": "Same five hypotheses, equality285",
+    "dependencies": [
+      "COMMON",
+      "SUPPORT_ORBITS",
+      "BLOCKERS",
+      "SHARED"
+    ],
+    "Independent_derivation": "L5 specialized to T6; original U1-U6 source read and separately traced",
+    "Critical_step": "Do not depend on low-edge augmentation",
+    "Counterexample_search": "Source at f56cc9e, exact blob authenticated",
+    "Status": "PROVED",
+    "Used_by": [
+      "AUGMENT"
+    ]
+  },
+  {
+    "id": "AUGMENT",
+    "Lemma": "Every nonedge can be added safely until285 edges",
+    "Hypotheses": "Abstract47 graph with282<=e<285,delta12,alpha4,omega11",
+    "dependencies": [
+      "COMMON",
+      "EXACT285"
+    ],
+    "Independent_derivation": "L3: fewer than10 common neighbors prevents new K12; at most3 steps",
+    "Critical_step": "D-caps need not be preserved",
+    "Counterexample_search": "All five actual terminal hypotheses preserved, reapply capacity each step",
+    "Status": "PROVED",
+    "Used_by": []
+  },
+  {
+    "id": "EQ286",
+    "Lemma": "No47 graph with e286,delta12,alpha4,omega11",
+    "Hypotheses": "Exactly five abstract hypotheses, T8",
+    "dependencies": [
+      "COMMON",
+      "SUPPORT_ORBITS",
+      "BLOCKERS",
+      "SHARED"
+    ],
+    "Independent_derivation": "L6: all ten orbits, concentration, triple cost, doubled-pair intersection proof",
+    "Critical_step": "T6 completion uniqueness and repeated excess would be invalid",
+    "Counterexample_search": "All intersections of size1/2 missing sets treated explicitly",
+    "Status": "PROVED",
+    "Used_by": [
+      "FLOOR287"
+    ]
+  },
+  {
+    "id": "FLOOR287",
+    "Lemma": "Every R(4,47) has e>=287",
+    "Hypotheses": "Full R contract",
+    "dependencies": [
+      "GATE47",
+      "LOW285",
+      "EQ286"
+    ],
+    "Independent_derivation": "L6 conclusion by disjoint edge ranges",
+    "Critical_step": "Minimum-degree gate only licensed at<=286",
+    "Counterexample_search": "No generic degree12 assertion for all47 cores",
+    "Status": "PROVED",
+    "Used_by": [
+      "RECURRENCE_RULES",
+      "H13LOW",
+      "H13TOP"
+    ]
+  },
+  {
+    "id": "PIVOT",
+    "Lemma": "47-core inheritance and E=91+q+e(C), subset identity",
+    "Hypotheses": "n61,delta13,alpha5,omega11,caps; p regular",
+    "dependencies": [
+      "CAPS"
+    ],
+    "Independent_derivation": "C1: exact degree and edge partition",
+    "Critical_step": "A need not be clique",
+    "Counterexample_search": "Explicit g=d_F-13 and t=d_M+g",
+    "Status": "PROVED",
+    "Used_by": [
+      "CORE11",
+      "EXCHANGE",
+      "H13LOW",
+      "H13TOP"
+    ]
+  },
+  {
+    "id": "CORE11",
+    "Lemma": "Every actual47-core has delta>=11; deficient vertices form clique",
+    "Hypotheses": "Same61 contract, no energy restriction",
+    "dependencies": [
+      "ORD3637",
+      "R224",
+      "DEL335",
+      "PIVOT"
+    ],
+    "Independent_derivation": "C2: exclude embedded36 object; take antineighborhoods",
+    "Critical_step": "All actual pivots, not selected pivot only",
+    "Counterexample_search": "Outside25 alpha2 contradiction; nonadjacent deficient pair contradicted",
+    "Status": "PROVED",
+    "Used_by": [
+      "COVER_ROWS",
+      "EXCHANGE",
+      "GEO2728",
+      "B1",
+      "GATE288"
+    ]
+  },
+  {
+    "id": "COVER_ROWS",
+    "Lemma": "Missing edge/triangle/K4 row unions >=12/24/36",
+    "Hypotheses": "Same61 contract",
+    "dependencies": [
+      "CORE11",
+      "R224"
+    ],
+    "Independent_derivation": "C2: uncovered alpha3/2/1 sets",
+    "Critical_step": "Use union before sum of row sizes",
+    "Counterexample_search": "Overlaps can only weaken size sum, never strengthen it illicitly",
+    "Status": "PROVED",
+    "Used_by": [
+      "SMALLQ_REDUCTION",
+      "GATE288"
+    ]
+  },
+  {
+    "id": "EXCHANGE",
+    "Lemma": "C2-C4 exact repivot identities and INS11",
+    "Hypotheses": "p,y regular in same61 graph; beta licensed separately",
+    "dependencies": [
+      "PIVOT",
+      "CORE11"
+    ],
+    "Independent_derivation": "C1-C2: removed/inserted edge counts with internal edges corrected once",
+    "Critical_step": "Signs of m,kappa and eta; no closed-cycle zero inference",
+    "Counterexample_search": "312 random algebra instances; independent symbolic derivation",
+    "Status": "PROVED",
+    "Used_by": [
+      "SMALLQ_REDUCTION",
+      "GEO2728",
+      "B1",
+      "PROM29",
+      "CLASS30",
+      "FAMILY_I",
+      "FAMILY_II"
+    ]
+  },
+  {
+    "id": "MATCH3",
+    "Lemma": "13-point M with z>=22,alpha<=10 has3-matching",
+    "Hypotheses": "Simple M on13 vertices",
+    "dependencies": [
+      "TURAN"
+    ],
+    "Independent_derivation": "C3: two-matching endpoints and bipartite cover cases",
+    "Critical_step": "Cross cover with one endpoint on each side",
+    "Counterexample_search": "Bounds12+6 and8+6 fail22; two S-cover points yield independent11",
+    "Status": "PROVED",
+    "Used_by": [
+      "SMALLQ_REDUCTION",
+      "MATCH_ALL"
+    ]
+  },
+  {
+    "id": "SMALLQ_REDUCTION",
+    "Lemma": "Every regular q<=28 shell is bipartite3+10 and q>=27",
+    "Hypotheses": "Same61 contract, q<=28",
+    "dependencies": [
+      "COVER_ROWS",
+      "EXCHANGE",
+      "MATCH3",
+      "TURAN"
+    ],
+    "Independent_derivation": "C3: every triangular channel, odd-cycle and cover case",
+    "Critical_step": "Single outside edge, stars, empty rows, decorated endpoints",
+    "Counterexample_search": "INS11 excludes triangular leaf26<27; isolates retained",
+    "Status": "PROVED",
+    "Used_by": [
+      "ENUM_MAP",
+      "Q29"
+    ]
+  },
+  {
+    "id": "ENUM_MAP",
+    "Lemma": "Every reduced shell appears in bounded row/decor enumeration; canonical keys exact",
+    "Hypotheses": "SMALLQ_REDUCTION, q27 or28",
+    "dependencies": [
+      "SMALLQ_REDUCTION"
+    ],
+    "Independent_derivation": "C4: stars-and-bars, Hall equivalence, all budget multisets and S3 quotient",
+    "Critical_step": "Necessary filters may not be mistaken for sufficiency",
+    "Counterexample_search": "19448 vectors; zero decoration and empty masks explicitly included",
+    "Status": "PROVED",
+    "Used_by": [
+      "ENUM2728"
+    ]
+  },
+  {
+    "id": "ENUM2728",
+    "Lemma": "Exactly2 q27 and8 q28 canonical necessary states",
+    "Hypotheses": "Finite domain licensed by ENUM_MAP",
+    "dependencies": [
+      "ENUM_MAP"
+    ],
+    "Independent_derivation": "C4 and independently implemented shell_replay",
+    "Critical_step": "An unenumerated state would invalidate geometry",
+    "Counterexample_search": "Exact set comparison;81920 subset identities;107 regular INS11 tests",
+    "Status": "COMPUTATIONALLY_VERIFIED",
+    "Used_by": [
+      "GEO2728",
+      "B1"
+    ]
+  },
+  {
+    "id": "GEO2728",
+    "Lemma": "Q27 and six non-B1 Q28 states impossible",
+    "Hypotheses": "Maximum over all actual regular vertices; ENUM2728",
+    "dependencies": [
+      "ENUM2728",
+      "EXCHANGE",
+      "CORE11"
+    ],
+    "Independent_derivation": "C5: maximality forces zero nonnegative corrections; deficient rows coincide",
+    "Critical_step": "Cannot equate rows from cycle summation",
+    "Counterexample_search": "Different-row point loses3 and gains0;14-set79>69",
+    "Status": "PROVED",
+    "Used_by": [
+      "Q29"
+    ]
+  },
+  {
+    "id": "B1",
+    "Lemma": "Both B1 Q28 states impossible",
+    "Hypotheses": "Same maximum-charge contract",
+    "dependencies": [
+      "ENUM2728",
+      "EXCHANGE",
+      "CORE11"
+    ],
+    "Independent_derivation": "C5: regular K11; triples equal/disjoint, multiplicity2/3; base points",
+    "Critical_step": "Classification at specified cover and global pivot quantifiers",
+    "Counterexample_search": "At least4 row classes; two nonadjacent deficient base points in one core",
+    "Status": "PROVED",
+    "Used_by": [
+      "Q29"
+    ]
+  },
+  {
+    "id": "Q29",
+    "Lemma": "Q>=29 for every61 graph with minimum degree13 and stated hereditary contract",
+    "Hypotheses": "n61,delta13,alpha5,omega11,caps; no E restriction",
+    "dependencies": [
+      "SMALLQ_REDUCTION",
+      "GEO2728",
+      "B1"
+    ],
+    "Independent_derivation": "C5 conclusion after all Q<=28 alternatives",
+    "Critical_step": "Energy independence must be checked, not assumed",
+    "Counterexample_search": "No407/408 parameter in derivation",
+    "Status": "PROVED",
+    "Used_by": [
+      "COVER",
+      "H13LOW"
+    ]
+  },
+  {
+    "id": "GATE288",
+    "Lemma": "Actual47-core of e<=288 has delta>=12 and original shell EDGE13",
+    "Hypotheses": "Same61 contract plus core edge bound",
+    "dependencies": [
+      "CORE11",
+      "CORE211",
+      "R223",
+      "COVER_ROWS"
+    ],
+    "Independent_derivation": "C6: equality288 produces14-set76>69; complement12-set gives210<211",
+    "Critical_step": "Only strengthened cores receive beta12",
+    "Counterexample_search": "Each actual repivot checked before eta12 use",
+    "Status": "PROVED",
+    "Used_by": [
+      "PROM29",
+      "CLASS30",
+      "FAMILY_I",
+      "FAMILY_II"
+    ]
+  },
+  {
+    "id": "PROM29",
+    "Lemma": "At q<=29,e(C)<=288 there is a regular repivot q_y>=30",
+    "Hypotheses": "Same61 contract and stated local bounds",
+    "dependencies": [
+      "GATE288",
+      "EXCHANGE"
+    ],
+    "Independent_derivation": "C6: high-weight-set cases0,1,2; middle degree3..10",
+    "Critical_step": "Decorated points outside X can still carry edges",
+    "Counterexample_search": "All X cases and regular degrees0,1,2 included",
+    "Status": "PROVED",
+    "Used_by": [
+      "COVER"
+    ]
+  },
+  {
+    "id": "CLASS30",
+    "Lemma": "At E408,Q30 every maximizing shell is Family I or II",
+    "Hypotheses": "Same61 contract; chosen maximum q30",
+    "dependencies": [
+      "GATE288",
+      "EXCHANGE"
+    ],
+    "Independent_derivation": "C7: middle degrees4..9,3,10; K4 reduction; X sizes0..3",
+    "Critical_step": "Classify every degree and justify new-core beta12",
+    "Counterexample_search": "d2 K4 repivot first proves q>=29 before new core degree12",
+    "Status": "PROVED",
+    "Used_by": [
+      "FAMILY_I",
+      "FAMILY_II"
+    ]
+  },
+  {
+    "id": "FAMILY_I",
+    "Lemma": "Family I cannot occur at E408,Q30",
+    "Hypotheses": "CLASS30 actual same-parent graph",
+    "dependencies": [
+      "CLASS30",
+      "GATE288",
+      "EXCHANGE"
+    ],
+    "Independent_derivation": "C8: row classes; disjoint triangle excess3(11-r), r4/5",
+    "Critical_step": "Remainder has no K-neighbors; no overlapping excess",
+    "Counterexample_search": "r5 needs70 vs5; r4 forces clique at least36",
+    "Status": "PROVED",
+    "Used_by": [
+      "FAMILY_II",
+      "COVER"
+    ]
+  },
+  {
+    "id": "FAMILY_II",
+    "Lemma": "Family II cannot occur at E408,Q30",
+    "Hypotheses": "CLASS30 actual same-parent graph",
+    "dependencies": [
+      "CLASS30",
+      "FAMILY_I",
+      "GATE288",
+      "EXCHANGE"
+    ],
+    "Independent_derivation": "C8: decorated pair stays exceptional; ten disjoint anticomplete regular pairs",
+    "Critical_step": "Reapply classification only at verified q30 pivots",
+    "Counterexample_search": "Each pair point has exactly one K-neighbor; degree13-1-e>=12",
+    "Status": "PROVED",
+    "Used_by": [
+      "COVER"
+    ]
+  },
+  {
+    "id": "COVER",
+    "Lemma": "E407=>Q>=30 and E408=>Q>=31",
+    "Hypotheses": "n61,delta>=13,alpha5,omega11,caps; E407/408 implies delta13",
+    "dependencies": [
+      "Q29",
+      "PROM29",
+      "FAMILY_I",
+      "FAMILY_II"
+    ],
+    "Independent_derivation": "C6-C8 complete case split",
+    "Critical_step": "Maximum set must match pointwise upper bounds",
+    "Counterexample_search": "No absent regular pivot: average<14 and min>=13",
+    "Status": "PROVED",
+    "Used_by": [
+      "H13TOP"
+    ]
+  },
+  {
+    "id": "DEL48",
+    "Lemma": "Every R(4,48) has delta>=12",
+    "Hypotheses": "Full R(4,48) contract",
+    "dependencies": [
+      "ORD3637",
+      "R224",
+      "CAPS"
+    ],
+    "Independent_derivation": "F3: degree11 rows<=3 but missing pair union>=13",
+    "Critical_step": "No assumed degree12 gate",
+    "Counterexample_search": "All d<=10 leave forbidden37 set",
+    "Status": "PROVED",
+    "Used_by": [
+      "FLOOR48",
+      "H12"
+    ]
+  },
+  {
+    "id": "Q20",
+    "Lemma": "12-shell q>=20; equality exactly five K_(2,r) families r6..10",
+    "Hypotheses": "z>=11,alpha(M)<=10,EDGE12,triangle sum>=24,g>=0",
+    "dependencies": [
+      "TURAN"
+    ],
+    "Independent_derivation": "F3:2-matching equality K2,2; all attachments on one side; weights10",
+    "Critical_step": "No omitted decorations on initial cycle vertices",
+    "Counterexample_search": "Independent286-vector replay returns all five equality families",
+    "Status": "PROVED",
+    "Used_by": [
+      "INSERT20",
+      "FLOOR48",
+      "H12"
+    ]
+  },
+  {
+    "id": "INSERT20",
+    "Lemma": "Q20 impossible if every leaf repivot core has delta>=12",
+    "Hypotheses": "Actual minimum-degree12 parent and Q20",
+    "dependencies": [
+      "Q20"
+    ],
+    "Independent_derivation": "F3: inserted target-adjacent hubs have at most10+1 neighbors",
+    "Critical_step": "Do not assume row disjointness or new-core edge equality",
+    "Counterexample_search": "Deleting row can only lower inserted degrees",
+    "Status": "PROVED",
+    "Used_by": [
+      "FLOOR48",
+      "H12"
+    ]
+  },
+  {
+    "id": "FLOOR48",
+    "Lemma": "Every R(4,48) has e>=310",
+    "Hypotheses": "Full R(4,48) contract",
+    "dependencies": [
+      "DEL48",
+      "CORE211",
+      "Q20",
+      "INSERT20"
+    ],
+    "Independent_derivation": "F3: degree>=13 handshake312; degree12 core211 and q>=21",
+    "Critical_step": "35-core belongs to correct class at every leaf",
+    "Counterexample_search": "No47-to48 floor substitution",
+    "Status": "PROVED",
+    "Used_by": [
+      "H12",
+      "RECURRENCE_RULES"
+    ]
+  },
+  {
+    "id": "H12",
+    "Lemma": "No61-point minimum-degree12 parent with E<=408",
+    "Hypotheses": "alpha5,omega11,all D-caps",
+    "dependencies": [
+      "FLOOR48",
+      "DEL48",
+      "Q20",
+      "INSERT20",
+      "ORD3637",
+      "R224"
+    ],
+    "Independent_derivation": "F3: E>=408; equality q20 contradicted by48-core delta12",
+    "Critical_step": "All E below408 and equality handled",
+    "Counterexample_search": "Same parent retained through all leaf repivots",
+    "Status": "PROVED",
+    "Used_by": [
+      "T61_EMPTY"
+    ]
+  },
+  {
+    "id": "CTX49",
+    "Lemma": "No induced contextual R(4,49) in original coloring",
+    "Hypotheses": "Original12-color K145 counterexample retained",
+    "dependencies": [
+      "CAPS",
+      "ORD3637",
+      "R224",
+      "SECOND_TURAN"
+    ],
+    "Independent_derivation": "F2: target>=319, eleven other colors>=79 each, target<=307",
+    "Critical_step": "No contextual-to-generic promotion",
+    "Counterexample_search": "Other-color omega4 derived from target alpha4",
+    "Status": "PROVED",
+    "Used_by": [
+      "RECURRENCE_RULES",
+      "OTHER_DEGREES"
+    ]
+  },
+  {
+    "id": "EXTRACTION",
+    "Lemma": "Original counterexample gives one of144 residual contracts",
+    "Hypotheses": "Least-edge color G; original coloring",
+    "dependencies": [
+      "CAPS",
+      "BROOKS"
+    ],
+    "Independent_derivation": "F1: maximal K12 packing; independent transversal; exact budget",
+    "Critical_step": "Initial shell defect and interblock ledger",
+    "Counterexample_search": "d0..11,j0..11 include all degenerate cases",
+    "Status": "PROVED",
+    "Used_by": [
+      "K145"
+    ]
+  },
+  {
+    "id": "MATCH_ALL",
+    "Lemma": "Recurrence matching guarantee valid for every h",
+    "Hypotheses": "Missing h-shell alpha<=10 and induced caps",
+    "dependencies": [
+      "MATCH3",
+      "CAPS"
+    ],
+    "Independent_derivation": "F4: h12,13,14 separately; h>=15 generic unmatched bound",
+    "Critical_step": "Formula extends beyond h13",
+    "Counterexample_search": "h14 cut20+6<33; generic guarantee thereafter",
+    "Status": "PROVED",
+    "Used_by": [
+      "RECURRENCE_RULES"
+    ]
+  },
+  {
+    "id": "RECURRENCE_RULES",
+    "Lemma": "All B(a,n) lower-bound and emptiness rules valid",
+    "Hypotheses": "Induced contextual classes; licensed seeds and order cutoffs",
+    "dependencies": [
+      "TURAN",
+      "CTX49",
+      "R224",
+      "R223",
+      "ORD3637",
+      "FLOOR287",
+      "FLOOR48",
+      "MATCH_ALL"
+    ],
+    "Independent_derivation": "F4: core induction, pair/triangle split, matching and deletion averaging",
+    "Critical_step": "Take min of channels and min over degrees",
+    "Counterexample_search": "All references decrease a or n; necessary filters only exclude impossible rows",
+    "Status": "PROVED",
+    "Used_by": [
+      "RECURRENCE_REPLAY"
+    ]
+  },
+  {
+    "id": "RECURRENCE_REPLAY",
+    "Lemma": "1752 nodes agree;143 stops excluded; sole stop(11,6,5,61),397..408",
+    "Hypotheses": "Precisely the finite recurrence domain a1..12,n0..145",
+    "dependencies": [
+      "RECURRENCE_RULES"
+    ],
+    "Independent_derivation": "F4 and independent recurrence()",
+    "Critical_step": "Matching old outputs is not proof of the rules",
+    "Counterexample_search": "Independent values computed first; full arrays and144 records retained",
+    "Status": "COMPUTATIONALLY_VERIFIED",
+    "Used_by": [
+      "K145"
+    ]
+  },
+  {
+    "id": "H13LOW",
+    "Lemma": "All h13 energies<=406 impossible",
+    "Hypotheses": "Actual61 contract, delta13,E<=406",
+    "dependencies": [
+      "PIVOT",
+      "FLOOR287",
+      "Q29"
+    ],
+    "Independent_derivation": "F5: E>=91+29+287=407",
+    "Critical_step": "Q29 used only after confirming energy independence",
+    "Counterexample_search": "No historical per-energy closure label used",
+    "Status": "PROVED",
+    "Used_by": [
+      "T61_EMPTY"
+    ]
+  },
+  {
+    "id": "H13TOP",
+    "Lemma": "h13 E407 and E408 impossible",
+    "Hypotheses": "Same61 contract and corresponding E",
+    "dependencies": [
+      "PIVOT",
+      "FLOOR287",
+      "COVER"
+    ],
+    "Independent_derivation": "F5: EVERY pivot has q<=E-378, contradict maximum lower bound",
+    "Critical_step": "Quantifier order: pointwise first, maximum second",
+    "Counterexample_search": "E407 upper29 vs30; E408 upper30 vs31",
+    "Status": "PROVED",
+    "Used_by": [
+      "T61_EMPTY"
+    ]
+  },
+  {
+    "id": "OTHER_DEGREES",
+    "Lemma": "Contextual T61 E<=408 has min degree12 or13",
+    "Hypotheses": "Contextual61 residual from extraction",
+    "dependencies": [
+      "CTX49"
+    ],
+    "Independent_derivation": "F5: degree<=11 leaves49; delta>=14 costs427",
+    "Critical_step": "No regular degree13 case cannot escape",
+    "Counterexample_search": "If delta13 absent and min>=13 then min>=14",
+    "Status": "PROVED",
+    "Used_by": [
+      "T61_EMPTY"
+    ]
+  },
+  {
+    "id": "T61_EMPTY",
+    "Lemma": "No residual with the required61 contract and E397..408",
+    "Hypotheses": "Contextual61,alpha5,omega11,caps",
+    "dependencies": [
+      "H12",
+      "H13LOW",
+      "H13TOP",
+      "OTHER_DEGREES"
+    ],
+    "Independent_derivation": "F5: complete disjoint minimum-degree and energy split",
+    "Critical_step": "Exceptional cases included",
+    "Counterexample_search": "All12 reachable energies covered",
+    "Status": "PROVED",
+    "Used_by": [
+      "K145"
+    ]
+  },
+  {
+    "id": "K145",
+    "Lemma": "No12-edge-coloring of K145 has every13-set containing all12 colors",
+    "Hypotheses": "Original problem, no additional balancing condition",
+    "dependencies": [
+      "EXTRACTION",
+      "RECURRENCE_REPLAY",
+      "T61_EMPTY"
+    ],
+    "Independent_derivation": "F5: extraction forces T61; every T61 alternative impossible",
+    "Critical_step": "No generic49 theorem required",
+    "Counterexample_search": "Reconstructed acyclic DAG and matched actual hypothesis transports",
+    "Status": "PROVED",
+    "Used_by": []
+  }
+]
