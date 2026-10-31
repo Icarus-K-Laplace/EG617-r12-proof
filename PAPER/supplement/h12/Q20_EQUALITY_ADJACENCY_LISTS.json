@@ -1,0 +1,922 @@
+{
+  "status": "COMPUTATION_CERTIFIED",
+  "scope": "Exact labeled normal forms for all q=20 equality cases; adjacency is the missing graph on the 12-shell. Repivot degree bound uses only row cardinalities, not row disjointness. The same shell normal form occurs with a 35-vertex core in the generic R(4,48) floor and a 48-vertex core in the T61 h12 branch.",
+  "vertices_convention": "h0,h1 are hubs; l0..l(r-1) are leaves; i0..i(9-r) are isolates.",
+  "cases": [
+    {
+      "r": 6,
+      "vertices": [
+        "h0",
+        "h1",
+        "l0",
+        "l1",
+        "l2",
+        "l3",
+        "l4",
+        "l5",
+        "i0",
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "missing_graph_adjacency": {
+        "h0": [
+          "l0",
+          "l1",
+          "l2",
+          "l3",
+          "l4",
+          "l5"
+        ],
+        "h1": [
+          "l0",
+          "l1",
+          "l2",
+          "l3",
+          "l4",
+          "l5"
+        ],
+        "l0": [
+          "h0",
+          "h1"
+        ],
+        "l1": [
+          "h0",
+          "h1"
+        ],
+        "l2": [
+          "h0",
+          "h1"
+        ],
+        "l3": [
+          "h0",
+          "h1"
+        ],
+        "l4": [
+          "h0",
+          "h1"
+        ],
+        "l5": [
+          "h0",
+          "h1"
+        ],
+        "i0": [],
+        "i1": [],
+        "i2": [],
+        "i3": []
+      },
+      "decoration": {
+        "h0": 4,
+        "h1": 4,
+        "l0": 0,
+        "l1": 0,
+        "l2": 0,
+        "l3": 0,
+        "l4": 0,
+        "l5": 0,
+        "i0": 0,
+        "i1": 0,
+        "i2": 0,
+        "i3": 0
+      },
+      "row_size": {
+        "h0": 10,
+        "h1": 10,
+        "l0": 2,
+        "l1": 2,
+        "l2": 2,
+        "l3": 2,
+        "l4": 2,
+        "l5": 2,
+        "i0": 0,
+        "i1": 0,
+        "i2": 0,
+        "i3": 0
+      },
+      "edge_count": 12,
+      "total_charge": 20,
+      "independence_number": 10,
+      "matching_number": 2,
+      "repivot_checks": [
+        {
+          "leaf": "l0",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l1",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l2",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l3",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l4",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l5",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        }
+      ],
+      "applicable_core_orders": [
+        35,
+        48
+      ]
+    },
+    {
+      "r": 7,
+      "vertices": [
+        "h0",
+        "h1",
+        "l0",
+        "l1",
+        "l2",
+        "l3",
+        "l4",
+        "l5",
+        "l6",
+        "i0",
+        "i1",
+        "i2"
+      ],
+      "missing_graph_adjacency": {
+        "h0": [
+          "l0",
+          "l1",
+          "l2",
+          "l3",
+          "l4",
+          "l5",
+          "l6"
+        ],
+        "h1": [
+          "l0",
+          "l1",
+          "l2",
+          "l3",
+          "l4",
+          "l5",
+          "l6"
+        ],
+        "l0": [
+          "h0",
+          "h1"
+        ],
+        "l1": [
+          "h0",
+          "h1"
+        ],
+        "l2": [
+          "h0",
+          "h1"
+        ],
+        "l3": [
+          "h0",
+          "h1"
+        ],
+        "l4": [
+          "h0",
+          "h1"
+        ],
+        "l5": [
+          "h0",
+          "h1"
+        ],
+        "l6": [
+          "h0",
+          "h1"
+        ],
+        "i0": [],
+        "i1": [],
+        "i2": []
+      },
+      "decoration": {
+        "h0": 3,
+        "h1": 3,
+        "l0": 0,
+        "l1": 0,
+        "l2": 0,
+        "l3": 0,
+        "l4": 0,
+        "l5": 0,
+        "l6": 0,
+        "i0": 0,
+        "i1": 0,
+        "i2": 0
+      },
+      "row_size": {
+        "h0": 10,
+        "h1": 10,
+        "l0": 2,
+        "l1": 2,
+        "l2": 2,
+        "l3": 2,
+        "l4": 2,
+        "l5": 2,
+        "l6": 2,
+        "i0": 0,
+        "i1": 0,
+        "i2": 0
+      },
+      "edge_count": 14,
+      "total_charge": 20,
+      "independence_number": 10,
+      "matching_number": 2,
+      "repivot_checks": [
+        {
+          "leaf": "l0",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l1",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l2",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l3",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l4",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l5",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l6",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        }
+      ],
+      "applicable_core_orders": [
+        35,
+        48
+      ]
+    },
+    {
+      "r": 8,
+      "vertices": [
+        "h0",
+        "h1",
+        "l0",
+        "l1",
+        "l2",
+        "l3",
+        "l4",
+        "l5",
+        "l6",
+        "l7",
+        "i0",
+        "i1"
+      ],
+      "missing_graph_adjacency": {
+        "h0": [
+          "l0",
+          "l1",
+          "l2",
+          "l3",
+          "l4",
+          "l5",
+          "l6",
+          "l7"
+        ],
+        "h1": [
+          "l0",
+          "l1",
+          "l2",
+          "l3",
+          "l4",
+          "l5",
+          "l6",
+          "l7"
+        ],
+        "l0": [
+          "h0",
+          "h1"
+        ],
+        "l1": [
+          "h0",
+          "h1"
+        ],
+        "l2": [
+          "h0",
+          "h1"
+        ],
+        "l3": [
+          "h0",
+          "h1"
+        ],
+        "l4": [
+          "h0",
+          "h1"
+        ],
+        "l5": [
+          "h0",
+          "h1"
+        ],
+        "l6": [
+          "h0",
+          "h1"
+        ],
+        "l7": [
+          "h0",
+          "h1"
+        ],
+        "i0": [],
+        "i1": []
+      },
+      "decoration": {
+        "h0": 2,
+        "h1": 2,
+        "l0": 0,
+        "l1": 0,
+        "l2": 0,
+        "l3": 0,
+        "l4": 0,
+        "l5": 0,
+        "l6": 0,
+        "l7": 0,
+        "i0": 0,
+        "i1": 0
+      },
+      "row_size": {
+        "h0": 10,
+        "h1": 10,
+        "l0": 2,
+        "l1": 2,
+        "l2": 2,
+        "l3": 2,
+        "l4": 2,
+        "l5": 2,
+        "l6": 2,
+        "l7": 2,
+        "i0": 0,
+        "i1": 0
+      },
+      "edge_count": 16,
+      "total_charge": 20,
+      "independence_number": 10,
+      "matching_number": 2,
+      "repivot_checks": [
+        {
+          "leaf": "l0",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l1",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l2",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l3",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l4",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l5",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l6",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l7",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        }
+      ],
+      "applicable_core_orders": [
+        35,
+        48
+      ]
+    },
+    {
+      "r": 9,
+      "vertices": [
+        "h0",
+        "h1",
+        "l0",
+        "l1",
+        "l2",
+        "l3",
+        "l4",
+        "l5",
+        "l6",
+        "l7",
+        "l8",
+        "i0"
+      ],
+      "missing_graph_adjacency": {
+        "h0": [
+          "l0",
+          "l1",
+          "l2",
+          "l3",
+          "l4",
+          "l5",
+          "l6",
+          "l7",
+          "l8"
+        ],
+        "h1": [
+          "l0",
+          "l1",
+          "l2",
+          "l3",
+          "l4",
+          "l5",
+          "l6",
+          "l7",
+          "l8"
+        ],
+        "l0": [
+          "h0",
+          "h1"
+        ],
+        "l1": [
+          "h0",
+          "h1"
+        ],
+        "l2": [
+          "h0",
+          "h1"
+        ],
+        "l3": [
+          "h0",
+          "h1"
+        ],
+        "l4": [
+          "h0",
+          "h1"
+        ],
+        "l5": [
+          "h0",
+          "h1"
+        ],
+        "l6": [
+          "h0",
+          "h1"
+        ],
+        "l7": [
+          "h0",
+          "h1"
+        ],
+        "l8": [
+          "h0",
+          "h1"
+        ],
+        "i0": []
+      },
+      "decoration": {
+        "h0": 1,
+        "h1": 1,
+        "l0": 0,
+        "l1": 0,
+        "l2": 0,
+        "l3": 0,
+        "l4": 0,
+        "l5": 0,
+        "l6": 0,
+        "l7": 0,
+        "l8": 0,
+        "i0": 0
+      },
+      "row_size": {
+        "h0": 10,
+        "h1": 10,
+        "l0": 2,
+        "l1": 2,
+        "l2": 2,
+        "l3": 2,
+        "l4": 2,
+        "l5": 2,
+        "l6": 2,
+        "l7": 2,
+        "l8": 2,
+        "i0": 0
+      },
+      "edge_count": 18,
+      "total_charge": 20,
+      "independence_number": 10,
+      "matching_number": 2,
+      "repivot_checks": [
+        {
+          "leaf": "l0",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l1",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l2",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l3",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l4",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l5",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l6",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l7",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l8",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        }
+      ],
+      "applicable_core_orders": [
+        35,
+        48
+      ]
+    },
+    {
+      "r": 10,
+      "vertices": [
+        "h0",
+        "h1",
+        "l0",
+        "l1",
+        "l2",
+        "l3",
+        "l4",
+        "l5",
+        "l6",
+        "l7",
+        "l8",
+        "l9"
+      ],
+      "missing_graph_adjacency": {
+        "h0": [
+          "l0",
+          "l1",
+          "l2",
+          "l3",
+          "l4",
+          "l5",
+          "l6",
+          "l7",
+          "l8",
+          "l9"
+        ],
+        "h1": [
+          "l0",
+          "l1",
+          "l2",
+          "l3",
+          "l4",
+          "l5",
+          "l6",
+          "l7",
+          "l8",
+          "l9"
+        ],
+        "l0": [
+          "h0",
+          "h1"
+        ],
+        "l1": [
+          "h0",
+          "h1"
+        ],
+        "l2": [
+          "h0",
+          "h1"
+        ],
+        "l3": [
+          "h0",
+          "h1"
+        ],
+        "l4": [
+          "h0",
+          "h1"
+        ],
+        "l5": [
+          "h0",
+          "h1"
+        ],
+        "l6": [
+          "h0",
+          "h1"
+        ],
+        "l7": [
+          "h0",
+          "h1"
+        ],
+        "l8": [
+          "h0",
+          "h1"
+        ],
+        "l9": [
+          "h0",
+          "h1"
+        ]
+      },
+      "decoration": {
+        "h0": 0,
+        "h1": 0,
+        "l0": 0,
+        "l1": 0,
+        "l2": 0,
+        "l3": 0,
+        "l4": 0,
+        "l5": 0,
+        "l6": 0,
+        "l7": 0,
+        "l8": 0,
+        "l9": 0
+      },
+      "row_size": {
+        "h0": 10,
+        "h1": 10,
+        "l0": 2,
+        "l1": 2,
+        "l2": 2,
+        "l3": 2,
+        "l4": 2,
+        "l5": 2,
+        "l6": 2,
+        "l7": 2,
+        "l8": 2,
+        "l9": 2
+      },
+      "edge_count": 20,
+      "total_charge": 20,
+      "independence_number": 10,
+      "matching_number": 2,
+      "repivot_checks": [
+        {
+          "leaf": "l0",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l1",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l2",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l3",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l4",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l5",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l6",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l7",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l8",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        },
+        {
+          "leaf": "l9",
+          "leaf_row_size": 2,
+          "hub_row_sizes": {
+            "h0": 10,
+            "h1": 10
+          },
+          "new_core_hub_degree_upper_bound": 11
+        }
+      ],
+      "applicable_core_orders": [
+        35,
+        48
+      ]
+    }
+  ]
+}
