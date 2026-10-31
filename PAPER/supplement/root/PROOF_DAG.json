@@ -1,0 +1,92 @@
+{
+  "COLOR_CAPS": ["TURAN"],
+  "BROOKS": [],
+  "TURAN": [],
+  "AES": [],
+  "SECOND_TURAN": [],
+  "LOWER_ORDER": [
+    "COLOR_CAPS",
+    "TURAN"
+  ],
+  "CORE211": [
+    "LOWER_ORDER",
+    "AES"
+  ],
+  "ABSTRACT_LOW285": [
+    "TURAN"
+  ],
+  "ABSTRACT_286": [
+    "TURAN"
+  ],
+  "R447_FLOOR287": [
+    "LOWER_ORDER",
+    "ABSTRACT_LOW285",
+    "ABSTRACT_286"
+  ],
+  "CONTEXTUAL49_EMPTY": [
+    "COLOR_CAPS",
+    "LOWER_ORDER",
+    "SECOND_TURAN"
+  ],
+  "Q20_CLASSIFICATION": [
+    "TURAN"
+  ],
+  "R448_FLOOR310": [
+    "LOWER_ORDER",
+    "CORE211",
+    "Q20_CLASSIFICATION"
+  ],
+  "H12_EMPTY": [
+    "R448_FLOOR310",
+    "LOWER_ORDER",
+    "Q20_CLASSIFICATION"
+  ],
+  "COVER_Q29_GENERAL": [
+    "LOWER_ORDER"
+  ],
+  "COVER_407_408": [
+    "COVER_Q29_GENERAL",
+    "CORE211"
+  ],
+  "H13_E_LE406_EMPTY": [
+    "COVER_Q29_GENERAL",
+    "R447_FLOOR287"
+  ],
+  "H13_E407_EMPTY": [
+    "COVER_407_408",
+    "R447_FLOOR287"
+  ],
+  "H13_E408_EMPTY": [
+    "COVER_407_408",
+    "R447_FLOOR287"
+  ],
+  "T61_OTHER_DEGREES": [
+    "CONTEXTUAL49_EMPTY"
+  ],
+  "T61_EMPTY": [
+    "H12_EMPTY",
+    "H13_E_LE406_EMPTY",
+    "H13_E407_EMPTY",
+    "H13_E408_EMPTY",
+    "T61_OTHER_DEGREES"
+  ],
+  "RECURRENCE": [
+    "LOWER_ORDER",
+    "CONTEXTUAL49_EMPTY",
+    "R447_FLOOR287",
+    "R448_FLOOR310",
+    "TURAN"
+  ],
+  "EXTRACTION": [
+    "COLOR_CAPS",
+    "BROOKS"
+  ],
+  "K145_TO_T61": [
+    "EXTRACTION",
+    "RECURRENCE"
+  ],
+  "K145_EMPTY": [
+    "K145_TO_T61",
+    "T61_EMPTY"
+  ]
+}
