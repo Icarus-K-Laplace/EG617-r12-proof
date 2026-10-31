@@ -18,7 +18,7 @@
 
 ## Build instructions
 
-The source was successfully compiled in a clean GitHub Actions runner using TeX Live 2025 and `latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex` (32-page PDF; successful build snapshot `7c6b513723cc6ebf3015fda64cf9a86fb09f330a`). A subsequent pass is being used to remove PDF-bookmark warnings and visually inspect the PDF. The workflow is defined in `.github/workflows/paper-build.yml`. A local standard BibTeX build is:
+The source was successfully compiled in a clean GitHub Actions runner using TeX Live 2025 and `latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex` (33-page PDF; successful snapshot `1f4862d0fe4ba0d95324da3c3173863014088634`). The final `.log` has no unresolved references/citations and no overfull/underfull box warnings; selected pages 1 and 24–31 were visually inspected. The same CI run passed the integrated root verifier and independently reran the low-edge, 286-equality, and COVER verifiers. The workflow also emits a source-supplement ZIP artifact. A local standard BibTeX build is:
 
 ```bash
 pdflatex main.tex

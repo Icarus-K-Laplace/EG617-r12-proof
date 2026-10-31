@@ -57,6 +57,17 @@ jobs:
           cd "$RUNNER_TEMP/cover"
           python3 -B INDEPENDENT_VERIFIER.py
 
+      - name: Archive source supplement
+        run: zip -qr "$RUNNER_TEMP/eg617-r12-proof-supplement.zip" PAPER/supplement
+
+      - name: Upload source supplement ZIP
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eg617-r12-proof-supplement
+          path: ${{ runner.temp }}/eg617-r12-proof-supplement.zip
+          if-no-files-found: warn
+
       - name: Upload manuscript and fresh replay outputs
         if: always()
         uses: actions/upload-artifact@v4

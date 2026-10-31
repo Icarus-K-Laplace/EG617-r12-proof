@@ -11,17 +11,17 @@ This directory is a source-preserving bundle of selected proof and verification 
 
 ## Layout
 
-- `frontend/`: two independent recurrence implementations, replay input, recurrence proof and front-end verifier/result.
+- `frontend/`: two independent recurrence implementations, replay input and recurrence proof. The integrated root verifier is in `root/`.
 - `low/`: low-edge verifier and its result, plus the minimum-degree gate and analytic low-edge proof sources.
 - `equality286/`: 286-edge equality verifier, result, checksum file and analytic classification.
 - `h12/`: the 48-vertex floor and T61 degree-12 terminal closure.
 - `cover/`: COVER verifier, result, case matrix, analytic theorem, dependency audit and independent Q30 referee report.
-- `root/`: integrated proof, dependency DAG, source manifest, checksums, root verifier and its recorded result.
+- `root/`: integrated proof, dependency DAG, source manifest, checksums and root verifier. Its `frozen/` subdirectory mirrors all 26 source-manifest entries at the exact relative paths expected by the verifier.
 
 ## Reproduction boundary
 
-The Python programs use the Python standard library. Run each verifier from its own directory so that its `Path(__file__).resolve().parent` inputs and outputs resolve as intended. The front-end recurrence programs are independent integer implementations. The root verifier checks the integrated arithmetic/dependency snapshot; its own docstring expressly says it does **not** rerun the 47-vertex graph search or COVER shell search.
+The Python programs use the Python standard library. Run the integrated verifier from `root/` with `python3 -B INDEPENDENT_VERIFIER.py`. It checks all 26 Git-blob hashes, replays the three recurrence implementations, reruns the retained COVER state verifier, checks the low-order finite routines, and validates the dependency DAG. For standalone low-edge, 286-equality and COVER reruns, use temporary copies of `root/frozen/low`, `root/frozen/eq286` and `root/frozen/cover`; those scripts overwrite their adjacent result JSONs, so do not run them in-place before the root source-hash check. The root verifier expressly does **not** rerun the 47-vertex graph search or COVER shell search.
 
-The COVER verifier reconstructs the finite shell states described in `cover/COVER_THEOREM.md`; it does not certify the analytic reductions leading to those states. Likewise, finite verifier PASS records do not constitute a proof-assistant kernel or independent human peer review.
+The COVER verifier reconstructs the finite shell states described in `root/frozen/cover/COVER_THEOREM.md`; it does not certify the analytic reductions leading to those states. The 104 repivot checks are generic algebra tests, not legal-parent witnesses. Likewise, finite verifier PASS records do not constitute a proof-assistant kernel or independent human peer review.
 
-Before publication, run all bundled scripts in a clean environment, record the Python version and output hashes, and reconcile each generated output with the pinned result files. The current manuscript workflow compiles the LaTeX paper only; it does not yet execute these Python verifiers.
+The manuscript CI now compiles the paper, runs the root verifier, reruns low-edge/286-equality/COVER verifiers on temporary copies, and uploads both the PDF/replay outputs and a ZIP of this supplement. Record the exact workflow run and output hashes before publication.

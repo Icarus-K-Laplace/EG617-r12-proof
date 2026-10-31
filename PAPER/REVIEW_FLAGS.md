@@ -5,8 +5,8 @@ Updated: 2026-10-31. This is a working draft, not a claim of submission readines
 ## P0 — required before submission
 
 1. **Full proof transcription audit.** The 286-edge equality argument and COVER terminal classification are long case analyses. The present prose follows the frozen source but still compresses several scalar inequalities and shared-incidence calculations. Expand these calculations and cross-check line by line against the pinned source and the independent certificate.
-2. **Standalone computational supplement.** A source-preserving partial bundle now exists under `PAPER/supplement/`: recurrence scripts/replay, low-edge, 286-equality and COVER verifiers/results, COVER case matrix, Q30 adversarial report, H12 source notes, root proof DAG and checksums. Still outstanding: canonical q27/q28 state-key export, complete q20 adjacency-list data, the full 61-representative data, a single distributable archive, and a clean-environment rerun with fresh hashes. Do not imply that the root verifier reran the full COVER shell search.
-3. **Clean LaTeX build.** A clean GitHub Actions TeX Live 2025 build now succeeds (32 pages) after fixing a missing math delimiter. Bibliography and cross-reference resolution must still be checked in the final rerun; remove remaining hyperref PDF-bookmark warnings, inspect the PDF visually, and record the final build commit and command.
+2. **Standalone computational supplement.** A source-preserving bundle now exists under `PAPER/supplement/`, including the 26-entry frozen source manifest layout, recurrence inputs, low-edge/286-equality/COVER verifiers and results, case matrix, Q30 adversarial report, H12 sources, root proof DAG and checksums. CI now runs the integrated verifier plus clean temporary-copy reruns of the low-edge, 286-equality and COVER verifiers, and emits a ZIP artifact. Still outstanding: a separate canonical q27/q28 state-key export, explicit q20 adjacency-list export, and a raw 61-representative export. Do not imply that the root verifier reran the full COVER shell search.
+3. **Clean LaTeX build.** A clean GitHub Actions TeX Live 2025 build succeeds at commit `1f4862d0fe4ba0d95324da3c3173863014088634` (33 pages). The final log has no unresolved references/citations or overfull/underfull boxes. Selected pages 1 and 24–31 were visually inspected; full-page-by-page editorial inspection and target-journal formatting remain outstanding.
 4. **Primary-source citation audit.** Check the exact theorem statements and parameter ranges for Brooks, Andrásfai–Erdős–Sós, and Kang–Pikhurko against the original papers. Verify the historical summary of the Erdős–Gyárfás conjecture and the Xia–Szeider preprint.
 5. **Independent human review.** Obtain at least one external combinatorialist's line-by-line review. The AI-assisted certification PASS is not human peer review.
 
@@ -31,8 +31,8 @@ Updated: 2026-10-31. This is a working draft, not a claim of submission readines
 
 - Main theorem and proof architecture: drafted.
 - Main proof sections: source-derived first transcription completed.
-- Supplementary machine assets: partially bundled under `supplement/`; final standalone archive and full rerun outstanding.
-- LaTeX compilation: successful at commit `7c6b513723cc6ebf3015fda64cf9a86fb09f330a` (32 pages); final warning-clean build pending.
-- PDF inspection: not yet run.
+- Supplementary machine assets: source-preserving bundle in `supplement/`; CI ZIP artifact and clean verifier reruns are enabled. Canonical state-key, q20 adjacency-list and raw 61-representative exports remain open.
+- LaTeX compilation: successful at commit `1f4862d0fe4ba0d95324da3c3173863014088634` (33 pages); final references and citations resolve.
+- PDF inspection: selected pages 1 and 24–31 inspected; full editorial inspection remains open.
 - External human review: not yet obtained.
 - Submission: not made.
