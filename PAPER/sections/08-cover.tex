@@ -109,7 +109,14 @@ A closed walk obtained by summing \eqref{eq:repivot-difference} only equates the
 
 \subsection{Every low-charge shell has a three-matching or a triangle}
 
-Every $13$-vertex missing graph $M$ with $z\geq22$ and $\alpha(M)\leq10$ has a matching of size three. If its matching number were two, let $S$ be the four endpoints of a maximum matching and let $I$ be the remaining independent nine-set. The bipartite graph between $S$ and $I$ has matching number at most two, hence a vertex cover of size at most two by K\H{o}nig's theorem. A cover using one vertex of $S$ and one of $I$ permits at most twelve cross edges; a cover using two vertices of $I$ permits at most eight. Since even adding all six edges on $S$ leaves fewer than $22$ edges, the cover must consist of two vertices of $S$. There are at least sixteen cross edges, so two disjoint cross edges exist. The other two vertices of $S$ cannot be adjacent, or a three-matching would result. They and $I$ would then be an independent $11$-set, contradiction. Matching number at most one gives only a star or a triangle plus isolated vertices, also incompatible with $z\geq22$ and $\alpha(M)\leq10$.
+\begin{lemma}[Three-matching in a $13$-vertex shell]
+\label{lem:matching13}
+Every $13$-vertex missing graph $M$ with $z\geq22$ and $\alpha(M)\leq10$ has a matching of size three.
+\end{lemma}
+
+\begin{proof}
+If its matching number were two, let $S$ be the four endpoints of a maximum matching and let $I$ be the remaining independent nine-set. The bipartite graph between $S$ and $I$ has matching number at most two, hence a vertex cover of size at most two by K\H{o}nig's theorem. A cover using one vertex of $S$ and one of $I$ permits at most twelve cross edges; a cover using two vertices of $I$ permits at most eight. Since even adding all six edges on $S$ leaves fewer than $22$ edges, the cover must consist of two vertices of $S$. There are at least sixteen cross edges, so two disjoint cross edges exist. The other two vertices of $S$ cannot be adjacent, or a three-matching would result. They and $I$ would then be an independent $11$-set, contradiction. Matching number at most one gives only a star or a triangle plus isolated vertices, also incompatible with $z\geq22$ and $\alpha(M)\leq10$.
+\end{proof}
 
 Suppose now that $M$ is triangle-free and $q_p\leq28$. A four-matching would give, by \cref{eq:EDGE12} and Mantel's theorem,
 \[
