@@ -84,11 +84,15 @@ T_i=\{i-1,i+1\}.
 \]
 Two adjacent exterior vertices must have disjoint types. The compatibility graph on the five types is itself a $C_5$. In a complete bipartite exterior, the type sets on opposite sides therefore form a complete bipartite subgraph of this compatibility $C_5$. One side has a single type and the other has at most two compatible types: two distinct types have at most one common compatible type, and three distinct types have none.
 
-If $e(W)=122$, every inequality above is an equality. The exterior is $K_{9,9}$ and every exterior vertex has two cycle neighbors, giving precisely the blow-ups in item (1). If $e(W)=121$ and the exterior is $K_{9,9}$, the cycle-to-exterior edge count is $35$, so exactly one exterior vertex has a singleton cycle neighborhood. Removing it leaves a complete bipartite graph of two-neighbor types. The singleton neighborhood extends to a compatible two-neighbor type, so adding one edge produces a $122$-edge graph of item (1). Thus $W$ is a one-edge deletion.
+If $e(W)=122$, every inequality above is an equality. The exterior is $K_{9,9}$ and every exterior vertex has two cycle neighbors, giving precisely the blow-ups in item (1). If $e(W)=121$ and the exterior is $K_{9,9}$, the cycle-to-exterior edge count is $35$, so exactly one exterior vertex $u$ has a singleton cycle neighborhood. Removing $u$ leaves a complete $K_{8,9}$ of two-neighbor types. The singleton neighborhood extends to a compatible two-neighbor type: if the opposite side uses one type $T_j$, each of the three cycle vertices available to $u$ belongs to an independent pair disjoint from $T_j$; if the opposite side uses two types, their union has three cycle vertices and its two-vertex complement is an independent pair. Add the corresponding one cycle edge at $u$. This produces a triangle-free $122$-edge graph with independence number still at most $11$, so $W$ is a one-edge deletion from a blow-up in item (1).
 
-If the exterior is $K_{8,10}$, all exterior vertices have two cycle neighbors. The same type argument gives a blow-up with an independent class pair of size at least $12$, contrary to $\alpha(W)\leq11$.
+If the exterior is $K_{8,10}$, all exterior vertices have two cycle neighbors. The type compatibility graph forces one side of the exterior bipartition to use a single type; write its size as $L$ and the other side's size as $R$, where ${L,R}={8,10}$. The whole graph is then a blow-up with consecutive class sizes
+\[
+(L+1,a,1,1,b),\qquad a+b=R+2.
+\]
+Its independence number is at least $\max(L+2,R+2)=12$, contradicting $\alpha(W)\leq11$.
 
-Finally suppose the exterior is $K_{9,9}$ with one cross edge $uv$ missing. Remove $u,v$ to obtain a complete $K_{8,8}$, whose type sets satisfy the same compatibility condition. If the endpoint types of $u,v$ are compatible, adding $uv$ gives a $122$-edge graph of item (1). If they are incompatible, both type sets on the remaining $K_{8,8}$ must be singletons; up to the dihedral symmetries of the cycle, the endpoint types are forced and the full graph is the blow-up $(9,9,2,1,2)$. This exhausts the possibilities.
+Finally suppose the exterior is $K_{9,9}$ with one cross edge $uv$ missing. Remove $u,v$ to obtain a complete $K_{8,8}$, whose two-neighbor type sets $S_A,S_B$ satisfy $S_A\times S_B\subseteq E(C_5)$. If the endpoint types of $u,v$ are compatible, adding $uv$ gives a $122$-edge graph of item (1). If they are incompatible, both $S_A$ and $S_B$ must be singletons: if, for example, $S_A$ had two types, $S_B$ would be their unique common compatible type, forcing $v$ to have that type and $u$ to be compatible with it, contrary to the assumed incompatibility. Up to a dihedral symmetry, the two singleton types are $0,1$, and the only incompatible endpoint types compatible with the remaining cross edges are respectively $2,4$. The full graph is therefore the blow-up $(9,9,2,1,2)$. This exhausts the possibilities.
 \end{proof}
 
 \begin{lemma}[A low-cost $12$-set]
@@ -112,7 +116,7 @@ A\cup\{t\},\quad B\cup\{s\}.
 \]
 For the first two possibilities, one of the last two displayed $12$-sets has cost at most $\min(a+1,b)\leq6$ or $\min(a,b+1)\leq6$. For the other three possibilities, the first $12$-set has cost at most $1$, $2$, or $2$, respectively.
 
-For a one-edge deletion, the same choices work unless the independent set was created by deleting that edge. In that case it contains the two endpoints and can otherwise use only the unique cycle class nonadjacent to both. The first $12$-set then has cost at most $3$, $2$, $2$, or $3$ according to the four non-singleton edge types. Deleting the edge between the two singleton cycle classes would create an independent $12$-set and is excluded by $\alpha(W)\leq11$.
+For a one-edge deletion, the same choices work unless the independent set was created by deleting that edge. In that case it contains the two endpoints and can otherwise use only the unique cycle class nonadjacent to both endpoint classes. For deleted edge types $P$--$A$, $A$--$s$, $t$--$B$, and $B$--$P$, respectively, the first set $P\cup\{s,t\}$ has cost at most $3$, $2$, $2$, and $3$. Deleting the edge between the two singleton cycle classes $s,t$ would create the independent $12$-set $P\cup\{s,t\}$ and is excluded by $\alpha(W)\leq11$.
 
 For the exceptional blow-up $(9,9,2,1,2)$, write the classes as $P,Q,C,\{d\},E$. The sets $P\cup C\cup\{d\}$ and $Q\cup\{d\}\cup E$ each have twelve vertices and two internal edges. Every independent set is contained in one of the five maximal class unions
 \[
