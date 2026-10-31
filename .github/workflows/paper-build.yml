@@ -15,7 +15,7 @@ permissions:
   contents: read
 
 jobs:
-  latex:
+  latex-and-replay:
     runs-on: ubuntu-latest
     steps:
       - name: Check out manuscript branch
@@ -30,13 +30,42 @@ jobs:
         working-directory: PAPER
         run: latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
 
-      - name: Upload compiled PDF and build log
+      - name: Run integrated root verifier
+        working-directory: PAPER/supplement/root
+        run: |
+          python3 --version
+          python3 -B INDEPENDENT_VERIFIER.py
+
+      - name: Independently rerun low-edge verifier
+        run: |
+          mkdir -p "$RUNNER_TEMP/low"
+          cp -a PAPER/supplement/root/frozen/low/. "$RUNNER_TEMP/low/"
+          cd "$RUNNER_TEMP/low"
+          python3 -B INDEPENDENT_VERIFIER.py
+
+      - name: Independently rerun 286-edge equality verifier
+        run: |
+          mkdir -p "$RUNNER_TEMP/eq286"
+          cp -a PAPER/supplement/root/frozen/eq286/. "$RUNNER_TEMP/eq286/"
+          cd "$RUNNER_TEMP/eq286"
+          python3 -B INDEPENDENT_VERIFIER.py
+
+      - name: Independently rerun COVER shell verifier
+        run: |
+          mkdir -p "$RUNNER_TEMP/cover"
+          cp -a PAPER/supplement/root/frozen/cover/. "$RUNNER_TEMP/cover/"
+          cd "$RUNNER_TEMP/cover"
+          python3 -B INDEPENDENT_VERIFIER.py
+
+      - name: Upload manuscript and fresh replay outputs
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: eg617-r12-manuscript-build
+          name: eg617-r12-manuscript-and-replay
           path: |
             PAPER/main.pdf
             PAPER/main.log
             PAPER/main.blg
+            PAPER/supplement/root/FRONTEND_REPLAY.json
+            PAPER/supplement/root/VERIFICATION_RESULT.json
           if-no-files-found: warn
