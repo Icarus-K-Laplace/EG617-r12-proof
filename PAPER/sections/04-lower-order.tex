@@ -1,0 +1,242 @@
+\section{Lower-order hereditary bounds}
+\label{sec:lower-order}
+
+This section establishes the lower-order facts used by the $47$- and $48$-vertex arguments. All statements about $\mathcal R(a,n)$ include every induced cap from \cref{sec:setup}; the abstract low-edge theorem in \cref{sec:low-edge} will be stated separately without these caps.
+
+\subsection{Shortest odd cycles and the $24$-vertex obstruction}
+
+\begin{lemma}[Shortest-odd-cycle bound]
+\label{lem:odd-cycle}
+Let $L$ be a non-bipartite triangle-free graph on $n$ vertices. If its shortest odd cycle has length $2k+1$, then
+\[
+e(L)\le B(n,k):=2k+1+k(n-2k-1)+
+\left\lfloor\frac{(n-2k-1)^2}{4}\right\rfloor.
+\]
+\end{lemma}
+
+\begin{proof}
+A shortest odd cycle is chordless. No vertex outside it can have two adjacent neighbors on the cycle, since that would form a triangle. It therefore has at most $k$ neighbors on the cycle. The cycle contributes $2k+1$ edges, the attachments contribute at most $k(n-2k-1)$, and Mantel's theorem bounds the edges among the remaining $n-2k-1$ vertices by the final term.
+\end{proof}
+
+For the orders used below, direct evaluation gives
+\[
+\max_k B(18,k)=73,\qquad
+\max_k B(23,k)=122,\qquad
+\max_k B(25,k)=145.
+\]
+At $n=23$, the values for $k\geq3$ are at most $119$.
+
+\begin{lemma}[$\mathcal R(2,24)$ is empty]
+\label{lem:R224}
+There is no graph in $\mathcal R(2,24)$.
+\end{lemma}
+
+\begin{proof}
+Suppose $J\in\mathcal R(2,24)$. The nonneighbors of any vertex form a clique of order at most $11$, so $\delta(J)\geq12$. Since $D(24)=144$, we have $e(J)\leq144$, and the degree sum forces $J$ to be exactly $12$-regular. Its complement $L$ is then $11$-regular and triangle-free. It is not bipartite: a bipartition of $L$ would partition $J$ into two cliques of order at most $11$, covering at most $22$ vertices.
+
+Let $C_{2k+1}$ be a shortest odd cycle in $L$. It is chordless, and every outside vertex has at most $k$ neighbors on it. Summing degrees over the cycle gives
+\[
+11(2k+1)\leq 2(2k+1)+k(23-2k),
+\]
+which simplifies to
+\[
+2k^2-5k+9\leq0.
+\]
+The quadratic has discriminant $25-72=-47$ and positive leading coefficient, a contradiction.
+\end{proof}
+
+\begin{corollary}
+Every graph in $\mathcal R(2,23)$ has at least $131$ edges.
+\end{corollary}
+
+\begin{proof}
+Its complement is triangle-free and non-bipartite, since a bipartition would cover the target graph by two cliques of size at most $11$. By \cref{lem:odd-cycle}, it has at most $122$ edges. Hence
+\[
+e(J)\geq\binom{23}{2}-122=131.
+\]
+\end{proof}
+
+\subsection{The $23$-vertex triangle-free classification}
+
+\begin{lemma}[Near-extremal triangle-free graphs on $23$ vertices]
+\label{lem:TF23}
+Let $W$ be triangle-free, $|W|=23$, $\alpha(W)\leq11$, and $e(W)\geq121$. Then either
+\begin{enumerate}
+\item $W$ is a blow-up of a $5$-cycle with consecutive class sizes
+\[
+(10,a,1,1,11-a),\qquad 1\leq a\leq10;
+\]
+\item $W$ is obtained from one of these blow-ups by deleting one edge; or
+\item $W$ is the blow-up with consecutive class sizes $(9,9,2,1,2)$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+The graph $W$ is non-bipartite, since otherwise its two independent bipartition classes would each have size at most $11$, covering at most $22$ vertices. The bound in \cref{lem:odd-cycle} shows that a shortest odd cycle must be a $C_5$: for $n=23$, all $k\geq3$ give at most $119$ edges. Let $X$ be the remaining $18$ vertices. Every vertex of $X$ has at most two neighbors on the $C_5$, so
+\[
+e(W[X])\geq121-5-36=80.
+\]
+A non-bipartite triangle-free graph on $18$ vertices has at most $73$ edges by \cref{lem:odd-cycle}; hence $W[X]$ is bipartite. Its two part sizes must be $(9,9)$, $(8,10)$, or $(9,9)$ with one cross edge missing.
+
+Label the cycle vertices by $\mathbb Z/5\mathbb Z$. A vertex outside the cycle with two cycle neighbors has one of the five types
+\[
+T_i=\{i-1,i+1\}.
+\]
+Two adjacent exterior vertices must have disjoint types. The compatibility graph on the five types is itself a $C_5$. In a complete bipartite exterior, the type sets on opposite sides therefore form a complete bipartite subgraph of this compatibility $C_5$. One side has a single type and the other has at most two compatible types: two distinct types have at most one common compatible type, and three distinct types have none.
+
+If $e(W)=122$, every inequality above is an equality. The exterior is $K_{9,9}$ and every exterior vertex has two cycle neighbors, giving precisely the blow-ups in item (1). If $e(W)=121$ and the exterior is $K_{9,9}$, the cycle-to-exterior edge count is $35$, so exactly one exterior vertex has a singleton cycle neighborhood. Removing it leaves a complete bipartite graph of two-neighbor types. The singleton neighborhood extends to a compatible two-neighbor type, so adding one edge produces a $122$-edge graph of item (1). Thus $W$ is a one-edge deletion.
+
+If the exterior is $K_{8,10}$, all exterior vertices have two cycle neighbors. The same type argument gives a blow-up with an independent class pair of size at least $12$, contrary to $\alpha(W)\leq11$.
+
+Finally suppose the exterior is $K_{9,9}$ with one cross edge $uv$ missing. Remove $u,v$ to obtain a complete $K_{8,8}$, whose type sets satisfy the same compatibility condition. If the endpoint types of $u,v$ are compatible, adding $uv$ gives a $122$-edge graph of item (1). If they are incompatible, both type sets on the remaining $K_{8,8}$ must be singletons; up to the dihedral symmetries of the cycle, the endpoint types are forced and the full graph is the blow-up $(9,9,2,1,2)$. This exhausts the possibilities.
+\end{proof}
+
+\begin{lemma}[A low-cost $12$-set]
+\label{lem:cost12}
+For every graph $W$ in \cref{lem:TF23} and every independent set $I$ in $W$, there is a $12$-vertex set $T$ such that
+\[
+e(W[T])+|T\cap I|\leq6.
+\]
+\end{lemma}
+
+\begin{proof}
+For a blow-up with class sizes $(10,a,1,1,b)$, where $a+b=11$, denote the consecutive classes by $P,A,\{s\},\{t\},B$. Use the three $12$-sets
+\[
+P\cup\{s,t\},\qquad A\cup B\cup\{s\},\qquad
+A\cup B\cup\{t\}.
+\]
+Every independent set is contained in one of the maximal independent class unions
+\[
+P\cup\{s\},\quad P\cup\{t\},\quad A\cup B,\quad
+A\cup\{t\},\quad B\cup\{s\}.
+\]
+For the first two possibilities, one of the last two displayed $12$-sets has cost at most $\min(a+1,b)\leq6$ or $\min(a,b+1)\leq6$. For the other three possibilities, the first $12$-set has cost at most $1$, $2$, or $2$, respectively.
+
+For a one-edge deletion, the same choices work unless the independent set was created by deleting that edge. In that case it contains the two endpoints and can otherwise use only the unique cycle class nonadjacent to both. The first $12$-set then has cost at most $3$, $2$, $2$, or $3$ according to the four non-singleton edge types. Deleting the edge between the two singleton cycle classes would create an independent $12$-set and is excluded by $\alpha(W)\leq11$.
+
+For the exceptional blow-up $(9,9,2,1,2)$, write the classes as $P,Q,C,\{d\},E$. The sets $P\cup C\cup\{d\}$ and $Q\cup\{d\}\cup E$ each have twelve vertices and two internal edges. Every independent set is contained in one of the five maximal class unions
+\[
+P\cup C,\quad P\cup\{d\},\quad Q\cup\{d\},\quad
+Q\cup E,\quad C\cup E.
+\]
+One of the two $12$-sets intersects $I$ in at most two vertices, so its cost is at most four.
+\end{proof}
+
+\subsection{Minimum degrees at orders $35$, $36$, and $37$}
+
+\begin{lemma}
+\label{lem:R335}
+Every $J\in\mathcal R(3,35)$ has minimum degree at least $12$.
+\end{lemma}
+
+\begin{proof}
+A vertex of degree at most $10$ has at least $24$ nonneighbors, contradicting \cref{lem:R224}. Suppose $d_J(v)=11$. Let $L=\overline J$, let $W=N_L(v)$ (so $|W|=23$), and let $R$ be the other eleven vertices. The graph $L[W]$ is triangle-free and has independence number at most $11$. Since $D(23)=132$,
+\[
+e(L[W])=253-e(J[W])\geq121,
+\]
+so \cref{lem:TF23} and \cref{lem:cost12} apply.
+
+There is an edge $xy$ in $L[R]$, because otherwise $R\cup\{v\}$ would be an independent set of size $12$ in $L$, i.e. a target clique of size $12$ in $J$ that together with $v$ would violate $\omega(J)\leq11$. Let $I=N_L(x)\cap N_L(y)\cap W$. This is independent in $L[W]$, since an edge in $L[I]$ together with $xy$ would create a $K_4$ in $L$, corresponding to an independent four-set in $J$ and contradicting $\alpha(J)\leq3$.
+
+Choose $T\subseteq W$ as in \cref{lem:cost12}. Every vertex of $T\setminus I$ is adjacent in $J$ to at least one of $x,y$. Therefore
+\[
+e(J[T\cup\{x,y\}])
+\geq 66-e(L[T])+12-|T\cap I|
+\geq78-6=72>D(14)=69,
+\]
+a contradiction. Thus $\delta(J)\geq12$.
+\end{proof}
+
+\begin{lemma}
+\label{lem:R336}
+Every $J\in\mathcal R(3,36)$ has $\delta(J)\geq13$ and $e(J)\geq234$. Moreover, $\mathcal R(3,37)$ is empty.
+\end{lemma}
+
+\begin{proof}
+A vertex of degree at most $11$ in a $36$-vertex graph has at least $24$ nonneighbors, excluded by \cref{lem:R224}. If a vertex has degree $12$, deleting one of its neighbors leaves a $35$-vertex graph in $\mathcal R(3,35)$ in which that vertex has degree at most $11$, contradicting \cref{lem:R335}. Hence $\delta(J)\geq13$, and the handshake lemma gives $e(J)\geq36\cdot13/2=234$.
+
+For a graph in $\mathcal R(3,37)$, a vertex of degree at most $12$ is excluded by \cref{lem:R224}. Thus $e(J)\geq\lceil37\cdot13/2\rceil=241>D(37)=237$, so the class is empty.
+\end{proof}
+
+\subsection{The $47$-vertex minimum-degree gate and the $211$-edge bound}
+
+\begin{lemma}[Minimum-degree gate at order $47$]
+\label{lem:gate47}
+If $J\in\mathcal R(4,47)$ and $e(J)\leq286$, then $\delta(J)\geq12$.
+\end{lemma}
+
+\begin{proof}
+Let $v$ have minimum degree $d$. If $d\leq9$, its nonneighborhood contains a forbidden member of $\mathcal R(3,37)$. If $d=10$, put $S=N(v)$ and $C=V(J)\setminus N[v]$. Then $C\in\mathcal R(3,36)$, so $e(C)\geq234$. Every vertex of $S$ has degree at least $10$, and the degree sum over $S$ gives
+\[
+10+2e(J[S])+e_J(S,C)\geq100.
+\]
+Thus $e(J[S])+e_J(S,C)\geq90-e(J[S])\geq45$, and $e(J)\geq234+10+45=289$, a contradiction.
+
+Suppose $d=11$. Then $C=V(J)\setminus N[v]\in\mathcal R(3,35)$ and $e(C)\geq210$. Let $M=\overline{J[S]}$, $z=e(M)$, and $g_a=d_J(a)-11\geq0$. The shell $S$ is not a clique, since $S\cup\{v\}$ would be a $K_{12}$; hence $z\geq1$. For $a\in S$, let $D_a=N_J(a)\cap C$ and $t_a=|D_a|=d_M(a)+g_a$.
+
+For every edge $ab$ of $M$, the union $D_a\cup D_b$ has size at least $12$: otherwise at least $24$ vertices of $C$ avoid both nonadjacent vertices $a,b$, contradicting \cref{lem:R224}. Also $d_M(a)+d_M(b)\leq z+1$. It follows that
+\[
+z+\sum_{a\in S}g_a
+\geq t_a+t_b-1\geq11.
+\]
+The exact edge partition therefore yields
+\[
+e(J)=e(C)+66+z+\sum_{a\in S}g_a
+\geq210+66+11=287,
+\]
+again contradicting $e(J)\leq286$.
+\end{proof}
+
+\begin{lemma}[The $35$-vertex $211$-edge floor]
+\label{lem:core211}
+Every $J\in\mathcal R(3,35)$ has at least $211$ edges.
+\end{lemma}
+
+\begin{proof}
+By \cref{lem:R335}, $\delta(J)\geq12$, so $e(J)\geq210$. If equality held, $J$ would be $12$-regular and its complement would be a $22$-regular $K_4$-free graph on $35$ vertices. The Andrásfai--Erd\H{o}s--Sós theorem says that a $K_4$-free graph on $n$ vertices with minimum degree strictly greater than $5n/8$ is $3$-partite \cite{AndrasfaiErdosSos1974}. Here $22>175/8$, so the complement would be $3$-partite. One part would have at least $12$ vertices and would be a clique in $J$, contradicting $\omega(J)\leq11$. Thus $e(J)\geq211$.
+\end{proof}
+
+\subsection{A common-neighborhood bound for abstract $47$-vertex cores}
+
+\begin{lemma}[Common-neighborhood capacity]
+\label{lem:common-neighbor}
+Let $H$ be a graph on $47$ vertices with
+\[
+e(H)\leq285,\quad\delta(H)\geq12,\quad
+\alpha(H)\leq4,\quad\omega(H)\leq11.
+\]
+Writing $\epsilon(v)=d_H(v)-12$, every nonedge $uv$ satisfies
+\[
+|N_H(u)\cap N_H(v)|\leq3+\epsilon(u)+\epsilon(v)\leq9.
+\]
+In particular, at most one vertex outside a fixed $K_{10}$ can be adjacent to all ten vertices of that clique.
+\end{lemma}
+
+\begin{proof}
+The total excess is
+\[
+T=\sum_v\epsilon(v)=2e(H)-564\leq6.
+\]
+For every $25$-set $W$,
+\[
+2e(H[W])\leq\sum_{w\in W}d_H(w)
+=300+\sum_{w\in W}\epsilon(w)\leq306,
+\]
+so $e(H[W])\leq153$. If $\alpha(H[W])\leq2$, then $\overline{H[W]}$ is triangle-free and non-bipartite: a bipartition would partition $W$ into two cliques of $H$, each of size at most $11$, and could cover at most $22$ vertices. Kang--Pikhurko's theorem with $n=25,r=2$ gives
+\[
+e(\overline{H[W]})\leq
+\left\lfloor\frac{25^2}{4}\right\rfloor-
+\left\lfloor\frac{25}{2}\right\rfloor+1=145,
+\]
+so $e(H[W])\geq300-145=155$, a contradiction.
+
+Now let $uv$ be a nonedge and put $c=|N(u)\cap N(v)|$. The common antineighborhood of $u,v$, excluding $u,v$, has size
+\[
+47-2-\bigl(d(u)+d(v)-c\bigr)
+=21+c-\epsilon(u)-\epsilon(v).
+\]
+If $c\geq4+\epsilon(u)+\epsilon(v)$, it contains a $25$-set $W$. An independent triple in $W$, together with $u,v$, would be an independent five-set in $H$, so $\alpha(H[W])\leq2$, contradicting the preceding paragraph. Hence the first inequality follows. Since $T\leq6$, the second follows as well.
+
+If two vertices outside a $K_{10}$ were both complete to it, they could not be adjacent (that would create a $K_{12}$), and they would have ten common neighbors, contradicting the common-neighborhood bound.
+\end{proof}
+
