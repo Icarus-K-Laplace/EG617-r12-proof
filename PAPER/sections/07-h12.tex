@@ -44,9 +44,13 @@ If $M$ contains a triangle $T$, then $q\geq t(T)-e_M(T)\geq24-3=21$. Suppose $M$
 
 Let $S$ be the four endpoints of a two-matching. Mantel's theorem gives $e_M(S)\leq4$, while the pair-row conditions imply $t(S)\geq24$. Therefore $q\geq t(S)-e_M(S)\geq20$.
 
-If equality holds, then $M[S]=K_{2,2}$, $t(S)=24$, and all eight other shell vertices are independent and undecorated. A three-matching would give $q\geq36-9=27$, so none exists. Triangle-freeness implies that every exterior point attaches only to one side of the $K_{2,2}$. Attachments cannot occur on both sides: an edge joining two such exterior attachments, together with the edge between the two unused cycle vertices, would produce a three-matching. Hence all attachments meet one two-point side $X$, giving a two-hub cover and an independent ten-set $Y$.
+If equality holds, then $M[S]=K_{2,2}$, $t(S)=24$, and all eight other shell vertices are independent and undecorated. A three-matching would give $q\geq36-9=27$, so none exists. Triangle-freeness implies that every exterior point attaches only to one side of the $K_{2,2}$. Attachments cannot occur on both sides: if distinct exterior vertices attach to opposite sides, choose one attachment edge to each side; together with the edge joining the two unused vertices of the $K_{2,2}$ these form a three-matching. Hence all attachments meet one two-point side $X$, giving a two-hub cover and an independent ten-set $Y$.
 
-Summing the four edge inequalities across the $K_{2,2}$ shows that every such edge has endpoint weight sum $12$. The two hub weights have a common value $a$, and the two opposite weights are $12-a$. Since each opposite-side vertex has missing degree two, $a\leq10$. As $e(M)\geq11$, at least seven exterior attachments occur. Any nonisolated exterior point is regular and has missing degree at most two; its edge inequality with a hub forces $a=10$ and its row size to be two. Thus the only equality graphs are the displayed $K_{2,r}$ forms, with $6\leq r\leq10$ and the stated decorations.
+Summing the four edge inequalities across the $K_{2,2}$ shows that every such edge has endpoint weight sum $12$. The two hub weights have a common value $a$, and the two opposite weights are $12-a$. Since each opposite-side vertex has missing degree two, $a\leq10$. As $e(M)\geq11$ and $e_M(S)=4$, there are at least seven cross edges from the eight exterior vertices to $X$. Equality in the charge formula gives zero decoration on every exterior vertex. A nonisolated exterior vertex has missing degree at most two; it cannot attach to just one hub, since its weight would then be $1$ and its sum with the hub weight would be at most $11$, contrary to the edge inequality. It therefore attaches to both hubs, has weight $2$, and the edge inequality forces $a=10$. At least four exterior vertices are consequently attached to both hubs. Together with the two opposite vertices already in $S$, these are the $r\geq6$ leaves of the complete bipartite missing graph. The remaining $10-r$ exterior vertices are isolates. Each hub has missing degree $r$ and weight $10$, so its decoration is $10-r$. Thus the only equality graphs are
+\[
+M=K_{2,r}\,\dot\cup\,(10-r)K_1,\qquad 6\leq r\leq10,
+\]
+with hub weights $10$, hub decorations $10-r$, and all ten low vertices regular.
 \end{proof}
 
 \subsection{The inserted-center contradiction}
@@ -86,7 +90,7 @@ There is no graph $F$ satisfying the $61$-vertex contract \eqref{eq:T61-contract
 \end{proposition}
 
 \begin{proof}
-A degree-$12$ pivot has a genuine $48$-vertex core $C\in\mathcal R(4,48)$, so $e(C)\geq310$ by \cref{thm:floor48}. Its shell charge satisfies $q\geq20$ by \cref{lem:q20}: the pair-row union is at least $12$, and a missing triangle has row union at least $24$, since its uncovered core is a clique and has at most $11$ vertices. The exact edge partition yields
+A degree-$12$ pivot has a genuine $48$-vertex core $C\in\mathcal R(4,48)$, so $e(C)\geq310$ by \cref{thm:floor48}. Its shell charge satisfies $q\geq20$ by \cref{lem:q20}: the pair-row union is at least $12$. A missing triangle has row union at least $25$, since its uncovered part in the $48$-core has independence number at most $2$ (an independent triple there, together with the three pairwise nonadjacent shell vertices, would be an independent six-set in $F$); the emptiness of $\mathcal R(2,24)$ therefore bounds the uncovered part by $23$. This is stronger than the $24$ required in \cref{lem:q20}. The exact edge partition yields
 \[
 E=e(F)=78+q+e(C)\geq78+20+310=408.
 \]
