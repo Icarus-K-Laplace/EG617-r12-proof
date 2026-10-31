@@ -134,13 +134,13 @@ Every $J\in\mathcal R(3,35)$ has minimum degree at least $12$.
 \end{lemma}
 
 \begin{proof}
-A vertex of degree at most $10$ has at least $24$ nonneighbors, contradicting \cref{lem:R224}. Suppose $d_J(v)=11$. Let $L=\overline J$, let $W=N_L(v)$ (so $|W|=23$), and let $R$ be the other eleven vertices. The graph $L[W]$ is triangle-free and has independence number at most $11$. Since $D(23)=132$,
+A vertex of degree at most $10$ has at least $24$ nonneighbors, contradicting \cref{lem:R224}. Suppose $d_J(v)=11$. Let $L=\overline J$, let $W=N_L(v)$ (so $|W|=23$), and let $R$ be the other eleven vertices. The graph $L[W]$ is triangle-free, since a triangle in $L[W]$ together with $v$ would be an independent four-set in $J$. Also $\alpha(L[W])=\omega(J[W])\leq11$. Since $D(23)=132$,
 \[
 e(L[W])=253-e(J[W])\geq121,
 \]
 so \cref{lem:TF23} and \cref{lem:cost12} apply.
 
-There is an edge $xy$ in $L[R]$, because otherwise $R\cup\{v\}$ would be an independent set of size $12$ in $L$, i.e. a target clique of size $12$ in $J$ that together with $v$ would violate $\omega(J)\leq11$. Let $I=N_L(x)\cap N_L(y)\cap W$. This is independent in $L[W]$, since an edge in $L[I]$ together with $xy$ would create a $K_4$ in $L$, corresponding to an independent four-set in $J$ and contradicting $\alpha(J)\leq3$.
+There is an edge $xy$ in $L[R]$: otherwise $R\cup\{v\}$, which has $12$ vertices and is independent in $L$, would be a $K_{12}$ in $J$, contradicting $\omega(J)\leq11$. Let $I=N_L(x)\cap N_L(y)\cap W$. This is independent in $L[W]$, since an edge in $L[I]$ together with $xy$ would create a $K_4$ in $L$, corresponding to an independent four-set in $J$ and contradicting $\alpha(J)\leq3$.
 
 Choose $T\subseteq W$ as in \cref{lem:cost12}. Every vertex of $T\setminus I$ is adjacent in $J$ to at least one of $x,y$. Therefore
 \[
