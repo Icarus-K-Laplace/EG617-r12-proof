@@ -1,0 +1,338 @@
+{
+  "status": "PASS",
+  "scope": "finite arithmetic and provenance; analytic proof audit in Markdown",
+  "sources": [
+    {
+      "path": "frozen/low/DIRECT_UNIFORM_PROOF.md",
+      "git_blob": "96746335aa89f71162d5b772fa2bf17ecaa6a4ab",
+      "sha256": "963fb912b6479e9285fc0d59944f004d3f6bd57ee8e2f4e383ad394ada6ab38d"
+    },
+    {
+      "path": "frozen/low/COMMON_NEIGHBORHOOD_CAPACITY.md",
+      "git_blob": "c9df4ff75677d13bbfd997f65186998220ed3be2",
+      "sha256": "bcbd1d36b74b6ec813cb1579156219459d84689809d3265bfeab21e22456da49"
+    },
+    {
+      "path": "frozen/low/MINIMUM_DEGREE_GATE_SELF_CONTAINED.md",
+      "git_blob": "a8151c82da6486b43a735aa3aae64cc5db502b43",
+      "sha256": "a39337076b73757f79825128cbdced2e261e3128f743e2743d6258ac8dca8e76"
+    },
+    {
+      "path": "frozen/low/LOW_EDGE_UNIVERSAL_THEOREM.md",
+      "git_blob": "92b2497809274c35782a0d59296aa96a8ab4b5f8",
+      "sha256": "a76dd34d109e443bb29cd0412edcf8f0a2c66ee0366ad6ffe55774839ba8afc0"
+    },
+    {
+      "path": "frozen/low/UNIVERSAL_EDGE_AUGMENTATION_LEMMA.md",
+      "git_blob": "75cc499180c4c682a367cd9a64d963672bb70b31",
+      "sha256": "507928ed00a3906c510df35a66611afae57018b571b64e477da77035ad62941c"
+    },
+    {
+      "path": "frozen/low/Q32_285_THEOREM_INDEPENDENT_AUDIT.md",
+      "git_blob": "af6b2a5dc0c9a51f20fb83286e91b7d549c040fc",
+      "sha256": "96012c0179f2ab75439883361b62d1bb538757b6249e5765b9de42734d37957a"
+    },
+    {
+      "path": "frozen/low/Q33_284_THEOREM_DEPENDENCY_AUDIT.md",
+      "git_blob": "714ee88ed77e9567410e905640d78536d28200e2",
+      "sha256": "d635b48185933248d1990383d0a8b93e74628f6ed247a3dc4cf6a27ef9a04bc0"
+    },
+    {
+      "path": "frozen/low/VERIFICATION_RESULTS.json",
+      "git_blob": "5c07b54e077fbe9c7751bc79d29856ad4a67aa43",
+      "sha256": "e0e673efbd33d9b1970d5150fddd7b8a48d1768fb6f907b4ba4913691a1e3b23"
+    },
+    {
+      "path": "frozen/eq286/286_EDGE_EQUALITY_CLASSIFICATION.md",
+      "git_blob": "e596cdee0ae465a1fe82a8538e991dbc228db235",
+      "sha256": "2d2b5993bb46cb3e2650c91c24d89910db4e0659b14e191051a1535ae8aae8b6"
+    },
+    {
+      "path": "frozen/eq286/INDEPENDENT_VERIFIER.py",
+      "git_blob": "ac28d33e23ed620ed290a49108b8f7211861294e",
+      "sha256": "1a1dc0bf59abb7f79da862e87e06b4451e22bbd9bb9e6ced53c83fb2e6d28258"
+    },
+    {
+      "path": "frozen/eq286/VERIFICATION_RESULT.json",
+      "git_blob": "8aa62d0881fa9311e421c1bf046ac1f4e366713d",
+      "sha256": "f4d3fe7188741e5afb041e0016cfaa4379beeca943c0424703dbf12bfc021004"
+    },
+    {
+      "path": "frozen/eq286/SHA256SUMS.txt",
+      "git_blob": "c5595e6e0c725c4d1e8a7ab287e2c0c13ee0e2d1",
+      "sha256": "d27fb49cd34a3833679dd7f1c03c3f333dc6e0597656b0f5166bb5e86ad02560"
+    },
+    {
+      "path": "frozen/cover/COVER_THEOREM.md",
+      "git_blob": "f73c0a331cb22c3e553e679abb24ed65eab004ee",
+      "sha256": "36f0f6a5cd95b6c84c328f726e8ce835ecfe8d9acd6e9838234fd3a900386eb0"
+    },
+    {
+      "path": "frozen/cover/COVER_CASE_MATRIX.md",
+      "git_blob": "f0675c9c1754a24dce9059b92ed120bcbae1ecdd",
+      "sha256": "f994b99e3d0438edd1251c2dee64ebe63d31b4510f243ece501a29c9528c8f91"
+    },
+    {
+      "path": "frozen/cover/COVER_DEPENDENCY_AUDIT.md",
+      "git_blob": "78f4393397445f71e4337c03dcc66a24d0f9c71f",
+      "sha256": "e035ac7483972bd66eb6c12b27170e2af908e7cf6639be2d8fc0b34c1b1ff1b3"
+    },
+    {
+      "path": "frozen/cover/INDEPENDENT_VERIFIER.py",
+      "git_blob": "4ae1c88c1eadf0801e491bf7ffaf823f3ea60120",
+      "sha256": "1101d29530f4e9cdce9da0891eb90b7107d343fdef3af94db453e079db5b4d7b"
+    },
+    {
+      "path": "frozen/cover/VERIFICATION_RESULT.json",
+      "git_blob": "a7f5ea4dbe616c1ca36d714d5a54bb9298feaa62",
+      "sha256": "c1d47daf53af3b8f72f2663ece3e4272097fa96f97ac5bb2801e24636ce46605"
+    },
+    {
+      "path": "frozen/cover/ROOT_PROMOTION_RECEIPT.md",
+      "git_blob": "9b7c9dcb1b2e515bbbbb835ede7ae1266e37592f",
+      "sha256": "fce351adfcbd29f3a37c37558f22f3d10064c601560c17d1e3cfae40e6792df8"
+    },
+    {
+      "path": "frozen/cover/SHA256SUMS.txt",
+      "git_blob": "cf814ef3bf6a646ea6aef7ca947e109024edfe71",
+      "sha256": "1b93dd1588cde82b77f3979bc1f2a6916b7c6bcd2c4af58276c7fe802228d4df"
+    },
+    {
+      "path": "frozen/frontend/recurrence_a.py",
+      "git_blob": "36fd45faee5401cfc21d18d755d13dfebf90f54f",
+      "sha256": "e615442ca52bd8b8bd7afdd44a8a73344cb70659c60ce772518661bfc2147b8a"
+    },
+    {
+      "path": "frozen/frontend/recurrence_b.py",
+      "git_blob": "92efc007beaa219ecfffd0cde6b044be80b34593",
+      "sha256": "1f0621346a308a8d2df05676dcd01c8d772cfc23ace7b704a8a57c119b05576b"
+    },
+    {
+      "path": "frozen/frontend/CONTEXTUAL_R449_FULL_COLOR_IMPOSSIBILITY.md",
+      "git_blob": "dd072ce9ef703b56e9184f2ede992988fce9f86e",
+      "sha256": "8483c521d90df4efec6e3d48cd125c1cba956850ada80451839029cfe884c1cb"
+    },
+    {
+      "path": "frozen/frontend/RECURRENCE_PROOF.md",
+      "git_blob": "ba7a6730cd7b0ff085b7b84f875aeb8a67472dff",
+      "sha256": "1b7f6d6622923da2a07b139ac529c891010e533d0e4eb3f5051230b30cace22c"
+    },
+    {
+      "path": "frozen/root/CANONICAL_STATE.md",
+      "git_blob": "172a0e30733eecdfab4d5a429fabcc5bb983d6e9",
+      "sha256": "98e288ba78389602625c9358f81a2abdc781f052d2e1fb4be4fd3ac5d7091c86"
+    },
+    {
+      "path": "frozen/root/PROOF_DAG.md",
+      "git_blob": "4219218dc9caf1e65d4a15c39e421b32e114aa18",
+      "sha256": "a11030d20b73cab8a4c0db25f7dbdf5f5df5c09159a23d5e9b4f13c5fec6cf5c"
+    },
+    {
+      "path": "frozen/low/INDEPENDENT_VERIFIER.py",
+      "git_blob": "46da244938e5fc2d0ad78c98d55e833581e1ccc3",
+      "sha256": "c1f19e7f4e084e20fe756c8f817909d1f5ecadfbd4d4ace26d145a4cb78c40ee"
+    }
+  ],
+  "frontend": {
+    "implementations": 3,
+    "nodes_checked": 1752,
+    "outer_stops_checked": 144,
+    "survivors": [
+      {
+        "d": 11,
+        "j": 6,
+        "a": 5,
+        "n": 61,
+        "budget": 408,
+        "bound": 397,
+        "survives": true
+      }
+    ],
+    "eligible_minimum_degrees": [
+      {
+        "h": 12,
+        "core": 308,
+        "q_floor": 20,
+        "row_floor": 406
+      },
+      {
+        "h": 13,
+        "core": 284,
+        "q_floor": 22,
+        "row_floor": 397
+      }
+    ]
+  },
+  "cover": {
+    "retained_states": [
+      2,
+      8
+    ],
+    "subset_identity_checks": 81920,
+    "repivot_identity_checks": 104,
+    "arithmetic": {
+      "caps": "PASS",
+      "AES_strict_boundary": "PASS",
+      "twin_partitions": [
+        [
+          1,
+          3
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "q30_family_I_cases": [
+        [
+          407,
+          4,
+          38,
+          0
+        ],
+        [
+          407,
+          5,
+          35,
+          3
+        ],
+        [
+          408,
+          4,
+          38,
+          2
+        ],
+        [
+          408,
+          5,
+          35,
+          5
+        ]
+      ],
+      "triangle_star_sizes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "shell_search_rerun": false,
+    "completeness_evidence": "frozen enumeration algorithm, prior authenticated result, analytic reductions"
+  },
+  "lower_order": {
+    "types": {
+      "compatible_type_set_pairs": 20,
+      "singleton_extension_checks": 55,
+      "missing_cross_edge_overlap_cases": 10
+    },
+    "neighborhood_costs": {
+      "family_representatives": 61,
+      "valid_representatives": 49,
+      "discarded_alpha12": 12,
+      "maximal_independent_sets": 263,
+      "maximum_cost": 6,
+      "forced_14_edges": 72
+    },
+    "minimum_degree_arithmetic": {
+      "caps": {
+        "13": 67,
+        "14": 69,
+        "23": 132,
+        "24": 144,
+        "25": 146,
+        "37": 237
+      },
+      "degree10_edge_floor": 289,
+      "degree11_edge_floor": 287,
+      "parent_rows": [
+        {
+          "parent_edges": 407,
+          "charge": 31,
+          "core_edges": 285,
+          "uses_generic_R447_gate": true,
+          "closed_under_parent_contract": true
+        },
+        {
+          "parent_edges": 407,
+          "charge": 32,
+          "core_edges": 284,
+          "uses_generic_R447_gate": true,
+          "closed_under_parent_contract": true
+        },
+        {
+          "parent_edges": 408,
+          "charge": 32,
+          "core_edges": 285,
+          "uses_generic_R447_gate": true,
+          "closed_under_parent_contract": true
+        },
+        {
+          "parent_edges": 408,
+          "charge": 33,
+          "core_edges": 284,
+          "uses_generic_R447_gate": true,
+          "closed_under_parent_contract": true
+        }
+      ],
+      "hereditary_core_floor": 286,
+      "pivot_charge_caps": {
+        "407": 30,
+        "408": 31
+      }
+    }
+  },
+  "new_arithmetic": {
+    "contextual49": [
+      319,
+      307
+    ],
+    "R448_floor": 310,
+    "h12_equality_families": [
+      {
+        "r": 6,
+        "z": 12,
+        "decoration": 8,
+        "inserted_hub_degree_upper": 11
+      },
+      {
+        "r": 7,
+        "z": 14,
+        "decoration": 6,
+        "inserted_hub_degree_upper": 11
+      },
+      {
+        "r": 8,
+        "z": 16,
+        "decoration": 4,
+        "inserted_hub_degree_upper": 11
+      },
+      {
+        "r": 9,
+        "z": 18,
+        "decoration": 2,
+        "inserted_hub_degree_upper": 11
+      },
+      {
+        "r": 10,
+        "z": 20,
+        "decoration": 0,
+        "inserted_hub_degree_upper": 11
+      }
+    ],
+    "h13_lower_energy_floor": 407,
+    "support_orbits": [
+      2,
+      3,
+      5
+    ],
+    "shared_excess_pointwise_checks": 1838
+  },
+  "dag": {
+    "status": "ACYCLIC",
+    "nodes": 25
+  },
+  "verifier_sha256": "13d2f166305b2fbfa78297a61b7cd2b9d7ef3b72246e653b72ece441c243c63d"
+}
