@@ -18,7 +18,7 @@
 
 ## Build instructions
 
-The source was successfully compiled in a clean GitHub Actions runner using TeX Live 2025 and `latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex` (33-page PDF; successful snapshot `1f4862d0fe4ba0d95324da3c3173863014088634`). The final `.log` has no unresolved references/citations and no overfull/underfull box warnings; selected pages 1 and 24–31 were visually inspected. The same CI run passed the integrated root verifier and independently reran the low-edge, 286-equality, and COVER verifiers. The workflow also emits a source-supplement ZIP artifact. A local standard BibTeX build is:
+The source was successfully compiled in a clean GitHub Actions runner using TeX Live 2025 and `latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex` (33-page PDF; successful snapshot `67926d44543a10ff73a185f2c83d460f12a2d946`). The final `.log` has no unresolved references/citations and no overfull/underfull box warnings; the full-page contact sheet was checked and pages 1 and 24–33 were inspected at reading resolution. The same CI run passed the integrated root verifier and independently reran the low-edge, 286-equality, and COVER verifiers. The workflow also emits a source-supplement ZIP artifact. The COVER theorem is now stated for all residual energies `E<=408`, with `Q>=30` throughout that range and `Q>=31` at `E=408`. A local standard BibTeX build is:
 
 ```bash
 pdflatex main.tex
