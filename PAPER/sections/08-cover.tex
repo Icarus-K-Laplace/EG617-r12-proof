@@ -276,7 +276,11 @@ with two regular hubs of weight $11$, nine ordinary regular lows of missing degr
 
 \subsection{Eliminating the two terminal families}
 
-For Family I, let $K$ consist of the pivot and the ten lows; it is a regular target $K_{11}$. For each $v\in K$, let $T_v$ be its three outside neighbors. Inactive lows are true twins of the pivot; active lows repivot with equality in \cref{eq:repivot-q}, so their rows are triangles and their new cores have minimum degree $12$. The $Q=30$ classification applies to every $v\in K$. Family II is impossible for these views because it contains a triangle in the missing graph, so every view is Family I. The distinct triples $T_v$ are disjoint, with multiplicities $c_i=11-k_i\in\{1,2,3\}$ summing to $11$. The Family I shell description says that each point of $T_i$ is adjacent to $v_i$ and to no other point of $K$. A point $x\in T_i$ has degree $c_i+12$ in $F$; its $c_i$ neighbors in $K$ are removed in the core at a pivot $v_j$ from a different row class. Hence $x$ lies in that core and has degree $12-e_F(x,T_j)\geq12$. Thus $e_F(x,T_j)=0$. In particular the triples are pairwise disjoint and pairwise anticomplete. If there are $r$ distinct triples, then $4\leq r\leq5$. The row triangles contribute $3(11-r)$ excess above degree $13$, leaving
+For Family I, let $K$ consist of the pivot and the ten lows; it is a regular target $K_{11}$. For each $v\in K$, let $T_v$ be its three outside neighbors. Inactive lows are true twins of the pivot; active lows repivot with equality in \cref{eq:repivot-q}, so their rows are triangles and their new cores have minimum degree $12$. The $Q=30$ classification applies to every $v\in K$. Family II is impossible for these views because it contains a triangle in the missing graph, so every view is Family I. For each $v\in K$, the Family I shell has $M=K_{3,k}\dot\cup(10-k)K_1$. Hence every other point $w\in K$ is adjacent to either all three vertices of $T_v$ or none. If $T_v$ and $T_w$ intersect, choose $x\in T_v\cap T_w$. Since $w$ is adjacent to $x$, the all-or-none property forces $w$ to be adjacent to all of $T_v$, so $T_v\subseteq T_w$ and therefore $T_v=T_w$. Thus distinct triples are disjoint. Write them as $T_1,\ldots,T_r$, with multiplicities $c_i=11-k_i\in\{1,2,3\}$ summing to $11$. A point $x\in T_i$ is adjacent to exactly the $c_i$ points of $K$ in its row class and to no other point of $K$. Since $T_i$ is a triangle and the hub weight of $x$ is $10$, its degree is $d_F(x)=c_i+2+10=c_i+12$. If $v_j$ belongs to a different row class, then $x$ is nonadjacent to $v_j$ and its $c_i$ neighbors in $K$ are all removed in the core at $v_j$. That core has minimum degree at least $12$, so
+\[
+d_{C_{v_j}}(x)=d_F(x)-c_i-e_F(x,T_j)=12-e_F(x,T_j)\geq12.
+\]
+Consequently $e_F(x,T_j)=0$, and distinct triples are pairwise anticomplete. Since one point from each triple is then independent, $r\leq5$; since $c_i\leq3$ and $\sum_i c_i=11$, $r\geq4$. The row triangles contribute $3(11-r)$ excess above degree $13$, leaving
 \[
 23-3(11-r)
 \]
@@ -288,10 +292,10 @@ For Family II, let $K$ consist of the pivot and the nine ordinary lows; it is a 
 \[
 q_y=30+h_{12}+\kappa+b.
 \]
-Maximality forces equality, so $T_y$ is an edge, $q_y=30$, and the new core has minimum degree $12$. The same holds at the original pivot. The $Q=30$ classification applies at every $v_i\in K$. Family I has already been excluded, so each view is Family II. Its two exceptional lows must be the same global points $u,v$; the other nine points of $K$ are ordinary lows. Thus each $T_i$ is the regular hub pair in that view. Each $T_i$ is an edge of the target graph, because its two hubs are nonadjacent in the missing graph. The ten pairs $T_i$ are disjoint: each $x\in T_i$ is adjacent to $v_i$ and to no other point of $K$, so if $i\ne j$ it lies in the core at $v_j$, where
+Maximality forces equality, so $T_y$ is an edge, $q_y=30$, and the new core has minimum degree $12$. The same holds at the original pivot. The $Q=30$ classification applies at every $v_i\in K$. Family I has already been excluded, so each view is Family II. Its two exceptional lows must be the same global points $u,v$; the other nine points of $K$ are ordinary lows. Thus each $T_i$ is the regular hub pair in that view. Each $T_i$ is an edge of the target graph, because its two hubs are nonadjacent in the missing graph. The ten pairs $T_i$ are disjoint, since a point in $T_i$ is adjacent to $v_i$ and to no other point of $K$. For $i\ne j$, every $x\in T_i$ therefore lies in the core at $v_j$, where
 \[
-d_{\text{core}}(x)=13-1-e_F(x,T_j)\geq12,
+d_{C_{v_j}}(x)=13-1-e_F(x,T_j)\geq12.
 \]
-so distinct pairs are anticomplete. Choosing one point from each pair gives an independent ten-set, contradiction.
+It follows that $e_F(x,T_j)=0$ for every $x\in T_i$, so distinct pairs are anticomplete. Choosing one point from each pair gives an independent ten-set, contradiction.
 
 This eliminates Family II and proves \cref{thm:COVER}.
