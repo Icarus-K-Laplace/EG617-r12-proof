@@ -1,82 +1,50 @@
-# Proof completeness audit
+# Proof completeness audit — fixed r=12
 
-Updated: 2026-10-22
+Updated: 2026-10-31.
 
 ## Executive conclusion
 
-The repository is a **complete canonical research-state repository**, but it is still **not yet a fully self-contained proof manuscript** from which an external mathematician can verify every accepted theorem without consulting any lower-order source/certificate.
+For the exact fixed-parameter statement
+[
+	ext{every 12-edge-coloring of }K_{145}	ext{ has a 13-set missing a color},
+]
+the frozen integrated package supplies a complete conventional mathematical proof with finite computational verification. The independent AI-assisted audit at commit `09a88cc4fe1e2cf1f3a87475d6484f681910b23e` records **CERTIFICATION = PASS** for integration commit `c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2`.
 
-Two notions remain separate:
+This conclusion is specific to the original (K_{145}) coloring theorem. It is not a claim that every historical general-r or generic (R(4,49)) research obligation has been solved.
 
-- **state completeness**: current research progress and open/closed status are synchronized — YES;
-- **proof-body completeness**: every theorem needed by the current DAG has a standalone proof or replayable certificate — NOT YET.
+## Proof-body evidence
 
-## Fully represented current research assets
+The integrated package includes:
 
-Standalone proof bodies or replayable certificates now include:
+- `FINAL_GLOBAL_PROOF.md`: complete original theorem statement and proof;
+- `K145_TO_T61_FRONTEND_AUDIT.md`: coloring reduction, contextual (R(4,49)) exclusion, extraction and recurrence rules;
+- `LOW_EDGE_AND_286_THEOREM_AUDIT.md`: 47-point low-edge theorem, minimum-degree gate and 286-edge equality accounting;
+- `H12_AND_EXCEPTIONAL_PARENT_AUDIT.md`: 48-point floor310 and h12 closure;
+- `COVER_INDEPENDENT_AUDIT.md`, `E407_H13_FINAL_ROOT_CERTIFICATE.md`, `E408_H13_FINAL_ROOT_CERTIFICATE.md`: h13 and terminal charge arguments;
+- `PROOF_DAG.json`, `GLOBAL_THEOREM_LEDGER.md`, `SOURCE_MANIFEST.json`, `SHA256SUMS.txt`: dependencies and provenance;
+- `INDEPENDENT_VERIFIER.py`, `FRONTEND_REPLAY.json`, `VERIFICATION_RESULT.json`: finite replay and verification assets.
 
-- front-end dichotomy `K145 -> induced R(4,49) OR T61`;
-- contextual recurrence certificate;
-- `R(4,48)>=310` and complete T61 h12 closure;
-- T61 E397--E400 closures, including q23/q24/q25 shell arguments;
-- generic q29 good-repivot theorem with its three structural branches;
-- standalone E329/E330/E331 closure chain and E332 reduction to q30+211;
-- E332 d10 and d3 branch closures;
-- E332 extreme-degree reduction;
-- current human- and machine-readable state registries.
+The certification package adds a 58-row analytic/computational obligation matrix, an independently reconstructed DAG, a gap register, a separately implemented replay program and complete replay outputs.
 
-## Remaining foundational gaps
+## Certification boundary
 
-### 1. CORE211 lower-order minimum-degree dependency
+The reported PASS means that the pinned informal proof and its finite obligations passed the documented independent AI-assisted audit. It does not mean:
 
-Integration 1 recovers the clean 210-edge contradiction completely: once `delta(H)>=12`, a hypothetical 210-edge core is 12-regular; its complement is 22-regular, K4-free, and AES forces a 3-partition with an independent set of size at least12, contradiction.
+- Lean 4, Coq or another proof assistant has checked the theorem;
+- an external human specialist has refereed the proof;
+- a journal has accepted the paper;
+- the full general-r conjecture has been solved.
 
-The remaining self-containment gap is narrower: the repository still needs the full standalone proof/certificate for the inherited 23-neighbourhood / cap-two argument that yields `delta(H)>=12` for every `H in R(3,35)`.
+## Open questions outside the theorem's dependency path
 
-See `consolidation/INTEGRATED1_CORE211_AUDIT.md`.
+1. General Erdős–Gyárfás conjecture for arbitrary (r).
+2. Abstract uncolored high-energy (R(4,49)) layers E333–E340.
+3. Lean 4/Mathlib formalization.
+4. External human peer review and journal review.
+5. Public preprint and archival DOI.
 
-### 2. q27 equality closure
+The abstract E333–E340 problem is not used as an unproved premise: the original full-color context yields a separate contextual (R(4,49)) contradiction.
 
-The analytic body is recovered:
+## Reproduction
 
-- E-version analytic topology reduction;
-- B-version decoration uniqueness;
-- A-version Type-I/II repivot contradiction.
-
-The remaining dependency is the exact lower-order/topology certificate or complete analytic derivation licensing the two equality topologies
-
-- `K3,8+2K1`;
-- `K3,9+K1`.
-
-### 3. Front-end inherited lower-order lemmas
-
-The modern bridge and T61 proof files expose their assumptions, but several lower-order Ramsey/density facts are still inherited audited inputs. Publication-level self containment requires each such input to have either a proof/certificate or an exact citation.
-
-### 4. External theorem provenance
-
-Results such as Andrasfai--Erdos--Sos still need publication-grade bibliographic metadata and precise scope in a dedicated references/dependencies file.
-
-## Gaps resolved by Integration 1 recovery
-
-The following former proof-body gaps are no longer listed as missing:
-
-- **generic q29 good-repivot**: reconstructed as `backend/Q29_GOOD_REPIVOT_FULL_PROOF.md`;
-- **E329/E330/E331 low-backend chain**: reconstructed as `backend/E329_E332_CLOSURE.md`.
-
-Integration 1 also independently matches the modern T61 E397--E400/q23--q25 ladder, but current front-end files remain the canonical proofs because they are cleaner and use the final notation/contracts.
-
-## Raw source bundles
-
-The large Integration 1/2 PDFs and A--J archive are not mirrored wholesale into GitHub. Accepted content is reconstructed into canonical/consolidation files. Source mapping is recorded under `history/`.
-
-## Certification target
-
-The repository may be called **self-contained-proof complete** only when:
-
-1. every `PROVED` theorem in `machine/THEOREM_REGISTRY.json` points to a standalone proof source;
-2. every `COMPUTATION_CERTIFIED` theorem has replayable verifier/data;
-3. every external theorem has exact citation/scope;
-4. the main DAG can be followed without historical PDFs/chat;
-5. all notation and dependencies are reconstructible from repository files alone.
-
-Current verdict: `STATE_COMPLETE / PROOF_BODY_INCOMPLETE`, with the remaining foundational gap set substantially narrower than before Integration 1 recovery.
+Follow `PUBLICATION/REPRODUCIBILITY.md`. The independent replay is Python 3.12.14 / standard library. It replays finite tables and provenance; the analytic completeness arguments remain in the proof documents.

@@ -1,118 +1,64 @@
-# Canonical proof DAG
+# Canonical proof dependency chain — fixed r=12
 
-## Target
+**Target:** prove that no 12-edge-coloring of (K_{145}) makes every 13-vertex set contain all 12 colors.
 
-`Original EG617 r=12 counterexample -> contradiction`.
+Frozen source: integrated proof commit `c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2`. Independent certification: `09a88cc4fe1e2cf1f3a87475d6484f681910b23e`.
 
-The full theorem is **NOT_CERTIFIED**.
-
-## Front-end DAG
+## Dependency overview
 
 ```text
-Hypothetical balanced K145 / least-edge colour G
+Hypothetical 12-coloring of K145
         |
         v
-contextual recurrence under temporary no-R(4,49) extraction
+Induced color caps + least-edge color graph
+        |
+        +--> contextual R(4,49) is impossible in the original full-color setting
         |
         v
-1752-node / 144-stop certificate
+Exact extraction / packing / charge ledger
         |
         v
-T61 unique stop
+Finite recurrence: 1,752 nodes, 144 outer stops
         |
-        +--> delta=12 branch [CLOSED]
+        v
+Unique residual T61, 397 <= E <= 408
         |
-        +--> delta=13
+        +--> delta=12: R(4,48) floor 310 + q20 inserted-hub contradiction
+        |
+        +--> delta=13:
                 |
-                +--> E397 [CLOSED]
-                +--> E398 [CLOSED]
-                +--> E399 [CLOSED]
-                +--> E400 [CLOSED]
-                +--> E401..E404 [CLOSED, CANONICAL REPLAY]
-                |       +--> <=288 core interface
-                |       +--> EDGE13
-                |       +--> uniform q<=29,G<=7 promotion to q>=30
-                |       +--> pure q23/q24 shell lemmas
-                |       +--> high-low excess support/cut
-                +--> E405 [CLOSED, CANONICAL REPLAY]
-                |       +--> no embedded R(3,36)
-                |       +--> every actual47-core delta>=11
-                |       +--> q25/q26 promotion
-                |       +--> high-low cut -> Q>=27
-                |       +--> Q27..29 promoted, Q30 -> q>=31
-                +--> E406 [CLOSED, CANONICAL]
-                |       +--> S31: exists q<=30 pivot
-                |       +--> low-to-q30 bridge [PROVED]
-                |       +--> q30 hereditary promotion [PROVED]
-                |       +--> actual q30 -> q31 final edge
-                |               +--> d=1 [CLOSED]
-                |               +--> d=2 [CLOSED]
-                |               +--> d=3 [CLOSED]
-                |               +--> d=10 [CLOSED]
-                |               +--> d=11 [CLOSED]
-                |               +--> d=12 [CLOSED]
+                +--> every 47-core has at least 287 edges
                 |
-                v
-             E407,E408 [ACTIVE LINE A]
+                +--> energy-independent COVER gives Q >= 29
                 |
-                +--> V8 rho<=k-1 theorem [SOURCE-REPORTED]
-                +--> E407 low-Q maximum Q=27 [OPEN]
-                +--> E408 low-Q maximum Q in {27,28} [OPEN]
-                +--> correction-cycle compatibility [OPEN]
+                +--> E=407: COVER gives Q >= 30, core gives Q <= 29
+                |
+                +--> E=408: COVER gives Q >= 31, core gives Q <= 30
+        |
+        v
+All T61 alternatives excluded
+        |
+        v
+Contradiction to the original K145 coloring
 ```
 
-Thus the continuous repository-canonical h13 closure is
+## Load-bearing theorem interfaces
 
-`E397..E406`.
+- **Contextual (R(4,49)) exclusion:** applies only inside the original balanced full-coloring context. It is not promoted to the generic uncolored Ramsey–Turán problem.
+- **47-point low-edge theorem:** exact hypotheses and proof are in the frozen low-edge package; the resulting (R(4,47)) floor is 287.
+- **286-edge equality:** separate equality classification with shared-excess and support-intersection accounting.
+- **48-point floor:** the h12 argument uses its own 48-point minimum-degree gate and 310-edge lower bound; it is not inferred from the 47-point result.
+- **COVER:** the Q29 general bound and E407/E408 promotions apply under the stated 61-point hereditary contract.
+- **Recurrence:** the finite table is accompanied by analytic rule/completeness derivations; its replay is computational evidence, not a substitute for those derivations.
 
-The active T61 edge window is exactly
+## Machine-readable dependency objects
 
-`E407,E408`.
+- `r12_master/workstreams/astra-global-root-integration-chat-20261031/PROOF_DAG.json`
+- `r12_master/workstreams/astra-global-root-integration-chat-20261031/GLOBAL_PROOF_DEPENDENCY_DAG.md`
+- `r12_master/workstreams/r12-final-certification-chat-20261031/CANONICAL_PROOF_DAG.json`
 
-## Backend DAG
+The independent certification report records 58 obligations and checks both the source 25-node DAG and its independently reconstructed dependency graph.
 
-For every legal `F in R(4,49)`:
+## Scope boundary
 
-```text
-degree13 pivot
-   |
-   +--> e(F)=91+q+e(H)
-   +--> CORE211
-   +--> q27/q28/q29 repivot machinery
-   |
-   v
-E329,E330,E331 excluded
-   |
-   v
-E332 q30+211 equality frontier
-   |
-   +--> d=4..9 profitable
-   +--> d10 equality closed
-   +--> d3 equality closed
-   +--> extreme-degree shell reduced to G=4..8
-   +--> G4,G5,G6,G7 closed
-   +--> G8 h1 -> h0
-   +--> G8 h0 unified closure
-   |
-   v
-E332 = EMPTY [CLOSED AND FROZEN]
-```
-
-The only remaining legal `R(4,49)` backend interval is
-
-`E333..E340 [ACTIVE LINE B]`.
-
-Line-B V4 reports necessary families
-
-`D2-A,D2-B,D2-C,D2-D,R9`
-
-with repetition lower bounds `8,8,5,7,9`; these are not graph realizations.
-
-## Final certification condition
-
-EG617 r=12 may be declared proved only after BOTH:
-
-1. T61 `E407,E408` is closed;
-2. every legal `R(4,49)` layer `E333..E340` is eliminated.
-
-There is no remaining E332 or E397--E406 obligation.
+The abstract uncolored high-energy (R(4,49)) layers E333–E340 and the general-(r) problem are not proved by this dependency chain and are not required by it. Lean formalization and external human peer review remain future work.

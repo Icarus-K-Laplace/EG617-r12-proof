@@ -1,27 +1,29 @@
-# Asset ledger
+# Asset ledger — fixed-r12 publication view
 
-| Asset | Status | Notes |
+| Asset | Status | Exact scope / source |
 |---|---|---|
-| Degree-13 pivot decomposition `49=1+13+35` | PROVED | Core bookkeeping. |
-| Shell identity `e(F)=91+q+e(H)` | PROVED | Exact. |
-| CORE211 | PROVED | Every H in R(3,35) has e(H)>=211. |
-| q27/q28/q29 repivot machinery | PROVED / q27 audit-dependent | Generic low-q backend tools. |
-| E329,E330,E331 | PROVED EMPTY | Reconstructed backend closures. |
-| E332 full layer | PROVED EMPTY / FROZEN | Preferred proof DAG: `backend/E332_FULL_CLOSURE.md`. |
-| Front-end contextual recurrence | COMPUTATION_CERTIFIED | 1752 nodes, 144 outer stops, two independent implementations. |
-| Front-end dichotomy `K145 -> R449 OR T61` | PROVED | No backend circularity. |
-| T61 h12 branch | PROVED EMPTY | Uses R(4,48) floor310. |
-| T61 E397..E400 | PROVED EMPTY | Repository-canonical. |
-| T61 E401--E404 | PROVED EMPTY / CANONICAL REPLAY | `front_end/E401_E404_CANONICAL_CLOSURE.md`; independently reconstructed from V6 proof body. |
-| T61 E405 | PROVED EMPTY / CANONICAL REPLAY | `front_end/E405_FULL_CLOSURE_CANONICAL.md`; independently reconstructed from V7 proof body. |
-| <=288 47-core minimum-degree interface | PROVED | `front_end/E406_CORE_MINDEG_288.md`: e(C)<=288 implies delta(C)>=12. |
-| q<=29,G<=7 hereditary promotion | PROVED | Under <=288 core interface and EDGE13, a regular missing-degree3--10 pivot reaches q>=30. |
-| T61 q30 hereditary promotion | PROVED / INDEPENDENTLY REPLAYED | `front_end/Q30_HEREDITARY_PROMOTION_CANONICAL.md`: q30 reaches q>=31 within <=2 regular repivots. |
-| E406 low-to-q30 bridge | PROVED | `front_end/E406_LOW_TO_Q30_BRIDGE.md`. |
-| E406 q30->q31 distances d1,d2,d3,d10,d11,d12 | PROVED EMPTY | Independent closure files for all six classes. |
-| T61 E406 | PROVED EMPTY | Canonical master: `front_end/E406_FULL_CLOSURE.md`. |
-| T61 E397--E406 continuous h13 interval | PROVED EMPTY | Repository-canonical continuous closure. |
-| T61 E407,E408 | OPEN | Active Line-A front-end window. V8 gives source-reported structure but does not close either layer. |
-| Line-B V4 support repetition | SOURCE_REPORTED_PROVED / REPLAY_PENDING | Necessary survivor families D2-A/B/C/D,R9 with repetition lower bounds 8,8,5,7,9. |
-| E333..E340 elimination | OPEN | Sole remaining backend interval. |
-| Full EG617 r=12 theorem | OPEN | Must not be claimed solved until E407/E408 and E333..E340 are closed. |
+| Original (K_{145}) 12-color obstruction | **PROVED** | Integrated proof commit `c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2`, `FINAL_GLOBAL_PROOF.md` |
+| Independent audit | **PASS** | Commit `09a88cc4fe1e2cf1f3a87475d6484f681910b23e`; AI-assisted informal certification |
+| Original coloring caps and extraction | PROVED | Original full-color context; exact frontend proof |
+| Contextual (R(4,49)) exclusion | PROVED | Only in the original full-color coloring context; not a generic uncolored theorem |
+| 47-point low-edge obstruction | PROVED | Exact hypotheses: 47 vertices, minimum degree at least 12, alpha at most 4, clique number at most 11; no more than 285 edges excluded |
+| 286-edge equality classification | PROVED | Same exact 47-point graph contract; see equality classification and audit |
+| 47-point universal floor | PROVED | Every graph in the stated (R(4,47)) contract has at least 287 edges |
+| 48-point floor | PROVED | Every graph in the stated (R(4,48)) contract has at least 310 edges |
+| h12 terminal | PROVED EMPTY | Dedicated 48-point floor and q20 inserted-hub contradiction |
+| COVER (Q\ge29) | PROVED | 61-point hereditary contract with minimum degree 13; energy-independent |
+| COVER E407/E408 promotion | PROVED | Exact 61-point parent contract; E407 implies (Q\ge30), E408 implies (Q\ge31) |
+| h13 low energies | PROVED EMPTY | (E\le406), using (Q\ge29) and the 287-edge core floor |
+| h13 E407/E408 | PROVED EMPTY | Pointwise core bounds contradict COVER maximum-charge bounds |
+| T61 other minimum degrees | PROVED EMPTY | Degree at most 11 and at least 14 excluded under the contextual contract |
+| Frontend recurrence | COMPUTATIONALLY VERIFIED | 1,752 nodes and 144 terminal comparisons; analytic rule/completeness proofs are separately documented |
+| Q27/Q28 finite states | COMPUTATIONALLY VERIFIED | 19,448 row vectors per case; 2 and 8 canonical states; 81,920 subset identities replayed |
+| Q30 terminal classification | PROVED | Exact E408 maximum-charge parent contract; see independent report at commit `a0f922ad09af99575bae581864b673aa4d41f00d` |
+| Q32 285-edge theorem | PROVED | Separate exact contract; not the Q33 theorem |
+| Q33 284-edge theorem | PROVED | Separate exact contract; not the Q32 theorem |
+| Lean 4 formalization | OPEN / NOT STARTED TO COMPLETION | No completed proof-assistant kernel certificate is claimed |
+| External human peer review | OPEN | Not yet performed |
+| General-r conjecture | OPEN | Outside the fixed-r12 result |
+| Abstract uncolored high-energy (R(4,49)) | OPEN / OUTSIDE DEPENDENCY PATH | Not claimed solved; contextual exclusion suffices for the original coloring proof |
+
+All status labels above refer to the pinned fixed-r12 proof and its exact hypotheses. See `PUBLICATION/PROOF_STATUS.md` for the complete scope and limitations.

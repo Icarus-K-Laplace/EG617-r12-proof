@@ -1,50 +1,42 @@
 {
-  "updated_date": "2026-10-22",
-  "frontiers": [
+  "updated_date": "2026-10-31",
+  "fixed_r12_load_bearing_frontiers": [],
+  "global_status_fixed_r12": "PROVED_IN_PINNED_INFORMAL_COMPUTATION_ASSISTED_PROOF; INDEPENDENT_AI_AUDIT_PASS",
+  "outside_scope_frontiers": [
     {
-      "id": "LINE_A_T61_H13",
+      "id": "GENERAL_R",
       "status": "OPEN",
-      "edge_window": [407, 408],
-      "closed_e406": {
-        "status": "PROVED_EMPTY",
-        "source": "front_end/E406_FULL_CLOSURE.md"
-      },
-      "source_reported_v8": {
-        "evidence_status": "SOURCE_REPORTED_REPLAY_PENDING",
-        "remaining_layers": [407, 408],
-        "remaining_subproblems": [
-          "E407 maximal Q=27",
-          "E408 maximal Q in {27,28}",
-          "nonzero correction-term compatibility and cycle closure"
-        ],
-        "source": "front_end/T61_H13_V8_RESULT.md"
-      }
+      "description": "General Erdős–Gyárfás conjecture for arbitrary r."
     },
     {
-      "id": "LINE_B_E333_E340",
-      "status": "OPEN",
-      "edge_window": [333, 340],
-      "latest_source_reported_result": {
-        "evidence_status": "SOURCE_REPORTED_REPLAY_PENDING",
-        "all_layers_open": true,
-        "necessary_survivor_families": ["D2-A", "D2-B", "D2-C", "D2-D", "R9"],
-        "common_missing_pair_repetition_lower_bounds": [8, 8, 5, 7, 9],
-        "source": "backend/HIGH_LAYER_BACKEND_V4_RESULT.md"
-      },
-      "next_target": "Repeated-pair/core-support capacity and realizability theorem in the 35-point core, starting with E333."
-    }
-  ],
-  "closed_lines": [
-    {
-      "id": "LINE_C_E332",
-      "status": "PROVED_EMPTY_FROZEN",
-      "source": "backend/E332_FULL_CLOSURE.md"
+      "id": "GENERIC_R449_E333_E340",
+      "status": "OPEN_OUTSIDE_DEPENDENCY_PATH",
+      "description": "Abstract uncolored high-energy R(4,49) layers; not needed for the contextual K145 proof."
     },
     {
-      "id": "ASSISTANT_E406",
-      "status": "PROVED_EMPTY",
-      "source": "front_end/E406_FULL_CLOSURE.md"
+      "id": "LEAN_FORMALIZATION",
+      "status": "NOT_STARTED",
+      "description": "Lean 4/Mathlib formalization."
+    },
+    {
+      "id": "EXTERNAL_HUMAN_REVIEW",
+      "status": "NOT_STARTED",
+      "description": "External specialist review."
+    },
+    {
+      "id": "JOURNAL_REVIEW",
+      "status": "NOT_STARTED",
+      "description": "Journal submission and peer review."
+    },
+    {
+      "id": "PREPRINT",
+      "status": "NOT_SUBMITTED",
+      "description": "arXiv preprint and DOI."
     }
   ],
-  "global_status": "OPEN_NOT_CERTIFIED"
+  "source_commits": {
+    "integrated_proof": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "independent_certification": "09a88cc4fe1e2cf1f3a87475d6484f681910b23e",
+    "q30_independent_report": "a0f922ad09af99575bae581864b673aa4d41f00d"
+  }
 }
