@@ -1,12 +1,12 @@
-# EG617(r=12) — exact mathematical and publication status
+# EG617$r=12$ — exact mathematical and publication status
 
 ## 1. Main theorem
 
 **Status: PROVED** in the frozen integrated proof snapshot, as a conventional informal mathematical proof supported by finite computation and an independent AI-assisted audit.
 
-Let (c:E(K_{145})\to\{1,\ldots,12\}) be any edge-coloring. The theorem asserts
+Let (c:E$K_{145}$\to\{1,\ldots,12\}) be any edge-coloring. The theorem asserts
 [
-\exists S\subseteq V(K_{145}),\quad |S|=13,\quad
+\exists S\subseteq V$K_{145}$,\quad |S|=13,\quad
 \{c(e):e\in E(K_{145}[S])\}\ne\{1,\ldots,12\}.
 ]
 
@@ -32,13 +32,13 @@ The report explicitly distinguishes analytic derivations from finite computation
 
 ## 3. Important theorem-domain distinctions
 
-- **Fixed (r=12), original (K_{145}) coloring theorem:** PROVED in the integrated proof.
+- **Fixed $r=12$, original $K_{145}$ coloring theorem:** PROVED in the integrated proof.
 - **47-vertex low-edge obstruction:** PROVED under its exact five graph hypotheses, as recorded in the frozen low-edge proof and theorem ledger.
 - **286-edge equality classification:** PROVED under the exact 47-vertex contract, as recorded in the frozen equality proof and independent audit.
 - **COVER Q30 terminal:** PROVED under the exact 61-vertex E408 parent contract. The independent Q30 report states its quantifiers explicitly; it is not a classification of arbitrary decorated shells.
 - **Q32 and Q33:** distinct 285-edge and 284-edge contracts. Do not conflate their labels. The integrated proof's low-edge theorem is stronger and makes the exact Q32/Q33 theorems nonessential to the final dependency path.
-- **Abstract uncolored high-energy (R(4,49)) layers E333–E340:** OPEN / not claimed solved. The original-coloring proof avoids requiring this generic theorem by proving a stronger contextual obstruction in the original full-color setting.
-- **General (r):** OPEN / outside this fixed-parameter theorem.
+- **Abstract uncolored high-energy $R(4,49)$ layers E333–E340:** OPEN / not claimed solved. The original-coloring proof avoids requiring this generic theorem by proving a stronger contextual obstruction in the original full-color setting.
+- **General $r$:** OPEN / outside this fixed-parameter theorem.
 
 ## 4. Formalization and external review
 
@@ -56,7 +56,7 @@ The report explicitly distinguishes analytic derivations from finite computation
 
 Recommended:
 
-> We prove the fixed twelve-color case of the Erdős–Gyárfás balanced-coloring conjecture: no balanced 12-edge-coloring of (K_{145}) exists.
+> We prove the fixed twelve-color case of the Erdős–Gyárfás balanced-coloring conjecture: no balanced 12-edge-coloring of $K_{145}$ exists.
 
 Also state in the abstract or introduction that the proof is computation-assisted and not yet proof-assistant formalized.
 
