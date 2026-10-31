@@ -1,0 +1,48 @@
+\section{Introduction}
+\label{sec:introduction}
+
+An edge-coloring of a complete graph with $r$ colors is called \emph{balanced} if every $(r+1)$-vertex set spans an edge of each color. Erd\H{o}s and Gy\'arf\'as introduced this notion and conjectured that $K_{r^2+1}$ has no balanced $r$-edge-coloring for every $r\geq3$ \cite{ErdosGyarfas1999}. They established the cases $r=3$ and $r=4$. The case $r=5$ was settled by Xia and Szeider using a proof architecture combining a Lean-verified reduction, SAT enumeration, and independently checkable certificates \cite{XiaSzeider2026}.
+
+The purpose of this paper is to establish the next fixed parameter instance.
+
+\begin{theorem}[The twelve-color case]
+\label{thm:main}
+There is no edge-coloring
+\[
+c:E(K_{145})\longrightarrow\{1,2,\ldots,12\}
+\]
+such that every $13$-vertex subset of $K_{145}$ contains an edge of every one of the twelve colors. Equivalently, every $12$-edge-coloring of $K_{145}$ has a $13$-vertex subset whose induced edges omit at least one color.
+\end{theorem}
+
+Theorem~\ref{thm:main} proves the fixed case $r=12$ of the Erd\H{o}s--Gy\'arf\'as conjecture. It does not settle the conjecture for general $r$.
+
+\subsection{Proof strategy}
+
+Assume, for a contradiction, that a balanced twelve-coloring of $K_{145}$ exists. Select a color class with the fewest edges and regard it as a graph $G$. The balanced-coloring condition implies that every color graph has independence number at most $12$. Tur\'an's theorem applied to the complement of each color graph then gives a lower bound on the number of edges of every color in every induced vertex set. Subtracting the eleven non-target colors yields a hereditary upper bound on the target graph.
+
+The proof has four structural stages.
+
+\begin{enumerate}
+\item \textbf{Coloring reduction and finite recurrence.}
+A minimum-degree pivot, a maximal packing of target $K_{12}$s, and an exact edge ledger reduce the problem to a unique sixty-one-vertex residual graph $F$. A contextual second-Tur\'an argument excludes the otherwise troublesome induced $R(4,49)$ configuration in the original full-color setting. The recurrence has $1,752$ nodes and $144$ outer-stop comparisons; the only surviving stop has
+\[
+|V(F)|=61,\qquad 397\leq e(F)\leq408,\qquad
+\alpha(F)\leq5,\quad\omega(F)\leq11.
+\]
+
+\item \textbf{The forty-seven-vertex floor.}
+We prove that every graph in the relevant hereditary class on $47$ vertices has at least $287$ edges. The proof consists of a minimum-degree gate, a direct low-edge theorem for $e\leq285$, and a separate analytic exclusion of the $286$-edge equality case.
+
+\item \textbf{The degree-twelve terminal.}
+A separate $48$-vertex argument proves the $310$-edge floor needed for a degree-$12$ pivot. A complete classification of the charge-$20$ shell equality case and an inserted-center contradiction then eliminate all sixty-one-vertex residuals of minimum degree $12$.
+
+\item \textbf{The degree-thirteen terminal.}
+For every regular pivot, an exact repivot identity defines a charge $q_p$. A uniform theorem proves that the maximum charge is at least $29$, and strengthens this to $30$ and $31$ at energies $407$ and $408$, respectively. The $287$-edge core floor gives the opposite inequalities, eliminating the remaining cases.
+\end{enumerate}
+
+\subsection{Contributions and scope}
+
+The principal contribution is the fixed-$r=12$ theorem, together with a proof package that makes the dependencies and finite checks inspectable. The proof uses standard external results (Brooks' theorem, Tur\'an's theorem, the Andrásfai--Erd\H{o}s--Sós theorem, and the exact second-Tur\'an theorem of Kang and Pikhurko) only in explicitly stated parameter ranges. The finite computations verify bounded classifications and integer recurrences after their mathematical domains and completeness reductions have been proved. They are not presented as a substitute for those analytic reductions.
+
+The abstract uncolored high-energy $R(4,49)$ problem is not claimed solved. The final proof needs only the stronger contextual statement that such a $49$-vertex graph cannot occur as an induced target-color residual inside the original balanced coloring; the eleven other color classes are essential to that argument. No Lean 4 or other proof-assistant formalization is claimed. An independent AI-assisted audit of the frozen proof reports a pass, but this is not external human peer review.
+
