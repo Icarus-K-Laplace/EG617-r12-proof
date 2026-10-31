@@ -187,11 +187,11 @@ q_v=27+h_{11}+\kappa+b\leq28.
 \]
 If $\kappa=1$, then $h_{11}=0$ and all three row points have degree $11$ in the old core, contradicting the deficient-clique lemma; larger $\kappa$ is impossible. Thus each $T_v$ is a triangle. Every other point of $K$ is adjacent to all or none of $T_v$, so two such triples are equal or disjoint. Their multiplicities are $2$ or $3$, and eleven points of $K$ require at least four distinct triples.
 
-For a point $x$ in a triple of multiplicity $c$, its degree in $F$ is $c+11$. At a pivot $p$ from a different row class,
+For a point $x$ in a triple of multiplicity $c$, its degree in $F$ is $c+11$. At a pivot $p$ from a different row class, $x$ is nonadjacent to $p$ and
 \[
 d_{C_p}(x)=d_F(x)-c-e_F(x,T_p)=11-e_F(x,T_p).
 \]
-The global core minimum degree $11$ forces $e_F(x,T_p)=0$, so $x$ is a degree-$11$ vertex in $C_p$. Each triple has at least two such base points. Choosing base points from two other row classes gives two nonadjacent degree-$11$ vertices in $C_p$, contradicting the deficient-clique lemma. Hence
+The global core minimum degree $11$ forces $e_F(x,T_p)=0$. Thus, for any two distinct row classes $i,j$, choosing $p$ in class $j$ shows that every base point in $T_i$ is anticomplete to $T_j$. Now choose a third row class $k$, which exists because there are at least four classes, and take $p$ in class $k$. Base points $x,y$ from classes $i,j$ both lie in $C_p$ and both have degree $11$ there, but they are nonadjacent by the preceding anticompleteness. This contradicts the deficient-clique lemma. Hence
 \begin{equation}
 Q\geq29.
 \label{eq:Q29}
