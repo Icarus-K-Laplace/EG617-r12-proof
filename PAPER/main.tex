@@ -4,231 +4,58 @@
 \usepackage{lmodern}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage{microtype}
+\usepackage{booktabs,array}
 \usepackage[margin=1in]{geometry}
+\usepackage[numbers,sort&compress]{natbib}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
 
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}{Lemma}
-\newtheorem{proposition}{Proposition}
-\newtheorem{corollary}{Corollary}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}
-\theoremstyle{remark}
-\newtheorem{remark}{Remark}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
 
-\title{The Erd\H{o}s--Gy\'arf\'as Balanced-Coloring Conjecture\\
-for Twelve Colors}
-\author{Author information to be finalized}
-\date{\textbf{Working draft — not for submission}\\31 October 2026}
+\newcommand{\V}{V}
+\newcommand{\E}{E}
+\newcommand{\Rclass}{\mathcal R}
+\newcommand{\Dcap}{D}
+\newcommand{\taupart}{\tau}
+\newcommand{\ex}{\operatorname{ex}}
+\newcommand{\e}{\operatorname{e}}
+\newcommand{\dd}{\operatorname{d}}
+\newcommand{\N}{\operatorname{N}}
+\newcommand{\ind}{\operatorname{ind}}
+\newcommand{\cl}{\operatorname{cl}}
+\newcommand{\binomtwo}[1]{\binom{#1}{2}}
+
+\title{The Twelve-Color Case of the Erd\H{o}s--Gy\'arf\'as Balanced-Coloring Conjecture}
+\author{Qiankai Tong\\[2pt]\small Affiliation and contact details to be finalized}
+\date{Working manuscript --- 31 October 2026}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We prove the fixed twelve-color case of the Erd\H{o}s--Gy\'arf\'as
-balanced-coloring conjecture: there is no edge-coloring of $K_{145}$ with
-twelve colors for which every thirteen-vertex set contains an edge of every
-color. The proof selects a color class with the fewest edges and develops a
-hereditary extremal-graph reduction. A finite recurrence reduces a
-hypothetical counterexample to a sixty-one-vertex residual graph in a narrow
-edge range. The terminal analysis combines low-edge obstructions on
-forty-seven and forty-eight vertices, a repivot/charge argument, and a
-uniform terminal theorem. The proof is accompanied by finite computational
-certificates and an independent AI-assisted informal audit of a pinned
-source snapshot. The argument is not yet formalized in a proof assistant, and
-external human peer review remains to be completed.
+A balanced $r$-edge-coloring of a complete graph is an edge-coloring in which every set of $r+1$ vertices spans an edge of every color. Erd\H{o}s and Gy\'arf\'as conjectured that, for every $r\geq 3$, the complete graph $K_{r^2+1}$ has no balanced $r$-edge-coloring. We prove the fixed case $r=12$: no edge-coloring of $K_{145}$ with twelve colors has the property that every thirteen-vertex set contains all twelve colors. The proof chooses a color class of minimum size and derives hereditary induced-subgraph edge caps. A contextual Ramsey--Tur\'an argument and an exact finite recurrence reduce a hypothetical counterexample to a sixty-one-vertex residual graph with between $397$ and $408$ edges. The terminal analysis combines a forty-seven-vertex low-edge obstruction, a separate forty-eight-vertex floor, and a repivot/charge theorem for the minimum-degree-thirteen case. The argument is an informal mathematical proof supported by finite computational verification and an independent AI-assisted audit of a pinned proof snapshot. It is not proof-assistant formalized and has not yet undergone external human peer review.
 \end{abstract}
 
-\section{Introduction}
+\tableofcontents
 
-A coloring of the edges of a complete graph with $r$ colors is called
-\emph{balanced} if every set of $r+1$ vertices spans at least one edge of
-each color. Erd\H{o}s and Gy\'arf\'as formulated the conjecture that
-$K_{r^2+1}$ has no balanced $r$-edge-coloring for every integer $r\geq 3$
-\cite{ErdosGyarfas1999}. Their paper proves the cases $r=3$ and $r=4$.
-The five-color case was subsequently established by Xia and Szeider
-\cite{XiaSzeider2026}, using a combination of formalized reduction,
-SAT-based enumeration, and independently checkable certificates.
+\input{sections/01-introduction}
+\input{sections/02-setup}
+\input{sections/03-frontend}
+\input{sections/04-lower-order}
+\input{sections/05-low-edge}
+\input{sections/06-equality}
+\input{sections/07-h12}
+\input{sections/08-cover}
+\input{sections/09-global-and-computation}
 
-The purpose of this paper is to establish the next fixed-parameter statement
-addressed by this project.
-
-\begin{theorem}[The twelve-color case]
-\label{thm:main}
-There is no edge-coloring
-\[
-  c:E(K_{145})\longrightarrow \{1,2,\ldots,12\}
-\]
-such that every $13$-vertex subset of $K_{145}$ contains an edge of every
-one of the twelve colors.
-Equivalently, every $12$-edge-coloring of $K_{145}$ has a $13$-vertex set
-whose induced edges omit at least one color.
-\end{theorem}
-
-Theorem~\ref{thm:main} is a fixed-$r$ result. It does not settle the
-conjecture for all $r\geq 3$.
-
-\subsection{Overview of the proof}
-
-Assume for contradiction that a balanced twelve-coloring of $K_{145}$ exists.
-Choose a color class with the fewest edges and regard it as a graph $G$.
-The balanced-coloring hypothesis imposes hereditary upper bounds on the
-number of edges induced by every vertex subset of $G$. These bounds are
-combined with classical extremal graph results, including Tur\'an-type
-bounds, Brooks' theorem, the Andr\'asfai--Erd\H{o}s--S\'os theorem, and a
-second-Tur\'an bound for non-partite $K_{r+1}$-free graphs
-\cite{Turan1941,Brooks1941,AndrasfaiErdosSos1974,KangPikhurko2005}.
-
-The front-end reduction first rules out a contextual $R(4,49)$ residual
-inside the original full-coloring setting. A packing and recurrence argument
-then leaves a unique sixty-one-vertex residual $F$ with
-\[
-  397\leq e(F)\leq 408,\qquad
-  \alpha(F)\leq 5,\qquad \omega(F)\leq 11,
-\]
-together with the required hereditary induced-subgraph caps.
-
-The terminal argument separates according to the minimum degree of $F$.
-The degree-twelve branch is excluded using a forty-eight-vertex
-310-edge lower bound and an inserted-center contradiction. The degree-thirteen
-branch is handled by degree-thirteen pivots, exact repivot identities, and a
-uniform charge theorem. A forty-seven-vertex low-edge theorem supplies the
-287-edge core floor, while the terminal charge inequalities rule out the
-remaining edge values.
-
-\subsection{Organization}
-
-Section~\ref{sec:reduction} records the coloring reduction and the
-sixty-one-vertex terminal contract. Section~\ref{sec:cores} states the
-forty-seven- and forty-eight-vertex core theorems. Section~\ref{sec:terminal}
-describes the h12 and h13 terminal arguments. Section~\ref{sec:computation}
-specifies the finite computational verification and its trust boundary.
-The detailed proof transcription and all exact hypotheses are being
-completed from the frozen source documents identified in the repository's
-publication index.
-
-\section{Notation and the hereditary graph contract}
-
-All graphs in this paper are finite and simple. For a graph $H$, write
-$v(H)$ and $e(H)$ for its numbers of vertices and edges, $\delta(H)$ for
-its minimum degree, $\alpha(H)$ for its independence number, and
-$\omega(H)$ for its clique number. For $U\subseteq V(H)$, $H[U]$ denotes
-the induced subgraph.
-
-The final proof uses hereditary induced-subgraph edge caps inherited from
-the original coloring assumption. Their exact definition and the derivation
-from the least-edge color class must be included in the final proof
-transcription; they are not additional assumptions on an arbitrary graph.
-
-\section{The coloring reduction and the T61 residual}
-\label{sec:reduction}
-
-\paragraph{Source of the proof.}
-The complete argument for this section is the frozen document
-\texttt{K145\_TO\_T61\_FRONTEND\_AUDIT.md} at integrated proof commit
-\texttt{c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2}. It proves the
-color-class caps, contextual $R(4,49)$ exclusion, exact packing/edge ledger,
-all recurrence rules, and the unique T61 stop.
-
-\paragraph{Terminal contract.}
-The recurrence has 1,752 nodes and 144 outer-stop comparisons. Its unique
-surviving stop has parameters $d=11$ and $j=6$ and yields a graph $F$ on
-61 vertices with $397\leq e(F)\leq408$, $\alpha(F)\leq5$,
-$\omega(F)\leq11$, and all inherited induced-subgraph caps.
-
-\paragraph{Proof transcription status.}
-The complete line-by-line derivation of the cap function, packing
-transversal, edge partition, recurrence seeds, and matching bounds is being
-transcribed from the frozen proof source. This paragraph is a roadmap, not a
-replacement for those derivations.
-
-\section{The forty-seven- and forty-eight-vertex core theorems}
-\label{sec:cores}
-
-The integrated proof establishes a universal forty-seven-vertex low-edge
-obstruction. Under the exact contract
-\[
-  v(H)=47,\quad \delta(H)\geq12,\quad
-  \alpha(H)\leq4,\quad \omega(H)\leq11,
-\]
-there is no such graph with $e(H)\leq286$. In particular, every
-forty-seven-vertex core satisfying the corresponding Ramsey--Tur\'an
-contract has at least 287 edges.
-
-A separate forty-eight-vertex argument proves the 310-edge floor required
-for the degree-twelve terminal. This argument uses its own minimum-degree
-gate and a complete charge-$20$ shell classification; it is not obtained
-by transferring the forty-seven-vertex bound to a different order.
-
-The exact hypotheses, equality structures, common-neighborhood capacity,
-shared-excess accounting, and support-orbit classification must be included
-in the final proof text from the frozen low-edge, equality, and h12 sources.
-
-\section{The sixty-one-vertex terminal}
-\label{sec:terminal}
-
-The minimum-degree cases are separated as follows.
-
-\begin{itemize}
-  \item If $\delta(F)\leq 11$, the original full-color context yields a
-  forbidden contextual $R(4,49)$ object.
-  \item If $\delta(F)\geq14$, the degree sum forces more than 408 edges.
-  \item If $\delta(F)=12$, the forty-eight-vertex floor and the complete
-  charge-$20$ equality classification lead to the inserted-center
-  contradiction.
-  \item If $\delta(F)=13$, every regular pivot produces a forty-seven-point
-  core. The core has at least 287 edges, and the COVER charge theorem
-  excludes the remaining energies 407 and 408.
-\end{itemize}
-
-For a degree-thirteen pivot $p$, the proof uses an exact identity of the form
-\[
-  e(C_p)=E-91-q_p,
-\]
-where $C_p=F-N_F[p]$ and $q_p$ is the pivot charge. The full definitions,
-repivot identities, quantifier order over all regular pivots, and terminal
-classification are part of the frozen COVER and h13 proof sources and must
-be transcribed before submission.
-
-\section{Finite verification and reproducibility}
-\label{sec:computation}
-
-The independent audit reports the following finite checks for the pinned
-integrated proof:
-
-\begin{center}
-\begin{tabular}{lr}
-\hline
-Obligations in the audit matrix & 58\\
-Q27 / Q28 canonical states & 2 / 8\\
-Subset identities replayed & 81,920\\
-Recurrence nodes replayed & 1,752\\
-Outer-stop comparisons & 144\\
-\hline
-\end{tabular}
-\end{center}
-
-The finite computations support bounded classifications and arithmetic
-replay after the analytic reductions. They do not replace the analytic
-proofs of the graph-to-state mappings or their completeness. The independent
-replay is implemented in Python 3.12.14 using the standard library and is
-documented in \texttt{PUBLICATION/REPRODUCIBILITY.md}.
-
-\section{Scope, limitations, and formalization status}
-
-The theorem proved here is the fixed $r=12$ instance. The proof does not
-claim to settle the general conjecture. It also does not claim that the
-abstract uncolored high-energy $R(4,49)$ layers are empty; the proof instead
-uses a contextual contradiction available inside the original full-color
-setting.
-
-The current proof is an informal mathematical proof with finite
-computational verification and an independent AI-assisted audit. It has
-not yet been formalized in Lean 4/Mathlib and has not yet undergone external
-human peer review. These qualifications will remain explicit in any
-preprint version.
-
-\bibliographystyle{plain}
+\bibliographystyle{plainnat}
 \bibliography{references}
 
 \end{document}
