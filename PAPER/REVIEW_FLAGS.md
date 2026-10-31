@@ -1,6 +1,6 @@
 # Manuscript review flags and release blockers
 
-Updated: 2026-10-31. This is a working draft, not a claim of submission readiness.
+Updated: 2026-11-01. This is a working draft, not a claim of submission readiness.
 
 ## P0 — required before submission
 
@@ -11,8 +11,8 @@ The h=5 \((9,11,11,11)\) orbit \(\{01,01,02,03,23\}\) has also been expanded: af
 The h=5 pattern \(D=\{01,02,03,12,13\}\) has now been rewritten as a per-\(K_{10}\)-center argument: two completing mixed points cost at least seven, one completer plus one noncompleter costs at least five, and two noncompleters cost at least eight by pointwise/shared-leaf accounting. The two center charges add to at least ten. A standalone derivation is at \`supplement/root/frozen/eq286/H5_D_10_10_11_11_RESOLUTION.md\`.
 
 2. **Standalone computational supplement.** A source-preserving bundle now exists under `PAPER/supplement/`, including the 26-entry frozen source manifest layout, recurrence inputs, low-edge/286-equality/COVER verifiers and results, case matrix, Q30 adversarial report, H12 sources, root proof DAG and checksums. CI now runs the integrated verifier plus clean temporary-copy reruns of the low-edge, 286-equality and COVER verifiers, and emits a ZIP artifact. Still outstanding: a separate canonical q27/q28 state-key export, explicit q20 adjacency-list export, and a raw 61-representative export. Do not imply that the root verifier reran the full COVER shell search.
-3. **Clean LaTeX build.** A clean GitHub Actions TeX Live 2025 build succeeds at commit `67926d44543a10ff73a185f2c83d460f12a2d946` (33 pages). The final `main.log` has no unresolved references/citations or overfull/underfull boxes. The full-page contact sheet was checked and pages 1 and 24–33 were inspected at reading resolution; target-journal formatting remains outstanding.
-4. **Primary-source citation audit.** Check the exact theorem statements and parameter ranges for Brooks, Andrásfai–Erdős–Sós, and Kang–Pikhurko against the original papers. Verify the historical summary of the Erdős–Gyárfás conjecture and the Xia–Szeider preprint.
+3. **Clean LaTeX build.** The latest verified GitHub Actions build is run `41218517505` at commit `3629609835f8c67951ed0b8fba126acd24780e85` (34 pages). I downloaded and inspected its `main.log`; the final log has zero LaTeX/package warnings, unresolved references/citations, or overfull/underfull boxes. Pages 16–22 were also inspected as a contact sheet. The subsequent manuscript edit at `c16fa2203219da450a06b8f214cda0f8274a4f07` expands the Kang–Pikhurko argument and has not yet been rebuilt; rerun CI before treating the current HEAD as build-certified. Target-journal formatting remains outstanding.
+4. **Primary-source citation audit.** Kang–Pikhurko is now checked directly against the primary 2005 PDF: Theorem 1 applies at (n,r)=(25,2), and the manuscript spells out why the complement is triangle-free and non-bipartite before using the exact bound 145; see `supplement/root/frozen/eq286/KANG_PIKHURKO_25_VERTEX_APPLICATION.md`. Still check Brooks, Andrásfai–Erdős–Sós, the historical summary of the Erdős–Gyárfás conjecture, and the Xia–Szeider preprint.
 5. **Independent human review.** Obtain at least one external combinatorialist's line-by-line review. The AI-assisted certification PASS is not human peer review.
 
 ## P1 — required before public preprint
@@ -37,7 +37,7 @@ The h=5 pattern \(D=\{01,02,03,12,13\}\) has now been rewritten as a per-\(K_{10
 - Main theorem and proof architecture: drafted.
 - Main proof sections: source-derived first transcription completed.
 - Supplementary machine assets: source-preserving bundle in `supplement/`; CI ZIP artifact and clean verifier reruns are enabled. Canonical state-key, q20 adjacency-list and raw 61-representative exports remain open.
-- LaTeX compilation: successful at commit `67926d44543a10ff73a185f2c83d460f12a2d946` (33 pages); final references and citations resolve, with no final-log layout warnings.
-- PDF inspection: selected pages 1 and 24–31 inspected; full editorial inspection remains open.
+- LaTeX compilation: latest successful build is commit `3629609835f8c67951ed0b8fba126acd24780e85` (34 pages); final references/citations and layout warnings are clean. The newer Kang–Pikhurko paragraph edit is pending rebuild.
+- PDF inspection: pages 1 and 24–33 were previously inspected; pages 16–22 were inspected in the latest 34-page artifact. Full editorial inspection remains open.
 - External human review: not yet obtained.
 - Submission: not made.
