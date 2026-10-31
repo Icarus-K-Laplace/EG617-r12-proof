@@ -1,0 +1,40 @@
+name: Build EG617 r=12 manuscript
+
+on:
+  push:
+    branches:
+      - workstream/r12-paper-full-manuscript-20261031
+    paths:
+      - "PAPER/**"
+      - ".github/workflows/paper-build.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out manuscript branch
+        uses: actions/checkout@v4
+
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y latexmk texlive-latex-extra texlive-fonts-recommended texlive-bibtex-extra
+
+      - name: Compile paper
+        working-directory: PAPER
+        run: latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+
+      - name: Upload compiled PDF and build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eg617-r12-manuscript-build
+          path: |
+            PAPER/main.pdf
+            PAPER/main.log
+            PAPER/main.blg
+          if-no-files-found: warn
