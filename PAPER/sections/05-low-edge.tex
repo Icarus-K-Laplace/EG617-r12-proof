@@ -1,0 +1,138 @@
+\section{A universal low-edge obstruction on $47$ vertices}
+\label{sec:low-edge}
+
+We first prove a graph-only statement. No hereditary density cap or coloring decomposition is assumed in this section.
+
+\begin{theorem}[Uniform low-edge obstruction]
+\label{thm:low-edge}
+There is no simple graph $H$ satisfying
+\[
+|V(H)|=47,\quad e(H)\leq285,\quad
+\delta(H)\geq12,\quad\alpha(H)\leq4,\quad\omega(H)\leq11.
+\]
+\end{theorem}
+
+\begin{proof}
+Put
+\[
+\epsilon(v)=d_H(v)-12\geq0,\qquad
+T=\sum_{v\in V(H)}\epsilon(v)=2e(H)-564\leq6.
+\]
+Let $q$ be the number of vertices with positive excess. Then $0\leq q\leq6$. If the other $47-q$ degree-$12$ vertices contained no independent four-set, they would span at least $\tau_3(47-q)$ edges. The edges incident with the $q$ exceptional vertices number at least
+\[
+12q+T-\binom q2.
+\]
+Consequently
+\[
+e(H)\geq\tau_3(47-q)+12q-\binom q2.
+\]
+For $q=0,1,\ldots,6$, the right-hand side is respectively
+\[
+345,\ 342,\ 338,\ 334,\ 329,\ 323,\ 317,
+\]
+all larger than $285$. Thus there are four pairwise nonadjacent degree-$12$ vertices
+\[
+I=\{s_1,s_2,s_3,s_4\}.
+\]
+
+Every vertex outside $I$ has at least one neighbor in $I$, since $\alpha(H)\leq4$. The $48$ incidences from $I$ to the other $43$ vertices therefore have exactly five surplus incidences. Let $Z$ be the set of vertices with at least two neighbors in $I$, and let $P_i$ be the vertices whose unique neighbor in $I$ is $s_i$. If two vertices of $P_i$ were nonadjacent, they together with the other three seeds would form an independent five-set. Thus
+\[
+K_i=\{s_i\}\cup P_i
+\]
+is a clique. Put $h=|Z|$ and $d_i=|N(s_i)\cap Z|$. Since $d_H(s_i)=12$,
+\[
+|K_i|=13-d_i\leq11,\qquad
+\sum_{i=1}^4d_i=h+5.
+\]
+Every vertex of $Z$ has at least two seed-neighbors, and the total surplus is five; hence $h\leq5$. Since $d_i\geq2$ for all $i$, also $h\geq3$. The possible clique-size patterns are therefore
+\[
+\begin{array}{c|c|c}
+h&(|K_1|,\ldots,|K_4|)\text{ up to order}&
+\text{pattern}\\ \hline
+3&(11,11,11,11)&11^4\\
+4&(10,11,11,11)&10,11,11,11\\
+5&(9,11,11,11)\text{ or }(10,10,11,11)&
+9,11,11,11\text{ or }10,10,11,11.
+\end{array}
+\]
+
+We use the common-neighborhood bound from \cref{lem:common-neighbor}. If a vertex $z\in Z$ has support exactly $\{s_i,s_j\}$, put
+\[
+A=K_i\setminus N(z),\qquad B=K_j\setminus N(z),
+\qquad a=|A|,\quad b=|B|.
+\]
+Every pair in $A\times B$ is an edge: otherwise its two endpoints, together with $z$ and the two other seeds, would form an independent five-set.
+
+If both cliques have size $11$, then $a,b\geq1$ and disjoint degree-excess accounting gives
+\begin{equation}
+T\geq
+\max(0,10-a-b)+a\max(0,b-2)+b\max(0,a-2)\geq6.
+\label{eq:pair-charge-11}
+\end{equation}
+The first term is forced excess at $z$; each vertex of $A$ has at least $10+b$ neighbors and hence excess at least $\max(0,b-2)$, and symmetrically for $B$. The final inequality follows by splitting at $a=2$ and $b=2$: if either variable is $1$, the expression is at least $7$; for $a,b\geq2$ its unique minimum is $6$ at $(a,b)=(2,2)$. Thus the existence of a support pair between two $K_{11}$s forces equality throughout: $a=b=2$, $\epsilon(z)=6$, and every other vertex has excess zero. In particular $z$ has no neighbors outside the two cliques.
+
+\medskip
+\noindent\textbf{Case $h=3$.}
+Up to relabeling, the three supports are either
+\[
+\{1234,12,34\}\quad\text{or}\quad\{12,134,234\}.
+\]
+The first pattern contains two disjoint $K_{11}$--$K_{11}$ support pairs, each requiring all six excess units, impossible. In the second pattern, the point with support $12$ triggers equality in \eqref{eq:pair-charge-11}. Let $A$ be its two missing vertices in $K_1$, and choose $a\in A$. The blocker gives two forced neighbors of $a$ in the opposite missing set, while $a$ already has its ten neighbors in $K_1$; hence $d_H(a)=12$. Replace seed $s_1$ by $a$. The new four seeds are independent and degree $12$. The point formerly supported on $\{1,3,4\}$ is nonadjacent to $a$ because the degree of $a$ is already exhausted, so its new support is $\{3,4\}$. This is a second $K_{11}$--$K_{11}$ pair, again requiring six excess units on a different vertex. Contradiction.
+
+\medskip
+\noindent\textbf{Case $h=4$.}
+There is one $K_{10}$, say $K_0$, and three $K_{11}$s. The supports consist of one triple and three pairs. If a pair joins two $K_{11}$s, its point consumes all excess by \eqref{eq:pair-charge-11}. Each of the other two pair points has degree $12$ and cannot join two $K_{11}$s. A $K_{10}$--$K_{11}$ pair point with positive missing sets of sizes $a,b$ has, by the independent-five blocker and the zero excess on clique vertices, $a\leq2$ and $b\leq3$; its degree is then at least $21-a-b\geq16$, a contradiction. Thus both remaining pair points complete $K_0$, contrary to the common-neighborhood capacity for a $K_{10}$.
+
+Otherwise all three pairs meet label $0$, and the supports are $01,02,03$ with complementary triple $123$. For pair point $z_i$, put
+\[
+a_i=|K_0\setminus N(z_i)|\geq0,\qquad
+b_i=|K_i\setminus N(z_i)|\geq1.
+\]
+At a vertex $v\in K_0$, the three support adjacencies and the disjoint forced edges into the three leaf cliques give
+\[
+\epsilon(v)\geq
+\sum_{i:v\notin N(z_i)}(b_i-1).
+\]
+Summing over the cliques and support points yields
+\[
+T\geq\sum_i\left[
+\max(0,9-a_i-b_i)+a_i(b_i-1)+b_i\max(0,a_i-2)
+\right].
+\]
+For all integers $a\geq0,b\geq1$, the bracket is at least $6$: for $b=1$ it is
+$\max(0,8-a)+\max(0,a-2)\geq6$; for $a=1,b\geq2$ it is at least $7$; and for $a,b\geq2$ it is at least $7$. Since $T\leq6$, at most one $a_i$ can be positive. At least two of the three points therefore complete $K_0$, again impossible.
+
+\medskip
+\noindent\textbf{Case $h=5$.}
+All five supports are pairs. Their support multigraph has degree pattern $4,2,2,2$ or $3,3,2,2$.
+
+In the first pattern the cliques have sizes $9,11,11,11$. Exactly one pair joins two $K_{11}$ labels and triggers the six-unit equality. Each of the other four pair points joins $K_9$ to $K_{11}$ and has degree $12$. If it misses positive sets of sizes $a,b$ in these two cliques, the blocker and zero excess on clique vertices give $a\leq2,b\leq4$, so its degree is at least $20-a-b\geq14$, impossible. Hence all four complete $K_9$. Any two of these points must be adjacent: if not, they have at least nine common neighbors, contradicting \cref{lem:common-neighbor} because both have zero excess. The four points and $K_9$ then form a $K_{13}$.
+
+In the second pattern there are two $K_{10}$s and two $K_{11}$s. A pair between the two $K_{11}$s triggers equality; the other four degree-$12$ pair points would each have to complete a $K_{10}$. But at most one exterior vertex can complete a fixed $K_{10}$. Thus no $K_{11}$--$K_{11}$ pair occurs. There is exactly one pair between the two $K_{10}$s, and the four mixed supports form a $2$-by-$2$ matrix with row and column sums $2$. Up to relabeling the two possibilities are
+\[
+P=\{12,13,13,24,24\},\qquad
+D=\{12,13,14,23,24\}.
+\]
+
+For pattern $P$, a mixed $K_{10}$--$K_{11}$ pair point with missing-set sizes $a,b\geq1$ forces at least
+\[
+\max(0,9-a-b)+a\max(0,b-3)+b\max(0,a-2)\geq4
+\]
+units of excess on that point and its two missing sets. In each doubled mixed pair, at most one point can complete the $K_{10}$, so choose a noncompleting point from each doubled pair. The two charged clique pairs and support points are disjoint, giving $T\geq8>6$.
+
+For pattern $D$, let $A_{i,e}=K_i\setminus N(z_e)$ be the missing set at clique $K_i$ for support edge $e=ij$. At a vertex $v\in K_i$, the forced blocker neighborhoods arising from distinct incident support edges lie in distinct opposite cliques. The exact degree count gives
+\[
+\epsilon(v)\geq
+\max\left(0,\sum_{e\ni i,\ v\in A_{i,e}}(a_{j,e}-1)\right)
+\geq
+\sum_{e\ni i,\ v\in A_{i,e}}\max(0,a_{j,e}-2).
+\]
+For a $K_{10}$ there is at most one negative summand, from its unique other $K_{10}$ support; for a $K_{11}$ there are only two summands. Thus the pointwise inequality remains valid, including empty missing sets and complete attachments. Summing it over the cliques and then over the four mixed support points counts each excess only once. At most one mixed point per $K_{10}$ can complete it, so at least two mixed points have positive missing sets. Each contributes at least
+\[
+\max(0,9-a-b)+a\max(0,b-2)+b\max(0,a-2)\geq5.
+\]
+The two contributions are additive even if they share a leaf clique, since their forced neighbors lie in distinct opposite cliques. Hence $T\geq10>6$.
+
+All possible support patterns have been eliminated, proving the theorem.
+\end{proof}
+
