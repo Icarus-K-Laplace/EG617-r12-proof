@@ -1,0 +1,297 @@
+\section{The repivot--charge theorem for minimum degree thirteen}
+\label{sec:cover}
+
+\subsection{The theorem and exact pivot identities}
+
+Let $F$ be a graph satisfying
+\[
+|V(F)|=61,\quad \delta(F)=13,\quad
+\alpha(F)\leq5,\quad\omega(F)\leq11,
+\]
+and all hereditary caps $e(F[U])\leq D(|U|)$. Let $E=e(F)$ be $407$ or $408$. A \emph{regular vertex} means a vertex of degree exactly $13$ in $F$. For a regular pivot $p$, put
+\[
+A=N_F(p),\qquad C=F-N_F[p],\qquad M=\overline{F[A]}.
+\]
+For $a\in A$, define
+\[
+g_a=d_F(a)-13,\quad t_a=|N_F(a)\cap V(C)|,\quad
+z=e(M),\quad G=\sum_{a\in A}g_a,\quad q_p=z+G.
+\]
+Let $Q=\max q_p$, where the maximum is over all regular vertices of the same fixed graph $F$.
+
+\begin{theorem}[COVER]
+\label{thm:COVER}
+Under the preceding contract,
+\[
+E=407\Longrightarrow Q\geq30,\qquad
+E=408\Longrightarrow Q\geq31.
+\]
+\end{theorem}
+
+For every $a\in A$,
+\[
+t_a=d_M(a)+g_a,\qquad e_F(A,C)=2z+G,
+\]
+and exact edge partition gives
+\begin{equation}
+E=91+q_p+e(C).
+\label{eq:charge-energy}
+\end{equation}
+The induced $14$-set $N[p]$ has $91-z$ edges, so $z\geq22$ by $D(14)=69$. Also $\alpha(M)\leq10$, since a target $K_{11}$ in $A$ together with $p$ would form a $K_{12}$. For every $S\subseteq A$,
+\begin{equation}
+q_p=t(S)-e_M(S)+e_M(A\setminus S)+G_{A\setminus S}.
+\label{eq:charge-subset}
+\end{equation}
+No clique assumption on $A$ is made.
+
+Every regular pivot has a genuine $47$-vertex core $C$ with $\alpha(C)\leq4$, $\omega(C)\leq11$, and all induced caps. The independence bound follows because an independent five-set in $C$, together with $p$, would be an independent six-set in $F$.
+
+\subsection{The global minimum-degree-eleven interface}
+
+There is no induced member of $\mathcal R(3,36)$ inside $F$. Otherwise the lower-order theorem forces it to have minimum degree $13$ and exactly $234$ edges. Each of the other $25$ vertices has at most three neighbors in it by $D(37)=237$. If the outside $25$-set contained an independent triple, at least $27$ vertices of the $36$-set would avoid it, and \cref{lem:R224} would supply an independent triple among those vertices. Together these six vertices would be independent in $F$. Hence the outside $25$-set has independence number at most two, again contradicting \cref{lem:R224}.
+
+It follows that every actual $47$-vertex core has minimum degree at least $11$: a vertex of core degree at most $10$ would leave an induced member of $\mathcal R(3,36)$ in its nonneighborhood. Moreover, the degree-$11$ vertices in any such core form a clique. If two were nonadjacent, one would lie in the $35$-vertex nonneighborhood of the other and would have degree at most $11$ there, contradicting \cref{lem:R335}.
+
+For a missing-shell edge $ab\in E(M)$, the vertices of $C$ outside $N_C(a)\cup N_C(b)$ have independence number at most three and cannot contain $36$ vertices. Thus
+\begin{equation}
+|N_C(a)\cup N_C(b)|\geq12,\qquad t_a+t_b\geq12.
+\label{eq:EDGE12}
+\end{equation}
+A missing triangle has row union at least $24$, by \cref{lem:R224}; a missing $K_4$ has row union at least $36$, since its uncovered core is a clique of size at most $11$. Hence
+\begin{equation}
+t(T)\geq24\quad(T\text{ an }M\text{-triangle}),\qquad
+t(S)\geq36\quad(S\text{ an }M\text{-}K_4).
+\label{eq:triangle-K4-rows}
+\end{equation}
+In particular, if $q_p\leq28$, then $M$ is $K_4$-free, since \cref{eq:charge-subset} and \cref{eq:triangle-K4-rows} would otherwise give $q_p\geq36-6=30$.
+
+\subsection{Exact repivot identities}
+
+Let $y\in A$ be another regular vertex. Put
+\[
+d=d_M(y),\quad S=N_M(y),\quad D_y=N_C(y),
+\]
+so $|S|=|D_y|=d$. Repivoting at $y$ replaces $D_y$ in the old core by $S$, producing
+\[
+C_y=(C\setminus D_y)\cup S.
+\]
+Define
+\[
+\begin{split}
+\rho&=e_M(A\setminus S)+G_{A\setminus S},\qquad
+m=e_M(S),\\
+h_\beta&=\sum_{x\in D_y}(d_C(x)-\beta),\\
+\kappa&=\binom d2-e_C(D_y),\qquad
+b=e_F(S,D_y).
+\end{split}
+\]
+Direct edge partition gives the exact identity
+\begin{equation}
+q_y=d(\beta+1-d)+\rho+h_\beta+\kappa+b.
+\label{eq:repivot-q}
+\end{equation}
+The total degree excess above $\beta$ on the inserted vertices $S$ in the new core is
+\begin{equation}
+\eta_\beta=q_p-d(\beta+1-d)-\rho-m-b.
+\label{eq:repivot-eta}
+\end{equation}
+Thus
+\begin{equation}
+q_y-q_p=h_\beta-\eta_\beta+\kappa-m.
+\label{eq:repivot-difference}
+\end{equation}
+Whenever the old core has minimum degree at least $\beta$, $h_\beta\geq0$. Whenever the new core also has minimum degree at least $\beta$, $\eta_\beta\geq0$. In particular, the global degree-eleven interface licenses $\beta=11$ for every regular repivot. Equation \eqref{eq:repivot-eta} then implies
+\begin{equation}
+t(S)-2e_M(S)\geq d(12-d).
+\label{eq:INS11}
+\end{equation}
+A closed walk obtained by summing \eqref{eq:repivot-difference} only equates the sums of the two sides; it does not make individual correction terms vanish. Every equality below is derived from a specified maximum charge and nonnegative terms in \eqref{eq:repivot-q}.
+
+\subsection{Every low-charge shell has a three-matching or a triangle}
+
+Every $13$-vertex missing graph $M$ with $z\geq22$ and $\alpha(M)\leq10$ has a matching of size three. If its matching number were two, let $S$ be the four endpoints of a maximum matching and let $I$ be the remaining independent nine-set. The bipartite graph between $S$ and $I$ has matching number at most two, hence a vertex cover of size at most two by K\H{o}nig's theorem. A cover using one vertex of $S$ and one of $I$ permits at most twelve cross edges; a cover using two vertices of $I$ permits at most eight. Since even adding all six edges on $S$ leaves fewer than $22$ edges, the cover must consist of two vertices of $S$. There are at least sixteen cross edges, so two disjoint cross edges exist. The other two vertices of $S$ cannot be adjacent, or a three-matching would result. They and $I$ would then be an independent $11$-set, contradiction. Matching number at most one gives only a star or a triangle plus isolated vertices, also incompatible with $z\geq22$ and $\alpha(M)\leq10$.
+
+Suppose now that $M$ is triangle-free and $q_p\leq28$. A four-matching would give, by \cref{eq:EDGE12} and Mantel's theorem,
+\[
+q_p\geq48-16=32.
+\]
+Thus the matching number is exactly three. Such an $M$ must be bipartite. A shortest odd cycle has length five or seven; a longer one contains a four-matching. A $C_7$ has neither an exterior edge nor an exterior attachment, since either would combine with a matching of the remaining cycle vertices to give a four-matching. It would then have only seven edges. For a $C_5$, the outside eight-set has matching number at most one. If it has no edge, there are at most sixteen cycle attachments and $z\leq21$. If it has one edge $ab$, no other outside vertex can meet the cycle, giving $z\leq5+1+4=10$. If it has at least two edges, its nontrivial part is a star or triangle and cycle attachments can occur only at the intersection of the outside-edge endpoint sets; there are at most seven outside edges and two attachments, so $z\leq14$. All cases contradict $z\geq22$.
+
+By K\H{o}nig's theorem, a size-three vertex cover $X$ exists, with independent complement $Y$ of size ten. The cover $X$ is independent. If $e_M(X)=1$, triangle-freeness permits at most twenty cross edges and $z\leq21$. If $e_M(X)=2$, reaching $22$ forces every vertex of $Y$ to be adjacent to the unique nonadjacent pair of $X$, making that pair together with the third hub an independent $11$-set. Three edges on $X$ form a triangle. Hence $M$ is exactly bipartite with parts $X_3,Y_{10}$.
+
+\subsection{Excluding the triangle channel when $q_p\leq28$}
+
+Suppose $M$ contains a triangle $T$, and put $B=A\setminus T$, $u=e_M(B)$. By \cref{eq:charge-subset} and \cref{eq:triangle-K4-rows},
+\[
+u+G_B=q_p+3-t(T)\leq q_p-21\leq7.
+\]
+For an edge $ab$ in $B$, $K_4$-freeness bounds each endpoint's $T$-degree by two and $d_B(a)+d_B(b)\leq u+1$. Thus $t_a+t_b\leq5+u+G_B\leq12$. Equality in \cref{eq:EDGE12} forces $q_p=28$, $t(T)=24$, both endpoints to have two $T$-neighbors, every $B$-edge to meet $\{a,b\}$, and all $B$-decoration to lie on $\{a,b\}$. Applying this to every $B$-edge shows that the nontrivial part of $M[B]$ is a star or triangle. A triangle would have $u=3$ and $G_B=0$, contradicting $u+G_B=7$.
+
+If $B$ has one edge $ab$, the two distinct two-element $T$-neighborhoods overlap at one hub $w$. The triangle inequalities force $t_w=12$ and the other hub weights to be $t_b,t_a$, each at most nine. The other eight vertices of $B$ are regular and can meet only $w$, giving $z\leq3+1+4+8=16$. If $B$ is a star with at least two edges, all decoration lies at its center, whose weight is nine; each leaf has weight three. A leaf and the center have distinct two-element $T$-neighborhoods. Their common hub has weight twelve and the other two weights are nine and three. There cannot be two different weight-twelve common hubs, since $t(T)=24$ and the third hub has positive weight. Every leaf's missing neighborhood then consists of the weight-twelve hub, the weight-nine hub, and the weight-nine center; it spans two $M$-edges. This violates \cref{eq:INS11}, whose left side is $30-2\cdot2=26$ and whose right side is $3(12-3)=27$.
+
+It remains that $B$ is independent. Its $T$-incidence count is $19$ or $20$, so all ten $B$-vertices have $T$-degree two, or nine have degree two and one has degree one. There are at most six decoration units. Every hub must meet a regular degree-two low vertex. Otherwise a regular degree-one neighbor violates \cref{eq:EDGE12}; for a decorated neighbor $b$, the number $c_i$ of its $B$-neighbors at a hub $i$ is at most $G_B-g_b+1$, which gives
+\[
+t_i+t_b\leq(2+c_i+g_i)+(2+g_b)\leq5+G\leq11,
+\]
+again contradicting \cref{eq:EDGE12}. A hub with no $B$-neighbor would give an independent $11$-set. Thus all three hub weights are at least ten, with total at most $31$. A regular degree-two low vertex has two adjacent hubs as its missing neighborhood; their weight sum is at most $21$, while \cref{eq:INS11} requires at least $22$. Contradiction.
+
+We have proved that every regular pivot with $q_p\leq28$ has a triangle-free bipartite missing graph of the form $K_{3,10}$. In this channel, a three-matching gives $q_p\geq36-9=27$. Hence every regular pivot satisfies
+\begin{equation}
+q_p\geq27.
+\label{eq:q27}
+\end{equation}
+
+\subsection{The exhaustive $q=27$ and $q=28$ states}
+
+In the bipartite channel, write $X=\{0,1,2\}$ and $Y$ for the ten low vertices. Encode a low vertex by a pair $(B,g)$, where $B\subseteq X$ is its set of missing hub neighbors and $g\geq0$ is its decoration; its weight is $|B|+g$. Ten low rows are specified, up to permutations within identical types, by eight multiplicities $(n_B)_{B\subseteq X}$ summing to ten. There are
+\[
+\binom{17}{7}=19,448
+\]
+such nonnegative multiplicity vectors. The enumeration retains the empty mask, all zero decorations, and all hub-decoration allocations. The conditions $\alpha(M)\leq10$, \cref{eq:EDGE12}, and \cref{eq:INS11} are imposed as necessary conditions; no parent realization is assumed. The seven Hall inequalities are exactly the matching/cover conditions on the three hubs. The verifier enumerates all decoration allocations, sorts only within identical mask classes, and takes the lexicographic minimum over hub relabelings.
+
+The resulting states, modulo hub permutations, are:
+\[
+\begin{array}{c|c|c|c}
+q&\text{hub weights}&\text{low rows}&\text{parameters}\\ \hline
+27&(9,9,9)&k\text{ full rows},\ 10-k\text{ empty}&k=8,9\\
+28&(9,9,10)&k\text{ full rows},\ 10-k\text{ empty}&k=8,9\\
+28&(9,9,9)&k\text{ full},\ 1\text{ two-hub decorated},\
+9-k\text{ empty}&k=7,8\\
+28&(9,9,9)&k-1\text{ full},\ 1\text{ decorated full},\
+10-k\text{ empty}&k=8,9\\
+28&(9,9,9)&k\text{ full},\ 1\text{ decorated empty},\
+9-k\text{ empty}&k=8,9.
+\end{array}
+\]
+There are exactly two states at $q=27$ and eight at $q=28$. The independent replay reconstructs the ten graphs and checks all $8,192$ subset identities per state. The finite classification is used only after the graph-to-state map and the symmetry quotient have been proved.
+
+\subsection{Excluding $Q\leq28$}
+
+At $Q=27$, every active regular low vertex $y$ has $d=3$ and $\rho=0$. Formula \eqref{eq:repivot-q} at $\beta=11$, together with maximality, forces
+\[
+q_y=27,\qquad h_{11}=\kappa=b=0.
+\]
+Its row $D_y$ is therefore a triangle of degree-$11$ core vertices and is anticomplete to the three hubs. At a nonexceptional $Q=28$ state, there is one low decoration and every regular full row has $\rho=1$; the same argument forces $h_{11}=\kappa=b=0$. There are at least seven such rows.
+
+In either situation all these rows coincide. If $x\in D_z\setminus D_y$, then $x$ is degree $11$ in the old core and, by the deficient-clique lemma, is adjacent to all three vertices of $D_y$. It is anticomplete to the hubs because $b_z=0$. Its degree in the core after repivoting at $y$ would be $11-3=8$, impossible. Thus all full rows equal a common triangle $D$.
+
+The set $K=\{p\}\cup Y$ is a target $K_{11}$ disjoint from $D$. If there are $a\geq7$ full rows, the induced $14$-set $K\cup D$ has at least
+\[
+55+3+3a\geq79>D(14)=69
+\]
+edges, a contradiction. This excludes $Q=27$ and the six nonexceptional $Q=28$ states.
+
+For either of the two exceptional $B_1$ states, $K=\{p\}\cup Y$ is a regular target $K_{11}$. Each $v\in K$ has an outside triple $T_v$. For active lows, \cref{eq:repivot-q} gives
+\[
+q_v=27+h_{11}+\kappa+b\leq28.
+\]
+If $\kappa=1$, then $h_{11}=0$ and all three row points have degree $11$ in the old core, contradicting the deficient-clique lemma; larger $\kappa$ is impossible. Thus each $T_v$ is a triangle. Every other point of $K$ is adjacent to all or none of $T_v$, so two such triples are equal or disjoint. Their multiplicities are $2$ or $3$, and eleven points of $K$ require at least four distinct triples.
+
+For a point $x$ in a triple of multiplicity $c$, its degree in $F$ is $c+11$. At a pivot $p$ from a different row class,
+\[
+d_{C_p}(x)=d_F(x)-c-e_F(x,T_p)=11-e_F(x,T_p).
+\]
+The global core minimum degree $11$ forces $e_F(x,T_p)=0$, so $x$ is a degree-$11$ vertex in $C_p$. Each triple has at least two such base points. Choosing base points from two other row classes gives two nonadjacent degree-$11$ vertices in $C_p$, contradicting the deficient-clique lemma. Hence
+\begin{equation}
+Q\geq29.
+\label{eq:Q29}
+\end{equation}
+
+\subsection{The stronger core gate and the edge-$13$ condition}
+
+The $211$-edge floor \cref{lem:core211} has already been proved. Let $C$ be an actual $47$-vertex core with $e(C)\leq288$. We know $\delta(C)\geq11$. If $x$ has degree $11$, its $35$-vertex antineighborhood $H$ has at least $211$ edges and minimum degree at least $12$. The $11$-shell of $x$ is not complete. A missing edge $uv$ in that shell has row union at least $12$ by \cref{lem:R224}, and hence shell charge at least $11$. Therefore
+\[
+e(C)\geq66+211+11=288.
+\]
+At equality, the two rows are disjoint with union $U$ of size $12$, and $W=H\setminus U$ belongs to $\mathcal R(2,23)$, so $e(W)\geq131$. The degree sum on $U$ gives
+\[
+e(H[U])\geq131-211+144=64.
+\]
+Then $U\cup\{u,v\}$ has at least $64+12=76>D(14)=69$ edges, contradiction. Thus
+\begin{equation}
+e(C)\leq288\quad\Longrightarrow\quad\delta(C)\geq12.
+\label{eq:core288}
+\end{equation}
+
+For a missing edge $ab$ of the original $13$-shell, if its row union had size at most $12$, extend that union to a $12$-set $X$. Then $C-X\in\mathcal R(3,35)$ and has at least $211$ edges, while \cref{eq:core288} gives
+\[
+e(C-X)\leq288-12\cdot12+\binom{12}{2}=210.
+\]
+Hence every missing-shell edge satisfies
+\begin{equation}
+t_a+t_b\geq13.
+\label{eq:EDGE13}
+\end{equation}
+
+\subsection{Promotion when $Q\leq29$}
+
+Suppose a pivot has $q_p\leq29$ and its core has at most $288$ edges. Then $G\leq7$, \cref{eq:core288} and \cref{eq:EDGE13} apply, and $M$ is $K_4$-free. We claim that some regular shell vertex has missing degree between $3$ and $10$.
+
+If not, put $X=\{a\in A:t_a\geq11\}$. By \cref{eq:charge-subset}, three such vertices would give $q_p\geq33-3=30$, so $|X|\leq2$. Every regular vertex outside $X$ has missing degree at most two, and \cref{eq:EDGE13} prevents an edge between two such vertices. Thus every edge outside $X$ has a decorated endpoint.
+
+If $X=\varnothing$, at most seven decorated vertices support all edges, giving at most $16$ edges by Tur\'an's $K_4$-free bound, below $z\geq22$. If $X=\{x\}$ and $t_x=11$, no regular outside point can be adjacent to $x$ (its weight would be one); a regular hub cannot attain weight eleven, and a decorated hub leaves at most six other decorated vertices, again giving fewer than $22$ edges. If $X=\{x\}$ and $t_x\geq12$, the other twelve vertices contain a triangle or a two-matching, since otherwise they would contain an independent $11$-set. A triangle with $x$ gives $q_p\geq12+24-5=31$; a two-matching with $x$ gives $q_p\geq12+26-8=30$, since a $K_4$-free five-set has at most eight edges. Finally, if $|X|=2$, the other eleven vertices contain an edge $uv$; the four points have total weight at least $22+13=35$ and at most five induced missing edges, giving $q_p\geq30$. All cases are impossible.
+
+Thus a regular middle-degree vertex $y$ exists. The old core has minimum degree at least $12$, so \cref{eq:repivot-q} at $\beta=12$ gives
+\[
+q_y\geq d(13-d)\geq30.
+\]
+In the $E=407,Q=29$ case the original maximizing pivot has a $287$-edge core; in the $E=408,Q=29$ case it has a $288$-edge core. The promotion contradicts maximality in either case. Hence the $E=407$ conclusion of \cref{thm:COVER} follows. For $E=408$, the same argument reduces the only possible failure of the theorem to $Q=30$.
+
+\subsection{The complete $Q=30$ shell classification at $E=408$}
+
+Assume $E=408$ and $Q=30$, and choose a maximizing pivot. Its core has $287$ edges, so \cref{eq:core288} and \cref{eq:EDGE13} apply. Any repivot with charge at least $29$ has a core of at most $288$ edges and therefore also has minimum degree at least $12$.
+
+A regular shell vertex with missing degree $4$ through $9$ gives $q_y\geq d(13-d)\geq36$ in \cref{eq:repivot-q}, impossible. If $d=3$ or $d=10$, equality in the charge bound is forced:
+\[
+q_y=30,\qquad \rho=h_{12}=\kappa=b=0.
+\]
+The new core has at most $288$ edges, so \cref{eq:repivot-eta} is also licensed at $\beta=12$ and forces $m=0$.
+
+For $d=3$, the set $S$ is independent in $M$, and the other ten shell vertices are independent and regular. Since $\sum_{s\in S}t_s=30$ and every inserted vertex has new-core degree at least $12$, all three hub weights are $10$. By \cref{eq:EDGE13}, every nonisolated low vertex meets all three hubs. Thus
+\[
+\text{Family I:}\quad
+M=K_{3,k}\ \dot\cup\ (10-k)K_1,\quad
+k\in\{8,9,10\},
+\]
+with hub weights $10$, hub decorations $10-k$, and all ten low vertices regular.
+
+For $d=10$, the ten inserted weights sum to $30$ and each is at least $3$ by \cref{eq:EDGE13}; hence all are $3$. Every active point on the three-side then has degree $10$ by \cref{eq:EDGE13}. Since $z\geq22$, all three are active, giving the $k=10$ instance of Family I.
+
+Suppose instead that no regular shell vertex has missing degree $3$ through $10$. First $M$ is $K_4$-free. If it contained a $K_4$, equality in the $36-6$ charge bound would force all nine outside points to be independent and regular, and the four hub weights to sum to $36$. Each weight is at most $12$ by the triangle-row inequalities. Since $z\geq22$, an outside vertex $y$ of missing degree two exists. Its two missing neighbors are adjacent in $M$, so \cref{eq:repivot-q} gives $q_y\geq53-t(S)\geq29$. Its new core has at most $288$ edges and minimum degree at least $12$. The two inserted vertices then have degrees at most their old weights, forcing both weights to be at least $12$; the other two vertices of the $K_4$ have total weight at most $12$, contrary to \cref{eq:EDGE13}.
+
+Put $X=\{a:t_a\geq11\}$. Then $|X|\leq3$, and all edges outside $X$ have decorated endpoints.
+\begin{itemize}
+\item If $X=\varnothing$, at most eight decorated vertices support all edges, and the $K_4$-free bound is $21<22$.
+\item If $|X|=1$ and its weight is $11$, no regular outside point can be incident with it, and a regular hub cannot attain weight $11$. At most eight decorated vertices remain, again giving at most $21$ edges.
+\item If $|X|=1$ and its weight is at least $12$, the other twelve-set contains a triangle or a two-matching. A triangle gives $q_p\geq31$. A two-matching gives $q_p\geq30$; equality forces the hub weight to be $12$, the four endpoints to have total weight $26$, and eight edges on these five points. The other eight vertices are independent and regular and can meet only the unique heavy point, so $z\leq16<22$.
+\item If $|X|=3$, equality forces three weight-$11$ points forming a triangle and ten independent regular outside points. An active outside point must have missing degree two; its two hub weights sum to $22$, and \cref{eq:repivot-q} gives $q_y\geq31$, contradiction.
+\item If $|X|=2$, the remaining eleven-set contains an edge $uv$. Equality in the charge bound forces both hubs to have weight $11$, $t_u+t_v=13$, five edges on the four-set, and nine regular independent outsiders. Every active outsider meets both hubs, so $z=5+2k\geq22$ forces $k=9$. Each hub has weight $11$ and at least nine outside neighbors, so its induced four-set degree is two. The missing edge of this $K_4$-minus-edge is therefore between the two hubs. The hubs are regular of degree $11$, while $u,v$ have internal missing degree three and decorations summing to seven; neither decoration is zero in this channel.
+\end{itemize}
+The last configuration is
+\[
+\text{Family II:}\quad
+M=K_{2,11}\text{ together with one edge in the }11\text{-side},
+\]
+with two regular hubs of weight $11$, nine ordinary regular lows of missing degree two, and two positively decorated exceptional lows whose decorations sum to seven. This proves that Families I and II exhaust the $Q=30$ case.
+
+\subsection{Eliminating the two terminal families}
+
+For Family I, let $K$ consist of the pivot and the ten lows; it is a regular target $K_{11}$. For each $v\in K$, let $T_v$ be its three outside neighbors. Inactive lows are true twins of the pivot; active lows repivot with equality in \cref{eq:repivot-q}, so their rows are triangles and their new cores have minimum degree $12$. The $Q=30$ classification applies to every $v\in K$. Family II is impossible for these views because it contains a triangle in the missing graph, so every view is Family I. The distinct triples $T_v$ are disjoint, with multiplicities $c_i=11-k_i\in\{1,2,3\}$ summing to $11$. If there are $r$ distinct triples, then $4\leq r\leq5$. The row triangles contribute $3(11-r)$ excess above degree $13$, leaving
+\[
+23-3(11-r)
+\]
+excess units on the other $50-3r$ vertices.
+
+If $r=5$, there are $35$ remaining vertices and only five excess units. Each remaining vertex must complete some row triangle; otherwise it and one avoiding point from each of the five triangles form an independent six-set. Completing a triangle forces degree at least $15$ (the point has no neighbors in $K$ and its degree in each other $Q=30$ core is at least $12$), requiring at least two excess units per vertex, a contradiction. If $r=4$, there are $38$ remaining vertices and only two excess units, so at least $36$ are regular. Each regular remaining vertex meets any row triangle in at most one point. Two nonadjacent regular remaining vertices would then avoid one point in each of the four triangles, producing an independent six-set. They must form a clique of size at least $36$, contrary to $\omega(F)\leq11$. Thus Family I is impossible.
+
+For Family II, let $K$ consist of the pivot and the nine ordinary lows; it is a regular target $K_{10}$. Every point of $K$ is adjacent to the two decorated nonadjacent points $u,v$, and has exactly two further neighbors $T_i$ outside $K$. For an ordinary low $y$, its two missing shell neighbors are the two hubs of weight $11$ and $\rho=8$. Formula \cref{eq:repivot-q} gives
+\[
+q_y=30+h_{12}+\kappa+b.
+\]
+Maximality forces equality, so $T_y$ is an edge, $q_y=30$, and the new core has minimum degree $12$. The same holds at the original pivot. The $Q=30$ classification applies at every $v_i\in K$. Family I has already been excluded, so each view is Family II. Its two exceptional lows must be the same global points $u,v$; the other nine points of $K$ are ordinary lows. Thus each $T_i$ is the regular hub pair in that view. The ten pairs $T_i$ are disjoint: if $x\in T_i$ and $i\ne j$, then in the core at $v_j$,
+\[
+d_{\text{core}}(x)=13-1-e_F(x,T_j)\geq12,
+\]
+so distinct pairs are anticomplete. Choosing one point from each pair gives an independent ten-set, contradiction.
+
+This eliminates Family II and proves \cref{thm:COVER}.
