@@ -22,7 +22,7 @@ They are separately frozen sources, not an assertion that all sibling workstream
 
 The initial create-branch operation was NOT executed: automatic approval review failed on a usage limit, not a safety determination. Local authorized proof work continued. After the concrete package was prepared, the same ordinary GitHub create-branch operation was retried and succeeded. No alternate credential or approval bypass was used.
 
-The new branch was created from exactly b0459807acd4b7e386148056ddf77d7998918893. The first complete artifact commit is being prepared; its verified receipt will be recorded after the ref update. No global-root or sibling file is modified. This receipt must not be read as a claim that an unexecuted commit already exists.
+The new branch was created from exactly b0459807acd4b7e386148056ddf77d7998918893. The complete proof package was committed as c6c17bb6b1fee0e350fd0ff649680333f30c9f88 (tree95f8d9690c7ed0553b54a0f38f48117f3b4949f1). The branch ref was updated with an expected-head lease and read back at that exact commit. All48 remote blobs matched the local expected Git identities; the recursive tree was not truncated. Every pre-existing blob outside the authorized prefix was unchanged, and none was removed. This follow-up receipt records those completed checks and refreshes the package checksums. No global-root or sibling file was modified.
 
 ## Proof acceptance
 

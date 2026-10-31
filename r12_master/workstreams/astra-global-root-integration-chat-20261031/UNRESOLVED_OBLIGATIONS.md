@@ -16,4 +16,4 @@ These items do not supply hidden premises to the K145 proof. The25-node DAG cont
 
 ## Operational work
 
-See ROOT_PROMOTION_RECEIPT.md for the exact remote publication state. The first branch-creation attempt was not executed because automatic approval review failed on a usage limit, not because the operation was judged unsafe. No alternate path was used to evade review. Local proof assets and verification continued within the sole authorized directory. Shared global root remains untouched.
+See ROOT_PROMOTION_RECEIPT.md for the exact remote publication state. The first branch-creation attempt was not executed because automatic approval review failed on a usage limit, not because the operation was judged unsafe. No alternate path was used to evade review. Local proof assets and verification continued within the sole authorized directory. The same ordinary branch-creation operation later succeeded, and the48-file proof package was committed and verified remotely at c6c17bb6b1fee0e350fd0ff649680333f30c9f88. No operational publication blocker remains. Shared global root remains untouched.
