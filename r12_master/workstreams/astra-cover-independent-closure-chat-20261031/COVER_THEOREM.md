@@ -10,7 +10,7 @@ Let F be a simple graph with 61 vertices, delta(F)=13, alpha(F)<=5, omega(F)<=11
     D(n)=binom(n,2)-11 p12(n),
     p12(12a+b)=12 binom(a,2)+ab, 0<=b<12.
 
-Let E=e(F) be 407 or 408. A regular vertex means exactly degree 13 in F. For a regular pivot p let A=N_F(p), C=F-N_F[p], M=complement(F[A]), g_a=d_F(a)-13, t_a=d_C(a), z=e(M), G=sum_A g_a, and q_p=z+G. Put Q=max q_p over ALL regular vertices. These are the original charge definitions.
+Let E=e(F) be 407 or 408. A regular vertex means exactly degree 13 in F. For a regular pivot p let A=N_F(p), C=F-N_F[p], M=complement(F[A]), g_a=d_F(a)-13, t_a=|N_F(a) intersect V(C)|, z=e(M), G=sum_A g_a, and q_p=z+G. Put Q=max q_p over ALL regular vertices. These are the original charge definitions.
 
 **COVER.** If E=407 then Q>=30. If E=408 then Q>=31.
 

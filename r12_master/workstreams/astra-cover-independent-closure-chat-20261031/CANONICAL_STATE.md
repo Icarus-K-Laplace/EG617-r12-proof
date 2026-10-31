@@ -13,4 +13,4 @@ Date: 2026-10-31.
 - Independent verifier PASS: all19,448 row-count vectors per charge; exact canonical counts2/8; all81,920 subset identities on the ten states; arithmetic and repivot identities checked. This is finite verification supporting the prose proof, not proof-assistant certification.
 - Only the requested workstream directory and own branch are written. The global root, h12 and other EG617 obligations are unchanged. Full EG617(r=12) is NOT claimed solved.
 
-The source/dependency audit and root receipt accompany the finalized delivery. The theorem statement, rather than any historical status registry, is authoritative for this workstream.
+The source/dependency audit and root receipt accompany the finalized delivery. The first theorem commit is db59cc71975febf6a9617d20aeeadedc79b877fd; all seven files passed immutable remote readback and the branch head was checked. SOURCE_MANIFEST.json freezes32 source files and the actual sibling heads. The theorem statement, rather than any historical status registry, is authoritative for this workstream.
