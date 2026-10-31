@@ -97,7 +97,7 @@ We also need three simultaneous-incidence bounds. For three star pairs on a $K_{
 \max(0,9-a-b)+a(b-1)+b\max(0,a-2)\geq6.
 \label{eq:star-three}
 \end{equation}
-For one of two mixed $K_9$--$K_{11}$ pairs, when the other mixed point and two further points complete the $K_9$,
+For two mixed $K_9$--$K_{11}$ pairs with two additional points completing the $K_9$,
 \begin{equation}
 \max(0,8-a-b)+a(b-1)+b\max(0,a-2)\geq5.
 \label{eq:two-mixed-K9}
@@ -110,12 +110,12 @@ For a mixed $K_{10}$--$K_{11}$ pair with one additional vertex completing its $K
 The inequalities follow by separating the cases $a=1$, $b=1$, and $a,b\geq2$; the equality minima are as recorded in the displayed bounds.
 
 \paragraph{Shared-leaf accounting.}
-If a $K_{11}$ meets two support points whose opposite missing sets lie in different cliques and have sizes $a,b\geq0$, then at a vertex missing one or both points the internal ten neighbors and the two support adjacencies give baseline degree $12$. The forced neighbors in the two opposite cliques are disjoint. The additional excess is therefore at least the corresponding sum of $\max(0,a-2)$ and $\max(0,b-2)$ terms. The elementary inequality
+If a $K_{11}$ meets two support points whose opposite missing sets lie in different cliques and have sizes $a,b\geq0$, the two forced-neighbor sets are disjoint. A vertex missing only the first support point is adjacent to the second one, so its degree is at least $11+a$ and its excess is at least $\max(0,a-1)\geq\max(0,a-2)$; the symmetric statement holds if it misses only the second. A vertex missing both has degree at least $10+a+b$, so its excess is at least
 \[
-\max(0,(a-1)+(b-1))
-\geq\max(0,a-2)+\max(0,b-2)
+\max(0,a+b-2)=\max(0,(a-1)+(b-1))
+\geq\max(0,a-2)+\max(0,b-2).
 \]
-shows that the two charges may be added without counting a vertex's excess twice.
+Thus, in every overlap pattern, the vertex's single excess pays the sum of the two prescribed contributions. Summing over the shared $K_{11}$ proves that the two blocker charges are additive, without counting a vertex's excess twice.
 
 \subsection*{A triple supported on three K11s}
 
