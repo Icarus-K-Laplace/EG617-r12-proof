@@ -1,86 +1,67 @@
-# EG617 r=12 proof reconstruction
+# EG617-R12 — The Twelve-Color Case of Erdős Problem 617
 
-> **STATUS: NOT_CERTIFIED**
->
-> This repository tracks the clean-room reconstruction of the `r=12` case of Erdős Problem 617. The full theorem has **not** been proved yet.
+> **STATUS: PROVED — fixed parameter r=12, by an informal mathematical proof with finite computational verification and an independent AI-assisted certification PASS.**
 
-This repository stores mathematical results, proof dependencies, certificates, and current frontiers. Working prompts for external agents are intentionally kept outside the repository.
+## Main theorem
 
-## Current research program
+**Theorem.** There is no edge-coloring
+\[
+c:E(K_{145})\longrightarrow\{1,2,\ldots,12\}
+\]
+such that every 13-vertex subset of (K_{145}) contains an edge of every one of the 12 colors.
 
-- **Front-end:** eliminate the unique embedded T61 obstruction or extract a legal induced `R(4,49)`.
-- **Low backend:** eliminate E332, now reduced to an extreme-degree q30 shell over a 211-edge 35-core.
-- **High backend:** eliminate `333 <= e(F) <= 340` for legal `R(4,49)` residuals, preferably by a uniform stability theorem.
+Equivalently, every 12-edge-coloring of (K_{145}) has a 13-vertex subset whose induced edges omit at least one color.
 
-## Front-end master reduction
+This proves the fixed (r=12) case of the Erdős–Gyárfás balanced-coloring conjecture.
 
-**PROVED dichotomy:**
+**Scope:** This repository claims the fixed (r=12) instance only. It does not claim that the full conjecture for all (r\ge3) is solved.
 
-`least-edge colour G -> legitimate induced R(4,49) OR embedded T61`.
+## Start here
 
-The V1 contextual recurrence is **COMPUTATION_CERTIFIED** with 1752 nodes and 144 outer comparisons, replayed by two independent integer implementations.
+1. **Integrated proof:** [FINAL_GLOBAL_PROOF.md](https://github.com/Icarus-K-Laplace/EG617-r12-proof/blob/c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2/r12_master/workstreams/astra-global-root-integration-chat-20261031/FINAL_GLOBAL_PROOF.md)
+2. **Independent certification:** [FINAL_CERTIFICATION_REPORT.md](https://github.com/Icarus-K-Laplace/EG617-r12-proof/blob/09a88cc4fe1e2cf1f3a87475d6484f681910b23e/r12_master/workstreams/r12-final-certification-chat-20261031/FINAL_CERTIFICATION_REPORT.md)
+3. **Branch and workstream map:** [PUBLICATION/WORKSTREAM_INDEX.md](PUBLICATION/WORKSTREAM_INDEX.md)
+4. **Precise theorem status:** [PUBLICATION/PROOF_STATUS.md](PUBLICATION/PROOF_STATUS.md)
+5. **Reproducibility:** [PUBLICATION/REPRODUCIBILITY.md](PUBLICATION/REPRODUCIBILITY.md)
+6. **Public-release checklist:** [PUBLICATION/RELEASE_CHECKLIST.md](PUBLICATION/RELEASE_CHECKLIST.md)
 
-Inside T61 we have proved:
+## Frozen proof and audit versions
 
-- `alpha(R)=5` exactly under contextual no-extraction;
-- anchor defect `z=0`, hence the anchor closed neighbourhood is a genuine K12;
-- simplified outer ledger `E+sigma+g+x6+y6=408`;
-- generic `R(4,48)` floor `>=310`;
-- the entire T61 minimum-degree12 branch is empty;
-- E397, E398, E399 and E400 in the h13 branch are empty.
+| Artifact | Pinned commit | Status |
+|---|---|---|
+| Integrated K145 proof | `c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2` | Main theorem stated PROVED |
+| Independent certification | `09a88cc4fe1e2cf1f3a87475d6484f681910b23e` | CERTIFICATION = PASS |
+| Q30 adversarial report | `a0f922ad09af99575bae581864b673aa4d41f00d` | Q30 = PROVED under its exact E408 parent contract |
 
-Thus the current front-end terminal is
+The certification is an AI-assisted informal mathematical audit with independent analytic derivations and finite replay. It is not proof-assistant formalization, external human peer review, or journal acceptance. The certification PR is currently an open draft PR (#1); it has not been merged.
 
-`T61: delta=13, 401<=E<=408`.
+## Proof architecture
 
-The next exact cells occur at q26 for E401:
+The integrated argument proceeds through:
 
-`(26,25,1), (26,24,2), (26,23,3), (26,22,4)`
+1. The original coloring-to-graph reduction and contextual 61-vertex residual.
+2. The 47-vertex universal low-edge obstruction and 286-edge equality analysis.
+3. The 48-vertex floor and h12 terminal.
+4. The h13 repivot/charge argument and the unified COVER theorem.
+5. The complete front-end recurrence and elimination of the unique T61 stop.
 
-plus the q25 extension `(25,21,4)`.
+The precise dependency domains and frozen source provenance are recorded in the integrated proof package and certification report.
 
-## Backend state
+## What is not claimed
 
-Core assets:
+- The full conjecture for all (r\ge3) is not solved here.
+- The abstract uncolored high-energy (R(4,49)) problem is not claimed solved; it is not a load-bearing dependency of the fixed-(r=12) proof.
+- No Lean 4/Mathlib or other proof-assistant formalization is claimed complete.
+- No external human specialist review or journal acceptance is claimed.
 
-- exact degree-13 pivot bookkeeping and shell charge identities;
-- `CORE211`: `H in R(3,35) => e(H)>=211`;
-- q28 profitable repivot;
-- generic q29 good-repivot, which does **not** require `e(H)=211`;
-- E329, E330 and E331 closed.
+## AI-assisted research and writing
 
-For E332, any survivor has
+AI systems assisted with mathematical exploration, proof development, computational implementation, independent auditing, and manuscript preparation. AI systems are not authors. The human author(s) remain responsible for mathematical correctness, source attribution, reproducibility, and the final submitted text. Tool-use disclosure will follow the target journal's policy.
 
-`q=30, e(H)=211`.
+## Repository organization
 
-The equality analysis has now proved:
+Historical branches are retained for provenance. No historical research line is silently treated as the current canonical proof. See [PUBLICATION/WORKSTREAM_INDEX.md](PUBLICATION/WORKSTREAM_INDEX.md) for the complete remote branch snapshot and exact HEADs.
 
-- undecorated shell missing degrees 4 through 9 are profitable and impossible;
-- the full d10 equality branch is empty;
-- the full d3 equality branch is empty;
-- every remaining undecorated shell missing degree lies in `{0,1,2,11,12}`;
-- there are at most two undecorated degree11/12 shell vertices;
-- total shell decoration satisfies `G in {4,5,6,7,8}`;
-- when `G=4`, the support counts are exactly `(h,k,l)=(2,4,7)`.
+## Visibility and release
 
-So the active E332 object is now an extreme-degree q30 shell, not the old d3/d10 row system.
-
-## Machine-readable research state
-
-For programmatic use and other research agents:
-
-- `machine/CANONICAL_STATE.json`
-- `machine/THEOREM_REGISTRY.json`
-- `machine/OPEN_FRONTIERS.json`
-
-These files contain only research results/status, exact frontier constraints, and source-file references.
-
-## Main blockers
-
-1. eliminate T61 h13, currently E401–E408;
-2. eliminate the remaining E332 extreme-degree q30 shell;
-3. eliminate E333–E340 with a uniform high-layer theorem.
-
-Historical `CLOSED`/`UNSAT` labels are never accepted without exact assumptions and proof provenance.
-
-Start with `RESEARCH_INDEX.md`, then `CANONICAL_STATE.md`, `PROOF_DAG.md`, `ASSET_LEDGER.md`, `OPEN_FRONTIERS.md`, or the machine-readable JSON files above.
+This publication-preparation branch does not change repository visibility, merge the proof into `main`, or publish a GitHub Release. Those are separate release actions. Before making the repository public, complete the security and licensing checklist in [PUBLICATION/RELEASE_CHECKLIST.md](PUBLICATION/RELEASE_CHECKLIST.md).
