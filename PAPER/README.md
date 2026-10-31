@@ -6,6 +6,19 @@
 - `references.bib` contains verified bibliographic records for the foundational and directly relevant papers currently cited.
 - The detailed proof sections still need a line-by-line transcription and editorial pass against the pinned integrated proof and certification package.
 
+## Build status
+
+The LaTeX source has **not yet been compiled** in a clean TeX environment. Once a TeX Live installation with BibTeX is available, build from this directory with:
+
+```bash
+pdflatex main.tex
+bibtex main
+pdflatex main.tex
+pdflatex main.tex
+```
+
+A successful build will only establish document compilation; it will not certify the mathematical proof or make this draft submission-ready.
+
 ## Frozen mathematical sources
 
 - Integrated proof: `c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2`
