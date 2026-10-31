@@ -1,0 +1,322 @@
+[
+  {
+    "name": "main",
+    "commit": {
+      "sha": "278639de8572ffab12fe859d36f776fbb88fc4f0",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/278639de8572ffab12fe859d36f776fbb88fc4f0"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/astra-aext-near-anchor-20261024",
+    "commit": {
+      "sha": "ad6e4ebe152e3918b9c5fe67f461ba402b1445d8",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/ad6e4ebe152e3918b9c5fe67f461ba402b1445d8"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/astra-dlow-terminal-20261024",
+    "commit": {
+      "sha": "c71b29d3c5b661cdcf00404e545933893c44598b",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/c71b29d3c5b661cdcf00404e545933893c44598b"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/general-r-adversarial-audit-20261024",
+    "commit": {
+      "sha": "7ea44fc180fcaef20283f788a2234e2a14aa78e2",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/7ea44fc180fcaef20283f788a2234e2a14aa78e2"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/general-r-architecture-20261024",
+    "commit": {
+      "sha": "a922c4d7646eb8d0087bde8547562c8aace02ee2",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/a922c4d7646eb8d0087bde8547562c8aace02ee2"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/general-r-asymptotic-20261024",
+    "commit": {
+      "sha": "fa6a5f2b8b5d2a0fe821d50a4421884a69dc5366",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/fa6a5f2b8b5d2a0fe821d50a4421884a69dc5366"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/general-r-design-terminal-20261024",
+    "commit": {
+      "sha": "c3f6aa87344008fa1955e9e48075735c5f4c46da",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/c3f6aa87344008fa1955e9e48075735c5f4c46da"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/general-r-extremal-stability-20261024",
+    "commit": {
+      "sha": "e3e8849a1b0ea618e950f56554d2a61bb1853071",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/e3e8849a1b0ea618e950f56554d2a61bb1853071"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/general-r-finite-geometry-20261024",
+    "commit": {
+      "sha": "8d8ed298530ce49409aca4079c8489bc1ae01e0a",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/8d8ed298530ce49409aca4079c8489bc1ae01e0a"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/general-r-finite-tail-20261024",
+    "commit": {
+      "sha": "f8f1221e53aa132fc712c15661a891300eda08b2",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/f8f1221e53aa132fc712c15661a891300eda08b2"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/general-r-front-recurrence-20261024",
+    "commit": {
+      "sha": "f5fd2b931049a0426cdbfadeeee6a4be740a4290",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/f5fd2b931049a0426cdbfadeeee6a4be740a4290"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/general-r-induction-compression-20261024",
+    "commit": {
+      "sha": "658247cd7fbcab7057a0931e1f2b91c8c215b008",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/658247cd7fbcab7057a0931e1f2b91c8c215b008"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/general-r-multicolor-global-20261024",
+    "commit": {
+      "sha": "41f1efdf52755c67adb16d01dd2c5b103884b155",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/41f1efdf52755c67adb16d01dd2c5b103884b155"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/general-r-repivot-termination-20261024",
+    "commit": {
+      "sha": "ac492a8465aa236056f2be2dd86e946a8f0b7429",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/ac492a8465aa236056f2be2dd86e946a8f0b7429"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/general-r-residual-core-extraction-20261024",
+    "commit": {
+      "sha": "beea9470669fc473f0bff17fd850ef49753d118d",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/beea9470669fc473f0bff17fd850ef49753d118d"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/general-r-three-anchor-20261024",
+    "commit": {
+      "sha": "5d9bf4dda3ae917e2edeacf0cc873ca710a32af2",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/5d9bf4dda3ae917e2edeacf0cc873ca710a32af2"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-astra-286-edge-parent-equality-20261030",
+    "commit": {
+      "sha": "c3d07b2ca5912b1b0c1c6998303c19c3c2911340",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/c3d07b2ca5912b1b0c1c6998303c19c3c2911340"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-astra-cover-independent-closure-20261031",
+    "commit": {
+      "sha": "531e41c79e08dd2bb3892ca9ba8a491a56678565",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/531e41c79e08dd2bb3892ca9ba8a491a56678565"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-astra-independent-structural-attack-20261029",
+    "commit": {
+      "sha": "99f60126fdd9c72c450475e7fd75c6c499d69df7",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/99f60126fdd9c72c450475e7fd75c6c499d69df7"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-astra-low-edge-universal-augmentation-20261030",
+    "commit": {
+      "sha": "783c72090205d4bd1a6eefce1dec09e15f78e319",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/783c72090205d4bd1a6eefce1dec09e15f78e319"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-astra-q32-v47-universal-attack-20261030",
+    "commit": {
+      "sha": "f56cc9eba646e71d63c4b55f468a2340bcdd64c2",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/f56cc9eba646e71d63c4b55f468a2340bcdd64c2"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-e407-q32-terminal-20261025",
+    "commit": {
+      "sha": "79c1086efca893fad8933210a92a432457232410",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/79c1086efca893fad8933210a92a432457232410"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-e407-v12-root-promotion-20261030",
+    "commit": {
+      "sha": "0b48d1f768e3d3c1d3137e0c3ec12f1ff618bb91",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/0b48d1f768e3d3c1d3137e0c3ec12f1ff618bb91"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-e408-q32-excess6-20261025",
+    "commit": {
+      "sha": "a0ba6db26c7e8b00a4217dcbcbf298895dff93ce",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/a0ba6db26c7e8b00a4217dcbcbf298895dff93ce"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-e408-q33-global-compat-20261025",
+    "commit": {
+      "sha": "0cb2ff3968f005c9cb255958df7c02b220678701",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/0cb2ff3968f005c9cb255958df7c02b220678701"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-emergency-sprint-20261024",
+    "commit": {
+      "sha": "f4c3b06891d29238d4f9cca2588f442004b6dc97",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/f4c3b06891d29238d4f9cca2588f442004b6dc97"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-emergency-sprint-chat-20261025",
+    "commit": {
+      "sha": "5258c5fe17af3bf17eb7a2bfb08315c9be9116cd",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/5258c5fe17af3bf17eb7a2bfb08315c9be9116cd"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-master-closure-20261024",
+    "commit": {
+      "sha": "e46da35aedce7bbaaf11756b50192bd157956239",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/e46da35aedce7bbaaf11756b50192bd157956239"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-q32-caseII-v44-final-20261028",
+    "commit": {
+      "sha": "9afd7c1a59056052974f9dc78933010d10e88bba",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/9afd7c1a59056052974f9dc78933010d10e88bba"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-q32-highsupport-root-20261028",
+    "commit": {
+      "sha": "1de8a37556ba98ccbb8651f39a5192629453f0f1",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/1de8a37556ba98ccbb8651f39a5192629453f0f1"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-q32-v47-m10-residual-final-20261030",
+    "commit": {
+      "sha": "b6bfa0d2c85e22b5d480fbe6d2a5e2727192cd4f",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/b6bfa0d2c85e22b5d480fbe6d2a5e2727192cd4f"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-q32-v47-m89-final-20261030",
+    "commit": {
+      "sha": "f78ac022d70647e9c87580bbc595c2306cfda26c",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/f78ac022d70647e9c87580bbc595c2306cfda26c"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-q33-support-promotion-20261030",
+    "commit": {
+      "sha": "ca088347124f4ea7706a63129d7ed63d4e4090d7",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/ca088347124f4ea7706a63129d7ed63d4e4090d7"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-q33-v47-excess4-universal-core-attack-20261030",
+    "commit": {
+      "sha": "bdc2046ea08f12455a37fd412fe2e19514118ada",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/bdc2046ea08f12455a37fd412fe2e19514118ada"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-twochat-e407-closure-20261026",
+    "commit": {
+      "sha": "0192807d1f3b2193aa65c25b9f671b36821aaded",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/0192807d1f3b2193aa65c25b9f671b36821aaded"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-twochat-e408-global-20261026",
+    "commit": {
+      "sha": "b0459807acd4b7e386148056ddf77d7998918893",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/b0459807acd4b7e386148056ddf77d7998918893"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-ultimate-closure-20261024",
+    "commit": {
+      "sha": "1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/1aa47d10edd5ece2b73a0891af7ac2ce37ecbb40"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-unified-witness-capacity-20261025",
+    "commit": {
+      "sha": "faa8183c150dd78b000d0957fa8a63cebd52e146",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/faa8183c150dd78b000d0957fa8a63cebd52e146"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-witness-packing-chat-20261025",
+    "commit": {
+      "sha": "f5d3daa07403877ede9885e1bd5c2f46b16d81da",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/f5d3daa07403877ede9885e1bd5c2f46b16d81da"
+    },
+    "protected": false
+  },
+  {
+    "name": "workstream/r12-zero-excess-witness-20261025",
+    "commit": {
+      "sha": "c8c4833c7830370a703d228ee23e3b88484d6baa",
+      "url": "https://api.github.com/repos/Icarus-K-Laplace/EG617-r12-proof/commits/c8c4833c7830370a703d228ee23e3b88484d6baa"
+    },
+    "protected": false
+  }
+]

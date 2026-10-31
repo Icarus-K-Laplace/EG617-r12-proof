@@ -1,0 +1,189 @@
+[
+  {
+    "name": "low",
+    "commit": "783c72090205d4bd1a6eefce1dec09e15f78e319",
+    "source_path": "r12_master/workstreams/astra-low-edge-universal-augmentation-chat-20261030/DIRECT_UNIFORM_PROOF.md",
+    "destination": "frozen/low/DIRECT_UNIFORM_PROOF.md",
+    "blob": "96746335aa89f71162d5b772fa2bf17ecaa6a4ab"
+  },
+  {
+    "name": "low",
+    "commit": "783c72090205d4bd1a6eefce1dec09e15f78e319",
+    "source_path": "r12_master/workstreams/astra-low-edge-universal-augmentation-chat-20261030/COMMON_NEIGHBORHOOD_CAPACITY.md",
+    "destination": "frozen/low/COMMON_NEIGHBORHOOD_CAPACITY.md",
+    "blob": "c9df4ff75677d13bbfd997f65186998220ed3be2"
+  },
+  {
+    "name": "low",
+    "commit": "783c72090205d4bd1a6eefce1dec09e15f78e319",
+    "source_path": "r12_master/workstreams/astra-low-edge-universal-augmentation-chat-20261030/MINIMUM_DEGREE_GATE_SELF_CONTAINED.md",
+    "destination": "frozen/low/MINIMUM_DEGREE_GATE_SELF_CONTAINED.md",
+    "blob": "a8151c82da6486b43a735aa3aae64cc5db502b43"
+  },
+  {
+    "name": "low",
+    "commit": "783c72090205d4bd1a6eefce1dec09e15f78e319",
+    "source_path": "r12_master/workstreams/astra-low-edge-universal-augmentation-chat-20261030/LOW_EDGE_UNIVERSAL_THEOREM.md",
+    "destination": "frozen/low/LOW_EDGE_UNIVERSAL_THEOREM.md",
+    "blob": "92b2497809274c35782a0d59296aa96a8ab4b5f8"
+  },
+  {
+    "name": "low",
+    "commit": "783c72090205d4bd1a6eefce1dec09e15f78e319",
+    "source_path": "r12_master/workstreams/astra-low-edge-universal-augmentation-chat-20261030/UNIVERSAL_EDGE_AUGMENTATION_LEMMA.md",
+    "destination": "frozen/low/UNIVERSAL_EDGE_AUGMENTATION_LEMMA.md",
+    "blob": "75cc499180c4c682a367cd9a64d963672bb70b31"
+  },
+  {
+    "name": "low",
+    "commit": "783c72090205d4bd1a6eefce1dec09e15f78e319",
+    "source_path": "r12_master/workstreams/astra-low-edge-universal-augmentation-chat-20261030/Q32_285_THEOREM_INDEPENDENT_AUDIT.md",
+    "destination": "frozen/low/Q32_285_THEOREM_INDEPENDENT_AUDIT.md",
+    "blob": "af6b2a5dc0c9a51f20fb83286e91b7d549c040fc"
+  },
+  {
+    "name": "low",
+    "commit": "783c72090205d4bd1a6eefce1dec09e15f78e319",
+    "source_path": "r12_master/workstreams/astra-low-edge-universal-augmentation-chat-20261030/Q33_284_THEOREM_DEPENDENCY_AUDIT.md",
+    "destination": "frozen/low/Q33_284_THEOREM_DEPENDENCY_AUDIT.md",
+    "blob": "714ee88ed77e9567410e905640d78536d28200e2"
+  },
+  {
+    "name": "low",
+    "commit": "783c72090205d4bd1a6eefce1dec09e15f78e319",
+    "source_path": "r12_master/workstreams/astra-low-edge-universal-augmentation-chat-20261030/VERIFICATION_RESULTS.json",
+    "destination": "frozen/low/VERIFICATION_RESULTS.json",
+    "blob": "5c07b54e077fbe9c7751bc79d29856ad4a67aa43"
+  },
+  {
+    "name": "eq286",
+    "commit": "c3d07b2ca5912b1b0c1c6998303c19c3c2911340",
+    "source_path": "r12_master/workstreams/astra-286-edge-parent-equality-chat-20261030/286_EDGE_EQUALITY_CLASSIFICATION.md",
+    "destination": "frozen/eq286/286_EDGE_EQUALITY_CLASSIFICATION.md",
+    "blob": "e596cdee0ae465a1fe82a8538e991dbc228db235"
+  },
+  {
+    "name": "eq286",
+    "commit": "c3d07b2ca5912b1b0c1c6998303c19c3c2911340",
+    "source_path": "r12_master/workstreams/astra-286-edge-parent-equality-chat-20261030/INDEPENDENT_VERIFIER.py",
+    "destination": "frozen/eq286/INDEPENDENT_VERIFIER.py",
+    "blob": "ac28d33e23ed620ed290a49108b8f7211861294e"
+  },
+  {
+    "name": "eq286",
+    "commit": "c3d07b2ca5912b1b0c1c6998303c19c3c2911340",
+    "source_path": "r12_master/workstreams/astra-286-edge-parent-equality-chat-20261030/VERIFICATION_RESULT.json",
+    "destination": "frozen/eq286/VERIFICATION_RESULT.json",
+    "blob": "8aa62d0881fa9311e421c1bf046ac1f4e366713d"
+  },
+  {
+    "name": "eq286",
+    "commit": "c3d07b2ca5912b1b0c1c6998303c19c3c2911340",
+    "source_path": "r12_master/workstreams/astra-286-edge-parent-equality-chat-20261030/SHA256SUMS.txt",
+    "destination": "frozen/eq286/SHA256SUMS.txt",
+    "blob": "c5595e6e0c725c4d1e8a7ab287e2c0c13ee0e2d1"
+  },
+  {
+    "name": "cover",
+    "commit": "531e41c79e08dd2bb3892ca9ba8a491a56678565",
+    "source_path": "r12_master/workstreams/astra-cover-independent-closure-chat-20261031/COVER_THEOREM.md",
+    "destination": "frozen/cover/COVER_THEOREM.md",
+    "blob": "f73c0a331cb22c3e553e679abb24ed65eab004ee"
+  },
+  {
+    "name": "cover",
+    "commit": "531e41c79e08dd2bb3892ca9ba8a491a56678565",
+    "source_path": "r12_master/workstreams/astra-cover-independent-closure-chat-20261031/COVER_CASE_MATRIX.md",
+    "destination": "frozen/cover/COVER_CASE_MATRIX.md",
+    "blob": "f0675c9c1754a24dce9059b92ed120bcbae1ecdd"
+  },
+  {
+    "name": "cover",
+    "commit": "531e41c79e08dd2bb3892ca9ba8a491a56678565",
+    "source_path": "r12_master/workstreams/astra-cover-independent-closure-chat-20261031/COVER_DEPENDENCY_AUDIT.md",
+    "destination": "frozen/cover/COVER_DEPENDENCY_AUDIT.md",
+    "blob": "78f4393397445f71e4337c03dcc66a24d0f9c71f"
+  },
+  {
+    "name": "cover",
+    "commit": "531e41c79e08dd2bb3892ca9ba8a491a56678565",
+    "source_path": "r12_master/workstreams/astra-cover-independent-closure-chat-20261031/INDEPENDENT_VERIFIER.py",
+    "destination": "frozen/cover/INDEPENDENT_VERIFIER.py",
+    "blob": "4ae1c88c1eadf0801e491bf7ffaf823f3ea60120"
+  },
+  {
+    "name": "cover",
+    "commit": "531e41c79e08dd2bb3892ca9ba8a491a56678565",
+    "source_path": "r12_master/workstreams/astra-cover-independent-closure-chat-20261031/VERIFICATION_RESULT.json",
+    "destination": "frozen/cover/VERIFICATION_RESULT.json",
+    "blob": "a7f5ea4dbe616c1ca36d714d5a54bb9298feaa62"
+  },
+  {
+    "name": "cover",
+    "commit": "531e41c79e08dd2bb3892ca9ba8a491a56678565",
+    "source_path": "r12_master/workstreams/astra-cover-independent-closure-chat-20261031/ROOT_PROMOTION_RECEIPT.md",
+    "destination": "frozen/cover/ROOT_PROMOTION_RECEIPT.md",
+    "blob": "9b7c9dcb1b2e515bbbbb835ede7ae1266e37592f"
+  },
+  {
+    "name": "cover",
+    "commit": "531e41c79e08dd2bb3892ca9ba8a491a56678565",
+    "source_path": "r12_master/workstreams/astra-cover-independent-closure-chat-20261031/SHA256SUMS.txt",
+    "destination": "frozen/cover/SHA256SUMS.txt",
+    "blob": "cf814ef3bf6a646ea6aef7ca947e109024edfe71"
+  },
+  {
+    "path": "certificates/frontend_line_a_v1/recurrence_a.py",
+    "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+    "blob": "36fd45faee5401cfc21d18d755d13dfebf90f54f",
+    "destination": "frozen/frontend/recurrence_a.py",
+    "source_path": "certificates/frontend_line_a_v1/recurrence_a.py",
+    "name": "frontend"
+  },
+  {
+    "path": "certificates/frontend_line_a_v1/recurrence_b.py",
+    "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+    "blob": "92efc007beaa219ecfffd0cde6b044be80b34593",
+    "destination": "frozen/frontend/recurrence_b.py",
+    "source_path": "certificates/frontend_line_a_v1/recurrence_b.py",
+    "name": "frontend"
+  },
+  {
+    "path": "front_end/CONTEXTUAL_R449_FULL_COLOR_IMPOSSIBILITY.md",
+    "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+    "blob": "dd072ce9ef703b56e9184f2ede992988fce9f86e",
+    "destination": "frozen/frontend/CONTEXTUAL_R449_FULL_COLOR_IMPOSSIBILITY.md",
+    "source_path": "front_end/CONTEXTUAL_R449_FULL_COLOR_IMPOSSIBILITY.md",
+    "name": "frontend"
+  },
+  {
+    "path": "front_end/RECURRENCE_PROOF.md",
+    "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+    "blob": "ba7a6730cd7b0ff085b7b84f875aeb8a67472dff",
+    "destination": "frozen/frontend/RECURRENCE_PROOF.md",
+    "source_path": "front_end/RECURRENCE_PROOF.md",
+    "name": "frontend"
+  },
+  {
+    "path": "CANONICAL_STATE.md",
+    "sha": "b0459807acd4b7e386148056ddf77d7998918893",
+    "blob": "172a0e30733eecdfab4d5a429fabcc5bb983d6e9",
+    "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+    "destination": "frozen/root/CANONICAL_STATE.md",
+    "source_path": "CANONICAL_STATE.md"
+  },
+  {
+    "path": "PROOF_DAG.md",
+    "sha": "b0459807acd4b7e386148056ddf77d7998918893",
+    "blob": "4219218dc9caf1e65d4a15c39e421b32e114aa18",
+    "commit": "b0459807acd4b7e386148056ddf77d7998918893",
+    "destination": "frozen/root/PROOF_DAG.md",
+    "source_path": "PROOF_DAG.md"
+  },
+  {
+    "source_path": "r12_master/workstreams/astra-low-edge-universal-augmentation-chat-20261030/INDEPENDENT_VERIFIER.py",
+    "commit": "783c72090205d4bd1a6eefce1dec09e15f78e319",
+    "destination": "frozen/low/INDEPENDENT_VERIFIER.py",
+    "blob": "46da244938e5fc2d0ad78c98d55e833581e1ccc3"
+  }
+]
