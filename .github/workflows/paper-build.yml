@@ -50,6 +50,13 @@ jobs:
           cd "$RUNNER_TEMP/eq286"
           python3 -B INDEPENDENT_VERIFIER.py
 
+      - name: Independently rerun q20 shell equality verifier
+        run: |
+          mkdir -p "$RUNNER_TEMP/q20"
+          cp -a PAPER/supplement/h12/. "$RUNNER_TEMP/q20/"
+          cd "$RUNNER_TEMP/q20"
+          python3 -B VERIFY_Q20_EQUALITY.py
+
       - name: Independently rerun COVER shell verifier
         run: |
           mkdir -p "$RUNNER_TEMP/cover"
