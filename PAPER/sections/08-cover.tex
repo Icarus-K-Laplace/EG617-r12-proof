@@ -126,7 +126,7 @@ Thus the matching number is exactly three. Such an $M$ must be bipartite. A shor
 
 By K\H{o}nig's theorem, a size-three vertex cover $X$ exists, with independent complement $Y$ of size ten. The cover $X$ is independent. If $e_M(X)=1$, triangle-freeness permits at most twenty cross edges and $z\leq21$. If $e_M(X)=2$, reaching $22$ forces every vertex of $Y$ to be adjacent to the unique nonadjacent pair of $X$, making that pair together with the third hub an independent $11$-set. Three edges on $X$ form a triangle. Hence $M$ is exactly bipartite with parts $X_3,Y_{10}$.
 
-\subsection{Excluding the triangle channel when $q_p\leq28$}
+\subsection{Excluding the triangle channel when q_p is at most 28}
 
 Suppose $M$ contains a triangle $T$, and put $B=A\setminus T$, $u=e_M(B)$. By \cref{eq:charge-subset} and \cref{eq:triangle-K4-rows},
 \[
@@ -148,7 +148,7 @@ q_p\geq27.
 \label{eq:q27}
 \end{equation}
 
-\subsection{The exhaustive $q=27$ and $q=28$ states}
+\subsection{The exhaustive q=27 and q=28 states}
 
 In the bipartite channel, write $X=\{0,1,2\}$ and $Y$ for the ten low vertices. Encode a low vertex by a pair $(B,g)$, where $B\subseteq X$ is its set of missing hub neighbors and $g\geq0$ is its decoration; its weight is $|B|+g$. Ten low rows are specified, up to permutations within identical types, by eight multiplicities $(n_B)_{B\subseteq X}$ summing to ten. There are
 \[
@@ -172,7 +172,7 @@ q&\text{hub weights}&\text{low rows}&\text{parameters}\\ \hline
 \]
 There are exactly two states at $q=27$ and eight at $q=28$. The independent replay reconstructs the ten graphs and checks all $8,192$ subset identities per state. The finite classification is used only after the graph-to-state map and the symmetry quotient have been proved.
 
-\subsection{Excluding $Q\leq28$}
+\subsection{Excluding Q at most 28}
 
 At $Q=27$, every active regular low vertex $y$ has $d=3$ and $\rho=0$. Formula \eqref{eq:repivot-q} at $\beta=11$, together with maximality, forces
 \[
@@ -204,7 +204,7 @@ Q\geq29.
 \label{eq:Q29}
 \end{equation}
 
-\subsection{The stronger core gate and the edge-$13$ condition}
+\subsection{The stronger core gate and the edge-13 condition}
 
 The $211$-edge floor \cref{lem:core211} has already been proved. Let $C$ be an actual $47$-vertex core with $e(C)\leq288$. We know $\delta(C)\geq11$. If $x$ has degree $11$, its $35$-vertex antineighborhood $H$ has at least $211$ edges and minimum degree at least $12$. The $11$-shell of $x$ is not complete. A missing edge $uv$ in that shell has row union at least $12$ by \cref{lem:R224}, and hence shell charge at least $11$. Therefore
 \[
@@ -230,7 +230,7 @@ t_a+t_b\geq13.
 \label{eq:EDGE13}
 \end{equation}
 
-\subsection{Promotion when $Q\leq29$}
+\subsection{Promotion when Q is at most 29}
 
 Suppose a pivot has $q_p\leq29$ and its core has at most $288$ edges. Then $G\leq7$, \cref{eq:core288} and \cref{eq:EDGE13} apply, and $M$ is $K_4$-free. We claim that some regular shell vertex has missing degree between $3$ and $10$.
 
@@ -244,7 +244,7 @@ q_y\geq d(13-d)\geq30.
 \]
 In the $E=407,Q=29$ case the original maximizing pivot has a $287$-edge core; in the $E=408,Q=29$ case it has a $288$-edge core. The promotion contradicts maximality in either case. Hence the $E=407$ conclusion of \cref{thm:COVER} follows. For $E=408$, the same argument reduces the only possible failure of the theorem to $Q=30$.
 
-\subsection{The complete $Q=30$ shell classification at $E=408$}
+\subsection{The complete Q=30 shell classification at E=408}
 
 Assume $E=408$ and $Q=30$, and choose a maximizing pivot. Its core has $287$ edges, so \cref{eq:core288} and \cref{eq:EDGE13} apply. Any repivot with charge at least $29$ has a core of at most $288$ edges and therefore also has minimum degree at least $12$.
 

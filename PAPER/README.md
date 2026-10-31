@@ -18,7 +18,7 @@
 
 ## Build instructions
 
-The LaTeX source has **not yet been compiled** in a clean TeX environment. From this directory, a standard BibTeX build is:
+The source was successfully compiled in a clean GitHub Actions runner using TeX Live 2025 and `latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex` (32-page PDF; successful build snapshot `7c6b513723cc6ebf3015fda64cf9a86fb09f330a`). A subsequent pass is being used to remove PDF-bookmark warnings and visually inspect the PDF. The workflow is defined in `.github/workflows/paper-build.yml`. A local standard BibTeX build is:
 
 ```bash
 pdflatex main.tex

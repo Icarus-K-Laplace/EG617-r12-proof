@@ -35,7 +35,7 @@ For every theorem/lemma in the final paper, add a row with:
 - any external theorem and exact citation;
 - status after independent human review.
 
-## No silent substitutions
+## Supplement bundle\n\nSelected pinned proof sources, finite verifiers, replay inputs/results, case matrices and checksums are copied under `PAPER/supplement/`. The bundle is intentionally partial: see `PAPER/REVIEW_FLAGS.md` for the remaining canonical-state, q20, 61-representative, clean-rerun and external-review tasks.\n\n## No silent substitutions
 
 - Q32 is the 285-edge contract; Q33 is the 284-edge contract.
 - The final fixed-r12 proof uses the stronger integrated low-edge theorem; do not conflate Q32/Q33 with the original K145 theorem.
