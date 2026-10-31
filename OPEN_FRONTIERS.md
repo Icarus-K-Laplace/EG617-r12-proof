@@ -1,6 +1,6 @@
 # Open frontiers — after fixed-r12 proof integration
 
-## Fixed (r=12), original (K_{145}) theorem
+## Fixed $r=12$, original $K_{145}$ theorem
 
 **No load-bearing mathematical obligation remains open in the pinned integrated proof chain.**
 
@@ -12,8 +12,8 @@ This is an informal, computation-assisted proof with an AI-assisted independent 
 
 ## Open questions outside the fixed-r12 dependency path
 
-1. **General Erdős–Gyárfás conjecture:** cases for general (r) remain open.
-2. **Abstract uncolored high-energy (R(4,49)):** layers E333–E340 are not claimed empty by this proof. They are not needed because the original full-color setting rules out a contextual (R(4,49)) earlier.
+1. **General Erdős–Gyárfás conjecture:** cases for general $r$ remain open.
+2. **Abstract uncolored high-energy $R(4,49)$:** layers E333–E340 are not claimed empty by this proof. They are not needed because the original full-color setting rules out a contextual $R(4,49)$ earlier.
 3. **Lean 4/Mathlib formalization:** not complete.
 4. **External human specialist review:** not complete.
 5. **Journal peer review and acceptance:** not yet submitted/obtained.
