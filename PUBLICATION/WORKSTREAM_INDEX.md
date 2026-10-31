@@ -1,6 +1,6 @@
 # EG617(r=12) — branch and workstream index
 
-Inventory captured from GitHub on 2026-10-31. The repository had **44 remote branches** at the time of inventory, including the publication-preparation branch. All branches are preserved; no historical branch was renamed or deleted.
+Inventory captured from GitHub on 2026-10-31 immediately after the publication branch was created and before its documentation commits. The repository had **44 remote branches** at that snapshot. The publication-branch row therefore records its initial base HEAD; the current publication PR head is shown in PR #2. All branches are preserved; no historical branch was renamed or deleted.
 
 ## Canonical fixed-r12 publication path
 
