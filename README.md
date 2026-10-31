@@ -1,12 +1,12 @@
 # EG617-R12 — The Twelve-Color Case of Erdős Problem 617
 
-> **STATUS: PROVED — fixed parameter r=12, by an informal mathematical proof with finite computational verification and an independent AI-assisted certification PASS.**
+> **STATUS: PROVED — fixed parameter $r=12$, by an informal mathematical proof with finite computational verification and an independent AI-assisted certification PASS.**
 
 ## Main theorem
 
 **Theorem.** There is no edge-coloring
 \[
-c:E$K_{145}$\longrightarrow\{1,2,\ldots,12\}
+c:E(K_{145})\longrightarrow\{1,2,\ldots,12\}
 \]
 such that every 13-vertex subset of $K_{145}$ contains an edge of every one of the 12 colors.
 
@@ -31,9 +31,9 @@ This proves the fixed $r=12$ case of the Erdős–Gyárfás balanced-coloring co
 
 | Artifact | Pinned commit | Status |
 |---|---|---|
-| Integrated K145 proof | `c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2` | Main theorem stated PROVED |
-| Independent certification | `09a88cc4fe1e2cf1f3a87475d6484f681910b23e` | CERTIFICATION = PASS |
-| Q30 adversarial report | `a0f922ad09af99575bae581864b673aa4d41f00d` | Q30 = PROVED under its exact E408 parent contract |
+| Integrated K145 proof | c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2 | Main theorem stated PROVED |
+| Independent certification | 09a88cc4fe1e2cf1f3a87475d6484f681910b23e | CERTIFICATION = PASS |
+| Q30 adversarial report | a0f922ad09af99575bae581864b673aa4d41f00d | Q30 = PROVED under its exact E408 parent contract |
 
 The certification is an AI-assisted informal mathematical audit with independent analytic derivations and finite replay. It is not proof-assistant formalization, external human peer review, or journal acceptance. The certification PR is currently an open draft PR (#1); it has not been merged.
 
@@ -51,7 +51,7 @@ The precise dependency domains and frozen source provenance are recorded in the 
 
 ## What is not claimed
 
-- The full conjecture for all (r\ge3) is not solved here.
+- The full conjecture for all $r\ge3$ is not solved here.
 - The abstract uncolored high-energy $R(4,49)$ problem is not claimed solved; it is not a load-bearing dependency of the fixed-$r=12$ proof.
 - No Lean 4/Mathlib or other proof-assistant formalization is claimed complete.
 - No external human specialist review or journal acceptance is claimed.
@@ -66,4 +66,4 @@ Historical branches are retained for provenance. No historical research line is 
 
 ## Visibility and release
 
-This publication-preparation branch does not change repository visibility, merge the proof into `main`, or publish a GitHub Release. Those are separate release actions. Before making the repository public, complete the security and licensing checklist in [PUBLICATION/RELEASE_CHECKLIST.md](PUBLICATION/RELEASE_CHECKLIST.md).
+The documentation and manuscript-preparation changes have been merged into main, but repository visibility remains Private. Before making the repository public, complete the security and licensing checklist in [PUBLICATION/RELEASE_CHECKLIST.md](PUBLICATION/RELEASE_CHECKLIST.md).
