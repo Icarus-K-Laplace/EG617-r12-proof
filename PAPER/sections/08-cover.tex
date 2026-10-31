@@ -232,7 +232,7 @@ t_a+t_b\geq13.
 
 \subsection{Promotion when Q is at most 29}
 
-Suppose a pivot has $q_p\leq29$ and its core has at most $288$ edges. Then $G\leq7$, \cref{eq:core288} and \cref{eq:EDGE13} apply, and $M$ is $K_4$-free. We claim that some regular shell vertex has missing degree between $3$ and $10$.
+Assume $Q\leq29$ and choose a maximizing regular pivot $p$. By \cref{eq:Q29}, we have $Q=q_p=29$. The exact charge identity gives $e(C)=E-91-29\in\{287,288\}$, so $G\leq7$, \cref{eq:core288} and \cref{eq:EDGE13} apply, and $M$ is $K_4$-free. We claim that some regular shell vertex has missing degree between $3$ and $10$.
 
 If not, put $X=\{a\in A:t_a\geq11\}$. By \cref{eq:charge-subset}, three such vertices would give $q_p\geq33-3=30$, so $|X|\leq2$. Every regular vertex outside $X$ has missing degree at most two, and \cref{eq:EDGE13} prevents an edge between two such vertices. Thus every edge outside $X$ has a decorated endpoint.
 
@@ -264,9 +264,9 @@ with hub weights $10$, hub decorations $10-k$, and all ten low vertices regular.
 
 For $d=10$, the ten inserted weights sum to $30$ and each is at least $3$ by \cref{eq:EDGE13}; hence all are $3$. Every active point on the three-side then has degree $10$ by \cref{eq:EDGE13}. Since $z\geq22$, all three are active, giving the $k=10$ instance of Family I.
 
-Suppose instead that no regular shell vertex has missing degree $3$ through $10$. First $M$ is $K_4$-free. If it contained a $K_4$ on a set $S_0$, then its six internal edges and the row-union bound $t(S_0)\geq36$ would already contribute $30$ to the charge. Equality forces $t(S_0)=36$, with all nine outside points independent and regular. For each $a\in S_0$, the other three points form a missing triangle and have row union at least $24$, so $t_a\leq12$.
+Suppose instead that no regular shell vertex has missing degree $3$ through $10$. We first rule out a $K_4$ in $M$. Assume that $S_0$ induces a $K_4$. Its six internal edges its six internal edges and the row-union bound $t(S_0)\geq36$ would already contribute $30$ to the charge. Equality forces $t(S_0)=36$, with all nine outside points independent and regular. For each $a\in S_0$, the other three points form a missing triangle and have row union at least $24$, so $t_a\leq12$.
 
-Since $z\geq22$, there are at least $16$ cross edges from the nine outside points to $S_0$. As $M$ is $K_4$-free, each outside point has at most two such neighbors; hence some outside point $y$ has exactly two, say $N_M(y)=\{a,b\}\subset S_0$. Put $S_0\setminus\{a,b\}=\{c,d\}$ and let $s_u$ count the neighbors of $u\in S_0$ among the nine outside points. The vertices $a,b$ are adjacent in $M$. Since all outside points are independent and regular,
+Since $z\geq22$, there are at least $16$ cross edges from the nine outside points to $S_0$. The nine outside points are independent and regular, so each has its entire $M$-neighborhood in $S_0$. The standing assumption rules out missing degree $3$ or $4, so each has at most two neighbors in $S_0$. Hence some outside point $y$ has exactly two, say $N_M(y)=\{a,b\}\subset S_0$. Put $S_0\setminus\{a,b\}=\{c,d\}$ and let $s_u$ count the neighbors of $u\in S_0$ among the nine outside points. The vertices $a,b$ are adjacent in $M$. Since all outside points are independent and regular,
 \[
 \rho=1+s_c+s_d+g_c+g_d.
 \]
@@ -276,14 +276,14 @@ q_y=22+\rho+h_{12}+\kappa+b
 =53-(t_a+t_b)+h_{12}+\kappa+b
 \geq53-(t_a+t_b)\geq29,
 \]
-where $t_u=3+s_u+g_u$ and $t_a,t_b\leq12$. Its new core has at most $288$ edges, hence minimum degree at least $12$. Each inserted vertex has degree at most its old row weight $t_a$ or $t_b$, so both weights must equal $12$. But then $t_c+t_d=36-24=12$, contradicting \cref{eq:EDGE13} for the missing edge $cd$.
+where $t_u=3+s_u+g_u$ and $t_a,t_b\leq12$. Its new core has at most $288$ edges, hence minimum degree at least $12$. Each inserted vertex has degree at most its old row weight $t_a$ or $t_b$, so both weights must equal $12$. But then $t_c+t_d=36-24=12$, contradicting \cref{eq:EDGE13} for the missing edge $cd$. This contradiction proves that $M$ is $K_4$-free.
 
 Put $X=\{a:t_a\geq11\}$. Then $|X|\leq3$, and all edges outside $X$ have decorated endpoints.
 \begin{itemize}
 \item If $X=\varnothing$, every edge has both endpoints decorated: a regular point outside $X$ has weight at most $2$, so an incident edge would force its other endpoint into $X$ by \cref{eq:EDGE13}. There are at most $G\leq8$ decorated vertices, and the $K_4$-free bound is $21<22$.
 \item If $|X|=1$ and its weight is $11$, a regular point outside $X$ cannot be incident with any edge: its only possible neighbor would be the point of weight $11$, giving it missing degree one and violating \cref{eq:EDGE13}. The point of weight $11$ cannot itself be regular, since it would need eleven decorated neighbors but there are at most eight. It is therefore decorated, leaving at most eight decorated vertices in total. Again the $K_4$-free bound is $21<22$.
 \item If $|X|=1$ and its weight is at least $12$, the other twelve-set contains a triangle or a two-matching. A triangle gives $q_p\geq31$. A two-matching gives $q_p\geq30$; equality forces the hub weight to be $12$, the four endpoints to have total weight $26$, and eight edges on these five points. The other eight vertices are independent and regular and can meet only the unique heavy point, so $z\leq16<22$.
-\item If $|X|=3$, equality forces three weight-$11$ points forming a triangle and ten independent regular outside points. An active outside point cannot have missing degree one by \cref{eq:EDGE13}, so it has missing degree two and meets two of the weight-$11$ hubs. The third hub lies outside its row and has decoration $11-2=9$, so $\rho\geq9$ in \cref{eq:repivot-q}; hence $q_y\geq2(13-2)+9=31$, contradiction.
+\item If $|X|=3$, equality forces three weight-$11$ points forming a triangle and ten independent regular outside points. Since the outside points are independent and there are only three hubs, the standing assumption rules out missing degree three; by \cref{eq:EDGE13}, an active outside point cannot have missing degree one. Thus it has missing degree two and meets two of the weight-$11$ hubs. Let $c$ be the third hub, and let $s_c$ count its missing neighbors among the other nine outside points. Then $d_M(c)=2+s_c$, so $s_c+g_c=t_c-2=9$. Both terms contribute to $\rho$ at the repivot, hence $\rho\geq9$ and \cref{eq:repivot-q} gives $q_y\geq2(13-2)+9=31$, a contradiction.
 \item If $|X|=2$, the remaining eleven-set contains an edge $uv$. Equality in the charge bound forces both hubs to have weight $11$, $t_u+t_v=13$, five edges on the four-set, and nine regular independent outsiders. Every active outsider meets both hubs, so $z=5+2k\geq22$ forces $k=9$. Each hub has weight $11$ and at least nine outside neighbors, so its induced four-set degree is two. The missing edge of this $K_4$-minus-edge is therefore between the two hubs. The hubs are regular of degree $11$, while $u,v$ have internal missing degree three and decorations summing to seven; neither decoration is zero in this channel.
 \end{itemize}
 The last configuration is
