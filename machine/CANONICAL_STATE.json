@@ -1,67 +1,43 @@
 {
   "project": "EG617-r12-proof",
-  "updated_date": "2026-10-22",
-  "target": "Prove the r=12 case of Erdos Problem 617",
-  "theorem_status": "OPEN",
-  "certification_status": "NOT_CERTIFIED",
-  "front_end": {
-    "master_dichotomy": {
-      "status": "PROVED",
-      "statement": "Any hypothetical least-edge K145 counterexample yields either an induced legal R(4,49) residual or the embedded terminal class T61."
-    },
-    "t61": {
-      "status": "OPEN",
-      "repository_canonical_closed_interval": [397, 406],
-      "active_edge_window": [407, 408],
-      "canonical_replay_sources": {
-        "E401_E404": "front_end/E401_E404_CANONICAL_CLOSURE.md",
-        "E405": "front_end/E405_FULL_CLOSURE_CANONICAL.md",
-        "E406": "front_end/E406_FULL_CLOSURE.md"
-      },
-      "e406": {
-        "status": "PROVED_EMPTY",
-        "bridge_source": "front_end/E406_LOW_TO_Q30_BRIDGE.md",
-        "q30_promotion_source": "front_end/Q30_HEREDITARY_PROMOTION_CANONICAL.md",
-        "closed_final_rise_distances": [1, 2, 3, 10, 11, 12]
-      },
-      "source_reported_v8": {
-        "evidence_status": "SOURCE_REPORTED_REPLAY_PENDING",
-        "remaining_layers": [407, 408],
-        "remaining_subproblems": [
-          "E407 maximal Q=27",
-          "E408 maximal Q in {27,28}",
-          "Compatibility and cycles of nonzero correction terms"
-        ],
-        "source": "front_end/T61_H13_V8_RESULT.md"
-      }
-    }
+  "updated_date": "2026-10-31",
+  "target": "Fixed r=12 case of Erdős Problem 617",
+  "theorem_status": "PROVED",
+  "theorem_statement": "Every 12-edge-coloring of K145 has a 13-vertex set whose induced edges omit at least one of the 12 colors.",
+  "proof_type": "INFORMAL_MATHEMATICAL_PROOF_WITH_FINITE_COMPUTATIONAL_VERIFICATION",
+  "proof_commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+  "certification_status": "PASS",
+  "certification_type": "INDEPENDENT_AI_ASSISTED_INFORMAL_AUDIT",
+  "certification_commit": "09a88cc4fe1e2cf1f3a87475d6484f681910b23e",
+  "external_human_peer_review": false,
+  "proof_assistant_formalization": false,
+  "journal_acceptance": false,
+  "arxiv_submission": false,
+  "proof_scope": "Fixed r=12 only; does not solve the general conjecture.",
+  "proof_chain": [
+    "Original coloring reduction and contextual R(4,49) exclusion",
+    "Exact extraction and recurrence to T61",
+    "47-point low-edge and 286-edge equality obstruction; 287-edge floor",
+    "48-point floor310 and h12 exclusion",
+    "h13 repivot/charge and COVER theorem",
+    "All T61 cases excluded; contradiction to original K145 coloring"
+  ],
+  "finite_audit": {
+    "obligation_count": 58,
+    "q27_states": 2,
+    "q28_states": 8,
+    "row_vectors_per_case": 19448,
+    "subset_identities": 81920,
+    "recurrence_nodes": 1752,
+    "outer_stops": 144
   },
-  "backend": {
-    "generic_identity": "e(F) = 91 + q + e(H)",
-    "core_floor": {
-      "status": "PROVED",
-      "statement": "Every H in R(3,35) satisfies e(H) >= 211."
-    },
-    "closed_layers": [329, 330, 331, 332],
-    "e332": {
-      "status": "PROVED_EMPTY_FROZEN",
-      "master_source": "backend/E332_FULL_CLOSURE.md"
-    },
-    "high_layers": {
-      "status": "OPEN",
-      "edge_window": [333, 340],
-      "source_reported_v4": {
-        "evidence_status": "SOURCE_REPORTED_REPLAY_PENDING",
-        "all_edge_layers_remain_open": true,
-        "necessary_survivor_families": ["D2-A", "D2-B", "D2-C", "D2-D", "R9"],
-        "repetition_lower_bounds": [8, 8, 5, 7, 9],
-        "source": "backend/HIGH_LAYER_BACKEND_V4_RESULT.md"
-      },
-      "next_goal": "Prove repeated-pair/core-support realizability bounds, beginning with E333."
-    }
-  },
-  "remaining_global_obligations": [
-    "Close T61 edge layers E407 and E408.",
-    "Eliminate legal R(4,49) layers E333 through E340."
-  ]
+  "open_outside_scope": [
+    "General-r Erdős–Gyárfás conjecture",
+    "Abstract uncolored high-energy R(4,49) layers E333-E340",
+    "Lean 4/Mathlib formalization",
+    "External human peer review",
+    "Journal submission and acceptance",
+    "Public preprint and DOI"
+  ],
+  "load_bearing_unclosed_obligations": []
 }
