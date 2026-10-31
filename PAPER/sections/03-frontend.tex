@@ -77,7 +77,7 @@ The lemma is deliberately contextual. It does not prove that every abstract unco
 
 \subsection{The recurrence and its finite domain}
 
-For an induced subgraph of the fixed target graph $G$ with independence number at most $a$ and clique number at most $11$, let $B(a,n)$ denote a proved lower bound on its number of edges. The base cases are $B(a,0)=0$, the class $a=0$ is empty at positive order, and $a=1$ consists of cliques of order at most $11$. The contextual order cutoffs are $24$ for $a=2$, $37$ for $a=3$, and $49$ for $a=4$. The seed lower bounds are
+For an induced subgraph of the fixed target graph $G$ with independence number at most $a$ and clique number at most $11$, let $B(a,n)$ denote a proved lower bound on its number of edges. The base cases are $B(a,0)=0$, the class $a=0$ is empty at positive order, and $a=1$ consists of cliques of order at most $11$. The certified contextual order maxima are $M_0=0$, $M_1=11$, $M_2=23$, $M_3=36$, and $M_4=48$; for larger $a$, $M_a$ is the maximum order retained by the same recurrence table. Equivalently, the initial empty-class cutoffs are $24$ for $a=2$, $37$ for $a=3$, and $49$ for $a=4$. The seed lower bounds are
 \[
 B(2,23)\geq131,\quad B(3,35)\geq210,\quad
 B(3,36)\geq234,\quad B(4,47)\geq284,\quad B(4,48)\geq308.
@@ -112,7 +112,7 @@ Thus $q\geq\beta-1$ and $e(C)+\beta\leq D(m+2)$. A maximum matching in $M$ has s
 k(h)=\max\left\{\left\lceil\frac{h-10}{2}\right\rceil,
 1+\mathbf 1_{h\geq12}+\mathbf 1_{h\geq13}\right\}.
 \]
-For $t$ matching edges, the $2t$ endpoints have total weight at least $t\beta$, while $\alpha(M)\leq a$ bounds their internal missing edges by $\binom{2t}{2}-\tau_a(2t)$. Consequently
+For $t$ matching edges, the $2t$ endpoints have total weight at least $t\beta$, while $\omega(M)\leq a$ bounds their internal missing edges by $\binom{2t}{2}-\tau_a(2t)$. Consequently
 \[
 q\geq t\beta-\binom{2t}{2}+\tau_a(2t).
 \]
