@@ -6,7 +6,7 @@
 
 The theorem is:
 
-> Every 12-edge-coloring of (K_{145}) has a 13-vertex set whose induced edges omit at least one of the 12 colors.
+> Every 12-edge-coloring of $K_{145}$ has a 13-vertex set whose induced edges omit at least one of the 12 colors.
 
 Equivalently, no 12-coloring makes every 13-set contain all 12 colors.
 
@@ -21,8 +21,8 @@ Read `PUBLICATION/PROOF_STATUS.md` and `PUBLICATION/WORKSTREAM_INDEX.md` for exa
 
 ## Canonical proof chain
 
-1. Original (K_{145}) coloring reduction and exact extraction ledger.
-2. Contextual (R(4,49)) impossibility in the original full-color setting.
+1. Original $K_{145}$ coloring reduction and exact extraction ledger.
+2. Contextual $R(4,49)$ impossibility in the original full-color setting.
 3. Lower-order graph bounds and the 47-point low-edge/equality obstruction, yielding the 287-edge floor.
 4. The 48-point 310-edge floor and h12 terminal exclusion.
 5. The 61-point h13 repivot/charge argument and COVER terminal inequalities.
@@ -37,8 +37,8 @@ The independent audit is AI-assisted and informal. It includes analytic derivati
 
 ## Open items outside the fixed-r12 theorem
 
-- Abstract uncolored high-energy (R(4,49)) layers E333–E340 remain outside the scope of this theorem and are not claimed solved.
-- The general Erdős–Gyárfás conjecture for all (r) remains open.
+- Abstract uncolored high-energy $R(4,49)$ layers E333–E340 remain outside the scope of this theorem and are not claimed solved.
+- The general Erdős–Gyárfás conjecture for all $r$ remains open.
 - Lean 4/Mathlib formalization remains future work.
 - External human specialist review and journal peer review remain future work.
 - Preprint and journal submission have not yet occurred.
