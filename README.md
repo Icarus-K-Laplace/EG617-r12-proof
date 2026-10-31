@@ -35,7 +35,7 @@ This proves the fixed $r=12$ case of the Erdős–Gyárfás balanced-coloring co
 | Independent certification | 09a88cc4fe1e2cf1f3a87475d6484f681910b23e | CERTIFICATION = PASS |
 | Q30 adversarial report | a0f922ad09af99575bae581864b673aa4d41f00d | Q30 = PROVED under its exact E408 parent contract |
 
-The certification is an AI-assisted informal mathematical audit with independent analytic derivations and finite replay. It is not proof-assistant formalization, external human peer review, or journal acceptance. The certification PR is currently an open draft PR (#1); it has not been merged.
+The certification is an AI-assisted informal mathematical audit with independent analytic derivations and finite replay. It is not proof-assistant formalization, external human peer review, or journal acceptance. The certification PR is currently an open PR (#1) inviting human review; it has not been merged.
 
 ## Proof architecture
 
