@@ -2,7 +2,7 @@
 
 ## Fixed-r12 result
 
-**The original (K_{145}) twelve-color obstruction is PROVED** in the frozen integrated proof at commit `c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2`.
+**The original $K_{145}$ twelve-color obstruction is PROVED** in the frozen integrated proof at commit `c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2`.
 
 The independent AI-assisted audit at commit `09a88cc4fe1e2cf1f3a87475d6484f681910b23e` reports `CERTIFICATION = PASS` for that exact proof snapshot.
 
@@ -11,7 +11,7 @@ This is an informal mathematical proof with finite computational verification. I
 ## Fixed-r12 proof path
 
 1. Original coloring caps and least-edge-color reduction.
-2. Contextual (R(4,49)) impossibility in the original full-color setting.
+2. Contextual $R(4,49)$ impossibility in the original full-color setting.
 3. Exact extraction to the unique 61-point residual, with 1,752 recurrence nodes and 144 outer-stop comparisons.
 4. 47-point low-edge obstruction and 286-edge equality classification, giving the 287-edge floor.
 5. 48-point 310-edge floor and complete h12 terminal exclusion.
@@ -37,9 +37,9 @@ All 44 remote branches in the inventory are preserved. The integrated proof and 
 ## Open items outside the fixed-r12 theorem
 
 - General-r Erdős–Gyárfás conjecture.
-- Abstract uncolored high-energy (R(4,49)) layers E333–E340.
+- Abstract uncolored high-energy $R(4,49)$ layers E333–E340.
 - Lean 4/Mathlib formalization.
 - External human mathematical review and journal peer review.
 - Preprint publication and DOI assignment.
 
-The abstract high-energy (R(4,49)) problem is not a hidden dependency: the integrated proof excludes the contextual (R(4,49)) object inside the original full-color setting.
+The abstract high-energy $R(4,49)$ problem is not a hidden dependency: the integrated proof excludes the contextual $R(4,49)$ object inside the original full-color setting.
