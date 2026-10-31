@@ -1,31 +1,31 @@
-# EG617$r=12$ — exact mathematical and publication status
+# EG617 ($r=12$) — exact mathematical and publication status
 
 ## 1. Main theorem
 
 **Status: PROVED** in the frozen integrated proof snapshot, as a conventional informal mathematical proof supported by finite computation and an independent AI-assisted audit.
 
-Let (c:E$K_{145}$\to\{1,\ldots,12\}) be any edge-coloring. The theorem asserts
-[
-\exists S\subseteq V$K_{145}$,\quad |S|=13,\quad
+Let $c:E(K_{145})\to\{1,\ldots,12\}$ be any edge-coloring. The theorem asserts
+$$
+\exists S\subseteq V(K_{145}),\quad |S|=13,\quad
 \{c(e):e\in E(K_{145}[S])\}\ne\{1,\ldots,12\}.
-]
+$$
 
 Equivalently, no coloring makes every 13-set contain all 12 colors.
 
-Proof source: commit `c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2`, file `r12_master/workstreams/astra-global-root-integration-chat-20261031/FINAL_GLOBAL_PROOF.md`.
+Proof source: commit c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2, file r12_master/workstreams/astra-global-root-integration-chat-20261031/FINAL_GLOBAL_PROOF.md.
 
-Independent audit: commit `09a88cc4fe1e2cf1f3a87475d6484f681910b23e`, file `r12_master/workstreams/r12-final-certification-chat-20261031/FINAL_CERTIFICATION_REPORT.md`.
+Independent audit: commit 09a88cc4fe1e2cf1f3a87475d6484f681910b23e, file r12_master/workstreams/r12-final-certification-chat-20261031/FINAL_CERTIFICATION_REPORT.md.
 
 ## 2. Independent certification scope
 
-The independent AI-assisted audit records `CERTIFICATION = PASS` for the exact pinned proof snapshot. It reports:
+The independent AI-assisted audit records CERTIFICATION = PASS for the exact pinned proof snapshot. It reports:
 
 - 58 analytic/computational obligations in the obligation matrix;
 - Q27 and Q28 finite-state sets reproduced (2 and 8 canonical states);
 - 81,920 subset identities checked;
 - 1,752 recurrence nodes replayed;
 - all 144 outer-stop comparisons checked;
-- the unique (d=11,j=6) T61 stop eliminated by the integrated terminal argument;
+- the unique $(d,j)=(11,6)$ T61 stop eliminated by the integrated terminal argument;
 - provenance and dependency-DAG checks.
 
 The report explicitly distinguishes analytic derivations from finite computation. It does not claim a proof-assistant certificate or external human peer review.
@@ -64,9 +64,9 @@ Do not say that the full Erdős–Gyárfás conjecture has been solved.
 
 ## 6. Fixed source identifiers
 
-- Integrated proof: `c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2`
-- Independent certification: `09a88cc4fe1e2cf1f3a87475d6484f681910b23e`
-- Q30 independent report: `a0f922ad09af99575bae581864b673aa4d41f00d`
-- 286-edge equality source: `c3d07b2ca5912b1b0c1c6998303c19c3c2911340`
-- COVER source: `531e41c79e08dd2bb3892ca9ba8a491a56678565`
-- 47-point low-edge source: `783c72090205d4bd1a6eefce1dec09e15f78e319`
+- Integrated proof: c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2
+- Independent certification: 09a88cc4fe1e2cf1f3a87475d6484f681910b23e
+- Q30 independent report: a0f922ad09af99575bae581864b673aa4d41f00d
+- 286-edge equality source: c3d07b2ca5912b1b0c1c6998303c19c3c2911340
+- COVER source: 531e41c79e08dd2bb3892ca9ba8a491a56678565
+- 47-point low-edge source: 783c72090205d4bd1a6eefce1dec09e15f78e319
