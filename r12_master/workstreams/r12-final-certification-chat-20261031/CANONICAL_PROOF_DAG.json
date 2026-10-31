@@ -1,0 +1,245 @@
+{
+  "TURAN": [],
+  "BROOKS": [],
+  "AES": [],
+  "SECOND_TURAN": [],
+  "CAPS": [
+    "TURAN"
+  ],
+  "ODDCYCLE": [
+    "TURAN"
+  ],
+  "R224": [
+    "CAPS"
+  ],
+  "R223": [
+    "ODDCYCLE"
+  ],
+  "TF23": [
+    "ODDCYCLE"
+  ],
+  "COST12": [
+    "TF23"
+  ],
+  "DEL335": [
+    "R224",
+    "COST12",
+    "CAPS"
+  ],
+  "ORD3637": [
+    "R224",
+    "DEL335",
+    "CAPS"
+  ],
+  "CORE211": [
+    "DEL335",
+    "AES"
+  ],
+  "GATE47": [
+    "ORD3637",
+    "DEL335",
+    "R224"
+  ],
+  "NO25": [
+    "ODDCYCLE"
+  ],
+  "COMMON": [
+    "NO25"
+  ],
+  "REGULAR4": [
+    "TURAN"
+  ],
+  "SUPPORT_MAP": [
+    "REGULAR4"
+  ],
+  "SUPPORT_ORBITS": [
+    "SUPPORT_MAP"
+  ],
+  "BLOCKERS": [
+    "REGULAR4"
+  ],
+  "SHARED": [
+    "BLOCKERS"
+  ],
+  "LOW285": [
+    "COMMON",
+    "SUPPORT_ORBITS",
+    "BLOCKERS",
+    "SHARED"
+  ],
+  "EXACT285": [
+    "COMMON",
+    "SUPPORT_ORBITS",
+    "BLOCKERS",
+    "SHARED"
+  ],
+  "AUGMENT": [
+    "COMMON",
+    "EXACT285"
+  ],
+  "EQ286": [
+    "COMMON",
+    "SUPPORT_ORBITS",
+    "BLOCKERS",
+    "SHARED"
+  ],
+  "FLOOR287": [
+    "GATE47",
+    "LOW285",
+    "EQ286"
+  ],
+  "PIVOT": [
+    "CAPS"
+  ],
+  "CORE11": [
+    "ORD3637",
+    "R224",
+    "DEL335",
+    "PIVOT"
+  ],
+  "COVER_ROWS": [
+    "CORE11",
+    "R224"
+  ],
+  "EXCHANGE": [
+    "PIVOT",
+    "CORE11"
+  ],
+  "MATCH3": [
+    "TURAN"
+  ],
+  "SMALLQ_REDUCTION": [
+    "COVER_ROWS",
+    "EXCHANGE",
+    "MATCH3",
+    "TURAN"
+  ],
+  "ENUM_MAP": [
+    "SMALLQ_REDUCTION"
+  ],
+  "ENUM2728": [
+    "ENUM_MAP"
+  ],
+  "GEO2728": [
+    "ENUM2728",
+    "EXCHANGE",
+    "CORE11"
+  ],
+  "B1": [
+    "ENUM2728",
+    "EXCHANGE",
+    "CORE11"
+  ],
+  "Q29": [
+    "SMALLQ_REDUCTION",
+    "GEO2728",
+    "B1"
+  ],
+  "GATE288": [
+    "CORE11",
+    "CORE211",
+    "R223",
+    "COVER_ROWS"
+  ],
+  "PROM29": [
+    "GATE288",
+    "EXCHANGE"
+  ],
+  "CLASS30": [
+    "GATE288",
+    "EXCHANGE"
+  ],
+  "FAMILY_I": [
+    "CLASS30",
+    "GATE288",
+    "EXCHANGE"
+  ],
+  "FAMILY_II": [
+    "CLASS30",
+    "FAMILY_I",
+    "GATE288",
+    "EXCHANGE"
+  ],
+  "COVER": [
+    "Q29",
+    "PROM29",
+    "FAMILY_I",
+    "FAMILY_II"
+  ],
+  "DEL48": [
+    "ORD3637",
+    "R224",
+    "CAPS"
+  ],
+  "Q20": [
+    "TURAN"
+  ],
+  "INSERT20": [
+    "Q20"
+  ],
+  "FLOOR48": [
+    "DEL48",
+    "CORE211",
+    "Q20",
+    "INSERT20"
+  ],
+  "H12": [
+    "FLOOR48",
+    "DEL48",
+    "Q20",
+    "INSERT20",
+    "ORD3637",
+    "R224"
+  ],
+  "CTX49": [
+    "CAPS",
+    "ORD3637",
+    "R224",
+    "SECOND_TURAN"
+  ],
+  "EXTRACTION": [
+    "CAPS",
+    "BROOKS"
+  ],
+  "MATCH_ALL": [
+    "MATCH3",
+    "CAPS"
+  ],
+  "RECURRENCE_RULES": [
+    "TURAN",
+    "CTX49",
+    "R224",
+    "R223",
+    "ORD3637",
+    "FLOOR287",
+    "FLOOR48",
+    "MATCH_ALL"
+  ],
+  "RECURRENCE_REPLAY": [
+    "RECURRENCE_RULES"
+  ],
+  "H13LOW": [
+    "PIVOT",
+    "FLOOR287",
+    "Q29"
+  ],
+  "H13TOP": [
+    "PIVOT",
+    "FLOOR287",
+    "COVER"
+  ],
+  "OTHER_DEGREES": [
+    "CTX49"
+  ],
+  "T61_EMPTY": [
+    "H12",
+    "H13LOW",
+    "H13TOP",
+    "OTHER_DEGREES"
+  ],
+  "K145": [
+    "EXTRACTION",
+    "RECURRENCE_REPLAY",
+    "T61_EMPTY"
+  ]
+}

@@ -1,0 +1,879 @@
+[
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/ALL_ENERGY_LAYERS_COMPLETE_INVENTORY.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "54c8975ceee2c6a6d758749e86f145a373bc2f69b42a0852118c33ee3b77efa3",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Complete energy inventory for the original root"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/CANONICAL_STATE.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "bdd4f89969f6f83e616b466aa24ce7921a9fe92baf14b9e5c1c2b4269541fb5b",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Independent integration canonical state"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/COVER_INDEPENDENT_AUDIT.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "637221502bd64def861075ce0372c1138ef5df940733c539cf112c6f69bf694e",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Independent COVER integration audit"
+      },
+      {
+        "line": 5,
+        "text": "## Quantifiers"
+      },
+      {
+        "line": 11,
+        "text": "## Exact corrections"
+      },
+      {
+        "line": 21,
+        "text": "## Classification completeness and retained checks"
+      },
+      {
+        "line": 33,
+        "text": "## Audit conclusion"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/E407_H13_FINAL_ROOT_CERTIFICATE.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "2172856bec604c351aa60d13800a9088fa396c84020259943b637d566c1bae24",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# E407 / h13 final certificate"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/E408_H13_FINAL_ROOT_CERTIFICATE.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "43ee7b18ff1fa989ffb14e57b099f43e4d009b0b5fdc5979b7573f2a55d6e99a",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# E408 / h13 final certificate"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/FINAL_GLOBAL_PROOF.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "df75e1a7d266ea0275f95e468e60a7ecdadfd44ab4c3b9f262cf7703f5646bde",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Final integrated theorem: no balanced12-coloring of K145"
+      },
+      {
+        "line": 7,
+        "text": "## Proof"
+      },
+      {
+        "line": 33,
+        "text": "## How to inspect and reproduce this proof"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/cover/COVER_CASE_MATRIX.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "f994b99e3d0438edd1251c2dee64ebe63d31b4510f243ece501a29c9528c8f91",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Exhaustive COVER charge and parent matrix"
+      },
+      {
+        "line": 31,
+        "text": "## Exceptional and transport cases"
+      },
+      {
+        "line": 49,
+        "text": "## Finite completeness certificate"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/cover/COVER_DEPENDENCY_AUDIT.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "e035ac7483972bd66eb6c12b27170e2af908e7cf6639be2d8fc0b34c1b1ff1b3",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Independent dependency and historical-proof audit"
+      },
+      {
+        "line": 5,
+        "text": "## Original definitions and parent scope"
+      },
+      {
+        "line": 11,
+        "text": "## Load-bearing dependency chain used here"
+      },
+      {
+        "line": 25,
+        "text": "## V7--V12 audit and replacement"
+      },
+      {
+        "line": 39,
+        "text": "## Corrections and proof gaps found in the historical presentation"
+      },
+      {
+        "line": 50,
+        "text": "## External theorem provenance"
+      },
+      {
+        "line": 54,
+        "text": "## Final certification boundary"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/cover/COVER_THEOREM.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "36f0f6a5cd95b6c84c328f726e8ce835ecfe8d9acd6e9838234fd3a900386eb0",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Independent COVER theorem and E407/E408 h13 elimination"
+      },
+      {
+        "line": 5,
+        "text": "## 0. Statement, conventions, and dependencies"
+      },
+      {
+        "line": 29,
+        "text": "## 1. Parent inheritance and exact identities"
+      },
+      {
+        "line": 43,
+        "text": "## 2. Global degree-11 core interface and deficient clique"
+      },
+      {
+        "line": 62,
+        "text": "## 3. Exact repivot and inserted-degree inequalities"
+      },
+      {
+        "line": 88,
+        "text": "## 4. Matching and triangle-free reductions"
+      },
+      {
+        "line": 98,
+        "text": "## 5. Every q<=28 triangle channel is impossible"
+      },
+      {
+        "line": 127,
+        "text": "## 6. Complete new bipartite classification at q27 and q28"
+      },
+      {
+        "line": 145,
+        "text": "## 7. Exclude Q<=28, including B1 without the old 289-core classification"
+      },
+      {
+        "line": 147,
+        "text": "### 7.1 A repeated deficient-row contradiction"
+      },
+      {
+        "line": 157,
+        "text": "### 7.2 The two B1 states"
+      },
+      {
+        "line": 183,
+        "text": "## 8. The <=288 core gate and EDGE13, with exact provenance"
+      },
+      {
+        "line": 203,
+        "text": "## 9. Uniform promotion when q<=29 and the core has <=288 edges"
+      },
+      {
+        "line": 218,
+        "text": "## 10. Complete q30 maximum-shell classification for E408"
+      },
+      {
+        "line": 251,
+        "text": "## 11. Eliminate Family I by a global excess count"
+      },
+      {
+        "line": 267,
+        "text": "## 12. Eliminate Family II and finish COVER"
+      },
+      {
+        "line": 283,
+        "text": "## 13. Final use of the accepted 287-edge theorem"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/cover/ROOT_PROMOTION_RECEIPT.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "fce351adfcbd29f3a37c37558f22f3d10064c601560c17d1e3cfae40e6792df8",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Scoped root promotion receipt: independent COVER"
+      },
+      {
+        "line": 7,
+        "text": "## Theorems available for root-owner review"
+      },
+      {
+        "line": 14,
+        "text": "## Exact inputs retained"
+      },
+      {
+        "line": 22,
+        "text": "## Executed verification"
+      },
+      {
+        "line": 26,
+        "text": "## Not promoted"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/eq286/286_EDGE_EQUALITY_CLASSIFICATION.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "2d2b5993bb46cb3e2650c91c24d89910db4e0659b14e191051a1535ae8aae8b6",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# The 286-edge boundary: exhaustive structural elimination"
+      },
+      {
+        "line": 5,
+        "text": "## Theorem E286"
+      },
+      {
+        "line": 17,
+        "text": "## 1. The valid common-neighbor bound at T=8"
+      },
+      {
+        "line": 27,
+        "text": "## 2. Exact support classification"
+      },
+      {
+        "line": 48,
+        "text": "## 3. Blocker and scalar lemmas"
+      },
+      {
+        "line": 81,
+        "text": "### Shared-leaf accounting"
+      },
+      {
+        "line": 89,
+        "text": "## 4. A triple on three K11s costs at least3 locally"
+      },
+      {
+        "line": 95,
+        "text": "## 5. Eliminate h=3"
+      },
+      {
+        "line": 101,
+        "text": "## 6. Eliminate h=4"
+      },
+      {
+        "line": 109,
+        "text": "## 7. The small-budget double-pair lemma"
+      },
+      {
+        "line": 115,
+        "text": "## 8. Eliminate h=5 with sizes9,11,11,11"
+      },
+      {
+        "line": 123,
+        "text": "## 9. Eliminate P and D"
+      },
+      {
+        "line": 135,
+        "text": "## 10. Eliminate B={01,01,02,13,23}"
+      },
+      {
+        "line": 139,
+        "text": "## 11. Two points on the same K11/K11 pair are impossible at T<=8"
+      },
+      {
+        "line": 153,
+        "text": "## 12. Eliminate C and conclude"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/frontend/CONTEXTUAL_R449_FULL_COLOR_IMPOSSIBILITY.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "8483c521d90df4efec6e3d48cd125c1cba956850ada80451839029cfe884c1cb",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Contextual R(4,49) is impossible in the original balanced K145 coloring"
+      },
+      {
+        "line": 7,
+        "text": "## 1. Target-side lower bound"
+      },
+      {
+        "line": 19,
+        "text": "## 2. Every non-target color has a stronger contextual lower bound"
+      },
+      {
+        "line": 49,
+        "text": "## 3. Full-color contradiction"
+      },
+      {
+        "line": 81,
+        "text": "## 4. Consequence for the front-end recurrence"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/frontend/RECURRENCE_PROOF.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "1b7f6d6622923da2a07b139ac529c891010e533d0e4eb3f5051230b30cace22c",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Exact contextual recurrence certificate"
+      },
+      {
+        "line": 3,
+        "text": "## R0. Scope \u2014 PROVED"
+      },
+      {
+        "line": 9,
+        "text": "## R1. Minimum-pivot identity \u2014 PROVED"
+      },
+      {
+        "line": 22,
+        "text": "## R2. Coverage and matching guarantee \u2014 PROVED"
+      },
+      {
+        "line": 34,
+        "text": "## R3. Exhaustive triangle split \u2014 PROVED"
+      },
+      {
+        "line": 38,
+        "text": "## R4. Full induction \u2014 PROVED"
+      },
+      {
+        "line": 48,
+        "text": "## R5. Arithmetic certificate \u2014 COMPUTATION_CERTIFIED"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/low/COMMON_NEIGHBORHOOD_CAPACITY.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "bcbd1d36b74b6ec813cb1579156219459d84689809d3265bfeab21e22456da49",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Uniform common-neighborhood capacity"
+      },
+      {
+        "line": 7,
+        "text": "## C1. No 25-set has independence number at most two"
+      },
+      {
+        "line": 30,
+        "text": "## C2. Every nonedge has small common neighborhood"
+      },
+      {
+        "line": 40,
+        "text": "## C3. Complete attachments to K10"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/low/DIRECT_UNIFORM_PROOF.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "963fb912b6479e9285fc0d59944f004d3f6bd57ee8e2f4e383ad394ada6ab38d",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Direct proof with total excess at most six"
+      },
+      {
+        "line": 7,
+        "text": "## 1. A degree12 independent four-set, including T=0"
+      },
+      {
+        "line": 24,
+        "text": "## 2. Shared tools and the six-unit equality trigger"
+      },
+      {
+        "line": 36,
+        "text": "## 3. Excluding h=3"
+      },
+      {
+        "line": 42,
+        "text": "## 4. Excluding h=4"
+      },
+      {
+        "line": 56,
+        "text": "## 5. Reducing h=5 to P or D"
+      },
+      {
+        "line": 69,
+        "text": "## 6. Excluding P by disjoint mixed blockers"
+      },
+      {
+        "line": 79,
+        "text": "## 7. Excluding D with simultaneous incidence accounting"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/low/LOW_EDGE_UNIVERSAL_THEOREM.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "a76dd34d109e443bb29cd0412edcf8f0a2c66ee0366ad6ffe55774839ba8afc0",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Universal 47-point low-edge obstruction"
+      },
+      {
+        "line": 11,
+        "text": "## Proof by uniform augmentation"
+      },
+      {
+        "line": 19,
+        "text": "## Independent direct route"
+      },
+      {
+        "line": 23,
+        "text": "## Hereditary-cap corollary"
+      },
+      {
+        "line": 39,
+        "text": "## Acceptance boundary"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/low/MINIMUM_DEGREE_GATE_SELF_CONTAINED.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "a39337076b73757f79825128cbdced2e261e3128f743e2743d6258ac8dca8e76",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Independent reconstruction of the hereditary minimum-degree gate"
+      },
+      {
+        "line": 11,
+        "text": "## M1. R(2,24) is empty"
+      },
+      {
+        "line": 22,
+        "text": "## M2. Near-extremal triangle-free graphs on 23 vertices"
+      },
+      {
+        "line": 36,
+        "text": "### M2a. 122 edges"
+      },
+      {
+        "line": 44,
+        "text": "### M2b. 121 edges with K9,9 exterior"
+      },
+      {
+        "line": 50,
+        "text": "### M2c. 121 edges with K8,10 exterior"
+      },
+      {
+        "line": 54,
+        "text": "### M2d. 121 edges with K9,9 minus uv"
+      },
+      {
+        "line": 66,
+        "text": "## M3. A 12-set with low cost against any independent set"
+      },
+      {
+        "line": 85,
+        "text": "## M4. Every R(3,35) graph has minimum degree12"
+      },
+      {
+        "line": 102,
+        "text": "## M5. Orders36 and37"
+      },
+      {
+        "line": 108,
+        "text": "## M6. Transport to order47"
+      },
+      {
+        "line": 132,
+        "text": "## Dependency and promotion scope"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/low/Q32_285_THEOREM_INDEPENDENT_AUDIT.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "96012c0179f2ab75439883361b62d1bb538757b6249e5765b9de42734d37957a",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Independent audit of the exact 285-edge theorem"
+      },
+      {
+        "line": 5,
+        "text": "## Frozen input"
+      },
+      {
+        "line": 14,
+        "text": "## Eight-step audit"
+      },
+      {
+        "line": 29,
+        "text": "## Parent gap and its replacement"
+      },
+      {
+        "line": 35,
+        "text": "## Augmentation acceptance"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/low/Q33_284_THEOREM_DEPENDENCY_AUDIT.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "d635b48185933248d1990383d0a8b93e74628f6ed247a3dc4cf6a27ef9a04bc0",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Q33 284-edge theorem and minimum-degree dependency audit"
+      },
+      {
+        "line": 9,
+        "text": "## Abstract exact284 result"
+      },
+      {
+        "line": 15,
+        "text": "## Scope of the minimum-degree gate"
+      },
+      {
+        "line": 29,
+        "text": "## Small source corrections retained in this audit"
+      },
+      {
+        "line": 35,
+        "text": "## Promotion boundary"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/low/UNIVERSAL_EDGE_AUGMENTATION_LEMMA.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "507928ed00a3906c510df35a66611afae57018b571b64e477da77035ad62941c",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Universal safe edge augmentation"
+      },
+      {
+        "line": 5,
+        "text": "## A1. One step"
+      },
+      {
+        "line": 15,
+        "text": "## A2. Every intermediate graph"
+      },
+      {
+        "line": 27,
+        "text": "## Scope"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/root/CANONICAL_STATE.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "98e288ba78389602625c9358f81a2abdc781f052d2e1fb4be4fd3ac5d7091c86",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Canonical state \u2014 2026-10-22"
+      },
+      {
+        "line": 3,
+        "text": "## The theorem is not certified"
+      },
+      {
+        "line": 7,
+        "text": "## Backend"
+      },
+      {
+        "line": 13,
+        "text": "### Closed low backend"
+      },
+      {
+        "line": 23,
+        "text": "## Front-end master reduction"
+      },
+      {
+        "line": 31,
+        "text": "### Continuous canonical h13 closure E397--E406"
+      },
+      {
+        "line": 47,
+        "text": "#### E401--E404"
+      },
+      {
+        "line": 59,
+        "text": "#### E405"
+      },
+      {
+        "line": 72,
+        "text": "#### E406"
+      },
+      {
+        "line": 82,
+        "text": "### Active T61 frontier: E407--E408 only"
+      },
+      {
+        "line": 102,
+        "text": "## High backend live state"
+      },
+      {
+        "line": 114,
+        "text": "## Current independent mathematical obligations"
+      },
+      {
+        "line": 123,
+        "text": "## Certification warning"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/root/PROOF_DAG.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "a11030d20b73cab8a4c0db25f7dbdf5f5df5c09159a23d5e9b4f13c5fec6cf5c",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Canonical proof DAG"
+      },
+      {
+        "line": 3,
+        "text": "## Target"
+      },
+      {
+        "line": 9,
+        "text": "## Front-end DAG"
+      },
+      {
+        "line": 72,
+        "text": "## Backend DAG"
+      },
+      {
+        "line": 111,
+        "text": "## Final certification condition"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/GLOBAL_PROOF_DEPENDENCY_DAG.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "a3dcfb71f83c2230f18e48885e9b6607dd51d0ce2069714e11db5fa950dd2f5e",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Acyclic root dependency graph"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/GLOBAL_THEOREM_LEDGER.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "f0bc2c01339b48c4c156d2f3e513778d728a9c196a4dcfa79372687b1b68496e",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Theorem ledger with exact domains"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/H12_AND_EXCEPTIONAL_PARENT_AUDIT.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "6c203ac7a3b9f85ff55d171f07154c3137645311780732c24f7f2d2076552efc",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Independent h12 and exceptional-parent closure"
+      },
+      {
+        "line": 7,
+        "text": "## 1. Every R(4,48) graph has minimum degree at least12"
+      },
+      {
+        "line": 13,
+        "text": "## 2. A complete12-shell lemma at charge20"
+      },
+      {
+        "line": 33,
+        "text": "## 3. Direct inserted-center obstruction"
+      },
+      {
+        "line": 39,
+        "text": "## 4. The generic48-point floor310"
+      },
+      {
+        "line": 49,
+        "text": "## 5. Full T61 h12 exclusion"
+      },
+      {
+        "line": 59,
+        "text": "## 6. Other minimum degrees and exceptional pivots"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/K145_TO_T61_FRONTEND_AUDIT.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "b2ad8dc4e310200d7d6943450f1898742023f52f1bc32f10abe7519c57fa8426",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Original K145 to the unique T61 stop"
+      },
+      {
+        "line": 5,
+        "text": "## 1. Caps and least color"
+      },
+      {
+        "line": 11,
+        "text": "## 2. Contextual R(4,49) is impossible"
+      },
+      {
+        "line": 21,
+        "text": "## 3. Exhaustive extraction and exact edge ledger"
+      },
+      {
+        "line": 35,
+        "text": "## 4. Proof of every recurrence rule"
+      },
+      {
+        "line": 62,
+        "text": "## 5. Executed independent replay and final interface"
+      },
+      {
+        "line": 72,
+        "text": "## External references inspected"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/LOW_EDGE_AND_286_THEOREM_AUDIT.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "c8fae701e7ed9db6a426bd1ed845d35e9c9ff6872ecf8756ac49f739a78fb4d3",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Low-edge, equality, and source-gate audit"
+      },
+      {
+        "line": 5,
+        "text": "## Hypotheses and transfer"
+      },
+      {
+        "line": 13,
+        "text": "## Low-edge route and distinct exact contracts"
+      },
+      {
+        "line": 23,
+        "text": "## Exhaustive 286 support quotient"
+      },
+      {
+        "line": 36,
+        "text": "## Shared excess audit"
+      },
+      {
+        "line": 46,
+        "text": "## Frozen commits"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/PROGRESS_LOG.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "47136d7ff7a3689bc4e11cd58af564c3a5c259987064e93d52fafd46308208a7",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Root integration progress"
+      },
+      {
+        "line": 3,
+        "text": "## 2026-10-31"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/ROOT_PROMOTION_MATRIX.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "15dabedf35bf469e13f8735d7b0da6471a120f016c7b12a0960714bdbc7c3218",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Root promotion proposal"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/ROOT_PROMOTION_RECEIPT.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "8d86232fa632f8f12f8ad997d26a3dbe25a59945fc5aafcd217f3b6395490f56",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Root promotion receipt"
+      },
+      {
+        "line": 8,
+        "text": "## Frozen root and ancestry"
+      },
+      {
+        "line": 21,
+        "text": "## Publication sequence"
+      },
+      {
+        "line": 27,
+        "text": "## Proof acceptance"
+      }
+    ]
+  },
+  {
+    "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/UNRESOLVED_OBLIGATIONS.md",
+    "commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+    "sha256": "eb816f1d3861a81fd5fddd1d0239e261294754c1473be0455e35e9cebccd75f0",
+    "headings": [
+      {
+        "line": 1,
+        "text": "# Remaining obligations and exclusions"
+      },
+      {
+        "line": 3,
+        "text": "## Mathematical obligations for the original K145 target"
+      },
+      {
+        "line": 9,
+        "text": "## Open questions outside that target"
+      },
+      {
+        "line": 17,
+        "text": "## Operational work"
+      }
+    ]
+  }
+]
