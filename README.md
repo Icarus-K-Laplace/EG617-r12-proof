@@ -6,15 +6,15 @@
 
 **Theorem.** There is no edge-coloring
 \[
-c:E(K_{145})\longrightarrow\{1,2,\ldots,12\}
+c:E$K_{145}$\longrightarrow\{1,2,\ldots,12\}
 \]
-such that every 13-vertex subset of (K_{145}) contains an edge of every one of the 12 colors.
+such that every 13-vertex subset of $K_{145}$ contains an edge of every one of the 12 colors.
 
-Equivalently, every 12-edge-coloring of (K_{145}) has a 13-vertex subset whose induced edges omit at least one color.
+Equivalently, every 12-edge-coloring of $K_{145}$ has a 13-vertex subset whose induced edges omit at least one color.
 
-This proves the fixed (r=12) case of the Erdős–Gyárfás balanced-coloring conjecture.
+This proves the fixed $r=12$ case of the Erdős–Gyárfás balanced-coloring conjecture.
 
-**Scope:** This repository claims the fixed (r=12) instance only. It does not claim that the full conjecture for all (r\ge3) is solved.
+**Scope:** This repository claims the fixed $r=12$ instance only. It does not claim that the full conjecture for all (r\ge3) is solved.
 
 ## Start here
 
@@ -24,6 +24,8 @@ This proves the fixed (r=12) case of the Erdős–Gyárfás balanced-coloring co
 4. **Precise theorem status:** [PUBLICATION/PROOF_STATUS.md](PUBLICATION/PROOF_STATUS.md)
 5. **Reproducibility:** [PUBLICATION/REPRODUCIBILITY.md](PUBLICATION/REPRODUCIBILITY.md)
 6. **Public-release checklist:** [PUBLICATION/RELEASE_CHECKLIST.md](PUBLICATION/RELEASE_CHECKLIST.md)
+7. **Manuscript draft:** [PAPER/main.tex](PAPER/main.tex) and [PAPER/README.md](PAPER/README.md)
+8. **Manuscript source map:** [PAPER/PROOF_SOURCE_MAP.md](PAPER/PROOF_SOURCE_MAP.md)
 
 ## Frozen proof and audit versions
 
@@ -50,7 +52,7 @@ The precise dependency domains and frozen source provenance are recorded in the 
 ## What is not claimed
 
 - The full conjecture for all (r\ge3) is not solved here.
-- The abstract uncolored high-energy (R(4,49)) problem is not claimed solved; it is not a load-bearing dependency of the fixed-(r=12) proof.
+- The abstract uncolored high-energy (R(4,49)) problem is not claimed solved; it is not a load-bearing dependency of the fixed-$r=12$ proof.
 - No Lean 4/Mathlib or other proof-assistant formalization is claimed complete.
 - No external human specialist review or journal acceptance is claimed.
 
