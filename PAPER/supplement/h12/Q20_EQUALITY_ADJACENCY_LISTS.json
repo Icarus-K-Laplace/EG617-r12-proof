@@ -1,6 +1,6 @@
 {
   "status": "COMPUTATION_CERTIFIED",
-  "scope": "Exact labeled normal forms for all q=20 equality cases; adjacency is the missing graph on the 12-shell. Repivot degree bound uses only row cardinalities, not row disjointness.",
+  "scope": "Exact labeled normal forms for all q=20 equality cases in the 12-shell; the same shell classification is used with a 35-vertex core in the R(4,48) floor and a 48-vertex core in the T61 h12 branch. Adjacency is the missing graph on the shell. Repivot degree bounds are derived from the row sizes and the two shell neighbors of each leaf.",
   "vertices_convention": "h0,h1 are hubs; l0..l(r-1) are leaves; i0..i(9-r) are isolates.",
   "cases": [
     {
@@ -152,6 +152,10 @@
           },
           "new_core_hub_degree_upper_bound": 11
         }
+      ],
+      "applicable_core_orders": [
+        35,
+        48
       ]
     },
     {
@@ -317,6 +321,10 @@
           },
           "new_core_hub_degree_upper_bound": 11
         }
+      ],
+      "applicable_core_orders": [
+        35,
+        48
       ]
     },
     {
@@ -496,6 +504,10 @@
           },
           "new_core_hub_degree_upper_bound": 11
         }
+      ],
+      "applicable_core_orders": [
+        35,
+        48
       ]
     },
     {
@@ -689,6 +701,10 @@
           },
           "new_core_hub_degree_upper_bound": 11
         }
+      ],
+      "applicable_core_orders": [
+        35,
+        48
       ]
     },
     {
@@ -896,6 +912,10 @@
           },
           "new_core_hub_degree_upper_bound": 11
         }
+      ],
+      "applicable_core_orders": [
+        35,
+        48
       ]
     }
   ]
