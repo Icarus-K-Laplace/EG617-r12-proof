@@ -56,13 +56,22 @@ def verify_case(case):
     expected = {tuple(sorted(("h0", f"l{i}"))) for i in range(r)}
     expected |= {tuple(sorted(("h1", f"l{i}"))) for i in range(r)}
     assert E == expected
-    # Repivot at any leaf removes a 2-point row and inserts both hubs.
-    # Each old hub has at most 10 neighbors in the old core and one
-    # additional neighbor (the other hub) in the new core.
-    for item in case["repivot_checks"]:
-        assert item["leaf_row_size"] == 2
-        assert item["hub_row_sizes"] == {"h0": 10, "h1": 10}
-        assert item["new_core_hub_degree_upper_bound"] == 11
+    # Repivot at a leaf y. The old core loses y's row (size 2); among
+    # the old shell vertices, exactly the two M-neighbors of y (the hubs)
+    # enter the new core. Each hub's degree in that new core is at most
+    # its old core-row size plus its one edge to the other hub.
+    hubs = {"h0", "h1"}
+    leaves = {f"l{i}" for i in range(r)}
+    checks = case["repivot_checks"]
+    assert {item["leaf"] for item in checks} == leaves
+    assert len(checks) == r
+    for item in checks:
+        leaf = item["leaf"]
+        assert t[leaf] == item["leaf_row_size"] == 2
+        assert set(adj[leaf]) == hubs
+        assert item["hub_row_sizes"] == {h: t[h] for h in hubs}
+        derived_bound = max(t[h] for h in hubs) + 1
+        assert item["new_core_hub_degree_upper_bound"] == derived_bound <= 11
     return {"r": r, "vertices": len(V), "missing_edges": len(E),
             "decoration_sum": sum(g.values()), "q": 20,
             "alpha_missing_graph": 10, "matching_number": 2,
