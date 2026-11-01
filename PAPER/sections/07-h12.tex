@@ -58,11 +58,11 @@ with hub weights $10$, hub decorations $10-r$, and all ten low vertices regular.
 
 \begin{lemma}
 \label{lem:inserted-center}
-The charge-$20$ equality configuration in \cref{lem:q20} is impossible if every degree-$12$ repivot of the parent has a $48$-vertex core of minimum degree at least $12$.
+The charge-$20$ equality configuration in \cref{lem:q20} is impossible whenever the actual core produced by repivoting at one of its degree-$12$ leaves has minimum degree at least $12$.
 \end{lemma}
 
 \begin{proof}
-Choose a leaf $y$ of the $K_{2,r}$ shell. Repivoting at $y$ removes its two-point core row and inserts the two old hubs. The hubs are adjacent in the target graph, since there is no hub--hub edge in the missing graph $M$. Each hub has only ten neighbors in the old core. Its degree in the new core is therefore at most $10+1=11$, even before subtracting any edges into the deleted row. This contradicts the assumed minimum degree $12$ of every actual $48$-vertex core.
+Choose a leaf $y$ of the $K_{2,r}$ shell. By the equality classification, $y$ is a regular degree-$12$ vertex of the parent, so its repivot is an actual core. Repivoting at $y$ removes its two-point core row and inserts the two old hubs. The hubs are adjacent in the target graph, since there is no hub--hub edge in the missing graph $M$. Each hub has only ten neighbors in the old core. Its degree in the new core is therefore at most $10+1=11$, even before subtracting any edges into the deleted row. This contradicts the assumed minimum degree $12$ of this actual repivot core.
 \end{proof}
 
 \subsection{The 310-edge floor}
@@ -77,7 +77,7 @@ By \cref{lem:R448-degree}, $\delta(J)\geq12$. If $\delta(J)\geq13$, then $e(J)\g
 
 For every missing shell edge, the union of the two core rows has size at least $12$; otherwise the uncovered core would contain a member of $\mathcal R(2,24)$. For every missing triangle, the row union has size at least $24$, since the uncovered core has independence number at most one and hence is a clique of size at most $11$. Thus \cref{lem:q20} applies and gives $q\geq20$.
 
-If $q=20$, the equality classification and \cref{lem:inserted-center} apply: a leaf repivot produces another genuine $35$-vertex core in $\mathcal R(3,35)$ with minimum degree at least $12$, contradicting the inserted-center degree bound. Therefore $q\geq21$. The exact edge partition gives
+If $q=20$, choose a leaf $y$ in the classified $K_{2,r}$. It is a degree-$12$ vertex of $J$, and its repivot core is a genuine $35$-vertex member of $\mathcal R(3,35)$. By \cref{lem:R335}, this actual core has minimum degree at least $12$, so \cref{lem:inserted-center} gives a contradiction. Therefore $q\geq21$. The exact edge partition gives
 \[
 e(J)=78+q+e(H)\geq78+21+211=310.
 \]
@@ -95,7 +95,7 @@ A degree-$12$ pivot has a genuine $48$-vertex core $C\in\mathcal R(4,48)$, so $e
 \[
 E=e(F)=78+q+e(C)\geq78+20+310=408.
 \]
-Thus $E<408$ is impossible. At $E=408$, equality forces $q=20$ and $e(C)=310$. Every degree-$12$ repivot produces another actual $48$-vertex core in $\mathcal R(4,48)$, whose minimum degree is at least $12$ by \cref{lem:R448-degree}. The inserted-center contradiction in \cref{lem:inserted-center} now rules out the equality case as well.
+Thus $E<408$ is impossible. At $E=408$, equality forces $q=20$ and $e(C)=310$. The leaf $y$ in the classified $K_{2,r}$ is a degree-$12$ vertex of $F$. Its repivot produces an actual $48$-vertex core in $\mathcal R(4,48)$, whose minimum degree is at least $12$ by \cref{lem:R448-degree}. Thus \cref{lem:inserted-center} applies to this specific repivot and rules out the equality case as well.
 \end{proof}
 
 Finally, if a $61$-vertex residual satisfying \eqref{eq:T61-contract} had a vertex of degree at most $11$, its nonneighborhood would contain a contextual member of $\mathcal R(4,49)$, contradicting \cref{lem:context49}. If its minimum degree were at least $14$, the handshake lemma would give $E\geq\lceil61\cdot14/2\rceil=427>408$. Thus the only possible minimum degrees are $12$ and $13$; the former has just been excluded.
