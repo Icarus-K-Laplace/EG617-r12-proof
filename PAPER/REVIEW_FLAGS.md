@@ -36,8 +36,8 @@ The h=5 pattern \(D=\{01,02,03,12,13\}\) has now been rewritten as a per-\(K_{10
 
 - Main theorem and proof architecture: drafted.
 - Main proof sections: source-derived first transcription completed.
-- Supplementary machine assets: source-preserving bundle in `supplement/`; CI ZIP artifact and clean verifier reruns are enabled. q20 adjacency-list export and its CI verifier are now present. Canonical q27/q28 state-key and raw 61-representative exports remain open.
-- LaTeX compilation: latest successful build is source snapshot `6923163fa341a037e797b64f206f3ea1db6c1ace` (37 pages; 519,348 bytes), Actions run `41278956719`; final TeX pass is clean. The present changes add standalone supplement exports and their verifier/workflow step; no TeX source is changed, and the new export-check workflow is pending.
+- Supplementary machine assets: source-preserving bundle in `supplement/`; CI ZIP artifact and clean verifier reruns are enabled. q20 adjacency-list export, ten q27/q28 canonical necessary-state keys, and the 61-row T61 h-ledger are all present. `VERIFY_PUBLIC_EXPORTS.py` and CI check their exact source equality, Git-blob provenance and canonicality. The T61 `core` entries preserve the earlier recurrence seeds (308/284 for h=12/13); later independent lemmas strengthen the abstract floors to 310/287. These are scalar recurrence records, not full graph witnesses.
+- LaTeX compilation: latest successful build is source snapshot `057f407c0d5d51424af8fa46a0c858630319c686` (37 pages; 519,348 bytes), Actions run `41279329643`; final TeX pass is clean. The integrated root verifier, low-edge, 286-equality, q20 equality, COVER, and standalone public-export verifier all passed. This documentation note preserves the distinction between historical recurrence seeds and later stronger abstract floors.
 - PDF inspection: pages 16–23 have been spot-checked in the current 37-page artifact. Full editorial inspection remains open.
 - External human review: not yet obtained.
 - Submission: not made.

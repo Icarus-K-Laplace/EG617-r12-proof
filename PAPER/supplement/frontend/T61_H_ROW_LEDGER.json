@@ -349,5 +349,6 @@
       "q_floor": 1375,
       "row_floor": 3205
     }
-  ]
+  ],
+  "interpretation_note": "The core values are the lower-bound seeds used by the contextual recurrence snapshot, not the later strongest abstract graph floors. In particular, the h=12 and h=13 rows retain the earlier seeds 308 and 284; separate later theorems strengthen the 48-point and 47-point floors to 310 and 287, respectively. This export preserves the recurrence input ledger exactly and is not a table of full graph witnesses."
 }
