@@ -8,6 +8,9 @@ on:
       - "PAPER/**/*.tex"
       - "PAPER/references.bib"
       - "PAPER/main.tex"
+      - "PAPER/supplement/**"
+      - "PAPER/PROOF_TRANSCRIPTION_LEDGER.md"
+      - "PAPER/REVIEW_FLAGS.md"
       - ".github/workflows/paper-build.yml"
   workflow_dispatch:
 
