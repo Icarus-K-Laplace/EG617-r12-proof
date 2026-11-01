@@ -136,11 +136,24 @@ For an edge $ab$ in $B$, $K_4$-freeness bounds each endpoint's $T$-degree by two
 
 If $B$ has one edge $ab$, the two distinct two-element $T$-neighborhoods overlap at one hub $w$. The triangle inequalities force $t_w=12$ and the other hub weights to be $t_b,t_a$, each at most nine. The other eight vertices of $B$ are regular and can meet only $w$, giving $z\leq3+1+4+8=16$. If $B$ is a star with at least two edges, all decoration lies at its center, whose weight is nine; each leaf has weight three. A leaf and the center have distinct two-element $T$-neighborhoods. Their common hub has weight twelve and the other two weights are nine and three. There cannot be two different weight-twelve common hubs, since $t(T)=24$ and the third hub has positive weight. Every leaf's missing neighborhood then consists of the weight-twelve hub, the weight-nine hub, and the weight-nine center; it spans two $M$-edges. This violates \cref{eq:INS11}, whose left side is $30-2\cdot2=26$ and whose right side is $3(12-3)=27$.
 
-It remains that $B$ is independent. Its $T$-incidence count is $19$ or $20$, so all ten $B$-vertices have $T$-degree two, or nine have degree two and one has degree one. There are at most six decoration units. Every hub must meet a regular degree-two low vertex. Otherwise a regular degree-one neighbor violates \cref{eq:EDGE12}; for a decorated neighbor $b$, the number $c_i$ of its $B$-neighbors at a hub $i$ is at most $G_B-g_b+1$, which gives
+It remains that $B$ is independent. Its $T$-incidence count is $z-3\geq19$ and at most $20$, so all ten $B$-vertices have $T$-degree two, or nine have degree two and one has degree one. Here $G=q_p-z\leq6$.
+
+Every hub must meet a regular degree-two $B$-vertex. To prove this, suppose a hub $i$ does not. There is at most one regular degree-one $B$-vertex. If such a vertex is adjacent to $i$, all other $B$-neighbors of $i$ are decorated, so $c_i\leq G_B+1$ and
 \[
-t_i+t_b\leq(2+c_i+g_i)+(2+g_b)\leq5+G\leq11,
+t_i=2+c_i+g_i\leq3+G\leq9.
 \]
-again contradicting \cref{eq:EDGE12}. A hub with no $B$-neighbor would give an independent $11$-set. Thus all three hub weights are at least ten, with total at most $31$. A regular degree-two low vertex has two adjacent hubs as its missing neighborhood; their weight sum is at most $21$, while \cref{eq:INS11} requires at least $22$. Contradiction.
+But the regular degree-one neighbor has weight one, and \cref{eq:EDGE12} requires $t_i\geq11$, a contradiction. If $i$ has no regular degree-one neighbor, all its $B$-neighbors are decorated. For any such decorated neighbor $b$, the number $c_i$ of $B$-neighbors at $i$ satisfies $c_i\leq G_B-g_b+1$, whence
+\[
+t_i+t_b\leq(2+c_i+g_i)+(2+g_b)
+\leq5+G_B+g_i\leq5+G\leq11,
+\]
+again contradicting \cref{eq:EDGE12}. Finally, a hub with no $B$-neighbor would join the independent ten-set $B$ to form an independent eleven-set. Thus every hub meets a regular degree-two $B$-vertex.
+
+For such a regular low vertex, its weight is two. Applying \cref{eq:EDGE12} to its two hub edges shows that both incident hubs have weight at least ten. Since every hub occurs in one such pair, all three hub weights are at least ten. Their total is
+\[
+t(T)=q_p+3-G_B\leq31.
+\]
+The two hubs in the missing neighborhood of a regular degree-two $B$-vertex are adjacent in $M$, so \cref{eq:INS11} requires their weight sum minus two to be at least $2(12-2)=20$, or a sum of at least $22$. But the third hub has weight at least ten and the total hub weight is at most $31$, so this pair has weight sum at most $21$. Contradiction.
 
 We have proved that every regular pivot with $q_p\leq28$ has a triangle-free bipartite missing graph of the form $K_{3,10}$. In this channel, a three-matching gives $q_p\geq36-9=27$. Hence every regular pivot satisfies
 \begin{equation}
