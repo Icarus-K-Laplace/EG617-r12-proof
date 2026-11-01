@@ -15,6 +15,37 @@ The h=5 pattern \(D=\{01,02,03,12,13\}\) has now been rewritten as a per-\(K_{10
 4. **Primary-source citation audit — complete (1 November 2026).** The Erdős–Gyárfás original (1999), Conjecture 1 p. 80 and Lemmas 1–2 pp. 84–85, confirms the formulation and the established cases r=3,4. Brooks' original 1941 paper was checked in the full reprint in Stiebitz et al., Appendix A.1, pp. 537–540: maximum degree at most n>2 and no connected component an n-simplex imply an n-coloring; for H[X], n=12 and omega(H[X])<=11 exclude a K13 component. The original Andrásfai–Erdős–Sós paper, Theorem 1.1 p. 207, gives K4-free plus delta>5n/8 implies 3-partite; the application has n=35, delta=22, and 8*22=176>175. The original Kang–Pikhurko PDF, Theorem 1 p. 13, gives p_r(n)=t_r(n)-floor(n/r)+1 for n>=r+3 and r<=(n-1)/2; at (n,r)=(25,2), this is 156-12+1=145. The Xia–Szeider arXiv preprint 2610.24484 (v1, 17 October 2026), abstract and Theorem 1, states the r=5 result and its Lean/SAT certificate architecture; the introduction now explicitly identifies it as an arXiv preprint rather than implying journal publication. Bibliographic metadata in references.bib was cross-checked against the primary records. This source audit does not replace external human peer review.
 5. **Independent human review.** Obtain at least one external combinatorialist's line-by-line review. The AI-assisted certification PASS is not human peer review.
 
+## External prior-art audit (1 November 2026)
+
+The public claims index now records unrefereed 2026 claims for every fixed parameter
+$r=5,\ldots,11$. The Sneiderman repository contains individual $r=5,6,7,8,9$
+manuscripts and proof artifacts; the Terpstra Research repository contains the
+pre-review $r=10,11$ artifact. Multiple additional independent $r=5$ write-ups
+are also catalogued. The introduction cites these as claims only and explicitly
+states that none is used as a premise in this proof. Do not describe $r=12$ as
+the "next" fixed case, and do not claim novelty beyond the scoped public search.
+
+A further caution concerns the Sneiderman $r=7,8,9$ source snapshots. An
+AI-assisted screening note by the Erdős Problems project reports a shared
+inference gap in the Kang--Pikhurko equality discussion at $m=ar+1$: the total
+size $ar$ of the old parts does not, by itself, imply that every old part has
+size $r$. The reported repair is to split into (i) a part larger than $r$, which
+already gives a forbidden target clique, and (ii) all parts of size at most $r$,
+where equality of the total forces every part to have size $r$. The same note
+says the linked July 2026 release sources do not contain the repair and that a
+later 25 July version does; the current public r7-r8 source snapshot fetched for
+this audit still displays the unqualified inference. The screening note is
+explicitly not human peer review. Our proof does not cite or use these
+Sneiderman arguments. A targeted scan of our current Sections 3--4 did not
+find this exact old-part inference, but this is not a substitute for the
+independent line-by-line audit required in P0 item 1.
+
+The Terpstra r10/r11 repository labels its release pre-review and not
+proof-assistant formalized or externally peer reviewed. It reports separate
+clean-room computational audits, while also disclosing a repaired executable
+omission in a frozen r11 audit script. This is recorded as a claim and a
+reproducibility artifact, not an accepted theorem.
+
 ## P1 — required before public preprint
 
 - Confirm the complete author list, author order, affiliations, corresponding author and email. This draft provisionally lists Qiankai Tong as lead author and does not invent an affiliation.
@@ -37,7 +68,7 @@ The h=5 pattern \(D=\{01,02,03,12,13\}\) has now been rewritten as a per-\(K_{10
 - Main theorem and proof architecture: drafted.
 - Main proof sections: source-derived first transcription completed.
 - Supplementary machine assets: source-preserving bundle in `supplement/`; CI ZIP artifact and clean verifier reruns are enabled. q20 adjacency-list export, ten q27/q28 canonical necessary-state keys, and the 61-row T61 h-ledger are all present. `VERIFY_PUBLIC_EXPORTS.py` and CI check their exact source equality, Git-blob provenance and canonicality. The T61 `core` entries preserve the earlier recurrence seeds (308/284 for h=12/13); later independent lemmas strengthen the abstract floors to 310/287. These are scalar recurrence records, not full graph witnesses.
-- LaTeX compilation: latest successful build is source snapshot `057f407c0d5d51424af8fa46a0c858630319c686` (37 pages; 519,348 bytes), Actions run `41279329643`; final TeX pass is clean. The integrated root verifier, low-edge, 286-equality, q20 equality, COVER, and standalone public-export verifier all passed. This documentation note preserves the distinction between historical recurrence seeds and later stronger abstract floors.
+- LaTeX compilation: latest successful build is source snapshot `eee43473fba5805d96214fd75bd0e2f399ce1113` (37 pages; 519,348 bytes), Actions run `41279547873`; final TeX pass is clean. The integrated root verifier, low-edge, 286-equality, q20 equality, COVER, and standalone public-export verifier all passed. The current related-work and bibliography edits are pending a fresh build.
 - PDF inspection: pages 16–23 have been spot-checked in the current 37-page artifact. Full editorial inspection remains open.
 - External human review: not yet obtained.
 - Submission: not made.
