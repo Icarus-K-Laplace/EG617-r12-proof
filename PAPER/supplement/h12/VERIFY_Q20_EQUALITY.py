@@ -33,6 +33,7 @@ def matching_number(vertices, E):
 
 def verify_case(case):
     r = case["r"]
+    assert case["applicable_core_orders"] == [35, 48]
     V = case["vertices"]
     adj = case["missing_graph_adjacency"]
     g = case["decoration"]
