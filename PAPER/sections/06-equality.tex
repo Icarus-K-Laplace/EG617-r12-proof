@@ -15,11 +15,12 @@ Put $\epsilon(v)=d_H(v)-12\geq0$. Then
 \[
 T=\sum_v\epsilon(v)=2e(H)-564=8.
 \]
-At most eight vertices have positive excess. If the remaining $47-q$ degree-$12$ vertices had independence number at most $3$, the same incidence count as in \cref{thm:low-edge} would give
+At most eight vertices have positive excess, so the set $X$ of degree-$12$ vertices has size at least $39$. The induced graph $H[X]$ has maximum degree at most $12$ and contains no $K_{13}$, since $\omega(H)\leq11$. By Brooks' theorem \citep{Brooks1941}, every connected component of $H[X]$ is $12$-colorable: a component of maximum degree below $12$ is greedily $12$-colorable, while a component of maximum degree $12$ is neither complete nor an odd cycle and hence has chromatic number at most $12$. Using the same palette for all components, $H[X]$ has a proper $12$-coloring. One color class therefore has at least
 \[
-e(H)\geq\tau_3(47-q)+12q+8-\binom q2>286
+\left\lceil\frac{|X|}{12}\right\rceil\geq
+\left\lceil\frac{39}{12}\right\rceil=4
 \]
-for every $1\leq q\leq8$ (the minimum of these lower bounds is $310$). Hence there is an independent degree-$12$ four-set $I=\{s_0,s_1,s_2,s_3\}$. The private-neighbor construction from \cref{thm:low-edge} gives four cliques $K_i$ and an exceptional set $Z$ with $3\leq h=|Z|\leq5$, $\sum_i d_i=h+5$, and clique-size patterns
+vertices. Thus there is an independent degree-$12$ four-set $I=\{s_0,s_1,s_2,s_3\}$. The private-neighbor construction from \cref{thm:low-edge} gives four cliques $K_i$ and an exceptional set $Z$ with $3\leq h=|Z|\leq5$, $\sum_i d_i=h+5$, and clique-size patterns
 \[
 11,11,11,11;\quad 10,11,11,11;\quad
 9,11,11,11;\quad 10,10,11,11.
@@ -43,7 +44,7 @@ P=\{01,02,02,13,13\},\\
 &&C=\{01,01,01,23,23\}.
 \end{array}
 \]
-There are ten support orbits in total.
+There are ten support orbits in total. Their exhaustiveness follows directly from the incidence constraints. For $h=3$, the support sizes are either $4,2,2$ or $3,3,2$. In the first case the two pairs must be complementary; in the second the pair must join the two labels omitted by the triples. Each gives one orbit. For $h=4$, there is one triple support and three pair supports. The three pairs form a loopless multigraph on four labels in which every label has positive degree and the label omitted by the triple has degree at least two. With three edges, its underlying multigraph is either a three-edge star, a three-edge path, or a doubled edge disjoint from a single edge; the distinguished omitted label is respectively the center, an internal vertex, or an endpoint of the doubled edge. These are exactly the three listed orbits. For $h=5$, all supports are pairs, so they form a loopless five-edge multigraph with minimum degree at least two. Its degree sequence is either $(4,2,2,2)$ or $(3,3,2,2)$. The first has the unique form $\{01,01,02,03,23\}$. For degree sequence $(3,3,2,2)$, let $u,v$ be the degree-three vertices and let $x,y$ be the degree-two vertices. According to the multiplicity of $uv$, which is $1,2,$ or $3$, the remaining two-regular multigraph on the four labels is respectively a $4$-cycle or two doubled disjoint edges, one edge to each low vertex plus $xy$, or a double edge $xy$. This gives exactly $P,D,B,C$ in the table.
 
 \subsection*{Common-neighborhood capacity at total excess eight}
 
