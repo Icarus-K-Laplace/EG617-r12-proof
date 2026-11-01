@@ -39,3 +39,22 @@ The frozen INDEPENDENT_VERIFIER.py independently checks:
 - the arithmetic of the regular four-set lower bounds and the parent edge caps.
 
 The verifier does **not** formalize the analytic implications from the graph hypotheses to every degree charge. Those are the prose proof obligations above and remain subject to external human review.
+
+
+## Final AI-assisted adversarial recheck (2026-11-01)
+
+The ten orbit dispositions were rechecked against the main-text proof, including
+zero-missing-set and complete-to-clique branches, the two-point same-pair
+intersection cases, and pointwise additivity on shared $K_{10}$ centers and
+$K_{11}$ leaves. A separate local enumeration reproduced the raw multiset
+counts $9,40,48$ and the $S_4$ orbit counts $2,3,5$. The seven scalar blocker
+functions and their equality cases were also independently recomputed over
+their finite parameter ranges. No new counterexample or double-counting
+defect was found in this pass.
+
+The $47$-vertex private-neighbor decomposition used by the E286 proof is now
+isolated in sections/06-equality.tex, Lemma
+lem:private-neighbor-decomposition-e286; its hypotheses do not include
+$e(H)\leq285$. This audit remains AI-assisted informal proof review, not
+proof-assistant formalization or external human peer review. The analytic
+implications remain open to specialist challenge.

@@ -1,6 +1,66 @@
 \section{The 286-edge equality obstruction}
 \label{sec:equality}
 
+\begin{lemma}[Private-neighbor decomposition from a regular independent four-set]
+\label{lem:private-neighbor-decomposition-e286}
+Let $H$ be a simple graph on $47$ vertices with
+$\alpha(H)\leq4$ and $\omega(H)\leq11$. Suppose
+$I=\{s_0,s_1,s_2,s_3\}$ is an independent set and
+$d_H(s_i)=12$ for every $i$. For $v\notin I$, write
+$S(v)=N_H(v)\cap I$, and define
+\[
+P_i=\{v\in V(H)\setminus I:S(v)=\{s_i\}\},\qquad
+Z=\{v\in V(H)\setminus I:|S(v)|\geq2\}.
+\]
+Put $h=|Z|$ and $d_i=|N_H(s_i)\cap Z|$. Then each
+\[
+K_i=\{s_i\}\cup P_i
+\]
+is a clique, and
+\[
+|K_i|=13-d_i,\qquad
+\sum_{i=0}^3d_i=h+5,\qquad 3\leq h\leq5.
+\]
+Consequently, up to order, the clique-size patterns are
+\[
+(11,11,11,11),\quad (10,11,11,11),\quad
+(9,11,11,11),\quad (10,10,11,11).
+\]
+No hypothesis on $e(H)$ is needed for this decomposition.
+\end{lemma}
+
+\begin{proof}
+Since $\alpha(H)\leq4$, every vertex outside $I$ has at least one
+neighbor in $I$. As $I$ is independent, the $48$ incidences from $I$
+to $V(H)\setminus I$ are distributed over $43$ outside vertices, so
+\[
+\sum_{v\notin I}\bigl(|S(v)|-1\bigr)=48-43=5.
+\]
+If $u,v\in P_i$ were nonadjacent, then
+$\{u,v\}\cup(I\setminus\{s_i\})$ would be an independent five-set.
+Thus $K_i$ is a clique.
+
+The twelve neighbors of $s_i$ lie outside $I$ and are partitioned
+between $P_i$ and $N_H(s_i)\cap Z$. Hence
+$|P_i|=12-d_i$ and $|K_i|=13-d_i$. Since $\omega(H)\leq11$,
+we have $d_i\geq2$. Moreover,
+\[
+\sum_{i=0}^3d_i
+=\sum_{z\in Z}|S(z)|
+=h+\sum_{z\in Z}(|S(z)|-1)
+=h+5.
+\]
+Every $z\in Z$ contributes at least one to the surplus five, so
+$h\leq5$. On the other hand, $\sum_i d_i\geq8$, whence
+$h+5\geq8$ and $h\geq3$.
+
+For $h=3$, the four integers $d_i\geq2$ sum to $8$, so all are $2$.
+For $h=4$, they sum to $9$, giving $(3,2,2,2)$.
+For $h=5$, they sum to $10$, giving either $(4,2,2,2)$ or
+$(3,3,2,2)$. Translating via $|K_i|=13-d_i$ gives the four
+listed clique-size patterns.
+\end{proof}
+
 \begin{theorem}[The $286$-edge boundary]
 \label{thm:E286}
 There is no simple graph $H$ satisfying
@@ -20,7 +80,7 @@ At most eight vertices have positive excess, so the set $X$ of degree-$12$ verti
 \left\lceil\frac{|X|}{12}\right\rceil\geq
 \left\lceil\frac{39}{12}\right\rceil=4
 \]
-vertices. Thus there is an independent degree-$12$ four-set $I=\{s_0,s_1,s_2,s_3\}$. The private-neighbor construction from \cref{thm:low-edge} gives four cliques $K_i$ and an exceptional set $Z$ with $3\leq h=|Z|\leq5$, $\sum_i d_i=h+5$, and clique-size patterns
+vertices. Thus there is an independent degree-$12$ four-set $I=\{s_0,s_1,s_2,s_3\}$. Applying \cref{lem:private-neighbor-decomposition-e286} gives four cliques $K_i$ and an exceptional set $Z$ with $3\leq h=|Z|\leq5$, $\sum_i d_i=h+5$, and clique-size patterns
 \[
 11,11,11,11;\quad 10,11,11,11;\quad
 9,11,11,11;\quad 10,10,11,11.
