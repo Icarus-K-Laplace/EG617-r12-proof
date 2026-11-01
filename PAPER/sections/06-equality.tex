@@ -118,6 +118,38 @@ If a $K_{11}$ meets two support points whose opposite missing sets lie in differ
 \]
 Thus, in every overlap pattern, the vertex's single excess pays the sum of the two prescribed contributions. Summing over the shared $K_{11}$ proves that the two blocker charges are additive, without counting a vertex's excess twice.
 
+\paragraph{Shared-center accounting on a $K_{10}$.}
+Suppose two support points $x,y$ are incident with the same $K_{10}$, have distinct $K_{11}$ leaves, and neither completes the $K_{10}$. Write
+\[
+A_x=K\setminus N(x),\quad B_x=L_x\setminus N(x),\qquad
+A_y=K\setminus N(y),\quad B_y=L_y\setminus N(y),
+\]
+with sizes $a_x,b_x,a_y,b_y$. Both $B_x,B_y$ are nonempty, and the blocker property gives $A_x\times B_x$ and $A_y\times B_y$ as complete bipartite pairs. For $v\in K$:
+- if $v\in A_x\setminus A_y$, it is adjacent to $y$ and every vertex of $B_x$, so $\epsilon(v)\geq\max(0,b_x-2)\geq\max(0,b_x-3)$;
+- if $v\in A_y\setminus A_x$, the symmetric bound holds;
+- if $v\in A_x\cap A_y$, it is adjacent to the disjoint sets $B_x,B_y$, so
+\[
+\epsilon(v)\geq\max(0,b_x+b_y-3)
+\geq\max(0,b_x-3)+\max(0,b_y-3).
+\]
+Summing pointwise over $K$ gives
+\[
+\sum_{v\in K}\epsilon(v)\geq
+a_x\max(0,b_x-3)+a_y\max(0,b_y-3).
+\]
+Together with $\epsilon(x)\geq\max(0,9-a_x-b_x)$, the analogous bound for $y$, and
+\[
+\sum_{w\in B_x}\epsilon(w)\geq b_x\max(0,a_x-2),\qquad
+\sum_{w\in B_y}\epsilon(w)\geq b_y\max(0,a_y-2),
+\]
+this makes the two $f_{10,11}$ charges additive on the shared $K_{10}$.
+
+If exactly one of $x,y$ completes $K$, say $x$, then the other point $y$ has nonempty missing sets $A_y,B_y$. Every vertex of $A_y$ is adjacent to $x$ and to all of $B_y$, while every vertex of $B_y$ has all $a_y$ vertices of $A_y$ as neighbors. Hence the charge on $y,A_y,B_y$ is at least
+\[
+\max(0,9-a_y-b_y)+a_y\max(0,b_y-2)+b_y\max(0,a_y-2)\geq5.
+\]
+If both points complete $K$, they are nonadjacent and have the ten vertices of $K$ as common neighbors, so their combined excess is at least seven by \eqref{eq:common-excess-8}.
+
 \subsection*{A triple supported on three K11s}
 
 Suppose a point $z$ is supported on three $K_{11}$s and the total excess on $z$ and those three cliques is at most $2$. Let the three nonempty missing sets have sizes $a\leq b\leq c\leq10$. The local excess on $z$ and the three cliques is at most $2$, so $d(z)\leq14$ and $a+b+c\geq33-14=19$. Hence $b\geq5$ and $b+c\geq13$.
