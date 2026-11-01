@@ -11,16 +11,16 @@ This directory is a source-preserving bundle of selected proof and verification 
 
 ## Layout
 
-- `frontend/`: two independent recurrence implementations, replay input and recurrence proof. The integrated root verifier is in `root/`.
+- `frontend/`: two independent recurrence implementations, replay input, recurrence proof, and the standalone 61-row T61 h-ledger export. The 61 rows are scalar recurrence rows for h=0,...,60, not graph witnesses. The integrated root verifier is in `root/`.
 - `low/`: low-edge verifier and its result, plus the minimum-degree gate and analytic low-edge proof sources.
 - `equality286/`: 286-edge equality verifier, result, checksum file and analytic classification.
 - `h12/`: the 48-vertex floor and T61 degree-12 terminal closure.
-- `cover/`: COVER verifier, result, case matrix, analytic theorem, dependency audit and independent Q30 referee report.
+- `cover/`: COVER verifier, result, case matrix, analytic theorem, dependency audit, independent Q30 referee report, and the standalone q27/q28 canonical necessary-state keys.
 - `root/`: integrated proof, dependency DAG, source manifest, checksums and root verifier. Its `frozen/` subdirectory mirrors all 26 source-manifest entries at the exact relative paths expected by the verifier.
 
 ## Reproduction boundary
 
-The Python programs use the Python standard library. Run the integrated verifier from `root/` with `python3 -B INDEPENDENT_VERIFIER.py`. It checks all 26 Git-blob hashes, replays the three recurrence implementations, reruns the retained COVER state verifier, checks the low-order finite routines, and validates the dependency DAG. For standalone low-edge, 286-equality and COVER reruns, use temporary copies of `root/frozen/low`, `root/frozen/eq286` and `root/frozen/cover`; those scripts overwrite their adjacent result JSONs, so do not run them in-place before the root source-hash check. The root verifier expressly does **not** rerun the 47-vertex graph search or COVER shell search.
+The Python programs use the Python standard library. Verify the standalone T61 and q27/q28 exports from the repository root with `python3 -B PAPER/supplement/VERIFY_PUBLIC_EXPORTS.py`; it checks exact source equality, Git-blob provenance, and S3 canonicality. Run the integrated verifier from `root/` with `python3 -B INDEPENDENT_VERIFIER.py`. It checks all 26 Git-blob hashes, replays the three recurrence implementations, reruns the retained COVER state verifier, checks the low-order finite routines, and validates the dependency DAG. For standalone low-edge, 286-equality and COVER reruns, use temporary copies of `root/frozen/low`, `root/frozen/eq286` and `root/frozen/cover`; those scripts overwrite their adjacent result JSONs, so do not run them in-place before the root source-hash check. The root verifier expressly does **not** rerun the 47-vertex graph search or COVER shell search.
 
 The COVER verifier reconstructs the finite shell states described in `root/frozen/cover/COVER_THEOREM.md`; it does not certify the analytic reductions leading to those states. The 104 repivot checks are generic algebra tests, not legal-parent witnesses. Likewise, finite verifier PASS records do not constitute a proof-assistant kernel or independent human peer review.
 

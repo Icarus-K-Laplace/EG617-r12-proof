@@ -67,6 +67,9 @@ jobs:
           cd "$RUNNER_TEMP/cover"
           python3 -B INDEPENDENT_VERIFIER.py
 
+      - name: Verify standalone public exports
+        run: python3 -B PAPER/supplement/VERIFY_PUBLIC_EXPORTS.py
+
       - name: Archive source supplement
         run: zip -qr "$RUNNER_TEMP/eg617-r12-proof-supplement.zip" PAPER/supplement
 

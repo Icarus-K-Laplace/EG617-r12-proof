@@ -1,0 +1,553 @@
+{
+  "schema": "eg617.cover.q27-q28-canonical-state-keys.v1",
+  "description": "The ten canonical necessary 13-vertex shell-state encodings retained by the q=27 and q=28 bipartite classification. These are compressed shell states, not realized 61-vertex parent graphs.",
+  "canonicalization": "For each hub permutation p in S3, permute the three hub weights and each row mask; sort the transformed (mask, decoration) rows lexicographically; retain the lexicographically least pair (hub_weights, rows).",
+  "sources": {
+    "verification_result": {
+      "path": "cover/VERIFICATION_RESULT.json",
+      "git_blob_sha1": "a7f5ea4dbe616c1ca36d714d5a54bb9298feaa62",
+      "json_pointer": "/bipartite"
+    },
+    "canonicalizer": {
+      "path": "cover/INDEPENDENT_VERIFIER.py",
+      "git_blob_sha1": "4ae1c88c1eadf0801e491bf7ffaf823f3ea60120",
+      "function": "canonical"
+    }
+  },
+  "state_counts": {
+    "27": 2,
+    "28": 8
+  },
+  "states": [
+    {
+      "q": 27,
+      "state_id": "Q27-01",
+      "canonical_key": {
+        "hub_weights": [
+          9,
+          9,
+          9
+        ],
+        "rows": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "q": 27,
+      "state_id": "Q27-02",
+      "canonical_key": {
+        "hub_weights": [
+          9,
+          9,
+          9
+        ],
+        "rows": [
+          [
+            0,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "q": 28,
+      "state_id": "Q28-01",
+      "canonical_key": {
+        "hub_weights": [
+          9,
+          9,
+          9
+        ],
+        "rows": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "q": 28,
+      "state_id": "Q28-02",
+      "canonical_key": {
+        "hub_weights": [
+          9,
+          9,
+          9
+        ],
+        "rows": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "q": 28,
+      "state_id": "Q28-03",
+      "canonical_key": {
+        "hub_weights": [
+          9,
+          9,
+          9
+        ],
+        "rows": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "q": 28,
+      "state_id": "Q28-04",
+      "canonical_key": {
+        "hub_weights": [
+          9,
+          9,
+          9
+        ],
+        "rows": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "q": 28,
+      "state_id": "Q28-05",
+      "canonical_key": {
+        "hub_weights": [
+          9,
+          9,
+          9
+        ],
+        "rows": [
+          [
+            0,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "q": 28,
+      "state_id": "Q28-06",
+      "canonical_key": {
+        "hub_weights": [
+          9,
+          9,
+          9
+        ],
+        "rows": [
+          [
+            0,
+            1
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "q": 28,
+      "state_id": "Q28-07",
+      "canonical_key": {
+        "hub_weights": [
+          9,
+          9,
+          10
+        ],
+        "rows": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "q": 28,
+      "state_id": "Q28-08",
+      "canonical_key": {
+        "hub_weights": [
+          9,
+          9,
+          10
+        ],
+        "rows": [
+          [
+            0,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            0
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,353 @@
+{
+  "schema": "eg617.t61-h-row-ledger.v1",
+  "description": "Exact standalone copy of FRONTEND_REPLAY.json#/T61_rows: one scalar recurrence row for each h=0,...,60. These are not 61 graph adjacency lists or 61 full graph witnesses.",
+  "source": {
+    "path": "frontend/FRONTEND_REPLAY.json",
+    "git_blob_sha1": "36c0d50ae20feb1ca4ab878cc256d700df77e8c5",
+    "json_pointer": "/T61_rows"
+  },
+  "rows": [
+    {
+      "h": 0,
+      "excluded": "empty core"
+    },
+    {
+      "h": 1,
+      "excluded": "empty core"
+    },
+    {
+      "h": 2,
+      "excluded": "empty core"
+    },
+    {
+      "h": 3,
+      "excluded": "empty core"
+    },
+    {
+      "h": 4,
+      "excluded": "empty core"
+    },
+    {
+      "h": 5,
+      "excluded": "empty core"
+    },
+    {
+      "h": 6,
+      "excluded": "empty core"
+    },
+    {
+      "h": 7,
+      "excluded": "empty core"
+    },
+    {
+      "h": 8,
+      "excluded": "empty core"
+    },
+    {
+      "h": 9,
+      "excluded": "empty core"
+    },
+    {
+      "h": 10,
+      "excluded": "empty core"
+    },
+    {
+      "h": 11,
+      "excluded": "empty core"
+    },
+    {
+      "h": 12,
+      "core": 308,
+      "q_floor": 20,
+      "row_floor": 406
+    },
+    {
+      "h": 13,
+      "core": 284,
+      "q_floor": 22,
+      "row_floor": 397
+    },
+    {
+      "h": 14,
+      "core": 262,
+      "q_floor": 33,
+      "row_floor": 427
+    },
+    {
+      "h": 15,
+      "core": 241,
+      "q_floor": 44,
+      "row_floor": 458
+    },
+    {
+      "h": 16,
+      "core": 220,
+      "q_floor": 55,
+      "row_floor": 488
+    },
+    {
+      "h": 17,
+      "core": 210,
+      "q_floor": 66,
+      "row_floor": 519
+    },
+    {
+      "h": 18,
+      "core": 200,
+      "q_floor": 77,
+      "row_floor": 549
+    },
+    {
+      "h": 19,
+      "core": 190,
+      "q_floor": 88,
+      "row_floor": 580
+    },
+    {
+      "h": 20,
+      "core": 180,
+      "q_floor": 99,
+      "row_floor": 610
+    },
+    {
+      "h": 21,
+      "core": 171,
+      "q_floor": 110,
+      "row_floor": 641
+    },
+    {
+      "h": 22,
+      "core": 162,
+      "q_floor": 121,
+      "row_floor": 671
+    },
+    {
+      "h": 23,
+      "core": 153,
+      "q_floor": 132,
+      "row_floor": 702
+    },
+    {
+      "h": 24,
+      "core": 144,
+      "q_floor": 154,
+      "row_floor": 732
+    },
+    {
+      "h": 25,
+      "core": 136,
+      "q_floor": 176,
+      "row_floor": 763
+    },
+    {
+      "h": 26,
+      "core": 128,
+      "q_floor": 198,
+      "row_floor": 793
+    },
+    {
+      "h": 27,
+      "core": 120,
+      "q_floor": 220,
+      "row_floor": 824
+    },
+    {
+      "h": 28,
+      "core": 112,
+      "q_floor": 242,
+      "row_floor": 854
+    },
+    {
+      "h": 29,
+      "core": 105,
+      "q_floor": 264,
+      "row_floor": 885
+    },
+    {
+      "h": 30,
+      "core": 98,
+      "q_floor": 286,
+      "row_floor": 915
+    },
+    {
+      "h": 31,
+      "core": 91,
+      "q_floor": 308,
+      "row_floor": 946
+    },
+    {
+      "h": 32,
+      "core": 84,
+      "q_floor": 330,
+      "row_floor": 976
+    },
+    {
+      "h": 33,
+      "core": 78,
+      "q_floor": 352,
+      "row_floor": 1007
+    },
+    {
+      "h": 34,
+      "core": 72,
+      "q_floor": 374,
+      "row_floor": 1041
+    },
+    {
+      "h": 35,
+      "core": 66,
+      "q_floor": 396,
+      "row_floor": 1092
+    },
+    {
+      "h": 36,
+      "core": 60,
+      "q_floor": 429,
+      "row_floor": 1155
+    },
+    {
+      "h": 37,
+      "core": 55,
+      "q_floor": 462,
+      "row_floor": 1220
+    },
+    {
+      "h": 38,
+      "core": 50,
+      "q_floor": 495,
+      "row_floor": 1286
+    },
+    {
+      "h": 39,
+      "core": 45,
+      "q_floor": 528,
+      "row_floor": 1353
+    },
+    {
+      "h": 40,
+      "core": 40,
+      "q_floor": 561,
+      "row_floor": 1421
+    },
+    {
+      "h": 41,
+      "core": 36,
+      "q_floor": 594,
+      "row_floor": 1491
+    },
+    {
+      "h": 42,
+      "core": 32,
+      "q_floor": 627,
+      "row_floor": 1562
+    },
+    {
+      "h": 43,
+      "core": 28,
+      "q_floor": 660,
+      "row_floor": 1634
+    },
+    {
+      "h": 44,
+      "core": 24,
+      "q_floor": 693,
+      "row_floor": 1707
+    },
+    {
+      "h": 45,
+      "core": 21,
+      "q_floor": 726,
+      "row_floor": 1782
+    },
+    {
+      "h": 46,
+      "core": 18,
+      "q_floor": 759,
+      "row_floor": 1858
+    },
+    {
+      "h": 47,
+      "core": 15,
+      "q_floor": 792,
+      "row_floor": 1935
+    },
+    {
+      "h": 48,
+      "core": 12,
+      "q_floor": 836,
+      "row_floor": 2024
+    },
+    {
+      "h": 49,
+      "core": 10,
+      "q_floor": 880,
+      "row_floor": 2115
+    },
+    {
+      "h": 50,
+      "core": 8,
+      "q_floor": 924,
+      "row_floor": 2207
+    },
+    {
+      "h": 51,
+      "core": 6,
+      "q_floor": 968,
+      "row_floor": 2300
+    },
+    {
+      "h": 52,
+      "core": 4,
+      "q_floor": 1012,
+      "row_floor": 2394
+    },
+    {
+      "h": 53,
+      "core": 3,
+      "q_floor": 1056,
+      "row_floor": 2490
+    },
+    {
+      "h": 54,
+      "core": 2,
+      "q_floor": 1100,
+      "row_floor": 2587
+    },
+    {
+      "h": 55,
+      "core": 1,
+      "q_floor": 1144,
+      "row_floor": 2685
+    },
+    {
+      "h": 56,
+      "core": 0,
+      "q_floor": 1188,
+      "row_floor": 2784
+    },
+    {
+      "h": 57,
+      "core": 0,
+      "q_floor": 1232,
+      "row_floor": 2885
+    },
+    {
+      "h": 58,
+      "core": 0,
+      "q_floor": 1276,
+      "row_floor": 2987
+    },
+    {
+      "h": 59,
+      "core": 0,
+      "q_floor": 1320,
+      "row_floor": 3090
+    },
+    {
+      "h": 60,
+      "core": 0,
+      "q_floor": 1375,
+      "row_floor": 3205
+    }
+  ]
+}
