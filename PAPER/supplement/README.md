@@ -15,7 +15,7 @@ This directory is a source-preserving bundle of selected proof and verification 
 - `low/`: low-edge verifier and its result, plus the minimum-degree gate and analytic low-edge proof sources.
 - `equality286/`: 286-edge equality verifier, result, checksum file and analytic classification.
 - `h12/`: the 48-vertex floor and T61 degree-12 terminal closure.
-- `cover/`: COVER verifier, result, case matrix, analytic theorem, dependency audit, independent Q30 referee report, and the standalone q27/q28 canonical necessary-state keys.
+- `cover/`: COVER verifier, result, case matrix, analytic theorem, dependency audit, independent Q30 referee report, q27/q28 canonical necessary-state keys, and the standalone B1 two-base-point degree correction.
 - `root/`: integrated proof, dependency DAG, source manifest, checksums and root verifier. Its `frozen/` subdirectory mirrors all 26 source-manifest entries at the exact relative paths expected by the verifier.
 
 ## Reproduction boundary
