@@ -188,11 +188,13 @@ The set $K=\{p\}\cup Y$ is a target $K_{11}$ disjoint from $D$. If there are $a\
 \]
 edges, a contradiction. This excludes $Q=27$ and the six nonexceptional $Q=28$ states.
 
-For either of the two exceptional $B_1$ states, $K=\{p\}\cup Y$ is a regular target $K_{11}$. Each $v\in K$ has an outside triple $T_v$. For active lows, \cref{eq:repivot-q} gives
+For either of the two exceptional $B_1$ states, $K=\{p\}\cup Y$ is a regular target $K_{11}$. Each $v\in K$ has an outside triple $T_v$. An inactive low is a true twin of $p$, so its triple is $T_p$. For an active low, the ten other shell vertices are precisely $K\setminus\{v\}$ and are all regular. Thus if $q_v=27$ its repivot shell is one of the two q27 states; if $q_v=28$, the six q28 states with a decorated low row are excluded, leaving one of the two B1 states. In either case the low rows are full or empty, so every other point of $K$ is adjacent to all or none of $T_v$.
+
+For active lows, \cref{eq:repivot-q} gives
 \[
-q_v=27+h_{11}+\kappa+b\leq28.
+q_v=27+h_{11}+\kappa+b\leq28,
 \]
-If $\kappa=1$, then $h_{11}=0$ and all three row points have degree $11$ in the old core, contradicting the deficient-clique lemma; larger $\kappa$ is impossible. Thus each $T_v$ is a triangle. Every other point of $K$ is adjacent to all or none of $T_v$, so two such triples are equal or disjoint. Their multiplicities are $2$ or $3$, and since they sum to eleven, the number $r$ of distinct triples satisfies $4\leq r\leq5$.
+because $\rho=0$. If $\kappa=1$, then $h_{11}=b=0$ and all three row points have degree $11$ in the old core, contradicting the deficient-clique lemma; larger $\kappa$ is impossible. Thus each $T_v$ is a triangle. The all-or-none property shows that two such triples are equal or disjoint. Their multiplicities are $2$ or $3$, and since they sum to eleven, the number $r$ of distinct triples satisfies $4\leq r\leq5.
 
 Not every point in every triple has the same degree: the exceptional hub of weight $10$ in $T_p$ can have degree $c+12$. What is needed, and what the shell identities give, is that **each triple of multiplicity $c$ contains at least two base points of degree $c+11$**. For $T_p$, the two hubs of weight $9$ have missing degree $k$ and hence degree $13+(9-k)=c+11$, where $c=11-k$; the remaining hub has degree $c+12$.
 

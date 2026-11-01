@@ -31,6 +31,8 @@ degree \(k\), and its weight is \(9,9,\) or \(10\). Since
 while the weight-10 hub has degree \(c+12\). Thus \(T_p\) has two base
 points of degree \(c+11\).
 
+An inactive low is a true twin of \(p\), so its outside triple is \(T_p\). For an active low \(v\), the ten other shell vertices are exactly \(K\setminus\{v\}\) and are all regular. Thus its repivot shell is either one of the two q27 states, or (if its charge is 28) one of the two B1 states: the six q28 states with a decorated low row are excluded by regularity. Both allowed types have only full or empty low rows, proving the all-or-none rule for every active triple.
+
 Now take an active low vertex \(v\in K\), and let \(D_v=T_v\) be its
 three-point row in the old 47-core \(C\). In the B1 state, the other ten
 shell vertices outside \(N_M(v)\) are regular and undecorated, so
