@@ -18,19 +18,12 @@ Put
 \epsilon(v)=d_H(v)-12\geq0,\qquad
 T=\sum_{v\in V(H)}\epsilon(v)=2e(H)-564\leq6.
 \]
-Let $q$ be the number of vertices with positive excess. Then $0\leq q\leq6$. If the other $47-q$ degree-$12$ vertices contained no independent four-set, they would span at least $\tau_3(47-q)$ edges. The edges incident with the $q$ exceptional vertices number at least
+Let $X$ be the set of degree-$12$ vertices. Since $T\leq6$ and every positive excess is an integer, $|X|\geq41$. The induced graph $H[X]$ has maximum degree at most $12$ and contains no $K_{13}$, since $\omega(H)\leq11$. By Brooks' theorem \citep{Brooks1941}, every connected component of $H[X]$ is $12$-colorable: components of maximum degree at most $11$ are greedily $12$-colorable, while a component of maximum degree $12$ is neither complete nor an odd cycle and hence has chromatic number at most $12$. Reusing one palette across all components gives a proper $12$-coloring of $H[X]$. One color class has size at least
 \[
-12q+T-\binom q2.
+\left\lceil\frac{|X|}{12}\right\rceil\geq
+\left\lceil\frac{41}{12}\right\rceil=4.
 \]
-Consequently
-\[
-e(H)\geq\tau_3(47-q)+12q-\binom q2.
-\]
-For $q=0,1,\ldots,6$, the right-hand side is respectively
-\[
-345,\ 342,\ 338,\ 334,\ 329,\ 323,\ 317,
-\]
-all larger than $285$. Thus there are four pairwise nonadjacent degree-$12$ vertices
+Thus there are four pairwise nonadjacent degree-$12$ vertices
 \[
 I=\{s_1,s_2,s_3,s_4\}.
 \]
