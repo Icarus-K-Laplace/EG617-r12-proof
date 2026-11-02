@@ -69,3 +69,8 @@ The earlier note claiming an E286 Section2 minimum of302 was based on accidental
 All 26 entries of the integration `SOURCE_MANIFEST.json` match both (i) the destination Git blobs in the frozen integration snapshot and (ii) the source Git blobs at their declared commits. Zero mismatches. See `SOURCE_MANIFEST_AUDIT.json`.
 
 A full clean-room run of the root `INDEPENDENT_VERIFIER.py` and independent recomputation of the package SHA256SUMS remain uncompleted in this audit session; the recurrence has been separately reimplemented and compared exactly.
+
+
+## Dependency closure update (2026-11-02)
+
+The corrected 28-node proposal is acyclic, every parent reference resolves, and a traversal from `K145_EMPTY` reaches all28 nodes. Q32/Q33 are intentionally omitted because LOW285 supplies the needed floor; GEN49 is intentionally outside the contextual K145 proof. The elementary shortest-odd-cycle/Mantel route supplies the 25-point bound for LOW285, so SECOND_TURAN is needed only for CONTEXTUAL49_EMPTY. See `DAG_COMPLETENESS_AUDIT.md`.
