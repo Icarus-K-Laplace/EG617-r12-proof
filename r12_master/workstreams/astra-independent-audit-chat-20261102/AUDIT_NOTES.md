@@ -326,3 +326,15 @@ The intended sharper expression is
 p_3(47-q)+13q-\binom q2,
 ]
 because q counts positive-excess vertices, each of which has integer degree at least13. This sharper expression has minimum310, attained at q=8. The source can be corrected either by changing (12q) to (13q), preserving the stated minimum310, or by retaining the weaker (12q) and changing the parenthetical minimum to302. The former is the natural repair.
+
+
+### h13 q29/q30 independent audit (2026-11-02)
+
+The h13 q29/q30 proof received a dedicated adversarial reread. No concrete counterexample or fatal inequality defect was found. The compressed q30 cases were expanded in `H13_Q29_Q30_INDEPENDENT_AUDIT.md`:
+
+- **d=10 branch:** formula (3) at beta12 and maximality force equality; formula (4) then makes the ten inserted vertices a clique in the new core, so each hub weight is at least3. Their sum is30, hence all are3. Every active point on the opposite three-side must have degree10 by EDGE13; z≥22 forces all three active. This is exactly K3,10.
+- **|X|=2 branch:** the four-set is K4 minus an edge, the other nine points are independent regular. Since the two non-hub weights are <11, an active outside point cannot meet them; degree1 also fails EDGE13. Thus every active outside point meets both weight-11 hubs, and z=5+2k≥22 forces k=9. The hubs then have M-degree11 and zero decoration; the other two points have internal degree3 and decorations summing7, both positive.
+- **Family I:** for a row class of size c, a point x in its triangle has degree c+12. In a core at another row class its degree is ((c+12)-c-e(x,T_j)=12-e(x,T_j)), so minimum degree12 forces distinct row triangles anticomplete. This is the correct pointwise derivation; an earlier chat note that treated the (c)-term as missing was withdrawn.
+- **Family II:** the ten pair rows are disjoint; the core-degree identity (13-1-e(x,T_j)\ge12) forces pairwise anticompleteness and an independent transversal of size10.
+
+The standalone arithmetic checker `RECHECK_H13_Q30_ARITHMETIC.py` was executed independently and passed. It checks six K4-minus-edge placements, the d=10 and |X|=2 integer consequences, all row-class multiplicity partitions, all E407/E408 Family I excess cases, and the Family II transversal count. It does not replace the analytic graph lemmas.
