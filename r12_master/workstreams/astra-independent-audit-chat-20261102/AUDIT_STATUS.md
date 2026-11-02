@@ -81,3 +81,8 @@ The corrected 28-node proposal is acyclic, every parent reference resolves, and 
 Independently recomputed SHA-256 from base64-decoded GitHub file bytes for all47 entries in the frozen integration root `SHA256SUMS.txt`: 47/47 exact matches, zero mismatches. The standard `abc` SHA-256 test vector passed. The 26-entry top-level `SOURCE_MANIFEST.json` source/destination Git blob audit also remains 26/26. See `PACKAGE_HASH_AND_VERIFIER_SCOPE_AUDIT.md`.
 
 Important execution boundary: the root `INDEPENDENT_VERIFIER.py` has not been run from a clean local checkout in this session. Its saved `VERIFICATION_RESULT.json` is a prior output. Code inspection also confirms that the root verifier checks retained COVER states directly but does not rerun `reconstruct_bipartite`; it does not execute the E286 verifier. Nested COVER/E286 checksum manifests reference source-workstream files not vendored into the frozen integration directory (4/11 COVER entries and 11/14 E286 entries are absent there). These are packaging/scope limitations, not failures of the 47-entry root checksum list.
+
+
+### Nested source-workstream checksum update
+
+The two nested manifests were also verified at their original source commits: COVER 11/11 at `531e41c79e08dd2bb3892ca9ba8a491a56678565`, E286 14/14 at `c3d07b2ca5912b1b0c1c6998303c19c3c2911340`. Thus the unvendored nested files are present and checksum-authenticated in their original source workstreams; only the integration snapshot's selective vendoring is incomplete. Details are in `PACKAGE_HASH_AND_VERIFIER_SCOPE_AUDIT.md`.
