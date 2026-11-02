@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "integration_commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+  "independent_support_orbits": {
+    "h3": 2,
+    "h4": 3,
+    "h5": 5,
+    "total": 10,
+    "clique_size_patterns": {
+      "h3": [
+        "11,11,11,11"
+      ],
+      "h4": [
+        "10,11,11,11"
+      ],
+      "h5": [
+        "9,11,11,11",
+        "10,10,11,11"
+      ]
+    }
+  },
+  "scalar_minima_on_integer_domain_1_to_11": {
+    "f11": {
+      "minimum": 6,
+      "argmin": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    "f10_11": {
+      "minimum": 4,
+      "argmin": [
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    "f9_11": {
+      "minimum": 2,
+      "argmin": [
+        [
+          2,
+          4
+        ]
+      ]
+    },
+    "f10_10": {
+      "minimum": 2,
+      "argmin": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    "star_three_pairs": {
+      "minimum": 6,
+      "argmin": "a=2..8,b=1"
+    },
+    "two_mixed_pairs_K9": {
+      "minimum": 5,
+      "argmin": "a=2..7,b=1"
+    },
+    "mixed_K10_K11": {
+      "minimum": 5,
+      "argmin": [
+        [
+          2,
+          2
+        ]
+      ]
+    }
+  },
+  "scope": "Checks the finite support-orbit enumeration and displayed scalar inequalities only; does not verify the analytic blocker/overlap accounting or prove E286."
+}
