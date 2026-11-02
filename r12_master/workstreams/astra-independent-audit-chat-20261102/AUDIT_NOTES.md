@@ -338,3 +338,10 @@ The h13 q29/q30 proof received a dedicated adversarial reread. No concrete count
 - **Family II:** the ten pair rows are disjoint; the core-degree identity (13-1-e(x,T_j)\ge12) forces pairwise anticompleteness and an independent transversal of size10.
 
 The standalone arithmetic checker `RECHECK_H13_Q30_ARITHMETIC.py` was executed independently and passed. It checks six K4-minus-edge placements, the d=10 and |X|=2 integer consequences, all row-class multiplicity partitions, all E407/E408 Family I excess cases, and the Family II transversal count. It does not replace the analytic graph lemmas.
+
+
+### Third independent frontend recurrence replay (2026-11-02)
+
+A third integer implementation was written independently of the two frozen recurrence transcriptions. It reconstructs all 1,752 `(a,n)` nodes, all 13 maximum-order entries, all 144 outer `(d,j)` stops, and all 61 T61 minimum-degree rows. Exact comparison against the frozen `FRONTEND_REPLAY.json` has zero mismatches. The unique survivor remains `(d,j,a,n)=(11,6,5,61)), with budget408 and lower bound397. The h=12,13,14 terminal rows are exactly (core floors308,284,262; q floors20,22,33; total floors406,397,427). The runnable independent transcription and receipt are `RECHECK_FRONTEND_THIRD.js` and `FRONTEND_THIRD_REPLAY_RESULT.json`; the full analytic scope/limitations are in `FRONTEND_RECURRENCE_INDEPENDENT_AUDIT.md`.
+
+A small proof-text overstatement was found in COVER Section4's h=13 matching lemma: a König cover containing one matched-shell endpoint and one unmatched point supports at most13 cross edges in general, not12 (the count is12 only if those two cover vertices are adjacent). This does not affect the contradiction: even the corrected upper bound gives at most13+6=19<22 after adding all six edges on the four matched endpoints. The remaining matching argument is unchanged. This correction is recorded in the dedicated frontend audit; the frozen integration theorem was not edited.
