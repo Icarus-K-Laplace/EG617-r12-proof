@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "integration_commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+  "M2_type_quotient": {
+    "compatible_nonempty_type_set_pairs": 20,
+    "all_pairs_have_side_sizes_1_by_1_or_1_by_2": true,
+    "incompatible_missing_cross_edge_cases": 10
+  },
+  "M3_neighborhood_costs": {
+    "family_representatives": 61,
+    "valid_representatives": 49,
+    "discarded_alpha12": 12,
+    "maximal_independent_sets_checked": 263,
+    "maximum_minimum_cost": 6,
+    "forced_14_vertex_edges": 72
+  },
+  "scope": "Independent finite recheck of type-set enumeration and explicit 23-vertex blowup/edge-deletion representatives; not a proof of the analytic M2 classification or M4 argument."
+}
