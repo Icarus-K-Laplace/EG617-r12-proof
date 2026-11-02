@@ -140,3 +140,14 @@ The public Erdős Problems page states Problem 617 for all (r\ge3), with (K_{r^2
 ## Current audit posture
 
 The finite q27/q28 shell enumeration, contextual recurrence arithmetic, and E286 support-orbit/scalar minima have now been independently reproduced in this audit session. The remaining high-value adversarial work is the analytic blocker/overlap proof in E286 and the complete h13 q30 Family I/II elimination. The proof DAG also needs an explicit theorem-ledger crosswalk before its acyclicity result can be treated as dependency-closure evidence.
+
+
+### Q32 285-edge support recheck
+
+The original Q32 theorem's finite support reduction was also re-enumerated. The (h=3,4,5) support-orbit counts are (2,3,5). For (h=5), after the degree pattern (3,3,2,2) is aligned with the canonical support labels and the U4 exclusion of a K11--K11 support edge is applied, exactly two templates remain: P and D. The scalar minima are U4 = 6, U5 = 4, and the D mixed-edge bound = 5. The pointwise D accounting inequality was checked on 1,000 K10-vertex configurations and 100 K11-vertex configurations, with zero violations. Results and a standalone checker are in `RECHECK_Q32_SUPPORTS.json` and `RECHECK_Q32_SUPPORTS.py`.
+
+A label-alignment bug was found in the first draft of the audit recheck scripts: the seed-degree vector was calculated before canonical relabeling and then attached to the canonical support. This did not change the orbit counts or the multiset of clique-size patterns, but it could misidentify which canonical labels were K10 versus K11. Both scripts were corrected to recompute seed degrees from the canonical support before any label-sensitive filtering. The corrected Q32 result now gives exactly the two expected P/D templates. This was an audit-script issue, not a defect found in the frozen theorem.
+
+### Additional external-dependency ambiguity
+
+The frozen Q32 theorem states its 25-point common-neighborhood bound relative to Kang–Pikhurko, Theorem 1 at (n=25,r=2). The vendored `COMMON_NEIGHBORHOOD_CAPACITY.md` also supplies a self-contained shortest-odd-cycle plus Mantel derivation of the same 145-edge bound. The root dependency DAG should explicitly say which route is used for `ABSTRACT_LOW285`: add a `SECOND_TURAN` edge if the published theorem is invoked, or cite the elementary derivation as the actual dependency if it is used instead. The current DAG includes `SECOND_TURAN` for the contextual (R(4,49)) proof but does not map this separate Q32 use.
