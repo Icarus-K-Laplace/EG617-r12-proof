@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "integration_commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+  "independent_integer_implementations": 2,
+  "nontrivial_nodes_checked": 1752,
+  "node_mismatches": 0,
+  "maximum_orders": {
+    "0": 0,
+    "1": 11,
+    "2": 23,
+    "3": 36,
+    "4": 48,
+    "5": 63,
+    "6": 80,
+    "7": 99,
+    "8": 120,
+    "9": 142,
+    "10": 145,
+    "11": 145,
+    "12": 145
+  },
+  "outer_stop_combinations": 144,
+  "survivors": [
+    {
+      "d": 11,
+      "j": 6,
+      "a": 5,
+      "n": 61,
+      "budget": 408,
+      "bound": 397
+    }
+  ],
+  "terminal_budget_compatible_rows": [
+    {
+      "minimum_degree": 12,
+      "core_floor": 308,
+      "charge_floor": 20,
+      "row_floor": 406
+    },
+    {
+      "minimum_degree": 13,
+      "core_floor": 284,
+      "charge_floor": 22,
+      "row_floor": 397
+    }
+  ],
+  "scope": "Replays the finite integer recurrence and outer-stop arithmetic only. It does not prove the analytic row inequalities or graph-theoretic lemmas."
+}
