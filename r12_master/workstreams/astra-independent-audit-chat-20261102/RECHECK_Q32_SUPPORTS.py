@@ -22,10 +22,11 @@ def orbit_table():
         for multiset in combinations_with_replacement(SUPPORTS,h):
             if sum(map(len,multiset)) != h+5:
                 continue
-            d=[sum(i in s for s in multiset) for i in range(4)]
+            c=canonical(multiset)
+            d=[sum(i in edge for edge in c) for i in range(4)]
             if min(d)<2:
                 continue
-            reps[canonical(multiset)]=d
+            reps[c]=d
         table[str(h)]=[
             {"supports":[list(s) for s in orbit],"seed_degrees":reps[orbit]}
             for orbit in sorted(reps)
