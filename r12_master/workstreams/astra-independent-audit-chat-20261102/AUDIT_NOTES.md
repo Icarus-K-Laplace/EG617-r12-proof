@@ -79,3 +79,19 @@ Accordingly, the accurate status is: **strong, internally coherent proof package
 1. Add the two clarifying sentences in a new proof revision, leaving the frozen snapshot immutable.
 2. Reproduce the complete root verifier and record exact environment/output hashes.
 3. Continue adversarial review of every dependency edge in the 25-node DAG before any global-root promotion.
+
+
+## External theorem source checks
+
+The two classical external inputs used in the audited chain were checked against accessible source records:
+
+- Kang–Pikhurko, *Maximum K_{r+1}-free graphs which are not r-partite*, Matematychni Studii 24 (2005), 12–20, Theorem 1. For n=49 and r=12, the required regime n≥r+3 and r≤(n−1)/2 holds. The exact bound is
+  \[
+  e(L)\le t_{12}(49)-\lfloor49/12\rfloor+1
+       =1100-4+1=1097.
+  \]
+  This gives at least 79 edges in the complementary colour graph on the 49-set. The journal's article record and the scanned journal PDF identify the paper and theorem. <https://matstud.org.ua/texts/2005/24_1/24_1_012_020.html>
+
+- Andrásfai–Erdős–Sós, *On the connection between chromatic number, maximal clique and minimal degree of a graph*, Discrete Mathematics 8 (1974), 205–218, Theorem 1.1. At r=3, the strict threshold is \(5n/8\). For n=35, \(22>175/8=21.875\), so a 22-regular K4-free complement is 3-partite, exactly as used in the 211-edge floor. <https://doi.org/10.1016/0012-365X(74)90133-2>
+
+These checks validate the cited theorem statements and numerical hypotheses; they do not constitute an independent proof of either classical theorem.
