@@ -1,0 +1,112 @@
+{
+  "status": "PASS",
+  "integration_commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+  "support_orbits": {
+    "h3": 2,
+    "h4": 3,
+    "h5": 5
+  },
+  "h5_after_excluding_K11_K11_support_edge": {
+    "survivor_count": 2,
+    "survivors": [
+      {
+        "name": "P",
+        "canonical_supports": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "seed_degrees": [
+          3,
+          2,
+          3,
+          2
+        ]
+      },
+      {
+        "name": "D",
+        "canonical_supports": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "seed_degrees": [
+          3,
+          3,
+          2,
+          2
+        ]
+      }
+    ]
+  },
+  "scalar_minima_on_1_to_11": {
+    "U4_two_K11_pair": {
+      "minimum": 6,
+      "argmin": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    "U5_mixed_K10_K11": {
+      "minimum": 4,
+      "argmin": [
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    "D_mixed_edge": {
+      "minimum": 5,
+      "argmin": [
+        [
+          2,
+          2
+        ]
+      ]
+    }
+  },
+  "pointwise_D_inequality_checks": {
+    "K10_vertices": 1000,
+    "K10_violations": 0,
+    "K11_vertices": 100,
+    "K11_violations": 0
+  },
+  "scope": "Finite support-orbit, scalar-minimum, and pointwise D-accounting arithmetic checks only; not a proof of the analytic clique blockers or the full Q32 theorem."
+}
