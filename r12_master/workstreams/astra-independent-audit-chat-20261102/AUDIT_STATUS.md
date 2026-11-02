@@ -43,3 +43,10 @@ The corrected proposal now has 28 nodes; a fresh DFS confirmed all parent refere
 ## E286 center-charge recheck (2026-11-02)
 
 The formula (4) charge for two mixed points sharing a K9 and two completing points, and the three-point K10-star center accounting, were expanded into explicit pointwise degree arguments in `E286_CENTER_CHARGE_AUDIT.md`. Both are additive under overlapping missing sets; no counterexample was found. Together with the D-support repair, this closes the specific local accounting questions raised in the prior audit pass at the analytic-reading level. It is not a Lean formalization.
+
+
+## h13 q29/q30 audit update (2026-11-02)
+
+The dedicated h13 audit found no concrete counterexample or fatal inequality defect in the q29/q30 chain. The d=10 branch and the |X|=2 K4-minus-edge branch have been expanded with explicit degree/charge derivations. The Family I row-triangle anticompleteness and Family II ten-pair independent-set arguments were rederived with all K-neighbor deletions counted. See `H13_Q29_Q30_INDEPENDENT_AUDIT.md`.
+
+The arithmetic checker `RECHECK_H13_Q30_ARITHMETIC.py` passed. It is a finite arithmetic/structure check, not a formal proof of the analytic lemmas. The frozen integration theorem was not edited; all audit artifacts remain on this isolated branch.
