@@ -254,3 +254,16 @@ Consequently the D-case split in Section 9 is exhaustive under (T\le8): each K10
 - one completer at each K10 gives at least (5+5=10).
 
 This supplies the missing zero-completer argument and closes the D support elimination at the level of the stated analytic inequalities. It is a hand-derived lemma recorded in this audit; it has not been Lean-formalized or machine-checked.
+
+
+### COVER beta=12 licensing cross-check
+
+I checked a possible circularity in Section 9: it applies formula (3) with (eta=12) to a regular shell vertex (y), even though the new repivoted core (C_y) has not yet been shown to have minimum degree 12. This is **not** a gap in that step. In the notation of Section 3,
+[
+q_y=d(\beta+1-d)+\rho+h_\beta+\kappa+b,
+\qquad
+h_\beta=\sum_{x\in D_y}(d_C(x)-\beta).
+]
+Only the old parent core (C) enters (h_\beta); the terms (ho,kappa,b) are nonnegative independently. Section 9 has already licensed (delta(C)\ge12) from (e(C)\le288), so formula (3) yields the required lower bound without assuming (delta(C_y)\ge12).
+
+The new core's minimum degree is needed only when formula (4) is used to assert (eta_{12}\ge0), for example in the equality arguments in Sections 10–12. There it is separately licensed: once (q_y\ge29) (K4 branch) or (q_y=30) (Family I/II), the new core has at most288 or exactly287 edges, and the Section 8/9 low-edge gate gives (delta(C_y)\ge12). Thus the apparent beta=12 circularity is resolved by the distinction between formulas (3) and (4).
