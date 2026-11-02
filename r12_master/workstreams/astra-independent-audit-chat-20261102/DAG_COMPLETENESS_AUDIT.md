@@ -81,3 +81,10 @@ It does not compare DAG nodes with the theorem ledger, test that every proof-tex
 ## Certification impact
 
 No mathematical counterexample has been found in the reviewed dependency chain. However, the claim that the 25-node DAG is a complete representation of every load-bearing theorem dependency is not yet supported by the ledger crosswalk. The K145 proof should be described as a strong proof package under active independent audit, not as having passed a complete dependency-closure certification.
+
+
+## Additional dependency ambiguity: Q32 and SECOND_TURAN
+
+The frozen `UNIVERSAL_Q32_THEOREM.md` and its audit describe the 25-point common-neighborhood bound as using Kang–Pikhurko Theorem 1 at (n=25,r=2). The integration package separately vendors `COMMON_NEIGHBORHOOD_CAPACITY.md`, which gives an elementary shortest-odd-cycle/Mantel proof of the same 145-edge bound without the general second-Turan theorem.
+
+The current DAG has `SECOND_TURAN -> CONTEXTUAL49_EMPTY`, but no `SECOND_TURAN -> ABSTRACT_LOW285` edge. This is correct only if the elementary 25-point derivation is the route actually used for the 285-edge theorem. If the published theorem is invoked, add the missing edge. The proof ledger/source map should identify the chosen route explicitly.
