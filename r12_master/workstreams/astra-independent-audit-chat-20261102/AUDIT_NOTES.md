@@ -220,3 +220,37 @@ This reading pass does not yet independently certify the transition “Every mix
 #### Section 11 same-K11-pair case split
 
 The five cases in Section 11 are exhaustive after choosing a common small side when one exists: ((2,2)); ((1,2)) with disjoint or nested missing sets; and ((1,1)) with distinct or identical missing vertices. The local degree lower bounds in each listed case are arithmetically consistent with the (Tle8) budget. No counterexample to that case split was found in this reading pass.
+
+
+### D-support zero-completer lemma — derived repair
+
+The D-case completion issue can be closed from the existing scalar blockers. Let (P=z_{01}), (A=z_{02}), (B=z_{03}), with (K_0,K_1) the K10s and (K_2,K_3) the K11s. Suppose neither (A) nor (B) completes (K_0). Write their missing sets as (A_2,A_3\subset K_0) and (B_2\subset K_2,B_3\subset K_3), all nonempty.
+
+**Claim:** under (T\le8), (P) must complete (K_0). If not, there are two cases.
+
+1. **P also misses K1.** Its two missing sets are positive, so the K10/K10 scalar blocker applies. The three point charges and the shared K0 charge add:
+   [
+   f_{10,10}(a_0,b_0)+f_{10,11}(a_2,b_2)+f_{10,11}(a_3,b_3)
+   \ge 2+4+4=10.
+   ]
+   To see the only possible overlap is harmless, for (x\in K_0) missing a subset (S\subset\{P,A,B\}), the three support adjacencies and the forced opposite missing sets give
+   [
+   \epsilon(x)\ge\max\left(0,\sum_{i\in S}(b_i-1)\right)
+   \ge\sum_{i\in S}\max(0,b_i-3).
+   ]
+   The other missing-set charges lie in the three distinct cliques K1,K2,K3, and the point charges are distinct.
+
+2. **P completes K1.** The two mixed scalar blockers add to at least (4+4=8). Their only shared charged vertices are in K0; if (x\in A_2\cap A_3), then
+   [
+   \epsilon(x)\ge\max(0,b_2+b_3-3)
+   \ge\max(0,b_2-3)+\max(0,b_3-3),
+   ]
+   so the charges still add. Equality at total budget 8 forces both blockers to attain their unique minima ((a_i,b_i)=(2,3)), with all excess concentrated on A and B and zero on every clique vertex. Since P completes K1 and has zero excess, its K0 missing set (A_0) has size at least 8 (it has at least (10+(10-|A_0|)) neighbors in K1 and K0). But then (A_2,A_3), each of size 2, must both avoid (A_0), or a vertex in their intersection with (A_0) has degree at least 13. The complement of (A_0) has size at most 2, so (A_2=A_3=K_0\setminus A_0). A vertex in this common 2-set then has internal degree 9, adjacency to P, and all three forced neighbors in each of B2 and B3, giving degree at least 16, contradiction.
+
+Thus, if neither mixed point completes K0, P necessarily completes K0; but then P is the additional K10-completing vertex required by (5), and the two mixed blockers each cost at least 5. Their K0 charges add by the same pointwise argument, giving (T\ge10), contradiction. Therefore at least one of A,B completes K0. By symmetry, at least one of z12,z13 completes K1.
+
+Consequently the D-case split in Section 9 is exhaustive under (T\le8): each K10 has at least one completing mixed point. If exactly one completes, the other mixed point has the additional completing vertex needed for (5), giving a 5-unit charge. If both complete, their two point excesses sum to at least 7 by the common-neighbor bound. If the two 5-unit charges from K0 and K1 share a K11 leaf, the shared-leaf inequality makes them additive. Hence:
+- one K10 with two completers gives at least (7+5=12) (or (7+7=14));
+- one completer at each K10 gives at least (5+5=10).
+
+This supplies the missing zero-completer argument and closes the D support elimination at the level of the stated analytic inequalities. It is a hand-derived lemma recorded in this audit; it has not been Lean-formalized or machine-checked.
