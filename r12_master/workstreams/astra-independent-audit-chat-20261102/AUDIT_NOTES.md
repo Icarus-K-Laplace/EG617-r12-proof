@@ -267,3 +267,21 @@ h_\beta=\sum_{x\in D_y}(d_C(x)-\beta).
 Only the old parent core (C) enters (h_\beta); the terms (ho,kappa,b) are nonnegative independently. Section 9 has already licensed (delta(C)\ge12) from (e(C)\le288), so formula (3) yields the required lower bound without assuming (delta(C_y)\ge12).
 
 The new core's minimum degree is needed only when formula (4) is used to assert (eta_{12}\ge0), for example in the equality arguments in Sections 10–12. There it is separately licensed: once (q_y\ge29) (K4 branch) or (q_y=30) (Family I/II), the new core has at most288 or exactly287 edges, and the Section 8/9 low-edge gate gives (delta(C_y)\ge12). Thus the apparent beta=12 circularity is resolved by the distinction between formulas (3) and (4).
+
+
+### h12 / R(4,48) terminal audit
+
+A dedicated independent reading pass was completed over `H12_AND_EXCEPTIONAL_PARENT_AUDIT.md`, `MINIMUM_DEGREE_GATE_SELF_CONTAINED.md`, and `FINAL_GLOBAL_PROOF.md`.
+
+No counterexample or load-bearing gap was found in the h12 chain. In particular:
+- the (R(4,48)) minimum-degree-12 gate is independent of an edge floor;
+- the q-shell charge identity is exact because (t_a=d_M(a)+g_a=d_C(a));
+- the pair and triangle row bounds are valid from (R(2,24)=\varnothing), the independence bound, and (omega\le11);
+- q=20 forces the (K_{2,r}\sqcup(10-r)K_1) shell, (6\le r\le10), with hub weights10 and low weights2;
+- repivoting at a low leaf inserts the two hubs into the new core, and each inserted hub has degree at most11, contradicting the independently established minimum degree12 of the relevant 35-core or 48-core;
+- the generic (R(4,48)) floor310 follows as (78+21+211=310), because q=20 is excluded;
+- the T61 h12 branch gives (E\ge78+20+310=408), and equality is excluded by the same inserted-center argument.
+
+The q=20 equality reduction was independently enumerated after the analytic C4/one-side-attachment reduction: 65,536 attachment patterns and 7,006,595 decoration allocations were checked; exactly163 labeled configurations survive, all in the stated normal form. See `H12_INDEPENDENT_AUDIT.md`, `RECHECK_H12_Q20.py`, and `RECHECK_H12_Q20.json`.
+
+The DAG audit found one further missing dependency: `Q20_CLASSIFICATION` must depend on `LOWER_ORDER`, because its pair-row inequality uses (R(2,24)=\varnothing). The corrected proposal JSON now records this dependency. This is a proof-documentation issue, not a mathematical defect in the h12 argument.
