@@ -25,10 +25,10 @@ def support_orbits():
         for multiset in combinations_with_replacement(SUPPORTS, h):
             if sum(map(len, multiset)) != h + 5:
                 continue
-            d = [sum(i in support for support in multiset) for i in range(4)]
+            c = canonical(multiset)
+            d = [sum(i in support for support in c) for i in range(4)]
             if min(d) < 2:
                 continue
-            c = canonical(multiset)
             reps[c] = {
                 "seed_multiplicities": d,
                 "clique_sizes": [13 - x for x in d],
