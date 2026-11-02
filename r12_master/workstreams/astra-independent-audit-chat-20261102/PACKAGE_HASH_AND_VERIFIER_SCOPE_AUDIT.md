@@ -22,6 +22,17 @@ The nested `frozen/eq286/SHA256SUMS.txt` has 14 entries. Three are vendored unde
 
 This is not a mismatch in the root package: every file that the root package itself lists passes its checksum. It does mean the nested manifests cannot be treated as evidence that the complete original COVER and E286 workstream directories are contained in the integration package. The 26-entry top-level `SOURCE_MANIFEST.json` authenticates the selected vendored source files by their Git blob identities at source and destination commits. The unvendored nested files need to be fetched from those source commits if a fully self-contained archival copy of those workstreams is desired.
 
+
+
+## 2a. Nested source-workstream checksums independently verified
+
+The nested manifests were then checked at their actual source commits, not merely inspected in the vendored copy:
+
+- COVER source workstream `r12_master/workstreams/astra-cover-independent-closure-chat-20261031/`, commit `531e41c79e08dd2bb3892ca9ba8a491a56678565`: **11/11** nested SHA-256 entries match.
+- E286 source workstream `r12_master/workstreams/astra-286-edge-parent-equality-chat-20261030/`, commit `c3d07b2ca5912b1b0c1c6998303c19c3c2911340`: **14/14** nested SHA-256 entries match.
+
+Thus the nested manifests are valid for their original source workstreams. The integration snapshot selectively vendors only 7/11 COVER files and 3/14 E286 files; the remaining source files are authenticated at their original source commits but are not physically included under the integration `frozen/` subdirectories. This is a selective-vendoring/self-containment distinction, not a checksum failure.
+
 ## 3. What the root verifier actually reruns
 
 Inspection of the exact frozen `INDEPENDENT_VERIFIER.py` shows:
