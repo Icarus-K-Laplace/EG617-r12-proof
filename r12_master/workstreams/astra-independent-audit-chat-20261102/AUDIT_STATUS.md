@@ -74,3 +74,10 @@ A full clean-room run of the root `INDEPENDENT_VERIFIER.py` and independent reco
 ## Dependency closure update (2026-11-02)
 
 The corrected 28-node proposal is acyclic, every parent reference resolves, and a traversal from `K145_EMPTY` reaches all28 nodes. Q32/Q33 are intentionally omitted because LOW285 supplies the needed floor; GEN49 is intentionally outside the contextual K145 proof. The elementary shortest-odd-cycle/Mantel route supplies the 25-point bound for LOW285, so SECOND_TURAN is needed only for CONTEXTUAL49_EMPTY. See `DAG_COMPLETENESS_AUDIT.md`.
+
+
+## Frozen package byte-integrity update (2026-11-02)
+
+Independently recomputed SHA-256 from base64-decoded GitHub file bytes for all47 entries in the frozen integration root `SHA256SUMS.txt`: 47/47 exact matches, zero mismatches. The standard `abc` SHA-256 test vector passed. The 26-entry top-level `SOURCE_MANIFEST.json` source/destination Git blob audit also remains 26/26. See `PACKAGE_HASH_AND_VERIFIER_SCOPE_AUDIT.md`.
+
+Important execution boundary: the root `INDEPENDENT_VERIFIER.py` has not been run from a clean local checkout in this session. Its saved `VERIFICATION_RESULT.json` is a prior output. Code inspection also confirms that the root verifier checks retained COVER states directly but does not rerun `reconstruct_bipartite`; it does not execute the E286 verifier. Nested COVER/E286 checksum manifests reference source-workstream files not vendored into the frozen integration directory (4/11 COVER entries and 11/14 E286 entries are absent there). These are packaging/scope limitations, not failures of the 47-entry root checksum list.
