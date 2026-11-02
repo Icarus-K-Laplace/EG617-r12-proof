@@ -126,3 +126,10 @@ Still open as certification tasks:
 - independent expert/referee review of the complete proof.
 
 This audit does not claim all-r Erdős 617, nor proof-assistant certification.
+
+
+## 7. Cross-reference correction in the 13-shell matching lemma
+
+The separate h=13 matching lemma used by the frontend recurrence (COVER Section4) says a mixed König cover, with one vertex in the four matched endpoints and one in the unmatched nine-set, supports at most12 cross edges. The general upper bound is13: the two cover vertices can have disjoint incident-edge sets of sizes9 and4 if they are not adjacent. If they are adjacent, the bound is12.
+
+This does not change the lemma. Adding all six possible edges among the four matched endpoints gives at most19<22, still contradicting z>=22. The other cover types remain bounded by8 (two unmatched points) or are the two matched endpoints, which is the only case that can support the required at least16 cross edges. The subsequent two-disjoint-cross-edges argument is unchanged. This is a harmless proof-text correction, not a counterexample to the h13 terminal theorem.
