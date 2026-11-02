@@ -98,3 +98,45 @@ These checks validate the cited theorem statements and numerical hypotheses; the
 
 
 The standalone reproduction script is committed at `r12_master/workstreams/astra-independent-audit-chat-20261102/RECHECK_Q27_Q28.py`. The audit-session implementation was executed independently and reproduced the counters above; the committed script exposes the same standard-library-only procedure for later reruns.
+
+
+## Additional root-level rechecks (2026-11-02)
+
+### Contextual recurrence
+
+Two separately transcribed integer implementations were executed in the audit session and compared over the full `a=0..12, n=0..145` table. There were **zero node mismatches**. The 1,752 nontrivial recurrence nodes agree; all 144 extraction-stop pairs were recomputed, with the unique survivor
+
+`(d,j,a,n)=(11,6,5,61)`, lower bound 397 and edge budget 408.
+
+The only terminal minimum-degree rows compatible with the budget are:
+- (h=12): core floor 308, charge floor 20, row floor 406;
+- (h=13): core floor 284, charge floor 22, row floor 397.
+
+The recorded result is `REPRODUCED_CHECKS.json`. This checks the finite recurrence arithmetic and the stated outer-stop computation; it does not independently prove the analytic inequalities used to define the recurrence.
+
+### E286 finite support and scalar checks
+
+A separate enumeration of all multisets of support subsets of the four independent degree-12 seeds, with (h=3,4,5), total support size (h+5), and every seed multiplicity at least two, recovers exactly **2, 3, 5** orbits, respectively. Their clique-size patterns match the ten orbits in the frozen E286 theorem.
+
+The displayed scalar functions in E286 Sections 3–4 were also exhaustively checked on the integer domain (1\le a,b\le11); their minima match the claimed lower bounds. The result is recorded in `RECHECK_E286_SUPPORTS.json`, with a standalone script in `RECHECK_E286_SUPPORTS.py`.
+
+These finite checks do not verify the analytic interpretation of each scalar as a lower bound on disjoint excess charges, nor the subsequent blocker/overlap accounting in Sections 5–12.
+
+### Proof-DAG completeness finding
+
+The 25-node `PROOF_DAG.json` is acyclic and all parent references resolve, but its node set does not explicitly include two load-bearing theorem nodes that are separate entries in `GLOBAL_THEOREM_LEDGER.md`:
+
+- `GATE47`: the (e\le286\Rightarrow\delta\ge12) gate needed for the 287-edge floor;
+- `D48`: the minimum-degree-12 theorem for every (R(4,48)) graph, used in both the 310-edge floor and the h12 inserted-center contradiction.
+
+The current DAG has no explicit `GATE47` dependency under `R447_FLOOR287`, and no `D48` dependency under `R448_FLOOR310` or `H12_EMPTY`. If these are intentionally packaged into broader nodes, the theorem ledger and DAG need an explicit mapping. `INDEPENDENT_VERIFIER.py::verify_dag` checks only acyclicity and parent-key existence, not completeness against the theorem ledger.
+
+This is a **dependency-documentation gap**, not a mathematical counterexample. The proposed correction is recorded in `DAG_COMPLETENESS_AUDIT.md`. The frozen Astra integration branch was not edited.
+
+### Public statement scope
+
+The public Erdős Problems page states Problem 617 for all (r\ge3), with (K_{r^2+1}) and (r+1)-sets, and currently labels the overall conjecture open. The present integration theorem, if fully validated, is only the fixed (r=12) case (K_{145}); it does not settle the all-(r) conjecture. The public status is therefore not contradicted by a fixed-parameter claim. <https://www.erdosproblems.com/617>
+
+## Current audit posture
+
+The finite q27/q28 shell enumeration, contextual recurrence arithmetic, and E286 support-orbit/scalar minima have now been independently reproduced in this audit session. The remaining high-value adversarial work is the analytic blocker/overlap proof in E286 and the complete h13 q30 Family I/II elimination. The proof DAG also needs an explicit theorem-ledger crosswalk before its acyclicity result can be treated as dependency-closure evidence.
