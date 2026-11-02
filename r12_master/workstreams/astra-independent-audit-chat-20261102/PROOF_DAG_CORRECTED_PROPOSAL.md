@@ -37,3 +37,8 @@ The corrected proposal therefore introduces a packaged elementary node `SHELL_MA
 - `RECURRENCE` to `SHELL_MATCHING_BOUNDS`.
 
 The proposal now has 28 nodes. This is a dependency-documentation correction; the matching arguments themselves were re-read and no counterexample was found.
+
+
+## h13 q30 dependency cross-check
+
+The q30 case split uses the internal (e(C)\le288\Rightarrow\delta(C)\ge12) gate and EDGE13 from COVER Section8. These are proved using LOWER_ORDER and CORE211 (the AES-derived 211-edge floor). The proposed DAG packages these internal steps inside `COVER_407_408`, whose parents are `COVER_Q29_GENERAL` and `CORE211`; the transitive ancestor set therefore contains LOWER_ORDER, the cap/Turán layer, shell matching bounds, and AES. No new theorem-ledger node is necessary unless the authors want to promote CORE288_GATE as a separate reusable theorem.
