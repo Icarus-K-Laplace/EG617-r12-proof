@@ -86,3 +86,10 @@ Important execution boundary: the root `INDEPENDENT_VERIFIER.py` has not been ru
 ### Nested source-workstream checksum update
 
 The two nested manifests were also verified at their original source commits: COVER 11/11 at `531e41c79e08dd2bb3892ca9ba8a491a56678565`, E286 14/14 at `c3d07b2ca5912b1b0c1c6998303c19c3c2911340`. Thus the unvendored nested files are present and checksum-authenticated in their original source workstreams; only the integration snapshot's selective vendoring is incomplete. Details are in `PACKAGE_HASH_AND_VERIFIER_SCOPE_AUDIT.md`.
+
+
+## Finite verifier re-execution update (2026-11-02)
+
+The exact byte-matched low-edge verifier source was executed in Python3.13.5; its source SHA-256 matches the frozen root checksum, and every numerical result matches the saved Python3.12.14 output. An independent transcription of the COVER enumerator reproduced all 19,448 row-count vectors for each q, exact counters (q27: 882/32,665/2; q28: 891/51,118/16), the 2/8 canonical states, 81,920 subset checks, and 104 repivot identities. An independent E286 transcription reproduced the saved support/scalar/intersection results, including 139,921 tuples and minimum14. See `FINITE_VERIFIER_REEXECUTION_AUDIT.md`.
+
+The full root integration verifier is still not run from a clean local checkout. The new component-level executions do not change that limitation and do not constitute Lean certification or external peer review.
