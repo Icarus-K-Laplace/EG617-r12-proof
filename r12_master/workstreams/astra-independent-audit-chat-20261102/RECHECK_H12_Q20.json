@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "audited_snapshot": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+  "q20_equality_reduction": {
+    "all_attachment_patterns": 65536,
+    "patterns_meeting_edge_floor": 50643,
+    "decoration_allocations_checked": 7006595,
+    "feasible_labelled_configurations": 163,
+    "feasible_by_r": {
+      "6": 70,
+      "7": 56,
+      "8": 28,
+      "9": 8,
+      "10": 1
+    },
+    "all_feasible_are_K2r_plus_isolates": true,
+    "forced_shell_weights": [
+      10,
+      2,
+      10,
+      2
+    ],
+    "hub_decorations": "10-r per hub",
+    "outside_decorations": 0
+  },
+  "analytic_crosschecks": {
+    "q_identity": "q = e(M) + sum(g) = t(S) - e_M(S) + e_M(A\\S) + G_(A\\S)",
+    "edge_weight_inequality": "t_a+t_b >= 12 for every M-edge",
+    "triangle_charge": "t(T) >= 24 for every M-triangle",
+    "q_floor": 20,
+    "q20_inserted_hub_degree_at_most": 11,
+    "required_new_core_minimum_degree": 12
+  },
+  "scope": "Independent re-derivation of the h12 and R(4,48) argument plus exhaustive finite decoration/attachment check after the analytic C4 and one-side-attachment reductions. Does not machine-prove the lower-order theorems or replace Lean kernel verification."
+}
