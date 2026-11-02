@@ -163,3 +163,8 @@ The 5-cycle type quotient was independently enumerated: 20 nonempty compatible t
 - the maximum minimum cost is exactly 6, forcing at least (78-6=72>D(14)=69) edges in the 14-point contradiction.
 
 The standalone checker and result are `RECHECK_LOWER_M2_M3.py` and `RECHECK_LOWER_M2_M3.json`. This validates the finite family/type enumeration and the proposed neighborhood-cost tests; it does not prove the analytic classification of every possible triangle-free graph on 23 vertices.
+
+
+### Standalone frontend recurrence replay
+
+The two-transcription recurrence comparison is now preserved as a standalone script, `RECHECK_FRONTEND.py`, with its output in `RECHECK_FRONTEND.json`. Re-execution in this audit session checked 1,752 nontrivial nodes with zero mismatches, all 144 ((d,j)) extraction stops, and the unique survivor ((11,6,5,61)). The two minimum-degree rows at the T61 budget are exactly (h=12) with row floor406 and (h=13) with row floor397. This is an arithmetic/replay check, not a proof of the analytic graph inequalities.
