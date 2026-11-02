@@ -311,3 +311,18 @@ This yields the (a(b-1)) term in formula (4), including overlapping K9 missing s
 For the three-point K10 star, the K10 center charge is pointwise additive: a vertex missing any subset S of the three star points has degree at least (9+(3-|S|)+\sum_{i\in S}b_i=12+\sum_{i\in S}(b_i-1)). If exactly one point has a positive K10 missing set, formula (3) charges at least6 and the two K10-completing points cost at least7 by the common-neighbor bound. If none has a positive K10 missing set, all three complete K10 and the three pairwise nonadjacency inequalities force total point excess at least11. If two or more have positive missing sets, their mixed blockers cost at least8; equality would force two (2,3) blockers with all excess on their points, but the third point must complete K10 and then every vertex in either missing set has degree at least14, contradiction. Thus the h=4 star case is also accounted for.
 
 No counterexample was found in these center-charge arguments.
+
+
+### Small numerical typo in E286 support-size exclusion
+
+A fresh arithmetic check of E286 Section2 found a harmless mismatch. The text prints the lower bound
+[
+p_3(47-q)+12q-\binom q2
+]
+and says its minimum over (1\le q\le8) is310. The printed expression actually has minimum302 (at q=8), not310. Since302>286, the argument as printed still excludes the case and the theorem is unaffected.
+
+The intended sharper expression is
+[
+p_3(47-q)+13q-\binom q2,
+]
+because q counts positive-excess vertices, each of which has integer degree at least13. This sharper expression has minimum310, attained at q=8. The source can be corrected either by changing (12q) to (13q), preserving the stated minimum310, or by retaining the weaker (12q) and changing the parenthetical minimum to302. The former is the natural repair.
