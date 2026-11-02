@@ -164,3 +164,10 @@ For a triangle-free non-bipartite graph L on25 vertices, a shortest odd cycle C 
 e(L)\le2k+1+k(24-2k)+\left\lfloor(24-2k)^2/4\right\rfloor.
 ]
 The 11 values are 145,142,137,130,121,110,97,82,65,46,25; hence e(L)≤145. This is enough for C1 and C2 in the low-edge theorem. Therefore the proposed DAG's `ABSTRACT_LOW285 -> TURAN` route is valid when this elementary proof is selected; no `SECOND_TURAN` edge is required. To make the dependency map audit-proof, the authors should explicitly mark the elementary route as primary and the Kang–Pikhurko proof as an optional alternative. If they instead rely on the displayed external theorem, the DAG must add that parent. `SECOND_TURAN` remains a required parent of `CONTEXTUAL49_EMPTY`.
+
+
+## Corrected DAG reachability check
+
+On the current 28-node corrected proposal, a fresh traversal from `K145_EMPTY` reaches all28 nodes. Thus there are no orphan nodes in the proposed final dependency closure; all parent references resolve and the graph is acyclic. The ledger's `REPLAY` row is packaged inside `RECURRENCE` together with the exact verifier output, rather than represented as a separate graph node. If the authors want atomic ledger-to-DAG correspondence, they can split out a `FRONTEND_REPLAY` child of `RECURRENCE` and make `K145_TO_T61` depend on both; this is a graph-granularity choice, not a missing mathematical dependency if `RECURRENCE` is explicitly defined to include its replay certificate.
+
+The only intentionally omitted ledger rows are Q32/Q33 (the final LOW285 route independently implies their needed floors) and GEN49 (explicitly OPEN and outside the contextual K145 proof). The external leaves BROOKS, TURAN, AES, and SECOND_TURAN all occur in the closure. The LOW285 route uses the elementary 25-point bound, so SECOND_TURAN is needed only for CONTEXTUAL49_EMPTY.
