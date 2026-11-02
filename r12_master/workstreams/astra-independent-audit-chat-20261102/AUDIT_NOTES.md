@@ -345,3 +345,20 @@ The standalone arithmetic checker `RECHECK_H13_Q30_ARITHMETIC.py` was executed i
 A third integer implementation was written independently of the two frozen recurrence transcriptions. It reconstructs all 1,752 `(a,n)` nodes, all 13 maximum-order entries, all 144 outer `(d,j)` stops, and all 61 T61 minimum-degree rows. Exact comparison against the frozen `FRONTEND_REPLAY.json` has zero mismatches. The unique survivor remains `(d,j,a,n)=(11,6,5,61)), with budget408 and lower bound397. The h=12,13,14 terminal rows are exactly (core floors308,284,262; q floors20,22,33; total floors406,397,427). The runnable independent transcription and receipt are `RECHECK_FRONTEND_THIRD.js` and `FRONTEND_THIRD_REPLAY_RESULT.json`; the full analytic scope/limitations are in `FRONTEND_RECURRENCE_INDEPENDENT_AUDIT.md`.
 
 A small proof-text overstatement was found in COVER Section4's h=13 matching lemma: a König cover containing one matched-shell endpoint and one unmatched point supports at most13 cross edges in general, not12 (the count is12 only if those two cover vertices are adjacent). This does not affect the contradiction: even the corrected upper bound gives at most13+6=19<22 after adding all six edges on the four matched endpoints. The remaining matching argument is unchanged. This correction is recorded in the dedicated frontend audit; the frozen integration theorem was not edited.
+
+
+### Dependency clarification: the 25-point common-neighborhood bound
+
+The low-edge proof can avoid the Kang–Pikhurko second-Turán theorem entirely. In a triangle-free non-bipartite graph L on25 vertices, choose a shortest odd cycle C of length2k+1. It is chordless. Each outside vertex has at most k neighbors on C because those neighbors form an independent set of the cycle; the outside graph is triangle-free and has at most floor((24-2k)^2/4) edges by Mantel. Therefore
+[
+e(L)\le 2k+1+k(24-2k)+\left\lfloor\frac{(24-2k)^2}{4}\right\rfloor.
+]
+For k=2,...,12 the values are 145,142,137,130,121,110,97,82,65,46,25, so e(L)≤145. This supplies the C1 bound used by the low-edge common-neighbor lemma. The corrected DAG's `ABSTRACT_LOW285 -> TURAN` dependency is therefore valid if the elementary route is explicitly designated as the route used; the Kang–Pikhurko citation in `COMMON_NEIGHBORHOOD_CAPACITY.md` is then an optional alternative. If the authors retain the theorem as the operative proof instead, add `SECOND_TURAN` as a parent of `ABSTRACT_LOW285`. The integration text should state the chosen route unambiguously.
+
+### Correction to an earlier audit note about E286 Section 2
+
+A re-read of the exact frozen blob `e596cdee0ae465a1fe82a8538e991dbc228db235` for `frozen/eq286/286_EDGE_EQUALITY_CLASSIFICATION.md` shows that Section2 prints
+[
+p_3(47-q)+12q+8-\binom q2,
+]
+not the expression with the (+8) omitted in the earlier audit note. Its minimum over q=1,...,8 is indeed310. The earlier note that reported a 302 minimum dropped the explicit (+8) term and was an erroneous transcription; it is withdrawn. The alternative bound (13q-\binom q2) is also valid because each positive excess is at least1, but it is not needed. No E286 proof-text correction is required for this displayed inequality.
