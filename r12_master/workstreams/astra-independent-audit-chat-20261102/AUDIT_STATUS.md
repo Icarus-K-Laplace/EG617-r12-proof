@@ -50,3 +50,10 @@ The formula (4) charge for two mixed points sharing a K9 and two completing poin
 The dedicated h13 audit found no concrete counterexample or fatal inequality defect in the q29/q30 chain. The d=10 branch and the |X|=2 K4-minus-edge branch have been expanded with explicit degree/charge derivations. The Family I row-triangle anticompleteness and Family II ten-pair independent-set arguments were rederived with all K-neighbor deletions counted. See `H13_Q29_Q30_INDEPENDENT_AUDIT.md`.
 
 The arithmetic checker `RECHECK_H13_Q30_ARITHMETIC.py` passed. It is a finite arithmetic/structure check, not a formal proof of the analytic lemmas. The frozen integration theorem was not edited; all audit artifacts remain on this isolated branch.
+
+
+## Frontend recurrence update (2026-11-02)
+
+A third independent integer implementation exactly reproduces all 1,752 recurrence nodes, 13 maximum-order entries, 144 outer stops, and 61 T61 rows in the frozen replay. The unique survivor remains (d,j,a,n)=(11,6,5,61), 397<=e(F)<=408. See `FRONTEND_RECURRENCE_INDEPENDENT_AUDIT.md`, `RECHECK_FRONTEND_THIRD.js`, and `FRONTEND_THIRD_REPLAY_RESULT.json`.
+
+The h=13 König-cover prose has a harmless one-edge overstatement (mixed cover at most13 rather than12 cross edges); the corrected total remains19<22, so the proof conclusion is unchanged. No frozen integration file was edited.
