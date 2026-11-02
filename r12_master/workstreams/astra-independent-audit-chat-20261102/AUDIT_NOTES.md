@@ -285,3 +285,14 @@ No counterexample or load-bearing gap was found in the h12 chain. In particular:
 The q=20 equality reduction was independently enumerated after the analytic C4/one-side-attachment reduction: 65,536 attachment patterns and 7,006,595 decoration allocations were checked; exactly163 labeled configurations survive, all in the stated normal form. See `H12_INDEPENDENT_AUDIT.md`, `RECHECK_H12_Q20.py`, and `RECHECK_H12_Q20.json`.
 
 The DAG audit found one further missing dependency: `Q20_CLASSIFICATION` must depend on `LOWER_ORDER`, because its pair-row inequality uses (R(2,24)=\varnothing). The corrected proposal JSON now records this dependency. This is a proof-documentation issue, not a mathematical defect in the h12 argument.
+
+
+### Frontend matching-lemma dependency discovered
+
+The recurrence's h=13 and h=14 matching lower bounds were not represented as a node in the original proof DAG. The h=13 3-matching proof is in COVER Section4; the h=14 special proof is in the frontend audit. COVER's q≥29 proof also uses the h=13 lemma, and Q20 uses the h=12 2-matching case. These proofs were re-read and their counting is consistent:
+- h=12 triangle-free: matching number≤1 forces a star or a triangle, excluded by alpha≤10 and z≥11;
+- h=13: König cover of the cross graph must be two of the four matched endpoints; ≥16 cross edges yield two disjoint cross edges, forcing an independent11-set from the other two endpoints plus the unmatched9-set;
+- h=14: a size-two cross cover yields at most20 cross edges plus6 inside the matched endpoints, below z≥33;
+- h≥15: unmatched vertices give the general ceil((h-10)/2) bound.
+
+A new `SHELL_MATCHING_BOUNDS` node has been added to the corrected DAG proposal, with edges to Q20_CLASSIFICATION, COVER_Q29_GENERAL, and RECURRENCE. The corrected proposal is now 28 nodes and remains acyclic with all parent references resolved.
