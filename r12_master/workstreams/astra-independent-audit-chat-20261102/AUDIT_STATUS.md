@@ -93,3 +93,10 @@ The two nested manifests were also verified at their original source commits: CO
 The exact byte-matched low-edge verifier source was executed in Python3.13.5; its source SHA-256 matches the frozen root checksum, and every numerical result matches the saved Python3.12.14 output. An independent transcription of the COVER enumerator reproduced all 19,448 row-count vectors for each q, exact counters (q27: 882/32,665/2; q28: 891/51,118/16), the 2/8 canonical states, 81,920 subset checks, and 104 repivot identities. An independent E286 transcription reproduced the saved support/scalar/intersection results, including 139,921 tuples and minimum14. See `FINITE_VERIFIER_REEXECUTION_AUDIT.md`.
 
 The full root integration verifier is still not run from a clean local checkout. The new component-level executions do not change that limitation and do not constitute Lean certification or external peer review.
+
+
+## Statement and dependency-DAG scope update
+
+The public Problem617 statement is universally quantified over r>=3. The integrated theorem addresses only the fixed r=12 instance, K145/12 colors/13 vertices; it must not be described as solving the full all-r problem. See `STATEMENT_SCOPE_AUDIT.md`.
+
+The frozen 25-node DAG is acyclic but omits explicit intermediate nodes for GATE47, D48 and SHELL_MATCHING_BOUNDS. The 28-node isolated proposal adds these dependencies and is acyclic with every node reachable from K145_EMPTY. The mathematical lemmas are present in the source documents; this is a dependency-map completeness/documentation correction, not an identified missing proof lemma. The root verifier checks acyclicity of the original DAG, not completeness of its edge set.
