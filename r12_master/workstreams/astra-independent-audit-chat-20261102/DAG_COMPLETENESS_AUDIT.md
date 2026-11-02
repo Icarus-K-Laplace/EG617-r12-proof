@@ -128,3 +128,23 @@ The first corrected-DAG proposal still under-specified `Q20_CLASSIFICATION` as d
 "Q20_CLASSIFICATION": ["LOWER_ORDER", "TURAN"]
 ```
 This is an additional real dependency-map omission discovered while checking h12, separate from the missing GATE47 and D48 nodes.
+
+
+## Additional source-to-DAG omission: shell matching bounds
+
+The frontend recurrence explicitly uses the h=13 and h=14 three-matching bounds in its value of
+[
+k=\max\left(\left\lceil\frac{h-10}{2}\right\rceil,1+[h\ge12]+[h\ge13]\right).
+]
+The h=13 matching lemma is proved in COVER Section4; the h=14 special case is proved in the frontend audit. COVER's q≥29 proof also invokes the h=13 three-matching lemma, and the q20 shell theorem invokes the h=12 two-matching case. The original DAG had no node for these shared lemmas and no edge from `RECURRENCE` to COVER.
+
+The proposal now packages these elementary results as `SHELL_MATCHING_BOUNDS`, with parents `COLOR_CAPS`, and adds it as a parent of `Q20_CLASSIFICATION`, `COVER_Q29_GENERAL`, and `RECURRENCE`. König's bipartite matching-cover lemma is proved directly in the frontend text, so no external `KONIG` leaf is needed.
+
+The matching proofs were independently re-read:
+- h=12, triangle-free: matching number at most1 gives a star (independence at least11) or a triangle (at most3 edges), both impossible under (alpha(M)\le10,e(M)\ge11);
+- h=13: if matching number2, the unmatched 9-set is independent; König gives a cross-edge cover of size2. Any cover using a shell endpoint and an unmatched point supports at most12 cross edges; two unmatched points support at most8. Hence the cover consists of two of the four matched endpoints. There are at least16 cross edges, so two disjoint cross edges exist; the other two matched endpoints together with the unmatched 9-set form an independent11-set, contradiction;
+- h=14: if matching number at most2, the unmatched 10-set is independent and König gives a cross-edge cover of size2, so there are at most20 cross edges plus6 inside the four endpoints, below the shell floor (z\ge33);
+- h≥15: the unmatched vertices of a maximum matching are independent, giving (
+u(M)\ge\lceil(h-10)/2\rceil).
+
+This is a genuine dependency-map omission, not a demonstrated mathematical defect.
