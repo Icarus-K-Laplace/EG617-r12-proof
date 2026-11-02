@@ -62,3 +62,10 @@ The h=13 König-cover prose has a harmless one-edge overstatement (mixed cover a
 ## Audit-note correction (2026-11-02)
 
 The earlier note claiming an E286 Section2 minimum of302 was based on accidentally dropping the explicit (+8) in the frozen expression (p_3(47-q)+12q+8-\binom q2). The exact frozen text is correct and its minimum is310. That earlier typo allegation is withdrawn; no E286 correction is required for this inequality. See the correction and exact blob identity in `AUDIT_NOTES.md`.
+
+
+## Frozen-source provenance update (2026-11-02)
+
+All 26 entries of the integration `SOURCE_MANIFEST.json` match both (i) the destination Git blobs in the frozen integration snapshot and (ii) the source Git blobs at their declared commits. Zero mismatches. See `SOURCE_MANIFEST_AUDIT.json`.
+
+A full clean-room run of the root `INDEPENDENT_VERIFIER.py` and independent recomputation of the package SHA256SUMS remain uncompleted in this audit session; the recurrence has been separately reimplemented and compared exactly.
