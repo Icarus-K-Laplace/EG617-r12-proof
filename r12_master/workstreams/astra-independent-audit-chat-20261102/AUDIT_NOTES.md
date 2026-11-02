@@ -369,3 +369,13 @@ not the expression with the (+8) omitted in the earlier audit note. Its minimum 
 The 26-entry `SOURCE_MANIFEST.json` was checked against Git object trees in both directions. All 26 destination paths in integration snapshot `c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2` have the exact manifest blob SHA; all 26 source paths at their four declared source commits also have the exact same blob SHA. There are zero missing paths or mismatches. Receipt: `SOURCE_MANIFEST_AUDIT.json`.
 
 This validates that the frozen proof files are the declared source blobs, not merely similarly named copies. It does not independently recompute the package's SHA256SUMS file or execute the root verifier.
+
+
+
+### Byte-integrity and verifier-scope update (2026-11-02)
+
+The frozen integration's root `SHA256SUMS.txt` contains47 entries. A separate SHA-256 implementation over base64-decoded file bytes matched all47 expected digests. The hash implementation was checked against the standard `abc` vector. The root package's own manifest is internally consistent.
+
+The root verifier is not a full clean-room rerun of every nested search: `verify_cover_retained` does not invoke `reconstruct_bipartite`, and the E286 verifier is not imported. The root verifier also invokes only selected functions from the low verifier. This is accurately reflected by the stored `shell_search_rerun: false` field and should remain explicit when describing the evidence.
+
+The nested COVER manifest references four source-workstream files absent from the vendored integration directory; the nested E286 manifest references eleven absent files. The top-level root manifest does authenticate the selected vendored source files. See `PACKAGE_HASH_AND_VERIFIER_SCOPE_AUDIT.md`.
