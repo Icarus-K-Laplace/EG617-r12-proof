@@ -88,3 +88,34 @@ No mathematical counterexample has been found in the reviewed dependency chain. 
 The frozen `UNIVERSAL_Q32_THEOREM.md` and its audit describe the 25-point common-neighborhood bound as using Kang–Pikhurko Theorem 1 at (n=25,r=2). The integration package separately vendors `COMMON_NEIGHBORHOOD_CAPACITY.md`, which gives an elementary shortest-odd-cycle/Mantel proof of the same 145-edge bound without the general second-Turan theorem.
 
 The current DAG has `SECOND_TURAN -> CONTEXTUAL49_EMPTY`, but no `SECOND_TURAN -> ABSTRACT_LOW285` edge. This is correct only if the elementary 25-point derivation is the route actually used for the 285-edge theorem. If the published theorem is invoked, add the missing edge. The proof ledger/source map should identify the chosen route explicitly.
+
+
+## Theorem-ledger to DAG crosswalk
+
+| Ledger node | Current DAG mapping | Audit note |
+|---|---|---|
+| CAP | `COLOR_CAPS` | Explicit |
+| LOWER | `LOWER_ORDER` | Explicit; this is M1–M5, not the separately listed GATE47 |
+| CORE211 | `CORE211` | Explicit |
+| LOW285 | `ABSTRACT_LOW285` | Explicit; clarify whether its 25-point bound uses the elementary route or SECOND_TURAN |
+| EX286 | `ABSTRACT_286` | Explicit |
+| GATE47 | **missing** | Must feed R447_FLOOR287 |
+| FLOOR47 | `R447_FLOOR287` | Present, but missing its GATE47 input |
+| Q32 / Q33 | no separate node | Ledger says these are not needed separately because LOW285 implies the required floor |
+| CTX49 | `CONTEXTUAL49_EMPTY` | Explicit |
+| D48 | **missing** | Must feed R448_FLOOR310 and H12_EMPTY |
+| Q20 | `Q20_CLASSIFICATION` | Explicit conditional shell theorem |
+| FLOOR48 | `R448_FLOOR310` | Present, but missing its D48 input |
+| C29 | `COVER_Q29_GENERAL` | Explicit |
+| C407/C408 | `COVER_407_408` | Explicit |
+| H12 | `H12_EMPTY` | Present, but missing its direct D48 input |
+| H13LOW | `H13_E_LE406_EMPTY` | Explicit |
+| H13TOP | `H13_E407_EMPTY` and `H13_E408_EMPTY` | Explicit split |
+| STOP | `T61_OTHER_DEGREES` and `T61_EMPTY` | Explicit split |
+| REPLAY | `RECURRENCE` plus verifier output | Computational evidence; not currently a distinct DAG node |
+| K145 | `K145_EMPTY` | Explicit |
+| GEN49 | outside the DAG | Correctly OPEN and outside the final dependency path |
+
+The ledger's separate GATE47 and D48 rows make their omission more than a naming preference: the final floor and h12 proof use these results as independent reusable statements. The corrected proposal file adds them explicitly.
+
+External leaves are represented in the DAG but not given separate theorem-ledger rows: `BROOKS`, `TURAN`, `AES`, and `SECOND_TURAN`. A final public proof package should give each leaf its exact cited statement and the local hypothesis check. This is particularly important for the conditional Q32/SECOND_TURAN choice described above.
