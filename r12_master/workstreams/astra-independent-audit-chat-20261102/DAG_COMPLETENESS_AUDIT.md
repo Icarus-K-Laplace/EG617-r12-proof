@@ -148,3 +148,8 @@ The matching proofs were independently re-read:
 u(M)\ge\lceil(h-10)/2\rceil).
 
 This is a genuine dependency-map omission, not a demonstrated mathematical defect.
+
+
+## h13 q30 dependency packaging cross-check
+
+The q30 proof uses the 47-core (le288) minimum-degree gate and EDGE13, both proved inside COVER Section8 from LOWER_ORDER and CORE211. The current corrected DAG represents the final E407/E408 h13 closure as `COVER_407_408), with parents `COVER_Q29_GENERAL` and `CORE211`. Their transitive ancestors include LOWER_ORDER, the cap/Turán layer, the shell matching lemmas, and AES. Thus the reviewed q30 subproof dependencies are present in the proposed DAG's ancestor closure; no additional atomic ledger node is required unless the authors choose to split the internal CORE288_GATE out as a separately reusable theorem.
