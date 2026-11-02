@@ -95,3 +95,6 @@ The two classical external inputs used in the audited chain were checked against
 - Andrásfai–Erdős–Sós, *On the connection between chromatic number, maximal clique and minimal degree of a graph*, Discrete Mathematics 8 (1974), 205–218, Theorem 1.1. At r=3, the strict threshold is \(5n/8\). For n=35, \(22>175/8=21.875\), so a 22-regular K4-free complement is 3-partite, exactly as used in the 211-edge floor. <https://doi.org/10.1016/0012-365X(74)90133-2>
 
 These checks validate the cited theorem statements and numerical hypotheses; they do not constitute an independent proof of either classical theorem.
+
+
+The standalone reproduction script is committed at `r12_master/workstreams/astra-independent-audit-chat-20261102/RECHECK_Q27_Q28.py`. The audit-session implementation was executed independently and reproduced the counters above; the committed script exposes the same standard-library-only procedure for later reruns.
