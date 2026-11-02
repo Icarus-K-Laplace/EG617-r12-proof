@@ -153,3 +153,14 @@ This is a genuine dependency-map omission, not a demonstrated mathematical defec
 ## h13 q30 dependency packaging cross-check
 
 The q30 proof uses the 47-core (le288) minimum-degree gate and EDGE13, both proved inside COVER Section8 from LOWER_ORDER and CORE211. The current corrected DAG represents the final E407/E408 h13 closure as `COVER_407_408), with parents `COVER_Q29_GENERAL` and `CORE211`. Their transitive ancestors include LOWER_ORDER, the cap/Turán layer, the shell matching lemmas, and AES. Thus the reviewed q30 subproof dependencies are present in the proposed DAG's ancestor closure; no additional atomic ledger node is required unless the authors choose to split the internal CORE288_GATE out as a separately reusable theorem.
+
+
+## Resolution path for the LOW285 / SECOND_TURAN ambiguity
+
+The vendored `COMMON_NEIGHBORHOOD_CAPACITY.md` contains two proofs of its 25-point triangle-free bound. The first invokes Kang–Pikhurko Theorem1; the second is elementary and self-contained. The latter is sufficient:
+
+For a triangle-free non-bipartite graph L on25 vertices, a shortest odd cycle C has length2k+1, k=2,...,12, and is chordless. Every outside vertex has at most k neighbors on C because those neighbors form an independent set in C. The outside graph is triangle-free, so Mantel gives
+[
+e(L)\le2k+1+k(24-2k)+\left\lfloor(24-2k)^2/4\right\rfloor.
+]
+The 11 values are 145,142,137,130,121,110,97,82,65,46,25; hence e(L)≤145. This is enough for C1 and C2 in the low-edge theorem. Therefore the proposed DAG's `ABSTRACT_LOW285 -> TURAN` route is valid when this elementary proof is selected; no `SECOND_TURAN` edge is required. To make the dependency map audit-proof, the authors should explicitly mark the elementary route as primary and the Kang–Pikhurko proof as an optional alternative. If they instead rely on the displayed external theorem, the DAG must add that parent. `SECOND_TURAN` remains a required parent of `CONTEXTUAL49_EMPTY`.
