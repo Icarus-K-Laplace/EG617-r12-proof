@@ -181,3 +181,42 @@ A second adversarial reading pass was made over the load-bearing proof text, bey
 - **h13 COVER q30:** re-derived the q30 Family I/II case split, the K4-free reduction, the r=4/r=5 excess contradictions, and the ten-pair independent-set contradiction. No arithmetic contradiction or concrete counterexample was found. The proof-text clarifications about maximizing pivot and cross-row anticompleteness remain useful.
 
 These are reading-audit results, not a formal verification. The strongest remaining adversarial target is still the analytic E286 blocker/overlap accounting and the completeness of the final theorem dependency map.
+
+
+### E286 Section 3 and Section 9 pointwise accounting audit
+
+A closer audit of the shared-leaf paragraph and the D-support pointwise inequality found **two imprecise justifications, but no counterexample to the inequalities themselves**.
+
+#### Shared K11 leaf
+
+The prose says a vertex missing one or both points has internal degree 10 plus “those two point adjacencies” as baseline 12. If it misses exactly one point, it is adjacent to only the other point, so the literal baseline is 11, not 12. The conclusion is nevertheless valid and can be stated exactly.
+
+For a vertex (x) in the shared K11, let (S) be the subset of the two points to which (x) is nonadjacent. If their opposite missing sets have sizes (a_i) in distinct cliques, then each missed point forces (a_i) distinct neighbors outside the shared K11. Hence
+[
+d(x)ge 10+(2-|S|)+sum_{iin S}a_i
+=12+sum_{iin S}(a_i-1).
+]
+Thus
+[
+epsilon(x)ge max!left(0,sum_{iin S}(a_i-1)ight)
+ge sum_{iin S}max(0,a_i-2).
+]
+For (|S|=1), the last inequality is immediate; for (|S|=2), it is exactly the displayed shared-leaf inequality. This proves the intended no-double-counting conclusion with a corrected baseline explanation.
+
+#### D support: negative increments
+
+For D, the support pattern is ({01,02,03,12,13}), with K10s 0,1 and K11s 2,3. The text says there is at most one potentially negative increment at a vertex. This is true at a K10 vertex: its three incidences comprise one K10--K10 point (the only one that can have an empty opposite missing set) and two K10--K11 points (a point cannot complete a K11). But at a K11 vertex there are two incidences, both opposite K10s, and both increments can in principle be negative if both points complete their respective K10s.
+
+The pointwise inequality still holds at a K11 vertex because there are only two terms. For any integers (x,yge-1),
+[
+max(0,x+y)ge max(0,x-1)+max(0,y-1).
+]
+Set (x=a_1-1,y=a_2-1). At K10 vertices the original “at most one negative among three” argument applies; at K11 vertices use this two-term inequality. This repairs the stated pointwise accounting without changing its conclusion.
+
+#### Remaining D-case issue
+
+This reading pass does not yet independently certify the transition “Every mixed point not complete to its K10 contributes at least 5 by (5)” in all completion patterns. Formula (5) is stated for a mixed pair with an additional K10-completing vertex, or an unspecified “usual diamond accounting.” The D paragraph should explicitly identify, for each noncompleting mixed point, which other support point supplies that completion, or state and prove the alternative diamond lemma for the zero-completer case. In particular, the case where neither of the two mixed points at a given K10 completes that K10 needs an explicit charge argument. This is the next targeted audit item; it is a proof-clarity/possible-gap flag, not yet a counterexample.
+
+#### Section 11 same-K11-pair case split
+
+The five cases in Section 11 are exhaustive after choosing a common small side when one exists: ((2,2)); ((1,2)) with disjoint or nested missing sets; and ((1,1)) with distinct or identical missing vertices. The local degree lower bounds in each listed case are arithmetically consistent with the (Tle8) budget. No counterexample to that case split was found in this reading pass.
