@@ -168,3 +168,16 @@ The standalone checker and result are `RECHECK_LOWER_M2_M3.py` and `RECHECK_LOWE
 ### Standalone frontend recurrence replay
 
 The two-transcription recurrence comparison is now preserved as a standalone script, `RECHECK_FRONTEND.py`, with its output in `RECHECK_FRONTEND.json`. Re-execution in this audit session checked 1,752 nontrivial nodes with zero mismatches, all 144 ((d,j)) extraction stops, and the unique survivor ((11,6,5,61)). The two minimum-degree rows at the T61 budget are exactly (h=12) with row floor406 and (h=13) with row floor397. This is an arithmetic/replay check, not a proof of the analytic graph inequalities.
+
+
+## Additional analytic reading pass
+
+A second adversarial reading pass was made over the load-bearing proof text, beyond the finite scripts:
+
+- **M1–M6 lower-order gates:** checked the shortest-odd-cycle edge bounds, the 23-point blowup classification, the M3 12-set cost argument, the R(3,35)/R(3,36)/R(3,37) degree steps, and the R(4,47) low-edge gate arithmetic. No contradictory inequality was found in the reviewed steps.
+- **D48 / R(4,48):** checked the degree-11 shell contradiction, the 211-edge R(3,35) floor, the q20 equality family, and the inserted-center repivot obstruction. No counterexample was found in the stated family.
+- **Q32 / 285-edge theorem:** checked the seed-support accounting, U3/U4/U5 scalar thresholds, and the P/D residual support patterns. The finite checks above support the stated arithmetic; the analytic use of the common-neighborhood lemma remains subject to the explicit SECOND_TURAN-versus-elementary-route clarification.
+- **E286:** checked the four-seed support bookkeeping and the disjoint-charge mechanism at the level of the displayed formulas. The support-orbit and scalar checks reproduce the finite tables, but they do not certify every blocker/overlap inference in Sections 5–12.
+- **h13 COVER q30:** re-derived the q30 Family I/II case split, the K4-free reduction, the r=4/r=5 excess contradictions, and the ten-pair independent-set contradiction. No arithmetic contradiction or concrete counterexample was found. The proof-text clarifications about maximizing pivot and cross-row anticompleteness remain useful.
+
+These are reading-audit results, not a formal verification. The strongest remaining adversarial target is still the analytic E286 blocker/overlap accounting and the completeness of the final theorem dependency map.
