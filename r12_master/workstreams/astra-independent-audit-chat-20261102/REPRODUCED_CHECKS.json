@@ -1,0 +1,89 @@
+{
+  "audit_date": "2026-11-02",
+  "integration_commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+  "independent_rechecks": {
+    "q27_q28": {
+      "method": "separate in-session integer enumeration reimplementation",
+      "row_vectors_each_q": 19448,
+      "q27": {
+        "row_vectors_after_edge_hall": 882,
+        "hub_decoration_trials": 32665,
+        "complete_allocations": 2,
+        "canonical_states": 2
+      },
+      "q28": {
+        "row_vectors_after_edge_hall": 891,
+        "hub_decoration_trials": 51118,
+        "complete_allocations": 16,
+        "canonical_states": 8
+      },
+      "direct_subset_identities": 81920,
+      "checked_alpha_M_at_most_10": true,
+      "checked_EDGE12": true,
+      "checked_INS11_at_regular_vertices": true,
+      "status": "PASS"
+    },
+    "contextual_recurrence": {
+      "method": "two separately transcribed integer implementations of the stated recurrence",
+      "node_count": 1752,
+      "node_mismatches": 0,
+      "maximum_orders": {
+        "0": 0,
+        "1": 11,
+        "2": 23,
+        "3": 36,
+        "4": 48,
+        "5": 63,
+        "6": 80,
+        "7": 99,
+        "8": 120,
+        "9": 142,
+        "10": 145,
+        "11": 145,
+        "12": 145
+      },
+      "outer_stop_count": 144,
+      "survivors": [
+        {
+          "d": 11,
+          "j": 6,
+          "a": 5,
+          "n": 61,
+          "budget": 408,
+          "bound": 397
+        }
+      ],
+      "T61_budget_compatible_rows": [
+        {
+          "minimum_degree": 12,
+          "core_floor": 308,
+          "charge_floor": 20,
+          "row_floor": 406
+        },
+        {
+          "minimum_degree": 13,
+          "core_floor": 284,
+          "charge_floor": 22,
+          "row_floor": 397
+        }
+      ],
+      "status": "PASS"
+    }
+  },
+  "proof_dag": {
+    "nodes": 25,
+    "acyclic": true,
+    "all_parent_refs_resolve": true,
+    "ledger_nodes_not_explicit": [
+      "GATE47",
+      "D48"
+    ],
+    "status": "ACYCLIC_BUT_LEDGER_CROSSWALK_INCOMPLETE"
+  },
+  "ci": {
+    "combined_statuses": [],
+    "pull_request_workflow_runs": [],
+    "status": "NO_REPORTED_CI_STATUS_OR_WORKFLOW_RUN_FOR_INTEGRATION_COMMIT"
+  },
+  "scope_note": "Finite recurrence and q27/q28 rechecks do not verify the analytic graph lemmas, q30 classification, or Lean kernel formalization."
+}
