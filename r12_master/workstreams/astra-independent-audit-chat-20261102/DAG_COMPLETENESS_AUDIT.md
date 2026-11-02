@@ -119,3 +119,12 @@ The current DAG has `SECOND_TURAN -> CONTEXTUAL49_EMPTY`, but no `SECOND_TURAN -
 The ledger's separate GATE47 and D48 rows make their omission more than a naming preference: the final floor and h12 proof use these results as independent reusable statements. The corrected proposal file adds them explicitly.
 
 External leaves are represented in the DAG but not given separate theorem-ledger rows: `BROOKS`, `TURAN`, `AES`, and `SECOND_TURAN`. A final public proof package should give each leaf its exact cited statement and the local hypothesis check. This is particularly important for the conditional Q32/SECOND_TURAN choice described above.
+
+
+## Further correction from the h12 audit: Q20 depends on LOWER_ORDER
+
+The first corrected-DAG proposal still under-specified `Q20_CLASSIFICATION` as depending only on `TURAN`. The h12 proof's q=20 shell theorem uses M1, namely (R(2,24)=\varnothing), to establish the pair-row inequality (t_a+t_b\ge12). It also uses the induced (D(13)) cap. The theorem must therefore depend on `LOWER_ORDER` (which itself depends on the cap/Turán layer), not merely on the generic Turán leaf. The proposal JSON has been amended to:
+```json
+"Q20_CLASSIFICATION": ["LOWER_ORDER", "TURAN"]
+```
+This is an additional real dependency-map omission discovered while checking h12, separate from the missing GATE47 and D48 nodes.
