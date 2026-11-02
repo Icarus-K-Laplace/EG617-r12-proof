@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "audited_integration_commit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+  "manifest_file": "r12_master/workstreams/astra-global-root-integration-chat-20261031/SOURCE_MANIFEST.json",
+  "manifest_blob": "b0935e867a3768f0786480b079be1dc0def55493",
+  "manifest_entries": 26,
+  "destination_blob_matches": 26,
+  "source_blob_matches": 26,
+  "unique_source_commits": [
+    "783c72090205d4bd1a6eefce1dec09e15f78e319",
+    "c3d07b2ca5912b1b0c1c6998303c19c3c2911340",
+    "531e41c79e08dd2bb3892ca9ba8a491a56678565",
+    "b0459807acd4b7e386148056ddf77d7998918893"
+  ],
+  "mismatches": 0,
+  "scope": "Compared each manifest destination path and blob SHA against the audited integration commit's Git tree, then compared each source_path and blob SHA against the corresponding source commit's Git tree. This verifies Git object provenance for all 26 manifest entries; it does not independently recompute the package SHA256SUMS file."
+}
