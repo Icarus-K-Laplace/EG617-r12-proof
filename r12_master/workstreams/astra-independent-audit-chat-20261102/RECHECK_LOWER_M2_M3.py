@@ -67,33 +67,6 @@ def maximal_independent_sets(n,edges):
 def induced_edge_count(vertices,edges):
     return sum(1 for u,v in edges if u in vertices and v in vertices)
 
-def neighborhood_costs():
-    cases=[]
-    for a in range(1,11):
-        groups,edges=make_blowup([10,a,1,1,11-a])
-        T0=set(groups[0]+groups[2]+groups[3])
-        T1=set(groups[1]+groups[4]+groups[2])
-        T2=set(groups[1]+groups[4]+groups[3])
-        candidates=[T0,T1,T2]
-        cases.append((set(edges),candidates,None))
-        for i in range(5):
-            cases.append((set(edges),candidates,i))
-    groups,edges=make_blowup([9,9,2,1,2])
-    candidates=[set(groups[0]+groups[2]+groups[3]),
-                set(groups[1]+groups[3]+groups[4])]
-    cases.append((set(edges),candidates,None))
-
-    checked=discarded=independent_count=maximum_cost=0
-    for E,candidates,deleted_class_edge in cases:
-        E=set(E)
-        if deleted_class_edge is not None:
-            groups,_=make_blowup([9,9,2,1,2]) if False else (None,None)
-            # Recover the class endpoints from the canonical five-part order.
-            # The family sizes are encoded by the candidate T sets only, so
-            # each case is stored with its original groups below instead.
-            raise AssertionError("internal case construction error")
-    return {}
-
 def neighborhood_costs_fixed():
     cases=[]
     for a in range(1,11):
