@@ -31,3 +31,10 @@ The finite arithmetic and the specific local repairs recorded here have passed t
 The dedicated h12 chain and the (R(4,48)) floor310 proof have now received a separate analytic audit. No counterexample or load-bearing gap was found. The q=20 equality structure was rechecked by enumerating 65,536 attachment patterns and 7,006,595 decoration allocations after the analytic C4/one-side-attachment reduction; 163 labeled configurations survive and all are (K_{2,r}\sqcup(10-r)K_1), (6\le r\le10). See `H12_INDEPENDENT_AUDIT.md` and `RECHECK_H12_Q20.json`.
 
 A further DAG omission was found and corrected in the proposal: `Q20_CLASSIFICATION` depends on `LOWER_ORDER) because the pair-row inequality uses (R(2,24)=\varnothing). The corrected 27-node proposal has all parent references resolved and is acyclic. The frozen integration DAG remains unchanged.
+
+
+## Further proof-DAG audit (2026-11-02)
+
+The source-to-DAG crosswalk found another missing shared dependency: the h=13/h=14 shell matching lower bounds used by the frontend recurrence, and the h=13 lemma used by COVER q≥29. The q20 shell classification also uses the h=12 two-matching case. The corrected proposal now adds `SHELL_MATCHING_BOUNDS` and links it to `Q20_CLASSIFICATION`, `COVER_Q29_GENERAL`, and `RECURRENCE`.
+
+The corrected proposal now has 28 nodes; a fresh DFS confirmed all parent references resolve and the graph is acyclic. This remains a proposal only: the frozen Astra integration DAG was not edited.
