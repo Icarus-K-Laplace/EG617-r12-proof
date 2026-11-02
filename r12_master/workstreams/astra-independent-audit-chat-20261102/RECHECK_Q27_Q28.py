@@ -38,7 +38,7 @@ def canonical(hub_weights, rows):
                 1 << j for j, i in enumerate(perm) if (mask >> i) & 1
             )
             mapped.append((new_mask, decoration))
-        candidates.append((weights, tuple(sorted(mapped)))
+        candidates.append((weights, tuple(sorted(mapped))))
     return min(candidates)
 
 
