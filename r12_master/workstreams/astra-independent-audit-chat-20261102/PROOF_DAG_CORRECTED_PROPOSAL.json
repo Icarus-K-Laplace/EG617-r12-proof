@@ -33,6 +33,7 @@
   ],
   "Q20_CLASSIFICATION": [
     "LOWER_ORDER",
+    "SHELL_MATCHING_BOUNDS",
     "TURAN"
   ],
   "R448_FLOOR310": [
@@ -48,7 +49,8 @@
     "Q20_CLASSIFICATION"
   ],
   "COVER_Q29_GENERAL": [
-    "LOWER_ORDER"
+    "LOWER_ORDER",
+    "SHELL_MATCHING_BOUNDS"
   ],
   "COVER_407_408": [
     "COVER_Q29_GENERAL",
@@ -81,7 +83,8 @@
     "CONTEXTUAL49_EMPTY",
     "R447_FLOOR287",
     "R448_FLOOR310",
-    "TURAN"
+    "TURAN",
+    "SHELL_MATCHING_BOUNDS"
   ],
   "EXTRACTION": [
     "COLOR_CAPS",
@@ -100,5 +103,8 @@
   ],
   "D48": [
     "LOWER_ORDER"
+  ],
+  "SHELL_MATCHING_BOUNDS": [
+    "COLOR_CAPS"
   ]
 }
