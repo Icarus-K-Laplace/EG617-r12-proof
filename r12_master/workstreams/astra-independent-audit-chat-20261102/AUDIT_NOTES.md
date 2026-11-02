@@ -362,3 +362,10 @@ A re-read of the exact frozen blob `e596cdee0ae465a1fe82a8538e991dbc228db235` fo
 p_3(47-q)+12q+8-\binom q2,
 ]
 not the expression with the (+8) omitted in the earlier audit note. Its minimum over q=1,...,8 is indeed310. The earlier note that reported a 302 minimum dropped the explicit (+8) term and was an erroneous transcription; it is withdrawn. The alternative bound (13q-\binom q2) is also valid because each positive excess is at least1, but it is not needed. No E286 proof-text correction is required for this displayed inequality.
+
+
+### Frozen-source provenance audit (2026-11-02)
+
+The 26-entry `SOURCE_MANIFEST.json` was checked against Git object trees in both directions. All 26 destination paths in integration snapshot `c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2` have the exact manifest blob SHA; all 26 source paths at their four declared source commits also have the exact same blob SHA. There are zero missing paths or mismatches. Receipt: `SOURCE_MANIFEST_AUDIT.json`.
+
+This validates that the frozen proof files are the declared source blobs, not merely similarly named copies. It does not independently recompute the package's SHA256SUMS file or execute the root verifier.
