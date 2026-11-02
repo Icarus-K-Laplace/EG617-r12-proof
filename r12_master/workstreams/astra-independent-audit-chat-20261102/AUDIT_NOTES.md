@@ -151,3 +151,15 @@ A label-alignment bug was found in the first draft of the audit recheck scripts:
 ### Additional external-dependency ambiguity
 
 The frozen Q32 theorem states its 25-point common-neighborhood bound relative to Kang–Pikhurko, Theorem 1 at (n=25,r=2). The vendored `COMMON_NEIGHBORHOOD_CAPACITY.md` also supplies a self-contained shortest-odd-cycle plus Mantel derivation of the same 145-edge bound. The root dependency DAG should explicitly say which route is used for `ABSTRACT_LOW285`: add a `SECOND_TURAN` edge if the published theorem is invoked, or cite the elementary derivation as the actual dependency if it is used instead. The current DAG includes `SECOND_TURAN` for the contextual (R(4,49)) proof but does not map this separate Q32 use.
+
+
+### Lower-order M2/M3 finite recheck
+
+The 5-cycle type quotient was independently enumerated: 20 nonempty compatible type-set pairs, each with side sizes 1-by-1 or 1-by-2, and 10 incompatible missing-cross-edge endpoint cases. The 23-vertex M2 blowup/edge-deletion representatives were then reconstructed independently:
+- 61 representatives total;
+- 49 satisfy the α\le11 premise;
+- 12 are discarded because they contain an independent 12-set;
+- all 263 maximal independent sets across the 49 valid representatives admit one of the proposed 12-sets with cost at most 6;
+- the maximum minimum cost is exactly 6, forcing at least (78-6=72>D(14)=69) edges in the 14-point contradiction.
+
+The standalone checker and result are `RECHECK_LOWER_M2_M3.py` and `RECHECK_LOWER_M2_M3.json`. This validates the finite family/type enumeration and the proposed neighborhood-cost tests; it does not prove the analytic classification of every possible triangle-free graph on 23 vertices.
