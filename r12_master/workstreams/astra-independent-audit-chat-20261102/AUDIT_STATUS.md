@@ -38,3 +38,8 @@ A further DAG omission was found and corrected in the proposal: `Q20_CLASSIFICAT
 The source-to-DAG crosswalk found another missing shared dependency: the h=13/h=14 shell matching lower bounds used by the frontend recurrence, and the h=13 lemma used by COVER q≥29. The q20 shell classification also uses the h=12 two-matching case. The corrected proposal now adds `SHELL_MATCHING_BOUNDS` and links it to `Q20_CLASSIFICATION`, `COVER_Q29_GENERAL`, and `RECURRENCE`.
 
 The corrected proposal now has 28 nodes; a fresh DFS confirmed all parent references resolve and the graph is acyclic. This remains a proposal only: the frozen Astra integration DAG was not edited.
+
+
+## E286 center-charge recheck (2026-11-02)
+
+The formula (4) charge for two mixed points sharing a K9 and two completing points, and the three-point K10-star center accounting, were expanded into explicit pointwise degree arguments in `E286_CENTER_CHARGE_AUDIT.md`. Both are additive under overlapping missing sets; no counterexample was found. Together with the D-support repair, this closes the specific local accounting questions raised in the prior audit pass at the analytic-reading level. It is not a Lean formalization.
