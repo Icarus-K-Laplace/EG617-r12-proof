@@ -57,3 +57,8 @@ The arithmetic checker `RECHECK_H13_Q30_ARITHMETIC.py` passed. It is a finite ar
 A third independent integer implementation exactly reproduces all 1,752 recurrence nodes, 13 maximum-order entries, 144 outer stops, and 61 T61 rows in the frozen replay. The unique survivor remains (d,j,a,n)=(11,6,5,61), 397<=e(F)<=408. See `FRONTEND_RECURRENCE_INDEPENDENT_AUDIT.md`, `RECHECK_FRONTEND_THIRD.js`, and `FRONTEND_THIRD_REPLAY_RESULT.json`.
 
 The h=13 König-cover prose has a harmless one-edge overstatement (mixed cover at most13 rather than12 cross edges); the corrected total remains19<22, so the proof conclusion is unchanged. No frozen integration file was edited.
+
+
+## Audit-note correction (2026-11-02)
+
+The earlier note claiming an E286 Section2 minimum of302 was based on accidentally dropping the explicit (+8) in the frozen expression (p_3(47-q)+12q+8-\binom q2). The exact frozen text is correct and its minimum is310. That earlier typo allegation is withdrawn; no E286 correction is required for this inequality. See the correction and exact blob identity in `AUDIT_NOTES.md`.
