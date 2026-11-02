@@ -296,3 +296,18 @@ The recurrence's h=13 and h=14 matching lower bounds were not represented as a n
 - h≥15: unmatched vertices give the general ceil((h-10)/2) bound.
 
 A new `SHELL_MATCHING_BOUNDS` node has been added to the corrected DAG proposal, with edges to Q20_CLASSIFICATION, COVER_Q29_GENERAL, and RECURRENCE. The corrected proposal is now 28 nodes and remains acyclic with all parent references resolved.
+
+
+### E286 formula (4) and K10-star center audit
+
+A further explicit derivation was recorded in `E286_CENTER_CHARGE_AUDIT.md`. For two mixed points on a common K9 with two other K9-completing points, every vertex in the first point's K9 missing set has:
+- 8 internal K9 neighbors;
+- 2 neighbors at the completing points;
+- all (b) forced neighbors in the first point's opposite K11 missing set;
+- at least one further neighbor, either the second mixed point itself or a vertex in its nonempty opposite K11 missing set.
+
+This yields the (a(b-1)) term in formula (4), including overlapping K9 missing sets. The other terms are charged on the first point and its opposite K11 missing set, so the total is at least5.
+
+For the three-point K10 star, the K10 center charge is pointwise additive: a vertex missing any subset S of the three star points has degree at least (9+(3-|S|)+\sum_{i\in S}b_i=12+\sum_{i\in S}(b_i-1)). If exactly one point has a positive K10 missing set, formula (3) charges at least6 and the two K10-completing points cost at least7 by the common-neighbor bound. If none has a positive K10 missing set, all three complete K10 and the three pairwise nonadjacency inequalities force total point excess at least11. If two or more have positive missing sets, their mixed blockers cost at least8; equality would force two (2,3) blockers with all excess on their points, but the third point must complete K10 and then every vertex in either missing set has degree at least14, contradiction. Thus the h=4 star case is also accounted for.
+
+No counterexample was found in these center-charge arguments.
