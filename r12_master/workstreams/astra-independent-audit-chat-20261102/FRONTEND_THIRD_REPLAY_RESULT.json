@@ -1,57 +1,48 @@
 {
-  "status": "PASS",
-  "integration_snapshot": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
-  "source_file": "r12_master/workstreams/astra-global-root-integration-chat-20261031/FRONTEND_REPLAY.json",
+  "source_file": "../astra-global-root-integration-chat-20261031/FRONTEND_REPLAY.json",
   "source_git_blob_sha": "36c0d50ae20feb1ca4ab878cc256d700df77e8c5",
-  "independent_implementation": "r12_master/workstreams/astra-independent-audit-chat-20261102/RECHECK_FRONTEND_THIRD.js",
-  "comparison": {
-    "recurrence_nodes": {
-      "count": 1752,
-      "exact_match": true
-    },
-    "maximum_order_table": {
-      "entries": 13,
-      "exact_match": true
-    },
-    "outer_stops": {
-      "count": 144,
-      "exact_match": true
-    },
-    "T61_minimum_degree_rows": {
-      "count": 61,
-      "exact_match": true
-    }
+  "independent_implementation": "RECHECK_FRONTEND_THIRD.js",
+  "checks": {
+    "node_count": 1752,
+    "nodes_exact": true,
+    "max_orders_exact": true,
+    "outer_stop_count": 144,
+    "outer_stops_exact": true,
+    "T61_row_count": 61,
+    "T61_rows_exact": true,
+    "survivor_count": 1,
+    "survivor": [
+      {
+        "d": 11,
+        "j": 6,
+        "a": 5,
+        "n": 61,
+        "budget": 408,
+        "bound": 397,
+        "survives": true
+      }
+    ],
+    "T61_terminal_rows": [
+      {
+        "h": 12,
+        "core": 308,
+        "q_floor": 20,
+        "row_floor": 406
+      },
+      {
+        "h": 13,
+        "core": 284,
+        "q_floor": 22,
+        "row_floor": 397
+      },
+      {
+        "h": 14,
+        "core": 262,
+        "q_floor": 33,
+        "row_floor": 427
+      }
+    ],
+    "status": "PASS"
   },
-  "unique_survivor": {
-    "d": 11,
-    "j": 6,
-    "a": 5,
-    "n": 61,
-    "budget": 408,
-    "lower_bound": 397
-  },
-  "T61_terminal_rows": [
-    {
-      "h": 12,
-      "core_order": 48,
-      "core_floor": 308,
-      "shell_q_floor": 20,
-      "total_floor": 406
-    },
-    {
-      "h": 13,
-      "core_order": 47,
-      "core_floor": 284,
-      "shell_q_floor": 22,
-      "total_floor": 397
-    },
-    {
-      "h": 14,
-      "core_order": 46,
-      "core_floor": 262,
-      "shell_q_floor": 33,
-      "total_floor": 427
-    }
-  ],
-  "scope": "Independent integer reimplementation and exact comparison with the frozen replay output. It verifies the recurrence arithmetic/replay, not the analytic graph lemmas licensing the recurrence rules."
+  "scope": "Exact comparison of an independent integer recurrence implementation with the frozen replay output. This checks arithmetic propagation, not the analytic graph lemmas."
 }
