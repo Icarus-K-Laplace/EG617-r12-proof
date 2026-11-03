@@ -196,3 +196,19 @@ A K5 in M is impossible separately: its common antineighborhood in C is empty by
 The Q30 Family I/II cross-row anticompleteness was also explicitly checked: the pivot for proving x in T_i is anticomplete to T_j must be selected from row class j. The resulting core-degree formula is respectively 12-e_F(x,T_j)>=12 (Family I) or 13-1-e_F(x,T_j)>=12 (Family II), forcing no cross edges. The expanded argument is in `COVER_B1_AND_TRIANGLE_ATTACK_20261103.md`, Sections5–6.
 
 Disposition: **NO GAP FOUND** in the q30 K4 terminal, Family I/II cross-row anticompleteness, or B1 argument. The frozen COVER source remains unchanged.
+
+
+## E286 Section11: independent double-K11 intersection attack (2026-11-03)
+
+A separate enumerator was written from the blocker relations and local degree bounds, without importing project code. For two mixed points z,z' on the same K11/K11 pair, let missing sets be A,B and A',B', with sizes a,b,a',b' and intersections r=|A∩A'|, s=|B∩B'|. Total excess T=8 implies each f11 blocker charge is at most8. Enumerating every resulting size/intersection state gives 3,387 states.
+
+For each state, the checker separately considers z,z' adjacent and nonadjacent. Adjacent is rejected if they share at least10 vertices in either K11, because that would form K12. In the nonadjacent case it adds the T8 common-neighbor inequality c(z,z')<=3+epsilon(z)+epsilon(z'). Vertex charges on X and Y are calculated by the exact four-part partitions A\\A', A'\\A, A∩A', and their Y analogues; overlap B∩B' is counted once, avoiding double-counting.
+
+Results:
+- 2,748 states permit adjacency; 639 force nonadjacency by K12.
+- Minimum forced charge in the nonadjacent case:15.
+- Minimum forced charge in the adjacent case:14.
+- Minimum over all allowed states and relations:14, attained by exactly five intersection parameter states (listed in E286_DOUBLE_K11_PAIR_ATTACK_20261103.md).
+- Therefore the Section11 conclusion T>8 is independently confirmed with a substantial margin.
+
+Artifacts: RECHECK_E286_DOUBLE_K11_PAIR.py, RECHECK_E286_DOUBLE_K11_PAIR.json, and E286_DOUBLE_K11_PAIR_ATTACK_20261103.md. This is a local charge audit only, not whole-E286 certification. The frozen source is unchanged.
