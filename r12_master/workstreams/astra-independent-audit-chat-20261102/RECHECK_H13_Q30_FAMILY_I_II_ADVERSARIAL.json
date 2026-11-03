@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "frozen_snapshot": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+  "family_I": {
+    "multiplicity_partitions": {
+      "r4": [
+        [
+          3,
+          3,
+          3,
+          2
+        ]
+      ],
+      "r5": [
+        [
+          3,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          3,
+          3,
+          2,
+          2,
+          1
+        ],
+        [
+          3,
+          3,
+          3,
+          1,
+          1
+        ]
+      ]
+    },
+    "excess_cases": [
+      {
+        "E": 407,
+        "r": 4,
+        "remainder_vertices": 38,
+        "remainder_excess": 0
+      },
+      {
+        "E": 407,
+        "r": 5,
+        "remainder_vertices": 35,
+        "remainder_excess": 3
+      },
+      {
+        "E": 408,
+        "r": 4,
+        "remainder_vertices": 38,
+        "remainder_excess": 2
+      },
+      {
+        "E": 408,
+        "r": 5,
+        "remainder_vertices": 35,
+        "remainder_excess": 5
+      }
+    ],
+    "conclusion": "r=5 needs >=70 excess; r=4 forces clique of >=36 regular remainder vertices"
+  },
+  "family_II": {
+    "x2_missing_edge_survivor": [
+      "a",
+      "b"
+    ],
+    "ordinary_low_rho": 8,
+    "ordinary_low_q_lower_bound": 30,
+    "ten_pair_independent_transversal": 10
+  },
+  "adversarial_near_witness": {
+    "z": 23,
+    "G": 7,
+    "q": 30,
+    "alpha_M": 10,
+    "K4_count": 0,
+    "high_set_size": 3,
+    "rho_each_regular_outside": 9,
+    "q_lower_each_regular_outside": 31,
+    "disposition": "excluded by |X|=3 when Q=30"
+  },
+  "scope": "Independent finite arithmetic and local shell-pattern replay; not whole-EG617 or Lean certification."
+}
