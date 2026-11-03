@@ -1,0 +1,24 @@
+{
+  "implementation": "independent direct enumeration, separately written in this audit lineage",
+  "q27": {
+    "row_vectors": 19448,
+    "edge_hall_vectors": 882,
+    "hub_decoration_trials": 32665,
+    "completed_low_decorations": 2,
+    "canonical_states": 2
+  },
+  "q28": {
+    "row_vectors": 19448,
+    "edge_hall_vectors": 891,
+    "hub_decoration_trials": 51118,
+    "completed_low_decorations": 16,
+    "canonical_states": 8
+  },
+  "direct_checks": {
+    "subset_identities": 81920,
+    "regular_INS11": "all retained states passed",
+    "EDGE12": "all retained states passed",
+    "Hall": "all retained states passed"
+  },
+  "conclusion": "exactly matches the 2 q27 and 8 q28 states listed in COVER Section6"
+}
