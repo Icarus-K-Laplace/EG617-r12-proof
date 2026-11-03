@@ -234,3 +234,10 @@ The `|X|=1, t_x>=12` branch was expanded. A triangle with x gives Q>=31. A 2-mat
 ## Lean branch content audit (2026-11-03)
 
 Read-only inspection of workstream/r12-lean-formalization-20261031 at HEAD c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2 found 508 tree entries but zero .lean files, zero lakefile/lean-toolchain/MainTheorem paths, and zero GitHub Actions workflows. Therefore this branch is not a Lean project checkout and cannot be cited as Lean kernel evidence. This is scoped to that branch; a separate ZIP or local directory must be audited independently. See LEAN_BRANCH_CONTENT_AUDIT_20261103.md.
+
+
+## Independent M1–M6 lower-order gate audit (2026-11-03)
+
+Re-derived the full minimum-degree chain under its exact hereditary-cap contract. No load-bearing gap was found in M1 (`R(2,24)` emptiness), M2 (121/122-edge triangle-free 23-point classification), M3 (12-set cost), M4 (`R(3,35)` minimum degree12), M5 (orders36/37), or M6 (47-point minimum-degree gate). A fresh JavaScript replay independently checked the C5 type quotient (20 compatible nonempty type-set pairs; 10 incompatible missing-cross-edge cases), all55 M2b singleton-neighborhood extension positions (zero failures), and the 61 M3 blow-up/deletion representatives (49 valid, 12 excluded by alpha>=12, 263 maximal independent sets, maximum minimum cost6, hence at least72 edges in the forced14-set, above D14=69). The script and result are `RECHECK_LOWER_M2_M3_JS_20261103.js/json`; the analytic crosswalk is `LOWER_ORDER_M1_M6_INDEPENDENT_AUDIT_20261103.md`.
+
+The key M4 contradiction is explicit: for the selected 12-set T and edge xy in the complement among the 11 neighbors, `e(J[T union {x,y}]) >= 78 - e(L[T]) - |T intersect I| >=72>D(14)=69`. M6 then gives delta>=12 for any R(4,47) graph with e<=286; combining the audited 285-edge and exact-286 exclusions yields the 287-edge floor. This remains conditional on the hereditary D-caps and does not itself certify K145 or Lean.
