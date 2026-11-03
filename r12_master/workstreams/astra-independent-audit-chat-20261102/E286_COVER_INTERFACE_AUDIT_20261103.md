@@ -144,7 +144,30 @@ d_{C_y}(s)=t_s-e_F(s,D_y),\qquad s\in S.
 $$
 The correction is nonnegative, so t_s≥12 for both s. Hence t(S)≥24 and t(R)=36-t(S)≤12, contradicting EDGE13 (which requires t(R)≥13). The branch is closed. Every inequality uses a stated core and a licensed degree gate.
 
-## 6. Q30 families: same-parent repivots and no duplicated excess
+## 6. Q30 terminal branch checks: near-witnesses and same-parent repivots
+
+Before the Family I/II global eliminations, the no-middle-degree split must retain the heavy-set cases. In addition to the K4 branch above, the audited source handles |X|=0, |X|=1, |X|=2 and |X|=3, where X={a:t_a>=11}. The |X|=1, t_x>=12 triangle/2-matching subcase is expanded in `H13_Q30_HEAVY_SET_SCOPE_CLARIFICATION_20261103.md`: the triangle gives Q>=31; the 2-matching equality forces eight remaining regular points, and EDGE13 leaves them only x as a possible neighbor, so z<=16<22.
+
+### Adversarial |X|=3 cross-missing-edge near-witness
+
+A concrete 13-shell near-witness was constructed with three weight-11 points X={a,b,c}, and ten regular outside points of pair types ab, ac, bc. It satisfies several static local constraints (z=23, G=7, q=30, alpha(M)=10, K4-free, EDGE13), so it is a meaningful attack rather than a vacuous case. The exact repivot charge excludes it.
+
+Under equality in the |X|=3 subset bound, X is a triangle, the other ten points are independent and regular, and every outside point has missing degree2. Write the positive pair-type multiplicities n_ab,n_ac,n_bc. For y of type ab, set S={a,b}; A\\S consists of y, c, and the other nine outside points. Let r_c=n_ac+n_bc=10-n_ab. Then
+$
+e_M(A\\setminus S)=r_c,\qquad
+g_c=11-d_M(c)=11-(2+r_c)=9-r_c.
+$
+All other vertices in A\\S are regular, so
+$
+\rho=e_M(A\\setminus S)+G_{A\\setminus S}=r_c+(9-r_c)=9.
+$
+The d=2 repivot formula therefore gives
+$
+q_y=22+\rho+h_{12}+\kappa+b\ge31,
+$
+contradicting Q=30. The same identity applies to all three pair types. An independent replay checked all36 positive integer triples (n_ab,n_ac,n_bc) summing to10. The full derivation is in `H13_Q30_X3_BRANCH_RHO_IDENTITY_20261103.md`.
+
+## 7. Q30 families: same-parent repivots and no duplicated excess
 
 ### Family I
 
