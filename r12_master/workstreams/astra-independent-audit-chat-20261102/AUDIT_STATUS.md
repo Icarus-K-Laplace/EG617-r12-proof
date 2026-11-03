@@ -166,3 +166,22 @@ Artifacts:
 - `E286_TWO_COMPLETER_ATTACK_RESULTS.json`
 
 Disposition: **NO GAP FOUND** for the two-completer, D-support zero-completer, double-pair equality, and K9 shared-center subclaims. The stronger AES argument uses the triangle-free r=2 case (delta>2n/5); it does not change the frozen proof. This remains a focused sublemma audit, not certification of COVER, the frontend, or the entire K145 proof.
+
+
+## Focused COVER attack: triangle channel and B1 cross-row argument (2026-11-03)
+
+A near-witness was constructed for the q<=28 triangle single-edge case: a 13-vertex M with T={w,x,y} a triangle, one B-edge ab, N_T(a)={w,x}, N_T(b)={w,y}, seven further B-vertices adjacent to w,y, and one isolated B-vertex. Weights (t_w,t_x,t_y)=(11,3,10), (t_a,t_b)=(9,3), seven row weights2 and one0 give z=22, q=28, alpha(M)=10, omega(M)=3, and every M-edge satisfies EDGE12. This is a genuine near-counterexample to a weaker set of constraints, but it fails the required triangle row-union bound t_a+t_w+t_x>=24 (it equals23).
+
+The two triangle constraints for {a,w,x} and {b,w,y}, together with t_a+t_b=12 and t_w+t_x+t_y=24, force t_w>=12. EDGE12 on xy gives t_x+t_y>=12, hence t_w=12 and t_x=t_b,t_y=t_a. Since t_a,t_b<=9, the eight other B-points can meet only w, giving z<=3+1+4+8=16<22. Thus the source's single-edge elimination is valid; the triangle row-union lemma is essential.
+
+The compressed B1 q28 nonadjacency step was also expanded. If x is a base point of row class i, its shell weight9 gives d_F(x)=c_i+11. For a pivot p_j in any different row class j, x lies in C_{p_j}, and
+`d_{C_{p_j}}(x)=d_F(x)-c_i-e_F(x,T_j)=11-e_F(x,T_j)`.
+Every actual47-core has minimum degree11, so x is anticomplete to T_j. Applying this with the pivot in y's row class shows base points x,y from two distinct classes are nonadjacent. Taking p in a third class makes both degree11 in the same core C_p, contradicting the deficient-clique lemma. Therefore “nonadjacent by the same formula” is compressed but valid; no B1 gap remains.
+
+A separately written enumerator was committed as `RECHECK_COVER_Q27_Q28_INDEPENDENT.py`; it enumerates all 19,448 row-count vectors, distributes all decorations, and directly checks the necessary shell conditions. It independently reproduces exactly2 q27 and8 q28 canonical states. Across those ten states it checks81,920 subset identities plus EDGE12, Hall, and regular INS11 conditions. Results are in `RECHECK_COVER_Q27_Q28_INDEPENDENT.json`.
+
+Disposition:
+- triangle single-edge near-witness: REJECTED by the triangle row-union bound;
+- B1 cross-row anticompleteness: PROVED from the 47-core minimum-degree11 lemma;
+- q27/q28 finite state classification: INDEPENDENTLY REPRODUCED;
+- no fatal or repairable gap found in these attacked COVER subclaims.
