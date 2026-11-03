@@ -81,3 +81,37 @@ The state lists match the five-row table in COVER Section6. This independently s
 - No fatal or repairable gap found in these attacked subclaims.
 
 The frozen COVER source is unchanged. This remains a focused attack, not whole-proof certification.
+
+
+## 5. Q30 K4 terminal: expand the equality case
+
+The K4 branch in Section10 is valid, but its compressed equality chain is worth making explicit.
+
+Let S be a K4 in M and B=A\\S (nine vertices). Since M is the complement of F[A], S is independent in F. The common antineighborhood of S in the 47-core C is a clique: two nonadjacent vertices there, together with S, would be an independent6-set in F. As omega(F)<=11, this common antineighborhood has size at most11. Hence the union of the four C-neighborhood rows has size at least36, so t(S)>=36. Equation(1), q=30 and e_M(S)=6 give
+`30=t(S)-6+e_M(B)+G_B`,
+forcing t(S)=36, e_M(B)=0 and G_B=0. Thus B is independent and all nine B-vertices are regular.
+
+There can be no K5 in M: a K5 is an independent5-set in F, so its common antineighborhood in C is empty (else alpha(F)>=6). Its row union has size47, and equation(1) would give q>=47-10=37. Therefore every b in B has at most3 neighbors in S. In the no-regular-middle-degree branch, each b is regular, so d_M(b)<=2. But z>=22 and e_M(S)=6 imply e(S,B)=z-6>=16. The nine B-degrees sum to at least16, so some regular y in B has d_M(y)=2.
+
+Its two neighbors s1,s2 lie in the clique S, so e_M(N_M(y))=1. Each s in S has t_s<=12 because S\\{s} is an M-triangle with row sum at least24, while t(S)=36. Equation(1) gives
+`30=t_{s1}+t_{s2}-1+rho`,
+so rho=31-(t_{s1}+t_{s2}) and rho>=7. Formula(3) at beta12 yields
+`q_y=22+rho+h_12+kappa+b >= 53-(t_{s1}+t_{s2}) >=29`.
+Since q_y<=Q=30, its new core has E-91-q_y in {287,288} edges and therefore minimum degree12 by Section8. Each inserted s_i has new-core degree
+`d_{C_y}(s_i)=t_{s_i}-e_F(s_i,D_y)`,
+because s1,s2 are nonadjacent in F (they are adjacent in M). Thus t_{s_i}>=12; combined with t_{s_i}<=12, both equal12. The other two vertices of S then have total weight 36-24=12, contradicting EDGE13 on their M-edge. This closes the K4 branch.
+
+The attempted near-witness above is therefore not merely blocked by an unexplained status label: the row-union bound, K5 exclusion, degree-2 regular point, and beta12 repivot form an explicit chain.
+
+## 6. Cross-row anticompleteness in Q30 Families I and II
+
+The Family I and II exclusions use the same general mechanism, and the pivot must be chosen from the *other* row class.
+
+- **Family I:** for x in a multiplicity-c row triangle T_i, the shell hub weight10 gives d_F(x)=c+12. For a pivot p_j in a different row class j, x lies in C_{p_j}, and
+  `d_{C_{p_j}}(x)=d_F(x)-c-e_F(x,T_j)=12-e_F(x,T_j)>=12`.
+  Hence e_F(x,T_j)=0. Distinct row triangles are pairwise anticomplete. This licenses both the independent-set argument for r=5 and the common avoiding-point argument for r=4.
+- **Family II:** for x in T_i, d_F(x)=13 and it is adjacent to v_i alone in K. For p_j in another class, x lies in C_{p_j} and
+  `d_{C_{p_j}}(x)=13-1-e_F(x,T_j)>=12`,
+  so T_i and T_j are anticomplete. The ten disjoint pairs then give an independent10-set.
+
+The use of the core minimum-degree12 is licensed because the repivoted cores have 287 or288 edges in the E408 setting. No edge bound is silently transported to an arbitrary 47-core.
