@@ -10,13 +10,13 @@ Scope: abstract 286-edge equality theorem, the 287-edge core floor, and the E407
 **NO HYBRID COUNTEREXAMPLE OR LOAD-BEARING INTERFACE GAP FOUND.**
 
 The key distinction is that E286 concerns a 47-vertex graph with exactly 286 edges and degree excess
-[
+$
 T_{12}=2e-12\cdot47=8,
-]
+$
 whereas the E408, Q=30 COVER terminal has a 47-core with 287 edges and degree excess
-[
+$
 T_{12}=2\cdot287-12\cdot47=10.
-]
+$
 The E286 support classification is not transported to the 287-edge Q30 core. COVER has its own q30 shell classification. The two arguments meet only through the pointwise 287-edge floor.
 
 No frozen theorem source was modified. The report and the small arithmetic checker are new files in this audit workstream only.
@@ -38,17 +38,17 @@ The integration `SOURCE_MANIFEST.json` records the exact originating commits and
 ## 2. The 287-edge floor is pointwise and correctly licensed
 
 For every regular vertex p of a 61-vertex parent F, let
-[
+$
 A=N_F(p),\quad C_p=F-N_F[p],\quad |A|=13,\quad |C_p|=47.
-]
+$
 The parent-to-core identity is
-[
+$
 E=e(F)=91+q_p+e(C_p),\qquad q_p=z_p+G_p.
-]
+$
 It follows by the exact partition into the 13 pivot edges, the 78 possible shell edges, the shell-to-core edges, and the core edges. More explicitly, if M is the missing graph on A, z=e(M), and (g_a=d_F(a)-13\ge0), then
-[
+$
 t_a=d_M(a)+g_a,qquad e_F(A,C_p)=\sum_{a\in A}t_a=2z+G,
-]
+$
 so (e(F)=13+(78-z)+(2z+G)+e(C_p)=91+z+G+e(C_p)).
 
 Every C_p is an induced 47-vertex subgraph of the SAME parent F. It inherits:
@@ -57,23 +57,23 @@ Every C_p is an induced 47-vertex subgraph of the SAME parent F. It inherits:
 - every hereditary D-cap, by induced-subgraph inheritance.
 
 The low-edge gate is not inferred from order or energy. The self-contained theorem M says that an actual (J\in R(4,47)) with (e(J)\le286) has (delta(J)\ge12) (low-gate source lines 9-10, 108-135). The abstract low285 theorem then excludes (e\le285) at that minimum degree, and E286 excludes the remaining equality (e=286) for every simple 47-vertex graph with
-[
+$
 \delta\ge12,\quad\alpha\le4,\quad\omega\le11
-]
+$
 (E286 source lines 5-15). Thus every actual parent core satisfies
-[
+$
 oxed{e(C_p)\ge287}
-]
+$
 for EVERY regular p, not merely for a selected maximizing pivot.
 
 This licenses the pointwise bounds
-[
+$
 q_p\le E-91-287=
 \begin{cases}
 29,&E=407,\\
 30,&E=408.
 \end{cases}
-]
+$
 Taking a maximum afterward gives Q≤29 or Q≤30. The dependency DAG places ABSTRACT_286 below R447_FLOOR287, and that floor below both h13 energy terminals; COVER_407_408 itself depends on COVER_Q29_GENERAL and CORE211. There is no edge from the COVER conclusion back into E286 or the 287 floor. The written DAG summary also explicitly separates CORE211 from COVER chronology.
 
 ## 3. Why the E286 hypotheses transfer to each actual core
@@ -89,19 +89,19 @@ No proof step asserts that every 47-vertex graph of order47 and edge count at mo
 ## 4. Repivoting stays inside one fixed parent
 
 For a regular shell vertex y of p, put (S=N_M(y)), (D_y=N_C(y)), and d=|S|=|D_y|. Directly from the same parent F,
-[
+$
 C_y=F-N_F[y]=(C_p\setminus D_y)\cup S.
-]
+$
 The sets removed and inserted both have size d, so |C_y|=47. It is another induced core of the SAME 61-vertex graph F, not an augmented graph or a graph assembled from different parents. Hence alpha≤4, omega≤11 and all D-caps are inherited again.
 
 The exact edge ledger gives
-[
+$
 e(C_y)=E-91-q_y.
-]
+$
 Thus whenever E=408 and q_y≥29,
-[
+$
 e(C_y)\le408-91-29=288.
-]
+$
 The COVER Section 8 gate (source lines 183-202) then gives (delta(C_y)\ge12). This is the required order of inference: first lower-bound q_y using only the old core's minimum degree; only then infer the new core's minimum degree and use the inserted-vertex identity. No circular use of the new-core degree bound was found.
 
 ## 5. The delicate d=2 / K4 repivot, independently derived
@@ -109,39 +109,39 @@ The COVER Section 8 gate (source lines 183-202) then gives (delta(C_y)\ge12). Th
 This is the only place in the q30 no-middle-degree branch where the proof must first show q_y≥29 before using the new core's degree-12 gate.
 
 Assume E=408, Q=30, and a maximizing pivot p with q_p=30. If the missing shell M contains a K4, let S_0 be its four vertices. The missing-K4 row-union bound gives t(S_0)≥36. The pivot identity
-[
+$
 q_p=t(S_0)-e_M(S_0)+e_M(A\setminus S_0)+G_{A\setminus S_0}
-]
+$
 and e_M(S_0)=6 force
-[
+$
 t(S_0)=36,\quad e_M(A\setminus S_0)=0,\quad G_{A\setminus S_0}=0.
-]
+$
 So the other nine shell vertices are regular and M-independent. Since z≥22 and every outside point has M-degree at most2 into S_0, at least one outside regular vertex y has d_M(y)=2.
 
 Let S=N_M(y) be the corresponding edge of the K4. Then e_M(S)=1. With
-[
+$
 \rho=e_M(A\setminus S)+G_{A\setminus S},
-]
+$
 the pivot identity gives
-[
+$
 30=q_p=t(S)-1+\rho,
 \qquad\rho=31-t(S).
-]
+$
 The exact repivot identity (COVER lines 62-80) at d=2 and beta=12 is
-[
+$
 q_y=22+\rho+h_{12}+\kappa+b
 =53-t(S)+h_{12}+\kappa+b.
-]
+$
 The complementary pair (R=S_0\setminus S) is also an M-edge. EDGE12 gives t(R)≥12, while t(S_0)=36, so t(S)≤24 and therefore
-[
+$
 q_y\ge53-24=29.
-]
+$
 (Using the already available EDGE13 gives the stronger t(R)≥13, t(S)≤23 and q_y≥30.)
 
 Now, and only now, e(C_y)≤288, so the new core has minimum degree12. Since S is an M-edge, its two vertices are nonadjacent in F. Their degrees in the inserted core are exactly
-[
+$
 d_{C_y}(s)=t_s-e_F(s,D_y),\qquad s\in S.
-]
+$
 The correction is nonnegative, so t_s≥12 for both s. Hence t(S)≥24 and t(R)=36-t(S)≤12, contradicting EDGE13 (which requires t(R)≥13). The branch is closed. Every inequality uses a stated core and a licensed degree gate.
 
 ## 6. Q30 families: same-parent repivots and no duplicated excess
@@ -163,10 +163,10 @@ For r=5, the 35 remainder vertices have only5 excess units, but each must comple
 ### Family II
 
 COVER lines 267-282 give ten regular K10 pivots v_i. Their two-point outside sets T_i are pairwise disjoint: a point in T_i is adjacent to v_i alone in K. For i≠j, in the actual 287-edge core C_{v_j},
-[
+$
 d_{C_{v_j}}(x)=13-1-e_F(x,T_j)\ge12,
 qquad x\in T_i,
-]
+$
 so the pairs T_i are pairwise anticomplete. Choosing one point from each pair gives an independent 10-set, contradicting alpha(F)≤5. All ten cores are taken from the same parent F; no edge or vertex is silently transferred between different parents.
 
 ## 7. E286 support and charge accounting
