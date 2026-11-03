@@ -185,3 +185,14 @@ Disposition:
 - B1 cross-row anticompleteness: PROVED from the 47-core minimum-degree11 lemma;
 - q27/q28 finite state classification: INDEPENDENTLY REPRODUCED;
 - no fatal or repairable gap found in these attacked COVER subclaims.
+
+
+## Further q30 adversarial attack: K4 terminal equality chain (2026-11-03)
+
+The q30 no-middle-degree K4 case was expanded and checked. For a K4 S in M, its common antineighborhood in the 47-core is a clique (otherwise S plus two nonadjacent common nonneighbors is an independent6-set in F), hence has size<=11. The four C-neighborhood rows therefore have union>=36 and t(S)>=36. Equation(1) with q=30 and e_M(S)=6 forces t(S)=36, e_M(B)=0 and G_B=0: the other nine vertices B are independent and regular.
+
+A K5 in M is impossible separately: its common antineighborhood in C is empty by alpha(F)<=5, so its five rows cover all47 vertices and equation(1) gives q>=47-10=37. Thus every b in B has at most3 M-neighbors in S. In the no-middle-degree branch, regularity forces d_M(b)<=2. Since z>=22, e(S,B)>=16, so some y in B has degree2. Its two neighbors s1,s2 are adjacent in M. Each t_s<=12 because the complementary triple in S is an M-triangle with row sum>=24. Equation(1) gives rho=31-(t_s1+t_s2)>=7; Formula(3) at beta12 gives q_y>=53-(t_s1+t_s2)>=29. Maximality Q=30 then licenses the new core's minimum degree12 (its edge count is287 or288). Each inserted s_i has degree t_s_i-e_F(s_i,D_y), so t_s_i>=12 and therefore t_s_i=12. The remaining pair in S has weight12, contradicting EDGE13. No hidden K4 gap was found.
+
+The Q30 Family I/II cross-row anticompleteness was also explicitly checked: the pivot for proving x in T_i is anticomplete to T_j must be selected from row class j. The resulting core-degree formula is respectively 12-e_F(x,T_j)>=12 (Family I) or 13-1-e_F(x,T_j)>=12 (Family II), forcing no cross edges. The expanded argument is in `COVER_B1_AND_TRIANGLE_ATTACK_20261103.md`, Sections5–6.
+
+Disposition: **NO GAP FOUND** in the q30 K4 terminal, Family I/II cross-row anticompleteness, or B1 argument. The frozen COVER source remains unchanged.
