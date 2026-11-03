@@ -276,3 +276,20 @@ Family II's |X|=2 normal form was rederived: with t_u,t_v<=10, the nine independ
 A deliberately adversarial cross-missing-edge shell (missing au, row types 4x{a,v}, 4x{b,v}, 1x{a,b}) satisfies z=23,G=7,q=30, alpha(M)=10, K4-free, EDGE13, and has no regular middle-degree vertex. It is not in |X|=2: its high set has size3. Every regular outside point has rho=9 and q_y>=31, so it is excluded by the |X|=3 branch. The |X|=3 rho identity was separately derived and replayed over all36 positive pair-type distributions of ten degree-two outside points: if y has type ab and c is the third high point, rho=r_c+g_c=r_c+(9-r_c)=9, so q_y>=31. No cross-branch loophole remains.
 
 Artifacts: RECHECK_H13_Q30_FAMILY_I_II_ADVERSARIAL.py/json, H13_Q30_FAMILY_I_II_ADVERSARIAL_RECHECK_20261103.md, RECHECK_H13_Q30_X3_BRANCH.py/json, H13_Q30_X3_BRANCH_RHO_IDENTITY_20261103.md. Frozen theorem source unchanged. This remains a focused analytic/finite audit, not full EG617 or Lean certification.
+
+
+## E286-COVER interface stress test (2026-11-03)
+
+The E286 equality theorem, 287-edge floor, and h13 COVER q30 terminal were attacked as one hybrid system. No graph satisfying the E286 equality hypotheses can also realize the E408 q30 terminal at the same pivot: the exact ledger is E=91+q+e(C); E407,q=30 and E408,q=31 would both require a 286-edge core and are excluded by the pointwise 287 floor, while E408,q=30 has a 287-edge core (degree excess10, not the E286 excess8) and is excluded by COVER Sections10-12. The E286 support classification is not imported into the 287-edge q30 core.
+
+The delicate d=2 K4 repivot was rederived:
+rho=31-t(S) and q_y=53-t(S)+h12+kappa+b. EDGE12 on the complementary K4 edge gives t(S)<=24, hence q_y>=29 before the new-core gate is used. This bounds the repivoted core by288, licenses its minimum degree12, and then inserted-vertex degrees contradict EDGE13. The already available EDGE13 sharpens q_y>=30.
+
+A cross-missing-edge |X|=3 near-witness satisfying z=23,G=7,q=30,alpha(M)=10,K4-free and EDGE13 was also attacked. Its exact rho identity is rho=9 for every regular outside point, giving q_y>=31 and closing the apparent loophole. The Family I/II row-class repivots were checked in the same fixed parent; degree excess is partitioned over disjoint row triangles and remainder vertices, with no repeated vertex charges.
+
+A standard-library checker independently reproduced the ten E286 support orbits (2,3,5), scalar blocker minima, zero counterexamples in the bounded shared-center inequalities, and the E407/E408 pivot ledger. See:
+- E286_COVER_INTERFACE_AUDIT_20261103.md
+- RECHECK_E286_COVER_INTERFACE_20261103.py
+- RECHECK_E286_COVER_INTERFACE_20261103_RESULTS.json
+
+Disposition: **NO HYBRID COUNTEREXAMPLE OR FATAL INTERFACE GAP FOUND** in this targeted audit. This does not certify all 61-vertex graphs, run the complete root verifier from a clean checkout, provide Lean kernel certification, or replace external expert review.
