@@ -117,3 +117,12 @@ A fresh independent enumeration of the four-seed support multisets reproduces th
 
 
 Correction to the K2,2 attachment expansion: triangle-freeness alone forbids one exterior vertex from attaching to both bipartition sides (every cross-side pair is an edge of K2,2). Attachments on both sides must therefore come from distinct exterior vertices; those two attachment edges plus the opposite unused K2,2 edge form a3-matching. The audit file now states this concise correct argument.
+
+
+## Complete theorem-source crosswalk (2026-11-03)
+
+A node-by-node crosswalk has now been recorded in `THEOREM_SOURCE_CROSSWALK_20261103.md`. It maps all 28 corrected-DAG nodes to exact source files/sections, theorem contracts, parent nodes, and audit dispositions. It also maps the external leaves Brooks, Turan, AES, and Kang–Pikhurko to their local applications; König's lemma is proved inline, and Mantel is included in the Turán/elementary route.
+
+The stale `front_end/T61_H13_LOW_LAYER.md` says E401–E408 remain open, but its last modification is 2026-10-21. It is not included in the frozen integration's SOURCE_MANIFEST and is not a dependency of the corrected DAG. The 2026-10-31 integration package contains later independent COVER Sections1–13 and E407/E408 final certificates. This is stale repository documentation, not a missing premise in the frozen proof; it should be updated or archived before public presentation.
+
+The corrected 28-node proposal has all references resolved, is acyclic, and all nodes are reachable from K145_EMPTY. The original 25-node frozen DAG remains an incomplete dependency map. The corrected proposal treats the original counterexample hypothesis as an implicit input to COLOR_CAPS; a public diagram should label that input explicitly. No new mathematical counterexample or missing implication was identified in this crosswalk pass.
