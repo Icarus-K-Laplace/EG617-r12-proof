@@ -246,3 +246,8 @@ The key M4 contradiction is explicit: for the selected 12-set T and edge xy in t
 ## K145-to-T61 frontend interface audit (2026-11-03)
 
 Re-derived the original-coloring → least-color graph → contextual R(4,49) exclusion → maximal K12 packing → exact edge ledger → 61-point terminal interface. No load-bearing interface gap found. In particular: the degree-12 case in a contextual 49-set gives a 38-set with at least247 edges, above D38=241; the other eleven colors each have at least79 edges by Kang–Pikhurko, forcing e(F)≤307 against e(F)≥319. The extraction ledger is exact, including the neighborhood defect z and all nonnegative charges; cross-block edges are matchings by D13=67. The recurrence matching guarantee is valid, with König applied only to the bipartite cross graph after fixing a maximum matching. The terminal is exactly F on61 vertices, alpha≤5, omega≤11, all caps, 397≤E≤408 and delta in {12,13}. Full derivation: K145_TO_T61_FRONTEND_INTERFACE_AUDIT_20261103.md.
+
+
+## Publication-readiness audit (2026-11-03)
+
+Three non-mathematical issues were identified for final packaging: (i) the title/ledger's word “balanced” is misleading because the theorem assumes no equal color-class sizes; (ii) frozen PROOF_DAG.json has25 nodes and omits GATE47, D48, and SHELL_MATCHING_BOUNDS plus parent edges, while the isolated corrected 28-node proposal is complete; (iii) the Lean-named branch contains no .lean/Lake files or workflow, so it cannot support a kernel-certification claim (a separate ZIP/local package remains unaudited). The full root verifier also has not been run from a fresh checkout, although root and nested source hashes and component-level replays passed. Detailed recommendations: PUBLICATION_READINESS_AUDIT_20261103.md.
