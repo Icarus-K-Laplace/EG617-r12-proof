@@ -256,3 +256,12 @@ Three non-mathematical issues were identified for final packaging: (i) the title
 ## Root verifier scope audit (2026-11-03)
 
 A function-by-function source inspection records the exact boundary of the root verifier. `verify_frontend` does replay all1,752 nodes and144 stops; `verify_cover_retained` checks retained 2/8 states, 81,920 subset identities and104 repivot identities but explicitly sets `shell_search_rerun=False`; `verify_new_arithmetic` does not execute E286; `verify_lower_order_families` calls the lower-order finite checks; `verify_dag` checks only declared-parent resolution/acyclicity, not dependency completeness. The root script has still not been executed from a fresh checkout in this audit session. See ROOT_VERIFIER_SCOPE_AUDIT_20261103.md.
+
+
+## H13 Q30 Family I/II adversarial recheck (2026-11-03)
+
+Re-derived the Family-I row-class argument and global excess contradiction, including all multiplicity partitions and both E=407/408 budgets. For r=5, all35 remainder vertices must complete a row triangle, forcing at least70 excess against only3 or5 available. For r=4, at least36 regular remainder vertices form a clique, violating omega<=11. Re-derived the Family-II |X|=2 K4-minus-edge step: because t_u,t_v<=10, each regular outside point has M-degree0,1,or2; degree1 is forbidden by EDGE13; z>=22 forces all nine outside points to have degree2; EDGE13 then forces both weight-11 hubs as each point's neighbors. The K4-e missing edge is therefore exactly the hub pair. This gives rho=8 for every ordinary low, hence q_y=30 and licenses all ten repivots.
+
+An adversarial cross-missing-edge near-witness was explicitly constructed (missing edge au; four R rows {a,v}, four {b,v}, one {a,b}; weights (11,11,2,11)). It has z=23,G=7,q=30, alpha(M)=10, is K4-free, satisfies EDGE13, and has no regular middle-degree point. However it belongs to |X|=3, not |X|=2; each of its ten regular outside points has rho=9 and therefore q_y>=31, contradicting Q=30. Thus the apparent cross-branch loophole is closed by the separate |X|=3 branch.
+
+Family-II pairwise anticompleteness was rederived: for x in T_i and j!=i, x lies in C_j and d_Cj(x)=13-1-e(x,T_j)>=12, so e(x,T_j)=0. The ten disjoint pairs yield an independent transversal of size10. No gap found in Family I/II. Artifacts: RECHECK_H13_Q30_FAMILY_I_II_ADVERSARIAL.py/json and H13_Q30_FAMILY_I_II_ADVERSARIAL_RECHECK_20261103.md. Frozen theorem source unchanged; this is not whole-EG617 or Lean certification.
