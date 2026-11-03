@@ -126,3 +126,18 @@ A node-by-node crosswalk has now been recorded in `THEOREM_SOURCE_CROSSWALK_2026
 The stale `front_end/T61_H13_LOW_LAYER.md` says E401–E408 remain open, but its last modification is 2026-10-21. It is not included in the frozen integration's SOURCE_MANIFEST and is not a dependency of the corrected DAG. The 2026-10-31 integration package contains later independent COVER Sections1–13 and E407/E408 final certificates. This is stale repository documentation, not a missing premise in the frozen proof; it should be updated or archived before public presentation.
 
 The corrected 28-node proposal has all references resolved, is acyclic, and all nodes are reachable from K145_EMPTY. The original 25-node frozen DAG remains an incomplete dependency map. The corrected proposal treats the original counterexample hypothesis as an implicit input to COLOR_CAPS; a public diagram should label that input explicitly. No new mathematical counterexample or missing implication was identified in this crosswalk pass.
+
+
+## Critical frozen-source completeness caveat: E286 D support (2026-11-03)
+
+A source-level gap has now been isolated in the frozen E286 proof. Section9 of `frozen/eq286/286_EDGE_EQUALITY_CLASSIFICATION.md` applies the mixed-blocker formula for a noncompleting point only after assuming that each K10 has at least one mixed completer. The frozen text does not prove that prerequisite. If one K10 has zero mixed completers, the final D-case split is not exhaustive as written.
+
+The audit branch contains a separate analytic repair in `E286_D_SUPPORT_REPAIR.md`. It treats the three exhaustive cases for the K10/K10 support point and proves that every K10 has a mixed completer; the shared-center charges are pointwise additive. I re-read the derivation and found it coherent. However, that repair is NOT in the frozen integration package's E286 theorem file, SOURCE_MANIFEST, or SHA256SUMS.
+
+Consequently the exact mathematical conclusion appears repairable, but the frozen package is not self-contained at this load-bearing point. Until the lemma is inserted into the E286 theorem source and the source manifest/checksums regenerated, the frozen E286 theorem, 287-edge floor, h13 E407/E408 exclusions, T61 closure and final K145 conclusion must be reported as **PROVED_CONDITIONAL on that repair**. This is not a counterexample to the theorem; it is a real proof-text/integration gap. Do not present the current frozen package as a fully closed proof without this patch.
+
+The theorem-source crosswalk has been revised to reflect the dependency propagation. The corrected 28-node DAG remains structurally valid, but a correct DAG cannot compensate for a missing proof sublemma in one of its source nodes.
+
+## Correction to earlier h13 matching audit
+
+The earlier claim that COVER Section4's mixed König-cover case should be bounded by13 rather than12 was incorrect. For S of size4 and unmatched I of size9, a cover {s,i} has at most12 incident cross edges if si is present (9+4-1), and at most11 if absent (8+3). The source's bound12 is valid; the previous claimed overcount is withdrawn. See the correction in `H13_Q29_Q30_INDEPENDENT_AUDIT.md`. This is not a proof defect.
