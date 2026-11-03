@@ -21,9 +21,9 @@ L_X=(a-r)(b-1)_+ +(a'-r)(b'-1)_+ +r(b+b'-s-2)_+.
 ]
 Symmetrically,
 [
-L_Y=(b-s)(a-1)_+ +(b'-s)(a+a'-r-2)_+ +s(a+a'-r-2)_+.
+L_Y=(b-s)(a-1)_+ +(b'-s)(a'-1)_+ +s(a+a'-r-2)_+.
 ]
-(Here the final two terms are written by the disjoint/overlap partition of Y; the executable checker implements the same partition explicitly.)
+(The three terms correspond respectively to B\\B', B'\\B, and B intersect B'; the executable checker implements this partition explicitly.)
 
 Each mixed point has degree at least 22-a-b (respectively 22-a'-b'), with one extra if z,z' are adjacent. Thus its individual excess lower bound is (10-a-b+adj)_+.
 
