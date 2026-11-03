@@ -17,7 +17,7 @@ whereas the E408, Q=30 COVER terminal has a 47-core with 287 edges and degree ex
 $$
 T_{12}=2\cdot287-12\cdot47=10.
 $$
-The E286 support classification is not transported to the 287-edge Q30 core. COVER has its own q30 shell classification. The two arguments meet only through the pointwise 287-edge floor.
+The E286 support classification is not transported to the 287-edge Q30 core; COVER has its own q30 shell classification. E286's new equality exclusion enters the COVER upper bound only through the pointwise 287-edge floor. COVER's own minimum-degree-12 gate is independently proved from the lower-order M1-M5 chain and AES in its Section 8. The two branches share those lower-order inputs, but COVER does not import the E286 support classification.
 
 No frozen theorem source was modified. The report and the small arithmetic checker are new files in this audit workstream only.
 
