@@ -114,3 +114,6 @@ See `EXTERNAL_LEAVES_AND_TERMINAL_INTERFACE_AUDIT.md`. No frozen integration or 
 ### Additional support-orbit and scalar-bound replay (2026-11-03)
 
 A fresh independent enumeration of the four-seed support multisets reproduces the E286 orbit counts h=3:2, h=4:3, h=5:5 (ten total). Exact finite evaluation reproduces the scalar minima f11=6 at (2,2), f10,11=4 at (2,3), f9,11=2 at (2,4), f10,10=2 at (3,3), plus the three E286 star/completer minima6,5,5. The E286 independent-four-set lower bounds for q=1..8 are 350,346,342,337,331,325,318,310, all above286. Details are appended to `EXTERNAL_LEAVES_AND_TERMINAL_INTERFACE_AUDIT.md`.
+
+
+Correction to the K2,2 attachment expansion: triangle-freeness alone forbids one exterior vertex from attaching to both bipartition sides (every cross-side pair is an edge of K2,2). Attachments on both sides must therefore come from distinct exterior vertices; those two attachment edges plus the opposite unused K2,2 edge form a3-matching. The audit file now states this concise correct argument.
