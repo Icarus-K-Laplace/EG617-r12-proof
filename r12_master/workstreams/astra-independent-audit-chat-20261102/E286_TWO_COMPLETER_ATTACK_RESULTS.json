@@ -1,0 +1,152 @@
+{
+  "audit": "E286 two-completer and shared-center attack",
+  "date": "2026-11-03",
+  "frozen_integration": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+  "independent_python_checks": {
+    "support_orbits": {
+      "h3": 2,
+      "h4": 3,
+      "h5": 5,
+      "total": 10
+    },
+    "D_pointwise": {
+      "K10_counterexamples": 0,
+      "K11_counterexamples": 0
+    },
+    "scalar_minima": {
+      "f11": {
+        "minimum": 6,
+        "equality": [
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      "f10_11": {
+        "minimum": 4,
+        "equality": [
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "f9_11": {
+        "minimum": 2,
+        "equality": [
+          [
+            2,
+            4
+          ]
+        ]
+      },
+      "f10_10": {
+        "minimum": 2,
+        "equality": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      "formula5": {
+        "minimum": 5,
+        "equality": [
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      "formula4": {
+        "minimum": 5,
+        "equality": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            7,
+            1
+          ]
+        ]
+      },
+      "formula3": {
+        "minimum": 6,
+        "equality": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            8,
+            1
+          ]
+        ]
+      }
+    },
+    "K9_shared_center_additivity": {
+      "domain": "b,b' in 1..11",
+      "counterexamples": 0
+    },
+    "triangle_free_nonbipartite_bounds": {
+      "n19": 82,
+      "n23": 122,
+      "n24": 133,
+      "n25": 145
+    }
+  },
+  "stronger_analytic_lemma": {
+    "statement": "No two vertices can both complete the same K10 in a graph H with |V|=47, e=286, delta>=12, alpha<=4, omega<=11.",
+    "proof_cases": {
+      "eps_sum_le_6": "common antineighborhood has at least25 vertices; contradict 25-point lemma",
+      "eps_sum_7": "common antineighborhood has at least24 vertices; since total excess is8, choose23 zero-excess vertices; triangle-free complement has minimum degree at least10>2*23/5, so AES forces bipartite; then H[W] is two cliques of total order at most22, contradiction",
+      "eps_sum_8": "common antineighborhood has at least23 zero-excess vertices; same AES contradiction"
+    },
+    "conclusion": "NO_TWO_K10_COMPLETERS"
+  },
+  "disposition": {
+    "E286_two_completer_attack": "NO_GAP_FOUND; strengthened exclusion obtained",
+    "D_pointwise_zero_completer_case": "NO_GAP_FOUND",
+    "double_pair_equality_case": "NO_GAP_FOUND",
+    "K9_shared_center_case": "NO_GAP_FOUND",
+    "scope": "Focused sublemma audit only; not whole-proof certification"
+  }
+}
