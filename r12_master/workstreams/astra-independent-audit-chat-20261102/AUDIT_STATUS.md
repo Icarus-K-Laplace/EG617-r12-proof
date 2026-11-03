@@ -109,3 +109,8 @@ The exact parameter substitutions for Turan, Kang–Pikhurko Theorem1, Andrasfai
 The h12/h13 interfaces were rechecked at their exact orders: the h12 T61 branch uses actual48-cores and D48; h13 uses actual47-cores and GATE47+LOW285+EX286 to obtain287. No transport of the47-point floor to48 points occurs. The K2,2 exterior-attachment step in the h12 q20 classification has been expanded in the new audit file.
 
 See `EXTERNAL_LEAVES_AND_TERMINAL_INTERFACE_AUDIT.md`. No frozen integration or sibling workstream files were changed. The full root clean-room execution, promotion of the corrected DAG, Lean kernel certification, and external referee review remain outstanding.
+
+
+### Additional support-orbit and scalar-bound replay (2026-11-03)
+
+A fresh independent enumeration of the four-seed support multisets reproduces the E286 orbit counts h=3:2, h=4:3, h=5:5 (ten total). Exact finite evaluation reproduces the scalar minima f11=6 at (2,2), f10,11=4 at (2,3), f9,11=2 at (2,4), f10,10=2 at (3,3), plus the three E286 star/completer minima6,5,5. The E286 independent-four-set lower bounds for q=1..8 are 350,346,342,337,331,325,318,310, all above286. Details are appended to `EXTERNAL_LEAVES_AND_TERMINAL_INTERFACE_AUDIT.md`.
