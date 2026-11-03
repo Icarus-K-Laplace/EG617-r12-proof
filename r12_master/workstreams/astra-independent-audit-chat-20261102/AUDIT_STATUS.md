@@ -224,3 +224,8 @@ Artifacts: RECHECK_LOWER_M2B_EXTENSION.py, RECHECK_LOWER_M2B_EXTENSION.json, LOW
 ## Audit-note correction: h13 mixed König cover (2026-11-03)
 
 A stale paragraph in FRONTEND_RECURRENCE_INDEPENDENT_AUDIT.md had claimed the mixed König cover could support13 cross edges. That correction was itself wrong: if s∈S and i∈I are nonadjacent, s has at most8 neighbors in I and i at most3 in S, giving11; if si is an edge, the two stars overlap and give at most9+4-1=12. Therefore the frozen COVER Section4 bound12 is correct. The erroneous audit paragraph has been withdrawn and replaced; no theorem source or proof statement needed correction.
+
+
+## H13 q30 heavy-set and Family-II shell-scope clarification (2026-11-03)
+
+The `|X|=1, t_x>=12` branch was expanded. A triangle with x gives Q>=31. A 2-matching plus x gives t(S)>=38 and e_M(S)<=8, so equality at Q=30 forces eight remaining points independent and regular. The no-middle-degree assumption makes their weights at most2; the four matching endpoints have weights at most10. EDGE13 forbids edges from those eight to the four endpoints, leaving only x as a possible neighbor and at most8 extra edges, so z<=16<22. The Family-II final argument was also scoped precisely: u,v are the two decorated lows in each 13-shell, not the only decorated vertices in the whole parent. Since the other nine K points are known regular, the q30 normal form forces T_i to be regular hubs. No gap found; see H13_Q30_HEAVY_SET_SCOPE_CLARIFICATION_20261103.md.
