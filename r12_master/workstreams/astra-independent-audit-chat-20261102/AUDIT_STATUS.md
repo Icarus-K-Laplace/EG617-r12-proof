@@ -141,3 +141,28 @@ The separate `E286_D_SUPPORT_REPAIR.md` proves a stronger completer-existence st
 ## Correction to earlier h13 matching audit
 
 The earlier claim that COVER Section4's mixed König-cover case should be bounded by13 rather than12 was incorrect. For S of size4 and unmatched I of size9, a cover {s,i} has at most12 incident cross edges if si is present (9+4-1), and at most11 if absent (8+3). The source's bound12 is valid; the previous claimed overcount is withdrawn. See the correction in `H13_Q29_Q30_INDEPENDENT_AUDIT.md`. This is not a proof defect.
+
+
+## Focused adversarial E286 attack: two completers (2026-11-03)
+
+The suspected joint-cost gap for two points completing the same K10 was attacked directly. The frozen weaker common-neighborhood estimate is valid, and a stronger exclusion follows.
+
+Let u,v both complete a K10. They are nonadjacent (otherwise K12), and c(u,v)>=10. With total excess8, the common antineighborhood U has size 21+c-epsilon(u)-epsilon(v). If epsilon(u)+epsilon(v)<=6, |U|>=25 and the frozen 25-point density lemma contradicts e(W)>=155 versus e(W)<=154.
+
+If the sum is7, |U|>=24 and at most one unit of excess remains outside u,v, so U contains at least23 zero-excess vertices. If the sum is8, |U|>=23 and all other vertices have zero excess. Choose a 23-set W of zero-excess vertices in either case. The complement of H[W] is triangle-free (alpha(H[W])<=2) and has minimum degree at least22-12=10>2*23/5. The triangle-free AES theorem forces it bipartite. Thus H[W] is the union of two cliques, each of order at most11, impossible on23 vertices. Therefore no two vertices can both complete the same K10 under the E286 hypotheses.
+
+This is stronger than the source's used bound epsilon(u)+epsilon(v)>=7; it is an optional strengthening, not a repair required by the frozen proof.
+
+Further focused checks:
+- The D-support K10 pointwise inequality was exhaustively checked for a0 in0..10, a1,a2 in1..11 and all eight missing subsets: zero counterexamples. The K11 two-incidence inequality was checked for all a,b in0..10 and all four subsets: zero counterexamples.
+- The shared K9 center charge with two K9-completers was checked for all b,b' in1..11 and all three membership types (A-only, A'-only, A cap A'): zero failures.
+- Independent support orbit counts remain h=3:2, h=4:3, h=5:5 (10 total).
+- Exact scalar minima reproduce f11=6@(2,2), f10,11=4@(2,3), f9,11=2@(2,4), f10,10=2@(3,3), formula(5)=5@(2,2), formula(4)=5 at (2..7,1), formula(3)=6 at (2..8,1).
+- Shortest-odd-cycle/Mantel bounds independently reproduce triangle-free nonbipartite maxima n=19:82, n=23:122, n=24:133, n=25:145.
+
+Artifacts:
+- `E286_TWO_COMPLETER_ATTACK_20261103.md`
+- `E286_TWO_COMPLETER_ATTACK.py`
+- `E286_TWO_COMPLETER_ATTACK_RESULTS.json`
+
+Disposition: **NO GAP FOUND** for the two-completer, D-support zero-completer, double-pair equality, and K9 shared-center subclaims. The stronger AES argument uses the triangle-free r=2 case (delta>2n/5); it does not change the frozen proof. This remains a focused sublemma audit, not certification of COVER, the frontend, or the entire K145 proof.
