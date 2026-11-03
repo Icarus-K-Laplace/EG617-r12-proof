@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "frozen_integration": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+  "compatible_type_set_pairs": 20,
+  "singleton_neighborhood_positions_checked": 55,
+  "all_extensions_valid": true,
+  "scope": "Finite verification of the M2b type-quotient extension step only."
+}
