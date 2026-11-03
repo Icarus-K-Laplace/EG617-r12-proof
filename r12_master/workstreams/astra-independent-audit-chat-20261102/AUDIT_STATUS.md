@@ -229,3 +229,8 @@ A stale paragraph in FRONTEND_RECURRENCE_INDEPENDENT_AUDIT.md had claimed the mi
 ## H13 q30 heavy-set and Family-II shell-scope clarification (2026-11-03)
 
 The `|X|=1, t_x>=12` branch was expanded. A triangle with x gives Q>=31. A 2-matching plus x gives t(S)>=38 and e_M(S)<=8, so equality at Q=30 forces eight remaining points independent and regular. The no-middle-degree assumption makes their weights at most2; the four matching endpoints have weights at most10. EDGE13 forbids edges from those eight to the four endpoints, leaving only x as a possible neighbor and at most8 extra edges, so z<=16<22. The Family-II final argument was also scoped precisely: u,v are the two decorated lows in each 13-shell, not the only decorated vertices in the whole parent. Since the other nine K points are known regular, the q30 normal form forces T_i to be regular hubs. No gap found; see H13_Q30_HEAVY_SET_SCOPE_CLARIFICATION_20261103.md.
+
+
+## Lean branch content audit (2026-11-03)
+
+Read-only inspection of workstream/r12-lean-formalization-20261031 at HEAD c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2 found 508 tree entries but zero .lean files, zero lakefile/lean-toolchain/MainTheorem paths, and zero GitHub Actions workflows. Therefore this branch is not a Lean project checkout and cannot be cited as Lean kernel evidence. This is scoped to that branch; a separate ZIP or local directory must be audited independently. See LEAN_BRANCH_CONTENT_AUDIT_20261103.md.
