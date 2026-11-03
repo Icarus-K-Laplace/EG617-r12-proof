@@ -95,3 +95,24 @@ No concrete counterexample or parameter mismatch was found in the external theor
 - no Lean kernel certification of K145 and no external referee review have been established.
 
 The mathematical scope remains only the fixed r=12 statement: K145,12 colors,13-vertex subsets. No all-r solution is claimed.
+
+
+## 5. Fresh finite cross-checks added in this pass
+
+I independently enumerated the four-seed support multisets, up to all 24 seed relabelings, from the defining constraints:
+- h in {3,4,5};
+- each support has size2,3,or4;
+- every seed incidence degree is at least2;
+- the total incidence count is h+5;
+- no seed incidence degree exceeds4.
+
+The resulting orbit counts are exactly h=3:2, h=4:3, h=5:5, for ten total. The h=5 orbits split into one degree pattern (4,2,2,2) and four patterns (3,3,2,2), matching the ten support cases in the E286 table. This checks the combinatorial exhaustiveness of the support table independently of its verifier.
+
+I also exhaustively evaluated the displayed scalar functions over their finite positive missing-set domains. The exact minima are:
+- f11: 6, uniquely at (2,2);
+- f10,11: 4, uniquely at (2,3);
+- f9,11: 2, uniquely at (2,4);
+- f10,10: 2, uniquely at (3,3);
+- the E286 three-star, two-K9-completer, and additional-K10-completer functions: minima 6,5,5, respectively, with equality sets matching the source's stated boundary cases.
+
+Finally, the E286 independent-four-set lower bound was recalculated for q=1,...,8 and gives 350,346,342,337,331,325,318,310; all exceed286. These are finite arithmetic cross-checks only; the analytic blocker and shared-leaf arguments remain the proof.
