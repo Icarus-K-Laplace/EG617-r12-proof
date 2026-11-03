@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "frozen_integration": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+  "section": "E286 Section 11, two points on the same K11/K11 pair",
+  "enumerated_intersection_states": 3387,
+  "adjacency_allowed_states": 2748,
+  "states_forcing_nonadjacency_by_K12": 639,
+  "minimum_nonadjacent_charge_bound": 15,
+  "minimum_adjacent_charge_bound": 14,
+  "minimum_over_all_allowed_relations": 14,
+  "equality_parameter_states": [
+    {
+      "a": 2,
+      "a_prime": 2,
+      "b": 2,
+      "b_prime": 2,
+      "intersection_A": 2,
+      "intersection_B": 2
+    },
+    {
+      "a": 2,
+      "a_prime": 2,
+      "b": 3,
+      "b_prime": 3,
+      "intersection_A": 2,
+      "intersection_B": 3
+    },
+    {
+      "a": 2,
+      "a_prime": 2,
+      "b": 4,
+      "b_prime": 4,
+      "intersection_A": 2,
+      "intersection_B": 4
+    },
+    {
+      "a": 3,
+      "a_prime": 3,
+      "b": 2,
+      "b_prime": 2,
+      "intersection_A": 3,
+      "intersection_B": 2
+    },
+    {
+      "a": 4,
+      "a_prime": 4,
+      "b": 2,
+      "b_prime": 2,
+      "intersection_A": 4,
+      "intersection_B": 2
+    }
+  ],
+  "scope": "Independent finite verification of the local Section 11 charge inequalities; not a proof of the global E286 theorem."
+}
