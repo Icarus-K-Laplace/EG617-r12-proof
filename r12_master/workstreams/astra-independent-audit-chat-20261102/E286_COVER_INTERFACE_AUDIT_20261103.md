@@ -241,4 +241,6 @@ This checker does NOT:
 - certify the proof in Lean/Coq or another proof-assistant kernel;
 - substitute for external human combinatorics review.
 
+Dependency-map caveat: the frozen 25-node `PROOF_DAG.json` is acyclic but omits explicit nodes/edges for GATE47, D48, and SHELL_MATCHING_BOUNDS. The 28-node corrected proposal in `PROOF_DAG_CORRECTED_PROPOSAL.json` has all parent references resolved, is acyclic, and reaches all nodes from K145_EMPTY, but it has not been promoted into the frozen integration snapshot. This is a dependency-documentation completeness issue, not a demonstrated missing mathematical lemma. The root verifier checks the original DAG's syntax and acyclicity, not its semantic completeness.
+
 **Final disposition:** no hybrid counterexample and no fatal interface/quantifier/parent-transfer gap found in the targeted E286 -> 287-floor -> COVER Q30 audit. The remaining status is an informal mathematical proof with finite computational support, pending clean-root reproduction and external expert review.
