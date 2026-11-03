@@ -192,7 +192,7 @@ qquad x\in T_i,
 $$
 so the pairs T_i are pairwise anticomplete. Choosing one point from each pair gives an independent 10-set, contradicting alpha(F)≤5. All ten cores are taken from the same parent F; no edge or vertex is silently transferred between different parents.
 
-## 7. E286 support and charge accounting
+## 8. E286 support and charge accounting
 
 E286 source lines 27-47 classify the four-seed incidence quotient. I independently re-enumerated all support multisets with support sizes at least2, total surplus incidence5, and each of four seed degrees at least2, modulo S4:
 - h=3: 9 raw multisets -> 2 orbits;
@@ -218,7 +218,7 @@ The second inequality's “at most one zero” condition is exactly the D-suppor
 
 The previous focused double-K11-pair audit in this same branch also checked the 3,387 permitted intersection states and obtained a local lower bound14, above the theorem's required budget8. That check is supplementary; the frozen Section11 analytic case split remains the proof.
 
-## 8. Hybrid counterexample arithmetic
+## 9. Hybrid counterexample arithmetic
 
 The exact ledger (E=91+q+e(C)) rules out every attempted splice of the E286 equality case with the q30 terminal:
 
@@ -230,7 +230,7 @@ The exact ledger (E=91+q+e(C)) rules out every attempted splice of the E286 equa
 
 So there is no graph satisfying both the E286 equality hypotheses and the E408 Q30 local terminal at the same pivot. The two proof branches do not share or double-spend the E286 excess budget.
 
-## 9. Reproducibility and limits
+## 10. Reproducibility and limits
 
 Added `RECHECK_E286_COVER_INTERFACE_20261103.py`, a standard-library-only checker for the support quotient, scalar minima, shared-center inequalities, pivot ledger, and d=2 K4 repivot arithmetic. The same checker logic was executed in this session. It reports `PASS_ARITHMETIC_AND_FINITE_QUOTIENT_CHECKS_ONLY`.
 
