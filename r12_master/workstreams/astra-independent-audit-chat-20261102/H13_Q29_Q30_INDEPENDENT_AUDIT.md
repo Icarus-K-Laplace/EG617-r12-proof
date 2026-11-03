@@ -133,3 +133,14 @@ This audit does not claim all-r Erdős 617, nor proof-assistant certification.
 The separate h=13 matching lemma used by the frontend recurrence (COVER Section4) says a mixed König cover, with one vertex in the four matched endpoints and one in the unmatched nine-set, supports at most12 cross edges. The general upper bound is13: the two cover vertices can have disjoint incident-edge sets of sizes9 and4 if they are not adjacent. If they are adjacent, the bound is12.
 
 This does not change the lemma. Adding all six possible edges among the four matched endpoints gives at most19<22, still contradicting z>=22. The other cover types remain bounded by8 (two unmatched points) or are the two matched endpoints, which is the only case that can support the required at least16 cross edges. The subsequent two-disjoint-cross-edges argument is unchanged. This is a harmless proof-text correction, not a counterexample to the h13 terminal theorem.
+
+
+## 7.1 Correction: the original mixed König-cover bound of 12 is valid
+
+The preceding subsection's claim that the source bound12 should be corrected to13 was itself an overcount and is withdrawn.
+
+Let S be the four matched endpoints and I the nine unmatched vertices. If a vertex cover of the bipartite cross graph consists of s in S and i in I:
+- if si is an edge, the union of edges incident to s or i has size at most 9+4-1=12;
+- if si is not an edge, s has at most8 neighbors in I and i at most3 neighbors in S, giving at most11.
+
+Thus the source's upper bound12 is correct. The earlier attempted bound13 incorrectly counted the absent si edge in both degrees. The proof remains valid as written: 12+6=18<22 (and the weaker bound13+6=19<22 would also suffice). No correction to the frozen COVER Section4 is required for this subcase.
