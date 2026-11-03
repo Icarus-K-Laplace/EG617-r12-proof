@@ -379,3 +379,8 @@ The frozen integration's root `SHA256SUMS.txt` contains47 entries. A separate SH
 The root verifier is not a full clean-room rerun of every nested search: `verify_cover_retained` does not invoke `reconstruct_bipartite`, and the E286 verifier is not imported. The root verifier also invokes only selected functions from the low verifier. This is accurately reflected by the stored `shell_search_rerun: false` field and should remain explicit when describing the evidence.
 
 The nested COVER manifest references four source-workstream files absent from the vendored integration directory; the nested E286 manifest references eleven absent files. The top-level root manifest does authenticate the selected vendored source files. See `PACKAGE_HASH_AND_VERIFIER_SCOPE_AUDIT.md`.
+
+
+### Withdrawal of the alleged h13 mixed-cover overstatement (2026-11-03)
+
+A fresh degree count shows the frozen COVER Section4 bound of at most12 cross edges for a König cover consisting of one matched endpoint s in the four-set S and one unmatched point i in the nine-set I is correct. If si is present, the two incident-edge stars have sizes at most9 and4 with their common edge subtracted, giving12. If si is absent, the stars have sizes at most8 and3, giving11. The earlier audit note claiming a general bound13 counted the absent si edge and is withdrawn. The theorem's contradiction is valid; no source correction is needed. See the appended correction in `H13_Q29_Q30_INDEPENDENT_AUDIT.md`.
