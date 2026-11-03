@@ -128,15 +128,15 @@ The stale `front_end/T61_H13_LOW_LAYER.md` says E401–E408 remain open, but its
 The corrected 28-node proposal has all references resolved, is acyclic, and all nodes are reachable from K145_EMPTY. The original 25-node frozen DAG remains an incomplete dependency map. The corrected proposal treats the original counterexample hypothesis as an implicit input to COLOR_CAPS; a public diagram should label that input explicitly. No new mathematical counterexample or missing implication was identified in this crosswalk pass.
 
 
-## Critical frozen-source completeness caveat: E286 D support (2026-11-03)
+## Withdrawal of the alleged E286 D-support source gap (2026-11-03)
 
-A source-level gap has now been isolated in the frozen E286 proof. Section9 of `frozen/eq286/286_EDGE_EQUALITY_CLASSIFICATION.md` applies the mixed-blocker formula for a noncompleting point only after assuming that each K10 has at least one mixed completer. The frozen text does not prove that prerequisite. If one K10 has zero mixed completers, the final D-case split is not exhaustive as written.
+A previous audit pass incorrectly treated formula (5) as requiring an additional vertex completing the K10. The frozen E286 Section9 already proves the more general pointwise clique-vertex inequality, including all zero-missing-set cases:
+`epsilon(v) >= max(0, sum(a_opposite-1)) >= sum max(0,a_opposite-2)`.
+For K10, there are three support incidences and at most one negative increment (from the K10/K10 point); the two mixed incidences have nonempty opposite K11 missing sets. For K11, there are two incidences and the two-term shared-leaf inequality handles even two zero opposite missing sets.
 
-The audit branch contains a separate analytic repair in `E286_D_SUPPORT_REPAIR.md`. It treats the three exhaustive cases for the K10/K10 support point and proves that every K10 has a mixed completer; the shared-center charges are pointwise additive. I re-read the derivation and found it coherent. However, that repair is NOT in the frozen integration package's E286 theorem file, SOURCE_MANIFEST, or SHA256SUMS.
+Summing this pointwise inequality over the cliques yields, for every noncompleting mixed point with positive missing-set sizes a,b, the center charges `a max(0,b-2)+b max(0,a-2)`. Adding its own point excess `max(0,9-a-b)` gives formula (5), whose minimum is5. This is valid without a separate K10-completer. The D-case split in the frozen theorem is therefore exhaustive: if one K10 has two completing mixed points they cost at least7; otherwise at most one per K10 completes, leaving at least two noncompleting mixed points, each costing at least5. Thus T>=10.
 
-Consequently the exact mathematical conclusion appears repairable, but the frozen package is not self-contained at this load-bearing point. Until the lemma is inserted into the E286 theorem source and the source manifest/checksums regenerated, the frozen E286 theorem, 287-edge floor, h13 E407/E408 exclusions, T61 closure and final K145 conclusion must be reported as **PROVED_CONDITIONAL on that repair**. This is not a counterexample to the theorem; it is a real proof-text/integration gap. Do not present the current frozen package as a fully closed proof without this patch.
-
-The theorem-source crosswalk has been revised to reflect the dependency propagation. The corrected 28-node DAG remains structurally valid, but a correct DAG cannot compensate for a missing proof sublemma in one of its source nodes.
+The separate `E286_D_SUPPORT_REPAIR.md` proves a stronger completer-existence statement but is redundant. The proposed `E286_SOURCE_PATCH_GUIDE.md` is withdrawn; no E286 source patch is required for this issue. The frozen E286 theorem is self-contained on the D-support case as written. The 287-edge floor and downstream K145 conclusion are not conditional on that proposed repair.
 
 ## Correction to earlier h13 matching audit
 
