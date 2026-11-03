@@ -1,0 +1,168 @@
+{
+  "support_orbits": {
+    "h3": {
+      "raw_multisets": 9,
+      "orbits": 2
+    },
+    "h4": {
+      "raw_multisets": 40,
+      "orbits": 3
+    },
+    "h5": {
+      "raw_multisets": 48,
+      "orbits": 5
+    },
+    "total_orbits": 10
+  },
+  "scalar_blocker_minima": {
+    "f11": {
+      "minimum": 6,
+      "argmin": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    "f10_11": {
+      "minimum": 4,
+      "argmin": [
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    "f9_11": {
+      "minimum": 2,
+      "argmin": [
+        [
+          2,
+          4
+        ]
+      ]
+    },
+    "f10_10": {
+      "minimum": 2,
+      "argmin": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    "star10": {
+      "minimum": 6,
+      "argmin": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          8,
+          1
+        ]
+      ]
+    },
+    "two_mixed_K9": {
+      "minimum": 5,
+      "argmin": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ]
+    },
+    "mixed": {
+      "minimum": 5,
+      "argmin": [
+        [
+          2,
+          2
+        ]
+      ]
+    }
+  },
+  "shared_center_overlap": {
+    "K11_two_incidence_counterexamples": 0,
+    "K10_three_incidence_counterexamples_at_most_one_zero": 0
+  },
+  "pivot_edge_ledger": [
+    {
+      "parent_edges": 407,
+      "core_floor": 287,
+      "max_charge": 29,
+      "q30_core_edges": 286,
+      "q31_core_edges": 285
+    },
+    {
+      "parent_edges": 408,
+      "core_floor": 287,
+      "max_charge": 30,
+      "q30_core_edges": 287,
+      "q31_core_edges": 286
+    }
+  ],
+  "K4_d2_repivot": {
+    "q_parent": 30,
+    "d": 2,
+    "missing_edges_inside_S": 1,
+    "rho_identity": "rho = 31 - t(S)",
+    "q_y_identity": "q_y = 53 - t(S) + h12 + kappa + b",
+    "K4_row_union_total": 36,
+    "EDGE12_complementary_pair_minimum": 12,
+    "tS_upper_bound": 24,
+    "qy_lower_bound": 29,
+    "EDGE13_complementary_pair_minimum": 13,
+    "sharpened_tS_upper_bound": 23,
+    "sharpened_qy_lower_bound": 30
+  },
+  "status": "PASS_ARITHMETIC_AND_FINITE_QUOTIENT_CHECKS_ONLY",
+  "limitations": [
+    "not a search over all 47- or 61-vertex graphs",
+    "does not prove the analytic blocker/support reductions",
+    "does not execute the full root verifier from a clean checkout",
+    "not Lean/Coq or other proof-assistant kernel certification",
+    "not external human peer review"
+  ]
+}
