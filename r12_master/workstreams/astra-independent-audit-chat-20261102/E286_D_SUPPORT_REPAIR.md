@@ -78,3 +78,8 @@ Let (c_iin{1,2}) count the mixed points completing (K_i), for (i=0,1). The lemma
 If both (c_0=c_1=1), the two 5-unit charges add; if they share a K11 leaf, use the shared-leaf inequality. Thus (Tge10). If one side has two completers, the other side contributes at least 5 or 7, so (Tge12).
 
 Every case contradicts (T=8). This closes D.
+
+
+## Audit disposition update (2026-11-03): optional alternative, not required repair
+
+A later re-derivation found that the frozen E286 Section9 already obtains formula (5) for each noncompleting mixed point from its pointwise D-support inequality. The pointwise inequality sums all incidence contributions at each clique vertex, including zero-missing-set cases, so it does not require the separate assertion that every K10 has a mixed completer. This file proves a stronger statement but is redundant for closing D. Do not treat it as a missing premise or require its integration into the frozen source. See `THEOREM_SOURCE_CROSSWALK_20261103.md`.
