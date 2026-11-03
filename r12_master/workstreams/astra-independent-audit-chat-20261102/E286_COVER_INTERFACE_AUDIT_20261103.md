@@ -158,7 +158,7 @@ The excess count is a partition, not repeated charging:
 - the triangles are disjoint, so their total contribution is (3(11-r));
 - the remaining (50-3r) vertices therefore have excess (23-3(11-r)).
 
-For r=5, the 35 remainder vertices have only5 excess units, but each must complete some row triangle to avoid an independent 6-set; each such completion forces degree at least15, costing at least2 per remainder vertex. For r=4, the 38 remainder vertices have only2 excess units, so at least36 are regular; two nonadjacent such vertices would leave one common-avoiding representative in each of the four anticomplete triangles, giving an independent 6-set. Hence these at least36 vertices form a clique, contradicting omega≤11. This reproduces the two terminal contradictions without reusing any vertex's excess twice.
+For r=5, the 35 remainder vertices have only5 excess units, but each must complete some row triangle T_i to avoid an independent 6-set. Such a remainder vertex v has no neighbors in K and lies in the core C_{v_i}; there d_{C_{v_i}}(v)=d_F(v)-3≥12, so d_F(v)≥15 and it costs at least2 excess units. For r=4, the 38 remainder vertices have only2 excess units, so at least36 are regular. For each T_i, a remainder vertex v lies in C_{v_i} and has no neighbors in K, hence d_{C_{v_i}}(v)=13-e_F(v,T_i)≥12; it therefore meets T_i in at most one point. Two nonadjacent regular remainder vertices leave a common-avoiding representative in each of the four anticomplete triangles, giving an independent 6-set. Hence these at least36 vertices form a clique, contradicting omega≤11. This reproduces the two terminal contradictions without reusing any vertex's excess twice.
 
 ### Family II
 
