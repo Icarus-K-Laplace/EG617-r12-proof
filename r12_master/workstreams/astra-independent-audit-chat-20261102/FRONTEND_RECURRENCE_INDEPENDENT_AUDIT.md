@@ -37,8 +37,8 @@ The runnable third transcription is `RECHECK_FRONTEND_THIRD.js`; its comparison 
 
 The recurrence rules were checked against the displayed graph argument:
 
-1. For an (M)-edge, the union of its two core rows has size at least (eta=\max(0,m-N_{a-2})), since the common non-neighborhood in the core has independence at most (a-2). The exact shell identity gives (q\ge\beta-1), and the induced ((m+2))-set gives (e(C)+\beta\le D(m+2)).
-2. A matching of size (t) gives (t\) disjoint endpoint pairs, each with row-union at least (eta). The target graph on the (2t) endpoints has at least (p_a(2t)) edges, so the missing graph has at most ({2t\choose2}-p_a(2t)) edges. The shell identity yields (q\ge t\beta-{2t\choose2}+p_a(2t)).
+1. For an (M)-edge, the union of its two core rows has size at least (beta=\max(0,m-N_{a-2})), since the common non-neighborhood in the core has independence at most (a-2). The exact shell identity gives (q\ge\beta-1), and the induced ((m+2))-set gives (e(C)+\beta\le D(m+2)).
+2. A matching of size (t) gives (t\) disjoint endpoint pairs, each with row-union at least (beta). The target graph on the (2t) endpoints has at least (p_a(2t)) edges, so the missing graph has at most ({2t\choose2}-p_a(2t)) edges. The shell identity yields (q\ge t\beta-{2t\choose2}+p_a(2t)).
 3. If the missing graph is triangle-free, Mantel gives the stronger endpoint bound (q\ge t\beta-t^2).
 4. If it contains a triangle, the common non-neighborhood of the three independent target-shell vertices has independence at most (a-3); the induced ((m+3))-set gives (e(C)+\gamma\le D(m+3)), and the shell identity gives (q\ge\gamma-3).
 5. The universal bound is the minimum of the triangle-free and triangle branches, because one of the two alternatives must hold. If the triangle density test fails, that branch is impossible and only the triangle-free bound remains.
@@ -46,19 +46,15 @@ The recurrence rules were checked against the displayed graph argument:
 
 These derivations are consistent with the code's use of the formulas. The replay verifies their arithmetic propagation, not the truth of the analytic graph lemmas themselves.
 
-## Small correction in the h=13 matching lemma
+## h=13 matching-cover bound: audit correction
 
-COVER Section 4 says that a König vertex cover consisting of one point (s\) in the four matched endpoints (S) and one point (i\) in the unmatched nine-set (I) supports at most 12 cross edges.
+The frozen COVER Section 4 statement that a mixed König cover (one vertex s in the four matched endpoints S and one vertex i in the unmatched nine-set I) supports at most 12 cross edges is **correct**.
 
-The safe general bound is **13**, not 12: (s\) can be incident to at most 9 cross edges and (i\) to at most 4, and the two sets of incident edges are disjoint if (si\) is not itself an edge. If (si\) is an edge, the bound is 12. This is a one-edge overstatement in the prose.
+If si is an edge, the two incident-edge stars have sizes at most 9 and 4 and overlap in si, so their union has size at most 9+4-1=12. If si is not an edge, s has at most 8 neighbors in I and i has at most 3 neighbors in S, so the union has size at most 8+3=11. The earlier claim in this audit that the bound could be 13 incorrectly counted the absent si edge in both degrees; that claim is withdrawn.
 
-It is harmless to the proof: even the corrected bound gives at most
-[
-13+{4\choose2}=19<22,
-]
-whereas the shell has (z\ge22). A cover of two unmatched vertices supports at most 8 cross edges, also below the required 16 cross edges. Therefore the cover must consist of two matched endpoints; the subsequent argument that at least 16 cross edges force two disjoint cross edges, and hence an independent 11-set from the other two endpoints plus (I), remains valid.
+Thus the mixed cover supports at most 12 cross edges, and adding at most six edges inside S gives 18<22. A cover of two unmatched vertices supports at most 8 cross edges. Neither can cover the at least16 cross edges forced by z>=22. The cover must consist of two matched endpoints, exactly as the frozen proof states. The subsequent two-disjoint-cross-edges argument and independent 11-set contradiction are unchanged.
 
-The frozen integration branch was not edited. The correction is recorded here for the authors to incorporate in a future proof-text revision.
+No correction to the frozen COVER source is required. This is a correction to the audit note only.
 
 ## Certification boundary
 
