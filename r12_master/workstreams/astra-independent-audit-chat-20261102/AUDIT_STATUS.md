@@ -251,3 +251,8 @@ Re-derived the original-coloring → least-color graph → contextual R(4,49) ex
 ## Publication-readiness audit (2026-11-03)
 
 Three non-mathematical issues were identified for final packaging: (i) the title/ledger's word “balanced” is misleading because the theorem assumes no equal color-class sizes; (ii) frozen PROOF_DAG.json has25 nodes and omits GATE47, D48, and SHELL_MATCHING_BOUNDS plus parent edges, while the isolated corrected 28-node proposal is complete; (iii) the Lean-named branch contains no .lean/Lake files or workflow, so it cannot support a kernel-certification claim (a separate ZIP/local package remains unaudited). The full root verifier also has not been run from a fresh checkout, although root and nested source hashes and component-level replays passed. Detailed recommendations: PUBLICATION_READINESS_AUDIT_20261103.md.
+
+
+## Root verifier scope audit (2026-11-03)
+
+A function-by-function source inspection records the exact boundary of the root verifier. `verify_frontend` does replay all1,752 nodes and144 stops; `verify_cover_retained` checks retained 2/8 states, 81,920 subset identities and104 repivot identities but explicitly sets `shell_search_rerun=False`; `verify_new_arithmetic` does not execute E286; `verify_lower_order_families` calls the lower-order finite checks; `verify_dag` checks only declared-parent resolution/acyclicity, not dependency completeness. The root script has still not been executed from a fresh checkout in this audit session. See ROOT_VERIFIER_SCOPE_AUDIT_20261103.md.
