@@ -100,3 +100,12 @@ The full root integration verifier is still not run from a clean local checkout.
 The public Problem617 statement is universally quantified over r>=3. The integrated theorem addresses only the fixed r=12 instance, K145/12 colors/13 vertices; it must not be described as solving the full all-r problem. See `STATEMENT_SCOPE_AUDIT.md`.
 
 The frozen 25-node DAG is acyclic but omits explicit intermediate nodes for GATE47, D48 and SHELL_MATCHING_BOUNDS. The 28-node isolated proposal adds these dependencies and is acyclic with every node reachable from K145_EMPTY. The mathematical lemmas are present in the source documents; this is a dependency-map completeness/documentation correction, not an identified missing proof lemma. The root verifier checks acyclicity of the original DAG, not completeness of its edge set.
+
+
+## External theorem and terminal-interface audit (2026-11-03)
+
+The exact parameter substitutions for Turan, Kang–Pikhurko Theorem1, Andrasfai–Erdos–Sos Theorem1.1, and Brooks were checked. KP's two-regime condition is satisfied at (n,r)=(49,12); it gives the required 79-edge lower bound for each other color. Its (25,2) use gives145, and the low-edge source also supplies an elementary shortest-odd-cycle/Mantel proof of145, so the corrected DAG can designate the elementary route there. AES is applied at s=4,n=35 with22>21.875, exactly as required for CORE211. Brooks is applied only after the least color graph is shown12-regular with no K13 component.
+
+The h12/h13 interfaces were rechecked at their exact orders: the h12 T61 branch uses actual48-cores and D48; h13 uses actual47-cores and GATE47+LOW285+EX286 to obtain287. No transport of the47-point floor to48 points occurs. The K2,2 exterior-attachment step in the h12 q20 classification has been expanded in the new audit file.
+
+See `EXTERNAL_LEAVES_AND_TERMINAL_INTERFACE_AUDIT.md`. No frozen integration or sibling workstream files were changed. The full root clean-room execution, promotion of the corrected DAG, Lean kernel certification, and external referee review remain outstanding.
