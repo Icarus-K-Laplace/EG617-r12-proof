@@ -42,7 +42,7 @@ The corrected proposal now has 28 nodes; a fresh DFS confirmed all parent refere
 
 ## E286 center-charge recheck (2026-11-02)
 
-The formula (4) charge for two mixed points sharing a K9 and two completing points, and the three-point K10-star center accounting, were expanded into explicit pointwise degree arguments in `E286_CENTER_CHARGE_AUDIT.md`. Both are additive under overlapping missing sets; no counterexample was found. Together with the D-support repair, this closes the specific local accounting questions raised in the prior audit pass at the analytic-reading level. It is not a Lean formalization.
+The formula (4) charge for two mixed points sharing a K9 and the three-point K10-star center accounting were expanded into explicit pointwise degree arguments in `E286_CENTER_CHARGE_AUDIT.md`. Both are additive under overlapping missing sets; no counterexample was found. The D-support case is already closed by the frozen Section9 pointwise inequality; the separate `E286_D_SUPPORT_REPAIR.md` is redundant. This is an analytic-reading result, not a Lean formalization.
 
 
 ## h13 q29/q30 audit update (2026-11-02)
