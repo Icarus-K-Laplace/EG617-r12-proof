@@ -69,9 +69,9 @@ For the T61 h12 branch, the same q20 shell occurs over a48-core, and the repivot
 
 ### 2.3 Explicit completion of the K2,2 attachment step
 
-The h12 equality proof says all exterior attachments to the K2,2 meet one fixed side. Here is the short missing case distinction.
+The h12 equality proof says all exterior attachments to the K2,2 meet one fixed side. The justification is short but worth making explicit.
 
-Let the cycle be K_{2,2} with sides X={x1,x2}, Y={y1,y2}; the eight exterior vertices are independent. Since z>=11 and the cycle contributes4 edges, there are at least7 exterior-to-cycle edges. If an exterior vertex u meets both sides, triangle-freeness forces its two neighbors to be opposite vertices, say x1 and y2. There is another exterior edge v-s with v!=u because u has at most2 incident attachments and at least7 exist. If s is in X, take u-y2 and v-s; if s is in Y, take u-x1 and v-s. These are disjoint, and the two unused cycle vertices are one from X and one from Y, hence adjacent. This is a3-matching, contradiction. Thus no exterior vertex meets both sides. If two distinct exterior vertices attach to opposite sides, the same two-attachment-plus-opposite-cycle-edge construction gives a3-matching. Therefore all attachments meet one fixed side. The subsequent weight argument then rules out a one-hub attachment and forces every active exterior vertex to meet both hubs.
+Let the cycle be K_{2,2} with sides X={x1,x2}, Y={y1,y2}; the eight exterior vertices are independent. Since z>=11 and the cycle contributes4 edges, there are at least7 exterior-to-cycle edges. Triangle-freeness immediately implies that no exterior vertex can attach to both sides: every X-Y pair is an edge of K_{2,2}, so such two attachments would form a triangle. If there were attachments on both sides, they would therefore come from two distinct exterior vertices. Choose one attachment edge to X and one to Y; they are disjoint, and the two unused cycle vertices form the opposite X-Y edge. These three edges are a 3-matching, contradiction. Hence all exterior attachments meet one fixed side. The subsequent weight argument rules out a one-hub attachment and forces every active exterior vertex to meet both hubs.
 
 This expands a compressed sentence in H12 Section2; it does not change the theorem.
 
