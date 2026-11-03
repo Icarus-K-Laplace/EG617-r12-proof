@@ -212,3 +212,10 @@ Results:
 - Therefore the Section11 conclusion T>8 is independently confirmed with a substantial margin.
 
 Artifacts: RECHECK_E286_DOUBLE_K11_PAIR.py, RECHECK_E286_DOUBLE_K11_PAIR.json, and E286_DOUBLE_K11_PAIR_ATTACK_20261103.md. This is a local charge audit only, not whole-E286 certification. The frozen source is unchanged.
+
+
+## Lower-order M2b singleton-neighborhood extension (2026-11-03)
+
+The exceptional vertex u in the K9,9-exterior, 121-edge case has one C5-neighbor p. The proof adds a second cycle edge u-q to place u into a valid two-neighbor type. A separate exhaustive check reconstructs all20 compatible nonempty type-set pairs (A,B) in the C5 type-compatibility graph and checks all55 possible p outside the union of B-types. Every case has q such that {p,q}=T_i is a valid two-neighbor type disjoint from all B-types; hence adding u-q creates no triangle. The |B|=1 case has a 3-vertex complement in which every p has an independent partner; the |B|=2 case has a 2-vertex independent complement.
+
+Artifacts: RECHECK_LOWER_M2B_EXTENSION.py, RECHECK_LOWER_M2B_EXTENSION.json, LOWER_M2B_SINGLETON_EXTENSION_ATTACK_20261103.md. This is a focused finite check of M2b only; it does not certify the entire minimum-degree gate.
