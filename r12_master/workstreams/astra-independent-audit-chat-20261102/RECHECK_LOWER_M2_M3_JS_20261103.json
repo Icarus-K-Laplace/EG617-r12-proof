@@ -1,0 +1,105 @@
+{
+  "status": "PASS",
+  "type_quotient": {
+    "compatible_nonempty_type_set_pairs": 20,
+    "side_size_patterns": [
+      "1x1",
+      "1x2"
+    ],
+    "incompatible_missing_cross_edge_cases": 10,
+    "all_missing_cases_have_singleton_sides": true
+  },
+  "m2b_singleton_extension": {
+    "positions_checked": 55,
+    "failures": 0
+  },
+  "m3_neighborhood_costs": {
+    "family_representatives": 61,
+    "valid_alpha_at_most_11": 49,
+    "discarded_alpha_at_least_12": 12,
+    "maximal_independent_sets_checked": 263,
+    "maximum_minimum_cost": 6,
+    "cost_failures": 0,
+    "forced_14_set_edges": 72
+  },
+  "arithmetic": {
+    "B23": [
+      [
+        2,
+        122
+      ],
+      [
+        3,
+        119
+      ],
+      [
+        4,
+        114
+      ],
+      [
+        5,
+        107
+      ],
+      [
+        6,
+        98
+      ],
+      [
+        7,
+        87
+      ],
+      [
+        8,
+        74
+      ],
+      [
+        9,
+        59
+      ],
+      [
+        10,
+        42
+      ],
+      [
+        11,
+        23
+      ]
+    ],
+    "B18": [
+      [
+        2,
+        73
+      ],
+      [
+        3,
+        70
+      ],
+      [
+        4,
+        65
+      ],
+      [
+        5,
+        58
+      ],
+      [
+        6,
+        49
+      ],
+      [
+        7,
+        38
+      ],
+      [
+        8,
+        25
+      ]
+    ],
+    "D14": 69,
+    "D23": 132,
+    "D24": 144,
+    "D37": 237,
+    "D38": 241
+  },
+  "scope": "Independent finite recheck of the C5 type quotient, M2b extension positions, explicit M3 blow-up/deletion representatives and displayed integer bounds; not a formal proof of the analytic reductions."
+}
