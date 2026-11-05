@@ -204,14 +204,64 @@ The minimum-degree cases are separated as follows.
   excludes the remaining energies 407 and 408.
 \end{itemize}
 
-For a degree-thirteen pivot $p$, the proof uses an exact identity of the form
+For a degree-thirteen pivot $p$, put
 \[
-  e(C_p)=E-91-q_p,
+ A=N_F(p),\quad C_p=F-N_F[p],\quad
+ M=\overline{F[A]},\quad z_p=e(M),\quad
+ G_p=\sum_{a\in A}(d_F(a)-13),\quad q_p=z_p+G_p.
 \]
-where $C_p=F-N_F[p]$ and $q_p$ is the pivot charge. The full definitions,
-repivot identities, quantifier order over all regular pivots, and terminal
-classification are part of the frozen COVER and h13 proof sources and must
-be transcribed before submission.
+The exact edge partition is
+\[
+  E=e(F)=91+q_p+e(C_p).
+\]
+Every $C_p$ is an induced $47$-vertex subgraph of the same parent $F$,
+so it inherits $\alpha(C_p)\leq4$, $\omega(C_p)\leq11$, and every
+hereditary induced-subgraph cap. Applying the $287$-edge floor to every
+regular pivot, before taking a maximum, gives
+\[
+ q_p\leq E-91-287=
+ \begin{cases}
+ 29,&E=407,\\
+ 30,&E=408.
+ \end{cases}
+\]
+Thus $Q=\max_p q_p\leq29$ for $E=407$ and $Q\leq30$ for $E=408$.
+The COVER theorem proves the opposite bounds $Q\geq30$ and $Q\geq31$,
+respectively, under its exact $61$-vertex parent contract.
+
+For a regular shell vertex $y$, write $S=N_M(y)$, $D_y=N_{C_p}(y)$,
+and $d=|S|=|D_y|$. Then
+\[
+ C_y=F-N_F[y]=(C_p\setminus D_y)\cup S.
+\]
+With
+\[
+ \rho=e_M(A\setminus S)+G_{A\setminus S},\quad
+ h_{12}=\sum_{x\in D_y}(d_{C_p}(x)-12),\quad
+ \kappa=\binom d2-e(C_p[D_y]),\quad b=e_F(S,D_y),
+\]
+the exact repivot identity is
+\[
+ q_y=d(13-d)+\rho+h_{12}+\kappa+b.
+\]
+The detailed derivations and the same-parent Family I/II arguments are
+given in Supplementary Note~\texttt{E286\_COVER\_INTERFACE\_AUDIT}.
+
+Two delicate terminal subcases are worth making explicit. In the
+$E=408$, $Q=30$ missing-$K_4$ branch, the $d=2$ repivot first gives
+$q_y\geq29$ using EDGE12 on the complementary $K_4$ edge. Only then
+does $e(C_y)\leq288$ license $\delta(C_y)\geq12$; the inserted-vertex
+degree formula then forces $t(S)\geq24$, contradicting EDGE13 on the
+complementary edge. In the $|X|=3$ heavy-set branch, equality forces
+three pair types among ten regular outside vertices. For a point of type
+$ab$, if $r_c$ is the number of other outside points incident with $c$,
+then $\rho=r_c+(9-r_c)=9$, so $q_y\geq22+9=31$, contrary to $Q=30$.
+The full calculations and finite arithmetic replays are included in the
+supplement.
+
+The $Q=30$ classification is used only under the exact $E=408$,
+$61$-vertex parent contract; it is not a classification of arbitrary
+decorated shells.
 
 \section{Finite verification and reproducibility}
 \label{sec:computation}
