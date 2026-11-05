@@ -229,8 +229,10 @@ Thus $Q=\max_p q_p\leq29$ for $E=407$ and $Q\leq30$ for $E=408$.
 The COVER theorem proves the opposite bounds $Q\geq30$ and $Q\geq31$,
 respectively, under its exact $61$-vertex parent contract.
 
-For a regular shell vertex $y$, write $S=N_M(y)$, $D_y=N_{C_p}(y)$,
-and $d=|S|=|D_y|$. Then
+For the maximizing pivot in the $E=408$, $Q=30$ case,
+$e(C_p)=287$, so the $e(C)\leq288$ core gate gives
+$\delta(C_p)\geq12$. For a regular shell vertex $y$ of this pivot,
+write $S=N_M(y)$, $D_y=N_{C_p}(y)$, and $d=|S|=|D_y|$. Then
 \[
  C_y=F-N_F[y]=(C_p\setminus D_y)\cup S.
 \]
@@ -244,6 +246,11 @@ the exact repivot identity is
 \[
  q_y=d(13-d)+\rho+h_{12}+\kappa+b.
 \]
+The nonnegativity of $h_{12}$ here uses $\delta(C_p)\geq12$; it is
+not asserted for an arbitrary 47-core with only the global
+$\delta(C_p)\geq11$ bound. For each repivot used below, the new-core
+minimum-degree gate is invoked only after a separate lower bound
+$q_y\geq29$ gives $e(C_y)\leq288$.
 The detailed derivations and the same-parent Family I/II arguments are
 given in Supplementary Note~\texttt{E286\_COVER\_INTERFACE\_AUDIT}.
 
