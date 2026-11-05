@@ -285,7 +285,12 @@ The finite computations support bounded classifications and arithmetic
 replay after the analytic reductions. They do not replace the analytic
 proofs of the graph-to-state mappings or their completeness. The independent
 replay is implemented in Python 3.12.14 using the standard library and is
-documented in \texttt{PUBLICATION/REPRODUCIBILITY.md}.
+documented in \texttt{PUBLICATION/REPRODUCIBILITY.md}. The post-audit
+supplement additionally records ten $S_4$ support orbits in the E286
+four-seed quotient (split $2+3+5$ by support size) and all $36$ positive
+pair-type distributions in the $|X|=3$ Q30 branch. These are finite
+arithmetic/quotient checks, not searches over all $47$- or $61$-vertex
+graphs.
 
 \section{Scope, limitations, and formalization status}
 
@@ -298,8 +303,15 @@ setting.
 The current proof is an informal mathematical proof with finite
 computational verification and an independent AI-assisted audit. It has
 not yet been formalized in Lean 4/Mathlib and has not yet undergone external
-human peer review. These qualifications will remain explicit in any
-preprint version.
+human peer review. A source-to-DAG audit also found that the frozen
+25-node machine-readable dependency graph omits explicit nodes for
+\texttt{GATE47}, \texttt{D48}, and \texttt{SHELL\_MATCHING\_BOUNDS};
+a 28-node corrected proposal is included in the supplement but has not
+been promoted into the frozen integration snapshot. The complete root
+verifier has not yet been rerun from a fresh clean checkout as part of
+this publication update. These are proof-package/reproducibility
+qualifications and must not be described as completed formal certification.
+They will remain explicit in any preprint version.
 
 \bibliographystyle{plain}
 \bibliography{references}
