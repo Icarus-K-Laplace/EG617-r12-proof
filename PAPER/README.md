@@ -33,4 +33,25 @@ A successful build will only establish document compilation; it will not certify
 5. Verify every reference and every attribution before arXiv submission.
 6. Final human author(s) must approve the complete manuscript and assume responsibility for it.
 
+## Post-audit supplementary package (5 November 2026)
+
+The manuscript now summarizes the E286 equality boundary, the pointwise
+287-edge core floor, the exact pivot/repivot identities, and the h13 Q30
+subcases. Supporting detail and finite arithmetic checkers are in
+`supplement/root/`:
+
+- `E286_COVER_INTERFACE_AUDIT_20261103.md`
+- `H13_Q30_X3_BRANCH_RHO_IDENTITY_20261103.md`
+- `PROOF_DAG_CORRECTED_PROPOSAL.md` and `.json`
+- `RECHECK_E286_COVER_INTERFACE_20261103.py`
+- `RECHECK_H13_Q30_X3_BRANCH.py`
+- corresponding recorded JSON outputs and `DAG_DEPENDENCY_CORRECTION_NOTE_20261105.md`
+
+The frozen 25-node proof DAG remains unchanged. The 28-node proposal has
+resolved parent references, is acyclic, and every node is a dependency of
+`K145_EMPTY), but semantic review and promotion remain pending. The full
+root verifier has not been rerun from a fresh clean checkout by this update.
+Neither the supplementary scripts nor the AI-assisted audit constitute a
+Lean kernel proof or external human peer review.
+
 The manuscript is produced with AI assistance under human author supervision; AI systems are not authors.
