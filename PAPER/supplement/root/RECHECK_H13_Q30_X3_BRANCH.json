@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "pair_type_distributions": 36,
+  "rho_identity": "r_c+(9-r_c)=9",
+  "q_lower_bound": 31,
+  "conclusion": "all |X|=3 states contradict Q=30",
+  "scope": "Finite replay of the |X|=3 local charge identity only."
+}
