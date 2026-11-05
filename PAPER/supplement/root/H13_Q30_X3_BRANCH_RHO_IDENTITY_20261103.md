@@ -15,34 +15,34 @@ Let X={a,b,c} be the three weight-11 points. Equality in the subset identity for
 - z>=22 and e_M(X)=3 require at least19 cross incidences, while ten R-points contribute at most20.
 
 Every y in R therefore has one of the three pair types ab, ac, bc. Write their multiplicities n_ab,n_ac,n_bc. The three X-vertices have M-degrees
-[
+$
 d_M(a)=2+n_{ab}+n_{ac},\
 d_M(b)=2+n_{ab}+n_{bc},\
 d_M(c)=2+n_{ac}+n_{bc}.
-]
+$
 Since t_a=t_b=t_c=11 and decorations are nonnegative, each degree is at most11. This forces all three pair types to occur (otherwise one hub has degree12).
 
 Fix y of type ab. Its missing neighborhood S={a,b}; the complement A\\S consists of y, c, and the other nine R-points. Let
-[
+$
 r_c=n_{ac}+n_{bc}=10-n_{ab}
-]
+$
 be the number of those other points adjacent to c. There are no edges among R, and y is not adjacent to c. Thus
-[
+$
 e_M(A\\S)=r_c.
-]
+$
 Also
-[
+$
 g_c=11-d_M(c)=11-(2+r_c)=9-r_c,
-]
+$
 and every other vertex in A\\S is regular. Hence
-[
+$
 \rho=e_M(A\\S)+G_{A\\S}=r_c+(9-r_c)=9.
-]
-The same argument applies symmetrically to every outside point, whatever its pair type. Formula(3) at beta12 and d=2 now gives
-[
+$
+The same argument applies symmetrically to every outside point, whatever its pair type. Formula (3) at beta12 and d=2 now gives
+$
 q_y=2(13-2)+\rho+h_{12}+\kappa+b
 \ge22+9=31,
-]
+$
 contradicting Q=30.
 
 ## Independent finite replay
