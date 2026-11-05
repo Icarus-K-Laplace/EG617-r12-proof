@@ -1,6 +1,6 @@
 # EG617-R12 — The Twelve-Color Case of Erdős Problem 617
 
-> **STATUS: PROVED — fixed parameter $r=12$, by an informal mathematical proof with finite computational verification and an independent AI-assisted certification PASS.**
+> **STATUS: The fixed $r=12$ theorem is claimed proved in the pinned informal mathematical proof, with finite computational verification and an independent AI-assisted audit PASS. The proof-DAG correction and fresh clean-room replay remain pending; no Lean kernel certification or external human review is claimed.**
 
 ## Main theorem
 
@@ -11,6 +11,8 @@ c:E(K_{145})\longrightarrow\{1,2,\ldots,12\}
 such that every 13-vertex subset of $K_{145}$ contains an edge of every one of the 12 colors.
 
 Equivalently, every 12-edge-coloring of $K_{145}$ has a 13-vertex subset whose induced edges omit at least one color.
+
+Here “balanced” means that every 13-vertex subset contains all 12 colors; it does not mean that the twelve color classes have equal cardinalities.
 
 This proves the fixed $r=12$ case of the Erdős–Gyárfás balanced-coloring conjecture.
 
@@ -27,6 +29,7 @@ This proves the fixed $r=12$ case of the Erdős–Gyárfás balanced-coloring co
 7. **Preliminary security scan:** [PUBLICATION/PRELIMINARY_SECURITY_SCAN.md](PUBLICATION/PRELIMINARY_SECURITY_SCAN.md)
 7. **Manuscript draft:** [PAPER/main.tex](PAPER/main.tex) and [PAPER/README.md](PAPER/README.md)
 8. **Manuscript source map:** [PAPER/PROOF_SOURCE_MAP.md](PAPER/PROOF_SOURCE_MAP.md)
+9. **Post-audit supplementary notes:** [PAPER/supplement/root/README.md](PAPER/supplement/root/README.md)
 
 ## Frozen proof and audit versions
 
@@ -48,7 +51,7 @@ The integrated argument proceeds through:
 4. The h13 repivot/charge argument and the unified COVER theorem.
 5. The complete front-end recurrence and elimination of the unique T61 stop.
 
-The precise dependency domains and frozen source provenance are recorded in the integrated proof package and certification report.
+The precise dependency domains and frozen source provenance are recorded in the integrated proof package and certification report. The frozen 25-node machine-readable DAG has a known semantic-completeness defect (missing explicit GATE47, D48 and SHELL_MATCHING_BOUNDS nodes); a 28-node correction proposal is included in the publication-corrections branch but is not yet promoted into the frozen proof snapshot.
 
 ## What is not claimed
 
@@ -56,6 +59,28 @@ The precise dependency domains and frozen source provenance are recorded in the 
 - The abstract uncolored high-energy $R(4,49)$ problem is not claimed solved; it is not a load-bearing dependency of the fixed-$r=12$ proof.
 - No Lean 4/Mathlib or other proof-assistant formalization is claimed complete.
 - No external human specialist review or journal acceptance is claimed.
+
+
+## Post-audit package status (5 November 2026)
+
+A targeted audit found no hybrid counterexample or load-bearing interface
+gap in the E286 equality -> 287-edge floor -> COVER Q30 chain. The manuscript
+and supplement now record the exact pivot identity
+`E=91+q_p+e(C_p)`, the pointwise use of the 287-edge floor, the d=2 K4
+repivot order, the h13 Q30 |X|=3 identity `rho=9`, and the same-parent
+Family I/II arguments.
+
+The frozen dependency DAG still needs correction: its 25-node version omits
+explicit GATE47, D48 and SHELL_MATCHING_BOUNDS nodes. The 28-node proposal is
+included in the supplementary package but has not yet been promoted. The
+full integrated root verifier has not yet been rerun from a fresh clean
+checkout. The fixed-r12 result is an informal mathematical proof with
+finite computational support; it is not Lean-kernel certified, externally
+peer-reviewed, or journal-accepted.
+
+The publication-corrections work is staged on
+`workstream/r12-publication-corrections-chat-20261105` and has not been
+merged into `main`.
 
 ## AI-assisted research and writing
 
