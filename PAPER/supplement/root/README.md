@@ -10,6 +10,7 @@ This directory records the post-audit clarification of the 47-vertex E286 equali
 - `RECHECK_H13_Q30_X3_BRANCH.py` and its JSON result: finite replay of the 36 positive pair-type distributions in the |X|=3 local charge identity.
 - `PROOF_DAG_CORRECTED_PROPOSAL.md/.json`: 28-node dependency-graph correction proposal. It is not yet promoted into the frozen 25-node integration DAG.
 - `DAG_DEPENDENCY_CORRECTION_NOTE_20261105.md`: concise explanation of the three omitted dependency nodes and the proposed edges.
+- `PUBLICATION_CORRECTIONS_20261105.md`: change log, frozen-source crosswalk, checks performed, and explicit non-claims.
 
 ## Mathematical interface in one line
 
