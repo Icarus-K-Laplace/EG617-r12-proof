@@ -45,9 +45,9 @@ The report explicitly distinguishes analytic derivations from finite computation
 | Item | Status |
 |---|---|
 | Informal analytic proof | PROVED in pinned integrated package |
-| Finite replay / certificate checks | COMPUTATIONALLY VERIFIED as described in the audit |
+| Finite replay / certificate checks | COMPUTATIONALLY VERIFIED as described in the audit; the new supplementary arithmetic scripts are scoped to their stated finite domains |
 | Independent AI-assisted audit | PASS |
-| Lean 4 / Mathlib formalization | NOT YET COMPLETED |
+| Lean 4 / Mathlib formalization | NOT YET COMPLETED; no complete kernel-checked declaration of the original K145 theorem is claimed |
 | External human combinatorics referee | NOT YET COMPLETED |
 | Journal peer review / acceptance | NOT YET COMPLETED |
 | Public arXiv identifier | NOT YET ASSIGNED |
@@ -56,7 +56,7 @@ The report explicitly distinguishes analytic derivations from finite computation
 
 Recommended:
 
-> We prove the fixed twelve-color case of the Erdős–Gyárfás balanced-coloring conjecture: no balanced 12-edge-coloring of $K_{145}$ exists.
+> We prove the fixed twelve-color case of the Erdős–Gyárfás balanced-coloring conjecture: there is no 12-edge-coloring of $K_{145}$ in which every 13-vertex subset contains all 12 colors.
 
 Also state in the abstract or introduction that the proof is computation-assisted and not yet proof-assistant formalized.
 
@@ -70,3 +70,39 @@ Do not say that the full Erdős–Gyárfás conjecture has been solved.
 - 286-edge equality source: c3d07b2ca5912b1b0c1c6998303c19c3c2911340
 - COVER source: 531e41c79e08dd2bb3892ca9ba8a491a56678565
 - 47-point low-edge source: 783c72090205d4bd1a6eefce1dec09e15f78e319
+
+
+## 7. Post-audit qualification (5 November 2026)
+
+A targeted interface audit of the 47-vertex E286 equality boundary, the
+pointwise 287-edge core floor, and the h13 COVER Q30 terminal found no
+hybrid counterexample or load-bearing interface gap in the audited chain.
+The exact identity is
+[
+E=e(F)=91+q_p+e(C_p),
+]
+and the 287-edge floor is applied to every regular pivot core before
+taking the maximum charge. The detailed repivot sequence, the
+$|X|=3$ rho identity, and the Family I/II same-parent arguments are
+recorded in `PAPER/supplement/root/E286_COVER_INTERFACE_AUDIT_20261103.md`
+and `H13_Q30_X3_BRANCH_RHO_IDENTITY_20261103.md`.
+
+This targeted result does not remove the following package-level blockers:
+
+- The frozen 25-node `PROOF_DAG.json` omits explicit dependency nodes
+  `GATE47`, `D48`, and `SHELL_MATCHING_BOUNDS`. A 28-node corrected
+  proposal is included in `PAPER/supplement/root/`; it has resolved parent
+  references, is acyclic, and all nodes are dependencies of
+  `K145_EMPTY`. It has not yet been accepted as a semantic dependency
+  map or promoted into the frozen integration snapshot.
+- The full integrated root verifier has not been rerun from a fresh,
+  clean checkout by this publication-corrections branch. A saved verifier
+  result or a component-level replay is not a clean-room acceptance.
+- The proof remains an informal mathematical proof with finite
+  computational support. No Lean/Mathlib kernel certification, external
+  human combinatorics review, or journal acceptance is claimed.
+
+The fixed-$r=12$ theorem status above refers to the informal proof in the
+pinned integration package and its stated audit scope. It must not be
+rephrased as formal proof-assistant certification or full clean-room
+reproducibility.
