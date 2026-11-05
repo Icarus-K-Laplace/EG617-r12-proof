@@ -50,3 +50,20 @@ If the repository is still private, the GitHub account must have access. After a
 ## Provenance
 
 The integrated proof's `SOURCE_MANIFEST.json` records frozen source commits, paths and Git blob identities. The certification package records raw Git object checks and SHA256 manifests. Always cite the pinned commit rather than a moving branch head.
+
+## Post-audit supplementary arithmetic checks (5 November 2026)
+
+The publication supplement contains two additional standard-library Python checkers:
+
+```bash
+python -B PAPER/supplement/root/RECHECK_E286_COVER_INTERFACE_20261103.py
+python -B PAPER/supplement/root/RECHECK_H13_Q30_X3_BRANCH.py
+```
+
+The first checks the ten four-seed support orbits, listed scalar minima, shared-center overlap inequalities, the E407/E408 pivot ledger, and the d=2 K4 repivot arithmetic. The second checks all 36 positive pair-type distributions in the h13 Q30 |X|=3 local rho identity. Their recorded JSON outputs are included next to the scripts.
+
+These scripts verify only their finite arithmetic/quotient domains. They do not search all 47- or 61-vertex graphs, establish the analytic completeness of the graph reductions, or execute the integrated root verifier. Regenerate the JSON outputs when reproducing the scripts; do not treat the checked-in outputs as evidence of a fresh clean-room run.
+
+## Current clean-room boundary
+
+The integrated root verifier has not yet been executed from a fresh checkout as part of the 5 November publication-corrections branch. A clean-room acceptance must pin the exact integration commit, fetch all source commits required by the manifest, run the integrated verifier and the independent replay, capture environment and exit codes, and compare regenerated outputs. The verifier itself is a finite arithmetic/provenance checker, not a proof-assistant kernel.
