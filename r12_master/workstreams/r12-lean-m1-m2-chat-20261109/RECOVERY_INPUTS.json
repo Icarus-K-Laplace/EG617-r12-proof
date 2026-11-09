@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-09",
+  "inputFile": "EG617-r12-Lean-repro-M1-BLOCKED-20261109.zip",
+  "inputSHA256": "107fe42a046322e92386b68d581e010a66d8521e5be3c04e2415087cc61cf0d6",
+  "requestedFilename": "EG617-r12-Lean-repro-M1-BLOCKED-20261109(2).zip",
+  "requestedSuffixFileFound": false,
+  "inputNote": "Used available local archive; exact identity with separately named (2) copy is not assumed",
+  "githubHead": "fb053df9167f5faa91c54771c7b6fe31ca212f04",
+  "frozenCommit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+  "branch": "workstream/r12-lean-m1-m2-chat-20261109",
+  "sources": [
+    {
+      "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/low/MINIMUM_DEGREE_GATE_SELF_CONTAINED.md",
+      "frozenBlob": "a8151c82da6486b43a735aa3aae64cc5db502b43",
+      "existsAtCurrentHead": false
+    },
+    {
+      "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/eq286/286_EDGE_EQUALITY_CLASSIFICATION.md",
+      "frozenBlob": "e596cdee0ae465a1fe82a8538e991dbc228db235",
+      "existsAtCurrentHead": false
+    },
+    {
+      "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/cover/COVER_THEOREM.md",
+      "frozenBlob": "f73c0a331cb22c3e553e679abb24ed65eab004ee",
+      "existsAtCurrentHead": false
+    },
+    {
+      "path": "r12_master/workstreams/astra-global-root-integration-chat-20261031/GLOBAL_THEOREM_LEDGER.md",
+      "frozenBlob": "a08a0bb0746d58e166df3f85d53f3a9bac178a44",
+      "existsAtCurrentHead": false
+    }
+  ],
+  "committedBytes": 23544758272,
+  "commitLimit": 25804107776,
+  "availableBytes": 2443878400,
+  "linuxAvailability": "WSL command exists but Linux subsystem is not installed; Docker unavailable"
+}

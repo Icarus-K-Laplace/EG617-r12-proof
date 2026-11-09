@@ -1,0 +1,67 @@
+name: EG617 r12 fixed-version M1 recovery
+on:
+  push:
+    branches: [workstream/r12-lean-m1-m2-chat-20261109]
+    paths:
+      - r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/**
+      - .github/workflows/eg617-r12-lean-recovery-20261109.yml
+permissions:
+  contents: read
+jobs:
+  m1-kernel:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      LEAN_NUM_THREADS: 2
+    defaults:
+      run:
+        shell: bash
+        working-directory: r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Install exact official Lean archive
+        run: |
+          set -euo pipefail
+          curl -fL --retry 3 https://github.com/leanprover/lean4/releases/download/v4.35.0/lean-4.35.0-linux.tar.zst -o "$RUNNER_TEMP/lean.tar.zst"
+          echo "7289597a44543246c9227b8cae501767e095ce17f6d448b95fc4a8dc97268f6d  $RUNNER_TEMP/lean.tar.zst" | sha256sum -c -
+          tar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/lean-4.35.0-linux/bin" >> "$GITHUB_PATH"
+      - name: Verify toolchain and restore fixed dependency cache
+        run: |
+          set -euo pipefail
+          mkdir -p logs
+          lean --version | tee logs/linux-lean-version.txt
+          lake --version | tee logs/linux-lake-version.txt
+          lake exe cache get Mathlib.Combinatorics.SimpleGraph.Extremal.Turan Mathlib.Tactic.IntervalCases Mathlib.Tactic.NormNum Mathlib.Algebra.Order.BigOperators.Group.Finset 2>&1 | tee logs/linux-cache.txt
+          git diff --exit-code -- lake-manifest.json lean-toolchain lakefile.lean
+          node - <<'NODE'
+          const fs=require('fs'), cp=require('child_process');
+          const m=JSON.parse(fs.readFileSync('lake-manifest.json'));
+          if(m.packages.length!==9) throw Error('Expected exactly nine dependencies');
+          for(const p of m.packages){const actual=cp.execFileSync('git',['-C',`.lake/packages/${p.name}`,'rev-parse','HEAD'],{encoding:'utf8'}).trim();if(actual!==p.rev)throw Error(`Pin mismatch: ${p.name}`);console.log(p.name,actual);}
+          NODE
+      - name: Compile each M1 module
+        run: |
+          set -euo pipefail
+          lake clean eg617r12
+          result=0
+          for mod in EG617.Combinatorics.TuranArithmetic EG617.Frontend.EdgeCounting EG617.Frontend.TuranBounds EG617.Frontend.HereditaryCaps; do
+            if lake build "+$mod" 2>&1 | tee "logs/linux-$mod.txt"; then
+              echo "MODULE_PASS $mod"
+            else
+              echo "MODULE_FAIL $mod"
+              result=1
+            fi
+          done
+          exit "$result"
+      - name: Build complete project and audit all declarations
+        run: |
+          set -euo pipefail
+          lake build 2>&1 | tee logs/build.txt
+          node scripts/check-source.mjs
+          lake build +EG617.Audit.Axioms 2>&1 | tee logs/axioms.txt
+          node scripts/check-axioms.mjs
+          lake build +EG617.Audit.Statements 2>&1 | tee logs/statements.txt
+          echo 'KERNEL_AND_AXIOM_CHECKS_PASS; ORIGINAL_MAIN_THEOREM_NOT_PROVED'
