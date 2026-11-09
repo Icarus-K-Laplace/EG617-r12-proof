@@ -17,7 +17,7 @@ theorem inducedColorGraph_compl_cliqueFree (c : EdgeColoring)
   classical
   intro t ht
   have hi : (inducedColorGraph c i S).IsNIndepSet 13 t :=
-    SimpleGraph.isNClique_compl.mp ht
+    (SimpleGraph.isNClique_compl (inducedColorGraph c i S)).mp ht
   have hind : ∀ u ∈ t.image (fun x : S => (x : Vertex)),
       ∀ v ∈ t.image (fun x : S => (x : Vertex)),
         ¬ (colorGraph c i).Adj u v := by
@@ -51,13 +51,27 @@ theorem tau12_le_colorEdgeCount (c : EdgeColoring) (hc : ValidColoring c)
     simpa only [Fintype.card_coe] using hcf.card_edgeFinset_le
   have hd : Disjoint G.edgeFinset Gᶜ.edgeFinset :=
     SimpleGraph.disjoint_edgeFinset.mpr disjoint_compl_right
+  have hunion : G.edgeFinset ∪ Gᶜ.edgeFinset = (⊤ : SimpleGraph S).edgeFinset := by
+    ext e
+    refine Sym2.inductionOn e ?_
+    intro u v
+    simp only [Finset.mem_union, SimpleGraph.mem_edgeFinset,
+      SimpleGraph.mem_edgeSet, SimpleGraph.compl_adj, SimpleGraph.top_adj]
+    constructor
+    · rintro (h | h)
+      · exact h.ne
+      · exact h.1
+    · intro h
+      by_cases ha : G.Adj u v
+      · exact Or.inl ha
+      · exact Or.inr ⟨h, ha⟩
   have htotal : G.edgeFinset.card + Gᶜ.edgeFinset.card = Nat.choose S.card 2 := by
     calc
       G.edgeFinset.card + Gᶜ.edgeFinset.card =
           (G.edgeFinset ∪ Gᶜ.edgeFinset).card :=
         (Finset.card_union_of_disjoint hd).symm
       _ = (⊤ : SimpleGraph S).edgeFinset.card := by
-        rw [← SimpleGraph.edgeFinset_sup, sup_compl_eq_top]
+        rw [hunion]
       _ = Nat.choose S.card 2 := by
         simpa only [Fintype.card_coe] using
           (SimpleGraph.card_edgeFinset_top_eq_card_choose_two (V := S))

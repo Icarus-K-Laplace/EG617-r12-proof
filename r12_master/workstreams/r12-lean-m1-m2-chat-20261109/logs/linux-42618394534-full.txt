@@ -1,0 +1,349 @@
+2026-11-09T12:36:20.7298895Z Current runner version: '2.338.2'
+2026-11-09T12:36:20.7327449Z ##[group]Runner Image Provisioner
+2026-11-09T12:36:20.7328437Z Hosted Compute Agent
+2026-11-09T12:36:20.7329114Z Version: 20261028.624
+2026-11-09T12:36:20.7329788Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-09T12:36:20.7330863Z Build Date: 2026-10-28T21:51:42Z
+2026-11-09T12:36:20.7331564Z Worker ID: {c7c03aa6-119b-42a8-9d22-cb1f4aacb047}
+2026-11-09T12:36:20.7332347Z Region: westus3
+2026-11-09T12:36:20.7332917Z Cloud: Azure
+2026-11-09T12:36:20.7333462Z ##[endgroup]
+2026-11-09T12:36:20.7335068Z ##[group]Operating System
+2026-11-09T12:36:20.7335716Z Ubuntu
+2026-11-09T12:36:20.7336233Z 24.04.5
+2026-11-09T12:36:20.7336878Z LTS
+2026-11-09T12:36:20.7337445Z ##[endgroup]
+2026-11-09T12:36:20.7338054Z ##[group]Runner Image
+2026-11-09T12:36:20.7338671Z Image: ubuntu-24.04
+2026-11-09T12:36:20.7339264Z Version: 20261101.360.1
+2026-11-09T12:36:20.7340862Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-09T12:36:20.7342492Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-09T12:36:20.7343471Z ##[endgroup]
+2026-11-09T12:36:20.7345045Z ##[group]GITHUB_TOKEN Permissions
+2026-11-09T12:36:20.7347137Z Contents: read
+2026-11-09T12:36:20.7347748Z Metadata: read
+2026-11-09T12:36:20.7348424Z ##[endgroup]
+2026-11-09T12:36:20.7351029Z Secret source: Actions
+2026-11-09T12:36:20.7352108Z Cache mode: write
+2026-11-09T12:36:20.7352813Z Prepare workflow directory
+2026-11-09T12:36:20.7862329Z Prepare all required actions
+2026-11-09T12:36:20.7913014Z Getting action download info
+2026-11-09T12:36:21.0892682Z Download action repository 'actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2026-11-09T12:36:21.2671042Z Complete job name: m1-kernel
+2026-11-09T12:36:21.3724112Z ##[group]Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+2026-11-09T12:36:21.3725217Z with:
+2026-11-09T12:36:21.3725704Z   persist-credentials: false
+2026-11-09T12:36:21.3726281Z   repository: Icarus-K-Laplace/EG617-r12-proof
+2026-11-09T12:36:21.3730266Z   token: ***
+2026-11-09T12:36:21.3730724Z   ssh-strict: true
+2026-11-09T12:36:21.3731181Z   ssh-user: git
+2026-11-09T12:36:21.3731609Z   clean: true
+2026-11-09T12:36:21.3732064Z   sparse-checkout-cone-mode: true
+2026-11-09T12:36:21.3732610Z   fetch-depth: 1
+2026-11-09T12:36:21.3733049Z   fetch-tags: false
+2026-11-09T12:36:21.3733498Z   show-progress: true
+2026-11-09T12:36:21.3733956Z   lfs: false
+2026-11-09T12:36:21.3734372Z   submodules: false
+2026-11-09T12:36:21.3734825Z   set-safe-directory: true
+2026-11-09T12:36:21.3735610Z env:
+2026-11-09T12:36:21.3736031Z   LEAN_NUM_THREADS: 2
+2026-11-09T12:36:21.3736506Z ##[endgroup]
+2026-11-09T12:36:21.6717354Z Syncing repository: Icarus-K-Laplace/EG617-r12-proof
+2026-11-09T12:36:21.6719774Z ##[group]Getting Git version info
+2026-11-09T12:36:21.6721388Z Working directory is '/home/runner/work/EG617-r12-proof/EG617-r12-proof'
+2026-11-09T12:36:21.6722715Z [command]/usr/bin/git version
+2026-11-09T12:36:21.6816943Z git version 2.56.0
+2026-11-09T12:36:21.6872822Z ##[endgroup]
+2026-11-09T12:36:21.6880924Z Temporarily overriding HOME='/home/runner/work/_temp/d9de7210-8e2a-44f5-ad4f-ab4912078b25' before making global git config changes
+2026-11-09T12:36:21.6891558Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-09T12:36:21.6893701Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/EG617-r12-proof/EG617-r12-proof
+2026-11-09T12:36:21.6925448Z Deleting the contents of '/home/runner/work/EG617-r12-proof/EG617-r12-proof'
+2026-11-09T12:36:21.6934861Z ##[group]Initializing the repository
+2026-11-09T12:36:21.6947679Z [command]/usr/bin/git init /home/runner/work/EG617-r12-proof/EG617-r12-proof
+2026-11-09T12:36:21.7087075Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-09T12:36:21.7088288Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-09T12:36:21.7089577Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-09T12:36:21.7090977Z hint: call:
+2026-11-09T12:36:21.7091729Z hint:
+2026-11-09T12:36:21.7092440Z hint: 	git config --global init.defaultBranch <name>
+2026-11-09T12:36:21.7093075Z hint:
+2026-11-09T12:36:21.7093681Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-09T12:36:21.7094604Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-09T12:36:21.7095342Z hint:
+2026-11-09T12:36:21.7095910Z hint: 	git branch -m <name>
+2026-11-09T12:36:21.7096543Z hint:
+2026-11-09T12:36:21.7097182Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-09T12:36:21.7105932Z Initialized empty Git repository in /home/runner/work/EG617-r12-proof/EG617-r12-proof/.git/
+2026-11-09T12:36:21.7120693Z [command]/usr/bin/git remote add origin https://github.com/Icarus-K-Laplace/EG617-r12-proof
+2026-11-09T12:36:21.7194711Z ##[endgroup]
+2026-11-09T12:36:21.7196036Z ##[group]Disabling automatic garbage collection
+2026-11-09T12:36:21.7200290Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-09T12:36:21.7240296Z ##[endgroup]
+2026-11-09T12:36:21.7241840Z ##[group]Setting up auth
+2026-11-09T12:36:21.7250283Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T12:36:21.7303390Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T12:36:21.7741574Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T12:36:21.7790560Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T12:36:21.8082776Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-09T12:36:21.8145450Z ##[endgroup]
+2026-11-09T12:36:21.8147234Z ##[group]Fetching the repository
+2026-11-09T12:36:21.8161101Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +9871b65df6019d9ff76a85779eabe6fa9614aca4:refs/remotes/origin/workstream/r12-lean-m1-m2-chat-20261109
+2026-11-09T12:36:22.4779270Z From https://github.com/Icarus-K-Laplace/EG617-r12-proof
+2026-11-09T12:36:22.4782414Z  * [new ref]         9871b65df6019d9ff76a85779eabe6fa9614aca4 -> origin/workstream/r12-lean-m1-m2-chat-20261109
+2026-11-09T12:36:22.4793226Z ##[endgroup]
+2026-11-09T12:36:22.4795780Z ##[group]Determining the checkout info
+2026-11-09T12:36:22.4798095Z ##[endgroup]
+2026-11-09T12:36:22.4799419Z [command]/usr/bin/git sparse-checkout disable
+2026-11-09T12:36:22.4869249Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-09T12:36:22.4924620Z ##[group]Checking out the ref
+2026-11-09T12:36:22.4932214Z [command]/usr/bin/git checkout --progress --force -B workstream/r12-lean-m1-m2-chat-20261109 refs/remotes/origin/workstream/r12-lean-m1-m2-chat-20261109
+2026-11-09T12:36:22.5275902Z Switched to a new branch 'workstream/r12-lean-m1-m2-chat-20261109'
+2026-11-09T12:36:22.5279111Z branch 'workstream/r12-lean-m1-m2-chat-20261109' set up to track 'origin/workstream/r12-lean-m1-m2-chat-20261109'.
+2026-11-09T12:36:22.5287844Z ##[endgroup]
+2026-11-09T12:36:22.5346732Z [command]/usr/bin/git log -1 --format=%H
+2026-11-09T12:36:22.5393654Z 9871b65df6019d9ff76a85779eabe6fa9614aca4
+2026-11-09T12:36:22.5404096Z ##[group]Removing auth
+2026-11-09T12:36:22.5407896Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T12:36:22.5452165Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T12:36:22.5714227Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T12:36:22.5753540Z http.https://github.com/.extraheader
+2026-11-09T12:36:22.5761771Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-09T12:36:22.5807840Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T12:36:22.6054352Z ##[endgroup]
+2026-11-09T12:36:22.6321402Z ##[group]Run set -euo pipefail
+2026-11-09T12:36:22.6322769Z [36;1mset -euo pipefail[0m
+2026-11-09T12:36:22.6325410Z [36;1mcurl -fL --retry 3 https://github.com/leanprover/lean4/releases/download/v4.35.0/lean-4.35.0-linux.tar.zst -o "$RUNNER_TEMP/lean.tar.zst"[0m
+2026-11-09T12:36:22.6329237Z [36;1mecho "7289597a44543246c9227b8cae501767e095ce17f6d448b95fc4a8dc97268f6d  $RUNNER_TEMP/lean.tar.zst" | sha256sum -c -[0m
+2026-11-09T12:36:22.6332260Z [36;1mtar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"[0m
+2026-11-09T12:36:22.6334175Z [36;1mecho "$RUNNER_TEMP/lean-4.35.0-linux/bin" >> "$GITHUB_PATH"[0m
+2026-11-09T12:36:22.6361314Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-09T12:36:22.6362844Z env:
+2026-11-09T12:36:22.6363802Z   LEAN_NUM_THREADS: 2
+2026-11-09T12:36:22.6364819Z ##[endgroup]
+2026-11-09T12:36:22.6525165Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2026-11-09T12:36:22.6528451Z                                  Dload  Upload   Total   Spent    Left  Speed
+2026-11-09T12:36:22.6529701Z 
+2026-11-09T12:36:22.8084920Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2026-11-09T12:36:22.8087106Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2026-11-09T12:36:22.9836792Z 
+2026-11-09T12:36:23.9853989Z   7  566M    7 39.7M    0     0   120M      0  0:00:04 --:--:--  0:00:04  120M
+2026-11-09T12:36:24.0834020Z  91  566M   91  518M    0     0   388M      0  0:00:01  0:00:01 --:--:--  477M
+2026-11-09T12:36:24.0835185Z 100  566M  100  566M    0     0   396M      0  0:00:01  0:00:01 --:--:--  479M
+2026-11-09T12:36:24.5183411Z /home/runner/work/_temp/lean.tar.zst: OK
+2026-11-09T12:36:30.4422497Z ##[group]Run set -euo pipefail
+2026-11-09T12:36:30.4423226Z [36;1mset -euo pipefail[0m
+2026-11-09T12:36:30.4423825Z [36;1mmkdir -p logs[0m
+2026-11-09T12:36:30.4424511Z [36;1mlean --version | tee logs/linux-lean-version.txt[0m
+2026-11-09T12:36:30.4425409Z [36;1mlake --version | tee logs/linux-lake-version.txt[0m
+2026-11-09T12:36:30.4427412Z [36;1mlake exe cache get Mathlib.Combinatorics.SimpleGraph.Extremal.Turan Mathlib.Tactic.IntervalCases Mathlib.Tactic.NormNum Mathlib.Algebra.Order.BigOperators.Group.Finset 2>&1 | tee logs/linux-cache.txt[0m
+2026-11-09T12:36:30.4429281Z [36;1mgit diff --exit-code -- lake-manifest.json lean-toolchain lakefile.lean[0m
+2026-11-09T12:36:30.4430422Z [36;1mnode - <<'NODE'[0m
+2026-11-09T12:36:30.4431005Z [36;1mconst fs=require('fs'), cp=require('child_process');[0m
+2026-11-09T12:36:30.4431811Z [36;1mconst m=JSON.parse(fs.readFileSync('lake-manifest.json'));[0m
+2026-11-09T12:36:30.4432807Z [36;1mif(m.packages.length!==9) throw Error('Expected exactly nine dependencies');[0m
+2026-11-09T12:36:30.4434635Z [36;1mfor(const p of m.packages){const actual=cp.execFileSync('git',['-C',`.lake/packages/${p.name}`,'rev-parse','HEAD'],{encoding:'utf8'}).trim();if(actual!==p.rev)throw Error(`Pin mismatch: ${p.name}`);console.log(p.name,actual);}[0m
+2026-11-09T12:36:30.4436181Z [36;1mNODE[0m
+2026-11-09T12:36:30.4462131Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-09T12:36:30.4462534Z env:
+2026-11-09T12:36:30.4462779Z   LEAN_NUM_THREADS: 2
+2026-11-09T12:36:30.4463044Z ##[endgroup]
+2026-11-09T12:36:30.5811823Z Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+2026-11-09T12:36:30.6254103Z Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)
+2026-11-09T12:36:31.0620384Z info: mathlib: materializing new dependency
+2026-11-09T12:36:31.2934424Z info: mathlib: fetching revision '56a005855ea17e0b0958f73ec801ae140b0a1679' from https://github.com/leanprover-community/mathlib4.git
+2026-11-09T12:36:33.0651473Z info: mathlib: checking out revision '56a005855ea17e0b0958f73ec801ae140b0a1679'
+2026-11-09T12:36:45.8132132Z info: plausible: materializing new dependency
+2026-11-09T12:36:45.9087794Z info: plausible: fetching revision 'dfa4f38190d07c37e315953e08b90fe2d95b3c24' from https://github.com/leanprover-community/plausible
+2026-11-09T12:36:46.5699691Z info: plausible: checking out revision 'dfa4f38190d07c37e315953e08b90fe2d95b3c24'
+2026-11-09T12:36:47.8734891Z info: LeanSearchClient: materializing new dependency
+2026-11-09T12:36:47.9658714Z info: LeanSearchClient: fetching revision 'd6b4c7be5be75ec4917c873ac50c756dc1436372' from https://github.com/leanprover-community/LeanSearchClient
+2026-11-09T12:36:48.5241713Z info: LeanSearchClient: checking out revision 'd6b4c7be5be75ec4917c873ac50c756dc1436372'
+2026-11-09T12:36:49.6726138Z info: importGraph: materializing new dependency
+2026-11-09T12:36:49.7719670Z info: importGraph: fetching revision 'a41f0e9a4dea23188ea9cc1c41ac9f8bbafe0b93' from https://github.com/leanprover-community/import-graph
+2026-11-09T12:36:50.4700747Z info: importGraph: checking out revision 'a41f0e9a4dea23188ea9cc1c41ac9f8bbafe0b93'
+2026-11-09T12:36:51.8166968Z info: proofwidgets: materializing new dependency
+2026-11-09T12:36:51.9089024Z info: proofwidgets: fetching revision 'df72b022e558978a1c50264cfc4d7fec86fa8e04' from https://github.com/leanprover-community/ProofWidgets4
+2026-11-09T12:36:52.6400930Z info: proofwidgets: checking out revision 'df72b022e558978a1c50264cfc4d7fec86fa8e04'
+2026-11-09T12:36:54.8952302Z info: aesop: materializing new dependency
+2026-11-09T12:36:54.9878964Z info: aesop: fetching revision '4a174c490d8707121c4a9290800489f105d85e07' from https://github.com/leanprover-community/aesop
+2026-11-09T12:36:55.7435005Z info: aesop: checking out revision '4a174c490d8707121c4a9290800489f105d85e07'
+2026-11-09T12:36:57.1720525Z info: Qq: materializing new dependency
+2026-11-09T12:36:57.2646991Z info: Qq: fetching revision 'dce0ad79c486cb1fb504af04f953c3466b0c6db8' from https://github.com/leanprover-community/quote4
+2026-11-09T12:36:57.9540695Z info: Qq: checking out revision 'dce0ad79c486cb1fb504af04f953c3466b0c6db8'
+2026-11-09T12:36:59.1671628Z info: batteries: materializing new dependency
+2026-11-09T12:36:59.2577046Z info: batteries: fetching revision '66e469188fe07963e5cf666c7d4433f45b8131c5' from https://github.com/leanprover-community/batteries
+2026-11-09T12:37:00.4060797Z info: batteries: checking out revision '66e469188fe07963e5cf666c7d4433f45b8131c5'
+2026-11-09T12:37:02.1662603Z info: Cli: materializing new dependency
+2026-11-09T12:37:02.2567297Z info: Cli: fetching revision 'c24fe6078c630e89b489bffe59b3e20ac30d12c8' from https://github.com/leanprover/lean4-cli
+2026-11-09T12:37:02.8942597Z info: Cli: checking out revision 'c24fe6078c630e89b489bffe59b3e20ac30d12c8'
+2026-11-09T12:37:04.9410596Z ✔ [2/6] Built Cache.Cli (363ms)
+2026-11-09T12:37:05.3417026Z ✔ [5/13] Built Cache.Lean (422ms)
+2026-11-09T12:37:05.7443369Z ✔ [6/13] Built Cache.Env (379ms)
+2026-11-09T12:37:05.9573507Z ✔ [7/13] Built Batteries.Tactic.OpenPrivate (958ms)
+2026-11-09T12:37:06.1569784Z ✔ [8/13] Built Cache.Infra (423ms)
+2026-11-09T12:37:06.6585823Z ✔ [10/43] Built Cache.Location (508ms)
+2026-11-09T12:37:06.8589248Z ✔ [11/43] Built Cache.Cli:c.o (215ms)
+2026-11-09T12:37:07.0592686Z ✔ [12/43] Built Cache.Lean:c.o (257ms)
+2026-11-09T12:37:07.4607219Z ✔ [13/43] Built Cache.IO (1.5s)
+2026-11-09T12:37:07.6611959Z ✔ [14/43] Built Cache.Env:c.o (228ms)
+2026-11-09T12:37:07.9616916Z ✔ [15/43] Built Cache.Infra:c.o (248ms)
+2026-11-09T12:37:08.1736432Z ✔ [16/43] Built Cache.Location:c.o (289ms)
+2026-11-09T12:37:08.3730212Z ✔ [17/43] Built Batteries.Tactic.OpenPrivate:c.o (1.2s)
+2026-11-09T12:37:08.9818799Z ✔ [18/43] Built Cache.Hashing (662ms)
+2026-11-09T12:37:09.6824161Z ✔ [19/43] Built Cache.Hashing:c.o (631ms)
+2026-11-09T12:37:10.0831278Z ✔ [20/43] Built Cache.IO:c.o (1.8s)
+2026-11-09T12:37:11.2951412Z ✔ [21/43] Built Cache.Requests (1.7s)
+2026-11-09T12:37:11.7942595Z ✔ [22/43] Built Cache.Marker (453ms)
+2026-11-09T12:37:11.9937157Z ✔ [23/43] Built Cache.Marker:c.o (193ms)
+2026-11-09T12:37:12.3942685Z ✔ [24/43] Built Cache.Upload.Curl (465ms)
+2026-11-09T12:37:12.8953653Z ✔ [25/43] Built Cache.Upload.Rclone (509ms)
+2026-11-09T12:37:13.4946320Z ✔ [26/43] Built Cache.Query (561ms)
+2026-11-09T12:37:13.7005046Z ✔ [27/43] Built Cache.Upload.Curl:c.o (245ms)
+2026-11-09T12:37:14.0090864Z ✔ [28/43] Built Cache.Upload.Rclone:c.o (308ms)
+2026-11-09T12:37:14.2091855Z ✔ [29/43] Built Cache.Requests:c.o (2.9s)
+2026-11-09T12:37:14.4091744Z ✔ [30/43] Built Cache.Query:c.o (349ms)
+2026-11-09T12:37:14.6092861Z ✔ [31/43] Built Cache.Upload.Azure (422ms)
+2026-11-09T12:37:15.0098360Z ✔ [32/43] Built Cache.Upload.S3 (583ms)
+2026-11-09T12:37:15.2104477Z ✔ [33/43] Built Cache.Warning (640ms)
+2026-11-09T12:37:15.2105168Z ✔ [34/43] Built Cache.Upload.Azure:c.o (235ms)
+2026-11-09T12:37:15.6110113Z ✔ [35/43] Built Cache.Upload.S3:c.o (359ms)
+2026-11-09T12:37:15.7112594Z ✔ [36/43] Built Cache.Upload.Defs (443ms)
+2026-11-09T12:37:15.9161712Z ✔ [37/43] Built Cache.Upload.Defs:c.o (219ms)
+2026-11-09T12:37:16.0138451Z ✔ [38/43] Built Cache.Warning:c.o (470ms)
+2026-11-09T12:37:16.3143372Z ✔ [39/43] Built Cache.Upload (419ms)
+2026-11-09T12:37:16.5145822Z ✔ [40/43] Built Cache.Upload:c.o (178ms)
+2026-11-09T12:37:17.3155436Z ✔ [41/43] Built Cache.Main (989ms)
+2026-11-09T12:37:18.4171475Z ✔ [42/43] Built Cache.Main:c.o (1.1s)
+2026-11-09T12:37:19.1215474Z ✔ [43/43] Built cache:exe (692ms)
+2026-11-09T12:37:21.6787977Z Current branch: HEAD
+2026-11-09T12:37:21.6788570Z Using cache from origin: (some leanprover-community/mathlib4)
+2026-11-09T12:37:21.6789701Z Attempting to download 1255 file(s) from leanprover-community/mathlib4 cache at https://cache.mathlib.org/mathlib4-master
+2026-11-09T12:37:21.7869711Z 
+2026-11-09T12:37:21.8961873Z Downloaded: 1 file(s) [attempted 1/1255 = 0%, 174 KB/s]
+2026-11-09T12:37:21.9932496Z Downloaded: 86 file(s) [attempted 86/1255 = 6%, 9060 KB/s]
+2026-11-09T12:37:22.1043082Z Downloaded: 218 file(s) [attempted 218/1255 = 17%, 992 KB/s]
+2026-11-09T12:37:22.2250617Z Downloaded: 307 file(s) [attempted 307/1255 = 24%, 2064 KB/s]
+2026-11-09T12:37:22.3392317Z Downloaded: 417 file(s) [attempted 417/1255 = 33%, 1433 KB/s]
+2026-11-09T12:37:22.4561128Z Downloaded: 517 file(s) [attempted 517/1255 = 41%, 836 KB/s]
+2026-11-09T12:37:22.5548880Z Downloaded: 623 file(s) [attempted 623/1255 = 49%, 1503 KB/s]
+2026-11-09T12:37:22.6748317Z Downloaded: 723 file(s) [attempted 723/1255 = 57%, 388 KB/s]
+2026-11-09T12:37:22.8011300Z Downloaded: 843 file(s) [attempted 843/1255 = 67%, 710 KB/s]
+2026-11-09T12:37:22.9000375Z Downloaded: 941 file(s) [attempted 941/1255 = 74%, 2334 KB/s]
+2026-11-09T12:37:23.0051218Z Downloaded: 1046 file(s) [attempted 1046/1255 = 83%, 6498 KB/s]
+2026-11-09T12:37:23.1385703Z Downloaded: 1122 file(s) [attempted 1122/1255 = 89%, 134 KB/s]
+2026-11-09T12:37:23.1489094Z Downloaded: 1204 file(s) [attempted 1204/1255 = 95%, 1408 KB/s]
+2026-11-09T12:37:23.1490558Z Downloaded: 1255 file(s) [attempted 1255/1255 = 100%, 1408 KB/s]
+2026-11-09T12:37:23.1492191Z Still decompressing downloaded files...
+2026-11-09T12:37:26.6202860Z Decompressed 1255 file(s)
+2026-11-09T12:37:26.6203584Z Already decompressed 1255 file(s)
+2026-11-09T12:37:26.9643619Z plausible dfa4f38190d07c37e315953e08b90fe2d95b3c24
+2026-11-09T12:37:26.9672555Z LeanSearchClient d6b4c7be5be75ec4917c873ac50c756dc1436372
+2026-11-09T12:37:26.9698220Z importGraph a41f0e9a4dea23188ea9cc1c41ac9f8bbafe0b93
+2026-11-09T12:37:26.9724453Z proofwidgets df72b022e558978a1c50264cfc4d7fec86fa8e04
+2026-11-09T12:37:26.9749374Z aesop 4a174c490d8707121c4a9290800489f105d85e07
+2026-11-09T12:37:26.9774393Z Qq dce0ad79c486cb1fb504af04f953c3466b0c6db8
+2026-11-09T12:37:26.9806061Z batteries 66e469188fe07963e5cf666c7d4433f45b8131c5
+2026-11-09T12:37:26.9833131Z Cli c24fe6078c630e89b489bffe59b3e20ac30d12c8
+2026-11-09T12:37:26.9859648Z mathlib 56a005855ea17e0b0958f73ec801ae140b0a1679
+2026-11-09T12:37:26.9950122Z ##[group]Run set -euo pipefail
+2026-11-09T12:37:26.9950588Z [36;1mset -euo pipefail[0m
+2026-11-09T12:37:26.9950838Z [36;1mlake clean eg617r12[0m
+2026-11-09T12:37:26.9951071Z [36;1mresult=0[0m
+2026-11-09T12:37:26.9951667Z [36;1mfor mod in EG617.Combinatorics.TuranArithmetic EG617.Frontend.EdgeCounting EG617.Frontend.TuranBounds EG617.Frontend.HereditaryCaps; do[0m
+2026-11-09T12:37:26.9952409Z [36;1m  if lake build "+$mod" 2>&1 | tee "logs/linux-$mod.txt"; then[0m
+2026-11-09T12:37:26.9952767Z [36;1m    echo "MODULE_PASS $mod"[0m
+2026-11-09T12:37:26.9953016Z [36;1m  else[0m
+2026-11-09T12:37:26.9953219Z [36;1m    echo "MODULE_FAIL $mod"[0m
+2026-11-09T12:37:26.9953465Z [36;1m    result=1[0m
+2026-11-09T12:37:26.9953670Z [36;1m  fi[0m
+2026-11-09T12:37:26.9953853Z [36;1mdone[0m
+2026-11-09T12:37:26.9954063Z [36;1mexit "$result"[0m
+2026-11-09T12:37:26.9974058Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-09T12:37:26.9974415Z env:
+2026-11-09T12:37:26.9974645Z   LEAN_NUM_THREADS: 2
+2026-11-09T12:37:26.9974864Z ##[endgroup]
+2026-11-09T12:37:35.9141385Z ✔ [1271/1271] Built EG617.Combinatorics.TuranArithmetic (2.8s)
+2026-11-09T12:37:35.9171659Z Build completed successfully (1271 jobs).
+2026-11-09T12:37:36.0193391Z MODULE_PASS EG617.Combinatorics.TuranArithmetic
+2026-11-09T12:37:40.0158848Z ✔ [1002/1006] Built EG617.Basic.Definitions (932ms)
+2026-11-09T12:37:40.9169369Z ✔ [1003/1006] Built EG617.Basic.OriginalProblem (874ms)
+2026-11-09T12:37:41.8170742Z ✔ [1004/1006] Built EG617.Basic.ColoringLemmas (882ms)
+2026-11-09T12:37:42.6292252Z ✔ [1005/1006] Built EG617.Frontend.ColoringReduction (862ms)
+2026-11-09T12:37:43.6295285Z ✔ [1006/1006] Built EG617.Frontend.EdgeCounting (995ms)
+2026-11-09T12:37:43.6334952Z Build completed successfully (1006 jobs).
+2026-11-09T12:37:43.7359569Z MODULE_PASS EG617.Frontend.EdgeCounting
+2026-11-09T12:37:48.0521337Z ✖ [1277/1277] Building EG617.Frontend.TuranBounds (1.0s)
+2026-11-09T12:37:48.0532760Z trace: .> LEAN_PATH=/home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/packages/Cli/.lake/build/lib/lean:/home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/packages/batteries/.lake/build/lib/lean:/home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/packages/Qq/.lake/build/lib/lean:/home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/packages/aesop/.lake/build/lib/lean:/home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/packages/importGraph/.lake/build/lib/lean:/home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/packages/plausible/.lake/build/lib/lean:/home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/packages/mathlib/.lake/build/lib/lean:/home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/build/lib/lean /home/runner/work/_temp/lean-4.35.0-linux/bin/lean /home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/EG617/Frontend/TuranBounds.lean -o /home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/build/lib/lean/EG617/Frontend/TuranBounds.olean -i /home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/build/lib/lean/EG617/Frontend/TuranBounds.ilean -c /home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/build/ir/EG617/Frontend/TuranBounds.c --setup /home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/build/ir/EG617/Frontend/TuranBounds.setup.json --json
+2026-11-09T12:37:48.0542380Z error: EG617/Frontend/TuranBounds.lean:20:4: Unknown constant `SimpleGraph.isNClique_compl.mp`
+2026-11-09T12:37:48.0543056Z error: EG617/Frontend/TuranBounds.lean:60:42: Tactic `rewrite` failed: motive is not type correct:
+2026-11-09T12:37:48.0543723Z   fun _a => _a.edgeFinset.card = ⊤.edgeFinset.card
+2026-11-09T12:37:48.0544073Z Error: Application type mismatch: The argument
+2026-11-09T12:37:48.0544387Z   G.fintypeEdgeSetSup Gᶜ
+2026-11-09T12:37:48.0544609Z has type
+2026-11-09T12:37:48.0545053Z   Fintype ↑(G ⊔ Gᶜ).edgeSet
+2026-11-09T12:37:48.0545323Z but is expected to have type
+2026-11-09T12:37:48.0545589Z   Fintype ↑_a.edgeSet
+2026-11-09T12:37:48.0545798Z in the application
+2026-11-09T12:37:48.0546141Z   @SimpleGraph.edgeFinset (↥S) _a (G.fintypeEdgeSetSup Gᶜ)
+2026-11-09T12:37:48.0546400Z 
+2026-11-09T12:37:48.0548128Z Explanation: The rewrite tactic rewrites an expression 'e' using an equality 'a = b' by the following process. First, it looks for all 'a' in 'e'. Second, it tries to abstract these occurrences of 'a' to create a function 'm := fun _a => ...', called the *motive*, with the property that 'm a' is definitionally equal to 'e'. Third, we observe that 'congrArg' implies that 'm a = m b', which can be used with lemmas such as 'Eq.mpr' to change the goal. However, if 'e' depends on specific properties of 'a', then the motive 'm' might not typecheck.
+2026-11-09T12:37:48.0550345Z 
+2026-11-09T12:37:48.0551996Z Possible solutions: use rewrite's 'occs' configuration option to limit which occurrences are rewritten, or use 'simp' or 'conv' mode, which have strategies for certain kinds of dependencies (these tactics can handle proofs and 'Decidable' instances whose types depend on the rewritten term, and 'simp' can apply user-defined '@[congr]' theorems as well).
+2026-11-09T12:37:48.0553739Z 
+2026-11-09T12:37:48.0553851Z c : EdgeColoring
+2026-11-09T12:37:48.0554126Z hc : ValidColoring c
+2026-11-09T12:37:48.0554408Z i : Color
+2026-11-09T12:37:48.0554642Z S : Finset Vertex
+2026-11-09T12:37:48.0555091Z G : SimpleGraph ↥S := inducedColorGraph c i S
+2026-11-09T12:37:48.0555548Z hcf : Gᶜ.CliqueFree (12 + 1)
+2026-11-09T12:37:48.0556057Z hcomp : Gᶜ.edgeFinset.card ≤ SimpleGraph.turanNumber S.card 12
+2026-11-09T12:37:48.0556609Z hd : Disjoint G.edgeFinset Gᶜ.edgeFinset
+2026-11-09T12:37:48.0557076Z ⊢ (G ⊔ Gᶜ).edgeFinset.card = ⊤.edgeFinset.card
+2026-11-09T12:37:48.0557481Z Some required targets logged failures:
+2026-11-09T12:37:48.0557910Z - EG617.Frontend.TuranBounds
+2026-11-09T12:37:48.0558244Z error: build failed
+2026-11-09T12:37:48.1602747Z MODULE_FAIL EG617.Frontend.TuranBounds
+2026-11-09T12:37:52.4581745Z ✖ [1277/1278] Building EG617.Frontend.TuranBounds (1.1s)
+2026-11-09T12:37:52.4595980Z trace: .> LEAN_PATH=/home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/packages/Cli/.lake/build/lib/lean:/home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/packages/batteries/.lake/build/lib/lean:/home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/packages/Qq/.lake/build/lib/lean:/home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/packages/aesop/.lake/build/lib/lean:/home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/packages/importGraph/.lake/build/lib/lean:/home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/packages/plausible/.lake/build/lib/lean:/home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/packages/mathlib/.lake/build/lib/lean:/home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/build/lib/lean /home/runner/work/_temp/lean-4.35.0-linux/bin/lean /home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/EG617/Frontend/TuranBounds.lean -o /home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/build/lib/lean/EG617/Frontend/TuranBounds.olean -i /home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/build/lib/lean/EG617/Frontend/TuranBounds.ilean -c /home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/build/ir/EG617/Frontend/TuranBounds.c --setup /home/runner/work/EG617-r12-proof/EG617-r12-proof/r12_master/workstreams/r12-lean-m1-m2-chat-20261109/lean/.lake/build/ir/EG617/Frontend/TuranBounds.setup.json --json
+2026-11-09T12:37:52.4608797Z error: EG617/Frontend/TuranBounds.lean:20:4: Unknown constant `SimpleGraph.isNClique_compl.mp`
+2026-11-09T12:37:52.4609701Z error: EG617/Frontend/TuranBounds.lean:60:42: Tactic `rewrite` failed: motive is not type correct:
+2026-11-09T12:37:52.4610827Z   fun _a => _a.edgeFinset.card = ⊤.edgeFinset.card
+2026-11-09T12:37:52.4611296Z Error: Application type mismatch: The argument
+2026-11-09T12:37:52.4611729Z   G.fintypeEdgeSetSup Gᶜ
+2026-11-09T12:37:52.4612021Z has type
+2026-11-09T12:37:52.4612346Z   Fintype ↑(G ⊔ Gᶜ).edgeSet
+2026-11-09T12:37:52.4612686Z but is expected to have type
+2026-11-09T12:37:52.4613041Z   Fintype ↑_a.edgeSet
+2026-11-09T12:37:52.4613328Z in the application
+2026-11-09T12:37:52.4613783Z   @SimpleGraph.edgeFinset (↥S) _a (G.fintypeEdgeSetSup Gᶜ)
+2026-11-09T12:37:52.4614129Z 
+2026-11-09T12:37:52.4616456Z Explanation: The rewrite tactic rewrites an expression 'e' using an equality 'a = b' by the following process. First, it looks for all 'a' in 'e'. Second, it tries to abstract these occurrences of 'a' to create a function 'm := fun _a => ...', called the *motive*, with the property that 'm a' is definitionally equal to 'e'. Third, we observe that 'congrArg' implies that 'm a = m b', which can be used with lemmas such as 'Eq.mpr' to change the goal. However, if 'e' depends on specific properties of 'a', then the motive 'm' might not typecheck.
+2026-11-09T12:37:52.4618918Z 
+2026-11-09T12:37:52.4620709Z Possible solutions: use rewrite's 'occs' configuration option to limit which occurrences are rewritten, or use 'simp' or 'conv' mode, which have strategies for certain kinds of dependencies (these tactics can handle proofs and 'Decidable' instances whose types depend on the rewritten term, and 'simp' can apply user-defined '@[congr]' theorems as well).
+2026-11-09T12:37:52.4622440Z 
+2026-11-09T12:37:52.4622554Z c : EdgeColoring
+2026-11-09T12:37:52.4622838Z hc : ValidColoring c
+2026-11-09T12:37:52.4623222Z i : Color
+2026-11-09T12:37:52.4623562Z S : Finset Vertex
+2026-11-09T12:37:52.4623977Z G : SimpleGraph ↥S := inducedColorGraph c i S
+2026-11-09T12:37:52.4624379Z hcf : Gᶜ.CliqueFree (12 + 1)
+2026-11-09T12:37:52.4624774Z hcomp : Gᶜ.edgeFinset.card ≤ SimpleGraph.turanNumber S.card 12
+2026-11-09T12:37:52.4625440Z hd : Disjoint G.edgeFinset Gᶜ.edgeFinset
+2026-11-09T12:37:52.4625817Z ⊢ (G ⊔ Gᶜ).edgeFinset.card = ⊤.edgeFinset.card
+2026-11-09T12:37:52.4626130Z Some required targets logged failures:
+2026-11-09T12:37:52.4626406Z - EG617.Frontend.TuranBounds
+2026-11-09T12:37:52.4626651Z error: build failed
+2026-11-09T12:37:52.5647862Z MODULE_FAIL EG617.Frontend.HereditaryCaps
+2026-11-09T12:37:52.5661687Z ##[error]Process completed with exit code 1.
+2026-11-09T12:37:52.5800331Z Post job cleanup.
+2026-11-09T12:37:52.6747831Z [command]/usr/bin/git version
+2026-11-09T12:37:52.6798017Z git version 2.56.0
+2026-11-09T12:37:52.6844712Z Temporarily overriding HOME='/home/runner/work/_temp/6bbf7138-a3c6-441d-8dec-5d0aa029fe5e' before making global git config changes
+2026-11-09T12:37:52.6845787Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-09T12:37:52.6852616Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/EG617-r12-proof/EG617-r12-proof
+2026-11-09T12:37:52.6899466Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T12:37:52.6938852Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T12:37:52.7206461Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T12:37:52.7245607Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T12:37:52.7751640Z Cleaning up orphan processes
+2026-11-09T12:37:52.8111825Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

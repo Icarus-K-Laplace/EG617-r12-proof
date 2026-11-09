@@ -1,11 +1,13 @@
 # Recovery in progress — 2026-11-09
 
 Current acceptance: not yet LEVEL 1. The earlier LEVEL 0 environment blocker
-has been bypassed on clean Linux. Run 42617746542 loaded the exact dependencies
-and exposed two actual source/elaboration errors: a doc-comment placement and
-the dependent type of the full induced graph. These are FORMALIZATION GAP,
-not evidence that the underlying mathematical lemma is false. Fixes preserve
-the theorem statements and await a new actual build. M2 has not been started.
+has been bypassed on clean Linux. Run 42618394534 at commit 9871b65 compiled
+TuranArithmetic and EdgeCounting successfully. TuranBounds exposed an omitted
+explicit graph argument and a dependent-type rewrite error. These are
+FORMALIZATION GAP, not mathematical counterexamples. The latest repair uses
+an explicit edge-set partition without changing any theorem statement.
+TuranBounds and HereditaryCaps, followed by the full axiom/type audit, remain
+pending. M2 has not been started.
 
 The previous baseline has 27 declarations and 17 verified auxiliary theorems.
 The M1 candidate adds 20 declarations including 16 theorem candidates.
