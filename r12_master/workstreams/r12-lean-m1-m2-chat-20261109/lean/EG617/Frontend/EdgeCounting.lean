@@ -28,9 +28,14 @@ noncomputable def colorEdgeCount (c : EdgeColoring) (i : Color)
 theorem colorEdgeCount_univ (c : EdgeColoring) (i : Color) :
     colorEdgeCount c i Finset.univ = (colorGraph c i).edgeFinset.card := by
   classical
-  unfold colorEdgeCount inducedColorGraph
-  simpa only [Finset.coe_univ] using
-    (SimpleGraph.induceUnivIso (colorGraph c i)).card_edgeFinset_eq
+  let e : inducedColorGraph c i Finset.univ ≃g colorGraph c i :=
+    { toEquiv :=
+        { toFun := fun v => v.val
+          invFun := fun v => ⟨v, Finset.mem_univ v⟩
+          left_inv := fun _ => Subtype.ext rfl
+          right_inv := fun _ => rfl }
+      map_rel_iff' := by intro u v; rfl }
+  exact e.card_edgeFinset_eq
 
 /-- Explicit connection of induced adjacency to the original edge coloring. -/
 theorem inducedColorGraph_adj_iff (c : EdgeColoring) (i : Color)

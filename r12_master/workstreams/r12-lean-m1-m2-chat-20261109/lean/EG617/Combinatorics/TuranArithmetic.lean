@@ -7,6 +7,7 @@ public import Mathlib.Tactic.NormNum
 @[expose] public section
 
 set_option autoImplicit false
+set_option maxHeartbeats 0
 
 namespace EG617
 
@@ -22,7 +23,6 @@ The bound is explicit: every natural number from zero through 145 is covered by
 `interval_cases`. Each resulting closed arithmetic equality is proved using
 `norm_num`, after rewriting with Mathlib's exact Turan-number formula.
 This uses neither an external oracle nor native evaluation. -/
-set_option maxHeartbeats 0 in
 theorem tau12_add_turanNumber (n : ℕ) (hn : n ≤ 145) :
     tau12 n + SimpleGraph.turanNumber n 12 = Nat.choose n 2 := by
   rw [SimpleGraph.turanNumber_eq]
