@@ -1,13 +1,13 @@
 # Recovery in progress — 2026-11-09
 
 Current acceptance: not yet LEVEL 1. The earlier LEVEL 0 environment blocker
-has been bypassed on clean Linux. Run 42618394534 at commit 9871b65 compiled
-TuranArithmetic and EdgeCounting successfully. TuranBounds exposed an omitted
-explicit graph argument and a dependent-type rewrite error. These are
-FORMALIZATION GAP, not mathematical counterexamples. The latest repair uses
-an explicit edge-set partition without changing any theorem statement.
-TuranBounds and HereditaryCaps, followed by the full axiom/type audit, remain
-pending. M2 has not been started.
+has been bypassed on clean Linux. Run 42619060814 at commit 6125f4f compiled
+TuranArithmetic, EdgeCounting and TuranBounds successfully. HereditaryCaps
+reached a recursion-depth limit while normalizing choose(145,2). The repair
+rewrites the explicit choose-two formula before certified norm_num arithmetic;
+no theorem statement, assumption or dependency version changes. This is a
+FORMALIZATION GAP, not a mathematical counterexample. HereditaryCaps and the
+complete axiom/type audit remain pending. M2 has not been started.
 
 The previous baseline has 27 declarations and 17 verified auxiliary theorems.
 The M1 candidate adds 20 declarations including 16 theorem candidates.

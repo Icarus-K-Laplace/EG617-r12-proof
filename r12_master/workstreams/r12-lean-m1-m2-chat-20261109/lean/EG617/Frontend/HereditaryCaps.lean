@@ -69,7 +69,9 @@ theorem least_color_edgeCount_le_870 (c : EdgeColoring) (i : Color)
     colorEdgeCount c i Finset.univ ≤ 870 := by
   classical
   have htotal : ∑ j : Color, colorEdgeCount c j Finset.univ = 10440 := by
-    simpa [Vertex] using sum_colorEdgeCount c Finset.univ
+    have h := sum_colorEdgeCount c Finset.univ
+    norm_num [Vertex, Nat.choose_two_right] at h
+    exact h
   have hsum : 12 * colorEdgeCount c i Finset.univ ≤ 10440 := by
     calc
       12 * colorEdgeCount c i Finset.univ =
