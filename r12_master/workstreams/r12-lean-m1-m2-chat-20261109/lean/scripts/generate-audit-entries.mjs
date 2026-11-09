@@ -10,7 +10,6 @@ const header = 'module\n\npublic import EG617\n\n';
 fs.writeFileSync(path.join(root, 'EG617/Audit/Axioms.lean'), header +
   scan.declarations.map(d => '#print axioms EG617.' + d.name).join('\n') + '\n');
 fs.writeFileSync(path.join(root, 'EG617/Audit/Statements.lean'), header +
-  'set_option pp.width 120\n\n' +
   scan.declarations.map(d => (['theorem', 'lemma'].includes(d.kind) ? '#check ' : '#print ') +
     'EG617.' + d.name).join('\n') + '\n');
 console.log(`Generated entries for ${scan.declarations.length} declarations; kernel audit still required.`);

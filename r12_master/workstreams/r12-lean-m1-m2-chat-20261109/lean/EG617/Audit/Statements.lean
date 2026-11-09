@@ -2,8 +2,6 @@ module
 
 public import EG617
 
-set_option pp.width 120
-
 #print EG617.colorGraph
 #check EG617.colorGraph_adj_iff
 #check EG617.validColoring_iff_colorGraph
