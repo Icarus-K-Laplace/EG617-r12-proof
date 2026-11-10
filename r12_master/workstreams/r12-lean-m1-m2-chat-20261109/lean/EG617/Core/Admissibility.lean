@@ -51,7 +51,8 @@ theorem core_independenceBound_induce (G : SimpleGraph V) (a : ℕ)
     obtain ⟨y', hy', rfl⟩ := Finset.mem_image.mp hy
     exact hT hx' hy' (fun h => hxy (congrArg Subtype.val h))
   have h := hG (T.image fun x : S => (x : V)) hI
-  rw [Finset.card_image_of_injective T Subtype.val_injective] at h
+  have he : Function.Injective (fun x : S => (x : V)) := Subtype.val_injective
+  rw [Finset.card_image_of_injective T he] at h
   exact h
 
 theorem core_cliqueBound_induce (G : SimpleGraph V) (k : ℕ)
@@ -65,7 +66,8 @@ theorem core_cliqueBound_induce (G : SimpleGraph V) (k : ℕ)
     obtain ⟨y', hy', rfl⟩ := Finset.mem_image.mp hy
     exact hT hx' hy' (fun h => hxy (congrArg Subtype.val h))
   have h := hG (T.image fun x : S => (x : V)) hI
-  rw [Finset.card_image_of_injective T Subtype.val_injective] at h
+  have he : Function.Injective (fun x : S => (x : V)) := Subtype.val_injective
+  rw [Finset.card_image_of_injective T he] at h
   exact h
 
 /-- A nonneighborhood reduces the allowed independence size by one.
@@ -78,13 +80,15 @@ theorem core_independence_nonNeighbors (G : SimpleGraph V) (a : ℕ)
   have hv : v ∉ S := fun h => (hS v h).1 rfl
   have hi : G.IsIndepSet (↑(insert v S)) := by
     intro x hx y hy hxy
-    rcases Finset.mem_insert.mp hx with rfl | hx
-    · rcases Finset.mem_insert.mp hy with rfl | hy
-      · exact G.loopless.irrefl v
-      · exact (hS y hy).2
-    · rcases Finset.mem_insert.mp hy with rfl | hy
-      · exact fun h => (hS x hx).2 h.symm
-      · exact hind hx hy hxy
+    by_cases hxv : x = v
+    · subst x
+      have hyv : y ≠ v := Ne.symm hxy
+      exact (hS y (Finset.mem_of_mem_insert_of_ne hy hyv)).2
+    · have hxS : x ∈ S := Finset.mem_of_mem_insert_of_ne hx hxv
+      by_cases hyv : y = v
+      · subst y
+        exact fun h => (hS x hxS).2 h.symm
+      · exact hind hxS (Finset.mem_of_mem_insert_of_ne hy hyv) hxy
   have hb := hG (insert v S) hi
   rw [Finset.card_insert_of_notMem hv] at hb
   omega
