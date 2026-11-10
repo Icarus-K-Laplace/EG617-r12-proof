@@ -128,7 +128,7 @@ theorem core_induced_edge_count_image (G : SimpleGraph V) (S : Finset V)
     · intro x y h
       apply Subtype.ext
       apply Subtype.ext
-      exact congrArg Subtype.val h
+      exact congrArg (fun z : U => (z : V)) h
     · intro y
       obtain ⟨x, hx, he⟩ := Finset.mem_image.mp y.property
       exact ⟨⟨x, hx⟩, Subtype.ext he⟩
