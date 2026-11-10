@@ -34,7 +34,7 @@ jobs:
           mkdir -p logs
           lean --version | tee logs/linux-lean-version.txt
           lake --version | tee logs/linux-lake-version.txt
-          lake exe cache get Mathlib.Combinatorics.SimpleGraph.Extremal.Turan Mathlib.Tactic.IntervalCases Mathlib.Tactic.NormNum Mathlib.Algebra.Order.BigOperators.Group.Finset 2>&1 | tee logs/linux-cache.txt
+          lake exe cache get Mathlib.Combinatorics.SimpleGraph.FiveWheelLike Mathlib.Combinatorics.SimpleGraph.DegreeSum Mathlib.Combinatorics.SimpleGraph.Extremal.Turan Mathlib.Tactic.IntervalCases Mathlib.Tactic.NormNum Mathlib.Algebra.Order.BigOperators.Group.Finset 2>&1 | tee logs/linux-cache.txt
           git diff --exit-code -- lake-manifest.json lean-toolchain lakefile.lean
           node - <<'NODE'
           const fs=require('fs'), cp=require('child_process');
@@ -47,7 +47,7 @@ jobs:
           set -euo pipefail
           lake clean eg617r12
           result=0
-          for mod in EG617.Combinatorics.TuranArithmetic EG617.Frontend.EdgeCounting EG617.Frontend.TuranBounds EG617.Frontend.HereditaryCaps; do
+          for mod in EG617.Combinatorics.TuranArithmetic EG617.Frontend.EdgeCounting EG617.Frontend.TuranBounds EG617.Frontend.HereditaryCaps EG617.Core.Admissibility EG617.Core.R224; do
             if lake build "+$mod" 2>&1 | tee "logs/linux-$mod.txt"; then
               echo "MODULE_PASS $mod"
             else
