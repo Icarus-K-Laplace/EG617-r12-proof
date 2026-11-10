@@ -37,6 +37,8 @@ public import EG617
 #print axioms EG617.core_cliqueBound_induce
 #print axioms EG617.core_independence_nonNeighbors
 #print axioms EG617.core_compl_edge_count
+#print axioms EG617.core_induced_edge_count_image
+#print axioms EG617.core_admissible_induce
 #print axioms EG617.Gate47Statement
 #print axioms EG617.core_not_two_colorable_24
 #print axioms EG617.core_triangleFree24_edges_lt_132

@@ -93,8 +93,8 @@ theorem core_R224_empty (G : SimpleGraph (Fin 24)) : ¬ CoreAdmissible 2 G := by
   norm_num [D, tau12, Nat.choose_two_right] at hcap
   have htotal := core_compl_edge_count G
   norm_num [Nat.choose_two_right] at htotal
-  have hlow : 132 ≤ Gᶜ.edgeFinset.card := by omega
   have hhigh := core_triangleFree24_edges_lt_132 Gᶜ ht hI
+  simp only [SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard] at hcap htotal hhigh
   omega
 
 end EG617

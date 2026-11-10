@@ -115,6 +115,42 @@ theorem core_compl_edge_count [Fintype V] (G : SimpleGraph V) :
   rw [← Finset.card_union_of_disjoint hd, hu,
     SimpleGraph.card_edgeFinset_top_eq_card_choose_two]
 
+/-- Nested induced sets have exactly the same edges as their image in the parent. -/
+theorem core_induced_edge_count_image (G : SimpleGraph V) (S : Finset V)
+    (T : Finset S) :
+    coreInducedEdgeCount (G.induce (S : Set V)) T =
+      coreInducedEdgeCount G (T.image fun x : S => (x : V)) := by
+  classical
+  let U := T.image fun x : S => (x : V)
+  let f : T → U := fun x => ⟨x.val.val, Finset.mem_image.mpr ⟨x.val, x.property, rfl⟩⟩
+  have hf : Function.Bijective f := by
+    constructor
+    · intro x y h
+      apply Subtype.ext
+      apply Subtype.ext
+      exact congrArg Subtype.val h
+    · intro y
+      obtain ⟨x, hx, he⟩ := Finset.mem_image.mp y.property
+      exact ⟨⟨x, hx⟩, Subtype.ext he⟩
+  let e : (G.induce (S : Set V)).induce (T : Set S) ≃g G.induce (U : Set V) :=
+    { toEquiv := Equiv.ofBijective f hf
+      map_rel_iff' := by intro x y; rfl }
+  exact e.card_edgeFinset_eq
+
+/-- All three frozen R(a,n) conditions are hereditary, including every cap. -/
+theorem core_admissible_induce (G : SimpleGraph V) (a : ℕ)
+    (hG : CoreAdmissible a G) (S : Finset V) :
+    CoreAdmissible a (G.induce (S : Set V)) := by
+  classical
+  refine ⟨core_independenceBound_induce G a hG.1 S,
+    core_cliqueBound_induce G 11 hG.2.1 S, ?_⟩
+  intro T
+  rw [core_induced_edge_count_image]
+  have h := hG.2.2 (T.image fun x : S => (x : V))
+  have he : Function.Injective (fun x : S => (x : V)) := Subtype.val_injective
+  rw [Finset.card_image_of_injective T he] at h
+  exact h
+
 /-- A target definition, NOT a proof of the GATE47 theorem. -/
 def Gate47Statement : Prop :=
   ∀ G : SimpleGraph (Fin 47), CoreAdmissible 4 G → G.edgeFinset.card ≤ 286 →

@@ -37,6 +37,8 @@ public import EG617
 #check EG617.core_cliqueBound_induce
 #check EG617.core_independence_nonNeighbors
 #check EG617.core_compl_edge_count
+#check EG617.core_induced_edge_count_image
+#check EG617.core_admissible_induce
 #print EG617.Gate47Statement
 #check EG617.core_not_two_colorable_24
 #check EG617.core_triangleFree24_edges_lt_132
