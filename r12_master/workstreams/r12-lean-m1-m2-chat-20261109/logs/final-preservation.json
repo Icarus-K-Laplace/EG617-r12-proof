@@ -1,0 +1,92 @@
+{
+  "commit": "ee2dbe9d6d0c5298dc6cfc8a4f8c91e5d8bcdf06",
+  "originalFiles": [
+    {
+      "file": "EG617/Basic/Definitions.lean",
+      "baseline": "eb2de25aa5d686b0ccbb1c636cc7d25916ca3223f4b3a4fa577b410fbe2ef798",
+      "release": "eb2de25aa5d686b0ccbb1c636cc7d25916ca3223f4b3a4fa577b410fbe2ef798"
+    },
+    {
+      "file": "EG617/Basic/OriginalProblem.lean",
+      "baseline": "44e1adda1c778d5b496c6f2da4e7658910e1b78c77083bae4aae22f12b570cdc",
+      "release": "44e1adda1c778d5b496c6f2da4e7658910e1b78c77083bae4aae22f12b570cdc"
+    },
+    {
+      "file": "EG617/Basic/ColoringLemmas.lean",
+      "baseline": "d6aa59bef34f63c7cefdf27c19a9e211f26a46743b0065c19d9892a4f259ca97",
+      "release": "d6aa59bef34f63c7cefdf27c19a9e211f26a46743b0065c19d9892a4f259ca97"
+    },
+    {
+      "file": "EG617/Frontend/ColoringReduction.lean",
+      "baseline": "e5d1771ee803fee88c53f405eb10858d26c371c8d142add623172d4a08eb3a0d",
+      "release": "e5d1771ee803fee88c53f405eb10858d26c371c8d142add623172d4a08eb3a0d"
+    }
+  ],
+  "M1TheoremTypes": [
+    {
+      "name": "tau12_add_turanNumber",
+      "unchanged": true
+    },
+    {
+      "name": "colorEdgeCount_univ",
+      "unchanged": true
+    },
+    {
+      "name": "inducedColorGraph_adj_iff",
+      "unchanged": true
+    },
+    {
+      "name": "induced_edge_unique_color",
+      "unchanged": true
+    },
+    {
+      "name": "induced_color_edges_disjoint",
+      "unchanged": true
+    },
+    {
+      "name": "induced_color_edges_union",
+      "unchanged": true
+    },
+    {
+      "name": "sum_colorEdgeCount",
+      "unchanged": true
+    },
+    {
+      "name": "inducedColorGraph_compl_cliqueFree",
+      "unchanged": true
+    },
+    {
+      "name": "tau12_le_colorEdgeCount",
+      "unchanged": true
+    },
+    {
+      "name": "colorEdgeCount_add_eleven_tau_le",
+      "unchanged": true
+    },
+    {
+      "name": "hereditary_color_cap",
+      "unchanged": true
+    },
+    {
+      "name": "hereditary_cap_subtraction_exact",
+      "unchanged": true
+    },
+    {
+      "name": "exists_least_color",
+      "unchanged": true
+    },
+    {
+      "name": "least_color_edgeCount_le_870",
+      "unchanged": true
+    },
+    {
+      "name": "exists_least_color_with_hereditary_cap",
+      "unchanged": true
+    },
+    {
+      "name": "exists_colorGraph_card_edgeFinset_le_870",
+      "unchanged": true
+    }
+  ],
+  "status": "PASS"
+}

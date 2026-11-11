@@ -1,0 +1,18 @@
+{
+  "EG617.lean": "dd57b3e77de2d41d353708ce5cf81ac43d3b138c11430aaf6e294129c771b026",
+  "EG617/Audit/Axioms.lean": "08c03e36f57fc8b49c09ab72f70bb3e60e9d72829700a3572ae4a76784f8d6d2",
+  "EG617/Audit/Statements.lean": "7b8c185093fd187a197415225e7c136c46a73201fc9c0951370ca2d895506331",
+  "EG617/Basic/ColoringLemmas.lean": "d6aa59bef34f63c7cefdf27c19a9e211f26a46743b0065c19d9892a4f259ca97",
+  "EG617/Basic/Definitions.lean": "eb2de25aa5d686b0ccbb1c636cc7d25916ca3223f4b3a4fa577b410fbe2ef798",
+  "EG617/Basic/OriginalProblem.lean": "44e1adda1c778d5b496c6f2da4e7658910e1b78c77083bae4aae22f12b570cdc",
+  "EG617/Combinatorics/TuranArithmetic.lean": "7b500c3eb6f0e5c8e5afa6bd724ada622ca7f7579a7f9544663b38da09ad661b",
+  "EG617/Core/Admissibility.lean": "7cd7ac0b1b4c7761d4ffd4c613879f3cf2915e617202afd68edeed902b497f73",
+  "EG617/Core/R224.lean": "bfc7f5900c0bdad20c53a9087fc29a378d6ee4127fc29580fa9d0c13601d7495",
+  "EG617/Frontend/ColoringReduction.lean": "e5d1771ee803fee88c53f405eb10858d26c371c8d142add623172d4a08eb3a0d",
+  "EG617/Frontend/EdgeCounting.lean": "439da12c4ce2825fd0daea3045f89bff34bd1375c4cea2a36769da0a4e1c8af5",
+  "EG617/Frontend/HereditaryCaps.lean": "138dd125971d2773b7996a5d21f9890db687377f5dbc3802b5067c98e2a0243a",
+  "EG617/Frontend/TuranBounds.lean": "6017babb3b9271b46d283a749e38618bd8f6de3ea6b9db143bbff6be0f5abf9b",
+  "lake-manifest.json": "533b70c46edee35e08126f205796379d05487244ecb28271630156b33c0f19ed",
+  "lakefile.lean": "3b68fc16411e92635fdc23ddd38ebf3b6eeb3f1f767f64c0c2a9cb3c3c3c4f9a",
+  "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c"
+}

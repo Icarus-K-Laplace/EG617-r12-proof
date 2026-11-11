@@ -1,0 +1,1513 @@
+﻿2026-11-11T03:34:31.8717235Z Current runner version: '2.338.2'
+2026-11-11T03:34:31.8741093Z ##[group]Runner Image Provisioner
+2026-11-11T03:34:31.8741994Z Hosted Compute Agent
+2026-11-11T03:34:31.8742499Z Version: 20261028.624
+2026-11-11T03:34:31.8743025Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-11T03:34:31.8743695Z Build Date: 2026-10-28T21:51:42Z
+2026-11-11T03:34:31.8744299Z Worker ID: {929b43d4-3bcc-48e3-9df4-5e19eddd91b4}
+2026-11-11T03:34:31.8744922Z Region: westus2
+2026-11-11T03:34:31.8745444Z Cloud: Azure
+2026-11-11T03:34:31.8745911Z ##[endgroup]
+2026-11-11T03:34:31.8747101Z ##[group]Operating System
+2026-11-11T03:34:31.8747730Z Ubuntu
+2026-11-11T03:34:31.8748263Z 24.04.5
+2026-11-11T03:34:31.8748732Z LTS
+2026-11-11T03:34:31.8749183Z ##[endgroup]
+2026-11-11T03:34:31.8750024Z ##[group]Runner Image
+2026-11-11T03:34:31.8750553Z Image: ubuntu-24.04
+2026-11-11T03:34:31.8751026Z Version: 20261101.360.1
+2026-11-11T03:34:31.8752239Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-11T03:34:31.8753634Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-11T03:34:31.8754434Z ##[endgroup]
+2026-11-11T03:34:31.8755461Z ##[group]GITHUB_TOKEN Permissions
+2026-11-11T03:34:31.8757174Z Contents: read
+2026-11-11T03:34:31.8758073Z Metadata: read
+2026-11-11T03:34:31.8758625Z ##[endgroup]
+2026-11-11T03:34:31.8760822Z Secret source: Actions
+2026-11-11T03:34:31.8761786Z Cache mode: write
+2026-11-11T03:34:31.8762403Z Prepare workflow directory
+2026-11-11T03:34:31.9115032Z Prepare all required actions
+2026-11-11T03:34:31.9160595Z Getting action download info
+2026-11-11T03:34:32.2808027Z Download action repository 'actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2026-11-11T03:34:32.4857814Z Complete job name: m1-kernel
+2026-11-11T03:34:32.5705740Z ##[group]Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+2026-11-11T03:34:32.5706603Z with:
+2026-11-11T03:34:32.5707009Z   persist-credentials: false
+2026-11-11T03:34:32.5707486Z   repository: Icarus-K-Laplace/EG617-r12-proof
+2026-11-11T03:34:32.5710809Z   token: ***
+2026-11-11T03:34:32.5711179Z   ssh-strict: true
+2026-11-11T03:34:32.5711554Z   ssh-user: git
+2026-11-11T03:34:32.5711909Z   clean: true
+2026-11-11T03:34:32.5712282Z   sparse-checkout-cone-mode: true
+2026-11-11T03:34:32.5712718Z   fetch-depth: 1
+2026-11-11T03:34:32.5713084Z   fetch-tags: false
+2026-11-11T03:34:32.5713452Z   show-progress: true
+2026-11-11T03:34:32.5713828Z   lfs: false
+2026-11-11T03:34:32.5714179Z   submodules: false
+2026-11-11T03:34:32.5714546Z   set-safe-directory: true
+2026-11-11T03:34:32.5715115Z env:
+2026-11-11T03:34:32.5715469Z   LEAN_NUM_THREADS: 2
+2026-11-11T03:34:32.5715857Z ##[endgroup]
+2026-11-11T03:34:32.9900761Z Syncing repository: Icarus-K-Laplace/EG617-r12-proof
+2026-11-11T03:34:32.9903049Z ##[group]Getting Git version info
+2026-11-11T03:34:32.9903964Z Working directory is '/home/runner/work/EG617-r12-proof/EG617-r12-proof'
+2026-11-11T03:34:32.9905023Z [command]/usr/bin/git version
+2026-11-11T03:34:32.9949831Z git version 2.56.0
+2026-11-11T03:34:32.9971477Z ##[endgroup]
+2026-11-11T03:34:32.9986207Z Temporarily overriding HOME='/home/runner/work/_temp/95dbd133-dfa7-44f5-8c9f-c04ff8688c20' before making global git config changes
+2026-11-11T03:34:32.9988000Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-11T03:34:32.9992168Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/EG617-r12-proof/EG617-r12-proof
+2026-11-11T03:34:33.0045623Z Deleting the contents of '/home/runner/work/EG617-r12-proof/EG617-r12-proof'
+2026-11-11T03:34:33.0050058Z ##[group]Initializing the repository
+2026-11-11T03:34:33.0054684Z [command]/usr/bin/git init /home/runner/work/EG617-r12-proof/EG617-r12-proof
+2026-11-11T03:34:33.0149615Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-11T03:34:33.0151365Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-11T03:34:33.0153375Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-11T03:34:33.0154661Z hint: call:
+2026-11-11T03:34:33.0155479Z hint:
+2026-11-11T03:34:33.0156453Z hint: 	git config --global init.defaultBranch <name>
+2026-11-11T03:34:33.0157534Z hint:
+2026-11-11T03:34:33.0158530Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-11T03:34:33.0160146Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-11T03:34:33.0161363Z hint:
+2026-11-11T03:34:33.0162094Z hint: 	git branch -m <name>
+2026-11-11T03:34:33.0162913Z hint:
+2026-11-11T03:34:33.0164030Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-11T03:34:33.0167018Z Initialized empty Git repository in /home/runner/work/EG617-r12-proof/EG617-r12-proof/.git/
+2026-11-11T03:34:33.0170467Z [command]/usr/bin/git remote add origin https://github.com/Icarus-K-Laplace/EG617-r12-proof
+2026-11-11T03:34:33.0214705Z ##[endgroup]
+2026-11-11T03:34:33.0215878Z ##[group]Disabling automatic garbage collection
+2026-11-11T03:34:33.0218762Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-11T03:34:33.0263848Z ##[endgroup]
+2026-11-11T03:34:33.0265072Z ##[group]Setting up auth
+2026-11-11T03:34:33.0268918Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-11T03:34:33.0314809Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-11T03:34:33.0827602Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-11T03:34:33.0872398Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-11T03:34:33.1095533Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-11T03:34:33.1144552Z ##[endgroup]
+2026-11-11T03:34:33.1145322Z ##[group]Fetching the repository
+2026-11-11T03:34:33.1154980Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ee2dbe9d6d0c5298dc6cfc8a4f8c91e5d8bcdf06:refs/remotes/origin/workstream/r12-lean-m1-m2-chat-20261109
+2026-11-11T03:34:33.5201772Z From https://github.com/Icarus-K-Laplace/EG617-r12-proof
+2026-11-11T03:34:33.5204191Z  * [new ref]         ee2dbe9d6d0c5298dc6cfc8a4f8c91e5d8bcdf06 -> origin/workstream/r12-lean-m1-m2-chat-20261109
+2026-11-11T03:34:33.5208380Z ##[endgroup]
+2026-11-11T03:34:33.5209747Z ##[group]Determining the checkout info
+2026-11-11T03:34:33.5220029Z ##[endgroup]
+2026-11-11T03:34:33.5220650Z [command]/usr/bin/git sparse-checkout disable
+2026-11-11T03:34:33.5275930Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-11T03:34:33.5318093Z ##[group]Checking out the ref
+2026-11-11T03:34:33.5322373Z [command]/usr/bin/git checkout --progress --force -B workstream/r12-lean-m1-m2-chat-20261109 refs/remotes/origin/workstream/r12-lean-m1-m2-chat-20261109
+2026-11-11T03:34:33.5613927Z Switched to a new branch 'workstream/r12-lean-m1-m2-chat-20261109'
+2026-11-11T03:34:33.5616260Z branch 'workstream/r12-lean-m1-m2-chat-20261109' set up to track 'origin/workstream/r12-lean-m1-m2-chat-20261109'.
+2026-11-11T03:34:33.5622110Z ##[endgroup]
+2026-11-11T03:34:33.5680390Z [command]/usr/bin/git log -1 --format=%H
+2026-11-11T03:34:33.5715440Z ee2dbe9d6d0c5298dc6cfc8a4f8c91e5d8bcdf06
+2026-11-11T03:34:33.5723846Z ##[group]Removing auth
+2026-11-11T03:34:33.5727231Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-11T03:34:33.5766537Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-11T03:34:33.5990481Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-11T03:34:33.6031070Z http.https://github.com/.extraheader
+2026-11-11T03:34:33.6039167Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-11T03:34:33.6082890Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-11T03:34:33.6302565Z ##[endgroup]
+2026-11-11T03:34:33.6537013Z ##[group]Run set -euo pipefail
+2026-11-11T03:34:33.6538167Z [36;1mset -euo pipefail[0m
+2026-11-11T03:34:33.6540529Z [36;1mcurl -fL --retry 3 https://github.com/leanprover/lean4/releases/download/v4.35.0/lean-4.35.0-linux.tar.zst -o "$RUNNER_TEMP/lean.tar.zst"[0m
+2026-11-11T03:34:33.6543823Z [36;1mecho "7289597a44543246c9227b8cae501767e095ce17f6d448b95fc4a8dc97268f6d  $RUNNER_TEMP/lean.tar.zst" | sha256sum -c -[0m
+2026-11-11T03:34:33.6546228Z [36;1mtar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"[0m
+2026-11-11T03:34:33.6547863Z [36;1mecho "$RUNNER_TEMP/lean-4.35.0-linux/bin" >> "$GITHUB_PATH"[0m
+2026-11-11T03:34:33.6572225Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-11T03:34:33.6573498Z env:
+2026-11-11T03:34:33.6574282Z   LEAN_NUM_THREADS: 2
+2026-11-11T03:34:33.6575148Z ##[endgroup]
+2026-11-11T03:34:33.6729643Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2026-11-11T03:34:33.6732480Z                                  Dload  Upload   Total   Spent    Left  Speed
+2026-11-11T03:34:33.6733399Z 
+2026-11-11T03:34:33.6956376Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2026-11-11T03:34:33.6958210Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2026-11-11T03:34:33.8859695Z 
+2026-11-11T03:34:34.8833545Z   2  566M    2 15.2M    0     0  71.7M      0  0:00:07 --:--:--  0:00:07 71.7M
+2026-11-11T03:34:35.8825326Z  23  566M   23  132M    0     0   109M      0  0:00:05  0:00:01  0:00:04  117M
+2026-11-11T03:34:37.6058269Z  47  566M   47  269M    0     0   121M      0  0:00:04  0:00:02  0:00:02  127M
+2026-11-11T03:34:37.9074949Z  67  566M   67  383M    0     0  97.4M      0  0:00:05  0:00:03  0:00:02 98.9M
+2026-11-11T03:34:39.0450933Z  74  566M   74  424M    0     0   100M      0  0:00:05  0:00:04  0:00:01  101M
+2026-11-11T03:34:39.3386996Z  93  566M   93  530M    0     0  98.6M      0  0:00:05  0:00:05 --:--:-- 99.8M
+2026-11-11T03:34:39.3387670Z 100  566M  100  566M    0     0   100M      0  0:00:05  0:00:05 --:--:-- 97.5M
+2026-11-11T03:34:39.7287175Z /home/runner/work/_temp/lean.tar.zst: OK
+2026-11-11T03:34:49.0726179Z ##[group]Run set -euo pipefail
+2026-11-11T03:34:49.0726521Z [36;1mset -euo pipefail[0m
+2026-11-11T03:34:49.0726776Z [36;1mprobe="$RUNNER_TEMP/eg617-standalone-ascii"[0m
+2026-11-11T03:34:49.0727034Z [36;1mmkdir -p "$probe"[0m
+2026-11-11T03:34:49.0727532Z [36;1mgit -C "$GITHUB_WORKSPACE" archive HEAD r12_master/workstreams/r12-lean-m1-m2-chat-20261109 | tar -xf - -C "$probe" --strip-components=3[0m
+2026-11-11T03:34:49.0728029Z [36;1mtest ! -e "$probe/.git"[0m
+2026-11-11T03:34:49.0728271Z [36;1mtest ! -e "$probe/lean/.lake"[0m
+2026-11-11T03:34:49.0728503Z [36;1mcd "$probe"[0m
+2026-11-11T03:34:49.0728767Z [36;1mecho "STANDALONE_ASCII_BUILD_ROOT=$PWD; NO_GIT_OR_PROJECT_CACHE"[0m
+2026-11-11T03:34:49.0729068Z [36;1mbash build-linux.sh[0m
+2026-11-11T03:34:49.0751482Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-11T03:34:49.0751806Z env:
+2026-11-11T03:34:49.0751996Z   LEAN_NUM_THREADS: 2
+2026-11-11T03:34:49.0752182Z ##[endgroup]
+2026-11-11T03:34:49.1189954Z STANDALONE_ASCII_BUILD_ROOT=/home/runner/work/_temp/eg617-standalone-ascii; NO_GIT_OR_PROJECT_CACHE
+2026-11-11T03:34:49.1529182Z Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+2026-11-11T03:34:49.1570897Z Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+2026-11-11T03:34:49.1582152Z Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+2026-11-11T03:34:49.1911140Z Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)
+2026-11-11T03:34:49.5671191Z info: mathlib: materializing new dependency
+2026-11-11T03:34:49.8805748Z info: mathlib: fetching revision '56a005855ea17e0b0958f73ec801ae140b0a1679' from https://github.com/leanprover-community/mathlib4.git
+2026-11-11T03:34:51.8657613Z info: mathlib: checking out revision '56a005855ea17e0b0958f73ec801ae140b0a1679'
+2026-11-11T03:35:02.9491447Z info: plausible: materializing new dependency
+2026-11-11T03:35:03.1311167Z info: plausible: fetching revision 'dfa4f38190d07c37e315953e08b90fe2d95b3c24' from https://github.com/leanprover-community/plausible
+2026-11-11T03:35:04.1327558Z info: plausible: checking out revision 'dfa4f38190d07c37e315953e08b90fe2d95b3c24'
+2026-11-11T03:35:05.1234994Z info: LeanSearchClient: materializing new dependency
+2026-11-11T03:35:05.4781142Z info: LeanSearchClient: fetching revision 'd6b4c7be5be75ec4917c873ac50c756dc1436372' from https://github.com/leanprover-community/LeanSearchClient
+2026-11-11T03:35:06.3771803Z info: LeanSearchClient: checking out revision 'd6b4c7be5be75ec4917c873ac50c756dc1436372'
+2026-11-11T03:35:07.6895746Z info: importGraph: materializing new dependency
+2026-11-11T03:35:07.7694406Z info: importGraph: fetching revision 'a41f0e9a4dea23188ea9cc1c41ac9f8bbafe0b93' from https://github.com/leanprover-community/import-graph
+2026-11-11T03:35:08.1399800Z info: importGraph: checking out revision 'a41f0e9a4dea23188ea9cc1c41ac9f8bbafe0b93'
+2026-11-11T03:35:08.9348504Z info: proofwidgets: materializing new dependency
+2026-11-11T03:35:09.0140462Z info: proofwidgets: fetching revision 'df72b022e558978a1c50264cfc4d7fec86fa8e04' from https://github.com/leanprover-community/ProofWidgets4
+2026-11-11T03:35:09.4202498Z info: proofwidgets: checking out revision 'df72b022e558978a1c50264cfc4d7fec86fa8e04'
+2026-11-11T03:35:10.9770257Z info: aesop: materializing new dependency
+2026-11-11T03:35:11.0608459Z info: aesop: fetching revision '4a174c490d8707121c4a9290800489f105d85e07' from https://github.com/leanprover-community/aesop
+2026-11-11T03:35:11.4660397Z info: aesop: checking out revision '4a174c490d8707121c4a9290800489f105d85e07'
+2026-11-11T03:35:12.3000710Z info: Qq: materializing new dependency
+2026-11-11T03:35:12.3807571Z info: Qq: fetching revision 'dce0ad79c486cb1fb504af04f953c3466b0c6db8' from https://github.com/leanprover-community/quote4
+2026-11-11T03:35:12.7413283Z info: Qq: checking out revision 'dce0ad79c486cb1fb504af04f953c3466b0c6db8'
+2026-11-11T03:35:13.4552699Z info: batteries: materializing new dependency
+2026-11-11T03:35:13.5442407Z info: batteries: fetching revision '66e469188fe07963e5cf666c7d4433f45b8131c5' from https://github.com/leanprover-community/batteries
+2026-11-11T03:35:14.2124935Z info: batteries: checking out revision '66e469188fe07963e5cf666c7d4433f45b8131c5'
+2026-11-11T03:35:15.1615439Z info: Cli: materializing new dependency
+2026-11-11T03:35:15.2521786Z info: Cli: fetching revision 'c24fe6078c630e89b489bffe59b3e20ac30d12c8' from https://github.com/leanprover/lean4-cli
+2026-11-11T03:35:15.6840180Z info: Cli: checking out revision 'c24fe6078c630e89b489bffe59b3e20ac30d12c8'
+2026-11-11T03:35:17.7737321Z ✔ [2/6] Built Cache.Cli (322ms)
+2026-11-11T03:35:17.8738828Z ✔ [5/13] Built Cache.Lean (413ms)
+2026-11-11T03:35:18.1742578Z ✔ [6/13] Built Cache.Env (317ms)
+2026-11-11T03:35:18.5753959Z ✔ [7/13] Built Cache.Infra (365ms)
+2026-11-11T03:35:18.6755794Z ✔ [8/13] Built Batteries.Tactic.OpenPrivate (842ms)
+2026-11-11T03:35:18.9762631Z ✔ [10/43] Built Cache.Location (414ms)
+2026-11-11T03:35:19.1791315Z ✔ [11/43] Built Cache.Cli:c.o (180ms)
+2026-11-11T03:35:19.3779460Z ✔ [12/43] Built Cache.Lean:c.o (195ms)
+2026-11-11T03:35:19.8767566Z ✔ [13/43] Built Cache.IO (1.2s)
+2026-11-11T03:35:20.0771035Z ✔ [14/43] Built Cache.Env:c.o (155ms)
+2026-11-11T03:35:20.1878537Z ✔ [15/43] Built Cache.Infra:c.o (169ms)
+2026-11-11T03:35:20.2880610Z ✔ [16/43] Built Batteries.Tactic.OpenPrivate:c.o (973ms)
+2026-11-11T03:35:20.4883790Z ✔ [17/43] Built Cache.Location:c.o (225ms)
+2026-11-11T03:35:20.9891199Z ✔ [18/43] Built Cache.Hashing (562ms)
+2026-11-11T03:35:21.4898146Z ✔ [19/43] Built Cache.Hashing:c.o (479ms)
+2026-11-11T03:35:21.6900105Z ✔ [20/43] Built Cache.IO:c.o (1.3s)
+2026-11-11T03:35:22.9056514Z ✔ [21/43] Built Cache.Requests (1.5s)
+2026-11-11T03:35:23.3063480Z ✔ [22/43] Built Cache.Marker (393ms)
+2026-11-11T03:35:23.5065786Z ✔ [23/43] Built Cache.Marker:c.o (141ms)
+2026-11-11T03:35:23.8226508Z ✔ [24/43] Built Cache.Upload.Curl (382ms)
+2026-11-11T03:35:24.3243658Z ✔ [25/43] Built Cache.Upload.Rclone (443ms)
+2026-11-11T03:35:24.8251016Z ✔ [26/43] Built Cache.Query (487ms)
+2026-11-11T03:35:24.9396706Z ✔ [27/43] Built Cache.Upload.Curl:c.o (187ms)
+2026-11-11T03:35:25.1399753Z ✔ [28/43] Built Cache.Requests:c.o (2.2s)
+2026-11-11T03:35:25.2401458Z ✔ [29/43] Built Cache.Upload.Rclone:c.o (221ms)
+2026-11-11T03:35:25.3393358Z ✔ [30/43] Built Cache.Query:c.o (255ms)
+2026-11-11T03:35:25.5400745Z ✔ [31/43] Built Cache.Upload.Azure (377ms)
+2026-11-11T03:35:25.8401957Z ✔ [32/43] Built Cache.Upload.S3 (490ms)
+2026-11-11T03:35:26.0405888Z ✔ [33/43] Built Cache.Warning (497ms)
+2026-11-11T03:35:26.0406777Z ✔ [34/43] Built Cache.Upload.Azure:c.o (158ms)
+2026-11-11T03:35:26.2408806Z ✔ [35/43] Built Cache.Upload.S3:c.o (257ms)
+2026-11-11T03:35:26.3420623Z ✔ [36/43] Built Cache.Warning:c.o (280ms)
+2026-11-11T03:35:26.6404456Z ✔ [37/43] Built Cache.Upload.Defs (363ms)
+2026-11-11T03:35:26.7405333Z ✔ [38/43] Built Cache.Upload.Defs:c.o (162ms)
+2026-11-11T03:35:26.9561550Z ✔ [39/43] Built Cache.Upload (347ms)
+2026-11-11T03:35:27.0552942Z ✔ [40/43] Built Cache.Upload:c.o (125ms)
+2026-11-11T03:35:27.7561333Z ✔ [41/43] Built Cache.Main (803ms)
+2026-11-11T03:35:28.5560717Z ✔ [42/43] Built Cache.Main:c.o (805ms)
+2026-11-11T03:35:29.2577533Z ✔ [43/43] Built cache:exe (652ms)
+2026-11-11T03:35:31.4240400Z Current branch: HEAD
+2026-11-11T03:35:31.4240813Z Using cache from origin: (some leanprover-community/mathlib4)
+2026-11-11T03:35:31.4241602Z Attempting to download 1290 file(s) from leanprover-community/mathlib4 cache at https://cache.mathlib.org/mathlib4-master
+2026-11-11T03:35:31.7837024Z 
+2026-11-11T03:35:31.8905662Z Downloaded: 1 file(s) [attempted 1/1290 = 0%, 114 KB/s]
+2026-11-11T03:35:31.9941297Z Downloaded: 19 file(s) [attempted 19/1290 = 1%, 24 KB/s]
+2026-11-11T03:35:32.0950138Z Downloaded: 110 file(s) [attempted 110/1290 = 8%, 871 KB/s]
+2026-11-11T03:35:32.1943704Z Downloaded: 201 file(s) [attempted 201/1290 = 15%, 2139 KB/s]
+2026-11-11T03:35:32.2965878Z Downloaded: 312 file(s) [attempted 312/1290 = 24%, 999 KB/s]
+2026-11-11T03:35:32.4024476Z Downloaded: 417 file(s) [attempted 417/1290 = 32%, 243 KB/s]
+2026-11-11T03:35:32.5047343Z Downloaded: 477 file(s) [attempted 477/1290 = 36%, 249 KB/s]
+2026-11-11T03:35:32.6200738Z Downloaded: 577 file(s) [attempted 577/1290 = 44%, 1179 KB/s]
+2026-11-11T03:35:32.7237687Z Downloaded: 685 file(s) [attempted 685/1290 = 53%, 3265 KB/s]
+2026-11-11T03:35:32.8233483Z Downloaded: 790 file(s) [attempted 790/1290 = 61%, 170 KB/s]
+2026-11-11T03:35:32.9309952Z Downloaded: 886 file(s) [attempted 886/1290 = 68%, 2576 KB/s]
+2026-11-11T03:35:33.0310511Z Downloaded: 975 file(s) [attempted 975/1290 = 75%, 1203 KB/s]
+2026-11-11T03:35:33.1363227Z Downloaded: 1078 file(s) [attempted 1078/1290 = 83%, 7531 KB/s]
+2026-11-11T03:35:33.2337360Z Downloaded: 1172 file(s) [attempted 1172/1290 = 90%, 375 KB/s]
+2026-11-11T03:35:33.2530511Z Downloaded: 1274 file(s) [attempted 1274/1290 = 98%, 167 KB/s]
+2026-11-11T03:35:33.2531542Z Downloaded: 1290 file(s) [attempted 1290/1290 = 100%, 167 KB/s]
+2026-11-11T03:35:33.2534039Z Still decompressing downloaded files...
+2026-11-11T03:35:35.9818889Z Decompressed 1290 file(s)
+2026-11-11T03:35:35.9819965Z Already decompressed 1290 file(s)
+2026-11-11T03:35:36.1005417Z lean-toolchain: OK
+2026-11-11T03:35:36.1005785Z lakefile.lean: OK
+2026-11-11T03:35:36.1006590Z lake-manifest.json: OK
+2026-11-11T03:35:39.6105770Z PIN_PASS plausible dfa4f38190d07c37e315953e08b90fe2d95b3c24
+2026-11-11T03:35:39.6134446Z PIN_PASS LeanSearchClient d6b4c7be5be75ec4917c873ac50c756dc1436372
+2026-11-11T03:35:39.6157556Z PIN_PASS importGraph a41f0e9a4dea23188ea9cc1c41ac9f8bbafe0b93
+2026-11-11T03:35:39.6179875Z PIN_PASS proofwidgets df72b022e558978a1c50264cfc4d7fec86fa8e04
+2026-11-11T03:35:39.6201232Z PIN_PASS aesop 4a174c490d8707121c4a9290800489f105d85e07
+2026-11-11T03:35:39.6222685Z PIN_PASS Qq dce0ad79c486cb1fb504af04f953c3466b0c6db8
+2026-11-11T03:35:39.6250897Z PIN_PASS batteries 66e469188fe07963e5cf666c7d4433f45b8131c5
+2026-11-11T03:35:39.6274957Z PIN_PASS Cli c24fe6078c630e89b489bffe59b3e20ac30d12c8
+2026-11-11T03:35:39.6298231Z PIN_PASS mathlib 56a005855ea17e0b0958f73ec801ae140b0a1679
+2026-11-11T03:35:46.7251287Z ✔ [1271/1271] Built EG617.Combinatorics.TuranArithmetic (2.3s)
+2026-11-11T03:35:46.7288756Z Build completed successfully (1271 jobs).
+2026-11-11T03:35:46.8154054Z MODULE_PASS EG617.Combinatorics.TuranArithmetic
+2026-11-11T03:35:50.0588535Z ✔ [1002/1006] Built EG617.Basic.Definitions (823ms)
+2026-11-11T03:35:50.8597391Z ✔ [1003/1006] Built EG617.Basic.OriginalProblem (803ms)
+2026-11-11T03:35:51.7609036Z ✔ [1004/1006] Built EG617.Basic.ColoringLemmas (815ms)
+2026-11-11T03:35:52.5617675Z ✔ [1005/1006] Built EG617.Frontend.ColoringReduction (811ms)
+2026-11-11T03:35:53.4629033Z ✔ [1006/1006] Built EG617.Frontend.EdgeCounting (924ms)
+2026-11-11T03:35:53.4666556Z Build completed successfully (1006 jobs).
+2026-11-11T03:35:53.5529996Z MODULE_PASS EG617.Frontend.EdgeCounting
+2026-11-11T03:35:57.0628792Z ✔ [1277/1277] Built EG617.Frontend.TuranBounds (1.0s)
+2026-11-11T03:35:57.0672060Z Build completed successfully (1277 jobs).
+2026-11-11T03:35:57.1543050Z MODULE_PASS EG617.Frontend.TuranBounds
+2026-11-11T03:36:00.7931879Z ✔ [1278/1278] Built EG617.Frontend.HereditaryCaps (1.0s)
+2026-11-11T03:36:00.7972151Z Build completed successfully (1278 jobs).
+2026-11-11T03:36:00.8833843Z MODULE_PASS EG617.Frontend.HereditaryCaps
+2026-11-11T03:36:04.5175071Z ✔ [1279/1279] Built EG617.Core.Admissibility (1.0s)
+2026-11-11T03:36:04.5222040Z Build completed successfully (1279 jobs).
+2026-11-11T03:36:04.6086479Z MODULE_PASS EG617.Core.Admissibility
+2026-11-11T03:36:08.2975557Z ⚠ [1315/1315] Built EG617.Core.R224 (1.2s)
+2026-11-11T03:36:08.2975951Z warning: EG617/Core/R224.lean:75:2: Try this: 
+2026-11-11T03:36:08.2979522Z   haveI̵
+2026-11-11T03:36:08.2979700Z 
+2026-11-11T03:36:08.2979953Z The goal is a proposition, so `have` is preferred over `haveI`.
+2026-11-11T03:36:08.2980599Z The difference between `have` and `haveI` is that `haveI` inlines the value.
+2026-11-11T03:36:08.2981529Z But this is not relevant for proofs because of proof irrelevance.
+2026-11-11T03:36:08.2981844Z 
+2026-11-11T03:36:08.2982022Z Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+2026-11-11T03:36:08.3008192Z Build completed successfully (1315 jobs).
+2026-11-11T03:36:08.3864734Z MODULE_PASS EG617.Core.R224
+2026-11-11T03:36:10.8909266Z ⚠ [1315/1317] Replayed EG617.Core.R224
+2026-11-11T03:36:10.8910088Z warning: EG617/Core/R224.lean:75:2: Try this: 
+2026-11-11T03:36:10.8910751Z   haveI̵
+2026-11-11T03:36:10.8910912Z 
+2026-11-11T03:36:10.8911106Z The goal is a proposition, so `have` is preferred over `haveI`.
+2026-11-11T03:36:10.8911582Z The difference between `have` and `haveI` is that `haveI` inlines the value.
+2026-11-11T03:36:10.8912079Z But this is not relevant for proofs because of proof irrelevance.
+2026-11-11T03:36:10.8912347Z 
+2026-11-11T03:36:10.8912572Z Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+2026-11-11T03:36:11.7900092Z ✔ [1316/1317] Built EG617 (857ms)
+2026-11-11T03:36:11.7939135Z Build completed successfully (1317 jobs).
+2026-11-11T03:36:12.1964038Z {
+2026-11-11T03:36:12.1964496Z   "scope": "source lexical audit only; not a Lean build or axiom audit",
+2026-11-11T03:36:12.1964921Z   "files": [
+2026-11-11T03:36:12.1965132Z     "EG617.lean",
+2026-11-11T03:36:12.2339532Z     "EG617/Audit/Axioms.lean",
+2026-11-11T03:36:12.2339765Z     "EG617/Audit/Statements.lean",
+2026-11-11T03:36:12.2339990Z     "EG617/Basic/ColoringLemmas.lean",
+2026-11-11T03:36:12.2340238Z     "EG617/Basic/Definitions.lean",
+2026-11-11T03:36:12.2340469Z     "EG617/Basic/OriginalProblem.lean",
+2026-11-11T03:36:12.2340713Z     "EG617/Combinatorics/TuranArithmetic.lean",
+2026-11-11T03:36:12.2340952Z     "EG617/Core/Admissibility.lean",
+2026-11-11T03:36:12.2341155Z     "EG617/Core/R224.lean",
+2026-11-11T03:36:12.2341358Z     "EG617/Frontend/ColoringReduction.lean",
+2026-11-11T03:36:12.2341588Z     "EG617/Frontend/EdgeCounting.lean",
+2026-11-11T03:36:12.2341812Z     "EG617/Frontend/HereditaryCaps.lean",
+2026-11-11T03:36:12.2342042Z     "EG617/Frontend/TuranBounds.lean",
+2026-11-11T03:36:12.2342248Z     "lakefile.lean"
+2026-11-11T03:36:12.2342407Z   ],
+2026-11-11T03:36:12.2342555Z   "hits": [],
+2026-11-11T03:36:12.2342723Z   "declarations": [
+2026-11-11T03:36:12.2342881Z     {
+2026-11-11T03:36:12.2343038Z       "kind": "def",
+2026-11-11T03:36:12.2343211Z       "name": "colorGraph",
+2026-11-11T03:36:12.2343416Z       "file": "EG617/Basic/ColoringLemmas.lean"
+2026-11-11T03:36:12.2343629Z     },
+2026-11-11T03:36:12.2343774Z     {
+2026-11-11T03:36:12.2343923Z       "kind": "theorem",
+2026-11-11T03:36:12.2344106Z       "name": "colorGraph_adj_iff",
+2026-11-11T03:36:12.2344324Z       "file": "EG617/Basic/ColoringLemmas.lean"
+2026-11-11T03:36:12.2344532Z     },
+2026-11-11T03:36:12.2344673Z     {
+2026-11-11T03:36:12.2344826Z       "kind": "theorem",
+2026-11-11T03:36:12.2345132Z       "name": "validColoring_iff_colorGraph",
+2026-11-11T03:36:12.2345363Z       "file": "EG617/Basic/ColoringLemmas.lean"
+2026-11-11T03:36:12.2345579Z     },
+2026-11-11T03:36:12.2345720Z     {
+2026-11-11T03:36:12.2345868Z       "kind": "theorem",
+2026-11-11T03:36:12.2346046Z       "name": "colorGraph_partition",
+2026-11-11T03:36:12.2346271Z       "file": "EG617/Basic/ColoringLemmas.lean"
+2026-11-11T03:36:12.2346479Z     },
+2026-11-11T03:36:12.2346621Z     {
+2026-11-11T03:36:12.2346763Z       "kind": "theorem",
+2026-11-11T03:36:12.2346949Z       "name": "no_independent_thirteen",
+2026-11-11T03:36:12.2347169Z       "file": "EG617/Basic/ColoringLemmas.lean"
+2026-11-11T03:36:12.2347374Z     },
+2026-11-11T03:36:12.2347514Z     {
+2026-11-11T03:36:12.2347661Z       "kind": "theorem",
+2026-11-11T03:36:12.2347851Z       "name": "no_monochromatic_thirteen",
+2026-11-11T03:36:12.2348080Z       "file": "EG617/Basic/ColoringLemmas.lean"
+2026-11-11T03:36:12.2348286Z     },
+2026-11-11T03:36:12.2348422Z     {
+2026-11-11T03:36:12.2348564Z       "kind": "abbrev",
+2026-11-11T03:36:12.2348739Z       "name": "Vertex",
+2026-11-11T03:36:12.2349089Z       "file": "EG617/Basic/Definitions.lean"
+2026-11-11T03:36:12.2349434Z     },
+2026-11-11T03:36:12.2349598Z     {
+2026-11-11T03:36:12.2349746Z       "kind": "abbrev",
+2026-11-11T03:36:12.2349926Z       "name": "Color",
+2026-11-11T03:36:12.2350119Z       "file": "EG617/Basic/Definitions.lean"
+2026-11-11T03:36:12.2350333Z     },
+2026-11-11T03:36:12.2350479Z     {
+2026-11-11T03:36:12.2350623Z       "kind": "abbrev",
+2026-11-11T03:36:12.2350790Z       "name": "Edge",
+2026-11-11T03:36:12.2350969Z       "file": "EG617/Basic/Definitions.lean"
+2026-11-11T03:36:12.2351168Z     },
+2026-11-11T03:36:12.2351341Z     {
+2026-11-11T03:36:12.2351613Z       "kind": "abbrev",
+2026-11-11T03:36:12.2351786Z       "name": "EdgeColoring",
+2026-11-11T03:36:12.2351977Z       "file": "EG617/Basic/Definitions.lean"
+2026-11-11T03:36:12.2352177Z     },
+2026-11-11T03:36:12.2352318Z     {
+2026-11-11T03:36:12.2352460Z       "kind": "def",
+2026-11-11T03:36:12.2352624Z       "name": "edgeOf",
+2026-11-11T03:36:12.2352810Z       "file": "EG617/Basic/Definitions.lean"
+2026-11-11T03:36:12.2353018Z     },
+2026-11-11T03:36:12.2353158Z     {
+2026-11-11T03:36:12.2353301Z       "kind": "def",
+2026-11-11T03:36:12.2353460Z       "name": "Inside",
+2026-11-11T03:36:12.2353632Z       "file": "EG617/Basic/Definitions.lean"
+2026-11-11T03:36:12.2353828Z     },
+2026-11-11T03:36:12.2354160Z     {
+2026-11-11T03:36:12.2354304Z       "kind": "theorem",
+2026-11-11T03:36:12.2354487Z       "name": "edgeOf_swap",
+2026-11-11T03:36:12.2354694Z       "file": "EG617/Basic/Definitions.lean"
+2026-11-11T03:36:12.2354895Z     },
+2026-11-11T03:36:12.2355042Z     {
+2026-11-11T03:36:12.2355189Z       "kind": "theorem",
+2026-11-11T03:36:12.2355362Z       "name": "edgeOf_eq_iff",
+2026-11-11T03:36:12.2355558Z       "file": "EG617/Basic/Definitions.lean"
+2026-11-11T03:36:12.2355751Z     },
+2026-11-11T03:36:12.2355891Z     {
+2026-11-11T03:36:12.2356032Z       "kind": "theorem",
+2026-11-11T03:36:12.2356226Z       "name": "edge_has_endpoints",
+2026-11-11T03:36:12.2356480Z       "file": "EG617/Basic/Definitions.lean"
+2026-11-11T03:36:12.2356694Z     },
+2026-11-11T03:36:12.2356844Z     {
+2026-11-11T03:36:12.2357002Z       "kind": "theorem",
+2026-11-11T03:36:12.2357186Z       "name": "edgeOf_surjective",
+2026-11-11T03:36:12.2357394Z       "file": "EG617/Basic/Definitions.lean"
+2026-11-11T03:36:12.2357600Z     },
+2026-11-11T03:36:12.2357740Z     {
+2026-11-11T03:36:12.2357889Z       "kind": "theorem",
+2026-11-11T03:36:12.2358063Z       "name": "edgeOf_inside_iff",
+2026-11-11T03:36:12.2358263Z       "file": "EG617/Basic/Definitions.lean"
+2026-11-11T03:36:12.2358460Z     },
+2026-11-11T03:36:12.2358597Z     {
+2026-11-11T03:36:12.2358739Z       "kind": "theorem",
+2026-11-11T03:36:12.2358912Z       "name": "inside_mono",
+2026-11-11T03:36:12.2359119Z       "file": "EG617/Basic/Definitions.lean"
+2026-11-11T03:36:12.2359451Z     },
+2026-11-11T03:36:12.2359599Z     {
+2026-11-11T03:36:12.2359740Z       "kind": "theorem",
+2026-11-11T03:36:12.2359921Z       "name": "mem_complete_iff",
+2026-11-11T03:36:12.2360135Z       "file": "EG617/Basic/Definitions.lean"
+2026-11-11T03:36:12.2360333Z     },
+2026-11-11T03:36:12.2360472Z     {
+2026-11-11T03:36:12.2360616Z       "kind": "def",
+2026-11-11T03:36:12.2360793Z       "name": "edgeEquivComplete",
+2026-11-11T03:36:12.2361002Z       "file": "EG617/Basic/Definitions.lean"
+2026-11-11T03:36:12.2361206Z     },
+2026-11-11T03:36:12.2361349Z     {
+2026-11-11T03:36:12.2361491Z       "kind": "def",
+2026-11-11T03:36:12.2361659Z       "name": "ValidColoring",
+2026-11-11T03:36:12.2361877Z       "file": "EG617/Basic/OriginalProblem.lean"
+2026-11-11T03:36:12.2362097Z     },
+2026-11-11T03:36:12.2362234Z     {
+2026-11-11T03:36:12.2362371Z       "kind": "def",
+2026-11-11T03:36:12.2362535Z       "name": "EG617R12Statement",
+2026-11-11T03:36:12.2362742Z       "file": "EG617/Basic/OriginalProblem.lean"
+2026-11-11T03:36:12.2362946Z     },
+2026-11-11T03:36:12.2363081Z     {
+2026-11-11T03:36:12.2363225Z       "kind": "theorem",
+2026-11-11T03:36:12.2363417Z       "name": "validColoring_iff_endpoints",
+2026-11-11T03:36:12.2363758Z       "file": "EG617/Basic/OriginalProblem.lean"
+2026-11-11T03:36:12.2363967Z     },
+2026-11-11T03:36:12.2364105Z     {
+2026-11-11T03:36:12.2364247Z       "kind": "theorem",
+2026-11-11T03:36:12.2364443Z       "name": "originalProblem_iff_missingColor",
+2026-11-11T03:36:12.2364684Z       "file": "EG617/Basic/OriginalProblem.lean"
+2026-11-11T03:36:12.2364895Z     },
+2026-11-11T03:36:12.2365027Z     {
+2026-11-11T03:36:12.2365166Z       "kind": "def",
+2026-11-11T03:36:12.2365328Z       "name": "tau12",
+2026-11-11T03:36:12.2365538Z       "file": "EG617/Combinatorics/TuranArithmetic.lean"
+2026-11-11T03:36:12.2365765Z     },
+2026-11-11T03:36:12.2365903Z     {
+2026-11-11T03:36:12.2366042Z       "kind": "theorem",
+2026-11-11T03:36:12.2366217Z       "name": "tau12_add_turanNumber",
+2026-11-11T03:36:12.2366461Z       "file": "EG617/Combinatorics/TuranArithmetic.lean"
+2026-11-11T03:36:12.2366679Z     },
+2026-11-11T03:36:12.2366816Z     {
+2026-11-11T03:36:12.2366959Z       "kind": "def",
+2026-11-11T03:36:12.2367136Z       "name": "CoreIndependenceBound",
+2026-11-11T03:36:12.2367353Z       "file": "EG617/Core/Admissibility.lean"
+2026-11-11T03:36:12.2367566Z     },
+2026-11-11T03:36:12.2367704Z     {
+2026-11-11T03:36:12.2367847Z       "kind": "def",
+2026-11-11T03:36:12.2368021Z       "name": "CoreCliqueBound",
+2026-11-11T03:36:12.2368328Z       "file": "EG617/Core/Admissibility.lean"
+2026-11-11T03:36:12.2368532Z     },
+2026-11-11T03:36:12.2368674Z     {
+2026-11-11T03:36:12.2368817Z       "kind": "def",
+2026-11-11T03:36:12.2368981Z       "name": "coreInducedEdgeCount",
+2026-11-11T03:36:12.2369192Z       "file": "EG617/Core/Admissibility.lean"
+2026-11-11T03:36:12.2369578Z     },
+2026-11-11T03:36:12.2369717Z     {
+2026-11-11T03:36:12.2369863Z       "kind": "def",
+2026-11-11T03:36:12.2370030Z       "name": "CoreAdmissible",
+2026-11-11T03:36:12.2370231Z       "file": "EG617/Core/Admissibility.lean"
+2026-11-11T03:36:12.2370432Z     },
+2026-11-11T03:36:12.2370569Z     {
+2026-11-11T03:36:12.2370708Z       "kind": "theorem",
+2026-11-11T03:36:12.2370896Z       "name": "core_induced_edge_count_univ",
+2026-11-11T03:36:12.2371115Z       "file": "EG617/Core/Admissibility.lean"
+2026-11-11T03:36:12.2371311Z     },
+2026-11-11T03:36:12.2371445Z     {
+2026-11-11T03:36:12.2371586Z       "kind": "theorem",
+2026-11-11T03:36:12.2371778Z       "name": "core_independenceBound_induce",
+2026-11-11T03:36:12.2372033Z       "file": "EG617/Core/Admissibility.lean"
+2026-11-11T03:36:12.2372228Z     },
+2026-11-11T03:36:12.2372363Z     {
+2026-11-11T03:36:12.2372504Z       "kind": "theorem",
+2026-11-11T03:36:12.2372684Z       "name": "core_cliqueBound_induce",
+2026-11-11T03:36:12.2372899Z       "file": "EG617/Core/Admissibility.lean"
+2026-11-11T03:36:12.2373101Z     },
+2026-11-11T03:36:12.2373238Z     {
+2026-11-11T03:36:12.2373381Z       "kind": "theorem",
+2026-11-11T03:36:12.2373578Z       "name": "core_independence_nonNeighbors",
+2026-11-11T03:36:12.2373821Z       "file": "EG617/Core/Admissibility.lean"
+2026-11-11T03:36:12.2374025Z     },
+2026-11-11T03:36:12.2374170Z     {
+2026-11-11T03:36:12.2374322Z       "kind": "theorem",
+2026-11-11T03:36:12.2374504Z       "name": "core_compl_edge_count",
+2026-11-11T03:36:12.2374730Z       "file": "EG617/Core/Admissibility.lean"
+2026-11-11T03:36:12.2374931Z     },
+2026-11-11T03:36:12.2375067Z     {
+2026-11-11T03:36:12.2375215Z       "kind": "theorem",
+2026-11-11T03:36:12.2375401Z       "name": "core_induced_edge_count_image",
+2026-11-11T03:36:12.2375627Z       "file": "EG617/Core/Admissibility.lean"
+2026-11-11T03:36:12.2375825Z     },
+2026-11-11T03:36:12.2375961Z     {
+2026-11-11T03:36:12.2376101Z       "kind": "theorem",
+2026-11-11T03:36:12.2376278Z       "name": "core_admissible_induce",
+2026-11-11T03:36:12.2376496Z       "file": "EG617/Core/Admissibility.lean"
+2026-11-11T03:36:12.2376696Z     },
+2026-11-11T03:36:12.2376838Z     {
+2026-11-11T03:36:12.2376977Z       "kind": "theorem",
+2026-11-11T03:36:12.2377159Z       "name": "core_admissible_nonNeighbors",
+2026-11-11T03:36:12.2377375Z       "file": "EG617/Core/Admissibility.lean"
+2026-11-11T03:36:12.2377689Z     },
+2026-11-11T03:36:12.2377836Z     {
+2026-11-11T03:36:12.2377976Z       "kind": "def",
+2026-11-11T03:36:12.2378158Z       "name": "Gate47Statement",
+2026-11-11T03:36:12.2378455Z       "file": "EG617/Core/Admissibility.lean"
+2026-11-11T03:36:12.2378758Z     },
+2026-11-11T03:36:12.2378922Z     {
+2026-11-11T03:36:12.2379069Z       "kind": "theorem",
+2026-11-11T03:36:12.2379270Z       "name": "core_not_two_colorable_of_card_24",
+2026-11-11T03:36:12.2379733Z       "file": "EG617/Core/R224.lean"
+2026-11-11T03:36:12.2379921Z     },
+2026-11-11T03:36:12.2380056Z     {
+2026-11-11T03:36:12.2380199Z       "kind": "theorem",
+2026-11-11T03:36:12.2380405Z       "name": "core_triangleFree_edges_lt_132_of_card_24",
+2026-11-11T03:36:12.2380641Z       "file": "EG617/Core/R224.lean"
+2026-11-11T03:36:12.2380825Z     },
+2026-11-11T03:36:12.2380961Z     {
+2026-11-11T03:36:12.2381103Z       "kind": "theorem",
+2026-11-11T03:36:12.2381281Z       "name": "core_R224_empty_of_card",
+2026-11-11T03:36:12.2381502Z       "file": "EG617/Core/R224.lean"
+2026-11-11T03:36:12.2381689Z     },
+2026-11-11T03:36:12.2381826Z     {
+2026-11-11T03:36:12.2381966Z       "kind": "theorem",
+2026-11-11T03:36:12.2382150Z       "name": "core_not_two_colorable_24",
+2026-11-11T03:36:12.2382360Z       "file": "EG617/Core/R224.lean"
+2026-11-11T03:36:12.2382684Z     },
+2026-11-11T03:36:12.2382820Z     {
+2026-11-11T03:36:12.2382960Z       "kind": "theorem",
+2026-11-11T03:36:12.2383152Z       "name": "core_triangleFree24_edges_lt_132",
+2026-11-11T03:36:12.2383376Z       "file": "EG617/Core/R224.lean"
+2026-11-11T03:36:12.2383561Z     },
+2026-11-11T03:36:12.2383708Z     {
+2026-11-11T03:36:12.2383848Z       "kind": "theorem",
+2026-11-11T03:36:12.2384025Z       "name": "core_R224_empty",
+2026-11-11T03:36:12.2384216Z       "file": "EG617/Core/R224.lean"
+2026-11-11T03:36:12.2384401Z     },
+2026-11-11T03:36:12.2384538Z     {
+2026-11-11T03:36:12.2384680Z       "kind": "theorem",
+2026-11-11T03:36:12.2384868Z       "name": "core_R3_card_le_degree_add_24",
+2026-11-11T03:36:12.2385102Z       "file": "EG617/Core/R224.lean"
+2026-11-11T03:36:12.2385291Z     },
+2026-11-11T03:36:12.2385429Z     {
+2026-11-11T03:36:12.2385578Z       "kind": "theorem",
+2026-11-11T03:36:12.2385761Z       "name": "core_R335_degree_ge_11",
+2026-11-11T03:36:12.2385973Z       "file": "EG617/Core/R224.lean"
+2026-11-11T03:36:12.2386154Z     },
+2026-11-11T03:36:12.2386292Z     {
+2026-11-11T03:36:12.2386434Z       "kind": "theorem",
+2026-11-11T03:36:12.2386611Z       "name": "core_R337_empty_of_card",
+2026-11-11T03:36:12.2386810Z       "file": "EG617/Core/R224.lean"
+2026-11-11T03:36:12.2386991Z     },
+2026-11-11T03:36:12.2387132Z     {
+2026-11-11T03:36:12.2387274Z       "kind": "theorem",
+2026-11-11T03:36:12.2387443Z       "name": "core_R337_empty",
+2026-11-11T03:36:12.2387640Z       "file": "EG617/Core/R224.lean"
+2026-11-11T03:36:12.2387821Z     },
+2026-11-11T03:36:12.2387956Z     {
+2026-11-11T03:36:12.2388096Z       "kind": "theorem",
+2026-11-11T03:36:12.2388280Z       "name": "core_R4_card_le_degree_add_37",
+2026-11-11T03:36:12.2388493Z       "file": "EG617/Core/R224.lean"
+2026-11-11T03:36:12.2388673Z     },
+2026-11-11T03:36:12.2388809Z     {
+2026-11-11T03:36:12.2388951Z       "kind": "theorem",
+2026-11-11T03:36:12.2389123Z       "name": "core_R447_degree_ge_10",
+2026-11-11T03:36:12.2389493Z       "file": "EG617/Core/R224.lean"
+2026-11-11T03:36:12.2389719Z     },
+2026-11-11T03:36:12.2389865Z     {
+2026-11-11T03:36:12.2390008Z       "kind": "theorem",
+2026-11-11T03:36:12.2390188Z       "name": "independent_card_le_twelve",
+2026-11-11T03:36:12.2390436Z       "file": "EG617/Frontend/ColoringReduction.lean"
+2026-11-11T03:36:12.2390658Z     },
+2026-11-11T03:36:12.2390795Z     {
+2026-11-11T03:36:12.2390935Z       "kind": "theorem",
+2026-11-11T03:36:12.2391115Z       "name": "monochromatic_card_le_twelve",
+2026-11-11T03:36:12.2391363Z       "file": "EG617/Frontend/ColoringReduction.lean"
+2026-11-11T03:36:12.2391581Z     },
+2026-11-11T03:36:12.2391732Z     {
+2026-11-11T03:36:12.2392043Z       "kind": "theorem",
+2026-11-11T03:36:12.2392251Z       "name": "colorGraph_clique_card_le_twelve",
+2026-11-11T03:36:12.2392509Z       "file": "EG617/Frontend/ColoringReduction.lean"
+2026-11-11T03:36:12.2392737Z     },
+2026-11-11T03:36:12.2392883Z     {
+2026-11-11T03:36:12.2393029Z       "kind": "def",
+2026-11-11T03:36:12.2393215Z       "name": "inducedColorGraph",
+2026-11-11T03:36:12.2393443Z       "file": "EG617/Frontend/EdgeCounting.lean"
+2026-11-11T03:36:12.2393662Z     },
+2026-11-11T03:36:12.2393808Z     {
+2026-11-11T03:36:12.2393958Z       "kind": "def",
+2026-11-11T03:36:12.2394129Z       "name": "colorEdgeCount",
+2026-11-11T03:36:12.2394352Z       "file": "EG617/Frontend/EdgeCounting.lean"
+2026-11-11T03:36:12.2394563Z     },
+2026-11-11T03:36:12.2394699Z     {
+2026-11-11T03:36:12.2394843Z       "kind": "theorem",
+2026-11-11T03:36:12.2395029Z       "name": "colorEdgeCount_univ",
+2026-11-11T03:36:12.2395250Z       "file": "EG617/Frontend/EdgeCounting.lean"
+2026-11-11T03:36:12.2395453Z     },
+2026-11-11T03:36:12.2395593Z     {
+2026-11-11T03:36:12.2395737Z       "kind": "theorem",
+2026-11-11T03:36:12.2395922Z       "name": "inducedColorGraph_adj_iff",
+2026-11-11T03:36:12.2396155Z       "file": "EG617/Frontend/EdgeCounting.lean"
+2026-11-11T03:36:12.2396379Z     },
+2026-11-11T03:36:12.2396627Z     {
+2026-11-11T03:36:12.2396772Z       "kind": "theorem",
+2026-11-11T03:36:12.2396957Z       "name": "induced_edge_unique_color",
+2026-11-11T03:36:12.2397178Z       "file": "EG617/Frontend/EdgeCounting.lean"
+2026-11-11T03:36:12.2397384Z     },
+2026-11-11T03:36:12.2397520Z     {
+2026-11-11T03:36:12.2397658Z       "kind": "theorem",
+2026-11-11T03:36:12.2397846Z       "name": "induced_color_edges_disjoint",
+2026-11-11T03:36:12.2398077Z       "file": "EG617/Frontend/EdgeCounting.lean"
+2026-11-11T03:36:12.2398284Z     },
+2026-11-11T03:36:12.2398424Z     {
+2026-11-11T03:36:12.2398570Z       "kind": "theorem",
+2026-11-11T03:36:12.2398747Z       "name": "induced_color_edges_union",
+2026-11-11T03:36:12.2398972Z       "file": "EG617/Frontend/EdgeCounting.lean"
+2026-11-11T03:36:12.2399175Z     },
+2026-11-11T03:36:12.2399466Z     {
+2026-11-11T03:36:12.2399626Z       "kind": "theorem",
+2026-11-11T03:36:12.2399805Z       "name": "sum_colorEdgeCount",
+2026-11-11T03:36:12.2400020Z       "file": "EG617/Frontend/EdgeCounting.lean"
+2026-11-11T03:36:12.2400232Z     },
+2026-11-11T03:36:12.2400370Z     {
+2026-11-11T03:36:12.2400511Z       "kind": "def",
+2026-11-11T03:36:12.2400682Z       "name": "D",
+2026-11-11T03:36:12.2400869Z       "file": "EG617/Frontend/HereditaryCaps.lean"
+2026-11-11T03:36:12.2401091Z     },
+2026-11-11T03:36:12.2401231Z     {
+2026-11-11T03:36:12.2401373Z       "kind": "theorem",
+2026-11-11T03:36:12.2401567Z       "name": "colorEdgeCount_add_eleven_tau_le",
+2026-11-11T03:36:12.2401811Z       "file": "EG617/Frontend/HereditaryCaps.lean"
+2026-11-11T03:36:12.2402023Z     },
+2026-11-11T03:36:12.2402159Z     {
+2026-11-11T03:36:12.2402300Z       "kind": "theorem",
+2026-11-11T03:36:12.2402472Z       "name": "hereditary_color_cap",
+2026-11-11T03:36:12.2402705Z       "file": "EG617/Frontend/HereditaryCaps.lean"
+2026-11-11T03:36:12.2402920Z     },
+2026-11-11T03:36:12.2403055Z     {
+2026-11-11T03:36:12.2403197Z       "kind": "theorem",
+2026-11-11T03:36:12.2403395Z       "name": "hereditary_cap_subtraction_exact",
+2026-11-11T03:36:12.2403635Z       "file": "EG617/Frontend/HereditaryCaps.lean"
+2026-11-11T03:36:12.2403847Z     },
+2026-11-11T03:36:12.2403987Z     {
+2026-11-11T03:36:12.2404130Z       "kind": "theorem",
+2026-11-11T03:36:12.2404301Z       "name": "exists_least_color",
+2026-11-11T03:36:12.2404514Z       "file": "EG617/Frontend/HereditaryCaps.lean"
+2026-11-11T03:36:12.2404723Z     },
+2026-11-11T03:36:12.2404867Z     {
+2026-11-11T03:36:12.2405007Z       "kind": "theorem",
+2026-11-11T03:36:12.2405190Z       "name": "least_color_edgeCount_le_870",
+2026-11-11T03:36:12.2405419Z       "file": "EG617/Frontend/HereditaryCaps.lean"
+2026-11-11T03:36:12.2405627Z     },
+2026-11-11T03:36:12.2405769Z     {
+2026-11-11T03:36:12.2406048Z       "kind": "theorem",
+2026-11-11T03:36:12.2406256Z       "name": "exists_least_color_with_hereditary_cap",
+2026-11-11T03:36:12.2406509Z       "file": "EG617/Frontend/HereditaryCaps.lean"
+2026-11-11T03:36:12.2406734Z     },
+2026-11-11T03:36:12.2406876Z     {
+2026-11-11T03:36:12.2407027Z       "kind": "theorem",
+2026-11-11T03:36:12.2407276Z       "name": "exists_colorGraph_card_edgeFinset_le_870",
+2026-11-11T03:36:12.2407530Z       "file": "EG617/Frontend/HereditaryCaps.lean"
+2026-11-11T03:36:12.2407738Z     },
+2026-11-11T03:36:12.2407874Z     {
+2026-11-11T03:36:12.2408017Z       "kind": "theorem",
+2026-11-11T03:36:12.2408215Z       "name": "inducedColorGraph_compl_cliqueFree",
+2026-11-11T03:36:12.2408460Z       "file": "EG617/Frontend/TuranBounds.lean"
+2026-11-11T03:36:12.2408675Z     },
+2026-11-11T03:36:12.2408809Z     {
+2026-11-11T03:36:12.2408951Z       "kind": "theorem",
+2026-11-11T03:36:12.2409130Z       "name": "tau12_le_colorEdgeCount",
+2026-11-11T03:36:12.2409451Z       "file": "EG617/Frontend/TuranBounds.lean"
+2026-11-11T03:36:12.2409666Z     }
+2026-11-11T03:36:12.2409802Z   ],
+2026-11-11T03:36:12.2409963Z   "finalTheoremDeclared": false,
+2026-11-11T03:36:12.2410169Z   "mainTheoremDeclared": false,
+2026-11-11T03:36:12.2410390Z   "status": "PASS"
+2026-11-11T03:36:12.2410553Z }
+2026-11-11T03:36:15.0265765Z ⚠ [1315/1317] Replayed EG617.Core.R224
+2026-11-11T03:36:15.0267534Z warning: EG617/Core/R224.lean:75:2: Try this: 
+2026-11-11T03:36:15.0268780Z   haveI̵
+2026-11-11T03:36:15.0269009Z 
+2026-11-11T03:36:15.0269456Z The goal is a proposition, so `have` is preferred over `haveI`.
+2026-11-11T03:36:15.0270327Z The difference between `have` and `haveI` is that `haveI` inlines the value.
+2026-11-11T03:36:15.0271113Z But this is not relevant for proofs because of proof irrelevance.
+2026-11-11T03:36:15.0271552Z 
+2026-11-11T03:36:15.0271914Z Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+2026-11-11T03:36:16.0103559Z ℹ [1317/1317] Built EG617.Audit.Axioms (902ms)
+2026-11-11T03:36:16.0104055Z info: EG617/Audit/Axioms.lean:5:0: 'EG617.colorGraph' depends on axioms: [propext, Quot.sound]
+2026-11-11T03:36:16.0104554Z info: EG617/Audit/Axioms.lean:6:0: 'EG617.colorGraph_adj_iff' depends on axioms: [propext, Quot.sound]
+2026-11-11T03:36:16.0105130Z info: EG617/Audit/Axioms.lean:7:0: 'EG617.validColoring_iff_colorGraph' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0105715Z info: EG617/Audit/Axioms.lean:8:0: 'EG617.colorGraph_partition' depends on axioms: [propext, Quot.sound]
+2026-11-11T03:36:16.0106263Z info: EG617/Audit/Axioms.lean:9:0: 'EG617.no_independent_thirteen' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0106870Z info: EG617/Audit/Axioms.lean:10:0: 'EG617.no_monochromatic_thirteen' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0107366Z info: EG617/Audit/Axioms.lean:11:0: 'EG617.Vertex' does not depend on any axioms
+2026-11-11T03:36:16.0107758Z info: EG617/Audit/Axioms.lean:12:0: 'EG617.Color' does not depend on any axioms
+2026-11-11T03:36:16.0108168Z info: EG617/Audit/Axioms.lean:13:0: 'EG617.Edge' depends on axioms: [propext, Quot.sound]
+2026-11-11T03:36:16.0108604Z info: EG617/Audit/Axioms.lean:14:0: 'EG617.EdgeColoring' depends on axioms: [propext, Quot.sound]
+2026-11-11T03:36:16.0109048Z info: EG617/Audit/Axioms.lean:15:0: 'EG617.edgeOf' depends on axioms: [propext, Quot.sound]
+2026-11-11T03:36:16.0109809Z info: EG617/Audit/Axioms.lean:16:0: 'EG617.Inside' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0110577Z info: EG617/Audit/Axioms.lean:17:0: 'EG617.edgeOf_swap' depends on axioms: [propext, Quot.sound]
+2026-11-11T03:36:16.0111250Z info: EG617/Audit/Axioms.lean:18:0: 'EG617.edgeOf_eq_iff' depends on axioms: [propext, Quot.sound]
+2026-11-11T03:36:16.0111871Z info: EG617/Audit/Axioms.lean:19:0: 'EG617.edge_has_endpoints' depends on axioms: [propext, Quot.sound]
+2026-11-11T03:36:16.0113209Z info: EG617/Audit/Axioms.lean:20:0: 'EG617.edgeOf_surjective' depends on axioms: [propext, Quot.sound]
+2026-11-11T03:36:16.0113935Z info: EG617/Audit/Axioms.lean:21:0: 'EG617.edgeOf_inside_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0114670Z info: EG617/Audit/Axioms.lean:22:0: 'EG617.inside_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0115422Z info: EG617/Audit/Axioms.lean:23:0: 'EG617.mem_complete_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0116208Z info: EG617/Audit/Axioms.lean:24:0: 'EG617.edgeEquivComplete' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0117003Z info: EG617/Audit/Axioms.lean:25:0: 'EG617.ValidColoring' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0117774Z info: EG617/Audit/Axioms.lean:26:0: 'EG617.EG617R12Statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0118584Z info: EG617/Audit/Axioms.lean:27:0: 'EG617.validColoring_iff_endpoints' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0119612Z info: EG617/Audit/Axioms.lean:28:0: 'EG617.originalProblem_iff_missingColor' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0120311Z info: EG617/Audit/Axioms.lean:29:0: 'EG617.tau12' does not depend on any axioms
+2026-11-11T03:36:16.0121131Z info: EG617/Audit/Axioms.lean:30:0: 'EG617.tau12_add_turanNumber' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0121922Z info: EG617/Audit/Axioms.lean:31:0: 'EG617.CoreIndependenceBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0122722Z info: EG617/Audit/Axioms.lean:32:0: 'EG617.CoreCliqueBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0123500Z info: EG617/Audit/Axioms.lean:33:0: 'EG617.coreInducedEdgeCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0124287Z info: EG617/Audit/Axioms.lean:34:0: 'EG617.CoreAdmissible' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0125077Z info: EG617/Audit/Axioms.lean:35:0: 'EG617.core_induced_edge_count_univ' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0125922Z info: EG617/Audit/Axioms.lean:36:0: 'EG617.core_independenceBound_induce' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0126764Z info: EG617/Audit/Axioms.lean:37:0: 'EG617.core_cliqueBound_induce' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0127601Z info: EG617/Audit/Axioms.lean:38:0: 'EG617.core_independence_nonNeighbors' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0128594Z info: EG617/Audit/Axioms.lean:39:0: 'EG617.core_compl_edge_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0129569Z info: EG617/Audit/Axioms.lean:40:0: 'EG617.core_induced_edge_count_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0130369Z info: EG617/Audit/Axioms.lean:41:0: 'EG617.core_admissible_induce' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0131168Z info: EG617/Audit/Axioms.lean:42:0: 'EG617.core_admissible_nonNeighbors' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0131936Z info: EG617/Audit/Axioms.lean:43:0: 'EG617.Gate47Statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0132697Z info: EG617/Audit/Axioms.lean:44:0: 'EG617.core_not_two_colorable_of_card_24' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0133603Z info: EG617/Audit/Axioms.lean:45:0: 'EG617.core_triangleFree_edges_lt_132_of_card_24' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0134409Z info: EG617/Audit/Axioms.lean:46:0: 'EG617.core_R224_empty_of_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0135330Z info: EG617/Audit/Axioms.lean:47:0: 'EG617.core_not_two_colorable_24' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0136150Z info: EG617/Audit/Axioms.lean:48:0: 'EG617.core_triangleFree24_edges_lt_132' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0136907Z info: EG617/Audit/Axioms.lean:49:0: 'EG617.core_R224_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0137646Z info: EG617/Audit/Axioms.lean:50:0: 'EG617.core_R3_card_le_degree_add_24' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0138398Z info: EG617/Audit/Axioms.lean:51:0: 'EG617.core_R335_degree_ge_11' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0139148Z info: EG617/Audit/Axioms.lean:52:0: 'EG617.core_R337_empty_of_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0140052Z info: EG617/Audit/Axioms.lean:53:0: 'EG617.core_R337_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0140841Z info: EG617/Audit/Axioms.lean:54:0: 'EG617.core_R4_card_le_degree_add_37' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0141606Z info: EG617/Audit/Axioms.lean:55:0: 'EG617.core_R447_degree_ge_10' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0142517Z info: EG617/Audit/Axioms.lean:56:0: 'EG617.independent_card_le_twelve' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0143311Z info: EG617/Audit/Axioms.lean:57:0: 'EG617.monochromatic_card_le_twelve' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0144115Z info: EG617/Audit/Axioms.lean:58:0: 'EG617.colorGraph_clique_card_le_twelve' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0144897Z info: EG617/Audit/Axioms.lean:59:0: 'EG617.inducedColorGraph' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0145646Z info: EG617/Audit/Axioms.lean:60:0: 'EG617.colorEdgeCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0146433Z info: EG617/Audit/Axioms.lean:61:0: 'EG617.colorEdgeCount_univ' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0147191Z info: EG617/Audit/Axioms.lean:62:0: 'EG617.inducedColorGraph_adj_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0147979Z info: EG617/Audit/Axioms.lean:63:0: 'EG617.induced_edge_unique_color' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0148760Z info: EG617/Audit/Axioms.lean:64:0: 'EG617.induced_color_edges_disjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0149781Z info: EG617/Audit/Axioms.lean:65:0: 'EG617.induced_color_edges_union' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0150375Z info: EG617/Audit/Axioms.lean:66:0: 'EG617.sum_colorEdgeCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0151125Z info: EG617/Audit/Axioms.lean:67:0: 'EG617.D' does not depend on any axioms
+2026-11-11T03:36:16.0151892Z info: EG617/Audit/Axioms.lean:68:0: 'EG617.colorEdgeCount_add_eleven_tau_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0152506Z info: EG617/Audit/Axioms.lean:69:0: 'EG617.hereditary_color_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0153118Z info: EG617/Audit/Axioms.lean:70:0: 'EG617.hereditary_cap_subtraction_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0153720Z info: EG617/Audit/Axioms.lean:71:0: 'EG617.exists_least_color' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0154306Z info: EG617/Audit/Axioms.lean:72:0: 'EG617.least_color_edgeCount_le_870' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0159672Z info: EG617/Audit/Axioms.lean:73:0: 'EG617.exists_least_color_with_hereditary_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0160721Z info: EG617/Audit/Axioms.lean:74:0: 'EG617.exists_colorGraph_card_edgeFinset_le_870' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0161824Z info: EG617/Audit/Axioms.lean:75:0: 'EG617.inducedColorGraph_compl_cliqueFree' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0162871Z info: EG617/Audit/Axioms.lean:76:0: 'EG617.tau12_le_colorEdgeCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-11T03:36:16.0163551Z Build completed successfully (1317 jobs).
+2026-11-11T03:36:16.1285109Z {
+2026-11-11T03:36:16.1285517Z   "status": "PASS",
+2026-11-11T03:36:16.1286068Z   "scope": "All project declarations recognized by the source scanner; standard Lean logic only",
+2026-11-11T03:36:16.1286618Z   "allowed": [
+2026-11-11T03:36:16.1286826Z     "propext",
+2026-11-11T03:36:16.1286993Z     "Classical.choice",
+2026-11-11T03:36:16.1287181Z     "Quot.sound"
+2026-11-11T03:36:16.1287345Z   ],
+2026-11-11T03:36:16.1287528Z   "reports": [
+2026-11-11T03:36:16.1287686Z     {
+2026-11-11T03:36:16.1287844Z       "name": "EG617.colorGraph",
+2026-11-11T03:36:16.1288071Z       "axioms": [
+2026-11-11T03:36:16.1288254Z         "propext",
+2026-11-11T03:36:16.1288438Z         "Quot.sound"
+2026-11-11T03:36:16.1288884Z       ]
+2026-11-11T03:36:16.1289043Z     },
+2026-11-11T03:36:16.1289185Z     {
+2026-11-11T03:36:16.1289577Z       "name": "EG617.colorGraph_adj_iff",
+2026-11-11T03:36:16.1289847Z       "axioms": [
+2026-11-11T03:36:16.1290024Z         "propext",
+2026-11-11T03:36:16.1290199Z         "Quot.sound"
+2026-11-11T03:36:16.1290374Z       ]
+2026-11-11T03:36:16.1290526Z     },
+2026-11-11T03:36:16.1290685Z     {
+2026-11-11T03:36:16.1307597Z       "name": "EG617.validColoring_iff_colorGraph",
+2026-11-11T03:36:16.1307960Z       "axioms": [
+2026-11-11T03:36:16.1308143Z         "propext",
+2026-11-11T03:36:16.1308324Z         "Classical.choice",
+2026-11-11T03:36:16.1308512Z         "Quot.sound"
+2026-11-11T03:36:16.1308696Z       ]
+2026-11-11T03:36:16.1308848Z     },
+2026-11-11T03:36:16.1308991Z     {
+2026-11-11T03:36:16.1309157Z       "name": "EG617.colorGraph_partition",
+2026-11-11T03:36:16.1309594Z       "axioms": [
+2026-11-11T03:36:16.1309795Z         "propext",
+2026-11-11T03:36:16.1309972Z         "Quot.sound"
+2026-11-11T03:36:16.1310139Z       ]
+2026-11-11T03:36:16.1310291Z     },
+2026-11-11T03:36:16.1310433Z     {
+2026-11-11T03:36:16.1310604Z       "name": "EG617.no_independent_thirteen",
+2026-11-11T03:36:16.1310820Z       "axioms": [
+2026-11-11T03:36:16.1310976Z         "propext",
+2026-11-11T03:36:16.1311139Z         "Classical.choice",
+2026-11-11T03:36:16.1311318Z         "Quot.sound"
+2026-11-11T03:36:16.1311474Z       ]
+2026-11-11T03:36:16.1311615Z     },
+2026-11-11T03:36:16.1311756Z     {
+2026-11-11T03:36:16.1311925Z       "name": "EG617.no_monochromatic_thirteen",
+2026-11-11T03:36:16.1312207Z       "axioms": [
+2026-11-11T03:36:16.1312431Z         "propext",
+2026-11-11T03:36:16.1312659Z         "Classical.choice",
+2026-11-11T03:36:16.1312913Z         "Quot.sound"
+2026-11-11T03:36:16.1313132Z       ]
+2026-11-11T03:36:16.1313318Z     },
+2026-11-11T03:36:16.1313511Z     {
+2026-11-11T03:36:16.1313715Z       "name": "EG617.Vertex",
+2026-11-11T03:36:16.1313988Z       "axioms": []
+2026-11-11T03:36:16.1314219Z     },
+2026-11-11T03:36:16.1314413Z     {
+2026-11-11T03:36:16.1314632Z       "name": "EG617.Color",
+2026-11-11T03:36:16.1314898Z       "axioms": []
+2026-11-11T03:36:16.1315132Z     },
+2026-11-11T03:36:16.1315329Z     {
+2026-11-11T03:36:16.1315522Z       "name": "EG617.Edge",
+2026-11-11T03:36:16.1315770Z       "axioms": [
+2026-11-11T03:36:16.1315979Z         "propext",
+2026-11-11T03:36:16.1316208Z         "Quot.sound"
+2026-11-11T03:36:16.1316429Z       ]
+2026-11-11T03:36:16.1316627Z     },
+2026-11-11T03:36:16.1316822Z     {
+2026-11-11T03:36:16.1317033Z       "name": "EG617.EdgeColoring",
+2026-11-11T03:36:16.1317315Z       "axioms": [
+2026-11-11T03:36:16.1317524Z         "propext",
+2026-11-11T03:36:16.1317990Z         "Quot.sound"
+2026-11-11T03:36:16.1318225Z       ]
+2026-11-11T03:36:16.1318412Z     },
+2026-11-11T03:36:16.1318598Z     {
+2026-11-11T03:36:16.1318796Z       "name": "EG617.edgeOf",
+2026-11-11T03:36:16.1319037Z       "axioms": [
+2026-11-11T03:36:16.1319239Z         "propext",
+2026-11-11T03:36:16.1319615Z         "Quot.sound"
+2026-11-11T03:36:16.1319826Z       ]
+2026-11-11T03:36:16.1320011Z     },
+2026-11-11T03:36:16.1320188Z     {
+2026-11-11T03:36:16.1320388Z       "name": "EG617.Inside",
+2026-11-11T03:36:16.1320633Z       "axioms": [
+2026-11-11T03:36:16.1320848Z         "propext",
+2026-11-11T03:36:16.1321065Z         "Classical.choice",
+2026-11-11T03:36:16.1321306Z         "Quot.sound"
+2026-11-11T03:36:16.1321514Z       ]
+2026-11-11T03:36:16.1321704Z     },
+2026-11-11T03:36:16.1321898Z     {
+2026-11-11T03:36:16.1322121Z       "name": "EG617.edgeOf_swap",
+2026-11-11T03:36:16.1322405Z       "axioms": [
+2026-11-11T03:36:16.1322623Z         "propext",
+2026-11-11T03:36:16.1322851Z         "Quot.sound"
+2026-11-11T03:36:16.1323065Z       ]
+2026-11-11T03:36:16.1323270Z     },
+2026-11-11T03:36:16.1323474Z     {
+2026-11-11T03:36:16.1323685Z       "name": "EG617.edgeOf_eq_iff",
+2026-11-11T03:36:16.1323973Z       "axioms": [
+2026-11-11T03:36:16.1324190Z         "propext",
+2026-11-11T03:36:16.1324665Z         "Quot.sound"
+2026-11-11T03:36:16.1324885Z       ]
+2026-11-11T03:36:16.1325079Z     },
+2026-11-11T03:36:16.1325282Z     {
+2026-11-11T03:36:16.1325512Z       "name": "EG617.edge_has_endpoints",
+2026-11-11T03:36:16.1325812Z       "axioms": [
+2026-11-11T03:36:16.1326040Z         "propext",
+2026-11-11T03:36:16.1326262Z         "Quot.sound"
+2026-11-11T03:36:16.1326477Z       ]
+2026-11-11T03:36:16.1326668Z     },
+2026-11-11T03:36:16.1326871Z     {
+2026-11-11T03:36:16.1327091Z       "name": "EG617.edgeOf_surjective",
+2026-11-11T03:36:16.1327376Z       "axioms": [
+2026-11-11T03:36:16.1327599Z         "propext",
+2026-11-11T03:36:16.1327818Z         "Quot.sound"
+2026-11-11T03:36:16.1328028Z       ]
+2026-11-11T03:36:16.1328225Z     },
+2026-11-11T03:36:16.1328404Z     {
+2026-11-11T03:36:16.1328609Z       "name": "EG617.edgeOf_inside_iff",
+2026-11-11T03:36:16.1328889Z       "axioms": [
+2026-11-11T03:36:16.1329098Z         "propext",
+2026-11-11T03:36:16.1329440Z         "Classical.choice",
+2026-11-11T03:36:16.1329724Z         "Quot.sound"
+2026-11-11T03:36:16.1329950Z       ]
+2026-11-11T03:36:16.1330145Z     },
+2026-11-11T03:36:16.1330341Z     {
+2026-11-11T03:36:16.1330555Z       "name": "EG617.inside_mono",
+2026-11-11T03:36:16.1330837Z       "axioms": [
+2026-11-11T03:36:16.1331066Z         "propext",
+2026-11-11T03:36:16.1331346Z         "Classical.choice",
+2026-11-11T03:36:16.1331608Z         "Quot.sound"
+2026-11-11T03:36:16.1331842Z       ]
+2026-11-11T03:36:16.1332046Z     },
+2026-11-11T03:36:16.1332253Z     {
+2026-11-11T03:36:16.1332484Z       "name": "EG617.mem_complete_iff",
+2026-11-11T03:36:16.1332793Z       "axioms": [
+2026-11-11T03:36:16.1333028Z         "propext",
+2026-11-11T03:36:16.1333269Z         "Classical.choice",
+2026-11-11T03:36:16.1333537Z         "Quot.sound"
+2026-11-11T03:36:16.1333770Z       ]
+2026-11-11T03:36:16.1333979Z     },
+2026-11-11T03:36:16.1334164Z     {
+2026-11-11T03:36:16.1334386Z       "name": "EG617.edgeEquivComplete",
+2026-11-11T03:36:16.1334750Z       "axioms": [
+2026-11-11T03:36:16.1334987Z         "propext",
+2026-11-11T03:36:16.1335206Z         "Classical.choice",
+2026-11-11T03:36:16.1335432Z         "Quot.sound"
+2026-11-11T03:36:16.1335685Z       ]
+2026-11-11T03:36:16.1335979Z     },
+2026-11-11T03:36:16.1336167Z     {
+2026-11-11T03:36:16.1336373Z       "name": "EG617.ValidColoring",
+2026-11-11T03:36:16.1336623Z       "axioms": [
+2026-11-11T03:36:16.1336779Z         "propext",
+2026-11-11T03:36:16.1336935Z         "Classical.choice",
+2026-11-11T03:36:16.1337108Z         "Quot.sound"
+2026-11-11T03:36:16.1337259Z       ]
+2026-11-11T03:36:16.1337395Z     },
+2026-11-11T03:36:16.1337525Z     {
+2026-11-11T03:36:16.1337679Z       "name": "EG617.EG617R12Statement",
+2026-11-11T03:36:16.1337885Z       "axioms": [
+2026-11-11T03:36:16.1338180Z         "propext",
+2026-11-11T03:36:16.1338370Z         "Classical.choice",
+2026-11-11T03:36:16.1338573Z         "Quot.sound"
+2026-11-11T03:36:16.1338772Z       ]
+2026-11-11T03:36:16.1338945Z     },
+2026-11-11T03:36:16.1339108Z     {
+2026-11-11T03:36:16.1339463Z       "name": "EG617.validColoring_iff_endpoints",
+2026-11-11T03:36:16.1339779Z       "axioms": [
+2026-11-11T03:36:16.1339996Z         "propext",
+2026-11-11T03:36:16.1340173Z         "Classical.choice",
+2026-11-11T03:36:16.1340351Z         "Quot.sound"
+2026-11-11T03:36:16.1340505Z       ]
+2026-11-11T03:36:16.1340633Z     },
+2026-11-11T03:36:16.1340835Z     {
+2026-11-11T03:36:16.1341225Z       "name": "EG617.originalProblem_iff_missingColor",
+2026-11-11T03:36:16.1341622Z       "axioms": [
+2026-11-11T03:36:16.1341853Z         "propext",
+2026-11-11T03:36:16.1342098Z         "Classical.choice",
+2026-11-11T03:36:16.1342361Z         "Quot.sound"
+2026-11-11T03:36:16.1342577Z       ]
+2026-11-11T03:36:16.1342779Z     },
+2026-11-11T03:36:16.1342999Z     {
+2026-11-11T03:36:16.1343217Z       "name": "EG617.tau12",
+2026-11-11T03:36:16.1343478Z       "axioms": []
+2026-11-11T03:36:16.1343680Z     },
+2026-11-11T03:36:16.1343879Z     {
+2026-11-11T03:36:16.1344124Z       "name": "EG617.tau12_add_turanNumber",
+2026-11-11T03:36:16.1344601Z       "axioms": [
+2026-11-11T03:36:16.1344834Z         "propext",
+2026-11-11T03:36:16.1345079Z         "Classical.choice",
+2026-11-11T03:36:16.1345342Z         "Quot.sound"
+2026-11-11T03:36:16.1345591Z       ]
+2026-11-11T03:36:16.1345888Z     },
+2026-11-11T03:36:16.1346086Z     {
+2026-11-11T03:36:16.1346327Z       "name": "EG617.CoreIndependenceBound",
+2026-11-11T03:36:16.1346644Z       "axioms": [
+2026-11-11T03:36:16.1346876Z         "propext",
+2026-11-11T03:36:16.1347113Z         "Classical.choice",
+2026-11-11T03:36:16.1347364Z         "Quot.sound"
+2026-11-11T03:36:16.1347588Z       ]
+2026-11-11T03:36:16.1347785Z     },
+2026-11-11T03:36:16.1347968Z     {
+2026-11-11T03:36:16.1348188Z       "name": "EG617.CoreCliqueBound",
+2026-11-11T03:36:16.1348490Z       "axioms": [
+2026-11-11T03:36:16.1348710Z         "propext",
+2026-11-11T03:36:16.1348940Z         "Classical.choice",
+2026-11-11T03:36:16.1349195Z         "Quot.sound"
+2026-11-11T03:36:16.1349583Z       ]
+2026-11-11T03:36:16.1349779Z     },
+2026-11-11T03:36:16.1349985Z     {
+2026-11-11T03:36:16.1350221Z       "name": "EG617.coreInducedEdgeCount",
+2026-11-11T03:36:16.1350531Z       "axioms": [
+2026-11-11T03:36:16.1350760Z         "propext",
+2026-11-11T03:36:16.1350999Z         "Classical.choice",
+2026-11-11T03:36:16.1351255Z         "Quot.sound"
+2026-11-11T03:36:16.1351482Z       ]
+2026-11-11T03:36:16.1351674Z     },
+2026-11-11T03:36:16.1351861Z     {
+2026-11-11T03:36:16.1352077Z       "name": "EG617.CoreAdmissible",
+2026-11-11T03:36:16.1352293Z       "axioms": [
+2026-11-11T03:36:16.1352453Z         "propext",
+2026-11-11T03:36:16.1352612Z         "Classical.choice",
+2026-11-11T03:36:16.1352783Z         "Quot.sound"
+2026-11-11T03:36:16.1352936Z       ]
+2026-11-11T03:36:16.1353076Z     },
+2026-11-11T03:36:16.1353216Z     {
+2026-11-11T03:36:16.1353385Z       "name": "EG617.core_induced_edge_count_univ",
+2026-11-11T03:36:16.1353600Z       "axioms": [
+2026-11-11T03:36:16.1353749Z         "propext",
+2026-11-11T03:36:16.1353902Z         "Classical.choice",
+2026-11-11T03:36:16.1354077Z         "Quot.sound"
+2026-11-11T03:36:16.1354223Z       ]
+2026-11-11T03:36:16.1354359Z     },
+2026-11-11T03:36:16.1354491Z     {
+2026-11-11T03:36:16.1354654Z       "name": "EG617.core_independenceBound_induce",
+2026-11-11T03:36:16.1354870Z       "axioms": [
+2026-11-11T03:36:16.1355020Z         "propext",
+2026-11-11T03:36:16.1355176Z         "Classical.choice",
+2026-11-11T03:36:16.1355344Z         "Quot.sound"
+2026-11-11T03:36:16.1355492Z       ]
+2026-11-11T03:36:16.1355622Z     },
+2026-11-11T03:36:16.1355755Z     {
+2026-11-11T03:36:16.1355918Z       "name": "EG617.core_cliqueBound_induce",
+2026-11-11T03:36:16.1356125Z       "axioms": [
+2026-11-11T03:36:16.1356319Z         "propext",
+2026-11-11T03:36:16.1356617Z         "Classical.choice",
+2026-11-11T03:36:16.1356788Z         "Quot.sound"
+2026-11-11T03:36:16.1356937Z       ]
+2026-11-11T03:36:16.1357069Z     },
+2026-11-11T03:36:16.1357204Z     {
+2026-11-11T03:36:16.1357378Z       "name": "EG617.core_independence_nonNeighbors",
+2026-11-11T03:36:16.1357607Z       "axioms": [
+2026-11-11T03:36:16.1357756Z         "propext",
+2026-11-11T03:36:16.1357914Z         "Classical.choice",
+2026-11-11T03:36:16.1358086Z         "Quot.sound"
+2026-11-11T03:36:16.1358278Z       ]
+2026-11-11T03:36:16.1358423Z     },
+2026-11-11T03:36:16.1358557Z     {
+2026-11-11T03:36:16.1358715Z       "name": "EG617.core_compl_edge_count",
+2026-11-11T03:36:16.1358917Z       "axioms": [
+2026-11-11T03:36:16.1359064Z         "propext",
+2026-11-11T03:36:16.1359216Z         "Classical.choice",
+2026-11-11T03:36:16.1359568Z         "Quot.sound"
+2026-11-11T03:36:16.1359724Z       ]
+2026-11-11T03:36:16.1359865Z     },
+2026-11-11T03:36:16.1360001Z     {
+2026-11-11T03:36:16.1360166Z       "name": "EG617.core_induced_edge_count_image",
+2026-11-11T03:36:16.1360387Z       "axioms": [
+2026-11-11T03:36:16.1360539Z         "propext",
+2026-11-11T03:36:16.1360701Z         "Classical.choice",
+2026-11-11T03:36:16.1360881Z         "Quot.sound"
+2026-11-11T03:36:16.1361035Z       ]
+2026-11-11T03:36:16.1361290Z     },
+2026-11-11T03:36:16.1361433Z     {
+2026-11-11T03:36:16.1361596Z       "name": "EG617.core_admissible_induce",
+2026-11-11T03:36:16.1361804Z       "axioms": [
+2026-11-11T03:36:16.1361959Z         "propext",
+2026-11-11T03:36:16.1362119Z         "Classical.choice",
+2026-11-11T03:36:16.1362292Z         "Quot.sound"
+2026-11-11T03:36:16.1362442Z       ]
+2026-11-11T03:36:16.1362575Z     },
+2026-11-11T03:36:16.1362711Z     {
+2026-11-11T03:36:16.1362886Z       "name": "EG617.core_admissible_nonNeighbors",
+2026-11-11T03:36:16.1363105Z       "axioms": [
+2026-11-11T03:36:16.1363251Z         "propext",
+2026-11-11T03:36:16.1363406Z         "Classical.choice",
+2026-11-11T03:36:16.1363581Z         "Quot.sound"
+2026-11-11T03:36:16.1363739Z       ]
+2026-11-11T03:36:16.1363878Z     },
+2026-11-11T03:36:16.1364013Z     {
+2026-11-11T03:36:16.1364164Z       "name": "EG617.Gate47Statement",
+2026-11-11T03:36:16.1364365Z       "axioms": [
+2026-11-11T03:36:16.1364517Z         "propext",
+2026-11-11T03:36:16.1364679Z         "Classical.choice",
+2026-11-11T03:36:16.1364857Z         "Quot.sound"
+2026-11-11T03:36:16.1365007Z       ]
+2026-11-11T03:36:16.1365140Z     },
+2026-11-11T03:36:16.1365272Z     {
+2026-11-11T03:36:16.1365446Z       "name": "EG617.core_not_two_colorable_of_card_24",
+2026-11-11T03:36:16.1365671Z       "axioms": [
+2026-11-11T03:36:16.1365823Z         "propext",
+2026-11-11T03:36:16.1365978Z         "Classical.choice",
+2026-11-11T03:36:16.1366148Z         "Quot.sound"
+2026-11-11T03:36:16.1366299Z       ]
+2026-11-11T03:36:16.1366430Z     },
+2026-11-11T03:36:16.1366570Z     {
+2026-11-11T03:36:16.1366771Z       "name": "EG617.core_triangleFree_edges_lt_132_of_card_24",
+2026-11-11T03:36:16.1367020Z       "axioms": [
+2026-11-11T03:36:16.1367177Z         "propext",
+2026-11-11T03:36:16.1367337Z         "Classical.choice",
+2026-11-11T03:36:16.1367509Z         "Quot.sound"
+2026-11-11T03:36:16.1367664Z       ]
+2026-11-11T03:36:16.1367801Z     },
+2026-11-11T03:36:16.1367936Z     {
+2026-11-11T03:36:16.1368095Z       "name": "EG617.core_R224_empty_of_card",
+2026-11-11T03:36:16.1368313Z       "axioms": [
+2026-11-11T03:36:16.1368465Z         "propext",
+2026-11-11T03:36:16.1368624Z         "Classical.choice",
+2026-11-11T03:36:16.1368803Z         "Quot.sound"
+2026-11-11T03:36:16.1368951Z       ]
+2026-11-11T03:36:16.1369082Z     },
+2026-11-11T03:36:16.1369211Z     {
+2026-11-11T03:36:16.1369535Z       "name": "EG617.core_not_two_colorable_24",
+2026-11-11T03:36:16.1369753Z       "axioms": [
+2026-11-11T03:36:16.1369903Z         "propext",
+2026-11-11T03:36:16.1370057Z         "Classical.choice",
+2026-11-11T03:36:16.1370231Z         "Quot.sound"
+2026-11-11T03:36:16.1370391Z       ]
+2026-11-11T03:36:16.1370533Z     },
+2026-11-11T03:36:16.1370670Z     {
+2026-11-11T03:36:16.1370962Z       "name": "EG617.core_triangleFree24_edges_lt_132",
+2026-11-11T03:36:16.1371194Z       "axioms": [
+2026-11-11T03:36:16.1371350Z         "propext",
+2026-11-11T03:36:16.1371508Z         "Classical.choice",
+2026-11-11T03:36:16.1371683Z         "Quot.sound"
+2026-11-11T03:36:16.1371839Z       ]
+2026-11-11T03:36:16.1371977Z     },
+2026-11-11T03:36:16.1372110Z     {
+2026-11-11T03:36:16.1372256Z       "name": "EG617.core_R224_empty",
+2026-11-11T03:36:16.1372451Z       "axioms": [
+2026-11-11T03:36:16.1372601Z         "propext",
+2026-11-11T03:36:16.1372756Z         "Classical.choice",
+2026-11-11T03:36:16.1372933Z         "Quot.sound"
+2026-11-11T03:36:16.1373085Z       ]
+2026-11-11T03:36:16.1373221Z     },
+2026-11-11T03:36:16.1373354Z     {
+2026-11-11T03:36:16.1373516Z       "name": "EG617.core_R3_card_le_degree_add_24",
+2026-11-11T03:36:16.1373730Z       "axioms": [
+2026-11-11T03:36:16.1373895Z         "propext",
+2026-11-11T03:36:16.1374057Z         "Classical.choice",
+2026-11-11T03:36:16.1374234Z         "Quot.sound"
+2026-11-11T03:36:16.1374385Z       ]
+2026-11-11T03:36:16.1374522Z     },
+2026-11-11T03:36:16.1374660Z     {
+2026-11-11T03:36:16.1374825Z       "name": "EG617.core_R335_degree_ge_11",
+2026-11-11T03:36:16.1375034Z       "axioms": [
+2026-11-11T03:36:16.1375296Z         "propext",
+2026-11-11T03:36:16.1375457Z         "Classical.choice",
+2026-11-11T03:36:16.1375629Z         "Quot.sound"
+2026-11-11T03:36:16.1375781Z       ]
+2026-11-11T03:36:16.1375917Z     },
+2026-11-11T03:36:16.1376053Z     {
+2026-11-11T03:36:16.1376212Z       "name": "EG617.core_R337_empty_of_card",
+2026-11-11T03:36:16.1376419Z       "axioms": [
+2026-11-11T03:36:16.1376564Z         "propext",
+2026-11-11T03:36:16.1376718Z         "Classical.choice",
+2026-11-11T03:36:16.1376892Z         "Quot.sound"
+2026-11-11T03:36:16.1377044Z       ]
+2026-11-11T03:36:16.1377174Z     },
+2026-11-11T03:36:16.1377307Z     {
+2026-11-11T03:36:16.1377454Z       "name": "EG617.core_R337_empty",
+2026-11-11T03:36:16.1377652Z       "axioms": [
+2026-11-11T03:36:16.1377801Z         "propext",
+2026-11-11T03:36:16.1377955Z         "Classical.choice",
+2026-11-11T03:36:16.1378128Z         "Quot.sound"
+2026-11-11T03:36:16.1378275Z       ]
+2026-11-11T03:36:16.1378409Z     },
+2026-11-11T03:36:16.1378541Z     {
+2026-11-11T03:36:16.1378719Z       "name": "EG617.core_R4_card_le_degree_add_37",
+2026-11-11T03:36:16.1378939Z       "axioms": [
+2026-11-11T03:36:16.1379089Z         "propext",
+2026-11-11T03:36:16.1379245Z         "Classical.choice",
+2026-11-11T03:36:16.1379686Z         "Quot.sound"
+2026-11-11T03:36:16.1379919Z       ]
+2026-11-11T03:36:16.1380102Z     },
+2026-11-11T03:36:16.1380284Z     {
+2026-11-11T03:36:16.1380527Z       "name": "EG617.core_R447_degree_ge_10",
+2026-11-11T03:36:16.1380843Z       "axioms": [
+2026-11-11T03:36:16.1381049Z         "propext",
+2026-11-11T03:36:16.1381258Z         "Classical.choice",
+2026-11-11T03:36:16.1381491Z         "Quot.sound"
+2026-11-11T03:36:16.1381691Z       ]
+2026-11-11T03:36:16.1381876Z     },
+2026-11-11T03:36:16.1382078Z     {
+2026-11-11T03:36:16.1382317Z       "name": "EG617.independent_card_le_twelve",
+2026-11-11T03:36:16.1382655Z       "axioms": [
+2026-11-11T03:36:16.1382882Z         "propext",
+2026-11-11T03:36:16.1383123Z         "Classical.choice",
+2026-11-11T03:36:16.1383387Z         "Quot.sound"
+2026-11-11T03:36:16.1383630Z       ]
+2026-11-11T03:36:16.1383817Z     },
+2026-11-11T03:36:16.1384047Z     {
+2026-11-11T03:36:16.1384358Z       "name": "EG617.monochromatic_card_le_twelve",
+2026-11-11T03:36:16.1384829Z       "axioms": [
+2026-11-11T03:36:16.1385166Z         "propext",
+2026-11-11T03:36:16.1385504Z         "Classical.choice",
+2026-11-11T03:36:16.1385851Z         "Quot.sound"
+2026-11-11T03:36:16.1386178Z       ]
+2026-11-11T03:36:16.1386453Z     },
+2026-11-11T03:36:16.1386704Z     {
+2026-11-11T03:36:16.1386982Z       "name": "EG617.colorGraph_clique_card_le_twelve",
+2026-11-11T03:36:16.1387347Z       "axioms": [
+2026-11-11T03:36:16.1387584Z         "propext",
+2026-11-11T03:36:16.1388271Z         "Classical.choice",
+2026-11-11T03:36:16.1388555Z         "Quot.sound"
+2026-11-11T03:36:16.1388793Z       ]
+2026-11-11T03:36:16.1388998Z     },
+2026-11-11T03:36:16.1389206Z     {
+2026-11-11T03:36:16.1389592Z       "name": "EG617.inducedColorGraph",
+2026-11-11T03:36:16.1389911Z       "axioms": [
+2026-11-11T03:36:16.1390153Z         "propext",
+2026-11-11T03:36:16.1390393Z         "Classical.choice",
+2026-11-11T03:36:16.1390659Z         "Quot.sound"
+2026-11-11T03:36:16.1390896Z       ]
+2026-11-11T03:36:16.1391104Z     },
+2026-11-11T03:36:16.1391312Z     {
+2026-11-11T03:36:16.1391539Z       "name": "EG617.colorEdgeCount",
+2026-11-11T03:36:16.1391841Z       "axioms": [
+2026-11-11T03:36:16.1392073Z         "propext",
+2026-11-11T03:36:16.1392314Z         "Classical.choice",
+2026-11-11T03:36:16.1392581Z         "Quot.sound"
+2026-11-11T03:36:16.1392817Z       ]
+2026-11-11T03:36:16.1393033Z     },
+2026-11-11T03:36:16.1393239Z     {
+2026-11-11T03:36:16.1393479Z       "name": "EG617.colorEdgeCount_univ",
+2026-11-11T03:36:16.1393802Z       "axioms": [
+2026-11-11T03:36:16.1394030Z         "propext",
+2026-11-11T03:36:16.1394268Z         "Classical.choice",
+2026-11-11T03:36:16.1394538Z         "Quot.sound"
+2026-11-11T03:36:16.1394769Z       ]
+2026-11-11T03:36:16.1394968Z     },
+2026-11-11T03:36:16.1395176Z     {
+2026-11-11T03:36:16.1395585Z       "name": "EG617.inducedColorGraph_adj_iff",
+2026-11-11T03:36:16.1395934Z       "axioms": [
+2026-11-11T03:36:16.1396178Z         "propext",
+2026-11-11T03:36:16.1396420Z         "Classical.choice",
+2026-11-11T03:36:16.1396686Z         "Quot.sound"
+2026-11-11T03:36:16.1396924Z       ]
+2026-11-11T03:36:16.1397134Z     },
+2026-11-11T03:36:16.1397339Z     {
+2026-11-11T03:36:16.1397581Z       "name": "EG617.induced_edge_unique_color",
+2026-11-11T03:36:16.1397915Z       "axioms": [
+2026-11-11T03:36:16.1398145Z         "propext",
+2026-11-11T03:36:16.1398388Z         "Classical.choice",
+2026-11-11T03:36:16.1398660Z         "Quot.sound"
+2026-11-11T03:36:16.1398897Z       ]
+2026-11-11T03:36:16.1399123Z     },
+2026-11-11T03:36:16.1399438Z     {
+2026-11-11T03:36:16.1399677Z       "name": "EG617.induced_color_edges_disjoint",
+2026-11-11T03:36:16.1400024Z       "axioms": [
+2026-11-11T03:36:16.1400263Z         "propext",
+2026-11-11T03:36:16.1400513Z         "Classical.choice",
+2026-11-11T03:36:16.1400791Z         "Quot.sound"
+2026-11-11T03:36:16.1401027Z       ]
+2026-11-11T03:36:16.1401239Z     },
+2026-11-11T03:36:16.1401444Z     {
+2026-11-11T03:36:16.1401689Z       "name": "EG617.induced_color_edges_union",
+2026-11-11T03:36:16.1402022Z       "axioms": [
+2026-11-11T03:36:16.1402265Z         "propext",
+2026-11-11T03:36:16.1402518Z         "Classical.choice",
+2026-11-11T03:36:16.1402793Z         "Quot.sound"
+2026-11-11T03:36:16.1403032Z       ]
+2026-11-11T03:36:16.1403242Z     },
+2026-11-11T03:36:16.1403456Z     {
+2026-11-11T03:36:16.1403701Z       "name": "EG617.sum_colorEdgeCount",
+2026-11-11T03:36:16.1404019Z       "axioms": [
+2026-11-11T03:36:16.1404259Z         "propext",
+2026-11-11T03:36:16.1404516Z         "Classical.choice",
+2026-11-11T03:36:16.1404793Z         "Quot.sound"
+2026-11-11T03:36:16.1405032Z       ]
+2026-11-11T03:36:16.1405255Z     },
+2026-11-11T03:36:16.1405471Z     {
+2026-11-11T03:36:16.1405693Z       "name": "EG617.D",
+2026-11-11T03:36:16.1405960Z       "axioms": []
+2026-11-11T03:36:16.1406217Z     },
+2026-11-11T03:36:16.1406449Z     {
+2026-11-11T03:36:16.1406753Z       "name": "EG617.colorEdgeCount_add_eleven_tau_le",
+2026-11-11T03:36:16.1407151Z       "axioms": [
+2026-11-11T03:36:16.1407428Z         "propext",
+2026-11-11T03:36:16.1407711Z         "Classical.choice",
+2026-11-11T03:36:16.1408024Z         "Quot.sound"
+2026-11-11T03:36:16.1408315Z       ]
+2026-11-11T03:36:16.1408568Z     },
+2026-11-11T03:36:16.1408813Z     {
+2026-11-11T03:36:16.1409089Z       "name": "EG617.hereditary_color_cap",
+2026-11-11T03:36:16.1409594Z       "axioms": [
+2026-11-11T03:36:16.1409878Z         "propext",
+2026-11-11T03:36:16.1410175Z         "Classical.choice",
+2026-11-11T03:36:16.1410499Z         "Quot.sound"
+2026-11-11T03:36:16.1410995Z       ]
+2026-11-11T03:36:16.1411254Z     },
+2026-11-11T03:36:16.1411510Z     {
+2026-11-11T03:36:16.1411840Z       "name": "EG617.hereditary_cap_subtraction_exact",
+2026-11-11T03:36:16.1412263Z       "axioms": [
+2026-11-11T03:36:16.1412561Z         "propext",
+2026-11-11T03:36:16.1412870Z         "Classical.choice",
+2026-11-11T03:36:16.1413193Z         "Quot.sound"
+2026-11-11T03:36:16.1413473Z       ]
+2026-11-11T03:36:16.1413724Z     },
+2026-11-11T03:36:16.1413977Z     {
+2026-11-11T03:36:16.1414263Z       "name": "EG617.exists_least_color",
+2026-11-11T03:36:16.1414641Z       "axioms": [
+2026-11-11T03:36:16.1414881Z         "propext",
+2026-11-11T03:36:16.1415148Z         "Classical.choice",
+2026-11-11T03:36:16.1415425Z         "Quot.sound"
+2026-11-11T03:36:16.1415663Z       ]
+2026-11-11T03:36:16.1415885Z     },
+2026-11-11T03:36:16.1416098Z     {
+2026-11-11T03:36:16.1416357Z       "name": "EG617.least_color_edgeCount_le_870",
+2026-11-11T03:36:16.1416713Z       "axioms": [
+2026-11-11T03:36:16.1416960Z         "propext",
+2026-11-11T03:36:16.1417210Z         "Classical.choice",
+2026-11-11T03:36:16.1417486Z         "Quot.sound"
+2026-11-11T03:36:16.1417728Z       ]
+2026-11-11T03:36:16.1417936Z     },
+2026-11-11T03:36:16.1418141Z     {
+2026-11-11T03:36:16.1418442Z       "name": "EG617.exists_least_color_with_hereditary_cap",
+2026-11-11T03:36:16.1418994Z       "axioms": [
+2026-11-11T03:36:16.1419244Z         "propext",
+2026-11-11T03:36:16.1419617Z         "Classical.choice",
+2026-11-11T03:36:16.1419890Z         "Quot.sound"
+2026-11-11T03:36:16.1420129Z       ]
+2026-11-11T03:36:16.1420345Z     },
+2026-11-11T03:36:16.1420550Z     {
+2026-11-11T03:36:16.1420853Z       "name": "EG617.exists_colorGraph_card_edgeFinset_le_870",
+2026-11-11T03:36:16.1421243Z       "axioms": [
+2026-11-11T03:36:16.1421476Z         "propext",
+2026-11-11T03:36:16.1421721Z         "Classical.choice",
+2026-11-11T03:36:16.1421990Z         "Quot.sound"
+2026-11-11T03:36:16.1422227Z       ]
+2026-11-11T03:36:16.1422444Z     },
+2026-11-11T03:36:16.1422663Z     {
+2026-11-11T03:36:16.1422945Z       "name": "EG617.inducedColorGraph_compl_cliqueFree",
+2026-11-11T03:36:16.1423318Z       "axioms": [
+2026-11-11T03:36:16.1423552Z         "propext",
+2026-11-11T03:36:16.1423803Z         "Classical.choice",
+2026-11-11T03:36:16.1424083Z         "Quot.sound"
+2026-11-11T03:36:16.1424321Z       ]
+2026-11-11T03:36:16.1424531Z     },
+2026-11-11T03:36:16.1424736Z     {
+2026-11-11T03:36:16.1424984Z       "name": "EG617.tau12_le_colorEdgeCount",
+2026-11-11T03:36:16.1425317Z       "axioms": [
+2026-11-11T03:36:16.1425557Z         "propext",
+2026-11-11T03:36:16.1425798Z         "Classical.choice",
+2026-11-11T03:36:16.1426066Z         "Quot.sound"
+2026-11-11T03:36:16.1426307Z       ]
+2026-11-11T03:36:16.1426514Z     }
+2026-11-11T03:36:16.1426718Z   ],
+2026-11-11T03:36:16.1426936Z   "errors": [],
+2026-11-11T03:36:16.1427203Z   "finalTheoremProved": false
+2026-11-11T03:36:16.1427500Z }
+2026-11-11T03:36:18.6215979Z ⚠ [1315/1317] Replayed EG617.Core.R224
+2026-11-11T03:36:18.6216827Z warning: EG617/Core/R224.lean:75:2: Try this: 
+2026-11-11T03:36:18.6217551Z   haveI̵
+2026-11-11T03:36:18.6217681Z 
+2026-11-11T03:36:18.6217840Z The goal is a proposition, so `have` is preferred over `haveI`.
+2026-11-11T03:36:18.6218226Z The difference between `have` and `haveI` is that `haveI` inlines the value.
+2026-11-11T03:36:18.6218734Z But this is not relevant for proofs because of proof irrelevance.
+2026-11-11T03:36:18.6218952Z 
+2026-11-11T03:36:18.6219132Z Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+2026-11-11T03:36:19.6198856Z ℹ [1317/1317] Built EG617.Audit.Statements (957ms)
+2026-11-11T03:36:19.6199881Z info: EG617/Audit/Statements.lean:5:0: @[expose] def EG617.colorGraph : EG617.EdgeColoring → EG617.Color → SimpleGraph EG617.Vertex :=
+2026-11-11T03:36:19.6200522Z fun c i => { Adj := fun u v => ∃ (h : u ≠ v), c (EG617.edgeOf u v h) = i, symm := ⋯, loopless := ⋯ }
+2026-11-11T03:36:19.6201424Z info: EG617/Audit/Statements.lean:6:0: EG617.colorGraph_adj_iff (c : EG617.EdgeColoring) (i : EG617.Color) (u v : EG617.Vertex) (h : u ≠ v) :
+2026-11-11T03:36:19.6201963Z   (EG617.colorGraph c i).Adj u v ↔ c (EG617.edgeOf u v h) = i
+2026-11-11T03:36:19.6202368Z info: EG617/Audit/Statements.lean:7:0: EG617.validColoring_iff_colorGraph (c : EG617.EdgeColoring) :
+2026-11-11T03:36:19.6202768Z   EG617.ValidColoring c ↔
+2026-11-11T03:36:19.6203183Z     ∀ (S : Finset EG617.Vertex), S.card = 13 → ∀ (i : EG617.Color), ∃ u ∈ S, ∃ v ∈ S, (EG617.colorGraph c i).Adj u v
+2026-11-11T03:36:19.6203824Z info: EG617/Audit/Statements.lean:8:0: EG617.colorGraph_partition (c : EG617.EdgeColoring) (u v : EG617.Vertex) (h : u ≠ v) :
+2026-11-11T03:36:19.6204274Z   ∃! i, (EG617.colorGraph c i).Adj u v
+2026-11-11T03:36:19.6204725Z info: EG617/Audit/Statements.lean:9:0: EG617.no_independent_thirteen (c : EG617.EdgeColoring) (hc : EG617.ValidColoring c) (S : Finset EG617.Vertex)
+2026-11-11T03:36:19.6205343Z   (hS : S.card = 13) (i : EG617.Color) : ¬∀ u ∈ S, ∀ v ∈ S, ¬(EG617.colorGraph c i).Adj u v
+2026-11-11T03:36:19.6205903Z info: EG617/Audit/Statements.lean:10:0: EG617.no_monochromatic_thirteen (c : EG617.EdgeColoring) (hc : EG617.ValidColoring c) (S : Finset EG617.Vertex)
+2026-11-11T03:36:19.6206523Z   (hS : S.card = 13) (i : EG617.Color) : ¬∀ u ∈ S, ∀ v ∈ S, ∀ (h : u ≠ v), c (EG617.edgeOf u v h) = i
+2026-11-11T03:36:19.6207063Z info: EG617/Audit/Statements.lean:11:0: @[reducible, expose] def EG617.Vertex : Type :=
+2026-11-11T03:36:19.6207373Z Fin 145
+2026-11-11T03:36:19.6207637Z info: EG617/Audit/Statements.lean:12:0: @[reducible, expose] def EG617.Color : Type :=
+2026-11-11T03:36:19.6207942Z Fin 12
+2026-11-11T03:36:19.6208315Z info: EG617/Audit/Statements.lean:13:0: @[reducible, expose] def EG617.Edge : Type :=
+2026-11-11T03:36:19.6208868Z { e // ¬e.IsDiag }
+2026-11-11T03:36:19.6209444Z info: EG617/Audit/Statements.lean:14:0: @[reducible, expose] def EG617.EdgeColoring : Type :=
+2026-11-11T03:36:19.6209896Z EG617.Edge → EG617.Color
+2026-11-11T03:36:19.6210328Z info: EG617/Audit/Statements.lean:15:0: @[expose] def EG617.edgeOf : (u v : EG617.Vertex) → u ≠ v → EG617.Edge :=
+2026-11-11T03:36:19.6210726Z fun u v h => ⟨s(u, v), ⋯⟩
+2026-11-11T03:36:19.6211132Z info: EG617/Audit/Statements.lean:16:0: @[expose] def EG617.Inside : EG617.Edge → Finset EG617.Vertex → Prop :=
+2026-11-11T03:36:19.6211531Z fun e S => ∀ v ∈ ↑e, v ∈ S
+2026-11-11T03:36:19.6211999Z info: EG617/Audit/Statements.lean:17:0: EG617.edgeOf_swap (u v : EG617.Vertex) (h : u ≠ v) : EG617.edgeOf u v h = EG617.edgeOf v u ⋯
+2026-11-11T03:36:19.6212621Z info: EG617/Audit/Statements.lean:18:0: EG617.edgeOf_eq_iff (u v x y : EG617.Vertex) (huv : u ≠ v) (hxy : x ≠ y) :
+2026-11-11T03:36:19.6213114Z   EG617.edgeOf u v huv = EG617.edgeOf x y hxy ↔ u = x ∧ v = y ∨ u = y ∧ v = x
+2026-11-11T03:36:19.6213612Z info: EG617/Audit/Statements.lean:19:0: EG617.edge_has_endpoints (e : EG617.Edge) : ∃ u v, u ≠ v ∧ ↑e = s(u, v)
+2026-11-11T03:36:19.6214245Z info: EG617/Audit/Statements.lean:20:0: EG617.edgeOf_surjective (e : EG617.Edge) : ∃ u v, ∃ (h : u ≠ v), EG617.edgeOf u v h = e
+2026-11-11T03:36:19.6214899Z info: EG617/Audit/Statements.lean:21:0: EG617.edgeOf_inside_iff (u v : EG617.Vertex) (h : u ≠ v) (S : Finset EG617.Vertex) :
+2026-11-11T03:36:19.6215349Z   EG617.Inside (EG617.edgeOf u v h) S ↔ u ∈ S ∧ v ∈ S
+2026-11-11T03:36:19.6215927Z info: EG617/Audit/Statements.lean:22:0: EG617.inside_mono {e : EG617.Edge} {S T : Finset EG617.Vertex} (hST : S ⊆ T) (he : EG617.Inside e S) : EG617.Inside e T
+2026-11-11T03:36:19.6216721Z info: EG617/Audit/Statements.lean:23:0: EG617.mem_complete_iff (e : Sym2 EG617.Vertex) : e ∈ (SimpleGraph.completeGraph EG617.Vertex).edgeSet ↔ ¬e.IsDiag
+2026-11-11T03:36:19.6217514Z info: EG617/Audit/Statements.lean:24:0: @[expose] def EG617.edgeEquivComplete : EG617.Edge ≃ ↑(SimpleGraph.completeGraph EG617.Vertex).edgeSet :=
+2026-11-11T03:36:19.6218162Z { toFun := fun e => ⟨↑e, ⋯⟩, invFun := fun e => ⟨↑e, ⋯⟩, left_inv := EG617.edgeEquivComplete._proof_4,
+2026-11-11T03:36:19.6218511Z   right_inv := EG617.edgeEquivComplete._proof_6 }
+2026-11-11T03:36:19.6219097Z info: EG617/Audit/Statements.lean:25:0: @[expose] def EG617.ValidColoring : EG617.EdgeColoring → Prop :=
+2026-11-11T03:36:19.6220051Z fun c => ∀ (S : Finset EG617.Vertex), S.card = 13 → ∀ (i : EG617.Color), ∃ e, EG617.Inside e S ∧ c e = i
+2026-11-11T03:36:19.6220640Z info: EG617/Audit/Statements.lean:26:0: @[expose] def EG617.EG617R12Statement : Prop :=
+2026-11-11T03:36:19.6221098Z ¬∃ c, EG617.ValidColoring c
+2026-11-11T03:36:19.6221534Z info: EG617/Audit/Statements.lean:27:0: EG617.validColoring_iff_endpoints (c : EG617.EdgeColoring) :
+2026-11-11T03:36:19.6222023Z   EG617.ValidColoring c ↔
+2026-11-11T03:36:19.6222408Z     ∀ (S : Finset EG617.Vertex),
+2026-11-11T03:36:19.6222857Z       S.card = 13 → ∀ (i : EG617.Color), ∃ u ∈ S, ∃ v ∈ S, ∃ (h : u ≠ v), c (EG617.edgeOf u v h) = i
+2026-11-11T03:36:19.6223374Z info: EG617/Audit/Statements.lean:28:0: EG617.originalProblem_iff_missingColor :
+2026-11-11T03:36:19.6223803Z   EG617.EG617R12Statement ↔
+2026-11-11T03:36:19.6224277Z     ∀ (c : EG617.EdgeColoring), ∃ S, S.card = 13 ∧ ∃ i, ∀ (e : EG617.Edge), EG617.Inside e S → c e ≠ i
+2026-11-11T03:36:19.6224881Z info: EG617/Audit/Statements.lean:29:0: @[expose] def EG617.tau12 : ℕ → ℕ :=
+2026-11-11T03:36:19.6225278Z fun n => 12 * (n / 12).choose 2 + n / 12 * (n % 12)
+2026-11-11T03:36:19.6226186Z info: EG617/Audit/Statements.lean:30:0: EG617.tau12_add_turanNumber (n : ℕ) (hn : n ≤ 145) : EG617.tau12 n + SimpleGraph.turanNumber n 12 = n.choose 2
+2026-11-11T03:36:19.6227178Z info: EG617/Audit/Statements.lean:31:0: @[expose] def EG617.CoreIndependenceBound.{u} : {V : Type u} → ℕ → SimpleGraph V → Prop :=
+2026-11-11T03:36:19.6227847Z fun {V} a G => ∀ (S : Finset V), G.IsIndepSet ↑S → S.card ≤ a
+2026-11-11T03:36:19.6228510Z info: EG617/Audit/Statements.lean:32:0: @[expose] def EG617.CoreCliqueBound.{u} : {V : Type u} → ℕ → SimpleGraph V → Prop :=
+2026-11-11T03:36:19.6229131Z fun {V} k G => ∀ (S : Finset V), G.IsClique ↑S → S.card ≤ k
+2026-11-11T03:36:19.6230008Z info: EG617/Audit/Statements.lean:33:0: @[expose] def EG617.coreInducedEdgeCount.{u} : {V : Type u} → SimpleGraph V → Finset V → ℕ :=
+2026-11-11T03:36:19.6230682Z fun {V} G S => (SimpleGraph.induce (↑S) G).edgeFinset.card
+2026-11-11T03:36:19.6231450Z info: EG617/Audit/Statements.lean:34:0: @[expose] def EG617.CoreAdmissible.{u} : {V : Type u} → ℕ → SimpleGraph V → Prop :=
+2026-11-11T03:36:19.6231946Z fun {V} a G =>
+2026-11-11T03:36:19.6232161Z   EG617.CoreIndependenceBound a G ∧
+2026-11-11T03:36:19.6232561Z     EG617.CoreCliqueBound 11 G ∧ ∀ (S : Finset V), EG617.coreInducedEdgeCount G S ≤ EG617.D S.card
+2026-11-11T03:36:19.6233079Z info: EG617/Audit/Statements.lean:35:0: EG617.core_induced_edge_count_univ.{u} {V : Type u} [Fintype V] (G : SimpleGraph V) :
+2026-11-11T03:36:19.6233541Z   EG617.coreInducedEdgeCount G Finset.univ = G.edgeFinset.card
+2026-11-11T03:36:19.6234157Z info: EG617/Audit/Statements.lean:36:0: EG617.core_independenceBound_induce.{u} {V : Type u} (G : SimpleGraph V) (a : ℕ) (hG : EG617.CoreIndependenceBound a G)
+2026-11-11T03:36:19.6234764Z   (S : Finset V) : EG617.CoreIndependenceBound a (SimpleGraph.induce (↑S) G)
+2026-11-11T03:36:19.6235357Z info: EG617/Audit/Statements.lean:37:0: EG617.core_cliqueBound_induce.{u} {V : Type u} (G : SimpleGraph V) (k : ℕ) (hG : EG617.CoreCliqueBound k G)
+2026-11-11T03:36:19.6235900Z   (S : Finset V) : EG617.CoreCliqueBound k (SimpleGraph.induce (↑S) G)
+2026-11-11T03:36:19.6236421Z info: EG617/Audit/Statements.lean:38:0: EG617.core_independence_nonNeighbors.{u} {V : Type u} (G : SimpleGraph V) (a : ℕ)
+2026-11-11T03:36:19.6237007Z   (hG : EG617.CoreIndependenceBound (a + 1) G) (v : V) (S : Finset V) (hS : ∀ w ∈ S, w ≠ v ∧ ¬G.Adj v w)
+2026-11-11T03:36:19.6237386Z   (hind : G.IsIndepSet ↑S) : S.card ≤ a
+2026-11-11T03:36:19.6237765Z info: EG617/Audit/Statements.lean:39:0: EG617.core_compl_edge_count.{u} {V : Type u} [Fintype V] (G : SimpleGraph V) :
+2026-11-11T03:36:19.6238280Z   G.edgeFinset.card + Gᶜ.edgeFinset.card = (Fintype.card V).choose 2
+2026-11-11T03:36:19.6239160Z info: EG617/Audit/Statements.lean:40:0: EG617.core_induced_edge_count_image.{u} {V : Type u} (G : SimpleGraph V) (S : Finset V) (T : Finset ↥S) :
+2026-11-11T03:36:19.6240063Z   EG617.coreInducedEdgeCount (SimpleGraph.induce (↑S) G) T = EG617.coreInducedEdgeCount G (Finset.image (fun x => ↑x) T)
+2026-11-11T03:36:19.6240802Z info: EG617/Audit/Statements.lean:41:0: EG617.core_admissible_induce.{u} {V : Type u} (G : SimpleGraph V) (a : ℕ) (hG : EG617.CoreAdmissible a G)
+2026-11-11T03:36:19.6241356Z   (S : Finset V) : EG617.CoreAdmissible a (SimpleGraph.induce (↑S) G)
+2026-11-11T03:36:19.6241995Z info: EG617/Audit/Statements.lean:42:0: EG617.core_admissible_nonNeighbors.{u} {V : Type u} (G : SimpleGraph V) (a : ℕ) (hG : EG617.CoreAdmissible (a + 1) G)
+2026-11-11T03:36:19.6242710Z   (v : V) (S : Finset V) (hS : ∀ w ∈ S, w ≠ v ∧ ¬G.Adj v w) : EG617.CoreAdmissible a (SimpleGraph.induce (↑S) G)
+2026-11-11T03:36:19.6243168Z info: EG617/Audit/Statements.lean:43:0: @[expose] def EG617.Gate47Statement : Prop :=
+2026-11-11T03:36:19.6243732Z ∀ (G : SimpleGraph (Fin 47)), EG617.CoreAdmissible 4 G → G.edgeFinset.card ≤ 286 → ∀ (v : Fin 47), 12 ≤ G.degree v
+2026-11-11T03:36:19.6244364Z info: EG617/Audit/Statements.lean:44:0: EG617.core_not_two_colorable_of_card_24.{u} {V : Type u} [Fintype V] (L : SimpleGraph V) (hV : Fintype.card V = 24)
+2026-11-11T03:36:19.6245046Z   (hI : EG617.CoreIndependenceBound 11 L) : ¬L.Colorable 2
+2026-11-11T03:36:19.6245541Z info: EG617/Audit/Statements.lean:45:0: EG617.core_triangleFree_edges_lt_132_of_card_24.{u} {V : Type u} [Fintype V] (L : SimpleGraph V)
+2026-11-11T03:36:19.6246188Z   (hV : Fintype.card V = 24) (ht : L.CliqueFree 3) (hI : EG617.CoreIndependenceBound 11 L) : L.edgeFinset.card < 132
+2026-11-11T03:36:19.6247053Z info: EG617/Audit/Statements.lean:46:0: EG617.core_R224_empty_of_card.{u} {V : Type u} [Fintype V] (G : SimpleGraph V) (hV : Fintype.card V = 24) :
+2026-11-11T03:36:19.6247724Z   ¬EG617.CoreAdmissible 2 G
+2026-11-11T03:36:19.6248458Z info: EG617/Audit/Statements.lean:47:0: EG617.core_not_two_colorable_24 (L : SimpleGraph (Fin 24)) (hI : EG617.CoreIndependenceBound 11 L) : ¬L.Colorable 2
+2026-11-11T03:36:19.6249493Z info: EG617/Audit/Statements.lean:48:0: EG617.core_triangleFree24_edges_lt_132 (L : SimpleGraph (Fin 24)) (ht : L.CliqueFree 3)
+2026-11-11T03:36:19.6250138Z   (hI : EG617.CoreIndependenceBound 11 L) : L.edgeFinset.card < 132
+2026-11-11T03:36:19.6250860Z info: EG617/Audit/Statements.lean:49:0: EG617.core_R224_empty (G : SimpleGraph (Fin 24)) : ¬EG617.CoreAdmissible 2 G
+2026-11-11T03:36:19.6251718Z info: EG617/Audit/Statements.lean:50:0: EG617.core_R3_card_le_degree_add_24.{u} {V : Type u} [Fintype V] (G : SimpleGraph V) (hG : EG617.CoreAdmissible 3 G)
+2026-11-11T03:36:19.6252407Z   (v : V) : Fintype.card V ≤ G.degree v + 24
+2026-11-11T03:36:19.6253169Z info: EG617/Audit/Statements.lean:51:0: EG617.core_R335_degree_ge_11 (G : SimpleGraph (Fin 35)) (hG : EG617.CoreAdmissible 3 G) (v : Fin 35) : 11 ≤ G.degree v
+2026-11-11T03:36:19.6254199Z info: EG617/Audit/Statements.lean:52:0: EG617.core_R337_empty_of_card.{u} {V : Type u} [Fintype V] (G : SimpleGraph V) (hV : Fintype.card V = 37) :
+2026-11-11T03:36:19.6254947Z   ¬EG617.CoreAdmissible 3 G
+2026-11-11T03:36:19.6255623Z info: EG617/Audit/Statements.lean:53:0: EG617.core_R337_empty (G : SimpleGraph (Fin 37)) : ¬EG617.CoreAdmissible 3 G
+2026-11-11T03:36:19.6256631Z info: EG617/Audit/Statements.lean:54:0: EG617.core_R4_card_le_degree_add_37.{u} {V : Type u} [Fintype V] (G : SimpleGraph V) (hG : EG617.CoreAdmissible 4 G)
+2026-11-11T03:36:19.6257528Z   (v : V) : Fintype.card V ≤ G.degree v + 37
+2026-11-11T03:36:19.6258666Z info: EG617/Audit/Statements.lean:55:0: EG617.core_R447_degree_ge_10 (G : SimpleGraph (Fin 47)) (hG : EG617.CoreAdmissible 4 G) (v : Fin 47) : 10 ≤ G.degree v
+2026-11-11T03:36:19.6260108Z info: EG617/Audit/Statements.lean:56:0: EG617.independent_card_le_twelve (c : EG617.EdgeColoring) (hc : EG617.ValidColoring c) (S : Finset EG617.Vertex)
+2026-11-11T03:36:19.6261607Z   (i : EG617.Color) (hind : ∀ u ∈ S, ∀ v ∈ S, ¬(EG617.colorGraph c i).Adj u v) : S.card ≤ 12
+2026-11-11T03:36:19.6262658Z info: EG617/Audit/Statements.lean:57:0: EG617.monochromatic_card_le_twelve (c : EG617.EdgeColoring) (hc : EG617.ValidColoring c) (S : Finset EG617.Vertex)
+2026-11-11T03:36:19.6272003Z   (i : EG617.Color) (hmono : ∀ u ∈ S, ∀ v ∈ S, ∀ (h : u ≠ v), c (EG617.edgeOf u v h) = i) : S.card ≤ 12
+2026-11-11T03:36:19.6273038Z info: EG617/Audit/Statements.lean:58:0: EG617.colorGraph_clique_card_le_twelve (c : EG617.EdgeColoring) (hc : EG617.ValidColoring c) (S : Finset EG617.Vertex)
+2026-11-11T03:36:19.6274154Z   (i : EG617.Color) (hclique : ∀ u ∈ S, ∀ v ∈ S, u ≠ v → (EG617.colorGraph c i).Adj u v) : S.card ≤ 12
+2026-11-11T03:36:19.6275330Z info: EG617/Audit/Statements.lean:59:0: @[expose] def EG617.inducedColorGraph : EG617.EdgeColoring → EG617.Color → (S : Finset EG617.Vertex) → SimpleGraph ↥S :=
+2026-11-11T03:36:19.6276302Z fun c i S => SimpleGraph.induce (↑S) (EG617.colorGraph c i)
+2026-11-11T03:36:19.6277246Z info: EG617/Audit/Statements.lean:60:0: @[expose] def EG617.colorEdgeCount : EG617.EdgeColoring → EG617.Color → Finset EG617.Vertex → ℕ :=
+2026-11-11T03:36:19.6278043Z fun c i S => (EG617.inducedColorGraph c i S).edgeFinset.card
+2026-11-11T03:36:19.6278705Z info: EG617/Audit/Statements.lean:61:0: EG617.colorEdgeCount_univ (c : EG617.EdgeColoring) (i : EG617.Color) :
+2026-11-11T03:36:19.6279892Z   EG617.colorEdgeCount c i Finset.univ = (EG617.colorGraph c i).edgeFinset.card
+2026-11-11T03:36:19.6280965Z info: EG617/Audit/Statements.lean:62:0: EG617.inducedColorGraph_adj_iff (c : EG617.EdgeColoring) (i : EG617.Color) (S : Finset EG617.Vertex) (u v : ↥S) :
+2026-11-11T03:36:19.6282174Z   (EG617.inducedColorGraph c i S).Adj u v ↔ ∃ (h : ↑u ≠ ↑v), c (EG617.edgeOf (↑u) (↑v) h) = i
+2026-11-11T03:36:19.6283250Z info: EG617/Audit/Statements.lean:63:0: EG617.induced_edge_unique_color (c : EG617.EdgeColoring) (S : Finset EG617.Vertex) (u v : ↥S) (h : u ≠ v) :
+2026-11-11T03:36:19.6284086Z   ∃! i, (EG617.inducedColorGraph c i S).Adj u v
+2026-11-11T03:36:19.6284802Z info: EG617/Audit/Statements.lean:64:0: EG617.induced_color_edges_disjoint (c : EG617.EdgeColoring) (S : Finset EG617.Vertex) :
+2026-11-11T03:36:19.6285712Z   (↑Finset.univ).PairwiseDisjoint fun i => (EG617.inducedColorGraph c i S).edgeFinset
+2026-11-11T03:36:19.6286533Z info: EG617/Audit/Statements.lean:65:0: EG617.induced_color_edges_union (c : EG617.EdgeColoring) (S : Finset EG617.Vertex) :
+2026-11-11T03:36:19.6287460Z   (Finset.univ.biUnion fun i => (EG617.inducedColorGraph c i S).edgeFinset) = ⊤.edgeFinset
+2026-11-11T03:36:19.6288246Z info: EG617/Audit/Statements.lean:66:0: EG617.sum_colorEdgeCount (c : EG617.EdgeColoring) (S : Finset EG617.Vertex) :
+2026-11-11T03:36:19.6289008Z   ∑ i, EG617.colorEdgeCount c i S = S.card.choose 2
+2026-11-11T03:36:19.6289694Z info: EG617/Audit/Statements.lean:67:0: @[expose] def EG617.D : ℕ → ℕ :=
+2026-11-11T03:36:19.6290174Z fun n => n.choose 2 - 11 * EG617.tau12 n
+2026-11-11T03:36:19.6290939Z info: EG617/Audit/Statements.lean:68:0: EG617.colorEdgeCount_add_eleven_tau_le (c : EG617.EdgeColoring) (hc : EG617.ValidColoring c) (i : EG617.Color)
+2026-11-11T03:36:19.6292004Z   (S : Finset EG617.Vertex) : EG617.colorEdgeCount c i S + 11 * EG617.tau12 S.card ≤ S.card.choose 2
+2026-11-11T03:36:19.6292904Z info: EG617/Audit/Statements.lean:69:0: EG617.hereditary_color_cap (c : EG617.EdgeColoring) (hc : EG617.ValidColoring c) (i : EG617.Color)
+2026-11-11T03:36:19.6293810Z   (S : Finset EG617.Vertex) : EG617.colorEdgeCount c i S ≤ EG617.D S.card
+2026-11-11T03:36:19.6294743Z info: EG617/Audit/Statements.lean:70:0: EG617.hereditary_cap_subtraction_exact (c : EG617.EdgeColoring) (hc : EG617.ValidColoring c) (S : Finset EG617.Vertex) :
+2026-11-11T03:36:19.6295615Z   EG617.D S.card + 11 * EG617.tau12 S.card = S.card.choose 2
+2026-11-11T03:36:19.6296208Z info: EG617/Audit/Statements.lean:71:0: EG617.exists_least_color (c : EG617.EdgeColoring) :
+2026-11-11T03:36:19.6297088Z   ∃ i, ∀ (j : EG617.Color), EG617.colorEdgeCount c i Finset.univ ≤ EG617.colorEdgeCount c j Finset.univ
+2026-11-11T03:36:19.6298172Z info: EG617/Audit/Statements.lean:72:0: EG617.least_color_edgeCount_le_870 (c : EG617.EdgeColoring) (i : EG617.Color)
+2026-11-11T03:36:19.6299090Z   (hi : ∀ (j : EG617.Color), EG617.colorEdgeCount c i Finset.univ ≤ EG617.colorEdgeCount c j Finset.univ) :
+2026-11-11T03:36:19.6299866Z   EG617.colorEdgeCount c i Finset.univ ≤ 870
+2026-11-11T03:36:19.6300609Z info: EG617/Audit/Statements.lean:73:0: EG617.exists_least_color_with_hereditary_cap (c : EG617.EdgeColoring) (hc : EG617.ValidColoring c) :
+2026-11-11T03:36:19.6301323Z   ∃ i,
+2026-11-11T03:36:19.6301875Z     (∀ (j : EG617.Color), EG617.colorEdgeCount c i Finset.univ ≤ EG617.colorEdgeCount c j Finset.univ) ∧
+2026-11-11T03:36:19.6302530Z       EG617.colorEdgeCount c i Finset.univ ≤ 870 ∧
+2026-11-11T03:36:19.6303097Z         ∀ (S : Finset EG617.Vertex), EG617.colorEdgeCount c i S ≤ EG617.D S.card
+2026-11-11T03:36:19.6303803Z info: EG617/Audit/Statements.lean:74:0: EG617.exists_colorGraph_card_edgeFinset_le_870 (c : EG617.EdgeColoring) :
+2026-11-11T03:36:19.6304501Z   ∃ i, (EG617.colorGraph c i).edgeFinset.card ≤ 870
+2026-11-11T03:36:19.6305293Z info: EG617/Audit/Statements.lean:75:0: EG617.inducedColorGraph_compl_cliqueFree (c : EG617.EdgeColoring) (hc : EG617.ValidColoring c) (i : EG617.Color)
+2026-11-11T03:36:19.6306240Z   (S : Finset EG617.Vertex) : (EG617.inducedColorGraph c i S)ᶜ.CliqueFree 13
+2026-11-11T03:36:19.6307221Z info: EG617/Audit/Statements.lean:76:0: EG617.tau12_le_colorEdgeCount (c : EG617.EdgeColoring) (hc : EG617.ValidColoring c) (i : EG617.Color)
+2026-11-11T03:36:19.6308140Z   (S : Finset EG617.Vertex) : EG617.tau12 S.card ≤ EG617.colorEdgeCount c i S
+2026-11-11T03:36:19.6308644Z Build completed successfully (1317 jobs).
+2026-11-11T03:36:19.7579964Z SOURCE_SHA256 dd57b3e77de2d41d353708ce5cf81ac43d3b138c11430aaf6e294129c771b026 EG617.lean
+2026-11-11T03:36:19.7581160Z SOURCE_SHA256 08c03e36f57fc8b49c09ab72f70bb3e60e9d72829700a3572ae4a76784f8d6d2 EG617/Audit/Axioms.lean
+2026-11-11T03:36:19.7582480Z SOURCE_SHA256 7b8c185093fd187a197415225e7c136c46a73201fc9c0951370ca2d895506331 EG617/Audit/Statements.lean
+2026-11-11T03:36:19.7583339Z SOURCE_SHA256 d6aa59bef34f63c7cefdf27c19a9e211f26a46743b0065c19d9892a4f259ca97 EG617/Basic/ColoringLemmas.lean
+2026-11-11T03:36:19.7585933Z SOURCE_SHA256 eb2de25aa5d686b0ccbb1c636cc7d25916ca3223f4b3a4fa577b410fbe2ef798 EG617/Basic/Definitions.lean
+2026-11-11T03:36:19.7586711Z SOURCE_SHA256 44e1adda1c778d5b496c6f2da4e7658910e1b78c77083bae4aae22f12b570cdc EG617/Basic/OriginalProblem.lean
+2026-11-11T03:36:19.7587357Z SOURCE_SHA256 7b500c3eb6f0e5c8e5afa6bd724ada622ca7f7579a7f9544663b38da09ad661b EG617/Combinatorics/TuranArithmetic.lean
+2026-11-11T03:36:19.7588083Z SOURCE_SHA256 7cd7ac0b1b4c7761d4ffd4c613879f3cf2915e617202afd68edeed902b497f73 EG617/Core/Admissibility.lean
+2026-11-11T03:36:19.7590578Z SOURCE_SHA256 bfc7f5900c0bdad20c53a9087fc29a378d6ee4127fc29580fa9d0c13601d7495 EG617/Core/R224.lean
+2026-11-11T03:36:19.7593340Z SOURCE_SHA256 e5d1771ee803fee88c53f405eb10858d26c371c8d142add623172d4a08eb3a0d EG617/Frontend/ColoringReduction.lean
+2026-11-11T03:36:19.7594614Z SOURCE_SHA256 439da12c4ce2825fd0daea3045f89bff34bd1375c4cea2a36769da0a4e1c8af5 EG617/Frontend/EdgeCounting.lean
+2026-11-11T03:36:19.7595619Z SOURCE_SHA256 138dd125971d2773b7996a5d21f9890db687377f5dbc3802b5067c98e2a0243a EG617/Frontend/HereditaryCaps.lean
+2026-11-11T03:36:19.7596594Z SOURCE_SHA256 6017babb3b9271b46d283a749e38618bd8f6de3ea6b9db143bbff6be0f5abf9b EG617/Frontend/TuranBounds.lean
+2026-11-11T03:36:19.7597508Z SOURCE_SHA256 533b70c46edee35e08126f205796379d05487244ecb28271630156b33c0f19ed lake-manifest.json
+2026-11-11T03:36:19.7598307Z SOURCE_SHA256 3b68fc16411e92635fdc23ddd38ebf3b6eeb3f1f767f64c0c2a9cb3c3c3c4f9a lakefile.lean
+2026-11-11T03:36:19.7599079Z SOURCE_SHA256 ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c lean-toolchain
+2026-11-11T03:36:19.7637985Z KERNEL_AND_AXIOM_CHECKS_PASS; ORIGINAL_MAIN_THEOREM_NOT_PROVED
+2026-11-11T03:36:19.7735504Z Post job cleanup.
+2026-11-11T03:36:19.8473068Z [command]/usr/bin/git version
+2026-11-11T03:36:19.8511511Z git version 2.56.0
+2026-11-11T03:36:19.8543403Z Temporarily overriding HOME='/home/runner/work/_temp/cc558f7c-579f-4c07-82a3-6cff95e63c8e' before making global git config changes
+2026-11-11T03:36:19.8544631Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-11T03:36:19.8548580Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/EG617-r12-proof/EG617-r12-proof
+2026-11-11T03:36:19.8588666Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-11T03:36:19.8648049Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-11T03:36:19.8887631Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-11T03:36:19.8931417Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-11T03:36:19.9314345Z Cleaning up orphan processes
+2026-11-11T03:36:19.9629126Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

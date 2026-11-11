@@ -1,0 +1,32 @@
+{
+  "scope": "Independent finite computation; not a Lean theorem or an external proof oracle",
+  "graph": "K11 disjoint-union K11 disjoint-union C5[K5]",
+  "vertices": 47,
+  "edges": 285,
+  "minDegree": 10,
+  "independence": 4,
+  "clique": 11,
+  "alphaOmegaMethod": "Enumerate all 32 class supports of C5. Each clique class contributes at most one independent vertex, and all five vertices to a clique. Disjoint-union alpha adds; omega takes maximum.",
+  "capViolation": {
+    "vertices": [
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "card": 14,
+    "edges": 71,
+    "D": 69
+  },
+  "conclusion": "Counterexample ONLY to GATE47 with hereditary caps omitted. NOT a counterexample to the frozen theorem."
+}

@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-11",
+  "acceptanceLevel": 1,
+  "codeCommit": "ee2dbe9d6d0c5298dc6cfc8a4f8c91e5d8bcdf06",
+  "run": "42953650338",
+  "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/42953650338",
+  "declarations": 72,
+  "theorems": 53,
+  "build": "PASS",
+  "axioms": "PASS",
+  "statements": "PASS",
+  "sourceHashes": "PASS",
+  "M1": "VERIFIED",
+  "R224": "VERIFIED",
+  "R337": "VERIFIED",
+  "R447_degree_10": "VERIFIED",
+  "GATE47": "FORMALIZATION GAP",
+  "LOW285": "FORMALIZATION GAP",
+  "E286": "FORMALIZATION GAP",
+  "FLOOR47": "FORMALIZATION GAP",
+  "MainTheorem": false,
+  "fullOriginalEG617Proved": false
+}
