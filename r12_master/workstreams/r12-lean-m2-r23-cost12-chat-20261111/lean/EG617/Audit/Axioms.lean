@@ -41,6 +41,18 @@ public import EG617
 #print axioms EG617.core_admissible_induce
 #print axioms EG617.core_admissible_nonNeighbors
 #print axioms EG617.Gate47Statement
+#print axioms EG617.adjCount
+#print axioms EG617.adjCount_eq_sum_filter
+#print axioms EG617.degree_induce_eq_filter
+#print axioms EG617.adjCount_self
+#print axioms EG617.adjCount_symm
+#print axioms EG617.adjCount_union_left
+#print axioms EG617.adjCount_union_right
+#print axioms EG617.edge_partition
+#print axioms EG617.adjCount_right_univ
+#print axioms EG617.adjCount_le_sum_degrees
+#print axioms EG617.adjCount_independent_zero
+#print axioms EG617.twice_independent_card_le_of_degree_two
 #print axioms EG617.oddCycleBound
 #print axioms EG617.oddCycleBound_23_two
 #print axioms EG617.oddCycleBound_23_ge_three
@@ -55,6 +67,7 @@ public import EG617
 #print axioms EG617.walk_end_edge_mem_of_length_one
 #print axioms EG617.shortestOddLoop_isChordless
 #print axioms EG617.cycleGraph_twice_independent_card_le
+#print axioms EG617.cycle_copy_twice_neighbor_card_le
 #print axioms EG617.core_not_two_colorable_of_card_24
 #print axioms EG617.core_triangleFree_edges_lt_132_of_card_24
 #print axioms EG617.core_R224_empty_of_card

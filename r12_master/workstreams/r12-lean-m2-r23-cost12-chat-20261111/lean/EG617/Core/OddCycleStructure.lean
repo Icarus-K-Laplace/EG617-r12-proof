@@ -165,14 +165,28 @@ theorem cycleGraph_twice_independent_card_le (m : ℕ)
   have hd : Disjoint S (S.image f) := by
     rw [Finset.disjoint_left]
     intro x hx hy
-    obtain ⟨y, hy, rfl⟩ := Finset.mem_image.mp hy
+    obtain ⟨y, hyS, rfl⟩ := Finset.mem_image.mp hy
     have hadj : (SimpleGraph.cycleGraph (m + 3)).Adj y (f y) := by
       apply SimpleGraph.cycleGraph_adj.mpr
       right
       simp [f]
-    exact hS hy hx hadj.ne hadj
+    exact hS hyS hx hadj.ne hadj
   have hcard := (S ∪ S.image f).card_le_univ
   rw [Finset.card_union_of_disjoint hd, Finset.card_image_of_injective S hf] at hcard
   simpa only [Fintype.card_fin, two_mul] using hcard
+
+/-- Triangle-freeness forces every external neighborhood on the cycle to be
+independent; the bound also holds when x is on the cycle. -/
+theorem cycle_copy_twice_neighbor_card_le (m : ℕ)
+    (f : SimpleGraph.Copy (SimpleGraph.cycleGraph (m + 3)) G)
+    (ht : G.CliqueFree 3) (x : V) :
+    2 * ((Finset.univ : Finset (Fin (m + 3))).filter
+      (fun i => G.Adj x (f i))).card ≤ m + 3 := by
+  classical
+  apply cycleGraph_twice_independent_card_le
+  intro i hi j hj hij hadj
+  have hI := G.isIndepSet_neighborSet_of_triangleFree ht x
+  exact hI (Finset.mem_filter.mp hi).2 (Finset.mem_filter.mp hj).2
+    (fun h => hij (f.injective h)) (f.toHom.map_adj hadj)
 
 end EG617

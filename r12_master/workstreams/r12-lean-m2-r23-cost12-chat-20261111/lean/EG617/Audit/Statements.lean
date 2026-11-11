@@ -41,6 +41,18 @@ public import EG617
 #check EG617.core_admissible_induce
 #check EG617.core_admissible_nonNeighbors
 #print EG617.Gate47Statement
+#print EG617.adjCount
+#check EG617.adjCount_eq_sum_filter
+#check EG617.degree_induce_eq_filter
+#check EG617.adjCount_self
+#check EG617.adjCount_symm
+#check EG617.adjCount_union_left
+#check EG617.adjCount_union_right
+#check EG617.edge_partition
+#check EG617.adjCount_right_univ
+#check EG617.adjCount_le_sum_degrees
+#check EG617.adjCount_independent_zero
+#check EG617.twice_independent_card_le_of_degree_two
 #print EG617.oddCycleBound
 #check EG617.oddCycleBound_23_two
 #check EG617.oddCycleBound_23_ge_three
@@ -55,6 +67,7 @@ public import EG617
 #check EG617.walk_end_edge_mem_of_length_one
 #check EG617.shortestOddLoop_isChordless
 #check EG617.cycleGraph_twice_independent_card_le
+#check EG617.cycle_copy_twice_neighbor_card_le
 #check EG617.core_not_two_colorable_of_card_24
 #check EG617.core_triangleFree_edges_lt_132_of_card_24
 #check EG617.core_R224_empty_of_card

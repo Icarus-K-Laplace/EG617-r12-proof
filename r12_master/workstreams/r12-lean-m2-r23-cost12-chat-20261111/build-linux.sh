@@ -22,7 +22,7 @@ for(const p of m.packages){
 NODE
 lake clean eg617r12
 result=0
-for mod in EG617.Combinatorics.TuranArithmetic EG617.Frontend.EdgeCounting EG617.Frontend.TuranBounds EG617.Frontend.HereditaryCaps EG617.Core.Admissibility EG617.Core.R224 EG617.Core.OddCycleArithmetic EG617.Core.OddCycleStructure; do
+for mod in EG617.Combinatorics.TuranArithmetic EG617.Frontend.EdgeCounting EG617.Frontend.TuranBounds EG617.Frontend.HereditaryCaps EG617.Core.Admissibility EG617.Core.R224 EG617.Core.OddCycleArithmetic EG617.Core.OddCycleStructure EG617.Core.EdgePartition; do
   if lake build "+$mod" 2>&1 | tee "logs/linux-$mod.txt"; then
     echo "MODULE_PASS $mod"
   else
