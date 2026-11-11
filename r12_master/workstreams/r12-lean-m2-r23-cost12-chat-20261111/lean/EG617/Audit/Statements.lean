@@ -66,6 +66,9 @@ public import EG617
 #check EG617.shortestOddLoop_neighbor_card_le
 #check EG617.triangleFree_induced_mantel
 #check EG617.shortestOddLoop_edge_bound
+#check EG617.shortestOddLoop_half_length_ge_two
+#check EG617.triangleFree_nonbipartite_edge_bound
+#check EG617.triangleFree_nonbipartite_18_edges_le_73
 #print EG617.IsShortestOddLoop
 #check EG617.bypass_parity_of_short_loops_even
 #check EG617.shortestOddLoop_isCycle
@@ -87,6 +90,9 @@ public import EG617
 #check EG617.core_R337_empty
 #check EG617.core_R4_card_le_degree_add_37
 #check EG617.core_R447_degree_ge_10
+#check EG617.not_two_colorable_of_independence_bound
+#check EG617.r23_shortestOddLoop_length_five
+#check EG617.r23_exists_five_cycle_bipartite_exterior
 #check EG617.independent_card_le_twelve
 #check EG617.monochromatic_card_le_twelve
 #check EG617.colorGraph_clique_card_le_twelve

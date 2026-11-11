@@ -44,15 +44,20 @@ theorem chordless_cycle_induced_degree_two {v : V} (p : G.Walk v v)
         p.toSubgraph.adj_sub ha⟩
   have hn := hp.ncard_neighborSet_toSubgraph_eq_two hx
   rw [← he] at hn
-  simpa using hn
+  simpa only [Set.ncard_coe_finset] using hn
 
 theorem chordless_cycle_induced_edges {v : V} (p : G.Walk v v)
     (hp : p.IsCycle) (hc : p.IsChordless) :
     coreInducedEdgeCount G p.support.toFinset = p.length := by
   classical
+  have hdegree : ∀ x : (p.support.toFinset : Set V),
+      (G.induce (p.support.toFinset : Set V)).degree x = 2 := by
+    intro x
+    simpa only [← SimpleGraph.ncard_neighborSet] using
+      chordless_cycle_induced_degree_two p hp hc x
   have hd := (G.induce (p.support.toFinset : Set V)).sum_degrees_eq_twice_card_edges
-  simp only [chordless_cycle_induced_degree_two p hp hc, Finset.sum_const,
-    Finset.card_univ, smul_eq_mul, Fintype.card_coe, cycle_support_card p hp] at hd
+  simp only [hdegree, Finset.sum_const, Finset.card_univ, smul_eq_mul,
+    Set.fintypeCard_eq_ncard, Set.ncard_coe_finset, cycle_support_card p hp] at hd
   change _ = 2 * coreInducedEdgeCount G p.support.toFinset at hd
   omega
 
@@ -64,7 +69,7 @@ theorem twice_subset_independent_card_le_of_induced_degree_two
   classical
   let f : I ↪ S := ⟨fun x => ⟨x.val, hIS x.property⟩, by
     intro x y h
-    exact Subtype.ext (congrArg Subtype.val h)⟩
+    exact Subtype.ext (congrArg (fun z : S => (z : V)) h)⟩
   let J : Finset S := Finset.univ.map f
   have hJ : (G.induce (S : Set V)).IsIndepSet (J : Set S) := by
     intro x hx y hy hxy hadj
@@ -98,7 +103,8 @@ theorem triangleFree_induced_mantel (G : SimpleGraph V) (ht : G.CliqueFree 3)
   have hti : (G.induce (S : Set V)).CliqueFree 3 :=
     ht.comap (SimpleGraph.Embedding.induce (G := G) (S : Set V)).isContained
   have h := hti.card_edgeFinset_le
-  simpa only [SimpleGraph.turanNumber_two, Fintype.card_coe] using h
+  simpa only [coreInducedEdgeCount, SimpleGraph.turanNumber_two,
+    SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard, Set.ncard_coe_finset] using h
 
 /-- The graph bound, not merely the numerical formula: the three edge classes
 are counted exactly, and no unproved capacity estimate occurs as a hypothesis. -/
@@ -128,5 +134,37 @@ theorem shortestOddLoop_edge_bound (G : SimpleGraph V) (ht : G.CliqueFree 3)
   rw [hx] at hcross hout
   unfold oddCycleBound
   omega
+
+theorem shortestOddLoop_half_length_ge_two (G : SimpleGraph V)
+    (ht : G.CliqueFree 3) {v : V} (p : G.Walk v v) (hp : IsShortestOddLoop p)
+    (k : ℕ) (hlen : p.length = 2 * k + 1) : 2 ≤ k := by
+  have hc := shortestOddLoop_isCycle p hp
+  have hl := hc.three_le_length
+  have hn : p.length ≠ 3 := by
+    intro h3
+    obtain ⟨S, hS⟩ := G.is3Clique_iff_exists_cycle_length_three.mpr ⟨v, p, hc, h3⟩
+    exact ht S hS
+  omega
+
+theorem triangleFree_nonbipartite_edge_bound (G : SimpleGraph V)
+    (ht : G.CliqueFree 3) (hb : ¬ G.Colorable 2) :
+    ∃ k : ℕ, 2 ≤ k ∧ 2 * k + 1 ≤ Fintype.card V ∧
+      G.edgeFinset.card ≤ oddCycleBound (Fintype.card V) k := by
+  classical
+  obtain ⟨v, p, hp⟩ := exists_shortestOddLoop hb
+  obtain ⟨k, hk⟩ := hp.1
+  have hlen : p.length = 2 * k + 1 := by omega
+  refine ⟨k, shortestOddLoop_half_length_ge_two G ht p hp k hlen, ?_,
+    shortestOddLoop_edge_bound G ht p hp k hlen⟩
+  have hc := Finset.card_le_univ p.support.toFinset
+  rw [cycle_support_card p (shortestOddLoop_isCycle p hp), hlen] at hc
+  exact hc
+
+theorem triangleFree_nonbipartite_18_edges_le_73 (G : SimpleGraph V)
+    (hV : Fintype.card V = 18) (ht : G.CliqueFree 3) (hb : ¬ G.Colorable 2) :
+    G.edgeFinset.card ≤ 73 := by
+  obtain ⟨k, hk, hfit, he⟩ := triangleFree_nonbipartite_edge_bound G ht hb
+  rw [hV] at hfit he
+  exact he.trans (oddCycleBound_18 k hk hfit)
 
 end EG617
