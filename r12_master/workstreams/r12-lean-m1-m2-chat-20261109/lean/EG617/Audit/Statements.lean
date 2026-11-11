@@ -39,10 +39,16 @@ public import EG617
 #check EG617.core_compl_edge_count
 #check EG617.core_induced_edge_count_image
 #check EG617.core_admissible_induce
+#check EG617.core_admissible_nonNeighbors
 #print EG617.Gate47Statement
+#check EG617.core_not_two_colorable_of_card_24
+#check EG617.core_triangleFree_edges_lt_132_of_card_24
+#check EG617.core_R224_empty_of_card
 #check EG617.core_not_two_colorable_24
 #check EG617.core_triangleFree24_edges_lt_132
 #check EG617.core_R224_empty
+#check EG617.core_R3_card_le_degree_add_24
+#check EG617.core_R335_degree_ge_11
 #check EG617.independent_card_le_twelve
 #check EG617.monochromatic_card_le_twelve
 #check EG617.colorGraph_clique_card_le_twelve

@@ -151,6 +151,30 @@ theorem core_admissible_induce (G : SimpleGraph V) (a : ℕ)
   rw [Finset.card_image_of_injective T he] at h
   exact h
 
+/-- Any set of nonneighbors inherits the caps and drops the independence bound by one. -/
+theorem core_admissible_nonNeighbors (G : SimpleGraph V) (a : ℕ)
+    (hG : CoreAdmissible (a + 1) G) (v : V) (S : Finset V)
+    (hS : ∀ w ∈ S, w ≠ v ∧ ¬ G.Adj v w) :
+    CoreAdmissible a (G.induce (S : Set V)) := by
+  classical
+  refine ⟨?_, (core_admissible_induce G (a + 1) hG S).2⟩
+  intro T hT
+  let U := T.image fun x : S => (x : V)
+  have hU : ∀ w ∈ U, w ≠ v ∧ ¬ G.Adj v w := by
+    intro w hw
+    obtain ⟨x, _, rfl⟩ := Finset.mem_image.mp hw
+    exact hS x x.property
+  have hi : G.IsIndepSet (U : Set V) := by
+    intro x hx y hy hxy
+    obtain ⟨x', hx', rfl⟩ := Finset.mem_image.mp hx
+    obtain ⟨y', hy', rfl⟩ := Finset.mem_image.mp hy
+    exact hT hx' hy' (fun h => hxy (congrArg Subtype.val h))
+  have hb := core_independence_nonNeighbors G a hG.1 v U hU hi
+  have he : Function.Injective (fun x : S => (x : V)) := Subtype.val_injective
+  change (T.image fun x : S => (x : V)).card ≤ a at hb
+  rw [Finset.card_image_of_injective T he] at hb
+  exact hb
+
 /-- A target definition, NOT a proof of the GATE47 theorem. -/
 def Gate47Statement : Prop :=
   ∀ G : SimpleGraph (Fin 47), CoreAdmissible 4 G → G.edgeFinset.card ≤ 286 →

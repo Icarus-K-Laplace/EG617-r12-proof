@@ -39,10 +39,16 @@ public import EG617
 #print axioms EG617.core_compl_edge_count
 #print axioms EG617.core_induced_edge_count_image
 #print axioms EG617.core_admissible_induce
+#print axioms EG617.core_admissible_nonNeighbors
 #print axioms EG617.Gate47Statement
+#print axioms EG617.core_not_two_colorable_of_card_24
+#print axioms EG617.core_triangleFree_edges_lt_132_of_card_24
+#print axioms EG617.core_R224_empty_of_card
 #print axioms EG617.core_not_two_colorable_24
 #print axioms EG617.core_triangleFree24_edges_lt_132
 #print axioms EG617.core_R224_empty
+#print axioms EG617.core_R3_card_le_degree_add_24
+#print axioms EG617.core_R335_degree_ge_11
 #print axioms EG617.independent_card_le_twelve
 #print axioms EG617.monochromatic_card_le_twelve
 #print axioms EG617.colorGraph_clique_card_le_twelve
