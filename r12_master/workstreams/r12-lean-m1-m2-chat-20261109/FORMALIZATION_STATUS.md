@@ -1,7 +1,5 @@
 # Formalization status
 
-LEVEL 1 — M1 VERIFIED, with partial M2 progress. MainTheorem absent.
+LEVEL 1 — M1 VERIFIED, partial M2. Code a7e31383fd43bc629467d072f30509fd2b12c8e2, run42952979319: six modules, full lake build, all72 declarations and53 theorems, transitive axiom audit, statement inspection and source SHA256 PASS. R224 and R337 are proved on arbitrary finite vertex types. R335 degree>=11 and R447 degree>=10 are proved. GATE47 degree>=12 remains unproved; d10/d11 cases remain. No MainTheorem, LOW285, E286 or FLOOR47 proof.
 
-Verified checkpoint 2c5000c3f5fba50e9bfb79c2a0b1cb4c37451891: run42952574277, six modules, full lake build, 68 declaration axiom reports, complete statement inspection PASS. R224 is proved on arbitrary finite 24-vertex types; all hereditary conditions transfer to induced sets and nonneighborhoods; R335 degree>=11 is proved.
-
-Current four added candidate declarations prove R337 emptiness and R447 degree>=10. They await this run. They do NOT assert GATE47 degree>=12. The standalone build-linux.sh is now run by CI. All exact frozen contracts preserved. LOW285, E286, FLOOR47 and full K145 remain unformalized.
+This workflow revision verifies the same sources in a fresh ASCII directory without .git or project caches. Previous clean-run logs remain evidence; the independent export run is pending.

@@ -30,4 +30,13 @@ jobs:
           tar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"
           echo "$RUNNER_TEMP/lean-4.35.0-linux/bin" >> "$GITHUB_PATH"
       - name: Run standalone build and complete audits
-        run: bash ../build-linux.sh
+        run: |
+          set -euo pipefail
+          probe="$RUNNER_TEMP/eg617-standalone-ascii"
+          mkdir -p "$probe"
+          git -C "$GITHUB_WORKSPACE" archive HEAD r12_master/workstreams/r12-lean-m1-m2-chat-20261109 | tar -xf - -C "$probe" --strip-components=3
+          test ! -e "$probe/.git"
+          test ! -e "$probe/lean/.lake"
+          cd "$probe"
+          echo "STANDALONE_ASCII_BUILD_ROOT=$PWD; NO_GIT_OR_PROJECT_CACHE"
+          bash build-linux.sh
