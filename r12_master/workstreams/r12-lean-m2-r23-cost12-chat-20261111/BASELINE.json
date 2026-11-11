@@ -1,0 +1,10 @@
+{
+  "verifiedCode": "ee2dbe9d6d0c5298dc6cfc8a4f8c91e5d8bcdf06",
+  "publishedAssets": "7b39c1aa90e8685dd7ec34f2c7f02c9c7ccdc871",
+  "verifiedRun": 42953650338,
+  "observedMain": "fb053df9167f5faa91c54771c7b6fe31ca212f04",
+  "branch": "workstream/r12-lean-m2-r23-cost12-chat-20261111",
+  "baselineDeclarations": 72,
+  "baselineTheorems": 53,
+  "originalStatementUnproved": true
+}
