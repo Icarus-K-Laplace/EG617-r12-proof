@@ -30,7 +30,7 @@ theorem degree_induce_eq_filter (G : SimpleGraph V) (S : Finset V) (x : S) :
     ext y
     simp [and_comm]
   simpa only [Finset.card_map, SimpleGraph.card_neighborFinset_eq_degree,
-    Set.toFinset_coe, he] using h
+    Finset.toFinset_coe, he, ← SimpleGraph.ncard_neighborSet] using h
 
 theorem adjCount_self (G : SimpleGraph V) (S : Finset V) :
     adjCount G S S = 2 * coreInducedEdgeCount G S := by
@@ -53,7 +53,7 @@ theorem adjCount_symm (G : SimpleGraph V) (S T : Finset V) :
   intro y _
   apply Finset.sum_congr rfl
   intro x _
-  by_cases h : G.Adj x y <;> simp [h, G.adj_comm]
+  rw [G.adj_comm x y]
 
 theorem adjCount_union_left (G : SimpleGraph V) (S T U : Finset V)
     (hd : Disjoint S T) : adjCount G (S ∪ T) U = adjCount G S U + adjCount G T U := by

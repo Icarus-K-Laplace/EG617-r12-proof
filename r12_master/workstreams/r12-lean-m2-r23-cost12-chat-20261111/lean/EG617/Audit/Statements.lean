@@ -59,6 +59,13 @@ public import EG617
 #check EG617.oddCycleBound_23_three
 #check EG617.oddCycleBound_18
 #check EG617.oddCycleBound_18_two
+#check EG617.cycle_support_card
+#check EG617.chordless_cycle_induced_degree_two
+#check EG617.chordless_cycle_induced_edges
+#check EG617.twice_subset_independent_card_le_of_induced_degree_two
+#check EG617.shortestOddLoop_neighbor_card_le
+#check EG617.triangleFree_induced_mantel
+#check EG617.shortestOddLoop_edge_bound
 #print EG617.IsShortestOddLoop
 #check EG617.bypass_parity_of_short_loops_even
 #check EG617.shortestOddLoop_isCycle

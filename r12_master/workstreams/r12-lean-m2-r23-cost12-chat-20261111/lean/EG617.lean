@@ -9,3 +9,4 @@ public import EG617.Core.R224
 public import EG617.Core.OddCycleArithmetic
 public import EG617.Core.OddCycleStructure
 public import EG617.Core.EdgePartition
+public import EG617.Core.OddCycleBound

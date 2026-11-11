@@ -59,6 +59,13 @@ public import EG617
 #print axioms EG617.oddCycleBound_23_three
 #print axioms EG617.oddCycleBound_18
 #print axioms EG617.oddCycleBound_18_two
+#print axioms EG617.cycle_support_card
+#print axioms EG617.chordless_cycle_induced_degree_two
+#print axioms EG617.chordless_cycle_induced_edges
+#print axioms EG617.twice_subset_independent_card_le_of_induced_degree_two
+#print axioms EG617.shortestOddLoop_neighbor_card_le
+#print axioms EG617.triangleFree_induced_mantel
+#print axioms EG617.shortestOddLoop_edge_bound
 #print axioms EG617.IsShortestOddLoop
 #print axioms EG617.bypass_parity_of_short_loops_even
 #print axioms EG617.shortestOddLoop_isCycle
