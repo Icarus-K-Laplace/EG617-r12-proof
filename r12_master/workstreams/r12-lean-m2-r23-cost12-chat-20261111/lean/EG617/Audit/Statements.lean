@@ -52,6 +52,9 @@ public import EG617
 #check EG617.shortestOddLoop_isCycle
 #check EG617.exists_shortestOddLoop
 #check EG617.exists_odd_cycle_of_not_two_colorable
+#check EG617.walk_end_edge_mem_of_length_one
+#check EG617.shortestOddLoop_isChordless
+#check EG617.cycleGraph_twice_independent_card_le
 #check EG617.core_not_two_colorable_of_card_24
 #check EG617.core_triangleFree_edges_lt_132_of_card_24
 #check EG617.core_R224_empty_of_card

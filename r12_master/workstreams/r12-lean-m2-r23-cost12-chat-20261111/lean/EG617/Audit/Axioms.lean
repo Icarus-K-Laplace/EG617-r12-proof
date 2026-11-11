@@ -52,6 +52,9 @@ public import EG617
 #print axioms EG617.shortestOddLoop_isCycle
 #print axioms EG617.exists_shortestOddLoop
 #print axioms EG617.exists_odd_cycle_of_not_two_colorable
+#print axioms EG617.walk_end_edge_mem_of_length_one
+#print axioms EG617.shortestOddLoop_isChordless
+#print axioms EG617.cycleGraph_twice_independent_card_le
 #print axioms EG617.core_not_two_colorable_of_card_24
 #print axioms EG617.core_triangleFree_edges_lt_132_of_card_24
 #print axioms EG617.core_R224_empty_of_card

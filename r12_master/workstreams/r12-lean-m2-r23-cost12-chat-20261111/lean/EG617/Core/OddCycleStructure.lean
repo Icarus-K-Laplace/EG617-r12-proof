@@ -24,7 +24,7 @@ theorem bypass_parity_of_short_loops_even (N : ℕ)
     p.bypass.length % 2 = p.length % 2 := by
   classical
   induction p with
-  | nil => simp
+  | nil => simp [bypass]
   | @cons a b c hab p ih =>
     have hp0 : p.length + 1 < N := by simpa only [length_cons] using hp
     have hp' : p.length < N := by omega
@@ -75,13 +75,13 @@ theorem shortestOddLoop_isCycle {v : V} (p : G.Walk v v)
     have hlen : p.length = 1 := hpath.length_eq_one_of_mem_edges (by
       simpa only [Sym2.eq_swap] using hedge)
     have := hp.1
-    simpa [length_cons, hlen] using this
+    norm_num [length_cons, hlen, Nat.odd_iff] at this
 
 theorem exists_shortestOddLoop (hG : ¬ G.Colorable 2) :
-    ∃ v (p : G.Walk v v), IsShortestOddLoop p := by
+    ∃ v, ∃ p : G.Walk v v, IsShortestOddLoop p := by
   classical
-  have hex : ∃ n : ℕ, ∃ v (p : G.Walk v v), Odd p.length ∧ p.length = n := by
-    have h : ∃ v (p : G.Walk v v), Odd p.length := by
+  have hex : ∃ n : ℕ, ∃ v, ∃ p : G.Walk v v, Odd p.length ∧ p.length = n := by
+    have h : ∃ v, ∃ p : G.Walk v v, Odd p.length := by
       simpa only [SimpleGraph.two_colorable_iff_forall_loop_even, not_forall,
         Nat.not_even_iff_odd] using hG
     obtain ⟨v, p, hp⟩ := h
@@ -93,8 +93,86 @@ theorem exists_shortestOddLoop (hG : ¬ G.Colorable 2) :
   exact Nat.find_min' hex ⟨w, q, hq, rfl⟩
 
 theorem exists_odd_cycle_of_not_two_colorable (hG : ¬ G.Colorable 2) :
-    ∃ v (p : G.Walk v v), p.IsCycle ∧ IsShortestOddLoop p := by
+    ∃ v, ∃ p : G.Walk v v, p.IsCycle ∧ IsShortestOddLoop p := by
   obtain ⟨v, p, hp⟩ := exists_shortestOddLoop hG
   exact ⟨v, p, shortestOddLoop_isCycle p hp, hp⟩
+
+/-- A one-edge walk contains the unordered edge joining its endpoints. -/
+theorem walk_end_edge_mem_of_length_one {a b : V} (p : G.Walk a b)
+    (hp : p.length = 1) : s(a, b) ∈ p.edges := by
+  cases p with
+  | nil => simp at hp
+  | cons h q =>
+    cases q with
+    | nil => simp
+    | cons h' q' => simp only [length_cons] at hp; omega
+
+/-- A chord splits an odd shortest loop into two strictly shorter closed walks,
+one of which is odd. Thus inducedness is a conclusion, not a terminal hypothesis. -/
+theorem shortestOddLoop_isChordless {v : V} (p : G.Walk v v)
+    (hp : IsShortestOddLoop p) : p.IsChordless := by
+  classical
+  apply Walk.isChordless_iff_forall_mem_edges.mpr
+  intro a b ha hb hab
+  by_contra hedge
+  let q := p.rotate a ha
+  have hbq : b ∈ q.support := (p.mem_support_rotate_iff a ha).mpr hb
+  let l := q.takeUntil b hbq
+  let r := q.dropUntil b hbq
+  have hsum : l.length + r.length = p.length := by
+    have h := congrArg Walk.length (q.take_spec hbq)
+    simp only [length_append] at h
+    simpa only [q, length_rotate] using h
+  have hnotq : s(a, b) ∉ q.edges := by
+    intro h
+    exact hedge ((p.rotate_edges a ha).perm.mem_iff.mp h)
+  have hl : 2 ≤ l.length := by
+    by_contra h
+    by_cases hz : l.length = 0
+    · exact hab.ne (Walk.eq_of_length_eq_zero hz)
+    · have ho : l.length = 1 := by omega
+      exact hnotq (q.edges_takeUntil_subset_edges hbq
+        (walk_end_edge_mem_of_length_one l ho))
+  have hr : 2 ≤ r.length := by
+    by_contra h
+    by_cases hz : r.length = 0
+    · exact hab.ne (Walk.eq_of_length_eq_zero hz).symm
+    · have ho : r.length = 1 := by omega
+      apply hnotq
+      have he := q.edges_dropUntil_subset_edges hbq (walk_end_edge_mem_of_length_one r ho)
+      simpa only [Sym2.eq_swap] using he
+  have hodd := Nat.odd_iff.mp hp.1
+  by_cases ho : Odd (l.concat hab.symm).length
+  · have h := hp.2 a (l.concat hab.symm) ho
+    simp only [length_concat] at h
+    omega
+  · have hor : Odd (r.concat hab).length := by
+      rw [Nat.odd_iff] at ho ⊢
+      simp only [length_concat] at ho ⊢
+      omega
+    have h := hp.2 b (r.concat hab) hor
+    simp only [length_concat] at h
+    omega
+
+/-- The independence bound of a cycle, proved by the disjoint one-step shift. -/
+theorem cycleGraph_twice_independent_card_le (m : ℕ)
+    (S : Finset (Fin (m + 3)))
+    (hS : (SimpleGraph.cycleGraph (m + 3)).IsIndepSet (S : Set (Fin (m + 3)))) :
+    2 * S.card ≤ m + 3 := by
+  classical
+  let f : Fin (m + 3) → Fin (m + 3) := fun x => x + 1
+  have hf : Function.Injective f := fun _ _ h => add_right_cancel h
+  have hd : Disjoint S (S.image f) := by
+    rw [Finset.disjoint_left]
+    intro x hx hy
+    obtain ⟨y, hy, rfl⟩ := Finset.mem_image.mp hy
+    have hadj : (SimpleGraph.cycleGraph (m + 3)).Adj y (f y) := by
+      apply SimpleGraph.cycleGraph_adj.mpr
+      right
+      simp [f]
+    exact hS hy hx hadj.ne hadj
+  have hcard := (S ∪ S.image f).card_le_univ
+  rw [Finset.card_union_of_disjoint hd, Finset.card_image_of_injective S hf] at hcard
+  simpa only [Fintype.card_fin, two_mul] using hcard
 
 end EG617
