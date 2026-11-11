@@ -49,6 +49,10 @@ public import EG617
 #check EG617.core_R224_empty
 #check EG617.core_R3_card_le_degree_add_24
 #check EG617.core_R335_degree_ge_11
+#check EG617.core_R337_empty_of_card
+#check EG617.core_R337_empty
+#check EG617.core_R4_card_le_degree_add_37
+#check EG617.core_R447_degree_ge_10
 #check EG617.independent_card_le_twelve
 #check EG617.monochromatic_card_le_twelve
 #check EG617.colorGraph_clique_card_le_twelve

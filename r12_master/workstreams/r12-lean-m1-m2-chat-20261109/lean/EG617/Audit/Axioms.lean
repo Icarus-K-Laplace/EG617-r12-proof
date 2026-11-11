@@ -49,6 +49,10 @@ public import EG617
 #print axioms EG617.core_R224_empty
 #print axioms EG617.core_R3_card_le_degree_add_24
 #print axioms EG617.core_R335_degree_ge_11
+#print axioms EG617.core_R337_empty_of_card
+#print axioms EG617.core_R337_empty
+#print axioms EG617.core_R4_card_le_degree_add_37
+#print axioms EG617.core_R447_degree_ge_10
 #print axioms EG617.independent_card_le_twelve
 #print axioms EG617.monochromatic_card_le_twelve
 #print axioms EG617.colorGraph_clique_card_le_twelve

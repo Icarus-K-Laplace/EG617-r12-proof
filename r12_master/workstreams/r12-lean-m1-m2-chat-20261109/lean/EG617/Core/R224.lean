@@ -142,4 +142,53 @@ theorem core_R335_degree_ge_11 (G : SimpleGraph (Fin 35))
   norm_num at h
   omega
 
+/-- Frozen low M5: the 37-point class is empty, directly from R224. -/
+theorem core_R337_empty_of_card (G : SimpleGraph V)
+    (hV : Fintype.card V = 37) : ¬ CoreAdmissible 3 G := by
+  classical
+  intro hG
+  have hd : ∀ v : V, 13 ≤ G.degree v := by
+    intro v
+    have h := core_R3_card_le_degree_add_24 G hG v
+    rw [hV] at h
+    omega
+  have hsum : 481 ≤ 2 * G.edgeFinset.card := by
+    calc
+      481 = ∑ _v : V, 13 := by simp [hV]
+      _ ≤ ∑ v : V, G.degree v := Finset.sum_le_sum (fun v _ => hd v)
+      _ = 2 * G.edgeFinset.card := G.sum_degrees_eq_twice_card_edges
+  have hcap := hG.2.2 (Finset.univ : Finset V)
+  rw [core_induced_edge_count_univ] at hcap
+  norm_num [D, tau12, Nat.choose_two_right, hV] at hcap
+  simp only [SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard] at hsum hcap
+  omega
+
+theorem core_R337_empty (G : SimpleGraph (Fin 37)) : ¬ CoreAdmissible 3 G :=
+  core_R337_empty_of_card G rfl
+
+/-- Frozen low M6 first case: R337 excludes a nonneighborhood of size37. -/
+theorem core_R4_card_le_degree_add_37 (G : SimpleGraph V)
+    (hG : CoreAdmissible 4 G) (v : V) : Fintype.card V ≤ G.degree v + 37 := by
+  classical
+  by_contra hnot
+  let S := Gᶜ.neighborFinset v
+  have hcard : S.card = Fintype.card V - 1 - G.degree v := by
+    exact G.degree_compl v
+  have hbig : 37 ≤ S.card := by omega
+  obtain ⟨T, hTS, hT⟩ := Finset.exists_subset_card_eq hbig
+  have ha : CoreAdmissible 3 (G.induce (T : Set V)) :=
+    core_admissible_nonNeighbors G 3 hG v T (by
+      intro w hw
+      have hadj : Gᶜ.Adj v w := (SimpleGraph.mem_neighborFinset Gᶜ v w).mp (hTS hw)
+      exact ⟨hadj.ne.symm, (SimpleGraph.compl_adj G v w).mp hadj |>.2⟩)
+  have hn : Fintype.card T = 37 := by simpa only [Fintype.card_coe] using hT
+  exact core_R337_empty_of_card (G.induce (T : Set V)) hn ha
+
+/-- A proved proper subcase of GATE47, not the target bound12. -/
+theorem core_R447_degree_ge_10 (G : SimpleGraph (Fin 47))
+    (hG : CoreAdmissible 4 G) (v : Fin 47) : 10 ≤ G.degree v := by
+  have h := core_R4_card_le_degree_add_37 G hG v
+  norm_num at h
+  omega
+
 end EG617
