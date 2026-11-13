@@ -41,6 +41,13 @@ public import EG617
 #print axioms EG617.core_admissible_induce
 #print axioms EG617.core_admissible_nonNeighbors
 #print axioms EG617.Gate47Statement
+#print axioms EG617.two_colorable_partition
+#print axioms EG617.bipartition_edge_count
+#print axioms EG617.adjCount_eq_card_product_filter
+#print axioms EG617.adjCount_add_missing_eq_product
+#print axioms EG617.complete_cross_of_no_missing
+#print axioms EG617.unique_missing_cross_of_card_one
+#print axioms EG617.bipartite_18_dense_classification
 #print axioms EG617.adjCount
 #print axioms EG617.adjCount_eq_sum_filter
 #print axioms EG617.degree_induce_eq_filter

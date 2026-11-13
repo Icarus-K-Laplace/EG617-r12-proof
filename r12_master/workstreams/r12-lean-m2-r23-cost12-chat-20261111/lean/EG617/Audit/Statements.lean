@@ -41,6 +41,13 @@ public import EG617
 #check EG617.core_admissible_induce
 #check EG617.core_admissible_nonNeighbors
 #print EG617.Gate47Statement
+#check EG617.two_colorable_partition
+#check EG617.bipartition_edge_count
+#check EG617.adjCount_eq_card_product_filter
+#check EG617.adjCount_add_missing_eq_product
+#check EG617.complete_cross_of_no_missing
+#check EG617.unique_missing_cross_of_card_one
+#check EG617.bipartite_18_dense_classification
 #print EG617.adjCount
 #check EG617.adjCount_eq_sum_filter
 #check EG617.degree_induce_eq_filter

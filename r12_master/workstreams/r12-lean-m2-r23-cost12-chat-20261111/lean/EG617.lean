@@ -11,3 +11,4 @@ public import EG617.Core.OddCycleStructure
 public import EG617.Core.EdgePartition
 public import EG617.Core.OddCycleBound
 public import EG617.Core.R23Reduction
+public import EG617.Core.BipartiteExterior

@@ -65,7 +65,7 @@ theorem r23_exists_five_cycle_bipartite_exterior (G : SimpleGraph V)
       p.IsChordless ∧ p.length = 5 ∧
       p.support.toFinsetᶜ.card = 18 ∧
       80 ≤ coreInducedEdgeCount G p.support.toFinsetᶜ ∧
-      (G.induce (p.support.toFinsetᶜ : Set V)).Colorable 2 := by
+      (G.induce ((p.support.toFinsetᶜ : Finset V) : Set V)).Colorable 2 := by
   classical
   have hn := not_two_colorable_of_independence_bound G 11 hI (by omega)
   obtain ⟨v, p, hp⟩ := exists_shortestOddLoop hn
@@ -89,11 +89,14 @@ theorem r23_exists_five_cycle_bipartite_exterior (G : SimpleGraph V)
   have hout : 80 ≤ coreInducedEdgeCount G Sᶜ := by omega
   refine ⟨v, p, hp, hc, hh, h5, hx, hout, ?_⟩
   by_contra hb
-  have hti : (G.induce (Sᶜ : Set V)).CliqueFree 3 :=
-    ht.comap (SimpleGraph.Embedding.induce (G := G) (Sᶜ : Set V)).isContained
+  have hti : (G.induce ((Sᶜ : Finset V) : Set V)).CliqueFree 3 :=
+    ht.comap (SimpleGraph.Embedding.induce (G := G) ((Sᶜ : Finset V) : Set V)).isContained
   have hsmall := triangleFree_nonbipartite_18_edges_le_73
-    (G.induce (Sᶜ : Set V)) (by simpa using hx) hti hb
-  change coreInducedEdgeCount G Sᶜ ≤ 73 at hsmall
+    (G.induce ((Sᶜ : Finset V) : Set V))
+    (by simpa only [Set.fintypeCard_eq_ncard, Set.ncard_coe_finset] using hx) hti hb
+  have hhsmall : coreInducedEdgeCount G Sᶜ ≤ 73 := by
+    simpa only [coreInducedEdgeCount, SimpleGraph.edgeFinset_card,
+      Set.fintypeCard_eq_ncard] using hsmall
   omega
 
 end EG617
