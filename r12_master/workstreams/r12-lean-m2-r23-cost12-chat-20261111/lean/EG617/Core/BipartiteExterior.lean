@@ -12,7 +12,7 @@ universe u
 variable {V : Type u} [Fintype V]
 
 theorem two_colorable_partition (G : SimpleGraph V) (hb : G.Colorable 2) :
-    ∃ A : Finset V, G.IsIndepSet (A : Set V) ∧ G.IsIndepSet (Aᶜ : Set V) := by
+    ∃ A : Finset V, G.IsIndepSet (A : Set V) ∧ G.IsIndepSet ((Aᶜ : Finset V) : Set V) := by
   classical
   obtain ⟨C⟩ := hb
   let A := (Finset.univ : Finset V).filter (fun v => C v = 0)
@@ -28,7 +28,7 @@ theorem two_colorable_partition (G : SimpleGraph V) (hb : G.Colorable 2) :
     exact C.not_adj_of_mem_colorClass (h1 x hx) (h1 y hy)
 
 theorem bipartition_edge_count (G : SimpleGraph V) (A : Finset V)
-    (hA : G.IsIndepSet (A : Set V)) (hB : G.IsIndepSet (Aᶜ : Set V)) :
+    (hA : G.IsIndepSet (A : Set V)) (hB : G.IsIndepSet ((Aᶜ : Finset V) : Set V)) :
     G.edgeFinset.card = adjCount G A Aᶜ := by
   have ha := adjCount_self G A
   have hb := adjCount_self G Aᶜ
@@ -61,7 +61,7 @@ theorem complete_cross_of_no_missing (G : SimpleGraph V) (A B : Finset V)
   have hm : (a, b) ∈ (A ×ˢ B).filter (fun xy => ¬ G.Adj xy.1 xy.2) := by
     simp [ha, hb, hn]
   rw [Finset.card_eq_zero.mp h] at hm
-  exact Finset.not_mem_empty _ hm
+  simpa using hm
 
 theorem unique_missing_cross_of_card_one (G : SimpleGraph V) (A B : Finset V)
     (h : ((A ×ˢ B).filter (fun xy => ¬ G.Adj xy.1 xy.2)).card = 1) :
@@ -83,7 +83,7 @@ cross edge, including the unique deleted edge when present. -/
 theorem bipartite_18_dense_classification (G : SimpleGraph V)
     (hV : Fintype.card V = 18) (hb : G.Colorable 2)
     (he : 80 ≤ G.edgeFinset.card) :
-    ∃ A : Finset V, G.IsIndepSet (A : Set V) ∧ G.IsIndepSet (Aᶜ : Set V) ∧
+    ∃ A : Finset V, G.IsIndepSet (A : Set V) ∧ G.IsIndepSet ((Aᶜ : Finset V) : Set V) ∧
       ((A.card = 9 ∧ Aᶜ.card = 9 ∧ G.edgeFinset.card = 81 ∧
           ∀ a ∈ A, ∀ b ∈ Aᶜ, G.Adj a b) ∨
        (A.card = 8 ∧ Aᶜ.card = 10 ∧ G.edgeFinset.card = 80 ∧
@@ -94,7 +94,7 @@ theorem bipartite_18_dense_classification (G : SimpleGraph V)
   classical
   obtain ⟨A, hA, hB⟩ := two_colorable_partition G hb
   have horient : ∃ S : Finset V, G.IsIndepSet (S : Set V) ∧
-      G.IsIndepSet (Sᶜ : Set V) ∧ S.card ≤ Sᶜ.card := by
+      G.IsIndepSet ((Sᶜ : Finset V) : Set V) ∧ S.card ≤ Sᶜ.card := by
     by_cases h : A.card ≤ Aᶜ.card
     · exact ⟨A, hA, hB, h⟩
     · refine ⟨Aᶜ, hB, ?_, ?_⟩ <;> simp only [compl_compl]
