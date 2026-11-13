@@ -4,11 +4,12 @@ Paper mapping: frozen low M2, all four exterior/type cases.
 The original hypotheses remain card V=23, CliqueFree 3, CoreIndependenceBound 11,
 and e>=121. No caps or terminal classification are silently added.
 
-R23Reduction candidates derive a shortest C5, an exterior with exactly 18 vertices,
+The kernel-verified R23Reduction theorems derive a shortest C5, an exterior with exactly 18 vertices,
 at least 80 induced edges, and a two-coloring of that exterior.
 BipartiteExterior then gives an exact cross-edge description of K9,9, K8,10,
 or K9,9 with exactly one deleted edge; it states every present/missing cross edge,
-not just the part sizes or edge total. Current full CI status is recorded in CI_STATUS.json.
+not just the part sizes or edge total. Both modules passed standalone Linux CI
+43361985046, including the complete axiom audit. Evidence is in CI_STATUS.json.
 
 Still unformalized: the C5 two-neighbor type quotient as applied to arbitrary
 graphs; exhaustive Case I blow-up identification; Case II singleton extension;

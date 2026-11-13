@@ -1,8 +1,8 @@
 # Odd-cycle bound
 
-Module EG617.Core.OddCycleBound compiled in Linux run 43359045754 at
-d97f9e7f3af79d21b1b28a2f0923e5ef66709cbd. That entire run failed later in
-R23Reduction; this is a module PASS, not yet a whole-project or full-axiom PASS.
+Verified in the successful standalone Linux run 43361985046 at
+875bd3de7478129b507b4f8e9df14f0c8e8bd4f5. Whole-project lake build, complete
+transitive axiom audit, statement inspection and source/config SHA256 checks passed.
 
 Paper mapping: frozen low M2 opening paragraph, independently reproduced in
 LOWER_ORDER_M1_M6_INDEPENDENT_AUDIT_20261103.md, M2.

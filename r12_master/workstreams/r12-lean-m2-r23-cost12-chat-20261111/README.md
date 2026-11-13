@@ -50,3 +50,14 @@ Frozen paper source: frozen/low/MINIMUM_DEGREE_GATE_SELF_CONTAINED.md at
 c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2, as attributed in the retained independent
 audit. This checkout contains the audit text; the frozen file itself is not present.
 No stronger claim of byte-for-byte paper access is made.
+
+Verified checkpoint: 875bd3de7478129b507b4f8e9df14f0c8e8bd4f5;
+successful CI: https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/43361985046.
+The standalone build, complete axiom audit and source/config hash comparison passed.
+Logs include all failed iterations as well as the complete successful run.
+There are 122 audited declarations / 99 theorems, but GATE47 is still not proved.
+
+tools/collect-evidence.mjs is a maintainer evidence-extraction utility; its baseline
+comparison requires the original Git checkout. It is not needed to build the ZIP.
+The SHA256SUMS at the archive root covers every packaged file except itself.
+To verify on Linux run `sha256sum -c SHA256SUMS` before building.
