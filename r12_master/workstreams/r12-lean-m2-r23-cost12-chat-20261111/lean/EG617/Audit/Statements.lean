@@ -69,6 +69,9 @@ public import EG617
 #check EG617.shortestOddLoop_half_length_ge_two
 #check EG617.triangleFree_nonbipartite_edge_bound
 #check EG617.triangleFree_nonbipartite_18_edges_le_73
+#print EG617.IsShortestOddCycle
+#check EG617.shortestOddCycle_iff_shortestOddLoop
+#check EG617.shortestOddCycle_edge_bound
 #print EG617.IsShortestOddLoop
 #check EG617.bypass_parity_of_short_loops_even
 #check EG617.shortestOddLoop_isCycle

@@ -69,6 +69,9 @@ public import EG617
 #print axioms EG617.shortestOddLoop_half_length_ge_two
 #print axioms EG617.triangleFree_nonbipartite_edge_bound
 #print axioms EG617.triangleFree_nonbipartite_18_edges_le_73
+#print axioms EG617.IsShortestOddCycle
+#print axioms EG617.shortestOddCycle_iff_shortestOddLoop
+#print axioms EG617.shortestOddCycle_edge_bound
 #print axioms EG617.IsShortestOddLoop
 #print axioms EG617.bypass_parity_of_short_loops_even
 #print axioms EG617.shortestOddLoop_isCycle

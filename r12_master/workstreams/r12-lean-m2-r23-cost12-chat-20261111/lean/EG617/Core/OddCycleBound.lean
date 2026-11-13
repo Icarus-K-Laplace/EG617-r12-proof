@@ -103,7 +103,8 @@ theorem triangleFree_induced_mantel (G : SimpleGraph V) (ht : G.CliqueFree 3)
   have hti : (G.induce (S : Set V)).CliqueFree 3 :=
     ht.comap (SimpleGraph.Embedding.induce (G := G) (S : Set V)).isContained
   have h := hti.card_edgeFinset_le
-  simpa only [coreInducedEdgeCount, SimpleGraph.turanNumber_two,
+  rw [SimpleGraph.turanNumber_two] at h
+  simpa only [coreInducedEdgeCount,
     SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard, Set.ncard_coe_finset] using h
 
 /-- The graph bound, not merely the numerical formula: the three edge classes
@@ -166,5 +167,31 @@ theorem triangleFree_nonbipartite_18_edges_le_73 (G : SimpleGraph V)
   obtain ⟨k, hk, hfit, he⟩ := triangleFree_nonbipartite_edge_bound G ht hb
   rw [hV] at hfit he
   exact he.trans (oddCycleBound_18 k hk hfit)
+
+/-- The usual shortest odd SIMPLE cycle notion, with minimization over all
+vertices and all simple odd cycles. -/
+def IsShortestOddCycle {v : V} (p : G.Walk v v) : Prop :=
+  p.IsCycle ∧ Odd p.length ∧ ∀ w (q : G.Walk w w),
+    q.IsCycle → Odd q.length → p.length ≤ q.length
+
+theorem shortestOddCycle_iff_shortestOddLoop {v : V} (p : G.Walk v v) :
+    IsShortestOddCycle p ↔ IsShortestOddLoop p := by
+  constructor
+  · intro hp
+    have hn : ¬ G.Colorable 2 := by
+      intro hb
+      have he := (SimpleGraph.two_colorable_iff_forall_loop_even.mp hb) v p
+      exact (Nat.not_even_iff_odd.mpr hp.2.1) he
+    obtain ⟨w, q, hq⟩ := exists_shortestOddLoop hn
+    have hle := hp.2.2 w q (shortestOddLoop_isCycle q hq) hq.1
+    exact ⟨hp.2.1, fun a r hr => hle.trans (hq.2 a r hr)⟩
+  · intro hp
+    exact ⟨shortestOddLoop_isCycle p hp, hp.1, fun w q _ hq => hp.2 w q hq⟩
+
+theorem shortestOddCycle_edge_bound (G : SimpleGraph V) (ht : G.CliqueFree 3)
+    {v : V} (p : G.Walk v v) (hp : IsShortestOddCycle p) (k : ℕ)
+    (hlen : p.length = 2 * k + 1) :
+    G.edgeFinset.card ≤ oddCycleBound (Fintype.card V) k :=
+  shortestOddLoop_edge_bound G ht p ((shortestOddCycle_iff_shortestOddLoop p).mp hp) k hlen
 
 end EG617
