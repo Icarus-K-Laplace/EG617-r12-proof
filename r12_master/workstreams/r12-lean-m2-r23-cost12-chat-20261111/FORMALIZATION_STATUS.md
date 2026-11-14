@@ -1,41 +1,30 @@
-# Verified partial M2 checkpoint — GATE47 still open in Lean
+# Verified partial R23 classification — GATE47 remains open
 
-Update 2026-11-15: exact neighbor ledger VERIFIED at
-4454d72f618ee1c53cbd55a80dda7b3a46b44130, Linux run 43573005534,
-job 132381207292. Focused compile, complete lake build, exact types and all
-143 declaration axiom reports PASS (only propext, Classical.choice, Quot.sound).
-Full log: logs/linux-43573005534-full.txt.
-r23_exact_neighbor_ledger derives x=35 or 36, the deficit identity, the three
-exact cases, and x=35 iff a unique singleton from the original R23 assumptions.
-R23ExactLedger.lean SHA256:
-eee7057a9c01520caf7a001238a896e08fa9e06c5b0f19e3a4d2def3a59823aa.
+Latest verified code: 2dba3b922460dabe71fc91e4949190182217db07.
+Linux CI 43616747074, job 132513365166 (2026-11-15 Asia/Shanghai).
+Focused build, whole lake build, exact statement inspection, all 152 transitive
+axiom reports, nine fixed dependencies and source SHA256 checks PASS.
+Only propext, Classical.choice and Quot.sound. Full log:
+logs/linux-43616747074-full.txt. Local source hashes match Linux output.
 
-Current candidate R23TypeLift constructs a copy on the SAME cycle support and
-transfers the ledger's neighbor cardinalities to unique C5 types. Awaiting CI;
-not promoted by source scan. Four-case blow-up classification remains open.
-Older checkpoints below are historical.
+New mathematical results:
+- r23_exact_labeled_neighbor_ledger keeps the SAME shortest C5 support when
+  assigning actual neighbor labels; no unrelated C5 is substituted.
+- r23_exists_balanced_exterior derives K9,9 or K9,9 minus one cross edge from
+  the original R23 contract. K8,10 is excluded by a 12-element independent
+  neighborhood (ten exterior neighbors plus the two forced cycle neighbors).
+- r23_122_type_presentation derives a map t : V -> Fin 5 from the original
+  23-vertex, triangle-free, alpha<=11, exactly122-edge assumptions and proves
+  G.Adj x y iff cycleGraph 5.Adj (t x) (t y).
+  The reverse direction uses ACTUAL complete cross edges.
 
-Latest verified code: 89183d0c770227daf4d4a45bc699480586cb4210, CI 43570397008
-(2026-11-14). Focused C5 module checks followed by full lake build, statement
-inspection, complete axiom allowlist audit and source SHA256 emission all PASS.
-C5Types.lean and C5MissingEdge.lean now prove the exact graph-to-type bridge,
-complete bipartite singleton-side quotient, incompatible missing-endpoint singleton
-type sets, exhaustive five rotations/two orientations, and singleton extension.
-All use only propext, Classical.choice and Quot.sound. Full R23 classification is
-NOT proved: graph-level neighbor saturation and blow-up identification remain.
-The previous checkpoint details below are historical, not the latest totals.
+Exact 121/122 ledger was verified at 4454d72 / CI 43573005534, including
+all three neighbor distributions and x=35 iff exactly one singleton.
+C5 type compatibility and missing-endpoint orientations were verified at
+89183d0 / CI 43570397008. Baseline mathematics remains unchanged.
 
-Verified source commit: 875bd3de7478129b507b4f8e9df14f0c8e8bd4f5.
-Successful standalone Linux CI: 43361985046. The whole lake build, all 122
-declaration axiom reports, statement inspection, nine dependency pins and source
-SHA256 checks passed. The project contains 99 kernel-checked theorems.
-
-The substantive new results are the full odd-cycle graph bound and the reduction
-of the dense 23-point problem to a shortest C5 with one of three exact bipartite
-exterior forms. The type/blow-up classification and Cost-6 are still missing;
-the sharp R335/R336 results and GATE47 are not proved. Counts do not certify those
-targets. MainTheorem is absent and original baseline mathematics is byte-unchanged.
-
-The numeric maxima use the feasible-cycle bounds 2<=k and 2*k+1<=n. No E286 work
-was attempted. The new root workflow is the only user-approved directory exception.
-Earlier disk-space approval failures were resolved before retrying; no bypass was used.
+NOT proved: the final 122-edge class sizes, the 121-edge singleton graph
+completion, the compatible/incompatible missing-edge whole-graph cases,
+Cost-6 for arbitrary independent sets, sharp R335/R336, GATE47, MainTheorem.
+C5TypeFibers.lean is a local candidate for class sizes, not yet CI-verified.
+No progress percentage or theorem count is used as evidence of those targets.

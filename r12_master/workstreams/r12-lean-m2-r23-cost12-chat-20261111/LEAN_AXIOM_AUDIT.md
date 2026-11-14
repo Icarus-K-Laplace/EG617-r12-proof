@@ -1,14 +1,16 @@
 # Complete transitive axiom audit
 
-Verified code commit 875bd3de7478129b507b4f8e9df14f0c8e8bd4f5, Linux CI 43361985046.
+Verified code: 2dba3b922460dabe71fc91e4949190182217db07. Linux CI 43616747074,
+job 132513365166. Full build, exact types, source restrictions and all 152
+project declaration reports PASS. Only propext, Classical.choice, Quot.sound.
+No unproved classification or external enumeration is imported. Original
+MainTheorem and GATE47 remain unproved. Local candidates are not covered.
 
-All 122 project declarations compiled and audited. Allowed logical axioms: propext, Classical.choice, Quot.sound.
-Source scan and kernel audit both passed. No sorry/admit/custom axiom/unsafe/implemented_by/native_decide is used.
-No diagnostic enumeration is imported into Lean. All graph hypotheses appear in DECLARATION_STATEMENTS.md.
-Unfinished results are absent proofs: complete type classification, Cost-6, sharp R335/R336, GATE47 and MainTheorem.
+Full log: logs/linux-43616747074-full.txt.
 
 | Declaration | Transitive axioms |
 |---|---|
+| EG617.r23_122_type_presentation | propext, Classical.choice, Quot.sound |
 | EG617.colorGraph | propext, Quot.sound |
 | EG617.colorGraph_adj_iff | propext, Quot.sound |
 | EG617.validColoring_iff_colorGraph | propext, Classical.choice, Quot.sound |
@@ -55,6 +57,25 @@ Unfinished results are absent proofs: complete type classification, Cost-6, shar
 | EG617.complete_cross_of_no_missing | propext, Classical.choice, Quot.sound |
 | EG617.unique_missing_cross_of_card_one | propext, Classical.choice, Quot.sound |
 | EG617.bipartite_18_dense_classification | propext, Classical.choice, Quot.sound |
+| EG617.c5_incompatible_endpoint_forces_singleton | propext, Classical.choice, Quot.sound |
+| EG617.c5_missing_edge_type_sets | propext, Classical.choice, Quot.sound |
+| EG617.c5_missing_endpoint_orientations | propext, Classical.choice, Quot.sound |
+| EG617.c5_singleton_extension | propext, Classical.choice, Quot.sound |
+| EG617.cycleNeighborLabels_cycle_vertex | propext, Classical.choice, Quot.sound |
+| EG617.complete_exterior_type_presentation | propext, Classical.choice, Quot.sound |
+| EG617.complete_exterior_has_type_presentation | propext, Classical.choice, Quot.sound |
+| EG617.c5Type | propext, Quot.sound |
+| EG617.c5Type_card | propext, Quot.sound |
+| EG617.c5Type_disjoint_iff | propext, Classical.choice, Quot.sound |
+| EG617.c5_adj_iff_mem_type | propext, Classical.choice, Quot.sound |
+| EG617.c5_independent_pair_unique_type | propext, Classical.choice, Quot.sound |
+| EG617.c5_common_neighbors_unique | propext, Classical.choice, Quot.sound |
+| EG617.c5_complete_type_sets | propext, Classical.choice, Quot.sound |
+| EG617.cycleNeighborLabels | propext, Classical.choice, Quot.sound |
+| EG617.cycleNeighborLabels_independent | propext, Classical.choice, Quot.sound |
+| EG617.cycleNeighborLabels_unique_type | propext, Classical.choice, Quot.sound |
+| EG617.adjacent_cycleNeighborLabels_disjoint | propext, Classical.choice, Quot.sound |
+| EG617.complete_bipartite_type_image | propext, Classical.choice, Quot.sound |
 | EG617.adjCount | propext, Classical.choice, Quot.sound |
 | EG617.adjCount_eq_sum_filter | propext, Classical.choice, Quot.sound |
 | EG617.degree_induce_eq_filter | propext, Classical.choice, Quot.sound |
@@ -76,7 +97,7 @@ Unfinished results are absent proofs: complete type classification, Cost-6, shar
 | EG617.cycle_support_card | propext, Classical.choice, Quot.sound |
 | EG617.chordless_cycle_induced_degree_two | propext, Classical.choice, Quot.sound |
 | EG617.chordless_cycle_induced_edges | propext, Classical.choice, Quot.sound |
-| EG617.twice_subset_independent_card_le_of_induced_degree_two | propext, Classical.choice, Quot.sound |
+| EG617.twice_subset_independent_card_le_of_induced_degree_two | propext, 2026-11-14T16:40:48.6229263Z  Classical.choice, 2026-11-14T16:40:48.6229486Z  Quot.sound |
 | EG617.shortestOddLoop_neighbor_card_le | propext, Classical.choice, Quot.sound |
 | EG617.triangleFree_induced_mantel | propext, Classical.choice, Quot.sound |
 | EG617.shortestOddLoop_edge_bound | propext, Classical.choice, Quot.sound |
@@ -107,9 +128,19 @@ Unfinished results are absent proofs: complete type classification, Cost-6, shar
 | EG617.core_R337_empty | propext, Classical.choice, Quot.sound |
 | EG617.core_R4_card_le_degree_add_37 | propext, Classical.choice, Quot.sound |
 | EG617.core_R447_degree_ge_10 | propext, Classical.choice, Quot.sound |
+| EG617.two_cycle_neighbors_cross_card_le_nine | propext, Classical.choice, Quot.sound |
+| EG617.r23_exists_balanced_exterior | propext, Classical.choice, Quot.sound |
+| EG617.deficit_sum_add | propext, Classical.choice, Quot.sound |
+| EG617.deficit_zero_iff | propext, Classical.choice, Quot.sound |
+| EG617.deficit_one_distribution | propext, Classical.choice, Quot.sound |
+| EG617.ExactC5NeighborLedger | propext, Classical.choice, Quot.sound |
+| EG617.r23_exact_neighbor_ledger | propext, Classical.choice, Quot.sound |
 | EG617.not_two_colorable_of_independence_bound | propext, Classical.choice, Quot.sound |
 | EG617.r23_shortestOddLoop_length_five | propext, Classical.choice, Quot.sound |
 | EG617.r23_exists_five_cycle_bipartite_exterior | propext, Classical.choice, Quot.sound |
+| EG617.five_cycle_copy_same_support | propext, Classical.choice, Quot.sound |
+| EG617.cycleNeighborLabels_card_eq | propext, Classical.choice, Quot.sound |
+| EG617.r23_exact_labeled_neighbor_ledger | propext, Classical.choice, Quot.sound |
 | EG617.independent_card_le_twelve | propext, Classical.choice, Quot.sound |
 | EG617.monochromatic_card_le_twelve | propext, Classical.choice, Quot.sound |
 | EG617.colorGraph_clique_card_le_twelve | propext, Classical.choice, Quot.sound |

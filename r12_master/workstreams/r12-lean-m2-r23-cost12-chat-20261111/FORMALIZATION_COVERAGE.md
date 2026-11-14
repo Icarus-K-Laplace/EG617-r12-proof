@@ -11,7 +11,9 @@
 | C5 with 18-point bipartite exterior of >=80 edges | Kernel + axiom audit PASS, run 43361985046 |
 | Exact three dense bipartite exterior forms | Kernel + axiom audit PASS, run 43361985046 |
 | Exact 121/122 edge ledger, three neighbor distributions, unique singleton iff | Kernel + whole build + axiom PASS, run 43573005534 |
-| Same-support labeled C5 copy and cardinal transfer | Candidate R23TypeLift, awaiting kernel validation |
+| Same-support labeled C5 copy and cardinal transfer | Kernel + whole build + axiom PASS, run 43616747074 |
+| K8,10 exclusion; balanced K9,9 or K9,9-e exterior | Kernel + whole build + axiom PASS, run 43616747074 |
+| 122-edge actual C5 type presentation, adjacency iff | Kernel + whole build + axiom PASS, run 43616747074; final fiber sizes still open |
 | Complete C5 type/blow-up classification | Not formalized |
 | Unique actual two-neighbor type, complete bipartite type quotient | Kernel + axiom PASS, run 43570397008 |
 | Incompatible endpoint types and singleton extension | Kernel + axiom PASS, run 43570397008; graph-level lifting still open |

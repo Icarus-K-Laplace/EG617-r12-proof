@@ -1,5 +1,23 @@
 # Current classification theorem mapping
 
+Update 2026-11-15, code 2dba3b9 / CI 43616747074: all the following
+statements are kernel/type/axiom PASS. Exact signatures are preserved in the
+named standard .lean modules and the full CI statement-inspection output.
+
+| Frozen source obligation | Verified theorem | Exact scope |
+|---|---|---|
+| M2 same C5 neighbor labeling | r23_exact_labeled_neighbor_ledger | Original R23 hypotheses, same support image, exact count transfer, unique types |
+| M2c exclusion of K8,10 | r23_exists_balanced_exterior | Original R23 hypotheses; SAME labeled C5; only K9,9 or K9,9-e exterior |
+| M2a complete graph/type lift | complete_exterior_has_type_presentation | Actual complete cross edges plus two-neighbor counts; types constructed |
+| M2a 122-edge graph presentation | r23_122_type_presentation | Original R23 assumptions plus exactly122 edges; adjacency iff C5 type adjacency |
+
+Equivalence: Fin 5 is the labeled cycle itself; cycleNeighborLabels records
+actual G edges to that copy. The map in the last theorem is assigned to every
+actual vertex, and the iff describes all ordered vertex pairs. It is the C5
+blow-up adjacency definition, but does NOT yet assert the required fiber sizes.
+The subtype exterior is exactly the complement finset of this SAME cycle.
+M2b and M2d remain graph-level gaps despite their verified finite type lemmas.
+
 2026-11-15 exact ledger: r23_exact_neighbor_ledger (Core/R23ExactLedger.lean)
 maps to frozen low M2 opening edge ledger and the saturation in M2a-M2d.
 VERIFIED 4454d72 / CI 43573005534. Hypotheses: card V=23, triangle-free,

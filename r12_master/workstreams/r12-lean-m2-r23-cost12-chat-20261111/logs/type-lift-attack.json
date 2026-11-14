@@ -1,0 +1,9 @@
+{
+  "status": "NO_COUNTEREXAMPLE_IN_STATED_TEST_DOMAIN",
+  "compatibleSupportPairs": 20,
+  "excluded810Witnesses": 90,
+  "complete99Presentations": 90,
+  "compatibleMissingEdgeIsNotForced": true,
+  "negativeControlEdges": 121,
+  "limitations": "Multiplicity distributions within every compatible type support pair; this test is not a completeness proof for arbitrary R23 graphs and is not imported into Lean."
+}

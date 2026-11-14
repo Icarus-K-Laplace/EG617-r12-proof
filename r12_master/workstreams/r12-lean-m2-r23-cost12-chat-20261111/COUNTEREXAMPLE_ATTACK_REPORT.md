@@ -1,5 +1,15 @@
 # Counterexample attack report
 
+2026-11-15 type-lift check: attacks/type-lift-attack.mjs, output
+logs/type-lift-attack.json. All 20 compatible nonempty support pairs were
+tested with all positive multiplicity splits: 90 K8,10 assignments each have
+an explicit independent 12-element neighborhood; 90 K9,9 assignments satisfy
+the full graph/type adjacency equivalence for every vertex pair. A triangle-free
+121-edge graph obtained by deleting a compatible cross edge was also checked:
+its missing edge refutes the compatibility-to-adjacency converse.
+These are diagnostic checks within this specified domain, not completeness
+proofs for arbitrary R23 graphs and not trusted Lean inputs.
+
 Program: attacks/independent-attack.mjs. Full output: logs/independent-attack.json.
 Method: fresh include/exclude recursion enumerating every independent set of each
 explicit labeled representative, followed by direct edge and intersection counting.
