@@ -16,6 +16,9 @@ theorem c5_remaining_fiber_sum (n : Fin 5 → ℕ) (a : Fin 5)
     (hs : ∑ i, n i = 23) (ha : n a = 10)
     (hplus : n (a + 2) = 1) (hminus : n (a - 2) = 1) :
     n (a + 1) + n (a - 1) = 11 := by
+  have hsub1 : ∀ i : Fin 5, i - 1 = i + 4 := by decide
+  have hsub2 : ∀ i : Fin 5, i - 2 = i + 3 := by decide
+  simp only [hsub1, hsub2] at hminus ⊢
   fin_cases a <;> norm_num [Fin.sum_univ_succ] at hs ha hplus hminus ⊢ <;> omega
 
 /-- C5(10,A,1,1,B), up to rotation, specified by all actual vertex fibers
