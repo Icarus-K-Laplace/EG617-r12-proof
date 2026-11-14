@@ -3,7 +3,7 @@ public import EG617.Core.R23TypeLift
 
 @[expose] public section
 set_option autoImplicit false
-attribute [local instance] Classical.propDecidable
+attribute [local instance 2000] Classical.propDecidable
 
 namespace EG617
 universe u
@@ -37,7 +37,7 @@ theorem r23_exists_balanced_exterior (G : SimpleGraph V)
     (hV : Fintype.card V = 23) (ht : G.CliqueFree 3)
     (hI : CoreIndependenceBound 11 G) (he : 121 ≤ G.edgeFinset.card) :
     ∃ S : Finset V, ExactC5NeighborLedger G S ∧
-      ∃ A : Finset {x : V // x ∈ (Sᶜ : Finset V)},
+      ∃ A : Finset ((Sᶜ : Finset V) : Set V),
         let H := G.induce ((Sᶜ : Finset V) : Set V)
         H.IsIndepSet (A : Set _) ∧ H.IsIndepSet ((Aᶜ : Finset _) : Set _) ∧
         A.card = 9 ∧ Aᶜ.card = 9 ∧
@@ -51,14 +51,17 @@ theorem r23_exists_balanced_exterior (G : SimpleGraph V)
   let H := G.induce (T : Set V)
   have h18 : T.card = 18 := hl.2.1
   have h80 : 80 ≤ coreInducedEdgeCount G T := hl.2.2.2.2.1
-  have hHV : Fintype.card {x : V // x ∈ T} = 18 := by
+  have hHV : Fintype.card (T : Set V) = 18 := by
     simpa only [Set.fintypeCard_eq_ncard, Set.ncard_coe_finset] using h18
   have hHt : H.CliqueFree 3 :=
     ht.comap (SimpleGraph.Embedding.induce (G := G) (T : Set V)).isContained
   have hHe : 80 ≤ H.edgeFinset.card := h80
   have hb : H.Colorable 2 := by
     by_contra hn
-    have := triangleFree_nonbipartite_18_edges_le_73 H hHV hHt hn
+    have hsmall := triangleFree_nonbipartite_18_edges_le_73 H hHV hHt hn
+    have hsmall' : coreInducedEdgeCount G T ≤ 73 := by
+      simpa only [coreInducedEdgeCount, H, SimpleGraph.edgeFinset_card,
+        Set.fintypeCard_eq_ncard] using hsmall
     omega
   obtain ⟨A, hA, hB, hcases⟩ := bipartite_18_dense_classification H hHV hb hHe
   refine ⟨S, hl, A, hA, hB, ?_⟩
@@ -69,10 +72,12 @@ theorem r23_exists_balanced_exterior (G : SimpleGraph V)
       rcases hdist with h | h | h
       · exact h.2.2.2
       · have hy : coreInducedEdgeCount G T = 81 := h.1
-        change H.edgeFinset.card = 81 at hy
+        have he' : coreInducedEdgeCount G T = 80 := by
+          simpa only [coreInducedEdgeCount, H, SimpleGraph.edgeFinset_card] using he
         omega
       · have hy : coreInducedEdgeCount G T = 81 := h.1
-        change H.edgeFinset.card = 81 at hy
+        have he' : coreInducedEdgeCount G T = 80 := by
+          simpa only [coreInducedEdgeCount, H, SimpleGraph.edgeFinset_card] using he
         omega
     obtain ⟨a, ham⟩ := Finset.card_pos.mp (by omega : 0 < A.card)
     let B : Finset V := Aᶜ.image Subtype.val
