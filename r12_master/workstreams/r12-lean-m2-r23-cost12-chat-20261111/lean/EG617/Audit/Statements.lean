@@ -116,6 +116,11 @@ public import EG617
 #check EG617.core_R337_empty
 #check EG617.core_R4_card_le_degree_add_37
 #check EG617.core_R447_degree_ge_10
+#check EG617.deficit_sum_add
+#check EG617.deficit_zero_iff
+#check EG617.deficit_one_distribution
+#print EG617.ExactC5NeighborLedger
+#check EG617.r23_exact_neighbor_ledger
 #check EG617.not_two_colorable_of_independence_bound
 #check EG617.r23_shortestOddLoop_length_five
 #check EG617.r23_exists_five_cycle_bipartite_exterior

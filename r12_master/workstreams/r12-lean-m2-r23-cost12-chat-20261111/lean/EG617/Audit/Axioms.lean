@@ -116,6 +116,11 @@ public import EG617
 #print axioms EG617.core_R337_empty
 #print axioms EG617.core_R4_card_le_degree_add_37
 #print axioms EG617.core_R447_degree_ge_10
+#print axioms EG617.deficit_sum_add
+#print axioms EG617.deficit_zero_iff
+#print axioms EG617.deficit_one_distribution
+#print axioms EG617.ExactC5NeighborLedger
+#print axioms EG617.r23_exact_neighbor_ledger
 #print axioms EG617.not_two_colorable_of_independence_bound
 #print axioms EG617.r23_shortestOddLoop_length_five
 #print axioms EG617.r23_exists_five_cycle_bipartite_exterior

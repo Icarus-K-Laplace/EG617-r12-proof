@@ -21,7 +21,7 @@ for(const p of m.packages){
 }
 NODE
 lake clean eg617r12
-lake build +EG617.Audit.C5Types 2>&1 | tee logs/c5-types-focused.txt
+lake build +EG617.Audit.R23Ledger 2>&1 | tee logs/c5-types-focused.txt
 result=0
 for mod in EG617.Combinatorics.TuranArithmetic EG617.Frontend.EdgeCounting EG617.Frontend.TuranBounds EG617.Frontend.HereditaryCaps EG617.Core.Admissibility EG617.Core.R224 EG617.Core.OddCycleArithmetic EG617.Core.OddCycleStructure EG617.Core.EdgePartition EG617.Core.OddCycleBound EG617.Core.R23Reduction EG617.Core.BipartiteExterior; do
   if lake build "+$mod" 2>&1 | tee "logs/linux-$mod.txt"; then
