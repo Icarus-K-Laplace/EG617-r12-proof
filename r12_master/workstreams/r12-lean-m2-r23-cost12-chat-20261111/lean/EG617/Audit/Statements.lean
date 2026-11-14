@@ -124,6 +124,9 @@ public import EG617
 #check EG617.not_two_colorable_of_independence_bound
 #check EG617.r23_shortestOddLoop_length_five
 #check EG617.r23_exists_five_cycle_bipartite_exterior
+#check EG617.five_cycle_copy_same_support
+#check EG617.cycleNeighborLabels_card_eq
+#check EG617.r23_exact_labeled_neighbor_ledger
 #check EG617.independent_card_le_twelve
 #check EG617.monochromatic_card_le_twelve
 #check EG617.colorGraph_clique_card_le_twelve

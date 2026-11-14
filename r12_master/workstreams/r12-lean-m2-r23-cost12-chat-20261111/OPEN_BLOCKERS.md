@@ -1,5 +1,14 @@
 # Current proof obligations
 
+2026-11-15: P0 exact ledger CLOSED by r23_exact_neighbor_ledger,
+4454d72 / CI 43573005534. All saturation obligations below are historical.
+Current smallest obligation: verify same-support C5 copy and cardinal transfer
+(R23TypeLift candidate), then derive the complete actual-vertex type partition
+and its cross-side constraints in each of the three exact exterior forms.
+Frozen M2a-M2d source has now been read: see FROZEN_CLASSIFICATION_SOURCE.md.
+No whole-graph blow-up equivalence, singleton graph extension, or Cost-6 theorem
+has been established. Compatibility must not be used to infer an edge.
+
 Update 2026-11-14: C5Types and C5MissingEdge PASS in 89183d0 / CI 43570397008.
 The final elaboration fix unfolded ExistsUnique before kernel decision; no
 mathematical hypothesis changed. All first-obligation candidates below now pass.

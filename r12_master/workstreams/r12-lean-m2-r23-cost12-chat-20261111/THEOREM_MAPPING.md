@@ -1,5 +1,19 @@
 # Current classification theorem mapping
 
+2026-11-15 exact ledger: r23_exact_neighbor_ledger (Core/R23ExactLedger.lean)
+maps to frozen low M2 opening edge ledger and the saturation in M2a-M2d.
+VERIFIED 4454d72 / CI 43573005534. Hypotheses: card V=23, triangle-free,
+CoreIndependenceBound 11, at least121 edges; conclusion retains the SAME shortest
+five-cycle support, 18 exterior vertices, five internal edges, 80<=y<=81,
+121<=e<=122, e=5+x+y, x in {35,36}, and exact neighbor deficits/distributions.
+CoreIndependenceBound is the original finite-set alpha bound; induced counts
+are actual induced-graph edgeFinset cardinalities, not abstract ledger variables.
+
+Candidate: five_cycle_copy_same_support, cycleNeighborLabels_card_eq,
+r23_exact_labeled_neighbor_ledger (Core/R23TypeLift.lean). These connect that
+same support to the actual Fin 5 neighbor labels; not a graph classification.
+All exact theorem statements are in the named .lean source and Audit/R23TypeLift.lean.
+
 All candidates in the table below are now kernel/type/axiom PASS at 89183d0,
 CI 43570397008. The original candidate labels are historical.
 Also verified: c5_missing_edge_type_sets (singleton remaining types on both sides),
