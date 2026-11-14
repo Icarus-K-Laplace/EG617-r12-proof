@@ -1,7 +1,32 @@
 # Current proof obligations
 
+Update 2026-11-14: C5Types and C5MissingEdge PASS in 89183d0 / CI 43570397008.
+The final elaboration fix unfolded ExistsUnique before kernel decision; no
+mathematical hypothesis changed. All first-obligation candidates below now pass.
+The history of failed obligations is retained below for reproducibility.
+
+Highest-value open obligation: derive exact cycle-neighbor saturation from the
+121/122 edge ledger, then partition all actual vertices into the proved types.
+The quotient theorems explicitly require labels and full cross edges; these must
+be derived from the original R23 hypotheses, never assumed as terminal conditions.
+Next: blow-up cardinalities and adjacency equivalences for all four cases.
+Cost-6, sharp R335/R336 and GATE47 remain FORMALIZATION_GAP.
+
 Last fully verified baseline: 875bd3de / CI 43361985046, published at 7975ad8.
-C5Types is a new candidate and requires its focused kernel/type/axiom check.
+C5Types and C5MissingEdge are candidates in addeeb4d, CI 43570190760.
+Focused checks precede the full build. No candidate is promoted before actual CI output.
+
+Resolved source obligations from failed CI 43365758378 (recheck pending):
+- c5_independent_pair_unique_type: instead of deciding over all Finsets without
+  a Fintype instance, decompose card=2 by Finset.card_eq_two, then check all Fin 5 pairs.
+- c5_complete_type_sets: specify `(s := A)` in Finset.one_lt_card to avoid an
+  unconstrained cardinality metavariable. This was a tactic elaboration issue.
+
+Next graph-level obligation: derive neighbor-cardinality saturation (all two-neighbor
+vertices, or exactly one singleton) from the exact 121/122 edge ledger, so the
+type-image theorem's explicit label hypotheses follow from the original R23 contract.
+Missing-edge type sets, all five rotations/two orientations, and singleton extension
+are included in the current focused check. They do not yet identify whole blow-ups.
 
 1. P0 first obligation: every actual two-neighbor vertex on a five-cycle has a
 unique type, and complete bipartite adjacency forces a singleton-side type quotient.

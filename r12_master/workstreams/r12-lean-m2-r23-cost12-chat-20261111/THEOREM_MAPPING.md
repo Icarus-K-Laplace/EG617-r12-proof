@@ -1,5 +1,14 @@
 # Current classification theorem mapping
 
+All candidates in the table below are now kernel/type/axiom PASS at 89183d0,
+CI 43570397008. The original candidate labels are historical.
+Also verified: c5_missing_edge_type_sets (singleton remaining types on both sides),
+c5_missing_endpoint_orientations (all five rotations and two orientations), and
+c5_singleton_extension (extension compatible with every opposite-side type).
+These correspond to frozen low M2 Cases IV and II. The four-label finite domain
+is the exact type domain supplied by cycleNeighborLabels_unique_type; no external
+representative list is trusted. Whole-graph isomorphism/classification is still open.
+
 Frozen low M2 type-quotient paragraph; exact source statements are retained in .lean.
 Baseline mappings and original K145 semantics: PAPER_THEOREM_MAPPING.md.
 

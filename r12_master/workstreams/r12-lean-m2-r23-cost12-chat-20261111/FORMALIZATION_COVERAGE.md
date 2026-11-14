@@ -11,6 +11,8 @@
 | C5 with 18-point bipartite exterior of >=80 edges | Kernel + axiom audit PASS, run 43361985046 |
 | Exact three dense bipartite exterior forms | Kernel + axiom audit PASS, run 43361985046 |
 | Complete C5 type/blow-up classification | Not formalized |
+| Unique actual two-neighbor type, complete bipartite type quotient | Kernel + axiom PASS, run 43570397008 |
+| Incompatible endpoint types and singleton extension | Kernel + axiom PASS, run 43570397008; graph-level lifting still open |
 | Cost-6 for all independent sets | Not formalized |
 | Sharp R335 / R336 | Not formalized |
 | GATE47 degree>=12 | Not formalized; target unchanged |
