@@ -25,10 +25,11 @@ theorem five_cycle_copy_same_support {v : V} (p : G.Walk v v)
     exact SimpleGraph.Walk.map_induce p hw
   have hq : q.IsCycle := SimpleGraph.Walk.IsCycle.of_map (hmap.symm ▸ hc)
   have hql : q.length = 5 := by
-    have h := congrArg SimpleGraph.Walk.length hmap
-    have hlen : q.length = p.length := by
-      simpa only [SimpleGraph.Walk.length_map] using h
-    exact hlen.trans h5
+    have hs : q.support.length = p.support.length := by
+      simp only [q, SimpleGraph.Walk.support_induce, List.length_attachWith]
+    have hqLen := q.length_support
+    have hpLen := p.length_support
+    omega
   obtain ⟨g⟩ := (SimpleGraph.cycleGraph_isContained_iff (by decide : 2 < 5)).mpr
     ⟨_, q, hq, hql⟩
   let f := (SimpleGraph.Embedding.induce (S : Set V)).toCopy.comp g
