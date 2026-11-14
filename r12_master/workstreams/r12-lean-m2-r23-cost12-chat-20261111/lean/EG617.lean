@@ -20,3 +20,4 @@ public import EG617.Core.R23TypeLift
 public import EG617.Core.R23BalancedExterior
 public import EG617.Core.C5TypePresentation
 public import EG617.Core.R23CompleteExterior
+public import EG617.Core.C5TypeFibers

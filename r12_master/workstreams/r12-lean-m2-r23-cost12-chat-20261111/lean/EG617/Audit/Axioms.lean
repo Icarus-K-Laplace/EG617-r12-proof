@@ -52,6 +52,9 @@ public import EG617
 #print axioms EG617.c5_missing_edge_type_sets
 #print axioms EG617.c5_missing_endpoint_orientations
 #print axioms EG617.c5_singleton_extension
+#print axioms EG617.cycle_type_fiber_card
+#print axioms EG617.singleton_side_type_fiber_profile
+#print axioms EG617.complete_exterior_type_fiber_profile
 #print axioms EG617.cycleNeighborLabels_cycle_vertex
 #print axioms EG617.complete_exterior_type_presentation
 #print axioms EG617.complete_exterior_has_type_presentation

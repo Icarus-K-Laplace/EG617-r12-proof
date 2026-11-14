@@ -52,6 +52,9 @@ public import EG617
 #check EG617.c5_missing_edge_type_sets
 #check EG617.c5_missing_endpoint_orientations
 #check EG617.c5_singleton_extension
+#check EG617.cycle_type_fiber_card
+#check EG617.singleton_side_type_fiber_profile
+#check EG617.complete_exterior_type_fiber_profile
 #check EG617.cycleNeighborLabels_cycle_vertex
 #check EG617.complete_exterior_type_presentation
 #check EG617.complete_exterior_has_type_presentation
