@@ -23,7 +23,7 @@ theorem deficit_zero_iff (T : Finset V) (d : V → ℕ) (hd : ∀ v ∈ T, d v �
   constructor
   · intro h v hv
     have hle : 2 - d v ≤ ∑ w ∈ T, (2 - d w) :=
-      Finset.single_le_sum (fun w _ => Nat.zero_le _) hv
+      Finset.single_le_sum (f := fun w => 2 - d w) (fun w _ => Nat.zero_le _) hv
     have := hd v hv
     omega
   · intro h
@@ -42,7 +42,7 @@ theorem deficit_one_distribution (T : Finset V) (d : V → ℕ)
     omega
   obtain ⟨v, hv, hne⟩ := hex
   have hle : 2 - d v ≤ ∑ w ∈ T, (2 - d w) :=
-    Finset.single_le_sum (fun w _ => Nat.zero_le _) hv
+    Finset.single_le_sum (f := fun w => 2 - d w) (fun w _ => Nat.zero_le _) hv
   have hvd := hd v hv
   have h1 : d v = 1 := by omega
   have hs := Finset.sum_erase_add T (fun w => 2 - d w) hv
@@ -51,7 +51,7 @@ theorem deficit_one_distribution (T : Finset V) (d : V → ℕ)
   intro w hw hwv
   have hm : w ∈ T.erase v := Finset.mem_erase.mpr ⟨hwv, hw⟩
   have hb : 2 - d w ≤ ∑ z ∈ T.erase v, (2 - d z) :=
-    Finset.single_le_sum (fun z _ => Nat.zero_le _) hm
+    Finset.single_le_sum (f := fun z => 2 - d z) (fun z _ => Nat.zero_le _) hm
   have := hd w hw
   omega
 
@@ -102,7 +102,8 @@ theorem r23_exact_neighbor_ledger (G : SimpleGraph V)
   have hylo : 80 ≤ y := h80
   have hyhi : y ≤ 81 := by
     have hm := triangleFree_induced_mantel G ht T
-    simpa only [hT] using hm
+    norm_num [hT] at hm
+    exact hm
   have hpart : G.edgeFinset.card = 5 + x + y := by
     have h := edge_partition G S
     rw [hC] at h
@@ -143,12 +144,14 @@ theorem r23_exact_neighbor_ledger (G : SimpleGraph V)
       refine ⟨w, ⟨hw, hw1⟩, ?_⟩
       intro z hz
       by_contra hzw
+      have hz1 : d z = 1 := hz.2
       have := hrest z hz.1 hzw
       omega
     · rintro ⟨w, hw, _⟩
       rcases hx with h35 | h36
       · exact h35
-      · have := hall h36 w hw.1
+      · have hw1 : d w = 1 := hw.2
+        have := hall h36 w hw.1
         omega
 
 end EG617
