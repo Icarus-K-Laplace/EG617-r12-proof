@@ -84,7 +84,7 @@ theorem r23_exists_balanced_exterior (G : SimpleGraph V)
             Set.fintypeCard_eq_ncard] using he
         omega
     obtain ⟨a, ham⟩ := Finset.card_pos.mp (by omega : 0 < A.card)
-    let B : Finset V := (Aᶜ : Finset (T : Set V)).image (fun b => (b : V))
+    let B : Finset V := (Aᶜ : Finset (T : Set V)).image (fun b : (T : Set V) => (b : V))
     have hBT : B ⊆ T := by
       intro b hb
       obtain ⟨b, _, rfl⟩ := Finset.mem_image.mp hb
