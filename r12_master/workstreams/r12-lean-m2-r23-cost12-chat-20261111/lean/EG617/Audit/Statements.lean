@@ -48,6 +48,10 @@ public import EG617
 #check EG617.complete_cross_of_no_missing
 #check EG617.unique_missing_cross_of_card_one
 #check EG617.bipartite_18_dense_classification
+#check EG617.c5_incompatible_endpoint_forces_singleton
+#check EG617.c5_missing_edge_type_sets
+#check EG617.c5_missing_endpoint_orientations
+#check EG617.c5_singleton_extension
 #print EG617.c5Type
 #check EG617.c5Type_card
 #check EG617.c5Type_disjoint_iff

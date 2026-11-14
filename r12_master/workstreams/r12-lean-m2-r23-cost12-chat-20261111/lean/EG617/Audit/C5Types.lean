@@ -1,6 +1,6 @@
 module
 
-public import EG617.Core.C5Types
+public import EG617.Core.C5MissingEdge
 
 #check EG617.c5Type
 #print axioms EG617.c5Type
@@ -26,3 +26,11 @@ public import EG617.Core.C5Types
 #print axioms EG617.adjacent_cycleNeighborLabels_disjoint
 #check EG617.complete_bipartite_type_image
 #print axioms EG617.complete_bipartite_type_image
+#check EG617.c5_incompatible_endpoint_forces_singleton
+#print axioms EG617.c5_incompatible_endpoint_forces_singleton
+#check EG617.c5_missing_edge_type_sets
+#print axioms EG617.c5_missing_edge_type_sets
+#check EG617.c5_missing_endpoint_orientations
+#print axioms EG617.c5_missing_endpoint_orientations
+#check EG617.c5_singleton_extension
+#print axioms EG617.c5_singleton_extension

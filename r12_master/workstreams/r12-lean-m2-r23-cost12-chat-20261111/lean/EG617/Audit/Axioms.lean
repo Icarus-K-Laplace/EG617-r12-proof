@@ -48,6 +48,10 @@ public import EG617
 #print axioms EG617.complete_cross_of_no_missing
 #print axioms EG617.unique_missing_cross_of_card_one
 #print axioms EG617.bipartite_18_dense_classification
+#print axioms EG617.c5_incompatible_endpoint_forces_singleton
+#print axioms EG617.c5_missing_edge_type_sets
+#print axioms EG617.c5_missing_endpoint_orientations
+#print axioms EG617.c5_singleton_extension
 #print axioms EG617.c5Type
 #print axioms EG617.c5Type_card
 #print axioms EG617.c5Type_disjoint_iff

@@ -8,7 +8,7 @@ grep -F 'version 4.35.0' logs/linux-lean-version.txt
 grep -F 'eb6cafb7290e8bd5f2937522d8d804f58f02bafc' logs/linux-lean-version.txt
 lake --version | tee logs/linux-lake-version.txt
 sha256sum lean-toolchain lakefile.lean lake-manifest.json > logs/config-before.sha256
-lake exe cache get Mathlib.Combinatorics.SimpleGraph.Connectivity.Subgraph Mathlib.Combinatorics.SimpleGraph.Coloring.Constructions Mathlib.Combinatorics.SimpleGraph.Walk.Chord Mathlib.Combinatorics.SimpleGraph.FiveWheelLike Mathlib.Combinatorics.SimpleGraph.DegreeSum Mathlib.Combinatorics.SimpleGraph.Extremal.Turan Mathlib.Tactic.IntervalCases Mathlib.Tactic.NormNum Mathlib.Algebra.Order.BigOperators.Group.Finset 2>&1 | tee logs/linux-cache.txt
+lake exe cache get Mathlib.Data.Fintype.Powerset Mathlib.Combinatorics.SimpleGraph.Connectivity.Subgraph Mathlib.Combinatorics.SimpleGraph.Coloring.Constructions Mathlib.Combinatorics.SimpleGraph.Walk.Chord Mathlib.Combinatorics.SimpleGraph.FiveWheelLike Mathlib.Combinatorics.SimpleGraph.DegreeSum Mathlib.Combinatorics.SimpleGraph.Extremal.Turan Mathlib.Tactic.IntervalCases Mathlib.Tactic.NormNum Mathlib.Algebra.Order.BigOperators.Group.Finset 2>&1 | tee logs/linux-cache.txt
 sha256sum -c logs/config-before.sha256
 node - <<'NODE'
 const fs=require('fs'),cp=require('child_process');

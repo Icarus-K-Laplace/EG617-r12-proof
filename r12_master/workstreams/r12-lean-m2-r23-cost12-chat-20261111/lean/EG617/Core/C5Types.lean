@@ -29,9 +29,11 @@ theorem c5_independent_pair_unique_type (S : Finset (Fin 5))
     (hcard : S.card = 2)
     (hI : ∀ i ∈ S, ∀ j ∈ S, ¬ (SimpleGraph.cycleGraph 5).Adj i j) :
     ∃! i : Fin 5, S = c5Type i := by
-  exact (by decide : ∀ T : Finset (Fin 5), T.card = 2 →
-    (∀ a ∈ T, ∀ b ∈ T, ¬ (SimpleGraph.cycleGraph 5).Adj a b) →
-    ∃! i : Fin 5, T = c5Type i) S hcard hI
+  obtain ⟨a, b, hab, rfl⟩ := Finset.card_eq_two.mp hcard
+  have hn : ¬ (SimpleGraph.cycleGraph 5).Adj a b := hI a (by simp) b (by simp)
+  exact (by decide : ∀ a b : Fin 5, a ≠ b →
+    ¬ (SimpleGraph.cycleGraph 5).Adj a b →
+    ∃! i : Fin 5, ({a, b} : Finset (Fin 5)) = c5Type i) a b hab hn
 
 theorem c5_common_neighbors_unique (i j k l : Fin 5) (hne : i ≠ j)
     (hik : (SimpleGraph.cycleGraph 5).Adj i k)
@@ -63,7 +65,7 @@ theorem c5_complete_type_sets (A B : Finset (Fin 5))
   by_cases h : A.card = 1
   · exact Or.inl h
   · right
-    obtain ⟨i, hi, j, hj, hij⟩ := Finset.one_lt_card.mp (by
+    obtain ⟨i, hi, j, hj, hij⟩ := (Finset.one_lt_card (s := A)).mp (by
       have := Finset.card_pos.mpr ⟨a, ha⟩; omega)
     have heq : B = {b} := by
       ext z
