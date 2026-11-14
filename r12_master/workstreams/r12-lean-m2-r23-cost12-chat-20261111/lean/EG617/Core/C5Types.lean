@@ -31,7 +31,7 @@ theorem c5_independent_pair_unique_type (S : Finset (Fin 5))
     ∃! i : Fin 5, S = c5Type i := by
   obtain ⟨a, b, hab, rfl⟩ := Finset.card_eq_two.mp hcard
   have hn : ¬ (SimpleGraph.cycleGraph 5).Adj a b := hI a (by simp) b (by simp)
-  exact (by decide : ∀ a b : Fin 5, a ≠ b →
+  exact (by unfold ExistsUnique; decide : ∀ a b : Fin 5, a ≠ b →
     ¬ (SimpleGraph.cycleGraph 5).Adj a b →
     ∃! i : Fin 5, ({a, b} : Finset (Fin 5)) = c5Type i) a b hab hn
 
