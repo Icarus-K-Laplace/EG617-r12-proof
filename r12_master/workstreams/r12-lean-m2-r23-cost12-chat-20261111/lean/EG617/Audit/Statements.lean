@@ -124,6 +124,10 @@ public import EG617
 #check EG617.core_R447_degree_ge_10
 #check EG617.two_cycle_neighbors_cross_card_le_nine
 #check EG617.r23_exists_balanced_exterior
+#check EG617.c5_remaining_fiber_sum
+#print EG617.R23CaseIProfile
+#check EG617.r23_122_case_I
+#check EG617.r23_122_complete_type_data
 #check EG617.r23_122_type_presentation
 #check EG617.deficit_sum_add
 #check EG617.deficit_zero_iff

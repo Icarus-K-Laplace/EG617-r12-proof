@@ -26,5 +26,8 @@ C5 type compatibility and missing-endpoint orientations were verified at
 NOT proved: the final 122-edge class sizes, the 121-edge singleton graph
 completion, the compatible/incompatible missing-edge whole-graph cases,
 Cost-6 for arbitrary independent sets, sharp R335/R336, GATE47, MainTheorem.
-C5TypeFibers.lean is a local candidate for class sizes, not yet CI-verified.
+C5TypeFibers.lean subsequently passed whole build and all155 axiom reports
+at f43c51a / CI 43617496782: cycle_type_fiber_card,
+singleton_side_type_fiber_profile and complete_exterior_type_fiber_profile.
+The original-hypothesis Case I theorem in R23CaseI.lean is now a CI candidate.
 No progress percentage or theorem count is used as evidence of those targets.

@@ -8,7 +8,7 @@ grep -F 'version 4.35.0' logs/linux-lean-version.txt
 grep -F 'eb6cafb7290e8bd5f2937522d8d804f58f02bafc' logs/linux-lean-version.txt
 lake --version | tee logs/linux-lake-version.txt
 sha256sum lean-toolchain lakefile.lean lake-manifest.json > logs/config-before.sha256
-lake exe cache get Mathlib.Data.Fintype.Powerset Mathlib.Combinatorics.SimpleGraph.Connectivity.Subgraph Mathlib.Combinatorics.SimpleGraph.Coloring.Constructions Mathlib.Combinatorics.SimpleGraph.Walk.Chord Mathlib.Combinatorics.SimpleGraph.FiveWheelLike Mathlib.Combinatorics.SimpleGraph.DegreeSum Mathlib.Combinatorics.SimpleGraph.Extremal.Turan Mathlib.Tactic.IntervalCases Mathlib.Tactic.NormNum Mathlib.Algebra.Order.BigOperators.Group.Finset 2>&1 | tee logs/linux-cache.txt
+lake exe cache get Mathlib.Algebra.BigOperators.Fin Mathlib.Tactic.FinCases Mathlib.Data.Fintype.Powerset Mathlib.Combinatorics.SimpleGraph.Connectivity.Subgraph Mathlib.Combinatorics.SimpleGraph.Coloring.Constructions Mathlib.Combinatorics.SimpleGraph.Walk.Chord Mathlib.Combinatorics.SimpleGraph.FiveWheelLike Mathlib.Combinatorics.SimpleGraph.DegreeSum Mathlib.Combinatorics.SimpleGraph.Extremal.Turan Mathlib.Tactic.IntervalCases Mathlib.Tactic.NormNum Mathlib.Algebra.Order.BigOperators.Group.Finset 2>&1 | tee logs/linux-cache.txt
 sha256sum -c logs/config-before.sha256
 node - <<'NODE'
 const fs=require('fs'),cp=require('child_process');
@@ -21,7 +21,7 @@ for(const p of m.packages){
 }
 NODE
 lake clean eg617r12
-lake build +EG617.Audit.C5TypeFibers 2>&1 | tee logs/r23-type-lift-focused.txt
+lake build +EG617.Audit.R23CaseI 2>&1 | tee logs/r23-type-lift-focused.txt
 result=0
 for mod in EG617.Combinatorics.TuranArithmetic EG617.Frontend.EdgeCounting EG617.Frontend.TuranBounds EG617.Frontend.HereditaryCaps EG617.Core.Admissibility EG617.Core.R224 EG617.Core.OddCycleArithmetic EG617.Core.OddCycleStructure EG617.Core.EdgePartition EG617.Core.OddCycleBound EG617.Core.R23Reduction EG617.Core.BipartiteExterior; do
   if lake build "+$mod" 2>&1 | tee "logs/linux-$mod.txt"; then

@@ -12,13 +12,16 @@ variable {V : Type u} [Fintype V]
 /-- The 122-edge branch is an actual C5 type presentation, with both directions
 of adjacency derived from the original graph assumptions. Class sizes remain
 a separate classification obligation. -/
-theorem r23_122_type_presentation (G : SimpleGraph V)
+theorem r23_122_complete_type_data (G : SimpleGraph V)
     (hV : Fintype.card V = 23) (ht : G.CliqueFree 3)
     (hI : CoreIndependenceBound 11 G) (he : G.edgeFinset.card = 122) :
     ∃ (S : Finset V) (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G)
-      (t : V → Fin 5), Finset.univ.image f = S ∧ ExactC5NeighborLedger G S ∧
+      (t : V → Fin 5) (P Q : Finset V),
+      Finset.univ.image f = S ∧ ExactC5NeighborLedger G S ∧
       (∀ x, cycleNeighborLabels f x = c5Type (t x)) ∧
-      ∀ x y, G.Adj x y ↔ (SimpleGraph.cycleGraph 5).Adj (t x) (t y) := by
+      (∀ x y, G.Adj x y ↔ (SimpleGraph.cycleGraph 5).Adj (t x) (t y)) ∧
+      P ∪ Q = Sᶜ ∧ P.card = 9 ∧ Q.card = 9 ∧
+      (∀ x ∈ P, ∀ y ∈ Q, G.Adj x y) := by
   classical
   obtain ⟨S, f, hf, hl, A, hA, hB, h9, h9', hcases⟩ :=
     r23_exists_balanced_exterior G hV ht hI (by omega)
@@ -69,6 +72,24 @@ theorem r23_122_type_presentation (G : SimpleGraph V)
     exact hfull a ha b (by simpa only [Finset.mem_compl] using hb)
   obtain ⟨t, htlabels, hpres⟩ := complete_exterior_has_type_presentation
     f ht S P Q hf hcover hP hQ hdist.2 hcross
+  have hPcard : P.card = 9 := by
+    rw [Finset.card_image_of_injective _ Subtype.val_injective]
+    exact h9
+  have hQcard : Q.card = 9 := by
+    rw [Finset.card_image_of_injective _ Subtype.val_injective]
+    simpa only [Finset.card_compl, Set.fintypeCard_eq_ncard] using h9'
+  exact ⟨S, f, t, P, Q, hf, hl, htlabels, hpres, hcover, hPcard, hQcard, hcross⟩
+
+/-- Stable presentation statement, obtained by forgetting the exterior data. -/
+theorem r23_122_type_presentation (G : SimpleGraph V)
+    (hV : Fintype.card V = 23) (ht : G.CliqueFree 3)
+    (hI : CoreIndependenceBound 11 G) (he : G.edgeFinset.card = 122) :
+    ∃ (S : Finset V) (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G)
+      (t : V → Fin 5), Finset.univ.image f = S ∧ ExactC5NeighborLedger G S ∧
+      (∀ x, cycleNeighborLabels f x = c5Type (t x)) ∧
+      ∀ x y, G.Adj x y ↔ (SimpleGraph.cycleGraph 5).Adj (t x) (t y) := by
+  obtain ⟨S, f, t, _, _, hf, hl, htlabels, hpres, _⟩ :=
+    r23_122_complete_type_data G hV ht hI he
   exact ⟨S, f, t, hf, hl, htlabels, hpres⟩
 
 end EG617
