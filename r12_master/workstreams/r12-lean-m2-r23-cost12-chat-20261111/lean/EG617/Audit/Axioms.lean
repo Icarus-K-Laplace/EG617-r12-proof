@@ -116,6 +116,8 @@ public import EG617
 #print axioms EG617.core_R337_empty
 #print axioms EG617.core_R4_card_le_degree_add_37
 #print axioms EG617.core_R447_degree_ge_10
+#print axioms EG617.two_cycle_neighbors_cross_card_le_nine
+#print axioms EG617.r23_exists_balanced_exterior
 #print axioms EG617.deficit_sum_add
 #print axioms EG617.deficit_zero_iff
 #print axioms EG617.deficit_one_distribution

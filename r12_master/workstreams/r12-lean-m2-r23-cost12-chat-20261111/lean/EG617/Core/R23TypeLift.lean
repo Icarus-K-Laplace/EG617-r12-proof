@@ -26,7 +26,9 @@ theorem five_cycle_copy_same_support {v : V} (p : G.Walk v v)
   have hq : q.IsCycle := SimpleGraph.Walk.IsCycle.of_map (hmap.symm ▸ hc)
   have hql : q.length = 5 := by
     have h := congrArg SimpleGraph.Walk.length hmap
-    simpa only [SimpleGraph.Walk.length_map, h5] using h
+    have hlen : q.length = p.length := by
+      simpa only [SimpleGraph.Walk.length_map] using h
+    exact hlen.trans h5
   obtain ⟨g⟩ := (SimpleGraph.cycleGraph_isContained_iff (by decide : 2 < 5)).mpr
     ⟨_, q, hq, hql⟩
   let f := (SimpleGraph.Embedding.induce (S : Set V)).toCopy.comp g
@@ -34,7 +36,7 @@ theorem five_cycle_copy_same_support {v : V} (p : G.Walk v v)
   · intro x hx
     obtain ⟨i, _, rfl⟩ := Finset.mem_image.mp hx
     exact (g i).property
-  · rw [Finset.card_image_of_injective _ f.injective]
+  · rw [Finset.card_image_of_injective _ (show Function.Injective f from f.injective)]
     simp only [Finset.card_univ, Fintype.card_fin]
     exact le_of_eq ((cycle_support_card p hc).trans h5)
 
@@ -54,7 +56,7 @@ theorem cycleNeighborLabels_card_eq
     · rintro ⟨hy, hxy⟩
       obtain ⟨i, _, rfl⟩ := Finset.mem_image.mp (hS.symm ▸ hy)
       exact ⟨i, hxy, rfl⟩
-  rw [← himage, Finset.card_image_of_injective _ f.injective]
+  rw [← himage, Finset.card_image_of_injective _ (show Function.Injective f from f.injective)]
 
 /-- The ledger and every two-neighbor type are realized on one common C5 copy.
 All hypotheses are the original dense R23 contract. -/
