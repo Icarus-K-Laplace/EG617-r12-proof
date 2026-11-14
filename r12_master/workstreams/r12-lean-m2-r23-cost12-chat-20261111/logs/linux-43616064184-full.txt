@@ -1,0 +1,455 @@
+﻿2026-11-14T16:31:30.7275266Z Current runner version: '2.338.2'
+2026-11-14T16:31:30.7291531Z ##[group]Runner Image Provisioner
+2026-11-14T16:31:30.7292117Z Hosted Compute Agent
+2026-11-14T16:31:30.7292492Z Version: 20261103.629
+2026-11-14T16:31:30.7293026Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+2026-11-14T16:31:30.7293544Z Build Date: 2026-11-03T17:26:59Z
+2026-11-14T16:31:30.7294004Z Worker ID: {f4713409-7313-4e90-8101-a63f17b2593b}
+2026-11-14T16:31:30.7294445Z Region: centralus
+2026-11-14T16:31:30.7294803Z Cloud: Azure
+2026-11-14T16:31:30.7295138Z ##[endgroup]
+2026-11-14T16:31:30.7296003Z ##[group]Operating System
+2026-11-14T16:31:30.7296375Z Ubuntu
+2026-11-14T16:31:30.7296689Z 24.04.5
+2026-11-14T16:31:30.7297055Z LTS
+2026-11-14T16:31:30.7297373Z ##[endgroup]
+2026-11-14T16:31:30.7297762Z ##[group]Runner Image
+2026-11-14T16:31:30.7298172Z Image: ubuntu-24.04
+2026-11-14T16:31:30.7298511Z Version: 20261111.370.1
+2026-11-14T16:31:30.7299307Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261111.370/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-14T16:31:30.7300293Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261111.370
+2026-11-14T16:31:30.7300976Z ##[endgroup]
+2026-11-14T16:31:30.7301716Z ##[group]GITHUB_TOKEN Permissions
+2026-11-14T16:31:30.7303113Z Contents: read
+2026-11-14T16:31:30.7303478Z Metadata: read
+2026-11-14T16:31:30.7304190Z ##[endgroup]
+2026-11-14T16:31:30.7305520Z Secret source: Actions
+2026-11-14T16:31:30.7306140Z Cache mode: write
+2026-11-14T16:31:30.7306587Z Prepare workflow directory
+2026-11-14T16:31:30.7567755Z Prepare all required actions
+2026-11-14T16:31:30.7598734Z Getting action download info
+2026-11-14T16:31:30.9783781Z Download action repository 'actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2026-11-14T16:31:31.1547701Z Complete job name: m1-kernel
+2026-11-14T16:31:31.2135909Z ##[group]Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+2026-11-14T16:31:31.2136434Z with:
+2026-11-14T16:31:31.2136725Z   persist-credentials: false
+2026-11-14T16:31:31.2137048Z   repository: Icarus-K-Laplace/EG617-r12-proof
+2026-11-14T16:31:31.2139292Z   token: ***
+2026-11-14T16:31:31.2139535Z   ssh-strict: true
+2026-11-14T16:31:31.2139795Z   ssh-user: git
+2026-11-14T16:31:31.2140036Z   clean: true
+2026-11-14T16:31:31.2140293Z   sparse-checkout-cone-mode: true
+2026-11-14T16:31:31.2140585Z   fetch-depth: 1
+2026-11-14T16:31:31.2140833Z   fetch-tags: false
+2026-11-14T16:31:31.2141082Z   show-progress: true
+2026-11-14T16:31:31.2141338Z   lfs: false
+2026-11-14T16:31:31.2141571Z   submodules: false
+2026-11-14T16:31:31.2141826Z   set-safe-directory: true
+2026-11-14T16:31:31.2142170Z env:
+2026-11-14T16:31:31.2142402Z   LEAN_NUM_THREADS: 2
+2026-11-14T16:31:31.2142665Z ##[endgroup]
+2026-11-14T16:31:31.4458136Z Syncing repository: Icarus-K-Laplace/EG617-r12-proof
+2026-11-14T16:31:31.4460262Z ##[group]Getting Git version info
+2026-11-14T16:31:31.4460943Z Working directory is '/home/runner/work/EG617-r12-proof/EG617-r12-proof'
+2026-11-14T16:31:31.4461900Z [command]/usr/bin/git version
+2026-11-14T16:31:31.4550633Z git version 2.56.1
+2026-11-14T16:31:31.4563927Z ##[endgroup]
+2026-11-14T16:31:31.4574636Z Temporarily overriding HOME='/home/runner/work/_temp/27903e9d-41a9-4adb-accb-7f4ac828734a' before making global git config changes
+2026-11-14T16:31:31.4575907Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-14T16:31:31.4579273Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/EG617-r12-proof/EG617-r12-proof
+2026-11-14T16:31:31.4624833Z Deleting the contents of '/home/runner/work/EG617-r12-proof/EG617-r12-proof'
+2026-11-14T16:31:31.4627589Z ##[group]Initializing the repository
+2026-11-14T16:31:31.4630795Z [command]/usr/bin/git init /home/runner/work/EG617-r12-proof/EG617-r12-proof
+2026-11-14T16:31:31.4719535Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-14T16:31:31.4720542Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-14T16:31:31.4721781Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-14T16:31:31.4722551Z hint: call:
+2026-11-14T16:31:31.4723134Z hint:
+2026-11-14T16:31:31.4723713Z hint: 	git config --global init.defaultBranch <name>
+2026-11-14T16:31:31.4724381Z hint:
+2026-11-14T16:31:31.4725026Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-14T16:31:31.4725967Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-14T16:31:31.4726730Z hint:
+2026-11-14T16:31:31.4727253Z hint: 	git branch -m <name>
+2026-11-14T16:31:31.4727803Z hint:
+2026-11-14T16:31:31.4728489Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-14T16:31:31.4729565Z Initialized empty Git repository in /home/runner/work/EG617-r12-proof/EG617-r12-proof/.git/
+2026-11-14T16:31:31.4744354Z [command]/usr/bin/git remote add origin https://github.com/Icarus-K-Laplace/EG617-r12-proof
+2026-11-14T16:31:31.4786564Z ##[endgroup]
+2026-11-14T16:31:31.4787224Z ##[group]Disabling automatic garbage collection
+2026-11-14T16:31:31.4789544Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-14T16:31:31.4824121Z ##[endgroup]
+2026-11-14T16:31:31.4824618Z ##[group]Setting up auth
+2026-11-14T16:31:31.4825043Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-14T16:31:31.4858067Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-14T16:31:31.5202350Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-14T16:31:31.5239841Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-14T16:31:31.5432303Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-14T16:31:31.5475770Z ##[endgroup]
+2026-11-14T16:31:31.5476334Z ##[group]Fetching the repository
+2026-11-14T16:31:31.5484700Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ecbc2d5d5bc4373c9d5f8b5d0b4ee4fec97a7ac1:refs/remotes/origin/workstream/r12-lean-m2-r23-cost12-chat-20261111
+2026-11-14T16:31:32.0589032Z From https://github.com/Icarus-K-Laplace/EG617-r12-proof
+2026-11-14T16:31:32.0590232Z  * [new ref]         ecbc2d5d5bc4373c9d5f8b5d0b4ee4fec97a7ac1 -> origin/workstream/r12-lean-m2-r23-cost12-chat-20261111
+2026-11-14T16:31:32.0593642Z ##[endgroup]
+2026-11-14T16:31:32.0594334Z ##[group]Determining the checkout info
+2026-11-14T16:31:32.0595954Z ##[endgroup]
+2026-11-14T16:31:32.0601527Z [command]/usr/bin/git sparse-checkout disable
+2026-11-14T16:31:32.0661965Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-14T16:31:32.0694980Z ##[group]Checking out the ref
+2026-11-14T16:31:32.0698504Z [command]/usr/bin/git checkout --progress --force -B workstream/r12-lean-m2-r23-cost12-chat-20261111 refs/remotes/origin/workstream/r12-lean-m2-r23-cost12-chat-20261111
+2026-11-14T16:31:32.1022566Z Switched to a new branch 'workstream/r12-lean-m2-r23-cost12-chat-20261111'
+2026-11-14T16:31:32.1027805Z branch 'workstream/r12-lean-m2-r23-cost12-chat-20261111' set up to track 'origin/workstream/r12-lean-m2-r23-cost12-chat-20261111'.
+2026-11-14T16:31:32.1032505Z ##[endgroup]
+2026-11-14T16:31:32.1079507Z [command]/usr/bin/git log -1 --format=%H
+2026-11-14T16:31:32.1109653Z ecbc2d5d5bc4373c9d5f8b5d0b4ee4fec97a7ac1
+2026-11-14T16:31:32.1117119Z ##[group]Removing auth
+2026-11-14T16:31:32.1119297Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-14T16:31:32.1151981Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-14T16:31:32.1340585Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-14T16:31:32.1371115Z http.https://github.com/.extraheader
+2026-11-14T16:31:32.1376680Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-14T16:31:32.1412298Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-14T16:31:32.1593374Z ##[endgroup]
+2026-11-14T16:31:32.1757832Z ##[group]Run set -euo pipefail
+2026-11-14T16:31:32.1758249Z [36;1mset -euo pipefail[0m
+2026-11-14T16:31:32.1758934Z [36;1mcurl -fL --retry 3 https://github.com/leanprover/lean4/releases/download/v4.35.0/lean-4.35.0-linux.tar.zst -o "$RUNNER_TEMP/lean.tar.zst"[0m
+2026-11-14T16:31:32.1759921Z [36;1mecho "7289597a44543246c9227b8cae501767e095ce17f6d448b95fc4a8dc97268f6d  $RUNNER_TEMP/lean.tar.zst" | sha256sum -c -[0m
+2026-11-14T16:31:32.1760653Z [36;1mtar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"[0m
+2026-11-14T16:31:32.1761153Z [36;1mecho "$RUNNER_TEMP/lean-4.35.0-linux/bin" >> "$GITHUB_PATH"[0m
+2026-11-14T16:31:32.1780506Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-14T16:31:32.1780913Z env:
+2026-11-14T16:31:32.1781181Z   LEAN_NUM_THREADS: 2
+2026-11-14T16:31:32.1781452Z ##[endgroup]
+2026-11-14T16:31:32.1893922Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2026-11-14T16:31:32.1894937Z                                  Dload  Upload   Total   Spent    Left  Speed
+2026-11-14T16:31:32.1895354Z 
+2026-11-14T16:31:32.2688526Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2026-11-14T16:31:32.2689281Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2026-11-14T16:31:32.6309900Z 
+2026-11-14T16:31:33.6363284Z   8  566M    8 49.1M    0     0   111M      0  0:00:05 --:--:--  0:00:05  111M
+2026-11-14T16:31:34.4371702Z  59  566M   59  340M    0     0   234M      0  0:00:02  0:00:01  0:00:01  289M
+2026-11-14T16:31:34.4372109Z 100  566M  100  566M    0     0   252M      0  0:00:02  0:00:02 --:--:--  286M
+2026-11-14T16:31:34.7635315Z /home/runner/work/_temp/lean.tar.zst: OK
+2026-11-14T16:31:43.2840593Z ##[group]Run set -euo pipefail
+2026-11-14T16:31:43.2840833Z [36;1mset -euo pipefail[0m
+2026-11-14T16:31:43.2841027Z [36;1mprobe="$RUNNER_TEMP/eg617-standalone-ascii"[0m
+2026-11-14T16:31:43.2841237Z [36;1mmkdir -p "$probe"[0m
+2026-11-14T16:31:43.2841607Z [36;1mgit -C "$GITHUB_WORKSPACE" archive HEAD r12_master/workstreams/r12-lean-m2-r23-cost12-chat-20261111 | tar -xf - -C "$probe" --strip-components=3[0m
+2026-11-14T16:31:43.2841997Z [36;1mtest ! -e "$probe/.git"[0m
+2026-11-14T16:31:43.2842179Z [36;1mtest ! -e "$probe/lean/.lake"[0m
+2026-11-14T16:31:43.2842353Z [36;1mcd "$probe"[0m
+2026-11-14T16:31:43.2842590Z [36;1mecho "STANDALONE_ASCII_BUILD_ROOT=$PWD; NO_GIT_OR_PROJECT_CACHE"[0m
+2026-11-14T16:31:43.2842967Z [36;1mbash build-linux.sh[0m
+2026-11-14T16:31:43.2862515Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-14T16:31:43.2862754Z env:
+2026-11-14T16:31:43.2862978Z   LEAN_NUM_THREADS: 2
+2026-11-14T16:31:43.2863133Z ##[endgroup]
+2026-11-14T16:31:43.4524110Z STANDALONE_ASCII_BUILD_ROOT=/home/runner/work/_temp/eg617-standalone-ascii; NO_GIT_OR_PROJECT_CACHE
+2026-11-14T16:31:43.4833679Z Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+2026-11-14T16:31:43.4876334Z Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+2026-11-14T16:31:43.4886082Z Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+2026-11-14T16:31:43.5186736Z Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)
+2026-11-14T16:31:43.8195270Z info: mathlib: materializing new dependency
+2026-11-14T16:31:44.2321641Z info: mathlib: fetching revision '56a005855ea17e0b0958f73ec801ae140b0a1679' from https://github.com/leanprover-community/mathlib4.git
+2026-11-14T16:31:46.1248377Z info: mathlib: checking out revision '56a005855ea17e0b0958f73ec801ae140b0a1679'
+2026-11-14T16:31:57.3689314Z info: plausible: materializing new dependency
+2026-11-14T16:31:57.6407869Z info: plausible: fetching revision 'dfa4f38190d07c37e315953e08b90fe2d95b3c24' from https://github.com/leanprover-community/plausible
+2026-11-14T16:31:58.4652662Z info: plausible: checking out revision 'dfa4f38190d07c37e315953e08b90fe2d95b3c24'
+2026-11-14T16:31:59.6682230Z info: LeanSearchClient: materializing new dependency
+2026-11-14T16:31:59.8698816Z info: LeanSearchClient: fetching revision 'd6b4c7be5be75ec4917c873ac50c756dc1436372' from https://github.com/leanprover-community/LeanSearchClient
+2026-11-14T16:32:00.4882405Z info: LeanSearchClient: checking out revision 'd6b4c7be5be75ec4917c873ac50c756dc1436372'
+2026-11-14T16:32:01.3086694Z info: importGraph: materializing new dependency
+2026-11-14T16:32:01.3924008Z info: importGraph: fetching revision 'a41f0e9a4dea23188ea9cc1c41ac9f8bbafe0b93' from https://github.com/leanprover-community/import-graph
+2026-11-14T16:32:01.8566105Z info: importGraph: checking out revision 'a41f0e9a4dea23188ea9cc1c41ac9f8bbafe0b93'
+2026-11-14T16:32:02.7910833Z info: proofwidgets: materializing new dependency
+2026-11-14T16:32:02.8959514Z info: proofwidgets: fetching revision 'df72b022e558978a1c50264cfc4d7fec86fa8e04' from https://github.com/leanprover-community/ProofWidgets4
+2026-11-14T16:32:03.3323577Z info: proofwidgets: checking out revision 'df72b022e558978a1c50264cfc4d7fec86fa8e04'
+2026-11-14T16:32:04.6851103Z info: aesop: materializing new dependency
+2026-11-14T16:32:04.7864100Z info: aesop: fetching revision '4a174c490d8707121c4a9290800489f105d85e07' from https://github.com/leanprover-community/aesop
+2026-11-14T16:32:05.2712009Z info: aesop: checking out revision '4a174c490d8707121c4a9290800489f105d85e07'
+2026-11-14T16:32:06.2230027Z info: Qq: materializing new dependency
+2026-11-14T16:32:06.3063688Z info: Qq: fetching revision 'dce0ad79c486cb1fb504af04f953c3466b0c6db8' from https://github.com/leanprover-community/quote4
+2026-11-14T16:32:06.7491415Z info: Qq: checking out revision 'dce0ad79c486cb1fb504af04f953c3466b0c6db8'
+2026-11-14T16:32:07.6159190Z info: batteries: materializing new dependency
+2026-11-14T16:32:07.7013913Z info: batteries: fetching revision '66e469188fe07963e5cf666c7d4433f45b8131c5' from https://github.com/leanprover-community/batteries
+2026-11-14T16:32:08.4894022Z info: batteries: checking out revision '66e469188fe07963e5cf666c7d4433f45b8131c5'
+2026-11-14T16:32:09.5897321Z info: Cli: materializing new dependency
+2026-11-14T16:32:09.6734935Z info: Cli: fetching revision 'c24fe6078c630e89b489bffe59b3e20ac30d12c8' from https://github.com/leanprover/lean4-cli
+2026-11-14T16:32:10.0649180Z info: Cli: checking out revision 'c24fe6078c630e89b489bffe59b3e20ac30d12c8'
+2026-11-14T16:32:11.4369631Z ✔ [2/6] Built Cache.Cli (243ms)
+2026-11-14T16:32:11.7373546Z ✔ [5/13] Built Cache.Lean (288ms)
+2026-11-14T16:32:12.0404365Z ✔ [6/13] Built Cache.Env (269ms)
+2026-11-14T16:32:12.1382035Z ✔ [7/13] Built Batteries.Tactic.OpenPrivate (605ms)
+2026-11-14T16:32:12.3382236Z ✔ [8/13] Built Cache.Infra (294ms)
+2026-11-14T16:32:12.6547097Z ✔ [10/43] Built Cache.Location (390ms)
+2026-11-14T16:32:12.8415263Z ✔ [11/43] Built Cache.Cli:c.o (170ms)
+2026-11-14T16:32:12.9507358Z ✔ [12/43] Built Cache.Lean:c.o (145ms)
+2026-11-14T16:32:13.0502190Z ✔ [13/43] Built Cache.IO (923ms)
+2026-11-14T16:32:13.1496805Z ✔ [14/43] Built Cache.Env:c.o (132ms)
+2026-11-14T16:32:13.3501691Z ✔ [15/43] Built Cache.Infra:c.o (140ms)
+2026-11-14T16:32:13.4560176Z ✔ [16/43] Built Cache.Location:c.o (175ms)
+2026-11-14T16:32:13.6564876Z ✔ [17/43] Built Batteries.Tactic.OpenPrivate:c.o (654ms)
+2026-11-14T16:32:14.0561681Z ✔ [18/43] Built Cache.Hashing (443ms)
+2026-11-14T16:32:14.4567511Z ✔ [19/43] Built Cache.IO:c.o (997ms)
+2026-11-14T16:32:14.4568330Z ✔ [20/43] Built Cache.Hashing:c.o (369ms)
+2026-11-14T16:32:15.3704293Z ✔ [21/43] Built Cache.Requests (956ms)
+2026-11-14T16:32:15.7850878Z ✔ [22/43] Built Cache.Marker (330ms)
+2026-11-14T16:32:15.8703652Z ✔ [23/43] Built Cache.Marker:c.o (148ms)
+2026-11-14T16:32:16.1708006Z ✔ [24/43] Built Cache.Upload.Curl (319ms)
+2026-11-14T16:32:16.5734407Z ✔ [25/43] Built Cache.Upload.Rclone (372ms)
+2026-11-14T16:32:16.9719721Z ✔ [26/43] Built Cache.Query (377ms)
+2026-11-14T16:32:17.0721496Z ✔ [27/43] Built Cache.Requests:c.o (1.6s)
+2026-11-14T16:32:17.0721933Z ✔ [28/43] Built Cache.Upload.Curl:c.o (148ms)
+2026-11-14T16:32:17.2724602Z ✔ [29/43] Built Cache.Upload.Rclone:c.o (178ms)
+2026-11-14T16:32:17.2725347Z ✔ [30/43] Built Cache.Query:c.o (195ms)
+2026-11-14T16:32:17.5727981Z ✔ [31/43] Built Cache.Upload.Azure (303ms)
+2026-11-14T16:32:17.6729923Z ✔ [32/43] Built Cache.Upload.S3 (398ms)
+2026-11-14T16:32:17.8857528Z ✔ [33/43] Built Cache.Warning (384ms)
+2026-11-14T16:32:17.8857943Z ✔ [34/43] Built Cache.Upload.Azure:c.o (149ms)
+2026-11-14T16:32:18.0019187Z ✔ [35/43] Built Cache.Upload.S3:c.o (216ms)
+2026-11-14T16:32:18.1021550Z ✔ [36/43] Built Cache.Warning:c.o (231ms)
+2026-11-14T16:32:18.3214388Z ✔ [37/43] Built Cache.Upload.Defs (303ms)
+2026-11-14T16:32:18.5198626Z ✔ [38/43] Built Cache.Upload.Defs:c.o (141ms)
+2026-11-14T16:32:18.6244303Z ✔ [39/43] Built Cache.Upload (301ms)
+2026-11-14T16:32:18.7237999Z ✔ [40/43] Built Cache.Upload:c.o (108ms)
+2026-11-14T16:32:19.2243106Z ✔ [41/43] Built Cache.Main (588ms)
+2026-11-14T16:32:19.8248990Z ✔ [42/43] Built Cache.Main:c.o (582ms)
+2026-11-14T16:32:20.3278629Z ✔ [43/43] Built cache:exe (552ms)
+2026-11-14T16:32:22.1070985Z Current branch: HEAD
+2026-11-14T16:32:22.1071362Z Using cache from origin: (some leanprover-community/mathlib4)
+2026-11-14T16:32:22.1071959Z Attempting to download 1295 file(s) from leanprover-community/mathlib4 cache at https://cache.mathlib.org/mathlib4-master
+2026-11-14T16:32:22.2230754Z 
+2026-11-14T16:32:22.3288737Z Downloaded: 1 file(s) [attempted 1/1295 = 0%, 207 KB/s]
+2026-11-14T16:32:22.4294541Z Downloaded: 148 file(s) [attempted 148/1295 = 11%, 1264 KB/s]
+2026-11-14T16:32:22.5307249Z Downloaded: 309 file(s) [attempted 309/1295 = 23%, 736 KB/s]
+2026-11-14T16:32:22.6323949Z Downloaded: 462 file(s) [attempted 462/1295 = 35%, 5646 KB/s]
+2026-11-14T16:32:22.7324396Z Downloaded: 624 file(s) [attempted 624/1295 = 48%, 2442 KB/s]
+2026-11-14T16:32:22.8464065Z Downloaded: 785 file(s) [attempted 785/1295 = 60%, 463 KB/s]
+2026-11-14T16:32:22.9496516Z Downloaded: 897 file(s) [attempted 897/1295 = 69%, 2316 KB/s]
+2026-11-14T16:32:23.0512665Z Downloaded: 997 file(s) [attempted 997/1295 = 76%, 14221 KB/s]
+2026-11-14T16:32:23.1484712Z Downloaded: 1138 file(s) [attempted 1138/1295 = 87%, 450 KB/s]
+2026-11-14T16:32:23.1580358Z Downloaded: 1292 file(s) [attempted 1292/1295 = 99%, 1612 KB/s]
+2026-11-14T16:32:23.1580786Z Downloaded: 1295 file(s) [attempted 1295/1295 = 100%, 1612 KB/s]
+2026-11-14T16:32:23.1593175Z Still decompressing downloaded files...
+2026-11-14T16:32:25.9020712Z Decompressed 1295 file(s)
+2026-11-14T16:32:25.9020947Z Already decompressed 1295 file(s)
+2026-11-14T16:32:26.0246069Z lean-toolchain: OK
+2026-11-14T16:32:26.0246355Z lakefile.lean: OK
+2026-11-14T16:32:26.0246551Z lake-manifest.json: OK
+2026-11-14T16:32:26.2355883Z PIN_PASS plausible dfa4f38190d07c37e315953e08b90fe2d95b3c24
+2026-11-14T16:32:26.2376710Z PIN_PASS LeanSearchClient d6b4c7be5be75ec4917c873ac50c756dc1436372
+2026-11-14T16:32:26.2396191Z PIN_PASS importGraph a41f0e9a4dea23188ea9cc1c41ac9f8bbafe0b93
+2026-11-14T16:32:26.2415022Z PIN_PASS proofwidgets df72b022e558978a1c50264cfc4d7fec86fa8e04
+2026-11-14T16:32:26.2433381Z PIN_PASS aesop 4a174c490d8707121c4a9290800489f105d85e07
+2026-11-14T16:32:26.2451746Z PIN_PASS Qq dce0ad79c486cb1fb504af04f953c3466b0c6db8
+2026-11-14T16:32:26.2475523Z PIN_PASS batteries 66e469188fe07963e5cf666c7d4433f45b8131c5
+2026-11-14T16:32:26.2495391Z PIN_PASS Cli c24fe6078c630e89b489bffe59b3e20ac30d12c8
+2026-11-14T16:32:26.2516994Z PIN_PASS mathlib 56a005855ea17e0b0958f73ec801ae140b0a1679
+2026-11-14T16:32:31.7541697Z ✔ [1270/1280] Built EG617.Basic.Definitions (716ms)
+2026-11-14T16:32:32.4550781Z ✔ [1271/1280] Built EG617.Basic.OriginalProblem (671ms)
+2026-11-14T16:32:32.6580960Z ✔ [1272/1280] Built EG617.Combinatorics.TuranArithmetic (1.6s)
+2026-11-14T16:32:33.1590082Z ✔ [1273/1280] Built EG617.Basic.ColoringLemmas (703ms)
+2026-11-14T16:32:33.5594324Z ✔ [1275/1332] Built EG617.Core.OddCycleArithmetic (852ms)
+2026-11-14T16:32:33.7596712Z ✔ [1316/1332] Built EG617.Frontend.ColoringReduction (689ms)
+2026-11-14T16:32:34.5604857Z ✔ [1317/1332] Built EG617.Frontend.EdgeCounting (717ms)
+2026-11-14T16:32:35.2601760Z ✔ [1318/1332] Built EG617.Frontend.TuranBounds (777ms)
+2026-11-14T16:32:36.0615622Z ✔ [1319/1332] Built EG617.Frontend.HereditaryCaps (800ms)
+2026-11-14T16:32:36.9620176Z ✔ [1320/1332] Built EG617.Core.Admissibility (870ms)
+2026-11-14T16:32:37.8718644Z ⚠ [1321/1332] Built EG617.Core.R224 (887ms)
+2026-11-14T16:32:37.8719094Z warning: EG617/Core/R224.lean:75:2: Try this: 
+2026-11-14T16:32:37.8721926Z   haveI̵
+2026-11-14T16:32:37.8722085Z 
+2026-11-14T16:32:37.8722271Z The goal is a proposition, so `have` is preferred over `haveI`.
+2026-11-14T16:32:37.8722719Z The difference between `have` and `haveI` is that `haveI` inlines the value.
+2026-11-14T16:32:37.8723480Z But this is not relevant for proofs because of proof irrelevance.
+2026-11-14T16:32:37.8723729Z 
+2026-11-14T16:32:37.8723920Z Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+2026-11-14T16:32:38.8766508Z ⚠ [1322/1332] Built EG617.Core.EdgePartition (992ms)
+2026-11-14T16:32:38.8767157Z warning: EG617/Core/EdgePartition.lean:19:0: automatically included section variable(s) unused in theorem `EG617.adjCount_eq_sum_filter`:
+2026-11-14T16:32:38.8767710Z   [Fintype V]
+2026-11-14T16:32:38.8768166Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-14T16:32:38.8768630Z   omit [Fintype V] in theorem ...
+2026-11-14T16:32:38.8768830Z 
+2026-11-14T16:32:38.8769028Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-14T16:32:38.8769615Z warning: EG617/Core/EdgePartition.lean:47:0: automatically included section variable(s) unused in theorem `EG617.adjCount_symm`:
+2026-11-14T16:32:38.8770080Z   [Fintype V]
+2026-11-14T16:32:38.8770768Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-14T16:32:38.8771210Z   omit [Fintype V] in theorem ...
+2026-11-14T16:32:38.8771353Z 
+2026-11-14T16:32:38.8771537Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-14T16:32:38.8772145Z warning: EG617/Core/EdgePartition.lean:58:0: automatically included section variable(s) unused in theorem `EG617.adjCount_union_left`:
+2026-11-14T16:32:38.8772630Z   [Fintype V]
+2026-11-14T16:32:38.8773232Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-14T16:32:38.8773676Z   omit [Fintype V] in theorem ...
+2026-11-14T16:32:38.8773813Z 
+2026-11-14T16:32:38.8773997Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-14T16:32:38.8774594Z warning: EG617/Core/EdgePartition.lean:63:0: automatically included section variable(s) unused in theorem `EG617.adjCount_union_right`:
+2026-11-14T16:32:38.8775074Z   [Fintype V]
+2026-11-14T16:32:38.8775445Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-14T16:32:38.8775883Z   omit [Fintype V] in theorem ...
+2026-11-14T16:32:38.8776021Z 
+2026-11-14T16:32:38.8776207Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-14T16:32:38.8776821Z warning: EG617/Core/EdgePartition.lean:107:0: automatically included section variable(s) unused in theorem `EG617.adjCount_independent_zero`:
+2026-11-14T16:32:38.8777313Z   [Fintype V]
+2026-11-14T16:32:38.8777683Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-14T16:32:38.8778294Z   omit [Fintype V] in theorem ...
+2026-11-14T16:32:38.8778434Z 
+2026-11-14T16:32:38.8778613Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-14T16:32:38.9768125Z ✔ [1323/1332] Built EG617.Core.OddCycleStructure (1.1s)
+2026-11-14T16:32:39.8787655Z ⚠ [1324/1332] Built EG617.Core.OddCycleBound (924ms)
+2026-11-14T16:32:39.8788084Z warning: EG617/Core/OddCycleBound.lean:18:0: automatically included section variable(s) unused in theorem `EG617.cycle_support_card`:
+2026-11-14T16:32:39.8788441Z   [Fintype V]
+2026-11-14T16:32:39.8788695Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-14T16:32:39.8788988Z   omit [Fintype V] in theorem ...
+2026-11-14T16:32:39.8789084Z 
+2026-11-14T16:32:39.8789215Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-14T16:32:39.8789709Z warning: EG617/Core/OddCycleBound.lean:64:0: automatically included section variable(s) unused in theorem `EG617.twice_subset_independent_card_le_of_induced_degree_two`:
+2026-11-14T16:32:39.8790071Z   [Fintype V]
+2026-11-14T16:32:39.8790330Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-14T16:32:39.8790611Z   omit [Fintype V] in theorem ...
+2026-11-14T16:32:39.8790705Z 
+2026-11-14T16:32:39.8790829Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-14T16:32:39.8791228Z warning: EG617/Core/OddCycleBound.lean:100:0: automatically included section variable(s) unused in theorem `EG617.triangleFree_induced_mantel`:
+2026-11-14T16:32:39.8791546Z   [Fintype V]
+2026-11-14T16:32:39.8791788Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-14T16:32:39.8792067Z   omit [Fintype V] in theorem ...
+2026-11-14T16:32:39.8792163Z 
+2026-11-14T16:32:39.8792285Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-14T16:32:39.8792566Z warning: EG617/Core/OddCycleBound.lean:124:4: `simp` already closes the goal
+2026-11-14T16:32:39.8792732Z 
+2026-11-14T16:32:39.8792790Z Hint: Use `simp` instead of `simpa`:
+2026-11-14T16:32:39.8793349Z   [apply] simp
+2026-11-14T16:32:39.8793421Z 
+2026-11-14T16:32:39.8793544Z Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+2026-11-14T16:32:39.8793948Z warning: EG617/Core/OddCycleBound.lean:139:0: automatically included section variable(s) unused in theorem `EG617.shortestOddLoop_half_length_ge_two`:
+2026-11-14T16:32:39.8794276Z   [Fintype V]
+2026-11-14T16:32:39.8794517Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-14T16:32:39.8794795Z   omit [Fintype V] in theorem ...
+2026-11-14T16:32:39.8794886Z 
+2026-11-14T16:32:39.8795005Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-14T16:32:39.8795422Z warning: EG617/Core/OddCycleBound.lean:177:0: automatically included section variable(s) unused in theorem `EG617.shortestOddCycle_iff_shortestOddLoop`:
+2026-11-14T16:32:39.8795759Z   [Fintype V]
+2026-11-14T16:32:39.8796001Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-14T16:32:39.8796280Z   omit [Fintype V] in theorem ...
+2026-11-14T16:32:39.8796370Z 
+2026-11-14T16:32:39.8796493Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-14T16:32:40.6856771Z ⚠ [1325/1332] Built EG617.Core.R23Reduction (827ms)
+2026-11-14T16:32:40.6857240Z warning: EG617/Core/R23Reduction.lean:78:4: `simp` already closes the goal
+2026-11-14T16:32:40.6857529Z 
+2026-11-14T16:32:40.6857629Z Hint: Use `simp` instead of `simpa`:
+2026-11-14T16:32:40.6857869Z   [apply] simp
+2026-11-14T16:32:40.6857975Z 
+2026-11-14T16:32:40.6858451Z Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+2026-11-14T16:32:41.9849527Z ⚠ [1326/1332] Built EG617.Core.BipartiteExterior (1.3s)
+2026-11-14T16:32:41.9849993Z warning: EG617/Core/BipartiteExterior.lean:40:0: automatically included section variable(s) unused in theorem `EG617.adjCount_eq_card_product_filter`:
+2026-11-14T16:32:41.9850378Z   [Fintype V]
+2026-11-14T16:32:41.9850642Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-14T16:32:41.9850945Z   omit [Fintype V] in theorem ...
+2026-11-14T16:32:41.9851046Z 
+2026-11-14T16:32:41.9851176Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-14T16:32:41.9851476Z warning: EG617/Core/BipartiteExterior.lean:64:2: `simp` already closes the goal
+2026-11-14T16:32:41.9851650Z 
+2026-11-14T16:32:41.9851711Z Hint: Use `simp` instead of `simpa`:
+2026-11-14T16:32:41.9851862Z   [apply] simp at hm
+2026-11-14T16:32:41.9851950Z 
+2026-11-14T16:32:41.9852078Z Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+2026-11-14T16:32:41.9852488Z warning: EG617/Core/BipartiteExterior.lean:55:0: automatically included section variable(s) unused in theorem `EG617.complete_cross_of_no_missing`:
+2026-11-14T16:32:41.9852941Z   [Fintype V]
+2026-11-14T16:32:41.9853226Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-14T16:32:41.9853512Z   omit [Fintype V] in theorem ...
+2026-11-14T16:32:41.9853612Z 
+2026-11-14T16:32:41.9853739Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-14T16:32:41.9854163Z warning: EG617/Core/BipartiteExterior.lean:66:0: automatically included section variable(s) unused in theorem `EG617.unique_missing_cross_of_card_one`:
+2026-11-14T16:32:41.9854505Z   [Fintype V]
+2026-11-14T16:32:41.9854752Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-14T16:32:41.9855041Z   omit [Fintype V] in theorem ...
+2026-11-14T16:32:41.9855136Z 
+2026-11-14T16:32:41.9855259Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-14T16:32:41.9855558Z warning: EG617/Core/BipartiteExterior.lean:105:4: `simp` already closes the goal
+2026-11-14T16:32:41.9855958Z 
+2026-11-14T16:32:41.9856019Z Hint: Use `simp` instead of `simpa`:
+2026-11-14T16:32:41.9856165Z   [apply] simp [hV]
+2026-11-14T16:32:41.9856237Z 
+2026-11-14T16:32:41.9856360Z Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+2026-11-14T16:32:42.8857533Z ✔ [1327/1332] Built EG617.Core.C5Types (923ms)
+2026-11-14T16:32:43.7866187Z ✔ [1328/1332] Built EG617.Core.C5MissingEdge (948ms)
+2026-11-14T16:32:44.7898534Z ⚠ [1329/1332] Built EG617.Core.R23ExactLedger (940ms)
+2026-11-14T16:32:44.7899195Z warning: EG617/Core/R23ExactLedger.lean:14:0: automatically included section variable(s) unused in theorem `EG617.deficit_sum_add`:
+2026-11-14T16:32:44.7899750Z   [Fintype V]
+2026-11-14T16:32:44.7900162Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-14T16:32:44.7900639Z   omit [Fintype V] in theorem ...
+2026-11-14T16:32:44.7900796Z 
+2026-11-14T16:32:44.7901016Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-14T16:32:44.7901678Z warning: EG617/Core/R23ExactLedger.lean:21:0: automatically included section variable(s) unused in theorem `EG617.deficit_zero_iff`:
+2026-11-14T16:32:44.7902190Z   [Fintype V]
+2026-11-14T16:32:44.7902584Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-14T16:32:44.7903175Z   omit [Fintype V] in theorem ...
+2026-11-14T16:32:44.7903325Z 
+2026-11-14T16:32:44.7903529Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-14T16:32:45.4904710Z ⚠ [1330/1332] Built EG617.Core.R23TypeLift (766ms)
+2026-11-14T16:32:45.4905354Z warning: EG617/Core/R23TypeLift.lean:45:0: automatically included section variable(s) unused in theorem `EG617.cycleNeighborLabels_card_eq`:
+2026-11-14T16:32:45.4905687Z   [Fintype V]
+2026-11-14T16:32:45.4905957Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-14T16:32:45.4906251Z   omit [Fintype V] in theorem ...
+2026-11-14T16:32:45.4906348Z 
+2026-11-14T16:32:45.4906481Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-14T16:32:46.5905176Z ✖ [1331/1332] Building EG617.Core.R23BalancedExterior (1.0s)
+2026-11-14T16:32:46.5909915Z trace: .> LEAN_PATH=/home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/packages/Cli/.lake/build/lib/lean:/home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/packages/batteries/.lake/build/lib/lean:/home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/packages/Qq/.lake/build/lib/lean:/home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/packages/aesop/.lake/build/lib/lean:/home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/packages/importGraph/.lake/build/lib/lean:/home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/packages/plausible/.lake/build/lib/lean:/home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/packages/mathlib/.lake/build/lib/lean:/home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/build/lib/lean /home/runner/work/_temp/lean-4.35.0-linux/bin/lean /home/runner/work/_temp/eg617-standalone-ascii/lean/EG617/Core/R23BalancedExterior.lean -o /home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/build/lib/lean/EG617/Core/R23BalancedExterior.olean -i /home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/build/lib/lean/EG617/Core/R23BalancedExterior.ilean -c /home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/build/ir/EG617/Core/R23BalancedExterior.c --setup /home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/build/ir/EG617/Core/R23BalancedExterior.setup.json --json
+2026-11-14T16:32:46.5914798Z error: EG617/Core/R23BalancedExterior.lean:76:10: Type mismatch: After simplification, term
+2026-11-14T16:32:46.5915088Z   he
+2026-11-14T16:32:46.5915513Z  has type
+2026-11-14T16:32:46.5915809Z   @Eq ℕ (Fintype.card ↑(SimpleGraph.induce (↑T) G).edgeSet) 80
+2026-11-14T16:32:46.5916083Z but is expected to have type
+2026-11-14T16:32:46.5916366Z   @Eq ℕ (Fintype.card ↑(SimpleGraph.induce (↑T) G).edgeSet) 80
+2026-11-14T16:32:46.5916750Z error: EG617/Core/R23BalancedExterior.lean:80:10: Type mismatch: After simplification, term
+2026-11-14T16:32:46.5917082Z   he
+2026-11-14T16:32:46.5917220Z  has type
+2026-11-14T16:32:46.5917460Z   @Eq ℕ (Fintype.card ↑(SimpleGraph.induce (↑T) G).edgeSet) 80
+2026-11-14T16:32:46.5917718Z but is expected to have type
+2026-11-14T16:32:46.5917995Z   @Eq ℕ (Fintype.card ↑(SimpleGraph.induce (↑T) G).edgeSet) 80
+2026-11-14T16:32:46.5918379Z error: EG617/Core/R23BalancedExterior.lean:91:23: Application type mismatch: The argument
+2026-11-14T16:32:46.5918740Z   hbm
+2026-11-14T16:32:46.5918881Z has type
+2026-11-14T16:32:46.5919036Z   b ∈
+2026-11-14T16:32:46.5919207Z     @compl (Finset ↑↑T)
+2026-11-14T16:32:46.5919448Z       (@BooleanAlgebra.toCompl (Finset ↑↑T)
+2026-11-14T16:32:46.5919953Z         (@Finset.booleanAlgebra (↑↑T) (FinsetCoe.fintype T) fun a b => Subtype.instDecidableEq a b))
+2026-11-14T16:32:46.5920293Z       A
+2026-11-14T16:32:46.5920445Z but is expected to have type
+2026-11-14T16:32:46.5920629Z   b ∈
+2026-11-14T16:32:46.5920794Z     @compl (Finset ↑↑T)
+2026-11-14T16:32:46.5921051Z       (@BooleanAlgebra.toCompl (Finset ↑↑T)
+2026-11-14T16:32:46.5921483Z         (@Finset.booleanAlgebra (↑↑T) (FinsetCoe.fintype T) fun a b => Classical.propDecidable (a = b)))
+2026-11-14T16:32:46.5921825Z       A
+2026-11-14T16:32:46.5921970Z in the application
+2026-11-14T16:32:46.5922318Z   hc a ham b hbm
+2026-11-14T16:32:46.5922583Z error: EG617/Core/R23BalancedExterior.lean:96:6: Type mismatch
+2026-11-14T16:32:46.5922977Z   hb
+2026-11-14T16:32:46.5923143Z has type
+2026-11-14T16:32:46.5923275Z   (@compl (Finset ↑↑T)
+2026-11-14T16:32:46.5923436Z         (@BooleanAlgebra.toCompl (Finset ↑↑T)
+2026-11-14T16:32:46.5923752Z           (@Finset.booleanAlgebra (↑↑T) (FinsetCoe.fintype T) fun a b => Classical.propDecidable (a = b)))
+2026-11-14T16:32:46.5924003Z         A).card =
+2026-11-14T16:32:46.5924110Z     10
+2026-11-14T16:32:46.5924219Z but is expected to have type
+2026-11-14T16:32:46.5924366Z   (@compl (Finset ↑↑T)
+2026-11-14T16:32:46.5924527Z         (@BooleanAlgebra.toCompl (Finset ↑↑T)
+2026-11-14T16:32:46.5924825Z           (@Finset.booleanAlgebra (↑↑T) (FinsetCoe.fintype T) fun a b => Subtype.instDecidableEq a b))
+2026-11-14T16:32:46.5925065Z         A).card =
+2026-11-14T16:32:46.5925175Z     10
+2026-11-14T16:32:46.5925292Z Some required targets logged failures:
+2026-11-14T16:32:46.5925462Z - EG617.Core.R23BalancedExterior
+2026-11-14T16:32:46.5925612Z error: build failed
+2026-11-14T16:32:46.6863651Z ##[error]Process completed with exit code 1.
+2026-11-14T16:32:46.6946640Z Post job cleanup.
+2026-11-14T16:32:46.7492407Z [command]/usr/bin/git version
+2026-11-14T16:32:46.7524344Z git version 2.56.1
+2026-11-14T16:32:46.7549974Z Temporarily overriding HOME='/home/runner/work/_temp/56fe3e83-34df-4557-887d-52c954deeeb7' before making global git config changes
+2026-11-14T16:32:46.7550831Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-14T16:32:46.7553413Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/EG617-r12-proof/EG617-r12-proof
+2026-11-14T16:32:46.7586188Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-14T16:32:46.7614790Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-14T16:32:46.7826461Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-14T16:32:46.7858340Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-14T16:32:46.8197176Z Cleaning up orphan processes
+2026-11-14T16:32:46.8426581Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

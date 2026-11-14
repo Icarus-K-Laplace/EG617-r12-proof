@@ -52,6 +52,9 @@ public import EG617
 #print axioms EG617.c5_missing_edge_type_sets
 #print axioms EG617.c5_missing_endpoint_orientations
 #print axioms EG617.c5_singleton_extension
+#print axioms EG617.cycleNeighborLabels_cycle_vertex
+#print axioms EG617.complete_exterior_type_presentation
+#print axioms EG617.complete_exterior_has_type_presentation
 #print axioms EG617.c5Type
 #print axioms EG617.c5Type_card
 #print axioms EG617.c5Type_disjoint_iff

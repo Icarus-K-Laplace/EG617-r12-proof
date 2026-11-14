@@ -36,7 +36,8 @@ This excludes the K8,10 branch by its actual neighbors, without assuming types. 
 theorem r23_exists_balanced_exterior (G : SimpleGraph V)
     (hV : Fintype.card V = 23) (ht : G.CliqueFree 3)
     (hI : CoreIndependenceBound 11 G) (he : 121 ≤ G.edgeFinset.card) :
-    ∃ S : Finset V, ExactC5NeighborLedger G S ∧
+    ∃ (S : Finset V) (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G),
+      Finset.univ.image f = S ∧ ExactC5NeighborLedger G S ∧
       ∃ A : Finset ((Sᶜ : Finset V) : Set V),
         let H := G.induce ((Sᶜ : Finset V) : Set V)
         H.IsIndepSet (A : Set _) ∧ H.IsIndepSet ((Aᶜ : Finset _) : Set _) ∧
@@ -45,7 +46,8 @@ theorem r23_exists_balanced_exterior (G : SimpleGraph V)
          (H.edgeFinset.card = 80 ∧ ∃ a ∈ A, ∃ b ∈ Aᶜ,
            ∀ x ∈ A, ∀ y ∈ Aᶜ, (¬ H.Adj x y ↔ x = a ∧ y = b))) := by
   classical
-  obtain ⟨v, p, _, _, _, hl⟩ := r23_exact_neighbor_ledger G hV ht hI he
+  obtain ⟨v, p, _, hp, h5, hl⟩ := r23_exact_neighbor_ledger G hV ht hI he
+  obtain ⟨f, hf⟩ := five_cycle_copy_same_support p hp h5
   let S := p.support.toFinset
   let T := Sᶜ
   let H := G.induce (T : Set V)
@@ -64,7 +66,7 @@ theorem r23_exists_balanced_exterior (G : SimpleGraph V)
         Set.fintypeCard_eq_ncard] using hsmall
     omega
   obtain ⟨A, hA, hB, hcases⟩ := bipartite_18_dense_classification H hHV hb hHe
-  refine ⟨S, hl, A, hA, hB, ?_⟩
+  refine ⟨S, f, hf, hl, A, hA, hB, ?_⟩
   rcases hcases with ⟨ha, hb, he, hc⟩ | ⟨ha, hb, he, hc⟩ | ⟨ha, hb, he, hc⟩
   · exact ⟨ha, hb, Or.inl ⟨he, hc⟩⟩
   · have hd : ∀ x ∈ T, (S.filter (G.Adj x)).card = 2 := by
@@ -73,14 +75,16 @@ theorem r23_exists_balanced_exterior (G : SimpleGraph V)
       · exact h.2.2.2
       · have hy : coreInducedEdgeCount G T = 81 := h.1
         have he' : coreInducedEdgeCount G T = 80 := by
-          simpa only [coreInducedEdgeCount, H, SimpleGraph.edgeFinset_card] using he
+          simpa only [coreInducedEdgeCount, H, SimpleGraph.edgeFinset_card,
+            Set.fintypeCard_eq_ncard] using he
         omega
       · have hy : coreInducedEdgeCount G T = 81 := h.1
         have he' : coreInducedEdgeCount G T = 80 := by
-          simpa only [coreInducedEdgeCount, H, SimpleGraph.edgeFinset_card] using he
+          simpa only [coreInducedEdgeCount, H, SimpleGraph.edgeFinset_card,
+            Set.fintypeCard_eq_ncard] using he
         omega
     obtain ⟨a, ham⟩ := Finset.card_pos.mp (by omega : 0 < A.card)
-    let B : Finset V := Aᶜ.image Subtype.val
+    let B : Finset V := (Aᶜ : Finset (T : Set V)).image (fun b => (b : V))
     have hBT : B ⊆ T := by
       intro b hb
       obtain ⟨b, _, rfl⟩ := Finset.mem_image.mp hb
@@ -88,12 +92,12 @@ theorem r23_exists_balanced_exterior (G : SimpleGraph V)
     have hcross : ∀ b ∈ B, G.Adj a.val b := by
       intro b hb
       obtain ⟨b, hbm, rfl⟩ := Finset.mem_image.mp hb
-      exact hc a ham b hbm
+      exact hc a ham b (by simpa only [Finset.mem_compl] using hbm)
     have hle := two_cycle_neighbors_cross_card_le_nine G ht hI S B a.val
       (hd a.val a.property) hBT hcross
     have hcard : B.card = 10 := by
       rw [Finset.card_image_of_injective _ Subtype.val_injective]
-      exact hb
+      simpa only [Finset.card_compl, Set.fintypeCard_eq_ncard] using hb
     omega
   · exact ⟨ha, hb, Or.inr ⟨he, hc⟩⟩
 

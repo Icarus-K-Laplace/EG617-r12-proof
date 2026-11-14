@@ -1,0 +1,8 @@
+module
+public import EG617.Core.C5TypePresentation
+#check EG617.cycleNeighborLabels_cycle_vertex
+#print axioms EG617.cycleNeighborLabels_cycle_vertex
+#check EG617.complete_exterior_type_presentation
+#print axioms EG617.complete_exterior_type_presentation
+#check EG617.complete_exterior_has_type_presentation
+#print axioms EG617.complete_exterior_has_type_presentation
