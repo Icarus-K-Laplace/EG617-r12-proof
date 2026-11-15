@@ -23,3 +23,4 @@ public import EG617.Core.R23CompleteExterior
 public import EG617.Core.C5TypeFibers
 public import EG617.Core.R23CaseI
 public import EG617.Core.R23EdgeCompletion
+public import EG617.Core.C5SingletonGraphLift

@@ -54,6 +54,7 @@ theorem r23_one_edge_completion_case_I (G : SimpleGraph V)
     exact hS hx hy hxy (Or.inl hadj)
   have hHe : H.edgeFinset.card = 122 := by
     rw [SimpleGraph.card_edgeFinset_sup_edge G hn hne, he]
-  exact ⟨le_sup_left, hHt, hHI, hHe, r23_122_case_I H hV hHt hHI hHe⟩
+  exact ⟨le_sup_left, hHt, hHI, hHe, r23_122_case_I H hV hHt hHI (by
+    simpa only [SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard] using hHe)⟩
 
 end EG617

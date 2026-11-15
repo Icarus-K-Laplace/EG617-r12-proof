@@ -1,0 +1,4 @@
+module
+public import EG617.Core.C5SingletonGraphLift
+#check EG617.singleton_cycle_edge_completion_witness
+#print axioms EG617.singleton_cycle_edge_completion_witness
