@@ -139,6 +139,9 @@ public import EG617
 #check EG617.singleton_partition_completes_to_case_I
 #print EG617.R23MissingEdgeExterior
 #check EG617.r23_121_completion_or_missing_exterior
+#print EG617.R23ExceptionalProfile
+#check EG617.missing_exterior_completion_or_exceptional
+#check EG617.r23_complete_classification
 #check EG617.r23_122_complete_type_data
 #check EG617.r23_122_type_presentation
 #check EG617.triangleFree_sup_edge_of_no_common_neighbor

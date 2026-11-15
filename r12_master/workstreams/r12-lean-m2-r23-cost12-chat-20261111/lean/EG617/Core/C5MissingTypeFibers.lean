@@ -89,9 +89,14 @@ theorem one_exception_type_fiber_card (C : Finset V) (t : V → Fin 5)
       simp [hf, hai]
   have hfilter := congrArg (fun D : Finset V => (D.filter (fun x => t x = i)).card)
     (Finset.insert_erase hu)
+  have hnot : u ∉ (C.erase u).filter (fun x => t x = i) := by
+    intro h
+    exact (Finset.mem_erase.mp (Finset.mem_filter.mp h).1).1 rfl
   by_cases hui : t u = i
-  · simpa [Finset.filter_insert, hui, hrc] using hfilter.symm
-  · simpa [Finset.filter_insert, hui, hrc] using hfilter.symm
+  · simp only [Finset.filter_insert, hui, if_true, Finset.card_insert_of_notMem hnot, hrc] at hfilter
+    simpa only [hui, if_true] using hfilter.symm
+  · simp only [Finset.filter_insert, hui, if_false, hrc] at hfilter
+    simpa only [hui, if_false, Nat.add_zero] using hfilter.symm
 
 /-- All vertex fibers are counted exactly: one cycle vertex, two eight-point
 remainders, and the two exceptional endpoints. -/
