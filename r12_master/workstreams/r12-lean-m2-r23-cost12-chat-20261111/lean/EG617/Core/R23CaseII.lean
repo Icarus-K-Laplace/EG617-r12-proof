@@ -130,8 +130,8 @@ theorem r23_121_completion_or_missing_exterior (G : SimpleGraph V)
       intro x hx y hy hxy
       obtain ⟨a, ha, rfl⟩ := Finset.mem_image.mp hx
       obtain ⟨b, hb, rfl⟩ := Finset.mem_image.mp hy
-      exact hB (by simpa only [Finset.mem_compl] using ha)
-        (by simpa only [Finset.mem_compl] using hb) (fun h => hxy (congrArg Subtype.val h))
+      exact hB (by simpa only [Finset.mem_coe, Finset.mem_compl] using ha)
+        (by simpa only [Finset.mem_coe, Finset.mem_compl] using hb) (fun h => hxy (congrArg Subtype.val h))
     have hcross : ∀ x ∈ P, ∀ y ∈ Q, G.Adj x y := by
       intro x hx y hy
       obtain ⟨a, ha, rfl⟩ := Finset.mem_image.mp hx

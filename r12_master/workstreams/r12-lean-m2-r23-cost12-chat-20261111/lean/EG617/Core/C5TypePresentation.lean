@@ -81,16 +81,13 @@ theorem complete_exterior_type_presentation
     exact False.elim (hntriangle (t x) (t y) (t a)
       (hforward (hedges a ha x hxB).symm) (hforward (hedges a ha y hyB).symm) hxy)
 
-/-- The actual types are chosen from neighbor counts; no type assignment is
-an assumption of this presentation theorem. -/
-theorem complete_exterior_has_type_presentation
+/-- Every actual vertex receives a unique two-neighbor type once the exterior
+counts are saturated; the cycle vertices are handled by the same labeling. -/
+theorem exists_cycle_type_assignment
     (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G) (ht : G.CliqueFree 3)
-    (S A B : Finset V) (hS : Finset.univ.image f = S)
-    (hcover : A ∪ B = Sᶜ) (hA : A.Nonempty) (hB : B.Nonempty)
-    (hd : ∀ x ∈ Sᶜ, (S.filter (G.Adj x)).card = 2)
-    (hedges : ∀ x ∈ A, ∀ y ∈ B, G.Adj x y) :
-    ∃ t : V → Fin 5, (∀ x, cycleNeighborLabels f x = c5Type (t x)) ∧
-      ∀ x y, G.Adj x y ↔ (SimpleGraph.cycleGraph 5).Adj (t x) (t y) := by
+    (S : Finset V) (hS : Finset.univ.image f = S)
+    (hd : ∀ x ∈ Sᶜ, (S.filter (G.Adj x)).card = 2) :
+    ∃ t : V → Fin 5, ∀ x, cycleNeighborLabels f x = c5Type (t x) := by
   classical
   have hc : ∀ x, (cycleNeighborLabels f x).card = 2 := by
     intro x
@@ -101,6 +98,19 @@ theorem complete_exterior_has_type_presentation
   have hex : ∀ x, ∃ i, cycleNeighborLabels f x = c5Type i :=
     fun x => (cycleNeighborLabels_unique_type f ht x (hc x)).exists
   choose t hlabels using hex
+  exact ⟨t, hlabels⟩
+
+/-- The actual types are chosen from neighbor counts; no type assignment is
+an assumption of this presentation theorem. -/
+theorem complete_exterior_has_type_presentation
+    (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G) (ht : G.CliqueFree 3)
+    (S A B : Finset V) (hS : Finset.univ.image f = S)
+    (hcover : A ∪ B = Sᶜ) (hA : A.Nonempty) (hB : B.Nonempty)
+    (hd : ∀ x ∈ Sᶜ, (S.filter (G.Adj x)).card = 2)
+    (hedges : ∀ x ∈ A, ∀ y ∈ B, G.Adj x y) :
+    ∃ t : V → Fin 5, (∀ x, cycleNeighborLabels f x = c5Type (t x)) ∧
+      ∀ x y, G.Adj x y ↔ (SimpleGraph.cycleGraph 5).Adj (t x) (t y) := by
+  obtain ⟨t, hlabels⟩ := exists_cycle_type_assignment f ht S hS hd
   exact ⟨t, hlabels, complete_exterior_type_presentation f ht S A B hS hcover hA hB t hlabels hedges⟩
 
 end EG617
