@@ -128,6 +128,10 @@ public import EG617
 #check EG617.c5_remaining_fiber_sum
 #print EG617.R23CaseIProfile
 #check EG617.r23_122_case_I
+#print EG617.R23OneEdgeCompletion
+#check EG617.singleton_partition_completes_to_case_I
+#print EG617.R23MissingEdgeExterior
+#check EG617.r23_121_completion_or_missing_exterior
 #check EG617.r23_122_complete_type_data
 #check EG617.r23_122_type_presentation
 #check EG617.triangleFree_sup_edge_of_no_common_neighbor

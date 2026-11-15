@@ -1,0 +1,10 @@
+module
+public import EG617.Core.R23CaseII
+#check EG617.R23OneEdgeCompletion
+#print axioms EG617.R23OneEdgeCompletion
+#check EG617.singleton_partition_completes_to_case_I
+#print axioms EG617.singleton_partition_completes_to_case_I
+#check EG617.R23MissingEdgeExterior
+#print axioms EG617.R23MissingEdgeExterior
+#check EG617.r23_121_completion_or_missing_exterior
+#print axioms EG617.r23_121_completion_or_missing_exterior

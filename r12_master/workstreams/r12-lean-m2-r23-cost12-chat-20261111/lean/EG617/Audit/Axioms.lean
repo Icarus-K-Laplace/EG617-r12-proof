@@ -128,6 +128,10 @@ public import EG617
 #print axioms EG617.c5_remaining_fiber_sum
 #print axioms EG617.R23CaseIProfile
 #print axioms EG617.r23_122_case_I
+#print axioms EG617.R23OneEdgeCompletion
+#print axioms EG617.singleton_partition_completes_to_case_I
+#print axioms EG617.R23MissingEdgeExterior
+#print axioms EG617.r23_121_completion_or_missing_exterior
 #print axioms EG617.r23_122_complete_type_data
 #print axioms EG617.r23_122_type_presentation
 #print axioms EG617.triangleFree_sup_edge_of_no_common_neighbor
