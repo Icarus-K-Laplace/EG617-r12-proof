@@ -21,6 +21,10 @@ for(const [A,B] of pairs){
     const t=[0,1,2,3,4,...aa,...bb];
     const edge=(x,y)=>x<5&&y<5 ? adjacent(x,y) : x<5 ? types[t[y]].includes(x) : y<5 ? edge(y,x) : (x<14)!==(y<14);
     for(let x=0;x<23;x++)for(let y=0;y<23;y++)if(edge(x,y)!==adjacent(t[x],t[y]))throw Error('Presentation failed');
+    const n=Array.from({length:5},(_,i)=>t.filter(j=>j===i).length);
+    if(!n.some((size,a)=>size===10 && n[mod(a+2)]===1 && n[mod(a-2)]===1 &&
+      n[mod(a+1)]+n[mod(a-1)]===11 && n[mod(a+1)]>=1 && n[mod(a+1)]<=10 &&
+      n[mod(a-1)]>=1 && n[mod(a-1)]<=10))throw Error('Case I fiber profile failed');
     checked99++;
   }
 }
@@ -35,7 +39,7 @@ for(let x=0;x<23;x++)for(let y=x+1;y<23;y++){
 }
 if(deletedEdges!==121 || deleted(5,14) || !compatible(nt[5],nt[14]))throw Error('Negative control failed');
 const report={status:'NO_COUNTEREXAMPLE_IN_STATED_TEST_DOMAIN',compatibleSupportPairs:pairs.length,
-  excluded810Witnesses:excluded810,complete99Presentations:checked99,
+  excluded810Witnesses:excluded810,complete99Presentations:checked99,caseIFiberProfiles:checked99,
   compatibleMissingEdgeIsNotForced:true,negativeControlEdges:deletedEdges,
   limitations:'Multiplicity distributions within every compatible type support pair; this test is not a completeness proof for arbitrary R23 graphs and is not imported into Lean.'};
 fs.writeFileSync(new URL('../logs/type-lift-attack.json',import.meta.url),JSON.stringify(report,null,2)+'\n');

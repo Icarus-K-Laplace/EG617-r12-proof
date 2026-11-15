@@ -55,7 +55,7 @@ if(hashes.length<scan.files.length+2)throw Error('Incomplete source/config hashe
 const pins=[...log.matchAll(/^PIN_PASS (\S+) ([a-f0-9]{40})$/gm)].map(m=>({name:m[1],rev:m[2]}));
 const manifest=JSON.parse(fs.readFileSync(path.join(lean,'lake-manifest.json'),'utf8'));
 if(pins.length!==9||manifest.packages.some(p=>!pins.some(q=>q.name===p.name&&q.rev===p.rev)))throw Error('Dependency pin mismatch');
-const status={date:'2026-11-13',sha,run:Number(run),url:`https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/${run}`,
+const status={date:raw.match(/^(\d{4}-\d\d-\d\d)T/m)?.[1]??'unknown',sha,run:Number(run),url:`https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/${run}`,
   cleanLinuxBuild:'PASS',fullAxiomAudit:'PASS',statementInspection:'PASS',localMatchesCISHA256:'PASS',
   declarations:expected.length,theorems:scan.declarations.filter(d=>['theorem','lemma'].includes(d.kind)).length,
   originalMathematicalSourcesUnchanged:true,pins,hashes,Gate47:'FORMALIZATION_GAP',MainTheorem:'ABSENT'};

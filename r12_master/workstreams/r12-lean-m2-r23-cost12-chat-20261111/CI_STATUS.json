@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-13",
-  "sha": "875bd3de7478129b507b4f8e9df14f0c8e8bd4f5",
-  "run": 43361985046,
-  "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/43361985046",
+  "date": "2026-11-14",
+  "sha": "c252a45b185c07387e71b3416cde37f46b95b3f1",
+  "run": 43618192344,
+  "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/43618192344",
   "cleanLinuxBuild": "PASS",
   "fullAxiomAudit": "PASS",
   "statementInspection": "PASS",
   "localMatchesCISHA256": "PASS",
-  "declarations": 122,
-  "theorems": 99,
+  "declarations": 159,
+  "theorems": 132,
   "originalMathematicalSourcesUnchanged": true,
   "pins": [
     {
@@ -51,15 +51,47 @@
   "hashes": [
     {
       "file": "EG617.lean",
-      "sha256": "c14ddc32b409dd05cdef061f279b60dd664b00c10bb72456188bb551f263075f"
+      "sha256": "80e9ba32d61ac13b05a581e4648e07efe855b6e5d5fe704a881ad1b68566f8b7"
     },
     {
       "file": "EG617/Audit/Axioms.lean",
-      "sha256": "1068a50097ee9349ebb4d1821bce01cba79863ff93c3152322d8bde0845bfd57"
+      "sha256": "928d94af11ae24d869c3176cf06706d39092a869d005531fec75cf1e12761429"
+    },
+    {
+      "file": "EG617/Audit/C5TypeFibers.lean",
+      "sha256": "2f5dddc5eff17dfe216c4301f3d7228730a7bae16329b48bab57bb65e444abac"
+    },
+    {
+      "file": "EG617/Audit/C5TypePresentation.lean",
+      "sha256": "7c5603002b37cb9d9a3586487689c60acfcec303ef3cd387ed8fbd2716bc6123"
+    },
+    {
+      "file": "EG617/Audit/C5Types.lean",
+      "sha256": "e4c7fd97d79a95e9b4e083c51e9831d37b73b9642f847ac79a8b66cc9659d79e"
+    },
+    {
+      "file": "EG617/Audit/R23BalancedExterior.lean",
+      "sha256": "aa2d523924a574043906d1eb8c3cf36ce3a33c288f365dc7ae3b41e327b75af7"
+    },
+    {
+      "file": "EG617/Audit/R23CaseI.lean",
+      "sha256": "0939f8ecd8f3183fbc089ce9691be844023d45325b6870fe502c4950d1dc4960"
+    },
+    {
+      "file": "EG617/Audit/R23CompleteExterior.lean",
+      "sha256": "4466ecb910b41ce5a50fd337bcd5ca739781e91bb4d4a40c97f2aca578d79ba7"
+    },
+    {
+      "file": "EG617/Audit/R23Ledger.lean",
+      "sha256": "0f5827ae5324c31670004b90fce1447001e76e64511699ffb94ae3e6c7e81839"
+    },
+    {
+      "file": "EG617/Audit/R23TypeLift.lean",
+      "sha256": "3cc85a309631ee8766854702cd1a05421933b1da272d52d6e2bab67de484811a"
     },
     {
       "file": "EG617/Audit/Statements.lean",
-      "sha256": "0caae7bcaab17d189361469103f6ada1040be5cadcb4a537a81c82dbae5b73e3"
+      "sha256": "9cc0c14071c8701819586ef5034c7a1fd392f9474cf47dd598b638a3a0e1c754"
     },
     {
       "file": "EG617/Basic/ColoringLemmas.lean",
@@ -86,6 +118,22 @@
       "sha256": "8607a94f9739df2e1a882ce46745f46e1bc8cb28ec0cdc7d05f3af5253de4c31"
     },
     {
+      "file": "EG617/Core/C5MissingEdge.lean",
+      "sha256": "91659e32f5cc962e7b99e91ae4a2e842136d23d992c6a381778cc5221fb0821e"
+    },
+    {
+      "file": "EG617/Core/C5TypeFibers.lean",
+      "sha256": "b5e1b564e18c00a1eb1e5e99f047874152e1913e13ddbe5c9317ba84c1a1b4d6"
+    },
+    {
+      "file": "EG617/Core/C5TypePresentation.lean",
+      "sha256": "7f00654420bafed5839ede9041b5a10a6a59ef691021334a9191544b2e732770"
+    },
+    {
+      "file": "EG617/Core/C5Types.lean",
+      "sha256": "cd39afed80ec808a8c0ae5f41edced384bb295904b25049056d1dd3e00142596"
+    },
+    {
       "file": "EG617/Core/EdgePartition.lean",
       "sha256": "f0cc154b969f3f35e3bb8fccc5d702cdd85911e6272fa44bdf56fe4ed44f8647"
     },
@@ -106,8 +154,28 @@
       "sha256": "bfc7f5900c0bdad20c53a9087fc29a378d6ee4127fc29580fa9d0c13601d7495"
     },
     {
+      "file": "EG617/Core/R23BalancedExterior.lean",
+      "sha256": "2513eb7960f0d36e15050ea7ac467f3bf74a1aecc40e31cb8fe8bd6eac7db242"
+    },
+    {
+      "file": "EG617/Core/R23CaseI.lean",
+      "sha256": "061a75b4fb05e7d3de6cd5c7ac7e4fc4d22f6c1d31072a7063619e3f47040255"
+    },
+    {
+      "file": "EG617/Core/R23CompleteExterior.lean",
+      "sha256": "c9ef15a5ca6b640280befbd2de6d16b75288b892a02b47b3b19342eb644e93d0"
+    },
+    {
+      "file": "EG617/Core/R23ExactLedger.lean",
+      "sha256": "eee7057a9c01520caf7a001238a896e08fa9e06c5b0f19e3a4d2def3a59823aa"
+    },
+    {
       "file": "EG617/Core/R23Reduction.lean",
       "sha256": "9404a05a8fffa1e9b2c4b3ee42f178f0a30cf63637be03fe60d1c972a503e271"
+    },
+    {
+      "file": "EG617/Core/R23TypeLift.lean",
+      "sha256": "30d57e86d38fcbb5250b206c557cec773d8c010eecba9095691499f518e5ef6a"
     },
     {
       "file": "EG617/Frontend/ColoringReduction.lean",

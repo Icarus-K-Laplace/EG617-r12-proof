@@ -1,5 +1,10 @@
 # Counterexample attack report
 
+The same90 complete9+9 multiplicity assignments were additionally checked
+against ALL Case I fiber conditions, in every available cyclic center.
+All satisfy10,A,1,1,B with A+B=11 and1<=A,B<=10. These checks remain
+diagnostic; r23_122_case_I independently proves the arbitrary-graph result.
+
 2026-11-15 type-lift check: attacks/type-lift-attack.mjs, output
 logs/type-lift-attack.json. All 20 compatible nonempty support pairs were
 tested with all positive multiplicity splits: 90 K8,10 assignments each have

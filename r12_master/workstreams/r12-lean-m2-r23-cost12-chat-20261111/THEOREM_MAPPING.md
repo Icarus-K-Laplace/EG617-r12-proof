@@ -1,5 +1,18 @@
 # Current classification theorem mapping
 
+Latest update: c252a45 / CI43618192344, full kernel/type/axiom PASS.
+r23_122_case_I in Core/R23CaseI.lean closes frozen M2a / Case I.
+Its original graph assumptions are card23, CliqueFree3, alpha<=11, exactly122
+edges. R23CaseIProfile specifies all actual vertices and every adjacency, plus
+the full cyclic fiber sizes10,A,1,1,B and A+B=11, 1<=A,B<=10.
+cycle_type_fiber_card splits every type fiber into its one cycle vertex and
+its exterior fiber; complete_exterior_type_fiber_profile handles both choices
+of singleton bipartite side. c5_remaining_fiber_sum checks all five rotations
+in Lean; no external enumeration is a premise. The lower/upper A,B bounds
+follow from positive fibers and their sum. Exact statements are in
+DECLARATION_STATEMENTS.md and the successful statement-inspection log.
+The historical entries below describe earlier partial checkpoints.
+
 Update 2026-11-15, code 2dba3b9 / CI 43616747074: all the following
 statements are kernel/type/axiom PASS. Exact signatures are preserved in the
 named standard .lean modules and the full CI statement-inspection output.

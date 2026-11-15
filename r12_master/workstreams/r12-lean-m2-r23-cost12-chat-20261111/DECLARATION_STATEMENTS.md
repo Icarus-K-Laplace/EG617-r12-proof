@@ -438,6 +438,265 @@ theorem bipartite_18_dense_classification (G : SimpleGraph V)
             (¬ G.Adj x y ↔ x = a ∧ y = b)))
 ```
 
+## EG617.c5_incompatible_endpoint_forces_singleton
+
+Source: EG617/Core/C5MissingEdge.lean
+
+```lean
+theorem c5_incompatible_endpoint_forces_singleton (A B : Finset (Fin 5))
+    (hA : A.Nonempty) (hB : B.Nonempty) (u v : Fin 5)
+    (hAB : ∀ a ∈ A, ∀ b ∈ B, (SimpleGraph.cycleGraph 5).Adj a b)
+    (hu : ∀ b ∈ B, (SimpleGraph.cycleGraph 5).Adj u b)
+    (hv : ∀ a ∈ A, (SimpleGraph.cycleGraph 5).Adj a v)
+    (huv : ¬ (SimpleGraph.cycleGraph 5).Adj u v) : A.card = 1
+```
+
+## EG617.c5_missing_edge_type_sets
+
+Source: EG617/Core/C5MissingEdge.lean
+
+```lean
+theorem c5_missing_edge_type_sets (A B : Finset (Fin 5))
+    (hA : A.Nonempty) (hB : B.Nonempty) (u v : Fin 5)
+    (hAB : ∀ a ∈ A, ∀ b ∈ B, (SimpleGraph.cycleGraph 5).Adj a b)
+    (hu : ∀ b ∈ B, (SimpleGraph.cycleGraph 5).Adj u b)
+    (hv : ∀ a ∈ A, (SimpleGraph.cycleGraph 5).Adj a v)
+    (huv : ¬ (SimpleGraph.cycleGraph 5).Adj u v) : A.card = 1 ∧ B.card = 1
+```
+
+## EG617.c5_missing_endpoint_orientations
+
+Source: EG617/Core/C5MissingEdge.lean
+
+```lean
+theorem c5_missing_endpoint_orientations (a b u v : Fin 5)
+    (hab : (SimpleGraph.cycleGraph 5).Adj a b)
+    (hub : (SimpleGraph.cycleGraph 5).Adj u b)
+    (hav : (SimpleGraph.cycleGraph 5).Adj a v)
+    (huv : ¬ (SimpleGraph.cycleGraph 5).Adj u v) :
+    (b = a + 1 ∧ u = a + 2 ∧ v = a - 1) ∨
+      (b = a - 1 ∧ u = a - 2 ∧ v = a + 1)
+```
+
+## EG617.c5_singleton_extension
+
+Source: EG617/Core/C5MissingEdge.lean
+
+```lean
+theorem c5_singleton_extension (a : Fin 5) (B : Finset (Fin 5))
+    (hB : B ⊆ c5Type a) (p : Fin 5) (hp : ∀ b ∈ B, p ∉ c5Type b) :
+    ∃ i : Fin 5, p ∈ c5Type i ∧ ∀ b ∈ B, Disjoint (c5Type i) (c5Type b)
+```
+
+## EG617.cycle_type_fiber_card
+
+Source: EG617/Core/C5TypeFibers.lean
+
+```lean
+theorem cycle_type_fiber_card
+    (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G) (S : Finset V)
+    (hS : Finset.univ.image f = S) (t : V → Fin 5)
+    (hcycle : ∀ i, t (f i) = i) (i : Fin 5) :
+    (Finset.univ.filter (fun x => t x = i)).card =
+      1 + (Sᶜ.filter (fun x => t x = i)).card
+```
+
+## EG617.singleton_side_type_fiber_profile
+
+Source: EG617/Core/C5TypeFibers.lean
+
+```lean
+theorem singleton_side_type_fiber_profile
+    (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G) (ht : G.CliqueFree 3)
+    (S A B : Finset V) (hS : Finset.univ.image f = S)
+    (hcover : A ∪ B = Sᶜ) (hA : A.card = 9)
+    (t : V → Fin 5) (hlabels : ∀ x, cycleNeighborLabels f x = c5Type (t x))
+    (hedges : ∀ x ∈ A, ∀ y ∈ B, G.Adj x y)
+    (hsingle : (A.image t).card = 1) :
+    ∃ a : Fin 5, (Finset.univ.filter (fun x => t x = a)).card = 10 ∧
+      ∀ i, i ≠ a → ¬ (SimpleGraph.cycleGraph 5).Adj a i →
+        (Finset.univ.filter (fun x => t x = i)).card = 1
+```
+
+## EG617.complete_exterior_type_fiber_profile
+
+Source: EG617/Core/C5TypeFibers.lean
+
+```lean
+theorem complete_exterior_type_fiber_profile
+    (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G) (ht : G.CliqueFree 3)
+    (S A B : Finset V) (hS : Finset.univ.image f = S)
+    (hcover : A ∪ B = Sᶜ) (hA : A.card = 9) (hB : B.card = 9)
+    (t : V → Fin 5) (hlabels : ∀ x, cycleNeighborLabels f x = c5Type (t x))
+    (hedges : ∀ x ∈ A, ∀ y ∈ B, G.Adj x y) :
+    ∃ a : Fin 5, (Finset.univ.filter (fun x => t x = a)).card = 10 ∧
+      ∀ i, i ≠ a → ¬ (SimpleGraph.cycleGraph 5).Adj a i →
+        (Finset.univ.filter (fun x => t x = i)).card = 1
+```
+
+## EG617.cycleNeighborLabels_cycle_vertex
+
+Source: EG617/Core/C5TypePresentation.lean
+
+```lean
+theorem cycleNeighborLabels_cycle_vertex
+    (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G) (ht : G.CliqueFree 3)
+    (i : Fin 5) : cycleNeighborLabels f (f i) = c5Type i
+```
+
+## EG617.complete_exterior_type_presentation
+
+Source: EG617/Core/C5TypePresentation.lean
+
+```lean
+theorem complete_exterior_type_presentation
+    (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G) (ht : G.CliqueFree 3)
+    (S A B : Finset V) (hS : Finset.univ.image f = S)
+    (hcover : A ∪ B = Sᶜ) (hA : A.Nonempty) (hB : B.Nonempty)
+    (t : V → Fin 5) (hlabels : ∀ x, cycleNeighborLabels f x = c5Type (t x))
+    (hedges : ∀ x ∈ A, ∀ y ∈ B, G.Adj x y) :
+    ∀ x y, G.Adj x y ↔ (SimpleGraph.cycleGraph 5).Adj (t x) (t y)
+```
+
+## EG617.complete_exterior_has_type_presentation
+
+Source: EG617/Core/C5TypePresentation.lean
+
+```lean
+theorem complete_exterior_has_type_presentation
+    (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G) (ht : G.CliqueFree 3)
+    (S A B : Finset V) (hS : Finset.univ.image f = S)
+    (hcover : A ∪ B = Sᶜ) (hA : A.Nonempty) (hB : B.Nonempty)
+    (hd : ∀ x ∈ Sᶜ, (S.filter (G.Adj x)).card = 2)
+    (hedges : ∀ x ∈ A, ∀ y ∈ B, G.Adj x y) :
+    ∃ t : V → Fin 5, (∀ x, cycleNeighborLabels f x = c5Type (t x)) ∧
+      ∀ x y, G.Adj x y ↔ (SimpleGraph.cycleGraph 5).Adj (t x) (t y)
+```
+
+## EG617.c5Type
+
+Source: EG617/Core/C5Types.lean
+
+```lean
+def c5Type (i : Fin 5) : Finset (Fin 5)
+```
+
+## EG617.c5Type_card
+
+Source: EG617/Core/C5Types.lean
+
+```lean
+theorem c5Type_card (i : Fin 5) : (c5Type i).card = 2
+```
+
+## EG617.c5Type_disjoint_iff
+
+Source: EG617/Core/C5Types.lean
+
+```lean
+theorem c5Type_disjoint_iff (i j : Fin 5) :
+    Disjoint (c5Type i) (c5Type j) ↔ (SimpleGraph.cycleGraph 5).Adj i j
+```
+
+## EG617.c5_adj_iff_mem_type
+
+Source: EG617/Core/C5Types.lean
+
+```lean
+theorem c5_adj_iff_mem_type (i j : Fin 5) :
+    (SimpleGraph.cycleGraph 5).Adj i j ↔ i ∈ c5Type j
+```
+
+## EG617.c5_independent_pair_unique_type
+
+Source: EG617/Core/C5Types.lean
+
+```lean
+theorem c5_independent_pair_unique_type (S : Finset (Fin 5))
+    (hcard : S.card = 2)
+    (hI : ∀ i ∈ S, ∀ j ∈ S, ¬ (SimpleGraph.cycleGraph 5).Adj i j) :
+    ∃! i : Fin 5, S = c5Type i
+```
+
+## EG617.c5_common_neighbors_unique
+
+Source: EG617/Core/C5Types.lean
+
+```lean
+theorem c5_common_neighbors_unique (i j k l : Fin 5) (hne : i ≠ j)
+    (hik : (SimpleGraph.cycleGraph 5).Adj i k)
+    (hjk : (SimpleGraph.cycleGraph 5).Adj j k)
+    (hil : (SimpleGraph.cycleGraph 5).Adj i l)
+    (hjl : (SimpleGraph.cycleGraph 5).Adj j l) : k = l
+```
+
+## EG617.c5_complete_type_sets
+
+Source: EG617/Core/C5Types.lean
+
+```lean
+theorem c5_complete_type_sets (A B : Finset (Fin 5))
+    (hA : A.Nonempty) (hB : B.Nonempty)
+    (hcross : ∀ i ∈ A, ∀ j ∈ B, Disjoint (c5Type i) (c5Type j)) :
+    (A.card = 1 ∨ B.card = 1) ∧ A.card ≤ 2 ∧ B.card ≤ 2
+```
+
+## EG617.cycleNeighborLabels
+
+Source: EG617/Core/C5Types.lean
+
+```lean
+noncomputable def cycleNeighborLabels
+    (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G) (x : V) : Finset (Fin 5)
+```
+
+## EG617.cycleNeighborLabels_independent
+
+Source: EG617/Core/C5Types.lean
+
+```lean
+theorem cycleNeighborLabels_independent
+    (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G) (ht : G.CliqueFree 3) (x : V) :
+    ∀ i ∈ cycleNeighborLabels f x, ∀ j ∈ cycleNeighborLabels f x,
+      ¬ (SimpleGraph.cycleGraph 5).Adj i j
+```
+
+## EG617.cycleNeighborLabels_unique_type
+
+Source: EG617/Core/C5Types.lean
+
+```lean
+theorem cycleNeighborLabels_unique_type
+    (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G) (ht : G.CliqueFree 3) (x : V)
+    (hc : (cycleNeighborLabels f x).card = 2) :
+    ∃! i : Fin 5, cycleNeighborLabels f x = c5Type i
+```
+
+## EG617.adjacent_cycleNeighborLabels_disjoint
+
+Source: EG617/Core/C5Types.lean
+
+```lean
+theorem adjacent_cycleNeighborLabels_disjoint
+    (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G) (ht : G.CliqueFree 3)
+    {x y : V} (hxy : G.Adj x y) :
+    Disjoint (cycleNeighborLabels f x) (cycleNeighborLabels f y)
+```
+
+## EG617.complete_bipartite_type_image
+
+Source: EG617/Core/C5Types.lean
+
+```lean
+theorem complete_bipartite_type_image
+    (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G) (ht : G.CliqueFree 3)
+    (A B : Finset V) (hA : A.Nonempty) (hB : B.Nonempty) (t : V → Fin 5)
+    (hlabels : ∀ x, x ∈ A ∨ x ∈ B → cycleNeighborLabels f x = c5Type (t x))
+    (hedges : ∀ x ∈ A, ∀ y ∈ B, G.Adj x y) :
+    ((A.image t).card = 1 ∨ (B.image t).card = 1) ∧
+      (A.image t).card ≤ 2 ∧ (B.image t).card ≤ 2
+```
+
 ## EG617.adjCount
 
 Source: EG617/Core/EdgePartition.lean
@@ -925,6 +1184,140 @@ theorem core_R447_degree_ge_10 (G : SimpleGraph (Fin 47))
     (hG : CoreAdmissible 4 G) (v : Fin 47) : 10 ≤ G.degree v
 ```
 
+## EG617.two_cycle_neighbors_cross_card_le_nine
+
+Source: EG617/Core/R23BalancedExterior.lean
+
+```lean
+theorem two_cycle_neighbors_cross_card_le_nine (G : SimpleGraph V)
+    (ht : G.CliqueFree 3) (hI : CoreIndependenceBound 11 G)
+    (S B : Finset V) (v : V) (hd : (S.filter (G.Adj v)).card = 2)
+    (hB : B ⊆ Sᶜ) (hedges : ∀ b ∈ B, G.Adj v b) : B.card ≤ 9
+```
+
+## EG617.r23_exists_balanced_exterior
+
+Source: EG617/Core/R23BalancedExterior.lean
+
+```lean
+theorem r23_exists_balanced_exterior (G : SimpleGraph V)
+    (hV : Fintype.card V = 23) (ht : G.CliqueFree 3)
+    (hI : CoreIndependenceBound 11 G) (he : 121 ≤ G.edgeFinset.card) :
+    ∃ (S : Finset V) (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G),
+      Finset.univ.image f = S ∧ ExactC5NeighborLedger G S ∧
+      ∃ A : Finset ((Sᶜ : Finset V) : Set V),
+        let H
+```
+
+## EG617.c5_remaining_fiber_sum
+
+Source: EG617/Core/R23CaseI.lean
+
+```lean
+theorem c5_remaining_fiber_sum (n : Fin 5 → ℕ) (a : Fin 5)
+    (hs : ∑ i, n i = 23) (ha : n a = 10)
+    (hplus : n (a + 2) = 1) (hminus : n (a - 2) = 1) :
+    n (a + 1) + n (a - 1) = 11
+```
+
+## EG617.R23CaseIProfile
+
+Source: EG617/Core/R23CaseI.lean
+
+```lean
+def R23CaseIProfile (G : SimpleGraph V) : Prop
+```
+
+## EG617.r23_122_case_I
+
+Source: EG617/Core/R23CaseI.lean
+
+```lean
+theorem r23_122_case_I (G : SimpleGraph V)
+    (hV : Fintype.card V = 23) (ht : G.CliqueFree 3)
+    (hI : CoreIndependenceBound 11 G) (he : G.edgeFinset.card = 122) :
+    R23CaseIProfile G
+```
+
+## EG617.r23_122_complete_type_data
+
+Source: EG617/Core/R23CompleteExterior.lean
+
+```lean
+theorem r23_122_complete_type_data (G : SimpleGraph V)
+    (hV : Fintype.card V = 23) (ht : G.CliqueFree 3)
+    (hI : CoreIndependenceBound 11 G) (he : G.edgeFinset.card = 122) :
+    ∃ (S : Finset V) (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G)
+      (t : V → Fin 5) (P Q : Finset V),
+      Finset.univ.image f = S ∧ ExactC5NeighborLedger G S ∧
+      (∀ x, cycleNeighborLabels f x = c5Type (t x)) ∧
+      (∀ x y, G.Adj x y ↔ (SimpleGraph.cycleGraph 5).Adj (t x) (t y)) ∧
+      P ∪ Q = Sᶜ ∧ P.card = 9 ∧ Q.card = 9 ∧
+      (∀ x ∈ P, ∀ y ∈ Q, G.Adj x y)
+```
+
+## EG617.r23_122_type_presentation
+
+Source: EG617/Core/R23CompleteExterior.lean
+
+```lean
+theorem r23_122_type_presentation (G : SimpleGraph V)
+    (hV : Fintype.card V = 23) (ht : G.CliqueFree 3)
+    (hI : CoreIndependenceBound 11 G) (he : G.edgeFinset.card = 122) :
+    ∃ (S : Finset V) (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G)
+      (t : V → Fin 5), Finset.univ.image f = S ∧ ExactC5NeighborLedger G S ∧
+      (∀ x, cycleNeighborLabels f x = c5Type (t x)) ∧
+      ∀ x y, G.Adj x y ↔ (SimpleGraph.cycleGraph 5).Adj (t x) (t y)
+```
+
+## EG617.deficit_sum_add
+
+Source: EG617/Core/R23ExactLedger.lean
+
+```lean
+theorem deficit_sum_add (T : Finset V) (d : V → ℕ) (hd : ∀ v ∈ T, d v ≤ 2) :
+    (∑ v ∈ T, (2 - d v)) + (∑ v ∈ T, d v) = 2 * T.card
+```
+
+## EG617.deficit_zero_iff
+
+Source: EG617/Core/R23ExactLedger.lean
+
+```lean
+theorem deficit_zero_iff (T : Finset V) (d : V → ℕ) (hd : ∀ v ∈ T, d v ≤ 2) :
+    (∑ v ∈ T, (2 - d v)) = 0 ↔ ∀ v ∈ T, d v = 2
+```
+
+## EG617.deficit_one_distribution
+
+Source: EG617/Core/R23ExactLedger.lean
+
+```lean
+theorem deficit_one_distribution (T : Finset V) (d : V → ℕ)
+    (hd : ∀ v ∈ T, d v ≤ 2) (h : (∑ v ∈ T, (2 - d v)) = 1) :
+    ∃ v ∈ T, d v = 1 ∧ ∀ w ∈ T, w ≠ v → d w = 2
+```
+
+## EG617.ExactC5NeighborLedger
+
+Source: EG617/Core/R23ExactLedger.lean
+
+```lean
+def ExactC5NeighborLedger (G : SimpleGraph V) (S : Finset V) : Prop
+```
+
+## EG617.r23_exact_neighbor_ledger
+
+Source: EG617/Core/R23ExactLedger.lean
+
+```lean
+theorem r23_exact_neighbor_ledger (G : SimpleGraph V)
+    (hV : Fintype.card V = 23) (ht : G.CliqueFree 3)
+    (hI : CoreIndependenceBound 11 G) (he : 121 ≤ G.edgeFinset.card) :
+    ∃ v, ∃ p : G.Walk v v, IsShortestOddLoop p ∧ p.IsCycle ∧ p.length = 5 ∧
+      ExactC5NeighborLedger G p.support.toFinset
+```
+
 ## EG617.not_two_colorable_of_independence_bound
 
 Source: EG617/Core/R23Reduction.lean
@@ -959,6 +1352,43 @@ theorem r23_exists_five_cycle_bipartite_exterior (G : SimpleGraph V)
       p.support.toFinsetᶜ.card = 18 ∧
       80 ≤ coreInducedEdgeCount G p.support.toFinsetᶜ ∧
       (G.induce ((p.support.toFinsetᶜ : Finset V) : Set V)).Colorable 2
+```
+
+## EG617.five_cycle_copy_same_support
+
+Source: EG617/Core/R23TypeLift.lean
+
+```lean
+theorem five_cycle_copy_same_support {v : V} (p : G.Walk v v)
+    (hc : p.IsCycle) (h5 : p.length = 5) :
+    ∃ f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G,
+      Finset.univ.image f = p.support.toFinset
+```
+
+## EG617.cycleNeighborLabels_card_eq
+
+Source: EG617/Core/R23TypeLift.lean
+
+```lean
+theorem cycleNeighborLabels_card_eq
+    (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G) (S : Finset V)
+    (hS : Finset.univ.image f = S) (x : V) :
+    (cycleNeighborLabels f x).card = (S.filter (G.Adj x)).card
+```
+
+## EG617.r23_exact_labeled_neighbor_ledger
+
+Source: EG617/Core/R23TypeLift.lean
+
+```lean
+theorem r23_exact_labeled_neighbor_ledger (G : SimpleGraph V)
+    (hV : Fintype.card V = 23) (ht : G.CliqueFree 3)
+    (hI : CoreIndependenceBound 11 G) (he : 121 ≤ G.edgeFinset.card) :
+    ∃ (S : Finset V) (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G),
+      Finset.univ.image f = S ∧ ExactC5NeighborLedger G S ∧
+      (∀ x, (cycleNeighborLabels f x).card = (S.filter (G.Adj x)).card) ∧
+      (∀ x ∈ Sᶜ, (S.filter (G.Adj x)).card = 2 →
+        ∃! i : Fin 5, cycleNeighborLabels f x = c5Type i)
 ```
 
 ## EG617.independent_card_le_twelve

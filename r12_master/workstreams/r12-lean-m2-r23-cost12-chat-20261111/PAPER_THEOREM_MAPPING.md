@@ -16,7 +16,9 @@ collected in DECLARATION_STATEMENTS.md; CI prints their elaborated types.
 | Low M2 shortest C5 | r23_shortestOddLoop_length_five | 23 vertices, triangle-free, e>=121, shortest odd loop |
 | Low M2 exterior | r23_exists_five_cycle_bipartite_exterior | Full alpha<=11 assumption supplies nonbipartiteness; exterior has 18 vertices and >=80 edges |
 | Low M2 exterior three forms | bipartite_18_dense_classification | Parts are independent, cover all vertices; every cross adjacency is specified |
-| Low M2 four type cases | none | Complete classification gap |
+| Low M2a / Case I,122 edges | r23_122_case_I; R23CaseIProfile | VERIFIED CI43618192344: actual adjacency iff and exact10,A,1,1,B fibers; A+B=11; 1<=A,B<=10 |
+| Low M2c / K8,10 exclusion | r23_exists_balanced_exterior | VERIFIED: original R23 contract implies balanced9+9 exterior |
+| Low M2b and M2d /121-edge cases | finite type lemmas only | Actual graph completion/exceptional blow-up classification gap |
 | Low M3 | none | Cost-6 gap |
 | Low M4 | core_R335_degree_ge_11 only | Sharp degree12 and e210 still gaps |
 | Low M5 | core_R337_empty_of_card | R337 done; sharp R336 still gap |

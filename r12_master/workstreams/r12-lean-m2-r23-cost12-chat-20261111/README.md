@@ -46,16 +46,20 @@ Windows reproducibility remains limited by the previously documented .ir and
 separately; a lexical source-scan PASS never means lake build PASS.
 
 Repository branch: workstream/r12-lean-m2-r23-cost12-chat-20261111.
-Frozen paper source: frozen/low/MINIMUM_DEGREE_GATE_SELF_CONTAINED.md at
-c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2, as attributed in the retained independent
-audit. This checkout contains the audit text; the frozen file itself is not present.
-No stronger claim of byte-for-byte paper access is made.
+Frozen paper source was read at immutable commit
+c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2, path
+r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/low/MINIMUM_DEGREE_GATE_SELF_CONTAINED.md.
+See FROZEN_CLASSIFICATION_SOURCE.md for the four exact branches. The original
+frozen file is not edited or required by the standalone Lean build.
 
-Verified checkpoint: 875bd3de7478129b507b4f8e9df14f0c8e8bd4f5;
-successful CI: https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/43361985046.
+Verified checkpoint: c252a45b185c07387e71b3416cde37f46b95b3f1;
+successful CI: https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/43618192344.
 The standalone build, complete axiom audit and source/config hash comparison passed.
 Logs include all failed iterations as well as the complete successful run.
-There are 122 audited declarations / 99 theorems, but GATE47 is still not proved.
+Case I (122 edges) is fully classified by r23_122_case_I as
+C5(10,A,1,1,B), A+B=11, 1<=A,B<=10. The121-edge graph-completion cases,
+full R23 classification, Cost-6 and GATE47 remain open. All159 project declarations
+and132 theorems were checked; those counts do not imply any parent theorem.
 
 tools/collect-evidence.mjs is a maintainer evidence-extraction utility; its baseline
 comparison requires the original Git checkout. It is not needed to build the ZIP.

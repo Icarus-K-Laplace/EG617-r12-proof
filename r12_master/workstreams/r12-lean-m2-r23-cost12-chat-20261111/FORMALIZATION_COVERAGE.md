@@ -15,6 +15,8 @@
 | K8,10 exclusion; balanced K9,9 or K9,9-e exterior | Kernel + whole build + axiom PASS, run 43616747074 |
 | 122-edge actual C5 type presentation, adjacency iff | Kernel + whole build + axiom PASS, run 43616747074; final fiber sizes still open |
 | Complete C5 type/blow-up classification | Not formalized |
+| Complete 122-edge Case I: C5(10,A,1,1,B), A+B=11, 1<=A,B<=10 | Kernel + full build + axiom PASS, run43618192344 |
+| 121-edge singleton and missing-edge whole-graph cases | FORMALIZATION_GAP; finite type lemmas alone do not close them |
 | Unique actual two-neighbor type, complete bipartite type quotient | Kernel + axiom PASS, run 43570397008 |
 | Incompatible endpoint types and singleton extension | Kernel + axiom PASS, run 43570397008; graph-level lifting still open |
 | Cost-6 for all independent sets | Not formalized |

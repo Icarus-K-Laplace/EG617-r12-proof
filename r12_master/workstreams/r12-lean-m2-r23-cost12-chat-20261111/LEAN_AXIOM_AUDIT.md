@@ -1,16 +1,14 @@
 # Complete transitive axiom audit
 
-Verified code: 2dba3b922460dabe71fc91e4949190182217db07. Linux CI 43616747074,
-job 132513365166. Full build, exact types, source restrictions and all 152
-project declaration reports PASS. Only propext, Classical.choice, Quot.sound.
-No unproved classification or external enumeration is imported. Original
-MainTheorem and GATE47 remain unproved. Local candidates are not covered.
+Verified code commit c252a45b185c07387e71b3416cde37f46b95b3f1, Linux CI 43618192344.
 
-Full log: logs/linux-43616747074-full.txt.
+All 159 project declarations compiled and audited. Allowed logical axioms: propext, Classical.choice, Quot.sound.
+Source scan and kernel audit both passed. No sorry/admit/custom axiom/unsafe/implemented_by/native_decide is used.
+No diagnostic enumeration is imported into Lean. All graph hypotheses appear in DECLARATION_STATEMENTS.md.
+Unfinished results are absent proofs: complete type classification, Cost-6, sharp R335/R336, GATE47 and MainTheorem.
 
 | Declaration | Transitive axioms |
 |---|---|
-| EG617.r23_122_type_presentation | propext, Classical.choice, Quot.sound |
 | EG617.colorGraph | propext, Quot.sound |
 | EG617.colorGraph_adj_iff | propext, Quot.sound |
 | EG617.validColoring_iff_colorGraph | propext, Classical.choice, Quot.sound |
@@ -61,6 +59,9 @@ Full log: logs/linux-43616747074-full.txt.
 | EG617.c5_missing_edge_type_sets | propext, Classical.choice, Quot.sound |
 | EG617.c5_missing_endpoint_orientations | propext, Classical.choice, Quot.sound |
 | EG617.c5_singleton_extension | propext, Classical.choice, Quot.sound |
+| EG617.cycle_type_fiber_card | propext, Classical.choice, Quot.sound |
+| EG617.singleton_side_type_fiber_profile | propext, Classical.choice, Quot.sound |
+| EG617.complete_exterior_type_fiber_profile | propext, Classical.choice, Quot.sound |
 | EG617.cycleNeighborLabels_cycle_vertex | propext, Classical.choice, Quot.sound |
 | EG617.complete_exterior_type_presentation | propext, Classical.choice, Quot.sound |
 | EG617.complete_exterior_has_type_presentation | propext, Classical.choice, Quot.sound |
@@ -97,7 +98,7 @@ Full log: logs/linux-43616747074-full.txt.
 | EG617.cycle_support_card | propext, Classical.choice, Quot.sound |
 | EG617.chordless_cycle_induced_degree_two | propext, Classical.choice, Quot.sound |
 | EG617.chordless_cycle_induced_edges | propext, Classical.choice, Quot.sound |
-| EG617.twice_subset_independent_card_le_of_induced_degree_two | propext, 2026-11-14T16:40:48.6229263Z  Classical.choice, 2026-11-14T16:40:48.6229486Z  Quot.sound |
+| EG617.twice_subset_independent_card_le_of_induced_degree_two | propext, Classical.choice, Quot.sound |
 | EG617.shortestOddLoop_neighbor_card_le | propext, Classical.choice, Quot.sound |
 | EG617.triangleFree_induced_mantel | propext, Classical.choice, Quot.sound |
 | EG617.shortestOddLoop_edge_bound | propext, Classical.choice, Quot.sound |
@@ -130,6 +131,11 @@ Full log: logs/linux-43616747074-full.txt.
 | EG617.core_R447_degree_ge_10 | propext, Classical.choice, Quot.sound |
 | EG617.two_cycle_neighbors_cross_card_le_nine | propext, Classical.choice, Quot.sound |
 | EG617.r23_exists_balanced_exterior | propext, Classical.choice, Quot.sound |
+| EG617.c5_remaining_fiber_sum | propext, Classical.choice, Quot.sound |
+| EG617.R23CaseIProfile | propext, Classical.choice, Quot.sound |
+| EG617.r23_122_case_I | propext, Classical.choice, Quot.sound |
+| EG617.r23_122_complete_type_data | propext, Classical.choice, Quot.sound |
+| EG617.r23_122_type_presentation | propext, Classical.choice, Quot.sound |
 | EG617.deficit_sum_add | propext, Classical.choice, Quot.sound |
 | EG617.deficit_zero_iff | propext, Classical.choice, Quot.sound |
 | EG617.deficit_one_distribution | propext, Classical.choice, Quot.sound |
