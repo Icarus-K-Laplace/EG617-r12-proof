@@ -2,28 +2,19 @@
 
 | Content | Status |
 |---|---|
-| Original K145 definitions and equivalence | Verified baseline, unchanged |
-| M1 Turan/complement bounds, color ledger, D caps, least-color 870 | Verified baseline |
+| Original K145 definitions and equivalence | Verified baseline, byte-unchanged |
+| M1 Turan bounds, color ledger, hereditary D, least-color870 | Verified baseline |
 | R224, R337, hereditary inheritance | Verified baseline |
-| R335 degree>=11; R447 degree>=10 | Verified baseline; weaker intermediate results only |
-| Odd-cycle structure and exact edge partition | Kernel + axiom audit PASS, run 43361985046 |
-| Generic shortest odd-cycle bound and numeric specializations | Kernel + axiom audit PASS, run 43361985046 |
-| C5 with 18-point bipartite exterior of >=80 edges | Kernel + axiom audit PASS, run 43361985046 |
-| Exact three dense bipartite exterior forms | Kernel + axiom audit PASS, run 43361985046 |
-| Exact 121/122 edge ledger, three neighbor distributions, unique singleton iff | Kernel + whole build + axiom PASS, run 43573005534 |
-| Same-support labeled C5 copy and cardinal transfer | Kernel + whole build + axiom PASS, run 43616747074 |
-| K8,10 exclusion; balanced K9,9 or K9,9-e exterior | Kernel + whole build + axiom PASS, run 43616747074 |
-| 122-edge actual C5 type presentation, adjacency iff | Kernel + whole build + axiom PASS, run 43616747074; final fiber sizes still open |
-| Complete C5 type/blow-up classification | Not formalized |
-| Complete 122-edge Case I: C5(10,A,1,1,B), A+B=11, 1<=A,B<=10 | Kernel + full build + axiom PASS, run43618192344 |
-| 121-edge complete exterior / singleton graph completion | Kernel + full build + axiom PASS, run43679609897 |
-| 121-edge unique missing-edge whole-graph classification | Adjacency lift PASS43679609897; exceptional fiber ledger/assembly pending |
-| Unique actual two-neighbor type, complete bipartite type quotient | Kernel + axiom PASS, run 43570397008 |
-| Incompatible endpoint types and singleton extension | Kernel + axiom PASS, run 43570397008; graph-level lifting still open |
-| Cost-6 for all independent sets | Not formalized |
-| Sharp R335 / R336 | Not formalized |
-| GATE47 degree>=12 | Not formalized; target unchanged |
-| Original MainTheorem | Absent |
+| Weak R335 degree11 and R447 degree10 | Verified intermediate bounds only |
+| Generic odd-cycle bound and23/18-point specializations | LEAN VERIFIED |
+| Exact121/122 ledger and singleton iff | LEAN VERIFIED |
+| Same C5 support, unique actual types and precise exterior edges | LEAN VERIFIED |
+| Entire R23 classification / frozen M2a-M2d | LEAN VERIFIED,0d2985d / CI43680628810 |
+| Cost-6 for all independent sets and legal deletions | FORMALIZATION_GAP |
+| Sharp R335/R336 | FORMALIZATION_GAP |
+| GATE47 degree12 | FORMALIZATION_GAP; original graph class unchanged |
+| Original MainTheorem | ABSENT |
 
-Module PASS, whole-project lake build PASS, and axiom-audit PASS are separate claims.
-The final machine status and full logs determine which are established for each SHA.
+The current whole-project build and axiom audit both PASS. Neither source scans,
+theorem counts nor diagnostic enumerations imply any unproved parent result.
+Exact evidence and coverage of the named code commit: CI_STATUS.json.

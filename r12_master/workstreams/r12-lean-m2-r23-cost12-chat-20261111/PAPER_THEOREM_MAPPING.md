@@ -18,7 +18,9 @@ collected in DECLARATION_STATEMENTS.md; CI prints their elaborated types.
 | Low M2 exterior three forms | bipartite_18_dense_classification | Parts are independent, cover all vertices; every cross adjacency is specified |
 | Low M2a / Case I,122 edges | r23_122_case_I; R23CaseIProfile | VERIFIED CI43618192344: actual adjacency iff and exact10,A,1,1,B fibers; A+B=11; 1<=A,B<=10 |
 | Low M2c / K8,10 exclusion | r23_exists_balanced_exterior | VERIFIED: original R23 contract implies balanced9+9 exterior |
-| Low M2b and M2d /121-edge cases | finite type lemmas only | Actual graph completion/exceptional blow-up classification gap |
+| Low M2b /singleton graph completion | r23_121_completion_or_missing_exterior | VERIFIED: actual added edge, triangle-free, alpha<=11, exactly122 edges, Case I |
+| Low M2d /unique missing edge | missing_exterior_completion_or_exceptional | VERIFIED: compatible completion or full9,9,2,1,2 adjacency/fiber profile |
+| Complete Low M2 | r23_complete_classification | VERIFIED CI43680628810; only original23-vertex, triangle-free, alpha<=11, e>=121 hypotheses |
 | Low M3 | none | Cost-6 gap |
 | Low M4 | core_R335_degree_ge_11 only | Sharp degree12 and e210 still gaps |
 | Low M5 | core_R337_empty_of_card | R337 done; sharp R336 still gap |

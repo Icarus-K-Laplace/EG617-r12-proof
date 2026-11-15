@@ -488,6 +488,113 @@ theorem c5_singleton_extension (a : Fin 5) (B : Finset (Fin 5))
     ∃ i : Fin 5, p ∈ c5Type i ∧ ∀ b ∈ B, Disjoint (c5Type i) (c5Type b)
 ```
 
+## EG617.disjoint_cycle_neighbors_no_common_neighbor
+
+Source: EG617/Core/C5MissingGraphLift.lean
+
+```lean
+theorem disjoint_cycle_neighbors_no_common_neighbor
+    (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G)
+    (S A B : Finset V) (hS : Finset.univ.image f = S) (hcover : A ∪ B = Sᶜ)
+    (hA : G.IsIndepSet (A : Set V)) (hB : G.IsIndepSet (B : Set V))
+    (u v : V) (hu : u ∈ A) (hv : v ∈ B)
+    (hd : Disjoint (cycleNeighborLabels f u) (cycleNeighborLabels f v)) :
+    ∀ w, G.Adj u w → ¬ G.Adj v w
+```
+
+## EG617.missing_exterior_type_presentation
+
+Source: EG617/Core/C5MissingGraphLift.lean
+
+```lean
+theorem missing_exterior_type_presentation
+    (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G) (ht : G.CliqueFree 3)
+    (S A B : Finset V) (hS : Finset.univ.image f = S) (hcover : A ∪ B = Sᶜ)
+    (u v : V) (hA : (A.erase u).Nonempty) (hB : (B.erase v).Nonempty)
+    (t : V → Fin 5) (hlabels : ∀ x, cycleNeighborLabels f x = c5Type (t x))
+    (hmiss : ∀ x ∈ A, ∀ y ∈ B, (¬ G.Adj x y ↔ x = u ∧ y = v))
+    (hincompat : ¬ (SimpleGraph.cycleGraph 5).Adj (t u) (t v)) :
+    ∀ x y, G.Adj x y ↔ (SimpleGraph.cycleGraph 5).Adj (t x) (t y)
+```
+
+## EG617.missing_exterior_type_orientations
+
+Source: EG617/Core/C5MissingTypeFibers.lean
+
+```lean
+theorem missing_exterior_type_orientations
+    (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G) (ht : G.CliqueFree 3)
+    (A B : Finset V) (u v : V) (hu : u ∈ A) (hv : v ∈ B)
+    (hA : (A.erase u).Nonempty) (hB : (B.erase v).Nonempty)
+    (t : V → Fin 5) (hlabels : ∀ x, cycleNeighborLabels f x = c5Type (t x))
+    (hmiss : ∀ x ∈ A, ∀ y ∈ B, (¬ G.Adj x y ↔ x = u ∧ y = v))
+    (hincompat : ¬ (SimpleGraph.cycleGraph 5).Adj (t u) (t v)) :
+    ∃ a b : Fin 5, (∀ x ∈ A.erase u, t x = a) ∧
+      (∀ y ∈ B.erase v, t y = b) ∧
+      ((b = a + 1 ∧ t u = a + 2 ∧ t v = a - 1) ∨
+       (b = a - 1 ∧ t u = a - 2 ∧ t v = a + 1))
+```
+
+## EG617.one_exception_type_fiber_card
+
+Source: EG617/Core/C5MissingTypeFibers.lean
+
+```lean
+theorem one_exception_type_fiber_card (C : Finset V) (t : V → Fin 5)
+    (u : V) (hu : u ∈ C) (hc : C.card = 9) (a i : Fin 5)
+    (hrest : ∀ x ∈ C.erase u, t x = a) :
+    (C.filter (fun x => t x = i)).card =
+      (if a = i then 8 else 0) + (if t u = i then 1 else 0)
+```
+
+## EG617.missing_exterior_type_fiber_formula
+
+Source: EG617/Core/C5MissingTypeFibers.lean
+
+```lean
+theorem missing_exterior_type_fiber_formula
+    (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G) (S A B : Finset V)
+    (hS : Finset.univ.image f = S) (hcover : A ∪ B = Sᶜ) (hdis : Disjoint A B)
+    (hA : A.card = 9) (hB : B.card = 9) (u v : V) (hu : u ∈ A) (hv : v ∈ B)
+    (t : V → Fin 5) (hcycle : ∀ i, t (f i) = i) (a b : Fin 5)
+    (hAt : ∀ x ∈ A.erase u, t x = a) (hBt : ∀ y ∈ B.erase v, t y = b) :
+    ∀ i : Fin 5, (Finset.univ.filter (fun x => t x = i)).card =
+      1 + (if a = i then 8 else 0) + (if b = i then 8 else 0) +
+        (if t u = i then 1 else 0) + (if t v = i then 1 else 0)
+```
+
+## EG617.c5_missing_fiber_profile
+
+Source: EG617/Core/C5MissingTypeFibers.lean
+
+```lean
+theorem c5_missing_fiber_profile (n : Fin 5 → ℕ) (a b u v : Fin 5)
+    (hn : ∀ i, n i = 1 + (if a = i then 8 else 0) + (if b = i then 8 else 0) +
+      (if u = i then 1 else 0) + (if v = i then 1 else 0))
+    (ho : (b = a + 1 ∧ u = a + 2 ∧ v = a - 1) ∨
+      (b = a - 1 ∧ u = a - 2 ∧ v = a + 1)) :
+    ∃ c : Fin 5, n c = 9 ∧ n (c + 1) = 9 ∧ n (c + 2) = 2 ∧
+      n (c - 2) = 1 ∧ n (c - 1) = 2
+```
+
+## EG617.singleton_cycle_edge_completion_witness
+
+Source: EG617/Core/C5SingletonGraphLift.lean
+
+```lean
+theorem singleton_cycle_edge_completion_witness
+    (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G) (ht : G.CliqueFree 3)
+    (S A B : Finset V) (hS : Finset.univ.image f = S)
+    (hcover : A ∪ B = Sᶜ) (hA : G.IsIndepSet (A : Set V))
+    (u z : V) (hu : u ∈ A) (hz : z ∈ A) (p : Fin 5)
+    (hsingle : cycleNeighborLabels f u = {p})
+    (hz2 : (cycleNeighborLabels f z).card = 2)
+    (hB2 : ∀ x ∈ B, (cycleNeighborLabels f x).card = 2)
+    (hedges : ∀ x ∈ A, ∀ y ∈ B, G.Adj x y) :
+    ∃ q : Fin 5, u ≠ f q ∧ ¬ G.Adj u (f q) ∧
+      ∀ w, G.Adj u w → ¬ G.Adj (f q) w
+```
+
 ## EG617.cycle_type_fiber_card
 
 Source: EG617/Core/C5TypeFibers.lean
@@ -556,6 +663,18 @@ theorem complete_exterior_type_presentation
     (t : V → Fin 5) (hlabels : ∀ x, cycleNeighborLabels f x = c5Type (t x))
     (hedges : ∀ x ∈ A, ∀ y ∈ B, G.Adj x y) :
     ∀ x y, G.Adj x y ↔ (SimpleGraph.cycleGraph 5).Adj (t x) (t y)
+```
+
+## EG617.exists_cycle_type_assignment
+
+Source: EG617/Core/C5TypePresentation.lean
+
+```lean
+theorem exists_cycle_type_assignment
+    (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G) (ht : G.CliqueFree 3)
+    (S : Finset V) (hS : Finset.univ.image f = S)
+    (hd : ∀ x ∈ Sᶜ, (S.filter (G.Adj x)).card = 2) :
+    ∃ t : V → Fin 5, ∀ x, cycleNeighborLabels f x = c5Type (t x)
 ```
 
 ## EG617.complete_exterior_has_type_presentation
@@ -1239,6 +1358,82 @@ theorem r23_122_case_I (G : SimpleGraph V)
     R23CaseIProfile G
 ```
 
+## EG617.R23OneEdgeCompletion
+
+Source: EG617/Core/R23CaseII.lean
+
+```lean
+def R23OneEdgeCompletion (G : SimpleGraph V) : Prop
+```
+
+## EG617.singleton_partition_completes_to_case_I
+
+Source: EG617/Core/R23CaseII.lean
+
+```lean
+theorem singleton_partition_completes_to_case_I (G : SimpleGraph V)
+    (hV : Fintype.card V = 23) (ht : G.CliqueFree 3)
+    (hI : CoreIndependenceBound 11 G) (he : G.edgeFinset.card = 121)
+    (f : SimpleGraph.Copy (SimpleGraph.cycleGraph 5) G) (S A B : Finset V)
+    (hS : Finset.univ.image f = S) (hcover : A ∪ B = Sᶜ)
+    (hA : G.IsIndepSet (A : Set V)) (hB : G.IsIndepSet (B : Set V))
+    (hAc : A.card = 9) (hBc : B.card = 9)
+    (hedges : ∀ x ∈ A, ∀ y ∈ B, G.Adj x y)
+    (hd : ∃ u ∈ Sᶜ, (S.filter (G.Adj u)).card = 1 ∧
+      ∀ x ∈ Sᶜ, x ≠ u → (S.filter (G.Adj x)).card = 2) :
+    R23OneEdgeCompletion G
+```
+
+## EG617.R23MissingEdgeExterior
+
+Source: EG617/Core/R23CaseII.lean
+
+```lean
+def R23MissingEdgeExterior (G : SimpleGraph V) : Prop
+```
+
+## EG617.r23_121_completion_or_missing_exterior
+
+Source: EG617/Core/R23CaseII.lean
+
+```lean
+theorem r23_121_completion_or_missing_exterior (G : SimpleGraph V)
+    (hV : Fintype.card V = 23) (ht : G.CliqueFree 3)
+    (hI : CoreIndependenceBound 11 G) (he : G.edgeFinset.card = 121) :
+    R23OneEdgeCompletion G ∨ R23MissingEdgeExterior G
+```
+
+## EG617.R23ExceptionalProfile
+
+Source: EG617/Core/R23Classification.lean
+
+```lean
+def R23ExceptionalProfile (G : SimpleGraph V) : Prop
+```
+
+## EG617.missing_exterior_completion_or_exceptional
+
+Source: EG617/Core/R23Classification.lean
+
+```lean
+theorem missing_exterior_completion_or_exceptional (G : SimpleGraph V)
+    (hV : Fintype.card V = 23) (ht : G.CliqueFree 3)
+    (hI : CoreIndependenceBound 11 G) (he : G.edgeFinset.card = 121)
+    (hm : R23MissingEdgeExterior G) :
+    R23OneEdgeCompletion G ∨ R23ExceptionalProfile G
+```
+
+## EG617.r23_complete_classification
+
+Source: EG617/Core/R23Classification.lean
+
+```lean
+theorem r23_complete_classification (G : SimpleGraph V)
+    (hV : Fintype.card V = 23) (ht : G.CliqueFree 3)
+    (hI : CoreIndependenceBound 11 G) (he : 121 ≤ G.edgeFinset.card) :
+    R23CaseIProfile G ∨ R23OneEdgeCompletion G ∨ R23ExceptionalProfile G
+```
+
 ## EG617.r23_122_complete_type_data
 
 Source: EG617/Core/R23CompleteExterior.lean
@@ -1268,6 +1463,30 @@ theorem r23_122_type_presentation (G : SimpleGraph V)
       (t : V → Fin 5), Finset.univ.image f = S ∧ ExactC5NeighborLedger G S ∧
       (∀ x, cycleNeighborLabels f x = c5Type (t x)) ∧
       ∀ x y, G.Adj x y ↔ (SimpleGraph.cycleGraph 5).Adj (t x) (t y)
+```
+
+## EG617.triangleFree_sup_edge_of_no_common_neighbor
+
+Source: EG617/Core/R23EdgeCompletion.lean
+
+```lean
+theorem triangleFree_sup_edge_of_no_common_neighbor (G : SimpleGraph V)
+    (ht : G.CliqueFree 3) (u v : V) (hne : u ≠ v)
+    (hcommon : ∀ w, G.Adj u w → ¬ G.Adj v w) :
+    (G ⊔ SimpleGraph.edge u v).CliqueFree 3
+```
+
+## EG617.r23_one_edge_completion_case_I
+
+Source: EG617/Core/R23EdgeCompletion.lean
+
+```lean
+theorem r23_one_edge_completion_case_I (G : SimpleGraph V)
+    (hV : Fintype.card V = 23) (ht : G.CliqueFree 3)
+    (hI : CoreIndependenceBound 11 G) (he : G.edgeFinset.card = 121)
+    (u v : V) (hne : u ≠ v) (hn : ¬ G.Adj u v)
+    (hcommon : ∀ w, G.Adj u w → ¬ G.Adj v w) :
+    let H
 ```
 
 ## EG617.deficit_sum_add

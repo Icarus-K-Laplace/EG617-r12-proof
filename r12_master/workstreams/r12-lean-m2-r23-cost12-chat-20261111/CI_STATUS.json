@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-14",
-  "sha": "c252a45b185c07387e71b3416cde37f46b95b3f1",
-  "run": 43618192344,
-  "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/43618192344",
+  "date": "2026-11-15",
+  "sha": "0d2985dbfe109fab301c157f687b3b38478c8bb6",
+  "run": 43680628810,
+  "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/43680628810",
   "cleanLinuxBuild": "PASS",
   "fullAxiomAudit": "PASS",
   "statementInspection": "PASS",
   "localMatchesCISHA256": "PASS",
-  "declarations": 159,
-  "theorems": 132,
+  "declarations": 176,
+  "theorems": 146,
   "originalMathematicalSourcesUnchanged": true,
   "pins": [
     {
@@ -51,11 +51,23 @@
   "hashes": [
     {
       "file": "EG617.lean",
-      "sha256": "80e9ba32d61ac13b05a581e4648e07efe855b6e5d5fe704a881ad1b68566f8b7"
+      "sha256": "3e792f414511e0e82d63992067c6ad46a014d89b93bf1eee29d2028c9e58fe13"
     },
     {
       "file": "EG617/Audit/Axioms.lean",
-      "sha256": "928d94af11ae24d869c3176cf06706d39092a869d005531fec75cf1e12761429"
+      "sha256": "a15c8e587584700beabdce4b6f6423d6ff8d5dd86476304b6d5e978d49fa6bd5"
+    },
+    {
+      "file": "EG617/Audit/C5MissingGraphLift.lean",
+      "sha256": "09b665d1a5732d5c9cc75902bae75d240188424eaa7bf1e11f7f2dc9d9ca0ff9"
+    },
+    {
+      "file": "EG617/Audit/C5MissingTypeFibers.lean",
+      "sha256": "7c267d929f2bfdcf223c916c166c9a487b0c8720dbef8adca77b9b1035f35bc6"
+    },
+    {
+      "file": "EG617/Audit/C5SingletonGraphLift.lean",
+      "sha256": "1c24bb18f0b1cbf86c9cd4a5de1eae4efa83455d3fb661ae59dea9ebe9996a6f"
     },
     {
       "file": "EG617/Audit/C5TypeFibers.lean",
@@ -78,8 +90,20 @@
       "sha256": "0939f8ecd8f3183fbc089ce9691be844023d45325b6870fe502c4950d1dc4960"
     },
     {
+      "file": "EG617/Audit/R23CaseII.lean",
+      "sha256": "aeef6e9077022dcb5593cdbe7582caf7508b51e3aaba1c2945536716563b2799"
+    },
+    {
+      "file": "EG617/Audit/R23Classification.lean",
+      "sha256": "e405cf71dd894d1a4551a7a675344335bd90b028b601f9a4980698b09c03e393"
+    },
+    {
       "file": "EG617/Audit/R23CompleteExterior.lean",
       "sha256": "4466ecb910b41ce5a50fd337bcd5ca739781e91bb4d4a40c97f2aca578d79ba7"
+    },
+    {
+      "file": "EG617/Audit/R23EdgeCompletion.lean",
+      "sha256": "138ee572d45b8851d9d020c5b489a806f467cdb1e86537cc049a1b3fd91af992"
     },
     {
       "file": "EG617/Audit/R23Ledger.lean",
@@ -91,7 +115,7 @@
     },
     {
       "file": "EG617/Audit/Statements.lean",
-      "sha256": "9cc0c14071c8701819586ef5034c7a1fd392f9474cf47dd598b638a3a0e1c754"
+      "sha256": "9c7eaa581da72d5a02920fba338a4e9f7bbf51ff43dab1ed965630fa698fd3c5"
     },
     {
       "file": "EG617/Basic/ColoringLemmas.lean",
@@ -122,12 +146,24 @@
       "sha256": "91659e32f5cc962e7b99e91ae4a2e842136d23d992c6a381778cc5221fb0821e"
     },
     {
+      "file": "EG617/Core/C5MissingGraphLift.lean",
+      "sha256": "5f6dd418770cd29bd59b8b677cd6422ad6f74d36ce704b1cd502fb7e47a8dac1"
+    },
+    {
+      "file": "EG617/Core/C5MissingTypeFibers.lean",
+      "sha256": "9e398289747ce6784c69f8df6fba39a2aa0b3c5de578f5f37fb35899e690a34f"
+    },
+    {
+      "file": "EG617/Core/C5SingletonGraphLift.lean",
+      "sha256": "c4ca4ce04aae3b3d613d5dfa98238b4999b89084239ca209bd99837338de8762"
+    },
+    {
       "file": "EG617/Core/C5TypeFibers.lean",
       "sha256": "b5e1b564e18c00a1eb1e5e99f047874152e1913e13ddbe5c9317ba84c1a1b4d6"
     },
     {
       "file": "EG617/Core/C5TypePresentation.lean",
-      "sha256": "7f00654420bafed5839ede9041b5a10a6a59ef691021334a9191544b2e732770"
+      "sha256": "39e53bae0d3d87b83e1044ad45d7c4a7837d0b042b2edff94bb14032e0a825a2"
     },
     {
       "file": "EG617/Core/C5Types.lean",
@@ -162,8 +198,20 @@
       "sha256": "061a75b4fb05e7d3de6cd5c7ac7e4fc4d22f6c1d31072a7063619e3f47040255"
     },
     {
+      "file": "EG617/Core/R23CaseII.lean",
+      "sha256": "a333328ffa4f10a17760fba6210e6a539646c6051f6c72dc456afe552d475e9b"
+    },
+    {
+      "file": "EG617/Core/R23Classification.lean",
+      "sha256": "17c7bfcf15b7e22b46f2434b84b83655cf416b8c3cbf9ff251803655513703b6"
+    },
+    {
       "file": "EG617/Core/R23CompleteExterior.lean",
       "sha256": "c9ef15a5ca6b640280befbd2de6d16b75288b892a02b47b3b19342eb644e93d0"
+    },
+    {
+      "file": "EG617/Core/R23EdgeCompletion.lean",
+      "sha256": "861b1aa349acb51333580d995e389b1464dbba1b1e4024f7b4f568e75d84ebf3"
     },
     {
       "file": "EG617/Core/R23ExactLedger.lean",

@@ -1,80 +1,27 @@
-# Current classification theorem mapping
+# Current theorem mapping
 
-Checkpoint14e5b5c / CI43679609897 closes frozen M2b: the exact original
-23-vertex, triangle-free, alpha<=11,121-edge hypotheses imply
-R23OneEdgeCompletion OR R23MissingEdgeExterior. R23OneEdgeCompletion explicitly
-adds one formerly absent edge and retains triangle-freeness, alpha<=11,
-exactly122 edges and R23CaseIProfile. R23MissingEdgeExterior retains the same
-C5 image/ledger and every actual cross edge, with exactly one exception.
-The theorem is r23_121_completion_or_missing_exterior in Core/R23CaseII.lean.
-It derives singleton distribution internally; no terminal distribution/type
-or no-common-neighbor hypothesis appears in the parent theorem.
+Verified code0d2985dbfe109fab301c157f687b3b38478c8bb6, CI43680628810.
+Every listed theorem has an actual kernel build, #check and transitive axiom
+report in logs/linux-43680628810-full.txt. Verbatim signatures are collected in
+DECLARATION_STATEMENTS.md; full proofs remain in standard .lean files.
+The baseline/global mapping is PAPER_THEOREM_MAPPING.md.
 
-Latest update: c252a45 / CI43618192344, full kernel/type/axiom PASS.
-r23_122_case_I in Core/R23CaseI.lean closes frozen M2a / Case I.
-Its original graph assumptions are card23, CliqueFree3, alpha<=11, exactly122
-edges. R23CaseIProfile specifies all actual vertices and every adjacency, plus
-the full cyclic fiber sizes10,A,1,1,B and A+B=11, 1<=A,B<=10.
-cycle_type_fiber_card splits every type fiber into its one cycle vertex and
-its exterior fiber; complete_exterior_type_fiber_profile handles both choices
-of singleton bipartite side. c5_remaining_fiber_sum checks all five rotations
-in Lean; no external enumeration is a premise. The lower/upper A,B bounds
-follow from positive fibers and their sum. Exact statements are in
-DECLARATION_STATEMENTS.md and the successful statement-inspection log.
-The historical entries below describe earlier partial checkpoints.
-
-Update 2026-11-15, code 2dba3b9 / CI 43616747074: all the following
-statements are kernel/type/axiom PASS. Exact signatures are preserved in the
-named standard .lean modules and the full CI statement-inspection output.
-
-| Frozen source obligation | Verified theorem | Exact scope |
+| Frozen low source | Theorem | Formal meaning |
 |---|---|---|
-| M2 same C5 neighbor labeling | r23_exact_labeled_neighbor_ledger | Original R23 hypotheses, same support image, exact count transfer, unique types |
-| M2c exclusion of K8,10 | r23_exists_balanced_exterior | Original R23 hypotheses; SAME labeled C5; only K9,9 or K9,9-e exterior |
-| M2a complete graph/type lift | complete_exterior_has_type_presentation | Actual complete cross edges plus two-neighbor counts; types constructed |
-| M2a 122-edge graph presentation | r23_122_type_presentation | Original R23 assumptions plus exactly122 edges; adjacency iff C5 type adjacency |
+| M2 opening ledger | r23_exact_neighbor_ledger | Original R23 contract implies exact edge/deficit distribution |
+| M2 actual labels | r23_exact_labeled_neighbor_ledger | Same cycle support, exact count transfer, unique types |
+| M2c | r23_exists_balanced_exterior | K8,10 excluded by actual independent12-set;9+9 parts remain |
+| M2a | r23_122_case_I | All actual adjacency and10,A,1,1,B fiber sizes |
+| M2b | r23_121_completion_or_missing_exterior | Actual singleton completion; only unique missing-edge alternative remains |
+| M2d endpoint quotient | missing_exterior_type_orientations | Both eight-point remainders constant; every orientation included |
+| M2d exact fiber ledger | missing_exterior_type_fiber_formula; c5_missing_fiber_profile | Cycle vertices plus8+8+1+1 exterior pieces give9,9,2,1,2 |
+| M2d whole graph | missing_exterior_completion_or_exceptional | Compatible completion or exceptional graph, preserving real adjacency |
+| Complete M2 | r23_complete_classification | Exhaustive original-hypothesis classification |
+| M3 | none yet | Universal Cost-6 remains open |
 
-Equivalence: Fin 5 is the labeled cycle itself; cycleNeighborLabels records
-actual G edges to that copy. The map in the last theorem is assigned to every
-actual vertex, and the iff describes all ordered vertex pairs. It is the C5
-blow-up adjacency definition, but does NOT yet assert the required fiber sizes.
-The subtype exterior is exactly the complement finset of this SAME cycle.
-M2b and M2d remain graph-level gaps despite their verified finite type lemmas.
-
-2026-11-15 exact ledger: r23_exact_neighbor_ledger (Core/R23ExactLedger.lean)
-maps to frozen low M2 opening edge ledger and the saturation in M2a-M2d.
-VERIFIED 4454d72 / CI 43573005534. Hypotheses: card V=23, triangle-free,
-CoreIndependenceBound 11, at least121 edges; conclusion retains the SAME shortest
-five-cycle support, 18 exterior vertices, five internal edges, 80<=y<=81,
-121<=e<=122, e=5+x+y, x in {35,36}, and exact neighbor deficits/distributions.
-CoreIndependenceBound is the original finite-set alpha bound; induced counts
-are actual induced-graph edgeFinset cardinalities, not abstract ledger variables.
-
-Candidate: five_cycle_copy_same_support, cycleNeighborLabels_card_eq,
-r23_exact_labeled_neighbor_ledger (Core/R23TypeLift.lean). These connect that
-same support to the actual Fin 5 neighbor labels; not a graph classification.
-All exact theorem statements are in the named .lean source and Audit/R23TypeLift.lean.
-
-All candidates in the table below are now kernel/type/axiom PASS at 89183d0,
-CI 43570397008. The original candidate labels are historical.
-Also verified: c5_missing_edge_type_sets (singleton remaining types on both sides),
-c5_missing_endpoint_orientations (all five rotations and two orientations), and
-c5_singleton_extension (extension compatible with every opposite-side type).
-These correspond to frozen low M2 Cases IV and II. The four-label finite domain
-is the exact type domain supplied by cycleNeighborLabels_unique_type; no external
-representative list is trusted. Whole-graph isomorphism/classification is still open.
-
-Frozen low M2 type-quotient paragraph; exact source statements are retained in .lean.
-Baseline mappings and original K145 semantics: PAPER_THEOREM_MAPPING.md.
-
-| Obligation | Lean theorem | Scope | Current check |
-|---|---|---|---|
-| Exhaustive five two-neighbor types | c5_independent_pair_unique_type | Every independent two-element subset of Fin 5, unique center | Candidate |
-| Actual graph-to-type bridge | cycleNeighborLabels_unique_type | Any C5 copy in any triangle-free graph; exact neighbor cardinality 2 | Candidate |
-| Adjacency requires compatibility | adjacent_cycleNeighborLabels_disjoint | Actual graph edge implies disjoint label sets; no converse asserted | Candidate |
-| Complete compatible type sets | c5_complete_type_sets | Nonempty complete cross-compatible type sets: singleton side, both sizes <=2 | Candidate |
-| Complete bipartite quotient | complete_bipartite_type_image | Explicit actual cross edges and exact label/type equality | Candidate |
-
-The finite checks range over the entire formal types Fin 5 / Finset (Fin 5),
-not an externally supplied list of representatives. The graph-to-type bridge proves
-why that finite domain applies. No external enumerator is trusted.
+Equivalence with paper definitions: independence is the bound on every finite
+independent subset, induced edges are actual unordered edgeFinset cardinalities,
+and every blow-up profile gives an actual-vertex map, ALL adjacency iff relations
+and all five positive fiber sizes. Single-edge deletion is represented by
+G sup edge(u,v) with distinct, originally nonadjacent endpoints. No finite
+representative list, classification assumption or external oracle is trusted.

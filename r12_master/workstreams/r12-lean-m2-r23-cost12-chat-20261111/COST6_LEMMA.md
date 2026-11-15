@@ -14,5 +14,7 @@ The stated 12-set choices have minimum cost at most 6 in every tested case.
 Twelve representatives are excluded by the original alpha condition, not discarded
 to manufacture success. The maximum minimum cost observed is 6.
 
-This evidence is not imported into Lean and does not establish graph classification,
-class-symmetry reduction, or a kernel-checked Cost-6 theorem. Those remain necessary.
+This evidence is not imported into Lean and does not prove Cost-6.
+The arbitrary-graph classification is now independently kernel-verified by
+r23_complete_classification at0d2985d / CI43680628810. Remaining work is the
+universal-independent-set witness proof and legal single-edge deletion cases.

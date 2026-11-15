@@ -1,8 +1,8 @@
 # Complete transitive axiom audit
 
-Verified code commit c252a45b185c07387e71b3416cde37f46b95b3f1, Linux CI 43618192344.
+Verified code commit 0d2985dbfe109fab301c157f687b3b38478c8bb6, Linux CI 43680628810.
 
-All 159 project declarations compiled and audited. Allowed logical axioms: propext, Classical.choice, Quot.sound.
+All 176 project declarations compiled and audited. Allowed logical axioms: propext, Classical.choice, Quot.sound.
 Source scan and kernel audit both passed. No sorry/admit/custom axiom/unsafe/implemented_by/native_decide is used.
 No diagnostic enumeration is imported into Lean. All graph hypotheses appear in DECLARATION_STATEMENTS.md.
 Unfinished results are absent proofs: complete type classification, Cost-6, sharp R335/R336, GATE47 and MainTheorem.
@@ -59,11 +59,19 @@ Unfinished results are absent proofs: complete type classification, Cost-6, shar
 | EG617.c5_missing_edge_type_sets | propext, Classical.choice, Quot.sound |
 | EG617.c5_missing_endpoint_orientations | propext, Classical.choice, Quot.sound |
 | EG617.c5_singleton_extension | propext, Classical.choice, Quot.sound |
+| EG617.disjoint_cycle_neighbors_no_common_neighbor | propext, Classical.choice, Quot.sound |
+| EG617.missing_exterior_type_presentation | propext, Classical.choice, Quot.sound |
+| EG617.missing_exterior_type_orientations | propext, Classical.choice, Quot.sound |
+| EG617.one_exception_type_fiber_card | propext, Classical.choice, Quot.sound |
+| EG617.missing_exterior_type_fiber_formula | propext, Classical.choice, Quot.sound |
+| EG617.c5_missing_fiber_profile | propext, Classical.choice, Quot.sound |
+| EG617.singleton_cycle_edge_completion_witness | propext, Classical.choice, Quot.sound |
 | EG617.cycle_type_fiber_card | propext, Classical.choice, Quot.sound |
 | EG617.singleton_side_type_fiber_profile | propext, Classical.choice, Quot.sound |
 | EG617.complete_exterior_type_fiber_profile | propext, Classical.choice, Quot.sound |
 | EG617.cycleNeighborLabels_cycle_vertex | propext, Classical.choice, Quot.sound |
 | EG617.complete_exterior_type_presentation | propext, Classical.choice, Quot.sound |
+| EG617.exists_cycle_type_assignment | propext, Classical.choice, Quot.sound |
 | EG617.complete_exterior_has_type_presentation | propext, Classical.choice, Quot.sound |
 | EG617.c5Type | propext, Quot.sound |
 | EG617.c5Type_card | propext, Quot.sound |
@@ -134,8 +142,17 @@ Unfinished results are absent proofs: complete type classification, Cost-6, shar
 | EG617.c5_remaining_fiber_sum | propext, Classical.choice, Quot.sound |
 | EG617.R23CaseIProfile | propext, Classical.choice, Quot.sound |
 | EG617.r23_122_case_I | propext, Classical.choice, Quot.sound |
+| EG617.R23OneEdgeCompletion | propext, Classical.choice, Quot.sound |
+| EG617.singleton_partition_completes_to_case_I | propext, Classical.choice, Quot.sound |
+| EG617.R23MissingEdgeExterior | propext, Classical.choice, Quot.sound |
+| EG617.r23_121_completion_or_missing_exterior | propext, Classical.choice, Quot.sound |
+| EG617.R23ExceptionalProfile | propext, Classical.choice, Quot.sound |
+| EG617.missing_exterior_completion_or_exceptional | propext, Classical.choice, Quot.sound |
+| EG617.r23_complete_classification | propext, Classical.choice, Quot.sound |
 | EG617.r23_122_complete_type_data | propext, Classical.choice, Quot.sound |
 | EG617.r23_122_type_presentation | propext, Classical.choice, Quot.sound |
+| EG617.triangleFree_sup_edge_of_no_common_neighbor | propext, Classical.choice, Quot.sound |
+| EG617.r23_one_edge_completion_case_I | propext, Classical.choice, Quot.sound |
 | EG617.deficit_sum_add | propext, Classical.choice, Quot.sound |
 | EG617.deficit_zero_iff | propext, Classical.choice, Quot.sound |
 | EG617.deficit_one_distribution | propext, Classical.choice, Quot.sound |

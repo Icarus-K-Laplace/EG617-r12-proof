@@ -4,6 +4,9 @@
   "excluded810Witnesses": 90,
   "complete99Presentations": 90,
   "caseIFiberProfiles": 90,
+  "singletonCompletions": 3240,
+  "compatibleMissingCompletions": 90,
+  "incompatibleProfiles": 10,
   "compatibleMissingEdgeIsNotForced": true,
   "negativeControlEdges": 121,
   "limitations": "Multiplicity distributions within every compatible type support pair; this test is not a completeness proof for arbitrary R23 graphs and is not imported into Lean."

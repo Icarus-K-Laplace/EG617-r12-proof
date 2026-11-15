@@ -1,5 +1,13 @@
 # Counterexample attack report
 
+Latest classification attack (logs/type-lift-attack.json):3240 actual singleton
+edge deletions/completions,90 compatible missing-edge cases, and ALL10
+incompatible endpoint configurations. Graph adjacency was checked against the
+lifted type assignment on every vertex pair; exceptional fiber sizes and121
+edges were checked in each incompatible case. No counterexample was found in
+this explicitly stated diagnostic domain. The arbitrary-graph completeness
+claim comes from r23_complete_classification, not from these tests.
+
 The same90 complete9+9 multiplicity assignments were additionally checked
 against ALL Case I fiber conditions, in every available cyclic center.
 All satisfy10,A,1,1,B with A+B=11 and1<=A,B<=10. These checks remain

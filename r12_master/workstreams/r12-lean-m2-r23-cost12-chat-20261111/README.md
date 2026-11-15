@@ -52,14 +52,15 @@ r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/low/MI
 See FROZEN_CLASSIFICATION_SOURCE.md for the four exact branches. The original
 frozen file is not edited or required by the standalone Lean build.
 
-Verified checkpoint: c252a45b185c07387e71b3416cde37f46b95b3f1;
-successful CI: https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/43618192344.
+Verified checkpoint: 0d2985dbfe109fab301c157f687b3b38478c8bb6;
+successful CI: https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/43680628810.
 The standalone build, complete axiom audit and source/config hash comparison passed.
 Logs include all failed iterations as well as the complete successful run.
-Case I (122 edges) is fully classified by r23_122_case_I as
-C5(10,A,1,1,B), A+B=11, 1<=A,B<=10. The121-edge graph-completion cases,
-full R23 classification, Cost-6 and GATE47 remain open. All159 project declarations
-and132 theorems were checked; those counts do not imply any parent theorem.
+The COMPLETE R23 classification is proved by r23_complete_classification:
+C5(10,A,1,1,B), A+B=11, 1<=A,B<=10; a legal single-edge deletion of such a
+graph; or C5(9,9,2,1,2). All actual vertex fibers and adjacency are certified.
+Universal Cost-6 and GATE47 remain open. All176 project declarations and146
+theorems were checked; those counts do not imply any unproved parent theorem.
 
 tools/collect-evidence.mjs is a maintainer evidence-extraction utility; its baseline
 comparison requires the original Git checkout. It is not needed to build the ZIP.
