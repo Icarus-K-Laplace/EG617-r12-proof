@@ -1,5 +1,15 @@
 # Current classification theorem mapping
 
+Checkpoint14e5b5c / CI43679609897 closes frozen M2b: the exact original
+23-vertex, triangle-free, alpha<=11,121-edge hypotheses imply
+R23OneEdgeCompletion OR R23MissingEdgeExterior. R23OneEdgeCompletion explicitly
+adds one formerly absent edge and retains triangle-freeness, alpha<=11,
+exactly122 edges and R23CaseIProfile. R23MissingEdgeExterior retains the same
+C5 image/ledger and every actual cross edge, with exactly one exception.
+The theorem is r23_121_completion_or_missing_exterior in Core/R23CaseII.lean.
+It derives singleton distribution internally; no terminal distribution/type
+or no-common-neighbor hypothesis appears in the parent theorem.
+
 Latest update: c252a45 / CI43618192344, full kernel/type/axiom PASS.
 r23_122_case_I in Core/R23CaseI.lean closes frozen M2a / Case I.
 Its original graph assumptions are card23, CliqueFree3, alpha<=11, exactly122

@@ -16,7 +16,8 @@
 | 122-edge actual C5 type presentation, adjacency iff | Kernel + whole build + axiom PASS, run 43616747074; final fiber sizes still open |
 | Complete C5 type/blow-up classification | Not formalized |
 | Complete 122-edge Case I: C5(10,A,1,1,B), A+B=11, 1<=A,B<=10 | Kernel + full build + axiom PASS, run43618192344 |
-| 121-edge singleton and missing-edge whole-graph cases | FORMALIZATION_GAP; finite type lemmas alone do not close them |
+| 121-edge complete exterior / singleton graph completion | Kernel + full build + axiom PASS, run43679609897 |
+| 121-edge unique missing-edge whole-graph classification | Adjacency lift PASS43679609897; exceptional fiber ledger/assembly pending |
 | Unique actual two-neighbor type, complete bipartite type quotient | Kernel + axiom PASS, run 43570397008 |
 | Incompatible endpoint types and singleton extension | Kernel + axiom PASS, run 43570397008; graph-level lifting still open |
 | Cost-6 for all independent sets | Not formalized |

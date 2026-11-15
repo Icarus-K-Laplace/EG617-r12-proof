@@ -54,6 +54,10 @@ public import EG617
 #print axioms EG617.c5_singleton_extension
 #print axioms EG617.disjoint_cycle_neighbors_no_common_neighbor
 #print axioms EG617.missing_exterior_type_presentation
+#print axioms EG617.missing_exterior_type_orientations
+#print axioms EG617.one_exception_type_fiber_card
+#print axioms EG617.missing_exterior_type_fiber_formula
+#print axioms EG617.c5_missing_fiber_profile
 #print axioms EG617.singleton_cycle_edge_completion_witness
 #print axioms EG617.cycle_type_fiber_card
 #print axioms EG617.singleton_side_type_fiber_profile

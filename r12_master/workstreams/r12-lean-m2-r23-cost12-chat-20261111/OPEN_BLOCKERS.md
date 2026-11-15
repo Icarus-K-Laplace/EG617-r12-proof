@@ -1,5 +1,11 @@
 # Current minimal proof obligations
 
+Update: M2b/Case II CLOSED at14e5b5c / CI43679609897 through
+r23_121_completion_or_missing_exterior. The next minimal obligation is the
+Case IV actual fiber ledger and assembly, then complete R23 classification.
+The earlier item1 below is historical; no missing singleton assumption remains
+in the original-hypothesis parent theorem.
+
 Verified code c252a45 / Linux CI 43618192344.
 
 1. Frozen M2b /121-edge K9,9: use the unique singleton and the verified

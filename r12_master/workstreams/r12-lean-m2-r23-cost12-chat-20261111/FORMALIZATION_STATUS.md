@@ -1,5 +1,16 @@
 # Verified Case I and balanced exterior — full R23 and GATE47 remain open
 
+Subsequent checkpoint14e5b5c / CI43679609897: full build, exact statements and
+all169 axiom reports PASS. r23_121_completion_or_missing_exterior now derives
+actual one-edge completion to Case I from the original121-edge assumptions
+whenever the exterior is complete. The remaining alternative retains exactly
+one missing edge in balanced9+9 parts. The singleton completion preserves
+triangle-freeness and alpha<=11 and has exactly122 edges. Compatible missing
+endpoints have a verified no-common-neighbor graph lemma; incompatible
+endpoints have a verified full adjacency/type equivalence. Their exact
+exceptional fiber sizes and the final Case IV assembly are current candidates.
+The older checkpoint and its independent ZIP below remain valid historical evidence.
+
 Latest verified code: c252a45b185c07387e71b3416cde37f46b95b3f1.
 Linux CI 43618192344, job 132517777312 (2026-11-15 Asia/Shanghai).
 Focused compile, full lake build, exact statements, all159 transitive axiom

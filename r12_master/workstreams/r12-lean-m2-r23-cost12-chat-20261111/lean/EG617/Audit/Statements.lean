@@ -54,6 +54,10 @@ public import EG617
 #check EG617.c5_singleton_extension
 #check EG617.disjoint_cycle_neighbors_no_common_neighbor
 #check EG617.missing_exterior_type_presentation
+#check EG617.missing_exterior_type_orientations
+#check EG617.one_exception_type_fiber_card
+#check EG617.missing_exterior_type_fiber_formula
+#check EG617.c5_missing_fiber_profile
 #check EG617.singleton_cycle_edge_completion_witness
 #check EG617.cycle_type_fiber_card
 #check EG617.singleton_side_type_fiber_profile

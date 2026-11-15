@@ -1,0 +1,10 @@
+module
+public import EG617.Core.C5MissingTypeFibers
+#check EG617.missing_exterior_type_orientations
+#print axioms EG617.missing_exterior_type_orientations
+#check EG617.one_exception_type_fiber_card
+#print axioms EG617.one_exception_type_fiber_card
+#check EG617.missing_exterior_type_fiber_formula
+#print axioms EG617.missing_exterior_type_fiber_formula
+#check EG617.c5_missing_fiber_profile
+#print axioms EG617.c5_missing_fiber_profile
