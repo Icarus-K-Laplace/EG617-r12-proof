@@ -3,7 +3,7 @@ public import EG617.Core.C5MissingTypeFibers
 
 @[expose] public section
 set_option autoImplicit false
-attribute [local instance 2000] Classical.propDecidable
+attribute [local instance] Classical.propDecidable
 
 namespace EG617
 universe u
@@ -107,11 +107,11 @@ theorem missing_exterior_completion_or_exceptional (G : SimpleGraph V)
       r23_one_edge_completion_case_I G hV ht hI he u.val v.val hne hn hcommon⟩
   · right
     have hPe : (P.erase u.val).Nonempty := by
-      apply Finset.card_pos.mpr
+      apply Finset.card_pos.mp
       rw [Finset.card_erase_of_mem huP, hP]
       decide
     have hQe : (Q.erase v.val).Nonempty := by
-      apply Finset.card_pos.mpr
+      apply Finset.card_pos.mp
       rw [Finset.card_erase_of_mem hvQ, hQ]
       decide
     obtain ⟨a, b, hAt, hBt, ho⟩ := missing_exterior_type_orientations
@@ -135,6 +135,7 @@ theorem r23_complete_classification (G : SimpleGraph V)
     (hV : Fintype.card V = 23) (ht : G.CliqueFree 3)
     (hI : CoreIndependenceBound 11 G) (he : 121 ≤ G.edgeFinset.card) :
     R23CaseIProfile G ∨ R23OneEdgeCompletion G ∨ R23ExceptionalProfile G := by
+  classical
   obtain ⟨v, p, _, _, _, hl⟩ := r23_exact_neighbor_ledger G hV ht hI he
   have hupper : G.edgeFinset.card ≤ 122 := hl.2.2.2.2.2.2.2.1
   have hcases : G.edgeFinset.card = 121 ∨ G.edgeFinset.card = 122 := by omega
