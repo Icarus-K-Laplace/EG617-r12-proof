@@ -129,6 +129,8 @@ public import EG617
 #check EG617.r23_122_case_I
 #check EG617.r23_122_complete_type_data
 #check EG617.r23_122_type_presentation
+#check EG617.triangleFree_sup_edge_of_no_common_neighbor
+#check EG617.r23_one_edge_completion_case_I
 #check EG617.deficit_sum_add
 #check EG617.deficit_zero_iff
 #check EG617.deficit_one_distribution

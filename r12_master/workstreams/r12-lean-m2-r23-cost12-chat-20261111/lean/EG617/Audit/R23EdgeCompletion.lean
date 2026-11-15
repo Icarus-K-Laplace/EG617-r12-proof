@@ -1,0 +1,6 @@
+module
+public import EG617.Core.R23EdgeCompletion
+#check EG617.triangleFree_sup_edge_of_no_common_neighbor
+#print axioms EG617.triangleFree_sup_edge_of_no_common_neighbor
+#check EG617.r23_one_edge_completion_case_I
+#print axioms EG617.r23_one_edge_completion_case_I

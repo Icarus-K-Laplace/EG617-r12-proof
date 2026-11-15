@@ -129,6 +129,8 @@ public import EG617
 #print axioms EG617.r23_122_case_I
 #print axioms EG617.r23_122_complete_type_data
 #print axioms EG617.r23_122_type_presentation
+#print axioms EG617.triangleFree_sup_edge_of_no_common_neighbor
+#print axioms EG617.r23_one_edge_completion_case_I
 #print axioms EG617.deficit_sum_add
 #print axioms EG617.deficit_zero_iff
 #print axioms EG617.deficit_one_distribution
