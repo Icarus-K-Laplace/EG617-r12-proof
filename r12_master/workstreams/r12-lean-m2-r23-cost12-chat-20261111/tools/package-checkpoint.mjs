@@ -10,6 +10,16 @@ if(evidence.cleanLinuxBuild!=='PASS'||evidence.fullAxiomAudit!=='PASS')throw Err
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 for(const h of evidence.hashes)if(hash(fs.readFileSync(path.join(root,'lean',h.file)))!==h.sha256)
   throw Error('Source no longer matches CI: '+h.file);
+const verifiedFiles=new Set(evidence.hashes.map(h=>h.file));
+function checkLeanFiles(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){
+  if(['.lake','.lake-tmp'].includes(e.name))continue;
+  const f=path.join(dir,e.name);
+  if(e.isDirectory()){checkLeanFiles(f);continue;}
+  const rel=path.relative(path.join(root,'lean'),f).split(path.sep).join('/');
+  if(e.name.endsWith('.lean')&&!verifiedFiles.has(rel))
+    throw Error('Unverified Lean source would enter checkpoint: '+rel);
+}}
+checkLeanFiles(path.join(root,'lean'));
 const sums=[];
 function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){
   if(['.git','.lake','.lake-tmp','releases','release-stage'].includes(e.name))continue;

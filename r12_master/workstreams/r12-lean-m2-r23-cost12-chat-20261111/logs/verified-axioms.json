@@ -1,15 +1,10 @@
 {
-  "EG617.case_I_cost_six": [
+  "EG617.case_I_single_edge_deletion_cost_six": [
     "propext",
     "Classical.choice",
     "Quot.sound"
   ],
-  "EG617.exceptional_cost_four": [
-    "propext",
-    "Classical.choice",
-    "Quot.sound"
-  ],
-  "EG617.exceptional_cost_six": [
+  "EG617.r23_cost_six": [
     "propext",
     "Classical.choice",
     "Quot.sound"
@@ -411,6 +406,36 @@
   ],
   "EG617.exceptional_cost_arithmetic": [
     "propext",
+    "Quot.sound"
+  ],
+  "EG617.coreInducedEdgeCount_mono_graph": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.independent_sup_edge_or_endpoints": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.independent_sup_edge_neighbor_card": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.case_I_cost_six": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.exceptional_cost_four": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.exceptional_cost_six": [
+    "propext",
+    "Classical.choice",
     "Quot.sound"
   ],
   "EG617.adjCount": [

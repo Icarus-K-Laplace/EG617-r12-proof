@@ -35,3 +35,5 @@ Only propext, Classical.choice and Quot.sound occur.
 CostSixDeletion.lean and r23_cost_six are now CANDIDATE, awaiting kernel CI.
 The next candidate covers every single-edge deletion structurally, then applies
 the already verified exhaustive R23 classification. GATE47 remains open.
+
+Cost-6 CLOSED: r23_cost_six and all single-edge deletion cases verified at e3885e098fe271856adea0b7e5e629cb4d8d50fa / CI43792528236. R335Neighborhood.lean is the next CANDIDATE; sharp R335/R336 and GATE47 remain open.

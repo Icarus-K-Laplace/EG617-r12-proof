@@ -1,14 +1,14 @@
 {
   "date": "2026-11-16",
-  "sha": "0dc1190e19fcbf02e2fd7b565ad16d92b27d98bd",
-  "run": 43791548801,
-  "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/43791548801",
+  "sha": "e3885e098fe271856adea0b7e5e629cb4d8d50fa",
+  "run": 43792528236,
+  "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/43792528236",
   "cleanLinuxBuild": "PASS",
   "fullAxiomAudit": "PASS",
   "statementInspection": "PASS",
   "localMatchesCISHA256": "PASS",
-  "declarations": 188,
-  "theorems": 156,
+  "declarations": 193,
+  "theorems": 161,
   "originalMathematicalSourcesUnchanged": true,
   "pins": [
     {
@@ -51,11 +51,11 @@
   "hashes": [
     {
       "file": "EG617.lean",
-      "sha256": "c02b3e98d78bd438f06253dc3799fc91ecb6d064e95ea726412de2a0c81e7d41"
+      "sha256": "610e0306dd9f767e440b76070a1c579583c3dbaa50610ed3de0595fab49b4b1e"
     },
     {
       "file": "EG617/Audit/Axioms.lean",
-      "sha256": "058706f019427123776fea78527fbf3cda0a4a83562d4cc201f616eb6e996910"
+      "sha256": "edbb96193f41da7404398e7042dd170943c3b53e5000f707770e3bc424a5da6d"
     },
     {
       "file": "EG617/Audit/C5MissingGraphLift.lean",
@@ -84,6 +84,10 @@
     {
       "file": "EG617/Audit/CostSixCounts.lean",
       "sha256": "a8a22df44dfd3c7e6de18fd82bd201894b473f2bc33af3b18dd36193f3043660"
+    },
+    {
+      "file": "EG617/Audit/CostSixDeletion.lean",
+      "sha256": "e9ed97a345e6f5c6f94da04ddef5ce217414a4f706d07f347b21b95552359dd1"
     },
     {
       "file": "EG617/Audit/CostSixProfiles.lean",
@@ -123,7 +127,7 @@
     },
     {
       "file": "EG617/Audit/Statements.lean",
-      "sha256": "23f2d07ca1d74fc8a5f0ecaec31036c6775cfed926d10bbe2f8d587d3e90913e"
+      "sha256": "ee9cf389ae3a4d2e792faba6a9f252fb1138cb6a8853f794ba8c41fe781e218f"
     },
     {
       "file": "EG617/Basic/ColoringLemmas.lean",
@@ -180,6 +184,10 @@
     {
       "file": "EG617/Core/CostSixCounts.lean",
       "sha256": "5f61241d83242d7625d0f89277a18a93012aea582473406e1f2be2b55fadfb02"
+    },
+    {
+      "file": "EG617/Core/CostSixDeletion.lean",
+      "sha256": "b46985c7a9214ebefe90d381cda347578285967dc3ab63bb147de02810b9874d"
     },
     {
       "file": "EG617/Core/CostSixProfiles.lean",

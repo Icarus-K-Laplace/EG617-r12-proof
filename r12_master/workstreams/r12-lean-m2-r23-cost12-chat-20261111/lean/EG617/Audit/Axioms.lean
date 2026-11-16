@@ -174,6 +174,8 @@ public import EG617
 #print axioms EG617.five_cycle_copy_same_support
 #print axioms EG617.cycleNeighborLabels_card_eq
 #print axioms EG617.r23_exact_labeled_neighbor_ledger
+#print axioms EG617.core_R223_complement_cost_six
+#print axioms EG617.core_R335_degree_eleven_nonneighbor_cost_six
 #print axioms EG617.independent_card_le_twelve
 #print axioms EG617.monochromatic_card_le_twelve
 #print axioms EG617.colorGraph_clique_card_le_twelve

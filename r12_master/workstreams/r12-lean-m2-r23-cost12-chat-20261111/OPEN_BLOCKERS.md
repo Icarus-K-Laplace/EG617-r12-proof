@@ -21,3 +21,5 @@ Failed CI logs are retained, including classification instance/cardinality fixes
 they do not indicate a mathematical error. MainTheorem remains absent.
 
 2026-11-16: items 1,2,4 above verified at 0dc1190e / CI43791548801. Item3 now has a structural candidate, not yet certified.
+
+2026-11-16 update: item3 CLOSED by case_I_single_edge_deletion_cost_six; universal r23_cost_six PASS at e3885e0 / CI43792528236. Next minimal obligation is M4's actual fourteen-point cap contradiction; the nonneighborhood Cost-6 transfer is now a candidate.

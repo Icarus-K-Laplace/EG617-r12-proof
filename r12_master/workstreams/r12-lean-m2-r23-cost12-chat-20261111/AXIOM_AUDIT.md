@@ -1,8 +1,8 @@
 # Complete transitive axiom audit
 
-Verified code commit 0dc1190e19fcbf02e2fd7b565ad16d92b27d98bd, Linux CI 43791548801.
+Verified code commit e3885e098fe271856adea0b7e5e629cb4d8d50fa, Linux CI 43792528236.
 
-All 188 project declarations compiled and audited. Allowed logical axioms: propext, Classical.choice, Quot.sound.
+All 193 project declarations compiled and audited. Allowed logical axioms: propext, Classical.choice, Quot.sound.
 Source scan and kernel audit both passed. No sorry/admit/custom axiom/unsafe/implemented_by/native_decide is used.
 No diagnostic enumeration is imported into Lean. All graph hypotheses appear in DECLARATION_STATEMENTS.md.
 Remaining absent proofs and partial results are listed explicitly in OPEN_BLOCKERS.md; no placeholders represent them.
@@ -94,6 +94,11 @@ Remaining absent proofs and partial results are listed explicitly in OPEN_BLOCKE
 | EG617.independent_c5_fiber_counts | propext, Classical.choice, Quot.sound |
 | EG617.case_I_cost_arithmetic | propext, Quot.sound |
 | EG617.exceptional_cost_arithmetic | propext, Quot.sound |
+| EG617.coreInducedEdgeCount_mono_graph | propext, Classical.choice, Quot.sound |
+| EG617.independent_sup_edge_or_endpoints | propext, Classical.choice, Quot.sound |
+| EG617.independent_sup_edge_neighbor_card | propext, Classical.choice, Quot.sound |
+| EG617.case_I_single_edge_deletion_cost_six | propext, Classical.choice, Quot.sound |
+| EG617.r23_cost_six | propext, Classical.choice, Quot.sound |
 | EG617.case_I_cost_six | propext, Classical.choice, Quot.sound |
 | EG617.exceptional_cost_four | propext, Classical.choice, Quot.sound |
 | EG617.exceptional_cost_six | propext, Classical.choice, Quot.sound |

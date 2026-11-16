@@ -31,3 +31,4 @@ public import EG617.Core.R23Classification
 public import EG617.Core.CostSixCounts
 public import EG617.Core.CostSixProfiles
 public import EG617.Core.CostSixDeletion
+public import EG617.Core.R335Neighborhood

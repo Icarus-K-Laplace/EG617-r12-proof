@@ -27,3 +27,5 @@ G sup edge(u,v) with distinct, originally nonadjacent endpoints. No finite
 representative list, classification assumption or external oracle is trusted.
 
 M3 Case I: case_I_cost_six; M3 exceptional: exceptional_cost_four and exceptional_cost_six, verified 0dc1190e / CI43791548801. Signatures in DECLARATION_STATEMENTS.md. M3 edge-deletion and complete r23_cost_six remain candidates.
+
+Full frozen M3: r23_cost_six, with only card23, triangle-free, alpha<=11 and edge>=121 hypotheses, verified e3885e0 / CI43792528236. Single-edge lemma covers all deletions, including the singleton edge, using a stronger proof; the original parent hypotheses are retained.

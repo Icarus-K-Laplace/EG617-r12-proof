@@ -912,6 +912,55 @@ theorem exceptional_cost_arithmetic (p q c d e : ℕ)
     2 + p + c + d ≤ 4 ∨ 2 + q + d + e ≤ 4
 ```
 
+## EG617.coreInducedEdgeCount_mono_graph
+
+Source: EG617/Core/CostSixDeletion.lean
+
+```lean
+theorem coreInducedEdgeCount_mono_graph (G H : SimpleGraph V) (h : G ≤ H)
+    (T : Finset V) : coreInducedEdgeCount G T ≤ coreInducedEdgeCount H T
+```
+
+## EG617.independent_sup_edge_or_endpoints
+
+Source: EG617/Core/CostSixDeletion.lean
+
+```lean
+theorem independent_sup_edge_or_endpoints (G : SimpleGraph V) (u v : V)
+    (I : Finset V) (hI : G.IsIndepSet (I : Set V)) :
+    (G ⊔ SimpleGraph.edge u v).IsIndepSet (I : Set V) ∨ (u ∈ I ∧ v ∈ I)
+```
+
+## EG617.independent_sup_edge_neighbor_card
+
+Source: EG617/Core/CostSixDeletion.lean
+
+```lean
+theorem independent_sup_edge_neighbor_card (G : SimpleGraph V) (u v : V)
+    (I S : Finset V) (hI : G.IsIndepSet (I : Set V)) (w : V) (hw : w ∈ I)
+    (hS : ∀ x ∈ S, x ∈ I ∧ (G ⊔ SimpleGraph.edge u v).Adj w x) : S.card ≤ 1
+```
+
+## EG617.case_I_single_edge_deletion_cost_six
+
+Source: EG617/Core/CostSixDeletion.lean
+
+```lean
+theorem case_I_single_edge_deletion_cost_six (G : SimpleGraph V) (u v : V)
+    (hne : u ≠ v) (h : R23CaseIProfile (G ⊔ SimpleGraph.edge u v)) :
+    CostSixProperty G
+```
+
+## EG617.r23_cost_six
+
+Source: EG617/Core/CostSixDeletion.lean
+
+```lean
+theorem r23_cost_six (G : SimpleGraph V) (hV : Fintype.card V = 23)
+    (ht : G.CliqueFree 3) (hI : CoreIndependenceBound 11 G)
+    (he : 121 ≤ G.edgeFinset.card) : CostSixProperty G
+```
+
 ## EG617.case_I_cost_six
 
 Source: EG617/Core/CostSixProfiles.lean

@@ -20,6 +20,7 @@
     "EG617\\Audit\\R23EdgeCompletion.lean",
     "EG617\\Audit\\R23Ledger.lean",
     "EG617\\Audit\\R23TypeLift.lean",
+    "EG617\\Audit\\R335Neighborhood.lean",
     "EG617\\Audit\\Statements.lean",
     "EG617\\Basic\\ColoringLemmas.lean",
     "EG617\\Basic\\Definitions.lean",
@@ -51,6 +52,7 @@
     "EG617\\Core\\R23ExactLedger.lean",
     "EG617\\Core\\R23Reduction.lean",
     "EG617\\Core\\R23TypeLift.lean",
+    "EG617\\Core\\R335Neighborhood.lean",
     "EG617\\Frontend\\ColoringReduction.lean",
     "EG617\\Frontend\\EdgeCounting.lean",
     "EG617\\Frontend\\HereditaryCaps.lean",
@@ -918,6 +920,16 @@
       "kind": "theorem",
       "name": "r23_exact_labeled_neighbor_ledger",
       "file": "EG617\\Core\\R23TypeLift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R223_complement_cost_six",
+      "file": "EG617\\Core\\R335Neighborhood.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R335_degree_eleven_nonneighbor_cost_six",
+      "file": "EG617\\Core\\R335Neighborhood.lean"
     },
     {
       "kind": "theorem",
