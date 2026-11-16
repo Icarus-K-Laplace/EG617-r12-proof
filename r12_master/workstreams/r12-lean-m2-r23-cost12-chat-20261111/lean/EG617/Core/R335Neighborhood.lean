@@ -52,6 +52,6 @@ theorem core_R335_degree_eleven_nonneighbor_cost_six (G : SimpleGraph V)
       have hadj : Gᶜ.Adj v w := (SimpleGraph.mem_neighborFinset Gᶜ v w).mp hw
       exact ⟨hadj.ne.symm, (SimpleGraph.compl_adj G v w).mp hadj |>.2⟩)
   exact core_R223_complement_cost_six (G.induce (S : Set V))
-    (by simpa only [Fintype.card_coe] using hS) ha
+    (by simpa only [Set.fintypeCard_eq_ncard, Set.ncard_coe_finset] using hS) ha
 
 end EG617
