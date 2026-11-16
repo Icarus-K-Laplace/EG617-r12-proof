@@ -28,3 +28,4 @@ public import EG617.Core.R23CaseII
 public import EG617.Core.C5MissingGraphLift
 public import EG617.Core.C5MissingTypeFibers
 public import EG617.Core.R23Classification
+public import EG617.Core.CostSixCounts

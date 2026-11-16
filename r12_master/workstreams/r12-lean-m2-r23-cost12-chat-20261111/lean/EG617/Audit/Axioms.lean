@@ -78,6 +78,15 @@ public import EG617
 #print axioms EG617.cycleNeighborLabels_unique_type
 #print axioms EG617.adjacent_cycleNeighborLabels_disjoint
 #print axioms EG617.complete_bipartite_type_image
+#print axioms EG617.CostSixProperty
+#print axioms EG617.c5Fiber
+#print axioms EG617.mem_c5Fiber
+#print axioms EG617.c5Fiber_disjoint
+#print axioms EG617.c5Fiber_adjCount
+#print axioms EG617.c5_three_fiber_witness_counts
+#print axioms EG617.independent_c5_fiber_counts
+#print axioms EG617.case_I_cost_arithmetic
+#print axioms EG617.exceptional_cost_arithmetic
 #print axioms EG617.adjCount
 #print axioms EG617.adjCount_eq_sum_filter
 #print axioms EG617.degree_induce_eq_filter

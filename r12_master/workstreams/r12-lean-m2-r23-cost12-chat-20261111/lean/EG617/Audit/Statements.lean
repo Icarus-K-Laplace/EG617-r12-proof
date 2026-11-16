@@ -78,6 +78,15 @@ public import EG617
 #check EG617.cycleNeighborLabels_unique_type
 #check EG617.adjacent_cycleNeighborLabels_disjoint
 #check EG617.complete_bipartite_type_image
+#print EG617.CostSixProperty
+#print EG617.c5Fiber
+#check EG617.mem_c5Fiber
+#check EG617.c5Fiber_disjoint
+#check EG617.c5Fiber_adjCount
+#check EG617.c5_three_fiber_witness_counts
+#check EG617.independent_c5_fiber_counts
+#check EG617.case_I_cost_arithmetic
+#check EG617.exceptional_cost_arithmetic
 #print EG617.adjCount
 #check EG617.adjCount_eq_sum_filter
 #check EG617.degree_induce_eq_filter
