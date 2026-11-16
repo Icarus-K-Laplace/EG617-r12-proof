@@ -30,14 +30,14 @@ theorem independent_sup_edge_or_endpoints (G : SimpleGraph V) (u v : V)
     intro x hx y hy hxy he
     rcases he with he | he
     · exact hI hx hy hxy he
-    · rcases ((SimpleGraph.edge_adj _ _).mp he).1 with ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩
+    · rcases ((SimpleGraph.edge_adj _ _ _ _).mp he).1 with ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩
       · exact hv hy
       · exact hv hx
   · left
     intro x hx y hy hxy he
     rcases he with he | he
     · exact hI hx hy hxy he
-    · rcases ((SimpleGraph.edge_adj _ _).mp he).1 with ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩
+    · rcases ((SimpleGraph.edge_adj _ _ _ _).mp he).1 with ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩
       · exact hu hx
       · exact hu hy
 
@@ -56,11 +56,11 @@ theorem independent_sup_edge_neighbor_card (G : SimpleGraph V) (u v : V)
   have hneuv : u ≠ v := by
     rintro rfl
     simpa [SimpleGraph.edge_adj] using hxE
-  rcases ((SimpleGraph.edge_adj _ _).mp hxE).1 with ⟨hwu, hxv⟩ | ⟨hwv, hxu⟩
-  · rcases ((SimpleGraph.edge_adj _ _).mp hyE).1 with ⟨_, hyv⟩ | ⟨hwv, _⟩
+  rcases ((SimpleGraph.edge_adj _ _ _ _).mp hxE).1 with ⟨hwu, hxv⟩ | ⟨hwv, hxu⟩
+  · rcases ((SimpleGraph.edge_adj _ _ _ _).mp hyE).1 with ⟨_, hyv⟩ | ⟨hwv, _⟩
     · exact hxv.trans hyv.symm
     · exact False.elim (hneuv (hwu.symm.trans hwv))
-  · rcases ((SimpleGraph.edge_adj _ _).mp hyE).1 with ⟨hwu, _⟩ | ⟨_, hyu⟩
+  · rcases ((SimpleGraph.edge_adj _ _ _ _).mp hyE).1 with ⟨hwu, _⟩ | ⟨_, hyu⟩
     · exact False.elim (hneuv (hwu.symm.trans hwv))
     · exact hxu.trans hyu.symm
 
@@ -134,16 +134,16 @@ theorem case_I_single_edge_deletion_cost_six (G : SimpleGraph V) (u v : V)
     rcases hAdj with hAdj | hAdj
     · have he : H.Adj u x := (hp u x).mpr (by rw [htx]; exact hAdj)
       have hE := he.resolve_left (hI huI hxI he.ne)
-      rcases ((SimpleGraph.edge_adj _ _).mp hE).1 with ⟨_, hxv⟩ | ⟨_, hxu⟩
+      rcases ((SimpleGraph.edge_adj _ _ _ _).mp hE).1 with ⟨_, hxv⟩ | ⟨_, hxu⟩
       · exact hjv (htx.symm.trans (congrArg t hxv))
       · exact hju (htx.symm.trans (congrArg t hxu))
     · have he : H.Adj v x := (hp v x).mpr (by rw [htx]; exact hAdj)
       have hE := he.resolve_left (hI hvI hxI he.ne)
-      rcases ((SimpleGraph.edge_adj _ _).mp hE).1 with ⟨_, hxv⟩ | ⟨_, hxu⟩
+      rcases ((SimpleGraph.edge_adj _ _ _ _).mp hE).1 with ⟨_, hxv⟩ | ⟨_, hxu⟩
       · exact hjv (htx.symm.trans (congrArg t hxv))
       · exact hju (htx.symm.trans (congrArg t hxu))
   have huv : (SimpleGraph.cycleGraph 5).Adj (t u) (t v) :=
-    (hp u v).mp (Or.inr ((SimpleGraph.edge_adj _ _).mpr ⟨Or.inl ⟨rfl, rfl⟩, hne⟩))
+    (hp u v).mp (Or.inr ((SimpleGraph.edge_adj _ _ _ _).mpr ⟨Or.inl ⟨rfl, rfl⟩, hne⟩))
   have hsplit : (SimpleGraph.cycleGraph 5).Adj (t u) c ∨
       (SimpleGraph.cycleGraph 5).Adj (t v) c ∨
       ((c + 1 ≠ t u ∧ c + 1 ≠ t v ∧
