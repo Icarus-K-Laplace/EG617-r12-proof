@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-15",
-  "sha": "0d2985dbfe109fab301c157f687b3b38478c8bb6",
-  "run": 43680628810,
-  "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/43680628810",
+  "date": "2026-11-16",
+  "sha": "0dc1190e19fcbf02e2fd7b565ad16d92b27d98bd",
+  "run": 43791548801,
+  "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/43791548801",
   "cleanLinuxBuild": "PASS",
   "fullAxiomAudit": "PASS",
   "statementInspection": "PASS",
   "localMatchesCISHA256": "PASS",
-  "declarations": 176,
-  "theorems": 146,
+  "declarations": 188,
+  "theorems": 156,
   "originalMathematicalSourcesUnchanged": true,
   "pins": [
     {
@@ -51,11 +51,11 @@
   "hashes": [
     {
       "file": "EG617.lean",
-      "sha256": "3e792f414511e0e82d63992067c6ad46a014d89b93bf1eee29d2028c9e58fe13"
+      "sha256": "c02b3e98d78bd438f06253dc3799fc91ecb6d064e95ea726412de2a0c81e7d41"
     },
     {
       "file": "EG617/Audit/Axioms.lean",
-      "sha256": "a15c8e587584700beabdce4b6f6423d6ff8d5dd86476304b6d5e978d49fa6bd5"
+      "sha256": "058706f019427123776fea78527fbf3cda0a4a83562d4cc201f616eb6e996910"
     },
     {
       "file": "EG617/Audit/C5MissingGraphLift.lean",
@@ -80,6 +80,14 @@
     {
       "file": "EG617/Audit/C5Types.lean",
       "sha256": "e4c7fd97d79a95e9b4e083c51e9831d37b73b9642f847ac79a8b66cc9659d79e"
+    },
+    {
+      "file": "EG617/Audit/CostSixCounts.lean",
+      "sha256": "a8a22df44dfd3c7e6de18fd82bd201894b473f2bc33af3b18dd36193f3043660"
+    },
+    {
+      "file": "EG617/Audit/CostSixProfiles.lean",
+      "sha256": "422dcb695975173a83651fa6b455e3b6f402f8fbb81a4836ef1db68417dc7b25"
     },
     {
       "file": "EG617/Audit/R23BalancedExterior.lean",
@@ -115,7 +123,7 @@
     },
     {
       "file": "EG617/Audit/Statements.lean",
-      "sha256": "9c7eaa581da72d5a02920fba338a4e9f7bbf51ff43dab1ed965630fa698fd3c5"
+      "sha256": "23f2d07ca1d74fc8a5f0ecaec31036c6775cfed926d10bbe2f8d587d3e90913e"
     },
     {
       "file": "EG617/Basic/ColoringLemmas.lean",
@@ -168,6 +176,14 @@
     {
       "file": "EG617/Core/C5Types.lean",
       "sha256": "cd39afed80ec808a8c0ae5f41edced384bb295904b25049056d1dd3e00142596"
+    },
+    {
+      "file": "EG617/Core/CostSixCounts.lean",
+      "sha256": "5f61241d83242d7625d0f89277a18a93012aea582473406e1f2be2b55fadfb02"
+    },
+    {
+      "file": "EG617/Core/CostSixProfiles.lean",
+      "sha256": "ff1f574787b6735479eba56b075cb4a5c084cb2a5e5794e464a1d4078f24b28f"
     },
     {
       "file": "EG617/Core/EdgePartition.lean",

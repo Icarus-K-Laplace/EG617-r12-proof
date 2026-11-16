@@ -816,6 +816,130 @@ theorem complete_bipartite_type_image
       (A.image t).card ≤ 2 ∧ (B.image t).card ≤ 2
 ```
 
+## EG617.CostSixProperty
+
+Source: EG617/Core/CostSixCounts.lean
+
+```lean
+def CostSixProperty (G : SimpleGraph V) : Prop
+```
+
+## EG617.c5Fiber
+
+Source: EG617/Core/CostSixCounts.lean
+
+```lean
+noncomputable def c5Fiber (t : V → Fin 5) (i : Fin 5) : Finset V
+```
+
+## EG617.mem_c5Fiber
+
+Source: EG617/Core/CostSixCounts.lean
+
+```lean
+@[simp] theorem mem_c5Fiber (t : V → Fin 5) (i : Fin 5) (x : V) :
+    x ∈ c5Fiber t i ↔ t x = i
+```
+
+## EG617.c5Fiber_disjoint
+
+Source: EG617/Core/CostSixCounts.lean
+
+```lean
+theorem c5Fiber_disjoint (t : V → Fin 5) {i j : Fin 5} (hne : i ≠ j) :
+    Disjoint (c5Fiber t i) (c5Fiber t j)
+```
+
+## EG617.c5Fiber_adjCount
+
+Source: EG617/Core/CostSixCounts.lean
+
+```lean
+theorem c5Fiber_adjCount (G : SimpleGraph V) (t : V → Fin 5)
+    (hp : ∀ x y, G.Adj x y ↔ (SimpleGraph.cycleGraph 5).Adj (t x) (t y)) (i j : Fin 5) :
+    adjCount G (c5Fiber t i) (c5Fiber t j) =
+      if (SimpleGraph.cycleGraph 5).Adj i j then (c5Fiber t i).card * (c5Fiber t j).card else 0
+```
+
+## EG617.c5_three_fiber_witness_counts
+
+Source: EG617/Core/CostSixCounts.lean
+
+```lean
+theorem c5_three_fiber_witness_counts (G : SimpleGraph V) (t : V → Fin 5)
+    (hp : ∀ x y, G.Adj x y ↔ (SimpleGraph.cycleGraph 5).Adj (t x) (t y))
+    (i j k : Fin 5) (hij : i ≠ j) (hik : i ≠ k)
+    (hnij : ¬ (SimpleGraph.cycleGraph 5).Adj i j)
+    (hnik : ¬ (SimpleGraph.cycleGraph 5).Adj i k)
+    (hjk : (SimpleGraph.cycleGraph 5).Adj j k) (I : Finset V) :
+    let F
+```
+
+## EG617.independent_c5_fiber_counts
+
+Source: EG617/Core/CostSixCounts.lean
+
+```lean
+theorem independent_c5_fiber_counts (G : SimpleGraph V) (t : V → Fin 5)
+    (hp : ∀ x y, G.Adj x y ↔ (SimpleGraph.cycleGraph 5).Adj (t x) (t y))
+    (I : Finset V) (hI : G.IsIndepSet (I : Set V)) :
+    (∀ i, (c5Fiber t i ∩ I).card ≤ (c5Fiber t i).card) ∧
+      ∀ i j, (SimpleGraph.cycleGraph 5).Adj i j →
+        (c5Fiber t i ∩ I).card = 0 ∨ (c5Fiber t j ∩ I).card = 0
+```
+
+## EG617.case_I_cost_arithmetic
+
+Source: EG617/Core/CostSixCounts.lean
+
+```lean
+theorem case_I_cost_arithmetic (A B p a s d b : ℕ) (hAB : A + B = 11)
+    (hp : p ≤ 10) (ha : a ≤ A) (hs : s ≤ 1) (hd : d ≤ 1) (hb : b ≤ B)
+    (hpa : p = 0 ∨ a = 0) (has : a = 0 ∨ s = 0) (hsd : s = 0 ∨ d = 0)
+    (hdb : d = 0 ∨ b = 0) (hbp : b = 0 ∨ p = 0) :
+    1 + p + s + d ≤ 6 ∨ A + a + b + s ≤ 6 ∨ B + a + b + d ≤ 6
+```
+
+## EG617.exceptional_cost_arithmetic
+
+Source: EG617/Core/CostSixCounts.lean
+
+```lean
+theorem exceptional_cost_arithmetic (p q c d e : ℕ)
+    (hp : p ≤ 9) (hq : q ≤ 9) (hc : c ≤ 2) (hd : d ≤ 1) (he : e ≤ 2)
+    (hpq : p = 0 ∨ q = 0) (hqc : q = 0 ∨ c = 0) (hcd : c = 0 ∨ d = 0)
+    (hde : d = 0 ∨ e = 0) (hep : e = 0 ∨ p = 0) :
+    2 + p + c + d ≤ 4 ∨ 2 + q + d + e ≤ 4
+```
+
+## EG617.case_I_cost_six
+
+Source: EG617/Core/CostSixProfiles.lean
+
+```lean
+theorem case_I_cost_six (G : SimpleGraph V) (h : R23CaseIProfile G) :
+    CostSixProperty G
+```
+
+## EG617.exceptional_cost_four
+
+Source: EG617/Core/CostSixProfiles.lean
+
+```lean
+theorem exceptional_cost_four (G : SimpleGraph V) (h : R23ExceptionalProfile G)
+    (I : Finset V) (hI : G.IsIndepSet (I : Set V)) :
+    ∃ T : Finset V, T.card = 12 ∧ coreInducedEdgeCount G T + (T ∩ I).card ≤ 4
+```
+
+## EG617.exceptional_cost_six
+
+Source: EG617/Core/CostSixProfiles.lean
+
+```lean
+theorem exceptional_cost_six (G : SimpleGraph V) (h : R23ExceptionalProfile G) :
+    CostSixProperty G
+```
+
 ## EG617.adjCount
 
 Source: EG617/Core/EdgePartition.lean

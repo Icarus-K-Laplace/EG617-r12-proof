@@ -25,3 +25,5 @@ and every blow-up profile gives an actual-vertex map, ALL adjacency iff relation
 and all five positive fiber sizes. Single-edge deletion is represented by
 G sup edge(u,v) with distinct, originally nonadjacent endpoints. No finite
 representative list, classification assumption or external oracle is trusted.
+
+M3 Case I: case_I_cost_six; M3 exceptional: exceptional_cost_four and exceptional_cost_six, verified 0dc1190e / CI43791548801. Signatures in DECLARATION_STATEMENTS.md. M3 edge-deletion and complete r23_cost_six remain candidates.

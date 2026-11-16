@@ -87,6 +87,11 @@ public import EG617
 #print axioms EG617.independent_c5_fiber_counts
 #print axioms EG617.case_I_cost_arithmetic
 #print axioms EG617.exceptional_cost_arithmetic
+#print axioms EG617.coreInducedEdgeCount_mono_graph
+#print axioms EG617.independent_sup_edge_or_endpoints
+#print axioms EG617.independent_sup_edge_neighbor_card
+#print axioms EG617.case_I_single_edge_deletion_cost_six
+#print axioms EG617.r23_cost_six
 #print axioms EG617.case_I_cost_six
 #print axioms EG617.exceptional_cost_four
 #print axioms EG617.exceptional_cost_six

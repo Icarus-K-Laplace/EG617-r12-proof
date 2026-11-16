@@ -1,11 +1,11 @@
 # Complete transitive axiom audit
 
-Verified code commit 0d2985dbfe109fab301c157f687b3b38478c8bb6, Linux CI 43680628810.
+Verified code commit 0dc1190e19fcbf02e2fd7b565ad16d92b27d98bd, Linux CI 43791548801.
 
-All 176 project declarations compiled and audited. Allowed logical axioms: propext, Classical.choice, Quot.sound.
+All 188 project declarations compiled and audited. Allowed logical axioms: propext, Classical.choice, Quot.sound.
 Source scan and kernel audit both passed. No sorry/admit/custom axiom/unsafe/implemented_by/native_decide is used.
 No diagnostic enumeration is imported into Lean. All graph hypotheses appear in DECLARATION_STATEMENTS.md.
-Unfinished results are absent proofs: complete type classification, Cost-6, sharp R335/R336, GATE47 and MainTheorem.
+Remaining absent proofs and partial results are listed explicitly in OPEN_BLOCKERS.md; no placeholders represent them.
 
 | Declaration | Transitive axioms |
 |---|---|
@@ -85,6 +85,18 @@ Unfinished results are absent proofs: complete type classification, Cost-6, shar
 | EG617.cycleNeighborLabels_unique_type | propext, Classical.choice, Quot.sound |
 | EG617.adjacent_cycleNeighborLabels_disjoint | propext, Classical.choice, Quot.sound |
 | EG617.complete_bipartite_type_image | propext, Classical.choice, Quot.sound |
+| EG617.CostSixProperty | propext, Classical.choice, Quot.sound |
+| EG617.c5Fiber | propext, Classical.choice, Quot.sound |
+| EG617.mem_c5Fiber | propext, Classical.choice, Quot.sound |
+| EG617.c5Fiber_disjoint | propext, Classical.choice, Quot.sound |
+| EG617.c5Fiber_adjCount | propext, Classical.choice, Quot.sound |
+| EG617.c5_three_fiber_witness_counts | propext, Classical.choice, Quot.sound |
+| EG617.independent_c5_fiber_counts | propext, Classical.choice, Quot.sound |
+| EG617.case_I_cost_arithmetic | propext, Quot.sound |
+| EG617.exceptional_cost_arithmetic | propext, Quot.sound |
+| EG617.case_I_cost_six | propext, Classical.choice, Quot.sound |
+| EG617.exceptional_cost_four | propext, Classical.choice, Quot.sound |
+| EG617.exceptional_cost_six | propext, Classical.choice, Quot.sound |
 | EG617.adjCount | propext, Classical.choice, Quot.sound |
 | EG617.adjCount_eq_sum_filter | propext, Classical.choice, Quot.sound |
 | EG617.degree_induce_eq_filter | propext, Classical.choice, Quot.sound |

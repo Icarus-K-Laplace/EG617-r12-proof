@@ -87,6 +87,11 @@ public import EG617
 #check EG617.independent_c5_fiber_counts
 #check EG617.case_I_cost_arithmetic
 #check EG617.exceptional_cost_arithmetic
+#check EG617.coreInducedEdgeCount_mono_graph
+#check EG617.independent_sup_edge_or_endpoints
+#check EG617.independent_sup_edge_neighbor_card
+#check EG617.case_I_single_edge_deletion_cost_six
+#check EG617.r23_cost_six
 #check EG617.case_I_cost_six
 #check EG617.exceptional_cost_four
 #check EG617.exceptional_cost_six

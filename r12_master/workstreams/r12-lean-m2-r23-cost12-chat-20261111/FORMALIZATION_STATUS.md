@@ -25,3 +25,13 @@ completion, and all ten incompatible endpoint orientations are kernel-verified.
 NOT proved: universal Cost-6; sharp R335/R336; GATE47; original MainTheorem.
 The next work is frozen low M3, preserving every independent set and every legal
 single-edge deletion. No diagnostic enumeration is a Lean premise.
+
+## 2026-11-16 Cost-6 progress
+Verified code 0dc1190e19fcbf02e2fd7b565ad16d92b27d98bd / Linux CI43791548801:
+case_I_cost_six and exceptional_cost_four (hence exceptional_cost_six) PASS,
+including exact witness counts for every independent set. All188 declarations,
+156 theorems, full build, statement inspection, axiom audit and SHA256 PASS.
+Only propext, Classical.choice and Quot.sound occur.
+CostSixDeletion.lean and r23_cost_six are now CANDIDATE, awaiting kernel CI.
+The next candidate covers every single-edge deletion structurally, then applies
+the already verified exhaustive R23 classification. GATE47 remains open.

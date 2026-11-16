@@ -19,3 +19,5 @@ Next: Cost-6, with actual finite sets and unordered induced edges.
 No mathematical counterexample has been found. Tests are not proofs.
 Failed CI logs are retained, including classification instance/cardinality fixes;
 they do not indicate a mathematical error. MainTheorem remains absent.
+
+2026-11-16: items 1,2,4 above verified at 0dc1190e / CI43791548801. Item3 now has a structural candidate, not yet certified.

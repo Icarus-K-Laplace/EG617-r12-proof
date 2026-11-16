@@ -9,7 +9,7 @@ const scan=JSON.parse(fs.readFileSync(path.join(lean,'logs/source-scan.json'),'u
 let doc='# Exact Lean declaration statements\n\nVerbatim source signatures. Consult CI_STATUS.json for actual verification.\nAll definitions and proof bodies are retained in the standard .lean files.\n\n';
 for(const d of scan.declarations){
   const f=d.file.replaceAll('\\','/'),source=fs.readFileSync(path.join(lean,f),'utf8');
-  const m=new RegExp('^(?:noncomputable )?(?:theorem|lemma|def|abbrev) '+d.name+'\\b','m').exec(source);
+  const m=new RegExp('^(?:@\\[[^\\]]+\\]\\s*)?(?:noncomputable )?(?:theorem|lemma|def|abbrev) '+d.name+'\\b','m').exec(source);
   if(!m)throw Error('Cannot locate '+d.name);
   let depth=0,stop=-1;
   for(let i=m.index;i<source.length;i++){
@@ -65,7 +65,7 @@ let audit='# Complete transitive axiom audit\n\nVerified code commit '+sha+', Li
   'All '+expected.length+' project declarations compiled and audited. Allowed logical axioms: propext, Classical.choice, Quot.sound.\n'+
   'Source scan and kernel audit both passed. No sorry/admit/custom axiom/unsafe/implemented_by/native_decide is used.\n'+
   'No diagnostic enumeration is imported into Lean. All graph hypotheses appear in DECLARATION_STATEMENTS.md.\n'+
-  'Unfinished results are absent proofs: complete type classification, Cost-6, sharp R335/R336, GATE47 and MainTheorem.\n\n'+
+  'Remaining absent proofs and partial results are listed explicitly in OPEN_BLOCKERS.md; no placeholders represent them.\n\n'+
   '| Declaration | Transitive axioms |\n|---|---|\n';
 for(const n of expected)audit+='| '+n+' | '+(reports.get(n).join(', ')||'none')+' |\n';
 for(const f of ['LEAN_AXIOM_AUDIT.md','AXIOM_AUDIT.md'])fs.writeFileSync(path.join(root,f),audit);

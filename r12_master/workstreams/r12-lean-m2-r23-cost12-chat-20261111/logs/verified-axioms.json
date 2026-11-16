@@ -1,15 +1,15 @@
 {
-  "EG617.R23ExceptionalProfile": [
+  "EG617.case_I_cost_six": [
     "propext",
     "Classical.choice",
     "Quot.sound"
   ],
-  "EG617.missing_exterior_completion_or_exceptional": [
+  "EG617.exceptional_cost_four": [
     "propext",
     "Classical.choice",
     "Quot.sound"
   ],
-  "EG617.r23_complete_classification": [
+  "EG617.exceptional_cost_six": [
     "propext",
     "Classical.choice",
     "Quot.sound"
@@ -370,6 +370,49 @@
     "Classical.choice",
     "Quot.sound"
   ],
+  "EG617.CostSixProperty": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.c5Fiber": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.mem_c5Fiber": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.c5Fiber_disjoint": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.c5Fiber_adjCount": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.c5_three_fiber_witness_counts": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.independent_c5_fiber_counts": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.case_I_cost_arithmetic": [
+    "propext",
+    "Quot.sound"
+  ],
+  "EG617.exceptional_cost_arithmetic": [
+    "propext",
+    "Quot.sound"
+  ],
   "EG617.adjCount": [
     "propext",
     "Classical.choice",
@@ -657,6 +700,21 @@
     "Quot.sound"
   ],
   "EG617.r23_121_completion_or_missing_exterior": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.R23ExceptionalProfile": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.missing_exterior_completion_or_exceptional": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.r23_complete_classification": [
     "propext",
     "Classical.choice",
     "Quot.sound"
