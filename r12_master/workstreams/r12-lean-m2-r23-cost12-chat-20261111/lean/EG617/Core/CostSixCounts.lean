@@ -44,6 +44,7 @@ theorem c5Fiber_adjCount (G : SimpleGraph V) (t : V → Fin 5)
       apply Finset.sum_congr rfl
       intro y hy
       rw [hp x y, (mem_c5Fiber t i x).mp hx, (mem_c5Fiber t j y).mp hy]
+      by_cases h : (SimpleGraph.cycleGraph 5).Adj i j <;> simp [h]
     _ = _ := by
       by_cases h : (SimpleGraph.cycleGraph 5).Adj i j <;> simp [h, Nat.mul_comm]
 
@@ -69,7 +70,8 @@ theorem c5_three_fiber_witness_counts (G : SimpleGraph V) (t : V → Fin 5)
   refine ⟨?_, ?_, ?_⟩
   · exact (Finset.card_union_of_disjoint hdijk).trans
       (congrArg (fun n => n + (F k).card) (Finset.card_union_of_disjoint hdij))
-  · have hL : ∀ U, adjCount G (F i ∪ F j) U = adjCount G (F i) U + adjCount G (F j) U :=
+  · change coreInducedEdgeCount G T = (F j).card * (F k).card
+    have hL : ∀ U, adjCount G (F i ∪ F j) U = adjCount G (F i) U + adjCount G (F j) U :=
       fun U => adjCount_union_left G (F i) (F j) U hdij
     have hL3 : ∀ U, adjCount G T U = adjCount G (F i ∪ F j) U + adjCount G (F k) U :=
       fun U => adjCount_union_left G (F i ∪ F j) (F k) U hdijk
@@ -87,6 +89,8 @@ theorem c5_three_fiber_witness_counts (G : SimpleGraph V) (t : V → Fin 5)
     simp only [hL3, hL, hR3, hR, hF] at he
     simp [hnij, hnik, hnji, hnki, hjk, hkj] at he
     simp only [Nat.mul_comm] at he
+    simp only [coreInducedEdgeCount, SimpleGraph.edgeFinset_card,
+      Set.fintypeCard_eq_ncard] at he ⊢
     omega
   · have hdi : Disjoint (F i ∩ I) (F j ∩ I) := hdij.mono Finset.inter_subset_left Finset.inter_subset_left
     have hdk : Disjoint (F i ∩ I ∪ F j ∩ I) (F k ∩ I) :=

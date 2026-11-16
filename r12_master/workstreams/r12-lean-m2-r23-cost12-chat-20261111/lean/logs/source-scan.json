@@ -33,6 +33,7 @@
     "EG617\\Core\\C5TypePresentation.lean",
     "EG617\\Core\\C5Types.lean",
     "EG617\\Core\\CostSixCounts.lean",
+    "EG617\\Core\\CostSixProfiles.lean",
     "EG617\\Core\\EdgePartition.lean",
     "EG617\\Core\\OddCycleArithmetic.lean",
     "EG617\\Core\\OddCycleBound.lean",
@@ -479,6 +480,21 @@
       "kind": "theorem",
       "name": "exceptional_cost_arithmetic",
       "file": "EG617\\Core\\CostSixCounts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "case_I_cost_six",
+      "file": "EG617\\Core\\CostSixProfiles.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exceptional_cost_four",
+      "file": "EG617\\Core\\CostSixProfiles.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exceptional_cost_six",
+      "file": "EG617\\Core\\CostSixProfiles.lean"
     },
     {
       "kind": "def",

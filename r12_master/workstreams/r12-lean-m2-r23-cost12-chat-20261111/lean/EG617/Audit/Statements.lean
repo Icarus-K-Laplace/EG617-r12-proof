@@ -87,6 +87,9 @@ public import EG617
 #check EG617.independent_c5_fiber_counts
 #check EG617.case_I_cost_arithmetic
 #check EG617.exceptional_cost_arithmetic
+#check EG617.case_I_cost_six
+#check EG617.exceptional_cost_four
+#check EG617.exceptional_cost_six
 #print EG617.adjCount
 #check EG617.adjCount_eq_sum_filter
 #check EG617.degree_induce_eq_filter
