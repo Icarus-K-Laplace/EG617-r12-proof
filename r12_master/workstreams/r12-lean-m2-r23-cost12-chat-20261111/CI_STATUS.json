@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-16",
-  "sha": "53a7f495d0487672d4ed36e0f572b9d4fe0b0c72",
-  "run": 43793403878,
-  "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/43793403878",
+  "date": "2026-11-17",
+  "sha": "2b4b74f4bf481245ac45cbf9ddd18ac7b64064ac",
+  "run": 44139599116,
+  "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/44139599116",
   "cleanLinuxBuild": "PASS",
   "fullAxiomAudit": "PASS",
   "statementInspection": "PASS",
   "localMatchesCISHA256": "PASS",
-  "declarations": 195,
-  "theorems": 163,
+  "declarations": 218,
+  "theorems": 186,
   "originalMathematicalSourcesUnchanged": true,
   "pins": [
     {
@@ -51,11 +51,11 @@
   "hashes": [
     {
       "file": "EG617.lean",
-      "sha256": "953394026474fe8c6ec90f298ac521c6dface3763bedd1cff4dcd98fd9a24b85"
+      "sha256": "94a256835886830c1bdb69d1fb434bd722873d766c8e5cdd143a7ccb4a634097"
     },
     {
       "file": "EG617/Audit/Axioms.lean",
-      "sha256": "600bbd4ceaaf8cc5abf5769a1d165ec5cb7740268f5ea346d1e7656240ecc5af"
+      "sha256": "e834de35b530e0a95086bc4c2c4f0d347e82a03dc75918c06656e54a8059f518"
     },
     {
       "file": "EG617/Audit/C5MissingGraphLift.lean",
@@ -94,6 +94,18 @@
       "sha256": "422dcb695975173a83651fa6b455e3b6f402f8fbb81a4836ef1db68417dc7b25"
     },
     {
+      "file": "EG617/Audit/Gate47.lean",
+      "sha256": "6c547da04d254b800a28c3ed64740e26c613e80fddaddc8560a552fb621dbe95"
+    },
+    {
+      "file": "EG617/Audit/GateRows.lean",
+      "sha256": "4af68047ac0aa2708df15f08aa89f98660534c72c58411ec6b148981a89ef0e3"
+    },
+    {
+      "file": "EG617/Audit/GateShell.lean",
+      "sha256": "27f05aa61c351fe52595f086cec9525ea4038a15f516aba9f9d5931c70a2af69"
+    },
+    {
       "file": "EG617/Audit/R23BalancedExterior.lean",
       "sha256": "aa2d523924a574043906d1eb8c3cf36ce3a33c288f365dc7ae3b41e327b75af7"
     },
@@ -126,12 +138,24 @@
       "sha256": "3cc85a309631ee8766854702cd1a05421933b1da272d52d6e2bab67de484811a"
     },
     {
+      "file": "EG617/Audit/R335Fourteen.lean",
+      "sha256": "3829b0b850e052f5c6350e1cdf3a70fd1d8b1dbbfa155ff62cad68c5e4ae8543"
+    },
+    {
       "file": "EG617/Audit/R335Neighborhood.lean",
       "sha256": "401eebc2a9f3076b4171e8c07dc76e4dce365df74e3c18d0305910bf8c405311"
     },
     {
+      "file": "EG617/Audit/R335Sharp.lean",
+      "sha256": "fd5031c629729086810e806ac5d715135c1e80fbc239981281f50b55d38d6504"
+    },
+    {
+      "file": "EG617/Audit/R336Sharp.lean",
+      "sha256": "a6c8b45983bcde4ce42ace285a8a0ab28cd13d77cb7287896cc5120c4e4a03fa"
+    },
+    {
       "file": "EG617/Audit/Statements.lean",
-      "sha256": "45f2e1ae11bbf8acacfc0ee8c075e8314d783dcabc5aedde60c5d3bef874dfac"
+      "sha256": "c5b1874c71667605fffcc563324d913a7823cad45c911255cfc29d44dff7e828"
     },
     {
       "file": "EG617/Basic/ColoringLemmas.lean",
@@ -202,6 +226,18 @@
       "sha256": "f0cc154b969f3f35e3bb8fccc5d702cdd85911e6272fa44bdf56fe4ed44f8647"
     },
     {
+      "file": "EG617/Core/Gate47.lean",
+      "sha256": "4acd9e56d88930b5071f55a24440ce14c7ff707fc51204d87707510d5876095f"
+    },
+    {
+      "file": "EG617/Core/GateRows.lean",
+      "sha256": "c9b94afad89446b948b5bc7212165b85dd6b3986b04028c24332449747b35403"
+    },
+    {
+      "file": "EG617/Core/GateShell.lean",
+      "sha256": "ac3521f8bd28b40ef1f6c41943bcccbcac3ea407ee2b894f7ba29a59ac716dc7"
+    },
+    {
       "file": "EG617/Core/OddCycleArithmetic.lean",
       "sha256": "19a88149480e987e44c4b683dc90014ca21aa4d994826b866e3059275bef1673"
     },
@@ -254,8 +290,20 @@
       "sha256": "30d57e86d38fcbb5250b206c557cec773d8c010eecba9095691499f518e5ef6a"
     },
     {
+      "file": "EG617/Core/R335Fourteen.lean",
+      "sha256": "d06139e6e4192fd112d5e49f9709f27f355abff64e88b32ac067702c6e92139b"
+    },
+    {
       "file": "EG617/Core/R335Neighborhood.lean",
       "sha256": "4d02d93679c7b03fedbe4b1a255e9daa06e30dae9ece3687bf0d74b4e334bb9c"
+    },
+    {
+      "file": "EG617/Core/R335Sharp.lean",
+      "sha256": "9f9fca07d9420d8d54831fa0e624267ff5431e23f1446dc643669b50e5091493"
+    },
+    {
+      "file": "EG617/Core/R336Sharp.lean",
+      "sha256": "630d799657bd1201f6b71e53a89cf26dc85a4b4c3f99f7e636a23a6bb8fdce8e"
     },
     {
       "file": "EG617/Frontend/ColoringReduction.lean",
@@ -286,6 +334,6 @@
       "sha256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c"
     }
   ],
-  "Gate47": "FORMALIZATION_GAP",
+  "Gate47": "LEAN_VERIFIED",
   "MainTheorem": "ABSENT"
 }

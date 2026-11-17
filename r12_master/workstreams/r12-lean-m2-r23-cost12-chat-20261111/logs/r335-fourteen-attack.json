@@ -1,0 +1,15 @@
+{
+  "status": "NO_COUNTEREXAMPLE_IN_TESTED_DOMAIN",
+  "seed": 335,
+  "graphs": 1000,
+  "lowCostGraphs": 58,
+  "negativeControl": {
+    "graph": "K12",
+    "T": "all12 vertices",
+    "endpoints": "two vertices INSIDE T",
+    "cost": 0,
+    "totalEdges": 66,
+    "missingHypothesis": "x,y outside T"
+  },
+  "limitation": "Finite diagnostic only; not a Lean proof or exhaustive R335 graph search."
+}

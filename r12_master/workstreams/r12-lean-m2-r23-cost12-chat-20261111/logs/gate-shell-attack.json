@@ -1,0 +1,35 @@
+{
+  "status": "NO_COUNTEREXAMPLE_IN_TESTED_DOMAIN",
+  "seed": 47,
+  "shellChecks": 1000,
+  "pairChecks": 110000,
+  "rowChecks": 63940,
+  "negativeControls": [
+    {
+      "missing": "distinct endpoints",
+      "example": "star K1,10; same center twice",
+      "lhs": 20,
+      "rhs": 11
+    },
+    {
+      "missing": "row-pair bound12",
+      "example": "one-edge M, rows equal degrees",
+      "rowSum": 2,
+      "required": 12
+    },
+    {
+      "missing": "every row dominates missing degree",
+      "example": "M=K11, two rows6, all others0",
+      "rowSum": 12,
+      "required": 66
+    },
+    {
+      "missing": "original R(4,47) graph class",
+      "example": "empty47-vertex graph",
+      "edges": 0,
+      "minDegree": 0,
+      "alpha": 47
+    }
+  ],
+  "limitation": "Finite diagnostics, not exhaustive GATE47 enumeration and not a kernel proof."
+}

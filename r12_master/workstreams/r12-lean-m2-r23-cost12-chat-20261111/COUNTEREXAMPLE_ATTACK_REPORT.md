@@ -58,3 +58,23 @@ edge to its class-edge representative. This describes the test domain only.
 The arbitrary-graph and all-deletions theorems are proved independently in Lean,
 using actual finite sets and elementary Fin5 relation certificates. The test
 program supplies no theorem premise and no trusted oracle output.
+
+2026-11-18 M4/GATE47 diagnostic attacks:
+attacks/r335-fourteen-attack.mjs and logs/r335-fourteen-attack.json checked1000
+seeded14-point graphs. All exact complement/cross/union ledgers held; all58
+instances of the low-cost condition gave the claimed>=72-edge bound. Removing
+the endpoint-outside-T hypothesis is falsified by K12 with T=all12 vertices
+and both endpoints inside T: cost0 but only66 total edges.
+
+attacks/gate-shell-attack.mjs and logs/gate-shell-attack.json checked1000 exact
+shell ledgers,110000 distinct-endpoint incidence bounds and63940 qualified
+row-sum instances. Negative controls detected all deliberately weakened claims:
+counting the same endpoint twice (star K1,10); omitting the row-pair>=12 bound
+(one-edge missing graph); omitting the per-row missing-degree lower bounds
+(K11 missing graph with only two nonzero rows); and omitting the R(4,47)
+contract (empty47-vertex graph).
+
+These are precisely bounded diagnostic domains, not an exhaustive search for
+R335/R336/GATE47 graphs. No actual counterexample to the retained hypotheses
+was found. The formal proofs derive the tested local hypotheses in their parent
+theorems; no attack script, output or external certificate is a Lean premise.

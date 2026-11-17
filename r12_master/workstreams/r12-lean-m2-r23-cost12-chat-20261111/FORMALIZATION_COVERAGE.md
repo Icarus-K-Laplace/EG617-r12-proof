@@ -14,9 +14,9 @@
 | Exceptional universal Cost-4, hence Cost-6 | LEAN VERIFIED |
 | Universal R23 Cost-6, low M3 | LEAN VERIFIED |
 | M4 nonneighborhood complement Cost-6 input | LEAN VERIFIED |
-| M4 actual fourteen-point cap contradiction | FORMALIZATION_GAP |
-| Sharp R335 degree12/e210 and R336 degree13/e234 | FORMALIZATION_GAP |
-| GATE47 degree12 with original graph class | FORMALIZATION_GAP |
+| M4 actual fourteen-point cap contradiction | LEAN VERIFIED |
+| Sharp R335 degree12/e210 and R336 degree13/e234 | LEAN VERIFIED |
+| GATE47 degree12 with original graph class | LEAN VERIFIED: gate47_verified : Gate47Statement |
 | Original MainTheorem | ABSENT |
 
 Code-level evidence: CI_STATUS.json; exact statements: DECLARATION_STATEMENTS.md.

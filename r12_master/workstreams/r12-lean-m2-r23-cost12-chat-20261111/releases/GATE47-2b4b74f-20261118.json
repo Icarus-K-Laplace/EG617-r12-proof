@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "sha256": "6f095c6ca77e09ddc938887bfa5bfa529052e17b1025902edb1b528476e89fd6",
+  "Gate47": "LEAN_VERIFIED",
+  "verifiedEntries": 170,
+  "ci": 44139599116,
+  "allArchiveEntries": 171,
+  "verifiedCode": "2b4b74f4bf481245ac45cbf9ddd18ac7b64064ac",
+  "zip": "D:\\Data\\EG617-r12-lean-m2-r23-cost12-20261111\\outputs\\EG617-r12-Lean-GATE47-VERIFIED-2b4b74f-20261118.zip",
+  "MainTheorem": "ABSENT",
+  "bytes": 1208310
+}

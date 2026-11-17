@@ -1,10 +1,35 @@
 {
-  "EG617.core_R223_complement_cost_six": [
+  "EG617.core_R335_degree_ne_eleven": [
     "propext",
     "Classical.choice",
     "Quot.sound"
   ],
-  "EG617.core_R335_degree_eleven_nonneighbor_cost_six": [
+  "EG617.core_R335_degree_ge_twelve": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.core_R335_edges_ge_210": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.core_R336_degree_ge_thirteen": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.core_R336_edges_ge_234": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.core_R447_min_degree_eleven_edges_ge_287": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.gate47_verified": [
     "propext",
     "Classical.choice",
     "Quot.sound"
@@ -508,6 +533,51 @@
     "Classical.choice",
     "Quot.sound"
   ],
+  "EG617.core_admissible_common_nonNeighbors": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.core_R4_common_nonneighbors_card_le_23": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.core_R4_row_union_ge_twelve": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.core_two_degrees_le_edges_add_one": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.core_shell_row_missing_degree_le": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.core_missing_edge_row_sum": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.core_shell_edge_degree_ledger": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.core_induced_edges_le_choose": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.core_R447_min_degree_ten_edges_ge_289": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
   "EG617.oddCycleBound": [
     "propext"
   ],
@@ -825,6 +895,51 @@
     "Quot.sound"
   ],
   "EG617.r23_exact_labeled_neighbor_ledger": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.core_degree_eleven_neighbor_nonedge": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.core_common_nonneighbors_clique": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.core_edge_count_union": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.core_pair_cross_lower_bound": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.core_induce_compl": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.core_induced_compl_edge_count": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.core_fourteen_cost_obstruction": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.core_R223_complement_cost_six": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.core_R335_degree_eleven_nonneighbor_cost_six": [
     "propext",
     "Classical.choice",
     "Quot.sound"

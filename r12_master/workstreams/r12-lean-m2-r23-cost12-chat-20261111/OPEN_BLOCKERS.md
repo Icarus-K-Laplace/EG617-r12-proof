@@ -1,20 +1,26 @@
-# Remaining proof obligations after R23 and Cost-6
+# Remaining proof boundary after the minimum-degree gate
 
 CLOSED: complete original-hypothesis R23 classification; universal Cost-6;
-Case I; every single-edge deletion; exceptional profile (stronger Cost-4).
+actual fourteen-point cap contradiction; sharp R335 degree12/e210;
+sharp R336 degree13/e234; d10 and d11 exclusions; row-union lower bound;
+missing-edge incidence; exact frozen GATE47.
 
-Next load-bearing obligation: frozen low M4, degree-eleven exclusion in R(3,35).
-1. In the actual eleven-point neighborhood R, derive nonadjacent x,y in G
-   from the full clique bound on R union {v}.
-2. Their common complement-neighbors inside the actual 23-point nonneighborhood
-   are independent in its complement graph, using the original alpha<=3.
-3. Apply the certified Cost-6 theorem, lift its twelve vertices back to G,
-   prove disjointness from x,y, and count the actual fourteen-point induced graph:
-   e(G[T union {x,y}]) >= 78 - (e(complement[T])+|T intersect I|) >=72.
-4. Contradict the retained hereditary cap D(14)=69. This yields degree>=12
-   and e>=210; then derive R336 degree>=13 and e>=234 by deleting a neighbor.
-5. GATE47 still needs d=10 exclusion, d=11 shell row-union bound, missing-edge
-   incidence bound, and the actual edge ledger giving e>=287.
+No mathematical or formalization obligation remains inside Gate47Statement.
+Its hypotheses are the original full CoreAdmissible 4 graph class and e<=286.
+Each helper's local premises are derived in its parent proof, including actual
+disjointness, row constraints, minimum degree and the Cost-6 witness.
 
-All graph class conditions remain explicit. MainTheorem is absent.
-No mathematical counterexample was found. Remaining items are FORMALIZATION_GAP.
+OPEN: the original EG617R12Statement / K145 proposition has no MainTheorem.
+GATE47 applies only after a parent has supplied its graph, all admissibility
+conditions and the <=286-edge bound. Those inputs cannot be inferred merely
+from this minimum-degree theorem or from the frontend's <=870-edge color bound.
+
+The next highest-value task is a statement/dependency audit linking the frozen
+parent argument to the certified gate and listing the exact missing inputs.
+Do not label the original problem solved or start E286 merely because this gate
+is closed. No counterexample to the retained claims was found in the reported
+diagnostic domains; those finite tests are not proofs.
+
+Operational limitation: local Windows builds remain unverified because of the
+recorded toolchain/cache and resource failures. Clean Linux CI is the reproducible
+build evidence, with all source hashes and full logs retained.

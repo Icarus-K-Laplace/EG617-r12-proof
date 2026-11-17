@@ -1,6 +1,6 @@
 # EG617 r=12 — M2 / GATE47 workstream
 
-This is a partial formalization, not a proof of GATE47 or the original K145 proposition.
+GATE47 is fully formalized and kernel-checked. The original K145 proposition remains unproved.
 The original mathematical definitions and the verified LEVEL 1 source are preserved.
 See FORMALIZATION_COVERAGE.md and the full build logs before interpreting any PASS.
 
@@ -49,18 +49,22 @@ Repository branch: workstream/r12-lean-m2-r23-cost12-chat-20261111.
 Frozen paper source was read at immutable commit
 c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2, path
 r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/low/MINIMUM_DEGREE_GATE_SELF_CONTAINED.md.
-See FROZEN_CLASSIFICATION_SOURCE.md for the four exact branches. The original
+See FROZEN_CLASSIFICATION_SOURCE.md for the four exact branches and
+FROZEN_GATE_SOURCE.md for the full M1-M6 proof text. The original
 frozen file is not edited or required by the standalone Lean build.
 
-Verified checkpoint: 53a7f495d0487672d4ed36e0f572b9d4fe0b0c72;
-successful CI: https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/43793403878.
+Verified checkpoint: 2b4b74f4bf481245ac45cbf9ddd18ac7b64064ac;
+successful CI: https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/44139599116.
 The standalone build, complete axiom audit and source/config hash comparison passed.
 Logs include all failed iterations as well as the complete successful run.
 The COMPLETE R23 classification is proved by r23_complete_classification:
 C5(10,A,1,1,B), A+B=11, 1<=A,B<=10; a legal single-edge deletion of such a
 graph; or C5(9,9,2,1,2). All actual vertex fibers and adjacency are certified.
-Universal Cost-6 is proved by r23_cost_six; the R335 nonneighborhood transfer is also verified. Sharp R335/R336 and GATE47 remain open. All195 project declarations and163
-theorems were checked; those counts do not imply any unproved parent theorem.
+Universal Cost-6 is proved by r23_cost_six. Sharp R335/R336 and the exact
+GATE47 statement are now proved by core_R335_degree_ge_twelve,
+core_R336_degree_ge_thirteen and gate47_verified, with their corresponding
+edge lower bounds and all original graph hypotheses. All218 project declarations
+and186 theorems were checked. MainTheorem is absent; the K145 proposition is not proved.
 
 tools/collect-evidence.mjs is a maintainer evidence-extraction utility; its baseline
 comparison requires the original Git checkout. It is not needed to build the ZIP.

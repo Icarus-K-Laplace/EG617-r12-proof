@@ -1,26 +1,31 @@
-# R23 classification and universal Cost-6 VERIFIED
+# R23, Cost-6, sharp R335/R336 and GATE47 VERIFIED
 
-Exact verified code, CI run, dependency pins, source hashes and declaration counts:
-CI_STATUS.json. Full logs and exact statements are retained locally and in GitHub.
-Only propext, Classical.choice and Quot.sound occur in transitive axiom audits.
-Original LEVEL1 mathematical files and the K145 statement remain byte-identical.
+The verified code commit, successful clean Linux CI, all nine dependency pins,
+source/configuration SHA256s and exact declaration counts are in CI_STATUS.json.
+Every project declaration was compiled, its exact type printed, and its
+transitive axioms checked against propext, Classical.choice and Quot.sound.
+Original LEVEL1 mathematical files, including Gate47Statement and K145, remain
+byte-identical. Windows local lake build is not claimed.
 
-r23_complete_classification gives the exhaustive frozen M2 classification from
-card23, triangle-free, alpha<=11 and e>=121. Its whole-graph alternatives are
-C5(10,A,1,1,B), A+B=11; an actual one-edge deletion thereof; and C5(9,9,2,1,2).
-Actual vertex fibers and adjacency equivalence are proved, not assumed.
+r23_complete_classification proves the exhaustive frozen M2 classification from
+the original four R23 assumptions. r23_cost_six proves M3 for EVERY independent
+set, including every single-edge deletion; the exceptional profile has Cost-4.
+All actual vertex fibers and adjacency equivalences are proved, not assumed.
 
-r23_cost_six closes frozen M3 for EVERY independent set. It combines
-case_I_cost_six, case_I_single_edge_deletion_cost_six and exceptional_cost_six.
-exceptional_cost_four proves the stronger exceptional bound4. The deletion lemma
-also covers the singleton edge and all alpha>11 deletions; the parent still
-retains all original R23 hypotheses. No external enumeration is a Lean premise.
+Frozen M4 is now closed by core_R335_degree_ne_eleven: derive two actual
+nonadjacent shell vertices, apply certified Cost-6 in the actual complement
+nonneighborhood, lift its witness and contradict e(14)>=72>D(14)=69.
+core_R335_degree_ge_twelve and core_R335_edges_ge_210 follow.
+Frozen M5 is closed by core_R336_degree_ge_thirteen and
+core_R336_edges_ge_234, using neighbor deletion with all hereditary conditions.
 
-core_R223_complement_cost_six and
-core_R335_degree_eleven_nonneighbor_cost_six certify M4's input reduction, retaining
-the full CoreAdmissible alpha/omega/hereditary-D contract. They do not prove that
-a degree-eleven vertex is impossible.
+Frozen M6 is closed by core_R447_min_degree_ten_edges_ge_289,
+core_R447_min_degree_eleven_edges_ge_287 and gate47_verified.
+The last theorem has EXACTLY the unchanged type Gate47Statement:
+a graph on Fin47 with CoreAdmissible 4 and at most286 edges has every degree>=12.
+CoreAdmissible retains alpha<=4, omega<=11 and EVERY induced D cap.
+No shell clique, row bound, Cost-6 or terminal theorem is an added parent premise.
 
-OPEN: actual fourteen-point cap contradiction in R335, sharp R335/R336 bounds,
-GATE47 d10/d11 exclusions and the original MainTheorem. See OPEN_BLOCKERS.md.
-Windows local lake build is not claimed; see logs/windows-environment-20261116.txt.
+The original MainTheorem remains ABSENT. This checkpoint proves the minimum-degree
+gate, not EG617/K145. No E286 proof or merge into main was performed.
+See OPEN_BLOCKERS.md for that remaining boundary.

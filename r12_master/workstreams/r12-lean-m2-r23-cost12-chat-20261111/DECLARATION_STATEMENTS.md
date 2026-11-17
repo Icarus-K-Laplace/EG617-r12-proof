@@ -1098,6 +1098,119 @@ theorem twice_independent_card_le_of_degree_two (G : SimpleGraph V)
     2 * I.card ≤ Fintype.card V
 ```
 
+## EG617.core_R447_min_degree_eleven_edges_ge_287
+
+Source: EG617/Core/Gate47.lean
+
+```lean
+theorem core_R447_min_degree_eleven_edges_ge_287 (G : SimpleGraph V)
+    (hV : Fintype.card V = 47) (hG : CoreAdmissible 4 G) (v : V)
+    (hd : G.degree v = 11) (hmin : ∀ w, 11 ≤ G.degree w) :
+    287 ≤ G.edgeFinset.card
+```
+
+## EG617.gate47_verified
+
+Source: EG617/Core/Gate47.lean
+
+```lean
+theorem gate47_verified : Gate47Statement
+```
+
+## EG617.core_admissible_common_nonNeighbors
+
+Source: EG617/Core/GateRows.lean
+
+```lean
+theorem core_admissible_common_nonNeighbors (G : SimpleGraph V) (a : ℕ)
+    (hG : CoreAdmissible (a + 2) G) (x y : V) (hxy : x ≠ y) (hnxy : ¬ G.Adj x y)
+    (S : Finset V) (hS : ∀ z ∈ S, z ≠ x ∧ z ≠ y ∧ ¬ G.Adj x z ∧ ¬ G.Adj y z) :
+    CoreAdmissible a (G.induce (S : Set V))
+```
+
+## EG617.core_R4_common_nonneighbors_card_le_23
+
+Source: EG617/Core/GateRows.lean
+
+```lean
+theorem core_R4_common_nonneighbors_card_le_23 (G : SimpleGraph V)
+    (hG : CoreAdmissible 4 G) (x y : V) (hxy : x ≠ y) (hnxy : ¬ G.Adj x y)
+    (S : Finset V) (hS : ∀ z ∈ S, z ≠ x ∧ z ≠ y ∧ ¬ G.Adj x z ∧ ¬ G.Adj y z) :
+    S.card ≤ 23
+```
+
+## EG617.core_R4_row_union_ge_twelve
+
+Source: EG617/Core/GateRows.lean
+
+```lean
+theorem core_R4_row_union_ge_twelve (G : SimpleGraph V) (hG : CoreAdmissible 4 G)
+    (C : Finset V) (hC : C.card = 35) (x y : V) (hxy : x ≠ y)
+    (hnxy : ¬ G.Adj x y) (hx : x ∉ C) (hy : y ∉ C) :
+    12 ≤ ((C.filter (G.Adj x)) ∪ (C.filter (G.Adj y))).card
+```
+
+## EG617.core_two_degrees_le_edges_add_one
+
+Source: EG617/Core/GateRows.lean
+
+```lean
+theorem core_two_degrees_le_edges_add_one (G : SimpleGraph V) (x y : V) (hxy : x ≠ y) :
+    G.degree x + G.degree y ≤ G.edgeFinset.card + 1
+```
+
+## EG617.core_shell_row_missing_degree_le
+
+Source: EG617/Core/GateRows.lean
+
+```lean
+theorem core_shell_row_missing_degree_le (G : SimpleGraph V) (v : V)
+    (hd : G.degree v = 11) (hmin : ∀ w, 11 ≤ G.degree w)
+    (a : (G.neighborFinset v : Set V)) :
+    ((G.induce (G.neighborFinset v : Set V))ᶜ).degree a ≤
+      ((Gᶜ.neighborFinset v).filter (G.Adj a)).card
+```
+
+## EG617.core_missing_edge_row_sum
+
+Source: EG617/Core/GateRows.lean
+
+```lean
+theorem core_missing_edge_row_sum (M : SimpleGraph V) (r : V → ℕ)
+    (hrow : ∀ a, M.degree a ≤ r a) (a b : V) (hab : a ≠ b)
+    (hpair : 12 ≤ r a + r b) :
+    M.edgeFinset.card + 11 ≤ ∑ x : V, r x
+```
+
+## EG617.core_shell_edge_degree_ledger
+
+Source: EG617/Core/GateShell.lean
+
+```lean
+theorem core_shell_edge_degree_ledger (G : SimpleGraph V) (v : V) :
+    let S
+```
+
+## EG617.core_induced_edges_le_choose
+
+Source: EG617/Core/GateShell.lean
+
+```lean
+theorem core_induced_edges_le_choose (G : SimpleGraph V) (S : Finset V) :
+    coreInducedEdgeCount G S ≤ S.card.choose 2
+```
+
+## EG617.core_R447_min_degree_ten_edges_ge_289
+
+Source: EG617/Core/GateShell.lean
+
+```lean
+theorem core_R447_min_degree_ten_edges_ge_289 (G : SimpleGraph V)
+    (hV : Fintype.card V = 47) (hG : CoreAdmissible 4 G) (v : V)
+    (hd : G.degree v = 10) (hmin : ∀ w, 10 ≤ G.degree w) :
+    289 ≤ G.edgeFinset.card
+```
+
 ## EG617.oddCycleBound
 
 Source: EG617/Core/OddCycleArithmetic.lean
@@ -1783,6 +1896,78 @@ theorem r23_exact_labeled_neighbor_ledger (G : SimpleGraph V)
         ∃! i : Fin 5, cycleNeighborLabels f x = c5Type i)
 ```
 
+## EG617.core_degree_eleven_neighbor_nonedge
+
+Source: EG617/Core/R335Fourteen.lean
+
+```lean
+theorem core_degree_eleven_neighbor_nonedge (G : SimpleGraph V)
+    (hG : CoreCliqueBound 11 G) (v : V) (hd : G.degree v = 11) :
+    ∃ x ∈ G.neighborFinset v, ∃ y ∈ G.neighborFinset v, x ≠ y ∧ ¬ G.Adj x y
+```
+
+## EG617.core_common_nonneighbors_clique
+
+Source: EG617/Core/R335Fourteen.lean
+
+```lean
+theorem core_common_nonneighbors_clique (G : SimpleGraph V)
+    (hG : CoreIndependenceBound 3 G) (x y : V) (hxy : x ≠ y) (hnot : ¬ G.Adj x y)
+    (S : Finset V) (hS : ∀ z ∈ S, z ≠ x ∧ z ≠ y ∧ ¬ G.Adj x z ∧ ¬ G.Adj y z) :
+    G.IsClique (S : Set V)
+```
+
+## EG617.core_edge_count_union
+
+Source: EG617/Core/R335Fourteen.lean
+
+```lean
+theorem core_edge_count_union (G : SimpleGraph V) (S T : Finset V) (hd : Disjoint S T) :
+    coreInducedEdgeCount G (S ∪ T) = coreInducedEdgeCount G S +
+      adjCount G S T + coreInducedEdgeCount G T
+```
+
+## EG617.core_pair_cross_lower_bound
+
+Source: EG617/Core/R335Fourteen.lean
+
+```lean
+theorem core_pair_cross_lower_bound (G : SimpleGraph V) (T : Finset V)
+    (x y : V) (hxy : x ≠ y) :
+    T.card ≤ adjCount G T {x, y} + (T.filter (fun z => ¬ G.Adj x z ∧ ¬ G.Adj y z)).card
+```
+
+## EG617.core_induce_compl
+
+Source: EG617/Core/R335Fourteen.lean
+
+```lean
+theorem core_induce_compl (G : SimpleGraph V) (T : Finset V) :
+    (G.induce (T : Set V))ᶜ = Gᶜ.induce (T : Set V)
+```
+
+## EG617.core_induced_compl_edge_count
+
+Source: EG617/Core/R335Fourteen.lean
+
+```lean
+theorem core_induced_compl_edge_count (G : SimpleGraph V) (T : Finset V) :
+    coreInducedEdgeCount G T + coreInducedEdgeCount Gᶜ T = T.card.choose 2
+```
+
+## EG617.core_fourteen_cost_obstruction
+
+Source: EG617/Core/R335Fourteen.lean
+
+```lean
+theorem core_fourteen_cost_obstruction (G : SimpleGraph V)
+    (hcap : ∀ U : Finset V, coreInducedEdgeCount G U ≤ D U.card)
+    (T : Finset V) (hT : T.card = 12) (x y : V) (hxy : x ≠ y)
+    (hx : x ∉ T) (hy : y ∉ T)
+    (hcost : coreInducedEdgeCount Gᶜ T +
+      (T.filter (fun z => ¬ G.Adj x z ∧ ¬ G.Adj y z)).card ≤ 6) : False
+```
+
 ## EG617.core_R223_complement_cost_six
 
 Source: EG617/Core/R335Neighborhood.lean
@@ -1802,6 +1987,56 @@ theorem core_R335_degree_eleven_nonneighbor_cost_six (G : SimpleGraph V)
     (hV : Fintype.card V = 35) (hG : CoreAdmissible 3 G)
     (v : V) (hd : G.degree v = 11) :
     let S
+```
+
+## EG617.core_R335_degree_ne_eleven
+
+Source: EG617/Core/R335Sharp.lean
+
+```lean
+theorem core_R335_degree_ne_eleven (G : SimpleGraph V)
+    (hV : Fintype.card V = 35) (hG : CoreAdmissible 3 G) (v : V) :
+    G.degree v ≠ 11
+```
+
+## EG617.core_R335_degree_ge_twelve
+
+Source: EG617/Core/R335Sharp.lean
+
+```lean
+theorem core_R335_degree_ge_twelve (G : SimpleGraph V)
+    (hV : Fintype.card V = 35) (hG : CoreAdmissible 3 G) (v : V) :
+    12 ≤ G.degree v
+```
+
+## EG617.core_R335_edges_ge_210
+
+Source: EG617/Core/R335Sharp.lean
+
+```lean
+theorem core_R335_edges_ge_210 (G : SimpleGraph V)
+    (hV : Fintype.card V = 35) (hG : CoreAdmissible 3 G) :
+    210 ≤ G.edgeFinset.card
+```
+
+## EG617.core_R336_degree_ge_thirteen
+
+Source: EG617/Core/R336Sharp.lean
+
+```lean
+theorem core_R336_degree_ge_thirteen (G : SimpleGraph V)
+    (hV : Fintype.card V = 36) (hG : CoreAdmissible 3 G) (v : V) :
+    13 ≤ G.degree v
+```
+
+## EG617.core_R336_edges_ge_234
+
+Source: EG617/Core/R336Sharp.lean
+
+```lean
+theorem core_R336_edges_ge_234 (G : SimpleGraph V)
+    (hV : Fintype.card V = 36) (hG : CoreAdmissible 3 G) :
+    234 ≤ G.edgeFinset.card
 ```
 
 ## EG617.independent_card_le_twelve

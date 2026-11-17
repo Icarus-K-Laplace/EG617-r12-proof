@@ -22,9 +22,9 @@ collected in DECLARATION_STATEMENTS.md; CI prints their elaborated types.
 | Low M2d /unique missing edge | missing_exterior_completion_or_exceptional | VERIFIED: compatible completion or full9,9,2,1,2 adjacency/fiber profile |
 | Complete Low M2 | r23_complete_classification | VERIFIED CI43680628810; only original23-vertex, triangle-free, alpha<=11, e>=121 hypotheses |
 | Low M3 | r23_cost_six; case_I_cost_six; case_I_single_edge_deletion_cost_six; exceptional_cost_four | VERIFIED universal Cost-6; all deletions, every independent set; exceptional Cost-4 |
-| Low M4 | core_R335_degree_ge_11; core_R223_complement_cost_six; core_R335_degree_eleven_nonneighbor_cost_six | Weak degree11 and full-class nonneighborhood Cost-6 transfer verified; fourteen-point contradiction and sharp degree12/e210 open |
-| Low M5 | core_R337_empty_of_card | R337 done; sharp R336 still gap |
-| Low M6 | core_R447_degree_ge_10 only; Gate47Statement definition | d10/d11 exclusions and degree12 theorem absent |
+| Low M4 | core_fourteen_cost_obstruction; core_R335_degree_ne_eleven; core_R335_degree_ge_twelve; core_R335_edges_ge_210 | VERIFIED: actual14-set, derived Cost-6,72>D14=69, sharp degree12/e210 with full graph class |
+| Low M5 | core_R336_degree_ge_thirteen; core_R336_edges_ge_234; core_R337_empty_of_card | VERIFIED: sharp degree13/e234, inherited full caps and exact neighbor deletion; R337 retained |
+| Low M6 / Theorem M | core_R447_min_degree_ten_edges_ge_289; core_R447_min_degree_eleven_edges_ge_287; gate47_verified | VERIFIED: exact frozen Gate47Statement, all original graph conditions; full helper mapping in GATE47_FORMALIZATION.md |
 | Original conclusion | MainTheorem absent | No full EG617 proof |
 
 CoreAdmissible contains ALL finite induced D bounds, alpha and omega bounds.

@@ -22,7 +22,13 @@ Frozen source: c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2, low minimum-degree gate
 | Complete M3 | r23_cost_six | Original R23 hypotheses imply the exact universal Cost-6 property |
 | M4 input from full caps | core_R223_complement_cost_six | D(23), alpha and omega derive every Cost-6 input |
 | M4 actual nonneighborhood | core_R335_degree_eleven_nonneighbor_cost_six | Full R(3,35), degree11, actual23-point nonneighborhood |
-| Remaining M4/M5/M6 | no sharp/gate theorem | Fourteen-point ledger, sharp R335/R336 and GATE47 open |
+| M4 actual fourteen-point count | core_fourteen_cost_obstruction; core_pair_cross_lower_bound; core_edge_count_union | T has12 vertices, distinct endpoints outside T; actual14-set violates D14=69 |
+| M4 full parent | core_R335_degree_ne_eleven; core_R335_degree_ge_twelve; core_R335_edges_ge_210 | Full R(3,35) gives degree>=12 and e>=210; Cost-6 input is derived |
+| M5 order36 | core_R336_degree_ge_thirteen; core_R336_edges_ge_234 | Neighbor deletion with all hereditary conditions gives degree>=13 and e>=234 |
+| M6 shell ledger/d10 | core_shell_edge_degree_ledger; core_R447_min_degree_ten_edges_ge_289 | Actual vertex/edge partition; minimum degree10 forces>=289 edges |
+| M6 row union | core_admissible_common_nonNeighbors; core_R4_common_nonneighbors_card_le_23; core_R4_row_union_ge_twelve | Original graph class rules out24 common nonneighbors, hence union>=12 |
+| M6 missing-edge incidence | core_two_degrees_le_edges_add_one; core_shell_row_missing_degree_le; core_missing_edge_row_sum | Distinct endpoints and all actual rows yield sum(rows)>=e(M)+11 |
+| M6 d11/final gate | core_R447_min_degree_eleven_edges_ge_287; gate47_verified | e>=287 contradiction; exact unchanged Gate47Statement |
 
 Equivalence: independent sets are actual Finsets; the independence bound ranges
 over every such set; edges are unordered induced edgeFinset cardinalities.
