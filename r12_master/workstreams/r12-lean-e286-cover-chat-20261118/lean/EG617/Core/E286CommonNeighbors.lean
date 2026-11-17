@@ -42,8 +42,9 @@ theorem e286_common_neighbors_excess_bound (G : SimpleGraph V)
   have hd : Disjoint P U := by
     rw [Finset.disjoint_left]
     intro z hz hzU
-    rcases Finset.mem_insert.mp hz with rfl | hz
-    · rcases Finset.mem_union.mp hzU with h | h
+    rcases Finset.mem_insert.mp hz with he | hz
+    · subst z
+      rcases Finset.mem_union.mp hzU with h | h
       · exact G.loopless.irrefl x ((SimpleGraph.mem_neighborFinset G x x).mp h)
       · exact hnxy ((SimpleGraph.mem_neighborFinset G y x).mp h).symm
     · have he : z = y := Finset.mem_singleton.mp hz

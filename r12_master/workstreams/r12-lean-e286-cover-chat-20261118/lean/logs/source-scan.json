@@ -48,6 +48,7 @@
     "EG617\\Core\\E286Capacity.lean",
     "EG617\\Core\\E286CommonNeighbors.lean",
     "EG617\\Core\\E286Excess.lean",
+    "EG617\\Core\\E286PrivateClasses.lean",
     "EG617\\Core\\E286Seeds.lean",
     "EG617\\Core\\EdgePartition.lean",
     "EG617\\Core\\Gate47.lean",
@@ -662,6 +663,51 @@
       "kind": "theorem",
       "name": "e286_regular_edge_ledger",
       "file": "EG617\\Core\\E286Excess.lean"
+    },
+    {
+      "kind": "def",
+      "name": "seedNeighbors",
+      "file": "EG617\\Core\\E286PrivateClasses.lean"
+    },
+    {
+      "kind": "def",
+      "name": "seedPrivateClique",
+      "file": "EG617\\Core\\E286PrivateClasses.lean"
+    },
+    {
+      "kind": "def",
+      "name": "seedMultipleSet",
+      "file": "EG617\\Core\\E286PrivateClasses.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "seedNeighbors_empty_of_seed",
+      "file": "EG617\\Core\\E286PrivateClasses.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "seedNeighbors_singleton_outside",
+      "file": "EG617\\Core\\E286PrivateClasses.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "seedNeighbors_singleton_nonadj",
+      "file": "EG617\\Core\\E286PrivateClasses.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_private_class_isClique",
+      "file": "EG617\\Core\\E286PrivateClasses.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_seed_dominates",
+      "file": "EG617\\Core\\E286PrivateClasses.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_private_multiple_card",
+      "file": "EG617\\Core\\E286PrivateClasses.lean"
     },
     {
       "kind": "theorem",

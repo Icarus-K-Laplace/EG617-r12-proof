@@ -119,6 +119,15 @@ public import EG617
 #print axioms EG617.e286_regular_card_ge_39
 #print axioms EG617.e286_support_degree_sum
 #print axioms EG617.e286_regular_edge_ledger
+#print axioms EG617.seedNeighbors
+#print axioms EG617.seedPrivateClique
+#print axioms EG617.seedMultipleSet
+#print axioms EG617.seedNeighbors_empty_of_seed
+#print axioms EG617.seedNeighbors_singleton_outside
+#print axioms EG617.seedNeighbors_singleton_nonadj
+#print axioms EG617.e286_private_class_isClique
+#print axioms EG617.e286_seed_dominates
+#print axioms EG617.e286_private_multiple_card
 #print axioms EG617.e286_exists_regular_independent_four
 #print axioms EG617.adjCount
 #print axioms EG617.adjCount_eq_sum_filter

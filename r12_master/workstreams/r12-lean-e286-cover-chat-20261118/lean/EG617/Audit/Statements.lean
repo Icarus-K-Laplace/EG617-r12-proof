@@ -119,6 +119,15 @@ public import EG617
 #check EG617.e286_regular_card_ge_39
 #check EG617.e286_support_degree_sum
 #check EG617.e286_regular_edge_ledger
+#print EG617.seedNeighbors
+#print EG617.seedPrivateClique
+#print EG617.seedMultipleSet
+#check EG617.seedNeighbors_empty_of_seed
+#check EG617.seedNeighbors_singleton_outside
+#check EG617.seedNeighbors_singleton_nonadj
+#check EG617.e286_private_class_isClique
+#check EG617.e286_seed_dominates
+#check EG617.e286_private_multiple_card
 #check EG617.e286_exists_regular_independent_four
 #print EG617.adjCount
 #check EG617.adjCount_eq_sum_filter
