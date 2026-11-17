@@ -101,6 +101,11 @@ public import EG617
 #print axioms EG617.e286_no_induced_alpha_two_25
 #print axioms EG617.independenceBound_common_nonNeighbors
 #print axioms EG617.e286_common_antineighborhood_card_le_24
+#print axioms EG617.e286_common_neighbors_excess_bound
+#print axioms EG617.e286_pair_excess_le_eight
+#print axioms EG617.e286_common_neighbors_le_eleven
+#print axioms EG617.e286_common_set_excess_charge
+#print axioms EG617.e286_ten_clique_completers_excess
 #print axioms EG617.E286Hypotheses
 #print axioms EG617.E286Statement
 #print axioms EG617.degreeExcess12

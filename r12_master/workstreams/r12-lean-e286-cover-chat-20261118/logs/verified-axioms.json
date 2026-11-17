@@ -9,6 +9,16 @@
     "Classical.choice",
     "Quot.sound"
   ],
+  "EG617.e286_exists_regular_independent_four": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_common_antineighborhood_card_le_24": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
   "EG617.colorGraph": [
     "propext",
     "Quot.sound"
@@ -444,6 +454,30 @@
     "Quot.sound"
   ],
   "EG617.exceptional_cost_six": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_induced_degree_budget": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.oddCycleBound_25": [
+    "propext",
+    "Quot.sound"
+  ],
+  "EG617.alpha_two_25_edges_ge_155": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_no_induced_alpha_two_25": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.independenceBound_common_nonNeighbors": [
     "propext",
     "Classical.choice",
     "Quot.sound"

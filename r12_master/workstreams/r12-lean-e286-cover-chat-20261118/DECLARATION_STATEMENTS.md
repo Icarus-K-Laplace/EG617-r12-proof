@@ -1,6 +1,6 @@
 # Exact Lean statements
 
-Code 2da427b4760561cab721624b42e2f2ecd5508988, CI 44194246540. Full proof bodies are in standard .lean files.
+Code 80d154296dfab23b76d8a12b3f1d1bcf6b299aef, CI 44195410389. Full proof bodies are in standard .lean files.
 
 ## EG617.colorGraph
 
@@ -988,6 +988,69 @@ theorem exceptional_cost_six (G : SimpleGraph V) (h : R23ExceptionalProfile G) :
     CostSixProperty G
 ```
 
+## EG617.e286_induced_degree_budget
+
+Source: EG617/Core/E286Capacity.lean
+
+```lean
+theorem e286_induced_degree_budget (G : SimpleGraph V) (hG : E286Hypotheses G)
+    (S : Finset V) :
+    2 * coreInducedEdgeCount G S ≤ 12 * S.card + 8
+```
+
+## EG617.oddCycleBound_25
+
+Source: EG617/Core/E286Capacity.lean
+
+```lean
+theorem oddCycleBound_25 (k : ℕ) (hk : 2 ≤ k) (hfit : 2 * k + 1 ≤ 25) :
+    oddCycleBound 25 k ≤ 145
+```
+
+## EG617.alpha_two_25_edges_ge_155
+
+Source: EG617/Core/E286Capacity.lean
+
+```lean
+theorem alpha_two_25_edges_ge_155 (G : SimpleGraph V)
+    (hV : Fintype.card V = 25) (hI : CoreIndependenceBound 2 G)
+    (hK : CoreCliqueBound 11 G) : 155 ≤ G.edgeFinset.card
+```
+
+## EG617.e286_no_induced_alpha_two_25
+
+Source: EG617/Core/E286Capacity.lean
+
+```lean
+theorem e286_no_induced_alpha_two_25 (G : SimpleGraph V) (hG : E286Hypotheses G)
+    (S : Finset V) (hS : S.card = 25)
+    (hI : CoreIndependenceBound 2 (G.induce (S : Set V))) : False
+```
+
+## EG617.independenceBound_common_nonNeighbors
+
+Source: EG617/Core/E286Capacity.lean
+
+```lean
+theorem independenceBound_common_nonNeighbors (G : SimpleGraph V) (a : ℕ)
+    (hG : CoreIndependenceBound (a + 2) G) (x y : V) (hxy : x ≠ y)
+    (hnxy : ¬ G.Adj x y) (S : Finset V)
+    (hS : ∀ z ∈ S, z ≠ x ∧ z ≠ y ∧ ¬ G.Adj x z ∧ ¬ G.Adj y z) :
+    CoreIndependenceBound a (G.induce (S : Set V))
+```
+
+## EG617.e286_common_antineighborhood_card_le_24
+
+Source: EG617/Core/E286Capacity.lean
+
+```lean
+theorem e286_common_antineighborhood_card_le_24 (G : SimpleGraph V)
+    (hG : E286Hypotheses G) (x y : V) (hxy : x ≠ y) (hnxy : ¬ G.Adj x y)
+    (S : Finset V)
+    (hS : ∀ z ∈ S, z ≠ x ∧ z ≠ y ∧ ¬ G.Adj x z ∧ ¬ G.Adj y z) :
+    S.card ≤ 24
+```
+
 ## EG617.E286Hypotheses
 
 Source: EG617/Core/E286Excess.lean
@@ -1100,6 +1163,17 @@ Source: EG617/Core/E286Excess.lean
 theorem e286_regular_edge_ledger (G : SimpleGraph V) (hG : E286Hypotheses G) :
     coreInducedEdgeCount G (excessSupport G)ᶜ + 12 * (excessSupport G).card + 8 =
       286 + coreInducedEdgeCount G (excessSupport G)
+```
+
+## EG617.e286_exists_regular_independent_four
+
+Source: EG617/Core/E286Seeds.lean
+
+```lean
+theorem e286_exists_regular_independent_four (G : SimpleGraph V)
+    (hG : E286Hypotheses G) :
+    ∃ I : Finset V, I.card = 4 ∧ G.IsIndepSet (I : Set V) ∧
+      ∀ v ∈ I, G.degree v = 12
 ```
 
 ## EG617.adjCount

@@ -1,12 +1,12 @@
 {
-  "sha": "2da427b4760561cab721624b42e2f2ecd5508988",
-  "run": 44194246540,
+  "sha": "80d154296dfab23b76d8a12b3f1d1bcf6b299aef",
+  "run": 44195410389,
   "cleanLinuxBuild": "PASS",
   "fullAxiomAudit": "PASS",
   "statementInspection": "PASS",
   "localMatchesCISHA256": "PASS",
-  "declarations": 231,
-  "theorems": 195,
+  "declarations": 238,
+  "theorems": 202,
   "pins": [
     {
       "name": "plausible",
@@ -48,11 +48,11 @@
   "hashes": [
     {
       "file": "EG617.lean",
-      "sha256": "949413e576c4ee1a4b616e6b0a0a853ee54ebb2cf63ebb92a42b1a625e547962"
+      "sha256": "41ad29f54ddc4a4dc4dc602d81996058d29bed9d69d13835e0960820a091bc6a"
     },
     {
       "file": "EG617/Audit/Axioms.lean",
-      "sha256": "7f95d335e648aaeb99f53c1e9143fe65e662ccbc84da27dac9db3cc8317e84e1"
+      "sha256": "3ee422f69bb038d91df7aeba2f5d4b50f6a616d63c98862b24aac4f06f9a0f7b"
     },
     {
       "file": "EG617/Audit/C5MissingGraphLift.lean",
@@ -92,7 +92,7 @@
     },
     {
       "file": "EG617/Audit/E286.lean",
-      "sha256": "31bc9e764daccfa82275a430960676dfe51fe16be9f01992bd739dec86b1d69d"
+      "sha256": "92c89a76c2f0db86772571d7e064adfe2bf9be4a6987436842bcce5e111f85d4"
     },
     {
       "file": "EG617/Audit/Gate47.lean",
@@ -156,7 +156,7 @@
     },
     {
       "file": "EG617/Audit/Statements.lean",
-      "sha256": "7e0be432d4fde1cee7e86816e52686749b1eded219eaa8e57270d5922bd3d5ef"
+      "sha256": "7d8e16bb5b0e7c6404a6c2f4a241b3a8e24442421e0f7a579334da750f485146"
     },
     {
       "file": "EG617/Basic/ColoringLemmas.lean",
@@ -223,8 +223,16 @@
       "sha256": "ff1f574787b6735479eba56b075cb4a5c084cb2a5e5794e464a1d4078f24b28f"
     },
     {
+      "file": "EG617/Core/E286Capacity.lean",
+      "sha256": "9a10ca3a3992f1b48ce0a6b8ade3b0589f97ab8ddb2014f9db08a554b855c798"
+    },
+    {
       "file": "EG617/Core/E286Excess.lean",
       "sha256": "c5a5806a5ba736dcc0b8828eb837d0dbf24f90690fa536f1c8a6fd22777ddfa4"
+    },
+    {
+      "file": "EG617/Core/E286Seeds.lean",
+      "sha256": "309fe8d7f507bb6a2b410b08ae12b38e7ee4506990613ce0adb182c05b1f8f5a"
     },
     {
       "file": "EG617/Core/EdgePartition.lean",

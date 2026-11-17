@@ -10,7 +10,12 @@ Exceptional degree total -> e286_support_degree_sum.
 Regular induced-edge ledger -> e286_regular_edge_ledger.
 
 The nine ledgers above are VERIFIED at2da427b, CI44194246540.
-E286 Section2 regular four seeds -> e286_exists_regular_independent_four (candidate).
+E286 Section2 regular four seeds -> e286_exists_regular_independent_four (VERIFIED).
+E286 Section1 -> e286_induced_degree_budget; oddCycleBound_25;
+alpha_two_25_edges_ge_155; e286_no_induced_alpha_two_25;
+independenceBound_common_nonNeighbors; e286_common_antineighborhood_card_le_24.
+These Section1 reductions are VERIFIED at80d1542, CI44195410389, with no D premise.
+The actual common-neighbor bound and K10 completion charge are new candidates.
 No mapping claims support orbit completeness,
 E286 exclusion,287 floor,COVER or MainTheorem. Inherited source remains unchanged,
 except the import root and generated audit entry points.

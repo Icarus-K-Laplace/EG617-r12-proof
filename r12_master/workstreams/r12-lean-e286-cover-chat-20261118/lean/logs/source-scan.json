@@ -46,6 +46,7 @@
     "EG617\\Core\\CostSixDeletion.lean",
     "EG617\\Core\\CostSixProfiles.lean",
     "EG617\\Core\\E286Capacity.lean",
+    "EG617\\Core\\E286CommonNeighbors.lean",
     "EG617\\Core\\E286Excess.lean",
     "EG617\\Core\\E286Seeds.lean",
     "EG617\\Core\\EdgePartition.lean",
@@ -571,6 +572,31 @@
       "kind": "theorem",
       "name": "e286_common_antineighborhood_card_le_24",
       "file": "EG617\\Core\\E286Capacity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_common_neighbors_excess_bound",
+      "file": "EG617\\Core\\E286CommonNeighbors.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_pair_excess_le_eight",
+      "file": "EG617\\Core\\E286CommonNeighbors.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_common_neighbors_le_eleven",
+      "file": "EG617\\Core\\E286CommonNeighbors.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_common_set_excess_charge",
+      "file": "EG617\\Core\\E286CommonNeighbors.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_ten_clique_completers_excess",
+      "file": "EG617\\Core\\E286CommonNeighbors.lean"
     },
     {
       "kind": "def",

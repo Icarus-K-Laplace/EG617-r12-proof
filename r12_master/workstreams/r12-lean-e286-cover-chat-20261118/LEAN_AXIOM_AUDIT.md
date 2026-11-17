@@ -1,6 +1,6 @@
 # Transitive axiom audit
 
-Verified code 2da427b4760561cab721624b42e2f2ecd5508988, CI 44194246540. All project declarations below compiled.
+Verified code 80d154296dfab23b76d8a12b3f1d1bcf6b299aef, CI 44195410389. All project declarations below compiled.
 Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem remain unproved.
 
 | Declaration | Axioms |
@@ -98,6 +98,12 @@ Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem r
 | EG617.case_I_cost_six | propext, Classical.choice, Quot.sound |
 | EG617.exceptional_cost_four | propext, Classical.choice, Quot.sound |
 | EG617.exceptional_cost_six | propext, Classical.choice, Quot.sound |
+| EG617.e286_induced_degree_budget | propext, Classical.choice, Quot.sound |
+| EG617.oddCycleBound_25 | propext, Quot.sound |
+| EG617.alpha_two_25_edges_ge_155 | propext, Classical.choice, Quot.sound |
+| EG617.e286_no_induced_alpha_two_25 | propext, Classical.choice, Quot.sound |
+| EG617.independenceBound_common_nonNeighbors | propext, Classical.choice, Quot.sound |
+| EG617.e286_common_antineighborhood_card_le_24 | propext, Classical.choice, Quot.sound |
 | EG617.E286Hypotheses | propext, Classical.choice, Quot.sound |
 | EG617.E286Statement | propext, Classical.choice, Quot.sound |
 | EG617.degreeExcess12 | propext, Classical.choice, Quot.sound |
@@ -111,6 +117,7 @@ Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem r
 | EG617.e286_regular_card_ge_39 | propext, Classical.choice, Quot.sound |
 | EG617.e286_support_degree_sum | propext, Classical.choice, Quot.sound |
 | EG617.e286_regular_edge_ledger | propext, Classical.choice, Quot.sound |
+| EG617.e286_exists_regular_independent_four | propext, Classical.choice, Quot.sound |
 | EG617.adjCount | propext, Classical.choice, Quot.sound |
 | EG617.adjCount_eq_sum_filter | propext, Classical.choice, Quot.sound |
 | EG617.degree_induce_eq_filter | propext, Classical.choice, Quot.sound |

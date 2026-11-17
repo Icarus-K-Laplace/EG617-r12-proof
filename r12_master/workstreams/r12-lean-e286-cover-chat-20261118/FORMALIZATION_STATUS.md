@@ -6,6 +6,8 @@ CI44139599116. New branch starts from the actual latest prior-workstream HEAD
 
 Nine degree-excess/support ledgers are VERIFIED at2da427b, CI44194246540.
 All231 declarations compiled and passed exact type and transitive axiom checks.
-The actual independent regular four-seed theorem is a new candidate awaiting CI.
+Actual regular independent four seeds and the cap-free25-point obstruction are
+VERIFIED at80d1542, CI44195410389. All238 declarations and202 theorems passed.
+The actual common-neighbor/excess inequality and K10 completion charge are candidates.
 LEVEL5A E286, LEVEL5B edge floor287, LEVEL6A h12/h13, LEVEL6B COVER and
 LEVEL7 K145 MainTheorem remain FORMALIZATION_GAP. No terminal proof is assumed.

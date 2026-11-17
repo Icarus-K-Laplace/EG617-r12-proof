@@ -1,5 +1,5 @@
 module
-public import EG617.Core.E286Capacity
+public import EG617.Core.E286CommonNeighbors
 #print EG617.E286Hypotheses
 #check EG617.e286_excess_sum
 #print axioms EG617.e286_excess_sum
@@ -9,3 +9,7 @@ public import EG617.Core.E286Capacity
 #print axioms EG617.e286_exists_regular_independent_four
 #check EG617.e286_common_antineighborhood_card_le_24
 #print axioms EG617.e286_common_antineighborhood_card_le_24
+#check EG617.e286_common_neighbors_excess_bound
+#print axioms EG617.e286_common_neighbors_excess_bound
+#check EG617.e286_ten_clique_completers_excess
+#print axioms EG617.e286_ten_clique_completers_excess

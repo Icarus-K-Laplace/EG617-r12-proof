@@ -41,3 +41,4 @@ public import EG617.Core.Gate47
 public import EG617.Core.E286Excess
 public import EG617.Core.E286Seeds
 public import EG617.Core.E286Capacity
+public import EG617.Core.E286CommonNeighbors
