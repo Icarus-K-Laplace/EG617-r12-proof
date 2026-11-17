@@ -46,6 +46,7 @@
     "EG617\\Core\\CostSixDeletion.lean",
     "EG617\\Core\\CostSixProfiles.lean",
     "EG617\\Core\\E286Excess.lean",
+    "EG617\\Core\\E286Seeds.lean",
     "EG617\\Core\\EdgePartition.lean",
     "EG617\\Core\\Gate47.lean",
     "EG617\\Core\\GateRows.lean",
@@ -604,6 +605,11 @@
       "kind": "theorem",
       "name": "e286_regular_edge_ledger",
       "file": "EG617\\Core\\E286Excess.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_exists_regular_independent_four",
+      "file": "EG617\\Core\\E286Seeds.lean"
     },
     {
       "kind": "def",

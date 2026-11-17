@@ -1,6 +1,6 @@
 # Exact open obligations
 
-1. Compile and audit degree-excess8 and the exceptional-set edge ledger.
+1. CLOSED: compile and audit degree-excess8 and the exceptional-set edge ledger.
 2. Derive an actual independent four-set of degree12 vertices from the original
    five E286 conditions; no chosen seed set may become an extra parent assumption.
 3. Construct actual private cliques and multiple-seed supports, prove surplus5,

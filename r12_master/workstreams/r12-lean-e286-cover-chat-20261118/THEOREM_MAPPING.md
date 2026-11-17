@@ -9,6 +9,8 @@ Regular complement / size>=39 -> e286_regular_complement; e286_regular_card_ge_3
 Exceptional degree total -> e286_support_degree_sum.
 Regular induced-edge ledger -> e286_regular_edge_ledger.
 
-These are candidates until CI passes. No mapping claims support orbit completeness,
+The nine ledgers above are VERIFIED at2da427b, CI44194246540.
+E286 Section2 regular four seeds -> e286_exists_regular_independent_four (candidate).
+No mapping claims support orbit completeness,
 E286 exclusion,287 floor,COVER or MainTheorem. Inherited source remains unchanged,
 except the import root and generated audit entry points.

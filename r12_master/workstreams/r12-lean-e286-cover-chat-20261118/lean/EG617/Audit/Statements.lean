@@ -108,6 +108,7 @@ public import EG617
 #check EG617.e286_regular_card_ge_39
 #check EG617.e286_support_degree_sum
 #check EG617.e286_regular_edge_ledger
+#check EG617.e286_exists_regular_independent_four
 #print EG617.adjCount
 #check EG617.adjCount_eq_sum_filter
 #check EG617.degree_induce_eq_filter
