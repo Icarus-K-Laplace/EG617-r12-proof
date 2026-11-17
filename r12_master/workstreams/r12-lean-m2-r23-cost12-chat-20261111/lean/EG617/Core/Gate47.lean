@@ -49,10 +49,13 @@ theorem core_R447_min_degree_eleven_edges_ge_287 (G : SimpleGraph V)
     have hu := core_R4_row_union_ge_twelve G hG C hC x y hxy hnxy hxC hyC
     have hc := Finset.card_union_le (C.filter (G.Adj x)) (C.filter (G.Adj y))
     exact hu.trans hc
-  have hrows := core_missing_edge_row_sum M r hrow ⟨x, hx⟩ ⟨y, hy⟩
+  have hrows := core_missing_edge_row_sum M r (by
+    intro a
+    simpa only [← SimpleGraph.ncard_neighborSet] using hrow a) ⟨x, hx⟩ ⟨y, hy⟩
     (fun he => hxy (congrArg Subtype.val he)) hpair
   have hcross : (∑ a : (S : Set V), r a) = adjCount G S C := by
     rw [adjCount_eq_sum_filter, ← Finset.sum_coe_sort S]
+    rfl
   rw [hcross] at hrows
   have hcomp := core_compl_edge_count (G.induce (S : Set V))
   simp only [SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard,
@@ -63,6 +66,7 @@ theorem core_R447_min_degree_eleven_edges_ge_287 (G : SimpleGraph V)
   simp only [S, C, SimpleGraph.neighborFinset_def, ← Set.toFinite_toFinset,
     ← SimpleGraph.ncard_neighborSet, coreInducedEdgeCount, SimpleGraph.edgeFinset_card,
     Set.fintypeCard_eq_ncard] at he heC hrows hcomp hd ⊢
+  simp only [SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard] at he heC hrows hcomp ⊢
   omega
 
 /-- The original frozen GATE47 statement, retaining alpha, omega, ALL induced
