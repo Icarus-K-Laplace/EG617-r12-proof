@@ -38,14 +38,21 @@ theorem core_shell_edge_degree_ledger (G : SimpleGraph V) (v : V) :
     · by_cases ha : G.Adj v a <;> simp [S, C, hav, ha, SimpleGraph.compl_adj, Ne.symm hav]
   have hvs : adjCount G {v} S = G.degree v := by
     have h : ∀ a ∈ S, G.Adj v a := fun a ha => (SimpleGraph.mem_neighborFinset G v a).mp ha
-    simp [adjCount, h, S]
+    rw [adjCount_eq_sum_filter, Finset.sum_singleton, Finset.filter_eq_self.mpr h]
+    simp only [S, SimpleGraph.card_neighborFinset_eq_degree, ← SimpleGraph.ncard_neighborSet]
   have hvc : adjCount G {v} C = 0 := by
     have h : ∀ a ∈ C, ¬ G.Adj v a := fun a ha =>
       ((SimpleGraph.compl_adj G v a).mp ((SimpleGraph.mem_neighborFinset Gᶜ v a).mp ha)).2
-    simp [adjCount, h]
+    rw [adjCount_eq_sum_filter, Finset.sum_singleton]
+    apply Finset.card_eq_zero.mpr
+    apply Finset.eq_empty_iff_forall_notMem.mpr
+    intro a ha
+    exact h a (Finset.mem_filter.mp ha).1 (Finset.mem_filter.mp ha).2
   have hvv : coreInducedEdgeCount G {v} = 0 := by
     have hc := adjCount_self G ({v} : Finset V)
-    simp [adjCount] at hc
+    have hz : adjCount G ({v} : Finset V) {v} = 0 := by simp [adjCount]
+    rw [hz] at hc
+    simp only [coreInducedEdgeCount, SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard] at hc ⊢
     omega
   have hA := core_edge_count_union G {v} S hdvS
   rw [hvs, hvv, zero_add] at hA
@@ -56,7 +63,9 @@ theorem core_shell_edge_degree_ledger (G : SimpleGraph V) (v : V) :
   rw [hcover, adjCount_right_univ,
     adjCount_union_right G S {v} S hdvS,
     adjCount_symm G S {v}, hvs, adjCount_self G S] at hdeg
-  simp only [SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard] at hAC ⊢
+  simp only [S, C, SimpleGraph.neighborFinset_def, ← Set.toFinite_toFinset,
+    ← SimpleGraph.ncard_neighborSet, SimpleGraph.edgeFinset_card,
+    Set.fintypeCard_eq_ncard] at hAC hdeg ⊢
   exact ⟨by omega, hdeg⟩
 
 theorem core_induced_edges_le_choose (G : SimpleGraph V) (S : Finset V) :
@@ -74,7 +83,8 @@ theorem core_R447_min_degree_ten_edges_ge_289 (G : SimpleGraph V)
   classical
   let S := G.neighborFinset v
   let C := Gᶜ.neighborFinset v
-  have hS : S.card = 10 := by simpa only [SimpleGraph.card_neighborFinset_eq_degree] using hd
+  have hS : S.card = 10 := by
+    simpa only [S, SimpleGraph.card_neighborFinset_eq_degree, ← SimpleGraph.ncard_neighborSet] using hd
   have hC : C.card = 36 := by
     have hc : C.card = Fintype.card V - 1 - G.degree v := G.degree_compl v
     omega
@@ -92,9 +102,9 @@ theorem core_R447_min_degree_ten_edges_ge_289 (G : SimpleGraph V)
   have hsmall := core_induced_edges_le_choose G S
   rw [hS] at hsmall
   norm_num only [Nat.choose_two_right] at hsmall
-  simp only [SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard] at he ⊢
-  change _ = _ + G.degree v + coreInducedEdgeCount G S + adjCount G S C at he
-  change _ = G.degree v + 2 * coreInducedEdgeCount G S + adjCount G S C at hs
+  simp only [S, C, SimpleGraph.neighborFinset_def, ← Set.toFinite_toFinset,
+    ← SimpleGraph.ncard_neighborSet, SimpleGraph.edgeFinset_card,
+    Set.fintypeCard_eq_ncard] at he hs heC hsum hsmall hd ⊢
   omega
 
 end EG617
