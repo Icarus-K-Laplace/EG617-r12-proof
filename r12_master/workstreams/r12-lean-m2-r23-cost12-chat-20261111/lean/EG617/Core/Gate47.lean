@@ -66,7 +66,6 @@ theorem core_R447_min_degree_eleven_edges_ge_287 (G : SimpleGraph V)
   simp only [S, C, SimpleGraph.neighborFinset_def, ← Set.toFinite_toFinset,
     ← SimpleGraph.ncard_neighborSet, coreInducedEdgeCount, SimpleGraph.edgeFinset_card,
     Set.fintypeCard_eq_ncard] at he heC hrows hcomp hd ⊢
-  simp only [SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard] at he heC hrows hcomp ⊢
   omega
 
 /-- The original frozen GATE47 statement, retaining alpha, omega, ALL induced
