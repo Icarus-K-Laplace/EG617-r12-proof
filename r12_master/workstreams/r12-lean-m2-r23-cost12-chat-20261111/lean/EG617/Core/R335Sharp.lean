@@ -3,7 +3,7 @@ public import EG617.Core.R335Fourteen
 
 @[expose] public section
 set_option autoImplicit false
-attribute [local instance] Classical.propDecidable
+attribute [local instance 2000] Classical.propDecidable
 open scoped BigOperators
 
 namespace EG617

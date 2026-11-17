@@ -186,6 +186,8 @@ public import EG617
 #print axioms EG617.core_R335_degree_ne_eleven
 #print axioms EG617.core_R335_degree_ge_twelve
 #print axioms EG617.core_R335_edges_ge_210
+#print axioms EG617.core_R336_degree_ge_thirteen
+#print axioms EG617.core_R336_edges_ge_234
 #print axioms EG617.independent_card_le_twelve
 #print axioms EG617.monochromatic_card_le_twelve
 #print axioms EG617.colorGraph_clique_card_le_twelve

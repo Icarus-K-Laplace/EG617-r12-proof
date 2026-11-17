@@ -34,3 +34,4 @@ public import EG617.Core.CostSixDeletion
 public import EG617.Core.R335Neighborhood
 public import EG617.Core.R335Fourteen
 public import EG617.Core.R335Sharp
+public import EG617.Core.R336Sharp
