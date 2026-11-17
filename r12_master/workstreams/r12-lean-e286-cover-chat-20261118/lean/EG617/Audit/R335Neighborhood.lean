@@ -1,0 +1,6 @@
+module
+public import EG617.Core.R335Neighborhood
+#check EG617.core_R223_complement_cost_six
+#print axioms EG617.core_R223_complement_cost_six
+#check EG617.core_R335_degree_eleven_nonneighbor_cost_six
+#print axioms EG617.core_R335_degree_eleven_nonneighbor_cost_six

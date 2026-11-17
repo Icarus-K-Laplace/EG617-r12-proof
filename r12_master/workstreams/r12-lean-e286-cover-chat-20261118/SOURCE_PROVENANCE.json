@@ -1,0 +1,20 @@
+{
+  "prefix": "r12_master/workstreams/astra-global-root-integration-chat-20261031/frozen/",
+  "frozenCommit": "c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2",
+  "baselineCode": "2b4b74f4bf481245ac45cbf9ddd18ac7b64064ac",
+  "branchBase": "36c011bffde6a0a004c91f3b99e0aff2fa42f9b3",
+  "files": [
+    {
+      "sha256": "6fadc633e2946bdcd03edb84c9d499f8e13d313dc31e00b2ee9f16e8cd1e73c6",
+      "file": "frozen/E286.md"
+    },
+    {
+      "sha256": "6c56d3bc666bd85a849c19b525f286f973cbb8af1a9e1ca730a79c304f33949b",
+      "file": "frozen/GATE47.md"
+    },
+    {
+      "sha256": "ca781d3d9ca34948149fe0c7df8d30b27bc58a42a64fe3de14ffbde6781d7ce2",
+      "file": "frozen/COVER.md"
+    }
+  ]
+}

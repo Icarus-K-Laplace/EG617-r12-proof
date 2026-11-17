@@ -1,0 +1,7 @@
+.lake/
+.lake-tmp/
+*.olean
+*.ilean
+*.olean.private
+*.olean.server
+*.ir

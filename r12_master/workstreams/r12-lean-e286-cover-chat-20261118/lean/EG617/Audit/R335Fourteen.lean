@@ -1,0 +1,8 @@
+module
+public import EG617.Core.R335Fourteen
+#check EG617.core_degree_eleven_neighbor_nonedge
+#print axioms EG617.core_degree_eleven_neighbor_nonedge
+#check EG617.core_common_nonneighbors_clique
+#print axioms EG617.core_common_nonneighbors_clique
+#check EG617.core_fourteen_cost_obstruction
+#print axioms EG617.core_fourteen_cost_obstruction

@@ -1,0 +1,6 @@
+module
+public import EG617.Core.GateShell
+#check EG617.core_shell_edge_degree_ledger
+#print axioms EG617.core_shell_edge_degree_ledger
+#check EG617.core_R447_min_degree_ten_edges_ge_289
+#print axioms EG617.core_R447_min_degree_ten_edges_ge_289

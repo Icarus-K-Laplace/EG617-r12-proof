@@ -1,0 +1,6 @@
+module
+public import EG617.Core.R23BalancedExterior
+#check EG617.two_cycle_neighbors_cross_card_le_nine
+#print axioms EG617.two_cycle_neighbors_cross_card_le_nine
+#check EG617.r23_exists_balanced_exterior
+#print axioms EG617.r23_exists_balanced_exterior

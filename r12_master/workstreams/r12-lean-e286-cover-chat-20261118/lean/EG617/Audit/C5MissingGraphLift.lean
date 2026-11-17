@@ -1,0 +1,8 @@
+module
+public import EG617.Core.C5MissingGraphLift
+#check EG617.exists_cycle_type_assignment
+#print axioms EG617.exists_cycle_type_assignment
+#check EG617.disjoint_cycle_neighbors_no_common_neighbor
+#print axioms EG617.disjoint_cycle_neighbors_no_common_neighbor
+#check EG617.missing_exterior_type_presentation
+#print axioms EG617.missing_exterior_type_presentation

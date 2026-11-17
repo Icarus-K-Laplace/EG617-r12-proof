@@ -1,0 +1,8 @@
+module
+public import EG617.Core.R23Classification
+#check EG617.R23ExceptionalProfile
+#print axioms EG617.R23ExceptionalProfile
+#check EG617.missing_exterior_completion_or_exceptional
+#print axioms EG617.missing_exterior_completion_or_exceptional
+#check EG617.r23_complete_classification
+#print axioms EG617.r23_complete_classification

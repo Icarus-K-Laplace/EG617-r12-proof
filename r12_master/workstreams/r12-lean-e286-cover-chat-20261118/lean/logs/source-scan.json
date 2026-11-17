@@ -1,0 +1,1237 @@
+{
+  "scope": "source lexical audit only; not a Lean build or axiom audit",
+  "files": [
+    "EG617.lean",
+    "EG617\\Audit\\Axioms.lean",
+    "EG617\\Audit\\C5MissingGraphLift.lean",
+    "EG617\\Audit\\C5MissingTypeFibers.lean",
+    "EG617\\Audit\\C5SingletonGraphLift.lean",
+    "EG617\\Audit\\C5TypeFibers.lean",
+    "EG617\\Audit\\C5TypePresentation.lean",
+    "EG617\\Audit\\C5Types.lean",
+    "EG617\\Audit\\CostSixCounts.lean",
+    "EG617\\Audit\\CostSixDeletion.lean",
+    "EG617\\Audit\\CostSixProfiles.lean",
+    "EG617\\Audit\\E286.lean",
+    "EG617\\Audit\\Gate47.lean",
+    "EG617\\Audit\\GateRows.lean",
+    "EG617\\Audit\\GateShell.lean",
+    "EG617\\Audit\\R23BalancedExterior.lean",
+    "EG617\\Audit\\R23CaseI.lean",
+    "EG617\\Audit\\R23CaseII.lean",
+    "EG617\\Audit\\R23Classification.lean",
+    "EG617\\Audit\\R23CompleteExterior.lean",
+    "EG617\\Audit\\R23EdgeCompletion.lean",
+    "EG617\\Audit\\R23Ledger.lean",
+    "EG617\\Audit\\R23TypeLift.lean",
+    "EG617\\Audit\\R335Fourteen.lean",
+    "EG617\\Audit\\R335Neighborhood.lean",
+    "EG617\\Audit\\R335Sharp.lean",
+    "EG617\\Audit\\R336Sharp.lean",
+    "EG617\\Audit\\Statements.lean",
+    "EG617\\Basic\\ColoringLemmas.lean",
+    "EG617\\Basic\\Definitions.lean",
+    "EG617\\Basic\\OriginalProblem.lean",
+    "EG617\\Combinatorics\\TuranArithmetic.lean",
+    "EG617\\Core\\Admissibility.lean",
+    "EG617\\Core\\BipartiteExterior.lean",
+    "EG617\\Core\\C5MissingEdge.lean",
+    "EG617\\Core\\C5MissingGraphLift.lean",
+    "EG617\\Core\\C5MissingTypeFibers.lean",
+    "EG617\\Core\\C5SingletonGraphLift.lean",
+    "EG617\\Core\\C5TypeFibers.lean",
+    "EG617\\Core\\C5TypePresentation.lean",
+    "EG617\\Core\\C5Types.lean",
+    "EG617\\Core\\CostSixCounts.lean",
+    "EG617\\Core\\CostSixDeletion.lean",
+    "EG617\\Core\\CostSixProfiles.lean",
+    "EG617\\Core\\E286Excess.lean",
+    "EG617\\Core\\EdgePartition.lean",
+    "EG617\\Core\\Gate47.lean",
+    "EG617\\Core\\GateRows.lean",
+    "EG617\\Core\\GateShell.lean",
+    "EG617\\Core\\OddCycleArithmetic.lean",
+    "EG617\\Core\\OddCycleBound.lean",
+    "EG617\\Core\\OddCycleStructure.lean",
+    "EG617\\Core\\R224.lean",
+    "EG617\\Core\\R23BalancedExterior.lean",
+    "EG617\\Core\\R23CaseI.lean",
+    "EG617\\Core\\R23CaseII.lean",
+    "EG617\\Core\\R23Classification.lean",
+    "EG617\\Core\\R23CompleteExterior.lean",
+    "EG617\\Core\\R23EdgeCompletion.lean",
+    "EG617\\Core\\R23ExactLedger.lean",
+    "EG617\\Core\\R23Reduction.lean",
+    "EG617\\Core\\R23TypeLift.lean",
+    "EG617\\Core\\R335Fourteen.lean",
+    "EG617\\Core\\R335Neighborhood.lean",
+    "EG617\\Core\\R335Sharp.lean",
+    "EG617\\Core\\R336Sharp.lean",
+    "EG617\\Frontend\\ColoringReduction.lean",
+    "EG617\\Frontend\\EdgeCounting.lean",
+    "EG617\\Frontend\\HereditaryCaps.lean",
+    "EG617\\Frontend\\TuranBounds.lean",
+    "lakefile.lean"
+  ],
+  "hits": [],
+  "declarations": [
+    {
+      "kind": "def",
+      "name": "colorGraph",
+      "file": "EG617\\Basic\\ColoringLemmas.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "colorGraph_adj_iff",
+      "file": "EG617\\Basic\\ColoringLemmas.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "validColoring_iff_colorGraph",
+      "file": "EG617\\Basic\\ColoringLemmas.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "colorGraph_partition",
+      "file": "EG617\\Basic\\ColoringLemmas.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "no_independent_thirteen",
+      "file": "EG617\\Basic\\ColoringLemmas.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "no_monochromatic_thirteen",
+      "file": "EG617\\Basic\\ColoringLemmas.lean"
+    },
+    {
+      "kind": "abbrev",
+      "name": "Vertex",
+      "file": "EG617\\Basic\\Definitions.lean"
+    },
+    {
+      "kind": "abbrev",
+      "name": "Color",
+      "file": "EG617\\Basic\\Definitions.lean"
+    },
+    {
+      "kind": "abbrev",
+      "name": "Edge",
+      "file": "EG617\\Basic\\Definitions.lean"
+    },
+    {
+      "kind": "abbrev",
+      "name": "EdgeColoring",
+      "file": "EG617\\Basic\\Definitions.lean"
+    },
+    {
+      "kind": "def",
+      "name": "edgeOf",
+      "file": "EG617\\Basic\\Definitions.lean"
+    },
+    {
+      "kind": "def",
+      "name": "Inside",
+      "file": "EG617\\Basic\\Definitions.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "edgeOf_swap",
+      "file": "EG617\\Basic\\Definitions.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "edgeOf_eq_iff",
+      "file": "EG617\\Basic\\Definitions.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "edge_has_endpoints",
+      "file": "EG617\\Basic\\Definitions.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "edgeOf_surjective",
+      "file": "EG617\\Basic\\Definitions.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "edgeOf_inside_iff",
+      "file": "EG617\\Basic\\Definitions.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "inside_mono",
+      "file": "EG617\\Basic\\Definitions.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "mem_complete_iff",
+      "file": "EG617\\Basic\\Definitions.lean"
+    },
+    {
+      "kind": "def",
+      "name": "edgeEquivComplete",
+      "file": "EG617\\Basic\\Definitions.lean"
+    },
+    {
+      "kind": "def",
+      "name": "ValidColoring",
+      "file": "EG617\\Basic\\OriginalProblem.lean"
+    },
+    {
+      "kind": "def",
+      "name": "EG617R12Statement",
+      "file": "EG617\\Basic\\OriginalProblem.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "validColoring_iff_endpoints",
+      "file": "EG617\\Basic\\OriginalProblem.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "originalProblem_iff_missingColor",
+      "file": "EG617\\Basic\\OriginalProblem.lean"
+    },
+    {
+      "kind": "def",
+      "name": "tau12",
+      "file": "EG617\\Combinatorics\\TuranArithmetic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "tau12_add_turanNumber",
+      "file": "EG617\\Combinatorics\\TuranArithmetic.lean"
+    },
+    {
+      "kind": "def",
+      "name": "CoreIndependenceBound",
+      "file": "EG617\\Core\\Admissibility.lean"
+    },
+    {
+      "kind": "def",
+      "name": "CoreCliqueBound",
+      "file": "EG617\\Core\\Admissibility.lean"
+    },
+    {
+      "kind": "def",
+      "name": "coreInducedEdgeCount",
+      "file": "EG617\\Core\\Admissibility.lean"
+    },
+    {
+      "kind": "def",
+      "name": "CoreAdmissible",
+      "file": "EG617\\Core\\Admissibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_induced_edge_count_univ",
+      "file": "EG617\\Core\\Admissibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_independenceBound_induce",
+      "file": "EG617\\Core\\Admissibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_cliqueBound_induce",
+      "file": "EG617\\Core\\Admissibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_independence_nonNeighbors",
+      "file": "EG617\\Core\\Admissibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_compl_edge_count",
+      "file": "EG617\\Core\\Admissibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_induced_edge_count_image",
+      "file": "EG617\\Core\\Admissibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_admissible_induce",
+      "file": "EG617\\Core\\Admissibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_admissible_nonNeighbors",
+      "file": "EG617\\Core\\Admissibility.lean"
+    },
+    {
+      "kind": "def",
+      "name": "Gate47Statement",
+      "file": "EG617\\Core\\Admissibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "two_colorable_partition",
+      "file": "EG617\\Core\\BipartiteExterior.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "bipartition_edge_count",
+      "file": "EG617\\Core\\BipartiteExterior.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "adjCount_eq_card_product_filter",
+      "file": "EG617\\Core\\BipartiteExterior.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "adjCount_add_missing_eq_product",
+      "file": "EG617\\Core\\BipartiteExterior.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "complete_cross_of_no_missing",
+      "file": "EG617\\Core\\BipartiteExterior.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "unique_missing_cross_of_card_one",
+      "file": "EG617\\Core\\BipartiteExterior.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "bipartite_18_dense_classification",
+      "file": "EG617\\Core\\BipartiteExterior.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "c5_incompatible_endpoint_forces_singleton",
+      "file": "EG617\\Core\\C5MissingEdge.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "c5_missing_edge_type_sets",
+      "file": "EG617\\Core\\C5MissingEdge.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "c5_missing_endpoint_orientations",
+      "file": "EG617\\Core\\C5MissingEdge.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "c5_singleton_extension",
+      "file": "EG617\\Core\\C5MissingEdge.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "disjoint_cycle_neighbors_no_common_neighbor",
+      "file": "EG617\\Core\\C5MissingGraphLift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "missing_exterior_type_presentation",
+      "file": "EG617\\Core\\C5MissingGraphLift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "missing_exterior_type_orientations",
+      "file": "EG617\\Core\\C5MissingTypeFibers.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "one_exception_type_fiber_card",
+      "file": "EG617\\Core\\C5MissingTypeFibers.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "missing_exterior_type_fiber_formula",
+      "file": "EG617\\Core\\C5MissingTypeFibers.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "c5_missing_fiber_profile",
+      "file": "EG617\\Core\\C5MissingTypeFibers.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "singleton_cycle_edge_completion_witness",
+      "file": "EG617\\Core\\C5SingletonGraphLift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "cycle_type_fiber_card",
+      "file": "EG617\\Core\\C5TypeFibers.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "singleton_side_type_fiber_profile",
+      "file": "EG617\\Core\\C5TypeFibers.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "complete_exterior_type_fiber_profile",
+      "file": "EG617\\Core\\C5TypeFibers.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "cycleNeighborLabels_cycle_vertex",
+      "file": "EG617\\Core\\C5TypePresentation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "complete_exterior_type_presentation",
+      "file": "EG617\\Core\\C5TypePresentation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_cycle_type_assignment",
+      "file": "EG617\\Core\\C5TypePresentation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "complete_exterior_has_type_presentation",
+      "file": "EG617\\Core\\C5TypePresentation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "c5Type",
+      "file": "EG617\\Core\\C5Types.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "c5Type_card",
+      "file": "EG617\\Core\\C5Types.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "c5Type_disjoint_iff",
+      "file": "EG617\\Core\\C5Types.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "c5_adj_iff_mem_type",
+      "file": "EG617\\Core\\C5Types.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "c5_independent_pair_unique_type",
+      "file": "EG617\\Core\\C5Types.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "c5_common_neighbors_unique",
+      "file": "EG617\\Core\\C5Types.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "c5_complete_type_sets",
+      "file": "EG617\\Core\\C5Types.lean"
+    },
+    {
+      "kind": "def",
+      "name": "cycleNeighborLabels",
+      "file": "EG617\\Core\\C5Types.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "cycleNeighborLabels_independent",
+      "file": "EG617\\Core\\C5Types.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "cycleNeighborLabels_unique_type",
+      "file": "EG617\\Core\\C5Types.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "adjacent_cycleNeighborLabels_disjoint",
+      "file": "EG617\\Core\\C5Types.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "complete_bipartite_type_image",
+      "file": "EG617\\Core\\C5Types.lean"
+    },
+    {
+      "kind": "def",
+      "name": "CostSixProperty",
+      "file": "EG617\\Core\\CostSixCounts.lean"
+    },
+    {
+      "kind": "def",
+      "name": "c5Fiber",
+      "file": "EG617\\Core\\CostSixCounts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "mem_c5Fiber",
+      "file": "EG617\\Core\\CostSixCounts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "c5Fiber_disjoint",
+      "file": "EG617\\Core\\CostSixCounts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "c5Fiber_adjCount",
+      "file": "EG617\\Core\\CostSixCounts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "c5_three_fiber_witness_counts",
+      "file": "EG617\\Core\\CostSixCounts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "independent_c5_fiber_counts",
+      "file": "EG617\\Core\\CostSixCounts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "case_I_cost_arithmetic",
+      "file": "EG617\\Core\\CostSixCounts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exceptional_cost_arithmetic",
+      "file": "EG617\\Core\\CostSixCounts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "coreInducedEdgeCount_mono_graph",
+      "file": "EG617\\Core\\CostSixDeletion.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "independent_sup_edge_or_endpoints",
+      "file": "EG617\\Core\\CostSixDeletion.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "independent_sup_edge_neighbor_card",
+      "file": "EG617\\Core\\CostSixDeletion.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "case_I_single_edge_deletion_cost_six",
+      "file": "EG617\\Core\\CostSixDeletion.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "r23_cost_six",
+      "file": "EG617\\Core\\CostSixDeletion.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "case_I_cost_six",
+      "file": "EG617\\Core\\CostSixProfiles.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exceptional_cost_four",
+      "file": "EG617\\Core\\CostSixProfiles.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exceptional_cost_six",
+      "file": "EG617\\Core\\CostSixProfiles.lean"
+    },
+    {
+      "kind": "def",
+      "name": "E286Hypotheses",
+      "file": "EG617\\Core\\E286Excess.lean"
+    },
+    {
+      "kind": "def",
+      "name": "E286Statement",
+      "file": "EG617\\Core\\E286Excess.lean"
+    },
+    {
+      "kind": "def",
+      "name": "degreeExcess12",
+      "file": "EG617\\Core\\E286Excess.lean"
+    },
+    {
+      "kind": "def",
+      "name": "excessSupport",
+      "file": "EG617\\Core\\E286Excess.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_degree_sum",
+      "file": "EG617\\Core\\E286Excess.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_excess_sum",
+      "file": "EG617\\Core\\E286Excess.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_support_sum",
+      "file": "EG617\\Core\\E286Excess.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_support_card_le_eight",
+      "file": "EG617\\Core\\E286Excess.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_degree_le_twenty",
+      "file": "EG617\\Core\\E286Excess.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_regular_complement",
+      "file": "EG617\\Core\\E286Excess.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_regular_card_ge_39",
+      "file": "EG617\\Core\\E286Excess.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_support_degree_sum",
+      "file": "EG617\\Core\\E286Excess.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_regular_edge_ledger",
+      "file": "EG617\\Core\\E286Excess.lean"
+    },
+    {
+      "kind": "def",
+      "name": "adjCount",
+      "file": "EG617\\Core\\EdgePartition.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "adjCount_eq_sum_filter",
+      "file": "EG617\\Core\\EdgePartition.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "degree_induce_eq_filter",
+      "file": "EG617\\Core\\EdgePartition.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "adjCount_self",
+      "file": "EG617\\Core\\EdgePartition.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "adjCount_symm",
+      "file": "EG617\\Core\\EdgePartition.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "adjCount_union_left",
+      "file": "EG617\\Core\\EdgePartition.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "adjCount_union_right",
+      "file": "EG617\\Core\\EdgePartition.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "edge_partition",
+      "file": "EG617\\Core\\EdgePartition.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "adjCount_right_univ",
+      "file": "EG617\\Core\\EdgePartition.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "adjCount_le_sum_degrees",
+      "file": "EG617\\Core\\EdgePartition.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "adjCount_independent_zero",
+      "file": "EG617\\Core\\EdgePartition.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "twice_independent_card_le_of_degree_two",
+      "file": "EG617\\Core\\EdgePartition.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R447_min_degree_eleven_edges_ge_287",
+      "file": "EG617\\Core\\Gate47.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "gate47_verified",
+      "file": "EG617\\Core\\Gate47.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_admissible_common_nonNeighbors",
+      "file": "EG617\\Core\\GateRows.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R4_common_nonneighbors_card_le_23",
+      "file": "EG617\\Core\\GateRows.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R4_row_union_ge_twelve",
+      "file": "EG617\\Core\\GateRows.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_two_degrees_le_edges_add_one",
+      "file": "EG617\\Core\\GateRows.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_shell_row_missing_degree_le",
+      "file": "EG617\\Core\\GateRows.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_missing_edge_row_sum",
+      "file": "EG617\\Core\\GateRows.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_shell_edge_degree_ledger",
+      "file": "EG617\\Core\\GateShell.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_induced_edges_le_choose",
+      "file": "EG617\\Core\\GateShell.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R447_min_degree_ten_edges_ge_289",
+      "file": "EG617\\Core\\GateShell.lean"
+    },
+    {
+      "kind": "def",
+      "name": "oddCycleBound",
+      "file": "EG617\\Core\\OddCycleArithmetic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "oddCycleBound_23_two",
+      "file": "EG617\\Core\\OddCycleArithmetic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "oddCycleBound_23_ge_three",
+      "file": "EG617\\Core\\OddCycleArithmetic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "oddCycleBound_23_three",
+      "file": "EG617\\Core\\OddCycleArithmetic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "oddCycleBound_18",
+      "file": "EG617\\Core\\OddCycleArithmetic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "oddCycleBound_18_two",
+      "file": "EG617\\Core\\OddCycleArithmetic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "cycle_support_card",
+      "file": "EG617\\Core\\OddCycleBound.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "chordless_cycle_induced_degree_two",
+      "file": "EG617\\Core\\OddCycleBound.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "chordless_cycle_induced_edges",
+      "file": "EG617\\Core\\OddCycleBound.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "twice_subset_independent_card_le_of_induced_degree_two",
+      "file": "EG617\\Core\\OddCycleBound.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "shortestOddLoop_neighbor_card_le",
+      "file": "EG617\\Core\\OddCycleBound.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "triangleFree_induced_mantel",
+      "file": "EG617\\Core\\OddCycleBound.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "shortestOddLoop_edge_bound",
+      "file": "EG617\\Core\\OddCycleBound.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "shortestOddLoop_half_length_ge_two",
+      "file": "EG617\\Core\\OddCycleBound.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "triangleFree_nonbipartite_edge_bound",
+      "file": "EG617\\Core\\OddCycleBound.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "triangleFree_nonbipartite_18_edges_le_73",
+      "file": "EG617\\Core\\OddCycleBound.lean"
+    },
+    {
+      "kind": "def",
+      "name": "IsShortestOddCycle",
+      "file": "EG617\\Core\\OddCycleBound.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "shortestOddCycle_iff_shortestOddLoop",
+      "file": "EG617\\Core\\OddCycleBound.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "shortestOddCycle_edge_bound",
+      "file": "EG617\\Core\\OddCycleBound.lean"
+    },
+    {
+      "kind": "def",
+      "name": "IsShortestOddLoop",
+      "file": "EG617\\Core\\OddCycleStructure.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "bypass_parity_of_short_loops_even",
+      "file": "EG617\\Core\\OddCycleStructure.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "shortestOddLoop_isCycle",
+      "file": "EG617\\Core\\OddCycleStructure.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_shortestOddLoop",
+      "file": "EG617\\Core\\OddCycleStructure.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_odd_cycle_of_not_two_colorable",
+      "file": "EG617\\Core\\OddCycleStructure.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "walk_end_edge_mem_of_length_one",
+      "file": "EG617\\Core\\OddCycleStructure.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "shortestOddLoop_isChordless",
+      "file": "EG617\\Core\\OddCycleStructure.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "cycleGraph_twice_independent_card_le",
+      "file": "EG617\\Core\\OddCycleStructure.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "cycle_copy_twice_neighbor_card_le",
+      "file": "EG617\\Core\\OddCycleStructure.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_not_two_colorable_of_card_24",
+      "file": "EG617\\Core\\R224.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_triangleFree_edges_lt_132_of_card_24",
+      "file": "EG617\\Core\\R224.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R224_empty_of_card",
+      "file": "EG617\\Core\\R224.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_not_two_colorable_24",
+      "file": "EG617\\Core\\R224.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_triangleFree24_edges_lt_132",
+      "file": "EG617\\Core\\R224.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R224_empty",
+      "file": "EG617\\Core\\R224.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R3_card_le_degree_add_24",
+      "file": "EG617\\Core\\R224.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R335_degree_ge_11",
+      "file": "EG617\\Core\\R224.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R337_empty_of_card",
+      "file": "EG617\\Core\\R224.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R337_empty",
+      "file": "EG617\\Core\\R224.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R4_card_le_degree_add_37",
+      "file": "EG617\\Core\\R224.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R447_degree_ge_10",
+      "file": "EG617\\Core\\R224.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "two_cycle_neighbors_cross_card_le_nine",
+      "file": "EG617\\Core\\R23BalancedExterior.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "r23_exists_balanced_exterior",
+      "file": "EG617\\Core\\R23BalancedExterior.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "c5_remaining_fiber_sum",
+      "file": "EG617\\Core\\R23CaseI.lean"
+    },
+    {
+      "kind": "def",
+      "name": "R23CaseIProfile",
+      "file": "EG617\\Core\\R23CaseI.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "r23_122_case_I",
+      "file": "EG617\\Core\\R23CaseI.lean"
+    },
+    {
+      "kind": "def",
+      "name": "R23OneEdgeCompletion",
+      "file": "EG617\\Core\\R23CaseII.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "singleton_partition_completes_to_case_I",
+      "file": "EG617\\Core\\R23CaseII.lean"
+    },
+    {
+      "kind": "def",
+      "name": "R23MissingEdgeExterior",
+      "file": "EG617\\Core\\R23CaseII.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "r23_121_completion_or_missing_exterior",
+      "file": "EG617\\Core\\R23CaseII.lean"
+    },
+    {
+      "kind": "def",
+      "name": "R23ExceptionalProfile",
+      "file": "EG617\\Core\\R23Classification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "missing_exterior_completion_or_exceptional",
+      "file": "EG617\\Core\\R23Classification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "r23_complete_classification",
+      "file": "EG617\\Core\\R23Classification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "r23_122_complete_type_data",
+      "file": "EG617\\Core\\R23CompleteExterior.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "r23_122_type_presentation",
+      "file": "EG617\\Core\\R23CompleteExterior.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "triangleFree_sup_edge_of_no_common_neighbor",
+      "file": "EG617\\Core\\R23EdgeCompletion.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "r23_one_edge_completion_case_I",
+      "file": "EG617\\Core\\R23EdgeCompletion.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "deficit_sum_add",
+      "file": "EG617\\Core\\R23ExactLedger.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "deficit_zero_iff",
+      "file": "EG617\\Core\\R23ExactLedger.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "deficit_one_distribution",
+      "file": "EG617\\Core\\R23ExactLedger.lean"
+    },
+    {
+      "kind": "def",
+      "name": "ExactC5NeighborLedger",
+      "file": "EG617\\Core\\R23ExactLedger.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "r23_exact_neighbor_ledger",
+      "file": "EG617\\Core\\R23ExactLedger.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "not_two_colorable_of_independence_bound",
+      "file": "EG617\\Core\\R23Reduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "r23_shortestOddLoop_length_five",
+      "file": "EG617\\Core\\R23Reduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "r23_exists_five_cycle_bipartite_exterior",
+      "file": "EG617\\Core\\R23Reduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "five_cycle_copy_same_support",
+      "file": "EG617\\Core\\R23TypeLift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "cycleNeighborLabels_card_eq",
+      "file": "EG617\\Core\\R23TypeLift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "r23_exact_labeled_neighbor_ledger",
+      "file": "EG617\\Core\\R23TypeLift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_degree_eleven_neighbor_nonedge",
+      "file": "EG617\\Core\\R335Fourteen.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_common_nonneighbors_clique",
+      "file": "EG617\\Core\\R335Fourteen.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_edge_count_union",
+      "file": "EG617\\Core\\R335Fourteen.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_pair_cross_lower_bound",
+      "file": "EG617\\Core\\R335Fourteen.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_induce_compl",
+      "file": "EG617\\Core\\R335Fourteen.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_induced_compl_edge_count",
+      "file": "EG617\\Core\\R335Fourteen.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_fourteen_cost_obstruction",
+      "file": "EG617\\Core\\R335Fourteen.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R223_complement_cost_six",
+      "file": "EG617\\Core\\R335Neighborhood.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R335_degree_eleven_nonneighbor_cost_six",
+      "file": "EG617\\Core\\R335Neighborhood.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R335_degree_ne_eleven",
+      "file": "EG617\\Core\\R335Sharp.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R335_degree_ge_twelve",
+      "file": "EG617\\Core\\R335Sharp.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R335_edges_ge_210",
+      "file": "EG617\\Core\\R335Sharp.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R336_degree_ge_thirteen",
+      "file": "EG617\\Core\\R336Sharp.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R336_edges_ge_234",
+      "file": "EG617\\Core\\R336Sharp.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "independent_card_le_twelve",
+      "file": "EG617\\Frontend\\ColoringReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "monochromatic_card_le_twelve",
+      "file": "EG617\\Frontend\\ColoringReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "colorGraph_clique_card_le_twelve",
+      "file": "EG617\\Frontend\\ColoringReduction.lean"
+    },
+    {
+      "kind": "def",
+      "name": "inducedColorGraph",
+      "file": "EG617\\Frontend\\EdgeCounting.lean"
+    },
+    {
+      "kind": "def",
+      "name": "colorEdgeCount",
+      "file": "EG617\\Frontend\\EdgeCounting.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "colorEdgeCount_univ",
+      "file": "EG617\\Frontend\\EdgeCounting.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "inducedColorGraph_adj_iff",
+      "file": "EG617\\Frontend\\EdgeCounting.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "induced_edge_unique_color",
+      "file": "EG617\\Frontend\\EdgeCounting.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "induced_color_edges_disjoint",
+      "file": "EG617\\Frontend\\EdgeCounting.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "induced_color_edges_union",
+      "file": "EG617\\Frontend\\EdgeCounting.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sum_colorEdgeCount",
+      "file": "EG617\\Frontend\\EdgeCounting.lean"
+    },
+    {
+      "kind": "def",
+      "name": "D",
+      "file": "EG617\\Frontend\\HereditaryCaps.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "colorEdgeCount_add_eleven_tau_le",
+      "file": "EG617\\Frontend\\HereditaryCaps.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hereditary_color_cap",
+      "file": "EG617\\Frontend\\HereditaryCaps.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hereditary_cap_subtraction_exact",
+      "file": "EG617\\Frontend\\HereditaryCaps.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_least_color",
+      "file": "EG617\\Frontend\\HereditaryCaps.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "least_color_edgeCount_le_870",
+      "file": "EG617\\Frontend\\HereditaryCaps.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_least_color_with_hereditary_cap",
+      "file": "EG617\\Frontend\\HereditaryCaps.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_colorGraph_card_edgeFinset_le_870",
+      "file": "EG617\\Frontend\\HereditaryCaps.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "inducedColorGraph_compl_cliqueFree",
+      "file": "EG617\\Frontend\\TuranBounds.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "tau12_le_colorEdgeCount",
+      "file": "EG617\\Frontend\\TuranBounds.lean"
+    }
+  ],
+  "finalTheoremDeclared": false,
+  "mainTheoremDeclared": false,
+  "status": "PASS"
+}

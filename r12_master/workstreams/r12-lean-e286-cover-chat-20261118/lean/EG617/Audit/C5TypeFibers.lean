@@ -1,0 +1,8 @@
+module
+public import EG617.Core.C5TypeFibers
+#check EG617.cycle_type_fiber_card
+#print axioms EG617.cycle_type_fiber_card
+#check EG617.singleton_side_type_fiber_profile
+#print axioms EG617.singleton_side_type_fiber_profile
+#check EG617.complete_exterior_type_fiber_profile
+#print axioms EG617.complete_exterior_type_fiber_profile
