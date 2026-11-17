@@ -20,7 +20,7 @@ theorem core_R447_min_degree_eleven_edges_ge_287 (G : SimpleGraph V)
   let S := G.neighborFinset v
   let C := Gᶜ.neighborFinset v
   let M := (G.induce (S : Set V))ᶜ
-  let r : (S : Set V) → ℕ := fun a => (C.filter (G.Adj a)).card
+  let r : ↥(S : Set V) → ℕ := fun a => (C.filter (G.Adj a)).card
   have hS : S.card = 11 := by
     simpa only [S, SimpleGraph.card_neighborFinset_eq_degree, ← SimpleGraph.ncard_neighborSet] using hd
   have hC : C.card = 35 := by
@@ -90,3 +90,4 @@ theorem gate47_verified : Gate47Statement := by
   exact h12.trans (hmin w)
 
 end EG617
+
