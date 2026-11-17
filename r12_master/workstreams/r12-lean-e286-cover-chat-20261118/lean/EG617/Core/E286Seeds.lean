@@ -60,7 +60,7 @@ theorem e286_exists_regular_independent_four (G : SimpleGraph V)
   have hb := core_induced_edges_le_choose G S
   have hq := e286_support_card_le_eight G hG
   have hcard := Finset.card_add_card_compl S
-  simp only [Finset.card_univ, hG.1] at hcard
+  simp only [hG.1] at hcard
   have hR : R.card = 47 - S.card := by dsimp only [R]; omega
   rw [SimpleGraph.turanNumber_three, hR] at ht
   simp only [SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard,
@@ -73,7 +73,7 @@ theorem e286_exists_regular_independent_four (G : SimpleGraph V)
   have hnum : (47 - S.card).choose 2 + 12 * S.card + 8 ≤
       286 + S.card.choose 2 + (47 - S.card) ^ 2 / 3 := by omega
   generalize S.card = q at hnum hq
-  interval_cases q <;> norm_num at hnum
+  interval_cases q <;> norm_num [Nat.choose_two_right] at hnum
 
 end EG617
 

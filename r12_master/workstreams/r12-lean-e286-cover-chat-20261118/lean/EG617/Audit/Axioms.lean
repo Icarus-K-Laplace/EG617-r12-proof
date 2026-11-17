@@ -95,6 +95,12 @@ public import EG617
 #print axioms EG617.case_I_cost_six
 #print axioms EG617.exceptional_cost_four
 #print axioms EG617.exceptional_cost_six
+#print axioms EG617.e286_induced_degree_budget
+#print axioms EG617.oddCycleBound_25
+#print axioms EG617.alpha_two_25_edges_ge_155
+#print axioms EG617.e286_no_induced_alpha_two_25
+#print axioms EG617.independenceBound_common_nonNeighbors
+#print axioms EG617.e286_common_antineighborhood_card_le_24
 #print axioms EG617.E286Hypotheses
 #print axioms EG617.E286Statement
 #print axioms EG617.degreeExcess12

@@ -1,5 +1,5 @@
 module
-public import EG617.Core.E286Seeds
+public import EG617.Core.E286Capacity
 #print EG617.E286Hypotheses
 #check EG617.e286_excess_sum
 #print axioms EG617.e286_excess_sum
@@ -7,3 +7,5 @@ public import EG617.Core.E286Seeds
 #print axioms EG617.e286_regular_edge_ledger
 #check EG617.e286_exists_regular_independent_four
 #print axioms EG617.e286_exists_regular_independent_four
+#check EG617.e286_common_antineighborhood_card_le_24
+#print axioms EG617.e286_common_antineighborhood_card_le_24

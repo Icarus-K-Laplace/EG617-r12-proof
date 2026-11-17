@@ -95,6 +95,12 @@ public import EG617
 #check EG617.case_I_cost_six
 #check EG617.exceptional_cost_four
 #check EG617.exceptional_cost_six
+#check EG617.e286_induced_degree_budget
+#check EG617.oddCycleBound_25
+#check EG617.alpha_two_25_edges_ge_155
+#check EG617.e286_no_induced_alpha_two_25
+#check EG617.independenceBound_common_nonNeighbors
+#check EG617.e286_common_antineighborhood_card_le_24
 #print EG617.E286Hypotheses
 #print EG617.E286Statement
 #print EG617.degreeExcess12
