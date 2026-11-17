@@ -107,6 +107,12 @@ public import EG617
 #print axioms EG617.adjCount_le_sum_degrees
 #print axioms EG617.adjCount_independent_zero
 #print axioms EG617.twice_independent_card_le_of_degree_two
+#print axioms EG617.core_admissible_common_nonNeighbors
+#print axioms EG617.core_R4_common_nonneighbors_card_le_23
+#print axioms EG617.core_R4_row_union_ge_twelve
+#print axioms EG617.core_two_degrees_le_edges_add_one
+#print axioms EG617.core_shell_row_missing_degree_le
+#print axioms EG617.core_missing_edge_row_sum
 #print axioms EG617.core_shell_edge_degree_ledger
 #print axioms EG617.core_induced_edges_le_choose
 #print axioms EG617.core_R447_min_degree_ten_edges_ge_289

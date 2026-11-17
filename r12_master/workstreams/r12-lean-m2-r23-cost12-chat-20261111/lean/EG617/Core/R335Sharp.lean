@@ -63,8 +63,8 @@ theorem core_R335_degree_ne_eleven (G : SimpleGraph V)
       exact ⟨a, ⟨ha, hP⟩, rfl⟩
   have hfc := congrArg Finset.card hf
   rw [Finset.card_image_of_injective _ Subtype.val_injective] at hfc
-  have hinst : @Finset.inter (S : Set V)
-      (fun a b => Classical.propDecidable (a = b)) T I = T ∩ I := by
+  have hinst : @Inter.inter (Finset (S : Set V))
+      (@Finset.instInter (S : Set V) (fun a b => Classical.propDecidable (a = b))) T I = T ∩ I := by
     ext z
     simp only [Finset.mem_inter]
   rw [hinst] at hcost

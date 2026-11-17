@@ -107,6 +107,12 @@ public import EG617
 #check EG617.adjCount_le_sum_degrees
 #check EG617.adjCount_independent_zero
 #check EG617.twice_independent_card_le_of_degree_two
+#check EG617.core_admissible_common_nonNeighbors
+#check EG617.core_R4_common_nonneighbors_card_le_23
+#check EG617.core_R4_row_union_ge_twelve
+#check EG617.core_two_degrees_le_edges_add_one
+#check EG617.core_shell_row_missing_degree_le
+#check EG617.core_missing_edge_row_sum
 #check EG617.core_shell_edge_degree_ledger
 #check EG617.core_induced_edges_le_choose
 #check EG617.core_R447_min_degree_ten_edges_ge_289

@@ -12,6 +12,7 @@
     "EG617\\Audit\\CostSixCounts.lean",
     "EG617\\Audit\\CostSixDeletion.lean",
     "EG617\\Audit\\CostSixProfiles.lean",
+    "EG617\\Audit\\GateRows.lean",
     "EG617\\Audit\\GateShell.lean",
     "EG617\\Audit\\R23BalancedExterior.lean",
     "EG617\\Audit\\R23CaseI.lean",
@@ -43,6 +44,7 @@
     "EG617\\Core\\CostSixDeletion.lean",
     "EG617\\Core\\CostSixProfiles.lean",
     "EG617\\Core\\EdgePartition.lean",
+    "EG617\\Core\\GateRows.lean",
     "EG617\\Core\\GateShell.lean",
     "EG617\\Core\\OddCycleArithmetic.lean",
     "EG617\\Core\\OddCycleBound.lean",
@@ -593,6 +595,36 @@
       "kind": "theorem",
       "name": "twice_independent_card_le_of_degree_two",
       "file": "EG617\\Core\\EdgePartition.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_admissible_common_nonNeighbors",
+      "file": "EG617\\Core\\GateRows.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R4_common_nonneighbors_card_le_23",
+      "file": "EG617\\Core\\GateRows.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R4_row_union_ge_twelve",
+      "file": "EG617\\Core\\GateRows.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_two_degrees_le_edges_add_one",
+      "file": "EG617\\Core\\GateRows.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_shell_row_missing_degree_le",
+      "file": "EG617\\Core\\GateRows.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_missing_edge_row_sum",
+      "file": "EG617\\Core\\GateRows.lean"
     },
     {
       "kind": "theorem",
