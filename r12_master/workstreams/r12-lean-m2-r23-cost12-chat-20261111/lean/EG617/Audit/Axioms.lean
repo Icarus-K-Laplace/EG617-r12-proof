@@ -183,6 +183,9 @@ public import EG617
 #print axioms EG617.core_fourteen_cost_obstruction
 #print axioms EG617.core_R223_complement_cost_six
 #print axioms EG617.core_R335_degree_eleven_nonneighbor_cost_six
+#print axioms EG617.core_R335_degree_ne_eleven
+#print axioms EG617.core_R335_degree_ge_twelve
+#print axioms EG617.core_R335_edges_ge_210
 #print axioms EG617.independent_card_le_twelve
 #print axioms EG617.monochromatic_card_le_twelve
 #print axioms EG617.colorGraph_clique_card_le_twelve

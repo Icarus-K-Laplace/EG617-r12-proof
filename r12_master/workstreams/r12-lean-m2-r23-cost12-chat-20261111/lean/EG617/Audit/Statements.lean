@@ -183,6 +183,9 @@ public import EG617
 #check EG617.core_fourteen_cost_obstruction
 #check EG617.core_R223_complement_cost_six
 #check EG617.core_R335_degree_eleven_nonneighbor_cost_six
+#check EG617.core_R335_degree_ne_eleven
+#check EG617.core_R335_degree_ge_twelve
+#check EG617.core_R335_edges_ge_210
 #check EG617.independent_card_le_twelve
 #check EG617.monochromatic_card_le_twelve
 #check EG617.colorGraph_clique_card_le_twelve

@@ -77,7 +77,12 @@ theorem core_pair_cross_lower_bound (G : SimpleGraph V) (T : Finset V)
     by_cases hx : G.Adj x z <;> by_cases hy : G.Adj y z <;>
       simp [G.adj_comm, hx, hy]
   have hsum := Finset.sum_le_sum hpoint
-  simpa [adjCount, Finset.sum_add_distrib, hxy] using hsum
+  have hpair : adjCount G T {x, y} =
+      (∑ z ∈ T, if G.Adj z x then 1 else 0) +
+      (∑ z ∈ T, if G.Adj z y then 1 else 0) := by
+    simp only [adjCount, Finset.sum_pair hxy, Finset.sum_add_distrib]
+  rw [hpair]
+  simpa [Finset.sum_add_distrib] using hsum
 
 theorem core_induce_compl (G : SimpleGraph V) (T : Finset V) :
     (G.induce (T : Set V))ᶜ = Gᶜ.induce (T : Set V) := by
@@ -89,6 +94,7 @@ theorem core_induced_compl_edge_count (G : SimpleGraph V) (T : Finset V) :
     coreInducedEdgeCount G T + coreInducedEdgeCount Gᶜ T = T.card.choose 2 := by
   classical
   have h := core_compl_edge_count (G.induce (T : Set V))
+  simp only [SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard] at h
   rw [core_induce_compl] at h
   simpa only [coreInducedEdgeCount, SimpleGraph.edgeFinset_card,
     Set.fintypeCard_eq_ncard, Set.ncard_coe_finset] using h
@@ -115,11 +121,12 @@ theorem core_fourteen_cost_obstruction (G : SimpleGraph V)
     rw [Finset.card_union_of_disjoint hdis, hT, hp]
   have hc := hcap (T ∪ {x, y})
   rw [h14] at hc
-  norm_num [D, tau12, Nat.choose_two_right] at hc
+  have hD : D 14 = 69 := by norm_num [D, tau12, Nat.choose_two_right]
+  rw [hD] at hc
   have he := core_edge_count_union G T {x, y} hdis
   have hcompl := core_induced_compl_edge_count G T
   rw [hT] at hcompl
-  norm_num at hcompl
+  norm_num only [Nat.choose_two_right] at hcompl
   have hcross := core_pair_cross_lower_bound G T x y hxy
   rw [hT] at hcross
   omega

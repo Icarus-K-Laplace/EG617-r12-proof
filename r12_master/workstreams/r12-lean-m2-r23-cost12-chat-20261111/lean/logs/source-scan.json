@@ -22,6 +22,7 @@
     "EG617\\Audit\\R23TypeLift.lean",
     "EG617\\Audit\\R335Fourteen.lean",
     "EG617\\Audit\\R335Neighborhood.lean",
+    "EG617\\Audit\\R335Sharp.lean",
     "EG617\\Audit\\Statements.lean",
     "EG617\\Basic\\ColoringLemmas.lean",
     "EG617\\Basic\\Definitions.lean",
@@ -55,6 +56,7 @@
     "EG617\\Core\\R23TypeLift.lean",
     "EG617\\Core\\R335Fourteen.lean",
     "EG617\\Core\\R335Neighborhood.lean",
+    "EG617\\Core\\R335Sharp.lean",
     "EG617\\Frontend\\ColoringReduction.lean",
     "EG617\\Frontend\\EdgeCounting.lean",
     "EG617\\Frontend\\HereditaryCaps.lean",
@@ -967,6 +969,21 @@
       "kind": "theorem",
       "name": "core_R335_degree_eleven_nonneighbor_cost_six",
       "file": "EG617\\Core\\R335Neighborhood.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R335_degree_ne_eleven",
+      "file": "EG617\\Core\\R335Sharp.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R335_degree_ge_twelve",
+      "file": "EG617\\Core\\R335Sharp.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R335_edges_ge_210",
+      "file": "EG617\\Core\\R335Sharp.lean"
     },
     {
       "kind": "theorem",
