@@ -174,6 +174,13 @@ public import EG617
 #print axioms EG617.five_cycle_copy_same_support
 #print axioms EG617.cycleNeighborLabels_card_eq
 #print axioms EG617.r23_exact_labeled_neighbor_ledger
+#print axioms EG617.core_degree_eleven_neighbor_nonedge
+#print axioms EG617.core_common_nonneighbors_clique
+#print axioms EG617.core_edge_count_union
+#print axioms EG617.core_pair_cross_lower_bound
+#print axioms EG617.core_induce_compl
+#print axioms EG617.core_induced_compl_edge_count
+#print axioms EG617.core_fourteen_cost_obstruction
 #print axioms EG617.core_R223_complement_cost_six
 #print axioms EG617.core_R335_degree_eleven_nonneighbor_cost_six
 #print axioms EG617.independent_card_le_twelve

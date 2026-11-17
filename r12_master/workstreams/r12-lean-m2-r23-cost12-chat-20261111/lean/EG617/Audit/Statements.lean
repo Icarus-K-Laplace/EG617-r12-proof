@@ -174,6 +174,13 @@ public import EG617
 #check EG617.five_cycle_copy_same_support
 #check EG617.cycleNeighborLabels_card_eq
 #check EG617.r23_exact_labeled_neighbor_ledger
+#check EG617.core_degree_eleven_neighbor_nonedge
+#check EG617.core_common_nonneighbors_clique
+#check EG617.core_edge_count_union
+#check EG617.core_pair_cross_lower_bound
+#check EG617.core_induce_compl
+#check EG617.core_induced_compl_edge_count
+#check EG617.core_fourteen_cost_obstruction
 #check EG617.core_R223_complement_cost_six
 #check EG617.core_R335_degree_eleven_nonneighbor_cost_six
 #check EG617.independent_card_le_twelve

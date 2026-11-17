@@ -20,6 +20,7 @@
     "EG617\\Audit\\R23EdgeCompletion.lean",
     "EG617\\Audit\\R23Ledger.lean",
     "EG617\\Audit\\R23TypeLift.lean",
+    "EG617\\Audit\\R335Fourteen.lean",
     "EG617\\Audit\\R335Neighborhood.lean",
     "EG617\\Audit\\Statements.lean",
     "EG617\\Basic\\ColoringLemmas.lean",
@@ -52,6 +53,7 @@
     "EG617\\Core\\R23ExactLedger.lean",
     "EG617\\Core\\R23Reduction.lean",
     "EG617\\Core\\R23TypeLift.lean",
+    "EG617\\Core\\R335Fourteen.lean",
     "EG617\\Core\\R335Neighborhood.lean",
     "EG617\\Frontend\\ColoringReduction.lean",
     "EG617\\Frontend\\EdgeCounting.lean",
@@ -920,6 +922,41 @@
       "kind": "theorem",
       "name": "r23_exact_labeled_neighbor_ledger",
       "file": "EG617\\Core\\R23TypeLift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_degree_eleven_neighbor_nonedge",
+      "file": "EG617\\Core\\R335Fourteen.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_common_nonneighbors_clique",
+      "file": "EG617\\Core\\R335Fourteen.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_edge_count_union",
+      "file": "EG617\\Core\\R335Fourteen.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_pair_cross_lower_bound",
+      "file": "EG617\\Core\\R335Fourteen.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_induce_compl",
+      "file": "EG617\\Core\\R335Fourteen.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_induced_compl_edge_count",
+      "file": "EG617\\Core\\R335Fourteen.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_fourteen_cost_obstruction",
+      "file": "EG617\\Core\\R335Fourteen.lean"
     },
     {
       "kind": "theorem",
