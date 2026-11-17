@@ -1,39 +1,26 @@
-# R23 COMPLETE CLASSIFICATION VERIFIED — Cost-6 and GATE47 open
+# R23 classification and universal Cost-6 VERIFIED
 
-Verified code: 0d2985dbfe109fab301c157f687b3b38478c8bb6.
-Linux CI43680628810, job132710251209, 2026-11-15.
-Focused compilation, full lake build, exact statement inspection, all176
-transitive axiom reports, all9 dependency pins and source/config SHA256 PASS.
-Only propext, Classical.choice, Quot.sound. Local sources match CI hashes;
-original LEVEL1 mathematical sources remain byte-identical.
-Evidence: CI_STATUS.json, logs/linux-43680628810-full.txt.
+Exact verified code, CI run, dependency pins, source hashes and declaration counts:
+CI_STATUS.json. Full logs and exact statements are retained locally and in GitHub.
+Only propext, Classical.choice and Quot.sound occur in transitive axiom audits.
+Original LEVEL1 mathematical files and the K145 statement remain byte-identical.
 
-r23_complete_classification proves the exhaustive frozen M2 classification from
-card V=23, triangle-free, alpha<=11 and at least121 edges, with no extra terminal
-hypothesis. Its alternatives are:
-1. actual C5(10,A,1,1,B), A+B=11, 1<=A,B<=10;
-2. adding exactly one formerly absent edge gives such a Case I graph, preserving
-   triangle-freeness and alpha<=11;
-3. actual C5(9,9,2,1,2).
-All profiles specify every actual vertex fiber and an adjacency IFF for all
-vertex pairs. This is a whole-graph classification, not just compatible labels.
+r23_complete_classification gives the exhaustive frozen M2 classification from
+card23, triangle-free, alpha<=11 and e>=121. Its whole-graph alternatives are
+C5(10,A,1,1,B), A+B=11; an actual one-edge deletion thereof; and C5(9,9,2,1,2).
+Actual vertex fibers and adjacency equivalence are proved, not assumed.
 
-The exact121/122 ledger, all three neighbor distributions, same-support C5
-labeling, K8,10 exclusion, singleton graph completion, compatible missing-edge
-completion, and all ten incompatible endpoint orientations are kernel-verified.
+r23_cost_six closes frozen M3 for EVERY independent set. It combines
+case_I_cost_six, case_I_single_edge_deletion_cost_six and exceptional_cost_six.
+exceptional_cost_four proves the stronger exceptional bound4. The deletion lemma
+also covers the singleton edge and all alpha>11 deletions; the parent still
+retains all original R23 hypotheses. No external enumeration is a Lean premise.
 
-NOT proved: universal Cost-6; sharp R335/R336; GATE47; original MainTheorem.
-The next work is frozen low M3, preserving every independent set and every legal
-single-edge deletion. No diagnostic enumeration is a Lean premise.
+core_R223_complement_cost_six and
+core_R335_degree_eleven_nonneighbor_cost_six certify M4's input reduction, retaining
+the full CoreAdmissible alpha/omega/hereditary-D contract. They do not prove that
+a degree-eleven vertex is impossible.
 
-## 2026-11-16 Cost-6 progress
-Verified code 0dc1190e19fcbf02e2fd7b565ad16d92b27d98bd / Linux CI43791548801:
-case_I_cost_six and exceptional_cost_four (hence exceptional_cost_six) PASS,
-including exact witness counts for every independent set. All188 declarations,
-156 theorems, full build, statement inspection, axiom audit and SHA256 PASS.
-Only propext, Classical.choice and Quot.sound occur.
-CostSixDeletion.lean and r23_cost_six are now CANDIDATE, awaiting kernel CI.
-The next candidate covers every single-edge deletion structurally, then applies
-the already verified exhaustive R23 classification. GATE47 remains open.
-
-Cost-6 CLOSED: r23_cost_six and all single-edge deletion cases verified at e3885e098fe271856adea0b7e5e629cb4d8d50fa / CI43792528236. R335Neighborhood.lean is the next CANDIDATE; sharp R335/R336 and GATE47 remain open.
+OPEN: actual fourteen-point cap contradiction in R335, sharp R335/R336 bounds,
+GATE47 d10/d11 exclusions and the original MainTheorem. See OPEN_BLOCKERS.md.
+Windows local lake build is not claimed; see logs/windows-environment-20261116.txt.

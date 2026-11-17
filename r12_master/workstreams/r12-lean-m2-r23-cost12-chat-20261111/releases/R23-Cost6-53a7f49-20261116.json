@@ -1,0 +1,11 @@
+{
+  "allArchiveEntries": 140,
+  "bytes": 947113,
+  "zip": "D:\\Data\\EG617-r12-lean-m2-r23-cost12-20261111\\outputs\\EG617-r12-Lean-R23-Cost6-VERIFIED-53a7f49-20261116.zip",
+  "ci": 43793403878,
+  "verifiedCode": "53a7f495d0487672d4ed36e0f572b9d4fe0b0c72",
+  "Gate47": "FORMALIZATION_GAP",
+  "status": "PASS",
+  "sha256": "6da4c914e70dda7fc3f660e80f223d2c6f96671f69289c225da4417a4ceaea37",
+  "verifiedEntries": 139
+}

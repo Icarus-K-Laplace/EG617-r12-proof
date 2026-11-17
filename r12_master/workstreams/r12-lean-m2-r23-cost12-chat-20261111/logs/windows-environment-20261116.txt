@@ -1,0 +1,10 @@
+2026-11-16 local validation limitation
+The default shell executor intermittently failed with System.OutOfMemoryException,
+then could not launch: "MXC launcher: native MXC is unavailable on this Windows build".
+The Node sandbox also reported insufficient disk space (os error112) while preparing MXC.
+Read-only disk check: C free176246784 bytes; D free14089379840 bytes.
+Bounded commands outside the failed sandbox succeeded after automatic permission review.
+All task writes remained under D:/Data/EG617-r12-lean-m2-r23-cost12-20261111.
+No Windows lake build PASS is asserted. Mathematical verification used independent
+Ubuntu24.04 GitHub CI in fresh ASCII directories and the fixed Lean4.35.0 toolchain.
+Existing R23 and earlier ZIP checkpoints were preserved. No files were deleted to free space.

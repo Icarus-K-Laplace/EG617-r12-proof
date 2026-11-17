@@ -1783,6 +1783,27 @@ theorem r23_exact_labeled_neighbor_ledger (G : SimpleGraph V)
         ∃! i : Fin 5, cycleNeighborLabels f x = c5Type i)
 ```
 
+## EG617.core_R223_complement_cost_six
+
+Source: EG617/Core/R335Neighborhood.lean
+
+```lean
+theorem core_R223_complement_cost_six (G : SimpleGraph V)
+    (hV : Fintype.card V = 23) (hG : CoreAdmissible 2 G) :
+    CostSixProperty Gᶜ
+```
+
+## EG617.core_R335_degree_eleven_nonneighbor_cost_six
+
+Source: EG617/Core/R335Neighborhood.lean
+
+```lean
+theorem core_R335_degree_eleven_nonneighbor_cost_six (G : SimpleGraph V)
+    (hV : Fintype.card V = 35) (hG : CoreAdmissible 3 G)
+    (v : V) (hd : G.degree v = 11) :
+    let S
+```
+
 ## EG617.independent_card_le_twelve
 
 Source: EG617/Frontend/ColoringReduction.lean

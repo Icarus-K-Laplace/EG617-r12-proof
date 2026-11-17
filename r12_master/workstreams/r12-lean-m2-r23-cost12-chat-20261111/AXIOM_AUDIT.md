@@ -1,8 +1,8 @@
 # Complete transitive axiom audit
 
-Verified code commit e3885e098fe271856adea0b7e5e629cb4d8d50fa, Linux CI 43792528236.
+Verified code commit 53a7f495d0487672d4ed36e0f572b9d4fe0b0c72, Linux CI 43793403878.
 
-All 193 project declarations compiled and audited. Allowed logical axioms: propext, Classical.choice, Quot.sound.
+All 195 project declarations compiled and audited. Allowed logical axioms: propext, Classical.choice, Quot.sound.
 Source scan and kernel audit both passed. No sorry/admit/custom axiom/unsafe/implemented_by/native_decide is used.
 No diagnostic enumeration is imported into Lean. All graph hypotheses appear in DECLARATION_STATEMENTS.md.
 Remaining absent proofs and partial results are listed explicitly in OPEN_BLOCKERS.md; no placeholders represent them.
@@ -181,6 +181,8 @@ Remaining absent proofs and partial results are listed explicitly in OPEN_BLOCKE
 | EG617.five_cycle_copy_same_support | propext, Classical.choice, Quot.sound |
 | EG617.cycleNeighborLabels_card_eq | propext, Classical.choice, Quot.sound |
 | EG617.r23_exact_labeled_neighbor_ledger | propext, Classical.choice, Quot.sound |
+| EG617.core_R223_complement_cost_six | propext, Classical.choice, Quot.sound |
+| EG617.core_R335_degree_eleven_nonneighbor_cost_six | propext, Classical.choice, Quot.sound |
 | EG617.independent_card_le_twelve | propext, Classical.choice, Quot.sound |
 | EG617.monochromatic_card_le_twelve | propext, Classical.choice, Quot.sound |
 | EG617.colorGraph_clique_card_le_twelve | propext, Classical.choice, Quot.sound |

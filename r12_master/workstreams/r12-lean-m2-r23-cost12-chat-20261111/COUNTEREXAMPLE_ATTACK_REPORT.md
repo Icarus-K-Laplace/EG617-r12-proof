@@ -48,3 +48,13 @@ original classification, which explicitly allows compatible missing endpoints.
 
 The implemented exterior theorem retains an explicit missing-edge alternative.
 No parent theorem is promoted on the basis of the invalid adjacency converse.
+
+2026-11-16 stronger-deletion attack: attacks/cost-six-deletion-attack.mjs and
+logs/cost-six-deletion-attack.json. All61 representatives, including alpha>11
+deletions, and EVERY one of351071 independent sets were tested. Worst minimum
+cost6 for Case I/deletions and4 for the exceptional graph; no failure.
+Rotations/reflections preserve costs and class automorphisms move any deleted
+edge to its class-edge representative. This describes the test domain only.
+The arbitrary-graph and all-deletions theorems are proved independently in Lean,
+using actual finite sets and elementary Fin5 relation certificates. The test
+program supplies no theorem premise and no trusted oracle output.

@@ -1,20 +1,40 @@
-# Cost-6 — FORMALIZATION GAP
+# Universal Cost-6 — LEAN VERIFIED
 
-Target, unchanged: for every classified 23-vertex graph W with alpha<=11 and every
-independent I, there exists a 12-set T with e(W[T])+|T intersect I|<=6.
-Paper mapping: frozen low M3.
+Frozen source: MINIMUM_DEGREE_GATE_SELF_CONTAINED.md, low M3, immutable
+c5f05f5868ed4d1347dc6d16f9d5b5be230ac7e2. Exact build provenance: CI_STATUS.json.
 
-There is no Lean theorem proving this assertion in this workstream. In particular,
-no terminal Cost-6 hypothesis has been packaged as its proof.
+```lean
+theorem r23_cost_six (G : SimpleGraph V) (hV : Fintype.card V = 23)
+    (ht : G.CliqueFree 3) (hI : CoreIndependenceBound 11 G)
+    (he : 121 ≤ G.edgeFinset.card) : CostSixProperty G
+```
 
-The independent diagnostic program attacks all independent sets, not merely a
-chosen witness or maximal set. Across the 61 blow-up/deletion representatives,
-49 satisfy alpha<=11, and 271235 independent sets in those 49 were tested.
-The stated 12-set choices have minimum cost at most 6 in every tested case.
-Twelve representatives are excluded by the original alpha condition, not discarded
-to manufacture success. The maximum minimum cost observed is 6.
+Here V is an arbitrary finite type. CostSixProperty G is exactly
+forall I : Finset V, G.IsIndepSet (I : Set V) -> exists T : Finset V,
+T.card=12 and coreInducedEdgeCount G T + (T intersect I).card <=6.
+The induced edge count is the actual unordered edgeFinset cardinality.
+No classification or Cost-6 hypothesis is assumed by this parent theorem.
 
-This evidence is not imported into Lean and does not prove Cost-6.
-The arbitrary-graph classification is now independently kernel-verified by
-r23_complete_classification at0d2985d / CI43680628810. Remaining work is the
-universal-independent-set witness proof and legal single-edge deletion cases.
+case_I_cost_six proves the three actual fiber-union witnesses cover every
+independent set, including empty and nonmaximal sets. Their sizes, induced
+edges, and intersections are counted by c5_three_fiber_witness_counts.
+exceptional_cost_four proves the stronger universal cost<=4, and
+exceptional_cost_six supplies the common interface.
+
+case_I_single_edge_deletion_cost_six treats all independent sets newly created
+by deleting one edge. Existing independent sets use graph edge-count monotonicity.
+For a new independent set, a deleted endpoint adjacent to the ten-point center
+forces its intersection with that center to have size<=1. The standard witness
+then has cost<=4. In the remaining singleton-to-singleton case, both other large
+class intersections vanish; A+B=11 ensures one alternate witness has cost<=6.
+This strengthens the paper's deletion sublemma: it also covers deletions with
+alpha>11. The original r23_cost_six still retains alpha<=11 exactly as required.
+No original statement is weakened; no diagnostic computation is a Lean premise.
+
+The complete classification r23_complete_classification selects the three cases.
+All finite decide calls concern explicit Fin 5 cycle relations; they are reduced
+and checked by the Lean kernel. No native_decide or external oracle occurs.
+
+Independent diagnostic attack: all61 class-edge representatives and all351071
+independent sets, including alpha>11 cases, had cost<=6; the exceptional graph
+had worst cost4. This is testing only; see logs/cost-six-deletion-attack.json.

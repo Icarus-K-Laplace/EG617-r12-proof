@@ -1,14 +1,14 @@
 {
   "date": "2026-11-16",
-  "sha": "e3885e098fe271856adea0b7e5e629cb4d8d50fa",
-  "run": 43792528236,
-  "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/43792528236",
+  "sha": "53a7f495d0487672d4ed36e0f572b9d4fe0b0c72",
+  "run": 43793403878,
+  "url": "https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/43793403878",
   "cleanLinuxBuild": "PASS",
   "fullAxiomAudit": "PASS",
   "statementInspection": "PASS",
   "localMatchesCISHA256": "PASS",
-  "declarations": 193,
-  "theorems": 161,
+  "declarations": 195,
+  "theorems": 163,
   "originalMathematicalSourcesUnchanged": true,
   "pins": [
     {
@@ -51,11 +51,11 @@
   "hashes": [
     {
       "file": "EG617.lean",
-      "sha256": "610e0306dd9f767e440b76070a1c579583c3dbaa50610ed3de0595fab49b4b1e"
+      "sha256": "953394026474fe8c6ec90f298ac521c6dface3763bedd1cff4dcd98fd9a24b85"
     },
     {
       "file": "EG617/Audit/Axioms.lean",
-      "sha256": "edbb96193f41da7404398e7042dd170943c3b53e5000f707770e3bc424a5da6d"
+      "sha256": "600bbd4ceaaf8cc5abf5769a1d165ec5cb7740268f5ea346d1e7656240ecc5af"
     },
     {
       "file": "EG617/Audit/C5MissingGraphLift.lean",
@@ -126,8 +126,12 @@
       "sha256": "3cc85a309631ee8766854702cd1a05421933b1da272d52d6e2bab67de484811a"
     },
     {
+      "file": "EG617/Audit/R335Neighborhood.lean",
+      "sha256": "401eebc2a9f3076b4171e8c07dc76e4dce365df74e3c18d0305910bf8c405311"
+    },
+    {
       "file": "EG617/Audit/Statements.lean",
-      "sha256": "ee9cf389ae3a4d2e792faba6a9f252fb1138cb6a8853f794ba8c41fe781e218f"
+      "sha256": "45f2e1ae11bbf8acacfc0ee8c075e8314d783dcabc5aedde60c5d3bef874dfac"
     },
     {
       "file": "EG617/Basic/ColoringLemmas.lean",
@@ -248,6 +252,10 @@
     {
       "file": "EG617/Core/R23TypeLift.lean",
       "sha256": "30d57e86d38fcbb5250b206c557cec773d8c010eecba9095691499f518e5ef6a"
+    },
+    {
+      "file": "EG617/Core/R335Neighborhood.lean",
+      "sha256": "4d02d93679c7b03fedbe4b1a255e9daa06e30dae9ece3687bf0d74b4e334bb9c"
     },
     {
       "file": "EG617/Frontend/ColoringReduction.lean",

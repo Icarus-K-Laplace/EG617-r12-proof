@@ -21,8 +21,8 @@ collected in DECLARATION_STATEMENTS.md; CI prints their elaborated types.
 | Low M2b /singleton graph completion | r23_121_completion_or_missing_exterior | VERIFIED: actual added edge, triangle-free, alpha<=11, exactly122 edges, Case I |
 | Low M2d /unique missing edge | missing_exterior_completion_or_exceptional | VERIFIED: compatible completion or full9,9,2,1,2 adjacency/fiber profile |
 | Complete Low M2 | r23_complete_classification | VERIFIED CI43680628810; only original23-vertex, triangle-free, alpha<=11, e>=121 hypotheses |
-| Low M3 | none | Cost-6 gap |
-| Low M4 | core_R335_degree_ge_11 only | Sharp degree12 and e210 still gaps |
+| Low M3 | r23_cost_six; case_I_cost_six; case_I_single_edge_deletion_cost_six; exceptional_cost_four | VERIFIED universal Cost-6; all deletions, every independent set; exceptional Cost-4 |
+| Low M4 | core_R335_degree_ge_11; core_R223_complement_cost_six; core_R335_degree_eleven_nonneighbor_cost_six | Weak degree11 and full-class nonneighborhood Cost-6 transfer verified; fourteen-point contradiction and sharp degree12/e210 open |
 | Low M5 | core_R337_empty_of_card | R337 done; sharp R336 still gap |
 | Low M6 | core_R447_degree_ge_10 only; Gate47Statement definition | d10/d11 exclusions and degree12 theorem absent |
 | Original conclusion | MainTheorem absent | No full EG617 proof |
