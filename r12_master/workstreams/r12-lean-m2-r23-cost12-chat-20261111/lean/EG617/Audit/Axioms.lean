@@ -107,6 +107,9 @@ public import EG617
 #print axioms EG617.adjCount_le_sum_degrees
 #print axioms EG617.adjCount_independent_zero
 #print axioms EG617.twice_independent_card_le_of_degree_two
+#print axioms EG617.core_shell_edge_degree_ledger
+#print axioms EG617.core_induced_edges_le_choose
+#print axioms EG617.core_R447_min_degree_ten_edges_ge_289
 #print axioms EG617.oddCycleBound
 #print axioms EG617.oddCycleBound_23_two
 #print axioms EG617.oddCycleBound_23_ge_three

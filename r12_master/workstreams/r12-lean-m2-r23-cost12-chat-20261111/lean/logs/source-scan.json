@@ -12,6 +12,7 @@
     "EG617\\Audit\\CostSixCounts.lean",
     "EG617\\Audit\\CostSixDeletion.lean",
     "EG617\\Audit\\CostSixProfiles.lean",
+    "EG617\\Audit\\GateShell.lean",
     "EG617\\Audit\\R23BalancedExterior.lean",
     "EG617\\Audit\\R23CaseI.lean",
     "EG617\\Audit\\R23CaseII.lean",
@@ -42,6 +43,7 @@
     "EG617\\Core\\CostSixDeletion.lean",
     "EG617\\Core\\CostSixProfiles.lean",
     "EG617\\Core\\EdgePartition.lean",
+    "EG617\\Core\\GateShell.lean",
     "EG617\\Core\\OddCycleArithmetic.lean",
     "EG617\\Core\\OddCycleBound.lean",
     "EG617\\Core\\OddCycleStructure.lean",
@@ -591,6 +593,21 @@
       "kind": "theorem",
       "name": "twice_independent_card_le_of_degree_two",
       "file": "EG617\\Core\\EdgePartition.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_shell_edge_degree_ledger",
+      "file": "EG617\\Core\\GateShell.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_induced_edges_le_choose",
+      "file": "EG617\\Core\\GateShell.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "core_R447_min_degree_ten_edges_ge_289",
+      "file": "EG617\\Core\\GateShell.lean"
     },
     {
       "kind": "def",

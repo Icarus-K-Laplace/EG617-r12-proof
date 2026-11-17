@@ -3,7 +3,7 @@ public import EG617.Core.R335Fourteen
 
 @[expose] public section
 set_option autoImplicit false
-attribute [local instance 2000] Classical.propDecidable
+attribute [local instance] Classical.propDecidable
 open scoped BigOperators
 
 namespace EG617
@@ -63,6 +63,11 @@ theorem core_R335_degree_ne_eleven (G : SimpleGraph V)
       exact ⟨a, ⟨ha, hP⟩, rfl⟩
   have hfc := congrArg Finset.card hf
   rw [Finset.card_image_of_injective _ Subtype.val_injective] at hfc
+  have hinst : @Finset.inter (S : Set V)
+      (fun a b => Classical.propDecidable (a = b)) T I = T ∩ I := by
+    ext z
+    simp only [Finset.mem_inter]
+  rw [hinst] at hcost
   change coreInducedEdgeCount ((G.induce (S : Set V))ᶜ) T + (T ∩ I).card ≤ 6 at hcost
   rw [core_induce_compl, core_induced_edge_count_image, hfc] at hcost
   exact core_fourteen_cost_obstruction G hG.2.2 U hU x y hxy hxU hyU hcost

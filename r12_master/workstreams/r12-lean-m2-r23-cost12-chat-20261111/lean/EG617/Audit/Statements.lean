@@ -107,6 +107,9 @@ public import EG617
 #check EG617.adjCount_le_sum_degrees
 #check EG617.adjCount_independent_zero
 #check EG617.twice_independent_card_le_of_degree_two
+#check EG617.core_shell_edge_degree_ledger
+#check EG617.core_induced_edges_le_choose
+#check EG617.core_R447_min_degree_ten_edges_ge_289
 #print EG617.oddCycleBound
 #check EG617.oddCycleBound_23_two
 #check EG617.oddCycleBound_23_ge_three
