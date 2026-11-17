@@ -37,3 +37,4 @@ public import EG617.Core.R335Sharp
 public import EG617.Core.R336Sharp
 public import EG617.Core.GateShell
 public import EG617.Core.GateRows
+public import EG617.Core.Gate47

@@ -29,7 +29,9 @@ theorem core_R336_degree_ge_thirteen (G : SimpleGraph V)
     simpa only [Set.fintypeCard_eq_ncard, Set.ncard_coe_finset] using hS
   have hlocal := core_R335_degree_ge_twelve (G.induce (S : Set V)) hcard
     (core_admissible_induce G 3 hG S) ⟨v, hvS⟩
-  rw [degree_induce_eq_filter] at hlocal
+  have hdegree := degree_induce_eq_filter G S ⟨v, hvS⟩
+  simp only [← SimpleGraph.ncard_neighborSet] at hlocal hdegree
+  rw [hdegree] at hlocal
   have hf : S.filter (G.Adj v) = (G.neighborFinset v).erase w := by
     ext z
     simp [S, and_comm]

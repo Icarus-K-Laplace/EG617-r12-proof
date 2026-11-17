@@ -107,6 +107,8 @@ public import EG617
 #check EG617.adjCount_le_sum_degrees
 #check EG617.adjCount_independent_zero
 #check EG617.twice_independent_card_le_of_degree_two
+#check EG617.core_R447_min_degree_eleven_edges_ge_287
+#check EG617.gate47_verified
 #check EG617.core_admissible_common_nonNeighbors
 #check EG617.core_R4_common_nonneighbors_card_le_23
 #check EG617.core_R4_row_union_ge_twelve
