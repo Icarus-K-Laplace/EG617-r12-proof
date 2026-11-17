@@ -71,7 +71,7 @@ theorem core_R4_row_union_ge_twelve (G : SimpleGraph V) (hG : CoreAdmissible 4 G
   classical
   let R := C.filter (G.Adj x) ∪ C.filter (G.Adj y)
   let N := C \ R
-  have hRC : R ⊆ C := Finset.union_subset Finset.filter_subset Finset.filter_subset
+  have hRC : R ⊆ C := Finset.union_subset (Finset.filter_subset _ _) (Finset.filter_subset _ _)
   have hn : ∀ z ∈ N, z ≠ x ∧ z ≠ y ∧ ¬ G.Adj x z ∧ ¬ G.Adj y z := by
     intro z hz
     obtain ⟨hzC, hzR⟩ := Finset.mem_sdiff.mp hz
@@ -132,16 +132,20 @@ theorem core_shell_row_missing_degree_le (G : SimpleGraph V) (v : V)
   have hsplit := adjCount_union_right G {(a : V)} ({v} ∪ S) C hdAC
   rw [hcover, adjCount_right_univ, Finset.sum_singleton,
     adjCount_union_right G {(a : V)} {v} S hdvS] at hsplit
-  have hav : adjCount G {(a : V)} {v} = 1 := by simp [adjCount, ha.symm]
+  have hav : adjCount G {(a : V)} {v} = 1 := by
+    simp only [adjCount, Finset.sum_singleton, if_pos ha.symm]
   have has : adjCount G {(a : V)} S = (G.induce (S : Set V)).degree a := by
-    rw [adjCount_eq_sum_filter, Finset.sum_singleton, degree_induce_eq_filter]
+    rw [adjCount_eq_sum_filter, Finset.sum_singleton]
+    have hdegree := degree_induce_eq_filter G S a
+    simp only [← SimpleGraph.ncard_neighborSet] at hdegree ⊢
+    exact hdegree.symm
   have hac : adjCount G {(a : V)} C = (C.filter (G.Adj a)).card := by
     rw [adjCount_eq_sum_filter, Finset.sum_singleton]
   rw [hav, has, hac] at hsplit
   have hcomp := (G.induce (S : Set V)).degree_compl a
   have hcard : Fintype.card (S : Set V) = 11 := by
-    simpa only [Set.fintypeCard_eq_ncard, Set.ncard_coe_finset,
-      SimpleGraph.card_neighborFinset_eq_degree] using hd
+    simpa only [Set.fintypeCard_eq_ncard, Set.ncard_coe_finset, S,
+      SimpleGraph.card_neighborFinset_eq_degree, ← SimpleGraph.ncard_neighborSet] using hd
   rw [hcard] at hcomp
   have hm := hmin a
   change ((G.induce (S : Set V))ᶜ).degree a ≤ (C.filter (G.Adj a)).card
@@ -159,8 +163,8 @@ theorem core_missing_edge_row_sum (M : SimpleGraph V) (r : V → ℕ)
   have hb : b ∈ (Finset.univ : Finset V).erase a := Finset.mem_erase.mpr ⟨hab.symm, Finset.mem_univ _⟩
   have hr1 := Finset.sum_erase_add (s := Finset.univ) (f := r) ha
   have hr2 := Finset.sum_erase_add (s := Finset.univ.erase a) (f := r) hb
-  have hm1 := Finset.sum_erase_add (s := Finset.univ) (f := M.degree) ha
-  have hm2 := Finset.sum_erase_add (s := Finset.univ.erase a) (f := M.degree) hb
+  have hm1 := Finset.sum_erase_add (s := Finset.univ) (f := fun x => M.degree x) ha
+  have hm2 := Finset.sum_erase_add (s := Finset.univ.erase a) (f := fun x => M.degree x) hb
   have hrest : (∑ x ∈ U, M.degree x) ≤ ∑ x ∈ U, r x := Finset.sum_le_sum (fun x _ => hrow x)
   have hinc := core_two_degrees_le_edges_add_one M a b hab
   have he := M.sum_degrees_eq_twice_card_edges

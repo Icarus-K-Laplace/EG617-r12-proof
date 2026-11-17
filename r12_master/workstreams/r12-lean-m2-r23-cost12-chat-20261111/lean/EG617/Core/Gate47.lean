@@ -21,7 +21,8 @@ theorem core_R447_min_degree_eleven_edges_ge_287 (G : SimpleGraph V)
   let C := Gᶜ.neighborFinset v
   let M := (G.induce (S : Set V))ᶜ
   let r : (S : Set V) → ℕ := fun a => (C.filter (G.Adj a)).card
-  have hS : S.card = 11 := by simpa only [SimpleGraph.card_neighborFinset_eq_degree] using hd
+  have hS : S.card = 11 := by
+    simpa only [S, SimpleGraph.card_neighborFinset_eq_degree, ← SimpleGraph.ncard_neighborSet] using hd
   have hC : C.card = 35 := by
     have hc : C.card = Fintype.card V - 1 - G.degree v := G.degree_compl v
     omega
@@ -58,11 +59,10 @@ theorem core_R447_min_degree_eleven_edges_ge_287 (G : SimpleGraph V)
     Set.ncard_coe_finset, hS] at hcomp
   norm_num only [Nat.choose_two_right] at hcomp
   have he := (core_shell_edge_degree_ledger G v).1
-  change G.edgeFinset.card = coreInducedEdgeCount G C + G.degree v +
-    coreInducedEdgeCount G S + adjCount G S C at he
-  simp only [coreInducedEdgeCount, SimpleGraph.edgeFinset_card,
-    Set.fintypeCard_eq_ncard] at he heC hrows ⊢
   dsimp only [M] at hrows
+  simp only [S, C, SimpleGraph.neighborFinset_def, ← Set.toFinite_toFinset,
+    ← SimpleGraph.ncard_neighborSet, coreInducedEdgeCount, SimpleGraph.edgeFinset_card,
+    Set.fintypeCard_eq_ncard] at he heC hrows hcomp hd ⊢
   omega
 
 /-- The original frozen GATE47 statement, retaining alpha, omega, ALL induced

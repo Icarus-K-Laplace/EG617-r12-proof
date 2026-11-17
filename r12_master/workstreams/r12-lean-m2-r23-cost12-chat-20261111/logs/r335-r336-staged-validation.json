@@ -1,0 +1,29 @@
+{
+  "code": "f129fe94bfb742fa32d1810e0dd5c12c5a5872a0",
+  "run": 44135028675,
+  "scope": "R335/R336 focused module builds and transitive axiom checks only",
+  "fullProject": "FAIL: later GateShell module",
+  "stages": [
+    {
+      "theorem": "EG617.core_R335_degree_ne_eleven",
+      "printed": true
+    },
+    {
+      "theorem": "EG617.core_R335_degree_ge_twelve",
+      "printed": true
+    },
+    {
+      "theorem": "EG617.core_R335_edges_ge_210",
+      "printed": true
+    },
+    {
+      "theorem": "EG617.core_R336_degree_ge_thirteen",
+      "printed": true
+    },
+    {
+      "theorem": "EG617.core_R336_edges_ge_234",
+      "printed": true
+    }
+  ],
+  "Gate47": "CANDIDATE_UNVERIFIED"
+}
