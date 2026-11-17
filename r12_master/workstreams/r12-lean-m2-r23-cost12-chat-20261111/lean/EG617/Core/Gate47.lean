@@ -63,9 +63,12 @@ theorem core_R447_min_degree_eleven_edges_ge_287 (G : SimpleGraph V)
   norm_num only [Nat.choose_two_right] at hcomp
   have he := (core_shell_edge_degree_ledger G v).1
   dsimp only [M] at hrows
+  -- Normalize edge counts before changing the finiteness instance of the shell.
+  -- This keeps the complement identity and both ledgers on the same edge sets.
+  simp only [coreInducedEdgeCount, SimpleGraph.edgeFinset_card,
+    Set.fintypeCard_eq_ncard] at he heC hrows hcomp ⊢
   simp only [S, C, SimpleGraph.neighborFinset_def, ← Set.toFinite_toFinset,
-    ← SimpleGraph.ncard_neighborSet, coreInducedEdgeCount, SimpleGraph.edgeFinset_card,
-    Set.fintypeCard_eq_ncard] at he heC hrows hcomp hd ⊢
+    ← SimpleGraph.ncard_neighborSet] at he heC hrows hcomp hd ⊢
   omega
 
 /-- The original frozen GATE47 statement, retaining alpha, omega, ALL induced

@@ -1,0 +1,1234 @@
+﻿2026-11-17T17:36:27.3533605Z Current runner version: '2.338.2'
+2026-11-17T17:36:27.3575633Z ##[group]Runner Image Provisioner
+2026-11-17T17:36:27.3577054Z Hosted Compute Agent
+2026-11-17T17:36:27.3578519Z Version: 20261103.629
+2026-11-17T17:36:27.3579761Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+2026-11-17T17:36:27.3581100Z Build Date: 2026-11-03T17:26:59Z
+2026-11-17T17:36:27.3582545Z Worker ID: {914670e6-a700-4f9f-ac26-48f30365725e}
+2026-11-17T17:36:27.3583878Z Region: eastus
+2026-11-17T17:36:27.3584934Z Cloud: Azure
+2026-11-17T17:36:27.3585951Z ##[endgroup]
+2026-11-17T17:36:27.3589352Z ##[group]Operating System
+2026-11-17T17:36:27.3590568Z Ubuntu
+2026-11-17T17:36:27.3591605Z 24.04.5
+2026-11-17T17:36:27.3592620Z LTS
+2026-11-17T17:36:27.3593509Z ##[endgroup]
+2026-11-17T17:36:27.3594533Z ##[group]Runner Image
+2026-11-17T17:36:27.3595626Z Image: ubuntu-24.04
+2026-11-17T17:36:27.3596669Z Version: 20261111.370.1
+2026-11-17T17:36:27.3599401Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261111.370/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-17T17:36:27.3602478Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261111.370
+2026-11-17T17:36:27.3604312Z ##[endgroup]
+2026-11-17T17:36:27.3606547Z ##[group]GITHUB_TOKEN Permissions
+2026-11-17T17:36:27.3609906Z Contents: read
+2026-11-17T17:36:27.3611091Z Metadata: read
+2026-11-17T17:36:27.3612044Z ##[endgroup]
+2026-11-17T17:36:27.3615453Z Secret source: Actions
+2026-11-17T17:36:27.3617016Z Cache mode: write
+2026-11-17T17:36:27.3619058Z Prepare workflow directory
+2026-11-17T17:36:27.4211980Z Prepare all required actions
+2026-11-17T17:36:27.4260541Z Getting action download info
+2026-11-17T17:36:27.6261221Z Download action repository 'actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2026-11-17T17:36:27.9253683Z Complete job name: m1-kernel
+2026-11-17T17:36:28.0315753Z ##[group]Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+2026-11-17T17:36:28.0316926Z with:
+2026-11-17T17:36:28.0317677Z   persist-credentials: false
+2026-11-17T17:36:28.0318322Z   repository: Icarus-K-Laplace/EG617-r12-proof
+2026-11-17T17:36:28.0322471Z   token: ***
+2026-11-17T17:36:28.0322949Z   ssh-strict: true
+2026-11-17T17:36:28.0323431Z   ssh-user: git
+2026-11-17T17:36:28.0323893Z   clean: true
+2026-11-17T17:36:28.0324396Z   sparse-checkout-cone-mode: true
+2026-11-17T17:36:28.0324971Z   fetch-depth: 1
+2026-11-17T17:36:28.0325448Z   fetch-tags: false
+2026-11-17T17:36:28.0326050Z   show-progress: true
+2026-11-17T17:36:28.0326566Z   lfs: false
+2026-11-17T17:36:28.0327093Z   submodules: false
+2026-11-17T17:36:28.0327753Z   set-safe-directory: true
+2026-11-17T17:36:28.0328573Z env:
+2026-11-17T17:36:28.0329043Z   LEAN_NUM_THREADS: 2
+2026-11-17T17:36:28.0329544Z ##[endgroup]
+2026-11-17T17:36:28.5818362Z Syncing repository: Icarus-K-Laplace/EG617-r12-proof
+2026-11-17T17:36:28.5821426Z ##[group]Getting Git version info
+2026-11-17T17:36:28.5823047Z Working directory is '/home/runner/work/EG617-r12-proof/EG617-r12-proof'
+2026-11-17T17:36:28.5937934Z [command]/usr/bin/git version
+2026-11-17T17:36:28.6064259Z git version 2.56.1
+2026-11-17T17:36:28.6090657Z ##[endgroup]
+2026-11-17T17:36:28.6106044Z Temporarily overriding HOME='/home/runner/work/_temp/59038e8c-726f-4d16-8d35-a43a4d96c212' before making global git config changes
+2026-11-17T17:36:28.6111880Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-17T17:36:28.6116671Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/EG617-r12-proof/EG617-r12-proof
+2026-11-17T17:36:28.6569828Z Deleting the contents of '/home/runner/work/EG617-r12-proof/EG617-r12-proof'
+2026-11-17T17:36:28.6574575Z ##[group]Initializing the repository
+2026-11-17T17:36:28.6580516Z [command]/usr/bin/git init /home/runner/work/EG617-r12-proof/EG617-r12-proof
+2026-11-17T17:36:28.6738215Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-17T17:36:28.6742295Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-17T17:36:28.6746883Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-17T17:36:28.6750841Z hint: call:
+2026-11-17T17:36:28.6753168Z hint:
+2026-11-17T17:36:28.6755894Z hint: 	git config --global init.defaultBranch <name>
+2026-11-17T17:36:28.6759244Z hint:
+2026-11-17T17:36:28.6762045Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-17T17:36:28.6765768Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-17T17:36:28.6769076Z hint:
+2026-11-17T17:36:28.6770603Z hint: 	git branch -m <name>
+2026-11-17T17:36:28.6772345Z hint:
+2026-11-17T17:36:28.6774785Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-17T17:36:28.6783496Z Initialized empty Git repository in /home/runner/work/EG617-r12-proof/EG617-r12-proof/.git/
+2026-11-17T17:36:28.6790473Z [command]/usr/bin/git remote add origin https://github.com/Icarus-K-Laplace/EG617-r12-proof
+2026-11-17T17:36:28.6829166Z ##[endgroup]
+2026-11-17T17:36:28.6832104Z ##[group]Disabling automatic garbage collection
+2026-11-17T17:36:28.6834764Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-17T17:36:28.6893880Z ##[endgroup]
+2026-11-17T17:36:28.6896400Z ##[group]Setting up auth
+2026-11-17T17:36:28.6901286Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-17T17:36:28.7025335Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-17T17:36:28.7625122Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-17T17:36:28.7676305Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-17T17:36:28.7926726Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-17T17:36:28.7978529Z ##[endgroup]
+2026-11-17T17:36:28.7980401Z ##[group]Fetching the repository
+2026-11-17T17:36:28.7993749Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a3b9020f37ef4b8e0e6c50bdb6561bdc6b7f52de:refs/remotes/origin/workstream/r12-lean-m2-r23-cost12-chat-20261111
+2026-11-17T17:36:29.6055797Z From https://github.com/Icarus-K-Laplace/EG617-r12-proof
+2026-11-17T17:36:29.6058495Z  * [new ref]         a3b9020f37ef4b8e0e6c50bdb6561bdc6b7f52de -> origin/workstream/r12-lean-m2-r23-cost12-chat-20261111
+2026-11-17T17:36:29.6062967Z ##[endgroup]
+2026-11-17T17:36:29.6063725Z ##[group]Determining the checkout info
+2026-11-17T17:36:29.6065800Z ##[endgroup]
+2026-11-17T17:36:29.6072205Z [command]/usr/bin/git sparse-checkout disable
+2026-11-17T17:36:29.6145923Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-17T17:36:29.6185309Z ##[group]Checking out the ref
+2026-11-17T17:36:29.6190563Z [command]/usr/bin/git checkout --progress --force -B workstream/r12-lean-m2-r23-cost12-chat-20261111 refs/remotes/origin/workstream/r12-lean-m2-r23-cost12-chat-20261111
+2026-11-17T17:36:29.6967256Z Switched to a new branch 'workstream/r12-lean-m2-r23-cost12-chat-20261111'
+2026-11-17T17:36:29.6972234Z branch 'workstream/r12-lean-m2-r23-cost12-chat-20261111' set up to track 'origin/workstream/r12-lean-m2-r23-cost12-chat-20261111'.
+2026-11-17T17:36:29.6981454Z ##[endgroup]
+2026-11-17T17:36:29.7044205Z [command]/usr/bin/git log -1 --format=%H
+2026-11-17T17:36:29.7079979Z a3b9020f37ef4b8e0e6c50bdb6561bdc6b7f52de
+2026-11-17T17:36:29.7090463Z ##[group]Removing auth
+2026-11-17T17:36:29.7094108Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-17T17:36:29.7134724Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-17T17:36:29.7380556Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-17T17:36:29.7416345Z http.https://github.com/.extraheader
+2026-11-17T17:36:29.7426337Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-17T17:36:29.7473155Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-17T17:36:29.7712500Z ##[endgroup]
+2026-11-17T17:36:29.8219281Z ##[group]Run set -euo pipefail
+2026-11-17T17:36:29.8219743Z [36;1mset -euo pipefail[0m
+2026-11-17T17:36:29.8220487Z [36;1mcurl -fL --retry 3 https://github.com/leanprover/lean4/releases/download/v4.35.0/lean-4.35.0-linux.tar.zst -o "$RUNNER_TEMP/lean.tar.zst"[0m
+2026-11-17T17:36:29.8221509Z [36;1mecho "7289597a44543246c9227b8cae501767e095ce17f6d448b95fc4a8dc97268f6d  $RUNNER_TEMP/lean.tar.zst" | sha256sum -c -[0m
+2026-11-17T17:36:29.8222253Z [36;1mtar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"[0m
+2026-11-17T17:36:29.8222768Z [36;1mecho "$RUNNER_TEMP/lean-4.35.0-linux/bin" >> "$GITHUB_PATH"[0m
+2026-11-17T17:36:29.8249080Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-17T17:36:29.8249523Z env:
+2026-11-17T17:36:29.8249773Z   LEAN_NUM_THREADS: 2
+2026-11-17T17:36:29.8250052Z ##[endgroup]
+2026-11-17T17:36:29.8500138Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2026-11-17T17:36:29.8501056Z                                  Dload  Upload   Total   Spent    Left  Speed
+2026-11-17T17:36:29.8501409Z 
+2026-11-17T17:36:29.9500801Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2026-11-17T17:36:29.9501730Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2026-11-17T17:36:30.6505417Z 
+2026-11-17T17:36:31.6506115Z  21  566M   21  120M    0     0   149M      0  0:00:03 --:--:--  0:00:03  149M
+2026-11-17T17:36:32.6547825Z  48  566M   48  275M    0     0   153M      0  0:00:03  0:00:01  0:00:02  155M
+2026-11-17T17:36:33.1692898Z  83  566M   83  475M    0     0   169M      0  0:00:03  0:00:02  0:00:01  177M
+2026-11-17T17:36:33.1694132Z 100  566M  100  566M    0     0   170M      0  0:00:03  0:00:03 --:--:--  177M
+2026-11-17T17:36:33.6048815Z /home/runner/work/_temp/lean.tar.zst: OK
+2026-11-17T17:36:39.2045126Z ##[group]Run set -euo pipefail
+2026-11-17T17:36:39.2045767Z [36;1mset -euo pipefail[0m
+2026-11-17T17:36:39.2046170Z [36;1mprobe="$RUNNER_TEMP/eg617-standalone-ascii"[0m
+2026-11-17T17:36:39.2046621Z [36;1mmkdir -p "$probe"[0m
+2026-11-17T17:36:39.2047787Z [36;1mgit -C "$GITHUB_WORKSPACE" archive HEAD r12_master/workstreams/r12-lean-m2-r23-cost12-chat-20261111 | tar -xf - -C "$probe" --strip-components=3[0m
+2026-11-17T17:36:39.2048701Z [36;1mtest ! -e "$probe/.git"[0m
+2026-11-17T17:36:39.2049057Z [36;1mtest ! -e "$probe/lean/.lake"[0m
+2026-11-17T17:36:39.2049429Z [36;1mcd "$probe"[0m
+2026-11-17T17:36:39.2049870Z [36;1mecho "STANDALONE_ASCII_BUILD_ROOT=$PWD; NO_GIT_OR_PROJECT_CACHE"[0m
+2026-11-17T17:36:39.2050395Z [36;1mbash build-linux.sh[0m
+2026-11-17T17:36:39.2074627Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-17T17:36:39.2075007Z env:
+2026-11-17T17:36:39.2075217Z   LEAN_NUM_THREADS: 2
+2026-11-17T17:36:39.2075449Z ##[endgroup]
+2026-11-17T17:36:39.2835774Z STANDALONE_ASCII_BUILD_ROOT=/home/runner/work/_temp/eg617-standalone-ascii; NO_GIT_OR_PROJECT_CACHE
+2026-11-17T17:36:39.3333744Z Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+2026-11-17T17:36:39.3382382Z Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+2026-11-17T17:36:39.3395625Z Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+2026-11-17T17:36:39.3826043Z Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)
+2026-11-17T17:36:39.8272493Z info: mathlib: materializing new dependency
+2026-11-17T17:36:39.9516761Z info: mathlib: fetching revision '56a005855ea17e0b0958f73ec801ae140b0a1679' from https://github.com/leanprover-community/mathlib4.git
+2026-11-17T17:36:42.5263476Z info: mathlib: checking out revision '56a005855ea17e0b0958f73ec801ae140b0a1679'
+2026-11-17T17:36:54.1912535Z info: plausible: materializing new dependency
+2026-11-17T17:36:54.2836441Z info: plausible: fetching revision 'dfa4f38190d07c37e315953e08b90fe2d95b3c24' from https://github.com/leanprover-community/plausible
+2026-11-17T17:36:54.5857211Z info: plausible: checking out revision 'dfa4f38190d07c37e315953e08b90fe2d95b3c24'
+2026-11-17T17:36:55.1308781Z info: LeanSearchClient: materializing new dependency
+2026-11-17T17:36:55.2217347Z info: LeanSearchClient: fetching revision 'd6b4c7be5be75ec4917c873ac50c756dc1436372' from https://github.com/leanprover-community/LeanSearchClient
+2026-11-17T17:36:55.5272542Z info: LeanSearchClient: checking out revision 'd6b4c7be5be75ec4917c873ac50c756dc1436372'
+2026-11-17T17:36:56.0928918Z info: importGraph: materializing new dependency
+2026-11-17T17:36:56.1836428Z info: importGraph: fetching revision 'a41f0e9a4dea23188ea9cc1c41ac9f8bbafe0b93' from https://github.com/leanprover-community/import-graph
+2026-11-17T17:36:56.4890120Z info: importGraph: checking out revision 'a41f0e9a4dea23188ea9cc1c41ac9f8bbafe0b93'
+2026-11-17T17:36:57.0628010Z info: proofwidgets: materializing new dependency
+2026-11-17T17:36:57.1535410Z info: proofwidgets: fetching revision 'df72b022e558978a1c50264cfc4d7fec86fa8e04' from https://github.com/leanprover-community/ProofWidgets4
+2026-11-17T17:36:57.9187924Z info: proofwidgets: checking out revision 'df72b022e558978a1c50264cfc4d7fec86fa8e04'
+2026-11-17T17:37:00.0367351Z info: aesop: materializing new dependency
+2026-11-17T17:37:00.1292967Z info: aesop: fetching revision '4a174c490d8707121c4a9290800489f105d85e07' from https://github.com/leanprover-community/aesop
+2026-11-17T17:37:00.4593872Z info: aesop: checking out revision '4a174c490d8707121c4a9290800489f105d85e07'
+2026-11-17T17:37:01.1395180Z info: Qq: materializing new dependency
+2026-11-17T17:37:01.2347212Z info: Qq: fetching revision 'dce0ad79c486cb1fb504af04f953c3466b0c6db8' from https://github.com/leanprover-community/quote4
+2026-11-17T17:37:01.5428902Z info: Qq: checking out revision 'dce0ad79c486cb1fb504af04f953c3466b0c6db8'
+2026-11-17T17:37:02.1440551Z info: batteries: materializing new dependency
+2026-11-17T17:37:02.2372815Z info: batteries: fetching revision '66e469188fe07963e5cf666c7d4433f45b8131c5' from https://github.com/leanprover-community/batteries
+2026-11-17T17:37:02.8521618Z info: batteries: checking out revision '66e469188fe07963e5cf666c7d4433f45b8131c5'
+2026-11-17T17:37:03.6093902Z info: Cli: materializing new dependency
+2026-11-17T17:37:03.7020211Z info: Cli: fetching revision 'c24fe6078c630e89b489bffe59b3e20ac30d12c8' from https://github.com/leanprover/lean4-cli
+2026-11-17T17:37:04.0470998Z info: Cli: checking out revision 'c24fe6078c630e89b489bffe59b3e20ac30d12c8'
+2026-11-17T17:37:05.3666166Z ✔ [3/9] Built Cache.Cli (360ms)
+2026-11-17T17:37:05.6669697Z ✔ [5/13] Built Cache.Lean (434ms)
+2026-11-17T17:37:06.0689070Z ✔ [6/13] Built Cache.Env (377ms)
+2026-11-17T17:37:06.3689356Z ✔ [7/13] Built Batteries.Tactic.OpenPrivate (990ms)
+2026-11-17T17:37:06.4688076Z ✔ [8/13] Built Cache.Infra (432ms)
+2026-11-17T17:37:06.9701639Z ✔ [10/43] Built Cache.Location (503ms)
+2026-11-17T17:37:07.1959023Z ✔ [11/43] Built Cache.Cli:c.o (229ms)
+2026-11-17T17:37:07.4963312Z ✔ [12/43] Built Cache.Lean:c.o (233ms)
+2026-11-17T17:37:07.8969130Z ✔ [13/43] Built Cache.IO (1.5s)
+2026-11-17T17:37:08.0963953Z ✔ [14/43] Built Cache.Env:c.o (208ms)
+2026-11-17T17:37:08.2967780Z ✔ [15/43] Built Cache.Infra:c.o (225ms)
+2026-11-17T17:37:08.5973088Z ✔ [16/43] Built Cache.Location:c.o (290ms)
+2026-11-17T17:37:08.6986708Z ✔ [17/43] Built Batteries.Tactic.OpenPrivate:c.o (1.2s)
+2026-11-17T17:37:09.3994777Z ✔ [18/43] Built Cache.Hashing (674ms)
+2026-11-17T17:37:10.0021723Z ✔ [19/43] Built Cache.Hashing:c.o (636ms)
+2026-11-17T17:37:10.3997339Z ✔ [20/43] Built Cache.IO:c.o (1.8s)
+2026-11-17T17:37:11.6175390Z ✔ [21/43] Built Cache.Requests (1.6s)
+2026-11-17T17:37:12.1181484Z ✔ [22/43] Built Cache.Marker (437ms)
+2026-11-17T17:37:12.3184823Z ✔ [23/43] Built Cache.Marker:c.o (191ms)
+2026-11-17T17:37:12.7189082Z ✔ [24/43] Built Cache.Upload.Curl (467ms)
+2026-11-17T17:37:13.2194940Z ✔ [25/43] Built Cache.Upload.Rclone (489ms)
+2026-11-17T17:37:13.7398417Z ✔ [26/43] Built Cache.Query (538ms)
+2026-11-17T17:37:14.0393535Z ✔ [27/43] Built Cache.Upload.Curl:c.o (246ms)
+2026-11-17T17:37:14.3398751Z ✔ [28/43] Built Cache.Upload.Rclone:c.o (295ms)
+2026-11-17T17:37:14.5409036Z ✔ [29/43] Built Cache.Requests:c.o (2.9s)
+2026-11-17T17:37:14.6404954Z ✔ [30/43] Built Cache.Query:c.o (331ms)
+2026-11-17T17:37:14.9416535Z ✔ [31/43] Built Cache.Upload.Azure (431ms)
+2026-11-17T17:37:15.2419001Z ✔ [32/43] Built Cache.Upload.S3 (576ms)
+2026-11-17T17:37:15.4422504Z ✔ [33/43] Built Cache.Upload.Azure:c.o (233ms)
+2026-11-17T17:37:15.5424859Z ✔ [34/43] Built Cache.Warning (592ms)
+2026-11-17T17:37:15.7543656Z ✔ [35/43] Built Cache.Upload.S3:c.o (359ms)
+2026-11-17T17:37:15.9549341Z ✔ [36/43] Built Cache.Warning:c.o (377ms)
+2026-11-17T17:37:16.2554023Z ✔ [37/43] Built Cache.Upload.Defs (424ms)
+2026-11-17T17:37:16.4556335Z ✔ [38/43] Built Cache.Upload.Defs:c.o (219ms)
+2026-11-17T17:37:16.6559028Z ✔ [39/43] Built Cache.Upload (401ms)
+2026-11-17T17:37:16.7560082Z ✔ [40/43] Built Cache.Upload:c.o (184ms)
+2026-11-17T17:37:17.5569959Z ✔ [41/43] Built Cache.Main (970ms)
+2026-11-17T17:37:18.6586024Z ✔ [42/43] Built Cache.Main:c.o (1.1s)
+2026-11-17T17:37:19.3602500Z ✔ [43/43] Built cache:exe (693ms)
+2026-11-17T17:37:21.8458870Z Current branch: HEAD
+2026-11-17T17:37:21.8459545Z Using cache from origin: (some leanprover-community/mathlib4)
+2026-11-17T17:37:21.8460794Z Attempting to download 1300 file(s) from leanprover-community/mathlib4 cache at https://cache.mathlib.org/mathlib4-master
+2026-11-17T17:37:21.9787299Z 
+2026-11-17T17:37:22.0781386Z Downloaded: 1 file(s) [attempted 1/1300 = 0%, 95 KB/s]
+2026-11-17T17:37:22.1796609Z Downloaded: 45 file(s) [attempted 45/1300 = 3%, 61 KB/s]
+2026-11-17T17:37:22.2797353Z Downloaded: 137 file(s) [attempted 137/1300 = 10%, 415 KB/s]
+2026-11-17T17:37:22.3798667Z Downloaded: 230 file(s) [attempted 230/1300 = 17%, 4014 KB/s]
+2026-11-17T17:37:22.4828802Z Downloaded: 304 file(s) [attempted 304/1300 = 23%, 454 KB/s]
+2026-11-17T17:37:22.5869035Z Downloaded: 388 file(s) [attempted 388/1300 = 29%, 645 KB/s]
+2026-11-17T17:37:22.6899209Z Downloaded: 467 file(s) [attempted 467/1300 = 35%, 59 KB/s]
+2026-11-17T17:37:22.7871868Z Downloaded: 555 file(s) [attempted 555/1300 = 42%, 1741 KB/s]
+2026-11-17T17:37:22.8888798Z Downloaded: 673 file(s) [attempted 673/1300 = 51%, 1224 KB/s]
+2026-11-17T17:37:22.9911971Z Downloaded: 798 file(s) [attempted 798/1300 = 61%, 1201 KB/s]
+2026-11-17T17:37:23.0942429Z Downloaded: 890 file(s) [attempted 890/1300 = 68%, 1518 KB/s]
+2026-11-17T17:37:23.1952349Z Downloaded: 998 file(s) [attempted 998/1300 = 76%, 1589 KB/s]
+2026-11-17T17:37:23.3155654Z Downloaded: 1090 file(s) [attempted 1090/1300 = 83%, 141 KB/s]
+2026-11-17T17:37:23.4180119Z Downloaded: 1177 file(s) [attempted 1177/1300 = 90%, 589 KB/s]
+2026-11-17T17:37:23.4850645Z Downloaded: 1232 file(s) [attempted 1232/1300 = 94%, 646 KB/s]
+2026-11-17T17:37:23.4858603Z Downloaded: 1300 file(s) [attempted 1300/1300 = 100%, 646 KB/s]
+2026-11-17T17:37:23.4859921Z Still decompressing downloaded files...
+2026-11-17T17:37:26.4518665Z Decompressed 1300 file(s)
+2026-11-17T17:37:26.4519203Z Already decompressed 1300 file(s)
+2026-11-17T17:37:26.5845083Z lean-toolchain: OK
+2026-11-17T17:37:26.5845550Z lakefile.lean: OK
+2026-11-17T17:37:26.5845949Z lake-manifest.json: OK
+2026-11-17T17:37:26.8016666Z PIN_PASS plausible dfa4f38190d07c37e315953e08b90fe2d95b3c24
+2026-11-17T17:37:26.8047531Z PIN_PASS LeanSearchClient d6b4c7be5be75ec4917c873ac50c756dc1436372
+2026-11-17T17:37:26.8072734Z PIN_PASS importGraph a41f0e9a4dea23188ea9cc1c41ac9f8bbafe0b93
+2026-11-17T17:37:26.8096623Z PIN_PASS proofwidgets df72b022e558978a1c50264cfc4d7fec86fa8e04
+2026-11-17T17:37:26.8120340Z PIN_PASS aesop 4a174c490d8707121c4a9290800489f105d85e07
+2026-11-17T17:37:26.8143922Z PIN_PASS Qq dce0ad79c486cb1fb504af04f953c3466b0c6db8
+2026-11-17T17:37:26.8172686Z PIN_PASS batteries 66e469188fe07963e5cf666c7d4433f45b8131c5
+2026-11-17T17:37:26.8198034Z PIN_PASS Cli c24fe6078c630e89b489bffe59b3e20ac30d12c8
+2026-11-17T17:37:26.8224226Z PIN_PASS mathlib 56a005855ea17e0b0958f73ec801ae140b0a1679
+2026-11-17T17:37:34.1353802Z ✔ [1270/1280] Built EG617.Basic.Definitions (1.0s)
+2026-11-17T17:37:35.0498971Z ✔ [1271/1280] Built EG617.Basic.OriginalProblem (947ms)
+2026-11-17T17:37:36.0512064Z ✔ [1272/1281] Built EG617.Basic.ColoringLemmas (996ms)
+2026-11-17T17:37:36.2515801Z ✔ [1273/1283] Built EG617.Combinatorics.TuranArithmetic (3.1s)
+2026-11-17T17:37:37.0529647Z ✔ [1275/1283] Built EG617.Frontend.ColoringReduction (967ms)
+2026-11-17T17:37:37.4531475Z ✔ [1278/1353] Built EG617.Core.OddCycleArithmetic (1.2s)
+2026-11-17T17:37:38.0541056Z ✔ [1322/1353] Built EG617.Frontend.EdgeCounting (1.1s)
+2026-11-17T17:37:39.2557063Z ✔ [1323/1353] Built EG617.Frontend.TuranBounds (1.1s)
+2026-11-17T17:37:40.3571566Z ✔ [1324/1353] Built EG617.Frontend.HereditaryCaps (1.1s)
+2026-11-17T17:37:41.4621542Z ✔ [1325/1353] Built EG617.Core.Admissibility (1.2s)
+2026-11-17T17:37:42.8653709Z ⚠ [1326/1353] Built EG617.Core.R224 (1.4s)
+2026-11-17T17:37:42.8655080Z warning: EG617/Core/R224.lean:75:2: Try this: 
+2026-11-17T17:37:42.8656362Z   haveI̵
+2026-11-17T17:37:42.8656574Z 
+2026-11-17T17:37:42.8656876Z The goal is a proposition, so `have` is preferred over `haveI`.
+2026-11-17T17:37:42.8657976Z The difference between `have` and `haveI` is that `haveI` inlines the value.
+2026-11-17T17:37:42.8658739Z But this is not relevant for proofs because of proof irrelevance.
+2026-11-17T17:37:42.8659173Z 
+2026-11-17T17:37:42.8659513Z Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+2026-11-17T17:37:44.3709025Z ⚠ [1327/1353] Built EG617.Core.EdgePartition (1.5s)
+2026-11-17T17:37:44.3710497Z warning: EG617/Core/EdgePartition.lean:19:0: automatically included section variable(s) unused in theorem `EG617.adjCount_eq_sum_filter`:
+2026-11-17T17:37:44.3711733Z   [Fintype V]
+2026-11-17T17:37:44.3712588Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:37:44.3713657Z   omit [Fintype V] in theorem ...
+2026-11-17T17:37:44.3713848Z 
+2026-11-17T17:37:44.3714100Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:37:44.3715278Z warning: EG617/Core/EdgePartition.lean:47:0: automatically included section variable(s) unused in theorem `EG617.adjCount_symm`:
+2026-11-17T17:37:44.3715864Z   [Fintype V]
+2026-11-17T17:37:44.3716342Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:37:44.3716916Z   omit [Fintype V] in theorem ...
+2026-11-17T17:37:44.3717096Z 
+2026-11-17T17:37:44.3717337Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:37:44.3718371Z warning: EG617/Core/EdgePartition.lean:58:0: automatically included section variable(s) unused in theorem `EG617.adjCount_union_left`:
+2026-11-17T17:37:44.3718975Z   [Fintype V]
+2026-11-17T17:37:44.3719454Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:37:44.3720007Z   omit [Fintype V] in theorem ...
+2026-11-17T17:37:44.3720184Z 
+2026-11-17T17:37:44.3720415Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:37:44.3721160Z warning: EG617/Core/EdgePartition.lean:63:0: automatically included section variable(s) unused in theorem `EG617.adjCount_union_right`:
+2026-11-17T17:37:44.3721759Z   [Fintype V]
+2026-11-17T17:37:44.3722216Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:37:44.3723003Z   omit [Fintype V] in theorem ...
+2026-11-17T17:37:44.3723177Z 
+2026-11-17T17:37:44.3723408Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:37:44.3724157Z warning: EG617/Core/EdgePartition.lean:107:0: automatically included section variable(s) unused in theorem `EG617.adjCount_independent_zero`:
+2026-11-17T17:37:44.3724769Z   [Fintype V]
+2026-11-17T17:37:44.3725221Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:37:44.3725760Z   omit [Fintype V] in theorem ...
+2026-11-17T17:37:44.3725934Z 
+2026-11-17T17:37:44.3726160Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:37:44.5775713Z ✔ [1328/1353] Built EG617.Core.OddCycleStructure (1.7s)
+2026-11-17T17:37:45.8801343Z ⚠ [1329/1353] Built EG617.Core.OddCycleBound (1.3s)
+2026-11-17T17:37:45.8802621Z warning: EG617/Core/OddCycleBound.lean:18:0: automatically included section variable(s) unused in theorem `EG617.cycle_support_card`:
+2026-11-17T17:37:45.8803773Z   [Fintype V]
+2026-11-17T17:37:45.8804727Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:37:45.8805681Z   omit [Fintype V] in theorem ...
+2026-11-17T17:37:45.8805915Z 
+2026-11-17T17:37:45.8806239Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:37:45.8807751Z warning: EG617/Core/OddCycleBound.lean:64:0: automatically included section variable(s) unused in theorem `EG617.twice_subset_independent_card_le_of_induced_degree_two`:
+2026-11-17T17:37:45.8808752Z   [Fintype V]
+2026-11-17T17:37:45.8809364Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:37:45.8810080Z   omit [Fintype V] in theorem ...
+2026-11-17T17:37:45.8810304Z 
+2026-11-17T17:37:45.8810613Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:37:45.8811638Z warning: EG617/Core/OddCycleBound.lean:100:0: automatically included section variable(s) unused in theorem `EG617.triangleFree_induced_mantel`:
+2026-11-17T17:37:45.8812483Z   [Fintype V]
+2026-11-17T17:37:45.8813084Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:37:45.8813898Z   omit [Fintype V] in theorem ...
+2026-11-17T17:37:45.8814084Z 
+2026-11-17T17:37:45.8814325Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:37:45.8814887Z warning: EG617/Core/OddCycleBound.lean:124:4: `simp` already closes the goal
+2026-11-17T17:37:45.8815202Z 
+2026-11-17T17:37:45.8815312Z Hint: Use `simp` instead of `simpa`:
+2026-11-17T17:37:45.8815577Z   [apply] simp
+2026-11-17T17:37:45.8815696Z 
+2026-11-17T17:37:45.8815928Z Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+2026-11-17T17:37:45.8816723Z warning: EG617/Core/OddCycleBound.lean:139:0: automatically included section variable(s) unused in theorem `EG617.shortestOddLoop_half_length_ge_two`:
+2026-11-17T17:37:45.8817642Z   [Fintype V]
+2026-11-17T17:37:45.8818130Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:37:45.8818672Z   omit [Fintype V] in theorem ...
+2026-11-17T17:37:45.8818846Z 
+2026-11-17T17:37:45.8819071Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:37:45.8819855Z warning: EG617/Core/OddCycleBound.lean:177:0: automatically included section variable(s) unused in theorem `EG617.shortestOddCycle_iff_shortestOddLoop`:
+2026-11-17T17:37:45.8820513Z   [Fintype V]
+2026-11-17T17:37:45.8820969Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:37:45.8821539Z   omit [Fintype V] in theorem ...
+2026-11-17T17:37:45.8821897Z 
+2026-11-17T17:37:45.8822127Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:37:47.1818023Z ⚠ [1330/1353] Built EG617.Core.R23Reduction (1.2s)
+2026-11-17T17:37:47.1818866Z warning: EG617/Core/R23Reduction.lean:78:4: `simp` already closes the goal
+2026-11-17T17:37:47.1819445Z 
+2026-11-17T17:37:47.1819649Z Hint: Use `simp` instead of `simpa`:
+2026-11-17T17:37:47.1820158Z   [apply] simp
+2026-11-17T17:37:47.1820367Z 
+2026-11-17T17:37:47.1820742Z Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+2026-11-17T17:37:49.2844156Z ⚠ [1331/1353] Built EG617.Core.BipartiteExterior (2.1s)
+2026-11-17T17:37:49.2845655Z warning: EG617/Core/BipartiteExterior.lean:40:0: automatically included section variable(s) unused in theorem `EG617.adjCount_eq_card_product_filter`:
+2026-11-17T17:37:49.2846718Z   [Fintype V]
+2026-11-17T17:37:49.2847836Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:37:49.2848926Z   omit [Fintype V] in theorem ...
+2026-11-17T17:37:49.2849251Z 
+2026-11-17T17:37:49.2849687Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:37:49.2850725Z warning: EG617/Core/BipartiteExterior.lean:64:2: `simp` already closes the goal
+2026-11-17T17:37:49.2851306Z 
+2026-11-17T17:37:49.2851432Z Hint: Use `simp` instead of `simpa`:
+2026-11-17T17:37:49.2851769Z   [apply] simp at hm
+2026-11-17T17:37:49.2851938Z 
+2026-11-17T17:37:49.2852217Z Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+2026-11-17T17:37:49.2853198Z warning: EG617/Core/BipartiteExterior.lean:55:0: automatically included section variable(s) unused in theorem `EG617.complete_cross_of_no_missing`:
+2026-11-17T17:37:49.2853996Z   [Fintype V]
+2026-11-17T17:37:49.2854590Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:37:49.2855266Z   omit [Fintype V] in theorem ...
+2026-11-17T17:37:49.2855473Z 
+2026-11-17T17:37:49.2855758Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:37:49.2856636Z warning: EG617/Core/BipartiteExterior.lean:66:0: automatically included section variable(s) unused in theorem `EG617.unique_missing_cross_of_card_one`:
+2026-11-17T17:37:49.2857288Z   [Fintype V]
+2026-11-17T17:37:49.2858333Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:37:49.2858889Z   omit [Fintype V] in theorem ...
+2026-11-17T17:37:49.2859068Z 
+2026-11-17T17:37:49.2859307Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:37:49.2859868Z warning: EG617/Core/BipartiteExterior.lean:105:4: `simp` already closes the goal
+2026-11-17T17:37:49.2860202Z 
+2026-11-17T17:37:49.2860313Z Hint: Use `simp` instead of `simpa`:
+2026-11-17T17:37:49.2860584Z   [apply] simp [hV]
+2026-11-17T17:37:49.2860721Z 
+2026-11-17T17:37:49.2860956Z Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+2026-11-17T17:37:50.5864618Z ✔ [1332/1353] Built EG617.Core.C5Types (1.3s)
+2026-11-17T17:37:52.0883509Z ✔ [1333/1353] Built EG617.Core.C5MissingEdge (1.4s)
+2026-11-17T17:37:53.4913626Z ⚠ [1334/1353] Built EG617.Core.R23ExactLedger (1.4s)
+2026-11-17T17:37:53.4914742Z warning: EG617/Core/R23ExactLedger.lean:14:0: automatically included section variable(s) unused in theorem `EG617.deficit_sum_add`:
+2026-11-17T17:37:53.4915654Z   [Fintype V]
+2026-11-17T17:37:53.4916364Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:37:53.4917200Z   omit [Fintype V] in theorem ...
+2026-11-17T17:37:53.4917690Z 
+2026-11-17T17:37:53.4918055Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:37:53.4919179Z warning: EG617/Core/R23ExactLedger.lean:21:0: automatically included section variable(s) unused in theorem `EG617.deficit_zero_iff`:
+2026-11-17T17:37:53.4920459Z   [Fintype V]
+2026-11-17T17:37:53.4921166Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:37:53.4921994Z   omit [Fintype V] in theorem ...
+2026-11-17T17:37:53.4922255Z 
+2026-11-17T17:37:53.4922598Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:37:54.5927837Z ⚠ [1335/1353] Built EG617.Core.R23TypeLift (1.1s)
+2026-11-17T17:37:54.5929244Z warning: EG617/Core/R23TypeLift.lean:45:0: automatically included section variable(s) unused in theorem `EG617.cycleNeighborLabels_card_eq`:
+2026-11-17T17:37:54.5930423Z   [Fintype V]
+2026-11-17T17:37:54.5931300Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:37:54.5932123Z   omit [Fintype V] in theorem ...
+2026-11-17T17:37:54.5932336Z 
+2026-11-17T17:37:54.5932671Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:37:55.8936262Z ✔ [1336/1353] Built EG617.Core.R23BalancedExterior (1.4s)
+2026-11-17T17:37:56.9950969Z ⚠ [1337/1353] Built EG617.Core.C5TypePresentation (1.1s)
+2026-11-17T17:37:56.9951889Z warning: EG617/Core/C5TypePresentation.lean:12:0: automatically included section variable(s) unused in theorem `EG617.cycleNeighborLabels_cycle_vertex`:
+2026-11-17T17:37:56.9952693Z   [Fintype V]
+2026-11-17T17:37:56.9953230Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:37:56.9953856Z   omit [Fintype V] in theorem ...
+2026-11-17T17:37:56.9954057Z 
+2026-11-17T17:37:56.9954320Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:37:58.3969435Z ✔ [1338/1353] Built EG617.Core.R23CompleteExterior (1.3s)
+2026-11-17T17:37:59.4972529Z ✔ [1339/1353] Built EG617.Core.C5TypeFibers (1.1s)
+2026-11-17T17:38:00.9973177Z ✔ [1340/1353] Built EG617.Core.R23CaseI (1.5s)
+2026-11-17T17:38:02.0986695Z ⚠ [1341/1353] Built EG617.Core.R23EdgeCompletion (1.1s)
+2026-11-17T17:38:02.0988283Z warning: EG617/Core/R23EdgeCompletion.lean:14:0: automatically included section variable(s) unused in theorem `EG617.triangleFree_sup_edge_of_no_common_neighbor`:
+2026-11-17T17:38:02.0989468Z   [Fintype V]
+2026-11-17T17:38:02.0990648Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:02.0991587Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:02.0991878Z 
+2026-11-17T17:38:02.0992251Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:03.2000082Z ✔ [1342/1353] Built EG617.Core.C5SingletonGraphLift (1.2s)
+2026-11-17T17:38:04.6016474Z ✔ [1343/1353] Built EG617.Core.R23CaseII (1.4s)
+2026-11-17T17:38:05.8032330Z ✔ [1344/1353] Built EG617.Core.C5MissingGraphLift (1.1s)
+2026-11-17T17:38:07.2039732Z ⚠ [1345/1353] Built EG617.Core.C5MissingTypeFibers (1.4s)
+2026-11-17T17:38:07.2041203Z warning: EG617/Core/C5MissingTypeFibers.lean:14:0: automatically included section variable(s) unused in theorem `EG617.missing_exterior_type_orientations`:
+2026-11-17T17:38:07.2042469Z   [Fintype V]
+2026-11-17T17:38:07.2043273Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:07.2044246Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:07.2044550Z 
+2026-11-17T17:38:07.2044952Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:07.2046040Z warning: EG617/Core/C5MissingTypeFibers.lean:96:42: `if_true` has been deprecated: Use `ite_true` instead
+2026-11-17T17:38:07.2046765Z 
+2026-11-17T17:38:07.2046936Z Hint: Replace the deprecated name:
+2026-11-17T17:38:07.2047828Z   i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+2026-11-17T17:38:07.2048861Z warning: EG617/Core/C5MissingTypeFibers.lean:97:21: `if_true` has been deprecated: Use `ite_true` instead
+2026-11-17T17:38:07.2050010Z 
+2026-11-17T17:38:07.2050194Z Hint: Replace the deprecated name:
+2026-11-17T17:38:07.2050772Z   i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+2026-11-17T17:38:07.2051600Z warning: EG617/Core/C5MissingTypeFibers.lean:98:42: `if_false` has been deprecated: Use `ite_false` instead
+2026-11-17T17:38:07.2052332Z 
+2026-11-17T17:38:07.2052502Z Hint: Replace the deprecated name:
+2026-11-17T17:38:07.2053043Z   i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+2026-11-17T17:38:07.2053927Z warning: EG617/Core/C5MissingTypeFibers.lean:99:21: `if_false` has been deprecated: Use `ite_false` instead
+2026-11-17T17:38:07.2054653Z 
+2026-11-17T17:38:07.2054820Z Hint: Replace the deprecated name:
+2026-11-17T17:38:07.2055374Z   i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+2026-11-17T17:38:07.2056518Z warning: EG617/Core/C5MissingTypeFibers.lean:72:0: automatically included section variable(s) unused in theorem `EG617.one_exception_type_fiber_card`:
+2026-11-17T17:38:07.2057940Z   [Fintype V]
+2026-11-17T17:38:07.2058760Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:07.2059738Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:07.2060043Z 
+2026-11-17T17:38:07.2060444Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:08.6054845Z ✔ [1346/1353] Built EG617.Core.R23Classification (1.5s)
+2026-11-17T17:38:09.9071451Z ⚠ [1347/1353] Built EG617.Core.CostSixCounts (1.3s)
+2026-11-17T17:38:09.9072307Z warning: EG617/Core/CostSixCounts.lean:49:67: This simp argument is unused:
+2026-11-17T17:38:09.9073017Z   Nat.mul_comm
+2026-11-17T17:38:09.9073233Z 
+2026-11-17T17:38:09.9073422Z Hint: Omit it from the simp argument list.
+2026-11-17T17:38:09.9073918Z   [apply] simp [h]
+2026-11-17T17:38:09.9074144Z 
+2026-11-17T17:38:09.9074523Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+2026-11-17T17:38:09.9075570Z warning: EG617/Core/CostSixCounts.lean:127:5: Variable name `hp` is not explicitly referenced.
+2026-11-17T17:38:09.9076311Z 
+2026-11-17T17:38:09.9077086Z Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+2026-11-17T17:38:09.9078435Z   [apply] _hp
+2026-11-17T17:38:09.9078638Z 
+2026-11-17T17:38:09.9079027Z Note: This linter can be disabled with `set_option linter.unusedVariables false`
+2026-11-17T17:38:09.9080520Z warning: EG617/Core/CostSixCounts.lean:127:19: Variable name `ha` is not explicitly referenced.
+2026-11-17T17:38:09.9081244Z 
+2026-11-17T17:38:09.9081993Z Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+2026-11-17T17:38:09.9083059Z   [apply] _ha
+2026-11-17T17:38:09.9083265Z 
+2026-11-17T17:38:09.9083650Z Note: This linter can be disabled with `set_option linter.unusedVariables false`
+2026-11-17T17:38:09.9084686Z warning: EG617/Core/CostSixCounts.lean:134:5: Variable name `hp` is not explicitly referenced.
+2026-11-17T17:38:09.9085356Z 
+2026-11-17T17:38:09.9086123Z Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+2026-11-17T17:38:09.9087177Z   [apply] _hp
+2026-11-17T17:38:09.9087595Z 
+2026-11-17T17:38:09.9087988Z Note: This linter can be disabled with `set_option linter.unusedVariables false`
+2026-11-17T17:38:09.9089046Z warning: EG617/Core/CostSixCounts.lean:134:18: Variable name `hq` is not explicitly referenced.
+2026-11-17T17:38:09.9089726Z 
+2026-11-17T17:38:09.9090474Z Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+2026-11-17T17:38:09.9091677Z   [apply] _hq
+2026-11-17T17:38:09.9091882Z 
+2026-11-17T17:38:09.9092275Z Note: This linter can be disabled with `set_option linter.unusedVariables false`
+2026-11-17T17:38:09.9093330Z warning: EG617/Core/CostSixCounts.lean:134:57: Variable name `he` is not explicitly referenced.
+2026-11-17T17:38:09.9094439Z 
+2026-11-17T17:38:09.9095187Z Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+2026-11-17T17:38:09.9096259Z   [apply] _he
+2026-11-17T17:38:09.9096463Z 
+2026-11-17T17:38:09.9096841Z Note: This linter can be disabled with `set_option linter.unusedVariables false`
+2026-11-17T17:38:11.4079202Z ✔ [1348/1353] Built EG617.Core.CostSixProfiles (1.5s)
+2026-11-17T17:38:13.1099345Z ⚠ [1349/1353] Built EG617.Core.CostSixDeletion (1.7s)
+2026-11-17T17:38:13.1100656Z warning: EG617/Core/CostSixDeletion.lean:12:0: automatically included section variable(s) unused in theorem `EG617.coreInducedEdgeCount_mono_graph`:
+2026-11-17T17:38:13.1101794Z   [Fintype V]
+2026-11-17T17:38:13.1102558Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:13.1103496Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:13.1103884Z 
+2026-11-17T17:38:13.1104310Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:13.1105730Z warning: EG617/Core/CostSixDeletion.lean:22:0: automatically included section variable(s) unused in theorem `EG617.independent_sup_edge_or_endpoints`:
+2026-11-17T17:38:13.1106896Z   [Fintype V]
+2026-11-17T17:38:13.1107912Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:13.1108883Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:13.1109171Z 
+2026-11-17T17:38:13.1109563Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:13.1110485Z warning: EG617/Core/CostSixDeletion.lean:58:4: `simp` already closes the goal
+2026-11-17T17:38:13.1111037Z 
+2026-11-17T17:38:13.1111209Z Hint: Use `simp` instead of `simpa`:
+2026-11-17T17:38:13.1111690Z   [apply] simp [SimpleGraph.edge_adj] at hxE
+2026-11-17T17:38:13.1112037Z 
+2026-11-17T17:38:13.1112424Z Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+2026-11-17T17:38:13.1113947Z warning: EG617/Core/CostSixDeletion.lean:46:0: automatically included section variable(s) unused in theorem `EG617.independent_sup_edge_neighbor_card`:
+2026-11-17T17:38:13.1115082Z   [Fintype V]
+2026-11-17T17:38:13.1115862Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:13.1117137Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:13.1117654Z 
+2026-11-17T17:38:13.1118055Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:14.2112808Z ✔ [1350/1353] Built EG617.Core.R335Neighborhood (1.1s)
+2026-11-17T17:38:15.9206862Z ⚠ [1351/1353] Built EG617.Core.R335Fourteen (1.7s)
+2026-11-17T17:38:15.9208621Z warning: EG617/Core/R335Fourteen.lean:33:0: automatically included section variable(s) unused in theorem `EG617.core_common_nonneighbors_clique`:
+2026-11-17T17:38:15.9209617Z   [Fintype V]
+2026-11-17T17:38:15.9210630Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:15.9211530Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:15.9211805Z 
+2026-11-17T17:38:15.9212163Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:15.9213001Z warning: EG617/Core/R335Fourteen.lean:49:15: This simp argument is unused:
+2026-11-17T17:38:15.9213627Z   hax
+2026-11-17T17:38:15.9213788Z 
+2026-11-17T17:38:15.9213963Z Hint: Omit it from the simp argument list.
+2026-11-17T17:38:15.9214627Z   [apply] simp [hxy, hay, hbx, hby, hab, Ne.symm hax, Ne.symm hay, Ne.symm hbx, Ne.symm hby]
+2026-11-17T17:38:15.9215148Z 
+2026-11-17T17:38:15.9215496Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+2026-11-17T17:38:15.9216291Z warning: EG617/Core/R335Fourteen.lean:49:20: This simp argument is unused:
+2026-11-17T17:38:15.9216875Z   hay
+2026-11-17T17:38:15.9217574Z 
+2026-11-17T17:38:15.9217750Z Hint: Omit it from the simp argument list.
+2026-11-17T17:38:15.9218406Z   [apply] simp [hxy, hax, hbx, hby, hab, Ne.symm hax, Ne.symm hay, Ne.symm hbx, Ne.symm hby]
+2026-11-17T17:38:15.9218987Z 
+2026-11-17T17:38:15.9219323Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+2026-11-17T17:38:15.9220107Z warning: EG617/Core/R335Fourteen.lean:49:25: This simp argument is unused:
+2026-11-17T17:38:15.9220703Z   hbx
+2026-11-17T17:38:15.9220859Z 
+2026-11-17T17:38:15.9221029Z Hint: Omit it from the simp argument list.
+2026-11-17T17:38:15.9221676Z   [apply] simp [hxy, hax, hay, hby, hab, Ne.symm hax, Ne.symm hay, Ne.symm hbx, Ne.symm hby]
+2026-11-17T17:38:15.9222196Z 
+2026-11-17T17:38:15.9222530Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+2026-11-17T17:38:15.9223361Z warning: EG617/Core/R335Fourteen.lean:49:30: This simp argument is unused:
+2026-11-17T17:38:15.9224011Z   hby
+2026-11-17T17:38:15.9224189Z 
+2026-11-17T17:38:15.9224387Z Hint: Omit it from the simp argument list.
+2026-11-17T17:38:15.9225104Z   [apply] simp [hxy, hax, hay, hbx, hab, Ne.symm hax, Ne.symm hay, Ne.symm hbx, Ne.symm hby]
+2026-11-17T17:38:15.9225673Z 
+2026-11-17T17:38:15.9226045Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+2026-11-17T17:38:15.9227591Z warning: EG617/Core/R335Fourteen.lean:69:0: automatically included section variable(s) unused in theorem `EG617.core_pair_cross_lower_bound`:
+2026-11-17T17:38:15.9228692Z   [Fintype V]
+2026-11-17T17:38:15.9229501Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:15.9230458Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:15.9230756Z 
+2026-11-17T17:38:15.9231165Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:15.9232294Z warning: EG617/Core/R335Fourteen.lean:87:0: automatically included section variable(s) unused in theorem `EG617.core_induce_compl`:
+2026-11-17T17:38:15.9233327Z   [Fintype V]
+2026-11-17T17:38:15.9234135Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:15.9235089Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:15.9235389Z 
+2026-11-17T17:38:15.9235779Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:17.1212350Z ✔ [1352/1353] Built EG617.Core.R335Sharp (1.2s)
+2026-11-17T17:38:18.1224217Z ℹ [1353/1353] Built EG617.Audit.R335Sharp (973ms)
+2026-11-17T17:38:18.1225467Z info: EG617/Audit/R335Sharp.lean:3:0: EG617.core_R335_degree_ne_eleven.{u} {V : Type u} [Fintype V] (G : SimpleGraph V) (hV : Fintype.card V = 35)
+2026-11-17T17:38:18.1227142Z   (hG : EG617.CoreAdmissible 3 G) (v : V) : G.degree v ≠ 11
+2026-11-17T17:38:18.1228616Z info: EG617/Audit/R335Sharp.lean:4:0: 'EG617.core_R335_degree_ne_eleven' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-17T17:38:18.1230067Z info: EG617/Audit/R335Sharp.lean:5:0: EG617.core_R335_degree_ge_twelve.{u} {V : Type u} [Fintype V] (G : SimpleGraph V) (hV : Fintype.card V = 35)
+2026-11-17T17:38:18.1230976Z   (hG : EG617.CoreAdmissible 3 G) (v : V) : 12 ≤ G.degree v
+2026-11-17T17:38:18.1231766Z info: EG617/Audit/R335Sharp.lean:6:0: 'EG617.core_R335_degree_ge_twelve' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-17T17:38:18.1232882Z info: EG617/Audit/R335Sharp.lean:7:0: EG617.core_R335_edges_ge_210.{u} {V : Type u} [Fintype V] (G : SimpleGraph V) (hV : Fintype.card V = 35)
+2026-11-17T17:38:18.1234052Z   (hG : EG617.CoreAdmissible 3 G) : 210 ≤ G.edgeFinset.card
+2026-11-17T17:38:18.1235392Z info: EG617/Audit/R335Sharp.lean:8:0: 'EG617.core_R335_edges_ge_210' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-17T17:38:18.1265922Z Build completed successfully (1353 jobs).
+2026-11-17T17:38:21.4501143Z ⚠ [1316/1354] Replayed EG617.Core.R224
+2026-11-17T17:38:21.4501532Z warning: EG617/Core/R224.lean:75:2: Try this: 
+2026-11-17T17:38:21.4502130Z   haveI̵
+2026-11-17T17:38:21.4502258Z 
+2026-11-17T17:38:21.4502447Z The goal is a proposition, so `have` is preferred over `haveI`.
+2026-11-17T17:38:21.4502941Z The difference between `have` and `haveI` is that `haveI` inlines the value.
+2026-11-17T17:38:21.4503433Z But this is not relevant for proofs because of proof irrelevance.
+2026-11-17T17:38:21.4503722Z 
+2026-11-17T17:38:21.4503972Z Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+2026-11-17T17:38:21.4504472Z ⚠ [1323/1354] Replayed EG617.Core.EdgePartition
+2026-11-17T17:38:21.4505134Z warning: EG617/Core/EdgePartition.lean:19:0: automatically included section variable(s) unused in theorem `EG617.adjCount_eq_sum_filter`:
+2026-11-17T17:38:21.4505979Z   [Fintype V]
+2026-11-17T17:38:21.4506463Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.4507020Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.4507205Z 
+2026-11-17T17:38:21.4507889Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.4508808Z warning: EG617/Core/EdgePartition.lean:47:0: automatically included section variable(s) unused in theorem `EG617.adjCount_symm`:
+2026-11-17T17:38:21.4509512Z   [Fintype V]
+2026-11-17T17:38:21.4510046Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.4510589Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.4510815Z 
+2026-11-17T17:38:21.4511450Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.4512714Z warning: EG617/Core/EdgePartition.lean:58:0: automatically included section variable(s) unused in theorem `EG617.adjCount_union_left`:
+2026-11-17T17:38:21.4513748Z   [Fintype V]
+2026-11-17T17:38:21.4514566Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.4515554Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.4515862Z 
+2026-11-17T17:38:21.4516262Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.4517796Z warning: EG617/Core/EdgePartition.lean:63:0: automatically included section variable(s) unused in theorem `EG617.adjCount_union_right`:
+2026-11-17T17:38:21.4518782Z   [Fintype V]
+2026-11-17T17:38:21.4519459Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.4520019Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.4520198Z 
+2026-11-17T17:38:21.4520437Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.4521205Z warning: EG617/Core/EdgePartition.lean:107:0: automatically included section variable(s) unused in theorem `EG617.adjCount_independent_zero`:
+2026-11-17T17:38:21.4522109Z   [Fintype V]
+2026-11-17T17:38:21.4522582Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.4523134Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.4523315Z 
+2026-11-17T17:38:21.4523540Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.4524099Z ⚠ [1324/1354] Replayed EG617.Core.OddCycleBound
+2026-11-17T17:38:21.4524821Z warning: EG617/Core/OddCycleBound.lean:18:0: automatically included section variable(s) unused in theorem `EG617.cycle_support_card`:
+2026-11-17T17:38:21.4525467Z   [Fintype V]
+2026-11-17T17:38:21.4525934Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.4526479Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.4526647Z 
+2026-11-17T17:38:21.4526880Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.4528324Z warning: EG617/Core/OddCycleBound.lean:64:0: automatically included section variable(s) unused in theorem `EG617.twice_subset_independent_card_le_of_induced_degree_two`:
+2026-11-17T17:38:21.4529315Z   [Fintype V]
+2026-11-17T17:38:21.4529774Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.4530313Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.4530486Z 
+2026-11-17T17:38:21.4530831Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.4531600Z warning: EG617/Core/OddCycleBound.lean:100:0: automatically included section variable(s) unused in theorem `EG617.triangleFree_induced_mantel`:
+2026-11-17T17:38:21.4532236Z   [Fintype V]
+2026-11-17T17:38:21.4532705Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.4533243Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.4533415Z 
+2026-11-17T17:38:21.4533641Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.4534296Z warning: EG617/Core/OddCycleBound.lean:124:4: `simp` already closes the goal
+2026-11-17T17:38:21.4534618Z 
+2026-11-17T17:38:21.4534725Z Hint: Use `simp` instead of `simpa`:
+2026-11-17T17:38:21.4534984Z   [apply] simp
+2026-11-17T17:38:21.4535102Z 
+2026-11-17T17:38:21.4535329Z Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+2026-11-17T17:38:21.4536119Z warning: EG617/Core/OddCycleBound.lean:139:0: automatically included section variable(s) unused in theorem `EG617.shortestOddLoop_half_length_ge_two`:
+2026-11-17T17:38:21.4536764Z   [Fintype V]
+2026-11-17T17:38:21.4537219Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.4538024Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.4538200Z 
+2026-11-17T17:38:21.4538422Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.4539237Z warning: EG617/Core/OddCycleBound.lean:177:0: automatically included section variable(s) unused in theorem `EG617.shortestOddCycle_iff_shortestOddLoop`:
+2026-11-17T17:38:21.4539996Z   [Fintype V]
+2026-11-17T17:38:21.4540452Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.4540988Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.4541161Z 
+2026-11-17T17:38:21.4541534Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.4542076Z ⚠ [1325/1354] Replayed EG617.Core.R23Reduction
+2026-11-17T17:38:21.4542617Z warning: EG617/Core/R23Reduction.lean:78:4: `simp` already closes the goal
+2026-11-17T17:38:21.4542959Z 
+2026-11-17T17:38:21.4543071Z Hint: Use `simp` instead of `simpa`:
+2026-11-17T17:38:21.4543441Z   [apply] simp
+2026-11-17T17:38:21.4543570Z 
+2026-11-17T17:38:21.4543796Z Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+2026-11-17T17:38:21.4544330Z ⚠ [1326/1354] Replayed EG617.Core.BipartiteExterior
+2026-11-17T17:38:21.4545036Z warning: EG617/Core/BipartiteExterior.lean:40:0: automatically included section variable(s) unused in theorem `EG617.adjCount_eq_card_product_filter`:
+2026-11-17T17:38:21.4545691Z   [Fintype V]
+2026-11-17T17:38:21.4546173Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.4546725Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.4546895Z 
+2026-11-17T17:38:21.4547133Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.4547965Z warning: EG617/Core/BipartiteExterior.lean:64:2: `simp` already closes the goal
+2026-11-17T17:38:21.4548305Z 
+2026-11-17T17:38:21.4548406Z Hint: Use `simp` instead of `simpa`:
+2026-11-17T17:38:21.4548678Z   [apply] simp at hm
+2026-11-17T17:38:21.4548820Z 
+2026-11-17T17:38:21.4549043Z Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+2026-11-17T17:38:21.4550011Z warning: EG617/Core/BipartiteExterior.lean:55:0: automatically included section variable(s) unused in theorem `EG617.complete_cross_of_no_missing`:
+2026-11-17T17:38:21.4550652Z   [Fintype V]
+2026-11-17T17:38:21.4551225Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.4551770Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.4551944Z 
+2026-11-17T17:38:21.4552182Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.4552980Z warning: EG617/Core/BipartiteExterior.lean:66:0: automatically included section variable(s) unused in theorem `EG617.unique_missing_cross_of_card_one`:
+2026-11-17T17:38:21.4553636Z   [Fintype V]
+2026-11-17T17:38:21.4554105Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.4554648Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.4554859Z 
+2026-11-17T17:38:21.4555098Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.4555651Z warning: EG617/Core/BipartiteExterior.lean:105:4: `simp` already closes the goal
+2026-11-17T17:38:21.4555974Z 
+2026-11-17T17:38:21.4556078Z Hint: Use `simp` instead of `simpa`:
+2026-11-17T17:38:21.4556346Z   [apply] simp [hV]
+2026-11-17T17:38:21.4556504Z 
+2026-11-17T17:38:21.4556732Z Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+2026-11-17T17:38:21.4557248Z ⚠ [1329/1354] Replayed EG617.Core.R23ExactLedger
+2026-11-17T17:38:21.4558204Z warning: EG617/Core/R23ExactLedger.lean:14:0: automatically included section variable(s) unused in theorem `EG617.deficit_sum_add`:
+2026-11-17T17:38:21.4558798Z   [Fintype V]
+2026-11-17T17:38:21.4559272Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.4559821Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.4560006Z 
+2026-11-17T17:38:21.4560233Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.4560967Z warning: EG617/Core/R23ExactLedger.lean:21:0: automatically included section variable(s) unused in theorem `EG617.deficit_zero_iff`:
+2026-11-17T17:38:21.4561562Z   [Fintype V]
+2026-11-17T17:38:21.4562186Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.4562734Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.4562901Z 
+2026-11-17T17:38:21.4563130Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.4563628Z ⚠ [1330/1354] Replayed EG617.Core.R23TypeLift
+2026-11-17T17:38:21.4564272Z warning: EG617/Core/R23TypeLift.lean:45:0: automatically included section variable(s) unused in theorem `EG617.cycleNeighborLabels_card_eq`:
+2026-11-17T17:38:21.4564886Z   [Fintype V]
+2026-11-17T17:38:21.4565351Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.4565893Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.4566057Z 
+2026-11-17T17:38:21.4566287Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.4566786Z ⚠ [1332/1354] Replayed EG617.Core.C5TypePresentation
+2026-11-17T17:38:21.4567744Z warning: EG617/Core/C5TypePresentation.lean:12:0: automatically included section variable(s) unused in theorem `EG617.cycleNeighborLabels_cycle_vertex`:
+2026-11-17T17:38:21.4568424Z   [Fintype V]
+2026-11-17T17:38:21.4568881Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.4569423Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.4569595Z 
+2026-11-17T17:38:21.4569816Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.5504624Z ⚠ [1341/1354] Replayed EG617.Core.R23EdgeCompletion
+2026-11-17T17:38:21.5506571Z warning: EG617/Core/R23EdgeCompletion.lean:14:0: automatically included section variable(s) unused in theorem `EG617.triangleFree_sup_edge_of_no_common_neighbor`:
+2026-11-17T17:38:21.5508360Z   [Fintype V]
+2026-11-17T17:38:21.5509299Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.5510381Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.5510816Z 
+2026-11-17T17:38:21.5511336Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.5512414Z ⚠ [1345/1354] Replayed EG617.Core.C5MissingTypeFibers
+2026-11-17T17:38:21.5513770Z warning: EG617/Core/C5MissingTypeFibers.lean:14:0: automatically included section variable(s) unused in theorem `EG617.missing_exterior_type_orientations`:
+2026-11-17T17:38:21.5515041Z   [Fintype V]
+2026-11-17T17:38:21.5515946Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.5517015Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.5517659Z 
+2026-11-17T17:38:21.5518186Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.5519395Z warning: EG617/Core/C5MissingTypeFibers.lean:96:42: `if_true` has been deprecated: Use `ite_true` instead
+2026-11-17T17:38:21.5520239Z 
+2026-11-17T17:38:21.5520568Z Hint: Replace the deprecated name:
+2026-11-17T17:38:21.5521278Z   i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+2026-11-17T17:38:21.5522219Z warning: EG617/Core/C5MissingTypeFibers.lean:97:21: `if_true` has been deprecated: Use `ite_true` instead
+2026-11-17T17:38:21.5523066Z 
+2026-11-17T17:38:21.5523375Z Hint: Replace the deprecated name:
+2026-11-17T17:38:21.5524208Z   i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+2026-11-17T17:38:21.5525178Z warning: EG617/Core/C5MissingTypeFibers.lean:98:42: `if_false` has been deprecated: Use `ite_false` instead
+2026-11-17T17:38:21.5526035Z 
+2026-11-17T17:38:21.5526369Z Hint: Replace the deprecated name:
+2026-11-17T17:38:21.5527048Z   i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+2026-11-17T17:38:21.5528234Z warning: EG617/Core/C5MissingTypeFibers.lean:99:21: `if_false` has been deprecated: Use `ite_false` instead
+2026-11-17T17:38:21.5529114Z 
+2026-11-17T17:38:21.5529436Z Hint: Replace the deprecated name:
+2026-11-17T17:38:21.5530115Z   i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+2026-11-17T17:38:21.5531662Z warning: EG617/Core/C5MissingTypeFibers.lean:72:0: automatically included section variable(s) unused in theorem `EG617.one_exception_type_fiber_card`:
+2026-11-17T17:38:21.5532962Z   [Fintype V]
+2026-11-17T17:38:21.5533891Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.5534980Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.5535408Z 
+2026-11-17T17:38:21.5535931Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.5536930Z ⚠ [1347/1354] Replayed EG617.Core.CostSixCounts
+2026-11-17T17:38:21.5538043Z warning: EG617/Core/CostSixCounts.lean:49:67: This simp argument is unused:
+2026-11-17T17:38:21.5538865Z   Nat.mul_comm
+2026-11-17T17:38:21.5539203Z 
+2026-11-17T17:38:21.5539516Z Hint: Omit it from the simp argument list.
+2026-11-17T17:38:21.5540160Z   [apply] simp [h]
+2026-11-17T17:38:21.5540513Z 
+2026-11-17T17:38:21.5541025Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+2026-11-17T17:38:21.5542164Z warning: EG617/Core/CostSixCounts.lean:127:5: Variable name `hp` is not explicitly referenced.
+2026-11-17T17:38:21.5542954Z 
+2026-11-17T17:38:21.5543821Z Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+2026-11-17T17:38:21.5545005Z   [apply] _hp
+2026-11-17T17:38:21.5545335Z 
+2026-11-17T17:38:21.5545875Z Note: This linter can be disabled with `set_option linter.unusedVariables false`
+2026-11-17T17:38:21.5547039Z warning: EG617/Core/CostSixCounts.lean:127:19: Variable name `ha` is not explicitly referenced.
+2026-11-17T17:38:21.5548382Z 
+2026-11-17T17:38:21.5549287Z Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+2026-11-17T17:38:21.5550518Z   [apply] _ha
+2026-11-17T17:38:21.5550907Z 
+2026-11-17T17:38:21.5551453Z Note: This linter can be disabled with `set_option linter.unusedVariables false`
+2026-11-17T17:38:21.5552668Z warning: EG617/Core/CostSixCounts.lean:134:5: Variable name `hp` is not explicitly referenced.
+2026-11-17T17:38:21.5553501Z 
+2026-11-17T17:38:21.5554397Z Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+2026-11-17T17:38:21.5555640Z   [apply] _hp
+2026-11-17T17:38:21.5556033Z 
+2026-11-17T17:38:21.5556549Z Note: This linter can be disabled with `set_option linter.unusedVariables false`
+2026-11-17T17:38:21.5557854Z warning: EG617/Core/CostSixCounts.lean:134:18: Variable name `hq` is not explicitly referenced.
+2026-11-17T17:38:21.5558648Z 
+2026-11-17T17:38:21.5559484Z Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+2026-11-17T17:38:21.5560618Z   [apply] _hq
+2026-11-17T17:38:21.5560933Z 
+2026-11-17T17:38:21.5561422Z Note: This linter can be disabled with `set_option linter.unusedVariables false`
+2026-11-17T17:38:21.5562535Z warning: EG617/Core/CostSixCounts.lean:134:57: Variable name `he` is not explicitly referenced.
+2026-11-17T17:38:21.5563362Z 
+2026-11-17T17:38:21.5564238Z Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+2026-11-17T17:38:21.5565411Z   [apply] _he
+2026-11-17T17:38:21.5565753Z 
+2026-11-17T17:38:21.5566263Z Note: This linter can be disabled with `set_option linter.unusedVariables false`
+2026-11-17T17:38:21.5567581Z ⚠ [1349/1354] Replayed EG617.Core.CostSixDeletion
+2026-11-17T17:38:21.5569006Z warning: EG617/Core/CostSixDeletion.lean:12:0: automatically included section variable(s) unused in theorem `EG617.coreInducedEdgeCount_mono_graph`:
+2026-11-17T17:38:21.5570275Z   [Fintype V]
+2026-11-17T17:38:21.5571207Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.5572278Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.5573021Z 
+2026-11-17T17:38:21.5573569Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.5575224Z warning: EG617/Core/CostSixDeletion.lean:22:0: automatically included section variable(s) unused in theorem `EG617.independent_sup_edge_or_endpoints`:
+2026-11-17T17:38:21.5576474Z   [Fintype V]
+2026-11-17T17:38:21.5577336Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.5578644Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.5579145Z 
+2026-11-17T17:38:21.5579705Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.5580865Z warning: EG617/Core/CostSixDeletion.lean:58:4: `simp` already closes the goal
+2026-11-17T17:38:21.5581668Z 
+2026-11-17T17:38:21.5582029Z Hint: Use `simp` instead of `simpa`:
+2026-11-17T17:38:21.5582710Z   [apply] simp [SimpleGraph.edge_adj] at hxE
+2026-11-17T17:38:21.5583188Z 
+2026-11-17T17:38:21.5583861Z Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+2026-11-17T17:38:21.5584830Z warning: EG617/Core/CostSixDeletion.lean:46:0: automatically included section variable(s) unused in theorem `EG617.independent_sup_edge_neighbor_card`:
+2026-11-17T17:38:21.5585615Z   [Fintype V]
+2026-11-17T17:38:21.5586208Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.5586872Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.5588001Z 
+2026-11-17T17:38:21.5588558Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.5589706Z ⚠ [1351/1354] Replayed EG617.Core.R335Fourteen
+2026-11-17T17:38:21.5591060Z warning: EG617/Core/R335Fourteen.lean:33:0: automatically included section variable(s) unused in theorem `EG617.core_common_nonneighbors_clique`:
+2026-11-17T17:38:21.5592228Z   [Fintype V]
+2026-11-17T17:38:21.5592900Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.5593581Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.5593934Z 
+2026-11-17T17:38:21.5594286Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.5594933Z warning: EG617/Core/R335Fourteen.lean:49:15: This simp argument is unused:
+2026-11-17T17:38:21.5595422Z   hax
+2026-11-17T17:38:21.5595640Z 
+2026-11-17T17:38:21.5595862Z Hint: Omit it from the simp argument list.
+2026-11-17T17:38:21.5596424Z   [apply] simp [hxy, hay, hbx, hby, hab, Ne.symm hax, Ne.symm hay, Ne.symm hbx, Ne.symm hby]
+2026-11-17T17:38:21.5596868Z 
+2026-11-17T17:38:21.5597206Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+2026-11-17T17:38:21.5598457Z warning: EG617/Core/R335Fourteen.lean:49:20: This simp argument is unused:
+2026-11-17T17:38:21.5599143Z   hay
+2026-11-17T17:38:21.5599267Z 
+2026-11-17T17:38:21.5599393Z Hint: Omit it from the simp argument list.
+2026-11-17T17:38:21.5599822Z   [apply] simp [hxy, hax, hbx, hby, hab, Ne.symm hax, Ne.symm hay, Ne.symm hbx, Ne.symm hby]
+2026-11-17T17:38:21.5600153Z 
+2026-11-17T17:38:21.5600379Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+2026-11-17T17:38:21.5600888Z warning: EG617/Core/R335Fourteen.lean:49:25: This simp argument is unused:
+2026-11-17T17:38:21.5601266Z   hbx
+2026-11-17T17:38:21.5601372Z 
+2026-11-17T17:38:21.5601483Z Hint: Omit it from the simp argument list.
+2026-11-17T17:38:21.5601900Z   [apply] simp [hxy, hax, hay, hby, hab, Ne.symm hax, Ne.symm hay, Ne.symm hbx, Ne.symm hby]
+2026-11-17T17:38:21.5602247Z 
+2026-11-17T17:38:21.5602470Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+2026-11-17T17:38:21.5602980Z warning: EG617/Core/R335Fourteen.lean:49:30: This simp argument is unused:
+2026-11-17T17:38:21.5603357Z   hby
+2026-11-17T17:38:21.5603458Z 
+2026-11-17T17:38:21.5603572Z Hint: Omit it from the simp argument list.
+2026-11-17T17:38:21.5604213Z   [apply] simp [hxy, hax, hay, hbx, hab, Ne.symm hax, Ne.symm hay, Ne.symm hbx, Ne.symm hby]
+2026-11-17T17:38:21.5604568Z 
+2026-11-17T17:38:21.5604786Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+2026-11-17T17:38:21.5605541Z warning: EG617/Core/R335Fourteen.lean:69:0: automatically included section variable(s) unused in theorem `EG617.core_pair_cross_lower_bound`:
+2026-11-17T17:38:21.5606177Z   [Fintype V]
+2026-11-17T17:38:21.5606650Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.5607206Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.5607617Z 
+2026-11-17T17:38:21.5607904Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:21.5608633Z warning: EG617/Core/R335Fourteen.lean:87:0: automatically included section variable(s) unused in theorem `EG617.core_induce_compl`:
+2026-11-17T17:38:21.5609211Z   [Fintype V]
+2026-11-17T17:38:21.5609667Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:21.5610208Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:21.5610380Z 
+2026-11-17T17:38:21.5610604Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:22.6509370Z ⚠ [1353/1354] Built EG617.Core.R336Sharp (1.1s)
+2026-11-17T17:38:22.6509993Z warning: EG617/Core/R336Sharp.lean:37:13: This simp argument is unused:
+2026-11-17T17:38:22.6510841Z   and_comm
+2026-11-17T17:38:22.6510999Z 
+2026-11-17T17:38:22.6511138Z Hint: Omit it from the simp argument list.
+2026-11-17T17:38:22.6511503Z   [apply] simp [S]
+2026-11-17T17:38:22.6511672Z 
+2026-11-17T17:38:22.6511962Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+2026-11-17T17:38:23.6521091Z ℹ [1354/1354] Built EG617.Audit.R336Sharp (1.0s)
+2026-11-17T17:38:23.6522209Z info: EG617/Audit/R336Sharp.lean:3:0: EG617.core_R336_degree_ge_thirteen.{u} {V : Type u} [Fintype V] (G : SimpleGraph V) (hV : Fintype.card V = 36)
+2026-11-17T17:38:23.6523348Z   (hG : EG617.CoreAdmissible 3 G) (v : V) : 13 ≤ G.degree v
+2026-11-17T17:38:23.6524295Z info: EG617/Audit/R336Sharp.lean:4:0: 'EG617.core_R336_degree_ge_thirteen' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-17T17:38:23.6525396Z info: EG617/Audit/R336Sharp.lean:5:0: EG617.core_R336_edges_ge_234.{u} {V : Type u} [Fintype V] (G : SimpleGraph V) (hV : Fintype.card V = 36)
+2026-11-17T17:38:23.6526237Z   (hG : EG617.CoreAdmissible 3 G) : 234 ≤ G.edgeFinset.card
+2026-11-17T17:38:23.6527016Z info: EG617/Audit/R336Sharp.lean:6:0: 'EG617.core_R336_edges_ge_234' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-17T17:38:23.6557604Z Build completed successfully (1354 jobs).
+2026-11-17T17:38:27.0149918Z ⚠ [1315/1334] Replayed EG617.Core.R224
+2026-11-17T17:38:27.0150318Z warning: EG617/Core/R224.lean:75:2: Try this: 
+2026-11-17T17:38:27.0150641Z   haveI̵
+2026-11-17T17:38:27.0150922Z 
+2026-11-17T17:38:27.0170170Z The goal is a proposition, so `have` is preferred over `haveI`.
+2026-11-17T17:38:27.0171011Z The difference between `have` and `haveI` is that `haveI` inlines the value.
+2026-11-17T17:38:27.0171839Z But this is not relevant for proofs because of proof irrelevance.
+2026-11-17T17:38:27.0172313Z 
+2026-11-17T17:38:27.0172716Z Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+2026-11-17T17:38:27.0173618Z ⚠ [1320/1334] Replayed EG617.Core.EdgePartition
+2026-11-17T17:38:27.0174747Z warning: EG617/Core/EdgePartition.lean:19:0: automatically included section variable(s) unused in theorem `EG617.adjCount_eq_sum_filter`:
+2026-11-17T17:38:27.0175849Z   [Fintype V]
+2026-11-17T17:38:27.0176668Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.0177905Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.0178210Z 
+2026-11-17T17:38:27.0178882Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.0180081Z warning: EG617/Core/EdgePartition.lean:47:0: automatically included section variable(s) unused in theorem `EG617.adjCount_symm`:
+2026-11-17T17:38:27.0181036Z   [Fintype V]
+2026-11-17T17:38:27.0181788Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.0182779Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.0183081Z 
+2026-11-17T17:38:27.0183479Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.0184782Z warning: EG617/Core/EdgePartition.lean:58:0: automatically included section variable(s) unused in theorem `EG617.adjCount_union_left`:
+2026-11-17T17:38:27.0185826Z   [Fintype V]
+2026-11-17T17:38:27.0186651Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.0187901Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.0188241Z 
+2026-11-17T17:38:27.0188663Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.0189992Z warning: EG617/Core/EdgePartition.lean:63:0: automatically included section variable(s) unused in theorem `EG617.adjCount_union_right`:
+2026-11-17T17:38:27.0191051Z   [Fintype V]
+2026-11-17T17:38:27.0191892Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.0192891Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.0193497Z 
+2026-11-17T17:38:27.0193904Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.0195255Z warning: EG617/Core/EdgePartition.lean:107:0: automatically included section variable(s) unused in theorem `EG617.adjCount_independent_zero`:
+2026-11-17T17:38:27.0196405Z   [Fintype V]
+2026-11-17T17:38:27.0197241Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.0198454Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.0198763Z 
+2026-11-17T17:38:27.0199179Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1146398Z ⚠ [1324/1357] Replayed EG617.Core.OddCycleBound
+2026-11-17T17:38:27.1148524Z warning: EG617/Core/OddCycleBound.lean:18:0: automatically included section variable(s) unused in theorem `EG617.cycle_support_card`:
+2026-11-17T17:38:27.1149836Z   [Fintype V]
+2026-11-17T17:38:27.1150938Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.1152101Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.1152573Z 
+2026-11-17T17:38:27.1153151Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1155058Z warning: EG617/Core/OddCycleBound.lean:64:0: automatically included section variable(s) unused in theorem `EG617.twice_subset_independent_card_le_of_induced_degree_two`:
+2026-11-17T17:38:27.1156939Z   [Fintype V]
+2026-11-17T17:38:27.1158154Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.1159358Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.1159846Z 
+2026-11-17T17:38:27.1160434Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1162066Z warning: EG617/Core/OddCycleBound.lean:100:0: automatically included section variable(s) unused in theorem `EG617.triangleFree_induced_mantel`:
+2026-11-17T17:38:27.1163465Z   [Fintype V]
+2026-11-17T17:38:27.1164446Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.1165682Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.1166220Z 
+2026-11-17T17:38:27.1166829Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1168868Z warning: EG617/Core/OddCycleBound.lean:124:4: `simp` already closes the goal
+2026-11-17T17:38:27.1169911Z 
+2026-11-17T17:38:27.1170364Z Hint: Use `simp` instead of `simpa`:
+2026-11-17T17:38:27.1171210Z   [apply] simp
+2026-11-17T17:38:27.1171723Z 
+2026-11-17T17:38:27.1172451Z Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+2026-11-17T17:38:27.1174194Z warning: EG617/Core/OddCycleBound.lean:139:0: automatically included section variable(s) unused in theorem `EG617.shortestOddLoop_half_length_ge_two`:
+2026-11-17T17:38:27.1175694Z   [Fintype V]
+2026-11-17T17:38:27.1176710Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.1178178Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.1178668Z 
+2026-11-17T17:38:27.1179287Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1181180Z warning: EG617/Core/OddCycleBound.lean:177:0: automatically included section variable(s) unused in theorem `EG617.shortestOddCycle_iff_shortestOddLoop`:
+2026-11-17T17:38:27.1182626Z   [Fintype V]
+2026-11-17T17:38:27.1183652Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.1184847Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.1185352Z 
+2026-11-17T17:38:27.1185935Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1187178Z ⚠ [1325/1357] Replayed EG617.Core.R23Reduction
+2026-11-17T17:38:27.1188840Z warning: EG617/Core/R23Reduction.lean:78:4: `simp` already closes the goal
+2026-11-17T17:38:27.1189616Z 
+2026-11-17T17:38:27.1189978Z Hint: Use `simp` instead of `simpa`:
+2026-11-17T17:38:27.1190794Z   [apply] simp
+2026-11-17T17:38:27.1191212Z 
+2026-11-17T17:38:27.1191796Z Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+2026-11-17T17:38:27.1193080Z ⚠ [1326/1357] Replayed EG617.Core.BipartiteExterior
+2026-11-17T17:38:27.1194681Z warning: EG617/Core/BipartiteExterior.lean:40:0: automatically included section variable(s) unused in theorem `EG617.adjCount_eq_card_product_filter`:
+2026-11-17T17:38:27.1196097Z   [Fintype V]
+2026-11-17T17:38:27.1197111Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.1198638Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.1199125Z 
+2026-11-17T17:38:27.1199691Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1200971Z warning: EG617/Core/BipartiteExterior.lean:64:2: `simp` already closes the goal
+2026-11-17T17:38:27.1201790Z 
+2026-11-17T17:38:27.1202141Z Hint: Use `simp` instead of `simpa`:
+2026-11-17T17:38:27.1202829Z   [apply] simp at hm
+2026-11-17T17:38:27.1203247Z 
+2026-11-17T17:38:27.1203908Z Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+2026-11-17T17:38:27.1205556Z warning: EG617/Core/BipartiteExterior.lean:55:0: automatically included section variable(s) unused in theorem `EG617.complete_cross_of_no_missing`:
+2026-11-17T17:38:27.1206961Z   [Fintype V]
+2026-11-17T17:38:27.1208260Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.1209514Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.1210006Z 
+2026-11-17T17:38:27.1210586Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1212271Z warning: EG617/Core/BipartiteExterior.lean:66:0: automatically included section variable(s) unused in theorem `EG617.unique_missing_cross_of_card_one`:
+2026-11-17T17:38:27.1213684Z   [Fintype V]
+2026-11-17T17:38:27.1214707Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.1215887Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.1216379Z 
+2026-11-17T17:38:27.1217371Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1219105Z warning: EG617/Core/BipartiteExterior.lean:105:4: `simp` already closes the goal
+2026-11-17T17:38:27.1219927Z 
+2026-11-17T17:38:27.1220369Z Hint: Use `simp` instead of `simpa`:
+2026-11-17T17:38:27.1221024Z   [apply] simp [hV]
+2026-11-17T17:38:27.1221439Z 
+2026-11-17T17:38:27.1222025Z Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+2026-11-17T17:38:27.1223280Z ⚠ [1329/1357] Replayed EG617.Core.R23ExactLedger
+2026-11-17T17:38:27.1224678Z warning: EG617/Core/R23ExactLedger.lean:14:0: automatically included section variable(s) unused in theorem `EG617.deficit_sum_add`:
+2026-11-17T17:38:27.1225969Z   [Fintype V]
+2026-11-17T17:38:27.1226971Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.1228408Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.1228918Z 
+2026-11-17T17:38:27.1229539Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1231009Z warning: EG617/Core/R23ExactLedger.lean:21:0: automatically included section variable(s) unused in theorem `EG617.deficit_zero_iff`:
+2026-11-17T17:38:27.1232215Z   [Fintype V]
+2026-11-17T17:38:27.1233188Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.1234319Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.1234794Z 
+2026-11-17T17:38:27.1235660Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1236754Z ⚠ [1330/1357] Replayed EG617.Core.R23TypeLift
+2026-11-17T17:38:27.1238310Z warning: EG617/Core/R23TypeLift.lean:45:0: automatically included section variable(s) unused in theorem `EG617.cycleNeighborLabels_card_eq`:
+2026-11-17T17:38:27.1239627Z   [Fintype V]
+2026-11-17T17:38:27.1240585Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.1241742Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.1242186Z 
+2026-11-17T17:38:27.1242739Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1243919Z ⚠ [1332/1357] Replayed EG617.Core.C5TypePresentation
+2026-11-17T17:38:27.1245437Z warning: EG617/Core/C5TypePresentation.lean:12:0: automatically included section variable(s) unused in theorem `EG617.cycleNeighborLabels_cycle_vertex`:
+2026-11-17T17:38:27.1246938Z   [Fintype V]
+2026-11-17T17:38:27.1248280Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.1249526Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.1250021Z 
+2026-11-17T17:38:27.1250617Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1251875Z ⚠ [1341/1357] Replayed EG617.Core.R23EdgeCompletion
+2026-11-17T17:38:27.1253507Z warning: EG617/Core/R23EdgeCompletion.lean:14:0: automatically included section variable(s) unused in theorem `EG617.triangleFree_sup_edge_of_no_common_neighbor`:
+2026-11-17T17:38:27.1255026Z   [Fintype V]
+2026-11-17T17:38:27.1256064Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.1257659Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.1258659Z 
+2026-11-17T17:38:27.1259298Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1260602Z ⚠ [1345/1357] Replayed EG617.Core.C5MissingTypeFibers
+2026-11-17T17:38:27.1262200Z warning: EG617/Core/C5MissingTypeFibers.lean:14:0: automatically included section variable(s) unused in theorem `EG617.missing_exterior_type_orientations`:
+2026-11-17T17:38:27.1263733Z   [Fintype V]
+2026-11-17T17:38:27.1264801Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.1266359Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.1266903Z 
+2026-11-17T17:38:27.1267735Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1269136Z warning: EG617/Core/C5MissingTypeFibers.lean:96:42: `if_true` has been deprecated: Use `ite_true` instead
+2026-11-17T17:38:27.1270117Z 
+2026-11-17T17:38:27.1270472Z Hint: Replace the deprecated name:
+2026-11-17T17:38:27.1271262Z   i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+2026-11-17T17:38:27.1272311Z warning: EG617/Core/C5MissingTypeFibers.lean:97:21: `if_true` has been deprecated: Use `ite_true` instead
+2026-11-17T17:38:27.1273300Z 
+2026-11-17T17:38:27.1273678Z Hint: Replace the deprecated name:
+2026-11-17T17:38:27.1274520Z   i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+2026-11-17T17:38:27.1275639Z warning: EG617/Core/C5MissingTypeFibers.lean:98:42: `if_false` has been deprecated: Use `ite_false` instead
+2026-11-17T17:38:27.1276658Z 
+2026-11-17T17:38:27.1277161Z Hint: Replace the deprecated name:
+2026-11-17T17:38:27.1278338Z   i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+2026-11-17T17:38:27.1279311Z warning: EG617/Core/C5MissingTypeFibers.lean:99:21: `if_false` has been deprecated: Use `ite_false` instead
+2026-11-17T17:38:27.1279893Z 
+2026-11-17T17:38:27.1280115Z Hint: Replace the deprecated name:
+2026-11-17T17:38:27.1280643Z   i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+2026-11-17T17:38:27.1281426Z warning: EG617/Core/C5MissingTypeFibers.lean:72:0: automatically included section variable(s) unused in theorem `EG617.one_exception_type_fiber_card`:
+2026-11-17T17:38:27.1282456Z   [Fintype V]
+2026-11-17T17:38:27.1283039Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.1283716Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.1283997Z 
+2026-11-17T17:38:27.1284340Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1284963Z ⚠ [1347/1357] Replayed EG617.Core.CostSixCounts
+2026-11-17T17:38:27.1285514Z warning: EG617/Core/CostSixCounts.lean:49:67: This simp argument is unused:
+2026-11-17T17:38:27.1286023Z   Nat.mul_comm
+2026-11-17T17:38:27.1286259Z 
+2026-11-17T17:38:27.1286580Z Hint: Omit it from the simp argument list.
+2026-11-17T17:38:27.1286995Z   [apply] simp [h]
+2026-11-17T17:38:27.1287231Z 
+2026-11-17T17:38:27.1287938Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+2026-11-17T17:38:27.1289131Z warning: EG617/Core/CostSixCounts.lean:127:5: Variable name `hp` is not explicitly referenced.
+2026-11-17T17:38:27.1289834Z 
+2026-11-17T17:38:27.1290463Z Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+2026-11-17T17:38:27.1291073Z   [apply] _hp
+2026-11-17T17:38:27.1291195Z 
+2026-11-17T17:38:27.1291420Z Note: This linter can be disabled with `set_option linter.unusedVariables false`
+2026-11-17T17:38:27.1292048Z warning: EG617/Core/CostSixCounts.lean:127:19: Variable name `ha` is not explicitly referenced.
+2026-11-17T17:38:27.1292424Z 
+2026-11-17T17:38:27.1292853Z Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+2026-11-17T17:38:27.1293457Z   [apply] _ha
+2026-11-17T17:38:27.1293579Z 
+2026-11-17T17:38:27.1293813Z Note: This linter can be disabled with `set_option linter.unusedVariables false`
+2026-11-17T17:38:27.1294397Z warning: EG617/Core/CostSixCounts.lean:134:5: Variable name `hp` is not explicitly referenced.
+2026-11-17T17:38:27.1294796Z 
+2026-11-17T17:38:27.1295214Z Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+2026-11-17T17:38:27.1295800Z   [apply] _hp
+2026-11-17T17:38:27.1295909Z 
+2026-11-17T17:38:27.1296139Z Note: This linter can be disabled with `set_option linter.unusedVariables false`
+2026-11-17T17:38:27.1296911Z warning: EG617/Core/CostSixCounts.lean:134:18: Variable name `hq` is not explicitly referenced.
+2026-11-17T17:38:27.1297289Z 
+2026-11-17T17:38:27.1298180Z Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+2026-11-17T17:38:27.1298994Z   [apply] _hq
+2026-11-17T17:38:27.1299110Z 
+2026-11-17T17:38:27.1299319Z Note: This linter can be disabled with `set_option linter.unusedVariables false`
+2026-11-17T17:38:27.1299900Z warning: EG617/Core/CostSixCounts.lean:134:57: Variable name `he` is not explicitly referenced.
+2026-11-17T17:38:27.1300272Z 
+2026-11-17T17:38:27.1300678Z Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+2026-11-17T17:38:27.1301257Z   [apply] _he
+2026-11-17T17:38:27.1301374Z 
+2026-11-17T17:38:27.1301587Z Note: This linter can be disabled with `set_option linter.unusedVariables false`
+2026-11-17T17:38:27.1302149Z ⚠ [1349/1357] Replayed EG617.Core.CostSixDeletion
+2026-11-17T17:38:27.1302871Z warning: EG617/Core/CostSixDeletion.lean:12:0: automatically included section variable(s) unused in theorem `EG617.coreInducedEdgeCount_mono_graph`:
+2026-11-17T17:38:27.1303517Z   [Fintype V]
+2026-11-17T17:38:27.1303978Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.1304521Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.1304698Z 
+2026-11-17T17:38:27.1304928Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1305881Z warning: EG617/Core/CostSixDeletion.lean:22:0: automatically included section variable(s) unused in theorem `EG617.independent_sup_edge_or_endpoints`:
+2026-11-17T17:38:27.1306525Z   [Fintype V]
+2026-11-17T17:38:27.1307010Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.1307840Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.1308011Z 
+2026-11-17T17:38:27.1308245Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1308793Z warning: EG617/Core/CostSixDeletion.lean:58:4: `simp` already closes the goal
+2026-11-17T17:38:27.1309115Z 
+2026-11-17T17:38:27.1309212Z Hint: Use `simp` instead of `simpa`:
+2026-11-17T17:38:27.1309514Z   [apply] simp [SimpleGraph.edge_adj] at hxE
+2026-11-17T17:38:27.1309743Z 
+2026-11-17T17:38:27.1309963Z Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+2026-11-17T17:38:27.1310757Z warning: EG617/Core/CostSixDeletion.lean:46:0: automatically included section variable(s) unused in theorem `EG617.independent_sup_edge_neighbor_card`:
+2026-11-17T17:38:27.1311419Z   [Fintype V]
+2026-11-17T17:38:27.1311883Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.1312428Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.1312599Z 
+2026-11-17T17:38:27.1312852Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1313373Z ⚠ [1351/1357] Replayed EG617.Core.R335Fourteen
+2026-11-17T17:38:27.1314044Z warning: EG617/Core/R335Fourteen.lean:33:0: automatically included section variable(s) unused in theorem `EG617.core_common_nonneighbors_clique`:
+2026-11-17T17:38:27.1314665Z   [Fintype V]
+2026-11-17T17:38:27.1315144Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.1315700Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.1315871Z 
+2026-11-17T17:38:27.1316102Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1316632Z warning: EG617/Core/R335Fourteen.lean:49:15: This simp argument is unused:
+2026-11-17T17:38:27.1317010Z   hax
+2026-11-17T17:38:27.1317119Z 
+2026-11-17T17:38:27.1317227Z Hint: Omit it from the simp argument list.
+2026-11-17T17:38:27.1318118Z   [apply] simp [hxy, hay, hbx, hby, hab, Ne.symm hax, Ne.symm hay, Ne.symm hbx, Ne.symm hby]
+2026-11-17T17:38:27.1318496Z 
+2026-11-17T17:38:27.1318723Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+2026-11-17T17:38:27.1319253Z warning: EG617/Core/R335Fourteen.lean:49:20: This simp argument is unused:
+2026-11-17T17:38:27.1319636Z   hay
+2026-11-17T17:38:27.1319740Z 
+2026-11-17T17:38:27.1319855Z Hint: Omit it from the simp argument list.
+2026-11-17T17:38:27.1320272Z   [apply] simp [hxy, hax, hbx, hby, hab, Ne.symm hax, Ne.symm hay, Ne.symm hbx, Ne.symm hby]
+2026-11-17T17:38:27.1320614Z 
+2026-11-17T17:38:27.1320848Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+2026-11-17T17:38:27.1321380Z warning: EG617/Core/R335Fourteen.lean:49:25: This simp argument is unused:
+2026-11-17T17:38:27.1321770Z   hbx
+2026-11-17T17:38:27.1321875Z 
+2026-11-17T17:38:27.1321981Z Hint: Omit it from the simp argument list.
+2026-11-17T17:38:27.1322430Z   [apply] simp [hxy, hax, hay, hby, hab, Ne.symm hax, Ne.symm hay, Ne.symm hbx, Ne.symm hby]
+2026-11-17T17:38:27.1322754Z 
+2026-11-17T17:38:27.1322972Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+2026-11-17T17:38:27.1323492Z warning: EG617/Core/R335Fourteen.lean:49:30: This simp argument is unused:
+2026-11-17T17:38:27.1323867Z   hby
+2026-11-17T17:38:27.1323968Z 
+2026-11-17T17:38:27.1324075Z Hint: Omit it from the simp argument list.
+2026-11-17T17:38:27.1324497Z   [apply] simp [hxy, hax, hay, hbx, hab, Ne.symm hax, Ne.symm hay, Ne.symm hbx, Ne.symm hby]
+2026-11-17T17:38:27.1324958Z 
+2026-11-17T17:38:27.1325167Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+2026-11-17T17:38:27.1325907Z warning: EG617/Core/R335Fourteen.lean:69:0: automatically included section variable(s) unused in theorem `EG617.core_pair_cross_lower_bound`:
+2026-11-17T17:38:27.1326511Z   [Fintype V]
+2026-11-17T17:38:27.1326995Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.1327684Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.1327881Z 
+2026-11-17T17:38:27.1328111Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1328830Z warning: EG617/Core/R335Fourteen.lean:87:0: automatically included section variable(s) unused in theorem `EG617.core_induce_compl`:
+2026-11-17T17:38:27.1329408Z   [Fintype V]
+2026-11-17T17:38:27.1329866Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:27.1330432Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:27.1330597Z 
+2026-11-17T17:38:27.1330823Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:27.1331339Z ⚠ [1353/1357] Replayed EG617.Core.R336Sharp
+2026-11-17T17:38:27.1331743Z warning: EG617/Core/R336Sharp.lean:37:13: This simp argument is unused:
+2026-11-17T17:38:27.1332117Z   and_comm
+2026-11-17T17:38:27.1332221Z 
+2026-11-17T17:38:27.1332336Z Hint: Omit it from the simp argument list.
+2026-11-17T17:38:27.1332608Z   [apply] simp [S]
+2026-11-17T17:38:27.1332732Z 
+2026-11-17T17:38:27.1332951Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+2026-11-17T17:38:28.5161507Z ⚠ [1354/1357] Built EG617.Core.GateShell (1.4s)
+2026-11-17T17:38:28.5162613Z warning: EG617/Core/GateShell.lean:71:0: automatically included section variable(s) unused in theorem `EG617.core_induced_edges_le_choose`:
+2026-11-17T17:38:28.5163453Z   [Fintype V]
+2026-11-17T17:38:28.5164112Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:28.5164853Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:28.5165076Z 
+2026-11-17T17:38:28.5165386Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:30.0185374Z ⚠ [1355/1357] Built EG617.Core.GateRows (1.5s)
+2026-11-17T17:38:30.0186519Z warning: EG617/Core/GateRows.lean:15:0: automatically included section variable(s) unused in theorem `EG617.core_admissible_common_nonNeighbors`:
+2026-11-17T17:38:30.0187209Z   [Fintype V]
+2026-11-17T17:38:30.0187963Z consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+2026-11-17T17:38:30.0188522Z   omit [Fintype V] in theorem ...
+2026-11-17T17:38:30.0188702Z 
+2026-11-17T17:38:30.0188939Z Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+2026-11-17T17:38:30.0189765Z warning: EG617/Core/GateRows.lean:136:47: `if_pos` has been deprecated: Use `ite_eq_left` instead
+2026-11-17T17:38:30.0190159Z 
+2026-11-17T17:38:30.0190298Z Hint: Replace the deprecated name:
+2026-11-17T17:38:30.0190691Z   i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+2026-11-17T17:38:31.2199940Z ✖ [1356/1357] Building EG617.Core.Gate47 (1.2s)
+2026-11-17T17:38:31.2208696Z trace: .> LEAN_PATH=/home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/packages/Cli/.lake/build/lib/lean:/home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/packages/batteries/.lake/build/lib/lean:/home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/packages/Qq/.lake/build/lib/lean:/home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/packages/aesop/.lake/build/lib/lean:/home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/packages/importGraph/.lake/build/lib/lean:/home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/packages/plausible/.lake/build/lib/lean:/home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/packages/mathlib/.lake/build/lib/lean:/home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/build/lib/lean /home/runner/work/_temp/lean-4.35.0-linux/bin/lean /home/runner/work/_temp/eg617-standalone-ascii/lean/EG617/Core/Gate47.lean -o /home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/build/lib/lean/EG617/Core/Gate47.olean -i /home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/build/lib/lean/EG617/Core/Gate47.ilean -c /home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/build/ir/EG617/Core/Gate47.c --setup /home/runner/work/_temp/eg617-standalone-ascii/lean/.lake/build/ir/EG617/Core/Gate47.setup.json --json
+2026-11-17T17:38:31.2217848Z error: EG617/Core/Gate47.lean:69:2: omega could not prove the goal:
+2026-11-17T17:38:31.2218431Z a possible counterexample may satisfy the constraints
+2026-11-17T17:38:31.2219014Z   h ≥ 0
+2026-11-17T17:38:31.2219282Z   g ≥ 0
+2026-11-17T17:38:31.2219553Z   g - h ≥ 11
+2026-11-17T17:38:31.2219830Z   f ≥ 0
+2026-11-17T17:38:31.2220100Z   0 ≤ e ≤ 286
+2026-11-17T17:38:31.2220390Z   e - f - g ≥ 221
+2026-11-17T17:38:31.2220687Z   0 ≤ d ≤ 55
+2026-11-17T17:38:31.2220956Z   c ≥ 0
+2026-11-17T17:38:31.2221216Z   b ≥ 0
+2026-11-17T17:38:31.2221476Z   a ≥ 0
+2026-11-17T17:38:31.2221737Z   a + b ≥ 12
+2026-11-17T17:38:31.2221986Z where
+2026-11-17T17:38:31.2222285Z  a := ↑(r ⟨x, hx⟩)
+2026-11-17T17:38:31.2222586Z  b := ↑(r ⟨y, hy⟩)
+2026-11-17T17:38:31.2222892Z  c := ↑(adjCount G S C)
+2026-11-17T17:38:31.2223430Z  d := ↑(SimpleGraph.induce (↑(G.neighborSet v).toFinset) G)ᶜ.edgeSet.ncard
+2026-11-17T17:38:31.2223985Z  e := ↑G.edgeSet.ncard
+2026-11-17T17:38:31.2224520Z  f := ↑(SimpleGraph.induce (↑(G.neighborSet v).toFinset) G).edgeFinset.card
+2026-11-17T17:38:31.2225127Z  g := ↑(adjCount G ⋯.toFinset ⋯.toFinset)
+2026-11-17T17:38:31.2225725Z  h := ↑(SimpleGraph.induce (↑(G.neighborSet v).toFinset) G)ᶜ.edgeFinset.card
+2026-11-17T17:38:31.2226290Z Some required targets logged failures:
+2026-11-17T17:38:31.2226654Z - EG617.Core.Gate47
+2026-11-17T17:38:31.2226962Z error: build failed
+2026-11-17T17:38:31.3292178Z ##[error]Process completed with exit code 1.
+2026-11-17T17:38:31.3426859Z Post job cleanup.
+2026-11-17T17:38:31.4328081Z [command]/usr/bin/git version
+2026-11-17T17:38:31.4373862Z git version 2.56.1
+2026-11-17T17:38:31.4453450Z Temporarily overriding HOME='/home/runner/work/_temp/d9f5db6f-bebb-4834-8620-0e7ae2ca4c57' before making global git config changes
+2026-11-17T17:38:31.4455158Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-17T17:38:31.4460249Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/EG617-r12-proof/EG617-r12-proof
+2026-11-17T17:38:31.4510658Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-17T17:38:31.4553812Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-17T17:38:31.4826886Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-17T17:38:31.4869946Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-17T17:38:31.5334021Z Cleaning up orphan processes
+2026-11-17T17:38:31.5821184Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
