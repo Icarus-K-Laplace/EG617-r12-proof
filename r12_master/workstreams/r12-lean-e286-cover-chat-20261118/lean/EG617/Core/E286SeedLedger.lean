@@ -68,6 +68,7 @@ theorem e286_seed_support_counts (G : SimpleGraph V) (hG : E286Hypotheses G)
   classical
   let Z := seedMultipleSet G I
   have hs := e286_seed_surplus_five G hG I hcard hI hdeg
+  change (∑ v ∈ Z, ((seedNeighbors G I v).card - 1)) = 5 at hs
   have hpos : ∀ v ∈ Z, 2 ≤ (seedNeighbors G I v).card :=
     fun v hv => (Finset.mem_filter.mp hv).2
   have hle : Z.card ≤ 5 := by
@@ -92,6 +93,7 @@ theorem e286_seed_support_counts (G : SimpleGraph V) (hG : E286Hypotheses G)
     have hk := hG.2.2.2.2 (seedPrivateClique G I s)
       (e286_private_class_isClique G hG I hcard hI s hsI)
     have he := e286_private_multiple_card G I hI s hsI (hdeg s hsI)
+    change (seedPrivateClique G I s).card + (Z.filter (G.Adj s)).card = 13 at he
     omega
   have h8 : 8 ≤ ∑ s ∈ I, (Z.filter (G.Adj s)).card := by
     calc
@@ -104,7 +106,8 @@ theorem e286_seed_support_counts (G : SimpleGraph V) (hG : E286Hypotheses G)
       _ = ∑ _s ∈ I, 13 := Finset.sum_congr rfl
         (fun s hsI => e286_private_multiple_card G I hI s hsI (hdeg s hsI))
       _ = 52 := by simp [hcard]
-  change 3 ≤ Z.card ∧ Z.card ≤ 5 ∧ _
+  change 3 ≤ Z.card ∧ Z.card ≤ 5 ∧
+    (∑ s ∈ I, (seedPrivateClique G I s).card) + Z.card = 47
   constructor
   · omega
   constructor
