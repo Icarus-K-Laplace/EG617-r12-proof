@@ -8,6 +8,10 @@ Nine degree-excess/support ledgers are VERIFIED at2da427b, CI44194246540.
 All231 declarations compiled and passed exact type and transitive axiom checks.
 Actual regular independent four seeds and the cap-free25-point obstruction are
 VERIFIED at80d1542, CI44195410389. All238 declarations and202 theorems passed.
-The actual common-neighbor/excess inequality and K10 completion charge are candidates.
+The actual common-neighbor/excess inequality, K10 completion charge, private
+cliques and complete graph-to-support domain reduction are VERIFIED at4ede035,
+CI44262022836. This proves3<=|Z|<=5, exact surplus5 and the actual47-vertex partition.
+The ten-orbit count-vector certificate is a new candidate; graph/count transport
+and all terminal orbit exclusions are still open.
 LEVEL5A E286, LEVEL5B edge floor287, LEVEL6A h12/h13, LEVEL6B COVER and
 LEVEL7 K145 MainTheorem remain FORMALIZATION_GAP. No terminal proof is assumed.

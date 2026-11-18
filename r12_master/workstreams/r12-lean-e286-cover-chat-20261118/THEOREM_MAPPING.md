@@ -15,7 +15,12 @@ E286 Section1 -> e286_induced_degree_budget; oddCycleBound_25;
 alpha_two_25_edges_ge_155; e286_no_induced_alpha_two_25;
 independenceBound_common_nonNeighbors; e286_common_antineighborhood_card_le_24.
 These Section1 reductions are VERIFIED at80d1542, CI44195410389, with no D premise.
-The actual common-neighbor bound and K10 completion charge are new candidates.
+E286 Section1 equation1 -> e286_common_neighbors_excess_bound;
+e286_common_neighbors_le_eleven; e286_ten_clique_completers_excess (VERIFIED).
+E286 Section2 private cliques/surplus/partition -> e286_private_class_isClique;
+e286_private_multiple_card; e286_seed_surplus_five; e286_seed_support_reduction
+(VERIFIED at4ede035, CI44262022836). All are statements about actual graph sets.
+Ten-orbit count classification -> e286_support_counts_complete (candidate).
 No mapping claims support orbit completeness,
 E286 exclusion,287 floor,COVER or MainTheorem. Inherited source remains unchanged,
 except the import root and generated audit entry points.

@@ -1,6 +1,6 @@
 # Transitive axiom audit
 
-Verified code 80d154296dfab23b76d8a12b3f1d1bcf6b299aef, CI 44195410389. All project declarations below compiled.
+Verified code 4ede035a8483ab0b4e574e9758ab9c38a43d30c8, CI 44262022836. All project declarations below compiled.
 Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem remain unproved.
 
 | Declaration | Axioms |
@@ -104,6 +104,11 @@ Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem r
 | EG617.e286_no_induced_alpha_two_25 | propext, Classical.choice, Quot.sound |
 | EG617.independenceBound_common_nonNeighbors | propext, Classical.choice, Quot.sound |
 | EG617.e286_common_antineighborhood_card_le_24 | propext, Classical.choice, Quot.sound |
+| EG617.e286_common_neighbors_excess_bound | propext, Classical.choice, Quot.sound |
+| EG617.e286_pair_excess_le_eight | propext, Classical.choice, Quot.sound |
+| EG617.e286_common_neighbors_le_eleven | propext, Classical.choice, Quot.sound |
+| EG617.e286_common_set_excess_charge | propext, Classical.choice, Quot.sound |
+| EG617.e286_ten_clique_completers_excess | propext, Classical.choice, Quot.sound |
 | EG617.E286Hypotheses | propext, Classical.choice, Quot.sound |
 | EG617.E286Statement | propext, Classical.choice, Quot.sound |
 | EG617.degreeExcess12 | propext, Classical.choice, Quot.sound |
@@ -117,6 +122,22 @@ Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem r
 | EG617.e286_regular_card_ge_39 | propext, Classical.choice, Quot.sound |
 | EG617.e286_support_degree_sum | propext, Classical.choice, Quot.sound |
 | EG617.e286_regular_edge_ledger | propext, Classical.choice, Quot.sound |
+| EG617.seedNeighbors | propext, Classical.choice, Quot.sound |
+| EG617.seedPrivateClique | propext, Classical.choice, Quot.sound |
+| EG617.seedMultipleSet | propext, Classical.choice, Quot.sound |
+| EG617.seedNeighbors_empty_of_seed | propext, Classical.choice, Quot.sound |
+| EG617.seedNeighbors_singleton_outside | propext, Classical.choice, Quot.sound |
+| EG617.seedNeighbors_singleton_nonadj | propext, Classical.choice, Quot.sound |
+| EG617.e286_private_class_isClique | propext, Classical.choice, Quot.sound |
+| EG617.e286_seed_dominates | propext, Classical.choice, Quot.sound |
+| EG617.e286_private_multiple_card | propext, Classical.choice, Quot.sound |
+| EG617.e286_seed_incidence_sum | propext, Classical.choice, Quot.sound |
+| EG617.e286_seed_surplus_five | propext, Classical.choice, Quot.sound |
+| EG617.e286_seed_support_counts | propext, Classical.choice, Quot.sound |
+| EG617.e286_seed_classes_cover | propext, Classical.choice, Quot.sound |
+| EG617.seed_private_classes_disjoint | propext, Classical.choice, Quot.sound |
+| EG617.seed_private_multiple_disjoint | propext, Classical.choice, Quot.sound |
+| EG617.e286_seed_support_reduction | propext, Classical.choice, Quot.sound |
 | EG617.e286_exists_regular_independent_four | propext, Classical.choice, Quot.sound |
 | EG617.adjCount | propext, Classical.choice, Quot.sound |
 | EG617.adjCount_eq_sum_filter | propext, Classical.choice, Quot.sound |

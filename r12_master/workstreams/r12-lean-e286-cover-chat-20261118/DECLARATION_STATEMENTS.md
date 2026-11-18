@@ -1,6 +1,6 @@
 # Exact Lean statements
 
-Code 80d154296dfab23b76d8a12b3f1d1bcf6b299aef, CI 44195410389. Full proof bodies are in standard .lean files.
+Code 4ede035a8483ab0b4e574e9758ab9c38a43d30c8, CI 44262022836. Full proof bodies are in standard .lean files.
 
 ## EG617.colorGraph
 
@@ -1051,6 +1051,61 @@ theorem e286_common_antineighborhood_card_le_24 (G : SimpleGraph V)
     S.card ≤ 24
 ```
 
+## EG617.e286_common_neighbors_excess_bound
+
+Source: EG617/Core/E286CommonNeighbors.lean
+
+```lean
+theorem e286_common_neighbors_excess_bound (G : SimpleGraph V)
+    (hG : E286Hypotheses G) (x y : V) (hxy : x ≠ y) (hnxy : ¬ G.Adj x y) :
+    (G.neighborFinset x ∩ G.neighborFinset y).card ≤
+      3 + degreeExcess12 G x + degreeExcess12 G y
+```
+
+## EG617.e286_pair_excess_le_eight
+
+Source: EG617/Core/E286CommonNeighbors.lean
+
+```lean
+theorem e286_pair_excess_le_eight (G : SimpleGraph V) (hG : E286Hypotheses G)
+    (x y : V) (hxy : x ≠ y) :
+    degreeExcess12 G x + degreeExcess12 G y ≤ 8
+```
+
+## EG617.e286_common_neighbors_le_eleven
+
+Source: EG617/Core/E286CommonNeighbors.lean
+
+```lean
+theorem e286_common_neighbors_le_eleven (G : SimpleGraph V)
+    (hG : E286Hypotheses G) (x y : V) (hxy : x ≠ y) (hnxy : ¬ G.Adj x y) :
+    (G.neighborFinset x ∩ G.neighborFinset y).card ≤ 11
+```
+
+## EG617.e286_common_set_excess_charge
+
+Source: EG617/Core/E286CommonNeighbors.lean
+
+```lean
+theorem e286_common_set_excess_charge (G : SimpleGraph V)
+    (hG : E286Hypotheses G) (x y : V) (hxy : x ≠ y) (hnxy : ¬ G.Adj x y)
+    (K : Finset V) (hK : ∀ z ∈ K, G.Adj x z ∧ G.Adj y z) :
+    K.card ≤ 3 + degreeExcess12 G x + degreeExcess12 G y
+```
+
+## EG617.e286_ten_clique_completers_excess
+
+Source: EG617/Core/E286CommonNeighbors.lean
+
+```lean
+theorem e286_ten_clique_completers_excess (G : SimpleGraph V)
+    (hG : E286Hypotheses G) (K : Finset V) (hcard : K.card = 10)
+    (hcl : G.IsClique (K : Set V)) (x y : V) (hxy : x ≠ y)
+    (hx : x ∉ K) (hy : y ∉ K)
+    (hadj : ∀ z ∈ K, G.Adj x z ∧ G.Adj y z) :
+    ¬ G.Adj x y ∧ 7 ≤ degreeExcess12 G x + degreeExcess12 G y
+```
+
 ## EG617.E286Hypotheses
 
 Source: EG617/Core/E286Excess.lean
@@ -1163,6 +1218,179 @@ Source: EG617/Core/E286Excess.lean
 theorem e286_regular_edge_ledger (G : SimpleGraph V) (hG : E286Hypotheses G) :
     coreInducedEdgeCount G (excessSupport G)ᶜ + 12 * (excessSupport G).card + 8 =
       286 + coreInducedEdgeCount G (excessSupport G)
+```
+
+## EG617.seedNeighbors
+
+Source: EG617/Core/E286PrivateClasses.lean
+
+```lean
+noncomputable def seedNeighbors (G : SimpleGraph V) (I : Finset V) (v : V) : Finset V
+```
+
+## EG617.seedPrivateClique
+
+Source: EG617/Core/E286PrivateClasses.lean
+
+```lean
+noncomputable def seedPrivateClique (G : SimpleGraph V) (I : Finset V) (s : V) : Finset V
+```
+
+## EG617.seedMultipleSet
+
+Source: EG617/Core/E286PrivateClasses.lean
+
+```lean
+noncomputable def seedMultipleSet (G : SimpleGraph V) (I : Finset V) : Finset V
+```
+
+## EG617.seedNeighbors_empty_of_seed
+
+Source: EG617/Core/E286PrivateClasses.lean
+
+```lean
+theorem seedNeighbors_empty_of_seed (G : SimpleGraph V) (I : Finset V)
+    (hI : G.IsIndepSet (I : Set V)) (s : V) (hs : s ∈ I) :
+    seedNeighbors G I s = ∅
+```
+
+## EG617.seedNeighbors_singleton_outside
+
+Source: EG617/Core/E286PrivateClasses.lean
+
+```lean
+theorem seedNeighbors_singleton_outside (G : SimpleGraph V) (I : Finset V)
+    (hI : G.IsIndepSet (I : Set V)) (s v : V)
+    (hv : seedNeighbors G I v = {s}) : v ∉ I
+```
+
+## EG617.seedNeighbors_singleton_nonadj
+
+Source: EG617/Core/E286PrivateClasses.lean
+
+```lean
+theorem seedNeighbors_singleton_nonadj (G : SimpleGraph V) (I : Finset V)
+    (s v : V) (hv : seedNeighbors G I v = {s}) (t : V) (ht : t ∈ I)
+    (hts : t ≠ s) : ¬ G.Adj v t
+```
+
+## EG617.e286_private_class_isClique
+
+Source: EG617/Core/E286PrivateClasses.lean
+
+```lean
+theorem e286_private_class_isClique (G : SimpleGraph V) (hG : E286Hypotheses G)
+    (I : Finset V) (hcard : I.card = 4) (hI : G.IsIndepSet (I : Set V))
+    (s : V) (hs : s ∈ I) :
+    G.IsClique (seedPrivateClique G I s : Set V)
+```
+
+## EG617.e286_seed_dominates
+
+Source: EG617/Core/E286PrivateClasses.lean
+
+```lean
+theorem e286_seed_dominates (G : SimpleGraph V) (hG : E286Hypotheses G)
+    (I : Finset V) (hcard : I.card = 4) (hI : G.IsIndepSet (I : Set V))
+    (v : V) (hv : v ∉ I) : (seedNeighbors G I v).Nonempty
+```
+
+## EG617.e286_private_multiple_card
+
+Source: EG617/Core/E286PrivateClasses.lean
+
+```lean
+theorem e286_private_multiple_card (G : SimpleGraph V)
+    (I : Finset V) (hI : G.IsIndepSet (I : Set V)) (s : V) (hs : s ∈ I)
+    (hdeg : G.degree s = 12) :
+    (seedPrivateClique G I s).card +
+      ((seedMultipleSet G I).filter (G.Adj s)).card = 13
+```
+
+## EG617.e286_seed_incidence_sum
+
+Source: EG617/Core/E286SeedLedger.lean
+
+```lean
+theorem e286_seed_incidence_sum (G : SimpleGraph V) (I : Finset V)
+    (hcard : I.card = 4) (hI : G.IsIndepSet (I : Set V))
+    (hdeg : ∀ s ∈ I, G.degree s = 12) :
+    ∑ v ∈ Iᶜ, (seedNeighbors G I v).card = 48
+```
+
+## EG617.e286_seed_surplus_five
+
+Source: EG617/Core/E286SeedLedger.lean
+
+```lean
+theorem e286_seed_surplus_five (G : SimpleGraph V) (hG : E286Hypotheses G)
+    (I : Finset V) (hcard : I.card = 4) (hI : G.IsIndepSet (I : Set V))
+    (hdeg : ∀ s ∈ I, G.degree s = 12) :
+    ∑ v ∈ seedMultipleSet G I, ((seedNeighbors G I v).card - 1) = 5
+```
+
+## EG617.e286_seed_support_counts
+
+Source: EG617/Core/E286SeedLedger.lean
+
+```lean
+theorem e286_seed_support_counts (G : SimpleGraph V) (hG : E286Hypotheses G)
+    (I : Finset V) (hcard : I.card = 4) (hI : G.IsIndepSet (I : Set V))
+    (hdeg : ∀ s ∈ I, G.degree s = 12) :
+    3 ≤ (seedMultipleSet G I).card ∧ (seedMultipleSet G I).card ≤ 5 ∧
+    (∑ s ∈ I, (seedPrivateClique G I s).card) + (seedMultipleSet G I).card = 47
+```
+
+## EG617.e286_seed_classes_cover
+
+Source: EG617/Core/E286SeedLedger.lean
+
+```lean
+theorem e286_seed_classes_cover (G : SimpleGraph V) (hG : E286Hypotheses G)
+    (I : Finset V) (hcard : I.card = 4) (hI : G.IsIndepSet (I : Set V)) (v : V) :
+    v ∈ seedMultipleSet G I ∨ ∃ s ∈ I, v ∈ seedPrivateClique G I s
+```
+
+## EG617.seed_private_classes_disjoint
+
+Source: EG617/Core/E286SeedLedger.lean
+
+```lean
+theorem seed_private_classes_disjoint (G : SimpleGraph V) (I : Finset V)
+    (hI : G.IsIndepSet (I : Set V)) (s t : V) (hs : s ∈ I) (ht : t ∈ I)
+    (hst : s ≠ t) : Disjoint (seedPrivateClique G I s) (seedPrivateClique G I t)
+```
+
+## EG617.seed_private_multiple_disjoint
+
+Source: EG617/Core/E286SeedLedger.lean
+
+```lean
+theorem seed_private_multiple_disjoint (G : SimpleGraph V) (I : Finset V)
+    (hI : G.IsIndepSet (I : Set V)) (s : V) (hs : s ∈ I) :
+    Disjoint (seedPrivateClique G I s) (seedMultipleSet G I)
+```
+
+## EG617.e286_seed_support_reduction
+
+Source: EG617/Core/E286SeedLedger.lean
+
+```lean
+theorem e286_seed_support_reduction (G : SimpleGraph V) (hG : E286Hypotheses G) :
+    ∃ I : Finset V, I.card = 4 ∧ G.IsIndepSet (I : Set V) ∧
+      (∀ s ∈ I, G.degree s = 12) ∧
+      3 ≤ (seedMultipleSet G I).card ∧ (seedMultipleSet G I).card ≤ 5 ∧
+      (∑ v ∈ seedMultipleSet G I, ((seedNeighbors G I v).card - 1)) = 5 ∧
+      (∑ s ∈ I, (seedPrivateClique G I s).card) + (seedMultipleSet G I).card = 47 ∧
+      (∀ s ∈ I, G.IsClique (seedPrivateClique G I s : Set V) ∧
+        (seedPrivateClique G I s).card ≤ 11 ∧
+        (seedPrivateClique G I s).card + ((seedMultipleSet G I).filter (G.Adj s)).card = 13) ∧
+      (∀ v, v ∈ seedMultipleSet G I ∨ ∃ s ∈ I, v ∈ seedPrivateClique G I s) ∧
+      (∀ s ∈ I, ∀ t ∈ I, s ≠ t →
+        Disjoint (seedPrivateClique G I s) (seedPrivateClique G I t)) ∧
+      (∀ s ∈ I, Disjoint (seedPrivateClique G I s) (seedMultipleSet G I)) ∧
+      ∀ v ∈ seedMultipleSet G I, 2 ≤ (seedNeighbors G I v).card ∧
+        (seedNeighbors G I v).card ≤ 4
 ```
 
 ## EG617.e286_exists_regular_independent_four

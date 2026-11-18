@@ -51,6 +51,7 @@
     "EG617\\Core\\E286PrivateClasses.lean",
     "EG617\\Core\\E286SeedLedger.lean",
     "EG617\\Core\\E286Seeds.lean",
+    "EG617\\Core\\E286SupportCounts.lean",
     "EG617\\Core\\EdgePartition.lean",
     "EG617\\Core\\Gate47.lean",
     "EG617\\Core\\GateRows.lean",
@@ -749,6 +750,66 @@
       "kind": "theorem",
       "name": "e286_exists_regular_independent_four",
       "file": "EG617\\Core\\E286Seeds.lean"
+    },
+    {
+      "kind": "def",
+      "name": "e286SupportType",
+      "file": "EG617\\Core\\E286SupportCounts.lean"
+    },
+    {
+      "kind": "def",
+      "name": "e286SupportWeights",
+      "file": "EG617\\Core\\E286SupportCounts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_support_type_complete",
+      "file": "EG617\\Core\\E286SupportCounts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_support_type_weight",
+      "file": "EG617\\Core\\E286SupportCounts.lean"
+    },
+    {
+      "kind": "def",
+      "name": "e286WeightedSum",
+      "file": "EG617\\Core\\E286SupportCounts.lean"
+    },
+    {
+      "kind": "def",
+      "name": "e286WeightedProfiles",
+      "file": "EG617\\Core\\E286SupportCounts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_weighted_profiles_complete",
+      "file": "EG617\\Core\\E286SupportCounts.lean"
+    },
+    {
+      "kind": "def",
+      "name": "e286CountIncidence",
+      "file": "EG617\\Core\\E286SupportCounts.lean"
+    },
+    {
+      "kind": "def",
+      "name": "e286RelabelCounts",
+      "file": "EG617\\Core\\E286SupportCounts.lean"
+    },
+    {
+      "kind": "def",
+      "name": "e286SupportOrbitRepresentatives",
+      "file": "EG617\\Core\\E286SupportCounts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_finite_support_orbit_check",
+      "file": "EG617\\Core\\E286SupportCounts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_support_counts_complete",
+      "file": "EG617\\Core\\E286SupportCounts.lean"
     },
     {
       "kind": "def",

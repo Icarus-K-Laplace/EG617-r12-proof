@@ -1,6 +1,6 @@
 module
 public import EG617.Core.E286CommonNeighbors
-public import EG617.Core.E286SeedLedger
+public import EG617.Core.E286SupportCounts
 #print EG617.E286Hypotheses
 #check EG617.e286_excess_sum
 #print axioms EG617.e286_excess_sum
@@ -20,3 +20,5 @@ public import EG617.Core.E286SeedLedger
 #print axioms EG617.e286_private_multiple_card
 #check EG617.e286_seed_support_reduction
 #print axioms EG617.e286_seed_support_reduction
+#check EG617.e286_support_counts_complete
+#print axioms EG617.e286_support_counts_complete

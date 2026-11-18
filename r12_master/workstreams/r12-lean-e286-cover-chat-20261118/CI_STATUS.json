@@ -1,12 +1,12 @@
 {
-  "sha": "80d154296dfab23b76d8a12b3f1d1bcf6b299aef",
-  "run": 44195410389,
+  "sha": "4ede035a8483ab0b4e574e9758ab9c38a43d30c8",
+  "run": 44262022836,
   "cleanLinuxBuild": "PASS",
   "fullAxiomAudit": "PASS",
   "statementInspection": "PASS",
   "localMatchesCISHA256": "PASS",
-  "declarations": 238,
-  "theorems": 202,
+  "declarations": 259,
+  "theorems": 220,
   "pins": [
     {
       "name": "plausible",
@@ -48,11 +48,11 @@
   "hashes": [
     {
       "file": "EG617.lean",
-      "sha256": "41ad29f54ddc4a4dc4dc602d81996058d29bed9d69d13835e0960820a091bc6a"
+      "sha256": "3b9925aecf77517aa4f62adf56e274620f8e9856b01de5c4da09bdfa8ffe26e1"
     },
     {
       "file": "EG617/Audit/Axioms.lean",
-      "sha256": "3ee422f69bb038d91df7aeba2f5d4b50f6a616d63c98862b24aac4f06f9a0f7b"
+      "sha256": "7b564e6db6712c221d62fbc922799f40f6cce999903e0c85819db72f130df978"
     },
     {
       "file": "EG617/Audit/C5MissingGraphLift.lean",
@@ -92,7 +92,7 @@
     },
     {
       "file": "EG617/Audit/E286.lean",
-      "sha256": "92c89a76c2f0db86772571d7e064adfe2bf9be4a6987436842bcce5e111f85d4"
+      "sha256": "614cc20a66008151263faca6d2599e05517757811c4a410c94fd0b0d913c2777"
     },
     {
       "file": "EG617/Audit/Gate47.lean",
@@ -156,7 +156,7 @@
     },
     {
       "file": "EG617/Audit/Statements.lean",
-      "sha256": "7d8e16bb5b0e7c6404a6c2f4a241b3a8e24442421e0f7a579334da750f485146"
+      "sha256": "4dcb5d16ccddb4a6dabc55be8cc7ddd2d6662c1e7717820552c8923fb1f6312d"
     },
     {
       "file": "EG617/Basic/ColoringLemmas.lean",
@@ -227,8 +227,20 @@
       "sha256": "9a10ca3a3992f1b48ce0a6b8ade3b0589f97ab8ddb2014f9db08a554b855c798"
     },
     {
+      "file": "EG617/Core/E286CommonNeighbors.lean",
+      "sha256": "5d0c630cf3033ee0a10ee7f48816733c14bcc366f194c9dcf652bd871cb096b2"
+    },
+    {
       "file": "EG617/Core/E286Excess.lean",
       "sha256": "c5a5806a5ba736dcc0b8828eb837d0dbf24f90690fa536f1c8a6fd22777ddfa4"
+    },
+    {
+      "file": "EG617/Core/E286PrivateClasses.lean",
+      "sha256": "91c693c09f9c0c298327ada9e7b8127281ea5c32abacd2ffceee8af499164f4b"
+    },
+    {
+      "file": "EG617/Core/E286SeedLedger.lean",
+      "sha256": "557cd4dde6149094c883ac35b92e6e4d16ac64058051f7098b80e607767c98ac"
     },
     {
       "file": "EG617/Core/E286Seeds.lean",
