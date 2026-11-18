@@ -72,19 +72,22 @@ theorem e286_private_class_isClique (G : SimpleGraph V) (hG : E286Hypotheses G)
       let J := insert y (I.erase s)
       have hJ : G.IsIndepSet (J : Set V) := by
         intro a ha b hb hab
-        rcases Finset.mem_insert.mp ha with rfl | ha
-        · have hb' := Finset.mem_of_mem_insert_of_ne hb hab.symm
+        rcases Finset.mem_insert.mp ha with he | ha
+        · subst a
+          have hb' := Finset.mem_of_mem_insert_of_ne hb hab.symm
           exact seedNeighbors_singleton_nonadj G I s y hyP b
             (Finset.mem_erase.mp hb').2 (Finset.mem_erase.mp hb').1
-        · rcases Finset.mem_insert.mp hb with rfl | hb
-          · intro he
+        · rcases Finset.mem_insert.mp hb with he | hb
+          · subst b
+            intro he
             exact seedNeighbors_singleton_nonadj G I s y hyP a
               (Finset.mem_erase.mp ha).2 (Finset.mem_erase.mp ha).1 he.symm
           · exact hI (Finset.mem_erase.mp ha).2 (Finset.mem_erase.mp hb).2 hab
       have hn : ∀ z ∈ J, z ≠ x ∧ ¬ G.Adj x z := by
         intro z hz
-        rcases Finset.mem_insert.mp hz with rfl | hz
-        · exact ⟨hxy.symm, hnxy⟩
+        rcases Finset.mem_insert.mp hz with he | hz
+        · subst z
+          exact ⟨hxy.symm, hnxy⟩
         · exact ⟨fun he => hxI (he ▸ (Finset.mem_erase.mp hz).2),
             seedNeighbors_singleton_nonadj G I s x hxP z
               (Finset.mem_erase.mp hz).2 (Finset.mem_erase.mp hz).1⟩

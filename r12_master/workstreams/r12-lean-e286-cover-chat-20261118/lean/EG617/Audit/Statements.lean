@@ -128,6 +128,13 @@ public import EG617
 #check EG617.e286_private_class_isClique
 #check EG617.e286_seed_dominates
 #check EG617.e286_private_multiple_card
+#check EG617.e286_seed_incidence_sum
+#check EG617.e286_seed_surplus_five
+#check EG617.e286_seed_support_counts
+#check EG617.e286_seed_classes_cover
+#check EG617.seed_private_classes_disjoint
+#check EG617.seed_private_multiple_disjoint
+#check EG617.e286_seed_support_reduction
 #check EG617.e286_exists_regular_independent_four
 #print EG617.adjCount
 #check EG617.adjCount_eq_sum_filter

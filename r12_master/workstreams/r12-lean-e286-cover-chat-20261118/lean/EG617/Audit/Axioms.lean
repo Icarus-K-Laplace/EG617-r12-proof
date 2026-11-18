@@ -128,6 +128,13 @@ public import EG617
 #print axioms EG617.e286_private_class_isClique
 #print axioms EG617.e286_seed_dominates
 #print axioms EG617.e286_private_multiple_card
+#print axioms EG617.e286_seed_incidence_sum
+#print axioms EG617.e286_seed_surplus_five
+#print axioms EG617.e286_seed_support_counts
+#print axioms EG617.e286_seed_classes_cover
+#print axioms EG617.seed_private_classes_disjoint
+#print axioms EG617.seed_private_multiple_disjoint
+#print axioms EG617.e286_seed_support_reduction
 #print axioms EG617.e286_exists_regular_independent_four
 #print axioms EG617.adjCount
 #print axioms EG617.adjCount_eq_sum_filter

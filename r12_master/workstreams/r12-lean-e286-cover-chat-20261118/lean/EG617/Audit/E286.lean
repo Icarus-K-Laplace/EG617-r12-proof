@@ -1,6 +1,6 @@
 module
 public import EG617.Core.E286CommonNeighbors
-public import EG617.Core.E286PrivateClasses
+public import EG617.Core.E286SeedLedger
 #print EG617.E286Hypotheses
 #check EG617.e286_excess_sum
 #print axioms EG617.e286_excess_sum
@@ -18,3 +18,5 @@ public import EG617.Core.E286PrivateClasses
 #print axioms EG617.e286_private_class_isClique
 #check EG617.e286_private_multiple_card
 #print axioms EG617.e286_private_multiple_card
+#check EG617.e286_seed_support_reduction
+#print axioms EG617.e286_seed_support_reduction
