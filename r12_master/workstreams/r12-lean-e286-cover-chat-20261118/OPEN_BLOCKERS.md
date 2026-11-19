@@ -4,8 +4,8 @@
 2. CLOSED: an actual independent four-set of degree12 vertices is derived from
    the original five E286 conditions; the25-point alpha2 obstruction is also proved.
 3. CLOSED: actual private clique partition and multiple-seed supports, surplus5,
-   and3<=|Z|<=5. OPEN: certify the ten count-vector orbits and transport the actual
-   labeled graph support multiplicities to that complete finite domain.
+   and3<=|Z|<=5. CLOSED at505e87c: ten count-vector orbits and exhaustive domain.
+   OPEN: compile the actual graph-to-count transport candidate E286SupportLift.
 4. Prove graph blocker, simultaneous/shared-center charge and terminal exclusions.
 5. Locate and formalize the frozen <=285 exclusion separately; GATE47 alone gives
    only e>=282 from minimum degree12, not the necessary286 floor.

@@ -1,6 +1,6 @@
 # Exact Lean statements
 
-Code 4ede035a8483ab0b4e574e9758ab9c38a43d30c8, CI 44262022836. Full proof bodies are in standard .lean files.
+Code 505e87c2864babe47b4884beea30b55b135bdc3f, CI 44495273085. Full proof bodies are in standard .lean files.
 
 ## EG617.colorGraph
 
@@ -1402,6 +1402,137 @@ theorem e286_exists_regular_independent_four (G : SimpleGraph V)
     (hG : E286Hypotheses G) :
     ∃ I : Finset V, I.card = 4 ∧ G.IsIndepSet (I : Set V) ∧
       ∀ v ∈ I, G.degree v = 12
+```
+
+## EG617.e286SupportType
+
+Source: EG617/Core/E286SupportCounts.lean
+
+```lean
+def e286SupportType (i : Fin 11) : Finset (Fin 4)
+```
+
+## EG617.e286SupportWeights
+
+Source: EG617/Core/E286SupportCounts.lean
+
+```lean
+def e286SupportWeights : List ℕ
+```
+
+## EG617.e286_support_type_complete
+
+Source: EG617/Core/E286SupportCounts.lean
+
+```lean
+theorem e286_support_type_complete (S : Finset (Fin 4)) (hS : 2 ≤ S.card) :
+    ∃! i : Fin 11, e286SupportType i = S
+```
+
+## EG617.e286_support_type_weight
+
+Source: EG617/Core/E286SupportCounts.lean
+
+```lean
+theorem e286_support_type_weight (i : Fin 11) :
+    (e286SupportType i).card - 1 = e286SupportWeights[i.val]!
+```
+
+## EG617.e286WeightedSum
+
+Source: EG617/Core/E286SupportCounts.lean
+
+```lean
+def e286WeightedSum : List ℕ → List ℕ → ℕ
+  | w :: ws, x :: xs => w * x + e286WeightedSum ws xs
+  | _, _ => 0
+
+/-- All nonnegative count vectors with prescribed weighted surplus.
+The bound on each first coordinate is proved in the completeness theorem. -/
+def e286WeightedProfiles : List ℕ → ℕ → List (List ℕ)
+  | [], b => if b = 0 then [[]] else []
+  | w :: ws, b => (List.range (b + 1)).flatMap fun x =>
+      if w * x ≤ b then (e286WeightedProfiles ws (b - w * x)).map (x :: ·) else []
+
+theorem e286_weighted_profiles_complete (ws xs : List ℕ) (b : ℕ)
+    (hpos : ∀ w ∈ ws, 1 ≤ w) (hlen : xs.length = ws.length)
+    (hsum : e286WeightedSum ws xs = b) :
+    xs ∈ e286WeightedProfiles ws b
+```
+
+## EG617.e286WeightedProfiles
+
+Source: EG617/Core/E286SupportCounts.lean
+
+```lean
+def e286WeightedProfiles : List ℕ → ℕ → List (List ℕ)
+  | [], b => if b = 0 then [[]] else []
+  | w :: ws, b => (List.range (b + 1)).flatMap fun x =>
+      if w * x ≤ b then (e286WeightedProfiles ws (b - w * x)).map (x :: ·) else []
+
+theorem e286_weighted_profiles_complete (ws xs : List ℕ) (b : ℕ)
+    (hpos : ∀ w ∈ ws, 1 ≤ w) (hlen : xs.length = ws.length)
+    (hsum : e286WeightedSum ws xs = b) :
+    xs ∈ e286WeightedProfiles ws b
+```
+
+## EG617.e286_weighted_profiles_complete
+
+Source: EG617/Core/E286SupportCounts.lean
+
+```lean
+theorem e286_weighted_profiles_complete (ws xs : List ℕ) (b : ℕ)
+    (hpos : ∀ w ∈ ws, 1 ≤ w) (hlen : xs.length = ws.length)
+    (hsum : e286WeightedSum ws xs = b) :
+    xs ∈ e286WeightedProfiles ws b
+```
+
+## EG617.e286CountIncidence
+
+Source: EG617/Core/E286SupportCounts.lean
+
+```lean
+def e286CountIncidence (xs : List ℕ) (s : Fin 4) : ℕ
+```
+
+## EG617.e286RelabelCounts
+
+Source: EG617/Core/E286SupportCounts.lean
+
+```lean
+def e286RelabelCounts (σ : Equiv.Perm (Fin 4)) (xs : List ℕ) : List ℕ
+```
+
+## EG617.e286SupportOrbitRepresentatives
+
+Source: EG617/Core/E286SupportCounts.lean
+
+```lean
+def e286SupportOrbitRepresentatives : List (List ℕ)
+```
+
+## EG617.e286_finite_support_orbit_check
+
+Source: EG617/Core/E286SupportCounts.lean
+
+```lean
+theorem e286_finite_support_orbit_check :
+    ∀ xs ∈ e286WeightedProfiles e286SupportWeights 5,
+      (∀ s : Fin 4, 2 ≤ e286CountIncidence xs s) →
+      ∃ σ : Equiv.Perm (Fin 4),
+        e286RelabelCounts σ xs ∈ e286SupportOrbitRepresentatives
+```
+
+## EG617.e286_support_counts_complete
+
+Source: EG617/Core/E286SupportCounts.lean
+
+```lean
+theorem e286_support_counts_complete (xs : List ℕ)
+    (hlen : xs.length = 11) (hsum : e286WeightedSum e286SupportWeights xs = 5)
+    (hinc : ∀ s : Fin 4, 2 ≤ e286CountIncidence xs s) :
+    ∃ σ : Equiv.Perm (Fin 4),
+      e286RelabelCounts σ xs ∈ e286SupportOrbitRepresentatives
 ```
 
 ## EG617.adjCount

@@ -1,6 +1,6 @@
 # Transitive axiom audit
 
-Verified code 4ede035a8483ab0b4e574e9758ab9c38a43d30c8, CI 44262022836. All project declarations below compiled.
+Verified code 505e87c2864babe47b4884beea30b55b135bdc3f, CI 44495273085. All project declarations below compiled.
 Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem remain unproved.
 
 | Declaration | Axioms |
@@ -139,6 +139,18 @@ Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem r
 | EG617.seed_private_multiple_disjoint | propext, Classical.choice, Quot.sound |
 | EG617.e286_seed_support_reduction | propext, Classical.choice, Quot.sound |
 | EG617.e286_exists_regular_independent_four | propext, Classical.choice, Quot.sound |
+| EG617.e286SupportType | propext, Quot.sound |
+| EG617.e286SupportWeights | none |
+| EG617.e286_support_type_complete | propext, Classical.choice, Quot.sound |
+| EG617.e286_support_type_weight | propext, Quot.sound |
+| EG617.e286WeightedSum | propext |
+| EG617.e286WeightedProfiles | none |
+| EG617.e286_weighted_profiles_complete | propext, Classical.choice, Quot.sound |
+| EG617.e286CountIncidence | propext, Classical.choice, Quot.sound |
+| EG617.e286RelabelCounts | propext, Classical.choice, Quot.sound |
+| EG617.e286SupportOrbitRepresentatives | none |
+| EG617.e286_finite_support_orbit_check | propext, Classical.choice, Quot.sound |
+| EG617.e286_support_counts_complete | propext, Classical.choice, Quot.sound |
 | EG617.adjCount | propext, Classical.choice, Quot.sound |
 | EG617.adjCount_eq_sum_filter | propext, Classical.choice, Quot.sound |
 | EG617.degree_induce_eq_filter | propext, Classical.choice, Quot.sound |

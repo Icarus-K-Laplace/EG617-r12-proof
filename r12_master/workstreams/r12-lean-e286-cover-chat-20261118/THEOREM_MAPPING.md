@@ -20,7 +20,10 @@ e286_common_neighbors_le_eleven; e286_ten_clique_completers_excess (VERIFIED).
 E286 Section2 private cliques/surplus/partition -> e286_private_class_isClique;
 e286_private_multiple_card; e286_seed_surplus_five; e286_seed_support_reduction
 (VERIFIED at4ede035, CI44262022836). All are statements about actual graph sets.
-Ten-orbit count classification -> e286_support_counts_complete (candidate).
-No mapping claims support orbit completeness,
+Ten-orbit count classification -> e286_support_counts_complete (VERIFIED at505e87c,
+CI44495273085). e286_weighted_profiles_complete proves finite-domain completeness;
+e286_finite_support_orbit_check is kernel-reduced with decide, without external data.
+Actual graph support orbit -> e286_actual_support_orbit (candidate).
+No mapping claims actual graph orbit completeness,
 E286 exclusion,287 floor,COVER or MainTheorem. Inherited source remains unchanged,
 except the import root and generated audit entry points.

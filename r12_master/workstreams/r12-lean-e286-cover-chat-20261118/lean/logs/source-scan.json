@@ -52,6 +52,7 @@
     "EG617\\Core\\E286SeedLedger.lean",
     "EG617\\Core\\E286Seeds.lean",
     "EG617\\Core\\E286SupportCounts.lean",
+    "EG617\\Core\\E286SupportLift.lean",
     "EG617\\Core\\EdgePartition.lean",
     "EG617\\Core\\Gate47.lean",
     "EG617\\Core\\GateRows.lean",
@@ -810,6 +811,71 @@
       "kind": "theorem",
       "name": "e286_support_counts_complete",
       "file": "EG617\\Core\\E286SupportCounts.lean"
+    },
+    {
+      "kind": "def",
+      "name": "seedLabelNeighbors",
+      "file": "EG617\\Core\\E286SupportLift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "seedLabelNeighbors_image",
+      "file": "EG617\\Core\\E286SupportLift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "seedLabelNeighbors_card",
+      "file": "EG617\\Core\\E286SupportLift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_seed_support_code_exists",
+      "file": "EG617\\Core\\E286SupportLift.lean"
+    },
+    {
+      "kind": "def",
+      "name": "e286SeedSupportCode",
+      "file": "EG617\\Core\\E286SupportLift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_seed_support_code_spec",
+      "file": "EG617\\Core\\E286SupportLift.lean"
+    },
+    {
+      "kind": "def",
+      "name": "e286GraphSupportCounts",
+      "file": "EG617\\Core\\E286SupportLift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_ofFn_get",
+      "file": "EG617\\Core\\E286SupportLift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_weightedSum_ofFn",
+      "file": "EG617\\Core\\E286SupportLift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_weighted_fiber_count",
+      "file": "EG617\\Core\\E286SupportLift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_graph_support_weighted_sum",
+      "file": "EG617\\Core\\E286SupportLift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_graph_support_incidence",
+      "file": "EG617\\Core\\E286SupportLift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_actual_support_orbit",
+      "file": "EG617\\Core\\E286SupportLift.lean"
     },
     {
       "kind": "def",

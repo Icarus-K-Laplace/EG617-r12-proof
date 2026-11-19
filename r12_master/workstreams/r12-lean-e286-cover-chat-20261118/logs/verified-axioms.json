@@ -44,6 +44,11 @@
     "Classical.choice",
     "Quot.sound"
   ],
+  "EG617.e286_support_counts_complete": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
   "EG617.colorGraph": [
     "propext",
     "Quot.sound"
@@ -638,6 +643,45 @@
     "Quot.sound"
   ],
   "EG617.seed_private_multiple_disjoint": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286SupportType": [
+    "propext",
+    "Quot.sound"
+  ],
+  "EG617.e286SupportWeights": [],
+  "EG617.e286_support_type_complete": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_support_type_weight": [
+    "propext",
+    "Quot.sound"
+  ],
+  "EG617.e286WeightedSum": [
+    "propext"
+  ],
+  "EG617.e286WeightedProfiles": [],
+  "EG617.e286_weighted_profiles_complete": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286CountIncidence": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286RelabelCounts": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286SupportOrbitRepresentatives": [],
+  "EG617.e286_finite_support_orbit_check": [
     "propext",
     "Classical.choice",
     "Quot.sound"
