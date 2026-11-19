@@ -51,6 +51,7 @@
     "EG617\\Core\\E286CommonNeighbors.lean",
     "EG617\\Core\\E286DisjointPairs.lean",
     "EG617\\Core\\E286Excess.lean",
+    "EG617\\Core\\E286OrbitRealization.lean",
     "EG617\\Core\\E286PrivateClasses.lean",
     "EG617\\Core\\E286SeedLedger.lean",
     "EG617\\Core\\E286Seeds.lean",
@@ -734,6 +735,36 @@
       "kind": "theorem",
       "name": "e286_regular_edge_ledger",
       "file": "EG617\\Core\\E286Excess.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_support_type_injective",
+      "file": "EG617\\Core\\E286OrbitRealization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "seedLabelNeighbors_relabel",
+      "file": "EG617\\Core\\E286OrbitRealization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_graph_support_counts_relabel",
+      "file": "EG617\\Core\\E286OrbitRealization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_actual_oriented_support_orbit",
+      "file": "EG617\\Core\\E286OrbitRealization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_first_support_orbit_impossible",
+      "file": "EG617\\Core\\E286OrbitRealization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_actual_support_nine_remaining",
+      "file": "EG617\\Core\\E286OrbitRealization.lean"
     },
     {
       "kind": "def",

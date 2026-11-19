@@ -132,6 +132,12 @@ public import EG617
 #print axioms EG617.e286_regular_card_ge_39
 #print axioms EG617.e286_support_degree_sum
 #print axioms EG617.e286_regular_edge_ledger
+#print axioms EG617.e286_support_type_injective
+#print axioms EG617.seedLabelNeighbors_relabel
+#print axioms EG617.e286_graph_support_counts_relabel
+#print axioms EG617.e286_actual_oriented_support_orbit
+#print axioms EG617.e286_first_support_orbit_impossible
+#print axioms EG617.e286_actual_support_nine_remaining
 #print axioms EG617.seedNeighbors
 #print axioms EG617.seedPrivateClique
 #print axioms EG617.seedMultipleSet

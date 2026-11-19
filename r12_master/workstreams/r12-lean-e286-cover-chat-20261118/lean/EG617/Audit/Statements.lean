@@ -132,6 +132,12 @@ public import EG617
 #check EG617.e286_regular_card_ge_39
 #check EG617.e286_support_degree_sum
 #check EG617.e286_regular_edge_ledger
+#check EG617.e286_support_type_injective
+#check EG617.seedLabelNeighbors_relabel
+#check EG617.e286_graph_support_counts_relabel
+#check EG617.e286_actual_oriented_support_orbit
+#check EG617.e286_first_support_orbit_impossible
+#check EG617.e286_actual_support_nine_remaining
 #print EG617.seedNeighbors
 #print EG617.seedPrivateClique
 #print EG617.seedMultipleSet

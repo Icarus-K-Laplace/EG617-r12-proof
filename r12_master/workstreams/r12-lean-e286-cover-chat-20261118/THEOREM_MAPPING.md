@@ -23,12 +23,12 @@ e286_private_multiple_card; e286_seed_surplus_five; e286_seed_support_reduction
 Ten-orbit count classification -> e286_support_counts_complete (VERIFIED at505e87c,
 CI44495273085). e286_weighted_profiles_complete proves finite-domain completeness;
 e286_finite_support_orbit_check is kernel-reduced with decide, without external data.
-Actual graph support orbit -> e286_actual_support_orbit (module compiled4ca26db;
-full build/audit pending).
-Section3 pair blocker -> e286_pair_blocker_complete (candidate).
-Section3 f11 actual local charge -> e286_k11_pair_local_charge (candidate).
+Actual graph support orbit -> e286_actual_support_orbit (VERIFIED at86e9970).
+Section3 pair blocker -> e286_pair_blocker_complete (VERIFIED at86e9970).
+Section3 f11 actual local charge -> e286_k11_pair_local_charge (VERIFIED at86e9970).
 Section5 complementary K11 pair obstruction ->
-e286_complementary_k11_pairs_impossible (candidate; canonical-count connection open).
-No mapping claims actual graph orbit completeness,
-E286 exclusion,287 floor,COVER or MainTheorem. Inherited source remains unchanged,
+e286_complementary_k11_pairs_impossible (VERIFIED at86e9970, CI44498020540).
+Section2 relabeling/Section5 first canonical orbit -> e286_actual_oriented_support_orbit;
+e286_first_support_orbit_impossible; e286_actual_support_nine_remaining (candidates).
+No mapping claims E286 exclusion,287 floor,COVER or MainTheorem. Inherited source remains unchanged,
 except the import root and generated audit entry points.

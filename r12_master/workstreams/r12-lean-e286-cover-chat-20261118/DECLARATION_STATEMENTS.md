@@ -1,6 +1,6 @@
 # Exact Lean statements
 
-Code 505e87c2864babe47b4884beea30b55b135bdc3f, CI 44495273085. Full proof bodies are in standard .lean files.
+Code 86e99707055bc62bb5d47eee32e1528740926bda, CI 44498020540. Full proof bodies are in standard .lean files.
 
 ## EG617.colorGraph
 
@@ -988,6 +988,49 @@ theorem exceptional_cost_six (G : SimpleGraph V) (h : R23ExceptionalProfile G) :
     CostSixProperty G
 ```
 
+## EG617.seed_private_nonadj_other_seed
+
+Source: EG617/Core/E286Blocker.lean
+
+```lean
+theorem seed_private_nonadj_other_seed (G : SimpleGraph V) (I : Finset V)
+    (hI : G.IsIndepSet (I : Set V)) (s t x : V) (hs : s ∈ I) (ht : t ∈ I)
+    (hts : t ≠ s) (hx : x ∈ seedPrivateClique G I s) : ¬ G.Adj x t
+```
+
+## EG617.seed_private_mem_seed
+
+Source: EG617/Core/E286Blocker.lean
+
+```lean
+theorem seed_private_mem_seed (G : SimpleGraph V) (I : Finset V)
+    (hI : G.IsIndepSet (I : Set V)) (s x : V)
+    (hx : x ∈ seedPrivateClique G I s) (hxI : x ∈ I) : x = s
+```
+
+## EG617.e286_pair_blocker_complete
+
+Source: EG617/Core/E286Blocker.lean
+
+```lean
+theorem e286_pair_blocker_complete (G : SimpleGraph V) (hG : E286Hypotheses G)
+    (I : Finset V) (hc : I.card = 4) (hI : G.IsIndepSet (I : Set V))
+    (i j z : V) (hi : i ∈ I) (hj : j ∈ I) (hij : i ≠ j)
+    (hz : seedNeighbors G I z = {i, j})
+    (x y : V) (hx : x ∈ seedPrivateClique G I i)
+    (hy : y ∈ seedPrivateClique G I j) (hzx : ¬ G.Adj z x) (hzy : ¬ G.Adj z y) :
+    G.Adj x y
+```
+
+## EG617.e286_subset_excess_budget
+
+Source: EG617/Core/E286Blocker.lean
+
+```lean
+theorem e286_subset_excess_budget (G : SimpleGraph V) (hG : E286Hypotheses G)
+    (S : Finset V) : (∑ v ∈ S, degreeExcess12 G v) ≤ 8
+```
+
 ## EG617.e286_induced_degree_budget
 
 Source: EG617/Core/E286Capacity.lean
@@ -1051,6 +1094,65 @@ theorem e286_common_antineighborhood_card_le_24 (G : SimpleGraph V)
     S.card ≤ 24
 ```
 
+## EG617.e286_two_disjoint_neighbor_sets
+
+Source: EG617/Core/E286Charges.lean
+
+```lean
+theorem e286_two_disjoint_neighbor_sets (G : SimpleGraph V) (v : V) (A B : Finset V)
+    (hd : Disjoint A B) (ha : ∀ x ∈ A, G.Adj v x) (hb : ∀ x ∈ B, G.Adj v x) :
+    A.card + B.card ≤ G.degree v
+```
+
+## EG617.e286_clique_blocker_vertex_charge
+
+Source: EG617/Core/E286Charges.lean
+
+```lean
+theorem e286_clique_blocker_vertex_charge (G : SimpleGraph V)
+    (K B : Finset V) (hK : G.IsClique (K : Set V)) (hd : Disjoint K B)
+    (x : V) (hx : x ∈ K) (hB : ∀ y ∈ B, G.Adj x y) :
+    K.card + B.card ≤ 13 + degreeExcess12 G x
+```
+
+## EG617.e286_pair_point_degree_charge
+
+Source: EG617/Core/E286Charges.lean
+
+```lean
+theorem e286_pair_point_degree_charge (G : SimpleGraph V) (K L : Finset V)
+    (hd : Disjoint K L) (z : V) :
+    K.card + L.card ≤ 12 + degreeExcess12 G z +
+      (K.filter (fun v => ¬ G.Adj z v)).card +
+      (L.filter (fun v => ¬ G.Adj z v)).card
+```
+
+## EG617.e286_f11_minimum
+
+Source: EG617/Core/E286Charges.lean
+
+```lean
+theorem e286_f11_minimum (a b : ℕ) (ha : 1 ≤ a) (hb : 1 ≤ b)
+    (ha' : a ≤ 11) (hb' : b ≤ 11) :
+    6 ≤ (10 - a - b) + a * (b - 2) + b * (a - 2)
+```
+
+## EG617.e286_k11_pair_local_charge
+
+Source: EG617/Core/E286Charges.lean
+
+```lean
+theorem e286_k11_pair_local_charge (G : SimpleGraph V) (K L : Finset V)
+    (hK : G.IsClique (K : Set V)) (hL : G.IsClique (L : Set V))
+    (hcK : K.card = 11) (hcL : L.card = 11) (hd : Disjoint K L)
+    (z : V) (hzK : z ∉ K) (hzL : z ∉ L)
+    (ha : (K.filter (fun v => ¬ G.Adj z v)).Nonempty)
+    (hb : (L.filter (fun v => ¬ G.Adj z v)).Nonempty)
+    (he : ∀ x ∈ K, ¬ G.Adj z x → ∀ y ∈ L, ¬ G.Adj z y → G.Adj x y) :
+    6 ≤ ∑ v ∈ insert z ((K.filter (fun v => ¬ G.Adj z v)) ∪
+      (L.filter (fun v => ¬ G.Adj z v))), degreeExcess12 G v
+```
+
 ## EG617.e286_common_neighbors_excess_bound
 
 Source: EG617/Core/E286CommonNeighbors.lean
@@ -1104,6 +1206,55 @@ theorem e286_ten_clique_completers_excess (G : SimpleGraph V)
     (hx : x ∉ K) (hy : y ∉ K)
     (hadj : ∀ z ∈ K, G.Adj x z ∧ G.Adj y z) :
     ¬ G.Adj x y ∧ 7 ≤ degreeExcess12 G x + degreeExcess12 G y
+```
+
+## EG617.e286_eleven_clique_missing_nonempty
+
+Source: EG617/Core/E286DisjointPairs.lean
+
+```lean
+theorem e286_eleven_clique_missing_nonempty (G : SimpleGraph V)
+    (hG : E286Hypotheses G) (K : Finset V) (hc : K.card = 11)
+    (hK : G.IsClique (K : Set V)) (z : V) (hz : z ∉ K) :
+    (K.filter (fun x => ¬ G.Adj z x)).Nonempty
+```
+
+## EG617.e286_pair_support_mem_multiple
+
+Source: EG617/Core/E286DisjointPairs.lean
+
+```lean
+theorem e286_pair_support_mem_multiple (G : SimpleGraph V) (I : Finset V)
+    (i j z : V) (hij : i ≠ j) (hz : seedNeighbors G I z = {i, j}) :
+    z ∈ seedMultipleSet G I
+```
+
+## EG617.e286_private_k11_pair_charge
+
+Source: EG617/Core/E286DisjointPairs.lean
+
+```lean
+theorem e286_private_k11_pair_charge (G : SimpleGraph V) (hG : E286Hypotheses G)
+    (I : Finset V) (hc : I.card = 4) (hI : G.IsIndepSet (I : Set V))
+    (i j z : V) (hi : i ∈ I) (hj : j ∈ I) (hij : i ≠ j)
+    (hz : seedNeighbors G I z = {i, j})
+    (hci : (seedPrivateClique G I i).card = 11)
+    (hcj : (seedPrivateClique G I j).card = 11) :
+    6 ≤ ∑ v ∈ insert z (seedPrivateClique G I i ∪ seedPrivateClique G I j),
+      degreeExcess12 G v
+```
+
+## EG617.e286_complementary_k11_pairs_impossible
+
+Source: EG617/Core/E286DisjointPairs.lean
+
+```lean
+theorem e286_complementary_k11_pairs_impossible (G : SimpleGraph V)
+    (hG : E286Hypotheses G) (I : Finset V) (hc : I.card = 4)
+    (hI : G.IsIndepSet (I : Set V)) (e : Fin 4 ≃ (I : Set V))
+    (hK : ∀ s : Fin 4, (seedPrivateClique G I (e s)).card = 11)
+    (z w : V) (hz : seedNeighbors G I z = {(e 0 : V), (e 1 : V)})
+    (hw : seedNeighbors G I w = {(e 2 : V), (e 3 : V)}) : False
 ```
 
 ## EG617.E286Hypotheses
@@ -1533,6 +1684,138 @@ theorem e286_support_counts_complete (xs : List ℕ)
     (hinc : ∀ s : Fin 4, 2 ≤ e286CountIncidence xs s) :
     ∃ σ : Equiv.Perm (Fin 4),
       e286RelabelCounts σ xs ∈ e286SupportOrbitRepresentatives
+```
+
+## EG617.seedLabelNeighbors
+
+Source: EG617/Core/E286SupportLift.lean
+
+```lean
+noncomputable def seedLabelNeighbors (G : SimpleGraph V) (I : Finset V)
+    (e : Fin 4 ≃ (I : Set V)) (v : V) : Finset (Fin 4)
+```
+
+## EG617.seedLabelNeighbors_image
+
+Source: EG617/Core/E286SupportLift.lean
+
+```lean
+theorem seedLabelNeighbors_image (G : SimpleGraph V) (I : Finset V)
+    (e : Fin 4 ≃ (I : Set V)) (v : V) :
+    (seedLabelNeighbors G I e v).image (fun i => (e i : V)) = seedNeighbors G I v
+```
+
+## EG617.seedLabelNeighbors_card
+
+Source: EG617/Core/E286SupportLift.lean
+
+```lean
+theorem seedLabelNeighbors_card (G : SimpleGraph V) (I : Finset V)
+    (e : Fin 4 ≃ (I : Set V)) (v : V) :
+    (seedLabelNeighbors G I e v).card = (seedNeighbors G I v).card
+```
+
+## EG617.e286_seed_support_code_exists
+
+Source: EG617/Core/E286SupportLift.lean
+
+```lean
+theorem e286_seed_support_code_exists (G : SimpleGraph V) (I : Finset V)
+    (e : Fin 4 ≃ (I : Set V)) (v : (seedMultipleSet G I : Set V)) :
+    ∃ i : Fin 11, e286SupportType i = seedLabelNeighbors G I e v
+```
+
+## EG617.e286SeedSupportCode
+
+Source: EG617/Core/E286SupportLift.lean
+
+```lean
+noncomputable def e286SeedSupportCode (G : SimpleGraph V) (I : Finset V)
+    (e : Fin 4 ≃ (I : Set V)) (v : (seedMultipleSet G I : Set V)) : Fin 11
+```
+
+## EG617.e286_seed_support_code_spec
+
+Source: EG617/Core/E286SupportLift.lean
+
+```lean
+theorem e286_seed_support_code_spec (G : SimpleGraph V) (I : Finset V)
+    (e : Fin 4 ≃ (I : Set V)) (v : (seedMultipleSet G I : Set V)) :
+    e286SupportType (e286SeedSupportCode G I e v) = seedLabelNeighbors G I e v
+```
+
+## EG617.e286GraphSupportCounts
+
+Source: EG617/Core/E286SupportLift.lean
+
+```lean
+noncomputable def e286GraphSupportCounts (G : SimpleGraph V) (I : Finset V)
+    (e : Fin 4 ≃ (I : Set V)) : List ℕ
+```
+
+## EG617.e286_ofFn_get
+
+Source: EG617/Core/E286SupportLift.lean
+
+```lean
+theorem e286_ofFn_get (f : Fin 11 → ℕ) (i : Fin 11) :
+    (List.ofFn f)[i.val]! = f i
+```
+
+## EG617.e286_weightedSum_ofFn
+
+Source: EG617/Core/E286SupportLift.lean
+
+```lean
+theorem e286_weightedSum_ofFn (f : Fin 11 → ℕ) :
+    e286WeightedSum e286SupportWeights (List.ofFn f) =
+      ∑ i : Fin 11, ((e286SupportType i).card - 1) * f i
+```
+
+## EG617.e286_weighted_fiber_count
+
+Source: EG617/Core/E286SupportLift.lean
+
+```lean
+theorem e286_weighted_fiber_count {W : Type u} [Fintype W]
+    (code : W → Fin 11) (w : Fin 11 → ℕ) :
+    (∑ i : Fin 11, w i * (Finset.univ.filter (fun v => code v = i)).card) =
+      ∑ v : W, w (code v)
+```
+
+## EG617.e286_graph_support_weighted_sum
+
+Source: EG617/Core/E286SupportLift.lean
+
+```lean
+theorem e286_graph_support_weighted_sum (G : SimpleGraph V) (hG : E286Hypotheses G)
+    (I : Finset V) (hc : I.card = 4) (hi : G.IsIndepSet (I : Set V))
+    (hd : ∀ v ∈ I, G.degree v = 12) (e : Fin 4 ≃ (I : Set V)) :
+    e286WeightedSum e286SupportWeights (e286GraphSupportCounts G I e) = 5
+```
+
+## EG617.e286_graph_support_incidence
+
+Source: EG617/Core/E286SupportLift.lean
+
+```lean
+theorem e286_graph_support_incidence (G : SimpleGraph V) (I : Finset V)
+    (e : Fin 4 ≃ (I : Set V)) (s : Fin 4) :
+    e286CountIncidence (e286GraphSupportCounts G I e) s =
+      ((seedMultipleSet G I).filter (G.Adj (e s))).card
+```
+
+## EG617.e286_actual_support_orbit
+
+Source: EG617/Core/E286SupportLift.lean
+
+```lean
+theorem e286_actual_support_orbit (G : SimpleGraph V) (hG : E286Hypotheses G) :
+    ∃ I : Finset V, I.card = 4 ∧ G.IsIndepSet (I : Set V) ∧
+      (∀ v ∈ I, G.degree v = 12) ∧
+      ∃ e : Fin 4 ≃ (I : Set V), ∃ σ : Equiv.Perm (Fin 4),
+        e286RelabelCounts σ (e286GraphSupportCounts G I e) ∈
+          e286SupportOrbitRepresentatives
 ```
 
 ## EG617.adjCount

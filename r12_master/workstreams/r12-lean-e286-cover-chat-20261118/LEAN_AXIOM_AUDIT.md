@@ -1,6 +1,6 @@
 # Transitive axiom audit
 
-Verified code 505e87c2864babe47b4884beea30b55b135bdc3f, CI 44495273085. All project declarations below compiled.
+Verified code 86e99707055bc62bb5d47eee32e1528740926bda, CI 44498020540. All project declarations below compiled.
 Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem remain unproved.
 
 | Declaration | Axioms |
@@ -98,17 +98,30 @@ Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem r
 | EG617.case_I_cost_six | propext, Classical.choice, Quot.sound |
 | EG617.exceptional_cost_four | propext, Classical.choice, Quot.sound |
 | EG617.exceptional_cost_six | propext, Classical.choice, Quot.sound |
+| EG617.seed_private_nonadj_other_seed | propext, Classical.choice, Quot.sound |
+| EG617.seed_private_mem_seed | propext, Classical.choice, Quot.sound |
+| EG617.e286_pair_blocker_complete | propext, Classical.choice, Quot.sound |
+| EG617.e286_subset_excess_budget | propext, Classical.choice, Quot.sound |
 | EG617.e286_induced_degree_budget | propext, Classical.choice, Quot.sound |
 | EG617.oddCycleBound_25 | propext, Quot.sound |
 | EG617.alpha_two_25_edges_ge_155 | propext, Classical.choice, Quot.sound |
 | EG617.e286_no_induced_alpha_two_25 | propext, Classical.choice, Quot.sound |
 | EG617.independenceBound_common_nonNeighbors | propext, Classical.choice, Quot.sound |
 | EG617.e286_common_antineighborhood_card_le_24 | propext, Classical.choice, Quot.sound |
+| EG617.e286_two_disjoint_neighbor_sets | propext, Classical.choice, Quot.sound |
+| EG617.e286_clique_blocker_vertex_charge | propext, Classical.choice, Quot.sound |
+| EG617.e286_pair_point_degree_charge | propext, Classical.choice, Quot.sound |
+| EG617.e286_f11_minimum | propext, Classical.choice, Quot.sound |
+| EG617.e286_k11_pair_local_charge | propext, Classical.choice, Quot.sound |
 | EG617.e286_common_neighbors_excess_bound | propext, Classical.choice, Quot.sound |
 | EG617.e286_pair_excess_le_eight | propext, Classical.choice, Quot.sound |
 | EG617.e286_common_neighbors_le_eleven | propext, Classical.choice, Quot.sound |
 | EG617.e286_common_set_excess_charge | propext, Classical.choice, Quot.sound |
 | EG617.e286_ten_clique_completers_excess | propext, Classical.choice, Quot.sound |
+| EG617.e286_eleven_clique_missing_nonempty | propext, Classical.choice, Quot.sound |
+| EG617.e286_pair_support_mem_multiple | propext, Classical.choice, Quot.sound |
+| EG617.e286_private_k11_pair_charge | propext, Classical.choice, Quot.sound |
+| EG617.e286_complementary_k11_pairs_impossible | propext, Classical.choice, Quot.sound |
 | EG617.E286Hypotheses | propext, Classical.choice, Quot.sound |
 | EG617.E286Statement | propext, Classical.choice, Quot.sound |
 | EG617.degreeExcess12 | propext, Classical.choice, Quot.sound |
@@ -151,6 +164,19 @@ Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem r
 | EG617.e286SupportOrbitRepresentatives | none |
 | EG617.e286_finite_support_orbit_check | propext, Classical.choice, Quot.sound |
 | EG617.e286_support_counts_complete | propext, Classical.choice, Quot.sound |
+| EG617.seedLabelNeighbors | propext, Classical.choice, Quot.sound |
+| EG617.seedLabelNeighbors_image | propext, Classical.choice, Quot.sound |
+| EG617.seedLabelNeighbors_card | propext, Classical.choice, Quot.sound |
+| EG617.e286_seed_support_code_exists | propext, Classical.choice, Quot.sound |
+| EG617.e286SeedSupportCode | propext, Classical.choice, Quot.sound |
+| EG617.e286_seed_support_code_spec | propext, Classical.choice, Quot.sound |
+| EG617.e286GraphSupportCounts | propext, Classical.choice, Quot.sound |
+| EG617.e286_ofFn_get | propext, Classical.choice, Quot.sound |
+| EG617.e286_weightedSum_ofFn | propext, Classical.choice, Quot.sound |
+| EG617.e286_weighted_fiber_count | propext, Classical.choice, Quot.sound |
+| EG617.e286_graph_support_weighted_sum | propext, Classical.choice, Quot.sound |
+| EG617.e286_graph_support_incidence | propext, Classical.choice, Quot.sound |
+| EG617.e286_actual_support_orbit | propext, Classical.choice, Quot.sound |
 | EG617.adjCount | propext, Classical.choice, Quot.sound |
 | EG617.adjCount_eq_sum_filter | propext, Classical.choice, Quot.sound |
 | EG617.degree_induce_eq_filter | propext, Classical.choice, Quot.sound |
