@@ -58,7 +58,7 @@ theorem e286_weighted_profiles_complete (ws xs : List ℕ) (b : ℕ)
     | nil =>
       have hb : b = 0 := hsum.symm
       subst b
-      simp [e286WeightedProfiles]
+      simp [e286WeightedProfiles, e286WeightedSum]
     | cons x xs => simp at hlen
   | cons w ws ih =>
     cases xs with
@@ -67,7 +67,8 @@ theorem e286_weighted_profiles_complete (ws xs : List ℕ) (b : ℕ)
       have hw : 1 ≤ w := hpos w (by simp)
       have he : w * x + e286WeightedSum ws xs = b := hsum
       have hle : w * x ≤ b := by omega
-      have hx : x < b + 1 := by nlinarith
+      have hxx : x ≤ w * x := by simpa using Nat.mul_le_mul_right x hw
+      have hx : x < b + 1 := by omega
       have htail : e286WeightedSum ws xs = b - w * x := by omega
       have hm := ih xs (b - w * x) (fun z hz => hpos z (by simp [hz]))
         (by simpa using hlen) htail
