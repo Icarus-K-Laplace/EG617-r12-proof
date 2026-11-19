@@ -34,7 +34,10 @@ theorem seedLabelNeighbors_card (G : SimpleGraph V) (I : Finset V)
     (e : Fin 4 ≃ (I : Set V)) (v : V) :
     (seedLabelNeighbors G I e v).card = (seedNeighbors G I v).card := by
   have h := congrArg Finset.card (seedLabelNeighbors_image G I e v)
-  rw [Finset.card_image_of_injective _ (Subtype.val_injective.comp e.injective)] at h
+  have hinj : Function.Injective (fun i : Fin 4 => (e i : V)) := by
+    intro a b hab
+    exact e.injective (Subtype.ext hab)
+  rw [Finset.card_image_of_injective _ hinj] at h
   exact h
 
 theorem e286_seed_support_code_exists (G : SimpleGraph V) (I : Finset V)
@@ -62,7 +65,7 @@ noncomputable def e286GraphSupportCounts (G : SimpleGraph V) (I : Finset V)
       e286SeedSupportCode G I e v = i)).card
 
 theorem e286_ofFn_get (f : Fin 11 → ℕ) (i : Fin 11) :
-    (List.ofFn f)[i.val]! = f i := by simp
+    (List.ofFn f)[i.val]! = f i := by fin_cases i <;> rfl
 
 theorem e286_weightedSum_ofFn (f : Fin 11 → ℕ) :
     e286WeightedSum e286SupportWeights (List.ofFn f) =
@@ -91,7 +94,7 @@ theorem e286_graph_support_weighted_sum (G : SimpleGraph V) (hG : E286Hypotheses
     apply Finset.sum_congr rfl
     intro v _
     rw [e286_seed_support_code_spec, seedLabelNeighbors_card]
-  rw [he, Finset.sum_coe_sort]
+  rw [he, ← Finset.sum_subtype (seedMultipleSet G I) (fun _ => Iff.rfl)]
   exact e286_seed_surplus_five G hG I hc hi hd
 
 theorem e286_graph_support_incidence (G : SimpleGraph V) (I : Finset V)
@@ -112,7 +115,7 @@ theorem e286_graph_support_incidence (G : SimpleGraph V) (I : Finset V)
     rw [e286_seed_support_code_spec]
     simp only [seedLabelNeighbors, Finset.mem_filter, Finset.mem_univ, true_and,
       G.adj_comm (v : V) (e s)]
-  rw [he, Finset.sum_coe_sort]
+  rw [he, ← Finset.sum_subtype (seedMultipleSet G I) (fun _ => Iff.rfl)]
   simp
 
 /-- The ten-orbit count classification is applied to the actual graph, after
