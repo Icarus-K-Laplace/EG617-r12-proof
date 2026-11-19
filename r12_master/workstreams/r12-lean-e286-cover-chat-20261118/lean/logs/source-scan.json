@@ -45,7 +45,9 @@
     "EG617\\Core\\CostSixCounts.lean",
     "EG617\\Core\\CostSixDeletion.lean",
     "EG617\\Core\\CostSixProfiles.lean",
+    "EG617\\Core\\E286Blocker.lean",
     "EG617\\Core\\E286Capacity.lean",
+    "EG617\\Core\\E286Charges.lean",
     "EG617\\Core\\E286CommonNeighbors.lean",
     "EG617\\Core\\E286Excess.lean",
     "EG617\\Core\\E286PrivateClasses.lean",
@@ -549,6 +551,26 @@
     },
     {
       "kind": "theorem",
+      "name": "seed_private_nonadj_other_seed",
+      "file": "EG617\\Core\\E286Blocker.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "seed_private_mem_seed",
+      "file": "EG617\\Core\\E286Blocker.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_pair_blocker_complete",
+      "file": "EG617\\Core\\E286Blocker.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_subset_excess_budget",
+      "file": "EG617\\Core\\E286Blocker.lean"
+    },
+    {
+      "kind": "theorem",
       "name": "e286_induced_degree_budget",
       "file": "EG617\\Core\\E286Capacity.lean"
     },
@@ -576,6 +598,31 @@
       "kind": "theorem",
       "name": "e286_common_antineighborhood_card_le_24",
       "file": "EG617\\Core\\E286Capacity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_two_disjoint_neighbor_sets",
+      "file": "EG617\\Core\\E286Charges.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_clique_blocker_vertex_charge",
+      "file": "EG617\\Core\\E286Charges.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_pair_point_degree_charge",
+      "file": "EG617\\Core\\E286Charges.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_f11_minimum",
+      "file": "EG617\\Core\\E286Charges.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_k11_pair_local_charge",
+      "file": "EG617\\Core\\E286Charges.lean"
     },
     {
       "kind": "theorem",

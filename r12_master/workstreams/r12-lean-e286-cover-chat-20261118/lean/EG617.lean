@@ -46,3 +46,5 @@ public import EG617.Core.E286PrivateClasses
 public import EG617.Core.E286SeedLedger
 public import EG617.Core.E286SupportCounts
 public import EG617.Core.E286SupportLift
+public import EG617.Core.E286Blocker
+public import EG617.Core.E286Charges

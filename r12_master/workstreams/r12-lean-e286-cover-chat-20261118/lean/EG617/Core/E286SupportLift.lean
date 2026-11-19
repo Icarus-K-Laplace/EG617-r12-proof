@@ -94,8 +94,10 @@ theorem e286_graph_support_weighted_sum (G : SimpleGraph V) (hG : E286Hypotheses
     apply Finset.sum_congr rfl
     intro v _
     rw [e286_seed_support_code_spec, seedLabelNeighbors_card]
-  rw [he, ← Finset.sum_subtype (seedMultipleSet G I) (fun _ => Iff.rfl)]
-  exact e286_seed_surplus_five G hG I hc hi hd
+  rw [he]
+  exact (Finset.sum_subtype (seedMultipleSet G I) (fun _ => Iff.rfl)
+    (fun v => (seedNeighbors G I v).card - 1)).symm.trans
+      (e286_seed_surplus_five G hG I hc hi hd)
 
 theorem e286_graph_support_incidence (G : SimpleGraph V) (I : Finset V)
     (e : Fin 4 ≃ (I : Set V)) (s : Fin 4) :
@@ -115,8 +117,12 @@ theorem e286_graph_support_incidence (G : SimpleGraph V) (I : Finset V)
     rw [e286_seed_support_code_spec]
     simp only [seedLabelNeighbors, Finset.mem_filter, Finset.mem_univ, true_and,
       G.adj_comm (v : V) (e s)]
-  rw [he, ← Finset.sum_subtype (seedMultipleSet G I) (fun _ => Iff.rfl)]
-  simp
+  rw [he]
+  calc
+    _ = ∑ v ∈ seedMultipleSet G I, if G.Adj (e s) v then 1 else 0 :=
+      (Finset.sum_subtype (seedMultipleSet G I) (fun _ => Iff.rfl)
+        (fun v => if G.Adj (e s) v then 1 else 0)).symm
+    _ = _ := by simp
 
 /-- The ten-orbit count classification is applied to the actual graph, after
 the regular seeds, partition, surplus and every incidence bound have been

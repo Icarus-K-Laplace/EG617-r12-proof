@@ -2,6 +2,7 @@ module
 public import EG617.Core.E286CommonNeighbors
 public import EG617.Core.E286SupportCounts
 public import EG617.Core.E286SupportLift
+public import EG617.Core.E286Charges
 #print EG617.E286Hypotheses
 #check EG617.e286_excess_sum
 #print axioms EG617.e286_excess_sum
@@ -25,3 +26,7 @@ public import EG617.Core.E286SupportLift
 #print axioms EG617.e286_support_counts_complete
 #check EG617.e286_actual_support_orbit
 #print axioms EG617.e286_actual_support_orbit
+#check EG617.e286_pair_blocker_complete
+#print axioms EG617.e286_pair_blocker_complete
+#check EG617.e286_k11_pair_local_charge
+#print axioms EG617.e286_k11_pair_local_charge
