@@ -16,9 +16,10 @@ never read by a Lean theorem or trusted as an oracle. Kernel evidence is separat
 
 No counterexample occurred in those explicitly bounded domains. No exhaustive
 47-vertex graph search was performed. Shared-center graph charging, simultaneous
-overlap, the remaining terminal configurations, and the bridge from canonical
-count representatives to oriented actual graph configurations still require
-kernel proofs. No diagnostic result licenses E286 or any parent theorem.
+overlap and the remaining nine terminal configurations still require kernel
+proofs. The canonical-count to oriented-graph bridge and first orbit exclusion
+are independently kernel-certified at90130d8; no diagnostic result licenses
+E286 or any parent theorem.
 
 The actual pair-blocker argument constructs four independent vertices anticomplete
 to the pair-support point if a forced cross edge is absent. Together they violate

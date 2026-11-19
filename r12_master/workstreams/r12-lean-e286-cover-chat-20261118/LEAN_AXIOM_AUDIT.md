@@ -1,6 +1,6 @@
 # Transitive axiom audit
 
-Verified code 86e99707055bc62bb5d47eee32e1528740926bda, CI 44498020540. All project declarations below compiled.
+Verified code 90130d81e8fcc60dc6a61707e92fb8ee8f73b415, CI 44498770093. All project declarations below compiled.
 Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem remain unproved.
 
 | Declaration | Axioms |
@@ -135,6 +135,12 @@ Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem r
 | EG617.e286_regular_card_ge_39 | propext, Classical.choice, Quot.sound |
 | EG617.e286_support_degree_sum | propext, Classical.choice, Quot.sound |
 | EG617.e286_regular_edge_ledger | propext, Classical.choice, Quot.sound |
+| EG617.e286_support_type_injective | propext, Classical.choice, Quot.sound |
+| EG617.seedLabelNeighbors_relabel | propext, Classical.choice, Quot.sound |
+| EG617.e286_graph_support_counts_relabel | propext, Classical.choice, Quot.sound |
+| EG617.e286_actual_oriented_support_orbit | propext, Classical.choice, Quot.sound |
+| EG617.e286_first_support_orbit_impossible | propext, Classical.choice, Quot.sound |
+| EG617.e286_actual_support_nine_remaining | propext, Classical.choice, Quot.sound |
 | EG617.seedNeighbors | propext, Classical.choice, Quot.sound |
 | EG617.seedPrivateClique | propext, Classical.choice, Quot.sound |
 | EG617.seedMultipleSet | propext, Classical.choice, Quot.sound |

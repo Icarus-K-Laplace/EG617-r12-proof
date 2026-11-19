@@ -1,6 +1,6 @@
 # Exact Lean statements
 
-Code 86e99707055bc62bb5d47eee32e1528740926bda, CI 44498020540. Full proof bodies are in standard .lean files.
+Code 90130d81e8fcc60dc6a61707e92fb8ee8f73b415, CI 44498770093. Full proof bodies are in standard .lean files.
 
 ## EG617.colorGraph
 
@@ -1369,6 +1369,69 @@ Source: EG617/Core/E286Excess.lean
 theorem e286_regular_edge_ledger (G : SimpleGraph V) (hG : E286Hypotheses G) :
     coreInducedEdgeCount G (excessSupport G)ᶜ + 12 * (excessSupport G).card + 8 =
       286 + coreInducedEdgeCount G (excessSupport G)
+```
+
+## EG617.e286_support_type_injective
+
+Source: EG617/Core/E286OrbitRealization.lean
+
+```lean
+theorem e286_support_type_injective : Function.Injective e286SupportType
+```
+
+## EG617.seedLabelNeighbors_relabel
+
+Source: EG617/Core/E286OrbitRealization.lean
+
+```lean
+theorem seedLabelNeighbors_relabel (G : SimpleGraph V) (I : Finset V)
+    (e : Fin 4 ≃ (I : Set V)) (σ : Equiv.Perm (Fin 4)) (v : V) :
+    seedLabelNeighbors G I (σ.symm.trans e) v =
+      (seedLabelNeighbors G I e v).image σ
+```
+
+## EG617.e286_graph_support_counts_relabel
+
+Source: EG617/Core/E286OrbitRealization.lean
+
+```lean
+theorem e286_graph_support_counts_relabel (G : SimpleGraph V) (I : Finset V)
+    (e : Fin 4 ≃ (I : Set V)) (σ : Equiv.Perm (Fin 4)) :
+    e286GraphSupportCounts G I (σ.symm.trans e) =
+      e286RelabelCounts σ (e286GraphSupportCounts G I e)
+```
+
+## EG617.e286_actual_oriented_support_orbit
+
+Source: EG617/Core/E286OrbitRealization.lean
+
+```lean
+theorem e286_actual_oriented_support_orbit (G : SimpleGraph V) (hG : E286Hypotheses G) :
+    ∃ I : Finset V, I.card = 4 ∧ G.IsIndepSet (I : Set V) ∧
+      (∀ v ∈ I, G.degree v = 12) ∧ ∃ e : Fin 4 ≃ (I : Set V),
+        e286GraphSupportCounts G I e ∈ e286SupportOrbitRepresentatives
+```
+
+## EG617.e286_first_support_orbit_impossible
+
+Source: EG617/Core/E286OrbitRealization.lean
+
+```lean
+theorem e286_first_support_orbit_impossible (G : SimpleGraph V) (hG : E286Hypotheses G)
+    (I : Finset V) (hc : I.card = 4) (hI : G.IsIndepSet (I : Set V))
+    (hd : ∀ v ∈ I, G.degree v = 12) (e : Fin 4 ≃ (I : Set V))
+    (hcounts : e286GraphSupportCounts G I e = [1,0,0,0,0,1,0,0,0,0,1]) : False
+```
+
+## EG617.e286_actual_support_nine_remaining
+
+Source: EG617/Core/E286OrbitRealization.lean
+
+```lean
+theorem e286_actual_support_nine_remaining (G : SimpleGraph V) (hG : E286Hypotheses G) :
+    ∃ I : Finset V, I.card = 4 ∧ G.IsIndepSet (I : Set V) ∧
+      (∀ v ∈ I, G.degree v = 12) ∧ ∃ e : Fin 4 ≃ (I : Set V),
+        e286GraphSupportCounts G I e ∈ e286SupportOrbitRepresentatives.tail
 ```
 
 ## EG617.seedNeighbors

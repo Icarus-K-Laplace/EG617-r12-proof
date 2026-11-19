@@ -69,6 +69,11 @@
     "Classical.choice",
     "Quot.sound"
   ],
+  "EG617.e286_actual_support_nine_remaining": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
   "EG617.colorGraph": [
     "propext",
     "Quot.sound"
@@ -648,6 +653,31 @@
     "Quot.sound"
   ],
   "EG617.e286_support_degree_sum": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_support_type_injective": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.seedLabelNeighbors_relabel": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_graph_support_counts_relabel": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_actual_oriented_support_orbit": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_first_support_orbit_impossible": [
     "propext",
     "Classical.choice",
     "Quot.sound"

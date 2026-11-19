@@ -38,6 +38,7 @@ lake build 2>&1 | tee logs/build.txt
 node scripts/check-source.mjs
 lake build +EG617.Audit.Axioms 2>&1 | tee logs/axioms.txt
 node scripts/check-axioms.mjs
+lake build +EG617.Audit.E286Dependencies 2>&1 | tee logs/e286-dependencies.txt
 lake build +EG617.Audit.Statements 2>&1 | tee logs/statements.txt
 node - <<'NODE'
 const fs=require('fs'),crypto=require('crypto'),path=require('path');

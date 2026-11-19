@@ -13,6 +13,7 @@
     "EG617\\Audit\\CostSixDeletion.lean",
     "EG617\\Audit\\CostSixProfiles.lean",
     "EG617\\Audit\\E286.lean",
+    "EG617\\Audit\\E286Dependencies.lean",
     "EG617\\Audit\\Gate47.lean",
     "EG617\\Audit\\GateRows.lean",
     "EG617\\Audit\\GateShell.lean",

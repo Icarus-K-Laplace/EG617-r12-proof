@@ -18,6 +18,9 @@ the K11/K11 local six-unit charge, and the complementary-pair obstruction.
 All297 declarations and248 theorems passed full build, exact statements,
 transitive axiom audit and SHA256 checks. All68 inherited files are unchanged.
 The canonical-count to oriented-seed identity and first count-orbit elimination
-are new candidates in E286OrbitRealization. E286 nonexistence remains open.
+are VERIFIED at90130d8, CI44498770093. The actual graph is reduced to the remaining
+nine representatives by e286_actual_support_nine_remaining. All303 declarations
+and254 theorems passed;68 inherited files remain unchanged. E286 nonexistence
+remains open. A proof-term dependency traversal is being added as an audit.
 LEVEL5A E286, LEVEL5B edge floor287, LEVEL6A h12/h13, LEVEL6B COVER and
 LEVEL7 K145 MainTheorem remain FORMALIZATION_GAP. No terminal proof is assumed.

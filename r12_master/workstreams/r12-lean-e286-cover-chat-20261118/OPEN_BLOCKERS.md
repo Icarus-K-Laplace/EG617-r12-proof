@@ -7,9 +7,11 @@
    and3<=|Z|<=5. CLOSED at505e87c: ten count-vector orbits and exhaustive domain.
    CLOSED at86e9970: actual graph-to-count transport, full build and audit.
 4. CLOSED at86e9970: actual blocker, K11/K11 local charge and complementary-pair
-   obstruction. OPEN: compile E286OrbitRealization to connect the first orbit to
-   canonical counts. Then prove triple-K11 local cost, shared-center charges and
-   the remaining terminal exclusions. No E286 nonexistence theorem exists yet.
+   obstruction. CLOSED at90130d8: actual inverse seed relabeling, first canonical
+   orbit exclusion, and nine-remaining-orbits theorem. OPEN: frozen Section4's
+   triple-K11 local cost>=3 and Section3's concentrated small-side charge>=6;
+   together these exclude the second h3 orbit. The h4/h5 shared-center charges
+   and terminal exclusions also remain open. No E286 nonexistence theorem exists.
 5. Locate and formalize the frozen <=285 exclusion separately; GATE47 alone gives
    only e>=282 from minimum degree12, not the necessary286 floor.
 6. The supplied COVER source is h13-only and explicitly uses AES at (35,4,22).

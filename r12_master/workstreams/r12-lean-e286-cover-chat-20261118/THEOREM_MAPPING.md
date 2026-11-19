@@ -29,6 +29,8 @@ Section3 f11 actual local charge -> e286_k11_pair_local_charge (VERIFIED at86e99
 Section5 complementary K11 pair obstruction ->
 e286_complementary_k11_pairs_impossible (VERIFIED at86e9970, CI44498020540).
 Section2 relabeling/Section5 first canonical orbit -> e286_actual_oriented_support_orbit;
-e286_first_support_orbit_impossible; e286_actual_support_nine_remaining (candidates).
+e286_first_support_orbit_impossible; e286_actual_support_nine_remaining
+(VERIFIED at90130d8, CI44498770093). The inverse seed permutation identity
+e286_graph_support_counts_relabel proves equivalence with actual graph distributions.
 No mapping claims E286 exclusion,287 floor,COVER or MainTheorem. Inherited source remains unchanged,
 except the import root and generated audit entry points.

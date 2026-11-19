@@ -25,5 +25,8 @@ from omega<=11; forced cross edges follow from alpha<=4. None is assumed in the
 private-clique wrapper. Full types are in DECLARATION_STATEMENTS.md and the CI log.
 
 The oriented seed realization and elimination of the first count representative
-are candidates. The remaining terminal orbit exclusions, shared-center overlap
+are VERIFIED at90130d8 (CI44498770093). The main certified reduction
+e286_actual_support_nine_remaining assumes only E286Hypotheses and produces
+actual regular seeds and a count vector in the tail of the ten-representative list.
+No extra terminal premise is introduced. The remaining nine orbit exclusions, shared-center overlap
 accounting and triple-K11 local cost are still unproved. LEVEL5A is not attained.
