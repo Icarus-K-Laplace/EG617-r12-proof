@@ -13,6 +13,9 @@ cliques and complete graph-to-support domain reduction are VERIFIED at4ede035,
 CI44262022836. This proves3<=|Z|<=5, exact surplus5 and the actual47-vertex partition.
 The ten-orbit count-vector certificate and its finite-domain completeness proof
 are VERIFIED at505e87c, CI44495273085. The actual graph/count transport is a new
-candidate in E286SupportLift; all terminal orbit exclusions remain open.
+candidate in E286SupportLift. Its module compiled at4ca26db (CI44497273102),
+but that full run failed in a separate blocker lemma, so promotion awaits a full
+build and audit. Actual forced blocker edges, the K11/K11 charge, and a first
+complementary-pair exclusion are candidates. All parent exclusion claims remain open.
 LEVEL5A E286, LEVEL5B edge floor287, LEVEL6A h12/h13, LEVEL6B COVER and
 LEVEL7 K145 MainTheorem remain FORMALIZATION_GAP. No terminal proof is assumed.

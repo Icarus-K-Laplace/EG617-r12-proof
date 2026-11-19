@@ -63,7 +63,7 @@ const result={status:'NO_COUNTEREXAMPLE_IN_STATED_DIAGNOSTIC_DOMAIN',
  support:{multisetsTested:tuples,legalLabeledMultisets:legal,orbits:[...found].map(([canonical,multiplicity])=>({canonical,multiplicity})),completeDomainCondition:'h=3..5; supports subsets of4 labels of size>=2; total incidence=h+5; each seed incidence>=2'},
  scalarChecks:scalars,sharedLeafChecks:overlaps,regularSeedBounds:floors,
  negativeControl:{missingHypothesis:'minimum degree>=12',vertices:47,edges:edges.length,degreeList,totalDegree:572,truncatedExcess:9,adjacencyEdges:edges},
- limitation:'Diagnostic only. The graph-to-support reduction and orbit completeness are not yet Lean-certified. No output is imported into Lean.'};
+ limitation:'Diagnostic only. Formal proof status is recorded separately in CI_STATUS.json and FORMALIZATION_STATUS.md. No diagnostic output is imported into Lean. This is not an exhaustive search of47-vertex graphs.'};
 fs.writeFileSync(path.join(root,'logs/e286-diagnostic-attack.json'),JSON.stringify(result,null,2)+'\n');
 console.log(JSON.stringify({status:result.status,tuples,legal,orbits:found.size,scalarCases:scalars.reduce((s,x)=>s+x.tested,0),negativeControlExcess:9}));
 

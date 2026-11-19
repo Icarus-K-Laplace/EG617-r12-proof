@@ -1411,5 +1411,5 @@
       ]
     ]
   },
-  "limitation": "Diagnostic only. The graph-to-support reduction and orbit completeness are not yet Lean-certified. No output is imported into Lean."
+  "limitation": "Diagnostic only. Formal proof status is recorded separately in CI_STATUS.json and FORMALIZATION_STATUS.md. No diagnostic output is imported into Lean. This is not an exhaustive search of47-vertex graphs."
 }

@@ -104,7 +104,9 @@ theorem e286_pair_blocker_complete (G : SimpleGraph V) (hG : E286Hypotheses G)
         intro hadj
         have hm : t ∈ seedNeighbors G I z := Finset.mem_filter.mpr ⟨(hR t ht).1, hadj⟩
         rw [hz] at hm
-        exact (Finset.mem_pair.mp hm).elim (hR t ht).2.1 (hR t ht).2.2
+        have hm' : t = i ∨ t = j := by
+          simpa only [Finset.mem_insert, Finset.mem_singleton] using hm
+        exact hm'.elim (hR t ht).2.1 (hR t ht).2.2
   have hb := core_independence_nonNeighbors G 3 hG.2.2.2.1 z _ hn hJ
   have hx' : x ∉ insert y R := by simp [hxyne, hxR]
   rw [Finset.card_insert_of_notMem hx', Finset.card_insert_of_notMem hyR, hRc] at hb

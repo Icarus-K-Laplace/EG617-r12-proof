@@ -49,6 +49,7 @@
     "EG617\\Core\\E286Capacity.lean",
     "EG617\\Core\\E286Charges.lean",
     "EG617\\Core\\E286CommonNeighbors.lean",
+    "EG617\\Core\\E286DisjointPairs.lean",
     "EG617\\Core\\E286Excess.lean",
     "EG617\\Core\\E286PrivateClasses.lean",
     "EG617\\Core\\E286SeedLedger.lean",
@@ -648,6 +649,26 @@
       "kind": "theorem",
       "name": "e286_ten_clique_completers_excess",
       "file": "EG617\\Core\\E286CommonNeighbors.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_eleven_clique_missing_nonempty",
+      "file": "EG617\\Core\\E286DisjointPairs.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_pair_support_mem_multiple",
+      "file": "EG617\\Core\\E286DisjointPairs.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_private_k11_pair_charge",
+      "file": "EG617\\Core\\E286DisjointPairs.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_complementary_k11_pairs_impossible",
+      "file": "EG617\\Core\\E286DisjointPairs.lean"
     },
     {
       "kind": "def",

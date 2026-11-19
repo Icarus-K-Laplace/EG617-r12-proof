@@ -115,6 +115,10 @@ public import EG617
 #check EG617.e286_common_neighbors_le_eleven
 #check EG617.e286_common_set_excess_charge
 #check EG617.e286_ten_clique_completers_excess
+#check EG617.e286_eleven_clique_missing_nonempty
+#check EG617.e286_pair_support_mem_multiple
+#check EG617.e286_private_k11_pair_charge
+#check EG617.e286_complementary_k11_pairs_impossible
 #print EG617.E286Hypotheses
 #print EG617.E286Statement
 #print EG617.degreeExcess12

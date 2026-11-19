@@ -115,6 +115,10 @@ public import EG617
 #print axioms EG617.e286_common_neighbors_le_eleven
 #print axioms EG617.e286_common_set_excess_charge
 #print axioms EG617.e286_ten_clique_completers_excess
+#print axioms EG617.e286_eleven_clique_missing_nonempty
+#print axioms EG617.e286_pair_support_mem_multiple
+#print axioms EG617.e286_private_k11_pair_charge
+#print axioms EG617.e286_complementary_k11_pairs_impossible
 #print axioms EG617.E286Hypotheses
 #print axioms EG617.E286Statement
 #print axioms EG617.degreeExcess12
