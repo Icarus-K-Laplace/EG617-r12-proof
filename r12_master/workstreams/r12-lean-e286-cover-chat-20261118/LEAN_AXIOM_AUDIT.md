@@ -1,6 +1,6 @@
 # Transitive axiom audit
 
-Verified code 90130d81e8fcc60dc6a61707e92fb8ee8f73b415, CI 44498770093. All project declarations below compiled.
+Verified code efda57265ea71600cd0829efa749e8c72e449dc4, CI 44499871478. All project declarations below compiled.
 Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem remain unproved.
 
 | Declaration | Axioms |

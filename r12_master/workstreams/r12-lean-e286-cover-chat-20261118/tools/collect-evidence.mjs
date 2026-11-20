@@ -31,7 +31,18 @@ const baseline=JSON.parse(fs.readFileSync(path.join(root,'baseline-ci.json')));
 const excluded=['EG617.lean','EG617/Audit/Axioms.lean','EG617/Audit/Statements.lean'];
 const preserved=baseline.hashes.filter(h=>!excluded.includes(h.file));
 for(const h of preserved)if(!hashes.some(n=>n.file===h.file&&n.sha256===h.sha256))throw Error('Baseline source changed '+h.file);
+const dag=log.includes('E286_ELABORATED_DEPENDENCY_AUDIT_PASS');
+if(hashes.some(h=>h.file==='EG617/Audit/E286Dependencies.lean')&&!dag)throw Error('Missing elaborated dependency audit');
+if(dag)for(const n of ['e286_actual_oriented_support_orbit','e286_first_support_orbit_impossible','e286_finite_support_orbit_check','e286_weighted_profiles_complete','e286_pair_blocker_complete','e286_k11_pair_local_charge','e286_excess_sum'])
+ if(!log.includes('PROJECT_DEPENDENCIES EG617.'+n+':'))throw Error('Incomplete proof-body traversal: '+n);
 const status={sha,run:Number(run),cleanLinuxBuild:'PASS',fullAxiomAudit:'PASS',statementInspection:'PASS',localMatchesCISHA256:'PASS',declarations:scan.declarations.length,theorems:scan.declarations.filter(d=>d.kind==='theorem'||d.kind==='lemma').length,pins,hashes,inheritedFilesPreserved:preserved.length,E286:'FORMALIZATION_GAP',edgeFloor287:'FORMALIZATION_GAP',COVER:'FORMALIZATION_GAP',MainTheorem:'ABSENT'};
+status.elaboratedProjectDependencyAudit=dag?'PASS':'NOT_RUN';
+if(dag){
+ const begin=log.indexOf('PROJECT_DEPENDENCIES EG617.e286_actual_support_nine_remaining:');
+ const end=log.indexOf('E286_ELABORATED_DEPENDENCY_AUDIT_PASS',begin);
+ if(begin<0||end<begin)throw Error('Missing root dependency trace');
+ fs.writeFileSync(path.join(root,'logs/e286-elaborated-dependencies.txt'),log.slice(begin,end)+'E286_ELABORATED_DEPENDENCY_AUDIT_PASS\n');
+}
 fs.writeFileSync(path.join(root,'CI_STATUS.json'),JSON.stringify(status,null,2)+'\n');
 fs.writeFileSync(path.join(root,'logs/verified-axioms.json'),JSON.stringify(Object.fromEntries(axioms),null,2)+'\n');
 let audit='# Transitive axiom audit\n\nVerified code '+sha+', CI '+run+'. All project declarations below compiled.\nOnly propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem remain unproved.\n\n| Declaration | Axioms |\n|---|---|\n';
