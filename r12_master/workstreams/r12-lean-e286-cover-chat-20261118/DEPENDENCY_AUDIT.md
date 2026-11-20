@@ -3,8 +3,9 @@
 The initial audit at efda572 compiled, but only traversed the public import view:
 it omitted imported theorem bodies. Its success marker is NOT complete dependency
 evidence. Kernel builds and the independent transitive axiom audit are unaffected.
-The corrected candidate uses legacy import mode to load private bodies transitively
+The corrected audit uses legacy import mode to load private bodies transitively
 and fails unless seven required load-bearing proof nodes are actually reached.
+It is VERIFIED at efff7bd, CI44675114460, visiting177 project constants.
 
 EG617/Audit/E286Dependencies.lean traverses the actual elaborated types and proof
 terms starting at EG617.e286_actual_support_nine_remaining. It records all

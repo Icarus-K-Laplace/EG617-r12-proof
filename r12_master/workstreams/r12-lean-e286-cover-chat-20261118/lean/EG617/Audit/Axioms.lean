@@ -180,6 +180,8 @@ public import EG617
 #print axioms EG617.e286_graph_support_weighted_sum
 #print axioms EG617.e286_graph_support_incidence
 #print axioms EG617.e286_actual_support_orbit
+#print axioms EG617.e286_independent_three_forces_edge
+#print axioms EG617.e286_ordered_three_cliques_obstruction
 #print axioms EG617.adjCount
 #print axioms EG617.adjCount_eq_sum_filter
 #print axioms EG617.degree_induce_eq_filter

@@ -1,23 +1,677 @@
 PROJECT_DEPENDENCIES EG617.e286_actual_support_nine_remaining: [EG617.E286Hypotheses,
  EG617.e286SupportOrbitRepresentatives,
- EG617.e286GraphSupportCounts]
-info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286GraphSupportCounts: [EG617.seedMultipleSet, EG617.e286SeedSupportCode]
-info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286SeedSupportCode: [EG617.seedMultipleSet,
+ EG617.e286GraphSupportCounts,
+ EG617.E286Hypotheses,
+ EG617.e286SupportOrbitRepresentatives,
+ EG617.e286GraphSupportCounts,
+ EG617.e286_actual_oriented_support_orbit,
+ EG617.e286_first_support_orbit_impossible]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_first_support_orbit_impossible: [EG617.E286Hypotheses,
+ EG617.e286GraphSupportCounts,
+ EG617.E286Hypotheses,
+ EG617.e286GraphSupportCounts,
+ EG617.e286CountIncidence,
+ EG617.e286SupportType,
+ EG617.e286SupportType.match_1,
+ EG617.e286SupportType._proof_1,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_1,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_2,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_3,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_4,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_5,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_6,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_7,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_8,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_9,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_10,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_11,
+ EG617.seedPrivateClique,
+ EG617.seedMultipleSet,
+ EG617.e286_private_multiple_card,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286_first_support_orbit_impossible._proof_1_2,
+ EG617.e286_graph_support_incidence,
+ EG617.e286SeedSupportCode,
+ EG617.e286_ofFn_get,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286_first_support_orbit_impossible._proof_1_3,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286_first_support_orbit_impossible._proof_1_4,
+ EG617.seedLabelNeighbors,
+ EG617.e286_seed_support_code_spec,
+ EG617.seedNeighbors,
+ EG617.seedLabelNeighbors_image,
+ EG617.e286_complementary_k11_pairs_impossible]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_complementary_k11_pairs_impossible: [EG617.E286Hypotheses,
+ EG617.seedPrivateClique,
+ EG617.seedNeighbors,
+ EG617.E286Hypotheses,
+ EG617.seedPrivateClique,
+ EG617.seedNeighbors,
+ EG617.seedMultipleSet,
+ EG617.e286_pair_support_mem_multiple,
+ _private.EG617.Core.E286DisjointPairs.0.EG617.e286_complementary_k11_pairs_impossible._simp_1_1,
+ _private.EG617.Core.E286DisjointPairs.0.EG617.e286_complementary_k11_pairs_impossible._simp_1_2,
+ EG617.seed_private_classes_disjoint,
+ EG617.seed_private_multiple_disjoint,
+ EG617.degreeExcess12,
+ EG617.e286_private_k11_pair_charge,
+ EG617.e286_subset_excess_budget,
+ _private.EG617.Core.E286DisjointPairs.0.EG617.e286_complementary_k11_pairs_impossible._proof_1_3]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286DisjointPairs.0.EG617.e286_complementary_k11_pairs_impossible._proof_1_3: [EG617.seedPrivateClique,
+ EG617.degreeExcess12,
+ EG617.seedPrivateClique,
+ EG617.degreeExcess12]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.degreeExcess12: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.seedPrivateClique: [EG617.seedNeighbors]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.seedNeighbors: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_subset_excess_budget: [EG617.E286Hypotheses,
+ EG617.degreeExcess12,
+ EG617.E286Hypotheses,
+ EG617.degreeExcess12,
+ EG617.e286_excess_sum]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_excess_sum: [EG617.E286Hypotheses,
+ EG617.degreeExcess12,
+ EG617.E286Hypotheses,
+ EG617.degreeExcess12,
+ EG617.CoreIndependenceBound,
+ EG617.CoreCliqueBound,
+ _private.EG617.Core.E286Excess.0.EG617.e286_excess_sum._simp_1_2,
+ _private.EG617.Core.E286Excess.0.EG617.e286_excess_sum._proof_1_3,
+ EG617.e286_degree_sum,
+ _private.EG617.Core.E286Excess.0.EG617.e286_excess_sum._proof_1_4]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Excess.0.EG617.e286_excess_sum._proof_1_4: [EG617.degreeExcess12,
+ EG617.degreeExcess12]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_degree_sum: [EG617.E286Hypotheses,
+ EG617.E286Hypotheses,
+ EG617.CoreIndependenceBound,
+ EG617.CoreCliqueBound,
+ _private.EG617.Core.E286Excess.0.EG617.e286_degree_sum._proof_1_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Excess.0.EG617.e286_degree_sum._proof_1_1: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.CoreCliqueBound: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.CoreIndependenceBound: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.E286Hypotheses: [EG617.CoreIndependenceBound, EG617.CoreCliqueBound]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Excess.0.EG617.e286_excess_sum._proof_1_3: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Excess.0.EG617.e286_excess_sum._simp_1_2: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_private_k11_pair_charge: [EG617.E286Hypotheses,
+ EG617.seedNeighbors,
+ EG617.seedPrivateClique,
+ EG617.degreeExcess12,
+ EG617.E286Hypotheses,
+ EG617.seedNeighbors,
+ EG617.seedPrivateClique,
+ EG617.seedMultipleSet,
+ EG617.e286_pair_support_mem_multiple,
+ EG617.seed_private_multiple_disjoint,
+ EG617.e286_private_class_isClique,
+ EG617.degreeExcess12,
+ EG617.e286_k11_pair_local_charge,
+ EG617.seed_private_classes_disjoint,
+ EG617.e286_eleven_clique_missing_nonempty,
+ EG617.e286_pair_blocker_complete]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_pair_blocker_complete: [EG617.E286Hypotheses,
+ EG617.seedNeighbors,
+ EG617.seedPrivateClique,
+ EG617.E286Hypotheses,
+ EG617.seedNeighbors,
+ EG617.seedPrivateClique,
+ EG617.seed_private_mem_seed,
+ EG617.seed_private_classes_disjoint,
+ EG617.seed_private_nonadj_other_seed,
+ EG617.seedMultipleSet,
+ EG617.seedNeighbors_empty_of_seed,
+ EG617.seed_private_multiple_disjoint,
+ _private.EG617.Core.E286Blocker.0.EG617.e286_pair_blocker_complete._simp_1_1,
+ _private.EG617.Core.E286Blocker.0.EG617.e286_pair_blocker_complete._simp_1_2,
+ EG617.core_independence_nonNeighbors,
+ EG617.CoreIndependenceBound,
+ EG617.CoreCliqueBound,
+ _private.EG617.Core.E286Blocker.0.EG617.e286_pair_blocker_complete._proof_1_3]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Blocker.0.EG617.e286_pair_blocker_complete._proof_1_3: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.core_independence_nonNeighbors: [EG617.CoreIndependenceBound,
+ EG617.CoreIndependenceBound,
+ _private.EG617.Core.Admissibility.0.EG617.core_independence_nonNeighbors._proof_1_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.Admissibility.0.EG617.core_independence_nonNeighbors._proof_1_1: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Blocker.0.EG617.e286_pair_blocker_complete._simp_1_2: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Blocker.0.EG617.e286_pair_blocker_complete._simp_1_1: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.seed_private_multiple_disjoint: [EG617.seedPrivateClique,
+ EG617.seedMultipleSet,
+ EG617.seedPrivateClique,
+ EG617.seedMultipleSet,
+ EG617.seedNeighbors,
+ EG617.seedNeighbors_empty_of_seed]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.seedNeighbors_empty_of_seed: [EG617.seedNeighbors, EG617.seedNeighbors]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.seedMultipleSet: [EG617.seedNeighbors]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.seed_private_nonadj_other_seed: [EG617.seedPrivateClique,
+ EG617.seedPrivateClique,
+ EG617.seedNeighbors,
+ EG617.seedNeighbors_singleton_nonadj]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.seedNeighbors_singleton_nonadj: [EG617.seedNeighbors, EG617.seedNeighbors]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.seed_private_classes_disjoint: [EG617.seedPrivateClique,
+ EG617.seedPrivateClique,
+ EG617.seedNeighbors,
+ EG617.seedNeighbors_singleton_outside]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.seedNeighbors_singleton_outside: [EG617.seedNeighbors,
+ EG617.seedNeighbors,
+ EG617.seedNeighbors_empty_of_seed]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.seed_private_mem_seed: [EG617.seedPrivateClique,
+ EG617.seedPrivateClique,
+ EG617.seedNeighbors,
+ EG617.seedNeighbors_singleton_outside]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_eleven_clique_missing_nonempty: [EG617.E286Hypotheses,
+ EG617.E286Hypotheses,
+ EG617.CoreIndependenceBound,
+ EG617.CoreCliqueBound,
+ _private.EG617.Core.E286DisjointPairs.0.EG617.e286_eleven_clique_missing_nonempty._proof_1_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286DisjointPairs.0.EG617.e286_eleven_clique_missing_nonempty._proof_1_1: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_k11_pair_local_charge: [EG617.degreeExcess12,
+ EG617.degreeExcess12,
+ EG617.e286_clique_blocker_vertex_charge,
+ _private.EG617.Core.E286Charges.0.EG617.e286_k11_pair_local_charge._proof_1_1,
+ _private.EG617.Core.E286Charges.0.EG617.e286_k11_pair_local_charge._proof_1_2,
+ EG617.e286_pair_point_degree_charge,
+ _private.EG617.Core.E286Charges.0.EG617.e286_k11_pair_local_charge._proof_1_3,
+ EG617.e286_f11_minimum,
+ _private.EG617.Core.E286Charges.0.EG617.e286_k11_pair_local_charge._proof_1_4]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Charges.0.EG617.e286_k11_pair_local_charge._proof_1_4: [EG617.degreeExcess12,
+ EG617.degreeExcess12]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_f11_minimum: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Charges.0.EG617.e286_k11_pair_local_charge._proof_1_3: [EG617.degreeExcess12,
+ EG617.degreeExcess12]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_pair_point_degree_charge: [EG617.degreeExcess12,
+ EG617.e286_two_disjoint_neighbor_sets,
+ EG617.degreeExcess12,
+ _private.EG617.Core.E286Charges.0.EG617.e286_pair_point_degree_charge._simp_1_1,
+ _private.EG617.Core.E286Charges.0.EG617.e286_pair_point_degree_charge._proof_1_2]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Charges.0.EG617.e286_pair_point_degree_charge._proof_1_2: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Charges.0.EG617.e286_pair_point_degree_charge._simp_1_1: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_two_disjoint_neighbor_sets: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Charges.0.EG617.e286_k11_pair_local_charge._proof_1_2: [EG617.degreeExcess12,
+ EG617.degreeExcess12]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Charges.0.EG617.e286_k11_pair_local_charge._proof_1_1: [EG617.degreeExcess12,
+ EG617.degreeExcess12]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_clique_blocker_vertex_charge: [EG617.degreeExcess12,
+ EG617.e286_two_disjoint_neighbor_sets,
+ EG617.degreeExcess12,
+ _private.EG617.Core.E286Charges.0.EG617.e286_clique_blocker_vertex_charge._simp_1_1,
+ _private.EG617.Core.E286Charges.0.EG617.e286_clique_blocker_vertex_charge._proof_1_2]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Charges.0.EG617.e286_clique_blocker_vertex_charge._proof_1_2: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Charges.0.EG617.e286_clique_blocker_vertex_charge._simp_1_1: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_private_class_isClique: [EG617.E286Hypotheses,
+ EG617.seedPrivateClique,
+ EG617.E286Hypotheses,
+ EG617.seedNeighbors,
+ EG617.seedPrivateClique,
+ EG617.seedNeighbors_singleton_outside,
+ EG617.seedNeighbors_singleton_nonadj,
+ EG617.core_independence_nonNeighbors,
+ EG617.CoreIndependenceBound,
+ EG617.CoreCliqueBound,
+ _private.EG617.Core.E286PrivateClasses.0.EG617.e286_private_class_isClique._proof_1_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286PrivateClasses.0.EG617.e286_private_class_isClique._proof_1_1: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_pair_support_mem_multiple: [EG617.seedNeighbors,
+ EG617.seedMultipleSet,
+ EG617.seedNeighbors]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286DisjointPairs.0.EG617.e286_complementary_k11_pairs_impossible._simp_1_2: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286DisjointPairs.0.EG617.e286_complementary_k11_pairs_impossible._simp_1_1: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.seedLabelNeighbors_image: [EG617.seedLabelNeighbors,
+ EG617.seedNeighbors,
+ EG617.seedLabelNeighbors,
+ EG617.seedNeighbors]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.seedLabelNeighbors: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_seed_support_code_spec: [EG617.seedMultipleSet,
+ EG617.e286SupportType,
+ EG617.e286SeedSupportCode,
+ EG617.seedLabelNeighbors,
  EG617.seedMultipleSet,
  EG617.e286SupportType,
  EG617.seedLabelNeighbors,
  EG617.e286_seed_support_code_exists]
 info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_seed_support_code_exists: [EG617.seedMultipleSet,
  EG617.e286SupportType,
- EG617.seedLabelNeighbors]
-info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.seedLabelNeighbors: []
+ EG617.seedLabelNeighbors,
+ EG617.seedMultipleSet,
+ EG617.seedNeighbors,
+ EG617.seedLabelNeighbors,
+ EG617.seedLabelNeighbors_card,
+ EG617.e286SupportType,
+ EG617.e286_support_type_complete]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_support_type_complete: [EG617.e286SupportType, EG617.e286SupportType]
 info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286SupportType: [EG617.e286SupportType.match_1, EG617.e286SupportType._proof_1]
 info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286SupportType._proof_1: []
 info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286SupportType.match_1: []
-info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.seedMultipleSet: [EG617.seedNeighbors]
-info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.seedNeighbors: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.seedLabelNeighbors_card: [EG617.seedLabelNeighbors,
+ EG617.seedNeighbors,
+ EG617.seedLabelNeighbors,
+ EG617.seedNeighbors,
+ EG617.seedLabelNeighbors_image]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286SeedSupportCode: [EG617.seedMultipleSet,
+ EG617.seedMultipleSet,
+ EG617.e286SupportType,
+ EG617.seedLabelNeighbors,
+ EG617.e286_seed_support_code_exists]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286OrbitRealization.0.EG617.e286_first_support_orbit_impossible._proof_1_4: [EG617.seedMultipleSet,
+ EG617.e286SeedSupportCode,
+ EG617.seedMultipleSet,
+ EG617.e286SeedSupportCode]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286OrbitRealization.0.EG617.e286_first_support_orbit_impossible._proof_1_3: [EG617.seedMultipleSet,
+ EG617.e286SeedSupportCode,
+ EG617.seedMultipleSet,
+ EG617.e286SeedSupportCode]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_ofFn_get: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_graph_support_incidence: [EG617.e286CountIncidence,
+ EG617.e286GraphSupportCounts,
+ EG617.seedMultipleSet,
+ EG617.e286CountIncidence,
+ EG617.e286GraphSupportCounts,
+ EG617.seedMultipleSet,
+ EG617.e286SupportType,
+ EG617.e286SeedSupportCode,
+ EG617.e286_ofFn_get,
+ EG617.e286_weighted_fiber_count,
+ EG617.seedLabelNeighbors,
+ EG617.e286_seed_support_code_spec,
+ _private.EG617.Core.E286SupportLift.0.EG617.e286_graph_support_incidence._simp_1_4,
+ _private.EG617.Core.E286SupportLift.0.EG617.e286_graph_support_incidence._simp_1_5]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286SupportLift.0.EG617.e286_graph_support_incidence._simp_1_5: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286SupportLift.0.EG617.e286_graph_support_incidence._simp_1_4: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_weighted_fiber_count: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286GraphSupportCounts: [EG617.seedMultipleSet, EG617.e286SeedSupportCode]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286CountIncidence: [EG617.e286SupportType]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286OrbitRealization.0.EG617.e286_first_support_orbit_impossible._proof_1_2: [EG617.seedPrivateClique,
+ EG617.seedMultipleSet,
+ EG617.seedPrivateClique,
+ EG617.seedMultipleSet]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_private_multiple_card: [EG617.seedPrivateClique,
+ EG617.seedMultipleSet,
+ EG617.seedNeighbors,
+ EG617.seedMultipleSet,
+ EG617.seedNeighbors_singleton_outside,
+ _private.EG617.Core.E286PrivateClasses.0.EG617.e286_private_multiple_card._proof_1_1,
+ EG617.seedPrivateClique,
+ _private.EG617.Core.E286PrivateClasses.0.EG617.e286_private_multiple_card._proof_1_3,
+ _private.EG617.Core.E286PrivateClasses.0.EG617.e286_private_multiple_card._simp_1_2]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286PrivateClasses.0.EG617.e286_private_multiple_card._simp_1_2: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286PrivateClasses.0.EG617.e286_private_multiple_card._proof_1_3: [EG617.seedNeighbors,
+ EG617.seedMultipleSet,
+ EG617.seedNeighbors,
+ EG617.seedMultipleSet]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286PrivateClasses.0.EG617.e286_private_multiple_card._proof_1_1: [EG617.seedNeighbors,
+ EG617.seedNeighbors]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_11: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_10: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_9: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_8: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_7: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_6: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_5: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_4: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_3: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_2: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_1: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_actual_oriented_support_orbit: [EG617.E286Hypotheses,
+ EG617.e286SupportOrbitRepresentatives,
+ EG617.e286GraphSupportCounts,
+ EG617.E286Hypotheses,
+ EG617.e286SupportOrbitRepresentatives,
+ EG617.e286RelabelCounts,
+ EG617.e286GraphSupportCounts,
+ EG617.e286_actual_support_orbit,
+ EG617.e286_graph_support_counts_relabel]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_graph_support_counts_relabel: [EG617.e286GraphSupportCounts,
+ EG617.e286RelabelCounts,
+ EG617.e286GraphSupportCounts,
+ EG617.e286RelabelCounts,
+ EG617.e286SupportType,
+ EG617.seedMultipleSet,
+ EG617.e286SeedSupportCode,
+ EG617.e286_ofFn_get,
+ EG617.e286_weighted_fiber_count,
+ EG617.seedLabelNeighbors,
+ EG617.e286_seed_support_code_spec,
+ EG617.seedLabelNeighbors_relabel,
+ EG617.e286_support_type_injective]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_support_type_injective: [EG617.e286SupportType,
+ EG617.e286SupportType,
+ EG617.e286SupportType._proof_1,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_1,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_2,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_3,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_4,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_5,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_6,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_7,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_8,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_9,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_10,
+ _private.EG617.Core.E286OrbitRealization.0.EG617.e286SupportType.match_1.eq_11,
+ EG617.e286_support_type_complete]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.seedLabelNeighbors_relabel: [EG617.seedLabelNeighbors, EG617.seedLabelNeighbors]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286RelabelCounts: [EG617.e286SupportType]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_actual_support_orbit: [EG617.E286Hypotheses,
+ EG617.e286SupportOrbitRepresentatives,
+ EG617.e286RelabelCounts,
+ EG617.e286GraphSupportCounts,
+ EG617.E286Hypotheses,
+ EG617.e286SupportOrbitRepresentatives,
+ EG617.e286RelabelCounts,
+ EG617.e286GraphSupportCounts,
+ EG617.e286_exists_regular_independent_four,
+ EG617.seedMultipleSet,
+ EG617.e286SeedSupportCode,
+ EG617.e286WeightedSum,
+ EG617.e286SupportWeights,
+ EG617.e286_graph_support_weighted_sum,
+ EG617.e286CountIncidence,
+ EG617.e286_graph_support_incidence,
+ EG617.seedPrivateClique,
+ EG617.CoreIndependenceBound,
+ EG617.CoreCliqueBound,
+ EG617.e286_private_class_isClique,
+ EG617.e286_private_multiple_card,
+ _private.EG617.Core.E286SupportLift.0.EG617.e286_actual_support_orbit._proof_1_2,
+ EG617.e286_support_counts_complete]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_support_counts_complete: [EG617.e286WeightedSum,
+ EG617.e286SupportWeights,
+ EG617.e286CountIncidence,
+ EG617.e286SupportOrbitRepresentatives,
+ EG617.e286RelabelCounts,
+ EG617.e286WeightedSum,
+ EG617.e286SupportWeights,
+ EG617.e286CountIncidence,
+ EG617.e286WeightedProfiles,
+ EG617.e286_weighted_profiles_complete,
+ EG617.e286_finite_support_orbit_check]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_finite_support_orbit_check: [EG617.e286WeightedProfiles,
+ EG617.e286SupportWeights,
+ EG617.e286CountIncidence,
+ EG617.e286SupportOrbitRepresentatives,
+ EG617.e286RelabelCounts,
+ EG617.e286WeightedProfiles,
+ EG617.e286SupportWeights,
+ EG617.e286CountIncidence,
+ EG617.e286SupportOrbitRepresentatives,
+ EG617.e286RelabelCounts]
 info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286SupportOrbitRepresentatives: []
-info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.E286Hypotheses: [EG617.CoreIndependenceBound, EG617.CoreCliqueBound]
-info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.CoreCliqueBound: []
-info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.CoreIndependenceBound: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286SupportWeights: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286WeightedProfiles: [EG617.e286WeightedProfiles._f]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286WeightedProfiles._f: [EG617.e286WeightedProfiles.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286WeightedProfiles.match_1: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_weighted_profiles_complete: [EG617.e286WeightedSum,
+ EG617.e286WeightedProfiles,
+ EG617.e286WeightedSum,
+ EG617.e286WeightedProfiles,
+ _private.EG617.Core.E286SupportCounts.0.EG617.e286_weighted_profiles_complete._proof_1_7,
+ _private.EG617.Core.E286SupportCounts.0.EG617.e286_weighted_profiles_complete._proof_1_8,
+ _private.EG617.Core.E286SupportCounts.0.EG617.e286_weighted_profiles_complete._proof_1_9]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286SupportCounts.0.EG617.e286_weighted_profiles_complete._proof_1_9: [EG617.e286WeightedSum,
+ EG617.e286WeightedSum]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286WeightedSum: [EG617.e286WeightedSum._f]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286WeightedSum._f: [EG617.e286WeightedSum.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286WeightedSum.match_1: [EG617.e286WeightedSum._sparseCasesOn_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286WeightedSum._sparseCasesOn_1: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286SupportCounts.0.EG617.e286_weighted_profiles_complete._proof_1_8: [EG617.e286WeightedSum,
+ EG617.e286WeightedSum]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286SupportCounts.0.EG617.e286_weighted_profiles_complete._proof_1_7: [EG617.e286WeightedSum,
+ EG617.e286WeightedSum]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286SupportLift.0.EG617.e286_actual_support_orbit._proof_1_2: [EG617.seedPrivateClique,
+ EG617.seedMultipleSet,
+ EG617.seedPrivateClique,
+ EG617.seedMultipleSet,
+ EG617.e286GraphSupportCounts,
+ EG617.e286WeightedSum,
+ EG617.e286SupportWeights]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_graph_support_weighted_sum: [EG617.E286Hypotheses,
+ EG617.e286WeightedSum,
+ EG617.e286SupportWeights,
+ EG617.e286GraphSupportCounts,
+ EG617.E286Hypotheses,
+ EG617.e286WeightedSum,
+ EG617.e286SupportWeights,
+ EG617.e286GraphSupportCounts,
+ EG617.seedMultipleSet,
+ EG617.e286SeedSupportCode,
+ EG617.e286SupportType,
+ EG617.e286_weightedSum_ofFn,
+ EG617.e286_weighted_fiber_count,
+ EG617.seedNeighbors,
+ EG617.seedLabelNeighbors,
+ EG617.e286_seed_support_code_spec,
+ EG617.seedLabelNeighbors_card,
+ EG617.e286_seed_surplus_five]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_seed_surplus_five: [EG617.E286Hypotheses,
+ EG617.seedMultipleSet,
+ EG617.seedNeighbors,
+ EG617.E286Hypotheses,
+ EG617.seedNeighbors,
+ EG617.e286_seed_dominates,
+ EG617.e286_seed_incidence_sum,
+ EG617.seedMultipleSet,
+ EG617.seedNeighbors_empty_of_seed,
+ _private.EG617.Core.E286SeedLedger.0.EG617.e286_seed_surplus_five._simp_1_2,
+ _private.EG617.Core.E286SeedLedger.0.EG617.e286_seed_surplus_five._simp_1_3,
+ _private.EG617.Core.E286SeedLedger.0.EG617.e286_seed_surplus_five._proof_1_4,
+ _private.EG617.Core.E286SeedLedger.0.EG617.e286_seed_surplus_five._proof_1_5,
+ EG617.CoreIndependenceBound,
+ EG617.CoreCliqueBound]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286SeedLedger.0.EG617.e286_seed_surplus_five._proof_1_5: [EG617.seedNeighbors,
+ EG617.seedMultipleSet,
+ EG617.seedNeighbors,
+ EG617.seedMultipleSet]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286SeedLedger.0.EG617.e286_seed_surplus_five._proof_1_4: [EG617.seedNeighbors,
+ EG617.seedNeighbors]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286SeedLedger.0.EG617.e286_seed_surplus_five._simp_1_3: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286SeedLedger.0.EG617.e286_seed_surplus_five._simp_1_2: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_seed_incidence_sum: [EG617.seedNeighbors,
+ EG617.adjCount,
+ EG617.adjCount_symm,
+ EG617.adjCount_right_univ,
+ EG617.adjCount_union_left,
+ EG617.seedNeighbors,
+ EG617.adjCount_eq_sum_filter,
+ EG617.adjCount_independent_zero]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.adjCount_independent_zero: [EG617.adjCount]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.adjCount: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.adjCount_eq_sum_filter: [EG617.adjCount, EG617.adjCount]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.adjCount_union_left: [EG617.adjCount]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.adjCount_right_univ: [EG617.adjCount, EG617.adjCount, EG617.adjCount_eq_sum_filter]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.adjCount_symm: [EG617.adjCount, EG617.adjCount]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_seed_dominates: [EG617.E286Hypotheses,
+ EG617.seedNeighbors,
+ EG617.E286Hypotheses,
+ EG617.seedNeighbors,
+ EG617.core_independence_nonNeighbors,
+ EG617.CoreIndependenceBound,
+ EG617.CoreCliqueBound,
+ _private.EG617.Core.E286PrivateClasses.0.EG617.e286_seed_dominates._proof_1_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286PrivateClasses.0.EG617.e286_seed_dominates._proof_1_1: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_weightedSum_ofFn: [EG617.e286WeightedSum,
+ EG617.e286SupportWeights,
+ EG617.e286SupportType,
+ EG617.e286WeightedSum,
+ EG617.e286SupportWeights,
+ EG617.e286SupportType,
+ EG617.e286WeightedSum.eq_1,
+ EG617.e286SupportType.match_1,
+ EG617.e286SupportType._proof_1,
+ _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_1,
+ _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_2,
+ _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_3,
+ _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_4,
+ _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_5,
+ _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_6,
+ _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_7,
+ _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_8,
+ _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_9,
+ _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_10,
+ _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_11]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_11: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_10: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_9: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_8: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_7: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_6: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_5: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_4: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_3: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_2: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286SupportLift.0.EG617.e286SupportType.match_1.eq_1: [EG617.e286SupportType.match_1,
+ EG617.e286SupportType.match_1]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286WeightedSum.eq_1: [EG617.e286WeightedSum, EG617.e286WeightedSum]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_exists_regular_independent_four: [EG617.E286Hypotheses,
+ EG617.E286Hypotheses,
+ EG617.excessSupport,
+ EG617.e286_regular_complement,
+ EG617.CoreIndependenceBound,
+ _private.EG617.Core.E286Seeds.0.EG617.e286_exists_regular_independent_four._proof_1_1,
+ _private.EG617.Core.E286Seeds.0.EG617.e286_exists_regular_independent_four._proof_1_2,
+ EG617.core_compl_edge_count,
+ EG617.coreInducedEdgeCount,
+ EG617.e286_regular_edge_ledger,
+ EG617.core_induced_edges_le_choose,
+ EG617.e286_support_card_le_eight,
+ _private.EG617.Core.E286Seeds.0.EG617.e286_exists_regular_independent_four._proof_1_3,
+ EG617.CoreCliqueBound,
+ _private.EG617.Core.E286Seeds.0.EG617.e286_exists_regular_independent_four._proof_1_4]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Seeds.0.EG617.e286_exists_regular_independent_four._proof_1_4: [EG617.excessSupport,
+ EG617.excessSupport]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.excessSupport: [EG617.degreeExcess12]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Seeds.0.EG617.e286_exists_regular_independent_four._proof_1_3: [EG617.excessSupport,
+ EG617.excessSupport,
+ EG617.coreInducedEdgeCount]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.coreInducedEdgeCount: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_support_card_le_eight: [EG617.E286Hypotheses,
+ EG617.excessSupport,
+ EG617.E286Hypotheses,
+ EG617.excessSupport,
+ EG617.degreeExcess12,
+ _private.EG617.Core.E286Excess.0.EG617.e286_support_card_le_eight._proof_1_1,
+ EG617.e286_support_sum]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_support_sum: [EG617.E286Hypotheses,
+ EG617.excessSupport,
+ EG617.degreeExcess12,
+ EG617.E286Hypotheses,
+ EG617.excessSupport,
+ EG617.degreeExcess12,
+ _private.EG617.Core.E286Excess.0.EG617.e286_support_sum._simp_1_2,
+ _private.EG617.Core.E286Excess.0.EG617.e286_support_sum._simp_1_3,
+ _private.EG617.Core.E286Excess.0.EG617.e286_support_sum._proof_1_4,
+ EG617.e286_excess_sum]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Excess.0.EG617.e286_support_sum._proof_1_4: [EG617.degreeExcess12,
+ EG617.degreeExcess12]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Excess.0.EG617.e286_support_sum._simp_1_3: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Excess.0.EG617.e286_support_sum._simp_1_2: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Excess.0.EG617.e286_support_card_le_eight._proof_1_1: [EG617.degreeExcess12,
+ EG617.degreeExcess12]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.core_induced_edges_le_choose: [EG617.coreInducedEdgeCount, EG617.coreInducedEdgeCount]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_regular_edge_ledger: [EG617.E286Hypotheses,
+ EG617.coreInducedEdgeCount,
+ EG617.excessSupport,
+ EG617.E286Hypotheses,
+ EG617.excessSupport,
+ EG617.coreInducedEdgeCount,
+ EG617.adjCount,
+ EG617.edge_partition,
+ EG617.adjCount_union_right,
+ EG617.e286_support_degree_sum,
+ EG617.CoreIndependenceBound,
+ EG617.CoreCliqueBound,
+ _private.EG617.Core.E286Excess.0.EG617.e286_regular_edge_ledger._proof_1_1,
+ EG617.adjCount_self,
+ EG617.adjCount_right_univ]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.adjCount_self: [EG617.adjCount,
+ EG617.coreInducedEdgeCount,
+ EG617.adjCount,
+ EG617.coreInducedEdgeCount,
+ EG617.adjCount_eq_sum_filter,
+ EG617.degree_induce_eq_filter]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.degree_induce_eq_filter: [_private.EG617.Core.EdgePartition.0.EG617.degree_induce_eq_filter._simp_1_1,
+ _private.EG617.Core.EdgePartition.0.EG617.degree_induce_eq_filter._simp_1_2]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.EdgePartition.0.EG617.degree_induce_eq_filter._simp_1_2: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.EdgePartition.0.EG617.degree_induce_eq_filter._simp_1_1: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Excess.0.EG617.e286_regular_edge_ledger._proof_1_1: [EG617.excessSupport,
+ EG617.coreInducedEdgeCount,
+ EG617.adjCount,
+ EG617.excessSupport,
+ EG617.coreInducedEdgeCount,
+ EG617.adjCount]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_support_degree_sum: [EG617.E286Hypotheses,
+ EG617.excessSupport,
+ EG617.E286Hypotheses,
+ EG617.excessSupport,
+ EG617.degreeExcess12,
+ EG617.CoreIndependenceBound,
+ EG617.CoreCliqueBound,
+ _private.EG617.Core.E286Excess.0.EG617.e286_support_degree_sum._simp_1_2,
+ _private.EG617.Core.E286Excess.0.EG617.e286_support_degree_sum._proof_1_3,
+ _private.EG617.Core.E286Excess.0.EG617.e286_support_degree_sum._proof_1_4,
+ EG617.e286_support_sum]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Excess.0.EG617.e286_support_degree_sum._proof_1_4: [EG617.excessSupport,
+ EG617.excessSupport]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Excess.0.EG617.e286_support_degree_sum._proof_1_3: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Excess.0.EG617.e286_support_degree_sum._simp_1_2: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.adjCount_union_right: [EG617.adjCount, EG617.adjCount]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.edge_partition: [EG617.coreInducedEdgeCount,
+ EG617.adjCount,
+ EG617.adjCount,
+ EG617.adjCount_union_left,
+ EG617.adjCount_union_right,
+ EG617.coreInducedEdgeCount,
+ EG617.adjCount_self,
+ _private.EG617.Core.EdgePartition.0.EG617.edge_partition._proof_1_1,
+ EG617.adjCount_symm,
+ EG617.core_induced_edge_count_univ]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.core_induced_edge_count_univ: [EG617.coreInducedEdgeCount]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.EdgePartition.0.EG617.edge_partition._proof_1_1: [EG617.adjCount,
+ EG617.coreInducedEdgeCount,
+ EG617.adjCount,
+ EG617.coreInducedEdgeCount]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.core_compl_edge_count: [_private.EG617.Core.Admissibility.0.EG617.core_compl_edge_count._simp_1_1,
+ _private.EG617.Core.Admissibility.0.EG617.core_compl_edge_count._simp_1_2,
+ _private.EG617.Core.Admissibility.0.EG617.core_compl_edge_count._simp_1_3,
+ _private.EG617.Core.Admissibility.0.EG617.core_compl_edge_count._simp_1_4,
+ _private.EG617.Core.Admissibility.0.EG617.core_compl_edge_count._simp_1_5]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.Admissibility.0.EG617.core_compl_edge_count._simp_1_5: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.Admissibility.0.EG617.core_compl_edge_count._simp_1_4: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.Admissibility.0.EG617.core_compl_edge_count._simp_1_3: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.Admissibility.0.EG617.core_compl_edge_count._simp_1_2: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.Admissibility.0.EG617.core_compl_edge_count._simp_1_1: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Seeds.0.EG617.e286_exists_regular_independent_four._proof_1_2: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Seeds.0.EG617.e286_exists_regular_independent_four._proof_1_1: [EG617.excessSupport,
+ EG617.excessSupport]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES EG617.e286_regular_complement: [EG617.E286Hypotheses,
+ EG617.excessSupport,
+ EG617.E286Hypotheses,
+ EG617.excessSupport,
+ EG617.CoreIndependenceBound,
+ EG617.CoreCliqueBound,
+ EG617.degreeExcess12,
+ _private.EG617.Core.E286Excess.0.EG617.e286_regular_complement._simp_1_6,
+ _private.EG617.Core.E286Excess.0.EG617.e286_regular_complement._simp_1_1,
+ _private.EG617.Core.E286Excess.0.EG617.e286_regular_complement._simp_1_3,
+ _private.EG617.Core.E286Excess.0.EG617.e286_regular_complement._simp_1_4,
+ _private.EG617.Core.E286Excess.0.EG617.e286_regular_complement._proof_1_7]
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Excess.0.EG617.e286_regular_complement._proof_1_7: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Excess.0.EG617.e286_regular_complement._simp_1_4: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Excess.0.EG617.e286_regular_complement._simp_1_3: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Excess.0.EG617.e286_regular_complement._simp_1_1: []
+info: EG617/Audit/E286Dependencies.lean:7:0: PROJECT_DEPENDENCIES _private.EG617.Core.E286Excess.0.EG617.e286_regular_complement._simp_1_6: []
 info: EG617/Audit/E286Dependencies.lean:7:0: E286_ELABORATED_DEPENDENCY_AUDIT_PASS

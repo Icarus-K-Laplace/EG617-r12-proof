@@ -50,3 +50,4 @@ public import EG617.Core.E286Blocker
 public import EG617.Core.E286Charges
 public import EG617.Core.E286DisjointPairs
 public import EG617.Core.E286OrbitRealization
+public import EG617.Core.E286Triple

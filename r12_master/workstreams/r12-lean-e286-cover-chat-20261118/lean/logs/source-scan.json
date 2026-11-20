@@ -58,6 +58,7 @@
     "EG617\\Core\\E286Seeds.lean",
     "EG617\\Core\\E286SupportCounts.lean",
     "EG617\\Core\\E286SupportLift.lean",
+    "EG617\\Core\\E286Triple.lean",
     "EG617\\Core\\EdgePartition.lean",
     "EG617\\Core\\Gate47.lean",
     "EG617\\Core\\GateRows.lean",
@@ -976,6 +977,16 @@
       "kind": "theorem",
       "name": "e286_actual_support_orbit",
       "file": "EG617\\Core\\E286SupportLift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_independent_three_forces_edge",
+      "file": "EG617\\Core\\E286Triple.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_ordered_three_cliques_obstruction",
+      "file": "EG617\\Core\\E286Triple.lean"
     },
     {
       "kind": "def",

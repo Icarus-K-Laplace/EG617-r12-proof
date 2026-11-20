@@ -1,6 +1,6 @@
 {
-  "sha": "efda57265ea71600cd0829efa749e8c72e449dc4",
-  "run": 44499871478,
+  "sha": "efff7bdbf2381be3ade39d85561974d3f8739228",
+  "run": 44675114460,
   "cleanLinuxBuild": "PASS",
   "fullAxiomAudit": "PASS",
   "statementInspection": "PASS",
@@ -96,7 +96,7 @@
     },
     {
       "file": "EG617/Audit/E286Dependencies.lean",
-      "sha256": "e27d4612c2f8238b0fc1811acab619d30fc10980a9fbce6dffc278c3456a3e2c"
+      "sha256": "953502ab1c8fe31310bd6658570c36b82488f16e7699c3b33cfb5007e9efb98a"
     },
     {
       "file": "EG617/Audit/Gate47.lean",
@@ -392,5 +392,5 @@
   "edgeFloor287": "FORMALIZATION_GAP",
   "COVER": "FORMALIZATION_GAP",
   "MainTheorem": "ABSENT",
-  "elaboratedProjectDependencyAudit": "INCOMPLETE_PUBLIC_IMPORT_VIEW"
+  "elaboratedProjectDependencyAudit": "PASS"
 }

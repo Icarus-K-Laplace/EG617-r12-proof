@@ -180,6 +180,8 @@ public import EG617
 #check EG617.e286_graph_support_weighted_sum
 #check EG617.e286_graph_support_incidence
 #check EG617.e286_actual_support_orbit
+#check EG617.e286_independent_three_forces_edge
+#check EG617.e286_ordered_three_cliques_obstruction
 #print EG617.adjCount
 #check EG617.adjCount_eq_sum_filter
 #check EG617.degree_induce_eq_filter

@@ -23,6 +23,8 @@ nine representatives by e286_actual_support_nine_remaining. All303 declarations
 and254 theorems passed;68 inherited files remain unchanged. E286 nonexistence
 remains open. CI44499871478 at efda572 also passed build/axioms, but its dependency
 traversal omitted imported theorem bodies. That audit is explicitly INCOMPLETE;
-a corrected private-body traversal with mandatory dependency checks is a candidate.
+a corrected private-body traversal with mandatory dependency checks is VERIFIED
+at efff7bd, CI44675114460. It visits177 project constants and includes all seven
+required proof nodes. The earlier incomplete trace is retained as an audit defect record.
 LEVEL5A E286, LEVEL5B edge floor287, LEVEL6A h12/h13, LEVEL6B COVER and
 LEVEL7 K145 MainTheorem remain FORMALIZATION_GAP. No terminal proof is assumed.
