@@ -1,6 +1,6 @@
 # Exact Lean statements
 
-Code efda57265ea71600cd0829efa749e8c72e449dc4, CI 44499871478. Full proof bodies are in standard .lean files.
+Code efff7bdbf2381be3ade39d85561974d3f8739228, CI 44675114460. Full proof bodies are in standard .lean files.
 
 ## EG617.colorGraph
 
