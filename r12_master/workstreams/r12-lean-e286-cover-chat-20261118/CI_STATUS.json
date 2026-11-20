@@ -1,12 +1,12 @@
 {
-  "sha": "efff7bdbf2381be3ade39d85561974d3f8739228",
-  "run": 44675114460,
+  "sha": "8b06204dcafa34c87fee26c0d3b6befaa74afb93",
+  "run": 44675832316,
   "cleanLinuxBuild": "PASS",
   "fullAxiomAudit": "PASS",
   "statementInspection": "PASS",
   "localMatchesCISHA256": "PASS",
-  "declarations": 303,
-  "theorems": 254,
+  "declarations": 305,
+  "theorems": 256,
   "pins": [
     {
       "name": "plausible",
@@ -48,11 +48,11 @@
   "hashes": [
     {
       "file": "EG617.lean",
-      "sha256": "6e89ffa30a330e51225c6acecbc0a4c2c65533b233bc1a002880483ea7d9f407"
+      "sha256": "49fd16ef4d631a89c5017219671a65db5e61a5e968c7720ea6e95a9fcfef3628"
     },
     {
       "file": "EG617/Audit/Axioms.lean",
-      "sha256": "e36243d65625bfcb67170f05503d179b3f6868fe16abfc19fc3ef79bb342cb85"
+      "sha256": "6b9c891563677f9af008e4441d7b5addd5b839be320cf8b6fd37462f6205b4bd"
     },
     {
       "file": "EG617/Audit/C5MissingGraphLift.lean",
@@ -92,7 +92,7 @@
     },
     {
       "file": "EG617/Audit/E286.lean",
-      "sha256": "1397e2122bb3913a28943981a3df897e742fece580294d3ca02dba03194871d0"
+      "sha256": "b3bd0d953a753f1f5dd75980842f974356d4a8ad051aa60b8312d6888292e77e"
     },
     {
       "file": "EG617/Audit/E286Dependencies.lean",
@@ -160,7 +160,7 @@
     },
     {
       "file": "EG617/Audit/Statements.lean",
-      "sha256": "f1319bc8e1c92df159614810ea1d22a71e2e4b5fb8fa99d8bbcb06141c66267f"
+      "sha256": "e8540d0638752c0c2b49379d5322ccb47d946d4930291963599845ccfd39d971"
     },
     {
       "file": "EG617/Basic/ColoringLemmas.lean",
@@ -273,6 +273,10 @@
     {
       "file": "EG617/Core/E286SupportLift.lean",
       "sha256": "9305a968f8aed85935bbdcfb87f72c4cfaab94f3dc3af71608de83fd52b24109"
+    },
+    {
+      "file": "EG617/Core/E286Triple.lean",
+      "sha256": "0ce538ab51f8eabf677b7a4c74bd3890c935d48b3a653202112e72650f6ec5b5"
     },
     {
       "file": "EG617/Core/EdgePartition.lean",

@@ -51,3 +51,5 @@ public import EG617.Core.E286Charges
 public import EG617.Core.E286DisjointPairs
 public import EG617.Core.E286OrbitRealization
 public import EG617.Core.E286Triple
+public import EG617.Core.E286TripleCharge
+public import EG617.Core.E286TriplePrivate

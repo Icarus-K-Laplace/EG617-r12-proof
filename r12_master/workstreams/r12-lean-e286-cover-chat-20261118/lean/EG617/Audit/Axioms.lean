@@ -182,6 +182,9 @@ public import EG617
 #print axioms EG617.e286_actual_support_orbit
 #print axioms EG617.e286_independent_three_forces_edge
 #print axioms EG617.e286_ordered_three_cliques_obstruction
+#print axioms EG617.e286_missing_card_le_ten
+#print axioms EG617.e286_three_k11_local_charge
+#print axioms EG617.e286_private_triple_k11_charge
 #print axioms EG617.adjCount
 #print axioms EG617.adjCount_eq_sum_filter
 #print axioms EG617.degree_induce_eq_filter

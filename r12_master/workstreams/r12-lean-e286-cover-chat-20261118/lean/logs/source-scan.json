@@ -59,6 +59,8 @@
     "EG617\\Core\\E286SupportCounts.lean",
     "EG617\\Core\\E286SupportLift.lean",
     "EG617\\Core\\E286Triple.lean",
+    "EG617\\Core\\E286TripleCharge.lean",
+    "EG617\\Core\\E286TriplePrivate.lean",
     "EG617\\Core\\EdgePartition.lean",
     "EG617\\Core\\Gate47.lean",
     "EG617\\Core\\GateRows.lean",
@@ -987,6 +989,21 @@
       "kind": "theorem",
       "name": "e286_ordered_three_cliques_obstruction",
       "file": "EG617\\Core\\E286Triple.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_missing_card_le_ten",
+      "file": "EG617\\Core\\E286TripleCharge.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_three_k11_local_charge",
+      "file": "EG617\\Core\\E286TripleCharge.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_private_triple_k11_charge",
+      "file": "EG617\\Core\\E286TriplePrivate.lean"
     },
     {
       "kind": "def",

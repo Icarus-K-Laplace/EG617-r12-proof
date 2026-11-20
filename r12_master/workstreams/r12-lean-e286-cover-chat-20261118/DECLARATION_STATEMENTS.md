@@ -1,6 +1,6 @@
 # Exact Lean statements
 
-Code efff7bdbf2381be3ade39d85561974d3f8739228, CI 44675114460. Full proof bodies are in standard .lean files.
+Code 8b06204dcafa34c87fee26c0d3b6befaa74afb93, CI 44675832316. Full proof bodies are in standard .lean files.
 
 ## EG617.colorGraph
 
@@ -1879,6 +1879,39 @@ theorem e286_actual_support_orbit (G : SimpleGraph V) (hG : E286Hypotheses G) :
       ∃ e : Fin 4 ≃ (I : Set V), ∃ σ : Equiv.Perm (Fin 4),
         e286RelabelCounts σ (e286GraphSupportCounts G I e) ∈
           e286SupportOrbitRepresentatives
+```
+
+## EG617.e286_independent_three_forces_edge
+
+Source: EG617/Core/E286Triple.lean
+
+```lean
+theorem e286_independent_three_forces_edge (G : SimpleGraph V) (hG : E286Hypotheses G)
+    (J : Finset V) (hc : J.card = 3) (hJ : G.IsIndepSet (J : Set V))
+    (x y : V) (hxy : x ≠ y) (hx : x ∉ J) (hy : y ∉ J)
+    (hxJ : ∀ t ∈ J, ¬ G.Adj x t) (hyJ : ∀ t ∈ J, ¬ G.Adj y t) : G.Adj x y
+```
+
+## EG617.e286_ordered_three_cliques_obstruction
+
+Source: EG617/Core/E286Triple.lean
+
+```lean
+theorem e286_ordered_three_cliques_obstruction (G : SimpleGraph V) (hG : E286Hypotheses G)
+    (K L M : Finset V) (hK : G.IsClique (K : Set V))
+    (hL : G.IsClique (L : Set V)) (hM : G.IsClique (M : Set V))
+    (hcK : K.card = 11) (hcL : L.card = 11) (hcM : M.card = 11)
+    (hKL : Disjoint K L) (hKM : Disjoint K M) (hLM : Disjoint L M)
+    (z s : V) (hzs : z ≠ s) (hnzs : ¬ G.Adj z s)
+    (hzK : z ∉ K) (hzL : z ∉ L) (hzM : z ∉ M)
+    (hsK : s ∉ K) (hsL : s ∉ L) (hsM : s ∉ M)
+    (hanti : ∀ v ∈ K ∪ L ∪ M, ¬ G.Adj v s)
+    (hbound : ∀ v ∈ K ∪ L ∪ M, degreeExcess12 G v ≤ 2)
+    (hA : (K.filter (fun v => ¬ G.Adj z v)).Nonempty)
+    (hB : 5 ≤ (L.filter (fun v => ¬ G.Adj z v)).card)
+    (hC : 5 ≤ (M.filter (fun v => ¬ G.Adj z v)).card)
+    (hBC : 13 ≤ (L.filter (fun v => ¬ G.Adj z v)).card +
+      (M.filter (fun v => ¬ G.Adj z v)).card) : False
 ```
 
 ## EG617.adjCount

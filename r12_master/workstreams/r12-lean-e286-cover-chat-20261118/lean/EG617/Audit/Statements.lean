@@ -182,6 +182,9 @@ public import EG617
 #check EG617.e286_actual_support_orbit
 #check EG617.e286_independent_three_forces_edge
 #check EG617.e286_ordered_three_cliques_obstruction
+#check EG617.e286_missing_card_le_ten
+#check EG617.e286_three_k11_local_charge
+#check EG617.e286_private_triple_k11_charge
 #print EG617.adjCount
 #check EG617.adjCount_eq_sum_filter
 #check EG617.degree_induce_eq_filter
