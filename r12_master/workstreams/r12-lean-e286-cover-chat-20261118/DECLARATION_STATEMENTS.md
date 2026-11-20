@@ -1,6 +1,6 @@
 # Exact Lean statements
 
-Code 8b06204dcafa34c87fee26c0d3b6befaa74afb93, CI 44675832316. Full proof bodies are in standard .lean files.
+Code 2c0c87a104e3c971a58478fb617ce1e243879e16, CI 44676583725. Full proof bodies are in standard .lean files.
 
 ## EG617.colorGraph
 
@@ -1912,6 +1912,49 @@ theorem e286_ordered_three_cliques_obstruction (G : SimpleGraph V) (hG : E286Hyp
     (hC : 5 ≤ (M.filter (fun v => ¬ G.Adj z v)).card)
     (hBC : 13 ≤ (L.filter (fun v => ¬ G.Adj z v)).card +
       (M.filter (fun v => ¬ G.Adj z v)).card) : False
+```
+
+## EG617.e286_missing_card_le_ten
+
+Source: EG617/Core/E286TripleCharge.lean
+
+```lean
+theorem e286_missing_card_le_ten (G : SimpleGraph V) (K : Finset V)
+    (hc : K.card = 11) (z t : V) (ht : t ∈ K) (hzt : G.Adj z t) :
+    (K.filter (fun v => ¬ G.Adj z v)).card ≤ 10
+```
+
+## EG617.e286_three_k11_local_charge
+
+Source: EG617/Core/E286TripleCharge.lean
+
+```lean
+theorem e286_three_k11_local_charge (G : SimpleGraph V) (hG : E286Hypotheses G)
+    (K L M : Finset V) (hK : G.IsClique (K : Set V))
+    (hL : G.IsClique (L : Set V)) (hM : G.IsClique (M : Set V))
+    (hcK : K.card = 11) (hcL : L.card = 11) (hcM : M.card = 11)
+    (hKL : Disjoint K L) (hKM : Disjoint K M) (hLM : Disjoint L M)
+    (z s : V) (hzs : z ≠ s) (hnzs : ¬ G.Adj z s)
+    (hzK : z ∉ K) (hzL : z ∉ L) (hzM : z ∉ M)
+    (hsK : s ∉ K) (hsL : s ∉ L) (hsM : s ∉ M)
+    (hanti : ∀ v ∈ K ∪ L ∪ M, ¬ G.Adj v s)
+    (hadjK : ∃ t ∈ K, G.Adj z t) (hadjL : ∃ t ∈ L, G.Adj z t)
+    (hadjM : ∃ t ∈ M, G.Adj z t) :
+    3 ≤ ∑ v ∈ insert z (K ∪ L ∪ M), degreeExcess12 G v
+```
+
+## EG617.e286_private_triple_k11_charge
+
+Source: EG617/Core/E286TriplePrivate.lean
+
+```lean
+theorem e286_private_triple_k11_charge (G : SimpleGraph V) (hG : E286Hypotheses G)
+    (I : Finset V) (hc : I.card = 4) (hI : G.IsIndepSet (I : Set V))
+    (e : Fin 4 ≃ (I : Set V)) (z : V)
+    (hz : seedNeighbors G I z = {(e 0 : V), (e 1 : V), (e 2 : V)})
+    (hK : ∀ i : Fin 4, i ≠ 3 → (seedPrivateClique G I (e i)).card = 11) :
+    3 ≤ ∑ v ∈ insert z (seedPrivateClique G I (e 0) ∪
+      seedPrivateClique G I (e 1) ∪ seedPrivateClique G I (e 2)), degreeExcess12 G v
 ```
 
 ## EG617.adjCount

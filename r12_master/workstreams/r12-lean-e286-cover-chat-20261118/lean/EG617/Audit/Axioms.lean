@@ -115,6 +115,11 @@ public import EG617
 #print axioms EG617.e286_common_neighbors_le_eleven
 #print axioms EG617.e286_common_set_excess_charge
 #print axioms EG617.e286_ten_clique_completers_excess
+#print axioms EG617.e286Missing
+#print axioms EG617.e286K11Cost
+#print axioms EG617.e286_k11_pair_scalar_charge
+#print axioms EG617.e286_f11_concentrated_minimum
+#print axioms EG617.e286_private_pair_concentrated_charge
 #print axioms EG617.e286_eleven_clique_missing_nonempty
 #print axioms EG617.e286_pair_support_mem_multiple
 #print axioms EG617.e286_private_k11_pair_charge
@@ -132,6 +137,11 @@ public import EG617
 #print axioms EG617.e286_regular_card_ge_39
 #print axioms EG617.e286_support_degree_sum
 #print axioms EG617.e286_regular_edge_ledger
+#print axioms EG617.e286_pair_triple_small_side_impossible
+#print axioms EG617.e286_second_support_configuration_impossible
+#print axioms EG617.e286_positive_count_actual_witness
+#print axioms EG617.e286_second_support_orbit_impossible
+#print axioms EG617.e286_actual_support_eight_remaining
 #print axioms EG617.e286_support_type_injective
 #print axioms EG617.seedLabelNeighbors_relabel
 #print axioms EG617.e286_graph_support_counts_relabel

@@ -39,6 +39,10 @@ Frozen Section4's independent5 obstruction -> e286_independent_three_forces_edge
 ordered three-clique obstruction -> e286_ordered_three_cliques_obstruction
 (VERIFIED at8b06204, CI44675832316).
 Section4 local excess>=3 without ordering -> e286_three_k11_local_charge;
-actual private seed-clique form -> e286_private_triple_k11_charge (candidates).
+actual private seed-clique form -> e286_private_triple_k11_charge
+(VERIFIED at2c0c87a, CI44676583725).
 These preserve all actual adjacency and disjointness conditions; the wrapper
 derives them from the seed definition rather than assuming a finite certificate.
+Section3 equation2 -> e286_private_pair_concentrated_charge (candidate).
+Section5 second h3 orbit -> e286_second_support_orbit_impossible;
+both h3 orbits excluded -> e286_actual_support_eight_remaining (candidates).

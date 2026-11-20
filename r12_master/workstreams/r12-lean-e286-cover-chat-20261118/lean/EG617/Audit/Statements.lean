@@ -115,6 +115,11 @@ public import EG617
 #check EG617.e286_common_neighbors_le_eleven
 #check EG617.e286_common_set_excess_charge
 #check EG617.e286_ten_clique_completers_excess
+#print EG617.e286Missing
+#print EG617.e286K11Cost
+#check EG617.e286_k11_pair_scalar_charge
+#check EG617.e286_f11_concentrated_minimum
+#check EG617.e286_private_pair_concentrated_charge
 #check EG617.e286_eleven_clique_missing_nonempty
 #check EG617.e286_pair_support_mem_multiple
 #check EG617.e286_private_k11_pair_charge
@@ -132,6 +137,11 @@ public import EG617
 #check EG617.e286_regular_card_ge_39
 #check EG617.e286_support_degree_sum
 #check EG617.e286_regular_edge_ledger
+#check EG617.e286_pair_triple_small_side_impossible
+#check EG617.e286_second_support_configuration_impossible
+#check EG617.e286_positive_count_actual_witness
+#check EG617.e286_second_support_orbit_impossible
+#check EG617.e286_actual_support_eight_remaining
 #check EG617.e286_support_type_injective
 #check EG617.seedLabelNeighbors_relabel
 #check EG617.e286_graph_support_counts_relabel

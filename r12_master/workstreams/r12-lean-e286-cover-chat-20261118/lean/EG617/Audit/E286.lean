@@ -7,6 +7,7 @@ public import EG617.Core.E286DisjointPairs
 public import EG617.Core.E286OrbitRealization
 public import EG617.Core.E286Triple
 public import EG617.Core.E286TriplePrivate
+public import EG617.Core.E286H3Remaining
 #print EG617.E286Hypotheses
 #check EG617.e286_excess_sum
 #print axioms EG617.e286_excess_sum
@@ -42,3 +43,5 @@ public import EG617.Core.E286TriplePrivate
 #print axioms EG617.e286_ordered_three_cliques_obstruction
 #check EG617.e286_private_triple_k11_charge
 #print axioms EG617.e286_private_triple_k11_charge
+#check EG617.e286_actual_support_eight_remaining
+#print axioms EG617.e286_actual_support_eight_remaining

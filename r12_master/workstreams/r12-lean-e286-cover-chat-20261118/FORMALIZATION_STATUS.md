@@ -28,6 +28,8 @@ at efff7bd, CI44675114460. It visits177 project constants and includes all seven
 required proof nodes. The earlier incomplete trace is retained as an audit defect record.
 Frozen Section4's ordered three-clique obstruction is VERIFIED at8b06204,
 CI44675832316. The no-ordering local cost>=3 and its actual private-clique wrapper
-are candidates; the second support orbit has not yet been excluded.
+are VERIFIED at2c0c87a, CI44676583725. The concentrated pair charge>=6 and its
+connection to the second support orbit are new candidates. No parent exclusion
+is promoted before the resulting eight-remaining-orbits theorem compiles.
 LEVEL5A E286, LEVEL5B edge floor287, LEVEL6A h12/h13, LEVEL6B COVER and
 LEVEL7 K145 MainTheorem remain FORMALIZATION_GAP. No terminal proof is assumed.

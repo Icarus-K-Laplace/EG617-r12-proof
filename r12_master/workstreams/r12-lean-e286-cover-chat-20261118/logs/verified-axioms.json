@@ -79,6 +79,11 @@
     "Classical.choice",
     "Quot.sound"
   ],
+  "EG617.e286_private_triple_k11_charge": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
   "EG617.colorGraph": [
     "propext",
     "Quot.sound"
@@ -852,6 +857,16 @@
     "Quot.sound"
   ],
   "EG617.e286_independent_three_forces_edge": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_missing_card_le_ten": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_three_k11_local_charge": [
     "propext",
     "Classical.choice",
     "Quot.sound"

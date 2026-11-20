@@ -53,3 +53,5 @@ public import EG617.Core.E286OrbitRealization
 public import EG617.Core.E286Triple
 public import EG617.Core.E286TripleCharge
 public import EG617.Core.E286TriplePrivate
+public import EG617.Core.E286Concentrated
+public import EG617.Core.E286H3Remaining

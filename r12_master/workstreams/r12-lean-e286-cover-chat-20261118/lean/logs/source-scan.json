@@ -50,8 +50,10 @@
     "EG617\\Core\\E286Capacity.lean",
     "EG617\\Core\\E286Charges.lean",
     "EG617\\Core\\E286CommonNeighbors.lean",
+    "EG617\\Core\\E286Concentrated.lean",
     "EG617\\Core\\E286DisjointPairs.lean",
     "EG617\\Core\\E286Excess.lean",
+    "EG617\\Core\\E286H3Remaining.lean",
     "EG617\\Core\\E286OrbitRealization.lean",
     "EG617\\Core\\E286PrivateClasses.lean",
     "EG617\\Core\\E286SeedLedger.lean",
@@ -656,6 +658,31 @@
       "file": "EG617\\Core\\E286CommonNeighbors.lean"
     },
     {
+      "kind": "def",
+      "name": "e286Missing",
+      "file": "EG617\\Core\\E286Concentrated.lean"
+    },
+    {
+      "kind": "def",
+      "name": "e286K11Cost",
+      "file": "EG617\\Core\\E286Concentrated.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_k11_pair_scalar_charge",
+      "file": "EG617\\Core\\E286Concentrated.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_f11_concentrated_minimum",
+      "file": "EG617\\Core\\E286Concentrated.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_private_pair_concentrated_charge",
+      "file": "EG617\\Core\\E286Concentrated.lean"
+    },
+    {
       "kind": "theorem",
       "name": "e286_eleven_clique_missing_nonempty",
       "file": "EG617\\Core\\E286DisjointPairs.lean"
@@ -739,6 +766,31 @@
       "kind": "theorem",
       "name": "e286_regular_edge_ledger",
       "file": "EG617\\Core\\E286Excess.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_pair_triple_small_side_impossible",
+      "file": "EG617\\Core\\E286H3Remaining.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_second_support_configuration_impossible",
+      "file": "EG617\\Core\\E286H3Remaining.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_positive_count_actual_witness",
+      "file": "EG617\\Core\\E286H3Remaining.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_second_support_orbit_impossible",
+      "file": "EG617\\Core\\E286H3Remaining.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_actual_support_eight_remaining",
+      "file": "EG617\\Core\\E286H3Remaining.lean"
     },
     {
       "kind": "theorem",

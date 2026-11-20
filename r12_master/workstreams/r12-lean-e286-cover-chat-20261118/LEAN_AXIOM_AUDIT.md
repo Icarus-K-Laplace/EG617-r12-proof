@@ -1,6 +1,6 @@
 # Transitive axiom audit
 
-Verified code 8b06204dcafa34c87fee26c0d3b6befaa74afb93, CI 44675832316. All project declarations below compiled.
+Verified code 2c0c87a104e3c971a58478fb617ce1e243879e16, CI 44676583725. All project declarations below compiled.
 Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem remain unproved.
 
 | Declaration | Axioms |
@@ -185,6 +185,9 @@ Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem r
 | EG617.e286_actual_support_orbit | propext, Classical.choice, Quot.sound |
 | EG617.e286_independent_three_forces_edge | propext, Classical.choice, Quot.sound |
 | EG617.e286_ordered_three_cliques_obstruction | propext, Classical.choice, Quot.sound |
+| EG617.e286_missing_card_le_ten | propext, Classical.choice, Quot.sound |
+| EG617.e286_three_k11_local_charge | propext, Classical.choice, Quot.sound |
+| EG617.e286_private_triple_k11_charge | propext, Classical.choice, Quot.sound |
 | EG617.adjCount | propext, Classical.choice, Quot.sound |
 | EG617.adjCount_eq_sum_filter | propext, Classical.choice, Quot.sound |
 | EG617.degree_induce_eq_filter | propext, Classical.choice, Quot.sound |

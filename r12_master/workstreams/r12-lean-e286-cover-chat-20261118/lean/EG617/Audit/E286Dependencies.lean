@@ -6,7 +6,8 @@ Ordinary public module imports expose theorem types but erase imported bodies.
 This audit contributes no mathematical assumptions. -/
 run_cmd do
   let env := (← Lean.getEnv).setExporting false
-  let mut pending := #[``EG617.e286_private_triple_k11_charge,
+  let mut pending := #[``EG617.e286_actual_support_eight_remaining,
+    ``EG617.e286_private_triple_k11_charge,
     ``EG617.e286_actual_support_nine_remaining]
   let mut seen : Lean.NameSet := {}
   while !pending.isEmpty do
@@ -34,7 +35,9 @@ run_cmd do
       ``EG617.e286_k11_pair_local_charge,
       ``EG617.e286_excess_sum,
       ``EG617.e286_three_k11_local_charge,
-      ``EG617.e286_ordered_three_cliques_obstruction] do
+      ``EG617.e286_ordered_three_cliques_obstruction,
+      ``EG617.e286_private_pair_concentrated_charge,
+      ``EG617.e286_second_support_orbit_impossible] do
     unless seen.contains required do
       throwError "Proof-body dependency missing: {required}"
   Lean.logInfo "E286_ELABORATED_DEPENDENCY_AUDIT_PASS"
