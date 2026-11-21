@@ -112,6 +112,6 @@ theorem e286_private_pair_concentrated_charge (G : SimpleGraph V) (hG : E286Hypo
   have hzlow : 10 - A.card - B.card ≤ degreeExcess12 G z := by omega
   change 6 ≤ ∑ v ∈ insert z K, degreeExcess12 G v
   rw [Finset.sum_insert (hzout i hi)]
-  omega
+  exact h6.trans (Nat.add_le_add hzlow (hsa.trans hsub))
 
 end EG617
