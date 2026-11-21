@@ -41,7 +41,9 @@ theorem e286_pair_triple_small_side_impossible (G : SimpleGraph V) (hG : E286Hyp
     (e 0).property (e 1).property (hne 0 1 (by decide)) hp (hK 0) (hK 1) hsmall
   let e' : Fin 4 ≃ (I : Set V) := (Equiv.swap (0 : Fin 4) 3).trans e
   have ht' : seedNeighbors G I t = {(e' 0 : V), (e' 1 : V), (e' 2 : V)} := by
-    simpa [e', Equiv.swap_apply_def, Finset.insert_comm, Finset.insert_left_comm] using ht
+    rw [ht]
+    ext v
+    simp [e', Equiv.swap_apply_def, or_comm, or_left_comm, or_assoc]
   have hK' (i : Fin 4) (_hi : i ≠ 3) : (seedPrivateClique G I (e' i)).card = 11 :=
     hK ((Equiv.swap (0 : Fin 4) 3) i)
   have ht3 := e286_private_triple_k11_charge G hG I hc hI e' t ht' hK'
