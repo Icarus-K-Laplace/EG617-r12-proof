@@ -142,6 +142,9 @@ public import EG617
 #print axioms EG617.e286_positive_count_actual_witness
 #print axioms EG617.e286_second_support_orbit_impossible
 #print axioms EG617.e286_actual_support_eight_remaining
+#print axioms EG617.e286_f10_11_minimum
+#print axioms EG617.e286_k10_k11_pair_local_charge
+#print axioms EG617.e286_private_mixed_pair_dichotomy
 #print axioms EG617.e286_support_type_injective
 #print axioms EG617.seedLabelNeighbors_relabel
 #print axioms EG617.e286_graph_support_counts_relabel
