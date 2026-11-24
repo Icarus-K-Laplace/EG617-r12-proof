@@ -1411,5 +1411,17 @@
       ]
     ]
   },
-  "limitation": "Diagnostic only. Formal proof status is recorded separately in CI_STATUS.json and FORMALIZATION_STATUS.md. No diagnostic output is imported into Lean. This is not an exhaustive search of47-vertex graphs."
+  "limitation": "Diagnostic only. Formal proof status is recorded separately in CI_STATUS.json and FORMALIZATION_STATUS.md. No diagnostic output is imported into Lean. This is not an exhaustive search of47-vertex graphs.",
+  "tripleChargeChecks": {
+    "tripleTuples": 352,
+    "tripleCapacityCases": 450,
+    "concentratedCases": 13,
+    "negativeControlWithoutSmallSideOrientation": {
+      "a": 4,
+      "b": 1,
+      "totalScalarCost": 7,
+      "firstSideConcentratedCost": 5,
+      "explanation": "Fails the deliberately weakened conclusion; it is not a counterexample to the oriented theorem or E286."
+    }
+  }
 }

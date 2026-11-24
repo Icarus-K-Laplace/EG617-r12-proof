@@ -43,6 +43,9 @@ actual private seed-clique form -> e286_private_triple_k11_charge
 (VERIFIED at2c0c87a, CI44676583725).
 These preserve all actual adjacency and disjointness conditions; the wrapper
 derives them from the seed definition rather than assuming a finite certificate.
-Section3 equation2 -> e286_private_pair_concentrated_charge (candidate).
+Section3 equation2 -> e286_private_pair_concentrated_charge (VERIFIED at51358b4).
 Section5 second h3 orbit -> e286_second_support_orbit_impossible;
-both h3 orbits excluded -> e286_actual_support_eight_remaining (candidates).
+both h3 orbits excluded -> e286_actual_support_eight_remaining
+(VERIFIED at51358b4, CI44890957575). Both orientations are treated by actual seed
+permutations. Positive count fibers yield actual witnesses; no terminal premise
+is added to the strongest theorem. The last eight representatives are still open.

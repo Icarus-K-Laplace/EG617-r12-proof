@@ -84,6 +84,11 @@
     "Classical.choice",
     "Quot.sound"
   ],
+  "EG617.e286_actual_support_eight_remaining": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
   "EG617.colorGraph": [
     "propext",
     "Quot.sound"
@@ -597,6 +602,27 @@
     "Classical.choice",
     "Quot.sound"
   ],
+  "EG617.e286Missing": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286K11Cost": [],
+  "EG617.e286_k11_pair_scalar_charge": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_f11_concentrated_minimum": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_private_pair_concentrated_charge": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
   "EG617.e286_eleven_clique_missing_nonempty": [
     "propext",
     "Classical.choice",
@@ -663,6 +689,26 @@
     "Quot.sound"
   ],
   "EG617.e286_support_degree_sum": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_pair_triple_small_side_impossible": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_second_support_configuration_impossible": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_positive_count_actual_witness": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_second_support_orbit_impossible": [
     "propext",
     "Classical.choice",
     "Quot.sound"

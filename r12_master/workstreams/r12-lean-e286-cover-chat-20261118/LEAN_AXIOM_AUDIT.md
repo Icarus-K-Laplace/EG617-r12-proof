@@ -1,6 +1,6 @@
 # Transitive axiom audit
 
-Verified code 2c0c87a104e3c971a58478fb617ce1e243879e16, CI 44676583725. All project declarations below compiled.
+Verified code 51358b42e0406d2ae23a45594b01ece73f9998f6, CI 44890957575. All project declarations below compiled.
 Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem remain unproved.
 
 | Declaration | Axioms |
@@ -118,6 +118,11 @@ Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem r
 | EG617.e286_common_neighbors_le_eleven | propext, Classical.choice, Quot.sound |
 | EG617.e286_common_set_excess_charge | propext, Classical.choice, Quot.sound |
 | EG617.e286_ten_clique_completers_excess | propext, Classical.choice, Quot.sound |
+| EG617.e286Missing | propext, Classical.choice, Quot.sound |
+| EG617.e286K11Cost | none |
+| EG617.e286_k11_pair_scalar_charge | propext, Classical.choice, Quot.sound |
+| EG617.e286_f11_concentrated_minimum | propext, Classical.choice, Quot.sound |
+| EG617.e286_private_pair_concentrated_charge | propext, Classical.choice, Quot.sound |
 | EG617.e286_eleven_clique_missing_nonempty | propext, Classical.choice, Quot.sound |
 | EG617.e286_pair_support_mem_multiple | propext, Classical.choice, Quot.sound |
 | EG617.e286_private_k11_pair_charge | propext, Classical.choice, Quot.sound |
@@ -135,6 +140,11 @@ Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem r
 | EG617.e286_regular_card_ge_39 | propext, Classical.choice, Quot.sound |
 | EG617.e286_support_degree_sum | propext, Classical.choice, Quot.sound |
 | EG617.e286_regular_edge_ledger | propext, Classical.choice, Quot.sound |
+| EG617.e286_pair_triple_small_side_impossible | propext, Classical.choice, Quot.sound |
+| EG617.e286_second_support_configuration_impossible | propext, Classical.choice, Quot.sound |
+| EG617.e286_positive_count_actual_witness | propext, Classical.choice, Quot.sound |
+| EG617.e286_second_support_orbit_impossible | propext, Classical.choice, Quot.sound |
+| EG617.e286_actual_support_eight_remaining | propext, Classical.choice, Quot.sound |
 | EG617.e286_support_type_injective | propext, Classical.choice, Quot.sound |
 | EG617.seedLabelNeighbors_relabel | propext, Classical.choice, Quot.sound |
 | EG617.e286_graph_support_counts_relabel | propext, Classical.choice, Quot.sound |

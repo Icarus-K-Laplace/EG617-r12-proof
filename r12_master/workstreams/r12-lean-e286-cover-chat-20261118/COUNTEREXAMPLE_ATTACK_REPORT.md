@@ -16,9 +16,9 @@ never read by a Lean theorem or trusted as an oracle. Kernel evidence is separat
 
 No counterexample occurred in those explicitly bounded domains. No exhaustive
 47-vertex graph search was performed. Shared-center graph charging, simultaneous
-overlap and the remaining nine terminal configurations still require kernel
-proofs. The canonical-count to oriented-graph bridge and first orbit exclusion
-are independently kernel-certified at90130d8; no diagnostic result licenses
+overlap and the remaining eight terminal configurations still require kernel
+proofs. The canonical-count to oriented-graph bridge and both h3 orbit exclusions
+are independently kernel-certified at51358b4; no diagnostic result licenses
 E286 or any parent theorem.
 
 The actual pair-blocker argument constructs four independent vertices anticomplete
@@ -27,3 +27,17 @@ alpha<=4. The K11/K11 charge uses three disjoint sets: that point and the two
 missing subsets. Combining different blockers requires a separate disjointness
 or shared-leaf accounting proof; the full excess of an overlapping vertex cannot
 be charged twice.
+
+The extended independent diagnostic checks all positive missing-size triples in
+1..10 with total at least19, including ties: after choosing a smallest side, the
+other sides each have size at least5 and total at least13. All deletions of at
+most four neighbors are checked to leave both sides nonempty with total at least9.
+The concentrated charge is checked on all positive sizes<=11 with correct
+small-side orientation and scalar budget<=8.
+There are352 qualifying size triples,450 residual capacity cases and13 oriented
+small-budget scalar cases. These are tests only, not premises of the Lean proof.
+
+A negative control shows that the orientation cannot be omitted: a=4,b=1 has
+total scalar cost7 but first-side concentrated cost5. The formal parent covers
+both orientations by an actual seed permutation. This negative control does not
+satisfy the oriented lemma's hypotheses and is not a counterexample to E286.

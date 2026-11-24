@@ -8,7 +8,9 @@ and fails unless seven required load-bearing proof nodes are actually reached.
 It is VERIFIED at efff7bd, CI44675114460, visiting177 project constants.
 
 EG617/Audit/E286Dependencies.lean traverses the actual elaborated types and proof
-terms starting at EG617.e286_actual_support_nine_remaining. It records all
+terms starting at the eight-remaining and nine-remaining support theorems and the
+actual triple-K11 charge. At51358b4, CI44890957575, it visits245 project constants.
+It records all
 reachable project constants, including private constants, rather than scanning
 source text for theorem names. Each constant is visited once, including recursive
 definitions. The full emitted graph is retained in the successful CI log and
@@ -27,6 +29,8 @@ The load-bearing chain is:
 5. Clique neighbor counts -> six-unit local cost -> complementary-pair contradiction.
 6. First canonical representative -> actual complementary pairs -> exclusion.
 7. Complete ten-representative membership -> membership in the remaining nine.
+8. Actual triple charge3 + concentrated pair charge6 -> second h3 orbit exclusion.
+9. Nine-representative membership -> membership in the remaining eight.
 
 The graph does not contain an E286 nonexistence,287-edge floor,COVER or MainTheorem
 proof. No terminal exclusion is supplied as an undeclared premise.

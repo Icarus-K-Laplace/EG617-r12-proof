@@ -1,35 +1,27 @@
-# E286 / COVER: candidate workstream
+# EG617 E286 / COVER: PARTIAL
 
-LEVEL4 GATE47 remains verified at 2b4b74f4bf481245ac45cbf9ddd18ac7b64064ac,
-CI44139599116. New branch starts from the actual latest prior-workstream HEAD
-36c011bffde6a0a004c91f3b99e0aff2fa42f9b3.
+Verified code: 51358b42e0406d2ae23a45594b01ece73f9998f6
+Successful clean Linux CI: 44890957575.
 
-Nine degree-excess/support ledgers are VERIFIED at2da427b, CI44194246540.
-All231 declarations compiled and passed exact type and transitive axiom checks.
-Actual regular independent four seeds and the cap-free25-point obstruction are
-VERIFIED at80d1542, CI44195410389. All238 declarations and202 theorems passed.
-The actual common-neighbor/excess inequality, K10 completion charge, private
-cliques and complete graph-to-support domain reduction are VERIFIED at4ede035,
-CI44262022836. This proves3<=|Z|<=5, exact surplus5 and the actual47-vertex partition.
-The ten-orbit count-vector certificate and its finite-domain completeness proof
-are VERIFIED at505e87c, CI44495273085. The actual graph/count transport is
-VERIFIED at86e9970, CI44498020540, together with actual forced blocker edges,
-the K11/K11 local six-unit charge, and the complementary-pair obstruction.
-All297 declarations and248 theorems passed full build, exact statements,
-transitive axiom audit and SHA256 checks. All68 inherited files are unchanged.
-The canonical-count to oriented-seed identity and first count-orbit elimination
-are VERIFIED at90130d8, CI44498770093. The actual graph is reduced to the remaining
-nine representatives by e286_actual_support_nine_remaining. All303 declarations
-and254 theorems passed;68 inherited files remain unchanged. E286 nonexistence
-remains open. CI44499871478 at efda572 also passed build/axioms, but its dependency
-traversal omitted imported theorem bodies. That audit is explicitly INCOMPLETE;
-a corrected private-body traversal with mandatory dependency checks is VERIFIED
-at efff7bd, CI44675114460. It visits177 project constants and includes all seven
-required proof nodes. The earlier incomplete trace is retained as an audit defect record.
-Frozen Section4's ordered three-clique obstruction is VERIFIED at8b06204,
-CI44675832316. The no-ordering local cost>=3 and its actual private-clique wrapper
-are VERIFIED at2c0c87a, CI44676583725. The concentrated pair charge>=6 and its
-connection to the second support orbit are new candidates. No parent exclusion
-is promoted before the resulting eight-remaining-orbits theorem compiles.
-LEVEL5A E286, LEVEL5B edge floor287, LEVEL6A h12/h13, LEVEL6B COVER and
-LEVEL7 K145 MainTheorem remain FORMALIZATION_GAP. No terminal proof is assumed.
+The strongest result is e286_actual_support_eight_remaining. From the original
+five E286 hypotheses it derives actual regular independent seeds and a support
+distribution in the last eight entries of the exhaustive ten-orbit list.
+Both h3 orbits are excluded. The three h4 and five h5 orbits remain.
+
+The proof includes exact excess8, the private-clique partition, a complete finite
+support domain, actual seed reindexing, actual blocker edges, a concentrated
+pair charge>=6 and a triple-K11 local charge>=3. No terminal premise is assumed.
+
+All318 declarations and267 theorems passed actual lake builds, full #check/#print
+inspection, transitive axiom audit and source/config SHA256 checks. Only propext,
+Classical.choice and Quot.sound occur. All nine dependencies match their pins.
+All68 inherited source/config files are unchanged. The corrected proof-body
+dependency audit visits245 project constants and verifies required proof paths.
+
+LEVEL4 GATE47 remains VERIFIED. LEVEL5A E286 nonexistence, LEVEL5B the287-edge
+floor, LEVEL6A h12/h13, LEVEL6B COVER and LEVEL7 MainTheorem remain FORMALIZATION_GAP.
+MainTheorem is absent. No progress percentage or complete EG617 proof is claimed.
+
+The initial dependency audit at efda572 saw only public theorem types; its marker
+is explicitly not complete dependency evidence. The corrected private-body audit
+has passed and the defect is documented in DEPENDENCY_AUDIT.md.

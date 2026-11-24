@@ -64,6 +64,24 @@ const result={status:'NO_COUNTEREXAMPLE_IN_STATED_DIAGNOSTIC_DOMAIN',
  scalarChecks:scalars,sharedLeafChecks:overlaps,regularSeedBounds:floors,
  negativeControl:{missingHypothesis:'minimum degree>=12',vertices:47,edges:edges.length,degreeList,totalDegree:572,truncatedExcess:9,adjacencyEdges:edges},
  limitation:'Diagnostic only. Formal proof status is recorded separately in CI_STATUS.json and FORMALIZATION_STATUS.md. No diagnostic output is imported into Lean. This is not an exhaustive search of47-vertex graphs.'};
+let tripleTuples=0,tripleCapacityCases=0,concentratedCases=0;
+for(let a=1;a<=10;a++)for(let b=1;b<=10;b++)for(let c=1;c<=10;c++){
+ if(a+b+c<19)continue;
+ const [x,y,z]=[a,b,c].sort((u,v)=>u-v);
+ assert(y>=5&&z>=5&&y+z>=13,'triple ordering capacity');tripleTuples++;
+}
+for(let b=5;b<=10;b++)for(let c=5;c<=10;c++)for(let nb=0;nb<=4;nb++)for(let nc=0;nc<=4;nc++){
+ if(b+c<13||nb+nc>4)continue;
+ assert(b-nb>0&&c-nc>0&&(b-nb)+(c-nc)>=9,'residual triple capacity');tripleCapacityCases++;
+}
+for(let a=1;a<=11;a++)for(let b=a;b<=11;b++){
+ const cost=pos(10-a-b)+a*pos(b-2)+b*pos(a-2);
+ if(cost>8)continue;
+ assert(pos(10-a-b)+a*pos(b-2)>=6,'concentrated small-side charge');concentratedCases++;
+}
+result.tripleChargeChecks={tripleTuples,tripleCapacityCases,concentratedCases,
+ negativeControlWithoutSmallSideOrientation:{a:4,b:1,totalScalarCost:7,firstSideConcentratedCost:5,
+ explanation:'Fails the deliberately weakened conclusion; it is not a counterexample to the oriented theorem or E286.'}};
 fs.writeFileSync(path.join(root,'logs/e286-diagnostic-attack.json'),JSON.stringify(result,null,2)+'\n');
 console.log(JSON.stringify({status:result.status,tuples,legal,orbits:found.size,scalarCases:scalars.reduce((s,x)=>s+x.tested,0),negativeControlExcess:9}));
 

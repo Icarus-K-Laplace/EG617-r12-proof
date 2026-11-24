@@ -1,20 +1,21 @@
 # Exact open obligations
 
-1. CLOSED: compile and audit degree-excess8 and the exceptional-set edge ledger.
-2. CLOSED: an actual independent four-set of degree12 vertices is derived from
-   the original five E286 conditions; the25-point alpha2 obstruction is also proved.
-3. CLOSED: actual private clique partition and multiple-seed supports, surplus5,
-   and3<=|Z|<=5. CLOSED at505e87c: ten count-vector orbits and exhaustive domain.
-   CLOSED at86e9970: actual graph-to-count transport, full build and audit.
-4. CLOSED at86e9970: actual blocker, K11/K11 local charge and complementary-pair
-   obstruction. CLOSED at90130d8: actual inverse seed relabeling, first canonical
-   orbit exclusion, and nine-remaining-orbits theorem. OPEN: frozen Section4's
-   triple-K11 local cost>=3 and Section3's concentrated small-side charge>=6;
-   together these exclude the second h3 orbit. The h4/h5 shared-center charges
-   and terminal exclusions also remain open. No E286 nonexistence theorem exists.
-5. Locate and formalize the frozen <=285 exclusion separately; GATE47 alone gives
-   only e>=282 from minimum degree12, not the necessary286 floor.
-6. The supplied COVER source is h13-only and explicitly uses AES at (35,4,22).
-   h12 needs its own frozen source; AES needs a kernel proof, not a custom axiom.
-   Repivot identities and all Q classifications remain unformalized.
-7. Original K145 MainTheorem is absent.
+The complete ten-orbit classification and both h3 exclusions are kernel-verified.
+The strongest theorem is e286_actual_support_eight_remaining, under exactly the
+original E286Hypotheses. No E286 nonexistence theorem exists.
+
+1. Highest-value next obligation: prove the actual K10/K11 mixed blocker charge>=4.
+   Together with the certified K11 pair charge>=6 and K10 two-completer charge>=7,
+   this should exclude frozen Section6's first h4 orbit {01,01,023,23}.
+   Multiplicity2 must produce two distinct actual support vertices.
+2. The other h4 orbits need actual shared-leaf and simultaneous-center accounting.
+   A shared vertex's full excess cannot be counted twice.
+3. The five h5 orbits need the small-budget double-pair lemma, K9 completion
+   accounting, P/D/B exclusions and the same-K11-pair obstruction for C.
+   Frozen Sections6-12 have not yet been proved in Lean.
+4. Separately locate/formalize the frozen <=285 exclusion before the287-edge floor.
+   GATE47 alone gives degree>=12 and hence only e>=282; it does not give e>=286.
+5. The supplied COVER source proves h13 only. h12 needs its own frozen source.
+   AES, repivot licensing, all Q27/Q28/Q29/Q30 classifications and Family I/II
+   completeness remain unformalized. Both old/new minimum-degree conditions matter.
+6. Original K145 MainTheorem is absent. No parent theorem is promoted by this checkpoint.

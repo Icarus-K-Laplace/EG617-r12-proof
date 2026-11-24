@@ -37,6 +37,10 @@ if(dag)for(const n of ['e286_actual_oriented_support_orbit','e286_first_support_
  if(!log.includes('PROJECT_DEPENDENCIES EG617.'+n+':'))throw Error('Incomplete proof-body traversal: '+n);
 const status={sha,run:Number(run),cleanLinuxBuild:'PASS',fullAxiomAudit:'PASS',statementInspection:'PASS',localMatchesCISHA256:'PASS',declarations:scan.declarations.length,theorems:scan.declarations.filter(d=>d.kind==='theorem'||d.kind==='lemma').length,pins,hashes,inheritedFilesPreserved:preserved.length,E286:'FORMALIZATION_GAP',edgeFloor287:'FORMALIZATION_GAP',COVER:'FORMALIZATION_GAP',MainTheorem:'ABSENT'};
 status.elaboratedProjectDependencyAudit=dag?'PASS':'NOT_RUN';
+status.remainingSupportOrbits=scan.declarations.some(d=>d.name==='e286_actual_support_eight_remaining')?8:9;
+status.strongestE286Reduction=status.remainingSupportOrbits===8?'e286_actual_support_eight_remaining':'e286_actual_support_nine_remaining';
+if(status.remainingSupportOrbits===8)for(const n of ['e286_actual_support_eight_remaining','e286_private_pair_concentrated_charge','e286_private_triple_k11_charge','e286_second_support_orbit_impossible'])
+ if(!log.includes('PROJECT_DEPENDENCIES EG617.'+n+':'))throw Error('Missing h3 proof path: '+n);
 if(dag){
  const begin=log.indexOf('PROJECT_DEPENDENCIES EG617.e286_actual_support_nine_remaining:');
  const end=log.indexOf('E286_ELABORATED_DEPENDENCY_AUDIT_PASS',begin);
@@ -46,7 +50,7 @@ if(dag){
 fs.writeFileSync(path.join(root,'CI_STATUS.json'),JSON.stringify(status,null,2)+'\n');
 fs.writeFileSync(path.join(root,'logs/verified-axioms.json'),JSON.stringify(Object.fromEntries(axioms),null,2)+'\n');
 let audit='# Transitive axiom audit\n\nVerified code '+sha+', CI '+run+'. All project declarations below compiled.\nOnly propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem remain unproved.\n\n| Declaration | Axioms |\n|---|---|\n';
-let statements='# Exact Lean statements\n\nCode '+sha+', CI '+run+'. Full proof bodies are in standard .lean files.\n\n';
+let statements='# Exact Lean source statements\n\nCode '+sha+', CI '+run+'. Full proof bodies are in standard .lean files.\nThe declarations below retain their source section context; universe and implicit section\nvariables are given in those files. The full CI log also contains elaborated #check output\nincluding all implicit binders. No additional terminal hypothesis is hidden.\n\n';
 for(const d of scan.declarations){
  const name='EG617.'+d.name;
  audit+='| '+name+' | '+(axioms.get(name).join(', ')||'none')+' |\n';

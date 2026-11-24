@@ -1,32 +1,32 @@
-# Original E286 contract
+# Original E286 contract and current reduction
 
-Frozen source: frozen/E286.md, Theorem E286 and Sections1-12. Original repository
-path and immutable source revision are recorded in SOURCE_PROVENANCE.json.
+Frozen source: frozen/E286.md, with immutable provenance in SOURCE_PROVENANCE.json.
+E286Hypotheses is exactly47 vertices,286 edges, minimum degree>=12, alpha<=4,
+omega<=11. The abstract theorem has no hereditary D cap.
 
-E286Hypotheses is exactly:47 vertices,286 edges, every degree>=12, alpha<=4,
-omega<=11. The abstract frozen theorem requires NO hereditary D cap. E286Statement
-is only a definition of the nonexistence target; no proof of it is declared.
+Verified code51358b42e0406d2ae23a45594b01ece73f9998f6, CI44890957575.
 
-Verified reduction (CI44194246540): degree sum572, excess sum8, exceptional support<=8,
-individual degrees<=20, at least39 regular vertices, exceptional degree sum12q+8,
-and exact regular/excess-support edge ledger. No enumeration or oracle is used.
-These initial ledgers are not E286 exclusion.
+The original hypotheses imply actual regular independent seeds, the private-clique
+partition, surplus5 and complete membership in the ten frozen support orbits.
+The finite-domain completeness proof precedes the kernel-reduced orbit check.
+Actual inverse seed reindexing proves equivalence with graph neighborhoods.
 
-At86e9970 (CI44498020540), the original five hypotheses imply actual regular
-independent seeds, the exact private-clique/multiple-support partition, surplus5,
-and a complete ten-orbit classification of actual support multiplicities.
-The complete finite domain is proved structurally by e286_weighted_profiles_complete;
-the finite orbit check uses kernel reduction, not an external enumeration oracle.
+Frozen Section5's two h3 orbits are now excluded:
+- {0123,01,23}: disjoint pair charges6+6 exceed total excess8.
+- {01,023,123}: a concentrated small-side pair charge6 and the disjoint opposite
+  triple charge3 exceed total excess8. Both small-side orientations are covered
+  by actual seed permutations, including equality of missing-set sizes.
 
-Frozen Section3's actual forced blocker edges and six-unit K11/K11 local excess
-charge are proved. Section5's complementary K11 pair obstruction is proved using
-disjoint actual charged sets and the total excess8. Missing-set positivity follows
-from omega<=11; forced cross edges follow from alpha<=4. None is assumed in the
-private-clique wrapper. Full types are in DECLARATION_STATEMENTS.md and the CI log.
+The triple charge derives a local pointwise excess bound under contradiction,
+chooses a smallest missing set, and proves the residual forced adjacency/capacity
+contradiction. No ordered missing distribution is assumed in the private-clique
+theorem. Positive missing sets follow from omega<=11; forced edges from alpha<=4.
 
-The oriented seed realization and elimination of the first count representative
-are VERIFIED at90130d8 (CI44498770093). The main certified reduction
-e286_actual_support_nine_remaining assumes only E286Hypotheses and produces
-actual regular seeds and a count vector in the tail of the ten-representative list.
-No extra terminal premise is introduced. The remaining nine orbit exclusions, shared-center overlap
-accounting and triple-K11 local cost are still unproved. LEVEL5A is not attained.
+The strongest theorem e286_actual_support_eight_remaining assumes only G and
+E286Hypotheses G, and produces actual seeds and a support count vector in
+e286SupportOrbitRepresentatives.tail.tail. Full source and elaborated statements
+are available in the Lean files and complete CI log.
+
+The three h4 and five h5 orbits remain. Shared-center accounting, double-pair
+equality structure and the remaining terminal exclusions are open. E286Statement
+is still only a target definition. LEVEL5A has not been attained.

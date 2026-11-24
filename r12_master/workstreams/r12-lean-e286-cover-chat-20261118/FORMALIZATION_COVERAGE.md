@@ -1,37 +1,32 @@
 # Coverage by mathematical claim
 
-This file reports logical coverage, not a percentage or a declaration-count score.
-
 ## Fully formalized
 
-- Inherited GATE47, including the original CoreAdmissible4 contract: verified
-  code2b4b74f, CI44139599116. Its68 inherited source/config files remain unchanged.
-- E286 degree sum572, excess8, exceptional support at most8, and actual regular
-  independent four seeds. The five abstract E286 hypotheses are unchanged.
-- The cap-free25-point alpha2 obstruction, correct common-neighbor bound
-  c(x,y)<=3+epsilon(x)+epsilon(y)<=11, and K10 completion excess charge7.
-- Actual private cliques, their disjoint partition with the multiple-support set,
-  exact surplus5, and complete actual support count classification into ten orbits.
-- Actual pair-blocker forced edges; K11/K11 local six-unit charge; impossibility
-  of two complementary K11 pair supports. These are verified at86e9970,
-  CI44498020540, with complete types, axiom audit and source hashes.
+- Inherited GATE47 with its complete CoreAdmissible4 contract;68 inherited
+  source/config files remain unchanged.
+- The original E286 hypotheses, excess8, actual regular independent four seeds,
+  private cliques, the disjoint partition and exact support surplus5.
+- The cap-free25-point obstruction, common-neighbor bound
+  c(x,y)<=3+epsilon(x)+epsilon(y)<=11 and K10 completion charge>=7.
+- Complete ten-orbit classification, including finite-domain completeness and
+  equivalence with actual graph supports under seed permutations.
+- Actual pair blockers and K11/K11 local charge>=6; concentrated small-side charge>=6.
+- Actual triple-K11 local charge>=3, with sorting and all capacity premises derived.
+- Both h3 terminal exclusions; e286_actual_support_eight_remaining follows from
+  the original five hypotheses without an extra terminal assumption.
+
+These claims are verified at51358b4, CI44890957575. Full statements and proof
+bodies, all axiom dependencies, hashes and complete CI logs are retained.
 
 ## Partially formalized
 
-- E286 support terminal elimination. Oriented seed realization and the first
-  canonical count-orbit exclusion are VERIFIED at90130d8, CI44498770093.
-  The nine-remaining-orbits theorem is proved from the original hypotheses.
-  The other terminal exclusions
-  and shared-center/triple-K11 charge arguments are not yet formalized.
-- The287-edge floor has its inherited degree gate, but still needs both the
-  <=285 exclusion and E286 equality exclusion. Neither is assumed as a premise.
+- E286 nonexistence: three h4 and five h5 support orbits remain.
+- The287-edge floor: GATE47 is proved, but the <=285 and equality exclusions are open.
 
 ## Not formalized
 
-- E286 nonexistence itself; core47_edge_floor_287.
-- h12/h13 terminals, AES dependency, Q27/Q28/Q29/Q30, repivot licensing,
-  COVER_verified, and original K145 MainTheorem.
+- core47_edge_floor_287, h12/h13 terminals, AES, repivot licensing and Q classifications.
+- COVER_verified and the original K145 MainTheorem.
 
-All diagnostic enumerations are tests only. The complete support certificate
-is separately proved inside Lean, including its finite domain completeness.
-No custom mathematical axiom or unproved terminal proposition is introduced.
+Diagnostic enumerations are tests only. The finite support certificate is a
+separate kernel proof, including a proof that its domain is exhaustive.

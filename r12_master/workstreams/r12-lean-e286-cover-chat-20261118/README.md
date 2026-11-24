@@ -20,9 +20,10 @@ Their historical PROVED labels are not Lean evidence. logs/ retains full evidenc
 attacks/ contains diagnostic tests only. ci/ copies this branch's unique workflow.
 The other workstream and frozen repository originals are not modified.
 
-The certified mathematical reduction is e286_actual_support_nine_remaining:
+The certified mathematical reduction is e286_actual_support_eight_remaining:
 the original five E286 hypotheses imply an actual support configuration among
-nine remaining representatives, after the first of the complete ten is excluded.
+eight remaining representatives, after both h3 orbits of the complete ten are excluded.
+Verified code51358b42e0406d2ae23a45594b01ece73f9998f6, CI44890957575.
 E286 itself, core47_edge_floor_287, COVER and MainTheorem remain unproved.
 
 Read FORMALIZATION_COVERAGE.md and OPEN_BLOCKERS.md for the exact boundary,
@@ -35,6 +36,6 @@ For the standalone ZIP, verify its files before building with:
 sha256sum -c SHA256SUMS
 bash build-linux.sh 2>&1 | tee full-reproduction.log
 ```
-The ZIP contains every tracked workstream file, full CI logs and a provenance
+The ZIP contains every tracked workstream file, full code and final-report CI logs and a provenance
 record. Local drafts, toolchain caches and parallel workstreams are excluded.
 Linux CI is the independent clean-build evidence; no Windows build pass is claimed.
