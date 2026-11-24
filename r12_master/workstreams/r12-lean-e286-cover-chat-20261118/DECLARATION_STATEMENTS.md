@@ -1,6 +1,6 @@
 # Exact Lean source statements
 
-Code 51358b42e0406d2ae23a45594b01ece73f9998f6, CI 44890957575. Full proof bodies are in standard .lean files.
+Code ac68670b87e4c2114c27bd1ccd81c18ce7722a6a, CI 45455564403. Full proof bodies are in standard .lean files.
 The declarations below retain their source section context; universe and implicit section
 variables are given in those files. The full CI log also contains elaborated #check output
 including all implicit binders. No additional terminal hypothesis is hidden.
@@ -1491,6 +1491,97 @@ theorem e286_actual_support_eight_remaining (G : SimpleGraph V) (hG : E286Hypoth
         e286GraphSupportCounts G I e ∈ e286SupportOrbitRepresentatives.tail.tail
 ```
 
+## EG617.e286_double_count_actual_witnesses
+
+Source: EG617/Core/E286H4First.lean
+
+```lean
+theorem e286_double_count_actual_witnesses (G : SimpleGraph V) (I : Finset V)
+    (e : Fin 4 ≃ (I : Set V)) (i : Fin 11)
+    (hpos : 2 ≤ (e286GraphSupportCounts G I e)[i.val]!) :
+    ∃ p q : V, p ≠ q ∧
+      seedNeighbors G I p = (e286SupportType i).image (fun j => (e j : V)) ∧
+      seedNeighbors G I q = (e286SupportType i).image (fun j => (e j : V))
+```
+
+## EG617.e286_doubled_mixed_opposite_pair_impossible
+
+Source: EG617/Core/E286H4First.lean
+
+```lean
+theorem e286_doubled_mixed_opposite_pair_impossible (G : SimpleGraph V)
+    (hG : E286Hypotheses G) (I : Finset V) (hc : I.card = 4)
+    (hI : G.IsIndepSet (I : Set V)) (e : Fin 4 ≃ (I : Set V))
+    (hK0 : (seedPrivateClique G I (e 0)).card = 10)
+    (hK : ∀ s : Fin 4, s ≠ 0 → (seedPrivateClique G I (e s)).card = 11)
+    (p q r : V) (hpq : p ≠ q)
+    (hp : seedNeighbors G I p = {(e 0 : V), (e 1 : V)})
+    (hq : seedNeighbors G I q = {(e 0 : V), (e 1 : V)})
+    (hr : seedNeighbors G I r = {(e 2 : V), (e 3 : V)}) : False
+```
+
+## EG617.e286_third_support_orbit_impossible
+
+Source: EG617/Core/E286H4First.lean
+
+```lean
+theorem e286_third_support_orbit_impossible (G : SimpleGraph V) (hG : E286Hypotheses G)
+    (I : Finset V) (hc : I.card = 4) (hI : G.IsIndepSet (I : Set V))
+    (hd : ∀ v ∈ I, G.degree v = 12) (e : Fin 4 ≃ (I : Set V))
+    (hcounts : e286GraphSupportCounts G I e = [2,0,0,0,0,1,0,0,1,0,0]) : False
+```
+
+## EG617.e286_actual_support_seven_remaining
+
+Source: EG617/Core/E286H4First.lean
+
+```lean
+theorem e286_actual_support_seven_remaining (G : SimpleGraph V) (hG : E286Hypotheses G) :
+    ∃ I : Finset V, I.card = 4 ∧ G.IsIndepSet (I : Set V) ∧
+      (∀ v ∈ I, G.degree v = 12) ∧ ∃ e : Fin 4 ≃ (I : Set V),
+        e286GraphSupportCounts G I e ∈ e286SupportOrbitRepresentatives.tail.tail.tail
+```
+
+## EG617.e286_f10_11_minimum
+
+Source: EG617/Core/E286Mixed.lean
+
+```lean
+theorem e286_f10_11_minimum (a b : ℕ) (ha : 1 ≤ a) (hb : 1 ≤ b)
+    (ha' : a ≤ 10) (hb' : b ≤ 11) :
+    4 ≤ (9 - a - b) + a * (b - 3) + b * (a - 2)
+```
+
+## EG617.e286_k10_k11_pair_local_charge
+
+Source: EG617/Core/E286Mixed.lean
+
+```lean
+theorem e286_k10_k11_pair_local_charge (G : SimpleGraph V) (K L : Finset V)
+    (hK : G.IsClique (K : Set V)) (hL : G.IsClique (L : Set V))
+    (hcK : K.card = 10) (hcL : L.card = 11) (hd : Disjoint K L)
+    (z : V) (hzK : z ∉ K) (hzL : z ∉ L)
+    (ha : (e286Missing G K z).Nonempty) (hb : (e286Missing G L z).Nonempty)
+    (he : ∀ x ∈ K, ¬ G.Adj z x → ∀ y ∈ L, ¬ G.Adj z y → G.Adj x y) :
+    4 ≤ ∑ v ∈ insert z (e286Missing G K z ∪ e286Missing G L z), degreeExcess12 G v
+```
+
+## EG617.e286_private_mixed_pair_dichotomy
+
+Source: EG617/Core/E286Mixed.lean
+
+```lean
+theorem e286_private_mixed_pair_dichotomy (G : SimpleGraph V) (hG : E286Hypotheses G)
+    (I : Finset V) (hc : I.card = 4) (hI : G.IsIndepSet (I : Set V))
+    (i j z : V) (hi : i ∈ I) (hj : j ∈ I) (hij : i ≠ j)
+    (hz : seedNeighbors G I z = {i, j})
+    (hci : (seedPrivateClique G I i).card = 10)
+    (hcj : (seedPrivateClique G I j).card = 11) :
+    (∀ x ∈ seedPrivateClique G I i, G.Adj z x) ∨
+      4 ≤ ∑ v ∈ insert z (seedPrivateClique G I i ∪ seedPrivateClique G I j),
+        degreeExcess12 G v
+```
+
 ## EG617.e286_support_type_injective
 
 Source: EG617/Core/E286OrbitRealization.lean
@@ -1778,20 +1869,6 @@ Source: EG617/Core/E286SupportCounts.lean
 
 ```lean
 def e286WeightedSum : List ℕ → List ℕ → ℕ
-  | w :: ws, x :: xs => w * x + e286WeightedSum ws xs
-  | _, _ => 0
-
-/-- All nonnegative count vectors with prescribed weighted surplus.
-The bound on each first coordinate is proved in the completeness theorem. -/
-def e286WeightedProfiles : List ℕ → ℕ → List (List ℕ)
-  | [], b => if b = 0 then [[]] else []
-  | w :: ws, b => (List.range (b + 1)).flatMap fun x =>
-      if w * x ≤ b then (e286WeightedProfiles ws (b - w * x)).map (x :: ·) else []
-
-theorem e286_weighted_profiles_complete (ws xs : List ℕ) (b : ℕ)
-    (hpos : ∀ w ∈ ws, 1 ≤ w) (hlen : xs.length = ws.length)
-    (hsum : e286WeightedSum ws xs = b) :
-    xs ∈ e286WeightedProfiles ws b
 ```
 
 ## EG617.e286WeightedProfiles
@@ -1800,14 +1877,6 @@ Source: EG617/Core/E286SupportCounts.lean
 
 ```lean
 def e286WeightedProfiles : List ℕ → ℕ → List (List ℕ)
-  | [], b => if b = 0 then [[]] else []
-  | w :: ws, b => (List.range (b + 1)).flatMap fun x =>
-      if w * x ≤ b then (e286WeightedProfiles ws (b - w * x)).map (x :: ·) else []
-
-theorem e286_weighted_profiles_complete (ws xs : List ℕ) (b : ℕ)
-    (hpos : ∀ w ∈ ws, 1 ≤ w) (hlen : xs.length = ws.length)
-    (hsum : e286WeightedSum ws xs = b) :
-    xs ∈ e286WeightedProfiles ws b
 ```
 
 ## EG617.e286_weighted_profiles_complete

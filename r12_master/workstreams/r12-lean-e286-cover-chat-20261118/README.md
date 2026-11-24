@@ -20,10 +20,10 @@ Their historical PROVED labels are not Lean evidence. logs/ retains full evidenc
 attacks/ contains diagnostic tests only. ci/ copies this branch's unique workflow.
 The other workstream and frozen repository originals are not modified.
 
-The certified mathematical reduction is e286_actual_support_eight_remaining:
+The certified mathematical reduction is e286_actual_support_seven_remaining:
 the original five E286 hypotheses imply an actual support configuration among
-eight remaining representatives, after both h3 orbits of the complete ten are excluded.
-Verified code51358b42e0406d2ae23a45594b01ece73f9998f6, CI44890957575.
+seven remaining representatives: both h3 and the first h4 orbit are excluded.
+Verified code ac68670b87e4c2114c27bd1ccd81c18ce7722a6a, CI 45455564403.
 E286 itself, core47_edge_floor_287, COVER and MainTheorem remain unproved.
 
 Read FORMALIZATION_COVERAGE.md and OPEN_BLOCKERS.md for the exact boundary,

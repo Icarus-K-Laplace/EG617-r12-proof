@@ -48,4 +48,20 @@ Section5 second h3 orbit -> e286_second_support_orbit_impossible;
 both h3 orbits excluded -> e286_actual_support_eight_remaining
 (VERIFIED at51358b4, CI44890957575). Both orientations are treated by actual seed
 permutations. Positive count fibers yield actual witnesses; no terminal premise
-is added to the strongest theorem. The last eight representatives are still open.
+is added to that theorem. This earlier milestone left eight representatives.
+
+Frozen Section3 f10,11 -> e286_f10_11_minimum; actual mixed charge ->
+e286_k10_k11_pair_local_charge; actual private-clique dichotomy ->
+e286_private_mixed_pair_dichotomy (VERIFIED at415a947, CI45454651025).
+Finite missing-size bounds come from actual clique inclusion; the zero K10
+missing case is handled by completion, and the K11 missing set follows from omega11.
+
+Frozen Section2 multiplicity2 -> e286_double_count_actual_witnesses.
+Section6 first h4 configuration -> e286_doubled_mixed_opposite_pair_impossible;
+exact first h4 count representative -> e286_third_support_orbit_impossible.
+Sections2+5+6 -> e286_actual_support_seven_remaining.
+All are VERIFIED at ac68670b87e4c2114c27bd1ccd81c18ce7722a6a, CI 45455564403.
+The count fiber yields distinct actual vertices; clique cards follow from the
+seed incidence ledger. Charges are combined only on proved disjoint actual sets.
+The strongest theorem retains exactly the original E286 hypotheses and leaves
+two h4 and five h5 cases. It does not prove E286 nonexistence.

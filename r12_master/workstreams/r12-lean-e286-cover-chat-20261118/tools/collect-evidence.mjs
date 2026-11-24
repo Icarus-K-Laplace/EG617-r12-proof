@@ -64,6 +64,7 @@ for(const d of scan.declarations){
   if('([{'.includes(source[i]))dep++;
   if(')]}'.includes(source[i]))dep--;
   if(dep===0&&source.slice(i,i+2)===':='){stop=i;break;}
+  if(dep===0&&source[i]==='\n'&&/^\n[ \t]*\|/.test(source.slice(i))){stop=i;break;}
  }
  if(stop<0)throw Error('No body '+name);
  statements+='## '+name+'\n\nSource: '+d.file.replaceAll('\\','/')+'\n\n```lean\n'+source.slice(m.index,stop).trim()+'\n```\n\n';

@@ -1,32 +1,36 @@
 # Original E286 contract and current reduction
 
-Frozen source: frozen/E286.md, with immutable provenance in SOURCE_PROVENANCE.json.
+Frozen source: frozen/E286.md; immutable provenance: SOURCE_PROVENANCE.json.
 E286Hypotheses is exactly47 vertices,286 edges, minimum degree>=12, alpha<=4,
 omega<=11. The abstract theorem has no hereditary D cap.
 
-Verified code51358b42e0406d2ae23a45594b01ece73f9998f6, CI44890957575.
+Verified code ac68670b87e4c2114c27bd1ccd81c18ce7722a6a, CI 45455564403.
 
 The original hypotheses imply actual regular independent seeds, the private-clique
 partition, surplus5 and complete membership in the ten frozen support orbits.
-The finite-domain completeness proof precedes the kernel-reduced orbit check.
+Finite-domain completeness precedes the kernel-reduced orbit check.
 Actual inverse seed reindexing proves equivalence with graph neighborhoods.
 
-Frozen Section5's two h3 orbits are now excluded:
-- {0123,01,23}: disjoint pair charges6+6 exceed total excess8.
-- {01,023,123}: a concentrated small-side pair charge6 and the disjoint opposite
-  triple charge3 exceed total excess8. Both small-side orientations are covered
-  by actual seed permutations, including equality of missing-set sizes.
+The following terminal orbits are excluded:
+- Section5 {0123,01,23}: disjoint charges6+6 exceed total excess8.
+- Section5 {01,023,123}: concentrated small-side charge6 plus disjoint triple
+  charge3. Both orientations, including tied missing-set sizes, are covered.
+- Section6 {01,01,023,23}: the actual support-count fiber of size2 supplies distinct
+  01 points. A point missing the K10 has a nonempty K11 missing set by omega<=11;
+  alpha<=4 forces the cross-blocker edges. The actual mixed charge is at least4.
+  It is disjoint from the 23 charge6, so both 01 points must complete the K10.
+  Their combined excess>=7 is disjoint from the 23 charge6, again contradicting8.
 
-The triple charge derives a local pointwise excess bound under contradiction,
-chooses a smallest missing set, and proves the residual forced adjacency/capacity
-contradiction. No ordered missing distribution is assumed in the private-clique
-theorem. Positive missing sets follow from omega<=11; forced edges from alpha<=4.
+The mixed scalar domain is complete: positive missing sizes a<=10, b<=11 are
+derived from inclusion in the actual cliques. Kernel interval_cases/norm_num
+proves (9-a-b)+a*(b-3)+b*(a-2)>=4 over Nat, where subtraction is truncated.
+The zero K10 missing set is covered by the completion branch, never silently omitted.
+The diagnostic script supplies no Lean assumptions or proof terms.
 
-The strongest theorem e286_actual_support_eight_remaining assumes only G and
-E286Hypotheses G, and produces actual seeds and a support count vector in
-e286SupportOrbitRepresentatives.tail.tail. Full source and elaborated statements
-are available in the Lean files and complete CI log.
+e286_actual_support_seven_remaining assumes only G and E286Hypotheses G and
+produces actual seeds and membership in e286SupportOrbitRepresentatives.tail.tail.tail.
+Complete Lean declarations and elaborated statements are retained in source and CI.
 
-The three h4 and five h5 orbits remain. Shared-center accounting, double-pair
-equality structure and the remaining terminal exclusions are open. E286Statement
-is still only a target definition. LEVEL5A has not been attained.
+Two h4 and five h5 orbits remain. Shared-center accounting, double-pair equality
+structure and remaining terminal exclusions are open. E286Statement is still only
+a target definition. LEVEL5A has not been attained.

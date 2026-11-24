@@ -1,32 +1,30 @@
 # EG617 E286 / COVER: PARTIAL
 
-The actual K10/K11 mixed-pair dichotomy passed CI45454651025 at415a947.
-Pending candidate (2026-11-25): E286H4First.lean excludes the first h4 orbit
-and reduces to seven remaining orbits. Kernel verification of this reduction
-is pending; the certified orbit reduction below still leaves eight.
+Verified code: ac68670b87e4c2114c27bd1ccd81c18ce7722a6a
+Successful clean Linux CI: 45455564403.
 
-Verified code: 51358b42e0406d2ae23a45594b01ece73f9998f6
-Successful clean Linux CI: 44890957575.
+The strongest theorem is e286_actual_support_seven_remaining. From exactly the
+original five E286 hypotheses it derives actual regular independent seeds and
+a support distribution in the last seven entries of the exhaustive ten-orbit list.
+Both h3 orbits and the first h4 orbit {01,01,023,23} are excluded.
+Two h4 and five h5 orbits remain. E286 nonexistence is not proved.
 
-The strongest result is e286_actual_support_eight_remaining. From the original
-five E286 hypotheses it derives actual regular independent seeds and a support
-distribution in the last eight entries of the exhaustive ten-orbit list.
-Both h3 orbits are excluded. The three h4 and five h5 orbits remain.
+The new first-h4 proof derives the actual K10/K11 completion-or-charge4 dichotomy.
+A support multiplicity2 yields two distinct actual vertices. Each either completes
+the K10 or incurs a charge4 disjoint from the opposite K11-pair charge6.
+Consequently both complete the K10, and their charge7 is disjoint from charge6.
+Neither witness distinctness nor a terminal exclusion is added to the root theorem.
 
-The proof includes exact excess8, the private-clique partition, a complete finite
-support domain, actual seed reindexing, actual blocker edges, a concentrated
-pair charge>=6 and a triple-K11 local charge>=3. No terminal premise is assumed.
-
-All318 declarations and267 theorems passed actual lake builds, full #check/#print
-inspection, transitive axiom audit and source/config SHA256 checks. Only propext,
+All325 declarations and274 theorems passed actual lake builds, complete #check,
+transitive #print axioms and source/config SHA256 checks. Only propext,
 Classical.choice and Quot.sound occur. All nine dependencies match their pins.
-All68 inherited source/config files are unchanged. The corrected proof-body
-dependency audit visits245 project constants and verifies required proof paths.
+All68 inherited source/config files are unchanged. The proof-body dependency
+audit traversed 351 project constants and checks the actual first-h4 proof path.
 
 LEVEL4 GATE47 remains VERIFIED. LEVEL5A E286 nonexistence, LEVEL5B the287-edge
 floor, LEVEL6A h12/h13, LEVEL6B COVER and LEVEL7 MainTheorem remain FORMALIZATION_GAP.
-MainTheorem is absent. No progress percentage or complete EG617 proof is claimed.
+MainTheorem is absent. No completion percentage or complete EG617 proof is claimed.
 
 The initial dependency audit at efda572 saw only public theorem types; its marker
-is explicitly not complete dependency evidence. The corrected private-body audit
-has passed and the defect is documented in DEPENDENCY_AUDIT.md.
+is not complete dependency evidence. The corrected private-body audit has passed;
+the defect and repair are documented in DEPENDENCY_AUDIT.md.

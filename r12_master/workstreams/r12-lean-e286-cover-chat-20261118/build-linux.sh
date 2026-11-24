@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Publication checkpoint: first h4 orbit excluded; seven E286 orbits remain.
 set -euo pipefail
 cd "$(dirname "$0")/lean"
 export LEAN_NUM_THREADS="${LEAN_NUM_THREADS:-2}"

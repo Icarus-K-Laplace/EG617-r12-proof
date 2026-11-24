@@ -89,6 +89,41 @@
     "Classical.choice",
     "Quot.sound"
   ],
+  "EG617.e286_f10_11_minimum": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_k10_k11_pair_local_charge": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_private_mixed_pair_dichotomy": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_double_count_actual_witnesses": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_doubled_mixed_opposite_pair_impossible": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_third_support_orbit_impossible": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_actual_support_seven_remaining": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
   "EG617.colorGraph": [
     "propext",
     "Quot.sound"

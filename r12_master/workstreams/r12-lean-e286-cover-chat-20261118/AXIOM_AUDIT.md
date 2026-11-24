@@ -5,7 +5,7 @@ with machine-readable entries in logs/verified-axioms.json and full kernel outpu
 in the identified Linux CI log. Only propext, Classical.choice and Quot.sound occur.
 
 All logical premises are visible in DECLARATION_STATEMENTS.md and the Lean files.
-E286Hypotheses is exactly47 vertices,286 edges, minimum degree12, alpha<=4 and
+E286Hypotheses is exactly47 vertices,286 edges, minimum degree>=12, alpha<=4 and
 omega<=11. It contains no hereditary cap and no terminal classification premise.
 CoreAdmissible retains all hereditary D caps for inherited GATE47 and future floors.
 

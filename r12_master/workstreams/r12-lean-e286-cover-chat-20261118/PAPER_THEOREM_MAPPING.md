@@ -16,17 +16,21 @@ contains elaborated statements with all implicit binders.
 | Section3, pair blocker | e286_pair_blocker_complete | Complete |
 | Section3, f11 local charge | e286_k11_pair_local_charge | Complete |
 | Section3, concentrated equation2 | e286_private_pair_concentrated_charge | Complete |
-| Section3, mixed/shared-center charges | No complete theorem | Open |
+| Section3, mixed K10/K11 charge4 | e286_k10_k11_pair_local_charge | Complete |
+| Section3, actual mixed dichotomy | e286_private_mixed_pair_dichotomy | Complete |
+| Section3, shared-center / overlap charges | No complete theorem | Open |
 | Section4, triple on three K11s | e286_private_triple_k11_charge | Complete |
 | Section5, first h3 orbit | e286_first_support_orbit_impossible | Complete |
 | Section5, second h3 orbit | e286_second_support_orbit_impossible | Complete |
-| Sections2+5, exhaustive residual cases | e286_actual_support_eight_remaining | Complete |
-| Section6, three h4 orbits | No exclusion theorem | Open |
+| Section2, actual multiplicity2 witnesses | e286_double_count_actual_witnesses | Complete |
+| Section6, first h4 orbit | e286_third_support_orbit_impossible | Complete |
+| Sections2+5+6, exhaustive residual cases | e286_actual_support_seven_remaining | Complete |
+| Section6, other two h4 orbits | No exclusion theorem | Open |
 | Section7, small-budget double pair | No theorem | Open |
 | Sections8-12, five h5 orbits and E286 | No exclusion theorem | Open |
 | Consequent287-edge floor | core47_edge_floor_287 absent | Open |
 | COVER source, h12/h13/root K145 | COVER_verified/MainTheorem absent | Open |
 
-Complete claims refer to51358b4, CI44890957575. All graph correspondences retain
+Complete claims refer to ac68670b87e4c2114c27bd1ccd81c18ce7722a6a, CI 45455564403. All graph correspondences retain
 actual vertex sets and adjacency; compatible types are never assumed adjacent.
 The inherited GATE47 theorem keeps its full CoreAdmissible4 contract.

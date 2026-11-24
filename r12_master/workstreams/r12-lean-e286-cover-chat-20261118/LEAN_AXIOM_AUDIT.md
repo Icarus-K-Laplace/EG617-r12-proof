@@ -1,6 +1,6 @@
 # Transitive axiom audit
 
-Verified code 51358b42e0406d2ae23a45594b01ece73f9998f6, CI 44890957575. All project declarations below compiled.
+Verified code ac68670b87e4c2114c27bd1ccd81c18ce7722a6a, CI 45455564403. All project declarations below compiled.
 Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem remain unproved.
 
 | Declaration | Axioms |
@@ -145,6 +145,13 @@ Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem r
 | EG617.e286_positive_count_actual_witness | propext, Classical.choice, Quot.sound |
 | EG617.e286_second_support_orbit_impossible | propext, Classical.choice, Quot.sound |
 | EG617.e286_actual_support_eight_remaining | propext, Classical.choice, Quot.sound |
+| EG617.e286_double_count_actual_witnesses | propext, Classical.choice, Quot.sound |
+| EG617.e286_doubled_mixed_opposite_pair_impossible | propext, Classical.choice, Quot.sound |
+| EG617.e286_third_support_orbit_impossible | propext, Classical.choice, Quot.sound |
+| EG617.e286_actual_support_seven_remaining | propext, Classical.choice, Quot.sound |
+| EG617.e286_f10_11_minimum | propext, Classical.choice, Quot.sound |
+| EG617.e286_k10_k11_pair_local_charge | propext, Classical.choice, Quot.sound |
+| EG617.e286_private_mixed_pair_dichotomy | propext, Classical.choice, Quot.sound |
 | EG617.e286_support_type_injective | propext, Classical.choice, Quot.sound |
 | EG617.seedLabelNeighbors_relabel | propext, Classical.choice, Quot.sound |
 | EG617.e286_graph_support_counts_relabel | propext, Classical.choice, Quot.sound |

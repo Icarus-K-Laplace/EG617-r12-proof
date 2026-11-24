@@ -16,9 +16,9 @@ never read by a Lean theorem or trusted as an oracle. Kernel evidence is separat
 
 No counterexample occurred in those explicitly bounded domains. No exhaustive
 47-vertex graph search was performed. Shared-center graph charging, simultaneous
-overlap and the remaining eight terminal configurations still require kernel
-proofs. The canonical-count to oriented-graph bridge and both h3 orbit exclusions
-are independently kernel-certified at51358b4; no diagnostic result licenses
+overlap and the remaining seven terminal configurations still require kernel
+proofs. The canonical-count to oriented-graph bridge, both h3 exclusions and the
+first h4 exclusion are kernel-certified at ac68670b87e4c2114c27bd1ccd81c18ce7722a6a; no diagnostic result licenses
 E286 or any parent theorem.
 
 The actual pair-blocker argument constructs four independent vertices anticomplete
@@ -41,3 +41,11 @@ A negative control shows that the orientation cannot be omitted: a=4,b=1 has
 total scalar cost7 but first-side concentrated cost5. The formal parent covers
 both orientations by an actual seed permutation. This negative control does not
 satisfy the oriented lemma's hypotheses and is not a counterexample to E286.
+
+The new mixed-blocker diagnostic checks all110 positive pairs a<=10,b<=11.
+The minimum is4, uniquely at(2,3). With a=0,b=9 the scalar value is0: positivity
+cannot be dropped. The formal dichotomy handles this by K10 completion.
+No assumption that compatible labels force edges is used; actual blocker edges
+are derived from alpha4. Multiplicity2 is converted to distinct vertices in the
+kernel, and the first h4 proof separately proves disjointness of every cost sum.
+No actual E286 counterexample was found; no exhaustive graph search is claimed.
