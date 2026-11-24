@@ -54,6 +54,8 @@
     "EG617\\Core\\E286DisjointPairs.lean",
     "EG617\\Core\\E286Excess.lean",
     "EG617\\Core\\E286H3Remaining.lean",
+    "EG617\\Core\\E286H4First.lean",
+    "EG617\\Core\\E286Mixed.lean",
     "EG617\\Core\\E286OrbitRealization.lean",
     "EG617\\Core\\E286PrivateClasses.lean",
     "EG617\\Core\\E286SeedLedger.lean",
@@ -791,6 +793,41 @@
       "kind": "theorem",
       "name": "e286_actual_support_eight_remaining",
       "file": "EG617\\Core\\E286H3Remaining.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_double_count_actual_witnesses",
+      "file": "EG617\\Core\\E286H4First.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_doubled_mixed_opposite_pair_impossible",
+      "file": "EG617\\Core\\E286H4First.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_third_support_orbit_impossible",
+      "file": "EG617\\Core\\E286H4First.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_actual_support_seven_remaining",
+      "file": "EG617\\Core\\E286H4First.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_f10_11_minimum",
+      "file": "EG617\\Core\\E286Mixed.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_k10_k11_pair_local_charge",
+      "file": "EG617\\Core\\E286Mixed.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_private_mixed_pair_dichotomy",
+      "file": "EG617\\Core\\E286Mixed.lean"
     },
     {
       "kind": "theorem",
