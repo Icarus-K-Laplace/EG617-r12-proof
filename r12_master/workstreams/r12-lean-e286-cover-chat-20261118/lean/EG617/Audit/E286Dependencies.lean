@@ -6,7 +6,7 @@ Ordinary public module imports expose theorem types but erase imported bodies.
 This audit contributes no mathematical assumptions. -/
 run_cmd do
   let env := (← Lean.getEnv).setExporting false
-  let mut pending := #[``EG617.e286_actual_support_eight_remaining,
+  let mut pending := #[``EG617.e286_actual_support_seven_remaining,
     ``EG617.e286_private_mixed_pair_dichotomy,
     ``EG617.e286_private_triple_k11_charge,
     ``EG617.e286_actual_support_nine_remaining]
@@ -38,6 +38,9 @@ run_cmd do
       ``EG617.e286_private_mixed_pair_dichotomy,
       ``EG617.e286_k10_k11_pair_local_charge,
       ``EG617.e286_f10_11_minimum,
+      ``EG617.e286_double_count_actual_witnesses,
+      ``EG617.e286_ten_clique_completers_excess,
+      ``EG617.e286_third_support_orbit_impossible,
       ``EG617.e286_three_k11_local_charge,
       ``EG617.e286_ordered_three_cliques_obstruction,
       ``EG617.e286_private_pair_concentrated_charge,

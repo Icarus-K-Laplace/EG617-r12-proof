@@ -56,3 +56,4 @@ public import EG617.Core.E286TriplePrivate
 public import EG617.Core.E286Concentrated
 public import EG617.Core.E286H3Remaining
 public import EG617.Core.E286Mixed
+public import EG617.Core.E286H4First

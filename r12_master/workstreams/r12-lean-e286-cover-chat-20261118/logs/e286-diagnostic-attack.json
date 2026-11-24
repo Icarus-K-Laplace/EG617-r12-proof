@@ -1423,5 +1423,21 @@
       "firstSideConcentratedCost": 5,
       "explanation": "Fails the deliberately weakened conclusion; it is not a counterexample to the oriented theorem or E286."
     }
+  },
+  "mixedBlockerChecks": {
+    "cases": 110,
+    "minimizers": [
+      {
+        "a": 2,
+        "b": 3,
+        "cost": 4
+      }
+    ],
+    "negativeControlWithoutPositiveMissing": {
+      "a": 0,
+      "b": 9,
+      "cost": 0
+    },
+    "explanation": "Zero K10 missing set is a separate completion branch. Multiplicity2 must yield distinct actual vertices; support labels alone do not establish this."
   }
 }

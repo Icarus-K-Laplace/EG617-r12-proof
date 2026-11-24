@@ -82,6 +82,15 @@ for(let a=1;a<=11;a++)for(let b=a;b<=11;b++){
 result.tripleChargeChecks={tripleTuples,tripleCapacityCases,concentratedCases,
  negativeControlWithoutSmallSideOrientation:{a:4,b:1,totalScalarCost:7,firstSideConcentratedCost:5,
  explanation:'Fails the deliberately weakened conclusion; it is not a counterexample to the oriented theorem or E286.'}};
+const mixedDomain=[];
+for(let a=1;a<=10;a++)for(let b=1;b<=11;b++){
+ const cost=pos(9-a-b)+a*pos(b-3)+b*pos(a-2);
+ assert(cost>=4,'actual-card mixed domain');mixedDomain.push({a,b,cost});
+}
+result.mixedBlockerChecks={cases:mixedDomain.length,
+ minimizers:mixedDomain.filter(x=>x.cost===4),
+ negativeControlWithoutPositiveMissing:{a:0,b:9,cost:0},
+ explanation:'Zero K10 missing set is a separate completion branch. Multiplicity2 must yield distinct actual vertices; support labels alone do not establish this.'};
 fs.writeFileSync(path.join(root,'logs/e286-diagnostic-attack.json'),JSON.stringify(result,null,2)+'\n');
 console.log(JSON.stringify({status:result.status,tuples,legal,orbits:found.size,scalarCases:scalars.reduce((s,x)=>s+x.tested,0),negativeControlExcess:9}));
 

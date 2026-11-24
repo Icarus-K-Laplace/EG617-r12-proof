@@ -37,10 +37,12 @@ if(dag)for(const n of ['e286_actual_oriented_support_orbit','e286_first_support_
  if(!log.includes('PROJECT_DEPENDENCIES EG617.'+n+':'))throw Error('Incomplete proof-body traversal: '+n);
 const status={sha,run:Number(run),cleanLinuxBuild:'PASS',fullAxiomAudit:'PASS',statementInspection:'PASS',localMatchesCISHA256:'PASS',declarations:scan.declarations.length,theorems:scan.declarations.filter(d=>d.kind==='theorem'||d.kind==='lemma').length,pins,hashes,inheritedFilesPreserved:preserved.length,E286:'FORMALIZATION_GAP',edgeFloor287:'FORMALIZATION_GAP',COVER:'FORMALIZATION_GAP',MainTheorem:'ABSENT'};
 status.elaboratedProjectDependencyAudit=dag?'PASS':'NOT_RUN';
-status.remainingSupportOrbits=scan.declarations.some(d=>d.name==='e286_actual_support_eight_remaining')?8:9;
-status.strongestE286Reduction=status.remainingSupportOrbits===8?'e286_actual_support_eight_remaining':'e286_actual_support_nine_remaining';
-if(status.remainingSupportOrbits===8)for(const n of ['e286_actual_support_eight_remaining','e286_private_pair_concentrated_charge','e286_private_triple_k11_charge','e286_second_support_orbit_impossible'])
+status.remainingSupportOrbits=scan.declarations.some(d=>d.name==='e286_actual_support_seven_remaining')?7:scan.declarations.some(d=>d.name==='e286_actual_support_eight_remaining')?8:9;
+status.strongestE286Reduction=status.remainingSupportOrbits===7?'e286_actual_support_seven_remaining':status.remainingSupportOrbits===8?'e286_actual_support_eight_remaining':'e286_actual_support_nine_remaining';
+if(status.remainingSupportOrbits<=8)for(const n of ['e286_actual_support_eight_remaining','e286_private_pair_concentrated_charge','e286_private_triple_k11_charge','e286_second_support_orbit_impossible'])
  if(!log.includes('PROJECT_DEPENDENCIES EG617.'+n+':'))throw Error('Missing h3 proof path: '+n);
+if(status.remainingSupportOrbits===7)for(const n of ['e286_actual_support_seven_remaining','e286_private_mixed_pair_dichotomy','e286_double_count_actual_witnesses','e286_third_support_orbit_impossible','e286_ten_clique_completers_excess'])
+ if(!log.includes('PROJECT_DEPENDENCIES EG617.'+n+':'))throw Error('Missing first h4 proof path: '+n);
 if(dag){
  const begin=log.indexOf('PROJECT_DEPENDENCIES EG617.e286_actual_support_nine_remaining:');
  const end=log.indexOf('E286_ELABORATED_DEPENDENCY_AUDIT_PASS',begin);

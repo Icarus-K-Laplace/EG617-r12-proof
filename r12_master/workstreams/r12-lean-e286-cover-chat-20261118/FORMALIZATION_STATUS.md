@@ -1,8 +1,9 @@
 # EG617 E286 / COVER: PARTIAL
 
-Pending candidate (2026-11-25): E286Mixed.lean contains the actual K10/K11
-mixed-pair dichotomy; kernel verification is pending. The verified milestone
-below remains unchanged, with eight support orbits still open.
+The actual K10/K11 mixed-pair dichotomy passed CI45454651025 at415a947.
+Pending candidate (2026-11-25): E286H4First.lean excludes the first h4 orbit
+and reduces to seven remaining orbits. Kernel verification of this reduction
+is pending; the certified orbit reduction below still leaves eight.
 
 Verified code: 51358b42e0406d2ae23a45594b01ece73f9998f6
 Successful clean Linux CI: 44890957575.

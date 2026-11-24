@@ -9,6 +9,7 @@ public import EG617.Core.E286Triple
 public import EG617.Core.E286TriplePrivate
 public import EG617.Core.E286H3Remaining
 public import EG617.Core.E286Mixed
+public import EG617.Core.E286H4First
 #print EG617.E286Hypotheses
 #check EG617.e286_excess_sum
 #print axioms EG617.e286_excess_sum
@@ -52,3 +53,11 @@ public import EG617.Core.E286Mixed
 #print axioms EG617.e286_k10_k11_pair_local_charge
 #check EG617.e286_private_mixed_pair_dichotomy
 #print axioms EG617.e286_private_mixed_pair_dichotomy
+#check EG617.e286_double_count_actual_witnesses
+#print axioms EG617.e286_double_count_actual_witnesses
+#check EG617.e286_doubled_mixed_opposite_pair_impossible
+#print axioms EG617.e286_doubled_mixed_opposite_pair_impossible
+#check EG617.e286_third_support_orbit_impossible
+#print axioms EG617.e286_third_support_orbit_impossible
+#check EG617.e286_actual_support_seven_remaining
+#print axioms EG617.e286_actual_support_seven_remaining
