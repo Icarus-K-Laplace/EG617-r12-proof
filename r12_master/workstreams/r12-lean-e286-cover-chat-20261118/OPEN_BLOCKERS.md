@@ -1,4 +1,11 @@
-# Open E286 obligations
+# Open parent obligations
+
+E286 and the 287-edge floor passed Linux CI 45609105445 and 45610341669.
+For h13 the frozen COVER lower bounds require, in each energy layer, a
+regular pivot realizing the required charge. The upper bound from the floor
+alone cannot give this witness. The h12 closure and original K145 root remain open.
+
+## Historical E286 obligations
 
 Code db9f2848d77da0e484c9ba35ee965fe8cd683230, clean Linux CI 45555580430. The current reduction leaves six support orbits.
 

@@ -1,5 +1,11 @@
 # New theorem mapping
 
+Frozen E286 exclusion corresponds to `EG617.E286_verified` (CI 45609105445).
+The prior 287-edge floor used in frozen COVER Section 1 corresponds to
+`EG617.core47_edge_floor_287` (CI 45610341669). Its low-edge extension proof
+uses `core47_sparse_nonedge`, `core47_add_sparse_edge_clique` and
+`core47_low_edges_impossible`.
+
 Frozen E286 introduction / Section2 -> E286Hypotheses, E286Statement (definitions).
 Degree sum572 -> e286_degree_sum.
 Total excess8 -> e286_excess_sum; e286_support_sum.

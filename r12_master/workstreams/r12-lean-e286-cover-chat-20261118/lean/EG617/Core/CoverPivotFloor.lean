@@ -74,7 +74,7 @@ theorem cover_h13_pivot_floor_ledger (G : SimpleGraph V) (hn : Fintype.card V = 
     have hm := (SimpleGraph.mem_neighborFinset Gᶜ p w).mp hw
     exact ⟨hm.ne.symm,((SimpleGraph.compl_adj G p w).mp hm).2⟩)
   have floor : 287 ≤ coreInducedEdgeCount G C :=
-    core47_floor_of_card _ (by simpa only [Fintype.card_coe] using cc) adm
+    core47_floor_of_card _ (by change Fintype.card C = 47; rwa [Fintype.card_coe]) adm
   have split := core_shell_edge_degree_ledger G p
   obtain ⟨allEdges,allDegrees⟩ := split
   change G.edgeFinset.card = coreInducedEdgeCount G C + G.degree p + coreInducedEdgeCount G A + adjCount G A C at allEdges
@@ -90,6 +90,7 @@ theorem cover_h13_pivot_floor_ledger (G : SimpleGraph V) (hn : Fintype.card V = 
   refine ⟨cc,floor,?_⟩
   change G.edgeFinset.card = 91 + ((G.induce (A : Set V))ᶜ.edgeFinset.card +
     ∑ x ∈ A, (G.degree x - 13)) + coreInducedEdgeCount G C
+  simp only [SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard] at shell allEdges ⊢
   omega
 
 /-- Frozen COVER upper bound at both energies, for every regular pivot. -/
