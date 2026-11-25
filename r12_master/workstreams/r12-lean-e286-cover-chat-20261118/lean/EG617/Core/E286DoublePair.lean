@@ -90,7 +90,7 @@ theorem e286_doubled_pair_completion (G : SimpleGraph V) (K L : Finset V)
   have ha : A.Nonempty := e286_missing_of_incomplete G K z zk
   have hb : B.Nonempty := e286_missing_of_incomplete G L z zl
   have boundZ : (∑ x ∈ insert z (K ∪ L), degreeExcess12 G x) ≤ m :=
-    (Finset.sum_le_sum_of_subset (Finset.insert_subset_insert (Finset.subset_insert w _))).trans budget
+    (Finset.sum_le_sum_of_subset (Finset.insert_subset_insert z (Finset.subset_insert w _))).trans budget
   have boundW : (∑ x ∈ insert w (K ∪ L), degreeExcess12 G x) ≤ m :=
     (Finset.sum_le_sum_of_subset (Finset.subset_insert z _)).trans budget
   obtain ⟨sizeK,sizeL,expZ⟩ := e286_pair_threshold_rigidity G K L z m shape hK hL dis zK zL ha hb ez boundZ

@@ -6,7 +6,7 @@ Ordinary public module imports expose theorem types but erase imported bodies.
 This audit contributes no mathematical assumptions. -/
 run_cmd do
   let env := (← Lean.getEnv).setExporting false
-  let mut pending := #[``EG617.e286_actual_support_six_remaining]
+  let mut pending := #[``EG617.e286_actual_support_after_P]
   let mut seen : Lean.NameSet := {}
   while !pending.isEmpty do
     let name := pending.back!
@@ -26,6 +26,10 @@ run_cmd do
     Lean.logInfo m!"PROJECT_DEPENDENCIES {name}: {deps}"
     pending := pending ++ deps
   for required in #[``EG617.e286_actual_oriented_support_orbit,
+      ``EG617.e286_h5_P_impossible,
+      ``EG617.e286_doubled_mixed_charge_five,
+      ``EG617.e286_doubled_pair_completion,
+      ``EG617.e286_threshold_scalar_rigidity,
       ``EG617.e286_h4_second_orbit_impossible,
       ``EG617.e286_extra_completer_split,
       ``EG617.e286_f10_11_extra_completer_minimum,

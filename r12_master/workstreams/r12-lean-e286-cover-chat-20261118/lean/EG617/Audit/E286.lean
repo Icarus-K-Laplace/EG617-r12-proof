@@ -12,6 +12,9 @@ public import EG617.Core.E286Mixed
 public import EG617.Core.E286H4First
 public import EG617.Core.E286H4Second
 public import EG617.Core.E286DoublePair
+public import EG617.Core.E286OrbitP
+#check EG617.e286_actual_support_after_P
+#print axioms EG617.e286_actual_support_after_P
 #check EG617.e286_doubled_pair_completion
 #print axioms EG617.e286_doubled_pair_completion
 #print EG617.E286Hypotheses
