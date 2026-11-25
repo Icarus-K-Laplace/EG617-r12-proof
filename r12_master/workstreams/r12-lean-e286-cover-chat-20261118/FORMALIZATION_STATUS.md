@@ -1,5 +1,13 @@
 # E286 support reduction
 
+Current verified checkpoint: 5732057d5414d8b50d8fa791d5e0d3c583a3e50e, Linux CI 45607411708.
+Theorem e286_actual_support_D_or_C derives the exact two remaining count vectors
+from E286Hypotheses. All h4 orbits and the h5 nine-clique, P and B orbits are
+excluded. The open h5 cases are D and C (frozen Sections 9 and 11–12).
+E286 exclusion and the 287-edge floor remain open.
+
+## Earlier six-orbit checkpoint
+
 Code db9f2848d77da0e484c9ba35ee965fe8cd683230, clean Linux CI 45555580430.
 
 Under the five original E286 hypotheses the strongest result,
