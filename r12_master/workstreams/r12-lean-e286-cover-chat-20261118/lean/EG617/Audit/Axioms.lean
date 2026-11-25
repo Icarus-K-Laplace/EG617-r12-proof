@@ -120,6 +120,10 @@ public import EG617
 #print axioms EG617.e286_k11_pair_scalar_charge
 #print axioms EG617.e286_f11_concentrated_minimum
 #print axioms EG617.e286_private_pair_concentrated_charge
+#print axioms EG617.e286_shared_ten_pointwise
+#print axioms EG617.e286_shared_ten_charge
+#print axioms EG617.e286_h5_D_impossible
+#print axioms EG617.e286_actual_support_only_C
 #print axioms EG617.e286_eleven_clique_missing_nonempty
 #print axioms EG617.e286_pair_support_mem_multiple
 #print axioms EG617.e286_private_k11_pair_charge

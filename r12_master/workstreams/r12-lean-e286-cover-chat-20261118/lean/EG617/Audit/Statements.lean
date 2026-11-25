@@ -120,6 +120,10 @@ public import EG617
 #check EG617.e286_k11_pair_scalar_charge
 #check EG617.e286_f11_concentrated_minimum
 #check EG617.e286_private_pair_concentrated_charge
+#check EG617.e286_shared_ten_pointwise
+#check EG617.e286_shared_ten_charge
+#check EG617.e286_h5_D_impossible
+#check EG617.e286_actual_support_only_C
 #check EG617.e286_eleven_clique_missing_nonempty
 #check EG617.e286_pair_support_mem_multiple
 #check EG617.e286_private_k11_pair_charge
