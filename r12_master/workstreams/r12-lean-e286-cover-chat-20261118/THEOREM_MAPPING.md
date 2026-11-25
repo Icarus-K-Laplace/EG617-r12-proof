@@ -1,5 +1,11 @@
 # New theorem mapping
 
+Frozen COVER Section 3 vertex exchange maps to `cover_repivot_sets` and
+`cover_repivot_equal_exchange`. Its inserted-degree count and INS11 map to
+`cover_inserted_degree_ledger` and `cover_repivot_INS11`. Its signed
+repivot balance maps to `cover_equal_exchange_identity` and
+`cover_repivot_charge_identity` (Linux run 45661580041).
+
 Frozen E286 exclusion corresponds to `EG617.E286_verified` (CI 45609105445).
 The prior 287-edge floor used in frozen COVER Section 1 corresponds to
 `EG617.core47_edge_floor_287` (CI 45610341669). Its low-edge extension proof
