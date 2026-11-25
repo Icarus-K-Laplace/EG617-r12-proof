@@ -160,6 +160,12 @@ public import EG617
 #check EG617.e286_shared_leaf_pair_charge
 #check EG617.e286_h4_second_orbit_impossible
 #check EG617.e286_actual_support_six_remaining
+#check EG617.e286_one_completer_scalar_three
+#check EG617.e286_one_completer_mixed_split
+#check EG617.e286_shared_leaf_forces_completion
+#check EG617.e286_h5_nine_or_B_impossible
+#print EG617.e286StarDC
+#check EG617.e286_actual_support_star_D_C
 #check EG617.e286_f10_11_minimum
 #check EG617.e286_k10_k11_pair_local_charge
 #check EG617.e286_private_mixed_pair_dichotomy

@@ -103,7 +103,9 @@ theorem e286_h5_P_impossible (G : SimpleGraph V) (hG : E286Hypotheses G)
     have ow := outside 0 2 (by decide) w hw
     have oq := outside 1 3 (by decide) q hq
     have ot := outside 1 3 (by decide) t ht
-    simp [different p q hp hq,different p t hp ht,different w q hw hq,different w t hw ht,op,ow,oq,ot,disK]
+    simp [different p q hp hq,different p t hp ht,different w q hw hq,different w t hw ht,
+      (different p q hp hq).symm,(different p t hp ht).symm,(different w q hw hq).symm,
+      (different w t hw ht).symm,op,ow,oq,ot,disK]
   have eight := e286_subset_excess_budget G hG
     (insert p (insert w (K 0 ∪ K 2)) ∪ insert q (insert t (K 1 ∪ K 3)))
   rw [Finset.sum_union dis] at eight

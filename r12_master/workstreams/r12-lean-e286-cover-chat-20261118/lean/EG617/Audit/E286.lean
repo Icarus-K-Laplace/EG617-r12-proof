@@ -13,6 +13,11 @@ public import EG617.Core.E286H4First
 public import EG617.Core.E286H4Second
 public import EG617.Core.E286DoublePair
 public import EG617.Core.E286OrbitP
+public import EG617.Core.E286LowBudget
+#check EG617.e286_h5_nine_or_B_impossible
+#print axioms EG617.e286_h5_nine_or_B_impossible
+#check EG617.e286_actual_support_star_D_C
+#print axioms EG617.e286_actual_support_star_D_C
 #check EG617.e286_actual_support_after_P
 #print axioms EG617.e286_actual_support_after_P
 #check EG617.e286_doubled_pair_completion
