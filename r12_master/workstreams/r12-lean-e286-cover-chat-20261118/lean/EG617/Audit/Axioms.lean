@@ -146,6 +146,13 @@ public import EG617
 #print axioms EG617.e286_doubled_mixed_opposite_pair_impossible
 #print axioms EG617.e286_third_support_orbit_impossible
 #print axioms EG617.e286_actual_support_seven_remaining
+#print axioms EG617.e286_f10_11_extra_completer_minimum
+#print axioms EG617.e286_clique_charge_with_extra
+#print axioms EG617.e286_split_pair_charge
+#print axioms EG617.e286_extra_completer_split
+#print axioms EG617.e286_k10_k11_extra_completer_charge
+#print axioms EG617.e286_shared_leaf_pointwise
+#print axioms EG617.e286_shared_leaf_pair_charge
 #print axioms EG617.e286_f10_11_minimum
 #print axioms EG617.e286_k10_k11_pair_local_charge
 #print axioms EG617.e286_private_mixed_pair_dichotomy

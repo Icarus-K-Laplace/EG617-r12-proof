@@ -10,6 +10,7 @@ public import EG617.Core.E286TriplePrivate
 public import EG617.Core.E286H3Remaining
 public import EG617.Core.E286Mixed
 public import EG617.Core.E286H4First
+public import EG617.Core.E286H4Second
 #print EG617.E286Hypotheses
 #check EG617.e286_excess_sum
 #print axioms EG617.e286_excess_sum
@@ -61,3 +62,9 @@ public import EG617.Core.E286H4First
 #print axioms EG617.e286_third_support_orbit_impossible
 #check EG617.e286_actual_support_seven_remaining
 #print axioms EG617.e286_actual_support_seven_remaining
+#check EG617.e286_f10_11_extra_completer_minimum
+#print axioms EG617.e286_f10_11_extra_completer_minimum
+#check EG617.e286_k10_k11_extra_completer_charge
+#print axioms EG617.e286_k10_k11_extra_completer_charge
+#check EG617.e286_shared_leaf_pair_charge
+#print axioms EG617.e286_shared_leaf_pair_charge

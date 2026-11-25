@@ -7,6 +7,8 @@ This audit contributes no mathematical assumptions. -/
 run_cmd do
   let env := (← Lean.getEnv).setExporting false
   let mut pending := #[``EG617.e286_actual_support_seven_remaining,
+    ``EG617.e286_k10_k11_extra_completer_charge,
+    ``EG617.e286_shared_leaf_pair_charge,
     ``EG617.e286_private_mixed_pair_dichotomy,
     ``EG617.e286_private_triple_k11_charge,
     ``EG617.e286_actual_support_nine_remaining]
