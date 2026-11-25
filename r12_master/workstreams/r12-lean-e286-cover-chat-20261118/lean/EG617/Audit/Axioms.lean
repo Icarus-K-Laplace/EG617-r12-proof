@@ -153,6 +153,8 @@ public import EG617
 #print axioms EG617.e286_k10_k11_extra_completer_charge
 #print axioms EG617.e286_shared_leaf_pointwise
 #print axioms EG617.e286_shared_leaf_pair_charge
+#print axioms EG617.e286_h4_second_orbit_impossible
+#print axioms EG617.e286_actual_support_six_remaining
 #print axioms EG617.e286_f10_11_minimum
 #print axioms EG617.e286_k10_k11_pair_local_charge
 #print axioms EG617.e286_private_mixed_pair_dichotomy

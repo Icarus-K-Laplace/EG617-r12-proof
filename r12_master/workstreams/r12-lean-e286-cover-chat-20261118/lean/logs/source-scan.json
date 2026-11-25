@@ -55,6 +55,7 @@
     "EG617\\Core\\E286Excess.lean",
     "EG617\\Core\\E286H3Remaining.lean",
     "EG617\\Core\\E286H4First.lean",
+    "EG617\\Core\\E286H4Second.lean",
     "EG617\\Core\\E286Mixed.lean",
     "EG617\\Core\\E286OrbitRealization.lean",
     "EG617\\Core\\E286PrivateClasses.lean",
@@ -813,6 +814,51 @@
       "kind": "theorem",
       "name": "e286_actual_support_seven_remaining",
       "file": "EG617\\Core\\E286H4First.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_f10_11_extra_completer_minimum",
+      "file": "EG617\\Core\\E286H4Second.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_clique_charge_with_extra",
+      "file": "EG617\\Core\\E286H4Second.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_split_pair_charge",
+      "file": "EG617\\Core\\E286H4Second.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_extra_completer_split",
+      "file": "EG617\\Core\\E286H4Second.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_k10_k11_extra_completer_charge",
+      "file": "EG617\\Core\\E286H4Second.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_shared_leaf_pointwise",
+      "file": "EG617\\Core\\E286H4Second.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_shared_leaf_pair_charge",
+      "file": "EG617\\Core\\E286H4Second.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_h4_second_orbit_impossible",
+      "file": "EG617\\Core\\E286H4Second.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "e286_actual_support_six_remaining",
+      "file": "EG617\\Core\\E286H4Second.lean"
     },
     {
       "kind": "theorem",

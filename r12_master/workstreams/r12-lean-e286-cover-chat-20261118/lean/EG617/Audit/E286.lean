@@ -68,3 +68,7 @@ public import EG617.Core.E286H4Second
 #print axioms EG617.e286_k10_k11_extra_completer_charge
 #check EG617.e286_shared_leaf_pair_charge
 #print axioms EG617.e286_shared_leaf_pair_charge
+#check EG617.e286_h4_second_orbit_impossible
+#print axioms EG617.e286_h4_second_orbit_impossible
+#check EG617.e286_actual_support_six_remaining
+#print axioms EG617.e286_actual_support_six_remaining

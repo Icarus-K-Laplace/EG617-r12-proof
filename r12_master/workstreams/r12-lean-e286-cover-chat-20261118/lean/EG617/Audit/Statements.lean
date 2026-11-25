@@ -153,6 +153,8 @@ public import EG617
 #check EG617.e286_k10_k11_extra_completer_charge
 #check EG617.e286_shared_leaf_pointwise
 #check EG617.e286_shared_leaf_pair_charge
+#check EG617.e286_h4_second_orbit_impossible
+#check EG617.e286_actual_support_six_remaining
 #check EG617.e286_f10_11_minimum
 #check EG617.e286_k10_k11_pair_local_charge
 #check EG617.e286_private_mixed_pair_dichotomy

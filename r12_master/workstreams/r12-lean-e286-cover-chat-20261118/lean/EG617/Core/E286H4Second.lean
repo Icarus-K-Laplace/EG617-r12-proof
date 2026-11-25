@@ -177,4 +177,160 @@ theorem e286_shared_leaf_pair_charge (G : SimpleGraph V) (L A C : Finset V)
     ledger D Finset.subset_union_right] at h
   exact h
 
+/-- Frozen Section 6, second h4 orbit. Each incidence and each support point
+is obtained from the specified count vector on the actual graph. -/
+theorem e286_h4_second_orbit_impossible (G : SimpleGraph V) (hG : E286Hypotheses G)
+    (I : Finset V) (hc : I.card = 4) (hI : G.IsIndepSet (I : Set V))
+    (hd : ∀ v ∈ I, G.degree v = 12) (e : Fin 4 ≃ (I : Set V))
+    (hcounts : e286GraphSupportCounts G I e = [1,0,1,0,0,1,1,0,0,0,0]) : False := by
+  classical
+  let K := fun i : Fin 4 => seedPrivateClique G I (e i)
+  have row (s : Fin 4) : e286CountIncidence (e286GraphSupportCounts G I e) s =
+      if s = 0 then 3 else 2 := by
+    rw [hcounts]
+    fin_cases s <;> norm_num [e286CountIncidence, Fin.sum_univ_succ, e286SupportType]
+  have card0 : (K 0).card = 10 := by
+    have h := e286_private_multiple_card G I hI _ (e 0).property (hd _ (e 0).property)
+    have hr := row 0
+    rw [e286_graph_support_incidence] at hr
+    norm_num at hr
+    dsimp only [K]
+    omega
+  have card11 (s : Fin 4) (hs : s ≠ 0) : (K s).card = 11 := by
+    have h := e286_private_multiple_card G I hI _ (e s).property (hd _ (e s).property)
+    have hr := row s
+    rw [e286_graph_support_incidence, if_neg hs] at hr
+    dsimp only [K]
+    omega
+  have cl (i : Fin 4) : G.IsClique ((K i : Finset V) : Set V) :=
+    e286_private_class_isClique G hG I hc hI _ (e i).property
+  obtain ⟨p, hp'⟩ := e286_positive_count_actual_witness G I e 0 (by rw [hcounts]; norm_num)
+  obtain ⟨r, hr'⟩ := e286_positive_count_actual_witness G I e 2 (by rw [hcounts]; norm_num)
+  obtain ⟨q, hq'⟩ := e286_positive_count_actual_witness G I e 5 (by rw [hcounts]; norm_num)
+  have hp : seedNeighbors G I p = {(e 0 : V), (e 1 : V)} := by simpa [e286SupportType] using hp'
+  have hr : seedNeighbors G I r = {(e 0 : V), (e 3 : V)} := by simpa [e286SupportType] using hr'
+  have hq : seedNeighbors G I q = {(e 2 : V), (e 3 : V)} := by simpa [e286SupportType] using hq'
+  have hne (a b : Fin 4) (h : a ≠ b) : (e a : V) ≠ e b :=
+    fun he => h (e.injective (Subtype.ext he))
+  have sep (a b : Fin 4) (h : a ≠ b) : Disjoint (K a) (K b) :=
+    seed_private_classes_disjoint G I hI _ _ (e a).property (e b).property (hne a b h)
+  have outside (v : V) (hv : v ∈ seedMultipleSet G I) (s : Fin 4) : v ∉ K s := by
+    intro hm
+    exact Finset.disjoint_left.mp (seed_private_multiple_disjoint G I hI _ (e s).property) hm hv
+  have outP := outside p (e286_pair_support_mem_multiple G I _ _ p (hne 0 1 (by decide)) hp)
+  have outR := outside r (e286_pair_support_mem_multiple G I _ _ r (hne 0 3 (by decide)) hr)
+  have outQ := outside q (e286_pair_support_mem_multiple G I _ _ q (hne 2 3 (by decide)) hq)
+  have pr : p ≠ r := by
+    intro he
+    have hm : (e 1 : V) ∈ seedNeighbors G I p := by rw [hp]; simp
+    rw [he, hr] at hm
+    simpa [hne 1 0 (by decide), hne 1 3 (by decide)] using hm
+  have pq : p ≠ q := by
+    intro he
+    have hm : (e 0 : V) ∈ seedNeighbors G I p := by rw [hp]; simp
+    rw [he, hq] at hm
+    simpa [hne 0 2 (by decide), hne 0 3 (by decide)] using hm
+  have rq : r ≠ q := by
+    intro he
+    have hm : (e 0 : V) ∈ seedNeighbors G I r := by rw [hr]; simp
+    rw [he, hq] at hm
+    simpa [hne 0 2 (by decide), hne 0 3 (by decide)] using hm
+  let Q := insert q (K 2 ∪ K 3)
+  have q6 : 6 ≤ ∑ v ∈ Q, degreeExcess12 G v :=
+    e286_private_k11_pair_charge G hG I hc hI _ _ q (e 2).property (e 3).property
+      (hne 2 3 (by decide)) hq (card11 2 (by decide)) (card11 3 (by decide))
+  have pOutQ : p ∉ Q := by simp [Q, pq, outP]
+  have rOutQ : r ∉ Q := by simp [Q, rq, outR]
+  have small (S : Finset V) (hs : Disjoint S Q) : (∑ x ∈ S, degreeExcess12 G x) ≤ 2 := by
+    have h := e286_subset_excess_budget G hG (S ∪ Q)
+    rw [Finset.sum_union hs] at h
+    omega
+  have pComplete : ∀ x ∈ K 0, G.Adj p x := by
+    rcases e286_private_mixed_pair_dichotomy G hG I hc hI _ _ p (e 0).property (e 1).property
+      (hne 0 1 (by decide)) hp card0 (card11 1 (by decide)) with h | h
+    · exact h
+    · have pairs : Disjoint (K 0 ∪ K 1) (K 2 ∪ K 3) := by
+        rw [Finset.disjoint_union_left, Finset.disjoint_union_right, Finset.disjoint_union_right]
+        exact ⟨⟨sep 0 2 (by decide), sep 0 3 (by decide)⟩,
+          ⟨sep 1 2 (by decide), sep 1 3 (by decide)⟩⟩
+      have hs := small (insert p (K 0 ∪ K 1)) (Finset.disjoint_insert_left.mpr
+        ⟨pOutQ, Finset.disjoint_insert_right.mpr ⟨by simp [outQ], pairs⟩⟩)
+      change 4 ≤ ∑ x ∈ insert p (K 0 ∪ K 1), degreeExcess12 G x at h
+      omega
+  let A := e286Missing G (K 0) r
+  let B := e286Missing G (K 3) r
+  let C := e286Missing G (K 2) q
+  let D := e286Missing G (K 3) q
+  by_cases ha : A.Nonempty
+  · have sa : A ⊆ K 0 := Finset.filter_subset _ _
+    have sb : B ⊆ K 3 := Finset.filter_subset _ _
+    have sc : C ⊆ K 2 := Finset.filter_subset _ _
+    have sd : D ⊆ K 3 := Finset.filter_subset _ _
+    have hb : B.Nonempty := e286_eleven_clique_missing_nonempty G hG _ (card11 3 (by decide)) (cl 3) r (outR 3)
+    have hc' : C.Nonempty := e286_eleven_clique_missing_nonempty G hG _ (card11 2 (by decide)) (cl 2) q (outQ 2)
+    have hd' : D.Nonempty := e286_eleven_clique_missing_nonempty G hG _ (card11 3 (by decide)) (cl 3) q (outQ 3)
+    have edgeAB (x : V) (hx : x ∈ A) (y : V) (hy : y ∈ B) : G.Adj x y :=
+      e286_pair_blocker_complete G hG I hc hI _ _ r (e 0).property (e 3).property
+        (hne 0 3 (by decide)) hr x y (sa hx) (sb hy)
+        (Finset.mem_filter.mp hx).2 (Finset.mem_filter.mp hy).2
+    have edgeCD (x : V) (hx : x ∈ C) (y : V) (hy : y ∈ D) : G.Adj x y :=
+      e286_pair_blocker_complete G hG I hc hI _ _ q (e 2).property (e 3).property
+        (hne 2 3 (by decide)) hq x y (sc hx) (sd hy)
+        (Finset.mem_filter.mp hx).2 (Finset.mem_filter.mp hy).2
+    have five : 5 ≤ degreeExcess12 G r + (∑ x ∈ A, degreeExcess12 G x) + B.card * (A.card - 2) :=
+      e286_extra_completer_split G _ _ card0 (card11 3 (by decide)) (cl 0) (sep 0 3 (by decide))
+        r p (outP 0) (outP 3) pComplete ha hb edgeAB
+    have six : 6 ≤ degreeExcess12 G q + (∑ x ∈ C, degreeExcess12 G x) + D.card * (C.card - 2) := by
+      apply e286_split_pair_charge G (K 2) (K 3) q (sep 2 3 (by decide)) 11 11 6
+        (card11 2 (by decide)) (card11 3 (by decide))
+      · exact e286_f11_minimum C.card D.card (Finset.card_pos.mpr hc') (Finset.card_pos.mpr hd')
+          (le_trans (Finset.card_le_card sc) (card11 2 (by decide)).le)
+          (le_trans (Finset.card_le_card sd) (card11 3 (by decide)).le)
+      · intro x hx
+        have h := e286_clique_blocker_vertex_charge G (K 2) D (cl 2)
+          ((sep 2 3 (by decide)).mono_right sd) x (sc hx) (edgeCD x hx)
+        rw [card11 2 (by decide)] at h
+        change D.card - 2 ≤ degreeExcess12 G x
+        omega
+    have leaf : B.card * (A.card - 2) + D.card * (C.card - 2) ≤
+        ∑ x ∈ B ∪ D, degreeExcess12 G x :=
+      e286_shared_leaf_pair_charge G (K 3) A C r q (card11 3 (by decide)) (cl 3)
+        ((sep 3 0 (by decide)).mono_right sa) ((sep 3 2 (by decide)).mono_right sc)
+        ((sep 0 2 (by decide)).mono sa sc) (outR 3) (outQ 3)
+        (fun hm => outR 2 (sc hm)) (fun hm => outQ 0 (sa hm))
+        (fun y hy x hx => (edgeAB x hx y hy).symm) (fun y hy x hx => (edgeCD x hx y hy).symm)
+    have su : B ∪ D ⊆ K 3 := Finset.union_subset sb sd
+    have haC := (sep 0 2 (by decide)).mono sa sc
+    have dis : Disjoint (A ∪ C) (B ∪ D) := Finset.disjoint_union_left.mpr
+      ⟨(sep 0 3 (by decide)).mono sa su, (sep 2 3 (by decide)).mono sc su⟩
+    have extOut (v : V) (hv : ∀ i : Fin 4, v ∉ K i) : v ∉ (A ∪ C) ∪ (B ∪ D) := by
+      intro hm
+      rcases Finset.mem_union.mp hm with h | h
+      · exact (Finset.mem_union.mp h).elim (fun h => hv 0 (sa h)) (fun h => hv 2 (sc h))
+      · exact hv 3 (su h)
+    have qOut := extOut q outQ
+    have rOut : r ∉ insert q ((A ∪ C) ∪ (B ∪ D)) := by simp [rq, extOut r outR]
+    have budget := e286_subset_excess_budget G hG (insert r (insert q ((A ∪ C) ∪ (B ∪ D))))
+    rw [Finset.sum_insert rOut, Finset.sum_insert qOut, Finset.sum_union dis, Finset.sum_union haC] at budget
+    omega
+  · have rComplete (x : V) (hx : x ∈ K 0) : G.Adj r x := by
+      by_contra hn
+      exact ha ⟨x, Finset.mem_filter.mpr ⟨hx, hn⟩⟩
+    have seven := (e286_ten_clique_completers_excess G hG (K 0) card0 (cl 0) p r pr
+      (outP 0) (outR 0) (fun x hx => ⟨pComplete x hx, rComplete x hx⟩)).2
+    have hs := small ({p,r} : Finset V) (Finset.disjoint_insert_left.mpr
+      ⟨pOutQ, Finset.disjoint_singleton_left.mpr rOutQ⟩)
+    rw [Finset.sum_pair pr] at hs
+    omega
+
+theorem e286_actual_support_six_remaining (G : SimpleGraph V) (hG : E286Hypotheses G) :
+    ∃ I : Finset V, I.card = 4 ∧ G.IsIndepSet (I : Set V) ∧
+      (∀ v ∈ I, G.degree v = 12) ∧ ∃ e : Fin 4 ≃ (I : Set V),
+        e286GraphSupportCounts G I e ∈ e286SupportOrbitRepresentatives.tail.tail.tail.tail := by
+  obtain ⟨I, hc, hi, hd, e, he⟩ := e286_actual_support_seven_remaining G hG
+  refine ⟨I, hc, hi, hd, e, ?_⟩
+  rcases List.mem_cons.mp he with horbit | htail
+  · exact (e286_h4_second_orbit_impossible G hG I hc hi hd e horbit).elim
+  · exact htail
+
 end EG617
