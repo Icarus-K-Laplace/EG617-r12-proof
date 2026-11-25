@@ -18,6 +18,15 @@ public import EG617.Core.E286Star
 public import EG617.Core.E286Diamond
 public import EG617.Core.E286Exclusion
 public import EG617.Core.Core47Floor
+public import EG617.Core.CoverPivotFloor
+#check EG617.core_admissible_pull_iso
+#print axioms EG617.core_admissible_pull_iso
+#check EG617.core47_floor_of_card
+#print axioms EG617.core47_floor_of_card
+#check EG617.cover_h13_pivot_floor_ledger
+#print axioms EG617.cover_h13_pivot_floor_ledger
+#print axioms EG617.cover_h13_pivot_charge_upper
+#check EG617.cover_h13_pivot_charge_upper
 #check EG617.core47_edge_floor_287
 #print axioms EG617.core47_edge_floor_287
 #check EG617.E286_verified

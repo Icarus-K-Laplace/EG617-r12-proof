@@ -1,5 +1,18 @@
 # Original E286 contract and current reduction
 
+**Verified.** `EG617.E286_verified : E286Statement` excludes every graph satisfying
+the five hypotheses below. The proof and its axiom and dependency audits passed
+in [Linux run 45609105445](https://github.com/Icarus-K-Laplace/EG617-r12-proof/actions/runs/45609105445)
+at code commit `b73c558971b108bd4805300bd062aad6a5200d38`.
+
+The last two support orbits are eliminated by `e286_h5_D_impossible` and
+`e286_h5_C_impossible`. In D, the two disjoint ten-clique sides each force
+a charge of at least five against a total budget of eight. In C, the opposite
+pair spends at least six. The remaining budget forces each of three distinct
+pair vertices to complete one of two ten-cliques. Two complete the same
+ten-clique, which already costs seven. These arguments close the original
+existence claim. The reductions recorded below are earlier checkpoints.
+
 Frozen source: frozen/E286.md; immutable provenance: SOURCE_PROVENANCE.json.
 E286Hypotheses is exactly47 vertices,286 edges, minimum degree>=12, alpha<=4,
 omega<=11. The abstract theorem has no hereditary D cap.

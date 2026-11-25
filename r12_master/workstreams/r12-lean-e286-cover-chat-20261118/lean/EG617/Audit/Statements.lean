@@ -82,6 +82,10 @@ public import EG617
 #check EG617.core47_add_sparse_edge_clique
 #check EG617.core47_low_edges_impossible
 #check EG617.core47_edge_floor_287
+#check EG617.core_admissible_pull_iso
+#check EG617.core47_floor_of_card
+#check EG617.cover_h13_pivot_floor_ledger
+#check EG617.cover_h13_pivot_charge_upper
 #print EG617.CostSixProperty
 #print EG617.c5Fiber
 #check EG617.mem_c5Fiber
