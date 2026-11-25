@@ -309,7 +309,9 @@ theorem e286_h4_second_orbit_impossible (G : SimpleGraph V) (hG : E286Hypotheses
       · exact (Finset.mem_union.mp h).elim (fun h => hv 0 (sa h)) (fun h => hv 2 (sc h))
       · exact hv 3 (su h)
     have qOut := extOut q outQ
-    have rOut : r ∉ insert q ((A ∪ C) ∪ (B ∪ D)) := by simp [rq, extOut r outR]
+    have rOut : r ∉ insert q ((A ∪ C) ∪ (B ∪ D)) := by
+      intro hm
+      exact (Finset.mem_insert.mp hm).elim rq (extOut r outR)
     have budget := e286_subset_excess_budget G hG (insert r (insert q ((A ∪ C) ∪ (B ∪ D))))
     rw [Finset.sum_insert rOut, Finset.sum_insert qOut, Finset.sum_union dis, Finset.sum_union haC] at budget
     omega
