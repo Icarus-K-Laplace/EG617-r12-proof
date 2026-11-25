@@ -37,7 +37,7 @@ theorem core47_sparse_nonedge (G : SimpleGraph (Fin 47)) (he : G.edgeFinset.card
         exact ⟨And.left,fun ht => ⟨ht,(SimpleGraph.mem_neighborFinset G x t).mp ht⟩⟩
       rw [same,nc]
       decide
-    · exact no x y eq.symm (fun h => Finset.mem_compl.mp hy ((SimpleGraph.mem_neighborFinset G x y).mpr h))
+    · exact no x y (Ne.symm eq) (fun h => Finset.mem_compl.mp hy ((SimpleGraph.mem_neighborFinset G x y).mpr h))
   have many := Finset.sum_le_sum low
   simp only [Finset.sum_const,smul_eq_mul,tc] at many
   have bound := adjCount_le_sum_degrees G N Nᶜ
@@ -88,13 +88,21 @@ theorem core47_low_edges_impossible (G : SimpleGraph (Fin 47)) (he : G.edgeFinse
   | succ k ih =>
     obtain ⟨x,y,hxy,hn,hs⟩ := core47_sparse_nonedge G (by omega) hd
     let H := G ⊔ SimpleGraph.edge x y
-    have plus : H.edgeFinset.card = G.edgeFinset.card + 1 := G.card_edgeFinset_sup_edge x y hn hxy
+    have plus := G.card_edgeFinset_sup_edge hn hxy
+    simp only [SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard] at plus he hgap
     have leGH : G ≤ H := le_sup_left
-    apply ih H (by omega) (fun v => (hd v).trans (SimpleGraph.degree_le_of_le leGH))
+    apply ih H (by simp only [SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard]; dsimp [H]; omega)
+    · intro v
+      have mono := SimpleGraph.degree_le_of_le leGH (v := v)
+      have base := hd v
+      simp only [← SimpleGraph.ncard_neighborSet] at mono base ⊢
+      exact base.trans mono
     · intro S hS
       exact ha S (fun a ha' b hb' hab e => hS ha' hb' hab (leGH e))
     · exact core47_add_sparse_edge_clique G hc x y hxy hs
-    · omega
+    · simp only [SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard]
+      dsimp [H]
+      omega
 
 theorem core47_edge_floor_287 (G : SimpleGraph (Fin 47)) (hG : CoreAdmissible 4 G) :
     287 ≤ G.edgeFinset.card := by
