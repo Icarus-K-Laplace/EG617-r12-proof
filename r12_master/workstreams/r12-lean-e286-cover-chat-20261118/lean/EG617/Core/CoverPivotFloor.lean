@@ -280,7 +280,7 @@ theorem cover_repivot_sets (G : SimpleGraph V) (p y : V) (py : G.Adj p y) :
       SimpleGraph.compl_adj]
   · by_cases h : p = z
     · subst z; simp [py.symm]
-    · simp [h]
+    · simp [h] <;> tauto
   · by_cases h : y = z
     · subst z; simp [py]
     · simp [h]
@@ -349,10 +349,64 @@ theorem cover_repivot_INS11 (G : SimpleGraph V) (hv : Fintype.card V = 61)
   obtain ⟨hs,hr⟩ := cover_repivot_sets G p y py
   dsimp only
   rw [← hs,← hr]
-  change 11 * S.card + adjCount G S (C \ Y) + 2 * coreInducedEdgeCount Gᶜ S ≤ _
+  change 11 * S.card + adjCount G S (C \ Y) + 2 * coreInducedEdgeCount Gᶜ S ≤
+    adjCount G S C + 2 * S.card.choose 2
   change adjCount G S Y + adjCount G S (C \ Y) + 2 * coreInducedEdgeCount Gᶜ S =
     adjCount G S C + 2 * S.card.choose 2 at ledger
   rw [Nat.mul_comm S.card 11] at total
+  omega
+
+/-- Exact exchange identity for two equally large cores. All incidence counts
+use the graph induced on the corresponding old or new vertex set. -/
+theorem cover_equal_exchange_identity (G : SimpleGraph V) (C Y : Finset V)
+    (sizes : (Y \ C).card = (C \ Y).card) :
+    let S := Y \ C
+    let R := C \ Y
+    coreInducedEdgeCount G C + adjCount G S Y + coreInducedEdgeCount Gᶜ S =
+      coreInducedEdgeCount G Y + adjCount G R C + coreInducedEdgeCount Gᶜ R := by
+  classical
+  let S := Y \ C
+  let R := C \ Y
+  let T := C ∩ Y
+  have cy : T ∪ S = Y := by ext z; simp [T,S]; tauto
+  have cc : T ∪ R = C := by ext z; simp [T,R]; tauto
+  have dy : Disjoint T S := Finset.disjoint_left.mpr (fun z ht hs =>
+    (Finset.mem_sdiff.mp hs).2 (Finset.mem_inter.mp ht).1)
+  have dc : Disjoint T R := Finset.disjoint_left.mpr (fun z ht hs =>
+    (Finset.mem_sdiff.mp hs).2 (Finset.mem_inter.mp ht).2)
+  have ey := core_edge_count_union G T S dy
+  have ec := core_edge_count_union G T R dc
+  have sy := adjCount_union_right G S T S dy
+  have rc := adjCount_union_right G R T R dc
+  rw [cy] at ey
+  rw [cc] at ec
+  rw [cy,adjCount_self,adjCount_symm G S T] at sy
+  rw [cc,adjCount_self,adjCount_symm G R T] at rc
+  have ms := core_induced_compl_edge_count G S
+  have mr := core_induced_compl_edge_count G R
+  change S.card = R.card at sizes
+  rw [sizes] at ms
+  change coreInducedEdgeCount G C + adjCount G S Y + coreInducedEdgeCount Gᶜ S =
+    coreInducedEdgeCount G Y + adjCount G R C + coreInducedEdgeCount Gᶜ R
+  omega
+
+/-- Frozen Section 3 signed charge difference in balance form. Subtracting
+the same beta times the exchange size on both sides yields the excess version. -/
+theorem cover_repivot_charge_identity (G : SimpleGraph V) (hv : Fintype.card V = 61)
+    (ha : CoreAdmissible 5 G) (hd : ∀ z, 13 ≤ G.degree z) (p y : V)
+    (hp : G.degree p = 13) (hy : G.degree y = 13) :
+    let C := Gᶜ.neighborFinset p
+    let Y := Gᶜ.neighborFinset y
+    let S := Y \ C
+    let R := C \ Y
+    let q := fun z : V => (G.induce (G.neighborFinset z : Set V))ᶜ.edgeFinset.card +
+      ∑ w ∈ G.neighborFinset z, (G.degree w - 13)
+    q y + adjCount G S Y + coreInducedEdgeCount Gᶜ S =
+      q p + adjCount G R C + coreInducedEdgeCount Gᶜ R := by
+  obtain ⟨_,_,oldLedger⟩ := cover_h13_pivot_floor_ledger G hv ha hd p hp
+  obtain ⟨_,_,newLedger⟩ := cover_h13_pivot_floor_ledger G hv ha hd y hy
+  have exchange := cover_equal_exchange_identity G _ _ (cover_repivot_equal_exchange G p y (hp.trans hy.symm))
+  dsimp only at exchange ⊢
   omega
 
 end EG617

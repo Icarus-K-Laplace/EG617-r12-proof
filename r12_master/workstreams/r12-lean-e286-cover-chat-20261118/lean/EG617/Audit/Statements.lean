@@ -96,6 +96,8 @@ public import EG617
 #check EG617.cover_repivot_equal_exchange
 #check EG617.cover_inserted_degree_ledger
 #check EG617.cover_repivot_INS11
+#check EG617.cover_equal_exchange_identity
+#check EG617.cover_repivot_charge_identity
 #print EG617.CostSixProperty
 #print EG617.c5Fiber
 #check EG617.mem_c5Fiber
