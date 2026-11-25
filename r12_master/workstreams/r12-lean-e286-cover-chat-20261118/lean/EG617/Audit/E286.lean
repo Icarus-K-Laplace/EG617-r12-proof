@@ -16,6 +16,9 @@ public import EG617.Core.E286OrbitP
 public import EG617.Core.E286LowBudget
 public import EG617.Core.E286Star
 public import EG617.Core.E286Diamond
+public import EG617.Core.E286Exclusion
+#check EG617.E286_verified
+#print axioms EG617.E286_verified
 #check EG617.e286_actual_support_only_C
 #print axioms EG617.e286_actual_support_only_C
 #check EG617.e286_actual_support_D_or_C

@@ -146,6 +146,9 @@ public import EG617
 #print axioms EG617.e286_regular_card_ge_39
 #print axioms EG617.e286_support_degree_sum
 #print axioms EG617.e286_regular_edge_ledger
+#print axioms EG617.e286_h5_C_impossible
+#print axioms EG617.e286_excluded
+#print axioms EG617.E286_verified
 #print axioms EG617.e286_pair_triple_small_side_impossible
 #print axioms EG617.e286_second_support_configuration_impossible
 #print axioms EG617.e286_positive_count_actual_witness

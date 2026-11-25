@@ -206,8 +206,10 @@ theorem e286_h5_D_impossible (G : SimpleGraph V) (hG : E286Hypotheses G)
   have left := side 0 1 (by decide) rfl
   have right := side 2 3 (by decide) rfl
   dsimp only [cost] at left right
-  change (degreeExcess12 G (p 0) + _) + ((degreeExcess12 G (p 1) + _) +
-    ((degreeExcess12 G (p 2) + _) + ((degreeExcess12 G (p 3) + _) + 0))) ≤ 8 at total
+  change (degreeExcess12 G (p 0) + ∑ x ∈ K 0, degreeExcess12 G x) +
+    ((degreeExcess12 G (p 1) + ∑ x ∈ K 1, degreeExcess12 G x) +
+    ((degreeExcess12 G (p 2) + ∑ x ∈ K 2, degreeExcess12 G x) +
+    ((degreeExcess12 G (p 3) + ∑ x ∈ K 3, degreeExcess12 G x) + 0))) ≤ 8 at total
   omega
 
 theorem e286_actual_support_only_C (G : SimpleGraph V) (hG : E286Hypotheses G) :

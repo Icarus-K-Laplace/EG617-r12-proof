@@ -146,6 +146,9 @@ public import EG617
 #check EG617.e286_regular_card_ge_39
 #check EG617.e286_support_degree_sum
 #check EG617.e286_regular_edge_ledger
+#check EG617.e286_h5_C_impossible
+#check EG617.e286_excluded
+#check EG617.E286_verified
 #check EG617.e286_pair_triple_small_side_impossible
 #check EG617.e286_second_support_configuration_impossible
 #check EG617.e286_positive_count_actual_witness
