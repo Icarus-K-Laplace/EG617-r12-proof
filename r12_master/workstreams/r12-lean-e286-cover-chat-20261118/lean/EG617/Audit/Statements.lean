@@ -197,6 +197,11 @@ public import EG617
 #check EG617.seed_private_multiple_disjoint
 #check EG617.e286_seed_support_reduction
 #check EG617.e286_exists_regular_independent_four
+#check EG617.e286_center_lane_bound
+#check EG617.e286_star_scalar
+#check EG617.e286_three_leaf_star_impossible
+#check EG617.e286_h4_star_orbit_impossible
+#check EG617.e286_actual_support_D_or_C
 #print EG617.e286SupportType
 #print EG617.e286SupportWeights
 #check EG617.e286_support_type_complete

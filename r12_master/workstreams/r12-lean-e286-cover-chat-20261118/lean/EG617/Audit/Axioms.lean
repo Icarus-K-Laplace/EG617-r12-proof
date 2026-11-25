@@ -197,6 +197,11 @@ public import EG617
 #print axioms EG617.seed_private_multiple_disjoint
 #print axioms EG617.e286_seed_support_reduction
 #print axioms EG617.e286_exists_regular_independent_four
+#print axioms EG617.e286_center_lane_bound
+#print axioms EG617.e286_star_scalar
+#print axioms EG617.e286_three_leaf_star_impossible
+#print axioms EG617.e286_h4_star_orbit_impossible
+#print axioms EG617.e286_actual_support_D_or_C
 #print axioms EG617.e286SupportType
 #print axioms EG617.e286SupportWeights
 #print axioms EG617.e286_support_type_complete

@@ -14,6 +14,9 @@ public import EG617.Core.E286H4Second
 public import EG617.Core.E286DoublePair
 public import EG617.Core.E286OrbitP
 public import EG617.Core.E286LowBudget
+public import EG617.Core.E286Star
+#check EG617.e286_actual_support_D_or_C
+#print axioms EG617.e286_actual_support_D_or_C
 #check EG617.e286_h5_nine_or_B_impossible
 #print axioms EG617.e286_h5_nine_or_B_impossible
 #check EG617.e286_actual_support_star_D_C
