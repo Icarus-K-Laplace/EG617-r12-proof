@@ -52,15 +52,25 @@ if(status.remainingSupportOrbits<=8)for(const n of ['e286_actual_support_eight_r
  if(!log.includes('PROJECT_DEPENDENCIES EG617.'+n+':'))throw Error('Missing h3 proof path: '+n);
 if(status.remainingSupportOrbits<=7)for(const n of ['e286_actual_support_seven_remaining','e286_private_mixed_pair_dichotomy','e286_double_count_actual_witnesses','e286_third_support_orbit_impossible','e286_ten_clique_completers_excess'])
  if(!log.includes('PROJECT_DEPENDENCIES EG617.'+n+':'))throw Error('Missing first h4 proof path: '+n);
+if(axioms.has('EG617.E286_verified')){
+ for(const name of ['E286_verified','e286_excluded','e286_h5_C_impossible','e286_h5_D_impossible','e286_h4_star_orbit_impossible','e286_h5_nine_or_B_impossible','e286_h5_P_impossible'])
+  if(!log.includes('PROJECT_DEPENDENCIES EG617.'+name+':'))throw Error('Missing E286 proof path '+name);
+ status.E286='VERIFIED'; status.remainingSupportOrbits=0; status.strongestE286Reduction='E286_verified';
+}
+if(axioms.has('EG617.core47_edge_floor_287')){
+ for(const name of ['core47_edge_floor_287','core47_low_edges_impossible','core47_sparse_nonedge','core47_add_sparse_edge_clique','gate47_verified','e286_excluded'])
+  if(!log.includes('PROJECT_DEPENDENCIES EG617.'+name+':'))throw Error('Missing edge floor proof path '+name);
+ status.edgeFloor287='VERIFIED';
+}
 if(dag){
- const begin=log.indexOf('PROJECT_DEPENDENCIES EG617.'+status.strongestE286Reduction+':');
+ const begin=log.indexOf('PROJECT_DEPENDENCIES ');
  const end=log.indexOf('E286_ELABORATED_DEPENDENCY_AUDIT_PASS',begin);
  if(begin<0||end<begin)throw Error('Missing root dependency trace');
  fs.writeFileSync(path.join(root,'logs/e286-elaborated-dependencies.txt'),log.slice(begin,end)+'E286_ELABORATED_DEPENDENCY_AUDIT_PASS\n');
 }
 fs.writeFileSync(path.join(root,'CI_STATUS.json'),JSON.stringify(status,null,2)+'\n');
 fs.writeFileSync(path.join(root,'logs/verified-axioms.json'),JSON.stringify(Object.fromEntries(axioms),null,2)+'\n');
-let audit='# Transitive axiom audit\n\nVerified code '+sha+', CI '+run+'. All project declarations below compiled.\nOnly propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem remain unproved.\n\n| Declaration | Axioms |\n|---|---|\n';
+let audit='# Transitive axiom audit\n\nVerified code '+sha+', CI '+run+'. All project declarations below compiled.\nOnly propext, Classical.choice and Quot.sound are used. COVER and MainTheorem remain open.\n\n| Declaration | Axioms |\n|---|---|\n';
 let statements='# Exact Lean source statements\n\nCode '+sha+', CI '+run+'. Full proof bodies are in standard .lean files.\nThe declarations below retain their source section context; universe and implicit section\nvariables are given in those files. The full CI log also contains elaborated #check output\nincluding all implicit binders. No additional terminal hypothesis is hidden.\n\n';
 for(const d of scan.declarations){
  const name='EG617.'+d.name;

@@ -78,6 +78,10 @@ public import EG617
 #print axioms EG617.cycleNeighborLabels_unique_type
 #print axioms EG617.adjacent_cycleNeighborLabels_disjoint
 #print axioms EG617.complete_bipartite_type_image
+#print axioms EG617.core47_sparse_nonedge
+#print axioms EG617.core47_add_sparse_edge_clique
+#print axioms EG617.core47_low_edges_impossible
+#print axioms EG617.core47_edge_floor_287
 #print axioms EG617.CostSixProperty
 #print axioms EG617.c5Fiber
 #print axioms EG617.mem_c5Fiber

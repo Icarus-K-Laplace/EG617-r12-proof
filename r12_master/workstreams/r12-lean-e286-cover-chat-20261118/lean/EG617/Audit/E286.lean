@@ -17,6 +17,9 @@ public import EG617.Core.E286LowBudget
 public import EG617.Core.E286Star
 public import EG617.Core.E286Diamond
 public import EG617.Core.E286Exclusion
+public import EG617.Core.Core47Floor
+#check EG617.core47_edge_floor_287
+#print axioms EG617.core47_edge_floor_287
 #check EG617.E286_verified
 #print axioms EG617.E286_verified
 #check EG617.e286_actual_support_only_C

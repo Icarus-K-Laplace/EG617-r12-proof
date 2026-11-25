@@ -64,3 +64,4 @@ public import EG617.Core.E286LowBudget
 public import EG617.Core.E286Star
 public import EG617.Core.E286Diamond
 public import EG617.Core.E286Exclusion
+public import EG617.Core.Core47Floor

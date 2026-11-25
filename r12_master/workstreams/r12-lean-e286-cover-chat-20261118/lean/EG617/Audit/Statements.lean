@@ -78,6 +78,10 @@ public import EG617
 #check EG617.cycleNeighborLabels_unique_type
 #check EG617.adjacent_cycleNeighborLabels_disjoint
 #check EG617.complete_bipartite_type_image
+#check EG617.core47_sparse_nonedge
+#check EG617.core47_add_sparse_edge_clique
+#check EG617.core47_low_edges_impossible
+#check EG617.core47_edge_floor_287
 #print EG617.CostSixProperty
 #print EG617.c5Fiber
 #check EG617.mem_c5Fiber
