@@ -222,7 +222,7 @@ theorem cover_h13_core_min_degree (G : SimpleGraph V) (hv : Fintype.card V = 61)
   let R := C.filter (G.Adj v.val)
   have sub : R ⊆ C := Finset.filter_subset _ _
   have inside : v.val ∈ C \ R := Finset.mem_sdiff.mpr ⟨v.property,fun h =>
-    G.loopless v.val (Finset.mem_filter.mp h).2⟩
+    (Finset.mem_filter.mp h).2.ne rfl⟩
   have cap := cover_common_nonNeighbors_le_35 G hv ha p v.val (avoid _ v.property).1
     (avoid _ v.property).2 ((C \ R).erase v.val) (by
       intro z hz
@@ -262,6 +262,8 @@ theorem cover_core_degree_eleven_clique (G : SimpleGraph V) (hv : Fintype.card V
     (SimpleGraph.mem_neighborFinset G y z).mpr (Finset.mem_filter.mp hz).2
   have size := Finset.card_le_card sub
   rw [SimpleGraph.card_neighborFinset_eq_degree,hy] at size
+  have same : 12 ≤ (S.filter (G.Adj y)).card := by
+    convert low using 1 <;> congr 1 <;> ext z <;> simp
   omega
 
 end EG617
