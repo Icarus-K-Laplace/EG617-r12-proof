@@ -179,7 +179,7 @@ theorem e286_h4_star_orbit_impossible (G : SimpleGraph V) (hG : E286Hypotheses G
     refine ⟨v,?_⟩
     have ht : e286SupportType t = {0,i.succ} := by
       dsimp only [t]
-      fin_cases i <;> decide
+      fin_cases i <;> rfl
     rw [ht] at hv
     simpa using hv
   choose p hp using wit
