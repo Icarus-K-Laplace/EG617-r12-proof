@@ -27,7 +27,7 @@ theorem e286_center_lane_bound {ι : Type*} [Fintype ι] (G : SimpleGraph V) (K 
     split
     · exact Finset.singleton_subset_iff.mpr (Finset.mem_insert_self _ _)
     · exact Finset.subset_insert _ _
-  have ds : (Finset.univ : Finset ι).toSet.PairwiseDisjoint lane :=
+  have ds : ((Finset.univ : Finset ι) : Set ι).PairwiseDisjoint lane :=
     fun i _ j _ hij => (sep i j hij).mono (sub i) (sub j)
   have hd : Disjoint K (Finset.univ.biUnion lane) := by
     rw [Finset.disjoint_left]
@@ -69,7 +69,7 @@ theorem e286_three_leaf_star_impossible (G : SimpleGraph V) (hG : E286Hypotheses
   have sub (i : Fin 3) : insert (p i) (B i) ⊆ R i := Finset.insert_subset_insert _ (sb i)
   have sep (i j : Fin 3) (h : i ≠ j) : Disjoint (R i) (R j) := by
     apply Finset.disjoint_insert_left.mpr
-    exact ⟨by simp [R,fun he : p i = p j => h (pinj he), lp],
+    exact ⟨fun hm => (Finset.mem_insert.mp hm).elim (fun he => h (pinj he)) (lp i j),
       Finset.disjoint_insert_right.mpr ⟨lp j i,ll i j h⟩⟩
   have out (i : Fin 3) : Disjoint K (R i) := Finset.disjoint_insert_right.mpr ⟨kp i,kl i⟩
   have bp (i : Fin 3) : 0 < (B i).card := Finset.card_pos.mpr
@@ -174,9 +174,12 @@ theorem e286_h4_star_orbit_impossible (G : SimpleGraph V) (hG : E286Hypotheses G
     let t : Fin 11 := ⟨i.val, by omega⟩
     obtain ⟨v,hv⟩ := e286_positive_count_actual_witness G I e t (by
       rw [counts]
+      dsimp only [t]
       fin_cases i <;> decide)
     refine ⟨v,?_⟩
-    have ht : e286SupportType t = {0,i.succ} := by fin_cases i <;> decide
+    have ht : e286SupportType t = {0,i.succ} := by
+      dsimp only [t]
+      fin_cases i <;> decide
     rw [ht] at hv
     simpa using hv
   choose p hp using wit
