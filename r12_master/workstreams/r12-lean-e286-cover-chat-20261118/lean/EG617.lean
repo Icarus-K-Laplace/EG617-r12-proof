@@ -58,3 +58,4 @@ public import EG617.Core.E286H3Remaining
 public import EG617.Core.E286Mixed
 public import EG617.Core.E286H4First
 public import EG617.Core.E286H4Second
+public import EG617.Core.E286DoublePair

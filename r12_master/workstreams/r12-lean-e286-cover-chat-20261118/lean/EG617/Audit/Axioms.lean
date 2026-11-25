@@ -124,6 +124,11 @@ public import EG617
 #print axioms EG617.e286_pair_support_mem_multiple
 #print axioms EG617.e286_private_k11_pair_charge
 #print axioms EG617.e286_complementary_k11_pairs_impossible
+#print axioms EG617.E286PairThreshold
+#print axioms EG617.e286_threshold_scalar_rigidity
+#print axioms EG617.e286_missing_of_incomplete
+#print axioms EG617.e286_pair_threshold_rigidity
+#print axioms EG617.e286_doubled_pair_completion
 #print axioms EG617.E286Hypotheses
 #print axioms EG617.E286Statement
 #print axioms EG617.degreeExcess12

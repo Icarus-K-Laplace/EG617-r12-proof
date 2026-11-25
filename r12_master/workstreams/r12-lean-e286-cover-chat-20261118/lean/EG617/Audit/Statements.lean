@@ -124,6 +124,11 @@ public import EG617
 #check EG617.e286_pair_support_mem_multiple
 #check EG617.e286_private_k11_pair_charge
 #check EG617.e286_complementary_k11_pairs_impossible
+#print EG617.E286PairThreshold
+#check EG617.e286_threshold_scalar_rigidity
+#check EG617.e286_missing_of_incomplete
+#check EG617.e286_pair_threshold_rigidity
+#check EG617.e286_doubled_pair_completion
 #print EG617.E286Hypotheses
 #print EG617.E286Statement
 #print EG617.degreeExcess12
