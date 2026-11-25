@@ -266,4 +266,93 @@ theorem cover_core_degree_eleven_clique (G : SimpleGraph V) (hv : Fintype.card V
     convert low using 1 <;> congr 1 <;> ext z <;> simp
   omega
 
+/-- Vertices inserted into the new core are exactly old shell vertices
+missing the repivot. The removed vertices form its old exterior row. -/
+theorem cover_repivot_sets (G : SimpleGraph V) (p y : V) (py : G.Adj p y) :
+    let C := Gᶜ.neighborFinset p
+    let Y := Gᶜ.neighborFinset y
+    Y \ C = (G.neighborFinset p).filter (Gᶜ.Adj y) ∧
+      C \ Y = C.filter (G.Adj y) := by
+  classical
+  dsimp only
+  constructor <;> ext z <;>
+    simp only [Finset.mem_sdiff,Finset.mem_filter,SimpleGraph.mem_neighborFinset,
+      SimpleGraph.compl_adj]
+  · by_cases h : p = z
+    · subst z; simp [py.symm]
+    · simp [h]
+  · by_cases h : y = z
+    · subst z; simp [py]
+    · simp [h]
+
+theorem cover_repivot_equal_exchange (G : SimpleGraph V) (p y : V)
+    (hp : G.degree p = G.degree y) :
+    ((Gᶜ.neighborFinset y) \ (Gᶜ.neighborFinset p)).card =
+      ((Gᶜ.neighborFinset p) \ (Gᶜ.neighborFinset y)).card := by
+  classical
+  have eqn : (Gᶜ.neighborFinset p).card = (Gᶜ.neighborFinset y).card := by
+    simp only [SimpleGraph.card_neighborFinset_eq_degree,SimpleGraph.degree_compl,hp]
+  rw [Finset.card_sdiff,Finset.card_sdiff,Finset.inter_comm]
+  omega
+
+/-- The exact inserted-degree ledger counts the retained and removed parts
+of the old exterior separately. It uses no degree threshold. -/
+theorem cover_inserted_degree_ledger (G : SimpleGraph V) (C Y : Finset V) :
+    let S := Y \ C
+    let Drow := C \ Y
+    adjCount G S Y + adjCount G S Drow + 2 * coreInducedEdgeCount Gᶜ S =
+      adjCount G S C + 2 * S.card.choose 2 := by
+  classical
+  let S := Y \ C
+  let T := C ∩ Y
+  let Drow := C \ Y
+  have cy : T ∪ S = Y := by ext z; simp [T,S]; tauto
+  have cc : T ∪ Drow = C := by ext z; simp [T,Drow]; tauto
+  have dy : Disjoint T S := Finset.disjoint_left.mpr (fun z ht hs =>
+    (Finset.mem_sdiff.mp hs).2 (Finset.mem_inter.mp ht).1)
+  have dc : Disjoint T Drow := Finset.disjoint_left.mpr (fun z ht hs =>
+    (Finset.mem_sdiff.mp hs).2 (Finset.mem_inter.mp ht).2)
+  have newSum := adjCount_union_right G S T S dy
+  have oldSum := adjCount_union_right G S T Drow dc
+  rw [cy,adjCount_self] at newSum
+  rw [cc] at oldSum
+  have missing := core_induced_compl_edge_count G S
+  change adjCount G S Y + adjCount G S Drow + 2 * coreInducedEdgeCount Gᶜ S =
+    adjCount G S C + 2 * S.card.choose 2
+  omega
+
+/-- INS11 in additive form, retaining the nonnegative removed-row charge.
+The degree bound belongs to the actual new core of the regular pivot y. -/
+theorem cover_repivot_INS11 (G : SimpleGraph V) (hv : Fintype.card V = 61)
+    (ha : CoreAdmissible 5 G) (p y : V) (py : G.Adj p y)
+    (hp : G.degree p = 13) (hy : G.degree y = 13) :
+    let C := Gᶜ.neighborFinset p
+    let S := (G.neighborFinset p).filter (Gᶜ.Adj y)
+    let Drow := C.filter (G.Adj y)
+    11 * S.card + adjCount G S Drow + 2 * coreInducedEdgeCount Gᶜ S ≤
+      adjCount G S C + 2 * S.card.choose 2 := by
+  classical
+  let C := Gᶜ.neighborFinset p
+  let Y := Gᶜ.neighborFinset y
+  let S := Y \ C
+  have point (z : V) (hz : z ∈ S) : 11 ≤ (Y.filter (G.Adj z)).card := by
+    have mem := (Finset.mem_sdiff.mp hz).1
+    have low := cover_h13_core_min_degree G hv ha y hy ⟨z,mem⟩
+    have eqn := degree_induce_eq_filter G Y ⟨z,mem⟩
+    simp only [← SimpleGraph.ncard_neighborSet] at low eqn
+    rw [eqn] at low
+    convert low using 1 <;> congr 1 <;> ext w <;> simp
+  have total := Finset.sum_le_sum point
+  rw [← adjCount_eq_sum_filter] at total
+  simp only [Finset.sum_const,smul_eq_mul] at total
+  have ledger := cover_inserted_degree_ledger G C Y
+  obtain ⟨hs,hr⟩ := cover_repivot_sets G p y py
+  dsimp only
+  rw [← hs,← hr]
+  change 11 * S.card + adjCount G S (C \ Y) + 2 * coreInducedEdgeCount Gᶜ S ≤ _
+  change adjCount G S Y + adjCount G S (C \ Y) + 2 * coreInducedEdgeCount Gᶜ S =
+    adjCount G S C + 2 * S.card.choose 2 at ledger
+  rw [Nat.mul_comm S.card 11] at total
+  omega
+
 end EG617
