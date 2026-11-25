@@ -103,4 +103,82 @@ theorem cover_h13_pivot_charge_upper (G : SimpleGraph V) (hn : Fintype.card V = 
   dsimp only
   constructor <;> intro he <;> omega
 
+/-- A hereditary 24-set contains three independent vertices, expressed in the
+ambient vertex type so it can be combined with an independent set outside. -/
+private theorem cover_independent_three (G : SimpleGraph V) (ha : CoreAdmissible 5 G)
+    (S : Finset V) (hs : 24 ≤ S.card) :
+    ∃ I : Finset V, I ⊆ S ∧ I.card = 3 ∧ G.IsIndepSet (I : Set V) := by
+  classical
+  obtain ⟨T,ht,ct⟩ := Finset.exists_subset_card_eq hs
+  let H := G.induce (T : Set V)
+  have hn : ¬ CoreIndependenceBound 2 H := by
+    intro h
+    exact core_R224_empty_of_card H
+      (by change Fintype.card T = 24; rwa [Fintype.card_coe])
+      ⟨h,(core_admissible_induce G 5 ha T).2⟩
+  unfold CoreIndependenceBound at hn
+  push_neg at hn
+  obtain ⟨J,hJ,cJ⟩ := hn
+  obtain ⟨K,hK,cK⟩ := Finset.exists_subset_card_eq (show 3 ≤ J.card by omega)
+  refine ⟨K.image Subtype.val,?_,?_,?_⟩
+  · intro x hx
+    obtain ⟨z,_,rfl⟩ := Finset.mem_image.mp hx
+    exact ht z.property
+  · rwa [Finset.card_image_of_injective _ Subtype.val_injective]
+  · intro x hx y hy hxy
+    obtain ⟨z,hz,rfl⟩ := Finset.mem_image.mp hx
+    obtain ⟨w,hw,rfl⟩ := Finset.mem_image.mp hy
+    exact hJ (hK hz) (hK hw) (fun h => hxy (congrArg Subtype.val h))
+
+theorem cover_no_embedded_R336 (G : SimpleGraph V) (hv : Fintype.card V = 61)
+    (ha : CoreAdmissible 5 G) (S : Finset V) (hs : S.card = 36) :
+    ¬ CoreAdmissible 3 (G.induce (S : Set V)) := by
+  classical
+  intro h
+  have floor := core_R336_edges_ge_234 _ (by change Fintype.card S = 36; rwa [Fintype.card_coe]) h
+  have eS : 234 ≤ coreInducedEdgeCount G S := by
+    simpa only [coreInducedEdgeCount, SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard] using floor
+  have row (v : V) (hn : v ∉ S) : (S.filter (G.Adj v)).card ≤ 3 := by
+    have dj : Disjoint ({v} : Finset V) S := Finset.disjoint_singleton_left.mpr hn
+    have eqn := core_edge_count_union G {v} S dj
+    have cap := ha.2.2 ({v} ∪ S)
+    rw [Finset.card_union_of_disjoint dj,Finset.card_singleton,hs] at cap
+    have val : D (1+36) = 237 := by decide
+    rw [val] at cap
+    rw [adjCount_eq_sum_filter] at eqn
+    simp only [Finset.sum_singleton] at eqn
+    omega
+  have outside : 24 ≤ Sᶜ.card := by rw [Finset.card_compl,hs,hv]; decide
+  obtain ⟨I,hi,ci,indI⟩ := cover_independent_three G ha Sᶜ outside
+  let R := I.biUnion (fun v => S.filter (G.Adj v))
+  have cr : R.card ≤ 9 := by
+    have cr := Finset.card_biUnion_le (s := I) (t := fun v => S.filter (G.Adj v))
+    have sum := Finset.sum_le_sum (s := I) (g := fun _ => 3)
+      (fun v hv => row v (Finset.mem_compl.mp (hi hv)))
+    simp only [Finset.sum_const,smul_eq_mul,ci] at sum
+    exact cr.trans sum
+  have sub : R ⊆ S := by
+    intro z hz
+    obtain ⟨v,_,hz⟩ := Finset.mem_biUnion.mp hz
+    exact (Finset.mem_filter.mp hz).1
+  have remain : 24 ≤ (S \ R).card := by
+    have := Finset.card_sdiff_add_card_eq_card sub
+    omega
+  obtain ⟨J,hj,cj,indJ⟩ := cover_independent_three G ha _ remain
+  have cross (x) (hx : x ∈ I) (y) (hy : y ∈ J) : ¬ G.Adj x y := by
+    intro adj
+    have mem := Finset.mem_sdiff.mp (hj hy)
+    exact mem.2 (Finset.mem_biUnion.mpr ⟨x,hx,Finset.mem_filter.mpr ⟨mem.1,adj⟩⟩)
+  have dj : Disjoint I J := Finset.disjoint_left.mpr (fun x hx hy =>
+    Finset.mem_compl.mp (hi hx) (Finset.mem_sdiff.mp (hj hy)).1)
+  have total := ha.1 (I ∪ J) (by
+    intro x hx y hy ne
+    rcases Finset.mem_union.mp hx with hx|hx <;> rcases Finset.mem_union.mp hy with hy|hy
+    · exact indI hx hy ne
+    · exact cross _ hx _ hy
+    · exact fun adj => cross _ hy _ hx adj.symm
+    · exact indJ hx hy ne)
+  rw [Finset.card_union_of_disjoint dj,ci,cj] at total
+  omega
+
 end EG617

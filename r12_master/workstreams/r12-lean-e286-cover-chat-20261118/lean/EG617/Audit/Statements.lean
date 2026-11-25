@@ -86,6 +86,7 @@ public import EG617
 #check EG617.core47_floor_of_card
 #check EG617.cover_h13_pivot_floor_ledger
 #check EG617.cover_h13_pivot_charge_upper
+#check EG617.cover_no_embedded_R336
 #print EG617.CostSixProperty
 #print EG617.c5Fiber
 #check EG617.mem_c5Fiber
