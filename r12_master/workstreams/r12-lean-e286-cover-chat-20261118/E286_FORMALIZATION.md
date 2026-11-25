@@ -4,7 +4,7 @@ Frozen source: frozen/E286.md; immutable provenance: SOURCE_PROVENANCE.json.
 E286Hypotheses is exactly47 vertices,286 edges, minimum degree>=12, alpha<=4,
 omega<=11. The abstract theorem has no hereditary D cap.
 
-Verified code ac68670b87e4c2114c27bd1ccd81c18ce7722a6a, CI 45455564403.
+Code db9f2848d77da0e484c9ba35ee965fe8cd683230, clean Linux CI 45555580430.
 
 The original hypotheses imply actual regular independent seeds, the private-clique
 partition, surplus5 and complete membership in the ten frozen support orbits.
@@ -27,10 +27,13 @@ proves (9-a-b)+a*(b-3)+b*(a-2)>=4 over Nat, where subtraction is truncated.
 The zero K10 missing set is covered by the completion branch, never silently omitted.
 The diagnostic script supplies no Lean assumptions or proof terms.
 
-e286_actual_support_seven_remaining assumes only G and E286Hypotheses G and
-produces actual seeds and membership in e286SupportOrbitRepresentatives.tail.tail.tail.
-Complete Lean declarations and elaborated statements are retained in source and CI.
+Frozen Section 6, second h4 orbit {01,012,03,23}: actual support fibers
+give three distinct exterior witnesses. The 01 point completes K0 since
+its alternative costs 4 disjoint from 6. If 03 also completes K0, the two
+completers cost 7 disjoint from 6. Otherwise the extra 01 neighbor and
+the shared K3 accounting give 5+6 on disjointly accounted vertices.
 
-Two h4 and five h5 orbits remain. Shared-center accounting, double-pair equality
-structure and remaining terminal exclusions are open. E286Statement is still only
-a target definition. LEVEL5A has not been attained.
+e286_h4_second_orbit_impossible derives this contradiction from the exact
+count vector. e286_actual_support_six_remaining obtains actual seeds and
+membership in the final six representatives from E286Hypotheses alone.
+One h4 and five h5 orbits remain. E286Statement is open.

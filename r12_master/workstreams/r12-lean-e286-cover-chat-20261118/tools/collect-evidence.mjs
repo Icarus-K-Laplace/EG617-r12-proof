@@ -23,7 +23,10 @@ for(const m of log.matchAll(/^SOURCE_SHA256 ([a-f0-9]{64}) (.+)$/gm)){
  if(actual!==m[1])throw Error('Local/CI mismatch '+f);
  hashes.push({file:f,sha256:actual});
 }
-if(hashes.length<scan.files.length+2)throw Error('Incomplete hashes');
+const expectedFiles=new Set([...scan.files.map(f=>f.replaceAll('\\','/')),
+ 'lakefile.lean','lean-toolchain','lake-manifest.json']);
+if(hashes.length!==expectedFiles.size || hashes.some(h=>!expectedFiles.delete(h.file)) || expectedFiles.size)
+ throw Error('Source hash set differs from the complete scanned Lean/config file list');
 const pins=[...log.matchAll(/^PIN_PASS (\S+) ([a-f0-9]{40})$/gm)].map(m=>({name:m[1],rev:m[2]}));
 const manifest=JSON.parse(fs.readFileSync(path.join(root,'lean/lake-manifest.json')));
 if(pins.length!==9||manifest.packages.some(p=>!pins.some(q=>p.name===q.name&&p.rev===q.rev)))throw Error('Dependency pins');

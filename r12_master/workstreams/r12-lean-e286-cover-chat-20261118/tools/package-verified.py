@@ -43,7 +43,7 @@ files[final_ci['log_file']] = final_log
 files['FINAL_REPORT_CI.json'] = (json.dumps(final_ci, indent=2) + '\n').encode()
 provenance = {
     'repository': 'Icarus-K-Laplace/EG617-r12-proof',
-    'branch': 'workstream/r12-lean-e286-cover-chat-20261118',
+    'branch': 'workstream/r12-lean-e286-h4-shared-leaf-20261125',
     'package_tree_commit': tree['commit'],
     'verified_code_commit': ci['sha'],
     'verified_ci': ci['run'],

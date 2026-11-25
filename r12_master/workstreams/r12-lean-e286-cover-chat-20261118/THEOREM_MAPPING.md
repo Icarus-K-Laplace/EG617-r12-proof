@@ -65,3 +65,21 @@ The count fiber yields distinct actual vertices; clique cards follow from the
 seed incidence ledger. Charges are combined only on proved disjoint actual sets.
 The strongest theorem retains exactly the original E286 hypotheses and leaves
 two h4 and five h5 cases. It does not prove E286 nonexistence.
+
+## Second h4 orbit
+
+Code db9f2848d77da0e484c9ba35ee965fe8cd683230, clean Linux CI 45555580430.
+
+| Frozen result | Lean declaration |
+|---|---|
+| Section3, scalar formula (5) | e286_f10_11_extra_completer_minimum |
+| Section3, actual extra completer next to K10 | e286_k10_k11_extra_completer_charge |
+| Section3, three shared-leaf membership cases | e286_shared_leaf_pointwise |
+| Section3, sum over the shared leaf | e286_shared_leaf_pair_charge |
+| Section6, orbit {01,012,03,23} | e286_h4_second_orbit_impossible |
+| Sections2,5,6, reduction to six actual representatives | e286_actual_support_six_remaining |
+
+The two charges share only K3. The graph-level cost5 and the joint cost11
+use the same split estimate (e286_extra_completer_split). The joint argument
+counts K3 excess once. Exact missing sets come from adjacency filters and
+the root theorem has no extra terminal hypothesis.

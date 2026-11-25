@@ -5,6 +5,7 @@ on:
     paths:
       - r12_master/workstreams/r12-lean-e286-cover-chat-20261118/lean/**
       - r12_master/workstreams/r12-lean-e286-cover-chat-20261118/build-linux.sh
+      - r12_master/workstreams/r12-lean-e286-cover-chat-20261118/CI_STATUS.json
       - .github/workflows/eg617-r12-lean-e286-h4-shared-leaf-20261125.yml
 permissions:
   contents: read

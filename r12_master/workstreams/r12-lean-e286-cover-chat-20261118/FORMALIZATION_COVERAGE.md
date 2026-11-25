@@ -15,14 +15,15 @@
   cross-edge premises derived from the original graph hypotheses.
 - Multiplicity2 produces distinct actual vertices; both h3 exclusions and
   the first h4 exclusion {01,01,023,23}.
-- e286_actual_support_seven_remaining, with no extra terminal assumption.
+- Actual extra-completer charge5 and shared-leaf union bound.
+- Second h4 exclusion and e286_actual_support_six_remaining, from the original five hypotheses.
 
-Verified at ac68670b87e4c2114c27bd1ccd81c18ce7722a6a, CI 45455564403. Full statements, proof bodies, transitive
+Code db9f2848d77da0e484c9ba35ee965fe8cd683230, clean Linux CI 45555580430. Full statements, proof bodies, transitive
 axioms, hashes, proof dependency trace and complete Linux CI logs are retained.
 
 ## Partially formalized
 
-- E286 nonexistence: two h4 and five h5 support orbits remain.
+- E286 nonexistence: one h4 and five h5 support orbits remain.
 - The287-edge floor: GATE47 is proved, but <=285 and equality exclusions are open.
 
 ## Not formalized

@@ -124,6 +124,31 @@
     "Classical.choice",
     "Quot.sound"
   ],
+  "EG617.e286_f10_11_extra_completer_minimum": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_k10_k11_extra_completer_charge": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_shared_leaf_pair_charge": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_h4_second_orbit_impossible": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_actual_support_six_remaining": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
   "EG617.colorGraph": [
     "propext",
     "Quot.sound"
@@ -744,6 +769,26 @@
     "Quot.sound"
   ],
   "EG617.e286_second_support_orbit_impossible": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_clique_charge_with_extra": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_split_pair_charge": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_extra_completer_split": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "EG617.e286_shared_leaf_pointwise": [
     "propext",
     "Classical.choice",
     "Quot.sound"

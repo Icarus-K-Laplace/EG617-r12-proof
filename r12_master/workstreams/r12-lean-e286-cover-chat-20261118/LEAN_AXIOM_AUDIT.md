@@ -1,6 +1,6 @@
 # Transitive axiom audit
 
-Verified code ac68670b87e4c2114c27bd1ccd81c18ce7722a6a, CI 45455564403. All project declarations below compiled.
+Verified code db9f2848d77da0e484c9ba35ee965fe8cd683230, CI 45555580430. All project declarations below compiled.
 Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem remain unproved.
 
 | Declaration | Axioms |
@@ -149,6 +149,15 @@ Only propext, Classical.choice and Quot.sound are used. E286/COVER/MainTheorem r
 | EG617.e286_doubled_mixed_opposite_pair_impossible | propext, Classical.choice, Quot.sound |
 | EG617.e286_third_support_orbit_impossible | propext, Classical.choice, Quot.sound |
 | EG617.e286_actual_support_seven_remaining | propext, Classical.choice, Quot.sound |
+| EG617.e286_f10_11_extra_completer_minimum | propext, Classical.choice, Quot.sound |
+| EG617.e286_clique_charge_with_extra | propext, Classical.choice, Quot.sound |
+| EG617.e286_split_pair_charge | propext, Classical.choice, Quot.sound |
+| EG617.e286_extra_completer_split | propext, Classical.choice, Quot.sound |
+| EG617.e286_k10_k11_extra_completer_charge | propext, Classical.choice, Quot.sound |
+| EG617.e286_shared_leaf_pointwise | propext, Classical.choice, Quot.sound |
+| EG617.e286_shared_leaf_pair_charge | propext, Classical.choice, Quot.sound |
+| EG617.e286_h4_second_orbit_impossible | propext, Classical.choice, Quot.sound |
+| EG617.e286_actual_support_six_remaining | propext, Classical.choice, Quot.sound |
 | EG617.e286_f10_11_minimum | propext, Classical.choice, Quot.sound |
 | EG617.e286_k10_k11_pair_local_charge | propext, Classical.choice, Quot.sound |
 | EG617.e286_private_mixed_pair_dichotomy | propext, Classical.choice, Quot.sound |

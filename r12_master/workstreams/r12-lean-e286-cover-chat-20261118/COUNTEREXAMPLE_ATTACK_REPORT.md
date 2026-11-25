@@ -16,7 +16,7 @@ never read by a Lean theorem or trusted as an oracle. Kernel evidence is separat
 
 No counterexample occurred in those explicitly bounded domains. No exhaustive
 47-vertex graph search was performed. Shared-center graph charging, simultaneous
-overlap and the remaining seven terminal configurations still require kernel
+overlap and the remaining six terminal configurations still require kernel
 proofs. The canonical-count to oriented-graph bridge, both h3 exclusions and the
 first h4 exclusion are kernel-certified at ac68670b87e4c2114c27bd1ccd81c18ce7722a6a; no diagnostic result licenses
 E286 or any parent theorem.
@@ -49,3 +49,5 @@ No assumption that compatible labels force edges is used; actual blocker edges
 are derived from alpha4. Multiplicity2 is converted to distinct vertices in the
 kernel, and the first h4 proof separately proves disjointness of every cost sum.
 No actual E286 counterexample was found; no exhaustive graph search is claimed.
+
+The second h4 review is recorded in H4_SECOND_DISJOINTNESS_REVIEW.md.

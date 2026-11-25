@@ -1,12 +1,12 @@
 {
-  "sha": "ac68670b87e4c2114c27bd1ccd81c18ce7722a6a",
-  "run": 45455564403,
+  "sha": "db9f2848d77da0e484c9ba35ee965fe8cd683230",
+  "run": 45555580430,
   "cleanLinuxBuild": "PASS",
   "fullAxiomAudit": "PASS",
   "statementInspection": "PASS",
   "localMatchesCISHA256": "PASS",
-  "declarations": 325,
-  "theorems": 274,
+  "declarations": 334,
+  "theorems": 283,
   "pins": [
     {
       "name": "plausible",
@@ -48,11 +48,11 @@
   "hashes": [
     {
       "file": "EG617.lean",
-      "sha256": "74aa4537f00757e8101897bfa09071a5d9a8b02b58ea791254ab7892e577ca40"
+      "sha256": "7401dd86b859296b6642e9470a83e728fb1478031ac323699393842b12461753"
     },
     {
       "file": "EG617/Audit/Axioms.lean",
-      "sha256": "b8b643075af4b86abebb9bd63cc56ece3af78e6a1c176f56cb8acac86d4a485a"
+      "sha256": "e6d582ae0a6878cbf4e3a5135dfe07c8205f3e6114e6b6c4fe751d71c96b2f41"
     },
     {
       "file": "EG617/Audit/C5MissingGraphLift.lean",
@@ -92,11 +92,11 @@
     },
     {
       "file": "EG617/Audit/E286.lean",
-      "sha256": "b6b890924db41f71d58d386b53dd6918e3bab7b5198d5337e0a9d43a49d334c8"
+      "sha256": "0ac191193ceedf68dce46b7365ca3f4ed4eaecd63b1992480d039d9ce3d5e85e"
     },
     {
       "file": "EG617/Audit/E286Dependencies.lean",
-      "sha256": "77369f6ff5a6c3f9c6da9a0e8652b7f685f32723faecd0251ed8d36518d1ea17"
+      "sha256": "4436804a8291e082032a7f30626ec342902cf237c68c465ea9a5492062bb3755"
     },
     {
       "file": "EG617/Audit/Gate47.lean",
@@ -160,7 +160,7 @@
     },
     {
       "file": "EG617/Audit/Statements.lean",
-      "sha256": "a3f393eeb635698e47cb508714dac3e756f01636a7f4f5c675ce4767e5d51bf2"
+      "sha256": "7838bb2013239f654eff1ad671c5ab0adcd302e92f7c5f2f24fa2e186dba2f39"
     },
     {
       "file": "EG617/Basic/ColoringLemmas.lean",
@@ -261,6 +261,10 @@
     {
       "file": "EG617/Core/E286H4First.lean",
       "sha256": "c6a35bdd0b6262ad462c9ae7a35b310a4828404c75daf79121b9e9e84ef420a2"
+    },
+    {
+      "file": "EG617/Core/E286H4Second.lean",
+      "sha256": "ffefd910c1ac91274069ef4e6b6c74e33671df2bd84f69987da3949adda30dc8"
     },
     {
       "file": "EG617/Core/E286Mixed.lean",
@@ -421,6 +425,6 @@
   "COVER": "FORMALIZATION_GAP",
   "MainTheorem": "ABSENT",
   "elaboratedProjectDependencyAudit": "PASS",
-  "remainingSupportOrbits": 7,
-  "strongestE286Reduction": "e286_actual_support_seven_remaining"
+  "remainingSupportOrbits": 6,
+  "strongestE286Reduction": "e286_actual_support_six_remaining"
 }

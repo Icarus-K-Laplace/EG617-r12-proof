@@ -1,6 +1,6 @@
 # Exact Lean source statements
 
-Code ac68670b87e4c2114c27bd1ccd81c18ce7722a6a, CI 45455564403. Full proof bodies are in standard .lean files.
+Code db9f2848d77da0e484c9ba35ee965fe8cd683230, CI 45555580430. Full proof bodies are in standard .lean files.
 The declarations below retain their source section context; universe and implicit section
 variables are given in those files. The full CI log also contains elaborated #check output
 including all implicit binders. No additional terminal hypothesis is hidden.
@@ -1540,6 +1540,129 @@ theorem e286_actual_support_seven_remaining (G : SimpleGraph V) (hG : E286Hypoth
     ∃ I : Finset V, I.card = 4 ∧ G.IsIndepSet (I : Set V) ∧
       (∀ v ∈ I, G.degree v = 12) ∧ ∃ e : Fin 4 ≃ (I : Set V),
         e286GraphSupportCounts G I e ∈ e286SupportOrbitRepresentatives.tail.tail.tail
+```
+
+## EG617.e286_f10_11_extra_completer_minimum
+
+Source: EG617/Core/E286H4Second.lean
+
+```lean
+theorem e286_f10_11_extra_completer_minimum (a b : ℕ) (ha : 1 ≤ a) (hb : 1 ≤ b)
+    (ha' : a ≤ 10) (hb' : b ≤ 11) :
+    5 ≤ (9 - a - b) + a * (b - 2) + b * (a - 2)
+```
+
+## EG617.e286_clique_charge_with_extra
+
+Source: EG617/Core/E286H4Second.lean
+
+```lean
+theorem e286_clique_charge_with_extra (G : SimpleGraph V) (K S : Finset V)
+    (hK : G.IsClique (K : Set V)) (hd : Disjoint K S) (p x : V)
+    (hpK : p ∉ K) (hpS : p ∉ S) (hx : x ∈ K) (hxp : G.Adj x p)
+    (hxs : ∀ y ∈ S, G.Adj x y) :
+    K.card + S.card + 1 ≤ 13 + degreeExcess12 G x
+```
+
+## EG617.e286_split_pair_charge
+
+Source: EG617/Core/E286H4Second.lean
+
+```lean
+theorem e286_split_pair_charge (G : SimpleGraph V) (K L : Finset V) (z : V)
+    (hd : Disjoint K L) (s t m : ℕ) (hk : K.card = s) (hl : L.card = t)
+    (hscalar : m ≤ (s + t - 12 - (e286Missing G K z).card - (e286Missing G L z).card) +
+      (e286Missing G K z).card * ((e286Missing G L z).card - 2) +
+      (e286Missing G L z).card * ((e286Missing G K z).card - 2))
+    (hfirst : ∀ x ∈ e286Missing G K z, (e286Missing G L z).card - 2 ≤ degreeExcess12 G x) :
+    m ≤ degreeExcess12 G z + (∑ x ∈ e286Missing G K z, degreeExcess12 G x) +
+      (e286Missing G L z).card * ((e286Missing G K z).card - 2)
+```
+
+## EG617.e286_extra_completer_split
+
+Source: EG617/Core/E286H4Second.lean
+
+```lean
+theorem e286_extra_completer_split (G : SimpleGraph V) (K L : Finset V)
+    (hk : K.card = 10) (hl : L.card = 11) (hK : G.IsClique (K : Set V))
+    (hd : Disjoint K L) (z p : V) (hpK : p ∉ K) (hpL : p ∉ L)
+    (hcomp : ∀ x ∈ K, G.Adj p x)
+    (ha : (e286Missing G K z).Nonempty) (hb : (e286Missing G L z).Nonempty)
+    (hedge : ∀ x ∈ e286Missing G K z, ∀ y ∈ e286Missing G L z, G.Adj x y) :
+    5 ≤ degreeExcess12 G z + (∑ x ∈ e286Missing G K z, degreeExcess12 G x) +
+      (e286Missing G L z).card * ((e286Missing G K z).card - 2)
+```
+
+## EG617.e286_k10_k11_extra_completer_charge
+
+Source: EG617/Core/E286H4Second.lean
+
+```lean
+theorem e286_k10_k11_extra_completer_charge (G : SimpleGraph V) (K L : Finset V)
+    (hk : K.card = 10) (hl : L.card = 11) (hK : G.IsClique (K : Set V))
+    (hL : G.IsClique (L : Set V)) (hd : Disjoint K L)
+    (z p : V) (hzK : z ∉ K) (hzL : z ∉ L) (hpK : p ∉ K) (hpL : p ∉ L)
+    (hcomp : ∀ x ∈ K, G.Adj p x)
+    (ha : (e286Missing G K z).Nonempty) (hb : (e286Missing G L z).Nonempty)
+    (hedge : ∀ x ∈ e286Missing G K z, ∀ y ∈ e286Missing G L z, G.Adj x y) :
+    5 ≤ ∑ x ∈ insert z (e286Missing G K z ∪ e286Missing G L z), degreeExcess12 G x
+```
+
+## EG617.e286_shared_leaf_pointwise
+
+Source: EG617/Core/E286H4Second.lean
+
+```lean
+theorem e286_shared_leaf_pointwise (G : SimpleGraph V) (L A C : Finset V)
+    (r q : V) (hl : L.card = 11) (hL : G.IsClique (L : Set V))
+    (hLA : Disjoint L A) (hLC : Disjoint L C) (hAC : Disjoint A C)
+    (hrL : r ∉ L) (hqL : q ∉ L) (hrC : r ∉ C) (hqA : q ∉ A)
+    (hB : ∀ x ∈ e286Missing G L r, ∀ y ∈ A, G.Adj x y)
+    (hD : ∀ x ∈ e286Missing G L q, ∀ y ∈ C, G.Adj x y) (x : V) :
+    (x ∈ e286Missing G L r → x ∈ e286Missing G L q →
+      A.card + C.card - 2 ≤ degreeExcess12 G x) ∧
+    (x ∈ e286Missing G L r → x ∉ e286Missing G L q →
+      A.card - 1 ≤ degreeExcess12 G x) ∧
+    (x ∈ e286Missing G L q → x ∉ e286Missing G L r →
+      C.card - 1 ≤ degreeExcess12 G x)
+```
+
+## EG617.e286_shared_leaf_pair_charge
+
+Source: EG617/Core/E286H4Second.lean
+
+```lean
+theorem e286_shared_leaf_pair_charge (G : SimpleGraph V) (L A C : Finset V)
+    (r q : V) (hl : L.card = 11) (hL : G.IsClique (L : Set V))
+    (hLA : Disjoint L A) (hLC : Disjoint L C) (hAC : Disjoint A C)
+    (hrL : r ∉ L) (hqL : q ∉ L) (hrC : r ∉ C) (hqA : q ∉ A)
+    (hB : ∀ x ∈ e286Missing G L r, ∀ y ∈ A, G.Adj x y)
+    (hD : ∀ x ∈ e286Missing G L q, ∀ y ∈ C, G.Adj x y) :
+    (e286Missing G L r).card * (A.card - 2) + (e286Missing G L q).card * (C.card - 2) ≤
+      ∑ x ∈ e286Missing G L r ∪ e286Missing G L q, degreeExcess12 G x
+```
+
+## EG617.e286_h4_second_orbit_impossible
+
+Source: EG617/Core/E286H4Second.lean
+
+```lean
+theorem e286_h4_second_orbit_impossible (G : SimpleGraph V) (hG : E286Hypotheses G)
+    (I : Finset V) (hc : I.card = 4) (hI : G.IsIndepSet (I : Set V))
+    (hd : ∀ v ∈ I, G.degree v = 12) (e : Fin 4 ≃ (I : Set V))
+    (hcounts : e286GraphSupportCounts G I e = [1,0,1,0,0,1,1,0,0,0,0]) : False
+```
+
+## EG617.e286_actual_support_six_remaining
+
+Source: EG617/Core/E286H4Second.lean
+
+```lean
+theorem e286_actual_support_six_remaining (G : SimpleGraph V) (hG : E286Hypotheses G) :
+    ∃ I : Finset V, I.card = 4 ∧ G.IsIndepSet (I : Set V) ∧
+      (∀ v ∈ I, G.degree v = 12) ∧ ∃ e : Fin 4 ≃ (I : Set V),
+        e286GraphSupportCounts G I e ∈ e286SupportOrbitRepresentatives.tail.tail.tail.tail
 ```
 
 ## EG617.e286_f10_11_minimum

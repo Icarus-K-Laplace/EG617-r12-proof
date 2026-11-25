@@ -25,12 +25,16 @@ contains elaborated statements with all implicit binders.
 | Section2, actual multiplicity2 witnesses | e286_double_count_actual_witnesses | Complete |
 | Section6, first h4 orbit | e286_third_support_orbit_impossible | Complete |
 | Sections2+5+6, exhaustive residual cases | e286_actual_support_seven_remaining | Complete |
-| Section6, other two h4 orbits | No exclusion theorem | Open |
+| Section3, equation (5) | e286_k10_k11_extra_completer_charge | Complete |
+| Section3, shared leaf | e286_shared_leaf_pair_charge | Complete |
+| Section6, second h4 orbit | e286_h4_second_orbit_impossible | Complete |
+| Sections2+5+6, six remaining | e286_actual_support_six_remaining | Complete |
+| Section6, h4 star | No exclusion theorem | Open |
 | Section7, small-budget double pair | No theorem | Open |
 | Sections8-12, five h5 orbits and E286 | No exclusion theorem | Open |
 | Consequent287-edge floor | core47_edge_floor_287 absent | Open |
 | COVER source, h12/h13/root K145 | COVER_verified/MainTheorem absent | Open |
 
-Complete claims refer to ac68670b87e4c2114c27bd1ccd81c18ce7722a6a, CI 45455564403. All graph correspondences retain
+Code db9f2848d77da0e484c9ba35ee965fe8cd683230, clean Linux CI 45555580430. All graph correspondences retain
 actual vertex sets and adjacency; compatible types are never assumed adjacent.
 The inherited GATE47 theorem keeps its full CoreAdmissible4 contract.

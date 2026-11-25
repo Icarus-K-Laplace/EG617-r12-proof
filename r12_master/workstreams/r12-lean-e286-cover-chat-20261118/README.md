@@ -1,6 +1,6 @@
 # EG617 E286 / COVER isolated formalization
 
-Branch: workstream/r12-lean-e286-cover-chat-20261118. New results are candidates
+Branch: workstream/r12-lean-e286-h4-shared-leaf-20261125. New results are candidates
 until explicitly supported by CI_STATUS.json. Original MainTheorem is absent.
 
 Lean4.35.0, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc.
@@ -20,10 +20,10 @@ Their historical PROVED labels are not Lean evidence. logs/ retains full evidenc
 attacks/ contains diagnostic tests only. ci/ copies this branch's unique workflow.
 The other workstream and frozen repository originals are not modified.
 
-The certified mathematical reduction is e286_actual_support_seven_remaining:
+The certified mathematical reduction is e286_actual_support_six_remaining:
 the original five E286 hypotheses imply an actual support configuration among
-seven remaining representatives: both h3 and the first h4 orbit are excluded.
-Verified code ac68670b87e4c2114c27bd1ccd81c18ce7722a6a, CI 45455564403.
+six remaining representatives after excluding both h3 and the first two h4 orbits.
+Code db9f2848d77da0e484c9ba35ee965fe8cd683230, clean Linux CI 45555580430.
 E286 itself, core47_edge_floor_287, COVER and MainTheorem remain unproved.
 
 Read FORMALIZATION_COVERAGE.md and OPEN_BLOCKERS.md for the exact boundary,
