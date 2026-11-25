@@ -105,7 +105,7 @@ theorem cover_h13_pivot_charge_upper (G : SimpleGraph V) (hn : Fintype.card V = 
 
 /-- A hereditary 24-set contains three independent vertices, expressed in the
 ambient vertex type so it can be combined with an independent set outside. -/
-private theorem cover_independent_three (G : SimpleGraph V) (ha : CoreAdmissible 5 G)
+theorem cover_independent_three (G : SimpleGraph V) (ha : CoreAdmissible 5 G)
     (S : Finset V) (hs : 24 ≤ S.card) :
     ∃ I : Finset V, I ⊆ S ∧ I.card = 3 ∧ G.IsIndepSet (I : Set V) := by
   classical
@@ -179,6 +179,89 @@ theorem cover_no_embedded_R336 (G : SimpleGraph V) (hv : Fintype.card V = 61)
     · exact fun adj => cross _ hy _ hx adj.symm
     · exact indJ hx hy ne)
   rw [Finset.card_union_of_disjoint dj,ci,cj] at total
+  omega
+
+theorem cover_common_nonNeighbors_le_35 (G : SimpleGraph V) (hv : Fintype.card V = 61)
+    (ha : CoreAdmissible 5 G) (x y : V) (ne : x ≠ y) (hn : ¬G.Adj x y)
+    (U : Finset V) (hu : ∀ z ∈ U, z ≠ x ∧ z ≠ y ∧ ¬G.Adj x z ∧ ¬G.Adj y z) :
+    U.card ≤ 35 := by
+  classical
+  by_contra! h
+  obtain ⟨S,sub,cs⟩ := Finset.exists_subset_card_eq (show 36 ≤ U.card by omega)
+  exact cover_no_embedded_R336 G hv ha S cs
+    (core_admissible_common_nonNeighbors G 3 ha x y ne hn S (fun z hz => hu z (sub hz)))
+
+theorem cover_h13_missing_edge_row_union (G : SimpleGraph V) (hv : Fintype.card V = 61)
+    (ha : CoreAdmissible 5 G) (C : Finset V) (hc : C.card = 47)
+    (x y : V) (ne : x ≠ y) (hn : ¬G.Adj x y) (hx : x ∉ C) (hy : y ∉ C) :
+    12 ≤ ((C.filter (G.Adj x)) ∪ (C.filter (G.Adj y))).card := by
+  classical
+  let R := C.filter (G.Adj x) ∪ C.filter (G.Adj y)
+  have sub : R ⊆ C := Finset.union_subset (Finset.filter_subset _ _) (Finset.filter_subset _ _)
+  have cap := cover_common_nonNeighbors_le_35 G hv ha x y ne hn (C \ R) (by
+    intro z hz
+    obtain ⟨hz,hr⟩ := Finset.mem_sdiff.mp hz
+    exact ⟨fun e => hx (e ▸ hz),fun e => hy (e ▸ hz),
+      fun e => hr (Finset.mem_union_left _ (Finset.mem_filter.mpr ⟨hz,e⟩)),
+      fun e => hr (Finset.mem_union_right _ (Finset.mem_filter.mpr ⟨hz,e⟩))⟩)
+  have := Finset.card_sdiff_add_card_eq_card sub
+  change 12 ≤ R.card
+  omega
+
+theorem cover_h13_core_min_degree (G : SimpleGraph V) (hv : Fintype.card V = 61)
+    (ha : CoreAdmissible 5 G) (p : V) (hp : G.degree p = 13)
+    (v : (Gᶜ.neighborFinset p : Set V)) :
+    11 ≤ (G.induce (Gᶜ.neighborFinset p : Set V)).degree v := by
+  classical
+  let C := Gᶜ.neighborFinset p
+  have cc : C.card = 47 := by
+    change (Gᶜ.neighborFinset p).card = 47
+    rw [SimpleGraph.card_neighborFinset_eq_degree,G.degree_compl,hv,hp]
+  have avoid (z : V) (hz : z ∈ C) : p ≠ z ∧ ¬G.Adj p z :=
+    (SimpleGraph.compl_adj G p z).mp ((SimpleGraph.mem_neighborFinset Gᶜ p z).mp hz)
+  let R := C.filter (G.Adj v.val)
+  have sub : R ⊆ C := Finset.filter_subset _ _
+  have inside : v.val ∈ C \ R := Finset.mem_sdiff.mpr ⟨v.property,fun h =>
+    G.loopless v.val (Finset.mem_filter.mp h).2⟩
+  have cap := cover_common_nonNeighbors_le_35 G hv ha p v.val (avoid _ v.property).1
+    (avoid _ v.property).2 ((C \ R).erase v.val) (by
+      intro z hz
+      obtain ⟨hne,hz⟩ := Finset.mem_erase.mp hz
+      obtain ⟨hz,hr⟩ := Finset.mem_sdiff.mp hz
+      exact ⟨(avoid _ hz).1.symm,hne,(avoid _ hz).2,fun h => hr (Finset.mem_filter.mpr ⟨hz,h⟩)⟩)
+  rw [Finset.card_erase_of_mem inside] at cap
+  have eqn := degree_induce_eq_filter G C v
+  simp only [← SimpleGraph.ncard_neighborSet] at eqn ⊢
+  rw [eqn]
+  change 11 ≤ R.card
+  have := Finset.card_sdiff_add_card_eq_card sub
+  omega
+
+theorem cover_core_degree_eleven_clique (G : SimpleGraph V) (hv : Fintype.card V = 47)
+    (ha : CoreAdmissible 4 G) : G.IsClique {x | G.degree x = 11} := by
+  classical
+  intro x hx y hy ne
+  change G.degree x = 11 at hx
+  change G.degree y = 11 at hy
+  by_contra hn
+  let S := Gᶜ.neighborFinset x
+  have cs : S.card = 35 := by
+    change (Gᶜ.neighborFinset x).card = 35
+    rw [SimpleGraph.card_neighborFinset_eq_degree,G.degree_compl,hv,hx]
+  have mem : y ∈ S := (SimpleGraph.mem_neighborFinset Gᶜ x y).mpr
+    ((SimpleGraph.compl_adj G x y).mpr ⟨ne,hn⟩)
+  have adm := core_admissible_nonNeighbors G 3 ha x S (by
+    intro z hz
+    have h := (SimpleGraph.compl_adj G x z).mp ((SimpleGraph.mem_neighborFinset Gᶜ x z).mp hz)
+    exact ⟨h.1.symm,h.2⟩)
+  have low := core_R335_degree_ge_twelve _ (by change Fintype.card S = 35; rwa [Fintype.card_coe]) adm ⟨y,mem⟩
+  have eqn := degree_induce_eq_filter G S ⟨y,mem⟩
+  simp only [← SimpleGraph.ncard_neighborSet] at eqn low
+  rw [eqn] at low
+  have sub : S.filter (G.Adj y) ⊆ G.neighborFinset y := fun z hz =>
+    (SimpleGraph.mem_neighborFinset G y z).mpr (Finset.mem_filter.mp hz).2
+  have size := Finset.card_le_card sub
+  rw [SimpleGraph.card_neighborFinset_eq_degree,hy] at size
   omega
 
 end EG617

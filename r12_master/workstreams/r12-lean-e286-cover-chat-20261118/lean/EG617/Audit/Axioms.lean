@@ -87,6 +87,11 @@ public import EG617
 #print axioms EG617.cover_h13_pivot_floor_ledger
 #print axioms EG617.cover_h13_pivot_charge_upper
 #print axioms EG617.cover_no_embedded_R336
+#print axioms EG617.cover_independent_three
+#print axioms EG617.cover_common_nonNeighbors_le_35
+#print axioms EG617.cover_h13_missing_edge_row_union
+#print axioms EG617.cover_h13_core_min_degree
+#print axioms EG617.cover_core_degree_eleven_clique
 #print axioms EG617.CostSixProperty
 #print axioms EG617.c5Fiber
 #print axioms EG617.mem_c5Fiber

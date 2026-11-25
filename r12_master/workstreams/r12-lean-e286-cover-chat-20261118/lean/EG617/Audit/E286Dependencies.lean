@@ -6,7 +6,8 @@ Ordinary public module imports expose theorem types but erase imported bodies.
 This audit contributes no mathematical assumptions. -/
 run_cmd do
   let env := (← Lean.getEnv).setExporting false
-  let mut pending := #[``EG617.E286_verified, ``EG617.cover_h13_pivot_charge_upper, ``EG617.cover_no_embedded_R336]
+  let mut pending := #[``EG617.E286_verified, ``EG617.cover_h13_pivot_charge_upper,
+    ``EG617.cover_h13_missing_edge_row_union, ``EG617.cover_h13_core_min_degree]
   let mut seen : Lean.NameSet := {}
   while !pending.isEmpty do
     let name := pending.back!
