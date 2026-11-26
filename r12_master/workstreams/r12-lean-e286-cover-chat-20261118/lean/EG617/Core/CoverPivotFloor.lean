@@ -1,5 +1,6 @@
 module
 public import EG617.Core.Core47Floor
+import Mathlib.Tactic.Ring
 
 @[expose] public section
 set_option autoImplicit false
@@ -1016,7 +1017,7 @@ theorem cover_408_repivot_equality (G : SimpleGraph V) (hv : Fintype.card V = 61
     rcases hc with rfl | rfl <;> decide
   have val := scalar _ cs
   have upper := (cover_h13_pivot_charge_upper G hv ha hd y hy).2 energy
-  dsimp only at upper newLedger
+  simp only [SimpleGraph.edgeFinset_card,Set.fintypeCard_eq_ncard] at energy newLedger upper charge ⊢
   omega
 
 /-- The inserted vertices in the energy-408 equality channel are a target
@@ -1034,6 +1035,7 @@ theorem cover_408_inserted_missing_zero (G : SimpleGraph V) (hv : Fintype.card V
   let C := Gᶜ.neighborFinset p
   let Y := Gᶜ.neighborFinset y
   let S := Y \ C
+  dsimp only
   intro h
   obtain ⟨qy,_,_,removed,kappa,_,newSize⟩ := cover_408_repivot_equality G hv ha hd p y py hp hy energy he h
   have point (z : V) (hz : z ∈ S) : 12 ≤ (Y.filter (G.Adj z)).card := by
@@ -1096,6 +1098,7 @@ theorem cover_shell_matching_charge (G : SimpleGraph V) (hv : Fintype.card V = 6
     rw [adjCount_eq_sum_filter,Finset.sum_union dj]
     simp [L,R,Finset.sum_map]
   have ci : I.card = k+k := by rw [Finset.card_union_of_disjoint dj]; simp [L,R]
+  dsimp only
   intro cf
   have m : coreInducedEdgeCount Gᶜ I ≤ k*k := by
     change (Gᶜ.induce (I : Set V)).CliqueFree 3 at cf
@@ -1111,6 +1114,61 @@ theorem cover_shell_matching_charge (G : SimpleGraph V) (hv : Fintype.card V = 6
     adjCount G I C + coreInducedEdgeCount Gᶜ _ + _ at ledger
   rw [eqn] at ledger
   rw [Nat.mul_comm 12 k]
+  omega
+
+/-- Any subset of a shell below charge 30 obeys the sharp K4-free Turan
+cap. The four-clique obstruction is derived on the original parent. -/
+theorem cover_low_charge_shell_turan (G : SimpleGraph V) (hv : Fintype.card V = 61)
+    (ha : CoreAdmissible 5 G) (hd : ∀ z, 13 ≤ G.degree z) (p : V) (hp : G.degree p = 13)
+    (hq : coreInducedEdgeCount Gᶜ (G.neighborFinset p) +
+      (∑ z ∈ G.neighborFinset p, (G.degree z - 13)) ≤ 29)
+    (T : Finset V) (sub : T ⊆ G.neighborFinset p) :
+    coreInducedEdgeCount Gᶜ T ≤ T.card^2 / 3 := by
+  classical
+  have cf : (Gᶜ.induce (T : Set V)).CliqueFree 4 := by
+    intro S hs
+    let I := S.image (fun z : (T : Set V) => z.val)
+    have ci : I.card = 4 := (Finset.card_image_of_injective _ Subtype.val_injective).trans hs.card_eq
+    have incl : I ⊆ G.neighborFinset p := by
+      intro z hz
+      obtain ⟨w,_,rfl⟩ := Finset.mem_image.mp hz
+      exact sub w.property
+    have ind : G.IsIndepSet (I : Set V) := by
+      intro x hx y hy ne
+      obtain ⟨u,hu,rfl⟩ := Finset.mem_image.mp hx
+      obtain ⟨v,hv',rfl⟩ := Finset.mem_image.mp hy
+      have edge := hs.isClique hu hv' (fun h => ne (congrArg Subtype.val h))
+      exact ((SimpleGraph.compl_adj G u.val v.val).mp edge).2
+    have cap := cover_K4_charge_floor G hv ha hd p hp I incl ind ci
+    omega
+  have cap := cf.card_edgeFinset_le
+  rw [SimpleGraph.turanNumber_three] at cap
+  simpa only [coreInducedEdgeCount,SimpleGraph.edgeFinset_card,Set.fintypeCard_eq_ncard,
+    Set.ncard_coe_finset] using cap
+
+/-- Three shell rows of size at least eleven already force charge thirty. -/
+theorem cover_three_heavy_rows (G : SimpleGraph V) (hd : ∀ z, 13 ≤ G.degree z)
+    (p : V) (hp : G.degree p = 13)
+    (hq : coreInducedEdgeCount Gᶜ (G.neighborFinset p) +
+      (∑ z ∈ G.neighborFinset p, (G.degree z - 13)) ≤ 29) :
+    ((G.neighborFinset p).filter (fun z => 11 ≤ ((Gᶜ.neighborFinset p).filter (G.Adj z)).card)).card ≤ 2 := by
+  classical
+  let C := Gᶜ.neighborFinset p
+  let X := (G.neighborFinset p).filter (fun z => 11 ≤ (C.filter (G.Adj z)).card)
+  change X.card ≤ 2
+  by_contra! big
+  obtain ⟨T,sub,ct⟩ := Finset.exists_subset_card_eq (show 3 ≤ X.card by omega)
+  have low := Finset.sum_le_sum (s := T) (f := fun _ => 11) (g := fun z => (C.filter (G.Adj z)).card)
+    (fun z hz => (Finset.mem_filter.mp (sub hz)).2)
+  rw [← adjCount_eq_sum_filter] at low
+  simp only [Finset.sum_const,smul_eq_mul,ct] at low
+  have ledger := cover_shell_subset_charge G p hp hd T
+    (fun z hz => (Finset.mem_filter.mp (sub hz)).1)
+  have cap := core_induced_edges_le_choose Gᶜ T
+  rw [ct] at cap
+  norm_num [Nat.choose_two_right] at cap
+  dsimp only at ledger
+  dsimp only [C] at low
   omega
 
 end EG617

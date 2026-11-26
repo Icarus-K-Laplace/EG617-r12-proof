@@ -119,6 +119,8 @@ public import EG617
 #check EG617.cover_408_repivot_equality
 #check EG617.cover_408_inserted_missing_zero
 #check EG617.cover_shell_matching_charge
+#check EG617.cover_low_charge_shell_turan
+#check EG617.cover_three_heavy_rows
 #print EG617.CostSixProperty
 #print EG617.c5Fiber
 #check EG617.mem_c5Fiber

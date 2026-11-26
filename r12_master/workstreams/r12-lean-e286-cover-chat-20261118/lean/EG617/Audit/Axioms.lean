@@ -119,6 +119,8 @@ public import EG617
 #print axioms EG617.cover_408_repivot_equality
 #print axioms EG617.cover_408_inserted_missing_zero
 #print axioms EG617.cover_shell_matching_charge
+#print axioms EG617.cover_low_charge_shell_turan
+#print axioms EG617.cover_three_heavy_rows
 #print axioms EG617.CostSixProperty
 #print axioms EG617.c5Fiber
 #print axioms EG617.mem_c5Fiber
