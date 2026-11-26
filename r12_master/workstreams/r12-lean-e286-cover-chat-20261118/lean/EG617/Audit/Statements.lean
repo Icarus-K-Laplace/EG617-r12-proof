@@ -121,6 +121,9 @@ public import EG617
 #check EG617.cover_shell_matching_charge
 #check EG617.cover_low_charge_shell_turan
 #check EG617.cover_three_heavy_rows
+#check EG617.cover_low_charge_heavy_rows_unique
+#check EG617.cover_twelve_triangle_or_matching
+#check EG617.cover_hub_row_budget
 #print EG617.CostSixProperty
 #print EG617.c5Fiber
 #check EG617.mem_c5Fiber
