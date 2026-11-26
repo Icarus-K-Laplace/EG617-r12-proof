@@ -108,6 +108,10 @@ public import EG617
 #check EG617.cover_R335_edges_ge_211
 #check EG617.cover_R223_edges_ge_131
 #check EG617.cover_delete_twelve_cap
+#check EG617.cover_211_pair_union_ne_twelve
+#check EG617.cover_pair_row_charge
+#check EG617.cover_degree_eleven_edges_ge_289
+#check EG617.cover_h13_core_288_min_degree
 #print EG617.CostSixProperty
 #print EG617.c5Fiber
 #check EG617.mem_c5Fiber

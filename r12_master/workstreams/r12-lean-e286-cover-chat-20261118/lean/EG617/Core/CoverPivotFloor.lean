@@ -599,9 +599,9 @@ theorem cover_R335_edges_ge_211 (G : SimpleGraph V) (hv : Fintype.card V = 35)
   by_contra! he
   have md (v : V) : G.degree v ≤ 12 := by
     have rest := Finset.sum_le_sum (s := (Finset.univ : Finset V).erase v)
-      (f := fun _ => 12) (g := G.degree) (fun w _ => core_R335_degree_ge_twelve G hv ha w)
+      (f := fun _ => 12) (g := fun w => G.degree w) (fun w _ => core_R335_degree_ge_twelve G hv ha w)
     simp [hv] at rest
-    have total := Finset.sum_erase_add (Finset.univ : Finset V) G.degree (Finset.mem_univ v)
+    have total := Finset.sum_erase_add (Finset.univ : Finset V) (fun w => G.degree w) (Finset.mem_univ v)
     rw [G.sum_degrees_eq_twice_card_edges] at total
     simp only [SimpleGraph.edgeFinset_card,Set.fintypeCard_eq_ncard] at total he
     omega
@@ -649,8 +649,9 @@ theorem cover_R223_edges_ge_131 (G : SimpleGraph V) (hv : Fintype.card V = 23)
     rw [h.card_eq] at cap
     omega
   have bound : CoreIndependenceBound 11 Gᶜ := fun S h => ha.2.1 S ((SimpleGraph.isIndepSet_compl G).mp h)
-  obtain ⟨_,_,_,_,_,ledger⟩ := r23_exact_neighbor_ledger Gᶜ hv cf bound high
-  have upper : Gᶜ.edgeFinset.card ≤ 122 := ledger.2.2.2.2.2.2.2.1
+  obtain ⟨_,_,_,_,_,ledger⟩ := r23_exact_neighbor_ledger Gᶜ hv cf bound (by
+    simpa only [SimpleGraph.edgeFinset_card,Set.fintypeCard_eq_ncard] using high)
+  have upper := ledger.2.2.2.2.2.2.2.1
   simp only [SimpleGraph.edgeFinset_card,Set.fintypeCard_eq_ncard] at total upper he
   omega
 
@@ -664,12 +665,181 @@ theorem cover_delete_twelve_cap (G : SimpleGraph V) (he : G.edgeFinset.card ≤ 
   have part := edge_partition G U
   have degree := adjCount_union_right G U U Uᶜ disjoint_compl_right
   rw [Finset.union_compl,adjCount_right_univ,adjCount_self] at degree
-  have low := Finset.sum_le_sum (s := U) (f := fun _ => 12) (g := G.degree) (fun z _ => hd z)
+  have low := Finset.sum_le_sum (s := U) (f := fun _ => 12) (g := fun z => G.degree z) (fun z _ => hd z)
   simp only [Finset.sum_const,smul_eq_mul,cu] at low
   have small := core_induced_edges_le_choose G U
   rw [cu] at small
   norm_num [Nat.choose_two_right] at small
   simp only [SimpleGraph.edgeFinset_card,Set.fintypeCard_eq_ncard] at he part
+  omega
+
+/-- Equality case of the 288-core gate: a 12-vertex union of the two rows
+forces a 14-set over its hereditary cap. -/
+theorem cover_211_pair_union_ne_twelve (G : SimpleGraph V) (ha : CoreAdmissible 4 G)
+    (C : Finset V) (cc : C.card = 35) (hc : CoreAdmissible 3 (G.induce (C : Set V)))
+    (ec : coreInducedEdgeCount G C = 211) (x y : V) (ne : x ≠ y) (hn : ¬G.Adj x y)
+    (hx : x ∉ C) (hy : y ∉ C) :
+    ((C.filter (G.Adj x)) ∪ (C.filter (G.Adj y))).card ≠ 12 := by
+  classical
+  let U := C.filter (G.Adj x) ∪ C.filter (G.Adj y)
+  let W := C \ U
+  intro cu
+  change U.card = 12 at cu
+  have sub : U ⊆ C := Finset.union_subset (Finset.filter_subset _ _) (Finset.filter_subset _ _)
+  have decomp : U ∪ W = C := Finset.union_sdiff_of_subset sub
+  have dj : Disjoint U W := Finset.disjoint_sdiff
+  have cw : W.card = 23 := by
+    have := Finset.card_sdiff_add_card_eq_card sub
+    change (C \ U).card = 23
+    omega
+  have adm := core_admissible_common_nonNeighbors G 2 ha x y ne hn W (by
+    intro z hz
+    obtain ⟨hz,out⟩ := Finset.mem_sdiff.mp hz
+    exact ⟨fun e => hx (e ▸ hz),fun e => hy (e ▸ hz),
+      fun e => out (Finset.mem_union_left _ (Finset.mem_filter.mpr ⟨hz,e⟩)),
+      fun e => out (Finset.mem_union_right _ (Finset.mem_filter.mpr ⟨hz,e⟩))⟩)
+  have ew := cover_R223_edges_ge_131 _ (by change Fintype.card W = 23; rwa [Fintype.card_coe]) adm
+  change 131 ≤ coreInducedEdgeCount G W at ew
+  have sum : 144 ≤ adjCount G U C := by
+    rw [adjCount_eq_sum_filter]
+    have point (z : V) (hz : z ∈ U) : 12 ≤ (C.filter (G.Adj z)).card := by
+      have low := core_R335_degree_ge_twelve _ (by change Fintype.card C = 35; rwa [Fintype.card_coe]) hc ⟨z,sub hz⟩
+      have eqn := degree_induce_eq_filter G C ⟨z,sub hz⟩
+      simp only [← SimpleGraph.ncard_neighborSet] at low eqn
+      rw [eqn] at low
+      convert low using 1 <;> congr 1 <;> ext w <;> simp
+    have sum := Finset.sum_le_sum point
+    simpa only [Finset.sum_const,smul_eq_mul,cu] using sum
+  have cross := adjCount_union_right G U U W dj
+  rw [decomp,adjCount_self] at cross
+  have edges := core_edge_count_union G U W dj
+  rw [decomp] at edges
+  have dense : 64 ≤ coreInducedEdgeCount G U := by omega
+  have anti : U.filter (fun z => ¬G.Adj x z ∧ ¬G.Adj y z) = ∅ := by
+    apply Finset.eq_empty_iff_forall_notMem.mpr
+    intro z hz
+    obtain ⟨hz,h1,h2⟩ := Finset.mem_filter.mp hz
+    rcases Finset.mem_union.mp hz with hz | hz
+    · exact h1 (Finset.mem_filter.mp hz).2
+    · exact h2 (Finset.mem_filter.mp hz).2
+  apply core_fourteen_cost_obstruction G ha.2.2 U cu x y ne (fun h => hx (sub h)) (fun h => hy (sub h))
+  have comp := core_induced_compl_edge_count G U
+  rw [cu] at comp
+  norm_num [Nat.choose_two_right] at comp
+  rw [anti,Finset.card_empty]
+  omega
+
+theorem cover_pair_row_charge (M : SimpleGraph V) (r : V → ℕ)
+    (hrow : ∀ a, M.degree a ≤ r a) (a b : V) (hab : a ≠ b)
+    : M.edgeFinset.card + r a + r b ≤ (∑ x : V, r x) + 1 := by
+  classical
+  let U := (Finset.univ.erase a).erase b
+  have ha : a ∈ (Finset.univ : Finset V) := Finset.mem_univ _
+  have hb : b ∈ (Finset.univ : Finset V).erase a := Finset.mem_erase.mpr ⟨hab.symm, Finset.mem_univ _⟩
+  have hr1 := Finset.sum_erase_add (s := Finset.univ) (f := r) ha
+  have hr2 := Finset.sum_erase_add (s := Finset.univ.erase a) (f := r) hb
+  have hm1 := Finset.sum_erase_add (s := Finset.univ) (f := fun x => M.degree x) ha
+  have hm2 := Finset.sum_erase_add (s := Finset.univ.erase a) (f := fun x => M.degree x) hb
+  have hrest : (∑ x ∈ U, M.degree x) ≤ ∑ x ∈ U, r x := Finset.sum_le_sum (fun x _ => hrow x)
+  have hinc := core_two_degrees_le_edges_add_one M a b hab
+  have he := M.sum_degrees_eq_twice_card_edges
+  simp only [SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard] at he hinc ⊢
+  dsimp only [U] at hrest
+  omega
+
+
+theorem cover_degree_eleven_edges_ge_289 (G : SimpleGraph V)
+    (hV : Fintype.card V = 47) (hG : CoreAdmissible 4 G) (v : V)
+    (hd : G.degree v = 11) (hmin : ∀ w, 11 ≤ G.degree w) :
+    289 ≤ G.edgeFinset.card := by
+  classical
+  by_contra! small
+  let S := G.neighborFinset v
+  let C := Gᶜ.neighborFinset v
+  let M := (G.induce (S : Set V))ᶜ
+  let r : ↥(S : Set V) → ℕ := fun a => (C.filter (G.Adj a)).card
+  have hS : S.card = 11 := by
+    simpa only [S, SimpleGraph.card_neighborFinset_eq_degree, ← SimpleGraph.ncard_neighborSet] using hd
+  have hC : C.card = 35 := by
+    have hc : C.card = Fintype.card V - 1 - G.degree v := G.degree_compl v
+    omega
+  have ha : CoreAdmissible 3 (G.induce (C : Set V)) :=
+    core_admissible_nonNeighbors G 3 hG v C (by
+      intro w hw
+      have h := (SimpleGraph.mem_neighborFinset Gᶜ v w).mp hw
+      exact ⟨h.ne.symm, ((SimpleGraph.compl_adj G v w).mp h).2⟩)
+  have heC : 211 ≤ coreInducedEdgeCount G C := by
+    have h := cover_R335_edges_ge_211 (G.induce (C : Set V))
+      (by simpa only [Set.fintypeCard_eq_ncard, Set.ncard_coe_finset] using hC) ha
+    simpa only [coreInducedEdgeCount, SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard] using h
+  obtain ⟨x, hx, y, hy, hxy, hnxy⟩ := core_degree_eleven_neighbor_nonedge G hG.2.1 v hd
+  have hSC : Disjoint S C := by
+    rw [Finset.disjoint_left]
+    intro z hz hzC
+    exact ((SimpleGraph.compl_adj G v z).mp
+      ((SimpleGraph.mem_neighborFinset Gᶜ v z).mp hzC)).2
+      ((SimpleGraph.mem_neighborFinset G v z).mp hz)
+  have hxC : x ∉ C := fun hxC => Finset.disjoint_left.mp hSC hx hxC
+  have hyC : y ∉ C := fun hyC => Finset.disjoint_left.mp hSC hy hyC
+  have hrow : ∀ a, M.degree a ≤ r a := fun a => core_shell_row_missing_degree_le G v hd hmin a
+  have hpair : 12 ≤ r ⟨x, hx⟩ + r ⟨y, hy⟩ := by
+    have hu := core_R4_row_union_ge_twelve G hG C hC x y hxy hnxy hxC hyC
+    have hc := Finset.card_union_le (C.filter (G.Adj x)) (C.filter (G.Adj y))
+    exact hu.trans hc
+  have hrows := cover_pair_row_charge M r (by
+    intro a
+    simpa only [← SimpleGraph.ncard_neighborSet] using hrow a) ⟨x, hx⟩ ⟨y, hy⟩
+    (fun he => hxy (congrArg Subtype.val he))
+  have hcross : (∑ a : (S : Set V), r a) = adjCount G S C := by
+    rw [adjCount_eq_sum_filter, ← Finset.sum_coe_sort S]
+    rfl
+  rw [hcross] at hrows
+  have hcomp := core_compl_edge_count (G.induce (S : Set V))
+  simp only [SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard,
+    Set.ncard_coe_finset, hS] at hcomp
+  norm_num only [Nat.choose_two_right] at hcomp
+  have he := (core_shell_edge_degree_ledger G v).1
+  dsimp only [M] at hrows
+  have over : 212 ≤ coreInducedEdgeCount G C ∨ 13 ≤ r ⟨x,hx⟩ + r ⟨y,hy⟩ := by
+    by_cases big : 212 ≤ coreInducedEdgeCount G C
+    · exact Or.inl big
+    · right
+      have eqn : coreInducedEdgeCount G C = 211 := by omega
+      have not12 := cover_211_pair_union_ne_twelve G hG C hC ha eqn x y hxy hnxy hxC hyC
+      have lower := core_R4_row_union_ge_twelve G hG C hC x y hxy hnxy hxC hyC
+      have upper := Finset.card_union_le (C.filter (G.Adj x)) (C.filter (G.Adj y))
+      change 13 ≤ (C.filter (G.Adj x)).card + (C.filter (G.Adj y)).card
+      omega
+  simp only [coreInducedEdgeCount, SimpleGraph.edgeFinset_card, Set.fintypeCard_eq_ncard]
+    at he heC hrows hcomp over small
+  simp only [S,C,SimpleGraph.neighborFinset_def,← Set.toFinite_toFinset,
+    ← SimpleGraph.ncard_neighborSet] at he heC hrows hcomp hd over hpair
+  omega
+
+theorem cover_h13_core_288_min_degree (G : SimpleGraph V) (hv : Fintype.card V = 61)
+    (ha : CoreAdmissible 5 G) (p : V) (hp : G.degree p = 13)
+    (he : coreInducedEdgeCount G (Gᶜ.neighborFinset p) ≤ 288)
+    (z : (Gᶜ.neighborFinset p : Set V)) :
+    12 ≤ (G.induce (Gᶜ.neighborFinset p : Set V)).degree z := by
+  classical
+  let C := Gᶜ.neighborFinset p
+  let H := G.induce (C : Set V)
+  have cc : C.card = 47 := by
+    change (Gᶜ.neighborFinset p).card = 47
+    rw [SimpleGraph.card_neighborFinset_eq_degree,G.degree_compl,hv,hp]
+  have adm := core_admissible_nonNeighbors G 4 ha p C (by
+    intro w hw
+    have h := (SimpleGraph.compl_adj G p w).mp ((SimpleGraph.mem_neighborFinset Gᶜ p w).mp hw)
+    exact ⟨h.1.symm,h.2⟩)
+  have md (w : (C : Set V)) : 11 ≤ H.degree w := cover_h13_core_min_degree G hv ha p hp w
+  change 12 ≤ H.degree z
+  by_contra! low
+  have dz : H.degree z = 11 := by have := md z; omega
+  have big := cover_degree_eleven_edges_ge_289 H (by change Fintype.card C = 47; rwa [Fintype.card_coe]) adm z dz md
+  change coreInducedEdgeCount G C ≤ 288 at he
+  simp only [coreInducedEdgeCount,SimpleGraph.edgeFinset_card,Set.fintypeCard_eq_ncard] at he
+  dsimp only [H] at big
+  simp only [SimpleGraph.edgeFinset_card,Set.fintypeCard_eq_ncard] at big
   omega
 
 end EG617
