@@ -117,6 +117,8 @@ public import EG617
 #print axioms EG617.cover_shell_missing_edges_ge_22
 #print axioms EG617.cover_shell_target_clique_cap
 #print axioms EG617.cover_408_repivot_equality
+#print axioms EG617.cover_408_inserted_missing_zero
+#print axioms EG617.cover_shell_matching_charge
 #print axioms EG617.CostSixProperty
 #print axioms EG617.c5Fiber
 #print axioms EG617.mem_c5Fiber

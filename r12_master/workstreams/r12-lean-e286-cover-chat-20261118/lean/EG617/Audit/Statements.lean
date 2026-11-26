@@ -117,6 +117,8 @@ public import EG617
 #check EG617.cover_shell_missing_edges_ge_22
 #check EG617.cover_shell_target_clique_cap
 #check EG617.cover_408_repivot_equality
+#check EG617.cover_408_inserted_missing_zero
+#check EG617.cover_shell_matching_charge
 #print EG617.CostSixProperty
 #print EG617.c5Fiber
 #check EG617.mem_c5Fiber
