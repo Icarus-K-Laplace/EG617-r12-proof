@@ -939,4 +939,79 @@ theorem cover_middle_degree_promotes (G : SimpleGraph V) (hv : Fintype.card V = 
     have := (arith _).2 h
     omega
 
+theorem cover_shell_missing_edges_ge_22 (G : SimpleGraph V) (ha : CoreAdmissible 5 G)
+    (p : V) (hp : G.degree p = 13) : 22 ≤ coreInducedEdgeCount Gᶜ (G.neighborFinset p) := by
+  classical
+  let A := G.neighborFinset p
+  have cp : p ∉ A := by simp [A]
+  have ca : A.card = 13 := (SimpleGraph.card_neighborFinset_eq_degree G p).trans hp
+  have dj : Disjoint ({p} : Finset V) A := Finset.disjoint_singleton_left.mpr cp
+  have cap := ha.2.2 ({p} ∪ A)
+  rw [Finset.card_union_of_disjoint dj,Finset.card_singleton,ca] at cap
+  have d14 : D (1+13) = 69 := by decide
+  rw [d14] at cap
+  have edges := core_edge_count_union G {p} A dj
+  have row : adjCount G {p} A = 13 := by
+    rw [adjCount_eq_sum_filter,Finset.sum_singleton,Finset.filter_eq_self.mpr
+      (fun z hz => (SimpleGraph.mem_neighborFinset G p z).mp hz),ca]
+  have comp := core_induced_compl_edge_count G A
+  rw [ca] at comp
+  norm_num [Nat.choose_two_right] at comp
+  change 22 ≤ coreInducedEdgeCount Gᶜ A
+  omega
+
+theorem cover_shell_target_clique_cap (G : SimpleGraph V) (ha : CoreAdmissible 5 G)
+    (p : V) (I : Finset V) (sub : I ⊆ G.neighborFinset p) (cl : G.IsClique (I : Set V)) :
+    I.card ≤ 10 := by
+  classical
+  have extCl : G.IsClique (insert p (I : Set V)) :=
+    cl.insert (fun w hw _ => (SimpleGraph.mem_neighborFinset G p w).mp (sub hw))
+  have bound := ha.2.1 (insert p I) (by simpa only [Finset.coe_insert] using extCl)
+  have outside : p ∉ I := fun hp => ((SimpleGraph.mem_neighborFinset G p p).mp (sub hp)).ne rfl
+  rw [Finset.card_insert_of_notMem outside] at bound
+  omega
+
+/-- At energy 408, an extreme middle degree of 3 or 10 saturates the old
+core inequality and forces all four nonnegative corrections individually. -/
+theorem cover_408_repivot_equality (G : SimpleGraph V) (hv : Fintype.card V = 61)
+    (ha : CoreAdmissible 5 G) (hd : ∀ z, 13 ≤ G.degree z) (p y : V)
+    (py : G.Adj p y) (hp : G.degree p = 13) (hy : G.degree y = 13)
+    (energy : G.edgeFinset.card = 408)
+    (he : coreInducedEdgeCount G (Gᶜ.neighborFinset p) ≤ 288) :
+    let A := G.neighborFinset p
+    let C := Gᶜ.neighborFinset p
+    let Y := Gᶜ.neighborFinset y
+    let S := Y \ C
+    let R := C \ Y
+    let B := A \ S
+    let qy := (G.induce (G.neighborFinset y : Set V))ᶜ.edgeFinset.card +
+      ∑ z ∈ G.neighborFinset y, (G.degree z - 13)
+    S.card = 3 ∨ S.card = 10 →
+      qy = 30 ∧ coreInducedEdgeCount Gᶜ B = 0 ∧ (∑ z ∈ B, (G.degree z - 13)) = 0 ∧
+      adjCount G R C = 12 * S.card ∧ coreInducedEdgeCount Gᶜ R = 0 ∧ adjCount G S R = 0 ∧
+      coreInducedEdgeCount G Y = 287 := by
+  classical
+  let C := Gᶜ.neighborFinset p
+  let Y := Gᶜ.neighborFinset y
+  let R := C \ Y
+  let S := Y \ C
+  have point (z : V) (hz : z ∈ R) : 12 ≤ (C.filter (G.Adj z)).card := by
+    have mem := (Finset.mem_sdiff.mp hz).1
+    have low := cover_h13_core_288_min_degree G hv ha p hp he ⟨z,mem⟩
+    have eqn := degree_induce_eq_filter G C ⟨z,mem⟩
+    simp only [← SimpleGraph.ncard_neighborSet] at low eqn
+    rw [eqn] at low
+    convert low using 1 <;> congr 1 <;> ext w <;> simp
+  have sum := Finset.sum_le_sum point
+  rw [← adjCount_eq_sum_filter] at sum
+  simp only [Finset.sum_const,smul_eq_mul] at sum
+  have same : S.card = R.card := cover_repivot_equal_exchange G p y (hp.trans hy.symm)
+  rw [← same] at sum
+  dsimp only [R,S,C,Y] at sum
+  have charge := cover_repivot_exact_row_charge G hv ha hd p y py hp hy
+  obtain ⟨_,newFloor,newLedger⟩ := cover_h13_pivot_floor_ledger G hv ha hd y hy
+  dsimp only at charge ⊢
+  rintro (cs|cs) <;> rw [cs] at sum charge ⊢ <;> norm_num [Nat.choose_two_right] at sum charge ⊢ <;>
+    omega
+
 end EG617

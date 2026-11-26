@@ -10,7 +10,8 @@ run_cmd do
     ``EG617.cover_h13_missing_edge_row_union, ``EG617.cover_repivot_INS11,
     ``EG617.cover_core_degree_eleven_clique, ``EG617.cover_repivot_exact_row_charge,
     ``EG617.cover_K4_charge_floor, ``EG617.cover_triangle_row_union,
-    ``EG617.cover_h13_EDGE13, ``EG617.cover_middle_degree_promotes]
+    ``EG617.cover_h13_EDGE13, ``EG617.cover_middle_degree_promotes,
+    ``EG617.cover_408_repivot_equality, ``EG617.cover_shell_missing_edges_ge_22]
   let mut seen : Lean.NameSet := {}
   while !pending.isEmpty do
     let name := pending.back!

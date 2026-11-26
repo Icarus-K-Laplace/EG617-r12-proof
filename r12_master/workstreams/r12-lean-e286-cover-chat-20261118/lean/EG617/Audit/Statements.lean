@@ -114,6 +114,9 @@ public import EG617
 #check EG617.cover_h13_core_288_min_degree
 #check EG617.cover_h13_EDGE13
 #check EG617.cover_middle_degree_promotes
+#check EG617.cover_shell_missing_edges_ge_22
+#check EG617.cover_shell_target_clique_cap
+#check EG617.cover_408_repivot_equality
 #print EG617.CostSixProperty
 #print EG617.c5Fiber
 #check EG617.mem_c5Fiber
