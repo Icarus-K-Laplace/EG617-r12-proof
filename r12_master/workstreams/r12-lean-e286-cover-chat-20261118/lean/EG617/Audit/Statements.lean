@@ -124,6 +124,8 @@ public import EG617
 #check EG617.cover_low_charge_heavy_rows_unique
 #check EG617.cover_twelve_triangle_or_matching
 #check EG617.cover_hub_row_budget
+#check EG617.cover_low_charge_row_le_eleven
+#check EG617.cover_low_charge_middle_vertex
 #print EG617.CostSixProperty
 #print EG617.c5Fiber
 #check EG617.mem_c5Fiber

@@ -1187,7 +1187,7 @@ theorem cover_low_charge_heavy_rows_unique (G : SimpleGraph V) (hv : Fintype.car
   let A := G.neighborFinset p
   let C := Gᶜ.neighborFinset p
   let B := (A.erase x).erase y
-  have ymem : y ∈ A.erase x := Finset.mem_erase.mpr ⟨ne.symm,hy⟩
+  have ymem : y ∈ A.erase x := Finset.mem_erase.mpr ⟨Ne.symm ne,hy⟩
   have cb : B.card = 11 := by
     change ((A.erase x).erase y).card = 11
     rw [Finset.card_erase_of_mem ymem,Finset.card_erase_of_mem hx]
@@ -1255,7 +1255,7 @@ theorem cover_twelve_triangle_or_matching (G : SimpleGraph V) (ha : CoreAdmissib
       exact no ⟨a,ha,b,hb,ab,miss⟩)
     omega
   have erased (u : V) (hu : u ∈ B) := edge (B.erase u) (Finset.erase_subset _ _)
-    (by rw [Finset.card_erase_of_mem hu,cb]; decide)
+    (by rw [Finset.card_erase_of_mem hu,cb])
   obtain ⟨a,aa,b,bb,ab,mab⟩ := edge B (fun _ h => h) (by omega)
   by_cases matching : ∃ u ∈ B, ∃ v ∈ B, ∃ w ∈ B, ∃ t ∈ B, u ≠ v ∧ w ≠ t ∧
        Disjoint ({u,v} : Finset V) {w,t} ∧ ¬G.Adj u v ∧ ¬G.Adj w t
@@ -1307,6 +1307,181 @@ theorem cover_hub_row_budget (G : SimpleGraph V) (hv : Fintype.card V = 61)
   dsimp only at led
   rw [adjCount_eq_sum_filter,Finset.sum_insert xt] at led
   rw [adjCount_eq_sum_filter]
+  omega
+
+theorem cover_low_charge_row_le_eleven (G : SimpleGraph V) (hv : Fintype.card V = 61)
+    (ha : CoreAdmissible 5 G) (hd : ∀ z, 13 ≤ G.degree z) (p : V) (hp : G.degree p = 13)
+    (he : coreInducedEdgeCount G (Gᶜ.neighborFinset p) ≤ 288)
+    (hq : coreInducedEdgeCount Gᶜ (G.neighborFinset p) +
+      (∑ z ∈ G.neighborFinset p, (G.degree z - 13)) ≤ 29)
+    (x : V) (hx : x ∈ G.neighborFinset p) :
+    ((Gᶜ.neighborFinset p).filter (G.Adj x)).card ≤ 11 := by
+  classical
+  let A := G.neighborFinset p
+  let B := A.erase x
+  let C := Gᶜ.neighborFinset p
+  have cb : B.card = 12 := by
+    change (A.erase x).card = 12
+    rw [Finset.card_erase_of_mem hx]
+    change (G.neighborFinset p).card - 1 = 12
+    rw [SimpleGraph.card_neighborFinset_eq_degree,hp]
+  have sub : B ⊆ A := Finset.erase_subset _ _
+  have out (w : V) (hw : w ∈ A) : w ∉ C := fun hc =>
+    ((SimpleGraph.compl_adj G p w).mp ((SimpleGraph.mem_neighborFinset Gᶜ p w).mp hc)).2
+      ((SimpleGraph.mem_neighborFinset G p w).mp hw)
+  have cc : C.card = 47 := by
+    change (Gᶜ.neighborFinset p).card = 47
+    rw [SimpleGraph.card_neighborFinset_eq_degree,G.degree_compl,hv,hp]
+  have budget (T : Finset V) (ts : T ⊆ B) :
+      (C.filter (G.Adj x)).card + adjCount G T C ≤ 29 + (T.card+1)^2 / 3 :=
+    cover_hub_row_budget G hv ha hd p hp hq x hx T
+      (fun h => (Finset.mem_erase.mp (ts h)).1 rfl) (ts.trans sub)
+  change (C.filter (G.Adj x)).card ≤ 11
+  rcases cover_twelve_triangle_or_matching G ha p B cb sub with tri|matching
+  · obtain ⟨a,aa,b,bb,c,cc',ab,bc,ac,mab,mbc,mac⟩ := tri
+    let T : Finset V := {a,b,c}
+    have ts : T ⊆ B := by simp [T,aa,bb,cc']
+    have ct : T.card = 3 := by simp [T,ab,bc,ac]
+    have dj : Disjoint T C := Finset.disjoint_left.mpr (fun z hz => out z (sub (ts hz)))
+    have ind : G.IsIndepSet (T : Set V) := by
+      intro u hu v hv' ne
+      simp only [T,Finset.mem_coe,Finset.mem_insert,Finset.mem_singleton] at hu hv'
+      rcases hu with rfl|rfl|rfl <;> rcases hv' with rfl|rfl|rfl <;>
+        first | contradiction | assumption | exact fun e => mab e.symm |
+          exact fun e => mbc e.symm | exact fun e => mac e.symm
+    have union := cover_triangle_row_union G ha T C dj ind ct cc
+    have incid := Finset.card_biUnion_le (s := T) (t := fun z => C.filter (G.Adj z))
+    rw [← adjCount_eq_sum_filter] at incid
+    have lim := budget T ts
+    rw [ct] at lim
+    omega
+  · obtain ⟨a,aa,b,bb,c,cc',d,dd,ab,cd,dj,mab,mcd⟩ := matching
+    let T := ({a,b} : Finset V) ∪ {c,d}
+    have ts : T ⊆ B := by simp [T,aa,bb,cc',dd]
+    have ct : T.card = 4 := by rw [Finset.card_union_of_disjoint dj,Finset.card_pair ab,Finset.card_pair cd]
+    have pair (u v : V) (hu : u ∈ B) (hvv : v ∈ B) (ne : u ≠ v) (m : ¬G.Adj u v) :
+        13 ≤ (C.filter (G.Adj u)).card + (C.filter (G.Adj v)).card :=
+      (cover_h13_EDGE13 G hv ha p hp he u v ne m (out u (sub hu)) (out v (sub hvv))).trans
+        (Finset.card_union_le _ _)
+    have first := pair a b aa bb ab mab
+    have second := pair c d cc' dd cd mcd
+    have lim := budget T ts
+    rw [ct,adjCount_eq_sum_filter,Finset.sum_union dj,Finset.sum_pair ab,Finset.sum_pair cd] at lim
+    omega
+
+/-- Frozen Section 9. Every actual low-charge, low-edge core has a regular
+shell vertex of middle missing degree. EDGE13 isolates every regular row of
+weight at most two; uniqueness then also excludes a regular weight-eleven hub. -/
+theorem cover_low_charge_middle_vertex (G : SimpleGraph V) (hv : Fintype.card V = 61)
+    (ha : CoreAdmissible 5 G) (hd : ∀ z, 13 ≤ G.degree z) (p : V) (hp : G.degree p = 13)
+    (he : coreInducedEdgeCount G (Gᶜ.neighborFinset p) ≤ 288)
+    (hq : coreInducedEdgeCount Gᶜ (G.neighborFinset p) +
+      (∑ z ∈ G.neighborFinset p, (G.degree z - 13)) ≤ 29) :
+    ∃ y, G.Adj p y ∧ G.degree y = 13 ∧
+      3 ≤ (Gᶜ.neighborFinset y \ Gᶜ.neighborFinset p).card ∧
+      (Gᶜ.neighborFinset y \ Gᶜ.neighborFinset p).card ≤ 10 := by
+  classical
+  let A := G.neighborFinset p
+  let C := Gᶜ.neighborFinset p
+  let t := fun y : V => (C.filter (G.Adj y)).card
+  let N := fun y : V => A.filter (Gᶜ.Adj y)
+  let g := fun y : V => G.degree y - 13
+  let P := A.filter (fun y => 0 < g y)
+  have ps : P ⊆ A := Finset.filter_subset _ _
+  have countP : P.card ≤ 7 := by
+    have positive := Finset.sum_le_sum (s := P) (f := fun _ => 1) (g := g)
+      (fun y hy => (Finset.mem_filter.mp hy).2)
+    have subset := Finset.sum_le_sum_of_subset_of_nonneg ps (f := g) (fun _ _ _ => Nat.zero_le _)
+    have floor := cover_shell_missing_edges_ge_22 G ha p hp
+    simp only [Finset.sum_const,smul_eq_mul,mul_one] at positive
+    change coreInducedEdgeCount Gᶜ A + (∑ y ∈ A, g y) ≤ 29 at hq
+    change 22 ≤ coreInducedEdgeCount Gᶜ A at floor
+    omega
+  have reg (y : V) (hy : y ∈ A) (ny : y ∉ P) : G.degree y = 13 := by
+    have h : ¬ 0 < g y := fun pos => ny (Finset.mem_filter.mpr ⟨hy,pos⟩)
+    dsimp only [g] at h
+    have := hd y
+    omega
+  have row (y : V) (hy : y ∈ A) (yr : G.degree y = 13) : t y = (N y).card := by
+    have eqn := cover_shell_row_identity G p y ((SimpleGraph.mem_neighborFinset G p y).mp hy) hp (hd y)
+    simpa only [t,C,N,A,yr,Nat.sub_self,Nat.add_zero] using eqn
+  have high (y : V) (hy : y ∈ A) : t y ≤ 11 :=
+    cover_low_charge_row_le_eleven G hv ha hd p hp he hq y hy
+  have outside (y : V) (hy : y ∈ A) : y ∉ C := fun hc =>
+    ((SimpleGraph.compl_adj G p y).mp ((SimpleGraph.mem_neighborFinset Gᶜ p y).mp hc)).2
+      ((SimpleGraph.mem_neighborFinset G p y).mp hy)
+  have edge (u v : V) (hu : u ∈ A) (hv' : v ∈ A) (m : Gᶜ.Adj u v) : 13 ≤ t u + t v := by
+    obtain ⟨ne,hn⟩ := (SimpleGraph.compl_adj G u v).mp m
+    exact (cover_h13_EDGE13 G hv ha p hp he u v ne hn (outside _ hu) (outside _ hv')).trans
+      (Finset.card_union_le _ _)
+  by_contra no
+  have cases' (y : V) (hy : y ∈ A) (yr : G.degree y = 13) : t y ≤ 2 ∨ t y = 11 := by
+    have py := (SimpleGraph.mem_neighborFinset G p y).mp hy
+    have swap := (cover_repivot_sets G p y py).1
+    have bound := high y hy
+    by_contra! h
+    apply no
+    refine ⟨y,py,yr,?_,?_⟩ <;> rw [swap] <;> have eqn := row y hy yr <;> dsimp only [N,A] at eqn <;> omega
+  have iso (y : V) (hy : y ∈ A) (yr : G.degree y = 13) (small : t y ≤ 2) : (N y).card = 0 := by
+    have one : (N y).card ≤ 1 := Finset.card_le_one.mpr (by
+      intro u hu v hv'
+      obtain ⟨ua,um⟩ := Finset.mem_filter.mp hu
+      obtain ⟨va,vm⟩ := Finset.mem_filter.mp hv'
+      have eu := edge y u hy ua um
+      have ev := edge y v hy va vm
+      exact cover_low_charge_heavy_rows_unique G hv ha hd p hp he hq u v ua va
+        (show 11 ≤ t u by omega) (show 11 ≤ t v by omega))
+    have eqn := row y hy yr
+    by_contra nz
+    obtain ⟨u,hu⟩ := Finset.card_pos.mp (Nat.pos_of_ne_zero nz)
+    obtain ⟨ua,um⟩ := Finset.mem_filter.mp hu
+    have := edge y u hy ua um
+    have := high u ua
+    omega
+  have allZero (y : V) (hy : y ∈ A) (yr : G.degree y = 13) : (N y).card = 0 := by
+    rcases cases' y hy yr with small|big
+    · exact iso y hy yr small
+    · have contained : N y ⊆ P := by
+        intro u hu
+        obtain ⟨ua,um⟩ := Finset.mem_filter.mp hu
+        by_contra np
+        have ur := reg u ua np
+        rcases cases' u ua ur with small|heavy
+        · have zero := iso u ua ur small
+          have pos := Finset.card_pos.mpr (show (N u).Nonempty from
+            ⟨y,Finset.mem_filter.mpr ⟨hy,um.symm⟩⟩)
+          omega
+        · have eqn := cover_low_charge_heavy_rows_unique G hv ha hd p hp he hq y u hy ua
+            (show 11 ≤ t y by omega) (show 11 ≤ t u by omega)
+          exact um.ne eqn
+      have size := Finset.card_le_card contained
+      have eqn := row y hy yr
+      omega
+  let B := A \ P
+  have dj : Disjoint P B := Finset.disjoint_sdiff
+  have decomp : P ∪ B = A := Finset.union_sdiff_of_subset ps
+  have zero (w : V) (hw : w ∈ B) (z : V) (hz : z ∈ A) : ¬Gᶜ.Adj w z := by
+    obtain ⟨wa,wp⟩ := Finset.mem_sdiff.mp hw
+    have eqn := allZero w wa (reg w wa wp)
+    intro adj
+    have pos := Finset.card_pos.mpr (show (N w).Nonempty from ⟨z,Finset.mem_filter.mpr ⟨hz,adj⟩⟩)
+    omega
+  have cross : adjCount Gᶜ B P = 0 := by
+    apply Finset.sum_eq_zero
+    intro w hw
+    apply Finset.sum_eq_zero
+    intro z hz
+    simp [zero w hw z (ps hz)]
+  have internal := adjCount_independent_zero Gᶜ B (fun {w} hw {z} hz _ =>
+    zero w hw z (Finset.mem_sdiff.mp hz).1)
+  rw [adjCount_self] at internal
+  have split := core_edge_count_union Gᶜ P B dj
+  rw [decomp,adjCount_symm Gᶜ P B,cross] at split
+  have cap := core_induced_edges_le_choose Gᶜ P
+  have lim : P.card.choose 2 ≤ 21 := by
+    exact (Nat.choose_le_choose 2 countP : P.card.choose 2 ≤ 7.choose 2)
+  have floor := cover_shell_missing_edges_ge_22 G ha p hp
+  change 22 ≤ coreInducedEdgeCount Gᶜ A at floor
   omega
 
 end EG617
