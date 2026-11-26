@@ -461,7 +461,8 @@ theorem cover_K4_row_union (G : SimpleGraph V) (ha : CoreAdmissible 5 G)
       intro z hz
       rcases Finset.mem_insert.mp hz with rfl | hz
       · exact hx
-      · simpa only [Finset.mem_singleton.mp hz] using hy
+      · obtain rfl := Finset.mem_singleton.mp hz
+        exact hy
     have ind : G.IsIndepSet (J : Set V) := by
       intro u hu v hv uv
       simp only [J,Finset.mem_coe,Finset.mem_insert,Finset.mem_singleton] at hu hv
@@ -476,6 +477,113 @@ theorem cover_K4_row_union (G : SimpleGraph V) (ha : CoreAdmissible 5 G)
     exact (Finset.mem_filter.mp h).1
   have eqn := Finset.card_sdiff_add_card_eq_card sub
   change 36 ≤ R.card
+  omega
+
+theorem cover_shell_row_identity (G : SimpleGraph V) (p y : V) (py : G.Adj p y)
+    (hp : G.degree p = 13) (hy : 13 ≤ G.degree y) :
+    ((Gᶜ.neighborFinset p).filter (G.Adj y)).card =
+      ((G.neighborFinset p).filter (Gᶜ.Adj y)).card + (G.degree y - 13) := by
+  classical
+  obtain ⟨ins,rem⟩ := cover_repivot_sets G p y py
+  rw [← ins,← rem,Finset.card_sdiff,Finset.card_sdiff,Finset.inter_comm]
+  have bound := Finset.card_le_card (Finset.inter_subset_left
+    (s₂ := Gᶜ.neighborFinset p) (s₁ := Gᶜ.neighborFinset y))
+  have ltY := G.degree_lt_card_verts y
+  have ltP := G.degree_lt_card_verts p
+  simp only [SimpleGraph.card_neighborFinset_eq_degree,SimpleGraph.degree_compl] at bound ⊢
+  omega
+
+/-- Frozen COVER (1), in additive form on arbitrary subsets of the actual shell. -/
+theorem cover_shell_subset_charge (G : SimpleGraph V) (p : V) (hp : G.degree p = 13)
+    (hd : ∀ y, 13 ≤ G.degree y) (I : Finset V) (sub : I ⊆ G.neighborFinset p) :
+    let A := G.neighborFinset p
+    let C := Gᶜ.neighborFinset p
+    let B := A \ I
+    let g := fun y => G.degree y - 13
+    coreInducedEdgeCount Gᶜ A + (∑ y ∈ A, g y) + coreInducedEdgeCount Gᶜ I =
+      adjCount G I C + coreInducedEdgeCount Gᶜ B + ∑ y ∈ B, g y := by
+  classical
+  let A := G.neighborFinset p
+  let C := Gᶜ.neighborFinset p
+  let B := A \ I
+  let g := fun y => G.degree y - 13
+  have dj : Disjoint I B := Finset.disjoint_sdiff
+  have decomp : I ∪ B = A := Finset.union_sdiff_of_subset sub
+  have row : adjCount G I C = adjCount Gᶜ I A + ∑ y ∈ I, g y := by
+    rw [adjCount_eq_sum_filter,adjCount_eq_sum_filter,← Finset.sum_add_distrib]
+    exact Finset.sum_congr rfl (fun y hy => cover_shell_row_identity G p y
+      ((SimpleGraph.mem_neighborFinset G p y).mp (sub hy)) hp (hd y))
+  have edges := core_edge_count_union Gᶜ I B dj
+  have adj := adjCount_union_right Gᶜ I I B dj
+  have sums := Finset.sum_union (f := g) dj
+  rw [decomp] at edges sums
+  rw [decomp,adjCount_self] at adj
+  change coreInducedEdgeCount Gᶜ A + (∑ y ∈ A, g y) + coreInducedEdgeCount Gᶜ I =
+    adjCount G I C + coreInducedEdgeCount Gᶜ B + ∑ y ∈ B, g y
+  omega
+
+/-- A missing four-clique in a regular shell forces charge at least 30. -/
+theorem cover_K4_charge_floor (G : SimpleGraph V) (hv : Fintype.card V = 61)
+    (ha : CoreAdmissible 5 G) (hd : ∀ z, 13 ≤ G.degree z) (p : V) (hp : G.degree p = 13)
+    (I : Finset V) (sub : I ⊆ G.neighborFinset p) (hi : G.IsIndepSet (I : Set V))
+    (ci : I.card = 4) :
+    30 ≤ coreInducedEdgeCount Gᶜ (G.neighborFinset p) +
+      ∑ z ∈ G.neighborFinset p, (G.degree z - 13) := by
+  classical
+  let C := Gᶜ.neighborFinset p
+  have cc : C.card = 47 := by
+    change (Gᶜ.neighborFinset p).card = 47
+    rw [SimpleGraph.card_neighborFinset_eq_degree,G.degree_compl,hv,hp]
+  have dj : Disjoint I C := Finset.disjoint_left.mpr (by
+    intro z hz hc
+    exact ((SimpleGraph.compl_adj G p z).mp ((SimpleGraph.mem_neighborFinset Gᶜ p z).mp hc)).2
+      ((SimpleGraph.mem_neighborFinset G p z).mp (sub hz)))
+  have cap := cover_K4_row_union G ha I C dj hi ci cc
+  have total := Finset.card_biUnion_le (s := I) (t := fun z => C.filter (G.Adj z))
+  rw [← adjCount_eq_sum_filter] at total
+  have small := core_induced_edges_le_choose Gᶜ I
+  rw [ci] at small
+  norm_num [Nat.choose_two_right] at small
+  have led := cover_shell_subset_charge G p hp hd I sub
+  dsimp only at led
+  change 36 ≤ _ at cap
+  dsimp only [C] at total cap
+  omega
+
+/-- Section 3 equation (3) before subtracting a degree threshold. This
+natural-number identity also applies when the removed degrees have deficits. -/
+theorem cover_repivot_exact_row_charge (G : SimpleGraph V) (hv : Fintype.card V = 61)
+    (ha : CoreAdmissible 5 G) (hd : ∀ z, 13 ≤ G.degree z) (p y : V)
+    (py : G.Adj p y) (hp : G.degree p = 13) (hy : G.degree y = 13) :
+    let A := G.neighborFinset p
+    let C := Gᶜ.neighborFinset p
+    let Y := Gᶜ.neighborFinset y
+    let S := Y \ C
+    let R := C \ Y
+    let B := A \ S
+    let qy := (G.induce (G.neighborFinset y : Set V))ᶜ.edgeFinset.card +
+      ∑ z ∈ G.neighborFinset y, (G.degree z - 13)
+    qy + 2 * S.card.choose 2 =
+      coreInducedEdgeCount Gᶜ B + (∑ z ∈ B, (G.degree z - 13)) +
+      adjCount G R C + coreInducedEdgeCount Gᶜ R + adjCount G S R := by
+  classical
+  let A := G.neighborFinset p
+  let C := Gᶜ.neighborFinset p
+  let Y := Gᶜ.neighborFinset y
+  let S := Y \ C
+  have sub : S ⊆ A := by
+    change Y \ C ⊆ A
+    rw [(cover_repivot_sets G p y py).1]
+    exact Finset.filter_subset _ _
+  have shell := cover_shell_subset_charge G p hp hd S sub
+  have balance := cover_repivot_charge_identity G hv ha hd p y hp hy
+  have insertLedger := cover_inserted_degree_ledger G C Y
+  have oldMissing : (G.induce (A : Set V))ᶜ.edgeFinset.card = coreInducedEdgeCount Gᶜ A := by
+    simp only [coreInducedEdgeCount,SimpleGraph.edgeFinset_card,Set.fintypeCard_eq_ncard,
+      core_induce_compl]
+  dsimp only at shell balance insertLedger ⊢
+  dsimp only [S,Y,C,A] at oldMissing shell insertLedger
+  rw [oldMissing] at balance
   omega
 
 end EG617

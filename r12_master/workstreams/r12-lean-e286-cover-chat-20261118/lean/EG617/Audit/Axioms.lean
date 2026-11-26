@@ -101,6 +101,10 @@ public import EG617
 #print axioms EG617.cover_uncovered_independent_budget
 #print axioms EG617.cover_triangle_row_union
 #print axioms EG617.cover_K4_row_union
+#print axioms EG617.cover_shell_row_identity
+#print axioms EG617.cover_shell_subset_charge
+#print axioms EG617.cover_K4_charge_floor
+#print axioms EG617.cover_repivot_exact_row_charge
 #print axioms EG617.CostSixProperty
 #print axioms EG617.c5Fiber
 #print axioms EG617.mem_c5Fiber

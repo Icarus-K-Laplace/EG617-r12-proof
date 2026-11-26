@@ -8,7 +8,8 @@ run_cmd do
   let env := (← Lean.getEnv).setExporting false
   let mut pending := #[``EG617.E286_verified, ``EG617.cover_h13_pivot_charge_upper,
     ``EG617.cover_h13_missing_edge_row_union, ``EG617.cover_repivot_INS11,
-    ``EG617.cover_core_degree_eleven_clique, ``EG617.cover_repivot_charge_identity]
+    ``EG617.cover_core_degree_eleven_clique, ``EG617.cover_repivot_exact_row_charge,
+    ``EG617.cover_K4_charge_floor, ``EG617.cover_triangle_row_union]
   let mut seen : Lean.NameSet := {}
   while !pending.isEmpty do
     let name := pending.back!
