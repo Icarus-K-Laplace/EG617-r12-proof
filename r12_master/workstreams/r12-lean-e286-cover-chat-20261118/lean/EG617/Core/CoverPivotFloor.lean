@@ -490,6 +490,7 @@ theorem cover_shell_row_identity (G : SimpleGraph V) (p y : V) (py : G.Adj p y)
     (s₂ := Gᶜ.neighborFinset p) (s₁ := Gᶜ.neighborFinset y))
   have ltY := G.degree_lt_card_verts y
   have ltP := G.degree_lt_card_verts p
+  rw [Finset.inter_comm] at bound
   simp only [SimpleGraph.card_neighborFinset_eq_degree,SimpleGraph.degree_compl] at bound ⊢
   omega
 
@@ -511,8 +512,12 @@ theorem cover_shell_subset_charge (G : SimpleGraph V) (p : V) (hp : G.degree p =
   have decomp : I ∪ B = A := Finset.union_sdiff_of_subset sub
   have row : adjCount G I C = adjCount Gᶜ I A + ∑ y ∈ I, g y := by
     rw [adjCount_eq_sum_filter,adjCount_eq_sum_filter,← Finset.sum_add_distrib]
-    exact Finset.sum_congr rfl (fun y hy => cover_shell_row_identity G p y
-      ((SimpleGraph.mem_neighborFinset G p y).mp (sub hy)) hp (hd y))
+    apply Finset.sum_congr rfl
+    intro y hy
+    have eqn := cover_shell_row_identity G p y
+      ((SimpleGraph.mem_neighborFinset G p y).mp (sub hy)) hp (hd y)
+    dsimp only [A,C,g]
+    convert eqn using 2 <;> congr 1 <;> ext z <;> simp
   have edges := core_edge_count_union Gᶜ I B dj
   have adj := adjCount_union_right Gᶜ I I B dj
   have sums := Finset.sum_union (f := g) dj
@@ -584,6 +589,87 @@ theorem cover_repivot_exact_row_charge (G : SimpleGraph V) (hv : Fintype.card V 
   dsimp only at shell balance insertLedger ⊢
   dsimp only [S,Y,C,A] at oldMissing shell insertLedger
   rw [oldMissing] at balance
+  omega
+
+/-- Frozen COVER Section 8 strict 211-edge floor, via the kernel-checked
+Andrasfai--Erdos--Sos theorem applied to the complement. -/
+theorem cover_R335_edges_ge_211 (G : SimpleGraph V) (hv : Fintype.card V = 35)
+    (ha : CoreAdmissible 3 G) : 211 ≤ G.edgeFinset.card := by
+  classical
+  by_contra! he
+  have md (v : V) : G.degree v ≤ 12 := by
+    have rest := Finset.sum_le_sum (s := (Finset.univ : Finset V).erase v)
+      (f := fun _ => 12) (g := G.degree) (fun w _ => core_R335_degree_ge_twelve G hv ha w)
+    simp [hv] at rest
+    have total := Finset.sum_erase_add (Finset.univ : Finset V) G.degree (Finset.mem_univ v)
+    rw [G.sum_degrees_eq_twice_card_edges] at total
+    simp only [SimpleGraph.edgeFinset_card,Set.fintypeCard_eq_ncard] at total he
+    omega
+  have cf : Gᶜ.CliqueFree 4 := by
+    intro S hS
+    have i := (SimpleGraph.isNClique_compl G).mp hS
+    have cap := ha.1 S i.isIndepSet
+    rw [i.card_eq] at cap
+    omega
+  haveI : Nonempty V := Fintype.card_pos_iff.mp (by omega)
+  have lower : 22 ≤ Gᶜ.minDegree := Gᶜ.le_minDegree_of_forall_le_degree 22 (by
+    intro v
+    rw [G.degree_compl,hv]
+    have := md v
+    omega)
+  obtain ⟨col⟩ := SimpleGraph.colorable_of_cliqueFree_lt_minDegree (G := Gᶜ) (r := 3) cf
+    (by norm_num [hv]; omega)
+  let fiber := fun i : Fin 3 => Finset.univ.filter (fun z : V => col z = i)
+  have cap (i : Fin 3) : (fiber i).card ≤ 11 := by
+    apply ha.2.1
+    apply (SimpleGraph.isIndepSet_compl G).mp
+    intro x hx y hy _
+    exact col.not_adj_of_mem_colorClass (Finset.mem_filter.mp hx).2 (Finset.mem_filter.mp hy).2
+  have total : (∑ i, (fiber i).card) = 35 := by
+    simpa only [fiber,Finset.sum_const,smul_eq_mul,mul_one,Finset.card_univ,hv] using
+      Finset.sum_fiberwise' (Finset.univ : Finset V) (fun z => col z) (fun _ => (1 : ℕ))
+  have upper := Finset.sum_le_sum (s := (Finset.univ : Finset (Fin 3)))
+    (fun i _ => cap i)
+  norm_num at upper
+  omega
+
+theorem cover_R223_edges_ge_131 (G : SimpleGraph V) (hv : Fintype.card V = 23)
+    (ha : CoreAdmissible 2 G) : 131 ≤ G.edgeFinset.card := by
+  classical
+  have total := core_compl_edge_count G
+  norm_num [Nat.choose_two_right,hv] at total
+  by_contra! he
+  have high : 121 ≤ Gᶜ.edgeFinset.card := by
+    simp only [SimpleGraph.edgeFinset_card,Set.fintypeCard_eq_ncard] at total he ⊢
+    omega
+  have cf : Gᶜ.CliqueFree 3 := by
+    intro S hS
+    have h := (SimpleGraph.isNClique_compl G).mp hS
+    have cap := ha.1 S h.isIndepSet
+    rw [h.card_eq] at cap
+    omega
+  have bound : CoreIndependenceBound 11 Gᶜ := fun S h => ha.2.1 S ((SimpleGraph.isIndepSet_compl G).mp h)
+  obtain ⟨_,_,_,_,_,ledger⟩ := r23_exact_neighbor_ledger Gᶜ hv cf bound high
+  have upper : Gᶜ.edgeFinset.card ≤ 122 := ledger.2.2.2.2.2.2.2.1
+  simp only [SimpleGraph.edgeFinset_card,Set.fintypeCard_eq_ncard] at total upper he
+  omega
+
+/-- Removing twelve vertices of degree at least twelve from a 288-edge
+graph leaves at most 210 edges, with every edge inside the removed set
+counted exactly twice in the degree sum. -/
+theorem cover_delete_twelve_cap (G : SimpleGraph V) (he : G.edgeFinset.card ≤ 288)
+    (hd : ∀ z, 12 ≤ G.degree z) (U : Finset V) (cu : U.card = 12) :
+    coreInducedEdgeCount G Uᶜ ≤ 210 := by
+  classical
+  have part := edge_partition G U
+  have degree := adjCount_union_right G U U Uᶜ disjoint_compl_right
+  rw [Finset.union_compl,adjCount_right_univ,adjCount_self] at degree
+  have low := Finset.sum_le_sum (s := U) (f := fun _ => 12) (g := G.degree) (fun z _ => hd z)
+  simp only [Finset.sum_const,smul_eq_mul,cu] at low
+  have small := core_induced_edges_le_choose G U
+  rw [cu] at small
+  norm_num [Nat.choose_two_right] at small
+  simp only [SimpleGraph.edgeFinset_card,Set.fintypeCard_eq_ncard] at he part
   omega
 
 end EG617

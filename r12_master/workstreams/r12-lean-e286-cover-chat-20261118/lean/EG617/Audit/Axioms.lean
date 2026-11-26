@@ -105,6 +105,9 @@ public import EG617
 #print axioms EG617.cover_shell_subset_charge
 #print axioms EG617.cover_K4_charge_floor
 #print axioms EG617.cover_repivot_exact_row_charge
+#print axioms EG617.cover_R335_edges_ge_211
+#print axioms EG617.cover_R223_edges_ge_131
+#print axioms EG617.cover_delete_twelve_cap
 #print axioms EG617.CostSixProperty
 #print axioms EG617.c5Fiber
 #print axioms EG617.mem_c5Fiber

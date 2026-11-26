@@ -105,6 +105,9 @@ public import EG617
 #check EG617.cover_shell_subset_charge
 #check EG617.cover_K4_charge_floor
 #check EG617.cover_repivot_exact_row_charge
+#check EG617.cover_R335_edges_ge_211
+#check EG617.cover_R223_edges_ge_131
+#check EG617.cover_delete_twelve_cap
 #print EG617.CostSixProperty
 #print EG617.c5Fiber
 #check EG617.mem_c5Fiber
