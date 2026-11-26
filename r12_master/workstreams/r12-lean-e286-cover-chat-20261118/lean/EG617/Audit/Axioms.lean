@@ -112,6 +112,8 @@ public import EG617
 #print axioms EG617.cover_pair_row_charge
 #print axioms EG617.cover_degree_eleven_edges_ge_289
 #print axioms EG617.cover_h13_core_288_min_degree
+#print axioms EG617.cover_h13_EDGE13
+#print axioms EG617.cover_middle_degree_promotes
 #print axioms EG617.CostSixProperty
 #print axioms EG617.c5Fiber
 #print axioms EG617.mem_c5Fiber

@@ -112,6 +112,8 @@ public import EG617
 #check EG617.cover_pair_row_charge
 #check EG617.cover_degree_eleven_edges_ge_289
 #check EG617.cover_h13_core_288_min_degree
+#check EG617.cover_h13_EDGE13
+#check EG617.cover_middle_degree_promotes
 #print EG617.CostSixProperty
 #print EG617.c5Fiber
 #check EG617.mem_c5Fiber

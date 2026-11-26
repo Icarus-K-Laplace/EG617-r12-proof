@@ -842,4 +842,101 @@ theorem cover_h13_core_288_min_degree (G : SimpleGraph V) (hv : Fintype.card V =
   simp only [SimpleGraph.edgeFinset_card,Set.fintypeCard_eq_ncard] at big
   omega
 
+/-- EDGE13 for every missing-shell edge of an actual regular-pivot core in
+the licensed at-most-288 edge range. -/
+theorem cover_h13_EDGE13 (G : SimpleGraph V) (hv : Fintype.card V = 61)
+    (ha : CoreAdmissible 5 G) (p : V) (hp : G.degree p = 13)
+    (he : coreInducedEdgeCount G (Gᶜ.neighborFinset p) ≤ 288)
+    (x y : V) (ne : x ≠ y) (hn : ¬G.Adj x y)
+    (hx : x ∉ Gᶜ.neighborFinset p) (hy : y ∉ Gᶜ.neighborFinset p) :
+    let C := Gᶜ.neighborFinset p
+    13 ≤ ((C.filter (G.Adj x)) ∪ (C.filter (G.Adj y))).card := by
+  classical
+  let C := Gᶜ.neighborFinset p
+  let R := C.filter (G.Adj x) ∪ C.filter (G.Adj y)
+  have cc : C.card = 47 := by
+    change (Gᶜ.neighborFinset p).card = 47
+    rw [SimpleGraph.card_neighborFinset_eq_degree,G.degree_compl,hv,hp]
+  have sub : R ⊆ C := Finset.union_subset (Finset.filter_subset _ _) (Finset.filter_subset _ _)
+  change 13 ≤ R.card
+  by_contra! small
+  have card := Finset.card_sdiff_add_card_eq_card sub
+  obtain ⟨W,hw,cw⟩ := Finset.exists_subset_card_eq (show 35 ≤ (C \ R).card by omega)
+  have wc : W ⊆ C := fun z hz => (Finset.mem_sdiff.mp (hw hz)).1
+  let X := C \ W
+  have cx : X.card = 12 := by
+    have := Finset.card_sdiff_add_card_eq_card wc
+    change (C \ W).card = 12
+    omega
+  have adm := core_admissible_common_nonNeighbors G 3 ha x y ne hn W (by
+    intro z hz
+    obtain ⟨hz,out⟩ := Finset.mem_sdiff.mp (hw hz)
+    exact ⟨fun e => hx (e ▸ hz),fun e => hy (e ▸ hz),
+      fun e => out (Finset.mem_union_left _ (Finset.mem_filter.mpr ⟨hz,e⟩)),
+      fun e => out (Finset.mem_union_right _ (Finset.mem_filter.mpr ⟨hz,e⟩))⟩)
+  have ew := cover_R335_edges_ge_211 _ (by change Fintype.card W = 35; rwa [Fintype.card_coe]) adm
+  change 211 ≤ coreInducedEdgeCount G W at ew
+  have deg (z : V) (hz : z ∈ X) : 12 ≤ (C.filter (G.Adj z)).card := by
+    have mem := (Finset.mem_sdiff.mp hz).1
+    have low := cover_h13_core_288_min_degree G hv ha p hp he ⟨z,mem⟩
+    have eqn := degree_induce_eq_filter G C ⟨z,mem⟩
+    simp only [← SimpleGraph.ncard_neighborSet] at low eqn
+    rw [eqn] at low
+    convert low using 1 <;> congr 1 <;> ext w <;> simp
+  have sum := Finset.sum_le_sum deg
+  rw [← adjCount_eq_sum_filter] at sum
+  simp only [Finset.sum_const,smul_eq_mul,cx] at sum
+  have dj : Disjoint W X := Finset.disjoint_sdiff
+  have decomp : W ∪ X = C := Finset.union_sdiff_of_subset wc
+  have incid := adjCount_union_right G X W X dj
+  rw [decomp,adjCount_self,adjCount_symm G X W] at incid
+  have edges := core_edge_count_union G W X dj
+  rw [decomp] at edges
+  have cap := core_induced_edges_le_choose G X
+  rw [cx] at cap
+  norm_num [Nat.choose_two_right] at cap
+  change coreInducedEdgeCount G C ≤ 288 at he
+  omega
+
+theorem cover_middle_degree_promotes (G : SimpleGraph V) (hv : Fintype.card V = 61)
+    (ha : CoreAdmissible 5 G) (hd : ∀ z, 13 ≤ G.degree z) (p y : V)
+    (py : G.Adj p y) (hp : G.degree p = 13) (hy : G.degree y = 13)
+    (he : coreInducedEdgeCount G (Gᶜ.neighborFinset p) ≤ 288) :
+    let C := Gᶜ.neighborFinset p
+    let S := Gᶜ.neighborFinset y \ C
+    let qy := (G.induce (G.neighborFinset y : Set V))ᶜ.edgeFinset.card +
+      ∑ z ∈ G.neighborFinset y, (G.degree z - 13)
+    (3 ≤ S.card ∧ S.card ≤ 10 → 30 ≤ qy) ∧
+      (4 ≤ S.card ∧ S.card ≤ 9 → 36 ≤ qy) := by
+  classical
+  let C := Gᶜ.neighborFinset p
+  let Y := Gᶜ.neighborFinset y
+  let R := C \ Y
+  let S := Y \ C
+  have point (z : V) (hz : z ∈ R) : 12 ≤ (C.filter (G.Adj z)).card := by
+    have mem := (Finset.mem_sdiff.mp hz).1
+    have low := cover_h13_core_288_min_degree G hv ha p hp he ⟨z,mem⟩
+    have eqn := degree_induce_eq_filter G C ⟨z,mem⟩
+    simp only [← SimpleGraph.ncard_neighborSet] at low eqn
+    rw [eqn] at low
+    convert low using 1 <;> congr 1 <;> ext w <;> simp
+  have sum := Finset.sum_le_sum point
+  rw [← adjCount_eq_sum_filter] at sum
+  simp only [Finset.sum_const,smul_eq_mul] at sum
+  have same : S.card = R.card := cover_repivot_equal_exchange G p y (hp.trans hy.symm)
+  rw [← same] at sum
+  have charge := cover_repivot_exact_row_charge G hv ha hd p y py hp hy
+  dsimp only at charge ⊢
+  dsimp only [S,R,Y,C] at sum
+  have arith (d : ℕ) : (3 ≤ d ∧ d ≤ 10 → 30 + 2*d.choose 2 ≤ d*12) ∧
+      (4 ≤ d ∧ d ≤ 9 → 36 + 2*d.choose 2 ≤ d*12) := by
+    constructor <;> rintro ⟨h1,h2⟩ <;> interval_cases d <;> decide
+  constructor
+  · intro h
+    have := (arith _).1 h
+    omega
+  · intro h
+    have := (arith _).2 h
+    omega
+
 end EG617

@@ -21,3 +21,10 @@ The source's Section8 uses AES with a strict threshold; that theorem cannot
 be introduced as an axiom. Both old and new core minimum-degree conditions
 must be proved when licensing beta12 repivots, including the K4 degree2 branch.
 Family I/II completeness and terminal exclusions remain open.
+
+Linux run 45732491940 verifies the 24- and 36-point row union bounds, the
+30-charge floor for a missing four-clique, the arbitrary shell subset identity,
+and the exact repivot row charge. Section 8 now has the 211-edge R335 floor
+(via Mathlib AES), the 131-edge R223 floor, the equality obstruction on the
+actual 14-set and the minimum-degree-12 theorem for actual cores of at most
+288 edges. The older 11-degree theorem continues to apply at all energies.
