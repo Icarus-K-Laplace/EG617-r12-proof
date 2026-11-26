@@ -98,6 +98,9 @@ public import EG617
 #check EG617.cover_repivot_INS11
 #check EG617.cover_equal_exchange_identity
 #check EG617.cover_repivot_charge_identity
+#check EG617.cover_uncovered_independent_budget
+#check EG617.cover_triangle_row_union
+#check EG617.cover_K4_row_union
 #print EG617.CostSixProperty
 #print EG617.c5Fiber
 #check EG617.mem_c5Fiber

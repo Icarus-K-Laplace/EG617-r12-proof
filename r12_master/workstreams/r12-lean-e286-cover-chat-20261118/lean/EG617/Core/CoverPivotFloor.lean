@@ -409,4 +409,73 @@ theorem cover_repivot_charge_identity (G : SimpleGraph V) (hv : Fintype.card V =
   dsimp only at exchange ⊢
   omega
 
+/-- Independent choices from the uncovered core can be appended to the
+independent shell set without introducing a cross edge. -/
+theorem cover_uncovered_independent_budget (G : SimpleGraph V) (ha : CoreAdmissible 5 G)
+    (I C : Finset V) (dis : Disjoint I C) (hi : G.IsIndepSet (I : Set V))
+    (J : Finset V) (hj : J ⊆ C \ I.biUnion (fun x => C.filter (G.Adj x)))
+    (ind : G.IsIndepSet (J : Set V)) : I.card + J.card ≤ 5 := by
+  classical
+  have dj := dis.mono_right (show J ⊆ C from fun z hz => (Finset.mem_sdiff.mp (hj hz)).1)
+  have cross (x) (hx : x ∈ I) (z) (hz : z ∈ J) : ¬G.Adj x z := by
+    intro h
+    obtain ⟨inC,out⟩ := Finset.mem_sdiff.mp (hj hz)
+    exact out (Finset.mem_biUnion.mpr ⟨x,hx,Finset.mem_filter.mpr ⟨inC,h⟩⟩)
+  have bound := ha.1 (I ∪ J) (by
+    intro x hx y hy ne
+    rcases Finset.mem_union.mp hx with hx|hx <;> rcases Finset.mem_union.mp hy with hy|hy
+    · exact hi hx hy ne
+    · exact cross _ hx _ hy
+    · exact fun e => cross _ hy _ hx e.symm
+    · exact ind hx hy ne)
+  rwa [Finset.card_union_of_disjoint dj] at bound
+
+theorem cover_triangle_row_union (G : SimpleGraph V) (ha : CoreAdmissible 5 G)
+    (I C : Finset V) (dis : Disjoint I C) (hi : G.IsIndepSet (I : Set V))
+    (ci : I.card = 3) (cc : C.card = 47) :
+    24 ≤ (I.biUnion (fun x => C.filter (G.Adj x))).card := by
+  classical
+  let R := I.biUnion (fun x => C.filter (G.Adj x))
+  have sub : R ⊆ C := by
+    intro z hz
+    obtain ⟨_,_,h⟩ := Finset.mem_biUnion.mp hz
+    exact (Finset.mem_filter.mp h).1
+  have eqn := Finset.card_sdiff_add_card_eq_card sub
+  change 24 ≤ R.card
+  by_contra! small
+  obtain ⟨J,hj,cj,ind⟩ := cover_independent_three G ha (C \ R) (by omega)
+  have cap := cover_uncovered_independent_budget G ha I C dis hi J hj ind
+  omega
+
+theorem cover_K4_row_union (G : SimpleGraph V) (ha : CoreAdmissible 5 G)
+    (I C : Finset V) (dis : Disjoint I C) (hi : G.IsIndepSet (I : Set V))
+    (ci : I.card = 4) (cc : C.card = 47) :
+    36 ≤ (I.biUnion (fun x => C.filter (G.Adj x))).card := by
+  classical
+  let R := I.biUnion (fun x => C.filter (G.Adj x))
+  have clique : G.IsClique ((C \ R : Finset V) : Set V) := by
+    intro x hx y hy ne
+    by_contra h
+    let J : Finset V := {x,y}
+    have sub : J ⊆ C \ R := by
+      intro z hz
+      rcases Finset.mem_insert.mp hz with rfl | hz
+      · exact hx
+      · simpa only [Finset.mem_singleton.mp hz] using hy
+    have ind : G.IsIndepSet (J : Set V) := by
+      intro u hu v hv uv
+      simp only [J,Finset.mem_coe,Finset.mem_insert,Finset.mem_singleton] at hu hv
+      rcases hu with rfl|rfl <;> rcases hv with rfl|rfl <;> first | contradiction | exact h | exact fun e => h e.symm
+    have cap := cover_uncovered_independent_budget G ha I C dis hi J sub ind
+    have cj : J.card = 2 := Finset.card_pair ne
+    omega
+  have cap := ha.2.1 (C \ R) clique
+  have sub : R ⊆ C := by
+    intro z hz
+    obtain ⟨_,_,h⟩ := Finset.mem_biUnion.mp hz
+    exact (Finset.mem_filter.mp h).1
+  have eqn := Finset.card_sdiff_add_card_eq_card sub
+  change 36 ≤ R.card
+  omega
+
 end EG617

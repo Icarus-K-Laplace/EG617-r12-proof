@@ -98,6 +98,9 @@ public import EG617
 #print axioms EG617.cover_repivot_INS11
 #print axioms EG617.cover_equal_exchange_identity
 #print axioms EG617.cover_repivot_charge_identity
+#print axioms EG617.cover_uncovered_independent_budget
+#print axioms EG617.cover_triangle_row_union
+#print axioms EG617.cover_K4_row_union
 #print axioms EG617.CostSixProperty
 #print axioms EG617.c5Fiber
 #print axioms EG617.mem_c5Fiber
