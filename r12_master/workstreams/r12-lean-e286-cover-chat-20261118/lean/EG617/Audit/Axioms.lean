@@ -126,6 +126,7 @@ public import EG617
 #print axioms EG617.cover_hub_row_budget
 #print axioms EG617.cover_low_charge_row_le_eleven
 #print axioms EG617.cover_low_charge_middle_vertex
+#print axioms EG617.cover_407_regular_charge_le_27
 #print axioms EG617.CostSixProperty
 #print axioms EG617.c5Fiber
 #print axioms EG617.mem_c5Fiber

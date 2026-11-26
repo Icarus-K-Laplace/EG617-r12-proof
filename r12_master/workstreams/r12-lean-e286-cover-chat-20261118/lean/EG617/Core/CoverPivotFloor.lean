@@ -1340,7 +1340,10 @@ theorem cover_low_charge_row_le_eleven (G : SimpleGraph V) (hv : Fintype.card V 
   rcases cover_twelve_triangle_or_matching G ha p B cb sub with tri|matching
   · obtain ⟨a,aa,b,bb,c,cc',ab,bc,ac,mab,mbc,mac⟩ := tri
     let T : Finset V := {a,b,c}
-    have ts : T ⊆ B := by simp [T,aa,bb,cc']
+    have ts : T ⊆ B := by
+      intro z hz
+      simp only [T,Finset.mem_insert,Finset.mem_singleton] at hz
+      rcases hz with rfl|rfl|rfl <;> assumption
     have ct : T.card = 3 := by simp [T,ab,bc,ac]
     have dj : Disjoint T C := Finset.disjoint_left.mpr (fun z hz => out z (sub (ts hz)))
     have ind : G.IsIndepSet (T : Set V) := by
@@ -1357,7 +1360,10 @@ theorem cover_low_charge_row_le_eleven (G : SimpleGraph V) (hv : Fintype.card V 
     omega
   · obtain ⟨a,aa,b,bb,c,cc',d,dd,ab,cd,dj,mab,mcd⟩ := matching
     let T := ({a,b} : Finset V) ∪ {c,d}
-    have ts : T ⊆ B := by simp [T,aa,bb,cc',dd]
+    have ts : T ⊆ B := by
+      intro z hz
+      simp only [T,Finset.mem_union,Finset.mem_insert,Finset.mem_singleton] at hz
+      rcases hz with (rfl|rfl)|(rfl|rfl) <;> assumption
     have ct : T.card = 4 := by rw [Finset.card_union_of_disjoint dj,Finset.card_pair ab,Finset.card_pair cd]
     have pair (u v : V) (hu : u ∈ B) (hvv : v ∈ B) (ne : u ≠ v) (m : ¬G.Adj u v) :
         13 ≤ (C.filter (G.Adj u)).card + (C.filter (G.Adj v)).card :=
@@ -1479,9 +1485,32 @@ theorem cover_low_charge_middle_vertex (G : SimpleGraph V) (hv : Fintype.card V 
   rw [decomp,adjCount_symm Gᶜ P B,cross] at split
   have cap := core_induced_edges_le_choose Gᶜ P
   have lim : P.card.choose 2 ≤ 21 := by
-    exact (Nat.choose_le_choose 2 countP : P.card.choose 2 ≤ 7.choose 2)
+    exact (Nat.choose_le_choose 2 countP : P.card.choose 2 ≤ (7 : ℕ).choose 2)
   have floor := cover_shell_missing_edges_ge_22 G ha p hp
   change 22 ≤ coreInducedEdgeCount Gᶜ A at floor
   omega
+
+/-- Every actual regular pivot in the 407-edge layer has at least 289
+core edges. Thus the exact ledger already rules out charges 28 and 29. -/
+theorem cover_407_regular_charge_le_27 (G : SimpleGraph V) (hv : Fintype.card V = 61)
+    (ha : CoreAdmissible 5 G) (hd : ∀ z, 13 ≤ G.degree z) (energy : G.edgeFinset.card = 407)
+    (p : V) (hp : G.degree p = 13) :
+    let A := G.neighborFinset p
+    289 ≤ coreInducedEdgeCount G (Gᶜ.neighborFinset p) ∧
+      (G.induce (A : Set V))ᶜ.edgeFinset.card + (∑ z ∈ A, (G.degree z - 13)) ≤ 27 := by
+  classical
+  have upper := (cover_h13_pivot_charge_upper G hv ha hd p hp).1 energy
+  have missing : (G.induce (G.neighborFinset p : Set V))ᶜ.edgeFinset.card =
+      coreInducedEdgeCount Gᶜ (G.neighborFinset p) := by
+    simp only [coreInducedEdgeCount,SimpleGraph.edgeFinset_card,Set.fintypeCard_eq_ncard,core_induce_compl]
+  rw [missing] at upper
+  have floor : 289 ≤ coreInducedEdgeCount G (Gᶜ.neighborFinset p) := by
+    by_contra! low
+    obtain ⟨y,py,hy,h1,h2⟩ := cover_low_charge_middle_vertex G hv ha hd p hp (by omega) upper
+    have lower := (cover_middle_degree_promotes G hv ha hd p y py hp hy (by omega)).1 ⟨h1,h2⟩
+    have cap := (cover_h13_pivot_charge_upper G hv ha hd y hy).1 energy
+    omega
+  obtain ⟨_,_,ledger⟩ := cover_h13_pivot_floor_ledger G hv ha hd p hp
+  exact ⟨floor,by omega⟩
 
 end EG617

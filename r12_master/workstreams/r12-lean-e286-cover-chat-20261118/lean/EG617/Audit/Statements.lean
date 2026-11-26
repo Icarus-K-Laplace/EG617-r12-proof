@@ -126,6 +126,7 @@ public import EG617
 #check EG617.cover_hub_row_budget
 #check EG617.cover_low_charge_row_le_eleven
 #check EG617.cover_low_charge_middle_vertex
+#check EG617.cover_407_regular_charge_le_27
 #print EG617.CostSixProperty
 #print EG617.c5Fiber
 #check EG617.mem_c5Fiber
